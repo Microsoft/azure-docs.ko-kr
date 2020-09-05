@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Azure Media Services에서 자산 및 사용 방법에 대해 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/09/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 6c9f69a39f725b082771b66959a219581c281ed5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3507d3f0ac978c6f7c2f5fc29fc563eaba79d98a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043508"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258863"
 ---
 # <a name="assets-in-azure-media-services-v3"></a>Azure Media Services v3의 자산
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services에서 [자산은](/rest/api/media/assets) 핵심 개념입니다. 미디어를 입력 하는 위치 (예: 업로드 또는 라이브 수집), 출력 미디어 (작업 출력에서) 및 미디어 게시 (스트리밍의 경우)입니다. 
 
@@ -42,7 +44,7 @@ Media Services는 계정이 범용 v2(GPv2) 스토리지를 사용할 때 Blob �
 
 ## <a name="next-steps"></a>다음 단계
 
-[Media Services에서 자산 관리](manage-asset-concept.md)
+[Media Services 개요](media-services-overview.md)
 
 ## <a name="see-also"></a>참고 항목
 

@@ -5,12 +5,12 @@ author: msmbaldwin
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9b0c336d9d9c463a7ed7acf42eaf292ecce4f1bb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93e5123e5b61c9013177f7f3c908578b68da52d6
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85831151"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962930"
 ---
 # <a name="security-controls-for-azure-app-service"></a>Azure App Service에 대 한 보안 제어
 
@@ -49,7 +49,7 @@ ms.locfileid: "85831151"
 | 미사용 서버 쪽 암호화: Microsoft 관리형 키 | 예 | 웹 사이트 파일 콘텐츠는 미사용 콘텐츠를 자동으로 암호화 하는 Azure Storage에 저장 됩니다. <br><br>고객 제공 암호는 미사용 암호화 됩니다. 비밀은 App Service 구성 데이터베이스에 저장 되어 있는 동안 암호화 되지 않습니다.<br><br>필요에 따라 로컬에 연결 된 디스크를 웹 사이트 (D:\local 및% TMP%)에서 임시 저장소로 사용할 수 있습니다. 로컬에 연결 된 디스크는 미사용 상태로 암호화 되지 않습니다. | [미사용 데이터에 대한 Azure Storage 암호화](../storage/common/storage-service-encryption.md)
 | 미사용 서버 쪽 암호화: 고객 관리형 키(BYOK) | 예 | 고객은 Key Vault에 응용 프로그램 암호를 저장 하 고 런타임에 검색 하도록 선택할 수 있습니다. | [App Service 및 Azure Functions의 Key Vault 참조 사용(미리 보기)](app-service-key-vault-references.md)
 | 열 수준 암호화(Azure Data Services)| 해당 없음 | |
-| 전송 중 암호화 (예: Express 경로 암호화, VNet 암호화 및 VNet-VNet 암호화)| 예 | 고객은 인바운드 트래픽에 대해 HTTPS를 요구 하 고 사용 하도록 웹 사이트를 구성할 수 있습니다.  | [AZURE APP SERVICE HTTPS만 만드는 방법](https://blogs.msdn.microsoft.com/benjaminperkins/2017/11/30/how-to-make-an-azure-app-service-https-only/) (블로그 게시물)
+| 전송 중 암호화 (예: Express 경로 암호화, VNet 암호화 및 VNet-VNet 암호화)| 예 | 고객은 인바운드 트래픽에 대해 HTTPS를 요구 하 고 사용 하도록 웹 사이트를 구성할 수 있습니다.  | [AZURE APP SERVICE HTTPS만 만드는 방법](/archive/blogs/benjaminperkins/how-to-make-an-azure-app-service-https-only) (블로그 게시물)
 | API 호출 암호화| 예 | App Service를 구성 하는 관리 호출은 HTTPS를 통한 [Azure Resource Manager](../azure-resource-manager/index.yml) 호출을 통해 수행 됩니다. |
 
 ## <a name="configuration-management"></a>구성 관리

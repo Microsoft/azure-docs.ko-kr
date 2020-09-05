@@ -4,15 +4,16 @@ description: 이 문서는 어떤 예약을 구매할지 결정하는 데 도움
 author: bandersmsft
 ms.reviewer: yashar
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: how-to
 ms.date: 08/04/2020
 ms.author: banders
-ms.openlocfilehash: 909d712e0c8e8ea242c27ab93f16a36e22d36aae
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: d89f890d3e2bb8238a00b4a529b8804a8c38fa6f
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87759899"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684748"
 ---
 # <a name="determine-what-reservation-to-purchase"></a>구매할 예약 결정
 
@@ -38,7 +39,7 @@ Azure Databricks를 제외한 모든 예약은 매시간 적용됩니다. 일관
 
 하루 사용량이 24시간 미만인 리소스를 무시합니다.
 
-인스턴스 크기 패밀리 수준에서 분석하려면 [https://isfratio.blob.core.windows.net/isfratio/ISFRatio.csv](https://isfratio.blob.core.windows.net/isfratio/ISFRatio.csv)에서 인스턴스 크기 유연성 값을 가져올 수 있습니다. 값과 데이터를 결합하여 분석을 수행합니다. 인스턴스 크기 유연성에 대한 자세한 내용은 [예약 VM 인스턴스에서 가상 머신 크기 유연성](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
+인스턴스 크기 패밀리 수준에서 분석하려면 [https://isfratio.blob.core.windows.net/isfratio/ISFRatio.csv](https://isfratio.blob.core.windows.net/isfratio/ISFRatio.csv)에서 인스턴스 크기 유연성 값을 가져올 수 있습니다. 값과 데이터를 결합하여 분석을 수행합니다. 인스턴스 크기 유연성에 대한 자세한 내용은 [예약 VM 인스턴스에서 가상 머신 크기 유연성](../../virtual-machines/reserved-vm-instance-size-flexibility.md)을 참조하세요.
 
 ### <a name="analyze-usage-for-an-azure-synapse-analytics-reserved-instance-purchase"></a>Azure Synapse Analytics 예약 인스턴스 구매 사용량 분석
 

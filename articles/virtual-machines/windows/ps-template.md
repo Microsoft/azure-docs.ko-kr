@@ -7,16 +7,20 @@ ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d0d3e6836e2f87c503ac5154a54aeb0dd1c0e26
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: ddd8166dd29d2210fecdd72d5be446df47a6c5df
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87266302"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89072301"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Resource Manager 템플릿을 사용하여 Windows 가상 머신 만들기
 
 Azure Resource Manager 템플릿을 사용 하 여 Windows 가상 머신을 만드는 방법과 Azure Cloud shell에서 Azure PowerShell 하는 방법을 알아봅니다. 이 문서에 사용 된 템플릿은 단일 서브넷을 사용 하는 새 가상 네트워크에서 Windows Server를 실행 하는 단일 가상 머신을 배포 합니다. Linux 가상 머신을 만드는 방법에 대 한 자세한 내용은 [Azure Resource Manager 템플릿을 사용 하 여 linux 가상 머신을 만드는 방법](../linux/create-ssh-secured-vm-from-template.md)을 참조 하세요.
+
+대신 Azure Portal에서 템플릿을 배포할 수 있습니다. 포털에서 템플릿을 열려면 **Azure에 배포** 단추를 선택 합니다.
+
+[![Azure에 배포](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json)
 
 ## <a name="create-a-virtual-machine"></a>가상 머신 만들기
 

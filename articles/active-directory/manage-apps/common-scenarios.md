@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b81e792d3b3bf491b281e09c00f48a7ad56fa47
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: 8ce3819ff1f9b0c61f7738f90ff17c2798fe888b
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84763638"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642115"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Azure AD를 사용하여 애플리케이션 관리 중앙 집중화
 
@@ -43,7 +43,7 @@ ms.locfileid: "84763638"
 |기능  | Description | 권장 |
 |---------|---------|---------|
 |SSO|신뢰할 수 있는 산업 표준을 사용하는 표준 기반 페더레이션 SSO입니다.|애플리케이션에서 [SAML/OIDC](https://docs.microsoft.com/azure/active-directory/manage-apps/isv-choose-multi-tenant-federation)를 지원하는 경우 항상 SAML/OIDC를 사용하여 SSO를 설정합니다.|
-|액세스 패널|사용자에게 모든 애플리케이션을 검색 및 액세스할 수 있는 간단한 허브를 제공합니다. 앱 및 그룹에 대한 액세스를 요청하거나 다른 사용자를 대신하여 리소스에 대한 액세스를 관리하는 등의 셀프 서비스 기능을 통해 사용자 생산성을 높일 수 있습니다.| 앱을 SSO용 Azure AD와 통합한 후에는 조직에 [액세스 패널](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-deployment-plan)을 배포합니다.|
+|내 앱|사용자에게 모든 애플리케이션을 검색 및 액세스할 수 있는 간단한 허브를 제공합니다. 앱 및 그룹에 대한 액세스를 요청하거나 다른 사용자를 대신하여 리소스에 대한 액세스를 관리하는 등의 셀프 서비스 기능을 통해 사용자 생산성을 높일 수 있습니다.| 앱을 SSO용 Azure AD와 통합한 후에는 조직에 [내 앱](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-deployment-plan)을 배포합니다.|
 
 ## <a name="scenario-2-automate-provisioning-and-deprovisioning"></a>시나리오 2: 프로비저닝 및 프로비저닝 해제 자동화 
 

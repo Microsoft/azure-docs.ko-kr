@@ -68,6 +68,8 @@
           href: cdn-restrict-access-by-country.md
         - name: 파일을 압축하여 성능 향상
           href: cdn-improve-performance.md
+        - name: 엔드포인트 다중 원본
+          href: endpoint-multiorigin.md
         - name: 캐싱 동작 제어
           items:
             - name: 캐싱 규칙을 사용하여 캐싱 동작 제어
@@ -86,7 +88,7 @@
           items:
             - name: Azure 웹 콘텐츠
               href: cdn-manage-expiration-of-cloud-service-content.md
-            - name: Azure Blob 스토리지
+            - name: Azure Blob Storage
               href: cdn-manage-expiration-of-blob-content.md
         - name: 토큰 인증
           href: cdn-token-auth.md

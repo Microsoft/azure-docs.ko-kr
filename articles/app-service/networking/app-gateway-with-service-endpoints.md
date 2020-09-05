@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/09/2019
 ms.author: madsd
 ms.custom: seodec18
-ms.openlocfilehash: 2bedd8d9ab0b879886042de3dc2fcff7f7b36f2f
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: fdb502685259a5e12bf0182c36aa6c73ec7c1dd5
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080935"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958936"
 ---
 # <a name="application-gateway-integration-with-service-endpoints"></a>서비스 끝점과 Application Gateway 통합
 Azure 애플리케이션 게이트웨이와의 통합에 대해 약간 다른 구성이 필요한 App Service에는 세 가지 변형이 있습니다. 이러한 변형에는 일반 App Service, ILB (내부 Load Balancer) App Service Environment ASE () 및 외부 ASE 라고도 합니다. 이 문서에서는 App Service (다중 테 넌 트)를 사용 하 여 구성 하 고 ILB 및 외부 ASE에 대 한 고려 사항을 설명 하는 방법을 안내 합니다.
@@ -84,6 +84,6 @@ az webapp config access-restriction add --resource-group myRG --name myWebApp --
 ```
 
 ## <a name="next-steps"></a>다음 단계
-App Service Environment에 대 한 자세한 내용은 [App Service Environment 설명서](https://docs.microsoft.com/azure/app-service/environment)를 참조 하세요.
+App Service Environment에 대 한 자세한 내용은 [App Service Environment 설명서](/azure/app-service/environment)를 참조 하세요.
 
 웹 앱을 더욱 안전 하 게 보호 하기 위해 Application Gateway의 웹 응용 프로그램 방화벽에 대 한 정보는 [Azure 웹 응용 프로그램 방화벽 설명서](../../web-application-firewall/ag/ag-overview.md)에서 찾을 수 있습니다.

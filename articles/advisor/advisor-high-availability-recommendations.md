@@ -3,31 +3,16 @@ title: Advisor를 사용 하 여 응용 프로그램의 안정성 향상
 description: Azure Advisor를 사용 하 여 업무상 중요 한 Azure 배포에서 안정성을 보장 하 고 향상 시킵니다.
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 1eba688a67a8684cdbb6846b389f83e61b349abe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0d96974e53f24d5a01eeee8b08eee578177a9ad2
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057678"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258492"
 ---
 # <a name="improve-the-reliability-of-your-application-by-using-azure-advisor"></a>Azure Advisor를 사용 하 여 응용 프로그램의 안정성 향상
 
 Azure Advisor는 업무상 중요한 애플리케이션의 연속성을 보장하고 향상시키는 데 도움이 됩니다. Advisor 대시보드의 **안정성** 탭에서 advisor의 안정성 권장 사항을 확인할 수 있습니다.
-
-## <a name="ensure-virtual-machine-fault-tolerance"></a>가상 머신 내결함성 보장
-
-응용 프로그램에 중복성을 제공 하려면 가용성 집합에서 두 개 이상의 가상 머신을 그룹화 하는 것이 좋습니다. Advisor는 가용성 집합에 속하지 않는 가상 머신을 식별 하 고이를 하나로 이동 하는 것을 권장 합니다. 이 구성은 계획 된 유지 관리 또는 계획 되지 않은 유지 관리 중에 하나 이상의 가상 머신을 사용할 수 있고 Azure virtual machine SLA를 충족 하도록 보장 합니다. 가상 머신에 대한 가용성 집합을 만들거나 기존 가용성 집합에 가상 머신을 추가할 수도 있습니다.
-
-> [!NOTE]
-> 가용성 집합을 만들도록 선택 하는 경우 가상 머신을 하나 이상 추가 해야 합니다. 중단 시간 동안 하나 이상의 컴퓨터를 사용할 수 있도록 하기 위해 가용성 집합에 둘 이상의 가상 머신을 그룹화하는 것이 좋습니다.
-
-## <a name="ensure-availability-set-fault-tolerance"></a>가용성 집합 내결함성 보장
-
-응용 프로그램에 중복성을 제공 하려면 가용성 집합에서 두 개 이상의 가상 머신을 그룹화 하는 것이 좋습니다. Advisor는 단일 가상 머신을 포함하는 가용성 집합을 식별하고 여기에 하나 이상의 가상 머신을 추가할 것을 권장합니다.이 구성은 계획 된 유지 관리 또는 계획 되지 않은 유지 관리 중에 하나 이상의 가상 머신을 사용할 수 있고 Azure virtual machine SLA를 충족 하도록 보장 합니다.가상 머신을 만들거나 기존 가상 머신을 가용성 집합에 추가할 수 있습니다.  
-
-## <a name="use-managed-disks-to-improve-data-reliability"></a>관리 디스크를 사용 하 여 데이터 안정성 향상
-
-저장소 계정 또는 저장소 크기 조정 단위를 공유 하는 디스크를 사용 하는 가용성 집합에 있는 가상 컴퓨터는 작동 중단 시 단일 저장소 크기 조정 단위로 복원 되지 않습니다. Advisor는 이러한 가용성 집합을 식별 하 고 Azure managed disks로의 마이그레이션을 권장 합니다. 이 마이그레이션은 가용성 집합에 있는 가상 머신의 디스크가 단일 실패 지점을 방지 하기 위해 충분히 격리 되도록 합니다. 
 
 ## <a name="check-the-version-of-your-check-point-network-virtual-appliance-image"></a>Check Point 네트워크 가상 어플라이언스 이미지의 버전 확인
 
@@ -73,6 +58,21 @@ Azure Advisor는 기본 SKU를 사용 하는 VPN gateway를 확인 하 고 대�
 - 활성-활성 구성 옵션입니다. 
 - 사용자 지정 Ipsec/IKE 정책. 
 - 더 높은 안정성 및 가용성.
+
+## <a name="ensure-virtual-machine-fault-tolerance-temporarily-disabled"></a>가상 머신 내결함성 확인 (일시적으로 사용 안 함)
+
+응용 프로그램에 중복성을 제공 하려면 가용성 집합에서 두 개 이상의 가상 머신을 그룹화 하는 것이 좋습니다. Advisor는 가용성 집합에 속하지 않는 가상 머신을 식별 하 고이를 하나로 이동 하는 것을 권장 합니다. 이 구성은 계획 된 유지 관리 또는 계획 되지 않은 유지 관리 중에 하나 이상의 가상 머신을 사용할 수 있고 Azure virtual machine SLA를 충족 하도록 보장 합니다. 가상 머신에 대한 가용성 집합을 만들거나 기존 가용성 집합에 가상 머신을 추가할 수도 있습니다.
+
+> [!NOTE]
+> 가용성 집합을 만들도록 선택 하는 경우 가상 머신을 하나 이상 추가 해야 합니다. 중단 시간 동안 하나 이상의 컴퓨터를 사용할 수 있도록 하기 위해 가용성 집합에 둘 이상의 가상 머신을 그룹화하는 것이 좋습니다.
+
+## <a name="ensure-availability-set-fault-tolerance-temporarily-disabled"></a>가용성 집합 내결함성 보장 (일시적으로 사용 안 함)
+
+응용 프로그램에 중복성을 제공 하려면 가용성 집합에서 두 개 이상의 가상 머신을 그룹화 하는 것이 좋습니다. Advisor는 단일 가상 머신을 포함하는 가용성 집합을 식별하고 여기에 하나 이상의 가상 머신을 추가할 것을 권장합니다.이 구성은 계획 된 유지 관리 또는 계획 되지 않은 유지 관리 중에 하나 이상의 가상 머신을 사용할 수 있고 Azure virtual machine SLA를 충족 하도록 보장 합니다.가상 머신을 만들거나 기존 가상 머신을 가용성 집합에 추가할 수 있습니다.  
+
+## <a name="use-managed-disks-to-improve-data-reliability-temporarily-disabled"></a>관리 디스크를 사용 하 여 데이터 안정성 향상 (일시적으로 사용 안 함)
+
+저장소 계정 또는 저장소 크기 조정 단위를 공유 하는 디스크를 사용 하는 가용성 집합에 있는 가상 컴퓨터는 작동 중단 시 단일 저장소 크기 조정 단위로 복원 되지 않습니다. Advisor는 이러한 가용성 집합을 식별 하 고 Azure managed disks로의 마이그레이션을 권장 합니다. 이 마이그레이션은 가용성 집합에 있는 가상 머신의 디스크가 단일 실패 지점을 방지 하기 위해 충분히 격리 되도록 합니다. 
 
 ## <a name="repair-invalid-log-alert-rules"></a>잘못 된 로그 경고 규칙 복구
 

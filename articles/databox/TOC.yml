@@ -11,7 +11,11 @@
           expanded: true
           items:
             - name: 설정 - Azure Portal
-              href: data-box-quickstart-portal.md
+              items:
+                - name: 가져오기의 경우
+                  href: data-box-quickstart-portal.md
+                - name: 내보내기의 경우
+                  href: data-box-quickstart-export.md
         - name: 자습서
           items:
             - name: Azure로 데이터 가져오기

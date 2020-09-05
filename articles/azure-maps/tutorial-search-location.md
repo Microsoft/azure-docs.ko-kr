@@ -1,6 +1,6 @@
 ---
 title: '자습서: 맵에서 주변 위치 검색 | Microsoft Azure Maps'
-description: 이 자습서에서는 Microsoft Azure Maps를 사용하여 맵에서 관심 지점을 검색하는 방법을 알아봅니다.
+description: 지도에서 관심 지점을 검색하는 방법을 알아봅니다. Azure Maps Web SDK를 사용하여 검색 기능 및 대화형 팝업 상자를 맵에 추가하는 방법을 참조하세요.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 1/15/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 4e16c4e88d749f6dbc4f6271a7ceaf77661a208c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 8dc430febb25283ab5bd32496bb2f71ba19c895b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281534"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035861"
 ---
 # <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>자습서: Azure Maps를 사용하여 주변 관심 지점 검색
 
@@ -173,7 +173,7 @@ Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리]
 
 ### <a name="service-module"></a>서비스 모듈
 
-1. 맵 `ready` 이벤트 처리기에서 다음 Javascript 코드를 추가하여 검색 서비스 URL을 구성합니다.
+1. 맵 `ready` 이벤트 처리기에서 다음 JavaScript 코드를 추가하여 검색 서비스 URL을 구성합니다.
 
     ```JavaScript
    // Use SubscriptionKeyCredential with a subscription key

@@ -14,12 +14,12 @@ ms.subservice: pim
 ms.date: 11/08/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1c9255de6b9f449a89a994cb3286139daa28ea9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24b7845ec66a85e6ced4f1df9caec409a94016bf
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034102"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782603"
 ---
 # <a name="use-azure-custom-roles-in-privileged-identity-management"></a>Privileged Identity Management에서 Azure 사용자 지정 역할 사용
 
@@ -31,7 +31,7 @@ Azure Active Directory (Azure AD) 조직에서 권한 있는 역할의 일부 �
 
 ## <a name="create-the-custom-role"></a>사용자 지정 역할 만들기
 
-리소스에 대 한 사용자 지정 역할을 만들려면 [Azure 사용자 지정 역할](../role-based-access-control-custom-roles.md)에 설명 된 단계를 수행 합니다.
+리소스에 대 한 사용자 지정 역할을 만들려면 [Azure 사용자 지정 역할](../../role-based-access-control/custom-roles.md)에 설명 된 단계를 수행 합니다.
 
 사용자 지정 역할을 만들 때 복제하려는 기본 제공 역할을 쉽게 기억할 수 있도록 설명이 포함된 이름을 사용합니다.
 

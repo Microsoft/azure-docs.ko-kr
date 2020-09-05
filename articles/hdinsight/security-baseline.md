@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: bbc421baddf03068ac72907aaa88a71a81d208d0
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 7315ef68b3562a28ee2515077c1e7d2f23c3803f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86041322"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230435"
 ---
 # <a name="azure-security-baseline-for-hdinsight"></a>HDInsight 용 Azure 보안 기준
 
@@ -32,9 +32,9 @@ HDInsight 용 Azure 보안 기준에는 배포의 보안 상태를 개선 하는
 
 Exfiltration을 통해 데이터 손실 위험을 줄이려면 Azure 방화벽을 사용 하 여 Azure HDInsight 클러스터에 대 한 아웃 바운드 네트워크 트래픽을 제한 합니다.
 
-Virtual Network 내에 Azure HDInsight를 배포 하 고 네트워크 보안 그룹을 사용 하 여 보안을 설정 하는 방법:https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
+Virtual Network 내에 Azure HDInsight를 배포 하 고 네트워크 보안 그룹을 사용 하 여 보안을 설정 하는 방법: https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
 
-Azure 방화벽을 사용 하 여 Azure HDInsight 클러스터에 대 한 아웃 바운드 트래픽을 제한 하는 방법:https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
+Azure 방화벽을 사용 하 여 Azure HDInsight 클러스터에 대 한 아웃 바운드 트래픽을 제한 하는 방법: https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
 
 **Azure Security Center 모니터링**: 예
 
@@ -108,11 +108,11 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 Exfiltration을 통해 데이터 손실 위험을 줄이려면 Azure 방화벽을 사용 하 여 Azure HDInsight 클러스터에 대 한 아웃 바운드 네트워크 트래픽을 제한 합니다.
 
-Virtual Network 내에서 HDInsight를 배포 하 고 네트워크 보안 그룹을 사용 하 여 보안을 설정 하는 방법:https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
+Virtual Network 내에서 HDInsight를 배포 하 고 네트워크 보안 그룹을 사용 하 여 보안을 설정 하는 방법: https://docs.microsoft.com/azure/hdinsight/hdinsight-create-virtual-network
 
-HDInsight 종속성 및 방화벽 사용 이해:https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
+HDInsight 종속성 및 방화벽 사용 이해: https://docs.microsoft.com/azure/hdinsight/hdinsight-restrict-outbound-traffic
 
-HDInsight 관리 IP 주소:https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses
+HDInsight 관리 IP 주소: https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -432,7 +432,7 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7: 관리 계정의 의심스러운 활동에 대한 로그 및 경고
 
@@ -602,7 +602,7 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide#encryptio
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: 활성 검색 도구를 사용하여 중요한 데이터 식별
 
@@ -636,7 +636,7 @@ https://docs.microsoft.com/azure/hdinsight/domain-joined/hdinsight-security-over
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7: 호스트 기반 데이터 손실 방지를 사용하여 액세스 제어 적용
 
@@ -848,7 +848,7 @@ Azure Graph를 사용하여 쿼리를 만드는 방법: https://docs.microsoft.c
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: 컴퓨팅 리소스 내에서 승인되지 않은 소프트웨어 애플리케이션 모니터링
 
@@ -1290,11 +1290,11 @@ https://docs.microsoft.com/azure/security-center/workflow-automation
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
-Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 Microsoft의 전략 및 실행에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 Microsoft의 전략 및 실행에 대 한 자세한 내용은 다음에서 확인할 수 있습니다. https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ## <a name="next-steps"></a>다음 단계
 

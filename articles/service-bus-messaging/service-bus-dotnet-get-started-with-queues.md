@@ -4,12 +4,13 @@ description: 이 자습서에서는 Service Bus 큐에 메시지를 보내고 �
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: 477d9d5a23e50d9b303d560b5530cbc22104c5cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: cff2b8a8a0f6aefad43737aeb6fe63d40facac05
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85337546"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021666"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Service Bus 큐 시작
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -382,7 +383,7 @@ namespace CoreReceiverApp
 
 ![메시지를 받은 후 큐][queue-message-receive]
 
-지금까지 이제 큐를 만들고, 큐에 메시지 집합을 보내고, 동일한 큐에서 해당 메시지를 수신 했습니다.
+축하합니다! 이제 큐를 만들고, 큐에 메시지 집합을 보내고, 동일한 큐에서 해당 메시지를 수신 했습니다.
 
 > [!NOTE]
 > [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/)로 Service Bus 리소스를 관리할 수 있습니다. 사용자는 Service Bus 탐색기를 사용 하 여 Service Bus 네임 스페이스에 쉽게 연결 하 고 메시징 엔터티를 관리할 수 있습니다. 이 도구는 가져오기/내보내기 기능 또는 토픽, 큐, 구독, 릴레이 서비스, notification hubs 및 event hubs를 테스트 하는 기능과 같은 고급 기능을 제공 합니다.

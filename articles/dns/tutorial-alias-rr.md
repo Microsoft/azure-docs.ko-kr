@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: 2b122a34cfd382a58f7680743d3a1cb1ae598fd1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "76939260"
 ---
 # <a name="tutorial-create-an-alias-record-to-refer-to-a-zone-resource-record"></a>자습서: 영역 리소스 레코드를 참조하는 별칭 레코드 만들기
@@ -58,7 +58,7 @@ Azure DNS에서 도메인을 호스트하는 방법에 대한 지침은 [자습�
 ## <a name="test-the-alias-record"></a>별칭 레코드 테스트
 
 1. 즐겨찾는 nslookup 도구를 시작합니다. 한 가지 방법은 [https://network-tools.com/nslook](https://network-tools.com/nslook)으로 이동하는 것입니다.
-2. A 레코드에 대한 쿼리 유형을 설정하고 **테스트\< 도메인 이름\>** 을 조회합니다. **10.10.10.10**이라는 응답이 반환됩니다.
+2. A 레코드에 대한 쿼리 유형을 설정하고 **test.\<your domain name\>** 을 찾습니다. **10.10.10.10**이라는 응답이 반환됩니다.
 3. Azure Portal에서 **서버** A 레코드를 **10.11.11.11**로 변경합니다.
 4. 몇 분 정도 기다린 다음, **테스트** 레코드에 대해 nslookup을 다시 사용합니다. **10.11.11.11**이라는 응답이 반환됩니다.
 

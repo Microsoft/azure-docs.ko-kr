@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: 0337abedbc5b592a0ae48fabd5bc7ecbb484def9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 73044f35b90fd3e5996899fd7c3b0a925056f8ed
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132792"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836879"
 ---
 # <a name="whats-new-in-qna-maker"></a>QnA Maker의 새로운 기능
 
@@ -35,7 +35,7 @@ QnA Maker의 새로운 기능에 대해 알아봅니다.
 
 ### <a name="may-2020"></a>2020년 5월
 
-* [RBAC(역할 기반 액세스 제어)](concepts/role-based-access-control.md)
+* [Azure RBAC(Azure 역할 기반 액세스 제어)](concepts/role-based-access-control.md)
 * 답변에 대한 [서식 있는 텍스트 편집](how-to/edit-knowledge-base.md#rich-text-editing-for-answer)
 
 ### <a name="march-2020"></a>2020년 3월

@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 959adec9f74a8cda7fde941ccea7db75e981a650
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 0f33b5a28d7c83be7e546c3f61bc517047c51312
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201553"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934857"
 ---
 # <a name="odata-filter-syntax-in-azure-cognitive-search"></a>Azure Cognitive Search의 OData $filter 구문
 
@@ -75,7 +75,7 @@ variable ::= identifier | field_path
 
 하위 식 주위에 괄호를 사용 하지 않고 필터 식을 작성 하는 경우 Azure Cognitive Search는 연산자 우선 순위 규칙 집합에 따라 계산 합니다. 이러한 규칙은 하위 식을 결합 하는 데 사용 되는 연산자를 기반으로 합니다. 다음 표에서는 연산자 그룹을 최고 우선 순위부터 최하위 순서로 나열 합니다.
 
-| 그룹 | 연산자 |
+| 그룹화 | 연산자 |
 | --- | --- |
 | 논리 연산자 | `not` |
 | 비교 연산자 | `eq`, `ne`, `gt`, `lt`, `ge`, `le` |
@@ -116,7 +116,7 @@ Azure Cognitive Search에 보낼 수 있는 필터 식의 크기 및 복잡성�
 > [!TIP]
 > 함수 호출이 단일 절로 계산 되기 때문에 같음 비교의 긴 분해 대신 [ `search.in` 함수를](search-query-odata-search-in-function.md) 사용 하면 필터 절 제한을 피할 수 있습니다.
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 4 이상 등급의 기본 요금이 $200 미만인 모든 호텔을 찾습니다.
 
@@ -178,7 +178,7 @@ Azure Cognitive Search에 보낼 수 있는 필터 식의 크기 및 복잡성�
     $filter=geo.distance(Location, geography'POINT(-122.131577 47.678581)') le 10
 ```
 
-지정 된 뷰포트 내에서 polygon로 설명 된 모든 호텔을 찾습니다 `Location` . 여기서은 GeographyPoint 형식의 필드입니다. 다각형이 닫혀 있어야 합니다. 즉, 첫 번째 및 마지막 점 집합이 동일 해야 합니다. 또한 [지점은 반시계 방향으로 나열](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1)되어야 합니다.
+지정 된 뷰포트 내에서 polygon로 설명 된 모든 호텔을 찾습니다 `Location` . 여기서은 GeographyPoint 형식의 필드입니다. 다각형이 닫혀 있어야 합니다. 즉, 첫 번째 및 마지막 점 집합이 동일 해야 합니다. 또한 [지점은 반시계 방향으로 나열](/rest/api/searchservice/supported-data-types#Anchor_1)되어야 합니다.
 
 ```odata-filter-expr
     $filter=geo.intersects(Location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))')
@@ -214,7 +214,7 @@ Azure Cognitive Search에 보낼 수 있는 필터 식의 크기 및 복잡성�
     $filter=Rooms/any(room: room/Tags/any(tag: search.in(tag, 'heated towel racks,hairdryer included', ','))
 ```
 
-"waterfront" 단어를 포함하는 문서를 찾습니다. 이 필터 쿼리는 `search=waterfront`를 사용한 [검색 요청](https://docs.microsoft.com/rest/api/searchservice/search-documents)과 동일합니다.
+"waterfront" 단어를 포함하는 문서를 찾습니다. 이 필터 쿼리는 `search=waterfront`를 사용한 [검색 요청](/rest/api/searchservice/search-documents)과 동일합니다.
 
 ```odata-filter-expr
     $filter=search.ismatchscoring('waterfront')
@@ -249,4 +249,4 @@ Azure Cognitive Search에 보낼 수 있는 필터 식의 크기 및 복잡성�
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

@@ -3,7 +3,7 @@ title: Azure AD 인증 시작
 description: Azure AD(Azure Active Directory) 인증에 액세스하여 Azure Media Services API를 사용하는 방법을 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 05/21/2020
-ms.author: juliako
-ms.openlocfilehash: a039e1d4442490d3747a302754d521f1f3402bcf
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 00808c25ac84da852cce6169fb210767ee2b56cf
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035807"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265884"
 ---
-# <a name="get-credentials-to-access-media-services-api"></a>Media Services API에 액세스할 수 있는 자격 증명 가져오기  
+# <a name="get-credentials-to-access-media-services-api"></a>Media Services API에 액세스할 수 있는 자격 증명 가져오기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure AD 인증을 사용하여 Azure Media Services API에 액세스할 때 두 가지 인증 옵션이 제공됩니다.
 
@@ -38,9 +40,9 @@ Azure AD 인증을 사용하여 Azure Media Services API에 액세스할 때 두
 - Azure 계정. 계정이 없는 경우 [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)으로 시작하세요. 
 - Media Services 계정. 자세한 내용은 [Azure Portal을 사용하여 Azure Media Services 계정 만들기](create-account-howto.md)를 참조하세요.
 
-## <a name="use-the-azure-portal"></a>Azure Portal 사용
+## <a name="portal"></a>[포털](#tab/portal/)
 
-### <a name="api-access"></a>API 액세스 
+### <a name="api-access"></a>API 액세스
 
 **API 액세스** 페이지에서 API에 연결하는 데 사용할 인증 방법을 선택할 수 있습니다. 또한 이 페이지는 API에 연결하는 데 필요한 값을 제공합니다.
 
@@ -70,7 +72,7 @@ Azure AD 테넌트로 애플리케이션을 등록하고 애플리케이션을 A
 
 자격 증명을 복사하여 **Media Services API에 연결** 섹션에서 사용자 애플리케이션을 연결합니다. 텍스트 값을 가져오거나 JSON 또는 XML 블록을 복사할 수 있습니다.
 
-[!INCLUDE [media-services-cli-instructions](../../../includes/media-services-cli-instructions.md)]
+## <a name="cli"></a>[CLI](#tab/cli/)
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 

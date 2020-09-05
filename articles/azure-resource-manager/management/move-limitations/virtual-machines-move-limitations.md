@@ -2,13 +2,13 @@
 title: 새 구독 또는 리소스 그룹으로 Azure Vm 이동
 description: Azure Resource Manager를 사용 하 여 가상 컴퓨터를 새 리소스 그룹 또는 구독으로 이동할 수 있습니다.
 ms.topic: conceptual
-ms.date: 07/21/2020
-ms.openlocfilehash: e812f2cee44fc48dccbd8ab66a3343e087790803
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.openlocfilehash: 3878113f6874c40953bec87518a89519bdc6cb1a
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87063095"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230962"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>가상 컴퓨터에 대 한 이동 지침
 
@@ -18,7 +18,6 @@ ms.locfileid: "87063095"
 
 다음 시나리오는 아직 지원되지 않습니다.
 
-* 가용성 영역 Managed Disks은 다른 구독으로 이동할 수 없습니다.
 * 표준 SKU Load Balancer 또는 표준 SKU 공용 IP를 사용 하는 Virtual Machine Scale Sets는 이동할 수 없습니다.
 * 요금제가 연결 된 Marketplace 리소스에서 만든 가상 머신은 구독 간에 이동할 수 없습니다. 현재 구독에서 가상 컴퓨터의 프로 비전을 해제 하 고 새 구독에 다시 배포 합니다.
 * 가상 네트워크의 모든 리소스를 이동 하지 않는 경우 기존 가상 네트워크의 가상 컴퓨터를 새 구독으로 이동할 수 없습니다.
@@ -49,7 +48,7 @@ Azure Backup를 사용 하 여 구성 된 가상 컴퓨터를 이동 하려면 �
 2. Azure Backup로 구성 된 가상 컴퓨터를 이동 하려면 다음 단계를 수행 합니다.
 
    1. 가상 컴퓨터의 위치를 찾습니다.
-   2. 다음 명명 패턴을 사용 하 여 리소스 그룹을 `AzureBackupRG_<location of your VM>_1` 찾습니다. 예를 들어 *AzureBackupRG_westus2_1*
+   2. 다음 명명 패턴을 사용 하 여 리소스 그룹을 `AzureBackupRG_<VM location>_1` 찾습니다. 예를 들어 이름은 *AzureBackupRG_westus2_1*형식입니다.
    3. Azure Portal에서 **숨겨진 형식 표시**를 선택 합니다.
    4. 이름 지정 패턴이 있는 **restorePointCollections/** 형식의 리소스를 찾습니다 `AzureBackup_<name of your VM that you're trying to move>_###########` .
    5. 이 리소스를 삭제합니다. 이 작업은 자격 증명 모음의 백업된 데이터가 아니라 인스턴트 복구 지점만 삭제합니다.
@@ -60,19 +59,41 @@ Azure Backup를 사용 하 여 구성 된 가상 컴퓨터를 이동 하려면 �
 
 ### <a name="powershell"></a>PowerShell
 
-* 가상 머신의 위치를 찾습니다.
-* 명명 패턴이 `AzureBackupRG_<location of your VM>_1`인 리소스 그룹을 찾습니다(예: AzureBackupRG_westus2_1).
-* PowerShell에서 작업하는 경우에는 `Get-AzResource -ResourceGroupName AzureBackupRG_<location of your VM>_1` cmdlet을 사용합니다.
-* 종류가 `Microsoft.Compute/restorePointCollections`이고 명명 패턴이 `AzureBackup_<name of your VM that you're trying to move>_###########`인 리소스를 찾습니다.
-* 이 리소스를 삭제합니다. 이 작업은 자격 증명 모음의 백업된 데이터가 아니라 인스턴트 복구 지점만 삭제합니다.
+1. 가상 컴퓨터의 위치를 찾습니다.
+
+1. 이름 지정 패턴이 포함 된 리소스 그룹을 찾습니다 `AzureBackupRG_<VM location>_1` . 예를 들어 이름은 일 수 있습니다 `AzureBackupRG_westus2_1` .
+
+1. 다음 명령을 사용 하 여 복원 지점 컬렉션을 가져옵니다.
+
+   ```azurepowershell
+   $RestorePointCollection = Get-AzResource -ResourceGroupName AzureBackupRG_<VM location>_1 -ResourceType Microsoft.Compute/restorePointCollections
+   ```
+
+1. 이 리소스를 삭제합니다. 이 작업은 자격 증명 모음의 백업된 데이터가 아니라 인스턴트 복구 지점만 삭제합니다.
+
+   ```azurepowershell
+   Remove-AzResource -ResourceId $RestorePointCollection.ResourceId -Force
+   ```
 
 ### <a name="azure-cli"></a>Azure CLI
 
-* 가상 머신의 위치를 찾습니다.
-* 명명 패턴이 `AzureBackupRG_<location of your VM>_1`인 리소스 그룹을 찾습니다(예: AzureBackupRG_westus2_1).
-* CLI에서 작업하는 경우에는 `az resource list -g AzureBackupRG_<location of your VM>_1`을 사용합니다.
-* 종류가 `Microsoft.Compute/restorePointCollections`이고 명명 패턴이 `AzureBackup_<name of your VM that you're trying to move>_###########`인 리소스를 찾습니다.
-* 이 리소스를 삭제합니다. 이 작업은 자격 증명 모음의 백업된 데이터가 아니라 인스턴트 복구 지점만 삭제합니다.
+1. 가상 컴퓨터의 위치를 찾습니다.
+
+1. 이름 지정 패턴이 포함 된 리소스 그룹을 찾습니다 `AzureBackupRG_<VM location>_1` . 예를 들어 이름은 일 수 있습니다 `AzureBackupRG_westus2_1` .
+
+1. 다음 명령을 사용 하 여 복원 지점 컬렉션을 가져옵니다.
+
+   ```azurecli
+   az resource list -g AzureBackupRG_<VM location>_1 --resource-type Microsoft.Compute/restorePointCollections
+   ```
+
+1. 명명 패턴을 사용 하 여 리소스에 대 한 리소스 ID를 찾습니다. `AzureBackup_<VM name>_###########`
+
+1. 이 리소스를 삭제합니다. 이 작업은 자격 증명 모음의 백업된 데이터가 아니라 인스턴트 복구 지점만 삭제합니다.
+
+   ```azurecli
+   az resource delete --ids /subscriptions/<sub-id>/resourceGroups/<resource-group>/providers/Microsoft.Compute/restorePointCollections/<name>
+   ```
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -1,18 +1,18 @@
 ---
 title: Connected Machine Windows 에이전트 개요
-description: 이 문서에서는 하이브리드 환경에서 호스트 되는 가상 컴퓨터를 모니터링 하는 데 사용할 수 있는 Azure Arc for servers (미리 보기) 에이전트에 대 한 자세한 개요를 제공 합니다.
+description: 이 문서에서는 하이브리드 환경에서 호스트 되는 가상 컴퓨터의 모니터링을 지 원하는 Azure Arc 사용 가능 서버 (미리 보기) 에이전트의 자세한 개요를 제공 합니다.
 ms.date: 08/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8e8abfcc3c6ec7b7893563c67dc6bb82ccdda850
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: d922652537034bef258c5bcde78fb178b092ed16
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121836"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212974"
 ---
-# <a name="overview-of-azure-arc-for-servers-preview-agent"></a>서버 (미리 보기) 에이전트의 Azure Arc 개요
+# <a name="overview-of-azure-arc-enabled-servers-preview-agent"></a>Azure Arc 사용 서버 (미리 보기) 에이전트 개요
 
-서버 (미리 보기)에 연결 된 컴퓨터 에이전트를 사용 하 여 회사 네트워크 또는 다른 클라우드 공급자의 Azure 외부에서 호스트 되는 Windows 및 Linux 컴퓨터를 관리할 수 있습니다. 이 문서에서는 에이전트, 시스템 및 네트워크 요구 사항과 다양한 배포 모델을 상세히 살펴봅니다.
+Azure Arc 사용 서버 (미리 보기)에 연결 된 컴퓨터 에이전트를 사용 하면 회사 네트워크 또는 다른 클라우드 공급자의 Azure 외부에서 호스트 되는 Windows 및 Linux 컴퓨터를 관리할 수 있습니다. 이 문서에서는 에이전트, 시스템 및 네트워크 요구 사항과 다양한 배포 모델을 상세히 살펴봅니다.
 
 ## <a name="agent-component-details"></a>에이전트 구성 요소 세부 정보
 
@@ -65,7 +65,7 @@ Azure Connected Machine 에이전트를 공식적으로 지원하는 Windows 및
 
 ### <a name="azure-subscription-and-service-limits"></a>Azure 구독 및 서비스 한도
 
-서버 (미리 보기) 용 Azure Arc를 사용 하 여 컴퓨터를 구성 하기 전에 Azure Resource Manager [구독 제한](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) 및 [리소스 그룹 제한](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) 을 검토 하 여 연결할 컴퓨터 수를 계획 합니다.
+Azure Arc 사용 서버 (미리 보기)를 사용 하 여 컴퓨터를 구성 하기 전에 Azure Resource Manager [구독 제한](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) 및 [리소스 그룹 제한](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits) 을 검토 하 여 연결할 컴퓨터 수를 계획 합니다.
 
 ### <a name="transport-layer-security-12-protocol"></a>전송 계층 보안 1.2 프로토콜
 
@@ -105,7 +105,7 @@ URL:
 
 ### <a name="register-azure-resource-providers"></a>Azure 리소스 공급자 등록
 
-서버용 Azure Arc(미리 보기)는 이 서비스를 사용하기 위해 구독의 다음 Azure 리소스 공급자를 사용합니다.
+Azure Arc 사용 서버 (미리 보기)는이 서비스를 사용 하기 위해 구독의 다음 Azure 리소스 공급자에 종속 됩니다.
 
 * **Microsoft.HybridCompute**
 * **Microsoft.GuestConfiguration**
@@ -248,4 +248,4 @@ Linux용 Connected Machine 에이전트를 설치하면 다음과 같은 추가 
 
 ## <a name="next-steps"></a>다음 단계
 
-서버용 Azure Arc(미리 보기)를 평가하려면 [Azure Portal에서 Azure에 하이브리드 머신 연결](onboard-portal.md) 문서를 따릅니다.
+Azure Arc 사용 서버 (미리 보기) 평가를 시작 하려면 [Azure Portal에서 azure에 하이브리드 컴퓨터 연결](onboard-portal.md)문서를 따르세요.

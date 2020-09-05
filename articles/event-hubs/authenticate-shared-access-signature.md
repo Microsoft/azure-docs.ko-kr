@@ -3,13 +3,13 @@ title: 공유 액세스 서명을 사용 하 여 Azure Event Hubs에 대 한 액
 description: 이 문서에서는 공유 액세스 서명을 사용 하 여 Event Hubs 리소스에 대 한 액세스를 인증 하는 방법을 보여 줍니다.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 5397cd746f33fc82ee63cc7d2a1f396ba704f334
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: bf1f42020237c0907ec7656735adfa46a21370f9
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423102"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008321"
 ---
 # <a name="authenticate-access-to-event-hubs-resources-using-shared-access-signatures-sas"></a>SAS (공유 액세스 서명)를 사용 하 여 Event Hubs 리소스에 대 한 액세스 인증
 공유 액세스 서명 (SAS)은 공유 액세스 서명을 보유 한 클라이언트에 부여 하는 액세스 유형에 대 한 세부적인 제어를 제공 합니다. 다음은 SAS에서 설정할 수 있는 몇 가지 컨트롤입니다. 
@@ -44,10 +44,10 @@ SendRuleNS 권한 부여 규칙을 사용 하는 경우 클라이언트 응용 �
 ## <a name="generate-a-shared-access-signature-token"></a>공유 액세스 서명 토큰 생성 
 권한 부여 규칙 이름에 대한 액세스 권한이 있는 모든 클라이언트 및 해당 서명 키 중 하나는 SAS 토큰을 생성할 수 있습니다. 토큰은 다음 형식으로 문자열을 선별하여 생성됩니다.
 
-- `se`– 토큰 만료 인스턴트. 토큰이 만료 되 면 1 월 1970 (UNIX epoch) 1 월 1 일에 epoch 00:00:00 UTC 이후 초를 반영 하는 정수
-- `skn`– 인증 규칙의 이름이 며,이는 SAS 키 이름입니다.
-- `sr`– 액세스 되는 리소스의 URI입니다.
-- `sig`서명과.
+- `se`  – 토큰 만료 인스턴트. 토큰이 만료 되 면 1 월 1970 (UNIX epoch) 1 월 1 일에 epoch 00:00:00 UTC 이후 초를 반영 하는 정수
+- `skn` – 인증 규칙의 이름이 며,이는 SAS 키 이름입니다.
+- `sr` – 액세스 되는 리소스의 URI입니다.
+- `sig` 서명과.
 
 서명 문자열은 리소스 URI (이전 섹션에서 설명 하는 범위)에 대해 계산 된 SHA-256 해시와 토큰 만료 인스턴트의 문자열 표현을 CRLF로 구분 하 여 계산 합니다.
 

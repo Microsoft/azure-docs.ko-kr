@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b80cd2e40e54837682e72837cf0d1a9058f3a7fc
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 6c062b907f1e8a8e0541db0d69c6e24901f3145f
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428380"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268556"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>자습서: 하이브리드 Azure Active Directory 조인 디바이스를 수동으로 구성
 
@@ -39,7 +39,7 @@ Azure AD(Active Directory)의 디바이스 관리를 사용하면 보안 및 규
 
 이 자습서에서는 사용자가 다음 항목에 대해 잘 알고 있다고 가정합니다.
 
-* [Azure Active Directory의 디바이스 관리 소개](../device-management-introduction.md)
+* [Azure Active Directory의 디바이스 관리 소개](./overview.md)
 * [하이브리드 Azure Active Directory 조인 구현 계획](hybrid-azuread-join-plan.md)
 * [디바이스의 하이브리드 Azure AD 조인 제어](hybrid-azuread-join-control.md)
 
@@ -94,7 +94,7 @@ Windows 10 1803부터는 페더레이션된 도메인에서 AD FS를 사용한 �
 
 사용자의 디바이스는 등록 중에 SCP(서비스 연결점) 개체를 사용하여 Azure AD 테넌트 정보를 검색합니다. 온-프레미스 Active Directory 인스턴스에서, 하이브리드 Azure AD 조인 디바이스에 대한 SCP 개체는 컴퓨터 포리스트의 구성 명명 컨텍스트 파티션에 있어야 합니다. 포리스트당 하나의 구성 명명 컨텍스트가 있습니다. 다중 포리스트 Active Directory 구성에서는 도메인 가입 컴퓨터를 포함한 모든 포리스트에 서비스 연결점이 있어야 합니다.
 
-[**Get-ADRootDSE**](https://technet.microsoft.com/library/ee617246.aspx) cmdlet을 사용하여 포리스트의 구성 명명 컨텍스트를 검색할 수 있습니다.  
+[**Get-ADRootDSE**](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617246(v=technet.10)) cmdlet을 사용하여 포리스트의 구성 명명 컨텍스트를 검색할 수 있습니다.  
 
 Active Directory 도메인 이름이 *fabrikam.com*인 포리스트의 경우 구성 명명 컨텍스트는 다음과 같습니다.
 
@@ -167,7 +167,7 @@ Windows Server 2008 이하 버전을 실행하는 도메인 컨트롤러의 경�
 
 이전 스크립트에서 `$verifiedDomain = "contoso.com"`은 자리 표시자입니다. 이 자리 표시자를 Azure AD의 확인된 도메인 이름 중 하나로 바꿉니다. 도메인을 사용하려면 먼저 도메인을 소유해야 합니다.
 
-확인된 도메인 이름에 대한 자세한 내용은 [Azure Active Directory에 사용자 지정 도메인 이름 추가](../active-directory-domains-add-azure-portal.md)를 참조하세요.
+확인된 도메인 이름에 대한 자세한 내용은 [Azure Active Directory에 사용자 지정 도메인 이름 추가](../fundamentals/add-custom-domain.md)를 참조하세요.
 
 확인된 회사 도메인 목록을 보려면 the [Get-AzureADDomain](/powershell/module/Azuread/Get-AzureADDomain?view=azureadps-2.0) cmdlet을 사용합니다.
 
@@ -326,7 +326,7 @@ ImmutableID 클레임(예: `mS-DS-ConsistencyGuid` 또는 다른 특성을 Immut
 
 이전 클레임에서 `<verified-domain-name>`은 자리 표시자입니다. 이 자리 표시자를 Azure AD의 확인된 도메인 이름 중 하나로 바꿉니다. 예를 들면 `Value = "http://contoso.com/adfs/services/trust/"`를 사용합니다.
 
-확인된 도메인 이름에 대한 자세한 내용은 [Azure Active Directory에 사용자 지정 도메인 이름 추가](../active-directory-domains-add-azure-portal.md)를 참조하세요.  
+확인된 도메인 이름에 대한 자세한 내용은 [Azure Active Directory에 사용자 지정 도메인 이름 추가](../fundamentals/add-custom-domain.md)를 참조하세요.  
 
 확인된 회사 도메인 목록을 보려면 the [Get-MsolDomain](/powershell/module/msonline/get-msoldomain?view=azureadps-1.0) cmdlet을 사용합니다.
 
@@ -614,7 +614,7 @@ Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -e
 
 도메인 조인 Windows 디바이스에 대한 하이브리드 Azure AD 조인을 완료하는 데 문제가 발생하는 경우 다음을 참조하세요.
 
-- [dsregcmd 명령을 사용하여 디바이스 문제 해결](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
+- [dsregcmd 명령을 사용하여 디바이스 문제 해결](./troubleshoot-device-dsregcmd.md)
 - [하이브리드 Azure Active Directory 조인 디바이스 문제 해결](troubleshoot-hybrid-join-windows-current.md)
 - [하위 수준 디바이스에 조인된 하이브리드 Azure Active Directory 문제 해결](troubleshoot-hybrid-join-windows-legacy.md)
 

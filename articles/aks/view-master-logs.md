@@ -4,12 +4,12 @@ description: AKS(Azure Kubernetes Service)에서 Kubernetes 마스터 노드에 
 services: container-service
 ms.topic: article
 ms.date: 01/03/2019
-ms.openlocfilehash: 76ded781d4eae48db04f54a4f88a80cc700d0ad9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 721ef4f60d263602b01b5957bfb9bc3b5682a2df
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250739"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048281"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 Kubernetes 마스터 노드 로그 활성화 및 검토
 
@@ -30,12 +30,8 @@ Azure Monitor 로그는 Azure Portal에서 사용 하도록 설정 되 고 관�
 1. AKS 클러스터를 선택 하 고 (예: *myAKSCluster*) **진단 설정을 추가**하도록 선택 합니다.
 1. *myAKSClusterLogs*와 같은 이름을 입력한 후 **Log Analytics에 보내기** 옵션을 선택합니다.
 1. 기존 작업 영역을 선택 하거나 새 작업 영역을 만듭니다. 작업 영역을 만드는 경우 작업 영역 이름, 리소스 그룹 및 위치를 제공 합니다.
-1. 사용 가능한 로그 목록에서 사용하도록 설정하려는 로그를 선택합니다. 일반적인 로그에는 *kube 서버*, *kube*및 *kube*가 포함 됩니다. *kube-audit* 및 *cluster-autoscaler*와 같은 추가 로그를 사용하도록 설정할 수 있습니다. Log Analytics 작업 영역이 사용하도록 설정되면 수집된 로그를 반환하고 변경할 수 있습니다.
+1. 사용 가능한 로그 목록에서 사용하도록 설정하려는 로그를 선택합니다. 이 예에서는 *kube* 로그를 사용 하도록 설정 합니다. 일반적인 로그에는 *kube 서버*, *kube*및 *kube*가 포함 됩니다. Log Analytics 작업 영역이 사용하도록 설정되면 수집된 로그를 반환하고 변경할 수 있습니다.
 1. 준비되면 **저장**을 선택하여 선택된 로그의 수집을 사용하도록 설정합니다.
-
-다음 예제 포털 스크린샷은 *진단 설정* 창을 보여 줍니다.
-
-![AKS 클러스터의 Azure Monitor 로그에 대해 Log Analytics 작업 영역을 사용하도록 설정](media/view-master-logs/enable-oms-log-analytics.png)
 
 ## <a name="schedule-a-test-pod-on-the-aks-cluster"></a>AKS 클러스터의 테스트 Pod 예약
 
@@ -71,30 +67,25 @@ pod/nginx created
 
 ## <a name="view-collected-logs"></a>수집된 로그 보기
 
-진단 로그를 사용하도록 설정하고 Log Analytics 작업 영역에 표시되기까지 몇 분 정도 걸릴 수 있습니다. Azure Portal에서 *Myresourcegroup*과 같은 Log Analytics 작업 영역에 대 한 리소스 그룹을 선택 하 고 *myAKSLogs*와 같은 Log Analytics 리소스를 선택 합니다.
+진단 로그를 사용 하도록 설정 하 고 표시 하는 데 몇 분 정도 걸릴 수 있습니다. Azure Portal에서 AKS 클러스터로 이동 하 고 왼쪽에 있는 **로그** 를 선택 합니다. *예제 쿼리* 창이 나타나면 닫습니다.
 
-![AKS 클러스터의 Log Analytics 작업 영역 선택](media/view-master-logs/select-log-analytics-workspace.png)
 
-왼쪽에서 **로그**를 선택합니다. *kube-apiserver*를 보려면 텍스트 상자에 다음 쿼리를 입력합니다.
-
-```
-AzureDiagnostics
-| where Category == "kube-apiserver"
-| project log_s
-```
-
-API 서버에 대한 많은 로그가 반환됩니다. 쿼리 범위를 좁혀서 이전 단계에서 만든 NGINX Pod에 대한 로그만 보려면 다음 쿼리 예제에 표시된 것처럼 *pods/nginx*를 검색하는 *where* 문을 추가합니다.
+왼쪽에서 **로그**를 선택합니다. *Kube-감사* 로그를 보려면 텍스트 상자에 다음 쿼리를 입력 합니다.
 
 ```
 AzureDiagnostics
-| where Category == "kube-apiserver"
-| where log_s contains "pods/nginx"
+| where Category == "kube-audit"
 | project log_s
 ```
 
-다음 예제 스크린샷에 표시된 것처럼 NGINX Pod에 대한 자세한 로그가 표시됩니다.
+많은 로그가 반환 될 가능성이 높습니다. 이전 단계에서 만든 NGINX pod에 대 한 로그를 볼 수 있도록 쿼리 범위를 좁히려면 다음 예제 쿼리와 같이 *NGINX* 를 검색 하는 또 다른 *where* 문을 추가 합니다.
 
-![샘플 NGINX Pod에 대한 Log Analytics 쿼리 결과](media/view-master-logs/log-analytics-query-results.png)
+```
+AzureDiagnostics
+| where Category == "kube-audit"
+| where log_s contains "nginx"
+| project log_s
+```
 
 추가 로그를 보려면 사용하도록 설정할 추가 로그에 따라 쿼리에서 *Category* 이름을 *kube-controller-manager* 또는 *kube-scheduler*로 업데이트하면 됩니다. 이때 검색하려는 이벤트를 구체화하기 위해 추가적인 *where* 문을 사용할 수 있습니다.
 
@@ -117,7 +108,7 @@ AzureDiagnostics
 
 ## <a name="log-roles"></a>로그 역할
 
-| 역할                     | 설명 |
+| 역할                     | Description |
 |--------------------------|-------------|
 | *aksService*             | HcpService의 제어 평면 작업에 대 한 감사 로그의 표시 이름입니다. |
 | *masterclient*           | MasterClientCertificate에 대 한 감사 로그의 표시 이름, az aks get 자격 증명에서 가져온 인증서 |

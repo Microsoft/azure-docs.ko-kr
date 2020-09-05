@@ -2,26 +2,21 @@
 title: '자습서: ZPA(Zscaler Private Access)와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 ZPA(Zscaler Private Access) 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: CelesteDG
 ms.reviewer: celested
-ms.assetid: 83711115-1c4f-4dd7-907b-3da24b37c89e
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/23/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07607d6695d1010e5a704ed05608e9ea2587a64b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8c7347aabb3aa6f122ea82a46ad8a09f53e271bf
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87016159"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545690"
 ---
 # <a name="tutorial-integrate-zscaler-private-access-zpa-with-azure-active-directory"></a>자습서: ZPA(Zscaler Private Access)와 Azure Active Directory 통합
 

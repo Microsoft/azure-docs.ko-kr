@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 08a1d655d19b5e7deb81e42ca5bebdfe4f18aeef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85ce79644ead939eaeffa5cfffeb495da15e7fe5
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84297907"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270668"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: FAQ(질문과 대답)
 
@@ -134,7 +134,7 @@ Azure AD B2C는 SharePoint 외부 파트너 공유 시나리오에 해당하지 
 
 Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 
-새로운 통합 **앱 등록** 환경 또는 레거시 **응용 프로그램 (레거시)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregtraining).
+새로운 통합 **앱 등록** 환경 또는 레거시  **응용 프로그램 (레거시)** 환경을 사용할 수 있습니다. [새 환경에 대해 자세히 알아보세요](https://aka.ms/b2cappregtraining).
 
 #### <a name="app-registrations"></a>[앱 등록](#tab/app-reg-ga/)
 
@@ -145,7 +145,7 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. **앱 등록**를 선택 하 고 **모든 응용 프로그램** 탭을 선택 합니다.
 1. 등록 한 모든 응용 프로그램을 삭제 합니다.
 1. **B2c 앱**을 삭제 합니다.
-1. **관리** 아래에서 **사용자**를 선택합니다.
+1. **관리**에서 **사용자**를 선택합니다.
 1. 각 사용자를 차례로 선택 합니다 (현재 로그인 한 *구독 관리자* 사용자 제외). 페이지 맨 아래에서 **삭제** 를 선택 하 고 메시지가 표시 되 면 **예** 를 선택 합니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
 1. **관리**에서 **사용자 설정**을 선택 합니다.
@@ -154,7 +154,7 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. **Azure 리소스에 대한 액세스 관리**에서 **예**를 클릭한 후 **저장**을 클릭합니다.
 1. Azure Portal에서 로그 아웃 한 후 다시 로그인 하 여 액세스를 새로 고칩니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
-1. **개요** 페이지에서 **디렉터리 삭제**를 선택 합니다. 화면의 지시에 따라 프로세스를 완료 합니다.
+1. **개요** 페이지에서 **테 넌 트 삭제**를 선택 합니다. 화면의 지시에 따라 프로세스를 완료 합니다.
 
 #### <a name="applications-legacy"></a>[애플리케이션(레거시)](#tab/applications-legacy/)
 
@@ -164,7 +164,7 @@ Azure AD B2C 테 넌 트를 삭제 하려면 다음 단계를 수행 합니다.
 1. Azure AD B2C 테 넌 트에서 모든 **사용자 흐름 (정책)** 을 삭제 합니다.
 1. Azure AD B2C 테 넌 트에 등록 한 모든 **응용 프로그램 (레거시)** 을 삭제 합니다.
 1. 왼쪽 메뉴에서 **Azure Active Directory** 를 선택 합니다.
-1. **관리** 아래에서 **사용자**를 선택합니다.
+1. **관리**에서 **사용자**를 선택합니다.
 1. 각 사용자를 차례로 선택 합니다 (현재 로그인 한 *구독 관리자* 사용자 제외). 페이지 맨 아래에서 **삭제** 를 선택 하 고 메시지가 표시 되 면 **예** 를 선택 합니다.
 1. **관리** 아래에서 **앱 등록**을 선택합니다.
 1. **모든 응용 프로그램 보기** 선택

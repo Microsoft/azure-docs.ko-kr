@@ -10,25 +10,25 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: aahi
-ms.openlocfilehash: 40906c97dc088687bbd960fecc91921a3eb888a6
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: ee742f09f3fcc1bd283efbc346fea6a040e53f48
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83589978"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548534"
 ---
 # <a name="install-and-run-anomaly-detector-containers-preview"></a>변칙 탐지기 컨테이너 설치 및 실행 (미리 보기)
 
-변칙 탐지기에는 다음과 같은 컨테이너 기능 기능이 있습니다.
+Anomaly Detector에는 다음과 같은 컨테이너 기능이 있습니다.
 
 | 기능 | 기능 |
 |--|--|
-| Anomaly Detector | <li> 는 실시간으로 발생 하는 변칙을 검색 합니다. <li> 일괄 처리로 데이터 집합 전체에서 변칙을 검색 합니다. <li> 데이터의 정상적인 범위를 유추 합니다. <li> 데이터에 더 잘 맞도록 변칙 검색 민감도 조정을 지원 합니다. |
+| 변칙 감지기 | <li> 는 실시간으로 발생 하는 변칙을 검색 합니다. <li> 일괄 처리로 데이터 집합 전체에서 변칙을 검색 합니다. <li> 데이터의 정상적인 범위를 유추 합니다. <li> 데이터에 더 잘 맞도록 변칙 검색 민감도 조정을 지원 합니다. |
 
 Api에 대 한 자세한 내용은 다음을 참조 하세요.
 * [변칙 탐지기 API 서비스에 대 한 자세한 정보](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -37,7 +37,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 |필수|용도|
 |--|--|
 |Docker 엔진| [호스트 컴퓨터](#the-host-computer)에 설치된 Docker 엔진이 필요합니다. Docker는 [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) 및 [Linux](https://docs.docker.com/engine/installation/#supported-platforms)에 Docker 환경을 구성하는 패키지를 제공합니다. Docker 및 컨테이너에 대한 기본 사항은 [Docker 개요](https://docs.docker.com/engine/docker-overview/)를 참조하세요.<br><br> Docker는 컨테이너에서 Azure에 연결하여 청구 데이터를 보낼 수 있도록 구성해야 합니다. <br><br> **Windows**에서 Docker는 Linux 컨테이너를 지원하도록 구성해야 합니다.<br><br>|
-|Docker 사용 경험 | 기본 `docker`명령에 대한 지식뿐만 아니라 레지스트리, 리포지토리, 컨테이너 및 컨테이너 이미지와 같은 Docker 개념에 대해 기본적으로 이해해야 합니다.| 
+|Docker 사용 경험 | 기본 `docker`명령에 대한 지식뿐만 아니라 레지스트리, 리포지토리, 컨테이너 및 컨테이너 이미지와 같은 Docker 개념에 대해 기본적으로 이해해야 합니다.|
 |변칙 탐지기 리소스 |이러한 컨테이너를 사용하려면 다음이 있어야 합니다.<br><br>연결 된 API 키와 끝점 URI를 가져오는 Azure _변칙 탐지기_ 리소스입니다. 두 값은 모두 Azure Portal의 **변칙 탐지기** 개요 및 키 페이지에서 사용할 수 있으며 컨테이너를 시작 하는 데 필요 합니다.<br><br>**{API_KEY}**: **키** 페이지에서 사용 가능한 두 리소스 키 중 하나<br><br>**{ENDPOINT_URI}**: **개요** 페이지에 제공 된 끝점입니다.|
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
@@ -52,7 +52,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 다음 표에서는 변칙 탐지기 컨테이너에 할당 하는 데 필요한 최소 및 권장 CPU 코어 및 메모리를 설명 합니다.
 
-| QPS (초당 쿼리 수) | 최소값 | 권장 |
+| QPS (초당 쿼리 수) | 최소 | 권장 |
 |-----------|---------|-------------|
 | 10 QPS | 4 코어, 1gb 메모리 | 8 코어 2gb 메모리 |
 | 20 QPS | 8 코어, 2gb 메모리 | 16 코어 4gb 메모리 |
@@ -106,7 +106,7 @@ ApiKey={API_KEY}
 * 컨테이너 이미지에서 변칙 탐지기 컨테이너를 실행 합니다.
 * 1개 CPU 코어 및 4GB 메모리 할당
 * 5000 TCP 포트 표시 및 컨테이너에 의사-TTY 할당
-* 종료 후 자동으로 컨테이너를 제거합니다. 컨테이너 이미지는 호스트 컴퓨터에서 계속 사용할 수 있습니다. 
+* 종료 후 자동으로 컨테이너를 제거합니다. 컨테이너 이미지는 호스트 컴퓨터에서 계속 사용할 수 있습니다.
 
 > [!IMPORTANT]
 > 컨테이너를 인스턴스화하려면 `Eula`, `Billing` 및 `ApiKey` 옵션을 지정해야 합니다. 그렇지 않으면 컨테이너가 시작되지 않습니다.  자세한 내용은 [Billing](#billing)를 참조하세요.
@@ -115,11 +115,11 @@ ApiKey={API_KEY}
 
 노출된 포트로 여러 컨테이너를 실행하려는 경우, 각 컨테이너를 다른 포트로 실행해야 합니다. 예를 들어 첫 번째 컨테이너는 포트 5000에서 실행하고 두 번째 컨테이너는 포트 5001에서 실행합니다.
 
-`<container-registry>`와 `<container-name>`을 사용하는 컨테이너의 값으로 대체합니다. 동일한 컨테이너일 필요는 없습니다. 변칙 탐지기 컨테이너와 호스트에서 LUIS 컨테이너를 함께 실행 하거나 여러 변칙 탐지기 컨테이너를 실행할 수 있습니다. 
+`<container-registry>`와 `<container-name>`을 사용하는 컨테이너의 값으로 대체합니다. 동일한 컨테이너일 필요는 없습니다. 변칙 탐지기 컨테이너와 호스트에서 LUIS 컨테이너를 함께 실행 하거나 여러 변칙 탐지기 컨테이너를 실행할 수 있습니다.
 
-포트 5000에서 첫 번째 컨테이너를 실행합니다. 
+포트 5000에서 첫 번째 컨테이너를 실행합니다.
 
-```bash 
+```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
 <container-registry>/microsoft/<container-name> \
 Eula=accept \
@@ -130,7 +130,7 @@ ApiKey={API_KEY}
 포트 5001에서 두 번째 컨테이너를 실행합니다.
 
 
-```bash 
+```bash
 docker run --rm -it -p 5000:5001 --memory 4g --cpus 1 \
 <container-registry>/microsoft/<container-name> \
 Eula=accept \
@@ -138,13 +138,13 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-이후의 각 컨테이너는 다른 포트에 있어야 합니다. 
+이후의 각 컨테이너는 다른 포트에 있어야 합니다.
 
 ## <a name="query-the-containers-prediction-endpoint"></a>컨테이너의 예측 엔드포인트 쿼리
 
-컨테이너는 REST 기반 쿼리 예측 엔드포인트 API를 제공합니다. 
+컨테이너는 REST 기반 쿼리 예측 엔드포인트 API를 제공합니다.
 
-컨테이너 API에 대한 호스트, http://localhost:5000을 사용합니다.
+컨테이너 API에 대한 호스트 http://localhost:5000을 사용합니다.
 
 <!--  ## Validate container is running -->
 
@@ -160,9 +160,9 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Cognitive Services FAQ note](../containers/includes/cognitive-services-faq-note.md)]
 
-## <a name="billing"></a>청구
+## <a name="billing"></a>결제
 
-변칙 탐지기 컨테이너는 Azure 계정에서 _변칙 탐지기_ 리소스를 사용 하 여 azure로 청구 정보를 보냅니다. 
+변칙 탐지기 컨테이너는 Azure 계정에서 _변칙 탐지기_ 리소스를 사용 하 여 azure로 청구 정보를 보냅니다.
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

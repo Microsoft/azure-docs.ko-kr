@@ -7,13 +7,13 @@ ms.service: cosmos-db
 ms.devlang: javascript
 ms.topic: how-to
 ms.date: 12/26/2018
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 1fe5d2839650cef2d965d613d2b87459c770618c
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
-ms.translationtype: HT
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: f2168338031b8c5b81fd1998f71adf47dcadc44e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421963"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020714"
 ---
 # <a name="expire-data-with-azure-cosmos-dbs-api-for-mongodb"></a>Azure Cosmos DB의 API for MongoDB를 사용하여 데이터 만료
 

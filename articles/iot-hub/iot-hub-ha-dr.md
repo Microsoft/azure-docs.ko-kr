@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/17/2020
 ms.author: philmea
-ms.openlocfilehash: 84fa7ae50b69e7e1a2fe341e34497f2bf1a75b0d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: d4a5ad36e9d6d71ad88d0b5c56b6079f34483347
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260178"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021432"
 ---
 # <a name="iot-hub-high-availability-and-disaster-recovery"></a>IoT Hub 고가용성 및 재해 복구
 
@@ -57,12 +57,14 @@ IoT Hub 서비스는 거의 모든 서비스 계층에서 중복성을 구현하
 
 <sup>1</sup> 클라우드-장치 메시지 및 부모 작업은 수동 장애 조치 (failover)의 일부로 복구 되지 않습니다.
 
-IoT Hub에 대한 장애 조치(failover) 작업이 완료되면 해당 디바이스와 백엔드 애플리케이션의 모든 작업이 수동 개입 없이 계속 작동해야 합니다. 즉, 장치-클라우드 메시지는 계속 작동 하 고 전체 장치 레지스트리는 그대로 유지 되어야 합니다. Event Grid를 통해 내보낸 이벤트는 해당 Event Grid 구독을 계속 사용할 수 있는 한 이전에 구성 된 동일한 구독을 통해 사용 될 수 있습니다.
+IoT Hub에 대한 장애 조치(failover) 작업이 완료되면 해당 디바이스와 백엔드 애플리케이션의 모든 작업이 수동 개입 없이 계속 작동해야 합니다. 즉, 장치-클라우드 메시지는 계속 작동 하 고 전체 장치 레지스트리는 그대로 유지 되어야 합니다. Event Grid를 통해 내보낸 이벤트는 해당 Event Grid 구독을 계속 사용할 수 있는 한 이전에 구성 된 동일한 구독을 통해 사용 될 수 있습니다. 사용자 지정 끝점에 대 한 추가 처리는 필요 하지 않습니다.
 
 > [!CAUTION]
-> - 장애 조치(failover) 후에는 Event Hub 호환 이름 및 IoT Hub 기본 제공 이벤트 엔드포인트가 변경됩니다. 이벤트 허브 클라이언트 또는 이벤트 프로세서 호스트를 사용 하 여 기본 제공 끝점에서 원격 분석 메시지를 받을 때 [IoT Hub 연결 문자열을 사용](iot-hub-devguide-messages-read-builtin.md#read-from-the-built-in-endpoint) 하 여 연결을 설정 해야 합니다. 이를 통해 장애 조치(failover) 후에 수동 개입 없이 백엔드 애플리케이션이 계속 작동하게 됩니다. 응용 프로그램에서 직접 이벤트 허브 호환 이름 및 끝점을 사용 하는 경우 작업을 계속 하려면 장애 조치 (failover) 후 [새 Event hub 호환 끝점을 인출](iot-hub-devguide-messages-read-builtin.md#read-from-the-built-in-endpoint) 해야 합니다. Azure Functions 또는 Azure Stream Analytics를 사용 하 여 기본 제공 끝점을 연결 하는 경우 **다시 시작**을 수행 해야 할 수 있습니다.
+> - 장애 조치(failover) 후에는 Event Hub 호환 이름 및 IoT Hub 기본 제공 이벤트 엔드포인트가 변경됩니다. 이벤트 허브 클라이언트 또는 이벤트 프로세서 호스트를 사용 하 여 기본 제공 끝점에서 원격 분석 메시지를 받을 때 [IoT Hub 연결 문자열을 사용](iot-hub-devguide-messages-read-builtin.md#read-from-the-built-in-endpoint) 하 여 연결을 설정 해야 합니다. 이를 통해 장애 조치(failover) 후에 수동 개입 없이 백엔드 애플리케이션이 계속 작동하게 됩니다. 응용 프로그램에서 직접 이벤트 허브 호환 이름 및 끝점을 사용 하는 경우 작업을 계속 하려면 장애 조치 (failover) 후 [새 Event hub 호환 끝점을 인출](iot-hub-devguide-messages-read-builtin.md#read-from-the-built-in-endpoint) 해야 합니다. 
 >
-> - 저장소로 라우팅할 때 blob 또는 파일을 나열 하 고이를 반복 하 여 파티션을 가정 하지 않고 모든 blob 또는 파일을 읽을 수 있습니다. Microsoft에서 시작한 장애 조치 (failover) 또는 수동 장애 조치 (failover) 중에 파티션 범위가 변경 될 수 있습니다. [목록 BLOB api](https://docs.microsoft.com/rest/api/storageservices/list-blobs) 를 사용 하 여 파일 목록에 대 한 Blob 또는 [목록 ADLS Gen2 api](https://docs.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/list) 목록을 열거할 수 있습니다. 
+> - Azure Functions 또는 Azure Stream Analytics를 사용 하 여 기본 제공 이벤트 끝점을 연결 하는 경우 **다시 시작**을 수행 해야 할 수 있습니다. 이는 장애 조치 (failover) 중 이전 오프셋이 더 이상 유효 하지 않기 때문입니다.
+>
+> - 저장소로 라우팅할 때 blob 또는 파일을 나열 하 고이를 반복 하 여 파티션을 가정 하지 않고 모든 blob 또는 파일을 읽을 수 있습니다. Microsoft에서 시작한 장애 조치 (failover) 또는 수동 장애 조치 (failover) 중에 파티션 범위가 변경 될 수 있습니다. [목록 BLOB api](https://docs.microsoft.com/rest/api/storageservices/list-blobs) 를 사용 하 여 파일 목록에 대 한 Blob 또는 [목록 ADLS Gen2 api](https://docs.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/list) 목록을 열거할 수 있습니다. 자세한 내용은 [라우팅 끝점으로 Azure Storage](iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint)을 참조 하세요.
 
 ## <a name="microsoft-initiated-failover"></a>Microsoft 시작 장애 조치
 
@@ -140,4 +142,4 @@ IoT 솔루션으로 배포 토폴로지를 완벽하게 수행하는 것은 이 
 
 * [Azure IoT Hub란?](about-iot-hub.md)
 * [IoT Hub 시작(빠른 시작)](quickstart-send-telemetry-dotnet.md)
-* [자습서: IoT hub에 대 한 수동 장애 조치 (failover) 수행](tutorial-manual-failover.md)
+* [자습서: IoT Hub에 대해 수동 장애 조치(failover) 수행](tutorial-manual-failover.md)

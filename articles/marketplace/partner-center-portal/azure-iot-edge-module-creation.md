@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: a44e7835b90ca88460d2045a5494420c6d47921b
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: dc1e8bfa9b747b9933762af1b6a5b59cf8cd98de
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88032835"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815779"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>IoT Edge 모듈 제품 만들기
 
@@ -27,7 +27,7 @@ ms.locfileid: "88032835"
     ![왼쪽 탐색 메뉴를 보여 줍니다.](./media/new-offer-iot-edge.png)
 
 > [!IMPORTANT]
-> 제품을 게시한 후 파트너 센터에서 해당 제품에 대해 편집한 내용은 제품을 다시 게시해야 상점에 표시됩니다. 변경한 후에는 항상 다시 게시해야 합니다.
+> 제품을 게시 한 후에는 제품을 다시 게시 한 후에만 파트너 센터에서 해당 제품에 대 한 편집 내용이 온라인 매장에 표시 됩니다. 변경한 후에는 항상 다시 게시해야 합니다.
 
 ### <a name="offer-id-and-alias"></a>제품 ID 및 별칭
 
@@ -199,18 +199,19 @@ IoT Edge 모듈 제품에는 설명의 맨 아래에 다음과 같은 최소 하
 >[!Note]
 >파일을 업로드하는 동안 문제가 발생한 경우 로컬 네트워크가 파트너 센터에서 사용하는 https://upload.xboxlive.com 서비스를 차단하지 않는지 확인하세요.
 
-#### <a name="store-logos"></a>Store 로고
+#### <a name="store-logos"></a>스토어 로고
 
-다음 4가지 픽셀 크기로 각각 제품 로고의 PNG 파일을 제공합니다.
+**큰** 크기의 로고에 대 한 PNG 파일을 제공 합니다. 파트너 센터는이를 사용 하 여 **작고** **중간** 로고를 만듭니다. 필요에 따라 나중에 다른 이미지로 바꿀 수 있습니다.
 
-- **작음(48 x 48)**
-- **보통(90 x 90)**
-- **큼(216 x 216)**
-- **넓음(255 x 115)**
+- **큼** (216 x 216에서 350 x 350 px, required)
+- **중간** (90 x 90 px, 선택 사항)
+- **작음** (48 x 48 px, 선택 사항)
 
-4개의 로고가 모두 필요하며 Marketplace 목록의 서로 다른 위치에서 사용됩니다.
+이러한 로고는 목록의 다른 위치에서 사용 됩니다.
 
 [!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
+
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots-optional"></a>스크린샷(선택 사항)
 
@@ -233,9 +234,9 @@ Azure Marketplace에서 제공 정보를 표시 하는 방법의 예는 다음�
 3. 지원 주소 (링크)
 4. 사용 약관
 5. 개인 정보 취급 방침 주소 (링크)
-6. 속성
+6. Name
 7. 요약
-8. 설명
+8. Description
 9. 유용한 링크
 10. 스크린샷/비디오
 
@@ -255,8 +256,8 @@ Azure Marketplace에서 제공 정보를 표시 하는 방법의 예는 다음�
 
 #### <a name="call-out-descriptions"></a>호출 설명
 
-1. 속성
-2. 설명
+1. Name
+2. Description
 3. 유용한 링크
 4. 스크린샷
 
@@ -288,11 +289,13 @@ Azure 구독 ID GUID와 각각에 대한 선택적 설명과 함께 미리 보�
 
 다음 섹션인 계획 개요로 진행하기 전에 **초안 저장**을 선택합니다.
 
-### <a name="plan-overview"></a>계획 개요
+## <a name="plan-overview"></a>계획 개요
 
 이 탭에서 파트너 센터의 동일한 제품 내에서 다른 계획 옵션을 제공할 수 있습니다. 요금제 (이전의 Sku)는 글로벌 클라우드, 정부 클라우드 및 계획에서 참조 하는 이미지와 같은 사용 가능한 클라우드 측면에서 다를 수 있습니다. Marketplace에서 제품을 나열하려면 하나 이상의 계획을 설정해야 합니다.
 
-계획을 만든 후 **계획 개요** 탭에 다음과 같은 항목이 표시됩니다.
+각 제품에 대해 최대 100 요금제를 만들 수 있습니다. 최대 45 개는 개인 일 수 있습니다. [Microsoft 상업적 marketplace에서 비공개 제품](../private-offers.md)의 비공개 요금제에 대해 자세히 알아보세요.
+
+플랜을 만들면 **플랜 개요** 탭에 다음과 같은 항목이 표시됩니다.
 
 - 플랜 이름
 - 가격 책정 모델
@@ -305,7 +308,7 @@ Azure 구독 ID GUID와 각각에 대한 선택적 설명과 함께 미리 보�
 - **초안 삭제**: 계획 상태가 초안인 경우입니다.
 - **계획 판매 중지**: 계획 상태가 라이브로 게시되는 경우입니다.
 
-#### <a name="create-new-plan"></a>새 계획 만들기
+### <a name="create-new-plan"></a>새 계획 만들기
 
 **새 플랜 만들기**를 선택합니다. **새 플랜** 대화 상자가 표시됩니다.
 
@@ -337,7 +340,7 @@ IoT Edge 모듈 제공에 대 한 모든 계획은 **Azure Global**에서 자동
 
 Azure Government 서비스는 특정 정부 규정 및 요구 사항이 적용되는 데이터를 처리합니다. 예를 들어 FedRAMP, NIST 800.171(DIB), ITAR, IRS 1075, DoD L4 및 CJIS가 있습니다. 이러한 프로그램에 대한 인증을 알리려면 인증을 설명하는 최대 100개의 링크를 제공할 수 있습니다. 이러한 링크는 프로그램의 목록에 직접 연결하거나 자신의 웹 사이트에 연결할 수 있습니다. 이러한 링크는 Azure Government 고객만 볼 수 있습니다.
 
-## <a name="plan-listing"></a>계획 목록
+### <a name="plan-listing"></a>계획 목록
 
 이 탭에는 동일한 제품 내의 서로 다른 각 계획에 대한 특정 정보가 표시됩니다.
 
@@ -377,7 +380,7 @@ Azure Government 서비스는 특정 정부 규정 및 요구 사항이 적용�
 2. 플랜 이름
 3. 플랜 설명
 
-## <a name="availability"></a>가용성
+### <a name="availability"></a>가용성
 
 고객이 Marketplace에서 검색하거나 찾아보거나 구매할 수 없도록 게시된 제품을 숨기려면 가용성 탭에서 **계획 숨기기** 확인란을 선택합니다.
 

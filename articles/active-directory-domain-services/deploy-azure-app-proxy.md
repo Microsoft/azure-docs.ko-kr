@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 0880f697ceea9c10a070ede0a73235022ce0529d
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: f02f8c0c5aabc48e7b9966898028485a4687f413
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220292"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723081"
 ---
 # <a name="deploy-azure-ad-application-proxy-for-secure-access-to-internal-applications-in-an-azure-active-directory-domain-services-managed-domain"></a>Azure Active Directory Domain Services 관리 되는 도메인의 내부 응용 프로그램에 안전 하 게 액세스할 수 있도록 Azure AD 응용 프로그램 프록시 배포
 
@@ -113,7 +113,7 @@ Set-ADComputer appserver.aaddscontoso.com -PrincipalsAllowedToDelegateToAccount 
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure AD DS와 통합 된 Azure AD 응용 프로그램 프록시를 사용 하 여 사용자가 액세스할 수 있도록 응용 프로그램을 게시 합니다. 자세한 내용은 [Azure AD 응용 프로그램 프록시를 사용 하 여 응용 프로그램 게시](../active-directory/manage-apps/application-proxy-publish-azure-portal.md)를 참조 하세요.
+Azure AD DS와 통합 된 Azure AD 응용 프로그램 프록시를 사용 하 여 사용자가 액세스할 수 있도록 응용 프로그램을 게시 합니다. 자세한 내용은 [Azure AD 응용 프로그램 프록시를 사용 하 여 응용 프로그램 게시](../active-directory/manage-apps/application-proxy-add-on-premises-application.md)를 참조 하세요.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

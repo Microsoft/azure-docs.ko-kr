@@ -14,14 +14,17 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: sajagtap
-ms.openlocfilehash: 70d824522e1ae71bd49050779ff37e821d560783
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 395d2239970e7efbf6973d6262df0e049306584b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954709"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266700"
 ---
-# <a name="use-azure-media-content-moderator-to-detect-possible-adult-and-racy-content"></a>Azure Media Content Moderator를 사용하여 가능한 성인/외설 콘텐츠 검색 
+# <a name="use-azure-media-content-moderator-to-detect-possible-adult-and-racy-content"></a>Azure Media Content Moderator를 사용하여 가능한 성인/외설 콘텐츠 검색
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > **Azure 미디어 Content Moderator** 미디어 프로세서는 사용 중지 됩니다. 사용 중지 날짜는 [레거시 구성 요소](legacy-components.md) 항목을 참조 하세요.
@@ -47,14 +50,14 @@ JSON 형식의 조정된 출력에는 자동 검색된 스크린샷 및 키 프�
 
 ### <a name="root-json-elements"></a>루트 JSON 요소
 
-| 요소 | 설명 |
+| 요소 | Description |
 | --- | --- |
 | 버전 |Content Moderator 버전입니다. |
 | timescale |동영상의 초당 "틱"입니다. |
 | offset |타임스탬프의 시간 오프셋입니다. Video API 버전 1.0에서 이 값은 항상 0입니다. 이 값은 나중에 변경할 수 있습니다. |
 | framerate |동영상의 초당 프레임 수입니다. |
 | width |출력 비디오 프레임의 너비(픽셀)입니다.|
-| height |출력 비디오 프레임의 높이(픽셀)입니다.|
+| 키 |출력 비디오 프레임의 높이(픽셀)입니다.|
 | totalDuration |입력 비디오의 기간(“틱”)입니다. |
 | [부분](#fragments-json-elements) |메타데이터는 조각이라고 하는 다른 세그먼트로 청크 분할됩니다. 각 조각은 시작, 기간, 간격 번호 및 이벤트가 포함된 자동 검색된 스크린샷입니다. |
 
@@ -62,7 +65,7 @@ JSON 형식의 조정된 출력에는 자동 검색된 스크린샷 및 키 프�
 
 |요소|설명|
 |---|---|
-| start |“틱” 단위의 첫 이벤트 시작 시간입니다. |
+| 시작 |“틱” 단위의 첫 이벤트 시작 시간입니다. |
 | duration |"틱" 단위의 조각 길이입니다. |
 | interval |"틱" 단위의 조각 내 각 이벤트 항목 간격입니다. |
 | [events](#events-json-elements) |각 이벤트는 클립을 나타내고, 각 클립에는 해당 기간 내에 검색 및 추적된 키 프레임이 포함됩니다. 이벤트 배열입니다. 외부 배열은 하나의 시간 간격을 나타냅니다. 내부 배열은 해당 특정 시점에 발생한 0개 이상의 이벤트로 구성됩니다.|

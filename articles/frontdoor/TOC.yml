@@ -4,8 +4,6 @@
   items:
     - name: Azure Front Door란?
       href: front-door-overview.md
-    - name: Azure Front Door의 새로운 기능
-      href: front-door-whats-new.md
 - name: 빠른 시작
   expanded: true
   items:

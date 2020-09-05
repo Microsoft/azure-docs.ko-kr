@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: diviso
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/25/2020
 ms.custom: dpalled
-ms.openlocfilehash: 34cf770a8ac75c2516480ec3136e61da15f4e4ff
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 8d9b166d4ac9290a0389eac23f9d6882f667e1a0
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446637"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856096"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Azure Time Series Insights Gen2의 long 데이터 형식에 대 한 지원 추가
 
@@ -33,7 +33,7 @@ Long 데이터 형식에 대 한 지원 추가는 Azure Time Series Insights Gen
 
 모든 사례가 적용 되는 경우 모델을 변경 합니다. 변수 정의에서 TSX (시계열 식)를 권장 변경 내용으로 업데이트 합니다. 모두 업데이트:
 
-- Gen2 탐색기 Azure Time Series Insights
+- Azure Time Series Insights TSI 탐색기
 - Api를 사용 하는 모든 사용자 지정 클라이언트
 
 IoT 솔루션 및 제약 조건에 따라 Azure Time Series Insights Gen2 환경으로 전송 되는 데이터를 볼 수 없습니다. 데이터가 정수 계열 전용 이거나 정수 계열 및 비정 수 모두 인지 확실 하지 않은 경우 다음과 같은 몇 가지 옵션을 사용할 수 있습니다.
@@ -66,7 +66,7 @@ IoT Hub 사용 하는 경우 기본 제공 끝점에 액세스 하는 방법에 
 
 정수 데이터는 **propertyValue_long**에 기록 됩니다. 이전의 수집 (및 이후 수집) 숫자 데이터는 **propertyValue_double** 복사 되지 않습니다.
 
-이 두 열에서 **propertyValue** 속성에 대해 데이터를 쿼리하려면 TSX에서 **병합 ()** 스칼라 함수를 사용 해야 합니다. 함수는 동일한 **데이터** 형식의 인수를 허용 하 고 인수 목록에서 null이 아닌 첫 번째 값을 반환 합니다. 자세한 내용은 [Azure Time Series Insights Gen2 data access 개념](https://docs.microsoft.com/rest/api/time-series-insights/preview#other-functions)을 참조 하세요.
+이 두 열에서 **propertyValue** 속성에 대해 데이터를 쿼리하려면 TSX에서 **병합 ()** 스칼라 함수를 사용 해야 합니다. 함수는 동일한 **데이터** 형식의 인수를 허용 하 고 인수 목록에서 null이 아닌 첫 번째 값을 반환 합니다. 자세한 내용은 [Azure Time Series Insights Gen2 data access 개념](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#other-functions)을 참조 하세요.
 
 #### <a name="variable-definition-in-tsx---numeric"></a>TSX의 변수 정의-numeric
 
@@ -78,7 +78,7 @@ IoT Hub 사용 하는 경우 기본 제공 끝점에 액세스 하는 방법에 
 
 [![새 변수 정의](media/time-series-insights-long-data-type/var-def.png)](media/time-series-insights-long-data-type/var-def.png#lightbox)
 
-또한 사용자 지정 [시계열 식](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)으로 **병합 ($event toDouble ($event))** 을 사용할 수 있습니다.
+또한 사용자 지정 [시계열 식](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)으로 **병합 ($event toDouble ($event))** 을 사용할 수 있습니다.
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---numeric"></a>TSX 쿼리 Api를 사용 하 여 인라인 변수 정의-numeric
 
@@ -126,7 +126,7 @@ IoT Hub 사용 하는 경우 기본 제공 끝점에 액세스 하는 방법에 
 }
 ```
 
-또한 사용자 지정 [시계열 식](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)으로 **병합 ($event toDouble ($event))** 을 사용할 수 있습니다.
+또한 사용자 지정 [시계열 식](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)으로 **병합 ($event toDouble ($event))** 을 사용할 수 있습니다.
 
 > [!NOTE]
 > 사용할 수 있는 모든 위치에서 이러한 변수를 업데이트 하는 것이 좋습니다. 이러한 위치에는 시계열 모델, 저장 된 쿼리 및 Power BI 커넥터 쿼리가 포함 됩니다.
@@ -147,7 +147,7 @@ IoT Hub 사용 하는 경우 기본 제공 끝점에 액세스 하는 방법에 
 
 또한 사용자 지정 [시계열 식](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)으로 **병합 ($event toDouble ($event))** 을 사용할 수 있습니다.
 
-범주 변수에는 여전히 값이 정수 형식 이어야 합니다. **병합 ()** 의 모든 인수에 대 한 **데이터 형식은** 사용자 지정 시계열 식의 **Long** 형식 이어야 합니다 [.](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)
+범주 변수에는 여전히 값이 정수 형식 이어야 합니다. **병합 ()** 의 모든 인수에 대 한 **데이터 형식은** 사용자 지정 시계열 식의 **Long** 형식 이어야 합니다 [.](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)
 
 #### <a name="inline-variable-definition-using-tsx-query-apis---categorical"></a>TSX 쿼리 Api-범주를 사용 하 여 인라인 변수 정의
 
@@ -227,7 +227,7 @@ IoT Hub 사용 하는 경우 기본 제공 끝점에 액세스 하는 방법에 
 }
 ```
 
-범주 변수에는 여전히 값이 정수 형식 이어야 합니다. **병합 ()** 의 모든 인수에 대 한 **데이터 형식은** 사용자 지정 시계열 [식](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)의 **Long** 형식 이어야 합니다.
+범주 변수에는 여전히 값이 정수 형식 이어야 합니다. **병합 ()** 의 모든 인수에 대 한 **데이터 형식은** 사용자 지정 시계열 [식](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)의 **Long** 형식 이어야 합니다.
 
 > [!NOTE]
 > 사용할 수 있는 모든 위치에서 이러한 변수를 업데이트 하는 것이 좋습니다. 이러한 위치에는 시계열 모델, 저장 된 쿼리 및 Power BI 커넥터 쿼리가 포함 됩니다.

@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 RFPIO 구성 | Microsoft Docs'
 description: 사용자 계정을 RFPIO로 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 54419db4-47d5-4fb4-ab74-7b0b28afb11b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 6ae423305b39c1335b5db1cd893d5f817be1929b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 963f89c99d71afbebbe122e3c7d8b3227dc4a8be
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77060867"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518411"
 ---
 # <a name="tutorial-configure-rfpio-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 RFPIO 구성
 
@@ -94,7 +90,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위해 RFPIO를 구성 �
 
     ![새 애플리케이션 단추](common/add-new-app.png)
 
-4. 검색 상자에 **RFPIO**를 입력 하 고, 결과 패널에서 **RFPIO** 를 선택한 다음, **추가** 단추를 클릭 하 여 응용 프로그램을 추가 합니다.
+4. 검색 상자에 **RFPIO**를 입력 하 고, 결과 패널에서 **RFPIO** 를 선택한 다음,    **추가** 단추를 클릭 하 여 응용 프로그램을 추가 합니다.
 
     ![결과 목록의 RFPIO](common/search-new-app.png)
 

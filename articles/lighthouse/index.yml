@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Azure Lighthouse 설명서
-summary: Azure Lighthouse를 사용하면 서비스 공급자에서 고도의 자동화, 확장성 및 향상된 거버넌스를 통해 모든 고객의 Azure 리소스를 관리할 수 있습니다.
+summary: Azure Lighthouse는 교차 및 다중 테넌트 관리를 지원하여 리소스 및 테넌트 간에 더 높은 자동화, 확장성 및 향상된 거버넌스를 허용합니다.
 metadata:
   title: Azure Lighthouse 설명서
   description: Azure Lighthouse를 사용하면 서비스 공급자에서 고도의 자동화, 확장성 및 향상된 거버넌스를 통해 모든 고객의 Azure 리소스를 관리할 수 있습니다.
@@ -10,12 +10,12 @@ metadata:
   author: JnHs
   ms.author: jenhayes
   ms.date: 07/20/2020
-  ms.openlocfilehash: f30f07fd200a5ac14e9733e5def7541b197004b2
-  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+  ms.openlocfilehash: 40352965db20c12e589f52f76869032d1f5f1b10
+  ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/23/2020
-  ms.locfileid: "87072668"
+  ms.lasthandoff: 08/20/2020
+  ms.locfileid: "88659877"
 landingContent:
 - title: Azure Lighthouse
   linkLists:

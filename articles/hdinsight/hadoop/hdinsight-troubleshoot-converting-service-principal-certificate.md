@@ -7,18 +7,19 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/31/2019
-ms.openlocfilehash: d6119e4f8c651ba482a24f46b44ff15f870858ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7f4974d9e9a2ff3b63b36e45d406a016078bb290
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75894180"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008168"
 ---
 # <a name="converting-service-principal-certificate-contents-to-base-64-encoded-string-format-in-hdinsight"></a>HDInsight에서 서비스 사용자 인증서 콘텐츠를 base-64로 인코딩된 문자열 형식으로 변환
 
 이 문서에서는 Azure HDInsight 클러스터와 상호 작용할 때 문제에 대 한 문제 해결 단계 및 가능한 해결 방법을 설명 합니다.
 
-## <a name="issue"></a>문제점
+## <a name="issue"></a>문제
 
 입력이 기본이 아닌 64 문자, 두 개 이상의 패딩 문자 또는 패딩 문자 사이에 공백이 아닌 문자를 포함 하 고 있기 때문에 올바른 Base-64 문자열이 아닙니다. 라는 오류 메시지가 표시 됩니다.
 

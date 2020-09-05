@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: Azure Arc 서버(미리 보기)
+summary: Azure Arc 서버
+metadata:
+  title: Azure Arc 서버
+  description: Azure에서 온-프레미스 머신을 관리하는 방법에 대해 알아보기
+  author: mgoedtel
+  ms.service: azure-arc
+  ms.topic: landing-page
+  ms.date: 06/26/2020
+  ms.author: magoedte
+  ms.openlocfilehash: 9080f5bb770f5cb86284b5816c340a614843038c
+  ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88763816"
+landingContent:
+- title: Azure Arc 지원 서버를 사용하여 Azure에 머신 연결
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Arc 지원 서버란?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: Azure Portal에서 Azure Arc에 머신 연결
+      url: onboard-portal.md
+    - text: 서비스 주체를 사용하여 규모에 맞게 머신 연결
+      url: onboard-service-principal.md
+    - text: PowerShell DSC를 사용하여 Azure에 머신 연결
+      url: onboard-dsc.md

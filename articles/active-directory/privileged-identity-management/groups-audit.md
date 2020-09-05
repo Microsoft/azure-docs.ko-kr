@@ -14,12 +14,12 @@ ms.date: 07/27/2020
 ms.author: curtand
 ms.reviewer: shaunliu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9bbc90776ca007b84d5f67c50f8550ee9c881c7
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 94dd5c2579eb7ce96dea70c6354df8ec84125bd9
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87506044"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141672"
 ---
 # <a name="audit-activity-history-for-privileged-access-group-assignments-preview-in-privileged-identity-management"></a>Privileged Identity Management의 권한 있는 액세스 그룹 할당 (미리 보기)에 대 한 작업 기록 감사
 
@@ -36,7 +36,9 @@ PIM (Privileged Identity Management)을 사용 하 여 Azure Active Directory (A
 
 1. **Azure AD Privileged Identity Management**를 엽니다.
 
-1. **권한 있는 액세스 (미리 보기)** 를 선택 합니다.
+1. **권한 있는 액세스 그룹 (미리 보기)** 을 선택 합니다.
+
+1. 감사 기록을 보려는 권한 있는 액세스 그룹을 선택 합니다.
 
 1. **활동**에서 **리소스 감사**를 선택 합니다.
 
@@ -46,15 +48,15 @@ PIM (Privileged Identity Management)을 사용 하 여 Azure Active Directory (A
 
 ## <a name="view-my-audit"></a>내 감사 보기
 
-내 감사를 통해 자신의 개인 역할 작업을 볼 수 있습니다.
+**내 감사** 를 사용 하 여 권한 있는 액세스 그룹에 대 한 개인 역할 활동을 볼 수 있습니다.
 
 1. **Azure AD Privileged Identity Management**를 엽니다.
 
-1. **권한 있는 액세스 (미리 보기)** 를 선택 합니다.
+1. **권한 있는 액세스 그룹 (미리 보기)** 을 선택 합니다.
 
-1. 감사 기록을 보려는 구성원 또는 그룹을 선택 합니다.
+1. 감사 기록을 보려는 권한 있는 액세스 그룹을 선택 합니다.
 
-1. **내 감사**를 선택 합니다.
+1. **활동**에서 **내 감사**를 선택 합니다.
 
 1. 미리 정의된 날짜 또는 사용자 지정 범위를 사용하여 기록을 필터링합니다.
 

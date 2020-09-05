@@ -3,12 +3,12 @@ title: Azure Migrate Server 평가에서 에이전트 기반 종속성 분석 �
 description: 이 문서에서는 Azure Migrate Server 평가에서 에이전트 기반 종속성 분석을 설정 하는 방법을 설명 합니다.
 ms.topic: how-to
 ms.date: 6/09/2020
-ms.openlocfilehash: c41f8eb82cf912fc566975f833fc73589f17be98
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: c5c019ec995f59b61fb96917bed50bd8ba3f61d4
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829920"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022380"
 ---
 # <a name="set-up-dependency-visualization"></a>종속성 시각화 설정
 
@@ -82,9 +82,9 @@ Windows 컴퓨터에 에이전트를 설치하려면
 5. **추가**를 클릭하여 새로운 Log Analytics 작업 영역을 추가합니다. 포털에서 복사한 작업 영역 ID와 키를 붙여넣습니다. **다음**을 클릭합니다.
 
 명령줄에서 또는 Configuration Manager 또는 [Intigua](https://www.intigua.com/intigua-for-azure-migration)같은 자동화 된 방법을 사용 하 여 에이전트를 설치할 수 있습니다.
-- 이 방법을 사용하여 MMA 에이전트를 설치하는 방법을 [자세히 알아보세요](../azure-monitor/platform/log-analytics-agent.md#installation-and-configuration).
+- 이 방법을 사용하여 MMA 에이전트를 설치하는 방법을 [자세히 알아보세요](../azure-monitor/platform/log-analytics-agent.md#installation-options).
 - MMA 에이전트는 이 [스크립트](https://go.microsoft.com/fwlink/?linkid=2104394)를 사용하여 설치할 수도 있습니다.
-- MMA에서 지 원하는 Windows 운영 체제에 [대해 자세히 알아보세요](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems) .
+- MMA에서 지 원하는 Windows 운영 체제에 [대해 자세히 알아보세요](../azure-monitor/platform/agents-overview.md#supported-operating-systems) .
 
 ### <a name="install-mma-on-a-linux-machine"></a>Linux 컴퓨터에 MMA 설치
 
@@ -95,7 +95,7 @@ Linux 컴퓨터에 MMA를 설치 하려면 다음을 수행 합니다.
 
     ```sudo sh ./omsagent-<version>.universal.x64.sh --install -w <workspace id> -s <workspace key>```
 
-MMA에서 지원하는 Linux 운영 체제 목록을 [자세히 확인](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems)해 보세요. 
+MMA에서 지원하는 Linux 운영 체제 목록을 [자세히 확인](../azure-monitor/platform/agents-overview.md#supported-operating-systems)해 보세요. 
 
 ## <a name="install-the-dependency-agent"></a>종속성 에이전트 설치
 

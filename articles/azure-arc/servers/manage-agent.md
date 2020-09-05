@@ -1,18 +1,18 @@
 ---
-title: 서버용 Azure Arc(미리 보기) 에이전트 관리
-description: 이 문서에서는 서버용 Azure Arc Connected Machine 에이전트의 수명 주기 동안 일반적으로 수행하는 다양한 관리 작업에 대해 설명합니다.
+title: Azure Arc 사용 서버 (미리 보기) 에이전트 관리
+description: 이 문서에서는 Azure Arc 사용 서버 (미리 보기) 연결 된 컴퓨터 에이전트의 수명 주기 동안 일반적으로 수행 하는 다양 한 관리 작업에 대해 설명 합니다.
 ms.date: 07/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: b7fcaca2188ef0e1e3c8c65226f8b383576082ba
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 6066226cea224b1e13262763b626c8c646a397d7
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121292"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213133"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>Connected Machine 에이전트 관리 및 유지 관리
 
-Windows 또는 Linux용 서버용 Azure Arc(미리 보기) Connected Machine 에이전트의 초기 배포 후에 에이전트를 다시 구성하거나, 업그레이드하거나, 해당 수명 주기의 사용 중지 단계에 도달한 경우 컴퓨터에서 제거해야 할 수 있습니다. 이러한 일상적인 유지 관리 작업을 수동으로 또는 자동화를 통해 간단히 관리하여 조작 오류와 비용을 모두 줄일 수 있습니다.
+Azure Arc 사용 서버 (미리 보기)에 연결 된 Windows 또는 Linux 용 컴퓨터 에이전트의 초기 배포 후 에이전트를 다시 구성 하거나, 업그레이드 하거나, 해당 수명 주기의 사용 중지 단계에 도달한 경우 컴퓨터에서 제거 해야 할 수 있습니다. 이러한 일상적인 유지 관리 작업을 수동으로 또는 자동화를 통해 간단히 관리하여 조작 오류와 비용을 모두 줄일 수 있습니다.
 
 ## <a name="upgrading-agent"></a>에이전트 업그레이드
 
@@ -120,7 +120,7 @@ Microsoft [패키지 리포지토리](https://packages.microsoft.com/)에서 최
 
 ## <a name="about-the-azcmagent-tool"></a>Azcmagent 도구 정보
 
-Azcmagent 도구(Azcmagent.exe)는 설치 도중 서버용 Azure Arc(미리 보기) Connected Machine 에이전트를 구성하거나 설치 후 에이전트의 초기 구성을 수정하는 데 사용됩니다. Azcmagent.exe는 에이전트를 사용자 지정하고 해당 상태를 볼 수 있는 명령줄 매개 변수를 제공합니다.
+Azcmagent 도구 (Azcmagent.exe)는 설치 중에 Azure Arc 사용 서버 (미리 보기)에 연결 된 컴퓨터 에이전트를 구성 하거나 설치 후 에이전트의 초기 구성을 수정 하는 데 사용 됩니다. Azcmagent.exe는 에이전트를 사용자 지정하고 해당 상태를 볼 수 있는 명령줄 매개 변수를 제공합니다.
 
 * **Connect** - Azure Arc에 머신을 연결합니다.
 
@@ -136,7 +136,7 @@ Azcmagent 도구(Azcmagent.exe)는 설치 도중 서버용 Azure Arc(미리 보�
 
 * **-v 또는 --verbose** - 자세한 정보 로깅을 사용합니다.
 
-대화형으로 로그온하는 동안 수동으로 **Connect**, **Disconnect** 및 **Reconnect**를 수행하거나 여러 에이전트를 온보딩할 때 사용한 동일한 서비스 주체를 사용하거나 Microsoft ID 플랫폼 [액세스 토큰](../../active-directory/develop/access-tokens.md)을 사용하여 자동화합니다. 서비스 주체를 사용하여 서버용 Azure Arc(미리 보기)에 머신을 등록하지 않은 경우 서비스 주체를 만들려면 다음 [문서](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale)를 참조하세요.
+대화형으로 로그온하는 동안 수동으로 **Connect**, **Disconnect** 및 **Reconnect**를 수행하거나 여러 에이전트를 온보딩할 때 사용한 동일한 서비스 주체를 사용하거나 Microsoft ID 플랫폼 [액세스 토큰](../../active-directory/develop/access-tokens.md)을 사용하여 자동화합니다. 서비스 주체를 사용 하 여 Azure Arc 사용 서버 (미리 보기)에 컴퓨터를 등록 하지 않은 경우 서비스 주체를 만들려면 다음 [문서](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) 를 참조 하세요.
 
 >[!NOTE]
 >**Azcmagent**를 실행 하려면 Linux 컴퓨터에 대 한 *루트* 액세스 권한이 있어야 합니다.
@@ -145,7 +145,7 @@ Azcmagent 도구(Azcmagent.exe)는 설치 도중 서버용 Azure Arc(미리 보�
 
 이 매개 변수는 Azure Resource Manager의 리소스를 지정하여 Azure에서 머신이 만들어짐을 나타냅니다. 리소스는 지정된 구독 및 리소스 그룹에 있으며, 머신에 대한 데이터는 `--location` 설정에 지정된 Azure 지역에 저장됩니다. 지정하지 않으면 기본 리소스 이름은 이 머신의 호스트 이름입니다.
 
-그런 다음 머신의 시스템 할당 ID에 해당하는 인증서를 다운로드하여 로컬로 저장합니다. 이 단계가 완료되면 Azure Connected Machine Metadata Service 및 게스트 구성 에이전트가 서버용 Azure Arc(미리 보기)와 동기화를 시작합니다.
+그런 다음 머신의 시스템 할당 ID에 해당하는 인증서를 다운로드하여 로컬로 저장합니다. 이 단계가 완료 되 면 Azure 연결 된 컴퓨터 Metadata Service 및 게스트 구성 에이전트가 Azure Arc 사용 서버 (미리 보기)와 동기화를 시작 합니다.
 
 서비스 주체를 사용하여 연결하려면 다음 명령을 실행합니다.
 
@@ -161,7 +161,7 @@ Azcmagent 도구(Azcmagent.exe)는 설치 도중 서버용 Azure Arc(미리 보�
 
 ### <a name="disconnect"></a>연결 끊기
 
-이 매개 변수는 Azure Resource Manager의 리소스를 지정하여 머신이 Azure에서 삭제됨을 나타냅니다. 이 매개 변수가 머신에서 에이전트를 삭제하지는 않습니다. 별도의 단계로 작업을 수행해야 합니다. 머신의 연결이 끊긴 후에 서버용 Azure Arc(미리 보기)에 다시 등록하려면 `azcmagent connect`를 사용합니다. 그러면 Azure에서 이를 위한 새 리소스가 만들어집니다.
+이 매개 변수는 Azure Resource Manager의 리소스를 지정하여 머신이 Azure에서 삭제됨을 나타냅니다. 이 매개 변수가 머신에서 에이전트를 삭제하지는 않습니다. 별도의 단계로 작업을 수행해야 합니다. 컴퓨터가 분리 된 후에 Azure Arc 사용 서버 (미리 보기)에 다시 등록 하려면 `azcmagent connect` azure에서 새 리소스를 만들도록를 사용 합니다.
 
 서비스 주체를 사용하여 연결을 끊으려면 다음 명령을 실행합니다.
 
@@ -180,7 +180,7 @@ Azcmagent 도구(Azcmagent.exe)는 설치 도중 서버용 Azure Arc(미리 보�
 > [!WARNING]
 > `reconnect`명령은 더 이상 사용 되지 않으므로 사용 하면 안 됩니다. 이후 에이전트 릴리스에서 명령이 제거 되 고 기존 에이전트는 다시 연결 요청을 완료할 수 없습니다. 대신 컴퓨터의 [연결을 끊은](#disconnect) 다음 다시 [연결](#connect) 하세요.
 
-이 매개 변수는 이미 등록된 머신 또는 Connected Machine을 서버용 Azure Arc(미리 보기)와 다시 연결합니다. 머신이 45일 이상 꺼져 인증서가 만료되는 경우 이 매개 변수가 필요할 수 있습니다. 이 매개 변수는 제공된 인증 옵션을 사용하여 이 머신을 나타내는 Azure Resource Manager 리소스에 해당하는 새 자격 증명을 검색합니다.
+이 매개 변수는 이미 등록 된 컴퓨터 또는 연결 된 컴퓨터를 Azure Arc 사용 서버 (미리 보기)에 다시 연결 합니다. 머신이 45일 이상 꺼져 인증서가 만료되는 경우 이 매개 변수가 필요할 수 있습니다. 이 매개 변수는 제공된 인증 옵션을 사용하여 이 머신을 나타내는 Azure Resource Manager 리소스에 해당하는 새 자격 증명을 검색합니다.
 
 이 명령을 사용하려면 [Azure Connected Machine 온보딩](agent-overview.md#required-permissions) 역할보다 높은 권한이 필요합니다.
 
@@ -198,7 +198,7 @@ Azcmagent 도구(Azcmagent.exe)는 설치 도중 서버용 Azure Arc(미리 보�
 
 ## <a name="remove-the-agent"></a>에이전트 제거
 
-다음 방법 중 하나를 수행하여 머신에서 Windows 또는 Linux Connected Machine 에이전트를 제거합니다. 에이전트를 제거해도 머신이 서버용 Arc(미리 보기)에서 등록 취소되지 않습니다. 이는 더 이상 Azure에서 머신을 관리할 필요가 없는 경우 수행하는 별도의 프로세스입니다.
+다음 방법 중 하나를 수행하여 머신에서 Windows 또는 Linux Connected Machine 에이전트를 제거합니다. 에이전트를 제거 해도 Arc 사용 서버 (미리 보기)를 사용 하 여 컴퓨터의 등록을 취소 하지 않습니다 .이는 Azure에서 컴퓨터를 더 이상 관리할 필요가 없는 경우 수행 하는 별도의 프로세스입니다.
 
 ### <a name="windows-agent"></a>Windows 에이전트
 
@@ -267,9 +267,9 @@ Linux 에이전트를 제거하려면 사용할 명령은 Linux 운영 체제에
 
 ## <a name="unregister-machine"></a>머신 등록 취소
 
-Azure에서 지원 서비스를 사용하여 머신을 관리하지 않으려는 경우 다음 단계를 수행하여 머신을 서버용 Arc(미리 보기)에서 등록 취소합니다. 머신에서 Connected Machine 에이전트를 제거하기 전이나 후에 이러한 단계를 수행할 수 있습니다.
+Azure에서 지원 서비스를 사용 하 여 컴퓨터를 관리 하지 않으려는 경우 다음 단계를 수행 하 여 Arc 사용 서버 (미리 보기)로 컴퓨터의 등록을 취소 합니다. 머신에서 Connected Machine 에이전트를 제거하기 전이나 후에 이러한 단계를 수행할 수 있습니다.
 
-1. [Azure Portal](https://aka.ms/hybridmachineportal)로 이동하여 서버용 Azure Arc를 엽니다.
+1. [Azure Portal](https://aka.ms/hybridmachineportal)로 이동 하 여 Azure Arc 사용 서버 (미리 보기)를 엽니다.
 
 2. 목록에서 머신을 선택하고, 줄임표 ( **...** )를 선택한 다음, **삭제**를 선택합니다.
 

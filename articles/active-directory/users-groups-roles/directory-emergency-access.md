@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9d4f293f3835e26def97aa2f52dd0c42d9137c7
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a98ff68500593c644e6f0fa5eacb338ab90f5604
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421725"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795382"
 ---
 # <a name="manage-emergency-access-accounts-in-azure-ad"></a>Azure AD에서 응급 액세스 계정 관리
 
@@ -44,7 +44,7 @@ ms.locfileid: "87421725"
 이러한 계정을 구성할 때는 다음 요구 사항이 충족되어야 합니다.
 
 - 응급 액세스 계정은 조직의 개별 사용자와 연결되지 않아야 합니다. 직원이 제공한 휴대폰, 개별 직원이 가지고 다니는 하드웨어 토큰 또는 기타 직원 전용 자격 증명에 계정이 연결되지 않아야 합니다. 이 예방 조치는 개별 직원이 자격 증명이 필요한 경우 접근할 수 없는 인스턴스를 포함합니다. 등록된 모든 디바이스가 Azure AD와 통신하는 여러 수단이 있는 안전하고 알려진 위치에 있는지 확인하는 것이 중요합니다.
-- 응급 액세스 계정에 사용되는 인증 메커니즘은 다른 응급 액세스 계정을 비롯한 기타 관리 계정에 사용되는 메커니즘과 구분되어야 합니다.  예를 들어 온-프레미스 MFA를 통해 일반 관리자 로그인이 수행되는 경우에는 Azure MFA가 다른 메커니즘이 될 수 있습니다.  하지만 Azure MFA가 관리 계정에 대한 인증의 기본 부분인 경우에는 다른 방법(예: [사용자 지정 컨트롤](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)을 통해 타사 MFA 공급자로 조건부 액세스 사용)을 고려하는 것이 좋습니다.
+- 응급 액세스 계정에 사용되는 인증 메커니즘은 다른 응급 액세스 계정을 비롯한 기타 관리 계정에 사용되는 메커니즘과 구분되어야 합니다.  예를 들어 온-프레미스 MFA를 통해 일반 관리자 로그인이 수행되는 경우에는 Azure MFA가 다른 메커니즘이 될 수 있습니다.  하지만 Azure MFA가 관리 계정에 대한 인증의 기본 부분인 경우에는 다른 방법(예: [사용자 지정 컨트롤](../conditional-access/controls.md)을 통해 타사 MFA 공급자로 조건부 액세스 사용)을 고려하는 것이 좋습니다.
 - 디바이스나 자격 증명이 만료되지 않아야 하고 사용 부족으로 인해 자동으로 정리되는 범위에 속하지 않아야 합니다.  
 - 응급 액세스 계정에 대한 글로벌 관리자 역할 할당은 영구적으로 설정해야 합니다. 
 
@@ -74,7 +74,7 @@ AD Domain Services와 ADFS 또는 유사한 ID 공급자를 사용하여 Azure A
 
 ### <a name="prerequisites"></a>사전 요구 사항
 
-1. Azure Monitor에 [Azure AD 로그인 로그를 전송](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)합니다.
+1. Azure Monitor에 [Azure AD 로그인 로그를 전송](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)합니다.
 
 ### <a name="obtain-object-ids-of-the-break-glass-accounts"></a>비상 계정의 개체 ID 가져오기
 
@@ -156,5 +156,5 @@ AD Domain Services와 ADFS 또는 유사한 ID 공급자를 사용하여 Azure A
 - [Azure AD를 사용하여 사용자를 추가](../fundamentals/add-users-azure-active-directory.md)하고 [새 사용자를 글로벌 관리자 역할에 할당](../fundamentals/active-directory-users-assign-role-azure-portal.md)
 - 아직 가입하지 않은 경우 [Azure AD Premium에 가입](../fundamentals/active-directory-get-started-premium.md)
 - [사용자에 대해 2단계 인증을 요구하는 방법](../authentication/howto-mfa-userstates.md)
-- Microsoft 365을 사용 하는 경우 [Microsoft 365에서 전역 관리자에 대 한 추가 보호를 구성](https://docs.microsoft.com/office365/enterprise/protect-your-global-administrator-accounts)합니다.
+- Microsoft 365을 사용 하는 경우 [Microsoft 365에서 전역 관리자에 대 한 추가 보호를 구성](/office365/enterprise/protect-your-global-administrator-accounts)합니다.
 - [ 관리자에 대한 액세스 검토를 시작](../privileged-identity-management/pim-how-to-start-security-review.md)하고 [기존 글로벌 관리자를 보다 구체적인 관리자 역할로 전환](directory-assign-admin-roles.md)

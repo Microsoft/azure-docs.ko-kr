@@ -1,14 +1,14 @@
 ---
-title: Azure Relay 네임스페이스에 대한 IP 방화벽 구성
+title: Azure Relay 네임 스페이스에 대 한 IP 방화벽 구성
 description: 이 문서에서는 특정 IP 주소에서 Azure Relay 네임스페이스로의 연결을 허용하도록 방화벽 규칙을 사용하는 방법을 설명합니다.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 2b8d1adef30eea0af9efdb51c31390c33a14b62e
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: e47c5071a5fc7207d4eabc162fcb24ab6ad57d28
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009021"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141859"
 ---
 # <a name="configure-ip-firewall-for-an-azure-relay-namespace"></a>Azure Relay 네임스페이스에 대한 IP 방화벽 구성
 기본적으로 요청에 유효한 인증 및 권한 부여가 제공되는 한 릴레이 네임스페이스는 인터넷에서 액세스할 수 있습니다. IP 방화벽을 사용하면 [CIDR(Classless Inter-Domain Routing)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) 표기법으로 IPv4 주소 또는 IPv4 주소 범위 세트로만 제한할 수 있습니다.

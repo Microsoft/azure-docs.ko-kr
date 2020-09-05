@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: juluk
 ms.date: 06/29/2020
 author: jluk
-ms.openlocfilehash: 5fe674fa7ab6a6a3f222a215ebc6912549776fee
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 5095931e28438beebf3250155ede1a8af0bb5c64
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067361"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88796972"
 ---
 # <a name="customize-cluster-egress-with-a-user-defined-route"></a>사용자 정의 경로를 사용 하 여 클러스터 송신 사용자 지정
 
@@ -32,7 +32,7 @@ AKS 클러스터에서 송신은 특정 시나리오에 맞게 사용자 지정�
 
 ## <a name="overview-of-outbound-types-in-aks"></a>AKS의 아웃바운드 형식 개요
 
-AKS 클러스터는 부하 분산 장치 또는 사용자 정의 라우팅 형식의 고유한 `outboundType`을 사용하여 사용자 지정할 수 있습니다.
+AKS 클러스터는 또는 형식의 고유한를 사용 하 여 사용자 지정할 수 있습니다 `outboundType` `loadBalancer` `userDefinedRouting` .
 
 > [!IMPORTANT]
 > 아웃바운드 형식은 클러스터의 송신 트래픽에만 영향을 줍니다. 자세한 내용은 [수신 컨트롤러 설정](ingress-basic.md)을 참조 하세요.
@@ -62,7 +62,11 @@ AKS에 의해 수행 되는 구성은 다음과 같습니다.
 
 SLB (표준 부하 분산 장치) 아키텍처를 사용 하지 않을 경우에는 명시적 송신을 설정 해야 하기 때문에 이전에 구성 된 서브넷을 사용 하 여 AKS 클러스터를 기존 가상 네트워크에 배포 해야 합니다. 따라서이 아키텍처를 사용 하려면 방화벽, 게이트웨이, 프록시 등의 어플라이언스로 송신 트래픽을 명시적으로 전송 하거나 표준 부하 분산 장치 또는 어플라이언스에 할당 된 공용 IP에서 NAT (Network Address Translation)를 수행할 수 있도록 해야 합니다.
 
-AKS 리소스 공급자는 SLB(표준 Load Balancer)를 배포합니다. 부하 분산 장치는 규칙을 사용 하 여 구성 되지 않으며 [규칙이 배치 될 때까지 요금이 부과 되지 않습니다](https://azure.microsoft.com/pricing/details/load-balancer/). AKS는 SLB 프런트 엔드에 대 한 공용 IP 주소를 자동으로 프로 비전 하지 않으며 부하 분산 장치 백 엔드 풀을 자동으로 구성 **하지 않습니다** .
+#### <a name="load-balancer-creation-with-userdefinedrouting"></a>UserDefinedRouting를 사용 하 여 부하 분산 장치 만들기
+
+아웃 바운드 형식이 UDR 인 AKS 클러스터는 ' loadBalancer ' 형식의 첫 번째 Kubernetes 서비스가 배포 될 때만 SLB (표준 부하 분산 장치)를 수신 합니다. 부하 분산 장치는 *인바운드 요청에 대 한* 공용 IP 주소 및 *인바운드* 요청에 대 한 백 엔드 풀을 사용 하 여 구성 됩니다. 인바운드 규칙은 Azure 클라우드 공급자가 구성 하지만 아웃 바운드 **공용 IP 주소 또는** 아웃 바운드 규칙은 udr의 아웃 바운드 유형의 결과로 구성 되지 않습니다. UDR은 여전히 송신 트래픽의 유일한 원본입니다.
+
+Azure 부하 분산 장치는 [규칙이 배치 될 때까지 요금이 부과 되지 않습니다](https://azure.microsoft.com/pricing/details/load-balancer/).
 
 ## <a name="deploy-a-cluster-with-outbound-type-of-udr-and-azure-firewall"></a>아웃바운드 형식의 UDR 및 Azure Firewall을 사용하여 클러스터 배포
 
@@ -70,8 +74,7 @@ AKS 리소스 공급자는 SLB(표준 Load Balancer)를 배포합니다. 부하 
 
 > [!IMPORTANT]
 > UDR의 아웃 바운드 형식에는 0.0.0.0/0의 경로와 NVA (네트워크 가상 어플라이언스)의 다음 홉 대상이 경로 테이블에 있어야 합니다.
-> 경로 테이블에는 인터넷에 대 한 기본 0.0.0.0/0이 이미 있지만,이 경로를 추가 하는 것 처럼 SNAT에 대 한 공용 IP가 없으면 송신을 제공 하지 않습니다. AKS는 인터넷을 가리키는 0.0.0.0/0 경로를 만들지 않고 NVA 또는 게이트웨이 등으로 만들지를 확인 합니다.
-
+> 경로 테이블에는 인터넷에 대 한 기본 0.0.0.0/0이 이미 있지만,이 경로를 추가 하는 것 처럼 SNAT에 대 한 공용 IP가 없으면 송신을 제공 하지 않습니다. AKS는 인터넷을 가리키는 0.0.0.0/0 경로를 만들지 않고 NVA 또는 게이트웨이 등으로 만들지를 확인 합니다. 아웃 바운드 형식 UDR을 사용 하는 경우 *loadbalancer* 형식의 서비스가 구성 되어 있지 않으면 **인바운드 요청** 에 대 한 부하 분산 장치 공용 IP 주소가 생성 되지 않습니다. 아웃 바운드 형식의 아웃 바운드 유형이 설정 된 경우 **아웃 바운드 요청** 에 대 한 공용 IP 주소는 AKS에서 생성 되지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

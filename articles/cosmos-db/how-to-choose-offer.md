@@ -4,14 +4,14 @@ description: 워크로드에 대해 표준(수동) 프로비저닝된 처리량�
 author: deborahc
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 08/19/2020
 ms.author: dech
-ms.openlocfilehash: 94022b9959b6a7f2bc30e31f918f2f5a916ccd8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fbe17d75ad809c54939624b1409e281b2f62a037
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85116811"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605214"
 ---
 # <a name="how-to-choose-between-standard-manual-and-autoscale-provisioned-throughput"></a>표준(수동) 및 자동 크기 조정 프로비저닝된 처리량 중에서 선택하는 방법 
 
@@ -37,7 +37,10 @@ Azure Cosmos DB는 프로비저닝된 처리량의 두 가지 유형 또는 제�
 ## <a name="understand-your-traffic-patterns"></a>트래픽 패턴 이해
 
 ### <a name="new-applications"></a>새 애플리케이션 ###
-새 애플리케이션을 빌드하려고 하지만 트래픽 패턴을 모르는 경우 진입점의 초당 RU(또는 초당 최소 RU)에서 시작하여 시작 부분의 과도한 프로비저닝을 방지할 수 있습니다. 또는 대규모가 필요하지 않은 소형 애플리케이션을 사용하는 경우 비용을 최적화하기 위해 최소 진입점의 초당 RU만 프로비저닝할 수 있습니다. 두 경우 모두 표준(수동) 또는 자동 크기 조정이 적합합니다. 고려해야 할 사항은 다음과 같습니다.
+
+새 애플리케이션을 빌드하려고 하지만 트래픽 패턴을 모르는 경우 진입점의 초당 RU(또는 초당 최소 RU)에서 시작하여 시작 부분의 과도한 프로비저닝을 방지할 수 있습니다. 또는 대규모가 필요하지 않은 소형 애플리케이션을 사용하는 경우 비용을 최적화하기 위해 최소 진입점의 초당 RU만 프로비저닝할 수 있습니다. 예상 트래픽이 낮은 작은 응용 프로그램의 경우 [서버](throughput-serverless.md) 리스 용량 모드를 고려할 수도 있습니다.
+
+표준 (수동) 또는 자동 크기 조정을 사용할지 여부는 다음을 고려해 야 합니다.
 
 진입점의 초당 400RU에서 표준(수동) 초당 RU를 프로비저닝하는 경우 처리량을 수동으로 변경하지 않는 한, 초당 400RU 이상을 사용할 수 없습니다. 시간을 기준으로 시간당 표준(수동) 프로비저닝된 처리량 속도로 초당 400RU로 요금이 청구됩니다.
 

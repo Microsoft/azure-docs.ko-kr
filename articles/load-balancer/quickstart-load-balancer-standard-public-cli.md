@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/20/2020
+ms.date: 08/23/2020
 ms.author: allensu
 ms.custom: mvc, devx-track-javascript, devx-track-azurecli
-ms.openlocfilehash: c80b4e57c94737778d8e6f63804d95f4d1b35fb0
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b437bfa205833594c9e76c6f0d8ff1923f51f117
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501800"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762711"
 ---
 # <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 VM 부하를 분산하는 공용 부하 분산 장치 만들기
 
@@ -52,129 +52,23 @@ Azure 리소스 그룹은 Azure 리소스가 배포 및 관리되는 논리적 �
 ```
 ---
 
-# <a name="option-1-default-create-a-load-balancer-standard-sku"></a>[옵션 1(기본값): 부하 분산 장치 만들기(표준 SKU)](#tab/option-1-create-load-balancer-standard)
+# <a name="standard-sku"></a>[**표준 SKU**](#tab/option-1-create-load-balancer-standard)
 
 >[!NOTE]
 >표준 SKU 부하 분산 장치는 프로덕션 워크로드에 추천됩니다. SKU에 대한 자세한 내용은 **[Azure Load Balancer SKU](skus.md)** 를 참조하세요.
 
-
-## <a name="create-a-public-ip-address"></a>공용 IP 주소 만들기
-
-인터넷에서 웹앱에 액세스하려면 부하 분산 장치에 대한 공용 IP 주소가 필요합니다. 
-
-[az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)를 사용하여 다음을 수행합니다.
-
-* **myPublicIP**라는 표준 영역 중복 공용 IP 주소를 만듭니다.
-* 위치: **myResourceGroupLB**
-
-```azurecli-interactive
-  az network public-ip create \
-    --resource-group myResourceGroupLB \
-    --name myPublicIP \
-    --sku Standard
-```
-
-영역 1에서 영역 중복 공용 IP 주소를 만들려면 다음 명령을 사용합니다.
-
-```azurecli-interactive
-  az network public-ip create \
-    --resource-group myResourceGroupLB \
-    --name myPublicIP \
-    --sku Standard \
-    --zone 1
-```
-
-## <a name="create-standard-load-balancer"></a>표준 부하 분산 장치 만들기
-
-이 섹션에서는 다음과 같은 부하 분산 장치 구성 요소를 만들고 구성하는 방법에 대해 자세히 설명합니다.
-
-  * 부하 분산 장치에서 들어오는 네트워크 트래픽을 수신하는 프런트 엔드 IP 풀
-  * 프런트 엔드 풀에서 부하 분산된 네트워크 트래픽을 보내는 백 엔드 IP 풀
-  * 백 엔드 VM 인스턴스의 상태를 확인하는 상태 프로브.
-  * 트래픽이 VM에 분산되는 방법을 정의하는 부하 분산 장치 규칙
-
-### <a name="create-the-load-balancer-resource"></a>부하 분산 장치 리소스 만들기
-
-[az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create)를 사용하여 공용 부하 분산 장치를 만듭니다.
-
-* 이름: **myLoadBalancer**
-* **myFrontEnd**라는 프런트 엔드 풀
-* **myBackEndPool**이라는 백 엔드 풀
-* 이전 단계에서 만든 공용 IP 주소 **myPublicIP**에 연결됨 
-
-```azurecli-interactive
-  az network lb create \
-    --resource-group myResourceGroupLB \
-    --name myLoadBalancer \
-    --sku Standard \
-    --public-ip-address myPublicIP \
-    --frontend-ip-name myFrontEnd \
-    --backend-pool-name myBackEndPool       
-```
-
-### <a name="create-the-health-probe"></a>상태 프로브 만들기
-
-상태 프로브는 네트워크 트래픽을 보낼 수 있도록 모든 가상 머신 인스턴스를 검사합니다. 
-
-프로브 확인에 실패한 가상 머신은 부하 분산 장치에서 제거됩니다. 오류가 해결되면 가상 머신이 부하 분산 장치에 다시 추가됩니다.
-
-[az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create)를 사용하여 상태 프로브를 만듭니다.
-
-* 가상 머신의 상태 모니터링
-* 이름: **myHealthProbe**
-* 프로토콜: **TCP**
-* **포트 80** 모니터링
-
-```azurecli-interactive
-  az network lb probe create \
-    --resource-group myResourceGroupLB \
-    --lb-name myLoadBalancer \
-    --name myHealthProbe \
-    --protocol tcp \
-    --port 80   
-```
-
-### <a name="create-the-load-balancer-rule"></a>부하 분산 장치 규칙 만들기
-
-다음과 같은 부하 분산 장치 규칙을 정의합니다.
-
-* 들어오는 트래픽에 대한 프런트 엔드 IP 구성
-* 트래픽을 수신할 백 엔드 IP 풀
-* 필요한 원본 및 대상 포트 
-
-[az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create)를 사용하여 부하 분산 장치 규칙을 만듭니다.
-
-* 이름: **myHTTPRule**
-* 프런트 엔드 풀 **myFrontEnd**의 **포트 80**에서 수신 대기
-* **포트 80**을 사용하여 백 엔드 주소 풀 **myBackEndPool**에 부하 분산된 네트워크 트래픽을 전송합니다. 
-* 상태 프로브 **myHealthProbe**를 사용합니다.
-* 프로토콜: **TCP**
-* 프런트 엔드 IP 주소를 사용하여 아웃바운드 SNAT(Source Network Address Translation)를 사용하도록 설정합니다.
-
-```azurecli-interactive
-  az network lb rule create \
-    --resource-group myResourceGroupLB \
-    --lb-name myLoadBalancer \
-    --name myHTTPRule \
-    --protocol tcp \
-    --frontend-port 80 \
-    --backend-port 80 \
-    --frontend-ip-name myFrontEnd \
-    --backend-pool-name myBackEndPool \
-    --probe-name myHealthProbe \
-    --disable-outbound-snat true 
-```
-
 ## <a name="configure-virtual-network"></a>가상 네트워크 구성
 
-VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가상 네트워크 리소스부터 만들어야 합니다.
+VM을 배포하고 부하 분산 장치를 테스트하려면 먼저 지원되는 가상 네트워크 리소스를 만듭니다.
 
 ### <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
 [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-createt)를 사용하여 가상 네트워크를 만듭니다.
 
 * 이름: **myVNet**
+* **10.1.0.0/16**의 주소 접두사.
 * 서브넷: **myBackendSubnet**
+* **10.1.0.0/24**의 서브넷 접두사.
 * 리소스 그룹: **myResourceGroupLB**
 * 위치: **eastus**.
 
@@ -183,7 +77,9 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --resource-group myResourceGroupLB \
     --location eastus \
     --name myVNet \
-    --subnet-name myBackendSubnet
+    --address-prefixes 10.1.0.0/16 \
+    --subnet-name myBackendSubnet \
+    --subnet-prefixes 10.1.0.0/24
 ```
 
 ### <a name="create-a-network-security-group"></a>네트워크 보안 그룹 만들기
@@ -208,7 +104,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 이름: **myNSGRuleHTTP**
 * 이전 단계에서 만든 네트워크 보안 그룹의 **myNSG**
 * 리소스 그룹: **myResourceGroupLB**
-* 프로토콜: **TCP**
+* 프로토콜 **(*)** .
 * 방향: **인바운드**
 * 원본: **(*)** .
 * 대상: **(*)** .
@@ -221,7 +117,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --resource-group myResourceGroupLB \
     --nsg-name myNSG \
     --name myNSGRuleHTTP \
-    --protocol tcp \
+    --protocol '*' \
     --direction inbound \
     --source-address-prefix '*' \
     --source-port-range '*' \
@@ -242,7 +138,6 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 가상 네트워크: **myVNet**
 * 서브넷: **myBackendSubnet**
 * 네트워크 보안 그룹: **myNSG**
-* **myBackEndPool**의 **myLoadBalancer** 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
 
@@ -251,9 +146,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --name myNicVM1 \
     --vnet-name myVNet \
     --subnet myBackEndSubnet \
-    --network-security-group myNSG \
-    --lb-name myLoadBalancer \
-    --lb-address-pools myBackEndPool
+    --network-security-group myNSG
 ```
 #### <a name="vm2"></a>VM2
 
@@ -261,8 +154,6 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 리소스 그룹: **myResourceGroupLB**
 * 가상 네트워크: **myVNet**
 * 서브넷: **myBackendSubnet**
-* 네트워크 보안 그룹: **myNSG**
-* **myBackEndPool**의 **myLoadBalancer** 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic create \
@@ -270,9 +161,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --name myNicVM2 \
     --vnet-name myVnet \
     --subnet myBackEndSubnet \
-    --network-security-group myNSG \
-    --lb-name myLoadBalancer \
-    --lb-address-pools myBackEndPool
+    --network-security-group myNSG
 ```
 #### <a name="vm3"></a>VM3
 
@@ -281,7 +170,6 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 가상 네트워크: **myVNet**
 * 서브넷: **myBackendSubnet**
 * 네트워크 보안 그룹: **myNSG**
-* **myBackEndPool**의 **myLoadBalancer** 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic create \
@@ -289,9 +177,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --name myNicVM3 \
     --vnet-name myVnet \
     --subnet myBackEndSubnet \
-    --network-security-group myNSG \
-    --lb-name myLoadBalancer \
-    --lb-address-pools myBackEndPool
+    --network-security-group myNSG
 ```
 
 ## <a name="create-backend-servers"></a>백 엔드 서버 만들기
@@ -413,8 +299,163 @@ runcmd:
 ```
 VM을 배포하는 데 몇 분 정도 걸릴 수 있습니다.
 
+## <a name="create-a-public-ip-address"></a>공용 IP 주소 만들기
+
+인터넷에서 웹앱에 액세스하려면 부하 분산 장치에 대한 공용 IP 주소가 필요합니다. 
+
+[az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)를 사용하여 다음을 수행합니다.
+
+* **myPublicIP**라는 표준 영역 중복 공용 IP 주소를 만듭니다.
+* 위치: **myResourceGroupLB**
+
+```azurecli-interactive
+  az network public-ip create \
+    --resource-group myResourceGroupLB \
+    --name myPublicIP \
+    --sku Standard
+```
+
+영역 1에서 영역 중복 공용 IP 주소를 만들려면 다음 명령을 사용합니다.
+
+```azurecli-interactive
+  az network public-ip create \
+    --resource-group myResourceGroupLB \
+    --name myPublicIP \
+    --sku Standard \
+    --zone 1
+```
+
+## <a name="create-standard-load-balancer"></a>표준 부하 분산 장치 만들기
+
+이 섹션에서는 다음과 같은 부하 분산 장치 구성 요소를 만들고 구성하는 방법에 대해 자세히 설명합니다.
+
+  * 부하 분산 장치에서 들어오는 네트워크 트래픽을 수신하는 프런트 엔드 IP 풀
+  * 프런트 엔드 풀에서 부하 분산된 네트워크 트래픽을 보내는 백 엔드 IP 풀
+  * 백 엔드 VM 인스턴스의 상태를 확인하는 상태 프로브.
+  * 트래픽이 VM에 분산되는 방법을 정의하는 부하 분산 장치 규칙
+
+### <a name="create-the-load-balancer-resource"></a>부하 분산 장치 리소스 만들기
+
+[az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create)를 사용하여 공용 부하 분산 장치를 만듭니다.
+
+* 이름: **myLoadBalancer**
+* **myFrontEnd**라는 프런트 엔드 풀
+* **myBackEndPool**이라는 백 엔드 풀
+* 이전 단계에서 만든 공용 IP 주소 **myPublicIP**에 연결됨 
+
+```azurecli-interactive
+  az network lb create \
+    --resource-group myResourceGroupLB \
+    --name myLoadBalancer \
+    --sku Standard \
+    --public-ip-address myPublicIP \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool       
+```
+
+### <a name="create-the-health-probe"></a>상태 프로브 만들기
+
+상태 프로브는 네트워크 트래픽을 보낼 수 있도록 모든 가상 머신 인스턴스를 검사합니다. 
+
+프로브 확인에 실패한 가상 머신은 부하 분산 장치에서 제거됩니다. 오류가 해결되면 가상 머신이 부하 분산 장치에 다시 추가됩니다.
+
+[az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create)를 사용하여 상태 프로브를 만듭니다.
+
+* 가상 머신의 상태 모니터링
+* 이름: **myHealthProbe**
+* 프로토콜: **TCP**
+* **포트 80** 모니터링
+
+```azurecli-interactive
+  az network lb probe create \
+    --resource-group myResourceGroupLB \
+    --lb-name myLoadBalancer \
+    --name myHealthProbe \
+    --protocol tcp \
+    --port 80   
+```
+
+### <a name="create-the-load-balancer-rule"></a>부하 분산 장치 규칙 만들기
+
+다음과 같은 부하 분산 장치 규칙을 정의합니다.
+
+* 들어오는 트래픽에 대한 프런트 엔드 IP 구성
+* 트래픽을 수신할 백 엔드 IP 풀
+* 필요한 원본 및 대상 포트 
+
+[az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create)를 사용하여 부하 분산 장치 규칙을 만듭니다.
+
+* 이름: **myHTTPRule**
+* 프런트 엔드 풀 **myFrontEnd**의 **포트 80**에서 수신 대기
+* **포트 80**.을 사용하여 백 엔드 주소 풀 **myBackEndPool**에 부하 분산된 네트워크 트래픽을 전송합니다. 
+* 상태 프로브 **myHealthProbe**를 사용합니다.
+* 프로토콜: **TCP**
+* 프런트 엔드 IP 주소를 사용하여 아웃바운드 SNAT(Source Network Address Translation)을 사용하도록 설정합니다.
+
+```azurecli-interactive
+  az network lb rule create \
+    --resource-group myResourceGroupLB \
+    --lb-name myLoadBalancer \
+    --name myHTTPRule \
+    --protocol tcp \
+    --frontend-port 80 \
+    --backend-port 80 \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool \
+    --probe-name myHealthProbe \
+    --disable-outbound-snat true 
+```
+### <a name="add-virtual-machines-to-load-balancer-backend-pool"></a>부하 분산 장치 백 엔드 풀에 가상 머신 추가
+
+[az network nic ip-config address-pool add](https://docs.microsoft.com/cli/azure/network/nic/ip-config/address-pool?view=azure-cli-latest#az-network-nic-ip-config-address-pool-add)를 사용하여 백 엔드 풀에 가상 머신을 추가합니다.
+
+#### <a name="vm1"></a>VM1
+* 백 엔드 주소 풀 **myBackEndPool**에 있습니다.
+* 리소스 그룹: **myResourceGroupLB**
+* 네트워크 인터페이스 **myNicVM1** 및 **ipconfig1**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
+
+```azurecli-interactive
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNicVM1 \
+   --resource-group myResourceGroupLB \
+   --lb-name myLoadBalancer
+```
+
+#### <a name="vm2"></a>VM2
+* 백 엔드 주소 풀 **myBackEndPool**에 있습니다.
+* 리소스 그룹: **myResourceGroupLB**
+* 네트워크 인터페이스 **myNicVM2** 및 **ipconfig1**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
+
+```azurecli-interactive
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNicVM2 \
+   --resource-group myResourceGroupLB \
+   --lb-name myLoadBalancer
+```
+
+#### <a name="vm3"></a>VM3
+* 백 엔드 주소 풀 **myBackEndPool**에 있습니다.
+* 리소스 그룹: **myResourceGroupLB**
+* 네트워크 인터페이스 **myNicVM3** 및 **ipconfig1**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
+
+```azurecli-interactive
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNicVM3 \
+   --resource-group myResourceGroupLB \
+   --lb-name myLoadBalancer
+```
+
 ## <a name="create-outbound-rule-configuration"></a>아웃바운드 규칙 구성 만들기
-부하 분산 장치 아웃바운드 규칙은 백 엔드 풀의 VM에 대한 아웃바운드 SNAT를 구성합니다. 
+부하 분산 디바이스 아웃바운드 규칙은 백 엔드 풀의 VM에 대한 아웃바운드 SNAT를 구성합니다. 
 
 아웃바운드 연결에 대한 자세한 내용은 [Azure의 아웃바운드 연결](load-balancer-outbound-connections.md)을 참조하세요.
 
@@ -552,7 +593,7 @@ VM을 배포하는 데 몇 분 정도 걸릴 수 있습니다.
 * 백 엔드 주소 풀: **myBackEndPoolOutbound**
 * 리소스 그룹: **myResourceGroupLB**
 * 네트워크 인터페이스 **myNicVM1** 및 **ipconfig1**에 연결됨
-* 부하 분산 장치 **myLoadBalancer**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic ip-config address-pool add \
@@ -567,7 +608,7 @@ VM을 배포하는 데 몇 분 정도 걸릴 수 있습니다.
 * 백 엔드 주소 풀: **myBackEndPoolOutbound**
 * 리소스 그룹: **myResourceGroupLB**
 * 네트워크 인터페이스 **myNicVM2** 및 **ipconfig1**에 연결됨
-* 부하 분산 장치 **myLoadBalancer**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic ip-config address-pool add \
@@ -582,7 +623,7 @@ VM을 배포하는 데 몇 분 정도 걸릴 수 있습니다.
 * 백 엔드 주소 풀: **myBackEndPoolOutbound**
 * 리소스 그룹: **myResourceGroupLB**
 * 네트워크 인터페이스 **myNicVM3** 및 **ipconfig1**에 연결됨
-* 부하 분산 장치 **myLoadBalancer**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic ip-config address-pool add \
@@ -593,117 +634,23 @@ VM을 배포하는 데 몇 분 정도 걸릴 수 있습니다.
    --lb-name myLoadBalancer
 ```
 
-# <a name="option-2-create-a-load-balancer-basic-sku"></a>[옵션 2: 부하 분산 장치 만들기(기본 SKU)](#tab/option-1-create-load-balancer-basic)
+# <a name="basic-sku"></a>[**기본 SKU**](#tab/option-1-create-load-balancer-basic)
 
 >[!NOTE]
 >표준 SKU 부하 분산 장치는 프로덕션 워크로드에 추천됩니다. SKU에 대한 자세한 내용은 **[Azure Load Balancer SKU](skus.md)** 를 참조하세요.
 
-
-## <a name="create-a-public-ip-address"></a>공용 IP 주소 만들기
-
-인터넷에서 웹앱에 액세스하려면 부하 분산 장치에 대한 공용 IP 주소가 필요합니다. 
-
-[az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)를 사용하여 다음을 수행합니다.
-
-* **myPublicIP**라는 표준 영역 중복 공용 IP 주소를 만듭니다.
-* 위치: **myResourceGroupLB**
-
-```azurecli-interactive
-  az network public-ip create \
-    --resource-group myResourceGroupLB \
-    --name myPublicIP \
-    --sku Basic
-```
-
-## <a name="create-basic-load-balancer"></a>기본 부하 분산 장치 만들기
-
-이 섹션에서는 다음과 같은 부하 분산 장치 구성 요소를 만들고 구성하는 방법에 대해 자세히 설명합니다.
-
-  * 부하 분산 장치에서 들어오는 네트워크 트래픽을 수신하는 프런트 엔드 IP 풀
-  * 프런트 엔드 풀에서 부하 분산된 네트워크 트래픽을 보내는 백 엔드 IP 풀
-  * 백 엔드 VM 인스턴스의 상태를 확인하는 상태 프로브.
-  * 트래픽이 VM에 분산되는 방법을 정의하는 부하 분산 장치 규칙
-
-### <a name="create-the-load-balancer-resource"></a>부하 분산 장치 리소스 만들기
-
-[az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create)를 사용하여 공용 부하 분산 장치를 만듭니다.
-
-* 이름: **myLoadBalancer**
-* **myFrontEnd**라는 프런트 엔드 풀
-* **myBackEndPool**이라는 백 엔드 풀
-* 이전 단계에서 만든 공용 IP 주소 **myPublicIP**에 연결됨 
-
-```azurecli-interactive
-  az network lb create \
-    --resource-group myResourceGroupLB \
-    --name myLoadBalancer \
-    --sku Basic \
-    --public-ip-address myPublicIP \
-    --frontend-ip-name myFrontEnd \
-    --backend-pool-name myBackEndPool       
-```
-
-### <a name="create-the-health-probe"></a>상태 프로브 만들기
-
-상태 프로브는 네트워크 트래픽을 보낼 수 있도록 모든 가상 머신 인스턴스를 검사합니다. 
-
-프로브 확인에 실패한 가상 머신은 부하 분산 장치에서 제거됩니다. 오류가 해결되면 가상 머신이 부하 분산 장치에 다시 추가됩니다.
-
-[az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create)를 사용하여 상태 프로브를 만듭니다.
-
-* 가상 머신의 상태 모니터링
-* 이름: **myHealthProbe**
-* 프로토콜: **TCP**
-* **포트 80** 모니터링
-
-```azurecli-interactive
-  az network lb probe create \
-    --resource-group myResourceGroupLB \
-    --lb-name myLoadBalancer \
-    --name myHealthProbe \
-    --protocol tcp \
-    --port 80   
-```
-
-### <a name="create-the-load-balancer-rule"></a>부하 분산 장치 규칙 만들기
-
-다음과 같은 부하 분산 장치 규칙을 정의합니다.
-
-* 들어오는 트래픽에 대한 프런트 엔드 IP 구성
-* 트래픽을 수신할 백 엔드 IP 풀
-* 필요한 원본 및 대상 포트 
-
-[az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create)를 사용하여 부하 분산 장치 규칙을 만듭니다.
-
-* 이름: **myHTTPRule**
-* 프런트 엔드 풀 **myFrontEnd**의 **포트 80**에서 수신 대기
-* **포트 80**을 사용하여 백 엔드 주소 풀 **myBackEndPool**에 부하 분산된 네트워크 트래픽을 전송합니다. 
-* 상태 프로브 **myHealthProbe**를 사용합니다.
-* 프로토콜: **TCP**
-
-```azurecli-interactive
-  az network lb rule create \
-    --resource-group myResourceGroupLB \
-    --lb-name myLoadBalancer \
-    --name myHTTPRule \
-    --protocol tcp \
-    --frontend-port 80 \
-    --backend-port 80 \
-    --frontend-ip-name myFrontEnd \
-    --backend-pool-name myBackEndPool \
-    --probe-name myHealthProbe
-```
-
 ## <a name="configure-virtual-network"></a>가상 네트워크 구성
 
-VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가상 네트워크 리소스부터 만들어야 합니다.
+VM을 배포하고 부하 분산 장치를 테스트하려면 먼저 지원되는 가상 네트워크 리소스를 만듭니다.
 
 ### <a name="create-a-virtual-network"></a>가상 네트워크 만들기
 
 [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-createt)를 사용하여 가상 네트워크를 만듭니다.
 
 * 이름: **myVNet**
+* **10.1.0.0/16**의 주소 접두사.
 * 서브넷: **myBackendSubnet**
+* **10.1.0.0/24**의 서브넷 접두사.
 * 리소스 그룹: **myResourceGroupLB**
 * 위치: **eastus**.
 
@@ -712,7 +659,9 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --resource-group myResourceGroupLB \
     --location eastus \
     --name myVNet \
-    --subnet-name myBackendSubnet
+    --address-prefixes 10.1.0.0/16 \
+    --subnet-name myBackendSubnet \
+    --subnet-prefixes 10.1.0.0/24
 ```
 
 ### <a name="create-a-network-security-group"></a>네트워크 보안 그룹 만들기
@@ -737,7 +686,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 이름: **myNSGRuleHTTP**
 * 이전 단계에서 만든 네트워크 보안 그룹의 **myNSG**
 * 리소스 그룹: **myResourceGroupLB**
-* 프로토콜: **TCP**
+* 프로토콜 **(*)** .
 * 방향: **인바운드**
 * 원본: **(*)** .
 * 대상: **(*)** .
@@ -750,7 +699,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --resource-group myResourceGroupLB \
     --nsg-name myNSG \
     --name myNSGRuleHTTP \
-    --protocol tcp \
+    --protocol '*' \
     --direction inbound \
     --source-address-prefix '*' \
     --source-port-range '*' \
@@ -771,7 +720,6 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 가상 네트워크: **myVNet**
 * 서브넷: **myBackendSubnet**
 * 네트워크 보안 그룹: **myNSG**
-* **myBackEndPool**의 **myLoadBalancer** 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
 
@@ -780,9 +728,7 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
     --name myNicVM1 \
     --vnet-name myVNet \
     --subnet myBackEndSubnet \
-    --network-security-group myNSG \
-    --lb-name myLoadBalancer \
-    --lb-address-pools myBackEndPool
+    --network-security-group myNSG
 ```
 #### <a name="vm2"></a>VM2
 
@@ -791,17 +737,14 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 가상 네트워크: **myVNet**
 * 서브넷: **myBackendSubnet**
 * 네트워크 보안 그룹: **myNSG**
-* **myBackEndPool**의 **myLoadBalancer** 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic create \
     --resource-group myResourceGroupLB \
     --name myNicVM2 \
-    --vnet-name myVnet \
+    --vnet-name myVNet \
     --subnet myBackEndSubnet \
-    --network-security-group myNSG \
-    --lb-name myLoadBalancer \
-    --lb-address-pools myBackEndPool
+    --network-security-group myNSG
 ```
 #### <a name="vm3"></a>VM3
 
@@ -810,17 +753,14 @@ VM을 배포하고 부하 분산 장치를 테스트하려면 지원되는 가�
 * 가상 네트워크: **myVNet**
 * 서브넷: **myBackendSubnet**
 * 네트워크 보안 그룹: **myNSG**
-* **myBackEndPool**의 **myLoadBalancer** 부하 분산 장치에 연결됨
 
 ```azurecli-interactive
   az network nic create \
     --resource-group myResourceGroupLB \
     --name myNicVM3 \
-    --vnet-name myVnet \
+    --vnet-name myVNet \
     --subnet myBackEndSubnet \
-    --network-security-group myNSG \
-    --lb-name myLoadBalancer \
-    --lb-address-pools myBackEndPool
+    --network-security-group myNSG
 ```
 
 ## <a name="create-backend-servers"></a>백 엔드 서버 만들기
@@ -918,8 +858,7 @@ runcmd:
     --generate-ssh-keys \
     --custom-data cloud-init.txt \
     --availability-set myAvSet \
-    --no-wait
-    
+    --no-wait 
 ```
 #### <a name="vm2"></a>VM2
 * 이름: **myVM2**
@@ -962,6 +901,151 @@ runcmd:
 ```
 VM을 배포하는 데 몇 분 정도 걸릴 수 있습니다.
 
+
+## <a name="create-a-public-ip-address"></a>공용 IP 주소 만들기
+
+인터넷에서 웹앱에 액세스하려면 부하 분산 장치에 대한 공용 IP 주소가 필요합니다. 
+
+[az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)를 사용하여 다음을 수행합니다.
+
+* **myPublicIP**라는 표준 영역 중복 공용 IP 주소를 만듭니다.
+* 위치: **myResourceGroupLB**
+
+```azurecli-interactive
+  az network public-ip create \
+    --resource-group myResourceGroupLB \
+    --name myPublicIP \
+    --sku Basic
+```
+
+## <a name="create-basic-load-balancer"></a>기본 부하 분산 장치 만들기
+
+이 섹션에서는 다음과 같은 부하 분산 장치 구성 요소를 만들고 구성하는 방법에 대해 자세히 설명합니다.
+
+  * 부하 분산 장치에서 들어오는 네트워크 트래픽을 수신하는 프런트 엔드 IP 풀
+  * 프런트 엔드 풀에서 부하 분산된 네트워크 트래픽을 보내는 백 엔드 IP 풀
+  * 백 엔드 VM 인스턴스의 상태를 확인하는 상태 프로브.
+  * 트래픽이 VM에 분산되는 방법을 정의하는 부하 분산 장치 규칙
+
+### <a name="create-the-load-balancer-resource"></a>부하 분산 장치 리소스 만들기
+
+[az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#az-network-lb-create)를 사용하여 공용 부하 분산 장치를 만듭니다.
+
+* 이름: **myLoadBalancer**
+* **myFrontEnd**라는 프런트 엔드 풀
+* **myBackEndPool**이라는 백 엔드 풀
+* 이전 단계에서 만든 공용 IP 주소 **myPublicIP**에 연결됨 
+
+```azurecli-interactive
+  az network lb create \
+    --resource-group myResourceGroupLB \
+    --name myLoadBalancer \
+    --sku Basic \
+    --public-ip-address myPublicIP \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool       
+```
+
+### <a name="create-the-health-probe"></a>상태 프로브 만들기
+
+상태 프로브는 네트워크 트래픽을 보낼 수 있도록 모든 가상 머신 인스턴스를 검사합니다. 
+
+프로브 확인에 실패한 가상 머신은 부하 분산 장치에서 제거됩니다. 오류가 해결되면 가상 머신이 부하 분산 장치에 다시 추가됩니다.
+
+[az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#az-network-lb-probe-create)를 사용하여 상태 프로브를 만듭니다.
+
+* 가상 머신의 상태 모니터링
+* 이름: **myHealthProbe**
+* 프로토콜: **TCP**
+* **포트 80** 모니터링
+
+```azurecli-interactive
+  az network lb probe create \
+    --resource-group myResourceGroupLB \
+    --lb-name myLoadBalancer \
+    --name myHealthProbe \
+    --protocol tcp \
+    --port 80   
+```
+
+### <a name="create-the-load-balancer-rule"></a>부하 분산 장치 규칙 만들기
+
+다음과 같은 부하 분산 장치 규칙을 정의합니다.
+
+* 들어오는 트래픽에 대한 프런트 엔드 IP 구성
+* 트래픽을 수신할 백 엔드 IP 풀
+* 필요한 원본 및 대상 포트 
+
+[az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create)를 사용하여 부하 분산 장치 규칙을 만듭니다.
+
+* 이름: **myHTTPRule**
+* 프런트 엔드 풀 **myFrontEnd**의 **포트 80**에서 수신 대기
+* **포트 80**.을 사용하여 백 엔드 주소 풀 **myBackEndPool**에 부하 분산된 네트워크 트래픽을 전송합니다. 
+* 상태 프로브 **myHealthProbe**를 사용합니다.
+* 프로토콜: **TCP**
+
+```azurecli-interactive
+  az network lb rule create \
+    --resource-group myResourceGroupLB \
+    --lb-name myLoadBalancer \
+    --name myHTTPRule \
+    --protocol tcp \
+    --frontend-port 80 \
+    --backend-port 80 \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool \
+    --probe-name myHealthProbe
+```
+
+### <a name="add-virtual-machines-to-load-balancer-backend-pool"></a>부하 분산 장치 백 엔드 풀에 가상 머신 추가
+
+[az network nic ip-config address-pool add](https://docs.microsoft.com/cli/azure/network/nic/ip-config/address-pool?view=azure-cli-latest#az-network-nic-ip-config-address-pool-add)를 사용하여 백 엔드 풀에 가상 머신을 추가합니다.
+
+
+#### <a name="vm1"></a>VM1
+* 백 엔드 주소 풀 **myBackEndPool**에 있습니다.
+* 리소스 그룹: **myResourceGroupLB**
+* 네트워크 인터페이스 **myNicVM1** 및 **ipconfig1**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
+
+```azurecli-interactive
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNicVM1 \
+   --resource-group myResourceGroupLB \
+   --lb-name myLoadBalancer
+```
+
+#### <a name="vm2"></a>VM2
+* 백 엔드 주소 풀 **myBackEndPool**에 있습니다.
+* 리소스 그룹: **myResourceGroupLB**
+* 네트워크 인터페이스 **myNicVM2** 및 **ipconfig1**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
+
+```azurecli-interactive
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNicVM2 \
+   --resource-group myResourceGroupLB \
+   --lb-name myLoadBalancer
+```
+
+#### <a name="vm3"></a>VM3
+* 백 엔드 주소 풀 **myBackEndPool**에 있습니다.
+* 리소스 그룹: **myResourceGroupLB**
+* 네트워크 인터페이스 **myNicVM3** 및 **ipconfig1**에 연결됨
+* **myLoadBalancer**를 사용하여 부하 분산 장치에 연결됨
+
+```azurecli-interactive
+  az network nic ip-config address-pool add \
+   --address-pool myBackendPool \
+   --ip-config-name ipconfig1 \
+   --nic-name myNicVM3 \
+   --resource-group myResourceGroupLB \
+   --lb-name myLoadBalancer
+```
 ---
 
 ## <a name="test-the-load-balancer"></a>부하 분산 장치 테스트

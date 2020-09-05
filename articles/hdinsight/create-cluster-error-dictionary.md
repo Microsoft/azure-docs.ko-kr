@@ -7,13 +7,13 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.date: 11/19/2019
-ms.openlocfilehash: 39179c9b6d02d810561485f6a4af0102711ad0ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/24/2020
+ms.openlocfilehash: cae8647d970020a22d59dc49b058d43fe28dd00c
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82186637"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816459"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: 클러스터 생성 오류
 
@@ -24,19 +24,17 @@ ms.locfileid: "82186637"
 
 ## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>오류 코드: DeploymentDocument ' CsmDocument_2_0 '이 (가) 유효성 검사에 실패 했습니다.
 
-### <a name="error"></a>오류
+**오류**: "스크립트 작업 위치에는 URI를 액세스할 수 없습니다. \<SCRIPT ACTION URL\> "
 
-"스크립트 작업 위치에 액세스할 수 없습니다. \<SCRIPT ACTION URL\> "
-
-#### <a name="error-message"></a>오류 메시지
+### <a name="error-message-1"></a>오류 메시지 1
 
 "원격 서버에서 오류를 반환 했습니다. (404) 찾을 수 없음"
 
-### <a name="cause"></a>원인
+#### <a name="cause"></a>원인
 
 HDInsight 서비스는 클러스터 만들기 요청의 일부로 제공한 스크립트 작업 URL에 액세스할 수 없습니다. 서비스는 스크립트 동작에 액세스 하려고 할 때 앞의 오류 메시지를 받습니다.
 
-### <a name="resolution"></a>해결 방법
+#### <a name="resolution"></a>해결 방법
 
 - HTTP 또는 HTTPS URL의 경우 incognito 브라우저 창에서 URL을 확인 하 여 확인 합니다.
 - WASB URL의 경우 요청에 지정 하는 저장소 계정에 스크립트가 있는지를 알고 있어야 합니다. 또한이 저장소 계정에 대 한 저장소 키가 올바른지 확인 합니다.
@@ -44,37 +42,29 @@ HDInsight 서비스는 클러스터 만들기 요청의 일부로 제공한 스�
 
 ---
 
-## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>오류 코드: DeploymentDocument ' CsmDocument_2_0 '이 (가) 유효성 검사에 실패 했습니다.
-
-### <a name="error"></a>오류
-
-"스크립트 작업 위치에 액세스할 수 없습니다. \<SCRIPT_ACTION_URL\> "
-
-#### <a name="error-message"></a>오류 메시지
+### <a name="error-message-2"></a>오류 메시지 2
 
 "지정 된 스크립트 URI는 \<SCRIPT_URI\> ADLS에 있지만이 클러스터에 data lake storage 보안 주체가 없습니다."
 
-### <a name="cause"></a>원인
+#### <a name="cause"></a>원인
 
 HDInsight 서비스는 클러스터 만들기 요청의 일부로 제공한 스크립트 작업 URL에 액세스할 수 없습니다. 서비스는 스크립트 동작에 액세스 하려고 할 때 앞의 오류 메시지를 받습니다.
 
-### <a name="resolution"></a>해결 방법
+#### <a name="resolution"></a>해결 방법
 
 클러스터에 해당 하는 Azure Data Lake Storage Gen 1 계정을 추가 합니다. 또한 Data Lake Storage Gen 1 계정에 액세스 하는 서비스 사용자를 클러스터에 추가 합니다.
 
 ---
 
-## <a name="error-code-deploymentdocument-csmdocument_2_0-failed-the-validation"></a>오류 코드: DeploymentDocument ' CsmDocument_2_0 '이 (가) 유효성 검사에 실패 했습니다.
-
-### <a name="error"></a>오류
+### <a name="error-message-3"></a>오류 메시지 3
 
 요청에 제공 된 "VM 크기 ' \<CUSTOMER_SPECIFIED_VM_SIZE\> '이 (가) 잘못 되었거나 ' ' 역할에 대해 지원 되지 않습니다 \<ROLE\> . 유효한 값은 \<VALID_VM_SIZE_FOR_ROLE\> 입니다. "
 
-### <a name="cause"></a>원인
+#### <a name="cause"></a>원인
 
 지정한 가상 머신 크기가 역할에 대해 허용 되지 않습니다. 이 오류는 VM 크기 값이 예상 대로 작동 하지 않거나 컴퓨터 역할에 적합 하지 않기 때문에 발생할 수 있습니다.
 
-### <a name="resolution"></a>해결 방법
+#### <a name="resolution"></a>해결 방법
 
 오류 메시지에는 VM 크기에 대 한 유효한 값이 나열 됩니다. 이러한 값 중 하나를 선택 하 고 클러스터 만들기 요청을 다시 시도 하세요.
 
@@ -230,7 +220,7 @@ HDInsight 서비스에서 클러스터를 만드는 동안 클러스터에 연�
 
 ---
 
-## <a name="error-code-deployments-failed-due-to-policy-violation-resource-resource-uri-was-disallowed-by-policy-policy-identifiers-policyassignmentnamepolicy-name-idprovidersmicrosoftmanagementmanagementgroupsmanagement-group-name-providersmicrosoftauthorizationpolicyassignmentspolicy-namepolicydefinition-policy-definition"></a>오류 코드: 정책 위반으로 인해 배포 하지 못했습니다. ' Resource ' <Resource URI> '은 (는) 정책에 의해 허용 되지 않습니다. 정책 식별자: ' [{"Policyassignment": {"name": " <Policy Name> ", "id": "/providers/Microsoft.Management/managementGroups/ <Management Group Name> Providers/Microsoft. Authorization/policyassignment/ <Policy Name> "}, "policyassignment":<Policy Definition>
+## <a name="error-code-deployments-failed-due-to-policy-violation-resource-resource-uri-was-disallowed-by-policy-policy-identifiers-policyassignmentnamepolicy-name-idprovidersmicrosoftmanagementmanagementgroupsmanagement-group-name-providersmicrosoftauthorizationpolicyassignmentspolicy-namepolicydefinition-policy-definition"></a>오류 코드: 정책 위반으로 인해 배포 하지 못했습니다. ' Resource ' <Resource URI> '은 (는) 정책에 의해 허용 되지 않습니다. 정책 식별자: ' [{"Policyassignment": {"name": " <Policy Name> ", "id": "/providers/Microsoft.Management/managementGroups/ <Management Group Name> Providers/Microsoft. Authorization/policyassignment/ <Policy Name> "}, "policyassignment": <Policy Definition>
 
 ### <a name="cause"></a>원인
 

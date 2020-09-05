@@ -3,13 +3,14 @@ title: Azure Functions에 대 한 PowerShell 개발자 참조
 description: PowerShell을 사용 하 여 함수를 개발 하는 방법을 이해 합니다.
 author: eamonoreilly
 ms.topic: conceptual
+ms.custom: devx-track-dotnet, devx-track-azurepowershell
 ms.date: 04/22/2019
-ms.openlocfilehash: 8b8c84583bd80a7c3cbadde1caba231eed801c1f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1da4154530f823d391aea779011a34a35edfd070
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506131"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071162"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Azure Functions PowerShell 개발자 가이드
 
@@ -113,7 +114,7 @@ param($MyFirstInputBinding, $MySecondInputBinding)
 Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 ```
 
-`Push-OutputBinding`는에 대해 지정 된 값에 따라 다르게 동작 합니다 `-Name` .
+`Push-OutputBinding` 는에 대해 지정 된 값에 따라 다르게 동작 합니다 `-Name` .
 
 * 지정 된 이름을 유효한 출력 바인딩으로 확인할 수 없으면 오류가 throw 됩니다.
 
@@ -125,7 +126,7 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 
 다음은를 호출 하기 위한 유효한 매개 변수입니다 `Push-OutputBinding` .
 
-| Name | 유형 | 위치 | Description |
+| 이름 | 유형 | 위치 | Description |
 | ---- | ---- |  -------- | ----------- |
 | **`-Name`** | String | 1 | 설정 하려는 출력 바인딩의 이름입니다. |
 | **`-Value`** | Object | 2 | 파이프라인 ByValue에서 허용 되는 설정 하려는 출력 바인딩의 값입니다. |
@@ -175,7 +176,7 @@ PS >Push-OutputBinding -Name response -Value ([HttpResponseContext]@{
 
 #### <a name="push-outputbinding-example-queue-output-binding"></a>푸시 OutputBinding 예: 큐 출력 바인딩
 
-`Push-OutputBinding`는 [Azure Queue storage 출력 바인딩과](functions-bindings-storage-queue-output.md)같은 출력 바인딩에 데이터를 전송 하는 데 사용 됩니다. 다음 예제에서는 큐에 기록 된 메시지의 값이 "output #1"입니다.
+`Push-OutputBinding` 는 [Azure Queue storage 출력 바인딩과](functions-bindings-storage-queue-output.md)같은 출력 바인딩에 데이터를 전송 하는 데 사용 됩니다. 다음 예제에서는 큐에 기록 된 메시지의 값이 "output #1"입니다.
 
 ```powershell
 PS >Push-OutputBinding -Name outQueue -Value "output #1"
@@ -212,7 +213,7 @@ MyQueue                        myData
 MyOtherQueue                   myData
 ```
 
-`Get-OutputBinding`또한에는 `-Name` 다음 예제와 같이 반환 된 바인딩을 필터링 하는 데 사용할 수 있는 라는 매개 변수가 포함 되어 있습니다.
+`Get-OutputBinding` 또한에는 `-Name` 다음 예제와 같이 반환 된 바인딩을 필터링 하는 데 사용할 수 있는 라는 매개 변수가 포함 되어 있습니다.
 
 ```powershell
 Get-OutputBinding -Name MyQ*
@@ -232,8 +233,8 @@ PowerShell 함수의 로깅은 일반적인 PowerShell 로깅과 같은 방식�
 
 | 함수 로깅 수준 | 로깅 cmdlet |
 | ------------- | -------------- |
-| Error | **`Write-Error`** |
-| Warning | **`Write-Warning`**  | 
+| 오류 | **`Write-Error`** |
+| 경고 | **`Write-Warning`**  | 
 | 정보 | **`Write-Information`** <br/> **`Write-Host`** <br /> **`Write-Output`**      | 정보 | _정보_ 수준 로깅에 씁니다. |
 | 디버그 | **`Write-Debug`** |
 | 추적 | **`Write-Progress`** <br /> **`Write-Verbose`** |
@@ -296,14 +297,14 @@ HTTP, 웹후크 트리거 및 HTTP 출력 바인딩은 요청 및 응답 개체�
 
 | 속성  | 설명                                                    | 형식                      |
 |-----------|----------------------------------------------------------------|---------------------------|
-| **`Body`**    | 요청의 본문을 포함하는 개체입니다. `Body`는 데이터에 따라 가장 적합 한 형식으로 직렬화 됩니다. 예를 들어 데이터가 JSON 인 경우 hashtable로 전달 됩니다. 데이터가 문자열 인 경우 문자열로 전달 됩니다. | object |
+| **`Body`**    | 요청의 본문을 포함하는 개체입니다. `Body` 는 데이터에 따라 가장 적합 한 형식으로 직렬화 됩니다. 예를 들어 데이터가 JSON 인 경우 hashtable로 전달 됩니다. 데이터가 문자열 인 경우 문자열로 전달 됩니다. | 개체 |
 | **`Headers`** | 요청 헤더를 포함 하는 사전입니다.                | 사전<문자열, 문자열><sup>*</sup> |
 | **`Method`** | 요청의 HTTP 메서드입니다.                                | 문자열                    |
 | **`Params`**  | 요청의 라우팅 매개 변수를 포함하는 개체입니다. | 사전<문자열, 문자열><sup>*</sup> |
 | **`Query`** | 쿼리 매개 변수를 포함하는 개체입니다.                  | 사전<문자열, 문자열><sup>*</sup> |
 | **`Url`** | 요청의 URL입니다.                                        | 문자열                    |
 
-<sup>*</sup>모든 `Dictionary<string,string>` 키는 대/소문자를 구분 하지 않습니다.
+<sup>*</sup> 모든 `Dictionary<string,string>` 키는 대/소문자를 구분 하지 않습니다.
 
 #### <a name="response-object"></a>응답 개체
 
@@ -311,7 +312,7 @@ HTTP, 웹후크 트리거 및 HTTP 출력 바인딩은 요청 및 응답 개체�
 
 | 속성      | 설명                                                 | 형식                      |
 |---------------|-------------------------------------------------------------|---------------------------|
-| **`Body`**  | 응답의 본문을 포함하는 개체입니다.           | object                    |
+| **`Body`**  | 응답의 본문을 포함하는 개체입니다.           | 개체                    |
 | **`ContentType`** | 응답의 콘텐츠 형식을 설정 하는 데 사용할 짧은 손입니다. | 문자열                    |
 | **`Headers`** | 응답 헤더를 포함하는 개체입니다.               | 사전 또는 해시 테이블   |
 | **`StatusCode`**  | 응답의 HTTP 상태 코드입니다.                       | 문자열 또는 int             |
@@ -374,23 +375,69 @@ param([string] $myBlob)
 
 Powershell에는 PowerShell 프로필 이라는 개념이 있습니다. PowerShell 프로필에 대해 잘 모르는 경우 [프로필 정보](/powershell/module/microsoft.powershell.core/about/about_profiles)를 참조 하세요.
 
-PowerShell 함수에서 프로필 스크립트는 함수 앱이 시작 될 때 실행 됩니다. 함수 앱은 처음 배포 될 때 및 유휴 상태 ([콜드](#cold-start)부팅) 후에 시작 됩니다.
+Powershell 함수에서 프로필 스크립트는 처음 배포 될 때 앱의 PowerShell 작업자 인스턴스당 한 번씩, 그리고 유휴 상태 ([콜드](#cold-start)부팅) 후에 한 번 실행 됩니다. [PSWorkerInProcConcurrencyUpperBound](#concurrency) 값을 설정 하 여 동시성을 사용 하도록 설정 하면 생성 된 각 runspace에 대해 프로필 스크립트가 실행 됩니다.
 
 Visual Studio Code 및 Azure Functions Core Tools와 같은 도구를 사용 하 여 함수 앱을 만들면 기본값이 `profile.ps1` 만들어집니다. 기본 프로필은 [핵심 도구 GitHub 리포지토리에서](https://github.com/Azure/azure-functions-core-tools/blob/dev/src/Azure.Functions.Cli/StaticResources/profile.ps1) 유지 관리 되며 다음을 포함 합니다.
 
 * Azure에 대 한 자동 MSI 인증.
 * `AzureRM`원하는 경우 Azure PowerShell PowerShell 별칭을 켜는 기능입니다.
 
-## <a name="powershell-version"></a>PowerShell 버전
+## <a name="powershell-versions"></a>PowerShell 버전
 
-다음 표에서는 함수 런타임의 각 주 버전에서 사용 하는 PowerShell 버전을 보여 줍니다.
+다음 표에서는 함수 런타임의 각 주 버전에서 사용할 수 있는 PowerShell 버전 및 필요한 .NET 버전을 보여 줍니다.
 
-| Functions 버전 | PowerShell 버전                             |
-|-------------------|------------------------------------------------|
-| 1.x               | Windows PowerShell 5.1 (런타임에 의해 잠김) |
-| 2.x               | PowerShell Core 6                              |
+| Functions 버전 | PowerShell 버전                               | .NET 버전  | 
+|-------------------|--------------------------------------------------|---------------|
+| 3(sp3) (권장) | PowerShell 7 (권장)<br/>PowerShell Core 6 | .NET Core 3.1<br/>.NET Core 2.1 |
+| 2.x               | PowerShell Core 6                                | .NET Core 2.2 |
 
 모든 함수에서 인쇄 하 여 현재 버전을 확인할 수 있습니다 `$PSVersionTable` .
+
+### <a name="running-local-on-a-specific-version"></a>특정 버전에서 로컬 실행
+
+로컬로 실행 하는 경우 Azure Functions 런타임 기본값은 PowerShell Core 6을 사용 합니다. 로컬에서 실행할 때 PowerShell 7을 사용 하려면 `"FUNCTIONS_WORKER_RUNTIME_VERSION" : "~7"` `Values` 프로젝트 루트의 local.setting.js파일에 있는 배열에 설정을 추가 해야 합니다. PowerShell 7에서 로컬로 실행 하는 경우 파일에 대 한 local.settings.js은 다음 예제와 같습니다. 
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "powershell",
+    "FUNCTIONS_WORKER_RUNTIME_VERSION" : "~7"
+  }
+}
+```
+
+### <a name="changing-the-powershell-version"></a>PowerShell 버전 변경
+
+PowerShell Core 6에서 PowerShell 7로 업그레이드 하려면 함수 앱이 버전 3(sp3)에서 실행 되어야 합니다. 이 작업을 수행 하는 방법에 대 한 자세한 내용은 [현재 런타임 버전 보기 및 업데이트](set-runtime-version.md#view-and-update-the-current-runtime-version)를 참조 하세요.
+
+함수 앱에서 사용 하는 PowerShell 버전을 변경 하려면 다음 단계를 사용 합니다. Azure Portal에서 또는 PowerShell을 사용 하 여이 작업을 수행할 수 있습니다.
+
+# <a name="portal"></a>[포털](#tab/portal)
+
+1. [Azure Portal](https://portal.azure.com)에서 함수 앱으로 이동합니다.
+
+1. **설정**아래에서 **구성**을 선택 합니다. **일반 설정** 탭에서 **PowerShell 버전**을 찾습니다. 
+
+    :::image type="content" source="media/functions-reference-powershell/change-powershell-version-portal.png" alt-text="함수 앱에서 사용 하는 PowerShell 버전 선택"::: 
+
+1. 원하는 **PowerShell Core 버전** 을 선택 하 고 **저장**을 선택 합니다. 보류 중인 다시 시작에 대 한 경고가 표시 되 면 **계속**을 선택 합니다. 선택한 PowerShell 버전에서 함수 앱이 다시 시작 됩니다. 
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+다음 스크립트를 실행 하 여 PowerShell 버전을 변경 합니다. 
+
+```powershell
+Set-AzResource -ResourceId "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<FUNCTION_APP>/config/web" -Properties @{  powerShellVersion  = '<VERSION>' } -Force -UsePatchSemantics
+
+```
+
+`<SUBSCRIPTION_ID>`, `<RESOURCE_GROUP>` 및를 `<FUNCTION_APP>` Azure 구독의 ID, 리소스 그룹 및 함수 앱의 이름으로 바꿉니다.  또한를 `<VERSION>` 또는로 바꿉니다 `~6` `~7` . `powerShellVersion`반환 된 해시 테이블에서 설정의 업데이트 된 값을 확인할 수 있습니다 `Properties` . 
+
+---
+
+구성이 변경 된 후 함수 앱이 다시 시작 됩니다.
 
 ## <a name="dependency-management"></a>종속성 관리
 
@@ -416,15 +463,18 @@ Visual Studio Code 및 Azure Functions Core Tools와 같은 도구를 사용 하
 requirements.psd1 파일을 업데이트 하는 경우 다시 시작한 후 업데이트 된 모듈이 설치 됩니다.
 
 > [!NOTE]
-> 관리 되는 종속성이 모듈을 다운로드 하려면 www.powershellgallery.com에 액세스 해야 합니다. 로컬로 실행 하는 경우 런타임에서 필요한 방화벽 규칙을 추가 하 여이 URL에 액세스할 수 있는지 확인 합니다. 
+> 관리 되는 종속성이 모듈을 다운로드 하려면 www.powershellgallery.com에 액세스 해야 합니다. 로컬로 실행 하는 경우 런타임에서 필요한 방화벽 규칙을 추가 하 여이 URL에 액세스할 수 있는지 확인 합니다.
+
+> [!NOTE]
+> 관리 되는 종속성은 현재 대화형으로 라이선스를 수락 하거나를 호출할 때 스위치를 제공 하 여 사용자가 라이선스를 수락 해야 하는 모듈을 지원 하지 않습니다 `-AcceptLicense` `Install-Module` .
 
 다음 응용 프로그램 설정을 사용 하 여 관리 되는 종속성을 다운로드 하 고 설치 하는 방법을 변경할 수 있습니다. 앱 업그레이드는 내에서 시작 되 `MDMaxBackgroundUpgradePeriod` 고, 업그레이드 프로세스는 약에서 완료 됩니다 `MDNewSnapshotCheckPeriod` .
 
 | 함수 앱 설정              | 기본값             | 설명                                         |
 |   -----------------------------   |   -------------------     |  -----------------------------------------------    |
-| **`MDMaxBackgroundUpgradePeriod`**      | `7.00:00:00`(7 일)     | 각 PowerShell 작업자 프로세스는 프로세스 시작 시와 그 이후에 PowerShell 갤러리에서 모듈 업그레이드 확인을 시작 `MDMaxBackgroundUpgradePeriod` 합니다. PowerShell 갤러리에서 새 모듈 버전을 사용할 수 있는 경우이 버전은 파일 시스템에 설치 되며 PowerShell 작업자에 게 제공 됩니다. 이 값을 줄이면 함수 앱에서 최신 모듈 버전을 보다 빨리 가져올 수 있지만, 앱 리소스 사용량 (네트워크 i/o, CPU, 저장소)도 늘어납니다. 이 값을 늘려도 앱의 리소스 사용량이 줄어들지만 앱에 새 모듈 버전을 전달 하는 작업이 지연 될 수도 있습니다. | 
-| **`MDNewSnapshotCheckPeriod`**         | `01:00:00`(1 시간)       | 새 모듈 버전이 파일 시스템에 설치 된 후에는 모든 PowerShell 작업자 프로세스를 다시 시작 해야 합니다. PowerShell 작업자를 다시 시작 하면 현재 함수 실행을 중단할 수 있으므로 앱 사용 가능성에 영향을 줍니다. 모든 PowerShell 작업자 프로세스가 다시 시작 될 때까지 함수 호출은 이전 또는 새 모듈 버전을 사용할 수 있습니다. 내에서 완료 되는 모든 PowerShell 작업자를 다시 시작 `MDNewSnapshotCheckPeriod` 합니다. 이 값을 늘리면 중단 빈도가 줄어들지만 함수 호출로 인해 이전 또는 새 모듈 버전이 명확 하지 않은 경우에도 시간이 길어질 수 있습니다. |
-| **`MDMinBackgroundUpgradePeriod`**      | `1.00:00:00`(1 일)     | 자주 실행 하는 작업자를 다시 시작할 때 과도 한 모듈 업그레이드가 발생 하지 않도록 하기 위해 작업자 중 마지막에 체크 인을 이미 시작한 경우에는 모듈 업그레이드를 확인 하지 않습니다 `MDMinBackgroundUpgradePeriod` . |
+| **`MDMaxBackgroundUpgradePeriod`**      | `7.00:00:00` (7 일)     | 각 PowerShell 작업자 프로세스는 프로세스 시작 시와 그 이후에 PowerShell 갤러리에서 모듈 업그레이드 확인을 시작 `MDMaxBackgroundUpgradePeriod` 합니다. PowerShell 갤러리에서 새 모듈 버전을 사용할 수 있는 경우이 버전은 파일 시스템에 설치 되며 PowerShell 작업자에 게 제공 됩니다. 이 값을 줄이면 함수 앱에서 최신 모듈 버전을 보다 빨리 가져올 수 있지만, 앱 리소스 사용량 (네트워크 i/o, CPU, 저장소)도 늘어납니다. 이 값을 늘려도 앱의 리소스 사용량이 줄어들지만 앱에 새 모듈 버전을 전달 하는 작업이 지연 될 수도 있습니다. | 
+| **`MDNewSnapshotCheckPeriod`**         | `01:00:00` (1 시간)       | 새 모듈 버전이 파일 시스템에 설치 된 후에는 모든 PowerShell 작업자 프로세스를 다시 시작 해야 합니다. PowerShell 작업자를 다시 시작 하면 현재 함수 실행을 중단할 수 있으므로 앱 사용 가능성에 영향을 줍니다. 모든 PowerShell 작업자 프로세스가 다시 시작 될 때까지 함수 호출은 이전 또는 새 모듈 버전을 사용할 수 있습니다. 내에서 완료 되는 모든 PowerShell 작업자를 다시 시작 `MDNewSnapshotCheckPeriod` 합니다. 이 값을 늘리면 중단 빈도가 줄어들지만 함수 호출로 인해 이전 또는 새 모듈 버전이 명확 하지 않은 경우에도 시간이 길어질 수 있습니다. |
+| **`MDMinBackgroundUpgradePeriod`**      | `1.00:00:00` (1 일)     | 자주 실행 하는 작업자를 다시 시작할 때 과도 한 모듈 업그레이드가 발생 하지 않도록 하기 위해 작업자 중 마지막에 체크 인을 이미 시작한 경우에는 모듈 업그레이드를 확인 하지 않습니다 `MDMinBackgroundUpgradePeriod` . |
 
 사용자 고유의 사용자 지정 모듈을 활용 하는 것은 일반적으로 수행 하는 방법과 약간 다릅니다.
 
@@ -434,6 +484,7 @@ requirements.psd1 파일을 업데이트 하는 경우 다시 시작한 후 업�
 
 * `Modules`함수 앱의 루트에 있는 폴더입니다.
 * `Modules`PowerShell 언어 작업자에 의해 제어 되는 폴더의 경로입니다.
+
 
 ### <a name="function-app-level-modules-folder"></a>함수 앱 수준 `Modules` 폴더
 
@@ -501,23 +552,28 @@ Write-Host $env:WEBSITE_SITE_NAME
 * 동시에 다 수의 호출을 처리 하려고 하는 경우
 * 동일한 함수 앱 내에서 다른 함수를 호출 하는 함수가 있는 경우
 
-다음 환경 변수를 정수 값으로 설정 하 여이 동작을 변경할 수 있습니다.
+작업 유형에 따라 탐색할 수 있는 몇 가지 동시성 모델이 있습니다.
 
-```
-PSWorkerInProcConcurrencyUpperBound
-```
+* 증가 ```FUNCTIONS_WORKER_PROCESS_COUNT``` . 이렇게 하면 특정 CPU 및 메모리 오버 헤드를 야기 하는 동일한 인스턴스 내의 여러 프로세스에서 함수 호출을 처리할 수 있습니다. 일반적으로 i/o 바인딩된 함수는 이러한 오버 헤드로 인해 발생 하지 않습니다. CPU 바인딩된 함수의 경우에는 영향이 중요할 수 있습니다.
 
-함수 앱의 [앱 설정](functions-app-settings.md) 에서이 환경 변수를 설정 합니다.
+* ```PSWorkerInProcConcurrencyUpperBound```앱 설정 값을 늘립니다. 이렇게 하면 동일한 프로세스 내에서 여러 runspace를 만들 수 있으므로 CPU와 메모리 오버 헤드가 크게 줄어듭니다.
+
+이러한 환경 변수는 함수 앱의 [앱 설정](functions-app-settings.md) 에서 설정 합니다.
+
+사용 사례에 따라 Durable Functions 확장성이 크게 향상 될 수 있습니다. 자세히 알아보려면 [Durable Functions 응용 프로그램 패턴](/azure/azure-functions/durable/durable-functions-overview?tabs=powershell#application-patterns)을 참조 하세요.
+
+>[!NOTE]
+> "사용 가능한 runspace 없어서 요청이 큐에 대기 중입니다." 경고가 나타날 수 있습니다 .이 오류는 오류가 아닙니다. 메시지에는 요청이 대기 중임을 알리는 메시지가 표시 되 고 이전 요청이 완료 되 면 요청이 처리 됩니다.
 
 ### <a name="considerations-for-using-concurrency"></a>동시성 사용에 대 한 고려 사항
 
-PowerShell은 기본적으로 _단일 스레드_ 스크립팅 언어입니다. 그러나 동일한 프로세스에서 여러 PowerShell runspace을 사용 하 여 동시성을 추가할 수 있습니다. 만든 runspace의 양은 PSWorkerInProcConcurrencyUpperBound 응용 프로그램 설정과 일치 합니다. 처리량은 선택한 계획에서 사용할 수 있는 CPU 및 메모리의 양에 따라 영향을 받습니다.
+PowerShell은 기본적으로 _단일 스레드_ 스크립팅 언어입니다. 그러나 동일한 프로세스에서 여러 PowerShell runspace을 사용 하 여 동시성을 추가할 수 있습니다. 만든 runspace의 양은 ```PSWorkerInProcConcurrencyUpperBound``` 응용 프로그램 설정과 일치 합니다. 처리량은 선택한 계획에서 사용할 수 있는 CPU 및 메모리의 양에 따라 영향을 받습니다.
 
 Azure PowerShell은 몇 가지 _프로세스 수준_ 컨텍스트 및 상태를 사용 하 여 과도 한 입력을 저장 하는 데 도움이 됩니다. 그러나 함수 앱에서 동시성을 설정 하 고 상태를 변경 하는 작업을 호출 하는 경우 경합 상태가 발생할 수 있습니다. 이러한 경합 상태는 한 호출이 특정 상태를 사용 하 고 다른 호출이 상태를 변경 하기 때문에 디버깅 하기 어렵습니다.
 
 일부 작업에는 상당한 시간이 걸릴 수 있으므로 Azure PowerShell 동시성에 때 엄청난 값이 있습니다. 그러나 주의 해야 합니다. 경합 상태가 발생 한 것으로 의심 되는 경우 PSWorkerInProcConcurrencyUpperBound 앱 설정을로 설정 하 `1` 고 대신 동시성에 대해 [언어 작업자 프로세스 수준 격리](functions-app-settings.md#functions_worker_process_count) 를 사용 합니다.
 
-## <a name="configure-function-scriptfile"></a>Configure 함수`scriptFile`
+## <a name="configure-function-scriptfile"></a>Configure 함수 `scriptFile`
 
 기본적으로 PowerShell 함수는 `run.ps1` 해당와 동일한 부모 디렉터리를 공유 하는 파일에서 실행 됩니다 `function.json` .
 
@@ -595,7 +651,7 @@ PowerShell 함수를 사용 하는 경우 다음 섹션의 고려 사항에 유�
 
 서버를 사용 하지 않는 [호스팅 모델](functions-scale.md#consumption-plan)에서 Azure Functions를 개발 하는 경우 콜드 시작은 현실입니다. *콜드 시작* 은 함수 앱이 요청을 처리 하기 위해 실행 되기 시작 하는 데 걸리는 시간을 나타냅니다. 비활성 기간 동안 함수 앱이 종료 되기 때문에 소비 계획에서 콜드 시작이 더 자주 발생 합니다.
 
-### <a name="bundle-modules-instead-of-using-install-module"></a>를 사용 하는 대신 번들 모듈`Install-Module`
+### <a name="bundle-modules-instead-of-using-install-module"></a>를 사용 하는 대신 번들 모듈 `Install-Module`
 
 모든 호출에서 스크립트가 실행 됩니다. `Install-Module`스크립트에서를 사용 하지 마십시오. 대신 `Save-Module` 함수에서 모듈 다운로드 시간을 낭비 하지 않아도 되도록 게시 하기 전에를 사용 합니다. 콜드 시작이 함수에 영향을 주는 경우에는 *always on* 또는 [프리미엄 계획](functions-scale.md#premium-plan)으로 설정 된 [App Service 계획](functions-scale.md#app-service-plan) 에 함수 앱을 배포 하는 것이 좋습니다.
 

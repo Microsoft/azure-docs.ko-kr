@@ -1,27 +1,27 @@
 ---
 title: Azure Resource Manager 템플릿 샘플 - Azure Front Door
-description: Azure Front Door에 대한 Azure Resource Manager 템플릿 샘플
+description: 기본 Front Door를 만들고 Front Door 속도 제한을 구성하기 위한 템플릿을 포함하여 Azure Front Door용 Resource Manager 템플릿 샘플에 대해 알아봅니다.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 ms.service: frontdoor
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/04/2020
-ms.author: sharadag
-ms.openlocfilehash: 47db565288d1bfe1f98c58536e726eb7ec55d0a9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: duau
+ms.openlocfilehash: 961214b3a815eb8ae9b0fcb283599b3474d4706e
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084639"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399364"
 ---
 # <a name="azure-resource-manager-deployment-model-templates-for-front-door"></a>Front Door에 대한 Azure Resource Manager 배포 모델 템플릿
 
 다음 표에는 Azure Front Door에 대한 Azure Resource Manager 배포 모델 템플릿 링크가 포함되어 있습니다. 
 
-| 템플릿 | 설명 |
+| 템플릿 | Description |
 | ---| ---|
 | [기본 Front Door 만들기](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-create-basic)| 단일 백 엔드를 사용하여 기본 Front Door 구성을 만듭니다. |
 | [다중 백 엔드 및 백 엔드 풀과 URL 기반 라우팅을 사용하여 Front Door 만들기](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-create-multiple-backends)| URL 경로를 기준으로 백 엔드 풀의 여러 백 엔드 및 백 엔드 풀 간에 부하 분산이 구성된 Front Door를 만듭니다. |

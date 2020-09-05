@@ -1,6 +1,6 @@
 ---
 title: Traffic Manager를 사용 하 여 여러 Azure CDN 끝점 간 장애 조치 (Failover)
-description: Azure CDN 엔드포인트를 사용하여 Azure Traffic Manager를 설정하는 방법을 알아봅니다.
+description: Azure Traffic Manager를 사용 하 여 여러 Azure Content Delivery Network 끝점에서 장애 조치 (failover)를 설정 하는 방법을 알아봅니다.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 03/18/2019
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: d557637815036fa49e83f1d11a948f264d493321
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b55e418393d6d446ae0d3557f2d1f4cf98d89293
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888654"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192499"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Azure Traffic Manager를 사용하여 여러 Azure CDN 엔드포인트 간 장애 조치(failover) 설정
 

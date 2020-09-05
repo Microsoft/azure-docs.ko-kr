@@ -5,12 +5,13 @@ author: mjrousos
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: mikerou
-ms.openlocfilehash: 19f773fa781c51f64412039201842a7af4c29052
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bd47e5e39684bd4b684cd1e12dd9a3d420640ee2
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261118"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005822"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>프로그래밍 방식으로 Service Fabric 클러스터의 크기 조정 
 
@@ -59,7 +60,7 @@ var newCapacity = (int)Math.Min(MaximumNodeCount, scaleSet.Capacity + 1);
 scaleSet.Update().WithCapacity(newCapacity).Apply(); 
 ``` 
 
-또는 PowerShell cmdlet을 통해 가상 머신 확장 집합 크기를 관리할 수도 있습니다. [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss)가상 머신 확장 집합 개체를 검색할 수 있습니다. 현재 용량은 `.sku.capacity` 속성을 통해 사용할 수 있습니다. 용량을 원하는 값으로 변경한 후에는 명령을 사용 하 여 Azure의 가상 머신 확장 집합을 업데이트할 수 있습니다 [`Update-AzVmss`](/powershell/module/az.compute/update-azvmss) .
+또는 PowerShell cmdlet을 통해 가상 머신 확장 집합 크기를 관리할 수도 있습니다. [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss) 가상 머신 확장 집합 개체를 검색할 수 있습니다. 현재 용량은 `.sku.capacity` 속성을 통해 사용할 수 있습니다. 용량을 원하는 값으로 변경한 후에는 명령을 사용 하 여 Azure의 가상 머신 확장 집합을 업데이트할 수 있습니다 [`Update-AzVmss`](/powershell/module/az.compute/update-azvmss) .
 
 노드를 수동으로 추가하는 경우 확장 집합 인스턴스만 추가하면 새로운 Service Fabric 노드를 시작할 수 있습니다. 확장 집합 템플릿에는 새 인스턴스를 자동으로 Service Fabric 클러스터에 조인하는 확장 기능이 포함되어 있기 때문입니다. 
 

@@ -1,6 +1,6 @@
 ---
 title: CloudSimple로 VMware 솔루션에 대 한 노드 프로 비전-Azure
-description: CloudSimple 배포를 사용 하 여 VMWare에 노드를 추가 하는 방법을 알아봅니다.
+description: Azure Portal에서 CloudSimple 배포를 사용 하 여 VMWare에 노드를 추가 하는 방법에 대해 알아봅니다. 사설 클라우드 환경에 대 한 종 량 제 용량을 설정할 수 있습니다.
 author: dikamath
 ms.author: dikamath
 ms.date: 08/14/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: eb033425d18b472c9da1a2d6a1bb6f166702905e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ccff5b4dc6ed5a571e25ab0569b9fa92674e1340
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024809"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140737"
 ---
 # <a name="provision-nodes-for-azure-vmware-solution-by-cloudsimple"></a>CloudSimple로 Azure VMware 솔루션에 대 한 노드 프로 비전
 

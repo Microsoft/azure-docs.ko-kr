@@ -7,13 +7,14 @@ author: dereklegenzoff
 ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 05/05/2020
-ms.openlocfilehash: ef1f0c607eb1d0152a5dd5f5acc812bb9364e47a
-ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
+ms.date: 08/21/2020
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bfb2598fb3a207bbdfaade9086efd07827b077dd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85079217"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998427"
 ---
 # <a name="tutorial-optimize-indexing-with-the-push-api"></a>자습서: 푸시 API를 사용하여 인덱싱 최적화
 
@@ -21,7 +22,7 @@ Azure Cognitive Search는 데이터를 검색 인덱스로 가져오기 위한 [
 
 이 자습서에서는 요청을 일괄 처리하고 지수 백오프 다시 시도 전략을 사용하여 [푸시 모델](search-what-is-data-import.md#pushing-data-to-an-index)을 통해 데이터를 효율적으로 인덱싱하는 방법에 대해 설명합니다. [애플리케이션을 다운로드하여 실행](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/optimize-data-indexing)할 수 있습니다. 이 문서에서는 애플리케이션의 주요 측면과 데이터를 인덱싱할 때 고려해야 하는 요소에 대해 설명합니다.
 
-이 자습서에서는 C# 및 [.NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)를 사용하여 다음 작업을 수행합니다.
+이 자습서에서는 C# 및 [.NET SDK](/dotnet/api/overview/azure/search)를 사용하여 다음 작업을 수행합니다.
 
 > [!div class="checklist"]
 > * 인덱스 만들기
@@ -111,7 +112,7 @@ API 호출에는 서비스 URL과 액세스 키가 필요합니다. 검색 서�
 
 ### <a name="creating-the-index"></a>인덱스 만들기
 
-이 샘플 프로그램에서는 .NET SDK를 사용하여 Azure Cognitive Search 인덱스를 정의하고 만듭니다. [FieldBuilder](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder) 클래스를 활용하여 C# 데이터 모델 클래스에서 인덱스 구조를 생성합니다.
+이 샘플 프로그램에서는 .NET SDK를 사용하여 Azure Cognitive Search 인덱스를 정의하고 만듭니다. [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder) 클래스를 활용하여 C# 데이터 모델 클래스에서 인덱스 구조를 생성합니다.
 
 데이터 모델은 Hotel 클래스에서 정의되며, Address 클래스에 대한 참조도 포함하고 있습니다. FieldBuilder는 여러 클래스 정의를 드릴다운하여 인덱스에 대한 복합 데이터 구조를 생성합니다. 메타데이터 태그는 검색 가능인지 아니면 정렬 가능인지와 같은 각 필드의 특성을 정의하는 데 사용됩니다.
 
@@ -162,8 +163,8 @@ List<Hotel> hotels = dg.GetHotels(100000, "large");
 
 Azure Cognitive Search는 단일 또는 여러 문서를 인덱스에 로드하기 위해 다음 API를 지원합니다.
 
-+ [문서 추가, 업데이트 또는 삭제(REST API)](https://docs.microsoft.com/rest/api/searchservice/AddUpdate-or-Delete-Documents)
-+ [indexAction 클래스](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) 또는 [indexBatch 클래스](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet)
++ [문서 추가, 업데이트 또는 삭제(REST API)](/rest/api/searchservice/AddUpdate-or-Delete-Documents)
++ [indexAction 클래스](/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) 또는 [indexBatch 클래스](/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet)
 
 문서를 일괄 처리 방식으로 인덱싱하면 인덱싱 성능이 크게 향상됩니다. 이러한 일괄 처리는 최대 1,000개의 문서 또는 일괄 처리당 최대 16MB까지 가능합니다.
 
@@ -258,14 +259,14 @@ Azure Cognitive Search의 인덱싱 속도를 최대한 활용하려면 여러 �
 
 위에서 언급한 몇 가지 주요 고려 사항은 최적의 스레드 수에 영향을 줍니다. 이 샘플을 수정하고 다양한 스레드 수로 테스트하여 시나리오에 가장 적합한 스레드 수를 결정할 수 있습니다. 그러나 여러 스레드가 동시에 실행되는 동안에는 대부분의 효율성 이점을 활용할 수 있어야 합니다.
 
-검색 서비스에 대한 요청을 늘리면 요청이 완전히 성공하지 못했음을 나타내는 [HTTP 상태 코드](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)가 발생할 수 있습니다. 인덱싱 중에 발생하는 두 가지 일반적인 HTTP 상태 코드는 다음과 같습니다.
+검색 서비스에 대한 요청을 늘리면 요청이 완전히 성공하지 못했음을 나타내는 [HTTP 상태 코드](/rest/api/searchservice/http-status-codes)가 발생할 수 있습니다. 인덱싱 중에 발생하는 두 가지 일반적인 HTTP 상태 코드는 다음과 같습니다.
 
 + **503 서비스를 사용할 수 없음** - 이 오류는 시스템의 부하가 높고 요청을 현재 처리할 수 없음을 의미합니다.
 + **207 여러 상태** - 이 오류는 일부 문서가 성공했지만 하나 이상의 문서가 실패했음을 의미합니다.
 
 ### <a name="implement-an-exponential-backoff-retry-strategy"></a>지수 백오프 다시 시도 전략 구현
 
-오류가 발생하면 [지수 백오프 다시 시도 전략](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff)을 사용하여 요청을 다시 시도해야 합니다.
+오류가 발생하면 [지수 백오프 다시 시도 전략](/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff)을 사용하여 요청을 다시 시도해야 합니다.
 
 Azure Cognitive Search의 .NET SDK에서 503 및 기타 실패한 요청을 자동으로 다시 시도하지만 207을 다시 시도하는 사용자 고유의 논리를 구현해야 합니다. [Polly](https://github.com/App-vNext/Polly)와 같은 오픈 소스 도구를 사용하여 다시 시도 전략을 구현할 수도 있습니다. 
 
@@ -281,7 +282,7 @@ TimeSpan delay = delay = TimeSpan.FromSeconds(2);
 int maxRetryAttempts = 5;
 ```
 
-[IndexBatchException](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexbatchexception?view=azure-dotnet)을 catch하는 것이 중요합니다. 이러한 예외는 인덱싱 작업이 부분적으로만 성공했음(207)을 나타내기 때문입니다. 실패한 항목만 포함하는 새 일괄 처리를 쉽게 만들 수 있도록 하는 `FindFailedActionsToRetry` 메서드를 사용하여 실패한 항목을 다시 시도해야 합니다.
+[IndexBatchException](/dotnet/api/microsoft.azure.search.indexbatchexception?view=azure-dotnet)을 catch하는 것이 중요합니다. 이러한 예외는 인덱싱 작업이 부분적으로만 성공했음(207)을 나타내기 때문입니다. 실패한 항목만 포함하는 새 일괄 처리를 쉽게 만들 수 있도록 하는 `FindFailedActionsToRetry` 메서드를 사용하여 실패한 항목을 다시 시도해야 합니다.
 
 `IndexBatchException` 이외의 예외도 catch하여 요청이 완전히 실패했음을 나타내야 합니다. 이러한 예외는 특히 .NET SDK에서 503을 자동으로 다시 시도하므로 일반적이지 않습니다.
 
@@ -346,7 +347,7 @@ ExponentialBackoff.IndexData(indexClient, hotels, 1000, 8).Wait();
 
 ### <a name="programatically"></a>프로그래밍 방식으로
 
-인덱스의 문서 수를 확인하는 두 가지 주요 옵션으로 [문서 수 계산 API](https://docs.microsoft.com/rest/api/searchservice/count-documents) 및 [인덱스 통계 가져오기 API](https://docs.microsoft.com/rest/api/searchservice/get-index-statistics)가 있습니다. 두 경로에는 모두 업데이트하는 데 약간의 추가 시간이 필요할 수 있으므로 반환되는 문서 수가 처음에 예상한 것보다 적으면 경고를 표시하지 않습니다.
+인덱스의 문서 수를 확인하는 두 가지 주요 옵션으로 [문서 수 계산 API](/rest/api/searchservice/count-documents) 및 [인덱스 통계 가져오기 API](/rest/api/searchservice/get-index-statistics)가 있습니다. 두 경로에는 모두 업데이트하는 데 약간의 추가 시간이 필요할 수 있으므로 반환되는 문서 수가 처음에 예상한 것보다 적으면 경고를 표시하지 않습니다.
 
 #### <a name="count-documents"></a>문서 수 계산
 
@@ -370,7 +371,7 @@ Azure Portal에서 검색 서비스 **개요** 페이지를 열고, **인덱스*
 
   ![Azure Cognitive Search 인덱스 목록](media/tutorial-optimize-data-indexing/portal-output.png "Azure Cognitive Search 인덱스 목록")
 
-*문서 수* 및 *스토리지 크기*는 [인덱스 통계 가져오기 API](https://docs.microsoft.com/rest/api/searchservice/get-index-statistics)를 기반으로 하며 업데이트하는 데 몇 분 정도 걸릴 수 있습니다.
+*문서 수* 및 *스토리지 크기*는 [인덱스 통계 가져오기 API](/rest/api/searchservice/get-index-statistics)를 기반으로 하며 업데이트하는 데 몇 분 정도 걸릴 수 있습니다.
 
 ## <a name="reset-and-rerun"></a>다시 설정하고 다시 실행
 

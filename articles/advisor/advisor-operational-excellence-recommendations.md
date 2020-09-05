@@ -3,12 +3,12 @@ title: Advisor를 사용 하 여 운영 excellency 개선
 description: Azure Advisor를 사용 하 여 Azure 구독에 대 한 운영 뛰어난 작업을 최적화 하 고 완성 합니다.
 ms.topic: article
 ms.date: 10/24/2019
-ms.openlocfilehash: 2b4c4726400134e4eec3868e155da47cb8c515b5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 036adb7e7d59bd78980c72b210ad41faea277d00
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057637"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258482"
 ---
 # <a name="achieve-operational-excellence-by-using-azure-advisor"></a>Azure Advisor를 사용 하 여 뛰어난 운영 효율성 얻기
 
@@ -53,6 +53,16 @@ Azure Policy는 정책을 만들고 할당 하 고 관리 하는 데 사용할 �
 ***관리 디스크를 사용 하지 않는 감사 vm을*적용 합니다.**
 
 ***리소스 그룹에서 태그 상속을*사용 하도록 설정 합니다.** 이 정책은 리소스를 만들거나 업데이트할 때 상위 리소스 그룹의 지정된 태그 및 값을 추가하거나 바꿉니다. 수정 작업을 트리거하여 기존 리소스를 수정할 수 있습니다.
+
+## <a name="no-validation-environment-enabled"></a>유효성 검사 환경을 사용하지 않음
+Azure Advisor 현재 구독에서 유효성 검사 환경을 사용 하도록 설정 하지 않은 것을 확인 합니다. 호스트 풀을 만들 때 \" \" \" 속성 탭에서 유효성 검사 환경에 대해 아니요를 선택 했습니다 \" . 유효성 검사 환경을 사용 하도록 설정 된 호스트 풀이 하나 이상 있으면 잠재적인 문제를 조기에 검색 하 여 Windows 가상 데스크톱 서비스 배포를 통해 비즈니스 연속성을 보장 합니다. [자세히 알아보기](https://docs.microsoft.com/azure/virtual-desktop/create-validation-host-pool)
+
+## <a name="ensure-production-non-validation-environment-to-benefit-from-stable-functionality"></a>안정적인 기능의 이점을 얻기 위해 프로덕션 (유효성 검사 아님) 환경 확인
+Azure Advisor는 유효성 검사 환경이 활성화 된 호스트 풀이 너무 많은 것을 감지 합니다. 유효성 검사 환경이 용도에 가장 적합 하 게 하려면 유효성 검사 환경에서 하나 이상의 호스트 풀이 필요 하지 않습니다. 유효성 검사 환경을 사용 하도록 설정 된 호스트 풀과 사용 하지 않도록 설정 된 호스트 풀 간에 정상적인 균형을 유지 하 여 Windows 가상 데스크톱이 특정 업데이트를 제공 하는 다단계 배포의 이점을 최대한 활용할 수 있습니다. 이 문제를 해결 하려면 호스트 풀의 속성을 열고 \" \" 유효성 검사 환경 설정 옆에 있는 아니요를 선택 \" \" 합니다.
+
+## <a name="enable-traffic-analytics-to-view-insights-into-traffic-patterns-across-azure-resources"></a>트래픽 분석을 사용하여 Azure 리소스에서 트래픽 패턴에 대한 인사이트를 볼 수 있음
+트래픽 분석은 Azure의 사용자 및 애플리케이션 작업에 대한 가시성을 제공하는 클라우드 기반 솔루션입니다. 트래픽 분석은 NSG(Network Watcher 네트워크 보안 그룹) 흐름 로그를 분석하여 트래픽 흐름에 대한 인사이트를 제공합니다. 트래픽 분석을 사용하면 Azure 및 비 Azure 배포 전반에서 상위 토커를 확인하고, 사용자 환경에서 열린 포트, 프로토콜 및 악성 흐름을 조사하고, 네트워크 배포를 성능에 맞게 최적화할 수 있습니다. 10분 및 60분의 처리 간격으로 흐름 로그를 처리하여 트래픽에 대한 분석을 더 빠르게 할 수 있습니다. Azure 리소스에 대 한 트래픽 분석를 사용 하도록 설정 하는 것이 좋습니다. 
+
 
 ## <a name="next-steps"></a>다음 단계
 

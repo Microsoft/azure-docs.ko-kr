@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 2ebeb7f6fee77c43c9da97b922fc215d75196145
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6c70b42e7d0f647a3b2b60d29b5098a791e4975f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82117572"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924523"
 ---
 # <a name="how-to-model-relational-sql-data-for-import-and-indexing-in-azure-cognitive-search"></a>Azure Cognitive Search에서 가져오기 및 인덱싱을 위한 관계형 SQL 데이터를 모델링 하는 방법
 
@@ -107,7 +107,7 @@ ON Rooms$.HotelID = Hotels$.HotelID
 이제이 행 집합을 Azure Cognitive Search로 가져올 준비가 되었습니다.
 
 > [!NOTE]
-> 이 방법은 포함 된 JSON이 [SQL Server의 최대 열 크기 제한](https://docs.microsoft.com/sql/sql-server/maximum-capacity-specifications-for-sql-server)에 포함 되어 있다고 가정 합니다. 
+> 이 방법은 포함 된 JSON이 [SQL Server의 최대 열 크기 제한](/sql/sql-server/maximum-capacity-specifications-for-sql-server)에 포함 되어 있다고 가정 합니다. 
 
  ## <a name="use-a-complex-collection-for-the-many-side-of-a-one-to-many-relationship"></a>일 대 다 관계의 "다" 쪽에 복잡 한 컬렉션 사용
 

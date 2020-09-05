@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: 270ff3c3e8e4cffbb1f4b1987ee497530d0c0982
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 476af7dd40cd1f31d03f3bd80affac0ce10ef900
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80546257"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927207"
 ---
 # <a name="adjust-capacity-in-azure-cognitive-search"></a>Azure Cognitive Search의 용량 조정
 
@@ -21,7 +21,7 @@ ms.locfileid: "80546257"
 
 Capacity는 [선택 하는 계층](search-sku-tier.md) 의 기능 (계층은 하드웨어 특성을 결정)과 프로젝션 된 워크 로드에 필요한 복제본 및 파티션 조합입니다. 조정의 계층 및 크기에 따라 용량을 추가 하거나 축소 하는 데에는 15 분에서 몇 시간까지 걸릴 수 있습니다. 
 
-복제본 및 파티션 할당을 수정 하는 경우 Azure Portal를 사용 하는 것이 좋습니다. 포털은 계층의 최대 한도 미만으로 유지 되는 허용 가능한 조합에 제한을 적용 합니다. 그러나 스크립트 기반 또는 코드 기반 프로 비전 접근 방식이 필요한 경우에는 [Azure PowerShell](search-manage-powershell.md) 또는 [관리 REST API](https://docs.microsoft.com/rest/api/searchmanagement/services) 대체 해결 방법이 됩니다.
+복제본 및 파티션 할당을 수정 하는 경우 Azure Portal를 사용 하는 것이 좋습니다. 포털은 계층의 최대 한도 미만으로 유지 되는 허용 가능한 조합에 제한을 적용 합니다. 그러나 스크립트 기반 또는 코드 기반 프로 비전 접근 방식이 필요한 경우에는 [Azure PowerShell](search-manage-powershell.md) 또는 [관리 REST API](/rest/api/searchmanagement/services) 대체 해결 방법이 됩니다.
 
 ## <a name="terminology-replicas-and-partitions"></a>용어: 복제본 및 파티션
 
@@ -86,10 +86,10 @@ Capacity는 [선택 하는 계층](search-sku-tier.md) 의 기능 (계층은 하
 | **복제본 1개** |1 SU |2 SU |3 SU |4 SU |6 SU |12 SU |
 | **복제본 2개** |2 SU |4 SU |6 SU |8 SU |12 SU |24 SU |
 | **복제본 3개** |3 SU |6 SU |9 SU |12 SU |18 SU |36 SU |
-| **복제본 4개** |4 SU |8 SU |12 SU |16 SU |24 SU |해당 없음 |
-| **복제본 5개** |5 SU |10 SU |15 SU |20 SU |30 SU |해당 없음 |
-| **복제본 6개** |6 SU |12 SU |18 SU |24 SU |36 SU |해당 없음 |
-| **복제본 12개** |12 SU |24 SU |36 SU |해당 없음 |해당 없음 |해당 없음 |
+| **복제본 4개** |4 SU |8 SU |12 SU |16 SU |24 SU |N/A |
+| **복제본 5개** |5 SU |10 SU |15 SU |20 SU |30 SU |N/A |
+| **복제본 6개** |6 SU |12 SU |18 SU |24 SU |36 SU |N/A |
+| **복제본 12개** |12 SU |24 SU |36 SU |N/A |N/A |N/A |
 
 SU, 가격 책정 및 용량에 대해서는 Azure Websites에 자세히 설명되어 있습니다. 자세한 내용은 [가격 정보](https://azure.microsoft.com/pricing/details/search/)를 참조하세요.
 

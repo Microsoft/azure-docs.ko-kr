@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 3c890dc48c97580fd8de5c817c96b62d4eb9c009
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 846d66a1cf1bb1d97f7ab9d7dfd7bbcf43d3f8d6
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045946"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231030"
 ---
 # <a name="azure-security-baseline-for-azure-sql-database--sql-managed-instance"></a>SQL Managed Instance & Azure SQL Database에 대 한 Azure 보안 기준
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -119,7 +119,7 @@ https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 **지침**: Azure SQL Database에 대해 ATP (Advanced Threat Protection)를 사용 하도록 설정 합니다.  사용자는 의심스러운 데이터베이스 활동, 잠재적 취약성 및 SQL 삽입 공격뿐만 아니라 비정상적인 데이터베이스 액세스 및 쿼리 패턴에 대한 경고도 받습니다. 또한 Advanced Threat Protection은 경고를 Azure Security Center와 통합 합니다.
 
-Azure SQL Database에 대 한 Advanced Threat Protection 이해 및 사용:https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
+Azure SQL Database에 대 한 Advanced Threat Protection 이해 및 사용: https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview
 
 **Azure Security Center 모니터링**: 예
 
@@ -617,7 +617,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-control-access
 
 **지침**: Microsoft는 Azure SQL Database에 대 한 기본 인프라를 관리 하 고, 고객 데이터 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
-Azure의 고객 데이터 보호 이해:
+Azure의 고객 데이터 보호 이해: 
 
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
@@ -627,7 +627,7 @@ https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8: 중요한 저장 정보 암호화
 
-**지침**: tde (투명 한 데이터 암호화)는 미사용 데이터를 암호화 하 여 악의적인 오프 라인 활동의 위협 으로부터 Azure SQL Database, azure SQL Managed Instance 및 Azure data Warehouse를 보호 하는 데 도움이 됩니다. 이 기능은 애플리케이션을 변경할 필요 없이 미사용 데이터베이스, 연결된 백업 및 트랜잭션 로그 파일의 실시간 암호화 및 암호 해독을 수행합니다. 기본적으로 TDE는 SQL Database 및 SQL Managed Instance에서 새로 배포 된 모든 데이터베이스에 대해 사용 하도록 설정 됩니다. Microsoft 또는 고객은 TDE 암호화 키를 관리할 수 있습니다.
+**지침**: tde (투명 한 데이터 암호화)는 미사용 데이터를 암호화 하 여 악의적인 오프 라인 활동의 위협 으로부터 Azure SQL Database, azure SQL Managed Instance 및 Azure data Warehouse를 보호 하는 데 도움이 됩니다. 데이터베이스, 연결된 백업 및 미사용 로그 파일 트랜잭션에 애플리케이션을 변경하지 않고 실시간으로 암호화 및 암호 해독을 수행합니다. 기본적으로 TDE는 SQL Database 및 SQL Managed Instance에서 새로 배포 된 모든 데이터베이스에 대해 사용 하도록 설정 됩니다. Microsoft 또는 고객은 TDE 암호화 키를 관리할 수 있습니다.
 
 투명 한 데이터 암호화를 관리 하 고 사용자 고유의 암호화 키를 사용 하는 방법:
 
@@ -881,7 +881,7 @@ https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7.2: 보안 운영 체제 구성 설정
 
@@ -1035,7 +1035,7 @@ https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resou
 
 비 계산 Azure 리소스 (예: App Service, Data Lake Storage, Blob Storage, Azure SQL Database 등)로 업로드 되는 콘텐츠를 미리 검색 합니다. Microsoft는 이러한 인스턴스의 데이터에 액세스할 수 없습니다.
 
-Azure Cloud Services 및 Virtual Machines에 대 한 Microsoft 맬웨어 방지를 이해 합니다.https://docs.microsoft.com/azure/security/fundamentals/antimalware
+Azure Cloud Services 및 Virtual Machines에 대 한 Microsoft 맬웨어 방지를 이해 합니다. https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -1099,7 +1099,7 @@ https://docs.microsoft.com/azure/sql-database/sql-database-recovery-using-backup
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9.4: 백업 및 고객 관리형 키 보호 보장
 
@@ -1133,7 +1133,7 @@ https://docs.microsoft.com/azure/security-center/security-center-planning-and-op
 
 **지침**: Security Center는 경고에 대 한 심각도를 할당 하 여 각 경고에 참석 하는 순서의 우선 순위를 지정할 수 있도록 합니다. 따라서 리소스가 손상 되 면 즉시 가져올 수 있습니다. 심각도는 Security Center에서 경고를 실행하는 데 사용된 결과 또는 분석의 신뢰도 및 경고가 발생된 활동의 배후에 악의적인 의도가 있었음에 대한 신뢰 수준을 기준으로 합니다.
 
-Azure Security Center의 보안 경고:https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
+Azure Security Center의 보안 경고: https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
 
 **Azure Security Center 모니터링**: 예
 
@@ -1201,7 +1201,7 @@ https://docs.microsoft.com/azure/security-center/workflow-automation
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1.
 
-Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 Microsoft의 전략 및 실행에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 Microsoft의 전략 및 실행에 대 한 자세한 내용은 다음에서 확인할 수 있습니다. https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Azure Security Center 모니터링**: 해당 없음
 

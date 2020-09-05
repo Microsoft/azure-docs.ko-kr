@@ -2,25 +2,21 @@
 title: '자습서: ITRP와 Azure Active Directory 통합 | Microsoft Docs'
 description: 이 자습서에서는 Azure Active Directory 및 ITRP 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e09716a3-4200-4853-9414-2390e6c10d98
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c4d0f753e23e42b1064fec3f56957dfe97c30ca4
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d7a7c4f7d9a9ba2ef574519a41aae3dd6e28e4fb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81261196"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552801"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>자습서: ITRP와 Azure Active Directory 통합
 
@@ -179,7 +175,7 @@ ITRP에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수행합
 
     1. **이름** 상자에 **BrittaSimon**을 입력합니다.
   
-    1. **사용자 이름** 상자에 **BrittaSimon@\<yourcompanydomain>.\<extension>** 을 입력합니다. (예: BrittaSimon@contoso.com)
+    1. **사용자 이름** 상자에 **BrittaSimon@\<yourcompanydomain>\<extension>.** 을 입력합니다. (예: BrittaSimon@contoso.com)
 
     1. **암호 표시**를 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
 

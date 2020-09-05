@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 06/01/2020
+ms.date: 08/19/2020
 ms.author: victorh
-ms.openlocfilehash: a467aa60b131e47e9251366369b3fae8dd95c004
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: da2b206bf24cb33180305e32e270b989eb64dfa3
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84267701"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612601"
 ---
 # <a name="azure-firewall-forced-tunneling"></a>Azure Firewall 강제 터널링
 
@@ -24,13 +24,13 @@ ms.locfileid: "84267701"
 
 강제 터널링을 지원하기 위해 서비스 관리 트래픽은 고객 트래픽과 구분됩니다. 연결된 공용 IP 주소에는 *AzureFirewallManagementSubnet*(최소 서브넷 크기/26)이라는 추가 전용 서브넷이 필요합니다. 이 서브넷에서 허용되는 유일한 경로는 인터넷에 대한 기본 경로이며, BGP 경로 전파를 사용하지 않도록 설정해야 합니다.
 
-BGP를 통해 온-프레미스에 대한 트래픽을 강제로 적용하는 기본 경로를 알린 경우 방화벽을 배포하기 전에 *AzureFirewallSubnet* 및 *AzureFirewallManagementSubnet*을 만들고, 인터넷에 대한 기본 경로로 UDR을 사용하고, **가상 네트워크 게이트웨이 경로 전파**가 사용하지 않도록 설정되어야 합니다.
+BGP를 통해 온-프레미스에 대 한 트래픽을 강제로 수행 하는 기본 경로를 알린 경우 방화벽을 배포 하기 전에 *AzureFirewallSubnet* 및 *AzureFirewallManagementSubnet* 를 만들고 기본 경로를 사용 하 여 udr을 사용 하도록 설정 하 고 **게이트웨이 경로** 를 사용 하지 않도록 설정 해야 합니다.
 
-이 구성에서 *AzureFirewallSubnet* 는 이제 온-프레미스 방화벽 또는 nva에 대 한 경로를 포함 하 여 인터넷에 전달 되기 전에 트래픽을 처리할 수 있습니다. 이 서브넷에서 **가상 네트워크 게이트웨이 경로 전파**를 사용하는 경우 BGP를 통해 이러한 경로를 *AzureFirewallSubnet*에 게시할 수도 있습니다.
+이 구성에서 *AzureFirewallSubnet* 는 이제 온-프레미스 방화벽 또는 nva에 대 한 경로를 포함 하 여 인터넷에 전달 되기 전에 트래픽을 처리할 수 있습니다. 이 서브넷에서 **게이트웨이 경로 전파** 를 사용 하는 경우 BGP를 통해 이러한 경로를 게시할 수도 있습니다 *AzureFirewallSubnet* .
 
-예를 들어 온-프레미스 장치에 대 한 다음 홉으로 VPN gateway를 사용 하 여 *AzureFirewallSubnet* 에서 기본 경로를 만들 수 있습니다. 또는 **가상 네트워크 게이트웨이 경로 전파** 를 사용 하도록 설정 하 여 온-프레미스 네트워크에 대 한 적절 한 경로를 가져올 수 있습니다.
+예를 들어 온-프레미스 장치에 대 한 다음 홉으로 VPN gateway를 사용 하 여 *AzureFirewallSubnet* 에서 기본 경로를 만들 수 있습니다. 또는 **전파 게이트웨이 경로** 를 사용 하도록 설정 하 여 온-프레미스 네트워크에 대 한 적절 한 경로를 가져올 수 있습니다.
 
-![가상 네트워크 게이트웨이 경로 전파](media/forced-tunneling/route-propagation.png)
+:::image type="content" source="media/forced-tunneling/route-propagation.png" alt-text="가상 네트워크 게이트웨이 경로 전파":::
 
 강제 터널링을 사용 하도록 설정 하는 경우 인터넷에 바인딩된 트래픽은 AzureFirewallSubnet의 방화벽 개인 IP 주소 중 하나에 연결 되어 온-프레미스 방화벽에서 원본을 숨깁니다.
 

@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 1ca1b8b453be433f7db428f3b256677b9945ce40
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e75dde14cf7182f5153b3a42b26f1c7e8a4e78ac
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038905"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258030"
 ---
-# <a name="azure-media-services-concepts"></a>Azure Media Services 개념 
+# <a name="azure-media-services-concepts"></a>Azure Media Services 개념
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](../latest/index.yml)의 최신 버전을 확인하세요. 또한 [v2에서 v3로의 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)을 참조하세요.
@@ -49,7 +51,7 @@ Media Service API를 사용하지 않고 Media Services에서 생성된 Blob 컨
 업로드, 저장 및 배달하려는 콘텐츠의 유형에 따라 Media Services는 선택할 수 있는 다양한 암호화 옵션을 제공합니다.
 
 >[!NOTE]
->암호화가 사용되지 않습니다. 기본값입니다. 이 옵션을 사용하면 콘텐츠가 전송 중인 상태이거나 스토리지에 저장된 상태일 때 보호되지 않습니다.
+>암호화가 사용되지 않습니다. 이것은 기본값입니다. 이 옵션을 사용하면 콘텐츠가 전송 중인 상태이거나 스토리지에 저장된 상태일 때 보호되지 않습니다.
 
 점진적 다운로드를 사용하여 MP4를 배달하려는 경우 이 옵션을 사용하여 콘텐츠를 업로드합니다.
 
@@ -91,7 +93,7 @@ Azure Storage에 대한 모든 액세스는 Storage 계정을 통해 수행됩�
 
 작업에는 수행할 처리에 대한 메타데이터가 포함됩니다. 각 작업에는 원자성 처리 태스크, 해당 입력 자산, 출력 자산, 미디어 프로세서 및 관련 설정을 지정하는 하나 이상의 [태스크](/rest/api/media/operations/task)가 포함됩니다. 작업 내의 태스크는 함께 연결할 수 있으며, 이때 한 태스크의 출력 자산은 다음 태스크의 입력 자산으로 제공됩니다. 이러한 방식으로 한 작업에는 미디어 프레젠테이션에 필요한 모든 처리가 포함될 수 있습니다.
 
-## <a name="encoding"></a><a id="encoding"></a>Encoding
+## <a name="encoding"></a><a id="encoding"></a>인코딩이
 Azure Media Services는 클라우드에서 미디어의 인코딩에 대한 여러 옵션을 제공합니다.
 
 Media Services로 시작하는 경우 코덱과 파일 형식 간의 차이점을 이해하는 것은 중요합니다.
@@ -131,7 +133,7 @@ Media Services에서, [채널](/rest/api/media/operations/channel)은 라이브 
 
 채널은 동시 실행 프로그램을 최대 세 개까지 지원하므로 동일한 들어오는 스트림의 보관 파일을 여러 개 만들 수 있습니다. 따라서 이벤트의 여러 부분을 필요에 따라 게시하고 보관할 수 있습니다. 예를 들어 비즈니스 요구 사항에 따라 6시간의 프로그램을 보관하고 마지막 10분만 브로드캐스트해야 할 수 있습니다. 이렇게 하려면 두 개의 동시 실행 프로그램을 만들어야 합니다. 한 프로그램은 6시간의 이벤트를 보관하도록 설정하고 프로그램은 게시하지 않습니다. 다른 프로그램은 10분 동안을 보관하도록 설정하고 프로그램을 게시합니다.
 
-자세한 내용은 다음을 참조하세요.
+자세한 내용은 다음을 참조하십시오.
 
 * [Azure Media Services에서 Live Encoding을 수행할 수 있도록 설정 된 채널 사용](media-services-manage-live-encoder-enabled-channels.md)
 * [온-프레미스 인코더에서 다중 비트 전송률 라이브 스트림 받는 채널 작업](media-services-live-streaming-with-onprem-encoders.md)
@@ -154,7 +156,7 @@ Media Services에서 자산을 암호화하려는 경우 암호화 키(CommonEnc
 
 토큰 제한 정책을 구성하는 경우 기본 확인 키, 발급자 및 대상 매개 변수를 지정해야 합니다. 기본 확인 키는 토큰이 서명된 키를 포함하며 발급자는 토큰을 발행하는 보안 토큰 서비스입니다. 청중(범위) 라고도 함)은 토큰의 의도 또는 토큰이 접근을 인증하는 대상 리소스를 설명합니다. Media Services 키 배달 서비스는 이러한 토큰의 값이 템플릿 파일에 있는 값과 일치하는지 확인합니다.
 
-자세한 내용은 다음 문서를 참조하세요.
+자세한 내용은 다음 아티클을 참조하세요.
 - [콘텐츠 보호 개요](media-services-content-protection-overview.md)
 - [AES-128로 보호](media-services-protect-with-aes128.md)
 - [PlayReady/Widevine으로 보호](media-services-protect-with-playready-widevine.md)
@@ -190,7 +192,7 @@ Media Services 콘텐츠 배달 워크플로의 단계 중 하나는 스트리�
 >[!NOTE]
 >암호화된 자산을 점진적 다운로드에 사용할 수 있도록 하려면 해당 자산의 암호를 해독해야 합니다.
 
-사용자에게 점진적 다운로드 ,URL을 제공하려면 먼저 OnDemandOrigin 로케이터를 만들어야 합니다. 로케이터를 만들면 자산에 대한 기본 경로가 제공됩니다. 그러면 MP4 파일의 이름을 추가해야 합니다. 예를 들어:
+사용자에게 점진적 다운로드 ,URL을 제공하려면 먼저 OnDemandOrigin 로케이터를 만들어야 합니다. 로케이터를 만들면 자산에 대한 기본 경로가 제공됩니다. 그러면 MP4 파일의 이름을 추가해야 합니다. 예를 들면 다음과 같습니다.
 
 `http://amstest1.streaming.mediaservices.windows.net/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4`
 

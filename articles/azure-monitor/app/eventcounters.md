@@ -3,12 +3,13 @@ title: Application Insights의 이벤트 카운터 | Microsoft Docs
 description: Application Insights에서 시스템 및 사용자 지정 .NET/.NET Core EventCounters 모니터링
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 42140f68a5f383a2a60fe8327f5023754366e6b7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 3082c90f3e9f7a150206e1df8806af0de1c17024
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87324406"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936489"
 ---
 # <a name="eventcounters-introduction"></a>EventCounters 소개
 
@@ -45,10 +46,6 @@ Application Insights는 새로 릴리스된 nuget 패키지 [Microsoft.Applicati
 |`System.Runtime` | `threadpool-queue-length` |
 |`System.Runtime` | `threadpool-completed-items-count` |
 |`System.Runtime` | `active-timer-count` |
-|`Microsoft.AspNetCore.Hosting` | `requests-per-second` |
-|`Microsoft.AspNetCore.Hosting` | `total-requests` |
-|`Microsoft.AspNetCore.Hosting` | `current-requests` |
-|`Microsoft.AspNetCore.Hosting` | `failed-requests` |
 
 > [!NOTE]
 > Microsoft.AspNetCore.Hosting 범주의 카운터는 ASP.NET Core 애플리케이션에서만 추가됩니다.

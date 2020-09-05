@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/15/2020
-ms.openlocfilehash: bd575eb5f646b749b431516670c64c764f4d4c9c
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a78e1b9cc1d9ca8a815fdb586287983020232fd1
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828509"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782943"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor 질문과 대답
 
@@ -80,6 +80,10 @@ Azure 데이터 탐색기는 로그 및 원격 분석 데이터에 사용 가능
 
 ### <a name="how-do-i-retrieve-log-data"></a>로그 데이터를 검색하려면 어떻게 해야 하나요?
 모든 데이터는 KQL(Kusto 쿼리 언어)로 작성된 로그 쿼리를 사용하여 Log Analytics 작업 영역에서 검색됩니다. 사용자 고유의 쿼리를 작성하거나 특정 애플리케이션 또는 서비스에 대한 로그 쿼리가 포함된 솔루션과 인사이트를 사용할 수 있습니다. [Azure Monitor의 로그 쿼리 개요](log-query/log-query-overview.md)를 참조하세요.
+
+### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Log Analytics 작업 영역에서 데이터를 삭제할 수 있나요?
+[보존 기간](platform/manage-cost-storage.md#change-the-data-retention-period)에 따라 작업 영역에서 데이터가 제거 됩니다. 개인 정보나 규정 준수 상의 이유로 특정 데이터를 삭제할 수 있습니다. 자세한 내용은 [개인 데이터를 내보내고 삭제 하는 방법을](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) 참조 하세요.
+
 
 ### <a name="what-is-a-log-analytics-workspace"></a>Log Analytics 작업 영역은 무엇인가요?
 Azure Monitor에서 수집된 모든 로그 데이터는 Log Analytics 작업 영역에 저장됩니다. 작업 영역은 기본적으로 다양한 원본에서 로그 데이터가 수집되는 컨테이너입니다. 모든 모니터링 데이터에 대한 단일 Log Analytics 작업 영역이 있거나 여러 작업 영역에 대한 요구 사항이 있을 수 있습니다. [Azure Monitor 로그 배포 디자인](platform/design-logs-deployment.md)을 참조하세요.

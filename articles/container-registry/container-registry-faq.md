@@ -5,16 +5,21 @@ author: sajayantony
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 1c2330f1ba71e2a72a1a44df7af6444181f5f9ea
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 02facedda206a5621cabe62a07520303635dc3ff
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836397"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245369"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Azure Container Registry에 대한 질문과 대답
 
 이 문서에서는 Azure Container Registry에 대한 질문과 대답 및 알려진 문제에 대해 설명합니다.
+
+레지스트리 문제 해결에 대 한 지침은 다음을 참조 하세요.
+* [레지스트리 로그인 문제 해결](container-registry-troubleshoot-login.md)
+* [레지스트리의 네트워크 문제 해결](container-registry-troubleshoot-access.md)
+* [레지스트리 성능 문제 해결](container-registry-troubleshoot-performance.md)
 
 ## <a name="resource-management"></a>리소스 관리
 

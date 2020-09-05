@@ -3,7 +3,7 @@ title: StorSimple 8000 시리즈 장치에 업데이트 5.1 설치 | Microsoft D
 description: Storsimple 8000 시리즈 장치에 StorSimple 8000 시리즈 업데이트 5.1을 설치 하는 방법을 설명 합니다.
 services: storsimple
 documentationcenter: NA
-author: priestlg
+author: twooley
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
@@ -11,13 +11,13 @@ ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 03/05/2020
-ms.author: v-grpr
-ms.openlocfilehash: fb2123bdb0e12571a58a32e414a610665935ebb6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: twooley
+ms.openlocfilehash: f9cc5181d6cc29ee4b3c2373dbbc91d6290fbe6e
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85508217"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782773"
 ---
 # <a name="install-update-51-on-your-storsimple-device"></a>StorSimple 장치에 업데이트 5.1 설치
 

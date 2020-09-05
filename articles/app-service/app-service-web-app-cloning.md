@@ -5,12 +5,12 @@ ms.assetid: f9a5cfa1-fbb0-41e6-95d1-75d457347a35
 ms.topic: article
 ms.date: 01/14/2016
 ms.custom: seodec18
-ms.openlocfilehash: e7ad45ea4cb1049ed7eeb454162e23e81ed35019
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 92e893fe9f74d51856faf39d3e4800dd5a8155db
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78255196"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815388"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>PowerShell을 사용하여 Azure App Service 앱 복제
 
@@ -107,6 +107,8 @@ Traffic Manager ID를 알게 된 후 다음 명령에서는 원본 앱과 새 �
 ```powershell
 $destapp = New-AzWebApp -ResourceGroupName <Resource group name> -Name dest-webapp -Location "South Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp -TrafficManagerProfileId $TMProfileID
 ```
+> [!NOTE]
+> "Traffic manager 호스트 이름에 대 한 SSL 유효성 검사가 실패 합니다." 라는 오류를 수신 하는 경우 복제 작업을 수행 하는 동안 powershell cmdlet에서-IgnoreCustomHostNames 특성을 사용 하거나 포털을 사용 하는 것이 좋습니다.
 
 ## <a name="current-restrictions"></a>현재 제한 사항
 앱 복제에 대해 알려진 제한 사항은 다음과 같습니다.

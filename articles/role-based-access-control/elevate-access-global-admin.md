@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 06/09/2020
 ms.author: rolyon
-ms.openlocfilehash: a93901bd95d57b29aeb1464652737a77a1a84376
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 343f6b7a78ca98615d512d31d7ac1c10d9de8f10
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791999"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799335"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>모든 Azure 구독 및 관리 그룹을 관리하는 액세스 권한 상승
 
@@ -144,6 +144,22 @@ CanDelegate        : False
     ```
 
 ## <a name="azure-cli"></a>Azure CLI
+
+### <a name="elevate-access-for-a-global-administrator"></a>전역 관리자에 대한 액세스 권한 상승
+
+Azure CLI를 사용 하 여 전역 관리자에 대 한 액세스 권한을 상승 시키려면 다음 기본 단계를 사용 합니다.
+
+1. [Az rest](/cli/azure/reference-index?view=azure-cli-latest#az-rest) 명령을 사용 하 여 `elevateAccess` 끝점을 호출 합니다 .이 끝점은 루트 범위 ()에서 사용자 액세스 관리자 역할을 부여 합니다 `/` .
+
+    ```azurecli
+    az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
+    ```
+
+1. 관리자 권한으로 변경 해야 합니다.
+
+    역할 할당에 대 한 자세한 내용은 [Azure CLI를 사용 하 여 Azure 역할 할당 추가 또는 제거](role-assignments-cli.md)를 참조 하세요.
+
+1. 이후 섹션의 단계를 수행 하 여 관리자 권한 액세스를 제거 합니다.
 
 ### <a name="list-role-assignment-at-root-scope-"></a>루트 범위 (/)에서 역할 할당 나열
 

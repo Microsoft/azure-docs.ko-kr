@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 05/19/2020
-ms.openlocfilehash: 723c30856593044c91220b4e3ab267ab140c5ffd
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: ed95cf0b98edd8a6775c980876a6092c00e3a68d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87366930"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918590"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Azure Machine Learning에 대한 엔터프라이즈 보안
 
@@ -119,19 +119,14 @@ Azure Machine Learning은 다른 Azure 서비스에 의존하여 컴퓨팅 리�
 ### <a name="encryption-at-rest"></a>휴지 상태의 암호화
 
 > [!IMPORTANT]
-> 작업 영역에 중요한 데이터가 포함된 경우 작업 영역을 만드는 동안 [hbi_workspace 플래그](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-)를 설정하는 것이 좋습니다. 
+> 작업 영역에 중요한 데이터가 포함된 경우 작업 영역을 만드는 동안 [hbi_workspace 플래그](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-)를 설정하는 것이 좋습니다. `hbi_workspace`작업 영역을 만들 때만 플래그를 설정할 수 있습니다. 기존 작업 영역에 대해서는 변경할 수 없습니다.
 
-`hbi_workspace`플래그는 microsoft에서 진단 목적으로 수집 하 고 microsoft에서 관리 하는 환경에서 추가 암호화를 사용 하도록 설정 하는 데이터의 양을 제어 합니다. 또한 다음 작업을 수행할 수 있습니다.
+`hbi_workspace`플래그는 [microsoft에서 진단 목적으로 수집](#microsoft-collected-data) 하 고 [microsoft에서 관리 하는 환경에서 추가 암호화](../security/fundamentals/encryption-atrest.md)를 사용 하도록 설정 하는 데이터의 양을 제어 합니다. 또한 다음 작업을 수행할 수 있습니다.
 
 * 해당 구독에 이전 클러스터를 만들지 않은 경우 Azure Machine Learning 계산 클러스터에서 로컬 스크래치 디스크의 암호화를 시작 합니다. 그렇지 않으면 컴퓨팅 클러스터의 스크래치 디스크를 암호화가 가능하도록 지원 티켓을 생성해야 합니다. 
 * 실행 사이에 로컬 스크래치 디스크를 정리합니다
 * 키 자격 증명 모음을 사용 하 여 저장소 계정, 컨테이너 레지스트리 및 SSH 계정에 대 한 자격 증명을 실행 계층에서 계산 클러스터로 안전 하 게 전달 합니다.
 * IP 필터링이 가능하도록 설정하여 AzureMachineLearningService 이외의 외부 서비스에서 기본 배치 풀을 호출할 수 없도록 합니다.
-
-> [!WARNING]
-> `hbi_workspace`작업 영역을 만들 때만 플래그를 설정할 수 있습니다. 기존 작업 영역에 대해서는 변경할 수 없습니다.
-
-Azure에서 저장 데이터 암호화가 작동하는 방식에 대한 자세한 내용은 [Azure 저장 데이터 암호화](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)를 참조하세요.
 
 #### <a name="azure-blob-storage"></a>Azure Blob 스토리지
 

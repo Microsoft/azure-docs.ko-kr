@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
-ms.date: 05/28/2020
-ms.openlocfilehash: 7a6a672cef42eb15cbd8f2f254207e0a9d96ee33
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/13/2020
+ms.openlocfilehash: 5c3586e9ba405cb5a7338b8f7f22858a238b9271
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736206"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717254"
 ---
 # <a name="apache-components-and-versions-available-for-azure-hdinsight"></a>Azure HDInsight에서 사용할 수 있는 Apache 구성 요소 및 버전
 
@@ -43,9 +43,9 @@ HDInsight 클러스터 버전과 연결된 구성 요소 버전은 다음 표에
 | Apache Storm           | -             | 1.1.0                       |
 | Apache Mahout          | -             | 0.9.0+                      |
 | Apache Phoenix         | 5             | 4.7.0                       |
-| Apache Spark           | 2.4.4         | 2.3.2, 2.2.0, 2.1.0         |
-| Apache Livy            | 0.5           | 0.4, 0.4, 0.3               |
-| Apache Kafka           | 2.1.1         | 1.1                        |
+| Apache Spark           | 2.4.4         | 2.3.2.                      |
+| Apache Livy            | 0.5           | 0.4.                        |
+| Apache Kafka           | 2.1.1         | 1.1                         |
 | Apache Ambari          | 2.7.0         | 2.6.0                       |
 | Apache Zeppelin        | 0.8.0         | 0.7.3                       |
 | Mono                   | 4.2.1         | 4.2.1                       |
@@ -78,9 +78,22 @@ HDInsight의 최신 버전과 관련된 추가 릴리스 정보는 [HDInsight �
 | HDInsight 버전 | VM OS | 릴리스 날짜 | 지원 만료 날짜 | 사용 중지 날짜 | 고가용성 |  Azure Portal의 가용성 |
 | --- | --- | --- | --- | --- | --- | --- |
 | HDInsight 4.0 |Ubuntu 16.0.4 LTS |2018년 9월 24일 | | |예 |예 |
-| HDInsight 3.6 |Ubuntu 16.0.4 LTS |2017년 4월 4일 | 2020년 12월 31일 |2020년 12월 31일 |예 |예 |
+| HDInsight 3.6 |Ubuntu 16.0.4 LTS |2017년 4월 4일      | * 6 월 31 일 2021 |2021 년 6 월 31 일 |예 |예 |
 
-Spark 2.1, 2.2 및 Kafka 1.0 클러스터 지원은 년 6 월 30 2020 일에 만료 됩니다.
+* 특정 HDInsight 3.6 클러스터 형식에 대 한 지원 기간을 연장 합니다.
+
+| 클러스터 유형                    | 프레임 워크 버전 | 현재 지원 만료        | 새 지원 만료 날짜 |
+|---------------------------------|-------------------|-----------------------------------|-----------------------------|
+| HDInsight 3.6 Hadoop            | 2.7.3             | 2020 년 12 월 31 일                      | 2021 년 6 월 30 일               |
+| HDInsight 3.6 Spark             | 2.3               | 2020 년 12 월 31 일                      | 2021 년 6 월 30 일               |
+| HDInsight 3.6 Spark             | 2.2               | 2020 년 6 월 30 일에 사용 중지          |                             |
+| HDInsight 3.6 Spark             | 2.1               | 2020 년 6 월 30 일에 사용 중지          |                             |
+| HDInsight 3.6 Kafka             | 1.1               | 2020 년 12 월 31 일                      | 2021 년 6 월 30 일               |
+| HDInsight 3.6 Kafka             | 1.0               | 2020 년 6 월 30 일에 사용 중지 됩니다.         |                             |
+| HDInsight 3.6 HBase             | 1.1               | 2020 년 12 월 31 일                      | 2021 년 6 월 30 일               |
+| HDInsight 3.6 대화형 쿼리 | 2.1               | 2020 년 12 월 31 일                      | 2021 년 6 월 30 일               |
+| HDInsight 3.6 스톰             | 1.1               | 2020 년 12 월 31 일                      | 2021 년 6 월 30 일               |
+| HDInsight 3.6 ML 서비스      | 9.3               | 2020 년 12 월 31 일                      | 2020 년 12 월 31 일                |
 
 > [!NOTE]
 > 클러스터 버전에 대 한 지원이 만료 되 면 Azure Portal를 통해 사용 하지 못할 수 있습니다. 경우에 따라 Windows PowerShell [AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) 명령에서 **version** 매개 변수를 사용 하 고 버전 사용 중지 날짜까지 .net SDK를 사용 하 여 클러스터 버전을 계속 사용할 수 있습니다.

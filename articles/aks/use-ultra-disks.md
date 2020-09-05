@@ -4,25 +4,25 @@ description: AKS (Azure Kubernetes Service) 클러스터에서 Ultra Disks를 �
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: f74da764f5a0b021199782dbad03e6e95cceb7f2
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 6ad739a128839eac4d664ffb6f9e3b2fcd07f2d9
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986834"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650182"
 ---
 # <a name="use-azure-ultra-disks-on-azure-kubernetes-service-preview"></a>Azure Kubernetes Service에서 Azure ultra disks 사용 (미리 보기)
 
-[Azure ultra disks](../virtual-machines/linux/disks-enable-ultra-ssd.md) 는 상태 저장 응용 프로그램에 대해 높은 처리량, 높은 IOPS 및 일관 된 짧은 대기 시간 디스크 저장소를 제공 합니다. 울트라 디스크의 주요 장점 중 하나는 에이전트 노드를 다시 시작할 필요 없이 워크 로드와 함께 SSD의 성능을 동적으로 변경 하는 기능입니다. Ultra disks는 데이터를 많이 사용 하는 워크 로드에 적합 합니다.
+[Azure ultra disks](../virtual-machines/disks-enable-ultra-ssd.md) 는 상태 저장 응용 프로그램에 대해 높은 처리량, 높은 IOPS 및 일관 된 짧은 대기 시간 디스크 저장소를 제공 합니다. 울트라 디스크의 주요 장점 중 하나는 에이전트 노드를 다시 시작할 필요 없이 워크 로드와 함께 SSD의 성능을 동적으로 변경 하는 기능입니다. Ultra disks는 데이터를 많이 사용 하는 워크 로드에 적합 합니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
 이 기능은 클러스터를 만들거나 노드 풀을 만들 때만 설정할 수 있습니다.
 
 > [!IMPORTANT]
-> Azure ultra disks에는 특정 VM 시리즈 뿐만 아니라 해당 디스크를 지 원하는 가용성 영역 및 지역에 배포 된 nodepools 필요 합니다. [**Ultra DISKS GA 범위 및 제한 사항**](../virtual-machines/linux/disks-enable-ultra-ssd.md#ga-scope-and-limitations)을 참조 하세요.
+> Azure ultra disks에는 특정 VM 시리즈 뿐만 아니라 해당 디스크를 지 원하는 가용성 영역 및 지역에 배포 된 nodepools 필요 합니다. [**Ultra DISKS GA 범위 및 제한 사항**](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)을 참조 하세요.
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 - `EnableUltraSSD`기능 플래그를 사용 하도록 설정 했는지 확인 합니다.
 - 최신 `aks-preview` [CLI 확장이][az-extension-add] 설치 되어 있는지 확인 합니다.
@@ -64,7 +64,7 @@ az extension update --name aks-preview
 ``` 
 
 ### <a name="limitations"></a>제한 사항
-- [ **ULTRA disks GA 범위 및 제한 사항을** 참조 하세요.](../virtual-machines/linux/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
+- [ **ULTRA disks GA 범위 및 제한 사항을** 참조 하세요.](../virtual-machines/disks-enable-ultra-ssd.md#ga-scope-and-limitations)
 - Ultra disks에 대해 지원 되는 크기 범위는 100에서 1500 사이입니다.
 
 ## <a name="create-a-new-cluster-that-can-use-ultra-disks"></a>Ultra disks를 사용할 수 있는 새 클러스터 만들기
@@ -226,7 +226,7 @@ Events:
 
 ## <a name="next-steps"></a>다음 단계
 
-- 울트라 디스크에 대 한 자세한 내용은 [Azure ultra Disks 사용](../virtual-machines/linux/disks-enable-ultra-ssd.md)을 참조 하세요.
+- 울트라 디스크에 대 한 자세한 내용은 [Azure ultra Disks 사용](../virtual-machines/disks-enable-ultra-ssd.md)을 참조 하세요.
 - 저장소 모범 사례에 대 한 자세한 내용은 [Azure Kubernetes Service의 저장소 및 백업 모범 사례 (AKS)][operator-best-practices-storage] 를 참조 하세요.
 
 <!-- LINKS - external -->
@@ -240,7 +240,7 @@ Events:
 <!-- LINKS - internal -->
 [azure-disk-volume]: azure-disk-volume.md
 [azure-files-pvc]: azure-files-dynamic-pv.md
-[premium-storage]: ../virtual-machines/windows/disks-types.md
+[premium-storage]: ../virtual-machines/disks-types.md
 [az-disk-list]: /cli/azure/disk#az-disk-list
 [az-snapshot-create]: /cli/azure/snapshot#az-snapshot-create
 [az-disk-create]: /cli/azure/disk#az-disk-create

@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 5782c8b96534722a1e03ce619504e513a1c5e048
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a10dec01757fd344c9fa2bc92082082d2af085e9
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87539801"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000569"
 ---
 # <a name="security-frame-input-validation--mitigations"></a>보안 프레임: 입력 유효성 검사 | 완화 
 | 제품/서비스 | 아티클 |

@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/09/2019
-ms.openlocfilehash: 56c25b7c77809a5cb7f4e539cff8e1815cd9976f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 586094f9e6ee696487064dcfea68af0bfc26c1ae
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77031711"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649111"
 ---
 # <a name="configure-storage-and-scalability-for-apache-kafka-on-hdinsight"></a>HDInsight에서 Apache Kafka에 대한 확장성 및 스토리지 구성
 
 HDInsight에서 [Apache Kafka](https://kafka.apache.org/)에 사용된 관리 디스크 수를 구성하는 방법을 알아봅니다.
 
-HDInsight의 Kafka는 HDInsight 클러스터에서 가상 머신의 로컬 디스크를 사용합니다. Kafka는 입출력이 매우 많으며 높은 처리량을 제공하고 노드당 더 많은 스토리지를 제공하기 위해 [Azure Managed Disks](../../virtual-machines/windows/managed-disks-overview.md)를 사용합니다. Kafka에는 기존 VHD(가상 하드 드라이브)가 사용된 경우 각 노드는 1TB로 제한됩니다. 관리 디스크를 통해 여러 디스크를 사용하여 클러스터에서 노드당 16TB를 달성할 수 있습니다.
+HDInsight의 Kafka는 HDInsight 클러스터에서 가상 머신의 로컬 디스크를 사용합니다. Kafka는 입출력이 매우 많으며 높은 처리량을 제공하고 노드당 더 많은 스토리지를 제공하기 위해 [Azure Managed Disks](../../virtual-machines/managed-disks-overview.md)를 사용합니다. Kafka에는 기존 VHD(가상 하드 드라이브)가 사용된 경우 각 노드는 1TB로 제한됩니다. 관리 디스크를 통해 여러 디스크를 사용하여 클러스터에서 노드당 16TB를 달성할 수 있습니다.
 
 다음 다이어그램은 관리 디스크가 있기 전, HDInsight의 Kafka와 관리 디스크가 있는 HDInsight의 Kafka를 비교하여 보여줍니다.
 

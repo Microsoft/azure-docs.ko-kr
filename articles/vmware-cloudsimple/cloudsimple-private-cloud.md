@@ -1,6 +1,6 @@
 ---
 title: CloudSimple 사설 클라우드 별 Azure VMware 솔루션
-description: CloudSimple 사설 클라우드 및 개념에 대해 알아봅니다.
+description: 완전 한 VMware 운영 연속성, 기존 도구, 기술 및 프로세스와의 호환성을 비롯 한 CloudSimple 개념 및 장점에 대해 알아봅니다.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/20/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 4fb930603455ed1a5df5d357fcab669f41a0c28c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e2096e8c0ebfb233c7449510bf0bc8e80b56231e
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024954"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140720"
 ---
 # <a name="cloudsimple-private-cloud-overview"></a>CloudSimple 사설 클라우드 개요
 
@@ -45,7 +45,7 @@ CloudSimple은 인프라와 필요한 모든 네트워킹 및 관리 서비스�
 * 비즈니스 가치
 * 애플리케이션 프로비저닝
 * 비즈니스 연속성
-* Support(지원)
+* 고객 지원팀
 * 정책 적용
 
 ## <a name="private-cloud-environment-overview"></a>사설 클라우드 환경 개요

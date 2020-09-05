@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/26/2019
 ms.author: mathoma
-ms.openlocfilehash: 21609e38625d0911476c85a9d6e518f5ff7e9e61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de0402febe94e50877367dc37d448a4a13893f93
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84667372"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653344"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>SQL Server VM에 대한 스토리지 구성
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,7 +34,7 @@ Azure에서 SQL Server VM (가상 머신) 이미지를 구성 하는 경우 Azur
 
 * [SQL Server 갤러리 이미지](sql-server-on-azure-vm-iaas-what-is-overview.md#payasyougo)로 프로비전합니다.
 * [Resource Manager 배포 모델](../../../azure-resource-manager/management/deployment-models.md)을 사용합니다.
-* [프리미엄 SSD](../../../virtual-machines/windows/disks-types.md)를 사용합니다.
+* [프리미엄 SSD](../../../virtual-machines/disks-types.md)를 사용합니다.
 
 ## <a name="new-vms"></a>새 VM
 
@@ -115,7 +115,7 @@ SQL Server VM 만들기 프로세스 중에 구성된 드라이브의 디스크 
 이 섹션에서는 Azure Portal에서 SQL Server VM 프로 비전 또는 구성 하는 동안 Azure에서 자동으로 수행 하는 저장소 구성 변경 내용에 대 한 참조를 제공 합니다.
 
 * Azure는 VM에서 선택된 스토리지로부터 스토리지 풀을 구성합니다. 이 항목의 다음 섹션에서는 스토리지 풀 구성에 대해 자세히 설명합니다.
-* 자동 스토리지 구성은 항상 [프리미엄 SSD](../../../virtual-machines/windows/disks-types.md) P30 데이터 디스크를 사용합니다. 따라서 선택한 테라바이트 수와 VM에 연결된 데이터 디스크의 수 간에 1:1 매핑이 됩니다.
+* 자동 스토리지 구성은 항상 [프리미엄 SSD](../../../virtual-machines/disks-types.md) P30 데이터 디스크를 사용합니다. 따라서 선택한 테라바이트 수와 VM에 연결된 데이터 디스크의 수 간에 1:1 매핑이 됩니다.
 
 가격 책정 정보는 [디스크 스토리지](https://azure.microsoft.com/pricing/details/storage) 탭의 **스토리지 가격 책정** 페이지를 참조하세요.
 

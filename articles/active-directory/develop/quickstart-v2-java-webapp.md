@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: 1474a8ad73f7deb9a7c321f7d7994a7b2b73d624
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 10ae1c76d48c1cedbb915fec66177ac3612feea0
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87312404"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115223"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>빠른 시작: Java 웹앱에 Microsoft로 로그인 추가
 
@@ -212,7 +212,7 @@ IDE에서 웹 애플리케이션을 실행하는 경우 실행을 클릭한 다�
 
 
 > [!IMPORTANT]
-> 이 빠른 시작 애플리케이션에서는 클라이언트 비밀을 사용하여 자체를 기밀 클라이언트로 식별합니다. 클라이언트 암호는 보안상의 이유로 프로젝트 파일에 일반 텍스트로 추가되므로, 이 애플리케이션을 프로덕션 애플리케이션으로 사용하는 방안을 고려하기 전에 클라이언트 암호 대신 인증서를 사용하는 것이 좋습니다. 인증서를 사용하는 방법에 대한 자세한 내용은 [애플리케이션 인증을 위한 인증서 자격 증명](https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials)을 참조하세요.
+> 이 빠른 시작 애플리케이션에서는 클라이언트 비밀을 사용하여 자체를 기밀 클라이언트로 식별합니다. 클라이언트 암호는 보안상의 이유로 프로젝트 파일에 일반 텍스트로 추가되므로, 이 애플리케이션을 프로덕션 애플리케이션으로 사용하는 방안을 고려하기 전에 클라이언트 암호 대신 인증서를 사용하는 것이 좋습니다. 인증서를 사용하는 방법에 대한 자세한 내용은 [애플리케이션 인증을 위한 인증서 자격 증명](./active-directory-certificate-credentials.md)을 참조하세요.
 
 ## <a name="more-information"></a>자세한 정보
 
@@ -254,11 +254,11 @@ import com.microsoft.aad.msal4j.*;
 권한 및 동의에 대한 자세한 정보:
 
 > [!div class="nextstepaction"]
-> [권한 및 동의](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent)
+> [권한 및 동의](./v2-permissions-and-consent.md)
 
 이 시나리오의 인증 흐름에 대해 알아보려면 Oauth 2.0 인증 코드 흐름을 참조하세요.
 
 > [!div class="nextstepaction"]
-> [인증 코드 Oauth 흐름](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow)
+> [인증 코드 Oauth 흐름](./v2-oauth2-auth-code-flow.md)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

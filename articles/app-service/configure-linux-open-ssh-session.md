@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: f663b58de666e2a0fe44fa3c023816a524b7d6c5
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: d46aacc441b412a117d906e0201a9bed6046a338
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083030"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961608"
 ---
 # <a name="open-an-ssh-session-to-a-linux-container-in-azure-app-service"></a>Azure App Service에서 Linux 컨테이너에 대 한 SSH 세션을 엽니다.
 
@@ -113,7 +113,7 @@ Load average: 0.07 0.04 0.08 4/765 45738
 
 ## <a name="next-steps"></a>다음 단계
 
-[Azure 포럼](https://docs.microsoft.com/answers/topics/azure-webapps.html)에 질문 및 문제를 게시할 수 있습니다.
+[Azure 포럼](/answers/topics/azure-webapps.html)에 질문 및 문제를 게시할 수 있습니다.
 
 컨테이너용 웹앱에 대한 자세한 내용은 다음을 참조하세요.
 

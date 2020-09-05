@@ -3,7 +3,7 @@ title: CLI를 사용하여 Azure Media Services로 필터 만들기 | Microsoft 
 description: 이 문서에서는 CLI를 사용 하 여 Azure Media Services v3로 필터를 만드는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/13/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 2385171a501d00f91c58f3fde9b487505ec21c60
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 024136ab6f660ecc5b6c5c7c0ecae62c83238659
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023214"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269542"
 ---
-# <a name="creating-filters-with-cli"></a>CLI를 사용하여 필터 만들기 
+# <a name="creating-filters-with-cli"></a>CLI를 사용하여 필터 만들기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 고객에게 콘텐츠를 제공(라이브 이벤트 또는 주문형 비디오를 스트리밍)하는 경우 클라이언트에게는 기본 자산의 매니페스트 파일에 설명된 내용보다 더 많은 유연성이 필요할 수 있습니다. Azure Media Services를 사용하면 콘텐츠에 사용할 계정 필터 및 자산 필터를 정의할 수 있습니다. 
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: b73727e6bd824b80fbc3897055d71f6b9c632a61
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c0001add9ddbafb67dc7ac305c5fc171a8e24a51
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084367"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070584"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>네트워크 보안 그룹에 대한 흐름 로깅 소개
 
@@ -62,7 +62,7 @@ Nsg ( [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-netw
 - NSG (네트워크 보안 그룹)에는 연결 된 리소스의 네트워크 트래픽을 허용 하거나 거부 하는 _보안 규칙_ 목록이 포함 되어 있습니다. NSGs는 서브넷, 개별 Vm 또는 Vm에 연결 된 개별 NIC (네트워크 인터페이스)에 연결 될 수 있습니다 (리소스 관리자). 자세한 내용은 [네트워크 보안 그룹 개요](https://docs.microsoft.com/azure/virtual-network/security-overview?toc=%2Fazure%2Fnetwork-watcher%2Ftoc.json)를 참조하세요.
 - 네트워크의 모든 트래픽 흐름은 해당 NSG의 규칙을 사용 하 여 평가 됩니다.
 - 이러한 평가 결과는 NSG 흐름 로그입니다. 흐름 로그는 Azure 플랫폼을 통해 수집 되며 고객 리소스를 변경할 필요가 없습니다.
-- 참고: 규칙은 & 종료 하지 않는 두 가지 유형으로, 각각 서로 다른 로깅 동작 있습니다.
+- 참고: 규칙은 종료 & 두 가지 유형으로, 각각 서로 다른 로깅 동작을 포함 합니다.
 - - NSG 거부 규칙이 종료 되 고 있습니다. 트래픽을 거부 하는 NSG는 흐름 로그에 로그를 기록 하 고이 경우 처리는 모든 NSG가 트래픽을 거부 한 후 중지 됩니다. 
 - - NSG 허용 규칙은 종료 하지 않습니다. 즉, 하나의 NSG에서 허용 하는 경우에도 다음 NSG로 처리를 계속 합니다. 트래픽을 허용 하는 마지막 NSG는 흐름 로그에 대 한 트래픽을 기록 합니다.
 - NSG 흐름 로그는 액세스할 수 있는 위치에서 저장소 계정에 기록 됩니다.
@@ -294,7 +294,7 @@ Nsg ( [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-netw
 ```
 **설명 된 로그 튜플**
 
-![흐름 로그 개요](./media/network-watcher-nsg-flow-logging-overview/tuple.png)
+![흐름 로그 튜플](./media/network-watcher-nsg-flow-logging-overview/tuple.png)
 
 **샘플 대역폭 계산**
 
@@ -357,7 +357,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 **흐름 로깅 비용**: nsg 흐름 로깅은 생성 된 로그의 양에 따라 청구 됩니다. 트래픽 볼륨이 많으면 흐름 로그 볼륨과 관련 비용도 증가할 수 있습니다. NSG 흐름 로그의 가격에는 스토리지의 기본 비용이 포함되지 않습니다. NSG 흐름 로깅에서 보존 정책 기능을 사용 하는 것은 오랜 시간 동안 별도의 저장소 비용을 발생 시킵니다. 보존 정책 기능이 필요하지 않은 경우 이 값을 0으로 설정하는 것이 좋습니다. 자세한 내용은 [Network Watcher 가격](https://azure.microsoft.com/pricing/details/network-watcher/) 책정 및 [Azure Storage 가격 책정](https://azure.microsoft.com/pricing/details/storage/) 을 참조 하세요.
 
-**사용자 정의 인바운드 TCP 규칙에**대 한 문제: [nsgs (네트워크 보안 그룹)](https://docs.microsoft.com/azure/virtual-network/security-overview) 는 [상태 저장 방화벽](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true)으로 구현 됩니다. 그러나 현재 플랫폼 제한으로 인해 인바운드 TCP 흐름에 영향을 주는 사용자 정의 규칙은 상태 비저장 방식으로 구현 됩니다. 이로 인해 사용자 정의 인바운드 규칙의 영향을 받는 흐름이 종료 되지 않습니다. 이러한 흐름에 대해서는 바이트 및 패킷 수가 추가로 기록 되지 않습니다. 결과적으로 NSG 흐름 로그 (및 트래픽 분석)에서 보고 되는 바이트 수와 패킷은 실제 숫자와 다를 수 있습니다. 이러한 문제를 해결 하는 옵트인 플래그는 12 월 2020 최신 버전에서 사용할 수 있도록 예약 되어 있습니다. 이 동작으로 인해 발생 하는 심각한 문제를 야기 하는 고객은 지원을 통해 옵트인을 요청할 수 있습니다. Network Watcher > NSG 흐름 로그에서 지원 요청을 발생 시킵니다.  
+**사용자 정의 인바운드 TCP 규칙에**대 한 문제: [nsgs (네트워크 보안 그룹)](https://docs.microsoft.com/azure/virtual-network/security-overview) 는 [상태 저장 방화벽](https://en.wikipedia.org/wiki/Stateful_firewall?oldformat=true)으로 구현 됩니다. 그러나 현재 플랫폼 제한으로 인해 인바운드 TCP 흐름에 영향을 주는 사용자 정의 규칙은 상태 비저장 방식으로 구현 됩니다. 이로 인해 사용자 정의 인바운드 규칙의 영향을 받는 흐름이 종료 되지 않습니다. 이러한 흐름에 대해서는 바이트 및 패킷 수가 추가로 기록 되지 않습니다. 결과적으로 NSG 흐름 로그 (및 트래픽 분석)에서 보고 되는 바이트 수와 패킷은 실제 숫자와 다를 수 있습니다. 이러한 문제를 해결 하는 옵트인 플래그는 12 월 2020 최신 버전에서 사용할 수 있도록 예약 되어 있습니다. 이 문제로 인해 발생 하는 심각한 문제를 야기 하는 고객은 지원을 통해 옵트인을 요청할 수 있습니다. Network Watcher > NSG 흐름 로그에서 지원 요청을 발생 시킵니다.  
 
 **인터넷 ip에서 공용 ip가 없는 vm으로 로그온 하는 인바운드 흐름**: 인스턴스 수준 공용 IP로 NIC와 연결 된 공용 ip 주소를 통해 할당 되거나 기본 부하 분산 장치 백 엔드 풀의 일부인 vm은 [기본 SNAT](../load-balancer/load-balancer-outbound-connections.md) 를 사용 하 고 AZURE에서 할당 된 IP 주소를 사용 하 여 아웃 바운드 연결을 용이 하 게 합니다. 따라서 흐름이 SNAT에 할당 된 포트 범위의 포트를 대상으로 하는 경우 인터넷 IP 주소에서 흐름에 대 한 흐름 로그 항목이 표시 될 수 있습니다. Azure는 VM에 대 한 이러한 흐름을 허용 하지 않지만, 시도는 기록 되 고 Network Watcher의 NSG 흐름 로그에 설계상 표시 됩니다. 원치 않는 인바운드 인터넷 트래픽이 NSG를 사용 하 여 명시적으로 차단 되도록 하는 것이 좋습니다.
 
@@ -365,7 +365,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 **중요 한 vnet/서브넷에 대해 설정**: 흐름 로그는 감사 기능 및 보안 모범 사례로 서 구독의 모든 중요 한 vnet/서브넷에서 사용 하도록 설정 되어야 합니다. 
 
-**리소스에 연결 된 모든 nsg에 대해 Nsg 흐름 로깅을 사용 하도록 설정**: Azure의 흐름 로깅은 nsg 리소스에 구성 됩니다. 하나의 흐름은 하나의 NSG 규칙에만 연결됩니다. 여러 NSGs를 사용 하는 시나리오에서 리소스의 서브넷 또는 네트워크 인터페이스를 적용 한 모든 NSGs에 대해 NSGS 흐름 로그를 사용 하도록 설정 하 여 모든 트래픽이 기록 되도록 하는 것이 좋습니다. 자세한 내용은 네트워크 보안 그룹에서 [트래픽 평가 방법](../virtual-network/security-overview.md#how-traffic-is-evaluated) 을 참조 하세요.
+**리소스에 연결 된 모든 nsg에 대해 Nsg 흐름 로깅을 사용 하도록 설정**: Azure의 흐름 로깅은 nsg 리소스에 구성 됩니다. 하나의 흐름은 하나의 NSG 규칙에만 연결됩니다. 여러 NSGs를 사용 하는 시나리오에서 리소스의 서브넷 또는 네트워크 인터페이스를 적용 한 모든 NSGs에 대해 NSGS 흐름 로그를 사용 하도록 설정 하 여 모든 트래픽이 기록 되도록 하는 것이 좋습니다. 자세한 내용은 네트워크 보안 그룹에서 [트래픽 평가 방법](../virtual-network/network-security-group-how-it-works.md) 을 참조 하세요.
 
 **저장소 프로 비전**: 저장소는 예상 흐름 로그 볼륨이 포함 된 튜닝에서 프로 비전 되어야 합니다.
 
@@ -407,7 +407,7 @@ Azure 네트워크 리소스는 [NSGs (네트워크 보안 그룹)](https://docs
 
 - 포털의 전역 검색 또는 [저장소 계정 페이지](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) 에서 저장소 계정 이름을 입력 하 여 저장소 계정으로 이동 합니다.
 - **설정** 섹션 아래에서 **방화벽 및 가상 네트워크** 를 선택 합니다.
-- 다음 **에서 액세스 허용**에서 **선택한 네트워크**를 선택 합니다. 그런 다음 **예외**아래에서 * * * *이 저장소 계정에 액세스할 수 있는 신뢰할 수 있는 Microsoft 서비스 허용 * * * * 옆의 상자를 선택 합니다.
+- 다음 **에서 액세스 허용**에서  **선택한 네트워크**를 선택 합니다. 그런 다음  **예외**아래에서 * * * *이 저장소 계정에 액세스할 수 있는 신뢰할 수 있는 Microsoft 서비스 허용 * * * * 옆의 상자를 선택 합니다.
 - 이미 선택되어 있는 경우에는 변경할 필요가 없습니다.
 - [Nsg 흐름 로그 개요 페이지](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) 에서 대상 nsg를 찾고, 위의 저장소 계정을 선택 하 여 Nsg 흐름 로그를 사용 하도록 설정 합니다.
 

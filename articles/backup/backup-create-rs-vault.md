@@ -4,12 +4,12 @@ description: 이 문서에서는 백업과 복구 지점이 저장 되는 Recove
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.custom: references_regions
-ms.openlocfilehash: 244562efdc4c274a79ea27cdfa00dd51ae671fa4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 81c6fd47ccea2ea17a20535df04931727c23be6f
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032955"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177196"
 ---
 # <a name="create-and-configure-a-recovery-services-vault"></a>Recovery Services 자격 증명 모음 만들기 및 구성
 
@@ -20,15 +20,15 @@ ms.locfileid: "87032955"
 Azure Backup는 자격 증명 모음에 대 한 저장소를 자동으로 처리 합니다. 저장소를 복제 하는 방법을 지정 해야 합니다.
 
 > [!NOTE]
-> Recovery services 자격 증명 모음에 대 한 **저장소 복제 유형** (로컬 중복/지역 중복) 변경은 자격 증명 모음에서 백업을 구성 하기 전에 수행 해야 합니다. 백업을 구성한 후에는 수정 하는 옵션을 사용할 수 없습니다.
+> 자격 증명 모음에서 백업을 구성 하기 전에 Recovery Services 자격 증명 모음에 대 한 **저장소 복제 유형** (로컬 중복/지역 중복)을 변경 해야 합니다. 백업을 구성한 후에는 수정 하는 옵션을 사용할 수 없습니다.
 >
 >- 백업을 아직 구성 하지 않은 경우 다음 단계를 [수행](#set-storage-redundancy) 하 여 설정을 검토 하 고 수정 합니다.
 >- 백업을 이미 구성 했 고 GRS에서 LRS로 이동 해야 하는 경우 [이러한 해결 방법을 검토](#how-to-change-from-grs-to-lrs-after-configuring-backup)합니다.
 
-1. **Recovery Services 자격 증명 모음** 블레이드에서 새 자격 증명 모음을 클릭합니다. **설정** 섹션에서 **속성**을 클릭합니다.
-1. **속성**의 **백업 구성**에서 **업데이트**를 클릭합니다.
+1. **Recovery Services 자격** 증명 모음 창에서 새 자격 증명 모음을 선택 합니다. **설정** 섹션에서 **속성**을 선택 합니다.
+1. **속성**의 **백업 구성**에서 **업데이트**를 선택 합니다.
 
-1. 스토리지 복제 유형을 선택하고 **저장**을 클릭합니다.
+1. 저장소 복제 유형을 선택 하 고 **저장**을 선택 합니다.
 
      ![새 자격 증명 모음의 스토리지 구성 설정](./media/backup-try-azure-backup-in-10-mins/recovery-services-vault-backup-configuration.png)
 
@@ -46,7 +46,7 @@ Azure Backup는 자격 증명 모음에 대 한 저장소를 자동으로 처리
 - 감사 또는 규정 준수 요구 사항이 있는 경우 드릴 수행
 - 주 지역에 재해가 발생 한 경우 VM 또는 해당 디스크를 복원 합니다.
 
-이 기능을 선택 하려면 **백업 구성** 블레이드에서 **교차 영역 복원 사용** 을 선택 합니다.
+이 기능을 선택 하려면 **백업 구성** 창에서 **교차 영역 복원 사용** 을 선택 합니다.
 
 이 프로세스의 경우 저장소 수준에 따라 가격 책정이 영향을 미칩니다.
 
@@ -62,16 +62,16 @@ Azure Backup는 자격 증명 모음에 대 한 저장소를 자동으로 처리
 
 ### <a name="configure-cross-region-restore"></a>지역 간 복원 구성
 
-GRS 중복성으로 만든 자격 증명 모음에는 지역 간 복원 기능을 구성 하는 옵션이 포함 됩니다. 모든 GRS 자격 증명 모음에는 설명서에 연결 되는 배너가 있습니다. 자격 증명 모음에 대해 CRR을 구성 하려면이 기능을 사용 하도록 설정 하는 옵션이 포함 된 백업 구성 블레이드로 이동 합니다.
+GRS 중복성으로 만든 자격 증명 모음에는 지역 간 복원 기능을 구성 하는 옵션이 포함 됩니다. 모든 GRS 자격 증명 모음에는 설명서에 연결 되는 배너가 있습니다. 자격 증명 모음에 대해 CRR을 구성 하려면이 기능을 사용 하도록 설정 하는 옵션이 포함 된 백업 구성 창으로 이동 합니다.
 
  ![백업 구성 배너](./media/backup-azure-arm-restore-vms/banner.png)
 
 1. 포털에서 Recovery Services 자격 증명 모음 > 설정 > 속성으로 이동 합니다.
-2. **이 자격 증명 모음에서 교차 지역 복원 사용** 을 클릭 하 여 기능을 사용 하도록 설정 합니다.
+2. **이 자격 증명 모음에서 지역 간 복원 사용** 을 선택 하 여 기능을 사용 하도록 설정 합니다.
 
-   ![이 자격 증명 모음에서 지역 간 복원 사용을 클릭 하기 전에](./media/backup-azure-arm-restore-vms/backup-configuration1.png)
+   ![이 자격 증명 모음에서 지역 간 복원 사용을 선택 하기 전에](./media/backup-azure-arm-restore-vms/backup-configuration1.png)
 
-   ![이 자격 증명 모음에서 교차 영역 복원 사용을 클릭 한 후](./media/backup-azure-arm-restore-vms/backup-configuration2.png)
+   ![이 자격 증명 모음에서 지역 간 복원 사용을 선택한 후](./media/backup-azure-arm-restore-vms/backup-configuration2.png)
 
 [보조 지역에서 백업 항목을 보는](backup-azure-arm-restore-vms.md#view-backup-items-in-secondary-region)방법에 대해 알아봅니다.
 
@@ -79,9 +79,27 @@ GRS 중복성으로 만든 자격 증명 모음에는 지역 간 복원 기능�
 
 [보조 지역 복원 작업을 모니터링](backup-azure-arm-restore-vms.md#monitoring-secondary-region-restore-jobs)하는 방법에 대해 알아봅니다.
 
+## <a name="set-encryption-settings"></a>암호화 설정 설정
+
+기본적으로 Recovery Services 자격 증명 모음의 데이터는 플랫폼 관리 키를 사용 하 여 암호화 됩니다. 이 암호화를 사용 하도록 설정 하기 위해 끝에서 명시적인 조치가 필요 하지 않으며 Recovery Services 자격 증명 모음에 백업 되는 모든 워크 로드에 적용 됩니다.  이 자격 증명 모음에서 백업 데이터를 암호화 하기 위해 고유한 키를 가져오도록 선택할 수 있습니다. 이를 고객이 관리 하는 키 라고 합니다. 사용자 고유의 키를 사용 하 여 백업 데이터를 암호화 하려는 경우이 자격 증명 모음에 항목을 보호 하기 전에 암호화 키를 지정 해야 합니다. 키를 사용 하 여 암호화를 사용 하도록 설정한 후에는 되돌릴 수 없습니다.
+
+### <a name="configuring-a-vault-to-encrypt-using-customer-managed-keys"></a>고객 관리 키를 사용 하 여 암호화 하도록 자격 증명 모음 구성
+
+자격 증명 모음에서 고객 관리 키를 사용 하 여 암호화 하도록 구성 하려면 이러한 단계를 다음 순서 대로 수행 해야 합니다.
+
+1. Recovery Services 자격 증명 모음에 관리 id 사용
+
+1. 자격 증명 모음에 사용 권한을 할당 하 여 Azure Key Vault의 암호화 키에 액세스
+
+1. Azure Key Vault에서 일시 삭제 및 보호 제거 사용
+
+1. Recovery Services 자격 증명 모음에 암호화 키 할당
+
+이러한 각 단계에 대 한 지침은 [이 문서에서](encryption-at-rest-with-cmk.md#configuring-a-vault-to-encrypt-using-customer-managed-keys)찾을 수 있습니다.
+
 ## <a name="modifying-default-settings"></a>기본 설정 수정
 
-**저장소 복제 유형** 및 **보안 설정** 에 대 한 기본 설정은 자격 증명 모음에서 백업을 구성 하기 전에 검토 하는 것이 좋습니다.
+자격 증명 모음에서 백업을 구성하기 전에 **스토리지 복제 유형** 및 **보안 설정**에 대한 기본 설정을 검토하는 것이 좋습니다.
 
 - 기본적으로 **저장소 복제 유형은** **지역 중복** (GRS)으로 설정 됩니다. 백업을 구성한 후에는 수정 하는 옵션을 사용할 수 없습니다.
   - 백업을 아직 구성 하지 않은 경우 다음 단계를 [수행](#set-storage-redundancy) 하 여 설정을 검토 하 고 수정 합니다.
@@ -101,7 +119,7 @@ GRS에서 LRS (로컬 중복 저장소)로 이동 하도록 결정 하기 전에
 새 LRS 자격 증명 모음에서 워크 로드를 보호 하려면 GRS 자격 증명 모음에서 현재 보호 및 데이터를 삭제 하 고 백업을 다시 구성 해야 합니다.
 
 >[!WARNING]
->다음 작업은 소거식 이며 실행 취소할 수 없습니다. 보호 된 서버와 연결 된 모든 백업 데이터 및 백업 항목은 영구적으로 삭제 됩니다. 이러한 작업은 주의해서 진행합니다.
+>다음 작업은 소거식 이며 실행 취소할 수 없습니다. 보호 된 서버와 연결 된 모든 백업 데이터 및 백업 항목은 영구적으로 삭제 됩니다. 주의하여 진행하세요.
 
 GRS 자격 증명 모음에서 현재 보호를 중지 하 고 삭제 합니다.
 
@@ -132,7 +150,6 @@ GRS 자격 증명 모음에서 현재 보호 된 데이터를 유지 하 고 새
   - GRS 자격 증명 모음에서 복구 지점이 유지 되도록 요금을 지불 해야 합니다 (자세한 내용은 [Azure Backup 가격 책정](azure-backup-pricing.md) 참조).
   - 필요한 경우 GRS 자격 증명 모음에서 VM을 복원할 수 있습니다.
   - 새 리소스에서 VM의 LRS 자격 증명 모음에 대 한 첫 번째 백업은 초기 복제본이 됩니다.
-
 
 ## <a name="next-steps"></a>다음 단계
 

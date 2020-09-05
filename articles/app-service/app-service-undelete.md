@@ -5,16 +5,16 @@ author: btardif
 ms.author: byvinyal
 ms.date: 9/23/2019
 ms.topic: article
-ms.openlocfilehash: 20c220bcb44a1a47e308f57d1466aee2773111a4
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 04e496806f2c388eb3a69df1b4cc3897b8132f6c
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985685"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962913"
 ---
 # <a name="restore-deleted-app-service-app-using-powershell"></a>PowerShell을 사용하여 삭제된 App Service 앱 복원
 
-Azure App Service에서 앱을 실수로 삭제한 경우 [Az PowerShell 모듈](https://docs.microsoft.com/powershell/azure/?view=azps-2.6.0&viewFallbackFrom=azps-2.2.0)의 명령을 사용하여 앱을 복원할 수 있습니다.
+Azure App Service에서 앱을 실수로 삭제한 경우 [Az PowerShell 모듈](/powershell/azure/?view=azps-2.6.0&viewFallbackFrom=azps-2.2.0)의 명령을 사용하여 앱을 복원할 수 있습니다.
 
 > [!NOTE]
 > - 삭제된 앱은 초기 삭제 후 30일이 지나면 시스템에서 제거됩니다. 앱을 제거한 후에는 복구할 수 없습니다.
@@ -61,7 +61,7 @@ Get-AzDeletedWebApp -Name <your_deleted_app> -Location <your_deleted_app_locatio
 Restore-AzDeletedWebApp -TargetResourceGroupName <my_rg> -Name <my_app> -TargetAppServicePlanName <my_asp>
 ```
 > [!NOTE]
-> 배포 슬롯은 앱의 일부로 복원되지 않습니다. 스테이징 슬롯을 복원 해야 하는 경우 플래그를 사용 `-Slot <slot-name>` 합니다.
+> 배포 슬롯은 앱의 일부로 복원되지 않습니다. 스테이징 슬롯을 복원 해야 하는 경우 플래그를 사용 `-Slot <slot-name>`  합니다.
 >
 
 명령에 대한 입력은 다음과 같습니다.
@@ -76,4 +76,4 @@ Restore-AzDeletedWebApp -TargetResourceGroupName <my_rg> -Name <my_app> -TargetA
 > 앱이에서 호스트 된 후 App Service Environment에서 삭제 된 경우에는 해당 App Service Environment 여전히 있는 경우에만 복원할 수 있습니다.
 >
 
-전체 commandlet 참조는 여기에서 찾을 수 있습니다. [Restore-AzDeletedWebApp](https://docs.microsoft.com/powershell/module/az.websites/restore-azdeletedwebapp).
+전체 commandlet 참조는 여기에서 찾을 수 있습니다. [Restore-AzDeletedWebApp](/powershell/module/az.websites/restore-azdeletedwebapp).

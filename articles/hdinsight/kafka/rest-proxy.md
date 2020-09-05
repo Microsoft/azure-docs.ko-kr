@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: has-adal-ref, devx-track-python
 ms.date: 04/03/2020
-ms.openlocfilehash: 660e200b673da53af1ee00e4de1e2ce3298e861d
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 57c2fb125547149a7fea6643a483e29f5fecb495
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876447"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167048"
 ---
 # <a name="interact-with-apache-kafka-clusters-in-azure-hdinsight-using-a-rest-proxy"></a>REST 프록시를 사용하여 Azure HDInsight에서 Apache Kafka 클러스터와 상호 작용
 
@@ -104,6 +104,7 @@ Python에서 OAuth 토큰을 가져오는 방법에 대한 자세한 내용은 [
 #pip3 install msal
 
 import msal
+import requests
 
 #--------------------------Configure these properties-------------------------------#
 # Tenant ID for your Azure Subscription
@@ -140,7 +141,7 @@ getstatus = "/v1/metadata/topics"
 request_url = kafkarest_endpoint + getstatus
 
 # sending get request and saving the response as response object
-response = requests.get(request_url, headers={'Authorization': accessToken})
+response = requests.get(request_url, headers={'Authorization': 'Bearer ' + 'accessToken})
 print(response.content)
 ```
 

@@ -8,12 +8,12 @@ ms.date: 6/30/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cb1511736b993032df8ca52fac01243f1feafdf4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3bc9344459802f4bb4268093d905a051525d78dc
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092391"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684459"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-tpm-on-linux"></a>Linux에서 TPM을 사용 하 여 IoT Edge 장치 만들기 및 프로 비전
 
@@ -61,7 +61,7 @@ ms.locfileid: "87092391"
 
 ### <a name="create-virtual-machine"></a>가상 머신 만들기
 
-1. 가상 머신에 사용하기 위해 디스크 이미지 파일을 다운로드하고 로컬로 저장합니다. 예를 들면 [Ubuntu server 18.04](http://releases.ubuntu.com/18.04.4/)입니다. IoT Edge 장치에 대해 지원 되는 운영 체제에 대 한 자세한 내용은 [지원 되는 시스템 Azure IoT Edge](support.md)을 참조 하세요.
+1. 가상 머신에 사용하기 위해 디스크 이미지 파일을 다운로드하고 로컬로 저장합니다. 예를 들면 [Ubuntu server 18.04](http://releases.ubuntu.com/18.04/)입니다. IoT Edge 장치에 대해 지원 되는 운영 체제에 대 한 자세한 내용은 [지원 되는 시스템 Azure IoT Edge](support.md)을 참조 하세요.
 
 2. Hyper-v 관리자의 **Action**  >  **New**  >  **작업** 메뉴에서 작업 새**가상 컴퓨터** 를 다시 선택 합니다.
 

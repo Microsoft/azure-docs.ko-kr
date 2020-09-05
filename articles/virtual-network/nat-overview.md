@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/14/2020
+ms.date: 08/25/2020
 ms.author: allensu
-ms.openlocfilehash: 93ce3b02ef8963a33e485b6560516e1d2b9c1ef5
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
-ms.translationtype: HT
+ms.openlocfilehash: 3180fa34b85c3ec5f7cb1d2d9da8c2e1b528bd69
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424020"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855801"
 ---
 # <a name="what-is-virtual-network-nat"></a>Virtual Network NAT란?
 
@@ -123,37 +123,22 @@ Azure Monitor에 공개되는 다차원 메트릭을 통해 NAT 작업을 모니
 
 일반 공급에서 NAT 데이터 경로의 가용성은 99.9% 이상입니다.
 
-
 ## <a name="pricing"></a>가격 책정
 
-NAT 게이트웨이는 다음과 같은 별도의 두 가지 미터를 통해 청구됩니다.
-
-| 미터 | 비용 |
-| --- | --- |
-| 리소스 시간 | $0.045/시간 |
-| 처리된 데이터 | $0.045/GB |
-
-리소스 시간은 NAT 게이트웨이 리소스의 존재 기간을 나타냅니다.
-처리된 데이터는 NAT 게이트웨이 리소스에서 처리하는 모든 트래픽을 나타냅니다.
+가격 책정에 대 한 자세한 내용은 [Virtual Network 가격 책정](https://azure.microsoft.com/pricing/details/virtual-network)을 참조 하세요.
 
 ## <a name="availability"></a>가용성
 
-Virtual Network NAT와 NAT 게이트웨이 리소스는 모든 Azure 퍼블릭 클라우드 [지역](https://azure.microsoft.com/global-infrastructure/regions/)에서 사용할 수 있습니다.
-
-## <a name="support"></a>지원
-
-NAT는 일반적인 지원 채널을 통해 지원됩니다.
+Virtual Network NAT와 NAT 게이트웨이 리소스는 모든 Azure 클라우드 [지역의](https://azure.microsoft.com/global-infrastructure/regions/)모든 지역에서 사용할 수 있습니다.
 
 ## <a name="suggestions"></a>제안
 
 서비스를 향상시킬 수 있는 방법을 찾고 있습니다. [UserVoice for NAT](https://aka.ms/natuservoice)에서 다음에 빌드해야 하는 항목을 제안하고 이에 대해 투표할 수 있습니다.
 
-
 ## <a name="limitations"></a>제한 사항
 
 * NAT는 표준 SKU 공용 IP, 공용 IP 접두사 및 부하 분산 장치 리소스와 호환됩니다. 기본 리소스(예: 기본 부하 분산 장치) 및 이러한 리소스에서 파생된 제품은 NAT와 호환되지 않습니다.  기본 리소스는 NAT에서 구성되지 않은 서브넷에 배치해야 합니다.
 * IPv4 주소 패밀리가 지원됩니다.  IPv6 주소 패밀리는 NAT와 상호 작용하지 않습니다.  NAT는 IPv6 접두사가 있는 서브넷에 배포할 수 없습니다.
-* NAT를 사용하는 경우 NSG 흐름 로깅이 지원되지 않습니다.
 * NAT는 여러 가상 네트워크에 걸쳐 있을 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계

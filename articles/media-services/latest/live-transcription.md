@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 06/12/2019
+ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: da80dacadbef560bb597a235fee59924d3887e19
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 698aa849a82e7c9f9a630ca7040f9d449b3765b3
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84765015"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264966"
 ---
 # <a name="live-transcription-preview"></a>라이브 기록 (미리 보기)
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure 미디어 서비스는 다양 한 프로토콜에서 비디오, 오디오 및 텍스트를 제공 합니다. MPEG-2 또는 HLS/CMAF를 사용 하 여 라이브 스트림을 게시 하면 비디오 및 오디오와 함께 서비스가 IMSC 1.1 호환 TTML에 transcribed 텍스트를 제공 합니다. 배달은 MPEG-4 30 (ISO/IEC 14496-30) 조각으로 패키지 됩니다. HLS/TS를 통해 배달을 사용 하는 경우 텍스트는 청크 분할 VTT로 배달 됩니다.
 
@@ -33,7 +35,7 @@ Azure 미디어 서비스는 다양 한 프로토콜에서 비디오, 오디오 
 
 다음 지역에서 라이브 기록을 사용할 수 있습니다.
 
-- 동남아시아
+- 동남 아시아
 - 서유럽
 - 북유럽
 - 미국 동부
@@ -135,7 +137,7 @@ PUT https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:r
 
 라이브를 설정 하는 샘플 호출입니다.
 
-패치나```https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/liveEvents/:liveEventName?api-version=2019-05-01-preview```
+패치나 ```https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/liveEvents/:liveEventName?api-version=2019-05-01-preview```
 
 ```
 {

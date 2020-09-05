@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: hrasheed-msft
   ms.author: hrasheed
-  ms.date: 09/13/2019
-  ms.openlocfilehash: 66350050a84617b789c6a73c38170dc25dad331d
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.date: 08/11/2020
+  ms.openlocfilehash: 43de19b3caa87bf410ad30a237c2c9e91beba63f
+  ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "73802896"
+  ms.lasthandoff: 08/12/2020
+  ms.locfileid: "88136374"
 landingContent:
 - title: Azure Data Share 정보
   linkLists:
@@ -24,13 +24,17 @@ landingContent:
     links:
     - text: Azure Data Share란?
       url: overview.md
+    - text: 지원되는 데이터 저장소
+      url: supported-data-stores.md
   - linkListType: concept
     links:
-    - text: Azure Data Share 개념
+    - text: Azure Data Share 용어
       url: terminology.md
     - text: Azure Data Share의 역할 및 요구 사항
       url: concepts-roles-permissions.md
-- title: 데이터 공유
+    - text: 가격 책정 이해
+      url: concepts-pricing.md
+- title: 데이터 공유 및 수신
   linkLists:
   - linkListType: tutorial
     links:
@@ -40,21 +44,25 @@ landingContent:
       url: subscribe-to-data-share.md
   - linkListType: how-to-guide
     links:
-    - text: 데이터 세트 매핑 구성
-      url: how-to-configure-mapping.md
     - text: 데이터 세트 추가
       url: how-to-add-datasets.md
+    - text: 데이터 세트 매핑 구성
+      url: how-to-configure-mapping.md
 - title: 모니터링 및 관리
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Azure Data Share 모니터링
+    - text: 공유 모니터링
       url: how-to-monitor.md
     - text: 일반적인 문제 해결
       url: data-share-troubleshoot.md
-    - text: 데이터 세트 추가
-      url: how-to-add-datasets.md
+    - text: 수신자 추가
+      url: how-to-add-recipients.md
     - text: 초대 삭제
       url: how-to-delete-invitation.md
     - text: 공유 구독 철회
       url: how-to-revoke-share-subscription.md
+    - text: Azure Data Share 보안 개요
+      url: security.md
+    - text: 재해 복구
+      url: disaster-recovery.md

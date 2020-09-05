@@ -13,12 +13,12 @@ ms.date: 07/22/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: 5a3e6d918f4ab94c4533e930ea73b5267deb53a4
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 0b6a6eac04711b564d602408a57b92f833fb5d5d
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115529"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782440"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Azure Active Directory의 애플리케이션 및 서비스 주체 개체
 
@@ -27,16 +27,16 @@ ms.locfileid: "88115529"
 ## <a name="application-registration"></a>애플리케이션 등록
 Id 및 액세스 관리 기능을 Azure AD에 위임 하기 위해 응용 프로그램을 Azure AD [테 넌 트](developer-glossary.md#tenant)에 등록 해야 합니다. Azure AD에 응용 프로그램을 등록 하면 Azure AD와 통합 될 수 있도록 응용 프로그램에 대 한 id 구성이 생성 됩니다. [Azure Portal][AZURE-Portal]에 앱을 등록 하는 경우이는 단일 테 넌 트 (테 넌 트 에서만 액세스할 수 있음) 또는 다중 테 넌 트 (다른 테 넌 트에서 액세스할 수 있음) 인지 여부를 선택 하 고 필요에 따라 액세스 토큰이 전송 되는 리디렉션 URI를 설정할 수 있습니다.
 
-![앱 등록](./media/app-objects-and-service-principals/app-registration.png)
+:::image type="content" source="media/app-objects-and-service-principals/app-registration.png" alt-text="응용 프로그램 등록 창 Azure Portal의 스크린샷":::
 
 앱 등록을 완료 하면 홈 테 넌 트 또는 디렉터리 내에 상주 하는 앱의 전역적으로 고유한 인스턴스 (응용 프로그램 개체)가 있습니다.  앱에 대 한 전역적으로 고유한 ID (앱 또는 클라이언트 ID)도 있습니다.  그런 다음 포털에서 비밀 또는 인증서 및 범위를 추가 하 여 앱이 작동 하도록 하 고 로그인 대화 상자에서 앱의 브랜딩을 사용자 지정할 수 있습니다.
 
 포털에서 응용 프로그램을 등록 하는 경우 응용 프로그램 개체 및 서비스 주체 개체는 홈 테 넌 트에 자동으로 만들어집니다.  Microsoft Graph Api를 사용 하 여 응용 프로그램을 등록/만들 경우에는 별도의 단계를 통해 서비스 주체 개체를 만들 수 있습니다.
 
 ## <a name="application-object"></a>애플리케이션 개체
-Azure AD 응용 프로그램은 응용 프로그램이 등록 된 Azure AD 테 넌 트에 상주 하는 응용 프로그램 개체 (응용 프로그램의 "홈" 테 넌 트 라고도 함)로 정의 됩니다.  응용 프로그램 개체는 하나 이상의 서비스 주체 개체를 만들기 위해 템플릿이나 청사진으로 사용 됩니다.  응용 프로그램이 사용 되는 모든 테 넌 트에 서비스 주체가 생성 됩니다. 개체 지향 프로그래밍의 클래스와 마찬가지로, 응용 프로그램 개체에는 생성 된 모든 서비스 사용자 (또는 응용 프로그램 인스턴스)에 적용 되는 몇 가지 정적 속성이 있습니다. 
+Azure AD 응용 프로그램은 응용 프로그램이 등록 된 Azure AD 테 넌 트에 상주 하는 응용 프로그램 개체 (응용 프로그램의 "홈" 테 넌 트 라고도 함)로 정의 됩니다.  응용 프로그램 개체는 하나 이상의 서비스 주체 개체를 만들기 위해 템플릿이나 청사진으로 사용 됩니다.  응용 프로그램이 사용 되는 모든 테 넌 트에 서비스 주체가 생성 됩니다. 개체 지향 프로그래밍의 클래스와 마찬가지로, 응용 프로그램 개체에는 생성 된 모든 서비스 사용자 (또는 응용 프로그램 인스턴스)에 적용 되는 몇 가지 정적 속성이 있습니다.
 
-응용 프로그램 개체는 응용 프로그램에 액세스 하기 위해 서비스에서 토큰을 발급 하는 방법, 응용 프로그램에서 액세스 해야 하는 리소스 및 응용 프로그램에서 수행할 수 있는 작업의 세 가지 측면을 설명 합니다. 
+응용 프로그램 개체는 응용 프로그램에 액세스 하기 위해 서비스에서 토큰을 발급 하는 방법, 응용 프로그램에서 액세스 해야 하는 리소스 및 응용 프로그램에서 수행할 수 있는 작업의 세 가지 측면을 설명 합니다.
 
 [Azure Portal][AZURE-Portal] 의 **앱 등록** 블레이드는 홈 테 넌 트에서 응용 프로그램 개체를 나열 하 고 관리 하는 데 사용 됩니다.
 
@@ -47,7 +47,7 @@ Microsoft Graph [응용 프로그램 엔터티][MS-Graph-App-Entity] 는 응용 
 ## <a name="service-principal-object"></a>서비스 주체 개체
 Azure AD 테넌트에 의해 보안이 유지되는 리소스에 액세스하려면 액세스해야 하는 엔터티를 보안 주체로 나타내야 합니다. 이 요구 사항은 사용자 (사용자 계정) 및 응용 프로그램 (서비스 사용자) 모두에 적용 됩니다. 보안 주체는 Azure AD 테넌트의 사용자/애플리케이션에 대한 액세스 정책 및 권한을 정의합니다. 이를 통해 로그인 동안의 사용자/애플리케이션의 인증 및 리소스 액세스 동안의 권한 부여 같은 핵심 기능이 허용됩니다.
 
-서비스 사용자는 단일 테 넌 트 또는 디렉터리에 있는 전역 응용 프로그램 개체의 로컬 표현 또는 응용 프로그램 인스턴스입니다. 서비스 주체는 응용 프로그램 개체에서 만든 구체적인 인스턴스이고 해당 응용 프로그램 개체의 특정 속성을 상속 합니다.  응용 프로그램이 사용 되는 각 테 넌 트에 서비스 주체가 만들어지고 전역적으로 고유한 앱 개체를 참조 합니다.  서비스 주체 개체는 앱이 특정 테 넌 트에서 실제로 수행할 수 있는 작업, 앱에 액세스할 수 있는 사용자 및 앱이 액세스할 수 있는 리소스를 정의 합니다. 
+서비스 사용자는 단일 테 넌 트 또는 디렉터리에 있는 전역 응용 프로그램 개체의 로컬 표현 또는 응용 프로그램 인스턴스입니다. 서비스 주체는 응용 프로그램 개체에서 만든 구체적인 인스턴스이고 해당 응용 프로그램 개체의 특정 속성을 상속 합니다.  응용 프로그램이 사용 되는 각 테 넌 트에 서비스 주체가 만들어지고 전역적으로 고유한 앱 개체를 참조 합니다.  서비스 주체 개체는 앱이 특정 테 넌 트에서 실제로 수행할 수 있는 작업, 앱에 액세스할 수 있는 사용자 및 앱이 액세스할 수 있는 리소스를 정의 합니다.
 
 애플리케이션이 테넌트의 리소스에 액세스하기 위한 권한을 받으면(등록 또는 [동의](developer-glossary.md#consent) 시) 서비스 주체 개체가 만들어집니다. [Azure PowerShell](howto-authenticate-service-principal-powershell.md), Azure CLI, [Microsoft Graph](/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0&tabs=http), [Azure Portal][AZURE-Portal]및 기타 도구를 사용 하 여 테 넌 트에서 서비스 사용자 개체를 만들 수도 있습니다.  포털을 사용 하는 경우 응용 프로그램을 등록할 때 서비스 주체가 자동으로 생성 됩니다.
 
@@ -82,7 +82,7 @@ Microsoft Graph [serviceprincipal 엔터티][MS-Graph-Sp-Entity] 는 서비스 �
 
 이 예제 시나리오는 다음과 같이 이루어져 있습니다.
 
-| 단계 | Description |
+| 단계 | 설명 |
 |------|-------------|
 | 1    | 애플리케이션의 홈 테넌트에서 애플리케이션 및 서비스 주체 개체를 만드는 과정입니다. |
 | 2    | Contoso 관리자와 Fabrikam 관리자가 전적으로 동의한 경우 서비스 주체 개체가 회사의 Azure AD 테넌트에 생성되고 관리자가 부여한 사용 권한이 할당됩니다. 또한 사용자가 개별 사용에 대한 동의를 할 수 있게 HR 앱이 구성/설계될 수 있습니다. |

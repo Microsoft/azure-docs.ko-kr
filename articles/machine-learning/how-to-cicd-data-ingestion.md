@@ -12,12 +12,12 @@ author: eedorenko
 manager: davete
 ms.reviewer: larryfr
 ms.date: 06/23/2020
-ms.openlocfilehash: e78044faabfd5ff3dccb1e7ea04149fbef212c01
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 7a52dcabb448c39d9ae4e4edb4f5b7f701be6603
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843711"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228888"
 ---
 # <a name="devops-for-a-data-ingestion-pipeline"></a>데이터 수집 파이프라인에 대 한 DevOps
 
@@ -64,7 +64,7 @@ CD (지속적인 업데이트) 프로세스는 아티팩트를 다운스트림 �
 데이터 엔지니어가 IDE (예: [Visual Studio Code](https://code.visualstudio.com))에서 로컬로 또는 Databricks 작업 영역에서 직접 Python 노트북 소스 코드를 사용 합니다. 코드 변경이 완료 되 면 분기 정책을 따라 리포지토리에 병합 됩니다.
 
 > [!TIP] 
-> `.py`Jupyter 노트북 형식이 아닌 파일에 코드를 저장 하는 것이 좋습니다 `.ipynb` . 코드 가독성을 향상 시키고 CI 프로세스에서 자동 코드 품질 검사를 사용 하도록 설정 합니다.
+> Jupyter Notebook 형식이 아닌 파일에 코드를 저장 하는 것이 좋습니다 `.py` `.ipynb` . 코드 가독성을 향상 시키고 CI 프로세스에서 자동 코드 품질 검사를 사용 하도록 설정 합니다.
 
 ### <a name="azure-data-factory-source-code"></a>소스 코드 Azure Data Factory
 

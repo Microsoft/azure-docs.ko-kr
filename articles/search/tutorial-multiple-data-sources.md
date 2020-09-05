@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.openlocfilehash: d63e437090b2875c7e6a8273fdf22d49597d408f
-ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
+ms.custom: devx-track-csharp
+ms.openlocfilehash: d3dd75d246c1f74253a9ce910e50b05402065464
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85262211"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998461"
 ---
 # <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>자습서: .NET SDK를 사용하여 여러 데이터 원본에서 인덱스
 
@@ -21,7 +22,7 @@ Azure Cognitive Search는 데이터를 여러 데이터 원본에서 단일 통�
 
 이 자습서에서는 Azure Cosmos DB 데이터 원본의 호텔 데이터를 인덱싱하고, 이를 Azure Blob Storage 문서에서 가져온 호텔 객실 세부 정보와 병합하는 방법에 대해 설명합니다. 결과는 복잡한 데이터 형식이 포함된 결합형 호텔 검색 인덱스가 됩니다.
 
-이 자습서에서는 C# 및 [.NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)를 사용합니다. 이 자습서에서 수행하는 작업은 다음과 같습니다.
+이 자습서에서는 C# 및 [.NET SDK](/dotnet/api/overview/azure/search)를 사용합니다. 이 자습서에서 수행하는 작업은 다음과 같습니다.
 
 > [!div class="checklist"]
 > * 샘플 데이터 업로드 및 데이터 원본 만들기
@@ -34,8 +35,8 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-+ [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal)
-+ [Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
++ [Azure Cosmos DB](../cosmos-db/create-cosmosdb-resources-portal.md)
++ [Azure Storage](../storage/common/storage-account-create.md)
 + [Visual Studio 2019](https://visualstudio.microsoft.com/)
 + [만들기](search-create-service-portal.md) 또는 [기존 검색 서비스 찾기](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
 
@@ -80,7 +81,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. [Azure Portal](https://portal.azure.com)에 로그인하고, Azure 스토리지 계정으로 이동하고, **Blob**을 클릭한 다음, **+ 컨테이너**를 클릭합니다.
 
-1. 샘플 호텔 객실 JSON 파일을 저장할 **hotel-rooms**라는 [Blob 컨테이너를 만듭니다](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). 유효한 값에 대한 공용 액세스 수준을 설정할 수 있습니다.
+1. 샘플 호텔 객실 JSON 파일을 저장할 **hotel-rooms**라는 [Blob 컨테이너를 만듭니다](../storage/blobs/storage-quickstart-blobs-portal.md). 유효한 값에 대한 공용 액세스 수준을 설정할 수 있습니다.
 
    ![Blob 컨테이너 만들기](media/tutorial-multiple-data-sources/blob-add-container.png "Blob 컨테이너 만들기")
 
@@ -171,7 +172,7 @@ Azure Cognitive Search 인덱서는 인덱싱 프로세스 중에 필드 매핑�
 
 ### <a name="create-an-index"></a>인덱스 만들기
 
-이 샘플 프로그램에서는 .NET SDK를 사용하여 Azure Cognitive Search 인덱스를 정의하고 만듭니다. [FieldBuilder](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.fieldbuilder) 클래스를 활용하여 C# 데이터 모델 클래스에서 인덱스 구조를 생성합니다.
+이 샘플 프로그램에서는 .NET SDK를 사용하여 Azure Cognitive Search 인덱스를 정의하고 만듭니다. [FieldBuilder](/dotnet/api/microsoft.azure.search.fieldbuilder) 클래스를 활용하여 C# 데이터 모델 클래스에서 인덱스 구조를 생성합니다.
 
 데이터 모델은 Address 및 Room 클래스에 대한 참조를 포함한 Hotel 클래스에서 정의됩니다. FieldBuilder는 여러 클래스 정의를 드릴다운하여 인덱스에 대한 복합 데이터 구조를 생성합니다. 메타데이터 태그는 검색 가능 여부 또는 정렬 가능 여부와 같이 각 필드의 특성을 정의하는 데 사용됩니다.
 
@@ -319,7 +320,7 @@ JSON Blob에는 **`HotelId`** 대신 **`Id`** 라는 키 필드가 있습니다.
 
 Blob 스토리지 인덱서는 사용할 구문 분석 모드를 식별하는 매개 변수를 사용할 수 있습니다. 구문 분석 모드는 단일 문서 또는 동일한 Blob 내의 여러 문서를 나타내는 Blob에 따라 달라집니다. 이 예제에서는 각 Blob이 단일 인덱스 문서를 나타내므로 코드에서 `IndexingParameters.ParseJson()` 매개 변수를 사용합니다.
 
-JSON Blob에 대한 인덱서 구문 분석 매개 변수에 대한 자세한 내용은 [JSON Blob 인덱싱](search-howto-index-json-blobs.md)을 참조하세요. .NET SDK를 사용하여 이러한 매개 변수를 지정하는 방법에 대한 자세한 내용은 [IndexerParametersExtension](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexingparametersextensions) 클래스를 참조하세요.
+JSON Blob에 대한 인덱서 구문 분석 매개 변수에 대한 자세한 내용은 [JSON Blob 인덱싱](search-howto-index-json-blobs.md)을 참조하세요. .NET SDK를 사용하여 이러한 매개 변수를 지정하는 방법에 대한 자세한 내용은 [IndexerParametersExtension](/dotnet/api/microsoft.azure.search.models.indexingparametersextensions) 클래스를 참조하세요.
 
 이 예제를 두 번 이상 실행하려는 경우 프로그램에서 먼저 동일한 이름의 기존 인덱서를 삭제한 후에 새 인덱서를 만듭니다.
 

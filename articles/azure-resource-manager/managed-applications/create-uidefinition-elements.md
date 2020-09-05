@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: tomfitz
-ms.openlocfilehash: 221e4dc2e909561c70b1cd1b86df026619c2b31f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8b6c6e78c64f83ca39a29f319a103e893d8d8b38
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004310"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923724"
 ---
 # <a name="createuidefinition-elements"></a>CreateUiDefinition 요소
 
@@ -36,7 +36,7 @@ ms.locfileid: "87004310"
 | 속성 | 필수 | Description |
 | -------- | -------- | ----------- |
 | name | 예 | 요소의 특정 인스턴스를 참조하는 내부 식별자입니다. 요소 이름의 가장 일반적인 사용법은 `outputs`에 있으며, 지정된 요소의 출력 값이 템플릿의 매개 변수에 매핑됩니다. 또한 요소의 출력 값을 다른 요소의 `defaultValue`에 바인딩하는 데 사용할 수 있습니다. |
-| 형식 | 예 | 요소에 대해 렌더링할 UI 컨트롤입니다. 지원되는 형식 목록은 [요소](#elements)를 참조하세요. |
+| type | 예 | 요소에 대해 렌더링할 UI 컨트롤입니다. 지원되는 형식 목록은 [요소](#elements)를 참조하세요. |
 | label | 예 | 요소의 표시 텍스트입니다. 일부 요소 형식에는 여러 개의 레이블이 포함되므로 값은 여러 문자열을 포함하는 개체가 될 수 있습니다. |
 | defaultValue | 아니요 | 요소의 기본값입니다. 일부 요소 형식에서 복잡한 기본값을 지원하므로 이 값은 개체가 될 수 있습니다. |
 | toolTip | 아니요 | 요소의 도구 설명에 표시할 텍스트입니다. `label`과 마찬가지로 일부 요소에서 여러 개의 도구 설명 문자열을 지원합니다. Markdown 구문을 사용하여 인라인 링크를 포함할 수 있습니다.
@@ -50,6 +50,7 @@ ms.locfileid: "87004310"
 
 - [Microsoft. 일반. 확인란](microsoft-common-checkbox.md)
 - [Microsoft.Common.DropDown](microsoft-common-dropdown.md)
+- [EditableGrid](microsoft-common-editablegrid.md)
 - [Microsoft.Common.FileUpload](microsoft-common-fileupload.md)
 - [Microsoft.Common.InfoBox](microsoft-common-infobox.md)
 - [Microsoft.Common.OptionsGroup](microsoft-common-optionsgroup.md)

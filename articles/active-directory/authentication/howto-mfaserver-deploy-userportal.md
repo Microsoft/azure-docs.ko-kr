@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8b7d3945adaf75949ef36b50a5e56a02fde1548
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: ccd1192c7597b5a088b1c50b5367030a616b9d77
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680923"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919593"
 ---
 # <a name="user-portal-for-the-azure-multi-factor-authentication-server"></a>Azure Multi-Factor Authentication 서버의 사용자 포털
 
@@ -29,7 +29,11 @@ ms.locfileid: "83680923"
 사용자 환경에 따라 Azure Multi-factor Authentication 서버와 동일한 서버 또는 다른 인터넷 연결 서버에서 사용자 포털을 배포하는 것이 좋습니다.
 
 > [!IMPORTANT]
-> 2019년 7월 1일부터 Microsoft는 더 이상 새 배포를 위한 MFA 서버를 제공하지 않습니다. 신규 사용자의 다단계 인증이 필요한 고객은 클라우드 기반 Azure Multi-Factor Authentication을 사용해야 합니다. 7월 1일 이전에 MFA 서버를 활성화한 기존 고객은 종전과 같이 최신 버전 및 이후 업데이트를 다운로드하고 활성화 자격 증명을 생성할 수 있습니다.
+> 2019 년 7 월 1 일부 터 Microsoft는 더 이상 새 배포를 위한 MFA 서버를 제공 하지 않습니다. 로그인 이벤트 중에 MFA (multi-factor authentication)를 요구 하려는 신규 고객은 클라우드 기반 Azure Multi-Factor Authentication를 사용 해야 합니다.
+>
+> 클라우드 기반 MFA를 시작 하려면 [자습서: Azure Multi-Factor Authentication를 사용 하 여 보안 사용자 로그인 이벤트](tutorial-enable-azure-mfa.md)를 참조 하세요.
+>
+> 2019 년 7 월 1 일 이전에 MFA 서버를 정품 인증 한 기존 고객은 평소와 같이 최신 버전, 향후 업데이트 및 활성화 자격 증명 생성을 다운로드할 수 있습니다.
 
 ![MFA 서버 사용자 포털 로그인 페이지](./media/howto-mfaserver-deploy-userportal/portal.png)
 
@@ -45,7 +49,7 @@ ms.locfileid: "83680923"
 3. 어떤 이유로든 변경해야 하는 경우가 아니면 기본값을 사용하여 설치를 완료합니다.
 4. IIS에서 사이트에 TLS/SSL 인증서를 바인딩합니다.
 
-IIS 서버에 TLS/SSL 인증서를 구성하는 방법에 대한 질문이 있다면 [IIS에서 SSL을 설정하는 방법](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) 문서를 참조하세요.
+IIS 서버에 TLS/SSL 인증서를 구성하는 방법에 대한 질문이 있다면 [IIS에서 SSL을 설정하는 방법](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) 문서를 참조하세요.
 
 웹 서비스 SDK는 TLS/SSL 인증서로 보호되어야 합니다. 이 작업을 위해 자체 서명된 인증서를 사용해도 됩니다. TLS 연결을 시작할 때 해당 인증서를 신뢰할 수 있도록 사용자 포털 웹 서버에 있는 로컬 컴퓨터 계정의 "신뢰할 수 있는 루트 인증 기관" 저장소로 인증서를 가져옵니다.
 
@@ -73,7 +77,7 @@ Azure Multi-Factor Authentication 서버와 **동일한 서버**에 사용자 �
 
 ![MFA 서버 사용자 포털 설치](./media/howto-mfaserver-deploy-userportal/install.png)
 
-IIS 서버에 TLS/SSL 인증서를 구성하는 방법에 대한 질문이 있다면 [IIS에서 SSL을 설정하는 방법](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) 문서를 참조하세요.
+IIS 서버에 TLS/SSL 인증서를 구성하는 방법에 대한 질문이 있다면 [IIS에서 SSL을 설정하는 방법](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) 문서를 참조하세요.
 
 ## <a name="deploy-the-user-portal-on-a-separate-server"></a>별도 서버에 사용자 포털 배포
 
@@ -110,7 +114,7 @@ Azure Multi-Factor Authentication 서버 이외의 서버에 사용자 포털을
 
 6. 원하는 컴퓨터에서 웹 브라우저를 열고 사용자 포털이 설치된 URL(예: `https://mfa.contoso.com/MultiFactorAuth`)로 이동합니다. 인증서 경고 또는 오류가 표시되지 않는지 확인합니다.
 
-IIS 서버에 TLS/SSL 인증서를 구성하는 방법에 대한 질문이 있다면 [IIS에서 SSL을 설정하는 방법](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) 문서를 참조하세요.
+IIS 서버에 TLS/SSL 인증서를 구성하는 방법에 대한 질문이 있다면 [IIS에서 SSL을 설정하는 방법](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) 문서를 참조하세요.
 
 ## <a name="configure-user-portal-settings-in-the-azure-multi-factor-authentication-server"></a>Azure Multi-Factor Authentication 서버에서 사용자 포털 설정 구성
 

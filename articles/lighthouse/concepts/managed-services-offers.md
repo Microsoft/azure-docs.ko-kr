@@ -1,14 +1,14 @@
 ---
 title: Azure Marketplace의 관리되는 서비스 제안
-description: 관리 서비스를 통해 서비스 공급자는 Azure Marketplace의 고객에 게 리소스 관리 제안을 판매할 수 있습니다.
+description: 관리 서비스 제공을 사용 하면 Azure Marketplace에서 고객에 게 리소스 관리 제안을 판매할 수 있습니다.
 ms.date: 07/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4f3813b7e2adabe5caaf0c7a5cbe8b15ed084730
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 6c3047cd95128f689e75d9c1f5fba5a39f86291c
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406863"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163325"
 ---
 # <a name="managed-service-offers-in-azure-marketplace"></a>Azure Marketplace의 관리되는 서비스 제안
 
@@ -18,7 +18,7 @@ ms.locfileid: "87406863"
 
 관리 서비스를 통해 Azure Lighthouse에 고객을 온 보 딩 하는 프로세스를 간소화할 수 있습니다. 고객이 Azure Marketplace에서 제품을 구매하는 경우 등록해야 하는 구독 및/또는 리소스 그룹을 지정할 수 있습니다.
 
-그런 다음 조직의 사용자는 제품을 만들 때 정의한 액세스에 따라 [Azure 위임 된 리소스 관리](azure-delegated-resource-management.md)를 통해 조직의 테 넌 트 내에서 해당 리소스에 대해 작업을 수행할 수 있습니다. 이 작업은 액세스 수준을 정의 하는 역할과 함께 고객 리소스에 대 한 액세스 권한이 있는 Azure Active Directory (Azure AD) 사용자, 그룹 및 서비스 주체를 지정 하는 매니페스트를 통해 수행 됩니다. 일련의 개별 사용자 또는 애플리케이션 계정이 아닌 Azure AD 그룹에 권한을 할당하므로 액세스 요구 사항이 변경될 때 개별 사용자를 추가하거나 제거할 수 있습니다.
+그런 다음, 조직의 사용자는 제품을 만들 때 정의한 액세스에 따라 [Azure 위임 된 리소스 관리](azure-delegated-resource-management.md)를 통해 관리 되는 테 넌 트 내에서 해당 리소스에 대해 작업을 수행할 수 있습니다. 이 작업은 액세스 수준을 정의 하는 역할과 함께 고객 리소스에 대 한 액세스 권한이 있는 Azure Active Directory (Azure AD) 사용자, 그룹 및 서비스 주체를 지정 하는 매니페스트를 통해 수행 됩니다. 일련의 개별 사용자 또는 애플리케이션 계정이 아닌 Azure AD 그룹에 권한을 할당하므로 액세스 요구 사항이 변경될 때 개별 사용자를 추가하거나 제거할 수 있습니다.
 
 ## <a name="public-and-private-offers"></a>퍼블릭 및 프라이빗 제품
 

@@ -6,16 +6,16 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: c93938db4632f6509e386d440c9be75596ea254f
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.openlocfilehash: 6c3f4cfe7c896b317edc5897098a1c18c98dc826
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82597898"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962641"
 ---
 # <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Azure App Service에서 TLS/SSL 바인딩으로 사용자 지정 DNS 이름 보호
 
-이 문서에서는 인증서 바인딩을 만들어 [App Service 앱](https://docs.microsoft.com/azure/app-service/) 또는 [함수 앱](https://docs.microsoft.com/azure/azure-functions/)에서 [사용자 지정 도메인](app-service-web-tutorial-custom-domain.md)을 보호하는 방법을 보여 줍니다. 완료되면 사용자 지정 DNS 이름(예: `https://www.contoso.com`)의 `https://` 엔드포인트에서 App Service 앱에 액세스할 수 있습니다. 
+이 문서에서는 인증서 바인딩을 만들어 [App Service 앱](./index.yml) 또는 [함수 앱](../azure-functions/index.yml)에서 [사용자 지정 도메인](app-service-web-tutorial-custom-domain.md)을 보호하는 방법을 보여 줍니다. 완료되면 사용자 지정 DNS 이름(예: `https://www.contoso.com`)의 `https://` 엔드포인트에서 App Service 앱에 액세스할 수 있습니다. 
 
 ![사용자 지정 TLS/SSL 인증서가 포함된 웹앱](./media/configure-ssl-bindings/app-with-custom-ssl.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "82597898"
 
 이 방법 가이드를 수행하려면 다음이 필요합니다.
 
-- [App Service 앱 만들기](/azure/app-service/)
+- [App Service 앱 만들기](./index.yml)
 - [도메인 이름을 앱에 매핑](app-service-web-tutorial-custom-domain.md)하거나 [Azure에서 구입하여 구성](manage-custom-dns-buy-domain.md)
 - [앱에 프라이빗 인증서 추가](configure-ssl-certificate.md)
 
@@ -52,7 +52,7 @@ ms.locfileid: "82597898"
 
 다음 단계를 수행합니다.
 
-<a href="https://portal.azure.com" target="_blank">Azure Portal</a>의 왼쪽 메뉴에서 **App Services** >  **\<app-name>** 을 선택합니다.
+<a href="https://portal.azure.com" target="_blank">Azure Portal</a>의 왼쪽 메뉴에서 **App Services** >  **\<app-name>** 를 선택합니다.
 
 앱의 왼쪽 탐색에서 다음을 수행하여 **TLS/SSL 바인딩** 대화 상자를 시작합니다.
 
@@ -153,7 +153,7 @@ ms.locfileid: "82597898"
 
 App Service에서, [TLS 종료](https://wikipedia.org/wiki/TLS_termination_proxy)는 네트워크 부하 분산 장치에서 발생하므로 모든 HTTPS 요청은 암호화되지 않은 HTTP 요청으로 앱에 도달합니다. 앱 논리에서 사용자 요청의 암호화 여부를 확인해야 하는 경우 `X-Forwarded-Proto` 헤더를 검사합니다.
 
-[Linux Node.js 구성](containers/configure-language-nodejs.md#detect-https-session) 가이드와 같은 언어별 구성 가이드에서는 애플리케이션 코드에서 HTTPS 세션을 검색하는 방법을 보여 줍니다.
+[Linux Node.js 구성](configure-language-nodejs.md#detect-https-session) 가이드와 같은 언어별 구성 가이드에서는 애플리케이션 코드에서 HTTPS 세션을 검색하는 방법을 보여 줍니다.
 
 ## <a name="automate-with-scripts"></a>스크립트를 사용하여 자동화
 
@@ -168,4 +168,4 @@ App Service에서, [TLS 종료](https://wikipedia.org/wiki/TLS_termination_proxy
 ## <a name="more-resources"></a>추가 리소스
 
 * [Azure App Service의 코드에서 TLS/SSL 인증서 사용](configure-ssl-certificate-in-code.md)
-* [FAQ: App Service Certificate](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/)
+* [FAQ: App Service Certificate](./faq-configuration-and-management.md)

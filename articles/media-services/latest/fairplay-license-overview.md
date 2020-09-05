@@ -1,7 +1,7 @@
 ---
 title: Media Services 및 Apple FairPlay 라이선스 지원 - Azure | Microsoft Docs
 description: 이 항목에서는 Apple FairPlay 라이선스 요구 사항 및 구성에 대 한 개요를 제공 합니다.
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/08/2018
-ms.author: juliako
-ms.custom: seodec18
-ms.openlocfilehash: 433768ddea6e250c66483ec3da4c7737b3538a1d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: cded51fa1cc1a1411f59915382f3c310660f8b19
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092051"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269304"
 ---
-# <a name="apple-fairplay-license-requirements-and-configuration"></a>Apple FairPlay 라이선스 요구 사항 및 구성 
+# <a name="apple-fairplay-license-requirements-and-configuration"></a>Apple FairPlay 라이선스 요구 사항 및 구성
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services를 사용하면 **Apple FairPlay**(AES-128 CBC)로 HLS 콘텐츠를 암호화할 수 있습니다. 또한 Media Services는 FairPlay 라이선스를 배달하는 서비스를 제공합니다. 플레이어가 FairPlay로 보호된 콘텐츠를 재생하려고 하면 라이선스 배달 서비스로 요청이 전송되어 라이선스를 얻습니다. 라이선스 서비스에서 요청을 승인하면 클라이언트로 전송하여 지정된 콘텐츠의 암호를 해독하고 재생하는 데 사용되는 라이선스가 발급됩니다.
 

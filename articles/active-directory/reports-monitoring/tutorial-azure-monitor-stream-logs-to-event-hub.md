@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eba44252672248b983d7f6e0c843f638e5f73447
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4cf35b2c15c0d85c93e69ef4e3b6c76932cbd75d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74007647"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229381"
 ---
 # <a name="tutorial-stream-azure-active-directory-logs-to-an-azure-event-hub"></a>자습서: Azure 이벤트 허브로 Azure Active Directory 로그 스트리밍
 
@@ -35,7 +35,7 @@ ms.locfileid: "74007647"
 * Azure 구독 Azure 구독이 없으면 [평가판](https://azure.microsoft.com/free/)에 등록할 수 있습니다.
 * Azure AD 테넌트.
 * Azure AD 테넌트의 *글로벌 관리자* 또는 *보안 관리자*인 사용자.
-* Azure 구독의 Event Hubs 네임스페이스 및 이벤트 허브. [이벤트 허브를 만드는 방법](https://docs.microsoft.com/azure/event-hubs/event-hubs-create)을 알아봅니다.
+* Azure 구독의 Event Hubs 네임스페이스 및 이벤트 허브. [이벤트 허브를 만드는 방법](../../event-hubs/event-hubs-create.md)을 알아봅니다.
 
 ## <a name="stream-logs-to-an-event-hub"></a>이벤트 허브에 로그 스트림
 
@@ -79,19 +79,19 @@ ms.locfileid: "74007647"
     
     * **ArcSight**: Splunk와 Azure AD 로그를 통합하는 방법에 대한 자세한 내용은 [Azure Monitor를 사용하여 Azure Active Directory 로그를 ArcSight와 통합](howto-integrate-activity-logs-with-arcsight.md)을 참조하세요.
     
-    * **Splunk**: Splunk와 Azure AD 로그를 통합하는 방법에 대한 자세한 내용은 [Azure Monitor를 사용하여 Splunk와 Azure AD 로그 통합](tutorial-integrate-activity-logs-with-splunk.md)을 참조하세요.
+    * **Splunk**: Splunk와 Azure AD 로그를 통합하는 방법에 대한 자세한 내용은 [Azure Monitor를 사용하여 Splunk와 Azure AD 로그 통합](./howto-integrate-activity-logs-with-splunk.md)을 참조하세요.
     
     * **IBM QRadar**: DSM 및 Azure 이벤트 허브 프로토콜은 [IBM 지원](https://www.ibm.com/support)에서 다운로드할 수 있습니다. Azure와 통합하는 방법에 대한 자세한 내용은 [IBM QRadar 보안 인텔리전스 플랫폼 7.3.0](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0) 사이트를 참조하세요.
     
     * **Sumo Logic**: 이벤트 허브의 데이터를 사용하도록 Sumo Logic을 설정하는 방법은 [Azure AD 앱을 설치하고 대시보드 보기](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Install_the_Azure_Active_Directory_App_and_View_the_Dashboards)를 참조하세요. 
 
-* **사용자 지정 도구 설정** 현재 SIEM이 Azure Monitor 진단에서 아직 지원되지 않는 경우 Event Hubs API를 사용하여 사용자 지정 도구를 설정할 수 있습니다. 자세한 내용은 [이벤트 허브에서 메시지 수신 시작](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph)을 참조하세요.
+* **사용자 지정 도구 설정** 현재 SIEM이 Azure Monitor 진단에서 아직 지원되지 않는 경우 Event Hubs API를 사용하여 사용자 지정 도구를 설정할 수 있습니다. 자세한 내용은 [이벤트 허브에서 메시지 수신 시작](../../event-hubs/event-hubs-dotnet-standard-getstarted-send.md)을 참조하세요.
 
 
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure Monitor를 사용하여 ArcSight와 Azure Active Directory 로그 통합](howto-integrate-activity-logs-with-arcsight.md)
-* [Azure Monitor를 사용하여 Splunk와 Azure AD 로그 통합](tutorial-integrate-activity-logs-with-splunk.md)
+* [Azure Monitor를 사용하여 Splunk와 Azure AD 로그 통합](./howto-integrate-activity-logs-with-splunk.md)
 * [Azure Monitor를 사용하여 SumoLogic과 Azure AD 로그 통합](howto-integrate-activity-logs-with-sumologic.md)
 * [Azure Monitor에서 감사 로그 스키마 해석](reference-azure-monitor-audit-log-schema.md)
 * [Azure Monitor에서 로그인 로그 스키마 해석](reference-azure-monitor-sign-ins-log-schema.md)

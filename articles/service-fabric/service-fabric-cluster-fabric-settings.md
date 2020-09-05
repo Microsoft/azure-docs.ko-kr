@@ -3,12 +3,12 @@ title: Azure Service Fabric 클러스터 설정 변경
 description: 이 문서에서는 사용자 지정할 수 있는 패브릭 설정 및 패브릭 업그레이드 정책에 대해 설명합니다.
 ms.topic: reference
 ms.date: 08/30/2019
-ms.openlocfilehash: 05b0b132f45e1cc7fbb136c46a7596f480941178
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: fbd6c9503e409473a87c58202eb88d77716441f9
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682998"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055123"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Service Fabric 클러스터 설정 사용자 지정
 이 문서에서는 사용자 지정할 수 있는 Service Fabric 클러스터의 다양한 패브릭 설정을 설명합니다. Azure에서 호스팅된 클러스터의 경우 [Azure Portal](https://portal.azure.com)을 통해 또는 Azure Resource Manager 템플릿을 사용하여 설정을 사용자 지정할 수 있습니다. 자세한 내용은 [Azure 클러스터의 구성 업그레이드](service-fabric-cluster-config-upgrade-azure.md)를 참조하세요. 독립 실행형 클러스터의 경우 *ClusterConfig.json* 파일을 업데이트하고 클러스터에서 구성 업그레이드를 수행하여 설정을 사용자 지정합니다. 자세한 내용은 [독립 실행형 클러스터의 구성 업그레이드](service-fabric-cluster-config-upgrade-windows-server.md)를 참조하세요.
@@ -423,14 +423,14 @@ ms.locfileid: "83682998"
 |AzureStorageMaxConnections | int, 기본값: 5000 |동적|Azure Storage에 동시에 연결할 수 있는 최대 수 |
 |AzureStorageMaxWorkerThreads | int, 기본값: 25 |동적|병렬 작업자 스레드의 최대 수 |
 |AzureStorageOperationTimeout | time(초), 기본값: 6000 |동적|시간 간격은 초 단위로 지정합니다. xstore 작업을 완료하는 걸리는 시간 제한입니다. |
-|CleanupApplicationPackageOnProvisionSuccess|bool, 기본값: FALSE |동적|프로비저닝 성공 시 애플리케이션 패키지의 자동 정리를 사용하거나 사용하지 않도록 설정합니다. |
-|CleanupUnusedApplicationTypes|Bool, 기본값: FALSE |동적|이 구성을 사용하도록 설정하면 사용하지 않는 애플리케이션 유형 버전을 자동으로 등록 취소하여 사용하지 않은 최신 버전 세 개를 건너뛰고 Image Store가 차지하는 디스크 공간을 지울 수 있습니다. 자동 정리는 해당하는 특정 앱 유형에 대한 프로비저닝이 성공하면 트리거되고 모든 애플리케이션 유형에 대해 하루에 한 번 주기적으로 실행됩니다. 건너뛸 사용하지 않은 버전 수는 "MaxUnusedAppTypeVersionsToKeep" 매개 변수를 사용하여 구성할 수 있습니다. |
-|DisableChecksumValidation | bool, 기본값: false |정적| 이 구성을 사용하면 애플리케이션 프로비전 중에 체크섬 유효성 검사를 사용하거나 사용하지 않도록 설정할 수 있습니다. |
-|DisableServerSideCopy | bool, 기본값: false |정적|애플리케이션 프로비전 중에 ImageStore에서 애플리케이션 패키지의 서버 쪽 복사본을 사용하거나 사용하지 않도록 설정하는 구성입니다. |
-|ImageCachingEnabled | bool, 기본값: true |정적|이 구성을 사용하면 캐싱을 사용하거나 사용하지 않도록 설정할 수 있습니다. |
-|ImageStoreConnectionString |SecureString |정적|ImageStore의 루트에 대한 연결 문자열 |
-|ImageStoreMinimumTransferBPS | int, 기본값: 1024 |동적|클러스터와 ImageStore 간의 최소 전송 속도. 외부 ImageStore에 액세스할 때 시간 제한을 결정하는 데 사용됩니다. 클러스터와 ImageStore 간에 대기 시간이 높은 경우에만 이 값을 변경하여 클러스터가 외부 ImageStore에서 다운로드하는 데 더 많은 시간을 허용합니다. |
-|MaxUnusedAppTypeVersionsToKeep | int, 기본값: 3 |동적|이 구성은 정리를 위해 건너뛸 사용하지 않은 애플리케이션 유형 버전의 수를 정의합니다. 이 매개 변수는 CleanupUnusedApplicationTypes 매개 변수를 사용하는 경우에만 적용할 수 있습니다. |
+|CleanupApplicationPackageOnProvisionSuccess|bool, 기본값: FALSE |동적|프로비저닝 성공 시 애플리케이션 패키지의 자동 정리를 사용하거나 사용하지 않도록 설정합니다.
+
+*모범 사례는를 사용 하는 것입니다 `true` .* | | CleanupUnusedApplicationTypes | Bool, 기본값은 FALSE |입니다. 동적 | 이 구성을 사용 하는 경우 사용 되지 않는 최신 버전을 건너뛴 사용 하지 않는 응용 프로그램 유형 버전의 등록을 자동으로 취소 하 여 이미지 저장소에서 사용 하는 디스크 공간을 자릅니다. 자동 정리는 해당하는 특정 앱 유형에 대한 프로비저닝이 성공하면 트리거되고 모든 애플리케이션 유형에 대해 하루에 한 번 주기적으로 실행됩니다. 건너뛸 사용하지 않은 버전 수는 "MaxUnusedAppTypeVersionsToKeep" 매개 변수를 사용하여 구성할 수 있습니다. 
+
+*모범 사례는를 사용 하는 것입니다 `true` .*
+| | DisableChecksumValidation | Bool, 기본값은 false |입니다. 정적 | 이 구성을 통해 응용 프로그램 프로 비전 중에 체크섬 유효성 검사를 사용 하거나 사용 하지 않도록 설정할 수 있습니다. | | DisableServerSideCopy | Bool, 기본값은 false |입니다. 정적 | 이 구성은 응용 프로그램을 프로 비전 하는 동안 ImageStore에서 응용 프로그램 패키지의 서버 쪽 복사본을 사용 하거나 사용 하지 않도록 설정 합니다. | | ImageCachingEnabled | Bool, 기본값은 true |입니다. 정적 | 이 구성을 사용 하면 캐싱을 사용 하거나 사용 하지 않도록 설정할 수 있습니다. | | ImageStoreConnectionString | SecureString | 정적 | ImageStore의 루트에 대 한 연결 문자열입니다. | | ImageStoreMinimumTransferBPS | Int, 기본값 1024 | 동적 | 클러스터와 ImageStore 간의 최소 전송 률입니다. 외부 ImageStore에 액세스할 때 시간 제한을 결정하는 데 사용됩니다. 클러스터와 ImageStore 간에 대기 시간이 높은 경우에만 이 값을 변경하여 클러스터가 외부 ImageStore에서 다운로드하는 데 더 많은 시간을 허용합니다. | | MaxUnusedAppTypeVersionsToKeep | Int, 기본값은 3 | 동적 | 이 구성에서는 정리를 위해 건너뛸 사용 하지 않는 응용 프로그램 형식 버전의 수를 정의 합니다. 이 매개 변수는 CleanupUnusedApplicationTypes 매개 변수를 사용하는 경우에만 적용할 수 있습니다.
+
+*일반적인 모범 사례는 기본값 ()을 사용 하는 것입니다 `3` .*|
 
 
 ## <a name="metricactivitythresholds"></a>MetricActivityThresholds

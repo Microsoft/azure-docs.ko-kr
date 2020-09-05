@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 8c17351c049ef419ab95f46a54aa9f8cc523f7cf
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.openlocfilehash: 76c45e586ea7101015cb878d198cab73ed32498e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84887451"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018249"
 ---
 # <a name="install-software-and-set-up-resources-for-the-tutorial"></a>자습서를 위한 소프트웨어 설치 및 리소스 설정
 
@@ -30,7 +30,7 @@ ms.locfileid: "84887451"
 4. [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio/)를 설치합니다.
 5. Azure Data Studio를 열고 Notebook에 대해 Python을 구성합니다. 자세한 내용은 [Notebook용 Python 구성](/sql/azure-data-studio/sql-notebooks#configure-python-for-notebooks)을 참조하세요. 이 단계는 몇 분 정도 걸릴 수 있습니다.
 6. 최신 버전의 [Azure CLI](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020)를 설치합니다. 다음 스크립트는 최신 버전(3.5.0, 2020년 2월)의 AZ PowerShell이 필요합니다.
-7. 자습서에 사용할 [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC) 및 [AMD/ARM Docker 이미지 파일](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/tar-files)을 다운로드합니다.
+7. 자습서에 사용할 [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC) 및 [AMD/ARM Docker 이미지 파일](https://www.docker.com/blog/multi-arch-images/)을 다운로드합니다.
 
 ## <a name="deploy-azure-resources-using-powershell-script"></a>PowerShell 스크립트를 사용하여 Azure 리소스 배포
 

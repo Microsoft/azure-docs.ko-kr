@@ -5,14 +5,15 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
+ms.custom: devx-track-csharp
 ms.date: 11/04/2019
 ms.author: zhshang
-ms.openlocfilehash: 4665666fe56c208b2437a7051bbf9201383365f8
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 6c330b201c74a2ce56283e30be90cd117b1022f6
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85962138"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050526"
 ---
 # <a name="quickstart-create-a-chat-room-by-using-signalr-service"></a>빠른 시작: SignalR Service를 사용하여 대화방 만들기
 
@@ -33,9 +34,13 @@ Azure SignalR Service는 개발자가 실시간 기능으로 손쉽게 웹 애�
 * [.NET Core SDK](https://www.microsoft.com/net/download/windows)를 설치합니다.
 * [AzureSignalR-sample](https://github.com/aspnet/AzureSignalR-samples) GitHub 리포지토리를 다운로드하거나 복제합니다. 
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
+
 ## <a name="create-an-azure-signalr-resource"></a>Azure SignalR 리소스 만들기
 
 [!INCLUDE [azure-signalr-create](../../includes/signalr-create.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="create-an-aspnet-core-web-app"></a>ASP.NET Core 웹앱 만들기
 
@@ -49,6 +54,7 @@ Azure SignalR Service는 개발자가 실시간 기능으로 손쉽게 웹 애�
     dotnet new mvc
     ```
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="add-secret-manager-to-the-project"></a>프로젝트에 암호 관리자 추가
 
@@ -71,6 +77,8 @@ Azure SignalR Service는 개발자가 실시간 기능으로 손쉽게 웹 애�
     </ItemGroup>
     </Project>    
     ```
+    
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="add-azure-signalr-to-the-web-app"></a>웹앱에 Azure SignalR 추가
 
@@ -225,6 +233,7 @@ connection.start()
     }
     ```
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="build-and-run-the-app-locally"></a>로컬로 앱 빌드 및 실행
 
@@ -254,7 +263,7 @@ connection.start()
 
     ![Azure SignalR 그룹 채팅 예](media/signalr-quickstart-dotnet-core/signalr-quickstart-complete-local.png)
 
-
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
@@ -279,7 +288,7 @@ connection.start()
    
 잠시 후, 리소스 그룹 및 모든 해당 리소스가 삭제됩니다.
 
-
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -288,4 +297,5 @@ connection.start()
 > [!div class="nextstepaction"]
 > [Azure SignalR Service 인증](./signalr-concept-authenticate-oauth.md)
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnetcore)
 

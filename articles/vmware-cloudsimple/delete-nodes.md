@@ -1,6 +1,6 @@
 ---
 title: CloudSimple에서 VMware 솔루션에 대 한 노드 삭제
-description: CloudSimple 배포를 사용 하 여 VMWare에서 노드를 삭제 하는 방법을 알아봅니다.
+description: CloudSimple 배포를 사용 하 여 VMWare에서 노드를 삭제 하는 방법에 대해 알아봅니다. CloudSimple 노드는 계량 됩니다. Azure Portal에서 사용 되지 않는 노드를 삭제 합니다.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/05/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 122e0636f54e066ae86ed2d19cefe5863b026293
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 569bc6350b1bfa01228d49d28a1d12e2ab62f6f0
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024741"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142267"
 ---
 # <a name="delete-nodes-from-azure-vmware-solution-by-cloudsimple"></a>CloudSimple로 Azure VMware 솔루션에서 노드 삭제
 

@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 707b432a4cb3918aa2dfbe460fc3cdcd53761bf1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3452641b336308ddf46349064345b154e55aa53c
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497083"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649162"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>센서 파트너에서 센서 데이터 가져오기
 
@@ -62,19 +62,19 @@ Azure FarmBeats를 사용 하면 IoT 장치 및 센서의 스트리밍 데이터
 
 5. 홈 디렉터리로 이동 합니다.
 
-    ```azurepowershell-interactive 
-    cd  
+    ```azurepowershell-interactive
+    cd
     ```
 
 6. 다음 명령을 실행합니다. Azure AD 요청에 사용 하기 위해 인증 된 계정을 연결 합니다.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
     Connect-AzureAD
     ```
-    
+
 7. 다음 명령을 실행합니다. 그러면 홈 디렉터리에 스크립트가 다운로드 됩니다.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
 
     wget –q https://aka.ms/farmbeatspartnerscriptv3 -O ./generatePartnerCredentials.ps1
 
@@ -82,11 +82,15 @@ Azure FarmBeats를 사용 하면 IoT 장치 및 센서의 스트리밍 데이터
 
 8. 다음 스크립트를 실행합니다. 스크립트는 **Azure Active Directory**  >  **개요** 페이지에서 가져올 수 있는 테 넌 트 ID를 요청 합니다.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
 
-    ./generatePartnerCredentials.ps1   
+    ./generatePartnerCredentials.ps1
 
     ```
+
+> [!NOTE]
+> 1. Datahub API 끝점 이름은 소문자 여야 합니다.
+> 2. Datahub API 끝점에 대 한 farmbeats 웹 사이트 이름 url을 복사 하는 경우 후행 슬래시 (/)가 없는지 확인 합니다.
 
 9. 화면의 지시에 따라 **API 끝점**, **테 넌 트 ID**, **클라이언트 ID**, **클라이언트 암호**및 **EventHub 연결 문자열**의 값을 캡처합니다.
 
@@ -120,7 +124,7 @@ FarmBeats를 연결 하기 위해 장치 파트너에 게이를 제공 해야 �
 - **노드**: 하나 이상의 센서가 연결 되는 장치입니다.
 - **게이트웨이**: 하나 이상의 노드가 연결 된 장치입니다.
 
-다음 단계를 수행하세요.
+다음 단계를 수행합니다.
 
 1. 홈 페이지의 메뉴에서 **장치** 를 선택 합니다.
   장치 **페이지에** 는 장치 유형, 모델, 상태, 배치한 팜 및 메타 데이터에 대 한 마지막 업데이트 날짜가 표시 됩니다. 기본적으로 팜 열은 *NULL*로 설정 됩니다. 팜에 장치를 할당 하도록 선택할 수 있습니다. 자세한 내용은 [장치 할당](#assign-devices)을 참조 하세요.
@@ -130,7 +134,7 @@ FarmBeats를 연결 하기 위해 장치 파트너에 게이를 제공 해야 �
 
 ### <a name="view-sensors"></a>센서 보기
 
-다음 단계를 수행하세요.
+다음 단계를 수행합니다.
 
 1. 홈 페이지의 메뉴에서 **센서** 를 선택 합니다.
   센서 **페이지에** 는 센서 유형, 연결 된 팜, 부모 장치, 포트 이름, 포트 유형 및 마지막 업데이트 상태에 대 한 세부 정보가 표시 됩니다.
@@ -138,7 +142,7 @@ FarmBeats를 연결 하기 위해 장치 파트너에 게이를 제공 해야 �
 
     ![센서 페이지](./media/get-sensor-data-from-sensor-partner/view-sensors-1.png)
 
-## <a name="assign-devices"></a>장치 할당  
+## <a name="assign-devices"></a>장치 할당
 
 센서 데이터가 전달 된 후 센서를 배포한 팜에 할당할 수 있습니다.
 
@@ -159,7 +163,7 @@ FarmBeats를 연결 하기 위해 장치 파트너에 게이를 제공 해야 �
 
 ### <a name="visualize-sensor-data"></a>센서 데이터 시각화
 
-다음 단계를 수행하세요.
+다음 단계를 수행합니다.
 
 1. 홈 페이지의 메뉴에서 **팜** 을 선택 하 여 **팜** 페이지를 표시 합니다.
 2. 센서 데이터를 보려는 **팜을** 선택 합니다.
@@ -169,7 +173,7 @@ FarmBeats를 연결 하기 위해 장치 파트너에 게이를 제공 해야 �
 
 ## <a name="delete-a-sensor"></a>센서 삭제
 
-다음 단계를 수행하세요.
+다음 단계를 수행합니다.
 
 1. 홈 페이지의 메뉴에서 **센서** 를 선택 하 여 **센서** 페이지를 표시 합니다.
 2. 삭제 하려는 장치를 선택 하 고 확인 창에서 **삭제** 를 선택 합니다.
@@ -180,7 +184,7 @@ FarmBeats를 연결 하기 위해 장치 파트너에 게이를 제공 해야 �
 
 ## <a name="delete-devices"></a>디바이스 삭제
 
-다음 단계를 수행하세요.
+다음 단계를 수행합니다.
 
 1. 홈 페이지의 메뉴에서 **장치** 를 선택 하 여 **장치** 페이지를 표시 합니다.
 2. 삭제 하려는 장치를 선택 하 고 확인 창에서 **삭제** 를 선택 합니다.

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 08/01/2020
-ms.openlocfilehash: f6e356f868cdb2107a19084070a85a0388ab4af7
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 37ff94608e9756142f70a4f3c64d0a6f7eeea685
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87554866"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932902"
 ---
 # <a name="get-customer-managed-key-information-from-indexes-and-synonym-maps"></a>인덱스 및 동의어 맵에서 고객이 관리 하는 키 정보 가져오기
 
@@ -66,6 +66,6 @@ Invoke-RestMethod -Uri $uri -Headers $headers | ConvertTo-Json
 
 사용 되는 암호화 키와 버전을 파악 했으므로 Azure Key Vault에서 키를 관리 하거나 다른 구성 설정을 확인할 수 있습니다.
 
-+ [빠른 시작: PowerShell을 사용하여 Azure Key Vault에서 비밀을 설정하고 검색](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-powershell)
++ [빠른 시작: PowerShell을 사용하여 Azure Key Vault에서 비밀을 설정하고 검색](../key-vault/secrets/quick-create-powershell.md)
 
 + [Azure Cognitive Search에서 데이터 암호화를 위해 고객이 관리 하는 키 구성](search-security-manage-encryption-keys.md)

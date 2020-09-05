@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/11/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1945dc3b9fa03354ef447f813d95b6040a4b7b91
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: ad1567a3a6cba2c2fbc519ffe5d384aba25ab51d
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87833337"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648992"
 ---
 # <a name="sap-workload-on-azure-virtual-machine-supported-scenarios"></a>Azure 가상 머신의 SAP 워크로드 지원 시나리오
 Azure에서 SAP NetWeaver, Business one `Hybris` 또는 S/4HANA 시스템 아키텍처를 디자인 하면 다양 한 아키텍처 및 도구를 사용 하 여 확장 가능 하 고 효율적 이며 가용성이 높은 배포를 수행할 수 있는 여러 가지 기회가 있습니다. 사용 된 운영 체제 또는 DBMS에 따라 다르지만 제한이 있습니다. 또한 온-프레미스에서 지원 되는 모든 시나리오가 Azure에서 동일한 방식으로 지원 되는 것은 아닙니다. 이 문서에서는 Azure Vm을 독점적으로 사용 하는 지원 되는 고가용성 구성과 고가용성 구성 및 아키텍처를 안내 합니다. [Hana Large instances](./hana-overview-architecture.md)에서 지원 되는 시나리오는 [hana large Instances에 대해 지원 되는 시나리오](./hana-supported-scenario.md)문서를 참조 하세요. 
@@ -160,7 +160,7 @@ SAP 중앙 서비스는 SAP 구성의 두 번째 단일 실패 지점입니다. 
     - [SAP 애플리케이션용 Azure NetApp Files를 사용하여 SUSE Linux Enterprise Server에서 Azure VM의 SAP NetWeaver 고가용성 실현](./high-availability-guide-suse-netapp-files.md)
 - 클러스터에서 호스트 되는 NFS 공유를 사용 하는 Red Hat 운영 체제의 Pacemaker `glusterfs` 세부 정보는 다음 문서에서 찾을 수 있습니다.
     - [Red Hat Enterprise Linux의 SAP NetWeaver에 대한 Azure Virtual Machines 고가용성](./high-availability-guide-rhel.md)
-    - [`GlusterFS`SAP NetWeaver에 대 한 Red Hat Enterprise Linux의 Azure Vm](./high-availability-guide-rhel-glusterfs.md)
+    - [`GlusterFS` SAP NetWeaver에 대 한 Red Hat Enterprise Linux의 Azure Vm](./high-availability-guide-rhel-glusterfs.md)
 - [Azure NetApp Files](https://azure.microsoft.com/services/netapp/)에서 호스트 되는 NFS 공유를 사용 하는 red Hat 운영 체제의 Pacemaker입니다. 세부 정보는이 문서에 설명 되어 있습니다.
     - [SAP 응용 프로그램에 대해 Azure NetApp Files을 사용 하는 Red Hat Enterprise Linux에서 SAP NetWeaver에 대 한 Azure Virtual Machines 고가용성](./high-availability-guide-rhel-netapp-files.md)
 
@@ -215,7 +215,7 @@ SUSE의 경우 Pacemaker를 기반으로 하는 다중 SID 클러스터도 지�
 SAP HANA 스케일 아웃 시나리오는 [SAP HANA 하드웨어 디렉터리](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure)에 나열 된 HANA 인증 Azure vm의 하위 집합에 대해 지원 됩니다. ' 클러스터링 ' 열에서 ' 예 '로 표시 된 모든 Vm을 OLAP 또는 S/4HANA 확장에 사용할 수 있습니다. Standby를 사용 하지 않는 구성은 다음과 같은 Azure Storage 형식에서 지원 됩니다. 
 
 - /Hana/log 볼륨에 대해 Azure Write accelerator를 포함 하는 azure Premium Storage
-- [Ultra Disk](../../linux/disks-enable-ultra-ssd.md)
+- [Ultra Disk](../../disks-enable-ultra-ssd.md)
 - [Azure NetApp Files](https://azure.microsoft.com/services/netapp/) 
 
 OLAP 또는 대기 노드를 포함 하는 S/4HANA에 대 한 SAP HANA 스케일 아웃 구성은 Azure NetApp Files에서 호스트 되는 NFS 공유 에서만 지원 됩니다.

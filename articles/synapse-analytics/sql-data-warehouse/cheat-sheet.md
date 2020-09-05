@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 74ffb54b13783b4945376e1717777fa1da39ab44
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 3b5783476e0d4a96561e11158cd2b0f6421cfbf6
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543319"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88136102"
 ---
 # <a name="cheat-sheet-for-azure-synapse-analytics-formerly-sql-dw"></a>Azure Synapse Analytics 참고 자료(이전의 SQL DW)
 
@@ -37,7 +37,7 @@ ms.locfileid: "87543319"
 
 ## <a name="data-migration"></a>데이터 마이그레이션
 
-먼저 [Azure Data Lake Storage](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) 또는 Azure Blob Storage에 데이터를 로드합니다. 그런 다음, PolyBase를 사용하여 스테이징 테이블에 데이터를 로드합니다. 다음 구성을 사용합니다.
+먼저 [Azure Data Lake Storage](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) 또는 Azure Blob Storage에 데이터를 로드합니다. 그런 다음, [COPY 문](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)(미리 보기)을 사용하여 데이터를 준비 테이블에 로드합니다. 다음 구성을 사용합니다.
 
 | 디자인 | 권장 |
 |:--- |:--- |
@@ -109,7 +109,7 @@ ELT 파이프라인을 데이터 웨어하우스로 자동화하는 데 PolyBase
 
 ## <a name="maintain-statistics"></a>통계 유지 관리
 
- 자동 통계를 일반적으로 사용할 수 있을 때까지는 통계를 수동으로 유지 관리해야 합니다. 데이터에 *중요한* 변경 내용이 있는 것 만큼 통계를 업데이트하는 것도 중요합니다. 이는 쿼리 계획을 최적화하는 데 도움이 됩니다. 모든 통계를 유지 관리하는 데 시간이 너무 오래 걸리는 경우 통계가 있는 열을 선택해야 합니다.
+데이터에 *중요한* 변경 내용이 있는 것 만큼 통계를 업데이트하는 것도 중요합니다. *중요한* 변경이 발생했는지 확인하려면 [통계 업데이트](sql-data-warehouse-tables-statistics.md#update-statistics)를 참조하세요. 업데이트된 통계는 쿼리 계획을 최적화합니다. 모든 통계를 유지 관리하는 데 시간이 너무 오래 걸리는 경우 통계가 있는 열을 선택해야 합니다.
 
 또한 업데이트의 빈도를 정의할 수 있습니다. 예를 들어 매일 새 값이 추가될 수 있는 날짜 열을 업데이트할 수 있습니다. 조인에 포함된 열, WHERE 절에 사용된 열 및 GROUP BY에서 찾은 열에 대한 통계를 통해 가장 많은 이점을 얻을 수 있습니다.
 

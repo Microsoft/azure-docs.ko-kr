@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 07/22/2020
-ms.openlocfilehash: b1290a17c93043ffbedb7a641e1a0afad6ae79d1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/25/2020
+ms.openlocfilehash: 624668ad80d72933d6dd1e67fcac799fd210d659
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87066485"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816663"
 ---
 # <a name="connect-to-azure-virtual-networks-from-azure-logic-apps-by-using-an-integration-service-environment-ise"></a>ISE(통합 서비스 환경)를 사용하여 Azure Logic Apps에서 Azure 가상 네트워크에 연결
 
@@ -39,7 +39,7 @@ ISE는 [샘플 Azure Resource Manager 빠른 시작 템플릿](https://github.co
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
+* Azure 계정 및 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
   > [!IMPORTANT]
   > ISE에서 실행되는 논리 앱, 기본 제공 트리거, 기본 제공 작업 및 커넥터는 사용량 기반 가격 책정 플랜과 다른 가격 책정 플랜을 사용합니다. ISE의 가격 책정 및 요금 청구 방식은 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md#fixed-pricing)을 참조하세요. 가격 책정 요금은 [Logic Apps 가격 책정](../logic-apps/logic-apps-pricing.md)을 참조하세요.
@@ -94,6 +94,8 @@ ISE가 액세스할 수 있고 ISE의 논리 앱이 가상 네트워크의 각 �
 
   [NSG 보안 규칙](../virtual-network/security-overview.md#security-rules)을 설정하는 경우 **TCP**와 **UDP** 프로토콜을 모두 사용해야 합니다. 그렇지 않으면 각 프로토콜에 대해 별도의 규칙을 만들 필요가 없도록 **임의**를 선택합니다. NSG 보안 규칙은 포트에 액세스해야 하는 IP 주소에 대해 열어야 하는 해당 포트를 설명합니다. 이러한 엔드포인트 사이에 존재하는 방화벽, 라우터 또는 기타 항목도 해당 포트가 IP 주소에 액세스할 수 있도록 유지해야 합니다.
 
+* 방화벽을 통해 강제 터널링을 설정 하 여 인터넷 바인딩된 트래픽을 리디렉션하는 경우 [추가 강제 터널링 요구 사항을](#forced-tunneling)검토 합니다.
+
 <a name="network-ports-for-ise"></a>
 
 ### <a name="network-ports-used-by-your-ise"></a>ISE에 사용되는 네트워크 포트
@@ -141,6 +143,26 @@ ISE가 액세스할 수 있고 ISE의 논리 앱이 가상 네트워크의 각 �
 
 * Azure 방화벽 이외의 방화벽 어플라이언스를 사용 하는 경우 App Service Environment에 필요한 [방화벽 통합 종속성](../app-service/environment/firewall-integration.md#dependencies) 에 나열 된 *모든* 규칙을 사용 하 여 방화벽을 설정 해야 합니다.
 
+<a name="forced-tunneling"></a>
+
+#### <a name="forced-tunneling-requirements"></a>강제 터널링 요구 사항
+
+방화벽을 통해 [강제 터널링](../firewall/forced-tunneling.md) 을 설정 하거나 사용 하는 경우 ISE에 대 한 추가 외부 종속성을 허용 해야 합니다. 강제 터널링을 사용 하면 인터넷에 바인딩된 트래픽을 VPN (가상 사설망) 또는 가상 어플라이언스와 같은 지정 된 다음 홉으로 리디렉션하여 아웃 바운드 네트워크 트래픽을 검사 하 고 감사할 수 있습니다.
+
+일반적으로 모든 ISE 아웃 바운드 종속성 트래픽은 ISE로 프로 비전 된 VIP (가상 IP 주소)를 통해 이동 합니다. 그러나 ISE 간에 트래픽 라우팅을 변경 하는 경우 다음 홉을로 설정 하 여 방화벽에 대해 다음과 같은 아웃 바운드 종속성을 허용 해야 `Internet` 합니다. Azure 방화벽을 사용 하는 경우 지침에 따라 [App Service Environment를 사용 하 여 방화벽을 설정](../app-service/environment/firewall-integration.md#configuring-azure-firewall-with-your-ase)합니다.
+
+이러한 종속성에 대 한 액세스를 허용 하지 않으면 ISE 배포가 실패 하 고 배포 된 ISE 작동이 중지 됩니다.
+
+* [App Service Environment 관리 주소](../app-service/environment/management-addresses.md)
+
+* [Azure API Management 주소](../api-management/api-management-using-with-vnet.md#control-plane-ips)
+
+* [Azure Traffic Manager 관리 주소](https://azuretrafficmanagerdata.blob.core.windows.net/probes/azure/probe-ip-ranges.json)
+
+* [ISE 영역에 대 한 인바운드 및 아웃 바운드 주소를 Logic Apps 합니다.](../logic-apps/logic-apps-limits-and-config.md#firewall-configuration-ip-addresses-and-service-tags)
+
+* 방화벽을 통해 이러한 서비스로 트래픽을 보낼 수 없기 때문에 Azure SQL, 저장소, Service Bus 및 이벤트 허브에 대 한 서비스 끝점을 사용 하도록 설정 해야 합니다.
+
 <a name="create-environment"></a>
 
 ## <a name="create-your-ise"></a>ISE 만들기
@@ -151,7 +173,7 @@ ISE가 액세스할 수 있고 ISE의 논리 앱이 가상 네트워크의 각 �
 
 1. **통합 서비스 환경** 창에서 **추가**를 선택합니다.
 
-   !["통합 서비스 환경" 찾기 및 선택](./media/connect-virtual-network-vnet-isolated-environment/add-integration-service-environment.png)
+   !["추가"를 선택 하 여 통합 서비스 환경 만들기](./media/connect-virtual-network-vnet-isolated-environment/add-integration-service-environment.png)
 
 1. 사용자 환경에 대한 세부 정보를 제공한 다음, **검토 + 만들기**를 선택합니다. 예:
 

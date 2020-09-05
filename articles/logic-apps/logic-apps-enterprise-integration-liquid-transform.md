@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 07/31/2020
-ms.openlocfilehash: 5aa6b3717925146607f3785ad5ea5fb940e8c236
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b3919cbbe0ba7a796a21ae566afb8e2d9fa784db
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503404"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716676"
 ---
 # <a name="transform-json-and-xml-using-liquid-templates-as-maps-in-azure-logic-apps"></a>Azure Logic Apps의 맵으로 액체 템플릿을 사용 하 여 JSON 및 XML 변환
 
@@ -39,7 +39,7 @@ ms.locfileid: "87503404"
 * [수냉 템플릿 언어](https://shopify.github.io/liquid/) 에 대 한 기본 지식
 
   > [!NOTE]
-  > Json **을 json으로 변환-액체** 작업은 액체에 대 한 [DotLiquid 구현을](https://github.com/dotliquid/dotliquid)따릅니다 .이는 액체에 [대 한 Shopify 구현과](https://shopify.github.io/liquid)관련 된 특정 사례에서 차이가 있습니다. 자세한 내용은 [액체 템플릿 고려 사항](#template-considerations)을 참조 하세요.
+  > Json **을 json으로 변환-액체** 작업은 액체에 대 한 [DotLiquid 구현을](https://github.com/dotliquid/dotliquid)따릅니다 .이는 액체에 [대 한 Shopify 구현과](https://shopify.github.io/liquid)관련 된 특정 사례에서 차이가 있습니다. 자세한 내용은 [액체 템플릿 고려 사항](#liquid-template-considerations)을 참조 하세요.
 
 ## <a name="create-the-template"></a>템플릿 만들기
 
@@ -86,7 +86,7 @@ ms.locfileid: "87503404"
 
 1. **지도** 창에서 **추가** 를 선택 하 고 맵에 대 한 세부 정보를 제공 합니다.
 
-   | 속성 | 값 | 설명 |
+   | 속성 | 값 | Description |
    |----------|-------|-------------|
    | **이름** | `JsonToJsonTemplate` | 맵의 이름이며, 이 예제에서는 "JsonToJsonTemplate"입니다. |
    | **맵 유형** | **liquid** | 맵의 형식입니다. JSON부터 JSON 변환의 경우 **Liquid**를 선택해야 합니다. |

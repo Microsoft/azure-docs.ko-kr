@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c5e546c6eac77c4952a0d32d360f49d4251d49d
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: cdb6e85b6d81de3d4b88ba315ddd35bd5b37ae7a
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909703"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165212"
 ---
 # <a name="use-api-connectors-to-customize-and-extend-self-service-sign-up"></a>API 커넥터를 사용 하 여 셀프 서비스 등록 사용자 지정 및 확장 
 
@@ -30,7 +30,7 @@ ms.locfileid: "87909703"
 <!-- - **Enrich user data**. Integrate with your external cloud systems that store user information to integrate them with the sign-up flow. For example, your API can receive the user's email address, query a CRM system, and return the user's loyalty number. Returned claims can be used to pre-fill form fields or return additional data in the application token.  -->
 - **사용자 지정 비즈니스 논리 실행**. 클라우드 시스템에서 다운스트림 이벤트를 트리거하여 푸시 알림을 보내고, 회사 데이터베이스를 업데이트 하 고, 사용 권한을 관리 하 고, 데이터베이스를 감사 하 고, 다른 사용자 지정 작업을 수행할 수 있습니다.
 
-API 커넥터는 HTTP 끝점, 인증, 요청 및 예상 되는 응답을 정의 하 여 Azure AD와 API 끝점 간의 계약을 나타냅니다. API 커넥터를 구성한 후에는 사용자 흐름에서 특정 단계에 대해이 커넥터를 사용 하도록 설정할 수 있습니다. 사용자가 등록 흐름에서 해당 단계에 도달 하면 API 커넥터가 호출 되 고 HTTP POST 요청으로 구체화 되어 선택한 클레임이 JSON 본문에서 키-값 쌍으로 전송 됩니다. API 응답은 사용자 흐름의 실행에 영향을 줄 수 있습니다. 예를 들어 API 응답은 사용자가 등록 하지 못하도록 차단할 수 있으며 사용자에 게 정보를 다시 입력 하도록 요청 하거나 사용자 특성을 덮어쓰고 추가 합니다.
+API 커넥터는 HTTP 끝점 URL 및 인증을 정의 하 여 API 끝점을 호출 하는 데 필요한 정보를 Azure Active Directory 제공 합니다. API 커넥터를 구성한 후에는 사용자 흐름에서 특정 단계에 대해이 커넥터를 사용 하도록 설정할 수 있습니다. 사용자가 등록 흐름에서 해당 단계에 도달 하면 API 커넥터가 호출 되어 API에 대 한 HTTP POST 요청으로 구체화 되어 사용자 정보 ("클레임")를 JSON 본문의 키-값 쌍으로 보냅니다. API 응답은 사용자 흐름의 실행에 영향을 줄 수 있습니다. 예를 들어 API 응답은 사용자가 등록 하지 못하도록 차단할 수 있으며 사용자에 게 정보를 다시 입력 하도록 요청 하거나 사용자 특성을 덮어쓰고 추가 합니다.
 
 ## <a name="where-you-can-enable-an-api-connector-in-a-user-flow"></a>사용자 흐름에서 API 커넥터를 사용 하도록 설정할 수 있는 위치
 
@@ -39,7 +39,8 @@ API 커넥터는 HTTP 끝점, 인증, 요청 및 예상 되는 응답을 정의 
 - Id 공급자를 사용 하 여 로그인 한 후
 - 사용자를 만들기 전에
 
-이러한 두 경우 모두 API 커넥터는 로그인이 아닌 등록 중에 호출 됩니다.
+> [!IMPORTANT]
+> 이러한 두 경우 모두, 로그인이 아닌 사용자 **등록**중에 API 커넥터가 호출 됩니다.
 
 ### <a name="after-signing-in-with-an-identity-provider"></a>Id 공급자를 사용 하 여 로그인 한 후
 

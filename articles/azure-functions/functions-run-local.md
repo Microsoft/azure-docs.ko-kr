@@ -4,13 +4,13 @@ description: Azure Functions에서 실행하기 전에 로컬 머신의 명령 �
 ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
-ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 5c6761b083200556314d7133d5040f7811066e30
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.custom: devx-track-csharp, 80e4ff38-5174-43
+ms.openlocfilehash: 8dfc1471955a6d10199a078922151ff3aeda4294
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037034"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929495"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Azure Functions 핵심 도구 작업
 
@@ -37,7 +37,7 @@ Azure Functions Core Tools에는 세 가지 버전이 있습니다. 사용 되�
 
 + **버전**1.x: Azure Functions 런타임의 버전 1.X를 지원 합니다. 이 버전의 도구는 Windows 컴퓨터에서만 지원되며 [npm 패키지](https://www.npmjs.com/package/azure-functions-core-tools)에서 설치됩니다.
 
-별도로 언급 하지 않는 한이 문서의 예는 버전 2.x에 대 한 것입니다.
+지정 된 컴퓨터에는 하나의 핵심 도구 버전만 설치할 수 있습니다. 별도로 언급 하지 않는 한이 문서의 예는 버전 2.x에 대 한 것입니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -165,6 +165,9 @@ Azure Functions Core Tools 현재 Azure 계정으로 인증 하는 Azure CLI에 
 func init MyFunctionProj
 ```
 
+>[!IMPORTANT]
+> Java는 Maven 원형를 사용 하 여 첫 번째 HTTP 트리거된 함수와 함께 로컬 함수 프로젝트를 만듭니다. 다음 명령을 사용 하 여 Java 프로젝트를 만듭니다 `mvn archetype:generate -DarchetypeGroupId=com.microsoft.azure -DarchetypeArtifactId=azure-functions-archetype` . Maven 원형를 사용 하는 예제는 [명령줄 빠른](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java)시작을 참조 하세요.  
+
 프로젝트 이름을 제공하면 해당 이름을 사용한 새 폴더가 생성되고 초기화됩니다. 그렇지 않으면 현재 폴더는 초기화됩니다.  
 버전 3(sp3)/2.x에서 명령을 실행할 때 프로젝트에 대 한 런타임을 선택 해야 합니다. 
 
@@ -189,9 +192,9 @@ Writing C:\myfunctions\myMyFunctionProj\.vscode\extensions.json
 Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 </pre>
 
-`func init`는 다음과 같은 옵션을 지원 합니다 .이 옵션은 다른 설명이 없는 경우 버전 3(sp3)/x-only입니다.
+`func init` 는 다음과 같은 옵션을 지원 합니다 .이 옵션은 다른 설명이 없는 경우 버전 3(sp3)/x-only입니다.
 
-| 옵션     | 설명                            |
+| 옵션     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--csx`** | 버전 1.x 동작인 .NET 함수를 c # 스크립트로 만듭니다. 에만 유효 `--worker-runtime dotnet` 합니다. |
 | **`--docker`** | 선택한을 기반으로 하는 기본 이미지를 사용 하 여 컨테이너에 대 한 Dockerfile을 만듭니다 `--worker-runtime` . 사용자 지정 Linux 컨테이너에 게시하려는 경우 이 옵션을 사용합니다. |
@@ -254,20 +257,21 @@ HTTP 및 타이머 트리거를 제외 하 고 런타임 버전 2.x 이상에서
 
   ![Storage Explorer에서 연결 문자열 복사](./media/functions-run-local/storage-explorer.png)
 
-+ 다음 중 한 명령을 사용하여 Azure에서 연결 문자열을 다운로드하려면 핵심 도구를 사용합니다.
++ 프로젝트 루트의 핵심 도구를 사용 하 여 다음 명령 중 하나를 사용 하 여 Azure에서 연결 문자열을 다운로드 합니다.
 
   + 기존 함수 앱에서 모든 설정을 다운로드합니다.
 
     ```
     func azure functionapp fetch-app-settings <FunctionAppName>
     ```
+
   + 특정 스토리지 계정에 대한 연결 문자열을 가져옵니다.
 
     ```
     func azure storage fetch-connection-string <StorageAccountName>
     ```
 
-    Azure에 아직 로그인 하지 않은 경우 로그인 하 라는 메시지가 표시 됩니다.
+    Azure에 아직 로그인 하지 않은 경우 로그인 하 라는 메시지가 표시 됩니다. 이러한 명령은 파일의 local.settings.js에 있는 모든 기존 설정을 덮어씁니다. 
 
 ## <a name="create-a-function"></a><a name="create-func"></a>함수 만들기
 
@@ -305,7 +309,7 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 
 다음 인수를 사용하는 명령에서 이러한 옵션을 지정할 수도 있습니다.
 
-| 인수     | 설명                            |
+| 인수     | Description                            |
 | ------------------------------------------ | -------------------------------------- |
 | **`--csx`** | (버전 2.x 이상 버전) 버전 1.x 및 포털에서 사용 되는 동일한 c # 스크립트 (csx) 템플릿을 생성 합니다. |
 | **`--language`**, **`-l`**| C#, F# 또는 JavaScript와 같은 템플릿 프로그래밍 언어 이 옵션은 버전 1.x에서 필요합니다. 버전 2.x 이상 버전에서는이 옵션을 사용 하거나 작업자 런타임과 일치 하는 언어를 선택 하지 마세요. |
@@ -334,6 +338,14 @@ Functions 프로젝트를 실행하려면 Functions 호스트를 실행합니다
 ```
 func start --build
 ```
+
+# <a name="java"></a>[Java](#tab/java)
+
+```
+mvn clean package 
+mvn azure-functions:run
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/node)
 
 ```
@@ -365,7 +377,7 @@ npm start
 
 `func start`은 다음 옵션을 지원합니다.
 
-| 옵션     | 설명                            |
+| 옵션     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--no-build`** | 실행 전에 현재 프로젝트를 빌드하지 않도록 합니다. dotnet 프로젝트에만 해당합니다. 기본값은 false로 설정하는 것입니다. 버전 1.x에는 지원 되지 않습니다. |
 | **`--cors-credentials`** | 버전 1.x에 대해 지원 되지 않는 크로스-원본 인증 된 요청 (즉, 쿠키 및 인증 헤더)을 허용 합니다. |
@@ -474,7 +486,7 @@ curl --request POST -H "Content-Type:application/json" --data "{'input':'sample 
 
 `func run`은 다음 옵션을 지원합니다.
 
-| 옵션     | 설명                            |
+| 옵션     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--content`**, **`-c`** | 인라인 콘텐츠입니다. |
 | **`--debug`**, **`-d`** | 함수를 실행하기 전에 호스트 프로세스에 디버거를 연결합니다.|
@@ -505,6 +517,9 @@ Azure의 함수 앱에 로컬 코드를 게시하려면 `publish` 명령을 사�
 func azure functionapp publish <FunctionAppName>
 ```
 
+>[!IMPORTANT]
+> Java에서는 Maven를 사용 하 여 로컬 프로젝트를 Azure에 게시 합니다. 다음 명령을 사용 하 여 Azure에 게시 `mvn azure-functions:deploy` 합니다. Azure 리소스는 초기 배포 중에 생성 됩니다.
+
 이 명령은 Azure에서 기존 함수 앱에 게시합니다. 구독에 존재 하지 않는에 게시 하려고 하면 오류가 발생 `<FunctionAppName>` 합니다. Azure CLI를 사용하여 명령 프롬프트 또는 터미널 창에서 함수 앱을 만드는 방법을 알아보려면 [서버를 사용하지 않고 실행하기 위한 Function App 만들기](./scripts/functions-cli-create-serverless.md)를 참조하세요. 기본적으로이 명령은 [원격 빌드](functions-deployment-technologies.md#remote-build) 를 사용 하 고 [배포 패키지에서 실행](run-functions-from-deployment-package.md)되도록 앱을 배포 합니다. 권장 배포 모드를 사용 하지 않도록 설정 하려면 `--nozip` 옵션을 사용 합니다.
 
 >[!IMPORTANT]
@@ -513,14 +528,14 @@ func azure functionapp publish <FunctionAppName>
 
 다음 게시 옵션은 모든 버전에 적용 됩니다.
 
-| 옵션     | 설명                            |
+| 옵션     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--publish-local-settings -i`** |  local.settings.json의 설정을 Azure에 게시하고, 설정이 이미 있는 경우 덮어쓸지 묻습니다. Microsoft Azure Storage 에뮬레이터 사용 하는 경우 먼저 앱 설정을 [실제 저장소 연결](#get-your-storage-connection-strings)로 변경 합니다. |
 | **`--overwrite-settings -y`** | `--publish-local-settings -i` 사용 시 앱 설정을 덮어쓴다는 메시지를 표시하지 않습니다.|
 
 다음 게시 옵션은 버전 2.x 이상 버전 에서만 지원 됩니다.
 
-| 옵션     | 설명                            |
+| 옵션     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--publish-settings-only`**, **`-o`** |  설정만 게시하고 콘텐츠는 건너뜁니다. 기본값은 프롬프트입니다. |
 |**`--list-ignored-files`** | .funcignore 파일을 기준으로 하여 게시 중에 무시되는 파일 목록을 표시합니다. |
@@ -544,7 +559,7 @@ func deploy
 
 다음과 같은 사용자 지정 컨테이너 배포 옵션을 사용할 수 있습니다.
 
-| 옵션     | 설명                            |
+| 옵션     | Description                            |
 | ------------ | -------------------------------------- |
 | **`--registry`** | 현재 사용자가 로그인되어 있는 Docker 레지스트리의 이름입니다. |
 | **`--platform`** | 함수 앱의 호스팅 플랫폼입니다. 유효한 옵션은 `kubernetes`입니다. |
@@ -585,5 +600,5 @@ Azure에서 함수 앱을 만들 때 Application Insights 통합을 사용 하�
 [Azure Portal]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime
-[AzureWebJobsStorage]: functions-app-settings.md#azurewebjobsstorage
+[`AzureWebJobsStorage`]: functions-app-settings.md#azurewebjobsstorage
 [확장 번들]: functions-bindings-register.md#extension-bundles

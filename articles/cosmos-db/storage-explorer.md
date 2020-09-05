@@ -4,15 +4,15 @@ description: Azure Storage Explorer를 사용하여 Azure Cosmos DB에 연결하
 author: deborahc
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 10/23/2019
+ms.date: 08/24/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: a43e49ab29780e718139b677b780443e5e31e2ab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d1948ae186662c7f60f4d49c19a4d48b424a38f7
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262245"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047482"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Azure Storage Explorer 를 사용하여 데이터 작업
 
@@ -29,25 +29,25 @@ SQL API 또는 Azure Cosmos DB의 MongoDB API가 있는 Cosmos 계정 계정이 
 
 ## <a name="connect-to-an-azure-subscription"></a>Azure 구독에 연결
 
-1. **Azure Storage 탐색기**를 설치한 후 다음 이미지에 나와 있는 것 처럼 왼쪽에 있는 **플러그** 인 아이콘을 클릭 합니다.
+1. **Azure Storage 탐색기**를 설치한 후 다음 이미지에 나와 있는 것 처럼 왼쪽에 있는 **플러그** 인 아이콘을 선택 합니다.
 
-   :::image type="content" source="./media/storage-explorer/plug-in-icon.png" alt-text="플러그 인 아이콘":::
+   :::image type="content" source="./media/storage-explorer/plug-in-icon.png" alt-text="연결 하려면 플러그 인 아이콘을 선택 합니다.":::
 
-2. **Azure 계정 추가**를 선택하고 **로그인**을 클릭합니다.
+2. **Azure 계정 추가**를 선택한 다음, **로그인**을 선택합니다.
 
-   :::image type="content" source="./media/storage-explorer/connect-to-azure-subscription.png" alt-text="Azure 구독에 연결":::
+   :::image type="content" source="./media/storage-explorer/connect-to-azure-subscription.png" alt-text="필요한 Azure 구독에 연결":::
 
 2. **Azure 로그인** 대화 상자에서 **로그인**을 선택 하 고 Azure 자격 증명을 입력 합니다.
 
-    :::image type="content" source="./media/storage-explorer/sign-in.png" alt-text="로그인":::
+    :::image type="content" source="./media/storage-explorer/sign-in.png" alt-text="Azure 구독에 로그인 합니다.":::
 
-3. 목록에서 구독을 선택하고 **적용**을 클릭합니다.
+3. 목록에서 구독을 선택 하 고 **적용**을 선택 합니다.
 
-    :::image type="content" source="./media/storage-explorer/apply-subscription.png" alt-text="적용":::
+    :::image type="content" source="./media/storage-explorer/apply-subscription.png" alt-text="목록에서 필터링 할 구독 ID를 선택 합니다.":::
 
     탐색기 창이 업데이트되고, 선택한 구독에서 계정이 표시됩니다.
 
-    :::image type="content" source="./media/storage-explorer/account-list.png" alt-text="계정 목록":::
+    :::image type="content" source="./media/storage-explorer/account-list.png" alt-text="사용 가능한 목록에서 Azure Cosmos DB 계정 선택":::
 
     **Cosmos DB 계정**을 Azure 구독에 성공적으로 연결했습니다.
 
@@ -57,11 +57,11 @@ Azure Cosmos DB에 연결하는 또 다른 방법은 연결 문자열을 사용�
 
 1. 왼쪽 트리에서 **로컬 및 연결**을 찾아 **Azure Cosmos DB 계정**을 마우스 오른쪽 단추로 클릭한 후 **Azure Cosmos DB에 연결...** 을 선택합니다.
 
-    :::image type="content" source="./media/storage-explorer/connect-to-db-by-connection-string.png" alt-text="연결 문자열을 사용하여 Cosmos DB에 연결":::
+    :::image type="content" source="./media/storage-explorer/connect-to-db-by-connection-string.png" alt-text="연결 문자열을 사용하여 Azure Cosmos DB에 연결":::
 
-2. 현재 SQL 및 테이블 API만 지원합니다. API를 선택하고, **연결 문자열**을 붙여넣고, **계정 레이블**을 입력하고, **다음**을 클릭하여 요약을 확인한 다음, **연결**을 클릭하여 Azure Cosmos DB 계정을 연결합니다. 기본 연결 문자열을 검색 하는 방법에 대 한 자세한 내용은 [연결 문자열 가져오기](manage-with-powershell.md#list-keys)를 참조 하세요.
+2. 현재 SQL 및 테이블 API만 지원합니다. API를 선택 하 고, **연결 문자열**을 붙여넣고, **계정 레이블**을 입력 하 고, **다음** 을 선택 하 여 요약을 확인 한 **다음 연결을 선택 하** 여 Azure Cosmos DB 계정에 연결 합니다. 기본 연결 문자열을 검색 하는 방법에 대 한 자세한 내용은 [연결 문자열 가져오기](manage-with-powershell.md#list-keys)를 참조 하세요.
 
-    :::image type="content" source="./media/storage-explorer/connection-string.png" alt-text="연결 문자열":::
+    :::image type="content" source="./media/storage-explorer/connection-string.png" alt-text="연결 문자열 입력":::
 
 ## <a name="connect-to-azure-cosmos-db-by-using-local-emulator"></a>로컬 에뮬레이터를 사용하여 Azure Cosmos DB에 연결
 
@@ -71,11 +71,11 @@ Azure Cosmos DB에 연결하는 또 다른 방법은 연결 문자열을 사용�
 
 2. 왼쪽 트리에서 **로컬 및 연결**을 찾아 **Cosmos DB 계정**을 마우스 오른쪽 단추로 클릭한 후 **Cosmos DB 에뮬레이터에 연결...** 을 선택합니다.
 
-    :::image type="content" source="./media/storage-explorer/emulator-entry.png" alt-text="에뮬레이터로 Cosmos DB에 연결":::
+    :::image type="content" source="./media/storage-explorer/emulator-entry.png" alt-text="에뮬레이터에서 Azure Cosmos DB에 연결":::
 
-3. 현재 SQL API만 지원합니다. **연결 문자열**을 붙여넣고, **계정 레이블**을 입력하고, **다음**을 클릭하여 요약을 확인한 다음, **연결**을 클릭하여 Azure Cosmos DB 계정을 연결합니다. 기본 연결 문자열을 검색 하는 방법에 대 한 자세한 내용은 [연결 문자열 가져오기](manage-with-powershell.md#list-keys)를 참조 하세요.
+3. 현재 SQL API만 지원합니다. **연결 문자열**을 붙여넣고, **계정 레이블**을 입력 하 고, **다음** 을 선택 하 여 요약을 확인 한 **다음 연결을 선택 하** 여 Azure Cosmos DB 계정에 연결 합니다. 기본 연결 문자열을 검색 하는 방법에 대 한 자세한 내용은 [연결 문자열 가져오기](manage-with-powershell.md#list-keys)를 참조 하세요.
 
-    :::image type="content" source="./media/storage-explorer/emulator-dialog.png" alt-text="에뮬레이터로 Cosmos DB에 연결 대화 상자":::
+    :::image type="content" source="./media/storage-explorer/emulator-dialog.png" alt-text="에뮬레이터 대화 상자에서 Cosmos DB에 연결":::
 
 
 ## <a name="azure-cosmos-db-resource-management"></a>Azure Cosmos DB 리소스 관리
@@ -95,7 +95,7 @@ Azure Cosmos DB에 연결하는 또 다른 방법은 연결 문자열을 사용�
 
 * Azure Cosmos DB 계정 또는 데이터베이스를 마우스 오른쪽 단추로 클릭하여 **포털에서 열기**를 선택하면 Azure Portal을 통해 브라우저에서 리소스를 관리할 수 있습니다.
 
-     :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="포털에서 열기":::
+  :::image type="content" source="./media/storage-explorer/open-in-portal.png" alt-text="포털에서 열기":::
 
 * Azure Cosmos DB 계정, 데이터베이스, 컬렉션 등을 **빠른 액세스**에 추가할 수도 있습니다.
 * **여기에서 검색**을 선택하면 선택한 경로에서 키워드 검색이 가능합니다.
@@ -103,100 +103,115 @@ Azure Cosmos DB에 연결하는 또 다른 방법은 연결 문자열을 사용�
     :::image type="content" source="./media/storage-explorer/search-from-here.png" alt-text="여기에서 검색":::
 
 ### <a name="database-and-collection-management"></a>데이터베이스 및 컬렉션 관리
-#### <a name="create-a-database"></a>데이터베이스 만들기
--   Azure Cosmos DB 계정을 마우스 오른쪽 단추로 클릭하고 **데이터베이스 만들기**를 선택하고 데이터베이스 이름을 입력한 후 **Enter** 키를 눌러 완료합니다.
 
-    :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="데이터베이스 만들기":::
+#### <a name="create-a-database"></a>데이터베이스 만들기
+
+- Azure Cosmos DB 계정을 마우스 오른쪽 단추로 클릭하고 **데이터베이스 만들기**를 선택하고 데이터베이스 이름을 입력한 후 **Enter** 키를 눌러 완료합니다.
+
+  :::image type="content" source="./media/storage-explorer/create-database.png" alt-text="Azure Cosmos 계정에서 데이터베이스 만들기":::
 
 #### <a name="delete-a-database"></a>데이터베이스 삭제
-- 데이터베이스를 마우스 오른쪽 단추로 클릭하고 **데이터베이스 삭제**를 클릭한 후 팝업 창에서 **예**를 클릭합니다. 데이터베이스 노드가 삭제되고, Azure Cosmos DB 계정이 자동으로 새로 고쳐집니다.
 
-    :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="database1 삭제":::
+- 데이터베이스를 마우스 오른쪽 단추로 클릭 하 고 **데이터베이스 삭제**를 선택한 다음 팝업 창에서 **예** 를 선택 합니다. 데이터베이스 노드가 삭제되고, Azure Cosmos DB 계정이 자동으로 새로 고쳐집니다.
 
-    :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="database2 삭제":::
+  :::image type="content" source="./media/storage-explorer/delete-database1.png" alt-text="첫 번째 데이터베이스 삭제":::
+
+  :::image type="content" source="./media/storage-explorer/delete-database2.png" alt-text="두 번째 데이터베이스 삭제":::
 
 #### <a name="create-a-collection"></a>컬렉션 만들기
+
 1. 데이터베이스를 마우스 오른쪽 단추로 클릭 하 고 **컬렉션 만들기**를 선택한 후 **컬렉션 ID**, **저장소 용량**등과 같은 정보를 제공 합니다. **확인** 을 클릭 하 여 완료 합니다.
 
-    :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="collection1 만들기":::
+   :::image type="content" source="./media/storage-explorer/create-collection.png" alt-text="데이터베이스에서 첫 번째 컬렉션 만들기":::
 
-    :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="collection2 만들기":::
+   :::image type="content" source="./media/storage-explorer/create-collection2.png" alt-text="데이터베이스에서 두 번째 컬렉션 만들기":::
 
-2. 파티션 키를 지정할 수 있으려면 **무제한**을 선택한 다음, **확인**을 클릭하여 완료합니다.
+2. 파티션 키를 지정할 수 있도록 **제한 없음** 을 선택 하 고 **확인** 을 선택 하 여 완료 합니다.
 
     컬렉션을 만들 때 파티션 키가 사용된 경우, 컬렉션을 만들고 나면 컬렉션에 대해 파티션 키 값을 변경할 수 없습니다.
 
-    :::image type="content" source="./media/storage-explorer/partitionkey.png" alt-text="파티션 키":::
+    :::image type="content" source="./media/storage-explorer/partitionkey.png" alt-text="파티션 키 구성":::
 
 #### <a name="delete-a-collection"></a>컬렉션 삭제
-- 컬렉션을 마우스 오른쪽 단추로 클릭하고 **컬렉션 삭제**를 클릭한 후 팝업 창에서 **예**를 클릭합니다.
+
+- 컬렉션을 마우스 오른쪽 단추로 클릭 하 고 **컬렉션 삭제**를 선택한 다음 팝업 창에서 **예** 를 선택 합니다.
 
     컬렉션 노드가 삭제되고, 데이터베이스가 자동으로 새로 고쳐집니다.
 
-    :::image type="content" source="./media/storage-explorer/delete-collection.png" alt-text="컬렉션 삭제":::
+    :::image type="content" source="./media/storage-explorer/delete-collection.png" alt-text="컬렉션 중 하나 삭제":::
 
 ### <a name="document-management"></a>문서 관리
 
 #### <a name="create-and-modify-documents"></a>문서 만들기 및 수정
-- 새 문서를 만들려면 왼쪽 창에서 **문서**를 연 다음 **새 문서**를 클릭하고 오른쪽 창에서 내용을 편집한 후 **저장**을 클릭합니다. 기존 문서를 업데이트한 후 **저장**을 클릭할 수도 있습니다. **취소**를 클릭하여 변경 내용을 취소할 수 있습니다.
 
-    :::image type="content" source="./media/storage-explorer/document.png" alt-text="Document":::
+- 새 문서를 만들려면 왼쪽 창에서 **문서** 를 열고 **새 문서**를 선택한 다음 오른쪽 창에서 콘텐츠를 편집 하 고 **저장**을 선택 합니다. 기존 문서를 업데이트 한 후 **저장**을 선택할 수도 있습니다. **취소**를 클릭하여 변경 내용을 취소할 수 있습니다.
+
+  :::image type="content" source="./media/storage-explorer/document.png" alt-text="새 문서 만들기":::
 
 #### <a name="delete-a-document"></a>문서 삭제
+
 - 선택한 문서를 삭제하려면 **삭제** 단추를 클릭합니다.
 
 #### <a name="query-for-documents"></a>문서에 대한 쿼리
-- [SQL 쿼리](how-to-sql-query.md)를 입력하고 **적용**을 클릭하여 문서 필터를 편집합니다.
 
-    :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="문서 필터":::
+- [SQL 쿼리](how-to-sql-query.md) 를 입력 하 여 문서 필터를 편집한 다음 **적용**을 선택 합니다.
 
-
+  :::image type="content" source="./media/storage-explorer/document-filter.png" alt-text="특정 문서에 대 한 쿼리":::
 
 ### <a name="graph-management"></a>그래프 관리
 
 #### <a name="create-and-modify-vertex"></a>꼭짓점 만들기 및 수정
-1. 새 꼭짓점을 만들려면 왼쪽 창에서 **그래프**를 열고, **새 꼭짓점**을 클릭하고, 내용을 편집한 다음, **확인**을 클릭합니다.
-2. 기존 꼭짓점을 수정하려면 오른쪽 창에서 펜 아이콘을 클릭합니다.
 
-    :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="그래프":::
+1. 새 꼭 짓 점을 만들려면 왼쪽 창에서 **그래프** 를 열고, **새 꼭 짓 점**을 선택 하 고, 내용을 편집한 다음, **확인**을 선택 합니다.
+2. 기존 꼭 짓 점을 수정 하려면 오른쪽 창에서 펜 아이콘을 선택 합니다.
+
+   :::image type="content" source="./media/storage-explorer/vertex.png" alt-text="그래프의 꼭 짓 점 수정":::
 
 #### <a name="delete-a-graph"></a>그래프 삭제
-- 꼭짓점을 삭제하려면 꼭짓점 이름 옆에 있는 휴지통 아이콘을 클릭합니다.
+
+- 꼭 짓 점을 삭제 하려면 꼭 짓 점 이름 옆에 있는 휴지통 아이콘을 선택 합니다.
 
 #### <a name="filter-for-graph"></a>그래프에 대한 필터
-- [Gremlin 쿼리](gremlin-support.md)를 입력하여 그래프 필터를 편집한 다음, **필터 적용**을 클릭합니다.
 
-    :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="그래프 필터":::
+- [Gremlin 쿼리](gremlin-support.md) 를 입력 한 다음 **필터 적용**을 선택 하 여 그래프 필터를 편집 합니다.
+
+   :::image type="content" source="./media/storage-explorer/graph-filter.png" alt-text="Graph 쿼리 실행":::
 
 ### <a name="table-management"></a>테이블 관리
 
 #### <a name="create-and-modify-table"></a>테이블 만들기 및 수정
-1. 새 테이블을 만들려면 왼쪽 창에서 **엔터티**를 열고, **추가**를 클릭하고, **엔터티 추가** 대화 상자에서 콘텐츠를 편집하고, **추가 속성** 단추를 클릭하여 속성을 추가한 다음, **삽입**을 클릭합니다.
-2. 테이블을 수정하려면 **편집**을 클릭하고, 콘텐츠를 수정한 다음, **업데이트**를 클릭합니다.
 
-    :::image type="content" source="./media/storage-explorer/table.png" alt-text="테이블":::
+1. 새 테이블을 만들려면 왼쪽 창에서 **엔터티** 를 열고 **추가**를 선택 하 고, **엔터티 추가** 대화 상자에서 콘텐츠를 편집 하 고, **속성 추가**단추를 클릭 하 여 속성을 추가 하 고, **삽입**을 선택 합니다.
+2. 테이블을 수정 하려면 **편집**을 선택 하 고 콘텐츠를 수정한 다음 **업데이트**를 선택 합니다.
+
+   :::image type="content" source="./media/storage-explorer/table.png" alt-text="테이블 만들기 및 수정":::
 
 #### <a name="import-and-export-table"></a>테이블 가져오기 및 내보내기
-1. 가져오려면 **가져오기** 단추를 클릭하고 기존 테이블을 선택합니다.
-2. 내보내려면 **내보내기** 단추를 클릭하고 대상을 선택합니다.
 
-    :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="테이블 가져오기 및 내보내기":::
+1. 가져오려면 **가져오기** 단추를 선택 하 고 기존 테이블을 선택 합니다.
+2. 내보내려면 **내보내기** 단추를 선택 하 고 대상을 선택 합니다.
+
+   :::image type="content" source="./media/storage-explorer/table-import-export.png" alt-text="테이블 가져오기 또는 내보내기":::
 
 #### <a name="delete-entities"></a>엔터티 삭제
-- 엔터티를 선택하고 **삭제** 단추를 클릭합니다.
 
-    :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="테이블 삭제":::
+- 엔터티를 선택 하 고 **삭제**단추를 선택 합니다.
+
+  :::image type="content" source="./media/storage-explorer/table-delete.png" alt-text="테이블 삭제":::
 
 #### <a name="query-table"></a>쿼리 테이블
-- **쿼리** 단추를 클릭하고, 쿼리 조건을 입력한 다음, **쿼리 실행** 단추를 클릭합니다. **쿼리 닫기** 단추를 클릭하여 쿼리 창을 닫습니다.
 
-    :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="테이블 쿼리":::
+- 쿼리 **단추를 클릭 하** 고 쿼리 조건을 입력 한 다음 **쿼리 실행** 단추를 선택 합니다. **쿼리 닫기** 단추를 클릭하여 쿼리 창을 닫습니다.
+
+  :::image type="content" source="./media/storage-explorer/table-query.png" alt-text="테이블에서 데이터 쿼리":::
 
 ### <a name="manage-stored-procedures-triggers-and-udfs"></a>저장 프로시저, 트리거 및 UDF 관리
-* 저장 프로시저를 만들려면 왼쪽 트리에서 **저장 프로시저**를 마우스 오른쪽 단추로 클릭하고 **저장 프로시저 만들기**를 선택한 후에 왼쪽에 이름을, 오른쪽 창에 저장 프로시저 스크립트를 입력한 다음 **만들기**를 클릭합니다.
-* 기존 저장 프로시저를 편집할 수도 있습니다. 기존 저장 프로시저를 두 번 클릭하고 업데이트한 다음 **업데이트**를 클릭하여 저장하거나 **취소**를 클릭하여 변경 내용을 취소하면 됩니다.
 
-    :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="저장 프로시저":::
+* 저장 프로시저를 만들려면 왼쪽 트리에서 **저장 프로시저**를 마우스 오른쪽 단추로 클릭 하 고, **저장 프로시저 만들기**를 선택 하 고, 왼쪽에 이름을 입력 하 고, 오른쪽 창에 저장 프로시저 스크립트를 입력 한 다음, **만들기**를 선택 합니다.
+* 또한 업데이트를 두 번 클릭 하 고 업데이트를 클릭 한 다음 **업데이트** 를 클릭 하 여 저장 **하거나 취소를 선택 하** 여 변경 내용을 취소 하 여 기존 저장 프로시저를 편집할 수도 있습니다.
+
+  :::image type="content" source="./media/storage-explorer/stored-procedure.png" alt-text="저장 프로시저 만들기 및 관리":::
+
 * **트리거** 및 **UDF**에 대한 작업은 **저장 프로시저**에 대한 작업과 비슷합니다.
 
 ## <a name="troubleshooting"></a>문제 해결
@@ -236,7 +251,7 @@ Storage Explorer가 이러한 "자체 서명된 인증서" 중 하나를 발견�
 
 성공적으로 로그인한 후 구독을 검색할 수 없습니다.
 
-- [Azure Portal](https://portal.azure.com/)에 로그인하여 계정이 구독에 액세스할 수 있는지 확인합니다.
+- [Azure Portal](https://portal.azure.com/) 에 로그인 하 여 계정에 구독에 대 한 액세스 권한이 있는지 확인 합니다.
 - 올바른 환경([Azure](https://portal.azure.com/), [Azure China](https://portal.azure.cn/), [Azure Germany](https://portal.microsoftazure.de/), [Azure US Government](https://portal.azure.us/) 또는 사용자 지정 환경/Azure Stack)을 사용하여 로그인했는지 확인합니다.
 - 프록시 뒤에 있는 경우 Storage Explorer 프록시를 제대로 구성했는지 확인합니다.
 - 계정을 제거하고 다시 추가해 봅니다.
@@ -246,7 +261,7 @@ Storage Explorer가 이러한 "자체 서명된 인증서" 중 하나를 발견�
   - .extaccounts
 - 로그인할 때 개발자 도구 콘솔(F12 키)에서 오류 메시지를 확인합니다.
 
-:::image type="content" source="./media/storage-explorer/console.png" alt-text="콘솔":::
+:::image type="content" source="./media/storage-explorer/console.png" alt-text="개발자 도구 콘솔에서 오류를 확인 합니다.":::
 
 #### <a name="unable-to-see-the-authentication-page"></a>인증 페이지를 볼 수 없음
 
@@ -277,7 +292,7 @@ ASE에서 http/https 프록시를 구성할 때 왼쪽 트리에서 Azure Cosmos
 
 ### <a name="development-node-under-local-and-attached-node-issue"></a>“로컬 및 연결” 노드 중 “개발” 노드 문제
 
-왼쪽 트리의 “로컬 및 연결” 노드에서 “개발” 노드를 클릭한 후 응답이 없습니다.  이는 정상적인 동작입니다. Azure Cosmos DB 로컬 에뮬레이터는 다음 릴리스에서 지원됩니다.
+왼쪽 트리의 "로컬 및 연결" 노드에서 "개발" 노드를 선택한 후 응답이 없습니다.  이는 정상적인 동작입니다. Azure Cosmos DB 로컬 에뮬레이터는 다음 릴리스에서 지원됩니다.
 
 :::image type="content" source="./media/storage-explorer/development.png" alt-text="개발 노드":::
 
@@ -291,16 +306,12 @@ ASE에서 http/https 프록시를 구성할 때 왼쪽 트리에서 Azure Cosmos
 
 왼쪽의 트리 노드를 확장하는 동안 다음 오류가 나타날 수 있습니다.
 
-:::image type="content" source="./media/storage-explorer/expand-error.png" alt-text="확장 오류":::
+:::image type="content" source="./media/storage-explorer/expand-error.png" alt-text="Azure Cosmos DB 노드 확장 오류":::
 
 다음과 같은 제안 사항을 시도해 봅니다.
 
 - Azure Cosmos DB 계정이 프로비전 진행 중인지 확인하고 계정을 성공적으로 생성될 때 다시 시도합니다.
 - 계정이 노드 “빠른 액세스” 노드 또는 “로컬 및 연결” 노드에 있는 경우 해당 계정이 삭제되었는지 확인합니다. 이 경우 노드를 수동으로 제거해야 합니다.
-
-## <a name="contact-us"></a>문의처
-
-해결 방법이 없는 경우 문제 [cosmosdbtooling@microsoft.com](mailto:cosmosdbtooling@microsoft.com) 해결을 위해 문제에 대 한 세부 정보와 함께 Azure Cosmos DB Dev 도구 팀 ()에 전자 메일을 보냅니다.
 
 ## <a name="next-steps"></a>다음 단계
 

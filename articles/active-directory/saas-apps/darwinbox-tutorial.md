@@ -2,26 +2,21 @@
 title: '자습서: Darwinbox와 Azure Active Directory SSO(Single Sign-On) 연결 | Microsoft Docs'
 description: Azure Active Directory와 Darwinbox 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3614b11f-e3de-4abf-8e29-22a3c4971ee8
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91b1be75b06b4281ee5d03675d9d33db00a5aaf7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6773805fac9a23ca918a1bf6e4889d3e1a3bb336
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70013798"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550115"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-darwinbox"></a>자습서: Darwinbox와 Azure Active Directory SSO(Single Sign-On) 연결
 
@@ -30,7 +25,6 @@ ms.locfileid: "70013798"
 * Azure AD에서 Darwinbox에 대한 액세스 권한이 있는 사용자를 제어합니다.
 * 사용자가 자신의 Azure AD 계정으로 Darwinbox에 자동으로 로그인되도록 설정합니다.
 * 단일 중앙 위치인 Azure Portal에서 계정을 관리합니다.
-
 Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Directory를 사용한 애플리케이션 액세스 및 Single Sign-On이란 무엇인가요?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)를 참조하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
@@ -39,6 +33,9 @@ Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Director
 
 * Azure AD 구독 구독이 없는 경우 [체험 계정](https://azure.microsoft.com/free/)을 얻을 수 있습니다.
 * Darwinbox SSO(Single Sign-On)가 설정된 구독
+> [!NOTE]
+> 이 통합은 Azure AD 미국 정부 클라우드 환경에서도 사용할 수 있습니다. 이 애플리케이션은 Azure AD 미국 정부 클라우드 애플리케이션 갤러리에서 찾을 수 있으며 퍼블릭 클라우드에서와 동일한 방법으로 구성할 수 있습니다.
+
 
 ## <a name="scenario-description"></a>시나리오 설명
 
@@ -83,12 +80,12 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 1. **기본 SAML 구성** 섹션에서 다음 필드에 대한 값을 입력합니다.
 
-    a. **로그온 URL** 텍스트 상자에서 `https://<SUBDOMAIN>.darwinbox.in/` 패턴을 사용하는 URL을 입력합니다.
+   1. **로그온 URL** 텍스트 상자에서 `https://<SUBDOMAIN>.darwinbox.in/` 패턴을 사용하는 URL을 입력합니다.
 
-    b. **식별자(엔터티 ID)** 텍스트 상자에서 `https://<SUBDOMAIN>.darwinbox.in/adfs/module.php/saml/sp/metadata.php/<CUSTOMID>` 패턴을 사용하는 URL을 입력합니다.
+   1. **식별자(엔터티 ID)** 텍스트 상자에서 `https://<SUBDOMAIN>.darwinbox.in/adfs/module.php/saml/sp/metadata.php/<CUSTOMID>` 패턴을 사용하는 URL을 입력합니다.
 
-    > [!NOTE]
-    > 이러한 값은 실제 값이 아닙니다. 실제 로그온 URL 및 식별자로 이러한 값을 업데이트합니다. 이러한 값을 얻으려면 [Darwinbox 클라이언트 지원 팀](https://darwinbox.com/contact-us.php)에 문의하세요. Azure Portal의 **기본 SAML 구성** 섹션에 표시된 패턴을 참조할 수도 있습니다.
+      > [!NOTE]
+      > 이러한 값은 실제 값이 아닙니다. 실제 로그온 URL 및 식별자로 이러한 값을 업데이트합니다. 이러한 값을 얻으려면 [Darwinbox 클라이언트 지원 팀](https://darwinbox.com/contact-us.php)에 문의하세요. Azure Portal의 **기본 SAML 구성** 섹션에 표시된 패턴을 참조할 수도 있습니다.
 
 1. **SAML로 Single Sign-On 설정** 페이지의 **SAML 서명 인증서** 섹션에서 **페더레이션 메타데이터 XML**을 찾고, **다운로드**를 선택하여 인증서를 컴퓨터에 다운로드 및 저장합니다.
 
@@ -141,6 +138,28 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 이 섹션에서는 액세스 패널을 사용하여 Azure AD Single Sign-On 구성을 테스트합니다.
 
 액세스 패널에서 Darwinbox 타일을 클릭하면 SSO를 설정한 Darwinbox에 자동으로 로그인됩니다. 액세스 패널에 대한 자세한 내용은 [액세스 패널 소개](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)를 참조하세요.
+
+## <a name="test-sso-for-darwinbox-mobile"></a>Darwinbox에 대한 SSO 테스트(모바일)
+
+1. Darwinbox 모바일 애플리케이션을 엽니다. 이제 **조직 URL 입력**을 클릭하고, 텍스트 상자에 조직 URL을 입력하고, 화살표 단추를 클릭합니다.
+
+    ![Darwinbox 모바일 앱](media/darwinbox-tutorial/DarwinboxMobile01.jpg)
+
+1. 여러 도메인이 있는 경우 도메인을 클릭합니다.
+
+    ![Darwinbox 모바일 앱](media/darwinbox-tutorial/DarwinboxMobile02.jpg)
+
+1. Darwinbox 애플리케이션에 Azure AD 이메일을 입력하고 **다음**을 클릭합니다.
+
+    ![Darwinbox 모바일 앱](media/darwinbox-tutorial/DarwinboxMobile03.jpg)
+
+1. Darwinbox 애플리케이션에 Azure AD 암호를 입력하고 **로그인**을 클릭합니다.
+
+    ![Darwinbox 모바일 앱](media/darwinbox-tutorial/DarwinboxMobile04.jpg)
+
+1. 마지막으로 로그인하면 애플리케이션 홈 페이지가 표시됩니다.
+
+    ![Darwinbox 모바일 앱](media/darwinbox-tutorial/DarwinboxMobile05.jpg)
 
 ## <a name="additional-resources"></a>추가 리소스
 

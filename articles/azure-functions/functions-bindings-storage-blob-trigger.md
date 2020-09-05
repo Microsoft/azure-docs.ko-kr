@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: 28b608446c543fc568a5c322ffce1df6100d4a73
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 67e1f1dff43939ce7ef279db57bee4b18bd12dc8
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852466"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213945"
 ---
 # <a name="azure-blob-storage-trigger-for-azure-functions"></a>Azure Functions에 대 한 Azure Blob storage 트리거
 
@@ -59,7 +59,7 @@ blob 트리거 경로 `samples-workitems/{name}`의 문자열 `{name}`은 함수
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
-다음 예에서는 바인딩을 사용 하는 파일 및 코드 *의function.js* 에 있는 blob 트리거 바인딩을 보여 줍니다. 함수는 컨테이너에서 blob을 추가 하거나 업데이트할 때 로그를 기록 합니다 `samples-workitems` [container](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources).
+다음 예에서는 바인딩을 사용 하는 파일 및 코드 * 의function.js* 에 있는 blob 트리거 바인딩을 보여 줍니다. 함수는 컨테이너에서 blob을 추가 하거나 업데이트할 때 로그를 기록 합니다 `samples-workitems` [container](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources).
 
 *function.json* 파일의 바인딩 데이터는 다음과 같습니다.
 

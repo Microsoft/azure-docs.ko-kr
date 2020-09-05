@@ -12,19 +12,19 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 7e7f8ded24e71fec8ed6bfbc78f9057ddb98dacc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9c42a83b4f7f3c6b5ff501525a04ebd96c2a692a
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781993"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88234842"
 ---
 # <a name="managing-user-account-provisioning-for-enterprise-apps-in-the-azure-portal"></a>Azure Portal에서 엔터프라이즈 앱에 대한 사용자 계정 프로비전 관리
 
 이 문서에서는 자동 사용자 계정 프로비저닝 및 지원되는 애플리케이션에 대한 프로비저닝 해제를 관리하는 방법을 설명합니다. *사용자 계정 프로비전*은 애플리케이션의 로컬 사용자 프로필 저장소에 사용자 계정 레코드를 생성, 업데이트 및/또는 비활성화하는 작업입니다. 대부분의 클라우드 및 SaaS 애플리케이션은 사용자의 고유한 로컬 사용자 프로필 저장소에 사용자 역할 및 권한을 저장하고, 사용자 로컬 저장소의 그러한 사용자 레코드의 존재는 Single Sign-On 및 작업에 대한 액세스를 위해 *필요*합니다. 자동 사용자 계정 프로비저닝에 대한 자세한 내용은 [Azure Active Directory를 사용하여 SaaS 애플리케이션에 사용자 프로비저닝 및 프로비저닝 해제 자동화](user-provisioning.md)를 참조하세요.
 
 > [!IMPORTANT]
-> Azure AD(Azure Active Directory)에는 Azure AD를 사용한 자동 프로비저닝이 지원되는 수천 개의 사전 통합 애플리케이션이 들어 있는 갤러리가 있습니다. 먼저 [Azure Active Directory와 SaaS Apps를 통합하는 방법에 대한 자습서 목록](https://azure.microsoft.com/documentation/articles/active-directory-saas-tutorial-list/)에서 사용 중인 애플리케이션과 관련된 프로비저닝 설정 자습서를 찾아야 합니다. 프로비저닝 연결을 만들도록 앱과 Azure AD를 구성하는 방법에 대한 단계별 지침을 찾을 수 있습니다.
+> Azure AD(Azure Active Directory)에는 Azure AD를 사용한 자동 프로비저닝이 지원되는 수천 개의 사전 통합 애플리케이션이 들어 있는 갤러리가 있습니다. 먼저 [Azure Active Directory와 SaaS Apps를 통합하는 방법에 대한 자습서 목록](../saas-apps/tutorial-list.md)에서 사용 중인 애플리케이션과 관련된 프로비저닝 설정 자습서를 찾아야 합니다. 프로비저닝 연결을 만들도록 앱과 Azure AD를 구성하는 방법에 대한 단계별 지침을 찾을 수 있습니다.
 
 ## <a name="finding-your-apps-in-the-portal"></a>포털에서 앱 찾기
 
@@ -85,4 +85,4 @@ Azure AD 사용자 개체와 각 SaaS 앱의 사용자 개체 간의 미리 구�
 
 **프로비저닝 상태**를 **끄기**로 변경하여 프로비저닝 서비스를 일시 중지할 수 있습니다. 이 상태에서는 Azure가 앱의 어떤 사용자 또는 그룹 개체도 만들거나 업데이트하거나 제거하지 않습니다. 상태를 다시 **켜기**로 변경하면 서비스는 중단되었던 위치에서 진행됩니다.
 
-**현재 상태 지우기 및 동기화 다시 시작**은 초기 주기를 트리거합니다. 그러면 서비스는 원본 시스템의 모든 사용자를 다시 평가하고 프로비저닝 범위에 있는지 확인합니다. 이 서비스는 애플리케이션이 현재 격리 중이거나 특성 매핑을 변경해야 하는 경우에 유용할 수 있습니다. 계산해야 하는 개체의 수 때문에 초기 주기는 일반적인 증분 주기보다 완료하는 데 더 오래 걸립니다. [여기](application-provisioning-when-will-provisioning-finish-specific-user.md)에서 초기 및 증분 주기의 성능에 대해 자세히 알아볼 수 있습니다. 
+**현재 상태 지우기 및 동기화 다시 시작**은 초기 주기를 트리거합니다. 그러면 서비스는 원본 시스템의 모든 사용자를 다시 평가하고 프로비저닝 범위에 있는지 확인합니다. 이 서비스는 애플리케이션이 현재 격리 중이거나 특성 매핑을 변경해야 하는 경우에 유용할 수 있습니다. 계산해야 하는 개체의 수 때문에 초기 주기는 일반적인 증분 주기보다 완료하는 데 더 오래 걸립니다. [여기](application-provisioning-when-will-provisioning-finish-specific-user.md)에서 초기 및 증분 주기의 성능에 대해 자세히 알아볼 수 있습니다.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2019
-ms.openlocfilehash: dca320168805e9f7c8f6336b39c4f9394255f9b8
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: efbc0ba4ef39be6a2a8598ad006cb3aea090974c
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87416318"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177746"
 ---
 # <a name="optimize-log-queries-in-azure-monitor"></a>Azure Monitor에서 로그 쿼리 최적화
 Azure Monitor 로그는 [ADX (Azure 데이터 탐색기)](/azure/data-explorer/) 를 사용 하 여 로그 데이터를 저장 하 고 쿼리를 실행 하 여 해당 데이터를 분석 합니다. ADX 클러스터를 만들고, 관리 하 고, 유지 관리 하며, 로그 분석 워크 로드에 맞게 최적화 합니다. 쿼리를 실행 하면 최적화 되 고 작업 영역 데이터를 저장 하는 적절 한 ADX 클러스터로 라우팅됩니다. Azure Monitor 로그와 Azure 데이터 탐색기 모두 자동 쿼리 최적화 메커니즘을 많이 사용 합니다. 자동 최적화는 상당한 향상을 제공 하지만 쿼리 성능을 크게 향상 시킬 수 있는 경우도 있습니다. 이 문서에서는 성능 고려 사항 및 해결을 위한 몇 가지 기법을 설명 합니다.
@@ -53,6 +53,8 @@ Log Analytics에서 쿼리를 실행 한 후 쿼리 결과 위의 아래쪽 화�
 ## <a name="total-cpu"></a>총 CPU
 모든 쿼리 처리 노드에서이 쿼리를 처리 하는 데 투자 된 실제 계산 CPU입니다. 대부분의 쿼리는 많은 수의 노드에서 실행 되므로 일반적으로 쿼리를 실행 하는 데 걸린 기간 보다 훨씬 더 큽니다. 
 
+100 초를 초과 하는 CPU를 활용 하는 쿼리는 과도 한 리소스를 사용 하는 쿼리로 간주 됩니다. 1000 초를 초과 하는 CPU를 활용 하는 쿼리는 악성 쿼리로 간주 되어 제한 될 수 있습니다.
+
 쿼리 처리 시간은 다음에 소요 됩니다.
 - 데이터 검색 – 이전 데이터를 검색 하면 최근 데이터를 검색 하는 것 보다 시간이 더 많이 걸립니다.
 - 데이터 처리 – 데이터의 논리 및 평가. 
@@ -73,8 +75,8 @@ SecurityEvent
 | extend Details = parse_xml(EventData)
 | extend FilePath = tostring(Details.UserData.RuleAndFileData.FilePath)
 | extend FileHash = tostring(Details.UserData.RuleAndFileData.FileHash)
-| summarize count() by FileHash, FilePath
 | where FileHash != "" and FilePath !startswith "%SYSTEM32"  // Problem: irrelevant results are filtered after all processing and parsing is done
+| summarize count() by FileHash, FilePath
 ```
 ```Kusto
 //more efficient
@@ -84,6 +86,7 @@ SecurityEvent
 | extend Details = parse_xml(EventData)
 | extend FilePath = tostring(Details.UserData.RuleAndFileData.FilePath)
 | extend FileHash = tostring(Details.UserData.RuleAndFileData.FileHash)
+| where FileHash != "" and FilePath !startswith "%SYSTEM32"  // exact removal of results. Early filter is not accurate enough
 | summarize count() by FileHash, FilePath
 | where FileHash != "" // No need to filter out %SYSTEM32 here as it was removed before
 ```
@@ -175,6 +178,8 @@ SecurityEvent
 ## <a name="data-used-for-processed-query"></a>처리 된 쿼리에 사용 되는 데이터
 
 쿼리를 처리 하는 데 중요 한 요소는 검색 되어 쿼리 처리에 사용 되는 데이터의 양입니다. Azure 데이터 탐색기는 다른 데이터 플랫폼과 비교 하 여 데이터 볼륨을 크게 줄이는 적극적인 최적화를 사용 합니다. 쿼리에는 사용 되는 데이터 볼륨에 영향을 줄 수 있는 중요 한 요인이 있습니다.
+
+2 개 이상의 데이터를 처리 하는 쿼리는 과도 한 리소스를 사용 하는 쿼리로 간주 됩니다. 20 개가 넘는 데이터를 처리 하는 쿼리는 악성 쿼리로 간주 되어 제한 될 수 있습니다.
 
 Azure Monitor 로그에서 **Timegenerated** 열은 데이터를 인덱싱하는 방법으로 사용 됩니다. **Timegenerated** 값을 가능한 한 범위를 좁히기 때문에 처리 해야 하는 데이터의 양을 크게 제한 하 여 쿼리 성능이 크게 향상 됩니다.
 
@@ -299,6 +304,8 @@ SecurityEvent
 
 Azure Monitor 로그의 모든 로그는 **Timegenerated** 열에 따라 분할 됩니다. 액세스 되는 파티션 수는 시간 범위와 직접적으로 관련이 있습니다. 시간 범위를 줄이는 것은 프롬프트 쿼리 실행을 보장 하는 가장 효율적인 방법입니다.
 
+시간 범위가 15 일을 초과 하는 쿼리는 과도 한 리소스를 사용 하는 쿼리로 간주 됩니다. 시간 범위가 90 일을 초과 하는 쿼리는 악성 쿼리로 간주 되어 제한 될 수 있습니다.
+
 시간 범위는 [Azure Monitor Log Analytics의 로그 쿼리 범위 및 시간 범위](scope.md#time-range)에 설명 된 대로 Log Analytics 화면의 시간 범위 선택기를 사용 하 여 설정할 수 있습니다. 선택한 시간 범위는 쿼리 메타 데이터를 사용 하 여 백 엔드로 전달 되기 때문에 권장 되는 방법입니다. 
 
 또 다른 방법은 **Timegenerated** 에서 쿼리에서 생성 된 [where](/azure/kusto/query/whereoperator) 조건을 명시적으로 포함 하는 것입니다. 쿼리가 다른 인터페이스에서 사용 되는 경우에도 시간 범위가 고정 되도록 하려면이 메서드를 사용 해야 합니다.
@@ -319,7 +326,7 @@ Perf
 ) on Computer
 ```
 
-이러한 실수가 발생 하는 일반적인 경우는 [arg_max ()](/azure/kusto/query/arg-max-aggfunction) 를 사용 하 여 가장 최근에 발생 한 항목을 찾는 경우입니다. 예를 들면 다음과 같습니다.
+이러한 실수가 발생 하는 일반적인 경우는 [arg_max ()](/azure/kusto/query/arg-max-aggfunction) 를 사용 하 여 가장 최근에 발생 한 항목을 찾는 경우입니다. 예:
 
 ```Kusto
 Perf
@@ -388,6 +395,9 @@ Heartbeat
 ## <a name="age-of-processed-data"></a>처리 된 데이터의 보존 기간
 Azure 데이터 탐색기는 메모리 내, 로컬 SSD 디스크 및 훨씬 느린 Azure Blob의 여러 저장소 계층을 사용 합니다. 최신 데이터는 더 높은 데이터를 더 높은 성능의 계층에 저장 하 여 쿼리 지속 시간 및 CPU를 줄일 수 있습니다. 데이터 자체 외에도 시스템은 메타 데이터에 대 한 캐시를 포함 합니다. 데이터의 오래 된 데이터는 캐시에 있는 메타 데이터의 확률을 줄일 수 있습니다.
 
+14 일 보다 오래 된 데이터를 처리 하는 쿼리는 과도 한 리소스를 소비 하는 쿼리로 간주 됩니다.
+
+
 일부 쿼리에서는 오래 된 데이터를 사용 해야 하지만 오래 된 데이터가 실수로 사용 되는 경우가 있습니다. 이는 메타 데이터의 시간 범위를 제공 하지 않고 쿼리를 실행 하 고 모든 테이블 참조에 **Timegenerated** 열에 대 한 필터를 포함 하지 않는 경우에 발생 합니다. 이 경우 시스템은 해당 테이블에 저장 된 모든 데이터를 검색 합니다. 데이터 보존이 길면 긴 시간 범위를 포함할 수 있으므로 데이터 보존 기간으로 오래 된 데이터입니다.
 
 예를 들면 다음과 같습니다.
@@ -407,6 +417,8 @@ Azure 데이터 탐색기는 메모리 내, 로컬 SSD 디스크 및 훨씬 느�
 영역 간 쿼리를 실행 하려면 시스템에서 일반적으로 쿼리 최종 결과 보다 훨씬 큰 백 엔드 대량의 중간 데이터를 직렬화 하 고 전송 해야 합니다. 또한 최적화, 추론 및 캐시 활용을 수행 하는 시스템의 기능을 제한 합니다.
 이러한 지역을 모두 검색할 수 있는 실질적인 이유가 없으면 범위를 조정 하 여 더 작은 영역을 포함 하도록 해야 합니다. 리소스 범위를 최소화 하지만 여전히 많은 지역을 사용 하는 경우 잘못 된 구성으로 인해 발생할 수 있습니다. 예를 들어 감사 로그 및 진단 설정이 다른 지역의 다른 작업 영역으로 전송 되거나 여러 진단 설정 구성이 있습니다. 
 
+3 개 이상의 지역에 걸쳐 있는 쿼리는 과도 한 리소스를 사용 하는 쿼리로 간주 됩니다. 6 개 이상의 지역에 걸친 쿼리는 악성 쿼리로 간주 되어 제한 될 수 있습니다.
+
 > [!IMPORTANT]
 > 쿼리가 여러 지역에서 실행 되는 경우 CPU 및 데이터 측정이 정확 하지 않으며 지역 중 하나에만 해당 하는 측정값을 나타냅니다.
 
@@ -419,6 +431,8 @@ Azure 데이터 탐색기는 메모리 내, 로컬 SSD 디스크 및 훨씬 느�
 - 리소스 범위 쿼리가 데이터를 인출 하 고 데이터가 여러 작업 영역에 저장 되는 경우
  
 하위 지역 및 클러스터 간 쿼리를 실행 하려면 시스템에서 일반적으로 쿼리 최종 결과 보다 훨씬 큰 백 엔드 대량의 중간 데이터를 직렬화 하 고 전송 해야 합니다. 또한 최적화를 수행 하 고, 추론을 수행 하 고, 캐시를 활용 하는 시스템 기능을 제한 합니다.
+
+5 개 이상의 작업 영역에 걸친 쿼리는 과도 한 리소스를 사용 하는 쿼리로 간주 됩니다. 쿼리가 100 개 이상의 작업 영역에 걸쳐 있을 수 없습니다.
 
 > [!IMPORTANT]
 > 일부 다중 작업 영역 시나리오에서 CPU 및 데이터 측정은 정확 하지 않으며 작업 영역 중 일부에만 해당 하는 측정값을 나타냅니다.

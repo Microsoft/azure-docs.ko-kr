@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure Data Box Heavy 빠른 시작 | Microsoft Docs
-description: Azure Portal에서 Azure Data Box Heavy를 빠르게 배포하는 방법을 알아봅니다.
+description: 이 빠른 시작에서는 Azure에 업로드할 데이터를 연결, 구성 및 복사하는 방법을 비롯하여 Azure Portal을 사용하여 Azure Data Box Heavy를 배포하는 방법을 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 9d007f4fa8721214a7c97595fa297ef44199119f
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 5a0a040d80911b086561213bd0884ed67545c618
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83199119"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920792"
 ---
 ::: zone target = "docs"
 

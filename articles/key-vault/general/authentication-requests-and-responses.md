@@ -1,6 +1,6 @@
 ---
 title: 인증, 요청 및 응답
-description: Key Vault 사용을 위해 AD에 인증
+description: Azure Key Vault에서 JSON 형식 요청 및 응답과 키 자격 증명 모음을 사용 하는 데 필요한 인증을 사용 하는 방법에 대해 알아봅니다.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 33e3bc13e67e268b82bf517033b4b1c7c51c361f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2b4c8ad666efa32d98e78a0bc2544d0f8851be5e
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81430891"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191791"
 ---
 # <a name="authentication-requests-and-responses"></a>인증, 요청 및 응답
 

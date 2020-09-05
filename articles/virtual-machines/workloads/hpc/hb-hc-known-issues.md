@@ -10,18 +10,19 @@ tags: azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 08/19/2020
 ms.author: amverma
-ms.openlocfilehash: e85ae50321b9aa034f6a6d2cadcc329a24dafa62
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.reviewer: cynthn
+ms.openlocfilehash: 6316bcc91bb381facb4f77b2d8dbd8b22f9ed387
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500021"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660098"
 ---
-# <a name="known-issues-with-hb-series-and-hc-series-vms"></a>HB 시리즈 및 HC 시리즈 VM의 알려진 문제
+# <a name="known-issues-with-h-series-and-n-series-vms"></a>H 시리즈 및 N 시리즈 VM의 알려진 문제
 
-이 문서에서는 HB 시리즈 및 HC 시리즈 Vm을 사용 하는 경우 가장 일반적인 문제 및 해결 방법을 제공 합니다.
+이 문서에서는 [H 시리즈](../../sizes-hpc.md) 및 [N 시리즈](../../sizes-gpu.md) vm을 사용 하는 경우 가장 일반적인 문제 및 해결 방법을 제공 합니다.
 
 ## <a name="dram-on-hb-series"></a>HB 시리즈의 DRAM
 
@@ -34,10 +35,6 @@ HB-시리즈 Vm은 현재 게스트 Vm에 228 GB의 RAM만 노출할 수 있습�
 ## <a name="qp0-access-restriction"></a>qp0 액세스 제한
 
 보안 취약성을 유발할 수 있는 낮은 수준의 하드웨어 액세스를 방지 하기 위해 게스트 Vm에서는 큐 쌍 0을 액세스할 수 없습니다. 이는 일반적으로 Connectx-3 NIC의 관리와 관련 된 작업에만 영향을 주며 ibdiagnet와 같은 일부 InfiniBand 진단을 실행 하지만 최종 사용자 응용 프로그램 자체는 실행 하지 않습니다.
-
-## <a name="ud-transport"></a>UD 전송
-
-시작 시 HB-및 HC 시리즈는 DCT (동적 연결 전송)를 지원 하지 않습니다. DCT에 대 한 지원은 시간이 지남에 따라 구현 됩니다. 신뢰할 수 있는 연결 (RC) 및 신뢰할 수 없는 데이터 그램 (UD) 전송이 지원 됩니다.
 
 ## <a name="gss-proxy"></a>GSS 프록시
 
@@ -87,6 +84,15 @@ Linux에서 HB 시리즈 VM을 부팅할 때 다음과 같은 커널 경고 메�
 
 이 경고는 무시 해도 됩니다. 이는 시간이 지남에 따라 주소가 지정 되는 Azure 하이퍼바이저의 알려진 제한 때문입니다.
 
+
+## <a name="infiniband-driver-installation-on-infiniband-enabled-n-series-vm-sizes"></a>InfiniBand 사용 N 시리즈 VM 크기에 InfiniBand 드라이버 설치
+
+NC24r_v3 및 ND40r_v2는 sr-iov를 사용 하도록 설정 되어 있지만 NC24r 및 NC24r_v2는 SR-IOV를 사용 하도록 설정 되어 있지 않습니다. 분기에 대 한 자세한 내용은 [여기](../../sizes-hpc.md#rdma-capable-instances)를 참조 하세요.
+InfiniBand (IB)는 OFED 드라이버를 사용 하 여 SR-IOV 지원 VM 크기에 구성할 수 있지만 SR-IOV VM이 아닌 VM 크기에는 ND 드라이버가 필요 합니다. 이 IB 지원은 [CentOS](configure.md)에서 적절 하 게 사용할 수 있습니다. Ubuntu의 경우 [문서](enable-infiniband.md#vm-images-with-infiniband-drivers)에 설명 된 대로 OFED 및 ND 드라이버를 모두 설치 하려면 [여기의 지침](https://techcommunity.microsoft.com/t5/azure-compute/configuring-infiniband-for-ubuntu-hpc-and-gpu-vms/ba-p/1221351) 을 참조 하세요.
+
+
 ## <a name="next-steps"></a>다음 단계
 
-Azure에서 [고성능 컴퓨팅](/azure/architecture/topics/high-performance-computing/) 에 대해 자세히 알아보세요.
+- [HB 시리즈 개요](hb-series-overview.md) 및 [HC 시리즈 개요](hc-series-overview.md)를 검토하여 성능 및 확장성을 높일 수 있도록 워크로드를 최적으로 구성하는 방법을 알아보세요.
+- [Azure Compute 기술 커뮤니티 블로그](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute)에서 최신 공지 사항과 HPC 예제 및 결과를 읽어 보세요.
+- HPC 워크로드를 실행하는 상위 수준의 아키텍처 보기는 [Azure의 HPC(고성능 컴퓨팅)](/azure/architecture/topics/high-performance-computing/)를 참조하세요.

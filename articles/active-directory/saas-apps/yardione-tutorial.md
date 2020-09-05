@@ -2,25 +2,21 @@
 title: '자습서: YardiOne과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 YardiOne 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 508957f6-caa5-4234-a7f3-90015937e4eb
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: 757d0b09c652e97e9dddc924c4c700819e333409
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 42f3a1243ad3a357cba4aac5015c89f98945a731
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086452"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546256"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yardione"></a>자습서: YardiOne과 Azure Active Directory 통합
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/15/2020
 ms.author: memildin
-ms.openlocfilehash: f80403946b3097e81678383c4829ef6606f26cd6
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 9594e1ed14b017591ea2c4ddda59ba61feb81b0c
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430358"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272283"
 ---
 # <a name="enhanced-secure-score-in-azure-security-center"></a>Azure Security Center의 보안 점수 향상
 
@@ -120,19 +120,19 @@ Security Center는 포털에서 점수를 두드러지게 표시 합니다. 개�
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">보안 관리 포트(최대 점수 8)</p></strong>무차별 암호 대입 공격(brute force attack)은 VM에 액세스하기 위해 관리 포트를 대상으로 합니다. 포트는 항상 열려 있어야 하는 것은 아니므로 Just-In-Time 네트워크 액세스 제어, 네트워크 보안 그룹 및 가상 머신 포트 관리를 사용하여 포트에 대한 노출을 줄이는 것이 한 가지 완화 전략입니다.<br>많은 IT 조직이 네트워크에서 SSH 통신 아웃바운드를 차단하지 않으므로 공격자는 감염된 시스템의 RDP 포트가 공격자 명령과 다시 통신하여 서버를 제어하도록 허용하는 암호화된 터널을 만들 수 있습니다. 공격자는 Windows 원격 관리 하위 시스템을 사용하여 사용자 환경에서 수평으로 이동하고 도난 당한 자격 증명을 사용하여 네트워크의 다른 리소스에 액세스할 수 있습니다.</td>
-    <td class="tg-lboi"; width=55%>-가상 컴퓨터의 관리 포트를 just-in-time 네트워크 액세스 제어로 보호 해야 합니다.<br>- 가상 머신을 네트워크 보안 그룹과 연결해야 합니다.<br>- 가상 머신에서 관리 포트를 닫아야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- 가상 컴퓨터의 관리 포트를 just-in-time 네트워크 액세스 제어로 보호 해야 합니다.<br>- 가상 머신을 네트워크 보안 그룹과 연결해야 합니다.<br>- 가상 머신에서 관리 포트를 닫아야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">시스템 업데이트 적용(최대 점수 6)</p></strong>시스템 업데이트는 조직에 운영 효율성을 유지하고, 보안 취약성을 줄이고, 최종 사용자에게 보다 안정적인 환경을 제공하는 기능을 제공합니다. 업데이트를 적용하지 않으면 패치가 적용되지 않은 취약한 상태가 되고 공격에 취약한 환경이 발생합니다. 이러한 취약성이 악용될 수 있으며 데이터 손실, 데이터 반출, 랜섬웨어 및 리소스 남용으로 이어질 수 있습니다. 시스템 업데이트를 배포하려면 <a href="https://docs.microsoft.com/azure/automation/automation-update-management">업데이트 관리 솔루션을 사용하여 가상 머신에 대한 패치 및 업데이트를 관리</a>할 수 있습니다. 업데이트 관리는 소프트웨어 릴리스의 배포 및 유지 관리를 제어하는 프로세스입니다.</td>
-    <td class="tg-lboi"; width=55%>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.<br>- 가상 머신 확장 집합에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>- 클라우드 서비스 역할에 대해 OS 버전을 업데이트해야 합니다.<br>- 가상 머신 확장 집합에 대한 시스템 업데이트를 설치해야 합니다.<br>- 시스템 업데이트를 머신에 설치해야 합니다.<br>- 시스템 업데이트를 적용하려면 머신을 다시 시작해야 합니다.<br>- Kubernetes Services를 취약하지 않은 Kubernetes 버전으로 업그레이드해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>-Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>-Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.<br>- 가상 머신 확장 집합에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>- 클라우드 서비스 역할에 대해 OS 버전을 업데이트해야 합니다.<br>- 가상 머신 확장 집합에 대한 시스템 업데이트를 설치해야 합니다.<br>- 시스템 업데이트를 머신에 설치해야 합니다.<br>- 시스템 업데이트를 적용하려면 머신을 다시 시작해야 합니다.<br>- Kubernetes Services를 취약하지 않은 Kubernetes 버전으로 업그레이드해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>- Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>- Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">취약성 해결(최대 점수 6)</p></strong>취약성은 리소스의 기밀성, 가용성 또는 무결성을 손상시키기 위해 위협 행위자가 활용할 수 있는 약점입니다. <a href="https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/next-gen-threat-and-vuln-mgt">취약성 관리</a>는 조직의 노출을 줄이고, 엔드포인트 노출 영역을 강화하고, 조직의 복원력을 높이고, 리소스의 공격 노출 영역을 줄입니다. 위협 및 취약성 관리는 소프트웨어 및 보안 구성 오류에 대한 가시성을 제공하고 완화에 대한 권장 사항을 제공합니다.</td>
-    <td class="tg-lboi"; width=55%>-SQL Database에서 고급 데이터 보안을 사용 하도록 설정 해야 합니다.<br>- Azure Container Registry 이미지의 취약성을 수정해야 합니다.<br>- SQL 데이터베이스의 취약성을 수정해야 합니다.<br>- 취약성 평가 솔루션으로 취약성을 수정해야 합니다.<br>-SQL Managed Instance에서 취약성 평가를 사용 하도록 설정 해야 합니다.<br>- SQL 서버에서 취약성 평가를 사용하도록 설정해야 합니다.<br>- 취약성 평가 솔루션을 가상 머신에 설치해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- SQL Database에서 고급 데이터 보안을 사용 하도록 설정 해야 합니다.<br>- Azure Container Registry 이미지의 취약성을 수정해야 합니다.<br>- SQL 데이터베이스의 취약성을 수정해야 합니다.<br>- 취약성 평가 솔루션으로 취약성을 수정해야 합니다.<br>- SQL Managed Instance에서 취약성 평가를 사용 하도록 설정 해야 합니다.<br>- SQL 서버에서 취약성 평가를 사용하도록 설정해야 합니다.<br>- 취약성 평가 솔루션을 가상 머신에 설치해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">미사용 암호화 사용(최대 점수 4)</p></strong><a href="https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest">미사용 데이터 암호화</a>는 저장된 데이터에 대한 데이터 보호를 제공합니다. 미사용 데이터에 대한 공격에는 데이터가 저장된 하드웨어에 대한 물리적 액세스 권한을 얻습니다. Azures는 대칭 암호화를 사용하여 미사용 데이터를 암호화하고 해독합니다. 데이터가 스토리지에 쓰여질 때 대칭 암호화 키를 사용하여 데이터를 암호화합니다. 암호화 키를 사용하여 메모리에서 사용하도록 준비된 데이터의 암호를 해독합니다. 키는 ID 기반 액세스 제어 및 감사 정책으로 안전하게 보호되는 위치에 저장해야 합니다. 이러한 보안 위치 중 하나는 Azure Key Vault입니다. 공격자가 암호화된 데이터를 획득했지만 암호화 키는 획득하지 못한 경우 암호를 해독하지 않으면 데이터에 액세스할 수 없습니다.</td>
-    <td class="tg-lboi"; width=55%>- 가상 머신에서 디스크 암호화를 적용해야 합니다.<br>-SQL Database 투명한 데이터 암호화를 사용 하도록 설정 해야 합니다.<br>- Automation 계정 변수를 암호화해야 합니다.<br>- Service Fabric 클러스터는 ClusterProtectionLevel 속성을 EncryptAndSign으로 설정해야 합니다.<br>- SQL 서버 TDE 보호기는 고유한 키를 사용하여 암호화해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- 가상 머신에서 디스크 암호화를 적용해야 합니다.<br>- SQL Database 투명한 데이터 암호화를 사용 하도록 설정 해야 합니다.<br>- Automation 계정 변수를 암호화해야 합니다.<br>- Service Fabric 클러스터는 ClusterProtectionLevel 속성을 EncryptAndSign으로 설정해야 합니다.<br>- SQL 서버 TDE 보호기는 고유한 키를 사용하여 암호화해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">전송 중 데이터 암호화(최대 점수 4)</p></strong>데이터는 구성 요소, 위치 또는 프로그램 간에 전송될 때 "전송 중" 상태입니다. 전송 중인 데이터 보호에 실패하는 조직은 가로채기(man-in-the-middle) 공격, 도청 및 세션 하이재킹에 대해 취약합니다. SSL/TLS 프로토콜을 사용하여 데이터를 교환하고 VPN을 사용하는 것이 좋습니다. 인터넷을 통해 Azure Virtual Machine과 온-프레미스 위치 간에 암호화된 데이터를 전송하는 경우 <a href="https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways">Azure VPN Gateway</a>와 같은 가상 네트워크 게이트웨이를 사용하여 암호화된 트래픽을 보낼 수 있습니다.</td>
@@ -140,11 +140,11 @@ Security Center는 포털에서 점수를 두드러지게 표시 합니다. 개�
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">액세스 및 사용 권한 관리(최대 점수 4)</p></strong>보안 프로그램의 핵심 부분은 사용자에 게 작업을 수행하는 데 필요한 액세스 권한만 있는지 확인하는 것입니다. 즉, <a href="https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models">최소 권한 액세스 모델</a>을 따릅니다.<br><a href="https://docs.microsoft.com/azure/role-based-access-control/overview">RBAC(역할 기반 Access Control)</a>에서 역할 할당을 만들어 리소스에 대한 액세스를 제어합니다. 역할 할당은 다음과 같은 세 가지 요소로 구성됩니다.<br>- <strong>보안 주체</strong>: 사용자가 해당 액세스를 요청하는 개체입니다.<br>- <strong>역할 정의</strong>: 사용 권한<br>- <strong>범위</strong>: 권한이 적용되는 리소스 세트입니다.</td>
-    <td class="tg-lboi"; width=55%>- 더 이상 사용되지 않는 계정을 구독에서 제거해야 합니다(미리 보기).<br>- 소유자 권한이 있는 사용되지 않는 계정은 구독에서 제거해야 합니다(미리 보기).<br>- 소유자 권한이 있는 외부 계정을 구독에서 제거해야 합니다(미리 보기).<br>- 쓰기 권한이 있는 외부 계정을 구독에서 제거해야 합니다(미리 보기).<br>- 구독에 둘 이상의 소유자를 할당해야 합니다.<br>- Kubernetes Service(미리 보기)에서 RBAC(역할 기반 액세스 제어)를 사용해야 합니다.<br>- Service Fabric 클러스터는 클라이언트 인증에 대해서만 Azure Active Directory를 사용해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- 더 이상 사용되지 않는 계정을 구독에서 제거해야 합니다(미리 보기).<br>- 소유자 권한이 있는 사용되지 않는 계정은 구독에서 제거해야 합니다(미리 보기).<br>- 소유자 권한이 있는 외부 계정을 구독에서 제거해야 합니다(미리 보기).<br>- 쓰기 권한이 있는 외부 계정을 구독에서 제거해야 합니다(미리 보기).<br>- 구독에 둘 이상의 소유자를 할당해야 합니다.<br>- Kubernetes Service(미리 보기)에서 RBAC(역할 기반 액세스 제어)를 사용해야 합니다.<br>- Service Fabric 클러스터는 클라이언트 인증에 대해서만 Azure Active Directory를 사용해야 합니다.<br>- 관리 인증서 대신 서비스 주체를 사용 하 여 구독을 보호 해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">보안 구성 수정(최대 점수 4)</p></strong>잘못 구성된 IT 자산은 공격 당할 위험이 높습니다. 자산을 배포하고 마감일을 충족해야 할 때는 기본 강화 작업을 잊는 경우가 많습니다. 보안 구성 오류는 운영 체제 및 네트워크 어플라이언스에서 클라우드 리소스에 이르는 인프라의 모든 수준에서 나타날 수 있습니다.<br>Azure Security Center는 리소스 구성을 업계 표준, 규정 및 벤치마크의 요구 사항과 지속적으로 비교합니다. 조직에 중요한 관련 "규정 준수 패키지"(표준 및 기준)를 구성할 때 나타나는 간격을 토대로 CCEID와 잠재적 보안 영향에 대한 설명을 포함 하는 보안 권장 사항이 제공됩니다.<br>일반적으로 사용되는 패키지는 <a href="https://docs.microsoft.com/azure/security/benchmarks/introduction">Azure Security 벤치마크</a> 및 <a href="https://www.cisecurity.org/benchmark/azure/">CIS Microsoft Azure Foundations 벤치마크 버전 1.1.0</a>입니다.</td>
-    <td class="tg-lboi"; width=55%>- Kubernetes 서비스에 Pod 보안 정책을 정의해야 합니다.<br>- 컨테이너 보안 구성의 취약성을 수정해야 합니다.<br>- 머신 보안 구성의 취약성을 수정해야 합니다.<br>- 가상 머신 확장 집합에서 보안 구성의 취약성을 수정해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>-Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>-Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.<br>- 가상 머신 확장 집합에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- Kubernetes 서비스에 Pod 보안 정책을 정의해야 합니다.<br>- 컨테이너 보안 구성의 취약성을 수정해야 합니다.<br>- 머신 보안 구성의 취약성을 수정해야 합니다.<br>- 가상 머신 확장 집합에서 보안 구성의 취약성을 수정해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>- Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>- Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.<br>- 가상 머신 확장 집합에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">무단 네트워크 액세스 제한(최대 점수 4)</p></strong>조직 내의 엔드포인트는 가상 네트워크에서 지원되는 Azure 서비스로의 직접 연결을 제공합니다. 서브넷의 가상 머신은 모든 리소스와 통신할 수 있습니다. 서브넷 내의 리소스 간에 통신을 제한하려면 네트워크 보안 그룹을 만들고, 서브넷에 연결합니다. 조직은 인바운드 및 아웃바운드 규칙을 만들어 권한이 없는 트래픽을 제한하고 보호할 수 있습니다.</td>
@@ -152,7 +152,7 @@ Security Center는 포털에서 점수를 두드러지게 표시 합니다. 개�
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">적응형 애플리케이션 제어 적용(최대 점수 3)</p></strong>AAC(적응형 애플리케이션 제어)는 Azure 및 비 Azure 머신에서 실행할 수 있는 애플리케이션을 제어하도록 하는 지능적이고 자동화된 종단 간 솔루션입니다. 또한 맬웨어로부터 머신을 보호하는 데 유용합니다.<br>Security Center는 machine learning을 사용 하 여 컴퓨터 그룹의 알려진 안전한 응용 프로그램 목록을 만듭니다.<br>승인 된 응용 프로그램 목록에 대 한이 혁신적인 접근 방식은 관리 복잡성 없이 보안 혜택을 제공 합니다.<br>AAC는 특정 애플리케이션 세트를 실행해야 하는 특화된 서버에 특히 적절합니다.</td>
-    <td class="tg-lboi"; width=55%>- 가상 머신에서 적응형 애플리케이션 제어를 사용하도록 설정해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>-Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>-Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.<br>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- 가상 머신에서 적응형 애플리케이션 제어를 사용하도록 설정해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>- Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>- Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.<br>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">데이터 분류 적용(최대 점수 2)</p></strong>민감도 및 비즈니스 영향을 기준으로 조직의 데이터를 분류하면 데이터에 대한 가치를 확인하고 할당할 수 있으며, 거버넌스에 대 한 전략 및 기본 사항을 제공합니다.<br><a href="https://docs.microsoft.com/azure/information-protection/what-is-information-protection">Azure Information Protection</a>을 데이터 분류를 지원할 수 있습니다. 이 기능은 암호화, ID 및 권한 부여 정책을 사용하여 데이터를 보호하고 데이터 액세스를 제한합니다. Microsoft에서 사용하는 일부 분류는 비즈니스 외, 퍼블릭, 일반, 기밀 및 극비를 사용합니다.</td>
@@ -164,7 +164,7 @@ Security Center는 포털에서 점수를 두드러지게 표시 합니다. 개�
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">Endpoint Protection 사용(최대 점수 2)</p></strong>엔드포인트가 맬웨어로부터 보호되도록 하기 위해 동작 센서는 엔드포인트 운영 체제에서 데이터를 수집 및 처리하고 분석을 위해 이 데이터를 프라이빗 클라우드로 보냅니다. 보안 분석은 빅 데이터, 기계 학습 및 기타 원본을 활용하여 위협에 대한 대응 방안을 권장합니다. 예를 들어 <a href="https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection">Microsoft Defender ATP</a>는 위협 인텔리전스를 사용하여 공격 방법을 식별하고 보안 경고를 생성합니다.<br>Security Center에서는 Endpoint Protection 솔루션 Windows Defender, System Center Endpoint Protection, Trend Micro, Symantec v12.1.1.1100, McAfee v10 for Windows, McAfee v10 for Linux 및 Sophos v9 for Linux를 지원합니다. Security Center가 이러한 솔루션을 검색하는 경우 Endpoint Protection 설치에 대한 권장 사항이 더 이상 표시되지 않습니다.</td>
-    <td class="tg-lboi"; width=55%>- V가상 머신 확장 집합에서 Endpoint Protection 상태 실패를 해결해야 합니다.<br>- 컴퓨터에서 Endpoint Protection 상태 문제를 해결해야 합니다.<br>- 가상 머신 확장 집합에 Endpoint Protection 솔루션을 설치해야 합니다.<br>- 가상 머신에 Endpoint Protection 솔루션을 설치해야 합니다.<br>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.<br>- 가상 머신 확장 집합에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>-Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>-Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.<br>- 머신에 Endpoint Protection 솔루션을 설치해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- V가상 머신 확장 집합에서 Endpoint Protection 상태 실패를 해결해야 합니다.<br>- 컴퓨터에서 Endpoint Protection 상태 문제를 해결해야 합니다.<br>- 가상 머신 확장 집합에 Endpoint Protection 솔루션을 설치해야 합니다.<br>- 가상 머신에 Endpoint Protection 솔루션을 설치해야 합니다.<br>- 컴퓨터에서 모니터링 에이전트 상태 문제를 해결해야 합니다.<br>- 가상 머신 확장 집합에 모니터링 에이전트를 설치해야 합니다.<br>- 컴퓨터에 모니터링 에이전트를 설치해야 합니다.<br>- 가상 머신에 모니터링 에이전트를 설치해야 합니다.<br>- Log Analytics 에이전트는 Windows 기반 Azure Arc 컴퓨터 (미리 보기)에 설치 되어야 합니다.<br>- Linux 기반 Azure Arc 컴퓨터 (미리 보기)에 Log Analytics 에이전트를 설치 해야 합니다.<br>- 머신에 Endpoint Protection 솔루션을 설치해야 합니다.</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">감사 및 로깅 사용(최대 점수 1)</p></strong>데이터 로깅은 과거 문제에 대한 인사이트를 제공하고, 잠재적인 문제를 방지하고, 애플리케이션 성능을 향상시킬 수 있으며 수동 작업을 자동화하는 기능을 제공합니다.<br>- <strong>제어/관리 로그</strong>는 <a href="https://docs.microsoft.com/azure/azure-resource-manager/management/overview">Azure Resource Manager</a> 작업에 대한 정보를 제공합니다.<br>- <strong>데이터 평면 로그</strong>는 Azure 리소스 사용의 일부로 발생한 이벤트에 대한 정보를 제공합니다.<br>- <strong>처리된 이벤트</strong>는 처리되어 분석된 이벤트/경고에 대한 정보를 제공합니다.</td>
@@ -172,11 +172,11 @@ Security Center는 포털에서 점수를 두드러지게 표시 합니다. 개�
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">Advanced threat protection 사용 (최대 점수 0)</p></strong>Azure Security Center의 위협 방지는 사용자 환경에 대 한 포괄적인 방어 기능을 제공 합니다. Security Center는 사용자 환경의 모든 영역에서 위협을 탐지하면 경고를 생성합니다. 이러한 경고는 영향을 받는 리소스의 세부 정보, 제안된 수정 단계 및 경우에 따라 응답으로 논리 앱을 트리거하는 옵션을 설명합니다.<br>각 위협 방지 번들은이 보안 제어에서 관련 권장 사항을 사용 하 여 설정할 수 있는 별도의 선택적 제공입니다.<br><a href="https://docs.microsoft.com/azure/security-center/threat-protection">Security Center에서 위협 방지에 대해 자세히 알아보세요</a>.</td>
-    <td class="tg-lboi"; width=55%>-Azure SQL Database 서버에서 고급 데이터 보안을 사용 하도록 설정 해야 합니다.<br>-컴퓨터의 SQL server에서 고급 데이터 보안을 사용 하도록 설정 해야 합니다.<br>-Virtual Machines에서 Advanced threat protection을 사용 하도록 설정 해야 합니다.<br>-Azure App Service 요금제에서 Advanced threat protection을 사용 하도록 설정 해야 함<br>-Azure Storage 계정에서 Advanced threat protection을 사용 하도록 설정 해야 함<br>-Azure Kubernetes Service 클러스터에서 Advanced threat protection을 사용 하도록 설정 해야 함<br>-Azure Container Registry 레지스트리에서 Advanced threat protection을 사용 하도록 설정 해야 합니다.<br>-Azure Key Vault 자격 증명 모음에서 Advanced threat protection을 사용 하도록 설정 해야 함</td>
+    <td class="tg-lboi"; width=55%>- Azure SQL Database 서버에서 고급 데이터 보안을 사용 하도록 설정 해야 합니다.<br>- 컴퓨터의 SQL server에서 고급 데이터 보안을 사용 하도록 설정 해야 합니다.<br>- Virtual Machines에서 Advanced threat protection을 사용 하도록 설정 해야 합니다.<br>- Azure App Service 요금제에서 Advanced threat protection을 사용 하도록 설정 해야 함<br>- Azure Storage 계정에서 Advanced threat protection을 사용 하도록 설정 해야 함<br>- Azure Kubernetes Service 클러스터에서 Advanced threat protection을 사용 하도록 설정 해야 함<br>- Azure Container Registry 레지스트리에서 Advanced threat protection을 사용 하도록 설정 해야 합니다.<br>- Azure Key Vault 자격 증명 모음에서 Advanced threat protection을 사용 하도록 설정 해야 함</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">보안 모범 사례 구현(최대 점수 0)</p></strong>최신 보안 방침에서는 네트워크 경계의 "침해를 가정"합니다. 이러한 이유로 이 컨트롤의 많은 모범 사례는 ID 관리에 중점을 둡니다.<br>키와 자격 증명을 잃어 버리는 것은 일반적인 문제입니다. <a href="https://docs.microsoft.com/azure/key-vault/key-vault-overview">Azure Key Vault</a>는 키, .pfx 파일 및 암호를 암호화하여 키와 암호를 보호합니다.<br>VPN(가상 사설망)은 가상 머신에 안전하게 액세스할 수 있는 방법입니다. VPN을 사용할 수 없는 경우 <a href="https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks">Azure Multi-Factor Authentication</a>과 같은 복잡한 암호 및 2단계 인증을 사용합니다. 2단계 인증은 사용자 이름 및 암호에만 의존하는 약점을 방지합니다.<br>강력한 인증 및 권한 부여 플랫폼을 사용하는 것이 또 다른 모범 사례입니다. 페더레이션된 ID를 사용하면 조직에서 권한 있는 ID의 관리를 위임할 수 있습니다. 직원의 채용을 끝내고 해당 액세스 권한을 취소해야 하는 경우에도 이러한 과정이 중요합니다.</td>
-    <td class="tg-lboi"; width=55%>- 구독에 최대 3명의 소유자를 지정해야 합니다.<br>- 읽기 권한이 있는 외부 계정을 구독에서 제거해야 합니다.<br>- 구독에서 읽기 권한이 있는 계정에 MFA를 사용하도록 설정해야 합니다.<br>- 방화벽 및 가상 네트워크 구성을 사용한 스토리지 계정에 대한 액세스를 제한해야 합니다.<br>- RootManageSharedAccessKey를 제외한 모든 권한 부여 규칙을 이벤트 허브 네임스페이스에서 제거해야 합니다.<br>- SQL 서버에 대해 Azure Active Directory 관리자를 프로비저닝해야 합니다.<br>- 관리형 인스턴스에서 Advanced Data Security를 사용하도록 설정해야 합니다.<br>- 이벤트 허브 인스턴스의 권한 부여 규칙을 정의해야 합니다.<br>- 스토리지 계정을 새 Azure Resource Manager 리소스로 마이그레이션해야 합니다.<br>- 가상 머신을 새 Azure Resource Manager 리소스로 마이그레이션해야 합니다.<br>- 서브넷을 네트워크 보안 그룹과 연결해야 합니다.<br>- [미리 보기] Windows Exploit Guard를 사용하도록 설정해야 합니다. <br>- [미리 보기] 모드 게스트 구성 에이전트를 설치해야 합니다.<br>-인터넷에 연결 되지 않은 가상 컴퓨터는 네트워크 보안 그룹을 사용 하 여 보호 해야 합니다.</td>
+    <td class="tg-lboi"; width=55%>- 구독에 최대 3명의 소유자를 지정해야 합니다.<br>- 읽기 권한이 있는 외부 계정을 구독에서 제거해야 합니다.<br>- 구독에서 읽기 권한이 있는 계정에 MFA를 사용하도록 설정해야 합니다.<br>- 방화벽 및 가상 네트워크 구성을 사용한 스토리지 계정에 대한 액세스를 제한해야 합니다.<br>- RootManageSharedAccessKey를 제외한 모든 권한 부여 규칙을 이벤트 허브 네임스페이스에서 제거해야 합니다.<br>- SQL 서버에 대해 Azure Active Directory 관리자를 프로비저닝해야 합니다.<br>- 관리형 인스턴스에서 Advanced Data Security를 사용하도록 설정해야 합니다.<br>- 이벤트 허브 인스턴스의 권한 부여 규칙을 정의해야 합니다.<br>- 스토리지 계정을 새 Azure Resource Manager 리소스로 마이그레이션해야 합니다.<br>- 가상 머신을 새 Azure Resource Manager 리소스로 마이그레이션해야 합니다.<br>- 서브넷을 네트워크 보안 그룹과 연결해야 합니다.<br>- [미리 보기] Windows Exploit Guard를 사용하도록 설정해야 합니다. <br>- [미리 보기] 모드 게스트 구성 에이전트를 설치해야 합니다.<br>- 인터넷에 연결 되지 않은 가상 컴퓨터는 네트워크 보안 그룹을 사용 하 여 보호 해야 합니다.</td>
   </tr>
 </tbody>
 </table>

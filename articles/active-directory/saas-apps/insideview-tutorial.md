@@ -2,25 +2,21 @@
 title: '자습서: InsideView와 Azure Active Directory 통합 | Microsoft Docs'
 description: 이 자습서에서는 Azure Active Directory 및 InsideView 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c489a7ab-6b1f-4efb-8a66-8bc13bca78c3
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 4278f00b1026fe4d1b95634540d6d035d43ca5ab
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 17c9672663cae4df7eacb72779e6caf6476e3d24
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82202386"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550489"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>자습서: InsideView와 Azure Active Directory 통합
 
@@ -171,7 +167,7 @@ InsideView에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수
 
     1. **이름** 상자에 **BrittaSimon**을 입력합니다.
   
-    1. **사용자 이름** 상자에 **BrittaSimon@\<yourcompanydomain>.\<extension>** 을 입력합니다. (예: BrittaSimon@contoso.com)
+    1. **사용자 이름** 상자에 **BrittaSimon@\<yourcompanydomain>\<extension>.** 을 입력합니다. (예: BrittaSimon@contoso.com)
 
     1. **암호 표시**를 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
 

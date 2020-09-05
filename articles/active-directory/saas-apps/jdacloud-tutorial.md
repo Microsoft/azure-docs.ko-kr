@@ -2,25 +2,21 @@
 title: '자습서: JDA Cloud와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 JDA Cloud 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 06af825f-79ec-4de9-8851-c79d65d1e586
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: e7a6aa3cd023533dc1197e1addf3c9be76a9c1db
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 98d77af45da5edff935e761fc3be81ff21306ea8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67099758"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552699"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>자습서:JDA Cloud와 Azure Active Directory 통합
 

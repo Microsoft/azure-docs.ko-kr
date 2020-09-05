@@ -4,12 +4,12 @@ description: 이 문서에서는 Azure Backup 서비스를 사용 하 여 Azure 
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: bf09c4e56c3881987e14d27d5f2166c68e311ab3
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: ec79fc7c09f2bc1aeb2c07016365e831932fa1ff
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533498"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018113"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>질문과 대답-Azure Vm 백업
 
@@ -71,7 +71,7 @@ Azure Backup 서비스에서 만든 리소스 그룹을 잠그는 경우 최대 
 
 잠금을 제거 하 고 나중에 백업을 성공적으로 수행할 수 있도록 해당 리소스 그룹에서 복원 지점 컬렉션의 선택을 취소 합니다. 복원 지점 컬렉션을 제거 하려면 [다음 단계를 수행](backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md#clean-up-restore-point-collection-from-azure-portal) 합니다.
 
-### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>Azure backup은 표준 SSD 관리 디스크를 지원 하나요?
+### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>표준 SSD 관리 디스크를 지원할 Azure Backup 있나요?
 
 예, Azure Backup [는 표준 SSD 관리 디스크](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/)를 지원 합니다.
 
@@ -100,6 +100,10 @@ VM 또는 VM 리소스 그룹의 대/소문자를 변경 하는 경우 백업 �
 ### <a name="can-i-back-up-or-restore-selective-disks-attached-to-a-vm"></a>VM에 연결 된 선택적 디스크를 백업 하거나 복원할 수 있나요?
 
 이제 Azure Backup은 Azure Virtual Machine 백업 솔루션을 사용한 선택적 디스크 백업 및 복원을 지원합니다. 자세한 내용은 [Azure vm의 선택적 디스크 백업 및 복원](selective-disk-backup-restore.md)을 참조 하세요.
+
+### <a name="are-managed-identities-preserved-if-a-tenant-change-occurs-during-backup"></a>백업 하는 동안 테 넌 트 변경이 발생 하는 경우 관리 되는 id가 유지 되나요?
+
+[테 넌 트가 변경](https://docs.microsoft.com/azure/devops/organizations/accounts/change-azure-ad-connection) 되 면 백업이 다시 작동 하도록 [관리 되는 id](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) 를 사용 하지 않도록 설정 했다가 다시 사용 하도록 설정 해야 합니다.
 
 ## <a name="restore"></a>복원
 
@@ -188,3 +192,11 @@ VM을 새 리소스 그룹으로 이동한 후 동일한 자격 증명 모음이
 ### <a name="is-there-a-limit-on-number-of-vms-that-can-beassociated-with-the-same-backup-policy"></a>동일한 백업 정책에 연결할 수 있는 Vm 수에 제한이 있나요?
 
 예, 포털에서 동일한 백업 정책에 연결할 수 있는 Vm은 100 개로 제한 됩니다. Vm이 100 개 이상인 경우 동일한 일정 또는 다른 일정으로 여러 백업 정책을 만듭니다.
+
+### <a name="how-can-i-view-the-retention-settings-for-my-backups"></a>내 백업에 대 한 보존 설정은 어떻게 볼 수 있나요?
+
+현재 VM에 할당 된 백업 정책에 따라 VM (백업 항목) 수준에서 보존 설정을 볼 수 있습니다.
+
+백업에 대 한 보존 설정을 확인 하는 한 가지 방법은 Azure Portal에서 VM에 대 한 백업 항목 [대시보드로](https://docs.microsoft.com/azure/backup/backup-azure-manage-vms#view-vms-on-the-dashboard) 이동 하는 것입니다. 해당 백업 정책에 대 한 링크를 클릭 하면 VM에 연결 된 매일, 매주, 매월 및 매년 보존 지점의 보존 기간을 볼 수 있습니다.
+
+또한 [Backup 탐색기](https://docs.microsoft.com/azure/backup/monitor-azure-backup-with-backup-explorer) 를 사용 하 여 단일 창에 있는 모든 vm의 보존 설정을 볼 수 있습니다. 모든 Recovery Services 자격 증명 모음에서 Backup 탐색기로 이동 하 고, **백업 항목** 탭으로 이동 하 고, 고급 보기를 선택 하 여 각 VM에 대 한 자세한 보존 정보를 확인 합니다.

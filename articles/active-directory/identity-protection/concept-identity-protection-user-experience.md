@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc10fb4f9894a355c9eed024ae9f87747214999b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d3315a8d6bca9406461d0082ed85bbefc9459f4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72887001"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950207"
 ---
 # <a name="user-experiences-with-azure-ad-identity-protection"></a>Azure AD ID 보호 사용자 환경
 
@@ -29,7 +29,7 @@ Azure Active Directory ID 보호를 사용하여 다음을 수행할 수 있습�
 
 ## <a name="multi-factor-authentication-registration"></a>Multi-Factor Authentication 등록
 
-Multi-factor authentication 등록을 요구 하 고 모든 사용자를 대상으로 하는 Id 보호 정책을 사용 하도록 설정 하면 나중에 Azure MFA를 사용 하 여 자동으로 수정할 수 있습니다. 이 정책을 구성 하면 사용자에 게 등록을 선택할 수 있는 14 일 기간을 제공 하 고 끝에는 등록이 강제로 적용 됩니다. 사용자 환경에 대 한 개요는 아래에 설명 되어 있습니다. 자세한 내용은 [2 단계 인증 및 회사 또는 학교 계정에 대 한 개요](../user-help/user-help-two-step-verification-overview.md)문서의 최종 사용자 설명서에서 찾을 수 있습니다.
+Multi-factor authentication 등록을 요구 하 고 모든 사용자를 대상으로 하는 Id 보호 정책을 사용 하도록 설정 하면 나중에 Azure MFA를 사용 하 여 자동으로 수정할 수 있습니다. 이 정책을 구성 하면 사용자에 게 등록을 선택할 수 있는 14 일 기간을 제공 하 고 끝에는 등록이 강제로 적용 됩니다. 사용자 환경에 대 한 개요는 아래에 설명 되어 있습니다. 자세한 내용은 [2 단계 인증 및 회사 또는 학교 계정에 대 한 개요](../user-help/multi-factor-authentication-end-user-first-time.md)문서의 최종 사용자 설명서에서 찾을 수 있습니다.
 
 ### <a name="registration-interrupt"></a>등록 인터럽트
 
@@ -80,8 +80,8 @@ IT 담당자는 사용자가 다시 로그인 할 수 있도록 [차단](howto-i
 
 IT 담당자는 사용자가 다시 로그인 할 수 있도록 [차단](howto-identity-protection-remediate-unblock.md#unblocking-based-on-user-risk) 해제 섹션의 지침을 따를 수 있습니다.
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 - [위험 재구성 및 사용자 차단 해제](howto-identity-protection-remediate-unblock.md)
 
-- [Azure Active Directory ID 보호](../active-directory-identityprotection.md) 
+- [Azure Active Directory ID 보호](./overview-identity-protection.md)

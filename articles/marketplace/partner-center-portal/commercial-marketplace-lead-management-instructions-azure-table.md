@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 03/30/2020
-ms.openlocfilehash: 485da8549175af8813a9d0c3052d1e77f336e619
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 08/25/2020
+ms.openlocfilehash: db2bae9d9e1c9658937e725a04d919743ff9999e
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86120843"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855742"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Azure Table 스토리지를 사용하여 상업용 Marketplace 잠재 고객 관리
 
@@ -28,19 +28,19 @@ CRM(고객 관계 관리) 시스템이 Microsoft AppSource 및 Azure Marketplace
     1. **새로 만들기** 창에서 **스토리지**를 선택합니다. 오른쪽에 **추천** 목록이 표시됩니다.
     1. **스토리지 계정**을 선택하여 계정 만들기를 시작합니다. [스토리지 계정 만들기](../../storage/common/storage-quickstart-create-account.md?tabs=azure-portal)의 지침을 따릅니다.
 
-        ![Azure Storage 계정을 만드는 단계](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-create.png)
+        :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-create.png" alt-text="Azure storage 계정을 만드는 단계입니다.":::
 
         스토리지 계정에 대한 자세한 내용은 [빠른 시작 자습서](../../storage/index.yml)를 참조하세요. 스토리지 가격에 대한 자세한 내용은 [스토리지 가격](https://azure.microsoft.com/pricing/details/storage/)을 참조하세요.
 
-1. 스토리지 계정이 프로비전될 때까지 기다립니다. 이 프로세스에는 일반적으로 몇 분 정도 걸립니다. 
+1. 스토리지 계정이 프로비전될 때까지 기다립니다. 이 프로세스에는 일반적으로 몇 분 정도 걸립니다.
 
 ## <a name="create-a-table-in-your-storage-account"></a>스토리지 계정에서 테이블 만들기
 
-1. Azure Portal의 **홈** 페이지에서 **모든 리소스 보기**를 선택하여 스토리지 계정에 액세스합니다. Azure Portal의 왼쪽 표시줄에서 **모든 리소스**를 선택할 수도 있습니다.
+1. Azure Portal의 **홈** 페이지에서 저장소 계정에 액세스 하기 위한 **모든 리소스 보기** 를 선택 합니다. Azure Portal의 왼쪽 표시줄에서 **모든 리소스**를 선택할 수도 있습니다.
 
-    ![Azure Storage 계정에 액세스](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-access.png)
+    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-access.png" alt-text="Azure storage 계정에 액세스 합니다.":::
 
-1. 스토리지 계정 창에서 **액세스 키**를 선택하고 키의 **연결 문자열** 값을 복사합니다. 이 값은 Azure Marketplace 제품에 대한 잠재 고객을 받기 위해 게시 포털에서 입력해야 하는 **스토리지 계정 연결 문자열**이므로 저장해 두세요. 
+1. 스토리지 계정 창에서 **액세스 키**를 선택하고 키의 **연결 문자열** 값을 복사합니다. 이 값은 Azure Marketplace 제품에 대한 잠재 고객을 받기 위해 게시 포털에서 입력해야 하는 **스토리지 계정 연결 문자열**이므로 저장해 두세요.
 
     다음은 연결 문자열의 예입니다.
 
@@ -48,13 +48,14 @@ CRM(고객 관계 관리) 시스템이 Microsoft AppSource 및 Azure Marketplace
     DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.screens.net
     ```
 
-    ![Azure Storage 키](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-keys.png)
+    :::image type="content" source="media/commercial-marketplace-lead-management-instructions-azure-table/azure-storage-keys.png" alt-text="Azure 저장소 키입니다.":::
+
 
 1. 스토리지 계정 창에서 **테이블**을 선택하고 **+ 테이블**을 선택하여 테이블을 만듭니다. 테이블의 이름을 입력하고 **확인**을 선택합니다. 이 값은 잠재 고객이 수신되었을 때 메일 알림을 받는 흐름을 구성하려는 경우 필요하므로 저장해 두세요.
 
     ![Azure 테이블](./media/commercial-marketplace-lead-management-instructions-azure-table/azure-tables.png)
 
-    [Azure Storage Explorer](https://archive.codeplex.com/?p=azurestorageexplorer) 또는 다른 도구를 사용하여 스토리지 테이블의 데이터를 확인할 수 있습니다. Azure 테이블의 데이터를 내보낼 수도 있습니다. 
+    [Azure Storage Explorer](https://archive.codeplex.com/?p=azurestorageexplorer) 또는 다른 도구를 사용하여 스토리지 테이블의 데이터를 확인할 수 있습니다. Azure 테이블의 데이터를 내보낼 수도 있습니다.
 
 ## <a name="optional-use-power-automate-to-get-lead-notifications"></a>(선택 사항) Power Automate를 사용하여 잠재 고객 알림 받기
 
@@ -66,7 +67,7 @@ CRM(고객 관계 관리) 시스템이 Microsoft AppSource 및 Azure Marketplace
 
 1. Power Automate 계정에 로그인합니다.
 1. 왼쪽 표시줄에서 **내 흐름**을 선택합니다.
-1. 위쪽 표시줄에서 **+ 새로 만들기**를 선택합니다. 
+1. 위쪽 표시줄에서 **+ 새로 만들기**를 선택합니다.
 1. 드롭다운 목록에서 **+ 예약됨--새로 시작**을 선택합니다.
 
    ![내 흐름 + 예약됨--새로 시작](./media/commercial-marketplace-lead-management-instructions-azure-table/ms-flow-scheduled-from-blank.png)
@@ -90,7 +91,7 @@ CRM(고객 관계 관리) 시스템이 Microsoft AppSource 및 Azure Marketplace
 
     ![과거 시간 가져오기 간격 설정](./media/commercial-marketplace-lead-management-instructions-azure-table/ms-flow-getpast-time.png)
 
-   >[!TIP] 
+   >[!TIP]
    >흐름을 검사하여 각 단계가 올바르게 구성됐는지 확인할 수 있습니다. 흐름을 검사하려면 **흐름** 메뉴 모음에서 **흐름 검사**를 선택합니다.
 
    이어지는 단계에서는 테이블에 연결한 후 새 잠재 고객을 처리하는 처리 논리를 설정합니다.
@@ -123,7 +124,7 @@ CRM(고객 관계 관리) 시스템이 Microsoft AppSource 및 Azure Marketplace
 
 1. **조건** 창에서 **값 선택**을 선택합니다. 그런 다음 팝업 창에서 **식**을 선택합니다.
 
-1. **fx** 상자에 `length(body('Get_entities')?['value'])`를 붙여넣습니다. **확인**을 선택하여 이 함수를 추가합니다. 
+1. **fx** 상자에 `length(body('Get_entities')?['value'])`를 붙여넣습니다. **확인**을 선택하여 이 함수를 추가합니다.
 
 1. 조건 설정을 마치려면
     1. 드롭다운 목록에서 **보다 큼**을 선택합니다.
@@ -134,7 +135,7 @@ CRM(고객 관계 관리) 시스템이 Microsoft AppSource 및 Azure Marketplace
    이어지는 단계에서는 조건의 결과에 따라 수행할 작업을 설정합니다.
 
    * 조건이 **아니요인 경우**로 확인되면 아무것도 수행하지 않습니다.
-   * 조건이 **예인 경우**를 확인하면 Office 365 계정에 연결하는 작업을 트리거하여 이메일을 전송합니다. 
+   * 조건이 **예인 경우**를 확인하면 Office 365 계정에 연결하는 작업을 트리거하여 이메일을 전송합니다.
 
 1. **예인 경우** 아래에서 **작업 추가**를 선택합니다.
 

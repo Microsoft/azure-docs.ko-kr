@@ -7,15 +7,15 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 05/26/2020
+ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 659ecbc7f6c2a5627824ff09af5f30ef503c9e16
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 41586b2ec96d30fd583cbc9a746493ed9206548b
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954539"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510745"
 ---
 # <a name="what-is-a-custom-translator-workspace"></a>Custom Translator 작업 영역이란?
 
@@ -39,7 +39,7 @@ ms.locfileid: "85954539"
 
 Custom Translator를 사용하면 프로젝트 레이블을 프로젝트에 할당할 수 있습니다. 프로젝트 레이블은 동일한 언어 쌍 및 범주를 사용하여 여러 프로젝트를 구분합니다. 가장 좋은 방법은 필요한 경우 외에는 프로젝트 레이블을 사용하지 않는 것입니다.
 
-프로젝트 레이블은 CategoryID의 일부로 사용됩니다. 프로젝트 레이블이 설정되지 않은 상태이거나 프로젝트 간에 동일하게 설정된 경우에는 동일한 범주 및 *다른* 언어 쌍의 프로젝트는 동일한 CategoryID를 공유하게 됩니다. 이 방법은 각 프로젝트에 고유한 CategoryID를 걱정 하지 않고 번역기를 사용할 때 사용자 또는 고객이 언어 간을 전환할 수 있도록 하기 때문에 유용 합니다.
+프로젝트 레이블은 CategoryID의 일부로 사용됩니다. 프로젝트 레이블이 설정되지 않은 상태이거나 프로젝트 간에 동일하게 설정된 경우에는 동일한 범주 및 *다른* 언어 쌍의 프로젝트는 동일한 CategoryID를 공유하게 됩니다. 이 방식의 장점은 사용자나 고객이 CategoryID가 각 프로젝트에 고유한지 걱정할 필요 없이 Text Translator API를 사용할 때 언어 간 전환이 가능하다는 점입니다.
 
 예를 들어, 영어-프랑스어 또는 프랑스어-영어로 기술 도메인을 번역하도록 설정하려는 경우 영어 \> 프랑스어용 프로젝트와 프랑스어 -\> 영어용 프로젝트 이렇게 두 개의 프로젝트를 만듭니다. 두 프로젝트 모두에 동일한 범주(기술)를 지정하고 프로젝트 레이블은 비워 둡니다. 두 프로젝트에 대한 CategoryID는 일치하므로 내 CategoryID를 수정하지 않고도 영어와 프랑스어 번역 모두에 대해 API를 쿼리할 수 있습니다.
 

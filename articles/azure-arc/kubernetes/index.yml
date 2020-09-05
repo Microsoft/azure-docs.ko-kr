@@ -1,0 +1,38 @@
+### YamlMime:Landing
+title: Azure Arc Kubernetes(미리 보기)
+summary: Azure Arc로 Kubernetes 클러스터를 관리하는 방법 알아보기
+metadata:
+  title: Azure Arc Kubernetes
+  description: Azure에서 온-프레미스 머신을 관리하는 방법에 대해 알아보기
+  author: 
+  ms.service: azure-arc
+  ms.topic: landing-page
+  ms.date: 06/26/2020
+  ms.author: 
+  ms.openlocfilehash: 7c643d10971d93a3c6194bc7390d2271c1ed561b
+  ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88763768"
+landingContent:
+- title: Azure Arc를 사용하여 Kubernetes 클러스터를 Azure에 연결
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Arc를 지원하는 Kubernetes란 무엇인가요?
+      url: overview.md
+  - linkListType: quickstart
+    links:
+    - text: 클러스터 연결
+      url: connect-cluster.md
+  - linkListType: how-to-guide
+    links:
+    - text: GitOps를 사용하여 구성 배포
+      url: use-gitops-connected-cluster.md
+    - text: GitOps를 사용하여 Helm 차트 배포
+      url: use-gitops-with-helm.md
+    - text: Azure Policy를 사용하여 GitOps 적용
+      url: use-azure-policy.md
+    - text: Azure IoT 에지 워크로드 배포
+      url: deploy-azure-iot-edge-workloads.md

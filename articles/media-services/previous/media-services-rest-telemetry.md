@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 9409b340e8c1bd06b689acb849a9f47d24ed0391
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 7fec4a958e730c485c998d1f0591b8e4d61df050
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170771"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264201"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>REST를 사용하여 Azure Media Services 원격 분석 구성
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 이 항목은 REST API를 사용하여 AMS(Azure Media Services) 원격 분석을 구성할 때 수행할 수 있는 일반적인 단계를 설명합니다. 
 
@@ -137,7 +139,7 @@ Content-Length: 115
 > [!NOTE]
 > "Https: \/ /telemetryvalidationstore.table.core.windows.net" 값을 저장소 계정으로 변경 해야 합니다.
 
-### <a name="response"></a>대응
+### <a name="response"></a>응답
 
 ```console
 HTTP/1.1 201 Created

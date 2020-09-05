@@ -11,12 +11,12 @@ metadata:
   author: msmbaldwin
   ms.author: mbaldwin
   ms.date: 04/07/2020
-  ms.openlocfilehash: 4a96f74418536a60c1501f7bd593ab2f5b9f82ae
-  ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+  ms.openlocfilehash: 320895ac02293f46f1e6c03718b50800cc405be8
+  ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87386472"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88262894"
 landingContent:
 - title: 구성
   linkLists:
@@ -44,6 +44,18 @@ landingContent:
     links:
     - text: HSM 보호 키 가져오기(개요)
       url: hsm-protected-keys.md
+- title: Key Vault 키용 클라이언트 라이브러리
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: .NET 클라이언트 라이브러리
+      url: /dotnet/api/azure.security.keyvault.keys?view=azure-dotnet
+    - text: Python 클라이언트 라이브러리
+      url: /python/api/overview/azure/keyvault-keys-readme?view=azure-python
+    - text: Java 클라이언트 라이브러리
+      url: https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html
+    - text: Node.js 클라이언트 라이브러리
+      url: /javascript/api/@azure/keyvault-keys/?view=azure-node-latest
 - title: Key Vault에 대한 자세한 정보
   linkLists:
   - linkListType: overview

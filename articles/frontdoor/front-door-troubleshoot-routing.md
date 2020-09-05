@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 09/22/2018
 ms.author: sharadag
-ms.openlocfilehash: f4310350e83284d6a2839f8c3d86526d3cda74ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 40809fae312401cb62fabb10140b9bb7f60e3715
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84743578"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88234774"
 ---
 # <a name="troubleshooting-common-routing-issues"></a>일반적인 라우팅 문제 해결
 
@@ -102,7 +102,7 @@ ms.locfileid: "84743578"
          - 예를 들어 백 엔드가 HTTP 요청만 허용하는 경우 다음과 같은 구성이 유효합니다.
             - _허용되는 프로토콜_은 HTTP 및 HTTPS입니다. _전달 프로토콜_은 HTTP입니다. HTTPS가 허용되는 프로토콜이므로 일치 요청이 작동하지 않으며, 요청이 HTTPS 형식으로 수행될 경우 Front Door가 HTTPS를 사용하여 전달을 시도합니다.
 
-            - _허용되는 프로토콜_은 HTTP입니다. _전달 프로토콜_은 일치 요청 또는 HTTPS입니다.
+            - _허용되는 프로토콜_은 HTTP입니다. _전달 프로토콜이_ 요청 또는 HTTP와 일치 합니다.
 
     - _Url 다시 쓰기_는 기본적으로 비활성화되며, 사용 가능하게 만들려는 백 엔드 호스트 리소스의 범위를 좁히려는 경우에만 이 필드를 사용해야 합니다. 비활성화될 경우 Front Door가 수신한 요청 경로를 전달합니다. 이 필드가 잘못 구성되었고 Front Door가 사용할 수 없는 백 엔드에서 리소스를 요청하는 경우 HTTP 404 상태 코드가 반환됩니다.
 

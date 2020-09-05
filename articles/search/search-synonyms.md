@@ -7,13 +7,13 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 07/12/2020
-ms.openlocfilehash: 96ad10fcca260223d92203a80f396de816238efc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/26/2020
+ms.openlocfilehash: aad953483749d676844221f7e519f50c50b63ad4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529566"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948643"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Azure Cognitive Search의 동의어
 
@@ -23,7 +23,7 @@ Azure Cognitive Search에서 동의어 확장은 쿼리 시에 수행 됩니다.
 
 ## <a name="create-synonyms"></a>동의어 만들기
 
-동의어를 만들 수 있는 포털 지원은 없지만 REST API 또는 .NET SDK를 사용할 수 있습니다. REST를 시작 하려면이 API를 사용 하 여 Postman 및 공식화 요청을 [사용 하](search-get-started-postman.md) 는 것이 좋습니다. [동의어 맵 만들기](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map)를 사용 하는 것이 좋습니다. C # 개발자의 경우 [c #을 사용 하 여 Azure 인식 검색에서 동의어 추가](search-synonyms-tutorial-sdk.md)를 시작할 수 있습니다.
+동의어를 만들 수 있는 포털 지원은 없지만 REST API 또는 .NET SDK를 사용할 수 있습니다. REST를 시작 하려면이 API를 사용 하 여 Postman 및 공식화 요청을 [사용 하](search-get-started-postman.md) 는 것이 좋습니다. [동의어 맵 만들기](/rest/api/searchservice/create-synonym-map)를 사용 하는 것이 좋습니다. C # 개발자의 경우 [c #을 사용 하 여 Azure 인식 검색에서 동의어 추가](search-synonyms-tutorial-sdk.md)를 시작할 수 있습니다.
 
 선택적으로 서비스 쪽 암호화를 위해 [고객 관리 키](search-security-manage-encryption-keys.md) 를 사용 하는 경우 해당 보호를 동의어 맵의 내용에 적용할 수 있습니다.
 
@@ -92,6 +92,21 @@ USA, United States, United States of America
 
 ```
 Washington, Wash., WA => WA
+```
+
+쉼표가 포함 된 동의어를 정의 해야 하는 경우 다음 예제와 같이 백슬래시로 이스케이프할 수 있습니다.
+
+```
+WA\, USA, WA, Washington
+```
+
+백슬래시는 JSON 및 c #과 같은 다른 언어에서 특수 문자 이므로 두 번 이스케이프 해야 할 수도 있습니다. 예를 들어 위의 동의어 맵에 대 한 REST API으로 전송 되는 JSON은 다음과 같습니다.
+
+```json
+    {
+       "format":"solr",
+       "synonyms": "WA\\, USA, WA, Washington"
+    }
 ```
 
 #### <a name="list-synonym-maps-under-your-service"></a>서비스 아래 동의어 맵을 나열합니다.
@@ -173,4 +188,4 @@ Washington, Wash., WA => WA
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [동의어 맵 만들기](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map)
+> [동의어 맵 만들기](/rest/api/searchservice/create-synonym-map)

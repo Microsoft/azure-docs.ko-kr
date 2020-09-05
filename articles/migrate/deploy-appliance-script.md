@@ -3,12 +3,12 @@ title: 스크립트를 사용 하 여 Azure Migrate 어플라이언스 설정
 description: 스크립트를 사용 하 여 Azure Migrate 어플라이언스를 설정 하는 방법을 알아봅니다.
 ms.topic: article
 ms.date: 04/16/2020
-ms.openlocfilehash: 47b6b35e62d484b4d7a33f6a53796c59e01817fe
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 43e47c6b4121a2f389dfec27873b90b7031c4f2c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102449"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929978"
 ---
 # <a name="set-up-an-appliance-with-a-script"></a>스크립트를 사용 하 여 어플라이언스 설정
 
@@ -36,7 +36,7 @@ Hyper-V | Windows Server 2016, 16gb 메모리, 8 개 vCPUs, 80 GB의 디스크 �
 
 ## <a name="set-up-the-appliance-for-vmware"></a>VMware에 대 한 어플라이언스 설정
 
-VMware에 대 한 어플라이언스를 설정 하려면 [여기](https://go.microsoft.com/fwlink/?linkid=2105112)에서 AzureMigrateInstaller.zip 라는 zip 파일을 다운로드 하 고 콘텐츠를 추출 합니다. PowerShell 스크립트를 실행 하 여 어플라이언스 웹 앱을 시작 합니다. 어플라이언스를 설정 하 고 처음으로 구성 합니다. 그런 다음 Azure Migrate 프로젝트에 어플라이언스를 등록 합니다.
+VMware에 대 한 어플라이언스를 설정 하려면 포털에서 또는 [여기](https://go.microsoft.com/fwlink/?linkid=2140334)에서 AzureMigrateInstaller-Server-Public.zip 이라는 zip 파일을 다운로드 하 고 콘텐츠를 추출 합니다. PowerShell 스크립트를 실행 하 여 어플라이언스 웹 앱을 시작 합니다. 어플라이언스를 설정 하 고 처음으로 구성 합니다. 그런 다음 Azure Migrate 프로젝트에 어플라이언스를 등록 합니다.
 
 
 ### <a name="verify-file-security"></a>파일 보안 확인
@@ -46,12 +46,12 @@ VMware에 대 한 어플라이언스를 설정 하려면 [여기](https://go.mic
 1. 파일을 다운로드한 컴퓨터에서 관리자 명령 창을 엽니다.
 2. 다음 명령을 실행하여 압축된 파일의 해시를 생성합니다.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - 예: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
+    - 예: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public.zip SHA256```
 3. Azure 공용 클라우드의 최신 어플라이언스 버전 및 스크립트를 확인 합니다.
 
     **알고리즘** | **다운로드** | **SHA256**
     --- | --- | ---
-    VMware(63.1MB) | [최신 버전](https://go.microsoft.com/fwlink/?linkid=2105112) | 0a27adf13cc5755e4b23df0c05732c6ac08d1fe8850567cb57c9906fbc3b85a0
+    VMware (85 MB) | [최신 버전](https://go.microsoft.com/fwlink/?linkid=2140334) | 5d0a3dbce4b5010980d59d49859f809acfeb17f5a36f57af4dac44a0a62dde1f
 
 
 
@@ -74,7 +74,7 @@ VMware에 대 한 어플라이언스를 설정 하려면 [여기](https://go.mic
 3. PowerShell 디렉터리를 다운로드 한 압축 파일에서 추출한 콘텐츠를 포함 하는 폴더로 변경 합니다.
 4. 다음과 같이 스크립트 **AzureMigrateInstaller.ps1**를 실행 합니다.
 
-    ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1 -scenario VMware ```
+    ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1 -scenario VMware ```
    
 5. 스크립트가 성공적으로 실행 되 면 어플라이언스를 설정할 수 있도록 어플라이언스 웹 응용 프로그램을 시작 합니다. 문제가 발생 하는 경우 C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Timestamp</em>.log에서 스크립트 로그를 검토 합니다.
 
@@ -84,7 +84,7 @@ VMware에 대 한 어플라이언스를 설정 하려면 [여기](https://go.mic
 
 ## <a name="set-up-the-appliance-for-hyper-v"></a>Hyper-v에 대 한 어플라이언스 설정
 
-Hyper-v에 대 한 어플라이언스를 설정 하려면 [여기](https://go.microsoft.com/fwlink/?linkid=2105112)에서 AzureMigrateInstaller.zip 라는 zip 파일을 다운로드 하 고 콘텐츠를 추출 합니다. PowerShell 스크립트를 실행 하 여 어플라이언스 웹 앱을 시작 합니다. 어플라이언스를 설정 하 고 처음으로 구성 합니다. 그런 다음 Azure Migrate 프로젝트에 어플라이언스를 등록 합니다.
+Hyper-v에 대 한 어플라이언스를 설정 하려면 포털 또는 [여기](https://go.microsoft.com/fwlink/?linkid=2105112)에서 AzureMigrateInstaller-Server-Public.zip 이라는 zip 파일을 다운로드 하 고 콘텐츠를 추출 합니다. PowerShell 스크립트를 실행 하 여 어플라이언스 웹 앱을 시작 합니다. 어플라이언스를 설정 하 고 처음으로 구성 합니다. 그런 다음 Azure Migrate 프로젝트에 어플라이언스를 등록 합니다.
 
 
 ### <a name="verify-file-security"></a>파일 보안 확인
@@ -94,13 +94,13 @@ Hyper-v에 대 한 어플라이언스를 설정 하려면 [여기](https://go.mi
 1. 파일을 다운로드한 컴퓨터에서 관리자 명령 창을 엽니다.
 2. 다음 명령을 실행하여 압축된 파일의 해시를 생성합니다.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - 예: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller.zip SHA256```
+    - 예: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public.zip SHA256```
 
 3. Azure 공용 클라우드의 최신 어플라이언스 버전 및 스크립트를 확인 합니다.
 
     **시나리오** | **다운로드** | **SHA256**
     --- | --- | ---
-    Hyper-V(63.1MB) | [최신 버전](https://go.microsoft.com/fwlink/?linkid=2105112) |  572be425ea0aca69a9aa8658c950bc319b2bdbeb93b440577264500091c846a1
+    Hyper-v (85) | [최신 버전](https://go.microsoft.com/fwlink/?linkid=2140334) |  5d0a3dbce4b5010980d59d49859f809acfeb17f5a36f57af4dac44a0a62dde1f
 
 ### <a name="run-the-script"></a>스크립트 실행
 
@@ -119,7 +119,9 @@ Hyper-v에 대 한 어플라이언스를 설정 하려면 [여기](https://go.mi
 1. 어플라이언스를 호스트 하는 컴퓨터의 폴더에 압축 파일 압축을 풉니다. 기존 Azure Migrate 어플라이언스의 머신에서 스크립트를 실행하지 않아야 합니다.
 2. 관리자 권한 (관리자 권한)을 사용 하 여 컴퓨터에서 PowerShell을 시작 합니다.
 3. PowerShell 디렉터리를 다운로드 한 압축 파일에서 추출한 콘텐츠를 포함 하는 폴더로 변경 합니다.
-4. 다음과 같이 스크립트 **AzureMigrateInstaller.ps1**를 실행 합니다.``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller> AzureMigrateInstaller.ps1 -scenario Hyperv ```
+4. 다음과 같이 스크립트 **AzureMigrateInstaller.ps1**를 실행 합니다. 
+
+    ``` PS C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-Public> .\AzureMigrateInstaller.ps1 -scenario Hyperv ```
    
 5. 스크립트가 성공적으로 실행 되 면 어플라이언스를 설정할 수 있도록 어플라이언스 웹 응용 프로그램을 시작 합니다. 문제가 발생 하는 경우 C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Timestamp</em>.log에서 스크립트 로그를 검토 합니다.
 

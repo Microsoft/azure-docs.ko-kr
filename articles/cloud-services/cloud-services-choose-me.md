@@ -1,18 +1,18 @@
 ---
 title: Azure Cloud Services란 | Microsoft Docs
-description: Azure Cloud Services에 대해 알아봅니다.
+description: 특히 확장 가능 하 고 안정적 이며 운영 비용이 저렴 한 응용 프로그램을 지원 하도록 설계 된 Azure Cloud Services에 대해 알아보세요.
 services: cloud-services
 author: tgore03
 ms.service: multiple
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: tagore
-ms.openlocfilehash: c531e02656c9f6342670024b2220386e789a2d98
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0013a3a29bae9d2dde7896b3ae23d0d358946f2b
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75386853"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88224291"
 ---
 # <a name="overview-of-azure-cloud-services"></a>Azure Cloud Services 개요
 Azure Cloud Services는 [PaaS(Platform-as-a-Service)](https://azure.microsoft.com/overview/what-is-paas/)의 예입니다. [Azure App Service](../app-service/overview.md)와 마찬가지로 이 기술은 확장성이 있고 안정적이며 운영 비용이 저렴한 애플리케이션을 지원하도록 설계되었습니다. App Service가 VM(가상 머신)에서 호스팅되는 것과 마찬가지로 Azure Cloud Services도 동일합니다. 하지만, VM보다 자세히 제어해야 합니다. 자체 소프트웨어를 Azure Cloud Services를 사용하는 VM에 설치하고 원격으로 액세스할 수 있습니다.

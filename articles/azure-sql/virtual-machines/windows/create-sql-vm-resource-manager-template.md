@@ -7,12 +7,12 @@ ms.custom: subject-armqs
 ms.author: mathoma
 ms.date: 06/29/2020
 ms.service: virtual-machines-sql
-ms.openlocfilehash: 1b6f54c823f59bb654ac86f041eefe80af3eb5ea
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 21909a9c7a1edda5059b9e83cf8dda243862b966
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003868"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660210"
 ---
 # <a name="quickstart-create-sql-server-vm-using-an-arm-template"></a>빠른 시작: ARM 템플릿을 사용하여 SQL Server VM 만들기
 
@@ -37,7 +37,7 @@ SQL Server VM ARM 템플릿을 사용하려면 다음이 필요합니다.
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-sql-vm-new-storage/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-sql-vm-new-storage/azuredeploy.json" highlight="169-310":::
+:::code language="json" source="~/quickstart-templates/101-sql-vm-new-storage/azuredeploy.json":::
 
 템플릿에는 다음과 같은 5개의 Azure 리소스가 정의되어 있습니다. 
 

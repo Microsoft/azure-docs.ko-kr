@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 11/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 2641464e52b80c59b6c6b5a123ad1605c1d41495
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 5832920ec491ce9d99219a7a423fcf0e38ba62cc
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81275248"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226212"
 ---
 ## <a name="prerequisites"></a>필수 구성 요소
 
-시작하기 전에 다음을 수행합니다.
+시작하기 전에:
 
 > [!div class="checklist"]
 > * [Azure Speech 리소스 만들기](../../../../get-started.md)
@@ -58,7 +58,7 @@ ms.locfileid: "81275248"
 
 1. 동일한 파일에서 `YourSubscriptionKey` 문자열을 구독 키로 바꿉니다.
 
-1. 또한 `YourServiceRegion` 문자열을 구독과 연결된 [지역](https://aka.ms/speech/sdkregion)의 **영역 식별자**로 바꿉니다. 예를 들어 평가판 구독의 경우 `westus`를 사용합니다.
+1. 또한 `YourServiceRegion` 문자열을 구독과 연결된 [지역](https://aka.ms/speech/sdkregion)의 **영역 식별자**로 바꿉니다.
 
 ## <a name="build-and-run-the-app"></a>앱 빌드 및 실행
 

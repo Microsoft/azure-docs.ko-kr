@@ -9,12 +9,13 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 08/05/2020
-ms.openlocfilehash: 4d8a38666991760fbb133e617984ba23788034ca
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5a9cc1ebbe8cfea2548f61ee1d88180ed39a75eb
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909898"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002439"
 ---
 # <a name="quickstart-create-a-search-index-using-the-microsoftazuresearch-v10-client-library"></a>빠른 시작: v10 클라이언트 라이브러리를 사용 하 여 검색 인덱스 만들기
 
@@ -24,7 +25,7 @@ ms.locfileid: "87909898"
 
 ## <a name="about-this-quickstart"></a>이 빠른 시작 정보
 
-Visual Studio 및 [Microsoft Azure Search 클라이언트 라이브러리](https://docs.microsoft.com/dotnet/api/overview/azure/search/client10?view=azure-dotnet)를 사용 하 여 azure Cognitive Search 인덱스를 만들고 로드 하 고 쿼리 하는 .net Core 콘솔 응용 프로그램을 c #으로 만듭니다. 
+Visual Studio 및 [Microsoft Azure Search 클라이언트 라이브러리](/dotnet/api/overview/azure/search/client10?view=azure-dotnet)를 사용 하 여 azure Cognitive Search 인덱스를 만들고 로드 하 고 쿼리 하는 .net Core 콘솔 응용 프로그램을 c #으로 만듭니다. 
 
 이 문서에서는 응용 프로그램을 만드는 방법을 설명 합니다. [전체 응용 프로그램을 다운로드 하 고 실행할](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart-v10)수도 있습니다.
 
@@ -102,13 +103,13 @@ Visual Studio 및 [Microsoft Azure Search 클라이언트 라이브러리](https
 
 ### <a name="add-class-method-files-to-your-project"></a>프로젝트에 클래스 ".Method" 파일 추가
 
-이 단계는 콘솔에서 의미 있는 출력을 생성하는 데 필요합니다. 콘솔 창에 결과를 출력할 때 Hotel 개체의 개별 필드를 문자열로 반환해야 합니다. 이 단계에서는 [ToString()](https://docs.microsoft.com/dotnet/api/system.object.tostring?view=netframework-4.8)를 구현하여 이 작업을 수행합니다. 이 작업은 필요한 코드를 두 개의 새 파일에 복사하여 수행합니다.
+이 단계는 콘솔에서 의미 있는 출력을 생성하는 데 필요합니다. 콘솔 창에 결과를 출력할 때 Hotel 개체의 개별 필드를 문자열로 반환해야 합니다. 이 단계에서는 [ToString()](/dotnet/api/system.object.tostring?view=netframework-4.8)를 구현하여 이 작업을 수행합니다. 이 작업은 필요한 코드를 두 개의 새 파일에 복사하여 수행합니다.
 
 1. 프로젝트에 빈 클래스 정의 2개를 추가합니다. Address.Methods.cs, Hotel.Methods.cs
 
-1. Address.Methods.cs의 기본 콘텐츠를 다음 코드 [1-25줄](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/Quickstart/AzureSearchQuickstart/Address.Methods.cs/#L1-L25)로 덮어씁니다.
+1. Address.Methods.cs의 기본 콘텐츠를 다음 코드 [1-25줄](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/quickstart-v10/AzureSearchQuickstart/Address.Methods.cs#L1-L25)로 덮어씁니다.
 
-1. Hotel.Methods.cs에서 [1-68줄](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/Quickstart/AzureSearchQuickstart/Hotel.Methods.cs/#L1-L68)을 복사합니다.
+1. Hotel.Methods.cs에서 [1-68줄](https://github.com/Azure-Samples/azure-search-dotnet-samples/blob/master/quickstart-v10/AzureSearchQuickstart/Hotel.Methods.cs#L1-L68)을 복사합니다.
 
 ## <a name="1---create-index"></a>1 - 인덱스 만들기
 
@@ -197,15 +198,15 @@ Visual Studio 및 [Microsoft Azure Search 클라이언트 라이브러리](https
     필드의 특성은 필드가 애플리케이션에서 사용되는 방식을 결정합니다. 예를 들어 전체 텍스트 검색에 포함되어야 하는 모든 필드에는 `IsSearchable` 특성을 할당해야 합니다. 
     
     > [!NOTE]
-    > .NET SDK에서 필드에는 명시적으로 [`IsSearchable`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.issearchable?view=azure-dotnet), [`IsFilterable`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet), [`IsSortable`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.issortable?view=azure-dotnet) 및 [`IsFacetable`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfacetable?view=azure-dotnet) 특성이 사용되어야 합니다. 이 동작은 데이터 형식에 따라 특성을 암시적으로 사용하도록 설정하는 REST API와는 대조적입니다(예를 들어 단순 문자열 필드는 자동으로 검색 가능함).
+    > .NET SDK에서 필드에는 명시적으로 [`IsSearchable`](/dotnet/api/microsoft.azure.search.models.field.issearchable?view=azure-dotnet), [`IsFilterable`](/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet), [`IsSortable`](/dotnet/api/microsoft.azure.search.models.field.issortable?view=azure-dotnet) 및 [`IsFacetable`](/dotnet/api/microsoft.azure.search.models.field.isfacetable?view=azure-dotnet) 특성이 사용되어야 합니다. 이 동작은 데이터 형식에 따라 특성을 암시적으로 사용하도록 설정하는 REST API와는 대조적입니다(예를 들어 단순 문자열 필드는 자동으로 검색 가능함).
 
     `string` 형식의 인덱스에는 정확히 하나의 필드가 각 문서를 고유하게 식별하는 키(*key*) 필드여야 합니다. 이 스키마에서 키는 `HotelId`입니다.
 
-    이 인덱스에서 설명 필드는 선택적 [`analyzer`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.analyzer?view=azure-dotnet) 속성을 사용합니다. 이 속성은 기본 표준 Lucene 분석기를 재정의하려는 경우 지정합니다. `description_fr` 필드는 프랑스어 텍스트를 저장하기 때문에 프랑스어 Lucene 분석기([FrLucene](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername.frlucene?view=azure-dotnet))를 사용합니다. `description`은 선택적 Microsoft 언어 분석기([EnMicrosoft](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername.enmicrosoft?view=azure-dotnet))를 사용합니다.
+    이 인덱스에서 설명 필드는 선택적 [`analyzer`](/dotnet/api/microsoft.azure.search.models.field.analyzer?view=azure-dotnet) 속성을 사용합니다. 이 속성은 기본 표준 Lucene 분석기를 재정의하려는 경우 지정합니다. `description_fr` 필드는 프랑스어 텍스트를 저장하기 때문에 프랑스어 Lucene 분석기([FrLucene](/dotnet/api/microsoft.azure.search.models.analyzername.frlucene?view=azure-dotnet))를 사용합니다. `description`은 선택적 Microsoft 언어 분석기([EnMicrosoft](/dotnet/api/microsoft.azure.search.models.analyzername.enmicrosoft?view=azure-dotnet))를 사용합니다.
 
-1. Program.cs에서 애플리케이션의 구성 파일 (appsettings.json)에 저장되는 값을 사용하여 서비스에 연결되는 [`SearchServiceClient`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient?view=azure-dotnet) 클래스 인스턴스를 만듭니다. 
+1. Program.cs에서 애플리케이션의 구성 파일 (appsettings.json)에 저장되는 값을 사용하여 서비스에 연결되는 [`SearchServiceClient`](/dotnet/api/microsoft.azure.search.searchserviceclient?view=azure-dotnet) 클래스 인스턴스를 만듭니다. 
 
-   `SearchServiceClient`에는 Azure Cognitive Search 인덱스를 생성, 나열, 업데이트 또는 삭제하는 데 필요한 모든 메서드를 제공하는 [`Indexes`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.indexes?view=azure-dotnet) 속성이 있습니다. 
+   `SearchServiceClient`에는 Azure Cognitive Search 인덱스를 생성, 나열, 업데이트 또는 삭제하는 데 필요한 모든 메서드를 제공하는 [`Indexes`](/dotnet/api/microsoft.azure.search.searchserviceclient.indexes?view=azure-dotnet) 속성이 있습니다. 
 
     ```csharp
     using System;
@@ -305,7 +306,7 @@ Visual Studio 및 [Microsoft Azure Search 클라이언트 라이브러리](https
 
 Azure Cognitive Search에서 문서는 인덱싱에 대한 입력인 동시에 쿼리의 출력인 데이터 구조입니다. 외부 데이터 소스에서 가져온, 문서 입력은 데이터베이스의 행, Blob Storage의 Blob 또는 디스크의 JSON 문서일 수 있습니다. 이 예에서는 손쉬운 방법을 사용하여 4개 호텔에 대한 JSON 문서를 코드 자체에 포함합니다. 
 
-문서를 업로드할 때는 [`IndexBatch`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet) 개체를 사용해야 합니다. `IndexBatch`는 [`IndexAction`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) 개체의 컬렉션을 포함하며, 이들 각각은 Azure Cognitive Search가 수행할 작업([업로드, 병합, 삭제 및 mergeOrUpload](search-what-is-data-import.md#indexing-actions))을 알려주는 문서와 속성을 포함합니다.
+문서를 업로드할 때는 [`IndexBatch`](/dotnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet) 개체를 사용해야 합니다. `IndexBatch`는 [`IndexAction`](/dotnet/api/microsoft.azure.search.models.indexaction?view=azure-dotnet) 개체의 컬렉션을 포함하며, 이들 각각은 Azure Cognitive Search가 수행할 작업([업로드, 병합, 삭제 및 mergeOrUpload](search-what-is-data-import.md#indexing-actions))을 알려주는 문서와 속성을 포함합니다.
 
 1. Program.cs에서 문서 및 인덱스 작업의 배열을 만든 다음, 배열을 `IndexBatch`에 전달합니다. 아래 문서는 호텔 및 주소 클래스에 정의된 호텔-빠른 시작 인덱스를 준수합니다.
 
@@ -427,7 +428,7 @@ Azure Cognitive Search에서 문서는 인덱싱에 대한 입력인 동시에 �
     }
     ```
 
-    `IndexBatch` 개체를 초기화하면 [`SearchIndexClient`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet) 개체에서 [`Documents.Index`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index?view=azure-dotnet)를 호출하여 인덱스로 보낼 수 있습니다. `Documents`는 인덱스의 문서를 추가, 수정, 삭제 또는 쿼리하는 메서드를 제공하는 `SearchIndexClient`의 속성입니다.
+    `IndexBatch` 개체를 초기화하면 [`SearchIndexClient`](/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet) 개체에서 [`Documents.Index`](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index?view=azure-dotnet)를 호출하여 인덱스로 보낼 수 있습니다. `Documents`는 인덱스의 문서를 추가, 수정, 삭제 또는 쿼리하는 메서드를 제공하는 `SearchIndexClient`의 속성입니다.
 
     `Index` 메서드에 대한 호출을 둘러싼 `try`/`catch`는 인덱싱 실패를 catch합니다. 실패는 서비스 부하가 높을 때 발생할 수 있습니다. 프로덕션 코드에서는 실패한 문서의 인덱싱을 지연시켰다가 다시 시도하거나, 샘플처럼 기록하고 계속하거나, 애플리케이션의 데이터 일관성 요구 사항을 충족시키는 다른 방식으로 처리할 수 있습니다.
 
@@ -451,10 +452,10 @@ Azure Cognitive Search에서 문서는 인덱싱에 대한 입력인 동시에 �
 
 첫 번째 문서의 인덱싱이 완료되는 즉시 쿼리 결과를 얻을 수 있지만 인덱스에 대한 실제 테스트는 모든 문서의 인덱싱이 완료될 때까지 기다려야 합니다. 
 
-이 섹션에서는 쿼리 논리 및 결과라는 두 가지 기능을 추가합니다. 쿼리에는 [`Search`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.search?view=azure-dotnet
-) 메서드를 사용합니다. 이 메서드는 검색 텍스트뿐만 아니라 다른 [매개 변수](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.searchparameters?view=azure-dotnet)를 사용합니다. 
+이 섹션에서는 쿼리 논리 및 결과라는 두 가지 기능을 추가합니다. 쿼리에는 [`Search`](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.search?view=azure-dotnet
+) 메서드를 사용합니다. 이 메서드는 검색 텍스트뿐만 아니라 다른 [매개 변수](/dotnet/api/microsoft.azure.search.models.searchparameters?view=azure-dotnet)를 사용합니다. 
 
-[`DocumentsSearchResult`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.documentsearchresult-1?view=azure-dotnet) 클래스는 결과를 나타냅니다.
+[`DocumentsSearchResult`](/dotnet/api/microsoft.azure.search.models.documentsearchresult-1?view=azure-dotnet) 클래스는 결과를 나타냅니다.
 
 
 1. Program.cs에서 검색 결과를 콘솔에 출력하는 WriteDocuments 메서드를 만듭니다.
@@ -570,4 +571,4 @@ C# 빠른 시작에서는 인덱스를 만들어서 문서와 함께 로드하�
 클라우드 비용을 최적화하여 비용을 절감하고 싶습니까?
 
 > [!div class="nextstepaction"]
-> [Cost Management를 통한 비용 분석 시작](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+> [Cost Management를 통한 비용 분석 시작](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

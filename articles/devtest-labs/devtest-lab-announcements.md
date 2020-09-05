@@ -1,14 +1,14 @@
 ---
 title: Azure DevTest Labs에서 랩에 공지 게시 Microsoft Docs
-description: Azure DevTest Labs에서 랩에 공지를 추가하는 방법을 알아봅니다.
+description: 기존 랩에서 사용자 지정 공지를 게시 하 여 Azure DevTest Labs에서 랩에 대 한 최근 변경 내용 또는 추가 사항을 사용자에 게 알리는 방법에 대해 알아봅니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: bac2b0a4e33a01977418b36ce6e3726999d10ed5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 72c6ed7ab691ece094673ff5a158ffa769a9f7a1
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85478997"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270770"
 ---
 # <a name="post-an-announcement-to-a-lab-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩에 공지 게시
 

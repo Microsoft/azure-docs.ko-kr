@@ -3,7 +3,7 @@ title: Azure Media Services 진단 로그 스키마-Azure
 description: 이 문서에서는 Azure Media Services 진단 로그 스키마를 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/20/2019
-ms.author: juliako
-ms.openlocfilehash: 2bc688a61235a31c3d6b6e88cbb90c0d14cca179
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 6f09a0ab88273aa10bb5f3cb55f89d014897df12
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092017"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268454"
 ---
 # <a name="diagnostic-logs-schemas"></a>진단 로그 스키마
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 [Azure Monitor](../../azure-monitor/overview.md) 를 사용 하면 응용 프로그램의 작동 방식을 이해 하는 데 도움이 되는 메트릭 및 진단 로그를 모니터링할 수 있습니다. Media Services 진단 로그를 모니터링 하 고 수집 된 메트릭 및 로그에 대 한 경고 및 알림을 만들 수 있습니다. [Azure Storage](https://azure.microsoft.com/services/storage/)로 로그를 전송 하 고, [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/)로 스트리밍하 고, [Log Analytics](https://azure.microsoft.com/services/log-analytics/)로 내보내거나 타사 서비스를 사용할 수 있습니다.
 
@@ -38,7 +40,7 @@ ms.locfileid: "87092017"
 
 이러한 속성은 키 배달 로그 스키마에만 적용 됩니다.
 
-|이름|설명|
+|Name|설명|
 |---|---|
 |keyId|요청 된 키의 ID입니다.|
 |keyType|"Clear" (암호화 없음), "FairPlay", "PlayReady" 또는 "Widevine" 값 중 하나일 수 있습니다.|

@@ -5,15 +5,15 @@ author: laurenhughes
 ms.author: lahugh
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 07/13/2020
-ms.openlocfilehash: 040f4378e01c3696b9a74bfcc27230503828f19a
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.date: 08/17/2020
+ms.openlocfilehash: 744e62f8a2207cff400a96069fc6ea82866f6e2d
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562790"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055688"
 ---
-# <a name="preview---azure-kubernetes-service-aks-node-image-upgrades"></a>Preview-AKS (Azure Kubernetes Service) 노드 이미지 업그레이드
+# <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>AKS (Azure Kubernetes Service) 노드 이미지 업그레이드
 
 AKS는 노드의 이미지를 업그레이드할 수 있도록 지원 하므로 최신 OS 및 런타임 업데이트를 최신 상태로 유지 합니다. AKS는 최신 업데이트를 사용 하 여 일주일에 하나의 새 이미지를 제공 하므로 Linux 또는 Windows 패치를 비롯 하 여 최신 기능을 위해 노드의 이미지를 정기적으로 업그레이드 하는 것이 유용 합니다. 이 문서에서는 AKS 클러스터 노드 이미지를 업그레이드 하는 방법 뿐만 아니라 Kubernetes 버전을 업그레이드 하지 않고 노드 풀 이미지를 업데이트 하는 방법을 보여 줍니다.
 
@@ -21,23 +21,13 @@ AKS에서 제공 하는 최신 이미지에 대해 알아보려면 [AKS 릴리�
 
 클러스터에 대 한 Kubernetes 버전을 업그레이드 하는 방법에 대 한 자세한 내용은 [AKS 클러스터 업그레이드][upgrade-cluster]를 참조 하세요.
 
-## <a name="register-the-node-image-upgrade-preview-feature"></a>노드 이미지 업그레이드 미리 보기 기능 등록
+## <a name="limitations"></a>제한 사항
 
-미리 보기 기간 동안 노드 이미지 업그레이드 기능을 사용 하려면 기능을 등록 해야 합니다.
+* AKS 클러스터는 노드에 대 한 가상 머신 확장 집합을 사용 해야 합니다.
 
-```azurecli
-# Register the preview feature
-az feature register --namespace "Microsoft.ContainerService" --name "NodeImageUpgradePreview"
-```
+## <a name="install-the-aks-cli-extension"></a>AKS CLI 확장을 설치 합니다.
 
-등록을 완료 하는 데 몇 분 정도 소요 됩니다. 다음 명령을 사용 하 여 기능이 등록 되었는지 확인 합니다.
-
-```azurecli
-# Verify the feature is registered:
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/NodeImageUpgradePreview')].{Name:name,State:properties.state}"
-```
-
-미리 보기 중에 노드 이미지 업그레이드를 사용 하려면 *aks-preview* CLI 확장이 필요 합니다. [Az extension add][az-extension-add] 명령을 사용 하 여 [az extension update][az-extension-update] 명령을 사용 하 여 사용 가능한 업데이트를 확인 합니다.
+다음 핵심 CLI 버전이 해제 되기 전에 노드 이미지 업그레이드를 사용 하려면 *aks-preview* CLI 확장이 필요 합니다. [Az extension add][az-extension-add] 명령을 사용 하 여 [az extension update][az-extension-update] 명령을 사용 하 여 사용 가능한 업데이트를 확인 합니다.
 
 ```azurecli
 # Install the aks-preview extension
@@ -46,12 +36,6 @@ az extension add --name aks-preview
 # Update the extension to make sure you have the latest version installed
 az extension update --name aks-preview
 ```
-
-상태가 등록됨으로 표시되면 [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register) 명령을 사용하여 `Microsoft.ContainerService` 리소스 공급자 등록 상태를 새로 고칩니다.
-
-```azurecli
-az provider register --namespace Microsoft.ContainerService
-```  
 
 ## <a name="upgrade-all-nodes-in-all-node-pools"></a>모든 노드 풀의 모든 노드 업그레이드
 

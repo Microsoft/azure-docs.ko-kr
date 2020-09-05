@@ -8,14 +8,14 @@ ms.author: shresha
 manager: dpalled
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/23/2020
+ms.date: 08/12/2020
 ms.custom: shresha
-ms.openlocfilehash: a74a5e2b8e80121324dc8b880d90f493d5b2ddfd
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 784c19844c658af6850c755244314145223c45ef
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423952"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163954"
 ---
 # <a name="migrating-to-new-azure-time-series-insights-gen2-api-versions"></a>새 Azure Time Series Insights Gen2 API 버전으로 마이그레이션
 
@@ -23,7 +23,7 @@ ms.locfileid: "87423952"
 
 공개 미리 보기로 제공 되는 Azure Time Series Insights Gen2 환경을 만든 경우 (2020 7 월 16 일 이전)이 문서에 설명 된 단계에 따라 새 일반 버전의 Api를 사용 하도록 TSI 환경을 업데이트 하세요.
 
-새 API 버전은 이며 `2020-07-31` 업데이트 된 [시계열 식 구문을](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)사용 합니다.
+새 API 버전은 이며 `2020-07-31` 업데이트 된 [시계열 식 구문을](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)사용 합니다.
 
 사용자는 환경 [시계열 모델 변수](./concepts-variables.md), 저장 된 쿼리, Power BI 쿼리 및 API 끝점을 호출 하는 사용자 지정 도구를 마이그레이션해야 합니다. 마이그레이션 프로세스에 대 한 질문이 나 궁금한 사항이 있는 경우 Azure Portal를 통해 지원 티켓을 제출 하 고이 문서를 언급 합니다.
 
@@ -39,7 +39,7 @@ ms.locfileid: "87423952"
 
 1. 탐색기에서 시계열 모델 변수 및 저장 된 쿼리에 사용 되는 구문을 업데이트 하 라는 메시지가 표시 됩니다.
 
-    [![프롬프트](media/api-migration/ux-prompt.png)](media/v2-update-overview/overview-one.png#lightbox)
+    [![요청할](media/api-migration/ux-prompt.png)](media/v2-update-overview/overview-one.png#lightbox)
 
     알림을 실수로 닫은 경우 알림 패널에서 찾을 수 있습니다.
 
@@ -60,7 +60,7 @@ ms.locfileid: "87423952"
 
     [![저장 된 쿼리 업데이트](media/api-migration/ux-migration-tool-updated-variables.png)](media/v2-update-overview/overview-one.png#lightbox)
 
-1. **Done**을 클릭합니다.
+1. **완료**를 클릭합니다.
 
     [![완료 된 마이그레이션](media/api-migration/ux-migration-tool-updated-saved-queries.png)](media/v2-update-overview/overview-one.png#lightbox)
 
@@ -95,7 +95,7 @@ Power BI 커넥터를 사용 하 여 쿼리를 생성 한 경우 미리 보기 A
     - [삭제, 가져오기 작업](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch)
     - [목록](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/list)
 
-다음 REST 끝점의 경우 URI에서 API 버전을로 업데이트 하 `2020-07-31` 고 속성의 모든 항목이 `tsx` 업데이트 된 [시계열 식 구문을](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax)사용 하는지 확인 해야 합니다.
+다음 REST 끝점의 경우 URI에서 API 버전을로 업데이트 하 `2020-07-31` 고 속성의 모든 항목이 `tsx` 업데이트 된 [시계열 식 구문을](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax)사용 하는지 확인 해야 합니다.
 
 - 형식 Api
   - [Put 작업](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/timeseriestypes/executebatch#typesbatchput)
@@ -104,7 +104,7 @@ Power BI 커넥터를 사용 하 여 쿼리를 생성 한 경우 미리 보기 A
   - [GetSeries](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries)
   - [GetAggregateSeries](https://docs.microsoft.com/rest/api/time-series-insights/dataaccessgen2/query/execute#aggregateseries)
 
-### <a name="examples"></a>예제
+### <a name="examples"></a>예
 
 #### <a name="typesbatchput"></a>유형 Batchput
 
@@ -355,7 +355,7 @@ Power BI 커넥터를 사용 하 여 쿼리를 생성 한 경우 미리 보기 A
 
 #### <a name="invalidinput"></a>InvalidInput
 
-다음 오류가 표시 되 면 새 API 버전 ()을 사용 `2020-07-31` 하지만 TSX 구문이 업데이트 되지 않은 것입니다. 위의 [시계열 식 구문](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax) 및 마이그레이션 예를 검토 하세요. `tsx`API 요청을 다시 전송 하기 전에 모든 속성이 올바르게 업데이트 되었는지 확인 합니다.
+다음 오류가 표시 되 면 새 API 버전 ()을 사용 `2020-07-31` 하지만 TSX 구문이 업데이트 되지 않은 것입니다. 위의 [시계열 식 구문](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax) 및 마이그레이션 예를 검토 하세요. `tsx`API 요청을 다시 전송 하기 전에 모든 속성이 올바르게 업데이트 되었는지 확인 합니다.
 
 ```JSON
 {

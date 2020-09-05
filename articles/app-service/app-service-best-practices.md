@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/01/2016
 ms.author: dariac
 ms.custom: seodec18
-ms.openlocfilehash: ded812d5d7a0440466e7284b56c90965ea00406e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a25ae41a5f4ed73148f629799ca4865d756a769
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75768489"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962454"
 ---
 # <a name="best-practices-for-azure-app-service"></a>Azure App Service에 대한 모범 사례
 이 문서는 [Azure App Service](https://go.microsoft.com/fwlink/?LinkId=529714)를 사용하는 모범 사례를 요약합니다. 
@@ -67,7 +67,7 @@ Node.js 앱에 대한 Azure App Service 기본 구성은 가장 일반적인 앱
 
 
 ## <a name="next-steps"></a>다음 단계
-모범 사례에 대 한 자세한 내용은 [App Service 진단을](https://docs.microsoft.com/azure/app-service/overview-diagnostics) 방문 하 여 리소스와 관련 하 여 조치 가능한 모범 사례를 확인 하세요.
+모범 사례에 대 한 자세한 내용은 [App Service 진단을](./overview-diagnostics.md) 방문 하 여 리소스와 관련 하 여 조치 가능한 모범 사례를 확인 하세요.
 
 - [Azure Portal](https://portal.azure.com)에서 웹 앱으로 이동 합니다.
 - 왼쪽 탐색에서 **문제 진단 및 해결** 을 클릭 하면 App Service 진단이 열립니다.

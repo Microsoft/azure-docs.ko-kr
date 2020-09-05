@@ -7,14 +7,15 @@ manager: gwallace
 keywords: azure 함수, 함수, 이벤트 처리, 준비, 콜드 시작, 프리미엄, 동적 계산, 서버를 사용 하지 않는 아키텍처
 ms.service: azure-functions
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 11/08/2019
 ms.author: cshoe
-ms.openlocfilehash: dade31fd9a5a75c875274ea45607fea81a2de027
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: f5523c513cc0bdd08c43bdbed5046bf662f1a3e5
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87383718"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206578"
 ---
 # <a name="azure-functions-warm-up-trigger"></a>Azure Functions 준비 트리거
 
@@ -76,7 +77,7 @@ namespace WarmupSample
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
 
-다음 예제에서는 파일 *에 대 한function.js* 의 준비 트리거와 앱에 추가 될 때 각 새 인스턴스에서 실행 되는 [c # 스크립트 함수](functions-reference-csharp.md) 를 보여 줍니다.
+다음 예제에서는 파일 * 에 대 한function.js* 의 준비 트리거와 앱에 추가 될 때 각 새 인스턴스에서 실행 되는 [c # 스크립트 함수](functions-reference-csharp.md) 를 보여 줍니다.
 
 함수는 이름을 지정 해야 하며 ```warmup``` (대/소문자 구분 안 함) 앱 당 하나의 준비 함수만 있을 수 있습니다.
 
@@ -107,7 +108,7 @@ public static void Run(ILogger log)
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-다음 예에서는 파일 *에 대 한function.js* 의 준비 트리거와 앱에 추가 될 때 각 새 인스턴스에서 실행 되는 [JavaScript 함수](functions-reference-node.md) 를 보여 줍니다.
+다음 예에서는 파일 * 에 대 한function.js* 의 준비 트리거와 앱에 추가 될 때 각 새 인스턴스에서 실행 되는 [JavaScript 함수](functions-reference-node.md)  를 보여 줍니다.
 
 함수는 이름을 지정 해야 하며 ```warmup``` (대/소문자 구분 안 함) 앱 당 하나의 준비 함수만 있을 수 있습니다.
 

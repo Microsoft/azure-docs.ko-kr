@@ -4,12 +4,13 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
-ms.openlocfilehash: 8679d6d4c8ff0a6abdf045187c284ca65f43ee7e
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a6c498b1f68ca4e8c40a2baf30cc81176a0898bb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80986016"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934697"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 

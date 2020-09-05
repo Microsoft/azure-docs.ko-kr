@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 07/24/2020
-ms.openlocfilehash: 4c700a61de80968b17585faf92e268fef8d86f0e
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: a6e304e5ffeab8f0a44cbdfe1566465f2b9bf34a
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323267"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607413"
 ---
 # <a name="integrate-your-commercial-marketplace-listing-with-azure-active-directory"></a>상업용 Marketplace 목록과 Azure Active Directory 통합
 
@@ -20,7 +20,7 @@ ms.locfileid: "87323267"
 
 ## <a name="azure-ad-benefits"></a>Azure AD 혜택
 
-Microsoft AppSource 및 Azure Marketplace 고객은 제품 내 환경을 사용하여 상점 목록 카탈로그를 검색합니다. 이 작업을 수행하려면 고객이 제품에 로그인해야 합니다. Azure AD 통합은 다음과 같은 이점을 제공합니다.
+Microsoft AppSource 및 Azure Marketplace 고객은 제품 내 환경을 사용 하 여 온라인 상점 목록 카탈로그를 검색 합니다. 이 작업을 수행하려면 고객이 제품에 로그인해야 합니다. Azure AD 통합은 다음과 같은 이점을 제공합니다.
 
 - 더 빠른 참여 및 최적화된 사용자 환경
 - 수백만 명의 엔터프라이즈 사용자를 위한 SSO(Single Sign-On)
@@ -33,12 +33,12 @@ Microsoft AppSource 및 Azure Marketplace 고객은 제품 내 환경을 사용�
 
 | 제품 유형    | 연락 하기 위해 Azure AD SSO가 필요 한가요?  | 평가판에 Azure AD SSO가 필요 한가요? | 테스트 드라이브에는 Azure AD SSO가 필요 한가요?  | Transact-sql에 필요한 Azure AD SSO |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-| Virtual Machine | 해당 없음 | 아니요 | 예 | 예 |
-| Azure 앱(솔루션 템플릿)  | N/A | 해당 없음 | 해당 없음 | 해당 없음 |
-| 관리되는 앱  | N/A | 해당 없음 | 해당 없음 | 예 |
+| Virtual Machine | 해당 없음 | 예 | 예 | 예 |
+| Azure 앱(솔루션 템플릿)  | 해당 없음 | 해당 없음 | 해당 없음 | 해당 없음 |
+| 관리되는 앱  | 해당 없음 | 해당 없음 | 해당 없음 | 예 |
 | SaaS  | 예 | 예 | 예 | 예 |
-| 컨테이너  | N/A | 해당 없음 | 해당 없음 | 예 |
-| 컨설팅 서비스  | 예 | N/A | 해당 없음 | 해당 없음 |
+| 컨테이너  | 해당 없음 | 해당 없음 | 해당 없음 | 예 |
+| 컨설팅 서비스  | 예 | 해당 없음 | 해당 없음 | 해당 없음 |
 
 SaaS 기술 요구 사항에 대 한 자세한 내용은 [상용 marketplace의 AZURE AD 및 불가능 SaaS 제품](./azure-ad-saas.md)을 참조 하세요.
 
@@ -56,8 +56,8 @@ SaaS 기술 요구 사항에 대 한 자세한 내용은 [상용 marketplace의 
 
 Azure AD를 사용하여 앱 또는 평가판에 대한 원클릭 인증이 가능해지면 다음을 수행할 수 있습니다.
 
-- 사용자 환경을 Marketplace에서 평가판으로 간단히 전환합니다.
-- 사용자가 Marketplace에서 도메인 또는 체험 환경으로 리디렉션되더라도 제품 내 환경을 사용한다는 느낌을 유지합니다.
+- 상용 marketplace에서 평가판 목록으로 사용자 환경을 간소화 합니다.
+- 사용자가 상업적 marketplace에서 도메인 또는 체험 환경으로 리디렉션되는 경우에도 제품 내 환경의 느낌을 유지 합니다.
 - 추가 로그인 단계가 없으므로 리디렉션 중에 중단될 가능성이 줄어듭니다.
 - 대규모 Azure AD 사용자에 대한 배포 장애물이 줄어듭니다.
 
@@ -67,12 +67,12 @@ Azure AD를 사용하여 앱 또는 평가판에 대한 원클릭 인증이 가�
 
 Azure AD를 사용하여 다음 작업을 지원합니다.
 
-- Marketplace 상점 중 하나에 앱을 등록합니다. 자세한 내용은 [앱 등록](../active-directory/develop/quickstart-register-app.md) 또는 [AppSource 인증](../active-directory/azuread-dev/howto-get-appsource-certified.md)을 참조하세요.
+- 상용 marketplace 온라인 상점 중 하나에 앱을 등록 합니다. 자세한 내용은 [앱 등록](../active-directory/develop/quickstart-register-app.md) 또는 [AppSource 인증](../active-directory/azuread-dev/howto-get-appsource-certified.md)을 참조하세요.
 - Azure AD의 다중 테넌트 지원 기능으로 원클릭 체험 환경을 사용할 수 있습니다.
 
 Azure AD 페더레이션 Single Sign-On을 처음 사용하는 경우 다음 단계를 완료하세요.
 
-1. Marketplace에서 앱을 등록합니다.
+1. 상용 marketplace에 앱을 등록 합니다.
 1. [OAuth 2.0](../active-directory/azuread-dev/v1-protocols-oauth-code.md) 또는 [OpenID Connect](../active-directory/azuread-dev/v1-protocols-openid-connect-code.md)를 사용하여 Azure AD를 통해 SSO를 개발합니다.
 1. Azure AD의 다중 테넌트 지원 기능으로 원클릭 체험 환경을 제공할 수 있습니다.
 
@@ -89,7 +89,7 @@ Azure AD를 사용하여 다음 작업 중 하나를 지원합니다.
 
 아직 수행하지 않았다면 
 
-- 마켓플레이스에 대해 [자세히 알아봅니다](https://azuremarketplace.microsoft.com/sell).
+- 상업적 marketplace에 [대해 알아보세요](https://azuremarketplace.microsoft.com/sell) .
 
 파트너 센터에 등록하거나 새 제품을 만들거나 기존 제품에 대해 작업하려면
 

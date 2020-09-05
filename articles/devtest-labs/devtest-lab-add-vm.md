@@ -1,14 +1,14 @@
 ---
 title: Azure DevTest Labs에서 랩에 VM 추가 | Microsoft Docs
-description: Azure DevTest Labs에서 랩에 가상 머신을 추가하는 방법 알아보기
+description: Azure Portal를 사용 하 여 Azure DevTest Labs에서 랩에 가상 머신을 추가 하는 방법에 대해 알아봅니다. 사용자 지정 이미지 또는 수식 중 하나를 선택할 수 있습니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a872fdaa3d7d5b2cf5aff17ea15d07604dc287b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c61e6e685a52ac3658cb9b9ca37f64fc51f3ce1e
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85483961"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270719"
 ---
 # <a name="add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩에 VM 추가
 [첫 번째 VM을 이미 만든 경우](tutorial-create-custom-lab.md#add-a-vm-to-the-lab) 미리 로드된 [Marketplace 이미지](devtest-lab-configure-marketplace-images.md)에서 만들었을 것입니다. 이제 이후의 VM을 랩에 추가하려면 [사용자 지정 이미지](devtest-lab-create-template.md) 또는 [수식](devtest-lab-manage-formulas.md)인 *기본*을 선택하면 됩니다. 이 자습서에서는 DevTest Labs에서 랩에 VM을 추가하기 위해 Azure Portal을 사용하는 방법을 설명합니다.

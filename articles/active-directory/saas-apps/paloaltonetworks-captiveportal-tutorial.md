@@ -2,26 +2,21 @@
 title: '자습서: Palo Alto Networks Captive Portal과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Palo Alto Networks Captive Portal 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 67a0b476-2305-4157-8658-2ec3625850d5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f926741bde3bdcc69cb4ea30f54daca79606047e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1dad0ecc80302ae6b48d420664723a3a03fc9ea5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160172"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554025"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>자습서: Palo Alto Networks Captive Portal과 Azure Active Directory 통합
 
@@ -159,7 +154,7 @@ Palo Alto Networks Captive Portal에서 Azure AD Single Sign-On을 구성하고 
 
     1. **이름**에 대해 **BrittaSimon**을 입력합니다.
   
-    2. **사용자 이름**에 대해 **BrittaSimon\@\<your_company_domain\>** 을 입력합니다. 예를 들어 **BrittaSimon\@contoso.com**입니다.
+    2. **사용자 이름**에 **BrittaSimon\@\<your_company_domain\>** 을 입력합니다. 예를 들어 **BrittaSimon\@contoso.com**입니다.
 
     3. **암호**에 대해 암호를 입력합니다. 입력한 암호의 기록을 유지하는 것이 좋습니다. **암호 표시** 확인란을 선택하여 암호를 표시할 수 있습니다.
 

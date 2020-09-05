@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: ae76fab6359675a87ad252a08ebb199bf724f129
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: fd297ec5cfb7831a438fc51e72e3c2fc163eff49
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439377"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271280"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>자습서: Azure Machine Learning을 IoT Edge 모듈로 배포(미리 보기)
 
@@ -49,7 +49,7 @@ Azure IoT Edge 디바이스:
 
 * Azure의 무료 또는 표준 계층 [IoT Hub](../iot-hub/iot-hub-create-through-portal.md).
 * Azure Machine Learning 작업 영역 [Azure Portal을 사용하여 Azure Machine Learning 시작](../machine-learning/tutorial-1st-experiment-sdk-setup.md)의 지침에 따라 작업 영역을 만들어서 사용하는 방법을 알아봅니다.
-  * 작업 영역 이름, 리소스 그룹 및 구독 ID를 적어둡니다. 이러한 값은 모두 Azure Portal의 작업 영역 개요에서 확인할 수 있습니다. 이 값은 자습서의 뒷부분에서 Azure Notebook을 작업 영역 리소스에 연결하는 데 사용됩니다.
+  * 작업 영역 이름, 리소스 그룹 및 구독 ID를 적어둡니다. 이러한 값은 모두 Azure Portal의 작업 영역 개요에서 확인할 수 있습니다. 이러한 값은 자습서의 뒷부분에서 Azure Notebooks 파일을 작업 영역 리소스에 연결하는 데 사용됩니다.
 
 ## <a name="create-and-deploy-azure-machine-learning-module"></a>Azure Machine Learning 모듈 만들기 및 배포
 

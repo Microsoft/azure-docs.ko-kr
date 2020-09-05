@@ -4,12 +4,12 @@ description: Azure Backup 서비스에 대한 지원 설정 및 제한 사항에
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.custom: references_regions
-ms.openlocfilehash: f2f3d26f74c6227ad257c188d4088fd41fca7075
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 9b0698b16d3432c1bfefd3cf909cdfdf5529200e
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922319"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892187"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Azure Backup Server의 지원 매트릭스
 
@@ -79,8 +79,8 @@ Linux 머신을 백업하려는 경우 지원되는 사항은 다음과 같습�
 --- | ---
 **Linux를 실행하는 온-프레미스 머신 직접 백업** | 지원되지 않습니다. MARS 에이전트는 Windows 머신에만 설치할 수 있습니다.
 **에이전트 확장을 사용하여 Linux를 실행하는 Azure VM 백업** | [사용자 지정 스크립트](backup-azure-linux-app-consistent.md)를 사용하는 앱 일치 백업입니다.<br/><br/> 파일 수준 복구입니다.<br/><br/> 복구 지점 또는 디스크에서 VM을 만들어 복원합니다.
-**DPM을 사용하여 Linux를 실행하는 온-프레미스 머신 백업** | Hyper-V 및 VMWare에서 일관성 있는 Linux 게스트 VM 파일 백업입니다.<br/><br/> Hyper-V 및 VMWare Linux 게스트 VM의 VM 복원입니다.
-**MABS를 사용하여 Linux를 실행하는 온-프레미스 머신 백업** | Hyper-V 및 VMWare에서 일관성 있는 Linux 게스트 VM 파일 백업입니다.<br/><br/> Hyper-V 및 VMWare Linux 게스트 VM의 VM 복원입니다.
+**DPM을 사용하여 Linux를 실행하는 온-프레미스 머신 백업** | Hyper-v 및 VMware에서 Linux 게스트 Vm의 파일 일치 백업<br/><br/> Hyper-v 및 VMware Linux 게스트 Vm의 VM 복원
+**MABS를 사용하여 Linux를 실행하는 온-프레미스 머신 백업** | Hyper-v 및 VMware에서 Linux 게스트 Vm의 파일 일치 백업<br/><br/> Hyper-v 및 VMware Linux 게스트 Vm의 VM 복원
 **MABS 또는 DPM을 사용하여 Linux Azure Vm 백업** | 지원되지 않습니다.
 
 ## <a name="daylight-saving-time-support"></a>일광 절약 시간 지원
@@ -135,7 +135,7 @@ Azure Backup은 전송 중 및 정지 상태의 데이터에 대한 암호화를
 
 **설정** | **제한**
 --- | ---
-**보호된 인스턴스(머신 또는 워크로드)당 최대 복구 지점 수** | 9,999
+**보호 된 인스턴스당 최대 복구 위치 (컴퓨터 또는 작업)** | 9,999
 **복구 지점에 대한 최대 만료 시간** | 제한 없음
 **DPM/MABS에 대한 최대 백업 빈도** | SQL Server에 대해 15분마다<br/><br/> 다른 워크로드의 경우 한 시간에 한 번
 **자격 증명 모음에 대한 최대 백업 빈도** | **MARS를 실행하는 온-프레미스 Windows 머신 또는 Azure VM:** 하루 세 번<br/><br/> **DPM/MABS:** 하루에 두 번<br/><br/> **Azure VM 백업:** 하루에 한 번
@@ -145,7 +145,7 @@ Azure Backup은 전송 중 및 정지 상태의 데이터에 대한 암호화를
 
 ## <a name="cross-region-restore"></a>지역 간 복원
 
-Azure Backup은 데이터 가용성 및 복원력 기능을 강화하도록 지역 간 복원 기능을 추가하여 고객에게 보조 지역으로 데이터를 복원할 수 있는 모든 권한을 제공합니다. 이 기능을 구성하려면 [지역 간 복원 설정 문서](backup-create-rs-vault.md#set-cross-region-restore)를 확인하세요. 이 기능은 다음과 같은 관리 형식에 대해 지원됩니다.
+Azure Backup는 데이터 가용성 및 복원 력 기능을 강화 하기 위해 지역 간 복원 기능을 추가 하 여 데이터를 보조 지역으로 복원할 수 있는 모든 권한을 제공 합니다. 이 기능을 구성하려면 [지역 간 복원 설정 문서](backup-create-rs-vault.md#set-cross-region-restore)를 확인하세요. 이 기능은 다음과 같은 관리 형식에 대해 지원됩니다.
 
 | 백업 관리 유형 | 지원됨                                                    | 지원되는 지역 |
 | ---------------------- | ------------------------------------------------------------ | ----------------- |

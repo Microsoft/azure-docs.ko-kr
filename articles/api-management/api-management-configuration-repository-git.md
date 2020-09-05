@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: 183a3561a7c01d8f0911a70846384cf8ebc7dd9c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: fb252ac0b4863138fb2a9c3008dc6475bc988e5f
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86254846"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723948"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Git을 사용하여 API Management 서비스 구성을 저장 및 구성하는 방법
 
@@ -82,7 +82,7 @@ REST API를 사용하여 이 작업을 수행하는 방법은 [REST API를 사�
 
 다음 예제에서는 [Windows용 Git](https://www.git-scm.com/downloads) 에서 Git Bash 도구를 사용하지만 현재 친숙한 아무 Git나 사용할 수 있습니다.
 
-원하는 폴더에서 Git 도구를 열고 Azure Portal에서 제공한 다음 명령을 실행하여 Git 리포지토리를 로컬 컴퓨터에 복제합니다.
+원하는 폴더에서 Git 도구를 열고 다음 명령을 실행 하 여 Azure Portal에서 제공 하는 명령을 사용 하 여 Git 리포지토리를 로컬 컴퓨터에 복제 합니다.
 
 ```
 git clone https://{name}.scm.azure-api.net/
@@ -146,7 +146,7 @@ REST API를 사용하여 이 작업을 수행하는 방법은 [REST API를 사�
 
 ## <a name="file-and-folder-structure-reference-of-local-git-repository"></a>로컬 Git 리포지토리의 파일 및 폴더 구조 참조
 
-로컬 Git 리포지토리의 파일 및 폴더에는 서비스 인스턴스에 관한 구성 정보가 포함되어 있습니다.
+로컬 Git 리포지토리의 파일 및 폴더에는 서비스 인스턴스에 대 한 구성 정보가 포함 되어 있습니다.
 
 | 항목 | Description |
 | --- | --- |

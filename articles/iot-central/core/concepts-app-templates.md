@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: b581242ad5a23072731fc7d30e09e461590ec1ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0cf343ccd89ac5b00740d8c559538a0f97ec7905
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85801328"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716574"
 ---
 # <a name="what-are-application-templates"></a>애플리케이션 템플릿이란?
 
@@ -47,6 +47,7 @@ Azure IoT Central은 업계와 무관 한 응용 프로그램 플랫폼입니다
   - 스토어 내 분석 - 조건 모니터링
   - 스토어 내 분석 - 체크 아웃
   - 스마트 재고 관리
+  - 비디오 분석 - 개체 및 동작 감지
 - [에너지](../energy/overview-iot-central-energy.md)
   - 스마트 측정기 모니터링
   - 태양 창 모니터링

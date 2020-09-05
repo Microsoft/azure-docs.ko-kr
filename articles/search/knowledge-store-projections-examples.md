@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: f030e382a5378c84df347c545e9426adee6eacb1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 18646fc92dda7cebb7a8c1030285956d8fe4df74
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85566007"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924166"
 ---
 # <a name="how-to-shape-and-export-enrichments"></a>강화 셰이프 및 내보내기 방법
 
@@ -206,7 +206,7 @@ Power BI와 같은 도구를 사용 하 여 보고 및 분석 하는 데 Azure S
 문서에서 추출 된 키 구를 word 클라우드로 시각화 하는 대시보드를 빌드 해 보겠습니다. 올바른 데이터 구조를 만들려면 Shaper 기술을 기술에 추가 하 여 문서 관련 세부 정보 및 키 구가 있는 사용자 지정 셰이프를 만듭니다. 사용자 지정 셰이프가 `pbiShape` `document` 루트 노드에서 호출 됩니다.
 
 > [!NOTE] 
-> 테이블 프로젝션은 Azure Storage에 의해 적용 되는 저장소 제한에 의해 관리 되는 Azure Storage 테이블입니다. 자세한 내용은 [테이블 저장소 제한](https://docs.microsoft.com/rest/api/storageservices/understanding-the-table-service-data-model)을 참조 하세요. 엔터티 크기는 1mb를 초과할 수 없으며 단일 속성이 64 KB 보다 클 수 없다는 것을 알고 있는 것이 유용 합니다. 이러한 제약 조건을 통해 테이블은 많은 수의 작은 엔터티를 저장 하는 데 적합 한 솔루션입니다.
+> 테이블 프로젝션은 Azure Storage에 의해 적용 되는 저장소 제한에 의해 관리 되는 Azure Storage 테이블입니다. 자세한 내용은 [테이블 저장소 제한](/rest/api/storageservices/understanding-the-table-service-data-model)을 참조 하세요. 엔터티 크기는 1mb를 초과할 수 없으며 단일 속성이 64 KB 보다 클 수 없다는 것을 알고 있는 것이 유용 합니다. 이러한 제약 조건을 통해 테이블은 많은 수의 작은 엔터티를 저장 하는 데 적합 한 솔루션입니다.
 
 ### <a name="using-a-shaper-skill-to-create-a-custom-shape"></a>Shaper 기술을 사용 하 여 사용자 지정 모양 만들기
 
@@ -677,4 +677,3 @@ Power BI은 이러한 생성 된 키를 사용 하 여 테이블 내에서 관�
 
 > [!div class="nextstepaction"]
 > [지식 저장소의 프로젝션](knowledge-store-projection-overview.md)
-

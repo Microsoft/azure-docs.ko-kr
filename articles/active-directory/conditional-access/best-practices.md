@@ -11,21 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60d72a98a22fa85e87eb8560ad968415ca70f9a5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b5536c3c427e5b6225d81d649722d8af48c23091
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87275431"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948456"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Azure Active Directory의 조건부 액세스에 대 한 모범 사례
 
-[Azure Active Directory (AZURE AD) 조건부 액세스](../active-directory-conditional-access-azure-portal.md)를 사용 하 여 권한 있는 사용자가 클라우드 앱에 액세스 하는 방법을 제어할 수 있습니다. 이 문서에서는 다음에 대한 정보를 제공합니다.
+[Azure Active Directory (AZURE AD) 조건부 액세스](./overview.md)를 사용 하 여 권한 있는 사용자가 클라우드 앱에 액세스 하는 방법을 제어할 수 있습니다. 이 문서에서는 다음에 대한 정보를 제공합니다.
 
 - 알아야 할 사항 
 - 조건부 액세스 정책을 구성할 때는이 작업을 수행 하지 않아야 합니다. 
 
-이 문서에서는 [Azure Active Directory의 조건부 액세스 란?](../active-directory-conditional-access-azure-portal.md) 에 설명 된 개념과 용어에 대해 잘 알고 있다고 가정 합니다.
+이 문서에서는 [Azure Active Directory의 조건부 액세스 란?](./overview.md) 에 설명 된 개념과 용어에 대해 잘 알고 있다고 가정 합니다.
 
 ## <a name="whats-required-to-make-a-policy-work"></a>정책을 작동 하려면 어떻게 해야 하나요?
 
@@ -57,7 +57,7 @@ ms.locfileid: "87275431"
    - 1 단계에서 수집한 세션 정보를 사용 하 여 충족 되지 않은 요구 사항을 확인 합니다. 
    - 액세스를 차단 하도록 구성 된 정책이 있는 경우 차단 권한 부여 컨트롤을 사용 하면 적용이 중지 되 고 사용자가 차단 됩니다. 
    - 그런 다음 정책을 만족할 때까지 다음 순서 대로 1 단계에서 충족 되지 않은 추가 권한 부여 컨트롤 요구 사항을 완료 하 라는 메시지가 표시 됩니다.  
-      - Multi-factor Authentication 
+      - Multi-Factor Authentication 
       - 승인 된 클라이언트 앱/앱 보호 정책 
       - 관리 되는 장치 (규격 또는 하이브리드 Azure AD 조인) 
       - 사용 약관 
@@ -154,5 +154,5 @@ Azure Portal에서 만들지 않은 정책을 마이그레이션하는 것을 �
 
 다음을 참조하세요.
 
-- 조건부 액세스 정책을 구성 하는 방법에 [대 한 자세한 내용은 Azure Active Directory 조건부 액세스를 사용 하 여 특정 앱에 대해 MFA 필요](app-based-mfa.md)를 참조 하세요.
+- 조건부 액세스 정책을 구성 하는 방법에 [대 한 자세한 내용은 Azure Active Directory 조건부 액세스를 사용 하 여 특정 앱에 대해 MFA 필요](../authentication/tutorial-enable-azure-mfa.md)를 참조 하세요.
 - 조건부 액세스 정책을 계획 하는 방법 [Azure Active Directory에서 조건부 액세스 배포를 계획 하는 방법](plan-conditional-access.md)을 참조 하세요.

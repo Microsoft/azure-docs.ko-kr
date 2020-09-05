@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
-ms.openlocfilehash: 4831a084153c28576cca7c40dfefeb8c5ff3c4e6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 299bbfa31584b260f85dfa7bafddea268084f876
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87036389"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235165"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>원격 데스크톱을 통해 Azure VM에 연결하려고 할 때 내부 오류 발생
 
@@ -41,7 +41,7 @@ RDP(원격 데스크톱 프로토콜)를 사용하여 Azure VM에 연결할 수 
 - TLS 프로토콜이 사용되지 않도록 설정되어 있습니다.
 - 인증서가 손상되었거나 만료되었습니다.
 
-## <a name="solution"></a>솔루션
+## <a name="solution"></a>해결 방법
 
 다음 단계를 수행하기 전에 영향을 받는 VM의 OS 디스크 스냅샷을 백업으로 만듭니다. 자세한 내용은 [디스크 스냅샷](../windows/snapshot-copy-managed-disk.md)을 참조하세요.
 
@@ -55,13 +55,13 @@ RDP(원격 데스크톱 프로토콜)를 사용하여 Azure VM에 연결할 수 
 
 #### <a name="step-1-check-the-rdp-port"></a>1단계: RDP 포트 확인
 
-1. PowerShell 인스턴스에서 [NETSTAT](/windows-server/administration/windows-commands/netstat)를 사용하여 포트 8080이 다른 애플리케이션에서 사용되는지 여부를 확인합니다.
+1. PowerShell 인스턴스에서 [NETSTAT](/windows-server/administration/windows-commands/netstat) 를 사용 하 여 다른 응용 프로그램에서 포트 3389을 사용 하는지 여부를 확인 합니다.
 
     ```powershell
     Netstat -anob |more
     ```
 
-2. Termservice.exe가 8080 포트를 사용하는 경우 2단계로 이동합니다. Termservice.exe 이외의 다른 서비스 또는 애플리케이션이 8080 포트를 사용하는 경우 다음 단계를 수행합니다.
+2. Termservice.exe에서 3389 포트를 사용 하는 경우 2 단계로 이동 합니다. Termservice.exe 이외의 다른 서비스나 응용 프로그램에서 3389 포트를 사용 하는 경우 다음 단계를 수행 합니다.
 
     1. 3389 서비스를 사용하는 애플리케이션에 대한 서비스를 중지합니다.
 

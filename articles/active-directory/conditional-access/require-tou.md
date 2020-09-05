@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34cc8154660db8afcd5859d45ccfd622bc7ca88f
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 53f99456449e778ff7c1fd3ab096e1afd3562c1e
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039826"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948864"
 ---
 # <a name="quickstart-require-terms-of-use-to-be-accepted-before-accessing-cloud-apps"></a>빠른 시작: 클라우드 앱에 액세스하기 전에 사용 약관에 동의하도록 요구
 
@@ -25,7 +25,7 @@ ms.locfileid: "86039826"
 - ToU를 구성하는 간단한 방법
 - 조건부 액세스 정책을 통해 사용 약관에 동의하도록 요구하는 옵션  
 
-이 빠른 시작에서는 사용자 환경에서 선택한 클라우드 앱에 대한 ToU에 동의하도록 요구하는 [Azure AD 조건부 액세스 정책](../active-directory-conditional-access-azure-portal.md)을 구성하는 방법을 보여 줍니다.
+이 빠른 시작에서는 사용자 환경에서 선택한 클라우드 앱에 대한 ToU에 동의하도록 요구하는 [Azure AD 조건부 액세스 정책](./overview.md)을 구성하는 방법을 보여 줍니다.
 
 ![정책 만들기](./media/require-tou/5555.png)
 
@@ -209,4 +209,4 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [특정 앱에 대해 MFA 요구](app-based-mfa.md)
+> [특정 앱에 대해 MFA 요구](../authentication/tutorial-enable-azure-mfa.md)

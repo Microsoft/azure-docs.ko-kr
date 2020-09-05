@@ -12,18 +12,18 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 02652243b3c25c0a02e325c8b7b1d7e7c226abcd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 461f05b90b79852194d657a5dcbc3ba7583cff8d
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87311945"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115189"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>빠른 시작: 인증 코드 흐름을 사용하여 사용자를 로그인하고 JavaScript SPA에서 액세스 토큰을 가져옵니다.
 
 이 빠른 시작에서는 인증 코드 흐름을 사용하여 JavaScript SPA(단일 페이지 애플리케이션)에서 개인 계정, 회사 및 학교 계정에 로그인하는 방법을 설명하는 코드 샘플을 실행합니다. 또한 이 코드 샘플은 웹 API(이 경우에는 Microsoft Graph API)를 호출하기 위해 액세스 토큰을 가져오는 방법을 보여줍니다. 자세한 내용은 [샘플 작동 방식](#how-the-sample-works)을 참조하세요.
 
-이 빠른 시작에서는 인증 코드 흐름과 함께 MSAL.js 2.0을 사용합니다. 암시적 흐름과 함께 MSAL.js 1.0을 사용하는 비슷한 빠른 시작은 [빠른 시작: JavaScript 단일 페이지 앱에서 사용자 로그인](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-javascript)을 참조하세요.
+이 빠른 시작에서는 인증 코드 흐름과 함께 MSAL.js 2.0을 사용합니다. 암시적 흐름과 함께 MSAL.js 1.0을 사용하는 비슷한 빠른 시작은 [빠른 시작: JavaScript 단일 페이지 앱에서 사용자 로그인](./quickstart-v2-javascript.md)을 참조하세요.
 
 [!INCLUDE [MSAL.js 2.0 and Azure AD B2C temporary incompatibility notice](../../../includes/msal-b2c-cors-compatibility-notice.md)]
 
@@ -152,7 +152,7 @@ ms.locfileid: "87311945"
 >
 > [!div renderon="docs"]
 >
-> `Enter_the_Graph_Endpoint_Here`는 API 호출이 수행될 엔드포인트입니다. 기본(글로벌) Microsoft Graph API 서비스의 경우 `https://graph.microsoft.com/`(후행 슬래시 포함)을 입력합니다. 국가별 클라우드의 Microsoft Graph에 대한 자세한 내용은 [국가별 클라우드 배포](https://docs.microsoft.com/graph/deployments)를 참조하세요.
+> `Enter_the_Graph_Endpoint_Here`는 API 호출이 수행될 엔드포인트입니다. 기본(글로벌) Microsoft Graph API 서비스의 경우 `https://graph.microsoft.com/`(후행 슬래시 포함)을 입력합니다. 국가별 클라우드의 Microsoft Graph에 대한 자세한 내용은 [국가별 클라우드 배포](/graph/deployments)를 참조하세요.
 >
 > 기본(글로벌) Microsoft Graph API 서비스를 사용 중이면 *graphConfig.js* 파일의 `graphMeEndpoint` 및 `graphMailEndpoint` 값이 다음과 비슷해야 합니다.
 >
@@ -202,4 +202,4 @@ npm install @azure/msal-browser
 이 빠른 시작에 사용되는 애플리케이션을 빌드하기 위한 더 자세한 단계별 가이드는 다음 자습서를 참조하세요.
 
 > [!div class="nextstepaction"]
-> [MS Graph에 로그인하고 호출하는 자습서 >](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-javascript-auth-code)
+> [MS Graph에 로그인하고 호출하는 자습서 >](./tutorial-v2-javascript-auth-code.md)

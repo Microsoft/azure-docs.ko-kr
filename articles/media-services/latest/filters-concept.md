@@ -3,7 +3,7 @@ title: Azure Media Services의 필터를 정의합니다.
 description: 이 항목에서는 클라이언트가 스트림의 특정 섹션을 스트리밍하는 데 사용할 수 있는 필터를 생성하는 방법을 설명합니다. 이 선택적 스트리밍은 Media Services가 동적 매니페스트를 생성하여 이루어집니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,22 +11,24 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 05/23/2019
-ms.author: juliako
-ms.openlocfilehash: 2e188a0e8ee8b5f2037c07c3f15fd78a42852ce9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 8cc3bc176798efda46f03c80fe9cce2edd7daf6b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023231"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262637"
 ---
 # <a name="filters"></a>필터
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 고객에 게 콘텐츠를 배달 하는 경우 (라이브 스트리밍 이벤트 또는 주문형 비디오) 클라이언트는 기본 자산의 매니페스트 파일에 설명 된 것 보다 더 많은 유연성이 필요할 수 있습니다. Azure Media Services는 미리 정의 된 필터를 기반으로 [동적 매니페스트](filters-dynamic-manifest-overview.md) 를 제공 합니다. 
 
 필터는 고객이 다음과 같은 작업을 수행할 수 있도록 하는 서버 쪽 규칙입니다. 
 
-- 전체 비디오를 재생하는 대신 비디오의 한 섹션만 재생합니다. 예를 들어:
+- 전체 비디오를 재생하는 대신 비디오의 한 섹션만 재생합니다. 예를 들면 다음과 같습니다.
   - 라이브 이벤트의 하위 클립을 표시하는 매니페스트를 줄입니다("하위 클립 필터링").
   - 비디오의 시작 부분을 자릅니다("비디오 트리밍").
 - 콘텐츠를 재생하는 데 사용되는 디바이스에서 지원하는 지정된 변환 및/또는 지정된 언어 트랙만 전달합니다(“변환 필터링”). 
@@ -78,9 +80,9 @@ Media Services를 사용 하 여 콘텐츠에 대 한 **계정 필터** 및 **�
 |**FourCC**|필터링을 위해 트랙의 FourCC 값을 사용합니다.<br/><br/>값은 [RFC 6381](https://tools.ietf.org/html/rfc6381)에 지정된 코덱 형식의 첫 번째 요소입니다. 현재 지원되는 코덱은 다음과 같습니다. <br/>비디오: “avc1”, “hev1”, “hvc1”<br/>오디오: “mp4a”, “ec-3”<br/><br/>자산의 트랙에 대한 FourCC 값을 확인하려면 매니페스트 파일 가져오기 및 검사를 참조하세요.|
 |**언어**|필터링을 위해 트랙의 언어를 사용합니다.<br/><br/>값은 RFC 5646에 지정된, 포함할 언어의 태그입니다. 예: "en".|
 |**이름**|필터링을 위해 트랙의 이름을 사용합니다.|
-|**형식**|필터링을 위해 트랙의 유형을 사용합니다.<br/><br/>허용되는 값은 “video”, “audio” 또는 “text”입니다.|
+|**유형**|필터링을 위해 트랙의 유형을 사용합니다.<br/><br/>허용되는 값은 “video”, “audio” 또는 “text”입니다.|
 
-### <a name="example"></a>예제
+### <a name="example"></a>예
 
 다음 예제에서는 라이브 스트리밍 필터를 정의 합니다. 
 

@@ -4,10 +4,10 @@ description: 이 Azure Policy 패턴은 정책 정의에서 값 연산자를 사
 ms.date: 06/29/2020
 ms.topic: sample
 ms.openlocfilehash: e246e3a5e2517fa80626081227070bcb2f967784
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "85565667"
 ---
 # <a name="azure-policy-pattern-the-value-operator"></a>Azure Policy 패턴: 값 연산자

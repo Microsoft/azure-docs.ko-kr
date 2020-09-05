@@ -3,23 +3,25 @@ title: Media Services v3 Azure CLI를 사용 하 여 사용자 지정 변환 인
 description: 이 항목에서는 Azure CLI를 사용 하 여 사용자 지정 변환을 인코딩하는 Azure Media Services v3을 사용 하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: devx-track-azurecli
-ms.date: 05/14/2019
-ms.author: juliako
-ms.openlocfilehash: 4ea328cc21d849367d36342ed1b0953a7eb26c77
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: f7b1f7a858c465629e075bcdb6d32bec29863f0a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503891"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267890"
 ---
 # <a name="how-to-encode-with-a-custom-transform---azure-cli"></a>사용자 지정 변환-Azure CLI를 사용 하 여 인코딩하는 방법
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services를 사용 하 여 인코딩하면 [스트리밍 파일](stream-files-cli-quickstart.md#create-a-transform-for-adaptive-bitrate-encoding) 퀵 스타트에 설명 된 대로 업계 모범 사례를 기반으로 권장 되는 기본 제공 사전 설정 중 하나를 사용 하 여 빠르게 시작할 수 있습니다. 특정 시나리오 또는 장치 요구 사항을 대상으로 하는 사용자 지정 사전 설정을 빌드할 수도 있습니다.
 

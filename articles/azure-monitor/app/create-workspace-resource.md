@@ -4,13 +4,13 @@ description: 새 Azure Monitor Application Insights 작업 영역 기반 리소�
 author: mrbullwinkle
 ms.author: mbullwin
 ms.topic: conceptual
-ms.date: 05/18/2020
-ms.openlocfilehash: 186d4c510b58e06fcb0b823ca0d5770a2684196e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/24/2020
+ms.openlocfilehash: d6d6731ae087604e0a53a6721bb76dfba5fbf40c
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824990"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783844"
 ---
 # <a name="workspace-based-application-insights-resources-preview"></a>작업 영역 기반 Application Insights 리소스(미리 보기)
 
@@ -27,7 +27,7 @@ ms.locfileid: "87824990"
 
 기존 Log Analytics 작업 영역이 아직 없는 경우 [Log Analytics 작업 영역 만들기 설명서를 참조하세요](../learn/quick-create-workspace.md).
 
-공개 미리 보기 **작업 영역 기반 리소스는 현재 미국 서부 2, 미국 동부 및 미국 중남부로 제한됩니다.**
+**작업 영역 기반 리소스는 현재 모든 상용 지역 및 Azure Government에서 사용할 수 있습니다.**
 
 리소스가 만들어지면 **개요** 창에 해당 작업 영역 정보가 표시됩니다.
 
@@ -184,6 +184,14 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 }
 
 ```
+
+## <a name="new-capabilities"></a>새로운 기능
+
+작업 영역 기반 Application Insights를 사용 하면 다음을 비롯 한 Azure Monitor의 모든 최신 기능을 활용할 수 있습니다.
+
+* [CMK (고객 관리 키](../platform/customer-managed-keys.md) )는 사용자만 액세스할 수 있는 암호화 키를 사용 하 여 미사용 데이터 암호화를 제공 합니다.
+* [Azure Private Link](../platform/private-link-security.md)를 사용하면 프라이빗 엔드포인트를 사용하여 Azure PaaS 서비스를 가상 네트워크에 안전하게 연결할 수 있습니다.
+* [Profiler 및 스냅숏 디버거에 대 한 사용자 고유의 저장소 (BYOS)](./profiler-bring-your-own-storage.md) 를 사용 하면 Application Insights Profiler 및 스냅숏 디버거와 연결 된 모든 데이터에 대 한 전체 암호화 정책, 수명 관리 정책 및 네트워크 액세스를 완벽 하 게 제어할 수 있습니다. 
 
 ## <a name="modifying-the-associated-workspace"></a>연결된 작업 영역 수정
 

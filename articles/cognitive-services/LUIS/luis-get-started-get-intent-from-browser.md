@@ -3,12 +3,12 @@ title: '빠른 시작: 브라우저를 사용한 예측 쿼리 - LUIS'
 description: 이 빠른 시작에서는 사용 가능한 공용 LUIS 앱을 통해 브라우저의 대화형 텍스트에서 사용자의 의도를 판단합니다.
 ms.topic: quickstart
 ms.date: 04/21/2020
-ms.openlocfilehash: 5ba86882ebf3cb538ad6b865382342fcbd43d27c
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: 24c7a8aca410ad10b8a9299c4bca2f13d0feb780
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81769978"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245998"
 ---
 # <a name="quickstart-query-prediction-runtime-with-user-text"></a>빠른 시작: 사용자 텍스트로 예측 런타임 쿼리
 
@@ -19,7 +19,7 @@ LUIS 예측 엔드포인트가 반환하는 값을 이해하려면 웹 브라우
 공용 앱을 쿼리하려면 다음이 필요합니다.
 
 * LUIS(Language Understanding) 리소스 정보:
-    * **예측 키** - [LUIS Portal](https://www.luis.ai/)에서 가져올 수 있습니다. 아직 키를 만들 구독이 없는 경우 [체험 계정](https://azure.microsoft.com/free/)으로 등록할 수 있습니다.
+    * **예측 키** - [LUIS Portal](https://www.luis.ai/)에서 가져올 수 있습니다. 아직 키를 만들 구독이 없는 경우 [체험 계정](https://azure.microsoft.com/free/cognitive-services)으로 등록할 수 있습니다.
     * **예측 엔드 포인트 하위 도메인** - 하위 도메인은 LUIS 리소스의 **이름**이기도 합니다.
 * LUIS 앱 ID - `df67dcdb-c37d-46af-88e1-8b97951ca1c2`의 공용 IoT 앱 ID를 사용합니다. 빠른 시작 코드에 사용되는 사용자 쿼리는 해당 앱에만 적용됩니다.
 

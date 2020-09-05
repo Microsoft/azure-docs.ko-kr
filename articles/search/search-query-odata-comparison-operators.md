@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 572b653a49833ae06ee57b1718000e8555239de7
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: fc5803f96c30ea1df362676aa8c4104bb0b69db3
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146026"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934874"
 ---
-# <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Azure Cognitive Search의 OData 비교 연산자- `eq` , `ne` ,,, `gt` `lt` `ge` 및`le`
+# <a name="odata-comparison-operators-in-azure-cognitive-search---eq-ne-gt-lt-ge-and-le"></a>Azure Cognitive Search의 OData 비교 연산자- `eq` , `ne` ,,, `gt` `lt` `ge` 및 `le`
 
 Azure Cognitive Search의 [OData 필터 식](query-odata-filter-orderby-syntax.md) 에서 가장 기본적인 작업은 필드를 지정 된 값과 비교 하는 것입니다. 비교에는 같음 비교 및 범위 비교가 있습니다. 다음 연산자를 사용 하 여 필드를 상수 값과 비교할 수 있습니다.
 
@@ -100,7 +100,7 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
 비교 연산자를 사용 하는 경우 Azure Cognitive Search의 컬렉션이 아닌 모든 필드가 잠재적으로 될 수 있다는 점을 기억해 야 `null` 합니다. 다음 표에서는 둘 중 하나가 될 수 있는 비교 식의 가능한 모든 결과를 보여 줍니다 `null` .
 
-| 연산자 | 필드 또는 변수만 인 경우의 결과`null` | 상수가 인 경우의 결과`null` | 필드 또는 변수와 상수가 모두 인 경우의 결과`null` |
+| 연산자 | 필드 또는 변수만 인 경우의 결과 `null` | 상수가 인 경우의 결과 `null` | 필드 또는 변수와 상수가 모두 인 경우의 결과 `null` |
 | --- | --- | --- | --- |
 | `gt` | `false` | HTTP 400: 잘못 된 요청 오류 | HTTP 400: 잘못 된 요청 오류 |
 | `lt` | `false` | HTTP 400: 잘못 된 요청 오류 | HTTP 400: 잘못 된 요청 오류 |
@@ -113,7 +113,7 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
 인덱스에 형식의 필드가 `Edm.Double` 있고 이러한 필드에 값을 업로드 하는 경우 `NaN` 필터를 작성할 때이를 고려해 야 합니다. Azure Cognitive Search는 값을 처리 하기 위해 IEEE 754 표준을 구현 `NaN` 하 고, 이러한 값을 사용한 비교는 다음 표에 나와 있는 것 처럼 명확 하지 않은 결과를 생성 합니다.
 
-| 연산자 | 하나 이상의 피연산자가 인 경우의 결과`NaN` |
+| 연산자 | 하나 이상의 피연산자가 인 경우의 결과 `NaN` |
 | --- | --- |
 | `gt` | `false` |
 | `lt` | `false` |
@@ -132,7 +132,7 @@ comparison_operator ::= 'gt' | 'lt' | 'ge' | 'le' | 'eq' | 'ne'
 
 및 연산자를 사용 하 여 정확 하 게 일치 하는 필터에서 문자열을 비교할 수 있습니다 `eq` `ne` . 이러한 비교는 대/소문자를 구분 합니다.
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 `Rating`필드가 3에서 5 사이인 문서를 찾습니다 (포함).
 
@@ -169,4 +169,4 @@ Rooms/any(room: room/Type eq 'Deluxe Room')
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

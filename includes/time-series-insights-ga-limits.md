@@ -1,5 +1,5 @@
 ---
-title: 파일 포함
+title: 포함 파일
 description: 포함 파일
 services: digital-twins
 ms.service: digital-twins
@@ -9,12 +9,12 @@ author: deepakpalled
 ms.author: dpalled
 manager: diviso
 ms.custom: include file
-ms.openlocfilehash: 1e07f56bc2e820b325414e124c7825c1d356ca26
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1aff5780aa5f4cf21d862a5cee3b140179dac03c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046403"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88703990"
 ---
 다음은 Azure Time Series Insights Gen1의 키 제한을 요약 한 것입니다.
 
@@ -60,4 +60,4 @@ Gen1 속성 제한은 선택 된 SKU 환경에 따라 달라 집니다. 제공 �
 
 ### <a name="api-limits"></a>API 제한
 
-Azure Time Series Insights Gen1에 대 한 REST API 제한은 [REST API 참조 설명서](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#limits)에 지정 되어 있습니다.
+Azure Time Series Insights Gen1에 대 한 REST API 제한은 [REST API 참조 설명서](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability)에 지정 되어 있습니다.

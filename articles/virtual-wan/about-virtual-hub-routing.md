@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 3d680fb105b6bde26e5b02544359009f316647bb
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: f29a7e48fc1872f83b5a6ce127f38c1a559b2691
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513726"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762320"
 ---
 # <a name="about-virtual-hub-routing"></a>가상 허브 라우팅 정보
 
@@ -25,10 +25,6 @@ ms.locfileid: "87513726"
 ## <a name="routing-concepts"></a><a name="concepts"></a>라우팅 개념
 
 다음 섹션에서는 가상 허브 라우팅의 주요 개념에 대해 설명 합니다.
-
-> [!NOTE]
-> 가상 네트워크 연결의 허브 경로 테이블, 연결, 전파 및 고정 경로에 대 한 이러한 새로운 개념 중 일부는 여전히 롤아웃 될 수 있으며 8 월 17 일 주에 완료 될 것으로 예상 됩니다.
->
 
 ### <a name="hub-route-table"></a><a name="hub-route"></a>허브 경로 테이블
 
@@ -77,9 +73,9 @@ ms.locfileid: "87513726"
 
 * **가상 허브의 기존 경로를 사용 하는 표준 가상 WAN 고객**:
 
-새 경로 테이블 기능을 사용 하려면 Azure에서 롤아웃이 완료 될 때까지 8 월의 17 일 될 때까지 기다려 주세요. Azure Portal에서 허브에 대 한 라우팅 섹션에 기존 경로를 설치한 경우 먼저 해당 경로를 삭제 한 다음 새 경로 테이블을 만들어야 합니다 (Azure Portal의 허브에 대 한 경로 테이블 섹션에서 사용 가능).
+Azure Portal에서 허브에 대 한 라우팅 섹션에 기존 경로를 설치한 경우 먼저 해당 경로를 삭제 한 다음 새 경로 테이블을 만들어야 합니다 (Azure Portal의 허브에 대 한 경로 테이블 섹션에서 사용 가능).
 
-* **가상 허브의 기존 경로를 사용 하는 기본 가상 WAN 고객**: 새 경로 테이블 기능을 사용 하려면 Azure에서 롤아웃이 완료 될 때까지 17 일 될 때까지 기다려 주세요. Azure Portal의 허브에 대한 라우팅 섹션에 기존 경로가 있는 경우 먼저 해당 경로를 삭제한 다음, 기본 Virtual WAN을 표준 Virtual WAN으로 **업그레이드**합니다. [가상 WAN을 기본에서 표준으로 업그레이드](upgrade-virtual-wan.md)를 참조하세요.
+* **가상 허브의 기존 경로를 사용 하는 기본 가상 WAN 고객**: Azure Portal에서 허브에 대 한 라우팅 섹션에 기존 경로를 사용 하는 경우 먼저 해당 경로를 삭제 한 다음 기본 가상 Wan을 표준 가상 wan으로 **업그레이드** 해야 합니다. [가상 WAN을 기본에서 표준으로 업그레이드](upgrade-virtual-wan.md)를 참조하세요.
 
 ## <a name="virtual-wan-routing-considerations"></a><a name="considerations"></a>가상 WAN 라우팅 고려 사항
 
@@ -89,6 +85,8 @@ ms.locfileid: "87513726"
 * 모든 분기 연결에서 경로를 동일한 경로 테이블 집합에 전파 해야 합니다. 예를 들어 분기가 기본 경로 테이블에 전파 되도록 결정 한 경우이 구성은 모든 분기에서 일치 해야 합니다. 따라서 기본 경로 테이블에 연결 된 모든 연결에서 모든 분기에 연결할 수 있습니다.
 * Azure 방화벽을 통한 분기 간 분기는 현재 지원 되지 않습니다.
 * 여러 지역에서 Azure 방화벽을 사용 하는 경우 모든 스포크 가상 네트워크를 동일한 경로 테이블에 연결 해야 합니다. 예를 들어 Vnet 하위 집합이 Azure 방화벽을 통과 하는 반면, 다른 Vnet는 동일한 가상 허브에서 Azure 방화벽을 우회 하는 것은 불가능 합니다.
+* VNet 연결당 하나의 다음 홉 IP를 구성할 수 있습니다.
+* 가상 허브는 0.0.0.0/0 및 다음 홉 Virtual Network 연결 (또는 VNet 연결의 어플라이언스 IP)에 대 한 고정 경로를 지원 하지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

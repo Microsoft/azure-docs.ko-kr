@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: f3422fd10e062ae87bc165491e0d01ac2b4943d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 83e9ae4aa68bc0c819d02a0cc6c39758549811cb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72793227"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928856"
 ---
 # <a name="odata-expression-syntax-reference-for-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 OData 식 구문 참조
 
@@ -214,9 +214,9 @@ Azure Cognitive Search에서 지 원하는 OData 언어 문법을 시각적으�
 > [!div class="nextstepaction"]
 > [Azure Cognitive Search에 대 한 OData 구문 다이어그램](https://azuresearch.github.io/odata-syntax-diagram/)
 
-## <a name="see-also"></a>참고 항목  
+## <a name="see-also"></a>참조  
 
 - [Azure Cognitive Search의 필터](search-filters.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)
 - [Lucene 쿼리 구문](query-lucene-syntax.md)
 - [Azure Cognitive Search의 단순 쿼리 구문](query-simple-syntax.md)

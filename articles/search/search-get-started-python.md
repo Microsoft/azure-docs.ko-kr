@@ -8,26 +8,26 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.devlang: rest-api
-ms.date: 04/01/2020
+ms.date: 08/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 8e8f10b07d47f7aebd8482b8dae995bd50050162
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: e4141bc4887a166876d1fc4590b73f382abd0b95
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852211"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936676"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>빠른 시작: Jupyter Notebook을 사용하여 Python에서 Azure Cognitive Search 인덱스 만들기
 
 > [!div class="op_single_selector"]
 > * [Python(REST)](search-get-started-python.md)
-> * [PowerShell(REST)](search-create-index-rest-api.md)
-> * [C#](search-create-index-dotnet.md)
+> * [PowerShell(REST)](./search-get-started-powershell.md)
+> * [C#](./search-get-started-dotnet.md)
 > * [Postman(REST)](search-get-started-postman.md)
 > * [포털](search-get-started-portal.md)
 > 
 
-Python 및 [Azure Cognitive Search REST API](https://docs.microsoft.com/rest/api/searchservice/)를 사용하여 Azure Cognitive Search 인덱스를 만들고, 로드하고, 쿼리하는 Jupyter Notebook을 빌드합니다. 이 문서에서는 Notebook을 단계별로 빌드하는 방법에 대해 설명합니다. 또는 [완성된 Jupyter Python Notebook을 다운로드하여 실행](https://github.com/Azure-Samples/azure-search-python-samples)할 수 있습니다.
+Python 및 [Azure Cognitive Search REST API](/rest/api/searchservice/)를 사용하여 Azure Cognitive Search 인덱스를 만들고, 로드하고, 쿼리하는 Jupyter Notebook을 빌드합니다. 이 문서에서는 Notebook을 단계별로 빌드하는 방법에 대해 설명합니다. 또는 [완성된 Jupyter Python Notebook을 다운로드하여 실행](https://github.com/Azure-Samples/azure-search-python-samples)할 수 있습니다.
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
@@ -93,7 +93,7 @@ REST를 호출하려면 모든 요청에 대한 액세스 키와 서비스 URL�
 
 ## <a name="1---create-an-index"></a>1 - 인덱스 만들기
 
-포털을 사용하지 않는 경우 데이터를 로드하려면 먼저 서비스에 인덱스가 있어야 합니다. 이 단계에서는 [인덱스 만들기 REST API](https://docs.microsoft.com/rest/api/searchservice/create-index)를 사용하여 인덱스 스키마를 서비스로 푸시합니다.
+포털을 사용하지 않는 경우 데이터를 로드하려면 먼저 서비스에 인덱스가 있어야 합니다. 이 단계에서는 [인덱스 만들기 REST API](/rest/api/searchservice/create-index)를 사용하여 인덱스 스키마를 서비스로 푸시합니다.
 
 인덱스의 필수 요소에는 name, fields 컬렉션 및 key가 포함됩니다. fields 컬렉션은 *문서*의 구조를 정의합니다. 각 필드에는 필드가 사용되는 방법(예: 검색 결과에서 전체 텍스트 검색 가능, 필터링 가능 또는 조회 가능 여부)을 결정하는 이름, 형식 및 속성이 있습니다. 인덱스 내에서 `Edm.String` 형식의 필드 중 하나는 문서 ID에 대한 *key*로 지정해야 합니다.
 
@@ -149,7 +149,7 @@ REST를 호출하려면 모든 요청에 대한 액세스 키와 서비스 URL�
 
 ## <a name="2---load-documents"></a>2 - 문서 로드
 
-문서를 푸시하려면 인덱스의 URL 엔드포인트에 대한 HTTP POST 요청을 사용합니다. REST API는 [문서 추가, 업데이트 또는 삭제](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents)입니다. 문서는 GitHub의 [HotelsData](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/HotelsData_toAzureSearch.JSON)에서 시작됩니다.
+문서를 푸시하려면 인덱스의 URL 엔드포인트에 대한 HTTP POST 요청을 사용합니다. REST API는 [문서 추가, 업데이트 또는 삭제](/rest/api/searchservice/addupdate-or-delete-documents)입니다. 문서는 GitHub의 [HotelsData](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/HotelsData_toAzureSearch.JSON)에서 시작됩니다.
 
 1. 새 셀에서 인덱스 스키마를 준수하는 4개의 문서를 제공합니다. 각 문서에 대한 업로드 작업을 지정합니다.
 
@@ -251,7 +251,7 @@ REST를 호출하려면 모든 요청에 대한 액세스 키와 서비스 URL�
 
 ## <a name="3---search-an-index"></a>3 - 인덱스 검색
 
-이 단계에서는 [문서 검색 REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)를 사용하여 인덱스를 쿼리하는 방법을 보여 줍니다.
+이 단계에서는 [문서 검색 REST API](/rest/api/searchservice/search-documents)를 사용하여 인덱스를 쿼리하는 방법을 보여 줍니다.
 
 1. 셀에서 빈 검색(search=*)을 실행하는 쿼리 식을 제공하여 임의 문서의 순위 없는 목록(검색 점수 = 1.0)을 반환합니다. 기본적으로 Azure Cognitive Search는 한 번에 50개의 일치 항목을 반환합니다. 구조적으로 이 쿼리는 전체 문서 구조와 값을 반환합니다. $count=true를 추가하여 결과에 있는 모든 문서의 수를 가져옵니다.
 

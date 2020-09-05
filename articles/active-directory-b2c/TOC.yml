@@ -81,6 +81,8 @@
       href: user-profile-attributes.md
     - name: SSO 세션
       href: session-overview.md
+    - name: ID 보호 및 조건부 액세스
+      href: conditional-access-identity-protection-overview.md
 - name: 방법 가이드
   items:
     - name: 앱 통합
@@ -111,6 +113,8 @@
               href: configure-ropc.md
             - name: 셀프 서비스 암호 재설정 설정
               href: user-flow-self-service-password-reset.md
+        - name: 조건부 액세스 추가
+          href: conditional-access-user-flow.md
         - name: UX 사용자 지정
           items:
             - name: UI 사용자 지정
@@ -121,7 +125,7 @@
               href: user-flow-language-customization.md
             - name: 암호 복잡성
               href: user-flow-password-complexity.md
-            - name: 메일 검증을 사용하지 않도록 설정
+            - name: 메일 확인을 사용하지 않도록 설정
               href: user-flow-disable-email-verification.md
             - name: MFA 사용
               href: custom-policy-multi-factor-authentication.md
@@ -164,6 +168,8 @@
           href: user-flow-custom-attributes.md
         - name: 외부 IdP 토큰 통과
           href: idp-pass-through-user-flow.md
+    - name: ID 보호 및 조건부 액세스
+      href: conditional-access-identity-protection-setup.md
     - name: 사용자 지정 정책
       items:
         - name: 정책 만들기
@@ -333,6 +339,9 @@
                       href: aad-sspr-technical-profile.md
                     - name: 클레임 변환
                       href: claims-transformation-technical-profile.md
+                    - name: 조건부 액세스 기술 프로필
+                      href: conditional-access-technical-profile.md
+                      displayName: ca
                     - name: JWT 토큰 발급자
                       href: jwt-issuer-technical-profile.md
                     - name: OAuth1
@@ -371,12 +380,16 @@
           href: partner-arkose-labs.md
         - name: Experian
           href: partner-experian.md
+        - name: HYPR
+          href: partner-hypr.md
         - name: IDology
           href: partner-idology.md
         - name: itsme
           href: partner-itsme.md
         - name: LexisNexis
           href: partner-lexisnexis.md
+        - name: Jumio
+          href: partner-jumio.md
         - name: Onfido
           href: partner-onfido.md
         - name: Trusona
@@ -385,6 +398,8 @@
           href: partner-twilio.md
         - name: TypingDNA
           href: partner-typingdna.md
+        - name: WhoIAM
+          href: partner-whoiam.md
     - name: b2clogin.com 사용
       items:
         - name: b2clogin.com 개요

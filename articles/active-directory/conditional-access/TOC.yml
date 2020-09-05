@@ -33,8 +33,6 @@
           href: concept-conditional-access-grant.md
         - name: 세션
           href: concept-conditional-access-session.md
-    - name: 인사이트 및 보고
-      href: howto-conditional-access-insights-reporting.md
     - name: 보고서 전용 모드
       href: concept-conditional-access-report-only.md
     - name: 서비스 종속성
@@ -43,6 +41,8 @@
       href: location-condition.md
     - name: What if 도구
       href: what-if-tool.md
+    - name: 지속적인 액세스 평가
+      href: concept-continuous-access-evaluation.md
     - name: 사용자 지정 컨트롤
       href: controls.md
     - name: 클래식 정책 마이그레이션
@@ -78,6 +78,8 @@
           href: howto-conditional-access-policy-block-access.md
     - name: 레거시 인증 차단
       href: block-legacy-authentication.md
+    - name: 보고서 전용 모드 구성
+      href: howto-conditional-access-insights-reporting.md
     - name: 승인된 클라이언트 앱 필요
       href: app-based-conditional-access.md
     - name: 앱 보호 정책 필요
@@ -88,12 +90,8 @@
       href: untrusted-networks.md
     - name: 사용 약관 필요
       href: terms-of-use.md
-    - name: 보고서 전용 모드 구성
-      href: howto-conditional-access-report-only.md
     - name: 로그인 빈도 및 브라우저 지속성 컨트롤
       href: howto-conditional-access-session-lifetime.md
-    - name: 클래식 정책 마이그레이션
-      href: policy-migration-mfa.md
     - name: 문제 해결
       items:
         - name: 로그인 문제 해결
@@ -102,6 +100,8 @@
           href: troubleshoot-conditional-access-what-if.md
         - name: FAQ
           href: faqs.md
+    - name: 클래식 정책 마이그레이션
+      href: policy-migration-mfa.md
 - name: 참조
   items:
     - name: 베타 Graph API
@@ -119,7 +119,7 @@
     - name: Azure 피드백 포럼
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Microsoft Q&A 질문 페이지
-      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
+      href: /answers/topics/azure-active-directory.html
     - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: 서비스 업데이트

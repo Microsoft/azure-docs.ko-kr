@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/03/2019
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: a8f712604ae854a1870fe96112db3ae0f2ed60a8
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 307a97b71fe453c89617a86a88063e60fcf28fa3
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203007"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235063"
 ---
 # <a name="check-the-status-of-user-provisioning"></a>사용자 프로 비전 상태를 확인 합니다.
 
@@ -30,7 +30,7 @@ Azure AD 프로 비전 서비스는 원본 시스템 및 대상 시스템에 대
 - 현재 실행 중이거나 마지막으로 완료 된 프로 비전 주기 (초기 또는 증분)의 유형입니다.
 - 완료 된 프로 비전 주기의 비율을 보여 주는 **진행률 표시줄** 입니다. 비율은 프로 비전 된 페이지 수를 나타냅니다. 각 페이지에는 여러 사용자 또는 그룹이 포함 될 수 있으므로이 비율은 프로 비전 된 사용자, 그룹 또는 역할의 수와 직접적으로 연관 되지 않습니다.
 - 보기를 업데이트 된 상태로 유지 하는 데 사용할 수 있는 **새로 고침** 단추입니다.
-- 커넥터 데이터 저장소에 있는 **사용자** 및 **그룹** 의 수입니다. 프로 비전 범위에 개체가 추가 될 때마다 수가 늘어납니다. 사용자가 일시 삭제 되었거나 하드 삭제 된 경우에는 커넥터 데이터 저장소에서 개체가 제거 되지 않으므로 개수가 중단 되지 않습니다. 이 수는 CD가 [다시 설정](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http) 된 후 첫 번째 동기화가 다시 계산 됩니다. 
+- 커넥터 데이터 저장소에 있는 **사용자** 및 **그룹** 의 수입니다. 프로 비전 범위에 개체가 추가 될 때마다 수가 늘어납니다. 사용자가 일시 삭제 되었거나 하드 삭제 된 경우에는 커넥터 데이터 저장소에서 개체가 제거 되지 않으므로 개수가 중단 되지 않습니다. 이 수는 CD가 [다시 설정](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta) 된 후 첫 번째 동기화가 다시 계산 됩니다. 
 - 개별 사용자에 대 한 [프로 비전 상태](#use-provisioning-logs-to-check-a-users-provisioning-status) 를 포함 하 여 사용자 프로 비전 서비스에서 실행 하는 모든 작업에 대 한 자세한 내용은 Azure AD 프로 비전 로그를 여는 **감사 로그 보기** 링크를 참조 하세요.
 
 프로 비전 주기가 완료 된 후 **날짜 통계** 섹션에는 마지막 주기의 완료 날짜 및 기간과 함께 날짜에 프로 비전 된 사용자 및 그룹의 누적 수가 표시 됩니다. **활동 ID** 는 가장 최근의 프로 비전 주기를 고유 하 게 식별 합니다. **작업 ID** 는 프로 비전 작업의 고유 식별자 이며, 테 넌 트의 앱에만 적용 됩니다.
@@ -99,4 +99,4 @@ Azure Portal에서 프로 비전 로그를 읽는 방법에 대 한 자세한 �
 - 성능이 문제가 되 고 테 넌 트에서 대부분의 사용자 및 그룹을 프로 비전 하려는 경우 범위 지정 필터를 사용 합니다. 범위 지정 필터를 사용하면 특정 특성 값에 따라 사용자를 필터링하여 프로비저닝 서비스가 Azure AD에서 추출하는 데이터를 미세 조정할 수 있습니다. 범위 지정 필터에 대한 자세한 내용은 [범위 지정 필터를 사용한 특성 기반 애플리케이션 프로비전](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
-[Azure Active Directory를 사용 하 여 SaaS 응용 프로그램에 대 한 사용자 프로 비전 및 프로 비전 해제 자동화](user-provisioning.md)
+[Azure Active Directory를 사용하여 SaaS 애플리케이션의 사용자를 자동으로 프로비전 및 프로비전 해제](user-provisioning.md)

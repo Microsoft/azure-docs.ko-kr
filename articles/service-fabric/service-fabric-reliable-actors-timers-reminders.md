@@ -3,12 +3,13 @@ title: Reliable Actors 타이머 및 미리 알림
 description: 각각의 사용 시기에 대 한 지침을 포함 하 여 Service Fabric Reliable Actors에 대 한 타이머 및 미리 알림을 소개 합니다.
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.openlocfilehash: a464fda3f8b0f293efd36cf0a064156bd7795d44
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 2b97b15ca4eb287f8d8f2c1af932f22acafae546
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245951"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89016549"
 ---
 # <a name="actor-timers-and-reminders"></a>행위자 타이머 및 미리 알림
 행위자는 타이머 또는 미리 알림을 등록하여 정기적인 작업을 예약할 수 있습니다. 이 문서에서는 타이머와 미리 알림을 사용하는 방법을 보여 주고 둘 간의 차이점을 설명합니다.

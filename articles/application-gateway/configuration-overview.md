@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 07/30/2020
 ms.author: absha
-ms.openlocfilehash: 9315884db30c053d86c889ff3b45aaea17d48b17
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: 32809c33e1c365d8d333bb89a5c2f773b311c2ff
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438911"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511085"
 ---
 # <a name="application-gateway-configuration-overview"></a>Application Gateway 구성 개요
 
@@ -25,7 +25,7 @@ Azure 애플리케이션 게이트웨이는 다양 한 시나리오에 대해 �
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 ### <a name="azure-virtual-network-and-dedicated-subnet"></a>Azure 가상 네트워크 및 전용 서브넷
 
@@ -38,11 +38,13 @@ Application gateway는 가상 네트워크의 전용 배포입니다. 가상 네
 
 Application Gateway은 인스턴스당 하나의 개인 IP 주소를 사용 하 고 개인 프런트 엔드 IP가 구성 된 경우 다른 개인 IP 주소를 사용 합니다.
 
-또한 Azure는 내부적으로 사용 하기 위해 각 서브넷에 5 개의 IP 주소를 예약 합니다. 처음 네 개의 ip 주소는 마지막 IP 주소입니다. 예를 들어 개인 프런트 엔드 IP가 없는 15 개의 응용 프로그램 게이트웨이 인스턴스를 생각해 보세요. 이 서브넷에 대 한 IP 주소는 20 개 이상 필요 합니다. 내부 사용은 5이 고 응용 프로그램 게이트웨이 인스턴스의 경우 15입니다. 따라서/27 서브넷 크기 이상이 필요 합니다.
+또한 Azure는 내부적으로 사용 하기 위해 각 서브넷에 5 개의 IP 주소를 예약 합니다. 처음 네 개의 ip 주소는 마지막 IP 주소입니다. 예를 들어 개인 프런트 엔드 IP가 없는 15 개의 응용 프로그램 게이트웨이 인스턴스를 생각해 보세요. 이 서브넷에 대 한 IP 주소는 20 개 이상 필요 합니다. 내부 사용은 5이 고 응용 프로그램 게이트웨이 인스턴스의 경우 15입니다.
 
-27 개의 응용 프로그램 게이트웨이 인스턴스와 개인 프런트 엔드 IP의 IP 주소가 있는 서브넷을 고려 합니다. 이 경우에는 응용 프로그램 게이트웨이 인스턴스의 경우 27 개의 IP 주소, 즉 개인 프런트 엔드에 대 한 27 개와 내부용으로 5 개의 IP 주소를 사용 33 해야 합니다. 따라서/26 서브넷 크기 이상이 필요 합니다.
+27 개의 응용 프로그램 게이트웨이 인스턴스와 개인 프런트 엔드 IP의 IP 주소가 있는 서브넷을 고려 합니다. 이 경우에는 응용 프로그램 게이트웨이 인스턴스의 경우 27 개의 IP 주소, 즉 개인 프런트 엔드에 대 한 27 개와 내부용으로 5 개의 IP 주소를 사용 33 해야 합니다.
 
-최소/28의 서브넷 크기를 사용 하는 것이 좋습니다. 이 크기는 11 개의 사용 가능한 IP 주소를 제공 합니다. 응용 프로그램 로드에 10 개 이상의 Application Gateway 인스턴스가 필요한 경우/27 또는/26 서브넷 크기를 고려 합니다.
+Application Gateway (Standard 또는 WAF) SKU는 최대 32 인스턴스 (32 인스턴스 IP 주소 + 1 개인 프런트 엔드 IP + 5 Azure 예약 됨)를 지원할 수 있으므로 최소 서브넷 크기인/26을 권장 합니다.
+
+Application Gateway (Standard_v2 또는 WAF_v2 SKU)는 최대 125 인스턴스 (125 인스턴스 IP 주소 + 1 개인 프런트 엔드 IP + 5 Azure 예약 됨)를 지원할 수 있으므로 최소 서브넷 크기인/24를 권장 합니다.
 
 #### <a name="network-security-groups-on-the-application-gateway-subnet"></a>Application Gateway 서브넷의 네트워크 보안 그룹
 

@@ -1,14 +1,14 @@
 ---
 title: Azure Marketplace에 관리 서비스 제품 게시
 description: Azure Lighthouse에 고객에 게 제공 하는 관리 서비스 제품을 게시 하는 방법에 대해 알아봅니다.
-ms.date: 07/28/2020
+ms.date: 08/18/2020
 ms.topic: how-to
-ms.openlocfilehash: e86cec16cc377470f255c8b677d7462dee6b3573
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 11fb0073bcc3ba4437f78de8b263d165f0069db8
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87407067"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589727"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Azure Marketplace에 관리 서비스 제품 게시
 
@@ -22,8 +22,19 @@ ms.locfileid: "87407067"
 
 MPN(Microsoft 파트너 네트워크) ID는 게시하는 제품에 [자동으로 연결되어](../../cost-management-billing/manage/link-partner-id.md) 고객 계약에 미치는 영향을 추적합니다.
 
-> [!NOTE]
-> Azure Marketplace에 제품을 게시하지 않으려는 경우 Azure Resource Manager 템플릿을 사용하여 수동으로 고객을 온보딩할 수 있습니다. 자세한 내용은 [Azure Lighthouse에 고객](onboard-customer.md)등록을 참조 하세요.
+Azure Marketplace에 제품을 게시 하지 않거나 모든 요구 사항을 충족 하지 않으려는 경우 Azure Resource Manager 템플릿을 사용 하 여 수동으로 고객을 등록할 수 있습니다. 자세한 내용은 [Azure Lighthouse에 고객](onboard-customer.md)등록을 참조 하세요.
+
+다음 표에서는 관리 서비스 제품을 게시 하거나 Azure Resource Manager 템플릿을 사용 하 여 고객을 등록 하는지 여부를 결정 하는 데 도움이 될 수 있습니다.
+
+|**고려 사항**  |**관리 서비스 제안**  |**ARM 템플릿**  |
+|---------|---------|---------|
+|[파트너 센터 계정](../../marketplace/partner-center-portal/create-account.md) 필요   |예         |예        |
+|[실버 또는 골드 클라우드 플랫폼 역량 수준](/partner-center/learn-about-competencies) 또는 [Azure 전문가 MSP](https://partner.microsoft.com/membership/azure-expert-msp) 가 필요 합니다.      |예         |예         |
+|Azure Marketplace를 통해 신규 고객에 게 제공     |예     |예       |
+|특정 고객에 게 제품을 제한할 수 있습니다.     |예 (CSP (클라우드 솔루션 공급자) 프로그램의 대리점을 통해 설정 된 구독과 함께 사용할 수 없는 개인 제공만 해당)         |예         |
+|Azure Portal에서 고객 동의가 필요 합니다.     |예     |예   |
+|Automation을 사용 하 여 여러 구독, 리소스 그룹 또는 고객을 등록할 수 있습니다. |예     |예    |
+|새로운 기본 제공 역할 및 Azure Lighthouse 기능에 즉시 액세스     |항상 그렇지 않음 (약간의 지연 후 일반적으로 사용 가능)         |예         |
 
 ## <a name="create-your-offer"></a>제품 만들기
 

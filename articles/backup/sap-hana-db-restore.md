@@ -3,12 +3,12 @@ title: Azure Vm에서 SAP HANA 데이터베이스 복원
 description: 이 문서에서는 Azure Virtual Machines에서 실행 되는 SAP HANA 데이터베이스를 복원 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 11/7/2019
-ms.openlocfilehash: c62ea68683355fc703a5258e6e5fa0f3795f7e34
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7cb521b4034ef225d3af6d397bb6cd83b28e1b8a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503594"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006315"
 ---
 # <a name="restore-sap-hana-databases-on-azure-vms"></a>Azure Vm에서 SAP HANA 데이터베이스 복원
 
@@ -28,7 +28,7 @@ Azure Backup에서는 다음과 같이 Azure VM에서 실행되는 SAP HANA 데�
 
 데이터베이스를 복원 하기 전에 다음 사항에 유의 하십시오.
 
-* 동일한 Azure 지역에 있는 SAP HANA 인스턴스로만 데이터베이스를 복원할 수 있습니다.
+* 동일한 지역에 있는 SAP HANA 인스턴스로만 데이터베이스를 복원할 수 있습니다.
 
 * 대상 인스턴스를 원본과 동일한 자격 증명 모음에 등록해야 합니다.
 
@@ -138,7 +138,7 @@ Azure Backup에서는 다음과 같이 Azure VM에서 실행되는 SAP HANA 데�
 
     * 데이터베이스 백업 파일
     * 카탈로그 파일
-    * JSON 메타데이터 파일(관련된 각 백업 파일에 대한)
+    * JSON 메타 데이터 파일 (관련 된 각 백업 파일에 해당)
 
     일반적으로 네트워크 공유 경로 또는 탑재된 Azure 파일 공유 경로가 대상 경로로 지정되면 이를 통해 동일한 네트워크의 다른 컴퓨터 또는 동일한 Azure 파일 공유가 탑재된 다른 컴퓨터에서 이러한 파일에 더 쉽게 액세스할 수 있습니다.
 
@@ -173,7 +173,7 @@ Azure Backup에서는 다음과 같이 Azure VM에서 실행되는 SAP HANA 데�
         hdbbackupdiag --generate --dataDir <DataFileDir> --logDirs <LogFilesDir> -d <PathToPlaceCatalogFile>
         ```
 
-        위 명령의 항목은 다음과 같습니다.
+        위의 명령에서 다음을 수행합니다.
 
         * `<DataFileDir>` - 전체 백업이 포함된 폴더
         * `<LogFilesDir>` - 로그 백업이 포함된 폴더

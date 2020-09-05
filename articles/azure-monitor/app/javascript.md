@@ -4,12 +4,12 @@ description: 페이지 보기 및 세션 수, 웹 클라이언트 데이터, SPA
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 7c5abb109018bd8bc5b501fe728a3a0f422a3db7
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 3acb7379644b5bfcb22ed86b6bde7031095fef24
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905828"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88224856"
 ---
 # <a name="application-insights-for-web-pages"></a>웹 페이지용 Application Insights
 
@@ -20,7 +20,7 @@ Application Insights는 다른 웹 페이지와 함께 사용할 수 있습니�
 ## <a name="adding-the-javascript-sdk"></a>JavaScript SDK 추가
 
 1. 먼저 Application Insights 리소스가 필요 합니다. 리소스 및 계측 키가 아직 없는 경우 [새 리소스 만들기 지침](create-new-resource.md)을 따르세요.
-2. 1 단계에서 JavaScript 원격 분석을 전송 하려는 리소스에 대 한 _계측 키_ ("ikey" 라고도 함)를 복사 합니다. `instrumentationKey`Application Insights JAVASCRIPT SDK의 설정에 추가 합니다.
+2. 1 단계에서 JavaScript 원격 분석을 전송 하려는 리소스에 대 한 _계측 키_ ("ikey" 라고도 함)를 복사 합니다. `instrumentationKey` Application Insights JAVASCRIPT SDK의 설정에 추가 합니다.
 3. 다음 두 옵션 중 하나를 통해 웹 페이지 또는 앱에 Application Insights JavaScript SDK를 추가 합니다.
     * [npm 설정](#npm-based-setup)
     * [JavaScript 코드 조각](#snippet-based-setup)
@@ -104,7 +104,7 @@ SDK 로드 오류에 대 한 보고는 특히 IE 8에서 지원 되지 않습니
 
 사용 가능한 구성 옵션은 
 
-| 이름 | Type | 설명
+| 속성 | Type | 설명
 |------|------|----------------
 | src | 문자열 **[필수]** | SDK를 로드할 위치의 전체 URL입니다. 이 값은 동적으로 추가 된 스크립트/태그의 "src" 특성에 사용 됩니다 &lt; &gt; . 공용 CDN 위치나 개인적으로 호스트 된 항목을 사용할 수 있습니다.
 | name | 문자열 *[선택 사항]* | 초기화 된 SDK에 대 한 전역 이름 `appInsights` 입니다. 기본값은입니다. 는 ```window.appInsights``` 초기화 된 인스턴스에 대 한 참조입니다. 참고: 이름 값을 제공 하거나 이전 인스턴스가 할당 된 것으로 나타나는 경우 (전역 이름 appInsightsSDK을 통해)이 이름 값도 전역 네임 스페이스에 정의 됩니다 .이 이름 값은 ```window.appInsightsSDK=<name value>``` SDK 초기화 코드에서 올바른 코드 조각 구조 및 프록시 메서드를 초기화 하 고 업데이트 하는 데 필요 합니다.
@@ -115,7 +115,7 @@ SDK 로드 오류에 대 한 보고는 특히 IE 8에서 지원 되지 않습니
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Azure Portal 원격 분석 보내기
 
-기본적으로 JavaScript SDK Application Insights는 응용 프로그램의 상태와 기본 사용자 환경을 결정 하는 데 도움이 되는 여러 원격 분석 항목을 자동으로 수집 합니다. 여기에는 다음이 포함됩니다.
+기본적으로 JavaScript SDK Application Insights는 응용 프로그램의 상태와 기본 사용자 환경을 결정 하는 데 도움이 되는 여러 원격 분석 항목을 자동으로 수집 합니다. 이러한 개체는 다음과 같습니다.
 
 - 에 대 한 정보를 포함 하 여 앱의 Catch 되지 않은 **예외**
     - 스택 추적
@@ -217,8 +217,8 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 | 확장 |
 |---------------|
-| [React](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md)|
-| [React Native](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-native/README.md)|
+| [React](javascript-react-plugin.md)|
+| [React Native](javascript-react-native-plugin.md)|
 
 ## <a name="correlation"></a>상관 관계
 
@@ -235,7 +235,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 `Access-Control-Allow-Headers`서버 쪽의 구성에 따라 및를 수동으로 추가 하 여 서버 쪽 목록을 확장 해야 하는 경우가 많습니다 `Request-Id` `Request-Context` .
 
-액세스 제어-허용 헤더: `Request-Id` , `Request-Context` ,`<your header>`
+액세스 제어-허용 헤더: `Request-Id` , `Request-Context` , `<your header>`
 
 클라이언트에서 통신 하는 타사 서버에서 및 헤더를 수락할 수 없고 해당 서버 `Request-Id` 에서 `Request-Context` 구성을 업데이트할 수 없는 경우 구성 속성을 통해 제외 목록에 해당 서버를 배치 해야 `correlationHeaderExcludeDomains` 합니다. 이 속성은 와일드 카드를 지원 합니다.
 
@@ -302,7 +302,7 @@ dataset
 ### <a name="drag-and-drop"></a>끌어서 놓기
 
 1. Azure Portal에서 예외 원격 분석 항목을 선택 하 여 "종단 간 트랜잭션 정보"를 확인 합니다.
-2. 이 호출 스택에 해당 하는 소스 맵을 식별 합니다. 소스 맵은 스택 프레임의 소스 파일과 일치 해야 하지만 다음에는 접미사가 붙습니다.`.map`
+2. 이 호출 스택에 해당 하는 소스 맵을 식별 합니다. 소스 맵은 스택 프레임의 소스 파일과 일치 해야 하지만 다음에는 접미사가 붙습니다. `.map`
 3. 소스 맵을 ![ Azure Portal의 호출 스택 창에서 빌드 폴더의 소스 맵 파일을 끌어서 놓는 방법을 보여 주는 애니메이션 이미지 Azure Portal의 호출 스택으로 끌어 놓습니다.](https://i.imgur.com/Efue9nU.gif)
 
 ### <a name="application-insights-web-basic"></a>Application Insights 웹 기본
@@ -313,7 +313,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 ```
 이 버전은 최소한의 기능과 기능을 제공 하며, 적합 한 것으로 빌드에 의존 합니다. 예를 들어 autocollection (catch 되지 않은 예외, AJAX 등)을 수행 합니다. 특정 원격 분석 유형 (예:, 등)을 전송 하는 Api는 `trackTrace` `trackException` 이 버전에 포함 되지 않으므로 고유한 래퍼를 제공 해야 합니다. 유일 하 게 사용할 수 있는 API는 `track` 입니다. [샘플](https://github.com/Azure-Samples/applicationinsights-web-sample1/blob/master/testlightsku.html) 은 여기에 있습니다.
 
-## <a name="examples"></a>예
+## <a name="examples"></a>예제
 
 실행 가능한 예제는 [Application Insights JAVASCRIPT SDK 샘플](https://github.com/topics/applicationinsights-js-demo) 을 참조 하세요.
 

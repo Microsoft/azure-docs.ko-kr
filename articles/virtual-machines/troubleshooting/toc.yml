@@ -56,7 +56,7 @@
     - name: VM 시작이 중단됨
       href: troubleshoot-vm-boot-configure-update.md
     - name: VM 수명 주기 및 상태
-      href: ../windows/states-lifecycle.md
+      href: ../states-lifecycle.md
 - name: VM이 부팅되지 않음
   items:
     - name: Linux
@@ -99,10 +99,14 @@
           href: troubleshoot-guide-windows-boot-manager-menu.md
         - name: 업데이트로 인해 VM이 응답하지 않음
           href: unresponsive-vm-apply-windows-update.md
+        - name: 감사 구성 정책을 적용하는 동안 VM이 응답하지 않음
+          href: vm-unresponsive-applying-audit-configuration-policy.md
         - name: 그룹 정책을 적용하는 동안 VM이 응답하지 않음
           href: unresponsive-vm-apply-group-policy.md
         - name: 보안 정책을 적용하는 동안 VM이 응답하지 않음
           href: unresponsive-vm-apply-security-policy.md
+        - name: Windows 중지 오류 - 잘못된 시스템 구성 정보
+          href: windows-stop-error-bad-system-config-info.md
         - name: Windows 중지 오류 - 메모리 없음 상태
           href: troubleshoot-windows-stop-error.md
 - name: VM에 연결할 수 없습니다.
@@ -193,9 +197,9 @@
 - name: 가상 디스크 관리 문제
   items:
     - name: 개요
-      href: ../windows/managed-disks-overview.md
+      href: ../managed-disks-overview.md
     - name: FAQ
-      href: ../windows/faq-for-disks.md
+      href: ../faq-for-disks.md
     - name: 스토리지 리소스 삭제 시 오류
       href: storage-resource-deletion-errors.md
     - name: 클래식 스토리지 리소스 삭제 시 오류
@@ -232,6 +236,8 @@
       href: ../extensions/troubleshoot.md
     - name: Windows VM 에이전트 오프라인 설치
       href: install-vm-agent-offline.md
+    - name: Windows VM 에이전트 문제 해결
+      href: windows-azure-guest-agent.md
 - name: 백업 및 복원
   items:
     - name: Azure VM의 백업 오류 문제 해결

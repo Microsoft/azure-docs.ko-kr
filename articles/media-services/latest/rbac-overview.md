@@ -3,23 +3,25 @@ title: Media Services 계정에 대 한 역할 기반 액세스 제어-Azure | M
 description: 이 문서에서는 Azure Media Services 계정의 RBAC (역할 기반 액세스 제어)에 대해 설명 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/23/2019
-ms.author: juliako
-ms.custom: seodec18
-ms.openlocfilehash: c75b6e67932cfd26a3374eab3f3efa34ceade577
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: a29280815a1c9cf3d578f0d304bc679bf234c185
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504486"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267125"
 ---
 # <a name="role-based-access-control-rbac-for-media-services-accounts"></a>Media Services 계정에 대 한 RBAC (역할 기반 액세스 제어)
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 현재 Azure Media Services는 서비스와 관련 된 사용자 지정 역할을 정의 하지 않습니다. Media Services 계정에 대 한 모든 권한을 얻으려면 고객은 **소유자** 또는 **참가자**의 기본 제공 역할을 사용할 수 있습니다. 이러한 역할의 주요 차이점은 **소유자** 는 리소스에 대 한 액세스 권한이 있는 사용자를 제어할 수 있으며 **참가자** 는 그렇지 않습니다. 기본 제공 **판독기** 역할을 사용할 수도 있지만 사용자 또는 응용 프로그램은 Media Services api에 대 한 읽기 권한만 갖습니다. 
 

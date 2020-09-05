@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: sgilley
 author: sdgilley
-ms.date: 07/28/2020
+ms.date: 12/27/2019
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: fefc7b39a6539822686618d9f018084f65443ee1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: e2f13cbdca9d6372677bbba24d60f4a73436cfd7
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121741"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179292"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces-in-the-azure-portal"></a>Azure Portal에서 Azure Machine Learning 작업 영역 만들기 및 관리
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -42,22 +42,35 @@ ms.locfileid: "88121741"
 
    필드|설명 
    ---|---
-   작업 영역 이름 |작업 영역을 식별하는 고유한 이름을 입력합니다. 이름은 리소스 그룹 전체에서 고유해야 합니다. 다른 사용자가 만든 작업 영역과 구별되고 기억하기 쉬운 이름을 사용하세요. 작업 영역 이름은 대/소문자를 구분하지 않습니다.
+   작업 영역 이름 |작업 영역을 식별하는 고유한 이름을 입력합니다. 이 예제에서는 **docs-ws**를 사용합니다. 이름은 리소스 그룹 전체에서 고유해야 합니다. 다른 사용자가 만든 작업 영역과 구별되고 기억하기 쉬운 이름을 사용하세요. 작업 영역 이름은 대/소문자를 구분하지 않습니다.
    Subscription |사용할 Azure 구독을 선택합니다.
-   Resource group | 구독의 기존 리소스 그룹을 사용하거나 이름을 입력하여 새 리소스 그룹을 만듭니다. 리소스 그룹은 Azure 솔루션에 관련된 리소스를 보유합니다. 
+   리소스 그룹 | 구독의 기존 리소스 그룹을 사용하거나 이름을 입력하여 새 리소스 그룹을 만듭니다. 리소스 그룹은 Azure 솔루션에 관련된 리소스를 보유합니다. 이 예에서는 **docs-aml**을 사용합니다. 기존 리소스 그룹을 사용 하려면 *참가자* 또는 *소유자* 역할이 필요 합니다.  액세스에 대 한 자세한 내용은 [Azure Machine Learning 작업 영역에 대 한 액세스 관리](how-to-assign-roles.md)를 참조 하세요.
+   위치 | 사용자 및 데이터 리소스와 가장 가까운 위치를 선택하여 작업 영역을 만듭니다.
    위치 | 사용자 및 데이터 리소스와 가장 가까운 위치를 선택하여 작업 영역을 만듭니다.
    Workspace Edition | **기본** 또는 **엔터프라이즈**를 선택 합니다.  이 작업 영역 버전은 액세스 및 가격 책정을 사용할 수 있는 기능을 결정 합니다. [Basic 및 Enterprise edition 제품](overview-what-is-azure-ml.md#sku)에 대해 자세히 알아보세요. 
 
-   :::image type="content" source="media/how-to-manage-workspace/select-edition.png" alt-text="작업 영역 구성":::
+    ![작업 영역 구성](./media/how-to-manage-workspace/select-edition.png)
 
-1. 작업 영역 구성이 완료 되 면 **검토 + 만들기**를 선택 하거나 선택적 __네트워킹__ 구성으로 이동할 수 있습니다.
+1. 작업 영역 구성을 마쳤으면 **검토 + 만들기**를 선택 합니다. 필요에 따라 [네트워킹](#networking) 및 [고급](#advanced) 섹션을 사용 하 여 작업 영역에 대 한 추가 설정을 구성 합니다.
+2. 설정을 검토 하 고 추가 변경 또는 수정 작업을 수행 합니다. 설정에 만족 하는 경우 **만들기**를 선택 합니다.
 
-### <a name="optional-networking"></a>필드 Lan
+   > [!Warning] 
+   > 클라우드에서 작업 영역을 만드는 데 몇 분 정도 걸릴 수 있습니다.
+
+   프로세스가 완료되면 배포 성공 메시지가 표시됩니다. 
+ 
+ 1. 새 작업 영역을 보려면 **리소스로 이동**을 선택합니다.
+
+
+### <a name="networking"></a>네트워킹
 
 > [!IMPORTANT]
 > 작업 영역에서 개인 끝점 및 가상 네트워크를 사용 하는 방법에 대 한 자세한 내용은 [네트워크 격리 및 개인 정보](how-to-enable-virtual-network.md)를 참조 하세요.
 
-1. 기본 네트워크 구성은 공용 인터넷에서 액세스할 수 있는 __공용 끝점__을 사용 하는 것입니다. 만든 Azure Virtual Network 작업 영역에 대 한 액세스를 제한 하려면 대신 __연결 방법__으로 __개인 끝점__ 을 선택 하 고 __+ 추가__ 를 사용 하 여 끝점을 구성 하면 됩니다.
+1. 기본 네트워크 구성은 공용 인터넷에서 액세스할 수 있는 __공용 끝점__을 사용 하는 것입니다. 만든 Azure Virtual Network 작업 영역에 대 한 액세스를 제한 하려면 __연결 방법__으로 __개인 끝점__ (미리 보기)을 선택 하 고 __+ 추가__ 를 사용 하 여 끝점을 구성 하면 됩니다.
+
+   > [!IMPORTANT]
+   > Azure Machine Learning 작업 영역에서 개인 끝점을 사용 하는 것은 현재 공개 미리 보기 상태입니다. 이 미리 보기는 서비스 수준 계약 없이 제공 되며 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 
    :::image type="content" source="media/how-to-manage-workspace/select-private-endpoint.png" alt-text="개인 끝점 선택":::
 
@@ -76,7 +89,7 @@ ms.locfileid: "88121741"
     >
     > 자세한 내용은 [Azure 개인 끝점 DNS 구성](/azure/private-link/private-endpoint-dns)을 참조 하세요.
 
-### <a name="optional-advanced"></a>필드 고급
+### <a name="advanced"></a>고급
 
 기본적으로 작업 영역에 대 한 메트릭 및 메타 데이터는 Microsoft에서 유지 관리 하는 Azure Cosmos DB 인스턴스에 저장 됩니다. 이 데이터는 Microsoft에서 관리 하는 키를 사용 하 여 암호화 됩니다. 
 
@@ -108,19 +121,23 @@ __엔터프라이즈__ 버전의 Azure Machine Learning을 사용 하는 경우 
 
    :::image type="content" source="media/how-to-manage-workspace/select-key-vault.png" alt-text="키 선택":::
 
+## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a>Enterprise edition으로 업그레이드
 
-네트워킹 구성을 마쳤으면 __검토 + 만들기__를 선택 합니다.
+작업 영역을 Basic edition에서 Enterprise edition으로 업그레이드 하 여 낮은 코드 환경 및 향상 된 보안 기능 등의 향상 된 기능을 활용할 수 있습니다.
 
-### <a name="review--create"></a>검토 + 만들기
+1. [Azure Machine Learning Studio](https://ml.azure.com)에 로그인합니다.
 
-1. 설정을 검토 하 고 추가 변경 또는 수정 작업을 수행 합니다. 설정에 만족 하는 경우 **만들기**를 선택 합니다.
+1. 업그레이드 하려는 작업 영역을 선택 합니다.
 
-   > [!Warning] 
-   > 클라우드에서 작업 영역을 만드는 데 몇 분 정도 걸릴 수 있습니다.
+1. 페이지의 오른쪽 위에서 자세히 **알아보기**  를 선택 합니다.
 
-   프로세스가 완료되면 배포 성공 메시지가 표시됩니다. 
- 
- 1. 새 작업 영역을 보려면 **리소스로 이동**을 선택합니다.
+   [![작업 영역 ](./media/how-to-manage-workspace/upgrade.png) 업그레이드](./media/how-to-manage-workspace/upgrade.png#lightbox)
+
+1. 표시 되는 창에서 **업그레이드** 를 선택 합니다.
+
+
+> [!IMPORTANT]
+> Enterprise edition 작업 영역을 기본 버전 작업 영역으로 다운 그레이드할 수 없습니다.
 
 ### <a name="download-a-configuration-file"></a>구성 파일 다운로드
 
@@ -131,24 +148,6 @@ __엔터프라이즈__ 버전의 Azure Machine Learning을 사용 하는 경우 
    ![config.json 다운로드](./media/how-to-manage-workspace/configure.png)
    
    Python 스크립트 또는 Jupyter Notebook을 사용하여 파일을 디렉터리 구조에 배치합니다. 동일한 디렉터리, *.azureml*이라는 하위 디렉터리 또는 부모 디렉터리에 있을 수 있습니다. 계산 인스턴스를 만들 때이 파일은 VM의 올바른 디렉터리에 추가 됩니다.
-
-## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a>Enterprise edition으로 업그레이드
-
-작업 영역을 Basic edition에서 Enterprise edition으로 업그레이드 하 여 낮은 코드 환경 및 향상 된 보안 기능 등의 향상 된 기능을 활용할 수 있습니다.
-
-1. [Azure Machine Learning Studio](https://ml.azure.com)에 로그인합니다.
-
-1. 업그레이드 하려는 작업 영역을 선택 합니다.
-
-1. 페이지의 오른쪽 위에서 자세히 **알아보기** 를 선택 합니다.
-
-   [![작업 영역 ](./media/how-to-manage-workspace/upgrade.png) 업그레이드](./media/how-to-manage-workspace/upgrade.png#lightbox)
-
-1. 표시 되는 창에서 **업그레이드** 를 선택 합니다.
-
-
-> [!IMPORTANT]
-> Enterprise edition 작업 영역을 기본 버전 작업 영역으로 다운 그레이드할 수 없습니다. 
 
 ## <a name="find-a-workspace"></a><a name="view"></a>작업 영역 찾기
 

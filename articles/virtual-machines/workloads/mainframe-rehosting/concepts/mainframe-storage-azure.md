@@ -6,12 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: 7f83d798bbffeb232b45701beee828114ad3db7d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 639764c9cae5e27e90a55da00b246807e49d2a20
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042602"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652851"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>메인프레임 저장소를 Azure로 이동
 
@@ -45,13 +45,13 @@ E.ASD 저장소와 달리 메인프레임 저장소는 시작 지점에서 데�
 
 Microsoft는 Azure에서 호스트 되는 응용 프로그램을 위해 페타바이트의 저장소를 제공 하 고, 몇 가지 저장소 옵션을 제공 합니다. 이러한 범위는 고성능을 위해 SSD 저장소에서 대용량 스토리지 및 아카이브를 위한 저렴 한 blob 저장소 까지입니다. 또한 Azure는 저장소에 대 한 데이터 중복성 옵션을 제공 하며,이는 메인프레임 환경에서 설정 하는 데 더 많은 노력이 필요 합니다.
 
-Azure storage는 다음 표에 요약 된 것 처럼 azure [디스크](../../../windows/managed-disks-overview.md), [Azure Files](../../../../storage/files/storage-files-introduction.md)및 [azure blob](../../../../storage/blobs/storage-blobs-overview.md) 으로 사용할 수 있습니다. [각를 사용 하는 경우](../../../../storage/common/storage-introduction.md)에 대해 자세히 알아보세요.
+Azure storage는 다음 표에 요약 된 것 처럼 azure [디스크](../../../managed-disks-overview.md), [Azure Files](../../../../storage/files/storage-files-introduction.md)및 [azure blob](../../../../storage/blobs/storage-blobs-overview.md) 으로 사용할 수 있습니다. [각를 사용 하는 경우](../../../../storage/common/storage-introduction.md)에 대해 자세히 알아보세요.
 
 <!-- markdownlint-disable MD033 -->
 
 <table>
 <thead>
-    <tr><th>형식</th><th>Description</th><th>다음을 수행 하려는 경우를 사용 합니다.</th></tr>
+    <tr><th>유형</th><th>설명</th><th>다음을 수행 하려는 경우를 사용 합니다.</th></tr>
 </thead>
 <tbody>
 <tr><td>Azure 파일
@@ -94,7 +94,7 @@ Azure storage는 다음 표에 요약 된 것 처럼 azure [디스크](../../../
 
 Ssd는 Azure에서 가장 높은 저장소 성능을 제공 합니다. 이 문서를 작성할 때 사용할 수 있는 옵션은 다음과 같습니다.
 
-| 형식         | Size           | IOPS                  |
+| 유형         | 크기           | IOPS                  |
 |--------------|----------------|-----------------------|
 | 울트라 SSD    | 4gb ~ 64 TB  | 1200 ~ 16만 IOPS |
 | 프리미엄 SSD  | 32 g b-32 TB | 12 ~ 15000 IOPS     |
@@ -108,7 +108,7 @@ Blob 저장소는 Azure에서 가장 큰 저장소 용량을 제공 합니다. �
 - [Azure Virtual Machines의 메인프레임 재호스팅](../overview.md)
 - [메인프레임 계산을 Azure로 이동](mainframe-compute-Azure.md)
 - [Azure Blob, Azure 파일 또는 Azure 디스크를 사용할 시기 결정](../../../../storage/common/storage-introduction.md)
-- [Azure VM 워크 로드에 대 한 표준 SSD Managed Disks](../../../windows/disks-types.md#standard-ssd)
+- [Azure VM 워크 로드에 대 한 표준 SSD Managed Disks](../../../disks-types.md#standard-ssd)
 
 ### <a name="ibm-resources"></a>IBM 리소스
 

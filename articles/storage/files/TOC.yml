@@ -296,12 +296,12 @@
       href: 'https://azure.microsoft.com/updates/?category=storage'
     - name: Azure 파일 동기화 릴리스 정보
       href: storage-files-release-notes.md
-    - name: Azure Storage 포럼
-      href: 'https://docs.microsoft.com/answers/products/azure?product=storage'
+    - name: Microsoft Q&A의 Azure Storage
+      href: 'https://docs.microsoft.com/answers/topics/azure-files.html'
     - name: Stack Overflow의 Azure Storage
       href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-    - name: Azure Storage 가격 책정
-      href: 'https://azure.microsoft.com/pricing/details/storage/'
+    - name: Azure Files 가격 책정
+      href: 'https://azure.microsoft.com/pricing/details/storage/files/'
     - name: Azure 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: 동영상

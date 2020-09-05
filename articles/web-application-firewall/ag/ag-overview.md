@@ -1,21 +1,21 @@
 ---
-title: Azure 웹 애플리케이션 방화벽 소개
+title: Azure Application Gateway의 Azure 웹 애플리케이션 방화벽이란?
 titleSuffix: Azure Web Application Firewall
 description: 이 문서에서는 Application Gateway의 WAF(웹 애플리케이션 방화벽)에 대한 개요를 제공합니다.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/14/2019
+ms.date: 08/31/2020
 ms.author: victorh
-ms.topic: overview
-ms.openlocfilehash: d7eaff980b50cc463efc09e49febd4a947a7543c
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.topic: conceptual
+ms.openlocfilehash: e3b7e3ae10afd45105358743ef1fc0f4c6d14e78
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86142854"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227001"
 ---
-# <a name="azure-web-application-firewall-on-azure-application-gateway"></a>Azure Application Gateway의 Azure 웹 애플리케이션 방화벽
+# <a name="what-is-azure-web-application-firewall-on-azure-application-gateway"></a>Azure Application Gateway의 Azure 웹 애플리케이션 방화벽이란?
 
 Azure Application Gateway의 Azure WAF(웹 애플리케이션 방화벽)는 일반적인 악용 및 취약성으로부터 웹 애플리케이션을 중앙 집중식으로 보호합니다. 일반적으로 알려진 취약성을 악용하여 웹 애플리케이션을 공격하는 악의적인 사례가 점점 늘어나고 있습니다. 그 중에서 SQL 삽입 및 사이트 간 스크립팅은 가장 흔한 공격 방식입니다.
 
@@ -158,7 +158,7 @@ Microsoft Azure Sentinel은 확장 가능한 클라우드 네이티브, SIEM(보
 기본 제공 Azure WAF 방화벽 이벤트 통합 문서를 사용하면 WAF의 보안 이벤트에 대한 개요를 볼 수 있습니다. 여기에는 이벤트, 일치 규칙 및 차단 규칙 및 방화벽 로그에 기록되는 모든 항목이 포함됩니다. 로깅에 대해 아래에서 자세히 참조하세요. 
 
 
-![Sentinel](../media/ag-overview/sentinel.png)
+![Azure WAF 방화벽 이벤트 통합 문서](../media/ag-overview/sentinel.png)
 
 #### <a name="logging"></a>로깅
 
@@ -206,10 +206,12 @@ Application Gateway WAF는 탐지된 각 위협에 대한 상세 보고를 제�
 
 WAF_v1 및 WAF_v2 SKU의 가격 책정 모델이 서로 다릅니다. 자세한 내용은 [Application Gateway 가격 책정](https://azure.microsoft.com/pricing/details/application-gateway/) 페이지를 참조하세요. 
 
+## <a name="whats-new"></a>새로운 기능
+
+Azure 웹 애플리케이션 방화벽의 새로운 기능을 알아보려면 [Azure 업데이트](https://azure.microsoft.com/updates/?category=networking&query=Web%20Application%20Firewall)를 참조하세요.
+
 ## <a name="next-steps"></a>다음 단계
 
-- [WAF 정책을 만들어](create-waf-policy-ag.md) 시작
 - [WAF 관리 규칙](application-gateway-crs-rulegroups-rules.md)에 대해 자세히 알아보기
 - [사용자 지정 규칙](custom-waf-rules-overview.md)에 대해 자세히 알아보기
 - [Azure Front Door의 웹 애플리케이션 방화벽](../afds/afds-overview.md)에 대한 자세한 내용
-

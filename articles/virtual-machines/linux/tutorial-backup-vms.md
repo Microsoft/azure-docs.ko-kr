@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 07/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9dcc1b6f6f3792682f81c0d37ef2046bd1840657
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1865d307e7b79e7e40b0e98f2dcfa2535b0313fd
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86526999"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551710"
 ---
 # <a name="tutorial-back-up-and-restore-files-for-linux-virtual-machines-in-azure"></a>자습서: Azure의 Linux 가상 머신을 위한 파일 백업 및 복원
 
@@ -45,7 +45,7 @@ Azure Backup 서비스에서 백업을 시작하면 백업 확장을 트리거�
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 2. 왼쪽 메뉴에서 **가상 머신**를 선택합니다. 
 3. 목록에서 백업할 VM을 선택합니다.
-4. VM 블레이드의 **설정** 섹션에서 **Backup**을 클릭합니다. **백업 사용** 블레이드가 열립니다.
+4. VM 블레이드의 **작업** 섹션에서 **백업**을 클릭합니다. **백업 사용** 블레이드가 열립니다.
 5. **Recovery Services 자격 증명 모음**에서 **새로 만들기**를 클릭하고 새 자격 증명 모음의 이름을 제공합니다. 새 자격 증명 모음이 가상 머신과 동일한 리소스 그룹과 위치에 만들어집니다.
 6. **Backup 정책**을 클릭합니다. 이 예제에서는 기본값을 그대로 유지하고 **확인**을 클릭합니다.
 7. **Backup 사용** 블레이드에서 **Backup 사용**을 클릭합니다. 이렇게 하면 기본 일정에 따라 매일 백업이 만들어집니다.

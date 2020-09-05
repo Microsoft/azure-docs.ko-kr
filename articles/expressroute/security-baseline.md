@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: f5c81897f74163191de4b167ffa56225ca0698ca
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 69a47820d2afaf24f413aabf2c59a40c032070c1
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079048"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231387"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Express 경로에 대 한 Azure 보안 기준
 
@@ -240,13 +240,13 @@ Azure PowerShell 또는 Azure CLI를 사용 하 여 태그를 기준으로 리�
 
 **지침**: Azure express 경로 리소스의 제어 평면 (예: Azure Portal)에 대 한 관리 권한이 있는 사용자 계정의 인벤토리를 유지 관리 합니다.
 
-구독에 대 한 Azure Portal의 IAM (Id 및 액세스 제어) 창을 사용 하 여 RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다.
+구독에 대 한 Azure Portal의 IAM (Id 및 액세스 제어) 창을 사용 하 여 azure RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다.
 
 또한 Express 경로 파트너 리소스 관리자 API를 사용 하는 파트너는 역할 기반 Access Control를 expressRouteCrossConnection 리소스에 적용할 수 있습니다. 이러한 컨트롤은 사용자 계정에서 expressRouteCrossConnection 리소스를 수정 하 고 피어 링 구성을 추가/업데이트/삭제할 수 있는 권한을 정의할 수 있습니다.
 
-* [Azure의 RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Azure RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-* [Express 경로 파트너 리소스 관리자 API에서 RBAC 활용](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
+* [Express 경로 파트너 리소스 관리자 API에서 Azure RBAC 활용](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
 
 **Azure Security Center 모니터링**: 예
 
@@ -369,7 +369,7 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12: 계정 로그인 동작 편차에 대한 경고
 
@@ -437,7 +437,7 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 * [Express 경로를 통해 사이트 간 IPSEC을 구성 하는 방법](https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering)
 
-Express 경로를 통해 사이트 간 IPSEC을 구성 하는 방법:https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
+Express 경로를 통해 사이트 간 IPSEC을 구성 하는 방법: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -453,17 +453,17 @@ Express 경로를 통해 사이트 간 IPSEC을 구성 하는 방법:https://doc
 
 **책임**: 해당 없음
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: 구독에 대 한 AZURE PORTAL의 IAM (Id 및 액세스 제어) 창을 사용 하 여 RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다. 개인 및 그룹에 대 한 기본 제공 역할 또는 사용자 지정 역할을 사용할 수 있습니다.
+**지침**: 구독에 대 한 AZURE PORTAL의 IAM (Id 및 액세스 제어) 창을 사용 하 여 azure RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다. 개인 및 그룹에 대 한 기본 제공 역할 또는 사용자 지정 역할을 사용할 수 있습니다.
 
 Azure Express 경로에는 회로 소유자 및 회로 사용자 역할도 있습니다. 회로 사용자는 ExpressRoute 회로와 동일한 구독 내에 있지 않은 가상 네트워크 게이트웨이의 소유자입니다. 회로 소유자는 언제든지 부여된 권한을 수정하고 해지할 수 있습니다. 권한 부여를 해지하면 액세스가 해지된 구독에서 모든 링크 연결이 삭제됩니다. 회로 사용자는 가상 네트워크당 하나의 권한 부여를 사용할 수 있습니다.
 
 또한 Express 경로 파트너 리소스 관리자 API를 사용 하는 파트너는 역할 기반 Access Control를 expressRouteCrossConnection 리소스에 적용할 수 있습니다. 이러한 컨트롤은 사용자 계정에서 expressRouteCrossConnection 리소스를 수정 하 고 피어 링 구성을 추가/업데이트/삭제할 수 있는 권한을 정의할 수 있습니다.
 
-* [Azure의 RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Azure RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-* [Express 경로 파트너 리소스 관리자 API에서 RBAC 활용](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
+* [Express 경로 파트너 리소스 관리자 API에서 Azure RBAC 활용](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
 
 * [Express 경로에서 관리 역할 이해](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager#connect-a-vnet-to-a-circuit---different-subscription)
 
@@ -473,7 +473,7 @@ Azure Express 경로에는 회로 소유자 및 회로 사용자 역할도 있�
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7: 호스트 기반 데이터 손실 방지를 사용하여 액세스 제어 적용
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다. Microsoft는 Azure 센티널의 기본 인프라를 관리 하 고 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다. Microsoft는 Azure 센티널의 기본 인프라를 관리 하 고 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
 * [Azure 고객 데이터 보호](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
@@ -959,7 +959,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

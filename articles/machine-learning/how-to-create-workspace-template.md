@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.custom: how-to, devx-track-azurecli
+ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 07/27/2020
-ms.openlocfilehash: 5ddd4fc368a4e479d3d720698c7447d2b3cdf3cc
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 674baaaec4e11c5e4e750ccd14bbe5762dcbc09a
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986565"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181072"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Azure Resource Manager 템플릿을 사용하여 Azure Machine Learning에 대한 작업 영역을 만듭니다.
 
@@ -120,7 +120,7 @@ New-AzResourceGroupDeployment `
 기본적으로 템플릿의 일부로 생성 된 모든 리소스는 새로운 리소스입니다. 그러나 기존 리소스를 사용 하는 옵션도 있습니다. 템플릿에 추가 매개 변수를 제공 하 여 기존 리소스를 사용할 수 있습니다. 예를 들어 기존 저장소 계정을 사용 하려는 경우 **Storageaccountoption** 값을 **기존** 값으로 설정 하 고 **storageaccountname** 매개 변수에 저장소 계정의 이름을 제공 합니다.
 
 > [!IMPORTANT]
-> 기존 Azure Storage 계정을 사용 하려는 경우 premium 계정 (Premium_LRS 및 Premium_GRS)이 될 수 없습니다. 또한 계층적 네임 스페이스 (Azure Data Lake Storage Gen2에서 사용)를 가질 수 없습니다. Premium storage 또는 계층적 네임 스페이스는 작업 영역의 기본 저장소 계정에서 지원 되지 않습니다.
+> 기존 Azure Storage 계정을 사용 하려는 경우 premium 계정 (Premium_LRS 및 Premium_GRS)이 될 수 없습니다. 또한 계층적 네임 스페이스 (Azure Data Lake Storage Gen2에서 사용)를 가질 수 없습니다. Premium storage 또는 계층적 네임 스페이스는 작업 영역의 기본 저장소 계정에서 지원 되지 않습니다. Premium storage 또는 계층적 네임 스페이스는 작업 영역의 _기본_ 저장소 계정에서 지원 되지 않습니다. _기본이 아닌_ 저장소 계정이 포함 된 premium storage 또는 계층적 네임 스페이스를 사용할 수 있습니다.
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
@@ -165,158 +165,50 @@ New-AzResourceGroupDeployment `
 
 > [!IMPORTANT]
 > 이 템플릿을 사용하기 전에 구독에서 충족해야 하는 특정 요구 사항이 있습니다.
->
-> * __Azure Machine Learning__ 애플리케이션은 Azure 구독에 대한 __contributor__여야 합니다.
 > * 암호화 키를 포함하는 기존 Azure Key Vault가 있어야 합니다.
-> * __Azure Cosmos DB__ 애플리케이션에 대해 __가져오기__, __래핑__ 및 __래핑 해제__ 액세스 권한을 부여하는 액세스 정책이 Azure Key Vault에 있어야 합니다.
 > * Azure Key Vault는 Azure Machine Learning 작업 영역을 만들 위치와 동일한 영역에 있어야 합니다.
+> * Azure Key Vault ID와 암호화 키의 URI를 지정 해야 합니다.
 
-__Azure Machine Learning 앱을 contributor로 추가하려면__ 다음 명령을 사용합니다.
+이 템플릿에 필요한 `cmk_keyvault`(Key Vault ID) 및 `resource_cmk_uri`(키 URI) 매개 변수에 대한 __값을 가져오려면__ 다음 단계를 사용합니다.    
 
-1. Azure 계정에 로그인 하 고 구독 ID를 가져옵니다. 이 구독은 Azure Machine Learning 작업 영역을 포함하는 구독과 동일해야 합니다.  
+1. Key Vault ID를 가져오려면 다음 명령을 사용합니다.  
 
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)   
 
-    ```azurecli
-    az account list --query '[].[name,id]' --output tsv
-    ```
+    ```azurecli 
+    az keyvault show --name <keyvault-name> --query 'id' --output tsv   
+    ``` 
 
-    > [!TIP]
-    > 다른 구독을 선택하려면 `az account set -s <subscription name or ID>` 명령을 사용하고 전환할 구독 이름 또는 ID를 지정합니다. 구독 선택에 대한 자세한 내용은 [여러 Azure 구독 사용](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest)을 참조하세요. 
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell) 
 
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzSubscription
-    ```
-
-    > [!TIP]
-    > 다른 구독을 선택하려면 `Az-SetContext -SubscriptionId <subscription ID>` 명령을 사용하고 전환할 구독 이름 또는 ID를 지정합니다. 구독 선택에 대한 자세한 내용은 [여러 Azure 구독 사용](https://docs.microsoft.com/powershell/azure/manage-subscriptions-azureps?view=azps-4.3.0)을 참조하세요.
-
-    ---
-
-1. Azure Machine Learning 앱의 개체 ID를 가져오려면 다음 명령을 사용합니다. 이 값은 각 Azure 구독에 따라 다를 수 있습니다.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az ad sp list --display-name "Azure Machine Learning" --query '[].[appDisplayName,objectId]' --output tsv
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzADServicePrincipal --DisplayName "Azure Machine Learning" | select-object DisplayName, Id
-    ```
-
-    ---
-    이 명령은 GUID인 개체 ID를 반환합니다.
-
-1. 구독에 개체 ID를 contributor로 추가하려면 다음 명령을 사용합니다. `<object-ID>`서비스 주체의 개체 ID로 대체 합니다. `<subscription-ID>`를 Azure 구독의 이름 또는 ID로 바꿉니다.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az role assignment create --role 'Contributor' --assignee-object-id <object-ID> --subscription <subscription-ID>
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    New-AzRoleAssignment --ObjectId <object-ID> --RoleDefinitionName "Contributor" -Scope /subscriptions/<subscription-ID>
-    ```
-
-    ---
-
-1. 기존 Azure Key Vault에서 키를 생성 하려면 다음 명령 중 하나를 사용 합니다. `<keyvault-name>`키 자격 증명 모음의 이름으로 대체 합니다. `<key-name>`키에 사용할 이름으로 대체 합니다.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault key create --vault-name <keyvault-name> --name <key-name> --protection software
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Add-AzKeyVaultKey -VaultName <keyvault-name> -Name <key-name> -Destination 'Software'
-    ```
+    ```azurepowershell  
+    Get-AzureRMKeyVault -VaultName '<keyvault-name>'    
+    ``` 
     --- 
 
-__키 자격 증명 모음에 액세스 정책을 추가하려면 다음 명령을 사용합니다.__
+    이 명령은 `/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>`와 비슷한 값을 반환합니다.  
 
-1. Azure Cosmos DB 앱의 개체 ID를 가져오려면 다음 명령을 사용합니다. 이 값은 각 Azure 구독에 따라 다를 수 있습니다.
+1. 고객 관리형 키에 대한 URI 값을 가져오려면 다음 명령을 사용합니다.    
 
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)   
 
-    ```azurecli
-    az ad sp list --display-name "Azure Cosmos DB" --query '[].[appDisplayName,objectId]' --output tsv
-    ```
+    ```azurecli 
+    az keyvault key show --vault-name <keyvault-name> --name <key-name> --query 'key.kid' --output tsv  
+    ``` 
 
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell) 
 
-    ```azurepowershell
-    Get-AzADServicePrincipal --DisplayName "Azure Cosmos DB" | select-object DisplayName, Id
-    ```
-    ---
+    ```azurepowershell  
+    Get-AzureKeyVaultKey -VaultName '<keyvault-name>' -KeyName '<key-name>' 
+    ``` 
+    --- 
 
-    이 명령은 GUID인 개체 ID를 반환합니다. 나중을 위해 저장
+    이 명령은 `https://mykeyvault.vault.azure.net/keys/mykey/{guid}`와 비슷한 값을 반환합니다. 
 
-1. 정책을 설정하려면 다음 명령을 사용합니다. `<keyvault-name>`를 기존 Azure Key Vault 이름으로 바꿉니다. `<object-ID>`를 이전 단계의 GUID로 바꿉니다.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault set-policy --name <keyvault-name> --object-id <object-ID> --key-permissions get unwrapKey wrapKey
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-    
-    ```azurepowershell
-    Set-AzKeyVaultAccessPolicy -VaultName <keyvault-name> -ObjectId <object-ID> -PermissionsToKeys get, unwrapKey, wrapKey
-    ```
-    ---    
-
-이 템플릿에 필요한 `cmk_keyvault`(Key Vault ID) 및 `resource_cmk_uri`(키 URI) 매개 변수에 대한 __값을 가져오려면__ 다음 단계를 사용합니다.
-
-1. Key Vault ID를 가져오려면 다음 명령을 사용합니다.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault show --name <keyvault-name> --query 'id' --output tsv
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzureRMKeyVault -VaultName '<keyvault-name>'
-    ```
-    ---
-
-    이 명령은 `/subscriptions/{subscription-guid}/resourceGroups/<resource-group-name>/providers/Microsoft.KeyVault/vaults/<keyvault-name>`와 비슷한 값을 반환합니다.
-
-1. 고객 관리형 키에 대한 URI 값을 가져오려면 다음 명령을 사용합니다.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
-
-    ```azurecli
-    az keyvault key show --vault-name <keyvault-name> --name <key-name> --query 'key.kid' --output tsv
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azpowershell)
-
-    ```azurepowershell
-    Get-AzureKeyVaultKey -VaultName '<keyvault-name>' -KeyName '<key-name>'
-    ```
-    ---
-
-    이 명령은 `https://mykeyvault.vault.azure.net/keys/mykey/{guid}`와 비슷한 값을 반환합니다.
-
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > 작업 영역을 만든 후에는 기밀 데이터, 암호화, 키 자격 증명 모음 ID 또는 키 식별자에 대한 설정을 변경할 수 없습니다. 이러한 값을 변경하려면 새 값을 사용하여 새 작업 영역을 만들어야 합니다.
 
-위의 단계를 성공적으로 완료 한 후에는 일반적인 방식으로 템플릿을 배포 합니다. 고객 관리 키를 사용 하도록 설정 하려면 다음 매개 변수를 설정 합니다.
+고객 관리 키를 사용 하도록 설정 하려면 템플릿을 배포할 때 다음 매개 변수를 설정 합니다.
 
 * **Encryption_status** **사용 하도록 설정**합니다.
 * **cmk_keyvault** `cmk_keyvault` 이전 단계에서 얻은 값을 cmk_keyvault 합니다.
@@ -380,7 +272,7 @@ New-AzResourceGroupDeployment `
 연결 된 리소스가 가상 네트워크 뒤에 있지 않은 경우 **privateEndpointType** 매개 변수를 또는로 설정 `AutoAproval` 하 여 `ManualApproval` 개인 끝점 뒤에 작업 영역을 배포할 수 있습니다. 새 작업 영역과 기존 작업 영역 모두에 대해이 작업을 수행할 수 있습니다. 기존 작업 영역을 업데이트할 때 기존 작업 영역의 정보를 사용 하 여 템플릿 매개 변수를 입력 합니다.
 
 > [!IMPORTANT]
-> 배포는 전용 끝점을 지 원하는 지역 에서만 유효 합니다.
+> Azure 개인 링크를 사용 하 여 Azure Machine Learning 작업 영역에 대 한 개인 끝점을 만드는 작업은 현재 공개 미리 보기 상태입니다. 이 기능은 **미국 동부**, **미국 남부 중부**및 **미국 서 부 2** 지역 에서만 사용할 수 있습니다. 이 미리 보기는 서비스 수준 계약 없이 제공 되며 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 

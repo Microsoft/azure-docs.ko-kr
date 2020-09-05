@@ -14,12 +14,13 @@ ms.workload: iaas-sql-server
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 2a25625e085ee07a2dc036fd40f70e6b0376b42a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 94ac7282375660308f8dab37ae5bd874828f778a
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003885"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074749"
 ---
 # <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Azure PowerShell를 사용 하 여 Azure Virtual Machines에서 SQL Server를 프로 비전 하는 방법
 
@@ -60,7 +61,7 @@ $ResourceGroupName = "sqlvm2"
 
 가상 머신에서 사용할 스토리지 계정 및 스토리지 유형을 정의합니다.
 
-원하는 대로 수정한 후 다음 cmdlet을 실행 하 여 이러한 변수를 초기화 합니다. 프로덕션 워크로드에는 [프리미엄 SSD](../../../virtual-machines/windows/disks-types.md#premium-ssd)를 사용하는 것이 좋습니다.
+원하는 대로 수정한 후 다음 cmdlet을 실행 하 여 이러한 변수를 초기화 합니다. 프로덕션 워크로드에는 [프리미엄 SSD](../../../virtual-machines/disks-types.md#premium-ssd)를 사용하는 것이 좋습니다.
 
 ```powershell
 $StorageName = $ResourceGroupName + "storage"

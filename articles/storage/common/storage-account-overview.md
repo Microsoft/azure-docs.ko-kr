@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 8342ffc122f56f4e2a3a41e249007b2ceaad22a6
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 4fe353467a11e9581db76ec495194878414f4dfb
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034654"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230690"
 ---
 # <a name="storage-account-overview"></a>Storage 계정 개요
 
@@ -115,7 +115,7 @@ Azure Storage는 사용 패턴에 따라 블록 Blob 데이터 액세스를 위�
 > [!IMPORTANT]
 > 기존 스토리지 계정 또는 Blob에 대한 액세스 계층을 변경하면 추가 비용이 발생할 수 있습니다. 자세한 내용은 [스토리지 계정 청구 섹션](#storage-account-billing)을 참조하세요.
 
-## <a name="redundancy"></a>중복성
+## <a name="redundancy"></a>중복
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
 
@@ -129,10 +129,10 @@ Azure Storage는 사용 패턴에 따라 블록 Blob 데이터 액세스를 위�
 
 예를 들어 범용 스토리지 계정의 이름이 *mystorageaccount*일 경우 이 스토리지 계정의 기본 엔드포인트는 다음과 같습니다.
 
-- Blob 저장소:`https://*mystorageaccount*.blob.core.windows.net`
-- 테이블 저장소:`https://*mystorageaccount*.table.core.windows.net`
-- 큐 저장소:`https://*mystorageaccount*.queue.core.windows.net`
-- Azure Files:`https://*mystorageaccount*.file.core.windows.net`
+- Blob 저장소: `https://*mystorageaccount*.blob.core.windows.net`
+- 테이블 저장소: `https://*mystorageaccount*.table.core.windows.net`
+- 큐 저장소: `https://*mystorageaccount*.queue.core.windows.net`
+- Azure Files: `https://*mystorageaccount*.file.core.windows.net`
 
 > [!NOTE]
 > 블록 blob 및 blob 저장소 계정은 Blob service 끝점만 노출 합니다.
@@ -174,7 +174,7 @@ AzCopy는 Azure Storage의 데이터를 고속으로 복사하기 위해 설계�
 
 ### <a name="rest-api-or-client-library"></a>REST API 또는 클라이언트 라이브러리
 
-범용 v1 저장소 계정에서 Blob storage 계정으로 데이터를 마이그레이션하는 사용자 지정 응용 프로그램을 만들 수 있습니다. Azure 클라이언트 라이브러리 또는 Azure storage 서비스 REST API 중 하나를 사용 합니다. Azure Storage는 NET, Java, C++, Node.JS, PHP, Ruby, Python 등, 여러 언어와 플랫폼을 위한 다양한 클라이언트 라이브러리를 제공합니다. 이 클라이언트 라이브러리는 재시도 논리, 로깅, 병렬 업로드와 같은 고급 기능을 제공합니다. HTTP/HTTPS 요청이 가능한 모든 언어로 호출할 수 있는 REST API에 대해 바로 개발할 수도 있습니다.
+범용 v1 저장소 계정에서 Blob storage 계정으로 데이터를 마이그레이션하는 사용자 지정 응용 프로그램을 만들 수 있습니다. Azure 클라이언트 라이브러리 또는 Azure Storage 서비스 REST API 중 하나를 사용 합니다. Azure Storage는 NET, Java, C++, Node.JS, PHP, Ruby, Python 등, 여러 언어와 플랫폼을 위한 다양한 클라이언트 라이브러리를 제공합니다. 이 클라이언트 라이브러리는 재시도 논리, 로깅, 병렬 업로드와 같은 고급 기능을 제공합니다. HTTP/HTTPS 요청이 가능한 모든 언어로 호출할 수 있는 REST API에 대해 바로 개발할 수도 있습니다.
 
 Azure Storage REST API에 대한 자세한 내용은 [Azure Storage REST API 참조](https://docs.microsoft.com/rest/api/storageservices/)를 참조하세요.
 

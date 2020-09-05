@@ -3,20 +3,21 @@ title: Azure Media Services의 스트리밍 로케이터 | Microsoft Docs
 description: 이 문서에서는 스트리밍 로케이터의 개념과 Azure Media Services에서 이러한 로케이터를 사용하는 방법을 설명합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.date: 03/04/2020
-ms.author: juliako
-ms.openlocfilehash: ed58919c47da13a8a0707a344a389126c6feb6c3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: fe448ea5a4d9610ff82beb7cfa1071d2e8249dfd
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091966"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257622"
 ---
 # <a name="streaming-locators"></a>스트리밍 로케이터
 
@@ -24,7 +25,7 @@ ms.locfileid: "87091966"
 
 **스트리밍 로케이터**를 만드는 과정을 게시라고 합니다. 기본적으로 **스트리밍 로케이터** 는 선택적 시작 및 종료 시간을 구성 하지 않는 한 API 호출을 수행한 직후에 유효 하며 삭제 될 때까지 지속 됩니다. 
 
-**스트리밍 로케이터**를 만들 때 **자산** 이름과 **스트리밍 정책** 이름을 지정 해야 합니다. 자세한 내용은 아래 항목을 참조하세요.
+**스트리밍 로케이터**를 만들 때 **자산** 이름과 **스트리밍 정책** 이름을 지정 해야 합니다. 자세한 내용은 다음 항목을 참조하세요.
 
 * [Assets](assets-concept.md)
 * [스트리밍 정책](streaming-policy-concept.md)
@@ -92,7 +93,7 @@ CBCS (FairPlay)를 사용 하 여 HLS 스트림을 암호화 하려는 경우에
 
 |Language|API|
 |---|---|
-|REST|[liststreaminglocators](/rest/api/media/assets/liststreaminglocators)|
+|REST (영문)|[liststreaminglocators](/rest/api/media/assets/liststreaminglocators)|
 |CLI|[az ams asset list-streaming-locator](/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
 |.NET|[ListStreamingLocators](/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocators?view=azure-dotnet#Microsoft_Azure_Management_Media_AssetsOperationsExtensions_ListStreamingLocators_Microsoft_Azure_Management_Media_IAssetsOperations_System_String_System_String_System_String_)|
 |Java|[AssetStreamingLocator](/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|

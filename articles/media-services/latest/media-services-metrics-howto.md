@@ -3,7 +3,7 @@ title: Azure Monitor를 사용 하 여 메트릭 보기
 description: 이 문서에서는 Azure Portal 차트 및 Azure CLI를 사용 하 여 메트릭을 모니터링 하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/08/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 154e5b5d9639203810e9d16dec4e2907fe5ee80a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: dc532df51b4bbe2e7da1b47dfcc8d2e05e42f796
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504299"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267589"
 ---
 # <a name="monitor-media-services-metrics"></a>Media Services 메트릭 모니터링
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 [Azure Monitor](../../azure-monitor/overview.md) 를 사용 하면 응용 프로그램의 작동 방식을 이해 하는 데 도움이 되는 메트릭 및 진단 로그를 모니터링할 수 있습니다. 이 기능에 대 한 자세한 설명 및 Azure Media Services 메트릭과 진단 로그를 사용 하려는 이유를 보려면 [Media Services 메트릭 및 진단 로그 모니터링](media-services-metrics-diagnostic-logs.md)을 참조 하세요.
 
@@ -34,7 +36,7 @@ Azure Monitor는 포털에서 차트를 작성 하거나 REST API를 통해 액�
 
 ## <a name="view-metrics-in-azure-portal"></a>Azure Portal에서 메트릭 보기
 
-1. https://portal.azure.com 에서 Azure Portal에 로그인합니다.
+1. [https://portal.azure.com](https://portal.azure.com ) 에서 Azure Portal에 로그인합니다.
 1. Azure Media Services 계정으로 이동 하 여 **메트릭**을 선택 합니다.
 1. **리소스** 상자를 클릭 하 고 메트릭을 모니터링 하려는 리소스를 선택 합니다.
 

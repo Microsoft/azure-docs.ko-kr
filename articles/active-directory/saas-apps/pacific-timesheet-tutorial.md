@@ -2,25 +2,21 @@
 title: '자습서: Pacific Timesheet와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Pacific Timesheet 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e546e8ba-821a-4942-9545-c84b0670beab
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 076a1e7cfc16b5ca9ff5505898cfd5399a4b7efd
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9802c3771e1f543abc685a9b07fad69575fd43ee
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67095154"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554264"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pacific-timesheet"></a>자습서: Pacific Timesheet와 Azure Active Directory 통합
 

@@ -8,17 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: overview
-ms.date: 12/17/2019
+ms.date: 08/24/2020
 ms.author: aahi
-ms.openlocfilehash: 2d00a489af35f5960aaeb1dda7add5337d48d57d
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 6c1a720e7e9bd9c71f925f104ca7fc70a1a5ef59
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448161"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051069"
 ---
 # <a name="what-is-the-ink-recognizer-api"></a>Ink Recognizer API란?
 
+[!INCLUDE [ink-recognizer-deprecation](includes/deprecation-note.md)]
 
 Ink Recognizer Cognitive Service는 디지털 잉크 콘텐츠를 분석하고 인식하는 클라우드 기반 REST API를 제공합니다. OCR(광학 문자 인식)을 사용하는 서비스와 달리, 이 API는 입력으로 디지털 잉크 스트로크 데이터가 필요합니다. 디지털 잉크 스트로크는 시간 순서로 정렬된 2D 포인트 세트(X,Y 좌표)로, 디지털 펜 또는 손가락 같은 입력 도구의 움직임을 나타냅니다. 그런 다음, 입력에서 도형과 필기 콘텐츠를 인식하고, 인식된 모든 엔터티가 포함된 JSON 응답을 반환합니다.
 
@@ -43,7 +45,7 @@ Ink Recognizer API는 RESTful 웹 서비스이며, HTTP 요청을 수행하고 J
 
 가입 후:
 
-1. 잉크 스트로크 데이터를 가져와서 유효한 JSON으로 [서식을 지정](concepts/send-ink-data.md#sending-ink-data)합니다.
+1. 잉크 스트로크 데이터를 가져와서 유효한 JSON으로 [서식을 지정](concepts/send-ink-data.md#sending-ink-data)합니다. API는 요청당 최대 1500개의 잉크 스트로크를 허용합니다. 
 1. 데이터를 사용하여 Ink Recognizer API에 요청을 보냅니다.
 1. 반환된 JSON 메시지를 구문 분석하여 API 응답을 처리합니다.
 

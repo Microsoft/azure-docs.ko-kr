@@ -1,6 +1,6 @@
 ---
 title: Azure 가상 머신의 SQL Server 설명서 변경 내용| Microsoft Docs
-description: Azure Virtual Machines에서 SQL Server에 대 한 새로운 기능 및 향상 된 기능에 대해 알아봅니다.
+description: Azure Virtual Machines에서 SQL Server의 다양 한 릴리스에 대 한 새로운 기능 및 향상 된 기능에 대해 알아봅니다.
 services: virtual-machines-windows
 author: MashaMSFT
 ms.author: mathoma
@@ -10,18 +10,25 @@ ms.service: virtual-machines-sql
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 01/06/2020
-ms.openlocfilehash: 5a09a30bafa5bc9ef052b14cad29e000bbd09a48
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/20/2020
+ms.openlocfilehash: 5f0ba27a0964f08b32e1af19d6f578b3f41ee300
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287388"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006417"
 ---
 # <a name="documentation-changes-for-sql-server-on-azure-virtual-machines"></a>Azure 가상 머신의 SQL Server 설명서 변경 내용
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 Azure에서는 SQL Server 이미지가 기본 제공된 VM(가상 머신)을 배포할 수 있습니다. 이 문서에서는 최신 릴리스의 [Azure 가상 머신의 SQL Server](https://azure.microsoft.com/services/virtual-machines/sql-server/)에서 새로운 기능 및 향상된 기능과 관련된 설명서 변경 내용을 요약합니다. 
+
+## <a name="august-2020"></a>2020년 8월
+
+| 변경 | 세부 정보 |
+| --- | --- |
+| **포털에서 ag 구성** | 이제 [Azure Portal를 통해 가용성 그룹을 구성할](availability-group-azure-portal-configure.md)수 있습니다. 이 기능은 현재 미리 보기로 제공 되며 원하는 지역을 사용할 수 없는 경우 잠시 후에 다시 확인 하세요. | 
+
 
 ## <a name="july-2020"></a>2020년 7월
 

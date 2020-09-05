@@ -1,6 +1,6 @@
 ---
 title: Azure CDN 엔드포인트에 자산 미리 로드 | Microsoft Docs
-description: Azure CDN 엔드포인트에 캐시된 콘텐츠를 미리 로드하는 방법을 알아봅니다.
+description: Azure Content Delivery Network 끝점에서 캐시 된 콘텐츠를 미리 로드 하는 방법을 알아봅니다. 이 기능은 제품의 특정 버전에서 사용할 수 있습니다.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/12/2018
 ms.author: allensu
-ms.openlocfilehash: 587a6c4104693e8ccf610a670064832364a166d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2f0968af5cb52904f6044e130adba8b0ba9a6cd1
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887566"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192572"
 ---
 # <a name="pre-load-assets-on-an-azure-cdn-endpoint"></a>Azure CDN 엔드포인트에 자산 미리 로드
 [!INCLUDE [cdn-verizon-only](../../includes/cdn-verizon-only.md)]

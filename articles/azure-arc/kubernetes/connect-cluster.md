@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Azure Arc를 사용하여 Azure Arc가 지원되는 Kubernetes 클러스터 연결
 keywords: Kubernetes, Arc, Azure, K8s, 컨테이너
 ms.custom: references_regions
-ms.openlocfilehash: 761263a4cb8c83475142c2afcc39695bb84d46cd
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: eb3921d3ab2090b6bac54c9b68e9def3949ed4b5
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080493"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723744"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Azure Arc가 지원되는 Kubernetes 클러스터 연결(미리 보기)
 
@@ -72,6 +72,7 @@ Azure Arc 에이전트는 다음 프로토콜/포트/아웃바운드 URL이 작�
 | `https://github.com`, git://github.com                                                                         | 예제 GitOps 리포지토리는 GitHub에서 호스트됩니다. 구성 에이전트를 사용하려면 지정한 git 엔드포인트에 연결해야 합니다. |
 | `https://login.microsoftonline.com`                                                                            | Azure Resource Manager 토큰을 가져오고 업데이트하는 데 필요합니다.                                                                                    |
 | `https://azurearcfork8s.azurecr.io`                                                                            | Azure Arc 에이전트의 컨테이너 이미지를 끌어오는 데 필요합니다.                                                                  |
+| `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  시스템 할당 관리 id 인증서를 가져오는 데 필요 합니다.                                                                  |
 
 ## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Azure Arc가 지원되는 Kubernetes의 두 공급자 등록
 
@@ -174,7 +175,7 @@ AzureArcTest1  eastus      AzureArcTest
 
 ## <a name="connect-using-an-outbound-proxy-server"></a>아웃 바운드 프록시 서버를 사용 하 여 연결
 
-클러스터가 아웃 바운드 프록시 서버 뒤에 있는 경우 Azure CLI 하 고 Arc enabled Kubernetes 에이전트는 아웃 바운드 프록시 서버를 통해 해당 요청을 라우팅해야 합니다. 다음 구성은 이러한 작업을 수행 하는 데 도움이 됩니다.
+클러스터가 아웃 바운드 프록시 서버 뒤에 있는 경우 Azure CLI 하 고 Arc enabled Kubernetes 에이전트는 아웃 바운드 프록시 서버를 통해 해당 요청을 라우팅해야 합니다. 다음 구성은이를 사용 하도록 설정 합니다.
 
 1. `connectedk8s`다음 명령을 실행 하 여 컴퓨터에 설치 된 확장의 버전을 확인 합니다.
 

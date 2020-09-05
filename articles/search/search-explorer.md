@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: 19d46c034d56c1c54f8a00f08a7e3e72e758984f
-ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
+ms.openlocfilehash: 8f004ff8118829ebf2d245a136cf22cdde23accc
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84488208"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929791"
 ---
 # <a name="quickstart-use-search-explorer-to-run-queries-in-the-portal"></a>빠른 시작: 포털에서 검색 탐색기를 사용하여 쿼리 실행
 
 **검색 탐색기**는 Azure Cognitive Search의 검색 인덱스에 대한 쿼리를 실행하는 데 사용되는 기본 제공 쿼리 도구입니다. 이 도구를 사용하면 쿼리 구문을 쉽게 배우고 쿼리 또는 필터 식을 테스트 하거나 인덱스에 새 콘텐츠가 있는지 여부를 확인하여 데이터 새로 고침을 확인할 수 있습니다.
 
-이 빠른 시작에서는 기존 인덱스를 사용하여 검색 탐색기를 보여줍니다. 요청은 [검색 REST API](https://docs.microsoft.com/rest/api/searchservice/)를 사용하여 공식화되며, 응답은 JSON 문서로 반환됩니다.
+이 빠른 시작에서는 기존 인덱스를 사용하여 검색 탐색기를 보여줍니다. 요청은 [검색 REST API](/rest/api/searchservice/)를 사용하여 공식화되며, 응답은 JSON 문서로 반환됩니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -133,7 +133,7 @@ Azure Cognitive Search는 검색 순위에 따라 상위 50개의 일치 항목�
 
    ![Orderby 식](./media/search-explorer/search-explorer-example-ordery.png "정렬 순서 변경")
 
-**$filter** 및 **$orderby** 식 둘 다 OData 생성입니다. 자세한 내용은 [OData 필터 구문](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)을 참조하세요.
+**$filter** 및 **$orderby** 식 둘 다 OData 생성입니다. 자세한 내용은 [OData 필터 구문](/rest/api/searchservice/odata-expression-syntax-for-azure-search)을 참조하세요.
 
 <a name="start-search-explorer"></a>
 
@@ -147,7 +147,7 @@ Azure Cognitive Search는 검색 순위에 따라 상위 50개의 일치 항목�
 
 + 상용 웹 브라우저에서 입력할 수 있는 것과 비슷한 자유 형식 쿼리는 최종 사용자 환경을 테스트하는 데 유용합니다. 예를 들어, 기본 제공 부동산 샘플 인덱스를 가정할 경우 "Seattle apartments lake washington"을 입력한 후 Ctrl+F를 사용하여 검색 결과 내에서 용어를 찾을 수 있습니다. 
 
-+ 쿼리 및 필터 식은 Azure Search에서 지원되는 구문으로 표현됩니다. 기본 구문은 [간단한 구문](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)이지만 필요에 따라 보다 강력한 쿼리를 위해 [전체 Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)을 사용할 수 있습니다. [필터 식](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)은 OData 구문입니다.
++ 쿼리 및 필터 식은 Azure Search에서 지원되는 구문으로 표현됩니다. 기본 구문은 [간단한 구문](/rest/api/searchservice/simple-query-syntax-in-azure-search)이지만 필요에 따라 보다 강력한 쿼리를 위해 [전체 Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search)을 사용할 수 있습니다. [필터 식](/rest/api/searchservice/odata-expression-syntax-for-azure-search)은 OData 구문입니다.
 
 ## <a name="clean-up-resources"></a>리소스 정리
 
@@ -159,7 +159,7 @@ Azure Cognitive Search는 검색 순위에 따라 상위 50개의 일치 항목�
 
 ## <a name="next-steps"></a>다음 단계
 
-쿼리 구조 및 구문에 대해 자세히 알아보려면 Postman 또는 이와 동등한 도구를 사용하여 API의 더 많은 부분을 활용하는 쿼리 식을 만들어 보세요. [검색 REST API](https://docs.microsoft.com/rest/api/searchservice/)는 학습 및 탐색에 특히 유용합니다.
+쿼리 구조 및 구문에 대해 자세히 알아보려면 Postman 또는 이와 동등한 도구를 사용하여 API의 더 많은 부분을 활용하는 쿼리 식을 만들어 보세요. [검색 REST API](/rest/api/searchservice/)는 학습 및 탐색에 특히 유용합니다.
 
 > [!div class="nextstepaction"]
 > [Postman에서 기본 쿼리 만들기](search-query-simple-examples.md)

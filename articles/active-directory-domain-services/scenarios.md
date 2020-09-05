@@ -9,20 +9,70 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 08/14/2020
 ms.author: iainfou
-ms.openlocfilehash: ba4761a2b7893fd894f62b7e2252005d7afd1c91
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: a27d97e7e030da216b2296f11b6876ccf28c8ad0
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039979"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88722758"
 ---
 # <a name="common-use-cases-and-scenarios-for-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에 대 한 일반적인 사용 사례 및 시나리오
 
 Azure AD DS(Azure Active Directory Domain Services)는 도메인 조인, 그룹 정책, LDAP(Lightweight Directory Access Protocol) 및 Kerberos/NTLM 인증과 같은 관리되는 도메인 서비스를 제공합니다. Azure AD DS는 기존 Azure AD 테넌트와 통합되므로 사용자가 기존 자격 증명을 사용하여 로그인할 수 있습니다. 클라우드에서 도메인 컨트롤러를 배포, 관리 및 패치 하지 않고도 이러한 도메인 서비스를 사용할 수 있습니다 .이는 온-프레미스 리소스를 Azure로 원활 하 게 리프트 앤 시프트 하는 기능을 제공 합니다.
 
 이 문서에서는 Azure AD DS 가치를 제공 하 고 이러한 요구를 충족 하는 일반적인 비즈니스 시나리오를 간략하게 설명 합니다.
+
+## <a name="common-ways-to-provide-identity-solutions-in-the-cloud"></a>클라우드에서 ID 솔루션을 제공하는 일반적인 방법
+
+기존 워크로드를 클라우드로 마이그레이션하는 경우 디렉터리 인식 애플리케이션에서 온-프레미스 AD DS 디렉터리에 대한 읽기 또는 쓰기 액세스에 LDAP을 사용할 수 있습니다. Windows Server에서 실행되는 애플리케이션은 일반적으로 도메인에 가입된 VM(가상 머신)에 배포되므로 그룹 정책을 사용하여 안전하게 관리할 수 있습니다. 최종 사용자를 인증하기 위해 애플리케이션에서 Kerberos 또는 NTLM 인증과 같은 Windows 통합 인증을 사용할 수도 있습니다.
+
+IT 관리자는 다음 솔루션 중 하나를 사용하여 ID 서비스를 Azure에서 실행되는 애플리케이션에 제공하는 경우가 많습니다.
+
+* Azure에서 실행되는 워크로드와 온-프레미스 AD DS 환경 간에 사이트 간 VPN 연결을 구성합니다.
+    * 그러면 온-프레미스 도메인 컨트롤러에서 VPN 연결을 통해 인증을 제공합니다.
+* 온-프레미스에서 AD DS 도메인/포리스트를 확장하기 위해 Azure VM(가상 머신)을 사용하여 복제본 도메인 컨트롤러를 만듭니다.
+    * Azure VM에서 실행되는 도메인 컨트롤러는 인증을 제공하고, 온-프레미스 AD DS 환경 간에 디렉터리 정보를 복제합니다.
+* Azure VM에서 실행되는 도메인 컨트롤러를 사용하여 Azure에서 독립 실행형 AD DS 환경을 배포합니다.
+    * Azure VM에서 실행되는 도메인 컨트롤러는 인증을 제공하지만, 온-프레미스 AD DS 환경에서 복제되는 디렉터리 정보가 없습니다.
+
+이러한 방법을 사용하면 온-프레미스 디렉터리에 대한 VPN 연결로 인해 애플리케이션이 일시적인 네트워크 결함 또는 중단에 취약해질 수 있습니다. Azure에서 VM을 사용하여 도메인 컨트롤러를 배포하는 경우 IT 팀에서 VM을 관리하고 이러한 컨트롤러를 보호, 패치, 모니터링, 백업 및 문제를 해결해야 합니다.
+
+Azure AD DS는 ID 서비스를 제공하기 위해 온-프레미스 AD DS 환경에 대한 VPN 연결을 다시 만들거나 Azure에서 VM을 실행하고 관리해야 하는 대안을 제공합니다. 관리형 서비스인 Azure AD DS는 하이브리드 환경과 클라우드 전용 환경 모두에 대한 통합 ID 솔루션을 만들 때의 복잡성을 줄입니다.
+
+> [!div class="nextstepaction"]
+> [Azure AD DS와 Azure VM 또는 온 프레미스에서 Azure AD 및 자체 관리 AD DS를 비교하세요.][compare]
+
+## <a name="azure-ad-ds-for-hybrid-organizations"></a>하이브리드 조직을 위한 Azure AD DS
+
+많은 조직에서는 클라우드 및 온-프레미스 애플리케이션 워크로드가 모두 포함된 하이브리드 인프라를 실행합니다. 리프트 및 시프트 전략의 일환으로 Azure로 마이그레이션된 레거시 애플리케이션은 기존 LDAP 연결을 사용하여 ID 정보를 제공할 수 있습니다. 이 하이브리드 인프라를 지원하기 위해 온-프레미스 AD DS 환경의 ID 정보는 Azure AD 테넌트에 동기화될 수 있습니다. 그러면 Azure AD DS에서 온-프레미스 디렉터리 서비스에 대한 애플리케이션 연결을 다시 구성하고 관리할 필요 없이 Azure에서 ID 원본을 이러한 레거시 애플리케이션에 제공합니다.
+
+온-프레미스 리소스와 Azure 리소스를 모두 실행하는 하이브리드 조직인 Litware Corporation의 예를 살펴보겠습니다.
+
+![하이브리드 조직을 위한 Azure Active Directory Domain Services(온-프레미스 동기화 포함)](./media/overview/synced-tenant.png)
+
+* 도메인 서비스가 필요한 애플리케이션 및 서버 워크로드가 Azure의 가상 네트워크에 배포됩니다.
+    * 여기에는 리프트 및 시프트 전략의 일환으로 Azure로 마이그레이션된 레거시 애플리케이션이 포함될 수 있습니다.
+* ID 정보를 온-프레미스 디렉터리에서 Azure AD 테넌트로 동기화하기 위해 Litware Corporation에서 [Azure AD Connect][azure-ad-connect]를 배포합니다.
+    * 동기화되는 ID 정보에는 사용자 계정 및 그룹 멤버 자격이 포함됩니다.
+* Litware의 IT 팀에서 이 가상 네트워크 또는 피어링된 가상 네트워크에서 해당 Azure AD 테넌트에 Azure AD DS를 사용하도록 설정합니다.
+* 그러면 Azure 가상 네트워크에 배포된 애플리케이션과 VM에서 도메인 조인, LDAP 읽기, LDAP 바인딩, NTLM/Kerberos 인증 및 그룹 정책과 같은 Azure AD DS 기능을 사용할 수 있습니다.
+
+> [!IMPORTANT]
+> Azure AD Connect는 온-프레미스 AD DS 환경과의 동기화를 위해서만 설치되고 구성되어야 합니다. 개체를 Azure AD로 개체를 다시 동기화하기 위해 관리되는 도메인에 Azure AD Connect를 설치하는 것은 지원되지 않습니다.
+
+## <a name="azure-ad-ds-for-cloud-only-organizations"></a>클라우드 전용 조직을 위한 Azure AD DS
+
+클라우드 전용 Azure AD 테넌트에는 온-프레미스 ID 원본이 없습니다. 예를 들어 사용자 계정 및 그룹 멤버 자격은 Azure AD에서 직접 만들고 관리합니다.
+
+이제 ID에 Azure AD를 사용하는 클라우드 전용 조직인 Contoso의 예를 살펴보겠습니다. 모든 사용자 ID, 해당 자격 증명 및 그룹 멤버 자격은 Azure AD에서 만들고 관리합니다. 온-프레미스에서 ID 정보를 동기화하기 위한 Azure AD Connect의 추가 구성이 없습니다.
+
+![클라우드 전용 조직을 위한 Azure Active Directory Domain Services(온-프레미스 동기화 없음)](./media/overview/cloud-only-tenant.png)
+
+* 도메인 서비스가 필요한 애플리케이션 및 서버 워크로드가 Azure의 가상 네트워크에 배포됩니다.
+* Contoso의 IT 팀에서 이 가상 네트워크 또는 피어링된 가상 네트워크에서 해당 Azure AD 테넌트에 Azure AD DS를 사용하도록 설정합니다.
+* 그러면 Azure 가상 네트워크에 배포된 애플리케이션과 VM에서 도메인 조인, LDAP 읽기, LDAP 바인딩, NTLM/Kerberos 인증 및 그룹 정책과 같은 Azure AD DS 기능을 사용할 수 있습니다.
 
 ## <a name="secure-administration-of-azure-virtual-machines"></a>Azure virtual machines의 보안 관리
 
@@ -112,11 +162,13 @@ Apache 레인저를 사용 하도록 설정한 상태에서 관리 되는 도메
 시작 하려면 [관리 되는 Azure Active Directory Domain Services 도메인을 만들고 구성][tutorial-create-instance]합니다.
 
 <!-- INTERNAL LINKS -->
-[hdinsight]: ../hdinsight/domain-joined/apache-domain-joined-configure.md
+[hdinsight]: ../hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds.md
 [tutorial-create-instance]: tutorial-create-instance.md
 [custom-ou]: create-ou.md
 [create-gpo]: manage-group-policy.md
 [sspr]: ../active-directory/authentication/overview-authentication.md#self-service-password-reset
+[compare]: compare-identity-solutions.md
+[azure-ad-connect]: ../active-directory/hybrid/whatis-azure-ad-connect.md
 
 <!-- EXTERNAL LINKS -->
 [windows-rds]: /windows-server/remote/remote-desktop-services/rds-azure-adds

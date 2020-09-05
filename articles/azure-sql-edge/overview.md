@@ -9,18 +9,18 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 1c70950426b2f34d94bd66d2287550e19253874c
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 2c96e4b7baa2c463c42db9440cadb3cb396fde1b
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84233159"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642472"
 ---
 # <a name="what-is-azure-sql-edge-preview"></a>Azure SQL Edge(미리 보기)란?
 
 Azure SQL Edge(미리 보기)는 IoT 및 IoT Edge 배포에 최적화된 관계형 데이터베이스 엔진으로 IoT 애플리케이션과 솔루션을 위한 고성능 데이터 스토리지 및 처리 계층을 만드는 기능을 제공합니다. Azure SQL Edge는 JSON, 그래프, 시계열 데이터 등의 관계형 및 비관계형 데이터를 스트리밍, 처리 및 분석하는 기능을 제공하므로 다양한 최신 IoT 애플리케이션에 적합한 선택입니다.
 
-Azure SQL Edge는 업계 최고 수준의 성능, 보안 및 쿼리 처리 기능을 제공하는 최신 버전의 [Microsoft SQL Server 데이터베이스 엔진](/sql/sql-server/sql-server-technical-documentation?toc=/azure/azure-sql-edge/toc.json)을 기반으로 합니다. Azure SQL Edge는 SQL Server 및 Azure SQL Database와 동일한 엔진을 기반으로 하기 때문에 애플리케이션 또는 솔루션을 더 쉽고 빠르게 개발할 수 있는 동일한 T-SQL 프로그래밍 노출 영역을 제공하며, 그와 동시에 IoT Edge 디바이스, 데이터 센터 및 클라우드 간에 애플리케이션을 간편하게 이식할 수 있습니다.
+Azure SQL Edge는 업계 최고의 성능, 보안 및 쿼리 처리 기능을 제공 하는 최신 버전의 Microsoft SQL Database 엔진 (/sql/sql-server/sql-server-technical-documentation? toc =/azure/azure-sql-edge/toc.json)을 기반으로 합니다. Azure SQL Edge는 [SQL Server](/sql/sql-server/sql-server-technical-documentation?toc=/azure/azure-sql-edge/toc.json) 및 [azure sql](https://docs.microsoft.com/azure/azure-sql/)과 동일한 엔진을 기반으로 하기 때문에 응용 프로그램 또는 솔루션 개발을 더 쉽고 빠르게 수행할 수 있도록 하는 동일한 t-sql 프로그래밍 노출 영역을 제공 하 고, 동시에 IoT Edge 장치, 데이터 센터 및 클라우드 간에 응용 프로그램 이식성을 제공 합니다.
 
 > [!NOTE]
 > Azure SQL Edge는 현재 미리 보기로 제공되므로 프로덕션 환경에서는 사용할 수 없습니다.

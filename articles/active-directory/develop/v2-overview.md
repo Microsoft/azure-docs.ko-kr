@@ -12,12 +12,12 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40
-ms.openlocfilehash: 566893a9babc3f771e3198970e0a5ae97592e322
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: e34eeeca3b17087fb5bd43ae353e43b5ab355831
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231678"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88119558"
 ---
 # <a name="microsoft-identity-platform-overview"></a>Microsoft ID 플랫폼 개요
 
@@ -59,7 +59,7 @@ Microsoft ID 플랫폼을 사용하여 앱에서 인증 및 권한 부여를 통
 
 이 권장 문서 세트에서 핵심 인증 및 Azure AD 개념을 Microsoft ID 플랫폼에 적용하는 방법에 대해 알아봅니다.
 
-- [인증 기본 사항](authentication-scenarios.md)
+- [인증 기본 사항](./authentication-vs-authorization.md)
 - [애플리케이션 및 서비스 주체](app-objects-and-service-principals.md)
 - [대상 그룹](v2-supported-account-types.md)
 - [권한 및 동의](v2-permissions-and-consent.md)
@@ -71,7 +71,7 @@ Microsoft ID 플랫폼을 사용하여 앱에서 인증 및 권한 부여를 통
 
 [Azure AD B2C](../../active-directory-b2c/overview.md) - 사용자가 Facebook 또는 Google과 같은 소셜 계정을 사용하거나 이메일 주소 및 암호를 사용하여 로그인할 수 있는 고객 지향 애플리케이션을 빌드합니다.
 
-[Azure AD B2B](../b2b/what-is-b2b.md) - 외부 사용자를 "게스트" 사용자로 Azure AD에 초대하고, 인증을 위해 기존 자격 증명을 사용하는 동안 권한 부여에 대한 권한을 할당합니다.
+[Azure AD B2B](../external-identities/what-is-b2b.md) - 외부 사용자를 "게스트" 사용자로 Azure AD에 초대하고, 인증을 위해 기존 자격 증명을 사용하는 동안 권한 부여에 대한 권한을 할당합니다.
 
 > [!TIP]
 > *Azure Active Directory 개발자 플랫폼(v1.0)* 설명서를 찾으시나요? [개발자용 Azure Active Directory(v1.0) 개요](../azuread-dev/v1-overview.md)를 참조하세요.

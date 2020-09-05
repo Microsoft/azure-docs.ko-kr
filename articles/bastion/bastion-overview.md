@@ -1,18 +1,18 @@
 ---
 title: Azure Bastion | Microsoft Docs
-description: Azure Bastion에 대해 알아보기
+description: RDP/SSH 포트를 외부에 노출하지 않고 가상 머신에 안전하고 원활한 RDP/SSH 연결을 제공하는 Azure Bastion에 대해 알아봅니다.
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: overview
 ms.date: 01/31/2020
 ms.author: cherylmc
-ms.openlocfilehash: 299a69675eed1ba958c6d13cf447407450df2abb
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 8b27a7c2fd03ed0a80f1775465f1f1bbb44f0202
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80411121"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270345"
 ---
 # <a name="what-is-azure-bastion"></a>Azure Bastion 정보
 

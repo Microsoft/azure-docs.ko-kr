@@ -1,19 +1,20 @@
 ---
-title: Azure 청구서 이해 | Microsoft Docs
+title: Azure 청구서 이해
 description: Azure 구독에 대한 사용량 및 청구를 읽고 이해하는 방법에 대해 알아봅니다.
 author: bandersmsft
 ms.reviewer: jureid
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/12/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: a3bf55bef0f6fc25f98b362b4a22e22471a031f1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b7b115f909c57470bfbdab9cc44e6a258f85b8f1
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199061"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88685921"
 ---
 # <a name="understand-terms-on-your-microsoft-azure-invoice"></a>Microsoft Azure 청구서의 조건 이해
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogardle
-ms.openlocfilehash: 78eedb9bd4f12644a1bc992d0786a43b8af767a9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0dd787916159637ce92a29a5d4baa1ffe7a09ba4
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507933"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510014"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Azure에서 Oracle 데이터베이스 설계 및 구현
 
@@ -49,7 +49,7 @@ ms.locfileid: "86507933"
 | **네트워킹** |LAN/WAN  |SDN(소프트웨어 방식 네트워킹)|
 | **보안 그룹** |IP/포트 제한 도구 |[NSG (네트워크 보안 그룹)](https://azure.microsoft.com/blog/network-security-groups) |
 | **복원력** |MTBF(평균 고장 간격) |MTTR(평균 복구 시간)|
-| **계획 된 유지 관리** |패치/업그레이드|[가용성 집합](../../windows/infrastructure-example.md)(Azure에서 관리되는 패치/업그레이드) |
+| **계획된 유지 보수** |패치/업그레이드|[가용성 집합](../../windows/infrastructure-example.md)(Azure에서 관리되는 패치/업그레이드) |
 | **리소스** |전용  |다른 클라이언트와 공유|
 | **지역** |데이터 센터 |[지역 쌍](../../regions.md#region-pairs)|
 | **스토리지** |SAN/실제 디스크 |[Azure 관리 스토리지](https://azure.microsoft.com/pricing/details/managed-disks/?v=17.23h)|
@@ -187,7 +187,7 @@ I/O 요구 사항에 대해 명확히 알고 있으면 이러한 요구 사항�
 - 데이터 압축을 사용하여 I/O를 줄입니다(데이터 및 인덱스 모두에 해당).
 - 개별 데이터 디스크에서 다시 실행 로그, 시스템, 임시 디스크를 분리하고 TS를 실행 취소합니다.
 - 기본 OS 디스크(/dev/sda)에 애플리케이션 파일을 배치하지 않습니다. 이러한 디스크는 빠른 VM 부팅 시간에 맞게 최적화되지 않으며, 애플리케이션에 좋은 성능을 제공하지 않을 수 있습니다.
-- Premium storage에서 M 시리즈 Vm을 사용 하는 경우 redo logs 디스크에서 [쓰기 가속기](../../linux/how-to-enable-write-accelerator.md) 를 사용 하도록 설정 합니다.
+- Premium storage에서 M 시리즈 Vm을 사용 하는 경우 redo logs 디스크에서 [쓰기 가속기](../../how-to-enable-write-accelerator.md) 를 사용 하도록 설정 합니다.
 
 ### <a name="disk-cache-settings"></a>디스크 캐시 설정
 

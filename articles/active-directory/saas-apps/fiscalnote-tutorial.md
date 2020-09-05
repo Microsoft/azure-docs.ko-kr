@@ -2,26 +2,21 @@
 title: '자습서: FiscalNote와 Azure Active Directory SSO(Single Sign-On) 연결 | Microsoft Docs'
 description: Azure Active Directory 및 FiscalNote 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 55274f26-be7e-4514-964c-7186ecb55c4a
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23c7c21d598294cc112991f795870c961ae31913
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 66ea84c93fb8d6af99d12f6900d70ef54dab5292
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72532913"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555023"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fiscalnote"></a>자습서: FiscalNote와 Azure Active Directory SSO(Single Sign-On) 연결
 

@@ -1,18 +1,21 @@
 ---
 title: 서비스 공급자 보기 및 관리
 description: 고객은 Azure Portal의 서비스 공급자 페이지를 사용하여 서비스 공급자, 서비스 공급자 제공 및 위임된 리소스의 정보를 볼 수 있습니다.
-ms.date: 07/10/2020
+ms.date: 08/12/2020
 ms.topic: how-to
-ms.openlocfilehash: bc0de0d3fd7ac4fe7c00720aab41961d9100ff5a
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: c22408a52d973a244d67528a73d4eaa487f166ba
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86273781"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167167"
 ---
 # <a name="view-and-manage-service-providers"></a>서비스 공급자 보기 및 관리
 
-고객은 [Azure Portal](https://portal.azure.com) 의 **서비스** 공급자 페이지를 사용 하 여 서비스 공급자 및 서비스 공급자 제안에 대 한 세부 정보를 보고, 특정 리소스를 [Azure Lighthouse](../overview.md)에 위임 하 고, 새로운 서비스 공급자 제품을 쇼핑 할 수 있습니다. 여기서는 서비스 공급자 및 고객 관련 내용을 다루지만, 여러 테넌트를 관리하는 기업은 동일한 프로세스를 사용하여 관리 환경을 통합할 수 있습니다.
+고객은 [Azure Portal](https://portal.azure.com) 의 **서비스** 공급자 페이지를 사용 하 여 서비스 공급자 및 서비스 공급자 제안에 대 한 세부 정보를 보고, 특정 리소스를 [Azure Lighthouse](../overview.md)에 위임 하 고, 새로운 서비스 공급자 제품을 쇼핑 할 수 있습니다.
+
+> [!TIP]
+> 여기서는 서비스 공급자 및 고객을 참조 하지만, [여러 테 넌 트를 관리](../concepts/enterprise.md) 하는 기업은 동일한 프로세스를 사용 하 여 관리 환경을 통합할 수 있습니다.
 
 Azure Portal의 **서비스 공급자** 페이지에 액세스하려면 고객은 **모든 서비스**를 선택하고 **서비스 공급자**를 검색하여 선택할 수 있습니다. 또한 Azure Portal 위쪽에 있는 검색 상자에 "서비스 공급자" 또는 "Azure Lighthouse"를 입력 하 여 찾을 수 있습니다.
 

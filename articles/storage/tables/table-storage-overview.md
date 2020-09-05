@@ -2,21 +2,21 @@
 title: Table Storage 소개 - Azure의 개체 스토리지 | Microsoft Docs
 description: Azure Table Storage, NoSQL 데이터 스토리지를 사용하여 클라우드에 구조화된 데이터를 저장합니다.
 services: storage
-author: SnehaGunda
 ms.service: storage
+author: tamram
+ms.author: tamram
 ms.devlang: dotnet
 ms.topic: overview
 ms.date: 04/23/2018
-ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: c850d2b01e098a10aacf383f0ed4340cb9e64e10
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 2670d9ce568195fd97350bf678059ac89610422f
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "62129788"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236168"
 ---
-# <a name="introduction-to-table-storage-in-azure"></a>Azure의 Table Storage 소개
+# <a name="what-is-azure-table-storage-"></a>Azure Table 스토리지란? 
 
 [!INCLUDE [storage-table-cosmos-db-tip-include](../../../includes/storage-table-cosmos-db-tip-include.md)]
 

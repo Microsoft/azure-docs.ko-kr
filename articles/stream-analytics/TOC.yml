@@ -1,4 +1,4 @@
-- name: Stream Analytics 설명서
+- name: Azure Stream Analytics 설명서
   href: index.yml
 - name: 개요
   items:
@@ -40,9 +40,6 @@
   items:
     - name: 코드 샘플
       href: 'https://azure.microsoft.com/resources/samples/?service=stream-analytics'
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 스트리밍 분석 기술 선택
@@ -73,12 +70,34 @@
         - name: 출력 개요
           href: stream-analytics-define-outputs.md
           displayName: 'adls, sql, blob, event hubs, power bi, table, service bus, cosmos, functions'
-        - name: Cosmos DB 출력
-          href: stream-analytics-documentdb-output.md
-        - name: Azure SQL DB 출력
+        - name: Azure Data Lake Storage Gen 1
+          href: azure-data-lake-storage-gen1-output.md
+        - name: Azure SQL Database
+          href: sql-database-output.md
+        - name: SQL 데이터베이스 성능
           href: stream-analytics-sql-output-perf.md
+        - name: Azure Synapse Analytics
+          href: azure-synapse-analytics-output.md
+        - name: Blob Storage 및 Azure Data Lake Gen 2
+          href: blob-storage-azure-data-lake-gen2-output.md
         - name: Blob 사용자 지정 경로 패턴
           href: stream-analytics-custom-path-patterns-blob-storage-output.md
+        - name: Event Hubs
+          href: event-hubs-output.md
+        - name: Power BI
+          href: power-bi-output.md
+        - name: Table Storage
+          href: table-storage-output.md
+        - name: Service Bus 큐
+          href: service-bus-queues-output.md
+        - name: Service Bus 토픽
+          href: service-bus-topics-output.md
+        - name: Azure Cosmos DB
+          href: azure-cosmos-db-output.md
+        - name: Cosmos DB 최적화
+          href: stream-analytics-documentdb-output.md
+        - name: Azure Functions
+          href: azure-functions-output.md
     - name: 함수를 사용한 쿼리 확장
       items:
         - name: 함수 개요
@@ -164,6 +183,8 @@
               displayName: 'managed identity, identities, authenticate'
         - name: 데이터 암호화
           href: data-protection.md
+        - name: 지리적 중복
+          href: geo-redundancy.md
     - name: 솔루션 빌드
       items:
         - name: Twitter 감정 분석
@@ -172,6 +193,8 @@
           href: stream-analytics-real-time-fraud-detection.md
         - name: IoT Edge에서 작업 실행
           href: stream-analytics-edge.md
+        - name: Azure Stack에서 작업 실행
+          href: on-azure-stack.md
         - name: 요금 창구 센서 데이터 분석
           href: stream-analytics-build-an-iot-solution-using-stream-analytics.md
         - name: 자주 발생하는 거래
@@ -629,6 +652,9 @@
       href: /azure/templates/microsoft.streamanalytics/allversions
     - name: Azure CLI
       href: /cli/azure/ext/stream-analytics/stream-analytics
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Stream Analytics 미리 보기

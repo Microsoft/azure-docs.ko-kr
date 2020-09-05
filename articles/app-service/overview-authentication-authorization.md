@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 8362cc3b8f8477f77d8ec672144e7c68d2e3434d
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 19d6a646df22e2f8c9bdfc03f15453a520e527a4
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080731"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962828"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Azure App Service 및 Azure Functions의 인증 및 권한 부여
 
@@ -31,7 +31,7 @@ Azure App Service는 내장된 인증 및 권한 부여 지원을 제공하므�
 > [!NOTE]
 > 이 기능을 사용 하도록 설정 하면 [https를 적용](configure-ssl-bindings.md#enforce-https)하는 App Service 구성 설정에 관계 없이 응용 프로그램에 대 한 **모든** 비보안 HTTP 요청이 https로 자동으로 리디렉션됩니다. 필요한 경우 `requireHttps` [인증 설정 구성 파일](app-service-authentication-how-to.md#configuration-file-reference)의 설정을 통해이를 사용 하지 않도록 설정할 수 있지만 보안 토큰이 비보안 HTTP 연결을 통해 전송 되지 않도록 주의 해야 합니다.
 
-기본 모바일 응용 프로그램과 관련된 자세한 내용은 [Azure App Service를 사용하여 모바일 응용 프로그램에 대한 사용자 인증 및 권한 부여](../app-service-mobile/app-service-mobile-auth.md)를 참조하세요.
+기본 모바일 응용 프로그램과 관련된 자세한 내용은 [Azure App Service를 사용하여 모바일 응용 프로그램에 대한 사용자 인증 및 권한 부여](/previous-versions/azure/app-service-mobile/app-service-mobile-auth)를 참조하세요.
 
 ## <a name="how-it-works"></a>작동 방법
 
@@ -52,7 +52,7 @@ Azure App Service는 내장된 인증 및 권한 부여 지원을 제공하므�
 
 ### <a name="on-containers"></a>컨테이너에서
 
-인증 및 권한 부여 모듈은 응용 프로그램 코드와 분리 된 별도의 컨테이너에서 실행 됩니다. [특사 패턴](https://docs.microsoft.com/azure/architecture/patterns/ambassador)으로 알려진 기능을 사용 하면 들어오는 트래픽과 상호 작용 하 여 Windows에서와 비슷한 기능을 수행할 수 있습니다. In-process로 실행 되지 않으므로 특정 언어 프레임 워크와의 직접 통합이 가능 하지 않습니다. 그러나 앱에 필요한 관련 정보는 아래에 설명 된 대로 요청 헤더를 사용 하 여 전달 됩니다.
+인증 및 권한 부여 모듈은 응용 프로그램 코드와 분리 된 별도의 컨테이너에서 실행 됩니다. [특사 패턴](/azure/architecture/patterns/ambassador)으로 알려진 기능을 사용 하면 들어오는 트래픽과 상호 작용 하 여 Windows에서와 비슷한 기능을 수행할 수 있습니다. In-process로 실행 되지 않으므로 특정 언어 프레임 워크와의 직접 통합이 가능 하지 않습니다. 그러나 앱에 필요한 관련 정보는 아래에 설명 된 대로 요청 헤더를 사용 하 여 전달 됩니다.
 
 ### <a name="userapplication-claims"></a>사용자/응용 프로그램 클레임
 
@@ -77,7 +77,7 @@ App Service는 웹앱, API 또는 기본 모바일 앱의 사용자와 연결된
 
 ID 토큰, 액세스 토큰 및 새로 고침 토큰은 인증 된 세션에 대해 캐시 되며 연결 된 사용자만 액세스할 수 있습니다.  
 
-앱에서 토큰을 사용할 필요가 없는 경우 토큰 저장소를 사용하지 않도록 설정할 수 있습니다.
+앱에서 토큰을 사용할 필요가 없는 경우 앱의 **인증/권한 부여** 페이지에서 토큰 저장소를 사용 하지 않도록 설정할 수 있습니다.
 
 ### <a name="logging-and-tracing"></a>로깅 및 추적
 
@@ -147,10 +147,10 @@ App Service는 [페더레이션 ID](https://en.wikipedia.org/wiki/Federated_iden
 > [!CAUTION]
 > 이러한 방식으로 액세스를 제한 하는 것은 앱에 대 한 모든 호출에 적용 됩니다 .이는 여러 단일 페이지 응용 프로그램과 마찬가지로 공개적으로 사용 가능한 홈 페이지를 사용 하는 앱에는 바람직하지 않을 수 있습니다.
 
-## <a name="more-resources"></a>추가 리소스
+## <a name="more-resources"></a>기타 참고 자료
 
 [자습서: Azure App Service에서 엔드투엔드 사용자 인증 및 권한 부여(Windows)](tutorial-auth-aad.md)  
-[자습서: Azure App Service에서 Linux용 엔드투엔드 사용자 인증 및 권한 부여](containers/tutorial-auth-aad.md)  
+[자습서: Azure App Service에서 Linux용 엔드투엔드 사용자 인증 및 권한 부여](./tutorial-auth-aad.md?pivots=platform-linux%3fpivots%3dplatform-linux)  
 App Service에서 인증 [및 권한 부여 사용자 지정](app-service-authentication-how-to.md) 
  [Azure AppService EasyAuth (타사)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth) 
  의 .net Core 통합 [.Net Core (타사)를 사용 하 여 Azure App Service 인증 가져오기](https://github.com/kirkone/KK.AspNetCore.EasyAuthAuthentication)
@@ -171,8 +171,8 @@ App Service에서 인증 [및 권한 부여 사용자 지정](app-service-authen
 [Twitter]: configure-authentication-provider-twitter.md
 [OIDC]: configure-authentication-provider-openid-connect.md
 
-[custom-auth]: ../app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#custom-auth
+[custom-auth]: /previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk#custom-auth
 
-[ADAL-Android]: ../app-service-mobile/app-service-mobile-android-how-to-use-client-library.md#adal
-[ADAL-iOS]: ../app-service-mobile/app-service-mobile-ios-how-to-use-client-library.md#adal
-[ADAL-dotnet]: ../app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library.md#adal
+[ADAL-Android]: /previous-versions/azure/app-service-mobile/app-service-mobile-android-how-to-use-client-library#adal
+[ADAL-iOS]: /previous-versions/azure/app-service-mobile/app-service-mobile-ios-how-to-use-client-library#adal
+[ADAL-dotnet]: /previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library#adal

@@ -3,15 +3,15 @@ title: Windows 가상 데스크톱 안전 URL 목록-Azure
 description: Windows 가상 데스크톱 배포가 의도 한 대로 작동 하도록 차단 해야 하는 Url 목록입니다.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 08/12/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 37fb5ccf121fed6e772dc1cd3dcba2345d62c66f
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: d75d6ecf73dece6dad43367a7f869a1b8ec3d86b
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067208"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135864"
 ---
 # <a name="safe-url-list"></a>안전 URL 목록
 
@@ -27,11 +27,12 @@ Windows Virtual Desktop용으로 생성한 Azure 가상 머신에는 다음 URL�
 |mrsglobalsteus2prod.blob.core.windows.net|443|에이전트 및 SXS 스택 업데이트|AzureCloud|
 |*.core.windows.net|443|에이전트 트래픽|AzureCloud|
 |\*.servicebus.windows.net|443|에이전트 트래픽|AzureCloud|
-|prod.warmpath.msftcloudes.com|443|에이전트 트래픽|AzureCloud|
+|gcs.prod.monitoring.core.windows.net|443|에이전트 트래픽|AzureCloud|
 |catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud|
 |kms.core.windows.net|1688|Windows 정품 인증|인터넷|
 |wvdportalstorageblob.blob.core.windows.net|443|Azure Portal 지원|AzureCloud|
 | 169.254.169.254 | 80 | [Azure Instance Metadata service 끝점](../virtual-machines/windows/instance-metadata-service.md) | 해당 없음 |
+| 168.63.129.16 | 80 | [세션 호스트 상태 모니터링](../virtual-network/security-overview.md#azure-platform-considerations) | 해당 없음 |
 
 >[!IMPORTANT]
 >이제 Windows Virtual Desktop에서 FQDN 태그를 지원합니다. 자세한 내용은 [Azure Firewall을 사용하여 Windows Virtual Desktop 배포 보호](../firewall/protect-windows-virtual-desktop.md)를 참조하세요.
@@ -71,7 +72,7 @@ Windows Virtual Desktop용으로 생성한 Azure 가상 머신에는 다음 URL�
 |\*.servicebus.windows.net|443|데이터 문제 해결|모두|
 |go.microsoft.com|443|Microsoft FWLinks|모두|
 |aka.ms|443|Microsoft URL 단축기|모두|
-|docs.microsoft.com|443|설명서|모두|
+|docs.microsoft.com|443|문서화|모두|
 |privacy.microsoft.com|443|개인정보처리방침|모두|
 |query.prod.cms.rt.microsoft.com|443|클라이언트 업데이트|Windows Desktop|
 

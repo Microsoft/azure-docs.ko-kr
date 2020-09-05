@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/06/2020
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: c2481ca9894a1af3b363db8d5043b7fcd4eefc3d
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 0a98bf7d6a035dbf293bda5d8afe5d0e1130f58f
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498024"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705557"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>상업용 Marketplace 혜택
 
@@ -26,13 +26,13 @@ Marketplace Rewards는 첫 번째 고객을 확보하는 데 도움이 되는 �
 
 이 프로그램은 긍정적인 피드백 순환 고리를 만듭니다. 각 성장 단계의 혜택이 다음 단계로 나아가도록 설계되어 상업용 Marketplace를 플랫폼으로 활용하여 Microsoft의 분야 및 Microsoft의 채널을 통해 비즈니스를 Microsoft 고객으로 성장시킬 수 있습니다.
 
-혜택은 제품이 [목록, 평가판 또는 거래](determine-your-listing-type.md#choose-a-call-to-action)인지에 따라 구별됩니다.
+혜택은 제품이 [목록, 평가판 또는 거래](determine-your-listing-type.md#choose-a-listing-option)인지에 따라 구별됩니다.
 
 자격 조건에 따라 제품이 게시되면 Rewards 팀의 구성원이 연락을 드릴 것입니다.
 
 거래 업체의 경우 상업적 marketplace 플랫폼을 통해 청구 된 판매를 성장 하는 경우 계층 당 더 많은 이점을 얻을 수 있습니다.
 
-상점에 게시하기 위한 최소 요구 사항은 MPNID이므로, MPN 역량 상태 또는 파트너 유형에 관계없이 이러한 혜택은 모든 파트너에게 제공됩니다. 각 파트너는 상업적 marketplace를 통해 비즈니스를 플랫폼으로 성장 시킬 수 있습니다.
+온라인 매장에서 게시 해야 하는 최소 요구 사항은 MPNID 이므로 MPN 역량 상태 또는 파트너 유형과 관계 없이 모든 파트너에 게 이러한 혜택을 제공 합니다. 각 파트너는 상업적 marketplace를 통해 비즈니스를 플랫폼으로 성장 시킬 수 있습니다.
 
 사용자가 사용할 수 있는 리소스를 이해 하 고 모범 사례를 구현 하는 데 도움을 받을 수 있으며, 사용자가 [직접 검토할](https://partner.microsoft.com/asset/collection/azure-marketplace-and-appsource-publisher-toolkit#/)수도 있습니다.
 
@@ -87,7 +87,7 @@ Live 제품을 보유 한 모든 파트너는 전담 참여 관리자와 협력 
 
 ![기술 혜택](./media/marketplace-publishers-guide/technical-benefit.png)
 
-\*판매 된 사용자 수 임계값은 Microsoft 365 앱에만 적용 되 고 (Microsoft 팀, Office, Outlook 또는 SharePoint와 통합 된 SaaS 응용 프로그램) 혜택은 2021 년 6 월 30 일에 적용 됩니다.
+\* 판매 된 사용자 수 임계값은 Microsoft 365 앱에만 적용 되 고 (Microsoft 팀, Office, Outlook 또는 SharePoint와 통합 된 SaaS 응용 프로그램) 혜택은 2021 년 6 월 30 일에 적용 됩니다.
 
 이러한 모든 혜택에 대한 자세한 설명은 [Marketplace Rewards 프로그램 데크](https://aka.ms/marketplacerewards)에서 확인할 수 있습니다.
 

@@ -16,17 +16,17 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 897762e523a2d20445c3a25e612cf138e021f633
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 94f4d17596936dd9d0ebbdae3c351cac9ed2a570
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739722"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89299867"
 ---
 # <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>빠른 시작: Azure Active Directory의 명명된 위치 구성
 
 명명된 위치를 사용하여 조직에 신뢰할 수 있는 IP 주소 범위 레이블을 지정할 수 있습니다. Azure AD는 명명된 위치를 사용하여 다음 작업을 수행합니다.
-- [위험 탐지](concept-risk-events.md)에서 가양성을 검색합니다. 신뢰할 수 있는 위치에서 로그인하면 사용자의 로그인 위험이 줄어듭니다.   
+- [위험 탐지](../identity-protection/overview-identity-protection.md)에서 가양성을 검색합니다. 신뢰할 수 있는 위치에서 로그인하면 사용자의 로그인 위험이 줄어듭니다.   
 - [위치 기반 조건부 액세스](../conditional-access/location-condition.md)를 구성합니다.
 
 이 빠른 시작에서는 환경에서 명명된 위치를 구성하는 방법을 알아봅니다.
@@ -64,4 +64,4 @@ ms.locfileid: "83739722"
 자세한 내용은 다음을 참조하세요.
 
 - [조건부 액세스에서 조건으로서의 위치](../conditional-access/concept-conditional-access-conditions.md#locations).
-- [위험한 로그인 보고서](concept-risky-sign-ins.md)  
+- [위험한 로그인 보고서](../identity-protection/overview-identity-protection.md)

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 06/30/2020
 ms.author: aahi
 ms.custom: devx-track-python
-ms.openlocfilehash: daee5a921e25dc74d6e869ca3feb6c66d8c4ce7d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 38c2b3cdf40f1924a36ffd84d9dc5f9b2f7f319d
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87851034"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245709"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>빠른 시작: Anomaly Detector REST API 및 Python을 사용하여 시계열 데이터에서 변칙 검색
 
@@ -31,7 +31,7 @@ ms.locfileid: "87851034"
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-- Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/)
+- Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/cognitive-services)
 - Azure 구독을 보유한 후에는 Azure Portal에서 <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Anomaly Detector 리소스 만들기"  target="_blank">Anomaly Detector 리소스 <span class="docon docon-navigate-external x-hidden-focus"></span></a>를 만들어 키와 엔드포인트를 가져옵니다. 배포될 때까지 기다렸다가 **리소스로 이동** 단추를 클릭합니다.
     - 애플리케이션을 Anomaly Detector API에 연결하려면 만든 리소스의 키와 엔드포인트가 필요합니다. 이 빠른 시작의 뒷부분에 나오는 코드에 키와 엔드포인트를 붙여넣습니다.
     평가판 가격 책정 계층(`F0`)을 통해 서비스를 사용해보고, 나중에 프로덕션용 유료 계층으로 업그레이드할 수 있습니다.
@@ -85,7 +85,7 @@ ms.locfileid: "87851034"
 
 ## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>최신 데이터 요소의 변칙 상태 검색
 
-1. `detect_latest()`라는 메서드를 만들어 시계열의 최신 데이터 요소가 변칙인지 확인합니다. 위의 `send_request()` 메서드를 엔드포인트, URL, 구독 키 및 JSON 데이터로 호출합니다. 
+1. `detect_latest()`라는 메서드를 만들어 시계열의 최신 데이터 요소가 변칙인지 확인합니다. 위의 `send_request()` 메서드를 엔드포인트, URL, 구독 키 및 JSON 데이터로 호출합니다.
 
 2. 결과에서 `json.dumps()`를 호출하여 형식을 지정하고 콘솔에 출력합니다.
 

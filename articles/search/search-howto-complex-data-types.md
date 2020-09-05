@@ -9,12 +9,12 @@ tags: complex data types; compound data types; aggregate data types
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: 0fd7ba1723da77313407725ec676e69b0ef3bca1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2b26a317f7338b3e87623b8312d9f7efd10dbed1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496675"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917859"
 ---
 # <a name="how-to-model-complex-data-types-in-azure-cognitive-search"></a>Azure Cognitive Search에서 복합 데이터 형식을 모델링 하는 방법
 
@@ -33,7 +33,7 @@ Azure Cognitive Search는 기본적으로 복합 형식 및 컬렉션을 지원 
 
 ## <a name="example-of-a-complex-structure"></a>복합 구조의 예
 
-다음 JSON 문서는 간단한 필드와 복잡 한 필드로 구성 됩니다. 및와 같은 복합 필드 `Address` 에 `Rooms` 는 하위 필드가 있습니다. `Address`에는 문서의 단일 개체 이므로 해당 하위 필드에 대 한 단일 값 집합이 있습니다. 반면에는 `Rooms` 컬렉션의 각 개체에 대해 하나씩, 하위 필드에 대 한 값 집합이 여러 개 있습니다.
+다음 JSON 문서는 간단한 필드와 복잡 한 필드로 구성 됩니다. 및와 같은 복합 필드 `Address` 에 `Rooms` 는 하위 필드가 있습니다. `Address` 에는 문서의 단일 개체 이므로 해당 하위 필드에 대 한 단일 값 집합이 있습니다. 반면에는 `Rooms` 컬렉션의 각 개체에 대해 하나씩, 하위 필드에 대 한 값 집합이 여러 개 있습니다.
 
 ```json
 {
@@ -62,9 +62,9 @@ Azure Cognitive Search는 기본적으로 복합 형식 및 컬렉션을 지원 
 
 ## <a name="creating-complex-fields"></a>복합 필드 만들기
 
-모든 인덱스 정의와 마찬가지로, 포털, [REST API](https://docs.microsoft.com/rest/api/searchservice/create-index)또는 [.net SDK](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) 를 사용 하 여 복합 형식을 포함 하는 스키마를 만들 수 있습니다. 
+모든 인덱스 정의와 마찬가지로, 포털, [REST API](/rest/api/searchservice/create-index)또는 [.net SDK](/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) 를 사용 하 여 복합 형식을 포함 하는 스키마를 만들 수 있습니다. 
 
-다음 예에서는 간단한 필드, 컬렉션 및 복합 형식을 사용 하는 JSON 인덱스 스키마를 보여 줍니다. 복합 형식 내에서 각 하위 필드는 형식을 가지 며 최상위 필드와 마찬가지로 특성을 가질 수 있습니다. 이 스키마는 위의 예제 데이터에 해당 합니다. `Address`는 컬렉션이 아닌 복합 필드입니다. 호텔에는 주소가 하나 있습니다. `Rooms`는 복합 컬렉션 필드 이며 (호텔에는 많은 방 있음)
+다음 예에서는 간단한 필드, 컬렉션 및 복합 형식을 사용 하는 JSON 인덱스 스키마를 보여 줍니다. 복합 형식 내에서 각 하위 필드는 형식을 가지 며 최상위 필드와 마찬가지로 특성을 가질 수 있습니다. 이 스키마는 위의 예제 데이터에 해당 합니다. `Address` 는 컬렉션이 아닌 복합 필드입니다. 호텔에는 주소가 하나 있습니다. `Rooms` 는 복합 컬렉션 필드 이며 (호텔에는 많은 방 있음)
 
 ```json
 {

@@ -1,18 +1,18 @@
 ---
 title: 개념-저장소
-description: Azure VMware 솔루션 (AVS) 미리 보기 사설 클라우드의 주요 저장소 기능에 대해 알아봅니다.
+description: Azure VMware Solution Preview 사설 클라우드의 키 저장소 기능에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 7f92e8f961422f8354e55192ebdddd077d61acd1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91484c1baae9801684bc49b931fa2080db676a00
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84604119"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752219"
 ---
-# <a name="azure-vmware-solution-avs-preview-storage-concepts"></a>Azure VMware 솔루션 (AVS) 미리 보기 저장소 개념
+# <a name="azure-vmware-solution-preview-storage-concepts"></a>Azure VMware Solution Preview 저장소 개념
 
-AVS 사설 클라우드는 VMware vSAN을 사용 하 여 기본 클러스터 전체 저장소를 제공 합니다. 클러스터의 각 호스트에서 모든 로컬 저장소는 vSAN 데이터 저장소에서 사용 되며, 미사용 데이터 암호화를 사용 하 고 기본적으로 사용 하도록 설정 합니다. Azure Storage 리소스를 사용 하 여 사설 클라우드의 저장소 기능을 확장할 수 있습니다.
+Azure VMware 솔루션 사설 클라우드는 VMware vSAN을 사용 하 여 클러스터 차원의 기본 저장소를 제공 합니다. 클러스터의 각 호스트에서 모든 로컬 저장소는 vSAN 데이터 저장소에서 사용 되며, 미사용 데이터 암호화를 사용 하 고 기본적으로 사용 하도록 설정 합니다. Azure Storage 리소스를 사용 하 여 사설 클라우드의 저장소 기능을 확장할 수 있습니다.
 
 ## <a name="vsan-clusters"></a>vSAN 클러스터
 

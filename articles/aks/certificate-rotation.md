@@ -4,12 +4,12 @@ description: AKS (Azure Kubernetes Service) 클러스터에서 인증서를 회�
 services: container-service
 ms.topic: article
 ms.date: 11/15/2019
-ms.openlocfilehash: 2e48a05a36fdbd56fb78cd1394c512485b521e50
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 90526b78e65c335f07a2a9d2d152b54b47233082
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86255356"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88211035"
 ---
 # <a name="rotate-certificates-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에서 인증서 회전
 
@@ -37,7 +37,7 @@ AKS은 다음 인증서, 인증 기관 및 서비스 계정을 생성 하 고 �
 > [!NOTE]
 > 3 월 2019 일 이전에 만든 AKS 클러스터에는 2 년 후에 만료 되는 인증서가 있습니다. 3 월 2019 이후에 생성 된 클러스터 또는 해당 인증서가 회전 된 클러스터에는 30 년 후에 만료 되는 클러스터 CA 인증서가 있습니다. 다른 모든 인증서는 2 년 후에 만료 됩니다. 클러스터가 생성 된 시간을 확인 하려면를 사용 `kubectl get nodes` 하 여 노드 풀의 *기간* 을 확인 합니다.
 > 
-> 또한 클러스터 인증서의 만료 날짜를 확인할 수 있습니다. 예를 들어 다음 명령은 *myAKSCluster* 클러스터에 대 한 인증서 세부 정보를 표시 합니다.
+> 또한 클러스터 인증서의 만료 날짜를 확인할 수 있습니다. 예를 들어 다음 Bash 명령은 *myAKSCluster* 클러스터에 대 한 인증서 세부 정보를 표시 합니다.
 > ```console
 > kubectl config view --raw -o jsonpath="{.clusters[?(@.name == 'myAKSCluster')].cluster.certificate-authority-data}" | base64 -d | openssl x509 -text | grep -A2 Validity
 > ```
@@ -62,7 +62,7 @@ az aks rotate-certs -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME
 > [!IMPORTANT]
 > 를 완료 하는 데 최대 30 분 정도 걸릴 수 있습니다 `az aks rotate-certs` . 완료 하기 전에 명령이 실패 하는 경우를 사용 `az aks show` 하 여 클러스터의 상태가 *인증서 회전*인지 확인 합니다. 클러스터가 실패 상태인 경우 다시 실행 하 여 인증서를 `az aks rotate-certs` 다시 회전 합니다.
 
-명령을 실행 하 여 이전 인증서가 더 이상 유효 하지 않은지 확인 `kubectl` 합니다. 에서 사용 하는 인증서를 업데이트 하지 않았으므로 `kubectl` 오류가 표시 됩니다.  예:
+명령을 실행 하 여 이전 인증서가 더 이상 유효 하지 않은지 확인 `kubectl` 합니다. 에서 사용 하는 인증서를 업데이트 하지 않았으므로 `kubectl` 오류가 표시 됩니다.  예를 들어:
 
 ```console
 $ kubectl get no
@@ -75,7 +75,7 @@ Unable to connect to the server: x509: certificate signed by unknown authority (
 az aks get-credentials -g $RESOURCE_GROUP_NAME -n $CLUSTER_NAME --overwrite-existing
 ```
 
-명령을 실행 하 여 인증서가 업데이트 되었는지 확인 `kubectl` 합니다 .이는 이제 성공 합니다. 예:
+명령을 실행 하 여 인증서가 업데이트 되었는지 확인 `kubectl` 합니다 .이는 이제 성공 합니다. 예를 들어:
 
 ```console
 kubectl get no

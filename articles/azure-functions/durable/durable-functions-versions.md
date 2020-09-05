@@ -3,14 +3,14 @@ title: Durable Functions 버전 개요-Azure Functions
 description: Durable Functions 버전에 대해 알아봅니다.
 author: cgillum
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 08/20/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 1dc58bc7c758330c0333a5359622c4e54bb95026
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d6662259494bba5747e01c4574186e9030112247
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87024727"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719413"
 ---
 # <a name="durable-functions-versions-overview"></a>Durable Functions 버전 개요
 
@@ -44,7 +44,29 @@ Durable Functions 2.x에는 다음을 수행할 수 있는 새로운 [내구성�
 
 ### <a name="upgrade-the-extension"></a>확장 업그레이드
 
-프로젝트에 [Durable Functions 바인딩 확장](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) 의 2.x 버전을 설치 합니다. 자세한 내용은 [Azure Functions 바인딩 확장 등록](../functions-bindings-register.md) 을 참조 하세요.
+프로젝트에 Durable Functions 바인딩 확장의 최신 2.x 버전을 설치 합니다.
+
+#### <a name="javascript-python-and-powershell"></a>JavaScript, Python 및 PowerShell
+
+Durable Functions 2.x는 [Azure Functions 확장 번들](../functions-bindings-register.md#extension-bundles)의 버전 2.x에서 사용할 수 있습니다.
+
+프로젝트에서 확장 번들 버전을 업데이트 하려면 host.js을 열고 `extensionBundle` 버전 2.x ()를 사용 하도록 섹션을 업데이트 `[2.*, 3.0.0)` 합니다.
+
+```json
+{
+    "version": "2.0",
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[2.*, 3.0.0)"
+    }
+}
+```
+
+#### <a name="net"></a>.NET
+
+최신 버전의 [Durable Functions 바인딩 확장](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask)을 사용 하도록 .net 프로젝트를 업데이트 합니다.
+
+자세한 내용은 [Azure Functions 바인딩 확장 등록](../functions-bindings-register.md#local-csharp) 을 참조 하세요.
 
 ### <a name="update-your-code"></a>코드 업데이트
 
@@ -55,7 +77,7 @@ Durable Functions 2.x에는 몇 가지 주요 변경 사항이 도입 되었습�
 Durable Functions 2.x는 스키마에 새 host.js를 사용 합니다. 1.x의 주요 변경 내용에는 다음이 포함 됩니다.
 
 * `"storageProvider"``"azureStorage"`저장소 관련 구성에 대 한 및 하위 섹션입니다.
-* `"tracing"`추적 및 로깅 구성의 경우
+* `"tracing"` 추적 및 로깅 구성의 경우
 * `"notifications"``"eventGrid"`event grid 알림 구성의 및 하위 섹션입니다.
 
 자세한 내용은 [Durable Functions host.js참조 설명서](durable-functions-bindings.md#durable-functions-2-0-host-json) 를 참조 하세요.

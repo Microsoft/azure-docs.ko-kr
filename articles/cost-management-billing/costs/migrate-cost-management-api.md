@@ -6,13 +6,14 @@ ms.author: banders
 ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
+ms.subservice: cost-management
 ms.reviewer: micflan
-ms.openlocfilehash: 1c556f2371ffba239ceee64fd4180143ae9b9230
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 811b2cb7fd9a4f664e7a643f5a8e192a51416888
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290052"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88689102"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>기업계약에서 Microsoft 고객 계약 API로 마이그레이션
 

@@ -1,19 +1,19 @@
 ---
-title: 포털에서 Azure Firewall DNAT를 사용하여 인바운드 인터넷 트래픽 필터링
+title: '자습서: 포털에서 Azure Firewall DNAT를 사용하여 인바운드 인터넷 트래픽 필터링'
 description: 이 자습서에서는 Azure Portal을 사용하여 Azure Firewall DNAT를 배포하고 구성하는 방법을 알아봅니다.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 03/02/2020
+ms.date: 08/28/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 7220e48c6103352108bdb89e107bb862ee194040
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8f528c6be68258400cb3e29582943f1d657c557d
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78251497"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069275"
 ---
 # <a name="tutorial-filter-inbound-internet-traffic-with-azure-firewall-dnat-using-the-azure-portal"></a>자습서: Azure Portal에서 Azure Firewall DNAT를 사용하여 인바운드 인터넷 트래픽 필터링
 
@@ -28,12 +28,11 @@ ms.locfileid: "78251497"
 > * DNAT 규칙 구성
 > * 방화벽 테스트
 
+## <a name="prerequisites"></a>필수 구성 요소
+
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-이 자습서에서는 두 개의 피어링된 VNet을 만듭니다.
 
-- **VN-Hub** - 방화벽이 이 VNet에 있습니다.
-- **VN-Spoke** - 워크로드 서버가 이 VNet에 있습니다.
 
 ## <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
@@ -45,6 +44,11 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 6. **만들기**를 선택합니다.
 
 ## <a name="set-up-the-network-environment"></a>네트워크 환경 설정
+
+이 자습서에서는 두 개의 피어링된 VNet을 만듭니다.
+
+- **VN-Hub** - 방화벽이 이 VNet에 있습니다.
+- **VN-Spoke** - 워크로드 서버가 이 VNet에 있습니다.
 
 먼저 VNet을 만든 다음, 이를 피어링합니다.
 
@@ -144,10 +148,10 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
    |설정  |값  |
    |---------|---------|
    |속성     |FW-DNAT-test|
-   |Subscription     |\<구독\>|
-   |Resource group     |**기존 리소스 사용**: RG-DNAT-Test |
+   |Subscription     |\<your subscription\>|
+   |Resource group     |**기존 항목 사용**: RG-DNAT-Test |
    |위치     |전에 사용한 동일한 위치 선택|
-   |가상 네트워크 선택     |**기존 리소스 사용**: VN-Hub|
+   |가상 네트워크 선택     |**기존 항목 사용**: VN-Hub|
    |공용 IP 주소     |**새로 만듭니다**. 공용 IP 주소는 표준 SKU 형식이어야 합니다.|
 
 5. **검토 + 만들기**를 선택합니다.

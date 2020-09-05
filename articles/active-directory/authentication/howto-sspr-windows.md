@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebcb79088ebac761632e882e98e00f165cc4bd05
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a51d8c45f652173e5b2b0731d64a8e6f14ee46c7
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035234"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717356"
 ---
 # <a name="enable-azure-active-directory-self-service-password-reset-at-the-windows-sign-in-screen"></a>Windows 로그인 화면에서 Azure Active Directory 셀프 서비스 암호 재설정을 사용 하도록 설정
 
@@ -35,7 +35,7 @@ Windows 로그인 화면에서 SSPR를 사용 하는 경우 다음 제한 사항
 
 - 현재 원격 데스크톱 또는 Hyper-v 고급 세션에서 암호 재설정을 지원 하지 않습니다.
 - 일부 타사 자격 증명 공급자는이 기능에 대 한 문제를 일으키는 것으로 알려져 있습니다.
-- [EnableLUA 레지스트리 키](https://docs.microsoft.com/openspecs/windows_protocols/ms-gpsb/958053ae-5397-4f96-977f-b7700ee461ec) 수정을 통해 UAC를 사용하지 않도록 설정하면 문제가 발생합니다.
+- [EnableLUA 레지스트리 키](/openspecs/windows_protocols/ms-gpsb/958053ae-5397-4f96-977f-b7700ee461ec) 수정을 통해 UAC를 사용하지 않도록 설정하면 문제가 발생합니다.
 - 이 기능은 802.1 x 네트워크 인증이 배포 된 네트워크 및 "사용자 로그온 직전에 수행" 옵션에는 적용 되지 않습니다. 802.1 x 네트워크 인증이 배포 된 네트워크의 경우이 기능을 사용 하도록 설정 하는 데 컴퓨터 인증을 사용 하는 것이 좋습니다.
 - Hybrid Azure AD에 조인된 컴퓨터에는 새 암호를 사용하고 된 자격 증명을 업데이트하기 위해 도메인 컨트롤러를 향한 네트워크 연결 라인이 있어야 합니다. 즉, 디바이스가 조직의 내부 네트워크에 있거나, 온-프레미스 도메인 컨트롤러에 대한 네트워크 액세스가 있는 VPN에 있어야 합니다.
 - 이미지를 사용하는 경우 sysprep을 실행하기 전에 기본 제공 관리자에 대한 웹 캐시를 지운 후에 CopyProfile 단계를 수행해야 합니다. 이 단계에 대한 자세한 내용은 [사용자 지정 기본 사용자 프로필을 사용할 때 성능 저하](https://support.microsoft.com/help/4056823/performance-issue-with-custom-default-user-profile) 지원 문서에서 찾을 수 있습니다.
@@ -59,7 +59,7 @@ Windows 로그인 화면에서 SSPR를 사용 하는 경우 다음 제한 사항
 ### <a name="windows-10-prerequisites"></a>Windows 10 필수 조건
 
 - 관리자는 [Azure Portal에서 AZURE AD 셀프 서비스 암호 재설정을 사용 하도록 설정 해야 합니다](tutorial-enable-sspr.md).
-- 사용자는에서이 기능을 사용 하기 전에 SSPR에 등록 해야 합니다.[https://aka.ms/ssprsetup](https://aka.ms/ssprsetup)
+- 사용자는에서이 기능을 사용 하기 전에 SSPR에 등록 해야 합니다. [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup)
     - Windows 로그인 화면에서 SSPR를 사용 하는 경우에는 고유 하지 않습니다. 모든 사용자가 암호를 재설정 하기 전에 인증 연락처 정보를 제공 해야 합니다.
 - 네트워크 프록시 요구 사항:
     - 포트 443에서 `passwordreset.microsoftonline.com` 및 `ajax.aspnetcdn.com`
@@ -126,7 +126,7 @@ Windows 로그인 화면에서 SSPR를 사용 하는 데 문제가 있는 경우
 ### <a name="windows-7-8-and-81-prerequisites"></a>Windows 7, 8 및 8.1 필수 구성 요소
 
 - 관리자는 [Azure Portal에서 AZURE AD 셀프 서비스 암호 재설정을 사용 하도록 설정 해야 합니다](tutorial-enable-sspr.md).
-- 사용자는에서이 기능을 사용 하기 전에 SSPR에 등록 해야 합니다.[https://aka.ms/ssprsetup](https://aka.ms/ssprsetup)
+- 사용자는에서이 기능을 사용 하기 전에 SSPR에 등록 해야 합니다. [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup)
     - Windows 로그인 화면에서 SSPR를 사용 하는 경우에는 고유 하지 않습니다. 모든 사용자가 암호를 재설정 하기 전에 인증 연락처 정보를 제공 해야 합니다.
 - 네트워크 프록시 요구 사항:
     - 포트 443에서 `passwordreset.microsoftonline.com`
@@ -143,7 +143,7 @@ Windows 7, 8 및 8.1의 경우 로그인 화면에서 SSPR을 사용 하도록 �
 
 1. 사용할 Windows 버전에 대해 적절한 설치 관리자를 다운로드합니다.
 
-    소프트웨어 설치 관리자는의 Microsoft 다운로드 센터에서 다운로드할 수 있습니다.[https://aka.ms/sspraddin](https://aka.ms/sspraddin)
+    소프트웨어 설치 관리자는의 Microsoft 다운로드 센터에서 다운로드할 수 있습니다. [https://aka.ms/sspraddin](https://aka.ms/sspraddin)
 1. 설치하고 설치 관리자를 실행할 머신에 로그인합니다.
 1. 설치 후에 다시 부팅하는 것이 좋습니다.
 1. 다시 부팅 한 후 로그인 화면에서 사용자를 선택 하 고 "암호 잊음?"를 선택 합니다. 암호 재설정 워크플로를 시작하려면

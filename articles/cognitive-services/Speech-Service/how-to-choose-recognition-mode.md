@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two-with-js
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 82ff34b945e93ffbf43e3a264a09e0af7b8660e5
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 29dcd3ddc32ac92f7543e5d7648680e36f50dcfb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405095"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934602"
 ---
 # <a name="choose-a-speech-recognition-mode"></a>음성 인식 모드 선택
 

@@ -11,12 +11,12 @@ ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8682342d23c37d527528de0b525dbdd49a52676e
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 8a0853d4a863f6b7677f665513bdac9ca8e6b673
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853401"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144110"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Interpretability 패키지를 사용 하 여 Python의 ML 모델 & 예측 (미리 보기)을 설명 합니다.
 
@@ -73,8 +73,8 @@ ms.locfileid: "87853401"
    * 설명 및 시각화에 대 한 자세한 정보를 제공 하기 위해 분류를 수행 하는 경우 기능 이름 및 출력 클래스 이름을 전달 하도록 선택할 수 있습니다.
 
    다음 코드 블록은, 및을 로컬로 사용 하 여 설명 개체를 인스턴스화하는 방법을 보여 줍니다 `TabularExplainer` `MimicExplainer` `PFIExplainer` .
-   * `TabularExplainer`는 (, 또는) 아래에 있는 세 개의 SHAP explainers 중 하나를 호출 `TreeExplainer` `DeepExplainer` `KernelExplainer` 합니다.
-   * `TabularExplainer`는 사용 사례에 가장 적합 한 항목을 자동으로 선택 하지만 세 가지 기본 explainers를 직접 호출할 수 있습니다.
+   * `TabularExplainer` 는 (, 또는) 아래에 있는 세 개의 SHAP explainers 중 하나를 호출 `TreeExplainer` `DeepExplainer` `KernelExplainer` 합니다.
+   * `TabularExplainer` 는 사용 사례에 가장 적합 한 항목을 자동으로 선택 하지만 세 가지 기본 explainers를 직접 호출할 수 있습니다.
 
     ```python
     from interpret.ext.blackbox import TabularExplainer
@@ -147,7 +147,7 @@ global_explanation.get_feature_importance_dict()
 ### <a name="explain-an-individual-prediction-local-explanation"></a>개별 예측 설명 (로컬 설명)
 개별 인스턴스 또는 인스턴스 그룹에 대 한 설명을 호출 하 여 서로 다른 datapoints의 개별 기능 중요도 값을 가져옵니다.
 > [!NOTE]
-> `PFIExplainer`는 로컬 설명을 지원 하지 않습니다.
+> `PFIExplainer` 는 로컬 설명을 지원 하지 않습니다.
 
 ```python
 # get explanation for the first data point in the test set
@@ -244,7 +244,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
     pip install azureml-interpret
     pip install azureml-contrib-interpret
     ```
-1. 로컬 Jupyter 노트북에 학습 스크립트를 만듭니다. 예: `train_explain.py`.
+1. 로컬 Jupyter 노트북에 학습 스크립트를 만듭니다. 예들 들어 `train_explain.py`입니다.
 
     ```python
     from azureml.contrib.interpret.explanation.explanation_client import ExplanationClient
@@ -275,7 +275,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
     #client.upload_model_explanation(global_explanation, top_k=2, comment='global explanation: Only top 2 features')
     ```
 
-1. 계산 대상으로 Azure Machine Learning 계산을 설정 하 고 학습 실행을 제출 합니다. 지침은 [모델 학습을 위한 계산 대상 설정](how-to-set-up-training-targets.md#amlcompute) 을 참조 하세요. 또한 [예제 노트북이](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) 도움이 될 것입니다.
+1. 계산 대상으로 Azure Machine Learning 계산을 설정 하 고 학습 실행을 제출 합니다. 지침은 [PYTHON SDK를 사용 하 여 계산 대상 만들기](how-to-create-attach-compute-sdk.md#amlcompute) 를 참조 하세요. 또한 [예제 노트북이](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model/azure-integration/remote-explanation) 도움이 될 것입니다.
 
 1. 로컬 Jupyter 노트북에서 설명을 다운로드 합니다.
 

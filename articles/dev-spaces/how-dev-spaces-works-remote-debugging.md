@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Azure Dev Spaces 사용 하 여 Azure Kubernetes Service에서 원격 디버깅을 위한 프로세스를 설명 합니다.
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너
-ms.openlocfilehash: a9f303ea6f954285a319be137a594f7ce127f740
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd984ff6a8ebe336f76643406c0957769dbfd3da
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80241401"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213396"
 ---
 # <a name="how-remote-debugging-your-code-with-azure-dev-spaces-works"></a>Azure Dev Spaces를 사용 하 여 원격으로 코드를 디버깅 하는 방법
 
@@ -30,15 +30,7 @@ Java, .NET Core 및 Node.js 응용 프로그램의 경우 Visual Studio Code 또
 
 ## <a name="next-steps"></a>다음 단계
 
-프로젝트의 원격 디버깅을 위해 Azure Dev Spaces를 사용 하 여 시작 하려면 다음 퀵 스타트를 참조 하세요.
+Azure Dev Spaces 작동 방법에 대해 자세히 알아보세요.
 
-* [Visual Studio Code 및 Java를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-java]
-* [Visual Studio Code 및 .NET을 사용 하 여 빠르게 반복 하 고 디버그][quickstart-netcore]
-* [Visual Studio Code 및 Node.js를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-node]
-* [Visual Studio 및 .NET Core를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-vs]
-
-
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md
-[quickstart-vs]: quickstart-netcore-visualstudio.md
+> [!div class="nextstepaction"]
+> [Azure Dev Spaces의 작동 원리](how-dev-spaces-works.md)

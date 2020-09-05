@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 08/12/2020
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: e83e6df26a2b3e8eabda142ee6cd89320c59ad8a
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: bbec605f25c2e74178bdb5c28d0a7995e4e265f1
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922645"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690394"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Azure Time Series Insights API에 대한 인증 및 권한 부여
 
@@ -46,6 +46,7 @@ Azure Active Directory 앱 등록 흐름에는 세 가지 주요 단계가 포�
 > Azure Time Series Insights 보안 정책을 구성하는 경우 **문제의 분리**(위의 시나리오에 설명됨) 원칙을 따릅니다.
 
 > [!NOTE]
+
 > * 이 문서에서는 애플리케이션을 하나의 조직 내에서만 실행하게 되는 단일 테넌트 애플리케이션을 중점적으로 다룹니다.
 > * 일반적으로 단일 조직에서 실행되는 LOB(기간 업무) 애플리케이션에 대해 단일 테넌트 애플리케이션을 사용하게 됩니다.
 
@@ -84,7 +85,7 @@ Azure Active Directory 앱 등록 흐름에는 세 가지 주요 단계가 포�
 
    1. C#에서 다음 코드는 애플리케이션 대신 토큰을 가져올 수 있습니다. Gen1 환경에서 데이터를 쿼리 하는 방법에 대 한 전체 예제는 [c #을 사용 하 여 쿼리 데이터](time-series-insights-query-data-csharp.md)를 참조 하세요.
 
-        [!code-csharp[csharpquery-example](~/samples-tsi/gen1-sample/csharp-tsi-gen1-sample/Program.cs)]
+        C # 코드에 액세스 하려면 [Azure Time Series Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/blob/master/gen1-sample/csharp-tsi-gen1-sample/Program.cs)] 리포지토리를 참조 하세요. 
 
    1. 그런 다음 `Authorization` 응용 프로그램에서 AZURE TIME SERIES INSIGHTS API를 호출할 때 헤더에서 토큰을 전달할 수 있습니다.
 
@@ -115,6 +116,7 @@ Azure Active Directory 앱 등록 흐름에는 세 가지 주요 단계가 포�
 
 > [!IMPORTANT]
 > 토큰은 토큰의 "대상"이라고도 하는 `https://api.timeseries.azure.com/` 리소스로 정확히 발급되어야 합니다.
+
 > * 따라서 [Postman](https://www.getpostman.com/) **AuthURL**은 다음과 같습니다. `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?scope=https://api.timeseries.azure.com/.default`
 > * `https://api.timeseries.azure.com/`은 유효하지만 `https://api.timeseries.azure.com`은 유효하지 않습니다.
 
@@ -155,7 +157,7 @@ Azure Active Directory 앱 등록 흐름에는 세 가지 주요 단계가 포�
 
 | 선택적 쿼리 매개 변수 | Description | 버전 |
 | --- |  --- | --- |
-| `timeout=<timeout>` | HTTP 요청 실행을 위한 서버 쪽 시간 제한입니다. [Get Environment Events](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) 미 [Get Environment Aggregates](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) API에만 적용됩니다. 제한 시간 값은 ISO 8601 기간 형식(예: `"PT20S"`)이어야 하며 `1-30 s` 범위에 있어야 합니다. 기본값은 `30 s`입니다. | 1세대 |
+| `timeout=<timeout>` | HTTP 요청 실행을 위한 서버 쪽 시간 제한입니다. [Get Environment Events](https://docs.microsoft.com/rest/api/time-series-insights/dataaccess(preview)/query/getavailability) 미 [Get Environment Aggregates](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api#get-environment-aggregates-api) API에만 적용됩니다. 제한 시간 값은 ISO 8601 기간 형식(예: `"PT20S"`)이어야 하며 `1-30 s` 범위에 있어야 합니다. 기본값은 `30 s`입니다. | 1세대 |
 | `storeType=<storeType>` | 웜 저장소가 활성화 된 Gen2 환경의 경우 또는에서 쿼리를 실행할 수 있습니다 `WarmStore` `ColdStore` . 쿼리의 이 매개 변수는 쿼리를 실행해야 하는 저장소를 정의합니다. 정의되지 않은 경우 쿼리는 콜드 저장소에서 실행됩니다. 웜 저장소를 쿼리하려면 **storeType**을 `WarmStore`로 설정해야 합니다. 정의되지 않은 경우 콜드 저장소에 대해 쿼리가 실행됩니다. | 2세대 |
 
 ## <a name="next-steps"></a>다음 단계
@@ -164,6 +166,6 @@ Azure Active Directory 앱 등록 흐름에는 세 가지 주요 단계가 포�
 
 * Gen2 Azure Time Series Insights API 코드 샘플을 호출 하는 샘플 코드는 [c #을 사용 하 여 Query Gen2 data](./time-series-insights-update-query-data-csharp.md)를 참조 하세요.
 
-* API 참조 정보를 보려면 [쿼리 API 참조](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api) 설명서를 참조하세요.
+* API 참조 정보를 보려면 [쿼리 API 참조](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-api) 설명서를 참조하세요.
 
 * [서비스 주체를 만드는](../active-directory/develop/howto-create-service-principal-portal.md) 방법을 알아봅니다.

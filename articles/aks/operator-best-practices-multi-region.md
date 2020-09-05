@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 578560eccb13ff4b9169e11b0674859acc1fc901
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 110a25fca0b0e764650665635dbe545de7a350cd
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285869"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653999"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Services)의 비즈니스 연속성 및 재해 복구 모범 사례
 
 AKS(Azure Kubernetes Services)에서 클러스터를 관리할 때 애플리케이션 가동 시간이 중요합니다. 기본적으로 AKS는 [VMSS (가상 머신 확장 집합)](../virtual-machine-scale-sets/overview.md)에서 여러 노드를 사용 하 여 고가용성을 제공 합니다. 그러나 이러한 여러 노드는 지역 장애 로부터 시스템을 보호 하지 않습니다. 가동 시간을 최대화 하려면 비즈니스 연속성을 유지 하 고 재해 복구를 준비 하기 위해 미리 계획을 세워야 합니다.
 
-이 문서에서는 AKS에서 비즈니스 연속성 및 재해 복구를 계획 하는 방법에 중점을 둔 문서입니다. 다음 방법을 알아봅니다.
+이 문서에서는 AKS에서 비즈니스 연속성 및 재해 복구를 계획 하는 방법에 중점을 둔 문서입니다. 다음과 같은 작업을 수행하는 방법을 살펴봅니다.
 
 > [!div class="checklist"]
 > * 여러 지역에서 AKS 클러스터를 계획 합니다.
@@ -93,7 +93,7 @@ Container Registry 지역에서 복제를 사용 하 여 동일한 지역에서 
 
 상태는 상태를 조작 하는 코드를 사용 하 여 표면화 된 또는 공동 배치 수 있습니다. 일반적으로 네트워크를 통해 다른 컴퓨터에서 실행 되거나 동일한 시스템에서 프로세스를 실행 하는 데이터베이스 또는 다른 데이터 저장소를 사용 하 여 상태를 외부화 합니다.
 
-컨테이너 및 마이크로 서비스는 내부에서 실행 되는 프로세스가 상태를 유지 하지 않을 때 대부분 복원 력이 높습니다. 응용 프로그램은 거의 항상 몇 가지 상태를 포함 하기 때문에 Azure Database for MySQL, Azure Database for PostgreSQL 또는 Azure SQL Database와 같은 PaaS 솔루션을 사용 합니다.
+컨테이너 및 마이크로 서비스는 내부에서 실행 되는 프로세스가 상태를 유지 하지 않을 때 대부분 복원 력이 높습니다. 응용 프로그램은 거의 항상 몇 가지 상태를 포함 하기 때문에 Azure Cosmos DB, Azure Database for PostgreSQL, Azure Database for MySQL 또는 Azure SQL Database와 같은 PaaS 솔루션을 사용 합니다.
 
 이식 가능한 응용 프로그램을 빌드하려면 다음 지침을 참조 하세요.
 
@@ -122,7 +122,7 @@ Pod를 삭제 한 후에도 응용 프로그램에 영구적 저장소가 필요
 Azure Managed Disks를 사용 하는 경우 다음과 같이 복제 및 DR 솔루션을 선택할 수 있습니다.
 
 * [Azure의 Velero](https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/master/README.md)
-* [Azure Site Recovery](https://azure.microsoft.com/blog/asr-managed-disks-between-azure-regions/)
+* [Azure Backup](../backup/backup-overview.md)
 
 ### <a name="application-based-asynchronous-replication"></a>애플리케이션 기반 비동기 복제
 

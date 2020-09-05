@@ -6,17 +6,17 @@ ms.service: azure-policy
 ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 7871099e3e05613bec29a4bfc0824dd9647431e7
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 6c6bd3ab87013aba04f43c95b3a986a64f2bc394
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937542"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231472"
 ---
 # <a name="azure-policy-security-baseline-for-azure-security-benchmark"></a>Azure 보안 벤치 마크에 대 한 Azure Policy 보안 기준
 
-이 보안 기준은 [Azure 보안 벤치 마크](../../../security/benchmarks/overview.md) 에서 Azure Policy에 대 한 지침을 적용 합니다. Azure 보안 벤치 마크는 Azure에서 클라우드 솔루션을 보호할 수 있는 방법에 대 한 권장 사항을 제공 합니다. 콘텐츠는 Azure 보안 벤치 마크에서 정의한 **규정 준수 도메인** 및 **보안 제어** 와 Azure Policy에 적용 되는 관련 지침을 기준으로 그룹화 됩니다. Azure Policy에 적용할 수 없는 **컨트롤** 은 제외 되었습니다. Azure Policy 완전히 Azure 보안 벤치 마크에 매핑되는 방법을 보려면 [전체 Azure Policy 보안 기준 매핑 파일](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)을 참조 하세요.
+이 보안 기준은 [Azure 보안 벤치 마크](../../../security/benchmarks/overview.md) 에서 Azure Policy에 대 한 지침을 적용 합니다. Azure Security Benchmark는 Azure에서 클라우드 솔루션을 보호하는 방법에 대한 권장 사항을 제공합니다. 콘텐츠는 Azure 보안 벤치 마크에서 정의한 **규정 준수 도메인** 및 **보안 제어** 와 Azure Policy에 적용 되는 관련 지침을 기준으로 그룹화 됩니다. Azure Policy에 적용할 수 없는 **컨트롤** 은 제외 되었습니다. Azure Policy 완전히 Azure 보안 벤치 마크에 매핑되는 방법을 보려면 [전체 Azure Policy 보안 기준 매핑 파일](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)을 참조 하세요.
 
 기본 제공 이니셔티브를 통해 Azure 보안 벤치 마크 컨트롤을 기본 제공 정책 정의로 매핑하면 [규정 준수: Azure 보안 벤치 마크](../samples/azure-security-benchmark.md)를 참조 하세요.
 
@@ -72,13 +72,13 @@ Azure Policy는 _책임_대신 _소유권_ 이라는 용어를 사용 합니다.
 
 *자세한 내용은 [보안 제어: 데이터 보호](../../../security/benchmarks/security-control-data-protection.md)를 참조하세요.*
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: Azure Active Directory 역할 기반 액세스 제어 (RBAC)를 사용 하 여 Azure Policy에 대 한 액세스를 제어 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Policy에 대 한 액세스를 제어 합니다.
 
-* [Azure Policy의 RBAC 사용 권한](../overview.md#rbac-permissions-in-azure-policy)
+* [Azure Policy의 Azure RBAC 권한](../overview.md#rbac-permissions-in-azure-policy)
 
-* [Azure에서 RBAC를 구성 하는 방법](../../../role-based-access-control/role-assignments-portal.md)
+* [Azure RBAC를 구성 하는 방법](../../../role-based-access-control/role-assignments-portal.md)
 
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
@@ -119,7 +119,7 @@ Azure Policy는 _책임_대신 _소유권_ 이라는 용어를 사용 합니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5: 승인되지 않은 Azure 리소스 모니터링
 

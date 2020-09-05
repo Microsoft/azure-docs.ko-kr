@@ -14,14 +14,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 5e8318b480cfa0d399a7fb2a0e7f6ebed1488397
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 6ac638d9062f31b68d3e1954688dde7ed40c4d2c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836499"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258302"
 ---
-# <a name="azure-media-services-community"></a>Azure Media Services 커뮤니티  
+# <a name="azure-media-services-community"></a>Azure Media Services 커뮤니티
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]  
 
 이 AMS(Azure Media Services) 커뮤니티 페이지에서는 AMS에 대한 업데이트를 받는 다양한 방법에 대해 설명합니다. 새 비디오 및 팟캐스트를 보고, 질문을 하고 피드백을 제공할 수도 있습니다.   
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 685d337f9e6448f44d34a980ed884026d8a0a168
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 641ac1f6a2cc98e48694c42ec1531f679621640d
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525418"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869221"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Azure에서 주문형 Red Hat Enterprise Linux VM에 대한 Red Hat 업데이트 인프라
  [RHUI(Red Hat 업데이트 인프라)](https://access.redhat.com/products/red-hat-update-infrastructure)를 사용하면 클라우드 공급자(예: Azure)가 Red Hat 호스트 리포지토리 콘텐츠를 미러링하고, Azure 관련 콘텐츠를 포함한 사용자 지정 저장소를 만들고, 최종 사용자 VM에 사용할 수 있도록 합니다.
@@ -49,7 +49,7 @@ RHEL(Red Hat Enterprise Linux) 종량제(PAYG) 이미지는 Azure RHUI에 액세
 
 ### <a name="images-connected-to-non-eus-repositories"></a>비 EUS 리포지토리에 연결된 이미지
 
-비 EUS 리포지토리에 연결된 RHEL 이미지에서 VM을 프로비저닝하는 경우 `sudo yum update`를 실행하면 최신 RHEL 부 버전으로 업그레이드됩니다. 예를 들어 RHEL 7.4 PAYG 이미지에서 VM을 프로비저닝하고 `sudo yum update`를 실행하는 경우 RHEL 7.7 VM(RHEL7 제품군에서 최신 부 버전)이 설치됩니다.
+비 EUS 리포지토리에 연결된 RHEL 이미지에서 VM을 프로비저닝하는 경우 `sudo yum update`를 실행하면 최신 RHEL 부 버전으로 업그레이드됩니다. 예를 들어 RHEL 7.4 PAYG 이미지에서 VM을 프로 비전 하 고를 실행 하는 경우 `sudo yum update` RHEL 7.8 VM (RHEL7 제품군의 최신 부 버전)으로 끝납니다.
 
 비 EUS 리포지토리에 연결된 이미지에는 SKU의 부 버전 번호가 포함되지 않습니다. 이 SKU는 URN(이미지의 전체 이름)의 세 번째 요소입니다. 예를 들어 다음 이미지는 모두 비 EUS 리포지토리에 연결된 상태로 제공됩니다.
 

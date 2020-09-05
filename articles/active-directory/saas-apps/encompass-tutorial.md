@@ -2,26 +2,21 @@
 title: '자습서: Encompass와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Encompass 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3b985248-056f-4d0f-9ce4-c017b38f5b50
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb259ae6ad46824f32854f7012119d534337578e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 28abc03cc5d0efdd287d3559bd8cd81855436808
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157230"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550147"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-encompass"></a>자습서: Encompass와 Azure Active Directory 통합
 

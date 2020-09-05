@@ -10,12 +10,12 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe2d0a16aeacfc551a6a07a72b58b5f461f93433
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e8a6fc1291615760320deb488511fdd9d964d25d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85360523"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227868"
 ---
 # <a name="tutorial-basic-active-directory-environment"></a>자습서: 기본 Active Directory 환경
 
@@ -28,8 +28,8 @@ ms.locfileid: "85360523"
 이 자습서는 다음과 같은 요소로 구성됩니다.
 ## <a name="prerequisites"></a>필수 구성 요소
 다음은 이 자습서를 완료하는 데 필요한 필수 구성 요소입니다.
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview)가 설치되어 있는 컴퓨터.  [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) 또는 [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) 컴퓨터에서 수행하는 것이 좋습니다.
-- 가상 머신이 인터넷과 통신할 수 있는 [외부 네트워크 어댑터](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network).
+- [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview)가 설치되어 있는 컴퓨터.  [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) 또는 [Windows Server 2016](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) 컴퓨터에서 수행하는 것이 좋습니다.
+- 가상 머신이 인터넷과 통신할 수 있는 [외부 네트워크 어댑터](/virtualization/hyper-v-on-windows/quick-start/connect-to-network).
 - [Azure 구독](https://azure.microsoft.com/free)
 - Windows Server 2016의 복사본
 - [Microsoft .NET Framework 4.7.1](https://www.microsoft.com/download/details.aspx?id=56115)

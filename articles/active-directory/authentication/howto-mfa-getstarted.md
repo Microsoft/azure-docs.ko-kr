@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15d519e1cede27b3626d715c48790af620589e43
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.openlocfilehash: da9a0fe30721a2f55db2c4771f54716868f9972f
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83757606"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055076"
 ---
 # <a name="plan-an-azure-multi-factor-authentication-deployment"></a>Azure Multi-Factor Authentication 배포 계획
 
@@ -74,7 +74,7 @@ Azure Multi-factor Authentication은 조건부 액세스로 정책을 적용하�
 
 조건부 액세스 정책은 등록을 적용하여 등록되지 않은 사용자가 처음 로그인할 때 등록을 완료하도록 하는 중요한 보안 고려 사항입니다.
 
-[Azure AD ID 보호](../identity-protection/howto-configure-risk-policies.md)는 Azure Multi-Factor Authentication 스토리에 대한 등록 정책과 자동화된 위험 검색 및 수정 정책에 모두 기여합니다. 손상된 ID 위협이 있을 때 암호 변경을 강제하거나 다음 [이벤트](../reports-monitoring/concept-risk-events.md)에 의해 로그인이 위험한 것으로 간주되는 경우 MFA를 요구하는 정책을 만들 수 있습니다.
+[Azure AD ID 보호](../identity-protection/howto-identity-protection-configure-risk-policies.md)는 Azure Multi-Factor Authentication 스토리에 대한 등록 정책과 자동화된 위험 검색 및 수정 정책에 모두 기여합니다. 손상된 ID 위협이 있을 때 암호 변경을 강제하거나 다음 [이벤트](../identity-protection/overview-identity-protection.md)에 의해 로그인이 위험한 것으로 간주되는 경우 MFA를 요구하는 정책을 만들 수 있습니다.
 
 * 유출된 자격 증명
 * 익명 IP 주소에서 로그인
@@ -108,6 +108,9 @@ Azure Active Directory Identity Protection에서 검색되는 일부 위험 검�
 ## <a name="plan-authentication-methods"></a>인증 방법 계획
 
 관리자는 사용자에게 제공할 [인증 방법](../authentication/concept-authentication-methods.md)을 선택할 수 있습니다. 사용자가 기본 방법을 사용할 수 없는 경우 백업 방법을 사용할 수 있도록 하나 이상의 인증 방법을 허용하는 것이 중요합니다. 관리자는 다음 방법을 사용하여 이를 설정할 수 있습니다.
+
+> [!TIP]
+> Microsoft는 보다 안전 하 고 향상 된 사용자 환경을 위해 Azure Multi-Factor Authentication의 기본 방법으로 Microsoft Authenticator (모바일 앱)를 사용 하는 것이 좋습니다. 또한 Microsoft Authenticator 앱은 국가 표준 및 기술 인증자 보증 수준을 [충족](https://azure.microsoft.com/resources/microsoft-nist/) 합니다. 
 
 ### <a name="notification-through-mobile-app"></a>모바일 앱을 통한 알림
 
@@ -148,7 +151,7 @@ Microsoft Authenticator 앱과 같은 모바일 앱은 30초마다 새로운 OAT
 
 ### <a name="registration-with-identity-protection"></a>ID 보호를 사용하여 등록
 
-조직에서 Azure Active Directory Identity Protection을 사용하는 경우 [MFA 등록 정책을 구성](../identity-protection/howto-mfa-policy.md)하여 사용자가 다음에 대화형으로 로그인할 때 등록하라는 메시지를 표시하도록 합니다.
+조직에서 Azure Active Directory Identity Protection을 사용하는 경우 [MFA 등록 정책을 구성](../identity-protection/howto-identity-protection-configure-mfa-policy.md)하여 사용자가 다음에 대화형으로 로그인할 때 등록하라는 메시지를 표시하도록 합니다.
 
 ### <a name="registration-without-identity-protection"></a>ID 보호를 사용하지 않는 등록
 
@@ -162,7 +165,7 @@ Microsoft Authenticator 앱과 같은 모바일 앱은 30초마다 새로운 OAT
 2. 조건부 액세스를 사용하여 모든 리소스에 액세스할 수 있도록 이 그룹에 대해 다단계 인증을 적용합니다.
 3. 정기적으로 그룹 멤버 자격을 다시 평가하고 등록한 사용자를 그룹에서 제거합니다.
 
-[MSOnline PowerShell 모듈](https://docs.microsoft.com/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0)을 사용하는 PowerShell 명령을 사용하여 등록된 Azure MFA 사용자와 등록되지 않은 Azure MFA 사용자를 파악할 수 있습니다.
+[MSOnline PowerShell 모듈](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0)을 사용하는 PowerShell 명령을 사용하여 등록된 Azure MFA 사용자와 등록되지 않은 Azure MFA 사용자를 파악할 수 있습니다.
 
 #### <a name="identify-registered-users"></a>등록된 사용자 파악
 
@@ -278,7 +281,7 @@ NPS 확장은 RADIUS와 클라우드 기반 Azure MFA 사이에서 어댑터 역
 
 #### <a name="implementing-your-nps-server"></a>NPS 서버 구현
 
-NPS 인스턴스를 배포하고 이미 사용하고 있는 경우 [기존 NPS 인프라를 Azure Multi-Factor Authentication과 통합](howto-mfa-nps-extension.md)을 참조합니다. NPS를 처음 설정하는 경우 [NPS(네트워크 정책 서버)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top)에서 지침을 참조하세요. 문제 해결 지침은 [Azure Multi-factor Authentication용 NPS 확장의 오류 메시지 해결](howto-mfa-nps-extension-errors.md) 문서에 나와 있습니다.
+NPS 인스턴스를 배포하고 이미 사용하고 있는 경우 [기존 NPS 인프라를 Azure Multi-Factor Authentication과 통합](howto-mfa-nps-extension.md)을 참조합니다. NPS를 처음 설정하는 경우 [NPS(네트워크 정책 서버)](/windows-server/networking/technologies/nps/nps-top)에서 지침을 참조하세요. 문제 해결 지침은 [Azure Multi-factor Authentication용 NPS 확장의 오류 메시지 해결](howto-mfa-nps-extension-errors.md) 문서에 나와 있습니다.
 
 #### <a name="prepare-nps-for-users-that-arent-enrolled-for-mfa"></a>MFA에 등록되지 않은 사용자를 위한 NPS 준비
 
@@ -322,7 +325,7 @@ Windows 보안 로그 및 AD FS 관리자 로그 모두에서 표준 AD FS 2016 
 
 각 AD FS 서버에서 로컬 컴퓨터 내 저장소에 OU=Microsoft AD FS Azure MFA라는 자체 서명된 Azure MFA 인증서가 있으며 여기에는 인증서 만료 날짜가 포함되어 있습니다. 각 AD FS 서버에서 이 인증서의 유효 기간을 확인하여 만료 날짜를 확인합니다.
 
-인증서의 유효 기간이 곧 만료되는 경우 [각 AD FS 서버에서 새 MFA 인증서를 생성하고 확인합니다](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers).
+인증서의 유효 기간이 곧 만료되는 경우 [각 AD FS 서버에서 새 MFA 인증서를 생성하고 확인합니다](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa#configure-the-ad-fs-servers).
 
 다음 지침에서는 AD FS 서버에서 Azure MFA 인증서를 관리하는 방법에 대해 자세히 설명합니다. Azure MFA를 사용하여 AD FS를 구성하는 경우 `New-AdfsAzureMfaTenantCertificate` PowerShell cmdlet을 통해 생성된 인증서는 2년 동안 유효합니다. MFA 서비스에서 중단을 피하려면 만료되기 전에 갱신하고 갱신된 인증서를 설치합니다.
 
@@ -333,7 +336,7 @@ Windows 보안 로그 및 AD FS 관리자 로그 모두에서 표준 AD FS 2016 
 1. 필요한 모든 필수 구성 요소 충족
    1. 모든 하이브리드 시나리오에 대해 [Azure AD Connect](../hybrid/whatis-hybrid-identity.md) 배포
    1. 클라우드 액세스를 위해 게시된 온-프레미스 앱에 대해 [Azure AD 애플리케이션 프록시](../manage-apps/application-proxy.md) 배포
-   1. RADIUS 인증을 위한 [NPS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) 배포
+   1. RADIUS 인증을 위한 [NPS](/windows-server/networking/technologies/nps/nps-top) 배포
    1. 사용자가 최신 인증을 사용하도록 설정된 Microsoft Office 지원 버전으로 업그레이드했는지 확인
 1. 선택한 [인증 방법](#choose-verification-options) 구성
 1. [명명된 네트워크 위치 정의](../conditional-access/location-condition.md#named-locations)
@@ -341,7 +344,7 @@ Windows 보안 로그 및 AD FS 관리자 로그 모두에서 표준 AD FS 2016 
 1. [조건부 액세스 정책](#create-conditional-access-policy) 구성
 1. MFA 등록 정책 구성
    1. [결합된 MFA 및 SSPR](howto-registration-mfa-sspr-combined.md)
-   1. [ID 보호](../identity-protection/howto-mfa-policy.md) 포함
+   1. [ID 보호](../identity-protection/howto-identity-protection-configure-mfa-policy.md) 포함
 1. 사용자 통신을 보내 [https://aka.ms/mfasetup](https://aka.ms/mfasetup)에서 사용자가 등록하도록 함
 1. [등록된 사용자 추적](#identify-non-registered-users)
 

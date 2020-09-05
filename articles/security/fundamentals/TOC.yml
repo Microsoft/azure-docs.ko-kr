@@ -78,12 +78,16 @@
   items:
     - name: 데이터 보안 및 암호화
       href: encryption-overview.md
+    - name: 이중 암호화
+      href: double-encryption.md
     - name: 디스크 암호화
       items:
         - name: 모범 사례
           href: data-encryption-best-practices.md
-        - name: 미사용 데이터 암호화
+        - name: 휴지 상태의 암호화
           href: encryption-atrest.md
+        - name: 데이터 암호화 모델
+          href: encryption-models.md
         - name: 가상 머신에 대한 Azure Disk Encryption
           href: azure-disk-encryption-vms-vmss.md
     - name: 데이터베이스 보안

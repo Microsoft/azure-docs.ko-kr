@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: overview
-ms.date: 04/29/2020
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3370a2631a81ce36fd994da73c871fb1e409c667
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: f36e5d8974caea0eecff7e0b399b6aab5d200664
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84728370"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797108"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Azure Active Directory의 그룹에 대한 동적 멤버 자격 규칙
 
-Azure AD(Azure Active Directory)에서 그룹에 대해 동적 멤버십을 사용하기 위해 복합 특성 기준 규칙을 만들 수 있습니다. 동적 그룹 멤버 자격은 사용자를 추가하고 제거하는 관리 오버헤드를 줄입니다. 이 문서에서는 사용자 또는 디바이스에 대한 동적 멤버 자격 규칙을 만드는 속성과 구문에 대해 자세히 설명합니다. 보안 그룹 또는 Office 365 그룹에서 동적 멤버 자격에 대한 규칙을 설정할 수 있습니다.
+Azure AD(Azure Active Directory)에서 그룹에 대해 동적 멤버십을 사용하기 위해 복합 특성 기준 규칙을 만들 수 있습니다. 동적 그룹 멤버 자격은 사용자를 추가하고 제거하는 관리 오버헤드를 줄입니다. 이 문서에서는 사용자 또는 디바이스에 대한 동적 멤버 자격 규칙을 만드는 속성과 구문에 대해 자세히 설명합니다. 보안 그룹 또는 Microsoft 365 그룹에서 동적 멤버 자격에 대한 규칙을 설정할 수 있습니다.
 
 사용자 또는 디바이스의 특성이 변경될 때 변경 내용이 그룹 추가 또는 제거를 트리거할지를 확인하기 위해 시스템은 디렉터리에서 모든 동적 그룹 규칙을 평가합니다. 사용자 또는 디바이스가 그룹에 대한 규칙을 만족하면 해당 그룹의 멤버로 추가됩니다. 규칙을 더 이상 만족하지 않는 경우 제거됩니다. 동적 그룹의 멤버를 수동으로 추가하거나 제거할 수 없습니다.
 
@@ -269,7 +269,7 @@ assignedPlans는 사용자에게 할당된 모든 서비스 계획을 나열하�
 user.assignedPlans -any (assignedPlan.servicePlanId -eq "efb87545-963c-4e0d-99df-69c6916d9eb0" -and assignedPlan.capabilityStatus -eq "Enabled")
 ```
 
-이와 같은 규칙은 Office 365(또는 다른 Microsoft 온라인 서비스) 기능을 사용하도록 설정된 모든 사용자를 그룹화하는 데 사용할 수 있습니다. 그러면 일단의 정책을 그룹에 적용할 수 있습니다.
+이와 같은 규칙은 Microsoft 365(또는 다른 Microsoft Online Service) 기능을 사용하도록 설정된 모든 사용자를 그룹화하는 데 사용할 수 있습니다. 그러면 일단의 정책을 그룹에 적용할 수 있습니다.
 
 #### <a name="example-2"></a>예제 2
 
@@ -341,13 +341,13 @@ device.objectId -ne null
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>확장 속성 및 사용자 지정 확장 속성
 
-확장 특성 및 사용자 지정 확장 속성은 동적 멤버 자격 규칙에서 문자열 속성으로 지원됩니다. [확장 특성](https://docs.microsoft.com/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0)은 온-프레미스 Windows Server AD에서 동기화되고 "ExtensionAttributeX" 형식을 사용하며 여기서 X는 1 - 15입니다. 확장 특성을 속성으로 사용하는 규칙의 예제는 다음과 같습니다.
+확장 특성 및 사용자 지정 확장 속성은 동적 멤버 자격 규칙에서 문자열 속성으로 지원됩니다. [확장 특성](/graph/api/resources/onpremisesextensionattributes?view=graph-rest-1.0)은 온-프레미스 Windows Server AD에서 동기화되고 "ExtensionAttributeX" 형식을 사용하며 여기서 X는 1 - 15입니다. 확장 특성을 속성으로 사용하는 규칙의 예제는 다음과 같습니다.
 
 ```
 (user.extensionAttribute15 -eq "Marketing")
 ```
 
-[사용자 지정 확장 속성](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-feature-directory-extensions)은 온-프레미스 Windows Server AD 또는 연결된 SaaS 애플리케이션에서 동기화되며 `user.extension_[GUID]_[Attribute]` 형식입니다. 여기서
+[사용자 지정 확장 속성](../hybrid/how-to-connect-sync-feature-directory-extensions.md)은 온-프레미스 Windows Server AD 또는 연결된 SaaS 애플리케이션에서 동기화되며 `user.extension_[GUID]_[Attribute]` 형식입니다. 여기서
 
 * [GUID]는 Azure AD에서 속성을 만든 애플리케이션에 대한 Azure AD의 고유 식별자입니다.
 * [Attribute]는 Azure AD에서 만든 속성의 이름입니다.
@@ -393,7 +393,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
  systemLabels | 최신 작업 공간 디바이스의 태그를 지정하는 Intune 디바이스 속성과 일치하는 문자열 | (device.systemLabels -contains "M365Managed")
 
 > [!Note]  
-> 디바이스용 동적 그룹을 만들 때 deviceOwnership의 경우 값을 “Company”로 설정해야 합니다. Intune에서 디바이스 소유권이 Corporate로 대신 표시됩니다. 자세한 내용은 [OwnerTypes](https://docs.microsoft.com/intune/reports-ref-devices#ownertypes)를 참조하세요. 
+> 디바이스용 동적 그룹을 만들 때 deviceOwnership의 경우 값을 “Company”로 설정해야 합니다. Intune에서 디바이스 소유권이 Corporate로 대신 표시됩니다. 자세한 내용은 [OwnerTypes](/intune/reports-ref-devices#ownertypes)를 참조하세요. 
 
 ## <a name="next-steps"></a>다음 단계
 

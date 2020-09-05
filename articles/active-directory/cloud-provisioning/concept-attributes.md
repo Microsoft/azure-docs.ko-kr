@@ -15,12 +15,12 @@ ms.date: 02/18/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ac09fb3faf55be6c07a1e0a88b6e2032c9ab8ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fff90777c63820b54a1cb37156021c894de19c8
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78299332"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226933"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Azure AD 스키마 이해
 모든 디렉터리와 같이 Azure Active Directory (Azure AD)의 개체는 사용자, 그룹 및 연락처와 같은 작업을 나타내는 프로그래밍 방식의 고급 데이터 구문입니다. Azure AD에서 새 사용자 또는 연락처를 만들 때 해당 개체의 새 인스턴스를 만듭니다. 이러한 인스턴스는 속성을 기반으로 구분할 수 있습니다.
@@ -51,7 +51,7 @@ Azure AD에는 다음과 같은 두 가지 유형의 속성이 있습니다.
 * **입력**(메일): “john.smith@contoso.com”
 * **출력**: "john. smith"
 
-사용자 지정 식 및 구문을 작성 하는 방법에 대 한 자세한 내용은 [Azure Active Directory에서 특성 매핑에 대 한 식 작성](https://docs.microsoft.com/azure/active-directory/manage-apps/functions-for-customizing-application-data)을 참조 하세요.
+사용자 지정 식 및 구문을 작성 하는 방법에 대 한 자세한 내용은 [Azure Active Directory에서 특성 매핑에 대 한 식 작성](../app-provisioning/functions-for-customizing-application-data.md)을 참조 하세요.
 
 다음 표에서는 일반적인 특성 및 Azure AD에 동기화 되는 방법을 보여 줍니다.
 
@@ -245,7 +245,7 @@ Azure AD에는 다음과 같은 두 가지 유형의 속성이 있습니다.
  
     예: https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema
 
-   `{Service Principal Id}`및을 `{AD2ADD Provisioning Id}` 사용자의 값으로 바꿉니다.
+   `{Service Principal Id}` 및 `{AD2ADD Provisioning Id}` 를 값으로 바꿉니다.
 
 1. 이 쿼리는 스키마를 반환 합니다.
 

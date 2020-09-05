@@ -4,12 +4,12 @@ description: Azure에서 리소스 웹앱, 클라우드 서비스, 가상 머신
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 67b041476ecc5b5da389ab1377025a94675fc42a
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 710d4e1aa77f8ab3153dafc77a72eec2192cf205
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078889"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794534"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Azure에서 자동 크기 조정 시작
 이 문서에서는 Microsoft Azure Portal에서 리소스에 대한 자동 크기 조정을 설정하는 방법에 대해 설명합니다.
@@ -51,7 +51,7 @@ Azure Monitor에서 자동 크기 조정을 적용할 수 있는 리소스를 �
 
     b. **연산자**를 **보다 작음**으로 설정합니다.
 
-    다. **임계값**을 **20**으로 설정합니다.
+    c. **임계값**을 **20**으로 설정합니다.
 
     d. **작업**을 **다음을 기준으로 개수 줄이기**로 설정합니다.
 
@@ -112,6 +112,28 @@ CPU 기준 크기 조정 외에도 특정 날짜에 대한 크기 조정을 다�
 ![수동 크기 조정 설정][14]
 
 **자동 크기 조정 사용**과 **저장**을 차례로 클릭하면 언제든지 자동 크기 조정을 다시 사용하도록 설정할 수 있습니다.
+
+## <a name="route-traffic-to-healthy-instances-app-service"></a>정상적인 인스턴스로 트래픽 라우팅 (App Service)
+
+여러 인스턴스로 확장 하는 경우 인스턴스에 대 한 상태 검사를 수행 하 여 트래픽을 정상 인스턴스로만 라우팅할 수 App Service. 이렇게 하려면 App Service 포털을 열고 **모니터링**아래에서 **상태 확인** 을 선택 합니다. **사용** 을 선택 하 고 응용 프로그램에서 또는와 같은 올바른 URL 경로를 제공 `/health` `/api/health` 합니다. **저장**을 클릭합니다.
+
+### <a name="health-check-path"></a>상태 검사 경로
+
+200에서 299 (포함) 사이의 상태 코드를 사용 하 여 2 분 이내에 경로를 응답 해야 합니다. 경로가 2 분 이내에 응답 하지 않거나 범위 밖의 상태 코드를 반환 하는 경우 인스턴스는 "비정상"으로 간주 됩니다. 상태 검사는 App Service의 인증 및 권한 부여 기능과 통합 되며, 시스템은 이러한 microsoft.powershell.secuity 기능을 사용 하는 경우에도 끝점에 연결 합니다. 사용자 고유의 인증 시스템을 사용 하는 경우 상태 검사 경로에서 익명 액세스를 허용 해야 합니다. 사이트에서 HTTP**s** 를 사용 하는 경우 HEALTHCHECK는 http**s** 를 사용 하 고 해당 프로토콜을 사용 하 여 요청을 보냅니다.
+
+상태 검사 경로는 응용 프로그램의 중요 한 구성 요소를 확인 해야 합니다. 예를 들어 응용 프로그램이 데이터베이스 및 메시징 시스템에 종속 된 경우 상태 검사 끝점은 해당 구성 요소에 연결 해야 합니다. 응용 프로그램에서 중요 한 구성 요소에 연결할 수 없는 경우이 경로는 앱이 비정상 상태임을 나타내기 위해 500 수준 응답 코드를 반환 해야 합니다.
+
+### <a name="behavior"></a>동작
+
+상태 검사 경로를 제공 하면 App Service는 모든 인스턴스의 경로를 ping 합니다. 5 개의 ping 후에 성공적인 응답 코드를 받지 못한 경우 해당 인스턴스는 "비정상"으로 간주 됩니다. 비정상 인스턴스는 부하 분산 장치 순환에서 제외 됩니다. 또한 확장 하거나 축소할 때 상태 검사 경로를 ping 하 여 새 인스턴스가 요청에 대해 준비 되었는지 확인 App Service 합니다.
+
+나머지 정상 인스턴스는 부하가 증가할 수 있습니다. 나머지 인스턴스가 과도 하 게 사용 되지 않도록 하려면 인스턴스 중 절반이 제외 됩니다. 예를 들어 App Service 계획을 4 개의 인스턴스로 확장 하 고 비정상 상태에서 3 개를 확장 하는 경우 최대 2 개는 loadbalancer 순환에서 제외 됩니다. 다른 두 인스턴스 (정상 및 비정상 1 개)는 계속 해 서 요청을 받습니다. 모든 인스턴스가 비정상 인 최악의 시나리오에서는 none이 제외 됩니다.
+
+인스턴스가 1 시간 동안 비정상 상태로 유지 되 면 새 인스턴스로 바뀝니다. 최대 하나의 인스턴스만 시간당 교체 되며 App Service 요금제 당 최대 3 개의 인스턴스가 있습니다.
+
+### <a name="monitoring"></a>모니터링
+
+응용 프로그램의 상태 검사 경로를 제공한 후 Azure Monitor를 사용 하 여 사이트의 상태를 모니터링할 수 있습니다. 포털의 **상태 검사** 블레이드에서 상단 도구 모음에 있는 **메트릭을** 클릭 합니다. 그러면 사이트의 기록 상태를 확인 하 고 새 경고 규칙을 만들 수 있는 새 블레이드가 열립니다. 사이트 모니터링에 대 한 자세한 내용은 [Azure Monitor 가이드를 참조](../../app-service/web-sites-monitor.md)하세요.
 
 ## <a name="next-steps"></a>다음 단계
 - [구독의 모든 자동 크기 조정 엔진 작업을 모니터링하기 위한 활동 로그 경고를 만듭니다.](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert)

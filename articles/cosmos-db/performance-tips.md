@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: sngun
-ms.openlocfilehash: c6c1b30716b52554afebe39562692de181dd7d1a
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: bdf512c66958338992c5959f8e00b4589850ff33
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921234"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008372"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net-sdk-v2"></a>Azure Cosmos DB 및 .NET SDK v2의 성능 팁
 
@@ -72,21 +73,19 @@ Azure Cosmos DB는 보장된 대기 시간 및 처리량으로 매끄럽게 크�
 
   * 게이트웨이 모드 (기본값)
       
-    게이트웨이 모드는 모든 SDK 플랫폼에서 지원 되며, [Microsoft.Azure.DocumentDB SDK](sql-api-sdk-dotnet.md)에 대해 구성 된 기본값입니다. 응용 프로그램이 엄격한 방화벽 제한을 사용 하는 회사 네트워크 내에서 실행 되는 경우 표준 HTTPS 포트 및 단일 끝점을 사용 하기 때문에 게이트웨이 모드를 선택 하는 것이 가장 좋습니다. 그러나 성능 단점은 데이터를 Azure Cosmos DB에서 읽거나 쓸 때마다 게이트웨이 모드에 추가 네트워크 홉이 포함 된다는 것입니다. 따라서 직접 모드는 네트워크 홉이 적기 때문에 더 나은 성능을 제공 합니다. 또한 소켓 연결 수가 제한 된 환경에서 응용 프로그램을 실행할 때 게이트웨이 연결 모드를 권장 합니다.
+    게이트웨이 모드는 모든 SDK 플랫폼에서 지원 되며, [Microsoft.Azure.DocumentDB SDK](sql-api-sdk-dotnet.md)에 대해 구성 된 기본값입니다. 응용 프로그램이 엄격한 방화벽 제한을 사용 하는 회사 네트워크 내에서 실행 되는 경우 표준 HTTPS 포트 및 단일 DNS 끝점을 사용 하기 때문에 게이트웨이 모드를 선택 하는 것이 가장 좋습니다. 그러나 성능 단점은 데이터를 Azure Cosmos DB에서 읽거나 쓸 때마다 게이트웨이 모드에 추가 네트워크 홉이 포함 된다는 것입니다. 따라서 직접 모드는 네트워크 홉이 적기 때문에 더 나은 성능을 제공 합니다. 또한 소켓 연결 수가 제한 된 환경에서 응용 프로그램을 실행할 때 게이트웨이 연결 모드를 권장 합니다.
 
     특히 [소비 계획](../azure-functions/functions-scale.md#consumption-plan)에서 Azure Functions SDK를 사용 하는 경우 [연결에 대 한 현재 제한](../azure-functions/manage-connections.md)사항을 알고 있어야 합니다. 이 경우 Azure Functions 응용 프로그램 내에서 다른 HTTP 기반 클라이언트를 사용 하는 경우에도 게이트웨이 모드가 더 좋을 수 있습니다.
 
   * 직접 모드
 
     직접 모드는 TCP 프로토콜을 통한 연결을 지원 합니다.
-
-게이트웨이 모드에서 Azure Cosmos DB는 MongoDB 용 Azure Cosmos DB API를 사용 하는 경우 포트 443 및 포트 10250, 10255 및 10256을 사용 합니다. 포트 10250는 지역에서 복제를 사용 하지 않고 기본 MongoDB 인스턴스에 매핑됩니다. 포트 10255 및 10256는 지역에서 복제를 포함 하는 MongoDB 인스턴스에 매핑됩니다.
      
-직접 모드에서 TCP를 사용 하는 경우 게이트웨이 2만 1만 포트 외에도 Azure Cosmos DB에서 동적 TCP 포트를 사용 해야 합니다 ( [전용 끝점](./how-to-configure-private-endpoints.md)에서 직접 모드를 사용 하는 경우, tcp 포트의 전체 범위-0에서 65535로 열림). 이러한 포트가 열려 있지 않은 경우 TCP를 사용 하려고 하면 503 서비스를 사용할 수 없음 오류가 표시 됩니다. 다음 표에서는 각 API에 사용 되는 다양 한 Api 및 서비스 포트에 사용할 수 있는 연결 모드를 보여 줍니다.
+직접 모드에서 TCP를 사용 하는 경우 게이트웨이 포트 외에도 Azure Cosmos DB에서 동적 TCP 포트를 사용 하므로 1만과 2만 사이의 포트 범위가 열려 있는지 확인 해야 합니다. [전용 끝점](./how-to-configure-private-endpoints.md)에서 직접 모드를 사용 하는 경우 TCP 포트의 전체 범위 (0 ~ 65535)가 열려 있어야 합니다. 이러한 포트가 열려 있지 않은 상태에서 TCP 프로토콜을 사용 하려고 하면 503 서비스를 사용할 수 없음 오류가 표시 됩니다. 다음 표에서는 각 API에 사용 되는 다양 한 Api 및 서비스 포트에 사용할 수 있는 연결 모드를 보여 줍니다.
 
 |연결 모드  |지원되는 프로토콜  |지원되는 SDK  |API/서비스 포트  |
 |---------|---------|---------|---------|
-|게이트웨이  |   HTTPS    |  모든 Sdk    |   SQL (443), MongoDB (10250, 10255, 10256), 테이블 (443), Cassandra (10350), 그래프 (443)    |
+|게이트웨이  |   HTTPS    |  모든 Sdk    |   SQL (443), MongoDB (10250, 10255, 10256), 테이블 (443), Cassandra (10350), 그래프 (443) <br> 10250 포트는 지역에서 복제를 사용 하지 않고 MongoDB 인스턴스에 대 한 기본 Azure Cosmos DB API에 매핑됩니다. 반면에 포트 10255 및 10256은 지역에서 복제를 포함 하는 인스턴스에 매핑됩니다.   |
 |직접    |     TCP    |  .NET SDK    | 공개/서비스 끝점을 사용 하는 경우: 1만 ~ 2만 범위의 포트<br>개인 끝점을 사용 하는 경우: 0-65535 범위의 포트 |
 
 Azure Cosmos DB는 HTTPS를 통해 단순한 개방형 RESTful 프로그래밍 모델을 제공 합니다. 또한 통신 모델이 RESTful이며 .NET 클라이언트 SDK를 통해 사용할 수 있는 효율적인 TCP 프로토콜도 제공합니다. TCP 프로토콜은 초기 인증 및 암호화 트래픽에 TLS를 사용 합니다. 최상의 성능을 위해 가능한 경우 TCP 프로토콜을 사용 합니다.
@@ -121,10 +120,10 @@ TCP 프로토콜에서 실행 하는 경우 클라이언트는 HTTPS 프로토�
 
 **첫 번째 요청 시 시작 대기 시간을 피하기 위해 OpenAsync 호출**
 
-기본적으로 첫 번째 요청은 주소 라우팅 테이블을 인출 해야 하기 때문에 대기 시간이 더 높습니다. [SDK V2](sql-api-sdk-dotnet.md)를 사용 하는 경우 `OpenAsync()` 첫 번째 요청에서이 시작 대기 시간을 방지 하기 위해 초기화 하는 동안 한 번 호출 합니다. 호출은 다음과 같습니다.`await client.OpenAsync();`
+기본적으로 첫 번째 요청은 주소 라우팅 테이블을 인출 해야 하기 때문에 대기 시간이 더 높습니다. [SDK V2](sql-api-sdk-dotnet.md)를 사용 하는 경우 `OpenAsync()` 첫 번째 요청에서이 시작 대기 시간을 방지 하기 위해 초기화 하는 동안 한 번 호출 합니다. 호출은 다음과 같습니다. `await client.OpenAsync();`
 
 > [!NOTE]
-> `OpenAsync`는 계정의 모든 컨테이너에 대 한 주소 라우팅 테이블을 가져오기 위해 요청을 생성 합니다. 많은 컨테이너가 있지만 응용 프로그램이 그 하위 집합에 액세스 하는 계정의 경우에는 `OpenAsync` 불필요 한 트래픽 양이 생성 되어 초기화 속도가 느려집니다. 따라서 `OpenAsync` 응용 프로그램 시작 속도가 느려지므로이 시나리오에서는를 사용 하는 것이 유용 하지 않을 수 있습니다.
+> `OpenAsync` 는 계정의 모든 컨테이너에 대 한 주소 라우팅 테이블을 가져오기 위해 요청을 생성 합니다. 많은 컨테이너가 있지만 응용 프로그램이 그 하위 집합에 액세스 하는 계정의 경우에는 `OpenAsync` 불필요 한 트래픽 양이 생성 되어 초기화 속도가 느려집니다. 따라서 `OpenAsync` 응용 프로그램 시작 속도가 느려지므로이 시나리오에서는를 사용 하는 것이 유용 하지 않을 수 있습니다.
 
 **성능을 위해 동일한 Azure 지역의 배치 클라이언트**
 
@@ -158,8 +157,8 @@ Azure Cosmos DB 요청은 게이트웨이 모드를 사용 하는 경우 HTTPS/R
 **분할 된 컬렉션에 대 한 병렬 쿼리 조정**
 
 SQL .NET SDK 1.9.0 이상에서는 병렬 쿼리를 지원 하므로 분할 된 컬렉션을 병렬로 쿼리할 수 있습니다. 자세한 내용은 SDK 사용과 관련된 [코드 샘플](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Queries/Program.cs)을 참조하세요. 병렬 쿼리는 일련의 대응 보다 더 나은 쿼리 대기 시간 및 처리량을 제공 하도록 설계 되었습니다. 병렬 쿼리는 요구 사항에 맞게 튜닝할 수 있는 두 가지 매개 변수를 제공 합니다. 
-- `MaxDegreeOfParallelism`병렬로 쿼리할 수 있는 최대 파티션 수를 제어 합니다. 
-- `MaxBufferedItemCount`미리 인출 된 결과의 수를 제어 합니다.
+- `MaxDegreeOfParallelism` 병렬로 쿼리할 수 있는 최대 파티션 수를 제어 합니다. 
+- `MaxBufferedItemCount` 미리 인출 된 결과의 수를 제어 합니다.
 
 ***병렬 처리 수준 튜닝***
 
@@ -231,7 +230,7 @@ collection = await client.CreateDocumentCollectionAsync(UriFactory.CreateDatabas
 
 자세한 내용은 [Azure Cosmos DB 인덱싱 정책](index-policy.md)을 참조하세요.
 
-## <a name="throughput"></a><a id="measure-rus"></a>능력
+## <a name="throughput"></a><a id="measure-rus"></a> 능력
 
 **낮은 요청 단위/초 사용을 측정 하 고 조정 합니다.**
 

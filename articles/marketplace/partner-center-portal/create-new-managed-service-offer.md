@@ -7,12 +7,12 @@ ms.topic: how-to
 author: Microsoft-BradleyWright
 ms.author: brwrigh
 ms.date: 08/07/2020
-ms.openlocfilehash: f58ec53d1c4f3ad95993fd2faff44f7164c4beeb
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 9ff11312b6d231927f5053868b64e0b825df371e
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036609"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816986"
 ---
 # <a name="create-a-managed-service-offer"></a>관리되는 서비스 제품 만들기
 
@@ -29,7 +29,7 @@ ms.locfileid: "88036609"
     ![왼쪽 탐색 메뉴를 보여줍니다.](./media/new-offer-managed-service.png)
 
 >[!NOTE]
->제품이 게시된 후 파트너 센터에서 해당 제품에 대해 편집한 내용이 상점에 표시되려면 제품을 다시 게시해야 합니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
+>제품을 게시 한 후에는 제품을 다시 게시 한 후에만 파트너 센터에서 해당 제품에 대 한 편집 내용이 온라인 매장에 표시 됩니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
 
 ## <a name="new-offer"></a>새 제안
 
@@ -86,7 +86,7 @@ ms.locfileid: "88036609"
 #### <a name="call-out-descriptions"></a>호출 설명
 
 1. 제목
-2. 설명
+2. Description
 3. 유용한 링크
 4. 스크린샷
 
@@ -135,18 +135,19 @@ ms.locfileid: "88036609"
 >[!NOTE]
 >파일을 업로드하는 동안 문제가 발생한 경우 로컬 네트워크가 파트너 센터에서 사용하는 https://upload.xboxlive.com 서비스를 차단하지 않는지 확인하세요.
 
-#### <a name="marketplace-logos"></a>마켓플레이스 로고
+#### <a name="store-logos"></a>스토어 로고
 
-제품 로고를 네 가지 픽셀 크기로 제공합니다.
+**큰** 크기의 로고에 대 한 PNG 파일을 제공 합니다. 파트너 센터는이를 사용 하 여 **작고** **중간** 로고를 만듭니다. 필요에 따라 나중에 다른 이미지로 바꿀 수 있습니다.
 
-- **소형**(48 x 48)
-- **중형**(90 x 90)
-- **대형**(216 x 216)
-- **와이드**(255 x 115)
+- **큼** (216 x 216에서 350 x 350 px, required)
+- **중간** (90 x 90 px, 선택 사항)
+- **작음** (48 x 48 px, 선택 사항)
 
-이러한 로고는 Azure Marketplace의 다양 한 위치에서 사용 됩니다.
+이러한 로고는 목록의 다른 위치에서 사용 됩니다.
 
 [!INCLUDE [logos-azure-marketplace-only](../includes/logos-azure-marketplace-only.md)]
+
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>스크린샷
 
@@ -175,6 +176,8 @@ ms.locfileid: "88036609"
 ## <a name="plan-overview"></a>플랜 개요
 
 각 제품에는 하나 이상의 계획 (이전의 Sku)이 있어야 합니다. 여러 플랜을 추가하여 다양한 가격으로 다양한 기능 세트를 지원하거나, 제한된 특정 고객 대상 그룹을 위한 특정 플랜을 사용자 지정할 수 있습니다. 고객은 상위 제품 아래에서 사용할 수 있는 플랜을 볼 수 있습니다.
+
+각 제품에 대해 최대 100 요금제를 만들 수 있습니다. 최대 45 개는 개인 일 수 있습니다. [Microsoft 상업적 marketplace에서 비공개 제품](../private-offers.md)의 비공개 요금제에 대해 자세히 알아보세요.
 
 **플랜 개요** 페이지에서 **+ 새 플랜 만들기**를 선택합니다. 그런 다음, **플랜 ID**와 **플랜 이름**을 입력합니다. 이 값은 모두 소문자 영숫자, 대시 및 밑줄만 포함할 수 있으며 최대 50자로 제한됩니다. 이 값은 고객에게 표시될 수 있으며 제품을 게시한 후에는 변경할 수 없습니다.
 

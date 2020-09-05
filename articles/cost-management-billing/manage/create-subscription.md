@@ -3,15 +3,16 @@ title: 추가 Azure 구독 만들기
 description: Azure Portal에서 새 Azure 구독을 추가하는 방법을 알아봅니다. 청구 계정 양식에 대한 정보를 확인하고 사용 가능한 추가 리소스를 살펴봅니다.
 author: amberbhargava
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/12/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: d27120f6bd0978b69d664ab3ab2e86bfee4f1755
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: aa8cf0d2a48c75b71895eb75db362c4ec4e291c5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460969"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88925048"
 ---
 # <a name="create-an-additional-azure-subscription"></a>추가 Azure 구독 만들기
 
@@ -72,7 +73,7 @@ MOSP(Microsoft 온라인 서비스 프로그램) 청구 계정이 있는 경우 
 
 ## <a name="create-an-additional-azure-subscription-programmatically"></a>프로그래밍 방식으로 추가 Azure 구독 만들기
 
-프로그래밍 방식으로 추가 구독을 만들 수도 있습니다. 자세한 내용은 [프로그래밍 방식으로 Azure 구독 만들기](../../azure-resource-manager/management/programmatically-create-subscription.md)를 참조하세요.
+프로그래밍 방식으로 추가 구독을 만들 수도 있습니다. 자세한 내용은 [프로그래밍 방식으로 Azure 구독 만들기](programmatically-create-subscription.md)를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

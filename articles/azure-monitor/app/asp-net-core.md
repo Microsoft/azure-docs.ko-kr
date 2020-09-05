@@ -2,13 +2,14 @@
 title: ASP.NET Core 응용 프로그램에 대 한 Azure 애플리케이션 정보 | Microsoft Docs
 description: ASP.NET Core 웹 애플리케이션의 가용성, 성능 및 사용량을 모니터링합니다.
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 1a9bc3e46e108c50b36e0318e0f9a51a94e83573
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 719bf997254c98c5790d6d6733982fea08541967
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475518"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936523"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>ASP.NET Core 응용 프로그램에 대 한 Application Insights
 
@@ -30,12 +31,14 @@ ms.locfileid: "87475518"
 > [!NOTE]
 > ASP.NET Core 3.x에는 [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) 이상이 필요 합니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 - 작동 하는 ASP.NET Core 응용 프로그램입니다. ASP.NET Core 응용 프로그램을 만들어야 하는 경우이 [ASP.NET Core 자습서](/aspnet/core/getting-started/)를 따르세요.
 - 유효한 Application Insights 계측 키입니다. Application Insights에 원격 분석을 보내려면이 키가 필요 합니다. 계측 키를 가져오기 위해 새 Application Insights 리소스를 만들어야 하는 경우 [Application Insights 리소스 만들기](./create-new-resource.md)를 참조 하세요.
 
 ## <a name="enable-application-insights-server-side-telemetry-visual-studio"></a>서버 쪽 원격 분석 Application Insights 사용 (Visual Studio)
+
+Mac용 Visual Studio [수동 지침](#enable-application-insights-server-side-telemetry-no-visual-studio)을 사용 합니다. Windows 버전의 Visual Studio 에서만이 프로시저를 지원 합니다.
 
 1. Visual Studio에서 프로젝트를 엽니다.
 
@@ -103,18 +106,22 @@ ms.locfileid: "87475518"
 
     * `ApplicationInsights:InstrumentationKey`
 
-    예를 들면 다음과 같습니다.
+    예를 들면
 
     * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
     * `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
-    * `APPINSIGHTS_INSTRUMENTATIONKEY`는 일반적으로 [Azure Web Apps](./azure-web-apps.md?tabs=net)에서 사용 되지만이 SDK가 지원 되는 모든 위치에서 사용 될 수도 있습니다. 코드 없는 웹 앱 모니터링을 수행 하는 경우 연결 문자열을 사용 하지 않는 경우이 형식이 필요 합니다.
+    * `APPINSIGHTS_INSTRUMENTATIONKEY` 는 일반적으로 [Azure Web Apps](./azure-web-apps.md?tabs=net)에서 사용 되지만이 SDK가 지원 되는 모든 위치에서 사용 될 수도 있습니다. 코드 없는 웹 앱 모니터링을 수행 하는 경우 연결 문자열을 사용 하지 않는 경우이 형식이 필요 합니다.
 
     계측 키를 설정 하는 대신 [연결 문자열](./sdk-connection-string.md?tabs=net)도 사용할 수 있습니다.
 
     > [!NOTE]
     > 코드에 지정 된 계측 키가 `APPINSIGHTS_INSTRUMENTATIONKEY` 다른 옵션을 통해 적용 되는 환경 변수를 통해 이깁니다.
+
+### <a name="user-secrets-and-other-configuration-providers"></a>사용자 암호 및 기타 구성 공급자
+
+계측 키를 ASP.NET Core 사용자 암호에 저장 하거나 다른 구성 공급자에서 검색 하려면 매개 변수와 함께 오버 로드를 사용할 수 있습니다 `Microsoft.Extensions.Configuration.IConfiguration` . 예: `services.AddApplicationInsightsTelemetry(Configuration);`
 
 ## <a name="run-your-application"></a>애플리케이션 실행
 
@@ -143,7 +150,7 @@ ASP.NET Core의 [성능 카운터](./web-monitor-performance.md) 에 대 한 지
 
 ### <a name="eventcounter"></a>EventCounter
 
-`EventCounterCollectionModule`는 기본적으로 사용 하도록 설정 되며 .NET Core 2.x 앱에서 기본 카운터 집합을 수집 합니다. [Eventcounter](eventcounters.md) 자습서에는 수집 된 카운터의 기본 집합이 나열 됩니다. 또한 목록을 사용자 지정 하는 방법에 대 한 지침도 있습니다.
+`EventCounterCollectionModule` 는 기본적으로 사용 하도록 설정 되며 .NET Core 2.x 앱에서 기본 카운터 집합을 수집 합니다. [Eventcounter](eventcounters.md) 자습서에는 수집 된 카운터의 기본 집합이 나열 됩니다. 또한 목록을 사용자 지정 하는 방법에 대 한 지침도 있습니다.
 
 ## <a name="enable-client-side-telemetry-for-web-applications"></a>웹 응용 프로그램에 대 한 클라이언트 쪽 원격 분석 사용
 
@@ -199,16 +206,16 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-의 전체 설정 목록`ApplicationInsightsServiceOptions`
+의 전체 설정 목록 `ApplicationInsightsServiceOptions`
 
 |설정 | Description | 기본값
 |---------------|-------|-------
-|EnablePerformanceCounterCollectionModule  | 사용/사용 안 함`PerformanceCounterCollectionModule` | true
-|EnableRequestTrackingTelemetryModule   | 사용/사용 안 함`RequestTrackingTelemetryModule` | true
-|EnableEventCounterCollectionModule   | 사용/사용 안 함`EventCounterCollectionModule` | true
-|EnableDependencyTrackingTelemetryModule   | 사용/사용 안 함`DependencyTrackingTelemetryModule` | true
-|EnableAppServicesHeartbeatTelemetryModule  |  사용/사용 안 함`AppServicesHeartbeatTelemetryModule` | true
-|EnableAzureInstanceMetadataTelemetryModule   |  사용/사용 안 함`AzureInstanceMetadataTelemetryModule` | true
+|EnablePerformanceCounterCollectionModule  | 사용/사용 안 함 `PerformanceCounterCollectionModule` | true
+|EnableRequestTrackingTelemetryModule   | 사용/사용 안 함 `RequestTrackingTelemetryModule` | true
+|EnableEventCounterCollectionModule   | 사용/사용 안 함 `EventCounterCollectionModule` | true
+|EnableDependencyTrackingTelemetryModule   | 사용/사용 안 함 `DependencyTrackingTelemetryModule` | true
+|EnableAppServicesHeartbeatTelemetryModule  |  사용/사용 안 함 `AppServicesHeartbeatTelemetryModule` | true
+|EnableAzureInstanceMetadataTelemetryModule   |  사용/사용 안 함 `AzureInstanceMetadataTelemetryModule` | true
 |EnableQuickPulseMetricStream | LiveMetrics 기능 사용/사용 안 함 | true
 |EnableAdaptiveSampling | 적응 샘플링 사용/사용 안 함 | true
 |EnableHeartbeat 비트 | 하트 비트 기능 사용/사용 안 함-주기적 (15 분 기본값)은 ' HeartbeatState ' 라는 사용자 지정 메트릭을 .NET 버전, Azure 환경 정보 (해당 하는 경우) 등의 런타임에 대 한 정보로 보냅니다. | true
@@ -281,13 +288,13 @@ Application Insights 원격 분석 모듈을 사용 하 여 사용자별 수동 
 
 다음 자동 컬렉션 모듈은 기본적으로 사용 하도록 설정 되어 있습니다. 이러한 모듈은 원격 분석을 자동으로 수집 합니다. 기본 동작을 변경 하도록 사용 하지 않도록 설정 하거나 구성할 수 있습니다.
 
-* `RequestTrackingTelemetryModule`-들어오는 웹 요청에서 RequestTelemetry 분석을 수집 합니다.
-* `DependencyTrackingTelemetryModule`-나가는 http 호출 및 sql 호출에서 [DependencyTelemetry](./asp-net-dependencies.md) 을 수집 합니다.
-* `PerformanceCollectorModule`-Windows PerformanceCounters을 수집 합니다.
-* `QuickPulseTelemetryModule`-라이브 메트릭 포털에 표시 하기 위한 원격 분석을 수집 합니다.
-* `AppServicesHeartbeatTelemetryModule`-응용 프로그램이 호스트 되는 Azure App Service 환경에 대해 하트 비트 (사용자 지정 메트릭으로 전송 됨)를 수집 합니다.
-* `AzureInstanceMetadataTelemetryModule`-응용 프로그램이 호스트 되는 Azure VM 환경에 대해 하트 비트 (사용자 지정 메트릭으로 전송 됨)를 수집 합니다.
-* `EventCounterCollectionModule`- [Eventcounters를 수집 합니다.](eventcounters.md) 이 모듈은 새로운 기능이 며 SDK 버전 2.8.0 이상에서 사용할 수 있습니다.
+* `RequestTrackingTelemetryModule` -들어오는 웹 요청에서 RequestTelemetry 분석을 수집 합니다.
+* `DependencyTrackingTelemetryModule` -나가는 http 호출 및 sql 호출에서 [DependencyTelemetry](./asp-net-dependencies.md) 을 수집 합니다.
+* `PerformanceCollectorModule` -Windows PerformanceCounters을 수집 합니다.
+* `QuickPulseTelemetryModule` -라이브 메트릭 포털에 표시 하기 위한 원격 분석을 수집 합니다.
+* `AppServicesHeartbeatTelemetryModule` -응용 프로그램이 호스트 되는 Azure App Service 환경에 대해 하트 비트 (사용자 지정 메트릭으로 전송 됨)를 수집 합니다.
+* `AzureInstanceMetadataTelemetryModule` -응용 프로그램이 호스트 되는 Azure VM 환경에 대해 하트 비트 (사용자 지정 메트릭으로 전송 됨)를 수집 합니다.
+* `EventCounterCollectionModule` - [Eventcounters를 수집 합니다.](eventcounters.md) 이 모듈은 새로운 기능이 며 SDK 버전 2.8.0 이상에서 사용할 수 있습니다.
 
 기본값을 구성 하려면 `TelemetryModule` `ConfigureTelemetryModule<T>` `IServiceCollection` 다음 예제와 같이에 확장 메서드를 사용 합니다.
 
@@ -465,5 +472,5 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 * 예외가 throw 될 때 소스 코드 및 변수의 상태를 확인 하도록 [스냅숏 컬렉션을 구성](./snapshot-debugger.md) 합니다.
 * [API를 사용](./api-custom-events-metrics.md) 하 여 앱의 성능 및 사용 현황에 대 한 자세한 보기에 대 한 사용자 고유의 이벤트 및 메트릭을 보냅니다.
 * [가용성 테스트](./monitor-web-app-availability.md)를 사용하여 전 세계에서 사용자 앱을 지속적으로 확인합니다.
-* [ASP.NET Core 종속성 주입](/aspnet/core/fundamentals/dependency-injection)
+* [ASP.NET Core의 종속성 주입](/aspnet/core/fundamentals/dependency-injection)
 

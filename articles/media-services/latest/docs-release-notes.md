@@ -3,22 +3,24 @@ title: Azure Media Services v3 설명서 업데이트
 description: 최신 Media Services v3 설명서 업데이트를 최신 상태로 유지 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 04/20/2020
-ms.author: juliako
-ms.openlocfilehash: 56c6b3732d0a77580c27f6cc8720b414e8e49d23
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 78879733a35395ae2dc486ab8eb08da544925a8a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038990"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89255157"
 ---
 # <a name="azure-media-services-v3-documentation-updates"></a>Azure Media Services v3 설명서 업데이트
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 >이 URL(`https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+v3+documentation+updates%22&locale=en-us`)을 RSS 피드 판독기에 복사하고 붙여넣어 업데이트를 위해 이 페이지를 다시 방문해야 하는 시기에 대한 알림을 받습니다.
 

@@ -3,13 +3,13 @@ title: .NET 파일 규칙 라이브러리를 사용하여 Azure Storage에 출�
 description: .NET용 Azure Batch 파일 규칙 라이브러리를 사용하여 Batch 태스크 및 작업 출력을 Azure Storage에 유지하는 방법을 알아보고 Azure Portal에서 해당 출력을 확인합니다.
 ms.topic: how-to
 ms.date: 11/14/2018
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2e06bc90c95f9951895e0434ec8a8a7defaa6156
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.custom: H1Hack27Feb2017, devx-track-csharp
+ms.openlocfilehash: 1a45eed421dd8d734fcef0dd452df1d4a65fd053
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86147171"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936965"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>.NET용 Batch 파일 규칙 라이브러리를 사용하여 Azure Storage에 작업 및 태스크 데이터 유지
 

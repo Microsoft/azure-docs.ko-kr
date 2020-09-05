@@ -1,29 +1,29 @@
 ---
-title: '빠른 시작: 인쇄된 텍스트 추출(OCR) - REST, C#'
+title: '빠른 시작: Computer Vision 2.0 REST API OCR 작업 및 C#을 사용하여 텍스트 추출'
 titleSuffix: Azure Cognitive Services
-description: 이 빠른 시작에서는 C#과 함께 Computer Vision API를 사용하여 이미지의 인쇄 텍스트를 추출합니다.
+description: 이 빠른 시작에서는 C#과 함께 Computer Vision REST API OCR 작업을 사용하여 이미지에서 텍스트를 추출합니다.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 08/11/2020
 ms.author: pafarley
-ms.custom: seodec18
-ms.openlocfilehash: 4ce9e530f536893fe3d9753e43928cf53f9dde53
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: seodec18, devx-track-dotnet
+ms.openlocfilehash: 52241972e283db1c5e000e1e9f5d655dfdd9c8a3
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835394"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928193"
 ---
-# <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-c"></a>빠른 시작: Computer Vision REST API 및 C#을 사용하여 인쇄된 텍스트(OCR) 추출
+# <a name="quickstart-extract-text-using-the-computer-vision-20-rest-api-ocr-operation-and-c"></a>빠른 시작: Computer Vision 2.0 REST API OCR 작업 및 C#을 사용하여 텍스트 추출
 
-> [!NOTE]
-> 영어 텍스트를 추출하는 경우 새 [읽기 작업](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text)을 사용하는 것이 좋습니다. [C# 빠른 시작](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/csharp-hand-text)을 사용할 수 있습니다. 
+> [!IMPORTANT]
+> 영어, 네덜란드어, 프랑스어, 독일어, 이탈리아어, 포르투갈어, 스페인어 또는 중국어 간체(미리 보기)로 텍스트를 추출하는 경우 최신 [읽기 작업](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text)을 사용하는 것이 좋습니다. [C# 빠른 시작](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/csharp-hand-text)을 사용할 수 있습니다. 
 
-이 빠른 시작에서는 Computer Vision REST API를 사용하여 이미지에서 OCR(광학 문자 인식)이 포함된 인쇄 텍스트를 추출합니다. [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) 기능을 사용하여 이미지의 인쇄 텍스트를 감지하고, 인식된 문자를 머신에서 사용 가능한 문자 스트림으로 추출할 수 있습니다.
+이 빠른 시작에서는 Computer Vision REST API [OCR 작업](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) 기능을 사용하여 이미지에서 인쇄된 텍스트를 추출합니다. 이 작업을 통해 이미지의 인쇄 텍스트를 감지하고, 인식된 문자를 머신에서 사용 가능한 문자 스트림으로 추출할 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 6ed9d5eb8d230b05a090424d6105865acae69e61
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 96ebfecf01ff147a874674861c7cb64cb3725d52
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019355"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88164923"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Azure AD 응용 프로그램 프록시을 통해 온-프레미스 응용 프로그램에 원격으로 액세스
 
@@ -41,7 +41,7 @@ Azure Active Directory 애플리케이션 프록시는 온-프레미스 웹 애�
 * [원격 데스크톱 게이트웨이](application-proxy-integrate-with-remote-desktop-services.md) 뒤에 호스트 되는 응용 프로그램
 * MSAL(Microsoft Authentication Library)과 통합되는 리치 클라이언트 앱
 
-애플리케이션 프록시는 Single Sign-On을 지원합니다. 지원되는 방법에 대한 자세한 내용은 [Single Sign-On 방법 선택](what-is-single-sign-on.md#choosing-a-single-sign-on-method)을 참조하세요.
+애플리케이션 프록시는 Single Sign-On을 지원합니다. 지원되는 방법에 대한 자세한 내용은 [Single Sign-On 방법 선택](sso-options.md#choosing-a-single-sign-on-method)을 참조하세요.
 
 원격 사용자에 게 내부 리소스에 대 한 액세스를 제공 하기 위해 응용 프로그램 프록시가 권장 됩니다. 응용 프로그램 프록시는 VPN 또는 역방향 프록시에 대 한 필요성을 대체 합니다. 회사 네트워크의 내부 사용자에 게 적합 하지 않습니다.  응용 프로그램 프록시를 불필요 하 게 사용 하는 이러한 사용자는 예기치 않은 성능 문제를 일으킬 수 있습니다.
 
@@ -58,7 +58,7 @@ Azure Active Directory 애플리케이션 프록시는 온-프레미스 웹 애�
 5. 커넥터는 온-프레미스 애플리케이션에 요청을 보냅니다.
 6. 응답은 커넥터 및 애플리케이션 프록시 서비스를 통해 사용자에게 전송됩니다.
 
-| 구성 요소 | 설명 |
+| 구성 요소 | Description |
 | --------- | ----------- |
 | 엔드포인트  | 엔드포인트는 URL 또는 [최종 사용자 포털](end-user-experiences.md)입니다. 사용자는 외부 URL에 액세스하여 네트워크 외부에서 애플리케이션에 연결할 수 있습니다. 네트워크 내 사용자는 URL 또는 최종 사용자 포털을 통해 애플리케이션에 액세스할 수 있습니다. 사용자가 이러한 엔드포인트 중 하나로 이동하면 Azure AD에서 인증한 다음 커넥터를 통해 온-프레미스 애플리케이션에 라우팅됩니다.|
 | Azure AD | Azure AD는 클라우드에 저장된 테넌트 디렉터리를 사용하여 인증을 수행합니다. |

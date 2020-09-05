@@ -1,20 +1,21 @@
 ---
 title: Azure Key Vault - PowerShell로 일시 삭제를 사용하는 방법
-description: PowerShell 코드 캡처를 통한 일시 삭제의 사용 사례 예제
+description: Azure PowerShell을 사용하여 키 자격 증명 모음 및 키 자격 증명 모음 개체를 복구할 수 있는 Azure Key Vault의 일시 삭제 기능을 사용하는 방법을 알아봅니다.
 services: key-vault
-author: msmbaldwin
-manager: rkarlin
+author: ShaneBala-keyvault
+manager: ravijan
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
-ms.date: 08/12/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 9b9a7a5b3d92833a0f24f6bc646b19110dcfd66a
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.topic: how-to
+ms.date: 08/11/2020
+ms.author: sudbalas
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 251159c4fcf27ceb4d8b0dddeecbe501c7346e9e
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386081"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89073236"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>PowerShell로 Key Vault 일시 삭제를 사용하는 방법
 
@@ -67,11 +68,7 @@ Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
 
 ### <a name="new-key-vault"></a>새로운 Key Vault
 
-새로운 Key Vault에 대한 일시 삭제를 사용하도록 설정하는 것은 만들면서 생성 명령에 일시 삭제 사용 플래그를 추가하면 됩니다.
-
-```powershell
-New-AzKeyVault -Name "ContosoVault" -ResourceGroupName "ContosoRG" -Location "westus" -EnableSoftDelete
-```
+일시 삭제는 기본적으로 모든 새 키 자격 증명 모음에 대해 자동으로 설정됩니다. 2020년 12월 31일까지 모든 키 자격 증명 모음에서 일시 삭제를 더 이상 비활성화할 수 없습니다. 
 
 ### <a name="verify-soft-delete-enablement"></a>일시 삭제 사용 확인
 

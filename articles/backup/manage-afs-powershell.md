@@ -3,19 +3,19 @@ title: PowerShell을 사용 하 여 Azure 파일 공유 백업 관리
 description: PowerShell을 사용 하 여 Azure Backup 서비스에 의해 백업 된 Azure 파일 공유를 관리 하 고 모니터링 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 889c9bb3ef087c700bbfc3a68959f2c5924bffda
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: e2f07e56fb9a8715b1b53165ab5f4b45b4e20ccb
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538596"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000229"
 ---
 # <a name="manage-azure-file-share-backups-with-powershell"></a>PowerShell을 사용 하 여 Azure 파일 공유 백업 관리
 
 이 문서에서는 Azure PowerShell를 사용 하 여 Azure Backup 서비스에서 백업 된 Azure 파일 공유를 관리 하 고 모니터링 하는 방법을 설명 합니다.
 
 > [!WARNING]
-> AFS 백업의 경우 PS 버전이 ' Az. RecoveryServices 2.6.0 '의 최소 버전으로 업그레이드 되었는지 확인 합니다. 자세한 내용은이 변경에 대 한 요구 사항 개요 [섹션](backup-azure-afs-automation.md#important-notice-backup-item-identification) 을 참조 하세요.
+> AFS 백업의 경우 PowerShell 버전이 ' Az. RecoveryServices 2.6.0 '의 최소 버전으로 업그레이드 되었는지 확인 합니다. 자세한 내용은이 변경에 대 한 요구 사항 개요 [섹션](backup-azure-afs-automation.md#important-notice-backup-item-identification) 을 참조 하세요.
 
 ## <a name="modify-the-protection-policy"></a>보호 정책 수정
 

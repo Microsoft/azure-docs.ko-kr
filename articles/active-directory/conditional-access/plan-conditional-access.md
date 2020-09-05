@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83cc75c1d69ee7232edf0c21643d25027b97f088
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14612247d241aed420a76ff40e19d04164cbe150
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85339730"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049930"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>조건부 액세스 배포 계획
 
@@ -242,7 +242,7 @@ CA 정책 조건에서 액세스 제어를 트리거하지 않으면 액세스 �
 
 [보고서 전용 모드](concept-conditional-access-report-only.md)를 사용하면 관리자가 환경에서 CA 정책을 사용하도록 설정하기 전에 해당 정책의 영향을 평가할 수 있습니다.
 
-[CA 정책에서 보고서 전용 모드를 구성](howto-conditional-access-report-only.md)하는 방법에 대해 알아보세요.
+[CA 정책에서 보고서 전용 모드를 구성](howto-conditional-access-insights-reporting.md)하는 방법에 대해 알아보세요.
 
 ### <a name="plan-for-disruption"></a>중단 계획
 
@@ -305,7 +305,7 @@ CA 정책 솔루션을 계획하는 경우 다음 결과를 얻기 위해 정책
 * [잠재적으로 손상된 계정에 대한 대응](#respond-to-potentially-compromised-accounts)
 * [관리 디바이스 필요](#require-managed-devices)
 * [승인 된 클라이언트 응용 프로그램 필요](#require-approved-client-apps)
-* [파일에 대한 액세스](#block-access)
+* [액세스 차단](#block-access)
 
 ### <a name="require-mfa"></a>MFA 요구
 
@@ -313,7 +313,7 @@ MFA 액세스를 요구하는 일반적인 사용 사례:
 
 * [관리자에 의한 액세스](howto-conditional-access-policy-admin-mfa.md)
 
-* [특정 앱에 대한 액세스](app-based-mfa.md)
+* [특정 앱에 대한 액세스](../authentication/tutorial-enable-azure-mfa.md)
 
 * [모든 사용자를 위한 액세스](howto-conditional-access-policy-all-users-mfa.md)
 
@@ -384,18 +384,18 @@ CA 정책을 사용하면 잠재적으로 손상된 ID의 로그인에 대한 �
 | - | - | - |
 | [직장이 아닐 때 MFA 요구](untrusted-networks.md)| 권한 있는 사용자가 신뢰할 수 있는 위치/회사에 있는 상태에서 앱에 로그인함| 사용자에게 MFA를 요구하는 메시지가 표시되지 않음 |
 | [직장이 아닐 때 MFA 요구](untrusted-networks.md)| 권한 있는 사용자가 신뢰할 수 있는 위치/회사에 있지 않은 상태에서 앱에 로그인함| 사용자에게 MFA에 대한 메시지가 표시되고 성공적으로 로그인할 수 있음 |
-| [MFA 요구(관리자의 경우)](howto-baseline-protect-administrators.md)| 전역 관리자가 앱에 로그인함| 관리자에게 MFA에 대한 메시지가 표시됨 |
-| [위험한 로그인](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-sign-in-risk-policy)| 사용자가 승인 되지 않은 브라우저를 사용 하 여 앱에 로그인| 관리자에게 MFA에 대한 메시지가 표시됨 |
+| [MFA 요구(관리자의 경우)](../fundamentals/concept-fundamentals-security-defaults.md)| 전역 관리자가 앱에 로그인함| 관리자에게 MFA에 대한 메시지가 표시됨 |
+| [위험한 로그인](../identity-protection/howto-identity-protection-configure-risk-policies.md)| 사용자가 승인 되지 않은 브라우저를 사용 하 여 앱에 로그인| 관리자에게 MFA에 대한 메시지가 표시됨 |
 | [디바이스 관리](require-managed-devices.md)| 권한 있는 사용자가 권한 있는 디바이스에서 로그인하려고 시도함| 액세스 권한 부여됨 |
 | [디바이스 관리](require-managed-devices.md)| 권한 있는 사용자가 권한 없는 디바이스에서 로그인하려고 시도함| 액세스 차단됨 |
-| [위험한 사용자에 대한 암호 변경](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-user-risk-policy)| 권한 있는 사용자가 손상된 자격 증명을 사용하여 로그인하려고 시도함(높은 위험 로그인)| 사용자에게 암호를 변경하라는 메시지가 표시되거나 정책에 따라 액세스가 차단됨 |
+| [위험한 사용자에 대한 암호 변경](../identity-protection/howto-identity-protection-configure-risk-policies.md)| 권한 있는 사용자가 손상된 자격 증명을 사용하여 로그인하려고 시도함(높은 위험 로그인)| 사용자에게 암호를 변경하라는 메시지가 표시되거나 정책에 따라 액세스가 차단됨 |
 
 
 ### <a name="configure-the-test-policy"></a>테스트 정책 구성
 
 CA 정책은 [Azure Portal](https://portal.azure.com/)의 Azure Active Directory > 보안 > 조건부 액세스 아래에서 구성합니다.
 
-CA 정책을 만드는 방법에 대해 자세히 알아보려면 다음 예제를 참조하세요. [사용자가 Azure Portal에 로그인할 때 MFA를 요구하는 CA 정책](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-azure-mfa?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json) 이 빠른 시작은 다음을 수행하는 데 도움이 됩니다.
+CA 정책을 만드는 방법에 대해 자세히 알아보려면 다음 예제를 참조하세요. [사용자가 Azure Portal에 로그인할 때 MFA를 요구하는 CA 정책](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json) 이 빠른 시작은 다음을 수행하는 데 도움이 됩니다.
 
 * 사용자 인터페이스를 숙지합니다.
 
@@ -442,7 +442,7 @@ CA 정책을 만드는 방법에 대해 자세히 알아보려면 다음 예제�
 > [!NOTE]
 >  이 옵션은 사용자를 신뢰할 수 있는 경우에만 신중하게 사용해야 합니다. 최대한 빨리 정책 또는 그룹에 사용자를 다시 추가해야 합니다.
 
-* **정책을 삭제합니다.** 정책이 더 이상 필요하지 않은 경우 [삭제](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-azure-mfa?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json)합니다.
+* **정책을 삭제합니다.** 정책이 더 이상 필요하지 않은 경우 [삭제](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json)합니다.
 
 ## <a name="manage-access-to-cloud-apps"></a>클라우드 앱에 대한 액세스 관리
 
@@ -501,4 +501,4 @@ CA 정책은 [Azure Portal](https://portal.azure.com/)의 Azure Active Directory
 
 [ID 보호에 대해 자세히 알아보기](../identity-protection/overview-identity-protection.md)
 
-[Microsoft Graph API를 사용하여 CA 정책 관리](https://docs.microsoft.com/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)
+[Microsoft Graph API를 사용하여 CA 정책 관리](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)

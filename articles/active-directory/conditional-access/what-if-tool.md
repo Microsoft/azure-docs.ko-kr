@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5f75ce20d24f98e5fcefde49b95a545281f8066
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: db76ec2bc2fc8640214f962a809fee559b4c4af3
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88032886"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948201"
 ---
-# <a name="troubleshoot-using-the-what-if-tool-in-conditional-access"></a>조건부 액세스에서 What If 도구를 사용 하 여 문제 해결
+# <a name="troubleshoot-using-the-what-if-tool-in-conditional-access"></a>조건부 액세스에서 What If 도구를 사용하여 문제 해결
 
-[조건부 액세스](../active-directory-conditional-access-azure-portal.md) 는 권한 있는 사용자가 클라우드 앱에 액세스 하는 방법을 제어할 수 있는 Azure AD (Azure Active Directory)의 기능입니다. 사용자 환경에서 조건부 액세스 정책에서 발생할 수 있는 작업을 어떻게 알 수 있나요? 이 질문에 대답 하기 위해 **조건부 액세스 What If 도구**를 사용할 수 있습니다.
+[조건부 액세스](./overview.md) 는 권한 있는 사용자가 클라우드 앱에 액세스 하는 방법을 제어할 수 있는 Azure AD (Azure Active Directory)의 기능입니다. 사용자 환경에서 조건부 액세스 정책에서 발생할 수 있는 작업을 어떻게 알 수 있나요? 이 질문에 대답 하기 위해 **조건부 액세스 What If 도구**를 사용할 수 있습니다.
 
 이 문서에서는이 도구를 사용 하 여 조건부 액세스 정책을 테스트 하는 방법을 설명 합니다.
 
@@ -105,4 +105,4 @@ IP 주소는 [위치 조건](location-condition.md)을 모방하기 위한 단�
 ## <a name="next-steps"></a>다음 단계
 
 - 조건부 액세스 정책 응용 프로그램에 대 한 자세한 내용은 [조건부 액세스 정보 및 보고](howto-conditional-access-insights-reporting.md)를 사용 하는 정책 보고서 전용 모드를 사용 하 여 찾을 수 있습니다.
-- 사용자 환경에 대 한 조건부 액세스 정책을 구성할 준비가 된 경우 [조건부 액세스 공용 정책](concept-conditional-access-policy-common.md)을 참조 하세요. 
+- 사용자 환경에 대 한 조건부 액세스 정책을 구성할 준비가 된 경우 [조건부 액세스 공용 정책](concept-conditional-access-policy-common.md)을 참조 하세요.

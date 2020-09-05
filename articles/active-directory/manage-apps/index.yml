@@ -9,15 +9,15 @@ metadata:
   ms.workload: identity
   ms.topic: landing-page
   ms.date: 10/10/2019
-  author: msmimart
-  ms.author: mimart
+  author: kenwith
+  ms.author: kenwith
   manager: celested
-  ms.openlocfilehash: b91e63e7e0b639ca969f9a35c6e3352343408194
-  ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+  ms.openlocfilehash: dc056bbfb880b8cdfc2326edc3036657803f24d7
+  ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87385809"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88209107"
 landingContent:
 - title: 애플리케이션 관리 정보
   linkLists:
@@ -25,8 +25,12 @@ landingContent:
     links:
     - text: 애플리케이션 관리란?
       url: what-is-application-management.md
-    - text: SaaS 앱 자습서
-      url: /azure/active-directory/saas-apps/
+    - text: Single Sign-On이란?
+      url: what-is-single-sign-on.md
+  - linkListType: quickstart
+    links:
+    - text: 빠른 시작 시리즈
+      url: view-applications-portal.md
 - title: 클라우드 앱 및 Single Sign-On 관리
   linkLists:
   - linkListType: concept
@@ -35,14 +39,8 @@ landingContent:
       url: what-is-single-sign-on.md
     - text: 최종 사용자 환경
       url: end-user-experiences.md
-  - linkListType: quickstart
-    links:
-    - text: 갤러리 앱 추가
-      url: add-application-portal.md
   - linkListType: how-to-guide
     links:
-    - text: 비갤러리 앱 추가
-      url: add-non-gallery-app.md
     - text: Single Sign-On 구성
       url: configure-saml-single-sign-on.md
     - text: 앱에 사용자 또는 그룹 할당

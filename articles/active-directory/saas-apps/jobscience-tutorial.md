@@ -2,25 +2,20 @@
 title: '자습서: Jobscience와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Jobscience 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.assetid: 77282dcc-bbe2-4728-953d-adb4ab6a713b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23d2694aa4936090367cf881379f81911ae70f9d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0de47cc12c461e47d8703861a99d11e7ee72d581
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81870536"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547072"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>자습서: Jobscience와 Azure Active Directory 통합
 
@@ -34,7 +29,7 @@ Jobscience를 Azure AD와 통합하면 다음과 같은 이점이 있습니다.
 
 Azure AD와 SaaS 앱을 통합 하는 방법에 대 한 자세한 내용은 [응용 프로그램 액세스 및 Azure Active Directory Single Sign-On](../manage-apps/what-is-single-sign-on.md)를 참조 하세요.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>전제 조건
 
 Jobscience와 Azure AD 통합을 구성하려면 다음 항목이 필요합니다.
 
@@ -113,7 +108,7 @@ Jobscience에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다�
 
     ![Single Sign-on 구성](./media/jobscience-tutorial/tutorial_jobscience_url.png)
 
-    **로그온 URL** 텍스트 상자에서 다음 패턴으로 URL을 입력합니다. `http://<company name>.my.salesforce.com`
+    **로그온 url** 텍스트 상자에 다음 패턴을 사용 하 여 URL을 입력 합니다.`http://<company name>.my.salesforce.com`
     
     > [!NOTE] 
     > 이 값은 실제 값이 아닙니다. 이 값을 실제 로그온 URL로 업데이트합니다. 이 값은 [Jobscience 클라이언트 지원 팀](http://www.jobscience.com/support) 또는 앞으로 만들 SSO 프로필에서 참조하세요. 이 내용은 자습서의 뒷부분에 설명되어 있습니다. 
@@ -134,7 +129,7 @@ Jobscience에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다�
 
 1. **설정**으로 이동합니다.
    
-   ![설치](./media/jobscience-tutorial/IC784358.png "설정")
+   ![설치](./media/jobscience-tutorial/IC784358.png "설치 프로그램")
 
 1. 왼쪽 탐색창의 **관리** 섹션에서 **도메인 관리**를 클릭해 관련된 섹션을 확장한 다음 **내 도메인**을 클릭해 **내 도메인** 페이지를 엽니다. 
    
@@ -146,7 +141,7 @@ Jobscience에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다�
 
 1. Jobscience 회사 사이트에서 **보안 제어**를 클릭한 다음 **Single Sign-On 설정**을 클릭합니다.
     
-    ![Single Sign On 설정](./media/jobscience-tutorial/ic784364.png "Single Sign On 설정")
+    ![보안 제어](./media/jobscience-tutorial/ic784364.png "Single Sign On 설정")
 
 1. **Single Sign-On 설정** 섹션에서 다음 단계를 수행합니다.
     
@@ -160,7 +155,7 @@ Jobscience에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다�
     
     ![SAML Single Sign-On 설정](./media/jobscience-tutorial/ic784365.png "SAML Single Sign-On 설정")
     
-    a. **이름** 텍스트 상자에 구성 이름을 입력합니다.
+    a. **이름** 텍스트 상자에 구성할 이름을 입력합니다.
 
     b. **발급자** 텍스트 상자에 Azure Portal에서 복사한 **SAML 엔터티 ID** 값을 붙여넣습니다.
 
@@ -172,7 +167,7 @@ Jobscience에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다�
 
     f. **SAML ID 위치**로 **ID는 Subject 문의 NameIdentifier 요소에 있습니다**를 선택합니다.
 
-    예: **ID 공급자 로그인 URL** 텍스트 상자에 Azure Portal에서 복사한 **SAML Single Sign-On 서비스 URL** 값을 붙여넣습니다.
+    g. **ID 공급자 로그인 URL** 텍스트 상자에 Azure Portal에서 복사한 **SAML Single Sign-On 서비스 URL** 값을 붙여넣습니다.
 
     h. **ID 공급자 로그인 URL** 텍스트 상자에 Azure Portal에서 복사한 **로그아웃 URL** 값을 붙여넣습니다.
 
@@ -192,7 +187,7 @@ Jobscience에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다�
 
 1. SP에서 시작한 Single Sign-On 로그인 URL을 가져오려면 **보안 제어** 메뉴 섹션에서 **Single Sign-On 설정**을 클릭합니다.
 
-    ![Single Sign On 설정](./media/jobscience-tutorial/ic784368.png "Single Sign On 설정")
+    ![보안 제어](./media/jobscience-tutorial/ic784368.png "Single Sign On 설정")
     
     위 단계에서 만든 SSO 프로필을 클릭합니다. 이 페이지에서는 회사의 Single Sign-On URL을 보여줍니다(예: `https://companyname.my.salesforce.com?so=companyid`.    
 
@@ -245,7 +240,7 @@ Azure AD 사용자가 Jobscience에 로그인할 수 있도록 하려면 Jobscie
 
 1. 설정으로 이동합니다.
    
-   ![설치](./media/jobscience-tutorial/ic784358.png "설정")
+   ![설치](./media/jobscience-tutorial/ic784358.png "설치 프로그램")
 1. **사용자 관리 \> 사용자**로 이동합니다.
    
    ![사용자](./media/jobscience-tutorial/ic784369.png "사용자")

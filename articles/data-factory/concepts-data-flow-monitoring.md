@@ -7,13 +7,13 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 07/03/2020
-ms.openlocfilehash: ad5fb077596b6cc444c1c4df81af32cbcfa7c1db
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.date: 08/19/2020
+ms.openlocfilehash: 77dda42b27aa6f5fb505fe65667876523cb3f5d2
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475552"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650896"
 ---
 # <a name="monitor-data-flows"></a>데이터 흐름 모니터링
 
@@ -76,6 +76,10 @@ ADF 파이프라인 모니터링 보기의 데이터 흐름 작업에서 JSON �
          ]
 }
 ```
+
+### <a name="post-processing-time"></a>사후 처리 시간
+
+지도에서 싱크 변환 아이콘을 선택 하는 경우 오른쪽의 슬라이드 패널에는 맨 아래에 "사후 처리 시간" 이라는 추가 데이터 요소가 표시 됩니다. 데이터가 로드 되 고 변환 되 고 쓰여진 *후* Spark 클러스터에서 작업을 실행 하는 데 걸린 시간입니다. 이 시간에는 연결 풀 닫기, 드라이버 종료, 파일 삭제, 파일 병합 등이 포함 될 수 있습니다. "파일 이동" 및 "단일 파일로 출력" 처럼 흐름에서 작업을 수행 하는 경우 post 처리 시간 값이 증가 하는 것을 볼 수 있습니다.
   
 ## <a name="monitor-icons"></a>모니터 아이콘
 

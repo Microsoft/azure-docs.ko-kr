@@ -15,14 +15,17 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: christoc
 ms.reviewer: xpouyat; juliako
-ms.openlocfilehash: 67d3591a22ba68c0ddb5c4e2b467e133ef20102b
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 55d9d9191dc62d7397c5de944985d5653eff4e13
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057469"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269831"
 ---
 # <a name="advanced-media-encoder-premium-workflow-tutorials"></a>고급 미디어 인코더 Premium 워크플로 자습서
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 ## <a name="overview"></a>개요
 이 문서는 **워크플로 디자이너**를 사용하여 워크플로를 사용자 지정하는 방법을 보여주는 연습을 포함하고 있습니다. [여기](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/PremiumEncoderWorkflowSamples)서 실제 워크플로 파일을 찾을 수 있습니다.  
 
@@ -462,7 +465,7 @@ MP4 비디오와 다르게 JPG 인코더 구성 요소는 여러 개의 파일�
 
 *장면 검색 JPG 파일 기록기 소개*
 
-식을 사용 하 여 출력 폴더 경로 속성을 구성 합니다.`${ROOT_outputWriteDirectory}`
+식을 사용 하 여 출력 폴더 경로 속성을 구성 합니다. `${ROOT_outputWriteDirectory}`
 
 그리고 다음으로 파일 이름 접두사 속성을 구성합니다.
 

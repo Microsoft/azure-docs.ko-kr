@@ -6,13 +6,14 @@ ms.author: robinsh
 ms.date: 04/04/2018
 ms.topic: conceptual
 ms.service: iot-dps
+ms.custom: fasttrack-edit, iot
 services: iot-dps
-ms.openlocfilehash: 5cb0e25ec70956e66f7b867f0d0b9473160fc3ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4a5e8b6f430f6af49ab79ca0f8cb2253bd0f2049
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74975077"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88520659"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Azure Device Provisioning Service SDK로 디바이스 등록을 관리하는 방법
 *디바이스 등록*은 특정 시점에 Device Provisioning Service에 등록할 수 있는 단일 디바이스 또는 디바이스 그룹의 레코드를 만듭니다. 등록 레코드에는 원하는 IoT Hub를 포함하여 해당 등록의 일부로 해당 디바이스에 대한 초기 원하는 구성을 포함합니다. 이 문서에서는 Azure IoT 프로비전 서비스 SDK를 사용하여 프로그래밍 방식으로 프로비전 서비스에 대한 디바이스 등록을 관리하는 방법을 보여줍니다.  SDK는 Azure IoT SDK와 같은 리포지토리의 GitHub에서 사용할 수 있습니다.
@@ -39,7 +40,7 @@ ms.locfileid: "74975077"
     이 워크플로를 따르는 SDK로 등록 그룹을 만들 수 있습니다.
 
     1. 등록 그룹의 경우 증명 메커니즘은 X.509 루트 인증서를 사용합니다.  루트 인증서와 함께 서비스 SDK API ```X509Attestation.createFromRootCertificate```를 호출하여 등록에 대한 증명을 만듭니다.  X.509 루트 인증서는 PEM 파일 또는 문자열로 제공됩니다.
-    1. 만든 ```attestation```을 사용하는 새 ```EnrollmentGroup``` 변수 및 고유한 ```enrollmentGroupId```를 만듭니다.  필요에 따라 ```Device ID```, ```IoTHubHostName```, ```ProvisioningStatus```와 같은 매개 변수를 설정할 수 있습니다.
+    1. 만든 ```attestation```을 사용하는 새 ```EnrollmentGroup``` 변수 및 고유한 ```enrollmentGroupId```를 만듭니다.  필요에 따라,와 같은 매개 변수를 설정할 수 있습니다 ```IoTHubHostName``` ```ProvisioningStatus``` .
     2. ```EnrollmentGroup```을 통해 백엔드 애플리케이션에서 서비스 SDK API ```createOrUpdateEnrollmentGroup```를 호출하여 등록 그룹을 만듭니다.
 
 * **개별 등록**은 등록할 수 있는 단일 디바이스에 대한 항목입니다. 개별 등록은 증명 메커니즘으로 X.509 인증서 또는 SAS 토큰(실제 또는 가상 TPM) 중 하나를 사용할 수 있습니다. 고유한 초기 구성이 필요한 디바이스 또는 증명 메커니즘으로 TPM 또는 가상 TPM을 통해 SAS 토큰만을 사용할 수 있는 디바이스의 경우 개별 등록을 사용하는 것이 좋습니다. 개별 등록은 지정된 원하는 IoT Hub 디바이스 ID가 있을 수 있습니다.

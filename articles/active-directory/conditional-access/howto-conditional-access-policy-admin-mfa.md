@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc38e576f53c3623bacc374a00adcb4cced01517
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 45263ca0448042aa972ee53093b51dd47bd51190
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87552886"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049352"
 ---
 # <a name="conditional-access-require-mfa-for-administrators"></a>조건부 액세스: 관리자에 대해 MFA 필요
 
@@ -24,7 +24,7 @@ ms.locfileid: "87552886"
 
 최소한 다음 역할에 대 한 MFA를 요구 하는 것이 좋습니다.
 
-* 청구 관리자
+* 대금 청구 관리자
 * 조건부 액세스 관리자
 * Exchange 관리자
 * 전역 관리자
@@ -56,7 +56,7 @@ ms.locfileid: "87552886"
 1. **할당**에서 **사용자 및 그룹**을 선택합니다.
    1. **포함**아래에서 **디렉터리 역할 (미리 보기)** 을 선택 하 고 최소한 다음 역할을 선택 합니다.
       * 인증 관리자
-      * 청구 관리자
+      * 대금 청구 관리자
       * 조건부 액세스 관리자
       * Exchange 관리자
       * 전역 관리자
@@ -81,6 +81,6 @@ ms.locfileid: "87552886"
 
 [조건부 액세스 일반 정책](concept-conditional-access-policy-common.md)
 
-[조건부 액세스 보고 전용 모드를 사용하여 영향 확인](howto-conditional-access-report-only.md)
+[조건부 액세스 보고 전용 모드를 사용하여 영향 확인](howto-conditional-access-insights-reporting.md)
 
 [조건부 액세스 What If 도구를 사용하여 로그인 동작 시뮬레이션](troubleshoot-conditional-access-what-if.md)

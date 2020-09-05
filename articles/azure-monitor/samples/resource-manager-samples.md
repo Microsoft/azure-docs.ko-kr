@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: sample
 ms.date: 05/18/2020
 ms.subservice: ''
-ms.openlocfilehash: 4446eef481e8370f7457311f6eae6ce40f9e6727
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ab869fc8577d4d1934be96404ded5a2051237bbf
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539264"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922731"
 ---
 # <a name="resource-manager-template-samples-for-azure-monitor"></a>Azure Monitor에 대한 Resource Manager 템플릿 샘플
 
@@ -49,7 +49,7 @@ az deployment group create \
 - 경고
   - [로그 경고 규칙](resource-manager-alerts-log.md) - 로그 쿼리 및 Azure 활동 로그의 경고입니다.
   - [메트릭 경고 규칙](resource-manager-alerts-metric.md) - 다른 종류의 논리를 사용하는 메트릭의 경고입니다.
-- Application Insights - 서비스 예정
+- [Application Insights](resource-manager-app-resource.md)
 - [진단 설정](resource-manager-diagnostic-settings.md) - 다른 리소스 유형에서 로그 및 메트릭을 전달하는 진단 설정을 만듭니다.
 - [로그 쿼리](resource-manager-log-queries.md) - Log Analytics 작업 영역에서 저장된 로그 쿼리를 만듭니다.
 - [Log Analytics 작업 영역](resource-manager-workspace.md) - Log Analytics 작업 영역을 만들고 Log Analytics 에이전트에서 다른 데이터 원본의 컬렉션을 구성합니다.

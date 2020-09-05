@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: b7005954b14a9263ec074c836180853a99812dd5
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: fd4cc4cfa7b7be9085ac404cab7fc7447b6d66a7
+ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534773"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87987140"
 ---
 # <a name="control-storage-account-access-for-sql-on-demand-preview"></a>SQL 주문형(미리 보기) 스토리지 계정 액세스 제어
 
@@ -81,12 +81,13 @@ SAS 토큰을 사용한 액세스가 가능하려면 데이터베이스 범위 �
 
 사용할 수 있는 권한 부여 및 Azure Storage 유형의 조합은 다음과 같습니다.
 
-|                     | Blob Storage   | ADLS Gen1        | ADLS Gen2     |
+| 권한 부여 유형  | Blob Storage   | ADLS Gen1        | ADLS Gen2     |
 | ------------------- | ------------   | --------------   | -----------   |
-| *SAS*               | 지원됨      | 지원되지 않음   | 지원됨     |
-| *관리 ID* | 지원됨      | 지원됨        | 지원됨     |
-| *사용자 ID*    | 지원됨      | 지원됨        | 지원됨     |
+| [SAS](?tabs=shared-access-signature#supported-storage-authorization-types)    | 지원됨\*      | 지원되지 않음   | 지원됨\*     |
+| [관리 ID](?tabs=managed-identity#supported-storage-authorization-types) | 지원됨      | 지원됨        | 지원 여부     |
+| [사용자 ID](?tabs=user-identity#supported-storage-authorization-types)    | 지원 여부\*      | 지원 여부\*        | 지원 여부\*     |
 
+\* SAS 토큰 및 Azure AD ID를 사용하여 방화벽으로 보호되지 않는 스토리지에 액세스할 수 있습니다.
 
 > [!IMPORTANT]
 > 방화벽으로 보호되는 스토리지에 액세스하는 경우 관리 ID만 사용할 수 있습니다. 해당 인스턴스의 [시스템 할당 관리 ID](../../active-directory/managed-identities-azure-resources/overview.md)에 [신뢰할 수 있는 Microsoft 서비스 허용... 설정](../../storage/common/storage-network-security.md#trusted-microsoft-services) 및 명시적으로 [Azure 역할 할당](../../storage/common/storage-auth-aad.md#assign-azure-roles-for-access-rights)이 필요합니다. 이 경우 인스턴스에 대한 액세스 범위는 관리 ID에 할당된 Azure 역할에 해당합니다.
@@ -177,27 +178,46 @@ WITH IDENTITY='Managed Identity'
 
 Azure AD 사용자는 최소한 `Storage Blob Data Owner`, `Storage Blob Data Contributor` 또는 `Storage Blob Data Reader` 역할이 있는 경우 Azure 스토리지의 모든 파일에 액세스할 수 있습니다. Azure AD 사용자는 스토리지에 액세스하는 데 자격 증명이 필요하지 않습니다.
 
+```sql
+CREATE EXTERNAL DATA SOURCE mysample
+WITH (    LOCATION   = 'https://<storage_account>.dfs.core.windows.net/<container>/<path>'
+)
+```
+
 SQL 사용자는 Azure AD 인증을 사용하여 스토리지에 액세스할 수 없습니다.
 
 ### <a name="shared-access-signature"></a>[공유 액세스 서명](#tab/shared-access-signature)
 
-다음 스크립트는 자격 증명에 지정된 SAS 토큰을 사용하여 스토리지의 파일에 액세스하는 데 사용되는 자격 증명을 만듭니다.
+다음 스크립트는 자격 증명에 지정된 SAS 토큰을 사용하여 스토리지의 파일에 액세스하는 데 사용되는 자격 증명을 만듭니다. 스크립트는 이 SAS 토큰을 사용하여 스토리지에 액세스하는 샘플 외부 데이터 원본을 만듭니다.
 
 ```sql
+-- Optional: Create MASTER KEY if not exists in database:
+-- CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<Very Strong Password>'
+GO
 CREATE DATABASE SCOPED CREDENTIAL [SasToken]
 WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
      SECRET = 'sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D';
 GO
+CREATE EXTERNAL DATA SOURCE mysample
+WITH (    LOCATION   = 'https://<storage_account>.dfs.core.windows.net/<container>/<path>',
+          CREDENTIAL = SasToken
+)
 ```
 
 ### <a name="managed-identity"></a>[관리 ID](#tab/managed-identity)
 
-다음 스크립트는 현재 Azure AD 사용자를 서비스의 관리 ID로 가장하는 데 사용할 수 있는 데이터베이스 범위 자격 증명을 만듭니다. 
+다음 스크립트는 현재 Azure AD 사용자를 서비스의 관리 ID로 가장하는 데 사용할 수 있는 데이터베이스 범위 자격 증명을 만듭니다. 스크립트는 작업 영역 ID를 사용하여 스토리지에 액세스하는 샘플 외부 데이터 원본을 만듭니다.
 
 ```sql
-CREATE DATABASE SCOPED CREDENTIAL [SynapseIdentity]
+-- Optional: Create MASTER KEY if not exists in database:
+-- CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<Very Strong Password>
+CREATE DATABASE SCOPED CREDENTIAL SynapseIdentity
 WITH IDENTITY = 'Managed Identity';
 GO
+CREATE EXTERNAL DATA SOURCE mysample
+WITH (    LOCATION   = 'https://<storage_account>.dfs.core.windows.net/<container>/<path>',
+          CREDENTIAL = SynapseIdentity
+)
 ```
 
 데이터베이스 범위 자격 증명은 스토리지 위치를 정의하는 DATA SOURCE에서 명시적으로 사용되기 때문에 스토리지 계정 이름과 일치하지 않아도 됩니다.
@@ -206,6 +226,11 @@ GO
 
 데이터베이스 범위 자격 증명은 공개적으로 사용 가능한 파일에 대한 액세스를 허용하는 데 필요하지 않습니다. Azure Storage에서 공개적으로 사용 가능한 파일에 액세스하려면 [데이터베이스 범위 자격 증명 없이 데이터 소스](develop-tables-external-tables.md?tabs=sql-ondemand#example-for-create-external-data-source)를 만듭니다.
 
+```sql
+CREATE EXTERNAL DATA SOURCE mysample
+WITH (    LOCATION   = 'https://<storage_account>.blob.core.windows.net/<container>/<path>'
+)
+```
 ---
 
 데이터베이스 범위 자격 증명은 외부 데이터 원본에서 이 스토리지에 액세스하는 데 사용할 인증 방법을 지정하는 데 사용됩니다.

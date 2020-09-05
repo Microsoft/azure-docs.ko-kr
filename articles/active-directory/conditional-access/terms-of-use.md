@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e76468238a911c7a9e5543bf5063d1c7b6a8b8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5cead917c6c98d10d3f9e5ebe2f75bd5513574c5
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253327"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948919"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Azure Active Directory 사용 약관
 
@@ -50,7 +50,7 @@ Azure AD 사용 약관에는 다음과 같은 기능이 있습니다.
 - 사용 약관에 동의 하지 않은 사용자를 나열 합니다.
 - 개인 정보 보호 규정을 준수하도록 지원
 - 준수 및 감사에 대 한 사용 약관 작업 로그를 표시 합니다.
-- [Microsoft Graph api](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/agreement) (현재 미리 보기 상태)를 사용 하 여 사용 약관을 만들고 관리 합니다.
+- [Microsoft Graph api](/graph/api/resources/agreement?view=graph-rest-beta) (현재 미리 보기 상태)를 사용 하 여 사용 약관을 만들고 관리 합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -117,7 +117,7 @@ Azure AD 사용 약관에서는 PDF 형식을 사용 하 여 콘텐츠를 제공
 
    ![정책 템플릿을 선택 하는 조건부 액세스 드롭다운 목록](./media/terms-of-use/conditional-access-templates.png)
 
-   | 템플릿 | Description |
+   | 템플릿 | 설명 |
    | --- | --- |
    | **모든 게스트에 대한 클라우드 앱 액세스** | 모든 게스트 및 모든 클라우드 앱에 대 한 조건부 액세스 정책이 생성 됩니다. 이 정책은 Azure Portal에 영향을 줍니다. 이 항목이 생성되면 로그아웃했다 로그인해야 할 수 있습니다. |
    | **모든 사용자에 대한 클라우드 앱 액세스** | 모든 사용자 및 모든 클라우드 앱에 대 한 조건부 액세스 정책이 생성 됩니다. 이 정책은 Azure Portal에 영향을 줍니다. 이 항목이 생성되면 로그아웃했다 로그인해야 할 수 있습니다. |
@@ -345,7 +345,7 @@ Intune에서 장치를 등록 하기 전에 Microsoft Intune 등록 앱에 대 �
 > [!NOTE]
 > Intune 등록 앱은 [장치 단위 사용 약관](#per-device-terms-of-use)에 대해 지원 되지 않습니다.
 
-## <a name="frequently-asked-questions"></a>자주 묻는 질문
+## <a name="frequently-asked-questions"></a>질문과 대답
 
 **Q: 사용자가 사용 약관에 동의 하는 경우/어떻게 할까요?를 참조 하세요.**<br />
 A: 사용 약관 블레이드에서 **수락** 아래에 있는 숫자를 클릭합니다. Azure AD 감사 로그에서 동의 작업을 보거나 검색할 수도 있습니다. 자세한 내용은 사용 약관에 동의/거부한 사람에 대한 보고서 보기 및 [Azure AD 감사 로그 보기](#view-azure-ad-audit-logs)를 참조하세요.
@@ -363,7 +363,7 @@ A: 아니요, 관리자가 사용 약관에 대 한 세부 정보 (이름, 표�
 A: 현재는 기존 사용 약관 문서를 업데이트할 수 없습니다. 사용 약관 문서를 변경 하려면 새 사용 약관 인스턴스를 만들어야 합니다.
 
 **Q: 하이퍼링크가 PDF 문서 사용 약관에 있으면 최종 사용자가 해당 문서를 클릭할 수 있나요?**<br />
-A: 예, 최종 사용자는 추가 페이지에 대 한 하이퍼링크를 선택할 수 있지만 문서 내의 섹션에 대 한 링크는 지원 되지 않습니다.
+A: 예, 최종 사용자는 추가 페이지에 대 한 하이퍼링크를 선택할 수 있지만 문서 내의 섹션에 대 한 링크는 지원 되지 않습니다. 또한 Azure AD MyApps/MyAccount 포털에서 액세스할 때 Pdf 사용 측면에서 하이퍼링크가 작동 하지 않습니다.
 
 **Q: 사용 약관에서 여러 언어를 지원할 수 있나요?**<br />
 A: 예. 현재 관리자가 단일 사용 약관에 대해 구성할 수 있는 108 다른 언어가 있습니다. 관리자는 여러 PDF 문서를 업로드하고 해당 언어를 사용하는 문서에 태그를 지정할 수 있습니다(최대 108개). 최종 사용자가 로그인할 때 브라우저 언어 기본 설정이 확인되고 일치하는 문서가 표시됩니다. 일치 항목이 없으면 업로드된 첫 번째 문서인 기본 문서가 표시됩니다.

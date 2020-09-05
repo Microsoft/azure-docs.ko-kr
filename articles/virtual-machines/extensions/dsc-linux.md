@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: a1a166d12ef753a7a6fc7225d0467ead08514f99
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 59b05fcd7fbaf9b0fd9b4083c884edadb4bfef4e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876719"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505583"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Linux 용 DSC 확장 (Microsoft. OSTCExtensions. DSCForLinux)
 
@@ -35,15 +35,16 @@ DSCForLinux 확장은 Microsoft에서 게시 및 지원 합니다. 확장은 OMI
 - Linux VM에 사용자 지정 DSC 모듈을 설치 합니다 (ExtensionAction 설치).
 - Linux VM에서 사용자 지정 DSC 모듈을 제거 합니다 (ExtensionAction 제거).
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 ### <a name="operating-system"></a>운영 체제
 
 Linux를 실행 하는 노드의 경우 DSC Linux 확장은 [POWERSHELL dsc 설명서](/powershell/scripting/dsc/getting-started/lnxgettingstarted)에 나열 된 모든 Linux 배포를 지원 합니다.
- 
+
 ### <a name="internet-connectivity"></a>인터넷 연결
 
-DSCForLinux 확장을 사용 하려면 대상 가상 머신이 인터넷에 연결 되어 있어야 합니다. 예를 들어, 레지스터 확장은 Automation 서비스에 연결 해야 합니다. Pull, Pull, Install 등의 다른 작업을 수행 하려면 Azure Storage 및 GitHub에 연결 해야 합니다. 고객에 의해 제공 되는 설정에 따라 달라 집니다.
+DSCForLinux 확장을 사용 하려면 대상 가상 머신이 인터넷에 연결 되어 있어야 합니다. 예를 들어, 레지스터 확장은 Automation 서비스에 연결 해야 합니다.
+Pull, Pull, Install 등의 다른 작업을 수행 하려면 Azure Storage 및 GitHub에 연결 해야 합니다. 고객에 의해 제공 되는 설정에 따라 달라 집니다.
 
 ## <a name="extension-schema"></a>확장 스키마
 
@@ -55,13 +56,13 @@ DSCForLinux 확장을 사용 하려면 대상 가상 머신이 인터넷에 연�
 * `ResourceName`: (옵션, 문자열) 사용자 지정 리소스 모듈의 이름입니다.
 * `ExtensionAction`: (선택 사항, 문자열) 확장에서 수행할 작업을 지정합니다. 유효한 값은 Register, Push, Pull, Install 및 Remove입니다. 지정 하지 않으면 기본적으로 푸시 작업으로 간주 됩니다.
 * `NodeConfigurationName`: (옵션, 문자열) 적용할 노드 구성의 이름입니다.
-* `RefreshFrequencyMins`: (선택 사항, int) DSC가 끌어오기 서버에서 구성을 얻으려고 시도 하는 빈도 (분)를 지정 합니다. 
+* `RefreshFrequencyMins`: (선택 사항, int) DSC가 끌어오기 서버에서 구성을 얻으려고 시도 하는 빈도 (분)를 지정 합니다.
        끌어오기 서버에 대 한 구성이 대상 노드의 현재 구성과 다르면 보류 중인 저장소에 복사 되 고 적용 됩니다.
 * `ConfigurationMode`: (선택 사항, 문자열) DSC에서 구성을 적용해야 하는 방법을 지정합니다. 유효한 값은 ApplyOnly, ApplyAndMonitor 및 Applyand자동 고침입니다.
 * `ConfigurationModeFrequencyMins`: (선택 사항, 정수) DSC에서 구성이 원하는 상태에 있는지 확인하는 빈도(분)를 지정합니다.
 
 > [!NOTE]
-> 2.3 이전 버전을 사용 하는 경우 mode 매개 변수는 ExtensionAction과 동일 합니다. 모드는 오버 로드 된 용어입니다. 혼동을 피하기 위해 ExtensionAction은 버전 2.3 이후로 사용 됩니다. 이전 버전과의 호환성을 위해 확장은 mode와 ExtensionAction을 모두 지원합니다. 
+> 2.3 이전 버전을 사용 하는 경우 mode 매개 변수는 ExtensionAction과 동일 합니다. 모드는 오버 로드 된 용어입니다. 혼동을 피하기 위해 ExtensionAction은 버전 2.3 이후로 사용 됩니다. 이전 버전과의 호환성을 위해 확장은 mode와 ExtensionAction을 모두 지원합니다.
 >
 
 ### <a name="protected-configuration"></a>보호된 구성
@@ -269,7 +270,7 @@ $publicConfig = '{
 
 ## <a name="template-deployment"></a>템플릿 배포
 
-Azure Resource Manager 템플릿을 사용하여 Azure VM 확장을 배포할 수 있습니다. 템플릿은 Azure Automation에 등록 하는 것과 같이 배포 후 구성이 필요한 하나 이상의 가상 컴퓨터를 배포 하는 경우에 적합 합니다. 
+Azure Resource Manager 템플릿을 사용하여 Azure VM 확장을 배포할 수 있습니다. 템플릿은 Azure Automation에 등록 하는 것과 같이 배포 후 구성이 필요한 하나 이상의 가상 컴퓨터를 배포 하는 경우에 적합 합니다.
 
 Resource Manager 템플릿 샘플은 [201-dsc-linux-azure-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-azure-storage-on-ubuntu) 및 [201-dsc-linux-public-storage-on-ubuntu](https://github.com/Azure/azure-quickstart-templates/tree/master/201-dsc-linux-public-storage-on-ubuntu)입니다.
 
@@ -323,13 +324,13 @@ DSCForLinux Microsoft.OSTCExtensions <version> \
 
 다음을 실행 하 여 Azure 서비스 관리 모드에서 Azure 계정에 로그인 할 수 있습니다.
 
-```powershell>
+```powershell
 Add-AzureAccount
 ```
 
 다음을 실행 하 여 DSCForLinux 확장을 배포 합니다.
 
-```powershell>
+```powershell
 $vmname = '<vm-name>'
 $vm = Get-AzureVM -ServiceName $vmname -Name $vmname
 $extensionName = 'DSCForLinux'
@@ -362,7 +363,7 @@ Set-AzureVMExtension -ExtensionName $extensionName -VM $vm -Publisher $publisher
 
 다음을 실행 하 여 Azure Resource Manager 모드에서 Azure 계정에 로그인 할 수 있습니다.
 
-```powershell>
+```powershell
 Login-AzAccount
 ```
 
@@ -370,7 +371,7 @@ Azure Resource Manager에서 Azure PowerShell를 사용 하는 방법에 대 한
 
 다음을 실행 하 여 DSCForLinux 확장을 배포할 수 있습니다.
 
-```powershell>
+```powershell
 $rgName = '<resource-group-name>'
 $vmName = '<vm-name>'
 $location = '< location>'

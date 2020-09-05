@@ -1,6 +1,6 @@
 ---
 title: Azure Key Vault 개요 - Azure Key Vault | Microsoft Docs
-description: Azure Key Vault는 보안 비밀 저장소로 작동하는 클라우드 서비스입니다.
+description: Azure Key Vault는 보안 비밀 저장소로, 모두 하드웨어 보안 모듈에서 지원하는 비밀, 키 및 인증서에 대한 관리를 제공합니다.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -11,12 +11,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7ef31a11414fad1b9a3d06d00055c36c995adcce
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: 98f681494ca73bd2698cd3068441cf02cd6730ac
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84216329"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190556"
 ---
 # <a name="about-azure-key-vault"></a>Azure Key Vault 정보
 

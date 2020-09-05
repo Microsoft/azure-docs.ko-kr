@@ -12,10 +12,10 @@ ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.openlocfilehash: a865bab690c79288bdffcd7cebe424d1bb1969c0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "82181542"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Windows 데스크톱 앱에서 Microsoft Graph API 호출
@@ -158,7 +158,7 @@ MSAL은 사용자를 대신해 액세스 토큰 캐싱 및 새로 고침을 관�
 
 이 섹션에서는 애플리케이션에서 Microsoft Graph와 같이 보호되는 백 엔드 서버를 쿼리하는 방법을 보여줍니다.
 
-*MainWindow.xaml* 파일은 프로젝트 템플릿의 일부로 자동으로 생성되어야 합니다. 이 파일을 열고, 애플리케이션의 *\<그리드&gt;* 노드를 다음 코드로 바꿉니다.
+*MainWindow.xaml* 파일은 프로젝트 템플릿의 일부로 자동으로 생성되어야 합니다. 이 파일을 연 다음, 애플리케이션의 *\<Grid>* 노드를 다음 코드로 바꿉니다.
 
 ```xml
 <Grid>

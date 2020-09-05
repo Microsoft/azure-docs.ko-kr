@@ -5,12 +5,12 @@ services: container-service
 ms.topic: overview
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 810f887c43b5653513d6848e9b7dd2e7ced070ab
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: f4c1e96a0603caa8e026f1968299fa24b8755a42
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86251334"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003208"
 ---
 # <a name="azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)
 
@@ -26,7 +26,7 @@ Kubernetes 기본 사항에 대한 자세한 내용은 [AKS의 Kubernetes 핵심
 
 ## <a name="access-security-and-monitoring"></a>액세스, 보안 및 모니터링
 
-향상된 보안 및 관리를 위해 AKS를 사용하면 Azure Active Directory와 통합하고 Kubernetes 역할 기반 액세스 제어를 사용할 수 있습니다. 클러스터 및 리소스의 상태를 모니터링할 수도 있습니다.
+향상된 보안 및 관리를 위해 AKS를 사용하면 Azure Active Directory와 통합하고 Kubernetes RBAC(역할 기반 액세스 제어)를 사용할 수 있습니다. 클러스터 및 리소스의 상태를 모니터링할 수도 있습니다.
 
 ### <a name="identity-and-security-management"></a>ID 및 보안 관리
 
@@ -140,6 +140,6 @@ Azure CLI 빠른 시작으로 AKS 배포 및 관리에 대해 자세히 알아�
 [aks-master-logs]: view-master-logs.md
 [aks-supported versions]: supported-kubernetes-versions.md
 [concepts-clusters-workloads]: concepts-clusters-workloads.md
-[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-controls-rbac
+[kubernetes-rbac]: concepts-identity.md#kubernetes-role-based-access-control-rbac
 [concepts-identity]: concepts-identity.md
 [concepts-storage]: concepts-storage.md

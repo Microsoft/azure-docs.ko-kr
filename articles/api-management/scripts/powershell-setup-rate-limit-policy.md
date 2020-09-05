@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - 속도 제한 정책 설정 | Microsoft Docs
-description: Azure PowerShell 스크립트 샘플 - 속도 제한 정책 설정
+description: Azure PowerShell을 사용하여 속도 제한 정책을 설정하는 방법에 대해 알아봅니다. 샘플 스크립트를 참조하고 사용 가능한 추가 리소스를 확인합니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 991a9fd9fa0717c97a549d371ca47c5b389d1a27
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 40bbd520eb265b70f95c6b365b590727af8ea144
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008764"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851293"
 ---
 # <a name="set-up-rate-limit-policy"></a>속도 제한 정책 설정
 

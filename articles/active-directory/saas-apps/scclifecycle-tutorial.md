@@ -2,25 +2,21 @@
 title: '자습서: SCC LifeCycle과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 SCC LifeCycle 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9748bf38-ffc3-4d51-a1ae-207ce57104fa
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
-ms.openlocfilehash: e60e1680b0155ed089eeb08fc41cb0b1ac6cb515
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: e2e2d3329db2474e331f13ad2c3fd9a74bd5b7b5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86168612"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547881"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-scc-lifecycle"></a>자습서: SCC LifeCycle과 Azure Active Directory 통합
 

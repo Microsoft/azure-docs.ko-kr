@@ -9,14 +9,14 @@ manager: diviso
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 2503a58f7d5fe05240f374fabbe2bf88d34dcf6c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 57e99dfd0cec4ee396cc90173f1f22715c7ba760
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046620"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168187"
 ---
 # <a name="create-a-reference-data-set-for-your-azure-time-series-insights-gen1-environment-using-the-azure-portal"></a>Azure Portal를 사용 하 여 Azure Time Series Insights Gen1 환경에 대 한 참조 데이터 집합 만들기
 
@@ -26,11 +26,11 @@ ms.locfileid: "87046620"
 
 참조 데이터는 소급되어 조인되지 않습니다. 따라서 데이터를 구성 하 고 업로드 한 후에는 현재 및 이후의 수신 데이터만 일치 하 고 참조 날짜 집합에 조인 합니다.
 
-## <a name="video"></a>동영상
+## <a name="video"></a>비디오
 
 ### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>시계열 정보에 대 한 참조 데이터 모델에 대해 알아봅니다.</br>
 
-> [!VIDEO https://www.youtube.com/embed/Z0NuWQUMv1o]
+> [!VIDEO <https://www.youtube.com/embed/Z0NuWQUMv1o>]
 
 ## <a name="add-a-reference-data-set"></a>참조 데이터 집합 추가
 
@@ -116,6 +116,6 @@ ms.locfileid: "87046620"
 
 ## <a name="next-steps"></a>다음 단계
 
-* 프로그래밍 방식으로 [참조 데이터를 관리](time-series-insights-manage-reference-data-csharp.md)합니다.
+- 프로그래밍 방식으로 [참조 데이터를 관리](time-series-insights-manage-reference-data-csharp.md)합니다.
 
-* 전체 API 참조를 보려면 [참조 데이터 API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api) 문서를 참조 하세요.
+- 전체 API 참조를 보려면 [참조 데이터 API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-reference-data-api) 문서를 참조 하세요.

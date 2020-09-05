@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a482b860ae13e817727ca0c3848a598fe3632136
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b094f63c075bdb8af225ff366343c60bc6818224
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87277590"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816765"
 ---
 # <a name="read-and-write-spatial-data"></a>공간 데이터 읽기 및 쓰기
 
@@ -41,7 +41,7 @@ Zip 또는 KMZ 압축 된 파일을 읽을 때 압축을 푼 후 첫 번째 유�
 
 Read 함수의 결과는 `SpatialDataSet` 개체입니다. 이 개체는 GeoJSON FeatureCollection 클래스를 확장 합니다. 이를 그대로에 쉽게 전달 `DataSource` 하 여 지도에 기능을 렌더링할 수 있습니다. 는 `SpatialDataSet` 기능 정보를 포함할 뿐만 아니라 다음 표에 설명 된 대로 KML 그라운드 오버레이, 처리 메트릭 및 기타 세부 정보를 포함할 수도 있습니다.
 
-| 속성 이름 | Type | 설명 | 
+| 속성 이름 | Type | Description | 
 |---------------|------|-------------|
 | `bbox` | `BoundingBox` | 데이터 집합에 있는 모든 데이터의 경계 상자입니다. |
 | `features` | `Feature[]` | 데이터 집합 내의 기능을 GeoJSON 합니다. |
@@ -150,9 +150,15 @@ WKT ( [잘 알려진 텍스트](https://en.wikipedia.org/wiki/Well-known_text_re
 GML은 다른 XML 사양에 대 한 확장으로 자주 사용 되는 공간 XML 파일 사양입니다. 함수를 사용 하 여 GeoJSON 데이터를 GML 태그로 XML로 작성할 수 있습니다 `atlas.io.core.GmlWriter.write` . GML을 포함 하는 XML은 함수를 사용 하 여 읽을 수 있습니다 `atlas.io.core.GmlReader.read` . Read 함수에는 두 가지 옵션이 있습니다.
 
 - `isAxisOrderLonLat`옵션-좌표 "위도, 경도" 또는 "경도, 위도"의 축 순서는 데이터 집합에 따라 다를 수 있으며 항상 잘 정의 되어 있지 않습니다. 기본적으로 GML 판독기는 좌표 데이터를 "위도, 경도"로 읽으므로이 옵션을 true로 설정 하면 "경도, 위도"로 읽혀집니다.
-- `propertyTypes`옵션-이 옵션은 키 값 조회 테이블로, 키가 데이터 집합의 속성 이름입니다. 값은 구문 분석할 때 값을 캐스팅할 개체 형식입니다. 지원 되는 형식 값은 `string` , `number` , `boolean` 및 `date` 입니다. 속성이 조회 테이블에 없거나 형식이 정의 되어 있지 않으면 속성이 문자열로 구문 분석 됩니다.
+- `propertyTypes`옵션-이 옵션은 키 값 조회 테이블로, 키가 데이터 집합의 속성 이름입니다. 값은 구문 분석할 때 값을 캐스팅할 개체 형식입니다. 지원 되는 형식 값은 `string` , `number` , `boolean` 및  `date` 입니다. 속성이 조회 테이블에 없거나 형식이 정의 되어 있지 않으면 속성이 문자열로 구문 분석 됩니다.
 
 `atlas.io.read`함수는 `atlas.io.core.GmlReader.read` 입력 데이터가 XML 임을 검색 했지만 데이터가 다른 지원 공간 XML 형식 중 하나가 아닌 경우 함수를 기본적으로 제공 합니다.
+
+는 `GmlReader` 다음 SRIDs 중 하나가 있는 좌표를 구문 분석 합니다.
+
+- EPSG: 4326 (기본 설정)
+- EPSG: 4269, EPSG: 4283, EPSG: 4258, epsg: 4308, EPSG: 4230, epsg: 4272, epsg: 4271, epsg: 4267, epsg: 4608, EPSG: 4674 가능한 경우 작은 오류 여백이 있을 수 있습니다.
+- EPSG: 3857, EPSG: 102100, EPSG: 3785, EPSG: 900913, EPSG: 102113, EPSG: 41001, EPSG: 54004
 
 ## <a name="next-steps"></a>다음 단계
 

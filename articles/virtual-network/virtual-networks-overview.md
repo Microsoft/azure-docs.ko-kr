@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2019
 ms.author: anavin
-ms.openlocfilehash: db3eae5cd31fff0db465389ea4a09b1666453634
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 480e22b319edd03dc9bb9d666dd43718fb3c841b
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386999"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88507033"
 ---
 # <a name="what-is-azure-virtual-network"></a>Azure Virtual Network란?
 
@@ -37,7 +37,7 @@ Azure에서 네트워크를 빌드할 때 다음 범용 디자인 원칙에 유�
 
 - 겹치지 않는 주소 공간을 확보합니다. VNet 주소 공간(CIDR 블록)이 조직의 다른 네트워크 범위와 겹치지 않는지 확인합니다.
 - 서브넷은 VNet의 전체 주소 공간을 사용하지 않아야 합니다. 미래를 위해 미리 계획하고 일부 주소 공간을 예약합니다.
-- 많은 수의 작은 VNet보다 적은 수의 큰 VNet을 사용하는 것이 좋습니다. 이렇게 하면 관리 오버헤드가 방지됩니다.
+- 여러 개의 작은 VNet보다 적은 수의 큰 VNet을 사용하는 것이 좋습니다. 이렇게 하면 관리 오버헤드가 방지됩니다.
 - 아래 서브넷에 NSG(네트워크 보안 그룹)를 할당하여 VNet을 보호합니다.
 
 ## <a name="communicate-with-the-internet"></a>인터넷 통신

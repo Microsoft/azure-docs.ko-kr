@@ -6,12 +6,12 @@ author: jnoller
 ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
-ms.openlocfilehash: f58232eac6727f10fdccb32e7795bf12a93b7cbb
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: e99d841dcfb18b41df128283c37f46682e3fa129
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405520"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88257118"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Azure Kubernetes Service를 사용하여 CoreDNS 사용자 지정
 
@@ -22,7 +22,7 @@ AKS는 관리 되는 서비스 이므로 CoreDNS (a *CoreFile*)에 대 한 기�
 이 문서에서는 AKS에서 CoreDNS의 기본 사용자 지정 옵션에 대해 ConfigMaps를 사용 하는 방법을 보여 줍니다. 이 방법은 CoreFile를 사용 하는 것과 같은 다른 컨텍스트에서 CoreDNS를 구성 하는 것과 다릅니다. 구성 값이 버전 간에 변경 될 수 있으므로 실행 중인 CoreDNS의 버전을 확인 합니다.
 
 > [!NOTE]
-> `kube-dns`Kubernetes 구성 맵을 통해 다른 [사용자 지정 옵션][kubednsblog] 을 제공 했습니다. CoreDNS는 이전 버전인 kube와 호환 **되지 않습니다** . 이전에 사용 했던 사용자 지정 항목은 CoreDNS에서 사용 하기 위해 업데이트 해야 합니다.
+> `kube-dns` Kubernetes 구성 맵을 통해 다른 [사용자 지정 옵션][kubednsblog] 을 제공 했습니다. CoreDNS는 이전 버전인 kube와 호환 **되지 않습니다** . 이전에 사용 했던 사용자 지정 항목은 CoreDNS에서 사용 하기 위해 업데이트 해야 합니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
@@ -50,9 +50,17 @@ data:
         errors
         cache 30
         rewrite name substring <domain to be rewritten>.com default.svc.cluster.local
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          upstream
+          fallthrough in-addr.arpa ip6.arpa
+        }
         forward .  /etc/resolv.conf # you can redirect this to a specific DNS server such as 10.0.0.10, but that server must be able to resolve the rewritten domain name
     }
 ```
+
+> [!IMPORTANT]
+> CoreDNS 서비스 IP와 같은 DNS 서버로 리디렉션하는 경우 해당 DNS 서버는 다시 작성 된 도메인 이름을 확인할 수 있어야 합니다.
 
 [Kubectl apply ConfigMap][kubectl-apply] 명령을 사용 하 여 ConfigMap을 만들고 yaml 매니페스트의 이름을 지정 합니다.
 

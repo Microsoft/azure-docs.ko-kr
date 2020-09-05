@@ -5,21 +5,21 @@ ms.assetid: 0f96c0e7-0901-489b-a95a-e3b66ca0a1c2
 ms.topic: article
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5ae68a8871bc2894191644e4ab183be4b469bf16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0e8d5fa14678a2a26234dfcd73f4a50af62ca7aa
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82610244"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962879"
 ---
 # <a name="configure-a-custom-domain-name-in-azure-app-service-with-traffic-manager-integration"></a>Traffic Manager 통합을 사용 하 여 Azure App Service에서 사용자 지정 도메인 이름 구성
 
 [!INCLUDE [web-selector](../../includes/websites-custom-domain-selector.md)]
 
 > [!NOTE]
-> Cloud Services의 경우 [Azure 클라우드 서비스에 대한 사용자 지정 도메인 이름 구성](../cloud-services/cloud-services-custom-domain-name.md)을 참조하세요.
+> Cloud Services의 경우 [Azure 클라우드 서비스에 대한 사용자 지정 도메인 이름 구성](../cloud-services/cloud-services-custom-domain-name-portal.md)을 참조하세요.
 
-[Azure Traffic Manager](/azure/traffic-manager/) 을 사용 하 여 [Azure App Service](overview.md)에 대 한 트래픽 부하를 분산 하는 경우 ** \<traffic-manager-endpoint> trafficmanager.net**를 사용 하 여 App Service 앱에 액세스할 수 있습니다. \.사용자에 게 보다 쉽게 알아볼 수 있는 도메인 이름을 제공 하기 위해 App Service 앱과 함께 www contoso.com와 같은 사용자 지정 도메인 이름을 할당할 수 있습니다.
+[Azure Traffic Manager](../traffic-manager/index.yml) 을 사용 하 여 [Azure App Service](overview.md)에 대 한 트래픽 부하를 분산 하는 경우 ** \<traffic-manager-endpoint> trafficmanager.net**를 사용 하 여 App Service 앱에 액세스할 수 있습니다. \.사용자에 게 보다 쉽게 알아볼 수 있는 도메인 이름을 제공 하기 위해 App Service 앱과 함께 www contoso.com와 같은 사용자 지정 도메인 이름을 할당할 수 있습니다.
 
 이 문서에서는 [Traffic Manager](../traffic-manager/traffic-manager-overview.md)와 통합 된 App Service 앱을 사용 하 여 사용자 지정 도메인 이름을 구성 하는 방법을 보여 줍니다.
 
@@ -55,7 +55,7 @@ Azure Traffic Manager와 통합 된 앱에 사용자 지정 DNS 이름을 매핑
 
 ## <a name="create-traffic-manager-endpoint"></a>Traffic Manager 끝점 만들기
 
-[끝점 추가 또는 삭제](../traffic-manager/traffic-manager-endpoints.md)의 단계에 따라 Traffic Manager 프로필에 App Service 앱을 끝점으로 추가 합니다.
+[끝점 추가 또는 삭제](../traffic-manager/traffic-manager-manage-endpoints.md)의 단계에 따라 Traffic Manager 프로필에 App Service 앱을 끝점으로 추가 합니다.
 
 App Service 앱이 지원 되는 가격 책정 계층에 있으면 끝점을 추가할 때 사용 가능한 App Service 대상 목록에 표시 됩니다. 앱이 목록에 없는 경우 [앱의 가격 책정 계층을 확인](#prepare-the-app)합니다.
 

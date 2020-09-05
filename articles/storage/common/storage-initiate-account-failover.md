@@ -10,13 +10,13 @@ ms.date: 06/11/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 01718b4f3d539f77f4496a7914b027335cc45618
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 74f4c30f7aa018502f3437fd4a577f8c2a9de491
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503279"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89077947"
 ---
 # <a name="initiate-a-storage-account-failover"></a>저장소 계정 장애 조치 (failover) 시작
 
@@ -29,7 +29,7 @@ ms.locfileid: "87503279"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>필수 조건
 
 저장소 계정에서 계정 장애 조치 (failover)를 수행 하려면 먼저 저장소 계정이 지역에서 복제를 사용 하도록 구성 되어 있는지 확인 합니다. 저장소 계정은 다음과 같은 중복성 옵션 중 하나를 사용할 수 있습니다.
 

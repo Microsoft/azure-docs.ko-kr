@@ -11,15 +11,15 @@ ms.service: azure-app-configuration
 ms.workload: tbd
 ms.devlang: csharp
 ms.topic: tutorial
-ms.date: 04/19/2019
+ms.date: 08/12/2020
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: 3182961f928a9befc5a55fb6d58e22c74ba81089
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: devx-track-csharp, mvc
+ms.openlocfilehash: 3f8a43a1ff28206a4bcc5fd059f69492c83eb34d
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79473441"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88224716"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>자습서: ASP.NET Core 앱에서 기능 플래그 사용
 
@@ -37,7 +37,7 @@ ms.locfileid: "79473441"
 
 ## <a name="set-up-feature-management"></a>기능 관리 설정
 
-`Microsoft.FeatureManagement` NuGet 패키지에 대한 참조를 추가하여 .NET Core 기능 관리자를 활용합니다.
+`Microsoft.FeatureManagement.AspNetCore` 및 `Microsoft.FeatureManagement` NuGet 패키지에 대한 참조를 추가하여 .NET Core 기능 관리자를 활용합니다.
     
 .NET Core 기능 관리자 `IFeatureManager`는 프레임워크의 기본 구성 시스템에서 기능 플래그를 가져옵니다. 따라서 로컬 *appsettings.json* 또는 환경 변수를 포함하여 .NET Core에서 지원하는 구성 소스를 사용하여 애플리케이션의 기능 플래그를 정의할 수 있습니다. `IFeatureManager`는 .NET Core 종속성 주입을 사용합니다. 표준 규칙을 사용하여 기능 관리 서비스를 등록할 수 있습니다.
 
@@ -206,6 +206,8 @@ public class HomeController : Controller
 MVC 컨트롤러에서 `FeatureGate` 특성을 사용하여 전체 컨트롤러 클래스를 사용할 것인지 아니면 특정 작업을 사용할 것인지 제어합니다. 다음 `HomeController` 컨트롤러는 `FeatureA`가 *on*으로 설정되어야만 컨트롤러 클래스에 포함된 작업을 실행할 수 있습니다.
 
 ```csharp
+using Microsoft.FeatureManagement.Mvc;
+
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public class HomeController : Controller
 {
@@ -216,6 +218,8 @@ public class HomeController : Controller
 다음 `Index` 작업은 `FeatureA`가 *on*으로 설정되어야만 실행할 수 있습니다.
 
 ```csharp
+using Microsoft.FeatureManagement.Mvc;
+
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public IActionResult Index()
 {

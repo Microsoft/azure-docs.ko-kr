@@ -16,26 +16,26 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8576088069f419872db57b063163e8d9b1968b33
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ef88a15286389c98bb77f982afbc54358897eef4
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85338221"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783861"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 외부 사용자에 대 한 액세스 제어
 
-Azure AD 자격 관리는 [AZURE AD b2b (기업 간)](../b2b/what-is-b2b.md) 를 활용 하 여 다른 디렉터리에서 조직 외부 사용자와 공동 작업 합니다. Azure AD B2B를 사용 하는 경우 외부 사용자는 홈 디렉터리에 대해 인증 하지만 디렉터리에는 표시 됩니다. 디렉터리의 표현을 사용 하면 사용자에 게 리소스에 대 한 액세스 권한을 할당할 수 있습니다.
+Azure AD 자격 관리는 [AZURE AD b2b (기업 간)](../external-identities/what-is-b2b.md) 를 활용 하 여 다른 디렉터리에서 조직 외부 사용자와 공동 작업 합니다. Azure AD B2B를 사용 하는 경우 외부 사용자는 홈 디렉터리에 대해 인증 하지만 디렉터리에는 표시 됩니다. 디렉터리의 표현을 사용 하면 사용자에 게 리소스에 대 한 액세스 권한을 할당할 수 있습니다.
 
 이 문서에서는 외부 사용자에 대 한 액세스를 제어 하기 위해 지정할 수 있는 설정을 설명 합니다.
 
 ## <a name="how-entitlement-management-can-help"></a>권한 관리가 어떻게 도움이 될 수 있나요?
 
-[AZURE AD B2B](../b2b/what-is-b2b.md) 초대 환경을 사용 하는 경우 리소스 디렉터리로 가져오고 작업할 외부 게스트 사용자의 메일 주소를 이미 알고 있어야 합니다. 이러한 방식은 규모가 작거나 단기 프로젝트에서 작업 하 고 있는 모든 참가자를 이미 알고 있는 경우에 유용 하지만, 작업 하려는 사용자가 많고 시간이 지남에 따라 참가자가 변경 되는 경우에는 관리 하기가 어렵습니다.  예를 들어 다른 조직에 대해 작업 하 고 있으며 해당 조직과의 연락 지점이 하나 있지만 시간이 지남에 따라 해당 조직의 추가 사용자도 액세스 해야 합니다.
+[AZURE AD B2B](../external-identities/what-is-b2b.md) 초대 환경을 사용 하는 경우 리소스 디렉터리로 가져오고 작업할 외부 게스트 사용자의 메일 주소를 이미 알고 있어야 합니다. 이러한 방식은 규모가 작거나 단기 프로젝트에서 작업 하 고 있는 모든 참가자를 이미 알고 있는 경우에 유용 하지만, 작업 하려는 사용자가 많고 시간이 지남에 따라 참가자가 변경 되는 경우에는 관리 하기가 어렵습니다.  예를 들어 다른 조직에 대해 작업 하 고 있으며 해당 조직과의 연락 지점이 하나 있지만 시간이 지남에 따라 해당 조직의 추가 사용자도 액세스 해야 합니다.
 
 권한 관리를 통해 사용자가 지정한 조직의 사용자가 액세스 패키지를 직접 요청할 수 있도록 허용 하는 정책을 정의할 수 있습니다. 승인이 필요한 지 여부와 액세스에 대 한 만료 날짜를 지정할 수 있습니다. 승인이 필요한 경우에는 외부 조직에서 하나 이상의 사용자를 디렉터리에 초대 하 고 해당 조직에서 액세스 해야 하는 외부 사용자를 알 가능성이 있으므로 승인자로 지정할 수도 있습니다. 액세스 패키지를 구성한 후에는 외부 조직의 사용자 (스폰서)에 게 액세스 패키지의 링크를 보낼 수 있습니다. 해당 연락처는 외부 조직의 다른 사용자와 공유할 수 있으며,이 링크를 사용 하 여 액세스 패키지를 요청할 수 있습니다. 디렉터리에 이미 초대 된 해당 조직의 사용자는 해당 링크를 사용할 수도 있습니다.
 
-요청이 승인 되 면 자격 관리에서 사용자에 게 필요한 액세스를 프로 비전 합니다. 여기에는 사용자에 게 디렉터리에 아직 없는 경우 사용자 초대를 포함할 수 있습니다. Azure AD는이에 대 한 B2B 게스트 계정을 자동으로 만듭니다. 관리자는 [B2B 허용 또는 거부 목록을](../b2b/allow-deny-list.md) 다른 조직에 대 한 초대를 허용 하거나 차단 하도록 설정 하 여 공동 작업을 허용 하는 조직을 이전에 제한 했을 수 있습니다.  허용 또는 차단 목록에서 사용자를 허용 하지 않으면 해당 사용자는 초대 되지 않습니다.
+요청이 승인 되 면 자격 관리에서 사용자에 게 필요한 액세스를 프로 비전 합니다. 여기에는 사용자에 게 디렉터리에 아직 없는 경우 사용자 초대를 포함할 수 있습니다. Azure AD는이에 대 한 B2B 게스트 계정을 자동으로 만듭니다. 관리자는 [B2B 허용 또는 거부 목록을](../external-identities/allow-deny-list.md) 다른 조직에 대 한 초대를 허용 하거나 차단 하도록 설정 하 여 공동 작업을 허용 하는 조직을 이전에 제한 했을 수 있습니다.  허용 또는 차단 목록에서 사용자를 허용 하지 않으면 해당 사용자는 초대 되지 않습니다.
 
 외부 사용자의 액세스를 마지막으로 영원히 유지 하지 않으려면 정책에서 180 일 등의 만료 날짜를 지정 합니다. 180 일 후 액세스 권한이 확장 되지 않으면 권한 관리에서 해당 액세스 패키지와 연결 된 모든 액세스 권한을 제거 합니다. 기본적으로, 자격 관리를 통해 초대 된 사용자에 게 다른 액세스 패키지 할당이 없는 경우 마지막 할당이 손실 되 면 해당 게스트 계정은 30 일간 로그인이 차단 되 고 이후에 제거 됩니다. 이렇게 하면 불필요 한 계정의 확산을 방지할 수 있습니다. 다음 섹션에서 설명 하는 것 처럼 이러한 설정은 구성할 수 있습니다.
 
@@ -57,7 +57,7 @@ Azure AD 자격 관리는 [AZURE AD b2b (기업 간)](../b2b/what-is-b2b.md) 를
 
 1. 요청이 [배달 상태로](entitlement-management-process.md)전환 됩니다.
 
-1. B2B 초대 프로세스를 사용 하 여 디렉터리에 게스트 사용자 계정이 생성 됩니다 (이 예제의 경우**요청자 a (게스트)** ). [허용 목록 또는 거부 목록을](../b2b/allow-deny-list.md) 정의 하면 목록 설정이 적용 됩니다.
+1. B2B 초대 프로세스를 사용 하 여 디렉터리에 게스트 사용자 계정이 생성 됩니다 (이 예제의 경우**요청자 a (게스트)** ). [허용 목록 또는 거부 목록을](../external-identities/allow-deny-list.md) 정의 하면 목록 설정이 적용 됩니다.
 
 1. 게스트 사용자에 게 액세스 패키지의 모든 리소스에 대 한 액세스 권한이 할당 됩니다. Azure AD 및 기타 Microsoft Online Services 또는 연결 된 SaaS 응용 프로그램에 변경 내용을 적용 하는 데 다소 시간이 걸릴 수 있습니다. 자세한 내용은 [변경 내용이 적용 되는 경우](entitlement-management-access-package-resources.md#when-changes-are-applied)를 참조 하세요.
 
@@ -84,8 +84,8 @@ Azure AD 자격 관리는 [AZURE AD b2b (기업 간)](../b2b/what-is-b2b.md) 를
 - 게스트가 다른 게스트를 디렉터리에 초대 하도록 허용 하면 게스트 초대가 자격 관리 외부에서 발생할 수 있음을 의미 합니다. 게스트가 적절 하 게 관리 되는 초대에만 **허용 하도록 설정** 하 **는** 것이 좋습니다.
 - B2B 허용 목록을 사용 하는 경우 자격 관리를 사용 하 여 파트너 관계를 지정 하려는 도메인이 목록에 추가 되었는지 확인 해야 합니다. 또는 B2B 거부 목록을 사용 하는 경우 파트너 관계를 지정할 도메인이 목록에 추가 되지 않았는지 확인 해야 합니다.
 - **모든 사용자** (연결 된 모든 조직 + 새 외부 사용자)에 대 한 권한 관리 정책을 만드는 경우 사용자가 보유 한 B2B 허용 또는 거부 목록 설정이 우선 적용 됩니다. 따라서이 정책에 포함 하려는 도메인을 사용 중인 경우 허용 목록에 포함 하 고, 거부 목록을 사용 하는 경우 거부 목록에서 제외 합니다.
-- **모든 사용자** (연결 된 모든 조직 + 새 외부 사용자)를 포함 하는 자격 관리 정책을 만들려면 먼저 디렉터리에 대해 전자 메일 일회용 암호 인증을 사용 하도록 설정 해야 합니다. 자세한 내용은 [일회용 암호 인증 (미리 보기)](../b2b/one-time-passcode.md#opting-in-to-the-preview)을 참조 하세요.
-- Azure AD B2B 외부 공동 작업 설정에 대 한 자세한 내용은 [b2b 외부 공동 작업 사용 및 게스트를 초대할 수 있는 사용자 관리](../b2b/delegate-invitations.md)를 참조 하세요.
+- **모든 사용자** (연결 된 모든 조직 + 새 외부 사용자)를 포함 하는 자격 관리 정책을 만들려면 먼저 디렉터리에 대해 전자 메일 일회용 암호 인증을 사용 하도록 설정 해야 합니다. 자세한 내용은 [일회용 암호 인증 (미리 보기)](../external-identities/one-time-passcode.md#opting-in-to-the-preview)을 참조 하세요.
+- Azure AD B2B 외부 공동 작업 설정에 대 한 자세한 내용은 [b2b 외부 공동 작업 사용 및 게스트를 초대할 수 있는 사용자 관리](../external-identities/delegate-invitations.md)를 참조 하세요.
 
     ![Azure AD 외부 공동 작업 설정](./media/entitlement-management-external-users/collaboration-settings.png)
 
@@ -97,17 +97,17 @@ Azure AD 자격 관리는 [AZURE AD b2b (기업 간)](../b2b/what-is-b2b.md) 를
 
 ### <a name="review-your-sharepoint-online-external-sharing-settings"></a>SharePoint Online 외부 공유 설정 검토
 
-- 외부 사용자에 대 한 액세스 패키지에 SharePoint Online 사이트를 포함 하려면 조직 수준 외부 공유 설정이 **모든** 사용자 (로그인이 필요 하지 않음) 또는 **신규 및 기존 게스트** (게스트가 로그인 하거나 확인 코드를 제공 해야 함)로 설정 되어 있는지 확인 합니다. 자세한 내용은 [외부 공유 설정 또는 해제](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting)를 참조 하세요.
+- 외부 사용자에 대 한 액세스 패키지에 SharePoint Online 사이트를 포함 하려면 조직 수준 외부 공유 설정이 **모든** 사용자 (로그인이 필요 하지 않음) 또는 **신규 및 기존 게스트** (게스트가 로그인 하거나 확인 코드를 제공 해야 함)로 설정 되어 있는지 확인 합니다. 자세한 내용은 [외부 공유 설정 또는 해제](/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting)를 참조 하세요.
 
-- 자격 관리 외부에서 외부 공유를 제한 하려는 경우 외부 공유 설정을 **기존 게스트**로 설정할 수 있습니다. 그런 다음 자격 관리를 통해 초대 된 새 사용자만 이러한 사이트에 대 한 액세스 권한을 얻을 수 있습니다. 자세한 내용은 [외부 공유 설정 또는 해제](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting)를 참조 하세요.
+- 자격 관리 외부에서 외부 공유를 제한 하려는 경우 외부 공유 설정을 **기존 게스트**로 설정할 수 있습니다. 그런 다음 자격 관리를 통해 초대 된 새 사용자만 이러한 사이트에 대 한 액세스 권한을 얻을 수 있습니다. 자세한 내용은 [외부 공유 설정 또는 해제](/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting)를 참조 하세요.
 
-- 사이트 수준 설정에서 게스트 액세스를 사용할 수 있는지 확인 합니다 (이전에 나열 된 것과 동일한 옵션 선택). 자세한 내용은 [사이트의 외부 공유 설정 또는 해제](https://docs.microsoft.com/sharepoint/change-external-sharing-site)를 참조 하세요.
+- 사이트 수준 설정에서 게스트 액세스를 사용할 수 있는지 확인 합니다 (이전에 나열 된 것과 동일한 옵션 선택). 자세한 내용은 [사이트의 외부 공유 설정 또는 해제](/sharepoint/change-external-sharing-site)를 참조 하세요.
 
 ### <a name="review-your-microsoft-365-group-sharing-settings"></a>Microsoft 365 그룹 공유 설정 검토
 
-- 외부 사용자에 대 한 액세스 패키지에 Microsoft 365 그룹을 포함 하려면 게스트 **액세스를 허용** 하도록 **사용자가 조직에 새 게스트를 추가** 하도록 허용이 설정 되어 있는지 확인 합니다. 자세한 내용은 [Microsoft 365 그룹에 대 한 게스트 액세스 관리](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide#manage-groups-guest-access)를 참조 하세요.
+- 외부 사용자에 대 한 액세스 패키지에 Microsoft 365 그룹을 포함 하려면 게스트 **액세스를 허용** 하도록 **사용자가 조직에 새 게스트를 추가** 하도록 허용이 설정 되어 있는지 확인 합니다. 자세한 내용은 [Microsoft 365 그룹에 대 한 게스트 액세스 관리](/office365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide#manage-groups-guest-access)를 참조 하세요.
 
-- 외부 사용자가 SharePoint Online 사이트 및 Microsoft 365 그룹에 연결 된 리소스에 액세스할 수 있게 하려면 SharePoint Online 외부 공유를 설정 해야 합니다. 자세한 내용은 [외부 공유 설정 또는 해제](https://docs.microsoft.com/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting)를 참조 하세요.
+- 외부 사용자가 SharePoint Online 사이트 및 Microsoft 365 그룹에 연결 된 리소스에 액세스할 수 있게 하려면 SharePoint Online 외부 공유를 설정 해야 합니다. 자세한 내용은 [외부 공유 설정 또는 해제](/sharepoint/turn-external-sharing-on-or-off#change-the-organization-level-external-sharing-setting)를 참조 하세요.
 
 - PowerShell의 디렉터리 수준에서 Microsoft 365 그룹에 대 한 게스트 정책을 설정 하는 방법에 대 한 자세한 내용은 [예제: 디렉터리 수준에서 그룹에 대 한 게스트 정책 구성](../users-groups-roles/groups-settings-cmdlets.md#example-configure-guest-policy-for-groups-at-the-directory-level)을 참조 하세요.
 

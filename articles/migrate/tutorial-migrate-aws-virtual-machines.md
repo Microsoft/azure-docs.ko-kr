@@ -2,21 +2,21 @@
 title: AWS(Amazon Web Services) EC2 VM 검색, 평가 및 Azure로 마이그레이션
 description: 이 문서에서는 Azure Migrate를 사용하여 AWS VM을 Azure로 마이그레이션하는 방법을 설명합니다.
 ms.topic: tutorial
-ms.date: 06/16/2020
+ms.date: 08/19/2020
 ms.custom: MVC
-ms.openlocfilehash: 61a7bee52179ac525b42ad696d118f4f753f6931
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 0ef9adfe7ee88141b67bb9e8c9586c5cc6e5df6f
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534835"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762422"
 ---
 # <a name="discover-assess-and-migrate-amazon-web-services-aws-vms-to-azure"></a>AWS(Amazon Web Services) VM 검색, 평가 및 Azure로 마이그레이션
 
-이 자습서에서는 Azure Migrate: 서버 평가 및 서버 마이그레이션 도구를 사용하여 AWS(Amazon Web Services) VM(가상 머신)을 검색하고, 평가하고, Azure VM으로 마이그레이션하는 방법을 보여 줍니다.
+이 자습서에서는 Azure Migrate: Server Assessment 및 Azure Migrate: Server Migration 도구를 사용하여 AWS(Amazon Web Services) VM(가상 머신)을 Azure VM으로 마이그레이션하는 방법을 보여줍니다.
 
 > [!NOTE]
-> AWS VM을 Azure로 마이그레이션하면 VM이 물리적 서버인 것처럼 처리됩니다. AWS VM을 Azure로 마이그레이션하기 위해 서버 마이그레이션 흐름을 사용하여 물리적 컴퓨터를 마이그레이션합니다.
+> AWS VM을 물리적 서버로 취급하여 Azure로 마이그레이션합니다.
 
 이 자습서에서는 다음 작업 방법을 배웁니다.
 > [!div class="checklist"]
@@ -33,20 +33,29 @@ ms.locfileid: "87534835"
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/pricing/free-trial/)을 만듭니다.
 
-## <a name="discover-and-assess-aws-vms"></a>AWS VM 검색 및 평가  
+## <a name="discover-and-assess"></a>검색 및 평가
 
 Azure로 마이그레이션하기 전에 VM 검색 및 마이그레이션 평가를 수행하는 것이 좋습니다. 이 평가는 Azure로 마이그레이션하기 위해 AWS VM의 크기를 적절하게 조정하고 잠재적인 Azure 실행 비용을 예측하는 데 도움이 됩니다.
 
 다음과 같이 평가를 설정합니다.
 
-1. Azure Migrate를 사용하여 평가하기 위해 AWS VM을 물리적 컴퓨터로 처리하여 평가를 수행할 수 있습니다. 서버 평가 도구를 사용하여 온-프레미스 VMware VM을 평가하는 방법을 보여 줍니다. 이 [자습서](./tutorial-prepare-physical.md)에 따라 Azure를 설정하고 평가를 위해 AWS VM을 준비합니다.
+1. 이 [자습서](./tutorial-prepare-physical.md)에 따라 Azure를 설정하고 평가를 위해 AWS VM을 준비합니다. 다음 사항에 유의하세요.
+
+    - Azure Migrate는 AWS 인스턴스를 검색할 때 암호 인증을 사용합니다. AWS 인스턴스는 기본적으로 암호 인증을 지원하지 않습니다. 인스턴스를 검색하려면 먼저 암호 인증을 사용하도록 설정해야 합니다.
+        - Windows 컴퓨터의 경우 WinRM 포트 5986(HTTPS) 및 5985(HTTP)를 허용합니다. 이렇게 하면 원격 WMI 호출을 수행할 수 있습니다. 다음을 설정하는 경우 
+        - Linux 컴퓨터의 경우:
+            1. 각 Linux 머신에 로그인합니다.
+            2. sshd_config file : vi /etc/ssh/sshd_config 열기
+            3. 파일에서 **PasswordAuthentication** 줄을 찾아 값을 **예**로 변경합니다.
+            4. 파일을 저장하고 닫습니다. ssh 서비스를 다시 시작합니다.
+
 2. 그런 다음, 이 [자습서](./tutorial-assess-physical.md)에 따라 Azure Migrate 프로젝트 및 어플라이언스를 설정하여 AWS VM을 검색하고 평가합니다.
 
 평가를 수행하는 것이 좋지만, 이는 VM을 마이그레이션하기 위한 필수 단계가 아닙니다.
 
-## <a name="migrate-aws-vms"></a>AWS VM 마이그레이션   
 
-## <a name="1-prerequisites-for-migration"></a>1. 마이그레이션을 위한 필수 조건
+
+## <a name="prerequisites"></a>사전 요구 사항 
 
 - 마이그레이션하려는 AWS VM에서 지원되는 OS 버전을 실행하고 있는지 확인합니다. AWS VM은 마이그레이션을 위해 물리적 컴퓨터로 처리됩니다. 물리적 서버 마이그레이션 워크플로에 [지원되는 운영 체제](../site-recovery/vmware-physical-azure-support-matrix.md#replicated-machines)를 검토합니다. 실제 마이그레이션을 진행하기 전에 테스트 마이그레이션(테스트 장애 조치)을 수행하여 VM이 예상대로 작동하는지 확인하는 것이 좋습니다.
 - AWS VM에서 Azure로 마이그레이션하는 데 [지원되는 구성](./migrate-support-matrix-physical-migration.md#physical-server-requirements)을 준수하는지 확인합니다.
@@ -54,9 +63,9 @@ Azure로 마이그레이션하기 전에 VM 검색 및 마이그레이션 평가
 - VM을 Azure로 마이그레이션하기 전에 VM에서 몇 가지 사항을 변경해야 합니다.
     - 일부 운영 체제의 경우 이러한 변경은 Azure Migrate에서 자동으로 수행합니다.
     - 이러한 변경은 마이그레이션을 시작하기 전에 수행해야 합니다. 변경하기 전에 VM을 마이그레이션하면 Azure에서 해당 VM이 부팅되지 않을 수 있습니다.
-필요한 [Windows](prepare-for-migration.md#windows-machines) 및 [Linux](prepare-for-migration.md#linux-machines) 변경 내용을 검토합니다.
+필요한 [Windows](prepare-for-migration.md#windows-machines) 및 [Linux](prepare-for-migration.md#linux-machines) 변경 사항을 검토해야 합니다.
 
-## <a name="2-prepare-azure-resources-for-migration"></a>2. 마이그레이션을 위한 Azure 리소스 준비
+### <a name="prepare-azure-resources-for-migration"></a>마이그레이션을 위한 Azure 리소스 준비
 
 마이그레이션을 위해 Azure Migrate: 서버 마이그레이션 도구를 사용하여 Azure 리소스를 준비합니다.
 
@@ -85,7 +94,7 @@ Azure 계정에 Virtual Machine 기여자 역할을 할당합니다. 다음 항�
 
 Azure VNet(Virtual Network)을 [설정](../virtual-network/manage-virtual-network.md#create-a-virtual-network)합니다. Azure에 복제하는 경우 만들어지는 Azure VM이 마이그레이션을 설정할 때 지정한 Azure VNet에 조인됩니다.
 
-## <a name="3-prepare-aws-instances-for-migration"></a>3. 마이그레이션을 위한 AWS 인스턴스 준비
+## <a name="prepare-aws-instances-for-migration"></a>마이그레이션을 위한 AWS 인스턴스 준비
 
 AWS에서 Azure로의 마이그레이션을 준비하려면 마이그레이션을 위해 복제 어플라이언스를 준비하고 배포해야 합니다.
 
@@ -99,7 +108,7 @@ Azure Migrate: 서버 마이그레이션에서 복제 어플라이언스를 사�
 다음과 같이 어플라이언스 배포를 준비합니다.
 
 - 복제 어플라이언스를 호스팅하는 별도의 EC2 VM을 설정합니다. 이 인스턴스는 Windows Server 2012 R2 또는 Windows Server 2016을 실행해야 합니다. 어플라이언스에 대한 하드웨어, 소프트웨어 및 네트워킹 요구 사항을 [검토](./migrate-replication-appliance.md#appliance-requirements)합니다.
-- 복제하려는 원본 VM에 어플라이언스를 설치하지 않아야 합니다. 이는 다른 VM에 배포해야 합니다.
+- 복제하려는 원본 VM 또는 이전에 설치한 Azure Migrate 검색 및 평가 어플라이언스에 어플라이언스를 설치하면 안 됩니다. 이는 다른 VM에 배포해야 합니다.
 - 마이그레이션할 원본 AWS VM에는 복제 어플라이언스에 대한 네트워크 가시선이 있어야 합니다. 이를 사용하도록 설정하는 데 필요한 보안 그룹 규칙을 구성합니다. 복제 어플라이언스는 마이그레이션할 원본 VM과 동일한 VPC에 배포하는 것이 좋습니다. 복제 어플라이언스가 다른 VPC에 있어야 하는 경우 VPC 피어링을 통해 VPC를 연결해야 합니다.
 - 원본 AWS VM은 복제 관리 및 복제 데이터 전송을 위해 443 HTTPS(제어 채널 오케스트레이션) 및 9443 TCP(데이터 전송) 인바운드 포트에서 복제 어플라이언스와 통신합니다. 이에 따라 복제 어플라이언스는 복제 데이터를 오케스트레이션하고 443 HTTPS 아웃바운드 포트를 통해 Azure로 보냅니다. 이러한 규칙을 구성하려면 적절한 포트 및 원본 IP 정보를 사용하여 보안 그룹 인바운드/아웃바운드 규칙을 편집합니다.
 
@@ -111,7 +120,7 @@ Azure Migrate: 서버 마이그레이션에서 복제 어플라이언스를 사�
 - 복제 어플라이언스는 MySQL을 사용합니다. MySQL을 어플라이언스에 설치하는 [옵션](migrate-replication-appliance.md#mysql-installation)을 검토합니다.
 - 복제 어플라이언스가 [퍼블릭](migrate-replication-appliance.md#url-access) 및 [정부](migrate-replication-appliance.md#azure-government-url-access) 클라우드에 액세스하는 데 필요한 Azure URL을 검토합니다.
 
-## <a name="4-add-the-server-migration-tool"></a>4. Server Migration 도구 추가
+## <a name="add-the-server-migration-tool"></a>Server Migration 도구 추가
 
 Azure Migrate 프로젝트를 설정한 다음, Server Migration 도구를 해당 프로젝트에 추가합니다.
 
@@ -135,7 +144,7 @@ Azure Migrate 프로젝트를 설정한 다음, Server Migration 도구를 해�
 10. **검토 + 도구 추가**에서 설정을 검토하고, **도구 추가**를 클릭합니다.
 11. 도구가 추가되면 Azure Migrate 프로젝트 > **서버** > **마이그레이션 도구**에 표시됩니다.
 
-## <a name="5-set-up-the-replication-appliance"></a>5. 복제 어플라이언스 설정
+## <a name="set-up-the-replication-appliance"></a>복제 어플라이언스 설정
 
 마이그레이션의 첫 번째 단계는 복제 어플라이언스를 설정하는 것입니다. AWS VM 마이그레이션을 위한 어플라이언스를 설정하려면 어플라이언스에 대한 설치 관리자 파일을 다운로드한 다음, [준비한 VM](#prepare-a-machine-for-the-replication-appliance)에서 실행해야 합니다.
 
@@ -177,7 +186,7 @@ Azure Migrate 프로젝트를 설정한 다음, Server Migration 도구를 해�
 
     ![등록 완료](./media/tutorial-migrate-physical-virtual-machines/finalize-registration.png)
 
-## <a name="6-install-the-mobility-service"></a>6. 모바일 서비스 설치
+## <a name="install-the-mobility-service"></a>모바일 서비스 설치
 
 Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치되어 있어야 합니다. 에이전트 설치 관리자는 복제 어플라이언스에서 사용할 수 있습니다. 올바른 설치 관리자를 찾고, 마이그레이션하려는 각 머신에 에이전트를 설치합니다. 다음과 같이 수행합니다.
 
@@ -229,7 +238,7 @@ Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치�
     /usr/local/ASR/Vx/bin/UnifiedAgentConfigurator.sh -i <replication appliance IP address> -P <Passphrase File Path>
     ```
 
-## <a name="7-enable-replication-for-aws-vms"></a>7. AWS VM에 복제 사용
+## <a name="enable-replication-for-aws-vms"></a>AWS VM에 복제 사용
 
 > [!NOTE]
 > 포털을 통해 복제할 VM을 한 번에 최대 10개까지 추가할 수 있습니다. 더 많은 VM을 동시에 복제하려면 VM을 10개씩 일괄 처리로 추가할 수 있습니다.
@@ -276,7 +285,7 @@ Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치�
 > [!NOTE]
 > 복제가 시작되기 전에 언제든지 **관리** > **머신 복제 중**에서 복제 설정을 업데이트할 수 있습니다. 복제가 시작된 후에는 설정을 변경할 수 없습니다.
 
-## <a name="8-track-and-monitor-replication-status"></a>8. 복제 상태 추적 및 모니터링
+## <a name="track-and-monitor-replication-status"></a>복제 상태 추적 및 모니터링
 
 - **복제**를 클릭하면 복제 시작 작업이 시작됩니다.
 - [복제 시작] 작업이 성공적으로 완료되면 VM에서 Azure로의 초기 복제를 시작합니다.
@@ -288,7 +297,7 @@ Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치�
 
 ![복제 모니터링](./media/tutorial-migrate-physical-virtual-machines/replicating-servers.png)
 
-## <a name="9-run-a-test-migration"></a>9. 테스트 마이그레이션 실행
+## <a name="run-a-test-migration"></a>테스트 마이그레이션 실행
 
 델타 복제가 시작되면 Azure로 전체 마이그레이션을 실행하기 전에 VM에 대한 테스트 마이그레이션을 실행할 수 있습니다. 실제 마이그레이션을 진행하기 전에 잠재적인 문제를 검색하고 해결할 수 있는 기회를 제공하므로 테스트 마이그레이션이 적극적으로 추천됩니다. 마이그레이션하기 전에 이 작업을 각 VM에 대해 한 번 이상 수행하는 것이 좋습니다.
 
@@ -314,7 +323,7 @@ Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치�
     ![마이그레이션 정리](./media/tutorial-migrate-physical-virtual-machines/clean-up.png)
 
 
-## <a name="10-migrate-aws-vms"></a>10. AWS VM 마이그레이션
+## <a name="migrate-aws-vms"></a>AWS VM 마이그레이션
 
 테스트 마이그레이션이 예상대로 작동하는지 확인한 후에는 AWS VM을 마이그레이션할 수 있습니다.
 
@@ -340,6 +349,9 @@ Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치�
 5. 트래픽을 마이그레이션된 Azure VM 인스턴스로 전환합니다.
 6. 내부 문서를 업데이트하여 Azure VM의 새 위치 및 IP 주소를 표시합니다. 
 
+
+
+
 ## <a name="post-migration-best-practices"></a>마이그레이션 후 작업 모범 사례
 
 - 복원력 개선:
@@ -353,9 +365,7 @@ Mobility Service 에이전트가 마이그레이션할 원본 AWS VM에 설치�
 - 모니터링 및 관리 앱:
     - 리소스 사용량과 비용을 모니터링하려면 [Azure Cost Management](../cost-management-billing/cloudyn/overview.md)를 배포하는 것이 좋습니다.
 
-## <a name="next-steps"></a>다음 단계
 
-Azure 클라우드 채택 프레임워크에서 [클라우드 마이그레이션 과정](/azure/architecture/cloud-adoption/getting-started/migrate)을 조사합니다.
 
 ## <a name="troubleshooting--tips"></a>문제 해결/팁
 
@@ -369,10 +379,14 @@ Azure 클라우드 채택 프레임워크에서 [클라우드 마이그레이션
 **답변:** 현재 이 워크플로에 대한 평가 가져오기를 지원하지 않습니다. 이 문제를 해결하려면 평가를 내보낸 다음, [복제 사용] 단계에서 VM 추천 사항을 수동으로 선택할 수 있습니다.
   
 **질문:** AWS VM을 검색하는 동안 "BIOS GUID를 가져오지 못했습니다."라는 오류가 발생합니다.   
-**답변:** AWS VM에 지원되는 운영 체제를 검토합니다.  
+**답변:** 인증에는 항상 루트 로그인을 사용하고 의사 사용자는 사용하지 않습니다. 또한 AWS VM에 지원되는 운영 체제를 검토합니다.  
 
 **질문:** 내 복제 상태가 진행되고 있지 않습니다.    
 **답변:** 복제 어플라이언스에서 요구 사항을 충족하는지 확인합니다. 데이터 전송을 위해 복제 어플라이언스 9443 TCP 포트 및 443 HTTPS 포트에서 필요한 포트를 사용하도록 설정했는지 확인합니다. 동일한 프로젝트에 연결되는 복제 어플라이언스의 버전이 오래되고 중복되지 않는지 확인합니다.   
 
 **질문:** 원격 Windows 관리 서비스에서 504 HTTP 상태 코드로 인해 Azure Migrate를 사용하여 AWS 인스턴스를 검색할 수 없습니다.    
 **답변:** Azure Migrate 어플라이언스 요구 사항 및 URL 액세스 요구 사항을 검토해야 합니다. 어플라이언스 등록을 차단하는 프록시 설정이 없는지 확인합니다.   
+
+## <a name="next-steps"></a>다음 단계
+
+Azure 클라우드 채택 프레임워크에서 [클라우드 마이그레이션 과정](/azure/architecture/cloud-adoption/getting-started/migrate)을 조사합니다.

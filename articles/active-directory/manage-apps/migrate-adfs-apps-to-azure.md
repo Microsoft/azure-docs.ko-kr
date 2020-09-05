@@ -14,12 +14,12 @@ ms.date: 04/01/2020
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33b67c836be3395061e33b5988a4bb06fa5ee20f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c9d2f295394d89432f3c6dd99585cc4363d4ff74
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608554"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641367"
 ---
 # <a name="moving-application-authentication-from-active-directory-federation-services-to-azure-active-directory"></a>Active Directory Federation Services에서 Azure Active Directory로 응용 프로그램 인증 이동
 
@@ -100,7 +100,7 @@ OAuth 2.0, Openid connect Connect 또는 WS-FEDERATION을 사용 하는 LOB 앱�
 
 Saml 기반 [Single Sign-On](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on) (SAML 기반 SSO)에 대해 saml 2.0를 사용 하는 앱은 인증에 대해 구성할 수 있습니다. [Saml 기반 SSO](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)를 사용 하면 사용자가 saml 클레임에서 정의한 규칙에 따라 특정 응용 프로그램 역할에 사용자를 매핑할 수 있습니다. 
 
-SAML 기반 Single Sign-On에 대 한 SaaS 응용 프로그램을 구성 하려면 [saml 기반 Single Sign-On 구성](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-single-sign-on-non-gallery-applications)을 참조 하세요. 
+SAML 기반 Single Sign-On에 맞게 SaaS 애플리케이션을 구성하려면 [SAML 기반 Single Sign-On 구성](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-single-sign-on-non-gallery-applications)을 참조하세요. 
 
 ![SSO SAML 사용자 스크린샷 ](media/migrate-adfs-apps-to-azure/sso-saml-user-attributes-claims.png)
 
@@ -127,7 +127,7 @@ SAML 기반 Single Sign-On에 대 한 SaaS 응용 프로그램을 구성 하려�
 
 사용자가 Salesforce, ServiceNow 또는 Workday와 같은 SaaS 앱에 로그인 하 고 AD FS와 통합 된 경우 SaaS 앱에 대해 페더레이션 로그온을 사용 하 게 됩니다. 
 
-대부분의 SaaS 응용 프로그램은 Azure AD에서 이미 구성할 수 있습니다. Microsoft에는 [AZURE AD 앱 갤러리](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps)에서 SaaS 앱에 대 한 미리 구성 된 연결이 많기 때문에 더 쉽게 전환할 수 있습니다. SAML 2.0 응용 프로그램은 Azure AD 앱 갤러리를 통하거나 [비 갤러리 응용 프로그램](https://docs.microsoft.com/azure/active-directory/manage-apps/add-non-gallery-app)으로 azure ad와 통합할 수 있습니다. 
+대부분의 SaaS 응용 프로그램은 Azure AD에서 이미 구성할 수 있습니다. Microsoft에는  [AZURE AD 앱 갤러리](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps)에서 SaaS 앱에 대 한 미리 구성 된 연결이 많기 때문에 더 쉽게 전환할 수 있습니다. SAML 2.0 응용 프로그램은 Azure AD 앱 갤러리를 통하거나 [비 갤러리 응용 프로그램](https://docs.microsoft.com/azure/active-directory/manage-apps/add-non-gallery-app)으로 azure ad와 통합할 수 있습니다. 
 
 OAuth 2.0 또는 Openid connect Connect를 사용 하는 앱은 [앱 등록과](https://docs.microsoft.com/azure/active-directory/develop/app-registrations-training-guide-for-app-registrations-legacy-users)유사 하 게 Azure AD와 통합할 수 있습니다. 레거시 프로토콜을 사용 하는 앱은 azure [AD 응용 프로그램 프록시](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) 를 사용 하 여 azure AD에 인증할 수 있습니다.
 
@@ -237,8 +237,8 @@ SaaS 앱은 인증 요청을 보내는 위치와 받은 토큰의 유효성을 �
 
 | 구성 설정| AD FS| Azure AD에서을 구성 하는 방법 |
 | - | - | - |
-| **IdP Sign-on URL** <p>앱의 관점에서 IdP의 로그인 URL입니다 (사용자가 로그인을 위해 리디렉션 됨).| AD FS sign-on URL은 AD FS 페더레이션 서비스 이름 뒤에 "/adfs/ls/."가 옵니다. <p>예: `https://fs.contoso.com/adfs/ls/`| {Tenant-id}를 테 넌 트 ID로 바꿉니다. <p> SAML-P 프로토콜을 사용 하는 앱의 경우:[https://login.microsoftonline.com/{tenant-id}/saml2](https://login.microsoftonline.com/{tenant-id}/saml2) <p>WS-FEDERATION 프로토콜을 사용 하는 앱의 경우:[https://login.microsoftonline.com/{tenant-id}/wsfed](https://login.microsoftonline.com/{tenant-id}/wsfed) |
-| **IdP 로그 아웃 URL**<p>앱의 관점에서 IdP의 로그 아웃 URL (사용자가 앱에서 로그 아웃 하도록 선택할 때 리디렉션되는 위치)입니다.| 로그 아웃 URL은 로그온 URL과 동일 하거나 "wa = wsignout1.0 1.0"이 추가 된 URL과 동일 합니다. 예: `https://fs.contoso.com/adfs/ls/?wa=wsignout1.0`| {Tenant-id}를 테 넌 트 ID로 바꿉니다.<p>SAML-P 프로토콜을 사용 하는 앱의 경우:<p>[https://login.microsoftonline.com/{tenant-id}/saml2](https://login.microsoftonline.com/{tenant-id}/saml2) <p> WS-FEDERATION 프로토콜을 사용 하는 앱의 경우:[https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0](https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0) |
+| **IdP Sign-on URL** <p>앱의 관점에서 IdP의 로그인 URL입니다 (사용자가 로그인을 위해 리디렉션 됨).| AD FS sign-on URL은 AD FS 페더레이션 서비스 이름 뒤에 "/adfs/ls/."가 옵니다. <p>예: `https://fs.contoso.com/adfs/ls/`| {Tenant-id}를 테 넌 트 ID로 바꿉니다. <p> SAML-P 프로토콜을 사용 하는 앱의 경우: [https://login.microsoftonline.com/{tenant-id}/saml2](https://login.microsoftonline.com/{tenant-id}/saml2) <p>WS-FEDERATION 프로토콜을 사용 하는 앱의 경우: [https://login.microsoftonline.com/{tenant-id}/wsfed](https://login.microsoftonline.com/{tenant-id}/wsfed) |
+| **IdP 로그 아웃 URL**<p>앱의 관점에서 IdP의 로그 아웃 URL (사용자가 앱에서 로그 아웃 하도록 선택할 때 리디렉션되는 위치)입니다.| 로그 아웃 URL은 로그온 URL과 동일 하거나 "wa = wsignout1.0 1.0"이 추가 된 URL과 동일 합니다. 예: `https://fs.contoso.com/adfs/ls/?wa=wsignout1.0`| {Tenant-id}를 테 넌 트 ID로 바꿉니다.<p>SAML-P 프로토콜을 사용 하는 앱의 경우:<p>[https://login.microsoftonline.com/{tenant-id}/saml2](https://login.microsoftonline.com/{tenant-id}/saml2) <p> WS-FEDERATION 프로토콜을 사용 하는 앱의 경우: [https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0](https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0) |
 | **토큰 서명 인증서**<p>IdP는 인증서의 개인 키를 사용 하 여 발급 된 토큰에 서명 합니다. 앱이 신뢰하도록 구성된 것과 동일한 IdP에서 토큰이 제공되었는지 확인합니다.| AD FS 토큰 서명 인증서는 AD FS 관리의 **인증서** 아래에 있습니다.| **SAML 서명 인증서**헤더의 응용 프로그램 **Single sign-on 속성** 에 있는 Azure Portal에서 찾습니다. 여기서는 앱에 업로드할 인증서를 다운로드할 수 있습니다.  <p>응용 프로그램에 둘 이상의 인증서가 있는 경우 페더레이션 메타 데이터 XML 파일에서 모든 인증서를 찾을 수 있습니다. |
 | **식별자/"issuer"**<p>앱의 관점에서 IdP의 식별자입니다 ("발급자 ID" 라고도 함).<p>SAML 토큰에서 값은 Issuer 요소로 표시 됩니다.| AD FS에 대 한 식별자는 일반적으로 AD FS 관리에서 **서비스 > 편집 페더레이션 서비스 속성**에 있는 페더레이션 서비스 식별자입니다. 예: `http://fs.contoso.com/adfs/services/trust`| {Tenant-id}를 테 넌 트 ID로 바꿉니다.<p>https: \/ /sts.windows.net/{tenant-id}/ |
 | **IdP 페더레이션 메타 데이터**<p>IdP의 공개적으로 사용할 수 있는 페더레이션 메타 데이터의 위치입니다. (일부 앱은 URL, 식별자 및 토큰 서명 인증서를 개별적으로 구성하는 관리자 대신 연합 메타데이터를 사용합니다.)| **서비스 > > > 끝점**아래의 AD FS 관리에서 페더레이션 메타 데이터 URL AD FS 찾습니다. 예: `https://fs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`| Azure AD에 대 한 해당 값은 패턴을 따릅니다 [https://login.microsoftonline.com/{TenantDomainName}/FederationMetadata/2007-06/FederationMetadata.xml](https://login.microsoftonline.com/{TenantDomainName}/FederationMetadata/2007-06/FederationMetadata.xml) . {TenantDomainName}을 "contoso.onmicrosoft.com" 형식의 테 넌 트 이름으로 바꿉니다.   <p>자세한 내용은 [페더레이션 메타데이터](https://docs.microsoft.com/azure/active-directory/azuread-dev/azure-ad-federation-metadata)를 참조하세요. |
@@ -483,7 +483,7 @@ Azure Portal에서 신뢰할 수 있는 위치에 대 한 제외 옵션을 구�
 
 배포가 완료 되 면 성공적인 배포를 사용자에 게 알리는 통신을 전송 하 고 수행 해야 하는 새로운 단계를 알릴 수 있습니다.
 
-* 사용자에 게 [액세스 패널](https://myapps.microsoft.com) 을 사용 하 여 마이그레이션된 모든 응용 프로그램에 액세스 하도록 지시 합니다. 
+* 사용자가 [내 앱](https://myapps.microsoft.com) 을 사용 하 여 마이그레이션된 모든 응용 프로그램에 액세스 하도록 지시 합니다. 
 
 * 사용자에 게 MFA 설정을 업데이트 해야 할 수 있는 사용자를 알려 줍니다. 
 

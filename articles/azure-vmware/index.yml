@@ -1,26 +1,26 @@
 ### YamlMime:Landing
-title: AVS(Azure VMware 솔루션) 설명서
-summary: AVS(Azure VMware 솔루션)를 사용하여 Azure에 VMware 프라이빗 클라우드를 배포하는 방법을 알아봅니다.
+title: Azure VMware Solution 설명서
+summary: Azure VMware Solution을 사용하여 Azure에 VMware 프라이빗 클라우드를 배포하는 방법을 알아봅니다.
 metadata:
-  title: AVS(Azure VMware 솔루션) 설명서
-  description: AVS(Azure VMware 솔루션)를 사용하여 Azure에 VMware 프라이빗 클라우드를 배포하는 방법을 알아봅니다.
+  title: Azure VMware Solution 설명서
+  description: Azure VMware Solution을 사용하여 Azure에 VMware 프라이빗 클라우드를 배포하는 방법을 알아봅니다.
   ms.service: azure-vmware
   ms.topic: landing-page
   author: dikamath
   ms.author: dikamath
   ms.date: 05/04/2020
-  ms.openlocfilehash: 2ae8f6bc5257dc4d7383516201912c504c4d6038
-  ms.sourcegitcommit: d9cd51c3a7ac46f256db575c1dfe1303b6460d04
+  ms.openlocfilehash: aad6bc60066d76c96dd38fa3ba1e94069bb9e25a
+  ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/04/2020
-  ms.locfileid: "82739453"
+  ms.lasthandoff: 08/22/2020
+  ms.locfileid: "88752107"
 landingContent:
-- title: AVS(Azure VMware 솔루션) 정보
+- title: Azure VMware Solution 정보
   linkLists:
   - linkListType: overview
     links:
-    - text: AVS(Azure VMware 솔루션)란?
+    - text: Azure VMware Solution이란?
       url: introduction.md
   - linkListType: get-started
     links:

@@ -1,6 +1,6 @@
 ---
 title: Azure Portal을 사용하여 SOAP API 가져오기 및 REST로 변환 | Microsoft Docs
-description: API Management를 사용하여 SOAP API를 가져오고 REST로 변환하는 방법을 알아봅니다.
+description: SOAP API를 가져오고 API Management를 사용하여 REST로 변환한 다음, Azure 및 개발자 포털에서 API를 테스트하는 방법을 알아봅니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 11/22/2017
 ms.author: apimpm
-ms.openlocfilehash: a2bec6401ae3ac53f46e92e9be38abf57a92163d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a87f4d0748d14ab995f75279b6a192f350165d6f
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74108108"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87843830"
 ---
 # <a name="import-a-soap-api-and-convert-to-rest"></a>SOAP API 가져오기 및 REST로 변환
 

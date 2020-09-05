@@ -4,12 +4,12 @@ description: 가상 컴퓨터에 대 한 일시 삭제로 백업을 더 안전 �
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.custom: references_regions
-ms.openlocfilehash: e447db2c3f862d2f577a9e7d8767946375abf4e0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a8b70d4c8240d096c19e5a8d7449921557b8896c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503543"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022244"
 ---
 # <a name="soft-delete-for-virtual-machines"></a>가상 머신의 일시 삭제
 
@@ -25,7 +25,7 @@ Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백�
 
 ## <a name="soft-delete-for-vms-using-azure-portal"></a>Azure Portal를 사용 하는 Vm에 대 한 일시 삭제
 
-1. VM의 백업 데이터를 삭제 하려면 백업을 중지 해야 합니다. Azure Portal 복구 서비스 자격 증명 모음으로 이동 하 여 백업 항목을 마우스 오른쪽 단추로 클릭 하 고 **백업 중지**를 선택 합니다.
+1. VM의 백업 데이터를 삭제 하려면 백업을 중지 해야 합니다. Azure Portal에서 Recovery Services 자격 증명 모음으로 이동 하 여 백업 항목을 마우스 오른쪽 단추로 클릭 하 고 **백업 중지**를 선택 합니다.
 
    ![Azure Portal 백업 항목의 스크린샷](./media/backup-azure-security-feature-cloud/backup-stopped.png)
 
@@ -38,7 +38,7 @@ Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백�
    ![Azure Portal의 스크린샷, 일시 삭제 상태의 VM](./media/backup-azure-security-feature-cloud/vm-soft-delete.png)
 
    > [!NOTE]
-   > 일시 삭제 된 백업 항목이 자격 증명 모음에 있으면 해당 시점에 자격 증명 모음을 삭제할 수 없습니다. 백업 항목이 영구적으로 삭제 된 후 자격 증명 모음 삭제를 시도 하 고, 자격 증명 모음에 일시 삭제 됨 상태의 항목이 없습니다.
+   > 일시 삭제 된 백업 항목이 자격 증명 모음에 있으면 해당 시점에 자격 증명 모음을 삭제할 수 없습니다. 백업 항목이 영구적으로 삭제 되 고 자격 증명 모음에 일시 삭제 됨 상태의 항목이 없는 경우 자격 증명 모음을 삭제 해 보세요.
 
 4. 일시 삭제 된 VM을 복원 하려면 먼저 삭제를 취소 해야 합니다. 삭제를 취소 하려면 일시 삭제 된 VM을 선택한 다음 **삭제 취소**옵션을 선택 합니다.
 
@@ -62,13 +62,13 @@ Vm에 대 한 일시 삭제는 의도 하지 않은 삭제 로부터 Vm의 백�
 ## <a name="soft-delete-for-vms-using-azure-powershell"></a>Azure PowerShell를 사용 하는 Vm에 대 한 일시 삭제
 
 > [!IMPORTANT]
-> Azure PS를 사용 하 여 일시 삭제를 사용 하는 데 필요한 Az Service 버전은 min 2.2.0입니다. ```Install-Module -Name Az.RecoveryServices -Force```를 사용 하 여 최신 버전을 가져옵니다.
+> Azure PowerShell를 사용 하 여 일시 삭제를 사용 하는 데 필요한 Az Services 버전은 최소 2.2.0입니다. ```Install-Module -Name Az.RecoveryServices -Force```를 사용 하 여 최신 버전을 가져옵니다.
 
 Azure Portal에 대해 위에서 설명한 것 처럼 Azure PowerShell를 사용 하는 동안 단계 순서가 동일 합니다.
 
 ### <a name="delete-the-backup-item-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 백업 항목 삭제
 
-[AzRecoveryServicesBackupProtection](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PS cmdlet을 사용 하 여 백업 항목을 삭제 합니다.
+[AzRecoveryServicesBackupProtection](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PowerShell cmdlet을 사용 하 여 백업 항목을 삭제 합니다.
 
 ```powershell
 Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoints -VaultId $myVaultID -Force
@@ -82,7 +82,7 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 ### <a name="undoing-the-deletion-operation-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 삭제 작업 취소
 
-먼저 일시 삭제 상태 (즉, 삭제 됨)에 있는 관련 백업 항목을 가져옵니다.
+먼저 일시 삭제 상태 (즉, 삭제 하려고 함)에 있는 관련 백업 항목을 가져옵니다.
 
 ```powershell
 
@@ -95,7 +95,7 @@ VM;iaasvmcontainerv2;selfhostrg;AppVM1    AzureVM             iaasvmcontainerv2;
 $myBkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureVM -WorkloadType AzureVM -VaultId $myVaultID -Name AppVM1
 ```
 
-그런 다음 실행 취소- [AzRecoveryServicesBackupItemDeletion](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PS cmdlet을 사용 하 여 실행 취소 작업을 수행 합니다.
+그런 다음 실행 취소- [AzRecoveryServicesBackupItemDeletion](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PowerShell cmdlet을 사용 하 여 실행 취소 작업을 수행 합니다.
 
 ```powershell
 Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -Force
@@ -110,7 +110,7 @@ AppVM1           Undelete             Completed            12/5/2019 12:47:28 PM
 ## <a name="soft-delete-for-vms-using-rest-api"></a>REST API를 사용 하는 Vm에 대 한 일시 삭제
 
 - [여기](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data)에 설명 된 대로 REST API를 사용 하 여 백업을 삭제 합니다.
-- 사용자가 이러한 삭제 작업을 실행 취소 하려면 [여기](backup-azure-arm-userestapi-backupazurevms.md#undo-the-stop-protection-and-delete-data)에 언급 된 단계를 참조 하세요.
+- 이러한 삭제 작업을 실행 취소 하려면 [여기](backup-azure-arm-userestapi-backupazurevms.md#undo-the-deletion)에 설명 된 단계를 참조 하세요.
 
 ## <a name="how-to-disable-soft-delete"></a>일시 삭제를 사용 하지 않도록 설정 하는 방법
 

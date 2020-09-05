@@ -2,25 +2,21 @@
 title: '자습서: RolePoint와 Azure Active Directory 통합 | Microsoft Docs'
 description: 이 자습서에서는 Azure Active Directory 및 RolePoint 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 68d37f40-15da-45f5-a9e1-d53f78e786d1
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 0b6fd17d2f8577532778733866260f43e9ac7685
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 235010cbcdde326cf17643cec81f3b6fcb1eea59
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67092727"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548772"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>자습서: RolePoint와 Azure Active Directory 통합
 
@@ -152,7 +148,7 @@ RolePoint 쪽에서 Single Sign-On을 설정하려면 [RolePoint 지원 팀](mai
 
     1. **이름** 상자에 **BrittaSimon**을 입력합니다.
   
-    1. **사용자 이름** 상자에 **BrittaSimon@\<yourcompanydomain>.\<extension>** 을 입력합니다. (예: BrittaSimon@contoso.com)
+    1. **사용자 이름** 상자에 **BrittaSimon@\<yourcompanydomain>\<extension>.** 을 입력합니다. (예: BrittaSimon@contoso.com)
 
     1. **암호 표시**를 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
 

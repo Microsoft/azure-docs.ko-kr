@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: e01954e0f2f311a7229a69cb18f881e0491b80d3
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: c35647a46cd252ce045d10e8dfefcf78236ba74b
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083041"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961723"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Linux의 Azure App Service에 대한 FAQ
 
@@ -35,7 +35,7 @@ Linux의 App Service를 릴리스하면서 현재 플랫폼에 기능을 추가�
 | Java SE         | JAR 앱을 시작 하는 명령 (예: `java -jar /home/site/wwwroot/app.jar --server.port=80` ) |
 | Tomcat          | 필요한 구성을 수행할 스크립트의 위치입니다 (예: `/home/site/deployments/tools/startup_script.sh` ).          |
 | Node.js         | PM2 구성 파일 또는 스크립트 파일                                |
-| .NET Core       | 컴파일된 DLL 이름으로,`dotnet <myapp>.dll`                                 |
+| .NET Core       | 컴파일된 DLL 이름으로, `dotnet <myapp>.dll`                                 |
 | Ruby            | 앱을 초기화 하려는 Ruby 스크립트                     |
 
 이러한 명령이 나 스크립트는 기본 제공 Docker 컨테이너가 시작 된 후 응용 프로그램 코드를 시작 하기 전에 실행 됩니다.
@@ -122,7 +122,7 @@ const io = require('socket.io')(server,{
 
 **프라이빗 레지스트리 옵션에서 이미지 이름의 형식은 무엇인가요?**
 
-프라이빗 레지스트리 URL(예: myacr.azurecr.io/dotnet:latest)을 포함하여 전체 이미지 이름을 추가합니다. 사용자 지정 포트를 사용하는 이미지 이름은 [포털을 통해 입력할 수 없습니다](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650). 설정 하려면 `docker-custom-image-name` [ `az` 명령줄 도구](https://docs.microsoft.com/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set)를 사용 합니다.
+프라이빗 레지스트리 URL(예: myacr.azurecr.io/dotnet:latest)을 포함하여 전체 이미지 이름을 추가합니다. 사용자 지정 포트를 사용하는 이미지 이름은 [포털을 통해 입력할 수 없습니다](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650). 설정 하려면 `docker-custom-image-name` [ `az` 명령줄 도구](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set)를 사용 합니다.
 
 **사용자 지정 컨테이너 이미지에 포트를 두 개 이상 표시할 수 있나요?**
 
@@ -130,7 +130,7 @@ const io = require('socket.io')(server,{
 
 **사용자 고유의 스토리지를 가져올 수 있나요?**
 
-예, [사용자 고유의 스토리지 가져오기](https://docs.microsoft.com/azure/app-service/configure-connect-to-azure-storage)는 미리 보기로 제공됩니다.
+예, [사용자 고유의 스토리지 가져오기](./configure-connect-to-azure-storage.md)는 미리 보기로 제공됩니다.
 
 **내 사용자 지정 컨테이너의 파일 시스템 또는 실행 중인 프로세스를 SCM 사이트에서 찾을 수 없는 이유는 무엇인가요?**
 

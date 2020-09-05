@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 06/23/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ae3851da1dbcc5f7ac37821a64cada20164c7661
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 819ac1f01cc182c79571de35ec0753f694dc7722
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825007"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653616"
 ---
 # <a name="azure-storage-types-for-sap-workload"></a>SAP 워크로드에 대한 Azure Storage 형식
 Azure에는 용량, 처리량, 대기 시간 및 가격이 크게 다른 많은 저장소 유형이 있습니다. 일부 저장소 유형은 또는 SAP 시나리오에 사용할 수 있는 제한 되지 않습니다. 반면, 몇 가지 Azure storage 유형은 특정 SAP 워크 로드 시나리오에 적합 하거나 최적화 되어 있습니다. 특히 SAP HANA의 경우 일부 Azure storage 유형은 SAP HANA 사용에 대해 인증을 받았습니다. 이 문서에서는 다양 한 유형의 저장소를 살펴보고 SAP 워크 로드 및 SAP 구성 요소에 대 한 기능 및 유용성을 설명 합니다.
@@ -36,7 +36,7 @@ Azure에서 제공 해야 하는 다양 한 저장소 형식 중 일부에 적�
 
 ### <a name="azure-managed-disks"></a>Azure managed disks
 
-관리 디스크는 Azure Storage 계정에 저장 된 Vhd 대신 사용할 수 있는 Azure Resource Manager의 리소스 유형입니다. Managed Disks 연결 된 가상 컴퓨터의 [가용성 집합] [가상-컴퓨터-관리 가용성]에 자동으로 맞춰집니다. 따라서 가상 컴퓨터와 가상 컴퓨터에서 실행 되는 서비스의 가용성을 향상 시킬 수 있습니다. 자세한 내용은 [개요 문서](../../windows/managed-disks-overview.md)를 참조하세요.
+관리 디스크는 Azure Storage 계정에 저장 된 Vhd 대신 사용할 수 있는 Azure Resource Manager의 리소스 유형입니다. Managed Disks 연결 된 가상 컴퓨터의 [가용성 집합] [가상-컴퓨터-관리 가용성]에 자동으로 맞춰집니다. 따라서 가상 컴퓨터와 가상 컴퓨터에서 실행 되는 서비스의 가용성을 향상 시킬 수 있습니다. 자세한 내용은 [개요 문서](../../managed-disks-overview.md)를 참조하세요.
 
 복원 력과 관련 된이 예제에서는 관리 디스크의 장점을 보여 줍니다.
 
@@ -61,7 +61,7 @@ Azure에서 제공 해야 하는 다양 한 저장소 형식 중 일부에 적�
 - NetWeaver 또는 S/4HANA에 대 한 전역 전송 디렉터리를 포함 하는 공유 디스크 또는 파일 공유 이러한 공유의 콘텐츠는 여러 Vm에서 실행 되는 소프트웨어에서 사용 되거나 고가용성 장애 조치 (failover) 클러스터 시나리오를 작성 하는 데 사용 됩니다.
 - EDI 프로세스 또는 이와 유사한/sapmnt 디렉터리 또는 공통 파일 공유 이러한 공유의 콘텐츠는 여러 Vm에서 실행 되는 소프트웨어에서 사용 되거나 고가용성 장애 조치 (failover) 클러스터 시나리오를 작성 하는 데 사용 됩니다.
 
-다음 섹션에서는 위의 네 가지 시나리오에 적용 되는 다양 한 Azure storage 유형 및 SAP 워크 로드에 대 한 유용성을 설명 합니다. 다양 한 Azure storage 유형을 사용 해야 하는 방법에 대 한 일반적인 분류는 [azure에서 사용할 수 있는 디스크 유형](../../linux/disks-types.md)문서에 설명 되어 있습니다. SAP 워크 로드에 대해 서로 다른 Azure storage 유형을 사용 하기 위한 권장 사항은 majorly 되지 않습니다.
+다음 섹션에서는 위의 네 가지 시나리오에 적용 되는 다양 한 Azure storage 유형 및 SAP 워크 로드에 대 한 유용성을 설명 합니다. 다양 한 Azure storage 유형을 사용 해야 하는 방법에 대 한 일반적인 분류는 [azure에서 사용할 수 있는 디스크 유형](../../disks-types.md)문서에 설명 되어 있습니다. SAP 워크 로드에 대해 서로 다른 Azure storage 유형을 사용 하기 위한 권장 사항은 majorly 되지 않습니다.
 
 S/4HANA의 SAP NetWeaver/응용 프로그램 계층에 대 한 Azure storage 형식에 대 한 지원 제한 사항은 [sap support note 2015553](https://launchpad.support.sap.com/#/notes/2015553) for SAP HANA 인증 및 지원 되는 azure 저장소 형식에 대 한 자세한 내용은 [azure 가상 컴퓨터 저장소 구성 SAP HANA](./hana-vm-operations-storage.md)문서를 참조 하세요.
 
@@ -84,24 +84,24 @@ S/4HANA의 SAP NetWeaver/응용 프로그램 계층에 대 한 Azure storage 형
 | DBMS 로그 볼륨 비-M o M/Mv2 VM 제품군 | 지원되지 않음 | 제한 된 적합 (비-prod) | 최대 중간 규모의 워크 로드에 적합 | 권장 | 지원되지 않음 |
 
 
-<sup>1</sup> 로그/다시 실행 로그 볼륨에 대 한 M/Mv2 VM 제품군에 대해 [Azure 쓰기 가속기](../../windows/how-to-enable-write-accelerator.md) 를 <sup>사용 하는</sup> 경우 anf를 사용 하려면/hana/data와/hana/log를 사용 해야 합니다. 
+<sup>1</sup> 로그/다시 실행 로그 볼륨에 대 한 M/Mv2 VM 제품군에 대해 [Azure 쓰기 가속기](../../how-to-enable-write-accelerator.md) 를 <sup>사용 하는</sup> 경우 anf를 사용 하려면/hana/data와/hana/log를 사용 해야 합니다. 
 
 다음과 같은 다양 한 저장소 유형 목록에서 짐작할 수 있는 특징이 있습니다.
 
 | 사용 시나리오 | 표준 HDD | 표준 SSD | Premium Storage | Ultra disk | Azure NetApp Files |
 | --- | --- | --- | --- | --- | --- |
-| 처리량/IOPS SLA | no | no | 예 | 예 | 예 |
+| 처리량/IOPS SLA | no | 아니요 | 예 | 예 | 예 |
 | 대기 시간 읽기 | high | 중간에서 높음 | low | 하위 밀리초 | 하위 밀리초 |
 | 대기 시간 쓰기 | high | 중간에서 높음  | 낮음 (1-밀리초<sup>1</sup>) | 하위 밀리초 | 하위 밀리초 |
-| HANA 지원 | no | no | 예<sup>1</sup> | 예 | 예 |
-| 디스크 스냅숏 가능 | 예 | 예 | 예 | no | 예 |
+| HANA 지원 | no | 아니요 | 예<sup>1</sup> | 예 | 예 |
+| 디스크 스냅숏 가능 | 예 | 예 | 예 | 아니요 | 예 |
 | 가용성 집합을 사용 하는 경우 다른 저장소 클러스터에 디스크 할당 | 관리 디스크를 통해 | 관리 디스크를 통해 | 관리 디스크를 통해 | 가용성 집합을 통해 배포 된 Vm에서 지원 되지 않는 디스크 유형 | 아니요<sup>3</sup> |
 | 가용성 영역 정렬 | 예 | 예 | 예 | 예 | Microsoft 참여 요구 |
-| 영역 중복성 | 관리 디스크가 아닙니다. | 관리 디스크가 아닙니다. | 관리 디스크가 아닙니다. | no | no |
-| 지리적 중복성 | 관리 디스크가 아닙니다. | 관리 디스크가 아닙니다. | no | no | no |
+| 영역 중복성 | 관리 디스크가 아닙니다. | 관리 디스크가 아닙니다. | 관리 디스크가 아닙니다. | 아니요 | 아니요 |
+| 지리적 중복성 | 관리 디스크가 아닙니다. | 관리 디스크가 아닙니다. | 아니요 | 아니요 | 아니요 |
 
 
-<sup>1</sup> 로그/다시 실행 로그 볼륨에 대 한 M/Mv2 VM 제품군에 대해 [Azure 쓰기 가속기](../../windows/how-to-enable-write-accelerator.md) 사용
+<sup>1</sup> 로그/다시 실행 로그 볼륨에 대 한 M/Mv2 VM 제품군에 대해 [Azure 쓰기 가속기](../../how-to-enable-write-accelerator.md) 사용
 
 <sup>2</sup> 비용은 프로 비전 된 IOPS 및 처리량에 따라 달라 집니다.
 
@@ -123,7 +123,7 @@ Azure premium SSD 저장소는 다음을 제공 하는 목표로 도입 되었�
 * IOPS 및 처리량에 대 한 Sla
 * I/o 대기 시간의 변동 감소
 
-이 유형의 저장소는 DBMS 워크 로드를 대상으로 하며, 작은 숫자 밀리초의 대기 시간을 요구 하는 저장소 트래픽과, Azure premium storage의 경우 IOPS 및 처리량 비용에 대 한 Sla는 해당 디스크에 저장 된 실제 데이터 볼륨이 아니라 디스크 내에 저장 된 데이터의 크기에 관계 없이 이러한 디스크의 크기 범주에 해당 합니다. [프리미엄 SSD](../../linux/disks-types.md#premium-ssd)문서에 표시 된 크기 범주에 직접 매핑되지 않는 디스크를 premium storage에 만들 수도 있습니다. 이 문서의 결론은 다음과 같습니다.
+이 유형의 저장소는 DBMS 워크 로드를 대상으로 하며, 작은 숫자 밀리초의 대기 시간을 요구 하는 저장소 트래픽과, Azure premium storage의 경우 IOPS 및 처리량 비용에 대 한 Sla는 해당 디스크에 저장 된 실제 데이터 볼륨이 아니라 디스크 내에 저장 된 데이터의 크기에 관계 없이 이러한 디스크의 크기 범주에 해당 합니다. [프리미엄 SSD](../../disks-types.md#premium-ssd)문서에 표시 된 크기 범주에 직접 매핑되지 않는 디스크를 premium storage에 만들 수도 있습니다. 이 문서의 결론은 다음과 같습니다.
 
 - 저장소는 범위로 구성 됩니다. 예를 들어 513 GiB ~ 1024 GiB 용량 범위의 디스크는 동일한 기능 및 동일한 월별 비용을 공유 합니다.
 - GiB 당 IOPS는 크기 범주에 걸쳐 선형으로 추적 되지 않습니다. 32 GiB 미만의 작은 디스크는 GiB 당 IOPS 속도가 더 높습니다. 32 GiB ~ 1024 GiB 보다 큰 디스크의 경우 GiB 당 IOPS 요금은 GiB 당 4-5 IOPS 사이입니다. 32767 GiB 큰 디스크의 경우 GiB 당 IOPS 속도는 1이 됩니다.
@@ -137,7 +137,7 @@ SAP 워크 로드에 대 한 기능 행렬은 다음과 같습니다.
 | 기능| 의견| 노트/링크 | 
 | --- | --- | --- | 
 | OS 기본 VHD | 낫지만 | 모든 시스템 |
-| 데이터 디스크 | 낫지만 | 모든 시스템- [특히 SAP HANA](../../windows/how-to-enable-write-accelerator.md) |
+| 데이터 디스크 | 낫지만 | 모든 시스템- [특히 SAP HANA](../../how-to-enable-write-accelerator.md) |
 | SAP 전역 전송 디렉터리 | YES | [지원됨](https://launchpad.support.sap.com/#/notes/2015553) |
 | SAP sapmnt | 낫지만 | 모든 시스템 |
 | 백업 저장소 | 낫지만 | 백업에 대 한 단기 저장 |
@@ -149,12 +149,12 @@ SAP 워크 로드에 대 한 기능 행렬은 다음과 같습니다.
 | 디스크당 최대 IOPS | 2만 [디스크 크기에 종속](https://azure.microsoft.com/pricing/details/managed-disks/) | [VM 제한](../../sizes.md) 도 고려 |
 | 처리량 SLA | YES | - |
 | 처리량 선형-용량 | 대괄호 안의 반 선형 | [관리 디스크 가격 책정](https://azure.microsoft.com/pricing/details/managed-disks/) |
-| HANA 인증 | YES | [특별히 SAP HANA](../../windows/how-to-enable-write-accelerator.md) |
+| HANA 인증 | YES | [특별히 SAP HANA](../../how-to-enable-write-accelerator.md) |
 | 디스크 스냅숏 가능 | YES | - |
-| Azure Backup VM 스냅숏 가능 | YES | [쓰기 가속기](../../windows/how-to-enable-write-accelerator.md) 캐시 된 디스크 제외  |
+| Azure Backup VM 스냅숏 가능 | YES | [쓰기 가속기](../../how-to-enable-write-accelerator.md) 캐시 된 디스크 제외  |
 | 비용 | MEDIUM | - |
 
-Azure premium storage는 Azure premium storage와 함께 제공 되는 일반적인 캐싱 유형을 사용 하는 SAP HANA 저장소 대기 시간 Kpi를 충족 하지 않습니다. SAP HANA 로그 쓰기에 대 한 저장소 대기 시간 Kpi를 충족 하기 위해 [쓰기 가속기 사용](../../windows/how-to-enable-write-accelerator.md)문서에 설명 된 대로 Azure 쓰기 가속기 캐싱을 사용 해야 합니다. Azure 쓰기 가속기는 트랜잭션 로그 쓰기 및 다시 실행 로그 쓰기에 대해 다른 모든 DBMS 시스템을 활용 합니다. 따라서 모든 SAP DBMS 배포에서 사용 하는 것이 좋습니다. SAP HANA azure premium storage와 함께 Azure 쓰기 가속기를 사용 하는 것은 필수입니다.
+Azure premium storage는 Azure premium storage와 함께 제공 되는 일반적인 캐싱 유형을 사용 하는 SAP HANA 저장소 대기 시간 Kpi를 충족 하지 않습니다. SAP HANA 로그 쓰기에 대 한 저장소 대기 시간 Kpi를 충족 하기 위해 [쓰기 가속기 사용](../../how-to-enable-write-accelerator.md)문서에 설명 된 대로 Azure 쓰기 가속기 캐싱을 사용 해야 합니다. Azure 쓰기 가속기는 트랜잭션 로그 쓰기 및 다시 실행 로그 쓰기에 대해 다른 모든 DBMS 시스템을 활용 합니다. 따라서 모든 SAP DBMS 배포에서 사용 하는 것이 좋습니다. SAP HANA azure premium storage와 함께 Azure 쓰기 가속기를 사용 하는 것은 필수입니다.
 
 
 
@@ -184,8 +184,8 @@ Azure ultra disks는Azure IaaS VM에 대해 높은 처리량, 높은 IOPS 및 �
 울트라 디스크를 만들 때 3 개의 차원을 정의할 수 있습니다.
 
 - 디스크의 용량입니다. 범위는 4 GiB ~ 65536 GiB
-- 디스크에 대해 프로 비전 된 IOPS입니다. 최대 값은 디스크 용량에 적용 됩니다. 자세한 내용은 [Ultra disk](../../linux/disks-types.md#ultra-disk) 문서를 참조 하세요.
-- 프로 비전 된 저장소 대역폭. 디스크 용량에 따라 최대 대역폭이 다르게 적용 됩니다. 자세한 내용은 [Ultra disk](../../linux/disks-types.md#ultra-disk) 문서를 참조 하세요.
+- 디스크에 대해 프로 비전 된 IOPS입니다. 최대 값은 디스크 용량에 적용 됩니다. 자세한 내용은 [Ultra disk](../../disks-types.md#ultra-disk) 문서를 참조 하세요.
+- 프로 비전 된 저장소 대역폭. 디스크 용량에 따라 최대 대역폭이 다르게 적용 됩니다. 자세한 내용은 [Ultra disk](../../disks-types.md#ultra-disk) 문서를 참조 하세요.
 
 단일 디스크의 비용은 특정 디스크에 대해 개별적으로 정의할 수 있는 3 차원에 따라 결정 됩니다. 
 
@@ -312,7 +312,7 @@ Azure 표준 HDD 저장소는 2014 년에 SAP NetWeaver 워크 로드에 대 한
 | OS 기본 VHD | 적합 하지 않음 | - |
 | 데이터 디스크 | 적합 하지 않음 | - |
 | SAP 전역 전송 디렉터리 | 아니요 | [지원 안 됨](https://launchpad.support.sap.com/#/notes/2015553) |
-| SAP sapmnt | 아니요 | 지원 안 함 |
+| SAP sapmnt | 아니요 | 지원되지 않음 |
 | 백업 저장소 | 낫지만 | - |
 | 공유/공유 디스크 | 사용할 수 없음 | Azure Files 또는 타사 필요 |
 | 복원력 | LRS, GRS | 디스크에 사용할 수 있는 ZRS 없음 |
@@ -333,7 +333,7 @@ Azure 표준 HDD 저장소는 2014 년에 SAP NetWeaver 워크 로드에 대 한
 ## <a name="azure-vm-limits-in-storage-traffic"></a>저장소 트래픽의 Azure VM 제한
 온-프레미스 시나리오와 반대로, 선택 하는 개별 VM 유형은 달성할 수 있는 저장소 대역폭에서 중요 한 역할을 담당 합니다. 다른 저장소 유형에 대해 다음 사항을 고려해 야 합니다.
 
-| 스토리지 유형| Linux | Windows | 주석 |
+| 스토리지 유형| Linux | Windows | 의견 |
 | --- | --- | --- | --- |
 | 표준 HDD | [Azure에서 Linux Vm에 대 한 크기](../../sizes.md) | [Azure에서 Windows Vm에 대 한 크기](../../sizes.md) | 보통 또는 큰 Vm의 저장소 제한을 터치 하기 어려울 가능성이 높습니다. |
 | 표준 SSD | [Azure에서 Linux Vm에 대 한 크기](../../sizes.md) | [Azure에서 Windows Vm에 대 한 크기](../../sizes.md) | 보통 또는 큰 Vm의 저장소 제한을 터치 하기 어려울 가능성이 높습니다. |
@@ -352,7 +352,7 @@ SAP 시스템의 수명 주기에서 Azure Vm의 크기를 조정 하는 경우 
 
 
 ## <a name="striping-or-not-striping"></a>스트라이핑 또는 스트라이핑 안 함
-여러 Azure 디스크에서 하나의 큰 볼륨으로 스트라이프 세트를 만들면 개별 디스크의 IOPS 및 처리량을 하나의 볼륨에 누적 시킬 수 있습니다. Azure standard storage 및 Azure premium storage에만 사용 됩니다. 디스크 용량에 독립적으로 처리량 및 IOPS를 구성할 수 있는 Azure Ultra disk는 스트라이프 세트를 사용 하지 않아도 됩니다. NFS 또는 SMB 기반 공유 볼륨은 스트라이프 할 수 없습니다. Azure premium storage 처리량 및 IOPS의 비선형 특성으로 인해 대용량 단일 Azure premium storage 디스크와 동일한 IOPS 및 처리량을 사용 하 여 더 작은 용량을 프로 비전 할 수 있습니다. Azure premium storage를 사용 하 여 저렴 한 비용으로 높은 처리량 또는 IOPS를 달성할 수 있는 방법입니다. 예를 들어:
+여러 Azure 디스크에서 하나의 큰 볼륨으로 스트라이프 세트를 만들면 개별 디스크의 IOPS 및 처리량을 하나의 볼륨에 누적 시킬 수 있습니다. Azure standard storage 및 Azure premium storage에만 사용 됩니다. 디스크 용량에 독립적으로 처리량 및 IOPS를 구성할 수 있는 Azure Ultra disk는 스트라이프 세트를 사용 하지 않아도 됩니다. NFS 또는 SMB 기반 공유 볼륨은 스트라이프 할 수 없습니다. Azure premium storage 처리량 및 IOPS의 비선형 특성으로 인해 대용량 단일 Azure premium storage 디스크와 동일한 IOPS 및 처리량을 사용 하 여 더 작은 용량을 프로 비전 할 수 있습니다. Azure premium storage를 사용 하 여 저렴 한 비용으로 높은 처리량 또는 IOPS를 달성할 수 있는 방법입니다. 예를 들면 다음과 같습니다.
 
 - 두 P15 premium storage 디스크에 대 한 스트라이프를 통해 다음의 처리량을 얻습니다. 
 - 250 MiB/초. 이러한 볼륨에는 512 GiB 용량이 있습니다. 초당 250 MiB 처리량을 제공 하는 단일 디스크를 사용 하려면 2 개의 TiB 용량으로 P40 디스크를 선택 해야 합니다. 

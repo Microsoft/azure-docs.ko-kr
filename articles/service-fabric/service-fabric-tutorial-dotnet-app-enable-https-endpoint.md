@@ -3,13 +3,13 @@ title: Kestrel을 사용하여 HTTPS 엔드포인트 추가
 description: 이 자습서에서는 Kestrel을 사용하여 ASP.NET Core 프런트 엔드 웹 서비스에 HTTPS 엔드포인트를 추가하고 클러스터에 애플리케이션을 배포하는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 07/22/2019
-ms.custom: mvc
-ms.openlocfilehash: b9e1800d07d418ff385f2c5e7af112b170e3fd44
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.custom: mvc, devx-track-csharp
+ms.openlocfilehash: 6b8587982a8cbe496427960495055adbd68a07a7
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780201"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997288"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>자습서: Kestrel을 사용하여 ASP.NET Core Web API 프런트 엔드 서비스에 HTTPS 엔드포인트 추가
 

@@ -22,11 +22,6 @@
       href: data-lake-store-get-started-powershell.md
     - name: Azure CLI 사용
       href: data-lake-store-get-started-cli-2.0.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 방법
   items:
     - name: 데이터 로드 및 이동
@@ -177,6 +172,9 @@
       href: /azure/templates/microsoft.datalakestore/allversions
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/dls'
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Azure 로드맵

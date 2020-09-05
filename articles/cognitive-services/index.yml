@@ -10,13 +10,14 @@ metadata:
   author: nitinme
   ms.author: nitinme
   manager: nitinme
-  ms.date: 03/24/2020
-  ms.openlocfilehash: 18c854389122c7e05a84ea0fd42b0cd2fd0c4c1c
-  ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+  ms.custom: custom-portals-hub
+  ms.date: 08/28/2020
+  ms.openlocfilehash: fac52ac6cc7018d2ddcaedd663abf26275f4929e
+  ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/10/2020
-  ms.locfileid: "86224369"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "89074698"
 highlightedContent:
   items:
   - title: Cognitive Services란?
@@ -28,19 +29,19 @@ highlightedContent:
   - title: Cognitive Services 및 기계 학습
     itemType: concept
     url: ./cognitive-services-and-machine-learning.md
-  - title: Cognitive Services의 언어 지원
+  - title: 언어 지원
     itemType: reference
     url: ./language-support.md
-  - title: Cognitive Services 리소스 만들기
+  - title: 리소스 만들기
     itemType: how-to-guide
     url: ./cognitive-services-apis-create-account.md
-  - title: 컨테이너에서 Cognitive Services 사용
+  - title: 컨테이너에서 사용
     itemType: concept
     url: ./cognitive-services-container-support.md
-  - title: Cognitive Services용 가상 네트워크
+  - title: 가상 네트워크
     itemType: architecture
     url: cognitive-services-virtual-networks.md
-  - title: Cognitive Services 보안
+  - title: 보안
     itemType: concept
     url: cognitive-services-security.md
 conceptualContent:
@@ -62,7 +63,7 @@ conceptualContent:
       text: Form Recognizer
     - url: ./ink-recognizer/index.yml
       itemType: overview
-      text: Ink Recognizer(미리 보기)
+      text: Ink Recognizer(사용 중지)
     - url: ../media-services/video-indexer/index.yml
       itemType: overview
       text: 비디오 인덱서
@@ -71,7 +72,7 @@ conceptualContent:
     links:
     - url: ./immersive-reader/index.yml
       itemType: overview
-      text: 몰입형 리더(미리 보기)
+      text: 몰입형 리더
     - url: ./luis/index.yml
       itemType: overview
       text: 언어 이해(LUIS)
@@ -90,6 +91,9 @@ conceptualContent:
     - url: ./speech-service/index.yml
       itemType: overview
       text: Speech Service
+    - url: https://speech.microsoft.com/
+      itemType: overview
+      text: " - Speech Studio에서 사용자 지정"
   - title: 의사 결정
     summary: 합리적이고 효율적인 의사 결정을 위해 권장 사항을 표시하는 앱을 빌드하세요.
     links:
@@ -129,38 +133,41 @@ conceptualContent:
     - url: ./containers/container-faq.md
       itemType: reference
       text: Cognitive Services 컨테이너 FAQ
-tools:
-  title: SDK(소프트웨어 개발 키트)
-  summary: 선호하는 프로그래밍 언어로 Cognitive Services SDK를 시작하세요.
-  items:
-  - title: C#
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Csharp.svg
-    url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client?view=azure-dotnet
-  - title: Go
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg
-    url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices
-  - title: Java
-    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
-    url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client?view=azure-java-stable
-  - title: JavaScript
-    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
-    url: https://docs.microsoft.com/javascript/api/overview/azure/cognitive-services?view=azure-node-latest
-  - title: Python
-    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
-    url: https://docs.microsoft.com/python/api/overview/azure/cognitive-services?view=azure-python
-  - title: R
-    imageSrc: https://docs.microsoft.com/media/logos/logo_R.svg
-    url: https://github.com/Azure/AzureCognitive
 additionalContent:
   sections:
-  - items:
-    - title: 추가 리소스
+  - title: 추가 리소스
+    items:
+    - title: 사용자 지정을 위한 포털
+      links:
+      - text: Custom Translator
+        url: https://portal.customtranslator.azure.ai/
+      - text: Custom Vision
+        url: https://www.customvision.ai/
+      - text: 언어 이해(LUIS)
+        url: https://luis.ai
+      - text: QnA Maker
+        url: https://www.qnamaker.ai/
+      - text: Speech Studio
+        url: https://speech.microsoft.com/
+    - title: SDK 및 REST API
+      links:
+      - text: C#
+        url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client?view=azure-dotnet
+      - text: Go
+        url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices
+      - text: Java
+        url: https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client?view=azure-java-stable
+      - text: JavaScript
+        url: https://docs.microsoft.com/javascript/api/overview/azure/cognitive-services?view=azure-node-latest
+      - text: Python
+        url: https://docs.microsoft.com/python/api/overview/azure/cognitive-services?view=azure-python
+      - text: R
+        url: https://github.com/Azure/AzureCognitive
+      - text: Cognitive Services 관리 REST API
+        url: https://docs.microsoft.com/rest/api/cognitiveservices/
+    - title: 도구
       links:
       - text: Azure CLI
         url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest
       - text: PowerShell
         url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/?view=azps-2.5.0#cognitive_services
-    - title: REST API
-      links:
-      - text: Cognitive Services 관리
-        url: https://docs.microsoft.com/rest/api/cognitiveservices/

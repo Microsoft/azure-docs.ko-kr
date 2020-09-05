@@ -2,25 +2,21 @@
 title: '자습서: Skills Base와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Skills Base 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 237d90c4-8243-4f80-a305-b5ad9204159e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 60f8e4408a3a7d4f05bc820f0c0a825106b47009
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1c8135f39517a5983f700c35f08a5c0749113450
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87017114"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552240"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skills-base"></a>자습서: Skills Base와 Azure Active Directory 통합
 

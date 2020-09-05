@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f7bf1c8f3f1ecbb21207776a99bba99d123ea891
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 05be5295ae5f8c73c916a21bba7dbc98ab0c5e87
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171944"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002796"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-cognitive-search"></a>Azure Cognitive Search에서 패싯 탐색을 구현하는 방법
 
@@ -63,7 +64,7 @@ ms.locfileid: "86171944"
 
 ### <a name="query-basics"></a>쿼리 기본 사항
 
-Azure Cognitive Search에서는 하나 이상의 쿼리 매개 변수를 통해 요청이 지정됩니다(각 매개 변수에 대한 설명은 [문서 검색](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) 참조). 필수 사항인 쿼리 매개 변수는 없지만 쿼리가 유효하려면 하나 이상의 쿼리 매개 변수가 있어야 합니다.
+Azure Cognitive Search에서는 하나 이상의 쿼리 매개 변수를 통해 요청이 지정됩니다(각 매개 변수에 대한 설명은 [문서 검색](/rest/api/searchservice/Search-Documents) 참조). 필수 사항인 쿼리 매개 변수는 없지만 쿼리가 유효하려면 하나 이상의 쿼리 매개 변수가 있어야 합니다.
 
 관련 없는 적중 항목을 필터링하는 기능으로 이해되는 정밀도는 다음 두 식 중 하나 또는 둘 다를 통해 실현됩니다.
 
@@ -230,7 +231,7 @@ SearchParameters sp = new SearchParameters()
 };
 ```
 
-패싯 쿼리 매개 변수는 필드로 설정되어 있으며, 데이터 형식에 따라 `count:<integer>`, `sort:<>`, `interval:<integer>` 및 `values:<list>`를 포함하는 쉼표로 구분된 목록으로 추가 매개 변수화할 수 있습니다. 값 목록은 범위를 설정할 때 숫자 데이터에 대해 지원됩니다. 자세한 내용은 [문서 검색(Azure Cognitive Search API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) 을 참조하세요.
+패싯 쿼리 매개 변수는 필드로 설정되어 있으며, 데이터 형식에 따라 `count:<integer>`, `sort:<>`, `interval:<integer>` 및 `values:<list>`를 포함하는 쉼표로 구분된 목록으로 추가 매개 변수화할 수 있습니다. 값 목록은 범위를 설정할 때 숫자 데이터에 대해 지원됩니다. 자세한 내용은 [문서 검색(Azure Cognitive Search API)](/rest/api/searchservice/Search-Documents) 을 참조하세요.
 
 패싯과 함께, 애플리케이션에서 작성된 요청도 패싯 값 선택 항목에 따라 후보 문서 집합의 범위를 좁히는 필터를 작성해야 합니다. 자전거 매장의 경우 패싯 탐색은 *어떤 색상, 어떤 제조업체, 어떤 종류의 자전거를 판매합니까?* 와 같은 질문에 대한 단서를 제공합니다. 필터링은 *이 가격대의 빨간색 산악용 자전거는 무엇입니까?* 와 같은 질문에 답변합니다. 빨간색 제품만 표시되도록 사용자가 "빨간색"을 클릭하면 애플리케이션에서 보내는 다음 쿼리에 `$filter=Color eq 'Red'`가 포함됩니다.
 
@@ -319,7 +320,7 @@ Content type
 
 **정확한 수의 패싯을 가져오는지 확인**
 
-경우에 따라 패싯 수가 결과 집합과 일치하지 않을 수 있습니다[[Azure Cognitive Search의 패싯 탐색(Microsoft Q&A 질문 페이지)](https://docs.microsoft.com/answers/topics/azure-cognitive-search.html)참조].
+경우에 따라 패싯 수가 결과 집합과 일치하지 않을 수 있습니다[[Azure Cognitive Search의 패싯 탐색(Microsoft Q&A 질문 페이지)](/answers/topics/azure-cognitive-search.html)참조].
 
 패싯 수는 분할 아키텍처로 인해 부정확할 수 있습니다. 모든 검색 인덱스에는 여러 개의 분할된 데이터베이스가 있으며, 각 분할된 데이터베이스는 문서 수에 따라 상위 N개의 패싯을 보고합니다. 이 값이 단일 결과로 통합됩니다. 분할된 데이터베이스 중에 일치하는 값이 많은 것과 적은 것이 있는 경우 결과에서 일부 패싯 값이 누락되거나 적은 개수로 나타날 수 있습니다.
 
@@ -333,7 +334,7 @@ Content type
 <a name="rangefacets"></a>
 
 ## <a name="filter-based-on-a-range"></a>범위를 기준으로 필터링
-값 범위에 대한 패싯은 일반적인 검색 애플리케이션 요구 사항입니다. 범위는 숫자 데이터 및 DateTime 값에 대해 지원됩니다. 각 접근 방법에 대한 자세한 내용은 [문서 검색(Azure Cognitive Search API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)을 참조하세요.
+값 범위에 대한 패싯은 일반적인 검색 애플리케이션 요구 사항입니다. 범위는 숫자 데이터 및 DateTime 값에 대해 지원됩니다. 각 접근 방법에 대한 자세한 내용은 [문서 검색(Azure Cognitive Search API)](/rest/api/searchservice/Search-Documents)을 참조하세요.
 
 Azure Cognitive Search에서는 범위를 계산하는 두 가지 방법을 제공하여 범위 생성을 간소화합니다. 두 방법 모두에 대해 Azure Cognitive Search에서는 사용자가 입력을 제공한 경우 적절한 범위를 만듭니다. 예를 들어 10|20|30 범위 값을 지정한 경우 0-10, 10-20, 20-30 범위가 자동으로 만들어집니다. 비어 있는 간격을 애플리케이션에서 선택적으로 제거할 수도 있습니다. 
 
@@ -404,4 +405,3 @@ Azure Cognitive Search 구직 포털 데모에는 이 문서에 나와 있는 �
 
 * [디자인 패턴: 패싯 탐색](https://alistapart.com/article/design-patterns-faceted-navigation)
 * [패싯 검색을 구현할 때의 프런트 엔드 문제 – 1부](https://articles.uie.com/faceted_search2/)
-

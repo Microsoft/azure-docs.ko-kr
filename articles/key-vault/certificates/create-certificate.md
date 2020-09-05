@@ -1,6 +1,6 @@
 ---
 title: 인증서 생성 방법
-description: Key Vault에서 인증서를 생성하는 방법입니다.
+description: Azure Key Vault에서 Key Vault 인증서를 만들거나 가져올 수 있는 다양 한 옵션에 대해 알아봅니다. Key Vault 인증서를 만드는 방법에는 여러 가지가 있습니다.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7450dd79247078afe02d1bb63727cfd260d674fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 71d8961af372f927fab909073daa715766542f87
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81866248"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606667"
 ---
 # <a name="certificate-creation-methods"></a>인증서 생성 방법
 
@@ -31,7 +31,7 @@ ms.locfileid: "81866248"
 
 1. 위의 다이어그램에서 애플리케이션은 내부적으로 키 자격 증명 모음에서 키를 만드는 작업으로 시작하는 인증서를 만듭니다.
 2. Key Vault는 애플리케이션 CSR(Certificate Signing Request)에 반환됨
-3. 애플리케이션에서 CSR을 선택한 CA에 전달합니다.
+3. 애플리케이션은 선택한 CA에 CSR을 전달합니다.
 4. 선택한 CA는 X509 인증서를 사용 하 여 응답 합니다.
 5. 애플리케이션이 CA에서 X509 인증서를 병합해 인증서 만들기를 완료합니다.
 
@@ -43,7 +43,7 @@ ms.locfileid: "81866248"
 
 1. 위의 다이어그램에서 애플리케이션은 내부적으로 키 자격 증명 모음에서 키를 만드는 작업으로 시작하는 인증서를 만듭니다.
 2. Key Vault는 CA에 TLS/SSL 인증서 요청을 보냅니다.
-3. 애플리케이션이 인증서 완료를 위해 Key Vault에 대해 반복 및 대기 프로세스에서 폴링합니다. Key Vault가 x509 인증서를 통해 CA의 응답을 수신하는 경우 인증서 만들기가 완료됩니다.
+3. 애플리케이션은 인증서 완료를 위해 Key Vault를 루프 및 대기 프로세스로 폴링합니다. Key Vault가 x509 인증서로 CA의 응답을 받으면 인증서 작성이 완료된 것입니다.
 4. CA는 TLS/SSL x.509 인증서를 사용 하 여 Key Vault의 TLS/SSL 인증서 요청에 응답 합니다.
 5. 새 인증서 만들기는 CA에 대 한 TLS/SSL x.509 인증서의 합병을 사용 하 여 완료 됩니다.
 
@@ -82,7 +82,7 @@ KV 인증서 만들기 요청이 완료되면 보류 중인 개체의 상태가 
 
 |공급자|인증서 종류|구성 설정  
 |--------------|----------------------|------------------|  
-|DigiCert|Key Vault가 DigiCert를 통해 OV 또는 EV SSL 인증서 제공| [통합 가이드](https://docs.digicert.com/certificate-tools/azure-key-vault-integration-guide/)
+|DigiCert|Key Vault가 DigiCert를 통해 OV 또는 EV SSL 인증서 제공| [통합 가이드](https://docs.microsoft.com/azure/key-vault/certificates/how-to-integrate-certificate-authority)
 |GlobalSign|Key Vault가 GlobalSign을 통해 OV 또는 EV SSL 인증서 제공| [통합 가이드](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
 
  인증서 발급자는 Azure KV(Key Vault)에 CertificateIssuer 리소스로 표시되는 엔터티입니다. KV 인증서의 원본에 대한 정보(발급자 이름, 공급자, 자격 증명 및 기타 관리 세부 정보)를 제공하는 데 사용됩니다.
@@ -91,6 +91,6 @@ KV 인증서 만들기 요청이 완료되면 보류 중인 개체의 상태가 
 
  권한 부여: 인증서/만들기 권한이 필요합니다.
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>관련 항목
 
  - [인증서 생성 모니터링 및 관리](create-certificate-scenarios.md)

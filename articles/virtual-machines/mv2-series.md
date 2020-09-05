@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: jushiman
-ms.openlocfilehash: f86400f1fb45217133bbd715788986994f5f77cc
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: c91e9832e4b415a59c12b71964a0da580e9fda21
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836261"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651134"
 ---
 # <a name="mv2-series"></a>Mv2 시리즈
 
@@ -28,7 +28,7 @@ Premium Storage 캐싱: 지원 됨
 
 메모리 보존 업데이트: 지원되지 않음
 
-쓰기 가속기: [지원 됨](./windows/how-to-enable-write-accelerator.md)
+쓰기 가속기: [지원 됨](./how-to-enable-write-accelerator.md)
 
 |크기 | vCPU | 메모리: GiB | 임시 스토리지(SSD) GiB | 최대 데이터 디스크 수 | 최대 캐시 및 임시 스토리지 처리량: IOPS/MBps(GiB 단위의 캐시 크기) | 최대 캐시되지 않은 디스크 처리량: IOPS/MBps | 최대 NIC 수 | 예상 네트워크 대역폭 (Mbps) |
 |---|---|---|---|---|---|---|---|---|
@@ -59,7 +59,7 @@ Premium Storage 캐싱: 지원 됨
 
 가격 계산기: [가격 계산기](https://azure.microsoft.com/pricing/calculator/)
 
-디스크 유형에 대 한 자세한 정보: [디스크 유형](./linux/disks-types.md#ultra-disk)
+디스크 유형에 대 한 자세한 정보: [디스크 유형](./disks-types.md#ultra-disk)
 
 
 ## <a name="next-steps"></a>다음 단계

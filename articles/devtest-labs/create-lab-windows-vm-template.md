@@ -4,12 +4,12 @@ description: 이 빠른 시작에서는 ARM 템플릿(Azure Resource Manager 템
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 06/26/2020
-ms.openlocfilehash: 8688b8265a8ca00a36a569ff4e067c9f36834c6d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 93bc4cf91b228de72c217c61ec03d61e87046dd3
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537550"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653956"
 ---
 # <a name="quickstart-set-up-a-lab-by-using-azure-devtest-labs-arm-template"></a>빠른 시작: Azure DevTest Labs ARM 템플릿을 사용하여 랩 설정
 이 빠른 시작에서는 ARM(Azure Resource Manager) 템플릿을 사용하여 Windows Server 2019 Datacenter VM에서 랩을 만듭니다. 
@@ -36,7 +36,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-dtl-create-lab-windows-vm/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-dtl-create-lab-windows-vm/azuredeploy.json" range="1-97" highlight="51-85":::
+:::code language="json" source="~/quickstart-templates/101-dtl-create-lab-windows-vm/azuredeploy.json":::
 
 템플릿에 정의된 리소스는 다음과 같습니다.
 

@@ -3,7 +3,7 @@ title: '자습서: 관리 ID를 사용하여 Azure Cosmos DB에 액세스 - Wind
 description: Windows VM에서 시스템 할당 관리 ID를 사용하여 Azure Cosmos DB에 액세스하는 프로세스를 단계별로 안내하는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/14/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11b7f8eeb94fb2d6f197af2d40b120c5f74d6128
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 17cdebb1291f78706178e129a62b932d45f38537
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583069"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263075"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>자습서: Windows VM 시스템 할당 관리 ID를 사용하여 Azure Cosmos DB에 액세스
 
@@ -84,7 +84,7 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Read
 
 이 섹션에서는 Windows VM 시스템 할당 관리 ID에 대한 액세스 토큰을 사용하여 Azure Resource Manager를 호출하는 방법을 보여줍니다. 자습서의 나머지 부분에서는 이전에 만든 VM에서 작업합니다. 
 
-Windows VM에 최신 버전의 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)를 설치해야 합니다.
+Windows VM에 최신 버전의 [Azure CLI](/cli/azure/install-azure-cli)를 설치해야 합니다.
 
 
 
@@ -204,6 +204,4 @@ az cosmosdb collection show -c <COLLECTION ID> -d <DATABASE ID> --url-connection
 이 자습서에서는 Windows VM 시스템 할당 ID를 사용하여 Cosmos DB에 액세스하는 방법을 알아보았습니다.  Cosmos DB에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
->[Azure Cosmos DB 개요](/azure/cosmos-db/introduction)
-
-
+>[Azure Cosmos DB 개요](../../cosmos-db/introduction.md)

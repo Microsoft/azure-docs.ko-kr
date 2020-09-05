@@ -1,4 +1,4 @@
-- name: PostgreSQL Docs용 Azure DB
+- name: Azure DB for PostgreSQL 설명서
   href: index.yml
 - name: 개요
   items:
@@ -28,6 +28,12 @@
               href: connect-nodejs.md
             - name: Java
               href: connect-java.md
+            - name: Spring Data JDBC를 사용하는 Java
+              href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
+            - name: Spring Data JPA를 사용하는 Java
+              href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
+            - name: Spring Data R2DBC를 사용하는 Java
+              href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
             - name: Ruby
               href: connect-ruby.md
             - name: PHP
@@ -38,7 +44,7 @@
               href: connect-go.md
     - name: 하이퍼스케일(Citus)
       items:
-        - name: DB 만들기 - 포털
+        - name: 서버 그룹 만들기 - 포털
           href: quickstart-create-hyperscale-portal.md
 - name: 자습서
   items:
@@ -46,7 +52,7 @@
       items:
         - name: 1 - 데이터베이스 설계
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: tutorial-design-database-using-azure-portal.md
             - name: Azure CLI
               href: tutorial-design-database-using-azure-cli.md
@@ -67,9 +73,6 @@
   items:
     - name: Azure CLI
       href: sample-scripts-azure-cli.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 단일 서버
@@ -153,30 +156,32 @@
               href: concepts-aks.md
             - name: Java
               items:
+                - name: Java 및 JDBC 사용
+                  href: connect-java.md
                 - name: Spring Data JDBC 구성
-                  href: /java/azure/spring-framework/configure-spring-data-jdbc-with-azure-postgresql
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
                 - name: Spring Data JPA 구성
-                  href: /java/azure/spring-framework/configure-spring-data-jpa-with-azure-postgresql
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-postgresql?toc=/azure/postgresql/toc.json&bc=/azure/bread/toc.json
+                - name: Spring Data R2DBC 구성
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql
         - name: 복제
           items:
             - name: 읽기 복제본
               href: concepts-read-replicas.md
             - name: 논리 디코딩
               href: concepts-logical.md
-        - name: 영역 간 이동
-          items:
-            - name: Azure portal
-              href: howto-move-regions-portal.md
     - name: 하이퍼스케일(Citus)
       items:
-        - name: 노드
-          href: concepts-hyperscale-nodes.md
         - name: 분선 데이터
-          href: concepts-hyperscale-distributed-data.md
-        - name: 배포 열 선택
-          href: concepts-hyperscale-choose-distribution-column.md
-        - name: 테이블 공동 배치
-          href: concepts-hyperscale-colocation.md
+          items:
+            - name: 노드 및 테이블
+              href: concepts-hyperscale-nodes.md
+            - name: 애플리케이션 유형 확인
+              href: concepts-hyperscale-app-type.md
+            - name: 배포 열 선택
+              href: concepts-hyperscale-choose-distribution-column.md
+            - name: 테이블 공동 배치
+              href: concepts-hyperscale-colocation.md
         - name: 데이터 액세스 및 보안
           items:
             - name: 방화벽 규칙
@@ -231,13 +236,13 @@
               href: howto-optimize-query-time-with-toast-table-storage-strategy.md
         - name: 방화벽 관리
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-manage-firewall-using-portal.md
             - name: Azure CLI
               href: howto-manage-firewall-using-cli.md
         - name: 서버 복원
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-restore-server-portal.md
             - name: Azure CLI
               href: howto-restore-server-cli.md
@@ -259,7 +264,7 @@
               href: howto-connection-string-powershell.md
         - name: 서버 매개 변수 구성
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-configure-server-parameters-using-portal.md
             - name: Azure CLI
               href: howto-configure-server-parameters-using-cli.md
@@ -267,7 +272,7 @@
               href: howto-configure-server-parameters-using-powershell.md
         - name: 자동 증가 스토리지
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-auto-grow-storage-portal.md
             - name: Azure CLI
               href: howto-auto-grow-storage-cli.md
@@ -295,19 +300,19 @@
               href: howto-database-threat-protection-portal.md
         - name: Virtual Network
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-manage-vnet-using-portal.md
             - name: Azure CLI
               href: howto-manage-vnet-using-cli.md
         - name: Private Link
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-configure-privatelink-portal.md
             - name: Azure CLI
               href: howto-configure-privatelink-cli.md
         - name: 데이터 암호화
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-data-encryption-portal.md
             - name: Azure CLI
               href: howto-data-encryption-cli.md
@@ -319,7 +324,7 @@
               href: howto-double-encryption.md
         - name: 서버 다시 시작
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: howto-restart-server-portal.md
             - name: Azure CLI
               href: howto-restart-server-cli.md
@@ -337,16 +342,24 @@
               href: howto-read-replicas-cli.md
             - name: Azure PowerShell 읽기 복제본 관리
               href: howto-read-replicas-powershell.md
+        - name: 영역 간 이동
+          items:
+            - name: Azure portal
+              href: howto-move-regions-portal.md
     - name: 하이퍼스케일(Citus)
       items:
         - name: 사용자 만들기
           href: howto-hyperscale-create-users.md
-        - name: 확장
+        - name: 서버 그룹 크기
           href: howto-hyperscale-scaling.md
         - name: 방화벽 관리
           items:
             - name: Azure portal
               href: howto-hyperscale-manage-firewall-using-portal.md
+        - name: 분선 데이터
+          items:
+            - name: 테이블 분산 및 수정
+              href: howto-hyperscale-modify-distributed-tables.md
         - name: 고가용성
           href: howto-hyperscale-high-availability.md
         - name: 모니터
@@ -361,12 +374,25 @@
               href: howto-hyperscale-troubleshoot-common-connection-issues.md
 - name: 참조
   items:
-    - name: Azure CLI
-      href: /cli/azure/postgres
-    - name: REST API
-      href: /rest/api/postgresql
-    - name: Resource Manager 템플릿
-      href: /azure/templates/microsoft.dbforpostgresql/allversions
+    - name: 단일 서버
+      items:
+        - name: Azure CLI
+          href: /cli/azure/postgres
+        - name: REST API
+          href: /rest/api/postgresql
+        - name: Resource Manager 템플릿
+          href: /azure/templates/microsoft.dbforpostgresql/allversions
+    - name: 하이퍼스케일(Citus)
+      items:
+        - name: SQL API 함수
+          href: reference-hyperscale-functions.md
+        - name: 서버 매개 변수
+          href: reference-hyperscale-parameters.md
+        - name: 시스템 테이블
+          href: reference-hyperscale-metadata.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

@@ -2,26 +2,21 @@
 title: '자습서: Canvas와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Canvas 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: bfed291c-a33e-410d-b919-5b965a631d45
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/02/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3ce5cff0de2939c25400d1d63138b23bc6c9822
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 24350c63df04e55107ed32c2d61d1026aa27bdb9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74232043"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547633"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-canvas"></a>자습서: Canvas와 Azure Active Directory 통합
 

@@ -8,12 +8,12 @@ ms.subservice: workloads
 ms.topic: overview
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: 44006bdfd9ffe6e78380adefe9271f42c0a76f84
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: 4e92f974ce7d6c03143276808c4ca4d09d607a84
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773282"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835819"
 ---
 # <a name="confidential-computing-on-azure"></a>Azure의 기밀 컴퓨팅
 
@@ -52,7 +52,7 @@ Enclave는 하드웨어의 프로세서 및 메모리에 대한 보안 부분입
 
 애플리케이션을 개발할 때 [소프트웨어 도구](#oe-sdk)를 사용하여 enclave 내의 코드 및 데이터 부분을 보호할 수 있습니다. 이러한 도구는 신뢰할 수 있는 환경 외부의 사용자가 코드와 데이터를 보거나 수정할 수 없도록 합니다. 
 
-기본적으로 enclave는 블랙 박스로 간주됩니다. 암호화된 코드와 데이터를 박스에 넣습니다. 박스 외부에서는 아무것도 볼 수 없습니다. 데이터를 해독할 수 있는 키를 enclave에 지정합니다. 그러면 데이터를 처리하고 다시 암호화한 후에 enclave에서 내보냅니다.
+기본적으로 enclave는 보안 박스로 간주됩니다. 암호화된 코드와 데이터를 박스에 넣습니다. 박스 외부에서는 아무것도 볼 수 없습니다. 데이터를 해독할 수 있는 키를 enclave에 지정합니다. 그러면 데이터를 처리하고 다시 암호화한 후에 enclave에서 내보냅니다.
 
 ### <a name="attestation"></a>증명
 

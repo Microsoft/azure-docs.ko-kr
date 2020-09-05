@@ -5,28 +5,28 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 05/12/2020
-ms.openlocfilehash: 406991de2441836565c911ef8a8e1402f6398eb0
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/07/2020
+ms.openlocfilehash: 04f2d11b9fc8bbd61319a057c091cddbf140b9db
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824786"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135535"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Azure Monitor의 모니터링 솔루션
 
-모니터링 솔루션은 Azure의 서비스를 활용 하 여 특정 응용 프로그램 또는 서비스의 작업에 대 한 추가 분석을 제공 합니다. 이 문서에서는 Azure 모니터링 솔루션에 대해 간략하게 설명하고 모니터링 솔루션을 설치 및 사용하는 방법을 자세히 알아봅니다. 사용하는 애플리케이션 및 서비스의 Azure Monitor에 모니터링 솔루션을 추가할 수 있습니다. 일반적으로 무료로 제공되지만 데이터 수집 시 사용 요금이 발생할 수 있습니다.
+Azure Monitor의 모니터링 솔루션은 특정 Azure 응용 프로그램 또는 서비스의 작업에 대 한 분석을 제공 합니다. 이 문서에서는 Azure 모니터링 솔루션에 대해 간략하게 설명하고 모니터링 솔루션을 설치 및 사용하는 방법을 자세히 알아봅니다. 사용하는 애플리케이션 및 서비스의 Azure Monitor에 모니터링 솔루션을 추가할 수 있습니다. 일반적으로 무료로 제공되지만 데이터 수집 시 사용 요금이 발생할 수 있습니다.
 
 ## <a name="use-monitoring-solutions"></a>모니터링 솔루션 사용
 
-Azure Monitor의 **개요** 페이지를 열면 작업 영역에 설치된 각 솔루션의 타일이 표시됩니다.
+Azure Monitor의 솔루션 **개요** 페이지에는 Log Analytics 작업 영역에 설치 된 각 솔루션에 대 한 타일이 표시 됩니다. 이 페이지를 열려면 [Azure Portal](https://ms.portal.azure.com)의 **Azure Monitor** 로 이동 합니다. **Insights** 메뉴에서 **자세히** 를 선택 하 여 **insights 허브**를 열고 **Log Analytics 작업 영역**을 클릭 합니다.
 
-1. [Azure 포털](https://ms.portal.azure.com)로 이동합니다. **모니터**를 검색하고 선택합니다.
-1. **인사이트** 메뉴 아래에서 **자세히**를 선택합니다.
-1. 타일에 사용되는 작업 영역 또는 시간 범위를 변경하려면 화면 맨 위에 있는 드롭다운 상자를 사용합니다.
-1. 솔루션의 타일을 클릭하면 수집된 데이터를 자세히 분석하는 보기가 열립니다.
+[![정보 허브](media/solutions/insights-hub.png)](media/solutions/insights-hub.png#lightbox)
 
-![개요](media/solutions/overview.png)
+
+타일에 사용되는 작업 영역 또는 시간 범위를 변경하려면 화면 맨 위에 있는 드롭다운 상자를 사용합니다. 솔루션의 타일을 클릭하면 수집된 데이터를 자세히 분석하는 보기가 열립니다.
+
+[![개요](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
 모니터링 솔루션은 여러 유형의 Azure 리소스를 포함할 수 있으며, 다른 리소스와 마찬가지로 솔루션에 포함된 모든 리소스를 볼 수 있습니다. 예를 들어 솔루션에 포함된 모든 로그 쿼리는 [쿼리 탐색기](../log-query/get-started-portal.md#load-queries)의 **솔루션 쿼리** 아래에 표시됩니다. [로그 쿼리](../log-query/log-query-overview.md)를 사용하여 임시 분석을 수행할 때 해당 쿼리를 사용할 수 있습니다.
 

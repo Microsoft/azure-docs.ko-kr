@@ -15,18 +15,18 @@ ms.workload: infrastructure
 ms.date: 03/05/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e44edff9ac81588e4f861b7a1d1ae1a1628d5e04
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3589b4af06bc27a79c429bb0ccd743857651db97
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035641"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653548"
 ---
 # <a name="sap-hana-high-availability-for-azure-virtual-machines"></a>Azure Virtual Machines의 SAP HANA 고가용성
 
 수많은 Azure 기능을 사용하여 Azure VM에서 SAP HANA와 같은 중요 업무용 데이터베이스를 배포 할 수 있습니다. 이 문서에서는 Azure VM에서 호스팅되는 SAP HANA 인스턴스의 가용성을 달성하는 방법에 대한 지침을 제공합니다. 그리고 Azure에서 SAP HANA 가용성을 높이기 위해 Azure 인프라를 사용하여 구현할 수 있는 몇 가지 시나리오에 대해 설명합니다. 
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>전제 조건
 
 이 문서에서는 다음을 포함하여 Azure의 IaaS(Infrastructure as a Service) 기본 사항에 대해 잘 알고 있다고 가정합니다. 
 
@@ -60,7 +60,7 @@ Azure는 네트워킹, 스토리지 및 VM과 같은 다양한 구성 요소에 
 
 [Virtual Machines에 대 한 sla](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) 는 세 가지 다른 구성에 대 한 세 가지 sla를 설명 합니다.
 
-- OS 디스크 및 모든 데이터 디스크에 [Azure 프리미엄 SSD](../../windows/managed-disks-overview.md)를 사용하는 단일 VM. 이 옵션은 매월 99.9%의 가동 시간을 제공합니다.
+- OS 디스크 및 모든 데이터 디스크에 [Azure 프리미엄 SSD](../../managed-disks-overview.md)를 사용하는 단일 VM. 이 옵션은 매월 99.9%의 가동 시간을 제공합니다.
 - [Azure 가용성 집합](../../windows/tutorial-availability-sets.md)에 구성된 여러 개의 VM(2개 이상). 이 옵션은 매월 99.95%의 가동 시간을 제공합니다.
 - [가용성 영역](../../../availability-zones/az-overview.md)에 구성 된 여러 개의 vm (두 개 이상) 이 옵션은 매월 99.99%의 가동 시간을 제공 했습니다.
 

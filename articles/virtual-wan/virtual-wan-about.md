@@ -5,17 +5,17 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: overview
-ms.date: 06/29/2020
+ms.date: 08/18/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: 713e980eb84032c98ccf08c52e68dab36eadd659
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 2d8ac3775021c574d3c03e44b06d6b5e689070e7
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513148"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852675"
 ---
-# <a name="about-azure-virtual-wan"></a>Azure Virtual WAN 정보
+# <a name="what-is-azure-virtual-wan"></a>Azure Virtual WAN이란?
 
 Azure Virtual WAN은 많은 네트워킹, 보안 및 라우팅 기능을 결합하여 단일 운영 인터페이스를 제공하는 네트워킹 서비스입니다. 이러한 기능에는 분기 연결(SD-WAN 또는 VPN CPE와 같은 Virtual WAN 파트너 디바이스에서 연결 자동화를 통해), 사이트 간 VPN 연결, 원격 사용자 VPN(지점 및 사이트 간) 연결, 프라이빗(ExpressRoute) 연결, 클라우드 연결(가상 네트워크에 대한 전이 연결), VPN ExpressRoute 상호 연결, 라우팅, Azure Firewall, 프라이빗 연결용 암호화 등이 포함됩니다. Virtual WAN 사용을 시작하는 데에는 이러한 사용 사례 중 일부만 필요합니다. 하나의 사용 사례만으로 시작한 다음, 네트워크가 발전함에 따라 네크워크를 조정할 수 있습니다.
 
@@ -98,15 +98,15 @@ Virtual WAN은 VNet 간의 전송 연결을 허용합니다. VNet은 가상 네�
 * **없음** 상태는 가상 허브가 라우터를 프로비저닝하지 않았음을 나타냅니다. Virtual WAN이 *기본* 유형인 경우 또는 서비스를 사용할 수 있게 되기 전에 가상 허브가 배포된 경우에 이 상태가 될 수 있습니다.
 * **실패** 상태는 인스턴스화하는 중에 오류가 발생했음을 나타냅니다. 라우터를 인스턴스화하거나 다시 설정하려면 Azure Portal의 가상 허브 개요 페이지로 이동하여 **라우터 다시 설정** 옵션을 찾으면 됩니다.
 
-모든 가상 허브 라우터는 최대 50Gbps의 집계 처리량을 지원합니다. 가상 네트워크 연결 간의 연결 옵션은 가상 WAN의 모든 VNet에서 VM 워크로드가 총 2000개인 것으로 가정합니다.
+모든 가상 허브 라우터는 최대 50Gbps의 집계 처리량을 지원합니다. 가상 네트워크 연결 간의 연결은 단일 가상 Hub에 연결된 VNet에서 VM 워크로드가 총 2000개인 것으로 가정합니다.
 
 #### <a name="transit-connectivity-between-vpn-and-expressroute"></a><a name="transit-er"></a>VPN과 ExpressRoute 간의 전송 연결
 
-Virtual WAN은 VPN과 ExpressRoute 간의 전송 연결을 허용합니다. VPN 연결 사이트 또는 원격 사용자가 ExpressRoute 연결 사이트와 통신할 수 있다는 뜻입니다. 또한 **분기 간 플래그**가 사용된다고 암묵적으로 가정합니다. 이 플래그는 Azure Portal의 Azure Virtual WAN 설정에서 찾을 수 있습니다. 모든 경로 관리는 가상 허브 라우터에서 제공하며, 이렇게 하면 가상 네트워크 간에 전송 연결이 가능합니다.
+Virtual WAN은 VPN과 ExpressRoute 간의 전송 연결을 허용합니다. VPN 연결 사이트 또는 원격 사용자가 ExpressRoute 연결 사이트와 통신할 수 있다는 뜻입니다. 또한 **분기 간 플래그**가 사용하도록 설정되어 있고 VPN 및 ExpressRoute 연결에서 BGP가 지원된다는 암시적 가정이 있습니다. 이 플래그는 Azure Portal의 Azure Virtual WAN 설정에서 찾을 수 있습니다. 모든 경로 관리는 가상 허브 라우터에서 제공하며, 이렇게 하면 가상 네트워크 간에 전송 연결이 가능합니다.
 
 ### <a name="custom-routing"></a><a name="routing"></a>사용자 지정 라우팅
 
-Virtual WAN은 향상된 고급 라우팅 기능을 제공합니다. 사용자 지정 경로 테이블을 설정하고, 경로 연결 및 전파를 사용하여 가상 네트워크 라우팅을 최적화하고, 레이블을 지정하여 경로 테이블을 논리적으로 그룹화하고, 수많은 네트워크 가상 어플라이언스 또는 공유 서비스 라우팅 시나리오를 간소화하는 기능이 제공됩니다.
+Virtual WAN은 향상된 고급 라우팅 기능을 제공합니다. 사용자 지정 경로 테이블을 설정하고, 경로 연결 및 전파를 사용하여 가상 네트워크 라우팅을 최적화하고, 레이블을 지정하여 경로 테이블을 논리적으로 그룹화하고, 수많은 NVA(네트워크 가상 어플라이언스) 또는 공유 서비스 라우팅 시나리오를 간소화하는 기능이 제공됩니다.
 
 ### <a name="global-vnet-peering"></a><a name="global"></a>글로벌 VNet 피어링
 
@@ -120,17 +120,21 @@ Azure Virtual WAN은 ExpressRoute 트래픽을 암호화하는 기능을 제공�
 
 위치 정보는 [Virtual WAN 파트너 및 위치](virtual-wan-locations-partners.md) 문서를 참조하세요.
 
-## <a name="route-tables-in-basic-and-standard-virtual-wans"></a><a name="route"></a>기본 및 표준 가상 WAN의 경로 테이블
+## <a name="route-tables-for-basic-and-standard-virtual-wans"></a><a name="route"></a>기본 및 표준 가상 WAN에 대한 경로 테이블
 
 이제 경로 테이블은 연결 및 전파 기능을 제공합니다. 기존 경로 테이블은 이러한 기능이 없는 경로 테이블입니다. 허브 라우팅에 기존 경로를 사용 중이고 새 기능을 사용하려는 경우 다음 사항을 고려하세요.
 
-* **가상 허브에서 기존 경로를 사용 중인 표준 Virtual WAN 고객**: 새 경로 테이블 기능을 사용하려면 Azure에서 롤아웃이 완료되는 8월 17일까지 기다려주세요. Azure Portal의 허브에 대한 라우팅 섹션에 기존 경로가 있는 경우 먼저 해당 경로를 삭제한 다음, 새 경로 테이블을 만들어야 합니다(Azure Portal의 허브에 대한 경로 테이블 섹션에서 사용 가능).
+* **가상 허브에서 기존 경로를 사용 중인 표준 Virtual WAN 고객**: Azure Portal의 허브에 대한 라우팅 섹션에 기존 경로가 있는 경우 먼저 해당 경로를 삭제한 다음, 새 경로 테이블을 만들어야 합니다(Azure Portal의 허브에 대한 경로 테이블 섹션에서 사용 가능).
 
-* **가상 허브에서 기존 경로를 사용 중인 기본 Virtual WAN 고객**: 새 경로 테이블 기능을 사용하려면 Azure에서 롤아웃이 완료되는 8월 17일까지 기다려주세요. Azure Portal의 허브에 대한 라우팅 섹션에 기존 경로가 있는 경우 먼저 해당 경로를 삭제한 다음, 기본 Virtual WAN을 표준 Virtual WAN으로 **업그레이드**합니다. [가상 WAN을 기본에서 표준으로 업그레이드](upgrade-virtual-wan.md)를 참조하세요.
+* **가상 허브에서 기존 경로를 사용 중인 기본 Virtual WAN 고객**: Azure Portal의 허브에 대한 라우팅 섹션에 기존 경로가 있는 경우 먼저 해당 경로를 삭제한 다음, 기본 Virtual WAN을 표준 Virtual WAN으로 **업그레이드**합니다. [가상 WAN을 기본에서 표준으로 업그레이드](upgrade-virtual-wan.md)를 참조하세요.
 
 ## <a name="faq"></a><a name="faq"></a>FAQ
 
 [!INCLUDE [Virtual WAN FAQ](../../includes/virtual-wan-faq-include.md)]
+
+## <a name="whats-new"></a><a name="new"></a>새로운 기능
+
+RSS 피드를 구독하고 [Azure 업데이트](https://azure.microsoft.com/updates/?category=networking&query=VIRTUAL%20WAN) 페이지에서 최신 Virtual WAN 기능 업데이트를 확인합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

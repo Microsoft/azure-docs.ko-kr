@@ -5,15 +5,15 @@ author: bwren
 services: cosmos-db
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 07/22/2020
+ms.date: 08/24/2020
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: 9c2a87f3d70d3873771b3a59114b424efffe4fb9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 12bf87e16bf4506f2015dd75fb360f8de8399902
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87130191"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797822"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Azure Cosmos DB 모니터링
 
@@ -56,7 +56,7 @@ Azure Cosmos DB용 Azure Monitor는 [Azure Monitor의 통합 문서 기능](../a
 > [!NOTE]
 > 컨테이너를 만들 때 이름은 같지만 대/소문자가 다른 두 개의 컨테이너를 만들지 않도록 해야 합니다. Azure 플랫폼의 일부 부분에서는 대/소문자를 구분하지 않으므로 이로 인해 이러한 이름을 가진 컨테이너에 대한 원격 분석 및 작업의 혼동/충돌이 발생할 수 있습니다.
 
-## <a name="monitor-data-collected-from-azure-cosmos-db-portal"></a><a id="monitoring-from-azure-cosmos-db"></a>Azure Cosmos DB 포털에서 수집 된 데이터 모니터링
+## <a name="monitor-data-collected-from-azure-cosmos-db-portal"></a><a id="monitoring-from-azure-cosmos-db"></a> Azure Cosmos DB 포털에서 수집 된 데이터 모니터링
 
 Azure Cosmos DB는 다른 Azure 리소스와 동일한 종류의 모니터링 데이터를 수집합니다. 이에 대해서는 [Azure 리소스의 데이터 모니터링](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data)에 설명되어 있습니다. Azure Cosmos DB에서 만든 로그 및 메트릭에 대한 자세한 내용은 [Azure Cosmos DB 모니터링 데이터 참조](monitor-cosmos-db-reference.md)를 참조하세요.
 
@@ -64,7 +64,7 @@ Azure Cosmos DB는 다른 Azure 리소스와 동일한 종류의 모니터링 �
 
 :::image type="content" source="media/monitor-cosmos-db/overview-page.png" alt-text="개요 페이지":::
 
-## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a>메트릭 데이터 분석
+## <a name="analyzing-metric-data"></a><a id="analyze-metric-data"></a> 메트릭 데이터 분석
 
 Azure Cosmos DB는 메트릭을 사용하기 위한 사용자 지정 환경을 제공합니다. 이 환경을 사용하고 다양한 Azure Cosmos DB 시나리오를 분석하는 방법에 대한 자세한 내용은 [Azure Monitor에서 Azure Cosmos DB 메트릭 모니터링 및 디버그](cosmos-db-azure-monitor-metrics.md)를 참조하세요.
 
@@ -104,7 +104,7 @@ Azure Cosmos DB는 메트릭을 사용하기 위한 사용자 지정 환경을 �
 
 :::image type="content" source="./media/monitor-cosmos-db/apply-metrics-splitting.png" alt-text="분할 적용 필터 추가":::
 
-## <a name="analyzing-log-data"></a><a id="analyze-log-data"></a>로그 데이터 분석
+## <a name="analyzing-log-data"></a><a id="analyze-log-data"></a> 로그 데이터 분석
 
 Azure Monitor 로그의 데이터는 각 테이블에 고유한 속성 집합이 있는 테이블에 저장됩니다. Azure Cosmos DB는 다음 테이블에 데이터를 저장합니다.
 
@@ -147,7 +147,7 @@ Azure Monitor 로그의 데이터는 각 테이블에 고유한 속성 집합이
     | summarize count() by Resource
     ```
 
-## <a name="monitor-azure-cosmos-db-programmatically"></a><a id="monitor-cosmosdb-programmatically"></a>프로그래밍 방식으로 Azure Cosmos DB 모니터링
+## <a name="monitor-azure-cosmos-db-programmatically"></a><a id="monitor-cosmosdb-programmatically"></a> 프로그래밍 방식으로 Azure Cosmos DB 모니터링
 
 포털에서 제공되는 계정 수준 메트릭(예: 계정 스토리지 사용 및 총 요청)은 SQL API를 통해 사용할 수 없습니다. 그러나 SQL API를 사용하여 컬렉션 수준에서 사용량 현황 데이터를 검색할 수 있습니다. 컬렉션 수준 데이터를 검색하려면 다음을 수행합니다.
 
@@ -158,14 +158,16 @@ Azure Monitor 로그의 데이터는 각 테이블에 고유한 속성 집합이
 추가 메트릭에 액세스하려면 [Azure Monitor SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights)를 사용하세요. 가용 메트릭 정의는 다음을 호출하면 검색할 수 있습니다.
 
 ```http
-https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/metricDefinitions?api-version=2015-04-08
+https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/providers/microsoft.insights/metricDefinitions?api-version=2018-01-01
 ```
 
-개별 메트릭을 검색하는 쿼리는 다음 형식을 사용합니다.
+개별 메트릭을 검색 하려면 다음 형식을 사용 합니다.
 
 ```http
-https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/metrics?api-version=2015-04-08&$filter=%28name.value%20eq%20%27Total%20Requests%27%29%20and%20timeGrain%20eq%20duration%27PT5M%27%20and%20startTime%20eq%202016-06-03T03%3A26%3A00.0000000Z%20and%20endTime%20eq%202016-06-10T03%3A26%3A00.0000000Z
+https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/providers/microsoft.insights/metrics?timespan={StartTime}/{EndTime}&interval={AggregationInterval}&metricnames={MetricName}&aggregation={AggregationType}&`$filter={Filter}&api-version=2018-01-01
 ```
+
+자세히 알아보려면 [Azure monitoring REST API](../azure-monitor/platform/rest-api-walkthrough.md) 문서를 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2777675d915d99b8c0e3c2a123b24ab60d41f672
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8a57f42400468d69970c7c0b5d05d99a21b2d6b9
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80653363"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949561"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-in-windows-server"></a>Windows Server에서 AD FS와 작동하도록 Azure Multi-Factor Authentication 서버 구성
 
@@ -25,7 +25,13 @@ AD FS(Active Directory Federation Services)를 사용하고 클라우드 또는 
 이 문서에서는 Windows Server 2012 R2 또는 Windows Server 2016에서 AD FS와 함께 Azure Multi-Factor Authentication 서버를 사용하는 방법을 설명합니다. 자세한 내용은 [AD FS 2.0과 함께 Azure Multi-Factor Authentication 서버를 사용하여 클라우드 및 온-프레미스 리소스 보안을 유지](howto-mfaserver-adfs-2.md)하는 방법에 대해 읽어보세요.
 
 > [!IMPORTANT]
-> Microsoft는 2019년 7월 1일부터 더 이상 새 배포를 위한 MFA 서버를 제공하지 않습니다. 신규 사용자의 다단계 인증이 필요한 고객은 클라우드 기반 Azure Multi-Factor Authentication을 사용해야 합니다. 7월 1일 이전에 MFA 서버를 활성화한 기존 고객은 종전과 같이 최신 버전 및 이후 업데이트를 다운로드하고 활성화 자격 증명을 생성할 수 있습니다.
+> 2019 년 7 월 1 일부 터 Microsoft는 더 이상 새 배포를 위한 MFA 서버를 제공 하지 않습니다. 로그인 이벤트 중에 MFA (multi-factor authentication)를 요구 하려는 신규 고객은 클라우드 기반 Azure Multi-Factor Authentication를 사용 해야 합니다.
+>
+> 클라우드 기반 MFA를 시작 하려면 [자습서: Azure Multi-Factor Authentication를 사용 하 여 보안 사용자 로그인 이벤트](tutorial-enable-azure-mfa.md)를 참조 하세요.
+>
+> 클라우드 기반 MFA를 사용 하는 경우 [Azure Multi-Factor Authentication 및 AD FS를 사용 하 여 클라우드 리소스 보안 유지](howto-mfa-adfs.md)를 참조 하세요.
+>
+> 2019 년 7 월 1 일 이전에 MFA 서버를 정품 인증 한 기존 고객은 평소와 같이 최신 버전, 향후 업데이트 및 활성화 자격 증명 생성을 다운로드할 수 있습니다.
 
 ## <a name="secure-windows-server-ad-fs-with-azure-multi-factor-authentication-server"></a>Azure Multi-Factor Authentication 서버를 사용하여 Windows Server AD FS 보안 유지
 
@@ -84,7 +90,7 @@ Azure Multi-Factor Authentication 서버를 설치하는 경우 다음과 같은
 다음 단계를 따라 MultiFactorAuthenticationAdfsAdapter.config 파일을 편집합니다.
 
 1. **UseWebServiceSdk** 노드를 **true**로 설정합니다.  
-2. **WebServiceSdkUrl** 의 값을 Multi-Factor Authentication 웹 서비스 SDK의 URL로 설정합니다. 예를 들어 *https:\/\/contoso.com/\<certificatename>/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx*가 있으며, 여기서 *\<certificatename>* 은 인증서의 이름입니다.  
+2. **WebServiceSdkUrl** 의 값을 Multi-Factor Authentication 웹 서비스 SDK의 URL로 설정합니다. 예: *https: \/ \/ Contoso.com/ \<certificatename> /multifactorauthwebservicesdk/pfwssdk.asmx가 있으며*, 여기서 *\<certificatename>* 은 인증서의 이름입니다.  
 3. Register-MultiFactorAuthenticationAdfsAdapter.ps1 스크립트를 편집하고 `Register-AdfsAuthenticationProvider` 명령 끝에 `-ConfigurationFilePath &lt;path&gt;`를 추가합니다. 여기서 *&lt;path&gt;* 는 MultiFactorAuthenticationAdfsAdapter.config 파일의 전체 경로입니다.
 
 ### <a name="configure-the-web-service-sdk-with-a-username-and-password"></a>사용자 이름 및 암호를 사용하여 Web Service SDK 구성
@@ -98,7 +104,7 @@ Web Service SDK를 구성하는 데는 두 가지 옵션이 있습니다. 첫 �
 
 사용자 이름 및 암호를 사용하지 않으려는 경우 다음 단계를 따라 클라이언트 인증서를 사용하는 Web Service SDK를 구성합니다.
 
-1. 인증 기관에서 웹 서비스 SDK를 실행하는 서버에 대한 클라이언트 인증서를 가져옵니다. [클라이언트 인증서를 가져오는](https://technet.microsoft.com/library/cc770328.aspx)방법을 알아봅니다.  
+1. 인증 기관에서 웹 서비스 SDK를 실행하는 서버에 대한 클라이언트 인증서를 가져옵니다. [클라이언트 인증서를 가져오는](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770328(v=ws.10))방법을 알아봅니다.  
 2. 웹 서비스 SDK를 실행하는 서버의 로컬 컴퓨터 개인 인증서 저장소로 클라이언트 인증서를 가져옵니다. 신뢰할 수 있는 루트 인증서 인증서 저장소에 인증 기관의 공용 인증서가 있는지 확인합니다.  
 3. 클라이언트 인증서의 공개 키 및 프라이빗 키를 .pfx 파일로 내보냅니다.  
 4. Base64 형식인 공개 키를 .cer 파일로 내보냅니다.  

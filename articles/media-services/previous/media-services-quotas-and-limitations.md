@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: dc0d41457729bf5fd78adb88d683ab4fbe23a148
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bb217efabbbc50bf5d52b8ee02407ce1beb42756
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60557148"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259560"
 ---
 # <a name="quotas-and-limitations"></a>할당량 및 제한 사항
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 이 문서에서는 Microsoft Azure Media Services와 관련된 할당량 및 제한 사항에 대해 설명합니다.
 

@@ -4,12 +4,12 @@ description: Python으로 함수를 개발하는 방법 이해
 ms.topic: article
 ms.date: 12/13/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 776355ce981ba5cc2a24bfe473da2f55427eadf6
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f9b81a7263dc9a1bdae9fd881519ac734da2c6bc
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850749"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642200"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Azure Functions Python 개발자 가이드
 
@@ -87,7 +87,6 @@ Python Functions 프로젝트에 권장하는 폴더 구조는 다음 예제와 
 * *requirements.txt*: Azure에 게시할 때 설치되는 패키지 목록이 포함됩니다.
 * *host.json*: 함수 앱의 모든 함수에 영향을 주는 글로벌 구성 옵션이 포함됩니다. 이 파일은 Azure에 게시됩니다. 로컬로 실행할 경우 일부 옵션이 지원되지 않습니다. 자세한 내용은 [host.json](functions-host-json.md)을 참조하세요.
 * *.funcignore*: (선택 사항) Azure에 게시하면 안 되는 파일을 선언합니다.
-* *.gitignore*: (선택 사항) git 리포지토리에서 제외되는 파일(예: local.settings.json)을 선언합니다.
 * *Dockerfile*: (선택 사항) [사용자 지정 컨테이너](functions-create-function-linux-custom-image.md)에서 프로젝트를 게시할 때 사용됩니다.
 
 각 함수에는 자체 코드 파일과 바인딩 구성 파일(function.json)이 있습니다.

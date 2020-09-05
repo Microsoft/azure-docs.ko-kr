@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 771f692ade9c7616eb7d217b4728a8c80d2aeac5
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 57786aa343fd2ea863b17f65253e5d4a4a6b88ce
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86044178"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226831"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure Data Factory에 대 한 Azure 보안 기준
 
@@ -450,7 +450,7 @@ Azure 가상 머신에서 IR (Integration Runtime)을 실행 하는 경우 관�
 
 * [Azure AD 인스턴스를 만들고 구성 하는 방법](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
-* [Azure 리소스용 관리 ID란?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
+* [Azure 리소스에 대한 관리 ID란?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)
 
 * [Azure Data Factory를 사용 하 여 Azure SQL Database 데이터 복사 및 변환](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#using-service-principal-authentication)
 
@@ -490,7 +490,7 @@ Azure VM (가상 머신)에서 Integration Runtime를 실행 하는 경우 VM에
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12: 계정 로그인 동작 편차에 대한 경고
 
@@ -584,7 +584,7 @@ Azure SQL Database와 Azure SQL Data Warehouse에 대한 모든 연결은 항상
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: 활성 검색 도구를 사용하여 중요한 데이터 식별
 
@@ -598,15 +598,15 @@ Azure SQL Database와 Azure SQL Data Warehouse에 대한 모든 연결은 항상
 
 **책임**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AD (AZURE ACTIVE DIRECTORY) RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Data Factory 제어 평면 (Azure Portal)에 대 한 액세스를 제어 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Data Factory 제어 평면 (Azure Portal)에 대 한 액세스를 제어 합니다.
 
 데이터 팩터리 인스턴스를 만들려면 Azure에 로그인하는 데 사용할 사용자 계정이 참여자 또는 소유자 역할의 구성원이거나, Azure 구독의 관리자여야 합니다.
 
-Azure SQL Database와 같은 Data Factory 데이터 원본의 경우 RBAC에 대 한 자세한 내용은 해당 서비스의 보안 기준을 참조 하세요.
+Azure SQL Database와 같은 Data Factory 데이터 원본의 경우 Azure RBAC에 대 한 자세한 내용은 해당 서비스의 보안 기준을 참조 하세요.
 
-* [Azure에서 RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+* [Azure RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
 * [Azure Data Factory용 역할 및 권한](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions)
 
@@ -800,7 +800,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: 컴퓨팅 리소스 내에서 승인되지 않은 소프트웨어 애플리케이션 모니터링
 
@@ -808,7 +808,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 참고: 소프트웨어 이름, 버전, 게시자 및 새로 고침 시간은 Azure Portal에서 사용할 수 있습니다. 설치 날짜 및 기타 정보에 대 한 액세스 권한을 얻으려면 게스트 수준 진단을 사용 하도록 설정 하 고 Windows 이벤트 로그를 Log Analytics 작업 영역으로 가져와야 합니다.
 
-* [Azure Automation에 대한 소개](https://docs.microsoft.com/azure/automation/automation-intro)
+* [Azure Automation 소개](https://docs.microsoft.com/azure/automation/automation-intro)
 
 * [Azure VM 인벤토리를 사용 하도록 설정 하는 방법](https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software)
 
@@ -820,7 +820,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **지침**: Azure 가상 머신에서 Integration Runtime를 실행 하는 경우 Azure Automation는 워크 로드 및 리소스의 배포, 운영 및 서비스 해제 중에 완전 한 제어를 제공 합니다. 변경 내용 추적를 사용 하 여 Virtual Machines에 설치 된 모든 소프트웨어를 식별할 수 있습니다. 사용자 고유의 프로세스를 구현 하거나 인증 되지 않은 소프트웨어를 제거 하기 위해 Azure Automation 상태 구성을 사용할 수 있습니다.
 
-* [Azure Automation에 대한 소개](https://docs.microsoft.com/azure/automation/automation-intro)
+* [Azure Automation 소개](https://docs.microsoft.com/azure/automation/automation-intro)
 
 * [변경 내용 추적 솔루션으로 사용자 환경의 변경 내용 추적](https://docs.microsoft.com/azure/automation/change-tracking)
 
@@ -900,7 +900,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 * [네트워크 보안 그룹](https://docs.microsoft.com/azure/virtual-network/security-overview)
 
-* [Azure Virtual Network 이란?](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
+* [Azure Virtual Network란?](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
 
 * [Azure 관리 그룹으로 리소스 구성](https://docs.microsoft.com/azure/governance/management-groups/overview)
 
@@ -980,19 +980,19 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
 
-**지침**: 사용자 지정 이미지를 사용 하는 경우 RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다. 컨테이너 이미지의 경우 Azure Container Registry에 저장 하 고 RBAC를 활용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
+**지침**: 사용자 지정 이미지를 사용 하는 경우 azure RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다. 컨테이너 이미지의 경우 Azure Container Registry에 저장 하 고 Azure RBAC를 활용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
 
 Data Factory 참여자 역할을 사용 하 여 데이터 팩터리를 만들고 관리 하는 데 사용할 수 있습니다.
 
-* [Azure의 RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)
+* [Azure RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)
 
-* [Container Registry에 대 한 RBAC 이해](https://docs.microsoft.com/azure/container-registry/container-registry-roles)
+* [Container Registry에 대 한 Azure RBAC 이해](https://docs.microsoft.com/azure/container-registry/container-registry-roles)
 
-* [Azure에서 RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+* [Azure RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
 
 * [Azure Data Factory용 역할 및 권한](https://docs.microsoft.com/azure/data-factory/concepts-roles-permissions)
 
@@ -1240,7 +1240,7 @@ App Service, Data Lake Storage, Blob Storage 등의 비 계산 Azure 리소스�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

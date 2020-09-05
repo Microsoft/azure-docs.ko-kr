@@ -6,15 +6,17 @@ ms.service: media-services
 ms.topic: quickstart
 ms.author: inhenkel
 author: IngridAtMicrosoft
-ms.date: 03/25/2020
-ms.openlocfilehash: 459f11844f873a911b3e5702e8c768b1cd22e504
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.date: 08/31/2020
+ms.openlocfilehash: 76bbb980b6430f7cffc23ec078e2c932128dc637
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80985000"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265272"
 ---
 # <a name="create-an-azure-media-services-live-stream"></a>Azure Media Services 라이브 스트림 만들기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 빠른 시작은 Azure Portal 및 Telestream Wirecast를 사용하여 Azure Media Services 라이브 스트림을 만드는 데 유용합니다. 여기에서는 Azure 구독이 있고 Media Services 계정을 만들었다고 가정합니다.
 

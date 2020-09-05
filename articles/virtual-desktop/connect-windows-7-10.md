@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 07/16/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 85e0c1b146cfba0cb95a6612f33e42a465bfd20b
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 0e4f41cb23ec4a9463b983049f5f37d09d1b8c71
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008749"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226712"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Windows Desktop 클라이언트와 연결
 
@@ -61,8 +61,9 @@ Windows 버전과 일치하는 클라이언트를 선택합니다.
 1. 클라이언트의 기본 페이지에서 **URL을 사용 하 여 구독**을 선택 합니다.
 2. 작업 영역 URL 또는 이메일 주소를 입력합니다.
    - **작업 영역 URL**을 사용하는 경우 관리자가 제공한 URL을 사용합니다. Windows Virtual Desktop에서 리소스에 액세스하는 경우 다음 URL 중 하나를 사용할 수 있습니다.
-     - Windows 가상 데스크톱 (클래식):`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
-     - Windows 가상 데스크톱:`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Windows Virtual Desktop(클래식): `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows Virtual Desktop: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Windows 가상 데스크톱 (US Gov): `https://rdweb.wvd.azure.us/api/arm/feeddiscovery`
    - **전자 메일** 필드를 대신 사용 하는 경우 전자 메일 주소를 입력 합니다. 이렇게 하면 관리자가 [전자 메일 검색](/windows-server/remote/remote-desktop-services/rds-email-discovery)을 설정 하는 경우 전자 메일 주소와 연결 된 URL을 검색 하도록 클라이언트에 지시 합니다.
 3. **다음**을 선택합니다.
 4. 메시지가 표시되면 사용자 계정으로 로그인합니다.

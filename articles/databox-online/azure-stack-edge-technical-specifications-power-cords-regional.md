@@ -2,18 +2,18 @@
 title: 위치에 따른 Microsoft Azure Stack Edge 전원 코드 기술 사양 | Microsoft Docs
 description: Azure Stack Edge 전원 코드의 기술 사양을 알아봅니다.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
 ms.date: 04/16/2020
-ms.author: v-grpr
-ms.openlocfilehash: 2fb28bcb1edb9a18b4d1628e211f87f2c772ef80
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.author: twooley
+ms.openlocfilehash: 8248f0a8e003351449186638fd4914c6b6fe4bed
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663251"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783980"
 ---
 # <a name="azure-stack-edge-power-cord-specifications"></a>Azure Stack Edge 전원 코드 사양
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 78a8e0a46fd60f14ea3bae7485c737aa4fe3c60e
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 3ec556c6198a00f217568f6591bd4b43c7fc743e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86230777"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924302"
 ---
 # <a name="knowledge-store-in-azure-cognitive-search"></a>Azure Cognitive Search의 기술 자료 저장소
 
@@ -21,7 +21,7 @@ ms.locfileid: "86230777"
 
 과거에 인지 검색을 사용한 적이 있으면 *기술 세트*를 사용하여 보강 시퀀스를 통해 문서를 이동시킨다는 것을 이미 알고 있을 것입니다. 결과는 검색 인덱스 또는 기술 자료 저장소의 프로젝션이 될 수 있습니다. 검색 인덱스와 지식 저장소의 두 출력은 동일한 파이프라인의 부산물입니다. 동일한 입력에서 파생되지만 매우 다양한 방식으로 구조화, 저장 및 사용되는 출력이 생성됩니다.
 
-물리적으로 지식 저장소는 Azure Table 스토리지, Azure Blob 스토리지 또는 둘 다인 [Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-account-overview)입니다. Azure Storage에 연결할 수 있는 모든 도구 또는 프로세스는 지식 저장소의 콘텐츠를 사용할 수 있습니다.
+물리적으로 지식 저장소는 Azure Table 스토리지, Azure Blob 스토리지 또는 둘 다인 [Azure Storage](../storage/common/storage-account-overview.md)입니다. Azure Storage에 연결할 수 있는 모든 도구 또는 프로세스는 지식 저장소의 콘텐츠를 사용할 수 있습니다.
 
 
 > [!VIDEO https://www.youtube.com/embed/XWzLBP8iWqg?version=3&start=235&end=426]
@@ -39,7 +39,7 @@ AI 보강 파이프라인에서 생성할 수 있는 기능을 확인하는 것�
 
 + 보강된 문서를 검색 이외의 [분석 및 보고 도구](#tools-and-apps)에 사용합니다. 파워 쿼리 포함 Power BI는 매력적인 선택이지만 Azure Storage에 연결할 수 있는 모든 도구 또는 앱은 사용자가 만드는 지식 저장소에서 끌어올 수 있습니다.
 
-+ 단계 및 기술 세트 정의를 디버깅하는 동안 AI 인덱싱 파이프라인을 정교화합니다. 지식 저장소는 AI 인덱싱 파이프라인에 있는 기술 세트 정의의 생성물을 보여줍니다. 보강이 어떻게 보이는지 정확히 확인할 수 있으므로 해당 결과를 사용하여 더 나은 기술 세트를 디자인할 수 있습니다. Azure Storage의 [Storage Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows)를 사용하여 지식 저장소의 콘텐츠를 볼 수 있습니다.
++ 단계 및 기술 세트 정의를 디버깅하는 동안 AI 인덱싱 파이프라인을 정교화합니다. 지식 저장소는 AI 인덱싱 파이프라인에 있는 기술 세트 정의의 생성물을 보여줍니다. 보강이 어떻게 보이는지 정확히 확인할 수 있으므로 해당 결과를 사용하여 더 나은 기술 세트를 디자인할 수 있습니다. Azure Storage의 [Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)를 사용하여 지식 저장소의 콘텐츠를 볼 수 있습니다.
 
 + 데이터를 새 양식으로 변형합니다. 변형은 기술 세트에 포함되지만 중요한 점은 이제 기술 세트가 이 기능을 제공할 수 있다는 것입니다. Azure Cognitive Search의 [쉐이퍼 기술](cognitive-search-skill-shaper.md)은 이 작업에 맞게 확장되었습니다. 변형을 사용하면 관계를 유지하면서 데이터의 사용 목적에 맞는 프로젝션을 정의할 수 있습니다.
 
@@ -84,7 +84,7 @@ AI 보강 파이프라인에서 생성할 수 있는 기능을 확인하는 것�
 
 ## <a name="requirements"></a>요구 사항 
 
-[Azure Storage](https://docs.microsoft.com/azure/storage/)가 필요합니다. 물리적 스토리지를 제공합니다. Blob 스토리지나 Table Storage 또는 둘 다를 사용할 수 있습니다. Blob 스토리지는 일반적으로 출력이 다운스트림 프로세스로 이동될 때 그대로 유지되는 보강 문서에 사용됩니다. Table Storage는 분석 및 보고에 일반적으로 사용되는 보강 문서 조각을 위한 기능입니다.
+[Azure Storage](../storage/index.yml)가 필요합니다. 물리적 스토리지를 제공합니다. Blob 스토리지나 Table Storage 또는 둘 다를 사용할 수 있습니다. Blob 스토리지는 일반적으로 출력이 다운스트림 프로세스로 이동될 때 그대로 유지되는 보강 문서에 사용됩니다. Table Storage는 분석 및 보고에 일반적으로 사용되는 보강 문서 조각을 위한 기능입니다.
 
 [기술 세트](cognitive-search-working-with-skillsets.md)가 필요합니다. `knowledgeStore` 정의를 포함하고 보강 문서의 구조와 컴퍼지션을 결정합니다. 빈 기술 세트를 사용하여 지식 저장소를 만들 수는 없습니다. 기술 세트에는 최소 하나 이상의 기술이 있어야 합니다.
 
@@ -130,7 +130,7 @@ REST API는 프로그래밍 방식으로 기술 자료 저장소를 만들 수 �
 
 + 보고 및 분석을 위한 [Power BI](knowledge-store-connect-power-bi.md) 
 
-+ [Azure Data Factory](https://docs.microsoft.com/azure/data-factory/) - 추가 조작을 위한 도구입니다.
++ [Azure Data Factory](../data-factory/index.yml) - 추가 조작을 위한 도구입니다.
 
 <a name="kstore-rest-api"></a>
 
@@ -138,8 +138,8 @@ REST API는 프로그래밍 방식으로 기술 자료 저장소를 만들 수 �
 
 REST API 버전 `2020-06-30`에서는 기술 세트에 대한 추가 정의를 통해 지식 저장소를 제공합니다. API를 호출하는 방법에 대한 자세한 내용은 이 참조 외에 [Postman Man을 사용하여 지식 저장소 만들기](knowledge-store-create-rest.md)를 참조하세요.
 
-+ [Create 기술 (api-version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
-+ [기술 업데이트 (api-version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/update-skillset)
++ [Create 기술 (api-version = 2020-06-30)](/rest/api/searchservice/create-skillset)
++ [기술 업데이트 (api-version = 2020-06-30)](/rest/api/searchservice/update-skillset)
 
 
 ## <a name="next-steps"></a>다음 단계

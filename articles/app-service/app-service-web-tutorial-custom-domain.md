@@ -5,14 +5,14 @@ keywords: App Service, Azure App Service, 도메인 매핑, 도메인 이름, �
 ms.assetid: dc446e0e-0958-48ea-8d99-441d2b947a7c
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 04/27/2020
+ms.date: 08/13/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 96a947a20a17c4dc08851824a392143ce162f186
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 1496f46eb29831dfb858f061ccc00c9e3dbc2e75
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543567"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782314"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>자습서: Azure App Service에 기존 사용자 지정 DNS 이름 매핑
 
@@ -125,11 +125,11 @@ App Service 계획이 **F1** 계층이 아닌 경우 **스케일업** 페이지�
 
 #### <a name="create-the-cname-record"></a>CNAME 레코드 만들기
 
-하위 도메인을 앱의 기본 도메인 이름(`<app_name>.azurewebsites.net`, 여기서 `<app_name>`은 사용자 앱의 이름)에 매핑합니다. `www` 하위 도메인에 대한 CNAME 매핑을 만들려면 다음과 같은 두 개의 레코드를 만듭니다.
+하위 도메인을 앱의 기본 도메인 이름(`<app-name>.azurewebsites.net`, 여기서 `<app-name>`은 사용자 앱의 이름)에 매핑합니다. `www` 하위 도메인에 대한 CNAME 매핑을 만들려면 다음과 같은 두 개의 레코드를 만듭니다.
 
 | 레코드 형식 | 호스트 | 값 | 주석 |
 | - | - | - |
-| CNAME | `www` | `<app_name>.azurewebsites.net` | 도메인 자체 매핑. |
+| CNAME | `www` | `<app-name>.azurewebsites.net` | 도메인 자체 매핑. |
 | TXT | `asuid.www` | [이전에 가져온 확인 ID](#get-domain-verification-id) | App Service는 `asuid.<subdomain>` TXT 레코드에 액세스하여 사용자 지정 도메인의 소유권을 확인합니다. |
 
 CNAME 및 TXT 레코드를 추가하면 DNS 레코드 페이지는 다음 예제와 비슷합니다.
@@ -210,7 +210,7 @@ A 레코드를 앱(일반적으로 루트 도메인)에 매핑하려면 두 개�
 > | 레코드 형식 | 호스트 | 값 |
 > | - | - | - |
 > | A | `www` | [앱의 IP 주소 복사](#info)에서 가져온 IP 주소 |
-> | TXT | `asuid.www` | `<app_name>.azurewebsites.net` |
+> | TXT | `asuid.www` | `<app-name>.azurewebsites.net` |
 >
 
 레코드를 추가하면 DNS 레코드 페이지가 다음 예제와 비슷합니다.
@@ -262,9 +262,14 @@ Azure Portal에서 해당 앱의 **사용자 지정 도메인** 페이지로 돌
 
 #### <a name="create-the-cname-record"></a>CNAME 레코드 만들기
 
-CNAME 레코드를 추가하여 와일드카드 이름을 앱의 기본 도메인 이름(`<app_name>.azurewebsites.net`)에 매핑합니다.
+와일드카드 이름 `*`를 앱의 기본 도메인 이름(`<app-name>.azurewebsites.net`, 여기서 `<app-name>`은 앱 이름)에 매핑합니다. 와일드카드 이름을 매핑하려면 두 개의 레코드를 만듭니다.
 
-`*.contoso.com` 도메인 예제의 경우 CNAME 레코드에서는 `*` 이름을 `<app_name>.azurewebsites.net`에 매핑합니다.
+| 레코드 형식 | 호스트 | 값 | 주석 |
+| - | - | - |
+| CNAME | `*` | `<app-name>.azurewebsites.net` | 도메인 자체 매핑. |
+| TXT | `asuid` | [이전에 가져온 확인 ID](#get-domain-verification-id) | App Service는 `asuid` TXT 레코드에 액세스하여 사용자 지정 도메인의 소유권을 확인합니다. |
+
+`*.contoso.com` 도메인 예제의 경우 CNAME 레코드에서는 `*` 이름을 `<app-name>.azurewebsites.net`에 매핑합니다.
 
 CNAME을 추가하면 DNS 레코드 페이지가 다음 예제와 비슷합니다.
 
@@ -272,7 +277,7 @@ CNAME을 추가하면 DNS 레코드 페이지가 다음 예제와 비슷합니�
 
 #### <a name="enable-the-cname-record-mapping-in-the-app"></a>앱에서 CNAME 레코드 매핑 사용
 
-이제 와일드카드 이름과 일치하는 모든 하위 도메인을 앱에 추가할 수 있습니다(예: `sub1.contoso.com`과 `sub2.contoso.com`은 `*.contoso.com`과 일치함).
+이제 와일드카드 이름과 일치하는 모든 하위 도메인을 앱에 추가할 수 있습니다(예: `sub1.contoso.com`, `sub2.contoso.com`, `*.contoso.com`은 모두 `*.contoso.com`과 일치).
 
 Azure Portal의 앱 페이지 왼쪽 탐색 영역에서 **사용자 지정 도메인**을 선택합니다.
 
@@ -342,7 +347,7 @@ App Service는 기본적으로 웹 요청을 앱 코드의 루트 디렉터리�
 
 ```bash 
 az webapp config hostname add \
-    --webapp-name <app_name> \
+    --webapp-name <app-name> \
     --resource-group <resource_group_name> \
     --hostname <fully_qualified_domain_name>
 ``` 
@@ -357,9 +362,9 @@ az webapp config hostname add \
 
 ```powershell  
 Set-AzWebApp `
-    -Name <app_name> `
+    -Name <app-name> `
     -ResourceGroupName <resource_group_name> ` 
-    -HostNames @("<fully_qualified_domain_name>","<app_name>.azurewebsites.net")
+    -HostNames @("<fully_qualified_domain_name>","<app-name>.azurewebsites.net")
 ```
 
 자세한 내용은 [Web App에 사용자 지정 도메인 할당](scripts/powershell-configure-custom-domain.md)을 참조하세요.

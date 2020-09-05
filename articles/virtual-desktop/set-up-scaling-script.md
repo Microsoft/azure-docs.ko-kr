@@ -6,22 +6,18 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a7ac01d71316fe4ccf44aa422d88dc31b1fd0ca4
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 12a15ab1a4c7369c448e9f65862121b03ca05bba
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009446"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078557"
 ---
 # <a name="scale-session-hosts-using-azure-automation"></a>Azure Automation을 사용하여 세션 호스트 크기 조정
 
 VM(가상 머신)을 크기 조정하여 총 Windows Virtual Desktop 배포 비용을 줄일 수 있습니다. VM을 크기 조정한다는 것은 사용량이 적은 시간에는 세션 호스트 VM을 종료 및 할당 취소하고 사용량이 많은 시간에는 다시 켜서 할당하는 것을 의미합니다.
 
 이 문서에서는 Windows 가상 데스크톱 환경에서 세션 호스트 Vm의 크기를 자동으로 조정 하는 Azure Automation 계정 및 Azure 논리 앱을 사용 하 여 작성 된 크기 조정 도구에 대해 알아봅니다. 크기 조정 도구를 사용하는 방법을 알아보려면 [사전 요구 사항](#prerequisites)으로 건너뛰세요.
-
-## <a name="report-issues"></a>문제 보고
-
-크기 조정 도구에 대한 문제 보고서는 현재 Microsoft 지원이 아닌 GitHub에서 처리되고 있습니다. 크기 조정 도구에 문제가 발생 하는 경우 [문제 보고](#reporting-issues) 섹션에 설명 된 대로 필요한 정보를 확인 하 고 [RDS github 페이지](https://github.com/Azure/RDS-Templates/issues?q=is%3Aissue+is%3Aopen+label%3A4a-WVD-scaling-logicapps)에서 "4a-wvd-logicapps"으로 레이블이 지정 된 GitHub 문제를 엽니다.
 
 ## <a name="how-the-scaling-tool-works"></a>크기 조정 도구의 작동 방식
 
@@ -327,3 +323,7 @@ Log Analytics를 사용 하기로 결정 한 경우 Log Analytics 작업 영역�
     | where logmessage_s contains "ERROR:" or logmessage_s contains "WARN:"
     | project TimeStampUTC = TimeGenerated, TimeStampLocal = TimeStamp_s, HostPool = hostpoolName_s, LineNumAndMessage = logmessage_s, AADTenantId = TenantId
     ```
+
+## <a name="report-issues"></a>문제 보고
+
+크기 조정 도구에 대 한 문제 보고서는 현재 Microsoft 지원에서 처리 중입니다. 문제 보고를 수행 하는 경우 [문제 보고](#reporting-issues)의 지침을 따라야 합니다. 도구에 대 한 의견이 있거나 새 기능을 요청 하려는 경우 [RDS github 페이지](https://github.com/Azure/RDS-Templates/issues?q=is%3Aissue+is%3Aopen+label%3A4-WVD-scaling-tool)에서 "4-wvd-크기 조정 도구" 라는 GitHub 문제를 엽니다.

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 6e46d1a923eec5244bf77c201ff0b3189699c9ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 75e7a43d545bea63d553ad01836ed5c6ebc2dcc9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84339725"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079798"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge"></a>Azure Stack Edge에 대 한 액세스, 기능 및 연결 모드 관리
 
@@ -95,7 +95,7 @@ Azure Stack Edge 장치의 경우을 `Microsoft.DataBoxEdge` 등록 해야 합�
 Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 ```
 
-리소스 공급자를 등록 하는 방법에 대 한 자세한 내용은 [리소스 공급자 등록에 대 한 오류 해결](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors)을 참조 하세요.
+리소스 공급자를 등록 하는 방법에 대 한 자세한 내용은 [리소스 공급자 등록에 대 한 오류 해결](../azure-resource-manager/templates/error-register-resource-provider.md)을 참조 하세요.
 
 ## <a name="manage-connectivity-mode"></a>연결 모드 관리
 
@@ -120,7 +120,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
  
 ## <a name="manage-power"></a>전원 관리
 
-로컬 웹 UI를 사용 하 여 물리적 장치를 종료 하거나 다시 시작할 수 있습니다. 를 다시 시작 하기 전에 데이터 서버와 장치에서 공유를 오프 라인 상태로 전환 하는 것이 좋습니다. 이 작업을 수행하면 데이터 손상 가능성이 최소화됩니다.
+로컬 웹 UI를 사용하여 물리적 디바이스를 종료하거나 다시 시작할 수 있습니다. 다시 시작하기 전에 데이터 서버에서 공유를 오프라인으로 전환한 후 디바이스를 다시 시작하는 것이 좋습니다. 이 작업을 수행하면 데이터 손상 가능성이 최소화됩니다.
 
 1. 로컬 웹 UI에서 **유지 관리 > 전원 설정**으로 이동합니다.
 2. 수행 하려는 작업에 따라 **종료** 또는 **다시 시작** 을 선택 합니다.

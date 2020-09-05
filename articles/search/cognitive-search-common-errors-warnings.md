@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 83c3797cc3d9232f8589527285cc56c5cbff9a8a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fdae02ca9d3c434a77eb972bfd4b955161bd72c4
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84221310"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935554"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Azure Cognitive Search에서 일반적인 인덱서 오류 및 경고 문제 해결
 
@@ -21,10 +21,10 @@ ms.locfileid: "84221310"
 
 오류 수가 [' Maxfaileditems '](cognitive-search-concept-troubleshooting.md#tip-3-see-what-works-even-if-there-are-some-failures)를 초과 하면 인덱싱이 중지 됩니다. 
 
-인덱서를 통해 이러한 오류를 무시 하 고 "실패 한 문서"를 건너뛰도록 하려면 여기에 설명 된 `maxFailedItems` 대로 및를 업데이트 하는 것이 좋습니다 `maxFailedItemsPerBatch` . [here](https://docs.microsoft.com/rest/api/searchservice/create-indexer#general-parameters-for-all-indexers)
+인덱서를 통해 이러한 오류를 무시 하 고 "실패 한 문서"를 건너뛰도록 하려면 여기에 설명 된 `maxFailedItems` 대로 및를 업데이트 하는 것이 좋습니다 `maxFailedItemsPerBatch` . [here](/rest/api/searchservice/create-indexer#general-parameters-for-all-indexers)
 
 > [!NOTE]
-> 문서 키 (사용 가능한 경우)와 함께 실패 한 각 문서는 인덱서 실행 상태에서 오류로 표시 됩니다. 오류가 허용 되도록 인덱서를 설정한 경우 [인덱스 api](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) 를 활용 하 여 나중에 수동으로 문서를 업로드할 수 있습니다.
+> 문서 키 (사용 가능한 경우)와 함께 실패 한 각 문서는 인덱서 실행 상태에서 오류로 표시 됩니다. 오류가 허용 되도록 인덱서를 설정한 경우 [인덱스 api](/rest/api/searchservice/addupdate-or-delete-documents) 를 활용 하 여 나중에 수동으로 문서를 업로드할 수 있습니다.
 
 이 문서의 오류 정보는 오류를 해결 하는 데 도움이 될 수 있으므로 인덱싱을 계속할 수 있습니다.
 
@@ -32,7 +32,7 @@ ms.locfileid: "84221310"
 
 API 버전부터 `2019-05-06` 항목 수준 인덱서 오류 및 경고는 원인 및 다음 단계를 보다 명확 하 게 이해할 수 있도록 구조화 되어 있습니다. 여기에는 다음 속성이 포함 됩니다.
 
-| 속성 | 설명 | 예제 |
+| 속성 | Description | 예 |
 | --- | --- | --- |
 | key | 오류 또는 경고의 영향을 받는 문서의 문서 ID입니다. | https: \/ /coromsearch.blob.core.windows.net/jfk-1k/docid-32112954.pdf |
 | name | 오류 또는 경고가 발생 한 위치를 설명 하는 작업 이름입니다. 이는 다음과 같은 구조 [category]에 의해 생성 됩니다. [하위 범주]. [resourceType]. ResourceName | DocumentExtraction. mySkillName 프로젝션. n a m e. n a m e. n a m e. n a m e. myIndexName myOutputFieldName |
@@ -49,7 +49,7 @@ API 버전부터 `2019-05-06` 항목 수준 인덱서 오류 및 경고는 원�
 | 이유 | 세부 정보/예제 | 해결 방법 |
 | --- | --- | --- |
 | 여러 문서에서 일치 하지 않는 필드 형식 | "값의 형식이 열 형식과 일치 하지 않습니다. `'{47.6,-122.1}'`작성자 열에 저장할 수 없습니다.  필요한 형식은 JArray입니다. "  "데이터 형식 nvarchar를 float로 변환 하는 동안 오류가 발생 했습니다."  "Nvarchar 값 ' 12 개월 '을 데이터 형식 int로 변환 하지 못했습니다."  "식을(를) 데이터 형식 int(으)로 변환하는 중 산술 오버플로 오류가 발생했습니다." | 각 필드의 형식이 서로 다른 문서에서 동일한 지 확인 합니다. 예를 들어 첫 번째 문서 `'startTime'` 필드가 날짜/시간이 고 두 번째 문서에서 문자열이 면이 오류가 발생 합니다. |
-| 데이터 원본의 기본 서비스에서 발생 한 오류 | (Cosmos DB)`{"Errors":["Request rate is large"]}` | 저장소 인스턴스를 확인 하 여 정상 상태 인지 확인 합니다. 크기 조정/분할을 조정 해야 할 수 있습니다. |
+| 데이터 원본의 기본 서비스에서 발생 한 오류 | (Cosmos DB) `{"Errors":["Request rate is large"]}` | 저장소 인스턴스를 확인 하 여 정상 상태 인지 확인 합니다. 크기 조정/분할을 조정 해야 할 수 있습니다. |
 | 일시적인 문제 | 서버에서 결과를 받을 때 전송 수준 오류가 발생했습니다. (공급자: TCP 공급자, 오류: 0-기존 연결이 원격 호스트에 의해 강제로 끊겼습니다.) | 예기치 않은 연결 문제가 발생 하는 경우도 있습니다. 나중에 인덱서를 통해 문서를 다시 실행 해 보세요. |
 
 <a name="could-not-extract-document-content"></a>
@@ -60,7 +60,7 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 | 이유 | 세부 정보/예제 | 해결 방법 |
 | --- | --- | --- |
 | blob이 크기 제한을 초과 합니다. | 문서는 `'150441598'` 바이트 이며 `'134217728'` 현재 서비스 계층의 문서 추출에 대 한 최대 크기 바이트를 초과 합니다. | [blob 인덱싱 오류](search-howto-indexing-azure-blob-storage.md#dealing-with-errors) |
-| blob의 콘텐츠 형식이 지원 되지 않습니다. | 문서에 지원 되지 않는 콘텐츠 형식이 있습니다.`'image/png'` | [blob 인덱싱 오류](search-howto-indexing-azure-blob-storage.md#dealing-with-errors) |
+| blob의 콘텐츠 형식이 지원 되지 않습니다. | 문서에 지원 되지 않는 콘텐츠 형식이 있습니다. `'image/png'` | [blob 인덱싱 오류](search-howto-indexing-azure-blob-storage.md#dealing-with-errors) |
 | blob이 암호화 되어 있습니다. | 문서를 처리할 수 없습니다. 암호화 또는 암호로 보호할 수 있습니다. | Blob [설정을](search-howto-indexing-azure-blob-storage.md#controlling-which-parts-of-the-blob-are-indexed)사용 하 여 blob를 건너뛸 수 있습니다. |
 | 일시적인 문제 | "Blob을 처리 하는 동안 오류가 발생 했습니다. 요청이 중단 되었습니다. 요청이 취소 되었습니다." "처리 하는 동안 문서 시간이 초과 되었습니다." | 예기치 않은 연결 문제가 발생 하는 경우도 있습니다. 나중에 인덱서를 통해 문서를 다시 실행 해 보세요. |
 
@@ -71,7 +71,7 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 
 | 이유 | 세부 정보/예제 | 해결 방법 |
 | --- | --- | --- |
-| 문서 키가 없습니다. | 문서 키를 누락 하거나 비워 둘 수 없습니다. | 모든 문서에 유효한 문서 키가 있는지 확인 합니다. 문서 키는 [인덱스 정의](https://docs.microsoft.com/rest/api/searchservice/create-index#request-body)의 일부로 ' key ' 속성을 설정 하 여 결정 됩니다. 특정 문서에서 ' 키 '로 플래그가 지정 된 속성을 찾을 수 없으면 인덱서는이 오류를 내보냅니다. |
+| 문서 키가 없습니다. | 문서 키를 누락 하거나 비워 둘 수 없습니다. | 모든 문서에 유효한 문서 키가 있는지 확인 합니다. 문서 키는 [인덱스 정의](/rest/api/searchservice/create-index#request-body)의 일부로 ' key ' 속성을 설정 하 여 결정 됩니다. 특정 문서에서 ' 키 '로 플래그가 지정 된 속성을 찾을 수 없으면 인덱서는이 오류를 내보냅니다. |
 | 문서 키가 잘못 되었습니다. | 문서 키는 1024 자를 초과할 수 없습니다. | 유효성 검사 요구 사항에 맞게 문서 키를 수정 합니다. |
 | 필드에 필드 매핑을 적용할 수 없습니다. | 필드에 매핑 함수를 적용할 수 없습니다 `'functionName'` `'fieldName'` . 배열은 null 일 수 없습니다. 매개 변수 이름: 바이트 | 인덱서에 정의 된 [필드 매핑을](search-indexer-field-mappings.md) 두 번 확인 하 고 실패 한 문서의 지정 된 필드의 데이터와 비교 합니다. 필드 매핑 또는 문서 데이터를 수정 해야 할 수도 있습니다. |
 | 필드 값을 읽을 수 없습니다. | 인덱스에서 열 값을 읽을 수 없습니다 `'fieldName'` `'fieldIndex'` . 서버에서 결과를 받을 때 전송 수준 오류가 발생했습니다. (공급자: TCP 공급자, 오류: 0 - 현재 현결이 원격 호스트에 의해 강제로 끊겼습니다.) | 이러한 오류는 일반적으로 데이터 원본의 기본 서비스와 관련 된 예기치 않은 연결 문제로 인해 발생 합니다. 나중에 인덱서를 통해 문서를 다시 실행 해 보세요. |
@@ -155,7 +155,7 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 | 쿼리가 나 인덱싱 등의 다른 부하에서 서비스를 하 고 있으므로 대상 인덱스에 연결 하는 데 문제가 있습니다 (재시도 후 지속 됨). | 인덱스 업데이트에 대 한 연결을 설정 하지 못했습니다. 검색 서비스의 부하가 높습니다. | [Search 서비스 확장](search-capacity-planning.md)
 | 서비스 업데이트를 위해 검색 서비스를 패치 하 고 있거나 토폴로지를 다시 구성 하는 중입니다. | 인덱스 업데이트에 대 한 연결을 설정 하지 못했습니다. 검색 서비스가 현재 다운 되었거나 검색 서비스에서 전환 중입니다. | [SLA 설명서](https://azure.microsoft.com/support/legal/sla/search/v1_0/) 당 99.9%의 가용성을 위해 3 개 이상의 복제본을 사용 하 여 서비스를 구성 합니다.
 | 기본 계산/네트워킹 리소스에서 오류가 발생 했습니다 (드문 경우). | 인덱스 업데이트에 대 한 연결을 설정 하지 못했습니다. 알 수 없는 오류가 발생했습니다. | 실패 상태에서 선택할 수 있도록 [일정에 따라 실행](search-howto-schedule-indexers.md) 되도록 인덱서를 구성 합니다.
-| 네트워크 문제로 인해 대상 인덱스에 대해 수행 된 인덱싱 요청이 시간 제한 기간 내에 승인 되지 않았습니다. | 적시에 검색 인덱스에 대 한 연결을 설정할 수 없습니다. | 실패 상태에서 선택할 수 있도록 [일정에 따라 실행](search-howto-schedule-indexers.md) 되도록 인덱서를 구성 합니다. 또한이 오류 조건이 지속 되는 경우 인덱서 [일괄 처리 크기](https://docs.microsoft.com/rest/api/searchservice/create-indexer#parameters) 를 줄여 보세요.
+| 네트워크 문제로 인해 대상 인덱스에 대해 수행 된 인덱싱 요청이 시간 제한 기간 내에 승인 되지 않았습니다. | 적시에 검색 인덱스에 대 한 연결을 설정할 수 없습니다. | 실패 상태에서 선택할 수 있도록 [일정에 따라 실행](search-howto-schedule-indexers.md) 되도록 인덱서를 구성 합니다. 또한이 오류 조건이 지속 되는 경우 인덱서 [일괄 처리 크기](/rest/api/searchservice/create-indexer#parameters) 를 줄여 보세요.
 
 <a name="could-not-index-document-because-the-indexer-data-to-index-was-invalid"></a>
 
@@ -171,11 +171,11 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 | 소스 문서에서 알 수 없는 형식이 검색 되었습니다. | 알 수 없는 '_unknown_' 형식을 인덱싱할 수 없습니다. |
 | 원본 문서에서 지리적 위치에 대해 호환 되지 않는 표기법이 사용 되었습니다. | WKT POINT 문자열 리터럴은 지원 되지 않습니다. 대신 GeoJson point 리터럴을 사용 하세요. |
 
-이러한 모든 경우에 대해 [지원 되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) 및 [인덱서의 데이터 형식 맵](https://docs.microsoft.com/rest/api/searchservice/data-type-map-for-indexers-in-azure-search) 을 참조 하 여 인덱스 스키마를 올바르게 작성 하 고 적절 한 [인덱서 필드 매핑을](search-indexer-field-mappings.md)설정 했는지 확인 합니다. 오류 메시지에는 불일치의 원인을 추적 하는 데 도움이 되는 세부 정보가 포함 됩니다.
+이러한 모든 경우에 대해 [지원 되는 데이터 형식](/rest/api/searchservice/supported-data-types) 및 [인덱서의 데이터 형식 맵](/rest/api/searchservice/data-type-map-for-indexers-in-azure-search) 을 참조 하 여 인덱스 스키마를 올바르게 작성 하 고 적절 한 [인덱서 필드 매핑을](search-indexer-field-mappings.md)설정 했는지 확인 합니다. 오류 메시지에는 불일치의 원인을 추적 하는 데 도움이 되는 세부 정보가 포함 됩니다.
 
 ## <a name="error-integrated-change-tracking-policy-cannot-be-used-because-table-has-a-composite-primary-key"></a>오류: 테이블에 복합 기본 키가 있으므로 통합 변경 내용 추적 정책을 사용할 수 없습니다.
 
-이는 SQL 테이블에 적용 되며, 일반적으로 키가 복합 키로 정의 되거나 테이블이 Azure Search 인덱스가 아닌 SQL 인덱스에서와 같이 고유 클러스터형 인덱스를 정의한 경우에 발생 합니다. 주된 이유는 키 특성이 [고유 클러스터형 인덱스](https://docs.microsoft.com/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?view=sql-server-ver15)의 경우 복합 기본 키로 수정 되기 때문입니다. 이 경우에는 SQL 테이블이 고유 클러스터형 인덱스를 포함 하지 않는지 확인 하거나 키 필드를 중복 값이 없는 필드에 매핑해야 합니다.
+이는 SQL 테이블에 적용 되며, 일반적으로 키가 복합 키로 정의 되거나 테이블이 Azure Search 인덱스가 아닌 SQL 인덱스에서와 같이 고유 클러스터형 인덱스를 정의한 경우에 발생 합니다. 주된 이유는 키 특성이 [고유 클러스터형 인덱스](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?view=sql-server-ver15)의 경우 복합 기본 키로 수정 되기 때문입니다. 이 경우에는 SQL 테이블이 고유 클러스터형 인덱스를 포함 하지 않는지 확인 하거나 키 필드를 중복 값이 없는 필드에 매핑해야 합니다.
 
 <a name="could-not-process-document-within-indexer-max-run-time"></a>
 
@@ -255,9 +255,9 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 ```
 
 이 오류 메시지를 생성할 수 있는 각 기술에 대해 현재 지원 되는 언어에 대 한 몇 가지 참조는 다음과 같습니다.
-* [Text Analytics 지원 되는 언어](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) ( [KeyPhraseExtractionSkill](cognitive-search-skill-keyphrases.md), [EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md), [SentimentSkill](cognitive-search-skill-sentiment.md)및 [PIIDetectionSkill](cognitive-search-skill-pii-detection.md))
-* [Translator 지원 언어](https://docs.microsoft.com/azure/cognitive-services/translator/language-support) ( [텍스트 TranslationSkill](cognitive-search-skill-text-translation.md))
-* [텍스트 SplitSkill](cognitive-search-skill-textsplit.md) 지원 되는 언어:`da, de, en, es, fi, fr, it, ko, pt`
+* [Text Analytics 지원 되는 언어](../cognitive-services/text-analytics/language-support.md) ( [KeyPhraseExtractionSkill](cognitive-search-skill-keyphrases.md), [EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md), [SentimentSkill](cognitive-search-skill-sentiment.md)및 [PIIDetectionSkill](cognitive-search-skill-pii-detection.md))
+* [Translator 지원 언어](../cognitive-services/translator/language-support.md) ( [텍스트 TranslationSkill](cognitive-search-skill-text-translation.md))
+* [텍스트 SplitSkill](cognitive-search-skill-textsplit.md) 지원 되는 언어: `da, de, en, es, fi, fr, it, ko, pt`
 
 <a name="skill-input-was-truncated"></a>
 
@@ -304,7 +304,7 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 
 ## <a name="warning-some-data-was-lost-during-projection-row-x-in-table-y-has-string-property-z-which-was-too-long"></a>경고: 프로젝션 중 일부 데이터가 손실 되었습니다. ' Y ' 테이블의 ' X ' 행에 너무 긴 문자열 속성 ' Z '가 있습니다.
 
-[Table Storage 서비스](https://azure.microsoft.com/services/storage/tables) 에는 [엔터티 속성](https://docs.microsoft.com/rest/api/storageservices/understanding-the-table-service-data-model#property-types) 의 크기에 대 한 제한이 있습니다. 문자열은 32000 자이 하 여야 합니다. 문자열 속성이 32000 자 보다 긴 행을 프로젝션 하는 경우 첫 번째 32000 자만 유지 됩니다. 이 문제를 해결 하려면 문자열 속성이 32000 자 보다 긴 행을 프로젝션 하지 않도록 합니다.
+[Table Storage 서비스](https://azure.microsoft.com/services/storage/tables) 에는 [엔터티 속성](/rest/api/storageservices/understanding-the-table-service-data-model#property-types) 의 크기에 대 한 제한이 있습니다. 문자열은 32000 자이 하 여야 합니다. 문자열 속성이 32000 자 보다 긴 행을 프로젝션 하는 경우 첫 번째 32000 자만 유지 됩니다. 이 문제를 해결 하려면 문자열 속성이 32000 자 보다 긴 행을 프로젝션 하지 않도록 합니다.
 
 <a name="truncated-extracted-text-to-x-characters"></a>
 
@@ -326,13 +326,13 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 <a name="the-data-change-detection-policy-is-configured-to-use-key-column-x"></a>
 
 ## <a name="warning-the-data-change-detection-policy-is-configured-to-use-key-column-x"></a>경고: 데이터 변경 검색 정책이 키 열 ' X '를 사용 하도록 구성 되어 있습니다.
-[데이터 변경 검색 정책](https://docs.microsoft.com/rest/api/searchservice/create-data-source#data-change-detection-policies) 에는 변경을 검색 하는 데 사용 하는 열에 대 한 특정 요구 사항이 있습니다. 이러한 요구 사항 중 하나는 원본 항목이 변경 될 때마다이 열이 업데이트 되는 것입니다. 또 다른 요구 사항은이 열의 새 값이 이전 값 보다 크다는 것입니다. 키 열은 업데이트 마다 변경 되지 않으므로이 요구 사항을 충족 하지 않습니다. 이 문제를 해결 하려면 변경 검색 정책에 대해 다른 열을 선택 합니다.
+[데이터 변경 검색 정책](/rest/api/searchservice/create-data-source#data-change-detection-policies) 에는 변경을 검색 하는 데 사용 하는 열에 대 한 특정 요구 사항이 있습니다. 이러한 요구 사항 중 하나는 원본 항목이 변경 될 때마다이 열이 업데이트 되는 것입니다. 또 다른 요구 사항은이 열의 새 값이 이전 값 보다 크다는 것입니다. 키 열은 업데이트 마다 변경 되지 않으므로이 요구 사항을 충족 하지 않습니다. 이 문제를 해결 하려면 변경 검색 정책에 대해 다른 열을 선택 합니다.
 
 <a name="document-text-appears-to-be-utf-16-encoded-but-is-missing-a-byte-order-mark"></a>
 
 ## <a name="warning-document-text-appears-to-be-utf-16-encoded-but-is-missing-a-byte-order-mark"></a>경고: 문서 텍스트가 u t f-16으로 인코딩된 것으로 나타나지만 바이트 순서 표시가 없습니다.
 
-[인덱서 구문 분석 모드](https://docs.microsoft.com/rest/api/searchservice/create-indexer#blob-configuration-parameters) 는 텍스트를 구문 분석 하기 전에 인코딩하는 방법을 알고 있어야 합니다. 텍스트를 인코딩하는 가장 일반적인 두 가지 방법은 u t f-16과 u t f-8입니다. U t f-8은 각 문자의 길이가 1 바이트에서 4 바이트 사이에 있는 가변 길이 인코딩입니다. U t f-16은 고정 길이 인코딩입니다. 각 문자는 2 바이트 길이입니다. U t f-16에는 "big endian" 및 "little endian"의 두 가지 변형이 있습니다. 텍스트 인코딩은 텍스트 앞의 바이트 시리즈 인 "바이트 순서 표시"에 의해 결정 됩니다.
+[인덱서 구문 분석 모드](/rest/api/searchservice/create-indexer#blob-configuration-parameters) 는 텍스트를 구문 분석 하기 전에 인코딩하는 방법을 알고 있어야 합니다. 텍스트를 인코딩하는 가장 일반적인 두 가지 방법은 u t f-16과 u t f-8입니다. U t f-8은 각 문자의 길이가 1 바이트에서 4 바이트 사이에 있는 가변 길이 인코딩입니다. U t f-16은 고정 길이 인코딩입니다. 각 문자는 2 바이트 길이입니다. U t f-16에는 "big endian" 및 "little endian"의 두 가지 변형이 있습니다. 텍스트 인코딩은 텍스트 앞의 바이트 시리즈 인 "바이트 순서 표시"에 의해 결정 됩니다.
 
 | Encoding | 바이트 순서 표시 |
 | --- | --- |
@@ -348,4 +348,4 @@ Blob 데이터 원본이 있는 인덱서가 문서 (예: PDF 파일)에서 콘�
 
 ## <a name="warning-cosmos-db-collection-x-has-a-lazy-indexing-policy-some-data-may-be-lost"></a>경고: Cosmos DB 컬렉션 ' X '에 지연 인덱싱 정책이 있습니다. 일부 데이터가 손실 될 수 있습니다.
 
-[지연](https://docs.microsoft.com/azure/cosmos-db/index-policy#indexing-mode) 인덱싱 정책을 사용 하는 컬렉션은 일관 되 게 쿼리할 수 없습니다 .이로 인해 인덱서가 데이터를 누락 하 게 됩니다. 이 경고를 해결 하려면 인덱싱 정책을 일관 되 게 변경 합니다.
+[지연](/azure/cosmos-db/index-policy#indexing-mode) 인덱싱 정책을 사용 하는 컬렉션은 일관 되 게 쿼리할 수 없습니다 .이로 인해 인덱서가 데이터를 누락 하 게 됩니다. 이 경고를 해결 하려면 인덱싱 정책을 일관 되 게 변경 합니다.

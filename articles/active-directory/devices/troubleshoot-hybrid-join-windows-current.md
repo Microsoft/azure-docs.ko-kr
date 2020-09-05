@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 08f083fe60076c80b5b7d60f555daac499974254
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc926c385aeee40601c00b3b4ab68065a4260f2f
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82611316"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268777"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-devices"></a>하이브리드 Azure Active Directory 조인 디바이스 문제 해결
 
@@ -28,8 +28,8 @@ ms.locfileid: "82611316"
 이 문서에서는 다음 시나리오를 지원하도록 [디바이스에 조인된 하이브리드 Azure Active Directory를 구성](hybrid-azuread-join-plan.md)했다고 가정합니다.
 
 - 디바이스 기반 조건부 액세스
-- [엔터프라이즈 설정 로밍](../active-directory-windows-enterprise-state-roaming-overview.md)
-- [비즈니스용 Windows Hello](../active-directory-azureadjoin-passport-deployment.md)
+- [엔터프라이즈 설정 로밍](./enterprise-state-roaming-overview.md)
+- [비즈니스용 Windows Hello](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
 
 이 문서에서는 잠재적인 문제를 해결 하기 위한 문제 해결 지침을 제공 합니다.
 
@@ -42,7 +42,7 @@ Windows 10 및 Windows Server 2016의 경우 하이브리드 Azure Active Direct
 **조인 상태를 검색하려면:**
 
 1. 관리자 권한으로 명령 프롬프트를 엽니다.
-2. `dsregcmd /status`를 입력합니다.
+2. `dsregcmd /status` 입력
 
 ```
 +----------------------------------------------------------------------+
@@ -170,7 +170,7 @@ WamDefaultAuthority: organizations
 - **DSREG_AUTOJOIN_DISC_FAILED** (0x801c0021/-2145648607)
    - 이유: 일반 검색에 실패 했습니다. DRS에서 검색 메타 데이터를 가져오지 못했습니다.
    - 해결 방법: 아래에서 하위 오류를 찾아 자세히 조사 합니다.
-- **DSREG_AUTOJOIN_DISC_WAIT_TIMEOUT** (0x801c001f/-2145648609)
+- **DSREG_AUTOJOIN_DISC_WAIT_TIMEOUT**  (0x801c001f/-2145648609)
    - 이유: 검색을 수행 하는 동안 작업 시간이 초과 되었습니다.
    - 해결 방법: `https://enterpriseregistration.windows.net` 시스템 컨텍스트에서에 액세스할 수 있는지 확인 합니다. 자세한 내용은 [네트워크 연결 요구 사항](hybrid-azuread-join-managed-domains.md#prerequisites)섹션을 참조 하세요.
 - **DSREG_AUTOJOIN_USERREALM_DISCOVERY_FAILED** (0x801c0021/-2145648611)
@@ -387,12 +387,12 @@ WamDefaultAuthority: organizations
 
 ### <a name="step-5-collect-logs-and-contact-microsoft-support"></a>5 단계: 로그 및 연락처 Microsoft 지원 수집
 
-에서 Auth.zip 파일을 다운로드 합니다.[https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH](https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH)
+에서 Auth.zip 파일을 다운로드 합니다. [https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH](https://github.com/CSS-Windows/WindowsDiag/tree/master/ADS/AUTH)
 
 1. 파일의 압축을 풀고 포함 된 파일의 이름을 **start-auth.txt** 하 **고 start-auth** 및 **stop-auth**에 **stop-auth.txt** 합니다.
 1. 관리자 권한 명령 프롬프트에서 **start-auth**를 실행 합니다.
 1. 스위치 계정을 사용 하 여 문제 사용자의 다른 세션으로 전환 합니다.
-1. 이슈를 재현합니다.
+1. 문제를 재현합니다.
 1. 스위치 계정을 사용 하 여 추적을 실행 하는 관리자 세션으로 다시 전환 합니다.
 1. 관리자 권한 명령 프롬프트에서 **stop-auth**를 실행 합니다.
 1. Zip을 열고 스크립트가 실행 된 폴더에서 **Authlogs** 폴더를 보냅니다.

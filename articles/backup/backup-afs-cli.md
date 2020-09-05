@@ -3,18 +3,18 @@ title: Azure CLI를 사용 하 여 Azure 파일 공유 백업
 description: Azure CLI를 사용 하 여 Recovery Services 자격 증명 모음에서 Azure 파일 공유를 백업 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/14/2020
-ms.openlocfilehash: 273c8fadc25ed60ba9fb57ec69bda0b59f155f87
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: cc4422a7d20dbd231729922bd013549d5276deb1
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514444"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182210"
 ---
 # <a name="back-up-azure-file-shares-with-cli"></a>CLI를 사용 하 여 Azure 파일 공유 백업
 
 Azure CLI (명령줄 인터페이스)는 Azure 리소스를 관리 하기 위한 명령줄 환경을 제공 합니다. Azure 리소스를 사용 하는 사용자 지정 자동화를 빌드하기 위한 좋은 도구입니다. 이 문서에서는 Azure CLI를 사용 하 여 Azure 파일 공유를 백업 하는 방법을 자세히 설명 합니다. [Azure PowerShell](./backup-azure-afs-automation.md)을 사용하거나 [Azure Portal](backup-afs.md)에서 이 단계를 수행할 수도 있습니다.
 
-이 자습서의 끝 부분에서는 Azure CLI 사용 하 여 아래와 같은 작업을 수행 하는 방법을 설명 합니다.
+이 자습서의 끝 부분에서는 Azure CLI 사용 하 여 아래 작업을 수행 하는 방법을 알아봅니다.
 
 * Recovery Services 자격 증명 모음 만들기
 * Azure 파일 공유에 대 한 백업 사용
@@ -26,9 +26,9 @@ CLI를 로컬로 설치하고 사용하려는 경우 Azure CLI 버전 2.0.18 이
 
 ## <a name="create-a-recovery-services-vault"></a>Recovery Services 자격 증명 모음 만들기
 
-Recovery services 자격 증명 모음은 모든 백업 항목에 대해 통합 된 보기 및 관리 기능을 제공 하는 엔터티입니다. 보호된 리소스에 대한 백업 작업이 실행될 때 Recovery Services 자격 증명 모음 내에 복구 지점을 만듭니다. 이러한 복구 지점 중 하나를 사용하여 지정된 특정 시점으로 데이터를 복원할 수 있습니다.
+Recovery Services 자격 증명 모음은 모든 백업 항목에서 통합 보기 및 관리 기능을 제공 하는 엔터티입니다. 보호된 리소스에 대한 백업 작업이 실행될 때 Recovery Services 자격 증명 모음 내에 복구 지점을 만듭니다. 이러한 복구 지점 중 하나를 사용하여 지정된 특정 시점으로 데이터를 복원할 수 있습니다.
 
-Recovery services 자격 증명 모음을 만들려면 다음 단계를 따르세요.
+Recovery Services 자격 증명 모음을 만들려면 다음 단계를 따르세요.
 
 1. 자격 증명 모음은 리소스 그룹에 배치 됩니다. 기존 리소스 그룹이 없는 경우 [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create) 를 사용 하 여 새 리소스 그룹을 만듭니다. 이 자습서에서는 미국 동부 지역에 새 리소스 그룹 *azurefiles* 를 만듭니다.
 
@@ -44,7 +44,7 @@ Recovery services 자격 증명 모음을 만들려면 다음 단계를 따르�
 
 1. [Az backup vault create](/cli/azure/backup/vault?view=azure-cli-latest#az-backup-vault-create) cmdlet을 사용 하 여 자격 증명 모음을 만듭니다. 리소스 그룹에 사용된 동일한 위치를 자격 증명 모음에도 지정합니다.
 
-    다음 예제에서는 미국 동부 지역에 *azurefilesvault* 라는 recovery services 자격 증명 모음을 만듭니다.
+    다음 예제에서는 미국 동부 지역에 *azurefilesvault* 라는 Recovery Services 자격 증명 모음을 만듭니다.
 
     ```azurecli-interactive
     az backup vault create --resource-group azurefiles --name azurefilesvault --location eastus --output table

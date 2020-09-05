@@ -7,12 +7,13 @@ ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
-ms.openlocfilehash: dfce18674f382cb683fa74a1bed964e9f86d72c2
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 25ec74f3638ce857e4472d73a51e45f24c4df5ec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206113"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997730"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>시스템 할당 관리 id를 사용 하 여 Azure Cosmos DB 데이터에 액세스
 
@@ -75,12 +76,13 @@ Azure Cosmos DB 키를 복사할 필요 없이 Azure Cosmos DB 데이터에 액�
 
 ### <a name="assign-the-role-using-azure-cli"></a>Azure CLI를 사용 하 여 역할 할당
 
-Azure CLI를 사용 하 여 역할을 할당 하려면 다음 명령을 사용 합니다.
+Azure CLI를 사용 하 여 역할을 할당 하려면 Azure Cloud Shell를 열고 다음 명령을 실행 합니다.
 
 ```azurecli-interactive
-$scope = az cosmosdb show --name '<Your_Azure_Cosmos_account_name>' --resource-group '<CosmosDB_Resource_Group>' --query id
 
-$principalId = az webapp identity show -n '<Your_Azure_Function_name>' -g '<Azure_Function_Resource_Group>' --query principalId
+scope=$(az cosmosdb show --name '<Your_Azure_Cosmos_account_name>' --resource-group '<CosmosDB_Resource_Group>' --query id)
+
+principalId=$(az webapp identity show -n '<Your_Azure_Function_name>' -g '<Azure_Function_Resource_Group>' --query principalId)
 
 az role assignment create --assignee $principalId --role "DocumentDB Account Contributor" --scope $scope
 ```
@@ -89,10 +91,10 @@ az role assignment create --assignee $principalId --role "DocumentDB Account Con
 
 이제 Azure Cosmos DB 권한에서 **DocumentDB 계정 참가자** 역할을 사용 하는 시스템 할당 관리 id가 있는 함수 앱이 있습니다. 다음 함수 앱 코드는 Azure Cosmos DB 키를 가져오고, CosmosClient 개체를 만들고, aquarium의 온도를 가져온 다음, Azure Cosmos DB에 저장 합니다.
 
-이 샘플에서는 [목록 키 API](/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListKeys) 를 사용 하 여 Azure Cosmos DB 계정 키에 액세스 합니다.
+이 샘플에서는 [목록 키 API](/rest/api/cosmos-db-resource-provider/2020-04-01/databaseaccounts/listkeys) 를 사용 하 여 Azure Cosmos DB 계정 키에 액세스 합니다.
 
 > [!IMPORTANT] 
-> [Cosmos DB 계정 읽기 권한자](#grant-access-to-your-azure-cosmos-account) 역할을 할당 하려면 [읽기 전용 키 목록 API](/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListReadOnlyKeys)를 사용 해야 합니다. 이렇게 하면 읽기 전용 키만 채워집니다.
+> [Cosmos DB 계정 읽기 권한자](#grant-access-to-your-azure-cosmos-account) 역할을 할당 하려면 [읽기 전용 키 목록 API](/rest/api/cosmos-db-resource-provider/2020-04-01/databaseaccounts/listreadonlykeys)를 사용 해야 합니다. 이렇게 하면 읽기 전용 키만 채워집니다.
 
 목록 키 API는 개체를 반환 합니다 `DatabaseAccountListKeysResult` . 이 형식은 c # 라이브러리에 정의 되어 있지 않습니다. 다음 코드에서는이 클래스의 구현을 보여 줍니다.  
 

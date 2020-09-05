@@ -3,12 +3,12 @@ title: 앱 계획-LUIS
 description: 관련 앱 의도 및 엔터티를 간략하게 설명한 다음, LUIS(Language Understanding Intelligent Services)에서 애플리케이션 계획을 만듭니다.
 ms.topic: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 8141e2a47e2a550a5dba50bc22117649c0bd04e2
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 38d80a77303e248ab137f87f8063b5cbc358f51a
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84340235"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892918"
 ---
 # <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>주제 도메인 및 데이터 추출을 사용 하 여 LUIS 앱 스키마 계획
 
@@ -64,7 +64,7 @@ LUIS 앱은 주제 도메인을 중심으로 합니다. 예를 들어 티켓, �
 
 별도의 두 가지를 사용 하는 대신 machine learning 엔터티를 사용 하 여 단일 의도를 만듭니다 `FlightAction` . Machine learning 엔터티는 일정 예약 및 취소 요청 뿐만 아니라 원본 또는 대상 위치에 대 한 작업 세부 정보를 추출 해야 합니다.
 
-`FlightAction`엔터티는 machine learning 엔터티 및 하위 엔터티의 suedo 스키마에 따라 구조화 됩니다.
+`FlightAction`엔터티는 machine learning 엔터티 및 하위 엔터티의 의사 (pseudo) 스키마에 따라 구조화 됩니다.
 
 * FlightAction
     * 작업

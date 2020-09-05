@@ -4,15 +4,16 @@ description: Azure 기업 고객이 사용량 데이터를 프로그래밍 방�
 author: mumami
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: enterprise
 ms.topic: reference
-ms.date: 06/22/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: bf1acd8bce53801c7c241121db2079e9b8a01851
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: b78b046e2991fa4ebfb575e4f6a1cc900df0d298
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85253709"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686907"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>기업 고객을 위한 보고 API 개요
 

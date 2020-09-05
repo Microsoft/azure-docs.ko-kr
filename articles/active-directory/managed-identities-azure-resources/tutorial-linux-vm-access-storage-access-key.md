@@ -3,7 +3,7 @@ title: 자습서`:` 관리 ID를 사용하여 액세스 키를 통해 Azure Stor
 description: Linux VM 시스템 할당 관리 ID를 사용하여 Azure Storage에 액세스하는 프로세스를 안내하는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 03/04/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86f875fa80f8bb8dd33a369a23f49833162cd417
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4c00c723c23e2f0d962009d33a6abe1008c734a5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78273812"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266275"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>자습서: Linux VM 시스템 할당 관리 ID를 사용하여 액세스 키를 통해 Azure Storage에 액세스
 
@@ -78,7 +78,7 @@ ms.locfileid: "78273812"
 
 자습서의 나머지 부분에서는 이전에 만든 VM에서 작업합니다.
 
-아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](https://msdn.microsoft.com/commandline/wsl/install_guide)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](../../virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](../../virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
+아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](/windows/wsl/install-win10)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](../../virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](../../virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
 
 1. Azure Portal에서 **Virtual Machines**, Linux 가상 머신으로 이동한 후 **개요** 페이지 위쪽의 **연결**을 클릭합니다. VM에 연결하기 위한 문자열을 복사합니다. 
 2. SSH 클라이언트를 사용하여 VM에 연결합니다.  
@@ -127,7 +127,7 @@ Blob Storage 컨테이너에 업로드할 샘플 Blob 파일을 만듭니다. Li
 echo "This is a test file." > test.txt
 ```
 
-다음으로, 스토리지 액세스 키를 사용하여 CLI `az storage` 명령을 통해 인증을 받고 Blob 컨테이너에 파일을 업로드합니다. 이 단계에서는 VM에 [최신 Azure CLI를 설치](https://docs.microsoft.com/cli/azure/install-azure-cli)해야 합니다(아직 없는 경우).
+다음으로, 스토리지 액세스 키를 사용하여 CLI `az storage` 명령을 통해 인증을 받고 Blob 컨테이너에 파일을 업로드합니다. 이 단계에서는 VM에 [최신 Azure CLI를 설치](/cli/azure/install-azure-cli)해야 합니다(아직 없는 경우).
  
 
 ```azurecli-interactive
@@ -199,4 +199,4 @@ az storage blob download -c <CONTAINER NAME> -n test.txt -f test-download.txt --
 이 자습서에서는 Linux VM 시스템 할당 관리 ID를 사용하여 액세스 키를 통해 Azure Storage에 액세스하는 방법을 알아보았습니다.  Azure Storage 액세스 키에 대한 자세한 내용은 다음 리소스를 참조하세요.
 
 > [!div class="nextstepaction"]
->[스토리지 액세스 키 관리](/azure/storage/common/storage-create-storage-account)
+>[스토리지 액세스 키 관리](../../storage/common/storage-account-create.md)

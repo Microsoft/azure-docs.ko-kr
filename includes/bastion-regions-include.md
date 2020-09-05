@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 07/16/2020
+ms.date: 08/14/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: a924cb42ce1c5fccde3d49fa8f9c2d402997df52
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
-ms.translationtype: MT
+ms.openlocfilehash: 48c18e08943e170fdd53f04b49b517424b511c62
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86544744"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246452"
 ---
 >[!NOTE]
 >더 많은 지역을 추가하기 위해 열심히 노력하고 있습니다. 지역이 추가되면 이 목록에 추가됩니다.
@@ -62,7 +62,6 @@ ms.locfileid: "86544744"
 * US DoD 중부
 * US DoD 동부
 * US Gov 애리조나
-* US Gov 아이오와
 * US Gov 텍사스
 * US Gov 버지니아
 

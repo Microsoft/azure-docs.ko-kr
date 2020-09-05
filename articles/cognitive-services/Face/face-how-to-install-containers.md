@@ -11,27 +11,27 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.author: aahi
-ms.openlocfilehash: a74b77ac59ece98f1a64839fd5000f4ab5d638f7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 766af570c959ff2c49256058dfbfffdd1021295f
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497882"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548466"
 ---
 # <a name="install-and-run-face-containers-preview"></a>Face 컨테이너 설치 및 실행 (미리 보기)
 
 > [!IMPORTANT]
-> 얼굴 컨테이너 사용자에 대 한 제한에 도달 했습니다. 현재 얼굴 컨테이너에 대해 새로운 응용 프로그램을 수락 하지 않습니다.
+> Face 컨테이너 사용자 제한에 도달했습니다. 현재 Face 컨테이너에 대해 새로운 애플리케이션을 수락하지 않습니다.
 
 Azure Cognitive Services Face는 이미지에서 인간 얼굴을 검색 하는 Docker 용 표준화 된 Linux 컨테이너를 제공 합니다. 또한 noses, 눈동자, 성별, 연령 및 기타 기계 예측 얼굴 기능과 같은 얼굴 랜드마크 포함 하는 특성도 식별 합니다. 검색 외에도 Face는 신뢰도 점수를 사용 하 여 동일한 이미지 또는 다른 이미지의 두 얼굴이 동일한 지 확인할 수 있습니다. 또한 face는 데이터베이스에 대해 얼굴을 비교 하 여 비슷하거나 동일한 얼굴이 이미 있는지 여부를 확인할 수 있습니다. 또한 공유 시각적 특성을 사용 하 여 유사한 얼굴을 그룹으로 구성할 수 있습니다.
 
-Azure 구독이 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 Face 서비스 컨테이너를 사용 하기 전에 다음 필수 구성 요소를 충족 해야 합니다.
 
-|필요한 공간|목적|
+|필수|용도|
 |--|--|
 |Docker 엔진| Docker 엔진이 [호스트 컴퓨터](#the-host-computer)에 설치 되어 있어야 합니다. Docker는 [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) 및 [Linux](https://docs.docker.com/engine/installation/#supported-platforms)에 Docker 환경을 구성하는 패키지를 제공합니다. Docker 및 컨테이너에 대한 기본 사항은 [Docker 개요](https://docs.docker.com/engine/docker-overview/)를 참조하세요.<br><br> Docker는 컨테이너에서 Azure에 연결하여 청구 데이터를 보낼 수 있도록 구성해야 합니다. <br><br> Windows에서는 Linux 컨테이너를 지원 하도록 Docker도 구성 해야 합니다.<br><br>|
 |Docker 사용 경험 | 레지스트리, 리포지토리, 컨테이너 및 컨테이너 이미지와 같은 Docker 개념을 기본적으로 이해 해야 합니다. 또한 기본 명령에 대 한 지식이 필요 `docker` 합니다.| 

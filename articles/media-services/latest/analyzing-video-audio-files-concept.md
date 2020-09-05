@@ -4,22 +4,24 @@ titleSuffix: Azure Media Services
 description: Azure Media Services에서 AudioAnalyzerPreset 및 VideoAnalyzerPreset를 사용 하 여 오디오 및 비디오 콘텐츠를 분석 하는 방법을 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/30/2020
-ms.author: juliako
-ms.openlocfilehash: 4c0eb626b827656a478e02a43b98ed15e7469f92
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 78ac75566eac120db4527b2e04324e7e6d40808c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053470"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258897"
 ---
 # <a name="analyze-video-and-audio-files-with-azure-media-services"></a>Azure Media Services를 사용 하 여 비디오 및 오디오 파일 분석
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services v3를 사용 하면 Video Indexer를 통해 비디오 및 오디오 파일에서 정보를 추출할 수 있습니다. 이 문서에서는 이러한 정보를 추출 하는 데 사용 되는 Media Services v3 분석기 사전 설정을 설명 합니다. 더 자세한 인사이트가 필요하면 Video Indexer를 직접 사용해 보세요. Video Indexer와 Media Services analyzer 기본 설정을 사용 하는 경우를 이해 하려면 [비교 문서](../video-indexer/compare-video-indexer-with-media-services-presets.md)를 확인 하세요.
 
@@ -36,7 +38,7 @@ Media Services v3 사전 설정을 사용 하 여 콘텐츠를 분석 하려면 
 
 Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정은 다음과 같습니다.  
 
-|**미리 설정 이름**|**시나리오**|**세부 정보**|
+|**기본 설정 이름**|**시나리오**|**세부 정보**|
 |---|---|---|
 |[AudioAnalyzerPreset](/rest/api/media/transforms/createorupdate#audioanalyzerpreset)|오디오 분석|사전 설정은 음성 기록을 포함하여 미리 정의된 AI 기반 분석 작업 세트를 적용합니다. 현재 사전 설정은 단일 언어 음성을 포함하는 단일 오디오 트랙을 사용하여 콘텐츠를 처리하도록 지원합니다. BCP-47 형식의 ‘language tag-region’을 사용하여 입력에서 오디오 페이로드의 언어를 지정할 수 있습니다. 지원 되는 언어는 영어 (' en-us ' 및 ' en-us '), 스페인어 (' es ' 및 ' es-mx '), 프랑스어 (' fr-fr '), 이탈리아어 (' it '), 일본어 (' ja-jp '), 포르투갈어 (' pt-BR '), 중국어 (' zh-cn '), 독일어 (' de-de '), 아랍어 (' ar-예 ' 및 ' ar-SY '), 러시아어 (' '), 힌디어 (' hi ') 및 한국어 (' ko ').<br/><br/> 언어가 지정 되지 않았거나 null로 설정 된 경우 자동 언어 검색은 검색 된 첫 번째 언어를 선택 하 고 파일 기간 동안 선택한 언어를 계속 합니다. 자동 언어 감지 기능은 현재 영어, 중국어, 프랑스어, 독일어, 이탈리아어, 일본어, 스페인어, 러시아어 및 포르투갈어를 지원합니다. 첫 번째 언어가 검색 된 후 언어 간의 동적 전환을 지원 하지 않습니다. 자동 언어 검색 기능은 분명히 구별할 수 있는 음성이 포함된 오디오 녹음에 가장 적합합니다. 자동 언어 검색에서 언어를 찾지 못하는 경우에는 해당 내용은 영어로 대체 됩니다.|
 |[VideoAnalyzerPreset](/rest/api/media/transforms/createorupdate#videoanalyzerpreset)|오디오 및 비디오 분석|오디오 및 비디오 모두에서 통찰력(풍부한 메타데이터)을 추출하고 JSON 형식 파일을 출력합니다. 비디오 파일을 처리할 때 오디오 통찰력만 추출할지 여부를 지정할 수 있습니다. 자세한 내용은 [비디오 분석](analyze-videos-tutorial-with-api.md)을 참조하세요.|
@@ -67,7 +69,7 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="transcript"></a>대본
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|줄 ID입니다.|
 |text|자체 대본입니다.|
@@ -105,7 +107,7 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="ocr"></a>ocr
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|OCR 줄 ID입니다.|
 |text|OCR 텍스트입니다.|
@@ -148,10 +150,10 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="faces"></a>얼굴
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|얼굴 ID입니다.|
-|이름|얼굴 이름입니다. ' 알 수 없는 #0 ', 식별 된 유명인 또는 고객이 학습 한 사용자 일 수 있습니다.|
+|name|얼굴 이름입니다. ' 알 수 없는 #0 ', 식별 된 유명인 또는 고객이 학습 한 사용자 일 수 있습니다.|
 |신뢰도|얼굴 인식 신뢰도입니다.|
 |description|유명인에 대한 설명입니다. |
 |thumbnailId|얼굴 썸네일의 ID입니다.|
@@ -193,7 +195,7 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="shots"></a>샷
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|샷 ID입니다.|
 |keyFrames|샷 내의 키 프레임 목록(각각 ID와 인스턴스 시간 범위 목록이 있음)입니다. 키 프레임 인스턴스에는 keyFrame의 썸네일 ID와 thumbnailId 필드가 있습니다.|
@@ -250,7 +252,7 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="statistics"></a>통계
 
-|이름|설명|
+|Name|설명|
 |---|---|
 |CorrespondenceCount|동영상의 해당 항목 수입니다.|
 |WordCount|화자별 단어 수입니다.|
@@ -263,7 +265,7 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 감정은 sentimentType 필드(긍정적/중립/부정적)로 집계됩니다. 예: 0-0.1, 0.1-0.2.
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|감정 ID입니다.|
 |averageScore |해당 감정 유형의 모든 인스턴스의 모든 점수 평균 – 긍정적/중립/부정적|
@@ -298,10 +300,10 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="labels"></a>레이블
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|레이블 ID입니다.|
-|이름|레이블 이름(예: '컴퓨터', 'TV')입니다.|
+|name|레이블 이름(예: '컴퓨터', 'TV')입니다.|
 |language|레이블 이름 언어(번역된 경우)입니다. BCP-47|
 |인스턴스|레이블이 나타나는 시간 범위 목록(레이블은 여러 번 나타날 수 있음)입니다. 인스턴스마다 신뢰도 필드가 있습니다. |
 
@@ -356,7 +358,7 @@ Media Services에서 현재 지원하는 기본 제공 분석기 미리 설정�
 
 ### <a name="keywords"></a>키워드
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|키워드 ID입니다.|
 |text|키워드 텍스트입니다.|
@@ -407,7 +409,7 @@ visualContentModeration 블록에는 Video Indexer에서 잠재적 성인 콘텐
 
 성인 또는 외설 콘텐츠가 포함된 것으로 확인된 비디오는 프라이빗 보기만 가능합니다. 사용자는 콘텐츠에 대 한 사람 검토 요청을 제출할 수 있으며,이 경우 특성에는 사용자 `IsAdult` 리뷰 결과가 포함 됩니다.
 
-|이름|Description|
+|Name|Description|
 |---|---|
 |id|시각 콘텐츠 조정 ID입니다.|
 |adultScore|성인 점수(Content Moderator 기반)입니다.|

@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Microsoft Azure Attestation(미리 보기)
+summary: Azure Attestation 사용 방법 알아보기
+metadata:
+  title: Azure Attestation 설명서
+  description: Azure Attestation을 사용하여 클라우드 리소스, 앱 및 솔루션에 액세스하고 암호화하는 키를 만들고 유지 관리하는 방법에 대해 알아봅니다. 자습서, API 참조 등입니다.
+  services: attestation
+  ms.service: attestation
+  ms.topic: landing-page
+  author: msmbaldwin
+  ms.author: mbaldwin
+  ms.date: 07/20/2020
+  ms.openlocfilehash: 218a957bfc351dd40f9b101f44d1c6e090e92027
+  ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
+  ms.translationtype: HT
+  ms.contentlocale: ko-KR
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89398123"
+landingContent:
+- title: Microsoft Azure Attestation 정보
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Microsoft Azure Attestation이란?
+      url: overview.md
+- title: 시작
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: PowerShell 빠른 시작
+      url: quickstart-powershell.md
+    - text: ARM 템플릿 빠른 시작
+      url: quickstart-template.md
+- title: 개념
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 기본 개념
+      url: basic-concepts.md
+    - text: 클레임 규칙 문법
+      url: claim-rule-grammar.md
+    - text: 클레임 집합
+      url: claim-sets.md
+    - text: 워크플로
+      url: workflow.md
+- title: 자습서
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 증명 정책 작성 및 서명
+      url: author-sign-policy.md
+    - text: SGX 증명 코드 샘플
+      url: /samples/browse/?expanded=azure&terms=attestation
+- title: 참조
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: 질문과 대답
+      url: faq.md
+    - text: REST (영문)
+      url: /rest/api/attestation/
+    - text: Azure PowerShell
+      url: /powershell/module/az.attestation/?view=azps-4.3.0#attestation

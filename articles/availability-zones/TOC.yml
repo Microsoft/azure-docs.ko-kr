@@ -25,9 +25,9 @@
         - name: 관리 디스크
           items:
             - name: CLI를 사용하여 가용성 영역에서 관리형 디스크 추가
-              href: '../virtual-machines/linux/add-disk.md#attach-a-new-disk-to-a-vm'
+              href: ../virtual-machines/linux/add-disk.md#attach-a-new-disk-to-a-vm
             - name: PowerShell을 사용하여 가용성 영역에서 관리형 디스크 추가
-              href: '../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine'
+              href: ../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine
         - name: 가상 머신 크기 집합
           items:
             - name: 가용성 영역에서 확장 집합 만들기
@@ -58,11 +58,11 @@
                 - name: Azure를 사용하여 가용성 영역에 VM 부하 분산(CLI)
                   href: ../load-balancer/load-balancer-standard-public-zone-redundant-cli.md
         - name: 공용 IP 주소
-          href: '../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address'
+          href: ../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address
         - name: SQL Database
           items:
             - name: SQL Database를 사용하는 가용성 영역
-              href: '../sql-database/sql-database-high-availability.md#zone-redundant-configuration'
+              href: ../sql-database/sql-database-high-availability.md#zone-redundant-configuration
         - name: 스토리지
           items:
             - name: 영역 중복 스토리지
@@ -70,11 +70,11 @@
         - name: Event Hubs
           items:
             - name: Event Hubs 지리적 재해 복구
-              href: '../event-hubs/event-hubs-geo-dr.md#availability-zones'
+              href: ../event-hubs/event-hubs-geo-dr.md#availability-zones
         - name: Service Bus
           items:
             - name: Service Bus 지리적 재해 복구
-              href: '../service-bus-messaging/service-bus-geo-dr.md#availability-zones'
+              href: ../service-bus-messaging/service-bus-geo-dr.md#availability-zones
         - name: VPN Gateway
           items:
             - name: 영역 중복 가상 네트워크 게이트웨이 만들기
@@ -83,6 +83,10 @@
           items:
             - name: 영역 중복 가상 네트워크 게이트웨이 만들기
               href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md
+        - name: Application Gateway v2
+          items:
+            - name: 자동 크기 조정 및 영역 중복 Application Gateway v2
+              href: ../application-gateway/application-gateway-autoscaling-zone-redundant.md
         - name: ID
           items:
             - name: Azure Active Directory Domain Services 인스턴스 만들기

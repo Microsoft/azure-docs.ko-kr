@@ -16,12 +16,12 @@ ms.date: 07/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa18b55884a22f6c64f1c08bd5be8a71b265029a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a01f945496d2f0bc81a108c5e58c89587c1c4e38
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034386"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505481"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리의 위임 및 역할
 
@@ -91,7 +91,7 @@ Hana가 마케팅, 재무 및 법률 부서에 액세스 관리를 위임할 수
 
 다음 표에는 자격 관리 역할이 수행할 수 있는 작업이 나열 되어 있습니다.
 
-| 작업 | Admin | 카탈로그 작성자 | 카탈로그 소유자 | 액세스 패키지 관리자 |
+| Task | Admin | 카탈로그 작성자 | 카탈로그 소유자 | 액세스 패키지 관리자 |
 | --- | :---: | :---: | :---: | :---: |
 | [카탈로그 작성자에 게 위임](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |
 | [연결된 조직 추가](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |
@@ -116,7 +116,7 @@ Hana가 마케팅, 재무 및 법률 부서에 액세스 관리를 위임할 수
 
 ## <a name="required-roles-to-add-resources-to-a-catalog"></a>카탈로그에 리소스를 추가 하는 데 필요한 역할
 
-전역 관리자는 카탈로그에서 그룹 (클라우드로 생성 된 보안 그룹 또는 클라우드 생성 Office 365 그룹), 응용 프로그램 또는 SharePoint Online 사이트를 추가 하거나 제거할 수 있습니다. 사용자 관리자는 카탈로그에서 그룹 또는 응용 프로그램을 추가 하거나 제거할 수 있습니다.
+전역 관리자는 카탈로그에서 그룹 (클라우드로 생성 된 보안 그룹 또는 클라우드 생성 Office 365 그룹), 응용 프로그램 또는 SharePoint Online 사이트를 추가 하거나 제거할 수 있습니다. 사용자 관리자는 디렉터리 역할에 할당할 수 있도록 구성 된 그룹을 제외 하 고 카탈로그에서 그룹 또는 응용 프로그램을 추가 하거나 제거할 수 있습니다.
 
 전역 관리자 또는 사용자 관리자가 아닌 사용자의 경우 카탈로그에 그룹, 응용 프로그램 또는 SharePoint Online 사이트를 추가 하려면 해당 사용자에 게 필요한 Azure AD 디렉터리 역할과 카탈로그 소유자 자격 관리 역할이 *둘 다* 있어야 합니다. 다음 표에는 카탈로그에 리소스를 추가 하는 데 필요한 역할 조합이 나와 있습니다. 카탈로그에서 리소스를 제거 하려면 동일한 역할이 있어야 합니다.
 
@@ -128,9 +128,12 @@ Hana가 마케팅, 재무 및 법률 부서에 액세스 관리를 위임할 수
 | [Exchange 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  | :heavy_check_mark: |  |  |
 | [팀 서비스 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  | :heavy_check_mark: |  |  |
 | [SharePoint 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [응용 프로그램 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  |  | :heavy_check_mark: |  |
-| [클라우드 응용 프로그램 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  |  | :heavy_check_mark: |  |
+| [애플리케이션 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  |  | :heavy_check_mark: |  |
+| [클라우드 애플리케이션 관리자](../users-groups-roles/directory-assign-admin-roles.md) | 카탈로그 소유자 |  |  | :heavy_check_mark: |  |
 | 사용자 | 카탈로그 소유자 | 그룹 소유자 인 경우에만 | 그룹 소유자 인 경우에만 | 앱 소유자 인 경우에만 |  |
+
+> [!NOTE]
+> 사용자가 보안 그룹 또는 Office 365 그룹을 추가 하는 경우에는 해당 그룹을 역할에 할당할 수 없습니다. 사용자가 액세스 패키지를 만들 때 역할 할당을 할 수 있는 그룹을 추가 하는 경우 해당 역할 할당 가능 그룹의 소유자 이기도 해야 합니다. 자세한 내용은 [Azure Active Directory에서 역할 할당 가능 그룹 만들기](../users-groups-roles/roles-groups-create-eligible.md)를 참조 하세요.
 
 태스크에 대 한 최소 권한 있는 역할을 확인 하려면 [Azure Active Directory에서 관리자 작업을 통해 관리자 역할](../users-groups-roles/roles-delegate-by-task.md#entitlement-management)을 참조할 수도 있습니다.
 

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 64f1de178e2b1e1692ddad316e6c1c1d20517b78
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 78d707c0b5afd745ae805c9513243f3791d47c60
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835836"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654755"
 ---
 # <a name="lsv2-series"></a>Lsv2 시리즈
 
@@ -87,7 +87,7 @@ Premium Storage 캐싱: 지원 되지 않음
 
 가격 계산기: [가격 계산기](https://azure.microsoft.com/pricing/calculator/)
 
-디스크 유형에 대 한 자세한 정보: [디스크 유형](./linux/disks-types.md#ultra-disk)
+디스크 유형에 대 한 자세한 정보: [디스크 유형](./disks-types.md#ultra-disk)
 
 
 ## <a name="next-steps"></a>다음 단계

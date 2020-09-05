@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 1d264b0ae0b06079a45cd1e862144a6920133901
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: aa0514834d1619bbbae4501fe6b1af16d7964ff7
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038446"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89261478"
 ---
 # <a name="sample-presets-for-media-encoder-standard-mes"></a>MES(Media Encoder Standard)에 대한 샘플 미리 설정
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 **Media Encoder Standard**는 인코딩 작업을 만들 때 사용할 수 있는 미리 설정된 시스템 인코딩 집합을 정의합니다. Media Services로 스트리밍을 위해 비디오를 인코딩하려면 "적응 스트리밍" 사전 설정을 사용하는 것이 좋습니다. 사전 설정을 지정할 경우 Media Encoder Standard는 [비트 전송률 단계를 자동으로 생성](media-services-autogen-bitrate-ladder-with-mes.md)합니다. 
 

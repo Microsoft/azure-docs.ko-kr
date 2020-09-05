@@ -4,15 +4,15 @@ description: Node.js 앱에서 azure/service-bus 패키지를 사용하여 Azure
 author: spelluru
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 06/23/2020
+ms.date: 08/09/2020
 ms.author: spelluru
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9d4a3a66d967bd003534c7931091979d1667526c
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 8a86a1bd9a312f3b1c6d94914d426422687b25a6
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87432807"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077019"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>빠른 시작: Node.js와 azure-sb 패키지에서 Service Bus 토픽 및 구독을 사용하는 방법
 이 자습서에서는 [azure-sb](https://www.npmjs.com/package/azure-sb) 패키지를 사용하여 Service Bus 토픽으로 메시지를 보내고 Service Bus 구독에서 메시지를 받는 Node.js 애플리케이션을 만드는 방법에 대해 알아봅니다. 샘플은 JavaScript로 작성되었으며 내부적으로 `azure-sb` 패키지를 사용하는 Node.js [Azure 모듈](https://www.npmjs.com/package/azure)을 사용합니다.
@@ -20,7 +20,7 @@ ms.locfileid: "87432807"
 > [!IMPORTANT]
 > [azure-sb](https://www.npmjs.com/package/azure-sb) 패키지는 [Service Bus REST 런타임 API](/rest/api/servicebus/service-bus-runtime-rest)를 사용합니다. 더 빠른 [AMQP 1.0 프로토콜](service-bus-amqp-overview.md)을 사용하는 새 [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) 패키지를 사용하면 더 빠른 환경을 얻을 수 있습니다. 
 > 
-> 새 패키지에 대한 자세한 내용은 [Node.js 및 @azure/service-bus 패키지에서 Service Bus 토픽 및 구독을 사용하는 방법](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-topics-subscriptions-new-package)을 참조하거나 [azure](https://www.npmjs.com/package/azure) 패키지를 사용하는 방법을 계속 읽으세요.
+> 새 패키지에 대한 자세한 내용은 [Node.js 및 @azure/service-bus 패키지에서 Service Bus 토픽 및 구독을 사용하는 방법](./service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md)을 참조하거나 [azure](https://www.npmjs.com/package/azure) 패키지를 사용하는 방법을 계속 읽으세요.
 
 여기서 다루는 시나리오는 다음과 같습니다.
 
@@ -40,7 +40,7 @@ ms.locfileid: "87432807"
     > 이 빠른 시작에서는 **Node.js**를 사용하여 **토픽** 및 해당 토픽에 대한 **구독**을 만들 것입니다. 
 
 ## <a name="create-a-nodejs-application"></a>Node.js 애플리케이션 만들기
-빈 Node.js 애플리케이션을 만듭니다. Node.js 애플리케이션을 만드는 방법에 대한 지침은 [Node.js 애플리케이션을 만들어 Azure 웹 사이트에 배포], Windows PowerShell을 사용하는 [Node.js 클라우드 서비스][Node.js Cloud Service] 또는 WebMatrix를 사용하는 웹 사이트를 참조하세요.
+빈 Node.js 애플리케이션을 만듭니다. Node.js 애플리케이션을 만드는 방법에 대한 지침은 [Node.js 애플리케이션을 만들어 Azure 웹 사이트에 배포], Windows PowerShell을 사용하는 [Node.js Cloud Service][Node.js Cloud Service] 또는 WebMatrix를 사용하는 웹 사이트를 참조하세요.
 
 ## <a name="configure-your-application-to-use-service-bus"></a>Service Bus를 사용하도록 애플리케이션 구성
 Service Bus를 사용하려면 Node.js Azure 패키지를 다운로드합니다. 이 패키지에는 Service Bus REST 서비스와 통신하는 라이브러리 집합이 포함되어 있습니다.
@@ -142,7 +142,7 @@ var serviceBusService = azure.createServiceBusService().withFilter(retryOperatio
 > [!NOTE]
 > 기본적으로 구독은 구독 자체 또는 구독과 연결된 토픽이 삭제될 때까지 영구적으로 유지됩니다. 애플리케이션에 구독을 만들기 위한 논리가 포함된 경우, `getSubscription` 메서드를 사용하여 구독이 존재하는지를 먼저 확인해야 합니다.
 >
-> [AutoDeleteOnIdle 속성](https://docs.microsoft.com/javascript/api/@azure/arm-servicebus/sbsubscription?view=azure-node-latest#autodeleteonidle)을 설정하여 구독을 자동으로 삭제할 수 있습니다.
+> [AutoDeleteOnIdle 속성](/javascript/api/@azure/arm-servicebus/sbsubscription?view=azure-node-latest#autodeleteonidle)을 설정하여 구독을 자동으로 삭제할 수 있습니다.
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>기본(MatchAll) 필터를 사용하여 구독 만들기
 **MatchAll** 필터는 구독을 만들 때 사용하는 기본 필터입니다. **MatchAll** 필터를 사용하면 토픽에 게시된 모든 메시지가 구독의 가상 큐에 배치됩니다. 다음 예제에서는 AllMessages라는 구독을 만들고 기본 **MatchAll** 필터를 사용합니다.
@@ -254,7 +254,7 @@ var message = {
     }
 }
 
-for (i = 0;i < 5;i++) {
+for (var i = 0; i < 5; i++) {
     message.customProperties.messagenumber=i;
     message.body='This is Message #'+i;
     serviceBusService.sendTopicMessage(topic, message, function(error) {
@@ -306,7 +306,7 @@ Service Bus는 애플리케이션 오류나 메시지 처리 문제를 정상적
 애플리케이션이 메시지를 처리한 후 `deleteMessage` 메서드가 호출되기 전에 충돌하는 경우 다시 시작될 때 메시지가 애플리케이션에 다시 배달됩니다. 이 동작은 일반적으로 *최소 한 번 이상 처리*라고 합니다. 즉, 각 메시지가 최소 한 번 이상 처리되지만 특정 상황에서는 동일한 메시지가 다시 배달될 수 있습니다. 중복 처리가 허용되지 않는 시나리오에서는 중복 메시지 배달을 처리하는 논리를 애플리케이션에 추가해야 합니다. 배달 시도 간에 일정하게 유지하는 메시지의 **MessageId** 속성을 사용하면 됩니다.
 
 ## <a name="delete-topics-and-subscriptions"></a>토픽 및 구독 삭제
-토픽과 구독은 [autoDeleteOnIdle 속성](https://docs.microsoft.com/javascript/api/@azure/arm-servicebus/sbsubscription?view=azure-node-latest#autodeleteonidle)이 설정되지 않는 한 영구적으로 유지되며, [Azure Portal][Azure portal]을 통해 또는 프로그래밍 방식으로 명시적으로 삭제해야 합니다.
+토픽과 구독은 [AutoDeleteOnIdle 속성](/javascript/api/@azure/arm-servicebus/sbsubscription?view=azure-node-latest#autodeleteonidle)이 설정되지 않는 한 영구적으로 유지되며, [Azure Portal][Azure portal]을 통해 또는 프로그래밍 방식으로 명시적으로 삭제해야 합니다.
 다음 예제는 `MyTopic` 토픽을 삭제하는 방법을 보여 줍니다.
 
 ```javascript
@@ -343,6 +343,6 @@ serviceBusService.deleteSubscription('MyTopic', 'HighMessages', function (error)
 [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
 [SqlFilter]: /javascript/api/@azure/arm-servicebus/sqlfilter?view=azure-node-latest
 [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
-[Node.js 애플리케이션을 만들어 Azure 웹 사이트에 배포]: ../app-service/app-service-web-get-started-nodejs.md
+[Create and deploy a Node.js application to Azure App Service]: ../app-service/quickstart-nodejs.md
 [Node.js Cloud Service with Storage]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
 

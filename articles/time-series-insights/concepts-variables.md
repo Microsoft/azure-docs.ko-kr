@@ -5,13 +5,13 @@ author: shreyasharmamsft
 ms.author: shresha
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 73d5c3abb2edc940bee9727ce1f3b0c4e8e0a62e
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/12/2020
+ms.openlocfilehash: d0a5b48e93e839b0a0adaf185700d7f60fec7948
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289955"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140686"
 ---
 # <a name="time-series-model-variables"></a>시계열 모델 변수
 
@@ -27,14 +27,14 @@ ms.locfileid: "87289955"
 
 [![시계열 모델 변수 테이블](media/v2-update-tsm/time-series-model-variable-table.png)](media/v2-update-tsm/time-series-model-variable-table.png#lightbox)
 
-#### <a name="numeric-variables"></a>숫자 변수
+## <a name="numeric-variables"></a>숫자 변수
 
-| 변수 속성 | 설명 |
+| 변수 속성 | Description |
 | --- | ---|
 | 변수 필터 | 필터는 계산에 고려 되는 행 수를 제한 하는 선택적 조건 절입니다. |
 | 변수 값 | 계산에 사용 되는 원격 분석 값은 장치 또는 센서에서 발생 하거나 시계열 식을 사용 하 여 변환 됩니다. 숫자 종류 변수는 *Double*형식 이어야 합니다.|
 | 변수 보간 | 보간은 기존 데이터를 사용 하 여 신호를 다시 생성 하는 방법을 지정 합니다. 숫자 변수에는 *단계* 및 *선형* 보간 옵션을 사용할 수 있습니다. |
-| 변수 집계 | [숫자 변수 종류에 대해](https://docs.microsoft.com/rest/api/time-series-insights/preview#numeric-variable-kind-1)지원 되는 집계 함수를 통해 계산을 수행 합니다. |
+| 변수 집계 | [숫자 변수 종류에 대해](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#numeric-variable-kind)지원 되는 집계 함수를 통해 계산을 수행 합니다. |
 
 변수는 다음 JSON 예제를 따릅니다.
 
@@ -57,9 +57,9 @@ ms.locfileid: "87289955"
 }
 ```
 
-#### <a name="categorical-variables"></a>범주 변수
+## <a name="categorical-variables"></a>범주 변수
 
-| 변수 속성 | 설명 |
+| 변수 속성 | Description |
 | --- | ---|
 | 변수 필터 | 필터는 계산에 고려 되는 행 수를 제한 하는 선택적 조건 절입니다. |
 | 변수 값 | 장치 또는 센서에서 들어오는 계산에 사용 되는 원격 분석 값입니다. 범주 종류 변수는 *Long* 또는 *String*이어야 합니다. |
@@ -73,7 +73,7 @@ ms.locfileid: "87289955"
 "Status": {
   "kind": "categorical",
   "value": {
-     "tsx": "$event.Status.Long" 
+     "tsx": "$event.Status.Long"
 },
   "interpolation": {
     "kind": "step",
@@ -97,12 +97,12 @@ ms.locfileid: "87289955"
 }
 ```
 
-#### <a name="aggregate-variables"></a>집계 변수
+## <a name="aggregate-variables"></a>집계 변수
 
-| 변수 속성 | 설명 |
+| 변수 속성 | Description |
 | --- | ---|
 | 변수 필터 | 필터는 계산에 고려 되는 행 수를 제한 하는 선택적 조건 절입니다. |
-| 변수 집계 | [집계 변수 종류에 대해](https://docs.microsoft.com/rest/api/time-series-insights/preview#aggregate-variable-kind-1)지원 되는 집계 함수를 통해 계산을 수행 합니다. |
+| 변수 집계 | [집계 변수 종류에 대해](https://docs.microsoft.com/rest/api/time-series-insights/reference-time-series-expression-syntax#aggregate-variable-kind)지원 되는 집계 함수를 통해 계산을 수행 합니다. |
 
 변수는 다음 JSON 예제를 따릅니다.
 
@@ -123,4 +123,3 @@ ms.locfileid: "87289955"
 * [시계열 모델](./concepts-model-overview.md)에 대해 자세히 알아보세요.
 
 * [쿼리 api](./concepts-query-overview.md)를 사용 하 여 인라인으로 변수를 정의 하는 방법에 대해 자세히 알아보세요.
-

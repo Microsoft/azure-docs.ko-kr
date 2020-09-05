@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: a13a8b2eef9fa1bd9c7281ac6b7c7dba40105428
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: d8a1b2192784c26ed17b31be262b22efbf935d84
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497327"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89225607"
 ---
 # <a name="azure-security-baseline-for-azure-data-box"></a>Azure Data Box에 대 한 Azure 보안 기준
 
@@ -216,11 +216,11 @@ Azure Data Box에 대 한 Azure 보안 기준에는 배포의 보안 상태를 �
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1: 관리 계정의 인벤토리 유지 관리
 
-**지침**: Azure Data Box에 대 한 관리 권한이 있는 사용자 계정의 인벤토리를 유지 관리 합니다. 구독에 대 한 Azure Portal의 IAM (Id 및 액세스 제어) 창을 사용 하 여 RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다. 주문이 처음 생성 될 때 주문에 액세스할 수 있는 사용자를 제어할 수 있습니다. 다양 한 범위에서 Azure 역할을 설정 하 여 Data Box 주문에 대 한 액세스를 제어 합니다. Azure 역할은 작업의 하위 집합에 대 한 읽기-쓰기, 읽기 전용, 읽기/쓰기 액세스 유형을 결정 합니다.
+**지침**: Azure Data Box에 대 한 관리 권한이 있는 사용자 계정의 인벤토리를 유지 관리 합니다. 구독에 대 한 Azure Portal의 IAM (Id 및 액세스 제어) 창을 사용 하 여 azure RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다. 주문이 처음 생성 될 때 주문에 액세스할 수 있는 사용자를 제어할 수 있습니다. 다양 한 범위에서 Azure 역할을 설정 하 여 Data Box 주문에 대 한 액세스를 제어 합니다. Azure 역할은 작업의 하위 집합에 대 한 읽기-쓰기, 읽기 전용, 읽기/쓰기 액세스 유형을 결정 합니다.
 
 * [사용자 지정 역할 이해](https://docs.microsoft.com/azure/role-based-access-control/custom-roles)
 
-* [통합 문서에 대해 RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/sentinel/quickstart-get-visibility)
+* [통합 문서에 대 한 Azure RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/sentinel/quickstart-get-visibility)
 
 * [주문에 대 한 액세스 제어를 설정 하는 방법 이해](https://docs.microsoft.com/azure/databox/data-box-logs#set-up-access-control-on-the-order)
 
@@ -359,7 +359,7 @@ Azure Data Box 서비스 로그는 Log Analytics 작업 영역에 기록 되지 
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13: 지원 시나리오에서 관련 고객 데이터에 대한 액세스 권한을 Microsoft에 제공
 
@@ -415,7 +415,7 @@ Azure로 데이터를 업로드 하는 동안 Data Box 어플라이언스와 데
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: 활성 검색 도구를 사용하여 중요한 데이터 식별
 
@@ -427,7 +427,7 @@ Azure로 데이터를 업로드 하는 동안 Data Box 어플라이언스와 데
 
 **책임**: 해당 없음
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
 **지침**: 구독에 대 한 소유자 또는 참가자 액세스 권한이 있는지 확인 하 여 Data Box 순서를 만듭니다. 리소스 수준에서 Data Box 판독기 및 Data Box 참가자 역할을 정의할 수도 있습니다.
 
@@ -461,7 +461,7 @@ Azure Data Box는 미사용 데이터에 대 한 AES 256 비트 암호화를 구
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9: 중요한 Azure 리소스에 대한 변경 내용 기록 및 경고
 
@@ -869,7 +869,7 @@ Azure Data Box는 미사용 데이터에 대 한 AES 256 비트 암호화를 구
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

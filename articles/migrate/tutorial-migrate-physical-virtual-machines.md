@@ -4,12 +4,12 @@ description: 이 문서에서는 Azure Migrate를 사용하여 물리적 머신�
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: MVC
-ms.openlocfilehash: 16145c5d8b2414750b6eff9669fa7cd61eb482f5
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: ff8ac55f129e7579b12e2102c0c6292e9030021c
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86165399"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88066630"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>물리적 서버로 머신을 Azure에 마이그레이션
 
@@ -103,10 +103,13 @@ Azure Migrate:Server Migration은 복제 어플라이언스를 사용하여 머�
 
 다음과 같이 어플라이언스 배포를 준비합니다.
 
-- 복제 어플라이언스를 호스팅할 머신을 준비합니다. 머신 요구 사항을 [검토](migrate-replication-appliance.md#appliance-requirements)합니다. 복제하려는 원본 머신에 어플라이언스를 설치해서는 안 됩니다.
+- 복제 어플라이언스를 호스팅할 머신을 준비합니다. 머신 요구 사항을 [검토](migrate-replication-appliance.md#appliance-requirements)합니다.
 - 복제 어플라이언스는 MySQL을 사용합니다. MySQL을 어플라이언스에 설치하는 [옵션](migrate-replication-appliance.md#mysql-installation)을 검토합니다.
 - 복제 어플라이언스가 [퍼블릭](migrate-replication-appliance.md#url-access) 및 [정부](migrate-replication-appliance.md#azure-government-url-access) 클라우드에 액세스하는 데 필요한 Azure URL을 검토합니다.
 - 복제 어플라이언스에 대한 [포트](migrate-replication-appliance.md#port-access) 액세스 요구 사항을 검토합니다.
+
+> [!NOTE]
+> 복제하려는 원본 머신이나 이전에 설치한 Azure Migrate 검색 및 평가 어플라이언스에 복제 어플라이언스를 설치하면 안 됩니다.
 
 ## <a name="add-the-server-migration-tool"></a>Server Migration 도구 추가
 
@@ -155,7 +158,7 @@ Azure Migrate 프로젝트를 설정한 다음, Server Migration 도구를 해�
     ![공급자 다운로드](media/tutorial-migrate-physical-virtual-machines/download-provider.png)
 
 10. 어플라이언스 설정 파일 및 키 파일을 어플라이언스용으로 만든 Windows Server 2016 머신에 복사합니다.
-11. 다음 절차에서 설명한 대로 복제 어플라이언스 설치 파일을 실행합니다. 설치가 완료되면 어플라이언스 구성 마법사가 자동으로 시작됩니다(어플라이언스의 바탕 화면에서 만든 cspsconfigtool 바로 가기를 사용하여 마법사를 수동으로 시작할 수도 있음). 마법사의 계정 관리 탭을 사용하여 모바일 서비스의 푸시 설치에 사용할 계정 세부 정보를 추가합니다. 이 자습서에서는 복제할 머신에 Mobility Service를 수동으로 설치하므로 이 단계에서 더미 계정을 만들고 계속 진행합니다.
+11. 설치가 완료되면 어플라이언스 구성 마법사가 자동으로 시작됩니다(어플라이언스의 바탕 화면에 만들어진 cspsconfigtool 바로 가기를 사용하여 마법사를 수동으로 시작할 수도 있음). 마법사의 계정 관리 탭을 사용하여 모바일 서비스의 푸시 설치에 사용할 계정 세부 정보를 추가합니다. 이 자습서에서는 Mobility Service를 복제할 원본 VM에 수동으로 설치하므로 이 단계에서 더미 계정을 만들어 계속 진행합니다. 더미 계정 만들 때 식별 이름으로 "guest", 사용자 이름으로 "username", 계정 암호로 "password"를 입력할 수 있습니다. 이 더미 계정은 복제 사용 단계에서 사용됩니다. 
 
 12. 설치 후에 어플라이언스가 다시 시작되면 **머신 검색**의 **구성 서버 선택**에서 새 어플라이언스를 선택하고 **등록 완료**를 클릭합니다. 등록 완료에서는 복제 어플라이언스를 준비하기 위한 몇 가지 최종 작업이 수행됩니다.
 
@@ -230,7 +233,7 @@ Azure Migrate 프로젝트를 설정한 다음, Server Migration 도구를 해�
 2. **복제** > **원본 설정** > **머신이 가상화되어 있나요?** 에서 **가상화되지 않음/기타**를 선택합니다.
 3. **온-프레미스 어플라이언스**에서 설정한 Azure Migrate 어플라이언스의 이름을 선택합니다.
 4. **프로세스 서버**에서 복제 어플라이언스의 이름을 선택합니다.
-6. **게스트 자격 증명**에서 모바일 서비스를 수동으로 설치하는 데 사용되는 더미 계정을 지정합니다(푸시 설치는 Physical에서 지원되지 않음). 그런 다음, **다음: 가상 머신**을 클릭합니다.
+6. **게스트 자격 증명**에서, [복제 설치 관리자 설치](#download-the-replication-appliance-installer) 중에 만든 더미 계정을 선택하여 모바일 서비스를 수동으로 설치합니다(푸시 설치는 지원되지 않음). 그런 다음, **다음: 가상 머신**을 클릭합니다.   
 
     ![VM 복제](./media/tutorial-migrate-physical-virtual-machines/source-settings.png)
 

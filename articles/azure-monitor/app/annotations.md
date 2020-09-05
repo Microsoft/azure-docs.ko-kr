@@ -2,13 +2,13 @@
 title: Application Insights에 대한 릴리스 주석 | Microsoft Docs
 description: Application Insights에서 배포 또는 빌드 표식을 메트릭 탐색기 차트에 추가합니다.
 ms.topic: conceptual
-ms.date: 07/01/2019
-ms.openlocfilehash: 8e9e0cb49343524e8a45831566cf802b1c8c5d9b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/14/2020
+ms.openlocfilehash: e21981f134f6a78109d70b1edf6d61e204b64e12
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320666"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258416"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Application Insights의 메트릭 차트에 대한 주석
 
@@ -68,6 +68,10 @@ Azure DevOps 조직에 대해 확장을 한 번만 설치 하면 됩니다. 이�
    ![Azure DevOps 변수 탭에서 추가를 선택 하 고, 변수 이름을 ApiKey로 하 고, API 키를 값 아래에 붙여 넣습니다.](./media/annotations/7-paste-api-key.png)
    
 1. 주 릴리스 템플릿 창에서 **저장** 을 선택 하 여 템플릿을 저장 합니다.
+
+
+   > [!NOTE]
+   > API 키에 대 한 제한은 [REST API rate limits 설명서](https://dev.applicationinsights.io/documentation/Authorization/Rate-limits)에 설명 되어 있습니다.
 
 ## <a name="view-annotations"></a>주석 보기
 

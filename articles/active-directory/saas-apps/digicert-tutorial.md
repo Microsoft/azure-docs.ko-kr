@@ -2,26 +2,21 @@
 title: '자습서: DigiCert와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 DigiCert 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 646f3129-aa67-4875-9073-1d0b6a3173d9
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: df68c9289caed0c857434bf4a1f9a5eb28e71ab4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9c9b85709ae37f1b3b6f4b4b562b7e96531f51b2
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157327"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88536503"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-digicert"></a>자습서: Azure Active Directory와 DigiCert 통합
 

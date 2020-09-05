@@ -9,16 +9,17 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 6268bf94350699518d8d578e3a1d5a56a52ad785
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 7726877efcb72caf5bb4c92e2e1c65e5df68f270
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562349"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002711"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-9"></a>Azure Search .NET SDK 버전 9로 업그레이드
 
-버전 7.0-preview 또는 이전 버전의 [Azure Search .NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)를 사용 하는 경우이 문서는 버전 9를 사용 하도록 응용 프로그램을 업그레이드 하는 데 도움이 됩니다.
+버전 7.0-preview 또는 이전 버전의 [Azure Search .NET SDK](/dotnet/api/overview/azure/search)를 사용 하는 경우이 문서는 버전 9를 사용 하도록 응용 프로그램을 업그레이드 하는 데 도움이 됩니다.
 
 > [!NOTE]
 > 버전 8.0-preview를 사용 하 여 일반적으로 사용할 수 없는 기능을 평가 하려는 경우이 문서의 지침에 따라 이전 버전에서 8.0-preview로 업그레이드할 수도 있습니다.
@@ -106,12 +107,12 @@ NuGet에서 새 패키지와 해당 종속성을 다운로드했으면 프로젝
 
 7.0-preview 및 이전 버전에서는 문서 그룹을 캡슐화 하는 다양 한 클래스가 병렬 클래스 계층 구조로 구성 되었습니다.
 
-  -  `DocumentSearchResult`다음 `DocumentSearchResult<T>` 에서 상속 됨`DocumentSearchResultBase`
-  -  `DocumentSuggestResult`다음 `DocumentSuggestResult<T>` 에서 상속 됨`DocumentSuggestResultBase`
-  -  `IndexAction`다음 `IndexAction<T>` 에서 상속 됨`IndexActionBase`
-  -  `IndexBatch`다음 `IndexBatch<T>` 에서 상속 됨`IndexBatchBase`
-  -  `SearchResult`다음 `SearchResult<T>` 에서 상속 됨`SearchResultBase`
-  -  `SuggestResult`다음 `SuggestResult<T>` 에서 상속 됨`SuggestResultBase`
+  -  `DocumentSearchResult` 다음 `DocumentSearchResult<T>` 에서 상속 됨 `DocumentSearchResultBase`
+  -  `DocumentSuggestResult` 다음 `DocumentSuggestResult<T>` 에서 상속 됨 `DocumentSuggestResultBase`
+  -  `IndexAction` 다음 `IndexAction<T>` 에서 상속 됨 `IndexActionBase`
+  -  `IndexBatch` 다음 `IndexBatch<T>` 에서 상속 됨 `IndexBatchBase`
+  -  `SearchResult` 다음 `SearchResult<T>` 에서 상속 됨 `SearchResultBase`
+  -  `SuggestResult` 다음 `SuggestResult<T>` 에서 상속 됨 `SuggestResultBase`
 
 제네릭 형식 매개 변수 없이 파생 된 형식은 "동적으로 형식화 된" 시나리오에서 사용 되며 형식의 사용을 가정 `Document` 합니다.
 

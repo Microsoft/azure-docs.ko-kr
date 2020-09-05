@@ -3,14 +3,15 @@ title: Azure Functions SendGrid 바인딩
 description: Azure Functions SendGrid 바인딩 참조.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 9ed2b81c12c698822b9542bb6903189c865b572b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 32734ff9df2e55d24789742cd49984d8da212a17
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84697360"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212197"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Azure Functions SendGrid 바인딩
 
@@ -352,16 +353,16 @@ Python에서는 특성을 지원하지 않습니다.
 
 ## <a name="configuration"></a>구성
 
-다음 표에서는 *function.js* 파일 및 `SendGrid` 특성/주석에 사용할 수 있는 바인딩 구성 속성을 보여 줍니다.
+다음 표에서는  *function.js* 파일 및 `SendGrid` 특성/주석에 사용할 수 있는 바인딩 구성 속성을 보여 줍니다.
 
 | 속성 *function.js* | 특성/주석 속성 | 설명 | 선택 |
 |--------------------------|-------------------------------|-------------|----------|
 | 형식 |해당 없음| `sendGrid`로 설정해야 합니다.| 아니요 |
 | direction |해당 없음| `out`로 설정해야 합니다.| 예 |
 | name |해당 없음| 요청 또는 요청 본문의 함수 코드에 사용 되는 변수 이름입니다. 반환 값이 하나만 있는 경우 이 값은 `$return`입니다. | 아니요 |
-| apiKey | ApiKey | API 키가 포함 된 앱 설정의 이름입니다. 설정 되지 않은 경우 기본 앱 설정 이름은 *Azurewebjobssendgridapikey*입니다.| 아니요 |
+| apiKey | ApiKey | API 키가 포함 된 앱 설정의 이름입니다. 설정 되지 않은 경우 기본 앱 설정 이름은 *Azurewebjobssendgridapikey*입니다.| 예 |
 | to| 대상 | 받는 사람의 이메일 주소입니다. | 예 |
-| 원본| 시작 | 보낸 사람의 전자 메일 주소입니다. |  예 |
+| 원본| 보낸 사람 | 보낸 사람의 전자 메일 주소입니다. |  예 |
 | subject| 제목 | 전자 메일의 제목입니다. | 예 |
 | text| 텍스트 | 전자 메일 내용입니다. | 예 |
 
@@ -373,7 +374,7 @@ Python에서는 특성을 지원하지 않습니다.
 
 ## <a name="hostjson-settings"></a>host.json 설정
 
-이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래 파일에 host.js예제에는이 바인딩에 대 한 버전 2.x + 설정만 포함 되어 있습니다. 2.x 이상 버전의 전역 구성 설정에 대 한 자세한 내용은 [Azure Functions에 대 한 참조host.js](functions-host-json.md)를 참조 하세요.
+이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래 파일에 host.js예제에는이 바인딩에 대 한 버전 2.x + 설정만 포함 되어 있습니다. 2.x 이상 버전의 전역 구성 설정에 대 한 자세한 내용은 [ Azure Functions에 대 한 참조host.js](functions-host-json.md)를 참조 하세요.
 
 > [!NOTE]
 > Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](functions-host-json-v1.md)를 참조하세요.

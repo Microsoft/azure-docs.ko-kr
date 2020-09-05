@@ -3,12 +3,12 @@ title: Azure Migrate를 사용 하 여 VMware VM 검색의 범위 설정
 description: Azure Migrate를 사용 하 여 VMware VM 평가 및 마이그레이션에 대 한 검색 범위를 설정 하는 방법을 설명 합니다.
 ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: e53eb0d01df2152aeced2901335f75879885fd22
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dfc9c12edd93fc720ef716fd43b04e0c193d5803
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84770393"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919729"
 ---
 # <a name="set-discovery-scope-for-vmware-vms"></a>VMware Vm에 대 한 검색 범위 설정
 
@@ -60,4 +60,4 @@ ms.locfileid: "84770393"
 
 ## <a name="next-steps"></a>다음 단계
 
-[어플라이언스를 설정](how-to-set-up-appliance-vmware.md)하 고 [연속 검색을 시작](how-to-set-up-appliance-vmware.md#start-continuous-discovery-by-providing-vcenter-server-and-vm-credential)합니다.
+[어플라이언스 설정](how-to-set-up-appliance-vmware.md)

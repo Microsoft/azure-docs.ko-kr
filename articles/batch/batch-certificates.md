@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 02/17/2020
 ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 96a3ada98bb41ea007eaaae2a40983d2448b38c2
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 5f7d547ad549b2747ae41182ee4058b001d9e78a
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960829"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146388"
 ---
 # <a name="using-certificates-with-batch"></a>Batch로 인증서 사용
 
@@ -39,6 +39,6 @@ ms.locfileid: "85960829"
 
 ## <a name="next-steps"></a>다음 단계
 
-Batch에는 인증서 API [AZ batch certificate create](/cli/azure/batch/certificate?view=azure-cli-latest#az-batch-certificate-create)가 있습니다.
+Batch에는 인증서 API [AZ batch certificate create](/cli/azure/batch/certificate)가 있습니다.
 
 Key Vault 사용에 대한 자세한 내용은 [Batch를 사용하여 Key Vault에 안전하게 액세스](credential-access-key-vault.md)를 참조하세요.

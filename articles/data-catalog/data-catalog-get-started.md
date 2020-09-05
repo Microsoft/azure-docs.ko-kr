@@ -1,17 +1,17 @@
 ---
-title: Azure Data Catalog 만들기
+title: '빠른 시작: Azure Data Catalog 만들기'
 description: 이 빠른 시작에서는 Azure Portal을 사용하여 Azure Data Catalog를 만드는 방법을 설명합니다.
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: e37bd22e0bd0f750ef7b4ae9cc8465ed5292883e
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
+ms.openlocfilehash: e08527ae530b7b5ed5e5293a3af9e2d8dd3f795a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860990"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118793"
 ---
 # <a name="quickstart-create-an-azure-data-catalog"></a>빠른 시작: Azure Data Catalog 만들기
 

@@ -1,27 +1,22 @@
 ---
-title: Azure AD 애플리케이션 프록시의 사용자 지정 도메인 | Microsoft Docs
+title: Azure AD 응용 프로그램 프록시의 사용자 지정 도메인
 description: Azure AD 애플리케이션 프록시에서 사용자 지정 도메인을 구성 및 관리합니다.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 646a32509921709711b208c263ac6b077555eac5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6688875385d34fcbece964d43827c6d62ae7ced4
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764913"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587772"
 ---
 # <a name="configure-custom-domains-with-azure-ad-application-proxy"></a>Azure AD 애플리케이션 프록시에서 사용자 지정 도메인 구성
 
@@ -91,11 +86,11 @@ Azure Active Directory 애플리케이션 프록시를 통해 애플리케이션
    
    ![사용자 지정 도메인 선택](./media/application-proxy-configure-custom-domain/application-proxy.png)
    
-6. 도메인에 인증서가 이미 있는 경우 **인증서** 필드에 인증서 정보가 표시됩니다. 그렇지 않은 경우 **인증서** 파일을 선택합니다. 
+6. 도메인에 인증서가 이미 있는 경우 **인증서** 필드에 인증서 정보가 표시됩니다. 그렇지 않은 경우 **인증서** 파일을 선택합니다.
    
    ![인증서를 업로드하려면 클릭](./media/application-proxy-configure-custom-domain/certificate.png)
    
-7. **SSL 인증서** 페이지에서 PFX 인증서 파일을 찾아 선택합니다. 인증서에 대한 암호를 입력하고 **인증서 업로드**를 선택합니다. 인증서에 대한 자세한 내용은 [사용자 지정 도메인에 대한 인증서](#certificates-for-custom-domains) 섹션을 참조하세요.
+7. **SSL 인증서** 페이지에서 PFX 인증서 파일을 찾아 선택합니다. 인증서에 대한 암호를 입력하고 **인증서 업로드**를 선택합니다. 인증서에 대한 자세한 내용은 [사용자 지정 도메인에 대한 인증서](#certificates-for-custom-domains) 섹션을 참조하세요. 인증서가 유효 하지 않거나 암호에 문제가 있는 경우 오류 메시지가 표시 됩니다. [응용 프로그램 프록시 FAQ](application-proxy-faq.md#application-configuration) 에는 시도할 수 있는 몇 가지 문제 해결 단계가 포함 되어 있습니다.
    
    ![인증서 업로드](./media/application-proxy-configure-custom-domain/ssl-certificate.png)
    
@@ -126,7 +121,7 @@ Azure Active Directory 애플리케이션 프록시를 통해 애플리케이션
 
 PFX 인증서를 사용하여 필수 중간 인증서가 모두 포함되어 있는지 확인해야 합니다. 인증서에 프라이빗 키가 포함되어 있어야 합니다.
 
-인증서 서명 메서드에 대한 제한은 없습니다. ECC(타원 곡선 암호화), SAN(주체 대체 이름) 및 다른 일반적인 인증서 형식이 지원됩니다. 
+가장 일반적인 인증서 서명 방법은 SAN (주체 대체 이름)과 같이 지원 됩니다. 
 
 와일드카드가 외부 URL과 일치하는 한, 와일드카드 인증서를 사용할 수 있습니다. [와일드카드 애플리케이션](application-proxy-wildcard.md)에 대한 와일드카드 인증서를 사용해야 합니다. 인증서를 사용하여 하위 도메인에도 액세스하려는 경우 하위 도메인 와일드카드를 동일한 인증서의 주체 대체 이름으로 추가해야 합니다. 예를 들어 *\*.apps.adventure-works.com*을 주체 대체 이름으로 추가하지 않으면 *\*.adventure-works.com*의 인증서는 *\*.apps.adventure-works.com*에 작동하지 않습니다. 
 

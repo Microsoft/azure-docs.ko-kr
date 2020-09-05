@@ -1,7 +1,7 @@
 ---
 title: 사설 클라우드 VMware 구성 요소
 titleSuffix: Azure VMware Solution by CloudSimple
-description: 사설 클라우드에 VMware 구성 요소가 설치 되는 방법에 대해 설명 합니다.
+description: CloudSimple 서비스를 사용 하 여 Azure 위치에 VMware를 기본적으로 배포 하는 방법을 알아봅니다. 사설 클라우드는 Azure 클라우드의 나머지와 통합 됩니다.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/15/2019
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 9c9b80cd4d8a7a7ac5597d10bbb87095564bd461
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ff9aec1904be754990958869666e9d67038e4fb3
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84702825"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142505"
 ---
 # <a name="private-cloud-vmware-components"></a>사설 클라우드 VMware 구성 요소
 

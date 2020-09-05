@@ -3,12 +3,12 @@ title: 관리 그룹으로 리소스 구성 - Azure Governance
 description: 관리 그룹, 사용 권한 작동 방식 및 사용 방법에 대해 알아봅니다.
 ms.date: 07/06/2020
 ms.topic: overview
-ms.openlocfilehash: 787658cebcb8345edd616bcdde485883ea43e8dc
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: c1c054ab67a94b5782187092c572e1e73752c8c2
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87529350"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920163"
 ---
 # <a name="what-are-azure-management-groups"></a>Azure 관리 그룹이란?
 
@@ -25,7 +25,7 @@ ms.locfileid: "87529350"
 
 예를 들어 "Production"(생산)이라는 그룹에서 VM 위치를 미국 서부 지역으로 제한하는 정책을 적용하는 계층을 만들 수 있습니다. 이 정책은 해당 관리 그룹의 하위 항목인 모든 EA(기업계약) 구독으로 상속되어 해당 구독의 모든 VM에 적용됩니다. 거버넌스 향상을 위해 리소스 또는 구독 소유자가 이 보안 정책을 변경할 수 없습니다.
 
-관리 그룹을 사용할 만한 또 다른 시나리오는 여러 구독에 대한 사용자 액세스 제공입니다. 해당 관리 그룹에서 여러 구독을 이동하면 관리 그룹에 하나의 RBAC([역할 기반 액세스 제어](../../role-based-access-control/overview.md)) 할당을 만들 수 있습니다. 그러면 모든 구독에 대한 액세스를 상속하게 됩니다. 관리 그룹에 하나만 할당하면 여러 구독에 RBAC를 스크립팅하지 않고 사용자가 필요한 모든 항목에 액세스할 수 있습니다.
+관리 그룹을 사용할 만한 또 다른 시나리오는 여러 구독에 대한 사용자 액세스 제공입니다. 여러 구독을 해당 관리 그룹으로 이동하면 관리 그룹에 하나의 [Azure 역할 할당](../../role-based-access-control/overview.md)을 만들 수 있습니다. 이는 모든 구독에 대한 해당 액세스 권한을 상속합니다. 관리 그룹에 하나만 할당하면 여러 구독에 RBAC를 스크립팅하지 않고 사용자가 필요한 모든 항목에 액세스할 수 있습니다.
 
 ### <a name="important-facts-about-management-groups"></a>관리 그룹에 대한 중요 한 사실
 

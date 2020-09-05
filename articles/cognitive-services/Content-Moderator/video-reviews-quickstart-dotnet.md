@@ -10,12 +10,13 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: 7130ed43183d64b00f8f5ef1697b9a3b456ad396
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b2fb06c838de480bb73501307ab11cb3d6831921
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72931666"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919321"
 ---
 # <a name="create-video-reviews-using-net"></a>.NET을 사용하여 비디오 검토 만들기
 
@@ -27,7 +28,7 @@ ms.locfileid: "72931666"
 - 검토의 상태 및 세부 정보 가져오기
 - 검토 게시
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 - Content Moderator [검토 도구](https://contentmoderator.cognitive.microsoft.com/) 사이트에서 로그인 하거나 계정을 만드세요.
 - 이 문서에서는 [비디오를 조정(빠른 시작 참조)](video-moderation-api.md)했고 응답 데이터를 보유하고 있다고 가정합니다. 사용자 중재자를 위한 프레임 기반 검토를 만드는 데 필요합니다.
@@ -92,7 +93,7 @@ using Newtonsoft.Json;
 
 ### <a name="add-private-properties"></a>프라이빗 속성 추가
 
-네임 스페이스 **VideoReviews**클래스 **프로그램**에 다음 개인 속성을 추가 합니다. 및 `CMSubscriptionKey` 필드 `AzureEndpoint` 를 끝점 URL 및 구독 키의 값으로 업데이트 합니다. Azure Portal에서 리소스의 **빠른 시작** 탭에서 찾을 수 있습니다.
+네임 스페이스 **VideoReviews**클래스 **프로그램**에 다음 개인 속성을 추가 합니다. `AzureEndpoint`및 필드를 `CMSubscriptionKey` 끝점 URL 및 구독 키의 값으로 업데이트 합니다. Azure Portal에서 리소스의 **빠른 시작** 탭에서 찾을 수 있습니다.
 
 
 ```csharp
@@ -152,12 +153,12 @@ public static ContentModeratorClient NewClient()
 
 ## <a name="create-a-video-review"></a>비디오 검토 만들기
 
-**ContentModeratorClient.Reviews.CreateVideoReviews**를 사용하여 비디오 검토를 만듭니다. 자세한 내용은 [API 참조](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4)를 참조하세요.
+**ContentModeratorClient.Reviews.CreateVideoReviews**를 사용하여 비디오 검토를 만듭니다. 자세한 내용은 [API 참조](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4)를 참조 하세요.
 
 **CreateVideoReviews**에는 다음 매개 변수가 필요합니다.
 1. MIME 형식을 포함하는 문자열로, “application/json”이어야 합니다. 
 1. Content Moderator 팀 이름입니다.
-1. **\<IList CreateVideoReviewsBodyItem>** 개체입니다. 각 **CreateVideoReviewsBodyItem** 개체는 비디오 검토를 나타냅니다. 이 빠른 시작에서는 한 번에 하나씩 검토를 만듭니다.
+1. **IList\<CreateVideoReviewsBodyItem>** 개체입니다. 각 **CreateVideoReviewsBodyItem** 개체는 비디오 검토를 나타냅니다. 이 빠른 시작에서는 한 번에 하나씩 검토를 만듭니다.
 
 **CreateVideoReviewsBodyItem**에는 여러 속성이 있습니다. 최소한 다음 속성을 설정합니다.
 - **콘텐츠**. 검토할 비디오의 URL입니다.
@@ -165,7 +166,7 @@ public static ContentModeratorClient NewClient()
 - **상태**. 값을 "게시 취소됨"으로 설정합니다. 값을 설정하지 않을 경우 기본값인 "보류 중"으로 설정되며, 이는 비디오 검토가 게시되었으며 사용자 검토 보류 중임을 의미합니다. 비디오 검토가 게시되고 나면 비디오 프레임, 대본 또는 대본 조정 결과를 더 이상 추가할 수 없습니다.
 
 > [!NOTE]
-> **CreateVideoReviews** 는 IList\<문자열>을 반환 합니다. 이러한 각 문자열에는 비디오 검토의 ID가 포함되어 있습니다. 이러한 ID는 GUID이며, **ContentId** 속성 값과 동일하지 않습니다. 
+> **CreateVideoReviews**는 IList\<string>을(를) 반환합니다. 이러한 각 문자열에는 비디오 검토의 ID가 포함되어 있습니다. 이러한 ID는 GUID이며, **ContentId** 속성 값과 동일하지 않습니다. 
 
 VideoReviews 네임스페이스, Program 클래스에 다음 메서드 정의를 추가합니다.
 
@@ -209,13 +210,13 @@ private static string CreateReview(ContentModeratorClient client, string id, str
 
 ## <a name="add-video-frames-to-the-video-review"></a>비디오 검토에 비디오 프레임 추가
 
-**ContentModeratorClient.Reviews.AddVideoFrameUrl**(비디오 프레임이 온라인에서 호스팅되는 경우) 또는 **ContentModeratorClient.Reviews.AddVideoFrameStream**(비디오 프레임이 로컬로 호스팅되는 경우)을 사용하여 비디오 검토에 비디오 프레임을 추가합니다. 이 빠른 시작은 비디오 프레임이 온라인으로 호스팅된다고 가정하므로 **AddVideoFrameUrl**을 사용합니다. 자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7b76ae7151f0b10d451fd)를 참조하세요.
+**ContentModeratorClient.Reviews.AddVideoFrameUrl**(비디오 프레임이 온라인에서 호스팅되는 경우) 또는 **ContentModeratorClient.Reviews.AddVideoFrameStream**(비디오 프레임이 로컬로 호스팅되는 경우)을 사용하여 비디오 검토에 비디오 프레임을 추가합니다. 이 빠른 시작은 비디오 프레임이 온라인으로 호스팅된다고 가정하므로 **AddVideoFrameUrl**을 사용합니다. 자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/59e7b76ae7151f0b10d451fd)를 참조 하세요.
 
 **AddVideoFrameUrl**에는 다음 매개 변수가 필요합니다.
 1. MIME 형식을 포함하는 문자열로, “application/json”이어야 합니다.
 1. Content Moderator 팀 이름입니다.
 1. **CreateVideoReviews**에서 반환된 비디오 검토 ID입니다.
-1. **\<IList VideoFrameBodyItem>** 개체입니다. 각 **VideoFrameBodyItem** 개체는 비디오 프레임을 나타냅니다.
+1. **IList\<VideoFrameBodyItem>** 개체입니다. 각 **VideoFrameBodyItem** 개체는 비디오 프레임을 나타냅니다.
 
 **VideoFrameBodyItem**에는 다음 속성이 있습니다.
 - **타임 스탬프**. 비디오 프레임이 사용된 비디오의 시간(초)을 포함하는 문자열입니다.
@@ -541,7 +542,7 @@ Press any key to close the application.
 
 ## <a name="check-out-your-video-review"></a>비디오 검토 확인
 
-마지막으로**비디오** **검토**>화면에서 Content Moderator 검토 도구 계정에 비디오 검토를 표시 합니다.
+마지막으로 비디오 **검토**화면에서 Content Moderator 검토 도구 계정에 비디오 검토를 표시 합니다 > **Video** .
 
 ![사용자 중재자를 위한 비디오 검토](images/ams-video-review.PNG)
 

@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 05/19/2020
-ms.openlocfilehash: 2f25cab211d24facea7863c15b6d7671a9657ae9
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b6164ef955ac92a7ef8776e560ea4d3a92abaf8d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290683"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935979"
 ---
 # <a name="tutorial-diagnose-repair-and-commit-changes-to-your-skillset"></a>자습서: 기술 세트에 대한 변경 내용 진단, 수정 및 적용
 
@@ -39,7 +39,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 * 19개의 파일로 구성된 [샘플 데이터를 다운로드](https://github.com/Azure-Samples/azure-search-sample-data/tree/master/clinical-trials-pdf-19)합니다.
 
-* [Azure 스토리지 계정을 만들](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal)거나 [기존 계정을 찾습니다](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
+* [Azure 스토리지 계정을 만들](../storage/common/storage-account-create.md?tabs=azure-portal)거나 [기존 계정을 찾습니다](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/). 
 
    대역폭 요금이 부과되지 않도록 Azure Cognitive Search와 동일한 지역을 선택합니다.
    
@@ -258,5 +258,5 @@ REST를 호출하려면 모든 요청에 대한 액세스 키와 서비스 URL�
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [기술 세트에 대해 자세히 알아보기](https://docs.microsoft.com/azure/search/cognitive-search-working-with-skillsets)
-> [증분 보강 및 캐싱에 대해 자세히 알아보기](https://docs.microsoft.com/azure/search/cognitive-search-incremental-indexing-conceptual)
+> [기술 세트에 대해 자세히 알아보기](./cognitive-search-working-with-skillsets.md)
+> [증분 보강 및 캐싱에 대해 자세히 알아보기](./cognitive-search-incremental-indexing-conceptual.md)

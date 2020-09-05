@@ -3,17 +3,17 @@ title: Azure Notification Hubs 및 iOS SDK를 사용하여 iOS에 푸시 알림 
 description: 이 자습서에서는 Azure Notification Hubs 및 Apple Push Notification Service를 사용하여 푸시 알림을 iOS 디바이스에 보내는 방법을 알아봅니다.
 author: sethmanheim
 ms.author: sethm
-ms.date: 06/19/2020
+ms.date: 08/10/2020
 ms.topic: tutorial
 ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
-ms.openlocfilehash: 94e930c996710c2b25d4114c7cfcb17129c5177d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7cdf095898bfe85e6f3b14fa1dcdb7b0c94ccde6
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87022432"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042448"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>자습서: Azure Notification Hubs를 사용하여 iOS 앱에 푸시 알림 보내기
 
@@ -102,6 +102,9 @@ Apple에서 서명된 푸시 인증서를 생성하는 데 사용하는 CSR(인�
 4.  **Certificates, Identifiers & Profiles** 페이지의 **Identifiers(식별자)** 아래에서 방금 만든 앱 ID 줄 항목을 찾고, 해당 행을 선택하여 **Edit your App ID Configuration(앱 ID 구성 편집)**  화면을 표시합니다.
 
 ## <a name="create-a-certificate-for-notification-hubs"></a>Notification Hubs에 대한 인증서 만들기
+
+> [!NOTE]
+> iOS 13 릴리스부터는 토큰 기반 인증을 사용한 자동 알림만 받을 수 있습니다. APNS 자격 증명에 인증서 기반 인증을 사용하는 경우 토큰 기반 인증을 사용하도록 전환해야 합니다.
 
 알림 허브가 **APNS**에서 작동하도록 설정하려면 인증서가 필요합니다. 이 작업은 다음 두 가지 방법 중 하나를 통해 수행할 수 있습니다.
 

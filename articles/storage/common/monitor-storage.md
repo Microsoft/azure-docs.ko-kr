@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: normesta
 ms.reviewer: fryu
-ms.custom: monitoring
-ms.openlocfilehash: e1be9a7e543f8513f3b30182dfbc421dc38bdbce
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: monitoring, devx-track-csharp
+ms.openlocfilehash: 2cc275028b64c3df06e2c0275bc0f4ac21fa0f6e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836669"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020153"
 ---
 # <a name="monitor-azure-storage"></a>Azure Storage 모니터링
 

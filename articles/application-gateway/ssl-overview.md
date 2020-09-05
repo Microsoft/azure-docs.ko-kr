@@ -2,17 +2,17 @@
 title: Azure Application Gateway에서 엔드투엔드 TLS를 사용하도록 설정
 description: 이 문서는 Application Gateway 엔드투엔드 TLS 지원에 대한 개요입니다.
 services: application-gateway
-author: amsriva
+author: surajmb
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 5/13/2020
+ms.date: 08/21/2020
 ms.author: victorh
-ms.openlocfilehash: 1986955c7135cb9296937392b23635ae62d8d9f7
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 3d714b579bebb096745a47410da3f8f458e27161
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85962104"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723302"
 ---
 # <a name="overview-of-tls-termination-and-end-to-end-tls-with-application-gateway"></a>Application Gateway를 사용한 TLS 종료 및 종단간 TLS 개요
 
@@ -30,7 +30,7 @@ Application Gateway는 게이트웨이에서 TLS 종료를 지원합니다. 그 
 TLS 종료를 구성하려면 TLS/SSL 인증서를 수신기에 추가하여 Application Gateway에서 TLS/SSL 프로토콜 사양에 따라 대칭 키를 파생할 수 있도록 해야 합니다. 이렇게 파생된 대칭 키는 게이트웨이로 전송되는 트래픽을 암호화하고 암호를 해독하는 데 사용됩니다. TLS/SSL 인증서는 PFX(개인 정보 교환) 형식이어야 합니다. 이 파일 형식을 사용하면 애플리케이션 게이트웨이에서 트래픽의 암호화 및 암호 해독을 수행하는 데 필요한 프라이빗 키를 내보낼 수 있습니다.
 
 > [!IMPORTANT] 
-> 수신기의 인증서는 전체 인증서 체인을 업로드해야 합니다. 
+> 수신기의 인증서를 사용 하려면 전체 인증서 체인 (CA의 루트 인증서, intermediates 및 리프 인증서)을 업로드 하 여 신뢰 체인을 설정 해야 합니다. 
 
 
 > [!NOTE] 

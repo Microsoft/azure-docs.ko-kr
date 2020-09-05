@@ -10,9 +10,6 @@
     - name: 인덱스
       displayName: 'template, sample'
       href: ./samples/index.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./samples/policy-samples.md
 - name: 개념
   items:
     - name: Azure 위임 리소스 관리
@@ -82,11 +79,11 @@
 - name: 참조
   items:
     - name: Azure CLI
-      href: /cli/azure/managedservices?view=azure-cli-latest
+      href: /cli/azure/managedservices
     - name: Azure PowerShell
-      href: /powershell/module/az.managedservices/?view=azps-2.4.0#managed_services
+      href: /powershell/module/az.managedservices#managed_services
     - name: Azure SDK for .NET
-      href: /dotnet/api/Microsoft.Azure.Management.ManagedServices?view=azure-dotnet
+      href: /dotnet/api/Microsoft.Azure.Management.ManagedServices
     - name: Azure SDK for .NET(NuGet)
       href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.ManagedServices/'
     - name: Python용 Azure SDK
@@ -95,6 +92,9 @@
       href: /rest/api/managedservices/
     - name: OpenAPI
       href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managedservices/resource-manager/Microsoft.ManagedServices/preview/2018-06-01-preview'
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./samples/policy-reference.md
 - name: 리소스
   items:
     - name: Azure Lighthouse에 대한 Microsoft Q&A
@@ -103,5 +103,5 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: UserVoice
+    - name: 제품 사용자 의견
       href: 'https://feedback.azure.com/forums/922753'

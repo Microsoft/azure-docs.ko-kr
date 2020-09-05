@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/18/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c394a3e84982db31b5727d170c143e9c07636d62
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 300bc6acbe7821841b578dcc2166ecfc498ad750
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121071"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141298"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>웹 API를 호출하는 데스크톱 앱: 토큰 획득
 
@@ -175,7 +175,7 @@ catch(MsalUiRequiredException)
 
 ### <a name="mandatory-parameters"></a>필수 매개 변수
 
-`AcquireTokenInteractive`에는 오직 하나의 필수 매개 변수 ``scopes``가 있습니다. 이 매개 변수에는 토큰이 필요한 범위를 정의하는 문자열 열거형이 포함되어 있습니다. 토큰이 Microsoft Graph용인 경우, 필요한 범위는 각 Microsoft Graph API의 API 참조의 “권한” 섹션에서 확인할 수 있습니다. 예를 들어, [사용자 연락처를 나열하려면](/graph/api/user-list-contacts) “User.Read”, “Contacts.Read” 범위를 사용해야 합니다. 자세한 내용은 [Microsoft Graph 사용 권한 참조](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)를 참조하세요.
+`AcquireTokenInteractive`에는 오직 하나의 필수 매개 변수 ``scopes``가 있습니다. 이 매개 변수에는 토큰이 필요한 범위를 정의하는 문자열 열거형이 포함되어 있습니다. 토큰이 Microsoft Graph용인 경우, 필요한 범위는 각 Microsoft Graph API의 API 참조의 “권한” 섹션에서 확인할 수 있습니다. 예를 들어, [사용자 연락처를 나열하려면](/graph/api/user-list-contacts) “User.Read”, “Contacts.Read” 범위를 사용해야 합니다. 자세한 내용은 [Microsoft Graph 사용 권한 참조](/graph/permissions-reference)를 참조하세요.
 
 Android에서는 예에서 볼 수 있듯이 `.WithParentActivityOrWindow`를 사용하여 부모 작업도 지정해야 합니다. 이렇게 해야 토큰이 이 상호 작용 후에 부모 작업으로 돌아갑니다. 부모 작업을 지정하지 않으면 `.ExecuteAsync()`를 호출할 때 예외가 발생합니다.
 

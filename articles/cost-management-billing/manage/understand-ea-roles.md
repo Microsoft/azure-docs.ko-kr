@@ -4,15 +4,16 @@ description: Azure의 엔터프라이즈 관리자 역할에 대해 알아봅니
 author: bandersmsft
 ms.reviewer: adwise
 ms.service: cost-management-billing
+ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 07/13/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 8a4705a68b0b96a8f95cc2356cda454fdef65054
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 787614afa1c71eee075a2e3efa81fa0cba17d1ba
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531492"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686465"
 ---
 # <a name="managing-azure-enterprise-roles"></a>Azure Enterprise 역할 관리
 

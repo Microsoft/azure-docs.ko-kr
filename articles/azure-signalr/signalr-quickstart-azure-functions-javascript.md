@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: zhshang
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3f1051b81666a036203eb1c810875d837ef9816f
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 74f0a1c163380b88986b6866e346a5f044772a0e
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386880"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050559"
 ---
 # <a name="quickstart-use-javascript-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>빠른 시작: JavaScript를 사용하여 Azure Functions와 SignalR Service로 대화방 만들기
 
@@ -32,13 +32,21 @@ Azure SignalR Service를 사용하면 애플리케이션에 실시간 기능을 
 > [!NOTE]
 > 이 빠른 시작은 macOS, Windows 또는 Linux에서 실행할 수 있습니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
+
 ## <a name="log-in-to-azure"></a>Azure에 로그인
 
 Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 로그인합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Azure 함수 앱을 구성하고 실행합니다.
 
@@ -71,9 +79,15 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
 
     ![SignalR Service 만들기](media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-run-application.png)
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -81,3 +95,5 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
 
 > [!div class="nextstepaction"]
 > [VS Code로 Azure Functions 배포](/azure/developer/javascript/tutorial-vscode-serverless-node-01)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjs)

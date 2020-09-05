@@ -10,17 +10,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 07/22/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 39c790ea3c7799c59d4b49e3ce3284fb96b8b254
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 2730c6ce523e618110cd29b13ba2f37115e2cbd0
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422966"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267686"
 ---
 # <a name="how-to-use-the-videojs-player-with-azure-media-services"></a>Azure Media Services에서 Video.js 플레이어를 사용 하는 방법
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 ## <a name="overview"></a>개요
 
@@ -73,10 +75,10 @@ Video.js는 HTML5 환경을 위해 작성 된 웹 비디오 플레이어입니�
 
 `addRemoteTextTrack`메서드를 실행 하 고를 바꿉니다.
 
-- `subtitleKind`,, `"captions"` `"subtitles"` `"descriptions"` 또는 중 하나`"metadata"`  
-- `caption`CORS 오류가 발생 하지 않도록 vtt 파일 경로 (vtt 파일은 동일한 호스트에 있어야 함)
+- `subtitleKind` ,, `"captions"` `"subtitles"` `"descriptions"` 또는 중 하나 `"metadata"`  
+- `caption` CORS 오류가 발생 하지 않도록 vtt 파일 경로 (vtt 파일은 동일한 호스트에 있어야 함)
 - `subtitleLang`언어에 대 한 BCP 47 코드 (예: `"eng"` 영어 또는 스페인어) `"es"`
-- `subtitleLabel`캡션의 원하는 표시 이름으로
+- `subtitleLabel` 캡션의 원하는 표시 이름으로
 
 ```javascript
 videojs.players.video.addRemoteTextTrack({

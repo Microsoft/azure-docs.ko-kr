@@ -3,12 +3,13 @@ title: '자습서: Language Understanding 봇 C# v4'
 description: C#을 사용하여 LUIS(Language Understanding)와 통합된 챗봇을 빌드합니다. 봇은 Bot Framework 버전 4 및 Azure 웹앱 봇 서비스를 사용하여 빌드되었습니다.
 ms.topic: tutorial
 ms.date: 06/22/2020
-ms.openlocfilehash: b9da1d1fecbb251ebf27833cc381eb658a9df46b
-ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 820cdeb692dffbf80a0e85c9d3dd86b703a4cae3
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85445902"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88931270"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>자습서: C#에서 Language Understanding으로 구현된 웹앱 봇 사용
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: cda22c63a70c5121e6a6972c66bdc0a4bb5158fc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7d47311385848f96a12a50c1dcf8b8284869c71d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089467"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260359"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Azure 스프링 클라우드의 할당량 및 서비스 계획
 
@@ -27,9 +27,6 @@ vCPU | 서비스 인스턴스당 1 개 | 서비스 인스턴스당 4 개
 구독당 지역별 Azure Spring Cloud 서비스 인스턴스 수 | 10 | 10
 Azure Spring Cloud 서비스 인스턴스당 총 앱 인스턴스 수 | 25 | 500
 영구적 볼륨 | 1GB/앱 x 10 앱 | 50 g b/앱 x 10 앱
-
-
-Azure 스프링 클라우드는 미리 보기 기간 동안 하나의 서비스 계층만 제공 합니다. 한도에 도달 하면 다음과 같은 오류 400 메시지가 표시 됩니다. "할당량은 *Azure 스프링 클라우드 서비스가 생성 된 지역 지역* *에서 구독 구독에* 대 한 제한을 초과 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

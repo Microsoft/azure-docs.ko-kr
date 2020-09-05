@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cf30324371043d8b702d3e22ec3ecd98e114ba6
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 3a37353615e35cd75c126c268de71d10077a9071
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428579"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268437"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>자습서: 페더레이션 도메인용 하이브리드 Azure Active Directory 조인 구성
 
@@ -88,7 +88,7 @@ Windows 10 1803부터 AD FS를 사용하여 페더레이션된 환경에 대한 
 
 조직에서 아웃바운드 프록시를 통해 인터넷에 액세스해야 하는 경우에 Windows 10 컴퓨터에서 디바이스를 Azure AD에 등록할 수 있도록 [WPAD(웹 프록시 자동 검색)를 구현](/previous-versions/tn-archive/cc995261(v%3dtechnet.10))하는 것이 좋습니다. WPAD를 구성하고 관리하는 문제가 발생하는 경우 [자동 검색 문제 해결](/previous-versions/tn-archive/cc302643(v=technet.10))을 참조하세요. 
 
-WPAD를 사용하지 않고 컴퓨터에서 프록시 설정을 구성해야 하는 경우 Windows 10 1709로 시작할 수 있습니다. 자세한 내용은 [GPO(그룹 정책 개체)를 사용하여 WinHTTP 설정 구성](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/)을 참조하세요.
+WPAD를 사용하지 않고 컴퓨터에서 프록시 설정을 구성해야 하는 경우 Windows 10 1709로 시작할 수 있습니다. 자세한 내용은 [GPO(그룹 정책 개체)를 사용하여 WinHTTP 설정 구성](/archive/blogs/netgeeks/winhttp-proxy-settings-deployed-by-gpo)을 참조하세요.
 
 > [!NOTE]
 > WinHTTP 설정을 사용하여 컴퓨터에서 프록시 설정을 구성하는 경우 구성된 프록시에 연결할 수 없는 모든 컴퓨터는 인터넷에 연결할 수 없습니다.
@@ -193,7 +193,7 @@ Windows 하위 수준 디바이스를 등록하려면 조직에서는 [비 Windo
 ### <a name="using-the-azure-portal"></a>Azure Portal 사용
 
 1. [직접 링크](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices)를 사용하여 디바이스 페이지로 이동합니다.
-2. 디바이스를 찾는 방법에 대한 정보는 [Azure Portal을 사용하여 디바이스 ID를 관리하는 방법](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#locate-devices)에서 찾을 수 있습니다.
+2. 디바이스를 찾는 방법에 대한 정보는 [Azure Portal을 사용하여 디바이스 ID를 관리하는 방법](./device-management-azure-portal.md)에서 찾을 수 있습니다.
 3. **Registered** 열에 **보류 중**이 표시되면 하이브리드 Azure AD 조인이 완료되지 않은 것입니다. 페더레이션된 환경에서는 등록에 실패하고 AAD 연결이 디바이스를 동기화하도록 구성된 경우에만 이 문제가 발생할 수 있습니다.
 4. **Registered** 열에 **날짜/시간**이 포함되어 있으면 하이브리드 Azure AD 조인이 완료된 것입니다.
 
@@ -243,7 +243,7 @@ Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -e
 
 도메인 가입 Windows 디바이스에 대한 하이브리드 Azure AD 조인을 완료할 때 문제가 발생하면 다음을 참조하세요.
 
-- [dsregcmd 명령을 사용하여 디바이스 문제 해결](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
+- [dsregcmd 명령을 사용하여 디바이스 문제 해결](./troubleshoot-device-dsregcmd.md)
 - [Windows 최신 디바이스의 하이브리드 Azure AD 조인 문제 해결](troubleshoot-hybrid-join-windows-current.md)
 - [Windows 하위 수준 디바이스의 하이브리드 Azure AD 조인 문제 해결](troubleshoot-hybrid-join-windows-legacy.md)
 

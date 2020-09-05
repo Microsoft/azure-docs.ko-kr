@@ -1,14 +1,14 @@
 ---
 title: 효과 작동 방식 이해
 description: Azure Policy 정의는 규정 준수가 관리되고 보고되는 방법을 결정하는 다양한 효과가 있습니다.
-ms.date: 06/15/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 54c2a687c6386c075ef5802826bc60b87b4d3ee4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7eb1178bbf767f6962c797da4474af81d576545a
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791421"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079662"
 ---
 # <a name="understand-azure-policy-effects"></a>Azure Policy의 영향 파악
 
@@ -32,7 +32,7 @@ Azure Policy의 각 정책 정의는 단일 효과가 있습니다. 해당 효�
 > [!IMPORTANT]
 > **EnforceOPAConstraint** 또는 **EnforceRegoPolicy** 효과 대신 리소스 공급자 모드에서 _감사_ 및 _거부_ 를 사용 `Microsoft.Kubernetes.Data` 합니다. 기본 제공 정책 정의가 업데이트 되었습니다. 이러한 기본 제공 정책 정의의 기존 정책 할당을 수정 하는 경우에는 _효과_ 매개 변수를 업데이트 된 _allowedvalues_ 목록의 값으로 변경 해야 합니다.
 
-## <a name="order-of-evaluation"></a>평가 순서
+## <a name="order-of-evaluation"></a>계산 순서
 
 리소스를 만들거나 업데이트 하는 요청은 Azure Policy에서 먼저 평가 됩니다. Azure Policy는 리소스에 적용한 다음, 각 정의에 대해 리소스를 평가하는 모든 할당 목록을 만듭니다. [리소스 관리자 모드](./definition-structure.md#resource-manager-modes)의 경우 Azure Policy는 적절 한 리소스 공급자에 게 요청을 전달 하기 전에 몇 가지 효과를 처리 합니다. 이 순서는 리소스가 Azure Policy의 디자인 된 거 버 넌 스 컨트롤을 충족 하지 않는 경우 리소스 공급자에의 한 불필요 한 처리를 방지 합니다. 리소스 [공급자 모드](./definition-structure.md#resource-provider-modes)를 사용 하 여 리소스 공급자는 평가 및 결과를 관리 하 고 결과를 다시 Azure Policy으로 보고 합니다.
 
@@ -479,14 +479,33 @@ EnforceRegoPolicy 효과의 **details** 속성에는 Gatekeeper v2 허용 제어
 
 ## <a name="modify"></a>수정
 
-Modify는 생성 또는 업데이트 중에 리소스에 태그를 추가, 업데이트 또는 제거하는 데 사용됩니다. 일반적인 예는 costCenter와 같은 리소스의 태그를 업데이트하는 것입니다. Modify 정책은 대상 리소스가 리소스 그룹이 아닌 한, `mode`가 항상 _Indexed_로 설정되어 있어야 합니다. 기존 비준수 리소스는 [수정 작업](../how-to/remediate-resources.md)을 통해 수정할 수 있습니다. 단일 Modify 규칙은 많은 수의 operations를 포함할 수 있습니다.
+Modify는 만들거나 업데이트 하는 동안 리소스의 속성 또는 태그를 추가, 업데이트 또는 제거 하는 데 사용 됩니다.
+일반적인 예는 costCenter와 같은 리소스의 태그를 업데이트하는 것입니다. 기존 비준수 리소스는 [수정 작업](../how-to/remediate-resources.md)을 통해 수정할 수 있습니다. 단일 Modify 규칙은 많은 수의 operations를 포함할 수 있습니다.
+
+Modify에서 지원 되는 작업은 다음과 같습니다.
+
+- 리소스 태그를 추가, 대체 또는 제거 합니다. 태그의 경우 `mode` 대상 리소스가 리소스 그룹인 경우를 제외 하 고 수정 정책이 _인덱싱된_ 로 설정 되어야 합니다.
+- `identity.type`가상 컴퓨터 및 가상 컴퓨터 크기 집합의 관리 되는 id 유형 () 값을 추가 하거나 바꿉니다.
+- 특정 별칭 (미리 보기)의 값을 추가 하거나 바꿉니다.
+  - `Get-AzPolicyAlias | Select-Object -ExpandProperty 'Aliases' | Where-Object { $_.DefaultMetadata.Attributes -eq 'Modifiable' }` 사용
+    Azure PowerShell **4.6.0** 이상에서 Modify와 함께 사용할 수 있는 별칭 목록을 가져옵니다.
 
 > [!IMPORTANT]
-> Modify는 현재 태그에만 사용됩니다. 태그를 관리하는 경우 Append 대신 Modify를 사용하는 것이 좋습니다. Modify는 추가 작업 유형 및 기존 리소스를 수정하는 기능을 제공하기 때문입니다. 하지만 관리 ID를 만들 수 없으면 Append를 사용하는 것이 좋습니다.
+> 태그를 관리 하는 경우 추가 작업 형식 및 기존 리소스를 수정 하는 기능을 제공 하는 대신 수정을 사용 하는 것이 좋습니다. 그러나 관리 id를 만들 수 없거나 수정이 아직 리소스 속성에 대 한 별칭을 지원 하지 않는 경우에는 추가를 권장 합니다.
 
 ### <a name="modify-evaluation"></a>Modify 평가
 
-Modify는 리소스의 생성 또는 업데이트하는 도중 리소스 공급자가 요청을 처리하기 전에 평가합니다. Modify는 정책 규칙의 **if** 조건이 충족되면 리소스에 태그를 추가 또는 업데이트합니다.
+Modify는 리소스의 생성 또는 업데이트하는 도중 리소스 공급자가 요청을 처리하기 전에 평가합니다. 수정 작업은 정책 규칙의 **if** 조건이 충족 될 때 요청 콘텐츠에 적용 됩니다. 각 수정 작업은 적용 되는 시기를 결정 하는 조건을 지정할 수 있습니다. _False_ 로 평가 되는 조건이 있는 작업은 건너뜁니다.
+
+별칭을 지정 하는 경우 다음과 같은 추가 검사를 수행 하 여 수정 작업에서 리소스 공급자가 거부 하도록 하는 방식으로 요청 콘텐츠를 변경 하지 않도록 합니다.
+
+- 별칭이 매핑되는 속성이 요청의 API 버전에서 ' 수정 가능 '으로 표시 됩니다.
+- 수정 작업의 토큰 형식이 요청 API 버전의 속성에 대해 예상 되는 토큰 형식과 일치 합니다.
+
+이러한 검사 중 하나라도 실패 하면 정책 평가는 지정 된 **conflictEffect**으로 대체 됩니다.
+
+> [!IMPORTANT]
+> 별칭을 포함 하는 정의를 수정 하는 것은 recommeneded에서 _감사_ **충돌 효과** 를 사용 하 여 매핑된 속성이 ' 수정 가능 '이 아닌 API 버전을 사용 하 여 요청 실패를 방지 합니다. API 버전 마다 동일한 별칭이 다르게 동작 하는 경우 조건부 수정 작업을 사용 하 여 각 API 버전에 사용 되는 수정 작업을 확인할 수 있습니다.
 
 Modify 효과를 사용하는 정책 정의가 평가 주기의 일부로 실행되는 경우 이미 존재하는 리소스를 변경하지 않습니다. 대신 비호환으로 **if** 조건을 충족하는 모든 리소스를 표시합니다.
 
@@ -498,7 +517,7 @@ Modify 효과의 **details** 속성에는 수정에 필요한 권한과 태그 �
   - 이 속성은 구독에서 액세스할 수 있는 역할 기반 액세스 제어 역할 ID와 일치하는 문자열 배열을 포함해야 합니다. 자세한 내용은 [수정 - 정책 정의 구성](../how-to/remediate-resources.md#configure-policy-definition)을 참조하세요.
   - 정의된 역할에는 [Contributor](../../../role-based-access-control/built-in-roles.md#contributor) 역할에 부여된 모든 operations가 포함되어야 합니다.
 - **conflictEffect** (선택 사항)
-  - 두 개 이상의 정책 정의가 동일한 속성을 수정 하는 경우 "wins" 정책 정의를 결정 합니다.
+  - 두 개 이상의 정책 정의가 동일한 속성을 수정 하는 경우 또는 수정 작업이 지정 된 별칭에 대해 작동 하지 않는 경우에 "wins" 정책 정의를 결정 합니다.
     - 새 리소스 또는 업데이트 된 리소스의 경우 _deny_ 로 정책 정의가 우선적으로 적용 됩니다. _감사_ 를 사용 하는 정책 정의는 모든 **작업**을 건너뜁니다. 둘 이상의 정책 정의가 _deny_인 경우 요청은 충돌로 거부 됩니다. 모든 정책 정의에 _감사가_있으면 충돌 하는 정책 정의의 **작업** 은 처리 되지 않습니다.
     - 기존 리소스의 경우 둘 이상의 정책 정의가 _거부_된 경우 준수 상태는 _충돌_입니다. 하나 이상의 정책 정의가 _거부_된 경우 각 할당은 _비준수_의 준수 상태를 반환 합니다.
   - 사용 가능한 값: _감사_, _거부_, _사용 안 함_
@@ -513,6 +532,9 @@ Modify 효과의 **details** 속성에는 수정에 필요한 권한과 태그 �
     - **value**(선택 사항)
       - 태그를 설정할 값입니다.
       - **operation**이 _addOrReplace_ 또는 _Add_이면 이 속성이 필요합니다.
+    - **조건** (옵션)
+      - _True_ 또는 _false_로 평가 되는 [정책 함수](./definition-structure.md#policy-functions) 를 사용 하는 Azure Policy 언어 식이 들어 있는 문자열입니다.
+      - 는 `field()` ,, 정책 함수를 지원 하지 `resourceGroup()` 않습니다 `subscription()` .
 
 ### <a name="modify-operations"></a>operations 수정
 
@@ -548,9 +570,9 @@ Modify 효과의 **details** 속성에는 수정에 필요한 권한과 태그 �
 
 |작업(Operation) |Description |
 |-|-|
-|addOrReplace |태그가 다른 값으로 이미 존재하더라도 정의된 태그와 값을 리소스에 추가합니다. |
-|추가 |정의된 태그와 값을 리소스에 추가합니다. |
-|제거 |정의된 태그를 리소스에서 제거합니다. |
+|addOrReplace |속성 또는 태그가 다른 값으로 이미 존재 하는 경우에도 정의 된 속성이 나 태그 및 값을 리소스에 추가 합니다. |
+|추가 |리소스에 정의 된 속성 또는 태그 및 값을 추가 합니다. |
+|제거 |리소스에서 정의 된 속성 또는 태그를 제거 합니다. |
 
 ### <a name="modify-examples"></a>Modify 예제
 
@@ -593,6 +615,28 @@ Modify 효과의 **details** 속성에는 수정에 필요한 권한과 태그 �
                 "operation": "addOrReplace",
                 "field": "tags['environment']",
                 "value": "[parameters('tagValue')]"
+            }
+        ]
+    }
+}
+```
+
+예 3: 저장소 계정에서 blob 공용 액세스를 허용 하지 않는지 확인 합니다. API 버전이 ' 2019-04-01 ' 보다 크거나 같은 요청을 평가 하는 경우에만 수정 작업이 적용 됩니다.
+
+```json
+"then": {
+    "effect": "modify",
+    "details": {
+        "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/17d1049b-9a84-46fb-8f53-869881c3d3ab"
+        ],
+        "conflictEffect": "audit",
+        "operations": [
+            {
+                "condition": "[greaterOrEquals(requestContext().apiVersion, '2019-04-01')]",
+                "operation": "addOrReplace",
+                "field": "Microsoft.Storage/storageAccounts/allowBlobPublicAccess",
+                "value": false
             }
         ]
     }

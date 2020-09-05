@@ -4,6 +4,8 @@
   items:
     - name: Azure API for FHIR 정보
       href: overview.md
+    - name: Azure IoT Connector for FHIR(미리 보기) 정보
+      href: overview.md#azure-iot-connector-for-fhir-preview
 - name: 빠른 시작
   expanded: true
   items:
@@ -44,11 +46,6 @@
       items:
         - name: Azure IoT Hub를 통해 디바이스 데이터 수신
           href: device-data-through-iot-hub.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 방법 가이드
   expanded: false
   items:
@@ -80,6 +77,11 @@
           href: configure-cross-origin-resource-sharing.md
         - name: 내보내기 구성
           href: configure-export-data.md
+    - name: 데이터 내보내기
+      expanded: false
+      items:
+        - name: 개인 식별 정보가 제거된 내보내기
+          href: export-data.md
     - name: ID 개체 ID 찾기
       href: find-identity-object-ids.md
     - name: Azure API for FHIR®에서 진단 로깅 사용
@@ -116,3 +118,6 @@
   items:
     - name: Azure CLI
       href: /cli/azure/ext/healthcareapis/healthcareapis
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md

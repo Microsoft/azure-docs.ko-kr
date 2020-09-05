@@ -2,26 +2,21 @@
 title: '자습서: Innoverse와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Innoverse 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: d72e4da0-0123-409b-96c2-e613f3f83fb1
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 207b277d22d6c16d51813ed66782b8a40684b14e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: eaee0f56425bdf6af4ed8e776ade64f368259d54
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74889706"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550404"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-innoverse"></a>자습서: Innoverse와 Azure Active Directory SSO(Single Sign-On) 통합
 

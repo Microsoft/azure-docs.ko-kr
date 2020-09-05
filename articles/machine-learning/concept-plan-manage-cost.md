@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 2fc9a1a1c3a08f0530649ae64926c673e2d666e0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3173f81f84463cde488dcbf0242f8d65c5b9c9fe
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87012691"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144994"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Azure Machine Learning에 대 한 비용 계획 및 관리
 
@@ -39,7 +39,7 @@ Machine learning 모델을 학습 하는 경우 관리 되는 Azure Machine Lear
 
 Azure Cost Management 데이터에 액세스하는 방법에 대한 정보는 [데이터에 대한 액세스 할당](../cost-management-billing/costs/assign-access-acm-data.md)을 참조하세요.
 
-## <a name="estimate-costs"></a>비용 추정
+## <a name="estimate-costs"></a>비용 예측
 
 Azure Machine Learning 계정에서 리소스를 만들기 전에 [Azure 가격 계산기](https://azure.microsoft.com/pricing/calculator/) 를 사용 하 여 비용을 예측 합니다. 왼쪽에서 **AI + Machine Learning**를 선택한 다음 **Azure Machine Learning** 를 선택 하 여 시작 합니다.  
 
@@ -69,7 +69,7 @@ Machine Learning에 대 한 별도의 서비스 영역은 표시 되지 않습�
 
 Azure Machine Learning 사용자는 AmlCompute 라고도 하는 관리 되는 Azure Machine Learning 계산 클러스터를 사용할 수 있습니다. AmlCompute는 다양 한 GPU 및 CPU 옵션을 지원 합니다. AmlCompute는 Azure Machine Learning 하 여 구독을 대신 하 여 내부적으로 호스팅됩니다. Azure IaaS 클라우드 규모에서 동일한 엔터프라이즈급 보안, 규정 준수 및 거 버 넌 스를 제공 합니다.
 
-이러한 계산 풀이 Azure의 IaaS 인프라 내에 있으므로 인프라의 나머지 부분과 동일한 보안 및 규정 준수 요구 사항을 사용 하 여 교육을 배포, 확장 및 관리할 수 있습니다.  이러한 배포는 구독에서 발생 하 고 거 버 넌 스 규칙을 준수 합니다. [Azure Machine Learning 계산](how-to-set-up-training-targets.md#amlcompute)에 대해 자세히 알아보세요.
+이러한 계산 풀이 Azure의 IaaS 인프라 내에 있으므로 인프라의 나머지 부분과 동일한 보안 및 규정 준수 요구 사항을 사용 하 여 교육을 배포, 확장 및 관리할 수 있습니다.  이러한 배포는 구독에서 발생 하 고 거 버 넌 스 규칙을 준수 합니다. [Azure Machine Learning 계산](how-to-create-attach-compute-sdk.md#amlcompute)에 대해 자세히 알아보세요.
 
 ## <a name="configure-training-clusters-for-autoscaling"></a>자동 크기 조정을 위한 학습 클러스터 구성
 
@@ -107,7 +107,7 @@ AmlCompute는 [할당량 (또는 제한) 구성과](how-to-manage-quotas.md#azur
 * 하이퍼 [매개 변수 조정](how-to-tune-hyperparameters.md#early-termination)의 경우 산적 정책, 중간 중지 정책 또는 잘림 선택 정책에서 조기 종료 정책을 정의 합니다. 하이퍼 매개 변수 스윕을 추가로 제어 하려면 또는와 같은 매개 변수를 사용 `max_total_runs` `max_duration_minutes` 합니다.
 * [자동화 된 machine learning](how-to-configure-auto-train.md#exit)의 경우 플래그를 사용 하 여 비슷한 종료 정책을 설정 `enable_early_stopping` 합니다. 또한 및와 같은 속성 `iteration_timeout_minutes` `experiment_timeout_minutes` 을 사용 하 여 실행의 최대 기간 또는 전체 실험을 제어 합니다.
 
-## <a name="use-low-priority-vms"></a><a id="low-pri-vm"></a>우선 순위가 낮은 Vm 사용
+## <a name="use-low-priority-vms"></a><a id="low-pri-vm"></a> 우선 순위가 낮은 Vm 사용
 
 Azure를 사용 하면 가상 머신 확장 집합, 배치 및 Machine Learning 서비스에서 낮은 우선 순위의 Vm으로 과도 하 게 사용 되는 용량을 사용할 수 있습니다. 이러한 할당은 emptible는 하지만 전용 Vm과 비교 하 여 저렴 한 가격으로 제공 됩니다. 일반적으로 Batch 워크 로드에 우선 순위가 낮은 Vm을 사용 하는 것이 좋습니다. 다시 전송 (Batch 추론의 경우) 또는 다시 시작 (검사점을 사용한 심층 학습 교육)을 통해 중단을 복구할 수 있는 경우에도이를 사용 해야 합니다.
 
@@ -127,4 +127,4 @@ Azure Machine Learning Compute는 기본적으로 예약 된 인스턴스를 지
 다음에 대해 자세히 알아봅니다.
 * [리소스 할당량 관리 및 증가](how-to-manage-quotas.md)
 * [비용 분석을 사용 하 여 비용 관리](../cost-management-billing/costs/quick-acm-cost-analysis.md)
-* [계산을 Azure Machine Learning](how-to-set-up-training-targets.md#amlcompute)합니다.
+* [SDK](how-to-create-attach-compute-sdk.md#amlcompute) 또는 [스튜디오](how-to-create-attach-compute-studio.md#amlcompute)를 사용 하 여 Azure Machine Learning 계산을 만듭니다.

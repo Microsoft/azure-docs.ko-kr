@@ -2,25 +2,21 @@
 title: '자습서: Kintone과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Kintone 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c2b947dc-e1a8-4f5f-b40e-2c5180648e4f
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: b473502f740717fb0426d09261c1f1107144d047
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 2e831fd561b7c8dcf78e9203ec6d38c60c22a5bf
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799843"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88535342"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kintone"></a>자습서: Kintone과 Azure Active Directory 통합
 

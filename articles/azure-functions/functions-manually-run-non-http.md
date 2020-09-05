@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: article
 ms.date: 04/23/2020
 ms.author: cshoe
-ms.openlocfilehash: fd7b0be967c7a0bbc605c51408448917b5222d36
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 37f79d717b7ea0e26717e7b51f9e66b908b96521
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83121780"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640969"
 ---
 # <a name="manually-run-a-non-http-triggered-function"></a>HTTP 이외 트리거 함수를 수동으로 실행
 
@@ -37,7 +37,7 @@ Azure에 대한 요청에서 함수의 마스터 키와 함께 Postman의 요청
 
 ## <a name="get-the-functions-master-key"></a>함수의 마스터 키 가져오기
 
-1. Azure Portal에서 함수로 이동 하 여 **함수 키**를 선택 합니다. 그런 다음 복사 하려는 함수 키를 선택 합니다. 
+1. [Azure Portal](https://portal.azure.com)에서 함수 앱으로 이동 하 여 **앱 키**를 선택 하 고 키를 선택 `_master` 합니다. 
 
     :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key.png" alt-text="복사할 마스터 키를 찾습니다." border="true":::
 
@@ -50,7 +50,7 @@ Azure에 대한 요청에서 함수의 마스터 키와 함께 Postman의 요청
     :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-function-log.png" alt-text="로그를 확인 하 여 마스터 키 테스트 결과를 확인 합니다." border="true":::
 
 > [!CAUTION]  
-> 함수 앱에서는 마스터 키를 통해 높은 권한이 부여되므로, 이 키를 제3자와 공유하거나 애플리케이션에 배포해서는 안 됩니다.
+> 함수 앱에서는 마스터 키를 통해 높은 권한이 부여되므로, 이 키를 제3자와 공유하거나 애플리케이션에 배포해서는 안 됩니다. 키는 HTTPS 끝점 으로만 전송 되어야 합니다.
 
 ## <a name="call-the-function"></a>함수 호출
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3bb4d70b4c4f3f9edc525ffe5973bca633ddd1be
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 10b74f7b795df2cf8c19d044fce44da3f798af7a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800418"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587636"
 ---
 # <a name="understand-event-data"></a>이벤트 데이터 이해
 
@@ -30,7 +30,7 @@ Azure Digital Twins의 여러 이벤트는 **알림을**생성 하며,이를 통
 
 알림 메시지 헤더는 키-값 쌍으로 표현 됩니다. 사용 된 프로토콜 (MQTT, AMQP 또는 HTTP)에 따라 메시지 헤더가 다르게 serialize 됩니다. 이 섹션에서는 선택한 특정 프로토콜 및 serialization에 관계 없이 알림 메시지에 대 한 일반 헤더 정보에 대해 설명 합니다.
 
-일부 알림은 CloudEvents 표준을 준수 합니다. CloudEvents 준수는 다음과 같습니다.
+일부 알림은 [CloudEvents](https://cloudevents.io/) 표준을 준수 합니다. CloudEvents 준수는 다음과 같습니다.
 * 장치에서 내보낸 알림은 계속 해 서 알림에 대 한 기존 사양을 따릅니다.
 * IoT Hub에서 처리 하 고 내보내는 알림은 IoT Hub를 지원 하도록 선택 하는 경우를 제외 하 고는 알림에 대 한 기존 사양을 계속 따릅니다 (Event Grid 예:).
 * [모델](concepts-models.md) 을 사용 하 여 [digital 쌍](concepts-twins-graph.md) 에서 내보낸 알림이 CloudEvents을 준수 합니다.
@@ -103,11 +103,11 @@ Azure Digital Twins에서 Event Grid에 내보내는 알림은 Event Grid 토픽
 
 다음은 수명 주기 알림의 본문에 있는 필드입니다.
 
-| 이름 | 값 |
+| 속성 | 값 |
 | --- | --- |
-| `id` | UUID 또는 서비스에서 유지 관리 되는 카운터와 같은 알림의 식별자입니다. `source` + `id`각 고유 이벤트에 대해 고유 합니다. |
+| `id` | UUID 또는 서비스에서 유지 관리 되는 카운터와 같은 알림의 식별자입니다. `source` + `id` 각 고유 이벤트에 대해 고유 합니다. |
 | `source` | *Myhub.azure-devices.net* 또는 *Mydigitaltwins.westus2.azuredigitaltwins.net* 와 같은 IoT Hub 또는 Azure Digital twins 인스턴스의 이름 |
-| `specversion` | 1.0 |
+| `specversion` | *1.0*<br>이 [CloudEvents 사양](https://github.com/cloudevents/spec)버전을 준수 하는 메시지입니다. |
 | `type` | `Microsoft.DigitalTwins.Twin.Create`<br>`Microsoft.DigitalTwins.Twin.Delete` |
 | `datacontenttype` | `application/json` |
 | `subject` | 디지털 쌍의 ID |
@@ -189,14 +189,14 @@ Azure Digital Twins에서 Event Grid에 내보내는 알림은 Event Grid 토픽
 
 다음은에 지 변경 알림 본문의 필드입니다.
 
-| 이름    | 값 |
+| 속성    | 값 |
 | --- | --- |
-| `id` | UUID 또는 서비스에서 유지 관리 되는 카운터와 같은 알림의 식별자입니다. `source` + `id`각 고유 이벤트에 대해 고유 합니다. |
+| `id` | UUID 또는 서비스에서 유지 관리 되는 카운터와 같은 알림의 식별자입니다. `source` + `id` 각 고유 이벤트에 대해 고유 합니다. |
 | `source` | *Mydigitaltwins.westus2.azuredigitaltwins.net* 와 같은 Azure 디지털 twins 인스턴스의 이름 |
-| `specversion` | 1.0 |
+| `specversion` | *1.0*<br>이 [CloudEvents 사양](https://github.com/cloudevents/spec)버전을 준수 하는 메시지입니다. |
 | `type` | `Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br>`Microsoft.DigitalTwins.Relationship.Delete`
 |`datacontenttype`| `application/json` |
-| `subject` | 관계의 ID (예:)`<twinID>/relationships/<relationshipID>` |
+| `subject` | 관계의 ID (예:) `<twinID>/relationships/<relationshipID>` |
 | `time` | 관계에서 작업이 발생 한 시간에 대 한 타임 스탬프입니다. |
 | `traceparent` | 이벤트에 대 한 W3C 추적 컨텍스트입니다. |
 
@@ -245,11 +245,11 @@ Create 또는 delete 관계 알림의 예는 다음과 같습니다.
 
 다음은 디지털 쌍 변경 알림 본문의 필드입니다.
 
-| 이름    | 값 |
+| 속성    | 값 |
 | --- | --- |
-| `id` | UUID 또는 서비스에서 유지 관리 되는 카운터와 같은 알림의 식별자입니다. `source` + `id`각 고유 이벤트에 대해 고유 합니다. |
+| `id` | UUID 또는 서비스에서 유지 관리 되는 카운터와 같은 알림의 식별자입니다. `source` + `id` 각 고유 이벤트에 대해 고유 합니다. |
 | `source` | *Myhub.azure-devices.net* 또는 *Mydigitaltwins.westus2.azuredigitaltwins.net* 와 같은 IoT Hub 또는 Azure Digital twins 인스턴스의 이름
-| `specversion` | 1.0 |
+| `specversion` | *1.0*<br>이 [CloudEvents 사양](https://github.com/cloudevents/spec)버전을 준수 하는 메시지입니다. |
 | `type` | `Microsoft.DigitalTwins.Twin.Update` |
 | `datacontenttype` | `application/json` |
 | `subject` | 디지털 쌍의 ID |

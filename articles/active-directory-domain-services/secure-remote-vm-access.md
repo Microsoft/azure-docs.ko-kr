@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 7ba64ac6d33f96979a05de383ffc02dd757fc906
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 462e0ff8ef8baadf40ba81ed2ae137d8904fbf7a
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223417"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88722520"
 ---
 # <a name="secure-remote-access-to-virtual-machines-in-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에서 가상 컴퓨터에 대 한 보안 원격 액세스
 
@@ -32,7 +32,7 @@ Azure Active Directory Domain Services (Azure AD DS) 관리 되는 도메인에�
 
 ![RDS (원격 데스크톱 서비스) 개요](./media/enable-network-policy-server/remote-desktop-services-overview.png)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 문서를 완료하려면 다음 리소스가 필요합니다.
 
@@ -120,6 +120,6 @@ Azure Multi-Factor Authentication NPS 확장을 통합 하려면 기존 방법 �
 [concepts-mfa]: ../active-directory/authentication/concept-mfa-howitworks.md
 
 <!-- EXTERNAL LINKS -->
-[deploy-remote-desktop]: https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure
-[rd-web-client]: https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin
-[rds-high-availability]: https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-plan-high-availability
+[deploy-remote-desktop]: /windows-server/remote/remote-desktop-services/rds-deploy-infrastructure
+[rd-web-client]: /windows-server/remote/remote-desktop-services/clients/remote-desktop-web-client-admin
+[rds-high-availability]: /windows-server/remote/remote-desktop-services/rds-plan-high-availability

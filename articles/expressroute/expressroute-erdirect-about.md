@@ -1,18 +1,18 @@
 ---
 title: Azure Express 경로 직접 정보
-description: 이 페이지는 Express 경로 직접의 개요를 제공 합니다.
+description: 사용 가능한 Sku 및 기술 요구 사항과 같이 Express 경로 다이렉트에 등록 하는 데 필요한 정보 및 Azure Express 경로 다이렉트의 주요 기능에 대해 알아봅니다.
 services: expressroute
 author: jaredr80
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jaredro
-ms.openlocfilehash: f26fdd75e0a6c6228d329a8b9be4743072ae54c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0faa4992b025783e4e5448dcf04fcfa958ba5ed
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74083595"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192352"
 ---
 # <a name="about-expressroute-direct"></a>ExpressRoute Direct 정보
 

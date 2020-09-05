@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - 사이트 간 VPN 구성 | Microsoft Docs
-description: 사이트 간 VPN을 구성합니다.
+description: PowerShell을 사용하여 경로 기반 VPN 게이트웨이를 만들고 VPN 디바이스를 구성하여 사이트 간 연결을 추가합니다.
 services: vpn-gateway
 documentationcenter: vpn-gateway
 author: kumudD
@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 04/30/2018
 ms.author: alzam
-ms.openlocfilehash: e55cbcbd27d9a2b6307f570d5e2bca37eba3e1e1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fab1f4862cd1f2907d9bdc9f989fe24f1730002c
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998513"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88032444"
 ---
 # <a name="create-a-vpn-gateway-and-add-a-site-to-site-connection-using-powershell"></a>PowerShell을 사용하여 VPN Gateway를 만들고 사이트 간 연결 추가
 

@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 5/25/2020
 ms.author: baanders
-ms.openlocfilehash: ad9eb95c9e3a21cd33a367cc864a4d791888afb9
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 3b68df1b3fc2f03d7659205fe03fdae09ecc3f7a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124567"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827343"
 ---
 ## <a name="configure-the-sample-project"></a>샘플 프로젝트 구성
 
@@ -18,7 +18,7 @@ ms.locfileid: "87124567"
 
 컴퓨터에서 다운로드된 파일을 찾아 압축을 풉니다.
 
-압축을 푼 폴더 내에서 _AdtSampleApp/_ 으로 이동합니다. Visual Studio 2019에서 _**AdtE2ESample.sln**_ 을 엽니다. 
+압축을 푼 폴더 내에서 _AdtSampleApp_으로 이동합니다. Visual Studio 2019에서 _**AdtE2ESample.sln**_ 을 엽니다. 
 
 Visual Studio에서 *솔루션 탐색기* 창을 사용하여 _SampleClientApp > **serviceConfig.json.TEMPLATE**_ 파일의 복사본을 만듭니다(마우스 오른쪽 단추 선택 메뉴를 사용하여 복사 및 붙여넣기 가능). 복사본의 이름을 *serviceConfig.json*으로 바꿉니다. 이 파일은 프로젝트를 실행하는 데 필요한 구성 변수와 함께 미리 설정된 JSON 파일 역할을 합니다.
 
@@ -31,6 +31,8 @@ Visual Studio에서 *솔루션 탐색기* 창을 사용하여 _SampleClientApp >
   "instanceUrl": "https://<your-Azure-Digital-Twins-instance-hostName>"
 }
 ```
+
+
 
 파일을 저장하고 닫습니다. 
 

@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: d535866881fa6ed73b51eb6039baa9d515b770b2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 63a1f8e30be2983c0df93ff5a7229460f8f39214
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080839"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936047"
 ---
 # <a name="image-analysis-cognitive-skill"></a>이미지 분석 인식 기술
 
-**이미지 분석** 기술은 이미지 콘텐츠를 기준으로 다양한 시각적 기능 집합을 추출합니다. 예를 들어, 이미지에서 캡션을 생성하거나, 태그를 생성하거나, 유명인과 랜드마크를 식별할 수 있습니다. 이 기술은 Cognitive Services의 [Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home)에서 제공하는 기계 학습 모델을 사용합니다. 
+**이미지 분석** 기술은 이미지 콘텐츠를 기준으로 다양한 시각적 기능 집합을 추출합니다. 예를 들어, 이미지에서 캡션을 생성하거나, 태그를 생성하거나, 유명인과 랜드마크를 식별할 수 있습니다. 이 기술은 Cognitive Services의 [Computer Vision](../cognitive-services/computer-vision/home.md)에서 제공하는 기계 학습 모델을 사용합니다. 
 
 > [!NOTE]
 > Azure Cognitive Search에서 작은 볼륨 (20 개 트랜잭션 미만)을 무료로 실행할 수 있지만, 더 큰 워크 로드 [는 청구 가능한 Cognitive Services 리소스를 연결](cognitive-search-attach-cognitive-services.md)해야 합니다. Cognitive Services에서 API를 호출하는 경우와 Azure Cognitiv Search에서 문서 크래킹 단계의 일부로 이미지를 추출하는 경우에는 요금이 부과됩니다. 문서에서 텍스트 추출할 때는 요금이 발생하지 않습니다.
@@ -32,15 +32,15 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 매개 변수는 대/소문자를 구분합니다.
 
-| 매개 변수 이름     | 설명 |
+| 매개 변수 이름     | Description |
 |--------------------|-------------|
 | `defaultLanguageCode` |  반환할 언어를 나타내는 문자열입니다. 서비스는 지정된 언어로 인식 결과를 반환합니다. 이 매개 변수를 지정하지 않을 경우 기본값은 “en”입니다. <br/><br/>지원되는 언어는 다음과 같습니다. <br/>*en* - 영어(기본값) <br/> *es* -스페인어 <br/> *ja-jp* -일본어 <br/> *pt* -포르투갈어 <br/> *zh* - 중국어 간체|
-| `visualFeatures` |    반환할 시각적 기능 유형을 나타내는 문자열 배열입니다. 유효한 시각적 기능 유형은 다음과 같습니다.  <ul><li>*성인* -이미지가 음란 (노출 또는 성 act를 나타냅니다) 여부를 감지 하거나 범주 (극단적인 폭력 또는 피를 나타냅니다) 합니다. 성적 추천 콘텐츠 (외설 콘텐츠 라고도 함)도 검색 됩니다.</li><li>*브랜드* -대략적인 위치를 포함 하 여 이미지 내 다양 한 브랜드를 검색 합니다. *브랜드* 시각적 기능은 영어로만 제공 됩니다.</li><li> *categories* -Cognitive Services [Computer Vision 설명서](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy)에 정의 된 분류에 따라 이미지 콘텐츠를 분류 합니다. </li><li>*설명* -지원 되는 언어의 전체 문장이 포함 된 이미지 내용에 대해 설명 합니다.</li><li>*얼굴* -얼굴이 있는지 검색 합니다. 있는 경우 좌표, 성별 및 연령를 생성 합니다.</li><li>   *개체* -대략적인 위치를 포함 하 여 이미지 내에서 다양 한 개체를 검색 합니다. *개체* 시각적 기능은 영어로만 제공 됩니다.</li><li> ‘태그’ - 이미지 콘텐츠와 관련된 단어의 자세한 목록으로 이미지에 태그를 지정합니다.**</li></ul> 시각적 기능의 이름은 대/소문자를 구분합니다. *Color* 및 *imagetype* 시각적 기능은 더 이상 사용 되지 않지만 [사용자 지정 기술을](https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-interface)통해이 기능에 계속 액세스할 수 있습니다.|
+| `visualFeatures` |    반환할 시각적 기능 유형을 나타내는 문자열 배열입니다. 유효한 시각적 기능 유형은 다음과 같습니다.  <ul><li>*성인* -이미지가 음란 (노출 또는 성 act를 나타냅니다) 여부를 감지 하거나 범주 (극단적인 폭력 또는 피를 나타냅니다) 합니다. 성적 추천 콘텐츠 (외설 콘텐츠 라고도 함)도 검색 됩니다.</li><li>*브랜드* -대략적인 위치를 포함 하 여 이미지 내 다양 한 브랜드를 검색 합니다. *브랜드* 시각적 기능은 영어로만 제공 됩니다.</li><li> *categories* -Cognitive Services [Computer Vision 설명서](../cognitive-services/computer-vision/category-taxonomy.md)에 정의 된 분류에 따라 이미지 콘텐츠를 분류 합니다. </li><li>*설명* -지원 되는 언어의 전체 문장이 포함 된 이미지 내용에 대해 설명 합니다.</li><li>*얼굴* -얼굴이 있는지 검색 합니다. 있는 경우 좌표, 성별 및 연령를 생성 합니다.</li><li>  *개체* -대략적인 위치를 포함 하 여 이미지 내에서 다양 한 개체를 검색 합니다. *개체* 시각적 기능은 영어로만 제공 됩니다.</li><li> ‘태그’ - 이미지 콘텐츠와 관련된 단어의 자세한 목록으로 이미지에 태그를 지정합니다.**</li></ul> 시각적 기능의 이름은 대/소문자를 구분합니다. *Color* 및 *imagetype* 시각적 기능은 더 이상 사용 되지 않지만 [사용자 지정 기술을](./cognitive-search-custom-skill-interface.md)통해이 기능에 계속 액세스할 수 있습니다.|
 | `details` | 반환할 도메인 특정 세부 정보를 나타내는 문자열 배열입니다. 유효한 시각적 기능 유형은 다음과 같습니다. <ul><li>*유명인* -이미지에서 검색 된 경우 유명인를 식별 합니다.</li><li>*랜드마크* -이미지에서 검색 된 경우 랜드마크를 식별 합니다. </li></ul> |
 
 ## <a name="skill-inputs"></a>기술 입력
 
-| 입력 이름      | 설명                                          |
+| 입력 이름      | Description                                          |
 |---------------|------------------------------------------------------|
 | `image`         | 복합 형식입니다. ```imageAction```이 ```none``` 이외의 값으로 설정된 경우 현재 Azure Blob 인덱서에서 생성된 “/document/normalized_images” 필드에만 작동합니다. 자세한 내용은 [샘플](#sample-output)을 참조하세요.|
 
@@ -542,4 +542,4 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 + [기본 제공 기술](cognitive-search-predefined-skills.md)
 + [기술 집합을 정의하는 방법](cognitive-search-defining-skillset.md)
-+ [인덱서 만들기(REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [인덱서 만들기(REST)](/rest/api/searchservice/create-indexer)

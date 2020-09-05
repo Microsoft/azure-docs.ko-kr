@@ -1,20 +1,21 @@
 ---
-title: 인공 지능
-description: LUIS는 인공 지능을 사용 하 여 사용자가 정의한 스키마에 따라 데이터에 대 한 언어 이해를 제공 합니다.
+title: AI(인공 지능)
+description: LUIS은 AI (인공 지능)를 사용 하 여 사용자가 정의한 스키마에 따라 데이터에 대 한 언어 이해를 제공 합니다.
 ms.topic: conceptual
-ms.date: 06/29/2020
-ms.openlocfilehash: 4f145585e097a3cf6a2338dbab879f6fce07f71d
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.date: 08/07/2020
+ms.custom: cog-serv-seo-aug-2020
+ms.openlocfilehash: bdcede01ec6bab5f8b43d89ff40d588a011d5dfb
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85802658"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751353"
 ---
 # <a name="artificial-intelligence-in-language-understanding-luis"></a>Language Understanding의 인공 지능 (LUIS)
 
-LUIS는 인공 지능을 사용 하 여 사용자가 정의한 스키마에 따라 데이터에 대 한 NLU (자연어 이해)를 제공 합니다.
+LUIS은 AI (인공 지능)를 사용 하 여 사용자가 정의한 스키마에 따라 데이터에 대 한 NLU (자연어 인식)를 제공 합니다.
 
-## <a name="natural-language-processing"></a>자연어 처리
+## <a name="natural-language-processing-nlp"></a>자연어 처리 (NLP)
 
 NLU (자연 Language Understanding)는 NLP (자연어 처리)의 특정 하위 주제입니다.
 
@@ -25,20 +26,20 @@ NLU (자연 Language Understanding)는 NLP (자연어 처리)의 특정 하위 �
 * 분할
 * 형태학 상의 변형인 분석
 * 의미 체계 유사성
-* Discourse
+* 담론(Discourse)
 * Translation
 
 ## <a name="natural-language-processing-in-luis"></a>LUIS에서 자연어 처리
 
 자연어 처리는 다음과 같은 방법으로 LUIS 앱에서 사용할 수 있습니다.
-* [자연어 이해](#natural-language-understanding) (LUIS)
+* [자연어 이해](#natural-language-processing-nlp) (LUIS)
 * LUIS에서 구성 가능한 NLP 측면:
     * [토큰화](luis-language-support.md#tokenization)
     * 분음 부호, 문장 부호 및 word forms [API 설정을](luis-reference-application-settings.md) 통해 Morphology
 * Utterance와 같은 다른 [Cognitive Services](../Welcome.md) 에서 제공 하는 쿼리를 전처리 또는 후 처리 합니다.
-    * [Translation](../translator/translator-info-overview.md)
+    * [변환](../translator/translator-info-overview.md)
 
-## <a name="natural-language-understanding"></a>자연어 인식
+## <a name="natural-language-understanding-nlu"></a>NU (자연어 인식)
 
 NLU는 언어적 문을 사용자에 게 자연스럽 게 이해할 수 있도록 하는 표현으로 _변환_ 하는 기능입니다. 자연어를 이해 하는 것은 매우 어려운 문제 이며 _AI 하드_ 문제로 정의 됩니다.
 

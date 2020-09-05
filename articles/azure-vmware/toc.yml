@@ -1,14 +1,14 @@
-- name: AVS(Azure VMware 솔루션)
+- name: Azure VMware 솔루션
   href: index.yml
 - name: 개요
   items:
-    - name: AVS(Azure VMware 솔루션) 정보
+    - name: Azure VMware Solution 정보
       href: introduction.md
 - name: 자습서
   items:
     - name: 1 - 네트워크 계획
       href: tutorial-network-checklist.md
-    - name: 2 - AVS 프라이빗 클라우드 만들기
+    - name: 2 - 프라이빗 클라우드 만들기
       href: tutorial-create-private-cloud.md
     - name: 3 - 네트워킹 구성
       href: tutorial-configure-networking.md
@@ -38,7 +38,7 @@
       href: concepts-upgrades.md
 - name: 방법 가이드
   items:
-    - name: AVS 마이그레이션 평가
+    - name: 마이그레이션 평가
       href: ../migrate/how-to-create-azure-vmware-solution-assessment.md?context=/azure/migrate/context/migrate-context.json
     - name: HCX 설정
       href: hybrid-cloud-extension-installation.md
@@ -52,17 +52,19 @@
           href: concepts-api-management.md
         - name: 허브 및 스포크
           href: concepts-avs-hub-and-spoke-integration.md
-        - name: AVS용 Azure Backup Server
+        - name: Azure Backup 서버
           items:
-            - name: AVS용 Backup Server 설정
+            - name: Backup 서버 설정
               href: set-up-mabs-for-avs.md
-            - name: Backup Server를 사용하여 AVS VM 백업
+            - name: Backup 서버를 사용하여 프라이빗 클라우드 VM 백업
               href: backup-avs-vms-with-mabs.md
-        - name: AVS의 Application Gateway
+        - name: Application Gateway
           href: protect-avs-web-apps-with-app-gateway.md
+        - name: AVS를 사용하는 Traffic Manager
+          href: deploy-traffic-manager-to-balance-avs-workloads.md
     - name: VMware 솔루션
       items:
-        - name: AVS용 vRealize Operations 설정
+        - name: vRealize Operations 설정
           href: vrealize-operations-for-avs.md
 - name: 참조
   items: null
@@ -70,7 +72,7 @@
   items:
     - name: 문제 해결
       items:
-        - name: AVS 배포 또는 프로비저닝 실패에 대한 도움 받기
+        - name: 배포 또는 프로비저닝 실패에 대한 도움 받기
           href: fix-deployment-provisioning-failures.md
     - name: FAQ
       href: faq.md

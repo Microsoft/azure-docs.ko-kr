@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: tanning
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5043873b18f2d2115fd23e8b52959290393bfb8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fb376ebacdd76fdde30178e19fa3c3062e57da1c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85604542"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267244"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Azure Active Directory에서 엔터프라이즈 상태 로밍 설정 문제 해결
 
@@ -108,7 +108,7 @@ Windows 10 v1511 클라이언트에 2016년 7월 누적 업데이트가 있는�
 
 ### <a name="theme-is-not-syncing-as-well-as-data-protected-with-windows-information-protection"></a>Windows 정보 보호로 보호된 데이터뿐만 아니라 테마가 동기화되지 않음 
 
-데이터 누출을 방지 하기 위해 windows [Information Protection](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-wip) 로 보호 되는 데이터는 Windows 10 기념일 업데이트를 사용 하는 장치에 대 한 Enterprise State Roaming를 통해 동기화 되지 않습니다.
+데이터 누출을 방지 하기 위해 windows [Information Protection](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip) 로 보호 되는 데이터는 Windows 10 기념일 업데이트를 사용 하는 장치에 대 한 Enterprise State Roaming를 통해 동기화 되지 않습니다.
 
 **권장 작업**  
 없음 이 문제는 추후에 있을 Windows에서 해결될 것입니다.

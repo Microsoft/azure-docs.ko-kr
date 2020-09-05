@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 61e2d4607ebe1b688b2874220a170b2539a2226e
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 1164d838a45496a075d356995a60beb967cdfcca
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87404177"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88054343"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>자습서: Azure Active Directory Domain Services 관리되는 도메인에 대한 보안 LDAP 구성
 
@@ -265,7 +265,7 @@ Thumbprint                                Subject
 다음으로 관리되는 도메인에 바인딩합니다. 관리되는 도메인에서 NTLM 암호 해시 동기화를 사용하지 않도록 설정한 경우 사용자(및 서비스 계정)는 LDAP 단순 바인딩을 수행할 수 없습니다. NTLM 암호 해시 동기화를 사용하지 않도록 설정하는 방법에 대한 자세한 내용은 [관리되는 도메인 보호][secure-domain]를 참조하세요.
 
 1. **연결** 메뉴 옵션, **바인딩...** 을 차례로 선택합니다.
-1. *AAD DC Administrators* 그룹에 속한 사용자 계정의 자격 증명(예: *contosoadmin*)을 제공합니다. 사용자 계정의 암호를 입력한 다음, 도메인(예: *aaddscontoso.com*)을 입력합니다.
+1. 관리되는 도메인에 속한 사용자 계정의 자격 증명을 제공합니다. 사용자 계정의 암호를 입력한 다음, 도메인(예: *aaddscontoso.com*)을 입력합니다.
 1. **바인드 종류**에 대해 *자격 증명으로 바인딩* 옵션을 선택합니다.
 1. **확인**을 선택하여 관리되는 도메인에 바인딩합니다.
 

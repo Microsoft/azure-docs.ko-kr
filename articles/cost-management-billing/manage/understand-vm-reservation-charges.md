@@ -3,15 +3,16 @@ title: Azure Reserved VM Instances 할인 이해
 description: 실행 중인 VM에 Azure Reserved Virtual Machine Instances 할인이 적용되는 방식을 알아봅니다.
 author: yashesvi
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: a9d9a5661e8a094b7d92a9dd83db3cdcd76b8b65
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: dd21faa07426c80bb3a95dbd1b6d4ee93f783881
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84018385"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686448"
 ---
 # <a name="how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Azure 예약 할인이 가상 머신에 적용되는 방식
 
@@ -56,11 +57,15 @@ Windows VM 인스턴스를 실행하면 인프라 비용을 포함하도록 예�
 
 ## <a name="discount-can-apply-to-different-sizes"></a>할인은 다른 크기에 적용될 수 있습니다.
 
-예약 VM 인스턴스를 구매하는 경우 **최적화 대상**: **인스턴스 크기 유연성**을 선택하면 할인 적용률은 선택하는 VM 크기에 따라 달라집니다. 같은 크기 시리즈 그룹의 VM(가상 머신) 크기에 예약을 적용할 수 있습니다. 자세한 내용은 [예약 VM 인스턴스를 통해 유동적으로 가상 머신 크기 조정](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
+예약 VM 인스턴스를 구매하고 **인스턴스 크기 유연성에 최적화**를 선택하면 할인 범위는 선택하는 VM 크기에 적용됩니다. 동일한 시리즈 인스턴스 크기 유연성 그룹에 있는 다른 VM 크기에도 적용할 수 있습니다. 자세한 내용은 [예약 VM 인스턴스를 통해 유동적으로 가상 머신 크기 조정](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
 
-## <a name="discount-applies-to-matching-servicetype-only"></a>할인은 일치하는 ServiceType에만 적용됩니다.
+## <a name="premium-storage-vms-dont-get-non-premium-discounts"></a>프리미엄 스토리지 VM에는 비프리미엄 할인이 제공되지 않습니다.
 
-예약 할인은 `AdditionalInfo`의 `ServiceType` 값이 구매한 예약과 일치하는 VM 사용량에만 적용됩니다. 예약 할인 애플리케이션은 VM에 사용되는 미터를 무시하고 `ServiceType`만 평가합니다. VM을 구입한 서비스 유형을 파악합니다. 프리미엄 스토리지 예약에 대해 비 프리미엄 스토리지 VM 예약을 교환하거나 그 반대로 할 수 있습니다.
+예를 들면 다음과 같습니다. 5개의 Standard_D1 VM에 대한 예약을 구입했다고 가정하면 예약 할인은 동일한 인스턴스 제품군의 Standard_D1 VM 또는 다른 VM에만 적용됩니다. 할인은 Standard_DS1 VM 또는 DS1 인스턴스 크기 유연성 그룹의 다른 크기에는 적용되지 않습니다.
+
+예약 할인 애플리케이션은 VM에 사용되는 미터를 무시하고 ServiceType만 평가합니다. VM에 대한 인스턴스 유연성 그룹/시리즈 정보를 확인하려면 `AdditionalInfo`의 `ServiceType` 값을 확인합니다. 값은 사용량 CSV 파일에 있습니다.
+
+구매 후에는 예약의 인스턴스 유연성 그룹/시리즈를 직접 변경할 수 없습니다. 그러나 하나의 인스턴스 유연성 그룹/시리즈에서 다른 인스턴스로 VM 예약을 *교환*할 수 있습니다.
 
 ## <a name="services-that-get-vm-reservation-discounts"></a>VM 예약 할인을 가져오는 서비스
 
@@ -89,7 +94,7 @@ VM 예약은 VM 배포뿐만 아니라 여러 서비스에서 내보낸 VM 사�
 
 사용량이 예약 할인에 적합한지 확인하려면 사용량 데이터의 *ConsumedService* 값을 확인합니다.
 
-인스턴스 크기 유연성에 대한 자세한 내용은 [예약 VM 인스턴스에서 가상 머신 크기 유연성](../../virtual-machines/windows/reserved-vm-instance-size-flexibility.md)을 참조하세요.
+인스턴스 크기 유연성에 대한 자세한 내용은 [예약 VM 인스턴스에서 가상 머신 크기 유연성](../../virtual-machines/reserved-vm-instance-size-flexibility.md)을 참조하세요.
 
 
 ## <a name="need-help-contact-us"></a>도움 필요 시 문의처

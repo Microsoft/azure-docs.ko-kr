@@ -3,12 +3,12 @@ title: Azure VM을 만들 때 백업 사용
 description: Azure Backup를 사용 하 여 Azure VM을 만들 때 백업을 사용 하도록 설정 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: 7fb6fd25f5031669633641ea02f34180f6f795d4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bbc00239a34fc0eb88991fcabd91c5a0eb7dbea7
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87032853"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892306"
 ---
 # <a name="enable-backup-when-you-create-an-azure-vm"></a>Azure VM을 만들 때 백업 사용
 
@@ -16,7 +16,7 @@ Azure Backup 서비스를 사용 하 여 Azure Vm (가상 머신)을 백업 합�
 
 이 문서에서는 Azure Portal에서 VM (가상 머신)을 만들 때 백업을 사용 하도록 설정 하는 방법에 대해 자세히 설명 합니다.  
 
-## <a name="before-you-start"></a>시작하기 전 확인 사항
+## <a name="before-you-start"></a>시작하기 전에
 
 - VM을 만들 때 백업을 사용 하도록 설정 하는 경우 지원 되는 운영 체제를 [확인](backup-support-matrix-iaas.md#supported-backup-actions) 합니다.
 
@@ -48,6 +48,9 @@ Azure Backup 서비스를 사용 하 여 Azure Vm (가상 머신)을 백업 합�
 
       ![기본 백업 정책](./media/backup-during-vm-creation/daily-policy.png)
 
+>[!NOTE]
+>[SSE 및 PMK는](backup-encryption.md) Azure vm에 대 한 기본 암호화 방법입니다. Azure Backup은 이러한 Azure Vm의 백업 및 복원을 지원 합니다.
+
 ## <a name="azure-backup-resource-group-for-virtual-machines"></a>Virtual Machines에 대 한 Azure Backup 리소스 그룹
 
 Backup 서비스는 VM의 리소스 그룹과 다른 별도 리소스 그룹 (RG)을 만들어 복원 지점 컬렉션 (RPC)을 저장 합니다. RPC는 관리 되는 Vm의 인스턴트 복구 위치를 보관 합니다. 백업 서비스에서 만든 리소스 그룹의 기본 명명 형식은 `AzureBackupRG_<Geo>_<number>` 입니다. 예: *AzureBackupRG_northeurope_1*. 이제 Azure Backup에서 만든 리소스 그룹 이름을 사용자 지정할 수 있습니다.
@@ -57,8 +60,8 @@ Backup 서비스는 VM의 리소스 그룹과 다른 별도 리소스 그룹 (RG
 1. RG의 기본 이름을 사용 하거나 회사 요구 사항에 따라 편집할 수 있습니다.
 2. VM 백업 정책을 만드는 동안 RG 이름 패턴을 입력으로 제공 합니다. RG 이름은 형식 이어야 `<alpha-numeric string>* n <alpha-numeric string>` 합니다. ' n '은 1부터 시작 하는 정수로 바뀌고 첫 번째 RG full 인 경우 규모를 확장 하는 데 사용 됩니다. 1 RG는 현재 최대 600의 Rpc를 사용할 수 있습니다.
               ![정책을 만들 때 이름 선택](./media/backup-during-vm-creation/create-policy.png)
-3. 패턴은 아래의 RG 명명 규칙을 따라야 하며 총 길이는 최대 허용 RG 이름 길이를 초과 하면 안 됩니다.
-    1. 리소스 그룹 이름에는 영숫자, 마침표, 밑줄, 하이픈 및 괄호만 사용할 수 있습니다. 일정 기간 내에 종료 될 수 없습니다.
+3. 패턴은 아래의 RG 명명 규칙을 따라야 하며 총 길이는 최대 허용 RG 이름 길이를 초과 해서는 안 됩니다.
+    1. 리소스 그룹 이름에는 영숫자, 마침표, 밑줄, 하이픈 및 괄호만 사용할 수 있습니다. 일정 기간 내에 종료할 수 없습니다.
     2. 리소스 그룹 이름은 RG 이름과 접미사를 포함 하 여 최대 74 자까지 포함할 수 있습니다.
 4. 첫 번째는 필수 항목이 며 `<alpha-numeric-string>` ' n ' 뒤의 두 번째는 선택 사항입니다. 이는 사용자 지정 된 이름을 지정 하는 경우에만 적용 됩니다. 텍스트 상자 중 하나에 아무것도 입력 하지 않으면 기본 이름이 사용 됩니다.
 5. 필요한 경우 정책을 수정 하 여 RG 이름을 편집할 수 있습니다. 이름 패턴이 변경 되 면 새 RG에 새 Rp가 만들어집니다. 그러나 RP 컬렉션은 리소스 이동을 지원 하지 않으므로 이전 RPs는 여전히 이전 RG에 상주 하 고 이동 되지 않습니다. 결과적으로, 해당 지점이 만료 되 면 RPs가 가비지 수집 됩니다.

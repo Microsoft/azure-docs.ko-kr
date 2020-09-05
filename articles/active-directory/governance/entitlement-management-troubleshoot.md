@@ -16,12 +16,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bf19123888dd26073016131c93047b0cd0afaf4
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 216cff03ac6ce64dee9aae1e9daa4a86385eeb0e
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145763"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783334"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Azure AD 자격 관리 문제 해결
 
@@ -45,9 +45,9 @@ ms.locfileid: "86145763"
 
 * 액세스 패키지를 사용하여 관리하려는 리소스에 이미 할당된 사용자가 있는 경우 해당 사용자에게 적절한 정책을 사용하여 액세스 패키지를 할당해야 합니다. 예를 들어 이미 사용자가 있는 그룹을 액세스 패키지에 포함하려는 경우가 있습니다. 그룹의 사용자가 계속 액세스해야 하는 경우 사용자에게 그룹에 대한 액세스 권한을 잃지 않도록 액세스 패키지에 대한 적절한 정책이 있어야 합니다. 사용자에게 해당 리소스를 포함하는 액세스 패키지를 요청하거나 사용자를 액세스 패키지에 직접 할당하는 방법으로 액세스 패키지를 할당할 수 있습니다. 자세한 내용은 [액세스 패키지에 대 한 요청 및 승인 설정 변경](entitlement-management-access-package-request-policy.md)을 참조 하세요.
 
-* 팀의 구성원을 제거 하면 해당 구성원도 Microsoft 365 그룹에서 제거 됩니다. 팀 채팅 기능을 제거하면 작업이 지연될 수 있습니다. 자세한 내용은 [그룹 멤버 자격](https://docs.microsoft.com/microsoftteams/office-365-groups#group-membership)을 참조 하세요.
+* 팀의 구성원을 제거 하면 해당 구성원도 Microsoft 365 그룹에서 제거 됩니다. 팀 채팅 기능을 제거하면 작업이 지연될 수 있습니다. 자세한 내용은 [그룹 멤버 자격](/microsoftteams/office-365-groups#group-membership)을 참조 하세요.
 
-* 디렉터리가 다중 지역에 대해 구성되지 않았는지 확인합니다. 권한 관리는 현재 SharePoint Online에 대한 다중 지역 위치를 지원하지 않습니다. SharePoint Online 사이트는 권한 관리로 제어되는 기본 지리적 위치에 있어야 합니다. 자세한 내용은 [OneDrive 및 SharePoint Online의 다중 지역 기능](https://docs.microsoft.com/Office365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365)을 참조 하세요.
+* 디렉터리가 다중 지역에 대해 구성되지 않았는지 확인합니다. 권한 관리는 현재 SharePoint Online에 대한 다중 지역 위치를 지원하지 않습니다. SharePoint Online 사이트는 권한 관리로 제어되는 기본 지리적 위치에 있어야 합니다. 자세한 내용은 [OneDrive 및 SharePoint Online의 다중 지역 기능](/Office365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365)을 참조 하세요.
 
 ## <a name="access-packages"></a>액세스 패키지
 
@@ -69,7 +69,7 @@ ms.locfileid: "86145763"
 
 * 아직 디렉터리에 없는 사용자가 내 액세스 포털에 로그인하여 액세스 패키지를 요청하는 경우 해당 조직의 계정을 사용하여 인증해야 합니다. 조직 계정은 리소스 디렉터리 또는 액세스 패키지의 정책 중 하나에 포함된 디렉터리의 계정일 수 있습니다. 사용자 계정이 조직 계정이 아니거나 인증한 디렉터리가 정책에 포함되지 않은 경우에는 사용자에게 액세스 패키지가 표시되지 않습니다. 자세한 내용은 [액세스 패키지에 대 한 액세스 요청](entitlement-management-request-access.md)을 참조 하세요.
 
-* 사용자가 리소스 디렉터리에 로그인하지 못하도록 차단된 경우에는 내 액세스 포털에서 액세스를 요청할 수 없습니다. 사용자가 액세스를 요청하려면 먼저 사용자의 프로필에서 로그인 차단을 제거해야 합니다. 로그인 블록을 제거 하려면 Azure Portal에서 **Azure Active Directory** **를 클릭 하 고 사용자를 클릭**한 다음 사용자를 클릭 하 고 **프로필**을 클릭 합니다. **설정** 섹션을 편집 하 고 **블록 로그인** 을 **아니요**로 변경 합니다. 자세한 내용은 [Azure Active Directory를 사용 하 여 사용자의 프로필 정보 추가 또는 업데이트](../fundamentals/active-directory-users-profile-azure-portal.md)를 참조 하세요.  [Id 보호 정책](../identity-protection/howto-unblock-user.md)으로 인해 사용자가 차단 되었는지 여부도 확인할 수 있습니다.
+* 사용자가 리소스 디렉터리에 로그인하지 못하도록 차단된 경우에는 내 액세스 포털에서 액세스를 요청할 수 없습니다. 사용자가 액세스를 요청하려면 먼저 사용자의 프로필에서 로그인 차단을 제거해야 합니다. 로그인 블록을 제거 하려면 Azure Portal에서 **Azure Active Directory** **를 클릭 하 고 사용자를 클릭**한 다음 사용자를 클릭 하 고 **프로필**을 클릭 합니다. **설정** 섹션을 편집 하 고 **블록 로그인** 을 **아니요**로 변경 합니다. 자세한 내용은 [Azure Active Directory를 사용 하 여 사용자의 프로필 정보 추가 또는 업데이트](../fundamentals/active-directory-users-profile-azure-portal.md)를 참조 하세요.  [Id 보호 정책](../identity-protection/howto-identity-protection-remediate-unblock.md)으로 인해 사용자가 차단 되었는지 여부도 확인할 수 있습니다.
 
 * 내 액세스 포털에서 사용자가 요청자 이자 승인자 인 경우 **승인** 페이지에서 액세스 패키지에 대 한 요청이 표시 되지 않습니다. 이 동작은 의도적인 것으로, 사용자가 자신의 요청을 승인할 수 없습니다. 요청 중인 액세스 패키지에 정책에 구성된 추가 승인자가 있는지 확인합니다. 자세한 내용은 [액세스 패키지에 대 한 요청 및 승인 설정 변경](entitlement-management-access-package-request-policy.md)을 참조 하세요.
 

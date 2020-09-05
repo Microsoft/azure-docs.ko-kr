@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 40a915531aa58567b17a774a15504dc92770479f
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 046cd30c0f93a468287c73573a3d18f4ba66221b
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854340"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690224"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Azure Red Hat OpenShift 4 클러스터 응용 프로그램 백업 만들기
 
@@ -29,7 +29,7 @@ CLI를 로컬로 설치 하 고 사용 하도록 선택 하는 경우이 자습�
 
 ### <a name="install-velero"></a>Velero 설치
 
-시스템에 Velero를 [설치](https://velero.io/docs/master/basic-install/) 하려면 운영 체제에 권장 되는 프로세스를 따릅니다.
+시스템에 Velero를 [설치](https://velero.io/docs/main/basic-install/) 하려면 운영 체제에 권장 되는 프로세스를 따릅니다.
 
 ### <a name="set-up-azure-storage-account-and-blob-container"></a>Azure storage 계정 및 Blob 컨테이너 설정
 
@@ -122,7 +122,7 @@ oc get backups -n velero <name of backup> -o yaml
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 Azure Red Hat OpenShift 4 클러스터 응용 프로그램을 백업 했습니다. 구체적으로 다음 작업 방법을 알아보았습니다.
+이 문서에서는 Azure Red Hat OpenShift 4 클러스터 응용 프로그램을 백업 했습니다. 다음 방법에 대해 알아보았습니다.
 
 > [!div class="checklist"]
 > * Velero를 사용 하 여 OpenShift v4 클러스터 응용 프로그램 백업 만들기

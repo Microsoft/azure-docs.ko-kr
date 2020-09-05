@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/17/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: cecea24fe002ee64d54052635a6d7dec982aeee2
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 24de1b2cfc5e0804039923f23b6a5cd9f6c6fb80
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445645"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235707"
 ---
 # <a name="plan-an-automatic-user-provisioning-deployment"></a>자동 사용자 프로비저닝 배포 계획
 
@@ -26,7 +26,7 @@ Azure Active Directory (Azure AD) 자동 사용자 프로 비전은 비즈니스
 
 기능을 더 잘 이해 하려면 [Azure Active Directory를 사용 하 여 SaaS 응용 프로그램에 사용자 프로 비전 및 프로 비전](../app-provisioning/user-provisioning.md) 해제를 참조 하세요.
 
-## <a name="learn"></a>Learn
+## <a name="learn"></a>배우기
 
 사용자 프로 비전은 지속적인 id 거 버 넌 스에 대 한 토대를 만들고 신뢰할 수 있는 id 데이터를 사용 하는 비즈니스 프로세스의 품질을 향상 시킵니다.
 
@@ -50,7 +50,7 @@ Azure AD는 응용 프로그램 갤러리 메뉴에 제공 된 템플릿을 사�
 
 자동으로 프로 비전 하려는 응용 프로그램에 적합 한 라이선스가 필요 합니다. 응용 프로그램에 할당 된 사용자에 게 응용 프로그램 역할에 대 한 적절 한 라이선스가 있는지 여부를 응용 프로그램 소유자와 논의 합니다. Azure AD에서 역할에 따라 자동 프로 비전을 관리 하는 경우 Azure AD에서 할당 된 역할이 응용 프로그램 라이선스에 맞게 조정 되어야 합니다. 응용 프로그램에서 소유한 잘못 된 라이선스는 사용자의 프로 비전/업데이트 중에 오류가 발생할 수 있습니다.
 
-### <a name="terms"></a>사용 약관
+### <a name="terms"></a>용어
 
 이 문서에서는 다음과 같은 용어를 사용 합니다.
 
@@ -70,7 +70,7 @@ Azure AD는 응용 프로그램 갤러리 메뉴에 제공 된 템플릿을 사�
 | - | - |
 | 주문형 웹 세미나| [Azure AD를 사용 하 여 엔터프라이즈 응용 프로그램 관리](https://info.microsoft.com/CO-AZUREPLAT-WBNR-FY18-03Mar-06-ManageYourEnterpriseApplicationsOption1-MCW0004438_02OnDemandRegistration-ForminBody.html)<br>Azure AD를 사용 하 여 엔터프라이즈 SaaS 응용 프로그램에 대 한 SSO를 구현 하 고 액세스를 제어 하는 최선의 방법을 알아보세요. |
 | 동영상| [활성 Azure 디렉터리의 사용자 프로비저닝 이란?](https://youtu.be/_ZjARPpI6NI) <br> [활성 Azure 디렉터리에 사용자 프로 비전을 배포 하는 방법](https://youtu.be/pKzyts6kfrw) <br> [Salesforce를 Azure AD와 통합: 사용자 프로 비전을 자동화 하는 방법](https://azure.microsoft.com/resources/videos/integrating-salesforce-with-azure-ad-how-to-automate-user-provisioning/) |
-| 온라인 과정| SkillUp Online: [Id 관리](https://skillup.online/courses/course-v1:Microsoft+AZ-100.5+2018_T3/about) <br> Azure AD를 많은 SaaS 응용 프로그램과 통합 하 고 이러한 응용 프로그램에 대 한 사용자 액세스를 보호 하는 방법을 알아봅니다. |
+| 온라인 과정| SkillUp Online:  [Id 관리](https://skillup.online/courses/course-v1:Microsoft+AZ-100.5+2018_T3/about) <br> Azure AD를 많은 SaaS 응용 프로그램과 통합 하 고 이러한 응용 프로그램에 대 한 사용자 액세스를 보호 하는 방법을 알아봅니다. |
 | 책| [웹 응용 프로그램에 대 한 Azure Active Directory 최신 인증 (개발자 참조) 첫 번째 버전](https://www.amazon.com/Authentication-Directory-Applications-Developer-Reference/dp/0735696942/ref=sr_1_fkmr0_1?keywords=Azure+multifactor+authentication&qid=1550168894&s=gateway&sr=8-1-fkmr0)입니다.  <br> 이러한 새 환경에 대 한 Active Directory 인증 솔루션을 구축 하기 위한 신뢰할 수 있는 심층 소개 가이드입니다. |
 | 자습서| [SaaS 앱을 AZURE AD와 통합 하는 방법에 대 한 자습서 목록을](../saas-apps/tutorial-list.md)참조 하세요. |
 | FAQ| 자동화 된 사용자 프로 비전에 대 한 질문과 [대답](../app-provisioning/user-provisioning.md) |
@@ -157,7 +157,7 @@ Azure AD 포털을 사용 하 여 프로 비전을 지 원하는 모든 응용 �
 
 그렇지 않은 경우 다음 단계를 수행 합니다.
 
-1. 사전 통합 된 사용자 프로 비전 커넥터에 대 한 [요청을 만듭니다](../develop/howto-app-gallery-listing.md) . Microsoft 팀은 SCIM을 지 원하는 경우 사용자와 응용 프로그램 개발자와 협력 하 여 응용 프로그램을 플랫폼에 등록 합니다.
+1. 사전 통합 된 사용자 프로 비전 커넥터에 대 한 [요청을 만듭니다](../azuread-dev/howto-app-gallery-listing.md) . Microsoft 팀은 SCIM을 지 원하는 경우 사용자와 응용 프로그램 개발자와 협력 하 여 응용 프로그램을 플랫폼에 등록 합니다.
 
 1. 앱에 대 한 [Byoa SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 일반 사용자 프로 비전 지원을 사용 합니다. 이는 사전 통합 된 프로 비전 커넥터 없이 사용자를 앱에 프로 비전 하기 위해 Azure AD에 대 한 요구 사항입니다.
 

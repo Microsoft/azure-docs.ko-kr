@@ -2,25 +2,21 @@
 title: '자습서: Tableau Server와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 Tableau Server 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c1917375-08aa-445c-a444-e22e23fa19e0
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 05/07/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2325259cd5e613223ee77371d7e563e8ab1e94ca
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: cb052f4ce962b1757f47f64e3f26fa5db2a731fa
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648460"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999685"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>자습서: Tableau Server와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -145,7 +141,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
     b. **서버 SAML 인증 가능** 확인란을 선택합니다.
 
-    다. Tableau Server 반환 URL - Tableau Server 사용자가 액세스하는 URL(예: <http://tableau_server>)입니다. `http://localhost`을 사용하는 것은 권장되지 않습니다. 후행 슬래시가 있는 URL(예: `http://tableau_server/`)은 지원되지 않습니다. **Tableau Server 반환 URL**을 복사하고 Azure Portal의 **기본 SAML 구성** 섹션에 있는 **로그온 URL** 텍스트 상자에 붙여넣습니다.
+    다. Tableau Server 반환 URL - Tableau Server 사용자가 액세스하는 URL(예: `http://tableau_server`)입니다. `http://localhost`을 사용하는 것은 권장되지 않습니다. 후행 슬래시가 있는 URL(예: `http://tableau_server/`)은 지원되지 않습니다. **Tableau Server 반환 URL**을 복사하고 Azure Portal의 **기본 SAML 구성** 섹션에 있는 **로그온 URL** 텍스트 상자에 붙여넣습니다.
 
     d. SAML 엔터티 ID - 엔터티 ID는 IdP에 대한 Tableau Server 설치를 고유하게 식별합니다. 원하는 경우 여기에 Tableau Server URL을 다시 입력할 수 있지만 반드시 Tableau Server URL을 입력해야 하는 것은 아닙니다. **SAML 엔터티 ID**를 복사하고 Azure Portal의 **기본 SAML 구성** 섹션에 있는 **식별자** 텍스트 상자에 붙여넣습니다.
 

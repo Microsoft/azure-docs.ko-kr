@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: b00df5e8176aaad86be5cf3ae4e04c736f36cf5b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 97ad3048fccc4f8ed6baf0f1d5304f1c8d81c3f2
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74885605"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269236"
 ---
-# <a name="troubleshooting-guide-for-live-streaming"></a>라이브 스트리밍 문제 해결 가이드  
+# <a name="troubleshooting-guide-for-live-streaming"></a>라이브 스트리밍 문제 해결 가이드
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]  
 
 이 문서에서는 일부 라이브 스트리밍 문제를 해결하는 방법에 대한 제안을 제공합니다.
 

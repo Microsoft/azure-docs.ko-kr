@@ -1,6 +1,6 @@
 ---
 title: 'Azure Express 경로: Express 경로 직접 구성: CLI'
-description: 이 문서는를 사용 하 여 Express 경로 다이렉트를 구성 하는 데 도움이 됩니다 Azure CLI
+description: Azure CLI를 사용 하 여 전 세계에서 피어 링 위치에 있는 Microsoft 글로벌 네트워크에 직접 연결 하도록 Azure Express 경로 다이렉트를 구성 하는 방법을 알아봅니다.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/20/2019
 ms.author: cherylmc
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4cbacf997413c4eba1e8a142925cc6cde58fb0ec
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5d1e1d6ab5a8d4444ad4a5a4748859fd12aa3c1e
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87488009"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192265"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Azure CLI를 사용 하 여 Express 경로 직접 구성
 

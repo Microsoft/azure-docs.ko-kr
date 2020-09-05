@@ -3,14 +3,15 @@ title: Azure Functions SignalR 서비스 입력 바인딩
 description: Azure Functions에서 SignalR 서비스 끝점 URL 및 액세스 토큰을 반환 하는 방법에 대해 알아봅니다.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 02/20/2020
 ms.author: cshoe
-ms.openlocfilehash: 53d336aff3177a76c5e02266ffb8484bd9945119
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 326115a2a6cf29fcf211cdbd918edd0994fe45ed
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77530264"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212121"
 ---
 # <a name="signalr-service-input-binding-for-azure-functions"></a>Azure Functions에 대 한 SignalR Service 입력 바인딩
 

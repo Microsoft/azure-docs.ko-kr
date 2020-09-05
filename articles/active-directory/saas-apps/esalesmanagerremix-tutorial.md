@@ -2,26 +2,21 @@
 title: '자습서: Azure Active Directory와 E Sales Manager Remix 통합 | Microsoft Docs'
 description: Azure Active Directory 및 E Sales Manager Remix 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
-ms.assetid: 89b5022c-0d5b-4103-9877-ddd32b6e1c02
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 167d682bb5ce1266ba6b677f6223c38dd34af9bb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dd5a200d1c17f0417b2ee88f7f905ee6de3cfe62
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82202399"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555392"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Azure Active Directory와 E Sales Manager Remix 통합
 
@@ -61,7 +56,7 @@ E Sales Manager Remix와 Azure AD 통합을 구성하려면 다음 항목이 필
 ## <a name="add-e-sales-manager-remix-from-the-gallery"></a>갤러리에서 E Sales Manager Remix 추가
 E Sales Manager Remix와의 Azure AD 통합을 구성하려면 다음을 수행하여 갤러리의 E Sales Manager Remix를 관리되는 SaaS 앱 목록에 추가합니다.
 
-1. [Azure Portal](https://portal.azure.com)의 왼쪽 창에서 **Azure Active Directory**를 선택합니다. 
+1. [Azure Portal](https://portal.azure.com)의 왼쪽 창에서 **Azure Active Directory**를 선택 합니다. 
 
     ![Azure Active Directory 단추][1]
 
@@ -166,7 +161,7 @@ E Sales Manager Remix에서 Azure AD Single Sign-On을 구성하고 테스트하
 
     f. **ID 공급자 로그인 URL** 상자에 이전에 Azure Portal에서 복사한 SAML Single Sign-On 서비스 URL을 붙여넣습니다.
 
-    예: **ID 공급자 로그아웃 URL** 상자에 이전에 Azure Portal에서 복사한 로그아웃 URL 값을 붙여넣습니다.
+    g. **ID 공급자 로그아웃 URL** 상자에 이전에 Azure Portal에서 복사한 로그아웃 URL 값을 붙여넣습니다.
 
     h. **설정 완료**를 선택합니다.
 
@@ -248,7 +243,7 @@ E Sales Manager Remix에서 Azure AD Single Sign-On을 구성하고 테스트하
 
     ![E Sales Manager Remix 링크](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_app.png)  
 
-1. 왼쪽 창에서 **사용자 및 그룹**을 선택합니다.
+1. 왼쪽 창에서 **사용자 및 그룹**을 선택 합니다.
 
     !["사용자 및 그룹" 링크][202]
 

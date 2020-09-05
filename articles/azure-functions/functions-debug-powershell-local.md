@@ -1,17 +1,17 @@
 ---
 title: 로컬로 PowerShell Azure Functions 디버그
-description: PowerShell을 사용 하 여 함수를 개발 하는 방법을 이해 합니다.
+description: 로컬로 실행할 때 PowerShell 함수를 디버그 하는 방법에 대해 알아봅니다.
 author: tylerleonhardt
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
-ms.openlocfilehash: 51edbc18a929f4f954fb1a582a417bc1600d1a6f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0c37c8f108e9bcbb827c05242d8863994dfc64cf
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082990"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177094"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>로컬로 PowerShell Azure Functions 디버그
 
@@ -65,6 +65,9 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 ## <a name="set-the-attach-point"></a>연결 지점 설정
 
 PowerShell 함수를 디버깅 하려면 디버거를 연결 하기 위해 함수를 중지 해야 합니다. `Wait-Debugger`Cmdlet은 실행을 중지 하 고 디버거를 대기 합니다.
+
+>[!NOTE]
+>PowerShell 7을 사용 하는 경우 코드에서 호출을 추가할 필요가 없습니다 `Wait-Debugger` .
 
 다음과 `Wait-Debugger` 같이 문 바로 위에 cmdlet에 대 한 호출을 추가 하기만 하면 됩니다 `if` .
 
@@ -235,13 +238,23 @@ Cmdlet을 사용 하 여이 수준에서 중단점을 설정할 수도 있습니
 
 함수 코드를 디버그할 때는 다음 문제를 염두에 두어야 합니다.
 
-### <a name="breakall-might-cause-your-debugger-to-break-in-an-unexpected-place"></a>`BreakAll`디버거가 예기치 않은 장소에서 중단 될 수 있습니다.
+### <a name="breakall-might-cause-your-debugger-to-break-in-an-unexpected-place"></a>`BreakAll` 디버거가 예기치 않은 장소에서 중단 될 수 있습니다.
 
 PowerShell 확장은를 사용 하며 `Debug-Runspace` ,이는 powershell의 기능을 사용 `BreakAll` 합니다. 이 기능은 실행 되는 첫 번째 명령에서 PowerShell을 중지 하도록 지시 합니다. 이 동작은 디버깅 된 runspace 내에서 중단점을 설정할 수 있는 기회를 제공 합니다.
 
 Azure Functions 런타임은 실제로 스크립트를 호출 하기 전에 몇 가지 명령을 실행 `run.ps1` 하므로 또는 내에서 디버거가 중단 될 수 있습니다 `Microsoft.Azure.Functions.PowerShellWorker.psm1` `Microsoft.Azure.Functions.PowerShellWorker.psd1` .
 
 이러한 중단이 발생 하면 `continue` 또는 `c` 명령을 실행 하 여이 중단점을 건너뜁니다. 그런 다음 예상 중단점에서 중지 합니다.
+
+## <a name="troubleshooting"></a>문제 해결
+
+디버깅 하는 동안 문제가 발생 하는 경우 다음 사항을 확인 해야 합니다.
+
+| 확인 | 작업 |
+|------|------|
+| `func --version`터미널에서를 실행 합니다. 오류가 발생 하는 경우 `func` 지역 변수에서 핵심 도구 (func.exe)를 찾을 수 없습니다 `path` .| [핵심 도구를 다시 설치](functions-run-local.md#v2)합니다.|  
+| Visual Studio Code 기본 터미널에는 func.exe에 대 한 액세스 권한이 있어야 합니다. Linux 용 Windows 하위 시스템 (WSL)과 같이 핵심 도구를 설치 하지 않은 기본 터미널을 사용 하 고 있지 않은지 확인 합니다.  | Visual Studio Code의 기본 셸을 PowerShell 7 (권장) 또는 Windows PowerShell 5.1로 설정 합니다.|
+  
 
 ## <a name="next-steps"></a>다음 단계
 

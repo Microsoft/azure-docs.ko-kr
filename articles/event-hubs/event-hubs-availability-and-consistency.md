@@ -3,12 +3,13 @@ title: 가용성 및 일관성 - Azure Event Hubs | Microsoft Docs
 description: 파티션을 사용하여 Azure Event Hubs에서 가용성 및 일관성의 최대치를 제공하는 방법입니다.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 45ca5cc5790824d6c67a47a23691c6b0cae0b9f8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 774332b8f2d5c336f1a22d717516ae35a62b341f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537210"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000637"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Event Hubs의 가용성 및 일관성
 

@@ -1,19 +1,19 @@
 ---
-title: Azure Digital Twins를 사용 하 여 Azure Maps 실내 맵 업데이트
+title: Azure Maps와 통합
 titleSuffix: Azure Digital Twins
-description: Azure Maps에 표시 된 정보를 업데이트 하는 데 쌍 그래프와 Azure Digital Twins 알림을 사용할 수 있는 Azure 함수를 만드는 방법을 참조 하세요.
+description: 쌍으로 된 실내 지도를 Azure Maps 업데이트 하는 데 쌍을 사용 하는 Azure 함수를 만드는 방법 (쌍 그래프 및 Azure Digital Twins 알림 사용)을 참조 하세요.
 author: alexkarcher-msft
 ms.author: alkarche
 ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 6aad6201136bb925d5e094de115cc7274cc7872a
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a2dff1ea9c830fa48545dc25654cc3c5318c3415
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131415"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235913"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Azure Digital Twins를 사용 하 여 Azure Maps 실내 맵 업데이트
 

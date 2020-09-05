@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: overview
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: a087faee45b8725bc596a5faa92536741d8cd569
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 0df61c2ee42d468562efd67a2a66a90a5e4fda53
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836907"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723567"
 ---
 # <a name="what-is-form-recognizer"></a>Form Recognizer란?
 
@@ -24,7 +24,7 @@ Azure Form Recognizer는 기계 학습 기술을 사용하여 양식 문서에�
 
 Form Recognizer는 다음과 같은 서비스로 구성됩니다.
 * **사용자 지정 모델** - 양식에서 키-값 쌍 및 테이블 데이터를 추출합니다. 이러한 모델은 사용자 고유의 데이터로 학습되므로 사용자의 양식에 맞게 조정됩니다.
-* **미리 작성된 영수증 모델** - 미리 빌드된 모델을 사용하여 USA 판매 영수증에서 데이터를 추출합니다.
+* **미리 빌드된 모델** - 미리 빌드된 모델을 사용하여 고유한 양식 유형에서 데이터를 추출합니다. 현재 영어로 된 판매 영수증과 명함용으로 미리 빌드된 모델을 사용할 수 있습니다.
 * **레이아웃 API** - 문서에서 경계 상자 좌표와 함께 텍스트 및 테이블 구조를 추출합니다.
 
 <!-- add diagram -->
@@ -45,9 +45,18 @@ Form Recognizer 사용자 지정 모델은 사용자 고유의 데이터로 학�
 
 Form Recognizer는 [레이아웃 API](#layout-api)를 사용하여 인쇄 및 필기된 텍스트 요소의 예상 크기와 위치를 학습합니다. 그 후 사용자 지정 레이블을 사용하여 문서의 키/값 연결을 학습합니다. 새 모델을 학습시킬 때 수동 레이블 지정 양식 5개를 사용하여 시작한 후 필요에 따라 레이블 지정 데이터를 추가하여 모델 정확도를 개선하는 것이 좋습니다.
 
-## <a name="prebuilt-receipt-model"></a>미리 작성된 영수증 모델
+## <a name="prebuilt-models"></a>미리 작성된 모델
 
-또한 Form Recognizer에는 미국의 영문 판매 영수증(식당, 주유소, 소매점 등에서 사용되는 유형)을 읽을 수 있는 모델이 포함되어 있습니다([샘플 영수증](./media/contoso-receipt-small.png)). 이 모델은 트랜잭션 시간 및 날짜, 판매자 정보, 세금의 합계 등과 같은 주요 정보를 추출합니다. 또한 미리 작성된 영수증 모델은 영수증의 모든 텍스트를 인식하고 반환하도록 학습됩니다.
+Form Recognizer에는 고유한 양식 유형을 위한 미리 빌드된 모델도 포함되어 있습니다.
+### <a name="prebuilt-receipt-model"></a>미리 빌드된 영수증 모델
+미리 빌드된 영수증 모델은 오스트레일리아, 캐나다, 영국, 인도, 미국&mdash;(식당, 주유소, 소매점 등)에서 사용되는 유형의 영어 판매 영수증을 읽는 데 사용됩니다. 이 모델은 트랜잭션 시간 및 날짜, 판매자 정보, 세금의 합계, 줄 항목, 총액 등과 같은 주요 정보를 추출합니다. 또한 미리 작성된 영수증 모델은 영수증의 모든 텍스트를 인식하고 반환하도록 학습됩니다. 
+
+![샘플 영수증](./media/contoso-receipt-small.png)
+
+### <a name="prebuilt-business-cards-model"></a>미리 빌드된 명함 모델
+명함 모델을 사용하면 영어로 된 명함에서 사람의 이름, 직함, 주소, 이메일, 회사 및 전화번호와 같은 정보를 추출할 수 있습니다. 
+
+![샘플 명함](./media/business-card-english.jpg)
 
 ## <a name="layout-api"></a>레이아웃 API
 
@@ -76,7 +85,7 @@ Form Recognizer는 [레이아웃 API](#layout-api)를 사용하여 인쇄 및 �
 
 다음 API를 사용하여 모델을 학습시키고 양식에서 정형 데이터를 추출합니다.
 
-|속성 |Description |
+|Name |Description |
 |---|---|
 | **사용자 지정 모델 학습**| 동일한 형식의 5개 양식을 사용하여 양식을 분석하는 새 모델을 학습시킵니다. _useLabelFile_ 매개 변수를 `true`로 설정하여 수동 레이블 지정 데이터로 학습합니다. |
 | **양식 분석** |스트림으로 전달된 단일 문서를 분석하여 사용자 지정 모델을 통해 양식에서 텍스트, 키/값 쌍 및 테이블을 추출합니다.  |
@@ -90,7 +99,7 @@ Form Recognizer는 [레이아웃 API](#layout-api)를 사용하여 인쇄 및 �
 
 [!INCLUDE [input requirements](./includes/input-requirements.md)]
 
-### <a name="prebuilt-receipt-model"></a>미리 작성된 영수증 모델
+### <a name="prebuilt"></a>미리 빌드됨
 
 영수증 모델에 대한 입력 요구 사항은 약간 다릅니다.
 

@@ -3,12 +3,12 @@ title: Microsoft Azure Recovery Services (MARS) 에이전트-FAQ
 description: Azure Backup를 사용 하 여 파일과 폴더를 백업 하는 방법에 대 한 일반적인 질문을 해결 합니다.
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: e50e424f1a9f044aa1ed8e95c1bce002d134bffe
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: e3a5b6d07982c3261b457d4999025c44489c0a8d
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874625"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182516"
 ---
 # <a name="frequently-asked-questions---microsoft-azure-recovery-services-mars-agent"></a>MARS (질문과 대답 Microsoft Azure Recovery Services) 에이전트
 
@@ -80,7 +80,7 @@ Windows 컴퓨터의 이름을 바꾸면 현재 구성 된 모든 백업이 중�
 
 * 백업 자격 증명 모음에 새 컴퓨터 이름을 등록 해야 합니다.
 * 자격 증명 모음에 새 이름을 등록 하는 경우 첫 번째 작업은 *전체* 백업입니다.
-* 이전 서버 이름을 사용 하 여 자격 증명 모음에 백업 된 데이터를 복구 해야 하는 경우 데이터 복구 마법사에서 대체 위치로 복원 하는 옵션을 사용 합니다. [자세히 알아봅니다](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
+* 이전 서버 이름을 사용 하 여 자격 증명 모음에 백업 된 데이터를 복구 해야 하는 경우 데이터 복구 마법사에서 대체 위치로 복원 하는 옵션을 사용 합니다. [자세한 정보를 알아보세요](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>백업의 최대 파일 경로 길이는 얼마 인가요?
 
@@ -109,7 +109,7 @@ MARS 에이전트는 NTFS를 사용 하며 파일 이름/경로에서 [지원 �
 
 ### <a name="how-to-check-if-scratch-folder-is-valid-and-accessible"></a>스크래치 폴더가 유효 하 고 액세스할 수 있는지 확인 하는 방법
 
-1. 기본적으로 스크래치 폴더는에 있습니다.`\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
+1. 기본적으로 스크래치 폴더는에 있습니다. `\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
 2. 스크래치 폴더 위치의 경로가 아래에 표시 된 레지스트리 키 항목의 값과 일치 하는지 확인 합니다.
 
     | 레지스트리 경로 | 레지스트리 키 | 값 |
@@ -123,7 +123,7 @@ MARS 에이전트는 NTFS를 사용 하며 파일 이름/경로에서 [지원 �
 
     ```Net stop obengine```
 2. 시스템 상태 백업을 구성한 경우 디스크 관리를 열고 형식의 이름을 사용 하 여 디스크를 분리 `"CBSSBVol_<ID>"` 합니다.
-3. 기본적으로 스크래치 폴더는에 있습니다.`\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
+3. 기본적으로 스크래치 폴더는에 있습니다. `\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
 4. `\Scratch`공간이 충분 한 다른 드라이브에 전체 폴더를 복사 합니다. 콘텐츠가 복사 되었는지 확인 하 고 이동 하지 않습니다.
 5. 새로 이동한 스크래치 폴더의 경로를 사용 하 여 다음 레지스트리 항목을 업데이트 합니다.
 
@@ -163,7 +163,7 @@ MARS 에이전트는 NTFS를 사용 하며 파일 이름/경로에서 [지원 �
 
 ### <a name="is-there-a-way-to-adjust-the-amount-of-bandwidth-used-for-backup"></a>백업에 사용 되는 대역폭의 양을 조정 하는 방법이 있나요?
 
-예, MARS 에이전트의 **속성 변경** 옵션을 사용 하 여 대역폭과 타이밍을 조정할 수 있습니다. [자세히 알아봅니다](backup-windows-with-mars-agent.md#enable-network-throttling).
+예, MARS 에이전트의 **속성 변경** 옵션을 사용 하 여 대역폭과 타이밍을 조정할 수 있습니다. [자세한 정보를 알아보세요](backup-windows-with-mars-agent.md#enable-network-throttling).
 
 ## <a name="restore"></a>복원
 
@@ -199,7 +199,7 @@ Azure Backup 에이전트에는 복원 중에 백업 된 데이터의 암호를 
 
 ### <a name="my-backup-jobs-have-been-failing-or-not-running-for-a-long-time-im-past-the-retention-period-can-i-still-restore"></a>백업 작업이 실패 하거나 오랜 시간 동안 실행 되 고 있지 않습니다. 보존 기간을 초과 했습니다. 그래도 복원할 수 있나요?
 
-보안 조치로, Azure Backup은 보존 기간이 지난 경우에도 마지막 복구 지점을 유지 합니다. 백업이 다시 시작 되 고 새 복구 지점을 사용할 수 있게 되 면 이전 복구 지점은 지정 된 보존에 따라 제거 됩니다.
+보안 조치로 Azure Backup은 보존 기간이 지난 경우에도 가장 최근 복구 지점을 유지 합니다. 백업이 다시 시작 되 고 새 복구 지점을 사용할 수 있게 되 면 이전 복구 지점은 지정 된 보존에 따라 제거 됩니다.
 
 ### <a name="what-happens-if-i-cancel-an-ongoing-restore-job"></a>진행 중인 복원 작업을 취소하면 어떻게 되나요?
 

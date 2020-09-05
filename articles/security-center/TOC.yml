@@ -39,6 +39,8 @@
       href: security-center-enable-data-collection.md
     - name: 이메일 알림 설정
       href: security-center-provide-security-contact-details.md
+    - name: ARM 템플릿을 사용하여 경고에 대한 자동 응답 만들기
+      href: quickstart-automation-alert.md
 - name: 자습서
   items:
     - name: 계획 및 운영 가이드
@@ -59,8 +61,6 @@
           href: security-center-recommendations.md
         - name: 보안 정책 개요
           href: tutorial-security-policy.md
-        - name: 기본 제공 보안 정책
-          href: security-center-policy-definitions.md
         - name: 권장 사항을 사용하여 보안 강화
           href: security-center-using-recommendations.md
         - name: 보안 기준
@@ -105,12 +105,12 @@
           href: update-regulatory-compliance-packages.md
     - name: VM 취약성 검색
       items:
-        - name: 취약성 검색 개요
-          href: security-center-vulnerability-assessment-recommendations.md
-        - name: VM에 대한 통합 취약성 검사기
-          href: built-in-vulnerability-assessment.md
-        - name: 외부 검사기 사용
-          href: partner-vulnerability-assessment.md
+        - name: VM에 통합 취약성 검사기 배포
+          href: deploy-vulnerability-assessment-vm.md
+        - name: VM에 BYOL 취약성 솔루션 배포
+          href: deploy-vulnerability-assessment-byol-vm.md
+        - name: VM에서 취약성 검토 및 수정
+          href: remediate-vulnerability-findings-vm.md
     - name: 위협 방지 구성 및 경고 처리
       items:
         - name: 보안 경고 관리
@@ -130,6 +130,7 @@
         - name: 경고에 대한 응답 자동화
           href: workflow-automation.md
         - name: 경고 내보내기
+          displayName: continuous
           href: continuous-export.md
     - name: 보안 권장 사항을 사용하여 보안 향상
       items:
@@ -150,10 +151,13 @@
         - name: 권장 사항에 대한 응답 자동화
           href: workflow-automation.md
         - name: 권장 사항 내보내기
+          displayName: continuous
           href: continuous-export.md
+    - name: 자산 인벤토리로 리소스 관리
+      href: asset-inventory.md
     - name: 다른 도구 및 서비스와 통합
       items:
-        - name: Windows Admin Center와 통합
+        - name: Windows Admin Center 서버 보호
           href: windows-admin-center-integration.md
         - name: Azure App Service 웹앱 및 API 보호
           href: security-center-app-services.md
@@ -207,6 +211,9 @@
       href: security-center-features-retirement-july2019.md
     - name: 엔드포인트 보호 평가 및 권장 사항
       href: security-center-endpoint-protection.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

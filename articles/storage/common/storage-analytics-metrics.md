@@ -8,13 +8,13 @@ ms.date: 03/11/2019
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.custom: monitoring
-ms.openlocfilehash: 7d7db5a756e5d75cb4f9719f54d95f9cee1e8d2f
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: monitoring, devx-track-csharp
+ms.openlocfilehash: 2f3fa755f61d398ce7f0965fba86262c3e3ec863
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828050"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021156"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Azure 스토리지 분석 메트릭(클래식)
 
@@ -146,7 +146,7 @@ Azure Portal에서 스토리지 계정의 메뉴 창의 **모니터링(클래식
 
 장기 스토리지용 메트릭을 다운로드하거나 메트릭을 로컬에서 분석하려는 경우에는 테이블을 읽는 코드를 작성하거나 도구를 사용해야 합니다. 분석용으로는 분 메트릭을 다운로드해야 합니다. 스토리지 계정의 모든 테이블을 나열해도 테이블은 표시되지 않지만 테이블 이름을 통해 직접 액세스할 수는 있습니다. 스토리지 찾아보기 도구는 대체로 해당 테이블을 인식하며 테이블을 직접 보는 기능을 제공합니다. 사용 가능한 도구의 목록은 [Azure Storage 클라이언트 도구](/azure/storage/storage-explorers)를 참조하세요.
 
-|메트릭|테이블 이름|참고| 
+|메트릭|테이블 이름|메모| 
 |-|-|-|  
 |시간 메트릭|$MetricsHourPrimaryTransactionsBlob<br /><br /> $MetricsHourPrimaryTransactionsTable<br /><br /> $MetricsHourPrimaryTransactionsQueue<br /><br /> $MetricsHourPrimaryTransactionsFile|2013년 8월 15일 이전 버전에서는 해당 테이블을 다음과 같이 지칭했습니다.<br /><br /> $MetricsTransactionsBlob<br /><br /> $MetricsTransactionsTable<br /><br /> $MetricsTransactionsQueue<br /><br /> 파일 서비스에 대한 메트릭은 2015년 4월 5일 버전부터 사용할 수 있습니다.|  
 |분 메트릭|$MetricsMinutePrimaryTransactionsBlob<br /><br /> $MetricsMinutePrimaryTransactionsTable<br /><br /> $MetricsMinutePrimaryTransactionsQueue<br /><br /> $MetricsMinutePrimaryTransactionsFile|PowerShell을 사용하거나 프로그래밍 방식으로만 사용하도록 설정할 수 있습니다.<br /><br /> 파일 서비스에 대한 메트릭은 2015년 4월 5일 버전부터 사용할 수 있습니다.|  
@@ -154,7 +154,7 @@ Azure Portal에서 스토리지 계정의 메뉴 창의 **모니터링(클래식
 
 해당 테이블의 스키마에 대한 전체 세부 정보는 [스토리지 분석 메트릭 테이블 스키마](/rest/api/storageservices/storage-analytics-metrics-table-schema)를 참조하세요. 다음 샘플 행에는 사용 가능한 열 중 일부만 나와 있습니다. 그러나 스토리지 메트릭에서 해당 메트릭을 저장하는 방식과 관련한 몇 가지 중요한 기능을 확인할 수 있습니다.  
 
-|PartitionKey|RowKey|타임스탬프|TotalRequests|TotalBillableRequests|TotalIngress|TotalEgress|사용 가능성|AverageE2ELatency|AverageServerLatency|PercentSuccess| 
+|PartitionKey|RowKey|타임스탬프|TotalRequests|TotalBillableRequests|TotalIngress|TotalEgress|가용성|AverageE2ELatency|AverageServerLatency|PercentSuccess| 
 |-|-|-|-|-|-|-|-|-|-|-|  
 |20140522T1100|user;All|2014-05-22T11:01:16.7650250Z|7|7|4003|46801|100|104.4286|6.857143|100|  
 |20140522T1100|user;QueryEntities|2014-05-22T11:01:16.7640250Z|5|5|2694|45951|100|143.8|7.8|100|  

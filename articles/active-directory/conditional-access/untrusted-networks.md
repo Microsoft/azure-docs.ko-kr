@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7986ca441f7d274670d8fa0238e7dcfa01497b6f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6b2f9a6e13fdc39ab18a2056fab15982aa9fb0e4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253174"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948167"
 ---
 # <a name="how-to-require-mfa-for-access-from-untrusted-networks-with-conditional-access"></a>방법: 조건부 액세스를 사용 하 여 신뢰할 수 없는 네트워크에서 액세스를 위한 MFA 요구   
 
@@ -69,4 +69,4 @@ Azure AD 조건부 액세스를 사용 하 여 액세스 권한을 부여 하는
 
 ## <a name="next-steps"></a>다음 단계
 
-조건부 액세스에 대해 자세히 알아보려면 [Azure Active Directory의 조건부 액세스 란?](../active-directory-conditional-access-azure-portal.md) 을 참조 하세요.
+조건부 액세스에 대해 자세히 알아보려면 [Azure Active Directory의 조건부 액세스 란?](./overview.md) 을 참조 하세요.

@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure StorSimple 데이터 관리자 개요 | Microsoft Docs
-description: StorSimple Data Manager 서비스 개요 제공
+description: StorSimple Data Manager 솔루션 및이 서비스를 사용 하 여 StorSimple 데이터 및 기타 Azure 서비스를 사용 하는 응용 프로그램을 작성 하는 방법에 대해 알아봅니다.
 services: storsimple
 documentationcenter: NA
 author: vidarmsft
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/21/2018
 ms.author: alkohli
-ms.openlocfilehash: 2ffe17bf7ef4f01c18d2c26f4a045add7302272d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d683f49cadb384ef59d3bae819156733691813cd
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67876111"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183499"
 ---
 # <a name="storsimple-data-manager-solution-overview"></a>StorSimple 데이터 관리자 솔루션 개요
 
@@ -47,7 +47,7 @@ Azure Functions, Azure Automation 및 Azure Data Factory에서 이 데이터 관
 
 StorSimple 데이터 관리자는 다음 7개 지역에서 사용할 수 있습니다.
 
- - 동남아시아
+ - 동남 아시아
  - 미국 동부
  - 미국 서부
  - 미국 서부 2

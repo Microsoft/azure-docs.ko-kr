@@ -7,12 +7,13 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 04/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1552c54afe2195d58a032e9cc7bfa5aa70c844b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 9ff3e12721628e244f247e174af101e71ea91191
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61447627"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998325"
 ---
 # <a name="customize-and-redeploy-a-microservice"></a>마이크로 서비스 사용자 지정 및 다시 배포
 
@@ -148,7 +149,7 @@ ms.locfileid: "61447627"
 
 ![New Edits Made Here postman 메시지](./media/iot-accelerators-microservices-example/new-postman-message.png)
 
-## <a name="troubleshoot"></a><a name="Troubleshoot"></a>문제점
+## <a name="troubleshoot"></a><a name="Troubleshoot"></a>문제 해결
 
 문제가 발생하는 경우 로컬 컴퓨터에서 도커 이미지 및 컨테이너 제거를 시도합니다.
 

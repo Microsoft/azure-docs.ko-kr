@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 50ab4b0f1e676ffcba0ce69ab6aa957e4c77ab88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f145dcf8d476009d81056b3f4f970460209a5bc
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71058164"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649740"
 ---
 # <a name="troubleshoot-storage-resource-deletion-errors"></a>스토리지 리소스 삭제 오류 문제 해결
 
@@ -28,7 +28,7 @@ ms.locfileid: "71058164"
 > 
 > **#/#개 Blob 삭제 실패 <br>BlobName.vhd: 현재 Blob에 임대가 있는데 요청에서 임대 ID가 지정되지 않았습니다.**
 
-Azure VM에 사용되는 VHD는 Azure의 표준 또는 Premium Storage 계정에 페이지 Blob으로 저장되는 .vhd 파일입니다. Azure 디스크에 대한 자세한 내용은 [관리 디스크 소개](../linux/managed-disks-overview.md)를 참조하세요.
+Azure VM에 사용되는 VHD는 Azure의 표준 또는 Premium Storage 계정에 페이지 Blob으로 저장되는 .vhd 파일입니다. Azure 디스크에 대한 자세한 내용은 [관리 디스크 소개](../managed-disks-overview.md)를 참조하세요.
 
 Azure는 손상 방지를 위해 VM에 연결된 디스크 삭제를 차단합니다. 또한 VM에 연결된 페이지 Blob이 있는 스토리지 계정 및 컨테이너의 삭제도 차단합니다. 
 

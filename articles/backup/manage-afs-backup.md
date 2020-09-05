@@ -3,12 +3,12 @@ title: Azure 파일 공유 백업 관리
 description: 이 문서에서는 Azure Backup에 의해 백업 되는 Azure 파일 공유를 관리 하 고 모니터링 하는 일반적인 작업에 대해 설명 합니다.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: 6684cb348c9edb35b5f3e46fb7922e9aa265c725
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 784b22f11b57fb025f6d9401e10d527c83751898
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073296"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757628"
 ---
 # <a name="manage-azure-file-share-backups"></a>Azure 파일 공유 백업 관리
 
@@ -143,7 +143,7 @@ Azure 파일 공유에 대 한 백업 데이터를 삭제 하려면:
 
 ## <a name="unregister-a-storage-account"></a>저장소 계정 등록 취소
 
-다른 recovery services 자격 증명 모음을 사용 하 여 특정 저장소 계정에서 파일 공유를 보호 하려면 먼저 해당 저장소 계정의 [모든 파일 공유에 대 한 보호를 중지](#stop-protection-on-a-file-share) 합니다. 그런 다음 보호에 사용 되는 현재 recovery services 자격 증명 모음에서 계정을 등록 취소 합니다.
+다른 Recovery Services 자격 증명 모음을 사용 하 여 특정 저장소 계정에서 파일 공유를 보호 하려면 먼저 해당 저장소 계정의 [모든 파일 공유에 대 한 보호를 중지](#stop-protection-on-a-file-share) 합니다. 그런 다음 보호에 사용 된 현재 Recovery Services 자격 증명 모음에서 계정을 등록 취소 합니다.
 
 다음 절차에서는 등록을 취소 하려는 저장소 계정의 모든 파일 공유에 대 한 보호가 중지 된 것으로 가정 합니다.
 

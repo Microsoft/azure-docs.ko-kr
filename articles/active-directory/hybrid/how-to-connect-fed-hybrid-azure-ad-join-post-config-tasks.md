@@ -16,12 +16,12 @@ ms.date: 08/10/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0a0ee226fcddb3bfc216e1e160b5571fde59a41
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: da5cefbacbd3851d2609a687c1948d9bcba5ffae
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85807590"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612472"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>하이브리드 Azure AD 조인 구성 후 작업
 
@@ -87,9 +87,6 @@ Windows 하위 수준 디바이스를 등록하려면 사용자가 디바이스�
 ## <a name="10-configure-group-policy-to-allow-device-registration"></a>10. 장치 등록을 허용 하도록 그룹 정책 구성
 
 개별 장치에 대 한 하이브리드 Azure AD 조인을 허용 하는 방법에 대 한 자세한 내용은 [하이브리드 AZURE ad 조인의 제어 된 유효성 검사](../devices/hybrid-azuread-join-control.md)를 참조 하세요.
-
-> [!NOTE]
-> 2012 r 2에 대 한 정책 설정은 **컴퓨터 구성 > 정책 > 관리 템플릿 > Windows 구성 요소 > Workplace Join > 자동으로 작업 공간 연결 클라이언트 컴퓨터**에 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 [디바이스 쓰기 저장 구성](how-to-connect-device-writeback.md)

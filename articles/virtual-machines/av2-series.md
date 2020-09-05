@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: fcbcb89505130dddb42d97c153b172a22a9b29b2
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: ac3f31fecd53ddf1dd8bb81229c67cb4bb60c34e
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831484"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650641"
 ---
 # <a name="av2-series"></a>Av2 시리즈
 
@@ -52,7 +52,7 @@ Premium Storage 캐싱:  지원되지 않음
 
 가격 계산기: [가격 계산기](https://azure.microsoft.com/pricing/calculator/)
 
-디스크 유형에 대 한 자세한 정보: [디스크 유형](./linux/disks-types.md#ultra-disk)
+디스크 유형에 대 한 자세한 정보: [디스크 유형](./disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>다음 단계
 

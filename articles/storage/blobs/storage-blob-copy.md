@@ -8,12 +8,13 @@ ms.date: 08/20/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: how-to
-ms.openlocfilehash: ce0c16d43e6de9bada5d747949e370eb83f85826
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 144ad1a2f9d9b94deca1462d217aa16baca75846
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446850"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018895"
 ---
 # <a name="copy-a-blob-with-net"></a>.NET을 사용 하 여 blob 복사
 

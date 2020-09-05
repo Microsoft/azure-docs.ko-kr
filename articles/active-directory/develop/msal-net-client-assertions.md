@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 11/18/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 8c97387bfd2a362d3bf5a6b8a3252242f061da31
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp, aaddev
+ms.openlocfilehash: aeef0c4f139f9721449ba2c503f08fafa2c627d3
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80050285"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166317"
 ---
 # <a name="confidential-client-assertions"></a>기밀 클라이언트 어설션
 

@@ -1,14 +1,14 @@
 ---
 title: 고급 쿼리 샘플
 description: Azure Resource Graph를 사용하여 열 작업, 사용된 태그 나열 및 정규식과 일치하는 리소스를 비롯한 일부 고급 쿼리를 실행합니다.
-ms.date: 07/14/2020
+ms.date: 08/13/2020
 ms.topic: sample
-ms.openlocfilehash: 3277d904ebf955c9f924e60dbf6df12eac138a15
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: ba00144a53afd041abe2513862d8a05a51e78809
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534790"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795680"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>고급 Resource Graph 쿼리 샘플
 
@@ -29,6 +29,7 @@ Azure Resource Graph를 사용하는 쿼리를 이해하는 첫 번째 단계는
 - [리소스 그룹에서 특정 태그를 사용하여 스토리지 계정 찾기](#join-findstoragetag)
 - [두 쿼리의 결과를 단일 결과로 결합](#unionresults)
 - [DisplayNames를 사용한 테넌트 및 구독 이름 포함](#displaynames)
+- [전원 상태 확장 속성을 기준으로 가상 머신 요약](#vm-powerstate)
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free)을 만듭니다.
 
@@ -525,9 +526,42 @@ Search-AzGraph -Query "ResourceContainers | where type=='microsoft.resources/sub
 
 ---
 
+## <a name="summarize-virtual-machine-by-the-power-states-extended-property"></a><a name="vm-powerstate"></a>전원 상태 확장 속성을 기준으로 가상 머신 요약
+
+이 쿼리는 가상 머신의 [확장 속성](../concepts/query-language.md#extended-properties)을 사용하여 전원 상태별로 요약합니다.
+
+
+```kusto
+Resources
+| where type == 'microsoft.compute/virtualmachines'
+| summarize count() by tostring(properties.extended.instanceView.powerState.code)
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+az graph query -q "Resources | where type == 'microsoft.compute/virtualmachines' | summarize count() by tostring(properties.extended.instanceView.powerState.code)"
+```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
+Search-AzGraph -Query "Resources | where type == 'microsoft.compute/virtualmachines' | summarize count() by tostring(properties.extended.instanceView.powerState.code)"
+```
+
+# <a name="portal"></a>[포털](#tab/azure-portal)
+
+:::image type="icon" source="../media/resource-graph-small.png"::: Azure Resource Graph Explorer에서 이 쿼리를 사용해 보세요.
+
+- Azure Portal: <a href="https://portal.azure.com/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.com <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- Azure Government Portal: <a href="https://portal.azure.us/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.us <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- Azure 중국 21Vianet 포털: <a href="https://portal.azure.cn/?feature.customportal=false#blade/HubsExtension/ArgQueryBlade/query/Resources%20%7C%20where%20type%20%3D%3D%20%27microsoft.compute%2Fvirtualmachines%27%20%7C%20summarize%20count%28%29%20by%20tostring%28properties.extended.instanceView.powerState.code%29" target="_blank">portal.azure.cn <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+
+---
+
 ## <a name="include-the-tenant-and-subscription-names-with-displaynames"></a><a name="displaynames"></a>DisplayNames를 사용한 테넌트 및 구독 이름 포함
 
-이 쿼리는 _DisplayNames_ 옵션과 함께 새로운 **Include** 매개 변수를 사용하여 **subscriptionDisplayName** 및 **tenantDisplayName**을 결과에 추가합니다. 이 매개 변수는 Azure CLI 및 Azure PowerShell에 대해서만 사용할 수 있습니다.
+이 쿼리는 _DisplayNames_ 옵션과 함께 **Include** 매개 변수를 사용하여 **subscriptionDisplayName** 및 **tenantDisplayName**을 결과에 추가합니다. 이 매개 변수는 Azure CLI 및 Azure PowerShell에 대해서만 사용할 수 있습니다.
 
 ```azurecli-interactive
 az graph query -q "limit 1" --include displayNames

@@ -2,13 +2,13 @@
 title: 매개 변수 파일 만들기
 description: Azure Resource Manager 템플릿을 배포하는 동안 값을 전달하기 위한 매개 변수 파일 만들기
 ms.topic: conceptual
-ms.date: 06/19/2020
-ms.openlocfilehash: 8039b63978e52b69b0f8ffb4dd4e052769f3c5e6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.openlocfilehash: ff5fa74f8b4b7f0ce7dfe2164a369cfd5eedb4d9
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082939"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179626"
 ---
 # <a name="create-resource-manager-parameter-file"></a>Resource Manager 매개 변수 파일 만들기
 
@@ -184,10 +184,30 @@ ms.locfileid: "87082939"
 
 ## <a name="deploy-template-with-parameter-file"></a>매개 변수 파일을 사용 하 여 템플릿 배포
 
-다음을 참조하세요.
+Azure CLI를 사용 하 여 로컬 매개 변수 파일을 전달 하려면 @와 매개 변수 파일의 이름을 사용 합니다.
 
-- [ARM 템플릿 및 Azure CLI를 사용하여 리소스 배포](./deploy-cli.md#parameters)
-- [ARM 템플릿 및 Azure PowerShell을 사용하여 리소스 배포](./deploy-powershell.md#pass-parameter-values)
+```azurecli
+az deployment group create \
+  --name ExampleDeployment \
+  --resource-group ExampleGroup \
+  --template-file storage.json \
+  --parameters @storage.parameters.json
+```
+
+자세한 내용은 [ARM 템플릿을 사용 하 여 리소스 배포 및 Azure CLI](./deploy-cli.md#parameters)을 참조 하세요.
+
+Azure PowerShell를 사용 하 여 로컬 매개 변수 파일을 전달 하려면 `TemplateParameterFile` 매개 변수를 사용 합니다.
+
+```azurepowershell
+New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `
+  -TemplateFile c:\MyTemplates\azuredeploy.json `
+  -TemplateParameterFile c:\MyTemplates\storage.parameters.json
+```
+
+자세한 내용은 [ARM 템플릿을 사용 하 여 리소스 배포 및 Azure PowerShell](./deploy-powershell.md#pass-parameter-values) 을 참조 하세요.
+
+> [!NOTE]
+> 포털의 사용자 지정 템플릿 블레이드에는 매개 변수 파일을 사용할 수 없습니다.
 
 ## <a name="file-name"></a>파일 이름
 
@@ -199,7 +219,7 @@ ms.locfileid: "87082939"
 
 동일한 배포 작업에서 인라인 매개 변수 및 로컬 매개 변수 파일을 사용할 수 있습니다. 예를 들어 로컬 매개 변수 파일에서 일부 값을 지정하고 배포하는 동안 인라인으로 다른 값을 추가할 수 있습니다. 로컬 매개 변수 파일 및 인라인에서 매개 변수에 대한 값을 제공하는 경우 인라인 값이 우선합니다.
 
-파일에 URI를 제공하여 외부 매개 변수 파일을 사용할 수 있습니다. 이렇게 하면 인라인 또는 로컬 파일에서 다른 값을 전달할 수 없습니다. 모든 인라인 매개 변수가 무시됩니다. 외부 파일에서 모든 매개 변수 값을 제공해야 합니다.
+파일에 URI를 제공하여 외부 매개 변수 파일을 사용할 수 있습니다. 외부 매개 변수 파일을 사용 하는 경우 인라인 또는 로컬 파일에서 다른 값을 전달할 수 없습니다. 모든 인라인 매개 변수가 무시됩니다. 외부 파일에서 모든 매개 변수 값을 제공해야 합니다.
 
 ## <a name="parameter-name-conflicts"></a>매개 변수 이름 충돌
 

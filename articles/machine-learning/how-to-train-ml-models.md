@@ -11,17 +11,17 @@ ms.reviewer: sgilley
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 9f63b4215e9b4a67a439e47501876d237a6d3c3b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 70e965e26d3b82cdc63a3c0e147919b8b40585af
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320921"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146592"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>추정기를 사용하여 Azure Machine Learning에서 모델 학습
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Azure Machine Learning에서는 [RunConfiguration 개체](how-to-set-up-training-targets.md#whats-a-run-configuration) 및 [ScriptRunConfig 개체](how-to-set-up-training-targets.md#submit)를 사용하여 학습 스크립트를 [다양한 컴퓨팅 대상](how-to-set-up-training-targets.md#compute-targets-for-training)에 제출할 수 있습니다. 이러한 패턴은 풍부한 유연성과 최대의 제어 능력을 제공합니다.
+Azure Machine Learning에서는 [RunConfiguration 개체](how-to-set-up-training-targets.md#whats-a-run-configuration) 및 [ScriptRunConfig 개체](how-to-set-up-training-targets.md#submit)를 사용하여 학습 스크립트를 [다양한 컴퓨팅 대상](how-to-set-up-training-targets.md)에 제출할 수 있습니다. 이러한 패턴은 풍부한 유연성과 최대의 제어 능력을 제공합니다.
 
 
 예측 도구 클래스를 사용하면 딥 러닝 및 보충 학습을 통해 보다 쉽게 모델을 학습시킬 수 있습니다. 실행 구성을 쉽게 구성할 수 있는 높은 수준의 추상화를 제공합니다. 제네릭 [Estimator](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py)를 만들고 사용하여 선택한 컴퓨팅 대상(로컬 머신, Azure의 단일 VM, Azure의 GPU 클러스터 등)에서 선택한 학습 프레임워크(예: scikit-learn)를 사용하여 학습 스크립트를 제출할 수 있습니다. PyTorch, TensorFlow, Chainer 및 보충 학습 작업의 경우 Azure Machine Learning은 이러한 프레임워크 사용을 간소화할 수 있도록 각각의 [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py), [Chainer](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) 및 [보충 학습](how-to-use-reinforcement-learning.md) 예측 도구를 제공합니다.
@@ -29,7 +29,7 @@ Azure Machine Learning에서는 [RunConfiguration 개체](how-to-set-up-training
 ## <a name="train-with-an-estimator"></a>추정기를 사용하여 학습
 
 [작업 영역](concept-workspace.md)을 만들고 [개발 환경](how-to-configure-environment.md)을 설정하고 난 후, Azure Machine Learning에서 모델을 학습하려면 다음 단계를 수행해야 합니다.  
-1. [원격 컴퓨팅 대상](how-to-set-up-training-targets.md) 만들기(컴퓨팅 대상으로 로컬 컴퓨터를 사용할 수도 있음)
+1. [원격 계산 대상을](how-to-create-attach-compute-sdk.md) 만듭니다 (또는 로컬 컴퓨터를 계산 대상으로 사용할 수도 있음).
 2. [학습 데이터](how-to-access-data.md)를 데이터 저장소에 업로드(선택 사항)
 3. [학습 스크립트](tutorial-train-models-with-aml.md#create-a-training-script) 만들기
 4. `Estimator` 개체 만들기
@@ -39,7 +39,7 @@ Azure Machine Learning에서는 [RunConfiguration 개체](how-to-set-up-training
 
 ### <a name="single-node-training"></a>단일 노드 학습
 
-scikit-learn 모델을 위해 Azure의 원격 컴퓨팅에서 실행되는 단일 노드 학습에 `Estimator`를 사용합니다. [컴퓨팅 대상](how-to-set-up-training-targets.md#amlcompute) 개체 `compute_target` 및 [FileDataset](how-to-create-register-datasets.md) 개체 `ds`는 이미 만들어져 있어야 합니다.
+scikit-learn 모델을 위해 Azure의 원격 컴퓨팅에서 실행되는 단일 노드 학습에 `Estimator`를 사용합니다. [컴퓨팅 대상](how-to-create-attach-compute-sdk.md#amlcompute) 개체 `compute_target` 및 [FileDataset](how-to-create-register-datasets.md) 개체 `ds`는 이미 만들어져 있어야 합니다.
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -63,7 +63,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 --|--
 `source_directory`| 학습 작업에 필요한 모든 코드가 포함된 로컬 디렉터리입니다. 이 폴더는 로컬 머신에서 원격 컴퓨팅으로 복사됩니다.
 `script_params`| `<command-line argument, value>` 쌍 형식으로 학습 스크립트 `entry_script`에 전달하도록 명령줄 인수를 지정하는 사전입니다. `script_params`에서 자세한 정보 플래그를 지정하려면 `<command-line argument, "">`를 사용합니다.
-`compute_target`| 이 경우 학습 스크립트가 Azure Machine Learning 컴퓨팅([AmlCompute](how-to-set-up-training-targets.md#amlcompute)) 클러스터에서 실행되는 원격 컴퓨팅 대상입니다. (AmlCompute 클러스터가 일반적으로 사용되는 대상이기는 하지만 Azure VM 또는 로컬 컴퓨터와 같은 다른 컴퓨팅 대상 유형을 선택할 수도 있습니다.)
+`compute_target`| 이 경우 학습 스크립트가 Azure Machine Learning 컴퓨팅([AmlCompute](how-to-create-attach-compute-sdk.md#amlcompute)) 클러스터에서 실행되는 원격 컴퓨팅 대상입니다. (AmlCompute 클러스터가 일반적으로 사용되는 대상이기는 하지만 Azure VM 또는 로컬 컴퓨터와 같은 다른 컴퓨팅 대상 유형을 선택할 수도 있습니다.)
 `entry_script`| 원격 컴퓨팅에서 실행할 학습 스크립트의 파일 경로(`source_directory` 기준)입니다. 이 파일 및 이 파일이 의존하는 추가 파일은 이 폴더에 있어야 합니다.
 `conda_packages`| conda를 통해 설치할 학습 스크립트에 필요한 Python 패키지의 목록입니다.  
 
@@ -93,7 +93,7 @@ print(run.get_portal_url())
 
 다음 코드에서는 Keras 모델에 대한 분산 학습을 수행하는 방법을 보여 줍니다. 또한 기본 Azure Machine Learning 이미지를 사용하는 대신, 학습을 위해 Docker Hub `continuumio/miniconda`의 사용자 지정 Docker 이미지를 지정합니다.
 
-[컴퓨팅 대상](how-to-set-up-training-targets.md#amlcompute) 개체 `compute_target`은 이미 만들어져 있어야 합니다. 추정기는 다음과 같이 만듭니다.
+[컴퓨팅 대상](how-to-create-attach-compute-sdk.md#amlcompute) 개체 `compute_target`은 이미 만들어져 있어야 합니다. 추정기는 다음과 같이 만듭니다.
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -113,7 +113,7 @@ estimator = Estimator(source_directory='./my-keras-proj',
 
 매개 변수 | Description | 기본값
 --|--|--
-`custom_docker_image`| 사용하려는 이미지의 이름입니다. 공용 Docker 리포지토리(여기서는 Docker 허브)에서 사용할 수 있는 이미지만 제공합니다. 프라이빗 Docker 리포지토리의 이미지를 사용하려면 생성자의 `environment_definition` 매개 변수를 대신 사용합니다. [예제를 참조하세요](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb). | `None`
+`custom_docker_image`| 사용하려는 이미지의 이름입니다. 공용 Docker 리포지토리(여기서는 Docker 허브)에서 사용할 수 있는 이미지만 제공합니다. 프라이빗 Docker 리포지토리의 이미지를 사용하려면 생성자의 `environment_definition` 매개 변수를 대신 사용합니다.| `None`
 `node_count`| 학습 작업에 사용할 노드의 수입니다. | `1`
 `process_count_per_node`| 각 노드에서 실행할 프로세스(또는 “작업자”)의 수입니다. 여기서는 각 노드에서 사용할 수 있는 `2` GPU를 사용합니다.| `1`
 `distributed_training`| MPI 백 엔드를 사용하여 분산 학습을 시작하기 위한 [MPIConfiguration ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?view=azure-ml-py) 개체입니다.  | `None`
@@ -140,8 +140,6 @@ model = run.register_model(model_name='sklearn-sample', model_path=None)
 원본 디렉터리가 로컬 Git 리포지토리인 학습 실행을 시작하면 리포지토리에 대한 정보가 실행 기록에 저장됩니다. 자세한 내용은 [Azure Machine Learning에 대한 Git 통합](concept-train-model-git-integration.md)을 참조하세요.
 
 ## <a name="examples"></a>예제
-예측 도구 패턴의 기본 사항을 보여 주는 Notebook은 다음을 참조하세요.
-* [how-to-use-azureml/training-with-deep-learning/how-to-use-estimator](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb)
 
 예측 도구를 사용하여 scikit-learn 모델을 학습하는 Notebook은 다음을 참조하세요.
 * [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/image-classification-mnist-data/img-classification-part1-training.ipynb)

@@ -3,12 +3,13 @@ title: 신뢰할 수 있는 컬렉션 개체 serialization
 description: 기본 전략과 사용자 지정 serialization을 정의 하는 방법을 포함 하 여 Azure Service Fabric 신뢰할 수 있는 컬렉션 개체 serialization에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 5/8/2017
-ms.openlocfilehash: f7a0dc56c181ddd6a98ab0e263180c222368dafb
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 1d29f5d3391bdea0b21997a392d4d2e053b7ec65
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245996"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018623"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Azure Service Fabric의 신뢰할 수 있는 컬렉션 개체 serialization
 신뢰할 수 있는 컬렉션은 해당 항목을 복제하고 유지하여 컴퓨터 장애 및 정전이 발생해도 지속되도록 합니다.
@@ -23,7 +24,7 @@ Reliable State Manager에는 일부 공용 형식에 대한 기본 제공 직렬
 기본 제공 직렬 변환기는 해당 형식이 변경될 수 없음을 알고 있으며 형식 이름 등의 형식 정보를 포함할 필요가 없으므로 더 효율적입니다.
 
 Reliable State Manager에는 다음 형식에 대한 기본 제공 직렬 변환기가 있습니다. 
-- Guid
+- GUID
 - bool
 - byte
 - sbyte

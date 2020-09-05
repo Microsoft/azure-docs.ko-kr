@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: e78f4133e7f722870f6c84de2ab7e784cd151d79
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: abc8ee3b79b43676ce114094af5614b1a2d945bf
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562687"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230996"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Automation의 Azure 보안 기준
 
@@ -146,7 +146,7 @@ Azure virtual machines에서 호스트 되는 Hybrid Runbook Worker를 사용 �
 
 **지침**: Azure Policy를 사용 하 여 Azure Automation에서 사용 하는 네트워크 리소스에 대 한 표준 보안 구성을 정의 하 고 구현 합니다.
 
-Azure 청사진을 사용 하 여 Azure 리소스 관리자 템플릿, RBAC 컨트롤 및 정책과 같은 주요 환경 아티팩트를 단일 청사진 정의로 패키지화 하 여 대규모 Azure 배포를 간소화할 수도 있습니다. 청사진을 새 구독에 적용 하 고 버전 관리를 통해 제어 및 관리를 세부적으로 조정할 수 있습니다.
+Azure 청사진을 사용 하 여 azure 리소스 관리자 템플릿, Azure RBAC 컨트롤 및 정책과 같은 주요 환경 아티팩트를 단일 청사진 정의로 패키지화 하 여 대규모 Azure 배포를 간소화할 수도 있습니다. 청사진을 새 구독에 적용 하 고 버전 관리를 통해 제어 및 관리를 세부적으로 조정할 수 있습니다.
 
 * [Azure Policy를 구성하고 관리하는 방법](../governance/policy/tutorials/create-and-manage.md)
 
@@ -156,7 +156,7 @@ Azure 청사진을 사용 하 여 Azure 리소스 관리자 템플릿, RBAC 컨�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10: 트래픽 구성 규칙 문서화
 
@@ -486,7 +486,7 @@ Azure Active Directory 사용자 계정에 대한 진단 설정을 만들고 감
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13: 지원 시나리오에서 관련 고객 데이터에 대한 액세스 권한을 Microsoft에 제공
 
@@ -570,11 +570,11 @@ Microsoft에서 관리 하는 기본 플랫폼의 경우 Microsoft는 모든 고
 
 **책임**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AZURE AD RBAC를 사용 하 여 기본 제공 역할 정의를 사용 하 여 Azure Automation 리소스에 대 한 액세스를 제어 하 고, 최소 권한 또는 ' 간단히 ' 액세스 모델에 따라 자동화 리소스에 액세스 하는 사용자에 게 액세스 권한을 할당 합니다. Hybrid Runbook Worker를 사용 하는 경우 해당 가상 컴퓨터에 대 한 관리 id를 활용 하 여 서비스 사용자를 사용 하지 않도록 합니다. 다중 테 넌 트 또는 Hybrid Runbook Worker를 모두 사용 하는 경우 runbook worker의 id에 대해 적절 하 게 범위가 지정 된 RBAC 권한을 적용 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 기본 제공 역할 정의를 사용 하 여 Azure Automation 리소스에 대 한 액세스를 제어 하 고, 최소 권한 또는 ' 간단히 ' 액세스 모델에 따라 자동화 리소스에 액세스 하는 사용자에 게 액세스 권한을 할당 합니다. Hybrid Runbook Worker를 사용 하는 경우 해당 가상 컴퓨터에 대 한 관리 id를 활용 하 여 서비스 사용자를 사용 하지 않도록 합니다. 다중 테 넌 트 또는 Hybrid Runbook Worker를 모두 사용 하는 경우 runbook worker의 id에 대해 적절 하 게 범위가 지정 된 Azure RBAC 권한을 적용 해야 합니다.
 
-* [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
+* [Azure RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
 
 * [Hybrid Runbook Worker에 대한 Runbook 권한](./automation-hybrid-runbook-worker.md#runbook-permissions-for-a-hybrid-runbook-worker)
 
@@ -638,7 +638,7 @@ Hybrid Runbook Worker를 사용 하는 경우 가상 컴퓨터의 가상 디스�
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2: 자동화된 운영 체제 패치 관리 솔루션 배포
 
@@ -756,7 +756,7 @@ Azure virtual machines에서 지원 되는 Hybrid Runbook Worker를 사용 하�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: 컴퓨팅 리소스 내에서 승인되지 않은 소프트웨어 애플리케이션 모니터링
 
@@ -968,9 +968,9 @@ Hybrid Runbook Worker 기능을 사용 하는 경우 배포에 대 한 Azure 가
 
 Hybrid Runbook Worker 기능을 사용 하는 경우 권한 있는 사용자만 이미지에 액세스할 수 있도록 저장소 계정에 있는 사용자 지정 OS 이미지에 대 한 액세스를 적절 하 게 제한 해야 합니다.
 
-* [Azure의 RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
+* [Azure RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-* [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
+* [Azure RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -1260,7 +1260,7 @@ Hybrid Runbook Worker 기능을 사용 하는 경우 Azure 용 Microsoft 맬웨�
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

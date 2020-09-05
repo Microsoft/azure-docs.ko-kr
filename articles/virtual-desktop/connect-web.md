@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 09/24/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7c97009a69c937863a5776d63bab1c994a8a9160
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 2ca5a591d168e18181a29cf1c00a7d1fead54595
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007610"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226049"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-web-client"></a>웹 클라이언트를 사용 하 여 Windows 가상 데스크톱에 연결
 
@@ -41,6 +41,8 @@ HTML5 지원 브라우저가 제대로 작동하는 동안에는 다음 운영 �
 
 >[!NOTE]
 >Azure Resource Manager 통합 하지 않고 Windows 가상 데스크톱 (클래식)을 사용 하는 경우에는에서 리소스에 <https://rdweb.wvd.microsoft.com/webclient> 대신 연결 합니다.
+>
+> US Gov 포털을 사용 하는 경우를 사용 <https://rdweb.wvd.azure.us/arm/webclient/index.html> 합니다.
 
 >[!NOTE]
 >Windows Virtual Desktop에 사용하려는 계정이 아닌 Azure Active Directory 계정으로 이미 로그인한 경우에는 로그아웃하거나 프라이빗 브라우저 창을 사용해야 합니다.

@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 120b7e044452dc47126923449a3e1a6e55cfd6a8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 144db6a5ceaf56a35d3ce11dd54e1dfb4c97d7e3
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000026"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264116"
 ---
-# <a name="retry-logic-in-the-media-services-sdk-for-net"></a>.NET용 Media Services SDK의 다시 시도 논리  
+# <a name="retry-logic-in-the-media-services-sdk-for-net"></a>.NET용 Media Services SDK의 다시 시도 논리
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 Microsoft Azure 서비스에서 작업할 때 일시적 오류가 발생할 수 있습니다. 일시적 오류가 발생하는 대부분의 경우 몇 번 재시도하면 성공적으로 작동합니다. .NET용 Media Services SDK는 웹 요청, 쿼리 실행, 변경 저장, 스토리지 작업에 의해 발생하는 예외 및 오류와 관련된 일시적 오류를 처리하기 위해 재시도 논리를 구현합니다.  기본적으로 .NET용 Media Services SDK는 애플리케이션에 예외를 다시 던져넣기 전에 재시도를 네 번 실행합니다. 그러면 애플리케이션의 코드가 이 예외를 제대로 처리해야 합니다.  
 
@@ -43,11 +45,11 @@ Microsoft Azure 서비스에서 작업할 때 일시적 오류가 발생할 수 
 | DataServiceClientException<br/> 자세한 내용은 [HTTP 오류 상태 코드](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode)를 참조하세요. |예 |예 |예 |예 |
 | DataServiceQueryException<br/> 자세한 내용은 [HTTP 오류 상태 코드](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode)를 참조하세요. |예 |예 |예 |예 |
 | DataServiceRequestException<br/> 자세한 내용은 [HTTP 오류 상태 코드](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode)를 참조하세요. |예 |예 |예 |예 |
-| DataServiceTransportException |아니요 |예 |예 |예 |
-| TimeoutException |예 |예 |예 |아니요 |
+| DataServiceTransportException |예 |예 |예 |예 |
+| TimeoutException |예 |예 |예 |예 |
 | SocketException |예 |예 |예 |예 |
-| StorageException |예 |예 |아니요 |아니요 |
-| IOException |예 |예 |아니요 |아니요 |
+| StorageException |예 |예 |예 |예 |
+| IOException |예 |예 |예 |예 |
 
 ### <a name="webexception-status-codes"></a><a name="WebExceptionStatus"></a> WebException 상태 코드
 다음 테이블은 어떤 WebException 오류 코드에 대해 재시도 논리가 구현되었는지 보여줍니다. [WebExceptionStatus](/dotnet/api/system.net.webexceptionstatus?view=netcore-3.1) 열거형은 상태 코드를 정의합니다.  
@@ -58,13 +60,13 @@ Microsoft Azure 서비스에서 작업할 때 일시적 오류가 발생할 수 
 | NameResolutionFailure |예 |예 |예 |예 |
 | ProxyNameResolutionFailure |예 |예 |예 |예 |
 | SendFailure |예 |예 |예 |예 |
-| PipelineFailure |예 |예 |예 |아니요 |
-| ConnectionClosed |예 |예 |예 |아니요 |
-| KeepAliveFailure |예 |예 |예 |아니요 |
-| UnknownError |예 |예 |예 |아니요 |
-| ReceiveFailure |예 |예 |예 |아니요 |
-| RequestCanceled |예 |예 |예 |아니요 |
-| 제한 시간 |예 |예 |예 |아니요 |
+| PipelineFailure |예 |예 |예 |예 |
+| ConnectionClosed |예 |예 |예 |예 |
+| KeepAliveFailure |예 |예 |예 |예 |
+| UnknownError |예 |예 |예 |예 |
+| ReceiveFailure |예 |예 |예 |예 |
+| RequestCanceled |예 |예 |예 |예 |
+| 제한 시간 |예 |예 |예 |예 |
 | ProtocolError <br/>ProtocolError 시의 재시도는 HTTP 상태 코드 처리에 의해 제어됩니다. 자세한 내용은 [HTTP 오류 상태 코드](media-services-retry-logic-in-dotnet-sdk.md#HTTPStatusCode)를 참조하세요. |예 |예 |예 |예 |
 
 ### <a name="http-error-status-codes"></a><a name="HTTPStatusCode"></a> HTTP 오류 상태 코드
@@ -72,14 +74,14 @@ Query 및 SaveChanges 작업에서 DataServiceClientException, DataServiceQueryE
 
 | 상태 | 웹 요청 | 스토리지 | 쿼리 | SaveChanges |
 | --- | --- | --- | --- | --- |
-| 401 |예 |예 |아니요 |아니요 |
-| 403 |예 |예<br/>더 긴 대기 시간으로 재시도를 처리함. |아니요 |아니요 |
+| 401 |예 |예 |예 |예 |
+| 403 |예 |예<br/>더 긴 대기 시간으로 재시도를 처리함. |예 |예 |
 | 408 |예 |예 |예 |예 |
 | 429 |예 |예 |예 |예 |
-| 500 |예 |예 |예 |아니요 |
-| 502 |예 |예 |예 |아니요 |
+| 500 |예 |예 |예 |예 |
+| 502 |예 |예 |예 |예 |
 | 503 |예 |예 |예 |예 |
-| 504 |예 |예 |예 |아니요 |
+| 504 |예 |예 |예 |예 |
 
 .NET용 Media Services SDK 재처리 논리의 실제 구현을 보려면 [azure-sdk-for-media-services](https://github.com/Azure/azure-sdk-for-media-services/tree/dev/src/net/Client/TransientFaultHandling)를 참조하세요.
 

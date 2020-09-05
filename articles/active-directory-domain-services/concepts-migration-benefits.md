@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: iainfou
-ms.openlocfilehash: 837ca3afaf014c41fded09fa8342eed1c13e5dcf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93dcc1202c08be905cf08513f38e79a8a7674e01
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734931"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650131"
 ---
 # <a name="benefits-of-migration-from-the-classic-to-resource-manager-deployment-model-in-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services의 클래식에서 리소스 관리자 배포 모델로 마이그레이션하는 이점
 
@@ -63,4 +63,4 @@ Azure Active Directory Domain Services (Azure AD DS)를 사용 하면 클래식 
 [availability-zones]: ../availability-zones/az-overview.md
 [howto-migrate]: migrate-from-classic-vnet.md
 [attributes]: synchronization.md#attribute-synchronization-and-mapping-to-azure-ad-ds
-[managed-disks]: ../virtual-machines/windows/managed-disks-overview.md
+[managed-disks]: ../virtual-machines/managed-disks-overview.md

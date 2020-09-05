@@ -7,12 +7,13 @@ ms.date: 07/15/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: how-to
-ms.openlocfilehash: c850fccf5a86df4c35ce4db53b5b40d5e8588210
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 35a93669bf301b3be1d560a0777751c12f3c9d14
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089416"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89001912"
 ---
 # <a name="use-the-azurite-emulator-for-local-azure-storage-development"></a>로컬 Azure Storage 개발에 Azurite 에뮬레이터 사용
 
@@ -327,10 +328,10 @@ Azure Sdk를 사용 하는 경우 옵션을 사용 하 여 Azurite를 시작 `--
 
 ### <a name="well-known-storage-account-and-key"></a>잘 알려진 저장소 계정 및 키
 
-Azurite은 레거시 Azure 저장소 에뮬레이터에서 사용 하는 것과 동일한 잘 알려진 계정 및 키를 허용 합니다.
+Azurite은 레거시 Azure Storage 에뮬레이터에서 사용 하는 것과 동일한 잘 알려진 계정 및 키를 허용 합니다.
 
-- 계정 이름:`devstoreaccount1`
-- 계정 키:`Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==`
+- 계정 이름: `devstoreaccount1`
+- 계정 키: `Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==`
 
 ### <a name="custom-storage-accounts-and-keys"></a>사용자 지정 저장소 계정 및 키
 
@@ -498,7 +499,7 @@ Storage 탐색기에 Azurite HTTPS를 추가 하려면 다음 단계를 수행 �
 1. **로컬 & 연결** 됨을 선택 합니다.
 1. **저장소 계정** 을 마우스 오른쪽 단추로 클릭 하 고 **Azure Storage에 연결을**선택 합니다.
 1. **연결 문자열 사용을 선택 합니다** .
-1. **새로 만들기**를 선택합니다.
+1. **다음**을 선택합니다.
 1. **표시 이름** 필드에 값을 입력 합니다.
 1. 이 문서의 이전 섹션에서 [HTTPS 연결 문자열](#https-connection-strings) 을 입력 합니다.
 1. **다음**을 선택합니다.
@@ -508,12 +509,12 @@ Storage 탐색기에 Azurite HTTPS를 추가 하려면 다음 단계를 수행 �
 
 Azurite를 초기화할 때 작업 영역 위치에서 다음 파일 및 폴더를 만들 수 있습니다.
 
-- `__blobstorage__`-Azurite blob 서비스 지속형 이진 데이터를 포함 하는 디렉터리
-- `__queuestorage__`-Azurite queue 서비스 지속형 이진 데이터를 포함 하는 디렉터리
-- `__azurite_db_blob__.json`-Azurite blob service 메타 데이터 파일
-- `__azurite_db_blob_extent__.json`-Azurite blob service 익스텐트 메타 데이터 파일
-- `__azurite_db_queue__.json`-Azurite 큐 서비스 메타 데이터 파일
-- `__azurite_db_queue_extent__.json`-Azurite 큐 서비스 익스텐트 메타 데이터 파일
+- `__blobstorage__` -Azurite blob 서비스 지속형 이진 데이터를 포함 하는 디렉터리
+- `__queuestorage__` -Azurite queue 서비스 지속형 이진 데이터를 포함 하는 디렉터리
+- `__azurite_db_blob__.json` -Azurite blob service 메타 데이터 파일
+- `__azurite_db_blob_extent__.json` -Azurite blob service 익스텐트 메타 데이터 파일
+- `__azurite_db_queue__.json` -Azurite 큐 서비스 메타 데이터 파일
+- `__azurite_db_queue_extent__.json` -Azurite 큐 서비스 익스텐트 메타 데이터 파일
 
 Azurite를 정리 하려면 위의 파일과 폴더를 삭제 하 고 에뮬레이터를 다시 시작 합니다.
 
@@ -561,5 +562,5 @@ Azurite에 대 한 기여 및 제안은 환영 합니다. 예정 된 기능 및 
 
 ## <a name="next-steps"></a>다음 단계
 
-- [개발 및 테스트에 azure storage 에뮬레이터를 사용](storage-use-emulator.md) 하 여 Azurite로 대체 되는 레거시 Azure storage 에뮬레이터를 사용 합니다.
+- [Azure Storage 에뮬레이터를 사용 하 여 개발 및 테스트 문서에](storage-use-emulator.md) 는 Azurite로 대체 되는 레거시 Azure Storage 에뮬레이터가 있습니다.
 - [Azure Storage 연결 문자열 구성](storage-configure-connection-string.md) 올바른 Azure Storage 연결 문자열을 조합 하는 방법을 설명 합니다.

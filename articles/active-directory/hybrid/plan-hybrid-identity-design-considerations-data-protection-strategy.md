@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0186d862968259aae73071cfecd7d62443d0256
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2bef7de68084ac3084c0b0179a7bbf6b1c9ca951
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67109364"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182448"
 ---
 # <a name="define-data-protection-strategy-for-your-hybrid-identity-solution"></a>하이브리드 ID 솔루션에 대한 데이터 보호 전략 정의
 이 작업에서 하이브리드 ID 솔루션에 대한 데이터 보호 전략을 정의하여 다음에서 정의된 비즈니스 요구 사항을 충족합니다.
@@ -121,7 +121,7 @@ Azure AD를 사용하여 사용자가 인증되면 사용자를 갖게 된 액�
 
 1. 온-프레미스에서 호스트되는 애플리케이션에 대한 조건부 액세스: Windows Server 2012 R2에서 AD FS를 사용하도록 구성된 애플리케이션에 대한 액세스 정책이 있는 등록된 디바이스를 사용할 수 있습니다.
 
-2. Azure Portal에 대한 Access Control: Azure에서는 RBAC(역할 기반 Access Control)를 사용하여 포털에 대한 액세스도 제어할 수 있습니다. 이 방법을 사용하면 회사에서 개인이 Azure Portal에서 수행할 수 있는 작업의 수를 제한할 수 있습니다. RBAC를 사용하여 포털에 대한 액세스를 제어하려면 IT 관리자는 다음 액세스 관리 방법을 사용하여 액세스를 위임할 수 있습니다.
+2. Azure Portal Access Control: azure에서 azure RBAC (역할 기반 액세스 제어)를 사용 하 여 포털에 대 한 액세스를 제어할 수도 있습니다. 이 방법을 사용하면 회사에서 개인이 Azure Portal에서 수행할 수 있는 작업의 수를 제한할 수 있습니다. Azure RBAC를 사용 하 여 포털에 대 한 액세스를 제어 함으로써 IT 관리자는 다음 액세스 관리 방법을 사용 하 여 액세스를 위임할 수 있습니다.
 
    - 그룹 기반 역할 할당: 로컬 Active Directory에서 동기화될 수 있는 Azure AD 그룹에 대한 액세스를 할당할 수 있습니다. 이렇게 하면 그룹 관리에 대한 도구 및 프로세스에서 조직이 만든 기존 투자를 활용할 수 있습니다. 또한 Azure AD Premium의 위임된 그룹 관리 기능을 사용할 수 있습니다.
    - Azure에서 내장된 역할 활용: 소유자, 참가자 및 판독기 등 세 가지 역할을 사용하여 사용자 및 그룹이 작업 수행에 필요한 작업만 수행할 수 있는 권한이 있도록 할 수 있습니다.
@@ -171,5 +171,5 @@ Azure AD는 사용자 활동을 모니터링하여 환경의 잠재적인 보안
 ## <a name="next-steps"></a>다음 단계
 [하이브리드 ID 관리 작업 결정](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>관련 항목
 [설계 고려 사항 개요](plan-hybrid-identity-design-considerations-overview.md)

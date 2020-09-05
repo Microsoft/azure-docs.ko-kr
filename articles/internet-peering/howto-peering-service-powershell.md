@@ -8,12 +8,13 @@ ms.service: internet-peering
 ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 579af2d5cbe0f3dcdbdf749894d5c400112f37cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 98341fbbbcafb6aee938870c22050c6edec352ac
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710799"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079050"
 ---
 # <a name="enable-azure-peering-service-on-a-direct-peering-by-using-powershell"></a>PowerShell을 사용 하 여 직접 피어 링에서 Azure 피어 링 서비스 사용
 
@@ -49,7 +50,7 @@ ms.locfileid: "84710799"
 * [PowerShell을 사용 하 여 Exchange 피어 링 만들기 또는 수정](howto-exchange-powershell.md)
 * [PowerShell을 사용 하 여 레거시 Exchange 피어 링을 Azure 리소스로 변환](howto-legacy-exchange-powershell.md)
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 다음 명령을 실행하여 모든 매개 변수에 대한 자세한 설명을 볼 수 있습니다.
 
 ```powershell

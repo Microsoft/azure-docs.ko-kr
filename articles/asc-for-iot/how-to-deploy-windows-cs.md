@@ -10,17 +10,18 @@ editor: ''
 ms.assetid: 2cf6a49b-5d35-491f-abc3-63ec24eb4bc2
 ms.subservice: asc-for-iot
 ms.devlang: na
+ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 4d7d2f0a423a50f85160a856480eaa973be7e2b0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 64b9176a16f4d8d2b7ee7f33e00714d811c5f070
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81537613"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209079"
 ---
 # <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Windows에 IoT용 Azure Security Center C# 기반 보안 에이전트 배포
 
@@ -34,7 +35,7 @@ ms.locfileid: "81537613"
 > * 에이전트 제거
 > * 문제 해결
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 다른 플랫폼 및 에이전트 버전의 경우 [올바른 보안 에이전트 선택](how-to-deploy-agent.md)을 참조 하세요.
 
@@ -80,7 +81,7 @@ ms.locfileid: "81537613"
 
 추가 도움말을 보려면 PowerShell에서 Get-help 명령을 사용 합니다.
 
-Get-help 예:```Get-Help .\InstallSecurityAgent.ps1```
+Get-help 예:    ```Get-Help .\InstallSecurityAgent.ps1```
 
 ### <a name="verify-deployment-status"></a>배포 상태 확인
 

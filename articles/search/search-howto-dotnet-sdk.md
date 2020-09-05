@@ -9,16 +9,17 @@ ms.devlang: dotnet
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 08/05/2020
-ms.openlocfilehash: 820ce3078b642f2cc672cd6906895f818c06f5b7
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 394c87bcd3e4580289fbccc6a31b164f914dc8a3
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905426"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020799"
 ---
 # <a name="how-to-use-microsoftazuresearch-v10-in-a-net-application"></a>.NET 응용 프로그램에서 v10 (Microsoft. Search)를 사용 하는 방법
 
-이 문서에서는 c # 및 [Azure Cognitive Search (v10) .NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)를 사용 하 여 검색 개체를 만들고 관리 하는 방법을 설명 합니다. 버전 10은 Microsoft의 최신 버전입니다. 앞으로는 Azure SDK 팀의 [Azure.Search.Documents](https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme) 에서 새로운 기능이 출시 될 예정입니다.
+이 문서에서는 c # 및 [Azure Cognitive Search (v10) .NET SDK](/dotnet/api/overview/azure/search)를 사용 하 여 검색 개체를 만들고 관리 하는 방법을 설명 합니다. 버전 10은 Microsoft의 최신 버전입니다. 앞으로는 Azure SDK 팀의 [Azure.Search.Documents](/dotnet/api/overview/azure/search.documents-readme) 에서 새로운 기능이 출시 될 예정입니다.
 
 기존 또는 처리 중인 개발 프로젝트가 있는 경우 버전 10을 계속 사용 합니다. 새 프로젝트의 경우 또는 새 기능을 사용 하려면 기존 검색 솔루션을 새 라이브러리로 전환 해야 합니다.
 
@@ -36,14 +37,14 @@ SDK의 다른 NuGet 패키지는 다음과 같습니다.
 
 다양한 클라이언트 라이브러리가 `Index`, `Field`, `Document` 등의 클래스뿐만 아니라 `SearchServiceClient` 및 `SearchIndexClient` 클래스의 `Indexes.Create` 및 `Documents.Search` 등을 정의합니다. 이러한 클래스는 다음과 같은 네임 스페이스에 구성됩니다.
 
-* [Microsoft. Azure 검색](https://docs.microsoft.com/dotnet/api/microsoft.azure.search)
-* [Microsoft.Azure.Search.Models](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models)
+* [Microsoft.Azure.Search](/dotnet/api/microsoft.azure.search)
+* [Microsoft.Azure.Search.Models](/dotnet/api/microsoft.azure.search.models)
 
 SDK의 향후 업데이트에 대 한 피드백을 제공 하려는 경우 [피드백 페이지](https://feedback.azure.com/forums/263029-azure-search/) 를 참조 하거나 [GitHub](https://github.com/azure/azure-sdk-for-net/issues) 에서 문제를 만들고 문제 제목에 "Azure Cognitive Search"를 언급 하세요.
 
-.NET SDK는 `2019-05-06` [Azure Cognitive Search REST API](https://docs.microsoft.com/rest/api/searchservice/)버전을 대상으로 합니다. 이 버전에는 Azure Blob을 인덱싱할 때 [복합 형식](search-howto-complex-data-types.md), [AI 보강](cognitive-search-concept-intro.md), [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete)및 [JsonLines 구문 분석 모드](search-howto-index-json-blobs.md) 에 대 한 지원이 포함 됩니다. 
+.NET SDK는 `2019-05-06` [Azure Cognitive Search REST API](/rest/api/searchservice/)버전을 대상으로 합니다. 이 버전에는 Azure Blob을 인덱싱할 때 [복합 형식](search-howto-complex-data-types.md), [AI 보강](cognitive-search-concept-intro.md), [자동 완성](/rest/api/searchservice/autocomplete)및 [JsonLines 구문 분석 모드](search-howto-index-json-blobs.md) 에 대 한 지원이 포함 됩니다. 
 
-이 SDK는 Search 서비스 생성 및 확장, API 키 관리 등의 [관리 작업](https://docs.microsoft.com/rest/api/searchmanagement/)을 지원하지 않습니다. .NET 응용 프로그램에서 검색 리소스를 관리 해야 하는 경우 [Azure Cognitive Search .Net MANAGEMENT SDK](https://aka.ms/search-mgmt-sdk)를 사용할 수 있습니다.
+이 SDK는 Search 서비스 생성 및 확장, API 키 관리 등의 [관리 작업](/rest/api/searchmanagement/)을 지원하지 않습니다. .NET 응용 프로그램에서 검색 리소스를 관리 해야 하는 경우 [Azure Cognitive Search .Net MANAGEMENT SDK](https://aka.ms/search-mgmt-sdk)를 사용할 수 있습니다.
 
 ## <a name="upgrading-to-the-latest-version-of-the-sdk"></a>최신 버전의 SDK로 업그레이드
 이전 버전의 Azure Cognitive Search .NET SDK를 이미 사용 중이 고 일반적으로 사용 가능한 최신 버전으로 업그레이드 하려는 경우 [이 문서](search-dotnet-sdk-migration-version-9.md) 에서 방법을 설명 합니다.
@@ -138,7 +139,7 @@ ISearchIndexClient indexClient = serviceClient.Indexes.GetClient(indexName);
 ```
 
 > [!NOTE]
-> 일반적인 검색 응용 프로그램에서 인덱스 관리 및 채우기는 검색 쿼리와는 별도의 구성 요소에 의해 처리 될 수 있습니다. `Indexes.GetClient`는 추가를 제공 하는 문제를 저장 하므로 인덱스를 채우는 데 편리 `SearchCredentials` 합니다. 이는 새 `SearchIndexClient`에 `SearchServiceClient`을(를) 만드는 데 사용하는 관리 키를 눌러 수행됩니다. 그러나 쿼리를 실행 하는 응용 프로그램 부분에서는를 직접 만드는 것이 좋습니다 `SearchIndexClient` . 그러면 쿼리 키를 전달할 수 있으므로 관리자 키 대신 데이터를 읽을 수 있습니다. 이는 최소 권한의 원칙와 일치하고 애플리케이션을 더욱 안전하게 하는데 도움이 됩니다. 관리 키와 쿼리 키에 대한 자세한 내용은 [여기](https://docs.microsoft.com/rest/api/searchservice/#authentication-and-authorization)에서 확인할 수 있습니다.
+> 일반적인 검색 응용 프로그램에서 인덱스 관리 및 채우기는 검색 쿼리와는 별도의 구성 요소에 의해 처리 될 수 있습니다. `Indexes.GetClient` 는 추가를 제공 하는 문제를 저장 하므로 인덱스를 채우는 데 편리 `SearchCredentials` 합니다. 이는 새 `SearchIndexClient`에 `SearchServiceClient`을(를) 만드는 데 사용하는 관리 키를 눌러 수행됩니다. 그러나 쿼리를 실행 하는 응용 프로그램 부분에서는를 직접 만드는 것이 좋습니다 `SearchIndexClient` . 그러면 쿼리 키를 전달할 수 있으므로 관리자 키 대신 데이터를 읽을 수 있습니다. 이는 최소 권한의 원칙와 일치하고 애플리케이션을 더욱 안전하게 하는데 도움이 됩니다. 관리 키와 쿼리 키에 대한 자세한 내용은 [여기](/rest/api/searchservice/#authentication-and-authorization)에서 확인할 수 있습니다.
 > 
 > 
 
@@ -264,7 +265,7 @@ private static void CreateIndex(string indexName, SearchServiceClient serviceCli
 >
 > 
 
-필드 외에도, 점수 매기기 프로필, 확인 기 또는 CORS 옵션을 인덱스에 추가할 수 있습니다. 이러한 매개 변수는 간단히 하기 위해 샘플에서 생략 되었습니다. [SDK 참조](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index)에서 인덱스 개체 및 해당 구성 요소에 대 한 자세한 내용과 [Azure Cognitive Search REST API 참조](https://docs.microsoft.com/rest/api/searchservice/)를 찾을 수 있습니다.
+필드 외에도, 점수 매기기 프로필, 확인 기 또는 CORS 옵션을 인덱스에 추가할 수 있습니다. 이러한 매개 변수는 간단히 하기 위해 샘플에서 생략 되었습니다. [SDK 참조](/dotnet/api/microsoft.azure.search.models.index)에서 인덱스 개체 및 해당 구성 요소에 대 한 자세한 내용과 [Azure Cognitive Search REST API 참조](/rest/api/searchservice/)를 찾을 수 있습니다.
 
 ### <a name="populating-the-index"></a>인덱스 채우기
 의 다음 단계는 `Main` 새로 만든 인덱스를 채웁니다. 이 인덱스 채우기는 다음 메서드에서 수행 됩니다. (일부 코드는 "..."로 대체 되었습니다. 설명을 위한 것입니다.  전체 데이터 채우기 코드는 전체 샘플 솔루션을 참조 하세요.)
@@ -395,7 +396,7 @@ private static void UploadDocuments(ISearchIndexClient indexClient)
 이 메서드의 세 번째 부분은 인덱싱에 중요한 오류 사례를 처리하는 catch 블록입니다. Azure Cognitive Search 서비스에서 일괄 처리의 일부 문서를 인덱싱하지 못한 경우에 `IndexBatchException` 의해이 throw 됩니다 `Documents.Index` . 이 예외는 서비스의 부하가 높은 상태에서 문서를 인덱싱하는 경우에 발생할 수 있습니다. **이 경우 코드에서 명시적으로 처리하는 것이 좋습니다.** 실패한 문서 인덱싱을 잠시 후 다시 시도하거나, 샘플에서 하던 것처럼 기록하여 계속하거나, 애플리케이션의 데이터 일관성 요구 사항에 따라 다른 작업을 수행할 수 있습니다.
 
 > [!NOTE]
-> 메서드를 사용 하 여 [`FindFailedActionsToRetry`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexbatchexception.findfailedactionstoretry) 에 대 한 이전 호출에서 실패 한 동작만 포함 하는 새 일괄 처리를 생성할 수 있습니다 `Index` . 이 메서드를 [StackOverflow](https://stackoverflow.com/questions/40012885/azure-search-net-sdk-how-to-use-findfailedactionstoretry)에서 적절히 사용하는 방법을 확인할 수 있습니다.
+> 메서드를 사용 하 여 [`FindFailedActionsToRetry`](/dotnet/api/microsoft.azure.search.indexbatchexception.findfailedactionstoretry) 에 대 한 이전 호출에서 실패 한 동작만 포함 하는 새 일괄 처리를 생성할 수 있습니다 `Index` . 이 메서드를 [StackOverflow](https://stackoverflow.com/questions/40012885/azure-search-net-sdk-how-to-use-findfailedactionstoretry)에서 적절히 사용하는 방법을 확인할 수 있습니다.
 >
 >
 
@@ -470,7 +471,7 @@ public partial class Hotel
 
 두 번째 주목할 점은 각 속성이,, 및와 같은 특성으로 데코 레이트 된다는 것입니다 `IsFilterable` `IsSearchable` `Key` `Analyzer` . 이러한 특성은 [Azure Cognitive Search 인덱스의 해당 필드 특성](/rest/api/searchservice/create-index)에 직접 매핑됩니다. `FieldBuilder`클래스는 이러한 속성을 사용 하 여 인덱스에 대 한 필드 정의를 생성 합니다.
 
-클래스에 대 한 세 번째 중요 한 사항은 `Hotel` 공용 속성의 데이터 형식입니다. 이러한 속성의 .NET 유형은 인덱스 정의의 동등한 필드 유형에 매핑합니다. 예를 들어, `Category` 문자열 속성은 `Edm.String` 유형인 `category` 필드에 매핑됩니다. ,, 및 사이에는 유사한 형식 매핑이 있습니다 `bool?` `Edm.Boolean` `DateTimeOffset?` `Edm.DateTimeOffset` . 형식 매핑에 대 한 특정 규칙은 `Documents.Get` [Azure COGNITIVE SEARCH .net SDK 참조](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get)의 메서드에 설명 되어 있습니다. `FieldBuilder` 클래스는 사용자를 위해 이러한 매핑을 처리하는 역할을 하지만 serialization 문제를 해결해야 하는 경우에도 알아두면 도움이 될 수 있습니다.
+클래스에 대 한 세 번째 중요 한 사항은 `Hotel` 공용 속성의 데이터 형식입니다. 이러한 속성의 .NET 유형은 인덱스 정의의 동등한 필드 유형에 매핑합니다. 예를 들어, `Category` 문자열 속성은 `Edm.String` 유형인 `category` 필드에 매핑됩니다. ,, 및 사이에는 유사한 형식 매핑이 있습니다 `bool?` `Edm.Boolean` `DateTimeOffset?` `Edm.DateTimeOffset` . 형식 매핑에 대 한 특정 규칙은 `Documents.Get` [Azure COGNITIVE SEARCH .net SDK 참조](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get)의 메서드에 설명 되어 있습니다. `FieldBuilder` 클래스는 사용자를 위해 이러한 매핑을 처리하는 역할을 하지만 serialization 문제를 해결해야 하는 경우에도 알아두면 도움이 될 수 있습니다.
 
 속성을 확인 하는 데 문제가 `SmokingAllowed` 있나요?
 
@@ -481,7 +482,7 @@ public bool? SmokingAllowed => (Rooms != null) ? Array.Exists(Rooms, element => 
 
 `JsonIgnore`이 속성의 특성은를 `FieldBuilder` 인덱스에 필드로 직렬화 하지 않도록에 지시 합니다.  이 방법은 응용 프로그램에서 도우미로 사용할 수 있는 클라이언트 쪽 계산 된 속성을 만드는 좋은 방법입니다.  이 경우 `SmokingAllowed` 속성은 `Room` 컬렉션에 흡연 허용 되는지 여부를 반영 `Rooms` 합니다.  모두 false 이면 전체 호텔에서 흡연을 허용 하지 않음을 나타냅니다.
 
-및와 같은 일부 `Address` 속성 `Rooms` 은 .net 클래스의 인스턴스입니다.  이러한 속성은 보다 복잡 한 데이터 구조를 나타내므로 인덱스에 [복잡 한 데이터 형식의](https://docs.microsoft.com/azure/search/search-howto-complex-data-types) 필드가 필요 합니다.
+및와 같은 일부 `Address` 속성 `Rooms` 은 .net 클래스의 인스턴스입니다.  이러한 속성은 보다 복잡 한 데이터 구조를 나타내므로 인덱스에 [복잡 한 데이터 형식의](./search-howto-complex-data-types.md) 필드가 필요 합니다.
 
 `Address`속성은 아래에 정의 된 클래스의 여러 값 집합을 나타냅니다 `Address` .
 
@@ -562,7 +563,7 @@ namespace AzureSearch.SDKHowTo
 사용자 고유의 클래스를 사용 하 여 인덱스의 문서와 상호 작용 하는이 기능은 양방향으로 작동 합니다. 다음 섹션에서 볼 수 있듯이 검색 결과를 검색 하 고 SDK에서 사용자가 선택한 유형으로 자동 deserialize 하도록 할 수도 있습니다.
 
 > [!NOTE]
-> Azure Cognitive Search .NET SDK는 필드 `Document` 값에 필드 이름을 매핑하는 키/값인 클래스를 사용 하 여 동적으로 형식화 된 문서도 지원 합니다. 디자인 타임에서 인덱스 스키마를 알 수 없거나 특정 모델 클래스에 바인딩하기 불편한 시나리오에서 유용합니다. 문서를 처리하는 SDK의 모든 메서드에는 `Document` 클래스와 연동하는 오버로드와 제네릭 유형 매개 변수를 취하는 강력한 유형의 오버로드가 있습니다. 이 자습서의 샘플 코드에서는 후자만 사용됩니다. [ `Document` 클래스](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.document) 는에서 상속 `Dictionary<string, object>` 됩니다.
+> Azure Cognitive Search .NET SDK는 필드 `Document` 값에 필드 이름을 매핑하는 키/값인 클래스를 사용 하 여 동적으로 형식화 된 문서도 지원 합니다. 디자인 타임에서 인덱스 스키마를 알 수 없거나 특정 모델 클래스에 바인딩하기 불편한 시나리오에서 유용합니다. 문서를 처리하는 SDK의 모든 메서드에는 `Document` 클래스와 연동하는 오버로드와 제네릭 유형 매개 변수를 취하는 강력한 유형의 오버로드가 있습니다. 이 자습서의 샘플 코드에서는 후자만 사용됩니다. [ `Document` 클래스](/dotnet/api/microsoft.azure.search.models.document) 는에서 상속 `Dictionary<string, object>` 됩니다.
 > 
 >
 
@@ -649,12 +650,12 @@ private static void RunQueries(ISearchIndexClient indexClient)
 }
 ```
 
-쿼리를 실행할 때마다 이 메서드는 먼저 새 `SearchParameters` 개체를 만듭니다. 이 개체는 정렬, 필터링, 페이징, 패싯 등의 쿼리에 대 한 추가 옵션을 지정 하는 데 사용 됩니다. 이 메서드에서 다른 쿼리에 대해 `Filter`, `Select`, `OrderBy` 및 `Top` 속성을 설정합니다. 모든 `SearchParameters` 속성은 [여기](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.searchparameters)에 설명되어 있습니다.
+쿼리를 실행할 때마다 이 메서드는 먼저 새 `SearchParameters` 개체를 만듭니다. 이 개체는 정렬, 필터링, 페이징, 패싯 등의 쿼리에 대 한 추가 옵션을 지정 하는 데 사용 됩니다. 이 메서드에서 다른 쿼리에 대해 `Filter`, `Select`, `OrderBy` 및 `Top` 속성을 설정합니다. 모든 `SearchParameters` 속성은 [여기](/dotnet/api/microsoft.azure.search.models.searchparameters)에 설명되어 있습니다.
 
 다음 단계를 실제로 검색 쿼리를 실행합니다. 검색을 실행 하는 방법은 메서드를 사용 하 여 수행 `Documents.Search` 합니다. 각 쿼리에 대해 문자열(또는 검색 텍스트가 없는 경우 `"*"`)로 사용할 검색 텍스트와 앞서 만든 검색 매개 변수를 전달합니다. 또한 SDK에 검색 결과 내 문서를 `Hotel` 유형의 개체로 역직렬화하도록 명령하는 `Documents.Search`에 대한 유형 매개 변수로 `Hotel`을(를) 지정할 수도 있습니다.
 
 > [!NOTE]
-> 검색 쿼리 식 구문에 대한 자세한 내용은 [여기](https://docs.microsoft.com/rest/api/searchservice/Simple-query-syntax-in-Azure-Search)에서 찾을 수 있습니다.
+> 검색 쿼리 식 구문에 대한 자세한 내용은 [여기](/rest/api/searchservice/Simple-query-syntax-in-Azure-Search)에서 찾을 수 있습니다.
 > 
 > 
 
@@ -709,7 +710,7 @@ results = indexClient.Documents.Search<Hotel>("*", parameters);
 WriteDocuments(results);
 ```
 
-이 쿼리는 OData `$filter` 식 `Rooms/any(r: r/BaseRate lt 100)`을 사용하여 인덱스의 문서를 필터링합니다. [Any 연산자](https://docs.microsoft.com/azure/search/search-query-odata-collection-operators) 를 사용 하 여 ' BaseRate l 100 '을 방 컬렉션의 모든 항목에 적용 합니다. Azure Cognitive Search에서 지 원하는 OData 구문에 대 한 자세한 내용은 [여기](https://docs.microsoft.com/azure/search/query-odata-filter-orderby-syntax)에서 찾을 수 있습니다.
+이 쿼리는 OData `$filter` 식 `Rooms/any(r: r/BaseRate lt 100)`을 사용하여 인덱스의 문서를 필터링합니다. [Any 연산자](./search-query-odata-collection-operators.md) 를 사용 하 여 ' BaseRate l 100 '을 방 컬렉션의 모든 항목에 적용 합니다. Azure Cognitive Search에서 지 원하는 OData 구문에 대 한 자세한 내용은 [여기](./query-odata-filter-orderby-syntax.md)에서 찾을 수 있습니다.
 
 다음은 쿼리 결과입니다.
 
@@ -769,6 +770,6 @@ WriteDocuments(results);
 이 단계에서 자습서를 완료하지만 여기서 멈추지 마십시오. * * 다음 단계에서는 Azure Cognitive Search에 대해 자세히 알아볼 추가 리소스를 제공 합니다.
 
 ## <a name="next-steps"></a>다음 단계
-* [.NET SDK](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) 및 [REST API](https://docs.microsoft.com/rest/api/searchservice/)에 대한 참고 자료를 찾아봅니다.
-* [명명 규칙](https://docs.microsoft.com/rest/api/searchservice/Naming-rules) 을 검토하여 다양한 개체 명명에 대한 규칙에 알아보십시오.
-* Azure Cognitive Search에서 [지원 되는 데이터 형식을](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types) 검토 합니다.
+* [.NET SDK](/dotnet/api/microsoft.azure.search) 및 [REST API](/rest/api/searchservice/)에 대한 참고 자료를 찾아봅니다.
+* [명명 규칙](/rest/api/searchservice/Naming-rules) 을 검토하여 다양한 개체 명명에 대한 규칙에 알아보십시오.
+* Azure Cognitive Search에서 [지원 되는 데이터 형식을](/rest/api/searchservice/Supported-data-types) 검토 합니다.

@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 06/16/2020
 ms.author: jlian
-ms.openlocfilehash: 7776345ee4e02baa2d2a6ae7bc08389aa94bd09b
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 3c097260812e72dfaa3678a4aade556a337e6a6c
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534484"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272903"
 ---
 # <a name="iot-hub-support-for-virtual-networks-with-private-link-and-managed-identity"></a>Private Link 및 관리 ID를 사용하는 가상 네트워크에 대한 IoT Hub 지원
 
@@ -182,7 +182,7 @@ IoT Hub는 고객 소유 스토리지 계정으로 메시지를 라우팅할 수
 
 5. **사용자 지정 엔드포인트** 섹션으로 이동하여 **추가**를 클릭합니다. 엔드포인트 형식으로 **스토리지**를 선택합니다.
 
-6. 표시되는 페이지에서 엔드포인트의 이름을 지정하고, Blob Storage에서 사용할 컨테이너를 선택하고, 인코딩과 파일 이름 형식을 지정합니다. 스토리지 엔드포인트의 **인증 유형**을 **시스템 할당됨**으로 선택합니다. **만들기** 단추를 클릭합니다.
+6. 표시되는 페이지에서 엔드포인트의 이름을 지정하고, Blob Storage에서 사용할 컨테이너를 선택하고, 인코딩과 파일 이름 형식을 지정합니다. **Id 기반** 을 저장소 끝점에 대 한 **인증 형식** 으로 선택 합니다. **만들기** 단추를 클릭합니다.
 
 이제 사용자 지정 스토리지 엔드포인트가 허브의 시스템 할당 ID를 사용하도록 설정되었고 방화벽 제한에도 불구하고 스토리지 리소스에 액세스할 권한을 갖게 되었습니다. 이제 이 엔드포인트를 사용하여 라우팅 규칙을 설정할 수 있습니다.
 
@@ -234,7 +234,7 @@ IoT Hub의 파일 업로드 기능에서는 디바이스가 고객 소유 스토
 
 4. IoT Hub의 리소스 페이지에서 **파일 업로드** 탭으로 이동합니다.
 
-5. 표시되는 페이지에서 Blob Storage에서 사용할 컨테이너를 선택하고, **파일 알림 설정**, **SAS TTL**, **기본 TTL** 및 **최대 전달 횟수**를 원하는 대로 구성합니다. 스토리지 엔드포인트의 **인증 유형**을 **시스템 할당됨**으로 선택합니다. **만들기** 단추를 클릭합니다.
+5. 표시되는 페이지에서 Blob Storage에서 사용할 컨테이너를 선택하고, **파일 알림 설정**, **SAS TTL**, **기본 TTL** 및 **최대 전달 횟수**를 원하는 대로 구성합니다. **Id 기반** 을 저장소 끝점에 대 한 **인증 형식** 으로 선택 합니다. **만들기** 단추를 클릭합니다.
 
 이제 파일 업로드를 위한 스토리지 엔드포인트가 허브의 시스템 할당 ID를 사용하도록 설정되었고 방화벽 제한에도 불구하고 스토리지 리소스에 액세스할 권한을 갖게 되었습니다.
 

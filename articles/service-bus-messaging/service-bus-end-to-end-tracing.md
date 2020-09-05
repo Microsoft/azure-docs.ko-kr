@@ -3,12 +3,13 @@ title: Azure Service Bus 엔드투엔드 추적 및 진단 | Microsoft Docs
 description: Service Bus 클라이언트 진단 및 종단 간 추적 (처리에 관련 된 모든 서비스를 통해 클라이언트)에 대 한 개요입니다.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 6138d3d6424364f28f55f81044768acb894bc651
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 9b46f85e16370d15e3a8def98cdcdf8b3878208d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85340731"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021632"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Service Bus 메시징을 통한 분산 추적 및 상관관계
 

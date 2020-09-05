@@ -2,25 +2,21 @@
 title: '자습서: Panorama9와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Panorama9 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 5e28d7fa-03be-49f3-96c8-b567f1257d44
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c88088b804f90769512d33a5e96fdedc5ce6fba8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7bf3afef81c70355326ed9341f2dd8a39d542b54
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67094919"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554110"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>자습서: Panorama9와 Azure Active Directory 통합
 

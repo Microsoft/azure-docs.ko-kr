@@ -3,14 +3,15 @@ title: Azure Functions SignalR 서비스 출력 바인딩
 description: Azure Functions에서 SignalR 서비스 메시지를 보내는 방법에 대해 알아봅니다.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 02/20/2020
 ms.author: cshoe
-ms.openlocfilehash: d3ba9183cdea752c3e69a41770b6a5319a4a601d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b401ff20b553629341c5190deb4cfc54c474d789
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77530251"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212580"
 ---
 # <a name="signalr-service-output-binding-for-azure-functions"></a>Azure Functions에 대 한 SignalR 서비스 출력 바인딩
 
@@ -721,7 +722,7 @@ public SignalRGroupAction removeFromGroup(
 
 ---
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>구성
 
 ### <a name="signalrconnectioninfo"></a>SignalRConnectionInfo
 

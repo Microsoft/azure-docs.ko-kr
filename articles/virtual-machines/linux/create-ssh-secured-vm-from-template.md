@@ -6,16 +6,20 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: cynthn
-ms.openlocfilehash: ef9650690435a3770e59326e757ab1c783fa7b23
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 184e856636a74ce5b7ac72b2e8cab3d1f19c4e17
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372759"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074392"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-with-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿을 사용하여 Linux 가상 머신을 만드는 방법
 
 Azure Cloud shell의 Azure Resource Manager 템플릿과 Azure CLI를 사용 하 여 Linux VM (가상 머신)을 만드는 방법에 대해 알아봅니다. Windows 가상 머신을 만들려면 [리소스 관리자 템플릿에서 windows 가상 머신 만들기](../windows/ps-template.md)를 참조 하세요.
+
+대신 Azure Portal에서 템플릿을 배포할 수 있습니다. 포털에서 템플릿을 열려면 **Azure에 배포** 단추를 선택 합니다.
+
+[![Azure에 배포](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-sshkey%2Fazuredeploy.json)
 
 ## <a name="templates-overview"></a>템플릿 개요
 

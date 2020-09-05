@@ -6,26 +6,26 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 05/26/2020
+ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: d397e481fcd11e534e4bb5cf98f8c402435e890e
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: ce9f7e922b9a168205ea1d193830dd654691998a
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83997080"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510813"
 ---
 # <a name="what-are-parallel-documents"></a>병렬 문서란?
 
 병렬 문서는 서로가 서로의 번역인 문서 쌍입니다. 이 쌍에 포함된 한 문서에는 원본 언어의 문장이 포함되어 있고, 다른 문서에는 이 문장을 대상 언어로 번역한 문장이 포함되어 있습니다.
-"원본"으로 표시 되는 언어와 "대상"으로 표시 되는 언어는 중요 하지 않습니다. 병렬 문서를 사용 하 여 변환 시스템을 어느 방향으로든 학습 시킬 수 있습니다.
+어떤 언어가 "소스"로 표시되고 어떤 언어가 "대상"으로 표시되는지는 중요하지 않습니다. 병렬 문서는 어느 방향으로든 번역 시스템을 학습시키는 데 사용할 수 있습니다.
 
 ## <a name="requirements"></a>요구 사항
 
 시스템을 학습 하려면 최소 1만의 고유한 맞춤 병렬 문장이 필요 합니다. 이러한 제한 사항은 병렬 문장에 번역 모델을 성공적으로 학습할 수 있는 충분 한 고유 어휘가 포함 되어 있는지 확인 하는 보안 네트워크입니다. 변환 시스템의 품질을 향상 시키기 위해 지속적으로 더 많은 병렬 콘텐츠와 다시 학습를 추가 하는 것이 가장 좋습니다. [문장 맞춤](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/sentence-alignment)을 참조 하십시오.
 
-Microsoft에서는 사용자 지정 변환기로 업로드 된 문서가 제 3 자의 저작권 또는 지적 재산을 위반 하지 않도록 해야 합니다. 자세한 내용은 [사용 약관](https://azure.microsoft.com/support/legal/cognitive-services-terms/)을 참조하세요.
+Microsoft에서는 Custom Translator에 업로드된 문서가 타사의 저작권 또는 지적 재산권을 위반하지 말 것을 요구합니다. 자세한 내용은 [사용 약관](https://azure.microsoft.com/support/legal/cognitive-services-terms/)을 참조하세요.
 포털을 사용하여 문서를 업로드하면 문서 자체의 지적 재산 소유권은 변경되지 않습니다.
 
 ## <a name="use-of-parallel-documents"></a>병렬 문서 사용

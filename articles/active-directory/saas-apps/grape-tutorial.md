@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory와 Gra-Pe 통합 | Microsoft Docs'
 description: Azure Active Directory와 Gra-Pe 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 073f8641-b64d-4754-b1a6-2b91c865b13d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 9d614339e1520fd3ce78116d2b8fc2347e2799d6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 99357c01774ef10d9c759df89b94c538abc720f3
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73158094"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551578"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-gra-pe"></a>자습서: Gra-Pe와 Azure Active Directory 통합
 

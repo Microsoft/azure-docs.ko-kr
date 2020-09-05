@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: e82fa00226c964d5ba774cdf06f5b0f3898bdc55
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3050f701c11773207aa6054d4d08d908d87b2ce7
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74113085"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932069"
 ---
 # <a name="troubleshooting-odata-collection-filters-in-azure-cognitive-search"></a>Azure Cognitive Search의 OData 컬렉션 필터 문제 해결
 
@@ -39,11 +39,11 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 | 오류 메시지 | 상황 | 자세한 내용은 다음을 참조하세요. |
 | --- | --- | --- |
 | ' Ismatch ' 함수에 범위 변수 '에 바인딩된 매개 변수가 없습니다. 람다 식 (' any ' 또는 ' all ') 내에서는 바인딩된 필드 참조만 지원 됩니다. ' Ismatch ' 함수가 람다 식 외부에 있도록 필터를 변경 하 고 다시 시도 하세요. | `search.ismatch` `search.ismatchscoring` 람다 식 내에서 또는 사용 | [복합 컬렉션 필터링 규칙](#bkmk_complex) |
-| 람다 식이 잘못 되었습니다. 컬렉션 형식 (Edm. String)의 필드를 반복 하는 람다 식에서 반대쪽이 예상 되는 같음 또는 같지 않은지 테스트를 발견 했습니다. ' Any '의 경우 ' x eq y ' 또는 ' search.in (...) ' 형식의 식을 사용 하세요. ' A l l '의 경우 ' x ne y ', ' not (x eq y) ' 또는 ' not search.in (...) ' 형식의 식을 사용 하세요. | 형식의 필드에 대 한 필터링`Collection(Edm.String)` | [문자열 컬렉션을 필터링 하는 규칙](#bkmk_strings) |
+| 람다 식이 잘못 되었습니다. 컬렉션 형식 (Edm. String)의 필드를 반복 하는 람다 식에서 반대쪽이 예상 되는 같음 또는 같지 않은지 테스트를 발견 했습니다. ' Any '의 경우 ' x eq y ' 또는 ' search.in (...) ' 형식의 식을 사용 하세요. ' A l l '의 경우 ' x ne y ', ' not (x eq y) ' 또는 ' not search.in (...) ' 형식의 식을 사용 하세요. | 형식의 필드에 대 한 필터링 `Collection(Edm.String)` | [문자열 컬렉션을 필터링 하는 규칙](#bkmk_strings) |
 | 람다 식이 잘못 되었습니다. 지원 되지 않는 형태의 복합 부울 식을 찾았습니다. ' A l l '의 경우 ' ORs of ANDs ' 인 식을 사용 하세요 (분리 Normal Form이 라고도 함). 예: ' (a, b) or (c 및 d) ' 여기서 a, b, c, d는 비교 또는 같음 하위 식입니다. ' A l l '의 경우 ' ANDs of ORs ' 인 식을 사용 하세요 (결합 Normal Form이 라고도 함). 예: ' (a 또는 b) and (c 또는 d) ' 여기서 a, b, c, d는 비교 또는 같지 않음 하위 식입니다. 비교 식의 예: ' x gt 5 ', ' x le 2 '. 같음 식의 예: ' x eq 5 '. 같지 않음 식의 예: ' x ne 5 '. | `Collection(Edm.DateTimeOffset)`,, `Collection(Edm.Double)` `Collection(Edm.Int32)` 또는 형식의 필드에 대 한 필터링`Collection(Edm.Int64)` | [비교 가능한 컬렉션 필터링 규칙](#bkmk_comparables) |
-| 람다 식이 잘못 되었습니다. 컬렉션 형식 (GeographyPoint)의 필드를 반복 하는 람다 식에서 지원 되지 않는 지역 () 또는 지역 ()을 발견 했습니다. ' Any '의 경우 ' lt ' 또는 ' le ' 연산자를 사용 하 여 geo distance ()를 비교 하 고 geo ()의 사용이 부정 되지 않도록 해야 합니다. ' 모두 '의 경우 ' gt ' 또는 ' ge ' 연산자를 사용 하 여 geo distance ()를 비교 하 고, geo ()의 사용이 부정 되는지 확인 해야 합니다. | 형식의 필드에 대 한 필터링`Collection(Edm.GeographyPoint)` | [GeographyPoint 컬렉션 필터링 규칙](#bkmk_geopoints) |
+| 람다 식이 잘못 되었습니다. 컬렉션 형식 (GeographyPoint)의 필드를 반복 하는 람다 식에서 지원 되지 않는 지역 () 또는 지역 ()을 발견 했습니다. ' Any '의 경우 ' lt ' 또는 ' le ' 연산자를 사용 하 여 geo distance ()를 비교 하 고 geo ()의 사용이 부정 되지 않도록 해야 합니다. ' 모두 '의 경우 ' gt ' 또는 ' ge ' 연산자를 사용 하 여 geo distance ()를 비교 하 고, geo ()의 사용이 부정 되는지 확인 해야 합니다. | 형식의 필드에 대 한 필터링 `Collection(Edm.GeographyPoint)` | [GeographyPoint 컬렉션 필터링 규칙](#bkmk_geopoints) |
 | 람다 식이 잘못 되었습니다. 복합 부울 식은 type Collection (GeographyPoint)의 필드를 반복 하는 람다 식에서 지원 되지 않습니다. ' Any '의 경우 하위 식에 ' or '를 추가 하세요. ' and '는 지원 되지 않습니다. ' A l l '의 경우 하위 식에 ' and '를 추가 하세요. ' or '는 지원 되지 않습니다. | 또는 형식의 필드에 대 한 필터링 `Collection(Edm.String)``Collection(Edm.GeographyPoint)` | [문자열 컬렉션을 필터링 하는 규칙](#bkmk_strings) <br/><br/> [GeographyPoint 컬렉션 필터링 규칙](#bkmk_geopoints) |
-| 람다 식이 잘못 되었습니다. 비교 연산자 (' lt ', ' le ', ' gt ' 또는 ' ge ' 중 하나)를 찾았습니다. 형식 컬렉션 (Edm. String)의 필드를 반복 하는 람다 식에는 같음 연산자도 사용할 수 있습니다. ' Any '의 경우 ' x eq y ' 형식의 식을 사용 하세요. ' A l l '의 경우 ' x ne y ' 또는 ' not (x eq y) ' 형식의 식을 사용 하세요. | 형식의 필드에 대 한 필터링`Collection(Edm.String)` | [문자열 컬렉션을 필터링 하는 규칙](#bkmk_strings) |
+| 람다 식이 잘못 되었습니다. 비교 연산자 (' lt ', ' le ', ' gt ' 또는 ' ge ' 중 하나)를 찾았습니다. 형식 컬렉션 (Edm. String)의 필드를 반복 하는 람다 식에는 같음 연산자도 사용할 수 있습니다. ' Any '의 경우 ' x eq y ' 형식의 식을 사용 하세요. ' A l l '의 경우 ' x ne y ' 또는 ' not (x eq y) ' 형식의 식을 사용 하세요. | 형식의 필드에 대 한 필터링 `Collection(Edm.String)` | [문자열 컬렉션을 필터링 하는 규칙](#bkmk_strings) |
 
 <a name="bkmk_examples"></a>
 
@@ -171,10 +171,10 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 
     이 식은 허용 되지만 조건이 겹치면 유용 하지 않습니다.
     - `ratings/any(r: r ne 5 or r gt 7)`
-  - ,,, 또는를 포함 하는 간단한 비교 식은 `eq` `lt` `le` `gt` `ge` 와 함께 사용할 수 있습니다 `and` / `or` . 예를 들어:
+  - ,,, 또는를 포함 하는 간단한 비교 식은 `eq` `lt` `le` `gt` `ge` 와 함께 사용할 수 있습니다 `and` / `or` . 예를 들면
     - `ratings/any(r: r gt 2 and r le 5)`
     - `ratings/any(r: r le 5 or r gt 7)`
-  - (접속사)와 결합 된 비교 식은을 `and` 사용 하 여 추가로 결합할 수 있습니다 `or` . 이 형식은 부울 논리에서 Dnf ([분리 Normal form](https://en.wikipedia.org/wiki/Disjunctive_normal_form))로 알려져 있습니다. 예를 들어:
+  - (접속사)와 결합 된 비교 식은을 `and` 사용 하 여 추가로 결합할 수 있습니다 `or` . 이 형식은 부울 논리에서 Dnf ([분리 Normal form](https://en.wikipedia.org/wiki/Disjunctive_normal_form))로 알려져 있습니다. 예를 들면
     - `ratings/any(r: (r gt 2 and r le 5) or (r gt 7 and r lt 10))`
 - 규칙 `all` :
   - 단순 같음 식은 다른 식과 유용한 결합할 수 없습니다. 예를 들어이 식은 다음과 같이 사용할 수 있습니다.
@@ -185,10 +185,10 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 
     이 식은 허용 되지만 조건이 겹치면 유용 하지 않습니다.
     - `ratings/all(r: r eq 5 and r le 7)`
-  - ,,, 또는를 포함 하는 간단한 비교 식은 `ne` `lt` `le` `gt` `ge` 와 함께 사용할 수 있습니다 `and` / `or` . 예를 들어:
+  - ,,, 또는를 포함 하는 간단한 비교 식은 `ne` `lt` `le` `gt` `ge` 와 함께 사용할 수 있습니다 `and` / `or` . 예를 들면
     - `ratings/all(r: r gt 2 and r le 5)`
     - `ratings/all(r: r le 5 or r gt 7)`
-  - (Disjunctions)과 결합 된 비교 식은을 `or` 사용 하 여 추가로 결합할 수 있습니다 `and` . 이 형식은 부울 논리에서 "[결합 Normal form](https://en.wikipedia.org/wiki/Conjunctive_normal_form)" (my.cnf)로 알려져 있습니다. 예를 들어:
+  - (Disjunctions)과 결합 된 비교 식은을 `or` 사용 하 여 추가로 결합할 수 있습니다 `and` . 이 형식은 부울 논리에서 "[결합 Normal form](https://en.wikipedia.org/wiki/Conjunctive_normal_form)" (my.cnf)로 알려져 있습니다. 예를 들면
     - `ratings/all(r: (r le 2 or gt 5) and (r lt 7 or r ge 10))`
 
 <a name="bkmk_complex"></a>
@@ -229,4 +229,4 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

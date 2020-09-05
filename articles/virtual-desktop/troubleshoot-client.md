@@ -3,15 +3,15 @@ title: 원격 데스크톱 클라이언트 Windows Virtual Desktop 문제 해결
 description: Windows Virtual Desktop 테넌트 환경에서 클라이언트 연결을 설정할 때 발생하는 문제를 해결하는 방법입니다.
 author: Heidilohr
 ms.topic: troubleshooting
-ms.date: 03/31/2020
+ms.date: 08/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6ac2eb2632ad96538e965e4d1057d7e4a116c05d
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: d1862e2e0dd9b1e566c6ee5d01a09213a0be4f8e
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009395"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88134482"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>원격 데스크톱 클라이언트 문제 해결
 
@@ -41,13 +41,13 @@ nslookup rdweb.wvd.microsoft.com
 
 Windows 7 또는 Windows 10용 원격 데스크톱 클라이언트와 같은 다른 클라이언트를 사용하여 연결을 시도하고 웹 클라이언트를 열 수 있는지 확인 합니다.
 
-### <a name="opening-another-site-fails"></a>다른 사이트를 열 수 없음
+### <a name="cant-open-other-websites-while-connected-to-the-web-client"></a>웹 클라이언트에 연결 되어 있는 동안 다른 웹 사이트를 열 수 없습니다.
 
-이 문제는 일반적으로 네트워크 연결 문제 또는 네트워크 중단으로 인해 발생합니다. 네트워크 지원에 문의하는 것이 좋습니다.
+웹 클라이언트에 연결 되어 있는 동안 다른 웹 사이트를 열 수 없는 경우 네트워크 연결 문제나 네트워크 중단이 있을 수 있습니다. 네트워크 지원에 문의하는 것이 좋습니다.
 
-### <a name="nslookup-cannot-resolve-the-name"></a>nslookup에서 이름을 확인할 수 없음
+### <a name="nslookup-cant-resolve-the-name"></a>Nslookup에서 이름을 확인할 수 없습니다.
 
-이 문제는 일반적으로 네트워크 연결 문제 또는 네트워크 중단으로 인해 발생합니다. 네트워크 지원에 문의하는 것이 좋습니다.
+Nslookup에서 이름을 확인할 수 없으면 네트워크 연결 문제나 네트워크 중단이 있을 수 있습니다. 네트워크 지원에 문의하는 것이 좋습니다.
 
 ### <a name="your-client-cant-connect-but-other-clients-on-your-network-can-connect"></a>클라이언트는 연결할 수 없지만 네트워크의 다른 클라이언트는 연결할 수 있음
 
@@ -58,11 +58,13 @@ Windows 7 또는 Windows 10용 원격 데스크톱 클라이언트와 같은 다
 3. 브라우저 캐시를 지웁니다. [브라우저의 브라우저 캐시 지우기](https://binged.it/2RKyfdU)를 참조하세요.
 4. 프라이빗 모드에서 브라우저를 엽니다.
 
-## <a name="web-client-does-not-show-my-resources"></a>웹 클라이언트는 내 리소스를 표시하지 않습니다.
+## <a name="client-doesnt-show-my-resources"></a>클라이언트가 내 리소스를 표시 하지 않음
 
-먼저 사용 중인 Azure Active Directory 계정을 확인합니다. Windows 가상 데스크톱에 사용할 것과 다른 Azure Active Directory 계정으로 이미 로그인 한 경우에는 서명 하거나 개인 브라우저 창을 사용 해야 합니다.
+먼저 사용 중인 Azure Active Directory 계정을 확인 합니다. Windows Virtual Desktop에 사용하려는 계정이 아닌 Azure Active Directory 계정으로 이미 로그인한 경우에는 로그아웃하거나 프라이빗 브라우저 창을 사용해야 합니다.
 
 Windows 가상 데스크톱 (클래식)을 사용 하는 경우 [이 문서의](./virtual-desktop-fall-2019/connect-web-2019.md) 웹 클라이언트 링크를 사용 하 여 리소스에 연결 합니다.
+
+이 문제가 해결 되지 않으면 앱 그룹이 작업 영역에 연결 되어 있는지 확인 합니다.
 
 ## <a name="web-client-stops-responding-or-disconnects"></a>웹 클라이언트의 응답이 중지되거나 연결이 끊어짐
 
@@ -78,8 +80,8 @@ Windows 가상 데스크톱 (클래식)을 사용 하는 경우 [이 문서의](
 
 1. 웹 클라이언트 URL이 올바른지 확인합니다.
 2. 사용 중인 자격 증명이 URL에 연결된 Windows Virtual Desktop 환경의 자격 증명인지 확인합니다.
-3. 브라우저 쿠키를 지웁니다. 자세한 내용은 [Internet Explorer에서 쿠키 파일을 삭제하는 방법](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer)을 참조하세요.
-4. 브라우저 캐시를 지웁니다. 자세한 내용은 [브라우저의 브라우저 캐시 지우기](https://binged.it/2RKyfdU)를 참조하세요.
+3. 브라우저 쿠키를 지웁니다. 자세한 내용은 [Internet Explorer에서 쿠키 파일을 삭제 하는 방법](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer)을 참조 하세요.
+4. 브라우저 캐시를 지웁니다. 자세한 내용은 [브라우저의 브라우저 캐시 지우기](https://binged.it/2RKyfdU)를 참조 하세요.
 5. 프라이빗 모드에서 브라우저를 엽니다.
 
 ## <a name="next-steps"></a>다음 단계

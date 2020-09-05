@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89d9d06433e2b915b8a96375bb39157adbce6ef2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fce07575fe95ffbd4fd906bcde7d76d89e50d48b
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027667"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716319"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>작동 방식: Azure AD SSPR(셀프 서비스 암호 재설정)
 
@@ -73,7 +73,7 @@ SSPR을 시작 하려면 다음 자습서를 완료 하세요.
 Azure AD를 사용 하 여 응용 프로그램에 로그인 하는 경우 사용자가 SSPR 등록을 완료 하도록 요구 하는 옵션을 사용 하도록 설정할 수 있습니다. 이 워크플로에는 다음 애플리케이션이 포함됩니다.
 
 * Office 365
-* Azure 포털
+* Azure portal
 * 액세스 패널
 * 페더레이션된 애플리케이션
 * Azure AD를 사용하여 애플리케이션 사용자 지정
@@ -139,7 +139,7 @@ SSPR에는 다음과 같은 인증 방법을 사용할 수 있습니다.
 >
 > 인증자 앱을 메서드로 포함 하는 SSPR 정책을 구성 하는 경우 한 가지 방법이 필요할 때 하나 이상의 추가 메서드를 선택 하 고 두 개의 메서드를 구성 해야 하는 경우 두 개 이상의 추가 메서드를 선택 해야 합니다.
 >
-> 이 요구 사항은 현재 SSPR 등록 환경에 인증자 앱을 등록 하는 옵션이 포함 되어 있지 않기 때문입니다. 인증자 앱을 등록 하는 옵션은 결합 된 새로운 [등록 환경](concept-registration-mfa-sspr-converged.md)에 포함 되어 있습니다.
+> 이 요구 사항은 현재 SSPR 등록 환경에 인증자 앱을 등록 하는 옵션이 포함 되어 있지 않기 때문입니다. 인증자 앱을 등록 하는 옵션은 결합 된 새로운 [등록 환경](./concept-registration-mfa-sspr-combined.md)에 포함 되어 있습니다.
 >
 > 인증자 앱만 사용 하는 정책 (한 방법에 필요한 경우) 또는 인증자 앱과 하나의 추가 방법 (두 가지 방법이 필요한 경우)을 허용 하면 새로운 결합 된 등록 환경을 사용 하도록 구성 될 때까지 사용자가 SSPR 등록을 차단 하는 것으로 이어질 수 있습니다.
 
@@ -161,7 +161,7 @@ SSPR에는 다음과 같은 인증 방법을 사용할 수 있습니다.
 1. 관리자는 더 이상 보안 질문을 사용하지 않도록 정책을 변경하지만 휴대폰 및 보조 메일은 사용하도록 허용합니다.
 1. 휴대폰 또는 대체 전자 메일 필드를 입력 하지 않은 사용자는 이제 암호를 재설정할 수 없습니다.
 
-## <a name="notifications"></a>알림
+## <a name="notifications"></a>공지
 
 SSPR를 사용 하 여 암호 이벤트의 인식을 향상 시키기 위해 사용자 및 id 관리자에 대 한 알림을 구성할 수 있습니다.
 
@@ -191,13 +191,13 @@ Azure AD는 현재 하이브리드 연결을 확인 하 고 Azure Portal에 다�
 * Azure AD는 온라인 상태이며 온-프레미스 쓰기 저장 클라이언트에 연결되어 있습니다. 그러나 설치된 Azure AD Connect 버전이 만료된 것 같습니다. 최신 연결 기능을 사용하고 중요한 버그가 수정되도록 [Azure AD Connect 업그레이드](../hybrid/how-to-upgrade-previous-version.md)를 수행하는 것이 좋습니다.
 * 그러나 설치 된 Azure AD Connect 버전이 최신 버전이 아니기 때문에 온-프레미스 쓰기 저장 클라이언트 상태를 확인할 수 없습니다. 연결 상태를 확인할 수 있도록 [Azure AD Connect를 업그레이드](../hybrid/how-to-upgrade-previous-version.md)합니다.
 * 현재 온-프레미스 쓰기 저장 클라이언트에 연결할 수 없습니다. [Azure AD Connect 문제 해결](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity)을 통해 연결을 복원합니다.
-* 비밀번호 쓰기 저장이 올바르게 구성되지 않았으므로 온-프레미스 쓰기 저장 클라이언트에 연결할 수 없습니다. [비밀번호 쓰기 저장 구성](howto-sspr-writeback.md)으로 연결을 복원합니다.
+* 비밀번호 쓰기 저장이 올바르게 구성되지 않았으므로 온-프레미스 쓰기 저장 클라이언트에 연결할 수 없습니다. [비밀번호 쓰기 저장 구성](./tutorial-enable-sspr-writeback.md)으로 연결을 복원합니다.
 * 현재 온-프레미스 쓰기 저장 클라이언트에 연결할 수 없습니다. 일시적인 문제로 인한 것일 수 있습니다. 문제가 지속되면 [Azure AD Connect 문제 해결](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity)을 통해 연결을 복원합니다.
 
 SSPR 쓰기 저장을 시작하려면 다음 자습서를 완료하세요.
 
 > [!div class="nextstepaction"]
-> [자습서: 셀프 서비스 암호 재설정(SSPR) 쓰기 저장 사용](tutorial-enable-writeback.md)
+> [자습서: 셀프 서비스 암호 재설정(SSPR) 쓰기 저장 사용](./tutorial-enable-sspr-writeback.md)
 
 ### <a name="write-back-passwords-to-your-on-premises-directory"></a>온-프레미스 디렉터리에 대한 비밀번호 쓰기 저장
 
@@ -223,7 +223,7 @@ SSPR은 Active Directory에서 관리자가 시작한 암호 재설정에 해당
 
 * **기존 AZURE ad 테 넌 트를 사용 하는 파트너 조직의 사용자**: 파트너를 사용 하는 조직에 기존 azure ad 테 넌 트가 있는 경우 해당 테 넌 트에서 사용 하도록 설정 된 모든 암호 재설정 정책을 적용 합니다. 암호 재설정이 작동하려면 파트너 조직에서 Azure AD SSPR을 사용하도록 설정되어 있는지 확인해야 합니다. Office 365 고객에 게는 추가 요금이 부과 되지 않습니다.
 * 셀프 서비스 등록을 **통해 등록** 하는 사용자: 파트너가 파트너에 게 제공 하는 [셀프 서비스 등록](../users-groups-roles/directory-self-service-signup.md) 기능을 사용 하 여 테 넌 트에 등록 하는 경우 등록 한 전자 메일을 사용 하 여 암호를 다시 설정할 수 있습니다.
-* **B2B 사용자**: 새 [Azure AD B2B 기능](../b2b/what-is-b2b.md) 을 사용 하 여 만든 모든 새 b2b 사용자는 초대 프로세스 중에 등록 한 전자 메일을 사용 하 여 암호를 재설정할 수도 있습니다.
+* **B2B 사용자**: 새 [Azure AD B2B 기능](../external-identities/what-is-b2b.md) 을 사용 하 여 만든 모든 새 b2b 사용자는 초대 프로세스 중에 등록 한 전자 메일을 사용 하 여 암호를 재설정할 수도 있습니다.
 
 이 시나리오를 테스트하려면 이러한 파트너 사용자 중 하나로 https://passwordreset.microsoftonline.com으로 이동합니다. 대체 전자 메일 또는 인증 전자 메일이 정의되어 있으면 암호 재설정이 예상대로 작동합니다.
 

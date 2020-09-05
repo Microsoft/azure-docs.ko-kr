@@ -6,13 +6,13 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 869c6590146561f6f2f50694c5cc3f79530dad25
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 24c9e5137e59fbd14a489b4d41709f39aa448ed8
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854404"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231353"
 ---
 # <a name="azure-security-baseline-for-azure-firewall"></a>Azure 방화벽에 대 한 azure 보안 기준
 
@@ -74,7 +74,7 @@ Azure 방화벽 서비스 태그는 네트워크 규칙 대상 필드에서 사�
 
 **지침**: azure policy는 아직 azure 방화벽에 대해 완전히 지원 되지 않습니다. Azure 방화벽 관리자를 사용 하 여 보안 구성의 표준화를 달성할 수 있습니다.
 
-Azure 청사진을 사용 하 여 Azure 리소스 관리자 템플릿, RBAC 컨트롤 및 정책과 같은 주요 환경 아티팩트를 단일 청사진 정의로 패키지화 하 여 대규모 Azure 배포를 간소화할 수도 있습니다. 청사진을 새 구독에 적용 하 고 버전 관리를 통해 제어 및 관리를 세부적으로 조정할 수 있습니다.
+Azure 청사진을 사용 하 여 azure 리소스 관리자 템플릿, Azure RBAC 컨트롤 및 정책과 같은 주요 환경 아티팩트를 단일 청사진 정의로 패키지화 하 여 대규모 Azure 배포를 간소화할 수도 있습니다. 청사진을 새 구독에 적용 하 고 버전 관리를 통해 제어 및 관리를 세부적으로 조정할 수 있습니다.
 
 - [Azure Policy를 구성하고 관리하는 방법](../governance/policy/tutorials/create-and-manage.md)
 
@@ -132,7 +132,7 @@ Azure 청사진을 사용 하 여 Azure 리소스 관리자 템플릿, RBAC 컨�
 
 활동 로그의 리소스 작업 목록: Azure Resource Manager 리소스 공급자 작업
 
-- [Azure Monitor를 사용 하 여 플랫폼 로그 및 메트릭을 수집 하는 방법](../azure-monitor/platform/diagnostic-settings.md)
+- [Azure Monitor를 사용 하 여 플랫폼 로그 및 메트릭을 수집 하는 방법 ](../azure-monitor/platform/diagnostic-settings.md)
 
 - [Azure Sentinel을 온보딩하는 방법](../sentinel/quickstart-onboard.md)
 
@@ -416,11 +416,11 @@ Microsoft에서 관리 하는 기본 플랫폼의 경우 Microsoft는 모든 고
 
 **책임**: 공유됨
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: Azure Active Directory 역할 기반 액세스 제어 (RBAC)를 사용 하 여 Azure 방화벽 및 관련 리소스에 대 한 액세스를 제어 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 azure 방화벽 및 관련 리소스에 대 한 액세스를 제어 합니다.
 
-- [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
+- [Azure RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 

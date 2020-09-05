@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 553d6f716bbb6e98aa64ef07cb80d2d6cba370b6
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 8a8b53af6e23b2dd0ff011a6bfbf99a1da427063
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561609"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88611639"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>자습서: Azure Data Box Gateway 배포 준비
 
@@ -138,7 +138,7 @@ Data Box Gateway가 만들어진 후에는 적절한 가상 디바이스 이미�
 2. **이미지 다운로드** 타일에서 VM을 프로비저닝하는 데 사용되는 호스트 서버의 운영 체제에 해당하는 가상 디바이스 이미지를 선택합니다. 이미지 파일은 약 5.6GB입니다.
    
    * [Windows Server 2012 R2 이상의 Hyper-V용 VHDX](https://aka.ms/dbe-vhdx-2012).
-   * [VMWare ESXi 6.0, 6.5 또는 6.7용 VMDK](https://aka.ms/dbe-vmdk).
+   * [VMware ESXi 6.0, 6.5 또는 6.7용 VMDK](https://aka.ms/dbe-vmdk).
 
     ![Data Box Gateway 가상 디바이스 이미지 다운로드](media/data-box-gateway-deploy-prep/data-box-gateway-download-image.png)
 

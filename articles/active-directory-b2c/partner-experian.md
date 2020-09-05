@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/22/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 2a69bc40090e74ad5885c2576c040693f90d5d03
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5c2fb330149d3e6530e7cb0fc3350d5db3fa24cf
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87097776"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88683881"
 ---
 # <a name="tutorial-for-configuring-experian-with-azure-active-directory-b2c"></a>Azure Active Directory B2C로 Experian 구성에 대 한 자습서
 
@@ -30,13 +30,13 @@ ms.locfileid: "87097776"
 - Middle Name
 - Surname
 - 주소
-- 도시
+- City
 - 시/도
 - 우편 번호
 - 국가/지역
 - 전화 번호
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 시작 하려면 다음이 필요 합니다.
 
@@ -94,7 +94,7 @@ Experian API 호출은 클라이언트 인증서로 보호 됩니다. 이 클라
 
 응용 프로그램 설정은 [Azure의 App service에서 구성할](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings)수 있습니다. 이 방법을 사용 하면 설정을 리포지토리로 체크 인하지 않고도 안전 하 게 구성할 수 있습니다. Rest API에 대 한 다음 설정을 제공 해야 합니다.
 
-| 애플리케이션 설정 | 원본 | 참고 |
+| 애플리케이션 설정 | 원본 | 메모 |
 | :-------- | :------------| :-----------|
 |CrossCoreConfig: TenantId | Experian 계정 구성 |     |
 |CrossCoreConfig:OrgCode | Experian 계정 구성 |     |
@@ -129,7 +129,7 @@ Experian API 호출은 클라이언트 인증서로 보호 됩니다. 이 클라
 | {your_tenant_extensions_app_objectid}                  | 테 넌 트 저장소 응용 프로그램의 개체 ID                                   | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_api_username_key_name}                           | [여기](#part-4---create-api-policy-keys) 에서 만든 사용자 이름 키의 이름입니다.             | B2C \_ 1a \_ RestApiUsername                     |
 | {your_api_password_key_name}                           | [여기](#part-4---create-api-policy-keys) 에서 만든 암호 키의 이름             | B2C \_ 1a \_ RestApiPassword                     |
-| {your_app_service_URL}                                 | 설정한 app service의 URL                                             | <https://yourapp.azurewebsites.net>          |
+| {your_app_service_URL}                                 | 설정한 app service의 URL                                             | `https://yourapp.azurewebsites.net`          |
 
 ### <a name="part-6---configure-the-azure-ad-b2c-policy"></a>6 부-Azure AD B2C 정책 구성
 
@@ -153,7 +153,7 @@ Azure AD B2C 테 넌 트를 설정 하 고 정책을 구성 하는 방법에 대
 
    b. **회신 url**: **리디렉션 url** 을 선택 합니다.
 
-   c. **사용자 흐름 실행**을 선택합니다.
+   다. **사용자 흐름 실행**을 선택합니다.
 
 4. 등록 흐름으로 이동 하 여 계정 만들기
 

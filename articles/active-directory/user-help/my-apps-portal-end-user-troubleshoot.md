@@ -12,12 +12,12 @@ ms.date: 03/21/2019
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: ed1f06e4747492c43d19a00c1091b2b4d7f7050f
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: c5d1b08944417493d175de23c7738db58f1c7bd3
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83741876"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798009"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>내 앱 포털 문제 해결
 
@@ -51,7 +51,7 @@ ms.locfileid: "83741876"
 
 - 암호가 올바르고 만료되지 않았는지 확인합니다. 자세한 내용은 [회사 또는 학교 암호 재설정](active-directory-passwords-update-your-own-password.md)을 참조하세요.
 
-- 확인 정보가 최신이고 정확한지 확인합니다. 자세한 내용은 [Azure Multi-Factor Authentication은 무슨 의미입니까?](multi-factor-authentication-end-user.md) 또는 [보안 정보 방법 및 정보 변경](security-info-add-update-methods-overview.md)을 참조하세요.
+- 확인 정보가 최신이고 정확한지 확인합니다. 자세한 내용은 [Azure Multi-Factor Authentication은 무슨 의미입니까?](./multi-factor-authentication-end-user-first-time.md) 또는 [보안 정보 방법 및 정보 변경](./security-info-setup-auth-app.md)을 참조하세요.
 
 - **인터넷 속성 > 보안 > 신뢰할 수 있는 사이트** 설정에 **내 앱** 포털 URL을 추가합니다.
 
@@ -75,7 +75,7 @@ ms.locfileid: "83741876"
 
 - 암호가 올바르고 만료되지 않았는지 확인합니다. 자세한 내용은 [회사 또는 학교 암호 재설정](active-directory-passwords-update-your-own-password.md)을 참조하세요.
 
-- 확인 정보가 최신이고 정확한지 확인합니다. 자세한 내용은 [Azure Multi-Factor Authentication은 무슨 의미입니까?](multi-factor-authentication-end-user.md) 또는 [보안 정보 방법 및 정보 변경](security-info-add-update-methods-overview.md)을 참조하세요.
+- 확인 정보가 최신이고 정확한지 확인합니다. 자세한 내용은 [Azure Multi-Factor Authentication은 무슨 의미입니까?](./multi-factor-authentication-end-user-first-time.md) 또는 [보안 정보 방법 및 정보 변경](./security-info-setup-auth-app.md)을 참조하세요.
 
 - 브라우저 캐시를 지우고 다시 로그인해 보세요.
 

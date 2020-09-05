@@ -3,7 +3,7 @@ title: Azure Media Services v3 API에 연결-Java
 description: 이 문서에서는 Java를 사용 하 여 Azure Media Services v3 API에 연결 하는 방법을 설명 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,23 +11,25 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2019
+ms.date: 08/31/2020
 ms.custom: devx-track-java
-ms.author: juliako
-ms.openlocfilehash: 098e1db7470124dc7c15b3ee65d6ab9cb3fadabd
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.author: inhenkel
+ms.openlocfilehash: dc667a46d9802332d0f8c8dc673b28a9aeab96ea
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319833"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265629"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Media Services v3 API에 연결-Java
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 문서에서는 서비스 사용자 로그인 메서드를 사용 하 여 Azure Media Services v3 Java SDK에 연결 하는 방법을 보여 줍니다.
 
 이 문서에서 Visual Studio Code는 샘플 앱을 개발 하는 데 사용 됩니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 - [Visual Studio Code를 사용 하 여 Java 작성](https://code.visualstudio.com/docs/java/java-tutorial) 다음을 설치 합니다.
 
@@ -59,7 +61,7 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
 ## <a name="add-dependencies"></a>종속성 추가
 
 1. Visual Studio Code에서 프로젝트가 있는 폴더를 엽니다.
-1. 을 찾아 엽니다.`pom.xml`
+1. 을 찾아 엽니다. `pom.xml`
 1. 필요한 종속성을 추가 합니다.
 
     ```xml

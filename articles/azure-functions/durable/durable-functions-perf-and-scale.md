@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 58c28160de15bc99c94c84ab23fdbb358125132d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e98792c81604b0f867343db289a44dfec9704b5e
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87033584"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853703"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>지속성 함수의 성능 및 크기 조정(Azure Functions)
 
@@ -48,7 +48,7 @@ ms.locfileid: "87033584"
 
 지 속성 작업 확장은 임의 지 수 백오프 알고리즘을 구현 하 여 유휴 큐 폴링이 저장소 트랜잭션 비용에 미치는 영향을 줄입니다. 메시지가 발견 되 면 런타임은 다른 메시지를 즉시 확인 합니다. 메시지를 찾을 수 없으면 일정 시간 동안 기다린 후 다시 시도 합니다. 큐 메시지를 가져오기 위해 후속 시도가 실패 한 후 대기 시간은 최대 대기 시간에 도달할 때까지 계속 증가 하며 기본값은 30 초입니다.
 
-최대 폴링 지연은 `maxQueuePollingInterval` [파일의host.js](../functions-host-json.md#durabletask)에 있는 속성을 통해 구성할 수 있습니다. 이 속성을 더 큰 값으로 설정 하면 메시지 처리 대기 시간이 더 길어질 수 있습니다. 대기 시간이 길수록 비활성 기간 후에만 예상 됩니다. 이 속성을 더 낮은 값으로 설정 하면 저장소 트랜잭션이 증가 하 여 저장소 비용이 높아질 수 있습니다.
+최대 폴링 지연은 `maxQueuePollingInterval` [ 파일의host.js](../functions-host-json.md#durabletask)에 있는 속성을 통해 구성할 수 있습니다. 이 속성을 더 큰 값으로 설정 하면 메시지 처리 대기 시간이 더 길어질 수 있습니다. 대기 시간이 길수록 비활성 기간 후에만 예상 됩니다. 이 속성을 더 낮은 값으로 설정 하면 저장소 트랜잭션이 증가 하 여 저장소 비용이 높아질 수 있습니다.
 
 > [!NOTE]
 > Azure Functions 소비 및 프리미엄 계획에서 실행 하는 경우 [Azure Functions 크기 조정 컨트롤러](../functions-scale.md#how-the-consumption-and-premium-plans-work) 는 각 제어 및 작업 항목 큐를 10 초 마다 한 번씩 폴링합니다. 이 추가 폴링은 함수 앱 인스턴스를 활성화 하 고 크기 결정을 내리는 시기를 결정 하는 데 필요 합니다. 작성 시이 10 초 간격은 일정 하므로 구성할 수 없습니다.
@@ -58,11 +58,11 @@ ms.locfileid: "87033584"
 
 1. **백로그 된 제어 큐**:이 인스턴스에 대 한 제어 큐에 많은 수의 메시지가 포함 되어 있으면 `ExecutionStarted` 런타임에서 메시지를 받고 처리 하기까지 시간이 걸릴 수 있습니다. 오케스트레이션이 많은 이벤트를 동시에 처리 하는 경우 메시지 백로그가 발생할 수 있습니다. 제어 큐로 이동 하는 이벤트는 오케스트레이션 시작 이벤트, 작업 완료, 지 속성 타이머, 종료 및 외부 이벤트를 포함 합니다. 정상적인 상황에서 이러한 지연이 발생 하는 경우 더 많은 파티션이 있는 새 작업 허브를 만드는 것이 좋습니다. 더 많은 파티션을 구성 하면 런타임에서 부하 배포를 위한 더 많은 제어 큐를 만듭니다.
 
-2. **폴링 지연 백오프**: 오케스트레이션 지연의 또 다른 일반적인 원인은 이전에 [제어 큐에 대 한 백오프 폴링 동작을 설명한](#queue-polling)것입니다. 그러나이 지연은 응용 프로그램이 둘 이상의 인스턴스로 확장 된 경우에만 예상 됩니다. 앱 인스턴스가 하나 뿐 이거나 오케스트레이션을 시작 하는 앱 인스턴스가 대상 제어 큐를 폴링하는 것과 동일한 인스턴스인 경우 큐 폴링 지연이 발생 하지 않습니다. 이전에 설명한 대로 설정 **에서host.js** 를 업데이트 하면 다시 폴링 지연 시간을 줄일 수 있습니다.
+2. **폴링 지연 백오프**: 오케스트레이션 지연의 또 다른 일반적인 원인은 이전에 [제어 큐에 대 한 백오프 폴링 동작을 설명한](#queue-polling)것입니다. 그러나이 지연은 응용 프로그램이 둘 이상의 인스턴스로 확장 된 경우에만 예상 됩니다. 앱 인스턴스가 하나 뿐 이거나 오케스트레이션을 시작 하는 앱 인스턴스가 대상 제어 큐를 폴링하는 것과 동일한 인스턴스인 경우 큐 폴링 지연이 발생 하지 않습니다. 이전에 설명한 대로 설정 ** 에서host.js** 를 업데이트 하면 다시 폴링 지연 시간을 줄일 수 있습니다.
 
 ## <a name="storage-account-selection"></a>스토리지 계정 선택
 
-Durable Functions에서 사용 되는 큐, 테이블 및 blob은 구성 된 Azure Storage 계정에 만들어집니다. 사용할 계정은 `durableTask/storageProvider/connectionStringName` `durableTask/azureStorageConnectionStringName` 파일 **의host.js** 에 있는 설정 (또는 Durable Functions 1.x의 설정)을 사용 하 여 지정할 수 있습니다.
+Durable Functions에서 사용 되는 큐, 테이블 및 blob은 구성 된 Azure Storage 계정에 만들어집니다. 사용할 계정은 `durableTask/storageProvider/connectionStringName` `durableTask/azureStorageConnectionStringName` 파일 ** 의host.js** 에 있는 설정 (또는 Durable Functions 1.x의 설정)을 사용 하 여 지정할 수 있습니다.
 
 ### <a name="durable-functions-2x"></a>Durable Functions 2.x
 
@@ -157,7 +157,7 @@ Durable Functions에서 사용 되는 큐, 테이블 및 blob은 구성 된 Azur
 
 Azure Functions는 단일 응용 프로그램 인스턴스 내에서 여러 함수를 동시에 실행하도록 지원합니다. 이러한 동시 실행은 병렬 처리를 늘리며, 일반적인 앱이 시간이 지나면서 겪게 되는 "콜드 시작"의 수를 최소화합니다. 그러나 높은 동시성은 네트워크 연결 또는 사용 가능한 메모리와 같은 VM 별 시스템 리소스를 고갈 시킬 수 있습니다. 함수 앱의 요구에 따라, 고부하 상황에서 메모리의 부족 문제를 방지하기 위해 인스턴스당 동시성을 제한해야 할 수도 있습니다.
 
-작업, orchestrator 및 엔터티 함수 동시성 제한은 파일 **의host.js** 에서 구성할 수 있습니다. 관련 설정은 `durableTask/maxConcurrentActivityFunctions` 작업 함수 및 `durableTask/maxConcurrentOrchestratorFunctions` orchestrator와 엔터티 함수 모두에 대 한 것입니다.
+작업, orchestrator 및 엔터티 함수 동시성 제한은 파일 ** 의host.js** 에서 구성할 수 있습니다. 관련 설정은 `durableTask/maxConcurrentActivityFunctions` 작업 함수 및 `durableTask/maxConcurrentOrchestratorFunctions` orchestrator와 엔터티 함수 모두에 대 한 것입니다.
 
 ### <a name="functions-20"></a>함수 2.0
 
@@ -224,6 +224,10 @@ Azure Functions는 단일 응용 프로그램 인스턴스 내에서 여러 함�
 예를 들어, `durableTask/extendedSessionIdleTimeoutInSeconds` 가 30 초로 설정 된 경우 1 초 미만으로 실행 되는 단기 orchestrator 또는 entity 함수 에피소드는 30 초 동안 메모리를 계속 차지 합니다. 또한 이전에 언급 한 `durableTask/maxConcurrentOrchestratorFunctions` 할당량을 계산 하 여 다른 orchestrator 또는 entity 함수 실행을 방해할 수 있습니다.
 
 Orchestrator 및 entity 함수에서 확장 세션의 구체적인 효과는 다음 섹션에 설명 되어 있습니다.
+
+> [!NOTE]
+> 확장 세션은 현재 c # 또는 F #과 같은 .NET 언어 에서만 지원 됩니다. `extendedSessionsEnabled` `true` 다른 플랫폼에 대해를로 설정 하면 작업을 자동으로 실행 하는 데 실패 하는 경우와 같은 런타임 문제가 발생할 수 있습니다.
+
 
 ### <a name="orchestrator-function-replay"></a>오케스트레이터 함수 재생
 

@@ -27,20 +27,16 @@
       href: azure-portal-dashboards-create-programmatically.md
 - name: 방법 가이드
   items:
-    - name: Azure Portal 기본 설정 지정
+    - name: Azure Portal 설정 및 기본 설정 관리
       href: set-preferences.md
-    - name: 모든 사용자의 비활성 시간 제한 설정
-      href: admin-timeout.md
-    - name: 고대비 켜기 및 테마 변경
-      href: azure-portal-change-theme-high-contrast.md
     - name: '즐겨찾기 추가, 제거 및 정렬'
       href: azure-portal-add-remove-sort-favorites.md
-    - name: Azure 대시보드 만들기 및 공유
-      href: azure-portal-dashboards.md
-    - name: 사용자 지정 markdown 타일 사용
-      href: azure-portal-markdown-tile.md
-    - name: 사용자 설정 내보내기 또는 삭제
-      href: azure-portal-export-delete-settings.md
+    - name: Azure 대시보드 만들기
+      items:
+        - name: Azure 대시보드 만들기 및 공유
+          href: azure-portal-dashboards.md
+        - name: 사용자 지정 markdown 타일 사용
+          href: azure-portal-markdown-tile.md
     - name: Azure Portal 방법 비디오 시리즈
       href: azure-portal-video-series.md
     - name: 지원 요청 생성 및 관리

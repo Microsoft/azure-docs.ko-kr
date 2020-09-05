@@ -3,12 +3,12 @@ title: 지정 된 공용 IP 주소를 사용 하 여 풀 만들기
 description: 사용자 고유의 공용 IP 주소를 사용 하는 Batch 풀을 만드는 방법에 대해 알아봅니다.
 ms.topic: how-to
 ms.date: 07/20/2020
-ms.openlocfilehash: 630da3ff9c1f2318c7ed4da0e8f4b5ee8212f389
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 158facaf1fd5052c3626f065a69bfbd134ca4c3e
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023758"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146490"
 ---
 # <a name="create-an-azure-batch-pool-with-specified-public-ip-addresses"></a>지정 된 공용 IP 주소를 사용 하 여 Azure Batch 풀 만들기
 
@@ -24,7 +24,7 @@ Azure Batch 풀을 만들 때 지정한 Azure VNet ( [가상 네트워크)의 �
 
 - **Azure VNet**. 풀 및 IP 주소를 만드는 동일한 Azure 구독에서 [가상 네트워크](batch-virtual-network.md) 를 사용 해야 합니다. Azure Resource Manager 기반 Vnet만 사용할 수 있습니다. VNet이 모든 [일반 요구 사항을](batch-virtual-network.md#vnet-requirements)충족 하는지 확인 합니다.
 
-- **하나 이상의 Azure 공용 IP 주소**입니다. 하나 이상의 공용 IP 주소를 만들려면 [Azure Portal](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address), [Azure 명령줄 인터페이스 (CLI)](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)또는 [Azure PowerShell](/powershell/module/az.network/new-azpublicipaddress)를 사용할 수 있습니다. 아래에 나열 된 요구 사항을 준수 해야 합니다.
+- **하나 이상의 Azure 공용 IP 주소**입니다. 하나 이상의 공용 IP 주소를 만들려면 [Azure Portal](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address), [Azure 명령줄 인터페이스 (CLI)](/cli/azure/network/public-ip#az-network-public-ip-create)또는 [Azure PowerShell](/powershell/module/az.network/new-azpublicipaddress)를 사용할 수 있습니다. 아래에 나열 된 요구 사항을 준수 해야 합니다.
 
 > [!NOTE]
 > Batch는 공용 IP 주소를 포함 하는 리소스 그룹에 추가 네트워킹 리소스를 자동으로 할당 합니다. 각 100 전용 노드에 대해 일괄 처리는 일반적으로 하나의 NSG (네트워크 보안 그룹) 및 부하 분산 장치 하나를 할당 합니다. 이러한 리소스는 구독의 리소스 할당량에 의해 제한 됩니다. 더 큰 풀을 사용 하는 경우 이러한 리소스 중 하나 이상에 대해 [할당량 증가를 요청](batch-quota-limit.md#increase-a-quota) 해야 할 수 있습니다.

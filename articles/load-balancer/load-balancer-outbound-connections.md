@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/24/2020
 ms.author: allensu
-ms.openlocfilehash: a2292dc789938b8bde709728f5bbffe661529cc2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 738b54d9fcd86313c2581c5d0f055a7cca8230b8
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072628"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88706067"
 ---
 # <a name="outbound-connections-in-azure"></a>Azure에서 아웃바운드 연결
 
@@ -44,7 +44,7 @@ Azure Load Balancer는 다른 메커니즘을 통해 아웃 바운드 연결을 
 
 Azure는 PAT를 사용할 때 백 엔드 풀의 크기에 따라 사용 가능한 미리 할당 된 SNAT 포트 수를 결정 하는 알고리즘을 사용 합니다. 부하 분산 장치와 연결된 각 공용 IP 주소에는 각 IP 전송 프로토콜에 대한 SNAT 포트로 사용할 수 있는 64,000개의 포트가 있습니다. 동일한 수의 SNAT 포트가 UDP 및 TCP에 대해 각각 미리 할당되고 IP 전송 프로토콜별로 독립적으로 사용됩니다.  그러나 SNAT 포트 사용은 흐름이 UDP인지 아니면 TCP인지에 따라 다릅니다. 아웃 바운드 흐름이 생성 되 면 이러한 포트는 동적으로 (최대 미리 할당 된 제한) 사용 되 고 흐름이 닫히거나 [유휴 시간 초과가](../load-balancer/troubleshoot-outbound-connection.md#idletimeout) 발생할 때 릴리스됩니다. 포트는 흐름을 고유하게 만드는 데 필요한 경우에만 사용됩니다.
 
-#### <a name="default-snat-ports-allocated"></a><a name="snatporttable"></a>할당 된 기본 SNAT 포트
+#### <a name="default-snat-ports-allocated"></a><a name="snatporttable"></a> 할당 된 기본 SNAT 포트
 
 다음 표는 백 엔드 풀 크기 계층의 SNAT 포트 미리 할당을 보여줍니다.
 
@@ -97,7 +97,7 @@ Azure는 PAT를 사용할 때 백 엔드 풀의 크기에 따라 사용 가능�
 
 아웃 바운드 규칙을 사용 하 여 직접 [공용 IP 접두사](https://aka.ms/lbpublicipprefix) 를 사용할 수도 있습니다.  공용 IP 접두사를 사용하면 Azure 배포에서 시작되는 흐름을 더 쉽게 크기 조정하고 허용 목록에 추가를 간소화할 수 있습니다. 공용 IP 주소 접두사를 직접 참조하도록 Load Balancer 리소스 내에 프런트 엔드 IP 구성을 구성할 수 있습니다.  이렇게 하면 Load Balancer에서 공용 IP 접두사를 독점적으로 제어하고, 아웃바운드 연결에 대한 공용 IP 접두사에 포함된 모든 공용 IP 주소가 아웃바운드 규칙에 자동으로 사용될 수 있습니다.  공용 IP 접두사 내의 각 IP 주소는 Load Balancer에 대 한 IP 주소 당 추가 64000 삭제 포트를 제공 하 여 SNAT 포트로 사용 합니다.
 
-### <a name="outbound-flow-idle-timeout-and-tcp-reset"></a><a name="idletimeout"></a>아웃 바운드 흐름 유휴 시간 제한 및 TCP 다시 설정
+### <a name="outbound-flow-idle-timeout-and-tcp-reset"></a><a name="idletimeout"></a> 아웃 바운드 흐름 유휴 시간 제한 및 TCP 다시 설정
 
 아웃바운드 규칙은 아웃바운드 흐름 유휴 시간 제한을 제어하고 이를 애플리케이션의 요구와 일치시키는 구성 매개 변수를 제공합니다. 아웃바운드 유휴 시간 제한은 기본적으로 4분입니다. [유휴 시간 제한을 구성](load-balancer-tcp-idle-timeout.md#tcp-idle-timeout)하는 방법을 배울 수 있습니다. Load Balancer의 기본 동작은 아웃바운드 유휴 시간 제한에 도달하는 경우 흐름을 자동으로 삭제하는 것입니다.  `enableTCPReset`매개 변수를 사용 하면 보다 예측 가능한 응용 프로그램 동작을 사용 하도록 설정 하 고 아웃 바운드 유휴 시간 제한 시간에 양방향 Tcp Reset (TCP RST)을 보낼지 여부를 제어할 수 있습니다. 지역 가용성을 비롯 한 세부 정보는 [유휴 시간 제한에서 TCP 다시 설정](https://aka.ms/lbtcpreset) 을 검토 합니다.
 
@@ -127,7 +127,7 @@ NSG가 AZURE_LOADBALANCER 기본 태그의 상태 프로브 요청을 차단할 
 | II |  SNAT 포트 할당 수정| 아웃바운드 규칙을 사용하여 [백 엔드 풀 크기를 기준으로 자동 SNAT 포트 할당](load-balancer-outbound-connections.md#preallocatedports)을 튜닝할 수 있습니다. 예를 들어 아웃바운드 NAT에 대해 하나의 공용 IP 주소를 공유하는 두 개의 가상 머신이 있는 경우 SNAT가 고갈되었으면 기본 1024 포트에서 할당되는 SNAT 포트 수를 늘리는 것이 좋습니다. 각 공용 IP 주소는 최대 64,000개의 사용 후 삭제 포트를 제공할 수 있습니다.  단일 공용 IP 주소 프런트 엔드를 사용하는 아웃바운드 규칙을 구성하면 총 64,000개의 SNAT 포트를 백 엔드 풀의 VM에 배포할 수 있습니다.  두 VM의 경우 아웃바운드 규칙을 사용하여 최대 32,000개의 SNAT 포트를 할당할 수 있습니다(2 x 32,000 = 64,000). 아웃 바운드 규칙을 사용 하 여 기본적으로 할당 된 SNAT 포트를 튜닝할 수 있습니다. 기본 SNAT 포트 할당에 제공 되는 것 보다 더 많은 또는 더 작은 공간을 할당 합니다. 아웃 바운드 규칙의 모든 프런트 엔드 공용 IP 주소는 SNAT 포트로 사용 하기 위해 최대 64000 개의 임시 포트를 제공 합니다.  Load Balancer는 SNAT 포트를 8의 배수로 할당합니다. 8로 나눌 수 없는 값을 제공하면 구성 작업이 거부됩니다.  공용 IP 주소의 수를 기준으로 사용 가능한 것보다 더 많은 SNAT 포트를 할당하려고 하면 구성 작업이 거부됩니다.  예를 들어 VM 당 1만 포트를 할당 하 고 백 엔드 풀의 Vm 7 개에서 단일 공용 IP 주소를 공유 하는 경우 구성이 거부 됩니다 (7 x 1만 SNAT 포트 > 64000 SNAT 포트).  아웃바운드 규칙의 프런트 엔드에 더 많은 공용 IP 주소를 추가하여 시나리오를 사용하도록 설정할 수 있습니다. 포트 수에 0을 지정 하 여 [백 엔드 풀 크기에 따라 기본 SNAT 포트 할당](load-balancer-outbound-connections.md#preallocatedports) 으로 되돌릴 수 있습니다. 이 경우 첫 번째 50 VM 인스턴스는 1024 포트를 얻게 됩니다. 51-100 VM 인스턴스는 [테이블](#snatporttable)에 따라 512을 받습니다.|
 | III|  아웃바운드만 사용 | 공용 표준 Load Balancer를 사용하여 VM 그룹에 아웃바운드 NAT를 제공할 수 있습니다. 이 시나리오에서는 추가 규칙 없이 아웃바운드 규칙 자체만 사용할 수 있습니다.|
 | IV | VM 전용 아웃바운드 NAT(인바운드 없음) | 공용 표준 Load Balancer를 정의하고, 백 엔드 풀에 VM을 배치하고, 아웃바운드 NAT를 프로그래밍하고 특정 공용 IP 주소에서 시작되는 아웃바운드 연결을 영구 제거하도록 아웃바운드 규칙을 구성합니다. 또한 공용 IP 접두사를 사용하여 아웃바운드 연결의 원본을 허용 목록에 추가하도록 간소화할 수 있습니다. 1. 공용 표준 Load Balancer를 만듭니다. 2. 백 엔드 풀을 만들고 공용 Load Balancer의 백 엔드 풀에 VM을 배치합니다. 3. 공용 Load Balancer에서 이러한 VM에 대해 아웃바운드 NAT를 프로그래밍하도록 아웃바운드 규칙을 구성합니다.
-| V| 내부 표준 Load Balancer 시나리오에 대한 아웃바운드 NAT| 내부 표준 Load Balancer를 사용하는 경우 아웃바운드 연결이 명시적으로 선언될 때까지 아웃바운드 NAT를 사용할 수 없습니다. 아웃 바운드 규칙을 사용 하 여 아웃 바운드 연결을 정의 하 고 다음 단계를 통해 내부 표준 Load Balancer 뒤에 Vm에 대 한 아웃 바운드 연결을 만들 수 있습니다. 1. 공용 표준 Load Balancer를 만듭니다. 2. 백 엔드 풀을 만들고 내부 Load Balancer 외에, 공용 Load Balancer의 백 엔드 풀에 VM을 배치합니다. 3. 공용 Load Balancer에서 이러한 VM에 대해 아웃바운드 NAT를 프로그래밍하도록 아웃바운드 규칙을 구성합니다.|
+| V| 내부 표준 Load Balancer 시나리오에 대한 아웃바운드 NAT| 내부 표준 Load Balancer를 사용하는 경우 아웃바운드 연결이 명시적으로 선언될 때까지 아웃바운드 NAT를 사용할 수 없습니다. 아웃 바운드 규칙을 사용 하 여 아웃 바운드 연결을 정의 하 고 다음 단계를 통해 내부 표준 Load Balancer 뒤에 Vm에 대 한 아웃 바운드 연결을 만들 수 있습니다. 1. 공용 표준 Load Balancer를 만듭니다. 2. 백 엔드 풀을 만들고 내부 Load Balancer 외에, 공용 Load Balancer의 백 엔드 풀에 VM을 배치합니다. 3. 공용 Load Balancer에서 이러한 VM에 대해 아웃바운드 NAT를 프로그래밍하도록 아웃바운드 규칙을 구성합니다. 이 시나리오에 대 한 자세한 내용은 [이 예제](https://docs.microsoft.com/azure/load-balancer/egress-only)를 참조 하세요. |
 | VI | 공용 표준 Load Balancer를 통해 아웃바운드 NAT에 TCP 및 UDP 프로토콜을 모두 사용 | 공용 표준 Load Balancer를 사용하는 경우 제공되는 자동 아웃바운드 NAT 프로그래밍은 부하 분산 규칙의 전송 프로토콜과 일치합니다. 1. 부하 분산 규칙에서 아웃바운드 SNAT를 사용하지 않도록 설정합니다. 2. 동일한 Load Balancer에서 아웃바운드 규칙을 구성합니다. 3. VM에서 이미 사용하고 있는 백 엔드 풀을 다시 사용합니다. 4. 아웃바운드 규칙의 일부로 "프로토콜"을 "모두"로 지정합니다. 인바운드 NAT 규칙만 사용하는 경우 아웃바운드 NAT는 제공되지 않습니다. 1. 백 엔드 풀에 VM을 배치합니다. 2. 공용 ip 주소 또는 공용 IP 접두사 3을 사용 하 여 하나 이상의 프런트 엔드 IP 구성을 정의 합니다. 동일한 Load Balancer에서 아웃바운드 규칙을 구성합니다. 4. 아웃바운드 규칙의 일부로 "프로토콜"을 "모두"로 지정합니다. |
 
 
@@ -136,7 +136,7 @@ NSG가 AZURE_LOADBALANCER 기본 태그의 상태 프로브 요청을 차단할 
 - 프런트 엔드 IP 주소당 사용 가능한 사용 후 삭제 포트의 최대 수는 64,000개입니다.
 - 구성 가능한 아웃바운드 유휴 시간 제한 범위는 4-120분(240-7200초)입니다.
 - Load Balancer는 아웃바운드 NAT에 대해 ICMP를 지원하지 않습니다.
-- 아웃 바운드 규칙은 NIC의 기본 IP 구성에만 적용할 수 있습니다.  여러 Nic가 지원 됩니다.
+- 아웃 바운드 규칙은 NIC의 기본 IP 구성에만 적용할 수 있습니다.  VM 또는 NVA의 보조 IP에 대 한 아웃 바운드 규칙을 만들 수 없습니다. 여러 Nic가 지원 됩니다.
 - VNet 및 기타 Microsoft 플랫폼 서비스가 없는 웹 작업자 역할은 사전 VNet 서비스 및 다른 플랫폼 서비스 작동 방식의 부작용으로 인해 내부 표준 Load Balancer만 사용할 때 액세스할 수 있습니다. 각 서비스 자체 또는 기본 플랫폼은 사전 통보 없이 변경될 수 있으므로 이 부작용을 사용하지 마세요. 내부 표준 Load Balancer만 사용하는 경우 원하면 명시적으로 아웃 바운드 연결을 만들어야 한다고 항상 가정해야 합니다. 이 문서에서 설명 하는 시나리오 3은 사용할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계

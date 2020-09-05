@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Azure Dev Spaces 작업을 사용 하 여 프로젝트를 준비 하는 방법을 설명 합니다.
 keywords: azds, Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너
-ms.openlocfilehash: 24a54fffdc8e94493d2a4a9aeb1c5f02dcd192b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 61351072494b51d02a1d6c31399208b9e9b54fce
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80241635"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213429"
 ---
 # <a name="how-preparing-a-project-for-azure-dev-spaces-works"></a>Azure Dev Spaces 작동을 위해 프로젝트를 준비 하는 방법
 
@@ -98,17 +98,4 @@ configurations:
 
 개발 공간에서 코드를 실행 하는 방법에 대 한 자세한 내용은 [Azure Dev Spaces 작업을 사용 하 여 코드 실행 방법][how-it-works-up]을 참조 하세요.
 
-Azure Dev Spaces 사용을 시작 하 여 Azure Dev 공간에 대 한 프로젝트를 준비 하려면 다음 퀵 스타트를 참조 하세요.
-
-* [Visual Studio Code 및 Java를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-java]
-* [Visual Studio Code 및 .NET을 사용 하 여 빠르게 반복 하 고 디버그][quickstart-netcore]
-* [Visual Studio Code 및 Node.js를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-node]
-* [Visual Studio 및 .NET Core를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-vs]
-* [CLI를 사용 하 여 Kubernetes에서 응용 프로그램 개발][quickstart-cli]
-
 [how-it-works-up]: how-dev-spaces-works-up.md
-[quickstart-cli]: quickstart-cli.md
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md
-[quickstart-vs]: quickstart-netcore-visualstudio.md

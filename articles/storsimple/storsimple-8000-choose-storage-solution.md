@@ -1,18 +1,18 @@
 ---
 title: 어플라이언스를 사용하여 Azure로 데이터를 전송하는 옵션 | Microsoft Docs
-description: Azure로 데이터를 전송할 적절한 어플라이언스를 선택하는 방법 알아보기
+description: Data Box Edge, Azure File Sync 및 StorSimple 8000 시리즈 사이에서 Azure로의 온-프레미스 데이터 전송에 적합 한 어플라이언스를 선택 하는 방법에 대해 알아봅니다.
 services: storsimple
 author: alkohli
 ms.service: storsimple
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: dc7de4e69d42a2165f5845f3d8214975d67cdc3c
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 903342230b28f8e4fbdcdfd93543e5a0aa54975e
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203975"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183278"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>StorSimple을 Azure 파일 동기화 및 Data Box Edge 데이터 전송 옵션과 비교 
 
@@ -33,7 +33,7 @@ ms.locfileid: "86203975"
 |**Edge 컴퓨팅** |사용할 수 없음 |사용할 수 없음 |Azure IoT Edge를 사용한 컨테이너 실행 지원    |
 |**폼 팩터**  |물리적 디바이스   |Windows Server에 에이전트 설치 |물리적 디바이스   |
 |**하드웨어**     |서비스의 일부로 Microsoft에서 물리적 디바이스 제공 | 고객이 제공 |서비스의 일부로 Microsoft에서 물리적 디바이스 제공  |
-|**데이터 형식**  |사용자 지정 형식   |파일         |Blob 또는 파일    |
+|**데이터 형식**  |사용자 지정 형식   |Files         |Blob 또는 파일    |
 |**프로토콜 지원** |iSCSI          |SMB, NFS    | SMB 또는 NFS      |
 |**가격**      |[StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Azure 파일 동기화](https://azure.microsoft.com/pricing/details/storage/files/)  |[Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
 

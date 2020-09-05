@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 03/17/2020
-ms.openlocfilehash: 6713a1fbbbbca0aa212461cc966b42aaf2daa47e
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fe779ebf8bb041fb90b8eb38a9469a783127ffd3
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498460"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661421"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Azure SQL Managed Instance FAQ (질문과 대답)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -72,7 +72,7 @@ Azure SQL Managed Instance와 SQL Server 간의 구문 및 동작과 차이점�
 
 제품 오류 및 알려진 문제는 [알려진 문제](../database/doc-changes-updates-release-notes.md#known-issues)를 참조 하세요.
 
-## <a name="new-features"></a>새 기능
+## <a name="new-features"></a>새로운 기능
 
 **공개 미리 보기에서 최신 기능과 기능을 어디에서 찾을 수 있나요?**
 
@@ -214,7 +214,7 @@ SQL Managed Instance의 저장소 크기는 선택한 서비스 계층 (범용 �
 
 **범용 서비스 계층에서 저장소 성능을 최적화 하려면 어떻게 해야 하나요?**
 
-저장소 성능을 최적화 하려면 범용 [저장소 모범 사례](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525)를 참조 하세요.
+저장소 성능을 최적화 하려면 범용 [저장소 모범 사례](https://techcommunity.microsoft.com)를 참조 하세요.
 
 ## <a name="backup-and-restore"></a>백업 및 복원
 
@@ -223,12 +223,15 @@ SQL Managed Instance의 저장소 크기는 선택한 서비스 계층 (범용 �
 아니요, 백업 저장소는 관리 되는 인스턴스 저장소 공간에서 공제 되지 않습니다. 백업 저장소는 인스턴스 저장소 공간과 독립적 이며 크기가 제한 되지 않습니다. 백업 저장소는 인스턴스 데이터베이스의 백업을 보존 하는 기간으로 제한 되며 최대 35 일을 구성할 수 있습니다. 자세한 내용은 자동화 된 [백업](../database/automated-backups-overview.md)을 참조 하세요.
 
 **관리 되는 인스턴스에서 자동화 된 백업이 수행 되는 경우를 어떻게 확인할 수 있나요?**
+
 Managed Instance에서 자동화 된 백업을 수행 하는 시기를 추적 하려면 [AZURE SQL Managed Instance에 대 한 자동화 된 백업을 추적 하는 방법](https://techcommunity.microsoft.com/t5/azure-database-support-blog/lesson-learned-128-how-to-track-the-automated-backup-for-an/ba-p/1442355)을 참조 하세요.
 
 **주문형 백업이 지원 되나요?**
+
 예, Azure Blob Storage에서 복사 전용 전체 백업을 만들 수 있지만 Managed Instance 에서만 복원 가능한 됩니다. 자세한 내용은 [복사 전용 백업](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server?view=sql-server-ver15)을 참조 하세요. 그러나 암호화에 사용 되는 인증서에 액세스할 수 없으므로 서비스 관리 TDE로 데이터베이스를 암호화 하는 경우에는 복사 전용 백업을 수행할 수 없습니다. 이러한 경우에는 특정 시점 복원 기능을 사용 하 여 데이터베이스를 다른 SQL Managed Instance 이동 하거나 고객 관리 키로 전환 합니다.
 
 **네이티브 복원 (.bak 파일에서)은 Managed Instance 지원 되나요?**
+
 예, SQL Server 2005 이상 버전에서 지원 되며 사용할 수 있습니다.  기본 복원을 사용 하려면 .bak 파일을 Azure blob 저장소에 업로드 하 고 T-sql 명령을 실행 합니다. 자세한 내용은 [URL에서 네이티브 복원](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-migrate#native-restore-from-url)을 참조 하세요.
 
 ## <a name="business-continuity"></a>비즈니스 연속성
@@ -503,6 +506,14 @@ ALTER LOGIN <login_name> WITH CHECK_EXPIRATION = OFF;
 ```
 
 (' test '를 원하는 로그인 이름으로 바꾸고 정책 및 만료 값을 조정 합니다.)
+
+
+## <a name="service-updates"></a>서비스 업데이트
+
+**SQL Managed Instance에 대 한 계획 된 유지 관리 이벤트는 무엇 인가요?**
+
+[SQL Managed Instance에서 Azure 유지 관리 이벤트에 대 한 계획을](https://docs.microsoft.com/azure/azure-sql/database/planned-maintenance)참조 하세요. 
+
 
 ## <a name="azure-feedback-and-support"></a>Azure 사용자 의견 및 지원
 

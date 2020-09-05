@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 09/09/2018
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: a0c85226b5890fe0f5f2011110c1d7d20e3c2907
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2de6c07395a559085db237eb1bc7f885998860d0
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84782010"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235080"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>자습서: 자동 사용자 계정 프로비전에 대한 보고
 
-Azure AD (Azure Active Directory)에는 종단 간 id 수명 주기 관리를 위해 SaaS 앱 및 기타 시스템에서 사용자 계정의 프로 비전 해제를 자동화 하는 데 도움이 되는 [사용자 계정 프로 비전 서비스가](user-provisioning.md) 포함 되어 있습니다. Azure AD는 [여기](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)에 사용자 프로비저닝 자습서를 포함 하는 모든 응용 프로그램 및 시스템에 대해 사전 통합 된 사용자 프로 비전 커넥터를 지원 합니다.
+Azure AD (Azure Active Directory)에는 종단 간 id 수명 주기 관리를 위해 SaaS 앱 및 기타 시스템에서 사용자 계정의 프로 비전 해제를 자동화 하는 데 도움이 되는 [사용자 계정 프로 비전 서비스가](user-provisioning.md) 포함 되어 있습니다. Azure AD는 [여기](../saas-apps/tutorial-list.md)에 사용자 프로비저닝 자습서를 포함 하는 모든 응용 프로그램 및 시스템에 대해 사전 통합 된 사용자 프로 비전 커넥터를 지원 합니다.
 
 이 문서에서는 프로비전 작업을 설정한 후 해당 상태를 확인하는 방법과 개별 사용자 및 그룹의 프로비전 문제를 해결하는 방법에 대해 설명합니다.
 

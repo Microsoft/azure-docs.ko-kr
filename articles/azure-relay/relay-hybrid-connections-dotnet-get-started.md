@@ -2,13 +2,14 @@
 title: Azure Relay 하이브리드 연결-.NET의 Websocket
 description: 'Azure Relay 하이브리드 연결 Websocket에 대 한 c # 콘솔 응용 프로그램을 작성 합니다.'
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: a6e759b8cda7515faf63834ef15c013e2f075687
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eb204a7bf18ed1c88a6d359cc521130fa19a1c82
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85317071"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934262"
 ---
 # <a name="get-started-with-relay-hybrid-connections-websockets-in-net"></a>.NET에서 Relay 하이브리드 연결 WebSockets 시작
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
@@ -23,7 +24,7 @@ ms.locfileid: "85317071"
 4. 메시지를 보내는 클라이언트(발신자) 콘솔 애플리케이션을 작성합니다.
 5. 애플리케이션을 실행합니다. 
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 자습서를 완료하려면 다음 필수 구성 요소가 필요합니다.
 

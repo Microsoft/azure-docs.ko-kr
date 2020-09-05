@@ -7,15 +7,16 @@ documentationcenter: .net
 author: tgore03
 ms.service: cloud-services
 ms.devlang: dotnet
+ms.custom: devx-track-dotnet
 ms.topic: article
 ms.date: 02/20/2016
 ms.author: tagore
-ms.openlocfilehash: 47a33ba27dd6d2df626d93695c421303bace6a0b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8270766413729454181c461d469d49e418a1aa67
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75386513"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932307"
 ---
 # <a name="trace-the-flow-of-a-cloud-services-application-with-azure-diagnostics"></a>Azure Diagnostics로 Cloud Services 애플리케이션의 흐름 추적
 추적은 실행되는 동안 애플리케이션의 실행을 모니터링하는 방법입니다. [System.Diagnostics.Trace](/dotnet/api/system.diagnostics.trace), [System.Diagnostics.Debug](/dotnet/api/system.diagnostics.debug) 및 [System.Diagnostics.TraceSource](/dotnet/api/system.diagnostics.tracesource) 클래스를 사용하여 로그의 오류 및 애플리케이션 실행, 텍스트 파일 또는 차후 분석을 위한 다른 디바이스에 대한 정보를 기록할 수 있습니다. 추적에 대한 자세한 내용은 [애플리케이션을 추적 및 계측](/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)을 참조하세요.

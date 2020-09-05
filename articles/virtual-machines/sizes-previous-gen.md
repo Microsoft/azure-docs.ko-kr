@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/20/2020
 ms.author: jushiman
-ms.openlocfilehash: 01c7d5610daa703e910fb485b5e9d945a6cdc940
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 37a687a17df266fe0589c24b392c0527e001f976
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831297"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88683898"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>이전 세대의 가상 머신 크기
 
@@ -59,7 +59,7 @@ Premium Storage 캐싱:  지원됨
 
 MBps = 초당 10^6바이트, GiB = 1024^3바이트
 
-<sup>1</sup> Fs 시리즈 VM에서 제공 가능한 최대 디스크 처리량(IOPS 또는 MBps)은 연결된 디스크의 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다.  자세한 내용은 [Windows](windows/premium-storage-performance.md) 또는 [Linux](linux/premium-storage-performance.md)용 고성능 디자인을 참조 하세요.  
+<sup>1</sup> Fs 시리즈 VM에서 제공 가능한 최대 디스크 처리량(IOPS 또는 MBps)은 연결된 디스크의 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다.  자세한 내용은 [고성능을 위한 디자인 (./premium-storage-performance.md)을 참조 하십시오.
 
 
 ## <a name="nvv2-series"></a>NVv2 시리즈
@@ -267,7 +267,7 @@ Premium Storage 캐싱:  지원됨
 | Standard_DS13 | 8  | 56  | 112 | 32 | 32000/256 (288) | 25600/256 | 8/4000 |
 | Standard_DS14 | 16 | 112 | 224 | 64 | 64000/512 (576) | 51200/512 | 8/8000 |
 
-<sup>1</sup> DS 시리즈 VM에서 제공 가능한 최대 디스크 처리량(IOPS 또는 MBps)은 연결된 디스크의 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다.  자세한 내용은 [Windows](windows/premium-storage-performance.md) 또는 [Linux](linux/premium-storage-performance.md)용 고성능 디자인을 참조 하세요.
+<sup>1</sup> DS 시리즈 VM에서 제공 가능한 최대 디스크 처리량(IOPS 또는 MBps)은 연결된 디스크의 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다.  자세한 내용은 [고성능을 위한 디자인 (./premium-storage-performance.md)을 참조 하십시오.
 <sup>2</sup> VM 제품군은 다음 CPU의 하나에서 실행할 수 있습니다. 2.2 Ghz intel Xeon® e5-2660 v2, 2.4 Ghz intel Xeon® e5-2673 V3 (haswell) 또는 2.3 GHZ intel Xeon® E5-2673 V4 (Broadwell)  
 
 <br>
@@ -293,7 +293,7 @@ Premium Storage 캐싱:  지원되지 않음
 | Standard_L16s  | 16 | 128 | 2807 | 64 | 80000/800 | 20000/500 | 8/16000 |
 | Standard_L32s &nbsp; <sup>1</sup> | 32 | 256 | 5630 | 64 | 160000/1600 | 40000/1000 | 8/20000 |
 
-Ls 시리즈 VM에서 가능한 최대 디스크 처리량은 연결된 디스크 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다. 자세한 내용은 [Windows](windows/premium-storage-performance.md) 또는 [Linux](linux/premium-storage-performance.md)용 고성능 디자인을 참조 하세요.
+Ls 시리즈 VM에서 가능한 최대 디스크 처리량은 연결된 디스크 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다. 자세한 내용은 [고성능을 위한 디자인 (./premium-storage-performance.md)을 참조 하십시오.
 
 <sup>1</sup> 인스턴스는 단일 고객 전용의 하드웨어에 격리되어 있습니다.
 
@@ -315,7 +315,7 @@ Premium Storage 캐싱:  지원됨
 | Standard_GS4&nbsp;<sup>3</sup> | 16 | 224 | 448 | 64 | 80000/800 (2112) | 40000/1000 | 8/16000 |
 | Standard_GS5&nbsp;<sup>2,&nbsp;3</sup> | 32 | 448 |896 | 64 |160000/1600 (4224) | 80000/2000 | 8/20000 |
 
-<sup>1</sup> GS 시리즈 VM에서 제공 가능한 최대 디스크 처리량(IOPS 또는 MBps)은 연결된 디스크의 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다. 자세한 내용은 [Windows](windows/premium-storage-performance.md) 또는 [Linux](linux/premium-storage-performance.md)용 고성능 디자인을 참조 하세요.
+<sup>1</sup> GS 시리즈 VM에서 제공 가능한 최대 디스크 처리량(IOPS 또는 MBps)은 연결된 디스크의 수, 크기 및 스트라이핑에 따라 제한될 수 있습니다. 자세한 내용은 [고성능을 위한 디자인 (./premium-storage-performance.md)을 참조 하십시오.
 
 <sup>2</sup> 인스턴스는 단일 고객 전용의 하드웨어에 격리되어 있습니다.
 

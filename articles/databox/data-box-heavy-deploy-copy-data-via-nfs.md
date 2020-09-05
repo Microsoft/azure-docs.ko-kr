@@ -1,6 +1,6 @@
 ---
 title: NFS를 통해 Azure Data Box Heavy에 데이터를 복사하기 위한 자습서 | Microsoft Docs
-description: NFS를 통해 Azure Data Box Heavy에 데이터를 복사하는 방법 알아보기
+description: 이 자습서에서는 로컬 웹 UI와 함께 NFS를 사용하여 호스트 컴퓨터에서 Azure Data Box Heavy로 데이터를 연결하고 복사하는 방법을 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 047c4649da298e1dcb74ec1910a49353d8be534a
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: a8199039ea803d5919e168edccaaa03c18985725
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206647"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921030"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-heavy-via-nfs"></a>자습서: NFS를 통해 Azure Data Box Heavy에 데이터 복사
 

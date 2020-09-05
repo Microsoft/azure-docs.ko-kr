@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/22/2020
-ms.openlocfilehash: f9ad39b88ad2212ea2cdceb40e61fbc0a2d1a764
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 5c3cb13d0b2da9370f402083d82397679f2c9343
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320496"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022499"
 ---
 # <a name="what-is-azure-monitor-for-vms"></a>VM용 Azure Monitor란?
 
@@ -26,10 +26,6 @@ VM용 Azure Monitor는 다음과 같은 Windows 및 Linux 운영 체제를 지�
 - 다른 클라우드 환경에서 호스트 되는 가상 컴퓨터
   
 
-
->[!NOTE]
->최근에 공개 미리 보기 고객 으로부터 받은 피드백에 따라 상태 기능에 대 한 [변경을 발표](https://azure.microsoft.com/updates/updates-to-azure-monitor-for-virtual-machines-preview-before-general-availability-release/
-) 했습니다. 변경 되는 내용 수를 고려 하 여 새 고객을 위한 상태 기능 제공을 중지할 예정입니다. 기존 고객은 상태 기능을 계속 사용할 수 있습니다. 자세한 내용은 [일반적인 가용성 FAQ](vminsights-ga-release-faq.md)를 참조 하세요.  
 
 
 VM용 Azure Monitor은 데이터를 Azure Monitor 로그에 저장 합니다 .이를 통해 강력한 집계 및 필터링을 제공 하 고 시간에 따른 데이터 추세를 분석할 수 있습니다. 가상 컴퓨터에서 직접 단일 VM의이 데이터를 보거나, Azure Monitor를 사용 하 여 여러 Vm의 집계 보기를 제공할 수 있습니다.

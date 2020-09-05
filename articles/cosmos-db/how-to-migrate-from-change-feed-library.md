@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: maquaran
-ms.openlocfilehash: 9640800bb53fe2fd5b27cb6e232e09c72158f8da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 7a15e5135cd89d7360a1357e3518b1253e80ee65
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261412"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019524"
 ---
 # <a name="migrate-from-the-change-feed-processor-library-to-the-azure-cosmos-db-net-v3-sdk"></a>변경 피드 프로세서 라이브러리에서 Azure Cosmos DB .NET V3 SDK로 마이그레이션
 
@@ -46,10 +47,6 @@ ms.locfileid: "85261412"
 SDK V3 변경 피드 프로세서는 마이그레이션된 응용 프로그램 코드를 처음 실행할 때 모든 이전 라이브러리 상태를 검색 하 고 새 스키마로 자동으로 마이그레이션합니다. 
 
 이전 코드를 사용 하 여 응용 프로그램을 안전 하 게 중지 하 고, 코드를 새 버전으로 마이그레이션하고, 마이그레이션된 응용 프로그램을 시작 하 고, 응용 프로그램이 중지 되는 동안 발생 한 모든 변경 내용을 새 버전에서 선택 하 고 처리할 수 있습니다.
-
-> [!NOTE]
-> 상태 (임대)는 새 스키마로 마이그레이션 되므로 라이브러리를 사용 하는 응용 프로그램에서 .NET V3 SDK로의 마이그레이션은 단방향입니다. 마이그레이션은 이전 버전과 호환 되지 않습니다.
-
 
 ## <a name="additional-resources"></a>추가 리소스
 

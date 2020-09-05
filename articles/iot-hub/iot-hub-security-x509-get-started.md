@@ -12,18 +12,19 @@ ms.custom:
 - amqp
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: e9fd4308f89873183e4f5f57cee56887ce181fae
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+- devx-track-csharp
+ms.openlocfilehash: 1c1e29d43fefa6be1586aefc28249fe2f0f9e9fb
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87307287"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89001028"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Azure IoT Hub의 X.509 보안 설정
 
 이 자습서에서는 *X.509 인증서 인증*을 사용 하 여 Azure IoT hub를 보호 하는 데 필요한 단계를 보여 줍니다. 이에 대 한 설명은 오픈 소스 도구인 OpenSSL를 사용 하 여 Windows 컴퓨터에 로컬로 인증서를 만듭니다. 이 자습서는 테스트용으로만 사용하는 것이 좋습니다. 프로덕션 환경의 경우 *루트 CA(인증 기관)* 에서 인증서를 구입해야 합니다.
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 자습서를 사용하려면 다음과 같은 리소스를 준비해야 합니다.
 
@@ -49,6 +50,9 @@ Azure IoT Hub에서 X.509 인증서 기반 보안을 사용하려면 루트 인�
 ## <a name="register-x509-ca-certificates-to-your-iot-hub"></a>IoT Hub에 X.509 CA 인증서 등록
 
 이 단계는 포털을 통해 IoT Hub에 새 인증 기관을 추가하는 방법을 보여줍니다.
+
+> [!NOTE]
+> IoT hub에 등록할 수 있는 x.509 CA 인증서의 최대 수는 25 개입니다. 자세한 내용은 [Azure IoT Hub 할당량 및 제한](iot-hub-devguide-quotas-throttling.md)을 참조 하세요.
 
 1. Azure Portal에서 IoT hub로 이동 하 고 **Settings**  >  허브에 대 한 설정**인증서** 를 선택 합니다.
 

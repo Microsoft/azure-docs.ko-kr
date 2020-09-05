@@ -8,12 +8,13 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: 32904044cf6dcecf19b1a78eb4236dc02555bb86
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b200782d10ae3637fcade63feab1e638d40acddb
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034200"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006349"
 ---
 # <a name="table-design-patterns"></a>테이블 디자인 패턴
 이 아티클에서는 Table service 솔루션에서 사용하기에 적합한 몇 가지 패턴에 대해 알아봅니다. 또한 다른 Table Storage 디자인 아티클에서 설명한 문제 및 장단점 중 일부를 실용적으로 해결할 수 있는 방법도 확인합니다. 다음 다이어그램에는 서로 다른 패턴 간의 관계가 요약되어 있습니다.  
@@ -33,7 +34,7 @@ Table service는 **PartitionKey** 및 **RowKey** 값을 사용하여 엔터티�
 
 전자 메일 주소와 같은 다른 속성 값으로 기반으로 직원 엔터티를 찾을 수 있도록 하려면 비효율적인 파티션 검색을 사용하여 일치하는 항목을 찾아야 합니다. 테이블 서비스에서는 보조 인덱스를 제공하지 않기 때문입니다. 또한 **RowKey** 와 다른 순서로 정렬된 직원 목록을 요청하는 옵션도 없습니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 보조 인덱스가 없는 문제를 해결하려면 각 엔터티의 여러 복사본을 다른 **RowKey** 값을 사용하는 각 복사본과 함께 저장하면 됩니다. 아래에 표시된 구조로 엔터티를 저장하면 이메일 주소 또는 직원 ID를 기반으로 직원 엔터티를 효율적으로 검색할 수 있습니다. **Rowkey**"empid_" 및 "email_"의 접두사 값을 사용 하면 전자 메일 주소 또는 직원 id의 범위를 사용 하 여 단일 직원 또는 직원 범위를 쿼리할 수 있습니다.  
 
 ![직원 엔터티](media/storage-table-design-guide/storage-table-design-IMAGE07.png)
@@ -88,7 +89,7 @@ Table service는 **PartitionKey** 및 **RowKey** 값을 사용하여 엔터티�
 
 이러한 엔터티에 대해 많은 양의 트랜잭션을 예상 하 고 Table service 클라이언트를 제한 하는 위험을 최소화 하려고 합니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 보조 인덱스가 없는 문제를 해결하려면 각 엔터티의 여러 복사본을 다른 **PartitionKey** 및 **RowKey** 값을 사용하는 각 복사본과 함께 저장하면 됩니다. 아래에 표시된 구조로 엔터티를 저장하면 이메일 주소 또는 직원 ID를 기반으로 직원 엔터티를 효율적으로 검색할 수 있습니다. **PartitionKey**의 접두사 값 "empid_" 및 "email_"은 쿼리에 사용할 수 있는 인덱스를 구분할 수 있도록 해줍니다.  
 
 ![기본 인덱스 및 보조 인덱스](media/storage-table-design-guide/storage-table-design-IMAGE10.png)
@@ -190,7 +191,7 @@ Table service는 **PartitionKey** 및 **RowKey** 값을 사용하여 엔터티�
 
 이름과 같은 고유하지 않은 다른 속성 값을 기반으로 직원 엔터티 목록을 검색할 수 있도록 하려는 경우에는 인덱스를 사용하여 직접 조회하지 말고 비효율적인 파티션 검색을 사용하여 일치하는 항목을 찾아야 합니다. 테이블 서비스에서는 보조 인덱스를 제공하지 않기 때문입니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 위에 표시 된 엔터티 구조를 사용 하 여 성을 기준으로 조회를 사용 하도록 설정 하려면 직원 Id의 목록을 유지 관리 해야 합니다. 특정 성(예: Jones)을 가진 직원 엔터티를 검색하려면 먼저 직원 ID 목록에서 성이 Jones인 직원을 찾은 다음 해당 직원 엔터티를 검색해야 합니다. 직원 ID 목록을 저장하는 기본 옵션에는 다음 세 가지가 있습니다.  
 
 * Blob Storage 사용  
@@ -301,7 +302,7 @@ Table service는 **PartitionKey** 및 **RowKey** 값을 사용하여 엔터티�
 
 이 접근 방식을 사용하면 일부 정보(예: 이름 및 성)를 새 엔터티에 복제하여 단일 요청으로 데이터를 검색할 수 있습니다. 그러나 EGT를 사용하여 두 엔터티를 원자성으로 업데이트할 수 없기 때문에 강력한 일관성을 유지할 수 없습니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 다음 구조의 엔터티를 사용하여 새 엔터티 유형을 원래 테이블에 저장합니다.  
 
 ![직원 엔터티 구조의 솔루션](media/storage-table-design-guide/storage-table-design-IMAGE20.png)
@@ -310,7 +311,7 @@ Table service는 **PartitionKey** 및 **RowKey** 값을 사용하여 엔터티�
 
 다음 예제에서는 특정 직원(예: Sales 부서의 직원 000123)에 대한 모든 검토 데이터를 검색할 수 있는 방법을 간략하게 설명합니다.  
 
-$filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 'empid_000124')&$select=RowKey,Manager Rating,Peer Rating,Comments  
+$filter = (PartitionKey eq ' Sales ') and (RowKey ge ' empid_000123 ') and (RowKey lt ' 000123_2012 ') &$select = RowKey, Manager 등급, 피어 등급, 설명  
 
 ### <a name="issues-and-considerations"></a>문제 및 고려 사항
 이 패턴을 구현할 방법을 결정할 때 다음 사항을 고려하세요.  
@@ -335,7 +336,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="context-and-problem"></a>컨텍스트 및 문제점
 일반적으로 가장 최근에 만든 엔터티를 검색할 수 있습니다 (예: 직원이 제출한 가장 최근 비용 청구 10 개). 테이블 쿼리는 집합에서 첫 번째 엔터티를 반환하는 **$top** 쿼리 작업을 지원합니다. 집합에 있는 마지막 *n*개의 엔터티를 반환하는 동등한 쿼리 작업은 없습니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 가장 최근 항목이 항상 테이블의 첫 번째 항목이 되도록 날짜/시간 역순으로 자연스럽게 정렬하는 **RowKey** 를 사용하여 엔터티를 정렬합니다.  
 
 예를 들어 직원에 의해 전송 된 최근 비용 청구 10 개를 검색 하려면 현재 날짜/시간에서 파생 된 역방향 틱 값을 사용할 수 있습니다. 다음 C# 코드 샘플은 가장 최근 항목부터 가장 오래된 항목까지 정렬하는 **RowKey** 에 대한 적절한 "반전된 틱" 값을 만드는 한 가지 방법을 보여 줍니다.  
@@ -436,7 +437,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 ### <a name="context-and-problem"></a>컨텍스트 및 문제점
 개별 엔터티는 252개가 넘는 속성(필수 시스템 속성 제외)을 가질 수 없으며, 총 1MB가 넘는 데이터를 저장할 수 없습니다. 관계형 데이터베이스는 일반적으로 새 테이블을 추가하고 일대일 관계를 적용하여 행 크기에 대한 제한을 피합니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 Table service를 사용하면 여러 엔터티를 저장하여 252개가 넘는 속성을 가진 대규모 단일 비즈니스 개체를 나타낼 수 있습니다. 예를 들어 각 직원이 지난 365일 동안 보낸 IM 메시지 수를 저장하려는 경우 스키마가 서로 다른 두 개의 엔터티를 사용하는 다음 디자인을 사용할 수 있습니다.  
 
 ![여러 엔터티](media/storage-table-design-guide/storage-table-design-IMAGE24.png)
@@ -463,7 +464,7 @@ Blob Storage를 사용하여 큰 속성 값을 저장합니다.
 ### <a name="context-and-problem"></a>컨텍스트 및 문제점
 개별 엔터티는 총 1MB가 넘는 데이터를 저장할 수 없습니다. 하나 이상의 속성에 엔터티의 총 크기가 이 값을 초과하게 만드는 값이 저장된 경우에는 Table service에 전체 엔터티를 저장할 수 없습니다.  
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 하나 이상의 속성에 많은 데이터가 포함되어 있어 엔터티의 크기가 1MB를 초과하는 경우 Blob service에 데이터를 저장한 다음 엔터티의 속성에 해당 Blob의 주소를 저장할 수 있습니다. 예를 들어 직원의 사진을 Blob Storage에 저장하고 해당 사진의 링크를 직원 엔터티의 **사진** 속성에 저장할 수 있습니다.  
 
 ![사진 속성](media/storage-table-design-guide/storage-table-design-IMAGE25.png)
@@ -493,7 +494,7 @@ Blob Storage를 사용하여 큰 속성 값을 저장합니다.
 
 ![엔터티 구조](media/storage-table-design-guide/storage-table-design-IMAGE26.png)
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 다음 대체 엔터티 구조는 애플리케이션에서 이벤트를 기록할 때 특정 파티션의 핫스폿을 방지합니다.  
 
 ![대안 엔터티 구조](media/storage-table-design-guide/storage-table-design-IMAGE27.png)
@@ -532,7 +533,7 @@ Blob Storage를 사용하여 큰 속성 값을 저장합니다.
 
 그러나 이 스키마의 문제점은 특정 시간대의 모든 로그 메시지를 검색하려면 테이블의 모든 파티션을 검색해야 한다는 점입니다.
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 이전 섹션에서는 Table service를 사용하여 로그 항목을 저장하려는 경우의 문제점을 설명하고 불만족스러운 두 가지 디자인을 제시했습니다. 한 가지 솔루션은 로그 메시지 작성 성능의 저하 위험으로 인해 핫 파티션이 발생했으며, 다른 솔루션은 특정 시간대의 로그 메시지를 검색하려면 테이블의 모든 파티션을 검색해야 하기 때문에 쿼리 성능이 저하되었습니다. Blob 스토리지는 이 유형의 시나리오에 보다 효율적인 솔루션을 제공하며, Azure Storage Analytics에서는 수집한 로그 데이터를 이 방법으로 저장합니다.  
 
 이 섹션에서는 일반적으로 범위로 쿼리한 데이터를 저장하는 접근 방식을 보여 주면서 Storage Analytics가 로그 데이터를 Blob 스토리지에 저장하는 방법을 간략하게 설명합니다.  

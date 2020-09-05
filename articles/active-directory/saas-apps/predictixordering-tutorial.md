@@ -2,25 +2,21 @@
 title: '자습서: Predictix Ordering과 Azure Active Directory 통합 | Microsoft Docs'
 description: 이 자습서에서는 Azure Active Directory와 Predictix Ordering 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 2fe2f976-e97f-4368-9695-3e1624409e8b
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 9ab66dc7bc2aea249e105df20652c0f5904e294d
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 0eec8d9d88b286e386bd310c98d03737e56e05b2
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85800260"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553736"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-ordering"></a>자습서: Predictix Ordering과 Azure Active Directory 통합
 

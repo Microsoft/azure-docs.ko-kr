@@ -7,12 +7,12 @@ ms.topic: guide
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 04/09/2020
-ms.openlocfilehash: 273e6560cd4a9efeac6704ca5d44772248c26050
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: f4d30cdb931d6523eba3aac003caeee38a8c024d
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504316"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653531"
 ---
 # <a name="common-issues-during-vhd-creation"></a>VHD를 만들 때 발생하는 일반적인 문제
 
@@ -20,7 +20,7 @@ FAQ(질문과 대답)는 Azure Virtual Machine 제품의 VHD(가상 하드 디�
 
 ## <a name="how-do-i-create-a-vm-from-the-azure-portal-using-a-vhd-in-premium-storage"></a>Premium Storage의 VHD를 사용하여 Azure Portal에서 VM을 만들려면 어떻게 해야 하나요?
 
-현재 Azure Marketplace는 관리형 스토리지 또는 Azure Premium Storage의 이미지에서 VM 제품을 만들도록 지원하지 않습니다. 자세한 내용은 [Azure Managed Disks 개요](../../virtual-machines/windows/managed-disks-overview.md)를 참조하세요.
+현재 Azure Marketplace는 관리형 스토리지 또는 Azure Premium Storage의 이미지에서 VM 제품을 만들도록 지원하지 않습니다. 자세한 내용은 [Azure Managed Disks 개요](../../virtual-machines/managed-disks-overview.md)를 참조하세요.
 
 ## <a name="can-i-use-generation-2-vms-for-offers"></a>2세대 VM을 제품에 사용할 수 있나요?
 

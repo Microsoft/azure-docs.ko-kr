@@ -12,12 +12,12 @@ metadata:
   ms.author: mathoma
   ms.reviewer: carlrab
   ms.date: 05/27/2020
-  ms.openlocfilehash: 358c6e85b7a2d6e54b72bb94c00e86f330decd19
-  ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+  ms.openlocfilehash: 6c02f1f12ed32cbced046f9937d4b8a28d74f97a
+  ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/11/2020
-  ms.locfileid: "84708776"
+  ms.lasthandoff: 08/19/2020
+  ms.locfileid: "88590424"
 landingContent:
 - title: Azure SQL Managed Instance
   linkLists:
@@ -25,6 +25,10 @@ landingContent:
     links:
     - text: SQL Managed Instance 만들기
       url: instance-create-quickstart.md
+  - linkListType: video
+    links:
+    - text: Azure SQL Managed Instance 개요
+      url: https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/Azure-SQL-Managed-Instance-Overview-6-of-61
   - linkListType: concept
     links:
     - text: 새로운 기능
@@ -61,20 +65,30 @@ landingContent:
       url: ../database/dynamic-data-masking-overview.md
     - text: 퍼블릭 엔드포인트
       url: public-endpoint-overview.md
-- title: 참조
+- title: Azure SQL 알아보기
   linkLists:
   - linkListType: learn
     links:
+    - text: 초보자용 Azure SQL
+      url: https://aka.ms/azuresql4beginners
+    - text: Azure SQL 기본 사항
+      url: https://docs.microsoft.com/learn/paths/azure-sql-fundamentals/
+    - text: Azure SQL 실습 랩
+      url: https://aka.ms/asqlworkshop
+    - text: Azure SQL 부트캠프
+      url: https://aka.ms/azuresqlbootcamp
     - text: 교육용 SQL 리소스
       url: /sql/sql-server/educational-sql-resources
+- title: 참조
+  linkLists:
   - linkListType: deploy
     links:
     - text: Azure CLI 샘플
-      url: /sql/ssms/download-sql-server-management-studio-ssms
+      url: ../database/az-cli-script-samples-content-guide.md
     - text: PowerShell 샘플
-      url: /sql/ssms/download-sql-server-management-studio-ssms
+      url: ../database/powershell-script-content-guide.md
     - text: ARM 템플릿 샘플
-      url: /sql/ssms/download-sql-server-management-studio-ssms
+      url: ../database/arm-templates-content-guide.md
   - linkListType: download
     links:
     - text: SSMS(SQL Server Management Studio)

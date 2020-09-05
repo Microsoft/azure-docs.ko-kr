@@ -11,12 +11,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
-ms.openlocfilehash: 6a8cc588ff7325242e7e010e9869eaa9a24f6fc2
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 8be13a299de0fc3de0acaf0001722d8c96a460e6
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88033339"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205936"
 ---
 # <a name="redirect-uri-reply-url-restrictions-and-limitations"></a>리디렉션 URI (회신 URL) 제한 사항 및 제한 사항
 
@@ -51,7 +51,7 @@ Azure Active Directory (Azure AD) 응용 프로그램 모델은 현재 조직의
 
 [RFC 8252 섹션 8.3](https://tools.ietf.org/html/rfc8252#section-8.3) 및 [7.3](https://tools.ietf.org/html/rfc8252#section-7.3), "루프백" 또는 "localhost" 리디렉션 uri는 다음과 같은 두 가지 특별 한 고려 사항과 함께 제공 됩니다.
 
-1. `http`리디렉션이 장치를 벗어날 수 없기 때문에 URI 체계가 허용 됩니다. 이러한 두 가지 경우 모두 사용할 수 있습니다.
+1. `http` 리디렉션이 장치를 벗어날 수 없기 때문에 URI 체계가 허용 됩니다. 이러한 두 가지 경우 모두 사용할 수 있습니다.
     - `http://127.0.0.1/myApp`
     - `https://127.0.0.1/myApp`
 1. 기본 응용 프로그램에서 사용 되는 사용 후 삭제 포트 범위 때문에 포트 구성 요소 (예: `:5001` 또는 `:443` )는 리디렉션 URI 일치를 위해 무시 됩니다. 따라서 이러한 모든 항목은 동일 하 게 간주 됩니다.
@@ -62,9 +62,9 @@ Azure Active Directory (Azure AD) 응용 프로그램 모델은 현재 조직의
 
 개발 관점에서이는 다음과 같은 몇 가지 것을 의미 합니다.
 
-1. 포트가 서로 다른 경우에는 여러 리디렉션 Uri를 등록 하지 마십시오. 로그인 서버는 임의의 항목을 임의로 선택 하 고 해당 리디렉션 URI와 연결 된 동작을 사용 합니다 (예: `web` -, `native` -또는 `spa` -type 리디렉션).
-1. 호스트에서 여러 리디렉션 Uri를 등록 하 여 개발 중에 서로 다른 흐름을 테스트 해야 하는 경우에는 URI의 *경로* 구성 요소를 사용 하 여 구분 합니다. 예를 들어,는 `http://127.0.0.1/MyWebApp` 와 일치 하지 않습니다 `http://127.0.0.1/MyNativeApp` .
-1. RFC 지침에 따라 리디렉션 URI에서를 사용 하면 안 `localhost` 됩니다. 대신 실제 루프백 IP 주소를 사용 `127.0.0.1` 합니다. 이렇게 하면 잘못 구성 된 방화벽 또는 이름이 바뀐 네트워크 인터페이스로 인해 앱이 중단 되지 않습니다.
+* 포트가 서로 다른 경우에는 여러 리디렉션 Uri를 등록 하지 마십시오. 로그인 서버는 임의의 항목을 임의로 선택 하 고 해당 리디렉션 URI와 연결 된 동작을 사용 합니다 (예: `web` -, `native` -또는 `spa` -type 리디렉션).
+* 호스트에서 여러 리디렉션 Uri를 등록 하 여 개발 중에 서로 다른 흐름을 테스트 해야 하는 경우에는 URI의 *경로* 구성 요소를 사용 하 여 구분 합니다. 예를 들어,는 `http://127.0.0.1/MyWebApp` 와 일치 하지 않습니다 `http://127.0.0.1/MyNativeApp` .
+* RFC 지침에 따라 리디렉션 URI에서를 사용 하면 안 `localhost` 됩니다. 대신 실제 루프백 IP 주소를 사용 `127.0.0.1` 합니다. 이렇게 하면 잘못 구성 된 방화벽 또는 이름이 바뀐 네트워크 인터페이스로 인해 앱이 중단 되지 않습니다.
 
     IPv6 루프백 주소 ( `[::1]` )는 현재 지원 되지 않습니다.
 

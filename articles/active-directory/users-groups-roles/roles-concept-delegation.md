@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c26951d5ab7552dc6c63288ce92cdb8134bd58ed
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 468b874ae4a19b8b5ea2a9a91a258722cef60e3a
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498228"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798604"
 ---
 # <a name="delegate-administration-in-azure-active-directory"></a>Azure Active Directory의 관리 위임
 
@@ -60,7 +60,7 @@ Azure AD에서 관리 액세스 대신 Azure 리소스에 대 한 액세스를 �
 각 작업에 대해 빈도, 중요도 및 문제점이 평가되어야 합니다. 이러한 조건은 사용 권한이 위임되어야 하는지 여부를 제어하므로 작업 정의의 중요한 측면입니다.
 
 * 정기적으로 수행되고, 위험이 한정되어 있고, 완료하기 귀찮은 작업들이 위임하기에 좋은 작업입니다.
-* 드물게 수행하지만 조직에 중대한 영향을 미치고 고도의 기술 수준을 요구하는 작업은 위임 전에 신중히 고려해야 합니다. 대신, [일시적으로 계정을 필요한 역할로 승격](../active-directory-privileged-identity-management-configure.md)하거나 작업을 다시 할당할 수 있습니다.
+* 드물게 수행하지만 조직에 중대한 영향을 미치고 고도의 기술 수준을 요구하는 작업은 위임 전에 신중히 고려해야 합니다. 대신, [일시적으로 계정을 필요한 역할로 승격](../privileged-identity-management/pim-configure.md)하거나 작업을 다시 할당할 수 있습니다.
 
 ## <a name="delegate-app-administration"></a>앱 관리 위임
 
@@ -110,7 +110,7 @@ Azure AD는 Azure AD 관리자 역할을 계획하고, 이러한 역할에 대�
 
 ## <a name="elevate-privilege-temporarily"></a>일시적으로 권한 상승
 
-대부분의 일상적인 작업에서 일부 사용자에게만 글로벌 관리자 권한이 필요하고, 일부 사용자만 글로벌 관리자 역할에 영구적으로 할당되어야 합니다. 사용자에게 글로벌 관리자의 사용 권한이 필요한 경우 고유한 계정 또는 다른 관리 계정에서 Azure AD [Privileged Identity Management](../active-directory-privileged-identity-management-configure.md)의 역할 할당을 활성화해야 합니다.
+대부분의 일상적인 작업에서 일부 사용자에게만 글로벌 관리자 권한이 필요하고, 일부 사용자만 글로벌 관리자 역할에 영구적으로 할당되어야 합니다. 사용자에게 글로벌 관리자의 사용 권한이 필요한 경우 고유한 계정 또는 다른 관리 계정에서 Azure AD [Privileged Identity Management](../privileged-identity-management/pim-configure.md)의 역할 할당을 활성화해야 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

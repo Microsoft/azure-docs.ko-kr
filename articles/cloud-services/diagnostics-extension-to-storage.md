@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 08/01/2016
 ms.author: bwren
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 17430330d068fb55b45f073afecb8ba348286cb5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9e16d77c36f382e72d5e9902b07afbbec50b6876
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77472675"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723258"
 ---
 # <a name="store-and-view-diagnostic-data-in-azure-storage"></a>Azure Storage에서 진단 데이터 저장 및 보기
-진단 데이터를 Microsoft Azure Storage 에뮬레이터 또는 Azure Storage에 전송하지 않는 한 진단 데이터는 영구적으로 저장되지 않습니다. 스토리지에서 사용할 수 있는 여러 도구 중 하나로 한 번 볼 수 있습니다.
+진단 데이터를 Microsoft Azure Storage 에뮬레이터으로 전송 하거나 Azure Storage 하지 않는 한 진단 데이터는 영구적으로 저장 되지 않습니다. 스토리지에서 사용할 수 있는 여러 도구 중 하나로 한 번 볼 수 있습니다.
 
 ## <a name="specify-a-storage-account"></a>스토리지 계정 지정
 ServiceConfiguration.cscfg 파일에서 사용하려는 스토리지 계정을 지정합니다. 계정 정보는 구성 설정에서 연결 문자열로 정의됩니다. 다음 예제에서는 Visual Studio에서 새 클라우드 서비스 프로젝트에 대해 생성된 기본 연결 문자열을 보여 줍니다.

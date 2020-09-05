@@ -3,12 +3,12 @@ title: Azure에 SQL Server 데이터베이스 백업
 description: 이 문서에서는 Azure에 SQL Server를 백업하는 방법을 설명합니다. SQL Server 복구에 대해서도 설명합니다.
 ms.topic: conceptual
 ms.date: 06/18/2019
-ms.openlocfilehash: 28644065619771069e556c941d2c5a77626e1ba6
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: d8cdafe215d9271151d8dacee114d40108e907bd
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922900"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892442"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Azure VM의 SQL Server 백업 정보
 
@@ -27,17 +27,17 @@ ms.locfileid: "87922900"
 
 * 보호하려는 SQL Server VM을 지정하고 그 안에 있는 데이터베이스를 쿼리하면 Azure Backup 서비스가 `AzureBackupWindowsWorkload` 확장이라는 이름으로 VM에 워크로드 백업 확장을 설치합니다.
 * 이 확장은 코디네이터 및 SQL 플러그 인으로 구성됩니다. 코디네이터는 백업 구성, 백업 및 복원 같은 다양한 워크플로를 트리거하는 역할을 담당하고, 플러그 인은 실제 데이터 흐름을 담당합니다.
-* 이 VM에서 데이터베이스를 검색할 수 있도록 Azure Backup은 `NT SERVICE\AzureWLBackupPluginSvc` 계정을 만듭니다. 이 계정은 백업 및 복원에 사용되며 SQL sysadmin 권한이 필요합니다. `NT SERVICE\AzureWLBackupPluginSvc` 계정은 [Virtual Service Account](/windows/security/identity-protection/access-control/service-accounts#virtual-accounts)이므로 암호 관리가 필요하지 않습니다. Azure Backup은 데이터베이스 검색/조회에 `NT AUTHORITY\SYSTEM` 계정을 활용하므로, 이 계정은 SQL에서 공용 로그인이어야 합니다. Azure Marketplace에서 SQL Server VM을 만들지 않은 경우 **UserErrorSQLNoSysadminMembership** 오류가 발생할 수 있습니다. 이 경우 [다음 지침을 따르세요](#set-vm-permissions).
+* 이 VM에서 데이터베이스를 검색할 수 있도록 Azure Backup은 `NT SERVICE\AzureWLBackupPluginSvc` 계정을 만듭니다. 이 계정은 백업 및 복원에 사용되며 SQL sysadmin 권한이 필요합니다. `NT SERVICE\AzureWLBackupPluginSvc`계정은 [가상 서비스 계정](/windows/security/identity-protection/access-control/service-accounts#virtual-accounts)이므로 암호 관리가 필요 하지 않습니다. Azure Backup는 `NT AUTHORITY\SYSTEM` 데이터베이스 검색/조회를 위해 계정을 사용 하므로이 계정은 SQL의 공용 로그인 이어야 합니다. Azure Marketplace에서 SQL Server VM을 만들지 않은 경우 **UserErrorSQLNoSysadminMembership** 오류가 발생할 수 있습니다. 이 경우 [다음 지침을 따르세요](#set-vm-permissions).
 * 선택한 데이터베이스에서 구성 보호를 트리거하면 백업 서비스가 백업 일정과 기타 정책 세부 정보를 사용하여 코디네이터를 설정하며, 이 경우 확장이 VM에 로컬로 캐시합니다.
 * 예약된 시간에 코디네이터가 플러그 인과 통신하고 VDI를 사용하여 SQL 서버의 백업 데이터를 스트리밍하기 시작합니다.  
-* 플러그 인은 복구 서비스 자격 증명 모음에 직접 데이터를 보내기 때문에 준비 위치가 필요 없습니다. 데이터는 Azure Backup 서비스를 통해 암호화되어 스토리지 계정에 저장됩니다.
+* 플러그 인은 데이터를 Recovery Services 자격 증명 모음으로 직접 전송 하므로 준비 위치가 필요 하지 않습니다. 데이터는 Azure Backup 서비스를 통해 암호화되어 스토리지 계정에 저장됩니다.
 * 데이터 전송이 완료되면 코디네이터가 백업 서비스를 사용하여 커밋을 확인합니다.
 
   ![SQL 백업 아키텍처](./media/backup-azure-sql-database/backup-sql-overview.png)
 
 ## <a name="before-you-start"></a>시작하기 전에
 
-시작하기 전에 다음을 확인합니다.
+시작 하기 전에 다음 요구 사항을 확인 합니다.
 
 1. Azure에서 실행되는 SQL Server 인스턴스가 있는지 확인합니다. [SQL Server 인스턴스를 마켓플레이스에 빠르게 만들](../azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart.md) 수 있습니다.
 2. [기능 고려 사항](sql-support-matrix.md#feature-considerations-and-limitations) 및 [시나리오 지원](sql-support-matrix.md#scenario-support)을 검토 합니다.
@@ -51,9 +51,9 @@ ms.locfileid: "87922900"
 * 가상 머신에서 에서 데이터베이스를 검색하기 위해 NT SERVICE\AzureWLBackupPluginSvc 계정을 만듭니다. 이 계정은 백업 및 복원에 사용되며 SQL sysadmin 권한이 필요합니다.
 * VM에서 실행 중인 데이터베이스를 검색하고 Azure Backup은 NT AUTHORITY\SYSTEM 계정을 사용합니다. 이 계정은 SQL에서 공용 로그인이어야 합니다.
 
-Azure Marketplace에서 SQL Server VM을 만들지 않았거나 SQL 2008 및 2008 R2를 사용 중인 경우, **UserErrorSQLNoSysadminMembership** 오류가 발생할 수 있습니다.
+Azure Marketplace에서 SQL Server VM를 만들지 않았거나 SQL 2008 또는 2008 r 2에 있는 경우 **Usererrorsqlnosysadminmembership** error를 받을 수 있습니다.
 
-Windows 2008 R2에서 실행되는 **SQL 2008** 및 **2008 R2**의 경우 권한을 부여하려면 [여기](#give-sql-sysadmin-permissions-for-sql-2008-and-sql-2008-r2)를 참조하세요.
+Windows 2008 r 2에서 실행 되는 **SQL 2008** 및 **2008** r 2의 경우 사용 권한을 부여 하려면 [여기](#give-sql-sysadmin-permissions-for-sql-2008-and-sql-2008-r2)를 참조 하세요.
 
 다른 모든 버전의 경우 다음 단계에 따라 권한을 수정합니다.
 

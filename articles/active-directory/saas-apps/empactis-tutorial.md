@@ -2,25 +2,21 @@
 title: '자습서: Empactis와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Empactis 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: ee18d76c-7a05-4b25-8e4f-e151b2268958
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 94e326a2c8f75f2b498ddc603d5a0895baf71b3d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: aa62a6b8fbf8aab09b96f043c571cb4bf5c41fa2
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67103459"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547218"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-empactis"></a>자습서: Empactis와 Azure Active Directory 통합
 

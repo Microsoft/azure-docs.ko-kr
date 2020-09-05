@@ -5,12 +5,12 @@ description: AKS (Azure Kubernetes Service) 클러스터에 대 한 서비스 �
 services: container-service
 ms.topic: article
 ms.date: 03/11/2019
-ms.openlocfilehash: a824606bc0e77ba069b6b54725645ee3f348de27
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: e787322f421094cf9ac6681df0119ba820b654ea
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386931"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871227"
 ---
 # <a name="update-or-rotate-the-credentials-for-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스 (AKS)에 대 한 자격 증명 업데이트 또는 순환
 
@@ -31,7 +31,8 @@ AKS 클러스터에 대 한 자격 증명을 업데이트 하려는 경우 다�
 * 기존 서비스 주체의 자격 증명을 업데이트 합니다.
 * 새 서비스 주체를 만들고 이러한 새 자격 증명을 사용 하도록 클러스터를 업데이트 합니다. 
 
-> ! 내용의 *새* 서비스 주체를 만들도록 선택 하는 경우 이러한 자격 증명을 사용 하도록 large AKS 클러스터를 업데이트 하는 데 시간이 오래 걸릴 수 있습니다.
+> [!WARNING]
+> *새* 서비스 주체를 만들도록 선택 하는 경우 이러한 자격 증명을 사용 하도록 large AKS 클러스터를 업데이트 하는 데 시간이 오래 걸릴 수 있습니다.
 
 ### <a name="check-the-expiration-date-of-your-service-principal"></a>서비스 사용자의 만료 날짜를 확인 합니다.
 

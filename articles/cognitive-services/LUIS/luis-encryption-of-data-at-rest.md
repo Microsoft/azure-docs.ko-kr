@@ -1,20 +1,20 @@
 ---
 title: 휴지 상태의 데이터에 대 한 서비스 암호화 Language Understanding
 titleSuffix: Azure Cognitive Services
-description: 휴지 상태의 데이터에 대 한 서비스 암호화를 Language Understanding 합니다.
+description: Microsoft는 Microsoft에서 관리 하는 암호화 키를 제공 하며, CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 Cognitive Services 구독을 관리할 수도 있습니다. 이 문서에서는 Language Understanding (LUIS)에 대 한 미사용 데이터 암호화 및 CMK를 사용 하 고 관리 하는 방법을 설명 합니다.
 author: erindormier
 manager: venkyv
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 03/13/2020
+ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 4fc816c3894120a5d1b356d91ebebbc56f21b530
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: ce6561652801d52e5600ddc63e573070281da3f2
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85052699"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078132"
 ---
 # <a name="language-understanding-service-encryption-of-data-at-rest"></a>휴지 상태의 데이터에 대 한 서비스 암호화 Language Understanding
 
@@ -22,15 +22,15 @@ Language Understanding 서비스는 데이터가 클라우드에 유지 될 때 
 
 ## <a name="about-cognitive-services-encryption"></a>Cognitive Services 암호화 정보
 
-데이터는 [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2) 규격 [256 비트 AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 암호화를 사용 하 여 암호화 및 암호 해독 됩니다. 암호화 및 암호 해독은 투명 합니다. 즉, 암호화 및 액세스를 관리 합니다. 데이터는 기본적으로 안전 하며 암호화를 활용 하기 위해 코드 또는 응용 프로그램을 수정할 필요가 없습니다.
+데이터는 [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2) 규격 [256 비트 AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 암호화를 사용 하 여 암호화 및 암호 해독 됩니다. 암호화 및 암호 해독은 투명 합니다. 즉, 암호화 및 액세스를 관리 합니다. 데이터는 기본적으로 안전하며 암호화를 활용하기 위해 코드 또는 애플리케이션을 수정할 필요가 없습니다.
 
 ## <a name="about-encryption-key-management"></a>암호화 키 관리 정보
 
-기본적으로 구독은 Microsoft에서 관리 하는 암호화 키를 사용 합니다. 사용자 고유의 키를 사용 하 여 구독을 관리 하는 옵션도 있습니다. CMK (고객이 관리 하는 키)는 액세스 제어를 만들고, 회전 하 고, 사용 하지 않도록 설정 하 고, 취소할 수 있는 유연성을 제공 합니다. 데이터를 보호 하는 데 사용 되는 암호화 키를 감사할 수도 있습니다.
+기본적으로 구독은 Microsoft에서 관리하는 암호화 키를 사용합니다. CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 구독을 관리 하는 옵션도 있습니다. CMK는 액세스 제어를 만들고, 회전 하 고, 비활성화 하 고, 취소할 수 있는 유연성을 제공 합니다. 데이터를 보호하는 데 사용되는 암호화 키를 감사할 수도 있습니다.
 
 ## <a name="customer-managed-keys-with-azure-key-vault"></a>Azure Key Vault를 사용하는 고객 관리형 키
 
-사용자 고유의 키를 사용 하 여 구독을 관리 하는 옵션도 있습니다. BYOK (사용자 고유 키 사용) 라고도 하는 CMK (고객 관리 키)는 액세스 제어를 보다 유연 하 게 만들고, 회전 하 고, 사용 하지 않도록 설정 하 고, 취소할 수 있는 유연성을 제공 합니다. 데이터를 보호 하는 데 사용 되는 암호화 키를 감사할 수도 있습니다.
+사용자 고유의 키를 사용 하 여 구독을 관리 하는 옵션도 있습니다. BYOK (사용자 고유 키 사용) 라고도 하는 CMK (고객 관리 키)는 액세스 제어를 보다 유연 하 게 만들고, 회전 하 고, 사용 하지 않도록 설정 하 고, 취소할 수 있는 유연성을 제공 합니다. 데이터를 보호하는 데 사용되는 암호화 키를 감사할 수도 있습니다.
 
 Azure Key Vault를 사용 하 여 고객 관리 키를 저장 해야 합니다. 사용자 고유의 키를 만들어 키 자격 증명 모음에 저장할 수도 있고, Azure Key Vault API를 사용하여 키를 생성할 수도 있습니다. Cognitive Services 리소스 및 키 자격 증명 모음은 동일한 지역 및 동일한 Azure Active Directory (Azure AD) 테 넌 트에 있어야 하지만 다른 구독에 있을 수 있습니다. Azure Key Vault에 대 한 자세한 내용은 [Azure Key Vault 무엇입니까?](https://docs.microsoft.com/azure/key-vault/key-vault-overview)를 참조 하세요.
 
@@ -39,10 +39,6 @@ Azure Key Vault를 사용 하 여 고객 관리 키를 저장 해야 합니다. 
 고객 관리 키를 사용 하는 기능을 요청 하려면 [LUIS Service 고객이 관리 하는 키 요청 양식을](https://aka.ms/cogsvc-cmk)작성 하 고 제출 합니다. 요청 상태를 다시 들으려면 영업일 3-5 영업일이 소요 됩니다. 요청에 따라 큐에 배치 되 고 공간을 사용할 수 있게 되 면 승인 될 수 있습니다. LUIS와 함께 CMK를 사용 하도록 승인 되 면 Azure Portal에서 새 Language Understanding 리소스를 만들고 해당 가격 책정 계층으로 E0를 선택 해야 합니다. 새 SKU는 CMK를 제외 하 고 이미 사용할 수 있는 F0 SKU와 동일 하 게 작동 합니다. 사용자는 F0에서 새 E0 SKU로 업그레이드할 수 없습니다.
 
 ![LUIS subscription 이미지](../media/cognitive-services-encryption/luis-subscription.png)
-
-### <a name="regional-availability"></a>국가별 가용성
-
-고객 관리 키는 모든 [제작 지역](luis-reference-regions.md)에서 사용할 수 있습니다. 
 
 ### <a name="limitations"></a>제한 사항
 

@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.subservice: metrics
-ms.openlocfilehash: ca697fe0174a62532f3fa9ffbc5b3fcfc0c06ad7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 73c9b2bf8cf88ca5e8576c451c9d9ac5f0eae8a3
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321278"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639905"
 ---
 # <a name="custom-metrics-in-azure-monitor-preview"></a>Azure Monitor의 사용자 지정 메트릭 (미리 보기)
 
@@ -26,6 +26,7 @@ Azure Monitor 사용자 지정 메트릭은 공개 미리 보기로 제공 됩�
 
 다음과 같은 여러 가지 방법으로 사용자 지정 메트릭을 Azure Monitor로 보낼 수 있습니다.
 - Azure Application Insights SDK를 사용하여 애플리케이션을 계측하고 사용자 지정 원격 분석을 Azure Monitor로 보냅니다. 
+- [Windows 또는 Linux AZURE VM](azure-monitor-agent-overview.md) 에 Azure Monitor 에이전트 (미리 보기)를 설치 하 고 [데이터 수집 규칙](data-collection-rule-azure-monitor-agent.md) 을 사용 하 여 성능 카운터를 Azure Monitor 메트릭에 보냅니다.
 - [Azure VM](collect-custom-metrics-guestos-resource-manager-vm.md), [가상 머신 확장 집합](collect-custom-metrics-guestos-resource-manager-vmss.md), [클래식 VM](collect-custom-metrics-guestos-vm-classic.md) 또는 [클래식 Cloud Services](collect-custom-metrics-guestos-vm-cloud-service-classic.md)에 WAD(Microsoft Azure Diagnostics) 확장을 설치하고 성능 카운터를 Azure Monitor로 보냅니다. 
 - Azure Linux VM에 [InfluxData Telegraf 에이전트](collect-custom-metrics-linux-telegraf.md)를 설치하고 Azure Monitor 출력 플러그 인을 사용하여 메트릭을 보냅니다.
 - 사용자 지정 메트릭을 [Azure Monitor REST API에 직접](./metrics-store-custom-rest-api.md)보냅니다 `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics` .
@@ -53,7 +54,7 @@ Azure Monitor에 사용자 지정 메트릭을 보낼 때 보고되는 각 데�
 > [!TIP]  
 > 사용자 지정 메트릭을 내보내기 위해 Azure AD 토큰을 요청하는 경우 토큰이 요청되는 대상 그룹 또는 리소스가 `https://monitoring.azure.com/`이어야 합니다. 후행 슬래시(‘/’)를 포함해야 합니다.
 
-### <a name="subject"></a>주체
+### <a name="subject"></a>제목
 이 속성은 사용자 지정 메트릭이 보고되는 Azure 리소스 ID를 캡처합니다. 이 정보는 수행되는 API 호출의 URL에 인코딩됩니다. 각 API는 단일 Azure 리소스에 대한 메트릭 값만 전송할 수 있습니다.
 
 > [!NOTE]  
@@ -68,13 +69,13 @@ Azure Monitor에 사용자 지정 메트릭을 보낼 때 보고되는 각 데�
 >
 >
 
-### <a name="timestamp"></a>Timestamp
+### <a name="timestamp"></a>타임스탬프
 Azure Monitor에 전송되는 각 데이터 요소는 타임스탬프를 사용하여 표시되어야 합니다. 이 타임스탬프는 메트릭 값이 측정 또는 수집된 날짜/시간을 캡처합니다. Azure Monitor는 과거 20분 및 미래 5분까지의 타임스탬프가 지정된 메트릭 데이터를 허용합니다. 타임 스탬프는 ISO 8601 형식 이어야 합니다.
 
 ### <a name="namespace"></a>네임스페이스
 네임스페이스는 유사한 메트릭을 함께 분류 또는 그룹화하는 방법입니다. 네임스페이스를 사용하면 각기 다른 인사이트 또는 성능 지표를 수집할 수 있는 메트릭 그룹을 격리할 수 있습니다. 예를 들어 앱을 프로 파일링 하는 메모리 사용 메트릭을 추적 하는 **contosomemorymetrics** 라는 네임 스페이스가 있을 수 있습니다. **Contosoapptransaction** 라는 다른 네임 스페이스는 응용 프로그램의 사용자 트랜잭션에 대 한 모든 메트릭을 추적할 수 있습니다.
 
-### <a name="name"></a>Name
+### <a name="name"></a>속성
 **이름**은 보고되는 메트릭의 이름입니다. 일반적으로 이름은 측정 대상을 식별하기에 충분한 정보를 제공합니다. 예를 들어, 지정된 VM에서 사용된 메모리 바이트 수를 측정하는 메트릭이 있습니다. 메트릭 이름은 **사용 중인 메모리 바이트**일 수 있습니다.
 
 ### <a name="dimension-keys"></a>차원 키
@@ -176,14 +177,14 @@ Azure Monitor에 대한 결과 메트릭 게시는 다음과 같습니다.
 > 사용자 지정 메트릭을 보려면 독자 또는 참가자 역할을 수행 해야 합니다.
 
 ### <a name="browse-your-custom-metrics-via-the-azure-portal"></a>Azure Portal을 통해 사용자 지정 메트릭 찾아보기
-1.    [Azure 포털](https://portal.azure.com)로 이동합니다.
+1.    [Azure Portal](https://portal.azure.com)로 이동합니다.
 2.    **모니터** 창을 선택합니다.
 3.    **메트릭**을 선택합니다.
 4.    사용자 지정 메트릭을 내보낸 리소스를 선택합니다.
 5.    사용자 지정 메트릭에 대한 메트릭 네임스페이스를 선택합니다.
 6.    사용자 지정 메트릭을 선택합니다.
 
-## <a name="supported-regions"></a>지원되는 Azure 지역
+## <a name="supported-regions"></a>지원되는 지역
 공개 미리 보기 중 사용자 지정 메트릭을 게시할 수 있는 기능은 일부 Azure 지역에서만 사용할 수 있습니다. 이 제한 사항은 지원되는 지역 중 하나의 리소스에 대해서만 메트릭을 게시할 수 있음을 의미합니다. 다음 표에는 사용자 지정 메트릭이 지원되는 Azure 지역 집합이 나와 있습니다. 이러한 지역의 리소스에 대한 메트릭이 게시되어야 하는 해당 엔드포인트도 나와 있습니다.
 
 |Azure 지역 |지역별 엔드포인트 접두사|
@@ -208,7 +209,7 @@ Azure Monitor에 대한 결과 메트릭 게시는 다음과 같습니다.
 |인도 중부 | https: \/ /centralindia.monitoring.azure.com |
 |오스트레일리아 동부 | https: \/ /australiaeast.monitoring.azure.com |
 |일본 동부 | https: \/ /japaneast.monitoring.azure.com |
-|동남 아시아  | https: \/ /southeastasia.monitoring.azure.com |
+|동남아시아  | https: \/ /southeastasia.monitoring.azure.com |
 |동아시아 | https: \/ /eastasia.monitoring.azure.com |
 |한국 중부   | https: \/ /koreacentral.monitoring.azure.com |
 

@@ -7,12 +7,13 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: acdf830c9bf0eaedcca5bf0ffe1b2bd373750276
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.custom: references_regions
+ms.openlocfilehash: c2d3237e629c7ed5d2931e15939b154e0239f259
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030675"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553110"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Azure 파일 동기화 배포에 대한 계획
 
@@ -376,7 +377,7 @@ Microsoft의 사내 바이러스 백신 솔루션, Windows Defender 및 SCEP(Sys
 > BMR(완전 복구) 복원은 예기치 않은 결과가 발생할 수 있으며 현재 지원되지 않습니다.
 
 > [!Note]  
-> Azure 파일 동기화 에이전트 버전 9를 사용하는 경우 VSS 스냅샷([이전 버전] 탭 포함)은 이제 클라우드 계층화를 사용하도록 설정된 볼륨에서 지원됩니다. 그러나 PowerShell을 통해 이전 버전과의 호환성을 사용하도록 설정해야 합니다. [방법을 알아보세요](storage-files-deployment-guide.md).
+> Azure 파일 동기화 에이전트 버전 9를 사용하는 경우 VSS 스냅샷([이전 버전] 탭 포함)은 이제 클라우드 계층화를 사용하도록 설정된 볼륨에서 지원됩니다. 그러나 PowerShell을 통해 이전 버전과의 호환성을 사용하도록 설정해야 합니다. [방법을 알아보세요](storage-sync-files-deployment-guide.md#self-service-restore-through-previous-versions-and-vss-volume-shadow-copy-service).
 
 ## <a name="azure-file-sync-agent-update-policy"></a>Azure 파일 동기화 에이전트 업데이트 정책
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]

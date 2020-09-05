@@ -3,17 +3,17 @@ title: Azure Image Builder 템플릿 만들기(미리 보기)
 description: Azure Image Builder에서 사용할 템플릿을 만드는 방법을 알아봅니다.
 author: danielsollondon
 ms.author: danis
-ms.date: 08/03/2020
+ms.date: 08/13/2020
 ms.topic: conceptual
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 2f1db4e6c45602fb7fde84079e8ef78179a4ec6b
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 6ed95f87d2b2a5f811531a5ff258ebe97a9b892a
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830345"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869204"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>미리 보기: Azure Image Builder 템플릿 만들기 
 
@@ -435,7 +435,8 @@ OS support: Windows
 - **filters** – 선택 사항. 업데이트를 포함하거나 제외하도록 필터를 지정할 수 있습니다.
 - **updateLimit** – 선택 사항. 설치할 수 있는 업데이트 수를 정의합니다. 기본값은 1000입니다.
  
- 
+> [!NOTE]
+> 처리 중인 Windows를 다시 시작 하거나 응용 프로그램 설치를 계속 실행 하는 경우 Windows 업데이트 사용자 지정 자가 실패할 수 있습니다. 일반적으로 사용자 지정. 로그에서이 오류가 표시 될 수 `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` 있습니다. Windows를 다시 시작할 때 추가 하는 것이 좋습니다 https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7) . 또는 Windows 업데이트 실행 하기 전에 인라인 명령이 나 스크립트를 사용 하 여 응용 프로그램에서 설치를 완료 하는 데 충분 한 시간을 허용 하는 것이 좋습니다.
 
 ### <a name="generalize"></a>일반화 
 기본적으로 Azure Image Builder는 각 이미지 사용자 지정 단계가 끝날 때 '프로비전 해제' 코드를 실행하여 이미지를 '일반화'합니다. 일반화는 여러 VM을 만드는 데 다시 사용할 수 있도록 이미지를 설정하는 프로세스입니다. Windows VM의 경우 Azure Image Builder는 Sysprep을 사용합니다. Linux의 경우 Azure Image Builder는 'waagent -deprovision'을 실행합니다. 
@@ -533,17 +534,16 @@ az resource show \
 이미지 출력은 관리형 이미지 리소스입니다.
 
 ```json
-"distribute": [
-        {
-"type":"managedImage",
+{
+       "type":"managedImage",
        "imageId": "<resource ID>",
        "location": "<region>",
        "runOutputName": "<name>",
        "artifactTags": {
             "<name": "<value>",
-             "<name>": "<value>"
-               }
-         }]
+            "<name>": "<value>"
+        }
+}
 ```
  
 배포 속성은 다음과 같습니다.
@@ -590,7 +590,7 @@ Shared Image Gallery의 구성 요소는 다음과 같습니다.
 - **type** - sharedImage  
 - **galleryImageId** – 공유 이미지 갤러리의 ID 이며, 다음 두 가지 형식으로 지정할 수 있습니다.
     * 자동 버전 관리-이미지 빌더는 단조 버전 번호를 생성 합니다 .이는 동일한 템플릿에서 이미지를 다시 작성 하려는 경우에 유용 합니다. 형식: `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/galleries/<sharedImageGalleryName>/images/<imageGalleryName>`
-    * 명시적 버전 관리-이미지 작성기에서 사용 하려는 버전 번호를 전달할 수 있습니다. 형식은 다음과 같습니다.`/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>/versions/<version e.g. 1.1.1>`
+    * 명시적 버전 관리-이미지 작성기에서 사용 하려는 버전 번호를 전달할 수 있습니다. 형식은 다음과 같습니다. `/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>/versions/<version e.g. 1.1.1>`
 
 - **runOutputName** – 분포를 식별하는 고유 이름입니다.  
 - **artifactTags** - 선택 사항. 사용자 지정 키 값 쌍 태그입니다.

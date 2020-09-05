@@ -1,6 +1,6 @@
 ---
 title: Azure Data Lake Storage Gen2 소개
-description: Azure Data Lake Storage Gen2에 대한 개요 제공
+description: Azure Data Lake Storage Gen2 소개를 읽어보세요. 주요 기능에 대해 알아봅니다. 지원되는 Blob 스토리지 기능, Azure 서비스 통합 및 플랫폼을 검토합니다.
 author: normesta
 ms.service: storage
 ms.topic: overview
@@ -8,12 +8,12 @@ ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: ee9f2f0366cc680c874c6748d27e02dcadb82e35
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.openlocfilehash: d85b0cd2f9fa7eb81f5c39bd5d163188e3cd7106
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84673312"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87835768"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2 소개
 

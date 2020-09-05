@@ -3,12 +3,12 @@ title: Azure Files 백업 FAQ
 description: 이 문서에서는 Azure Backup 서비스를 사용하여 Azure 파일 공유를 보호하는 방법에 대한 일반적인 질문과 답변을 검색합니다.
 ms.date: 04/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6c2ef95a6303fd061b1ce486e893ba9812b83e14
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 0db30de655bfc0b98baa81a4ef20532e697fc1f8
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382715"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88824732"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Azure Files 백업에 대한 질문
 
@@ -36,7 +36,7 @@ Azure 파일 공유가 동일한 Recovery Services 자격 증명 모음에서 �
 
 ### <a name="why-cant-i-change-the-vault-to-configure-backup-for-the-file-share"></a>파일 공유에 대 한 백업을 구성 하기 위해 자격 증명 모음을 변경할 수 없는 이유는 무엇입니까?
 
-저장소 계정이 자격 증명 모음에 이미 등록 되어 있거나 저장소 계정의 다른 파일 공유가 자격 증명 모음을 사용 하 여 보호 되는 경우 저장소 계정의 모든 파일 공유를 동일한 자격 증명 모음에 의해서만 보호할 수 있으므로이를 변경할 수 있는 옵션이 제공 되지 않습니다. 자격 증명 모음을 변경 하려면 재시도가 연결 된 자격 증명 모음에서 [저장소 계정의 모든 파일 공유에 대 한 보호를 중지](manage-afs-backup.md#stop-protection-on-a-file-share) 하 고, 저장소 계정의 [등록을 취소](manage-afs-backup.md#unregister-a-storage-account) 한 후 보호를 위해 다른 자격 증명 모음을 선택 해야 합니다.
+저장소 계정이 자격 증명 모음에 이미 등록 되어 있거나 저장소 계정의 다른 파일 공유가 자격 증명 모음을 사용 하 여 보호 되는 경우이를 변경할 수 있는 옵션이 제공 되지 않습니다. 저장소 계정의 모든 파일 공유는 동일한 자격 증명 모음 에서만 보호할 수 있습니다. 자격 증명 모음을 변경 하려면 연결 된 자격 증명 모음에서 [저장소 계정의 모든 파일 공유에 대 한 보호를 중지](manage-afs-backup.md#stop-protection-on-a-file-share) 하 고, 저장소 계정의 [등록을 취소](manage-afs-backup.md#unregister-a-storage-account) 한 후 보호를 위해 다른 자격 증명 모음을 선택 해야 합니다.
 
 ### <a name="can-i-change-the-vault-to-which-i-back-up-my-file-shares"></a>파일 공유를 백업하는 자격 증명 모음을 변경할 수 있나요?
 

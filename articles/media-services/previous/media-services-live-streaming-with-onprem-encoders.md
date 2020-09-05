@@ -14,14 +14,16 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: bb94703a78cd2c025efc1f3c6c16e296fece206e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 746fe9132dcb06678e2a0a975c8eed0aba6c3fad
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560011"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269627"
 ---
 # <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders"></a>온-프레미스 인코더에서 다중 비트 전송률 라이브 스트림을 받는 채널 작업
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > 2018년 5월 12일부터 라이브 채널은 RTP/MPEG-2 전송 스트림 수집 프로토콜을 더 이상 지원하지 않습니다. RTP/MPEG-2에서 RTMP 또는 조각난 MP4(부드러운 스트리밍) 수집 프로토콜로 마이그레이션하세요.
@@ -119,7 +121,7 @@ TLS 연결을 통해 조각화 된 MP4 (부드러운 스트리밍) 라이브 스
 
 다음 테이블에서는 세그먼트 기간이 계산되는 방법을 보여 줍니다.
 
-| 키프레임 간격 | HLS 세그먼트 패키징 비율(FragmentsPerSegment) | 예제 |
+| 키프레임 간격 | HLS 세그먼트 패키징 비율(FragmentsPerSegment) | 예 |
 | --- | --- | --- |
 | 3초보다 작거나 같음 |3:1 |KeyFrameInterval(또는 GOP)이 2초인 경우 기본 HLS 세그먼트 패키징 비율은 3 대 1입니다. 그러면 6초 HLS 세그먼트를 만듭니다. |
 | 3~5초 |2:1 |KeyFrameInterval(또는 GOP)이 4초인 경우 기본 HLS 세그먼트 패키징 비율은 2 대 1입니다. 그러면 8초 HLS 세그먼트를 만듭니다. |
@@ -189,7 +191,7 @@ KeyFrameInterval 및 FragmentsPerSegment를 둘 다 명시적으로 설정하는
 | **시작 중** |**시작 중** |없음(일시적인 상태) |
 | **실행 중** |**준비**(실행 중인 프로그램이 없음)<p><p>또는<p>**스트리밍**(실행 중인 프로그램이 하나 이상임) |예 |
 | **중지 중** |**중지 중** |없음(일시적인 상태) |
-| **중지됨** |**중지됨** |아니요 |
+| **중지됨** |**중지됨** |예 |
 
 ## <a name="closed-captioning-and-ad-insertion"></a><a id="cc_and_ads"></a>선택 자막 및 광고 삽입
 다음 테이블에서는 선택 자막 및 광고 삽입의 지원되는 표준을 설명합니다.

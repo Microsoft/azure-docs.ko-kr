@@ -1,20 +1,20 @@
 ---
 title: Azure Cosmos DB에 대한 SQL API Python 예제
 description: CRUD 작업을 비롯한 Azure Cosmos DB의 일반적인 작업에 대한 GitHub의 Python 예제를 찾습니다.
-author: SnehaGunda
+author: Rodrigossz
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: sample
-ms.date: 05/20/2020
-ms.author: sngun
+ms.date: 08/11/2020
+ms.author: rosouz
 ms.custom: devx-track-python
-ms.openlocfilehash: 6602d757e210837aadadd431b27bb7cf76f06715
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 34257281470f051f3d385aa729ca5a4f3591e61c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873350"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586253"
 ---
 # <a name="azure-cosmos-db-python-examples"></a>Azure Cosmos DB Python 예제
 
@@ -33,16 +33,19 @@ Azure Cosmos DB 리소스에 대해 CRUD 작업 및 다른 일반적인 작업�
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
-- [Visual Studio 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)할 수 있습니다. Visual Studio 구독은 유료 Azure 서비스에 사용할 수 있는 크레딧을 매달 제공합니다.
-
-[!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
-
-또한 [Python SDK](sql-api-sdk-python.md)가 필요합니다.
-
-   > [!NOTE]
-   > 각 샘플은 자체 포함되므로 자체 설정된 후 자체 정리됩니다. 샘플은 `CosmosClient.CreateContainer`에 대한 여러 호출을 실행합니다. 이 작업이 완료될 때마다 구독에 1시간 사용 요금이 청구됩니다. Azure Cosmos DB 청구에 대한 자세한 내용은 [Azure Cosmos DB 가격 책정](https://azure.microsoft.com/pricing/details/cosmos-db/)을 참조하세요.
+- Cosmos DB 계정. 옵션은 다음과 같습니다.
+    * Azure 활성 구독 내에서:
+        * [Azure 체험 계정 만들기](https://azure.microsoft.com/free) 또는 기존 구독 사용 
+        * [Visual Studio 월간 크레딧](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers)
+        * [Azure Cosmos DB 체험 계층](https://docs.microsoft.com/azure/cosmos-db/optimize-dev-test#azure-cosmos-db-free-tier)
+    * Azure 활성 구독이 없는 경우:
+        * 30일 동안 지속되는 테스트 환경인 [Azure Cosmos DB를 무료로 사용해 보세요](https://azure.microsoft.com/try/cosmosdb/).
+        * [Azure Cosmos DB 에뮬레이터](https://aka.ms/cosmosdb-emulator) 
+- `PATH`의 `python` 실행 파일이 있는 [Python 2.7 또는 3.5.3 이상](https://www.python.org/downloads/).
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Visual Studio Code용 Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python#overview).
+- [Git](https://www.git-scm.com/downloads) 
+- [Python용 Azure Cosmos DB SQL API SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)
 
 ## <a name="database-examples"></a>데이터베이스 예제
 

@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 06/01/2020
 ms.author: cherylmc
-ms.openlocfilehash: d7b9077af50115e912415d784dc98ace081c0c88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0bcd0608796545a4982f72f276399d5f692e765
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84302315"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852701"
 ---
 # <a name="vpn-gateway-design"></a>VPN Gateway 디자인
 
@@ -26,6 +26,8 @@ VPN Gateway 연결에 사용할 수 있는 다양한 구성이 있다는 사실�
 S2S(사이트 간) VPN Gateway 연결은 IPsec/IKE(IKEv1 또는 IKEv2) VPN 터널을 통한 연결입니다. S2S 연결은 프레미스 간 및 하이브리드 구성에 사용될 수 있습니다. S2S 연결에는 공용 IP 주소가 할당된 온-프레미스에 있는 VPN 디바이스가 필요합니다. VPN 디바이스 선택에 대한 자세한 내용은 [VPN Gateway FAQ - VPN 디바이스](vpn-gateway-vpn-faq.md#s2s)를 참조하세요.
 
 ![Azure VPN Gateway 사이트 간 연결 예제](./media/design/vpngateway-site-to-site-connection-diagram.png)
+
+하나의 공용 IP를 사용 하 여 활성-대기 모드에서 또는 두 개의 공용 IP를 사용 하는 활성-활성 모드에서 VPN Gateway를 구성할 수 있습니다. 활성-대기 모드에서는 하나의 IPsec 터널이 활성 상태이 고 다른 터널은 대기 상태입니다. 이 설정에서는 트래픽이 활성 터널을 통해 전달 되 고,이 터널에서 문제가 발생 하는 경우 트래픽이 대기 터널로 전환 됩니다. 활성-활성 모드에서 VPN Gateway를 설정 하는 것이 좋습니다. 두 IPsec 터널 모두 동시에 활성 상태이 고 동시에 두 터널을 통해 데이터를 이동 하는 *것이 좋습니다* . 활성-활성 모드의 추가 장점은 고객이 더 높은 처리량을 경험 하는 것입니다.
 
 ### <a name="multi-site"></a><a name="Multi"></a>다중 사이트
 

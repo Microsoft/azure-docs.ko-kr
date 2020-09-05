@@ -3,17 +3,17 @@ title: Azure IoT 솔루션에 연결된 IoT 플러그 앤 플레이 미리 보�
 description: Node.js를 사용하여 Azure IoT 솔루션에 연결된 IoT 플러그 앤 플레이 미리 보기 디바이스에 연결하고 상호 작용합니다.
 author: elhorton
 ms.author: elhorton
-ms.date: 07/13/2020
+ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 511a61fb1069ce10e94e24ecd3ba6d60470ca40f
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: fd65dcc9ce0be07daa5848a0ac583cf795150e47
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424446"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184757"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-preview-device-thats-connected-to-your-solution-nodejs"></a>빠른 시작: 솔루션에 연결된 IoT 플러그 앤 플레이 미리 보기 디바이스와 상호 작용(Node.js)
 
@@ -33,35 +33,33 @@ IoT 플러그 앤 플레이 미리 보기를 사용하면 기본 디바이스 �
 node --version
 ```
 
-다음 명령을 실행하여 [IoT 플러그 앤 플레이를 지원하는 노드 서비스 SDK](https://www.npmjs.com/package/azure-iot-digitaltwins-service)를 설치합니다.
-
-```cmd/sh
-npm i azure-iot-digitaltwins-service
-```
-
 [!INCLUDE [iot-pnp-prepare-iot-hub.md](../../includes/iot-pnp-prepare-iot-hub.md)]
 
-다음 명령을 실행하여 허브에 대한 IoT 허브 연결 문자열을 가져옵니다. 이 연결 문자열을 기록해 두십시오. 이 빠른 시작의 뒷부분에서 사용하게 됩니다.
+다음 명령을 실행하여 허브에 대한 _IoT 허브 연결 문자열_을 가져옵니다. 이 연결 문자열을 기록해 두십시오. 이 빠른 시작의 뒷부분에서 사용하게 됩니다.
 
 ```azurecli-interactive
 az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 ```
 
-다음 명령을 실행하여 허브에 추가한 디바이스에 대한 디바이스 연결 문자열을 가져옵니다. 이 연결 문자열을 기록해 두십시오. 이 빠른 시작의 뒷부분에서 사용하게 됩니다.
+다음 명령을 실행하여 허브에 추가한 디바이스에 대한 디바이스 연결 문자열을 가져옵니다. 이 연결 문자열을 기록해 두었다가 이 빠른 시작의 뒷부분에서 사용합니다.
 
 ```azurecli-interactive
 az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --device-id <YourDeviceID> --output
+```
+
+### <a name="clone-the-sdk-repository-with-the-sample-code"></a>샘플 코드를 사용하여 SDK 리포지토리 복제
+
+서비스 SDK는 미리 보기 상태이므로 [노드 SDK 미리 보기 분기](https://github.com/Azure/azure-iot-sdk-node/tree/pnp-preview-refresh)에서 샘플을 복제해야 합니다. 원하는 폴더에서 터미널 창을 엽니다. 다음 명령을 실행하여 [Node.js용 Microsoft Azure IoT SDK](https://github.com/Azure/azure-iot-sdk-node) GitHub 리포지토리의 **pnp-preview-refresh** 분기를 복제합니다.
+
+```cmd/sh
+git clone https://github.com/Azure/azure-iot-sdk-node -b pnp-preview-refresh
 ```
 
 ## <a name="run-the-sample-device"></a>샘플 디바이스 실행
 
 이 빠른 시작에서는 Node.js로 작성한 샘플 자동 온도 조절 디바이스를 IoT 플러그 앤 플레이 디바이스로 사용할 수 있습니다. 샘플 디바이스를 실행하려면 다음을 수행합니다.
 
-1. 원하는 폴더에서 터미널 창을 엽니다. 다음 명령을 실행하여 [Node.js용 Microsoft Azure IoT SDK](https://github.com/Azure/azure-iot-sdk-node) GitHub 리포지토리를 다음 위치에 복제합니다.
-
-    ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-sdk-node
-    ```
+1. 터미널 창을 열고 GitHub에서 복제한 Node.js용 Microsoft Azure IoT SDK 리포지토리가 포함된 로컬 폴더로 이동합니다.
 
 1. 이 터미널 창은 이제 **디바이스** 터미널로 사용됩니다. 복제된 리포지토리의 폴더로 이동하여 */azure-iot-sdk-node/device/samples/pnp* 폴더로 이동합니다. 다음 명령을 실행하여 모든 종속 요소를 설치합니다.
 
@@ -90,10 +88,10 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. **서비스** 터미널로 사용할 또 다른 터미널 창을 엽니다. 서비스 SDK는 미리 보기 상태이므로 [Node SDK 미리 보기 분기](https://github.com/Azure/azure-iot-sdk-node/tree/pnp-preview-refresh)에서 샘플을 복제해야 합니다.
 
     ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-sdk-node -b public-preview-pnp
+    git clone https://github.com/Azure/azure-iot-sdk-node -b pnp-preview-refresh
     ```
 
-1. 복제된 리포지토리 분기의 폴더로 이동하여 */azure-iot-samples-node/digital-twins/samples/service/javascript* 폴더로 이동합니다. 다음 명령을 실행하여 모든 종속 요소를 설치합니다.
+1. 복제된 이 리포지토리 분기의 폴더로 이동하여 */azure-iot-sdk-node/digitaltwins/samples/service/javascript* 폴더로 이동합니다. 다음 명령을 실행하여 모든 종속 요소를 설치합니다.
 
     ```cmd/sh
     npm install
@@ -144,14 +142,14 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 
 ### <a name="update-a-writable-property"></a>쓰기 가능 속성 업데이트
 
-1. 코드 편집기에서 *update_digital_twin_property.js* 파일을 엽니다.
+1. 코드 편집기에서 *update_digital_twin.js* 파일을 엽니다.
 
 1. 샘플 코드를 검토합니다. 디바이스의 디지털 쌍을 업데이트 하는 JSON 패치를 만드는 방법을 볼 수 있습니다. 이 샘플에서는 코드가 자동 온도 조절기의 온도를 42라는 값으로 바꿉니다.
 
     ```javascript
     const patch = [{
         op: 'add',
-        path: 'targetTemperature',
+        path: '/targetTemperature',
         value: '42'
       }]
     ```
@@ -159,43 +157,23 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. **서비스** 터미널에서 다음 명령을 사용하여 속성을 업데이트하는 샘플을 실행합니다.
 
     ```cmd/sh
-    node update_digital_twin_property.js
-    ```
-
-1. **서비스** 터미널 출력에는 업데이트된 디바이스 정보가 표시됩니다. `thermostat1` 구성 요소로 스크롤하여 새 `targetTemperature` 값이 42인지 확인합니다.
-
-    ```json
-    "modelId": "dtmi:com:example:Thermostat;1",
-        "version": 12,
-        "properties": {
-            "desired": {
-                "targetTemperature": "42",
-                "$metadata": {
-                    "$lastUpdated": "2020-07-09T13:55:50.7976985Z",
-                    "$lastUpdatedVersion": 5,
-                    "targetTemperature": {
-                        "$lastUpdated": "2020-07-09T13:55:50.7976985Z",
-                        "$lastUpdatedVersion": 5
-                    }
-                },
-                "$version": 5
-            },
-            "reported": {
-                "serialNumber": "123abc",
-                "maxTempSinceLastReboot": 32.279942997143785,
-                "targetTemperature": {
-                    "value": "42",
-                    "ac": 200,
-                    "ad": "Successfully executed patch for targetTemperature",
-                    "av": 2
-                },
+    node update_digital_twin.js
     ```
 
 1. **디바이스** 터미널로 이동하면 디바이스가 업데이트를 수신한 것을 볼 수 있습니다.
 
     ```cmd/sh
-    Received an update for targetTemperature: 42
+    The following properties will be updated for root interface:
+    {
+      targetTemperature: {
+        value: 42,
+        ac: 200,
+        ad: 'Successfully executed patch for targetTemperature',
+        av: 2
+      }
+    }
     updated the property
+    Properties have been reported for component
     ```
 
 1. **서비스** 터미널에서 다음 명령을 실행하여 속성이 업데이트되었는지 확인합니다.
@@ -207,15 +185,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. **서비스** 터미널 출력의 `thermostat1` 구성 요소 아래에 있는 디지털 쌍 응답에서 업데이트된 대상 온도가 보고된 것을 볼 수 있습니다. 디바이스가 업데이트를 완료하는 데 시간이 걸릴 수 있습니다. 디바이스가 속성 업데이트를 처리할 때까지 이 단계를 반복합니다.
 
     ```json
-    "$model": "dtmi:com:example:Thermostat;1",
-    "targetTemperature": {
-      "desiredValue": 42,
-      "desiredVersion": 4,
-      "ackVersion": 4,
-      "ackCode": 200,
-      "ackDescription": "Successfully executed patch for targetTemperature",
-      "lastUpdateTime": "2020-07-09T13:55:30.5062641Z"
-    }
+    targetTemperature: 42,
     ```
 
 ### <a name="invoke-a-command"></a>명령 호출
@@ -225,6 +195,8 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. **서비스** 터미널로 이동합니다. 다음 명령을 사용하여 명령을 호출하는 샘플을 실행합니다.
 
     ```cmd/sh
+    set IOTHUB_COMMAND_NAME=getMaxMinReport
+    set IOTHUB_COMMAND_PAYLOAD=commandpayload
     node invoke_command.js
     ```
 
@@ -245,7 +217,7 @@ az iot hub device-identity show-connection-string --hub-name <YourIoTHubName> --
 1. **디바이스** 터미널에서 명령이 승인된 것을 볼 수 있습니다.
 
     ```cmd/sh
-    MaxMinReport [object Object]
+    MaxMinReport commandpayload
     Response to method 'getMaxMinReport' sent successfully.
     ```
 

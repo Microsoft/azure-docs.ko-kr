@@ -2,17 +2,17 @@
 title: StorSimple 8000 시리즈 장치에서 데이터 마이그레이션 옵션
 description: StorSimple 8000 시리즈에서 데이터를 마이그레이션하는 옵션에 대 한 개요를 제공 합니다.
 services: storsimple
-author: priestlg
+author: twooley
 ms.service: storsimple
 ms.topic: how-to
 ms.date: 03/25/2020
-ms.author: v-grpr
-ms.openlocfilehash: 39c78e1dc579f74207ba828f2f6a49ad44dd4a43
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: twooley
+ms.openlocfilehash: 92ab570b3e06d67d7986a8103e9622e95eb57e7e
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514717"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783912"
 ---
 # <a name="options-to-migrate-data-from-storsimple-8000-series"></a>StorSimple 8000 시리즈의 데이터 마이그레이션 옵션
 

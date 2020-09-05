@@ -13,12 +13,12 @@ ms.date: 10/10/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: b76e84f6ae2449347604ab823fde5b74d5c68f07
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: df3941c895ce67862eb53b8e96bc7a6d53c1ed02
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83740991"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799420"
 ---
 # <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>“여기서는 거기에 접근할 수 없습니다.” 오류 메시지가 표시되는 가능한 원인
 
@@ -68,6 +68,6 @@ ms.locfileid: "83740991"
 - **작업할 개인 디바이스 등록** 일반적으로 휴대폰이나 태블릿에 해당하는 개인 디바이스를 조직의 네트워크에 등록합니다. 디바이스가 등록되면 조직의 제한된 리소스에 액세스할 수 있게 됩니다. 자세한 내용 및 단계별 지침은 [조직의 네트워크에 개인 디바이스 등록](user-help-register-device-on-network.md)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
-- [MyApps 포털이란?](active-directory-saas-access-panel-introduction.md)
+- [MyApps 포털이란?](./my-apps-portal-end-user-access.md)
 
 - [암호가 아닌 휴대폰을 사용하여 로그인](user-help-auth-app-sign-in.md)

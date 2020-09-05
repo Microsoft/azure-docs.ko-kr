@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 06/22/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5a532ec11cdcd97bd1f72c40f603bce7cc4b12c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f037ea30a1507d4736db7f837e5286701db030e0
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85611767"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146704"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Azure Machine Learning용 CLI 확장 설치 및 사용
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -150,15 +150,49 @@ az extension remove -n azure-cli-ml
 
     자세한 내용은 [az ml computetarget attach aks](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks)를 참조하세요.
 
-+ 새 AMLcompute 대상을 만듭니다.
+### <a name="compute-clusters"></a>컴퓨팅 클러스터
+
++ 새 관리 되는 계산 클러스터를 만듭니다.
 
     ```azurecli-interactive
     az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
     ```
 
-    자세한 내용은 [az ml computetarget create amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)를 참조하세요.
 
-+ <a id="computeinstance"></a>계산 인스턴스를 관리 합니다.  아래의 모든 예제에서 계산 인스턴스의 이름은 **cpu** 입니다.
+
++ 관리 id를 사용 하 여 관리 되는 계산 클러스터 새로 만들기
+
+  + 사용자 할당 관리 ID
+
+    ```azurecli
+    az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
+    ```
+
+  + 시스템 할당 관리 ID
+
+    ```azurecli
+    az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '[system]'
+    ```
++ 기존 클러스터에 관리 되는 id를 추가 합니다.
+
+    + 사용자 할당 관리 ID
+        ```azurecli
+        az ml computetarget amlcompute identity assign --name cpu-cluster '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
+        ```
+    + 시스템 할당 관리 ID
+
+        ```azurecli
+        az ml computetarget amlcompute identity assign --name cpu-cluster '[system]'
+        ```
+
+자세한 내용은 [az ml computetarget create amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)를 참조하세요.
+
+[!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-note.md)]
+
+<a id="computeinstance"></a>
+
+### <a name="compute-instance"></a>컴퓨팅 인스턴스
+계산 인스턴스를 관리 합니다.  아래의 모든 예제에서 계산 인스턴스의 이름은 **cpu** 입니다.
 
     + 새 새 새 인스턴스를 만듭니다.
 
@@ -225,6 +259,36 @@ az extension remove -n azure-cli-ml
     ```
 
     자세한 내용은 [az ml experiment list](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/experiment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list)를 참조하세요.
+
+### <a name="hyperdrive-run"></a>HyperDrive 실행
+
+Azure CLI에서 HyperDrive를 사용하여 매개 변수 튜닝 실행을 수행할 수 있습니다. 먼저 다음과 같은 형식으로 HyperDrive 구성 파일을 만듭니다. 하이퍼 매개 변수 튜닝 매개 변수에 대한 자세한 내용은 [모델의 하이퍼 매개 변수 튜닝](how-to-tune-hyperparameters.md) 문서를 참조하세요.
+
+```yml
+# hdconfig.yml
+sampling: 
+    type: random # Supported options: Random, Grid, Bayesian
+    parameter_space: # specify a name|expression|values tuple for each parameter.
+    - name: --penalty # The name of a script parameter to generate values for.
+      expression: choice # supported options: choice, randint, uniform, quniform, loguniform, qloguniform, normal, qnormal, lognormal, qlognormal
+      values: [0.5, 1, 1.5] # The list of values, the number of values is dependent on the expression specified.
+policy: 
+    type: BanditPolicy # Supported options: BanditPolicy, MedianStoppingPolicy, TruncationSelectionPolicy, NoTerminationPolicy
+    evaluation_interval: 1 # Policy properties are policy specific. See the above link for policy specific parameter details.
+    slack_factor: 0.2
+primary_metric_name: Accuracy # The metric used when evaluating the policy
+primary_metric_goal: Maximize # Maximize|Minimize
+max_total_runs: 8 # The maximum number of runs to generate
+max_concurrent_runs: 2 # The number of runs that can run concurrently.
+max_duration_minutes: 100 # The maximum length of time to run the experiment before cancelling.
+```
+
+실행 구성 파일과 함께 이 파일을 추가합니다. 그리고 다음 명령을 사용하여 HyperDrive 실행을 제출합니다.
+```azurecli
+az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configuration-name <hdconfig> my_train.py
+```
+
+runconfig의 *인수* 섹션과 HyperDrive 구성의 *매개 변수 공간*을 잘 보세요. 학습 스크립트에 전달할 명령줄 인수가 포함되어 있습니다. runconfig의 값은 각 반복에서 동일하게 유지되는 반면, HyperDrive 구성의 범위는 반복됩니다. 두 파일에서 같은 인수를 지정하지 마세요.
 
 ## <a name="dataset-management"></a>데이터 세트 관리
 

@@ -8,12 +8,13 @@ ms.service: internet-peering
 ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 1c0620875e7da4582156080c4a52fd6fbe0e573c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 59d098f1ff0f78e37601544619c603b776e0cf22
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700249"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071757"
 ---
 # <a name="create-or-modify-an-exchange-peering-by-using-powershell"></a>PowerShell을 사용 하 여 Exchange 피어 링 만들기 또는 수정
 
@@ -54,7 +55,7 @@ ms.locfileid: "84700249"
 * [PowerShell을 사용 하 여 직접 피어 링 만들기 또는 수정](howto-direct-powershell.md)
 * [PowerShell을 사용 하 여 레거시 직접 피어 링을 Azure 리소스로 변환](howto-legacy-direct-powershell.md)
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 다음 명령을 실행하여 모든 매개 변수에 대한 자세한 설명을 볼 수 있습니다.
 
 ```powershell

@@ -1,20 +1,20 @@
 ---
 title: 휴지 상태의 데이터에 대 한 음성 서비스 암호화
 titleSuffix: Azure Cognitive Services
-description: 휴지 상태의 데이터에 대 한 음성 서비스 암호화
+description: Microsoft는 Microsoft에서 관리 하는 암호화 키를 제공 하며, CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 Cognitive Services 구독을 관리할 수도 있습니다. 이 문서에서는 Speech service에 대 한 미사용 데이터 암호화에 대해 설명 합니다.
 author: erindormier
 manager: venkyv
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/11/2020
+ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: c2e52fbab8d984f7442d8a336e90e9f22c0bf061
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: b9b76b2eb5e9536561f73a92b6911a2f82122a1b
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83198660"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078098"
 ---
 # <a name="speech-service-encryption-of-data-at-rest"></a>휴지 상태의 데이터에 대 한 음성 서비스 암호화
 
@@ -22,7 +22,7 @@ Speech Service는 데이터를 클라우드에 보관할 때 데이터를 자동
 
 ## <a name="about-cognitive-services-encryption"></a>Cognitive Services 암호화 정보
 
-데이터는 [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2) 규격 [256 비트 AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 암호화를 사용 하 여 암호화 및 암호 해독 됩니다. 암호화 및 암호 해독은 투명 합니다. 즉, 암호화 및 액세스를 관리 합니다. 데이터는 기본적으로 안전 하며 암호화를 활용 하기 위해 코드 또는 응용 프로그램을 수정할 필요가 없습니다.
+데이터는 [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2) 규격 [256 비트 AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 암호화를 사용 하 여 암호화 및 암호 해독 됩니다. 암호화 및 암호 해독은 투명 합니다. 즉, 암호화 및 액세스를 관리 합니다. 데이터는 기본적으로 안전하며 암호화를 활용하기 위해 코드 또는 애플리케이션을 수정할 필요가 없습니다.
 
 ## <a name="about-encryption-key-management"></a>암호화 키 관리 정보
 

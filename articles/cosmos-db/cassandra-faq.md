@@ -4,14 +4,14 @@ description: Azure Cosmos DB Cassandra API 대 한 질문과 대답을 확인 �
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/09/2020
+ms.date: 08/12/2020
 ms.author: thvankra
-ms.openlocfilehash: 04708a307cd0eedfbe0510324930eb2327adf06e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b327c0786fb07488fd8863272598dbffe19bfe07
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84449739"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167609"
 ---
 # <a name="frequently-asked-questions-about-the-cassandra-api-in-azure-cosmos-db"></a>의 Cassandra API에 대 한 질문과 대답 Azure Cosmos DB
 
@@ -79,13 +79,13 @@ Azure Cosmos DB는 작업에 대한 상한을 사용하여 성능 및 대기 시
 
 ### <a name="does-the-primary-key-map-to-the-partition-key-concept-of-azure-cosmos-db"></a>기본 키는 Azure Cosmos DB의 파티션 키 개념에 대응하나요?
 
-예, 파티션 키를 사용 하 여 엔터티를 올바른 위치에 배치 합니다. Azure Cosmos DB에서 실제 파티션에 저장 된 올바른 논리적 파티션을 찾는 데 사용 됩니다. 분할 개념은 [Azure Cosmos DB의 파티션 및 확장](partition-data.md) 문서에 잘 설명되어 있습니다. 여기서 중요 한 요점은 논리 파티션은 10gb 제한을 초과 하지 않아야 한다는 것입니다.
+예, 파티션 키를 사용 하 여 엔터티를 올바른 위치에 배치 합니다. Azure Cosmos DB에서 실제 파티션에 저장 된 올바른 논리적 파티션을 찾는 데 사용 됩니다. 분할 개념은 [Azure Cosmos DB의 파티션 및 확장](partition-data.md) 문서에 잘 설명되어 있습니다. 여기서 중요 한 요점은 논리 파티션은 20gb 제한을 초과 하지 않아야 한다는 것입니다.
 
 ### <a name="what-happens-when-i-get-a-notification-that-a-partition-is-full"></a>파티션이 가득 찬 알림이 표시 되 면 어떻게 되나요?
 
 Azure Cosmos DB는 SLA (서비스 수준 계약)를 기반으로 하는 시스템입니다. 대기 시간, 처리량, 가용성 및 일관성을 보장 하는 무제한 규모를 제공 합니다. 무제한 저장소는 분할을 주요 개념으로 사용 하는 수평 확장 데이터를 기반으로 합니다. 분할 개념은 [Azure Cosmos DB의 파티션 및 확장](partition-data.md) 문서에 잘 설명되어 있습니다.
 
-논리적 파티션당 엔터티 또는 항목 수에 대 한 10gb 제한을 준수 해야 합니다. 애플리케이션이 원활하게 확장할 수 있도록 하려면 단일 파티션에 대한 모든 정보를 저장 및 쿼리하여 핫 파티션을 만들지 *않는* 것이 좋습니다. 이 오류는 데이터가 왜곡 된 경우에만 발생할 수 있습니다. 즉, 하나의 파티션 키에 대해 많은 데이터가 있습니다 (10gb 이상 &nbsp; ). 저장소 포털을 사용 하 여 데이터 배포를 찾을 수 있습니다. 이 오류를 해결 하는 방법은 테이블을 다시 만들고 세부적인 기본 (파티션 키)을 선택 하 여 데이터를 보다 효율적으로 배포할 수 있다는 것입니다.
+논리적 파티션 당 엔터티 또는 항목 수에 대 한 20gb 제한을 준수 해야 합니다. 애플리케이션이 원활하게 확장할 수 있도록 하려면 단일 파티션에 대한 모든 정보를 저장 및 쿼리하여 핫 파티션을 만들지 *않는* 것이 좋습니다. 이 오류는 데이터가 왜곡 된 경우에만 발생할 수 있습니다. 즉, 하나의 파티션 키 (20gb 이상)에 대해 많은 데이터가 있습니다. 저장소 포털을 사용 하 여 데이터 배포를 찾을 수 있습니다. 이 오류를 해결 하는 방법은 테이블을 다시 만들고 세부적인 기본 (파티션 키)을 선택 하 여 데이터를 보다 효율적으로 배포할 수 있다는 것입니다.
 
 ### <a name="can-i-use-the-cassandra-api-as-a-key-value-store-with-millions-or-billions-of-partition-keys"></a>Cassandra API를 수백만 또는 수십억 개의 파티션 키로 키 값 저장소로 사용할 수 있나요?
 

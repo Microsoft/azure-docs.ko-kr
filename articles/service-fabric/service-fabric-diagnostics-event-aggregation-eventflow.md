@@ -5,12 +5,13 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 2/25/2019
 ms.author: srrengar
-ms.openlocfilehash: cde24657cc8ed78b91e72df16d51df4077a6e030
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a80eea5a50aa7b1e441049eeb2cae381994cd3ec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75463085"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018657"
 ---
 # <a name="event-aggregation-and-collection-using-eventflow"></a>EventFlow를 사용하여 이벤트 집계 및 수집
 
@@ -24,7 +25,7 @@ EventFlow 이진을 NuGet 패키지 집합으로 사용할 수 있습니다. Eve
 
 "입력" 및 "출력" 레이블이 지정된 다양한 패키지 목록이 나타납니다. EventFlow는 다양한 로깅 공급자 및 분석기를 지원합니다. EventFlow를 호스팅하는 서비스는 애플리케이션 로그에 대해 원본과 대상에 따라 적합한 패키지를 포함해야 합니다. 핵심 ServiceFabric 패키지 외에도 최소한 하나의 입력 및 출력이 구성되어 있어야 합니다. 예를 들어 다음 패키지를 추가하여 EventSource 이벤트를 Application Insights에 보낼 수 있습니다.
 
-* `Microsoft.Diagnostics.EventFlow.Inputs.EventSource`서비스의 EventSource 클래스 및 표준 EventSources (예: *ServiceFabric* 및 *ServiceFabric*)에서 데이터를 캡처하려면
+* `Microsoft.Diagnostics.EventFlow.Inputs.EventSource` 서비스의 EventSource 클래스 및 표준 EventSources (예: *ServiceFabric* 및 *ServiceFabric*)에서 데이터를 캡처하려면
 * `Microsoft.Diagnostics.EventFlow.Outputs.ApplicationInsights`(여기서는 Azure Application Insights 리소스에 로그를 보낼 것임)
 * `Microsoft.Diagnostics.EventFlow.ServiceFabric`(Service Fabric 서비스 구성에서 EventFlow 파이프라인의 초기화를 활성화하고 진단 데이터를 Service Fabric 상태 보고서로 보내 모든 문제를 보고)
 

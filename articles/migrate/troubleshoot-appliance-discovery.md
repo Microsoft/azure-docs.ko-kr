@@ -6,19 +6,19 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: eafe13adb5b37de2de2bc4eb8bf15c775af0b039
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 1ddcdfd9efddd050f996e5c2b953baba242967fa
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87171858"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640585"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Azure Migrate 어플라이언스 및 검색 문제 해결
 
 이 문서는 [Azure Migrate](migrate-services-overview.md) 어플라이언스를 배포할 때와 어플라이언스를 사용 하 여 온-프레미스 컴퓨터를 검색할 때 발생 하는 문제를 해결 하는 데 도움이 됩니다.
 
 
-## <a name="whats-supported"></a>지원되는 내용은 무엇입니까?
+## <a name="whats-supported"></a>지원되는 기능
 
 어플라이언스 지원 요구 사항을 [검토](migrate-appliance.md) 합니다.
 
@@ -27,7 +27,7 @@ ms.locfileid: "87171858"
 
 "제공 된 매니페스트 파일이 잘못 되었습니다. 잘못 된 위치 매니페스트 항목입니다." 오류가 표시 되 면 다음을 수행 합니다.
 
-1. 해당 해시 값을 확인 하 여 Azure Migrate 어플라이언스 OVA 파일이 올바르게 다운로드 되었는지 확인 합니다. [자세한 정보를 알아보세요](./tutorial-prepare-vmware.md). 해시 값이 일치 하지 않으면 OVA 파일을 다시 다운로드 하 고 배포를 다시 시도 합니다.
+1. 해당 해시 값을 확인 하 여 Azure Migrate 어플라이언스 OVA 파일이 올바르게 다운로드 되었는지 확인 합니다. [자세히 알아보기](./tutorial-prepare-vmware.md). 해시 값이 일치 하지 않으면 OVA 파일을 다시 다운로드 하 고 배포를 다시 시도 합니다.
 2. 그래도 배포가 실패 하 고 VMware vSphere 클라이언트를 사용 하 여 파일을 배포 하는 경우 vSphere 웹 클라이언트를 통해 배포 해 보세요. 그래도 배포가 실패 하면 다른 웹 브라우저를 사용해 보세요.
 3. VSphere 웹 클라이언트를 사용 하 고 vCenter Server 6.5 또는 6.7에 배포 하려는 경우 ESXi 호스트에 직접 OVA를 배포 해 보세요.
    - 웹 클라이언트를 사용 하 여 (vCenter Server 대신) ESXi 호스트에 직접 연결 합니다 (https://<*호스트 IP 주소*>/uis).
@@ -117,6 +117,28 @@ Azure에 로그인 하는 데 잘못 된 Azure 계정을 사용 하는 경우 "�
     3. 행에 IP 주소 및 호스트 이름을 추가 합니다. 이 오류가 표시 되는 각 호스트 또는 클러스터에 대해 반복 합니다.
     4. 변경 내용을 저장하고 호스트 파일을 닫습니다.
     5. 어플라이언스 관리 앱을 사용 하 여 어플라이언스를 호스트에 연결할 수 있는지 여부를 확인 합니다. 30 분 후 Azure Portal에 이러한 호스트에 대 한 최신 정보가 표시 됩니다.
+
+
+## <a name="error-60001-unable-to-connect-to-server"></a>오류 60001: 서버에 연결할 수 없습니다. 
+
+- 어플라이언스에서 서버로의 연결이 있는지 확인 합니다.
+- Linux 서버인 경우 다음 단계를 사용 하 여 암호 기반 인증을 사용 하도록 설정 해야 합니다.
+    1. Linux 컴퓨터에 로그인 하 고 ' vi/etc/ssh/sshd_config ' 명령을 사용 하 여 ssh 구성 파일을 엽니다.
+    2. "PasswordAuthentication" 옵션을 예로 설정 합니다. 파일을 저장합니다.
+    3. "Service sshd restart"를 실행 하 여 ssh 서비스를 다시 시작 합니다.
+- Windows 서버인 경우 원격 WMI 호출을 허용 하려면 포트 5985가 열려 있는지 확인 합니다.
+- GCP linux 서버를 검색 하 고 루트 사용자를 사용 하는 경우 다음 명령을 사용 하 여 루트 로그인에 대 한 기본 설정을 변경 합니다.
+    1. Linux 컴퓨터에 로그인 하 고 ' vi/etc/ssh/sshd_config ' 명령을 사용 하 여 ssh 구성 파일을 엽니다.
+    2. "PermitRootLogin" 옵션을 예로 설정 합니다.
+    3. "Service sshd restart"를 실행 하 여 ssh 서비스를 다시 시작 합니다.
+
+## <a name="error-no-suitable-authentication-method-found"></a>오류: 적합 한 인증 방법이 없습니다.
+
+다음 단계를 사용 하 여 linux 서버에서 암호 기반 인증을 사용 하도록 설정 했는지 확인 합니다.
+    1. Linux 컴퓨터에 로그인 하 고 ' vi/etc/ssh/sshd_config ' 명령을 사용 하 여 ssh 구성 파일을 엽니다.
+    2. "PasswordAuthentication" 옵션을 예로 설정 합니다. 파일을 저장합니다.
+    3. "Service sshd restart"를 실행 하 여 ssh 서비스를 다시 시작 합니다.
+
 
 ## <a name="discovered-vms-not-in-portal"></a>검색 된 Vm이 포털에 없음
 

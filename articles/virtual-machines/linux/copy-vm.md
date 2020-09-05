@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: ec8fd91dc768b44b027c96efead6924782eb0f75
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: c7d93ee928653cc1656e3e9a7cdb0d2fd6d7094b
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87368611"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654415"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Azure CLI 및 Managed Disks를 사용하여 Linux VM의 복사본 만들기
 
@@ -43,7 +43,7 @@ az vm deallocate \
 
 VM을 복사하려면 기본 가상 하드 디스크의 복사본을 만듭니다. 이 프로세스를 통해 원본 VM과 동일한 구성 및 설정을 포함하는 특수한 VHD(가상 하드 디스크) 및 관리 디스크를 만들 수 있습니다.
 
-Azure Managed Disks에 대한 자세한 내용은 [Azure Managed Disks 개요](../windows/managed-disks-overview.md)를 참조하세요. 
+Azure Managed Disks에 대한 자세한 내용은 [Azure Managed Disks 개요](../managed-disks-overview.md)를 참조하세요. 
 
 1.  [az vm list](/cli/azure/vm#az-vm-list)를 사용하여 각 VM 및 해당 OS 디스크의 이름을 나열합니다. 다음 예제에서는 리소스 그룹 *myResourceGroup*의 모든 VM을 나열합니다.
     

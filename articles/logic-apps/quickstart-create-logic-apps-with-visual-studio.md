@@ -6,13 +6,13 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 07/22/2020
-ms.openlocfilehash: cd46821b74803d62be0361346166ed78a5f53286
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.date: 08/07/2020
+ms.openlocfilehash: cc38210690c88fec826dc727775d01884dedd997
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132367"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88008885"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>빠른 시작: Azure Logic Apps를 사용하여 자동화된 작업, 프로세스 및 워크플로 만들기 - Visual Studio
 
@@ -28,7 +28,7 @@ Azure Logic Apps을 처음 사용하는 경우 기본 개념만 알아보려면 
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다.
+* Azure 계정 및 구독 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다. Azure Government 구독이 있는 경우 다음 추가 단계에 따라 [Azure Government Cloud용 Visual Studio를 설정](#azure-government)합니다.
 
 * 다음 도구가 없으면 다운로드하여 설치합니다.
 
@@ -51,12 +51,6 @@ Azure Logic Apps을 처음 사용하는 경우 기본 개념만 알아보려면 
   
     Visual Studio Marketplace에서 직접 Azure Logic Apps 도구를 다운로드해 설치하거나 [Visual Studio 내에서 이 확장을 설치하는 방법](/visualstudio/ide/finding-and-using-visual-studio-extensions)을 알아볼 수 있습니다. 설치를 완료하면 Visual Studio를 다시 시작하도록 합니다.
 
-  * Visual Studio에서 Azure Government 구독을 사용하려면 추가 설치에 대한 다음 항목을 참조하세요.
-
-    * Visual Studio 2019: [빠른 시작: Visual Studio를 사용하여 Azure Government에 연결](../azure-government/documentation-government-connect-vs.md)
-
-    * Visual Studio 2017: [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SteveMichelotti.AzureEnvironmentSelector)에서 다운로드하여 설치할 수 있는 [Azure 환경 선택기 Visual Studio 확장 소개](https://devblogs.microsoft.com/azuregov/introducing-the-azure-environment-selector-visual-studio-extension/).
-
 * 임베디드 논리 앱 디자이너를 사용하는 동안 웹에 액세스
 
   디자이너가 Azure에서 리소스를 만들고 논리 앱의 커넥터에서 속성 및 데이터를 읽으려면 인터넷 연결이 필요합니다.
@@ -65,6 +59,34 @@ Azure Logic Apps을 처음 사용하는 경우 기본 개념만 알아보려면 
 
   > [!IMPORTANT]
   > Gmail 커넥터를 사용하려는 경우 G Suite 비즈니스 계정만 논리 앱에서 제한 없이 이 커넥터를 사용할 수 있습니다. Gmail 소비자 계정이 있는 경우 특정 Google 승인 서비스에서만 이 커넥터를 사용하거나 [Gmail 커넥터 인증에 사용할 Google 클라이언트 앱을 만들](/connectors/gmail/#authentication-and-bring-your-own-application) 수 있습니다. 자세한 내용은 [Azure Logic Apps의 Google 커넥터에 대한 데이터 보안 및 개인정보처리방침](../connectors/connectors-google-data-security-privacy-policy.md)을 참조하세요.
+
+<a name="azure-government"></a>
+
+## <a name="set-up-visual-studio-for-azure-government"></a>Azure Government용 Visual Studio 업데이트
+
+### <a name="visual-studio-2017"></a>Visual Studio 2017
+
+[Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SteveMichelotti.AzureEnvironmentSelector)에서 다운로드하여 설치할 수 있는 [Azure 환경 선택기 Visual Studio 확장](https://devblogs.microsoft.com/azuregov/introducing-the-azure-environment-selector-visual-studio-extension/)을 사용할 수 있습니다.
+
+### <a name="visual-studio-2019"></a>Visual Studio 2019
+
+Azure Logic Apps에서 Azure Government 구독을 사용하려면 [Visual Studio에 Azure Government Cloud의 검색 엔드포인트를 추가](../azure-government/documentation-government-connect-vs.md)해야 합니다. 그러나 *Azure Government 계정을 사용하여 Visual Studio에 로그인하기 전*에 다음 단계를 수행하여 검색 엔드포인트를 추가한 후 생성된 JSON 파일의 이름을 바꿔야 합니다.
+
+1. Visual Studio를 닫습니다.
+
+1. 다음 위치에서 `Azure U.S. Government-A3EC617673C6C70CC6B9472656832A26.Configuration`이라는 생성된 JSON 파일을 찾습니다.
+
+   `%localappdata%\.IdentityService\AadConfigurations`
+ 
+1. JSON 파일의 이름을 `AadProvider.Configuration.json`으로 바꿉니다.
+
+1. Visual Studio를 다시 시작합니다.
+
+1. Azure Government 계정으로 로그인하는 단계를 계속 진행합니다.
+
+이 설정을 되돌리려면 다음 위치에서 JSON 파일을 삭제하고 Visual Studio를 다시 시작합니다.
+
+`%localappdata%\.IdentityService\AadConfigurations\AadProvider.Configuration.json`
 
 <a name="create-resource-group-project"></a>
 

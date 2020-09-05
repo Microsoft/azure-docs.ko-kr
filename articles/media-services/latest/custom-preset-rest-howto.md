@@ -3,23 +3,25 @@ title: Media Services v3 REST를 사용 하 여 사용자 지정 변환 인코�
 description: 이 항목에서는 Azure Media Services v 3을 사용 하 여 REST를 사용 하 여 사용자 지정 변환을 인코딩하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: ''
-ms.date: 05/14/2019
-ms.author: juliako
-ms.openlocfilehash: 4bd092dbee09a783dcbd6e36c82a70ff5decaf83
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 9bdea0998b5d6b4c10a96d2ef593f46d6b7c02bf
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053321"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267006"
 ---
 # <a name="how-to-encode-with-a-custom-transform---rest"></a>사용자 지정 변환을 사용 하 여 인코딩하는 방법-REST
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services를 사용 하 여 인코딩하면 [스트리밍 파일](stream-files-tutorial-with-rest.md#create-a-transform) 자습서에서 설명한 대로 업계 모범 사례를 기반으로 권장 되는 기본 제공 기본 설정 중 하나를 사용 하 여 빠르게 시작할 수 있습니다. 특정 시나리오 또는 장치 요구 사항을 대상으로 하는 사용자 지정 사전 설정을 빌드할 수도 있습니다.
 

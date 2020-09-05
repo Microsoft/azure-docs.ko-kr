@@ -11,12 +11,12 @@ ms.date: 05/09/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 15ba0d4b77461d77a2d0b89ecc9e411a105d49d2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 914c3128805c9875249bb1998fcdb6e456e73b16
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495638"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799318"
 ---
 # <a name="table-statistics-in-synapse-sql-pool"></a>Synapse SQL 풀의 테이블 통계
 
@@ -150,6 +150,9 @@ on objIdsWithStats.object_id = actualRowCounts.object_id
 
 ```
 
+>[!TIP]
+> Synapse SQL의 성능 향상을 위해 영구 사용자 테이블에서 **pdw_table_mappings** 대신 **pdw_permanent_table_mappings** 를 사용 하는 것이 좋습니다. 자세한 내용은 **[pdw_permanent_table_mappings &#40;transact-sql&#41;](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** 을 참조 하십시오.
+
 **쿼리 2:** 각 테이블에서 통계가 마지막으로 업데이트 된 시간을 확인 하 여 통계 기간을 확인 합니다. 
 
 > [!NOTE]
@@ -220,7 +223,7 @@ SQL 풀에 성별이 하나만 포함 되어 있고 새 요구 사항이 여러 
 CREATE STATISTICS [statistics_name] ON [schema_name].[table_name]([column_name]);
 ```
 
-예를 들면 다음과 같습니다.
+다음은 그 예입니다.
 
 ```sql
 CREATE STATISTICS col1_stats ON dbo.table1 (col1);
@@ -437,7 +440,7 @@ EXEC [dbo].[prc_sqldw_create_stats] 3, 20;
 UPDATE STATISTICS [schema_name].[table_name]([stat_name]);
 ```
 
-예를 들면 다음과 같습니다.
+다음은 그 예입니다.
 
 ```sql
 UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
@@ -453,7 +456,7 @@ UPDATE STATISTICS [dbo].[table1] ([stats_col1]);
 UPDATE STATISTICS [schema_name].[table_name];
 ```
 
-예를 들면 다음과 같습니다.
+다음은 그 예입니다.
 
 ```sql
 UPDATE STATISTICS dbo.table1;
@@ -476,7 +479,7 @@ UPDATE STATISTICS 문은 쉽게 사용할 수 있습니다. 테이블에 대한 
 
 이 시스템 뷰는 통계에 대한 정보를 제공합니다.
 
-| 카탈로그 뷰 | 설명 |
+| 카탈로그 뷰 | Description |
 |:--- |:--- |
 | [sys.columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) |각 열에 대해 한 행입니다. |
 | [sys.objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) |데이터베이스의 각 개체에 대해 한 행입니다. |
@@ -556,7 +559,7 @@ DBCC SHOW_STATISTICS()는 통계 개체 내에 있는 데이터를 보여줍니�
 DBCC SHOW_STATISTICS([<schema_name>.<table_name>],<stats_name>)
 ```
 
-예를 들면 다음과 같습니다.
+다음은 그 예입니다.
 
 ```sql
 DBCC SHOW_STATISTICS (dbo.table1, stats_col1);

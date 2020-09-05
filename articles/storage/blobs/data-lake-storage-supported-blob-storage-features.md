@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/31/2020
+ms.date: 08/25/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 0d915c0b293e9f3deadbfb2a5fb0ff7f379e1717
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: f84298c2c43afbb9e0379516be1e83002a7e3926
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88053476"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228684"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2에서 사용할 수 있는 Blob Storage 기능
 
@@ -45,14 +45,16 @@ ms.locfileid: "88053476"
 |스냅샷|미리 보기|아직 지원되지 않음|[Blob 스냅숏](snapshots-overview.md)|
 |정적 웹 사이트|미리 보기|아직 지원되지 않음|[Azure Storage에서 정적 웹 사이트 호스팅](storage-blob-static-website.md)|
 |변경 불가능한 스토리지|미리 보기|아직 지원되지 않음|[비즈니스에 중요한 BLOB 데이터를 변경이 불가능한 스토리지에 저장](storage-blob-immutable-storage.md)|
-|수명 주기 관리 정책|미리 보기|아직 지원되지 않음|[Azure Blob Storage 수명 주기 관리](storage-lifecycle-management-concepts.md)|
 |컨테이너 일시 삭제|미리 보기|미리 보기|[컨테이너에 대 한 일시 삭제 (미리 보기)](soft-delete-container-overview.md)|
-|Blob 일시 삭제|아직 지원되지 않음|아직 지원되지 않음|[Blob에 대 한 일시 삭제](storage-blob-soft-delete.md)|
+|Blob 일시 삭제|아직 지원되지 않음|아직 지원되지 않음|[Blob에 대한 일시 삭제](storage-blob-soft-delete.md)|
 |Blobfuse|미리 보기|아직 지원되지 않음|[blobfuse를 사용하여 Blob Storage를 파일 시스템으로 탑재하는 방법](storage-how-to-mount-container-linux.md)|
-|변경 피드|아직 지원되지 않음|아직 지원되지 않음|[Azure Blob Storage의 변경 피드 지원](storage-blob-change-feed.md)|
 |계정 장애 조치(failover)|아직 지원되지 않음|아직 지원되지 않음|[재해 복구 및 계정 장애 조치(failover)](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Blob 컨테이너 ACL|아직 지원되지 않음<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|아직 지원되지 않음<div role="complementary" aria-labelledby="blob-container-ACL"><sup>2</sup></div>|[컨테이너 ACL 설정](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
 |사용자 지정 도메인|아직 지원되지 않음|아직 지원되지 않음|[Azure Blob Storage 엔드포인트에 사용자 지정 도메인 매핑](storage-custom-domain-name.md)|
+|암호화 범위|아직 지원되지 않음|아직 지원되지 않음|[암호화 범위 만들기 및 관리 (미리 보기)](encryption-scope-manage.md)|
+|변경 피드|아직 지원되지 않음|아직 지원되지 않음|[Azure Blob Storage의 변경 피드 지원](storage-blob-change-feed.md)|
+|개체 복제|아직 지원되지 않음|아직 지원되지 않음|[블록 blob에 대한 개체 복제(미리 보기) 구성](object-replication-configure.md)|
+|Blob 버전 관리|아직 지원되지 않음|아직 지원되지 않음|[Blob 버전 관리 설정 및 관리 (미리 보기)](versioning-enable.md)|
 
 <div id="diagnostic-logging"><sup>1</sup> 프리미엄 블록 blob 저장소 계정의 경우 Azure Portal를 사용 하 여 진단 로그 (클래식)를 사용 하도록 설정할 수 없습니다. PowerShell을 사용하여 활성화합니다.</div><br>
 

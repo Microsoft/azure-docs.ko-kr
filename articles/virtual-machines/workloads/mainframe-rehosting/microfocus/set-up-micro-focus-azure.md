@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: cc61d842550f82dc8b408ed5cd421af65d0e2be6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 59566fc051b1e84d8e271b3c9d061f2481dcc58f
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507899"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245318"
 ---
 # <a name="install-micro-focus-enterprise-server-50-and-enterprise-developer-50-on-azure"></a>Azure에서 마이크로 포커스 엔터프라이즈 서버 5.0 및 Enterprise Developer 5.0 설치
 
@@ -67,9 +67,9 @@ Enterprise Server에 대 한 해당 개발 환경은 Microsoft Visual Studio 201
 
 8.  RDP 세션에서 다음 두 파일을 로드 합니다. Windows를 사용 하 고 있으므로 파일을 RDP 세션으로 끌어서 놓을 수 있습니다.
 
-    -   **es \_50.exe**엔터프라이즈 서버 설치 파일입니다.
+    -   `es\_50.exe`, 엔터프라이즈 서버 설치 파일입니다.
 
-    -   해당 라이선스 파일인 **mflic**-Enterprise Server는이를 제외 하 고 로드 하지 않습니다.
+    -   `mflic`, 해당 라이선스 파일 (엔터프라이즈 서버는이 없이는 로드 되지 않음).
 
 9.  파일을 두 번 클릭 하 여 설치를 시작 합니다. 첫 번째 창에서 설치 위치를 선택 하 고 최종 사용자 사용권 계약에 동의 합니다.
 
@@ -87,11 +87,11 @@ Enterprise Server에 대 한 해당 개발 환경은 Microsoft Visual Studio 201
 
 1.  마이크로 포커스 라이선스 관리를 시작 합니다.
 
-2.  **Start** \> **마이크로 포커스 라이선스 관리자** \> **라이선스 관리**시작을 선택 하 고 **설치** 탭을 클릭 합니다. 업로드할 라이선스 형식 유형 (라이선스 파일 또는 16 자 라이선스 코드)을 선택 합니다. 예를 들어 파일의 경우 **라이선스 파일**에서 이전에 VM에 업로드 된 **mflic** 파일을 찾아 **라이선스 설치**를 선택 합니다.
+2.  **Start** \> **마이크로 포커스 라이선스 관리자** \> **라이선스 관리**시작을 선택 하 고 **설치** 탭을 클릭 합니다. 업로드할 라이선스 형식 유형 (라이선스 파일 또는 16 자 라이선스 코드)을 선택 합니다. 예를 들어 파일의 경우 **라이선스 파일**에서 `mflic` 이전에 VM에 업로드 된 * 파일로 이동한 후 **라이선스 설치**를 선택 합니다.
 
     ![마이크로 포커스 라이선스 관리 대화 상자](media/install-image-3.png)
 
-3.  Enterprise Server가 로드 되는지 확인 합니다. 다음 URL을 사용 하 여 브라우저에서 엔터프라이즈 서버 관리 사이트를 시작 해 봅니다 <http://localhost:86/> . 표시 된 대로 엔터프라이즈 서버 관리 페이지가 표시 됩니다.
+3.  Enterprise Server가 로드 되는지 확인 합니다. 다음 URL을 사용 하 여 브라우저에서 엔터프라이즈 서버 관리 사이트를 시작 해 봅니다 `http://localhost:86/` . 표시 된 대로 엔터프라이즈 서버 관리 페이지가 표시 됩니다.
 
     ![엔터프라이즈 서버 관리 페이지](media/install-image-4.png)
 
@@ -103,9 +103,9 @@ Enterprise Server에 대 한 해당 개발 환경은 Microsoft Visual Studio 201
 
 3.  RDP 세션에서 다음 두 파일을 로드 합니다 (원하는 경우 끌어서 놓기).
 
-    -   **edvs2017.exe**Enterprise Server 설치 파일입니다.
+    -   `edvs2017.exe`, 엔터프라이즈 서버 설치 파일입니다.
 
-    -   **mflic**, 해당 라이선스 파일 (Enterprise Developer는이 없이는 로드 되지 않음).
+    -   `mflic`, 해당 라이선스 파일 (Enterprise Developer는이 없이는 로드 되지 않음).
 
 4.  **edvs2017.exe** 파일을 두 번 클릭 하 여 설치를 시작 합니다. 첫 번째 창에서 설치 위치를 선택 하 고 최종 사용자 사용권 계약에 동의 합니다. 원할 경우 **Rumba 9.5 설치** 를 선택 하 여이 터미널 에뮬레이터를 설치 합니다 .이 에뮬레이터는 필요할 수 있습니다.
 
@@ -117,7 +117,7 @@ Enterprise Server에 대 한 해당 개발 환경은 Microsoft Visual Studio 201
 
 6.  엔터프라이즈 서버에 대해 수행한 것 처럼 마이크로 포커스 라이선스 관리자를 시작 합니다. **시작** \> **마이크로 포커스 라이선스 관리자** \> **라이선스 관리**를 선택 하 고 **설치** 탭을 클릭 합니다.
 
-7.  업로드할 라이선스 형식 유형 (라이선스 파일 또는 16 자 라이선스 코드)을 선택 합니다. 예를 들어 파일의 경우 **라이선스 파일**에서 이전에 VM에 업로드 된 **mflic** 파일을 찾아 **라이선스 설치**를 선택 합니다.
+7.  업로드할 라이선스 형식 유형 (라이선스 파일 또는 16 자 라이선스 코드)을 선택 합니다. 예를 들어 파일의 경우 **라이선스 파일**에서 `mflic` 이전에 VM에 업로드 된 파일을 찾아  **라이선스 설치**를 선택 합니다.
 
     ![마이크로 포커스 라이선스 관리 대화 상자](media/install-image-7.png)
 

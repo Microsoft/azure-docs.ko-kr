@@ -7,24 +7,24 @@ ms.author: dpalled
 manager: diviso
 ms.service: time-series-insights
 ms.topic: article
-ms.date: 06/30/2020
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: cc24c1f49a48e81509961d5d7d01dba60dc50475
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1a7a88e0db38f399dc47c030f3b97f6b26f4da07
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077646"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168238"
 ---
 # <a name="shape-json-to-maximize-query-performance-in-your-gen1-environment"></a>Gen1 환경의 쿼리 성능을 최대화 하기 위해 JSON 모양
 
 이 문서에서는 Azure Time Series Insights 쿼리의 효율성을 최대화 하기 위해 JSON 셰이프를 만드는 방법에 대 한 지침을 제공 합니다.
 
-## <a name="video"></a>동영상
+## <a name="video"></a>비디오
 
 ### <a name="learn-best-practices-for-shaping-json-to-meet-your-storage-needsbr"></a>저장소 요구 사항에 맞게 JSON을 셰이핑 하는 모범 사례를 알아봅니다.</br>
 
-> [!VIDEO https://www.youtube.com/embed/b2BD5hwbg5I]
+> [!VIDEO <https://www.youtube.com/embed/b2BD5hwbg5I>]
 
 ## <a name="best-practices"></a>모범 사례
 
@@ -60,7 +60,6 @@ Azure Time Series Insights로 이벤트를 보내는 방법에 대해 생각해 
 
 Azure cloud로 전송 될 때 JSON으로 serialize 되는 [IoT 장치 메시지 개체](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.message?view=azure-dotnet) 를 사용 하 여 Azure Time Series Insights GA 환경으로 전송 되는 다음 json 페이로드를 살펴보겠습니다.
 
-
 ```JSON
 [
     {
@@ -90,14 +89,14 @@ Azure cloud로 전송 될 때 JSON으로 serialize 되는 [IoT 장치 메시지 
 ]
 ```
 
-* 키 속성이 **deviceId**인 참조 데이터 테이블:
+- 키 속성이 **deviceId**인 참조 데이터 테이블:
 
    | deviceId | messageId | deviceLocation |
    | --- | --- | --- |
    | FXXX | LINE\_DATA | EU |
    | FYYY | LINE\_DATA | US |
 
-* Azure Time Series Insights 이벤트 테이블, 평면화 후:
+- Azure Time Series Insights 이벤트 테이블, 평면화 후:
 
    | deviceId | messageId | deviceLocation | timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
    | --- | --- | --- | --- | --- | --- |
@@ -106,6 +105,7 @@ Azure cloud로 전송 될 때 JSON으로 serialize 되는 [IoT 장치 메시지 
    | FYYY | LINE\_DATA | US | 2018-01-17T01:18:00Z | 0.58015072345733643 | 22.2 |
 
 > [!NOTE]
+
 > - **deviceId** 열은 다수의 다양한 디바이스에서 열 헤더로 사용합니다. **DeviceId** 값을 고유 속성 이름으로 설정 하면 총 장치 수가 595 (S1 환경) 또는 795 (S2 환경)에서 다른 5 개의 열로 제한 됩니다.
 > - 불필요 한 속성 (예: 제조업체 및 모델 정보)은 사용 하지 않습니다. 속성은 나중에 쿼리하지 않기 때문에 제거 하면 네트워크 및 저장소 효율성이 향상 됩니다.
 > - 참조 데이터는 네트워크를 통해 전송된 바이트 수를 줄이는 데 사용됩니다. Key 속성 **deviceId**를 사용 하 여 두 특성 **MessageId** 및 **devicelocation** 을 조인 합니다. 이 데이터는 수신 시 원격 분석 데이터와 조인 된 다음 쿼리를 위해 Azure Time Series Insights에 저장 됩니다.
@@ -160,27 +160,28 @@ Azure cloud로 전송 될 때 JSON으로 serialize 되는 [IoT 장치 메시지 
 ]
 ```
 
-* 키 속성이 **deviceId** 및 **tagId**인 참조 데이터 테이블:
+- 키 속성이 **deviceId** 및 **tagId**인 참조 데이터 테이블:
 
-   | deviceId | series.tagId | messageId | deviceLocation | 형식 | 단위 |
+   | deviceId | series.tagId | messageId | deviceLocation | type | 단위 |
    | --- | --- | --- | --- | --- | --- |
    | FXXX | pumpRate | LINE\_DATA | EU | 흐름 속도 | ft3/s |
    | FXXX | oilPressure | LINE\_DATA | EU | Engine Oil Pressure | psi |
    | FYYY | pumpRate | LINE\_DATA | US | 흐름 속도 | ft3/s |
    | FYYY | oilPressure | LINE\_DATA | US | Engine Oil Pressure | psi |
 
-* Azure Time Series Insights 이벤트 테이블, 평면화 후:
+- Azure Time Series Insights 이벤트 테이블, 평면화 후:
 
-   | deviceId | series.tagId | messageId | deviceLocation | 형식 | 단위 | timestamp | series.value |
+   | deviceId | series.tagId | messageId | deviceLocation | type | 단위 | timestamp | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | EU | 흐름 속도 | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
+   | FXXX | pumpRate | LINE\_DATA | EU | 흐름 속도 | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 |
    | FXXX | oilPressure | LINE\_DATA | EU | Engine Oil Pressure | psi | 2018-01-17T01:17:00Z | 34.7 |
-   | FXXX | pumpRate | LINE\_DATA | EU | 흐름 속도 | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
+   | FXXX | pumpRate | LINE\_DATA | EU | 흐름 속도 | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 |
    | FXXX | oilPressure | LINE\_DATA | EU | Engine Oil Pressure | psi | 2018-01-17T01:17:00Z | 49.2 |
    | FYYY | pumpRate | LINE\_DATA | US | 흐름 속도 | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
    | FYYY | oilPressure | LINE\_DATA | US | Engine Oil Pressure | psi | 2018-01-17T01:18:00Z | 22.2 |
 
 > [!NOTE]
+
 > - **DeviceId** 및 **tagId** 열은 제에서 다양 한 장치 및 태그의 열 머리글로 사용 됩니다. 각각을 고유한 특성으로 사용 하 여 쿼리를 594 (S1 환경) 또는 794 (S2 환경)의 6 개 열이 있는 총 장치 수로 제한 합니다.
 > - 첫 번째 예제에 명시 된 이유로 불필요 한 속성을 사용할 필요가 없습니다.
 > - 참조 데이터는 **messageId** 및 **devicelocation**의 고유 쌍에 사용 되는 **deviceId**를 도입 하 여 네트워크를 통해 전송 되는 바이트 수를 줄이는 데 사용 됩니다. 복합 키 tagId는 **형식** 및 **단위의**고유 쌍에 사용 됩니다 **.** 복합 키를 사용 하면 **deviceId** 및 **tagId** 쌍을 사용 하 여 **messageId, devicelocation, type** 및 **unit**의 네 가지 값을 참조할 수 있습니다. 이 데이터는 수신 시 원격 분석 데이터와 조인 됩니다. 그런 다음 쿼리를 위해 Azure Time Series Insights에 저장 됩니다.
@@ -190,13 +191,13 @@ Azure cloud로 전송 될 때 JSON으로 serialize 되는 [IoT 장치 메시지 
 
 가능한 값이 많은 속성의 경우에는 각 값에 대해 새 열을 만드는 대신 단일 열 내에서 고유한 값으로 보내는 것이 가장 좋습니다. 앞의 두 예제에서:
 
-  - 첫 번째 예제에서는 몇 가지 속성에 여러 값이 있으므로 별도의 속성을 설정 하는 것이 적절 합니다.
-  - 두 번째 예제에서는 측정값이 개별 속성으로 지정 되지 않습니다. 대신, 공통 계열 속성 아래에 있는 값 또는 측정값의 배열입니다. 새 키 **tagId** 가 전송 되며,이는 평면화 된 테이블에 새 열 **tagId** 를 만듭니다. 새 속성 **유형** 및 **단위** 는 속성 제한에 도달 하지 않도록 참조 데이터를 사용 하 여 생성 됩니다.
+- 첫 번째 예제에서는 몇 가지 속성에 여러 값이 있으므로 별도의 속성을 설정 하는 것이 적절 합니다.
+- 두 번째 예제에서는 측정값이 개별 속성으로 지정 되지 않습니다. 대신, 공통 계열 속성 아래에 있는 값 또는 측정값의 배열입니다. 새 키 **tagId** 가 전송 되며,이는 평면화 된 테이블에 새 열 **tagId** 를 만듭니다. 새 속성 **유형** 및 **단위** 는 속성 제한에 도달 하지 않도록 참조 데이터를 사용 하 여 생성 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 - 자세한 내용은 [클라우드로 IoT Hub 장치 메시지 보내기를](../iot-hub/iot-hub-devguide-messages-construct.md)참조 하세요.
 
-- Azure Time Series Insights 데이터 액세스 REST API의 쿼리 구문에 대 한 자세한 내용은 [쿼리 구문 Azure Time Series Insights](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-syntax) 를 참조 하세요.
+- Azure Time Series Insights 데이터 액세스 REST API의 쿼리 구문에 대 한 자세한 내용은 [쿼리 구문 Azure Time Series Insights](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query-syntax) 를 참조 하세요.
 
 - [이벤트를 셰이핑 하는 방법을](./time-series-insights-send-events.md)알아봅니다.

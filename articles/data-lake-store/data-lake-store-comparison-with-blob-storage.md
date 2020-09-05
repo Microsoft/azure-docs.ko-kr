@@ -1,17 +1,17 @@
 ---
 title: Blob 저장소와 Azure Data Lake Storage Gen1 비교
-description: Azure Data Lake Storage Gen1와 Azure Blob Storage 간의 차이점에 대 한 요약을 제공 합니다.
+description: 빅 데이터 처리의 몇 가지 주요 측면에 대 한 Azure Data Lake Storage Gen1와 Azure Blob Storage 간의 차이점에 대해 알아봅니다.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: f9a03b5636af4a60c4abf563e073e22c970b8a02
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 6662beec47d663f92e453f52d190e41518108b0d
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87921780"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191486"
 ---
 # <a name="comparing-azure-data-lake-storage-gen1-and-azure-blob-storage"></a>Azure Data Lake Storage Gen1과 Azure Blob Storage 비교
 
@@ -19,12 +19,12 @@ ms.locfileid: "87921780"
 
 이 문서의 표에서는 빅 데이터 처리의 일부 주요 측면을 따라 Azure Data Lake Storage Gen1과 Azure Blob Storage 간의 차이점을 요약합니다. Azure Blob Storage는 다양한 스토리지 시나리오를 위해 설계된 확장성 있는 범용 개체 저장소입니다. Azure Data Lake Storage Gen1은 빅 데이터 분석 워크로드에 대해 최적화된 하이퍼 스케일 리포지토리입니다.
 
-| 범주 | Azure Data Lake Storage Gen1 | Azure Blob Storage |
+| Category | Azure Data Lake Storage Gen1 | Azure Blob Storage |
 | -------- | ---------------------------- | ------------------ |
-| 목적 |빅 데이터 분석 워크로드에 대해 최적화된 스토리지 |빅 데이터 분석을 포함한 다양한 스토리지 시나리오에 대한 범용 개체 스토리지 |
+| 용도 |빅 데이터 분석 워크로드에 대해 최적화된 스토리지 |빅 데이터 분석을 포함한 다양한 스토리지 시나리오에 대한 범용 개체 스토리지 |
 | 사용 사례 |Batch, 대화형, 스트리밍 분석 및 로그 파일, IoT 데이터, 클릭 스트림, 대형 데이터 세트 등과 같은 기계 학습 데이터 |애플리케이션 백 엔드, 백업 데이터, 스트리밍용 미디어 스토리지 및 범용 데이터 등과 같은 모든 종류의 텍스트 또는 이진 데이터. 추가적으로 Batch, 대화형, 스트리밍 분석 및 로그 파일, IoT 데이터, 클릭 스트림, 대형 데이터 세트 등과 같은 기계 학습 데이터 등의 분석 워크로드 전면 지원 |
 | 주요 개념 |Data Lake Storage Gen1 계정은 폴더를 포함하며, 이 폴더는 파일로 저장된 데이터를 포함함 |Storage 계정은 컨테이너를 가지며, 이 컨테이너는 blob 형식의 데이터를 가짐 |
-| 구조체 |계층적 파일 시스템 |단일 구조 네임스페이스를 가진 개체 저장소 |
+| 구조 |계층적 파일 시스템 |단일 구조 네임스페이스를 가진 개체 저장소 |
 | API |HTTPS를 통한 REST API |HTTP/HTTPS를 통한 REST API |
 | 서버 쪽 API |[WebHDFS 호환 REST API](https://msdn.microsoft.com/library/azure/mt693424.aspx) |[Azure Blob Storage REST API](https://msdn.microsoft.com/library/azure/dd135733.aspx) |
 | Hadoop 파일 시스템 클라이언트 |예 |예 |

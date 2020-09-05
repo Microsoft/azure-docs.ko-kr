@@ -8,13 +8,13 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7120f95b8b61fc08759f4d15061ec530849dfc05
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: d1258786ec6f611bea5f73f3cb1c176738733acd
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406523"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919066"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>GenerateAnswer API 및 메타 데이터를 사용 하 여 답변 받기
 
@@ -215,8 +215,8 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 ### <a name="metadata-examples-in-quickstarts"></a>퀵 스타트의 메타 데이터 예제
 
 메타 데이터에 대 한 QnA Maker 포털 빠른 시작에서 메타 데이터에 대해 자세히 알아보세요.
-* [제작-QnA 쌍에 메타 데이터 추가](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)
-* [쿼리 예측-메타 데이터에의 한 응답 필터링](../quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
+* [제작 - QnA 쌍에 메타데이터 추가](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)
+* [쿼리 예측 - 메타데이터를 통한 응답 필터링](../quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
 
 <a name="keep-context"></a>
 
@@ -269,7 +269,7 @@ GenerateAnswer에 대 한 응답에는 일치 하는 질문 및 답변 쌍에 �
 
 |코드|설명|
 |:--|--|
-|2xx|Success|
+|2xx|성공|
 |400|요청 매개 변수가 잘못되었습니다. 필수 매개 변수가 누락되었거나, 형식이 잘못되었거나, 너무 큽니다.|
 |400|요청 본문이 잘못되었습니다. JSON이 누락되었거나, 형식이 잘못되었거나, 너무 큽니다.|
 |401|잘못된 키|

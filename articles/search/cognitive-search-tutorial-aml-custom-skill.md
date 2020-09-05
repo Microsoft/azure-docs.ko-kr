@@ -8,16 +8,16 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/10/2020
-ms.openlocfilehash: 69618604c38d82567260e45d651df523055c5f7b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: a4e686fe7adcc7e990a26484bc5850de977e862a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245333"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924591"
 ---
 # <a name="tutorial-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>자습서: Azure Machine Learning을 사용하여 사용자 지정 기술 빌드 및 배포 
 
-이 자습서에서는 [호텔 리뷰 데이터 세트](https://www.kaggle.com/datafiniti/hotel-reviews)(Creative Commons 라이선스 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)에 따라 배포됨)를 사용하여 Azure Machine Learning을 통해 리뷰에서 양상 기반 감정을 추출하는 [사용자 지정 기술](https://docs.microsoft.com/azure/search/cognitive-search-aml-skill)을 만듭니다. 이렇게 하면 동일한 리뷰 내에서 긍정적인 감정과 부정적인 감정을 직원, 객실, 로비, 수영장 등의 확인된 엔터티에 올바르게 할당할 수 있습니다.
+이 자습서에서는 [호텔 리뷰 데이터 세트](https://www.kaggle.com/datafiniti/hotel-reviews)(Creative Commons 라이선스 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)에 따라 배포됨)를 사용하여 Azure Machine Learning을 통해 리뷰에서 양상 기반 감정을 추출하는 [사용자 지정 기술](./cognitive-search-aml-skill.md)을 만듭니다. 이렇게 하면 동일한 리뷰 내에서 긍정적인 감정과 부정적인 감정을 직원, 객실, 로비, 수영장 등의 확인된 엔터티에 올바르게 할당할 수 있습니다.
 
 Azure Machine Learning에서 양상 기반 감정 모델을 학습하기 위해 [nlp 레시피 리포지토리](https://github.com/microsoft/nlp-recipes/tree/master/examples/sentiment_analysis/absa)를 사용합니다. 그러면 모델이 Azure Kubernetes 클러스터에 엔드포인트로 배포됩니다. 배포되면 엔드포인트가 Cognitive Search 서비스에서 사용할 수 있도록 AML 기술로 보강 파이프라인에 추가됩니다.
 
@@ -36,10 +36,10 @@ Azure Machine Learning에서 양상 기반 감정 모델을 학습하기 위해 
 ## <a name="prerequisites"></a>필수 구성 요소
 
 * Azure 구독 - [체험판 구독](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 다운로드합니다.
-* [Cognitive Search 서비스](https://docs.microsoft.com/azure/search/search-get-started-arm)
-* [Cognitive Services 리소스](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows)
-* [Azure Storage 계정](https://docs.microsoft.com/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal)
-* [Azure Machine Learning 작업 영역](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
+* [Cognitive Search 서비스](./search-get-started-arm.md)
+* [Cognitive Services 리소스](../cognitive-services/cognitive-services-apis-create-account.md?tabs=multiservice%2cwindows)
+* [Azure Storage 계정](../storage/common/storage-account-create.md?tabs=azure-portal&toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+* [Azure Machine Learning 작업 영역](../machine-learning/how-to-manage-workspace.md)
 
 ## <a name="setup"></a>설치 프로그램
 
@@ -47,9 +47,9 @@ Azure Machine Learning에서 양상 기반 감정 모델을 학습하기 위해 
 * 다운로드 파일이 Zip 파일인 경우 콘텐츠를 추출합니다. 파일이 읽기/쓰기 파일인지 확인합니다.
 * Azure 계정과 서비스를 설정하는 동안 쉽게 액세스할 수 있는 텍스트 파일에 이름과 키를 복사합니다. Azure 서비스에 액세스하기 위한 변수가 정의된 노트북의 첫 번째 셀에 이름과 키가 추가됩니다.
 * Azure Machine Learning 및 요구 사항에 아직 익숙하지 않은 경우 시작하기 전에 다음 문서를 검토하세요.
- * [Azure Machine Learning용 개발 환경 구성](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment)
- * [Azure Portal에서 Azure Machine Learning 작업 영역 만들기 및 관리](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
- * Azure Machine Learning 개발 환경을 구성할 때 [클라우드 기반 컴퓨팅 인스턴스](https://docs.microsoft.com/azure/machine-learning/how-to-configure-environment#compute-instance)를 사용하면 더 빠르고 쉽게 시작할 수 있습니다.
+ * [Azure Machine Learning용 개발 환경 구성](../machine-learning/how-to-configure-environment.md)
+ * [Azure Portal에서 Azure Machine Learning 작업 영역 만들기 및 관리](../machine-learning/how-to-manage-workspace.md)
+ * Azure Machine Learning 개발 환경을 구성할 때 [클라우드 기반 컴퓨팅 인스턴스](../machine-learning/how-to-configure-environment.md#compute-instance)를 사용하면 더 빠르고 쉽게 시작할 수 있습니다.
 * 데이터 세트 파일을 스토리지 계정의 컨테이너에 업로드합니다. 학습 단계를 Notebook에서 수행하려면 더 큰 파일이 필요합니다. 학습 단계를 건너뛰려면 더 작은 파일을 사용하는 것이 좋습니다.
 
 ## <a name="open-notebook-and-connect-to-azure-services"></a>Notebook을 열고 Azure 서비스에 연결
@@ -68,9 +68,9 @@ Azure Machine Learning에서 양상 기반 감정 모델을 학습하기 위해 
 
 Notebook의 섹션 3에서는 섹션 2에서 만든 모델을 학습시키고, 해당 모델을 등록하고, Azure Kubernetes 클러스터에 엔드포인트로 배포합니다. Azure Kubernetes에 익숙하지 않은 경우 유추 클러스터를 만들기 전에 다음 문서를 검토하는 것이 좋습니다.
 
-* [Azure Kubernetes 서비스 개요](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-* [AKS(Azure Kubernetes Service)의 Kubernetes 핵심 개념](https://docs.microsoft.com/azure/aks/concepts-clusters-workloads)
-* [AKS(Azure Kubernetes Service)의 할당량, 가상 머신 크기 제한 및 지역 가용성](https://docs.microsoft.com/azure/aks/quotas-skus-regions)
+* [Azure Kubernetes 서비스 개요](../aks/intro-kubernetes.md)
+* [AKS(Azure Kubernetes Service)의 Kubernetes 핵심 개념](../aks/concepts-clusters-workloads.md)
+* [AKS(Azure Kubernetes Service)의 할당량, 가상 머신 크기 제한 및 지역 가용성](../aks/quotas-skus-regions.md)
 
 유추 클러스터를 만들고 배포하는 데 최대 30분이 걸릴 수 있습니다. 마지막 단계로 넘어가기 전에 웹 서비스를 테스트하고 기술을 업데이트하고 인덱서를 실행하는 것이 좋습니다.
 
@@ -108,5 +108,5 @@ Notebook의 섹션 4에는 기술 세트와 인덱서를 업데이트하는 4개
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [사용자 지정 기술 웹 api 검토](https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-web-api)
-> [보강 파이프라인에 사용자 지정 기술을 추가하는 방법 자세히 알아보기](https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-interface)
+> [사용자 지정 기술 웹 api 검토](./cognitive-search-custom-skill-web-api.md)
+> [보강 파이프라인에 사용자 지정 기술을 추가하는 방법 자세히 알아보기](./cognitive-search-custom-skill-interface.md)

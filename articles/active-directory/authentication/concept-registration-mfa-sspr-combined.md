@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3a06f01507ad5715d1e8a3f828ab008e1e8ce65
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: e4afc5e554e72fc2ab78173368930b2e5317bce7
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512978"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718920"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Azure Active Directory 개요에 대 한 결합 된 보안 정보 등록
 
@@ -32,7 +32,7 @@ ms.locfileid: "87512978"
 
 ![사용자에 대 한 등록 된 보안 정보를 표시 하는 내 프로필](media/concept-registration-mfa-sspr-combined/combined-security-info-defualts-registered.png)
 
-새 환경을 사용 하도록 설정 하기 전에이 관리자 중심 설명서 및 사용자 중심의 설명서를 검토 하 여이 기능의 기능과 영향을 이해 해야 합니다. [사용자 설명서](../user-help/user-help-security-info-overview.md) 에 대 한 교육을 바탕으로 사용자에 게 새로운 환경을 준비 하 고 성공적으로 롤아웃 하도록 도움을 줍니다.
+새 환경을 사용 하도록 설정 하기 전에이 관리자 중심 설명서 및 사용자 중심의 설명서를 검토 하 여이 기능의 기능과 영향을 이해 해야 합니다. [사용자 설명서](../user-help/security-info-setup-signin.md) 에 대 한 교육을 바탕으로 사용자에 게 새로운 환경을 준비 하 고 성공적으로 롤아웃 하도록 도움을 줍니다.
 
 Azure AD 통합 보안 정보 등록은 현재 Azure 미국 정부, Azure 독일 또는 Azure 중국 21Vianet과 같은 국가별 클라우드에서 사용할 수 없습니다.
 
@@ -51,17 +51,17 @@ Azure AD 통합 보안 정보 등록은 현재 Azure 미국 정부, Azure 독일
 
 결합 된 등록에서는 다음과 같은 인증 방법과 작업을 지원 합니다.
 
-| 메서드 | 등록 | 변경 | 삭제 |
+| 방법 | 등록 | 변경 | DELETE |
 | --- | --- | --- | --- |
-| Microsoft Authenticator | 예 (최대 5 개) | 예 | 예 |
-| 기타 authenticator 앱 | 예 (최대 5 개) | 예 | 예 |
-| 하드웨어 토큰 | 아니요 | 예 | 예 |
+| Microsoft Authenticator | 예 (최대 5 개) | 아니요 | 예 |
+| 기타 authenticator 앱 | 예 (최대 5 개) | 아니요 | 예 |
+| 하드웨어 토큰 | 아니요 | 아니요 | 예 |
 | 전화 | 예 | 예 | 예 |
 | 대체 전화 | 예 | 예 | 예 |
-| 사무실 전화 | 아니요 | 아니요 | 예 |
+| 사무실 전화 | 아니요 | 아니요 | 아니요 |
 | 메일 | 예 | 예 | 예 |
-| 본인 확인 질문 | 예 | 예 | 예 |
-| 앱 암호 | 예 | 예 | 예 |
+| 본인 확인 질문 | 예 | 아니요 | 예 |
+| 앱 암호 | 예 | 아니요 | 예 |
 | FIDO2 보안 키<br />*관리 모드는 [보안 정보](https://mysignins.microsoft.com/security-info) 페이지 에서만*| 예 | 예 | 예 |
 
 > [!NOTE]

@@ -30,10 +30,10 @@
     - name: 개념
       expanded: false
       items:
+        - name: 외부 ID 가격
+          href: external-identities-pricing.md
         - name: B2B 모범 사례
           href: b2b-fundamentals.md
-        - name: B2B 라이선스
-          href: licensing-guidance.md
         - name: B2B 및 Office 365 외부 공유
           href: o365-external-user.md
         - name: 초대 상환

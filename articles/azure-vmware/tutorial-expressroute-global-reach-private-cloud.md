@@ -1,18 +1,18 @@
 ---
 title: 온-프레미스 환경을 프라이빗 클라우드로 피어링
-description: 이 AVS(Azure VMware Solution) 자습서에서는 AVS의 프라이빗 클라우드에 대한 ExpressRoute Global Reach 피어링을 만듭니다.
+description: 이 Azure VMware Solution 자습서에서는 Azure VMware Solution의 프라이빗 클라우드에 대한 ExpressRoute Global Reach 피어링을 만듭니다.
 ms.topic: tutorial
 ms.date: 07/16/2020
-ms.openlocfilehash: a9a002eab3219a0db74062570d31595bfcc0d6a3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: db3f5988cb8c07d9b6e80f500ac6aff8f96dfded
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093996"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750457"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>자습서: 온-프레미스 환경을 프라이빗 클라우드로 피어링
 
-ExpressRoute Global Reach는 온-프레미스 환경을 프라이빗 클라우드에 연결합니다. ExpressRoute Global Reach 연결은 프라이빗 클라우드 ExpressRoute 회로와 온-프레미스 환경에 대한 기존 ExpressRoute 연결 간에 설정됩니다.  Azure CLI 및 PowerShell을 사용하여 ExpressRoute Global Reach를 구성하는 방법에 대한 지침이 있으며, [CLI 명령](../expressroute/expressroute-howto-set-global-reach-cli.md)은 온-프레미스 환경 간에 AVS(Azure VMware Solution) 프라이빗 클라우드에 대한 ExpressRoute Global Reach 피어링을 구성하는 데 도움이 되는 세부 정보 및 예제가 추가되었습니다.   
+ExpressRoute Global Reach는 온-프레미스 환경을 프라이빗 클라우드에 연결합니다. ExpressRoute Global Reach 연결은 프라이빗 클라우드 ExpressRoute 회로와 온-프레미스 환경에 대한 기존 ExpressRoute 연결 간에 설정됩니다.  Azure CLI 및 PowerShell을 사용하여 ExpressRoute Global Reach를 구성하는 방법에 대한 지침이 있으며, [CLI 명령](../expressroute/expressroute-howto-set-global-reach-cli.md)은 온-프레미스 환경 간에 Azure VMware Solution 프라이빗 클라우드에 대한 ExpressRoute Global Reach 피어링을 구성하는 데 도움이 되는 세부 정보 및 예제가 추가되었습니다.   
 
 ExpressRoute Global Reach를 사용하여 두 ExpressRoute 회로 간에 연결을 설정하기 전에 [다른 Azure 구독에서 연결을 설정하는 방법](../expressroute/expressroute-howto-set-global-reach-cli.md#enable-connectivity-between-expressroute-circuits-in-different-azure-subscriptions)에 대한 설명서를 검토하세요.  [Azure-프라이빗 클라우드 네트워킹을 구성](tutorial-configure-networking.md)할 때 사용하는 ExpressRoute 회로의 경우 ExpressRoute 게이트웨이에 피어링할 때 또는 Global Reach를 사용하여 다른 ExpressRoute 회로를 통해 피어링할 때 권한 부여 키를 만들어서 사용해야 합니다. ExpressRoute 회로에서 권한 부여 키 하나를 사용할 것이며, 온-프레미스 ExpressRoute 회로를 통해 피어링하는 두 번째 권한 부여 키를 만들 것입니다.
 
@@ -33,11 +33,11 @@ ExpressRoute Global Reach를 사용하여 두 ExpressRoute 회로 간에 연결�
 - 온-프레미스 환경을 Azure에 연결하는 데 사용되는 별도의 정상 작동하는 ExpressRoute 회로 - 피어링 프로시저의 관점에서 보자면 _회로 1_입니다.
 - ExpressRoute Global Reach 피어링에 대한 /29 겹치지 않는 [네트워크 주소 블록](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings)
 
-## <a name="create-an-expressroute-authorization-key-in-the-avs-private-cloud"></a>AVS 프라이빗 클라우드에서 ExpressRoute 권한 부여 키 만들기
+## <a name="create-an-expressroute-authorization-key-in-the-azure-vmware-solution-private-cloud"></a>Azure VMware Solution 프라이빗 클라우드에서 ExpressRoute 권한 부여 키 만들기
 
 1. 프라이빗 클라우드 **개요**의 [관리]에서 **연결 > ExpressRoute > 권한 부여 키 요청**을 선택합니다.
 
-   :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="연결 > ExpressRoute > 권한 부여 키 요청을 선택하여 새 요청 시작":::
+   :::image type="content" source="media/expressroute-global-reach/start-request-auth-key.png" alt-text="연결 > ExpressRoute > 권한 부여 키 요청을 선택하여 새 요청을 시작합니다.":::
 
 2. 권한 부여 키의 이름을 입력하고 **만들기**를 선택합니다. 
 

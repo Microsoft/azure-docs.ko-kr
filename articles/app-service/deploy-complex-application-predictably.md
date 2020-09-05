@@ -5,12 +5,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
-ms.openlocfilehash: f5e4c4d89a1119b0f59aa15885406cd7261d2f69
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 6c45d2da8658740b5e5e7e3dceb7478ea28d712c
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170006"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962029"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Azure에서 마이크로 서비스를 예측 가능하게 프로비전 및 배포
 이 자습서에서는 PowerShell 스크립팅과 JSON 리소스 그룹을 사용한 예측 가능한 방법으로 [Azure App Service](https://azure.microsoft.com/services/app-service/) 내에서 [마이크로 서비스](https://en.wikipedia.org/wiki/Microservices)로 구성된 애플리케이션의 프로비전 및 배포하는 방법을 보여줍니다. 
@@ -29,7 +29,7 @@ ms.locfileid: "86170006"
 이 자습서에서는 다음 도구를 사용합니다. 도구에 대한 포괄적인 설명이 아니기 때문에 엔드투엔드 시나리오를 그대로 유지하고 각각에 대해 간단히 소개하고 이에 대한 자세한 정보를 찾을 수 있는 곳을 알려드립니다. 
 
 ### <a name="azure-resource-manager-templates-json"></a>Azure 리소스 관리자 템플릿(JSON)
-예를 들어 Azure App Service에서 앱을 만들 때마다 Azure Resource Manager는 구성 요소 리소스와 함께 전체 리소스 그룹을 만들기 위해 JSON 템플릿을 사용합니다. [Azure Marketplace](/azure/marketplace)의 복잡한 템플릿은 데이터베이스, 스토리지 계정, App Service 계획, 앱 자체, 경고 규칙, 앱 설정, 자동 크기 조정 설정 등을 포함할 수 있으며 이러한 템플릿은 PowerShell을 통해 제공됩니다. Azure 리소스 관리자 템플릿에 대한 자세한 내용은 [Azure 리소스 관리자 템플릿 작성하기](../azure-resource-manager/templates/template-syntax.md)
+예를 들어 Azure App Service에서 앱을 만들 때마다 Azure Resource Manager는 구성 요소 리소스와 함께 전체 리소스 그룹을 만들기 위해 JSON 템플릿을 사용합니다. [Azure Marketplace](../marketplace/index.yml)의 복잡한 템플릿은 데이터베이스, 스토리지 계정, App Service 계획, 앱 자체, 경고 규칙, 앱 설정, 자동 크기 조정 설정 등을 포함할 수 있으며 이러한 템플릿은 PowerShell을 통해 제공됩니다. Azure 리소스 관리자 템플릿에 대한 자세한 내용은 [Azure 리소스 관리자 템플릿 작성하기](../azure-resource-manager/templates/template-syntax.md)
 
 ### <a name="azure-sdk-26-for-visual-studio"></a>Visual Studio용 Azure SDK 2.6
 최신 SDK는 JSON 편집기에서 리소스 관리자 템플릿 지원에 향상된 기능을 포함합니다. 이것을 사용하여 신속하게 리소스 그룹 템플릿을 처음부터 만들고, 수정을 위한 기존 JSON 템플릿(예: 다운로드한 갤러리 템플릿)을 열고, 매개 변수 파일을 채우고, Azure 리소스 그룹 솔루션에서 직접 리소스 그룹을 배포할 수 있습니다.
@@ -39,7 +39,7 @@ ms.locfileid: "86170006"
 ### <a name="azure-powershell-080-or-later"></a>Azure PowerShell 0.8.0 또는 이후
 Azure PowerShell 설치는 버전 0.8.0부터 Azure 모듈 외에도 Azure 리소스 관리자 모듈을 포함합니다. 이 새 모듈을 사용하면 리소스 그룹의 배포를 스크립트할 수 있습니다.
 
-자세한 내용은 [Azure Resource Manager와 함께 Azure PowerShell 사용](../powershell-azure-resource-manager.md) 을 참조 하세요.
+자세한 내용은 [Azure Resource Manager와 함께 Azure PowerShell 사용](../azure-resource-manager/management/manage-resources-powershell.md) 을 참조 하세요.
 
 ### <a name="azure-resource-explorer"></a>Azure Resource Explorer
 이 [미리 보기 도구](https://resources.azure.com)를 사용하면 구독 및 개별 리소스에서 모든 리소스 그룹의 JSON 정의를 탐색할 수 있습니다. 도구에서 리소스의 JSON 정의를 편집하고 리소스의 전체 계층을 삭제하며 새 리소스를 만들 수 있습니다.  이 도구에서 쉽게 사용할 수 있는 정보는 특정 유형의 리소스, 올바른 값 등에 대해 설정 해야 하는 속성을 보여 주므로 템플릿 제작에 매우 유용 합니다. [Azure Portal](https://portal.azure.com/)에서 리소스 그룹을 만든 다음 탐색기 도구에서 해당 JSON 정의를 검사 하 여 리소스 그룹을 templatize 수 있습니다.
@@ -228,7 +228,7 @@ JSON에서 간단한 루트 수준 리소스부터 살펴보겠습니다. JSON �
     > 자동 크기 조정은 **표준** 계층 이상에서 제공되는 기능이며 계획 수준 경고는 **기본** 계층 이상에서 제공되는 기능입니다. 모든 새 App Insights 리소스를 켜서 확인하기 위해서는 **sku** 매개 변수를 **표준** 또는 **프리미엄**으로 설정해야 합니다.
     > 
     > 
-16. **배포**를 클릭합니다. **암호 저장**을 선택한 경우, 암호가 **일반 텍스트에서** 매개 변수 파일에 저장됩니다. 그렇지 않은 경우 배포 프로세스 중에 데이터베이스 암호를 입력하라는 메시지가 표시됩니다.
+16. **배포**을 참조하십시오. **암호 저장**을 선택한 경우, 암호가 **일반 텍스트에서** 매개 변수 파일에 저장됩니다. 그렇지 않은 경우 배포 프로세스 중에 데이터베이스 암호를 입력하라는 메시지가 표시됩니다.
 
 끝났습니다. 이제 애플리케이션에 배포된 JSON에 추가된 도구를 새 경고 및 자동 크기 조정 설정을 보기 위해 [Azure Portal](https://portal.azure.com/) 및 [Azure Resource Explorer](https://resources.azure.com) 도구로 이동해야 합니다.
 
@@ -254,7 +254,7 @@ DevOps에서 반복성 및 예측 가능성은 마이크로 서비스로 구성�
 * [Azure Resource Manager 템플릿 작성](../azure-resource-manager/templates/template-syntax.md)
 * [Azure Resource Manager 템플릿 함수](../azure-resource-manager/templates/template-functions.md)
 * [Azure 리소스 관리자 템플릿으로 애플리케이션 배포](../azure-resource-manager/templates/deploy-powershell.md)
-* [Azure 리소스 관리자로 Azure PowerShell 사용](../azure-resource-manager/powershell-azure-resource-manager.md)
+* [Azure 리소스 관리자로 Azure PowerShell 사용](../azure-resource-manager/management/manage-resources-powershell.md)
 * [Azure에서 리소스 그룹 배포 문제 해결](../azure-resource-manager/templates/common-deployment-errors.md)
 
 ## <a name="next-steps"></a>다음 단계

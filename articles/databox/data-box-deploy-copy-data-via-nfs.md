@@ -1,6 +1,6 @@
 ---
 title: NFS를 통해 Azure Data Box에 데이터를 복사하는 자습서 | Microsoft Docs
-description: NFS를 통해 Azure Data Box에 데이터를 복사하는 방법을 알아봅니다.
+description: 이 자습서에서는 로컬 웹 UI와 함께 NFS를 사용하여 호스트 컴퓨터에서 Azure Data Box로 데이터를 연결하고 복사하는 방법을 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 07/02/2020
 ms.author: alkohli
-ms.openlocfilehash: 2b5789acfbb088ca8dbeb731b1ce7748041233cb
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 590a0a1ce474d48e95163081dcdcacb52233badf
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85960526"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87926079"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>자습서: NFS를 통해 Azure Data Box에 데이터 복사
 

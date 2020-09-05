@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: e75ea5a8f5fdeaf7c3562e50d9493341d41ce393
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 793f3869a9534c71d860cc8dea7a1995f5ee278d
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037153"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871244"
 ---
 # <a name="transfer-data-with-azcopy-and-file-storage"></a>AzCopy 및 File Storage를 사용하여 데이터 전송 
 
@@ -306,7 +306,8 @@ AzCopy는 [서버](https://docs.microsoft.com/rest/api/storageservices/put-block
 >
 > |시나리오|플래그|
 > |---|---|
-> |다운로드 시의 MD5 해시 유효성 검사 방법을 지정 합니다.|**--확인-md5** = \[ NoCheck \| logonly \| \| FailIfDifferentOrMissing\]|
+> |Acl (액세스 제어 목록)을 파일과 함께 복사 합니다.|**--smb-권한 유지** = \[ true \| false\]|
+> |파일과 함께 SMB 속성 정보를 복사 합니다.|**--smb-정보** = \[ 를 유지 합니다. true \| false\]|
 > |패턴을 기반으로 파일을 제외 합니다.|**--제외-경로**|
 > |동기화 관련 로그 항목에 대 한 세부 정보를 지정 합니다.|**--로그 수준** = \[ 경고 \| 오류 \| 정보 \| 없음\]|
 > 

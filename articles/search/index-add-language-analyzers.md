@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/05/2020
-ms.openlocfilehash: 8f0909ee1cdce1e6180b91a30b2e9b281098c826
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bda186f6bb45250763e439b77b4d3af988574401
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85130554"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935886"
 ---
 # <a name="add-language-analyzers-to-string-fields-in-an-azure-cognitive-search-index"></a>Azure Cognitive Search 인덱스의 문자열 필드에 언어 분석기 추가
 
@@ -59,9 +59,9 @@ Azure Cognitive Search는 Lucene에 의해 지원 되는 35 언어 분석기와 
 > [!NOTE]
 > 필드에 대 한 쿼리 시간에는 인덱싱 시 다른 언어 분석기를 사용할 수 없습니다. 이 기능은 [사용자 지정 분석기](index-add-custom-analyzers.md)에 대해 예약 되어 있습니다. 이러한 이유로 **searchanalyzer** 또는 **indexanalyzer** 속성을 언어 분석기의 이름으로 설정 하려고 하면 REST API 오류 응답이 반환 됩니다. 대신 **analyzer** 속성을 사용 해야 합니다.
 
-**searchFields** 쿼리 매개 변수를 사용하여 쿼리에서 검색할 언어별 필드를 지정합니다. analyzer 속성을 포함하는 쿼리 예제는 [문서 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents)에서 검토할 수 있습니다. 
+**searchFields** 쿼리 매개 변수를 사용하여 쿼리에서 검색할 언어별 필드를 지정합니다. analyzer 속성을 포함하는 쿼리 예제는 [문서 검색](/rest/api/searchservice/search-documents)에서 검토할 수 있습니다. 
 
-인덱스 속성에 대 한 자세한 내용은 [Create index &#40;Azure Cognitive Search REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조 하세요. Azure Cognitive Search 분석에 대 한 자세한 내용은 [azure Cognitive Search의 분석기](https://docs.microsoft.com/azure/search/search-analyzers)를 참조 하세요.
+인덱스 속성에 대 한 자세한 내용은 [Create index &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchservice/create-index)를 참조 하세요. Azure Cognitive Search 분석에 대 한 자세한 내용은 [azure Cognitive Search의 분석기](./search-analyzers.md)를 참조 하세요.
 
 <a name="language-analyzer-list"></a>
 
@@ -131,7 +131,6 @@ Azure Cognitive Search는 Lucene에 의해 지원 되는 35 언어 분석기와 
 
 ## <a name="see-also"></a>참조  
 
-+ [Azure Cognitive Search REST API &#40;인덱스 만들기&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index)  
++ [Azure Cognitive Search REST API &#40;인덱스 만들기&#41;](/rest/api/searchservice/create-index)  
 
-+ [AnalyzerName 클래스](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername)  
-
++ [AnalyzerName 클래스](/dotnet/api/microsoft.azure.search.models.analyzername)

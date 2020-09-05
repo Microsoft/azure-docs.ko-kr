@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2020
 ms.topic: sample
-ms.openlocfilehash: 831f09ecf7550a847c483fbe1678f1e4c3cecb61
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 07055025eff9ab81c7321624daed9b4a6e993a60
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85052292"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88506514"
 ---
 # <a name="example-powershell-scripts"></a>예제 PowerShell 스크립트
 
@@ -26,21 +26,21 @@ Azure Remote Rendering은 다음 두 가지 REST API를 제공합니다.
 샘플 스크립트를 실행하려면 [Azure PowerShell](https://docs.microsoft.com/powershell/azure/)의 기능을 설정해야 합니다.
 
 1. Azure PowerShell 설치:
-    1. 관리자 권한으로 PowerShell을 엽니다.
+    1. 관리자 권한으로 PowerShell 창을 엽니다.
     1. `Install-Module -Name Az -AllowClobber`를 실행합니다.
 
 1. 스크립트 실행에 대한 오류가 발생하면 [실행 정책](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)이 적절하게 설정되어 있는지 확인합니다.
-    1. 관리자 권한으로 PowerShell을 엽니다.
+    1. 관리자 권한으로 PowerShell 창을 엽니다.
     1. `Set-ExecutionPolicy -ExecutionPolicy Unrestricted`를 실행합니다.
 
 1. [Azure Storage 계정 준비](../how-tos/conversion/blob-storage.md#prepare-azure-storage-accounts)
 
 1. Azure Remote Rendering 계정이 포함된 구독에 로그인:
-    1. PowerShell을 엽니다.
+    1. PowerShell 창을 엽니다.
     1. `Connect-AzAccount`를 실행하고 화면의 지시에 따릅니다.
 
-> [!NOTE]
-> 조직에 둘 이상의 구독이 있는 경우 SubscriptionId 및 Tenant 인수를 지정해야 할 수 있습니다. [Connect-AzAccount 설명서](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount)에서 세부 정보를 확인하세요.
+    > [!NOTE]
+    > 조직에 둘 이상의 구독이 있는 경우 SubscriptionId 및 Tenant 인수를 지정해야 할 수 있습니다. [Connect-AzAccount 설명서](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount)에서 세부 정보를 확인하세요.
 
 1. [Azure Remote Rendering GithHub 리포지토리](https://github.com/Azure/azure-remote-rendering)에서 *Scripts* 폴더를 다운로드합니다.
 
@@ -88,7 +88,7 @@ Azure Remote Rendering은 다음 두 가지 REST API를 제공합니다.
 
 **RenderingSession.ps1**을 실행하려면 이 구조를 입력해야 합니다.
 
-- **vmSize:** 가상 머신의 크기를 선택합니다. *standard* 또는 *premium*을 선택합니다. 렌더링 세션이 더 이상 필요하지 않으면 종료하십시오.
+- **vmSize:** 가상 머신의 크기를 선택합니다. [*표준*](../reference/vm-sizes.md) 또는 [*프리미엄*](../reference/vm-sizes.md)을 선택합니다. 렌더링 세션이 더 이상 필요하지 않으면 종료하십시오.
 - **maxLeaseTime:** VM을 임대하려는 기간입니다. 임대가 만료되면 종료됩니다. 임대 시간은 나중에 연장할 수 있습니다(아래 참조).
 
 ### <a name="assetconversionsettings"></a>assetConversionSettings
@@ -189,10 +189,10 @@ arrconfig.json을 완전히 입력하고 스토리지 계정을 연결하고 나
 .\Conversion.ps1
 ```
 
-1. `assetConversionSettings.modelLocation`에 포함된 모든 파일이 지정된 `inputFolderPath` 아래 입력 Blob 컨테이너에 업로드됩니다.
+1. `assetConversionSettings.modelLocation`에 포함된 모든 파일을 지정된 `inputFolderPath` 아래의 입력 Blob 컨테이너에 업로드합니다.
 1. [모델 변환 REST API](../how-tos/conversion/conversion-rest-api.md)를 호출하여 [모델 변환](../how-tos/conversion/model-conversion.md)이 시작됩니다.
 1. 변환이 성공 또는 실패할 때까지 변환 상태를 폴링합니다.
-1. 변환된 파일 위치의 세부 사항(스토리지 계정, 출력 컨테이너, 컨테이너의 파일 경로)이 출력됩니다.
+1. 변환된 파일 위치의 세부 정보(스토리지 계정, 출력 컨테이너, 컨테이너의 파일 경로)가 출력됩니다.
 
 ### <a name="access-to-storage-via-shared-access-signatures"></a>공유 액세스 서명을 통해 스토리지에 액세스
 
@@ -202,13 +202,13 @@ arrconfig.json을 완전히 입력하고 스토리지 계정을 연결하고 나
 
 그러면
 
-1. 로컬 파일이 `assetConversionSettings.localAssetDirectoryPath`에서 입력 Blob 컨테이너로 업로드됩니다.
-1. 입력 컨테이너에 대한 SAS URI가 생성됩니다.
-1. 출력 컨테이너에 대한 SAS URI가 생성됩니다.
-1. [모델 변환 REST API](../how-tos/conversion/conversion-rest-api.md)를 호출하여 [모델 변환](../how-tos/conversion/model-conversion.md)이 시작됩니다.
+1. `assetConversionSettings.localAssetDirectoryPath`에서 입력 Blob 컨테이너로 로컬 파일을 업로드합니다.
+1. 입력 컨테이너에 대한 SAS URI를 생성합니다.
+1. 출력 컨테이너에 대한 SAS URI를 생성합니다.
+1. [모델 변환 REST API](../how-tos/conversion/conversion-rest-api.md)를 호출하여 [모델 변환](../how-tos/conversion/model-conversion.md)을 시작합니다.
 1. 변환이 성공 또는 실패할 때까지 변환 상태를 폴링합니다.
-1. 변환된 파일 위치의 세부 사항(스토리지 계정, 출력 컨테이너, 컨테이너의 파일 경로)이 출력됩니다.
-1. 출력 Blob 컨테이너의 변환된 모델에 SAS URI가 출력됩니다.
+1. 변환된 파일 위치의 세부 정보(스토리지 계정, 출력 컨테이너, 컨테이너의 파일 경로)가 출력됩니다.
+1. 출력 Blob 컨테이너의 변환된 모델에 SAS URI를 출력합니다.
 
 ### <a name="additional-command-line-options"></a>추가 명령줄 옵션
 
@@ -249,7 +249,7 @@ arrconfig.json을 완전히 입력하고 스토리지 계정을 연결하고 나
 
 프로세스의 개별 단계를 실행하려면 다음을 사용합니다.
 
-지정된 LocalAssetDirectoryPath의 업로드 데이터만
+지정된 LocalAssetDirectoryPath의 데이터만 업로드합니다.
 
 ```PowerShell
 .\Conversion.ps1 -Upload

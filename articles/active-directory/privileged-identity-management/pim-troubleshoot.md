@@ -13,12 +13,12 @@ ms.subservice: pim
 ms.date: 10/18/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d2ba5806e23aa87e5d7787be300512444f95b25
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b02b8f3b94d191c7439aadf5a56ec0e2a1c38e28
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84742150"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782501"
 ---
 # <a name="troubleshoot-a-problem-with-privileged-identity-management"></a>Privileged Identity Management 문제 해결
 
@@ -36,7 +36,7 @@ Azure 리소스에 대 한 활성 소유자 또는 사용자 액세스 관리자
 
 ### <a name="resolution"></a>해결 방법
 
-구독 수준에서 권한 있는 id 관리 서비스 사용자 이름 (MS – PIM)에 사용자 액세스 관리자 역할을 할당 합니다. 이 할당을 통해 권한 있는 id 관리 서비스에서 Azure 리소스에 액세스할 수 있습니다. 역할은 요구 사항에 따라 관리 그룹 수준 또는 구독 수준에서 할당 될 수 있습니다. 서비스 사용자에 대 한 자세한 내용은 [역할에 응용 프로그램 할당](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application)을 참조 하세요.
+구독 수준에서 권한 있는 id 관리 서비스 사용자 이름 (MS – PIM)에 사용자 액세스 관리자 역할을 할당 합니다. 이 할당을 통해 권한 있는 id 관리 서비스에서 Azure 리소스에 액세스할 수 있습니다. 역할은 요구 사항에 따라 관리 그룹 수준 또는 구독 수준에서 할당 될 수 있습니다. 서비스 사용자에 대 한 자세한 내용은 [역할에 응용 프로그램 할당](../develop/howto-create-service-principal-portal.md#assign-a-role-to-the-application)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

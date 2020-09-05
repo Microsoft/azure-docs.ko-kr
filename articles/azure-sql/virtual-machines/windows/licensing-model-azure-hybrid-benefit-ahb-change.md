@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f02f31e0fc8943682af77ca6f506d15f36e88146
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 208b900de20a89a9ecc819ef1254c08fcc628f82
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84668902"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010225"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Azure에서 SQL 가상 머신의 라이선스 모델 변경
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -156,7 +156,9 @@ SQL Server VM이 SQL VM 리소스 공급자에 등록된 경우에만 SQL Server
 
 ## <a name="known-errors"></a>알려진 오류
 
-### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found"></a>리소스 그룹 '\<resource-group>' 아래에서 'Microsoft.SqlVirtualMachine/SqlVirtualMachines/\<resource-group>' 리소스를 찾을 수 없습니다.
+일반적으로 알려진 오류와 해결 방법을 검토 합니다. 
+
+**리소스 그룹 ' '에 있는 ' SqlVirtualMachine/SqlVirtualMachines/ \<resource-group> ' 리소스를 \<resource-group> 찾을 수 없습니다.**
 
 이 오류는 SQL VM 리소스 공급자에 등록되지 않은 SQL Server VM에서 라이선스 모델을 변경하려고 할 때 발생합니다.
 
@@ -165,7 +167,7 @@ SQL Server VM이 SQL VM 리소스 공급자에 등록된 경우에만 SQL Server
 리소스 공급자에 구독을 등록한 다음 [SQL Server VM을 리소스 공급자에 등록](sql-vm-resource-provider-register.md)해야 합니다. 
 
 
-### <a name="the-virtual-machine-vmname-has-more-than-one-nic-associated"></a>가상 머신 '\<vmname\>'에 두 개 이상의 NIC가 연결되어 있습니다.
+**가상 컴퓨터 ' '에 둘 \<vmname\> 이상의 NIC가 연결 되어 있습니다.**
 
 이 오류는 NIC가 둘 이상 있는 가상 머신에서 발생합니다. 라이선스 모델을 변경하기 전에 NIC 중 하나를 제거합니다. 라이선스 모델을 변경한 후에는 VM에 NIC를 다시 추가할 수 있지만 Azure Portal의 작업(예: 자동 백업 및 패치)은 더 이상 지원되지 않습니다. 
 

@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: a57232853284dad6f363797c009b1c38738d5b37
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 26be48e7968345863799191539bd668ea6d9a4a2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519782"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929570"
 ---
 # <a name="how-to-index-tables-from-azure-table-storage-with-azure-cognitive-search"></a>Azure Cognitive Search을 사용 하 여 Azure 테이블 저장소에서 테이블을 인덱싱하는 방법
 
@@ -25,8 +25,8 @@ ms.locfileid: "86519782"
 다음 리소스를 사용하여 Azure Table Storage 인덱서를 설정할 수 있습니다.
 
 * [Azure Portal](https://ms.portal.azure.com)
-* Azure Cognitive Search [REST API](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
-* Azure Cognitive Search [.NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)
+* Azure Cognitive Search [REST API](/rest/api/searchservice/Indexer-operations)
+* Azure Cognitive Search [.NET SDK](/dotnet/api/overview/azure/search)
 
 여기에서는 REST API를 사용하여 흐름을 설명합니다. 
 
@@ -62,7 +62,7 @@ ms.locfileid: "86519782"
     }   
 ```
 
-데이터 원본 만들기 API에 대한 자세한 내용은 [데이터 원본 만들기](https://docs.microsoft.com/rest/api/searchservice/create-data-source)를 참조하세요.
+데이터 원본 만들기 API에 대한 자세한 내용은 [데이터 원본 만들기](/rest/api/searchservice/create-data-source)를 참조하세요.
 
 <a name="Credentials"></a>
 #### <a name="ways-to-specify-credentials"></a>자격 증명을 지정하는 방법 ####
@@ -73,7 +73,7 @@ ms.locfileid: "86519782"
 - **저장소 계정 공유 액세스 서명 연결 문자열**: `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` 공유 액세스 서명에 컨테이너 (이 경우 테이블) 및 개체 (테이블 행)에 대 한 읽기 권한 및 목록이 있어야 합니다.
 -  **테이블 공유 액세스 서명**: `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` 공유 액세스 서명에는 테이블에 대 한 쿼리 (읽기) 권한이 있어야 합니다.
 
-스토리지 공유 액세스 서명에 대한 자세한 내용은 [공유 액세스 서명 사용](../storage/common/storage-dotnet-shared-access-signature-part-1.md)을 참조하세요.
+스토리지 공유 액세스 서명에 대한 자세한 내용은 [공유 액세스 서명 사용](../storage/common/storage-sas-overview.md)을 참조하세요.
 
 > [!NOTE]
 > 공유 액세스 서명 자격 증명을 사용하는 경우 자격 증명이 만료되는 것을 방지하기 위해 갱신된 서명을 사용하여 데이터 원본 자격 증명을 주기적으로 업데이트해야 합니다. 공유 액세스 서명 자격 증명이 만료되면 "연결 문자열에 제공된 사용자 자격 증명이 잘못되었거나 만료되었습니다."와 유사한 오류 메시지와 함께 인덱서가 실패합니다.  
@@ -97,7 +97,7 @@ ms.locfileid: "86519782"
     }
 ```
 
-인덱스 만들기에 자세한 내용은 [인덱스 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조하세요.
+인덱스 만들기에 자세한 내용은 [인덱스 만들기](/rest/api/searchservice/create-index)를 참조하세요.
 
 ### <a name="step-3-create-an-indexer"></a>3단계: 인덱서 만들기
 인덱서는 데이터 원본을 대상 검색 인덱스와 연결하고 데이터 새로 고침을 자동화하는 일정을 제공합니다. 
@@ -119,7 +119,7 @@ ms.locfileid: "86519782"
 
 이 인덱서는 2시간 간격으로 실행됩니다 (일정 간격이 "PT2H"로 설정 됩니다.) 30 분 마다 인덱서를 실행 하려면 간격을 "에서는 PT30M으로"로 설정 합니다. 지원되는 가장 짧은 간격은 5분입니다. 일정은 선택 사항입니다. 생략하는 경우 인덱서는 만들어질 때 한 번만 실행됩니다. 그러나 언제든지 필요할 때 인덱서를 실행할 수 있습니다.   
 
-인덱서 만들기 API에 대한 자세한 내용은 [인덱서 만들기](https://docs.microsoft.com/rest/api/searchservice/create-indexer)를 참조하세요.
+인덱서 만들기 API에 대한 자세한 내용은 [인덱서 만들기](/rest/api/searchservice/create-indexer)를 참조하세요.
 
 인덱서 일정을 정의하는 방법에 대한 자세한 내용은 [Azure Cognitive Search에 대한 인덱서 일정 지정 방법](search-howto-schedule-indexers.md)을 참조하세요.
 
@@ -170,7 +170,7 @@ Azure Cognitive Search에서 문서 키는 문서를 고유 하 게 식별 합�
 
 - 데이터는 시간별으로 분할하는 경우(예를 들어 새 파티션을 매일 또는 매주 만드는 경우) 다음과 같은 접근 방식을 고려해 보세요. 
     - `(PartitionKey ge <TimeStamp>) and (other filters)` 형식의 쿼리를 사용합니다. 
-    - [인덱서 상태 가져오기 API](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status)를 사용하여 인덱서 진행률을 모니터링하고 최근의 성공적인 상위 워터 마크 값을 기준으로 쿼리의 `<TimeStamp>` 상태를 정기적으로 업데이트합니다. 
+    - [인덱서 상태 가져오기 API](/rest/api/searchservice/get-indexer-status)를 사용하여 인덱서 진행률을 모니터링하고 최근의 성공적인 상위 워터 마크 값을 기준으로 쿼리의 `<TimeStamp>` 상태를 정기적으로 업데이트합니다. 
     - 이 방법을 사용할 경우 전체 다시 인덱싱을 트리거해야 할 때 인덱서를 다시 설정하는 것 외에도 데이터 원본 쿼리를 다시 설정해야 합니다. 
 
 

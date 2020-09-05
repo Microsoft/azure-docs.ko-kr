@@ -3,12 +3,12 @@ title: Azure VM에서 백업된 SAP HANA 데이터베이스 관리
 description: 이 문서에서는 Azure 가상 머신에서 실행되는 SAP HANA 데이터베이스를 관리하고 모니터링하기 위한 일반적인 작업에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 98dd67668d1b88a25dfa3b91174cd96730c435e1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 40761415042cc619893ab3a712a763d4fb046e38
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87049467"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267482"
 ---
 # <a name="manage-and-monitor-backed-up-sap-hana-databases"></a>백업한 SAP HANA 데이터베이스 관리 및 모니터링
 
@@ -66,6 +66,8 @@ Microsoft Azure Backup에서 지원하는 다양한 관리 작업으로 백업�
 3. **지금 백업**에서 수행할 백업 유형을 선택 합니다. 그런 후 **OK**를 클릭합니다. 이 백업은이 백업 항목과 연결 된 정책에 따라 보존 됩니다.
 4. 포털 알림을 모니터링합니다. 자격 증명 모음 대시보드 > **백업 작업** > **진행 중**에서 작업 진행률을 모니터링할 수 있습니다. 데이터베이스의 크기에 따라 초기 백업을 만드는 데 시간이 걸릴 수 있습니다.
 
+기본적으로 요청 시 백업의 보존은 45 일입니다.
+
 ### <a name="hana-native-client-integration"></a>HANA 네이티브 클라이언트 통합
 
 #### <a name="backup"></a>Backup
@@ -84,7 +86,7 @@ HANA 네이티브 클라이언트에서 **Backint**로 트리거되는 주문형
 
 동일한 머신으로 복원을 위해 **Backint**를 사용하여 HANA 네이티브 클라이언트에서 트리거된 복원을 **백업 작업** 페이지에서[모니터링](#monitor-manual-backup-jobs-in-the-portal)할 수 있습니다.
 
-### <a name="run-sap-hana-native-client-backup-on-a-database-with-azure-backup-enabled"></a>Azure 백업이 설정된 데이터베이스에서 SAP HANA 네이티브 클라이언트 백업 실행
+### <a name="run-sap-hana-native-client-backup-on-a-database-with-azure-backup-enabled"></a>Azure Backup 사용 하도록 설정 된 데이터베이스에서 SAP HANA native client 백업 실행
 
 Microsoft Azure Backup으로 백업 중인 데이터베이스의 로컬 백업(HANA Studio/Cockpit 사용)을 수행하려면 다음 단계를 따르세요.
 
@@ -120,7 +122,7 @@ SAP HANA 백업 항목에 대한 기본 정책을 변경할 수 있습니다.
 
   ![드롭다운 목록에서 정책](./media/sap-hana-db-manage/choose-backup-policy.png)
 
-* 변경 내용 저장
+* 변경 내용을 저장합니다.
 
   ![변경 내용 저장](./media/sap-hana-db-manage/save-changes.png)
 
@@ -129,7 +131,7 @@ SAP HANA 백업 항목에 대한 기본 정책을 변경할 수 있습니다.
 >[!NOTE]
 > 보존 기간의 변경 내용은 새 복구 지점이 아닌 모든 이전 복구 지점에 소급 적용됩니다.
 >
-> SAP HANA 데이터베이스에는 증분 백업 정책을 사용할 수 없습니다. 증분 백업은 이러한 데이터베이스에 대해 현재 지원되지 않습니다.
+> SAP HANA 데이터베이스에는 증분 백업 정책을 사용할 수 없습니다. 증분 백업은 현재 이러한 데이터베이스에 대해 지원 되지 않습니다.
 
 ### <a name="modify-policy"></a>정책 수정
 
@@ -171,7 +173,7 @@ SAP HANA 백업 항목에 대한 기본 정책을 변경할 수 있습니다.
 
 복구 지점을 그대로 두기로 선택하는 경우 다음 세부 정보를 염두에 두어야 합니다.
 
-* 모든 복구 지점은 영구적으로 유지되고, 모든 정리는 데이터 보관을 통해 보호 중지에서 중지됩니다.
+* 모든 복구 지점은 영구적으로 그대로 유지 되 고 모든 정리는 데이터 보존을 사용 하 여 보호 중지에서 중지 됩니다.
 * 보호된 인스턴스와 사용한 스토리지 요금이 청구됩니다. 자세한 내용은 [Microsoft Azure Backup 가격 책정](https://azure.microsoft.com/pricing/details/backup/)을 참조하세요.
 * 백업을 중지하지 않고 데이터 원본을 삭제하면 새 백업이 실패합니다.
 

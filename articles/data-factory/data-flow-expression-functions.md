@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/15/2019
-ms.openlocfilehash: 43623e6841c3776e6e83453ad9cb47549fc16021
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: b48fc6ad448b829bb399c151d3f1507c804ad471
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170295"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605104"
 ---
 # <a name="data-transformation-expressions-in-mapping-data-flow"></a>매핑 데이터 흐름의 데이터 변환 식
 
@@ -101,21 +101,13 @@ ___
 <code><b>byNames(<i>&lt;column names&gt;</i> : array, [<i>&lt;stream name&gt;</i> : string]) => any</b></code><br/><br/>
 스트림에서 이름을 기준으로 열 배열을 선택합니다. 선택적 스트림 이름을 두 번째 인수로 전달할 수 있습니다. 일치하는 항목이 여러 개 있는 경우 첫 번째 일치 항목을 반환합니다. 열에 일치하는 항목이 없는 경우 전체 출력은 Null 값입니다. 반환된 값에는 형식 변환 함수(toDate, toString, ...)가 필요합니다.  디자인 타임에 알려진 열 이름은 해당 이름으로만 처리되어야 합니다. 계산된 입력은 지원되지 않지만 매개 변수 대체를 사용할 수 있습니다.
 * ``toString(byNames(['parent', 'child']))``
-* ````
 * ``byNames(['parent']) ? string``
-* ````
 * ``toLong(byNames(['income']))``
-* ````
 * ``byNames(['income']) ? long``
-* ````
 * ``toBoolean(byNames(['foster']))``
-* ````
 * ``toLong(byNames($debtCols))``
-* ````
 * ``toString(byNames(['a Column']))``
-* ````
 * ``toString(byNames(['a Column'], 'DeriveStream'))``
-* ````
 * ``byNames(['orderItem']) ? (itemName as string, itemQty as integer)``
 ___
 ### <code>byPosition</code>
@@ -354,7 +346,7 @@ ___
 ___
 ### <code>iif</code>
 <code><b>iif(<i>&lt;condition&gt;</i> : boolean, <i>&lt;true_expression&gt;</i> : any, [<i>&lt;false_expression&gt;</i> : any]) => any</b></code><br/><br/>
-조건에 따라 하나의 값 또는 다른 값이 적용됩니다. 다른 값을 지정하지 않으면 Null로 간주됩니다. 두 값 모두 호환 되어야 합니다 (숫자, 문자열 ...).* ``iif(10 + 20 == 30, 'dumbo', 'gumbo') -> 'dumbo'``  
+조건에 따라 하나의 값 또는 다른 값이 적용됩니다. 다른 값을 지정하지 않으면 Null로 간주됩니다. 두 값 모두 호환 되어야 합니다 (숫자, 문자열 ...). * ``iif(10 + 20 == 30, 'dumbo', 'gumbo') -> 'dumbo'``  
 * ``iif(10 > 30, 'dumbo', 'gumbo') -> 'gumbo'``  
 * ``iif(month(toDate('2018-12-01')) == 12, 345.12, 102.67) -> 345.12``  
 ___
@@ -968,7 +960,7 @@ ___
 <code><b>year(<i>&lt;value1&gt;</i> : datetime) => integer</b></code><br/><br/>
 날짜의 연도 값을 가져옵니다.  
 * ``year(toDate('2012-8-8')) -> 2012``  
-##집계 함수 다음 함수는 집계, 피벗, 피벗 해제 및 창 변환 에서만 사용할 수 있습니다.
+## 집계 함수 다음 함수는 집계, 피벗, 피벗 해제 및 창 변환 에서만 사용할 수 있습니다.
 ___
 ### <code>avg</code>
 <code><b>avg(<i>&lt;value1&gt;</i> : number) => number</b></code><br/><br/>
@@ -1161,7 +1153,7 @@ ___
 <code><b>varianceSampleIf(<i>&lt;value1&gt;</i> : boolean, <i>&lt;value2&gt;</i> : number) => double</b></code><br/><br/>
 조건에 따라 열의 비편향 분산을 가져옵니다.  
 * ``varianceSampleIf(region == 'West', sales)``  
-##창 함수 다음 함수는 창 변환 에서만 사용할 수 있습니다.
+## 창 함수 다음 함수는 창 변환 에서만 사용할 수 있습니다.
 ___
 ### <code>cumeDist</code>
 <code><b>cumeDist() => integer</b></code><br/><br/>

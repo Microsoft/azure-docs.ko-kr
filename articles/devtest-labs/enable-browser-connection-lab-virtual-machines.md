@@ -3,12 +3,12 @@ title: Azure DevTest Labs 가상 컴퓨터에서 브라우저 연결 사용
 description: DevTest Labs는 이제 Azure 방호와 통합 됩니다. 랩의 소유자는 브라우저를 통해 모든 랩 가상 컴퓨터에 액세스 하도록 설정할 수 있습니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 8c78b872855b3fe21f2cb41d394c599aeca7a790
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 28a3c11f3df578265f9746a173fcb3029a132b26
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87272354"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870496"
 ---
 # <a name="enable-browser-connection-on-azure-devtest-labs-virtual-machines"></a>Azure DevTest Labs 가상 컴퓨터에서 브라우저 연결 사용 
 DevTest Labs는 브라우저를 통해 가상 컴퓨터에 연결할 수 있도록 하는 [Azure 방호](../bastion/index.yml)와 통합 됩니다. 먼저 랩 가상 컴퓨터에서 브라우저 연결을 사용 하도록 설정 해야 합니다.
@@ -18,15 +18,13 @@ DevTest Labs는 브라우저를 통해 가상 컴퓨터에 연결할 수 있도�
 
 이 문서에서는 랩 가상 컴퓨터에서 브라우저 연결을 사용 하도록 설정 하는 방법을 보여 줍니다.
 
-## <a name="prerequisites"></a>사전 요구 사항 
-기존 랩의 가상 네트워크에 요새 호스트를 배포 **하거나,** 가상 네트워크로 랩을 연결 합니다. 
-
-가상 네트워크에 요새 호스트를 배포 하는 방법을 알아보려면 [Azure 방호 호스트 만들기](../bastion/bastion-create-host-portal.md)를 참조 하세요. 요새 호스트를 만들 때 랩의 가상 네트워크를 선택 합니다. 
-
-먼저, AzureBastionSubnet에서 비휘발성 리소스의 생성을 허용 하지 않기 때문에, 먼저 요새 가상 네트워크에서 두 번째 서브넷을 만들어야 합니다. 
+## <a name="prerequisites"></a>전제 조건 
+- 기존 랩의 가상 네트워크에 요새 호스트를 배포 **하거나,** 가상 네트워크로 랩을 연결 합니다.
+가상 네트워크에 요새 호스트를 배포 하는 방법을 알아보려면  [Azure 방호 호스트 만들기](../bastion/bastion-create-host-portal.md)를 참조 하세요. 요새 호스트를 만들 때 랩의 가상 네트워크를 선택 합니다. 
+- 랩 사용자에 게는 요새 호스트와 요새가 구성 된 가상 네트워크에 대 한 **읽기 권한자** 역할이 있어야 합니다. 
 
 ## <a name="create-a-second-sub-net-in-the-bastion-virtual-network"></a>요새 가상 네트워크에서 두 번째 하위 net 만들기
-Azure 방호 서브넷에서 랩 Vm을 만들 수 없습니다. 다음 그림에 표시 된 것 처럼 요새 가상 네트워크 내에 다른 서브넷을 만듭니다.
+먼저, AzureBastionSubnet에서 비휘발성 리소스의 생성을 허용 하지 않기 때문에, 먼저 요새 가상 네트워크에서 두 번째 서브넷을 만들어야 합니다. 다음 그림에 표시 된 것 처럼 요새 가상 네트워크 내에 다른 서브넷을 만듭니다.
 
 ![Azure 방호 가상 네트워크의 두 번째 서브넷](./media/connect-virtual-machine-through-browser/second-subnet.png)
 
@@ -50,7 +48,7 @@ Azure 방호 서브넷에서 랩 Vm을 만들 수 없습니다. 다음 그림에
     ![서브넷에서 VM 만들기를 사용 하도록 설정](./media/connect-virtual-machine-through-browser/enable-vm-creation-subnet.png)
 1. **가상 컴퓨터 만들기 옵션에서 사용을** 선택 합니다. 
 1. 도구 모음에서 **저장**을 선택합니다. 
-1. 랩에 대 한 이전 가상 네트워크가 있는 경우 **...* 를 선택 하 여 제거 합니다.  **제거**합니다. 
+1. 랩에 대 한 이전 가상 네트워크가 있는 경우 **...*  를 선택 하 여 제거 합니다.  **제거**합니다. 
 
 ## <a name="enable-browser-connection"></a>브라우저 연결 사용 
 

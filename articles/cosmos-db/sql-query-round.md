@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: b6aac5a963d0f58a3b21b9fb0958793169a3d444
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9712aedd3d6748f3bceea67a3270b6c080cc16f2
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78302120"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794285"
 ---
 # <a name="round-azure-cosmos-db"></a>ROUND (Azure Cosmos DB)
  가장 가까운 정수 값으로 반올림한 숫자 값을 반환합니다.  
@@ -34,7 +34,7 @@ ROUND(<numeric_expr>)
   
 ## <a name="remarks"></a>설명
   
-  수행 된 반올림 연산은 0에서 벗어난 중간점을 따릅니다. 입력이 두 개의 정수 사이에서 정확 하 게 일치 하는 숫자 식인 경우 결과는 0에서 먼 가장 가까운 정수 값이 됩니다.  
+  수행 된 반올림 연산은 0에서 벗어난 중간점을 따릅니다. 입력이 두 개의 정수 사이에서 정확 하 게 일치 하는 숫자 식인 경우 결과는 0에서 먼 가장 가까운 정수 값이 됩니다. 이 시스템 함수는 [범위 인덱스](index-policy.md#includeexclude-strategy)의 이점을 받습니다.
   
   |<numeric_expr>|까지|
   |-|-|
@@ -43,7 +43,7 @@ ROUND(<numeric_expr>)
   |0.5|1|
   |6.5000|7||
   
-## <a name="examples"></a>예
+## <a name="examples"></a>예제
   
   다음 예제에서는 첨부된 양수와 음수를 가장 가까운 정수로 반올림합니다.  
   
@@ -56,10 +56,6 @@ SELECT ROUND(2.4) AS r1, ROUND(2.6) AS r2, ROUND(2.5) AS r3, ROUND(-2.4) AS r4, 
 ```json
 [{r1: 2, r2: 3, r3: 3, r4: -2, r5: -3}]  
 ```  
-
-## <a name="remarks"></a>설명
-
-이 시스템 함수는 [범위 인덱스](index-policy.md#includeexclude-strategy)의 이점을 받습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

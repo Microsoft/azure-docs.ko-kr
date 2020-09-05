@@ -5,22 +5,26 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/22/2020
+ms.date: 08/31/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4834cccff11a70249140f49b498b8f7891787c72
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 0019f7d8195dc39127b992a31ebd8c33e55452f6
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169343"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179354"
 ---
 # <a name="optimize-reauthentication-prompts-and-understand-session-lifetime-for-azure-multi-factor-authentication"></a>재인증 프롬프트를 최적화 하 고 Azure Multi-Factor Authentication의 세션 수명 이해
 
 Azure AD (Azure Active Directory)에는 사용자가 다시 인증 해야 하는 빈도를 결정 하는 여러 설정이 있습니다. 이러한 재인증은 암호, FIDO 또는 암호 없는 Microsoft Authenticator 같은 첫 번째 요소를 사용 하거나 MFA (multi-factor authentication)를 수행할 수 있습니다. 사용자 환경 및 원하는 사용자 환경에 맞게 필요에 따라 이러한 재인증 설정을 구성할 수 있습니다.
+
+사용자 로그인 빈도에 대 한 Azure AD 기본 구성은 90 일의 롤링 기간입니다. 사용자에 게 자격 증명을 요청 하는 것이 중요 한 것 처럼 보일 수 있지만,이 경우에는 문제가 발생 합니다. 사용자가 생각 하지 않고 자격 증명을 입력 하도록 학습 된 경우 실수로 악의적인 자격 증명 프롬프트에 해당 자격 증명을 제공할 수 있습니다.
+
+IT 정책 위반으로 인해 세션이 취소 되는 경우 사용자에 게 다시 로그인 하 라는 메시지가 표시 되는 것을 오류가 심각한 증가 수 있습니다. 몇 가지 예로는 암호 변경, incompliant 장치 또는 계정 비활성화 작업이 있습니다. [PowerShell을 사용 하 여 사용자 세션](/powershell/module/azuread/revoke-azureaduserallrefreshtoken)을 명시적으로 해지할 수도 있습니다.
 
 이 문서에서는 권장 되는 구성과 다양 한 설정이 작동 하 고 상호 작용 하는 방법에 대해 자세히 설명 합니다.
 
@@ -35,6 +39,7 @@ Azure AD (Azure Active Directory)에는 사용자가 다시 인증 해야 하는
 * Office 365 앱 라이선스 또는 무료 Azure AD 계층이 있는 경우:
     * [관리 장치](../devices/overview.md) 또는 [원활한 SSO](../hybrid/how-to-connect-sso.md)를 사용 하 여 응용 프로그램에서 sso (Single Sign-On)를 사용 하도록 설정 합니다.
     * 로그인 된 *상태로 유지* 옵션을 사용 하도록 설정 하 고 사용자에 게 동의 하도록 안내 합니다.
+* 모바일 장치 시나리오의 경우 사용자가 Microsoft Authenticator 앱을 사용 하는지 확인 합니다. 이 앱은 다른 Azure AD 페더레이션된 앱에 대 한 브로커로 사용 되며, 장치에서 인증 프롬프트가 줄어듭니다.
 
 Microsoft research는 이러한 설정이 대부분의 테 넌 트에 적합 하다는 것을 보여 줍니다. *MFA를 잊지* 않고 *singed로 유지*하는 등 이러한 설정의 일부 조합은 사용자가 너무 자주 인증 하도록 요청을 받을 수 있습니다. 일반 재인증 메시지는 사용자 생산성에 적합 하지 않으며 공격에 더 취약 해질 수 있습니다.
 
@@ -45,6 +50,8 @@ Microsoft research는 이러한 설정이 대부분의 테 넌 트에 적합 하
 ### <a name="evaluate-session-lifetime-policies"></a>세션 수명 정책 평가
 
 세션 수명 설정이 없으면 브라우저 세션에 영구적인 쿠키가 없습니다. 사용자가 브라우저를 닫고 열 때마다 재인증에 대 한 프롬프트가 표시 됩니다. Office 클라이언트에서 기본 기간은 90 일의 롤링 기간입니다. 이 기본 Office 구성을 사용 하는 경우 사용자가 암호를 재설정 하거나 90 일 넘게 비활성 상태인 경우 사용자는 모든 필수 요소 (첫 번째 및 두 번째 요소)로 다시 인증 해야 합니다.
+
+사용자에 게 Azure AD에서 id가 없는 장치에 여러 개의 MFA 프롬프트가 표시 될 수 있습니다. 각 응용 프로그램에 다른 클라이언트 앱과 공유 되지 않는 자체 OAuth 새로 고침 토큰이 있는 경우 여러 프롬프트가 표시 됩니다. 이 시나리오에서 mfa는 각 응용 프로그램이 MFA를 사용 하 여 유효성을 검사할 OAuth 새로 고침 토큰을 요청 하므로 여러 번 표시 됩니다.
 
 Azure AD에서 세션 수명에 대해 가장 제한적인 정책은 사용자가 다시 인증 해야 하는 시기를 결정 합니다. 다음 시나리오를 고려하세요.
 
@@ -69,11 +76,11 @@ Azure AD Premium 1 라이선스를 사용 하는 경우 *영구 브라우저 세
 
 ### <a name="remember-multi-factor-authentication"></a>Multi-Factor Authentication 저장  
 
-이 설정을 사용 하면 사용자가 로그인 시 **X 일 동안 다시 묻지 않음** 옵션을 선택 하면 1-60 일 사이의 값을 구성 하 고 브라우저에서 영구 쿠키를 설정할 수 있습니다.
+이 설정을 사용 하면 사용자가 로그인 시 **X 일 동안 다시 묻지 않음** 옵션을 선택 하면 1-365 일 사이의 값을 구성 하 고 브라우저에서 영구 쿠키를 설정할 수 있습니다.
 
 ![로그인 요청을 승인 하는 예제 프롬프트 스크린샷](./media/concepts-azure-multi-factor-authentication-prompts-session-lifetime/approve-sign-in-request.png)
 
-이 설정은 웹 앱에 대 한 인증 수를 줄임으로써 Office 클라이언트와 같은 최신 인증 클라이언트에 대 한 인증 수를 늘립니다. 이러한 클라이언트는 일반적으로 암호 다시 설정 또는 90 일의 비활성 후에만 메시지를 표시 합니다. 그러나 *MFA* 의 최대값은 60 일입니다. 에서 사용 되는 경우 **로그인** 또는 조건부 액세스 정책과 함께 사용 되는 경우 인증 요청 수가 늘어날 수 있습니다.
+이 설정은 웹 앱에 대 한 인증 수를 줄임으로써 Office 클라이언트와 같은 최신 인증 클라이언트에 대 한 인증 수를 늘립니다. 이러한 클라이언트는 일반적으로 암호 다시 설정 또는 90 일의 비활성 후에만 메시지를 표시 합니다. 그러나이 값을 90 일 미만으로 설정 하면 Office 클라이언트에 대 한 기본 MFA 프롬프트가 단축 되 고 재인증 빈도가 높아집니다. 에서 사용 되는 경우 **로그인** 또는 조건부 액세스 정책과 함께 사용 되는 경우 인증 요청 수가 늘어날 수 있습니다.
 
 *MFA 기억을* 사용 하 고 Azure AD Premium 1 라이선스를 사용 하는 경우 이러한 설정을 조건부 액세스 로그인 빈도로 마이그레이션하는 것이 좋습니다. 그렇지 않으면 *로그인 유지* 를 대신 사용 하는 것이 좋습니다.
 

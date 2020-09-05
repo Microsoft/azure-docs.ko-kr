@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/21/2020
+ms.date: 08/26/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 0309f4d07056e3986138139e10ab29faa675cfcd
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: fd500b80f0c564fc0f4c7e311483790a83a4101a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056081"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923741"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2에서 알려진 문제
 
@@ -60,9 +60,9 @@ Blob API와 Data Lake Storage Gen2 API는 동일한 데이터에서 작업할 �
 
 <a id="api-scope-data-lake-client-library"></a>
 
-## <a name="file-system-support-in-sdks-powershell-and-azure-cli"></a>SDK, PowerShell 및 Azure CLI의 파일 시스템 지원
+## <a name="support-for-setting-access-control-lists-acls-recursively"></a>재귀적으로 Acl (access control 목록) 설정 지원
 
-- ACL 가져오기 및 설정 작업은 현재 재귀적이지 않습니다.
+부모 디렉터리에서 자식 항목으로 ACL 변경 내용을 재귀적으로 적용 하는 기능은 [공개 미리 보기로](recursive-access-control-lists.md)제공 됩니다. 이 기능의 현재 릴리스에서는 PowerShell, .NET SDK 및 Python SDK를 사용 하 여 ACL 변경 내용을 적용할 수 있습니다. Java SDK, Azure CLI, Azure Portal 또는 Azure Storage 탐색기에 대 한 지원은 아직 제공 되지 않습니다.
 
 <a id="known-issues-tools"></a>
 
@@ -96,7 +96,7 @@ REST API를 사용하여 작동하는 타사 애플리케이션은 Blob API를 �
 
 ### <a name="diagnostic-logs"></a>진단 로그
 
-진단 로그는 아직 Azure Portal을 사용하여 활성화할 수 없습니다. PowerShell을 사용하여 활성화할 수 있습니다. 다음은 그 예입니다.
+진단 로그는 아직 Azure Portal을 사용하여 활성화할 수 없습니다. PowerShell을 사용하여 활성화할 수 있습니다. 예를 들면 다음과 같습니다.
 
 ```powershell
 #To login

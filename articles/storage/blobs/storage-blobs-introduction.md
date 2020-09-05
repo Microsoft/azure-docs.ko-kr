@@ -1,7 +1,7 @@
 ---
 title: Blob(개체) 스토리지 소개
 titleSuffix: Azure Storage
-description: Azure Blob Storage는 텍스트 또는 이진 데이터와 같이 구조화되지 않은 대량의 개체 데이터를 저장합니다. Azure Blob Storage는 확장성이 뛰어나고 항상 사용 가능합니다. 클라이언트는 PowerShell 또는 Azure CLI에서, Azure Storage 클라이언트 라이브러리를 통해 프로그래밍 방식으로 또는 REST를 사용하여 Blob Storage의 데이터 개체에 액세스할 수 있습니다.
+description: Azure Blob 스토리지를 사용하여 텍스트 또는 이진 데이터와 같이 구조화되지 않은 대량의 개체 데이터를 저장합니다. Azure Blob Storage는 확장성이 뛰어나고 항상 사용 가능합니다.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 06/24/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 0d05e85a06ae1e893d5d7faa7e5389da78ad6389
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 55059f4edea19a1e559ea1ad99d9e7e60756cc96
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85559535"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836380"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Azure Blob Storage 소개
 

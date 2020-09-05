@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 3fb77c147db0883dc1dc61040f916bcec88237c4
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 3223bf3e2b413940fd99404453b7f958655e6fff
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420620"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998478"
 ---
 # <a name="tutorial-add-paging-to-search-results-using-the-net-sdk"></a>자습서: .NET SDK를 사용하여 검색 결과에 페이징 추가
 

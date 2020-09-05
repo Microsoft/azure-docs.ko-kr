@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: erhopf
-ms.openlocfilehash: 4ed3862b08c73264bca0f3bc6ed8e17586c2735c
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 0bc5a6a77c676931a7c74159fbff476baef5647c
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80671272"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226284"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -127,7 +127,7 @@ ms.locfileid: "80671272"
 
 1. 문자열 `YourSubscriptionKey`를 구독 키로 바꿉니다.
 
-1. 문자열 `YourServiceRegion`을 구독과 연결된 [지역](~/articles/cognitive-services/Speech-Service/regions.md)으로 바꿉니다(예를 들어 평가판 구독에 대해 `westus`).
+1. `YourServiceRegion` 문자열을 구독과 연결된 [Azure 지역](~/articles/cognitive-services/Speech-Service/regions.md)으로 바꿉니다.
 
 1. 프로젝트에 대한 변경 내용을 저장합니다.
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03b06d46cb35346580070f1739fd43128fa7a7fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 939ffc9e2a8fb8ce3a25dc212e3df34dc6bb2ec1
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84463929"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950360"
 ---
 # <a name="how-to-give-risk-feedback-in-azure-ad-identity-protection"></a>방법: Azure AD ID 보호에서 위험 피드백 제공
 
@@ -60,4 +60,4 @@ Id 보호에서 사용자 위험 검색에 대 한 피드백은 오프 라인으
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Azure Active Directory Identity Protection 위험 검색 참조](risk-events-reference.md)
+- [Azure Active Directory Identity Protection 위험 검색 참조](./concept-identity-protection-risks.md)

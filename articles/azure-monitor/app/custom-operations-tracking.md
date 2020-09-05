@@ -2,14 +2,15 @@
 title: Azure 애플리케이션 Insights .NET SDK를 사용 하 여 사용자 지정 작업 추적
 description: Azure Application Insights .NET SDK를 통한 사용자 지정 작업 추적
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 11/26/2019
 ms.reviewer: sergkanz
-ms.openlocfilehash: bd30f60928df3644b215f185d620393d1edda8c7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 42a5318325f9961483465357403089755feb130d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87320377"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933310"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Application Insights .NET SDK를 통한 사용자 지정 작업 추적
 
@@ -347,9 +348,9 @@ public async Task Process(MessagePayload message)
 ### <a name="dependency-types"></a>종속성 유형
 
 Application Insights는 종속성 형식을 사용 하 여 UI 환경을 사용자 지정 합니다. 큐의 경우 `DependencyTelemetry` [트랜잭션 진단 환경을](./transaction-diagnostics.md)개선 하는 다음과 같은 유형을 인식 합니다.
-- `Azure queue`Azure Storage 큐의 경우
-- `Azure Event Hubs`Azure Event Hubs
-- `Azure Service Bus`Azure Service Bus
+- `Azure queue` Azure Storage 큐의 경우
+- `Azure Event Hubs` Azure Event Hubs
+- `Azure Service Bus` Azure Service Bus
 
 ### <a name="batch-processing"></a>일괄 처리
 일부 큐의 경우 하나의 요청으로 여러 메시지를 큐에서 제거할 수 있습니다. 이러한 메시지를 처리하는 것은 아마도 독립적이며 다른 논리 연산에 속합니다. 처리 중인 특정 메시지와 작업의 상관 관계를 지정할 수 없습니다 `Dequeue` .
@@ -469,11 +470,11 @@ public async Task RunAllTasks()
 ```
 
 ## <a name="applicationinsights-operations-vs-systemdiagnosticsactivity"></a>ApplicationInsights 작업 vs System.web. 작업
-`System.Diagnostics.Activity`분산 추적 컨텍스트를 나타내며, 프레임 워크 및 라이브러리에서 프로세스 내부 및 외부에 컨텍스트를 만들고 전파 하 고 원격 분석 항목의 상관 관계를 적용 하는 데 사용 됩니다. 활동은 `System.Diagnostics.DiagnosticSource` 프레임 워크/라이브러리 간의 알림 메커니즘과 함께 작동 하 여 관심 있는 이벤트 (들어오거나 나가는 요청, 예외 등)에 대해 알립니다.
+`System.Diagnostics.Activity` 분산 추적 컨텍스트를 나타내며, 프레임 워크 및 라이브러리에서 프로세스 내부 및 외부에 컨텍스트를 만들고 전파 하 고 원격 분석 항목의 상관 관계를 적용 하는 데 사용 됩니다. 활동은 `System.Diagnostics.DiagnosticSource` 프레임 워크/라이브러리 간의 알림 메커니즘과 함께 작동 하 여 관심 있는 이벤트 (들어오거나 나가는 요청, 예외 등)에 대해 알립니다.
 
 활동은 Application Insights의 최고 수준의 시민 이며, 자동 종속성과 요청 수집은 이벤트와 함께 사용 하는 것이 매우 많습니다 `DiagnosticSource` . 응용 프로그램에서 작업을 만드는 경우 Application Insights 원격 분석이 생성 되지 않습니다. Application Insights는 DiagnosticSource 이벤트를 받고 작업을 원격 분석으로 변환 하는 이벤트 이름 및 페이로드를 알고 있어야 합니다.
 
-각 Application Insights 작업 (요청 또는 종속성)에 `Activity` `StartOperation` 는이 포함 됩니다 .가 호출 되 면 아래에 작업이 생성 됩니다. `StartOperation`는 요청 또는 종속성 원격 분석을 수동으로 추적 하 고 모든 것이 상관 관계를 유지 하는 데 권장 되는 방법입니다.
+각 Application Insights 작업 (요청 또는 종속성)에 `Activity` `StartOperation` 는이 포함 됩니다 .가 호출 되 면 아래에 작업이 생성 됩니다. `StartOperation` 는 요청 또는 종속성 원격 분석을 수동으로 추적 하 고 모든 것이 상관 관계를 유지 하는 데 권장 되는 방법입니다.
 
 ## <a name="next-steps"></a>다음 단계
 

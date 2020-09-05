@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbfbad53fd2361752824292e0ade82f3ac231916
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2bb8c6c64e0a68f5176c4eb0c0177c5220394695
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098019"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268760"
 ---
 # <a name="enforce-tls-12-for-the-azure-ad-registration-service"></a>Azure AD 등록 서비스에 대 한 TLS 1.2 적용
 
@@ -52,7 +52,7 @@ Azure AD Device Registration Service를 사용 하는 Windows 서버 또는 프�
 
 ## <a name="update-ad-fs-servers"></a>AD FS 서버 업데이트
 
-Azure AD 장치 등록 서비스와 통신 하는 데 사용 되는 모든 AD FS 서버에서 TLS 1.2를 사용 하도록 설정 해야 합니다. 이 구성을 사용/확인 하는 방법에 대 한 자세한 내용은 [SSL/TLS 프로토콜 및 암호 AD FS 그룹 관리](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) 를 참조 하세요.
+Azure AD 장치 등록 서비스와 통신 하는 데 사용 되는 모든 AD FS 서버에서 TLS 1.2를 사용 하도록 설정 해야 합니다. 이 구성을 사용/확인 하는 방법에 대 한 자세한 내용은 [SSL/TLS 프로토콜 및 암호 AD FS 그룹 관리](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) 를 참조 하세요.
 
 ## <a name="client-updates"></a>클라이언트 업데이트
 
@@ -68,4 +68,4 @@ Azure AD 장치 등록 서비스와 통신 하는 데 사용 되는 모든 AD FS
 
 ## <a name="next-steps"></a>다음 단계
 
-[TLS/SSL 개요 (Schannel SSP)](https://docs.microsoft.com/windows-server/security/tls/tls-ssl-schannel-ssp-overview)
+[TLS/SSL 개요 (Schannel SSP)](/windows-server/security/tls/tls-ssl-schannel-ssp-overview)

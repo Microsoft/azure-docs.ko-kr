@@ -3,28 +3,35 @@ title: 미리 보기 - 사용자 고유 키로 암호화된 이미지 버전 만
 description: 고객 관리형 암호화 키를 사용하여 Shared Image Gallery에서 이미지 버전을 만듭니다.
 author: cynthn
 ms.service: virtual-machines
+ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 05/06/2020
+ms.date: 08/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 469e225a1cc40dc2ecc45339d9355484e87c4af2
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 21e6dc5a975f43456a077559eebafd975cea66a1
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223587"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816493"
 ---
 # <a name="preview-use-customer-managed-keys-for-encrypting-images"></a>미리 보기: 이미지 암호화를 위해 고객 관리형 키 사용
 
 갤러리 이미지는 관리 디스크로 저장되므로 서버 쪽 암호화를 사용하여 자동으로 암호화됩니다. 서버 쪽 암호화는 사용 가능한 가장 강력한 블록 암호 중 하나인 256비트 [AES 암호화](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)(FIPS 140-2 규격)를 사용합니다. 암호화 모듈의 기본 Azure Managed Disks에 대한 자세한 정보는 [Cryptography API: Next Generation](/windows/desktop/seccng/cng-portal)을 참조하세요.
 
-플랫폼 관리형 키를 사용하여 이미지를 암호화하거나 사용자 고유의 키를 사용하여 암호화를 관리할 수 있습니다. 사용자 고유의 키를 사용하여 암호화를 관리하는 경우 이미지의 모든 데이터를 암호화 및 암호 해독하는 데 사용할 고객 관리형 키를 지정할 수 있습니다. 
+플랫폼 관리 키를 사용 하 여 이미지 암호화를 사용 하거나, 사용자 고유의 키를 사용 하거나, 이중 암호화에 두 가지를 함께 사용할 수 있습니다. 사용자 고유의 키를 사용하여 암호화를 관리하는 경우 이미지의 모든 데이터를 암호화 및 암호 해독하는 데 사용할 고객 관리형 키를 지정할 수 있습니다. 
 
 고객 관리형 키를 사용한 서버 쪽 암호화는 Azure Key Vault를 사용합니다. [사용자의 RSA 키](../key-vault/keys/hsm-protected-keys.md)를 Key Vault로 가져오거나 Azure Key Vault에서 새 RSA 키를 생성할 수 있습니다.
 
-이미지에 고객 관리형 키를 사용하려면 먼저 Azure Key Vault가 필요합니다. 그런 다음 디스크 암호화 집합을 만듭니다. 그러면 이미지 버전을 만들 때 디스크 암호화 집합이 사용됩니다.
+## <a name="prerequisites"></a>사전 요구 사항
 
-디스크 암호화 집합을 만들고 사용하는 방법에 대한 자세한 내용은 [고객 관리형 키](./windows/disk-encryption.md#customer-managed-keys)를 참조하세요.
+이 문서에서는 이미지에 사용할 디스크 암호화가 이미 설정 되어 있어야 합니다.
+
+- 고객 관리 키만 사용 하려면 [Azure Portal](./disks-enable-customer-managed-keys-portal.md) 또는 [PowerShell](./windows/disks-enable-customer-managed-keys-powershell.md#set-up-your-azure-key-vault-and-diskencryptionset)을 사용 하 여 **서버 쪽 암호화에서 고객이 관리 하는 키 사용** 을 참조 하세요.
+
+- 플랫폼 관리 및 고객 관리 키를 모두 사용 하려면 (이중 암호화의 경우) [Azure Portal](./disks-enable-double-encryption-at-rest-portal.md) 또는 [PowerShell](./windows/disks-enable-double-encryption-at-rest-powershell.md)을 사용 하 여 **미사용 이중 암호화** 사용을 참조 하세요.
+    > [!IMPORTANT]
+    > Azure Portal에 액세스 하려면이 링크를 사용 해야 합니다 [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) . 휴지 상태의 이중 암호화는 현재 링크를 사용 하지 않고 공용 Azure Portal에 표시 되지 않습니다.
 
 ## <a name="limitations"></a>제한 사항
 
@@ -90,7 +97,7 @@ $encryption1 = @{OSDiskImage=$osDiskImageEncryption;DataDiskImages=$dataDiskImag
 
 $region1 = @{Name='West US';ReplicaCount=1;StorageAccountType=Standard_LRS;Encryption=$encryption1}
 
-$targetRegion = @{$region1}
+$targetRegion = @($region1)
 
 
 # Create the image
@@ -150,6 +157,7 @@ OS 디스크의 원본이 관리 디스크 또는 VM인 경우 `--managed-image`
 az sig image-version create \
    -g MyResourceGroup \
    --gallery-image-version 1.0.0 \
+   --location westus \
    --target-regions westus=2=standard_lrs \
    --target-region-encryption DiskEncryptionSet1,0,DiskEncryptionSet2 \
    --gallery-name MyGallery \
@@ -165,11 +173,12 @@ OS 디스크의 원본이 스냅샷이면 `--os-snapshot`을 사용하여 OS 디
 az sig image-version create \
    -g MyResourceGroup \
    --gallery-image-version 1.0.0 \
+   --location westus\
    --target-regions westus=2=standard_lrs \
    --target-region-encryption DiskEncryptionSet1,0,DiskEncryptionSet2 \
-   --os-snapshot "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/snapshots/myOSSnapshot"
-   --data-snapshot-luns 0
-   --data-snapshots "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/snapshots/myDDSnapshot"
+   --os-snapshot "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/snapshots/myOSSnapshot" \
+   --data-snapshot-luns 0 \
+   --data-snapshots "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/snapshots/myDDSnapshot" \
    --gallery-name MyGallery \
    --gallery-image-definition MyImage 
    
@@ -182,15 +191,19 @@ Shared Image Gallery에서 VM을 만들고, 고객 관리형 키를 사용하여
 
 ## <a name="portal"></a>포털
 
-포털에서 이미지 버전을 만들 때 **암호화** 탭을 사용하여 스토리지 암호화 집합에 대한 정보를 입력할 수 있습니다.
+포털에서 이미지 버전을 만들 때 **암호화** 탭을 사용 하 여 저장소 암호화 집합 적용을 입력할 수 있습니다.
+
+> [!IMPORTANT]
+> 이중 암호화를 사용 하려면이 링크를 사용 하 여 Azure Portal에 액세스 해야 합니다 [https://aka.ms/diskencryptionupdates](https://aka.ms/diskencryptionupdates) . 휴지 상태의 이중 암호화는 현재 링크를 사용 하지 않고 공용 Azure Portal에 표시 되지 않습니다.
+
 
 1. **이미지 버전 만들기** 페이지에서 **암호화** 탭을 선택합니다.
-2. **암호화 유형**에서 **고객 관리형 키로 미사용 데이터 암호화**를 선택합니다. 
+2. **암호화 유형**에서 **고객이 관리 하는 키를 사용 하 여 미사용 암호화** 를 선택 하거나 **플랫폼 관리 및 고객 관리 키를 사용 하는 이중 암호화**를 선택 합니다. 
 3. 이미지의 각 디스크에 대해 드롭다운에서 사용할 **디스크 암호화 집합**을 선택합니다. 
 
 ### <a name="create-the-vm"></a>VM 만들기
 
-Shared Image Gallery에서 VM을 만들고, 고객 관리형 키를 사용하여 디스크를 암호화할 수 있습니다. 포털에서 VM을 만들 때 **디스크** 탭에서 **암호화 유형**으로 **고객 관리형 키로 미사용 데이터 암호화**를 선택합니다. 그런 다음 드롭다운에서 암호화 집합을 선택할 수 있습니다.
+이미지 버전에서 VM을 만들고 고객이 관리 하는 키를 사용 하 여 디스크를 암호화할 수 있습니다. 포털에서 VM을 만들 때 **디스크** 탭에서 **고객이 관리 하는 키를 사용 하 여 미사용 암호화** 를 선택 하거나 **플랫폼 관리 및 고객 관리 키를 사용 하** 여 **암호화 유형에**대 한 이중 암호화를 선택 합니다. 그런 다음 드롭다운에서 암호화 집합을 선택할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

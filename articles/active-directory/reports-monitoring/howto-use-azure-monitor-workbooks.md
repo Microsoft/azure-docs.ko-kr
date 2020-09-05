@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 10/30/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ec492466e107eb6f4821f0e6d2caed9daa141a35
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 510991c1afba9a5ffbfd77e855ee25d8b641bdd0
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608953"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226984"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Azure Monitor 통합 문서를 Azure Active Directory 보고서에 사용하는 방법
 
@@ -42,13 +42,13 @@ ms.locfileid: "85608953"
 
 - 로그인 로그 쿼리에 대한 심층적 인사이트 획득 - 통합 문서는 액세스 권한이 부여되거나 액세스가 거부된 사용자 수와 리소스에 액세스할 때 조건부 액세스 정책을 우회한 사용자 수를 보고합니다.
 
-- 이러한 질문을 해결할 수 있도록 Azure Active Directory는 모니터링을 위한 통합 문서를 제공합니다. [Azure Monitor 통합 문서](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview)는 텍스트, 분석 쿼리, 메트릭 및 매개 변수를 풍부한 대화형 보고서로 결합합니다.
+- 이러한 질문을 해결할 수 있도록 Azure Active Directory는 모니터링을 위한 통합 문서를 제공합니다. [Azure Monitor 통합 문서](../../azure-monitor/platform/workbooks-overview.md)는 텍스트, 분석 쿼리, 메트릭 및 매개 변수를 풍부한 대화형 보고서로 결합합니다.
 
 
 
 이 문서의 내용:
 
-- [Monitor 통합 문서를 사용하여 대화형 보고서를 만드는 방법](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview)을 잘 알고 있다고 가정합니다.
+- [Monitor 통합 문서를 사용하여 대화형 보고서를 만드는 방법](../../azure-monitor/platform/workbooks-overview.md)을 잘 알고 있다고 가정합니다.
 
 - Monitor 통합 문서를 사용하여 조건부 액세스 정책의 영향을 이해하고, 로그인 오류 문제를 해결하고, 레거시 인증을 식별하는 방법을 설명합니다.
  
@@ -58,11 +58,11 @@ ms.locfileid: "85608953"
 
 Monitor 통합 문서를 사용하려면 다음 항목이 필요합니다.
 
-- 프리미엄(P1 또는 P2) 라이선스를 사용하는 Azure Active Directory 테넌트. [프리미엄 라이선스를 얻는 방법](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium)을 알아보세요.
+- 프리미엄(P1 또는 P2) 라이선스를 사용하는 Azure Active Directory 테넌트. [프리미엄 라이선스를 얻는 방법](../fundamentals/active-directory-get-started-premium.md)을 알아보세요.
 
-- [Log Analytics 작업 영역](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)
+- [Log Analytics 작업 영역](../../azure-monitor/learn/quick-create-workspace.md)
 
-- Log Analytics 작업 영역에 대한 [액세스](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) 권한
+- Log Analytics 작업 영역에 대한 [액세스](../../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions) 권한
 - Azure Active Directory의 다음 역할(Azure Active Directory 포털을 통해 Log Analytics에 액세스하는 경우)
     - 보안 관리자
     - 보안 판독기
@@ -70,7 +70,7 @@ Monitor 통합 문서를 사용하려면 다음 항목이 필요합니다.
     - 전역 관리자
 
 ## <a name="roles"></a>역할
-통합 문서를 관리하려면 다음 역할 중 하나여야 하고 [기본 Log Analytics 작업 영역에 대한 액세스 권한](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions)이 있어야 합니다.
+통합 문서를 관리하려면 다음 역할 중 하나여야 하고 [기본 Log Analytics 작업 영역에 대한 액세스 권한](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions)이 있어야 합니다.
 -   전역 관리자
 -   보안 관리자
 -   보안 판독기
@@ -302,4 +302,4 @@ Monitor 통합 문서를 사용하려면 다음 항목이 필요합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-[Monitor 통합 문서를 사용하여 대화형 보고서를 작성합니다](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview).
+[Monitor 통합 문서를 사용하여 대화형 보고서를 작성합니다](../../azure-monitor/platform/workbooks-overview.md).

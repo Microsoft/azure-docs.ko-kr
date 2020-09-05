@@ -6,13 +6,13 @@ author: spelluru
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 641cae751b0b87d93235e1272bc5f46f7797d834
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: f0aaa82db61b5f40e42d6dad641bc09d5add9d0f
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88065117"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078336"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Azure Service Bus-Event Grid 통합 개요
 
@@ -32,7 +32,7 @@ Azure Service Bus가 Azure Event Grid와의 새로운 통합을 시작했습니�
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ### <a name="verify-that-you-have-contributor-access"></a>참가자 액세스 권한이 있는지 확인
-Service Bus 네임 스페이스로 이동한 후 **액세스 제어 (IAM)** 를 선택 하 고 **역할 할당** 탭을 선택 합니다. 네임 스페이스에 대 한 참가자 액세스 권한이 있는지 확인 합니다. 
+Service Bus 네임 스페이스로 이동한 다음, **액세스 제어 (IAM)** 를 선택 하 고 **역할 할당** 탭을 선택 합니다. 네임 스페이스에 대 한 참가자 액세스 권한이 있는지 확인 합니다. 
 
 ### <a name="events-and-event-schemas"></a>이벤트 및 이벤트 스키마
 

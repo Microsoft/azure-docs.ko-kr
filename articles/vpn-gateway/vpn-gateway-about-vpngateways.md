@@ -1,19 +1,19 @@
 ---
 title: Azure VPN Gateway 정보
-description: VPN Gateway란 무엇이고, VPN Gateway를 사용하여 Azure 가상 네트워크에 연결하는 방법은 무엇인지 알아봅니다. IPsec/IKE 사이트 간 크로스-프레미스 및 VNet 대 VNet 솔루션은 물론 지점과 사이트 간 VPN을 포함합니다.
+description: VPN Gateway가 무엇인지, VPN Gateway를 사용하여 IPsec IKE 사이트 간, VNet 간, 지점 및 사이트 간 VPN 가상 네트워크에 연결하는 방법에 대해 알아봅니다.
 services: vpn-gateway
 author: cherylmc
 Customer intent: As someone with a basic network background, but is new to Azure, I want to understand the capabilities of Azure VPN Gateway so that I can securely connect to my Azure virtual networks.
 ms.service: vpn-gateway
 ms.topic: overview
-ms.date: 06/01/2020
+ms.date: 08/25/2020
 ms.author: cherylmc
-ms.openlocfilehash: 4ec008fa97c75f5ae7c79e2b98efc9005df1014f
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: c7fbea977904145aa2e8851f45a4b70f9ce0c560
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84300050"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855604"
 ---
 # <a name="what-is-vpn-gateway"></a>VPN Gateway란?
 
@@ -71,6 +71,10 @@ VPN Gateway용 게이트웨이 SKU에 대한 자세한 내용은 [게이트웨�
 ## <a name="faq"></a><a name="faq"></a>FAQ
 
 VPN Gateway에 대한 자주 묻는 질문은 [VPN Gateway FAQ](vpn-gateway-vpn-faq.md)를 참조하세요.
+
+## <a name="whats-new"></a><a name="new"></a>새로운 기능
+
+RSS 피드를 구독하고 [Azure 업데이트](https://azure.microsoft.com/updates/?category=networking&query=VPN%20Gateway) 페이지에서 최신 VPN Gateway 기능 업데이트를 확인합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

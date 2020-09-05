@@ -11,12 +11,13 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-azurecli
-ms.openlocfilehash: b31fc9df5451665b79a41172286a0cc471b681fd
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+- devx-track-csharp
+ms.openlocfilehash: b24d9e1cbbcf875d7b4bde3981b28d8999ba8d47
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501000"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019133"
 ---
 # <a name="tutorial-set-up-and-use-metrics-and-diagnostic-logs-with-an-iot-hub"></a>자습서: IoT Hub를 사용하여 메트릭 및 진단 로그 설정 및 사용
 

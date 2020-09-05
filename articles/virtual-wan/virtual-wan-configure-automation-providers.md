@@ -1,18 +1,18 @@
 ---
 title: Azure 가상 WAN 파트너 자동화 지침 | Microsoft Docs
-description: 이 문서에서는 파트너가 Azure Virtual WAN 자동화를 설정하도록 돕습니다.
+description: Azure 가상 WAN에 대 한 온-프레미스 VPN 또는 SD WAN CPE 또는 분기 장치를 연결 하 고 구성 하는 automation 환경을 설정 합니다.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: cherylmc
-ms.openlocfilehash: 816e8843467588cbfaeb5eb6e531d2221d28656b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0029f3fbcf96036a247356042e4c39d59f86a224
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565959"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208355"
 ---
 # <a name="automation-guidelines-for-virtual-wan-partners"></a>가상 WAN 파트너에 대 한 자동화 지침
 
@@ -86,18 +86,18 @@ Azure에 분기 (온-프레미스 사이트) 정보를 업로드 하는 사용�
         ```
         "AddressSpace":"10.1.0.0/24"
         ```
-    * 허브에 연결 된 Vnet의 **주소 공간** 입니다.<br>예:
+    * 허브에 연결 된 Vnet의 **주소 공간** 입니다.<br>예제:
 
          ```
         "ConnectedSubnets":["10.2.0.0/16","10.3.0.0/16"]
          ```
-    * 가상 허브 vpngateway의 **IP 주소**. vpngateway에는 활성-활성 구성의 2개 터널로 구성된 각 연결이 있기 때문에 이 파일에 두 IP 주소가 모두 나열됩니다. 이 예제에서는 각 사이트에 대한 “Instance0” 및 “Instance1”이 표시됩니다.<br>예:
+    * 가상 허브 vpngateway의 **IP 주소**. vpngateway에는 활성-활성 구성의 2개 터널로 구성된 각 연결이 있기 때문에 이 파일에 두 IP 주소가 모두 나열됩니다. 이 예제에서는 각 사이트에 대한 “Instance0” 및 “Instance1”이 표시됩니다.<br>예제:
 
         ``` 
         "Instance0":"104.45.18.186"
         "Instance1":"104.45.13.195"
         ```
-    * BGP, 미리 공유한 키 등의 **Vpngateway 연결 구성 세부 정보** PSK는 자동으로 생성 되는 미리 공유한 키입니다. 사용자 지정 PSK의 개요 페이지에서 연결을 언제든지 편집할 수 있습니다.
+    * BGP, 미리 공유한 키 등의 **Vpngateway 연결 구성 세부 정보**. PSK는 자동으로 생성되는 미리 공유한 키입니다. 사용자 지정 PSK의 개요 페이지에서 연결을 언제든지 편집할 수 있습니다.
   
 **예제 디바이스 구성 파일**
 

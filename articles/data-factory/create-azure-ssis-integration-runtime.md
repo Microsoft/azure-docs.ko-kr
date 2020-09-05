@@ -6,17 +6,17 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 07/06/2020
+ms.date: 08/11/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 6bf146f043dac4908387a4650130df76bdd07bd1
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 07cfb0048e6027b0bac219b3fe28018db2d10257
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087863"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185267"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Azure Data Factory에서 Azure Integration Runtime 만들기 | Microsoft Docs
 
@@ -27,7 +27,7 @@ ms.locfileid: "86087863"
 - Azure SQL Database 서버/Managed Instance(프로젝트 배포 모델)가 호스트하는 SSIS 카탈로그(SSISDB)에 배포된 패키지 실행
 - Azure SQL Managed Instance(패키지 배포 모델)가 호스트하는 파일 시스템, Azure Files 또는 SQL Server 데이터베이스(MSDB)에 배포된 패키지 실행
 
-Azure-SSIS IR이 프로비저닝되면 익숙한 도구를 사용하여 Azure에서 패키지를 배포하고 실행할 수 있습니다. 이러한 도구는 이미 Azure를 사용 하 고 있으며 [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) 및 [azuredtexec](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec)와 같은 SQL Server Data Tools (SSDT), SQL Server Management Studio (SSMS) 및 명령줄 유틸리티를 포함 합니다.
+Azure-SSIS IR이 프로비저닝되면 익숙한 도구를 사용하여 Azure에서 패키지를 배포하고 실행할 수 있습니다. 이러한 도구는 이미 Azure를 사용하며 SSDT(SQL Server Data Tools), SSMS(SQL Server Management Studio) 및 명령줄 유틸리티(예: [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) 및 [AzureDTExec](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec))를 포함하고 있습니다.
 
 [프로 비전 Azure-SSIS IR](tutorial-create-azure-ssis-runtime-portal.md) 자습서에서는 Azure Portal 또는 Data Factory 앱을 통해 Azure-SSIS IR을 만드는 방법을 보여 줍니다. 또한 필요에 따라 Azure SQL Database 서버 또는 관리 되는 인스턴스를 사용 하 여 SSISDB를 호스트 하는 방법도 보여 줍니다. 이 문서는 자습서를 확장 하 고 다음과 같은 선택적 작업을 수행 하는 방법을 설명 합니다.
 
@@ -39,7 +39,7 @@ Azure-SSIS IR이 프로비저닝되면 익숙한 도구를 사용하여 Azure에
 
 이 문서에서는 Azure Portal, Azure PowerShell 및 Azure Resource Manager 템플릿을 사용 하 여 Azure-SSIS IR를 프로 비전 하는 방법을 보여 줍니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -85,7 +85,7 @@ Data Factory 및 Azure-SSIS IR을 사용할 수 있는 Azure 지역 목록은 [�
 | **인증** | 데이터 팩터리의 관리 id를 사용 하 여 **db_owner** 역할의 멤버로 Azure AD 그룹을 나타내는 포함 된 데이터베이스 사용자로 SSISDB 인스턴스를 만들 수 있습니다.<br/><br/>[Azure SQL Database server에서 SSISDB를 만들려면 AZURE AD 인증 사용을](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database)참조 하세요. | 데이터 팩터리의 관리 되는 id를 나타내는 포함 된 데이터베이스 사용자로 SSISDB 인스턴스를 만들 수 있습니다. <br/><br/>Azure [SQL Managed Instance에서 SSISDB를 만들려면 AZURE AD 인증 사용을](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-sql-managed-instance)참조 하세요. |
 | **서비스 계층** | Azure SQL Database 서버를 사용 하 여 Azure-SSIS IR를 만들 때 SSISDB의 서비스 계층을 선택할 수 있습니다. 여러 서비스 계층이 있습니다. | 관리 되는 인스턴스를 사용 하 여 Azure-SSIS IR를 만들 때는 SSISDB의 서비스 계층을 선택할 수 없습니다. 관리 되는 인스턴스의 모든 데이터베이스는 해당 인스턴스에 할당 된 동일한 리소스를 공유 합니다. |
 | **가상 네트워크** | IP 방화벽 규칙/가상 네트워크 서비스 끝점에서 Azure SQL Database 서버를 사용 하는 경우 Azure-SSIS IR Azure Resource Manager 가상 네트워크에 가입할 수 있습니다. | 개인 끝점에서 관리 되는 인스턴스를 사용 하는 경우 Azure-SSIS IR Azure Resource Manager 가상 네트워크에 가입할 수 있습니다. 관리 되는 인스턴스에 대해 공용 끝점을 사용 하지 않는 경우 가상 네트워크가 필요 합니다.<br/><br/>Azure-SSIS IR를 관리 되는 인스턴스와 동일한 가상 네트워크에 조인 하는 경우 Azure-SSIS IR 관리 되는 인스턴스와 다른 서브넷에 있는지 확인 합니다. Azure-SSIS IR를 관리 되는 인스턴스의 다른 가상 네트워크에 조인 하는 경우 가상 네트워크 피어 링 또는 네트워크 간 연결을 권장 합니다. [응용 프로그램을 Azure SQL Database Managed Instance에 연결을](../sql-database/sql-database-managed-instance-connect-app.md)참조 하세요. |
-| **분산 트랜잭션** | 이 기능은 탄력적 트랜잭션을 통해 지원 됩니다. MSDTC(Microsoft Distributed Transaction Coordinator) 트랜잭션은 지원되지 않습니다. SSIS 패키지가 MSDTC를 사용 하 여 분산 트랜잭션을 조정 하는 경우 Azure SQL Database에 대해 탄력적 트랜잭션으로 마이그레이션하는 것이 좋습니다. 자세한 내용은 [클라우드 데이터베이스 간 분산 트랜잭션](../sql-database/sql-database-elastic-transactions-overview.md)을 참조 하세요. | 지원되지 않습니다. |
+| **분산 트랜잭션** | 이 기능은 탄력적 트랜잭션을 통해 지원 됩니다. MSDTC(Microsoft Distributed Transaction Coordinator) 트랜잭션은 지원되지 않습니다. SSIS 패키지가 MSDTC를 사용 하 여 분산 트랜잭션을 조정 하는 경우 Azure SQL Database에 대해 탄력적 트랜잭션으로 마이그레이션하는 것이 좋습니다. 자세한 내용은 [클라우드 데이터베이스 간 분산 트랜잭션](../sql-database/sql-database-elastic-transactions-overview.md)을 참조 하세요. | 지원 안 됨 |
 | | | |
 
 ## <a name="use-the-azure-portal-to-create-an-integration-runtime"></a>Azure Portal를 사용 하 여 통합 런타임 만들기
@@ -130,93 +130,99 @@ Azure Portal을 통해 데이터 팩터리를 만들려면 [UI를 통해 데이�
 
 #### <a name="deployment-settings-page"></a>배포 설정 페이지
 
-**통합 런타임 설치** 창의 **배포 설정** 페이지에서 다음 단계를 완료합니다.
+**Integration runtime 설정** 창의 **배포 설정** 페이지에 SSISDB 및 Azure-SSIS IR 패키지 저장소를 만들 수 있는 옵션이 있습니다.
 
-   1. **Create SSIS catalog (SSISDB) hosted by Azure SQL Database server/Managed Instance to store your projects/packages/environments/execution logs**(Azure SQL Database 서버/Managed Instance에서 호스팅하는 SSIS 카탈로그(SSISDB)를 만들어서 프로젝트/패키지/환경/실행 로그 저장) 확인란을 선택하여 패키지를 SSISDB(프로젝트 배포 모델)에 배포할 것인지 여부를 선택합니다. 또는 Azure SQL Managed Instance(패키지 배포 모델)가 호스트하는 파일 시스템, Azure Files 또는 SQL Server 데이터베이스(MSDB)에 패키지를 배포하려는 경우에는 SSISDB를 만들 필요가 없습니다.
+##### <a name="creating-ssisdb"></a>SSISDB 만들기
+
+**Integration runtime 설정** 창의 **배포 설정** 페이지에서 패키지를 SSISDB (프로젝트 배포 모델)에 배포 하려는 경우 **Azure SQL Database 서버/MANAGED INSTANCE에서 호스트 하는 Ssisdb (SSIS 카탈로그) 만들기를 선택 하 여 프로젝트/패키지/환경/실행 로그를 저장** 합니다. 확인란을 선택 합니다. 또는 Azure SQL Managed Instance (패키지 배포 모델)에서 호스트 되는 파일 시스템, Azure Files 또는 SQL Server 데이터베이스 (MSDB)에 패키지를 배포 하려면 SSISDB를 만들거나 확인란을 선택 하지 않아도 됩니다.
+
+배포 모델에 관계 없이, Azure SQL Managed Instance에서 호스트 되는 SQL Server 에이전트를 사용 하 여 패키지 실행을 오케스트레이션/예약 하려면 SSISDB에서 사용 하도록 설정 되어 있으므로이 확인란을 선택 합니다. 자세한 내용은 [Azure SQL Managed Instance 에이전트를 통해 SSIS 패키지 실행 예약](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-managed-instance-agent)을 참조하세요.
    
-      배포 모델에 관계없이, SSISDB에서 사용하도록 설정된 이 확인란을 선택하여 Azure SQL Managed Instance가 호스트하는 SQL Server 에이전트를 사용하여 패키지 실행을 오케스트레이션/예약할 것인지 여부를 선택하면 됩니다. 자세한 내용은 [Azure SQL Managed Instance 에이전트를 통해 SSIS 패키지 실행 예약](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-managed-instance-agent)을 참조하세요.
+확인란을 선택 하는 경우 다음 단계를 완료 하 여 사용자를 대신 하 여 만들고 관리할 SSISDB를 호스트 하도록 사용자 고유의 데이터베이스 서버를 가져옵니다.
+
+   ![SSISDB의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings.png)
    
-      이 확인란을 선택하면 사용자 대신 만들고 관리할 SSISDB를 호스트하기 위한 고유의 데이터베이스 서버를 가져와야 합니다.
+   1. **구독**에서는 SSISDB를 호스트하는 데이터베이스 서버가 있는 Azure 구독을 선택합니다. 
 
-      ![SSISDB의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings.png)
+   1. **위치**에서는 SSISDB를 호스트하는 데이터베이스 서버의 위치를 선택합니다. 통합 런타임과 동일한 위치를 선택하는 것이 좋습니다.
+
+   1. **카탈로그 데이터베이스 서버 엔드포인트**로는 SSISDB를 호스트하는 데이터베이스 서버의 엔드포인트를 선택합니다. 
    
-      1. **구독**에서는 SSISDB를 호스트하는 데이터베이스 서버가 있는 Azure 구독을 선택합니다.
+      선택한 데이터베이스 서버에 따라 사용자를 대신하여 SSISDB 인스턴스를 단일 데이터베이스, 탄력적 풀의 일부 또는 관리형 인스턴스로 만들 수 있습니다. 이는 공용 네트워크에서 액세스하거나 가상 네트워크에 조인하여 액세스할 수 있습니다. SSISDB를 호스트할 데이터베이스 서버의 유형을 선택하는 방법에 대한 지침은 [SQL Database 및 SQL Managed Instance 비교](../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance)를 참조하세요.   
 
-      1. **위치**에서는 SSISDB를 호스트하는 데이터베이스 서버의 위치를 선택합니다. 통합 런타임과 동일한 위치를 선택하는 것이 좋습니다. 
+      IP 방화벽 규칙/가상 네트워크 서비스 엔드포인트가 있는 Azure SQL Database 서버 또는 프라이빗 엔드포인트가 있는 관리형 인스턴스를 선택하여 SSISDB를 호스팅하거나 자체 호스팅 IR을 구성하지 않고 온-프레미스 데이터에 액세스해야 하는 경우 Azure-SSIS IR을 가상 네트워크에 조인해야 합니다. 자세한 내용은 [가상 네트워크에서 Azure-SSIS IR 만들기](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)를 참조하세요.
 
-      1. **카탈로그 데이터베이스 서버 엔드포인트**로는 SSISDB를 호스트하는 데이터베이스 서버의 엔드포인트를 선택합니다. 
-    
-         선택한 데이터베이스 서버에 따라 사용자를 대신하여 SSISDB 인스턴스를 단일 데이터베이스, 탄력적 풀의 일부 또는 관리형 인스턴스로 만들 수 있습니다. 이는 공용 네트워크에서 액세스하거나 가상 네트워크에 조인하여 액세스할 수 있습니다. SSISDB를 호스팅할 데이터베이스 서버 유형을 선택 하는 방법에 대 한 지침은이 문서의 [SQL Database 및 SQL Managed Instance 비교](#comparison-of-sql-database-and-sql-managed-instance) 섹션을 참조 하세요. 
-    
-         IP 방화벽 규칙/가상 네트워크 서비스 엔드포인트가 있는 Azure SQL Database 서버 또는 프라이빗 엔드포인트가 있는 관리형 인스턴스를 선택하여 SSISDB를 호스팅하거나 자체 호스팅 IR을 구성하지 않고 온-프레미스 데이터에 액세스해야 하는 경우 Azure-SSIS IR을 가상 네트워크에 조인해야 합니다. 자세한 내용은 [가상 네트워크에 Azure-SSIS IR 가입](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network)을 참조 하세요. 
+   1. **ADF에 대 한 관리 id로 AZURE AD 인증 사용** 확인란을 선택 하 여 SSISDB를 호스팅할 데이터베이스 서버에 대 한 인증 방법을 선택 합니다. 데이터 팩터리의 관리 ID를 통한 SQL 인증 또는 Azure AD 인증을 선택합니다.
 
-      1. SSISDB를 호스팅할 데이터베이스 서버의 인증 방법을 선택하려면 **ADF의 관리 ID를 통한 AAD 인증 사용** 확인란을 선택합니다. 데이터 팩터리의 관리 ID를 통한 SQL 인증 또는 Azure AD 인증을 선택합니다. 
-    
-         확인란을 선택하면 데이터 팩터리의 관리 ID를 데이터베이스 서버에 대한 액세스 권한이 있는 Azure AD 그룹에 추가해야 합니다. 자세한 내용은 [Azure-SSIS IR에 대해 AZURE AD 인증 사용](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir)을 참조 하세요. 
-
-      1. **관리 사용자 이름**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 사용자 이름을 입력합니다. 
-
-      1. **관리자 암호**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 암호를 입력합니다. 
-
-      1. **카탈로그 데이터베이스 서비스 계층**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 서비스 계층을 선택합니다. 기본, 표준 또는 프리미엄 계층을 선택하거나 탄력적 풀 이름을 선택합니다.
-
-   1. **Azure SQL Managed Instance가 호스트하는 파일 시스템/Azure Files/SQL Server 데이터베이스(MSDB)에 배포되는 패키지를 관리할 패키지 저장소 만들기** 확인란을 선택하여 MSDB, 파일 시스템 또는 Azure Files(패키지 배포 모델)에 배포된 패키지를 Azure-SSIS IR 패키지 저장소를 통해 관리할 것인지 여부를 선택합니다.
+      확인란을 선택하면 데이터 팩터리의 관리 ID를 데이터베이스 서버에 대한 액세스 권한이 있는 Azure AD 그룹에 추가해야 합니다. 자세한 내용은 [Azure AD 인증을 사용하여 Azure-SSIS IR 만들기](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)를 참조하세요.
    
-      Azure-SSIS IR 패키지 저장소를 사용하면 [레거시 SSIS 패키지 저장소](https://docs.microsoft.com/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017)와 비슷하게 SSMS를 통해 패키지를 가져오고/내보내고/삭제하고/실행하고 실행 중인 패키지를 모니터링/중지할 수 있습니다. 자세한 내용은 [Azure-SSIS IR 패키지 저장소를 사용하여 SSIS 패키지 관리](https://docs.microsoft.com/azure/data-factory/azure-ssis-integration-runtime-package-store)를 참조하세요.
+   1. **관리 사용자 이름**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 사용자 이름을 입력합니다. 
+
+   1. **관리자 암호**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 암호를 입력합니다. 
+
+   1. **카탈로그 데이터베이스 서비스 계층**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 서비스 계층을 선택합니다. 기본, 표준 또는 프리미엄 계층을 선택하거나 탄력적 풀 이름을 선택합니다.
+
+**연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **다음**을 선택합니다.
+
+##### <a name="creating-azure-ssis-ir-package-stores"></a>Azure-SSIS IR 패키지 저장소 만들기
+
+**Integration runtime 설정** 창의 **배포 설정** 페이지에서 Azure-SSIS IR 패키지 저장소를 사용 하 여 msdb, 파일 시스템 또는 Azure Files (패키지 배포 모델)에 배포 된 패키지를 관리 하려면 **패키지 저장소 만들기를 선택 하 여 Azure SQL Managed Instance에서 호스트 되는 파일 시스템/AZURE FILES/SQL Server 데이터베이스 (MSDB)에 배포** 된 패키지를 관리 합니다. 확인란을 선택 합니다.
    
-      이 확인란을 선택하면 **새로 만들기**를 선택하여 Azure-SSIS IR에 여러 패키지 저장소를 추가할 수 있습니다. 반대로, 패키지 저장소 하나를 여러 Azure SSIS IR이 공유할 수 있습니다.
-
-      ![MSDB/파일 시스템/Azure Files의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings2.png)
-
-      **패키지 저장소 추가** 창에서 다음 단계를 완료합니다.
+Azure-SSIS IR 패키지 저장소를 사용하면 [레거시 SSIS 패키지 저장소](https://docs.microsoft.com/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017)와 비슷하게 SSMS를 통해 패키지를 가져오고/내보내고/삭제하고/실행하고 실행 중인 패키지를 모니터링/중지할 수 있습니다. 자세한 내용은 [Azure-SSIS IR 패키지 저장소를 사용하여 SSIS 패키지 관리](https://docs.microsoft.com/azure/data-factory/azure-ssis-integration-runtime-package-store)를 참조하세요.
    
-      1. **패키지 저장소 이름**으로 패키지 저장소의 이름을 입력합니다. 
+이 확인란을 선택하면 **새로 만들기**를 선택하여 Azure-SSIS IR에 여러 패키지 저장소를 추가할 수 있습니다. 반대로, 패키지 저장소 하나를 여러 Azure SSIS IR이 공유할 수 있습니다.
 
-      1. **패키지 저장소 연결된 서비스**로는 패키지가 배포되는 파일 시스템/Azure Files/Azure SQL Managed Instance 대한 액세스 정보를 저장하는 기존의 연결된 서비스를 선택하거나, **새로 만들기**를 선택하여 새로 만듭니다. **새 연결된 서비스** 창에서 다음 단계를 완료합니다. 
+![MSDB/파일 시스템/Azure Files의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings2.png)
 
-         ![연결된 서비스의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
+**패키지 저장소 추가** 창에서 다음 단계를 완료합니다.
+   
+   1. **패키지 저장소 이름**으로 패키지 저장소의 이름을 입력합니다. 
 
-         1. **이름**에는 연결된 서비스의 이름을 입력합니다. 
+   1. **패키지 저장소 연결된 서비스**로는 패키지가 배포되는 파일 시스템/Azure Files/Azure SQL Managed Instance 대한 액세스 정보를 저장하는 기존의 연결된 서비스를 선택하거나, **새로 만들기**를 선택하여 새로 만듭니다. **새 연결된 서비스** 창에서 다음 단계를 완료합니다. 
+
+      ![연결된 서비스의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
+
+      1. **이름**에는 연결된 서비스의 이름을 입력합니다. 
          
-         1. **설명**에는 연결된 서비스에 대한 설명을 입력합니다. 
+      1. **설명**에는 연결된 서비스에 대한 설명을 입력합니다. 
          
-         1. **형식**으로는 **Azure File Storage**, **Azure SQL Managed Instance** 또는 **파일 시스템**을 선택합니다.
+      1. **형식**으로는 **Azure File Storage**, **Azure SQL Managed Instance** 또는 **파일 시스템**을 선택합니다.
 
-         1. 항상 Azure-SSIS IR를 사용하여 패키지 저장소에 대한 액세스 정보를 가져오기 때문에 **통합 런타임을 통해 연결**을 무시해도 됩니다.
+      1. 항상 Azure-SSIS IR를 사용하여 패키지 저장소에 대한 액세스 정보를 가져오기 때문에 **통합 런타임을 통해 연결**을 무시해도 됩니다.
 
-         1. **Azure File Storage**를 선택하는 경우 다음 단계를 완료합니다. 
+      1. **Azure File Storage**를 선택하는 경우 다음 단계를 완료합니다. 
 
-            1. **계정 선택 방법**으로는 **Azure 구독에서 선택** 또는 **수동으로 입력**을 선택합니다.
+         1. **계정 선택 방법**으로는 **Azure 구독에서 선택** 또는 **수동으로 입력**을 선택합니다.
          
-            1. **Azure 구독에서 선택**을 선택하는 경우 관련된 **Azure 구독**, **스토리지 계정 이름** 및 **파일 공유**를 선택합니다.
+         1. **Azure 구독에서 선택**을 선택하는 경우 관련된 **Azure 구독**, **스토리지 계정 이름** 및 **파일 공유**를 선택합니다.
             
-            1. **수동으로 입력**을 선택하는 경우 **호스트**로 `\\<storage account name>.file.core.windows.net\<file share name>`을 입력하고, **사용자 이름**으로 `Azure\<storage account name>`을 입력하고, **암호**로 `<storage account key>`를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+         1. **수동으로 입력**을 선택하는 경우 **호스트**로 `\\<storage account name>.file.core.windows.net\<file share name>`을 입력하고, **사용자 이름**으로 `Azure\<storage account name>`을 입력하고, **암호**로 `<storage account key>`를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-         1. **Azure SQL Managed Instance**를 선택하는 경우 다음 단계를 완료합니다. 
+      1. **Azure SQL Managed Instance**를 선택하는 경우 다음 단계를 완료합니다. 
 
-            1. **연결 문자열**을 선택하여 수동으로 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+         1. **연결 문자열**을 선택하여 수동으로 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
          
-            1. **연결 문자열**을 선택하는 경우 다음 단계를 완료합니다. 
+         1. **연결 문자열**을 선택하는 경우 다음 단계를 완료합니다. 
 
-               1. **정규화된 도메인 이름**으로 Azure SQL Managed Instance의 프라이빗 엔드포인트인 `<server name>.<dns prefix>.database.windows.net` 또는 퍼블릭 엔드포인트인 `<server name>.public.<dns prefix>.database.windows.net,3342`를 입력합니다. 프라이빗 엔드포인트를 입력하면 ADF UI가 연결할 수 없기 때문에 **연결 테스트**를 사용할 수 없습니다.
+            1. **정규화된 도메인 이름**으로 Azure SQL Managed Instance의 프라이빗 엔드포인트인 `<server name>.<dns prefix>.database.windows.net` 또는 퍼블릭 엔드포인트인 `<server name>.public.<dns prefix>.database.windows.net,3342`를 입력합니다. 프라이빗 엔드포인트를 입력하면 ADF UI가 연결할 수 없기 때문에 **연결 테스트**를 사용할 수 없습니다.
 
-               1. **데이터베이스 이름**으로 `msdb`를 입력합니다.
+            1. **데이터베이스 이름**으로 `msdb`를 입력합니다.
                
-               1. **인증 형식**으로 **SQL 인증**, **관리 ID** 또는 **서비스 주체**를 선택합니다.
+            1. **인증 형식**으로 **SQL 인증**, **관리 ID** 또는 **서비스 주체**를 선택합니다.
 
-               1. **SQL 인증**을 선택하는 경우 관련 **사용자 이름** 및 **암호**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+            1. **SQL 인증**을 선택하는 경우 관련 **사용자 이름** 및 **암호**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-               1. **관리 ID**를 선택하는 경우 Azure SQL Managed Instance에 대한 액세스 권한을 ADF 관리 ID에 부여합니다.
+            1. **관리 ID**를 선택하는 경우 Azure SQL Managed Instance에 대한 액세스 권한을 ADF 관리 ID에 부여합니다.
 
-               1. **서비스 주체**를 선택하는 경우 관련 **서비스 주체 ID** 및 **서비스 주체 키**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+            1. **서비스 주체**를 선택하는 경우 관련 **서비스 주체 ID** 및 **서비스 주체 키**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-         1. **파일 시스템**을 선택하는 경우 패키지가 배포되는 폴더의 UNC 경로를 **호스트**로 입력하고, 관련 **사용자 이름** 및 **암호**을 입력하거나, 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+      1. **파일 시스템**을 선택하는 경우 패키지가 배포되는 폴더의 UNC 경로를 **호스트**로 입력하고, 관련 **사용자 이름** 및 **암호**을 입력하거나, 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-         1. **연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **만들기**를 선택합니다.
+      1. **연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **만들기**를 선택합니다.
 
-      추가된 패키지 저장소가 **배포 설정** 페이지에 표시됩니다. 저장소를 제거하려면 해당 확인란을 선택한 다음, **삭제**를 선택합니다.
+   1. 추가된 패키지 저장소가 **배포 설정** 페이지에 표시됩니다. 저장소를 제거하려면 해당 확인란을 선택한 다음, **삭제**를 선택합니다.
 
-   1. **연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **다음**을 선택합니다.
+**연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **다음**을 선택합니다.
 
 #### <a name="advanced-settings-page"></a>고급 설정 페이지
 
@@ -348,7 +354,7 @@ $AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, whereas 
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
+$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|InstallAzurePowerShell|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS|AecorSoft.IntegrationService or leave it empty]" # OPTIONAL to configure an express custom setup without script
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use an Azure SQL Database server with IP firewall rules/virtual network service endpoints or a managed instance with private endpoint to host SSISDB, or if you require access to on-premises data without configuring a self-hosted IR. We recommend an Azure Resource Manager virtual network, because classic virtual networks will be deprecated soon.
 $SubnetName = "[your subnet name or leave it empty]" # WARNING: Use the same subnet as the one used for your Azure SQL Database server with virtual network service endpoints, or a different subnet from the one used for your managed instance with a private endpoint
@@ -527,6 +533,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $variableValue = "YourVariableValue"
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.EnvironmentVariableSetup($variableName, $variableValue)
     }
+    if($ExpressCustomSetup -eq "InstallAzurePowerShell")
+    {
+        $moduleVersion = "YourAzModuleVersion"
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.AzPowerShellSetup($moduleVersion)
+    }
     if($ExpressCustomSetup -eq "SentryOne.TaskFactory")
     {
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
@@ -557,6 +568,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $jsonData = $jsonData -replace '\s',''
         $jsonData = $jsonData.replace('"','\"')
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
+    if($ExpressCustomSetup -eq "AecorSoft.IntegrationService")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
     }
     # Create an array of one or more express custom setups
@@ -651,7 +667,7 @@ $AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, whereas 
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
+$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|InstallAzurePowerShell|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS|AecorSoft.IntegrationService or leave it empty]" # OPTIONAL to configure an express custom setup without script
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use an Azure SQL Database server with IP firewall rules/virtual network service endpoints or a managed instance with private endpoint to host SSISDB, or if you require access to on-premises data without configuring a self-hosted IR. We recommend an Azure Resource Manager virtual network, because classic virtual networks will be deprecated soon.
 $SubnetName = "[your subnet name or leave it empty]" # WARNING: Use the same subnet as the one used for your Azure SQL Database server with virtual network service endpoints, or a different subnet from the one used for your managed instance with a private endpoint
@@ -787,6 +803,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $variableValue = "YourVariableValue"
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.EnvironmentVariableSetup($variableName, $variableValue)
     }
+    if($ExpressCustomSetup -eq "InstallAzurePowerShell")
+    {
+        $moduleVersion = "YourAzModuleVersion"
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.AzPowerShellSetup($moduleVersion)
+    }
     if($ExpressCustomSetup -eq "SentryOne.TaskFactory")
     {
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
@@ -817,6 +838,11 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
         $jsonData = $jsonData -replace '\s',''
         $jsonData = $jsonData.replace('"','\"')
         $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
+    if($ExpressCustomSetup -eq "AecorSoft.IntegrationService")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
     }
     # Create an array of one or more express custom setups
@@ -950,9 +976,9 @@ SSISDB를 사용하는 경우 Azure 지원 SSDT 또는 SSMS 도구를 사용하�
 - 프라이빗 엔드포인트가 있는 관리형 인스턴스의 경우 서버 엔드포인트 형식은 `<server name>.<dns prefix>.database.windows.net`입니다.
 - 퍼블릭 엔드포인트가 있는 관리형 인스턴스의 경우 서버 엔드포인트 형식은 `<server name>.public.<dns prefix>.database.windows.net,3342`입니다. 
 
-SSISDB를 사용 하지 않는 경우 Azure SQL Managed Instance에서 호스트 하는 파일 시스템, Azure Files 또는 MSDB에 패키지를 배포 하 고 [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) 및 [azuredtexec](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec) 명령줄 유틸리티를 사용 하 여 Azure-SSIS IR에서 실행할 수 있습니다. 
+SSISDB를 사용하지 않는 경우 [dtutil](https://docs.microsoft.com/sql/integration-services/dtutil-utility?view=sql-server-2017) 및 [AzureDTExec](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-azure-enabled-dtexec) 명령줄 유틸리티를 사용하여 Azure SQL Managed Instance가 호스트하는 파일 시스템, Azure Files 또는 MSDB에 패키지를 배포하고 Azure-SSIS IR에서 실행할 수 있습니다. 
 
-자세한 내용은 [SSIS 프로젝트/패키지 배포](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-ver15)를 참조 하세요.
+자세한 내용은 [SSIS 프로젝트/패키지 배포](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-ver15)를 참조하세요.
 
 또한 두 경우 모두 Data Factory 파이프라인에서 SSIS 패키지 실행 활동을 사용하여 배포된 패키지를 Azure-SSIS IR에서 실행할 수도 있습니다. 자세한 내용은 [SSIS 패키지 실행을 Data Factory 첫 번째 클래스 활동으로 호출](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)을 참조하세요.
 

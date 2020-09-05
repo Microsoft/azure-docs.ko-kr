@@ -3,12 +3,12 @@ title: 일반적인 질문에 대한 답변
 description: 'Recovery Services 자격 증명 모음, 백업 대상, 작동 방식, 암호화 및 제한 등 Azure Backup 기능과 관련된 일반적인 질문에 대한 대답입니다. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: 95d515e65e31304dd4839f851736be6926a5a29f
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 16ee9fa94f8c6d5ee97c35833b4cee908750bc0a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553090"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017739"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Azure Backup - 질문과 대답
 
@@ -26,7 +26,7 @@ ms.locfileid: "87553090"
 
 ### <a name="how-many-datasourcesitems-can-be-protected-in-a-vault"></a>자격 증명 모음에서 보호할 수 있는 데이터 원본/항목은 몇 개인가요?
 
-자격 증명 모음의 모든 워크로드(IaaS VM, SQL, AFS 등)에서 최대 2000개의 데이터 원본/항목을 보호할 수 있습니다.
+자격 증명 모음에서 모든 작업 (예: IaaS VM, SQL, AFS) 간에 최대 2000 개의 데이터 원본/항목을 보호할 수 있습니다.
 예를 들어 자격 증명 모음에서 500 Vm 및 400 Azure Files 공유를 이미 보호 한 경우에는 SQL database를 최대 1100 개만 보호할 수 있습니다.
 
 ### <a name="how-many-policies-can-i-create-per-vault"></a>자격 증명 모음당 몇 개의 정책을 만들 수 있나요?
@@ -56,7 +56,7 @@ ms.locfileid: "87553090"
 ### <a name="can-i-do-an-item-level-restore-ilr-for-vms-backed-up-to-a-recovery-services-vault"></a>Recovery Services 자격 증명 모음에 백업된 VM에 대해 ILR(항목 수준 복원)을 수행할 수 있나요?
 
 - ILR은 Azure VM 백업을 통해 백업한 Azure VM에 대해 지원됩니다. 자세한 내용은 [문서](backup-azure-restore-files-from-vm.md)를 참조하세요.
-- ILR는 Azure backup Server 또는 System Center DPM에서 백업 된 온-프레미스 Vm의 온라인 복구 지점이 지원 되지 않습니다.
+- ILR (MABS) 또는 System Center DPM에서 Azure Backup Server 백업 된 온-프레미스 Vm의 온라인 복구 지점은 지원 되지 않습니다.
 
 ## <a name="azure-backup-agent"></a>Azure Backup 에이전트
 
@@ -184,7 +184,7 @@ Azure Backup 스토리지 아키텍처는 데이터를 빠르게 복원할 수 �
 
 ### <a name="how-many-times-can-i-recover-data-thats-backed-up-to-azure"></a>Azure에 백업된 데이터를 몇 번이나 복구할 수 있나요?
 
-Azure Backup에서 수행할 수 있는 복구 횟수에는 제한이 없습니다.
+Azure Backup 복구 수에는 제한이 없습니다.
 
 ### <a name="when-restoring-data-do-i-pay-for-the-egress-traffic-from-azure"></a>데이터를 복원할 때 Azure의 송신 트래픽에 대해 요금을 납부하나요?
 
@@ -214,7 +214,7 @@ Azure Backup에서 수행할 수 있는 복구 횟수에는 제한이 없습니�
 - 온-프레미스 백업의 경우 미사용 데이터 암호화 기능은 Azure에 백업할 때 제공한 암호를 사용하여 제공됩니다.
 - Azure VM의 경우 SSE(스토리지 서비스 암호화)를 사용하여 미사용 데이터가 암호화됩니다.
 
-Microsoft는 어떠한 경우에도 백업 데이터를 암호 해독하지 않습니다.
+Microsoft는 언제 든 지 백업 데이터를 암호 해독 하지 않습니다.
 
 ### <a name="what-is-the-minimum-length-of-the-encryption-key-used-to-encrypt-backup-data"></a>백업 데이터를 암호화 하는 데 사용 되는 암호화 키의 최소 길이는 어떻게 되나요?
 
@@ -222,7 +222,7 @@ MARS (Microsoft Azure Recovery Services) 에이전트에서 사용 하는 암호
 
 ### <a name="what-happens-if-i-misplace-the-encryption-key-can-i-recover-the-data-can-microsoft-recover-the-data"></a>암호화 키를 잃어버리면 어떻게 되나요? 데이터를 복구할 수 있나요? Microsoft에서 데이터를 복구할 수 있나요?
 
-백업 데이터를 암호화하는 데 사용되는 키는 사용자 사이트에만 존재합니다. Microsoft는 Azure에 복사본을 유지하지 않으며 키에 대한 어떠한 액세스 권한도 없습니다. 이 키를 잃어버리면 Microsoft는 백업 데이터를 복구할 수 없습니다.
+백업 데이터를 암호화하는 데 사용되는 키는 사용자 사이트에만 존재합니다. Microsoft는 Azure에서 복사본을 유지 하지 않으며 키에 대 한 액세스 권한이 없습니다. 이 키를 잃어버리면 Microsoft는 백업 데이터를 복구할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

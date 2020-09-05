@@ -3,7 +3,7 @@ title: Linux VM 사용자 할당 관리 ID를 사용하여 Azure Resource Manage
 description: Linux VM에서 사용자 할당 관리 ID를 사용하여 Azure Resource Manager에 액세스하는 프로세스를 설명하는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/22/2017
-ms.author: markvi
+ms.author: barclayn
 ROBOTS: NOINDEX,NOFOLLOW
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57b68ebb21c0c10c3fbe3fd77d11785d16a10053
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c27480f29a29f4805f8a9cafcfd388cb0638519e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "60443469"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269321"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-linux-vm-to-access-azure-resource-manager"></a>자습서: Linux VM에서 사용자 할당 관리 ID를 사용하여 Azure Resource Manager에 액세스
 
@@ -43,7 +43,7 @@ ms.locfileid: "60443469"
 
 - [Azure Portal에 로그인](https://portal.azure.com)
 
-- [Linux 가상 머신 만들기](/azure/virtual-machines/linux/quick-create-portal)
+- [Linux 가상 머신 만들기](../../virtual-machines/linux/quick-create-portal.md)
 
 - CLI를 로컬로 설치하여 사용하도록 선택한 경우 이 빠른 시작에서 Azure CLI 버전 2.0.4 이상을 실행해야 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 2.0 설치]( /cli/azure/install-azure-cli)를 참조하세요.
 
@@ -122,11 +122,11 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
 
 자습서의 나머지 부분에서는 이전에 만든 VM에서 작업합니다.
 
-아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](https://msdn.microsoft.com/commandline/wsl/about)에서 SSH 클라이언트를 사용할 수 있습니다. 
+아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](/windows/wsl/about)에서 SSH 클라이언트를 사용할 수 있습니다. 
 
 1. Azure [Portal](https://portal.azure.com)에 로그인합니다.
 2. 포털에서 **Virtual Machines** -> Linux 가상 머신으로 이동한 다음, **개요**에서 **연결**을 클릭합니다. VM에 연결하기 위한 문자열을 복사합니다.
-3. 선택한 SSH 클라이언트를 사용하여 VM에 연결합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](https://msdn.microsoft.com/commandline/wsl/about)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](~/articles/virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](~/articles/virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
+3. 선택한 SSH 클라이언트를 사용하여 VM에 연결합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](/windows/wsl/about)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](~/articles/virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](~/articles/virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
 4. 터미널 창에서 CURL을 사용하여 Azure Instance Metadata Service(IMDS) ID 엔드포인트에 대한 요청을 수행해 Azure Resource Manager용 액세스 토큰을 가져옵니다.  
 
    다음 예제에는 액세스 토큰을 획득하는 CURL 요청이 나와 있습니다. `<CLIENT ID>`를 [사용자 할당 관리 ID 만들기](#create-a-user-assigned-managed-identity)의 `az identity create` 명령에서 반환한 `clientId` 속성으로 바꿉니다. 
@@ -179,5 +179,4 @@ az role assignment create --assignee <UAMI PRINCIPALID> --role 'Reader' --scope 
 이 자습서에서는 사용자 할당 관리 ID를 만들고 이를 Linux 가상 머신에 연결하여 Azure Resource Manager API에 액세스하는 방법을 설명합니다.  Azure Resource Manager에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
->[Azure 리소스 관리자](/azure/azure-resource-manager/resource-group-overview)
-
+>[Azure 리소스 관리자](../../azure-resource-manager/management/overview.md)

@@ -13,13 +13,13 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6c52275735a6558a625e2118761d7ba98509dbe1
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 3f1a9a2756d81765d82938651672e5a83edc48ed
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497072"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078692"
 ---
 # <a name="register-a-sql-server-vm-in-azure-with-the-sql-vm-resource-provider-rp"></a>SQL VM 리소스 공급자 (RP)를 사용 하 여 Azure에 SQL Server VM 등록
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -398,9 +398,9 @@ SQL VM 리소스 공급자에 등록할 때 기본 SQL 관리 모드는 _전체_
 
 **SQL VM 리소스 공급자에 등록하면 내 VM에 에이전트를 설치하나요?**
 
-아니요. SQL VM 리소스 공급자에 등록하면 새 메타데이터 리소스만 만들어집니다. VM에 에이전트를 설치하지는 않습니다.
+예, SQL VM 리소스 공급자를 사용 하 여 등록 하면 VM에 에이전트가 설치 됩니다.
 
-SQL Server IaaS 확장은 전체 관리를 설정하는 데만 필요합니다. 관리 모드를 경량에서 전체로 업그레이드하면 SQL Server IaaS 확장이 설치되고 SQL Server가 다시 시작됩니다.
+SQL Server IaaS 확장은 에이전트를 사용 하 여 SQL Server 메타 데이터를 쿼리 합니다. SQL VM 리소스 공급자가 NoAgent 모드의 경우에만 에이전트가 설치 되지 않습니다.
 
 **내 VM에서 SQL VM 리소스 공급자를 다시 시작 SQL Server를 등록 하 시겠습니까?**
 
@@ -466,6 +466,6 @@ SQL Server IaaS 확장은 전체 관리를 설정하는 데만 필요합니다. 
 자세한 내용은 다음 문서를 참조하세요. 
 
 * [Windows VM에서 SQL Server 개요](sql-server-on-azure-vm-iaas-what-is-overview.md)
-* [Windows VM의 SQL Server FAQ](frequently-asked-questions-faq.md)
+* [Windows VM의 SQL Server FAQ](frequently-asked-questions-faq.md)  
 * [Windows VM의 SQL Server 가격 책정 가이드](pricing-guidance.md)
 * [Windows VM의 SQL Server 릴리스 정보](../../database/doc-changes-updates-release-notes.md)

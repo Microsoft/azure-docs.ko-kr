@@ -10,16 +10,14 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.author: trbye
-ms.openlocfilehash: b1e84f9acb439324317ed2f0d11ed06eb3e43ad8
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.openlocfilehash: 90a5ec8c58865c3aa1b210db51b9ffeb7169d641
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84678072"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640415"
 ---
 # <a name="what-is-speech-to-text"></a>음성 텍스트 변환이란?
-
-[!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
 음성 인식으로 알려진 음성 서비스의 음성 텍스트는 오디오 스트림에 대 한 실시간 기록을 텍스트에 사용할 수 있도록 합니다. 응용 프로그램, 도구 또는 장치는이 텍스트를 명령 입력으로 사용 하 고, 표시 하 고, 작업을 수행할 수 있습니다. 이 서비스는 Microsoft에서 Cortana 및 Office 제품에 대해 사용 하는 것과 동일한 인식 기술로 구동 됩니다. <a href="./speech-translation.md" target="_blank">번역 <span class="docon docon-navigate-external x-hidden-focus"></span> </a> 및 <a href="./text-to-speech.md" target="_blank">텍스트 음성 변환 <span class="docon docon-navigate-external x-hidden-focus"></span> </a> 서비스 제공에서 원활 하 게 작동 합니다. 사용 가능한 음성 텍스트 언어의 전체 목록은 [지원 되는 언어](language-support.md#speech-to-text)를 참조 하세요.
 
@@ -30,6 +28,8 @@ ms.locfileid: "84678072"
 > [!NOTE]
 > Bing Speech는 2019 년 10 월 15 일에 서비스 해제 되었습니다. 응용 프로그램, 도구 또는 제품이 Bing Speech Api를 사용 하는 경우 음성 서비스로 마이그레이션하는 데 도움이 되는 가이드를 만들었습니다.
 > - [Bing Speech에서 Speech service로 마이그레이션](how-to-migrate-from-bing-speech.md)
+
+[!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
 ## <a name="get-started-with-speech-to-text"></a>음성 텍스트 시작
 
@@ -58,6 +58,10 @@ Speech Service를 사용할 기회가 있으면 Speech SDK 및 LUIS를 사용하
 ## <a name="customization"></a>사용자 지정
 
 표준 음성 서비스 모델 외에도 사용자 지정 모델을 만들 수 있습니다. 사용자 지정은 말하는 스타일, 어휘 및 배경 소음과 같은 음성 인식 장벽을 극복 하는 데 도움이 됩니다 [Custom Speech](how-to-custom-speech.md)를 참조 하세요. 언어/로캘에 따라 사용자 지정 옵션은 지원 [되는 언어](supported-languages.md) 를 참조 하세요.
+
+## <a name="batch-transcription"></a>일괄 처리 기록
+
+일괄 처리는 저장소에서 많은 양의 오디오를 높여줄 수 있도록 하는 REST API 작업 집합입니다. SAS (공유 액세스 서명) URI를 사용 하 여 오디오 파일을 가리키고 기록 결과를 비동기적으로 받을 수 있습니다. Batch 기록 API를 사용 하는 방법에 대 한 자세한 내용은 [방법을](batch-transcription.md) 참조 하세요.
 
 [!INCLUDE [speech-reference-doc-links](includes/speech-reference-doc-links.md)]
 

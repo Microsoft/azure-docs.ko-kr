@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: douglas, carlrab
 ms.date: 07/11/2019
-ms.openlocfilehash: 3ef109dc5fad73a19eabefb8eb872c02d62698ba
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: b7623a3c89f9ae4b20385caaac676b972f55f85e
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087574"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209490"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-managed-instance"></a>Azure SQL Managed Instance에 대 한 SQL Server 인스턴스 마이그레이션
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "86087574"
 
 먼저 SQL Managed Instance 응용 프로그램의 데이터베이스 요구 사항과 호환 되는지 확인 합니다. SQL Managed Instance는 SQL Server를 사용 하는 대부분의 기존 응용 프로그램에 대 한 간편한 리프트 및 이동 마이그레이션을 제공 하도록 설계 되었습니다. 그러나 아직 지원 되지 않는 기능 또는 기능을 필요로 하는 경우가 있으며 해결 방법을 구현 하는 비용이 너무 높습니다.
 
-[Data Migration Assistant](https://docs.microsoft.com/sql/dma/dma-overview) 를 사용 하 여 Azure SQL Database의 데이터베이스 기능에 영향을 주는 잠재적 호환성 문제를 검색 합니다. 일부 보고 된 차단 문제가 있는 경우 [AZURE VM의 SQL Server](https://azure.microsoft.com/services/virtual-machines/sql-server/)와 같은 대체 옵션을 고려해 야 할 수 있습니다. 예를 들어 다음과 같은 노래를 선택할 수 있다.
+[Data Migration Assistant](https://docs.microsoft.com/sql/dma/dma-overview) 를 사용 하 여 Azure SQL Database의 데이터베이스 기능에 영향을 주는 잠재적 호환성 문제를 검색 합니다. 일부 보고 된 차단 문제가 있는 경우 [AZURE VM의 SQL Server](https://azure.microsoft.com/services/virtual-machines/sql-server/)와 같은 대체 옵션을 고려해 야 할 수 있습니다. 다음은 몇 가지 예입니다.
 
 - 운영 체제 또는 파일 시스템에 직접 액세스 해야 하는 경우 (예를 들어 SQL Server를 사용 하 여 동일한 가상 컴퓨터에 타사 또는 사용자 지정 에이전트를 설치 하는 경우)
 - FileStream/FileTable, PolyBase 및 인스턴스 간 트랜잭션과 같이 아직 지원 되지 않는 기능에 대해 엄격한 종속성이 있는 경우
@@ -162,7 +162,7 @@ SAS 자격 증명을 사용하여 데이터베이스 백업을 관리되는 인�
 필수 구성 요소로, 다음 작업을 완료 했는지 확인 합니다.
 
 - 다양 한 인스턴스, 데이터베이스, tempdb 설정 및 구성을 조사 하 여 관리 되는 인스턴스의 설정을 원본 SQL Server 인스턴스의 설정과 맞춥니다. 첫 번째 성능 비교를 실행 하기 전에 호환성 수준 또는 암호화와 같은 설정을 변경 하지 않았는지 확인 하거나 사용 하도록 설정한 일부 새로운 기능이 일부 쿼리에 영향을 줄 수 있다는 것을 허용 합니다. 마이그레이션 위험을 줄이려면 성능 모니터링 후에만 데이터베이스 호환성 수준을 변경합니다.
-- 더 나은 성능을 얻기 위해 파일 크기를 미리 할당 하는 등 [일반적인 용도로 저장소 모범 사례 지침](https://techcommunity.microsoft.com/t5/DataCAT/Storage-performance-best-practices-and-considerations-for-Azure/ba-p/305525)을 구현 합니다.
+- 더 나은 성능을 얻기 위해 파일 크기를 미리 할당 하는 등 [일반적인 용도로 저장소 모범 사례 지침](https://techcommunity.microsoft.com)을 구현 합니다.
 - [관리 되는 인스턴스와 SQL Server 간의 성능 차이를 일으킬 수 있는 주요 환경 차이점](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/)에 대해 알아보고 성능에 영향을 줄 수 있는 위험을 식별 합니다.
 - 관리 되는 인스턴스에서 쿼리 저장소 및 자동 조정을 계속 사용 하도록 설정 해야 합니다. 이러한 기능을 사용 하 여 워크 로드 성능을 측정 하 고 잠재적인 성능 문제를 자동으로 해결할 수 있습니다. [최신 SQL Server 버전으로 업그레이드 하는 동안 성능 안정성 유지](https://docs.microsoft.com/sql/relational-databases/performance/query-store-usage-scenarios#CEUpgrade)의 설명에 따라 데이터베이스 호환성 수준 변경 전후에 워크 로드 성능에 대 한 정보를 얻기 위한 최적의 도구로 쿼리 저장소를 사용 하는 방법을 알아봅니다.
 온-프레미스 환경과 최대한 유사한 환경을 준비한 후에는 워크 로드 실행을 시작 하 고 성능을 측정할 수 있습니다. 측정 프로세스 [에는 원본 SQL Server 인스턴스에서 작업 측정값의 기준선 성능을 생성 하는 동안](#create-a-performance-baseline)측정 한 것과 동일한 매개 변수가 포함 되어야 합니다.

@@ -8,15 +8,15 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 03/26/2020
+ms.date: 08/10/2020
 ms.author: juliako
 ms.custom: devx-track-javascript
-ms.openlocfilehash: afc49e959061bcd2327f1c3a4f988c9ed6e5ce11
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 5f418384d4ec1272600df2488dc71d2102d6a24d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87414023"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011806"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>앱에 Video Indexer 위젯을 포함 합니다.
 
@@ -70,7 +70,7 @@ ms.locfileid: "87414023"
 
 이 섹션에서는 공용 및 개인 콘텐츠를 앱에 포함 하는 방법을 설명 합니다.
 
-`location`매개 변수는 포함 된 링크에 포함 되어야 합니다. 해당 [지역의 이름을 가져오는 방법](regions.md)을 참조 하세요. 계정이 미리 보기 상태인 경우 `trial` 위치 값에 대해를 사용 해야 합니다. `trial``location`매개 변수의 기본값입니다. 예를 들면 `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`과 다음과 같습니다.
+`location`매개 변수는 포함 된 링크에 포함 되어야 합니다. 해당 [지역의 이름을 가져오는 방법](regions.md)을 참조 하세요. 계정이 미리 보기 상태인 경우 `trial` 위치 값에 대해를 사용 해야 합니다. `trial``location`매개 변수의 기본값입니다. 예: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`
 
 > [!IMPORTANT]
 > **플레이어** 또는 **Insights** 위젯에 대 한 링크를 공유 하면 액세스 토큰이 포함 되며 계정에 읽기 전용 권한을 부여 합니다.
@@ -102,6 +102,17 @@ ms.locfileid: "87414023"
 인식 통찰력 위젯은 앱의 비디오와 상호 작용할 수 있습니다. 이 섹션에서는 이러한 상호 작용을 수행하는 방법을 보여 줍니다.
 
 ![인식 Insights 위젯 Video Indexer](./media/video-indexer-embed-widgets/video-indexer-widget03.png)
+
+### <a name="flow-overview"></a>흐름 개요
+
+기록을 편집할 때 다음 흐름이 발생 합니다.
+
+1. 타임 라인에서 성적 증명서를 편집 합니다.
+1. 이러한 업데이트를 Video Indexer 하 여 언어 모델의 내용에 대 한 기록의 [편집 내용](customize-language-model-with-website.md#customize-language-models-by-correcting-transcripts) 에 저장 합니다.
+1. 캡션이 업데이트 됩니다.
+
+    * Video Indexer 플레이어 위젯을 사용 하는 경우 자동으로 업데이트 됩니다.
+    * 외부 플레이어를 사용 하는 경우- **비디오 캡션 가져오기** 호출을 통해 새 캡션 파일을 가져옵니다.
 
 ### <a name="cross-origin-communications"></a>원본 간 통신
 
@@ -197,7 +208,7 @@ Azure Media Player 이외의 비디오 플레이어를 사용 하는 경우 비�
     ```
 
 2. 인지 인사이트 위젯을 포함합니다.
-3. "메시지" 이벤트를 수신 대기하여 플레이어에 대한 통신을 구현합니다. 예를 들면 다음과 같습니다.
+3. "메시지" 이벤트를 수신 대기하여 플레이어에 대한 통신을 구현합니다. 예를 들어:
 
     ```javascript
     <script>
@@ -260,7 +271,7 @@ iframe 창의 제목도 iframe URL에 `&title=<YourTitle>`을 제공하여 사�
 
 Video Indexer 플레이어를 포함하는 경우 iframe의 크기를 지정하여 플레이어 크기를 선택할 수 있습니다.
 
-예를 들면 다음과 같습니다.
+예를 들어:
 
 `<iframe width="640" height="360" src="https://www.videoindexer.ai/embed/player/<accountId>/<videoId>/" frameborder="0" allowfullscreen />`
 

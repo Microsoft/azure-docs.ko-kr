@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c5058e24ee0817ebcc6c5761f7b9e22d1a14203
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08d6b12f897b8b7efb150b11ae4b3f5e2440f7c8
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727197"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797992"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Azure Active Directory에서 LinkedIn 계정 연결 통합
 
@@ -33,14 +33,14 @@ ms.locfileid: "84727197"
 > * 이 설정은 독일에서 프로 비전 된 Azure AD 조직에 대해 기본적으로 해제 되어 있습니다. Microsoft Cloud Germany를 사용하는 고객은 이 설정을 사용할 수 없습니다.
 > * 이 설정은 프랑스에서 프로 비전 된 조직에 대해 기본적으로 해제 되어 있습니다.
 >
-> 조직에 대해 LinkedIn 계정 연결을 사용 하도록 설정 하면 사용자가 대신 회사 데이터에 액세스 하는 앱에 동의한 후 계정 연결이 작동 합니다. 사용자 동의 설정에 대 한 자세한 내용은 [응용 프로그램에 대 한 사용자 액세스를 제거 하는 방법](https://docs.microsoft.com/azure/active-directory/application-access-assignment-how-to-remove-assignment)을 참조 하세요.
+> 조직에 대해 LinkedIn 계정 연결을 사용 하도록 설정 하면 사용자가 대신 회사 데이터에 액세스 하는 앱에 동의한 후 계정 연결이 작동 합니다. 사용자 동의 설정에 대 한 자세한 내용은 [응용 프로그램에 대 한 사용자 액세스를 제거 하는 방법](../manage-apps/methods-for-removing-user-access.md)을 참조 하세요.
 
 ## <a name="enable-linkedin-account-connections-in-the-azure-portal"></a>Azure Portal에서 LinkedIn 계정 연결을 사용 하도록 설정
 
 조직에서 선택한 사용자만 전체 조직에서 액세스 하려는 사용자 에게만 LinkedIn 계정 연결을 사용 하도록 설정할 수 있습니다.
 
 1. Azure ad 조직에 대 한 전역 관리자 인 계정으로 [AZURE ad 관리 센터](https://aad.portal.azure.com/) 에 로그인 합니다.
-1. **사용자**를 선택 합니다.
+1. **사용자**를 선택합니다.
 1. **사용자** 페이지에서 **사용자 설정**을 선택 합니다.
 1. **Linkedin 계정 연결**아래에서 사용자가 자신의 계정을 연결 하 여 일부 Microsoft 앱 내에서 LinkedIn 연결에 액세스할 수 있도록 허용 합니다. 사용자가 자신의 계정을 연결 하는 데 동의할 때까지 데이터가 공유 되지 않습니다.
 
@@ -71,7 +71,7 @@ ms.locfileid: "84727197"
 1. LinkedIn 계정 연결에 대해 선택한 사용자의 CSV 파일을 만듭니다.
 1. 관리자 계정으로 Microsoft 365에 로그인 합니다.
 1. PowerShell을 시작합니다.
-1. 을 실행 하 여 Azure AD 모듈을 설치 합니다.`Install-Module AzureAD`
+1. 을 실행 하 여 Azure AD 모듈을 설치 합니다. `Install-Module AzureAD`
 1. 다음 스크립트를 실행합니다.
 
   ``` PowerShell

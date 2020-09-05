@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8367ec2ece59ca8794bc1eeb2027eb6c14db12a0
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: c1106ec63e79d336b740b444a187244de64c03f5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925348"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269576"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>방법: 하이브리드 Azure Active Directory 조인 구현 계획
 
@@ -26,13 +26,13 @@ ms.locfileid: "87925348"
 - 하이브리드 Azure AD 조인
 - Azure AD 등록
 
-Azure AD에 디바이스를 가져오면 클라우드와 온-프레미스 리소스에서 SSO(Single Sign-On)를 통해 사용자의 생산성을 극대화할 수 있습니다. 동시에 [조건부 액세스](../active-directory-conditional-access-azure-portal.md)를 사용 하 여 클라우드 및 온-프레미스 리소스에 안전 하 게 액세스할 수 있습니다.
+Azure AD에 디바이스를 가져오면 클라우드와 온-프레미스 리소스에서 SSO(Single Sign-On)를 통해 사용자의 생산성을 극대화할 수 있습니다. 동시에 [조건부 액세스](../conditional-access/overview.md)를 사용 하 여 클라우드 및 온-프레미스 리소스에 안전 하 게 액세스할 수 있습니다.
 
 온-프레미스 ad (Active Directory) 환경이 있고 AD 도메인에 가입 된 컴퓨터를 Azure AD에 가입 하려는 경우 하이브리드 Azure AD 조인을 수행 하 여이 작업을 수행할 수 있습니다. 이 문서에서는 사용자 환경에서 하이브리드 Azure AD 조인을 구현하는 데 관련된 단계를 제공합니다. 
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-이 문서에서는 사용자가 [Azure Active Directory의 장치 id 관리 소개](../device-management-introduction.md)에 대해 잘 알고 있다고 가정 합니다.
+이 문서에서는 사용자가 [Azure Active Directory의 장치 id 관리 소개](./overview.md)에 대해 잘 알고 있다고 가정 합니다.
 
 > [!NOTE]
 > Windows 10 하이브리드 Azure AD 조인에 필요한 최소 도메인 컨트롤러 버전은 Windows Server 2008 R2입니다.
@@ -57,7 +57,7 @@ Azure AD에 디바이스를 가져오면 클라우드와 온-프레미스 리소
 - Windows 10
 - Windows Server 2016
   - **참고**: Azure 국가별 클라우드 고객은 버전 1809을 요구 합니다.
-- Windows Server 2019
+- 시작
 
 Windows 데스크톱 운영 체제를 실행 하는 장치의 경우 지원 되는 버전은 [windows 10 릴리스 정보](/windows/release-information/)문서에 나열 되어 있습니다. 모범 사례로, Microsoft는 최신 버전의 Windows 10으로 업그레이드 하는 것이 좋습니다.
 
@@ -100,7 +100,7 @@ Windows 10 도메인 가입 장치가 테 넌 트에 [등록 된 azure](overview
 > Windows 10에서 Azure AD 등록 상태를 로컬로 자동으로 제거 하더라도 Azure AD의 장치 개체는 Intune에서 관리 되는 경우 즉시 삭제 되지 않습니다. Dsregcmd.exe/status를 실행 하 여 Azure AD에 등록 된 상태를 제거 하는 것을 확인 하 고 해당 장치에 따라 Azure AD가 등록 되지 않도록 할 수 있습니다.
 
 ### <a name="additional-considerations"></a>기타 고려 사항
-- 사용자 환경에서 VDI (가상 데스크톱 인프라)를 사용 하는 경우 [장치 id 및 데스크톱 가상화](/azure/active-directory/devices/howto-device-identity-virtual-desktop-infrastructure)를 참조 하세요.
+- 사용자 환경에서 VDI (가상 데스크톱 인프라)를 사용 하는 경우 [장치 id 및 데스크톱 가상화](./howto-device-identity-virtual-desktop-infrastructure.md)를 참조 하세요.
 
 - 하이브리드 Azure AD 조인은 FIPS 규격 TPM 2.0에 대해 지원 되며 TPM 1.2에 대해 지원 되지 않습니다. 장치에 FIPS 규격 TPM 1.2이 있는 경우 하이브리드 Azure AD 조인을 진행 하기 전에 사용 하지 않도록 설정 해야 합니다. TPM은 TPM 제조업체에 따라 다르므로 tpm에서 FIPS 모드를 사용 하지 않도록 설정 하는 도구는 제공 하지 않습니다. 하드웨어 OEM에 지원을 문의 하세요. 
 
@@ -118,12 +118,12 @@ Windows 10 도메인 가입 장치가 테 넌 트에 [등록 된 azure](overview
 
 ### <a name="managed-environment"></a>관리 환경
 
-관리형 환경은 [Seamless Single Sign On](/azure/active-directory/hybrid/how-to-connect-sso)을 사용하여 [PHS(암호 해시 동기화)](/azure/active-directory/hybrid/whatis-phs) 또는 [PTA(통과 인증)](/azure/active-directory/hybrid/how-to-connect-pta)를 통해 배포할 수 있습니다.
+관리형 환경은 [Seamless Single Sign On](../hybrid/how-to-connect-sso.md)을 사용하여 [PHS(암호 해시 동기화)](../hybrid/whatis-phs.md) 또는 [PTA(통과 인증)](../hybrid/how-to-connect-pta.md)를 통해 배포할 수 있습니다.
 
 이러한 시나리오는 인증용 페더레이션 서버를 구성할 필요가 없습니다.
 
 > [!NOTE]
-> [단계적 롤아웃을 사용 하는 클라우드 인증은](/azure/active-directory/hybrid/how-to-connect-staged-rollout) Windows 10 1903 업데이트를 시작 하는 경우에만 지원 됩니다.
+> [단계적 롤아웃을 사용 하는 클라우드 인증은](../hybrid/how-to-connect-staged-rollout.md) Windows 10 1903 업데이트를 시작 하는 경우에만 지원 됩니다.
 
 ### <a name="federated-environment"></a>페더레이션 환경
 
@@ -152,9 +152,9 @@ Id 인프라와 일치 하는 시나리오에 따라 다음을 참조 하세요.
 
 ## <a name="review-on-premises-ad-users-upn-support-for-hybrid-azure-ad-join"></a>하이브리드 Azure AD 조인에 대 한 온-프레미스 AD 사용자 UPN 지원 검토
 
-경우에 따라 온-프레미스 AD 사용자 Upn은 Azure AD Upn과 다를 수 있습니다. 그러한 경우 Windows 10 하이브리드 Azure AD 조인은 [인증 방법](/azure/security/fundamentals/choose-ad-authn), 도메인 유형 및 Windows 10 버전을 기반으로 온-프레미스 AD UPN에 대한 제한된 지원을 제공합니다. 사용자 환경에 있을 수 있는 온-프레미스 AD UPN에는 두 가지 유형이 있습니다.
+경우에 따라 온-프레미스 AD 사용자 Upn은 Azure AD Upn과 다를 수 있습니다. 그러한 경우 Windows 10 하이브리드 Azure AD 조인은 [인증 방법](../hybrid/choose-ad-authn.md), 도메인 유형 및 Windows 10 버전을 기반으로 온-프레미스 AD UPN에 대한 제한된 지원을 제공합니다. 사용자 환경에 있을 수 있는 온-프레미스 AD UPN에는 두 가지 유형이 있습니다.
 
-- 라우팅할 수 있는 사용자 UPN: 라우팅할 수 있는 UPN에는 도메인 등록 기관에 등록 된 유효한 확인 된 도메인이 있습니다. 예를 들어 contoso.com이 Azure AD의 기본 도메인인 경우 contoso.org는 Contoso에서 소유하고 [Azure AD에서 확인](/azure/active-directory/fundamentals/add-custom-domain)된 기본 도메인입니다.
+- 라우팅할 수 있는 사용자 UPN: 라우팅할 수 있는 UPN에는 도메인 등록 기관에 등록 된 유효한 확인 된 도메인이 있습니다. 예를 들어 contoso.com이 Azure AD의 기본 도메인인 경우 contoso.org는 Contoso에서 소유하고 [Azure AD에서 확인](../fundamentals/add-custom-domain.md)된 기본 도메인입니다.
 - 라우팅할 수 없는 사용자 UPN: 라우팅할 수 없는 UPN에 확인 된 도메인이 없습니다. 조직의 사설망 내에서만 적용됩니다. 예를 들어 contoso.com이 Azure AD의 기본 도메인인 경우 contoso.com은 온-프레미스 AD의 기본 도에미인이지만 인터넷에서 확인할 수 없는 도메인이며 Consoso의 네트워크 내에서만 사용됩니다.
 
 > [!NOTE]
@@ -166,8 +166,8 @@ Id 인프라와 일치 하는 시나리오에 따라 다음을 참조 하세요.
 | ----- | ----- | ----- | ----- |
 | 라우팅 가능 | 페더레이션 | 1703 릴리스 | 일반 공급 |
 | 라우팅 불가능 | 페더레이션 | 1803 릴리스 | 일반 공급 |
-| 라우팅 가능 | 관리 대상 | 1803 릴리스 | 일반적으로 사용 가능한 Windows 잠금 화면에서 Azure AD SSPR은 지원 되지 않습니다. |
-| 라우팅 불가능 | 관리 대상 | 지원되지 않음 | |
+| 라우팅 가능 | 관리형 | 1803 릴리스 | 일반적으로 사용 가능한 Windows 잠금 화면에서 Azure AD SSPR은 지원 되지 않습니다. |
+| 라우팅 불가능 | 관리형 | 지원되지 않음 | |
 
 ## <a name="next-steps"></a>다음 단계
 

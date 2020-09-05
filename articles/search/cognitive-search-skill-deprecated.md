@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 5f3587e4398be28cbaa2372be720258196bb48ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85f3b9862bd8155c1a4b11860dc82d92a2f9e810
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72792029"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936098"
 ---
 # <a name="deprecated-cognitive-skills-in-azure-cognitive-search"></a>Azure Cognitive Search에서 사용 되지 않는 인식 기술
 
@@ -38,7 +38,7 @@ ms.locfileid: "72792029"
 
 대신 [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md)을 사용합니다. NamedEntityRecognitionSkill의 대부분의 기능을 더 높은 품질로 제공합니다. 또한 복잡한 출력 필드에 다양한 정보가 있습니다.
 
-[엔터티 인식 기술](cognitive-search-skill-entity-recognition.md)로 마이그레이션하려면 기술 정의에 다음 변경 사항 중 하나 이상을 수행해야 합니다. [기술 세트 API 업데이트](https://docs.microsoft.com/rest/api/searchservice/update-skillset)를 사용하여 기술 정의를 업데이트할 수 있습니다.
+[엔터티 인식 기술](cognitive-search-skill-entity-recognition.md)로 마이그레이션하려면 기술 정의에 다음 변경 사항 중 하나 이상을 수행해야 합니다. [기술 세트 API 업데이트](/rest/api/searchservice/update-skillset)를 사용하여 기술 정의를 업데이트할 수 있습니다.
 
 > [!NOTE]
 > 현재 개념으로서 신뢰도 점수는 지원되지 않습니다. `minimumPrecision` 매개 변수는 향후 사용 및 이전 버전과의 호환성을 위해 `EntityRecognitionSkill`에 있습니다.

@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 07e33279452b8296688c358c9ffdab1bfb2e1321
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 77964eed6960a79920f359a03c65102ad949a210
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543965"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004666"
 ---
 # <a name="security-frame-authorization--mitigations"></a>보안 프레임: 권한 부여 | 완화 
 | 제품/서비스 | 아티클 |

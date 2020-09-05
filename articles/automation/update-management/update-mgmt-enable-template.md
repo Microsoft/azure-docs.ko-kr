@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 06/10/2020
-ms.openlocfilehash: 37f4b7208d7c8fafcd3aa1d25106a2cd5e4949c6
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: c4b29db8bbcb741116fcd425b4489973228066e6
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87450600"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021598"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용하여 업데이트 관리 사용
 
@@ -33,7 +33,7 @@ ms.locfileid: "87450600"
 
 | 리소스 | 리소스 유형 | API 버전 |
 |:---|:---|:---|
-| 작업 영역 | workspaces | 2020-03-01-미리 보기 |
+| 작업 영역 | workspaces | 2020-03-01-preview |
 | Automation 계정 | Automation | 2018-06-30 |
 | 해결 방법 | solutions | 2015-11-01-preview |
 
@@ -48,7 +48,7 @@ JSON 템플릿은 다음을 묻는 메시지를 표시하도록 구성됩니다.
 * 작업 영역의 이름
 * 작업 영역을 만들 지역입니다.
 * 리소스 또는 작업 영역 권한을 사용 하도록 설정 합니다.
-* Automation 계정의 이름입니다.
+* Automation 계정의 이름
 * 계정을 만들 지역입니다.
 
 JSON 템플릿은 환경에서 표준 구성으로 사용될 수 있는 다른 매개 변수에 대한 기본값을 지정합니다. 조직에서 공유 액세스에 대한 Azure Storage 계정에 템플릿을 저장할 수 있습니다. 템플릿 작업에 대한 자세한 내용은 [Azure Resource Manager 템플릿과 Azure CLI를 사용하여 리소스 배포](../../azure-resource-manager/templates/deploy-cli.md)를 참조하세요.
@@ -150,7 +150,7 @@ Azure Automation 및 Azure Monitor를 처음 사용하는 경우 새 Automation 
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
-                    "name": "[parameters('sku')]",
+                    "name": "[parameters('sku')]"
                 },
                 "retentionInDays": "[parameters('dataRetention')]",
                 "features": {
@@ -192,7 +192,7 @@ Azure Automation 및 Azure Monitor를 처음 사용하는 경우 새 Automation 
                 "sku": {
                     "name": "Basic"
                 }
-            },
+            }
         },
         {
             "apiVersion": "2020-03-01-preview",

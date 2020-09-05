@@ -2,25 +2,21 @@
 title: '자습서: Egress와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 Egress 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: d1a3c6b6-af9a-440a-8451-c77f83ceacd4
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 07/17/2020
+ms.date: 07/29/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ce816b74c12333477203cce690c955d5aaf1cda
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: adbadc14caad6594dc30f0f9fd9cb1cb49b47888
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87093696"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544267"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-egress"></a>자습서: Egress와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -45,7 +41,7 @@ Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Director
 
 * Egress는 **SP 및 IDP**에서 시작된 SSO 지원
 * Egress는 **Just-In-Time** 사용자 프로비저닝 지원
-* Egress를 구성한 후에는 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 침입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법을 알아봅니다](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* Egress가 구성되면 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 반입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법을 알아봅니다](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-egress-from-the-gallery"></a>갤러리에서 Egress 추가
 
@@ -130,7 +126,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 1. 다음 페이지에서 다음 단계를 수행합니다.
 
-    ![Egress 구성](./media/egress-tutorial/configure1.PNG)
+    ![Egress 구성](./media/egress-tutorial/configure-1.PNG)
 
     a. 왼쪽 메뉴에서 **SSO 구성**을 클릭합니다.
 
@@ -150,11 +146,11 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 1. 왼쪽 메뉴에서 **사용자 초대**를 클릭하고 **단일 사용자 초대**를 클릭하여 사용자를 추가합니다.
 
-    ![Egress 테스트 사용자 만들기](./media/egress-tutorial/createuser1.PNG)
+    ![Egress 테스트 사용자 만들기](./media/egress-tutorial/create-user-1.PNG)
 
 1. 필수 필드를 입력하고 **초대**를 클릭합니다.
 
-    ![Egress 테스트 사용자 만들기](./media/egress-tutorial/createuser2.PNG)
+    ![Egress 테스트 사용자 만들기](./media/egress-tutorial/create-user-2.PNG)
 
 ## <a name="test-sso"></a>SSO 테스트 
 

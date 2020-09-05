@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 Elium 구성 | Microsoft Docs'
 description: 사용자 계정을 Elium로 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: fb48deae-4653-448a-ba2f-90258edab3a7
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: a3e1c936d46e0d9b0ad3b98dafeda7df0b4a23db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d9bb21ab4b5610c8318fe4ee869f1140faf55367
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77058490"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544233"
 ---
 # <a name="tutorial-configure-elium-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Elium 구성
 
@@ -53,7 +49,7 @@ Azure AD는 *할당* 이라는 개념을 사용 하 여 선택한 앱에 대 한
 
 ## <a name="set-up-elium-for-provisioning"></a>프로 비전을 위한 Elium 설정
 
-Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 Elium를 구성 하기 전에 Elium에서 SCIM (도메인 간 Id 관리) 프로 비전을 위해 시스템을 사용 하도록 설정 해야 합니다. 아래 단계를 수행합니다.
+Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 Elium를 구성 하기 전에 Elium에서 SCIM (도메인 간 Id 관리) 프로 비전을 위해 시스템을 사용 하도록 설정 해야 합니다. 다음 단계를 수행합니다.
 
 1. Elium에 로그인 하 고 **내 프로필**  >  **설정**으로 이동 합니다.
 
@@ -69,7 +65,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위한 Elium를 구
 
 ## <a name="add-elium-from-the-gallery"></a>갤러리에서 Elium 추가
 
-Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Elium를 구성 하려면 Azure AD 응용 프로그램 갤러리의 Elium를 관리 되는 SaaS (software as a service) 응용 프로그램 목록에 추가 해야 합니다. 아래 단계를 수행합니다.
+Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Elium를 구성 하려면 Azure AD 응용 프로그램 갤러리의 Elium를 관리 되는 SaaS (software as a service) 응용 프로그램 목록에 추가 해야 합니다. 다음 단계를 수행합니다.
 
 1. [Azure Portal](https://portal.azure.com)의 왼쪽 탐색 패널에서 **Azure Active Directory**를 선택 합니다.
 

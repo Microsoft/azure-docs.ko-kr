@@ -6,13 +6,13 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: c377d9882b59731857641e1f593dd6b7b24ca7f9
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 3fc8f205bff52fad6e55b7aa6692ec80ae5e954a
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844085"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212153"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Azure Functions에 대 한 Azure Service Bus 출력 바인딩
 
@@ -292,7 +292,7 @@ Python에서는 특성을 지원하지 않습니다.
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
-## <a name="usage"></a>사용
+## <a name="usage"></a>사용량
 
 Azure Functions 1.x에서 큐가 존재하지 않고 `accessRights`를 `manage`로 설정한 경우 런타임은 큐를 만듭니다. 함수 버전 2.x 이상에서는 큐 또는 항목이 이미 존재 해야 합니다. 존재 하지 않는 큐 또는 토픽을 지정 하면 함수가 실패 합니다. 
 
@@ -303,9 +303,9 @@ Azure Functions 1.x에서 큐가 존재하지 않고 `accessRights`를 `manage`�
 * `out T paramName` - `T`는 JSON 직렬화 가능 형식일 수 있습니다. 함수가 종료될 때 매개 변수 값이 null이면 함수는 null 개체와 메시지를 만듭니다.
 * `out string` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
 * `out byte[]` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
-* `out BrokeredMessage`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 (함수 1. x의 경우) 메시지를 만들지 않습니다.
-* `out Message`-함수가 종료 될 때 매개 변수 값이 null 이면 함수가 메시지를 만들지 않습니다 (함수 2.x 이상).
-* `ICollector<T>`또는 `IAsyncCollector<T>` (비동기 메서드의 경우)-여러 메시지를 만드는 데 사용할입니다. 메시지는 `Add` 메서드를 호출할 때 생성됩니다.
+* `out BrokeredMessage` -함수가 종료 될 때 매개 변수 값이 null 이면 함수는 (함수 1. x의 경우) 메시지를 만들지 않습니다.
+* `out Message` -함수가 종료 될 때 매개 변수 값이 null 이면 함수가 메시지를 만들지 않습니다 (함수 2.x 이상).
+* `ICollector<T>` 또는 `IAsyncCollector<T>` (비동기 메서드의 경우)-여러 메시지를 만드는 데 사용할입니다. 메시지는 `Add` 메서드를 호출할 때 생성됩니다.
 
 C # 함수를 사용 하는 경우:
 
@@ -320,8 +320,8 @@ C # 함수를 사용 하는 경우:
 * `out T paramName` - `T`는 JSON 직렬화 가능 형식일 수 있습니다. 함수가 종료될 때 매개 변수 값이 null이면 함수는 null 개체와 메시지를 만듭니다.
 * `out string` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
 * `out byte[]` - 함수가 종료될 때 매개 변수 값이 null인 경우 함수는 메시지를 만들지 않습니다.
-* `out BrokeredMessage`-함수가 종료 될 때 매개 변수 값이 null 이면 함수는 (함수 1. x의 경우) 메시지를 만들지 않습니다.
-* `out Message`-함수가 종료 될 때 매개 변수 값이 null 이면 함수가 메시지를 만들지 않습니다 (함수 2.x 이상).
+* `out BrokeredMessage` -함수가 종료 될 때 매개 변수 값이 null 이면 함수는 (함수 1. x의 경우) 메시지를 만들지 않습니다.
+* `out Message` -함수가 종료 될 때 매개 변수 값이 null 이면 함수가 메시지를 만들지 않습니다 (함수 2.x 이상).
 * `ICollector<T>` 또는 `IAsyncCollector<T>` - 여러 개의 메시지를 만들려는 경우. 메시지는 `Add` 메서드를 호출할 때 생성됩니다.
 
 C # 함수를 사용 하는 경우:
@@ -355,7 +355,7 @@ C # 함수를 사용 하는 경우:
 
 ## <a name="hostjson-settings"></a>host.json 설정
 
-이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래 파일에 host.js예제에는이 바인딩에 대 한 설정만 포함 되어 있습니다. 전역 구성 설정에 대 한 자세한 내용은 [Azure Functions 버전에 대 한 참조host.js](functions-host-json.md)를 참조 하세요.
+이 섹션에서는 버전 2.x 이상에서이 바인딩에 사용할 수 있는 전역 구성 설정에 대해 설명 합니다. 아래 파일에 host.js예제에는이 바인딩에 대 한 설정만 포함 되어 있습니다. 전역 구성 설정에 대 한 자세한 내용은 [ Azure Functions 버전에 대 한 참조host.js](functions-host-json.md)를 참조 하세요.
 
 > [!NOTE]
 > Functions 1.x에서 host.json의 참조는 [Azure Functions 1.x에 대한 host.json 참조](functions-host-json-v1.md)를 참조하세요.

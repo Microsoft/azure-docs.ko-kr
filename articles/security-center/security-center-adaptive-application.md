@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: cbbfddca1a6a07625a69be8ffb0409640d825793
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: d4ed88dea0d230fd3488621c217ef9ea086310d5
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037023"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691482"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>적응 응용 프로그램 컨트롤을 사용 하 여 컴퓨터의 공격 노출 영역 축소
 
@@ -83,7 +83,7 @@ Azure Security Center의 적응 응용 프로그램 컨트롤의 이점 및이 �
     - **권장 사항 없음** -정의 된 허용 응용 프로그램 목록이 없는 컴퓨터 이며 기능을 지원 하지 않습니다. 다음과 같은 이유로이 탭에 컴퓨터가 있을 수 있습니다.
       - Log Analytics 에이전트가 없습니다.
       - Log Analytics 에이전트가 이벤트를 보내지 않습니다.
-      - GPO 또는 로컬 보안 정책에서 사용 하도록 설정 된 기존 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker) 정책을 사용 하는 Windows 컴퓨터입니다.
+      - GPO 또는 로컬 보안 정책에서 사용 하도록 설정 된 기존 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 정책을 사용 하는 Windows 컴퓨터입니다.
 
       > [!TIP]
       > Security Center는 컴퓨터 그룹당 고유한 권장 사항을 정의 하기 위해 2 주 이상의 데이터가 필요 합니다. 최근에 만들었거나 표준 계층을 사용 하 여 최근에 사용 하도록 설정 된 구독에 속하는 컴퓨터는 **권장 사항 없음** 탭 아래에 표시 됩니다.

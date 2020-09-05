@@ -3,12 +3,12 @@ title: Azure vm의 SQL server에 대 한 일시 삭제 및 Azure VM 워크 로�
 description: Azure VM의 SQL server에 대 한 일시 삭제 및 Azure VM 워크 로드의 SAP HANA에 대 한 자세한 내용은 백업을 더욱 안전 하 게 만듭니다.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: c0eaedea2d5428376befaade42f87348cf84e7bc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 26525ec758b3a27d6e0e1b9754b11041bd1fa0d2
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538193"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022295"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Azure vm의 SQL server에 대 한 일시 삭제 및 Azure VM 워크 로드의 SAP HANA
 
@@ -62,7 +62,7 @@ ms.locfileid: "86538193"
 >[!NOTE]
 >이러한 지침은 Azure VM의 SAP HANA에도 적용 됩니다.
 
-1. SQL server에서 데이터베이스의 백업 데이터를 삭제 하려면 백업을 중지 해야 합니다. Azure Portal에서 recovery services 자격 증명 모음으로 이동 하 여 백업 항목으로 이동한 후 **백업 중지**를 선택 합니다.
+1. SQL server에서 데이터베이스의 백업 데이터를 삭제 하려면 백업을 중지 해야 합니다. Azure Portal에서 Recovery Services 자격 증명 모음으로 이동한 후 백업 항목으로 이동 하 고 **백업 중지**를 선택 합니다.
 
    ![백업 중지](./media/soft-delete-sql-saphana-in-azure-vm/stop-backup.png)
 
@@ -99,7 +99,7 @@ Azure PowerShell 사용에 대 한 단계 순서는 위에 설명 된 Azure Port
 
 ### <a name="delete-the-backup-item-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 백업 항목 삭제
 
-[AzRecoveryServicesBackupProtection](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PS cmdlet을 사용 하 여 백업 항목을 삭제 합니다.
+[AzRecoveryServicesBackupProtection](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PowerShell cmdlet을 사용 하 여 백업 항목을 삭제 합니다.
 
 ```powershell
 Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoints -VaultId $myVaultID -Force
@@ -109,7 +109,7 @@ Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoint
 
 ### <a name="undoing-the-deletion-operation-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 삭제 작업 취소
 
-먼저 일시 삭제 상태 (즉, 삭제 됨)에 있는 관련 백업 항목을 가져옵니다.
+먼저 일시 삭제 상태 (즉, 삭제 하려고 함)에 있는 관련 백업 항목을 가져옵니다.
 
 ```powershell
 Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType SQLDataBase -VaultId $myVaultID | Where-Object {$_.DeleteState -eq "ToBeDeleted"}
@@ -117,7 +117,7 @@ Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadTy
 $myBkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType SQLDataBase -VaultId $myVaultID -Name AppVM1
 ```
 
-그런 다음 실행 취소- [AzRecoveryServicesBackupItemDeletion](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PS cmdlet을 사용 하 여 실행 취소 작업을 수행 합니다.
+그런 다음 실행 취소- [AzRecoveryServicesBackupItemDeletion](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PowerShell cmdlet을 사용 하 여 실행 취소 작업을 수행 합니다.
 
 ```powershell
 Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -Force

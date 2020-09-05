@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19bf54e6289472fe36dbf6b029f959545a65d1c8
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: e83560caa6f4147252fd4c55767888e7c0ad632b
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87796611"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783402"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리의 일반적인 시나리오
 
@@ -154,7 +154,7 @@ ms.locfileid: "87796611"
 
 ## <a name="programmatic-administration"></a>프로그래밍 방식 관리
 
-Microsoft Graph를 사용 하 여 액세스 패키지, 카탈로그, 정책, 요청 및 할당을 관리할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` [자격 관리 API](https://docs.microsoft.com/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)를 호출할 수 있습니다.
+Microsoft Graph를 사용 하 여 액세스 패키지, 카탈로그, 정책, 요청 및 할당을 관리할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` [자격 관리 API](/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)를 호출할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

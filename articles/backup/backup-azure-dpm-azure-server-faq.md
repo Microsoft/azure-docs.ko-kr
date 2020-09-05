@@ -4,12 +4,12 @@ description: 이 문서에서는 MABS (Microsoft Azure Backup 서버) 및 DPM (D
 ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
-ms.openlocfilehash: 35957a1e8a3d6c3d9be06d9d44dbcd47efa0e6ee
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 00eb064aaf549ee0d83d0cf7d9c9b47c2dc5ef78
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74173152"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827208"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server 및 DPM-FAQ
 
@@ -37,6 +37,10 @@ ms.locfileid: "74173152"
 
 데이터 원본이 클라우드에 보호되어 있는 DPM 서버의 경우(업데이트 롤업 7 이전의 업데이트 롤업을 사용하여), UR7과 최신 Azure Backup 에이전트를 설치한 다음 하루 이상 기다린 후에 **외부 DPM 서버 추가**를 시작해야 합니다. DPM 보호 그룹의 메타데이터가 Azure에 업로드되는 데는 1일의 기간이 필요합니다. 보호 그룹 메타데이터는 야간 작업을 통해 처음으로 업로드됩니다.
 
+### <a name="are-there-recommendations-for-configuring-exclusions-for-antivirus-software"></a>바이러스 백신 소프트웨어에 대 한 제외를 구성 하기 위한 권장 사항이 있나요?
+
+예, 바이러스 백신 제외를 구성 하는 것이 좋습니다. DPM에 대 한 제외는 [dpm 서버에서 바이러스 백신 소프트웨어 실행](https://docs.microsoft.com/system-center/dpm/run-antivirus-server?view=sc-dpm-2019)을 참조 하세요. MABS에 대 한 제외는 [mabs 서버에 대 한 바이러스 백신 구성](backup-azure-mabs-troubleshoot.md#configure-antivirus-for-mabs-server)을 참조 하세요.
+
 ## <a name="vmware-and-hyper-v-backup"></a>VMware 및 Hyper-V 백업
 
 ### <a name="can-i-back-up-vmware-vcenter-servers-to-azure"></a>VMware vCenter 서버를 Azure에 백업할 수 있나요?
@@ -61,7 +65,7 @@ VMware/Hyper-V 보호를 위해 별도 라이선스는 필요 없습니다.
 
 ### <a name="can-i-recover-a-sharepoint-database-to-the-original-location-if-sharepoint-is-configured-by-using-sql-alwayson"></a>SQL AlwaysOn을 사용해 SharePoint를 구성한 경우 SharePoint 데이터베이스를 원본 위치로 복구할 수 있나요?
 
-SharePoint 데이터베이스가 SQL AlwaysOn에서 구성되었으므로 가용성 그룹을 제거하기 전에는 수정할 수 없습니다. 따라서 DPM은 원래 위치로 데이터베이스를 복원할 수 없습니다. SQL Server 데이터베이스를 다른 SQL Server 인스턴스로 복구할 수 있습니다.
+SharePoint 데이터베이스는 SQL AlwaysOn에서 구성 되므로 가용성 그룹을 제거 하지 않으면 수정할 수 없습니다. 따라서 DPM에서 원래 위치로 데이터베이스를 복원할 수 없습니다. SQL Server 데이터베이스를 다른 SQL Server 인스턴스로 복구할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -9,17 +9,17 @@ ms.topic: how-to
 ms.date: 07/15/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 213e4092719b274909cc764d94a72886bb4923c9
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 07e306c6c428a0e3a3f64a29a2574cb0378bb81f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057316"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230231"
 ---
 # <a name="enable-and-manage-soft-delete-for-blobs"></a>Blob에 대한 일시 삭제를 사용 및 관리
 
-Blob 일시 삭제는 실수로 또는 실수로 수정 또는 삭제 되지 않도록 데이터를 보호 합니다. 저장소 계정에 대해 blob 일시 삭제를 사용 하도록 설정한 경우 해당 저장소 계정의 blob, blob 버전 (미리 보기) 및 스냅숏은 지정 된 보존 기간 내에 삭제 된 후 복구 될 수 있습니다.
+Blob 일시 삭제는 실수로 또는 실수로 수정 또는 삭제 되지 않도록 데이터를 보호 합니다. 저장소 계정에 대해 blob 일시 삭제를 사용 하도록 설정 하면 해당 저장소 계정의 blob, blob 버전 및 스냅숏이 삭제 된 후 지정 된 보존 기간 내에 복구 될 수 있습니다.
 
 응용 프로그램 또는 다른 저장소 계정 사용자가 실수로 데이터를 수정 하거나 삭제할 수 있는 경우 blob 일시 삭제를 설정 하는 것이 좋습니다. 이 문서에서는 blob에 대해 일시 삭제를 사용 하도록 설정 하는 방법을 보여 줍니다. Blob 일시 삭제에 대 한 자세한 내용은 [blob에 대 한 일시 삭제](soft-delete-blob-overview.md)를 참조 하세요.
 
@@ -134,7 +134,7 @@ block_blob_service.set_blob_service_properties(
     delete_retention_policy=DeleteRetentionPolicy(enabled=True, days=7))
 ```
 
-# <a name="net-v12-sdk"></a>[.NET v12 SDK](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 일시 삭제를 활성화하려면 Blob 클라이언트의 서비스 속성을 업데이트합니다.
 
@@ -148,7 +148,7 @@ block_blob_service.set_blob_service_properties(
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/DataProtection.cs" id="Snippet_RecoverSpecificBlobVersion":::
 
-# <a name="net-v11-sdk"></a>[.NET v11 SDK](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 일시 삭제를 활성화하려면 Blob 클라이언트의 서비스 속성을 업데이트합니다.
 
@@ -195,4 +195,4 @@ blockBlob.StartCopy(copySource);
 ## <a name="next-steps"></a>다음 단계
 
 - [Blob Storage에 대한 일시 삭제](soft-delete-overview.md)
-- [Blob 버전 관리(미리 보기)](versioning-overview.md)
+- [Blob 버전 관리](versioning-overview.md)

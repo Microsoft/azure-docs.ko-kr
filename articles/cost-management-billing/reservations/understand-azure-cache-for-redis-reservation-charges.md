@@ -7,16 +7,16 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/22/2020
 ms.author: yegu
-ms.openlocfilehash: 4ad28bd65fe9bc240e963f103ca5bd658e90fdfd
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 10fedaf5680976ae93984c9b2c607882f650019d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77529622"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213272"
 ---
 # <a name="how-the-reservation-discount-is-applied-to-azure-cache-for-redis"></a>예약 할인이 Azure Cache for Redis에 적용되는 방법
 
-Azure Cache for Redis 예약된 용량을 구입하면 예약 할인이 예약의 특성 및 수량과 일치하는 캐시 인스턴스에 자동으로 적용됩니다. 예약에는 Azure Cache for Redis의 컴퓨팅 비용만 포함됩니다. 정상 요금으로 스토리지 및 네트워킹에 대한 요금이 청구됩니다. 예약된 용량은 [프리미엄 계층](/azure/azure-cache-for-redis/cache-premium-tier-intro) 캐시에만 사용할 수 있습니다.
+Azure Cache for Redis 예약된 용량을 구입하면 예약 할인이 예약의 특성 및 수량과 일치하는 캐시 인스턴스에 자동으로 적용됩니다. 예약에는 Azure Cache for Redis의 컴퓨팅 비용만 포함됩니다. 정상 요금으로 스토리지 및 네트워킹에 대한 요금이 청구됩니다. 예약된 용량은 [프리미엄 계층](/https://docs.microsoft.com/azure/azure-cache-for-redis/quickstart-create-redis) 캐시에만 사용할 수 있습니다.
 
 ## <a name="how-reservation-discount-is-applied"></a>예약 할인이 적용되는 방법
 

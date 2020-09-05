@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/05/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 8b2b62ac4d79964c0a597f40d8154e5f57350f0b
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 9db8a0397c836e8cbc45404d9c4f149255fc76fa
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88031084"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271059"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure 파일 동기화 모니터링
 
@@ -135,7 +135,7 @@ Azure File Sync 에이전트가 설치 된 **Windows server** 에서는 **이벤
 
 상태 동기화
 
-- 동기화 시스템이 완료되면 이벤트 ID 9102가 기록됩니다. 이 이벤트를 사용 하 여 동기화 세션의 성공 여부 (**HResult = 0**) 및 항목당 동기화 오류가 있는지 여부를 확인 합니다. 자세한 내용은 [동기화 상태](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=server%2Cazure-portal#broken-sync) 및 [항목 별 오류](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=server%2Cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing) 설명서를 참조 하세요.
+- 동기화 시스템이 완료되면 이벤트 ID 9102가 기록됩니다. 이 이벤트를 사용 하 여 동기화 세션이 성공 하는지 여부 (**HResult = 0**) 및 항목당 동기화 오류가 있는지 확인 합니다 (**PerItemErrorCount**). 자세한 내용은 [동기화 상태](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=server%2Cazure-portal#broken-sync) 및  [항목 별 오류](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=server%2Cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing) 설명서를 참조 하세요.
 
   > [!Note]  
   > 동기화 세션이 전반적으로 실패 하거나 0이 아닌 PerItemErrorCount을 포함 하는 경우도 있습니다. 그러나 계속 해 서 진행 하 고 일부 파일은 성공적으로 동기화 됩니다. AppliedFileCount, AppliedDirCount, AppliedTombstoneCount 및 AppliedSizeBytes와 같은 적용 된 필드에서이를 확인할 수 있습니다. 이러한 필드는 성공한 세션의 양을 알려줍니다. 한 행에서 여러 동기화 세션이 실패 하 고 적용 되는 개수가 늘어나면 동기화 시간을 제공 하 여 지원 티켓을 열기 전에 다시 시도 하세요.
@@ -156,12 +156,13 @@ Azure File Sync 에이전트가 설치 된 **Windows server** 에서는 **이벤
   - 이벤트 ID 9016은 볼륨에 대한 고스팅 결과를 제공합니다. 예: 사용 가능한 공간 백분율은, 세션에서 고스트 된 파일 수 및 고스트에 실패 한 파일 수입니다.
   - 이벤트 ID 9029는 서버 엔드포인트의 고스팅 세션 정보를 제공합니다. 예: 세션에서 시도 된 파일 수, 세션에서 계층화 된 파일 수 및 이미 계층화 된 파일 수입니다.
   
-- 서버에서 회수 활동을 모니터링 하려면 원격 분석 이벤트 로그에서 이벤트 ID 9005, 9006, 9009 및 9059을 사용 합니다 .이 로그는 *응용 프로그램 및 Services\Microsoft\FileSync\Agent*아래 이벤트 뷰어에 있습니다.
+- 서버에서 회수 활동을 모니터링 하려면 원격 분석 이벤트 로그에서 이벤트 ID 9005, 9006, 9009, 9059 및 9071을 사용 합니다 .이 로그는 *응용 프로그램 및 Services\Microsoft\FileSync\Agent*아래 이벤트 뷰어에 있습니다.
 
   - 9005 이벤트 ID는 서버 엔드포인트에 대한 회수 안정성을 제공합니다. 예: 액세스 된 총 고유 파일 및 실패 한 액세스의 총 고유 파일.
   - 이벤트 ID 9006은 서버 엔드포인트에 대한 회수 오류 분포를 제공합니다. 예: 실패 한 총 요청 및 ErrorCode. 오류 코드 당 하나의 이벤트가 기록 됩니다.
   - 이벤트 ID 9009는 서버 엔드포인트의 회수 세션 정보를 제공합니다. 예: DurationSeconds, CountFilesRecallSucceeded 및 Countfilesrecallsucceeded.
   - 이벤트 ID 9059는 서버 엔드포인트의 애플리케이션 회수 분포를 제공합니다. 예: ShareId, 응용 프로그램 이름, TotalEgressNetworkBytes.
+  - 이벤트 ID 9071은 서버 끝점에 대 한 클라우드 계층화 효율성을 제공 합니다. 예: TotalDistinctFileCountCacheHit, TotalDistinctFileCountCacheMiss, TotalCacheHitBytes 및 TotalCacheMissBytes.
 
 ### <a name="performance-counters"></a>성능 카운터
 
@@ -195,7 +196,7 @@ Azure File Sync 에이전트가 설치 된 **Windows server** 에서는 **이벤
 5. **신호 논리 구성** 블레이드 내에서 신호 이름 아래의 **동기화 세션 결과** 를 클릭 합니다.  
 6. 다음 차원 구성을 선택 합니다. 
     - 차원 이름: **서버 끝점 이름**  
-    - 연산자**=** 
+    - 연산자 **=** 
     - 차원 값: **모든 현재 및 미래 값**  
 7. **경고 논리** 로 이동 하 고 다음을 완료 합니다. 
     - **정적** 으로 설정 되는 임계값 
@@ -217,7 +218,7 @@ Azure File Sync 에이전트가 설치 된 **Windows server** 에서는 **이벤
 5. **신호 논리 구성** 블레이드 내에서 신호 이름 아래에 있는 **파일 동기화 안 함** 을 클릭 합니다.  
 6. 다음 차원 구성을 선택 합니다. 
      - 차원 이름: **서버 끝점 이름**  
-     - 연산자**=** 
+     - 연산자 **=** 
      - 차원 값: **모든 현재 및 미래 값**  
 7. **경고 논리** 로 이동 하 고 다음을 완료 합니다. 
      - **정적** 으로 설정 되는 임계값 
@@ -239,7 +240,7 @@ Azure File Sync 에이전트가 설치 된 **Windows server** 에서는 **이벤
 5. **신호 논리 구성** 블레이드 내에서 신호 이름 아래의 **서버 온라인 상태** 를 클릭 합니다.  
 6. 다음 차원 구성을 선택 합니다. 
      - 차원 이름: **서버 이름**  
-     - 연산자**=** 
+     - 연산자 **=** 
      - 차원 값: **모든 현재 및 미래 값**  
 7. **경고 논리** 로 이동 하 고 다음을 완료 합니다. 
      - **정적** 으로 설정 되는 임계값 
@@ -261,7 +262,7 @@ Azure File Sync 에이전트가 설치 된 **Windows server** 에서는 **이벤
 5. **신호 논리 구성** 블레이드 내에서 신호 이름 아래의 **클라우드 계층화 회수 크기** 를 클릭 합니다.  
 6. 다음 차원 구성을 선택 합니다. 
      - 차원 이름: **서버 이름**  
-     - 연산자**=** 
+     - 연산자 **=** 
      - 차원 값: **모든 현재 및 미래 값**  
 7. **경고 논리** 로 이동 하 고 다음을 완료 합니다. 
      - **정적** 으로 설정 되는 임계값 

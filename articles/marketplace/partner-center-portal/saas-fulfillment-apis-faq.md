@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/11/2019
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 164a0e295179bb0c1e8d7da6b43d8e07a4e9f4e9
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 4c5d8b438764fa9aa3838b2225c63d412afc519b
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87304414"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606809"
 ---
 # <a name="common-questions-about-saas-fulfillment-apis"></a>SaaS 처리 Api에 대 한 일반적인 질문
 
@@ -67,9 +67,9 @@ API에 대 한 응답에는 `Resolve` SaaS 구독과 관련 된 제안 및 계�
 
 ![고객 계획 변경 흐름](media/saas-metering-service-integration-flow-b.png)
 
-아래 시퀀스는 Azure 고객이 Microsoft의 storefront에서 계획을 변경 하는 경우 흐름을 캡처합니다.
+아래 시퀀스는 Azure 고객이 Microsoft 온라인 스토어에서 요금제를 변경 하는 경우 흐름을 캡처합니다.
 
-![Customer storefront 계획 변경 흐름](media/saas-metering-service-integration-flow-c.png)
+![Customer online store 계획 변경 흐름](media/saas-metering-service-integration-flow-c.png)
 
 ### <a name="how-can-the-azure-user-unsubscribe-from-the-plan-associated-with-azure-subscription"></a>Azure 사용자가 Azure 구독과 관련 된 계획을 구독 취소 하려면 어떻게 해야 하나요?
 
@@ -79,9 +79,9 @@ Azure 사용자는 SaaS 환경에서 직접 또는 Microsoft 플랫폼을 통해
 
 ![SaaS 환경의 고객 구독 취소](media/saas-metering-service-integration-flow-d.png)
 
-아래 시퀀스는 Azure 사용자가 Microsoft의 storefront에서 구독을 취소 한 경우 흐름을 캡처합니다.
+아래 시퀀스는 Azure 사용자가 Microsoft의 온라인 스토어에서 구독을 구독 하는 경우 흐름을 캡처합니다.
 
-![Microsoft storefront에서 고객 구독 취소](media/saas-metering-service-integration-flow-e.png)
+![Microsoft 온라인 스토어의 고객 구독 취소](media/saas-metering-service-integration-flow-e.png)
 
 ## <a name="next-steps"></a>다음 단계
 

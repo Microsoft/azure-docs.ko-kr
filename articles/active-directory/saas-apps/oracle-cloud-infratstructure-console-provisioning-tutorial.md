@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 Oracle 클라우드 인프라 콘솔 구성 Microsoft Docs'
 description: 사용자 계정을 Azure AD에서 Oracle 클라우드 인프라 콘솔로 자동으로 프로 비전 및 프로 비전 해제 하는 방법을 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: e22c8746-7638-4a0f-ae08-7db0c477cf52
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 94f5be93d95cc1c524e6db464cac68879ed0b0e7
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 0c3d68698621fe963074c7216e4636208d93deca
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926793"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543874"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Oracle Cloud Infrastructure 콘솔 구성
 
@@ -75,7 +71,7 @@ ms.locfileid: "87926793"
 
 6. 비밀 토큰을 생성 하려면 Base64 클라이언트 id **: 클라이언트 암호**형식으로 클라이언트 id와 클라이언트 암호를 인코딩합니다. 비밀 토큰을 저장 합니다. 이 값은 Azure Portal의 Oracle 클라우드 인프라 콘솔 응용 프로그램의 프로 비전 탭에 있는 **비밀 토큰** 필드에 입력 됩니다.
 
-## <a name="step-3-add-oracle-cloud-infrastructure-console-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 Oracle Cloud Infrastructure Console 추가
+## <a name="step-3-add-oracle-cloud-infrastructure-console-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 Oracle Cloud Infrastructure Console 추가
 
 Azure AD 응용 프로그램 갤러리의 Oracle Cloud Infrastructure Console을 추가 하 여 Oracle 클라우드 인프라 콘솔로 프로 비전 관리를 시작 합니다. 이전에 SSO 용 Oracle Cloud Infrastructure Console을 설치한 경우 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다. 
 

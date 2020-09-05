@@ -3,12 +3,12 @@ title: Rest API를 사용 하 여 Azure 파일 공유 백업 관리
 description: REST API를 사용 하 여 Azure Backup에서 백업 된 Azure 파일 공유를 관리 하 고 모니터링 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.openlocfilehash: c4d1ee187fd1c45dfd043b28c0d4b3d5935f50e1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5e2823472c6a7bdd6b3f9819db3079d7efa78c4e
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073250"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892850"
 ---
 # <a name="manage-azure-file-share-backup-with-rest-api"></a>REST API를 사용 하 여 Azure 파일 공유 백업 관리
 
@@ -54,7 +54,7 @@ GET https://management.azure.com/Subscriptions/ef4ab5a7-c2c0-4304-af80-af49f48af
 
 #### <a name="response"></a>응답
 
-Name  | 유형  |  Description
+이름  | 유형  |  설명
 --- | --- | ----
 200 정상 |  JobResource  | 정상
 

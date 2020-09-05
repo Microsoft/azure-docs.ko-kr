@@ -12,18 +12,18 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 07/27/2020
+ms.date: 08/19/2020
 ms.author: b-juche
-ms.openlocfilehash: bdcffcea8d695b6a3d49272ffa135187d77aae1e
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 20cbc9b33e567ffe306aae694bb835d95c2d861e
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87535481"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88704980"
 ---
-# <a name="configure-an-nfs-client-for-azure-netapp-files"></a>Azure NetApp Files에 대 한 NFS 클라이언트 구성
+# <a name="configure-an-nfs-client-for-azure-netapp-files"></a>Azure NetApp Files에 대한 NFS 클라이언트 구성
 
-Azure NetApp Files와 함께 사용할 수 있는 광범위 한 Linux 배포판입니다. 이 문서에서는 일반적으로 사용 되는 두 가지 환경 (RHEL 8 및 Ubuntu 18.04)에 대 한 구성을 설명 합니다.
+이 문서에 설명 된 NFS 클라이언트 구성은 [nfsv 4.1 Kerberos 암호화를 구성](configure-kerberos-encryption.md) 하거나 [이중 프로토콜 볼륨을 만들](create-volumes-dual-protocol.md)때 설치 프로그램의 일부입니다. Azure NetApp Files와 함께 사용할 수 있는 광범위 한 Linux 배포판입니다. 이 문서에서는 일반적으로 사용 되는 두 가지 환경 (RHEL 8 및 Ubuntu 18.04)에 대 한 구성을 설명 합니다. 
 
 사용 하는 Linux 버전에 관계 없이 다음 구성이 필요 합니다.
 * 시간 오차 문제를 방지 하도록 NTP 클라이언트를 구성 합니다.

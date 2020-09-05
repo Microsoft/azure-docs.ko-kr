@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/21/2020
 ms.author: tamram
 ms.reviewer: ozgun
-ms.openlocfilehash: 3069ee020d5f127eb0bdb8cbaf251cd3f3cef8d9
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e037607d1f86e6df4d3f5b12e29ba8fde447ebc9
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86118422"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757934"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-storage"></a>Azure Storage에 대 한 advanced threat protection 구성
 
@@ -32,6 +32,17 @@ Azure Storage에 대 한 Advanced threat protection은 현재 Blob Storage, Azur
 Data Lake Storage에 대해 계층적 네임 스페이스를 사용 하도록 설정 된 계정은 Azure Blob 저장소 Api와 Data Lake Storage Api를 모두 사용 하 여 트랜잭션을 지원 합니다. Azure 파일 공유는 SMB를 통한 트랜잭션을 지원 합니다.
 
 무료 30 일 평가판을 비롯 한 가격 정보는 [Azure Security Center 가격 책정 페이지](https://azure.microsoft.com/pricing/details/security-center/)를 참조 하세요.
+
+다음 목록에는 Azure Storage에 대 한 advanced threat protection의 가용성이 요약 되어 있습니다.
+
+- 릴리스 상태:
+  - [Blob Storage](https://azure.microsoft.com/services/storage/blobs/) (일반 공급)
+  - [Azure Files](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) (미리 보기는 SMB 및 REST 트랜잭션을 지원)
+  - Azure Data Lake Storage Gen2(미리 보기)
+- 클라우드:<br>
+    ✔ 상용 클라우드<br>
+    ✔ US Gov<br>
+    ✘ 중국 .Gov, 기타 .Gov
 
 ## <a name="set-up-advanced-threat-protection"></a>Advanced threat protection 설정
 
@@ -107,7 +118,7 @@ Rest API 명령을 사용 하 여 특정 저장소 계정에 대 한 advanced th
 스토리지 작업에서 잘못된 부분이 발생하면 의심스러운 보안 이벤트에 대한 정보가 포함된 이메일 알림을 받게 됩니다. 이벤트 세부 정보에는 다음과 같은 내용이 포함됩니다.
 
 * 변칙의 특성
-* 스토리지 계정 이름입니다.
+* 스토리지 계정 이름
 * 이벤트 시간
 * 저장소 유형
 * 가능한 원인

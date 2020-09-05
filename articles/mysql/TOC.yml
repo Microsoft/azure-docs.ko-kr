@@ -1,4 +1,4 @@
-- name: MySQL Docs용 Azure DB
+- name: Azure DB for MySQL 설명서
   href: index.yml
 - name: 개요
   items:
@@ -28,6 +28,12 @@
           href: connect-php.md
         - name: Java
           href: connect-java.md
+        - name: Spring Data JDBC를 사용하는 Java
+          href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+        - name: Spring Data JPA를 사용하는 Java
+          href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+        - name: Spring Data R2DBC를 사용하는 Java
+          href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
         - name: .NET
           href: connect-csharp.md
         - name: Python
@@ -68,9 +74,6 @@
       href: sample-scripts-azure-cli.md
     - name: Java 연결 풀링
       href: sample-scripts-java-connection-pooling.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: DB 및 서버
@@ -111,6 +114,9 @@
           href: concepts-azure-ad-authentication.md
         - name: 인프라 이중 암호화
           href: concepts-infrastructure-double-encryption.md
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: 보안 기준
           href: security-baseline.md
     - name: 비즈니스 연속성
@@ -138,6 +144,8 @@
           href: concepts-server-parameters.md
     - name: 개발
       items:
+        - name: 애플리케이션 모범 사례
+          href: app-development-best-practices.md
         - name: 드라이버 및 도구 호환성
           href: concepts-compatibility.md
         - name: 애플리케이션 개발
@@ -148,10 +156,14 @@
           href: concepts-aks.md
         - name: Java
           items:
-            - name: Spring Data JDBC 구성
-              href: /java/azure/spring-framework/configure-spring-data-jdbc-with-azure-mysql
-            - name: Spring Data JPA 구성
-              href: /java/azure/spring-framework/configure-spring-data-jpa-with-azure-mysql
+            - name: Java 및 JDBC 사용
+              href: connect-java.md
+            - name: Spring Data JDBC 사용
+              href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+            - name: Spring Data JPA 사용
+              href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
+            - name: Spring Data R2DBC 사용
+              href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-mysql?toc=/azure/mysql/toc.json&bc=/azure/bread/toc.json
     - name: 복제
       items:
         - name: 데이터 내부 복제
@@ -250,6 +262,8 @@
           href: howto-read-replicas-powershell.md
     - name: 문제 해결
       items:
+        - name: 일반적인 오류 문제 해결
+          href: howto-troubleshoot-common-errors.md
         - name: 연결 오류 문제 해결
           href: howto-troubleshoot-common-connection-issues.md
         - name: 쿼리 성능 문제 해결
@@ -318,6 +332,9 @@
       href: /azure/templates/microsoft.dbformysql/allversions
     - name: 관리 저장 프로시저
       href: reference-stored-procedures.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: 배포 템플릿

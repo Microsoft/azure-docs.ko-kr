@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: erhopf
-ms.openlocfilehash: b9311d605d07bbf3844963aed97e9fc510a4897a
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 472bf122288fede5cccc27f73b2e73466ef0caad
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80671849"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226180"
 ---
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -113,7 +113,7 @@ ms.locfileid: "80671849"
 
 1. 동일한 파일에서 `YourSubscriptionKey` 문자열을 구독 키로 바꿉니다.
 
-1. 문자열 `YourServiceRegion`을 구독과 연결된 [지역](~/articles/cognitive-services/Speech-Service/regions.md)으로 바꿉니다(예를 들어 평가판 구독에 대해 `westus`).
+1. `YourServiceRegion` 문자열을 구독과 연결된 [Azure 지역](~/articles/cognitive-services/Speech-Service/regions.md)으로 바꿉니다.
 
 1. 메뉴 모음에서 **파일** > **모두 저장**을 선택합니다.
 

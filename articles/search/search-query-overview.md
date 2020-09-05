@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/22/2020
-ms.openlocfilehash: 8f170d541ec314020702ab53606eed4d660cea9e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 018c3fb08c7fa0ad35fa567bffbeae48b6fbbce9
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85130809"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928839"
 ---
 # <a name="query-types-and-composition-in-azure-cognitive-search"></a>Azure Cognitive Search의 쿼리 유형 및 컴퍼지션
 
 Azure Cognitive Search에서 쿼리는 라운드트립 작업의 전체 사양입니다. 요청에는 엔진에 대 한 실행 명령 뿐만 아니라 응답이 반환 되는 매개 변수를 제공 하는 매개 변수가 있습니다. 지정 되지 않음 ( `search=*` ). 일치 조건이 없고 null 또는 기본 매개 변수를 사용 하는 경우 쿼리는 모든 검색 가능 필드에 대해 전체 텍스트 검색 작업으로 실행 되어 점수가 매겨지지 않은 결과 집합을 임의의 순서로 반환 합니다.
 
-다음 예는 [REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)에서 생성 된 대표적인 쿼리입니다. 이 예에서는 [호텔 데모 인덱스](search-get-started-portal.md) 를 대상으로 하 고 쿼리 형태에 대 한 아이디어를 얻을 수 있도록 공통 매개 변수를 포함 합니다.
+다음 예는 [REST API](/rest/api/searchservice/search-documents)에서 생성 된 대표적인 쿼리입니다. 이 예에서는 [호텔 데모 인덱스](search-get-started-portal.md) 를 대상으로 하 고 쿼리 형태에 대 한 아이디어를 얻을 수 있도록 공통 매개 변수를 포함 합니다.
 
 ```
 {
@@ -55,7 +55,7 @@ Azure Cognitive Search에서 쿼리 실행은 항상 요청에 제공 된 api �
 
 코드를 작성 하기 전에 쿼리 도구를 사용 하 여 구문을 학습 하 고 다른 매개 변수를 사용 하 여 시험해 볼 수 있습니다. 가장 빠른 방법은 기본 제공 포털 도구인 [검색 탐색기](search-explorer.md)입니다.
 
-이 [빠른 시작을 수행 하 여 호텔 데모 인덱스를 만든](search-get-started-portal.md)경우이 쿼리 문자열을 탐색기의 검색 창에 붙여넣어 첫 번째 쿼리를 실행할 수 있습니다.`search=+"New York" +restaurant&searchFields=Description, Address/City, Tags&$select=HotelId, HotelName, Description, Rating, Address/City, Tags&$top=10&$orderby=Rating desc&$count=true`
+이 [빠른 시작을 수행 하 여 호텔 데모 인덱스를 만든](search-get-started-portal.md)경우이 쿼리 문자열을 탐색기의 검색 창에 붙여넣어 첫 번째 쿼리를 실행할 수 있습니다. `search=+"New York" +restaurant&searchFields=Description, Address/City, Tags&$select=HotelId, HotelName, Description, Rating, Address/City, Tags&$top=10&$orderby=Rating desc&$count=true`
 
 ## <a name="how-query-operations-are-enabled-by-the-index"></a>인덱스로 쿼리 작업을 사용하는 방법
 
@@ -65,7 +65,7 @@ Azure Cognitive Search에서 쿼리 실행은 항상 요청에 제공 된 api �
 
 ![호텔 샘플에 대 한 인덱스 정의](./media/search-query-overview/hotel-sample-index-definition.png "호텔 샘플에 대 한 인덱스 정의")
 
-위의 스크린샷은 호텔 샘플에 대 한 인덱스 특성의 부분 목록입니다. 전체 인덱스 스키마는 포털에서 볼 수 있습니다. 인덱스 특성에 대한 자세한 내용은 [인덱스 REST API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조하세요.
+위의 스크린샷은 호텔 샘플에 대 한 인덱스 특성의 부분 목록입니다. 전체 인덱스 스키마는 포털에서 볼 수 있습니다. 인덱스 특성에 대한 자세한 내용은 [인덱스 REST API 만들기](/rest/api/searchservice/create-index)를 참조하세요.
 
 > [!Note]
 > 일부 쿼리 기능은 필드별로 활성화되기 보다는 인덱스 전체에서 사용하도록 설정됩니다. 이러한 기능에는 [동의어 맵](search-synonyms.md), [사용자 지정 분석기](index-add-custom-analyzers.md), [확인 기 구문 (자동 완성 및 제안 된 쿼리)](index-add-suggesters.md), [결과 순위 지정을 위한 점수 매기기 논리가](index-add-scoring-profiles.md)포함 됩니다.
@@ -76,24 +76,24 @@ Azure Cognitive Search에서 쿼리 실행은 항상 요청에 제공 된 api �
 
 쿼리 요청의 필요한 요소에는 다음 구성 요소가 포함됩니다.
 
-+ 고정 및 사용자 정의 구성 요소를 포함 하는 URL로 표현 되는 서비스 끝점 및 인덱스 문서 컬렉션:**`https://<your-service-name>.search.windows.net/indexes/<your-index-name>/docs`**
-+ **`api-version`**(REST만 해당) 둘 이상의 API 버전을 항상 사용할 수 있기 때문에 필요 합니다. 
++ 고정 및 사용자 정의 구성 요소를 포함 하는 URL로 표현 되는 서비스 끝점 및 인덱스 문서 컬렉션: **`https://<your-service-name>.search.windows.net/indexes/<your-index-name>/docs`**
++ **`api-version`** (REST만 해당) 둘 이상의 API 버전을 항상 사용할 수 있기 때문에 필요 합니다. 
 + **`api-key`** 쿼리 또는 관리 api 키 중 하나는 서비스에 대 한 요청을 인증 합니다.
 + **`queryType`** 단순 또는 전체입니다. 기본 제공 단순 구문을 사용 하는 경우에는 생략할 수 있습니다.
 + **`search`** 또는 **`filter`** 빈 검색을 수행 하려는 경우 지정 하지 않을 수 있는 일치 조건을 제공 합니다. 두 가지 쿼리 유형 모두 간단한 파서로 설명되지만 고급 쿼리의 경우에도 복잡한 쿼리 식을 전달하기 위한 검색 매개 변수가 필요합니다.
 
-모든 다른 검색 매개 변수는 선택 사항입니다. 전체 특성 목록은 [인덱스 만들기(REST)](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조하세요. 처리 하는 동안 매개 변수를 사용 하는 방법에 대 한 자세한 내용은 [Azure Cognitive Search에서 전체 텍스트 검색이 작동 하는 방식](search-lucene-query-architecture.md)을 참조 하세요.
+모든 다른 검색 매개 변수는 선택 사항입니다. 전체 특성 목록은 [인덱스 만들기(REST)](/rest/api/searchservice/create-index)를 참조하세요. 처리 하는 동안 매개 변수를 사용 하는 방법에 대 한 자세한 내용은 [Azure Cognitive Search에서 전체 텍스트 검색이 작동 하는 방식](search-lucene-query-architecture.md)을 참조 하세요.
 
 ## <a name="choose-apis-and-tools"></a>Api 및 도구 선택
 
 다음 표에는 쿼리를 제출하기 위한 API 및 도구 기반 접근 방법이 나와 있습니다.
 
-| 방법 | 설명 |
+| 방법론 | Description |
 |-------------|-------------|
 | [검색 탐색기 (포털)](search-explorer.md) | 검색 표시줄 및 인덱스와 api-version 선택을 위한 옵션을 제공합니다. 결과는 JSON 문서로 반환됩니다. 탐색, 테스트 및 유효성 검사에 권장 됩니다. <br/>[자세한 정보](search-get-started-portal.md#query-index) | 
 | [Postman 또는 기타 REST 도구](search-get-started-postman.md) | 웹 테스트 도구는 REST 호출 작성에 적합한 선택 항목입니다. REST API는 Azure Cognitive Search에서 가능한 모든 작업을 지원 합니다. 이 문서에서는 Azure Cognitive Search에 요청을 보내기 위한 HTTP 요청 헤더 및 본문을 설정 하는 방법에 대해 알아봅니다.  |
-| [SearchIndexClient(.NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet) | Azure Cognitive Search 인덱스를 쿼리 하는 데 사용할 수 있는 클라이언트입니다.  <br/>[자세한 정보](search-howto-dotnet-sdk.md#core-scenarios)  |
-| [Search Documents(REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) | 인덱스에 대한 GET 또는 POST 메서드로, 추가 입력을 위해 쿼리 매개 변수를 사용합니다.  |
+| [SearchIndexClient(.NET)](/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet) | Azure Cognitive Search 인덱스를 쿼리 하는 데 사용할 수 있는 클라이언트입니다.  <br/>[자세한 정보](search-howto-dotnet-sdk.md#core-scenarios)  |
+| [Search Documents(REST API)](/rest/api/searchservice/search-documents) | 인덱스에 대한 GET 또는 POST 메서드로, 추가 입력을 위해 쿼리 매개 변수를 사용합니다.  |
 
 ## <a name="choose-a-parser-simple--full"></a>파서 선택: 단순 | 전체
 
@@ -119,11 +119,11 @@ queryType=full&search=ocean historic^3&searchFields=Description, Tags&$select=Ho
 
 Azure Cognitive Search는 광범위 한 쿼리 유형을 지원 합니다. 
 
-| 쿼리 유형 | 사용량 | 예제 및 자세한 정보 |
+| 쿼리 유형 | 사용 | 예제 및 자세한 정보 |
 |------------|--------|-------------------------------|
 | 자유 형식 텍스트 검색 | 매개 변수와 파서 중 하나를 검색| 전체 텍스트 검색은 인덱스의 *검색 가능한* 모든 필드에서 하나 이상의 단어를 검색하고 Google 또는 Bing과 같은 검색 엔진이 작동할 것으로 예상되는 방식으로 작동합니다. 소개의 예는 전체 텍스트 검색입니다.<br/><br/>전체 텍스트 검색은 표준 Lucene 분석기 (기본적으로)를 사용 하 여 어휘 분석을 수행 하 여 모든 용어를 소문자로, "the"와 같은 중지 단어를 제거 합니다. [영어가 아닌 분석기](index-add-language-analyzers.md#language-analyzer-list) 또는 어휘 분석을 수정 하는 [특수 한 언어 관련 분석기](index-add-custom-analyzers.md#AnalyzerTable) 를 사용 하 여 기본값을 재정의할 수 있습니다. 필드의 전체 내용을 단일 토큰으로 취급하는 [키워드](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html)가 예입니다. 우편 번호, ID 및 일부 제품 이름과 같은 데이터에 유용합니다. | 
 | 필터링된 검색 | [OData 필터 식](query-odata-filter-orderby-syntax.md)과 파서 중 하나 | 필터 쿼리는 인덱스의 *필터링 가능한* 모든 필드에 걸쳐 부울 식을 계산합니다. 검색과 달리 필터 쿼리는 문자열 필드에서 대/소문자 구분을 포함하여 필드의 정확한 내용을 검색합니다. 또 다른 차이점은 필터 쿼리는 OData 구문으로 표현된다는 점입니다. <br/>[필터 식 예제](search-query-simple-examples.md#example-3-filter-queries) |
-| 지리적 검색 | 필드, 필터 식 및 파서 중 하나에 [Edm.GeographyPoint 유형](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) | Edm.GeographyPoint가 있는 필드에 저장된 좌표는 "내 주변 찾기"또는 지도 기반 검색 컨트롤에 사용됩니다. <br/>[지리적 검색 예제](search-query-simple-examples.md#example-5-geo-search)|
+| 지리적 검색 | 필드, 필터 식 및 파서 중 하나에 [Edm.GeographyPoint 유형](/rest/api/searchservice/supported-data-types) | Edm.GeographyPoint가 있는 필드에 저장된 좌표는 "내 주변 찾기"또는 지도 기반 검색 컨트롤에 사용됩니다. <br/>[지리적 검색 예제](search-query-simple-examples.md#example-5-geo-search)|
 | 범위 검색 | 필터 식 및 단순 파서 | Azure Cognitive Search에서는 필터 매개 변수를 사용 하 여 범위 쿼리를 작성 합니다. <br/>[범위 필터 예제](search-query-simple-examples.md#example-4-range-filters) | 
 | [필드 지정 검색](query-lucene-syntax.md#bkmk_fields) | 매개 변수와 전체 파서 검색 | 단일 필드를 대상으로 복합 쿼리 식을 작성합니다. <br/>[필드 지정 검색 예제](search-query-lucene-examples.md#example-2-fielded-search) |
 | [유사 항목 검색](query-lucene-syntax.md#bkmk_fuzzy) | 매개 변수와 전체 파서 검색 | 유사한 구조 또는 철자가 포함된 용어를 검색합니다. <br/>[유사 항목 검색 예제](search-query-lucene-examples.md#example-3-fuzzy-search) |
@@ -169,5 +169,5 @@ Azure Cognitive Search에서는 **`highlight`** , 및 매개 변수를 사용 �
 
 + [Azure Cognitive Search에서 전체 텍스트 검색이 작동 하는 방식 (쿼리 구문 분석 아키텍처)](search-lucene-query-architecture.md)
 + [검색 탐색기](search-explorer.md)
-+ [.NET에서 쿼리를 수행하는 방법](search-query-dotnet.md)
-+ [REST에서 쿼리를 수행하는 방법](search-create-index-rest-api.md)
++ [.NET에서 쿼리를 수행하는 방법](./search-get-started-dotnet.md)
++ [REST에서 쿼리를 수행하는 방법](./search-get-started-powershell.md)

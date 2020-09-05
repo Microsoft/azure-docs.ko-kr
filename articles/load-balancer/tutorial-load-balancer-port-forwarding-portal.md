@@ -16,10 +16,10 @@ ms.date: 02/26/2019
 ms.author: allensu
 ms.custom: seodec18
 ms.openlocfilehash: dcb151c8be0ab3a2393d0659b75985a92ac60507
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "82207890"
 ---
 # <a name="tutorial-configure-port-forwarding-in-azure-load-balancer-using-the-portal"></a>자습서: 포털을 사용하여 Azure Load Balancer에서 포트 전달 구성
@@ -150,8 +150,8 @@ VM에 대해 인바운드 인터넷(HTTP) 연결을 허용하는 NSG(네트워�
    - **프로토콜**: **TCP**를 선택합니다. 
    - **작업**: **허용**을 선택합니다.  
    - **우선 순위**: *100*을 입력합니다. 
-   - **Name**: *MyHTTPRule*을 입력합니다. 
-   - **설명**: ‘HTTP 허용’을 입력합니다.  
+   - **이름**: *MyHTTPRule*을 입력합니다. 
+   - **설명**: *HTTP 허용*을 입력합니다. 
    
 1. **추가**를 선택합니다. 
    
@@ -242,7 +242,7 @@ VM을 만들 때 부하 분산 장치 백 엔드 풀을 만들고 VM을 풀에 �
    
 1. **확인**을 선택합니다.
    
-1. 단계를 반복해서 **포트**:  *4222* 및 **대상 가상 머신**: **MyVM2**.
+1. 단계를 반복해서 **포트**: *4222* 및 **대상 가상 머신**: **MyVM2**.
 
 ## <a name="test-the-load-balancer"></a>부하 분산 장치 테스트
 

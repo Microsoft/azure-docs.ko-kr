@@ -4,18 +4,18 @@ description: Azure Backup Server를 사용하여 Azure 백업에 Exchange 서버
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.openlocfilehash: 2e3e89d93ab35724a09138d48863badad6a41b71
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 043122271bfa91b1cbaa490760da712cd1b867cc
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514121"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825038"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Azure Backup Server를 사용하여 Azure에 Exchange 서버 백업
 
 이 문서에서는 Microsoft Azure Backup Server(MABS)를 구성하여 Azure에 Microsoft Exchange server를 백업하는 방법을 설명합니다.  
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 준비 사항
 
 계속하기 전에 Azure Backup Server가 [설치 및 준비](backup-azure-microsoft-azure-backup.md)되어 있는지 확인합니다.
 
@@ -61,17 +61,17 @@ Exchange 서버에서 MABS 보호 에이전트를 설치하려면 다음 단계�
 9. **복사 Backup**에 대한 데이터베이스를 선택하고 **다음**을 클릭합니다.
 
    > [!NOTE]
-   > 데이터베이스의 DAG 복사본 하나 이상에 대해 "전체 백업"을 선택 하지 않으면 로그는 잘리지 않습니다.
+   > 데이터베이스의 DAG 복사본 하나 이상에 대해 "전체 백업"을 선택 하지 않은 경우 로그는 잘리지 않습니다.
    >
    >
 10. **단기 백업**에 대한 목표를 구성하고 **다음**을 클릭합니다.
 11. 사용 가능한 디스크 공간을 검토하고 **다음**을 클릭합니다.
 12. MABS 서버에서 초기 복제를 만들 시간을 선택 하 고 **다음**을 클릭 합니다.
 13. 일관성 확인 옵션을 선택하고 **다음**을 클릭합니다.
-14. Azure에 백업하려는 데이터베이스를 선택하고 **다음**을 클릭합니다. 예를 들면 다음과 같습니다.
+14. Azure에 백업하려는 데이터베이스를 선택하고 **다음**을 클릭합니다. 예를 들어:
 
     ![온라인 보호 데이터 지정](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. **Azure Backup**에 대한 일정을 정의하고 **다음**을 클릭합니다. 예를 들면 다음과 같습니다.
+15. **Azure Backup**에 대한 일정을 정의하고 **다음**을 클릭합니다. 예를 들어:
 
     ![온라인 백업 일정 지정](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 

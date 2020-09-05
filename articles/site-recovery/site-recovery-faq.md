@@ -4,12 +4,12 @@ description: 이 문서에서는 Azure Site Recovery에 대한 일반적인 주�
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: 89a5785811b4f4833a5a5ddcef827b258ce1775a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d77f62a57a75f13589b11e023f902c1a128a0d95
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083738"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950496"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Azure Site Recovery에 대한 일반적인 질문
 
@@ -247,6 +247,73 @@ LRS 또는 GRS 스토리지가 필요합니다. 지역 정전이 발생하거나
 
 >[!Note]
 >사용자 지정 스크립트를 지원 하려면 Site Recovery 에이전트 버전이 9.24 이상 이어야 합니다.
+
+## <a name="replication-policy"></a>복제 정책
+
+### <a name="what-is-a-replication-policy"></a>복제 정책은 무엇인가요?
+
+복제 정책은 복구 지점의 보존 기록에 대한 설정을 정의합니다. 또한 정책은 앱 일치 스냅샷의 빈도를 정의합니다. 기본적으로 Azure Site Recovery는 다음 기본 설정을 사용하여 새 복제 정책을 만듭니다.
+
+- 복구 지점의 보존 기록의 경우 24시간으로 설정합니다.
+- 앱 일치 스냅숏의 빈도는 4 시간입니다.
+
+### <a name="what-is-a-crash-consistent-recovery-point"></a>크래시 일치 복구 지점은 무엇인가요?
+
+크래시 일치 복구 지점에는 마치 스냅샷 중에 서버에서 전원 코드가 빠진 경우의 디스크 데이터가 있습니다. 크래시 일치 복구 지점에 스냅샷을 만들 때 메모리에 있던 내용은 포함되지 않습니다.
+
+현재 대부분의 애플리케이션은 크래시 일치 스냅샷을 제대로 복구할 수 있습니다. 크래시 일치 복구 지점은 데이터베이스가 없는 운영 체제와 파일 서버, DHCP 서버, 인쇄 서버 등의 애플리케이션에 일반적으로 적합합니다.
+
+### <a name="what-is-the-frequency-of-crash-consistent-recovery-point-generation"></a>충돌 일치 복구 지점 생성 빈도는 어느 정도인가요?
+
+Site Recovery는 5분 마다 크래시 일치 복구 지점을 만듭니다.
+
+### <a name="what-is-an-application-consistent-recovery-point"></a>애플리케이션 일치 복구 지점은 무엇인가요?
+
+애플리케이션 일치 복구 지점은 애플리케이션 일치 스냅샷에서 만들어집니다. 애플리케이션 일치 복구 지점은 크래시 일치 스냅샷과 동일한 데이터를 캡처하고 메모리에 있는 데이터와 처리 중인 모든 트랜잭션을 캡처합니다.
+
+추가 콘텐츠로 인해, 애플리케이션 일관성이 있는 스냅샷은 가장 복잡하며 가장 오랜 시간이 걸립니다. 애플리케이션 일치 복구 지점은 데이터베이스 운영 체제와 SQL 서버 등의 애플리케이션에 권장됩니다.
+
+### <a name="what-is-the-impact-of-application-consistent-recovery-points-on-application-performance"></a>애플리케이션 일치 복구 지점이 애플리케이션 성능에 미치는 영향은 무엇입니까?
+
+애플리케이션 일치 복구 지점은 메모리에 있는 데이터와 처리 중인 모든 데이터를 캡처합니다. 복구 지점은 해당 데이터를 캡처하기 때문에 애플리케이션을 정지하려면 Windows에서 볼륨 섀도 복사본 서비스와 같은 프레임워크가 필요합니다. 캡처 프로세스가 빈번하게 발생하는 경우 워크로드가 이미 다른 작업을 진행 중이면 성능에 영향을 줄 수 있습니다. 비데이터베이스 워크로드의 경우 앱 일치 복구 지점을 자주 사용하는 것이 좋습니다. 데이터베이스 워크로드의 경우에도 1시간으로 충분합니다.
+
+### <a name="what-is-the-minimum-frequency-of-application-consistent-recovery-point-generation"></a>애플리케이션 일치 복구 지점 생성의 최소 빈도는 어느 정도인가요?
+
+Site Recovery는 최소 1시간의 빈도로 애플리케이션 일치 복구 지점을 생성할 수 있습니다.
+
+### <a name="how-are-recovery-points-generated-and-saved"></a>복구 지점은 어떻게 생성 및 저장되나요?
+
+Site Recovery에서 복구 지점이 생성되는 방식을 이해하기 위해 복제 정책 예제를 살펴보겠습니다. 이 복제 정책에는 24시간 보존 기간 및 1시간의 앱 일치 빈도 스냅샷이 있는 복구 지점이 포함되어 있습니다.
+
+Site Recovery는 5분 마다 크래시 일치 복구 지점을 만듭니다. 사용자가 이 빈도를 변경할 수는 없습니다. 지난 1시간 동안에 대한 12개의 크래시 일치 지점과 1개의 앱 일치 지점 중에서 선택할 수 있습니다. 시간이 지남에 따라 Site Recovery는 마지막 1시간 이전에 만든 모든 복구 지점을 정리하여 시간당 한 개의 복구 지점만 저장합니다.
+
+다음 스크린샷은 예제를 보여줍니다. 스크린샷:
+
+- 지난 1 시간 내에 5분 간격으로 만든 복구 지점이 있습니다.
+- 마지막 1시간 이전에 Site Recovery는 1개의 복구 지점만 유지합니다.
+
+   ![생성된 복구 지점 목록](./media/azure-to-azure-troubleshoot-errors/recoverypoints.png)
+
+### <a name="how-far-back-can-i-recover"></a>복구할 수 있는 가장 오랜 복구 지점은 어떻게 되나요?
+
+사용할 수 있는 가장 오래된 복구 지점은 72시간입니다.
+
+### <a name="i-have-a-replication-policy-of-24-hours-what-will-happen-if-a-problem-prevents-site-recovery-from-generating-recovery-points-for-more-than-24-hours-will-my-previous-recovery-points-be-lost"></a>24시간 동안의 복제 정책이 있습니다. 문제가 있어서 Site Recovery에서 24시간을 초과하는 지난 복구 지점을 생성하지 못하는 경우 어떻게 되나요? 이전 복구 지점이 손실되나요?
+
+아니요, Site Recovery는 이전 복구 지점을 모두 유지합니다. 복구 지점의 보존 기간에 따라 Site Recovery는 새 지점을 생성하는 경우에만 가장 오래된 지점을 대체합니다. 문제로 인해 Site Recovery에서 새 복구 지점이 생성할 수 없습니다. 새 복구 지점이 있을 때까지 보존 기간에 도달한 후에도 이전 모든 지점은 유지됩니다.
+
+### <a name="after-replication-is-enabled-on-a-vm-how-do-i-change-the-replication-policy"></a>VM에서 복제를 사용하도록 설정한 후 복제 정책을 변경하려면 어떻게 할까요?
+
+**Site Recovery 자격 증명 모음** > **Site Recovery 인프라** > **복제 정책**으로 이동합니다. 편집할 정책을 선택하고 변경 내용을 저장합니다. 변경 내용은 모든 기존 복제에도 적용됩니다.
+
+### <a name="are-all-the-recovery-points-a-complete-copy-of-the-vm-or-a-differential"></a>모든 복구 지점이 VM의 전체 복사본인가요, 아니면 차등 복사본인가요?
+
+생성되는 첫 번째 복구 지점에 전체 복사본이 있습니다. 모든 연속 복구 지점에는 델타 변경 내용이 있습니다.
+
+### <a name="does-increasing-the-retention-period-of-recovery-points-increase-the-storage-cost"></a>복구 지점의 보존 기간을 늘리면 스토리지 비용도 증가하나요?
+
+예, 보존 기간을 24시간에서 72시간으로 늘리면 Site Recovery에서 추가 48시간의 복구 지점을 저장합니다. 추가된 시간에 대해 스토리지 요금이 부과됩니다. 예를 들어, 단일 복구 지점에는 월별 $0.16의 GB당 비용에 해당하는 10GB의 델타 변경이 있을 수 있습니다. 추가 요금은 월별 $1.60×48이 됩니다.
+
 
 ## <a name="failover"></a>장애 조치
 ### <a name="if-im-failing-over-to-azure-how-do-i-access-the-azure-vms-after-failover"></a>Azure로 장애 조치(failover)하는 경우 장애 조치(failover) 후에 어떻게 Azure VM에 액세스하나요?

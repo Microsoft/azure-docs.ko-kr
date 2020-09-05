@@ -1,5 +1,5 @@
 ---
-title: 샘플 클라이언트 앱으로 기본 사항 살펴보기
+title: '자습서: 샘플 클라이언트 앱으로 기본 사항 살펴보기'
 titleSuffix: Azure Digital Twins
 description: 샘플 명령줄 애플리케이션을 사용하여 Azure Digital Twins SDK를 살펴보는 자습서
 author: baanders
@@ -7,23 +7,24 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: d02766d82690d2f546fdcbad76efcda043f54471
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: a1dc42815167da308fd87b541c0f21d02b47329b
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986274"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022516"
 ---
-# <a name="explore-azure-digital-twins-with-a-sample-client-app"></a>샘플 클라이언트 앱으로 Azure Digital Twins 살펴보기
+# <a name="tutorial-explore-azure-digital-twins-with-a-sample-client-app"></a>자습서: 샘플 클라이언트 앱으로 Azure Digital Twins 살펴보기
 
 이 자습서에서는 Azure Digital Twins 인스턴스와 상호 작용을 위해 명령줄 클라이언트 애플리케이션을 구현하는 샘플 애플리케이션을 소개합니다. 클라이언트 앱은 [*자습서: 클라이언트 앱 코딩*](tutorial-code.md)에서 작성한 앱과 유사합니다.
 
 이 샘플을 사용하여 모델 업로드, 트윈 생성 및 수정, 관계 생성과 같은 필수 Azure Digital Twins 작업을 수행할 수 있습니다. 또한 샘플 코드를 보고 Azure Digital Twins API에 대해 배우고 원하는 대로 샘플 프로젝트를 수정하여 명령을 직접 구현해 볼 수 있습니다.
 
 이 자습서에서는 다음을 수행합니다.
-1. Azure Digital Twins 인스턴스 설정
-2. 인스턴스와 상호 작용하도록 샘플 명령줄 앱 구성
-3. 명령줄 앱을 사용하여 **모델**, **디지털 트윈**, **관계** 및 **쿼리**를 포함한 Azure Digital Twins를 살펴봅니다.
+> [!div class="checklist"]
+> * Azure Digital Twins 인스턴스 설정
+> * 인스턴스와 상호 작용하도록 샘플 명령줄 앱 구성
+> * 명령줄 앱을 사용하여 **모델**, **디지털 트윈**, **관계** 및 **쿼리**를 포함한 Azure Digital Twins를 살펴봅니다.
 
 [!INCLUDE [Azure Digital Twins tutorial: sample prerequisites](../../includes/digital-twins-tutorial-sample-prereqs.md)]
 
@@ -288,24 +289,7 @@ Azure Digital Twins의 주요 기능은 환경에 대한 질문에 답하도록 
 이 자습서의 프로젝트는 다음 자습서인 [*자습서: 엔드투엔드 솔루션 연결*](tutorial-end-to-end.md)의 기초를 형성합니다. 다음 자습서로 계속 진행할 계획인 경우 여기에서 설정한 리소스를 유지하여 이 Azure Digital Twins 인스턴스와 구성된 샘플 앱을 계속 사용할 수 있습니다.
 * 이 경우 샘플 앱의 `DeleteAllTwins` 명령과 `DeleteAllModels` 명령을 사용하여 인스턴스의 트윈과 모델을 각각 지울 수 있습니다. 이를 통해 다음 자습서를 위한 깨끗한 슬레이트를 준비할 수 있습니다.
 
-이 자습서에서 만든 리소스가 더 이상 필요하지 않은 경우 다음 절차에 따라 삭제합니다.
-
-[Azure Cloud Shell](https://shell.azure.com)을 사용하면 [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete) 명령으로 리소스 그룹의 모든 Azure 리소스를 삭제할 수 있습니다. 그러면 리소스 그룹과 Azure Digital Twins 인스턴스가 제거됩니다.
-
-> [!IMPORTANT]
-> 리소스 그룹을 삭제하면 다시 되돌릴 수 없습니다. 리소스 그룹 및 그 안에 포함된 모든 리소스가 영구적으로 삭제됩니다. 잘못된 리소스 그룹 또는 리소스를 자동으로 삭제하지 않도록 해야 합니다. 
-
-Azure Cloud Shell을 열고 다음 명령을 실행하여 리소스 그룹과 그 안에 포함된 모든 항목을 삭제합니다.
-
-```azurecli-interactive
-az group delete --name <your-resource-group>
-```
-
-그리고 다음 명령을 사용하여 클라이언트 앱에 대해 만든 Azure Active Directory 앱 등록을 삭제합니다.
-
-```azurecli
-az ad app delete --id <your-application-ID>
-```
+[!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
 마지막으로, 로컬 컴퓨터에 다운로드한 프로젝트 샘플 폴더를 삭제합니다.
 
@@ -314,12 +298,5 @@ az ad app delete --id <your-application-ID>
 이 자습서에서는 인스턴스와 상호 작용하도록 인스턴스와 클라이언트 애플리케이션을 설정하여 Azure Digital Twins를 시작했습니다. 클라이언트 앱을 사용하여 Azure Digital Twins를 살펴보고, 모델, 디지털 트윈 및 관계를 만들었습니다. 또한 솔루션에서 몇 가지 쿼리를 실행하여 Azure Digital Twins가 환경에 대해 어떤 종류의 질문에 답할 수 있는지 알아보았습니다.
 
 다음 자습서에서 다른 Azure 서비스와 함께 샘플 명령줄 앱을 사용하여 데이터 기반의 엔드투엔드 시나리오를 완성하세요.
-
 > [!div class="nextstepaction"]
 > [*자습서: 엔드투엔드 솔루션 연결*](tutorial-end-to-end.md)
-
-또는 개념 설명서를 통해 자습서에서 작업한 요소에 대해 자세히 알아보세요.
-* [*개념: 사용자 지정 모델*](concepts-models.md)
-
-방법 문서로 시작하여 이 자습서의 프로세스에 대해 더 자세히 알아볼 수도 있습니다.
-* [*방법: Azure Digital Twins CLI 사용*](how-to-use-cli.md)

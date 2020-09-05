@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 05/18/2020
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 9f6f428a930f03259986373ca70a95d5df1f7dc3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9457836a3048ff08b228bf9d5b84400af15d6cc5
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091490"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854940"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Azure Spatial Anchors에 대한 FAQ
 
@@ -51,7 +51,7 @@ Azure Spatial Anchors는 HoloLens, iOS 및 Android 디바이스에서 다중 사
 
 **Q: Azure Spatial Anchors는 데이터를 어떻게 저장하나요?**
 
-**A:** 모든 데이터는 Microsoft 관리 데이터 암호화 키로 암호화되어 저장됩니다.
+**A:** 모든 데이터는 Microsoft 관리형 데이터 암호화 키로 암호화된 상태로 저장되며, 모든 데이터는 각 리소스에 대해 지역별로 저장됩니다.
 
 **Q: Azure Spatial Anchors를 사용하는 경우 서비스에 전송되고 저장되는 환경에 대한 정보는 무엇인가요? 환경 관련 사진이 전송되고 저장되나요?**
 

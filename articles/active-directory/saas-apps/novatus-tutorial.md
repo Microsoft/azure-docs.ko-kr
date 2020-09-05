@@ -2,25 +2,21 @@
 title: '자습서: Novatus와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Novatus 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: d2f13779-bdb7-4408-9738-be67ed3de4e5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: fd4fdbdee4a7f01e0abf11121b8b53f29217b9ee
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: aee62046356f9b9c6edfe10722cf53cc24f5f6c8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160260"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554314"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-novatus"></a>자습서: Novatus와 Azure Active Directory 통합
 

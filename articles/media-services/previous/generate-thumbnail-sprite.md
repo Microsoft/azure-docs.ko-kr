@@ -9,16 +9,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 08/31/2020
 ms.author: juliako
-ms.openlocfilehash: e5d32d1bc3bd704b03e58c62251a323ed3f4662c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1d05e73bc9aa51bf20121790de94b1b6d0e26615
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61229053"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268573"
 ---
-# <a name="generate-a-thumbnail-sprite"></a>썸네일 스프라이트 생성  
+# <a name="generate-a-thumbnail-sprite"></a>썸네일 스프라이트 생성
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 Media Encoder Standard를 사용하여 VTT 파일과 함께 낮은 해상도의 썸네일이 여러 개 포함된 JPEG 파일인 썸네일 스프라이트를 생성할 수 있습니다. 이 VTT 파일은 큰 JPEG 파일 내의 썸네일 크기 및 좌표와 함께 각 썸네일이 나타내는 입력 비디오의 시간 범위를 지정합니다. 비디오 플레이어는 VTT 파일과 스프라이트 이미지를 사용하여 '시각적' 검색 바를 표시하여 비디오 타임라인을 따라 앞뒤로 움직이면 시청자에게 시각적 피드백을 제공합니다.
 
@@ -33,7 +35,7 @@ Media Encoder Standard를 사용하여 썸네일 스프라이트를 생성하려
 
     1. SpriteColumn이 M >= 1로 설정된 경우 출력 이미지는 M 열이 있는 사각형입니다. #2를 통해 생성된 썸네일 이미지의 수가 M의 정확한 배수가 아닌 경우 마지막 행이 완전하지 않고 검은색 픽셀로 남습니다.  
 
-다음은 예제입니다.
+예를 들면 다음과 같습니다.
 
 ```json
 {

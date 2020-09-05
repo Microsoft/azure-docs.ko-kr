@@ -11,18 +11,18 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2eff16e0d1aa242ed4ca8b427c7af8e8defa7804
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6e210a11dbcde17c8a5dfd16c46c0d3b3d5c6523
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051306"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716336"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>셀프 서비스 암호 재설정 질문과 대답
 
 다음은 셀프 서비스 암호 재설정과 관련 된 모든 항목에 대 한 몇 가지 FAQ (질문과 대답)입니다.
 
-여기에서 답변되지 않은 Azure Active Directory(Azure AD) 및 셀프 서비스 암호 재설정(SSPR)에 대한 일반적인 질문이 있는 경우 [Azure Active Directory에 대한 Microsoft Q&A 질문 페이지](https://docs.microsoft.com/answers/topics/azure-active-directory.html)에서 다른 사용자들의 도움을 요청할 수 있습니다. 커뮤니티는 엔지니어, 제품 관리자, MVP 및 동료 IT 전문가들로 구성되어 있습니다.
+여기에서 답변되지 않은 Azure Active Directory(Azure AD) 및 셀프 서비스 암호 재설정(SSPR)에 대한 일반적인 질문이 있는 경우 [Azure Active Directory에 대한 Microsoft Q&A 질문 페이지](/answers/topics/azure-active-directory.html)에서 다른 사용자들의 도움을 요청할 수 있습니다. 커뮤니티는 엔지니어, 제품 관리자, MVP 및 동료 IT 전문가들로 구성되어 있습니다.
 
 이 FAQ는 다음 섹션으로 구분하여 설명합니다.
 
@@ -197,7 +197,7 @@ ms.locfileid: "87051306"
   >
 * **Q:  온-프레미스 암호가 만료되는 경우 사용자에게 Office 포털에서 알림을 제공할 수 있나요?**
 
-  > **A:** 예. AD FS(Active Directory Federation Services)를 사용하는 경우 오늘 바로 가능합니다. AD FS를 사용하는 경우 [AD FS로 암호 정책 클레임 보내기](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/configure-ad-fs-to-send-password-expiry-claims?f=255&MSPPError=-2147217396) 문서의 지침을 참조하세요. 암호 해시 동기화를 사용하는 경우 지금으로서는 불가능합니다. 온-프레미스 디렉터리의 암호 정책은 동기화되지 않기 때문에 클라우드 환경에 만료 알림을 게시할 수 없습니다. 두 경우 모두 [PowerShell을 사용하여 암호가 만료될 사용자에게 알림](https://social.technet.microsoft.com/wiki/contents/articles/23313.notify-active-directory-users-about-password-expiry-using-powershell.aspx)을 보낼 수 있습니다.
+  > **A:** 예. AD FS(Active Directory Federation Services)를 사용하는 경우 오늘 바로 가능합니다. AD FS를 사용하는 경우 [AD FS로 암호 정책 클레임 보내기](/windows-server/identity/ad-fs/operations/configure-ad-fs-to-send-password-expiry-claims?f=255&MSPPError=-2147217396) 문서의 지침을 참조하세요. 암호 해시 동기화를 사용하는 경우 지금으로서는 불가능합니다. 온-프레미스 디렉터리의 암호 정책은 동기화되지 않기 때문에 클라우드 환경에 만료 알림을 게시할 수 없습니다. 두 경우 모두 [PowerShell을 사용하여 암호가 만료될 사용자에게 알림](https://social.technet.microsoft.com/wiki/contents/articles/23313.notify-active-directory-users-about-password-expiry-using-powershell.aspx)을 보낼 수 있습니다.
   >
   >
 * **Q:  사용자가 암호를 변경하지 못하도록 차단할 수 있나요?**
@@ -243,7 +243,7 @@ ms.locfileid: "87051306"
 
 * **Q:  비밀번호 쓰기 저장은 배후에서 어떻게 작동하나요?**
 
-  > **A:** 비밀번호 쓰기 저장을 사용하도록 설정한 경우 발생하는 일과 시스템을 통해 온-프레미스 환경으로 데이터가 다시 흘러 들어가는 방식에 대한 설명은 [비밀번호 쓰기 저장 작동 원리](howto-sspr-writeback.md)를 참조하세요.
+  > **A:** 비밀번호 쓰기 저장을 사용하도록 설정한 경우 발생하는 일과 시스템을 통해 온-프레미스 환경으로 데이터가 다시 흘러 들어가는 방식에 대한 설명은 [비밀번호 쓰기 저장 작동 원리](./tutorial-enable-sspr-writeback.md)를 참조하세요.
   >
   >
 * **Q:  얼마 동안 비밀번호 쓰기 저장이 작동하나요? 암호 해시 동기화와 같은 동기화 지연이 있나요?**
@@ -273,7 +273,7 @@ ms.locfileid: "87051306"
   >
 * **Q:  비밀번호 쓰기 저장은 안전한가요?  해킹되지 않는다는 것을 어떻게 확신할 수 있습니까?**
 
-  > **A:** 예. 비밀번호 쓰기 저장은 안전합니다. 비밀번호 쓰기 저장 서비스에 의해 구현되는 여러 보안 레이어에 대한 자세한 내용은 [비밀번호 쓰기 저장 개요](howto-sspr-writeback.md) 문서의 [비밀번호 쓰기 저장 보안](concept-sspr-writeback.md#password-writeback-security) 섹션을 확인하세요.
+  > **A:** 예. 비밀번호 쓰기 저장은 안전합니다. 비밀번호 쓰기 저장 서비스에 의해 구현되는 여러 보안 레이어에 대한 자세한 내용은 [비밀번호 쓰기 저장 개요](./tutorial-enable-sspr-writeback.md) 문서의 [비밀번호 쓰기 저장 보안](concept-sspr-writeback.md#password-writeback-security) 섹션을 확인하세요.
   >
   >
 
@@ -286,7 +286,7 @@ ms.locfileid: "87051306"
 * [SSPR에서 사용하는 데이터는 무엇이며, 사용자에 대해 어떤 데이터를 채워야 합니까?](howto-sspr-authenticationdata.md)
 * [사용자가 사용할 수 있는 인증 방법은 무엇입니까?](concept-sspr-howitworks.md#authentication-methods)
 * [SSPR에서 사용하는 정책 옵션은 무엇입니까?](concept-sspr-policy.md)
-* [비밀번호 쓰기 저장은 무엇이며, 왜 관심을 가져야 합니까?](howto-sspr-writeback.md)
+* [비밀번호 쓰기 저장은 무엇이며, 왜 관심을 가져야 합니까?](./tutorial-enable-sspr-writeback.md)
 * [SSPR 작업은 어떻게 보고 합니까?](howto-sspr-reporting.md)
 * [모든 SSPR 옵션과 그 의미는 무엇입니까?](concept-sspr-howitworks.md)
 * [무엇인가 손상된 문제가 있습니다. SSPR 문제는 어떻게 해결합니까?](active-directory-passwords-troubleshoot.md)

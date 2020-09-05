@@ -2,26 +2,21 @@
 title: '자습서: HireVue와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 HireVue 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: aadfc342-14db-4d74-a83d-f0c76f0cf63c
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 198901f7b692f2dd1d97019ad5e8455b8cc93d28
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 164c483ad5d1faaa443287e17853e92597eb55e2
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73159033"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88529018"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hirevue"></a>자습서:Azure Active Directory와 HireVue 통합
 

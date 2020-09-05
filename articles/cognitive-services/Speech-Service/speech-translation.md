@@ -8,14 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/11/2020
+ms.date: 08/27/2020
 ms.author: erhopf
-ms.openlocfilehash: f51288da6af3580ba7592950cde4f17d7adad529
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: cef6ff109607455881970aeb95eaf0859f6f4f05
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80052613"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055535"
 ---
 # <a name="what-is-speech-translation"></a>음성 번역이란?
 
@@ -29,25 +30,14 @@ Microsoft의 변환 엔진은 SMT (통계적 기계 번역) 및 NMT (신경망 �
 
 ## <a name="core-features"></a>핵심 기능
 
-음성 SDK 및 REST Api를 통해 사용할 수 있는 기능은 다음과 같습니다.
+* 인식 결과를 사용 하 여 음성 텍스트 변환
+* 음성-음성 변환.
+* 여러 대상 언어로의 변환을 지원 합니다.
+* 중간 인식 및 번역 결과.
 
-| 사용 사례 | SDK) | REST (영문) |
-|----------|-----|------|
-| 인식 결과를 사용 하 여 음성 텍스트 변환 | 예 | 예 |
-| 음성-음성 변환. | 예 | 예 |
-| 중간 인식 및 번역 결과. | 예 | 예 |
+## <a name="get-started"></a>시작 
 
-## <a name="get-started-with-speech-translation"></a>음성 번역 시작
-
-10 분 이내에 코드를 실행 하도록 설계 된 빠른 시작을 제공 합니다. 이 표에는 언어별로 구성 된 음성 번역 빠른 시작 목록이 포함 되어 있습니다.
-
-| 빠른 시작 | 플랫폼 | API 참조 |
-|------------|----------|---------------|
-| [C #, .NET Core](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnetcore) | Windows | [찾아보기](https://aka.ms/csspeech/csharpref) |
-| [C #, .NET Framework](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet) | Windows | [찾아보기](https://aka.ms/csspeech/csharpref) |
-| [C #, UWP](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-csharp&tabs=uwp) | Windows | [찾아보기](https://aka.ms/csspeech/csharpref) |
-| [C](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-cpp&tabs=windows) | Windows | [찾아보기](https://aka.ms/csspeech/cppref)|
-| [Java](~/articles/cognitive-services/Speech-Service/quickstarts/translate-speech-to-text.md?pivots=programming-language-java&tabs=jre) | Windows, Linux, macOS | [찾아보기](https://aka.ms/csspeech/javaref) |
+음성 번역을 시작 하려면 [빠른](get-started-speech-translation.md) 시작을 참조 하세요. 음성 번역 서비스는 [음성 SDK](speech-sdk.md) 및 [음성 CLI](spx-overview.md)를 통해 사용할 수 있습니다.
 
 ## <a name="sample-code"></a>예제 코드
 
@@ -71,5 +61,6 @@ Microsoft의 변환 엔진은 SMT (통계적 기계 번역) 및 NMT (신경망 �
 
 ## <a name="next-steps"></a>다음 단계
 
+* 음성 번역 [빠른](get-started-speech-translation.md) 시작 완료
 * [평가판 Speech Service 구독 키 받기](get-started.md)
 * [Speech SDK 가져오기](speech-sdk.md)

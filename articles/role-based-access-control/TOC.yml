@@ -26,11 +26,6 @@
       href: tutorial-custom-role-powershell.md
     - name: 사용자 지정 역할 만들기 - CLI
       href: tutorial-custom-role-cli.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 모범 사례
@@ -131,6 +126,9 @@
           href: /azure/templates/microsoft.authorization/roleassignments
         - name: 역할 정의
           href: /azure/templates/microsoft.authorization/roledefinitions
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

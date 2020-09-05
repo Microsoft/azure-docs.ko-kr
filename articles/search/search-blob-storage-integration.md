@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: fd405513f8bdef09e6d3ab996fc2c04bd397db13
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 72d00b70cf3568466715668aa441ee295614c740
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83659431"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935248"
 ---
 # <a name="add-full-text-search-to-azure-blob-data-using-azure-cognitive-search"></a>Azure Cognitive Search를 사용하여 Azure Blob 데이터에 전체 텍스트 검색 추가
 
@@ -75,5 +75,5 @@ JSON이 포함된 Blob에 있는 구조화된 콘텐츠를 추출하도록 인�
 
 ## <a name="next-steps"></a>다음 단계
 
-+ [Azure Portal을 사용하여 Blob 업로드, 다운로드 및 나열(Azure Blob Storage)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
-+ [Blob 인덱서 설정(Azure Cognitive Search)](search-howto-indexing-azure-blob-storage.md) 
++ [Azure Portal을 사용하여 Blob 업로드, 다운로드 및 나열(Azure Blob Storage)](../storage/blobs/storage-quickstart-blobs-portal.md)
++ [Blob 인덱서 설정(Azure Cognitive Search)](search-howto-indexing-azure-blob-storage.md)

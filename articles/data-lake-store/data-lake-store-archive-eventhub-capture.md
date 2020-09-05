@@ -1,23 +1,23 @@
 ---
 title: Event Hubs에서 Azure Data Lake Storage Gen1 데이터 캡처
-description: Azure Data Lake Storage Gen1를 사용 하 여 Azure Event Hubs에서 받은 데이터를 캡처합니다.
+description: Azure Data Lake Storage Gen1을 사용하여 Azure Event Hubs가 받은 데이터를 캡처하는 방법을 알아봅니다. 먼저 필수 구성 요소를 확인 합니다.
 author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 9d663c2e95ee94811d70a0602b35842a789dd9b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c5254558c62499ed6864e809dbc93c26ebba94a9
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515759"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190275"
 ---
 # <a name="use-azure-data-lake-storage-gen1-to-capture-data-from-event-hubs"></a>Azure Data Lake Storage Gen1을 사용하여 Event Hubs의 데이터 캡처
 
 Azure Data Lake Storage Gen1을 사용하여 Azure Event Hubs가 받은 데이터를 캡처하는 방법을 알아봅니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * **Azure 구독**. [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 
@@ -50,7 +50,7 @@ Azure Data Lake Storage Gen1을 사용하여 Azure Event Hubs가 받은 데이�
     
     **선택**을 클릭합니다.
 
-    다. **권한 할당**에서 **권한 선택**을 클릭합니다. **권한**을 **실행**으로 설정합니다. **추가 대상**을 **이 폴더 및 모든 하위 폴더**로 설정합니다. **다른 권한으로 추가**를 **액세스 권한 항목 및 기본 권한 항목**으로 설정합니다.
+    c. **권한 할당**에서 **권한 선택**을 클릭합니다. **권한**을 **실행**으로 설정합니다. **추가 대상**을 **이 폴더 및 모든 하위 폴더**로 설정합니다. **다른 권한으로 추가**를 **액세스 권한 항목 및 기본 권한 항목**으로 설정합니다.
 
     > [!IMPORTANT]
     > Azure Event Hubs에서 수신된 데이터를 캡처하기 위해 새 폴더 계층 구조를 만들 경우 이렇게 하면 대상 폴더에 대한 액세스를 쉽게 보장할 수 있습니다.  그러나 많은 자식 파일 및 폴더를 포함하는 최상위 수준 폴더의 모든 자식 항목에 대해 사용 권한을 추가하는 데는 시간이 오래 걸릴 수 있습니다.  루트 폴더에 많은 수의 파일 및 폴더가 포함되어 있으면 `Microsoft.EventHubs`에 대한 **실행** 권한을 최종 대상 폴더의 경로에 있는 각 폴더에 개별적으로 추가하는 것이 더 빠를 수 있습니다. 
@@ -71,7 +71,7 @@ Azure Data Lake Storage Gen1을 사용하여 Azure Event Hubs가 받은 데이�
     
     **선택**을 클릭합니다.
 
-    다. **권한 할당**에서 **권한 선택**을 클릭합니다. **권한**을 **읽기, 쓰기,** 및 **실행**으로 설정합니다. **추가 대상**을 **이 폴더 및 모든 하위 폴더**로 설정합니다. 마지막으로 **다른 권한으로 추가**를 **액세스 권한 항목 및 기본 권한 항목**으로 설정합니다.
+    c. **권한 할당**에서 **권한 선택**을 클릭합니다. **권한**을 **읽기, 쓰기,** 및 **실행**으로 설정합니다. **추가 대상**을 **이 폴더 및 모든 하위 폴더**로 설정합니다. 마지막으로 **다른 권한으로 추가**를 **액세스 권한 항목 및 기본 권한 항목**으로 설정합니다.
 
     ![Data Lake Storage Gen1 폴더에 대 한 사용 권한 할당](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp-folder.png "Data Lake Storage Gen1 폴더에 대 한 사용 권한 할당")
     
@@ -93,7 +93,7 @@ Azure Data Lake Storage Gen1을 사용하여 Azure Event Hubs가 받은 데이�
     
     b. 이 자습서를 위해 **파티션 수** 및 **메시지 보존**을 기본값으로 설정합니다.
     
-    다. **캡처**를 **설정**으로 지정합니다. **시간 창**(캡처 빈도) 및 **크기 창**(캡처할 데이터 크기)을 설정합니다. 
+    c. **캡처**를 **설정**으로 지정합니다. **시간 창**(캡처 빈도) 및 **크기 창**(캡처할 데이터 크기)을 설정합니다. 
     
     d. **캡처 공급자**에 대해 **Azure Data Lake Store**를 선택하고 앞에서 만든 Data Lake Storage Gen1 계정을 선택합니다. **Data Lake 경로**에 Data Lake Storage Gen1 계정에서 만든 폴더의 이름을 입력합니다. 폴더에 상대 경로를 제공하기만 하면 됩니다.
 

@@ -11,18 +11,18 @@ author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein, vanto
 ms.date: 04/19/2020
-ms.openlocfilehash: 20f8a08cfe31534abe24c7af1055e0945e021643
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 6572f2e71b794f9f147278970b3f5f29fceb29d7
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86081590"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962692"
 ---
 # <a name="quickstart-create-an-azure-sql-database-single-database"></a>빠른 시작: Azure SQL Database 단일 데이터베이스 만들기
 
 이 빠른 시작에서는 Azure Portal, PowerShell 스크립트 또는 Azure CLI 스크립트를 사용하여 Azure SQL Database에서 단일 데이터베이스를 만듭니다. 그런 다음, Azure Portal에서 **쿼리 편집기**를 사용하여 데이터베이스를 쿼리합니다.
 
-[단일 데이터베이스](single-database-overview.md)는 Azure SQL Database에 대한 가장 빠르고 간단한 옵션입니다. 지정된 Azure 지역의 [Azure 리소스 그룹](../../active-directory-b2c/overview.md) 내에 있는 [서버](logical-servers.md) 내에서 단일 데이터베이스를 관리합니다. 이 빠른 시작에서는 새 데이터베이스에 대한 새 리소스 그룹 및 서버를 만듭니다.
+[단일 데이터베이스](single-database-overview.md)는 Azure SQL Database에 대한 가장 빠르고 간단한 옵션입니다. 지정된 Azure 지역의 [Azure 리소스 그룹](../../azure-resource-manager/management/manage-resource-groups-portal.md) 내에 있는 [서버](logical-servers.md) 내에서 단일 데이터베이스를 관리합니다. 이 빠른 시작에서는 새 데이터베이스에 대한 새 리소스 그룹 및 서버를 만듭니다.
 
 *프로비저닝된* 또는 *서버리스* 컴퓨팅 계층에서 단일 데이터베이스를 만들 수 있습니다. 프로비저닝된 데이터베이스에는 CPU 및 메모리를 비롯한 정해진 양의 컴퓨팅 리소스가 미리 할당되어 있으며 두 가지 [구매 모델](purchasing-models.md) 중 하나를 사용합니다. 이 빠른 시작은 [vCore 기반](service-tiers-vcore.md) 구매 모델을 사용하여 프로비저닝된 데이터베이스를 만들지만 [DTU 기반](service-tiers-dtu.md) 모델을 선택할 수도 있습니다.
 

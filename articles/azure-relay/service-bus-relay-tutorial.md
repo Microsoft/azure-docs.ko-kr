@@ -2,13 +2,14 @@
 title: Azure Relay를 사용하여 온-프레미스 WCF REST 서비스를 클라이언트에 노출
 description: 이 자습서에서는 Azure WCF Relay를 사용하여 온-프레미스 WCF REST 서비스를 외부 클라이언트에 노출하는 방법을 설명합니다.
 ms.topic: tutorial
+ms.custom: devx-track-dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: 50628073efd7114aaacfe37177d2f5beb3be3d47
-ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+ms.openlocfilehash: bb2b9b5ed7c263762cc24b8eb2e6d66215147c4c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85322699"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935707"
 ---
 # <a name="tutorial-expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>자습서: Azure WCF Relay를 사용하여 외부 클라이언트에 온-프레미스 WCF REST 서비스 노출
 

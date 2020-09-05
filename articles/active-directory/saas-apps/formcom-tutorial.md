@@ -2,25 +2,21 @@
 title: '자습서: Form.com과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Form.com 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: f1bc0112-315c-4e6f-8c69-7c6873007bcf
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 17dc6ef4b1c86e0ae0301783c2c524062e85fb5a
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 9fc3677a1b1aa5496bbf9e90ccd5bea9661b5a05
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799255"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550168"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-formcom"></a>자습서: Azure Active Directory와 Form.com 통합
 

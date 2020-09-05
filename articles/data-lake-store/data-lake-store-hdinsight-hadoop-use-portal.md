@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: e3e54b037485a85d836e7e7e67c9af2d9d140986
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: fd49ddcb59e0d0f3a706f566cf0c011116b1501a
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856819"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229228"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Azure Portal을 사용하여 Azure Data Lake Storage Gen1로 HDInsight 클러스터 만들기
 
@@ -25,13 +25,13 @@ ms.locfileid: "85856819"
 
 Azure Portal을 사용해 기본 스토리지나 추가 스토리지로 Azure Data Lake Storage Gen1 계정을 사용하는 HDInsight 클러스터를 만드는 방법에 대해 알아봅니다. 추가 저장소는 HDInsight 클러스터에 대 한 선택 사항 이지만 추가 저장소 계정에 비즈니스 데이터를 저장 하는 것이 좋습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 시작 하기 전에 다음 요구 사항을 충족 하는지 확인 합니다.
 
 * **Azure 구독**. [Azure 무료 평가판](https://azure.microsoft.com/pricing/free-trial/)으로 이동합니다.
 * **Data Lake Storage Gen1 계정**. [Azure Portal을 사용하여 Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)의 지침을 따릅니다. 또한 계정에서 루트 폴더를 만들어야 합니다.  이 문서에서는 __/ks__ 라는 루트 폴더가 사용 됩니다.
-* **Azure Active Directory 서비스 주체** 이 방법 가이드에서는 Azure Active Directory (Azure AD)에서 서비스 주체를 만드는 방법에 대 한 지침을 제공 합니다. 그러나 서비스 주체를 만들려면 Azure AD 관리자여야 합니다. 관리자 인 경우이 필수 구성 요소를 건너뛰고 계속 진행할 수 있습니다.
+* **Azure Active Directory 서비스 주체**입니다. 이 방법 가이드에서는 Azure Active Directory (Azure AD)에서 서비스 주체를 만드는 방법에 대 한 지침을 제공 합니다. 그러나 서비스 주체를 만들려면 Azure AD 관리자여야 합니다. 관리자 인 경우이 필수 구성 요소를 건너뛰고 계속 진행할 수 있습니다.
 
 >[!NOTE]
 >Azure AD 관리자 인 경우에만 서비스 주체를 만들 수 있습니다. Azure AD 관리자가 서비스 주체를 만들어야 Data Lake Storage Gen1을 사용하는 HDInsight 클러스터를 만들 수 있습니다. 또한 [인증서를 사용하여 서비스 주체 만들기](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-self-signed-certificate)에 설명된 대로 인증서를 사용하여 서비스 주체를 만들어야 합니다.
@@ -85,18 +85,11 @@ Data Lake Storage Gen1 계정을 추가 저장소 계정으로 사용 하 여 HD
 Azure Portal에서 기존 서비스 주체를 사용하거나 새로 만들 수 있습니다.
 
 Azure Portal에서 서비스 주체를 만들려면 다음을 수행 합니다.
-
-1. 저장소 블레이드에서 **Data Lake Store 액세스** 를 선택 합니다.
-1. **Data Lake Storage Gen1 액세스** 블레이드에서 **새로 만들기**를 선택 합니다.
-1. **서비스 주체**를 선택 하 고 지침에 따라 서비스 주체를 만듭니다.
-1. 나중에 다시 사용하려는 경우 인증서를 다운로드합니다. 추가 HDInsight 클러스터를 만들 때 동일한 서비스 주체를 사용하려면 인증서를 다운로드하는 것이 유용합니다.
-
-    ![HDInsight 클러스터에 서비스 주체 추가](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.2.png "HDInsight 클러스터에 서비스 주체 추가")
-
-1. **액세스** 를 선택 하 여 폴더 액세스를 구성 합니다.  [파일 권한 구성](#configure-file-permissions)을 참조하세요.
+1. Azure Active Directory를 사용 하 여 [서비스 주체 및 인증서 만들기를](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) 참조 하세요.
 
 Azure Portal에서 기존 서비스 주체를 사용 하려면 다음을 수행 합니다.
 
+1. 서비스 주체에는 저장소 계정에 대 한 소유자 권한이 있어야 합니다. [저장소 계정의 소유자가 되도록 서비스 사용자에 대 한 권한 설정을](#configure-serviceprincipal-permissions) 참조 하세요.
 1. **Data Lake Store 액세스**를 선택 합니다.
 1. **Data Lake Storage Gen1 액세스** 블레이드에서 **기존 사용**을 선택 합니다.
 1. **서비스 주체**를 선택 하 고 서비스 주체를 선택 합니다.
@@ -105,6 +98,10 @@ Azure Portal에서 기존 서비스 주체를 사용 하려면 다음을 수행 
     ![HDInsight 클러스터에 서비스 주체 추가](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.5.png "HDInsight 클러스터에 서비스 주체 추가")
 
 1. **액세스** 를 선택 하 여 폴더 액세스를 구성 합니다.  [파일 권한 구성](#configure-file-permissions)을 참조하세요.
+
+### <a name="set-up-permissions-for-the-service-principal-to-be-owner-on-the-storage-account"></a><a name="configure-serviceprincipal-permissions"></a>저장소 계정의 소유자가 되는 서비스 사용자에 대 한 사용 권한 설정
+1. 저장소 계정의 Access Control (IAM) 블레이드에서 역할 할당 추가를 클릭 합니다. 
+2. 역할 할당 추가 블레이드에서 역할을 ' 소유자 '로 선택한 후 SPN을 선택 하 고 저장을 클릭 합니다.
 
 ### <a name="configure-file-permissions"></a><a name="configure-file-permissions"></a>파일 권한 구성
 
@@ -130,7 +127,7 @@ Data Lake Storage Gen1 계정 루트 수준에서 사용 권한을 할당 하려
 
 1. 페이지 아래쪽에서 **선택**을 클릭합니다.
 1. **실행** 을 선택 하 여 사용 권한을 할당 합니다.
-1. **완료** 를 선택합니다.
+1. **완료**를 선택합니다.
 
 HDInsight 클러스터 루트 수준에서 사용 권한을 할당 하려면:
 
@@ -140,7 +137,7 @@ HDInsight 클러스터 루트 수준에서 사용 권한을 할당 하려면:
 1. 폴더에 권한을 설정합니다.  기본적으로 읽기, 쓰기 및 실행이 모두 선택되어 있습니다.
 1. 페이지 아래쪽에서 **선택**을 클릭합니다.
 1. **실행**을 선택합니다.
-1. **완료** 를 선택합니다.
+1. **완료**를 선택합니다.
 
 Data Lake Storage Gen1을 추가 스토리지로 사용하는 경우 HDInsight 클러스터에서 액세스하려는 폴더에만 권한을 할당해야 합니다. 예를 들어 아래 스크린샷에서는 Data Lake Storage Gen1 계정의 **mynewfolder** 폴더에만 액세스 권한을 제공합니다.
 
@@ -197,7 +194,7 @@ Spark 클러스터를 사용하여 Data Lake Storage Gen1 계정에 저장된 �
 
 Data Lake Storage Gen1 계정을 사용하면 Storm 토폴로지에서 데이터를 쓸 수 있습니다. 이 시나리오를 수행하는 방법에 대한 자세한 내용은 [HDInsight에서 Apache Storm에 Azure Data Lake Storage Gen1 사용](../hdinsight/storm/apache-storm-write-data-lake-store.md)을 참조하세요.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 * [Azure HDInsight 클러스터에 Data Lake Storage Gen1 사용](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
 * [PowerShell: HDInsight 클러스터를 만들어 Data Lake Storage Gen1 사용](data-lake-store-hdinsight-hadoop-use-powershell.md)

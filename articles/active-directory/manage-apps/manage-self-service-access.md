@@ -15,22 +15,22 @@ ms.topic: how-to
 ms.date: 04/20/2020
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2a59343d4eafaa0e11f56636daa7471e748abf2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa1016307cc6e838e2e1136f6bbacd82d2f8c82e
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763145"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640755"
 ---
 # <a name="how-to-configure-self-service-application-assignment"></a>셀프 서비스 애플리케이션 할당을 구성하는 방법
 
-사용자가 내 앱 액세스 패널에서 응용 프로그램을 자체 검색할 수 있으려면 먼저 사용자가 직접 검색 하 고 액세스를 요청할 수 있도록 하려는 모든 응용 프로그램에 대 한 **셀프 서비스 응용 프로그램 액세스** 를 사용 하도록 설정 해야 합니다. 이 기능은 [AZURE AD 갤러리](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)에서 추가 된 응용 프로그램, [azure AD 응용 프로그램 프록시](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) 또는 [사용자 또는 관리자 동의](https://docs.microsoft.com/azure/active-directory/develop/application-consent-experience)를 통해 추가 된 응용 프로그램에 사용할 수 있습니다. 
+사용자가 내 앱에서 응용 프로그램을 자체 검색할 수 있으려면 먼저 사용자가 직접 검색 하 고 액세스를 요청할 수 있도록 하려는 모든 응용 프로그램에 대 한 **셀프 서비스 응용 프로그램 액세스** 를 사용 하도록 설정 해야 합니다. 이 기능은 [AZURE AD 갤러리](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)에서 추가 된 응용 프로그램, [azure AD 응용 프로그램 프록시](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) 또는 [사용자 또는 관리자 동의](https://docs.microsoft.com/azure/active-directory/develop/application-consent-experience)를 통해 추가 된 응용 프로그램에 사용할 수 있습니다. 
 
 이 기능은 IT 그룹이 시간과 비용을 절감하는 유용한 방법이며, Azure Active Directory를 사용하는 최신 애플리케이션 배포의 일부로 사용하는 것이 좋습니다.
 
 이 기능을 사용하면 다음을 수행할 수 있습니다.
 
--   사용자가 IT 그룹을 신경 하지 않고 [내 앱 액세스 패널](https://myapps.microsoft.com/) 에서 응용 프로그램을 자동으로 검색할 수 있도록 합니다.
+-   사용자가 IT 그룹을 신경 하지 않고 [내 앱](https://myapps.microsoft.com/) 에서 응용 프로그램을 자동으로 검색할 수 있습니다.
 
 -   액세스를 요청한 사용자가 누군지 알고, 액세스를 제거하고, 할당된 역할을 관리할 수 있도록 미리 구성된 그룹에 해당 사용자를 추가합니다.
 
@@ -38,7 +38,7 @@ ms.locfileid: "84763145"
 
 -   필요에 따라 이 애플리케이션에 대한 액세스를 승인할 수 있는 최대 10명의 개별 사용자를 구성합니다.
 
--   필요에 따라 해당 사용자가 애플리케이션에 로그인하는 데 사용할 수 있는 암호를 비즈니스 승인자가 해당 [애플리케이션 액세스 패널](https://myapps.microsoft.com/)에서 바로 설정할 수 있도록 합니다.
+-   필요에 따라 비즈니스 승인자가 비즈니스 승인자의 [내 앱](https://myapps.microsoft.com/)에서 바로 응용 프로그램에 로그인 하는 데 사용할 수 있는 암호를 설정할 수 있습니다.
 
 -   필요에 따라 자동으로 셀프 서비스 할당 사용자를 애플리케이션 역할에 직접 할당합니다.
 
@@ -79,7 +79,7 @@ ms.locfileid: "84763145"
 
 11. 창 위쪽에서 **저장** 단추를 클릭하여 완료합니다.
 
-셀프 서비스 응용 프로그램 구성을 완료 한 후에는 사용자가 [내 앱 액세스 패널](https://myapps.microsoft.com/) 로 이동 하 여 셀프 서비스 **앱 추가** 단추를 클릭 하 여 셀프 서비스 액세스를 사용 하도록 설정 된 앱을 찾을 수 있습니다. 비즈니스 승인자는 [내 앱 액세스 패널](https://myapps.microsoft.com/)에서도 알림을 볼 수 있습니다. 사용자가 승인이 필요한 애플리케이션에 대한 액세스를 요청한 경우 비즈니스 승인자에게 알리는 이메일을 활성화할 수 있습니다.
+셀프 서비스 응용 프로그램 구성을 완료 한 후에는 사용자가 [내 앱](https://myapps.microsoft.com/) 으로 이동 하 여 셀프 서비스 **앱 추가** 단추를 클릭 하 여 셀프 서비스 액세스를 사용 하도록 설정 된 앱을 찾을 수 있습니다. 비즈니스 승인자는 [내 앱](https://myapps.microsoft.com/)에서도 알림을 볼 수 있습니다. 사용자가 승인이 필요한 애플리케이션에 대한 액세스를 요청한 경우 비즈니스 승인자에게 알리는 이메일을 활성화할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 [셀프 서비스 그룹 관리를 위한 Azure Active Directory 설정](../users-groups-roles/groups-self-service-management.md)

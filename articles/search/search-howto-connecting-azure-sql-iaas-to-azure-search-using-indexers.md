@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: eacfc75b31efaf9a53ed116ed9e75983146d8575
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ec1e74c6a029ab0f8defc3ae783c9e974f387289
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084129"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88922976"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Azure VM에서 Azure Cognitive Search 인덱서에 SQL Server에 대 한 연결 구성
 
@@ -53,7 +53,7 @@ Azure Cognitive Search에는 공용 인터넷 연결을 통해 모든 인덱서 
 Azure Cognitive Search에 필요한 암호화 된 연결을 설정한 후에는 Azure Vm의 SQL Server에 대 한 추가 구성 단계를 내장 합니다. 아직 수행하지 않은 경우 다음 단계로 이 문서 중 하나를 사용하여 구성을 완료합니다.
 
 * **Resource Manager** VM인 경우 [Azure에서 Resource Manager를 사용하여 SQL Server Virtual Machine에 연결](../azure-sql/virtual-machines/windows/ways-to-connect-to-sql.md)을 참조하세요. 
-* **클래식** VM인 경우 [Azure 클래식에서 SQL Server Virtual Machine에 연결](../virtual-machines/windows/classic/sql-connect.md)을 참조하세요.
+* **클래식** VM인 경우 [Azure 클래식에서 SQL Server Virtual Machine에 연결](/previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-connect)을 참조하세요.
 
 특히 "인터넷을 통한 연결"의 각 문서에서 해당 섹션을 검토하세요.
 
@@ -68,16 +68,16 @@ Azure VM에서 다른 대상에 액세스할 수 있게 하기 위해 NSG 및 �
 > 
 
 * **Resource Manager** VM의 경우 [ARM 배포를 위해 NSG를 만드는 방법](../virtual-network/tutorial-filter-network-traffic.md)을 참조하세요. 
-* **클래식** VM의 경우 [클래식 배포를 위해 NSG를 만드는 방법](../virtual-network/virtual-networks-create-nsg-classic-ps.md)을 참조하세요.
+* **클래식** VM의 경우 [클래식 배포를 위해 NSG를 만드는 방법](/previous-versions/azure/virtual-network/virtual-networks-create-nsg-classic-ps)을 참조하세요.
 
 IP 주소 지정의 경우 몇 가지 문제를 내포할 수 있으며 사용자가 문제와 잠재적인 해결 방법을 인식하고 있는 경우 쉽게 극복할 수 있습니다. 나머지 섹션에서는 ACL에서 IP 주소와 관련된 문제 처리를 위한 권장 사항을 제공합니다.
 
 #### <a name="restrict-access-to-the-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 액세스 제한
-`AzureCognitiveSearch`SQL Azure vm을 모든 연결 요청에 대해 열지 않고 검색 서비스의 ip 주소와 ACL에서 [서비스 태그](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) 의 ip 주소 범위에 대 한 액세스를 제한 하는 것이 좋습니다.
+`AzureCognitiveSearch`SQL Azure vm을 모든 연결 요청에 대해 열지 않고 검색 서비스의 ip 주소와 ACL에서 [서비스 태그](../virtual-network/service-tags-overview.md#available-service-tags) 의 ip 주소 범위에 대 한 액세스를 제한 하는 것이 좋습니다.
 
 검색 서비스의 FQDN (예:)을 ping 하 여 IP 주소를 확인할 수 있습니다 `<your-search-service-name>.search.windows.net` .
 
-`AzureCognitiveSearch` [다운로드 가능한 JSON 파일](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) 을 사용 하거나 [서비스 태그 검색 API](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview)를 통해 [서비스 태그](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) 의 IP 주소 범위를 확인할 수 있습니다. IP 주소 범위는 매주 업데이트 됩니다.
+`AzureCognitiveSearch` [다운로드 가능한 JSON 파일](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) 을 사용 하거나 [서비스 태그 검색 API](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview)를 통해 [서비스 태그](../virtual-network/service-tags-overview.md#available-service-tags) 의 IP 주소 범위를 확인할 수 있습니다. IP 주소 범위는 매주 업데이트 됩니다.
 
 #### <a name="managing-ip-address-fluctuations"></a>IP 주소 변동 관리
 검색 서비스에 검색 단위가 하나만 있으면(즉, 하나의 복제본과 하나의 파티션) 라우팅 서비스를 다시 시작하는 동안 IP 주소가 변경되어 검색 서비스 IP 주소를 사용하는 기존 ACL이 무효화됩니다.
@@ -93,4 +93,3 @@ Azure Portal를 사용 하 여 인덱서를 만드는 경우 Azure Cognitive Sea
 
 ## <a name="next-steps"></a>다음 단계
 이제 구성을 사용 하 여 azure VM의 SQL Server를 Azure Cognitive Search 인덱서의 데이터 원본으로 지정할 수 있습니다. 자세한 내용은 [인덱서를 사용 하 여 Azure Cognitive Search에 Azure SQL Database 연결을](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md) 참조 하세요.
-

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: fb0a5c06c8b7bdbb62e937e865e6bb2fd4000f2d
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: e8d11c2122a21b67620987ad9ef74efc99eeb98b
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87462453"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654500"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 VM 부하를 분산하는 내부 부하 분산 장치 만들기
 
@@ -36,7 +36,7 @@ Azure Portal에서 Azure Load Balancer를 시작하여 내부 부하 분산 장�
 
 ---
 
-# <a name="option-1-default-create-a-internal-load-balancer-standard-sku"></a>[옵션 1(기본값): 내부 부하 분산 장치 만들기(표준 SKU)](#tab/option-1-create-internal-load-balancer-standard)
+# <a name="standard-sku"></a>[**표준 SKU**](#tab/option-1-create-internal-load-balancer-standard)
 
 >[!NOTE]
 >표준 SKU 부하 분산 장치는 프로덕션 워크로드에 추천됩니다.  SKU에 대한 자세한 내용은 **[Azure Load Balancer SKU](skus.md)** 를 참조하세요.
@@ -51,20 +51,56 @@ Azure Portal에서 Azure Load Balancer를 시작하여 내부 부하 분산 장�
 
 프런트 엔드 IP 주소는 **고정**일 수도 있고 **동적**일 수도 있습니다.
 
-## <a name="virtual-network-and-parameters"></a>가상 네트워크 및 매개 변수
+## <a name="create-the-virtual-network"></a>가상 네트워크 만들기
 
-이 섹션에서는 단계의 매개 변수를 아래 정보로 바꿉니다.
+이 섹션에서는 가상 네트워크 및 서브넷을 만듭니다.
 
-| 매개 변수                   | 값                |
-|-----------------------------|----------------------|
-| **\<resource-group-name>**  | myResourceGroupLB |
-| **\<virtual-network-name>** | myVNet          |
-| **\<region-name>**          | 서유럽      |
-| **\<IPv4-address-space>**   | 10.1.0.0\16          |
-| **\<subnet-name>**          | myBackendSubnet        |
-| **\<subnet-address-range>** | 10.1.0.0\24          |
+1. 화면의 왼쪽 위에서 **리소스 만들기 > 네트워킹 > 가상 네트워크**를 차례로 선택하거나, 검색 상자에서 **가상 네트워크**를 검색합니다.
 
-[!INCLUDE [virtual-networks-create-new](../../includes/virtual-networks-create-new.md)]
+2. **가상 네트워크 만들기**의 **기본** 탭에서 다음 정보를 입력하거나 선택합니다.
+
+    | **설정**          | **값**                                                           |
+    |------------------|-----------------------------------------------------------------|
+    | **프로젝트 세부 정보**  |                                                                 |
+    | Subscription     | Azure 구독 선택                                  |
+    | 리소스 그룹   | **myResourceGroupLB**를 선택합니다. |
+    | **인스턴스 세부 정보** |                                                                 |
+    | 속성             | **myVNet** 입력                                    |
+    | 지역           | **서유럽**을 선택합니다. |
+
+3. **IP 주소** 탭을 선택하거나 페이지 하단의 **다음: IP 주소** 단추를 선택합니다.
+
+4. **IP 주소** 탭에서 다음 정보를 입력합니다.
+
+    | 설정            | 값                      |
+    |--------------------|----------------------------|
+    | IPv4 주소 공간 | **10.1.0.0/16** 입력 |
+
+5. **서브넷 이름** 아래에서 **기본값**이라는 단어를 선택합니다.
+
+6. **서브넷 편집**에서 다음 정보를 입력합니다.
+
+    | 설정            | 값                      |
+    |--------------------|----------------------------|
+    | 서브넷 이름 | **myBackendSubnet** 입력 |
+    | 서브넷 주소 범위 | **10.1.0.0/24** 입력 |
+
+7. **저장**을 선택합니다.
+
+8. **보안** 탭을 선택합니다.
+
+9. **BastionHost**에서 **사용**을 선택합니다. 다음 정보를 입력합니다.
+
+    | 설정            | 값                      |
+    |--------------------|----------------------------|
+    | Bastion 이름 | **myBastionHost** 입력 |
+    | AzureBastionSubnet 주소 공간 | **10.1.1.0/24** 입력 |
+    | 공용 IP 주소 | **새로 만들기**를 선택합니다. </br> **이름**에 대해 **myBastionIP**를 입력합니다. </br> **확인**을 선택합니다. |
+
+
+8. **검토 + 만들기** 탭을 선택하거나 **검토 + 만들기** 단추를 선택합니다.
+
+9. **만들기**를 선택합니다.
 
 ## <a name="create-load-balancer"></a>부하 분산 장치 만들기
 
@@ -125,7 +161,7 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     
     | 설정 | 값 |
     | ------- | ----- |
-    | 이름 | **myHealthProbe**를 입력합니다. |
+    | Name | **myHealthProbe**를 입력합니다. |
     | 프로토콜 | **HTTP**를 선택합니다. |
     | 포트 | **80**을 입력합니다.|
     | 간격 | 프로브 시도 **간격**(초)으로 **15**를 입력합니다. |
@@ -164,6 +200,9 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     | 암시적 아웃바운드 규칙 만들기 | **아니오**를 선택합니다.
 
 4. 나머지는 기본값으로 둔 다음, **확인**을 선택합니다.
+
+>[!NOTE]
+>백 엔드 풀의 가상 머신은 이 구성과 아웃바운드 인터넷 연결을 사용하지 않습니다. </br> 아웃바운드 연결 제공에 대한 자세한 내용은 다음을 참조하세요. </br> **[Azure에서 아웃바운드 연결](load-balancer-outbound-connections.md)**</br> 연결 제공 옵션: </br> **[아웃바운드 전용 부하 분산 장치 구성](egress-only.md)** </br> **[Virtual Network NAT란?](https://docs.microsoft.com/azure/virtual-network/nat-overview)**
 
 ## <a name="create-backend-servers"></a>백 엔드 서버 만들기
 
@@ -241,7 +280,7 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     | 네트워크 보안 그룹 | 기존 **myNSG**를 선택합니다.|
 
 
-# <a name="option-2-create-a-internal-load-balancer-basic-sku"></a>[옵션 2: 내부 부하 분산 장치 만들기(기본 SKU)](#tab/option-1-create-internal-load-balancer-basic)
+# <a name="basic-sku"></a>[**기본 SKU**](#tab/option-1-create-internal-load-balancer-basic)
 
 >[!NOTE]
 >표준 SKU 부하 분산 장치는 프로덕션 워크로드에 추천됩니다.  SKU에 대한 자세한 내용은 **[Azure Load Balancer SKU](skus.md)** 를 참조하세요.
@@ -256,20 +295,56 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
 
 프런트 엔드 IP 주소는 **고정**일 수도 있고 **동적**일 수도 있습니다.
 
-## <a name="virtual-network-and-parameters"></a>가상 네트워크 및 매개 변수
+## <a name="create-the-virtual-network"></a>가상 네트워크 만들기
 
-이 섹션에서는 단계의 매개 변수를 아래 정보로 바꿉니다.
+이 섹션에서는 가상 네트워크 및 서브넷을 만듭니다.
 
-| 매개 변수                   | 값                |
-|-----------------------------|----------------------|
-| **\<resource-group-name>**  | myResourceGroupLB |
-| **\<virtual-network-name>** | myVNet          |
-| **\<region-name>**          | 서유럽      |
-| **\<IPv4-address-space>**   | 10.1.0.0\16          |
-| **\<subnet-name>**          | myBackendSubnet        |
-| **\<subnet-address-range>** | 10.1.0.0\24          |
+1. 화면의 왼쪽 위에서 **리소스 만들기 > 네트워킹 > 가상 네트워크**를 차례로 선택하거나, 검색 상자에서 **가상 네트워크**를 검색합니다.
 
-[!INCLUDE [virtual-networks-create-new](../../includes/virtual-networks-create-new.md)]
+2. **가상 네트워크 만들기**의 **기본** 탭에서 다음 정보를 입력하거나 선택합니다.
+
+    | **설정**          | **값**                                                           |
+    |------------------|-----------------------------------------------------------------|
+    | **프로젝트 세부 정보**  |                                                                 |
+    | Subscription     | Azure 구독 선택                                  |
+    | 리소스 그룹   | **myResourceGroupLB**를 선택합니다. |
+    | **인스턴스 세부 정보** |                                                                 |
+    | 속성             | **myVNet** 입력                                    |
+    | 지역           | **서유럽**을 선택합니다. |
+
+3. **IP 주소** 탭을 선택하거나 페이지 하단의 **다음: IP 주소** 단추를 선택합니다.
+
+4. **IP 주소** 탭에서 다음 정보를 입력합니다.
+
+    | 설정            | 값                      |
+    |--------------------|----------------------------|
+    | IPv4 주소 공간 | **10.1.0.0/16** 입력 |
+
+5. **서브넷 이름** 아래에서 **기본값**이라는 단어를 선택합니다.
+
+6. **서브넷 편집**에서 다음 정보를 입력합니다.
+
+    | 설정            | 값                      |
+    |--------------------|----------------------------|
+    | 서브넷 이름 | **myBackendSubnet** 입력 |
+    | 서브넷 주소 범위 | **10.1.0.0/24** 입력 |
+
+7. **저장**을 선택합니다.
+
+8. **보안** 탭을 선택합니다.
+
+9. **BastionHost**에서 **사용**을 선택합니다. 다음 정보를 입력합니다.
+
+    | 설정            | 값                      |
+    |--------------------|----------------------------|
+    | Bastion 이름 | **myBastionHost** 입력 |
+    | AzureBastionSubnet 주소 공간 | **10.1.1.0/24** 입력 |
+    | 공용 IP 주소 | **새로 만들기**를 선택합니다. </br> **이름**에 대해 **myBastionIP**를 입력합니다. </br> **확인**을 선택합니다. |
+
+
+8. **검토 + 만들기** 탭을 선택하거나 **검토 + 만들기** 단추를 선택합니다.
+
+9. **만들기**를 선택합니다.
 
 ## <a name="create-load-balancer"></a>부하 분산 장치 만들기
 
@@ -337,7 +412,7 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     
     | 설정 | 값 |
     | ------- | ----- |
-    | 이름 | **myHealthProbe**를 입력합니다. |
+    | Name | **myHealthProbe**를 입력합니다. |
     | 프로토콜 | **HTTP**를 선택합니다. |
     | 포트 | **80**을 입력합니다.|
     | 경로 | **/** 를 입력합니다. |
@@ -425,7 +500,7 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     | **네트워크 인터페이스** |  |
     | 가상 네트워크 | **myVNet**을 선택합니다. |
     | 서브넷 | **myBackendSubnet** 선택 |
-    | 공용 IP | **새로 만들기**를 선택합니다. </br> 이름에서 **myVM-ip**를 입력합니다. </br> **확인**을 선택합니다. |
+    | 공용 IP | **없음**을 선택합니다. |
     | NIC 네트워크 보안 그룹 추가 | **고급**을 선택합니다.|
     | 네트워크 보안 그룹 구성 | **새로 만들기**를 선택합니다. </br> **네트워크 보안 그룹 만들기**의 **이름**에서 **myNSG**를 입력합니다. </br> **확인**을 선택합니다. |
     | **부하 분산**.  |
@@ -434,9 +509,10 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
 5. **관리** 탭을 선택하거나 **다음** > **관리**를 선택합니다.
 
 6. **관리** 탭에서 다음을 선택하거나 입력합니다.
+    
     | 설정 | 값 |
     |-|-|
-    | **Monitoring** | |
+    | **Monitoring** |  |
     | 부트 진단 | **끄기**를 선택합니다. |
 
 7. **검토 + 만들기**를 선택합니다. 
@@ -487,7 +563,6 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     | 가상 머신 이름 | **myTestVM**을 입력합니다. |
     | 지역 | **서유럽**을 선택합니다. |
     | 가용성 옵션 | **인프라 중복이 필요하지 않습니다**를 선택합니다. |
-    | 가용성 영역 | **영역 중복**을 선택합니다. |
     | 이미지 | **Windows Server 2019 Datacenter**를 선택합니다. |
     | Azure Spot 인스턴스 | **아니요**를 선택합니다. |
     | 크기 | VM 크기를 선택하거나 기본 설정을 사용합니다. |
@@ -505,7 +580,7 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     | **네트워크 인터페이스** |  |
     | 가상 네트워크 | **myVNet** |
     | 서브넷 | **myBackendSubnet** |
-    | 공용 IP | **myTestVM-ip**(기본값)를 적용합니다. |
+    | 공용 IP | **없음**을 선택합니다. |
     | NIC 네트워크 보안 그룹 추가 | **고급**을 선택합니다.|
     | 네트워크 보안 그룹 구성 | 이전 단계에서 만든 **MyNSG**를 선택합니다.|
     
@@ -526,15 +601,15 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
 
 1. 왼쪽 메뉴에서 **모든 서비스**를 선택하고, **모든 리소스**를 선택한 다음, 리소스 목록에서 **myResourceGroupLB** 리소스 그룹에 있는 **myVM1**을 선택합니다.
 
-2. **개요** 페이지에서 **연결**을 선택하여 VM에 대한 RDP 파일을 다운로드합니다.
+2. **개요** 페이지에서 **연결**을 선택한 다음, **Bastion**을 선택합니다.
 
-3. RDP 파일을 엽니다.
+4. VM을 만드는 동안 입력한 사용자 이름과 암호를 입력합니다.
 
-4. 이 VM을 만드는 동안 입력한 자격 증명을 사용하여 VM에 로그인합니다.
+5. **연결**을 선택합니다.
 
-5. 서버 바탕 화면에서 **Windows 관리 도구**>**Windows PowerShell**로 이동합니다.
+6. 서버 바탕 화면에서 **Windows 관리 도구** > **Windows PowerShell**로 이동합니다.
 
-6. PowerShell 창에서 아래 명령을 실행하여 다음을 수행합니다.
+7. PowerShell 창에서 아래 명령을 실행하여 다음을 수행합니다.
 
     * IIS 서버를 설치합니다.
     * 기본 iisstart.htm 파일을 제거합니다.
@@ -546,14 +621,15 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
     Install-WindowsFeature -name Web-Server -IncludeManagementTools
     
     # remove default htm file
-    remove-item  C:\inetpub\wwwroot\iisstart.htm
+     remove-item  C:\inetpub\wwwroot\iisstart.htm
     
     # Add a new htm file that displays server name
-    Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
+     Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
    ```
-7. **myVM1**이 포함된 RDP 세션을 닫습니다.
+8. **myVM1**이 포함된 Bastion 세션을 닫습니다.
 
-8. 1~6단계를 반복하여 **myVM2**에 IIS 및 업데이트된 iisstart.htm 파일을 설치합니다.
+9. 1~6단계를 반복하여 **myVM2**에 IIS 및 업데이트된 iisstart.htm 파일을 설치합니다.
+
 
 ## <a name="test-the-load-balancer"></a>부하 분산 장치 테스트
 
@@ -563,15 +639,13 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
 
 3. 왼쪽 메뉴에서 **모든 서비스**를 선택하고, **모든 리소스**를 선택한 다음, 리소스 목록에서 **myResourceGroupLB** 리소스 그룹에 있는 **myTestVM**을 선택합니다.
 
-4. **개요** 페이지에서 **연결**을 선택하여 VM에 대한 RDP 파일을 다운로드합니다.
+4. **개요** 페이지에서 **연결**을 선택한 다음, **Bastion**을 선택합니다.
 
-5. RDP 파일을 엽니다.
-
-6. 이 VM을 만드는 동안 입력한 자격 증명을 사용하여 VM에 로그인합니다.
+6. VM을 만드는 동안 입력한 사용자 이름과 암호를 입력합니다.
 
 7. **myTestVM**에서 **Internet Explorer**를 엽니다.
 
-4. 개인 IP 주소를 복사하여 브라우저의 주소 표시줄에 붙여넣습니다. IIS 웹 서버의 기본 페이지가 브라우저에 표시됩니다.
+8. 이전 단계의 IP 주소를 브라우저의 주소 표시줄에 입력합니다. IIS 웹 서버의 기본 페이지가 브라우저에 표시됩니다.
 
     :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/load-balancer-test.png" alt-text="표준 내부 부하 분산 장치 만들기" border="true":::
    
@@ -591,4 +665,5 @@ VM 상태를 모니터링할 **myHealthProbe**라는 상태 프로브를 만듭�
 
 Azure Load Balancer에 대해 자세히 알아보려면 [Azure Load Balancer란?](load-balancer-overview.md) 및 [Load Balancer 질문과 대답](load-balancer-faqs.md)으로 계속 진행하세요.
 
-[Load Balancer 및 가용성 영역](load-balancer-standard-availability-zones.md)에 대해 자세히 알아봅니다.
+* [Load Balancer 및 가용성 영역](load-balancer-standard-availability-zones.md)에 대해 자세히 알아봅니다.
+* [Azure Bastion](https://docs.microsoft.com/azure/bastion/bastion-overview)에 대해 자세히 알아봅니다.

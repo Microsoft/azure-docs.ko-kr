@@ -12,12 +12,12 @@ ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e5ad7badfa44a006fd7e71d3b0e42ee95ac698d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a9cd70d534cebf35938285208dc76bd4a6d94533
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "64919003"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279009"
 ---
 # <a name="tutorial--setting-up-phs-as-backup-for-ad-fs-in-azure-ad-connect"></a>자습서:  Azure AD Connect에서 AD FS용 백업으로 PHS 설정
 
@@ -33,7 +33,7 @@ ms.locfileid: "64919003"
 이 자습서는 [자습서: 자습서: 클라우드에 단일 AD 포리스트 환경 페더레이션](tutorial-federation.md)을 기준으로 작성되었습니다. 이 자습서의 작업을 시도하려면 먼저 해당 자습서를 진행해야 합니다.  이 자습서를 완료하지 않았다면 이 문서의 단계를 시도하기 전에 완료하세요.
 
 >[!IMPORTANT]
->PHS로 전환하기 전에 AD FS 환경의 백업을 만들어야 합니다.  이 작업은 [AD FS 신속 복원 도구](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-rapid-restore-tool#how-to-use-the-tool)를 사용하여 수행할 수 있습니다.
+>PHS로 전환하기 전에 AD FS 환경의 백업을 만들어야 합니다.  이 작업은 [AD FS 신속 복원 도구](/windows-server/identity/ad-fs/operations/ad-fs-rapid-restore-tool#how-to-use-the-tool)를 사용하여 수행할 수 있습니다.
 
 ## <a name="enable-phs-in-azure-ad-connect"></a>Azure AD Connect에서 PHS를 사용하도록 설정
 페더레이션을 사용하는 Azure AD Connect 환경이 준비되면 먼저 암호 해시 동기화를 설정하고 Azure AD Connect가 해시를 동기화하도록 허용해야 합니다.

@@ -36,11 +36,11 @@
     - name: 사용량 및 인사이트 보고서
       href: concept-usage-insights-report.md
     - name: 위험한 로그인
-      href: concept-risky-sign-ins.md
+      href: ../identity-protection/overview-identity-protection.md
     - name: 위험 탐지
-      href: concept-risk-events.md
+      href: ../identity-protection/overview-identity-protection.md
     - name: 위험에 노출된 사용자
-      href: concept-user-at-risk.md
+      href: ../identity-protection/overview-identity-protection.md
     - name: 프로비저닝 로그
       href: concept-provisioning-logs.md
     - name: Reporting API
@@ -94,9 +94,9 @@
     - name: 보고용 Azure AD PowerShell cmdlet
       href: reference-powershell-reporting.md
     - name: 감사 로그 API 참조
-      href: 'https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit'
+      href: /graph/api/resources/directoryaudit?view=graph-rest-beta
     - name: 로그인 로그 API 참조
-      href: 'https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin'
+      href: /graph/api/resources/signin?view=graph-rest-beta
     - name: 감사 활동
       href: reference-audit-activities.md
     - name: 데이터 보존 정책

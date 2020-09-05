@@ -13,12 +13,12 @@ ms.date: 01/04/2019
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 68d7b06aa6473a99422d8cfb51f6e3a465933a0f
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: b59ebe0bdab66a5ce6bdb1eefe6d9ae4b47bba0c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747400"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799403"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>조직의 네트워크에 개인 디바이스 등록
 개인 디바이스(일반적으로 휴대폰이나 태블릿)를 조직의 네트워크에 등록합니다. 디바이스가 등록되면 조직의 제한된 리소스에 액세스할 수 있게 됩니다.
@@ -31,9 +31,9 @@ ms.locfileid: "83747400"
 
 - Windows에서 조직의 네트워크에 디바이스를 등록합니다.
 
-- 조직의 선택에 따라, [Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md) 또는 [보안 정보](user-help-security-info-overview.md)를 통해 2단계 인증을 설정하도록 요구될 수 있습니다.
+- 조직의 선택에 따라, [Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md) 또는 [보안 정보](./security-info-setup-signin.md)를 통해 2단계 인증을 설정하도록 요구될 수 있습니다.
 
-- 조직의 선택에 따라, Microsoft Intune과 같은 모바일 디바이스 관리 기능에 자동으로 등록될 수도 있습니다. Microsoft Intune에 등록하는 방법에 대한 자세한 내용은 [Intune에서 디바이스 등록](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-all)을 참조하세요.
+- 조직의 선택에 따라, Microsoft Intune과 같은 모바일 디바이스 관리 기능에 자동으로 등록될 수도 있습니다. Microsoft Intune에 등록하는 방법에 대한 자세한 내용은 [Intune에서 디바이스 등록](/intune-user-help/enroll-your-device-in-intune-all)을 참조하세요.
 
 - 회사 또는 학교 계정의 사용자 이름 및 암호를 사용하여 로그인 프로세스가 진행됩니다.
 
@@ -70,6 +70,3 @@ ms.locfileid: "83747400"
 조직의 네트워크에 개인 디바이스를 등록한 후에는 대부분의 리소스에 액세스할 수 있어야 합니다.
 
 - 조직이 회사 디바이스의 가입을 원할 경우 [조직의 네트워크에 회사 디바이스 가입](user-help-join-device-on-network.md)을 참조하세요.
-
-
-

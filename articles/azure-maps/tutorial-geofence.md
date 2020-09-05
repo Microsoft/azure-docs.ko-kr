@@ -1,20 +1,20 @@
 ---
 title: '자습서: Microsoft Azure Map에서 지오펜스 만들기 및 디바이스 추적'
-description: Microsoft Azure Maps 공간 서비스를 사용하여 지오펜스를 설정하고, 지오펜스와 관련된 디바이스를 추적하는 방법을 알아봅니다.
+description: 지오펜스를 설정하는 방법을 알아봅니다. Azure Maps Spatial 서비스를 사용하여 지오펜스와 관련된 디바이스를 추적하는 방법을 참조하세요.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 7/15/2020
+ms.date: 8/11/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 775d98b992f2bca4441c868873ceaeb2389db81a
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b88d9132ec1548c9d94fc418af35b55ac2836e96
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517401"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121241"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>자습서: Azure Maps를 사용하여 지오펜스 설정
 
@@ -397,7 +397,7 @@ Azure Maps는 세 가지 이벤트 유형을 지원합니다. Azure Maps에서 �
 
 ### <a name="location-4-47637988-1221338344"></a>위치 4(47.637988,-122.1338344)
 
-1. Postman 앱의 위쪽 근처에서 **새로 만들기**를 선택합니다. **새로 만들기** 창에서 **요청**을 선택합니다.  요청에 대한 **요청 이름**을 입력합니다. *위치 4*라는 이름을 사용합니다. [지오펜싱 GeoJSON 데이터 업로드 섹션](#upload-geofencing-geojson-data)에서 만든 컬렉션을 선택한 다음, **저장**을 선택합니다.
+1. Postman 앱의 위쪽 근처에서 **새로 만들기**를 선택합니다. **새로 만들기** 창에서 **요청**을 선택합니다.  요청에 대한 **요청 이름**을 입력합니다. *위치 5*라는 이름을 사용합니다. [지오펜싱 GeoJSON 데이터 업로드 섹션](#upload-geofencing-geojson-data)에서 만든 컬렉션을 선택한 다음, **저장**을 선택합니다.
 
 2. 작성기 탭에서 **GET** HTTP 메서드를 선택하고, 다음 URL을 입력합니다. `{Azure-Maps-Primary-Subscription-key}`를 기본 구독 키로 바꾸고, `{udid}`를 [지오펜싱 GeoJSON 데이터 업로드 섹션](#upload-geofencing-geojson-data)에서 저장한 `udid`로 바꿔야 합니다.
 

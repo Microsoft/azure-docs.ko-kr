@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/26/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 1fdc6b79bf86272afac038d8f91e4663514830fe
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: e6236d9ed5ed75b6b5e10914e668de545c48fc2c
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905598"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055637"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Azure Digital Twins 쌍 그래프 쿼리
 
@@ -24,9 +24,21 @@ ms.locfileid: "87905598"
 
 ## <a name="query-syntax"></a>쿼리 구문
 
-이 섹션에는 쿼리 언어 구조를 설명 하 고 가능한 쿼리 작업을 수행 하는 예제 쿼리가 포함 되어 있습니다.
+이 섹션에는 쿼리 언어 구조를 설명 하 고 [디지털](concepts-twins-graph.md)쌍에서 가능한 쿼리 작업을 수행 하는 예제 쿼리가 포함 되어 있습니다.
 
-속성 (ID 및 메타 데이터 포함)으로 [디지털](concepts-twins-graph.md) 쌍을 가져옵니다.
+### <a name="select-top-items"></a>상위 항목 선택
+
+절을 사용 하 여 쿼리에서 여러 "최상위" 항목을 선택할 수 있습니다 `Select TOP` .
+
+```sql
+SELECT TOP (5)
+FROM DIGITALTWINS
+WHERE ...
+```
+
+### <a name="query-by-property"></a>속성으로 쿼리
+
+**속성** (ID 및 메타 데이터 포함)으로 디지털 쌍을 가져옵니다.
 ```sql
 SELECT  * 
 FROM DigitalTwins T  
@@ -38,24 +50,29 @@ AND T.Temperature = 70
 > [!TIP]
 > 디지털 쌍의 ID는 메타 데이터 필드를 사용 하 여 쿼리 됩니다 `$dtId` .
 
-또한 [디지털 쌍에 태그 추가](how-to-use-tags.md)에 설명 된 대로 *태그* 속성을 통해 쌍를 가져올 수 있습니다.
+**특정 속성이 정의 되어 있는지 여부**에 따라 쌍을 가져올 수도 있습니다. 다음은 정의 된 *Location* 속성을 가진 쌍를 가져오는 쿼리입니다.
+
+```sql
+SELECT *
+FROM DIGITALTWINS WHERE IS_DEFINED(Location)
+```
+
+그러면 태그를 [디지털 쌍에 추가](how-to-use-tags.md)에 설명 된 대로 *태그* 속성에 따라 쌍을 가져오는 데 도움이 될 수 있습니다. *Red*로 태그가 지정 된 모든 쌍를 가져오는 쿼리는 다음과 같습니다.
+
 ```sql
 select * from digitaltwins where is_defined(tags.red) 
 ```
 
-### <a name="select-top-items"></a>상위 항목 선택
-
-절을 사용 하 여 쿼리에서 여러 "최상위" 항목을 선택할 수 있습니다 `Select TOP` .
+**속성의 형식**에 따라 쌍을 가져올 수도 있습니다. *온도* 속성이 숫자 인 쌍를 가져오는 쿼리는 다음과 같습니다.
 
 ```sql
-SELECT TOP (5)
-FROM DIGITALTWINS
-WHERE property = 42
+SELECT * FROM DIGITALTWINS T
+WHERE IS_NUMBER(T.Temperature)
 ```
 
 ### <a name="query-by-model"></a>모델 별로 쿼리
 
-`IS_OF_MODEL`연산자를 사용 하 여 쌍의 [모델](concepts-models.md)을 기준으로 필터링 할 수 있습니다. 상속을 지원 하 고 여러 오버 로드 옵션을 포함 합니다.
+`IS_OF_MODEL`연산자를 사용 하 여 쌍의 [**모델**](concepts-models.md)을 기준으로 필터링 할 수 있습니다. 상속을 지원 하 고 여러 오버 로드 옵션을 포함 합니다.
 
 를 사용 하는 가장 간단한 방법은 매개 변수를 사용 하는 것 `IS_OF_MODEL` `twinTypeName` `IS_OF_MODEL(twinTypeName)` 입니다.
 이 매개 변수에 값을 전달 하는 쿼리 예제는 다음과 같습니다.
@@ -87,7 +104,7 @@ SELECT ROOM FROM DIGITALTWINS DT WHERE IS_OF_MODEL(DT, 'dtmi:sample:thing;1', ex
 
 ### <a name="query-based-on-relationships"></a>관계를 기반으로 하는 쿼리
 
-디지털 쌍의 관계를 기반으로 쿼리 하는 경우 Azure Digital Twins 쿼리 언어에는 특별 한 구문이 있습니다.
+디지털 쌍의 **관계**를 기반으로 쿼리 하는 경우 Azure Digital twins 쿼리 언어에는 특별 한 구문이 있습니다.
 
 관계는 절의 쿼리 범위로 끌어옵니다 `FROM` . "기존" SQL 형식 언어와의 중요 한 차이점은이 절의 각 식이 테이블이 아니라는 것입니다 .이 `FROM` `FROM` 절은 엔터티 간 관계 순회를 표현 하 고 Azure Digital twins 버전의를 사용 하 여 작성 됩니다 `JOIN` . 
 
@@ -117,7 +134,8 @@ WHERE T.$dtId = 'ABC'
 
 #### <a name="query-the-properties-of-a-relationship"></a>관계 속성 쿼리
 
-디지털 쌍이 DTDL을 통해 설명 하는 속성을 갖는 방식과 마찬가지로 관계에도 속성이 있을 수 있습니다. Azure Digital Twins 쿼리 언어를 사용 하면 절 내의 관계에 별칭을 할당 하 여 관계를 필터링 하 고 투영할 수 있습니다 `JOIN` . 
+디지털 쌍이 DTDL을 통해 설명 하는 속성을 갖는 방식과 마찬가지로 관계에도 속성이 있을 수 있습니다. **해당 관계의 속성에 따라**쌍를 쿼리할 수 있습니다.
+Azure Digital Twins 쿼리 언어를 사용 하면 절 내의 관계에 별칭을 할당 하 여 관계를 필터링 하 고 투영할 수 있습니다 `JOIN` . 
 
 예를 들어 *reportedCondition* 속성이 있는 *servicedBy* relationship을 고려 합니다. 아래 쿼리에서는 속성을 참조 하기 위해이 관계에 ' R '의 별칭이 지정 됩니다.
 
@@ -142,10 +160,20 @@ SELECT LightBulb
 FROM DIGITALTWINS Room 
 JOIN LightPanel RELATED Room.contains 
 JOIN LightBulb RELATED LightPanel.contains 
-WHERE IS_OF_MODEL(LightPanel, ‘dtmi:contoso:com:lightpanel;1’) 
-AND IS_OF_MODEL(LightBulb, ‘dtmi:contoso:com:lightbulb ;1’) 
-AND Room.$dtId IN [‘room1’, ‘room2’] 
+WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1') 
+AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1') 
+AND Room.$dtId IN ['room1', 'room2'] 
 ```
+
+### <a name="other-compound-query-examples"></a>기타 복합 쿼리 예제
+
+조합 연산자를 사용 하 여 위의 쿼리 유형을 조합 하 여 단일 쿼리에 자세한 정보를 **포함할 수 있습니다** . 다음은 한 번에 둘 이상의 쌍 설명자 유형을 쿼리 하는 복합 쿼리의 몇 가지 추가 예입니다.
+
+| Description | 쿼리 |
+| --- | --- |
+| *공간 123* 가 있는 장치에서 운영자 역할을 하는 MxChip 장치를 반환 합니다. | `SELECT device`<br>`FROM DigitalTwins space`<br>`JOIN device RELATED space.has`<br>`WHERE space.$dtid = 'Room 123'`<br>`AND device.$metadata.model = 'dtmi:contosocom:DigitalTwins:MxChip:3'`<br>`AND has.role = 'Operator'` |
+| ID가 *id1* 인 다른 쌍이 *포함* 된 relationship 이라는 관계가 있는 쌍을 가져옵니다. | `SELECT Room`<br>`FROM DIGITIALTWINS Room`<br>`JOIN Thermostat ON Room.Contains`<br>`WHERE Thermostat.$dtId = 'id1'` |
+| *Floor11* 에 포함 된이 대화방 모델의 모든 대화방 가져오기 | `SELECT Room`<br>`FROM DIGITALTWINS Floor`<br>`JOIN Room RELATED Floor.Contains`<br>`WHERE Floor.$dtId = 'floor11'`<br>`AND IS_OF_MODEL(Room, 'dtmi:contosocom:DigitalTwins:Room;1')` |
 
 ## <a name="run-queries-with-an-api-call"></a>API 호출을 사용 하 여 쿼리 실행
 
@@ -187,7 +215,7 @@ catch (RequestFailedException e)
 
 미리 보기 중에는를 사용 하는 경우 추가 제한 사항이 있습니다 `JOIN` .
 * 문 내에서 하위 쿼리를 지원 하지 않습니다 `FROM` .
-* `OUTER JOIN`의미 체계가 지원 되지 않습니다. 즉, 관계의 순위가 0 이면 전체 "row"가 출력 결과 집합에서 제거 됩니다.
+* `OUTER JOIN` 의미 체계가 지원 되지 않습니다. 즉, 관계의 순위가 0 이면 전체 "row"가 출력 결과 집합에서 제거 됩니다.
 * 미리 보기 중에는 그래프 트래버스 깊이가 쿼리당 5 개 수준으로 제한 됩니다 `JOIN` .
 * 작업의 소스가 `JOIN` 제한 되어 있습니다. 쿼리는 쿼리가 시작 되는 위치를 선언 해야 합니다.
 
@@ -222,7 +250,6 @@ Azure Digital Twins를 사용 하 여 쿼리 하는 몇 가지 팁은 다음과 
         AND IS_OF_MODEL(Room, 'dtmi:com:contoso:Room;1')
         ```
 * 속성 이름과 값은 대/소문자를 구분 하므로 모델에 정의 된 정확한 이름을 사용 해야 합니다. 속성 이름의 철자가 틀렸거나 잘못 된 경우에는 오류가 반환 되지 않고 결과 집합이 비어 있습니다.
-
 
 ## <a name="next-steps"></a>다음 단계
 

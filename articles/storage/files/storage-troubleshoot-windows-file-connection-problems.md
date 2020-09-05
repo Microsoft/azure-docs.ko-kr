@@ -4,15 +4,15 @@ description: Windows의 Azure Files 문제 해결 Windows 클라이언트에서 
 author: jeffpatt24
 ms.service: storage
 ms.topic: troubleshooting
-ms.date: 05/31/2019
+ms.date: 08/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: f9e4fdb0fe8872c505bbbbb10da11d8fb74a22b3
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 3bd059e59bebe9ae1ecc8f2f00dd63f873e08944
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87927218"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269372"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Windows에서 Azure Files 문제 해결
 
@@ -344,14 +344,13 @@ $StorageAccountName = "<storage-account-name-here>"
 Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGroupName $ResourceGroupName -Verbose
 ```
 이 cmdlet은 아래에서 이러한 검사를 순서 대로 수행 하 고 오류에 대 한 지침을 제공 합니다.
-1. CheckPort445Connectivity: SMB 연결에 대해 포트 445가 열려 있는지 확인 합니다.
-2. CheckDomainJoined: 클라이언트 컴퓨터가 AD에 도메인에 가입 되어 있는지 확인 합니다.
-3. CheckADObject: 저장소 계정을 나타내고 올바른 SPN (서비스 사용자 이름)을 포함 하는 개체가 Active Directory에 있는지 확인 합니다.
-4. CheckGetKerberosTicket: 저장소 계정에 연결 하기 위해 Kerberos 티켓을 가져오려고 시도 합니다. 
-5. CheckADObjectPasswordIsCorrect: 저장소 계정을 나타내는 AD id에 구성 된 암호가 storage 계정 kerb1 또는 kerb2 key와 일치 하는지 확인 합니다.
-6. CheckSidHasAadUser: 로그온 한 AD 사용자가 Azure AD와 동기화 되었는지 확인 합니다. 특정 AD 사용자가 Azure AD에 동기화 되었는지 여부를 확인 하려면 입력 매개 변수에서-UserName 및-Domain을 지정 하면 됩니다.
-7. CheckAadUserHasSid: Azure AD 사용자에 게 AD의 SID가 있는지 확인 합니다 .이 검사를 수행 하려면 사용자가 매개 변수-ObjectId를 사용 하 여 Azure AD 사용자의 개체 ID를 입력 해야 합니다. 
-8. CheckStorageAccountDomainJoined: 저장소 계정의 속성을 확인 하 여 AD 인증을 사용 하도록 설정 하 고 계정의 AD 속성이 채워지는지 확인 합니다.
+1. CheckADObjectPasswordIsCorrect: 저장소 계정을 나타내는 AD id에 구성 된 암호가 storage 계정 kerb1 또는 kerb2 key와 일치 하는지 확인 합니다. 암호가 잘못 된 경우 [AzStorageAccountADObjectPassword](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-update-password) 를 실행 하 여 암호를 다시 설정할 수 있습니다. 
+2. CheckADObject: 저장소 계정을 나타내고 올바른 SPN (서비스 사용자 이름)을 포함 하는 개체가 Active Directory에 있는지 확인 합니다. SPN이 올바르게 설정 되지 않은 경우에는 debug cmdlet에 반환 된 Set-AD cmdlet을 실행 하 여 SPN을 구성 하십시오.
+3. CheckDomainJoined: 클라이언트 컴퓨터가 AD에 도메인에 가입 되어 있는지 확인 합니다. 컴퓨터가 AD에 도메인에 가입 되지 않은 경우 도메인 가입 명령에 대 한이 [문서](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain#:~:text=To%20join%20a%20computer%20to%20a%20domain&text=Navigate%20to%20System%20and%20Security,join%2C%20and%20then%20click%20OK) 를 참조 하세요.
+4. CheckPort445Connectivity: SMB 연결에 대 한 포트 445가 열려 있는지 확인 합니다. 필요한 포트가 열려 있지 않은 경우에는 문제 해결 도구를 참조 하 여 Azure Files의 연결 문제에 대 한 [AzFileDiagnostics.ps1](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5) 하세요.
+5. CheckSidHasAadUser: 로그온 한 AD 사용자가 Azure AD와 동기화 되었는지 확인 합니다. 특정 AD 사용자가 Azure AD에 동기화 되었는지 여부를 확인 하려면 입력 매개 변수에서-UserName 및-Domain을 지정 하면 됩니다. 
+6. CheckGetKerberosTicket: 저장소 계정에 연결 하기 위해 Kerberos 티켓을 가져오려고 시도 합니다. 유효한 Kerberos 토큰이 없는 경우 klist get cifs/storage-name. cmdlet을 실행 하 고 오류 코드를 검사 하 여 티켓 검색 오류를 발생 시킵니다.
+7. CheckStorageAccountDomainJoined: AD 인증을 사용 하도록 설정 되어 있고 계정의 AD 속성이 채워지는지 확인 합니다. 그렇지 않은 경우 Azure Files에서 AD DS 인증을 사용 하도록 설정 하려면 [여기](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-enable) 의 지침을 참조 하세요. 
 
 ## <a name="unable-to-configure-directoryfile-level-permissions-windows-acls-with-windows-file-explorer"></a>Windows 파일 탐색기를 사용 하 여 디렉터리/파일 수준 사용 권한 (Windows Acl)을 구성할 수 없습니다.
 
@@ -364,6 +363,16 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 ### <a name="solution"></a>해결 방법
 
 [Icacls 도구](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) 를 사용 하 여 디렉터리/파일 수준 사용 권한을 해결 방법으로 구성 하는 것이 좋습니다. 
+
+## <a name="errors-when-running-join-azstorageaccountforauth-cmdlet"></a>AzStorageAccountForAuth cmdlet을 실행할 때 발생 하는 오류
+
+### <a name="error-the-directory-service-was-unable-to-allocate-a-relative-identifier"></a>오류: "디렉터리 서비스에서 상대 식별자를 할당할 수 없습니다."
+
+RID 마스터 FSMO 역할을 보유 하는 도메인 컨트롤러를 사용할 수 없거나 도메인에서 제거 되 고 백업에서 복원 된 경우이 오류가 발생할 수 있습니다.  모든 도메인 컨트롤러가 실행 중이 고 사용 가능한 지 확인 합니다.
+
+### <a name="error-cannot-bind-positional-parameters-because-no-names-were-given"></a>오류: "이름이 지정되지 않았으므로 위치 매개 변수를 바인딩할 수 없습니다."
+
+이 오류는 Join-AzStorageAccountforAuth 명령의 구문 오류에 의해 트리거될 수 있습니다.  맞춤법 오류 또는 구문 오류에 대 한 명령을 확인 하 고 최신 버전의 AzFilesHybrid 모듈 (이 설치 되어 있는지 확인 https://github.com/Azure-Samples/azure-files-samples/releases) 합니다.  
 
 ## <a name="need-help-contact-support"></a>도움 필요 시 지원에 문의
 도움이 필요한 경우 [지원에 문의](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)하여 문제를 신속하게 해결하세요.

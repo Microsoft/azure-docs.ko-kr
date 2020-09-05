@@ -8,16 +8,16 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 8a4c862cd6b6f9b01c0b56c2a21e228fdfd0f6e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7cd6e61b8614e4c8ff5d54232972865c81cbb3ff
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553341"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928873"
 ---
 # <a name="create-and-manage-api-keys-for-an-azure-cognitive-search-service"></a>Azure Cognitive Search 서비스에 대 한 api 키 만들기 및 관리
 
-검색 서비스에 대한 모든 요청에는 해당 서비스용으로 특별히 생성된 읽기 전용 api-key가 필요합니다. 이 api-key는 검색 서비스 엔드포인트에 대한 액세스를 인증하는 유일한 방법으로, 모든 요청에 포함되어야 합니다. [REST 솔루션](search-get-started-postman.md)에서 api-key는 일반적으로 요청 헤더에 지정됩니다. [.NET 솔루션](search-howto-dotnet-sdk.md#core-scenarios)에서 키는 종종 구성 설정으로 지정된 후 [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient)에서 [자격 증명](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.credentials)(관리자 키) 또는 [SearchCredentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.searchcredentials)(쿼리 키)로 전달됩니다.
+검색 서비스에 대한 모든 요청에는 해당 서비스용으로 특별히 생성된 읽기 전용 api-key가 필요합니다. 이 api-key는 검색 서비스 엔드포인트에 대한 액세스를 인증하는 유일한 방법으로, 모든 요청에 포함되어야 합니다. [REST 솔루션](search-get-started-postman.md)에서 api-key는 일반적으로 요청 헤더에 지정됩니다. [.NET 솔루션](search-howto-dotnet-sdk.md#core-scenarios)에서 키는 종종 구성 설정으로 지정된 후 [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient)에서 [자격 증명](/dotnet/api/microsoft.azure.search.searchserviceclient.credentials)(관리자 키) 또는 [SearchCredentials](/dotnet/api/microsoft.azure.search.searchserviceclient.searchcredentials)(쿼리 키)로 전달됩니다.
 
 키는 서비스를 프로비전하는 동안 검색 서비스를 사용하여 생성됩니다. [Azure Portal](https://portal.azure.com)에서 키 값을 살펴보고 얻을 수 있습니다.
 
@@ -32,16 +32,16 @@ api-key는 임의로 생성된 숫자 및 문자로 구성된 문자열입니다
 |키|Description|제한|  
 |---------|-----------------|------------|  
 |관리자|서비스를 관리하며 인덱스, 인덱서 및 데이터 원본을 만들고 삭제하는 기능을 비롯한 모든 작업에 전체 권한을 부여합니다.<br /><br /> 포털에서 *기본* 및 *보조* 키라고 하는 두 개의 관리자 키는 서비스를 만들 때 생성되고 요청 시 개별적으로 다시 생성할 수 있습니다. 키가 두 개이면 서비스에 대해 액세스를 지속하는 데 하나의 키를 사용하는 동안 다른 키를 롤오버할 수 있습니다.<br /><br /> 관리자 키는 HTTP 요청 헤더에서만 지정됩니다. URL에 관리자 api-key를 배치할 수 없습니다.|서비스당 최대 2개|  
-|쿼리|인덱스 및 문서에 대한 읽기 전용 액세스를 부여하며 일반적으로 검색 요청을 수행하는 클라이언트 애플리케이션에 배포됩니다.<br /><br /> 쿼리 키는 요청 시 생성됩니다. 포털에서 수동으로 만들거나 [관리 REST API](https://docs.microsoft.com/rest/api/searchmanagement/)를 통해 프로그래밍 방식으로 만들 수 있습니다.<br /><br /> 검색, 제안 또는 조회 작업의 HTTP 요청 헤더에서 쿼리 키를 지정할 수 있습니다. 또는 쿼리 키를 URL에 매개 변수로 전달할 수 있습니다. 클라이언트 애플리케이션이 요청을 생성하는 방법에 따라 키를 쿼리 매개 변수로 전달하는 것이 쉬울 수 있습니다.<br /><br /> `GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate desc&api-version=2020-06-30&api-key=[query key]`|서비스당 50개|  
+|쿼리|인덱스 및 문서에 대한 읽기 전용 액세스를 부여하며 일반적으로 검색 요청을 수행하는 클라이언트 애플리케이션에 배포됩니다.<br /><br /> 쿼리 키는 요청 시 생성됩니다. 포털에서 수동으로 만들거나 [관리 REST API](/rest/api/searchmanagement/)를 통해 프로그래밍 방식으로 만들 수 있습니다.<br /><br /> 검색, 제안 또는 조회 작업의 HTTP 요청 헤더에서 쿼리 키를 지정할 수 있습니다. 또는 쿼리 키를 URL에 매개 변수로 전달할 수 있습니다. 클라이언트 애플리케이션이 요청을 생성하는 방법에 따라 키를 쿼리 매개 변수로 전달하는 것이 쉬울 수 있습니다.<br /><br /> `GET /indexes/hotels/docs?search=*&$orderby=lastRenovationDate desc&api-version=2020-06-30&api-key=[query key]`|서비스당 50개|  
 
- 시각적으로는 관리자 키 및 쿼리 키 간의 구분이 없습니다. 두 키는 임의로 생성된 32개의 영숫자 문자로 구성된 문자열입니다. 애플리케이션에서 지정된 키의 형식을 잃어버린 경우 [포털에서 키 값을 확인](https://portal.azure.com)하거나 [REST API](https://docs.microsoft.com/rest/api/searchmanagement/)를 사용하여 값 및 키 형식을 반환할 수 있습니다.  
+ 시각적으로는 관리자 키 및 쿼리 키 간의 구분이 없습니다. 두 키는 임의로 생성된 32개의 영숫자 문자로 구성된 문자열입니다. 애플리케이션에서 지정된 키의 형식을 잃어버린 경우 [포털에서 키 값을 확인](https://portal.azure.com)하거나 [REST API](/rest/api/searchmanagement/)를 사용하여 값 및 키 형식을 반환할 수 있습니다.  
 
 > [!NOTE]  
 >  요청 URI에서 `api-key`와 같은 중요한 데이터를 전달하는 낮은 수준의 보안 사례로 간주됩니다. 이러한 이유로 Azure Cognitive Search는 쿼리 문자열의로 쿼리 키만 허용 `api-key` 하므로 인덱스의 내용을 공개적으로 사용할 수 있어야 하는 경우가 아니면이를 방지 해야 합니다. 일반적으로 `api-key`를 요청 헤더로 전달하는 것이 좋습니다.  
 
 ## <a name="find-existing-keys"></a>기존 키 찾기
 
-포털에서 또는 [관리 REST API](https://docs.microsoft.com/rest/api/searchmanagement/)를 통해 액세스 키를 가져올 수 있습니다. 자세한 내용은 [관리자 및 쿼리 api-key 관리](search-security-api-keys.md)를 참조하세요.
+포털에서 또는 [관리 REST API](/rest/api/searchmanagement/)를 통해 액세스 키를 가져올 수 있습니다. 자세한 내용은 [관리자 및 쿼리 api-key 관리](search-security-api-keys.md)를 참조하세요.
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 2. 구독에 대한 [검색 서비스](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices)를 나열합니다.
@@ -64,7 +64,7 @@ api-key는 임의로 생성된 숫자 및 문자로 구성된 문자열입니다
    ![쿼리 키 만들기 또는 사용](media/search-security-overview/create-query-key.png) 
 
 > [!Note]
-> 쿼리 키 사용을 보여 주는 코드 예제는 [c #에서 Azure Cognitive Search 인덱스 쿼리](search-query-dotnet.md)에서 찾을 수 있습니다.
+> 쿼리 키 사용을 보여 주는 코드 예제는 [c #에서 Azure Cognitive Search 인덱스 쿼리](./search-get-started-dotnet.md)에서 찾을 수 있습니다.
 
 <a name="regenerate-admin-keys"></a>
 
@@ -79,7 +79,7 @@ api-key는 임의로 생성된 숫자 및 문자로 구성된 문자열입니다
 
 동시에 두 키를 다시 생성 하면 해당 키를 사용 하는 모든 클라이언트 요청이 실패 하 고 HTTP 403이 금지 됩니다. 그러나 콘텐츠는 삭제 되지 않으며 영구적으로 잠기지 않습니다. 
 
-포털 또는 관리 계층 ([REST API](https://docs.microsoft.com/rest/api/searchmanagement/), [PowerShell](https://docs.microsoft.com/azure/search/search-manage-powershell)또는 Azure Resource Manager)을 통해 서비스에 계속 액세스할 수 있습니다. 관리 기능은 서비스 api 키가 아닌 구독 ID를 통해 작동 가능한 api 키가 없는 경우에도 계속 사용할 수 있습니다. 
+포털 또는 관리 계층 ([REST API](/rest/api/searchmanagement/), [PowerShell](./search-manage-powershell.md)또는 Azure Resource Manager)을 통해 서비스에 계속 액세스할 수 있습니다. 관리 기능은 서비스 api 키가 아닌 구독 ID를 통해 작동 가능한 api 키가 없는 경우에도 계속 사용할 수 있습니다. 
 
 포털 또는 관리 계층을 통해 새 키를 만든 후 새 키가 있고 요청에 이러한 키를 제공 하면 콘텐츠 (인덱스, 인덱서, 데이터 원본, 동의어 맵)로 액세스가 복원 됩니다.
 
@@ -88,7 +88,7 @@ api-key는 임의로 생성된 숫자 및 문자로 구성된 문자열입니다
 
 + 서비스 대시보드에서 **액세스 제어(IAM)**, **역할 할당** 탭을 차례로 클릭하여 서비스에 대한 역할 할당을 봅니다.
 
-다음 역할의 멤버는 키를 보고 다시 생성할 수 있습니다. 소유자, 참가자 [Search Service 참가자](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#search-service-contributor)
+다음 역할의 멤버는 키를 보고 다시 생성할 수 있습니다. 소유자, 참가자 [Search Service 참가자](../role-based-access-control/built-in-roles.md#search-service-contributor)
 
 > [!Note]
 > 검색 결과에 대한 ID 기반 액세스의 경우 보안 필터를 만들어서 ID를 기준으로 결과를 잘라 요청자에게 액세스 권한이 없어야 하는 문서를 제거할 수 있습니다. 자세한 내용은 [보안 필터](search-security-trimming-for-azure-search.md) 및 [Active Directory로 보안](search-security-trimming-for-azure-search-with-aad.md)을 참조하세요.

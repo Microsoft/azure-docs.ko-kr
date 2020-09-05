@@ -3,12 +3,12 @@ title: Azure Backup 에이전트 문제 해결
 description: 이 문서에서는 Azure Backup 에이전트의 설치 및 등록 문제를 해결 하는 방법에 대해 알아봅니다.
 ms.topic: troubleshooting
 ms.date: 07/15/2019
-ms.openlocfilehash: 1afe437239ec7015bf3bbc195cf0b90e75698142
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 86f9dfd8554e2560ea16a85c3551dba3f7dc01f1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87564115"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019626"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>MARS (Microsoft Azure Recovery Services) 에이전트 문제 해결
 
@@ -65,25 +65,25 @@ Microsoft Azure Recovery Services (MARS) 에이전트 문제 해결을 시작 �
 
 ## <a name="unable-to-download-vault-credential-file"></a>자격 증명 모음 파일을 다운로드할 수 없음
 
-| Error   | 권장 작업 |
+| 오류   | 권장 작업 |
 | ---     | ---    |
 |자격 증명 모음 파일을 다운로드하지 못했습니다. (ID: 403) | <ul><li> 다른 브라우저를 사용 하 여 자격 증명 모음을 다운로드 하거나 다음 단계를 수행 하세요. <ul><li> Internet Explorer를 시작합니다. F12를 선택 합니다. </li><li> **네트워크** 탭으로 이동 하 여 캐시 및 쿠키를 지웁니다. </li> <li> 페이지를 새로 고칩니다.<br></li></ul> <li> 구독이 사용 하지 않도록 설정 되었는지 여부를 확인 합니다.<br></li> <li> 방화벽 규칙에서 다운로드를 차단 하 고 있는지 확인 합니다. <br></li> <li> 자격 증명 모음 (자격 증명 모음 당 50 대)에 대 한 제한을 모두 사용 하지 않았는지 확인 합니다.<br></li>  <li> 사용자에 게 자격 증명 모음 자격 증명을 다운로드 하 고 자격 증명 모음에 서버를 등록 하는 데 필요한 Azure Backup 권한이 있는지 확인 합니다. [역할 기반 Access Control를 사용 하 여 Azure Backup 복구 지점의 관리를](backup-rbac-rs-vault.md)참조 하세요.</li></ul> |
 
 ## <a name="the-microsoft-azure-recovery-service-agent-was-unable-to-connect-to-microsoft-azure-backup"></a>Microsoft Azure Recovery Services 에이전트에서 Microsoft Azure Backup에 연결할 수 없습니다.
 
-| Error  | 가능한 원인 | 권장 작업 |
+| 오류  | 가능한 원인 | 권장 작업 |
 | ---     | ---     | ---    |
 | <br /><ul><li>Microsoft Azure Recovery Service 에이전트에서 Microsoft Azure Backup에 연결할 수 없습니다. (ID: 100050) 네트워크 설정을 확인 하 고 인터넷에 연결할 수 있는지 확인 하세요.<li>(407) 프록시 인증 필요. |프록시가 연결을 차단 하 고 있습니다. |  <ul><li>Internet Explorer에서 **도구**  >  **인터넷 옵션**  >  **보안**  >  **인터넷**으로 이동 합니다. **사용자 지정 수준** 을 선택 하 고 **파일 다운로드** 섹션까지 아래로 스크롤합니다. **사용**을 선택합니다.<p>Internet Explorer에서 신뢰할 수 있는 사이트에 [url 및 IP 주소](install-mars-agent.md#verify-internet-access) 를 추가 해야 할 수도 있습니다.<li>프록시 서버를 사용하도록 설정을 변경합니다. 그런 다음 프록시 서버 세부 정보를 제공합니다.<li> 컴퓨터의 인터넷 액세스가 제한 된 경우 컴퓨터 또는 프록시의 방화벽 설정에서 이러한 [url 및 IP 주소](install-mars-agent.md#verify-internet-access)를 허용 하는지 확인 합니다. <li>서버에 바이러스 백신 소프트웨어가 설치 되어 있는 경우 다음 파일을 바이러스 백신 검사에서 제외 합니다. <ul><li>CBEngine.exe(dpmra.exe 대신)<li>CSC.exe(.NET Framework와 관련됨) 서버에 설치 된 모든 .NET Framework 버전에 대 한 CSC.exe 있습니다. 영향을 받는 서버에 있는 모든 버전의 .NET Framework에 대 한 CSC.exe 파일을 제외 합니다. <li>스크래치 폴더 또는 캐시 위치입니다. <br>스크래치 폴더 또는 캐시 경로에 대 한 기본 위치는 C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch.<li>C:\Program Files\Microsoft Azure Recovery Services의 bin 폴더.
 
 ## <a name="the-specified-vault-credential-file-cannot-be-used-as-it-is-not-downloaded-from-the-vault-associated-with-this-server"></a>지정 된 자격 증명 모음 자격 증명 파일은이 서버와 연결 된 자격 증명 모음에서 다운로드 되지 않으므로 사용할 수 없습니다.
 
-| Error  | 가능한 원인 | 권장 작업 |
+| 오류  | 가능한 원인 | 권장 작업 |
 | ---     | ---     | ---    |
 | 지정 된 자격 증명 모음 자격 증명 파일은이 서버와 연결 된 자격 증명 모음에서 다운로드 되지 않으므로 사용할 수 없습니다. (ID: 100110) 적절 한 자격 증명 모음 자격 증명을 제공 하세요. | 자격 증명 모음 자격 증명 파일이이 서버가 이미 등록 된 자격 증명 모음과 다른 자격 증명 모음에 있습니다. | 대상 머신 및 원본 머신이 동일한 Recovery Services 자격 증명 모음에 등록되었는지 확인합니다. 대상 서버가 다른 자격 증명 모음에 이미 등록 된 경우 **서버 등록** 옵션을 사용 하 여 올바른 자격 증명 모음에 등록 합니다.  
 
 ## <a name="backup-jobs-completed-with-warning"></a>백업 작업이 완료 되었지만 경고가 발생 했습니다.
 
-- 파일 및 폴더를 백업 하는 동안 MARS 에이전트가 반복 되 면 백업이 완료 된 것으로 표시 될 수 있는 다양 한 조건이 발생할 수 있습니다. 이러한 상황에서 작업은 경고와 함께 완료로 표시 됩니다. 이는 문제가 없지만 파일 하나 이상을 백업할 수 없음을 의미 합니다. 따라서 작업은 해당 파일을 건너 뛰 었으 나 데이터 원본에서 문제의 다른 모든 파일을 백업 했습니다.
+- 파일 및 폴더를 백업 하는 동안 MARS 에이전트가 반복 되 면 백업이 완료 된 것으로 표시 될 수 있는 다양 한 조건이 발생할 수 있습니다. 이러한 상황에서 작업은 경고와 함께 완료로 표시 됩니다. 이는 문제가 없지만 하나 이상의 파일을 백업할 수 없음을 의미 합니다. 따라서 작업은 해당 파일을 건너 뛰 었으 나 데이터 원본에서 문제의 다른 모든 파일을 백업 했습니다.
 
   ![백업 작업이 완료 되었지만 경고가 발생 했습니다.](./media/backup-azure-mars-troubleshoot/backup-completed-with-warning.png)
 
@@ -109,19 +109,19 @@ Microsoft Azure Recovery Services (MARS) 에이전트 문제 해결을 시작 �
 
 ## <a name="failed-to-set-the-encryption-key-for-secure-backups"></a>안전한 백업을 위한 암호화 키를 설정하지 못했습니다.
 
-| Error | 가능한 원인 | 권장 작업 |
+| 오류 | 가능한 원인 | 권장 작업 |
 | ---     | ---     | ---    |
 | <br />보안 백업에 대 한 암호화 키를 설정 하지 못했습니다. 활성화가 완전히 성공한 것은 아니지만 암호화 암호가 다음 파일에 저장되었습니다. |<li>서버가 다른 자격 증명 모음에 이미 등록되어 있습니다.<li>구성하는 동안 암호가 손상되었습니다.| 자격 증명 모음에서 서버 등록을 취소 하 고 새 암호를 사용 하 여 다시 등록 합니다.
 
 ## <a name="the-activation-did-not-complete-successfully"></a>정품 인증이 완료되지 않았습니다.
 
-| Error  | 가능한 원인 | 권장 작업 |
+| 오류  | 가능한 원인 | 권장 작업 |
 |---------|---------|---------|
 |<br />정품 인증이 완료되지 않았습니다. 내부 서비스 오류 [0x1FC07]로 인해 현재 작업이 실패했습니다. 잠시 후 작업을 다시 시도하세요. 문제가 지속되면 Microsoft 지원에 문의하세요.     | <li> 스크래치 폴더가 공간이 부족 한 볼륨에 있습니다. <li> 스크래치 폴더가 잘못 이동 되었습니다. <li> OnlineBackup.KEK 파일이 없습니다.         | <li>[최신 버전](https://aka.ms/azurebackup_agent) 의 MARS 에이전트로 업그레이드 합니다.<li>스크래치 폴더 또는 캐시 위치를 여유 공간이 있는 볼륨 (전체 백업 데이터 크기의 5% ~ 10%)으로 이동 합니다. 캐시 위치를 올바르게 이동 하려면 [파일 및 폴더 백업에 대 한 일반적인 질문](./backup-azure-file-folder-backup-faq.md#manage-the-backup-cache-folder)의 단계를 참조 하세요.<li> OnlineBackup.KEK 파일이 있는지 확인합니다. <br>*스크래치 폴더 또는 캐시 경로에 대 한 기본 위치는 C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*입니다.        |
 
 ## <a name="encryption-passphrase-not-correctly-configured"></a>암호화 암호가 올바르게 구성되지 않았습니다.
 
-| Error  | 가능한 원인 | 권장 작업 |
+| 오류  | 가능한 원인 | 권장 작업 |
 |---------|---------|---------|
 | <br />34506 오류입니다. 이 컴퓨터에 저장된 암호화의 암호가 제대로 구성되어 있지 않습니다.    | <li> 스크래치 폴더가 공간이 부족 한 볼륨에 있습니다. <li> 스크래치 폴더가 잘못 이동 되었습니다. <li> OnlineBackup.KEK 파일이 없습니다.        | <li>[최신 버전](https://aka.ms/azurebackup_agent)의 MARS 에이전트로 업그레이드합니다.<li>스크래치 폴더 또는 캐시 위치를 여유 공간이 있는 볼륨 (전체 백업 데이터 크기의 5% ~ 10%)으로 이동 합니다. 캐시 위치를 올바르게 이동 하려면 [파일 및 폴더 백업에 대 한 일반적인 질문](./backup-azure-file-folder-backup-faq.md#manage-the-backup-cache-folder)의 단계를 참조 하세요.<li> OnlineBackup.KEK 파일이 있는지 확인합니다. <br>*스크래치 폴더 또는 캐시 경로에 대 한 기본 위치는 C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch*입니다.         |
 
@@ -167,7 +167,7 @@ Set-ExecutionPolicy Unrestricted
 
 ## <a name="resource-not-provisioned-in-service-stamp"></a>리소스가 서비스 스탬프에 프로 비전 되지 않음
 
-Error | 가능한 원인 | 권장 작업
+오류 | 가능한 원인 | 권장 작업
 --- | --- | ---
 내부 서비스 오류 "리소스가 서비스 스탬프에서 프로 비전 되지 않았습니다."로 인해 현재 작업이 실패 했습니다. 잠시 후 작업을 다시 시도하세요. (ID: 230006) | 보호 된 서버의 이름이 바뀌었습니다. | <li> 자격 증명 모음에 등록 된 원래 이름으로 다시 서버 이름을 바꿉니다. <br> <li> 새 이름을 사용 하 여 자격 증명 모음에 서버를 다시 등록 합니다.
 
@@ -245,8 +245,8 @@ MARS 에이전트 작업을 성공적으로 수행 하려면 캐시 폴더에서
 
 서버에 바이러스 백신 소프트웨어가 설치 되어 있는 경우 다음과 같은 파일 및 폴더에 대 한 바이러스 백신 검사에 필요한 제외 규칙을 추가 합니다.  
 
-- 스크래치 폴더입니다. 기본 위치는`C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
-- Bin 폴더 위치`C:\Program Files\Microsoft Azure Recovery Services Agent\Bin`
+- 스크래치 폴더입니다. 기본 위치는 `C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
+- Bin 폴더 위치 `C:\Program Files\Microsoft Azure Recovery Services Agent\Bin`
 - CBengine.exe
 - CSC.exe
 
@@ -258,25 +258,25 @@ MARS 에이전트 작업을 성공적으로 수행 하려면 캐시 폴더에서
 
 오류 메시지 | 권장 작업
 --|--
-Microsoft Azure Recovery Services 에이전트가 스크래치 위치에 저장된 백업 체크섬에 액세스할 수 없습니다. | 이 문제를 해결 하려면 다음을 수행 하 고 서버를 다시 시작 합니다. <br/> - [바이러스 백신 또는 다른 프로세스가 스크래치 위치 파일을 잠그지 않았는지 확인 합니다.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [스크래치 위치가 유효 하 고 MARS 에이전트에서 액세스할 수 있는지 확인 하십시오.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
+Microsoft Azure Recovery Services 에이전트가 스크래치 위치에 저장된 백업 체크섬에 액세스할 수 없습니다. | 이 문제를 해결 하려면 다음 단계를 수행 하 고 서버를 다시 시작 합니다. <br/> - [바이러스 백신 또는 다른 프로세스가 스크래치 위치 파일을 잠그지 않았는지 확인 합니다.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [스크래치 위치가 유효 하 고 MARS 에이전트에서 액세스할 수 있는지 확인 하십시오.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
 
 ### <a name="salvhdinitializationerror"></a>SalVhdInitializationError
 
 오류 메시지 | 권장 작업
 --|--
-Microsoft Azure Recovery Services 에이전트가 VHD를 초기화하기 위해 스크래치 위치에 액세스할 수 없음 | 이 문제를 해결 하려면 다음을 수행 하 고 서버를 다시 시작 합니다. <br/> - [바이러스 백신 또는 다른 프로세스가 스크래치 위치 파일을 잠그지 않았는지 확인 합니다.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [스크래치 위치가 유효 하 고 MARS 에이전트에서 액세스할 수 있는지 확인 하십시오.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
+Microsoft Azure Recovery Services 에이전트가 VHD를 초기화하기 위해 스크래치 위치에 액세스할 수 없음 | 이 문제를 해결 하려면 다음 단계를 수행 하 고 서버를 다시 시작 합니다. <br/> - [바이러스 백신 또는 다른 프로세스가 스크래치 위치 파일을 잠그지 않았는지 확인 합니다.](#another-process-or-antivirus-software-blocking-access-to-cache-folder)<br/> - [스크래치 위치가 유효 하 고 MARS 에이전트에서 액세스할 수 있는지 확인 하십시오.](backup-azure-file-folder-backup-faq.md#how-to-check-if-scratch-folder-is-valid-and-accessible)
 
 ### <a name="sallowdiskspace"></a>SalLowDiskSpace
 
 오류 메시지 | 권장 작업
 --|--
-스크래치 폴더가 있는 볼륨의 저장소 공간이 부족 하 여 백업에 실패 했습니다. | 이 문제를 해결하려면 아래 단계를 확인하고 작업을 다시 시도하세요.<br/>- [MARS 에이전트가 최신 상태 인지 확인](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)<br/> - [백업 스크래치 공간에 영향을 주는 저장소 문제 확인 및 해결](#prerequisites)
+스크래치 폴더가 있는 볼륨의 저장소 공간이 부족 하 여 백업에 실패 했습니다. | 이 문제를 해결 하려면 다음 단계를 확인 하 고 작업을 다시 시도 하세요.<br/>- [MARS 에이전트가 최신 상태 인지 확인](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)<br/> - [백업 스크래치 공간에 영향을 주는 저장소 문제 확인 및 해결](#prerequisites)
 
 ### <a name="salbitmaperror"></a>SalBitmapError
 
 오류 메시지 | 권장 작업
 --|--
-파일에 변경 내용을 찾을 수 없습니다. 이는 다양한 이유 때문일 수 있습니다. 작업을 다시 시도하세요. | 이 문제를 해결하려면 아래 단계를 확인하고 작업을 다시 시도하세요.<br/> - [MARS 에이전트가 최신 상태 인지 확인](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409) <br/> - [백업 스크래치 공간에 영향을 주는 저장소 문제 확인 및 해결](#prerequisites)
+파일에 변경 내용을 찾을 수 없습니다. 이는 다양한 이유 때문일 수 있습니다. 작업을 다시 시도하세요. | 이 문제를 해결 하려면 다음 단계를 확인 하 고 작업을 다시 시도 하세요.<br/> - [MARS 에이전트가 최신 상태 인지 확인](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409) <br/> - [백업 스크래치 공간에 영향을 주는 저장소 문제 확인 및 해결](#prerequisites)
 
 ## <a name="next-steps"></a>다음 단계
 

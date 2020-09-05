@@ -9,13 +9,13 @@ metadata:
   ms.collection: collection
   author: DCtheGeek
   ms.author: dacoulte
-  ms.date: 06/29/2020
-  ms.openlocfilehash: d27bb0be6698a6b92c459143604ad2ebeb00b728
-  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+  ms.date: 08/31/2020
+  ms.openlocfilehash: a2d736b2706b3b0958bb544c6d0e4434c78e6791
+  ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85551881"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89231336"
 landingContent:
 - title: Azure 거버넌스 정보
   linkLists:
@@ -29,14 +29,26 @@ landingContent:
     links:
     - text: Azure 관리 그룹
       url: ./overview.md
-- title: 리소스 구성
+- title: 시작
   linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 관리 그룹 만들기(Portal)
+      url: ./create-management-group-portal.md
+    - text: 관리 그룹 만들기(Azure CLI)
+      url: ./create-management-group-azure-cli.md
+    - text: 관리 그룹 만들기(Azure PowerShell)
+      url: ./create-management-group-powershell.md
+    - text: 관리 그룹 만들기(REST)
+      url: ./create-management-group-rest-api.md
+    - text: 관리 그룹에 리소스 배포(ARM 템플릿)
+      url: ../../azure-resource-manager/templates/deploy-to-management-group.md
   - linkListType: how-to-guide
     links:
-    - text: 관리 그룹 만들기
-      url: ./create.md
-    - text: 리소스 관리
+    - text: 리소스 계층 구조 관리
       url: ./manage.md
+    - text: 리소스 계층 구조 보호
+      url: ./how-to/protect-resource-hierarchy.md
 - title: 참조
   linkLists:
   - linkListType: reference

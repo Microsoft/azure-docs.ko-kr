@@ -2,25 +2,21 @@
 title: '자습서: ExcelityGlobal과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 ExcelityGlobal 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e84becde-64bf-4089-be06-7555616b0965
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: a8ea503343f05f8b7ae5f121f3365f82794be2f3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 48aa1313dbcc9e56fc50abd64ea167fb1ca8943b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73156781"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555354"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>자습서: ExcelityGlobal과 Azure Active Directory 통합
 

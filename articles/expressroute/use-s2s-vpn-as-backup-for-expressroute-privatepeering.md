@@ -7,16 +7,16 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 02/05/2020
 ms.author: rambala
-ms.openlocfilehash: df4108604c656cd6383bd57b462c0f12f31bdd7b
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 68596b881ef1b62187bdb7194b364c9477b4e04d
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206868"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244774"
 ---
 # <a name="using-s2s-vpn-as-a-backup-for-expressroute-private-peering"></a>Express 경로 개인 피어 링에 대 한 백업으로 S2S VPN 사용
 
-[Express 경로 개인 피어 링을 사용 하 여 재해 복구를 위한 디자인][DR-PP]이라는 문서에서는 express 경로 개인 피어 링 연결에 대 한 백업 연결 솔루션에 대 한 필요성 및 용도에 대해 지역 중복 express 경로 회로를 사용 하는 방법에 대해 설명 했습니다. 이 문서에서는 Express 경로 개인 피어 링의 경우 S2S (사이트 간) VPN을 다시 활용 하 고 유지 관리 하는 방법을 살펴보겠습니다. 
+[Express 경로 개인 피어 링을 사용 하 여 재해 복구를 위한 디자인][DR-PP]이라는 문서에서는 express 경로 개인 피어 링 연결에 대 한 백업 연결 솔루션에 대 한 필요성 및 용도에 대해 지역 중복 express 경로 회로를 사용 하는 방법에 대해 설명 했습니다. 이 문서에서는 사이트 간 (S2S) VPN을 Express 경로 개인 피어 링에 대 한 백업으로 활용 하 고 유지 관리 하는 방법을 살펴보겠습니다. 
 
 지역 중복 Express 경로 회로와는 달리, 활성-수동 모드 에서만 Express 경로-VPN 재해 복구 조합을 사용할 수 있습니다. 수동 모드에서의 백업 네트워크 연결을 사용 하는 경우의 주요 문제는 수동 연결이 주 연결과 함께 실패 하는 경우가 많습니다. 수동 연결 오류가 발생 하는 일반적인 이유는 활성 유지 관리가 부족 하기 때문입니다. 따라서이 문서에서는 Express 경로 개인 피어 링을 백업 하는 S2S VPN 연결을 확인 하 고 적극적으로 유지 관리 하는 방법을 집중적으로 살펴보겠습니다.
 
@@ -36,7 +36,7 @@ ms.locfileid: "86206868"
 
 다음 표에는 토폴로지의 키 IP 접두사가 나와 있습니다.
 
-| **엔터티** | **접두사** |
+| **엔터티** | **Prefix** |
 | --- | --- |
 | 온-프레미스 LAN | 10.1.11.0/25 |
 | Azure 허브 VNet | 10.17.11.0/25 |
@@ -116,7 +116,7 @@ Cust11.inet.0: 14 destinations, 21 routes (14 active, 0 holddown, 0 hidden)
 
 ### <a name="configuring-for-symmetric-traffic-flow"></a>대칭 트래픽 흐름에 대 한 구성
 
-Express 경로 및 S2S VPN을 통해 지정 된 온-프레미스 경로를 보급 하는 경우 Azure는 Express 경로 경로를 선호 합니다. 공존 하는 Express 경로를 통해 Azure에서 S2S VPN 경로를 선호 하도록 하려면 VPN 연결을 통해 더 구체적인 경로 (더 큰 서브넷 마스크를 사용 하는 더 긴 접두사)를 보급 해야 합니다. 여기서의 목표는 VPN 연결을 백 전용으로 사용 하는 것입니다. 따라서 Azure의 기본 경로 선택 동작은 현재 목적과 함께 사용 됩니다. 
+Express 경로 및 S2S VPN을 통해 지정 된 온-프레미스 경로를 보급 하는 경우 Azure는 Express 경로 경로를 선호 합니다. 공존 하는 Express 경로를 통해 Azure에서 S2S VPN 경로를 선호 하도록 하려면 VPN 연결을 통해 더 구체적인 경로 (더 큰 서브넷 마스크를 사용 하는 더 긴 접두사)를 보급 해야 합니다. 여기서의 목표는 VPN 연결을 백업만 사용 하는 것입니다. 따라서 Azure의 기본 경로 선택 동작은 현재 목적과 함께 사용 됩니다. 
 
 온-프레미스에서 Azure로 향하는 트래픽이 S2S VPN을 통해 Express 경로 경로를 선호 하는지 확인 하는 것은 책임이 있습니다. 온-프레미스 설치에서 CE 라우터 및 방화벽의 기본 로컬 기본 설정은 100입니다. 따라서 Express 경로 개인 100 피어 링을 통해 수신 되는 경로에 대 한 로컬 기본 설정 (예 150)을 구성 하 여 Azure로 향하는 트래픽이 안정 된 상태에서 Express 경로 회로를 선호 하도록 만들 수 있습니다.
 

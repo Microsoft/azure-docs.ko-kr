@@ -6,7 +6,7 @@ ms.date: 11/25/2018
 ms.author: ryanwi
 ms.openlocfilehash: 6612c0b25789b8c19a99b8f23892c42930e26169
 ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "67182615"

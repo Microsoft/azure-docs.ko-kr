@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: aae1797f7f1a252a4f094ee9f1b079fb60ba72f3
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 0407046dcafb0dcc1872d5083669e09b378a75cd
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131754"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827346"
 ---
 # <a name="build-out-an-end-to-end-solution"></a>엔드투엔드 솔루션 빌드
 
@@ -95,6 +95,20 @@ Query
 
 이 섹션에서는 미리 작성된 함수 앱을 게시하고 Azure AD(Azure Active Directory) ID를 할당하여 함수 앱이 Azure Digital Twins에 액세스할 수 있는지 확인합니다. 이 단계를 완료하면 자습서의 나머지 부분에서 함수 앱 내의 함수를 사용할 수 있습니다. 
 
+_**AdtE2ESample**_ 프로젝트가 열려 있는 Visual Studio 창으로 돌아갑니다. 함수 앱은 _**SampleFunctionsApp**_ 프로젝트 파일에 있습니다. *솔루션 탐색기* 창에서 볼 수 있습니다.
+
+### <a name="update-dependencies"></a>종속성 업데이트
+
+앱을 게시하기 전에 종속성이 최신 버전인지 확인하고 포함된 모든 패키지의 최신 버전을 보유하고 있는지 확인하는 것이 좋습니다.
+
+*솔루션 탐색기* 창에서 *SampleFunctionsApp > 종속성*을 확장합니다. *패키지*를 마우스 오른쪽 단추로 클릭하고 *NuGet 패키지 관리...* 를 선택합니다.
+
+:::image type="content" source="media/tutorial-end-to-end/update-dependencies-1.png" alt-text="Visual Studio: SampleFunctionsApp 프로젝트에 대한 NuGet 패키지 관리" border="false":::
+
+NuGet 패키지 관리자가 열립니다. *업데이트* 탭을 선택하고 업데이트할 패키지가 있는 경우 *모든 패키지 선택* 확인란을 선택합니다. 그런 다음, *업데이트*를 누릅니다.
+
+:::image type="content" source="media/tutorial-end-to-end/update-dependencies-2.png" alt-text="Visual Studio: NuGet 패키지 관리자에서 모든 패키지를 업데이트하도록 선택":::
+
 ### <a name="publish-the-app"></a>앱 게시
 
 _**AdtE2ESample**_ 프로젝트가 열려 있는 Visual Studio 창으로 돌아가서 *솔루션 탐색기* 창에서 _**SampleFunctionsApp**_ 프로젝트 파일을 마우스 오른쪽 단추로 선택하고 **게시**를 누릅니다.
@@ -134,19 +148,21 @@ _**AdtE2ESample**_ 프로젝트가 열려 있는 Visual Studio 창으로 돌아�
 :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Visual Studio에서 Azure 함수 게시: 게시":::
 
 > [!NOTE]
-> 다음과 같은 팝업이 표시될 수 있습니다. :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Visual Studio에서 Azure 함수 게시: 자격 증명 게시" border="false":::
-> 그러면 **Azure에서 자격 증명 검색 시도**와 **저장**을 선택합니다.
+> 다음과 같은 팝업이 표시되는 경우: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Visual Studio에서 Azure 함수 게시: 자격 증명 게시" border="false":::
+> **Azure에서 자격 증명 검색 시도**와 **저장**을 선택합니다.
 >
-> *함수 런타임 버전이 Azure에서 실행되는 버전과 일치하지 않음* 경고가 표시되면 프롬프트에 따라 최신 Azure Functions 런타임 버전으로 업그레이드합니다. 이 문제는 이 자습서의 시작 부분에 있는 *필수 구성 요소* 섹션에서 권장하는 것보다 이전 버전의 Visual Studio를 사용하는 경우 발생할 수 있습니다.
+> *Azure에서 Functions 버전 업그레이드* 또는 *함수 런타임 버전이 Azure에서 실행되는 버전과 일치하지 않음* 경고가 표시되는 경우:
+>
+> 프롬프트에 따라 최신 Azure Functions 런타임 버전으로 업그레이드합니다. 이 문제는 이 자습서의 시작 부분에 있는 *필수 구성 요소* 섹션에서 권장하는 것보다 이전 버전의 Visual Studio를 사용하는 경우 발생할 수 있습니다.
 
 ### <a name="assign-permissions-to-the-function-app"></a>함수 앱에 사용 권한 할당
 
-함수 앱이 Azure Digital Twins에 액세스할 수 있게 다음 단계에서는 앱 설정을 구성하고, 앱에 시스템 관리형 Azure AD ID를 할당하고, 이 ID *소유자*에게 Azure Digital Twins 인스턴스의 사용 권한을 부여합니다.
+함수 앱이 Azure Digital Twins에 액세스할 수 있게 다음 단계에서는 앱 설정을 구성하고, 앱에 시스템 관리형 Azure AD ID를 할당하고, 이 ID를 Azure Digital Twins 인스턴스의 *Azure Digital Twins 소유자(미리 보기)* 역할에 부여합니다. 이 역할은 인스턴스에서 여러 데이터 평면 활동을 수행하려는 모든 사용자 또는 함수에 필요합니다. 보안 및 역할 할당에 대해 [*개념: Azure Digital Twins 솔루션 보안*](concepts-security.md)에서 자세히 알아보세요.
 
-Azure Cloud Shell에서 다음 명령을 사용하여 함수 앱에서 디지털 트윈 인스턴스를 참조하는 데 사용할 애플리케이션 설정을 지정합니다.
+Azure Cloud Shell에서 다음 명령을 사용하여 함수 앱에서 Azure Digital Twins 인스턴스를 참조하는 데 사용할 애플리케이션 설정을 지정합니다.
 
 ```azurecli-interactive
-az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-digital-twin-instance-URL>"
+az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
 ```
 
 다음 명령을 사용하여 시스템 관리 ID를 만듭니다. 출력에서 *principalId* 필드를 기록해 둡니다.
@@ -155,7 +171,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
 ```
 
-다음 명령에 *principalId* 값을 사용하여 함수 앱의 ID를 Azure Digital Twins 인스턴스의 *소유자* 역할에 할당합니다.
+다음 명령에서 출력의 *principalId* 값을 사용하여 함수 앱의 ID를 Azure Digital Twins 인스턴스의 *Azure Digital Twins 소유자(미리 보기)* 역할에 할당합니다.
 
 ```azurecli
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"
@@ -339,7 +355,7 @@ az dt endpoint create eventgrid --dt-name <your-Azure-Digital-Twins-instance> --
 az dt endpoint show --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name <your-Azure-Digital-Twins-endpoint> 
 ```
 
-출력에서 `provisioningState` 필드를 찾고 해당 값이 "성공"인지 확인합니다.
+출력에서 `provisioningState` 필드를 찾고 해당 값이 "성공"인지 확인합니다. "프로비저닝"을 나타낼 수도 있습니다. 즉, 엔드포인트가 아직 생성되고 있음을 의미합니다. 이 경우 몇 초 정도 기다린 후 명령을 다시 실행하여 성공적으로 완료되었는지 확인합니다.
 
 :::image type="content" source="media/tutorial-end-to-end/output-endpoints.png" alt-text="provisioningState가 성공인 엔드포인트를 보여주는 엔드포인트 쿼리의 결과":::
 
@@ -354,6 +370,9 @@ az dt route create --dt-name <your-Azure-Digital-Twins-instance> --endpoint-name
 ```
 
 이 명령을 실행하면 만든 경로에 대한 일부 정보가 출력됩니다.
+
+>[!NOTE]
+>엔드포인트(이전 단계에서)는 프로비저닝을 완료해야 해당 엔드포인트를 사용하는 이벤트 경로를 설정할 수 있습니다. 엔드포인트가 준비되지 않았기 때문에 경로를 만들지 못한 경우 몇 분 정도 기다린 다음, 다시 시도하세요.
 
 #### <a name="connect-the-function-to-event-grid"></a>Event Grid에 함수 연결
 

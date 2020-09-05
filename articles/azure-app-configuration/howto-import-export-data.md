@@ -1,18 +1,18 @@
 ---
 title: Azure 앱 구성을 사용 하 여 데이터 가져오기 또는 내보내기
-description: Azure 앱 구성에서 데이터를 가져오거나 내보내는 방법에 대해 알아봅니다.
+description: Azure 앱 구성으로 구성 데이터를 가져오거나 내보내는 방법에 대해 알아봅니다. 앱 구성 저장소와 코드 프로젝트 간에 데이터를 교환 합니다.
 services: azure-app-configuration
 author: lisaguthrie
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: lcozzens
-ms.openlocfilehash: 5b3d6d0561d7d6d6b23cb4f579b0988850da9771
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 21eba653bcd853db9550d0d3781aacd281884605
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80056877"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588078"
 ---
 # <a name="import-or-export-configuration-data"></a>구성 데이터 가져오기 또는 내보내기
 

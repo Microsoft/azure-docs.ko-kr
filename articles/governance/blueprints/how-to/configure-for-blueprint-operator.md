@@ -1,14 +1,14 @@
 ---
 title: 청사진 운영자를 위한 환경 설정
 description: Azure 기본 제공 역할 청사진에 사용 하도록 Azure 환경을 구성 하는 방법을 알아봅니다.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: how-to
-ms.openlocfilehash: 9390958507a135497c4c48a260a44bc0f4492ffa
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: ef911553b4985a6497fb397a1ae405387c6539fb
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499809"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051460"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>청사진 운영자를 위한 환경 구성
 

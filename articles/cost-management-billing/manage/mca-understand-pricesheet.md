@@ -4,15 +4,16 @@ description: Azure에서 Microsoft 고객 계약 청구서의 사용량 및 청�
 author: bandersmsft
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 1e776e351fe723f0fbc5b1d6a8f5593a9fc975b7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6205867cbcb65a3b5720fefd1356b36bcd8c6838
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199622"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88682725"
 ---
 # <a name="terms-in-your-microsoft-customer-agreement-price-sheet"></a>Microsoft 고객 계약 가격표의 용어
 

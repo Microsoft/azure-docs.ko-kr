@@ -14,14 +14,16 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b28e200cab2edb4c1f603e4c67264cdc1c46d7f8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: eb508831d7a10537f27bb5b4e55f3a0627ce1f3c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042849"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265969"
 ---
 # <a name="overview-of-live-streaming-using-media-services"></a>Media Services를 사용하는 라이브 스트리밍 개요
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](../latest/index.yml)의 최신 버전을 확인하세요. 또한 [v2에서 v3로의 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)을 참조하세요.
@@ -74,17 +76,17 @@ Media Services 2.10 릴리스부터, 채널을 만들 때 채널이 입력 스�
 
 | 기능 | 통과 채널 | 표준 채널 |
 | --- | --- | --- |
-| 단일 비트 전송률 입력은 클라우드에서 다중 비트 전송률로 인코딩됩니다. |아니요 |예 |
+| 단일 비트 전송률 입력은 클라우드에서 다중 비트 전송률로 인코딩됩니다. |예 |예 |
 | 최대 해상도, 계층 수 |1080p, 8계층, 60+fps |720p, 6계층, 30fps |
 | 입력 프로토콜 |RTMP, 부드러운 스트리밍 |RTMP, 부드러운 스트리밍 |
 | 가격 |[가격 책정 페이지](https://azure.microsoft.com/pricing/details/media-services/) 를 참조하고 "라이브 비디오" 탭 클릭 |[가격 책정 페이지](https://azure.microsoft.com/pricing/details/media-services/) 를 참조 하세요. |
 | 최대 실행 시간 |연중 무휴 |8시간 |
-| 슬레이트 삽입 지원 |아니요 |예 |
-| 광고 신호 지원 |아니요 |예 |
+| 슬레이트 삽입 지원 |예 |예 |
+| 광고 신호 지원 |예 |예 |
 | 통과 CEA 608/708 캡션 |예 |예 |
 | 균일하지 않은 입력 GOP에 대한 지원 |예 |아니요 - 입력은 고정된 2초 GOP여야 함 |
 | 변수 프레임 속도 입력에 대한 지원 |예 |아니요 - 입력은 고정된 프레임 속도여야 함.<br/>예를 들어 움직임이 많은 장면 중에는 사소한 차이가 허용됩니다. 하지만 인코더는 10프레임/초까지 떨어질 수 없습니다. |
-| 입력 피드가 손실될 경우 채널 자동 차단 |아니요 |12시간 동안 프로그램 실행이 없는 경우 |
+| 입력 피드가 손실될 경우 채널 자동 차단 |예 |12시간 동안 프로그램 실행이 없는 경우 |
 
 ## <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through"></a>온-프레미스 인코더(통과)에서 다중 비트 전송률 라이브 스트림을 받는 채널 작업
 
@@ -153,7 +155,7 @@ Media Services에서, [채널](/rest/api/media/operations/channel)은 라이브 
 | 시작 중 |시작 중 |없음(일시적인 상태) |
 | 실행 중 |준비(실행 중인 프로그램이 없음)<br/>또는<br/>스트리밍(실행 중인 프로그램이 하나 이상임) |YES |
 | 중지 중 |중지 중 |없음(일시적인 상태) |
-| 중지됨 |중지됨 |아니요 |
+| 중지됨 |중지됨 |예 |
 
 ## <a name="media-services-learning-paths"></a>Media Services 학습 경로
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

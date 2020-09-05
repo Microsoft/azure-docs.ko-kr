@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: e9c4470ea16f1840274a6fa8613822b20d6772b3
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 7b867f5bcbbdc5deab2d67f356df69ee870c21f3
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81310874"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142250"
 ---
 # <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>빠른 시작: azureiotsecurity 모듈 쌍 만들기
 
@@ -76,7 +76,7 @@ IoT용 Azure Security Center 모듈 쌍의 속성을 사용자 지정하는 방�
 
 ## <a name="next-steps"></a>다음 단계
 
-사용자 지정 경고를 구성하는 방법을 알아보려면 다음 문서로 계속 진행하세요.
+다음 문서로 이동하여 보안 권장 사항을 조사하는 방법을 알아봅니다.
 
 > [!div class="nextstepaction"]
-> [사용자 지정 경고 구성](quickstart-create-custom-alerts.md)
+> [보안 권장 사항 조사](quickstart-investigate-security-recommendations.md)

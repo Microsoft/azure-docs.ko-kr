@@ -1,14 +1,14 @@
 ---
 title: Azure DevTest Labs에서 랩에 태그 추가 | Microsoft Docs
-description: Azure DevTest Labs에서 랩에 태그를 추가하는 방법을 알아봅니다.
+description: Azure DevTest Labs에서 사용자 지정 태그를 만들고 태그를 사용 하 여 리소스를 범주화 하는 방법에 대해 알아봅니다. 태그를 포함 하는 구독의 모든 리소스를 볼 수 있습니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 30f0f2ed4b8cc98985326db652371b8ceb16bfb4
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a4d2b328626f0d0f096082fa88bb170894ccf3e4
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287592"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270736"
 ---
 # <a name="add-tags-to-a-lab-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩에 태그 추가
 

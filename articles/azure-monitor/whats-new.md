@@ -6,16 +6,74 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 07/08/2020
-ms.openlocfilehash: b36469a89c7bae39ae3c2d62792c2ccde0fcfda9
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 10d4cb8160d0bf9111903b193574e9e820ded221
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799330"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87827744"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Azure Monitor 설명서의 새로운 기능이란?
 
 이 문서에는 새롭거나 크게 업데이트된 Azure Monitor 문서가 나열되어 있습니다. 지난 달의 문서 업데이트가 포함되도록 매월 첫째 주에 새로 고쳐집니다.
+
+## <a name="july-2020"></a>2020년 7월
+
+### <a name="general"></a>일반
+- [Azure Monitor 배포](deploy-scale.md) - VM용 Azure Monitor 온보딩 콘텐츠의 재구성
+- [Azure Private Link를 사용하여 네트워크를 Azure Monitor에 안전하게 연결](platform/private-link-security.md) - 제한에 대한 섹션이 추가됨
+
+### <a name="alerts"></a>경고
+- [Azure Monitor 경고에 대한 작업 규칙](platform/alerts-action-rules.md) - CLI 프로세스가 추가됨
+- [Azure Portal에서 작업 그룹 만들기 및 관리](platform/action-groups.md) - UI의 변경 내용을 반영하도록 업데이트됨
+- [Azure Monitor Log Analytics에 저장된 쿼리](log-query/saved-queries.md) - 새 문서
+- [Azure Monitor의 로그 경고 문제 해결](platform/alerts-troubleshoot-log.md) - 경고 규칙 할당량에 섹션이 추가됨
+- [Azure 메트릭 경고 문제 해결](platform/alerts-troubleshoot-metric.md) - 아직 내보내지 않은 사용자 지정 메트릭의 경고 규칙에 대한 섹션이 추가됨
+- [Azure Monitor 메트릭 경고의 작동 방식 이해](platform/alerts-metric-overview.md) - 집계 세분성 선택을 위한 권장 사항이 추가됨
+
+### <a name="application-insights"></a>Application Insights
+- [Azure 웹앱 확장에 대한 릴리스 정보 - Application Insights](app/web-app-extension-release-notes.md) - 새 문서
+- [Application Insights 리소스에 대한 Resource Manager 템플릿 샘플](samples/resource-manager-app-resource.md) - 새 문서
+- [Azure Application Insights Profiler 문제 해결](app/profiler-troubleshooting.md) - Azure App Service에서 ASP.NET Core 앱에 대해 프로파일러를 실행하는 버그에 대한 참고 사항이 추가됨 
+
+### <a name="containers"></a>컨테이너
+- [컨테이너의 Azure Monitor의 로그 경고](insights/container-insights-log-alerts.md) - 새 문서
+- [컨테이너의 Azure Monitor의 메트릭 경고](insights/container-insights-metric-alerts.md) - 새 문서
+
+### <a name="logs"></a>로그
+- [Azure Monitor 고객 관리형 키](platform/customer-managed-keys.md) - 오류 메시지와 쿼리를 위한 CMK 구성 섹션이 추가됨
+- [Azure Monitor HTTP 데이터 수집기 API](platform/data-collector-api.md) - Python 3 샘플이 추가됨
+- [Azure Monitor에서 로그 쿼리 최적화](log-query/query-optimization.md) - 하위 쿼리를 사용할 때 여러 데이터 검색 방지에 대한 섹션이 추가됨
+- [자습서: Log Analytics 쿼리 시작](log-query/get-started-portal.md) - 비디오가 추가됨
+
+### <a name="platform-logs"></a>플랫폼 로그
+- [플랫폼 로그 및 메트릭을 다른 대상으로 전송하는 진단 설정 만들기](platform/diagnostic-settings.md) - 비디오가 추가됨
+- [Azure Monitor에 대한 Resource Manager 템플릿 샘플](samples/resource-manager-samples.md) - 로그 대상 유형을 사용하는 ARM 샘플이 추가됨 
+
+### <a name="solutions"></a>솔루션
+- [Azure Monitor의 모니터링 솔루션](insights/solutions.md) - CLI 프로세스가 추가됨
+- [Azure에서 Office 365 관리 솔루션](insights/solution-office-365.md) - 사용 중지 날짜가 변경됨
+
+### <a name="virtual-machines"></a>가상 머신
+
+VM용 Azure Monitor 콘텐츠의 재구성에서 새로운 문서 및 업데이트된 문서
+
+- [VM용 Azure Monitor란?](insights/vminsights-overview.md)
+- [VM용 Azure Monitor에 대해 Log Analytics 작업 영역 구성](insights/vminsights-configure-workspace.md)
+- [Azure Monitor에 Linux 컴퓨터 연결](platform/agent-linux.md)
+- [하이브리드 환경에 대한 Azure Monitor 사용](insights/vminsights-enable-hybrid.md)
+- [Azure Portal에서 단일 가상 머신 또는 가상 머신 확장 집합에 대한 Azure Monitor 사용](insights/vminsights-enable-portal.md)
+- [Azure Policy를 사용하여 VM용 Azure Monitor를 사용하도록 설정](insights/vminsights-enable-at-scale-policy.md)
+- [VM용 Azure Monitor 사용 개요](insights/vminsights-enable-overview.md)
+- [PowerShell을 사용하여 VM용 Azure Monitor 사용](insights/vminsights-enable-powershell.md)
+- [Resource Manager 템플릿을 사용하여 VM용 Azure Monitor 사용](insights/vminsights-enable-resource-manager.md)
+- [PowerShell 또는 템플릿을 사용하여 VM용 Azure Monitor 사용](insights/vminsights-enable-at-scale-powershell.md)
+
+
+### <a name="visualizations"></a>시각화
+- [Log Analytics 대시보드 시각화 업그레이드](log-query/dashboard-upgrade.md) - 새로 고침 빈도가 업데이트됨
+- [Azure Monitor의 데이터 시각화](visualizations.md) - 비디오가 추가됨
+
 
 ## <a name="june-2020"></a>2020년 6월
 
@@ -66,7 +124,8 @@ ms.locfileid: "87799330"
 - [Azure Portal을 사용하여 Log Analytics 작업 영역에 Azure 활동 로그 보내기](learn/quick-collect-activity-log-portal.md) - 새 문서.
 - [Azure Resource Manager 템플릿을 사용하여 Log Analytics 작업 영역에 Azure 활동 로그 보내기](learn/quick-collect-activity-log-arm.md) - 새 문서.
 
-#### <a name="new-and-updated-articles-from-restructure-and-consolidation-of-platform-log-content"></a>플랫폼 로그 콘텐츠 재구성 및 통합의 새로운 문서 및 업데이트된 문서
+플랫폼 로그 콘텐츠 재구성 및 통합의 새로운 문서 및 업데이트된 문서
+
 - [스토리지 계정에 Azure 리소스 로그 보관](./platform/resource-logs.md#send-to-azure-storage)
 - [Azure 활동 로그 이벤트 스키마](platform/activity-log-schema.md)
 - [Azure 활동 로그](platform/activity-log.md)
@@ -84,7 +143,7 @@ ms.locfileid: "87799330"
 - [Azure Monitor에서 Azure 활동 로그 이벤트 보기](./platform/activity-log.md#view-the-activity-log)
 
 ### <a name="virtual-machines"></a>가상 머신
-- [Azure Portal에서 VM용 Azure Monitor 사용](insights/vminsights-enable-single-vm.md) - Azure Arc를 포함하도록 업데이트되었습니다.
+- [Azure Portal에서 VM용 Azure Monitor 사용](./insights/vminsights-enable-portal.md) - Azure Arc를 포함하도록 업데이트되었습니다.
 - [VM용 Azure Monitor 사용 개요](insights/vminsights-enable-overview.md) - Azure Arc를 포함하도록 업데이트되었습니다.
 - [VM용 Azure Monitor란?](insights/vminsights-overview.md) - Azure Arc를 포함하도록 업데이트되었습니다.
 
@@ -293,7 +352,7 @@ VM용 Azure Monitor의 일반 공급에 대한 일반 업데이트
 
 - [VM용 Azure Monitor란?](insights/vminsights-overview.md)
 - [VM용 Azure Monitor(GA) 질문과 대답](insights/vminsights-ga-release-faq.md) 
-- [Azure Policy를 사용하여 VM용 Azure Monitor를 사용하도록 설정](insights/vminsights-enable-at-scale-policy.md) 
+- [Azure Policy를 사용하여 VM용 Azure Monitor를 사용하도록 설정](./insights/vminsights-enable-policy.md) 
 - [VM용 Azure Monitor를 사용하여 성능을 차트로 표시하는 방법](insights/vminsights-performance.md)
 - [VM용 Azure Monitor에서 로그를 쿼리하는 방법](insights/vminsights-log-search.md)
 - [VM용 Azure Monitor를 사용하여 앱 종속성 보기](insights/vminsights-maps.md) 

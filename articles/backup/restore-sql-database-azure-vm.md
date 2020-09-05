@@ -3,12 +3,12 @@ title: Azure VM에서 SQL Server 데이터베이스 복원
 description: 이 문서에서는 Azure VM에서 실행 되 고 Azure Backup을 사용 하 여 백업 되는 SQL Server 데이터베이스를 복원 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: 97cf8a7d7fcae0e31dde14e045b222c5899dbb02
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 682540e498c7531777032b5375f0105c03ce4ec6
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87921149"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826559"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Azure VM에서 SQL Server 데이터베이스 복원
 
@@ -23,7 +23,7 @@ ms.locfileid: "87921149"
 - 트랜잭션 로그 백업을 사용 하 여 특정 날짜 또는 시간 (초)으로 복원 합니다. Azure Backup은 선택 된 시간에 따라 복원 하는 데 필요한 적절 한 전체 차등 백업 및 로그 백업 체인을 자동으로 결정 합니다.
 - 특정 복구 지점으로 복원 하기 위해 특정 전체 또는 차등 백업을 복원 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 준비 사항
 
 데이터베이스를 복원 하기 전에 다음 사항에 유의 하십시오.
 
@@ -126,7 +126,7 @@ ms.locfileid: "87921149"
     >
     >- `PsExec -s cmd`을 실행 하 여 NT 권한 없는 셸에 입력
     >   - `cmdkey /add:<storageacct>.file.core.windows.net /user:AZURE\<storageacct> /pass:<storagekey>` 실행
-    >   - 액세스 권한 확인`dir \\<storageacct>.file.core.windows.net\<filesharename>`
+    >   - 액세스 권한 확인 `dir \\<storageacct>.file.core.windows.net\<filesharename>`
     >- 백업 자격 증명 모음에서 경로로 복원 파일을 시작 합니다. `\\<storageacct>.file.core.windows.net\<filesharename>`<BR>
     [Sysinternals](/sysinternals/downloads/psexec) 페이지에서 PsExec를 다운로드할 수 있습니다.
 
@@ -165,7 +165,7 @@ ms.locfileid: "87921149"
 
 ### <a name="restore-databases-with-large-number-of-files"></a>많은 수의 파일을 포함 하는 데이터베이스 복원
 
-데이터베이스에 있는 파일의 전체 문자열 크기가 [특정 한도](backup-sql-server-azure-troubleshoot.md#size-limit-for-files)보다 큰 경우 Azure Backup 복원 작업 중에 대상 복원 경로를 설정할 수 없도록 데이터베이스 파일 목록을 다른 pit 구성 요소에 저장 합니다. 대신 파일이 SQL 기본 경로로 복원 됩니다.
+데이터베이스에 있는 파일의 전체 문자열 크기가 [특정 한도](backup-sql-server-azure-troubleshoot.md#size-limit-for-files)보다 큰 경우 Azure Backup는 데이터베이스 파일 목록을 다른 pit 구성 요소에 저장 하므로 복원 작업 중에 대상 복원 경로를 설정할 수 없습니다. 대신 파일이 SQL 기본 경로로 복원 됩니다.
 
   ![대량 파일을 사용 하 여 데이터베이스 복원](./media/backup-azure-sql-database/restore-large-files.jpg)
 

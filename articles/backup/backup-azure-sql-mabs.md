@@ -3,12 +3,12 @@ title: Azure Backup Server를 사용 하 여 SQL Server 백업
 description: 이 문서에서는 MABS (Microsoft Azure Backup 서버)를 사용 하 여 SQL Server 데이터베이스를 백업 하는 구성에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.openlocfilehash: d682e63424ca247161e9784a8a05b91186da54b7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b47cb74c6e5dbb868c03f8f7b79c00b0c4ce7886
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003647"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182312"
 ---
 # <a name="back-up-sql-server-to-azure-by-using-azure-backup-server"></a>Azure Backup Server를 사용 하 여 Azure에 SQL Server 백업
 
@@ -24,10 +24,10 @@ SQL Server 데이터베이스를 백업 하 고 Azure에서 복구 하려면 다
 
 * 데이터베이스에 원격 파일 공유의 파일이 포함되어 있으면 오류 ID 104를 나타내며 보호가 실패합니다. MABS는 원격 파일 공유의 SQL Server 데이터에 대 한 보호를 지원 하지 않습니다.
 * MABS는 원격 SMB 공유에 저장 된 데이터베이스를 보호할 수 없습니다.
-* [가용성 그룹 복제본이 읽기 전용으로 구성](/sql/database-engine/availability-groups/windows/configure-read-only-access-on-an-availability-replica-sql-server?view=sql-server-ver15)되어 있는지 확인 합니다.
+* [가용성 그룹 복제본이 읽기 전용으로 구성](/sql/database-engine/availability-groups/windows/configure-read-only-access-on-an-availability-replica-sql-server?view=sql-server-ver15)되었는지 확인합니다.
 * SQL Server의 Sysadmin 그룹에 **Ntauthority\system** 시스템 계정을 명시적으로 추가 해야 합니다.
-* 부분적으로 포함 된 데이터베이스에 대해 대체 위치 복구를 수행 하는 경우 대상 SQL 인스턴스에서 [포함 된 데이터베이스](/sql/relational-databases/databases/migrate-to-a-partially-contained-database?view=sql-server-ver15#enable) 기능을 사용 하도록 설정 했는지 확인 해야 합니다.
-* 파일 스트림 데이터베이스에 대해 대체 위치 복구를 수행 하는 경우 대상 SQL 인스턴스에서 [파일 스트림 데이터베이스](/sql/relational-databases/blob/enable-and-configure-filestream?view=sql-server-ver15) 기능을 사용 하도록 설정 했는지 확인 해야 합니다.
+* 부분적으로 포함된 데이터베이스를 대체 위치에 복구하는 경우 대상 SQL 인스턴스에서 [포함된 데이터베이스](/sql/relational-databases/databases/migrate-to-a-partially-contained-database?view=sql-server-ver15#enable) 기능을 사용하도록 설정했는지 확인해야 합니다.
+* 파일 스트림 데이터베이스를 대체 위치에 복구하는 경우 대상 SQL 인스턴스에서 [파일 스트림 데이터베이스](/sql/relational-databases/blob/enable-and-configure-filestream?view=sql-server-ver15) 기능을 사용하도록 설정했는지 확인해야 합니다.
 * SQL Server AlwaysOn 보호:
   * MABS는 보호 그룹을 만들 때 조회를 실행할 때 가용성 그룹을 검색 합니다.
   * MABS는 장애 조치 (failover)를 감지 하 고 데이터베이스 보호를 계속 합니다.
@@ -45,10 +45,10 @@ SQL Server 데이터베이스를 백업 하 고 Azure에서 복구 하려면 다
     * 선택한 노드에서 백업이 실패 하면 백업 작업이 실패 합니다.
     * 원래 위치로의 복구는 지원 되지 않습니다.
 * SQL Server 2014 이상 백업 문제:
-  * SQL server 2014에는 [Windows Azure Blob 저장소에서 온-프레미스 SQL Server에 대 한 데이터베이스](/sql/relational-databases/databases/sql-server-data-files-in-microsoft-azure?view=sql-server-ver15)를 만드는 새로운 기능이 추가 되었습니다. 이 구성을 보호 하는 데 MABS를 사용할 수 없습니다.
+  * SQL Server 2014에는 [Microsoft Azure Blob Storage에서 온-프레미스 SQL Server에 대한 데이터베이스](/sql/relational-databases/databases/sql-server-data-files-in-microsoft-azure?view=sql-server-ver15)를 만드는 기능이 새로 추가되었습니다. 이 구성을 보호 하는 데 MABS를 사용할 수 없습니다.
   * SQL AlwaysOn 옵션에 대 한 "보조" 백업 기본 설정에 대 한 몇 가지 알려진 문제가 있습니다. MABS는 항상 보조 복제본에서 백업을 수행 합니다. 보조 데이터베이스를 찾을 수 없는 경우 백업이 실패 합니다.
 
-## <a name="before-you-start"></a>시작하기 전 확인 사항
+## <a name="before-you-start"></a>시작하기 전에
 
 시작 하기 전에 [Azure Backup Server를 설치 하 고 준비](backup-azure-microsoft-azure-backup.md)했는지 확인 합니다.
 
@@ -64,7 +64,7 @@ Azure에서 SQL Server 데이터베이스를 보호 하려면 먼저 백업 정�
 1. 보호 그룹 종류에 대해 **서버**를 선택 합니다.
 
     ![서버 보호 그룹 유형 선택](./media/backup-azure-backup-sql/pg-servers.png)
-1. 백업 하려는 데이터베이스가 있는 SQL Server 인스턴스를 확장 합니다. 해당 서버에서 백업할 수 있는 데이터 원본이 표시 됩니다. **모든 SQL 공유** 를 확장 하 고 백업 하려는 데이터베이스를 선택 합니다. 이 예에서는 ReportServer $ MSDPM2012 및 ReportServer $ MSDPM2012TempDB를 선택 합니다. **새로 만들기**를 선택합니다.
+1. 백업 하려는 데이터베이스가 있는 SQL Server 인스턴스를 확장 합니다. 해당 서버에서 백업할 수 있는 데이터 원본이 표시 됩니다. **모든 SQL 공유** 를 확장 하 고 백업 하려는 데이터베이스를 선택 합니다. 이 예에서는 ReportServer $ MSDPM2012 및 ReportServer $ MSDPM2012TempDB를 선택 합니다. **다음**을 선택합니다.
 
     ![SQL Server 데이터베이스 선택](./media/backup-azure-backup-sql/pg-databases.png)
 1. 보호 그룹의 이름을 지정한 다음 **온라인 보호**를 선택 합니다.
@@ -81,7 +81,7 @@ Azure에서 SQL Server 데이터베이스를 보호 하려면 먼저 백업 정�
    >
    >
 
-1. **새로 만들기**를 선택합니다. MABS는 사용 가능한 전체 저장소 공간을 보여 줍니다. 또한 잠재적인 디스크 공간 사용률을 보여 줍니다.
+1. **다음**을 선택합니다. MABS는 사용 가능한 전체 저장소 공간을 보여 줍니다. 또한 잠재적인 디스크 공간 사용률을 보여 줍니다.
 
     ![MABS에서 디스크 할당 설정](./media/backup-azure-backup-sql/pg-storage.png)
 
@@ -164,7 +164,7 @@ Azure에서 SQL Server 데이터베이스와 같은 보호 된 엔터티를 복�
 1. 데이터베이스 이름을 마우스 오른쪽 단추로 클릭 하 고 **복구**를 선택 합니다.
 
     ![Azure에서 데이터베이스 복구](./media/backup-azure-backup-sql/sqlbackup-recover.png)
-1. DPM에서는 복구 지점에 대한 세부 정보를 보여줍니다. **새로 만들기**를 선택합니다. 데이터베이스를 덮어쓰려면 복구 형식 **SQL Server의 원본 인스턴스에 복구**를 선택합니다. **다음**을 선택합니다.
+1. DPM에서는 복구 지점에 대한 세부 정보를 보여줍니다. **다음**을 선택합니다. 데이터베이스를 덮어쓰려면 복구 형식 **SQL Server의 원본 인스턴스에 복구**를 선택합니다. **다음**을 선택합니다.
 
     ![데이터베이스를 원래 위치로 복구](./media/backup-azure-backup-sql/sqlbackup-recoveroriginal.png)
 

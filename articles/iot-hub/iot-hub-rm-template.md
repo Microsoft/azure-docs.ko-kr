@@ -9,12 +9,13 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 02e814a9da320d688fe57edf3a3fe0640b8f5a47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: dcec1e40e9095c27abb1470e3739f65035a96834
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75976729"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007182"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-net"></a>Azure Resource Manager 템플릿을 사용하여 IoT Hub 만들기(.NET)
 
@@ -23,7 +24,7 @@ ms.locfileid: "75976729"
 Azure 리소스 관리자를 사용하여 Azure IoT Hub를 프로그래밍 방식으로 만들고 관리합니다. 이 자습서는 Azure Resource Manager 템플릿을 사용하여 C# 프로그램에서 IoT Hub를 만드는 방법을 보여 줍니다.
 
 > [!NOTE]
-> Azure에는 리소스를 만들고 작업 하기 위한 두 가지 배포 모델인 [Azure Resource Manager와 클래식](../azure-resource-manager/management/deployment-models.md)이 있습니다.  이 문서에서는 Azure Resource Manager 배포 모델 사용에 대해 설명합니다.
+> Azure에는 리소스를 만들고 작업 하기 위한 두 가지 배포 모델인  [Azure Resource Manager와 클래식](../azure-resource-manager/management/deployment-models.md)이 있습니다.  이 문서에서는 Azure Resource Manager 배포 모델 사용에 대해 설명합니다.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

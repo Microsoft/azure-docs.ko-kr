@@ -11,19 +11,19 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: carlrab
 ms.date: 07/28/2020
-ms.openlocfilehash: f3c7420e1f33a7c25e7d3bfdffff14019d0b606a
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 48d8b0519ca1b312909f8b48a7fd8a25d0f8b919
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542673"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225821"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-purchasing-model"></a>DTU 구매 모델을 사용 하 여 탄력적 풀에 대 한 리소스 제한
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 이 문서에서는 DTU 구매 모델을 사용 하 여 탄력적 풀 내에 있는 Azure SQL Database의 데이터베이스에 대 한 자세한 리소스 제한을 제공 합니다.
 
-* Azure SQL Database에 대 한 DTU 구매 모델 리소스 제한은 [dtu 리소스 제한-Azure SQL Database](resource-limits-vcore-elastic-pools.md)을 참조 하세요.
+* Azure SQL Database에 대 한 DTU 구매 모델 리소스 제한은 [dtu 리소스 제한-Azure SQL Database](resource-limits-dtu-single-databases.md)을 참조 하세요.
 * VCore 리소스 제한의 경우 [Vcore 리소스 제한 Azure SQL Database](resource-limits-vcore-single-databases.md) 및 [vcore 리소스 제한-탄력적 풀](resource-limits-vcore-elastic-pools.md)을 참조 하세요.
 
 ## <a name="elastic-pool-storage-sizes-and-compute-sizes"></a>탄력적 풀: 스토리지 크기 및 컴퓨팅 크기

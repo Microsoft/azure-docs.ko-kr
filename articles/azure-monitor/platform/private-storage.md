@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/20/2020
-ms.openlocfilehash: a14f7ca3e5a7b291e430db6ea536edc5396b5448
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 58d6f98c87e37254e77bcc8dda1cdca6e608cafc
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318898"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962675"
 ---
 # <a name="customer-owned-storage-accounts-for-log-ingestion-in-azure-monitor"></a>Azure Monitor의 로그 수집을 위한 고객 소유 스토리지 계정
 
@@ -53,7 +53,7 @@ BYOS를 필요로 하는 한 가지 시나리오는 Private Link를 통한 네�
 
 ## <a name="command-line-and-rest-api"></a>명령줄 및 REST API
 
-### <a name="command-line"></a>명령 줄
+### <a name="command-line"></a>명령줄
 연결 된 저장소 계정을 만들고 관리 하려면 [az monitor log analytics 작업 영역 연결 된 저장소](/cli/azure/monitor/log-analytics/workspace/linked-storage)를 사용 합니다. 이 명령은 작업 영역에서 저장소 계정을 연결 하 고 연결을 해제 하 고 연결 된 저장소 계정을 나열할 수 있습니다.
 
 ### <a name="request-and-cli-values"></a>요청 및 CLI 값
@@ -77,6 +77,8 @@ BYOS를 필요로 하는 한 가지 시나리오는 Private Link를 통한 네�
 subscriptions/{subscriptionId}/resourcesGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName1}
 ```
 
+
+## <a name="get-linked-storage-accounts"></a>연결 된 저장소 계정 가져오기
 
 ### <a name="get-linked-storage-accounts-for-all-data-source-types"></a>모든 데이터 원본 유형에 대 한 연결 된 저장소 계정 가져오기
 

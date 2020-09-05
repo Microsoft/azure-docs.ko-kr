@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 02/04/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-speech-services-one-nomore-no-go
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 69cd1ffaeb4cbc7bff8ad2c0c4e0611162d43b84
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: a71b0ba459d9363f6f479fd88ef10c8209eaf47c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87403974"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918726"
 ---
 # <a name="phrase-lists-for-speech-to-text"></a>음성 텍스트에 대 한 구 목록
 

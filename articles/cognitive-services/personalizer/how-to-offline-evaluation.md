@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: d1e11ffcb96bc233604464e90edb7dd42578bf08
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: a473085f9c94ca42a75d01b342d60cc33836b096
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87132707"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244842"
 ---
 # <a name="analyze-your-learning-loop-with-an-offline-evaluation"></a>오프 라인 평가를 사용 하 여 학습 루프 분석
 
@@ -30,7 +30,7 @@ ms.locfileid: "87132707"
 
 ## <a name="run-an-offline-evaluation"></a>오프라인 평가 실행
 
-1. [Azure Portal](https://azure.microsoft.com/free/)에서 Personalizer 리소스를 찾습니다.
+1. [Azure Portal](https://azure.microsoft.com/free/cognitive-services)에서 Personalizer 리소스를 찾습니다.
 1. Azure Portal에서 평가 섹션으로 이동 하 고 **평가 만들기**를 **선택 합니다.**
     ![Azure Portal에서 * * 평가 * * 섹션으로 이동 하 고 * * 평가 만들기 * *를 선택 합니다.](./media/offline-evaluation/create-new-offline-evaluation.png)
 1. 다음 값을 구성 합니다.

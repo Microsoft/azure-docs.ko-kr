@@ -1,18 +1,17 @@
 ---
-title: Azure Site Recovery를 사용하여 온-프레미스 머신 마이그레이션
-description: 이 문서에서는 Azure Site Recovery를 사용하여 Azure로 온-프레미스 컴퓨터를 마이그레이션하는 방법을 설명합니다.
-author: rayne-wiselman
+title: Azure Migrate를 사용하여 온-프레미스 머신 마이그레이션
+description: 이 문서에서는 온-프레미스 머신을 Azure로 마이그레이션하는 방법을 요약하고 Azure Migrate를 권장합니다.
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: raynew
-ms.openlocfilehash: 3c421845d4e15ef13ce98d0de111270159f564fe
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: e0e60ee346d20113b2ec7970390d9874522cc770
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285359"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87847315"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Azure로 온-프레미스 컴퓨터 마이그레이션
 
@@ -20,7 +19,7 @@ ms.locfileid: "87285359"
 
 ## <a name="migrate-with-azure-migrate"></a>Azure Migrate로 마이그레이션
 
-[Azure Migrate](../migrate/migrate-services-overview.md) 서비스를 사용하여 머신을 Azure로 마이그레이션하는 것이 좋습니다. Azure Migrate는 Azure Migrate, 기타 Azure 서비스 및 타사 도구를 사용하여 온-프레미스 머신을 Azure로 평가하고 마이그레이션하기 위한 중앙 집중식 허브를 제공합니다.
+[Azure Migrate](../migrate/migrate-services-overview.md) 서비스를 사용하여 머신을 Azure로 마이그레이션하는 것이 좋습니다. Azure Migrate는 서버 마이그레이션을 위해 특별히 빌드되었습니다. Azure Migrate는 온-프레미스 머신을 Azure로 검색, 평가 및 마이그레이션하기 위한 중앙 허브를 제공합니다.
 
 다음 링크를 따라 Azure Migrate로 마이그레이션합니다.
 

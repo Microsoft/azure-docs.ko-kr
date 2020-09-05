@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box 디스크의 압축을 풀고, 연결하고, 잠금을 해제하기 위한 자습서 | Microsoft Docs
-description: 이 자습서를 사용하여 Azure Data Box Disk를 설정하는 방법 알아보기
+description: 이 자습서에서는 Windows 및 Linux 클라이언트에서 Azure Data Box Disk의 압축을 풀고, 디스크에 연결하고, 암호를 가져오고, 디스크의 잠금을 해제하는 방법에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 1fbd99e8233b068efda4d0fb87e87788f49835cf
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 570653d620c5e314db9e6a0bc56d731f8acf9296
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79214363"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87925654"
 ---
 ::: zone target="docs"
 

@@ -13,12 +13,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 03/24/2020
   ms.author: trbye
-  ms.openlocfilehash: 455f71c7fd9defd7a1187f6b5df6b5b3b9c3131b
-  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+  ms.openlocfilehash: 17cc7914c8e02d3b38e2527e1c0bff3afb885b0b
+  ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85563764"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "89055099"
 highlightedContent:
   items:
   - title: Speech Service란?
@@ -51,29 +51,26 @@ conceptualContent:
       url: index-speech-to-text.yml
   - title: 텍스트 음성 변환
     links:
+    - itemType: overview
+      text: 텍스트 음성 변환 정보
+      url: text-to-speech.md
     - itemType: quickstart
-      text: 스피커로 음성 합성
-      url: quickstarts/text-to-speech.md
-    - itemType: quickstart
-      text: 오디오 파일로 음성 합성
-      url: quickstarts/text-to-speech-audio-file.md
+      text: 텍스트 음성 변환 시작
+      url: get-started-text-to-speech.md
     - itemType: how-to-guide
-      text: 음성 합성 기초
-      url: text-to-speech-basics.md
+      text: SSML을 사용하여 합성 향상
+      url: speech-synthesis-markup.md
     footerLink:
       text: 추가
       url: index-text-to-speech.yml
   - title: 음성 번역
     links:
+    - itemType: overview
+      text: 음성 번역 정보
+      url: speech-translation.md
     - itemType: quickstart
-      text: 음성을 텍스트로 변환
-      url: quickstarts/translate-speech-to-text.md
-    - itemType: quickstart
-      text: 음성을 여러 언어로 번역
-      url: quickstarts/translate-speech-to-text-multiple-languages.md
-    - itemType: how-to-guide
-      text: 음성 번역 기본 사항
-      url: speech-translation-basics.md
+      text: 음성 번역 시작
+      url: get-started-speech-translation.md
     footerLink:
       text: 추가
       url: index-speech-translation.yml

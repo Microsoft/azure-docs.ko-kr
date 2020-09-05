@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/17/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5431a0844a418ddcdbd595546253c1d03fda35c0
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 94da428862e1af66ee58e739b3ad3b5b95be3310
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88006573"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612370"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Windows 가상 데스크톱 파트너 통합
 
@@ -36,7 +36,7 @@ Microsoft Azure의 VMware 수평 클라우드는 VMware 수평의 모든 기능�
 Windows 가상 데스크톱 승인 공급자 인 VMware는 통합 및 사용 하기 쉬운 전원 관리, 클라우드 기반 모니터링 및 폭발 익스트림 프로토콜과 같이 VMware 수평과 함께 제공 되는 추가 기능을 계속 제공 하면서 Windows 가상 데스크톱을 사용 하려는 고객에 게 도움을 줍니다. 이러한 기능은 지속적으로 뛰어난 사용자 환경을 제공 하기 위해 즉시 변화 하는 네트워크 상태에 맞게 조정 됩니다. VMware 수평 클라우드는 VMware 앱 볼륨 및 동적 환경 관리자와 함께 제공 됩니다 .이는 MSIX 앱 연결 및 FSLogix를 사용 하는 고급 응용 프로그램 및 사용자 환경 관리 기능을 추가 합니다.
 
 - [파트너 웹 사이트로 이동](https://www.vmware.com/products/horizon-cloud-virtual-desktops.html)합니다.
-- [VMWare 수평 클라우드 기술 설명서를 참조](https://techzone.vmware.com/mastering-horizon-cloud-microsoft-azure)하세요.
+- [VMware 수평 클라우드 기술 설명서를 참조](https://techzone.vmware.com/mastering-horizon-cloud-microsoft-azure)하세요.
 
 ## <a name="10zig"></a>10ZiG
 

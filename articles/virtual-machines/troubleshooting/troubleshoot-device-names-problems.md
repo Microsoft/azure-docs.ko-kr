@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 6d3e35f44d11cd9ed41badbc64ff7528b5b15558
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 31f64a504156134b1d622705d5301d9cd5a5f5b1
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86084395"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756829"
 ---
 # <a name="troubleshoot-linux-vm-device-name-changes"></a>Linux VM 디바이스 이름 변경 문제 해결
 
@@ -42,7 +42,7 @@ SCSI 하위 시스템에서 예약된 Linux에서 검색하는 디바이스가 �
 
 이 문제를 해결하려면 영구 이름 지정을 사용합니다. 영구적으로 이름을 지정하는 네 가지 방법에는 파일 시스템 레이블별, UUID별, ID별 및 경로별이 있습니다. Azure Linux VM에 대해 파일 시스템 레이블 또는 UUID를 사용하는 것이 좋습니다.
 
-대부분의 배포는 `fstab` **nofail** 또는 **nobootwait** 매개 변수를 제공합니다. 이러한 매개 변수를 사용하면 디스크가 시작 시 탑재되지 않을 때 시스템을 부팅할 수 있습니다. 이러한 매개 변수에 대한 자세한 내용은 배포 설명서를 참조하세요. 데이터 디스크를 추가할 때 UUID를 사용하도록 Linux VM을 구성하는 방법에 대한 내용은 [Linux VM에 연결하여 새 디스크 탑재](../linux/add-disk.md#connect-to-the-linux-vm-to-mount-the-new-disk)를 참조하세요.
+대부분의 배포는 `fstab` **nofail** 또는 **nobootwait** 매개 변수를 제공합니다. 이러한 매개 변수를 사용하면 디스크가 시작 시 탑재되지 않을 때 시스템을 부팅할 수 있습니다. 이러한 매개 변수에 대한 자세한 내용은 배포 설명서를 참조하세요. 데이터 디스크를 추가할 때 UUID를 사용하도록 Linux VM을 구성하는 방법에 대한 내용은 [Linux VM에 연결하여 새 디스크 탑재](../linux/add-disk.md#format-and-mount-the-disk)를 참조하세요.
 
 Azure Linux 에이전트는 VM에 설치될 때 Udev 규칙을 사용하여 /dev/disk/azure 경로 아래에 기호 링크의 집합을 만듭니다. 애플리케이션 및 스크립트는 Udev 규칙을 사용하여 VM에 연결된 디스크와 디스크 유형 및 디스크 LUN을 식별합니다.
 

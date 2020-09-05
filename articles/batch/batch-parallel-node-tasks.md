@@ -3,13 +3,13 @@ title: 태스크를 병렬로 실행하여 컴퓨팅 리소스 최적화
 description: Azure Batch 풀의 각 노드에서 동시 작업을 실행하고 더 적은 수의 컴퓨팅 노드를 사용하여 효율성은 높이고 비용은 낮춥니다.
 ms.topic: how-to
 ms.date: 04/17/2019
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1b13f7f276740cd4f37e8d4c4ba1f2967d919ccf
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: H1Hack27Feb2017, devx-track-csharp
+ms.openlocfilehash: e4c98244755cae7a606ebe26cbadef53ca5fd922
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85961577"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926289"
 ---
 # <a name="run-tasks-concurrently-to-maximize-usage-of-batch-compute-nodes"></a>동시에 태스크를 실행하여 Batch 컴퓨팅 노드의 사용량 극대화 
 

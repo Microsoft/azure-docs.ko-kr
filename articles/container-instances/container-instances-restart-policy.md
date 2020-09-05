@@ -2,19 +2,19 @@
 title: 한 번 실행 태스크에 대 한 정책 다시 시작
 description: Azure Container Instances를 사용하여 빌드, 테스트 또는 이미지 렌더링 작업에서처럼 완료될 때까지 실행되는 작업을 실행하는 방법에 대해 알아봅니다.
 ms.topic: article
-ms.date: 04/15/2019
-ms.openlocfilehash: a582036ae54a0b100b768e37bcf0d952521559d9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.date: 08/11/2020
+ms.openlocfilehash: 336a31a03cdc9dfdfebe79ef47b59ef90053f523
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261351"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798944"
 ---
 # <a name="run-containerized-tasks-with-restart-policies"></a>다시 시작 정책으로 컨테이너 작업 실행
 
 Azure Container Instances에서는 컨테이너를 배포하는 것이 쉽고 빠르기 때문에 컨테이너 인스턴스에서 빌드, 테스트 및 이미지 렌더링과 같은 일회성 작업을 실행하기 위한 강력한 플랫폼을 제공합니다.
 
-구성 가능한 다시 시작 정책을 사용하면 프로세스가 완료될 때 컨테이너가 중지되도록 지정할 수 있습니다. 컨테이너 인스턴스는 초 단위로 비용이 청구되기 때문에 작업을 실행하는 컨테이너가 실행되는 동안 사용된 컴퓨팅 리소스에 대해서만 요금이 부과됩니다.
+구성 가능한 다시 시작 정책을 사용하면 해당 프로세스가 완료될 때 컨테이너가 중지되도록 지정할 수 있습니다. 컨테이너 인스턴스는 초 단위로 비용이 청구되기 때문에 작업을 실행하는 컨테이너가 실행되는 동안 사용된 컴퓨팅 리소스에 대해서만 요금이 부과됩니다.
 
 이 문서에서 제시된 예제는 Azure CLI를 사용합니다. Azure CLI 버전 2.0.21 이상이 [로컬로 설치되어 있거나][azure-cli-install][Azure Cloud Shell](../cloud-shell/overview.md)에서 CLI를 사용해야 합니다.
 
@@ -27,6 +27,8 @@ Azure Container Instances에서 [컨테이너 그룹](container-instances-contai
 | `Always` | 컨테이너 그룹의 컨테이너가 항상 다시 시작됩니다. 컨테이너를 만들 때 다시 시작 정책이 지정되지 않은 경우 적용되는 **기본** 설정입니다. |
 | `Never` | 컨테이너 그룹의 컨테이너가 절대로 다시 시작되지 않습니다. 컨테이너가 한 번만 실행됩니다. |
 | `OnFailure` | 컨테이너 그룹의 컨테이너가 컨테이너에서 실행된 프로세스가 실패할 때만(0이 아닌 종료 코드로 종료될 때) 다시 시작됩니다. 컨테이너가 한 번 이상 실행됩니다. |
+
+[!INCLUDE [container-instances-restart-ip](../../includes/container-instances-restart-ip.md)]
 
 ## <a name="specify-a-restart-policy"></a>다시 시작 정책 지정
 

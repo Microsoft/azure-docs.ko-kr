@@ -5,12 +5,13 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 876c4f5f45ff6c81a53274cf32e8bebecc1acfce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 33a15b3c6f570d3b4d36a205f91bce7b042f3bb4
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75349300"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89016583"
 ---
 # <a name="notes-on-service-fabric-reliable-actors-type-serialization"></a>서비스 패브릭 신뢰할 수 있는 행위자 형식 직렬화에 대한 참고 사항
 모든 메서드의 인수, 행위자 인터페이스의 각 메서드에서 반환 되는 작업의 결과 형식 및 행위자의 상태 관리자에 저장 된 개체는 [데이터 계약을 serialize](/dotnet/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer)할 수 있어야 합니다. 또한 [행위자 이벤트 인터페이스](service-fabric-reliable-actors-events.md)에 정의된 메서드의 인수에도 적용됩니다. (행위자 이벤트 인터페이스 메서드는 항상 void를 반환합니다.)

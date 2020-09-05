@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: c01806194156fb43524e2db5f4c9bf636186de95
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: f0c8fe6b8df5efef0cf3948c8d628d20c79502ff
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009208"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928686"
 ---
 # <a name="set-azure-roles-for-administrative-access-to-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 관리 액세스를 위한 Azure 역할 설정
 
@@ -26,11 +26,11 @@ Azure에서는 포털 또는 Resource Manager API를 통해 관리되는 모든 
 
 Azure Cognitive Search의 경우 역할은 다음 관리 작업을 지 원하는 사용 권한 수준과 연결 됩니다.
 
-| 역할 | Task |
+| 역할 | 작업 |
 | --- | --- |
 | 소유자 |api-key, 인덱스, 인덱서, 인덱서 데이터 원본 및 인덱서 일정 등 서비스 또는 해당 서비스의 개체를 만들거나 삭제합니다.<p>개수 및 스토리지 크기를 포함하여 서비스 상태를 봅니다.<p>역할 멤버 자격을 추가하거나 삭제합니다(소유자만 역할 멤버 자격을 관리할 수 있음).<p>구독 관리자 및 서비스 소유자는 소유자 역할의 자동 멤버 자격을 갖습니다. |
 | 참가자 |Azure 역할 관리를 뺀 소유자와 동일한 액세스 수준입니다. 예를 들어, 참여자는 개체를 만들거나 삭제하거나, [api-keys](search-security-api-keys.md)를 보고 다시 생성할 수 있지만 역할 멤버 자격을 수정할 수는 없습니다. |
-| [Search 서비스 참여자 기본 역할](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#search-service-contributor) | 참가자 역할과 동일합니다. |
+| [Search 서비스 참여자 기본 역할](../role-based-access-control/built-in-roles.md#search-service-contributor) | 참가자 역할과 동일합니다. |
 | 판독기 |서비스 기본 정보 및 메트릭을 봅니다. 이 역할의 멤버는 인덱스, 인덱서, 데이터 원본 또는 주요 정보를 볼 수 없습니다.  |
 
 역할은 서비스 엔드포인트에 대한 액세스 권한을 부여하지 않습니다. 인덱스 관리, 인덱스 채우기 및 검색 데이터 쿼리와 같은 Search 서비스 작업은 역할이 아니라 api-key를 통해 제어합니다. 자세한 내용은 [api-key 관리](search-security-api-keys.md)를 참조하세요.
@@ -39,7 +39,7 @@ Azure Cognitive Search의 경우 역할은 다음 관리 작업을 지 원하는
 
 다음 표에서는 Azure Cognitive Search에서 허용 되는 작업과 특정 작업에 액세스 하는 키 잠금 해제를 요약 합니다.
 
-| 연산 | 사용 권한 |
+| 작업(Operation) | 사용 권한 |
 |-----------|-------------------------|
 | 서비스 만들기 | Azure 구독 소유자 |
 | 서비스 크기 조정 | 리소스의 관리 키, RBAC 소유자 또는 참가자  |
@@ -50,7 +50,7 @@ Azure Cognitive Search의 경우 역할은 다음 관리 작업을 지 원하는
 | 관리자 키 관리 | 관리자 키, 리소스에 대한 RBAC 소유자 또는 참가자 |
 | 쿼리 키 관리 |  관리자 키, 리소스에 대한 RBAC 소유자 또는 참가자  |
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 + [Powershell을 사용하여 관리](search-manage-powershell.md) 
 + [Azure Cognitive Search의 성능 및 최적화](search-performance-optimization.md)

@@ -3,12 +3,12 @@ title: Azure Migrate의 검색, 평가 및 종속성 분석에 대 한 질문
 description: Azure Migrate에서 검색, 평가 및 종속성 분석에 대 한 일반적인 질문에 대 한 답변을 얻습니다.
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 8db9103494c0006127c45c0ae5f9672d3bd2bbb1
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: d4f833926541bafbae211caff37e5974b57e1047
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829886"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019014"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>검색, 평가 및 종속성 분석-일반적인 질문
 
@@ -33,26 +33,37 @@ ms.locfileid: "87829886"
 
 - Azure vm으로 마이그레이션하기 위한 온-프레미스 [VMware vm](how-to-set-up-appliance-vmware.md), [hyper-v vm](how-to-set-up-appliance-hyper-v.md)및 [물리적 서버](how-to-set-up-appliance-physical.md) 를 평가 하려는 경우 **azure vm 평가** 를 사용 합니다. [자세한 내용](concepts-assessment-calculation.md)
 
-- 이 평가 유형을 사용 하 여 [Azure Vmware 솔루션 (avs)](../azure-vmware/introduction.md) 으로 마이그레이션하기 위한 온-프레미스 [VMware vm](how-to-set-up-appliance-vmware.md) 을 평가 하려는 경우에는 **azure vmware solution (avs)** 평가를 사용 합니다. [자세한 정보](concepts-azure-vmware-solution-assessment-calculation.md)
+- 이 평가 유형을 사용 하 여 [Azure Vmware 솔루션 (avs)](../azure-vmware/introduction.md) 으로 마이그레이션하기 위한 온-프레미스 [VMware vm](how-to-set-up-appliance-vmware.md) 을 평가 하려는 경우에는 **azure vmware solution (avs)** 평가를 사용 합니다. [자세히 알아보기](concepts-azure-vmware-solution-assessment-calculation.md)
 
 - 두 가지 유형의 평가를 실행하는 경우에만 VMware 컴퓨터에서 공통 그룹을 사용할 수 있습니다. Azure Migrate에서 AVS 평가를 처음 실행하는 경우 새 VMware 컴퓨터 그룹을 만드는 것이 좋습니다.
+ 
+
+## <a name="why-is-performance-data-missing-for-someall-vms-in-my-assessment-report"></a>평가 보고서에서 일부 또는 모든 VM의 성능 데이터가 누락된 이유는 무엇인가요?
+
+"성능 기반" 평가의 경우 Azure Migrate 어플라이언스에서 온-프레미스 VM에 대한 성능 데이터를 수집할 수 없는 경우 평가 보고서 내보내기에 'PercentageOfCoresUtilizedMissing' 또는 'PercentageOfMemoryUtilizedMissing'이 표시됩니다. 다음을 확인하세요.
+
+- 평가를 만드는 동안 VM의 전원이 켜져 있는지 확인합니다.
+- 메모리 카운터가 누락되었지만 Hyper-V VM을 평가하려는 경우 이러한 VM에서 동적 메모리를 사용하도록 설정했는지 확인합니다. 현재 Azure Migrate 어플라이언스가 이러한 VM의 메모리 사용률을 수집할 수 없기 때문에 알려진 문제가 있습니다.
+- 모든 성능 카운터가 누락된 경우 포트 443(HTTPS)에서 아웃바운드 연결이 허용되는지 확인합니다.
+
+참고 - 임의의 성능 카운터가 누락된 경우 Azure Migrate: 서버 평가는 할당된 코어/메모리 온-프레미스로 대체하고 해당하는 VM 크기를 권장합니다.
+
+## <a name="why-is-the-confidence-rating-of-my-assessment-low"></a>내 평가의 신뢰 등급이 낮은 이유는 무엇인가요?
+
+신뢰 등급은 평가를 계산하는 데 필요한 [사용 가능한 데이터 요소](https://docs.microsoft.com/azure/migrate/concepts-assessment-calculation#ratings)의 백분율을 기준으로 "성능 기반" 평가에 대해 계산됩니다. 아래에는 평가의 신뢰 등급이 낮아질 수 있는 이유가 나와 있습니다.
+
+- 평가를 작성하는 기간 동안 환경을 프로파일링하지 않았습니다. 예를 들어 성능 기간을 일주일로 설정하여 평가를 만드는 경우 검색 시작 후 일주일 이상 기다려야 데이터 요소가 수집됩니다. 이 기간 동안 기다릴 수 없으면 성능 기간을 더 짧은 기간으로 변경하고 평가를 '다시 계산'하세요.
+ 
+- 서버 평가는 평가 기간에 일부 또는 모든 VM에 대한 성능 데이터를 수집할 수 없습니다. 평가 기간 동안 VM의 전원이 켜져 있는지, 포트 443에 대한 아웃바운드 연결이 허용되는지 확인하세요. Hyper-V VM의 경우 동적 메모리를 사용하도록 설정하면 메모리 카운터가 누락되어 신뢰 등급이 낮아집니다. 신뢰 등급의 최신 변경 내용을 반영하려면 평가를 '다시 계산'하세요. 
+
+- Server Assessment에서 검색이 시작된 후 VM 몇 개가 생성되었습니다. 예를 들어 마지막 1달의 성능 기록에 대한 평가를 만들려고 하는데, 일부 VM이 불과 일주일 전에 환경에서 생성되었습니다. 이 경우 새 VM의 성능 데이터를 전체 기간에 사용할 수 없으며 신뢰 등급이 낮아집니다.
+
+신뢰 등급에 대해 [자세히 알아보세요](https://docs.microsoft.com/azure/migrate/concepts-assessment-calculation#confidence-ratings-performance-based).
 
 ## <a name="i-cant-see-some-groups-when-i-am-creating-an-azure-vmware-solution-avs-assessment"></a>Azure VMware 솔루션 (AVS) 평가를 만들 때 일부 그룹을 볼 수 없습니다.
 
 - VMware 컴퓨터만 있는 그룹에서 AVS 평가를 수행할 수 있습니다. AVS 평가를 수행하려는 경우 그룹에서 VMware가 아닌 컴퓨터를 모두 제거하세요.
 - Azure Migrate에서 AVS 평가를 처음 실행하는 경우 새 VMware 컴퓨터 그룹을 만드는 것이 좋습니다.
-
-## <a name="how-do-i-select-ftt-raid-level-in-avs-assessment"></a>AVS 평가에서 FTT-RAID 수준을 선택 어떻게 할까요??
-
-AVS에서 사용 되는 저장소 엔진은 vSAN입니다. vSAN 스토리지 정책은 가상 머신에 대한 스토리지 요구 사항을 정의합니다. 이러한 정책은 VM에 스토리지를 할당하는 방법을 결정하기 때문에 VM에 필요한 서비스 수준을 보장합니다. 다음은 사용 가능한 FTT-Raid 조합입니다. 
-
-**FTT(허용 실패)** | **RAID 구성** | **필요한 최소 호스트** | **크기 조정 고려 사항**
---- | --- | --- | --- 
-1 | RAID-1(미러링) | 3 | 100GB VM은 200GB를 사용합니다.
-1 | RAID-5(이레이져 코딩) | 4 | 100GB VM은 133.33GB를 사용합니다.
-2 | RAID-1(미러링) | 5 | 100GB VM은 300GB를 사용합니다.
-2 | RAID-6(이레이져 코딩) | 6 | 100GB VM은 150GB를 사용합니다.
-3 | RAID-1(미러링) | 7 | 100GB VM은 400GB를 사용합니다.
 
 ## <a name="i-cant-see-some-vm-types-in-azure-government"></a>Azure Government에서 일부 VM 유형을 볼 수 없습니다.
 
@@ -131,7 +142,7 @@ CSV 파일을 통해 가져온 컴퓨터의 경우에는 AVS 평가의 기본 �
 --- | --- | ---
 지원 | 이 옵션은 현재 미리 보기 상태 이며 VMware Vm에 대해서만 사용할 수 있습니다. 지원 되는 운영 체제를 [검토](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) 합니다. | GA (일반 공급)를 사용 합니다.
 에이전트 | 교차 확인 하려는 컴퓨터에 에이전트를 설치할 필요가 없습니다. | [MMA (Microsoft Monitoring agent)](../azure-monitor/platform/agent-windows.md)및 [종속성 에이전트](../azure-monitor/platform/agents-overview.md#dependency-agent)를 분석 하려는 각 온-프레미스 컴퓨터에 설치 되는 에이전트입니다. 
-필수 조건 | 필수 구성 요소 및 배포 요구 사항을 [검토](concepts-dependency-visualization.md#agentless-analysis) 합니다. | 필수 구성 요소 및 배포 요구 사항을 [검토](concepts-dependency-visualization.md#agent-based-analysis) 합니다.
+필수 구성 요소 | 필수 구성 요소 및 배포 요구 사항을 [검토](concepts-dependency-visualization.md#agentless-analysis) 합니다. | 필수 구성 요소 및 배포 요구 사항을 [검토](concepts-dependency-visualization.md#agent-based-analysis) 합니다.
 Log Analytics | 필수 아님. | Azure Migrate는 종속성 시각화에 대한 [Azure Monitor 로그](../azure-monitor/log-query/log-query-overview.md)의 [서비스 맵](../azure-monitor/insights/service-map.md) 솔루션을 사용합니다. [자세히 알아보기](concepts-dependency-visualization.md#agent-based-analysis).
 작동 방법 | 종속성 시각화에 사용 되는 컴퓨터에서 TCP 연결 데이터를 캡처합니다. 검색 후 5 분 간격으로 데이터를 수집 합니다. | 컴퓨터에 설치 된 서비스 맵 에이전트는 각 프로세스에 대 한 TCP 프로세스 및 인바운드/아웃 바운드 연결에 대 한 데이터를 수집 합니다.
 데이터 | 원본 컴퓨터 서버 이름, 프로세스, 응용 프로그램 이름입니다.<br/><br/> 대상 컴퓨터 서버 이름, 프로세스, 응용 프로그램 이름 및 포트입니다. | 원본 컴퓨터 서버 이름, 프로세스, 응용 프로그램 이름입니다.<br/><br/> 대상 컴퓨터 서버 이름, 프로세스, 응용 프로그램 이름 및 포트입니다.<br/><br/> 연결 수, 대기 시간 및 데이터 전송 정보를 수집 하 고 Log Analytics 쿼리에 사용할 수 있습니다. 
@@ -170,13 +181,13 @@ Log Analytics | 필수 아님. | Azure Migrate는 종속성 시각화에 대한 
 에이전트 기반 종속성 시각화의 경우:
 
 - 스크립트를 사용 [하 여 종속성 에이전트를 설치](../azure-monitor/insights/vminsights-enable-hybrid.md#dependency-agent)합니다.
-- MMA의 경우 [명령줄 또는 자동화를 사용](../azure-monitor/platform/log-analytics-agent.md#installation-and-configuration)하거나 [스크립트](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab)를 사용 합니다.
+- MMA의 경우 [명령줄 또는 자동화를 사용](../azure-monitor/platform/log-analytics-agent.md#installation-options)하거나 [스크립트](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab)를 사용 합니다.
 - 스크립트 외에도 Microsoft Endpoint Configuration Manager 및 [Intigua](https://www.intigua.com/intigua-for-azure-migration) 와 같은 배포 도구를 사용 하 여 에이전트를 배포할 수 있습니다.
 
 ## <a name="what-operating-systems-does-mma-support"></a>MMA에서 지 원하는 운영 체제는 무엇 인가요?
 
-- [MMA에서 지 원하는 Windows 운영 체제](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems)목록을 봅니다.
-- [MMA에서 지 원하는 Linux 운영 체제](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems)목록을 봅니다.
+- [MMA에서 지 원하는 Windows 운영 체제](../azure-monitor/platform/log-analytics-agent.md#installation-options)목록을 봅니다.
+- [MMA에서 지 원하는 Linux 운영 체제](../azure-monitor/platform/log-analytics-agent.md#installation-options)목록을 봅니다.
 
 ## <a name="can-i-visualize-dependencies-for-more-than-one-hour"></a>1 시간 이상 종속성을 시각화할 수 있나요?
 

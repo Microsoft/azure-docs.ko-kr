@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 9fe084d931ee735f9eaecc58ca5445ae56a951cc
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 717b6ed7e711b4db4cb15e55282cfcdea4659178
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121054"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051341"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>웹 Api를 호출 하는 모바일 앱 구성
 
@@ -47,12 +47,12 @@ PublicClientApplication sampleApp = new PublicClientApplication(
 
 ### <a name="ios"></a>iOS
 
-IOS의 모바일 응용 프로그램은 클래스를 인스턴스화해야 `MSALPublicClientApplication` 합니다. 클래스를 인스턴스화하려면 다음 코드를 사용 합니다. 
+IOS의 모바일 응용 프로그램은 클래스를 인스턴스화해야 `MSALPublicClientApplication` 합니다. 클래스를 인스턴스화하려면 다음 코드를 사용 합니다.
 
 ```objc
 NSError *msalError = nil;
-     
-MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];    
+
+MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];
 MSALPublicClientApplication *application = [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&msalError];
 ```
 
@@ -61,7 +61,7 @@ let config = MSALPublicClientApplicationConfig(clientId: "<your-client-id-here>"
 if let application = try? MSALPublicClientApplication(configuration: config){ /* Use application */}
 ```
 
-[추가 MSALPublicClientApplicationConfig 속성](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplicationConfig.html#/Configuration%20options) 은 기본 기관을 재정의 하거나, 리디렉션 URI를 지정 하거나, msal 토큰 캐싱의 동작을 변경할 수 있습니다. 
+[추가 MSALPublicClientApplicationConfig 속성](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplicationConfig.html#/Configuration%20options) 은 기본 기관을 재정의 하거나, 리디렉션 URI를 지정 하거나, msal 토큰 캐싱의 동작을 변경할 수 있습니다.
 
 ### <a name="xamarin-or-uwp"></a>Xamarin 또는 UWP
 
@@ -76,7 +76,7 @@ var app = PublicClientApplicationBuilder.Create(clientId)
                                         .Build();
 ```
 
-추가 `With<Parameter>` 메서드는 UI 부모를 설정 하 고, 기본 기관을 재정의 하 고, 원격 분석에 대 한 클라이언트 이름 및 버전을 지정 하 고, 리디렉션 URI를 지정 하 고, 사용할 HTTP 팩터리를 지정 합니다. 예를 들어, HTTP 팩터리를 사용 하 여 프록시를 처리 하 고 원격 분석 및 로깅을 지정할 수 있습니다. 
+추가 `With<Parameter>` 메서드는 UI 부모를 설정 하 고, 기본 기관을 재정의 하 고, 원격 분석에 대 한 클라이언트 이름 및 버전을 지정 하 고, 리디렉션 URI를 지정 하 고, 사용할 HTTP 팩터리를 지정 합니다. 예를 들어, HTTP 팩터리를 사용 하 여 프록시를 처리 하 고 원격 분석 및 로깅을 지정할 수 있습니다.
 
 다음 섹션에서는 응용 프로그램을 인스턴스화하는 방법에 대 한 자세한 정보를 제공 합니다.
 
@@ -132,7 +132,7 @@ Xamarin.ios를 사용 하는 경우 다음 작업을 수행 합니다.
 - [인증 흐름의 대화형 부분이 종료 된 후 제어를 MSAL으로 되돌립니다.](msal-net-xamarin-android-considerations.md#ensure-that-control-returns-to-msal)
 - [Android 매니페스트 업데이트](msal-net-xamarin-android-considerations.md#update-the-android-manifest)
 - [포함 된 웹 보기 사용 (선택 사항)](msal-net-xamarin-android-considerations.md#use-the-embedded-web-view-optional)
-- [필요에 따라 문제 해결](msal-net-xamarin-android-considerations.md#troubleshoot)
+- [필요에 따라 문제 해결](msal-net-xamarin-android-considerations.md#troubleshooting)
 
 자세한 내용은 [Xamarin Android 고려 사항](msal-net-xamarin-android-considerations.md)을 참조 하세요.
 
@@ -154,17 +154,17 @@ Android 및 iOS에서 broker를 사용 하도록 설정 합니다.
 
 ### <a name="enable-the-broker-on-xamarin"></a>Xamarin에서 broker 사용
 
-Xamarin에서 broker를 사용 하도록 설정 하려면 `WithBroker()` 메서드를 호출할 때 매개 변수를 사용 `PublicClientApplicationBuilder.CreateApplication` 합니다. 기본적으로 `.WithBroker()` 는 true로 설정 됩니다. 
+Xamarin에서 broker를 사용 하도록 설정 하려면 `WithBroker()` 메서드를 호출할 때 매개 변수를 사용 `PublicClientApplicationBuilder.CreateApplication` 합니다. 기본적으로 `.WithBroker()` 는 true로 설정 됩니다.
 
 Xamarin.ios에 대해 조정 된 인증을 사용 하도록 설정 하려면이 문서에서 [xamarin.ios 섹션](#enable-brokered-authentication-for-xamarin-ios) 의 단계를 따릅니다.
 
 ### <a name="enable-the-broker-for-msal-for-android"></a>Android에 대 한 MSAL에 broker를 사용 하도록 설정
 
-Android에서 broker를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [android에서](brokered-auth.md)조정 된 인증을 참조 하세요. 
+Android에서 broker를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [android에서](brokered-auth.md)조정 된 인증을 참조 하세요.
 
 ### <a name="enable-the-broker-for-msal-for-ios-and-macos"></a>IOS 및 macOS 용 MSAL에 대해 broker를 사용 하도록 설정
 
-조정 된 인증은 iOS 및 macOS 용 MSAL의 Azure AD 시나리오에 대해 기본적으로 사용 하도록 설정 됩니다. 
+조정 된 인증은 iOS 및 macOS 용 MSAL의 Azure AD 시나리오에 대해 기본적으로 사용 하도록 설정 됩니다.
 
 다음 섹션에서는 Xamarin.ios 용 MSAL 또는 iOS 및 macOS 용 MSAL에 대 한 조정 된 인증 지원을 위해 응용 프로그램을 구성 하는 지침을 제공 합니다. 두 지침 집합에서 일부 단계가 다릅니다.
 
@@ -235,23 +235,23 @@ Xamarin iOS의 경우 일반적으로 개체 창을 설정 하지 않아도 됩�
                  .WithParentActivityOrWindow(App.RootViewController)
                  .ExecuteAsync();
     ```
-    
+
 #### <a name="step-4-register-a-url-scheme"></a>4 단계: URL 구성표 등록
 
-MSAL.NET는 Url을 사용 하 여 broker를 호출한 다음 broker 응답을 앱으로 다시 반환 합니다. 왕복을 완료 하려면 파일에 앱의 URL 체계를 등록 `Info.plist` 합니다. 
+MSAL.NET는 Url을 사용 하 여 broker를 호출한 다음 broker 응답을 앱으로 다시 반환 합니다. 왕복을 완료 하려면 파일에 앱의 URL 체계를 등록 `Info.plist` 합니다.
 
 앱의 URL 체계를 등록 하려면 다음 단계를 수행 합니다.
 
-1. 접두사가 `CFBundleURLSchemes` 인 접두사 `msauth` 입니다. 
-1. `CFBundleURLName`끝에를 추가 합니다. 이 패턴을 따릅니다. 
+1. 접두사가 `CFBundleURLSchemes` 인 접두사 `msauth` 입니다.
+1. `CFBundleURLName`끝에를 추가 합니다. 이 패턴을 따릅니다.
 
    `$"msauth.(BundleId)"`
 
    여기에서 `BundleId` 장치를 고유 하 게 식별 합니다. 예를 들어 `BundleId` 가 인 경우 `yourcompany.xforms` URL 체계는 `msauth.com.yourcompany.xforms` 입니다.
-    
+
    > [!NOTE]
    > 이 URL 체계는 broker의 응답을 받을 때 앱을 고유 하 게 식별 하는 리디렉션 URI의 일부가 됩니다.
-    
+
    ```XML
     <key>CFBundleURLTypes</key>
        <array>
@@ -267,14 +267,14 @@ MSAL.NET는 Url을 사용 하 여 broker를 호출한 다음 broker 응답을 �
          </dict>
        </array>
    ```
-    
+
 #### <a name="step-5-add-to-the-lsapplicationqueriesschemes-section"></a>5 단계: LSApplicationQueriesSchemes 섹션에 추가
 
 MSAL은 `–canOpenURL:` 장치에 broker가 설치 되어 있는지 확인 하기 위해를 사용 합니다. IOS 9에서 Apple은 응용 프로그램에서 쿼리할 수 있는 스키마를 잠갔습니다.
 
 `msauthv2` `LSApplicationQueriesSchemes` `Info.plist` 다음 코드 예제와 같이 파일의 섹션에를 추가 합니다.
 
-```XML 
+```XML
 <key>LSApplicationQueriesSchemes</key>
     <array>
       <string>msauthv2</string>
@@ -294,18 +294,18 @@ IOS 및 macOS 용 MSAL이 broker를 호출할 때 broker는 메서드를 사용 
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    return [MSALPublicClientApplication handleMSALResponse:url 
+    return [MSALPublicClientApplication handleMSALResponse:url
                                          sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]];
 }
 ```
 
 ```swift
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+
         guard let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String else {
             return false
         }
-        
+
         return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApplication)
     }
 ```
@@ -319,19 +319,19 @@ IOS 및 macOS 용 MSAL이 broker를 호출할 때 broker는 메서드를 사용 
 
 IOS 및 macOS 용 MSAL은 Url을 사용 하 여 broker를 호출한 다음 broker 응답을 앱에 반환 합니다. 왕복을 완료 하려면 파일에 앱에 대 한 URL 체계를 등록 `Info.plist` 합니다.
 
-앱에 대 한 구성표를 등록 하려면: 
+앱에 대 한 구성표를 등록 하려면:
 
-1. 사용자 지정 URL 체계에 접두사를 붙입니다 `msauth` . 
+1. 사용자 지정 URL 체계에 접두사를 붙입니다 `msauth` .
 
-1. 사용자의 구성표 끝에 번들 식별자를 추가 합니다. 이 패턴을 따릅니다. 
+1. 사용자의 구성표 끝에 번들 식별자를 추가 합니다. 이 패턴을 따릅니다.
 
    `$"msauth.(BundleId)"`
 
    여기에서 `BundleId` 장치를 고유 하 게 식별 합니다. 예를 들어 `BundleId` 가 인 경우 `yourcompany.xforms` URL 체계는 `msauth.com.yourcompany.xforms` 입니다.
-  
+
    > [!NOTE]
    > 이 URL 체계는 broker의 응답을 받을 때 앱을 고유 하 게 식별 하는 리디렉션 URI의 일부가 됩니다. 형식의 리디렉션 URI `msauth.(BundleId)://auth` 가 [Azure Portal](https://portal.azure.com)의 응용 프로그램에 대해 등록 되어 있는지 확인 합니다.
-  
+
    ```XML
    <key>CFBundleURLTypes</key>
    <array>
@@ -349,11 +349,11 @@ IOS 및 macOS 용 MSAL은 Url을 사용 하 여 broker를 호출한 다음 broke
 `LSApplicationQueriesSchemes`설치 된 경우 Microsoft Authenticator 앱에 대 한 호출을 허용 하려면를 추가 합니다.
 
 > [!NOTE]
-> `msauthv3`Xcode 11 이상 버전을 사용 하 여 앱을 컴파일할 때 스키마가 필요 합니다. 
+> `msauthv3`Xcode 11 이상 버전을 사용 하 여 앱을 컴파일할 때 스키마가 필요 합니다.
 
 다음은를 추가 하는 방법의 예입니다 `LSApplicationQueriesSchemes` .
 
-```XML 
+```XML
 <key>LSApplicationQueriesSchemes</key>
 <array>
   <string>msauthv2</string>

@@ -1,6 +1,6 @@
 ---
 title: '자습서: 위치에 대한 경로 찾기 | Microsoft Azure Maps'
-description: 이 자습서에서는 Microsoft Azure Maps Routing Service를 사용하여 맵에서 위치(관심 지점)로 경로를 렌더링하는 방법을 보여줍니다.
+description: 관심 지점까지의 경로를 찾는 방법을 알아봅니다. 주소 좌표를 설정하는 방법을 참조하고 Azure Maps Route 서비스를 쿼리하여 지점으로 가는 방향을 확인합니다.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 01/14/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: d6a526e23be47c9e05de0c9064bdb4095a49d132
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0ff604e920ca3e0708fc21a1cadfe61646f4e30b
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287416"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037578"
 ---
 # <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>자습서: Azure Maps를 사용하여 관심 지점으로 라우팅
 
@@ -25,7 +25,7 @@ ms.locfileid: "87287416"
 > * 주소 좌표 설정
 > * 관심 지점으로의 방향에 대한 Route Service 쿼리
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 계속하기 전에 [계정 만들기](quick-demo-map-app.md#create-an-azure-maps-account)의 지침에 따라 S1 가격 책정 계층을 사용한 구독이 필요합니다. [기본 키 가져오기](quick-demo-map-app.md#get-the-primary-key-for-your-account)의 단계를 수행하여 계정에 대한 기본 키를 가져옵니다. Azure Maps의 인증에 대한 자세한 내용은 [Azure Maps의 인증 관리](how-to-manage-authentication.md)를 참조하세요.
 

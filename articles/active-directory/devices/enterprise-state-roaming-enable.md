@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: na
 ms.custom: references_regions
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5f6e44aa89c1e2815d70bb4ba2ae5f5680252ac
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 34b554fbef63f23b3540fe49e5c45976122add25
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541892"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268607"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Azure Active Directory에서 엔터프라이즈 상태 로밍 활성화
 
@@ -32,11 +32,11 @@ Enterprise State Roaming을 사용하도록 설정하면 Azure Information Prote
 
 1. [Azure AD 관리 센터](https://aad.portal.azure.com/)에 로그인합니다.
 1. Enterprise State Roaming **Azure Active Directory**  >  **장치**  >  **Enterprise State Roaming**를 선택 합니다.
-1. **사용자가 디바이스에서 설정 및 앱 데이터를 동기화할 수 있습니다.** 를 선택합니다. 자세한 내용은 [디바이스 설정을 구성하는 방법](/azure/active-directory/device-management-azure-portal)을 참조하세요.
+1. **사용자가 디바이스에서 설정 및 앱 데이터를 동기화할 수 있습니다.** 를 선택합니다. 자세한 내용은 [디바이스 설정을 구성하는 방법](./device-management-azure-portal.md)을 참조하세요.
   
    ![사용자자 디바이스 간에 설정 및 앱 데이터를 동기화할 수 있습니다.라고 레이블이 지정된 디바이스 설정 이미지](./media/enterprise-state-roaming-enable/device-settings.png)
   
-Enterprise State Roaming 서비스를 사용하는 Windows 10 디바이스의 경우 Azure AD ID를 사용하여 디바이스를 인증해야 합니다. 디바이스가 Azure AD에 조인된 경우 사용자의 기본 로그인 ID는 해당 Azure AD ID이므로 추가 구성이 필요하지 않습니다. 디바이스에서 온-프레미스 Active Directory를 사용하는 경우 IT 관리자가 [하이브리드 Azure Active Directory 조인 디바이스를 구성](hybrid-azuread-join-manual-steps.md)해야 합니다. 
+Enterprise State Roaming 서비스를 사용하는 Windows 10 디바이스의 경우 Azure AD ID를 사용하여 디바이스를 인증해야 합니다. 디바이스가 Azure AD에 조인된 경우 사용자의 기본 로그인 ID는 해당 Azure AD ID이므로 추가 구성이 필요하지 않습니다. 디바이스에서 온-프레미스 Active Directory를 사용하는 경우 IT 관리자가 [하이브리드 Azure Active Directory 조인 디바이스를 구성](./hybrid-azuread-join-plan.md)해야 합니다. 
 
 ## <a name="data-storage"></a>데이터 스토리지
 

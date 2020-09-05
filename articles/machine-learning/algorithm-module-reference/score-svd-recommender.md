@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 02/10/2020
-ms.openlocfilehash: 82c3454ad4c8db3a9b19084f5b6ece988cc86b9a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/10/2020
+ms.openlocfilehash: 806c19100594f449288d810b68d072dd7de23646
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79455981"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189823"
 ---
 # <a name="score-svd-recommender"></a>SVD 추천 점수 매기기
 
@@ -107,9 +107,6 @@ ms.locfileid: "79455981"
 
 - 첫 번째 열에는 사용자 식별자가 포함 됩니다.
 - **사용자에 게 권장할 최대 항목 수**를 설정 하는 값에 따라 많은 추가 열이 생성 됩니다. 각 열에는 권장 항목 (식별자 별)이 포함 됩니다. 권장 사항은 사용자-항목 선호도를 기준으로 정렬 됩니다. 선호도가 가장 높은 항목은 열 **항목 1**에 배치 됩니다.
-
-> [!WARNING]
-> [추천 평가](evaluate-recommender.md) 모듈을 사용 하 여 이러한 점수가 매겨진 데이터 집합을 평가할 수 없습니다.
 
 
 ##  <a name="technical-notes"></a>기술 정보

@@ -3,12 +3,12 @@ title: Azure Resource Health를 통해 지원되는 리소스 유형 | Microsoft
 description: Azure Resource Health를 통해 지원되는 리소스 유형
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: f4d622ac6d37059731b51a679e13f824670b9dc8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d797b9fb9b843f114e01820fa666e56749c7983f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071293"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230163"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Azure Resource Health에서 리소스 유형 및 상태 검사
 다음은 리소스 유형별 리소스 상태를 통해 실행되는 모든 검사 목록입니다.
@@ -22,6 +22,11 @@ ms.locfileid: "87071293"
 |실행된 검사|
 |---|
 |<ul><li>API Management 서비스가 가동되고 실행 중인가?</li></ul>|
+
+## <a name="microsoftappplatformspring"></a>Microsoft.AppPlatform/Spring
+|실행된 검사|
+|---|
+|<ul><li>Azure 스프링 클라우드 인스턴스를 사용할 수 있나요?</li></ul>|
 
 ## <a name="microsoftbatchbatchaccounts"></a>Microsoft.Batch/batchAccounts
 |실행된 검사|
@@ -43,6 +48,11 @@ ms.locfileid: "87071293"
 |---|
 |<ul><li>호스트 서버가 작동 중인가?</li><li>호스트 OS 부팅이 완료되었는가?</li><li>가상 컴퓨터 컨테이너가 프로비전되고 전원이 공급되는가?</li><li>호스트와 스토리지 계정 간에 네트워크 연결이 되어 있는가?</li><li>게스트 OS의 부팅이 완료되었는가?</li><li>진행 중인 계획된 유지 관리가 있는가?</li><li>호스트 하드웨어의 성능이 저하되고 곧 오류가 발생하나요?</li></ul>|
 
+## <a name="microsoftclassiccomputedomainnames"></a>Microsoft.classiccompute/domainnames
+|실행된 검사|
+|---|
+|<ul><li>프로덕션 슬롯 배포가 모든 역할 인스턴스에 걸쳐 정상 상태 인가요?</li><li>모든 VM 인스턴스에서 역할이 정상 상태 인가요?</li><li>클라우드 서비스 역할 내에서 각 VM의 상태는 어떻습니까?</li><li>플랫폼 또는 고객이 시작한 작업으로 인해 VM 상태가 변경 되었습니까?</li><li>게스트 OS의 부팅이 완료되었는가?</li><li>진행 중인 계획된 유지 관리가 있는가?</li><li>호스트 하드웨어의 성능이 저하되고 곧 오류가 발생하나요?</li></ul>|
+
 ## <a name="microsoftcognitiveservicesaccounts"></a>Microsoft.cognitiveservices/accounts
 |실행된 검사|
 |---|
@@ -51,12 +61,17 @@ ms.locfileid: "87071293"
 ## <a name="microsoftcomputehostgroupshosts"></a>Microsoft.compute/hostgroups/hosts
 |실행된 검사|
 |---|
-|<ul><li>호스트가 실행 중인가요?</li><li>호스트 하드웨어 성능이 저하되었나요?</li><li>호스트 할당이 취소되었나요?</li><li>호스트 하드웨어 서비스가 다른 하드웨어로 복구되었나요?</li></ul>|
+|<ul><li>호스트를 실행 하 고 있습니까?</li><li>호스트 하드웨어 성능이 저하되었나요?</li><li>호스트 할당이 취소되었나요?</li><li>호스트 하드웨어 서비스가 다른 하드웨어로 복구되었나요?</li></ul>|
 
 ## <a name="microsoftcomputevirtualmachines"></a>Microsoft.compute/virtualmachines
 |실행된 검사|
 |---|
 |<ul><li>가상 머신을 호스팅하는 서버가 작동 중인가?</li><li>호스트 OS 부팅이 완료되었는가?</li><li>가상 컴퓨터 컨테이너가 프로비전되고 전원이 공급되는가?</li><li>호스트와 스토리지 계정 간에 네트워크 연결이 되어 있는가?</li><li>게스트 OS의 부팅이 완료되었는가?</li><li>진행 중인 계획된 유지 관리가 있는가?</li><li>호스트 하드웨어의 성능이 저하되고 곧 오류가 발생하나요?</li></ul>|
+
+## <a name="microsoftcontainerservicemanagedclusters"></a>Microsoft.ContainerService/managedClusters
+|실행된 검사|
+|---|
+|<ul><li>클러스터가 작동 하 고 실행 되 고 있나요?</li><li>클러스터에서 핵심 서비스를 사용할 수 있나요?</li><li>모든 클러스터 노드가 준비 되었습니까?</li><li>서비스 사용자가 최신이 고 유효 합니까?</li></ul>|
 
 ## <a name="microsoftdatafactoryfactories"></a>Microsoft.datafactory/factories
 |실행된 검사|
@@ -119,10 +134,20 @@ ms.locfileid: "87071293"
 |---|
 |<ul><li>HDInsight 클러스터에서 핵심 서비스를 사용할 수 있나요?</li><li>HDInsight 클러스터가 휴지 상태의 BYOK 암호화 키에 액세스할 수 있나요?</li></ul>|
 
+## <a name="microsoftiotcentraliotapps"></a>Microsoft 응용 프로그램
+|실행된 검사|
+|---|
+|<ul><li>IoT Central 응용 프로그램을 사용할 수 있나요?</li></ul>|
+
 ## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
 |실행된 검사|
 |---|
 |<ul><li>Azure KeyVault 플랫폼 문제로 인해 Key Vault에 대한 요청이 실패하는가?</li><li>고객의 요청이 너무 많아서 Key Vault에 대한 요청이 스로틀되는가?</li></ul>|
+
+## <a name="microsoftkustoclusters"></a>Microsoft. Kusto/클러스터
+|실행된 검사|
+|---|
+|<ul><li>클러스터가 낮은 수집 성공률을 겪고 있나요?</li><li>클러스터에 수집 대기 시간이 많이 발생 하나요?</li><li>클러스터에 많은 쿼리 오류가 발생 했습니까?</li></ul>|
 
 ## <a name="microsoftmachinelearningwebservices"></a>Microsoft.MachineLearning/webServices
 |실행된 검사|
@@ -159,6 +184,11 @@ ms.locfileid: "87071293"
 |---|
 |<ul><li>부하 분산 엔드포인트를 사용할 수 없나요?</li></ul>|
 
+## <a name="microsoftnetworktrafficmanagerprofiles"></a>Microsoft. network/trafficmanagerprofiles
+|실행된 검사|
+|---|
+|<ul><li>Traffic Manager 프로필에 영향을 주는 문제가 있나요?</li></ul>|
+
 ## <a name="microsoftnetworkvirtualnetworkgateways"></a>Microsoft.network/virtualNetworkGateways
 |실행된 검사|
 |---|
@@ -178,11 +208,6 @@ ms.locfileid: "87071293"
 |실행된 검사|
 |---|
 |<ul><li>용량 리소스가 실행 중인가요?</li><li>모든 워크노드가 실행 중인가요?</li></ul>|
-
-## <a name="microsoftpowerbiworkspacecollections"></a>Microsoft.PowerBI/workspaceCollections
-|실행된 검사|
-|---|
-|<ul><li>호스트 OS가 작동 중인가?</li><li>데이터 센터 외부에서 workspaceCollection에 연결할 수 있는가?</li><li>Power BI 리소스 공급자를 사용할 수 있나요?</li><li>해당 지역에서 Power BI 서비스를 사용할 수 있나요?</li></ul>|
 
 ## <a name="microsoftsearchsearchservices"></a>Microsoft.search/searchServices
 |실행된 검사|

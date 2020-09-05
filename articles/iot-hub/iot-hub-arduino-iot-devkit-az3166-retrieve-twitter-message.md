@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
-ms.openlocfilehash: 464e2c14fa238160ca198b9f1c8a9808e70933f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f0aa71b34818cf373d1bb58531ee5c68c8d3d5ec
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560972"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004326"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>흔들기, 흔들어서 트윗 찾기 -- Azure Functions를 사용하여 Twitter 메시지 검색
 
@@ -116,7 +117,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
    ![device-upload](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/device-upload.png)
 
-2. DevKit는 다시 부팅하고 코드를 실행하기 시작합니다.
+2. DevKit이 다시 부팅되고 코드 실행이 시작됩니다.
 
 "오류: AZ3166: 알 수 없는 패키지" 오류 메시지가 표시될 수 있습니다. 보드 패키지 인덱스가 올바르게 새로 고쳐지지 않으면 이 오류가 발생합니다. 이 문제를 해결하려면 [IoT DevKit FAQ의 "알 수 없는 패키지" 오류](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#development)를 확인합니다.
 

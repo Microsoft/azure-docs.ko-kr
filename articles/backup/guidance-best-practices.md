@@ -3,12 +3,12 @@ title: 지침 및 모범 사례
 description: 클라우드 및 온-프레미스 워크 로드를 클라우드로 백업 하기 위한 모범 사례 및 지침을 알아봅니다.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 2571fcc31a0ea6a548ec764d7a15d6d976ae4822
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: db6eec5351a9015b136226610d2bb3deb8bdc651
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87808630"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000365"
 ---
 # <a name="backup-cloud-and-on-premises-workloads-to-cloud"></a>클라우드 및 온-프레미스 워크 로드를 클라우드로 백업
 
@@ -28,7 +28,7 @@ Azure에서 인프라 및 응용 프로그램 보호를 시작 하는 것은 쉽
 
 ![Azure Backup 아키텍처](./media/guidance-best-practices/azure-backup-architecture.png)
 
-### <a name="workloads"></a>작업
+### <a name="workloads"></a>워크로드
 
 Azure Backup를 사용 하면 다양 한 워크 로드 (온-프레미스 및 클라우드)에 대해 데이터를 보호할 수 있습니다. Azure의 안전 하 고 신뢰할 수 있는 기본 제공 데이터 보호 메커니즘입니다. 관리 오버 헤드 없이 여러 워크 로드에 걸쳐 보호를 원활 하 게 확장할 수 있습니다. PowerShell, CLI, Azure Resource Manager 템플릿 및 REST Api를 통해 여러 automation 채널을 사용 하도록 설정 하는 것도 가능 합니다.
 
@@ -48,7 +48,7 @@ Azure Backup를 사용 하면 다양 한 워크 로드 (온-프레미스 및 클
 
 ### <a name="management-plane"></a>관리 평면
 
-* **액세스 제어** -Recovery services 자격 증명 모음은 관리 기능을 제공 하며 AZURE PORTAL, SDK, CLI 및 심지어 REST api를 통해 액세스할 수 있습니다. 또한 승인 된 백업 관리자 에게만 백업에 대 한 액세스를 제한 하는 옵션을 제공 하는 RBAC 경계입니다.
+* **액세스 제어** – Recovery Services 자격 증명 모음은 관리 기능을 제공 하 고 AZURE PORTAL, SDK, CLI 및 심지어 REST api를 통해 액세스할 수 있습니다. 또한 승인 된 백업 관리자 에게만 백업에 대 한 액세스를 제한 하는 옵션을 제공 하는 RBAC 경계입니다.
 
 * **정책 관리** – 각 자격 증명 모음 내의 Azure Backup 정책은 백업이 트리거되는 시기 및 유지 해야 하는 기간을 정의 합니다. 또한 이러한 정책을 관리 하 고 여러 항목에서 적용할 수 있습니다.
 
@@ -72,7 +72,7 @@ Azure Backup은 Recovery Services 자격 증명 모음을 사용하여 백업을
 
 * 워크 로드가 여러 구독에 걸쳐 분산 된 경우 구독 당 하나 이상의 자격 증명 모음을 만들 수 있습니다.
   * 모든 자격 증명 모음, 구독 및 테 넌 트에서 작업 활동의 모니터링을 간소화 하기 위해 Backup 탐색기 및 보고서를 사용할 수 있습니다. 집계 보기를 보려면 [여기에서 자세히 알아보세요](monitor-azure-backup-with-backup-explorer.md) .
-  * 자격 증명 모음에서 일관 된 정책을 필요로 하는 경우 Azure policy를 사용 하 여 여러 자격 증명 모음에 백업 정책을 전파할 수 있습니다. [' Deployifnotexists '](../governance/policy/concepts/effects.md#deployifnotexists) 효과를 사용 하 여 여러 자격 증명 모음에 백업 정책을 전파 하는 사용자 지정 [Azure Policy 정의](../governance/policy/concepts/definition-structure.md) 를 작성할 수 있습니다. 할당 하면이 Azure Policy 정의를 특정 범위 (subscription 또는 RG)에 [할당할](../governance/policy/assign-policy-portal.md) 수 있으므로 Azure Policy 할당 범위에서 모든 Recovery services 자격 증명 모음에 ' 백업 정책 ' 리소스를 배포할 수 있습니다. 백업 빈도, 보존 등의 백업 정책 설정은 사용자가 Azure Policy 할당에서 매개 변수로 지정 해야 합니다.
+  * 자격 증명 모음에서 일관 된 정책을 필요로 하는 경우 Azure policy를 사용 하 여 여러 자격 증명 모음에 백업 정책을 전파할 수 있습니다. [' Deployifnotexists '](../governance/policy/concepts/effects.md#deployifnotexists) 효과를 사용 하 여 여러 자격 증명 모음에 백업 정책을 전파 하는 사용자 지정 [Azure Policy 정의](../governance/policy/concepts/definition-structure.md) 를 작성할 수 있습니다. 할당 하면이 Azure Policy 정의를 특정 범위 (구독 또는 RG)에 [할당할](../governance/policy/assign-policy-portal.md) 수 있으므로 Azure Policy 할당 범위에서 모든 Recovery Services 자격 증명 모음에 ' 백업 정책 ' 리소스를 배포할 수 있습니다. 백업 빈도, 보존 등의 백업 정책 설정은 사용자가 Azure Policy 할당에서 매개 변수로 지정 해야 합니다.
 
 * 조직의 공간이 증가 함에 따라 백업 정책에 따라 정렬, 자격 증명 모음 통합, 저렴 한 중복성에 대 한 절충 (GRS에서 LRS로 이동) 등의 이유로 작업을 구독 간에 이동 하는 것이 좋습니다.  Azure Backup는 Azure 구독에서 또는 동일한 구독 내의 다른 리소스 그룹으로 Recovery Services 자격 증명 모음 이동을 지원 합니다. [자세한 내용은 여기를 참조](backup-azure-move-recovery-services-vault.md)하세요.
 
@@ -119,7 +119,7 @@ Azure Backup 정책에는 *일정* (백업 수행 시기) 및 *보존* (백업 �
   * 보존 기간을 줄이면 다음 정리 작업에서 복구 지점이 정리 되도록 표시 되 고 이후에 삭제 됩니다.
   * 최신 보존 규칙은 모든 보존 시점 (주문형 보존 지점은 제외)에 적용 됩니다. 따라서 보존 기간이 연장 된 경우 (예: 100 일), 백업이 수행 된 후 보존 감소 (예: 100 일 ~ 7 일)에 따라 모든 백업 데이터는 마지막으로 지정 된 보존 기간 (7 일)에 따라 보존 됩니다.
 
-* Azure backup은 *백업을 보호 하 고 관리할*수 있는 유연성을 제공 합니다.
+* Azure Backup는 *백업을 보호 하 고 관리할*수 있는 유연성을 제공 합니다.
   * *보호를 중지 하 고 백업 데이터를 보존*합니다. 데이터 원본 (VM, 응용 프로그램)을 사용 중지 하거나 서비스 해제 하는 경우 감사 또는 규정 준수를 위해 데이터를 유지 해야 하는 경우이 옵션을 사용 하 여 이후의 모든 백업 작업에서 데이터 원본을 보호 하 고 백업 된 복구 지점이 유지 되지 않도록 할 수 있습니다. 그런 다음 VM 보호를 복원 하거나 다시 시작할 수 있습니다.
   * *보호를 중지 하 고 백업 데이터를 삭제*합니다. 이 옵션을 선택 하면 이후의 모든 백업 작업이 VM을 보호 하 고 모든 복구 지점이 삭제 되지 않습니다. VM을 복원 하거나 백업 다시 시작 옵션을 사용할 수 없습니다.
 
@@ -143,7 +143,7 @@ Azure Backup 정책에는 *일정* (백업 수행 시기) 및 *보존* (백업 �
 
 * Azure Backup에는 보안 취약성을 예방, 감지 및 대응 하기 위해 서비스에 기본 제공 되는 몇 가지 보안 컨트롤이 있습니다 (자세한 정보).
 
-* 복구 서비스 자격 증명 모음에 사용되는 스토리지 계정은 격리되며 악의적인 목적을 위해 사용자가 액세스할 수 없습니다. 액세스는 복원과 같은 Azure Backup 관리 작업을 통해서만 허용됩니다.
+* Recovery Services 자격 증명 모음에 사용 되는 저장소 계정은 격리 되어 있으며 사용자가 악의적인 목적으로 액세스할 수 없습니다. 액세스는 복원과 같은 Azure Backup 관리 작업을 통해서만 허용됩니다.
 
 ### <a name="encryption-of-data-in-transit-and-at-rest"></a>전송 중 및 미사용 데이터 암호화
 
@@ -189,7 +189,7 @@ Azure [개인 끝점](../private-link/private-endpoint-overview.md) 은 Azure �
 
 ## <a name="governance-considerations"></a>거버넌스 고려 사항
 
-Azure의 거 버 넌 스는 주로 [Azure Policy](../governance/policy/overview.md) 및 [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md)를 사용 하 여 구현 됩니다. [Azure Policy](../governance/policy/overview.md)를 사용하면 정책 정의를 만들고 할당하고 관리하여 리소스에 대 한 규칙을 적용할 수 있습니다. 이 기능은 해당 리소스가 회사 표준을 준수하게 합니다. [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md)를 사용하면 Azure 리소스 및 기타 클라우드 공급 기업에 대한 클라우드 사용량 및 비용을 추적할 수 있습니다. 또한 [Azure Price 계산기](https://azure.microsoft.com/pricing/calculator/) 및 [Azure Advisor](../advisor/advisor-overview.md) 같은 다음 도구는 cost management 프로세스에서 중요 한 역할을 합니다.
+Azure의 거 버 넌 스는 주로 [Azure Policy](../governance/policy/overview.md) 및 [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md)를 사용 하 여 구현 됩니다. [Azure Policy](../governance/policy/overview.md)를 사용하면 정책 정의를 만들고 할당하고 관리하여 리소스에 대 한 규칙을 적용할 수 있습니다. 이 기능은 해당 리소스가 회사 표준을 준수하게 합니다. [Azure Cost Management](../cost-management-billing/cost-management-billing-overview.md)를 사용하면 Azure 리소스 및 기타 클라우드 공급 기업에 대한 클라우드 사용량 및 비용을 추적할 수 있습니다. 또한 [Azure Price 계산기](https://azure.microsoft.com/pricing/calculator/) 및 [Azure Advisor](../advisor/advisor-overview.md)  같은 다음 도구는 cost management 프로세스에서 중요 한 역할을 합니다.
 
 ### <a name="azure-backup-support-two-key-scenarios-via-built-in-azure-policy"></a>Azure Backup 기본 제공 Azure Policy를 통해 두 가지 주요 시나리오를 지원 합니다.
 
@@ -214,7 +214,7 @@ Azure Backup 서비스의 기능은 비용을 효과적으로 관리 하 고 BCD
 
 * Azure Backup은 Azure Vm의 스냅숏을 만들어 디스크와 함께 저장 하 여 복구 지점 만들기를 강화 하 고 복원 작업의 속도를 향상 시킵니다. 이를 인스턴트 복원 이라고 합니다. 기본적으로 인스턴트 복원 스냅숏은 2 일 동안 유지 됩니다. 이 기능을 사용 하면 복원 시간을 줄여서 이러한 스냅숏의 복원 작업을 수행할 수 있습니다. 자격 증명 모음에서 데이터를 다시 변환 하 고 복사 하는 데 필요한 시간을 줄일 수 있습니다. 따라서 이 기간에 만든 스냅샷에 해당하는 스토리지 비용이 발생합니다. [자세한 내용은 여기를 참조](backup-instant-restore-capability.md#configure-snapshot-retention)하세요.
 
-* 기본적으로 Azure Backup 자격 증명 모음의 저장소 복제 유형은 지역 중복 (GRS)으로 설정 됩니다. 항목을 보호 한 후에는이 옵션을 변경할 수 없습니다. GRS (지역 중복 저장소)는 LRS (로컬 중복 저장소) 보다 높은 수준의 데이터 내 구성을 제공 하므로 옵트인에서 지역 간 복원과 비용을 더 많이 사용할 수 있습니다. 시나리오에 가장 적합 한 저렴 한 비용과 높은 데이터 내구성 간의 장단점을 검토 합니다. [여기서 자세히 알아보세요.](backup-create-rs-vault.md#set-storage-redundancy)
+* 기본적으로 Azure Backup 자격 증명 모음의 저장소 복제 유형은 지역 중복 (GRS)으로 설정 됩니다. 항목을 보호 한 후에는이 옵션을 변경할 수 없습니다. GRS (지역 중복 저장소)는 LRS (로컬 중복 저장소) 보다 높은 수준의 데이터 내 구성을 제공 하므로 옵트인에서 지역 간 복원과 비용을 더 많이 사용할 수 있습니다. 저렴 한 비용과 높은 데이터 내구성 간의 장단점을 검토 하 고 시나리오에 가장 적합 한 것을 결정 합니다. [여기서 자세히 알아보세요.](backup-create-rs-vault.md#set-storage-redundancy)
 
 * VM 및 VM 자체 내에서 실행 되는 워크 로드를 모두 보호 하는 경우이 이중 보호가 필요한 지 확인 합니다.
 
@@ -247,7 +247,7 @@ Azure Backup 서비스의 기능은 비용을 효과적으로 관리 하 고 BCD
 
 * Azure Backup는 오류, 경고 및 중요 한 작업을 위해 전자 메일을 통해 **빌드된 경고** 알림 메커니즘을 제공 합니다. 경고가 생성 될 때 알림을 받을 개별 메일 주소 또는 메일 그룹을 지정할 수 있습니다. 각 경고에 대 한 알림을 받을지 또는 매시간 다이제스트로 그룹화 한 다음 알림을 받을 지를 선택할 수도 있습니다.
   * 이러한 경고는 서비스에 의해 정의 되며 제한 된 시나리오에 대 한 지원을 제공 합니다. 백업/복원 실패, 데이터 보관/데이터 삭제로 보호 중지 등의 제한 된 시나리오에 대 한 지원을 제공 합니다. [자세한 내용은 여기를 참조](backup-azure-monitoring-built-in-monitor.md#alert-scenarios)하세요.
-  * 데이터 삭제로 보호 중지와 같은 파괴적인 작업을 수행 하면 경고가 발생 하 고 복구 서비스 자격 증명 모음에 대해 알림이 구성 되지 않은 경우에도 전자 메일이 구독 소유자, 관리자 및 공동 관리자에 게 전송 됩니다.
+  * 데이터 삭제로 보호 중지와 같은 파괴적인 작업을 수행 하면 경고가 발생 하 고 Recovery Services 자격 증명 모음에 대해 알림이 구성 **되지 않은** 경우에도 전자 메일이 구독 소유자, 관리자 및 공동 관리자에 게 전송 됩니다.
   * 특정 워크 로드는 오류 (예: 15 분 마다 SQL Server)의 높은 빈도를 생성할 수 있습니다. 각 실패 발생에 대해 발생 하는 경고를 지나치게 많이 방지 하기 위해 경고가 통합 됩니다. [자세한 내용은 여기를 참조](backup-azure-monitoring-built-in-monitor.md#consolidated-alerts)하세요.
   * 작성 된 경고는 사용자 지정할 수 없으며 Azure Portal에 정의 된 전자 메일로 제한 됩니다.
 

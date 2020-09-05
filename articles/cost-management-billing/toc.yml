@@ -1,474 +1,480 @@
 - name: Azure Cost Management + 청구 설명서
   href: index.yml
+- name: 개요
+  items:
+    - name: Cost Management 및 청구란?
+      href: cost-management-billing-overview.md
+- name: 빠른 시작
+  expanded: true
+  items:
+    - name: 비용 분석 시작
+      href: costs/quick-acm-cost-analysis.md
+    - name: 예산 만들기 - ARM 템플릿
+      href: costs/quick-create-budget-template.md
+      displayName: 'ARM template, resource manager template'
+- name: 자습서
+  items:
+    - name: 개별 계정 청구서 검토
+      href: understand/review-individual-bill.md
+    - name: 기업 계약 청구서 검토
+      href: understand/review-enterprise-agreement-bill.md
+    - name: Microsoft 고객 계약 청구서 검토
+      href: understand/review-customer-agreement-bill.md
+    - name: Microsoft 파트너 계약 청구서 검토
+      href: understand/review-partner-agreement-bill.md
+    - name: 예산 작성 및 관리
+      href: costs/tutorial-acm-create-budgets.md
+    - name: 데이터 내보내기
+      href: costs/tutorial-export-acm-data.md
+    - name: 권장 사항에 대한 조치
+      href: costs/tutorial-acm-opt-recommendations.md
+- name: 개념
+  items:
+    - name: Cost Management
+      items:
+        - name: Azure Cost Management 모범 사례
+          href: costs/cost-mgt-best-practices.md
+        - name: Cost Management 데이터 이해
+          href: costs/understand-cost-mgt-data.md
+        - name: 범위 이해 및 작업
+          href: costs/understand-work-scopes.md
+        - name: 그룹 및 필터 옵션
+          href: costs/group-filter.md
+        - name: 자동화로 비용 관리
+          href: costs/manage-automation.md
+        - name: 파트너용 Cost Management
+          href: costs/get-started-partners.md
+        - name: Cost Management와 Cloudyn 중에서 선택
+          href: costs/choose-between-azure-cost-management-cloudyn.md
+    - name: 예약
+      items:
+        - name: Azure Reservations란?
+          href: reservations/save-compute-costs-reservations.md?toc=/azure/cost-management-billing/toc.json
+        - name: 예약 권장 사항을 만드는 방법
+          href: reservations/reserved-instance-purchase-recommendations.md?toc=/azure/cost-management-billing/toc.json
+        - name: 할인 적용 방식
+          items:
+            - name: Azure 예약 할인이 적용되는 방식
+              href: reservations/reservation-discount-application.md?toc=/azure/cost-management-billing/toc.json
+            - name: App Service
+              href: reservations/reservation-discount-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Cache for Redis
+              href: reservations/understand-azure-cache-for-redis-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: Cosmos DB
+              href: reservations/understand-cosmosdb-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: Database for MariaDB
+              href: reservations/understand-reservation-charges-mariadb.md?toc=/azure/cost-management-billing/toc.json
+            - name: Database for MySQL
+              href: reservations/understand-reservation-charges-mysql.md?toc=/azure/cost-management-billing/toc.json
+            - name: Database for PostgreSQL
+              href: reservations/understand-reservation-charges-postgresql.md?toc=/azure/cost-management-billing/toc.json
+            - name: Databricks
+              href: reservations/reservation-discount-databricks.md
+            - name: Data Explorer
+              href: reservations/understand-azure-data-explorer-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: Dedicated Hosts
+              href: reservations/billing-understand-dedicated-hosts-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: 디스크 스토리지
+              href: reservations/understand-disk-reservations.md?toc=/azure/cost-management-billing/toc.json
+            - name: Red Hat Linux Enterprise
+              href: reservations/understand-rhel-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: 소프트웨어 플랜
+              href: reservations/understand-suse-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: 스토리지
+              href: reservations/understand-storage-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: SQL Database
+              href: reservations/understand-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Synapse Analytics
+              href: reservations/reservation-discount-azure-sql-dw.md?toc=/azure/cost-management-billing/toc.json
+            - name: 가상 머신
+              href: manage/understand-vm-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
+        - name: Windows 및 SQL 비용 포함 안 됨
+          href: reservations/reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/toc.json
+        - name: 개별 구독에 대한 사용량 현황 데이터
+          href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
+        - name: 기업 고객에 대한 사용량 현황 데이터
+          href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
+    - name: 결제
+      items:
+        - name: 개별 구독 사용 약관
+          href: understand/understand-usage.md
+        - name: 개별 구독 청구서 약관
+          href: understand/understand-invoice.md
+        - name: Microsoft 고객 계약 사용 약관
+          href: understand/mca-understand-your-usage.md
+        - name: Microsoft 고객 계약 청구서 약관
+          href: understand/mca-understand-your-invoice.md
+        - name: Microsoft 고객 계약 가격표 약관
+          href: manage/mca-understand-pricesheet.md
+        - name: Microsoft 파트너 계약 청구서 약관
+          href: understand/mpa-invoice-terms.md
+        - name: 업데이트된 개별 청구 계정에 대한 변경 내용
+          href: understand/mosp-new-customer-experience.md
+        - name: Microsoft 고객 계약에 대한 청구 계정
+          href: understand/mca-overview.md
+        - name: Microsoft 파트너 계약에 대한 청구 계정
+          href: understand/mpa-overview.md
+- name: 방법 가이드
+  items:
+    - name: Cost Management + 청구 구성
+      items:
+        - name: 계정 관리
+          items:
+            - name: 계정 관리자 작업
+              href: manage/account-admin-tasks.md
+            - name: 프로필 편집
+              href: manage/change-azure-account-profile.md
+            - name: 미지불액 해결
+              href: manage/resolve-past-due-balance.md
+            - name: 요금 청구에 대한 액세스 권한 부여
+              href: manage/manage-billing-access.md
+            - name: Azure에서 Microsoft 고객 계약 역할
+              href: manage/understand-mca-roles.md
+            - name: 파트너 ID 연결
+              href: manage/link-partner-id.md
+        - name: 구독 관리
+          items:
+            - name: Cost Management 데이터에 대한 액세스 할당
+              href: costs/assign-access-acm-data.md
+            - name: 구독 상태
+              href: manage/subscription-states.md
+            - name: 구독 다시 활성화
+              href: manage/subscription-disabled.md
+            - name: Azure Student 구독 다시 활성화
+              href: manage/azurestudents-subscription-disabled.md
+            - name: 소유권 이전
+              href: manage/billing-subscription-transfer.md
+            - name: Microsoft 고객 계약 소유권 요청
+              href: manage/mca-request-billing-ownership.md
+            - name: Microsoft 파트너 계약 소유권 요청
+              href: manage/mpa-request-ownership.md
+            - name: AWS 통합 설정 및 구성
+              href: costs/aws-integration-set-up-configure.md
+    - name: 주요 청구 관리 작업 수행
+      items:
+        - name: 계정 관리
+          items:
+            - name: 청구 계정 보기
+              href: manage/view-all-accounts.md
+            - name: 청구서 섹션으로 비용 구성
+              href: manage/mca-section-invoice.md
+            - name: Microsoft 고객 계약 청구 계정 설정
+              href: manage/mca-setup-account.md
+            - name: Microsoft 365 계정으로 가입
+              href: manage/microsoft-365-account-for-azure-subscription.md
+            - name: Azure 계정으로 Microsoft 365 가입
+              href: manage/azure-account-for-microsoft-365-subscription.md
+            - name: 강력한 고객 인증을 사용하여 결제
+              href: manage/open-banking-strong-customer-authentication.md
+        - name: 구독 관리
+          items:
+            - name: 청구서로 지불
+              href: manage/pay-by-invoice.md
+            - name: 추가 구독 만들기
+              href: manage/create-subscription.md
+            - name: 프로그래밍 방식으로 구독 만들기
+              href: manage/programmatically-create-subscription.md
+            - name: EA 구독을 만드는 액세스 권한 부여
+              href: manage/grant-access-to-create-subscription.md
+            - name: 구독 정보 내보내기
+              href: manage/export-subscriptions.md
+            - name: 신용 카드 변경
+              href: manage/change-credit-card.md
+            - name: 관리자 변경
+              href: manage/add-change-subscription-administrator.md
+            - name: 구독 제안 전환
+              href: manage/switch-azure-offer.md
+            - name: CSP 구독 전송
+              href: manage/transfer-subscriptions-subscribers-csp.md
+            - name: 구독 취소
+              href: manage/cancel-azure-subscription.md
+        - name: 기업 계약 구독 관리
+          items:
+            - name: Azure EA 포털에서 시작
+              href: manage/ea-portal-get-started.md
+            - name: Azure의 EA 역할
+              href: manage/understand-ea-roles.md
+            - name: Azure EA Portal 관리
+              href: manage/ea-portal-administration.md
+            - name: 파트너 대신 Azure EA Portal 관리
+              href: manage/ea-partner-portal-administration.md
+            - name: Azure Enterprise 전송
+              href: manage/ea-transfers.md
+            - name: Microsoft 고객 계약의 EA 작업
+              href: manage/mca-enterprise-operations.md
+            - name: Azure EA 계약 및 수정안
+              href: manage/ea-portal-agreements.md
+            - name: 기업 등록계약 송장
+              href: manage/ea-portal-enrollment-invoices.md
+            - name: Azure EA 가격 책정
+              href: manage/ea-pricing-overview.md
+            - name: Azure 엔터프라이즈 REST API
+              href: manage/ea-portal-rest-apis.md
+            - name: Azure EA VM 예약 인스턴스
+              href: manage/ea-portal-vm-reservations.md
+            - name: Azure Marketplace
+              href: manage/ea-azure-marketplace.md
+        - name: 비용 및 청구 정보 다운로드
+          items:
+            - name: 청구서 결제
+              href: understand/pay-bill.md
+            - name: Azure 청구서 보기 및 다운로드
+              href: understand/download-azure-invoice.md
+            - name: Azure 사용량 및 요금 보기 및 다운로드
+              href: understand/download-azure-daily-usage.md
+            - name: 청구서 및 일일 사용량 데이터 다운로드
+              href: manage/download-azure-invoice-daily-usage-date.md
+            - name: 세금 문서 보기 및 다운로드
+              href: understand/mca-download-tax-document.md
+            - name: 외부 Azure 서비스 요금 보기
+              href: understand/understand-azure-marketplace-charges.md
+            - name: 조직의 가격 책정 보기 및 다운로드
+              href: manage/ea-pricing.md
+        - name: 무료 계정
+          items:
+            - name: 평가판 서비스 만들기
+              href: manage/create-free-services.md
+            - name: 과금 방지
+              href: manage/avoid-charges-free-account.md
+            - name: 사용량 확인
+              href: manage/check-free-service-usage.md
+            - name: 체험 계정 업그레이드
+              href: manage/upgrade-azure-subscription.md
+    - name: 주요 Cost Management 작업 수행
+      items:
+        - name: 예기치 않은 비용 방지
+          href: manage/getting-started.md
+        - name: 가격 계산
+          href: 'https://azure.microsoft.com/pricing/calculator/'
+        - name: 일반 작업에 대한 비용 분석 사용
+          href: costs/cost-analysis-common-uses.md
+        - name: 예산으로 작업 자동화
+          href: manage/cost-management-budget-scenario.md
+        - name: 비용 경고 사용
+          href: costs/cost-mgt-alerts-monitor-usage-spending.md
+        - name: 비용 할당
+          href: costs/allocate-costs.md
+        - name: Power BI Desktop을 사용하여 연결
+          href: /power-bi/desktop-connect-azure-cost-management
+        - name: Power BI 템플릿 앱을 사용하여 Azure 비용 분석
+          href: costs/analyze-cost-data-azure-cost-management-power-bi-template-app.md
+        - name: AWS 비용 및 사용량 관리
+          href: costs/aws-integration-manage.md
+        - name: 지출 한도 이해
+          href: manage/spending-limit.md
+        - name: Microsoft 고객 계약에 대한 크레딧 추적
+          href: manage/mca-check-azure-credits-balance.md
+        - name: EA에서 MCA API로 마이그레이션
+          href: costs/migrate-cost-management-api.md
+    - name: 예약 구매 및 관리
+      items:
+        - name: 구매할 항목 확인
+          items:
+            - name: 구매할 예약 선택
+              href: reservations/determine-reservation-purchase.md?toc=/azure/cost-management-billing/toc.json
+        - name: 예약 구매
+          items:
+            - name: Azure 예약 구매
+              href: reservations/prepare-buy-reservation.md?toc=/azure/cost-management-billing/toc.json
+            - name: App Service
+              href: reservations/prepay-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Cache for Redis 예약
+              href: /azure/data-explorer/pricing-reserved-capacity?toc=/azure/cost-management-billing/toc.json
+            - name: Cosmos DB
+              href: /azure/data-explorer
+            - name: Databricks
+              href: reservations/prepay-databricks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+            - name: Data Explorer
+              href: /azure/data-explorer/pricing-reserved-capacity
+            - name: 디스크 스토리지
+              href: ../virtual-machines/disks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+            - name: Dedicated Host
+              href: ../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/toc.json
+            - name: 소프트웨어 플랜
+              href: ../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Storage
+              href: ../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Database for PostgreSQL
+              href: ../postgresql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Database for MySQL
+              href: ../mysql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Database for MariaDB
+              href: ../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
+            - name: SAP HANA 큰 인스턴스
+              href: reservations/prepay-hana-large-instances-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+            - name: SQL Database
+              href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+            - name: Azure Synapse Analytics
+              href: reservations/prepay-sql-data-warehouse-charges.md?toc=/azure/cost-management-billing/toc.json
+            - name: 가상 머신
+              href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/toc.json
+        - name: '구매 후 보기, 관리 및 최적화'
+          items:
+            - name: 예약 및 사용률 보기
+              href: reservations/view-reservations.md?toc=/azure/cost-management-billing/toc.json
+            - name: CSP로 예약 보기
+              href: reservations/how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/toc.json
+            - name: 예약 관리
+              href: reservations/manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/toc.json
+            - name: 예약 교환 및 환불
+              href: reservations/exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/toc.json
+        - name: 비용 보고
+          items:
+            - name: 예약 트랜잭션 보기
+              href: reservations/view-purchase-refunds.md?toc=/azure/cost-management-billing/toc.json
+            - name: 예약 비용 차지백(charge back)
+              href: reservations/charge-back-usage.md?toc=/azure/cost-management-billing/toc.json
+        - name: 예약 갱신
+          items:
+            - name: 예약 갱신
+              href: reservations/reservation-renew.md?toc=/azure/cost-management-billing/toc.json
+    - name: 문제 해결
+      items:
+        - name: 구독을 찾을 수 없음
+          href: manage/no-subscriptions-found.md
+        - name: 결제 문제
+          href: manage/billing-troubleshoot-azure-payment-issues.md
+        - name: 거부된 카드
+          href: manage/troubleshoot-declined-card.md
+        - name: Azure 계정 등록 문제
+          href: manage/troubleshoot-azure-sign-up.md
+        - name: 구독 로그인 문제
+          href: manage/troubleshoot-sign-in-issue.md
+        - name: Enterprise 비용 보기 사용 안 함
+          href: manage/enterprise-mgmt-grp-troubleshoot-cost-view.md
+        - name: Azure EA Portal 액세스 문제 해결
+          href: manage/ea-portal-troubleshoot.md
+        - name: 지원에 문의
+          href: ../azure-portal/supportability/how-to-create-azure-support-request.md
+- name: 참조
+  items:
+    - name: Azure Cost Management REST API
+      href: 'https://docs.microsoft.com/rest/api/cost-management'
+    - name: Azure Consumption REST API
+      href: 'https://docs.microsoft.com/rest/api/consumption'
+    - name: Resource Manager 템플릿
+      href: /azure/templates/microsoft.consumption/budgets
+    - name: Cost Management REST API 샘플
+      href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
+    - name: 청구 자동화 시나리오
+      href: manage/cost-management-automation-scenarios.md
+    - name: Azure 청구 API 개요
+      href: manage/usage-rate-card-overview.md
+    - name: Azure Billing REST API
+      href: 'https://docs.microsoft.com/rest/api/billing'
+    - name: Azure Consumption API 개요
+      href: manage/consumption-api-overview.md
+    - name: Azure Consumption REST API
+      href: 'https://docs.microsoft.com/rest/api/consumption'
+    - name: RateCard REST API
+      href: 'https://msdn.microsoft.com/library/azure/mt219005.aspx'
+    - name: REST API 사용
+      href: 'https://msdn.microsoft.com/library/azure/mt219003.aspx'
+    - name: Enterprise Reporting 개요
+      href: manage/enterprise-api.md
+    - name: Enterprise Reporting REST API
+      href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
+    - name: 예약
+      items:
+        - name: 예약 REST API
+          href: reservations/reservation-apis.md?toc=/azure/cost-management-billing/toc.json
+        - name: 예약 - Azure PowerShell
+          href: /powershell/module/azurerm.reservations
+        - name: 예약- CLI
+          href: /cli/azure/reservations/reservation
+        - name: Cost Management - 사용량 세부 정보 REST API
+          href: /rest/api/consumption/usagedetails
+        - name: Cost Management - 사용량 예약 세부 정보 REST API
+          href: /rest/api/consumption/reservationsdetails
+- name: 리소스
+  items:
+    - name: Microsoft Learn을 통해 기술 쌓기
+      href: /learn/browse/?products=azure-cost-management
+    - name: Cost Management 피드백 포럼
+      href: 'https://feedback.azure.com/forums/906772-cost-management'
+    - name: Azure 로드맵
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: 가격 책정
+      href: 'https://azure.microsoft.com/pricing/details/cost-management'
+    - name: 국가별 가용성
+      href: 'https://azure.microsoft.com/regions/services/'
+- name: 샘플
+  items:
+    - name: REST API
+      items:
+        - name: 엔터프라이즈 비용 검토
+          href: manage/review-enterprise-billing.md
+        - name: 구독 용도 검토
+          href: manage/review-subscription-billing.md
+        - name: 리소스 사용 검토
+          href: manage/review-service-usage-api.md
+    - name: .NET 샘플
+      items:
+        - name: 청구서 API 코드 샘플
+          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
+        - name: 사용량 API 코드 샘플
+          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
+        - name: RateCard API 코드 샘플
+          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
+- name: Cloudyn
   items:
     - name: 개요
       items:
-        - name: Cost Management 및 청구란?
-          href: cost-management-billing-overview.md
+        - name: Cloudyn이란?
+          href: cloudyn/overview.md
     - name: 빠른 시작
       items:
-        - name: 비용 분석 시작
-          href: costs/quick-acm-cost-analysis.md
-        - name: 예산 만들기 - ARM 템플릿
-          href: costs/quick-create-budget-template.md
-          displayName: 'ARM template, resource manager template'
+        - name: 비용 데이터 보기
+          href: cloudyn/quick-register-azure-sub.md
+        - name: 비용 데이터 보기 - EA
+          href: cloudyn/quick-register-ea.md
+        - name: 비용 데이터 보기 - CSP
+          href: cloudyn/quick-register-csp.md
     - name: 자습서
       items:
-        - name: 개별 계정 청구서 검토
-          href: understand/review-individual-bill.md
-        - name: 기업 계약 청구서 검토
-          href: understand/review-enterprise-agreement-bill.md
-        - name: Microsoft 고객 계약 청구서 검토
-          href: understand/review-customer-agreement-bill.md
-        - name: Microsoft 파트너 계약 청구서 검토
-          href: understand/review-partner-agreement-bill.md
-        - name: 예산 작성 및 관리
-          href: costs/tutorial-acm-create-budgets.md
-        - name: 데이터 내보내기
-          href: costs/tutorial-export-acm-data.md
-        - name: 권장 사항에 대한 조치
-          href: costs/tutorial-acm-opt-recommendations.md
+        - name: 사용량 및 비용 검토
+          href: cloudyn/tutorial-review-usage.md
+        - name: 지출 예측
+          href: cloudyn/tutorial-forecast-spending.md
+        - name: 비용 관리
+          href: cloudyn/tutorial-manage-costs.md
+        - name: 예약 인스턴스 최적화
+          href: cloudyn/tutorial-optimize-reserved-instances.md
+        - name: 데이터에 대한 액세스 제어
+          href: cloudyn/tutorial-user-access.md
     - name: 개념
       items:
-        - name: Cost Management
-          items:
-            - name: Azure Cost Management 모범 사례
-              href: costs/cost-mgt-best-practices.md
-            - name: Cost Management 데이터 이해
-              href: costs/understand-cost-mgt-data.md
-            - name: 범위 이해 및 작업
-              href: costs/understand-work-scopes.md
-            - name: 그룹 및 필터 옵션
-              href: costs/group-filter.md
-            - name: 자동화로 비용 관리
-              href: costs/manage-automation.md
-            - name: 파트너용 Cost Management
-              href: costs/get-started-partners.md
-            - name: Cost Management와 Cloudyn 중에서 선택
-              href: costs/choose-between-azure-cost-management-cloudyn.md
-        - name: 예약
-          items:
-            - name: Azure Reservations란?
-              href: reservations/save-compute-costs-reservations.md?toc=/azure/cost-management-billing/toc.json
-            - name: 예약 권장 사항을 만드는 방법
-              href: reservations/reserved-instance-purchase-recommendations.md?toc=/azure/cost-management-billing/toc.json
-            - name: 할인 적용 방식
-              items:
-                - name: Azure 예약 할인이 적용되는 방식
-                  href: reservations/reservation-discount-application.md?toc=/azure/cost-management-billing/toc.json
-                - name: App Service
-                  href: reservations/reservation-discount-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Cache for Redis
-                  href: reservations/understand-azure-cache-for-redis-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: Cosmos DB
-                  href: reservations/understand-cosmosdb-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: Database for MariaDB
-                  href: reservations/understand-reservation-charges-mariadb.md?toc=/azure/cost-management-billing/toc.json
-                - name: Database for MySQL
-                  href: reservations/understand-reservation-charges-mysql.md?toc=/azure/cost-management-billing/toc.json
-                - name: Database for PostgreSQL
-                  href: reservations/understand-reservation-charges-postgresql.md?toc=/azure/cost-management-billing/toc.json
-                - name: Databricks
-                  href: reservations/reservation-discount-databricks.md
-                - name: Data Explorer
-                  href: reservations/understand-azure-data-explorer-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: Dedicated Hosts
-                  href: reservations/billing-understand-dedicated-hosts-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: 디스크 스토리지
-                  href: reservations/understand-disk-reservations.md?toc=/azure/cost-management-billing/toc.json
-                - name: Red Hat Linux Enterprise
-                  href: reservations/understand-rhel-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: 소프트웨어 플랜
-                  href: reservations/understand-suse-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: 스토리지
-                  href: reservations/understand-storage-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: SQL Database
-                  href: reservations/understand-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Synapse Analytics
-                  href: reservations/reservation-discount-azure-sql-dw.md?toc=/azure/cost-management-billing/toc.json
-                - name: 가상 머신
-                  href: manage/understand-vm-reservation-charges.md?toc=/azure/cost-management-billing/toc.json
-            - name: Windows 및 SQL 비용 포함 안 됨
-              href: reservations/reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/toc.json
-            - name: 개별 구독에 대한 사용량 현황 데이터
-              href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
-            - name: 기업 고객에 대한 사용량 현황 데이터
-              href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
-        - name: 결제
-          items:
-            - name: 개별 구독 사용 약관
-              href: understand/understand-usage.md
-            - name: 개별 구독 청구서 약관
-              href: understand/understand-invoice.md
-            - name: Microsoft 고객 계약 사용 약관
-              href: understand/mca-understand-your-usage.md
-            - name: Microsoft 고객 계약 청구서 약관
-              href: understand/mca-understand-your-invoice.md
-            - name: Microsoft 고객 계약 가격표 약관
-              href: manage/mca-understand-pricesheet.md
-            - name: Microsoft 파트너 계약 청구서 약관
-              href: understand/mpa-invoice-terms.md
-            - name: 업데이트된 개별 청구 계정에 대한 변경 내용
-              href: understand/mosp-new-customer-experience.md
-            - name: Microsoft 고객 계약에 대한 청구 계정
-              href: understand/mca-overview.md
-            - name: Microsoft 파트너 계약에 대한 청구 계정
-              href: understand/mpa-overview.md
+        - name: 비용 보고서 이해
+          href: cloudyn/understanding-cost-reports.md
     - name: 방법 가이드
       items:
-        - name: Cost Management + 청구 구성
-          items:
-            - name: 계정 관리
-              items:
-                - name: 계정 관리자 작업
-                  href: manage/account-admin-tasks.md
-                - name: 프로필 편집
-                  href: manage/change-azure-account-profile.md
-                - name: 미지불액 해결
-                  href: manage/resolve-past-due-balance.md
-                - name: 요금 청구에 대한 액세스 권한 부여
-                  href: manage/manage-billing-access.md
-                - name: Azure에서 Microsoft 고객 계약 역할
-                  href: manage/understand-mca-roles.md
-                - name: 파트너 ID 연결
-                  href: manage/link-partner-id.md
-            - name: 구독 관리
-              items:
-                - name: Cost Management 데이터에 대한 액세스 할당
-                  href: costs/assign-access-acm-data.md
-                - name: 구독 상태
-                  href: manage/subscription-states.md
-                - name: 구독 다시 활성화
-                  href: manage/subscription-disabled.md
-                - name: Azure Student 구독 다시 활성화
-                  href: manage/azurestudents-subscription-disabled.md
-                - name: 소유권 이전
-                  href: manage/billing-subscription-transfer.md
-                - name: Microsoft 고객 계약 소유권 요청
-                  href: manage/mca-request-billing-ownership.md
-                - name: Microsoft 파트너 계약 소유권 요청
-                  href: manage/mpa-request-ownership.md
-                - name: AWS 통합 설정 및 구성
-                  href: costs/aws-integration-set-up-configure.md
-        - name: 주요 청구 관리 작업 수행
-          items:
-            - name: 계정 관리
-              items:
-                - name: 청구 계정 보기
-                  href: manage/view-all-accounts.md
-                - name: 청구서 섹션으로 비용 구성
-                  href: manage/mca-section-invoice.md
-                - name: Microsoft 고객 계약 청구 계정 설정
-                  href: manage/mca-setup-account.md
-                - name: Microsoft 365 계정으로 가입
-                  href: manage/microsoft-365-account-for-azure-subscription.md
-                - name: Azure 계정으로 Microsoft 365 가입
-                  href: manage/azure-account-for-microsoft-365-subscription.md
-                - name: 강력한 고객 인증을 사용하여 결제
-                  href: manage/open-banking-strong-customer-authentication.md
-            - name: 구독 관리
-              items:
-                - name: 청구서로 지불
-                  href: manage/pay-by-invoice.md
-                - name: 추가 구독 만들기
-                  href: manage/create-subscription.md
-                - name: 구독 정보 내보내기
-                  href: manage/export-subscriptions.md
-                - name: 신용 카드 변경
-                  href: manage/change-credit-card.md
-                - name: 관리자 변경
-                  href: manage/add-change-subscription-administrator.md
-                - name: 구독 제안 전환
-                  href: manage/switch-azure-offer.md
-                - name: CSP 구독 전송
-                  href: manage/transfer-subscriptions-subscribers-csp.md
-                - name: 구독 취소
-                  href: manage/cancel-azure-subscription.md
-            - name: 기업 계약 구독 관리
-              items:
-                - name: Azure EA 포털에서 시작
-                  href: manage/ea-portal-get-started.md
-                - name: Azure의 EA 역할
-                  href: manage/understand-ea-roles.md
-                - name: Azure EA Portal 관리
-                  href: manage/ea-portal-administration.md
-                - name: 파트너 대신 Azure EA Portal 관리
-                  href: manage/ea-partner-portal-administration.md
-                - name: Azure Enterprise 전송
-                  href: manage/ea-transfers.md
-                - name: Microsoft 고객 계약의 EA 작업
-                  href: manage/mca-enterprise-operations.md
-                - name: Azure EA 계약 및 수정안
-                  href: manage/ea-portal-agreements.md
-                - name: 기업 등록계약 송장
-                  href: manage/ea-portal-enrollment-invoices.md
-                - name: Azure EA 가격 책정
-                  href: manage/ea-pricing-overview.md
-                - name: Azure 엔터프라이즈 REST API
-                  href: manage/ea-portal-rest-apis.md
-                - name: Azure EA VM 예약 인스턴스
-                  href: manage/ea-portal-vm-reservations.md
-                - name: Azure Marketplace
-                  href: manage/ea-azure-marketplace.md
-            - name: 비용 및 청구 정보 다운로드
-              items:
-                - name: 청구서 결제
-                  href: understand/pay-bill.md
-                - name: Azure 청구서 보기 및 다운로드
-                  href: understand/download-azure-invoice.md
-                - name: Azure 사용량 및 요금 보기 및 다운로드
-                  href: understand/download-azure-daily-usage.md
-                - name: 청구서 및 일일 사용량 데이터 다운로드
-                  href: manage/download-azure-invoice-daily-usage-date.md
-                - name: 세금 문서 보기 및 다운로드
-                  href: understand/mca-download-tax-document.md
-                - name: 외부 Azure 서비스 요금 보기
-                  href: understand/understand-azure-marketplace-charges.md
-                - name: 조직의 가격 책정 보기 및 다운로드
-                  href: manage/ea-pricing.md
-            - name: 무료 계정
-              items:
-                - name: 평가판 서비스 만들기
-                  href: manage/create-free-services.md
-                - name: 과금 방지
-                  href: manage/avoid-charges-free-account.md
-                - name: 사용량 확인
-                  href: manage/check-free-service-usage.md
-                - name: 체험 계정 업그레이드
-                  href: manage/upgrade-azure-subscription.md
-        - name: 주요 Cost Management 작업 수행
-          items:
-            - name: 예기치 않은 비용 방지
-              href: manage/getting-started.md
-            - name: 가격 계산
-              href: 'https://azure.microsoft.com/pricing/calculator/'
-            - name: 일반 작업에 대한 비용 분석 사용
-              href: costs/cost-analysis-common-uses.md
-            - name: 예산으로 작업 자동화
-              href: manage/cost-management-budget-scenario.md
-            - name: 비용 경고 사용
-              href: costs/cost-mgt-alerts-monitor-usage-spending.md
-            - name: Power BI Desktop을 사용하여 연결
-              href: /power-bi/desktop-connect-azure-cost-management
-            - name: Power BI 템플릿 앱을 사용하여 Azure 비용 분석
-              href: costs/analyze-cost-data-azure-cost-management-power-bi-template-app.md
-            - name: AWS 비용 및 사용량 관리
-              href: costs/aws-integration-manage.md
-            - name: 지출 한도 이해
-              href: manage/spending-limit.md
-            - name: Microsoft 고객 계약에 대한 크레딧 추적
-              href: manage/mca-check-azure-credits-balance.md
-            - name: EA에서 MCA API로 마이그레이션
-              href: costs/migrate-cost-management-api.md
-        - name: 예약 구매 및 관리
-          items:
-            - name: 구매할 항목 확인
-              items:
-                - name: 구매할 예약 선택
-                  href: reservations/determine-reservation-purchase.md?toc=/azure/cost-management-billing/toc.json
-            - name: 예약 구매
-              items:
-                - name: Azure 예약 구매
-                  href: reservations/prepare-buy-reservation.md?toc=/azure/cost-management-billing/toc.json
-                - name: App Service
-                  href: reservations/prepay-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Cache for Redis 예약
-                  href: /azure/data-explorer/pricing-reserved-capacity?toc=/azure/cost-management-billing/toc.json
-                - name: Cosmos DB
-                  href: /azure/data-explorer
-                - name: Databricks
-                  href: reservations/prepay-databricks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
-                - name: Data Explorer
-                  href: /azure/data-explorer/pricing-reserved-capacity
-                - name: 디스크 스토리지
-                  href: ../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
-                - name: Dedicated Host
-                  href: ../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/toc.json
-                - name: 소프트웨어 플랜
-                  href: ../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Storage
-                  href: ../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Database for PostgreSQL
-                  href: ../postgresql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Database for MySQL
-                  href: ../mysql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Database for MariaDB
-                  href: ../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/toc.json
-                - name: SAP HANA 큰 인스턴스
-                  href: reservations/prepay-hana-large-instances-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
-                - name: SQL Database
-                  href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
-                - name: Azure Synapse Analytics
-                  href: reservations/prepay-sql-data-warehouse-charges.md?toc=/azure/cost-management-billing/toc.json
-                - name: 가상 머신
-                  href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/toc.json
-            - name: '구매 후 보기, 관리 및 최적화'
-              items:
-                - name: 예약 및 사용률 보기
-                  href: reservations/view-reservations.md?toc=/azure/cost-management-billing/toc.json
-                - name: CSP로 예약 보기
-                  href: reservations/how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/toc.json
-                - name: 예약 관리
-                  href: reservations/manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/toc.json
-                - name: 예약 교환 및 환불
-                  href: reservations/exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/toc.json
-            - name: 비용 보고
-              items:
-                - name: 예약 트랜잭션 보기
-                  href: reservations/view-purchase-refunds.md?toc=/azure/cost-management-billing/toc.json
-                - name: 예약 비용 차지백(charge back)
-                  href: reservations/charge-back-usage.md?toc=/azure/cost-management-billing/toc.json
-            - name: 예약 갱신
-              items:
-                - name: 예약 갱신
-                  href: reservations/reservation-renew.md?toc=/azure/cost-management-billing/toc.json
-        - name: 문제 해결
-          items:
-            - name: 구독을 찾을 수 없음
-              href: manage/no-subscriptions-found.md
-            - name: 결제 문제
-              href: manage/billing-troubleshoot-azure-payment-issues.md
-            - name: 거부된 카드
-              href: manage/troubleshoot-declined-card.md
-            - name: Azure 계정 등록 문제
-              href: manage/troubleshoot-azure-sign-up.md
-            - name: 구독 로그인 문제
-              href: manage/troubleshoot-sign-in-issue.md
-            - name: Enterprise 비용 보기 사용 안 함
-              href: manage/enterprise-mgmt-grp-troubleshoot-cost-view.md
-            - name: Azure EA Portal 액세스 문제 해결
-              href: manage/ea-portal-troubleshoot.md
-            - name: 지원에 문의
-              href: ../azure-portal/supportability/how-to-create-azure-support-request.md
-    - name: 참조
-      items:
-        - name: Azure Cost Management REST API
-          href: 'https://docs.microsoft.com/rest/api/cost-management'
-        - name: Azure Consumption REST API
-          href: 'https://docs.microsoft.com/rest/api/consumption'
-        - name: Resource Manager 템플릿
-          href: /azure/templates/microsoft.consumption/budgets
-        - name: Cost Management REST API 샘플
-          href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
-        - name: 청구 자동화 시나리오
-          href: manage/cost-management-automation-scenarios.md
-        - name: Azure 청구 API 개요
-          href: manage/usage-rate-card-overview.md
-        - name: Azure Billing REST API
-          href: 'https://docs.microsoft.com/rest/api/billing'
-        - name: Azure Consumption API 개요
-          href: manage/consumption-api-overview.md
-        - name: Azure Consumption REST API
-          href: 'https://docs.microsoft.com/rest/api/consumption'
-        - name: RateCard REST API
-          href: 'https://msdn.microsoft.com/library/azure/mt219005.aspx'
-        - name: REST API 사용
-          href: 'https://msdn.microsoft.com/library/azure/mt219003.aspx'
-        - name: Enterprise Reporting 개요
-          href: manage/enterprise-api.md
-        - name: Enterprise Reporting REST API
-          href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
-        - name: 예약
-          items:
-            - name: 예약 REST API
-              href: reservations/reservation-apis.md?toc=/azure/cost-management-billing/toc.json
-            - name: 예약 - Azure PowerShell
-              href: /powershell/module/azurerm.reservations
-            - name: 예약- CLI
-              href: /cli/azure/reservations/reservation
-            - name: Cost Management - 사용량 세부 정보 REST API
-              href: /rest/api/consumption/usagedetails
-            - name: Cost Management - 사용량 예약 세부 정보 REST API
-              href: /rest/api/consumption/reservationsdetails
+        - name: Azure 구독 및 계정 활성화
+          href: cloudyn/activate-subs-accounts.md
+        - name: VM의 확장된 메트릭 추가
+          href: cloudyn/azure-vm-extended-metrics.md
+        - name: Google 계정 연결
+          href: cloudyn/connect-google-account.md
+        - name: AWS 계정 연결
+          href: cloudyn/connect-aws-account.md
+        - name: 스토리지 계정 구성
+          href: cloudyn/storage-accounts.md
+        - name: Cloudyn 보고서 사용
+          href: cloudyn/use-reports.md
+        - name: 대시보드 사용
+          href: cloudyn/dashboards.md
+        - name: 예산 관리
+          href: cloudyn/manage-budgets.md
     - name: 리소스
       items:
-        - name: Microsoft Learn을 통해 기술 쌓기
-          href: /learn/browse/?products=azure-cost-management
-        - name: Cost Management 피드백 포럼
-          href: 'https://feedback.azure.com/forums/906772-cost-management'
+        - name: Cloudyn 비디오
+          href: cloudyn/ref-videos.md
         - name: Azure 로드맵
           href: 'https://azure.microsoft.com/roadmap/'
-        - name: 가격 책정
+        - name: Cloudyn 가격 책정
           href: 'https://azure.microsoft.com/pricing/details/cost-management'
-        - name: 국가별 가용성
+        - name: Cloudyn 지역별 가용성
           href: 'https://azure.microsoft.com/regions/services/'
-    - name: 샘플
-      items:
-        - name: REST API
-          items:
-            - name: 엔터프라이즈 비용 검토
-              href: manage/review-enterprise-billing.md
-            - name: 구독 용도 검토
-              href: manage/review-subscription-billing.md
-            - name: 리소스 사용 검토
-              href: manage/review-service-usage-api.md
-        - name: .NET 샘플
-          items:
-            - name: 청구서 API 코드 샘플
-              href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
-            - name: 사용량 API 코드 샘플
-              href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
-            - name: RateCard API 코드 샘플
-              href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
-    - name: Cloudyn
-      items:
-        - name: 개요
-          items:
-            - name: Cloudyn이란?
-              href: cloudyn/overview.md
-        - name: 빠른 시작
-          items:
-            - name: 비용 데이터 보기
-              href: cloudyn/quick-register-azure-sub.md
-            - name: 비용 데이터 보기 - EA
-              href: cloudyn/quick-register-ea.md
-            - name: 비용 데이터 보기 - CSP
-              href: cloudyn/quick-register-csp.md
-        - name: 자습서
-          items:
-            - name: 사용량 및 비용 검토
-              href: cloudyn/tutorial-review-usage.md
-            - name: 지출 예측
-              href: cloudyn/tutorial-forecast-spending.md
-            - name: 비용 관리
-              href: cloudyn/tutorial-manage-costs.md
-            - name: 예약 인스턴스 최적화
-              href: cloudyn/tutorial-optimize-reserved-instances.md
-            - name: 데이터에 대한 액세스 제어
-              href: cloudyn/tutorial-user-access.md
-        - name: 개념
-          items:
-            - name: 비용 보고서 이해
-              href: cloudyn/understanding-cost-reports.md
-        - name: 방법 가이드
-          items:
-            - name: Azure 구독 및 계정 활성화
-              href: cloudyn/activate-subs-accounts.md
-            - name: VM의 확장된 메트릭 추가
-              href: cloudyn/azure-vm-extended-metrics.md
-            - name: Google 계정 연결
-              href: cloudyn/connect-google-account.md
-            - name: AWS 계정 연결
-              href: cloudyn/connect-aws-account.md
-            - name: 스토리지 계정 구성
-              href: cloudyn/storage-accounts.md
-            - name: Cloudyn 보고서 사용
-              href: cloudyn/use-reports.md
-            - name: 대시보드 사용
-              href: cloudyn/dashboards.md
-            - name: 예산 관리
-              href: cloudyn/manage-budgets.md
-        - name: 리소스
-          items:
-            - name: Cloudyn 비디오
-              href: cloudyn/ref-videos.md
-            - name: Azure 로드맵
-              href: 'https://azure.microsoft.com/roadmap/'
-            - name: Cloudyn 가격 책정
-              href: 'https://azure.microsoft.com/pricing/details/cost-management'
-            - name: Cloudyn 지역별 가용성
-              href: 'https://azure.microsoft.com/regions/services/'
-            - name: Cloudyn FAQ
-              href: cloudyn/cost-mgt-faq.md
-            - name: Cloudyn 고객 지원팀에 문의
-              href: 'https://docs.microsoft.com/azure/cost-management-billing/costs/open-support-request'
+        - name: Cloudyn FAQ
+          href: cloudyn/cost-mgt-faq.md
+        - name: Cloudyn 고객 지원팀에 문의
+          href: 'https://docs.microsoft.com/azure/cost-management-billing/costs/open-support-request'

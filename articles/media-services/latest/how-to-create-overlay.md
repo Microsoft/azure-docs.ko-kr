@@ -5,21 +5,23 @@ author: IngridAtMicrosoft
 ms.author: inhenkel
 ms.service: media-services
 ms.topic: how-to
-ms.date: 07/27/2020
-ms.openlocfilehash: 85b1b6c56221deaa03057a7ccb658b4bf67124eb
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/31/2020
+ms.openlocfilehash: 6c93408bce8da9f8cd0e4a0d0bab615e2bd362dc
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830583"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267329"
 ---
 # <a name="how-to-create-an-overlay-with-media-encoder-standard"></a>Media Encoder Standard를 사용 하 여 오버레이를 만드는 방법
 
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
+
 미디어 인코더 표준을 사용하면 이미지를 기존 비디오에 오버레이할 수 있습니다. 현재 png, jpg, gif 및 bmp 형식이 지원됩니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
-* 샘플에서 파일 *에appsettings.js* 를 구성 하는 데 필요한 계정 정보를 수집 합니다. 이 작업을 수행 하는 방법을 잘 모르는 경우 [빠른 시작: Microsoft id 플랫폼을 사용 하 여 응용 프로그램 등록](../../active-directory/develop/quickstart-register-app.md)을 참조 하세요. 파일의 *appsettings.js* 에는 다음 값이 필요 합니다.
+* 샘플에서 파일 * 에appsettings.js* 를 구성 하는 데 필요한 계정 정보를 수집 합니다. 이 작업을 수행 하는 방법을 잘 모르는 경우 [빠른 시작: Microsoft id 플랫폼을 사용 하 여 응용 프로그램 등록](../../active-directory/develop/quickstart-register-app.md)을 참조 하세요. 파일의 *appsettings.js* 에는 다음 값이 필요 합니다.
 
     ```json
     {

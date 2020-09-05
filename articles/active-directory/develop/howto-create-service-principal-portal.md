@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: c8f9bc283d88121ad4b6144b8ac9463510349212
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 3b060d7caff425414cc7f4e8bbea5d9a29572094
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117229"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89178946"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>방법: 포털을 사용하여 리소스에 액세스할 수 있는 Azure AD 애플리케이션 및 서비스 주체 만들기
 
@@ -87,7 +87,7 @@ Azure AD 애플리케이션 및 서비스 주체를 만들었습니다.
 
 ## <a name="assign-a-role-to-the-application"></a>응용 프로그램에 역할 할당
 
-구독의 리소스에 액세스 하려면 응용 프로그램에 역할을 할당 해야 합니다. 애플리케이션에 적합한 권한을 제공하는 역할을 결정합니다. 사용 가능한 역할에 대해 알아보려면 [RBAC: 기본 제공 역할](../../role-based-access-control/built-in-roles.md)을 참조하세요.
+구독의 리소스에 액세스 하려면 응용 프로그램에 역할을 할당 해야 합니다. 애플리케이션에 적합한 권한을 제공하는 역할을 결정합니다. 사용 가능한 역할에 대해 알아보려면 [Azure 기본 제공 역할](../../role-based-access-control/built-in-roles.md)을 참조 하세요.
 
 구독, 리소스 그룹 또는 리소스 수준에서 범위를 설정할 수 있습니다. 권한은 하위 수준의 범위로 상속됩니다. 예를 들어 리소스 그룹에 대 한 *읽기 권한자* 역할에 응용 프로그램을 추가 하면 리소스 그룹 및 리소스 그룹에 포함 된 모든 리소스를 읽을 수 있습니다.
 
@@ -163,7 +163,7 @@ Windows 제어판에서 액세스할 수 있는 [사용자 인증서](/dotnet/fr
 
 응용 프로그램 등록 포털에서 응용 프로그램에 인증서를 등록 한 후에는 인증서를 사용 하도록 클라이언트 응용 프로그램 코드를 사용 하도록 설정 해야 합니다.
 
-### <a name="create-a-new-application-secret"></a>새 응용 프로그램 암호 만들기
+### <a name="create-a-new-application-secret"></a>새 애플리케이션 비밀 만들기
 
 인증서를 사용 하지 않도록 선택 하는 경우 새 응용 프로그램 암호를 만들 수 있습니다.
 

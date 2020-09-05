@@ -1,10 +1,11 @@
-- name: Data Catalog 설명서
+- name: Azure Data Catalog 설명서
   href: index.yml
 - name: 개요
   items:
     - name: 데이터 카탈로그란?
       href: overview.md
 - name: 빠른 시작
+  expanded: true
   items:
     - name: Azure Data Catalog 만들기
       href: data-catalog-get-started.md
@@ -20,11 +21,9 @@
       href: data-catalog-dsr.md
     - name: Azure 데이터 카탈로그 도입
       href: data-catalog-adopting-data-catalog.md
-    - name: 사전 요구 사항
-      href: data-catalog-prerequisites.md
     - name: FAQ
       href: data-catalog-frequently-asked-questions.md
-- name: 방법
+- name: 방법 가이드
   items:
     - name: 데이터 원본 등록
       href: data-catalog-how-to-register.md

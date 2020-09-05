@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: azuread-dev
 ms.topic: how-to
 ms.workload: identity
-ms.date: 12/06/2019
+ms.date: 08/20/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: dcb8f709bc75fdf9fe80ee26497acb78cc023327
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 662bda03fc2d389ed316bd2c7141d5e6a30cef1a
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88116345"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814639"
 ---
 # <a name="list-your-application-in-the-azure-active-directory-application-gallery"></a>Azure Active Directory 애플리케이션 갤러리에 애플리케이션 나열
 
@@ -45,7 +45,7 @@ ms.locfileid: "88116345"
 
 **개발자 용 Azure AD를 가져오는 방법**
 
-모든 프리미엄 Azure AD 기능을 제공 하는 무료 테스트 계정 (90 일 무료)을 얻을 수 있으며,이를 통해 개발 작업을 수행 하는 동안 확장할 수 있습니다.https://docs.microsoft.com/office/developer-program/office-365-developer-program
+모든 프리미엄 Azure AD 기능을 제공 하는 무료 테스트 계정 (90 일 무료)을 얻을 수 있으며,이를 통해 개발 작업을 수행 하는 동안 확장할 수 있습니다. https://docs.microsoft.com/office/developer-program/office-365-developer-program
 
 ## <a name="submit-the-request-in-the-portal"></a>포털에서 요청 제출
 
@@ -113,7 +113,7 @@ HTML 로그인 페이지가 있는 웹 애플리케이션을 만들어서 [암�
 
 ![갤러리에 암호 SSO 응용 프로그램 나열](./media/howto-app-gallery-listing/passwordsso.png)
 
-* 암호 SSO를 사용 하 여 갤러리의 목록에 응용 프로그램을 추가 하려면 다음과 같이 **암호 sso** 를 선택 합니다.
+* 암호 SSO를 사용 하 여 갤러리의 목록에 응용 프로그램을 추가 하려면 다음과 같이 **암호 sso (사용자 이름 & 암호)** 를 선택 합니다.
 * 액세스에 문제가 있는 경우 [AZURE AD SSO 통합 팀](<mailto:SaaSApplicationIntegrations@service.microsoft.com>)에 문의 하세요.
 
 ## <a name="request-for-user-provisioning"></a>사용자 프로 비전 요청

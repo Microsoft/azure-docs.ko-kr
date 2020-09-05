@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT for Azure 데모 프로젝트
-description: Avere vFXT 코드 데모 자습서에 대한 링크를 제공합니다.
+description: 이러한 샘플은 Azure의 Avere vFXT에 대 한 주요 기능 및 사용 사례를 보여 줍니다. 비디오 렌더링, 고성능 컴퓨팅, vFXT 성능 및 클라이언트 설정.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: rohogue
-ms.openlocfilehash: b01bcb743e4ffc110f0182e50630baea288f16d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31e32bfc0a2c3279375148bdf3da7d4a4829af1c
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76153703"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271076"
 ---
 # <a name="avere-vfxt-demo-projects"></a>Avere vFXT 데모 프로젝트
 

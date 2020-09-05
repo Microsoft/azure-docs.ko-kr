@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: d76506141b2563b3ae8d5779e774ad564022494d
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: a5825cf5461213e3440893597059c84dcdc9ad33
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810006"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236100"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Application Gateway에 대한 질문과 대답입니다.
 
@@ -259,7 +259,7 @@ Application Gateway v2는 현재 IPv6를 지원하지 않습니다. IPv4만 사�
 
 ### <a name="what-certificates-does-application-gateway-support"></a>Application Gateway는 어떤 인증서를 지원하나요?
 
-Application Gateway는 자체 서명된 인증서, CA(인증 기관) 인증서, EV(확장 유효성 검사) 인증서 및 와일드 카드 인증서를 지원합니다.
+Application Gateway는 자체 서명 된 인증서, CA (인증 기관) 인증서, EV (확장 유효성 검사) 인증서, SAN (다중 도메인) 인증서 및 와일드 카드 인증서를 지원 합니다.
 
 ### <a name="what-cipher-suites-does-application-gateway-support"></a>Application Gateway는 어떤 암호 그룹을 지원하나요?
 
@@ -346,7 +346,7 @@ CA (인증 기관) 브라우저 구성원 최근에 게시 된 보고서는 고�
 
 업계의 규정 준수 요구 사항에 따라, CA 공급 업체는 비준수 Ca를 해지 하 고 고객이 인증서를 다시 발급 해야 하는 호환 Ca를 발급 하기 시작 했습니다.Microsoft는 이러한 공급 업체와 긴밀 하 게 협력 하 여 Azure 서비스에 미칠 수 있는 영향을 최소화 **하지만, "사용자의 인증서 가져오기" (BYOC) 시나리오에서 사용 되는 자체 발급 된 인증서 또는 인증서는 여전히 예기치 않게 해지 될 위험이**있습니다.
 
-응용 프로그램에서 사용 하는 인증서가 해지 되었는지 확인 하려면 참조 [DigiCert의 알림](https://knowledge.digicert.com/alerts/DigiCert-ICA-Replacement) 및 [인증서 해지 추적기](https://misissued.com/#revoked)를 확인 합니다. 인증서가 해지 되었거나 해지 되 면 응용 프로그램에서 사용 되는 CA 공급 업체의 새 인증서를 요청 해야 합니다. 인증서가 예기치 않게 해지 되거나 해지 된 인증서를 업데이트 하기 때문에 응용 프로그램의 가용성이 중단 되지 않도록 하려면 BYOC를 지 원하는 다양 한 Azure 서비스의 재구성 링크를 보려면 Azure 업데이트 게시물을 참조 하세요.https://azure.microsoft.com/updates/certificateauthorityrevocation/
+응용 프로그램에서 사용 하는 인증서가 해지 되었는지 확인 하려면 참조 [DigiCert의 알림](https://knowledge.digicert.com/alerts/DigiCert-ICA-Replacement) 및 [인증서 해지 추적기](https://misissued.com/#revoked)를 확인 합니다. 인증서가 해지 되었거나 해지 되 면 응용 프로그램에서 사용 되는 CA 공급 업체의 새 인증서를 요청 해야 합니다. 인증서가 예기치 않게 해지 되거나 해지 된 인증서를 업데이트 하기 때문에 응용 프로그램의 가용성이 중단 되지 않도록 하려면 BYOC를 지 원하는 다양 한 Azure 서비스의 재구성 링크를 보려면 Azure 업데이트 게시물을 참조 하세요. https://azure.microsoft.com/updates/certificateauthorityrevocation/
 
 Application Gateway 특정 정보는 아래를 참조 하세요.
 

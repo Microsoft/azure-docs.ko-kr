@@ -5,17 +5,19 @@ services: media-services
 author: johndeu
 manager: johndeu
 ms.author: johndeu
-ms.date: 03/02/2020
+ms.date: 08/31/2020
 ms.topic: article
 ms.service: media-services
-ms.openlocfilehash: f98d9942f8c30f06b0144503b056c1e8a393ae52
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5af6a7fc988271fc350ecc6e8be19742ede8ecee
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79298634"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258642"
 ---
 # <a name="how-to-verify-your-on-premises-live-streaming-encoder"></a>온-프레미스 라이브 스트리밍 인코더를 확인 하는 방법
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Media Services는 Azure Media Services 온-프레미스 인코더 파트너로서 엔터프라이즈 고객에게 인코더를 추천하여 제품을 홍보합니다. 온-프레미스 인코더 파트너가 되려면 온-프레미스 인코더가 Media Services와 호환되는지 확인해야 합니다. 이렇게 하려면 다음 확인을 완료합니다.
 
@@ -67,7 +69,7 @@ Media Services는 Azure Media Services 온-프레미스 인코더 파트너로�
 
 마지막으로, 메일을 통해 기록된 설정 및 라이브 보관 매개 변수를 amshelp@microsoft.com의 Azure Media Services에 모든 자체 확인 검사가 통과되었다는 알림으로 보냅니다. 또한 후속 작업을 위해 연락처 정보를 기재해 주세요. 이 프로세스와 관련된 질문이 있는 경우 Azure Media Services 팀에 문의할 수 있습니다.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 [테스트 된 온-프레미스 인코더](recommended-on-premises-live-encoders.md)
 

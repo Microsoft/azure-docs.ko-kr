@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: 3fcf26670ec03b1d3a496574e58ae706acdf5c53
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 02f5399e89900a438fb94f973c497a54dc05cfee
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853294"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210170"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>GitHub 작업을 사용 하 여 지속적인 배달
 
@@ -119,7 +119,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 # <a name="java"></a>[Java](#tab/java)
 
-다음 예제에서는 작업을 사용 하 여 환경을 설정 하는 워크플로의 일부를 보여 줍니다 `actions/setup-java` .
+다음 예제에서는 작업을 사용 하 여 환경을 설정 하는 워크플로의 일부를 보여 줍니다  `actions/setup-java` .
 
 ```yaml
     - name: 'Login via Azure CLI'

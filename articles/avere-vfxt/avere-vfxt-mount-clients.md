@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT 탑재 - Azure
-description: Avere vFXT for Azure를 사용하여 클라이언트를 탑재하는 방법입니다.
+description: Azure 용 Avere vFXT에서 vFXT 클러스터에 클라이언트를 연결 하는 방법 및 클러스터 노드 간에 클라이언트 트래픽 부하를 분산 하는 방법에 대해 알아봅니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 12/16/2019
 ms.author: rohogue
-ms.openlocfilehash: e8850162847f2dd416b0951a797e2eb0cd7d55d2
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 44a4e1293bc4c5a54e1e345d5cf95ba307a7b120
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229570"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272574"
 ---
 # <a name="mount-the-avere-vfxt-cluster"></a>Avere vFXT 클러스터 탑재
 
@@ -76,7 +76,7 @@ Mount 명령에는 세 가지 요소가 있습니다.
 
 vserver 경로는 *IP 주소*와 *네임스페이스 접합*에 대한 경로의 조합입니다. 네임스페이스 접합은 스토리지 시스템을 추가할 때 정의된 가상 경로입니다.
 
-클러스터가 Blob storage를 사용 하 여 만들어진 경우에는 해당 컨테이너에 대 한 네임 스페이스 경로가`/msazure`
+클러스터가 Blob storage를 사용 하 여 만들어진 경우에는 해당 컨테이너에 대 한 네임 스페이스 경로가 `/msazure`
 
 예: ``mount 10.0.0.12:/msazure /mnt/vfxt``
 
@@ -102,7 +102,7 @@ IP 주소는 vserver에 대해 정의된 클라이언트 측 IP 주소 중 하�
 
 ``mount -o hard,proto=tcp,mountproto=tcp,retry=30 ${VSERVER_IP_ADDRESS}:/${NAMESPACE_PATH} ${LOCAL_FILESYSTEM_MOUNT_POINT}``
 
-| 필수 설정 | 설명 |
+| 필수 설정 | Description |
 --- | ---
 ``hard`` | vFXT 클러스터에 대한 소프트 탑재는 애플리케이션 오류 및 가능한 데이터 손실과 관련이 있습니다.
 ``proto=netid`` | NFS 네트워크 오류를 적절하게 처리하도록 지원합니다.

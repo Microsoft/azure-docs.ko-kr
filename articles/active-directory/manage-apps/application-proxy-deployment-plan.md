@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: kenwith
-ms.openlocfilehash: fdcea318fcd0796a790818794f6dd7cd949c17cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 09a930778e35897671d10f14a95f3fa48ea5e9eb
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367787"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642421"
 ---
-# <a name="plan-an-azure-ad-application-proxy-deployment"></a>Azure AD 응용 프로그램 프록시 배포 계획
+# <a name="plan-an-azure-ad-application-proxy-deployment"></a>Azure AD 애플리케이션 프록시 배포 계획
 
 Azure Active Directory (Azure AD) 응용 프로그램 프록시는 온-프레미스 응용 프로그램에 대 한 안전 하 고 비용 효율적인 원격 액세스 솔루션입니다. 이 기능은 아직 최신 프로토콜을 사용할 수 없는 레거시 온-프레미스 응용 프로그램에 대 한 액세스를 관리할 수 있는 "클라우드 우선" 조직에 대 한 즉각적인 전환 경로를 제공 합니다. 추가 소개 정보 [는 응용 프로그램 프록시 정의](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy)를 참조 하세요.
 
@@ -110,7 +110,7 @@ Azure AD 응용 프로그램 프록시를 구성 하 고 구현 하려면 다음
 
 다음은 조직의 비즈니스 요구 사항에 대해 정의 해야 하는 영역입니다. 각 영역에는 요구 사항의 예가 포함 되어 있습니다.
 
- **액세스**
+ **Access**
 
 * 도메인에 가입 된 원격 사용자 또는 Azure AD 조인 장치 사용자는 원활한 SSO (Single Sign-On)를 사용 하 여 게시 된 응용 프로그램에 안전 하 게 액세스할 수 있습니다.
 
@@ -170,7 +170,7 @@ SSO (Single sign-on)를 사용 하 여 단일 응용 프로그램에 대해 원�
 
 ### <a name="deploy-application-proxy"></a>응용 프로그램 프록시 배포
 
-응용 프로그램 프록시를 배포 하는 단계는 [원격 액세스를 위해 온-프레미스 응용 프로그램을 추가 하기 위한이 자습서](application-proxy-add-on-premises-application.md)에 설명 되어 있습니다. 설치에 실패 한 경우 포털에서 **응용 프로그램 프록시 문제 해결** 을 선택 하거나 [응용 프로그램 프록시 에이전트 커넥터를 설치할 때 발생 하는 문제에 대 한](application-proxy-connector-installation-problem.md)문제 해결 가이드를 사용 합니다.
+응용 프로그램 프록시를 배포 하는 단계는 [원격 액세스를 위해 온-프레미스 응용 프로그램을 추가 하기 위한이 자습서](application-proxy-add-on-premises-application.md)에 설명 되어 있습니다. 설치에 실패 한 경우 포털에서  **응용 프로그램 프록시 문제 해결**  을 선택 하거나 [응용 프로그램 프록시 에이전트 커넥터를 설치할 때 발생 하는 문제에 대 한](application-proxy-connector-installation-problem.md)문제 해결 가이드를 사용 합니다.
 
 ### <a name="publish-applications-via-application-proxy"></a>응용 프로그램 프록시를 통해 응용 프로그램 게시
 
@@ -271,7 +271,7 @@ Azure AD 응용 프로그램 프록시을 지원 하기 위해 다음 기능을 
 
 * 위험 기반 조건부 액세스: 온-프레미스 또는 클라우드에서 모든 앱 및 모든 사용자에 게 적용할 수 있는 [위험 기반 조건부 액세스 정책을](https://www.microsoft.com/cloud-platform/conditional-access) 사용 하 여 악의적인 해커 로부터 데이터를 보호 합니다.
 
-* Azure AD 액세스 패널: 응용 프로그램 프록시 서비스를 배포 하 고 응용 프로그램을 안전 하 게 게시 하 여 사용자에 게 모든 응용 프로그램을 검색 하 고 액세스할 수 있는 간단한 허브를 제공 합니다. [액세스 패널](https://aka.ms/AccessPanelDPDownload)을 통해 새 앱 및 그룹에 대 한 액세스를 요청 하거나 이러한 리소스에 대 한 액세스를 관리 하는 기능과 같은 셀프 서비스 기능으로 생산성을 높일 수 있습니다.
+* Azure AD 내 앱: 응용 프로그램 프록시 서비스를 배포 하 고 응용 프로그램을 안전 하 게 게시 하 여 사용자에 게 모든 응용 프로그램을 검색 하 고 액세스할 수 있는 간단한 허브를 제공 합니다. [내 앱](https://aka.ms/AccessPanelDPDownload)을 통해 새로운 앱 및 그룹에 대 한 액세스를 요청 하거나 이러한 리소스에 대 한 액세스를 관리 하는 기능과 같은 셀프 서비스 기능으로 생산성을 향상 하세요.
 
 ## <a name="manage-your-implementation"></a>구현 관리
 

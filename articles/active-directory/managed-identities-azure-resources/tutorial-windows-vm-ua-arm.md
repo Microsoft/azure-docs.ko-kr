@@ -3,7 +3,7 @@ title: 자습서`:` 관리 ID를 사용하여 Azure Resource Manager에 액세�
 description: Windows VM에서 사용자 할당 관리 ID를 사용하여 Azure Resource Manager에 액세스하는 프로세스를 설명하는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/14/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec9956f0c5d834633646938da19f03e5467a9f6d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 030f2b893cd429bfdb451d24e799689fdb8a3cf8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75977847"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89255701"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>자습서: Windows VM에서 사용자 할당 관리 ID를 사용하여 Azure Resource Manager에 액세스
 
@@ -45,9 +45,9 @@ ms.locfileid: "75977847"
 
 - [Azure Portal에 로그인](https://portal.azure.com)
 
-- [Windows 가상 머신 만들기](/azure/virtual-machines/windows/quick-create-portal)
+- [Windows 가상 머신 만들기](../../virtual-machines/windows/quick-create-portal.md)
 
-- 이 자습서에서 필요한 리소스 만들기 및 역할 관리 단계를 수행하려면 적절한 범위(사용자 구독 또는 리소스 그룹)에서 계정에 “소유자” 권한이 필요합니다. 역할 할당에 관한 도움이 필요한 경우 [역할 기반 액세스 제어를 사용하여 Azure 구독 리소스에 대한 액세스 관리](/azure/role-based-access-control/role-assignments-portal)를 참조하세요.
+- 이 자습서에서 필요한 리소스 만들기 및 역할 관리 단계를 수행하려면 적절한 범위(사용자 구독 또는 리소스 그룹)에서 계정에 “소유자” 권한이 필요합니다. 역할 할당에 관한 도움이 필요한 경우 [역할 기반 액세스 제어를 사용하여 Azure 구독 리소스에 대한 액세스 관리](../../role-based-access-control/role-assignments-portal.md)를 참조하세요.
 - [최신 버전의 Azure PowerShell 모듈을 설치합니다.](/powershell/azure/install-az-ps) 
 - `Connect-AzAccount`를 실행하여 Azure와 연결합니다.
 - [PowerShellGet 최신 버전](/powershell/scripting/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget)을 설치합니다.
@@ -163,4 +163,4 @@ CanDelegate: False
 이 자습서에서는 사용자 할당 ID를 만들고 이를 Azure Virtual Machine에 연결하여 Azure Resource Manager API에 액세스하는 방법을 설명합니다.  Azure Resource Manager에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
->[Azure 리소스 관리자](/azure/azure-resource-manager/resource-group-overview)
+>[Azure 리소스 관리자](../../azure-resource-manager/management/overview.md)

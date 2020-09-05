@@ -4,15 +4,16 @@ description: Azure EA 전송 설명
 author: bandersmsft
 ms.reviewer: baolcsva
 ms.service: cost-management-billing
+ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 07/13/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: c49894c722897233afa6325def1d3e17562d2dab
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fdbeaaf255277765c77900c10339dd3d473b590f
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87075102"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686924"
 ---
 # <a name="azure-enterprise-transfers"></a>Azure Enterprise 전송
 
@@ -98,7 +99,7 @@ Azure EA Portal에서는 한 계정 소유자에서 다른 계정 소유자로 �
 
 ## <a name="subscription-transfer-effects"></a>구독 양도 효과
 
-Azure 구독이 동일한 Azure Active Directory 테넌트의 계정으로 양도되는 경우 리소스를 관리하기 위해 [RBAC(역할 기반 액세스 제어)](../../role-based-access-control/overview.md)가 있는 모든 사용자, 그룹 및 서비스 사용자의 액세스 권한이 그대로 유지됩니다.
+Azure 구독이 동일한 Azure Active Directory 테넌트의 계정으로 양도되는 경우 리소스를 관리하기 위해 [Azure RBAC(Azure 역할 기반 액세스 제어)](../../role-based-access-control/overview.md)가 있는 모든 사용자, 그룹 및 서비스 사용자의 액세스 권한이 그대로 유지됩니다.
 
 구독에 대한 RBAC 액세스 권한이 있는 사용자를 보려면 다음을 수행합니다.
 

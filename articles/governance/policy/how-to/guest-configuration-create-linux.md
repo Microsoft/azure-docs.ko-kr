@@ -1,14 +1,15 @@
 ---
 title: Linux용 게스트 구성 정책을 만드는 방법
 description: Linux용 Azure Policy 게스트 구성 정책을 만드는 방법에 대해 알아봅니다.
-ms.date: 03/20/2020
+ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 5ce6dce034c9479924901e5a20b38c343dd8bac6
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 4f49732aa2be50b0d8be6f1f3af974121dc9f363
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86026715"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89076364"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Linux용 게스트 구성 정책을 만드는 방법
 
@@ -25,9 +26,7 @@ Linux를 감사할 때 게스트 구성은 [Chef InSpec](https://www.inspec.io/)
 > [!IMPORTANT]
 > 게스트 구성이 포함된 사용자 지정 정책은 미리 보기 기능입니다.
 >
-> 게스트 구성 확장은 Azure Virtual Machine에서 감사를 수행하는 데 필요합니다.
-> 모든 Linux 컴퓨터에서 확장을 대규모로 배포하려면 다음의 정책 정의를 할당합니다.
->   - [Linux VM에서 게스트 구성 정책을 사용하도록 설정하기 위한 필수 조건 배포](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffb27e9e0-526e-4ae1-89f2-a2a0bf0f8a50)
+> 게스트 구성 확장은 Azure Virtual Machine에서 감사를 수행하는 데 필요합니다. 모든 Linux 컴퓨터에서 확장을 대규모로 배포 하려면 다음 정책 정의를 할당 합니다. `Deploy prerequisites to enable Guest Configuration Policy on Linux VMs`
 
 ## <a name="install-the-powershell-module"></a>PowerShell 모듈 설치
 
@@ -51,11 +50,14 @@ Linux를 감사할 때 게스트 구성은 [Chef InSpec](https://www.inspec.io/)
 - macOS
 - Windows
 
+> [!NOTE]
+> ' GuestConfigurationPackage ' cmdlet에는 OMI에 대 한 종속성으로 인해 OpenSSL 버전 1.0이 필요 합니다. 이로 인해 OpenSSL 1.1 이상의 환경에서 오류가 발생 합니다.
+
 게스트 구성 리소스 모듈에는 다음 소프트웨어가 필요합니다.
 
 - PowerShell 6.2 이상. 아직 설치되지 않은 경우 [다음 지침](/powershell/scripting/install/installing-powershell)을 따릅니다.
 - Azure PowerShell 1.5.0 이상. 아직 설치되지 않은 경우 [다음 지침](/powershell/azure/install-az-ps)을 따릅니다.
-  - AZ 모듈 'Az.Accounts' 및 'Az.Resources'만 필요합니다.
+  - Az modules ' Az. Accounts ' 및 ' Az .Resources '만 필요 합니다.
 
 ### <a name="install-the-module"></a>모듈 설치
 
@@ -77,7 +79,8 @@ PowerShell에서 **GuestConfiguration** 모듈을 설치하려면 다음을 수�
 
 ## <a name="guest-configuration-artifacts-and-policy-for-linux"></a>Linux용 게스트 구성 아티팩트 및 정책
 
-Linux 환경에서도 게스트 구성은 Desired State Configuration을 언어 추상화로 사용합니다. 구현은 네이티브 코드(C++)를 기반으로 하므로 PowerShell을 로드할 필요가 없습니다. 하지만 환경에 대한 세부 정보를 설명하는 구성 MOF가 필요합니다. DSC는 InSpec에서 실행 방법, 매개 변수가 제공되는 방법 및 출력이 서비스에 반환되는 방법을 표준화하기 위한 래퍼 역할을 합니다. 사용자 지정 InSpec 콘텐츠로 작업하는 경우 DSC에 대한 지식이 거의 필요하지 않습니다.
+Linux 환경에서도 게스트 구성은 Desired State Configuration을 언어 추상화로 사용합니다. 구현은 네이티브 코드(C++)를 기반으로 하므로 PowerShell을 로드할 필요가 없습니다. 하지만 환경에 대한 세부 정보를 설명하는 구성 MOF가 필요합니다.
+DSC는 InSpec에서 실행 방법, 매개 변수가 제공되는 방법 및 출력이 서비스에 반환되는 방법을 표준화하기 위한 래퍼 역할을 합니다. 사용자 지정 InSpec 콘텐츠로 작업하는 경우 DSC에 대한 지식이 거의 필요하지 않습니다.
 
 #### <a name="configuration-requirements"></a>구성 요구 사항
 
@@ -137,8 +140,6 @@ AuditFilePathExists -out ./Config
 프로젝트 폴더에 이름이 `config.ps1`인 이 파일을 저장합니다. 터미널에서 `./config.ps1`을 실행하여 PowerShell에서 실행합니다. 새 mof 파일이 만들어집니다.
 
 `Node AuditFilePathExists` 명령은 기술적으로 필요하지 않지만, 기본값 `localhost.mof`가 아닌 `AuditFilePathExists.mof`라는 파일을 생성합니다. .mof 파일 이름을 구성에 따라 지정하면 대규모 작업을 수행할 때 많은 파일을 쉽게 구성할 수 있습니다.
-
-
 
 이제 프로젝트 구조가 다음과 같이 표시됩니다.
 
@@ -260,6 +261,8 @@ $uri = publish `
 - **버전**: 정책 버전입니다.
 - **경로**: 정책 정의가 만들어지는 대상 경로입니다.
 - **Platform**: 게스트 구성 정책 및 콘텐츠 패키지용 대상 플랫폼(Windows/Linux)입니다.
+- **Tag**는 정책 정의에 하나 이상의 태그 필터를 추가합니다.
+- **Category**는 정책 정의의 범주 메타데이터 필드를 설정합니다.
 
 다음 예제에서는 사용자 지정 정책 패키지에서 지정된 경로에 정책 정의를 만듭니다.
 
@@ -282,16 +285,7 @@ New-GuestConfigurationPolicy `
 
 cmdlet 출력은 정책 파일의 이니셔티브 표시 이름과 경로가 포함된 개체를 반환합니다.
 
-> [!Note]
-> 최신 게스트 구성 모듈에는 다음의 새 매개 변수가 포함됩니다.
-> - **Tag**는 정책 정의에 하나 이상의 태그 필터를 추가합니다.
->   - [태그를 사용하여 게스트 구성 정책 필터링](#filtering-guest-configuration-policies-using-tags) 섹션을 참조하세요.
-> - **Category**는 정책 정의의 범주 메타데이터 필드를 설정합니다.
->   - 매개 변수가 포함되지 않은 경우 범주가 게스트 구성으로 기본 설정됩니다.
-> 이러한 기능은 현재 미리 보기로 제공되며 `Install-Module GuestConfiguration -AllowPrerelease`를 사용하여 설치할 수 있는 게스트 구성 모듈 버전 1.20.1이 필요합니다.
-
-마지막으로 `Publish-GuestConfigurationPolicy` cmdlet을 사용하여 정책 정의를 게시합니다.
-cmdlet에는 `New-GuestConfigurationPolicy`에서 만든 JSON 파일의 위치를 가리키는 **Path** 매개 변수만 있습니다.
+마지막으로 `Publish-GuestConfigurationPolicy` cmdlet을 사용하여 정책 정의를 게시합니다. cmdlet에는 `New-GuestConfigurationPolicy`에서 만든 JSON 파일의 위치를 가리키는 **Path** 매개 변수만 있습니다.
 
 Publish 명령을 실행하려면 Azure에서 정책을 만들기 위한 액세스 권한이 필요합니다. 특정 권한 부여 요구 사항은 [Azure Policy 개요](../overview.md) 페이지에 설명되어 있습니다. 가장 적합한 기본 제공 역할은 **리소스 정책 기여자**입니다.
 
@@ -314,9 +308,9 @@ Publish-GuestConfigurationPolicy `
 Azure에서 만든 정책을 사용하는 마지막 단계는 이니셔티브를 할당하는 과정입니다. [Portal](../assign-policy-portal.md), [Azure CLI](../assign-policy-azurecli.md) 및 [Azure PowerShell](../assign-policy-powershell.md)을 사용하여 이니셔티브를 할당하는 방법을 참조하세요.
 
 > [!IMPORTANT]
-> 게스트 구성 정책은 **항상** _AuditIfNotExists_와 _DeployIfNotExists_ 정책을 결합하는 이니셔티브를 사용하여 할당해야 합니다. _AuditIfNotExists_ 정책만 할당하면 필수 구성 요소가 배포되지 않고 정책에서 항상 '0' 서버가 규정을 준수한다고 표시합니다.
+> 게스트 구성 정책은 **항상** _AuditIfNotExists_와 _DeployIfNotExists_ 정책을 결합하는 이니셔티브를 사용하여 할당해야 합니다. _AuditIfNotExists_ 정책만 할당된 경우 필수 구성 요소가 배포되지 않으며 정책에 항상 '0' 서버가 규정을 준수함을 표시합니다.
 
-_DeployIfNotExists_ 효과와 정책 정의를 할당하려면 추가 액세스 수준이 필요합니다. 최소 권한을 부여하려면 **리소스 정책 기여자**를 확장하는 사용자 지정 역할 정의를 만들면 됩니다. 아래 예제에서는 _Microsoft.Authorization/roleAssignments/write_ 추가 권한을 사용하여 **리소스 정책 기여자 DINE**이라는 역할을 만듭니다.
+_DeployIfNotExists_ 효과와 함께 정책 정의를 할당하려면 추가 액세스 수준이 필요합니다. 최소 권한을 부여하려면 **리소스 정책 기여자**를 확장하는 사용자 지정 역할 정의를 만들 수 있습니다. 아래 예제에서는 _Microsoft.Authorization/roleAssignments/write_ 추가 권한을 사용하여 **리소스 정책 기여자 DINE**이라는 역할을 만듭니다.
 
 ```azurepowershell-interactive
 $subscriptionid = '00000000-0000-0000-0000-000000000000'
@@ -349,7 +343,7 @@ end
 
 Cmdlet은 `New-GuestConfigurationPolicy` `Test-GuestConfigurationPolicyPackage` **매개**변수 라는 매개 변수를 포함 합니다. 이 매개 변수는 각 매개 변수에 대한 세부 정보를 모두 포함하는 해시 테이블을 사용하며, 각 Azure Policy 정의를 만드는 데 사용되는 파일의 필수 섹션을 모두 자동으로 만듭니다.
 
-다음 예제에서는 사용자가 정책 할당 시 경로를 제공하는 파일 경로를 감사할 정책 정의를 만듭니다.
+다음 예에서는 사용자가 정책 할당 시 경로를 제공 하는 파일 경로를 감사 하는 정책 정의를 만듭니다.
 
 ```azurepowershell-interactive
 $PolicyParameterInfo = @(
@@ -404,9 +398,6 @@ Configuration AuditFilePathExists
 
 
 ### <a name="filtering-guest-configuration-policies-using-tags"></a>태그를 사용하여 게스트 구성 정책 필터링
-
-> [!Note]
-> 이 기능은 현재 미리 보기로 제공되며 `Install-Module GuestConfiguration -AllowPrerelease`를 사용하여 설치할 수 있는 게스트 구성 모듈 버전 1.20.1이 필요합니다.
 
 게스트 구성 모듈에서 cmdlet에 의해 만들어진 정책에는 선택적으로 태그에 대한 필터가 포함될 수 있습니다. `New-GuestConfigurationPolicy`의 **-Tag** 매개 변수는 개별 태그 전체를 포함하는 해시 테이블의 배열을 지원합니다. 태그는 정책 정의의 `If` 섹션에 추가되며 정책 할당으로 수정할 수 없습니다.
 
@@ -464,5 +455,5 @@ Azure Policy 게스트 구성 할당 문제를 해결하는 데 도움이 되는
 ## <a name="next-steps"></a>다음 단계
 
 - [게스트 구성](../concepts/guest-configuration.md)을 사용하여 VM을 감사하는 방법을 알아봅니다.
-- [프로그래밍 방식으로 정책을 만드는](programmatically-create.md) 방법을 이해합니다.
-- [규정 준수 데이터를 가져오는](get-compliance-data.md) 방법을 알아봅니다.
+- [프로그래밍 방식으로 정책을 만드는](./programmatically-create.md) 방법을 이해합니다.
+- [규정 준수 데이터를 가져오는](./get-compliance-data.md) 방법을 알아봅니다.

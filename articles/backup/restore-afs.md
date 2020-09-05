@@ -3,12 +3,12 @@ title: Azure 파일 공유 복원
 description: Azure Portal를 사용 하 여 Azure Backup 만든 복원 지점에서 전체 파일 공유 또는 특정 파일을 복원 하는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/12/2020
-ms.openlocfilehash: f0e232fcde12a0c035afa139e3043bfa52fbe714
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: bb846c4615377259a1c17653cc26e96f37dc32ec
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503645"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762827"
 ---
 # <a name="restore-azure-file-shares"></a>Azure 파일 공유 복원
 
@@ -59,14 +59,14 @@ ms.locfileid: "86503645"
     ![복원 지점 선택](./media/restore-afs/restore-point.png)
 
     >[!NOTE]
-    >기본적으로 **복원 지점 선택** 창에는 지난 30 일 동안의 복원 지점이 나열 됩니다. 특정 기간 동안 만들어진 복원 지점에 대해 확인 하려면 적절 한 **시작 시간과** **종료 시간** 을 선택 하 고 **새로 고침** 단추를 클릭 하 여 범위를 지정 하십시오.
+    >기본적으로 **복원 지점 선택** 창에는 지난 30 일 동안의 복원 지점이 나열 됩니다. 특정 기간 동안 만들어진 복원 지점에 대해 확인 하려면 적절 한 **시작 시간과** **종료 시간** 을 선택 하 여 범위를 지정 하 고 **새로 고침** 단추를 클릭 합니다.
 
 1. 다음 단계는 **복원 위치**를 선택 하는 것입니다. **복구 대상** 섹션에서 데이터를 복원할 위치를 지정 합니다. 설정/해제 단추를 사용 하 여 다음 두 옵션 중 하나를 선택 합니다.
 
     * **원본 위치**: 원래 원본과 동일한 위치에 전체 파일 공유를 복원 합니다.
     * **대체 위치**: 전체 파일 공유를 대체 위치로 복원 하 고 원래 파일 공유를 그대로 유지 합니다.
 
-#### <a name="restore-to-the-original-location"></a>원래 위치로 복원
+#### <a name="restore-to-the-original-location-full-share-recovery"></a>원래 위치로 복원 (전체 공유 복구)
 
 1. **원본 위치** 를 **복구 대상**으로 선택 하 고 충돌 **시** 드롭다운 목록에서 적절 한 옵션을 선택 하 여 충돌이 발생 했을 때 건너뛸지 아니면 덮어쓸지를 선택 합니다.
 
@@ -74,7 +74,7 @@ ms.locfileid: "86503645"
 
     ![시작 하려면 [복원]을 선택 하십시오.](./media/restore-afs/click-restore.png)
 
-#### <a name="restore-to-an-alternate-location"></a>대체 위치에 복원
+#### <a name="restore-to-an-alternate-location-full-share-recovery"></a>대체 위치로 복원 (전체 공유 복구)
 
 1. **대체 위치** 를 **복구 대상**으로 선택 합니다.
 1. **저장소 계정** 드롭다운 목록에서 백업 된 콘텐츠를 복원 하려는 대상 저장소 계정을 선택 합니다.
@@ -106,7 +106,7 @@ ms.locfileid: "86503645"
     * **원본 위치**: 선택한 파일 또는 폴더를 원본 원본과 동일한 파일 공유로 복원 합니다.
     * **대체 위치**: 선택한 파일 또는 폴더를 대체 위치로 복원 하 고 원래 파일 공유 내용을 그대로 유지 합니다.
 
-#### <a name="restore-to-the-original-location"></a>원래 위치로 복원
+#### <a name="restore-to-the-original-location-item-level-recovery"></a>원래 위치로 복원 (항목 수준 복구)
 
 1. **원본 위치** 를 **복구 대상**으로 선택 하 고 **충돌 시** 드롭다운 목록에서 적절 한 옵션을 선택 하 여 충돌이 있는 경우 건너뛸지 아니면 덮어쓸지를 선택 합니다.
 
@@ -125,7 +125,7 @@ ms.locfileid: "86503645"
 
     ![시작 하려면 [복원]을 선택 하십시오.](./media/restore-afs/click-restore.png)
 
-#### <a name="restore-to-an-alternate-location"></a>대체 위치에 복원
+#### <a name="restore-to-an-alternate-location-item-level-recovery"></a>대체 위치로 복원 (항목 수준 복구)
 
 1. **대체 위치** 를 **복구 대상**으로 선택 합니다.
 1. **저장소 계정** 드롭다운 목록에서 백업 된 콘텐츠를 복원 하려는 대상 저장소 계정을 선택 합니다.

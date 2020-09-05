@@ -2,17 +2,17 @@
 title: 모델 구문 분석 및 유효성 검사
 titleSuffix: Azure Digital Twins
 description: 파서 라이브러리를 사용 하 여 DTDL 모델을 구문 분석 하는 방법에 대해 알아봅니다.
-author: cschormann
-ms.author: cschorm
+author: baanders
+ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e63acd0277e100ee34bdfc59d33dd9d4db2b7934
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 69b52be3a3eca2ab48ed09f6401780ea033f223c
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87987543"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723982"
 ---
 # <a name="parse-and-validate-models-with-the-dtdl-parser-library"></a>DTDL 파서 라이브러리를 사용 하 여 모델 구문 분석 및 유효성 검사
 

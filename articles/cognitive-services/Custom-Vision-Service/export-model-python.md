@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 04/14/2020
+ms.date: 08/05/2020
 ms.author: pafarley
-ms.custom: tracking-python
-ms.openlocfilehash: 8e2df90c2e0d3c0d6fd24884a46156de55ac55ec
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-python
+ms.openlocfilehash: af0e9cd66cf64366a6f563148fa6b075161151f4
+ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079214"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87875441"
 ---
 # <a name="tutorial-run-tensorflow-model-in-python"></a>자습서: Python으로 TensorFlow 모델 실행
 
@@ -171,7 +171,7 @@ def update_orientation(image):
     return image
 ```
 
-## <a name="predict-an-image"></a>이미지 예측
+## <a name="classify-an-image"></a>이미지 분류
 
 이미지가 텐서로서 준비되면 예측을 위해 모델을 통해 보낼 수 있습니다.
 

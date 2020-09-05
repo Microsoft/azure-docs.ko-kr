@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 883d0afac5623838e9dde068964b36cfe3b44380
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: b9d5a9e071cc1b2ac81e8cacea8c974181fbb3b6
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281993"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070397"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -59,7 +59,7 @@ Windows에서는 레지스트리에서 MIME 형식이 추출 됩니다. 플래�
 azcopy copy [source] [destination] [flags]
 ```
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 OAuth 인증을 사용 하 여 단일 파일을 업로드 합니다. AzCopy에 아직 로그인 하지 않은 경우 `azcopy login` 다음 명령을 실행 하기 전에 명령을 실행 합니다.
 
@@ -254,7 +254,7 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 **--from** 문자열은 필요에 따라 원본 대상 조합을 지정 합니다. 예: `LocalBlob` , `BlobLocal` , `LocalBlobFS` .
 
-**--** 복사에 대 한 도움말 도움말입니다.
+**--**  복사에 대 한 도움말 도움말입니다.
 
 **--include-after** 문자열에는 지정 된 날짜/시간 이후에 수정 된 파일만 포함 됩니다. 값은 ISO8601 형식 이어야 합니다. 표준 시간대가 지정 되지 않은 경우이 값은 AzCopy를 실행 하는 컴퓨터의 로컬 표준 시간대에 있는 것으로 간주 됩니다. 예를 들어 `2020-08-19T15:04:00Z` UTC 시간 또는 `2020-08-19` 현지 표준 시간대의 자정 (00:00)에 대 한입니다. AzCopy 10.5에서와 같이이 플래그는 폴더가 아닌 파일에만 적용 되므로 또는와 함께이 플래그를 사용 하는 경우 폴더 속성이 복사 되지 않습니다 `--preserve-smb-info` `--preserve-smb-permissions` .
 
@@ -263,6 +263,8 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 **--include-path** 문자열은 복사할 때 이러한 경로만 포함 합니다. 이 옵션은 와일드 카드 문자 (*)를 지원 하지 않습니다. 상대 경로 접두사 (예:)를 확인 `myFolder;myFolder/subDirName/file.pdf` 합니다.
 
 **--include-패턴** 문자열은 복사할 때 이러한 파일만 포함 합니다. 이 옵션은 와일드 카드 문자 (*)를 지원 합니다. 를 사용 하 여 파일을 구분 `;` 합니다.
+
+**--버전 목록** 문자열은 각 버전 id가 별도의 줄에 나열 되는 파일을 지정 합니다. 원본이 단일 blob을 가리켜야 하며이 플래그를 사용 하 여 파일에 지정 된 모든 버전 id가 원본 blob에만 속해야 합니다. AzCopy는 제공 된 대상 폴더에 지정 된 버전을 다운로드 합니다. 자세한 내용은 [이전 버전의 Blob 다운로드](storage-use-azcopy-blobs.md#download-previous-versions-of-a-blob)를 참조 하세요.
 
 **--로그 수준** 문자열은 로그 파일에 대 한 로그의 자세한 정도, 사용 가능한 수준: 정보 (모든 요청/응답), 경고 (저속 응답), 오류 (실패 한 요청만) 및 없음 (출력 로그 없음)을 정의 합니다. (기본값 `INFO` ). 
 
@@ -278,7 +280,7 @@ azcopy cp "https://s3.amazonaws.com/" "https://[destaccount].blob.core.windows.n
 
 **--소유자 유지**    는 다운로드에만 적용 되 고가 사용 되는 경우에만 적용 `--preserve-smb-permissions` 됩니다. True (기본값) 이면 다운로드 시 파일 소유자 및 그룹이 유지 됩니다. False로 설정 된 경우 `--preserve-smb-permissions` 는 여전히 acl을 유지 하지만 소유자 및 그룹은 AzCopy를 실행 하는 사용자 (기본값 true)를 기반으로 합니다.
 
-**--smb-정보를 유지** 합니다.   False 이면 기본적으로 False입니다. SMB 인식 리소스 (Windows 및 Azure Files) 간에 SMB 속성 정보 (마지막으로 쓴 시간, 만든 시간, 특성 비트)를 유지 합니다. Azure Files에서 지 원하는 특성 비트만 전송 됩니다. 다른 모든 항목은 무시 됩니다. 이 플래그는 파일 전용 필터가 지정 된 경우를 제외 하 고 파일 및 폴더에 모두 적용 됩니다 (예: include-패턴). 폴더에 대해 전송 되는 정보는 폴더에 대해 유지 되지 않는 마지막 쓰기 시간을 제외 하 고 파일의 경우와 동일 합니다.
+**--smb-정보를 유지**   합니다.   False 이면 기본적으로 False입니다. SMB 인식 리소스 (Windows 및 Azure Files) 간에 SMB 속성 정보 (마지막으로 쓴 시간, 만든 시간, 특성 비트)를 유지 합니다. Azure Files에서 지 원하는 특성 비트만 전송 됩니다. 다른 모든 항목은 무시 됩니다. 이 플래그는 파일 전용 필터가 지정 된 경우를 제외 하 고 파일 및 폴더에 모두 적용 됩니다 (예: include-패턴). 폴더에 대해 전송 되는 정보는 폴더에 대해 유지 되지 않는 마지막 쓰기 시간을 제외 하 고 파일의 경우와 동일 합니다.
 
 **--smb-권한 유지**   False 이면 기본적으로 False입니다. 인식 리소스 (Windows 및 Azure Files) 사이에서 SMB Acl을 유지 합니다. 다운로드를 위해 `--backup` 새 소유자가 AzCopy를 실행 하는 사용자가 아닌 경우에도 복원 하는 플래그를 사용 해야 합니다. 이 플래그는 파일 전용 필터가 지정 된 경우를 제외 하 고 파일 및 폴더에 모두 적용 됩니다 (예: `include-pattern` ).
 

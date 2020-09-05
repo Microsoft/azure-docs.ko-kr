@@ -1,19 +1,20 @@
 ---
-title: 세부 사용량 및 요금 이해 | Microsoft Docs
+title: 세부 사용량 및 요금 이해
 description: 세부 사용량 및 요금 파일을 읽고 이해하는 방법을 알아봅니다. 파일에 사용된 사용 약관 및 설명을 살펴봅니다.
 author: bandersmsft
 ms.reviewer: micflan
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 03/20/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 1b53869c9ef90dd0edf3ab9a3120e65db8f16e8a
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: d113ad7d3de3478fbbdcce32363e048b7a8a75ce
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460289"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681739"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Azure 사용량 및 요금 파일의 사용 약관 이해
 

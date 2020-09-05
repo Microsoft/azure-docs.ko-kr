@@ -3,22 +3,25 @@ title: 여러 변환 출력을 사용 하 여 Azure Media Services 작업 만들
 description: 이 항목에서는 여러 변환 출력을 사용 하 여 Azure Media Services 작업을 만드는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/17/2020
-ms.author: juliako
-ms.openlocfilehash: 7c39b133773cbe35d78e04c4e40de9d62c4eba18
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 63e6da53e542172d474f9ca5de9ab136f38f42f5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001114"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265544"
 ---
 # <a name="create-a-job-with-multiple-transform-outputs"></a>여러 변환 출력을 사용 하 여 작업 만들기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 항목에서는 두 개의 변환 출력을 사용 하 여 변환을 만드는 방법을 보여 줍니다. 첫 번째는 기본 제공 [AdaptiveStreaming](encoding-concept.md#builtinstandardencoderpreset) 사전 설정을 사용 하 여 적응 비트 전송률 스트리밍을 위해 인코딩할 입력에 대해를 호출 합니다. 두 번째는 [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md#built-in-presets)를 사용 하 여 처리 하기 위해 입력 비디오에서 오디오 신호를 호출 합니다. 변환을 만든 후 비디오를 처리 하는 작업을 적절 하 게 제출할 수 있습니다. 이 예제에서는 두 개의 변환 출력을 지정 하므로 두 개의 작업 출력을 지정 해야 합니다. 두 작업 출력을 동일한 자산 (아래에 표시 된 것 처럼)으로 보내도록 선택 하거나 별도의 자산에 결과를 쓸 수 있습니다.
  

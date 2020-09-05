@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9c7e03f5e658b8e15dcae1c5314b73dfbfdf0206
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 2eafd2f74ffcf5fe0fe65d04884cfd2d668cdf0b
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430276"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684578"
 ---
 # <a name="deploy-server-rendered-nuxtjs-websites-on-azure-static-web-apps-preview"></a>Azure Static Web Apps 미리 보기에서 서버에 렌더링된 Nuxt.js 웹 사이트 배포
 
@@ -56,7 +56,7 @@ ms.locfileid: "87430276"
     npm run dev
     ```
 
-<http://localhost:3000>으로 이동하여 앱을 엽니다. 이 경우 기본 설정 브라우저에서 다음 웹 사이트를 열어 볼 수 있습니다.
+`http://localhost:3000`으로 이동하여 앱을 엽니다. 이 경우 기본 설정 브라우저에서 다음 웹 사이트를 열어 볼 수 있습니다.
 
 :::image type="content" source="media/deploy-nuxtjs/start-nuxtjs-app.png" alt-text="Nuxt.js 앱 시작":::
 

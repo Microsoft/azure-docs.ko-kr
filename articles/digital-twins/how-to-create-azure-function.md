@@ -2,17 +2,17 @@
 title: 데이터 처리를 위한 Azure 함수 설정
 titleSuffix: Azure Digital Twins
 description: 디지털 쌍으로 액세스 하 여 트리거할 수 있는 Azure 함수를 만드는 방법을 참조 하세요.
-author: cschormann
-ms.author: cschorm
+author: baanders
+ms.author: baanders
 ms.date: 3/17/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3e284bc76da9ca40341d72f772aa7ee947a11638
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 66f514f4c5d299ef11efda541f16f4ef2fe61aed
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87124309"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930165"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>데이터 처리를 위해 Azure Functions 앱 연결
 
@@ -83,7 +83,7 @@ namespace FunctionSample
 ### <a name="add-the-azure-digital-twins-sdk-to-your-azure-function-app"></a>Azure 함수 앱에 Azure Digital Twins SDK 추가
 
 함수 앱은 [.net 용 Azure IoT 디지털 쌍 클라이언트 라이브러리 (c #)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)를 사용 하 여 Azure Digital twins와 상호 작용 합니다. SDK를 사용 하려면 프로젝트에 다음 패키지를 포함 해야 합니다.
-* `Azure.DigitalTwins.Core`(버전 `1.0.0-preview.2` )
+* `Azure.DigitalTwins.Core` (버전 `1.0.0-preview.2` )
 * `Azure.Identity`
 
 Azure Functions에 대해 올바르게 설정 하도록 Azure SDK 파이프라인을 구성 하려면 다음이 필요 합니다.
@@ -95,8 +95,8 @@ Azure Functions에 대해 올바르게 설정 하도록 Azure SDK 파이프라�
 Azure 함수에 다음 using 문을 추가 합니다.
 
 ```csharp
-using Azure.Identity;
 using Azure.DigitalTwins.Core;
+using Azure.Identity;
 using System.Net.Http;
 using Azure.Core.Pipeline;
 ```
@@ -157,7 +157,7 @@ namespace FunctionSample
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>
 ```
 
-다음 명령에 *principalId* 값을 사용하여 함수 앱의 ID를 Azure Digital Twins 인스턴스의 *소유자* 역할에 할당합니다.
+다음 명령에서 *Principalid* 값을 사용 하 여 Azure Digital twins 인스턴스의 *Azure 디지털 쌍 소유자 (미리 보기)* 역할에 함수 앱의 id를 할당 합니다. 이렇게 하면 인스턴스에서 데이터 평면 작업을 수행할 수 있는 함수 앱 권한이 제공 됩니다.
 
 ```azurecli
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"

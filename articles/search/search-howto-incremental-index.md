@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 4a732bd81b65c0c6b0cc227e1ed82de7bae3a1a0
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: c432b89574949b31612aeba862ece7687c12dde4
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86230709"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88922840"
 ---
 # <a name="how-to-configure-caching-for-incremental-enrichment-in-azure-cognitive-search"></a>Azure Cognitive Search에서 증분 보강 캐싱을 구성 하는 방법
 
@@ -38,7 +38,7 @@ ms.locfileid: "86230709"
 
 데이터 원본, 기술, 인덱스 등의 구성 요소가 있는 유효한 기존 인덱서를 사용 하 여 시작 합니다. 인덱서를 실행할 수 있어야 합니다. 
 
-API 클라이언트를 사용 하 여 인덱서의 현재 구성을 가져오기 위한 [Get 인덱서 요청](https://docs.microsoft.com/rest/api/searchservice/get-indexer) 을 생성 합니다. Preview API 버전을 사용 하 여 인덱서를 가져오는 경우 `cache` null로 설정 된 속성이 정의에 추가 됩니다.
+API 클라이언트를 사용 하 여 인덱서의 현재 구성을 가져오기 위한 [Get 인덱서 요청](/rest/api/searchservice/get-indexer) 을 생성 합니다. Preview API 버전을 사용 하 여 인덱서를 가져오는 경우 `cache` null로 설정 된 속성이 정의에 추가 됩니다.
 
 ```http
 GET https://[YOUR-SEARCH-SERVICE].search.windows.net/indexers/[YOUR-INDEXER-NAME]?api-version=2020-06-30-Preview
@@ -75,7 +75,7 @@ api-key: [YOUR-ADMIN-KEY]
 
 ### <a name="step-3-reset-the-indexer"></a>3 단계: 인덱서 다시 설정
 
-모든 문서가 일관 된 상태가 되도록 기존 인덱서에 대 한 증분 보강을 설정할 때는 인덱서를 다시 설정 해야 합니다. 이 작업에 대 한 포털 또는 API 클라이언트 및 [다시 설정 인덱서 REST API](https://docs.microsoft.com/rest/api/searchservice/reset-indexer) 을 사용할 수 있습니다.
+모든 문서가 일관 된 상태가 되도록 기존 인덱서에 대 한 증분 보강을 설정할 때는 인덱서를 다시 설정 해야 합니다. 이 작업에 대 한 포털 또는 API 클라이언트 및 [다시 설정 인덱서 REST API](/rest/api/searchservice/reset-indexer) 을 사용할 수 있습니다.
 
 ```http
 POST https://[YOUR-SEARCH-SERVICE].search.windows.net/indexers/[YOUR-INDEXER-NAME]/reset?api-version=2020-06-30-Preview
@@ -85,7 +85,7 @@ api-key: [YOUR-ADMIN-KEY]
 
 ### <a name="step-4-save-the-updated-definition"></a>4 단계: 업데이트 된 정의 저장
 
-PUT 요청을 사용 하 여 [인덱서를 업데이트](https://docs.microsoft.com/rest/api/searchservice/preview-api/update-indexer) 합니다. 요청 본문에는 cache 속성이 있는 업데이트 된 인덱서 정의가 포함 되어야 합니다. 400을 가져오는 경우 인덱서 정의를 확인 하 여 모든 요구 사항 (데이터 원본, 기술, 인덱스)이 충족 되는지 확인 합니다.
+PUT 요청을 사용 하 여 [인덱서를 업데이트](/rest/api/searchservice/preview-api/update-indexer) 합니다. 요청 본문에는 cache 속성이 있는 업데이트 된 인덱서 정의가 포함 되어야 합니다. 400을 가져오는 경우 인덱서 정의를 확인 하 여 모든 요구 사항 (데이터 원본, 기술, 인덱스)이 충족 되는지 확인 합니다.
 
 ```http
 PUT https://[YOUR-SEARCH-SERVICE].search.windows.net/indexers/[YOUR-INDEXER-NAME]?api-version=2020-06-30-Preview
@@ -115,7 +115,7 @@ api-key: [YOUR-ADMIN-KEY]
 
 인덱서를 실행 하려면 포털 또는 API를 사용할 수 있습니다. 포털의 인덱서 목록에서 인덱서를 선택 하 고 **실행**을 클릭 합니다. 포털을 사용 하는 경우의 이점 중 하나는 인덱서 상태를 모니터링 하 고, 작업 기간을 확인 하 고, 처리 되는 문서 수를 확인 하는 것입니다. 포털 페이지는 몇 분 마다 새로 고쳐집니다.
 
-또는 REST를 사용 하 여 [인덱서를 실행할](https://docs.microsoft.com/rest/api/searchservice/run-indexer)수 있습니다.
+또는 REST를 사용 하 여 [인덱서를 실행할](/rest/api/searchservice/run-indexer)수 있습니다.
 
 ```http
 POST https://[YOUR-SEARCH-SERVICE].search.windows.net/indexers/[YOUR-INDEXER-NAME]/run?api-version=2020-06-30-Preview
@@ -123,7 +123,7 @@ Content-Type: application/json
 api-key: [YOUR-ADMIN-KEY]
 ```
 
-인덱서를 실행 한 후에는 Azure Blob 저장소에서 캐시를 찾을 수 있습니다. 컨테이너 이름의 형식은 다음과 같습니다.`ms-az-search-indexercache-<YOUR-CACHE-ID>`
+인덱서를 실행 한 후에는 Azure Blob 저장소에서 캐시를 찾을 수 있습니다. 컨테이너 이름의 형식은 다음과 같습니다. `ms-az-search-indexercache-<YOUR-CACHE-ID>`
 
 > [!NOTE]
 > 인덱서를 다시 설정 하 고 다시 실행 하면 콘텐츠를 캐시할 수 있도록 전체 다시 작성 됩니다. 모든 인지 강화은 모든 문서에서 다시 실행 됩니다.
@@ -137,7 +137,7 @@ api-key: [YOUR-ADMIN-KEY]
 
 ## <a name="enable-caching-on-new-indexers"></a>새 인덱서에 캐싱을 사용 하도록 설정
 
-새 인덱서에 대해 증분 보강을 설정 하려면 `cache` [Create 인덱서 (2020-06-30-Preview)](https://docs.microsoft.com/rest/api/searchservice/preview-api/create-indexer)를 호출할 때 인덱서 정의 페이로드에 속성을 포함 해야 합니다. 
+새 인덱서에 대해 증분 보강을 설정 하려면 `cache` [Create 인덱서 (2020-06-30-Preview)](/rest/api/searchservice/preview-api/create-indexer)를 호출할 때 인덱서 정의 페이로드에 속성을 포함 해야 합니다. 
 
 
 ```json
@@ -165,16 +165,16 @@ api-key: [YOUR-ADMIN-KEY]
 
 ## <a name="working-with-the-cache"></a>캐시 작업
 
-캐시가 작동 하면 인덱서는 [실행 인덱서](https://docs.microsoft.com/rest/api/searchservice/run-indexer) 가 호출 될 때마다 캐시를 확인 하 여 기존 출력의 어떤 부분을 사용할 수 있는지 확인 합니다. 
+캐시가 작동 하면 인덱서는 [실행 인덱서](/rest/api/searchservice/run-indexer) 가 호출 될 때마다 캐시를 확인 하 여 기존 출력의 어떤 부분을 사용할 수 있는지 확인 합니다. 
 
 다음 표에는 다양 한 Api가 캐시와 관련 된 방법이 요약 되어 있습니다.
 
 | API           | 캐시 영향     |
 |---------------|------------------|
-| [인덱서 만들기 (2020-06-30-미리 보기)](https://docs.microsoft.com/rest/api/searchservice/preview-api/create-indexer) | 인덱서 정의에서 지정 하는 경우 캐시 만들기를 포함 하 여 처음 사용할 때 인덱서를 만들고 실행 합니다. |
-| [인덱서 실행](https://docs.microsoft.com/rest/api/searchservice/run-indexer) | 요청 시 보강 파이프라인을 실행 합니다. 이 API는 캐시에 있는 경우 캐시를 읽고 업데이트 된 인덱서 정의에 캐싱을 추가한 경우 캐시를 만듭니다. 캐싱이 설정 된 인덱서를 실행 하는 경우 캐시 된 출력을 사용할 수 있으면 인덱서는 단계를 생략 합니다. 이 API의 일반 공급 또는 미리 보기 API 버전을 사용할 수 있습니다.|
-| [인덱서 다시 설정](https://docs.microsoft.com/rest/api/searchservice/reset-indexer)| 모든 증분 인덱싱 정보에 대 한 인덱서를 지웁니다. 모든 스킬을 다시 실행 하 고 캐시를 다시 작성 하는 것을 포함 하 여 다음 인덱서 실행 (주문형 또는 schedule)은 완전히 다시 처리 됩니다. 인덱서를 삭제 하 고 다시 만드는 것과 기능적으로 동일 합니다. 이 API의 일반 공급 또는 미리 보기 API 버전을 사용할 수 있습니다.|
-| [기술 다시 설정](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills) | 어떠한 기술도 수정 하지 않은 경우에도 다음 인덱서 실행 시 다시 실행할 기술을 지정 합니다. 캐시는 그에 따라 업데이트 됩니다. 기술 자료 저장소 또는 검색 인덱스와 같은 출력은 캐시의 재사용 가능한 데이터와 업데이트 된 기술 당 새 콘텐츠를 사용 하 여 새로 고쳐집니다. |
+| [인덱서 만들기 (2020-06-30-미리 보기)](/rest/api/searchservice/preview-api/create-indexer) | 인덱서 정의에서 지정 하는 경우 캐시 만들기를 포함 하 여 처음 사용할 때 인덱서를 만들고 실행 합니다. |
+| [인덱서 실행](/rest/api/searchservice/run-indexer) | 요청 시 보강 파이프라인을 실행 합니다. 이 API는 캐시에 있는 경우 캐시를 읽고 업데이트 된 인덱서 정의에 캐싱을 추가한 경우 캐시를 만듭니다. 캐싱이 설정 된 인덱서를 실행 하는 경우 캐시 된 출력을 사용할 수 있으면 인덱서는 단계를 생략 합니다. 이 API의 일반 공급 또는 미리 보기 API 버전을 사용할 수 있습니다.|
+| [인덱서 다시 설정](/rest/api/searchservice/reset-indexer)| 모든 증분 인덱싱 정보에 대 한 인덱서를 지웁니다. 모든 스킬을 다시 실행 하 고 캐시를 다시 작성 하는 것을 포함 하 여 다음 인덱서 실행 (주문형 또는 schedule)은 완전히 다시 처리 됩니다. 인덱서를 삭제 하 고 다시 만드는 것과 기능적으로 동일 합니다. 이 API의 일반 공급 또는 미리 보기 API 버전을 사용할 수 있습니다.|
+| [기술 다시 설정](/rest/api/searchservice/preview-api/reset-skills) | 어떠한 기술도 수정 하지 않은 경우에도 다음 인덱서 실행 시 다시 실행할 기술을 지정 합니다. 캐시는 그에 따라 업데이트 됩니다. 기술 자료 저장소 또는 검색 인덱스와 같은 출력은 캐시의 재사용 가능한 데이터와 업데이트 된 기술 당 새 콘텐츠를 사용 하 여 새로 고쳐집니다. |
 
 캐시에 발생 하는 작업을 제어 하는 방법에 대 한 자세한 내용은 [캐시 관리](cognitive-search-incremental-indexing-conceptual.md#cache-management)를 참조 하세요.
 

@@ -34,9 +34,6 @@
       href: /samples/browse/?products=azure-logic-apps
     - name: Resource Manager 빠른 시작 템플릿
       href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Logic'
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: Logic Apps용 커넥터
@@ -396,6 +393,9 @@
           href: logic-apps-track-integration-account-x12-tracking-schema.md
         - name: 사용자 지정 추적 스키마
           href: logic-apps-track-integration-account-custom-tracking-schema.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

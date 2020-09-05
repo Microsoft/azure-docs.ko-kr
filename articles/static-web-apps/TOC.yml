@@ -8,7 +8,14 @@
   expanded: true
   items:
     - name: 첫 번째 정적 웹앱 빌드
-      href: getting-started.md
+      expanded: true
+      items:
+        - name: Visual Studio Code
+          href: getting-started.md
+        - name: Azure portal
+          href: get-started-portal.md
+        - name: Azure CLI
+          href: get-started-cli.md
 - name: 개념
   items:
     - name: Azure Functions를 통한 API 지원

@@ -5,7 +5,7 @@
   items:
     - name: Machine Learning Studio(클래식)
       displayName: overview
-      href: what-is-ml-studio.md
+      href: studio-classic-overview.md
     - name: ML 제품 비교
       href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context
 - name: 빠른 시작
@@ -140,9 +140,6 @@
         - name: 갤러리 데이터
           displayName: export
           href: ai-gallery-control-personal-data-dsr.md
-        - name: Notebook 다운로드
-          displayName: export
-          href: download-notebooks-data.md
 - name: 참조
   items:
     - name: 알고리즘 및 모듈 참조
@@ -165,5 +162,5 @@
       href: 'https://azure.microsoft.com/regions/services/'
     - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/machine-learning/'
-    - name: '신경망 사용자 지정(Net#)'
+    - name: 신경망 사용자 지정(Net#)
       href: azure-ml-netsharp-reference-guide.md

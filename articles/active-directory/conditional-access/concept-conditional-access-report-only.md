@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b45b2294d56de896849dca0f387a4e26b845aa93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: df25278d37e518e99bc315a315e017b98c7f4e58
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84204194"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049386"
 ---
 # <a name="what-is-conditional-access-report-only-mode"></a>조건부 액세스 보고서 전용 모드
 
@@ -38,7 +38,7 @@ ms.locfileid: "84204194"
 
 지정 된 로그인에 대해 보고서 전용 모드의 정책을 평가 하는 경우 다음과 같은 네 가지 새로운 결과 값이 있습니다.
 
-| 결과 | 설명 |
+| 결과 | Description |
 | --- | --- |
 | 보고서 전용: 성공 | 구성 된 모든 정책 조건, 필요한 비 대화형 권한 부여 컨트롤 및 세션 컨트롤이 충족 되었습니다. 예를 들어 토큰에 이미 있는 MFA 클레임이 multi-factor authentication 요구 사항을 충족 하거나 규격 장치에서 장치 검사를 수행 하 여 준수 장치 정책을 충족 합니다. |
 | 보고서 전용: 오류 | 구성 된 모든 정책 조건이 충족 되었지만 모든 필수 비 대화형 권한 부여 컨트롤 또는 세션 컨트롤이 충족 되지 않았습니다. 예를 들어, 블록 컨트롤이 구성 된 사용자에 게 정책이 적용 되거나 장치가 규격 장치 정책에 실패 하는 경우를 예로 들 수 있습니다. |
@@ -51,4 +51,4 @@ ms.locfileid: "84204194"
  
 ## <a name="next-steps"></a>다음 단계
 
-[조건부 액세스 정책에 대 한 보고서 전용 모드 구성](howto-conditional-access-report-only.md)
+[조건부 액세스 정책에 대 한 보고서 전용 모드 구성](howto-conditional-access-insights-reporting.md)

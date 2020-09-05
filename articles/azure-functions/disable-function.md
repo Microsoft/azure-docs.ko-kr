@@ -3,13 +3,13 @@ title: Azure Functions에서 함수를 사용하지 않도록 설정하는 방�
 description: Azure Functions에서 함수를 사용하지 않도록 설정하고 사용하도록 설정하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 47fbd446937ea0cfd981cef2d5cdd4759f2583d4
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-csharp, devx-track-azurecli
+ms.openlocfilehash: 761a78f050aa25a62075dd7a53836afb48f89cd7
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497701"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213154"
 ---
 # <a name="how-to-disable-functions-in-azure-functions"></a>Azure Functions에서 함수를 사용하지 않도록 설정하는 방법
 
@@ -46,6 +46,21 @@ az functionapp config appsettings set --name <myFunctionApp> \
 
 > [!NOTE]  
 > 포털 통합 테스트 기능은 `Disabled` 설정을 무시합니다. 즉, 사용하지 않도록 설정한 함수는 포털의 **테스트** 창에서 시작할 경우 계속 실행됩니다. 
+
+## <a name="localsettingsjson"></a>local.settings.json
+
+함수는 로컬로 실행할 때와 동일한 방식으로 비활성화할 수 있습니다. 이라는 함수를 사용 하지 않도록 설정 하려면 다음과 `HttpExample` 같이 local.settings.js파일의 Values 컬렉션에 항목을 추가 합니다.
+
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true", 
+    "AzureWebJobs.HttpExample.Disabled": "true"
+  }
+}
+``` 
 
 ## <a name="other-methods"></a>다른 방법
 

@@ -16,12 +16,12 @@ ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4756ced858210f86bb8e979705db99a563441490
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 89d6379f3fa41036836288ed5c75fbdaad0031da
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85078181"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783826"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Azure Monitor에서 Azure AD 권한 관리에 대한 로그 및 보고 보관
 
@@ -59,7 +59,7 @@ Azure AD 감사 로그를 보관하려면 Azure 구독에 Azure Monitor가 포�
 
 ## <a name="view-events-for-an-access-package"></a>액세스 패키지에 대한 이벤트 보기  
 
-액세스 패키지에 대한 이벤트를 보려면 기본 Azure Monitor 작업 영역에 대한 액세스 권한(정보는 [Azure Monitor에서 로그 데이터 및 작업 영역에 대한 액세스 관리](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) 참조)과 다음 역할 중 하나를 보유하고 있어야 합니다. 
+액세스 패키지에 대한 이벤트를 보려면 기본 Azure Monitor 작업 영역에 대한 액세스 권한(정보는 [Azure Monitor에서 로그 데이터 및 작업 영역에 대한 액세스 관리](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions) 참조)과 다음 역할 중 하나를 보유하고 있어야 합니다. 
 
 - 전역 관리자  
 - 보안 관리자  
@@ -170,7 +170,7 @@ $wks | ft CustomerId, Name
 
 ### <a name="send-the-query-to-the-log-analytics-workspace"></a>Log Analytics 작업 영역에 쿼리 보내기
 마지막으로, 작업 영역을 확인한 후 [Invoke-AzOperationalInsightsQuery](/powershell/module/az.operationalinsights/Invoke-AzOperationalInsightsQuery?view=azps-3.3.0
-)를 사용하여 해당 작업 영역에 Kusto 쿼리를 보낼 수 있습니다. 이러한 쿼리는 [Kusto 쿼리 언어](https://docs.microsoft.com/azure/kusto/query/)로 작성됩니다.
+)를 사용하여 해당 작업 영역에 Kusto 쿼리를 보낼 수 있습니다. 이러한 쿼리는 [Kusto 쿼리 언어](/azure/kusto/query/)로 작성됩니다.
  
 예를 들면, 다음과 같은 쿼리를 보내는 데 PowerShell cmdlet을 사용하여 Log Analytics 작업 영역에서 감사 이벤트 레코드의 날짜 범위를 검색할 수 있습니다.
  
@@ -189,5 +189,4 @@ $bResponse.Results |ft
 ```
 
 ## <a name="next-steps"></a>다음 단계:
-- [Azure Monitor 통합 문서를 사용하여 대화형 보고서 만들기](../../azure-monitor/platform/workbooks-overview.md) 
-
+- [Azure Monitor 통합 문서를 사용하여 대화형 보고서 만들기](../../azure-monitor/platform/workbooks-overview.md)

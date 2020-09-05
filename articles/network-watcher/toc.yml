@@ -61,6 +61,12 @@
           href: connection-monitor-preview-create-using-portal.md
         - name: ARMClient 사용
           href: connection-monitor-preview-create-using-arm-client.md
+    - name: 연결 모니터 마이그레이션(미리 보기)
+      items:
+        - name: 네트워크 성능 모니터에서
+          href: migrate-to-connection-monitor-preview-from-network-performance-monitor.md
+        - name: 연결 모니터에서
+          href: migrate-to-connection-monitor-preview-from-connection-monitor.md
     - name: VM 네트워크 문제 진단
       items:
         - name: VM 확장 설치
@@ -83,7 +89,7 @@
               href: network-watcher-connectivity-powershell.md
             - name: Azure CLI
               href: network-watcher-connectivity-cli.md
-            - name: REST
+            - name: REST (영문)
               href: network-watcher-connectivity-rest.md
         - name: 패킷 캡처 및 분석
           items:
@@ -95,7 +101,7 @@
                   href: network-watcher-packet-capture-manage-powershell.md
                 - name: Azure CLI
                   href: network-watcher-packet-capture-manage-cli.md
-                - name: REST
+                - name: REST (영문)
                   href: network-watcher-packet-capture-manage-rest.md
             - name: 패킷 캡처 분석
               items:
@@ -115,7 +121,7 @@
               href: network-watcher-nsg-flow-logging-powershell.md
             - name: Azure CLI
               href: network-watcher-nsg-flow-logging-cli.md
-            - name: REST
+            - name: REST (영문)
               href: network-watcher-nsg-flow-logging-rest.md
             - name: Azure 리소스 관리자
               href: network-watcher-nsg-flow-logging-azure-resource-manager.md
@@ -148,7 +154,7 @@
               href: network-watcher-security-group-view-powershell.md
             - name: Azure CLI
               href: network-watcher-security-group-view-cli.md
-            - name: REST
+            - name: REST (영문)
               href: network-watcher-security-group-view-rest.md
         - name: 네트워크 규정 준수 및 감사 수행
           href: network-watcher-nsg-auditing-powershell.md

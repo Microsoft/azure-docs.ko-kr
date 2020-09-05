@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: how-to
 ms.date: 8/7/2020
-ms.openlocfilehash: dbf3a13ed5a544406950dbcfb5ea8796eceb03c1
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: f8dbdf87eef193540fd5c1bf9d9e7f3794ae46ce
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030556"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168221"
 ---
 # <a name="how-to-configure-azure-database-for-mysql-data-in-replication"></a>Azure Database for MySQL 데이터 내부 복제를 구성하는 방법
 
@@ -204,9 +204,11 @@ Azure Database for MySQL 서비스에서 복제본을 만들기 위해 [입력 �
 
 1. 필터링 
  
-   Master에서 일부 테이블 복제를 건너뛰려면 `replicate_wild_ignore_table` 복제본 서버에서 서버 매개 변수를 업데이트 합니다. 이 매개 변수에 대한 자세한 내용은 [MySQL 설명서](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#option_mysqld_replicate-wild-ignore-table)를 참조하세요.
+   Master에서 일부 테이블 복제를 건너뛰려면 `replicate_wild_ignore_table` 복제본 서버에서 서버 매개 변수를 업데이트 합니다. 쉼표로 구분 된 목록을 사용 하 여 둘 이상의 테이블 패턴을 제공할 수 있습니다.
+
+   이 매개 변수에 대한 자세한 내용은 [MySQL 설명서](https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#option_mysqld_replicate-wild-ignore-table)를 참조하세요. 
     
-    매개 변수를 업데이트 하려면 [Azure Portal](howto-server-parameters.md) 또는 [Azure CLI](howto-configure-server-parameters-using-cli.md)를 사용할 수 있습니다.
+   매개 변수를 업데이트 하려면 [Azure Portal](howto-server-parameters.md) 또는 [Azure CLI](howto-configure-server-parameters-using-cli.md)를 사용할 수 있습니다.
 
 1. 복제 시작
 

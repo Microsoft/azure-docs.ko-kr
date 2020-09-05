@@ -10,12 +10,13 @@ ms.date: 05/05/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: e1eb105671883d88d8fe34b9741d402d311556a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a6aed0630acf6ee6624c72831a2cdc88e6c0a91d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82859017"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89013064"
 ---
 # <a name="use-geo-redundancy-to-design-highly-available-applications"></a>지리적 중복성을 사용하여 고가용성 애플리케이션 설계
 
@@ -196,7 +197,7 @@ Azure Storage 클라이언트 라이브러리를 사용 하면 다시 시도할 
 
 다음 표에서는 직원의 세부 정보를 *관리자* 역할의 구성원으로 업데이트 하는 경우 발생할 수 있는 상황의 예를 보여 줍니다. 이 예제의 경우 **직원** 엔터티를 업데이트하고 총 관리자 수로 **관리자 역할** 엔터티를 업데이트해야 합니다. 업데이트가 보조 지역에서 어떻게 다른 순서로 적용되는지 살펴보겠습니다.
 
-| **Time** | **트랜잭션과**                                            | **복제**                       | **마지막 동기화 시간** | **결과** |
+| **Time** | **트랜잭션**                                            | **복제**                       | **마지막 동기화 시간** | **결과** |
 |----------|------------------------------------------------------------|---------------------------------------|--------------------|------------| 
 | T0       | 트랜잭션 A: <br> 주 지역에 <br> 직원 엔터티 삽입 |                                   |                    | 트랜잭션 A가 주 지역에 삽입됐지만<br> 아직 복제되지 않음 |
 | T1       |                                                            | 트랜잭션 A가 <br> 보조 지역에<br> 복제됨 | T1 | 트랜잭션 A가 보조 지역에 복제됨. <br>마지막 동기화 시간이 업데이트됨.    |

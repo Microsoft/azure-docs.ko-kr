@@ -79,6 +79,8 @@
   items:
     - name: Azure Red Hat OpenShift 4 클러스터의 네트워킹
       href: concepts-networking.md
+    - name: Azure Red Hat OpenShift 3.11에서 Azure Red Hat OpenShift 4로 마이그레이션
+      href: migration.md
 - name: 참조
   items:
     - name: Azure Red Hat OpenShift CLI
@@ -95,6 +97,8 @@
       href: supported-resources.md
     - name: Azure Red Hat OpenShift 4.3을 지원하는 리소스
       href: support-policies-v4.md
+    - name: Azure Red Hat OpenShift 4 지원 수명 주기
+      href: support-lifecycle.md
     - name: 국가별 가용성
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Azure Red Hat OpenShift 4.3 설명서

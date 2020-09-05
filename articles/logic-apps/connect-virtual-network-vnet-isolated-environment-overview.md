@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 07/05/2020
-ms.openlocfilehash: 85f4cc9f9e6e762a85571010840cc697bc6c9888
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: f152283b1280cde2a26569b8acf10738e883e39e
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963668"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816027"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>ISE(통합 서비스 환경)를 사용하여 Azure Logic Apps에서 Azure Virtual Network 리소스에 액세스
 
@@ -117,7 +117,14 @@ ISE를 만들 때 내부 또는 외부 액세스 끝점 중 하나를 사용 하
 > [!IMPORTANT]
 > ISE를 만드는 동안에만 액세스 끝점을 선택할 수 있으며 나중에이 옵션을 변경할 수 없습니다.
 
-* **내부**: 개인 끝점은 *가상 네트워크 내부 에서만*논리 앱의 실행 기록에서 입력 및 출력을 보고 액세스할 수 있는 ISE에서 논리 앱에 대 한 호출을 허용 합니다. 실행 기록에 액세스 하려는 컴퓨터와 개인 끝점 간에 네트워크 연결이 있는지 확인 합니다. 예를 들어 클라이언트 컴퓨터는 ISE의 가상 네트워크 내부 또는 ISE의 가상 네트워크 (예: 피어 링 또는 가상 사설망)에 연결 된 가상 네트워크 내부에 있을 수 있습니다.
+* **내부**: 개인 끝점은 *가상 네트워크 내부 에서만*논리 앱의 실행 기록에서 입력 및 출력을 보고 액세스할 수 있는 ISE에서 논리 앱에 대 한 호출을 허용 합니다.
+
+  > [!IMPORTANT]
+  > 실행 기록에 액세스 하려는 컴퓨터와 개인 끝점 간에 네트워크 연결이 있는지 확인 합니다. 그렇지 않으면 논리 앱의 실행 기록을 보려고 할 때 "예기치 않은 오류가 발생 했습니다. "을 (를) 가져오지 못했습니다.
+  >
+  > ![방화벽을 통해 트래픽을 보내지 못해 발생 하는 작업 오류 Azure Storage](./media/connect-virtual-network-vnet-isolated-environment-overview/integration-service-environment-error.png)
+  >
+  > 예를 들어 클라이언트 컴퓨터는 ISE의 가상 네트워크 내에 있거나 피어 링 또는 가상 사설망을 통해 ISE의 가상 네트워크에 연결 된 가상 네트워크 내부에 있을 수 있습니다. 
 
 * **외부**: 공용 끝점은 ISE에서 논리 앱에 대 한 호출을 허용 하며, *가상 네트워크 외부에서*논리 앱 실행 기록의 입력 및 출력을 보고 액세스할 수 있습니다. NSGs (네트워크 보안 그룹)를 사용 하는 경우 실행 기록의 입력 및 출력에 대 한 액세스를 허용 하는 인바운드 규칙으로 설정 되어 있는지 확인 합니다. 자세한 내용은 [ISE에 대 한 액세스 사용](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access)을 참조 하세요.
 

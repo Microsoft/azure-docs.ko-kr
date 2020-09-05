@@ -6,7 +6,7 @@ ms.date: 11/21/2018
 ms.author: cephalin
 ms.openlocfilehash: 9e983e0afd8d01f214ed24925b354247d1821c3f
 ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/26/2020
 ms.locfileid: "67181963"

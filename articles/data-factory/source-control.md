@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/30/2020
-ms.openlocfilehash: d171edb23b482ad1871990dcffd979d2125c4406
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 66cc7b0d4f205a93c41f49ecaadac495a98b6da6
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067412"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949136"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Azure Data Factory의 소스 제어
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -46,7 +46,7 @@ Git 통합이 작성 환경에 제공하는 일부 장점이 아래에 나열되
 -   **성능 향상:** git 통합을 사용하는 평균 팩터리는 데이터 팩터리 서비스에서 작성하는 경우보다 10배 더 빨리 로드됩니다. 이러한 성능 향상은 리소스가 Git를 통해 다운로드되기 때문입니다.
 
 > [!NOTE]
-> Git 리포지토리가 구성되면 Azure Data Factory UX에서 Data Factory 서비스를 사용하여 직접 작성할 수 없습니다. PowerShell 또는 SDK를 통해 서비스를 직접 변경할 수 있습니다.
+> Git 리포지토리가 구성되면 Azure Data Factory UX에서 Data Factory 서비스를 사용하여 직접 작성할 수 없습니다. PowerShell 또는 SDK를 통해 수행 된 변경 내용은 Data Factory 서비스에 직접 게시 되며 Git에 입력 되지 않습니다.
 
 ## <a name="author-with-azure-repos-git-integration"></a>Azure Repos Git 통합을 통한 작성
 

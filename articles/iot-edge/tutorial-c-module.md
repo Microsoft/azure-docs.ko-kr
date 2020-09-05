@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4bed27654b3482300d3d102d545b44373c53dde0
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: cf9fb8a95be9a5ba025534508139a0e300036542
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439801"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064845"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>자습서: Linux 디바이스용 C IoT Edge 모듈 개발
 
@@ -57,6 +57,8 @@ Visual Studio Code를 사용하여 C 코드를 개발하고 Azure IoT Edge를 �
 C에서 IoT Edge 모듈을 개발하려면 다음 추가 필수 구성 요소를 개발 머신에 설치합니다.
 
 * Visual Studio Code용 [C/C++ 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+이 자습서에서는 Azure IoT C SDK를 설치할 필요가 없지만 intellisense 및 프로그램 정의 읽기와 같은 유용한 기능을 제공할 수 있습니다. 설치 정보는 [Azure IoT C SDK 및 라이브러리](https://github.com/Azure/azure-iot-sdk-c)를 참조하세요.
 
 ## <a name="create-a-module-project"></a>모듈 프로젝트 만들기
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 04/15/2020
 ms.author: euang
-ms.openlocfilehash: f31e238c705a4b03c400a38fa6eb5f42db7204b0
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: e1ece0add7b0749cfd808b0a3ec7962dd43a302d
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87535028"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719345"
 ---
 # <a name="build-a-machine-learning-app-with-apache-spark-mllib-and-azure-synapse-analytics"></a>Apache Spark MLlib 및 Azure Synapse Analytics를 사용하여 기계 학습 앱 빌드
 
@@ -71,7 +71,7 @@ MLlib은 다음 작업에 적합한 유틸리티를 비롯하여 기계 학습 �
 
 원시 데이터는 Parquet 형식이기 때문에 Spark 컨텍스트를 사용하여 직접 데이터 프레임으로 파일을 메모리로 풀할 수 있습니다. 아래 코드에서는 기본 옵션을 사용하지만 필요에 따라 데이터 형식 및 기타 스키마 특성을 강제로 매핑할 수도 있습니다.
 
-1. 다음 줄을 실행하여 새 셀에 코드를 붙여넣어 Spark 데이터 프레임을 만듭니다. 그러면 개방형 데이터 집합 API를 통해 데이터를 검색 합니다. 이 데이터를 모두 풀하면 약 15억 행이 생성됩니다. Spark 풀(미리 보기)의 크기에 따라 원시 데이터가 너무 크거나 작업하는 데 너무 많은 시간이 걸릴 수 있습니다. 이 데이터를 더 작은 값으로 필터링할 수 있습니다. Start_date 및 end_date를 사용 하 여 월 데이터를 반환 하는 필터를 적용 합니다.
+1. 다음 줄을 실행하여 새 셀에 코드를 붙여넣어 Spark 데이터 프레임을 만듭니다. 그러면 개방형 데이터 집합 API를 통해 데이터를 검색 합니다. 이 데이터를 모두 풀하면 약 15억 행이 생성됩니다. Spark 풀(미리 보기)의 크기에 따라 원시 데이터가 너무 크거나 작업하는 데 너무 많은 시간이 걸릴 수 있습니다. 이 데이터를 더 작은 값으로 필터링할 수 있습니다. 다음 코드 예제에서는 start_date 및 end_date를 사용 하 여 한 달 동안의 데이터를 반환 하는 필터를 적용 합니다.
 
     ```python
     from azureml.opendatasets import NycTlcYellow
@@ -126,7 +126,7 @@ ax1.set_ylabel('Counts')
 plt.suptitle('')
 plt.show()
 
-# How many passengers tip'd by various amounts
+# How many passengers tipped by various amounts
 ax2 = sampled_taxi_pd_df.boxplot(column=['tipAmount'], by=['passengerCount'])
 ax2.set_title('Tip amount by Passenger count')
 ax2.set_xlabel('Passenger count')
@@ -157,7 +157,7 @@ plt.show()
 - 필터링을 통해 이상값/잘못된 값을 제거
 - 필요하지 않은 열을 제거
 - 모델이 더 효율적으로 작동하도록 원시 데이터에서 파생된 새 열을 생성(기능화라고도 함)
-- 이진 분류를 수행하는 동안(지정된 이동에 팁이 있는지 여부) 레이블 지정, 팁 크기를 0 또는 1 값으로 변환해야 함.
+- 레이블 지정-이진 분류를 수행 하 고 있기 때문에 (지정 된 여행에 대 한 팁이 있거나 그렇지 않음) tip amount를 0 또는 1 값으로 변환 해야 합니다.
 
 ```python
 taxi_df = sampled_taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'paymentType', 'rateCodeId', 'passengerCount'\
@@ -196,7 +196,7 @@ taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'p
 마지막 작업은 레이블이 지정된 데이터를 로지스틱 회귀로 분석할 수 있는 형식으로 변환하는 것입니다. 로지스틱 회귀 알고리즘에 대한 입력은 *레이블-기능 벡터 쌍* 세트여야 하며, 여기서 *기능 벡터*는 입력 지점을 나타내는 숫자의 벡터입니다. 따라서 범주 열을 숫자로 변환해야 합니다. `trafficTimeBins` 및 `weekdayString` 열을 정수 표현으로 변환해야 합니다. 변환을 수행하는 방법에는 여러 가지가 있지만, 이 예제에서 사용되는 방법은 일반적인 방법인 *OneHotEncoding*입니다.
 
 ```python
-# The sample uses an algorithm that only works with numeric features convert them so they can be consumed
+# Since the sample uses an algorithm that only works with numeric features, convert them so they can be consumed
 sI1 = StringIndexer(inputCol="trafficTimeBins", outputCol="trafficTimeBinsIndex")
 en1 = OneHotEncoder(dropLast=False, inputCol="trafficTimeBinsIndex", outputCol="trafficTimeBinsVec")
 sI2 = StringIndexer(inputCol="weekdayString", outputCol="weekdayIndex")
@@ -225,7 +225,7 @@ train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, te
 이제 두 개의 DataFrame이 있으므로 다음 작업은 모델 수식을 만들고 학습 DataFrame에 대해 실행한 다음, DataFrame 테스트에 대해 유효성을 검사하는 것입니다. 모델 수식의 여러 버전을 실험하여 다양한 조합의 영향을 확인해야 합니다.
 
 > [!Note]
-> 모델을 저장 하려면 저장소 Blob 데이터 참가자 Azure 역할이 필요 합니다. 스토리지 계정에서 IAM(액세스 제어)으로 이동하고 역할 할당 추가를 선택합니다. 저장소 Blob 데이터 참가자 Azure 역할을 SQL Database 서버에 할당 합니다. 소유자 권한이 있는 멤버만 이 단계를 수행할 수 있습니다. 다양 한 Azure 기본 제공 역할에 대 한 자세한 내용은이 [가이드](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)를 참조 하세요.
+> 모델을 저장 하려면 저장소 Blob 데이터 참가자 Azure 역할이 필요 합니다. 저장소 계정에서 Access Control (IAM)로 이동 하 여 **역할 할당 추가**를 선택 합니다. 저장소 Blob 데이터 참가자 Azure 역할을 SQL Database 서버에 할당 합니다. 소유자 권한이 있는 멤버만 이 단계를 수행할 수 있습니다. Azure 기본 제공 역할에 대한 자세한 내용은 이 [가이드](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)를 참조하세요.
 
 ```python
 ## Create a new LR object for the model

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: c36e37ba876b4b768d852d6ecedb8e3b4d8f09d0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 15b9495b95ec4efb4f8e9f315595ea6bfca6cd5a
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87288556"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191143"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>로컬 임시 디스크가 없는 Azure VM 크기 
 이 문서에서는 로컬 임시 디스크가 없는 Azure VM 크기에 대 한 FAQ (질문과 대답)를 제공 합니다 (예: 로컬 임시 디스크 없음). 이러한 VM 크기에 대 한 자세한 내용은 [Dv4 및 Dsv4에 대 한 사양 (범용 워크 로드)](dv4-dsv4-series.md) 또는 [Ev4 및 Esv4 시리즈 사양 (메모리 액세스에 최적화 된 작업)](ev4-esv4-series.md)을 참조 하세요.
@@ -56,7 +56,7 @@ ms.locfileid: "87288556"
 [피드백 양식을]( https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRUMzdCQkw0OVVRTldFUUtXSTlLQVBPUkVHSy4u)작성 합니다. 
 
 ## <a name="next-steps"></a>다음 단계 
-이 문서에서는 로컬 임시 디스크를 사용 하는 Azure Vm과 관련 하 여 가장 자주 묻는 질문에 대해 자세히 알아보았습니다. 이러한 VM 크기에 대 한 자세한 내용은 다음 문서를 참조 하세요.
+이 문서에서는 로컬 임시 디스크 없이 Azure Vm과 관련 하 여 가장 자주 묻는 질문에 대해 자세히 알아보았습니다. 이러한 VM 크기에 대 한 자세한 내용은 다음 문서를 참조 하세요.
 
 - [Dv4 및 Dsv4 시리즈에 대 한 사양 (범용 워크 로드)](dv4-dsv4-series.md)
 - [Ev4 및 Esv4 시리즈 사양 (메모리 액세스에 최적화 된 작업)](ev4-esv4-series.md)

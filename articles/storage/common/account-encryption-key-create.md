@@ -10,13 +10,13 @@ ms.date: 02/05/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: e6ae39fea8c3839208fc366ba0ce8d69799357d2
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: d60a6f9032a39ab4889ce0db154739c5cb3b540b
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056723"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070499"
 ---
 # <a name="create-an-account-that-supports-customer-managed-keys-for-tables-and-queues"></a>테이블 및 큐에 대해 고객이 관리 하는 키를 지 원하는 계정 만들기
 
@@ -217,7 +217,7 @@ az storage account create \
 
 계정 암호화 키를 사용 하는 계정을 만든 후에는 다음 문서 중 하나를 참조 하 여 Azure Key Vault에서 고객 관리 키를 구성 합니다.
 
-- [Azure Portal를 사용 하 여 Azure Key Vault으로 고객 관리 키 구성](storage-encryption-keys-portal.md)
+- [Azure Portal을 사용하여 Azure Key Vault로 고객 관리형 키 구성](storage-encryption-keys-portal.md)
 - [PowerShell을 사용 하 여 Azure Key Vault에서 고객이 관리 하는 키 구성](storage-encryption-keys-powershell.md)
 - [Azure CLI를 사용 하 여 Azure Key Vault에서 고객이 관리 하는 키 구성](storage-encryption-keys-cli.md)
 

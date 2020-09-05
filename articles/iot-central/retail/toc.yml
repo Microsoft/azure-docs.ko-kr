@@ -32,6 +32,8 @@
           href: tutorial-micro-fulfillment-center.md
     - name: 비디오 분석 - 개체 및 동작 감지
       items:
+        - name: 0 - 개체 및 동작 감지 애플리케이션 배포
+          href: tutorial-video-analytics-deploy.md
         - name: 1 - 비디오 분석 애플리케이션 만들기
           href: tutorial-video-analytics-create-app.md
         - name: 2 - IoT Edge 디바이스 구성
@@ -64,8 +66,6 @@
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
 - name: 방법 가이드
   items:
-    - name: 개체 및 동작 감지 애플리케이션 배포
-      href: howto-deploy-video-analytics-template.md
     - name: 디바이스 연결
       items:
         - name: Rigado Cascade 500 준비 및 연결

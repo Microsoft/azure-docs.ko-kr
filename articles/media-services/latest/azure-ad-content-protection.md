@@ -10,17 +10,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/1/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-javascript
-ms.openlocfilehash: ad50b29dbda7c09c9312ebb4a01ebc5da568f3da
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 006e312e67f5f4014248c44a799c2dde826801c2
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422099"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258846"
 ---
 # <a name="tutorial-end-to-end-content-protection-using-azure-ad"></a>자습서: Azure AD를 사용하여 엔드투엔드 콘텐츠 보호
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 자습서와 제공된 플레이어 샘플을 사용하면 AMS(Azure Media Services) 및 AAD(Azure Active Directory)에서 엔드투엔드 미디어 콘텐츠 보호 하위 시스템을 설정하여 모든 AMS 지원 DRM/AES-128, 스트리밍 프로토콜, 코덱 및 컨테이너 형식을 통해 미디어 콘텐츠를 스트림할 수 있습니다. 샘플은 일반적으로 PKCE(Proof Key for Code Exchange)를 사용하여 권한 부여 코드 흐름을 통해 OAuth 2에서 보호되는 REST API에 안전하게 액세스할 수 있습니다. (Azure Media Services 라이선스 전송 서비스는 그 중 하나일 뿐입니다.) 또한 OAuth 2 권한 부여 코드 흐름을 사용하여 보호되는 Microsoft Graph API 또는 사용자 지정 개발 REST API에서도 작동합니다. 이 자습서는 [샘플 코드](https://github.com/Azure-Samples/media-services-content-protection-azure-ad)에 대한 도우미 문서입니다.
 

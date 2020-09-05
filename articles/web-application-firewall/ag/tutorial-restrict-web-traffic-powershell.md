@@ -5,15 +5,15 @@ description: Azure PowerShell을 사용하여 애플리케이션 게이트웨이
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/14/2019
+ms.date: 08/31/2020
 ms.author: victorh
-ms.topic: conceptual
-ms.openlocfilehash: a57c5b155f7ab00f781236cfceea59a4277ff06a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.topic: how-to
+ms.openlocfilehash: 1e2fb98d83d1246c54ccb37d68d9b4282701677e
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74046286"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89225189"
 ---
 # <a name="enable-web-application-firewall-using-azure-powershell"></a>Azure PowerShell을 사용하여 웹 애플리케이션 방화벽 활성화
 
@@ -21,11 +21,10 @@ ms.locfileid: "74046286"
 
 이 문서에서는 다음 방법을 설명합니다.
 
-> [!div class="checklist"]
-> * 네트워크 설정
-> * WAF를 사용하는 애플리케이션 게이트웨이 만들기
-> * 가상 머신 확장 집합 만들기
-> * 스토리지 계정 만들기 및 진단 구성
+* 네트워크 설정
+* WAF를 사용하는 애플리케이션 게이트웨이 만들기
+* 가상 머신 확장 집합 만들기
+* 스토리지 계정 만들기 및 진단 구성
 
 ![웹 애플리케이션 방화벽 예제](../media/tutorial-restrict-web-traffic-powershell/scenario-waf.png)
 

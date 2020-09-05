@@ -15,14 +15,17 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: anilmur
 ms.reviewer: juliako;johndeu
-ms.openlocfilehash: 4dceb558532305c6d2e84563e25ab05508423090
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a53027ec1f775c240164f67e7ee0473a44690964
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72801947"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262688"
 ---
-# <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>워크플로 디자이너와 고급 Encoding 워크플로 만들기  
+# <a name="create-advanced-encoding-workflows-with-workflow-designer"></a>워크플로 디자이너와 고급 Encoding 워크플로 만들기
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 ## <a name="overview"></a>개요
 **Workflow Designer**는 **미디어 인코더 Premium 워크플로**를 사용하여 인코딩할 워크플로를 설계하고 만드는 데 사용되는 Windows 데스크톱 도구입니다.
 워크플로 디자이너 도구의 강력한 기능을 사용하여 **미디어 인코더 프리미엄**에서 실행될 복잡한 워크플로를 설계하고 만들 수 있습니다.  
@@ -73,7 +76,7 @@ ms.locfileid: "72801947"
 
 * 워크플로/청사진 내부 스크립팅
 * 현재 인코더에 대한 제한 사항
-* 질문 및 답변
+* Q&A
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-Premium-Encoder-Workflow-Designer-Training-Videos-Day-3/player]
 > 

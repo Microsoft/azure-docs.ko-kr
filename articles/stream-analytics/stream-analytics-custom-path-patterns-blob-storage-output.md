@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: dc37cb985ae561ddbd06c2236ab77d6d20d9242c
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: b6d6838779d4f219a8ce10b2cf3ae6cd620762a3
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747629"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869816"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Azure Stream Analytics 사용자 지정 Blob 출력 분할
 
@@ -44,7 +44,7 @@ REST API를 사용하면 해당 요청에 사용되는 JSON 파일의 출력 섹
 
 ![클라이언트 컨테이너](./media/stream-analytics-custom-path-patterns-blob-storage-output/stream-analytics-clients-container.png)
 
-각 폴더에 여러 Blob이 포함될 수 있으며, 각 Blob에는 하나 이상의 레코드가 포함됩니다. 위의 예제에서 "06000000" 레이블이 지정된 폴더에는 단일 Blob이 있으며 그 콘텐츠는 다음과 같습니다.
+각 폴더에 여러 Blob이 포함될 수 있으며, 각 Blob에는 하나 이상의 레코드가 포함됩니다. 위의 예제에서는 "06000000" 이라는 폴더에 다음 내용이 포함 된 단일 blob이 있습니다.
 
 ![Blob 콘텐츠](./media/stream-analytics-custom-path-patterns-blob-storage-output/stream-analytics-blob-contents.png)
 
@@ -113,7 +113,7 @@ MSCK REPAIR TABLE while hive.exec.dynamic.partition true
 
 ### <a name="example"></a>예제
 
-[Azure Stream Analytics Azure Portal](stream-analytics-quick-create-portal.md) 빠른 시작 가이드에 따라 스토리지 계정, 리소스 그룹, Stream Analytics 작업 및 입력 원본을 만듭니다. 빠른 시작 가이드에서 사용된 동일한 샘플 데이터를 사용하며 [GitHub](https://raw.githubusercontent.com/Azure/azure-stream-analytics/master/Samples/GettingStarted/HelloWorldASA-InputStream.json)에서도 사용 가능합니다.
+[Azure Stream Analytics Azure Portal](stream-analytics-quick-create-portal.md) 빠른 시작 가이드에 따라 저장소 계정, 리소스 그룹, Stream Analytics 작업 및 입력 원본을 만듭니다. 빠른 시작 가이드에서 사용된 동일한 샘플 데이터를 사용하며 [GitHub](https://raw.githubusercontent.com/Azure/azure-stream-analytics/master/Samples/GettingStarted/HelloWorldASA-InputStream.json)에서도 사용 가능합니다.
 
 다음 구성을 사용하여 Blob 출력 싱크를 만듭니다.
 

@@ -1,17 +1,17 @@
 ---
 title: 빠른 시작 - 포털에서 레지스트리 만들기
-description: Azure Portal을 사용하여 Azure Container Registry에서 프라이빗 Docker 레지스트리를 만드는 방법을 빠르게 알아봅니다.
+description: Azure Portal을 사용하여 프라이빗 Azure 컨테이너 레지스트리를 만드는 방법을 빠르게 알아봅니다.
 ms.topic: quickstart
-ms.date: 06/11/2020
+ms.date: 08/04/2020
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 82f9a6b02832b718d5b4e7b662c590f1992af595
-ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
+ms.openlocfilehash: ace1030923ea226376369941badafafa662d25ce
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84752826"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031827"
 ---
-# <a name="quickstart-create-a-private-container-registry-using-the-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 프라이빗 컨테이너 레지스트리 만들기
+# <a name="quickstart-create-an-azure-container-registry-using-the-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 Azure 컨테이너 레지스트리 만들기
 
 Azure 컨테이너 레지스트리는 프라이빗 Docker 컨테이너 이미지 및 관련 아티팩트를 저장하고 관리할 수 있는 Azure의 프라이빗 Docker 레지스트리입니다. 이 빠른 시작에서는 Azure Portal을 사용하여 Container Registry를 만듭니다. 그런 다음, Docker 명령을 사용하여 컨테이너 이미지를 레지스트리로 푸시하고, 마지막으로 레지스트리에서 이미지를 끌어와서 실행합니다.
 
@@ -41,14 +41,20 @@ https://portal.azure.com 에서 Azure Portal에 로그인합니다.
 
 :::image type="content" source="media/container-registry-get-started-portal/qs-portal-05.png" alt-text="포털의 컨테이너 레지스트리 개요":::
 
-**로그인 서버**의 값을 기록해 둡니다. Docker를 사용하여 이미지를 밀어넣고 끌어올 때 다음 단계에서 이 값을 사용합니다.
+레지스트리 이름과 **로그인 서버**의 값을 기록해 둡니다. Docker를 사용하여 이미지를 밀어넣고 끌어올 때 다음 단계에서 이러한 값을 사용합니다.
 
 ## <a name="log-in-to-registry"></a>레지스트리에 로그인
 
-컨테이너 이미지를 푸시하고 끌어오려면 레지스트리 인스턴스에 로그인해야 합니다. 로컬 머신에서 [Azure CLI에 로그인][get-started-with-azure-cli]한 다음, [az acr login][az-acr-login] 명령을 실행합니다. (Azure CLI를 사용하여 로그인할 때 레지스트리 이름만 지정합니다. 'azurecr.io' 접미사는 포함하지 마세요.)
+컨테이너 이미지를 푸시하고 끌어오려면 레지스트리 인스턴스에 로그인해야 합니다. 로컬 머신에서 [Azure CLI에 로그인][get-started-with-azure-cli]한 다음, [az acr login][az-acr-login] 명령을 실행합니다. (Azure CLI를 사용하여 로그인할 때 레지스트리 이름만 지정합니다. 'azurecr.io' 도메인 접미사는 포함하지 마세요.)
 
 ```azurecli
 az acr login --name <registry-name>
+```
+
+예제:
+
+```azurecli
+az acr login --name mycontainerregistry
 ```
 
 완료되면 이 명령은 `Login Succeeded`를 반환합니다. 

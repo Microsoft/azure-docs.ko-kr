@@ -4,8 +4,6 @@
   items:
     - name: 애플리케이션 게이트웨이 정보
       href: overview.md
-    - name: 새로운 기능
-      href: whats-new.md
 - name: 빠른 시작
   expanded: true
   items:
@@ -92,6 +90,8 @@
       href: application-gateway-web-app-overview.md
     - name: WebSocket 지원
       href: application-gateway-websocket.md
+    - name: 가격 책정 이해
+      href: understanding-pricing.md
     - name: FAQ
       href: application-gateway-faq.md
 - name: 방법 가이드

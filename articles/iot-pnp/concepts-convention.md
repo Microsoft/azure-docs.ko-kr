@@ -7,12 +7,12 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 126673391b49f884a51521d462060c425a314667
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: ef29be53e776c4c185ac8430b3340c53ca85d855
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475671"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856049"
 ---
 # <a name="iot-plug-and-play-conventions"></a>IoT 플러그 앤 플레이 규칙
 
@@ -127,10 +127,10 @@ IoT 플러그 앤 플레이 장치에서 [DTDL (디지털 Twins Language v2)](ht
 
 장치는 보고 된 속성을 보내 속성을 받았는지 확인 해야 합니다. 보고 된 속성에는 다음이 포함 되어야 합니다.
 
-- `value`-장치에서 받은 값입니다.
-- `ac`-HTTP 상태 코드를 사용 하는 승인 코드입니다.
-- `av`-desired 속성의를 참조 하는 승인 버전입니다 `$version` .
-- `ad`-선택적 승인 설명입니다.
+- `value` -속성의 실제 값 (일반적으로 받은 값 이지만 장치는 다른 값을 보고 하도록 결정할 수 있음).
+- `ac` -HTTP 상태 코드를 사용 하는 승인 코드입니다.
+- `av` -desired 속성의를 참조 하는 승인 버전입니다 `$version` .
+- `ad` -선택적 승인 설명입니다.
 
 ### <a name="sample-no-component-writable-property"></a>샘플 구성 요소 쓰기 가능 속성 없음
 
@@ -261,7 +261,7 @@ IoT 플러그 앤 플레이 장치에서 [DTDL (디지털 Twins Language v2)](ht
 
 이제 IoT 플러그 앤 플레이 규칙에 대해 알아보았습니다. 몇 가지 추가 리소스는 다음과 같습니다.
 
-- [디지털 쌍 정의 언어 (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
+- [DTDL(디지털 쌍 정의 언어)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [C 디바이스 SDK](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 - [IoT REST API](https://docs.microsoft.com/rest/api/iothub/device)
 - [모델 구성 요소](./concepts-components.md)

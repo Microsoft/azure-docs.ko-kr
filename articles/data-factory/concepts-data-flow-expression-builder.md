@@ -6,13 +6,13 @@ ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 06/20/2020
-ms.openlocfilehash: 7e2b655b344af90c4555beb0af85fa11cbc6d1c8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/10/2020
+ms.openlocfilehash: f522812f762b55ec61794101e6cd1ec15fb171ca
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85126164"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212100"
 ---
 # <a name="build-expressions-in-mapping-data-flow"></a>매핑 데이터 흐름에서 식 작성
 
@@ -85,7 +85,7 @@ Azure Data Factory 사용자 환경에서 식 편집 인터페이스를 식 작�
 
 식의 맨 위에 주석을 입력 하면 변환 텍스트 상자에 표시 되어 변환 식을 문서화할 수 있습니다.
 
-![변환 텍스트 상자의 주석](media/data-flow/comments2.png "의견")
+![변환 텍스트 상자의 주석](media/data-flow/comments2.png "주석")
 
 ## <a name="regular-expressions"></a>정규식
 

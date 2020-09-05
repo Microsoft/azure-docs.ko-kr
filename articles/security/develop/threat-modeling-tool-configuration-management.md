@@ -16,13 +16,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f34a98ccbe069a5cb9e2c26a88e486b27f016fe1
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 9410f06298bd40fe6e0bf8f3fca1be4b87f793ed
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87540022"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004496"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>보안 프레임: 구성 관리 | 완화 
 | 제품/서비스 | 아티클 |

@@ -9,18 +9,18 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: chez
 ms.reviewer: mariozi
-ms.openlocfilehash: 9caa4690fa6b9d6c473bb8863acdcbbe15a37fba
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: c7d3dae2b7da2fcc14e86eb4965ebd99fd7bf681
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85569452"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650583"
 ---
 # <a name="encrypt-azure-data-factory-with-customer-managed-keys"></a>고객 관리형 키를 사용하여 Azure Data Factory 암호화
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-Azure Data Factory는 엔터티 정의, 실행 중에 캐시된 데이터, 데이터 미리 보기용으로 캐시된 데이터를 비롯한 저장 데이터를 암호화합니다. 기본적으로 데이터는 데이터 팩터리에 고유하게 할당된 임의로 생성된 Microsoft 관리형 키를 사용하여 암호화됩니다. 이제 Azure Data Factory에서 고객 관리형 키 기능을 사용하여 BYOK(Bring Your Own Key)를 사용하도록 설정하면 보안을 더욱 강화할 수 있습니다. 고객 관리형 키를 지정하면 Data Factory는 팩터리 시스템 키와 CMK를 __모두__ 사용하여 고객 데이터를 암호화합니다. 둘 중 하나라도 없으면 데이터 및 팩터리에 대한 액세스가 거부됩니다.
+Azure Data Factory는 엔터티 정의 및 실행 중에 캐시된 모든 데이터를 포함하여 미사용 데이터를 암호화합니다. 기본적으로 데이터는 데이터 팩터리에 고유하게 할당된 임의로 생성된 Microsoft 관리형 키를 사용하여 암호화됩니다. 이제 Azure Data Factory에서 고객 관리형 키 기능을 사용하여 BYOK(Bring Your Own Key)를 사용하도록 설정하면 보안을 더욱 강화할 수 있습니다. 고객 관리형 키를 지정하면 Data Factory는 팩터리 시스템 키와 CMK를 __모두__ 사용하여 고객 데이터를 암호화합니다. 둘 중 하나라도 없으면 데이터 및 팩터리에 대한 액세스가 거부됩니다.
 
 Azure Key Vault는 고객 관리형 키를 저장하는 데 필요합니다. 사용자 고유의 키를 만들어 키 자격 증명 모음에 저장할 수도 있고, Azure Key Vault API를 사용하여 키를 생성할 수도 있습니다. 키 자격 증명 모음과 Data Factory가 동일한 Azure AD(Azure Active Directory) 테넌트 및 동일한 지역에 있어야 하지만, 서로 다른 구독에 있는 것은 괜찮습니다. Azure Key Vault에 대한 자세한 내용은 [Azure Key Vault란?](../key-vault/general/overview.md)
 
@@ -76,7 +76,7 @@ Azure Key Vault와 Azure Data Factory가 동일한 Azure AD(Azure Active Directo
 
     ![Key Vault에서 키 URI를 가져오는 스크린샷](media/enable-customer-managed-key/04-get-key-identifier.png)
 
-1. Azure Data Factory 포털을 시작하고, 왼쪽의 탐색 모음을 사용하여 Data Factory 홈페이지로 이동합니다.
+1. Azure Data Factory 포털을 시작하고, 왼쪽의 탐색 모음을 사용하여 Data Factory 관리 포털로 이동합니다.
 
 1. __고객 관리형 키__ 아이콘을 클릭합니다.
 

@@ -8,12 +8,12 @@ ms.author: liamca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 69fec93c2426f4274e0c890d76bdcbbb4678fa7d
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: ea0dac74d4f995e41513b3451dd28d177040e672
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86230760"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935027"
 ---
 # <a name="design-patterns-for-multitenant-saas-applications-and-azure-cognitive-search"></a>다중 테 넌 트 SaaS 응용 프로그램 및 Azure Cognitive Search에 대 한 디자인 패턴
 
@@ -119,7 +119,7 @@ Azure Cognitive Search 다중 테 넌 트 시나리오를 모델링 하기 위�
 
 테넌트당 서비스 및 테넌트당 인덱스 모델은 충분히 작은 범위가 아니므로 훨씬 더 미세한 세밀성을 얻기 위헤 인덱스를 모델링할 수 있습니다.
 
-단일 인덱스가 다양한 클라이언트 엔드포인트에 대해 다르게 동작하도록 하기 위해 가능한 각 클라이언트에 대한 특정 값을 지정하는 필드를 인덱스에 추가할 수 있습니다. 클라이언트에서 Azure Cognitive Search를 호출 하 여 인덱스를 쿼리하거나 수정할 때마다 클라이언트 응용 프로그램의 코드는 쿼리 시 Azure Cognitive Search의 [필터](https://msdn.microsoft.com/library/azure/dn798921.aspx) 기능을 사용 하 여 해당 필드에 대 한 적절 한 값을 지정 합니다.
+단일 인덱스가 다양한 클라이언트 엔드포인트에 대해 다르게 동작하도록 하기 위해 가능한 각 클라이언트에 대한 특정 값을 지정하는 필드를 인덱스에 추가할 수 있습니다. 클라이언트에서 Azure Cognitive Search를 호출 하 여 인덱스를 쿼리하거나 수정할 때마다 클라이언트 응용 프로그램의 코드는 쿼리 시 Azure Cognitive Search의 [필터](./query-odata-filter-orderby-syntax.md) 기능을 사용 하 여 해당 필드에 대 한 적절 한 값을 지정 합니다.
 
 이 방법을 사용하면 별도의 사용자 계정, 별도의 사용 권한 수준 및 완전 별도의 애플리케이션 기능을 얻을 수 있습니다.
 
@@ -132,4 +132,3 @@ Azure Cognitive Search 다중 테 넌 트 시나리오를 모델링 하기 위�
 Azure Cognitive Search는 많은 응용 프로그램에 적합 합니다. 다중 테 넌 트 응용 프로그램에 대 한 다양 한 디자인 패턴을 평가할 때 [다양 한 가격 책정 계층](https://azure.microsoft.com/pricing/details/search/) 및 해당 [서비스 제한을](search-limits-quotas-capacity.md) 고려 하 여 모든 규모의 응용 프로그램 워크 로드 및 아키텍처에 맞게 Azure Cognitive Search를 적절 하 게 조정 합니다.
 
 Azure Cognitive Search 및 다중 테 넌 트 시나리오에 대 한 질문은로 이동할 수 있습니다 azuresearch_contact@microsoft.com .
-

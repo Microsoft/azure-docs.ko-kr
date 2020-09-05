@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Azure Media Services v3 엔터티의 필터링, 순서 지정 및 페이징에 대해 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/21/2020
-ms.author: juliako
-ms.custom: seodec18
-ms.openlocfilehash: a9f9463cd1cac49e36ea52cafaf4d07f4e709ca7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: 96f08f75d0921fdf88b71c8e8dd2398a6b85ec6d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053257"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258472"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Media Services 엔터티의 필터링, 순서 지정 및 페이징
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 항목에서는 Azure Media Services v3 엔터티를 나열 하는 경우 사용할 수 있는 OData 쿼리 옵션 및 페이지 매김 지원에 대해 설명 합니다.
 
@@ -70,7 +72,7 @@ var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGr
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
 ```
 
-결과를 오름차순 또는 내림차순으로 정렬 하려면 `asc` `desc` 필드 이름에 또는을 공백으로 구분 하 여 추가 합니다. 예: `$orderby properties/created desc`.
+결과를 오름차순 또는 내림차순으로 정렬 하려면 `asc` `desc` 필드 이름에 또는을 공백으로 구분 하 여 추가 합니다. 예: `$orderby properties/created desc`
 
 ## <a name="skip-token"></a>토큰 건너뛰기
 
@@ -158,25 +160,25 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 |엔터티 이름|속성 이름|필터|주문|
 |---|---|---|---|
-|[Assets](/rest/api/media/assets/)|이름|`eq`, `gt`, `lt`, `ge`, `le`|`asc` 및 `desc`|
+|[Assets](/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` 및 `desc`|
 ||properties.alternateId |`eq`||
 ||properties.assetId |`eq`||
 ||properties.created| `eq`, `gt`, `lt`| `asc` 및 `desc`|
-|[콘텐츠 키 정책](/rest/api/media/contentkeypolicies)|이름|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
+|[콘텐츠 키 정책](/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
 ||properties.description    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`||
 ||properties.lastModified|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
 ||properties.policyId|`eq`, `ne`||
-|[작업](/rest/api/media/jobs)| 이름  | `eq`            | `asc` 및 `desc`|
+|[작업](/rest/api/media/jobs)| name  | `eq`            | `asc` 및 `desc`|
 ||properties.state        | `eq`, `ne`        |                         |
 ||properties.created      | `gt`, `ge`, `lt`, `le`| `asc` 및 `desc`|
 ||properties.lastModified | `gt`, `ge`, `lt`, `le` | `asc` 및 `desc`| 
-|[스트리밍 로케이터](/rest/api/media/streaminglocators)|이름|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
+|[스트리밍 로케이터](/rest/api/media/streaminglocators)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`,  `gt`, `lt`|`asc` 및 `desc`|
 ||properties.endTime    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
-|[스트리밍 정책](/rest/api/media/streamingpolicies)|이름|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
+|[스트리밍 정책](/rest/api/media/streamingpolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` 및 `desc`|
-|[변환](/rest/api/media/transforms)| 이름 | `eq`            | `asc` 및 `desc`|
+|[변환](/rest/api/media/transforms)| name | `eq`            | `asc` 및 `desc`|
 || properties.created      | `gt`, `ge`, `lt`, `le`| `asc` 및 `desc`|
 || properties.lastModified | `gt`, `ge`, `lt`, `le`| `asc` 및 `desc`|
 

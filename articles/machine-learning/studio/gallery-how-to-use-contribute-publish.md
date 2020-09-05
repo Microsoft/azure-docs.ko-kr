@@ -9,19 +9,19 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: 7918f684fea1092cbd7c11fade3d8f40c1e44240
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 1c03f52802881bcf4c916ce3ed438e465e574090
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87431201"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691261"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Azure AI 갤러리의 리소스 공유 및 검색
 
-**적용 대상:** ![ 예 ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (클래식) ![ 아니요](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../compare-azure-ml-to-studio-classic.md)  
+**적용 대상:**  ![예](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio(클래식)   ![아니요](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../compare-azure-ml-to-studio-classic.md)
 
 
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 
 **[Azure AI Gallery](https://gallery.azure.ai)**.
 갤러리에는 자체 분석 솔루션을 개발하는 데 사용할 수 있는 다양한 리소스가 있습니다.
@@ -34,7 +34,6 @@ Azure AI Gallery는 Microsoft에서 참여한 다양한 리소스와 데이터 �
 * **자습서** - Machine Learning 기술 및 개념을 안내하거나 다양한 Machine Learning 문제를 해결하기 위한 고급 방법을 설명하는 다양한 자습서가 있습니다.
 * **컬렉션** - 컬렉션을 사용하면 특정한 솔루션 또는 개념을 다루는 실험, API 및 기타 갤러리 항목을 그룹화할 수 있습니다.
 * **사용자 지정 모듈** -사용자 고유의 실험에서 사용할 수 있도록 사용자 지정 모듈을 Studio (클래식) 작업 영역에 다운로드할 수 있습니다.
-* **Jupyter 노트** - Jupyter 노트는 단일 대화형 캔버스에 코드, 데이터 시각화 요소 및 설명서를 포함합니다. 갤러리의 노트북은 자습서는 물론 고급 기계 학습 기술 및 솔루션에 대한 설명을 제공합니다.
 
 ## <a name="discover-and-contribute"></a>검색 및 참가
 
@@ -49,12 +48,12 @@ LinkedIn 또는 Twitter의 공유 기능을 사용하거나 링크를 이메일�
 
 로그인할 때 갤러리 커뮤니티의 구성원이 됩니다. 구성원이 되면 자신이 발견한 솔루션을 다른 사용자가 활용할 수 있도록 리소스를 다운로드하거나 자신의 Gallery 항목을 기고할 수 있습니다.
 
-**실험**, **사용자 지정 모듈** 및 **Jupyter 노트**를 다운로드하여 자체 분석 솔루션 개발에 사용할 수 있습니다.
+자체 분석 솔루션을 개발 하는 데 사용할 **실험**, **사용자 지정 모듈** 을 다운로드할 수 있습니다.
 Gallery에 **실험**, **자습서** 및 **컬렉션**을 기고할 수 있습니다.
 
-## <a name="download-experiments-modules-notebooks"></a>실험, 모듈, 노트 다운로드
+## <a name="download-experiments-modules"></a>실험, 모듈 다운로드
 
-사용자 고유의 솔루션을 개발 하는 데 사용할 수 있도록 **실험**, **사용자 지정 모듈**및 **jupyter 노트북** 을 자체 Machine Learning Studio (클래식) 작업 영역에 다운로드할 수 있습니다.
+사용자 고유의 솔루션 **을 개발**하는 데 사용할 수 있는 **사용자 지정 모듈** 을 사용자 고유의 Machine Learning Studio (클래식) 작업 영역에 다운로드할 수 있습니다.
 
 AI Gallery 내에서 리소스를 다운로드하려면
 
@@ -98,7 +97,7 @@ Studio (클래식) 내에서 리소스를 다운로드 하려면 다음을 수�
    * 실험 그래프 스크린샷
    * 데이터 원본 및 설명
    * 데이터 처리
-   * 특징 엔지니어링
+   * 기능 엔지니어링
    * 모델 설명
    * 결과 및 모델 성능 평가
 
@@ -151,7 +150,7 @@ Gallery에서 기계 학습 개념을 설명하는 **자습서**를 작성하거
 
 1. 페이지의 오른쪽 위 모서리에서 이미지를 선택한 다음, 이름을 선택합니다.
 
-1. **새 항목**을 선택 합니다.
+1. **새 항목**을 선택합니다.
 
 1. **설명** 페이지에서 **항목 형식**에 대해 **자습서** 또는 **컬렉션**을 선택합니다. 다른 사용자가 자습서를 찾는 데 도움이 되는 이름, 간략한 요약, 자세한 설명 및 태그를 입력합니다. 그런 후 **Next** 를 클릭합니다.
 
@@ -203,6 +202,6 @@ Gallery에서 기계 학습 개념을 설명하는 **자습서**를 작성하거
 
 사용자가 주도하는 사용자를 위한 갤러리를 원합니다. 오른쪽에 있는 웃는 얼굴을 사용하여 갤러리가 마음에 드는지 아니면 싫어하는지 알려주세요.  
 
-![피드백](./media/gallery-how-to-use-contribute-publish/feedback.png)
+![사용자 의견](./media/gallery-how-to-use-contribute-publish/feedback.png)
 
 **[갤러리로 이동 >>](https://gallery.azure.ai)**

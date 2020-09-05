@@ -2,13 +2,13 @@
 title: 공용 레지스트리 액세스 구성
 description: 선택한 공용 IP 주소나 주소 범위에서 Azure 컨테이너 레지스트리에 대한 액세스를 사용하기 위한 IP 규칙을 구성합니다.
 ms.topic: article
-ms.date: 05/19/2020
-ms.openlocfilehash: 967f27c05301ff339765706d0b3088ffcbaed1f2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/17/2020
+ms.openlocfilehash: 0fbca1ec2734bf8275e12249f63ab134837fea12
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86523828"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660928"
 ---
 # <a name="configure-public-ip-network-rules"></a>공용 IP 네트워크 규칙 구성
 
@@ -61,18 +61,18 @@ az acr network-rule add \
 
 필요에 따라 레지스트리에서 퍼블릭 엔드포인트를 사용하지 않게 설정합니다. 퍼블릭 엔드포인트를 사용하지 않게 설정하면 모든 방화벽 구성이 재정의됩니다. 예를 들어 [프라이빗 링크](container-registry-private-link.md)를 사용하여 가상 네트워크에서 보호되는 레지스트리에 대한 공용 액세스를 사용하지 않게 설정할 수 있습니다.
 
-### <a name="disable-public-access---cli"></a>공용 액세스를 사용하지 않음 - CLI
-
-Azure CLI를 통해 공용 액세스를 사용하지 않으려면 [az acr update][az-acr-update]를 실행하고 `--public-network-enabled`를 `false`로 설정합니다. 
-
 > [!NOTE]
-> `public-network-enabled` 인수에는 Azure CLI 2.6.0 이상이 필요합니다. 
+> [서비스가 서비스 끝점](container-registry-vnet.md)을 사용 하 여 가상 네트워크에 설정 된 경우 레지스트리의 공용 끝점에 대 한 액세스를 사용 하지 않도록 설정 하면 가상 네트워크 내의 레지스트리에 대 한 액세스도 비활성화 됩니다.
+
+### <a name="disable-public-access---cli"></a>공용 액세스 사용 안 함 - CLI
+
+Azure CLI를 통해 공용 액세스를 사용하지 않으려면 [az acr update][az-acr-update]를 실행하고 `--public-network-enabled`를 `false`로 설정합니다. `public-network-enabled` 인수에는 Azure CLI 2.6.0 이상이 필요합니다. 
 
 ```azurecli
 az acr update --name myContainerRegistry --public-network-enabled false
 ```
 
-### <a name="disable-public-access---portal"></a>공용 액세스를 사용하지 않음 - 포털
+### <a name="disable-public-access---portal"></a>공용 액세스 사용 안 함 - 포털
 
 1. 포털에서 컨테이너 레지스트리로 이동하고 **설정 > 네트워킹**을 선택합니다.
 1. **공용 액세스** 탭의 **공용 네트워크 액세스 허용**에서 **사용 안 함**을 선택합니다. 그런 다음 **저장**을 선택합니다.

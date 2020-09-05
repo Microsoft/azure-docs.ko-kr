@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: f6de05e0ad5e4294b801a8b349663d92db448de6
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: b5f3305fc5d2595c8b7b08d78ff20edea01c195e
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424293"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229840"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Azure Virtual Machine Scale Sets 자동 OS 업그레이드
 
@@ -50,7 +50,7 @@ ms.locfileid: "87424293"
 
 현재 지원 되는 플랫폼 Sku는 다음과 같습니다 .이는 주기적으로 추가 됩니다.
 
-| Publisher               | OS 제품      |  SKU               |
+| 게시자               | OS 제품      |  SKU               |
 |-------------------------|---------------|--------------------|
 | Canonical               | UbuntuServer  | 16.04-LTS          |
 | Canonical               | UbuntuServer  | 18.04-LTS          |
@@ -128,7 +128,7 @@ Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" 
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-`[az vmss update](/cli/azure/vmss#az-vmss-update)`확장 집합에 대 한 자동 OS 이미지 업그레이드를 구성 하는 데 사용 합니다. Azure CLI 2.0.47 이상을 사용합니다. 다음 예제에서는 *Myresourcegroup*이라는 리소스 그룹에서 *myScaleSet* 이라는 확장 집합에 대 한 자동 업그레이드를 구성 합니다.
+[Az vmss update](/cli/azure/vmss#az-vmss-update) 를 사용 하 여 확장 집합에 대 한 자동 OS 이미지 업그레이드를 구성 합니다. Azure CLI 2.0.47 이상을 사용합니다. 다음 예제에서는 *Myresourcegroup*이라는 리소스 그룹에서 *myScaleSet* 이라는 확장 집합에 대 한 자동 업그레이드를 구성 합니다.
 
 ```azurecli-interactive
 az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true

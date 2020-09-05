@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 04/22/2020
-ms.openlocfilehash: 0499d52a6fe3da7349d31748ca3b5add16369571
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/24/2020
+ms.openlocfilehash: 1e66774d4239bdad6c8af426a28af6081bb0da3c
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82137657"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782178"
 ---
 # <a name="two-class-boosted-decision-tree-module"></a>2 클래스 승격 된 의사 결정 트리 모듈
 
@@ -22,9 +22,11 @@ ms.locfileid: "82137657"
 
 이 모듈을 사용 하 여 승격 된 의사 결정 트리 알고리즘을 기반으로 기계 학습 모델을 만들 수 있습니다. 
 
-승격 된 의사 결정 트리는 두 번째 트리가 첫 번째 트리의 오류를 수정 하 고, 세 번째 트리가 첫 번째 및 두 번째 트리의 오류를 수정 하는 등의 앙상블 학습 방법입니다.  예측은 전체 트리의 앙상블을 기반으로 하 여 예측을 수행 합니다.
+승격 된 의사 결정 트리는 두 번째 트리가 첫 번째 트리의 오류를 수정 하 고, 세 번째 트리가 첫 번째 및 두 번째 트리의 오류를 수정 하는 등의 앙상블 학습 방법입니다. 예측은 전체 트리의 앙상블을 기반으로 하 여 예측을 수행 합니다.
   
 일반적으로 적절히 구성 된 경우 승격 된 의사 결정 트리는 다양 한 기계 학습 작업에서 최상의 성능을 얻을 수 있는 가장 쉬운 방법입니다. 그러나 메모리를 많이 사용 하는 많은 학습자 중 하나 이며 현재 구현에는 메모리의 모든 항목이 포함 됩니다. 따라서 승격 된 의사 결정 트리 모델은 일부 선형 학습자가 처리할 수 있는 대량 데이터 집합을 처리 하지 못할 수 있습니다.
+
+이 모듈은 LightGBM 알고리즘을 기반으로 합니다.
 
 ## <a name="how-to-configure"></a>구성 방법
 

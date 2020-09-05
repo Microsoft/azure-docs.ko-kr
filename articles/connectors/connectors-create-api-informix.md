@@ -4,17 +4,17 @@ description: Azure Logic Apps를 사용 하 여 IBM Informix에 저장 된 리�
 services: logic-apps
 ms.suite: integration
 author: gplarsen
-ms.author: plarsen
+ms.author: daberry
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/07/2020
 tags: connectors
-ms.openlocfilehash: dccb715c974037b4e3080f3e51576feae34c03df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4995a91783c2302f3bda5cc9409f017248ca29fa
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76757971"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761647"
 ---
 # <a name="manage-ibm-informix-database-resources-by-using-azure-logic-apps"></a>Azure Logic Apps를 사용 하 여 IBM Informix 데이터베이스 리소스 관리
 
@@ -25,7 +25,7 @@ ms.locfileid: "76757971"
 
 이 항목에서는 논리 앱에서 커넥터를 사용하여 데이터베이스 작업을 처리하는 방법을 보여 줍니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
@@ -60,12 +60,12 @@ ms.locfileid: "76757971"
 
    | 작업 | 설명 | 속성 및 설명 |
    |--------|-------------|-----------------------------|
-   | **테이블 가져오기** | Informix CALL 문을 실행 하 여 데이터베이스 테이블을 나열 합니다. | 없음 |
+   | **테이블 가져오기** | Informix CALL 문을 실행 하 여 데이터베이스 테이블을 나열 합니다. | None |
    | **행 가져오기** | Informix 문을 실행 하 여 지정 된 테이블의 모든 행을 인출 `SELECT *` 합니다. | **테이블 이름**: 원하는 Informix 테이블의 이름 <p><p>이 작업에 다른 속성을 추가 하려면 **새 매개 변수 추가** 목록에서 해당 속성을 선택 합니다. 자세한 내용은 [커넥터의 참조 항목](/connectors/informix/)을 참조 하세요. |
-   | **행 가져오기** | Informix 문을 실행 하 여 지정 된 테이블에서 행을 인출 `SELECT WHERE` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **행 id**: 행의 고유 id입니다 (예:).`9999` |
+   | **행 가져오기** | Informix 문을 실행 하 여 지정 된 테이블에서 행을 인출 `SELECT WHERE` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **행 id**: 행의 고유 id입니다 (예:). `9999` |
    | **행 삽입** | Informix 문을 실행 하 여 지정 된 Informix 테이블에 행을 추가 `INSERT` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **item**: 추가할 값이 있는 행입니다. |
-   | **행 업데이트** | Informix 문을 실행 하 여 지정 된 Informix 테이블의 행을 변경 `UPDATE` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **행 id**: 업데이트할 행의 고유 ID (예:)입니다.`9999` <br>- **Row**: 업데이트 된 값을 포함 하는 행 (예:)`102` |
-   | **행 삭제** | Informix 문을 실행 하 여 지정 된 Informix 테이블에서 행을 제거 `DELETE` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **행 id**: 삭제할 행의 고유 ID입니다. 예를 들어`9999` |
+   | **행 업데이트** | Informix 문을 실행 하 여 지정 된 Informix 테이블의 행을 변경 `UPDATE` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **행 id**: 업데이트할 행의 고유 ID (예:)입니다. `9999` <br>- **Row**: 업데이트 된 값을 포함 하는 행 (예:) `102` |
+   | **행 삭제** | Informix 문을 실행 하 여 지정 된 Informix 테이블에서 행을 제거 `DELETE` 합니다. | - **테이블 이름**: 원하는 Informix 테이블의 이름 <br>- **행 id**: 삭제할 행의 고유 ID입니다. 예를 들어 `9999` |
    ||||
 
 1. 논리 앱을 저장합니다. 이제 [논리 앱을 테스트](#test-logic-app) 하거나 논리 앱을 계속 빌드 하세요.
@@ -81,15 +81,15 @@ ms.locfileid: "76757971"
    | 속성 | JSON 속성 | 필수 | 예제 값 | Description |
    |----------|---------------|----------|---------------|-------------|
    | 연결 이름 | `name` | 예 | `informix-demo-connection` | Informix 데이터베이스에 연결 하는 데 사용할 이름입니다. |
-   | 서버 | `server` | 예 | Pnrp`informixdemo.cloudapp.net:9089` <br>-온-프레미스:`informixdemo:9089` | IPv4 또는 IPv6 형식으로 입력 하 고 그 뒤에 콜론 및 TCP/IP 포트 번호를 입력 하는 TCP/IP 주소 또는 별칭 |
+   | 서버 | `server` | 예 | Pnrp `informixdemo.cloudapp.net:9089` <br>-온-프레미스: `informixdemo:9089` | IPv4 또는 IPv6 형식으로 입력 하 고 그 뒤에 콜론 및 TCP/IP 포트 번호를 입력 하는 TCP/IP 주소 또는 별칭 |
    | 데이터베이스 | `database` | 예 | `nwind` | DRDA 관계형 데이터베이스 이름 (RDBNAM) 또는 Informix 데이터베이스 이름 (dbname)입니다. Informix는 128 바이트 문자열을 허용 합니다. |
    | 인증 | `authentication` | 온-프레미스 전용 | **기본** 또는 **Windows** (kerberos) | Informix 데이터베이스에 필요한 인증 유형입니다. 이 속성은 **온-프레미스 데이터 게이트웨이를 통해 연결**을 선택 하는 경우에만 표시 됩니다. |
-   | 사용자 이름 | `username` | 아니요 | <*데이터베이스-사용자-이름*> | 데이터베이스의 사용자 이름입니다. |
-   | 암호 | `password` | 아니요 | <*데이터베이스-암호*> | 데이터베이스에 대 한 암호 |
+   | 사용자 이름 | `username` | 예 | <*데이터베이스-사용자-이름*> | 데이터베이스의 사용자 이름입니다. |
+   | 암호 | `password` | 예 | <*데이터베이스-암호*> | 데이터베이스에 대 한 암호 |
    | 게이트웨이 | `gateway` | 온-프레미스 전용 | -<*Azure-구독*> <br>-<Azure-온- *프레미스-데이터-게이트웨이-리소스*> | Azure Portal에서 만든 온-프레미스 데이터 게이트웨이에 대 한 Azure 구독 및 Azure 리소스 이름입니다. **게이트웨이** 속성 및 하위 속성은 **온-프레미스 데이터 게이트웨이를 통해 연결**을 선택 하는 경우에만 표시 됩니다. |
    ||||||
 
-   예를 들어:
+   예를 들면 다음과 같습니다.
 
    * **클라우드 데이터베이스**
 

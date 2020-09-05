@@ -3,13 +3,13 @@ title: Azure Application Insights 데이터 보존 및 스토리지 | Microsoft 
 description: 보존 및 개인 정보 취급 방침
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 772777c48c8d16197cd8a73586f6549837d7d080
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: f6fa42d6cc20c4d26caa7f571f13bb3917b2c7c5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372402"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929332"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Application Insights의 데이터 수집, 보존 및 저장
 
@@ -93,9 +93,6 @@ Microsoft는 서비스를 제공하기 위한 목적으로만 데이터를 사�
 
 ## <a name="where-is-the-data-held"></a>데이터가 저장되는 위치는 어디인가요?
 * 새 Application Insights 리소스를 만들 때 위치를 선택할 수 있습니다. 지역별 Application Insights 가용성에 대 한 자세한 내용은 [여기](https://azure.microsoft.com/global-infrastructure/services/?products=all)를 참조 하세요.
-
-#### <a name="does-that-mean-my-app-has-to-be-hosted-in-the-usa-europe-or-southeast-asia"></a>내 앱을 미국, 유럽 또는 동남 아시아에서 호스팅해야 함을 의미 하나요?
-* 아니요. 애플리케이션은 자체 온-프레미스 호스트 또는 클라우드의 어디에서나 실행할 수 있습니다.
 
 ## <a name="how-secure-is-my-data"></a>내 데이터는 어느 정도 안전한가요?
 Application Insights는 Azure 서비스입니다. 보안 정책은 [Azure 보안, 개인 정보 보호 및 규정 준수 백서](https://go.microsoft.com/fwlink/?linkid=392408)에 설명되어 있습니다.
@@ -256,7 +253,7 @@ SDK는 플랫폼마다 다르며, 설치할 수 있는 여러 구성 요소가 �
 | [호출 TrackMetric][api] |숫자 값<br/>**속성** |
 | [호출 추적*][api] |이벤트 이름<br/>**속성** |
 | [호출 TrackException][api] |**예외**<br/>스택 덤프<br/>**속성** |
-| SDK는 데이터를 수집할 수 없습니다. 예를 들면 다음과 같습니다. <br/> - 성능 카운터에 액세스할 수 없음<br/> - 원격 분석 이니셜라이저 예외 |SDK 진단 |
+| SDK는 데이터를 수집할 수 없습니다. 예를 들면 <br/> - 성능 카운터에 액세스할 수 없음<br/> - 원격 분석 이니셜라이저 예외 |SDK 진단 |
 
 [다른 플랫폼에 대한 SDK][platforms]의 경우 해당 문서를 참조하세요.
 
@@ -277,7 +274,7 @@ SDK는 플랫폼마다 다르며, 설치할 수 있는 여러 구성 요소가 �
 | Ajax |웹 페이지에서 서버로 HTTP 호출 |
 | 요청 |URL, 기간, 응답 코드 |
 | 종속성 |유형 (SQL, HTTP, ...), 연결 문자열 또는 URI, sync/async, duration, success, SQL 문 (with 상태 모니터) |
-| **예외** |형식, **메시지**, 호출 스택, 소스 파일, 줄 번호,`thread id` |
+| **예외** |형식, **메시지**, 호출 스택, 소스 파일, 줄 번호, `thread id` |
 | 크래시 |`Process id`, `parent process id` ,, `crash thread id` 응용 프로그램 패치, `id` , 빌드,  예외 유형, 주소, 이유; 난독 처리 되는 기호 및 레지스터, 이진 시작 및 끝 주소, 이진 이름 및 경로, cpu 종류 |
 | 추적 |**메시지** 및 심각도 수준 |
 | 성능 카운터 |프로세서 시간, 사용 가능한 메모리, 요청 속도, 예외 속도, 프로세스 프라이빗 바이트, IO 속도, 요청 기간, 요청 큐 길이 |

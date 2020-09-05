@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 2be430fc032acd94f851072f80d14a43638c8863
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0218c24637b9b49972e93b8dd53e5970c9ab89d5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084588"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260903"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>콘텐츠 키 인증 정책 구성
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
 ## <a name="overview"></a>개요
@@ -33,7 +36,7 @@ ms.locfileid: "87084588"
 
 플레이어가 동적으로 암호화되도록 설정된 스트림을 요청하는 경우, Media Services는 구성된 키를 사용하고 AES 또는 DRM 암호화를 사용하여 동적으로 사용자의 콘텐츠를 암호화합니다. 스트림을 해독하기 위해 플레이어는 키 배달 서비스에서 키를 요청합니다. 사용자에게 키를 얻을 수 있는 권한이 있는지 여부를 결정하기 위해 서비스는 키에 지정된 권한 부여 정책을 평가합니다.
 
-여러 콘텐츠 키를 가지거나 Media Services 키 배달 서비스가 아닌 키/라이선스 배달 서비스 URL을 지정하려면 Media Services 키 배달 서비스 Media Services .NET SDK 또는 REST API를 사용하세요. 자세한 내용은 다음을 참조하세요.
+여러 콘텐츠 키를 가지거나 Media Services 키 배달 서비스가 아닌 키/라이선스 배달 서비스 URL을 지정하려면 Media Services 키 배달 서비스 Media Services .NET SDK 또는 REST API를 사용하세요. 자세한 내용은 다음을 참조하십시오.
 
 * [Media Services .NET SDK를 사용하여 콘텐츠 키 권한 부여 정책 구성](media-services-dotnet-configure-content-key-auth-policy.md)
 * [Media Services REST API를 사용하여 콘텐츠 키 권한 부여 정책 구성](media-services-rest-configure-content-key-auth-policy.md)

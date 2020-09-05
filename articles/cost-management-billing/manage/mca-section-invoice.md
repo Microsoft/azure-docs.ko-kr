@@ -4,15 +4,16 @@ description: 청구서의 비용을 구성하는 방법을 알아봅니다. 청�
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 553263ebac3c64e27a7711b4407a7d4ba573998c
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 9f5e69a609931f4f8ead62f4d5c5ba2a1064a6ea
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460034"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88683014"
 ---
 # <a name="organize-costs-by-customizing-your-billing-account"></a>청구 계정을 사용자 지정하여 비용 구성
 

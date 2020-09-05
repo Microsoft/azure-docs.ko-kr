@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 293a0fcd1211739be07e58f414bd6861bf47eb76
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: ccec58f012dcd4b6371c15e79fa964600e775f54
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87831110"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654653"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>Azure Virtual Machines의 SAP Business One
 이 문서에서는 Azure Virtual Machines에 SAP Business One을 배포하는 지침을 제공합니다. 이 문서는 SAP용 Business One 설치 문서를 대체하지 않습니다. 이 문서에서는 Business One 애플리케이션을 실행할 Azure 인프라에 대한 기본 계획 및 배포 지침을 다루어야 합니다.
@@ -118,7 +118,7 @@ Azure에 배포하는 데 필요한 네트워크 인프라는 단일 Business On
 
 원칙적으로, 다음 지침을 따라야 합니다.
 
-- 표준 HDD보다 프리미엄 SSD를 사용합니다. 사용 가능한 디스크 유형에 대한 자세한 내용은 [디스크 유형 선택](../../windows/disks-types.md) 문서를 참조하세요.
+- 표준 HDD보다 프리미엄 SSD를 사용합니다. 사용 가능한 디스크 유형에 대한 자세한 내용은 [디스크 유형 선택](../../disks-types.md) 문서를 참조하세요.
 - 비관리형 디스크보다 Azure Managed Disks 사용
 - 디스크 구성을 사용하여 충분한 IOPS 및 I/O 처리량이 구성되었는지 확인
 - 비용 효율적인 스토리지 구성을 위해 /hana/data 및 /hana/log 볼륨 결합

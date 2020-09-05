@@ -7,15 +7,15 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: article
 ms.date: 09/25/2019
-ms.openlocfilehash: ae9a421a165d6c8bda688819c5233ae5bb1a8562
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 38686ba35285159d7a27724b5402a6b6e2f3a696
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79139099"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815524"
 ---
 # <a name="azure-red-hat-openshift-customer-administrator-role"></a>Azure Red Hat OpenShift 고객 관리자 역할
-
+ 
 Azure Red Hat OpenShift 클러스터의 클러스터 관리자입니다. 사용자 계정의 사용 권한 및 사용자가 만든 모든 프로젝트에 대 한 액세스 권한이 증가 했습니다.
 
 계정에 바인딩된 고객 관리 클러스터 권한 부여 역할이 있는 경우 프로젝트를 자동으로 관리할 수 있습니다.
@@ -37,7 +37,7 @@ Azure Red Hat OpenShift 클러스터의 클러스터 관리자입니다. 사용�
 
 ## <a name="confirm-membership-in-the-customer-administrator-role"></a>고객 관리자 역할의 멤버 자격 확인
 
-Customer admin 그룹의 멤버 자격을 확인 하려면 OpenShift CLI 명령 또는를 시도 `oc get nodes` 합니다 `oc projects` . `oc get nodes`고객 관리-클러스터 역할을 보유 하 고 있는 경우에는 노드 목록이 표시 되 고, 고객 관리-프로젝트 역할만 있는 경우에는 사용 권한 오류가 표시 됩니다. `oc projects`에서는 작업 중인 프로젝트 뿐 아니라 클러스터의 모든 프로젝트를 표시 합니다.
+Customer admin 그룹의 멤버 자격을 확인 하려면 OpenShift CLI 명령 또는를 시도 `oc get nodes` 합니다 `oc projects` . `oc get nodes` 고객 관리-클러스터 역할을 보유 하 고 있는 경우에는 노드 목록이 표시 되 고, 고객 관리-프로젝트 역할만 있는 경우에는 사용 권한 오류가 표시 됩니다. `oc projects` 에서는 작업 중인 프로젝트 뿐 아니라 클러스터의 모든 프로젝트를 표시 합니다.
 
 클러스터에서 역할 및 사용 권한을 자세히 살펴보려면 명령을 사용할 수 있습니다 [`oc policy who-can <verb> <resource>`](https://docs.openshift.com/container-platform/3.11/admin_guide/manage_rbac.html#managing-role-bindings) .
 

@@ -3,12 +3,13 @@ title: Batch를 사용하여 Key Vault에 안전하게 액세스
 description: Azure Batch를 사용하여 Key Vault의 자격 증명에 프로그래밍 방식으로 액세스하는 방법을 알아봅니다.
 ms.topic: how-to
 ms.date: 02/13/2020
-ms.openlocfilehash: 6ea248dd51ae6786b0e987dc31ca83b29277cd16
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 6938d0fcd2357efcf03053b0c9b2bde3954270b7
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85961509"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079441"
 ---
 # <a name="securely-access-key-vault-with-batch"></a>Batch를 사용하여 Key Vault에 안전하게 액세스
 

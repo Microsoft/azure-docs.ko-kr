@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 8ced35f30966a96061792ad2171afe19599ed22c
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 8ca3688ad11bc7a694327990be22b8eccd8f8161
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077257"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962862"
 ---
 # <a name="access-azure-storage-as-a-network-share-from-a-container-in-app-service"></a>App Service의 컨테이너에서 네트워크 공유로 Azure Storage 액세스
 
@@ -27,7 +27,7 @@ ms.locfileid: "88077257"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 ::: zone pivot="container-windows"
 
@@ -77,7 +77,7 @@ ms.locfileid: "88077257"
 
 [Azure Storage 계정, 파일 공유 및 디렉터리](#prerequisites)를 만들었으면 이제 Azure Storage를 사용 하 여 앱을 구성할 수 있습니다.
 
-App Service 앱의 디렉터리에 Azure Files 공유를 탑재 하려면 [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) 명령을 사용 합니다. 저장소 유형은 AzureFiles 여야 합니다.
+App Service 앱의 디렉터리에 Azure Files 공유를 탑재 하려면 [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) 명령을 사용 합니다. 저장소 유형은 AzureFiles 여야 합니다.
 
 ```azurecli
 az webapp config storage-account add --resource-group <group-name> --name <app-name> --custom-id <custom-id> --storage-type AzureFiles --share-name <share-name> --account-name <storage-account-name> --access-key "<access-key>" --mount-path <mount-path-directory of form c:<directory name> >
@@ -91,7 +91,7 @@ Azure Files 공유에 연결 하려는 다른 모든 디렉터리에 대해이 �
 
 [Azure Storage 계정, 파일 공유 및 디렉터리](#prerequisites)를 만들었으면 이제 Azure Storage를 사용 하 여 앱을 구성할 수 있습니다.
 
-App Service 앱의 디렉터리에 저장소 계정을 탑재 하려면 [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) 명령을 사용 합니다. 스토리지 형식은 AzureBlob 또는 AzureFiles일 수 있습니다. AzureFiles는이 예제에서 사용 됩니다. 탑재 경로 설정은 Azure Storage에서 탑재 하려는 폴더에 해당 합니다. '/'로 설정 하면 전체 Azure Storage가 탑재 됩니다.
+App Service 앱의 디렉터리에 저장소 계정을 탑재 하려면 [`az webapp config storage-account add`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) 명령을 사용 합니다. 스토리지 형식은 AzureBlob 또는 AzureFiles일 수 있습니다. AzureFiles는이 예제에서 사용 됩니다. 탑재 경로 설정은 Azure Storage에서 탑재 하려는 폴더에 해당 합니다. '/'로 설정 하면 전체 Azure Storage가 탑재 됩니다.
 
 
 > [!CAUTION]

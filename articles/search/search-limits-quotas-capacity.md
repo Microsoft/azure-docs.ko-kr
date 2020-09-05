@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.openlocfilehash: 35cac2c05a8603313bb2bbe1bde3817dc88c6ed2
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.date: 08/21/2020
+ms.openlocfilehash: 62a0b0ec5312b4d00724fe7c13a5e20b5d35e34f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682639"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926867"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Azure Cognitive Search의 서비스 제한
 
@@ -44,8 +44,8 @@ ms.locfileid: "83682639"
 | 인덱스당 최대 복합 컬렉션 필드 |40 |40 |40 |40 |40 |40 |40 |40 |
 | 문서당 모든 복합 컬렉션에서 최대 요소 수&nbsp;<sup>2</sup> |3000 |3000 |3000 |3000 |3000 |3000 |3000 |3000 |
 | 복합 필드의 최대 깊이 |10 |10 |10 |10 |10 |10 |10 |10 |
-| 인덱스당 최대 [확인기](https://docs.microsoft.com/rest/api/searchservice/suggesters) |1 |1 |1 |1 |1 |1 |1 |1 |
-| 인덱스당 [최대 점수 매기기](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index) 프로필 |100 |100 |100 |100 |100 |100 |100 |100 |
+| 인덱스당 최대 [확인기](/rest/api/searchservice/suggesters) |1 |1 |1 |1 |1 |1 |1 |1 |
+| 인덱스당 [최대 점수 매기기](/rest/api/searchservice/add-scoring-profiles-to-a-search-index) 프로필 |100 |100 |100 |100 |100 |100 |100 |100 |
 | 프로필당 최대 함수 |8 |8 |8 |8 |8 |8 |8 |8 |
 
 <sup>1</sup> 2017년 12월 이전에 생성된 기본 서비스는 인덱스에서 낮은 제한(15 대신 5)을 갖습니다. 기본 계층은 인덱스당 100개 필드 제한보다 더 낮은 SKU입니다.
@@ -58,7 +58,7 @@ ms.locfileid: "83682639"
 
 2018년 10월을 기준으로 모든 지역의 모든 청구 가능 계층(기본, S1, S2, S3, S3 HD)에서 생성된 모든 새 서비스에 대한 문서 수 제한이 더 이상 적용되지 않습니다. 2018년 10월 이전에 만든 이전 서비스는 여전히 문서 수 제한에 적용될 수 있습니다.
 
-서비스에 문서 제한이 있는지 여부를 확인하려면 [서비스 통계 가져오기 REST API](https://docs.microsoft.com/rest/api/searchservice/get-service-statistics)를 사용합니다. 문서 제한은 응답에 반영되며 제한 없음을 나타내는 `null`로 표시됩니다.
+서비스에 문서 제한이 있는지 여부를 확인하려면 [서비스 통계 가져오기 REST API](/rest/api/searchservice/get-service-statistics)를 사용합니다. 문서 제한은 응답에 반영되며 제한 없음을 나타내는 `null`로 표시됩니다.
 
 > [!NOTE]
 > 서비스에 의해 적용되는 문서 제한은 없지만, 기본, S1, S2 및 S3 검색 서비스의 인덱스당 약 240억 개 문서의 분할 제한이 있습니다. S3 HD의 경우 분할 제한은 인덱스당 20억 개 문서입니다. 복합 컬렉션의 각 요소는 분할 제한을 기준으로 개별 문서로 계산됩니다.
@@ -83,8 +83,8 @@ ms.locfileid: "83682639"
 | 최대 기술 집합 <sup>4</sup> |3 |5 또는 15 |50 |200 |200 |해당 없음 |10 |10 |
 | 호출당 최대 인덱싱 로드 |10,000개 문서 |최대 문서에 의해서만 제한됨 |최대 문서에 의해서만 제한됨 |최대 문서에 의해서만 제한됨 |최대 문서에 의해서만 제한됨 |해당 없음 |제한 없음 |제한 없음 |
 | 최소 일정 | 5분 |5분 |5분 |5분 |5분 |5분 |5분 | 5분 |
-| 최대 실행 시간 <sup>5</sup> | 1-3분 |24시간 |24시간 |24시간 |24시간 |해당 없음  |24시간 |24시간 |
-| 인식 검색 기능이나 이미지 분석을 통한 Blob 인덱싱의 최대 실행 시간 <sup>5</sup> | 3~10분 |2시간 |2시간 |2시간 |2시간 |해당 없음  |2시간 |2시간 |
+| 최대 실행 시간| 1-3분 |24시간 |24시간 |24시간 |24시간 |해당 없음  |24시간 |24시간 |
+| 기술 <sup>5</sup> 를 사용 하는 인덱서의 최대 실행 시간 | 3~10분 |2시간 |2시간 |2시간 |2시간 |해당 없음  |2시간 |2시간 |
 | Blob 인덱서: 최대 Blob 크기(MB) |16 |16 |128 |256 |256 |해당 없음  |256 |256 |
 | Blob 인덱서: Blob에서 추출된 콘텐츠의 최대 문자 |32,000 |64,000 |4&nbsp;백만 |8&nbsp;백만 |16&nbsp;백만 |해당 없음 |4&nbsp;백만 |4&nbsp;백만 |
 
@@ -120,7 +120,7 @@ QPS 예상 값은 모든 고객에 의해 독립적으로 개발되어야 합니
 
 ## <a name="data-limits-ai-enrichment"></a>데이터 제한(AI 보강)
 
-[엔터티 인식](cognitive-search-skill-entity-recognition.md), [핵심 구 추출](cognitive-search-skill-keyphrases.md), [감정 분석](cognitive-search-skill-sentiment.md), [언어 감지](cognitive-search-skill-language-detection.md) 및 [개인 정보 검색](cognitive-search-skill-pii-detection.md)에 대한 Text Analytics 리소스로 호출을 만드는 [AI 보강 파이프라인](cognitive-search-concept-intro.md)은 데이터가 제한될 수 있습니다. 레코드의 최대 크기는 [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)에 의해 측정된 대로 50,000자여야 합니다. 감성 분석기로 보내기 전에 데이터를 분할해야 할 경우 [텍스트 분할 기술](cognitive-search-skill-textsplit.md)을 사용합니다.
+[엔터티 인식](cognitive-search-skill-entity-recognition.md), [핵심 구 추출](cognitive-search-skill-keyphrases.md), [감정 분석](cognitive-search-skill-sentiment.md), [언어 감지](cognitive-search-skill-language-detection.md) 및 [개인 정보 검색](cognitive-search-skill-pii-detection.md)에 대한 Text Analytics 리소스로 호출을 만드는 [AI 보강 파이프라인](cognitive-search-concept-intro.md)은 데이터가 제한될 수 있습니다. 레코드의 최대 크기는 [`String.Length`](/dotnet/api/system.string.length)에 의해 측정된 대로 50,000자여야 합니다. 감성 분석기로 보내기 전에 데이터를 분할해야 할 경우 [텍스트 분할 기술](cognitive-search-skill-textsplit.md)을 사용합니다.
 
 ## <a name="throttling-limits"></a>스로틀 제한
 
@@ -141,7 +141,7 @@ QPS 예상 값은 모든 고객에 의해 독립적으로 개발되어야 합니
 * $orderby 절에 최대 32개의 필드
 * 최대 검색어 크기는 UTF-8 인코딩된 텍스트로 32,766바이트(32KB에서 2바이트를 뺀 값)입니다.
 
-<sup>1</sup> Azure Cognitive Search에서는 이론적 제한으로 달리 제한되지 않는 개별 필드 또는 컬렉션의 콘텐츠에 대한 실질적 한도를 부과하기 위해 요청 본문에 16MB의 상한이 적용됩니다(필드 컴퍼지션 및 제한 사항에 대한 자세한 내용은 [지원되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) 참조).
+<sup>1</sup> Azure Cognitive Search에서는 이론적 제한으로 달리 제한되지 않는 개별 필드 또는 컬렉션의 콘텐츠에 대한 실질적 한도를 부과하기 위해 요청 본문에 16MB의 상한이 적용됩니다(필드 컴퍼지션 및 제한 사항에 대한 자세한 내용은 [지원되는 데이터 형식](/rest/api/searchservice/supported-data-types) 참조).
 
 ## <a name="api-response-limits"></a>API 응답 제한
 * 검색 결과 페이지당 반환되는 문서 최대 1000개

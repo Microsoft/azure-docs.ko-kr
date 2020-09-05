@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 06/09/2020
+ms.date: 08/31/2020
 ms.author: victorh
-ms.openlocfilehash: be2bf0f9590a23f9def44a1800338c80f69a782c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 272f5b747efbc3776b1b2ba7c3546ade717c2452
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610526"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231370"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Azure 방화벽 SNAT 개인 IP 주소 범위
 
@@ -20,9 +20,12 @@ Azure 방화벽은 공용 IP 주소에 대 한 모든 아웃 바운드 트래픽
 
 이 논리는 트래픽을 인터넷으로 직접 라우팅하는 경우에 효과적입니다. 그러나 [강제 터널링](forced-tunneling.md)을 사용 하도록 설정한 경우 인터넷 바인딩된 트래픽은 AzureFirewallSubnet의 방화벽 개인 IP 주소 중 하나에 연결 되어 온-프레미스 방화벽에서 원본을 숨깁니다.
 
-조직에서 개인 네트워크에 대해 공용 IP 주소 범위를 사용하면 Azure Firewall은 AzureFirewallSubnet의 방화벽 개인 IP 주소 중 하나에 트래픽을 SNAT합니다. 그러나 공용 IP 주소 범위를 SNAT **하지 않도록** Azure 방화벽을 구성할 수 있습니다.
+조직에서 개인 네트워크에 대해 공용 IP 주소 범위를 사용하면 Azure Firewall은 AzureFirewallSubnet의 방화벽 개인 IP 주소 중 하나에 트래픽을 SNAT합니다. 그러나 공용 IP 주소 범위를 SNAT **하지 않도록** Azure 방화벽을 구성할 수 있습니다. 예를 들어 개별 IP 주소를 지정 하려면 다음과 같이 지정할 수 있습니다 `192.168.1.10` . IP 주소 범위를 지정 하려면 다음과 같이 지정할 수 있습니다 `192.168.1.0/24` .
 
 대상 IP 주소에 관계 없이 Azure 방화벽을 SNAT 하지 않도록 구성 하려면 개인 IP 주소 범위로 **0.0.0.0/0** 을 사용 합니다. 이 구성을 사용 하는 경우 Azure 방화벽은 트래픽을 인터넷으로 직접 라우팅할 수 없습니다. 대상 주소에 관계 없이 항상 SNAT를 사용 하도록 방화벽을 구성 하려면 전용 IP 주소 범위로 **255.255.255.255/32** 를 사용 합니다.
+
+> [!IMPORTANT]
+> 사용자 고유의 개인 IP 주소 범위를 지정 하 고 기본 IANA RFC 1918 주소 범위를 유지 하려면 사용자 지정 목록에 IANA RFC 1918 범위가 계속 포함 되어 있는지 확인 합니다. 
 
 ## <a name="configure-snat-private-ip-address-ranges---azure-powershell"></a>SNAT 개인 IP 주소 범위 구성-Azure PowerShell
 

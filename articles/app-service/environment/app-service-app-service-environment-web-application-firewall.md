@@ -7,17 +7,17 @@ ms.topic: tutorial
 ms.date: 03/03/2018
 ms.author: stefsch
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d629aca791794de6c3e065fdc9f4a9e7f6d8a5df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e40a42afc99d505dc48794d5ad919e4d682b7070
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833184"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961842"
 ---
 # <a name="configuring-a-web-application-firewall-waf-for-app-service-environment"></a>App Service Environment에 대한 웹 애플리케이션 방화벽(WAF) 구성
 ## <a name="overview"></a>개요
 
-WAF(웹 애플리케이션 방화벽)를 통해 SQL 삽입, 사이트 간 스크립팅, 맬웨어 업로드 및 애플리케이션 DDoS와 기타 공격을 차단하기 위해 인바운드 웹 트래픽을 검사하여 웹 애플리케이션을 보호할 수 있습니다. DLP(데이터 손실 방지)를 위해 백 엔드 웹 서버로부터의 응답도 검사합니다. App Service Environment는 격리와 추가 확장의 조합을 제공합니다. 이 조합은 악의적인 요청과 고용량 트래픽을 견뎌야 하는 호스트 비즈니스 중요한 웹 애플리케이션에 이상적인 환경을 제공합니다. Azure에서는 [Application Gateway](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction)를 사용하여 WAF 기능을 제공합니다.  Application Gateway와 App Service 환경을 통합하는 방법을 보려면 [Application Gateway와 ILB ASE 통합](https://docs.microsoft.com/azure/app-service/environment/integrate-with-application-gateway) 문서를 참고하세요.
+WAF(웹 애플리케이션 방화벽)를 통해 SQL 삽입, 사이트 간 스크립팅, 맬웨어 업로드 및 애플리케이션 DDoS와 기타 공격을 차단하기 위해 인바운드 웹 트래픽을 검사하여 웹 애플리케이션을 보호할 수 있습니다. DLP(데이터 손실 방지)를 위해 백 엔드 웹 서버로부터의 응답도 검사합니다. App Service Environment는 격리와 추가 확장의 조합을 제공합니다. 이 조합은 악의적인 요청과 고용량 트래픽을 견뎌야 하는 호스트 비즈니스 중요한 웹 애플리케이션에 이상적인 환경을 제공합니다. Azure에서는 [Application Gateway](../../application-gateway/overview.md)를 사용하여 WAF 기능을 제공합니다.  Application Gateway와 App Service 환경을 통합하는 방법을 보려면 [Application Gateway와 ILB ASE 통합](./integrate-with-application-gateway.md) 문서를 참고하세요.
 
 Azure Application Gateway 외에도 [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.waf?tab=PlansAndPrice)에서 사용할 수 있는 [Azure용 Barracuda WAF](https://www.barracuda.com/programs/azure)와 같은 여러 마켓플레이스 옵션이 있습니다. 이 문서의 나머지 부분에서는 Barracuda WAF 디바이스와 App Service 환경을 통합하는 방법에 중점을 둡니다.
 
@@ -34,7 +34,7 @@ Azure Application Gateway 외에도 [Azure Marketplace](https://azuremarketplace
 > 
 
 ## <a name="configuring-your-app-service-environment"></a>App Service Environment 구성
-App Service Environment를 구성하려면 해당 제목의 [설명서](app-service-web-how-to-create-an-app-service-environment.md)를 참조하세요. App Service Environment를 만들면 Web Apps, API Apps 및 [Mobile Apps](../../app-service-mobile/app-service-mobile-value-prop.md)를 다음 섹션에서 구성할 WAF로 보호 받는 환경에서 만들 수 있습니다.
+App Service Environment를 구성하려면 해당 제목의 [설명서](app-service-web-how-to-create-an-app-service-environment.md)를 참조하세요. App Service Environment를 만들면 Web Apps, API Apps 및 [Mobile Apps](/previous-versions/azure/app-service-mobile/app-service-mobile-value-prop)를 다음 섹션에서 구성할 WAF로 보호 받는 환경에서 만들 수 있습니다.
 
 ## <a name="configuring-your-barracuda-waf-cloud-service"></a>Barracuda WAF 클라우드 서비스를 구성합니다.
 Barracuda에는 Azure의 가상 머신에 WAF를 배포하는 방법에 대한 [자세한 문서](https://campus.barracuda.com/product/webapplicationfirewall/article/WAF/DeployWAFInAzure) 가 있습니다. 이 설명서를 따라할 때 중복성을 원하고 단일 실패 지점을 도입하지 않는 것뿐만 아니라, 동일한 클라우드 서비스 안에 최소 2개의 WAF 인스턴스 VM을 배포하는 것을 원합니다.

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 72f6cee18664f63e36c38499e77f4c0ba7177c96
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 45dc137141491938367fb57c6955e8e3145f8ff9
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386863"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050457"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>자습서: Azure Functions를 사용하여 Azure SignalR Service 인증
 
@@ -38,9 +38,13 @@ Azure Functions, App Service 인증 및 SignalR Service를 사용하여 인증 �
   * [Azure Functions](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) - VS Code에서 Azure Functions를 사용합니다.
   * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - 테스트를 위해 웹 페이지를 로컬로 제공합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
+
 ## <a name="sign-into-the-azure-portal"></a>Azure Portal에 로그인합니다.
 
 [Azure Portal](https://portal.azure.com/)로 이동하여 자격 증명으로 로그인합니다.
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
 
 ## <a name="create-an-azure-signalr-service-instance"></a>Azure SignalR Service 인스턴스 만들기
 
@@ -54,19 +58,20 @@ Azure Functions 앱을 로컬로 빌드하고 테스트합니다. 이 앱은 미
 
 1. 다음 정보를 입력합니다.
 
-    | 속성 | 값 |
+    | Name | 값 |
     |---|---|
     | 리소스 이름 | SignalR Service 인스턴스에 대한 고유한 이름입니다. |
-    | Resource group | 고유한 이름으로 새 리소스 그룹을 만듭니다. |
+    | 리소스 그룹 | 고유한 이름으로 새 리소스 그룹을 만듭니다. |
     | 위치 | 가까운 위치를 선택합니다. |
-    | 가격 책정 계층 | 무료 |
+    | 가격 책정 계층 | Free |
 
 1. **만들기**를 클릭합니다.
 
 1. 인스턴스가 배포되면 포털에서 열고 해당 설정 페이지를 찾습니다. 서비스 모드 설정을 *서버리스*로 변경합니다.
 
     ![SignalR Service 모드](media/signalr-concept-azure-functions/signalr-service-mode.png)
-
+    
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
 
 ## <a name="initialize-the-function-app"></a>함수 앱 초기화
 
@@ -131,7 +136,7 @@ Azure Functions 런타임을 로컬로 실행하고 디버그하는 경우 **loc
 
 1. 파일을 저장합니다.
 
-    
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
 
 ## <a name="create-a-function-to-authenticate-users-to-signalr-service"></a>사용자를 SignalR Service에 인증하는 함수 만들기
 
@@ -142,15 +147,15 @@ Azure Functions 런타임을 로컬로 실행하고 디버그하는 경우 **loc
 
 1. VS Code 명령 팔레트를 엽니다(`Ctrl-Shift-P`, macOS: `Cmd-Shift-P`).
 
-1. **Azure Functions: 함수 만들기** 명령을 검색하여 선택합니다.
+1. **Azure Functions: Create Function** 명령을 찾아 선택합니다.
 
 1. 메시지가 표시되면 다음 정보를 제공합니다.
 
-    | 속성 | 값 |
+    | 이름 | 값 |
     |---|---|
     | 함수 앱 폴더 | 주 프로젝트 폴더를 선택합니다. |
     | 템플릿 | HTTP 트리거 |
-    | 속성 | negotiate |
+    | 이름 | negotiate |
     | 권한 부여 수준 | 익명 |
 
     새 함수가 포함된 **negotiate**라는 폴더가 만들어집니다.
@@ -195,21 +200,23 @@ Azure Functions 런타임을 로컬로 실행하고 디버그하는 경우 **loc
 
     이 함수는 입력 바인딩의 SignalR 연결 정보를 가져와서 HTTP 응답 본문의 클라이언트에 반환합니다. SignalR 클라이언트는 이 정보를 사용하여 SignalR Service 인스턴스에 연결합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
+
 ## <a name="create-a-function-to-send-chat-messages"></a>채팅 메시지를 보내는 함수 만들기
 
 웹앱에는 채팅 메시지를 보내는 HTTP API가 필요합니다. SignalR Service를 통해 연결된 모든 클라이언트에 메시지를 보내는 *SendMessage*라는 HTTP 트리거 함수를 만듭니다.
 
 1. VS Code 명령 팔레트를 엽니다(`Ctrl-Shift-P`, macOS: `Cmd-Shift-P`).
 
-1. **Azure Functions: 함수 만들기** 명령을 검색하여 선택합니다.
+1. **Azure Functions: Create Function** 명령을 찾아 선택합니다.
 
 1. 메시지가 표시되면 다음 정보를 제공합니다.
 
-    | 속성 | 값 |
+    | 이름 | 값 |
     |---|---|
     | 함수 앱 폴더 | 주 프로젝트 폴더를 선택합니다. |
     | 템플릿 | HTTP 트리거 |
-    | 속성 | SendMessage |
+    | 이름 | SendMessage |
     | 권한 부여 수준 | 익명 |
 
     새 함수가 포함된 **SendMessage**라는 폴더가 만들어집니다.
@@ -276,6 +283,8 @@ Azure Functions 런타임을 로컬로 실행하고 디버그하는 경우 **loc
 
 1. 파일을 저장합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
+
 ## <a name="create-and-run-the-chat-client-web-user-interface"></a>채팅 클라이언트 웹 사용자 인터페이스 만들기 및 실행
 
 채팅 애플리케이션의 UI는 Vue JavaScript 프레임워크를 사용하여 만든 간단한 SPA(단일 페이지 애플리케이션)입니다. 함수 앱과 별도로 호스팅됩니다. 로컬에서는 Live Server VS Code 확장을 사용하여 웹 인터페이스를 실행합니다.
@@ -294,6 +303,8 @@ Azure Functions 런타임을 로컬로 실행하고 디버그하는 경우 **loc
 
 1. 애플리케이션이 열립니다. 채팅 상자에서 메시지를 입력하고 Enter 키를 누릅니다. 새 메시지를 보려면 애플리케이션을 새로 고칩니다. 인증이 구성되지 않았으므로 모든 메시지는 "익명"으로 보내집니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
+
 ## <a name="deploy-to-azure-and-enable-authentication"></a>Azure에 배포 및 인증을 사용하도록 설정
 
 함수 앱 및 채팅 애플리케이션을 로컬로 실행했습니다. 이제 이러한 앱을 Azure에 배포하고 애플리케이션에서 인증 및 프라이빗 메시징을 사용하도록 설정합니다.
@@ -302,7 +313,7 @@ Azure Functions 런타임을 로컬로 실행하고 디버그하는 경우 **loc
 
 1. VS Code 명령 팔레트를 엽니다(`Ctrl-Shift-P`, macOS: `Cmd-Shift-P`).
 
-1. **Azure: 로그인** 명령을 검색하여 선택합니다.
+1. **Azure: 로그인** 명령을 검색하고 선택합니다.
 
 1. 지침에 따라 브라우저에서 로그인 프로세스를 수행합니다.
 
@@ -316,13 +327,13 @@ Azure에서 실행되는 함수 앱에는 Azure Storage 계정이 필요합니�
 
 1. 다음 정보를 입력합니다.
 
-    | 속성 | 값 |
+    | Name | 값 |
     |---|---|
     | Subscription | SignalR Service 인스턴스가 포함된 구독 선택 |
-    | Resource group | 동일한 리소스 그룹 선택 |
+    | 리소스 그룹 | 동일한 리소스 그룹 선택 |
     | 리소스 이름 | 스토리지 계정에 대한 고유한 이름 |
     | 위치 | 다른 리소스와 동일한 위치 선택 |
-    | 성능 | Standard |
+    | 성능 | 표준 |
     | 계정 종류 | StorageV2(범용 V2) |
     | 복제 | LRS(로컬 중복 스토리지) |
     | 액세스 계층 | 핫 |
@@ -339,7 +350,7 @@ Azure에서 실행되는 함수 앱에는 Azure Storage 계정이 필요합니�
 
 1. **인덱스 문서 이름**에 *index.html*을 입력합니다.
 
-1. **저장**을 클릭합니다.
+1. **Save**을 클릭합니다.
 
 1. **기본 엔드포인트**가 나타납니다. 이 값을 적어 둡니다. 함수 앱을 구성하는 데 필요합니다.
 
@@ -372,13 +383,13 @@ Azure에서 실행되는 함수 앱에는 Azure Storage 계정이 필요합니�
 
 1. 메시지가 표시되면 다음 정보를 제공합니다.
 
-    | 속성 | 값 |
+    | 이름 | 값 |
     |---|---|
     | 배포할 폴더 | 주 프로젝트 폴더를 선택합니다. |
-    | Subscription | 구독 선택 |
+    | 구독 | 구독 선택 |
     | 함수 앱 | **새 함수 앱 만들기**를 선택합니다. |
     | 함수 앱 이름 | 고유한 이름을 입력합니다. |
-    | Resource group | SignalR Service 인스턴스와 동일한 리소스 그룹을 선택합니다. |
+    | 리소스 그룹 | SignalR Service 인스턴스와 동일한 리소스 그룹을 선택합니다. |
     | 스토리지 계정 | 이전에 만든 스토리지 계정을 선택합니다. |
 
     새 함수 앱이 Azure에 만들어지고 배포가 시작됩니다. 배포가 완료될 때가지 기다립니다.
@@ -391,10 +402,10 @@ Azure에서 실행되는 함수 앱에는 Azure Storage 계정이 필요합니�
 
 1. 메시지가 표시되면 다음 정보를 제공합니다.
 
-    | 속성 | 값 |
+    | 이름 | 값 |
     |---|---|
     | 로컬 설정 파일 | local.settings.json |
-    | Subscription | 구독 선택 |
+    | 구독 | 구독 선택 |
     | 함수 앱 | 이전에 배포한 함수 앱을 선택합니다. |
 
 로컬 설정이 Azure의 함수 앱에 업로드됩니다. 기존 설정을 덮어쓸지 묻는 메시지가 표시되면 **모두 예**를 선택합니다.
@@ -450,9 +461,9 @@ App Service 인증은 Azure Active Directory, Facebook, Twitter, Microsoft 계�
 
 1. 다음 값을 입력합니다.
 
-    | 속성 | 값 |
+    | Name | 값 |
     |---|---|
-    | Subscription | 구독 선택 |
+    | 구독 | 구독 선택 |
     | 스토리지 계정 | 이전에 만든 스토리지 계정을 선택합니다. |
     | 배포할 폴더 | **찾아보기**를 선택하고 *content* 폴더를 선택합니다. |
 
@@ -490,9 +501,13 @@ CORS 설정은 **local.settings.json**에 있지만 Azure의 함수 앱에 전�
 
 ![데모](media/signalr-tutorial-authenticate-azure-functions/signalr-serverless-chat.gif)
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
+
 ## <a name="clean-up-resources"></a>리소스 정리
 
 이 자습서에서 만든 리소스를 정리하려면 Azure Portal을 사용하여 해당 리소스 그룹을 삭제합니다.
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -500,3 +515,6 @@ CORS 설정은 **local.settings.json**에 있지만 Azure의 함수 앱에 전�
 
 > [!div class="nextstepaction"]
 > [Azure Functions를 사용하여 실시간 앱 빌드](signalr-concept-azure-functions.md)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsauth)
+

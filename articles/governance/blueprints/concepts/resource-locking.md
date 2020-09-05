@@ -1,14 +1,14 @@
 ---
 title: 리소스 잠금 이해
 description: 청사진을 할당할 때 리소스를 보호 하기 위해 Azure 청사진의 잠금 옵션에 대해 알아봅니다.
-ms.date: 03/25/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 94ed8efd0d6c654cba129dfc69fbfe5add7a0824
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5e60724a276bce94770c5fdc33ee0c8b4e7712fe
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81383602"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051505"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Azure Blueprints의 리소스 잠금 이해
 
@@ -28,7 +28,7 @@ ms.locfileid: "81383602"
 |-|-|-|-|
 |잠그지 않음|*|잠겨있지 않음|리소스는 Azure 청사진에 의해 보호 되지 않습니다. 이 상태는 또한 청사진 할당 외부에서 **읽기 전용** 또는 **삭제 안 함** 리소스 그룹 아티팩트에 추가된 리소스에 사용됩니다.|
 |읽기 전용|Resource group|편집/삭제할 수 없음|리소스 그룹이 읽기 전용이며 리소스 그룹의 태그를 수정할 수 없습니다. **잠겨 있지 않음** 리소스는 이 리소스 그룹에서 추가, 이동, 변경 또는 삭제할 수 있습니다.|
-|읽기 전용|리소스 그룹이 아님|읽기 전용|리소스를 어떤 방식으로도 변경할 수 없으며 삭제할 수도 없습니다.|
+|읽기 전용|리소스 그룹이 아님|읽기 전용|리소스는 어떤 방식으로든 변경할 수 없습니다. 변경 내용 및 삭제할 수 없습니다.|
 |삭제 안 함|*|삭제할 수 없음|리소스를 변경할 수 있지만 삭제할 수 없습니다. **잠겨 있지 않음** 리소스는 이 리소스 그룹에서 추가, 이동, 변경 또는 삭제할 수 있습니다.|
 
 ## <a name="overriding-locking-states"></a>잠금 상태 재정의
@@ -182,8 +182,8 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 ## <a name="next-steps"></a>다음 단계
 
 - [새 리소스 보호](../tutorials/protect-new-resources.md) 자습서를 따르세요.
-- [청사진 수명 주기](lifecycle.md)에 대해 알아봅니다.
-- [정적 및 동적 매개 변수](parameters.md) 사용 방법 이해
-- [청사진 시퀀싱 순서](sequencing-order.md)를 사용자 지정하는 방법 알아보기
+- [청사진 수명 주기](./lifecycle.md)에 대해 알아봅니다.
+- [정적 및 동적 매개 변수](./parameters.md) 사용 방법 이해
+- [청사진 시퀀싱 순서](./sequencing-order.md)를 사용자 지정하는 방법 알아보기
 - [기존 할당을 업데이트](../how-to/update-existing-assignments.md)하는 방법 알아보기
 - [일반 문제 해결 방법](../troubleshoot/general.md)을 통해 청사진 할당 중에 발생하는 문제 해결

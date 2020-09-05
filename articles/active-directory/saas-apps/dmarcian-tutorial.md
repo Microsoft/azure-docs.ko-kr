@@ -2,26 +2,21 @@
 title: '자습서: dmarcian과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 dmarcian 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: a04b9383-3a60-4d54-9412-123daaddff3b
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/01/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8ad669f092fac0cc2e737d93ccc9d225ef57adf
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 8868b17766513ba1e93b25bf2aeff6553c62ba62
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799550"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88536158"
 ---
 # <a name="tutorial-integrate-dmarcian-with-azure-active-directory"></a>자습서: Azure Active Directory와 dmarcian 통합
 

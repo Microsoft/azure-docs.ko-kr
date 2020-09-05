@@ -5,17 +5,20 @@ author: sideeksh
 manager: rochakm
 ms.topic: troubleshooting
 ms.date: 11/27/2018
-ms.openlocfilehash: 913f1f2a7a03c1abb83d8daa6d4b0c3f6e77e309
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: c1915d108bf9465d3e5b8d6a55053b583ee4f580
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133750"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184621"
 ---
 # <a name="troubleshoot-azure-vm-extension-issues"></a>Azure VM 확장 문제 해결
 
 이 문서에서는 VM 에이전트 및 확장과 관련 된 Azure Site Recovery 오류를 해결 하는 데 도움이 되는 문제 해결 단계를 제공 합니다.
 
+## <a name="low-system-resources"></a>시스템 리소스 부족
+
+이 문제는 시스템에 사용 가능한 메모리가 부족 하 여 모바일 서비스 설치에 메모리를 할당할 수 없는 경우에 발생 합니다. 설치를 계속 하 고 성공적으로 완료 하기 위해 충분 한 메모리를 확보 해야 합니다.
 
 ## <a name="azure-site-recovery-extension-time-out"></a>Azure Site Recovery 확장 시간 제한  
 
@@ -59,7 +62,7 @@ Linux 컴퓨터의 에이전트 버전이 만료 된 경우이 오류가 발생 
 
 ### <a name="the-agent-is-installed-in-the-vm-but-its-unresponsive-for-windows-vms"></a><a name="the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms"></a>에이전트가 VM에 설치되어 있지만 응답하지 않습니다(Windows VM의 경우).
 
-#### <a name="solution"></a>솔루션
+#### <a name="solution"></a>해결 방법
 VM 에이전트가 손상되었거나 서비스가 중지되었습니다. VM 에이전트를 다시 설치하면 최신 버전을 가져올 수 있습니다. 또한 서비스와의 통신을 다시 시작하는 데도 도움이 됩니다.
 
 1. VM 서비스(services.msc)에서 Microsoft Azure 게스트 에이전트 서비스가 실행 중인지 확인합니다. Windows Azure 게스트 에이전트 서비스를 다시 시작 합니다.    
@@ -73,7 +76,7 @@ VM 에이전트가 손상되었거나 서비스가 중지되었습니다. VM 에
 
 ### <a name="the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms"></a>VM에 설치된 에이전트가 최신이 아닙니다(Linux VM의 경우).
 
-#### <a name="solution"></a>솔루션
+#### <a name="solution"></a>해결 방법
 Linux VM에 대부분의 에이전트 관련 또는 확장 관련 오류는 이전 VM 에이전트에 영향을 주는 문제로 인해 발생합니다. 이 문제를 해결하려면 다음과 같은 일반 지침을 수행하세요.
 
 1. [Linux VM 에이전트 업데이트](../virtual-machines/extensions/update-linux-agent.md)의 지침을 따르세요.
@@ -95,7 +98,7 @@ Linux VM에 대부분의 에이전트 관련 또는 확장 관련 오류는 이�
 
 확장 상태는 "Empty", "NotReady" 또는 "전환"으로 표시 됩니다.
 
-#### <a name="solution"></a>솔루션
+#### <a name="solution"></a>해결 방법
 
 확장을 제거하고 작업을 다시 시작합니다.
 
@@ -103,7 +106,7 @@ Linux VM에 대부분의 에이전트 관련 또는 확장 관련 오류는 이�
 
 1. [Azure Portal](https://portal.azure.com/)에서 백업 오류가 발생 한 VM으로 이동 합니다.
 1. **설정**을 선택합니다.
-1. **확장**을 선택합니다.
+1. **확장**을 섡택합니다.
 1. **Site Recovery 확장**을 선택합니다.
 1. **제거**를 선택합니다.
 

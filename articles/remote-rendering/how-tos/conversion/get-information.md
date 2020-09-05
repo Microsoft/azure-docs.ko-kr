@@ -1,20 +1,40 @@
 ---
-title: 변환된 모델에 대한 정보 가져오기
-description: 모든 모델 변환 매개 변수에 대한 설명
+title: 변환에 대 한 정보 가져오기
+description: 변환에 대 한 정보 가져오기
 author: malcolmtyrrell
 ms.author: matyrr
 ms.date: 03/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 722d3e218272202074820db442ab1592042c7011
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 529bfb61b3af7040f3656c04071683841f5abe86
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805003"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870292"
 ---
-# <a name="get-information-about-a-converted-model"></a>변환된 모델에 대한 정보 가져오기
+# <a name="get-information-about-conversions"></a>변환에 대 한 정보 가져오기
 
-변환 서비스에 의해 생성 된 arrAsset 파일은 렌더링 서비스에서 사용 하기 위한 것입니다. 그러나 렌더링 세션을 시작 하지 않고 모델에 대 한 정보에 액세스 하려는 경우가 있을 수 있습니다. 따라서 변환 서비스는 출력 컨테이너의 arrAsset 파일 옆에 JSON 파일을 배치 합니다. 예를 들어 파일을 변환 하는 경우 `buggy.gltf` 출력 컨테이너에는 변환 된 자산 옆에 이라는 파일이 포함 됩니다 `buggy.info.json` `buggy.arrAsset` . 원본 모델, 변환 된 모델 및 변환 자체에 대 한 정보를 포함 합니다.
+## <a name="information-about-a-conversion-the-result-file"></a>변환에 대 한 정보: 결과 파일
+
+변환 서비스는 자산을 변환할 때 모든 문제에 대 한 요약을 "결과 파일"에 기록 합니다. 예를 들어 파일을 변환 하는 경우 `buggy.gltf` 출력 컨테이너에는 라는 파일이 포함 됩니다 `buggy.result.json` .
+
+결과 파일은 변환 중에 발생 한 오류 및 경고를 나열 하 고 결과 요약 (또는 중 하나)을 제공 합니다 `succeeded` `failed` `succeeded with warnings` .
+결과 파일은 개체의 JSON 배열로 구성 되며, 각 개체는,,, 및 중 하나인 문자열 속성을 포함 `warning` 합니다 `error` `internal warning` `internal error` `result` . 최대 한 개의 오류 ( `error` 또는 `internal error` )가 있으며 항상 하나는 있습니다 `result` .
+
+## <a name="example-result-file"></a>예제 *결과* 파일
+
+다음 예제에서는 arrAsset를 성공적으로 생성 한 변환을 설명 합니다. 그러나 누락 된 질감이 있으므로 결과 arrAsset가 의도 된 것이 아닐 수 있습니다.
+
+```JSON
+[
+  {"warning":"4004","title":"Missing texture","details":{"texture":"buggy_baseColor.png","material":"buggy_col"}},
+  {"result":"succeeded with warnings"}
+]
+```
+
+## <a name="information-about-a-converted-model-the-info-file"></a>변환 된 모델에 대 한 정보: 정보 파일
+
+변환 서비스에 의해 생성 된 arrAsset 파일은 렌더링 서비스에서 사용 하기 위한 것입니다. 그러나 렌더링 세션을 시작 하지 않고 모델에 대 한 정보에 액세스 하려는 경우가 있을 수 있습니다. 이 워크플로를 지원 하기 위해 변환 서비스는 출력 컨테이너의 arrAsset 파일 옆에 JSON 파일을 배치 합니다. 예를 들어 파일을 변환 하는 경우 `buggy.gltf` 출력 컨테이너에는 변환 된 자산 옆에 이라는 파일이 포함 됩니다 `buggy.info.json` `buggy.arrAsset` . 원본 모델, 변환 된 모델 및 변환 자체에 대 한 정보를 포함 합니다.
 
 ## <a name="example-info-file"></a>예제 *정보* 파일
 
@@ -100,7 +120,7 @@ ms.locfileid: "84805003"
 이 섹션에서는 원본 장면에 대 한 정보를 제공 합니다. 이 섹션의 값과 원본 모델을 만든 도구의 해당 값 사이에는 종종 차이가 있습니다. 이러한 차이는 내보내기 및 변환 단계에서 모델이 수정 되기 때문에 예상 됩니다.
 
 * `numMeshes`: 각 파트가 단일 자료를 참조할 수 있는 메시 파트의 수입니다.
-* `numFaces`: 전체 모델에 있는 _삼각형_ 의 총 수입니다. 변환 하는 동안 메시를 삼각 측정 합니다. 이 숫자는 [표준 렌더링 VM 크기](../../reference/vm-sizes.md#how-the-renderer-evaluates-the-number-of-polygons)의 polygon 한도에 기여 합니다.
+* `numFaces`: 전체 모델에 있는 _삼각형_ 의 총 수입니다. 변환 하는 동안 메시를 삼각 측정 합니다. 이 숫자는 [표준 렌더링 서버 크기](../../reference/vm-sizes.md#how-the-renderer-evaluates-the-number-of-polygons)의 polygon 한도에 기여 합니다.
 * `numVertices`: 전체 모델의 총 꼭 짓 점 수입니다.
 * `numMaterial`: 전체 모델에 있는 총 자료 수입니다.
 * `numFacesSmallestMesh`: 모델의 가장 작은 메쉬의 삼각형의 수입니다.
@@ -124,6 +144,11 @@ ms.locfileid: "84805003"
 * `numMeshPartsInstanced`: ArrAsset에서 재사용 되는 메시의 수입니다.
 * `recenteringOffset`: `recenterToOrigin` [ConversionSettings](configure-model-conversion.md) 의 옵션을 사용 하는 경우이 값은 변환 된 모델을 원래 위치로 다시 이동 하는 변환입니다.
 * `boundingBox`: 모델의 범위입니다.
+
+## <a name="deprecated-features"></a>사용되지 않는 기능
+
+변환 서비스는 파일 및를 `stdout.txt` `stderr.txt` 출력 컨테이너에 기록 하며이는 경고 및 오류의 유일한 소스입니다.
+이러한 파일은 이제 사용 되지 않습니다. 대신이 목적을 위해 [결과 파일](#information-about-a-conversion-the-result-file) 을 사용 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

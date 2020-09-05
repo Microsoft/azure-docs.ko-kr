@@ -24,7 +24,7 @@
       href: tutorial-backup-vm-at-scale.md
     - name: PowerShell을 사용하여 Azure VM 백업
       href: tutorial-backup-azure-vm.md
-    - name: 디스크 복원
+    - name: Azure CLI를 사용하여 VM 복원
       href: tutorial-restore-disk.md
     - name: 개별 파일 복원
       href: tutorial-restore-files.md
@@ -44,11 +44,6 @@
           href: tutorial-sap-hana-restore-cli.md
         - name: 백업된 SAP HANA 데이터베이스 관리 - CLI
           href: tutorial-sap-hana-manage-cli.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 지원 매트릭스
@@ -146,7 +141,11 @@
         - name: 개요
           href: backup-azure-sql-database.md
         - name: Backup
-          href: backup-sql-server-database-azure-vms.md
+          items:
+            - name: 자격 증명 모음에서 여러 SQL Server VM 백업
+              href: backup-sql-server-database-azure-vms.md
+            - name: VM 창에서 SQL Server VM 백업
+              href: backup-sql-server-vm-from-vm-pane.md
         - name: 복원
           href: restore-sql-database-azure-vm.md
         - name: 관리
@@ -287,8 +286,10 @@
       items:
         - name: 개요
           href: offline-backup-overview.md
-        - name: Azure Data Box를 사용한 오프라인 백업
+        - name: Azure Data Box를 사용한 오프라인 백업(MARS)
           href: offline-backup-azure-data-box.md
+        - name: Azure Data Box를 사용한 오프라인 백업(DPM/MABS)
+          href: offline-backup-azure-data-box-dpm-mabs.md
         - name: 가져오기/내보내기를 사용한 오프라인 백업(MARS)
           href: backup-azure-backup-import-export.md
         - name: 가져오기/내보내기를 사용한 오프라인 백업(DPM/MABS)
@@ -422,6 +423,9 @@
       href: /rest/api/recoveryservices/
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.recoveryservices/allversions
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: 규정 준수

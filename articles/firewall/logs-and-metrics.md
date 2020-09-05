@@ -5,20 +5,20 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 07/21/2020
+ms.date: 08/25/2020
 ms.author: victorh
-ms.openlocfilehash: 9d0a46135e5f763e6253540fe62d63cb59026ccb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 51804a9f98bfa17dcfbeb90a268b91b2d28dbbde
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086594"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88827225"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Azure Firewall 로그 및 메트릭
 
 방화벽 로그를 사용하여 Azure Firewall을 모니터링할 수 있습니다. 또한 Azure Firewall 리소스에서 작업을 감사하려면 활동 로그를 사용할 수 있습니다.
 
-이러한 로그 중 일부는 포털을 통해 액세스할 수 있습니다. 로그를 [Azure Monitor 로그](../azure-monitor/insights/azure-networking-analytics.md), 스토리지 및 Event Hubs로 보내고 Azure Monitor 로그 또는 Excel 및 Power BI와 같은 다른 도구에서 분석합니다.
+이러한 로그 중 일부는 포털을 통해 액세스할 수 있습니다. 로그는 [Azure Monitor 로그](../azure-monitor/insights/azure-networking-analytics.md), 저장소 및 Event Hubs 전송 되며 Azure Monitor 로그 나 Excel 및 Power BI 같은 다른 도구에 의해 분석 될 수 있습니다.
 
 메트릭은 간단한 실시간 시나리오를 지원 하 고 경고 및 빠른 문제 검색에 유용 하 게 사용할 수 있습니다.
 
@@ -115,17 +115,17 @@ Azure 방화벽에 사용할 수 있는 메트릭은 다음과 같습니다.
   - 상태: 가능한 값은 *정상*, *저하*됨, *비정상*입니다.
   - 이유: 방화벽의 해당 상태에 대 한 이유를 나타냅니다. 
 
-     SNAT 포트를 95% > 사용 하는 경우 사용 중인 것으로 간주 되 고 상태는 50% 상태 =**저하** 됨 및 이유 =**SNAT 포트**입니다. 방화벽은 처리 트래픽을 유지 하 고 기존 연결은 영향을 받지 않습니다. 그러나 새 연결은 간헐적으로 설정 되지 않을 수 있습니다.
+     SNAT 포트를 95% > 사용 하는 경우 사용 중인 것으로 간주 되 고 상태는 50% 상태 =**저하** 됨 및 이유 =**SNAT 포트**입니다. 방화벽은 처리 트래픽을 유지하고 기존 연결은 영향을 받지 않습니다. 그러나 새 연결이 간헐적으로 설정되지 않을 수 있습니다.
 
      SNAT 포트를 95% < 사용 하는 경우 방화벽은 정상으로 간주 되 고 상태는 100%로 표시 됩니다.
 
-     SNAT 포트 사용량이 보고 되지 않으면 상태가 0%로 표시 됩니다. 
+     SNAT 포트 사용량이 보고되지 않으면 상태가 0%로 표시됩니다. 
 
 - **Snat 포트 사용률** -방화벽에서 사용한 SNAT 포트의 백분율입니다.
 
     단위:%
 
-   방화벽에 공용 IP 주소를 더 추가 하는 경우 snat 포트 사용률을 줄여 주는 더 많은 SNAT 포트를 사용할 수 있습니다. 또한 방화벽이 CPU 또는 처리량과 같은 다양 한 이유로 확장 될 경우 추가 SNAT 포트도 사용할 수 있게 됩니다. 즉, 서비스가 확장 되기 때문에 공용 IP 주소를 추가 하지 않고도 SNAT 포트 사용률의 지정 된 비율이 중단 될 수 있습니다. 사용 가능한 공용 IP 주소 수를 직접 제어 하 여 방화벽에서 사용할 수 있는 포트를 늘릴 수 있습니다. 그러나 방화벽 크기 조정을 직접 제어할 수는 없습니다. 현재 SNAT 포트는 처음 5 개의 공용 IP 주소에 대해서만 추가 됩니다.   
+   방화벽에 공용 IP 주소를 더 추가하는 경우 SNAT 포트 사용률을 줄여 주는 더 많은 SNAT 포트를 사용할 수 있습니다. 또한 방화벽이 CPU 또는 처리량과 같은 다양한 이유로 스케일 아웃될 경우 추가 SNAT 포트도 사용할 수 있게 됩니다. 즉, 서비스가 확장 되기 때문에 공용 IP 주소를 추가 하지 않고도 SNAT 포트 사용률의 지정 된 비율이 중단 될 수 있습니다. 사용 가능한 공용 IP 주소 수를 직접 제어 하 여 방화벽에서 사용할 수 있는 포트를 늘릴 수 있습니다. 그러나 방화벽 크기 조정을 직접 제어할 수는 없습니다.
 
 
 ## <a name="next-steps"></a>다음 단계

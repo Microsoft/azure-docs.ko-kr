@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: ramamill
-ms.openlocfilehash: d73e2776d0d9c86fe0331f9804bfeade3f1de676
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 19d6933497b469148687dc9c5012513ab7d0314b
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86131793"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047210"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>VMware VM 및 물리적 서버의 재해 복구를 위한 Mobility 서비스
 
@@ -33,10 +33,11 @@ ms.locfileid: "86131793"
 
 강제 설치는 [복제를 사용 하도록 설정](vmware-azure-enable-replication.md#enable-replication)하기 위해 Azure Portal에서 실행 되는 작업의 필수적인 부분입니다. 보호 하려는 Vm 집합을 선택 하 고 복제를 사용 하도록 설정 하 고 나면 구성 서버에서 모바일 서비스 에이전트를 서버에 푸시하고, 에이전트를 설치 하 고, 구성 서버에서 에이전트의 등록을 완료 합니다.
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>사전 요구 사항
 
 - 모든 푸시 설치 [필수 구성 요소가](vmware-azure-install-mobility-service.md) 충족 되는지 확인 합니다.
 - 모든 서버 구성이 [Azure에 대 한 VMware vm 및 물리적 서버 재해 복구를 위한 지원 매트릭스](vmware-physical-azure-support-matrix.md)의 조건을 충족 하는지 확인 합니다.
+- [9.36 버전](https://support.microsoft.com/help/4578241/) 이상, SUSE Linux Enterprise Server 11 s p 4의 경우 [구성 서버 및 스케일 아웃 프로세스 서버에서](#download-latest-mobility-agent-installer-for-suse-11-sp3-server) 최신 설치 관리자를 사용할 수 있는지 확인 합니다.
 
 푸시 설치 워크플로는 다음 섹션에 설명 되어 있습니다.
 
@@ -68,7 +69,7 @@ ms.locfileid: "86131793"
 
 ## <a name="install-the-mobility-service-using-ui"></a>UI를 사용 하 여 모바일 서비스 설치
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>사전 요구 사항
 
 - 모든 서버 구성이 [Azure에 대 한 VMware vm 및 물리적 서버 재해 복구를 위한 지원 매트릭스](vmware-physical-azure-support-matrix.md)의 조건을 충족 하는지 확인 합니다.
 - 서버의 운영 체제에 대 한 [설치 관리자를 찾습니다](#locate-installer-files) .
@@ -96,7 +97,7 @@ ms.locfileid: "86131793"
 
 ## <a name="install-the-mobility-service-using-command-prompt"></a>명령 프롬프트를 사용 하 여 모바일 서비스 설치
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>사전 요구 사항
 
 - 모든 서버 구성이 [Azure에 대 한 VMware vm 및 물리적 서버 재해 복구를 위한 지원 매트릭스](vmware-physical-azure-support-matrix.md)의 조건을 충족 하는지 확인 합니다.
 - 서버의 운영 체제에 대 한 [설치 관리자를 찾습니다](#locate-installer-files) .
@@ -107,7 +108,7 @@ ms.locfileid: "86131793"
 
   ```cmd
   cd C:\Temp
-  ren Microsoft-ASR_UA_version_Windows_GA_date_release.exe MobilityServiceInstaller.exe
+  ren Microsoft-ASR_UA*Windows*release.exe MobilityServiceInstaller.exe
   MobilityServiceInstaller.exe /q /x:C:\Temp\Extracted
   cd C:\Temp\Extracted
   ```
@@ -127,7 +128,7 @@ ms.locfileid: "86131793"
 
 #### <a name="installation-settings"></a>설치 설정
 
-설정 | 세부 정보
+Setting | 세부 정보
 --- | ---
 구문 | `UnifiedAgent.exe /Role \<MS/MT> /InstallLocation \<Install Location> /Platform "VmWare" /Silent`
 설치 로그 | `%ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log`
@@ -138,11 +139,11 @@ ms.locfileid: "86131793"
 
 #### <a name="registration-settings"></a>등록 설정
 
-설정 | 세부 정보
+Setting | 세부 정보
 --- | ---
 구문 | `UnifiedAgentConfigurator.exe  /CSEndPoint \<CSIP> /PassphraseFilePath \<PassphraseFilePath>`
 에이전트 구성 로그 | `%ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log`
-`/CSEndPoint` | 필수 매개 변수입니다. `<CSIP>`구성 서버의 IP 주소를 지정 합니다. 유효한 IP 주소를 사용합니다.
+`/CSEndPoint` | 필수 매개 변수입니다. `<CSIP>` 구성 서버의 IP 주소를 지정 합니다. 유효한 IP 주소를 사용합니다.
 `/PassphraseFilePath` |  필수. 암호의 위치입니다. 유효한 UNC 또는 로컬 파일 경로를 사용합니다.
 
 ### <a name="linux-machine"></a>Linux 컴퓨터
@@ -168,7 +169,7 @@ ms.locfileid: "86131793"
 
 #### <a name="installation-settings"></a>설치 설정
 
-설정 | 세부 정보
+Setting | 세부 정보
 --- | ---
 구문 | `./install -d \<Install Location> -r \<MS/MT> -v VmWare -q`
 `-r` | 필수 설치 매개 변수입니다. MS(Mobility 서비스) 또는 MT(마스터 대상) 설치 여부를 지정합니다.
@@ -178,10 +179,10 @@ ms.locfileid: "86131793"
 
 #### <a name="registration-settings"></a>등록 설정
 
-설정 | 세부 정보
+Setting | 세부 정보
 --- | ---
 구문 | `cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh -i \<CSIP> -P \<PassphraseFilePath>`
-`-i` | 필수 매개 변수입니다. `<CSIP>`구성 서버의 IP 주소를 지정 합니다. 유효한 IP 주소를 사용합니다.
+`-i` | 필수 매개 변수입니다. `<CSIP>` 구성 서버의 IP 주소를 지정 합니다. 유효한 IP 주소를 사용합니다.
 `-P` |  필수. 암호가 저장되는 파일의 전체 파일 경로입니다. 유효한 폴더를 사용합니다.
 
 ## <a name="azure-virtual-machine-agent"></a>Azure Virtual Machine 에이전트
@@ -204,13 +205,27 @@ ms.locfileid: "86131793"
 `Microsoft-ASR_UA_version_RHEL6-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux (RHEL) 6 </br> CentOS 6
 `Microsoft-ASR_UA_version_RHEL7-64_GA_date_release.tar.gz` | Red Hat Enterprise Linux(RHEL) 7 </br> CentOS 7
 `Microsoft-ASR_UA_version_SLES12-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 12 SP1 </br> SP2 및 SP3을 포함 합니다.
-`Microsoft-ASR_UA_version_SLES11-SP3-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 11 SP3
+[다운로드 하 여이 폴더에 수동으로 저장](#download-latest-mobility-agent-installer-for-suse-11-sp3-server)합니다. | SUSE Linux Enterprise Server 11 SP3
 `Microsoft-ASR_UA_version_SLES11-SP4-64_GA_date_release.tar.gz` | SUSE Linux Enterprise Server 11 SP4
 `Microsoft-ASR_UA_version_OL6-64_GA_date_release.tar.gz` | Oracle Enterprise Linux 6.4 </br> Oracle Enterprise Linux 6.5
 `Microsoft-ASR_UA_version_UBUNTU-14.04-64_GA_date_release.tar.gz` | Ubuntu Linux 14.04
 `Microsoft-ASR_UA_version_UBUNTU-16.04-64_GA_date_release.tar.gz` | Ubuntu Linux 16.04 LTS 서버
 `Microsoft-ASR_UA_version_DEBIAN7-64_GA_date_release.tar.gz` | Debian 7
 `Microsoft-ASR_UA_version_DEBIAN8-64_GA_date_release.tar.gz` | Debian 8
+
+### <a name="download-latest-mobility-agent-installer-for-suse-11-sp3-server"></a>SUSE 11 SP3 서버용 최신 모바일 에이전트 설치 관리자 다운로드
+
+[9.36 버전](https://support.microsoft.com/help/4578241/) 이상에서 **SUSE Linux Enterprise Server 11 SP3 컴퓨터를 업데이트 하거나 보호 하기 위한 필수 구성 요소입니다** .
+
+1. 최신 모바일 에이전트 설치 관리자가 Microsoft 다운로드 센터에서 다운로드 되 고 구성 서버 및 모든 규모 확장 프로세스 서버에서 푸시 설치 관리자 리포지토리에 배치 되었는지 확인 합니다.
+2. SUSE Linux Enterprise Server 11 SP3 에이전트 설치 관리자를 [다운로드](https://download.microsoft.com/download/0/3/4/0341b388-1ff5-4ead-b197-7cf6d2bb3e40/Microsoft-ASR_UA_9.36.0.0_SLES11-SP3-64_GA_06Aug2020_release.tar.gz) 합니다.
+3. 구성 서버로 이동 하 고 다음 경로에 SUSE Linux Enterprise Server 11 SP3 에이전트 설치 관리자를 복사 합니다.
+    1. INSTALL_DIR \home\svsystems\pushinstallsvc\repository 아래
+    1.  INSTALL_DIR \home\svsystems\admin\web\sw 폴더
+4. 이제 연결 된 확장 프로세스 서버로 이동 하 여 세 번째 단계에서 언급 한 두 경로에 설치 관리자를 복사 & 합니다.
+5. **예**를 들어 설치 경로가 C:\Program files (x86) \Microsoft Azure Site Recovery 경우 위에 언급 된 디렉터리는
+    1. C:\Program Files (x86) \Microsoft Azure Site Recovery\home\svsystems\pushinstallsvc\repository
+    1. C:\Program Files (x86) \Microsoft Azure Site Recovery\home\svsystems\admin\web\sw path
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -2,25 +2,21 @@
 title: '자습서: Sprinklr와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Sprinklr 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b33938a1-25a5-484c-8e75-7dc6de2d534d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 9e4025d040783bff1cd85fb46d571e3a89967892
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 02b9adcb72b4d26a19b6514d19ce94a70a2415ed
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67089654"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88534220"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sprinklr"></a>자습서: Sprinklr와 Azure Active Directory 통합
 

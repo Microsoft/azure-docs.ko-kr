@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/15/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 8b4d58163c28e00c30c5b0f9db3a6ff259fbf5ae
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d6f72231e84650a17850932979b43c21dd045f30
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536931"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069326"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 Azure Firewall 배포 및 구성
 
@@ -47,6 +47,8 @@ Azure 서브넷에서 아웃바운드 네트워크로의 액세스를 제어하�
 > * 방화벽 테스트
 
 원하는 경우 [Azure PowerShell](deploy-ps.md)을 사용하여 이 자습서를 완료할 수 있습니다.
+
+## <a name="prerequisites"></a>필수 구성 요소
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
@@ -132,7 +134,7 @@ VNet에 방화벽을 배포합니다.
 
    |설정  |값  |
    |---------|---------|
-   |구독     |\<your subscription\>|
+   |Subscription     |\<your subscription\>|
    |Resource group     |**Test-FW-RG** |
    |Name     |**Test-FW01**|
    |위치     |전에 사용한 동일한 위치 선택|

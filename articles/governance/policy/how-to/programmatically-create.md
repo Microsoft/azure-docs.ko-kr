@@ -1,14 +1,14 @@
 ---
 title: 프로그래밍 방식으로 정책 만들기
 description: 이 문서에서는 Azure CLI, Azure PowerShell 및 REST API를 사용하여 Azure Policy에 대해 프로그래밍 방식으로 정책을 만들고 관리하는 방법을 설명합니다.
-ms.date: 05/20/2020
+ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 3f785556dd86aa8b02f5aa0af09190266b8c509f
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 9b0c2e50536a847555dfa5cc6b9c823cfc1a4cfa
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85969892"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047058"
 ---
 # <a name="programmatically-create-policies"></a>프로그래밍 방식으로 정책 만들기
 
@@ -235,7 +235,7 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 "/subscription/<subscriptionId>/providers/Microsoft.Authorization/policyDefinitions/Audit Storage Accounts Open to Public Networks"
 ```
 
-Azure CLI를 사용하여 리소스 정책을 관리하는 방법에 대한 자세한 내용은 [Azure CLI 리소스 정책](/cli/azure/policy?view=azure-cli-latest)을 참조하세요.
+Azure CLI를 사용하여 리소스 정책을 관리하는 방법에 대한 자세한 내용은 [Azure CLI 리소스 정책](/cli/azure/policy)을 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -243,6 +243,6 @@ Azure CLI를 사용하여 리소스 정책을 관리하는 방법에 대한 자�
 
 - [Azure REST API 리소스](/rest/api/resources/)
 - [Azure PowerShell 모듈](/powershell/module/az.resources/#policies)
-- [Azure CLI 정책 명령](/cli/azure/policy?view=azure-cli-latest)
+- [Azure CLI 정책 명령](/cli/azure/policy)
 - [Azure Policy Insights 리소스 공급자 REST API 참조](/rest/api/policy-insights)
 - [Azure 관리 그룹으로 리소스 구성](../../management-groups/overview.md).

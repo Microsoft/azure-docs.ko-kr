@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/23/2020
-ms.openlocfilehash: 5c253abf0fa6ae95dff178847209be407fb5bca5
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 6c85a7315fe05bb4fedabd176295523c2fa95d81
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120833"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855228"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Azure Kubernetes Service 클러스터에 모델 배포
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -28,7 +28,9 @@ Azure Machine Learning를 사용 하 여 AKS (Azure Kubernetes Service)에서 �
 - GPU 및 필드 프로그래밍 가능 게이트 배열 (FPGA)과 같은 __하드웨어 가속__ 옵션입니다.
 
 > [!IMPORTANT]
-> 클러스터 크기 조정은 Azure Machine Learning SDK를 통해 제공 되지 않습니다. AKS 클러스터의 노드 크기를 조정 하는 방법에 대 한 자세한 내용은 [AKS 클러스터의 노드 수 크기 조정](../aks/scale-cluster.md)을 참조 하세요.
+> 클러스터 크기 조정은 Azure Machine Learning SDK를 통해 제공 되지 않습니다. AKS 클러스터의 노드 크기를 조정 하는 방법에 대 한 자세한 내용은을 참조 하십시오. 
+- [AKS 클러스터에서 수동으로 노드 수 크기 조정](../aks/scale-cluster.md)
+- [AKS에서 cluster autoscaler 설정](../aks/cluster-autoscaler.md)
 
 Azure Kubernetes Service에 배포 하는 경우 __작업 영역에 연결__된 AKS 클러스터에 배포 합니다. AKS 클러스터를 작업 영역에 연결 하는 방법에는 두 가지가 있습니다.
 
@@ -43,7 +45,7 @@ AKS 클러스터 및 AML 작업 영역은 다른 리소스 그룹에 있을 수 
 > [!IMPORTANT]
 > 웹 서비스로 배포 하기 전에 로컬로 디버그 하는 것이 좋습니다. 자세한 내용은 [로컬로 디버그](https://docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-deployment#debug-locally) 를 참조 하세요.
 >
-> Azure Machine Learning- [로컬 노트북에 배포](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local) 를 참조할 수도 있습니다.
+> 또한 Azure Machine Learning - [로컬 Notebook에 배포](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local)를 참조할 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -55,9 +57,9 @@ AKS 클러스터 및 AML 작업 영역은 다른 리소스 그룹에 있을 수 
 
 - 이 문서의 __Python__ 코드 조각에서는 다음 변수가 설정 되었다고 가정 합니다.
 
-    * `ws`-작업 영역으로 설정 합니다.
-    * `model`-등록 된 모델로 설정 합니다.
-    * `inference_config`-모델에 대 한 유추 구성으로 설정 합니다.
+    * `ws` -작업 영역으로 설정 합니다.
+    * `model` -등록 된 모델로 설정 합니다.
+    * `inference_config` -모델에 대 한 유추 구성으로 설정 합니다.
 
     이러한 변수를 설정 하는 방법에 대 한 자세한 내용은 [모델을 배포 하는 방법 및 위치](how-to-deploy-and-where.md)를 참조 하세요.
 
@@ -65,9 +67,16 @@ AKS 클러스터 및 AML 작업 영역은 다른 리소스 그룹에 있을 수 
 
 - BLB (기본 Load Balancer) 대신 클러스터에 표준 Load Balancer (SLB)를 배포 해야 하는 경우 AKS portal/CLI/SDK에서 클러스터를 만든 다음 AML 작업 영역에 연결 합니다.
 
-- [API 서버에 액세스할 수 있는 권한이 부여 된 IP 범위가](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges)있는 AKS 클러스터를 연결 하는 경우 AKS 클러스터에 대해 AML 제어 평면 IP 범위를 사용 하도록 설정 합니다. AML 컨트롤 평면은 쌍을 이루는 지역에 배포 되 고 AKS 클러스터에 추론 pod을 배포 합니다. API 서버에 대 한 액세스 권한이 없으면 추론 pod를 배포할 수 없습니다. AKS 클러스터에서 IP 범위를 사용 하도록 설정 하는 경우 [쌍을 이루는 지역]( https://docs.microsoft.com/azure/best-practices-availability-paired-regions) 에 대 한 [ip 범위](https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519) 를 사용 합니다.
+- 공용 IP의 만들기를 제한 하는 Azure Policy 있는 경우 AKS 클러스터 만들기가 실패 합니다. AKS에는 [송신 트래픽에](https://docs.microsoft.com/azure/aks/limit-egress-traffic)대 한 공용 IP가 필요 합니다. 또한이 문서에서는 몇 가지 FQDN을 제외 하 고 공용 IP를 통해 클러스터에서 송신 트래픽을 잠금 하는 지침을 제공 합니다. 공용 IP를 사용 하도록 설정 하는 방법에는 두 가지가 있습니다.
+  - 클러스터는 기본적으로 BLB 또는 SLB와 함께 생성 된 공용 IP를 사용할 수 있습니다.
+  - 공용 ip 없이 클러스터를 만들 수 있습니다. 그런 다음 [여기](https://docs.microsoft.com/azure/aks/egress-outboundtype) 에 설명 된 대로 사용자 정의 경로를 사용 하 여 방화벽을 사용 하 여 공용 ip를 구성 합니다. 
+  
+  AML 컨트롤 평면은이 공용 IP와 통신 하지 않습니다. 배포에 대 한 AKS 제어 평면과 통신 합니다. 
 
-__인증 된 IP 범위는 표준 Load Balancer 에서만 작동 합니다.__
+- [API 서버에 액세스할 수 있는 권한이 부여 된 IP 범위가](https://docs.microsoft.com/azure/aks/api-server-authorized-ip-ranges)있는 AKS 클러스터를 연결 하는 경우 AKS 클러스터에 대해 AML 연결 OL 평면 IP 범위를 사용 하도록 설정 합니다. AML 컨트롤 평면은 쌍을 이루는 지역에 배포 되 고 AKS 클러스터에 추론 pod을 배포 합니다. API 서버에 대 한 액세스 권한이 없으면 추론 pod를 배포할 수 없습니다. AKS 클러스터에서 IP 범위를 사용 하도록 설정 하는 경우 [쌍을 이루는 지역]( https://docs.microsoft.com/azure/best-practices-availability-paired-regions) 에 대 한 [ip 범위](https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519) 를 사용 합니다.
+
+
+  인증 된 IP 범위는 표준 Load Balancer 에서만 작동 합니다.
  
  - 계산 이름은 작업 영역 내에서 고유 해야 합니다.
    - 이름은 필수 이며 길이가 3 ~ 007e; 24 자 사이 여야 합니다.
@@ -76,10 +85,6 @@ __인증 된 IP 범위는 표준 Load Balancer 에서만 작동 합니다.__
    - 이름은 Azure 지역 내의 모든 기존 계산에서 고유 해야 합니다. 선택한 이름이 고유 하지 않으면 경고가 표시 됩니다.
    
  - GPU 노드나 FPGA 노드 (또는 특정 SKU)에 모델을 배포 하려면 특정 SKU를 사용 하 여 클러스터를 만들어야 합니다. 기존 클러스터에 보조 노드 풀을 만들고 보조 노드 풀에 모델을 배포 하는 것은 지원 되지 않습니다.
- 
- 
-
-
 
 ## <a name="create-a-new-aks-cluster"></a>새 AKS 클러스터 만들기
 
@@ -229,6 +234,10 @@ az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w m
 
 Azure Kubernetes Service에 모델을 배포 하려면 필요한 계산 리소스를 설명 하는 __배포 구성을__ 만듭니다. 예를 들면 코어 수와 메모리입니다. 모델 및 웹 서비스를 호스트 하는 데 필요한 환경을 설명 하는 __유추 구성__도 필요 합니다. 유추 구성을 만드는 방법에 대 한 자세한 내용은 [모델을 배포 하는 방법 및 위치](how-to-deploy-and-where.md)를 참조 하세요.
 
+> [!NOTE]
+> 배포할 모델 수는 배포 당 1000 모델 (컨테이너 당)으로 제한 됩니다.
+
+
 ### <a name="using-the-sdk"></a>SDK 사용
 
 ```python
@@ -290,7 +299,7 @@ Azure Machine Learning에서 "배포"는 보다 일반적으로 사용 가능 �
     1. 이 파일을 찾을 수 없는 경우 시스템은 새 이미지를 빌드합니다 (작업 영역 ACR에 캐시 및 등록 됨).
 1. 계산 노드의 임시 저장소에 압축 된 프로젝트 파일 다운로드
 1. 프로젝트 파일 압축 풀기
-1. 실행 하는 계산 노드`python <entry script> <arguments>`
+1. 실행 하는 계산 노드 `python <entry script> <arguments>`
 1. `./outputs`작업 영역과 연결 된 저장소 계정에 기록 된 로그, 모델 파일 및 기타 파일 저장
 1. 임시 저장소 제거를 포함 하 여 계산 축소 (Kubernetes와 관련 됨)
 
@@ -409,7 +418,7 @@ print(primary)
 ```
 
 > [!IMPORTANT]
-> 키를 다시 생성 해야 하는 경우 다음을 사용 합니다.[`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py)
+> 키를 다시 생성 해야 하는 경우 다음을 사용 합니다. [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py)
 
 ### <a name="authentication-with-tokens"></a>토큰을 사용한 인증
 

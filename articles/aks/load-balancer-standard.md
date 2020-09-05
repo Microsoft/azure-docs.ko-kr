@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/14/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 417ca42e014c0bb197d7dd834b960f25fcfdf468
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: a58b00018f6ac89f024661d8d3f50ea5249e620b
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87056809"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182125"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Azure Kubernetes 서비스에서 공용 표준 Load Balancer 사용 (AKS)
 
@@ -229,7 +229,7 @@ az aks update \
 > [!IMPORTANT]
 > 연결 또는 크기 조정 문제를 방지 하려면 필요한 할당량을 계산 하 고 *allocatedOutboundPorts* 을 사용자 지정 하기 전에 [요구 사항을 확인][requirements] 해야 합니다.
 
-**`load-balancer-outbound-ports`** 클러스터를 만들 때 매개 변수를 사용할 수도 있지만, 또는도 지정 해야 합니다 **`load-balancer-managed-outbound-ip-count`** **`load-balancer-outbound-ips`** **`load-balancer-outbound-ip-prefixes`** .  예를 들어:
+**`load-balancer-outbound-ports`** 클러스터를 만들 때 매개 변수를 사용할 수도 있지만, 또는도 지정 해야 합니다 **`load-balancer-managed-outbound-ip-count`** **`load-balancer-outbound-ips`** **`load-balancer-outbound-ip-prefixes`** .  예:
 
 ```azurecli-interactive
 az aks create \
@@ -267,16 +267,15 @@ az aks update \
 *outboundIPs* \* 64,000 \> *nodeVMs* \* *desiredAllocatedOutboundPorts*.
  
 예를 들어 3개의 *nodeVMs* 및 50,000개의 *desiredAllocatedOutboundPorts*가 있는 경우 최소 3개 이상의 *outboundIPs*가 있어야 합니다. 필요한 것보다 더 많은 추가 아웃바운드 IP 용량을 통합하는 것이 좋습니다. 또한 아웃바운드 IP 용량을 계산할 때 클러스터 자동 크기 조정기 및 노드 풀 업그레이드의 가능성을 고려해야 합니다. 클러스터 자동 크기 조정기의 경우 현재 노드 수와 최대 노드 수를 검토하고 더 높은 값을 사용합니다. 업그레이드하는 경우 업그레이드를 허용하는 모든 노드 풀에 대해 추가 노드 VM을 고려합니다.
- 
+
 - *IdleTimeoutInMinutes*를 기본값 30분이 아닌 다른 값으로 설정할 때는 워크로드에 아웃바운드 연결이 필요한 기간을 고려합니다. 또한 AKS 외부에서 사용되는 ‘표준’ SKU 부하 분산 장치에 대한 기본 시간 제한 값은 4분입니다. 특정 AKS 워크로드를 더 정확하게 반영하는 *IdleTimeoutInMinutes* 값을 지정하면 더 이상 사용되지 않는 연결로 인한 SNAT 고갈을 줄이는 데 도움이 될 수 있습니다.
 
 > [!WARNING]
 > *AllocatedOutboundPorts* 및 *IdleTimeoutInMinutes* 에 대 한 값을 변경 하면 부하 분산 장치에 대 한 아웃 바운드 규칙의 동작이 크게 변경 될 수 있으며, 절충 및 응용 프로그램의 연결 패턴을 이해 하지 않고도 이러한 값을 [업데이트 하 여][troubleshoot-snat] 변경의 영향을 완전히 이해할 수 있도록 [Azure에서][azure-lb-outbound-connections] [Load Balancer 아웃 바운드 규칙][azure-lb-outbound-rules-overview] 및 아웃 바운드 연결을 검토 합니다.
 
-
 ## <a name="restrict-inbound-traffic-to-specific-ip-ranges"></a>특정 IP 범위로 인바운드 트래픽 제한
 
-부하 분산 장치에 대한 가상 네트워크와 연결된 NSG(네트워크 보안 그룹)에는 기본적으로 모든 인바운드 외부 트래픽을 허용하는 규칙이 있습니다. 인바운드 트래픽에 대해 특정 IP 범위만 허용하도록 이 규칙을 업데이트할 수 있습니다. 다음 매니페스트는 *loadBalancerSourceRanges*를 사용하여 인바운드 외부 트래픽에 대한 새 IP 범위를 지정합니다.
+다음 매니페스트는 *loadBalancerSourceRanges*를 사용하여 인바운드 외부 트래픽에 대한 새 IP 범위를 지정합니다.
 
 ```yaml
 apiVersion: v1
@@ -292,6 +291,9 @@ spec:
   loadBalancerSourceRanges:
   - MY_EXTERNAL_IP_RANGE
 ```
+
+> [!NOTE]
+> 인바운드, 외부 트래픽은 부하 분산 장치에서 AKS 클러스터에 대 한 가상 네트워크로 흐릅니다. 가상 네트워크에는 부하 분산 장치의 모든 인바운드 트래픽을 허용 하는 NSG (네트워크 보안 그룹)가 있습니다. 이 NSG는 *LoadBalancer* 형식의 [서비스 태그][service-tags] 를 사용 하 여 부하 분산 장치의 트래픽을 허용 합니다.
 
 ## <a name="maintain-the-clients-ip-on-inbound-connections"></a>인바운드 연결에서 클라이언트의 IP 유지 관리
 
@@ -322,7 +324,7 @@ spec:
 | `service.beta.kubernetes.io/azure-dns-label-name`                 | 공용 Ip의 DNS 레이블 이름   | **공용** 서비스에 대 한 DNS 레이블 이름을 지정 합니다. 빈 문자열로 설정 된 경우 공용 IP의 DNS 항목은 사용 되지 않습니다.
 | `service.beta.kubernetes.io/azure-shared-securityrule`            | `true` 또는 `false`                     | 다른 서비스와 공유할 수 있는 Azure 보안 규칙을 사용 하 여 서비스를 노출 하 고, 노출 될 수 있는 서비스 수를 증가 시키기 위한 규칙의 특이성 거래 하도록 지정 합니다. 이 주석은 네트워크 보안 그룹의 Azure [보강 된 보안 규칙](../virtual-network/security-overview.md#augmented-security-rules) 기능을 사용 합니다. 
 | `service.beta.kubernetes.io/azure-load-balancer-resource-group`   | 리소스 그룹의 이름입니다.            | 클러스터 인프라와 동일한 리소스 그룹에 없는 부하 분산 장치 공용 Ip의 리소스 그룹 (노드 리소스 그룹)을 지정 합니다.
-| `service.beta.kubernetes.io/azure-allowed-service-tags`           | 허용 되는 서비스 태그 목록          | 허용 되는 [서비스 태그](../virtual-network/security-overview.md#service-tags) 목록을 쉼표로 구분 하 여 지정 합니다.
+| `service.beta.kubernetes.io/azure-allowed-service-tags`           | 허용 되는 서비스 태그 목록          | 허용 되는 [서비스 태그][service-tags] 목록을 쉼표로 구분 하 여 지정 합니다.
 | `service.beta.kubernetes.io/azure-load-balancer-tcp-idle-timeout` | TCP 유휴 시간 제한 (분)          | 부하 분산 장치에서 TCP 연결 유휴 시간 제한이 발생 하는 시간을 분 단위로 지정 합니다. 기본값 및 최소값은 4입니다. 최 댓 값은 30입니다. 정수여야 합니다.
 |`service.beta.kubernetes.io/azure-load-balancer-disable-tcp-reset` | `true`                                | `enableTcpReset`SLB에 대해 사용 안 함
 
@@ -424,3 +426,4 @@ SNAT 소모의 근본 원인은 아웃바운드 연결의 설정, 관리 또는 
 [requirements]: #requirements-for-customizing-allocated-outbound-ports-and-idle-timeout
 [use-multiple-node-pools]: use-multiple-node-pools.md
 [troubleshoot-snat]: #troubleshooting-snat
+[service-tags]: ../virtual-network/security-overview.md#service-tags

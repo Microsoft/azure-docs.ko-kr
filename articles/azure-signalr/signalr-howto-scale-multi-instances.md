@@ -4,14 +4,15 @@ description: 많은 크기 조정 시나리오에서 고객은 여러 인스턴�
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 03/27/2019
 ms.author: zhshang
-ms.openlocfilehash: 43d703312cbc1fc067a2d51d5623ed028ba01405
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ecf4a35fc239a70e87550a97e71d7abd3d00ecfa
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74158167"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88921990"
 ---
 # <a name="how-to-scale-signalr-service-with-multiple-instances"></a>여러 인스턴스를 사용 하 여 SignalR 서비스를 확장 하는 방법
 최신 SignalR 서비스 SDK는 SignalR 서비스 인스턴스에 대 한 여러 끝점을 지원 합니다. 이 기능을 사용 하 여 동시 연결의 크기를 조정 하거나 지역 간 메시징에 사용할 수 있습니다.
@@ -217,7 +218,7 @@ app.MapAzureSignalR(GetType().FullName, hub, options => {
 
 `ServiceEndpoint`개체에 값이 `EndpointType` 또는 인 속성이 `primary` 있습니다 `secondary` .
 
-`primary`끝점은 클라이언트 트래픽을 수신 하기 위한 기본 끝점으로, 보다 안정적인 네트워크 연결을 포함 하는 것으로 간주 됩니다. `secondary`끝점은 신뢰할 수 없는 네트워크 연결을 사용 하는 것으로 간주 되며, 클라이언트에서 서버로의 트래픽을 수행 하는 것이 아니라 메시지 브로드캐스팅을 사용 하는 등의 방법으로 서버 간 트래픽을 사용 하는 데만 사용 됩니다
+`primary` 끝점은 클라이언트 트래픽을 수신 하기 위한 기본 끝점으로, 보다 안정적인 네트워크 연결을 포함 하는 것으로 간주 됩니다. `secondary` 끝점은 신뢰할 수 없는 네트워크 연결을 사용 하는 것으로 간주 되며, 클라이언트에서 서버로의 트래픽을 수행 하는 것이 아니라 메시지 브로드캐스팅을 사용 하는 등의 방법으로 서버 간 트래픽을 사용 하는 데만 사용 됩니다
 
 지역 간 경우 네트워크가 불안정 해질 수 있습니다. *미국 동부*에 있는 하나의 앱 서버에 대해 동일한 *미국 동부* 지역에 있는 SignalR 서비스 끝점은로 `primary` 표시 된 다른 지역의 끝점으로 구성할 수 있습니다 `secondary` . 이 구성에서 다른 지역의 서비스 끝점은 *미국 동부* 앱 서버 로부터 메시지를 **받을** 수 있지만이 앱 서버로 라우팅되는 **지역 간** 클라이언트는 없습니다. 아키텍처는 아래 다이어그램에 나와 있습니다.
 

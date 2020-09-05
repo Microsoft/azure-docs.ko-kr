@@ -4,12 +4,13 @@ description: 이 문서에서는 Azure Service Bus 관리 라이브러리를 사
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 63a8f0f8ef299f9d27d3c1be2746052536c4e5e8
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 915606bffc2037c8fcd1a7d33218143f40c78f2c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066171"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008049"
 ---
 # <a name="service-bus-management-libraries"></a>Service Bus 관리 라이브러리
 
@@ -22,7 +23,7 @@ Azure Service Bus 관리 라이브러리는 Service Bus 네임스페이스 및 �
 * 토픽 만들기, 업데이트, 삭제
 * 구독 만들기, 업데이트, 삭제
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 Service Bus 관리 라이브러리 사용을 시작하려면 Azure AD(Azure Active Directory) 서비스로 인증해야 합니다. Azure AD를 사용하려면 Azure 리소스에 대한 액세스를 제공하는 서비스 주체로 인증해야 합니다. 서비스 주체 만들기에 대한 자세한 내용은 다음 문서 중 하나를 참조하세요.  
 

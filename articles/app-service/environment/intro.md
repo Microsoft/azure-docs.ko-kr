@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 04/19/2018
 ms.author: ccompy
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 08a97f0f7b1a6a65feb7a2ec041001f2199ffdf7
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: e9bd97dc4afe0937ebd0553117640e008a72722e
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770642"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961750"
 ---
 # <a name="introduction-to-the-app-service-environments"></a>App Service Environment 소개 #
  
@@ -61,13 +61,13 @@ ASE는 프런트 엔드 및 작업자로 구성됩니다. 프런트 엔드는 AS
 
 ## <a name="virtual-network-support"></a>가상 네트워크 지원 ##
 
-ASE 기능은 고객의 Azure Resource Manager 가상 네트워크에 직접 Azure App Service를 배포하는 것입니다. Azure 가상 네트워크에 대한 자세한 내용은 [Azure 가상 네트워크 FAQ](https://azure.microsoft.com/documentation/articles/virtual-networks-faq/)를 참조하세요. ASE는 항상 가상 네트워크 내 존재하며, 더 정확하게는 가상 네트워크의 서브넷 내에 있습니다. 가상 네트워크의 보안 기능을 사용하여 앱에 대한 인바운드 및 아웃바운드 네트워크 통신을 제어할 수 있습니다.
+ASE 기능은 고객의 Azure Resource Manager 가상 네트워크에 직접 Azure App Service를 배포하는 것입니다. Azure 가상 네트워크에 대한 자세한 내용은 [Azure 가상 네트워크 FAQ](../../virtual-network/virtual-networks-faq.md)를 참조하세요. ASE는 항상 가상 네트워크 내 존재하며, 더 정확하게는 가상 네트워크의 서브넷 내에 있습니다. 가상 네트워크의 보안 기능을 사용하여 앱에 대한 인바운드 및 아웃바운드 네트워크 통신을 제어할 수 있습니다.
 
 ASE는 공개 IP 주소가 있는 인터넷 연결이거나 Azure ILB(내부 부하 분산 장치) 주소만 있는 내부 연결일 수 있습니다.
 
 [네트워크 보안 그룹][NSGs]은 ASE가 있는 서브넷에 대한 인바운드 네트워크 통신을 제한합니다. NSG를 사용하여 WAF 및 네트워크 SaaS 공급자와 같은 업스트림 디바이스 및 서비스 뒤에서 앱을 실행할 수 있습니다.
 
-또한 앱에서는 내부 데이터베이스 및 웹 서비스와 같은 회사 리소스에 자주 액세스해야 합니다. 온-프레미스 네트워크에 VPN이 연결되어 있는 가상 네트워크에 ASE를 배포하는 경우 ASE의 앱은 온-프레미스 리소스에 액세스할 수 있습니다. 이 기능은 VPN이 [사이트 간](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-multi-site)이든 [Azure ExpressRoute](https://azure.microsoft.com/services/expressroute/) VPN이든 마찬가지입니다.
+또한 앱에서는 내부 데이터베이스 및 웹 서비스와 같은 회사 리소스에 자주 액세스해야 합니다. 온-프레미스 네트워크에 VPN이 연결되어 있는 가상 네트워크에 ASE를 배포하는 경우 ASE의 앱은 온-프레미스 리소스에 액세스할 수 있습니다. 이 기능은 VPN이 [사이트 간](../../vpn-gateway/vpn-gateway-multi-site.md)이든 [Azure ExpressRoute](https://azure.microsoft.com/services/expressroute/) VPN이든 마찬가지입니다.
 
 ASE가 가상 네트워크 및 온-프레미스 네트워크와 함께 어떻게 작동하는지에 대한 자세한 내용은 [App Service Environment 네트워크 고려 사항][ASENetwork]을 참조하세요.
 
@@ -95,12 +95,12 @@ ASEv1은 ASEv2와는 다른 가격 책정 모델을 사용합니다. ASEv1에서
 [ConfigureASEv1]: app-service-web-configure-an-app-service-environment.md
 [ASEv1Intro]: app-service-app-service-environment-intro.md
 [webapps]: ../overview.md
-[mobileapps]: ../../app-service-mobile/app-service-mobile-value-prop.md
+[mobileapps]: /previous-versions/azure/app-service-mobile/app-service-mobile-value-prop
 [Functions]: ../../azure-functions/index.yml
 [Pricing]: https://azure.microsoft.com/pricing/details/app-service/
 [ARMOverview]: ../../azure-resource-manager/management/overview.md
 [ConfigureSSL]: ../configure-ssl-certificate.md
 [Kudu]: https://azure.microsoft.com/resources/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [ASEWAF]: app-service-app-service-environment-web-application-firewall.md
-[AppGW]: ../../application-gateway/waf-overview.md
+[AppGW]: ../../web-application-firewall/ag/ag-overview.md
 [ASEAZ]: https://azure.github.io/AppService/2019/12/12/App-Service-Environment-Support-for-Availability-Zones.html

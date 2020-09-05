@@ -5,12 +5,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/12/2020
 ms.custom: mvc
-ms.openlocfilehash: 80944d99c51ae4880a40df8700a73d08a95efe77
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: c41fb7426cf740b5861b0b571cf7ce5c54d681ef
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656997"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757611"
 ---
 # <a name="back-up-a-virtual-machine-in-azure"></a>Azure에서 가상 머신 백업
 
@@ -24,7 +24,7 @@ Azure Portal을 통해 Azure 백업을 만들 수 있습니다. 이 방법은 Az
 
 ## <a name="select-a-vm-to-back-up"></a>백업할 VM을 선택합니다.
 
-간단한 예약된 매일 백업을 Recovery Services 자격 증명 모음에 만듭니다.
+간단한 예약 매일 백업을 Recovery Services 자격 증명 모음에 만듭니다.
 
 1. 왼쪽 메뉴에서 **가상 머신**을 선택합니다.
 2. 목록에서 백업할 VM을 선택합니다. 샘플 VM 빠른 시작 명령을 사용하는 경우 VM은 *myResourceGroup* 리소스 그룹에서 *myVM*이라는 이름으로 지정됩니다.

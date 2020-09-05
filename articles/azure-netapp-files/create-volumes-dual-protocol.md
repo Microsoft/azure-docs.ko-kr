@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 07/28/2020
+ms.date: 8/11/2020
 ms.author: b-juche
-ms.openlocfilehash: 61e8c56e75e82bc28ddb2abf231d9a5e919691b0
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: f4cc253de0de9d099cfc4881f48182cf9b2a1616
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87535490"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88134584"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Azure NetApp Files에 대 한 이중 프로토콜 (NFSv3 및 SMB) 볼륨 만들기
 
@@ -36,6 +36,7 @@ Azure NetApp Files에서는 NFS (NFSv3 및 NFSv 4.1), SMBv3 또는 이중 프로
 ## <a name="considerations"></a>고려 사항
 
 * [Active Directory 연결에 대 한 요구 사항을](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections)충족 하는지 확인 합니다. 
+* DNS 서버에 역방향 조회 영역을 만든 다음 해당 역방향 조회 영역에 AD 호스트 컴퓨터의 포인터 (PTR) 레코드를 추가 합니다. 그렇지 않으면 이중 프로토콜 볼륨 만들기가 실패 합니다.
 * NFS 클라이언트가 최신 상태이 고 운영 체제에 대 한 최신 업데이트를 실행 중인지 확인 합니다.
 
 ## <a name="create-a-dual-protocol-volume"></a>이중 프로토콜 볼륨 만들기
@@ -138,4 +139,4 @@ Nfs 클라이언트를 구성 하려면 [Azure NetApp Files에 대 한 nfs 클�
 ## <a name="next-steps"></a>다음 단계  
 
 * [이중 프로토콜 Faq](azure-netapp-files-faqs.md#dual-protocol-faqs)
-* [Azure NetApp Files에 대 한 NFS 클라이언트 구성](configure-nfs-clients.md) 
+* [Azure NetApp Files에 대한 NFS 클라이언트 구성](configure-nfs-clients.md) 

@@ -3,12 +3,12 @@ title: '빠른 시작: 일괄 처리 질문을 사용하여 기술 자료 테스
 description: QnA Maker 일괄 처리 테스트 도구에서 QnA Maker 리소스의 기술 자료를 테스트하여 예상 대답, 신뢰도 점수 및 다중 턴 프롬프트를 확인합니다.
 ms.topic: tutorial
 ms.date: 05/26/2020
-ms.openlocfilehash: 01c767a6fbea5061f644052234f7462857dd342b
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: bcee98678212a3bc233c36a831f6bcde7e6ae550
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84337736"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88531072"
 ---
 # <a name="quickstart-test-knowledge-base-with-batch-questions-and-expected-answers"></a>빠른 시작: 일괄 처리 질문 및 예상 대답을 사용하여 기술 자료 테스트
 
@@ -16,7 +16,7 @@ QnA Maker 일괄 처리 테스트 도구에서 QnA Maker 리소스의 기술 자
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+* Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/cognitive-services/)
 * 영어를 사용하는 [QnA Maker 서비스를 만들거나](create-publish-knowledge-base.md) 기존 서비스를 사용합니다.
 * [다중 턴 샘플 `.docx` 파일](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/multi-turn.docx)을 다운로드합니다.
 * [일괄 처리 테스트 도구](https://aka.ms/qnamakerbatchtestingtool)를 다운로드하고, `.zip` 파일에서 실행 파일을 추출합니다.
@@ -61,7 +61,7 @@ QnA Maker 포털에 [로그인](https://www.qnamaker.ai/)합니다.
 
 ## <a name="create-batch-test-file-with-question-ids"></a>질문 ID를 사용하여 일괄 처리 테스트 파일 만들기
 
-일괄 처리 테스트 도구를 사용하려면 텍스트 편집기를 사용하여 `batch-test-data-1.tsv`라는 파일을 만듭니다. 파일에는 탭으로 구분된 다음 열이 있어야 합니다.
+일괄 처리 테스트 도구를 사용하려면 텍스트 편집기를 사용하여 `batch-test-data-1.tsv`라는 파일을 만듭니다. 파일은 UTF-8 형식이어야 하며 탭으로 구분된 다음 열이 있어야 합니다.
 
 |TSV 입력 파일 필드|메모|예제|
 |--|--|--|

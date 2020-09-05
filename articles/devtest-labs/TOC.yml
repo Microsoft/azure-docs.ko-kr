@@ -8,7 +8,7 @@
       href: lab-services-overview.md
 - name: 빠른 시작
   items:
-    - name: 랩 만들기 - ARM 템플릿
+    - name: 랩 만들기 - Resource Manager 템플릿
       displayName: Resource Manager
       href: create-lab-windows-vm-template.md
 - name: 자습서
@@ -75,6 +75,8 @@
       items:
         - name: 랩 만들기
           href: devtest-lab-create-lab.md
+        - name: 네트워크 격리 랩 만들기
+          href: network-isolation.md
         - name: Resource Manager 템플릿을 사용하여 랩 만들기 또는 수정
           href: devtest-lab-use-arm-and-powershell-for-lab-resources.md
         - name: 랩 가상 머신에 대한 리소스 그룹 지정
@@ -83,6 +85,8 @@
           href: devtest-lab-internal-support-message.md
         - name: 정책 및 일정 설정
           href: devtest-lab-set-lab-policy.md
+        - name: "랩 ID 구성\_"
+          href: configure-lab-identity.md
         - name: 원격 데스크톱 게이트웨이를 사용하도록 랩 구성
           href: configure-lab-remote-desktop-gateway.md
         - name: 랩에서 알림 게시
@@ -95,8 +99,6 @@
           href: devtest-lab-auto-startup-vm.md
         - name: 랩 크기 조정
           href: devtest-lab-scale-lab.md
-        - name: 랩 VM에서 관리 ID 사용
-          href: enable-managed-identities-lab-vms.md
         - name: 가상 머신 베이스 관리
           items:
             - name: Azure Marketplace 이미지 구성
@@ -167,6 +169,8 @@
           href: start-machines-use-automation-runbooks.md
         - name: 다른 랩에서 가상 머신 가져오기
           href: import-virtual-machines-from-another-lab.md
+        - name: 랩 VM에서 관리 ID 사용
+          href: enable-managed-identities-lab-vms.md
     - name: 랩에서 환경 사용
       items:
         - name: 환경 만들기

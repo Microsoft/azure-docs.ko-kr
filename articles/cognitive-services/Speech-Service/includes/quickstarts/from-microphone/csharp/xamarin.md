@@ -10,16 +10,17 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: c9bcd301b19252cedd9ac9a1867ccf132a537587
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 48a80d7367943c2c86fd3822a5c236b0cdf11846
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81275192"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926443"
 ---
 ## <a name="prerequisites"></a>필수 구성 요소
 
-시작하기 전에 다음을 수행합니다.
+시작하기 전에:
 
 > [!div class="checklist"]
 > * [Azure Speech 리소스 만들기](../../../../get-started.md)
@@ -47,7 +48,7 @@ ms.locfileid: "81275192"
 1. 원본 파일의 `OnRecognitionButtonClicked` 처리기에서 `YourSubscriptionKey` 문자열을 찾아 구독 키로 바꿉니다.
 
 
-1. `OnRecognitionButtonClicked` 처리기에서 `YourServiceregion` 문자열을 찾아 구독과 연결된 [지역](https://aka.ms/speech/sdkregion)의 **영역 식별자**로 바꿉니다. 예를 들어 평가판 구독의 경우 `westus`를 사용합니다.
+1. `OnRecognitionButtonClicked` 처리기에서 `YourServiceregion` 문자열을 찾아 구독과 연결된 [지역](https://aka.ms/speech/sdkregion)의 **영역 식별자**로 바꿉니다. 
 
 1. 다음으로, 다른 플랫폼 프로젝트(예: UWP, Android 및 iOS)에서 마이크 권한을 쿼리하는 데 사용되는 [Xamarin 서비스](https://docs.microsoft.com/xamarin/android/app-fundamentals/services/creating-a-service/)를 만들어야 합니다. 이렇게 하려면 *Services*라는 새 폴더를 hellowworld 프로젝트 아래에 추가하고, 그 아래에 새 C# 소스 파일을 만듭니다. 마우스 오른쪽 단추로 *Services* 폴더를 클릭하고, **추가** > **새 항목** > **코드 파일**을 차례로 선택할 수 있습니다. 파일 이름을 `IMicrophoneService.cs`로 바꾸고, 다음 코드 조각의 모든 코드를 해당 파일에 넣습니다.
 

@@ -1,6 +1,6 @@
 ---
 title: 콘텐츠 전송 형식에 맞게 Azure CDN 최적화
-description: 콘텐츠 전송 형식에 맞게 Azure CDN 최적화
+description: Azure Content Delivery Network 콘텐츠 유형에 따라 배달 성능을 최적화 하는 방법에 대해 알아봅니다. 최적화 모범 사례 성능 및 원본 오프 로드를 향상 시킵니다.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: allensu
-ms.openlocfilehash: 0255d7f47c8f9c63a2943830fa323a2e11994a9e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0710f2f31510ae299fafe89dc1798f40e325e8b4
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84887563"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192586"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>콘텐츠 전송 형식에 맞게 Azure CDN 최적화
 

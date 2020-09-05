@@ -1,25 +1,25 @@
 ---
-title: Blob 버전 관리(미리 보기)
+title: Blob 버전 관리
 titleSuffix: Azure Storage
-description: Blob 저장소 버전 관리 (미리 보기)는 개체의 이전 버전을 자동으로 유지 관리 하 고 타임 스탬프를 사용 하 여 식별 합니다. 잘못 수정 되거나 삭제 된 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다.
+description: Blob 저장소 버전 관리에서는 개체의 이전 버전을 자동으로 유지 관리 하 고 타임 스탬프를 사용 하 여 식별 합니다. 잘못 수정 되거나 삭제 된 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/05/2020
+ms.date: 08/27/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 494c1fc1c1c91538240258ab0517c7ff79bdfa74
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 72597d445be41ede47d043d11653df139bc52d0d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056536"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226266"
 ---
-# <a name="blob-versioning-preview"></a>Blob 버전 관리(미리 보기)
+# <a name="blob-versioning"></a>Blob 버전 관리
 
-Blob storage 버전 관리 (미리 보기)를 사용 하도록 설정 하 여 이전 버전의 개체를 자동으로 유지 관리할 수 있습니다.  Blob 버전 관리를 사용 하는 경우 데이터를 잘못 수정 하거나 삭제 한 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다.
+Blob 저장소 버전 관리를 사용 하도록 설정 하 여 이전 버전의 개체를 자동으로 유지 관리할 수 있습니다.  Blob 버전 관리를 사용 하는 경우 데이터를 잘못 수정 하거나 삭제 한 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다.
 
 Blob 버전 관리는 저장소 계정에서 사용 하도록 설정 되며 저장소 계정의 모든 blob에 적용 됩니다. 저장소 계정에 대해 blob 버전 관리를 사용 하도록 설정 하면 Azure Storage는 저장소 계정의 모든 blob에 대 한 버전을 자동으로 유지 관리 합니다.
 
@@ -30,6 +30,8 @@ Blob 버전 관리를 사용 하도록 설정 하는 방법을 알아보려면 [
 > [!IMPORTANT]
 > Blob 버전 관리를 통해 저장소 계정이 나 컨테이너를 실수로 삭제 하는 경우를 복구할 수 없습니다. 저장소 계정이 실수로 삭제 되지 않도록 하려면 저장소 계정 리소스에 대해 **Cannotdelete** 잠금을 구성 합니다. Azure 리소스 잠금에 대 한 자세한 내용은 [예기치 않은 변경을 방지 하기 위해 리소스 잠그기](../../azure-resource-manager/management/lock-resources.md)를 참조 하세요.
 
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
+
 ## <a name="how-blob-versioning-works"></a>Blob 버전 관리 작동 방법
 
 버전은 지정 된 시점에 blob의 상태를 캡처합니다. 저장소 계정에 blob 버전 관리를 사용 하도록 설정 하면 Azure Storage는 blob이 수정 되거나 삭제 될 때마다 blob의 새 버전을 자동으로 만듭니다.
@@ -39,6 +41,10 @@ Blob 버전 관리를 사용 하도록 설정 하는 방법을 알아보려면 [
 버전 관리를 사용 하는 blob을 삭제 하면 Azure Storage는 blob의 상태를 삭제 하기 전에 캡처하는 버전을 만듭니다. 그러면 blob의 현재 버전이 삭제 되지만 blob의 버전은 유지 되므로 필요한 경우 다시 만들 수 있습니다. 
 
 Blob 버전은 변경할 수 없습니다. 기존 blob 버전의 콘텐츠나 메타 데이터는 수정할 수 없습니다.
+
+Blob 버전 관리는 범용 v2, 블록 blob 및 Blob 저장소 계정에 사용할 수 있습니다. Azure Data Lake Storage Gen2에서 사용 하도록 설정 된 계층적 네임 스페이스를 사용 하는 저장소 계정은 현재 지원 되지 않습니다.
+
+2019-10-10 이상의 Azure Storage REST API는 blob 버전 관리를 지원 합니다.
 
 ### <a name="version-id"></a>버전 ID
 
@@ -106,7 +112,7 @@ Blob의 모든 버전은 동일한 blob 유형 이어야 합니다. Blob에 이�
 
 ## <a name="enable-or-disable-blob-versioning"></a>Blob 버전 관리 사용 또는 사용 안 함
 
-Blob 버전 관리를 사용 하거나 사용 하지 않도록 설정 하는 방법을 알아보려면 [blob 버전 관리 사용 또는 사용 안 함](versioning-enable.md)을 참조 하세요.
+Blob 버전 관리를 사용 하거나 사용 하지 않도록 설정 하는 방법을 알아보려면 [blob 버전 관리 사용 및 관리](versioning-enable.md)를 참조 하세요.
 
 Blob 버전 관리를 사용 하지 않도록 설정 해도 기존 blob, 버전 또는 스냅숏은 삭제 되지 않습니다. Blob 버전 관리를 해제 하면 기존 버전은 저장소 계정에서 계속 액세스할 수 있습니다. 이후에는 새 버전이 생성 되지 않습니다.
 
@@ -163,7 +169,7 @@ Blob 스냅숏은 특정 시점에서 수행 되는 blob의 읽기 전용 복사
 
 다음 다이어그램에서는 버전이 지정 된 blob의 스냅숏을 만들 때 발생 하는 상황을 보여 줍니다. 다이어그램에서 버전 ID가 2 및 3 인 blob 버전 및 스냅숏에는 동일한 데이터가 포함 되어 있습니다.
 
-:::image type="content" source="media/versioning-overview/snapshot-versioned-blob.png" alt-text="버전이 지정 된 blob의 스냅숏을 보여 주는 다이어그램":::
+:::image type="content" source="media/versioning-overview/snapshot-versioned-blob.png" alt-text="버전이 지정 된 blob의 스냅숏을 보여 주는 다이어그램 ":::
 
 ## <a name="authorize-operations-on-blob-versions"></a>Blob 버전에 대 한 작업 권한 부여
 
@@ -179,7 +185,7 @@ Blob 버전 관리는 실수로 인 한 삭제 또는 악의적인 삭제 로부
 
 다음 표에서는 blob 또는 blob 버전 삭제를 지 원하는 RBAC 동작을 보여 줍니다.
 
-| 설명 | Blob service 작업 | RBAC 데이터 작업 필요 | RBAC 기본 제공 역할 지원 |
+| Description | Blob service 작업 | RBAC 데이터 작업 필요 | RBAC 기본 제공 역할 지원 |
 |----------------------------------------------|------------------------|---------------------------------------------------------------------------------------|-------------------------------|
 | Blob의 현재 버전을 삭제 하는 중 | Blob 삭제 | **Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete** | Storage Blob 데이터 기여자 |
 | 버전 삭제 | Blob 삭제 | **Microsoft. Storage/storageAccounts/blobServices/컨테이너/b l o b/Deleteblob 버전/작업** | Storage Blob 데이터 소유자 |
@@ -192,136 +198,97 @@ Blob 버전에 대 한 서명 된 리소스는 `bv` 입니다. 자세한 내용�
 
 | **사용 권한** | **URI 기호** | **허용되는 작업** |
 |----------------|----------------|------------------------|
-| DELETE         | x              | Blob 버전을 삭제 합니다. |
-
-## <a name="about-the-preview"></a>미리 보기 정보
-
-Blob 버전 관리는 다음 지역에서 미리 보기로 제공 됩니다.
-
-- 미국 동부 2
-- 미국 중부
-- 북유럽
-- 서유럽
-- 프랑스 중부
-- 캐나다 동부
-- 캐나다 중부
-
-> [!IMPORTANT]
-> Blob 버전 관리 미리 보기는 비프로덕션 용도로만 사용 됩니다. 현재 프로덕션 SLA(서비스 수준 계약)는 사용할 수 없습니다.
-
-2019-10-10 이상의 Azure Storage REST API는 blob 버전 관리를 지원 합니다.
-
-### <a name="storage-account-support"></a>스토리지 계정 지원
-
-Blob 버전 관리는 다음과 같은 유형의 저장소 계정에 사용할 수 있습니다.
-
-- 범용 v2 저장소 계정
-- Blob storage 계정 차단
-- Blob Storage 계정
-
-저장소 계정이 범용 v1 계정인 경우 Azure Portal를 사용 하 여 범용 v2 계정으로 업그레이드 합니다. 스토리지 계정에 대한 자세한 내용은 [Azure Storage 계정 개요](../common/storage-account-overview.md)를 참조하세요.
-
-Azure Data Lake Storage Gen2에서 사용 하도록 설정 된 계층적 네임 스페이스를 사용 하는 저장소 계정은 현재 지원 되지 않습니다.
-
-### <a name="register-for-the-preview"></a>미리 보기에 등록
-
-Blob 버전 관리 미리 보기에 등록 하려면 PowerShell 또는 Azure CLI를 사용 하 여 구독에 기능을 등록 하는 요청을 제출 합니다. 요청이 승인 된 후에는 새 범용 v2, Blob storage 또는 premium block blob storage 계정으로 blob 버전 관리를 사용 하도록 설정할 수 있습니다.
-
-# <a name="powershell"></a>[PowerShell](#tab/powershell)
-
-PowerShell에 등록 하려면 [AzProviderFeature](/powershell/module/az.resources/register-azproviderfeature) 명령을 호출 합니다.
-
-```powershell
-# Register for blob versioning (preview)
-Register-AzProviderFeature -ProviderNamespace Microsoft.Storage `
-    -FeatureName Versioning
-
-# Refresh the Azure Storage provider namespace
-Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
-```
-
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-Azure CLI 등록 하려면 [az feature register](/cli/azure/feature#az-feature-register) 명령을 호출 합니다.
-
-```azurecli
-az feature register --namespace Microsoft.Storage --name Versioning
-az provider register --namespace 'Microsoft.Storage'
-```
-
----
-
-### <a name="check-the-status-of-your-registration"></a>등록 상태를 확인 합니다.
-
-등록 상태를 확인 하려면 PowerShell 또는 Azure CLI를 사용 합니다.
-
-# <a name="powershell"></a>[PowerShell](#tab/powershell)
-
-PowerShell을 사용 하 여 등록 상태를 확인 하려면 [AzProviderFeature](/powershell/module/az.resources/get-azproviderfeature) 명령을 호출 합니다.
-
-```powershell
-Get-AzProviderFeature -ProviderNamespace Microsoft.Storage `
-    -FeatureName Versioning
-```
-
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-Azure CLI 등록 상태를 확인 하려면 [az feature](/cli/azure/feature#az-feature-show) 명령을 호출 합니다.
-
-```azurecli
-az feature show --namespace Microsoft.Storage --name Versioning
-```
-
----
+| 삭제         | x              | Blob 버전을 삭제 합니다. |
 
 ## <a name="pricing-and-billing"></a>가격 책정 및 대금 청구
 
 Blob 버전 관리를 사용 하도록 설정 하면 계정에 추가 데이터 저장소 요금이 부과 될 수 있습니다. 애플리케이션을 디자인할 때는 비용을 최소화할 수 있도록 이러한 요금 발생 방식을 파악하는 것이 중요합니다.
 
-Blob 스냅숏과 같은 blob 버전은 활성 데이터와 동일한 속도로 청구 됩니다. 버전이 기본 blob을 사용 하 여 블록 또는 페이지를 공유 하는 경우 버전과 기본 blob 간에 공유 되지 않는 추가 블록 또는 페이지에 대해서만 비용을 지불 합니다.
+Blob 스냅숏과 같은 blob 버전은 활성 데이터와 동일한 속도로 청구 됩니다. 버전을 청구 하는 방법은 기본 blob에 대 한 계층을 명시적으로 설정 했는지 아니면 해당 버전 (또는 스냅숏)에 대해 명시적으로 설정 했는지에 따라 달라 집니다. Blob 계층에 대한 자세한 내용은 [Azure Blob Storage: 핫, 쿨 및 보관 액세스 계층](storage-blob-storage-tiers.md)을 참조하세요.
+
+Blob 또는 버전의 계층을 변경 하지 않은 경우 해당 blob에 대 한 고유한 데이터 블록, 해당 버전 및 스냅숏이 있을 수 있는 모든 스냅숏이 청구 됩니다. 자세한 내용은 [blob 계층이 명시적으로 설정 되지 않은 경우 요금 청구](#billing-when-the-blob-tier-has-not-been-explicitly-set)를 참조 하세요.
+
+Blob 또는 버전의 계층을 변경한 경우 blob 및 버전이 최종적으로 동일한 계층에 있는지 여부에 관계 없이 전체 개체에 대해 요금이 청구 됩니다. 자세한 내용은 [blob 계층이 명시적으로 설정 된 경우 청구](#billing-when-the-blob-tier-has-been-explicitly-set)를 참조 하세요.
 
 > [!NOTE]
 > 자주 덮어쓰는 데이터의 버전 관리를 사용 하도록 설정 하면 저장소 용량 요금이 늘어나고 작업을 나열 하는 동안 대기 시간이 늘어날 수 있습니다. 이러한 문제를 완화 하려면 버전 관리를 사용 하지 않는 별도의 저장소 계정에 자주 덮어쓴 데이터를 저장 합니다.
 
-### <a name="important-billing-considerations"></a>청구 관련 중요 고려 사항
+Blob 스냅숏에 대 한 청구 정보에 대 한 자세한 내용은 [blob 스냅숏](snapshots-overview.md)을 참조 하세요.
 
-Blob 버전 관리를 사용 하는 경우 다음 사항을 고려해 야 합니다.
+### <a name="billing-when-the-blob-tier-has-not-been-explicitly-set"></a>Blob 계층이 명시적으로 설정 되지 않은 경우의 요금 청구
 
-- Blob 또는 blob의 이전 버전에 있든 관계 없이 저장소 계정에는 고유한 블록이 나 페이지에 대 한 요금이 부과 됩니다. 사용자의 계정에는 기반으로 하는 blob을 업데이트할 때까지 blob와 연결 된 버전에 대 한 추가 요금이 부과 되지 않습니다. Blob을 업데이트 한 후에는 이전 버전에서 달라 지므로. 이 경우 각 blob 또는 버전의 고유 블록이 나 페이지에 대 한 요금이 청구 됩니다.
-- 블록 Blob 내의 블록을 바꾸고 나면 해당 블록은 이후부터 고유 블록으로 요금이 청구됩니다. 블록의 블록 ID와 버전이 동일한 데이터를 포함 하는 경우에도 마찬가지입니다. 블록이 다시 커밋되면 모든 버전의 해당 요소에서 달라 지므로 해당 데이터에 대 한 요금이 청구 됩니다. 같은 데이터로 업데이트하는 페이지 Blob 내 페이지의 경우에도 마찬가지입니다.
-- Blob 저장소에는 두 블록에 동일한 데이터가 포함 되어 있는지 여부를 확인할 수 있는 방법이 없습니다. 업로드/커밋되는 각 블록은 데이터와 블록 ID가 같더라도 고유한 블록으로 처리됩니다. 고유 블록에 대해 요금이 부과 되기 때문에 버전 관리를 사용 하는 경우 blob을 업데이트 하면 고유한 블록이 추가로 발생 하 고 추가 요금이 발생 한다는 점을 고려해 야 합니다.
-- Blob 버전 관리를 사용 하는 경우 블록 blob에 대 한 업데이트 작업을 디자인 하 여 가능한 최소 블록 수를 업데이트 합니다. 블록에 대 한 세분화 된 제어를 허용 하는 쓰기 작업은 [put](/rest/api/storageservices/put-block) 블록 및 [put 블록 목록](/rest/api/storageservices/put-block-list)입니다. 반면 [Blob 배치](/rest/api/storageservices/put-blob) 작업은 blob의 전체 콘텐츠를 대체 하므로 추가 요금이 발생할 수 있습니다.
+기본 blob 또는 해당 버전에 대 한 blob 계층을 명시적으로 설정 하지 않은 경우에는 blob, 해당 버전 및 모든 스냅숏에 대해 고유한 블록이 나 페이지에 대 한 요금이 청구 됩니다. Blob 및 해당 버전에서 공유 되는 데이터는 한 번만 청구 됩니다. Blob이 업데이트 되 면 기본 blob의 데이터는 해당 버전에 저장 된 데이터에서 달라 지므로 되며 고유 데이터는 블록 또는 페이지 별로 요금이 청구 됩니다.
 
-### <a name="versioning-billing-scenarios"></a>버전 관리 요금 청구 시나리오
+블록 Blob 내의 블록을 바꾸고 나면 해당 블록은 이후부터 고유 블록으로 요금이 청구됩니다. 블록에 이전 버전과 동일한 블록 ID와 동일한 데이터가 있는 경우에도 마찬가지입니다. 블록이 다시 커밋되면 이전 버전의 해당 요소에서 달라 지므로 해당 데이터에 대 한 요금이 청구 됩니다. 같은 데이터로 업데이트하는 페이지 Blob 내 페이지의 경우에도 마찬가지입니다.
 
-다음 시나리오에서는 블록 blob 및 해당 버전에 대 한 요금을 계산 하는 방법을 보여 줍니다.
+Blob 저장소에는 두 블록에 동일한 데이터가 포함 되어 있는지 여부를 확인할 수 있는 방법이 없습니다. 업로드/커밋되는 각 블록은 데이터와 블록 ID가 같더라도 고유한 블록으로 처리됩니다. 고유 블록에 대해 요금이 부과 되기 때문에 버전 관리를 사용 하는 경우 blob을 업데이트 하면 고유한 블록이 추가로 발생 하 고 추가 요금이 발생 한다는 점을 명심 해야 합니다.
+
+Blob 버전 관리를 사용 하는 경우 블록 blob에 대 한 업데이트 작업을 호출 하 여 가능한 최소 블록 수를 업데이트 합니다. 블록에 대 한 세분화 된 제어를 허용 하는 쓰기 작업은 [put](/rest/api/storageservices/put-block) 블록 및 [put 블록 목록](/rest/api/storageservices/put-block-list)입니다. 반면 [Blob 배치](/rest/api/storageservices/put-blob) 작업은 blob의 전체 콘텐츠를 대체 하므로 추가 요금이 발생할 수 있습니다.
+
+다음 시나리오에서는 blob 계층이 명시적으로 설정 되지 않은 경우 블록 blob 및 해당 버전에 대 한 요금을 계산 하는 방법을 보여 줍니다.
 
 #### <a name="scenario-1"></a>시나리오 1
 
 시나리오 1에서 blob에는 이전 버전이 있습니다. 버전이 만들어진 이후에 blob가 업데이트 되지 않았으므로 고유한 블록 1, 2, 3에 대해서만 요금이 부과 됩니다.
 
-![Azure Storage 리소스](./media/versioning-overview/versions-billing-scenario-1.png)
+![기본 blob 및 이전 버전의 고유 블록에 대 한 청구를 보여 주는 다이어그램 1](./media/versioning-overview/versions-billing-scenario-1.png)
 
 #### <a name="scenario-2"></a>시나리오 2
 
 시나리오 2에서는 blob의 한 블록 (다이어그램의 블록 3)이 업데이트 되었습니다. 업데이트 된 블록에 동일한 데이터와 동일한 ID가 포함 된 경우에도 이전 버전의 블록 3과는 다릅니다. 따라서 4개 블록에 대한 요금이 계정에 청구됩니다.
 
-![Azure Storage 리소스](./media/versioning-overview/versions-billing-scenario-2.png)
+![다이어그램 2 기본 blob 및 이전 버전의 고유 블록에 대 한 요금 청구 표시](./media/versioning-overview/versions-billing-scenario-2.png)
 
 #### <a name="scenario-3"></a>시나리오 3
 
 시나리오 3에서 blob은 업데이트 되었지만 버전은 업데이트 되지 않았습니다. 기본 blob에서 블록 3이 블록 4로 대체 되었지만 이전 버전은 여전히 블록 3을 반영 합니다. 따라서 4개 블록에 대한 요금이 계정에 청구됩니다.
 
-![Azure Storage 리소스](./media/versioning-overview/versions-billing-scenario-3.png)
+![기본 blob 및 이전 버전의 고유 블록에 대 한 청구를 보여 주는 다이어그램 3](./media/versioning-overview/versions-billing-scenario-3.png)
 
 #### <a name="scenario-4"></a>시나리오 4
 
-시나리오 4에서는 기본 Blob이 완전히 업데이트되었으며 원래 블록을 하나도 포함하지 않습니다. 따라서 기본 blob에서 4 개의 고유 블록 &mdash; 4 개와 이전 버전 4 개에 대 한 요금이 계정에 청구 됩니다. 이 시나리오는 blob 배치 작업을 사용 하 여 blob에 쓰는 경우에 발생할 수 있습니다 .이 경우 기본 blob의 전체 콘텐츠가 대체 되기 때문입니다.
+시나리오 4에서는 기본 Blob이 완전히 업데이트되었으며 원래 블록을 하나도 포함하지 않습니다. 따라서 기본 blob에서 4 개의 고유 블록 &mdash; 4 개와 이전 버전 4 개에 대 한 요금이 계정에 청구 됩니다. 이 시나리오는 blob [배치](/rest/api/storageservices/put-blob) 작업을 사용 하 여 blob에 쓰는 경우에 발생할 수 있습니다 .이 경우 기본 blob의 전체 콘텐츠가 대체 되기 때문입니다.
 
-![Azure Storage 리소스](./media/versioning-overview/versions-billing-scenario-4.png)
+![다이어그램 4 기본 blob 및 이전 버전의 고유 블록에 대 한 요금 청구 표시](./media/versioning-overview/versions-billing-scenario-4.png)
+
+### <a name="billing-when-the-blob-tier-has-been-explicitly-set"></a>Blob 계층이 명시적으로 설정 된 경우 요금 청구
+
+Blob 또는 버전 (또는 스냅숏)에 대 한 blob 계층을 명시적으로 설정한 경우, 원본 계층의 개체와 블록을 공유 하는지 여부에 관계 없이 새 계층에서 개체의 전체 콘텐츠 길이에 대 한 요금이 청구 됩니다. 또한 원본 계층에서 가장 오래 된 버전의 전체 콘텐츠 길이에 대 한 요금이 청구 됩니다. 원본 계층에 남아 있는 다른 모든 이전 버전 또는 스냅숏은 [blob 계층이 명시적으로 설정 되지 않은 경우의 요금 청구](#billing-when-the-blob-tier-has-not-been-explicitly-set)에 설명 된 대로 공유 될 수 있는 고유한 블록에 대해 요금이 청구 됩니다.
+
+#### <a name="moving-a-blob-to-a-new-tier"></a>새 계층으로 blob 이동
+
+다음 표에서는 새 계층으로 이동할 때 blob 또는 버전에 대 한 청구 동작을 설명 합니다.
+
+| Blob 계층이 명시적으로 설정 된 경우 | 다음에 대 한 요금이 청구 됩니다. |
+|-|-|
+| 이전 버전의 기본 blob | 새 계층의 기본 blob 및 원본 계층의 가장 오래 된 버전과 다른 버전의 모든 고유 블록 <sup>1</sup> |
+| 이전 버전 및 스냅숏이 있는 기본 blob | 새 계층의 기본 blob, 원래 계층의 가장 오래 된 버전 및 원본 계층의 가장 오래 된 스냅숏과 다른 버전 또는 스냅숏<sup>1</sup>의 고유한 블록 |
+| 이전 버전 | 새 계층의 버전과 원래 계층의 기본 blob에는 다른 버전의 모든 고유 블록이 추가 됩니다. <sup>1</sup> |
+
+<sup>1</sup> 원본 계층에서 이동 되지 않은 다른 이전 버전 또는 스냅숏이 있는 경우 해당 버전 또는 스냅숏은 [blob 계층이 명시적으로 설정 되지 않은 경우 청구](#billing-when-the-blob-tier-has-not-been-explicitly-set)에 설명 된 대로 포함 된 고유 블록 수에 따라 요금이 청구 됩니다.
+
+Blob, 버전 또는 스냅숏에 대 한 계층을 명시적으로 설정 하는 작업은 취소할 수 없습니다. 새 계층으로 blob을 이동한 다음 원래 계층으로 다시 이동 하는 경우 원본 계층의 다른 개체와 블록을 공유 하는 경우에도 개체의 전체 콘텐츠 길이에 대 한 요금이 청구 됩니다.
+
+Blob, 버전 또는 스냅숏의 계층을 명시적으로 설정 하는 작업은 다음과 같습니다.
+
+- [Blob 계층 설정](/rest/api/storageservices/set-blob-tier)
+- 계층을 지정 하 여 [Blob 배치](/rest/api/storageservices/put-blob)
+- 지정 된 계층을 사용 하 여 [블록 목록 배치](/rest/api/storageservices/put-block-list)
+- 계층을 지정 하 여 [Blob 복사](/rest/api/storageservices/copy-blob)
+
+#### <a name="deleting-a-blob-when-soft-delete-is-enabled"></a>일시 삭제를 사용 하는 경우 blob 삭제
+
+Blob 일시 삭제를 사용 하는 경우 계층을 명시적으로 설정한 기본 blob을 삭제 하거나 덮어쓰면 모든 이전 버전의 일시 삭제 된 blob은 전체 콘텐츠 길이로 청구 됩니다. Blob 버전 관리와 일시 삭제를 함께 사용 하는 방법에 대 한 자세한 내용은 [blob 버전 관리 및 일시 삭제](#blob-versioning-and-soft-delete)를 참조 하세요.
+
+다음 표에서는 버전 관리의 사용 여부에 따라 일시 삭제 된 blob에 대 한 청구 동작을 설명 합니다. 버전 관리를 사용 하는 경우 blob이 일시 삭제 되 면 버전이 생성 됩니다. 버전 관리를 사용 하지 않도록 설정 하면 blob을 일시 삭제 하면 일시 삭제 스냅숏이 생성 됩니다.
+
+| 계층을 사용 하 여 기본 blob를 덮어쓸 때를 명시적으로 설정 하는 경우 ... | 다음에 대 한 요금이 청구 됩니다. |
+|-|-|
+| Blob 일시 삭제 및 버전 관리를 모두 사용 하는 경우 | 계층에 관계 없이 모든 기존 버전은 전체 콘텐츠 길이입니다. |
+| Blob 일시 삭제를 사용 하도록 설정 했지만 버전 관리를 사용 하지 않는 경우 | 계층에 관계 없이 모든 기존 일시 삭제 스냅숏이 전체 콘텐츠 길이에 있습니다. |
 
 ## <a name="see-also"></a>참고 항목
 
-- [BLOB 버전 관리 사용](versioning-enable.md)
+- [Blob 버전 관리 설정 및 관리](versioning-enable.md)
 - [Blob의 스냅숏 만들기](/rest/api/storageservices/creating-a-snapshot-of-a-blob)
 - [Azure Storage Blob에 대 한 일시 삭제](storage-blob-soft-delete.md)

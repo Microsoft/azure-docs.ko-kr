@@ -3,12 +3,13 @@ title: Azure Application Insights에서 리소스, 역할 및 액세스 제어 |
 description: 조직 Insights의 소유자, 참여자 및 읽기 권한자입니다.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.openlocfilehash: 3d69ad7eeb7c8dd32c2e3cb286f9596bed7fe042
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: cd1e69ecd121380353ad6400d473d572b7b7bb3e
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926504"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89076687"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Application Insights에서 리소스, 역할 및 액세스 제어
 
@@ -101,7 +102,7 @@ Outlook.com, OneDrive, Windows Phone 또는 XBox Live를 사용하는 사람은 
 
 ## <a name="related-content"></a>관련 콘텐츠
 
-* [Azure 역할 기반 access control (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md)
+* [Azure RBAC(Azure 역할 기반 액세스 제어)](../../role-based-access-control/role-assignments-portal.md)
 
 ## <a name="powershell-query-to-determine-role-membership"></a>역할 멤버 자격을 확인하기 위한 PowerShell 쿼리
 

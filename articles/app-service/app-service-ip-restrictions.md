@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: a77172aacc4c58e6430339328410744cc866def3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce5882f2621dc5b8c48bcf5be6d4ea3a2f723bfe
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207127"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962964"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Azure App Service 액세스 제한
 
@@ -94,7 +94,7 @@ IP 주소 기반 규칙을 설정 하려면 IPv4 또는 IPv6 유형을 선택 �
 
 ## <a name="programmatic-manipulation-of-access-restriction-rules"></a>액세스 제한 규칙의 프로그래밍 방식 조작 ##
 
-[Azure CLI](https://docs.microsoft.com/cli/azure/webapp/config/access-restriction?view=azure-cli-latest) 및 [Azure PowerShell](https://docs.microsoft.com/powershell/module/Az.Websites/Add-AzWebAppAccessRestrictionRule?view=azps-3.1.0) 는 액세스 제한 편집을 지원 합니다. Azure CLI를 사용 하 여 액세스 제한을 추가 하는 예제:
+[Azure CLI](/cli/azure/webapp/config/access-restriction?view=azure-cli-latest) 및 [Azure PowerShell](/powershell/module/Az.Websites/Add-AzWebAppAccessRestrictionRule?view=azps-3.1.0) 는 액세스 제한 편집을 지원 합니다. Azure CLI를 사용 하 여 액세스 제한을 추가 하는 예제:
 
 ```azurecli-interactive
 az webapp config access-restriction add --resource-group ResourceGroup --name AppName \
@@ -107,7 +107,7 @@ Add-AzWebAppAccessRestrictionRule -ResourceGroupName "ResourceGroup" -WebAppName
     -Name "Ip example rule" -Priority 100 -Action Allow -IpAddress 122.133.144.0/24
 ```
 
-리소스 관리자 또는 Azure Resource Manager 템플릿을 사용 하 여 앱 구성에서 [Azure REST API](https://docs.microsoft.com/rest/api/azure/) PUT 작업을 사용 하 여 수동으로 값을 설정할 수도 있습니다. 예를 들어, resources.azure.com을 사용하고, ipSecurityRestrictions 블록을 편집하여 필요한 JSON을 추가할 수 있습니다.
+리소스 관리자 또는 Azure Resource Manager 템플릿을 사용 하 여 앱 구성에서 [Azure REST API](/rest/api/azure/) PUT 작업을 사용 하 여 수동으로 값을 설정할 수도 있습니다. 예를 들어, resources.azure.com을 사용하고, ipSecurityRestrictions 블록을 편집하여 필요한 JSON을 추가할 수 있습니다.
 
 Resource Manager에서 이 정보는 다음 위치에 제공됩니다.
 
@@ -139,4 +139,4 @@ App Service 계획과 동일한 기능을 사용 하는 함수 앱에 대 한 �
 [서비스 끝점과 Application Gateway 통합](networking/app-gateway-with-service-endpoints.md)
 
 <!--Links-->
-[serviceendpoints]: https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview
+[serviceendpoints]: ../virtual-network/virtual-network-service-endpoints-overview.md

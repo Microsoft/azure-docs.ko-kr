@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9cb1b4d33a538b48ca1519d66f6602d902033c3e
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 3bf180c2b70a686879082888e45e67936cdbec67
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494828"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799233"
 ---
 # <a name="design-tables-using-synapse-sql"></a>Synapse SQL을 사용 하 여 테이블 디자인
 
@@ -75,7 +75,7 @@ SQL 풀에서 테이블의 조직을 표시 하려면 팩트, dim 및 int를 테
 
 | WideWorldImportersDW 테이블  | 테이블 유형입니다. | SQL 풀 |
 |:-----|:-----|:------|:-----|
-| 도시 | 차원 | wwi.DimCity |
+| City | 차원 | wwi.DimCity |
 | 주문 | 팩트 | wwi.FactOrder |
 
 ## <a name="table-persistence"></a>테이블 지속성
@@ -207,7 +207,7 @@ columnstore 기능 목록은 [columnstore 인덱스의 새로운 기능](/sql/re
 
 테이블을 새로운 빈 테이블로 만들 수 있습니다. 테이블을 만들고 select 문의 결과로 채울 수도 있습니다. 다음은 테이블을 만드는 T-SQL 명령입니다.
 
-| T-SQL 문 | Description |
+| T-SQL 문 | 설명 |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) | 모든 테이블 열과 옵션을 정의하여 빈 테이블을 만듭니다. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) | 외부 테이블을 만듭니다. 테이블의 정의는 SQL 풀에 저장 됩니다. 테이블 데이터는 Azure Blob storage 또는 Azure Data Lake Storage에 저장 됩니다. |
@@ -360,6 +360,9 @@ SELECT *
 FROM size
 ;
 ```
+
+>[!TIP]
+> Synapse SQL의 성능 향상을 위해 영구 사용자 테이블에서 **pdw_table_mappings** 대신 **pdw_permanent_table_mappings** 를 사용 하는 것이 좋습니다. 자세한 내용은 **[pdw_permanent_table_mappings &#40;transact-sql&#41;](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** 을 참조 하십시오.
 
 ### <a name="table-space-summary"></a>테이블 공간 요약
 

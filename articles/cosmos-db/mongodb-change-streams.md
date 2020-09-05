@@ -7,13 +7,13 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 06/04/2020
 ms.author: rosouz
-ms.custom: devx-track-javascript
-ms.openlocfilehash: b13585b4a839bfcf6c0645c911e98d1f1885f3ca
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 47f1fb4414b26ca9edbd992826a383ca65772ae7
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036711"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003816"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Azure Cosmos DB의 API for MongoDB에서 변경 스트림
 
@@ -21,26 +21,6 @@ Azure Cosmos DB의 API for MongoDB의 [변경 피드](change-feed.md) 지원은 
 
 > [!NOTE]
 > 변경 스트림을 사용하려면 Azure Cosmos DB의 API for MongoDB 버전 3.6 이상을 사용하여 계정을 만듭니다. 이전 버전에 대해 변경 스트림 예제를 실행하는 경우 `Unrecognized pipeline stage name: $changeStream` 오류가 표시될 수 있습니다.
-
-## <a name="current-limitations"></a>현재 제한 사항
-
-변경 스트림을 사용하는 경우 다음과 같은 제한이 적용될 수 있습니다.
-
-* `operationType` 및 `updateDescription` 속성은 출력 문서에서 아직 지원되지 않습니다.
-* 현재 `insert`, `update` 및 `replace` 작업 유형이 지원됩니다. 
-* 삭제 작업 또는 기타 이벤트는 아직 지원되지 않습니다.
-
-해당 제한 사항으로 인해 이전 예제에 나와 있는 것처럼 $match 단계, $project 단계 및 fullDocument 옵션이 필요합니다.
-
-Azure Cosmos DB의 SQL API에 있는 변경 피드와 달리, 변경 스트림을 사용할 별도의 [변경 피드 프로세서 라이브러리](change-feed-processor.md) 또는 임대 컨테이너를 사용할 필요성이 없습니다. 현재 변경 스트림을 처리하기 위한 [Azure Functions 트리거](change-feed-functions.md)는 지원되지 않습니다.
-
-## <a name="error-handling"></a>오류 처리
-
-변경 스트림을 사용할 때 지원되는 오류 코드와 메시지는 다음과 같습니다.
-
-* **HTTP 오류 코드 16500** - 변경 스트림이 제한되면 빈 페이지를 반환합니다.
-
-* **NamespaceNotFound**(OperationType 무효화) - 존재하지 않는 컬렉션에서 변경 스트림을 실행하거나 컬렉션을 삭제하면 `NamespaceNotFound` 오류가 반환됩니다. `operationType` 속성은 `operationType Invalidate` 오류 대신 출력 문서에서 반환될 수 없으므로 `NamespaceNotFound` 오류가 반환됩니다.
 
 ## <a name="examples"></a>예
 
@@ -156,15 +136,17 @@ var cursor = db.coll.watch(
 변경 스트림을 사용하는 경우 다음과 같은 제한이 적용될 수 있습니다.
 
 * `operationType` 및 `updateDescription` 속성은 출력 문서에서 아직 지원되지 않습니다.
-* 현재 `insert`, `update` 및 `replace` 작업 유형이 지원됩니다. 삭제 작업 또는 기타 이벤트는 아직 지원되지 않습니다.
+* 현재 `insert`, `update` 및 `replace` 작업 유형이 지원됩니다. 그러나 삭제 작업 또는 기타 이벤트는 아직 지원 되지 않습니다.
 
 해당 제한 사항으로 인해 이전 예제에 나와 있는 것처럼 $match 단계, $project 단계 및 fullDocument 옵션이 필요합니다.
+
+Azure Cosmos DB의 SQL API에 있는 변경 피드와 달리, 변경 스트림을 사용할 별도의 [변경 피드 프로세서 라이브러리](change-feed-processor.md) 또는 임대 컨테이너를 사용할 필요성이 없습니다. 현재 변경 스트림을 처리하기 위한 [Azure Functions 트리거](change-feed-functions.md)는 지원되지 않습니다.
 
 ## <a name="error-handling"></a>오류 처리
 
 변경 스트림을 사용할 때 지원되는 오류 코드와 메시지는 다음과 같습니다.
 
-* **HTTP 오류 코드 429** - 변경 스트림이 제한되면 빈 페이지를 반환합니다.
+* **HTTP 오류 코드 16500** - 변경 스트림이 제한되면 빈 페이지를 반환합니다.
 
 * **NamespaceNotFound**(OperationType 무효화) - 존재하지 않는 컬렉션에서 변경 스트림을 실행하거나 컬렉션을 삭제하면 `NamespaceNotFound` 오류가 반환됩니다. `operationType` 속성은 `operationType Invalidate` 오류 대신 출력 문서에서 반환될 수 없으므로 `NamespaceNotFound` 오류가 반환됩니다.
 

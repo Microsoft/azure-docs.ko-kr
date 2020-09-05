@@ -4,12 +4,12 @@ description: 이 문서에서는 온-프레미스 Windows server에 대 한 시�
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 07/22/2019
-ms.openlocfilehash: e588ce4e3458634be32a7129b40906c98fc02ac0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7eb596853bfe17ec5bf14c8830c1b95bde5b7c98
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513853"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022363"
 ---
 # <a name="troubleshoot-system-state-backup"></a>시스템 상태 백업 문제 해결
 
@@ -17,7 +17,7 @@ ms.locfileid: "86513853"
 
 ## <a name="basic-troubleshooting"></a>기본 문제 해결
 
-시스템 상태 백업 문제 해결을 시작 하기 전에 아래 유효성 검사를 수행 하는 것이 좋습니다.
+시스템 상태 백업 문제 해결을 시작 하기 전에 다음 유효성 검사 단계를 수행 하는 것이 좋습니다.
 
 - [MARS(Microsoft Azure Recovery Services) 에이전트가 최신 상태인지 확인](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)
 - [MARS 에이전트와 Azure 간에 네트워크 연결이 있는지 확인](./backup-azure-mars-troubleshoot.md#the-microsoft-azure-recovery-service-agent-was-unable-to-connect-to-microsoft-azure-backup)
@@ -37,10 +37,10 @@ ms.locfileid: "86513853"
 
 ### <a name="limitation"></a>제한 사항
 
-- Microsoft에서는 시스템 상태 복구를 사용하여 다른 하드웨어로 복구하는 방법을 권장하지 않습니다.
+- Microsoft에서 시스템 상태 복구를 사용 하 여 다른 하드웨어로 복구 하지 않는 것이 좋습니다.
 - 시스템 상태 백업은 현재 "온-프레미스" Windows 서버를 지원 합니다. Azure Vm에는이 기능을 사용할 수 없습니다.
 
-## <a name="prerequisites"></a>사전 준비 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 Azure Backup를 사용 하 여 시스템 상태 백업 문제를 해결 하기 전에 다음 필수 구성 요소 검사를 수행 합니다.  
 
@@ -56,7 +56,7 @@ Get-WindowsFeature Windows-Server-Backup
 
 #### <a name="method-1-install-windows-server-backup-using-powershell"></a>방법 1: PowerShell을 사용 하 여 Windows Server 백업 설치
 
-PowerShell을 사용 하 여 Windows Server 백업를 설치 하려면 아래 명령을 실행 합니다.
+PowerShell을 사용 하 여 Windows Server 백업을 설치 하려면 다음 명령을 실행 합니다.
 
   ```powershell
   Install-WindowsFeature -Name Windows-Server-Backup
@@ -77,16 +77,16 @@ PowerShell을 사용 하 여 Windows Server 백업를 설치 하려면 아래 �
 3. 서버 풀에서 서버를 선택 하 고 **다음**을 클릭 합니다. 서버 역할에서 기본 선택 항목을 그대로 두고 **다음**을 클릭 합니다.
 4. **기능** 탭에서 **Windows Server 백업** 를 선택 하 고 **다음**을 클릭 합니다.
 
-    ![기능](./media/backup-azure-system-state-troubleshoot/features.png)
+    ![기능 창 선택](./media/backup-azure-system-state-troubleshoot/features.png)
 
 5. **확인** 탭에서 **설치** 를 클릭 하 여 설치 프로세스를 시작 합니다.
 6. **결과** 탭에는 Windows Server에 Windows Server 백업 기능이 성공적으로 설치 되어 표시 됩니다.
 
-    ![result](./media/backup-azure-system-state-troubleshoot/results.jpg)
+    ![설치 결과](./media/backup-azure-system-state-troubleshoot/results.jpg)
 
 ### <a name="system-volume-information-permission"></a>시스템 볼륨 정보 사용 권한
 
-로컬 시스템에 Windows가 설치 된 볼륨에 있는 **시스템 볼륨 정보** 폴더에 대 한 모든 권한이 있는지 확인 합니다. 일반적으로이는 **C:\system 볼륨 정보**입니다. 위의 권한이 올바르게 설정 되지 않은 경우 Windows Server 백업이 실패할 수 있음
+로컬 시스템에 Windows가 설치 된 볼륨에 있는 **시스템 볼륨 정보** 폴더에 대 한 모든 권한이 있는지 확인 합니다. 일반적으로이는 **C:\system 볼륨 정보**입니다. 위의 권한이 올바르게 설정 되지 않은 경우 Windows Server 백업은 실패할 수 있습니다.
 
 ### <a name="dependent-services"></a>종속 서비스
 
@@ -113,7 +113,7 @@ Windows Server 백업 상태를 확인 하려면 다음 단계를 수행 합니�
 
     - 이 오류가 발생 하 여 실패 하는 경우 필수 구성 요소의 1 단계에 설명 된 대로 서버 컴퓨터에 Windows Server 백업 기능을 다시 설치 합니다.
 
-  - 관리자 권한 명령 프롬프트에서 아래 명령을 실행 하 여 WSB 백업이 제대로 작동 하는지 확인 합니다.
+  - 관리자 권한 명령 프롬프트에서 다음 명령을 실행 하 여 WSB 백업이 제대로 작동 하는지 확인 합니다.
 
       `wbadmin start systemstatebackup -backuptarget:X: -quiet`
 

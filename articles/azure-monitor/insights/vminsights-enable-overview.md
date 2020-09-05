@@ -1,19 +1,19 @@
 ---
-title: VM용 Azure Monitor 개요 사용
+title: VM용 Azure Monitor 사용 개요
 description: VM용 Azure Monitor를 배포 하 고 구성 하는 방법을 알아봅니다. 시스템 요구 사항을 확인 합니다.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 07/27/2020
-ms.openlocfilehash: e3c5f6d7e04620cf36f6cd952467d47afd775b19
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/27/2020
+ms.openlocfilehash: 449979443577d22f8cc2ec35ec770dd1e107bb76
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87824769"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998410"
 ---
-# <a name="enable-azure-monitor-for-vms-overview"></a>VM용 Azure Monitor 개요 사용
+# <a name="enable-azure-monitor-for-vms-overview"></a>VM용 Azure Monitor 사용 개요
 
 이 문서에서는 VM용 Azure Monitor에서 다음의 상태와 성능을 모니터링할 수 있도록 하는 데 사용할 수 있는 옵션의 개요를 제공 합니다.
 
@@ -30,7 +30,7 @@ VM용 Azure Monitor을 설정 하려면:
 * PowerShell을 사용 하 여 지정 된 구독 또는 리소스 그룹에서 여러 Azure Vm, Azure Arc Vm, Azure VMSS 또는 Azure Arc 컴퓨터를 사용 하도록 설정 합니다.
 * VM용 Azure Monitor 사용 하 여 회사 네트워크 또는 다른 클라우드 환경에서 호스트 되는 Vm 또는 물리적 컴퓨터를 모니터링할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 시작하기 전에 다음 섹션의 정보를 이해해야 합니다. 
 
@@ -78,86 +78,25 @@ Log Analytics 작업 영역이 없는 경우 리소스 중 하나를 사용 하 
 
 ## <a name="supported-operating-systems"></a>지원되는 운영 체제
 
-다음 표에는 VM용 Azure Monitor에서 지 원하는 Windows 및 Linux 운영 체제가 나와 있습니다. 이 섹션의 뒷부분에는 주요 Linux OS 릴리스와 지원 되는 커널 버전에 대 한 전체 목록이 나와 있습니다.
+VM용 Azure Monitor는 Log Analytics 에이전트 및 종속성 에이전트를 지 원하는 모든 운영 체제를 지원 합니다. 전체 목록은 [Azure Monitor 에이전트 개요 ](../platform/agents-overview.md#supported-operating-systems) 를 참조 하세요.
 
-|OS 버전 |성능 |지도 |
-|-----------|------------|-----|
-|Windows Server 2019 | X | X |
-|Windows Server 2016 1803 | X | X |
-|Windows Server 2016 | X | X |
-|Windows Server 2012 R2 | X | X |
-|Windows Server 2012 | X | X |
-|Windows Server 2008 R2 | X | X|
-|Windows 10 1803 | X | X |
-|Windows 8.1 | X | X |
-|Windows 8 | X | X |
-|Windows 7 SP1 | X | X |
-|Red Hat Enterprise Linux (RHEL) 6, 7| X | X| 
-|Ubuntu 18.04, 16.04 | X | X |
-|CentOS Linux 7, 6 | X | X |
-|SLES(SUSE Linux Enterprise Server) 12 | X | X |
-|Debian 9.4, 8 | X<sup>1</sup> | |
+VM용 Azure Monitor를 지 원하는 종속성 에이전트의 Linux 지원에 대 한 다음 고려 사항 목록을 참조 하세요.
 
-<sup>1</sup> VM용 Azure Monitor의 성능 기능은 Azure Monitor에서만 사용할 수 있습니다. Azure VM의 왼쪽 창에서 직접 사용할 수 없습니다.
+- 기본 및 SMP Linux 커널 릴리스만 지원됩니다.
+- PAE(Physical Address Extension) 및 Xen과 같은 비표준 커널 릴리스는 Linux 배포판에 대해 지원되지 않습니다. 예를 들어 *2.6.16.21-0.8-xen*의 릴리스 문자열이 있는 시스템은 지원되지 않습니다.
+- 표준 커널 다시 컴파일이 포함 된 사용자 지정 커널은 지원 되지 않습니다.
+- 9.4 버전 이외의 Debian 배포판에서는 맵 기능이 지원 되지 않으며 성능 기능은 Azure Monitor 메뉴 에서만 사용할 수 있습니다. Azure VM의 왼쪽 창에서 직접 사용할 수 없습니다.
+- CentOSPlus 커널이 지원 됩니다.
+- 스펙터 취약성에 대해 Linux 커널의 패치를 적용 해야 합니다. 자세한 내용은 Linux 배포 공급 업체에 문의 하세요.
 
->[!NOTE]
->Linux 운영 체제에서 다음을 수행 합니다.
-> - 기본 및 SMP Linux 커널 릴리스만 지원됩니다.
-> - PAE(Physical Address Extension) 및 Xen과 같은 비표준 커널 릴리스는 Linux 배포판에 대해 지원되지 않습니다. 예를 들어 *2.6.16.21-0.8-xen*의 릴리스 문자열이 있는 시스템은 지원되지 않습니다.
-> - 표준 커널 다시 컴파일이 포함 된 사용자 지정 커널은 지원 되지 않습니다.
-> - CentOSPlus 커널이 지원 됩니다.
-> - 스펙터 취약성에 대해 Linux 커널의 패치를 적용 해야 합니다. 자세한 내용은 Linux 배포 공급 업체에 문의 하세요.
 
-#### <a name="red-hat-linux-7"></a>Red Hat Linux 7
-
-| OS 버전 | 커널 버전 |
-|:--|:--|
-| 7.6 | 3.10.0-957 |
-| 7.5 | 3.10.0-862 |
-| 7.4 | 3.10.0-693 |
-
-#### <a name="red-hat-linux-6"></a>Red Hat Linux 6
-
-| OS 버전 | 커널 버전 |
-|:--|:--|
-| 6.10 | 2.6.32-754 |
-| 6.9 | 2.6.32-696 |
-
-#### <a name="centosplus"></a>CentOSPlus
-
-| OS 버전 | 커널 버전 |
-|:--|:--|
-| 6.10 | 2.6.32 커널을-754.3.5<br>2.6.32 커널을-696.30.1 |
-| 6.9 | 2.6.32 커널을-696.30.1<br>2.6.32 커널을-696.18.7 |
-
-#### <a name="ubuntu-server"></a>Ubuntu Server
-
-| OS 버전 | 커널 버전 |
-|:--|:--|
-| 18.04 | 5.3.0-1020<br>5.0 (Azure 조정 커널 포함)<br>4.18* <br> 4.15* |
-| 16.04.3 | 4.15. * |
-| 16.04 | 4.13.\*<br>4.11.\*<br>4.10.\*<br>4.8.\*<br>4.4.\* |
-
-#### <a name="suse-linux-12-enterprise-server"></a>SUSE Linux 12 Enterprise Server
-
-| OS 버전 | 커널 버전 |
-|:--|:--|
-|12 SP4 | 4.12. * (Azure 조정 커널 포함) |
-|12 SP3 | 4.4.* |
-|12 SP2 | 4.4.* |
-
-#### <a name="debian"></a>Debian 
-
-| OS 버전 | 커널 버전 |
-|:--|:--|
-| 9 | 4.9 | 
 
 ## <a name="supported-azure-arc-machines"></a>지원 되는 Azure Arc 컴퓨터
 VM용 Azure Monitor는 Arc 확장 서비스를 사용할 수 있는 지역에서 Azure Arc 사용 서버에 사용할 수 있습니다. Arc 에이전트 버전 0.9 이상을 실행 해야 합니다.
 
 | 연결된 원본 | 지원됨 | Description |
 |:--|:--|:--|
-| Windows 에이전트 | 예 | [Windows에 대 한 Log Analytics 에이전트](../platform/log-analytics-agent.md)와 함께 windows 에이전트에는 종속성 에이전트가 필요 합니다. 자세한 내용은 [지원 되는 운영 체제](#supported-operating-systems)를 참조 하세요. |
+| Windows 에이전트 | 예 | [Windows에 대 한 Log Analytics 에이전트](../platform/log-analytics-agent.md)와 함께 windows 에이전트에는 종속성 에이전트가 필요 합니다. 자세한 내용은 [지원 되는 운영 체제](../platform/agents-overview.md#supported-operating-systems)를 참조 하세요. |
 | Linux 에이전트 | 예 | Linux [에 대 한 Log Analytics 에이전트](../platform/log-analytics-agent.md)와 함께 linux 에이전트에는 종속성 에이전트가 필요 합니다. 자세한 내용은 [지원 되는 운영 체제](#supported-operating-systems)를 참조 하세요. |
 | System Center Operations Manager 관리 그룹 | 아니요 | |
 
@@ -172,7 +111,7 @@ VM용 Azure Monitor 하려면 모니터링할 가상 컴퓨터 또는 가상 컴
 
 다음은 이러한 에이전트를 배포 하는 여러 가지 방법입니다. 
 
-| 메서드 | Description |
+| 방법 | Description |
 |:---|:---|
 | [Azure Portal](./vminsights-enable-portal.md) | 단일 가상 머신, 가상 머신 확장 집합 또는 Azure Arc와 연결 된 하이브리드 가상 머신에 두 에이전트를 모두 설치 합니다. |
 | [리소스 관리자 템플릿](vminsights-enable-powershell.md) | 지원 되는 방법 중 하나를 사용 하 여 CLI 및 PowerShell을 비롯 한 리소스 관리자 템플릿을 배포 하는 두 에이전트를 모두 설치 합니다. |

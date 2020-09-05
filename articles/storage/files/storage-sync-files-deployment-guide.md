@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 27615d1367bd0faa035e68bf9f03df05cdccfa7f
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: f2c8dbebce685eea67672a2b8c93d51e356ac69c
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903853"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226052"
 ---
 # <a name="deploy-azure-file-sync"></a>Azure 파일 동기화 배포
 Azure 파일 동기화를 사용하여 온-프레미스 파일 서버의 유연성, 성능 및 호환성을 유지하면서 Azure Files에서 조직의 파일 공유를 중앙 집중화할 수 있습니다. Azure 파일 동기화는 Windows Server를 Azure 파일 공유의 빠른 캐시로 변환합니다. SMB, NFS 및 FTPS를 포함하여 로컬로 데이터에 액세스하기 위해 Windows Server에서 사용할 수 있는 모든 프로토콜을 사용할 수 있습니다. 전 세계에서 필요한 만큼 많은 캐시를 가질 수 있습니다.
@@ -74,7 +74,7 @@ Azure 파일 동기화를 사용하여 온-프레미스 파일 서버의 유연�
 
    - 코드 블록의 오른쪽 위 모서리에서 **사용**을 선택합니다. Azure Cloud Shell를 열 수는 있지만 코드를 Cloud Shell 자동으로 복사 **하지 않습니다.**
 
-   - 다음으로 이동 하 여 Cloud Shell을 엽니다.[https://shell.azure.com](https://shell.azure.com)
+   - 다음으로 이동 하 여 Cloud Shell을 엽니다. [https://shell.azure.com](https://shell.azure.com)
 
    - [Azure Portal](https://portal.azure.com) 의 오른쪽 위 모퉁이에 있는 메뉴 모음에서 **Cloud Shell** 단추를 선택 합니다.
 
@@ -415,16 +415,19 @@ az storagesync sync-group cloud-endpoint create --resource-group myResourceGroup
 - **경로**: 동기화 그룹의 일부분으로 동기화 할 Windows Server 경로입니다.
 - **클라우드 계층화**: 클라우드 계층화를 사용하거나 사용하지 않도록 설정할 스위치입니다. 클라우드 계층화를 사용하면 드물게 사용하거나 액세스하는 파일은 Azure 파일로 계층화할 수 있습니다.
 - **사용 가능한 볼륨 공간**: 서버 끝점이 있는 볼륨에서 예약할 여유 공간의 크기입니다. 예를 들어 단일 서버 엔드포인트가 있는 볼륨에서 사용 가능한 볼륨 공간을 50%로 설정하는 경우 데이터 양의 절반 정도가 Azure Files로 계층화됩니다. 클라우드 계층화를 사용하도록 설정할지 여부에 관계없이, Azure 파일 공유는 항상 동기화 그룹에 데이터의 전체 복사본을 유지합니다.
+- **초기 다운로드 모드**: 에이전트 버전 11부터 Azure 파일 공유에 파일이 있지만 서버에는 없는 경우에 유용 하 게 사용할 수 있는 선택 항목입니다. 예를 들어 다른 지점 서버를 동기화 그룹에 추가 하는 서버 끝점을 만들거나 오류가 발생 한 서버를 재해 복구 하는 경우 이러한 상황이 발생할 수 있습니다. 클라우드 계층화를 사용 하는 경우 기본값은 네임 스페이스만 회수 하 고 처음에는 파일 콘텐츠를 회수 하지 않습니다. 이는 사용자 액세스 요청이 서버에 회수할 파일 내용을 결정 해야 하는 경우에 유용 합니다. 클라우드 계층화를 사용 하지 않도록 설정한 경우 기본적으로 네임 스페이스가 먼저 다운로드 된 다음 로컬 용량에 도달할 때까지 마지막으로 수정 된 타임 스탬프에 따라 파일이 회수 됩니다. 그러나 초기 다운로드 모드를 네임 스페이스로만 변경할 수 있습니다. 세 번째 모드는이 서버 끝점에 대해 클라우드 계층화를 사용 하지 않도록 설정한 경우에만 사용할 수 있습니다. 이 모드는 네임 스페이스를 먼저 회수 하지 않습니다. 파일이 완전히 다운로드 될 기회가 있는 경우에만 로컬 서버에 파일이 표시 됩니다. 이 모드는 응용 프로그램에서 전체 파일이 있어야 하 고 해당 네임 스페이스에서 계층화 된 파일을 허용할 수 없는 경우에 유용 합니다.
 
 서버 끝점을 추가 하려면 **만들기**를 선택 합니다. 이제 Azure 파일 공유 및 Windows Server에서 파일이 동기화 상태로 유지됩니다. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-다음 PowerShell 명령을 실행하여 서버 엔드포인트를 만들고, `<your-server-endpoint-path>` 및 `<your-volume-free-space>`를 원하는 값으로 바꿉니다.
+다음 PowerShell 명령을 실행 하 여 서버 끝점을 만들고 `<your-server-endpoint-path>` , `<your-volume-free-space>` 및을 원하는 값으로 바꾸고, 선택적 초기 다운로드 정책에 대 한 선택적 설정을 확인 합니다.
 
 ```powershell
 $serverEndpointPath = "<your-server-endpoint-path>"
 $cloudTieringDesired = $true
 $volumeFreeSpacePercentage = <your-volume-free-space>
+# Optional property. Choose from: [NamespaceOnly] default when cloud tiering is enabled. [NamespaceThenModifiedFiles] default when cloud tiering is disabled. [AvoidTieredFiles] only available when cloud tiering is disabled.
+$initialDownloadPolicy = NamespaceOnly
 
 if ($cloudTieringDesired) {
     # Ensure endpoint path is not the system volume
@@ -441,14 +444,16 @@ if ($cloudTieringDesired) {
         -ServerResourceId $registeredServer.ResourceId `
         -ServerLocalPath $serverEndpointPath `
         -CloudTiering `
-        -VolumeFreeSpacePercent $volumeFreeSpacePercentage
+        -VolumeFreeSpacePercent $volumeFreeSpacePercentage `
+        -InitialDownloadPolicy $initialDownloadPolicy
 } else {
     # Create server endpoint
     New-AzStorageSyncServerEndpoint `
         -Name $registeredServer.FriendlyName `
         -SyncGroup $syncGroup `
         -ServerResourceId $registeredServer.ResourceId `
-        -ServerLocalPath $serverEndpointPath 
+        -ServerLocalPath $serverEndpointPath `
+        -InitialDownloadPolicy $initialDownloadPolicy
 }
 ```
 
@@ -460,23 +465,24 @@ if ($cloudTieringDesired) {
 # Create a new sync group server endpoint 
 az storagesync sync-group server-endpoint create --resource-group myResourceGroupName \
                                                  --name myNewServerEndpointName
-                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96cf286e0
+                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96c286e0
                                                  --server-local-path d:\myPath
                                                  --storage-sync-service myStorageSyncServiceNAme
                                                  --sync-group-name mySyncGroupName
 
 # Create a new sync group server endpoint with additional optional parameters
 az storagesync sync-group server-endpoint create --resource-group myResourceGroupName \
-                                                 --name myNewServerEndpointName \
-                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96cf286e0 \
-                                                 --server-local-path d:\myPath \
                                                  --storage-sync-service myStorageSyncServiceName \
                                                  --sync-group-name mySyncGroupName \
+                                                 --name myNewServerEndpointName \
+                                                 --registered-server-id 91beed22-7e9e-4bda-9313-fec96c286e0 \
+                                                 --server-local-path d:\myPath \
                                                  --cloud-tiering on \
+                                                 --volume-free-space-percent 85 \
+                                                 --tier-files-older-than-days 15 \
+                                                 --initial-download-policy NamespaceOnly [OR] NamespaceThenModifiedFiles [OR] AvoidTieredFiles
                                                  --offline-data-transfer on \
                                                  --offline-data-transfer-share-name myfilesharename \
-                                                 --tier-files-older-than-days 15 \
-                                                 --volume-free-space-percent 85 \
 
 ```
 
@@ -567,6 +573,40 @@ Get-StorageSyncSelfServiceRestore [[-Driveletter] <string>]
 
 Max 인 경우 64 볼륨 당 VSS 스냅숏 설정이 올바르지 않으므로 [레지스트리 키를 통해 해당 값을 변경할](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#maxshadowcopies)수 있습니다.
 새 한도를 적용 하려면 cmdlet을 다시 실행 하 여 이전에 사용 하도록 설정 된 모든 볼륨에서 이전 버전 호환성을 사용 하도록 설정 하 고-Force 플래그를 사용 하 여 볼륨 당 최대 VSS 스냅숏 수를 고려 합니다. 이렇게 하면 새로 계산 된 수의 호환 되는 일이 발생 합니다. 이 변경은 새로 계층화 된 파일에만 적용 되며 사용자가 수행한 VSS 일정에 따라 사용자 지정을 덮어씁니다.
+
+<a id="proactive-recall"></a>
+## <a name="proactively-recall-new-and-changed-files-from-an-azure-file-share"></a>Azure 파일 공유에서 새로운 파일 및 변경 된 파일 사전 회수
+
+에이전트 버전 11을 사용 하는 경우 서버 끝점에서 새 모드를 사용할 수 있습니다. 이 모드를 사용 하면 전 세계에 분산 된 회사에서 로컬 사용자가 파일에 액세스 하기 전에도 원격 지역에서 서버 캐시를 미리 채울 수 있습니다. 서버 끝점에서 사용 하도록 설정 된 경우이 모드를 사용 하면 Azure 파일 공유에서 만들어지거나 변경 된 파일을이 서버가 회수할 수 있습니다.
+
+### <a name="scenario"></a>시나리오
+
+전 세계에 분산 된 회사에는 미국 및 인도의 지사가 있습니다. 아침 (미국 표준시) 정보 근로자는 새로운 새 폴더와 새 파일을 만들어 모든 날에 사용할 수 있습니다. Azure File Sync는 폴더와 파일을 Azure 파일 공유 (클라우드 끝점)와 동기화 합니다. 인도의 정보 근로자는 표준 시간대에서 프로젝트에 대 한 작업을 계속 합니다. 매일 Azure File Sync 아침에 도착 하면 인도 팀에서 로컬 캐시를 효율적으로 사용할 수 있도록 이러한 새 파일을 로컬에서 사용할 수 있도록 설정 해야 합니다. 이 모드를 사용 하도록 설정 하면 요청 시 회수로 인해 초기 파일 액세스 속도가 느려지고 서버에서 Azure 파일 공유에 변경 되거나 생성 되는 즉시 파일을 사전에 회수할 수 있습니다.
+
+> [!IMPORTANT]
+> 서버에 긴밀 하 게 Azure 파일 공유의 변경 내용을 추적 하는 것은 Azure에서 송신 트래픽 및 청구를 늘릴 수 있다는 것을 인식 하는 것이 중요 합니다. 서버로 회수 된 파일이 실제로 로컬에서 필요 하지 않은 경우에는 서버에 대 한 불필요 한 회수로 부정적인 결과가 발생할 수 있습니다. 클라우드의 최근 변경 내용이 있는 서버에서 캐시를 미리 채우는 것을 알고 있는 경우이 모드를 사용 하 여 해당 서버의 파일을 사용 하는 사용자 또는 응용 프로그램에 긍정적인 영향을 미칠 수 있습니다.
+
+### <a name="enable-a-server-endpoint-to-proactively-recall-what-changed-in-an-azure-file-share"></a>서버 끝점이 Azure 파일 공유에서 변경 된 내용을 사전에 회수할 수 있도록 설정
+
+# <a name="portal"></a>[포털](#tab/proactive-portal)
+
+1. [Azure Portal](https://portal.azure.com/)에서 저장소 동기화 서비스로 이동 하 여 올바른 동기화 그룹을 선택 하 고 Azure 파일 공유 (클라우드 끝점)의 변경 내용을 면밀히 추적 하려는 서버 끝점을 식별 합니다.
+1. 클라우드 계층화 섹션에서 "Azure 파일 공유 다운로드" 항목을 찾습니다. 현재 선택 된 모드를 확인 하 고이를 변경 하 여 Azure 파일 공유 변경을 보다 자세히 추적 하 고 사전에 서버에 회수할 수 있습니다.
+
+:::image type="content" source="media/storage-sync-files-deployment-guide/proactive-download.png" alt-text="현재 적용 중인 서버 끝점에 대 한 Azure 파일 공유 다운로드 동작과이를 변경할 수 있는 메뉴를 여는 단추를 표시 하는 이미지입니다.":::
+
+# <a name="powershell"></a>[PowerShell](#tab/proactive-powershell)
+
+[AzStorageSyncServerEndpoint](https://docs.microsoft.com/powershell/module/az.storagesync/set-azstoragesyncserverendpoint) cmdlet을 통해 PowerShell에서 서버 끝점 속성을 수정할 수 있습니다.
+
+```powershell
+# Optional parameter. Default: "UpdateLocallyCachedFiles", alternative behavior: "DownloadNewAndModifiedFiles"
+$recallBehavior = "DownloadNewAndModifiedFiles"
+
+Set-AzStorageSyncServerEndpoint -InputObject <PSServerEndpoint> -LocalCacheMode $recallBehavior
+```
+
+---
 
 ## <a name="migrate-a-dfs-replication-dfs-r-deployment-to-azure-file-sync"></a>DFS 복제(DFS-R) 배포를 Azure 파일 동기화로 마이그레이션
 DFS-R 배포를 Azure 파일 동기화로 마이그레이션하려면

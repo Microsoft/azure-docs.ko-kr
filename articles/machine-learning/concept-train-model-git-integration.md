@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
-ms.openlocfilehash: 7cc2e346a35cd1cdf1278b527dc451a903d60f89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 154d28e4df9bad68f3c5e93208ccf62ba2721663
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78402832"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144824"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Azure Machine Learning에 대 한 Git 통합
 
@@ -68,7 +68,7 @@ Python SDK 또는 Machine Learning CLI에서 학습 실행을 제출 하면 모�
 
 Git 정보는 학습 실행을 위한 속성에 저장 됩니다. Azure Portal, Python SDK 및 CLI를 사용 하 여이 정보를 볼 수 있습니다. 
 
-### <a name="azure-portal"></a>Azure portal
+### <a name="azure-portal"></a>Azure Portal
 
 1. [Azure Portal](https://portal.azure.com)에서 작업 영역을 선택 합니다.
 1. __실험__을 선택 하 고 실험 중 하나를 선택 합니다.
@@ -116,4 +116,4 @@ az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup
 
 ## <a name="next-steps"></a>다음 단계
 
-* [모델 학습의 컴퓨팅 대상 설정 및 사용](how-to-set-up-training-targets.md)
+* [모델 학습에 컴퓨팅 대상 사용](how-to-set-up-training-targets.md)

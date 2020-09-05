@@ -6,13 +6,13 @@ ms.topic: article
 ms.tgt_pltfrm: dotnet
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3a53cadbdf7529a2690594617122e84f355e0e46
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 3f3287dd67f89f678a9875ddce93e2d0d26b2209
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88065661"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89077627"
 ---
 # <a name="create-a-service-bus-namespace-with-topic-subscription-and-rule-using-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용하여 토픽, 구독 및 규칙이 있는 Service Bus 네임스페이스 만들기
 
@@ -32,7 +32,7 @@ Azure 리소스 명명 규칙의 사례 및 패턴에 대한 자세한 내용은
 > * [Service Bus 네임스페이스 만들기](service-bus-resource-manager-namespace.md)
 > * [토픽 및 구독이 있는 Service Bus 네임스페이스 만들기](service-bus-resource-manager-namespace-topic.md)
 > 
-> 최신 템플릿을 확인하려면 Service Bus에 대한 [Azure 빠른 시작 템플릿][Azure Quickstart Templates] 갤러리 및 검색을 방문하세요.
+> 최신 템플릿을 확인 하려면 [Azure 빠른 시작 템플릿][Azure Quickstart Templates] 갤러리를 방문 하 여 Service Bus를 검색 합니다.
 
 ## <a name="what-do-you-deploy"></a>배포할 항목
 

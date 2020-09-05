@@ -5,16 +5,17 @@ author: genlin
 ms.reviewer: dcscontentpm
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cb7978dfa2c3ded2ae8e8c621bcb679f19620a2c
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 6045afba230fa204dd5f93adc11b67ff0e3e209f
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553481"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684901"
 ---
 # <a name="change-the-contact-information-for-your-azure-account"></a>Azure 계정의 연락처 정보 변경
 

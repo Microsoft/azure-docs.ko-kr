@@ -3,12 +3,12 @@ title: 동작을 감지하고 Azure Media Services에 비디오 녹화
 description: 이 빠른 시작에서는 Live Video Analytics on IoT Edge를 사용하여 라이브 비디오 스트림의 동작을 감지하고 Azure Media Services에 비디오 클립을 녹화하는 방법을 보여줍니다.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 24bf958c7a6af25d64d8c2884b9fa259c67e39c3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 972b85c00aa29cc39dafd03b9945e489680dd9a5
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074404"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88067672"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>빠른 시작: 동작을 감지하고 Media Services에 비디오 녹화
 
@@ -29,13 +29,13 @@ ms.locfileid: "87074404"
 
 위의 단계에 따라 Azure 리소스를 설정하면 주차장에 대한 (짧은) 비디오가 IoT Edge 디바이스로 사용되는 Azure의 Linux VM에 복사됩니다. 이 비디오 파일은 이 자습서의 라이브 스트림을 시뮬레이션하는 데 사용됩니다.
 
-[VLC Player](https://www.videolan.org/vlc/)와 같은 애플리케이션을 사용하여 시작하고, Control+N을 누르고, [이 링크](https://lvamedia.blob.core.windows.net/public/lots_015.mkv)를 주차장 비디오에 붙여넣어 재생을 시작할 수 있습니다. 5초 마크 정도에 흰색 차가 주차장을 통과합니다.
+[VLC Player](https://www.videolan.org/vlc/)와 같은 애플리케이션을 사용하여 시작하고, `Ctrl+N`을 누르고, [주차장 비디오 샘플](https://lvamedia.blob.core.windows.net/public/lots_015.mkv) 링크를 붙여넣어 재생을 시작할 수 있습니다. 5초 마크 정도에 흰색 차가 주차장을 통과합니다.
 
 아래 단계를 완료하면 Live Video Analytics on IoT Edge를 사용하여 자동차의 동작을 감지하고 5초 마크 정도에 시작되는 비디오 클립을 녹화할 수 있습니다. 아래 다이어그램은 전체 흐름의 시각적 표현입니다.
 
 ![동작 이벤트를 기반으로 이벤트 기반 비디오를 자산에 녹화](./media/quickstarts/topology.png)
 
-## <a name="use-direct-methods"></a>직접 메서드 사용
+## <a name="use-direct-method-calls"></a>직접 메서드 호출 사용
 
 이 모듈을 통해 직접 메서드를 호출하여 라이브 비디오 스트림을 분석할 수 있습니다. 모듈에서 제공하는 모든 직접 메서드를 이해하려면 [Live Video Analytics on IoT Edge의 직접 메서드](direct-methods.md)를 읽어 보세요. 
 
@@ -46,35 +46,35 @@ ms.locfileid: "87074404"
 1. Visual Studio Code 창의 상단 가운데에 편집 상자 팝업 창이 표시됩니다. 편집 상자에 "GraphTopologyList"를 입력하고 Enter 키를 누릅니다.
 1. 그런 다음, 편집 상자에 아래 JSON 페이로드를 복사하여 붙여넣고 Enter 키를 누릅니다.
     
-    ```
-    {
-        "@apiVersion" : "1.0"
-    }
-    ```
+```
+{
+    "@apiVersion" : "1.0"
+}
+```
 
-    몇 초 이내에 Visual Studio Code 팝업 창의 출력 창에 다음 응답이 표시됩니다.
+몇 초 이내에 Visual Studio Code 팝업 창의 출력 창에 다음 응답이 표시됩니다.
     
-    ```
-    [DirectMethod] Invoking Direct Method [GraphTopologyList] to [lva-sample-device/lvaEdge] ...
-    [DirectMethod] Response from [lva-sample-device/lvaEdge]:
-    {
-      "status": 200,
-      "payload": {
-        "value": []
-      }
-    }
-    ```
+```
+[DirectMethod] Invoking Direct Method [GraphTopologyList] to [lva-sample-device/lvaEdge] ...
+[DirectMethod] Response from [lva-sample-device/lvaEdge]:
+{
+  "status": 200,
+  "payload": {
+    "value": []
+  }
+}
+```
     
-    생성된 그래프 토폴로지가 없으므로 위의 응답은 올바른 것입니다.
+생성된 그래프 토폴로지가 없으므로 위의 응답은 올바른 것입니다.
 
 ### <a name="invoke-graphtopologyset"></a>GraphTopologySet 호출
 
-GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다음 JSON을 페이로드로 사용하여 GraphTopologySet를 호출하면 [그래프 토폴로지](media-graph-concept.md#media-graph-topologies-and-instances)를 설정할 수 있습니다. "EVRtoAssetsOnMotionDetecion"이라는 그래프 토폴로지를 만들 것입니다.
+GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다음 JSON을 페이로드로 사용하여 GraphTopologySet를 호출하면 [그래프 토폴로지](media-graph-concept.md#media-graph-topologies-and-instances)를 설정할 수 있습니다. "EVRtoAssetsOnMotionDetection"이라는 그래프 토폴로지를 만듭니다.
 
 ```
 {
     "@apiVersion": "1.0",
-    "name": "EVRtoAssetsOnMotionDetecion",
+    "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to Assets based on motion events",
       "parameters": [
@@ -195,7 +195,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
       "createdAt": "2020-05-12T22:05:31.603Z",
       "lastModifiedAt": "2020-05-12T22:05:31.603Z"
     },
-    "name": "EVRtoAssetsOnMotionDetecion",
+    "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to assets based on motion events",
       "parameters": [
@@ -312,7 +312,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
 
 * GraphTopologySet를 다시 호출하고 상태 코드 200이 반환되는지 확인합니다. 상태 코드 200은 기존 그래프 토폴로지가 성공적으로 업데이트되었음을 나타냅니다.
 * 설명 문자열을 변경하여 GraphTopologySet를 다시 호출합니다. 응답의 상태 코드가 200이고 설명이 새 값으로 업데이트되었는지 확인합니다.
-* 이전 섹션에서 설명한 대로 GraphTopologyList를 호출하고, 반환된 페이로드에 "EVRtoAssetsOnMotionDetecion" 그래프 토폴로지가 보이는지 확인합니다.
+* 이전 섹션에서 설명한 대로 GraphTopologyList를 호출하고, 반환된 페이로드에 "EVRtoAssetsOnMotionDetection" 그래프 토폴로지가 보이는지 확인합니다.
 
 ### <a name="invoke-graphtopologyget"></a>GraphTopologyGet 호출
 
@@ -321,7 +321,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
 
 {
     "@apiVersion" : "1.0",
-    "name" : "EVRtoAssetsOnMotionDetecion"
+    "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```
 
@@ -337,7 +337,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
       "createdAt": "2020-05-12T22:05:31.603Z",
       "lastModifiedAt": "2020-05-12T22:05:31.603Z"
     },
-    "name": "EVRtoAssetsOnMotionDetecion",
+    "name": "EVRtoAssetsOnMotionDetection",
     "properties": {
       "description": "Event-based video recording to Assets based on motion events",
       "parameters": [
@@ -466,7 +466,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
     "@apiVersion" : "1.0",
     "name" : "Sample-Graph-2",
     "properties" : {
-        "topologyName" : "EVRtoAssetsOnMotionDetecion",
+        "topologyName" : "EVRtoAssetsOnMotionDetection",
         "description" : "Sample graph description",
         "parameters" : [
             { "name" : "rtspUrl", "value" : "rtsp://rtspsim:554/media/lots_015.mkv" }
@@ -477,7 +477,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
 
 다음 사항에 유의하세요.
 
-* 위의 페이로드는 그래프 인스턴스를 만들어야 하는 그래프 토폴로지 이름(EVRtoAssetsOnMotionDetecion)을 지정합니다.
+* 위의 페이로드는 그래프 인스턴스를 만들어야 하는 그래프 토폴로지 이름(EVRtoAssetsOnMotionDetection)을 지정합니다.
 * 페이로드에는 토폴로지 페이로드에 기본값이 없는 "rtspUrl"의 매개 변수 값이 포함되어 있습니다.
 
 몇 초 이내에 출력 창에 다음 응답이 표시됩니다.
@@ -496,7 +496,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
     "properties": {
       "state": "Inactive",
       "description": "Sample graph description",
-      "topologyName": "EVRtoAssetsOnMotionDetecion",
+      "topologyName": "EVRtoAssetsOnMotionDetection",
       "parameters": [
         {
           "name": "rtspUrl",
@@ -531,13 +531,13 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
     
     몇 초 이내에 출력 창에 다음 메시지가 표시됩니다.
 
-    ```
-    [IoTHubMonitor] Start monitoring message arrived in built-in endpoint for all devices ...
-    [IoTHubMonitor] Created partition receiver [0] for consumerGroup [$Default]
-    [IoTHubMonitor] Created partition receiver [1] for consumerGroup [$Default]
-    [IoTHubMonitor] Created partition receiver [2] for consumerGroup [$Default]
-    [IoTHubMonitor] Created partition receiver [3] for consumerGroup [$Default]
-    ```
+```
+[IoTHubMonitor] Start monitoring message arrived in built-in endpoint for all devices ...
+[IoTHubMonitor] Created partition receiver [0] for consumerGroup [$Default]
+[IoTHubMonitor] Created partition receiver [1] for consumerGroup [$Default]
+[IoTHubMonitor] Created partition receiver [2] for consumerGroup [$Default]
+[IoTHubMonitor] Created partition receiver [3] for consumerGroup [$Default]
+```
 
 ### <a name="invoke-graphinstanceactivate"></a>GraphInstanceActivate 호출
 
@@ -590,7 +590,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
     "properties": {
       "state": "Active",
       "description": "Sample graph description",
-      "topologyName": "EVRtoAssetsOnMotionDetecion",
+      "topologyName": "EVRtoAssetsOnMotionDetection",
       "parameters": [
         {
           "name": "rtspUrl",
@@ -738,7 +738,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
 
 그래프 인스턴스가 계속 실행되도록 두면 RTSP 시뮬레이터가 비디오 파일의 끝에 도달하여 중지/연결 해제됩니다. 그러면 RTSP 원본 노드가 시뮬레이터에 다시 연결하고, 프로세스가 반복됩니다.
     
-## <a name="invoke-additional-direct-methods-to-clean-up"></a>추가 직접 메서드를 호출하여 정리
+## <a name="invoke-additional-direct-method-calls-to-clean-up"></a>추가 직접 메서드 호출을 호출하여 정리
 
 이제 직접 메서드를 호출하여 그래프 인스턴스를 순서대로 비활성화하고 삭제합니다.
 
@@ -801,7 +801,7 @@ GraphTopologyList 호출에서 설명한 것과 동일한 단계를 따라 다�
 ```
 {
     "@apiVersion" : "1.0",
-    "name" : "EVRtoAssetsOnMotionDetecion"
+    "name" : "EVRtoAssetsOnMotionDetection"
 }
 ```
 

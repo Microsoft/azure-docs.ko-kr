@@ -2,25 +2,21 @@
 title: '자습서: PlanMyLeave와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 PlanMyLeave 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b0d31cbe-7ae2-488b-9cf3-4927391fa744
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: d1192d3606dfbbf54a8177c2369a9cae8871d92b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 35a6fc789c4ed24c2f950ccfa89880088b698a20
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67094389"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553753"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-planmyleave"></a>자습서: PlanMyLeave와 Azure Active Directory 통합
 

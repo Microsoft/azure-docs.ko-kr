@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: end-user-help
 ms.date: 01/15/2020
 ms.author: curtand
-ms.openlocfilehash: 60c2b3ed1f367dc5c501a51ed52440f7d9d3ed6b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: HT
+ms.openlocfilehash: 7d630fac1f848e691ddb96dc47596a2e9927309f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83741183"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799437"
 ---
 # <a name="what-is-the-microsoft-authenticator-app"></a>Microsoft Authenticator 앱이란?
 
@@ -33,7 +33,7 @@ Microsoft Authenticator 앱은 다음을 비롯한 여러 가지 방법으로 �
 > [!Important]
 > Microsoft Authenticator 앱은 2단계 인증을 사용하는 모든 계정에 사용할 수 있으며 TOTP(시간 제약이 있는 일회성 암호) 표준을 지원합니다.
 >
->이 문서는 Microsoft Authenticator 앱을 다운로드하여 보안 확인 방법으로 사용하려는 사용자를 위해 작성되었습니다. 직원 및 기타 용도로 Authenticator 앱을 사용하여 암호 없는 로그인을 설정하는 방법에 대한 정보를 찾는 관리자는 [Microsoft Authenticator 앱으로 암호 없는 로그인 사용(미리 보기)](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-phone)을 참조하세요.
+>이 문서는 Microsoft Authenticator 앱을 다운로드하여 보안 확인 방법으로 사용하려는 사용자를 위해 작성되었습니다. 직원 및 기타 용도로 Authenticator 앱을 사용하여 암호 없는 로그인을 설정하는 방법에 대한 정보를 찾는 관리자는 [Microsoft Authenticator 앱으로 암호 없는 로그인 사용(미리 보기)](../authentication/howto-authentication-passwordless-phone.md)을 참조하세요.
 
 ## <a name="terminology"></a>용어
 

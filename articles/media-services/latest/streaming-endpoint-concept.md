@@ -4,20 +4,20 @@ titleSuffix: Azure Media Services
 description: 클라이언트 플레이어 앱 또는 CDN (Content Delivery Network)에 직접 콘텐츠를 전달 하는 동적 패키징 및 스트리밍 서비스인 스트리밍 끝점 (원본)에 대해 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.date: 02/13/2020
-ms.author: juliako
-ms.openlocfilehash: 6d725ed8a69e2dfed6f5197db731f4adac57e2e2
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.author: inhenkel
+ms.openlocfilehash: aa54bc6b8b0912158a5dcd369b12801d51ca7141
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446205"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89256500"
 ---
 # <a name="streaming-endpoints-origin-in-azure-media-services"></a>Azure Media Services의 스트리밍 끝점 (원본)
 
@@ -43,7 +43,7 @@ Media Services 계정을 만들 경우 **기본** 스트리밍 엔드포인트�
 * 스트리밍 끝점 이름의 최대 값은 24 자입니다.
 * 이름은이 [regex](/dotnet/standard/base-types/regular-expression-language-quick-reference) 패턴을 따라야 합니다. `^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$`
 
-## <a name="types"></a>형식
+## <a name="types"></a>유형
 
 **표준** (미리 보기) 및 **프리미엄**의 두 가지 **스트리밍 끝점** 유형이 있습니다. 이러한 유형은 스트리밍 엔드포인트에 할당하는 배율 단위(`scaleUnits`) 수로 정의됩니다.
 
@@ -51,7 +51,7 @@ Media Services 계정을 만들 경우 **기본** 스트리밍 엔드포인트�
 
 다음 표에 해당 유형이 설명되어 있습니다.
 
-|Type|배율 단위|Description|
+|유형|배율 단위|설명|
 |--------|--------|--------|  
 |**Standard**|0|기본 스트리밍 끝점은 **표준** 유형이 며를 조정 하 여 프리미엄 유형으로 변경할 수 있습니다 `scaleUnits` .|
 |**Premium**|>0|**프리미엄** 스트리밍 끝점은 고급 워크 로드에 적합 하며, 확장 가능한 전용 대역폭 용량을 제공 합니다. (스트리밍 단위)를 조정 하 여 **프리미엄** 유형으로 이동 `scaleUnits` 합니다. `scaleUnits`는 200Mbps 단위로 구입할 수 있는 전용 송신 용량을 제공합니다. **프리미엄** 유형을 사용 하는 경우 사용 하도록 설정 된 각 단위는 앱에 추가 대역폭 용량을 제공 합니다. |
@@ -122,7 +122,7 @@ IP 필터링/G20/사용자 지정 호스트 <sup>1</sup>|예|예
 
     현재 Media Services는 사용자 지정 도메인을 사용하는 TLS를 지원하지 않습니다.
 
-- `maxCacheAge`-미디어 조각과 주문형 매니페스트의 스트리밍 끝점에서 설정한 기본 최대 기간 HTTP 캐시 제어 헤더를 재정의 합니다. 이 값은 초 단위로 설정됩니다.
+- `maxCacheAge` -미디어 조각과 주문형 매니페스트의 스트리밍 끝점에서 설정한 기본 최대 기간 HTTP 캐시 제어 헤더를 재정의 합니다. 이 값은 초 단위로 설정됩니다.
 - `resourceState` -
 
     - 중지 됨: 스트리밍 끝점을 만든 후의 초기 상태입니다.

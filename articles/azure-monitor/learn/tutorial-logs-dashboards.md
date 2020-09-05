@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 05/28/2020
 ms.custom: mvc
-ms.openlocfilehash: 7bc2da2043c6607cfff62ff524be88efb79c6f18
-ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
+ms.openlocfilehash: d38a4ba04529e70ecfd772eef7f60179041f0273
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84148262"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927371"
 ---
 # <a name="create-and-share-dashboards-of-log-analytics-data"></a>Log Analytics 데이터의 대시보드 만들기 및 공유
 
@@ -54,7 +54,7 @@ Azure Log Analytics의 원격 분석을 포함하여, 모든 Azure 리소스에�
 
 ![Azure Portal에서 새 대시보드 공유](media/tutorial-logs-dashboards/log-analytics-share-dashboard.png) 
 
-게시하려는 대시보드에 대한 구독 및 리소스 그룹을 선택하라는 메시지가 표시됩니다. 편의를 위해 포털의 게시 환경에서는 **대시보드**라는 리소스 그룹에 대시보드를 배치한 위치의 패턴을 안내합니다.  선택한 구독을 확인한 후 **게시**를 클릭합니다.  대시보드에 표시되는 정보에 대한 액세스는 [Azure 리소스 기반 액세스 제어](../../role-based-access-control/role-assignments-portal.md)로 제어합니다.   
+게시하려는 대시보드에 대한 구독 및 리소스 그룹을 선택하라는 메시지가 표시됩니다. 편의를 위해 포털의 게시 환경에서는 **대시보드**라는 리소스 그룹에 대시보드를 배치한 위치의 패턴을 안내합니다.  선택한 구독을 확인한 후 **게시**를 클릭합니다.  대시보드에 표시되는 정보에 대한 액세스는 [Azure RBAC(Azure 역할 기반 액세스 제어)](../../role-based-access-control/role-assignments-portal.md)로 제어합니다.   
 
 ## <a name="visualize-a-log-query"></a>로그 쿼리 시각화
 [Log Analytics](../log-query/get-started-portal.md)는 로그 쿼리 및 해당 결과로 작업하는 데 사용되는 전용 포털입니다. 여기에는 여러 줄, 선택적인 실행 코드, 상황에 맞는 중요한 Intellisense 및 스마트 분석에서 쿼리를 편집하는 기능이 포함됩니다. 이 자습서에서는 Log Analytics를 사용하여 성능 보기를 그래프 양식으로 만들고 이후 쿼리를 위해 저장하며 이전에 만든 공유 대시보드에 고정합니다.

@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f2182dcfd3db83580dfbec9b4f09479650dd62ca
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 9819615039a6dd6aceec796a3ec1c7338f6f3968
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420637"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998529"
 ---
 # <a name="tutorial-order-search-results-using-the-net-sdk"></a>자습서: .NET SDK를 사용하여 검색 결과 정렬
 
@@ -462,8 +462,8 @@ ms.locfileid: "87420637"
 
 4. 이제 이러한 개념을 함께 연결해야 합니다. 그러나 이러한 코드 조각은 자습서에서 어느 정도까지 진행하는 코드이며, 지도 기반 앱을 빌드하는 것은 독자를 위한 연습용으로 남겨집니다. 이 예제를 좀 더 수행하려면 반지름이 있는 도시 이름을 입력하거나 지도에서 지점을 찾아 반지름을 선택하는 것이 좋습니다. 이러한 옵션을 자세히 알아보려면 다음 리소스를 참조하세요.
 
-* [Azure Maps 설명서](https://docs.microsoft.com/azure/azure-maps/)
-* [Azure Maps 검색 서비스를 사용하여 주소 찾기](https://docs.microsoft.com/azure/azure-maps/how-to-search-for-address)
+* [Azure Maps 설명서](../azure-maps/index.yml)
+* [Azure Maps 검색 서비스를 사용하여 주소 찾기](../azure-maps/how-to-search-for-address.md)
 
 ## <a name="order-results-based-on-a-scoring-profile"></a>점수 매기기 프로필 기준의 결과 정렬
 
@@ -959,7 +959,7 @@ ms.locfileid: "87420637"
 
 ### <a name="resources"></a>리소스
 
-자세한 내용은 [Azure Cognitive Search 인덱스에 점수 매기기 프로필 추가](https://docs.microsoft.com/azure/search/index-add-scoring-profiles)를 참조하세요.
+자세한 내용은 [Azure Cognitive Search 인덱스에 점수 매기기 프로필 추가](/azure/search/index-add-scoring-profiles)를 참조하세요.
 
 ## <a name="takeaways"></a>핵심 내용
 
@@ -975,4 +975,4 @@ ms.locfileid: "87420637"
 
 이 시리즈의 C# 자습서를 완료했으므로 Azure Cognitive Search API에 대한 유용한 지식을 갖추었습니다.
 
-추가 참조 및 자습서를 보려면 [Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=azure) 또는 [Azure Cognitive Search 설명서](https://docs.microsoft.com/azure/search/)의 다른 자습서를 찾아보는 것이 좋습니다.
+추가 참조 및 자습서를 보려면 [Microsoft Learn](/learn/browse/?products=azure) 또는 [Azure Cognitive Search 설명서](./index.yml)의 다른 자습서를 찾아보는 것이 좋습니다.

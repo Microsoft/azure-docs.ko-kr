@@ -1,6 +1,6 @@
 ---
 title: 클라우드 솔루션 공급자 프로그램용 StorSimple 가상 배열 배포
-description: StorSimple 파트너용 StorSimple 및 CSP에 대한 개요입니다.
+description: CSP 파트너가 기존 고객에 게 고객이 나 새 구독을 추가 하는 방법에 대해 알아보고 CSP에서 StorSimple 가상 배열을 배포 하는 서비스를 만들 수 있습니다.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 7f1927a67127766c72be463c283225135b2a2aad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dc0cf718ee51e23fb749bdf57d5344977de009d8
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77466912"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182224"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>클라우드 솔루션 공급자 프로그램용 StorSimple 가상 배열 배포
 
@@ -29,7 +29,7 @@ ms.locfileid: "77466912"
 
 이 문서에서는 CSP 파트너가 고객을 추가하거나 기존 고객에 새 구독을 추가한 다음 CSP에서 StorSimple 가상 배열을 배포하는 서비스를 만들 수 있는 방법을 설명합니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>전제 조건
 
 시작하기 전에 다음 사항을 확인합니다.
 

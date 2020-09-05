@@ -2,15 +2,20 @@
 title: 포털을 사용하여 콘텐츠 업로드, 인코딩 및 스트리밍 - Azure
 description: 이 빠른 시작에서는 Azure Media Services를 사용하여 콘텐츠를 업로드, 인코딩 및 스트림하는 방법을 보여 줍니다.
 ms.topic: quickstart
-ms.date: 06/08/2020
-ms.openlocfilehash: bab13b7b878f8992ac5523b9902054a42a3dc769
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+author: IngridAtMicrosoft
+ms.author: inhenkel
+manager: femila
+ms.openlocfilehash: 16a5793f9848a6e16856728877727dbefc3e0805
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053351"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264932"
 ---
 # <a name="quickstart-upload-encode-and-stream-content-with-portal"></a>빠른 시작: 포털을 사용하여 콘텐츠 업로드, 인코딩 및 스트리밍
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 빠른 시작에서는 Azure Portal을 사용하여 Azure Media Services를 통해 콘텐츠를 업로드, 인코딩 및 스트림하는 방법을 보여 줍니다.
 
@@ -28,7 +33,6 @@ ms.locfileid: "87053351"
 
   * [클라우드 업로드 및 스토리지](storage-account-concept.md)
   * [자산 개념](assets-concept.md)
-  * [자산 관리](manage-asset-concept.md)
 * 고품질 디지털 미디어 파일을 자산(입력 자산)에 업로드하면 이를 처리(인코딩 또는 분석)할 수 있습니다. 처리된 콘텐츠가 다른 자산(출력 자산)으로 이동합니다. 
     * 다양한 브라우저 및 디바이스에서 재생할 수 있는 형식으로 업로드한 파일을 [인코딩](encoding-concept.md)합니다.
     * 업로드된 파일을 [분석](analyzing-video-audio-files-concept.md)합니다. 

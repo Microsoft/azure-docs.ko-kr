@@ -9,12 +9,12 @@ ms.date: 4/21/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b0952f31bf6e327ff6d9f632f242919139ed6cae
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0c1d83c2dac0163cd9b9cbc07969103381e85471
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86512013"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855386"
 ---
 # <a name="deploy-iot-edge-modules-at-scale-using-the-azure-portal"></a>Azure Portal를 사용 하 여 규모에 IoT Edge 모듈 배포
 
@@ -61,7 +61,7 @@ IoT Edge는 시나리오를 사용자 지정 하는 데 사용할 수 있는 두
 
 ### <a name="step-2-modules"></a>2 단계: 모듈
 
-최대 30 개의 모듈을 배포에 추가할 수 있습니다. 모듈이 없는 배포를 만드는 경우 대상 장치에서 모든 현재 모듈을 제거 합니다.
+배포에 최대 50 개의 모듈을 추가할 수 있습니다. 모듈이 없는 배포를 만드는 경우 대상 장치에서 모든 현재 모듈을 제거 합니다.
 
 배포에서 IoT Edge 에이전트 및 IoT Edge 허브 모듈의 설정을 관리할 수 있습니다. **런타임 설정** 을 선택 하 여 두 개의 런타임 모듈을 구성 합니다. 계층화 된 배포에서는 런타임 모듈이 포함 되지 않으므로 구성할 수 없습니다.
 
@@ -175,7 +175,7 @@ Azure Stream Analytics에서 모듈을 추가하려면 다음 단계를 수행�
 
 * 대상 조건
 * 사용자 지정 메트릭
-* 레이블입니다.
+* 레이블
 * 태그
 * Desired 속성
 

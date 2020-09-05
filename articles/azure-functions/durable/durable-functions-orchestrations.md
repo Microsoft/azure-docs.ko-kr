@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: overview
 ms.date: 09/08/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 1b349b1e3c4a2fac4cd260dbe83469a776951ab0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5eec15871279f3ca38c726fcd1ef1b21d0d38699
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87033645"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750195"
 ---
 # <a name="durable-orchestrations"></a>지속성 오케스트레이션
 
@@ -51,7 +51,7 @@ Durable Functions는 이벤트 소싱을 투명하게 사용합니다. 오케스
 > 재생 패턴이 정확하고 안정적으로 작동하려면 오케스트레이터 함수 코드가 *결정적*이어야 합니다. 오케스트레이터 함수의 코드 제한 사항에 대한 자세한 내용은 [오케스트레이터 함수 코드 제약 조건](durable-functions-code-constraints.md) 항목을 참조하세요.
 
 > [!NOTE]
-> 오케스트레이터 함수에서 로그 메시지를 내보내는 경우 재생 동작으로 인해 중복된 로그 메시지를 내보낼 수 있습니다. 이 동작이 발생하는 이유와 해결하는 방법에 대한 자세한 내용은 [로깅](durable-functions-diagnostics.md#logging) 항목을 참조하세요.
+> 오케스트레이터 함수에서 로그 메시지를 내보내는 경우 재생 동작으로 인해 중복된 로그 메시지를 내보낼 수 있습니다. 이 동작이 발생하는 이유와 해결하는 방법에 대한 자세한 내용은 [로깅](durable-functions-diagnostics.md#app-logging) 항목을 참조하세요.
 
 ## <a name="orchestration-history"></a>오케스트레이션 기록
 

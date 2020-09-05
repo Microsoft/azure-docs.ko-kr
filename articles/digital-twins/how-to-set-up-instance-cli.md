@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3c7e4887610f30113b81421396500416d04c5e5e
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 17e39a7b94384827af19b2362d478456cde8f167
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88078515"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181462"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-cli"></a>Azure Digital Twins 인스턴스 및 인증 (CLI) 설정
 
@@ -118,7 +118,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="업로드 옵션 선택 항목을 보여 주는 Cloud Shell 창":::
 방금 만든 *manifest.js* 로 이동 하 고 "열기"를 누릅니다.
 
-다음 명령을 실행 하 여 앱 등록을 만듭니다 (필요에 따라 자리 표시자 바꾸기).
+그런 다음, 다음 명령을 실행 하 여에 대 한 *공용 클라이언트/네이티브 (모바일 & 데스크톱)* 회신 URL을 사용 하 여 앱 등록을 만듭니다 `http://localhost` . 필요한 경우 자리 표시자를 바꿉니다.
 
 ```azurecli
 az ad app create --display-name <name-for-your-app-registration> --native-app --required-resource-accesses manifest.json --reply-url http://localhost

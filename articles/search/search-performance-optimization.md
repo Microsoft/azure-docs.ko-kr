@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/14/2020
-ms.openlocfilehash: 7c2857de0613be400f83544e1dabe079b7497bbd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5fd949466978714fe1dc0c4ccc67a3cb8f993314
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77212378"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934959"
 ---
 # <a name="scale-for-performance-on-azure-cognitive-search"></a>Azure Cognitive Search의 성능에 대 한 크기 조정
 
@@ -30,7 +30,7 @@ ms.locfileid: "77212378"
 
 1. QPS (초당 쿼리 수)로 시작 하 고 쿼리 대기 시간이 미리 정의 된 대상 아래로 떨어질 때까지 테스트에서 실행 된 수를 점차적으로 늘립니다. 이러한 방식은 애플리케이션 사용량이 증가함에 따라 확장을 계획하는 데 도움이 되는 중요한 벤치마크입니다.
 
-1. 가능하면 HTTP 연결을 다시 사용합니다. Azure Cognitive Search .NET SDK를 사용 하는 경우 인스턴스 또는 [Searchindexclient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient) 인스턴스를 다시 사용 해야 하며, REST API를 사용 하는 경우 단일 httpclient를 다시 사용 해야 합니다.
+1. 가능하면 HTTP 연결을 다시 사용합니다. Azure Cognitive Search .NET SDK를 사용 하는 경우 인스턴스 또는 [Searchindexclient](/dotnet/api/microsoft.azure.search.searchindexclient) 인스턴스를 다시 사용 해야 하며, REST API를 사용 하는 경우 단일 httpclient를 다시 사용 해야 합니다.
 
 1. 인덱스의 여러 부분에 대해 검색을 수행 하도록 쿼리 요청을 다양 하 게 변경 합니다. 동일한 검색 요청을 계속 해 서 실행 하는 경우 데이터의 캐싱이 보다 개별 쿼리 집합을 사용 하는 것 보다 성능이 향상 되기 시작 하기 때문에 변형이 중요 합니다.
 
@@ -43,7 +43,7 @@ ms.locfileid: "77212378"
 + Azure Cognitive Search은 백그라운드에서 인덱싱 작업을 실행 하지 않습니다. 서비스에서 쿼리 및 인덱싱 워크 로드를 동시에 처리 하는 경우 쿼리 테스트에 인덱싱 작업을 도입 하거나 사용량이 적은 시간에 인덱싱 작업을 실행 하기 위한 옵션을 탐색 하 여이를 고려 합니다.
 
 > [!Tip]
-> 부하 테스트 도구를 사용 하 여 현실적인 쿼리 부하를 시뮬레이션할 수 있습니다. [Azure DevOps를 사용 하 여 부하 테스트](https://docs.microsoft.com/azure/devops/test/load-test/get-started-simple-cloud-load-test?view=azure-devops) 를 시도 하거나 다음 [대안](https://docs.microsoft.com/azure/devops/test/load-test/overview?view=azure-devops#alternatives)중 하나를 사용 합니다.
+> 부하 테스트 도구를 사용 하 여 현실적인 쿼리 부하를 시뮬레이션할 수 있습니다. [Azure DevOps를 사용 하 여 부하 테스트](/azure/devops/test/load-test/get-started-simple-cloud-load-test?view=azure-devops) 를 시도 하거나 다음 [대안](/azure/devops/test/load-test/overview?view=azure-devops#alternatives)중 하나를 사용 합니다.
 
 ## <a name="scale-for-high-query-volume"></a>높은 쿼리 볼륨에 대 한 크기 조정
 
@@ -99,7 +99,7 @@ Azure Cognitive Search는 현재 지역 간에 Azure Cognitive Search 인덱스�
 
 ### <a name="keep-data-synchronized-across-multiple-services"></a>여러 서비스 간에 데이터를 동기화 된 상태로 유지
 
-분산 검색 서비스를 동기화 상태로 유지 하는 두 가지 옵션이 있습니다 .이 옵션은 [azure Cognitive Search 인덱서](search-indexer-overview.md) 또는 밀어넣기 API ( [azure Cognitive Search REST API](https://docs.microsoft.com/rest/api/searchservice/)라고도 함)를 사용 하 여 구성 됩니다.  
+분산 검색 서비스를 동기화 상태로 유지 하는 두 가지 옵션이 있습니다 .이 옵션은 [azure Cognitive Search 인덱서](search-indexer-overview.md) 또는 밀어넣기 API ( [azure Cognitive Search REST API](/rest/api/searchservice/)라고도 함)를 사용 하 여 구성 됩니다.  
 
 ### <a name="use-indexers-for-updating-content-on-multiple-services"></a>여러 서비스에서 콘텐츠를 업데이트 하는 데 인덱서 사용
 
@@ -111,7 +111,7 @@ Azure Cognitive Search는 현재 지역 간에 Azure Cognitive Search 인덱스�
 
 ### <a name="use-rest-apis-for-pushing-content-updates-on-multiple-services"></a>REST Api를 사용 하 여 여러 서비스에 콘텐츠 업데이트 푸시
 
-Azure Cognitive Search REST API를 사용 하 여 [azure Cognitive Search 인덱스에 콘텐츠를 푸시하](https://docs.microsoft.com/rest/api/searchservice/update-index)는 경우 업데이트가 필요할 때마다 모든 search 서비스에 변경 내용을 푸시하여 다양 한 검색 서비스를 동기화 된 상태로 유지할 수 있습니다. 코드에서 한 검색 서비스에 대 한 업데이트가 실패 하지만 다른 검색 서비스에 대해 성공 하는 경우를 처리 해야 합니다.
+Azure Cognitive Search REST API를 사용 하 여 [azure Cognitive Search 인덱스에 콘텐츠를 푸시하](/rest/api/searchservice/update-index)는 경우 업데이트가 필요할 때마다 모든 search 서비스에 변경 내용을 푸시하여 다양 한 검색 서비스를 동기화 된 상태로 유지할 수 있습니다. 코드에서 한 검색 서비스에 대 한 업데이트가 실패 하지만 다른 검색 서비스에 대해 성공 하는 경우를 처리 해야 합니다.
 
 ## <a name="leverage-azure-traffic-manager"></a>Azure Traffic Manager 활용
 

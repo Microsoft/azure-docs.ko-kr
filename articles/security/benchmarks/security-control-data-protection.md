@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: d89320807c6322120490db85100453edf593aded
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 2622d7a2e54dac710ac09d61dee639ab1d104f02
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86045538"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078999"
 ---
 # <a name="security-control-data-protection"></a>보안 제어: 데이터 보호
 
@@ -22,7 +22,7 @@ ms.locfileid: "86045538"
 
 | Azure ID | CIS Id | 책임 |
 |--|--|--|
-| 4.1 | 13.1 | Customer |
+| 4.1 | 13.1 | 고객 |
 
 태그를 사용 하 여 중요 한 정보를 저장 하거나 처리 하는 Azure 리소스 추적을 지원 합니다.
 
@@ -32,7 +32,7 @@ ms.locfileid: "86045538"
 
 | Azure ID | CIS Id | 책임 |
 |--|--|--|
-| 4.2 | 13.2, 2.10 | Customer |
+| 4.2 | 13.2, 2.10 | 고객 |
 
 환경 유형 및 데이터 민감도 수준과 같은 개별 보안 도메인에 대해 별도의 구독 및 관리 그룹을 사용 하 여 격리를 구현 합니다. 응용 프로그램 및 엔터프라이즈 환경에서 요구 하는 Azure 리소스에 대 한 액세스 수준을 제한할 수 있습니다. Azure RBAC (역할 기반 액세스 제어)를 통해 Azure 리소스에 대 한 액세스를 제어할 수 있습니다. 
 
@@ -84,15 +84,15 @@ Azure SQL Information Protection를 사용 하 여 Azure SQL Database에 저장 
 
 - [Azure의 고객 데이터 보호 이해](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
-## <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+## <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
 | Azure ID | CIS Id | 책임 |
 |--|--|--|
-| 4.6 | 14.6 | Customer |
+| 4.6 | 14.6 | 고객 |
 
-Azure AD RBAC를 사용 하 여 데이터 및 리소스에 대 한 액세스를 제어 하 고, 그렇지 않으면 서비스별 액세스 제어 방법을 사용 합니다.
+Azure RBAC (역할 기반 액세스 제어)를 사용 하 여 데이터 및 리소스에 대 한 액세스를 제어 하 고, 그렇지 않으면 서비스별 액세스 제어 방법을 사용 합니다.
 
-- [Azure에서 RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Azure RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
 ## <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7: 호스트 기반 데이터 손실 방지를 사용하여 액세스 제어 적용
 
@@ -110,7 +110,7 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 | Azure ID | CIS Id | 책임 |
 |--|--|--|
-| 4.8 | 14.8 | Customer |
+| 4.8 | 14.8 | 고객 |
 
 모든 Azure 리소스에서 미사용 암호화를 사용 합니다. Azure에서 암호화 키를 관리 하도록 허용 하는 것이 좋지만 일부 인스턴스에서는 사용자 고유의 키를 관리할 수 있는 옵션이 있습니다. 
 
@@ -122,7 +122,7 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 | Azure ID | CIS Id | 책임 |
 |--|--|--|
-| 4.9 | 14.9 | Customer |
+| 4.9 | 14.9 | 고객 |
 
 Azure 활동 로그에 Azure Monitor를 사용 하 여 중요 한 Azure 리소스에 변경 내용이 발생 하는 경우에 대 한 경고를 만듭니다.
 

@@ -3,12 +3,12 @@ title: SQL Server 데이터베이스 백업 문제 해결
 description: Azure Backup을 사용하여 Azure VM에서 실행되는 SQL Server 데이터베이스를 백업하는 경우의 문제 해결 정보입니다.
 ms.topic: troubleshooting
 ms.date: 06/18/2019
-ms.openlocfilehash: f4049cca317d254bd5ee120e47cedc4cd42300e8
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: b462ebd25a7dac4f215d599aa0dfa8665965fb2f
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926487"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180952"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Azure Backup를 사용 하 여 SQL Server 데이터베이스 백업 문제 해결
 
@@ -24,7 +24,7 @@ ms.locfileid: "87926487"
 
 Recovery Services 자격 증명 모음을 만들고 구성한 후 데이터베이스를 검색 하 고 백업을 구성 하는 과정은 두 단계로 구성 됩니다.<br>
 
-![sql](./media/backup-azure-sql-database/sql.png)
+![백업 목표-Azure VM의 SQL Server](./media/backup-azure-sql-database/sql.png)
 
 백업 구성 중에 SQL VM 및 해당 인스턴스가 **vm의 검색 db** 에 표시 되지 않고 백업 (위의 이미지 참조)을 **구성** 하는 경우 다음을 확인 합니다.
 
@@ -62,7 +62,7 @@ Recovery Services 자격 증명 모음을 만들고 구성한 후 데이터베�
 
 | 심각도 | 설명 | 가능한 원인 | 권장 조치 |
 |---|---|---|---|
-| 경고 | 이 데이터베이스의 현재 설정은 연결 된 정책에 있는 특정 백업 유형을 지원 하지 않습니다. | <li>Master 데이터베이스에서는 전체 데이터베이스 백업 작업만 수행할 수 있습니다. 차등 백업과 트랜잭션 로그 백업은 모두 사용할 수 없습니다. </li> <li>단순 복구 모델의 모든 데이터베이스는 트랜잭션 로그의 백업을 허용 하지 않습니다.</li> | 정책의 모든 백업 유형이 지원되도록 데이터베이스 설정을 수정합니다. 또는 지원 되는 백업 유형만 포함 하도록 현재 정책을 변경 합니다. 그렇지 않으면 예약 된 백업 중에 지원 되지 않는 백업 유형을 건너뛰지 않으며 요청 시 백업에 대 한 백업 작업이 실패 합니다.
+| 경고 | 이 데이터베이스의 현재 설정은 연결 된 정책에 있는 특정 백업 유형을 지원 하지 않습니다. | <li>Master 데이터베이스에서는 전체 데이터베이스 백업 작업만 수행할 수 있습니다. 차등 백업 및 트랜잭션 로그 백업은 가능 하지 않습니다. </li> <li>단순 복구 모델의 모든 데이터베이스는 트랜잭션 로그의 백업을 허용 하지 않습니다.</li> | 데이터베이스 설정 sp 정책에 있는 모든 백업 유형이 지원 됩니다. 또는 지원 되는 백업 유형만 포함 하도록 현재 정책을 변경 합니다. 그렇지 않으면 예약 된 백업 중에 지원 되지 않는 백업 유형을 건너뛰지 않으며 요청 시 백업에 대 한 백업 작업이 실패 합니다.
 
 ### <a name="usererrorsqlpodoesnotsupportbackuptype"></a>UserErrorSQLPODoesNotSupportBackupType
 
@@ -113,6 +113,13 @@ Recovery Services 자격 증명 모음을 만들고 구성한 후 데이터베�
 |---|---|---|
 | 데이터베이스를 오프라인 상태로 만들지 못해서 복원에 실패했습니다. | 복원을 수행 하는 동안 대상 데이터베이스를 오프 라인 상태로 전환 해야 합니다. Azure Backup이 데이터를 오프 라인으로 전환할 수 없습니다. | Azure Portal 오류 메뉴에서 추가 세부 정보를 사용 하 여 근본 원인을 좁힐 수 있습니다. 자세한 내용은 [SQL Server 설명서](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms)를 참조하세요. |
 
+### <a name="wlextgenericiofaultusererror"></a>WlExtGenericIOFaultUserError
+
+|오류 메시지 |가능한 원인  |권장 작업  |
+|---------|---------|---------|
+|작업을 수행 하는 동안 입/출력 오류가 발생 했습니다. 가상 머신에서 일반적인 IO 오류를 확인 하세요.   |   대상에 대 한 액세스 권한 또는 공간 제약 조건입니다.       |  가상 머신에서 일반적인 IO 오류를 확인 합니다. 컴퓨터의 대상 드라이브/네트워크 공유가 있는지 확인 합니다. <li> 컴퓨터에서 NT 권한 \ 계정에 대 한 읽기/쓰기 권한이 있습니다. <li> 작업을 성공적으로 완료 하는 데 충분 한 공간이 있습니다.<br> 자세한 내용은 [파일로 복원](restore-sql-database-azure-vm.md#restore-as-files)을 참조 하세요.
+       |
+
 ### <a name="usererrorcannotfindservercertificatewiththumbprint"></a>UserErrorCannotFindServerCertificateWithThumbprint
 
 | 오류 메시지 | 가능한 원인 | 권장 조치 |
@@ -123,13 +130,13 @@ Recovery Services 자격 증명 모음을 만들고 구성한 후 데이터베�
 
 | 오류 메시지 | 가능한 원인 | 권장 조치 |
 |---|---|---|
-| 복구에 사용되는 로그 백업에 대량 로그된 변경 내용이 포함되어 있습니다. SQL 지침에 따라 임의의 시점에서 중지 하는 데 사용할 수 없습니다. | 데이터베이스가 대량 로그 복구 모드인 경우 대량 로그 트랜잭션과 다음 로그 트랜잭션 간의 데이터를 복구할 수 없습니다. | 복구를 위해 다른 지정 시간을 선택 합니다. [자세히 알아보기](/sql/relational-databases/backup-restore/recovery-models-sql-server?view=sql-server-ver15).
+| 복구에 사용되는 로그 백업에 대량 로그된 변경 내용이 포함되어 있습니다. SQL 지침에 따라 임의의 시점에서 중지 하는 데 사용할 수 없습니다. | 데이터베이스가 대량 로그 복구 모드인 경우 대량 로그 트랜잭션과 다음 로그 트랜잭션 간의 데이터를 복구할 수 없습니다. | 복구를 위해 다른 지정 시간을 선택 합니다. [자세한 정보를 알아보세요](/sql/relational-databases/backup-restore/recovery-models-sql-server?view=sql-server-ver15).
 
 ### <a name="fabricsvcbackuppreferencecheckfailedusererror"></a>FabricSvcBackupPreferenceCheckFailedUserError
 
 | 오류 메시지 | 가능한 원인 | 권장 조치 |
 |---|---|---|
-| 가용성 그룹의 일부 노드가 등록되지 않아서 SQL Always On 가용성 그룹에 대한 백업 기본 설정을 충족할 수 없습니다. | 백업을 수행하는 데 필요한 노드가 등록되지 않았거나 연결할 수 없습니다. | <ul><li>이 데이터베이스의 백업을 수행 하는 데 필요한 모든 노드가 등록 되어 있고 정상 상태 인지 확인 한 후 작업을 다시 시도 하십시오.</li><li>SQL Server Always On 가용성 그룹에 대 한 백업 기본 설정을 변경 합니다.</li></ul> |
+| 가용성 그룹의 일부 노드가 등록되지 않아서 SQL Always On 가용성 그룹에 대한 백업 기본 설정을 충족할 수 없습니다. | 백업을 수행 하는 데 필요한 노드가 등록 되지 않았거나 연결할 수 없습니다. | <ul><li>이 데이터베이스의 백업을 수행 하는 데 필요한 모든 노드가 등록 되어 있고 정상 상태 인지 확인 한 후 작업을 다시 시도 하십시오.</li><li>SQL Server Always On 가용성 그룹에 대 한 백업 기본 설정을 변경 합니다.</li></ul> |
 
 ### <a name="vmnotinrunningstateusererror"></a>VMNotInRunningStateUserError
 
@@ -153,19 +160,19 @@ Recovery Services 자격 증명 모음을 만들고 구성한 후 데이터베�
 
 | 오류 메시지 | 가능한 원인 | 권장 조치 |
 |---|---|---|
-24 시간 동안 허용 되는 작업 수에 대 한 제한에 도달 하 여 작업이 차단 되었습니다. | 24 시간 범위의 작업에 허용 되는 최대 제한에 도달 하면이 오류가 발생 합니다. <br> 예를 들어 매일 트리거할 수 있는 백업 구성 작업 수에 대 한 제한에 도달 하 고 새 항목에 백업을 구성 하려고 하면이 오류가 표시 됩니다. | 일반적으로 24 시간 후에 작업을 다시 시도 하면이 문제가 해결 됩니다. 그러나 문제가 계속 되 면 Microsoft 지원에 문의 하 여 도움을 받을 수 있습니다.
+24 시간 동안 허용 되는 작업 수에 대 한 제한에 도달 하 여 작업이 차단 되었습니다. | 24 시간 범위의 작업에 허용 되는 최대 제한에 도달 하면이 오류가 나타납니다. <br> 예를 들어 매일 트리거할 수 있는 백업 구성 작업 수에 대 한 제한에 도달 하 고 새 항목에 백업을 구성 하려고 하면이 오류가 표시 됩니다. | 일반적으로 24 시간 후에 작업을 다시 시도 하면이 문제가 해결 됩니다. 그러나 문제가 계속 되 면 Microsoft 지원에 문의 하 여 도움을 받을 수 있습니다.
 
 ### <a name="clouddosabsolutelimitreachedwithretry"></a>CloudDosAbsoluteLimitReachedWithRetry
 
 | 오류 메시지 | 가능한 원인 | 권장 조치 |
 |---|---|---|
-자격 증명 모음이 24 시간 범위에서 허용 되는 작업의 최대 제한에 도달 하 여 작업이 차단 되었습니다. | 24 시간 범위의 작업에 허용 되는 최대 제한에 도달 하면이 오류가 발생 합니다. 이 오류는 일반적으로 정책 수정 또는 자동 보호와 같은 규모에 따라 작업을 수행 하는 경우에 발생 합니다. CloudDosAbsoluteLimitReached의 경우와 달리이 상태를 해결 하기 위해 수행할 수 있는 작업은 많지 않습니다. 실제로 Azure Backup 서비스는 문제의 모든 항목에 대해 내부적으로 작업을 다시 시도 합니다.<br> 예를 들어 정책을 사용 하 여 보호 되는 데이터 원본 수가 많은 경우 해당 정책을 수정 하려고 하면 보호 된 각 항목에 대 한 보호 작업 구성이 트리거되고 때로는 매일 이러한 작업에 허용 되는 최대 제한에 도달할 수 있습니다.| Azure Backup 서비스는 24 시간 후에이 작업을 자동으로 다시 시도 합니다.
+자격 증명 모음이 24 시간 범위에서 허용 되는 작업의 최대 제한에 도달 하 여 작업이 차단 되었습니다. | 24 시간 범위의 작업에 허용 되는 최대 제한에 도달 하면이 오류가 나타납니다. 이 오류는 일반적으로 정책 수정 또는 자동 보호와 같은 규모에 따라 작업을 수행 하는 경우에 나타납니다. CloudDosAbsoluteLimitReached의 경우와 달리이 상태를 해결 하기 위해 수행할 수 있는 작업은 많지 않습니다. 실제로 Azure Backup 서비스는 문제의 모든 항목에 대해 내부적으로 작업을 다시 시도 합니다.<br> 예를 들어 정책을 사용 하 여 보호 되는 데이터 원본 수가 많은 경우 해당 정책을 수정 하려고 하면 보호 된 각 항목에 대 한 보호 작업 구성이 트리거되고 때로는 매일 이러한 작업에 허용 되는 최대 제한에 도달할 수 있습니다.| Azure Backup 서비스는 24 시간 후에이 작업을 자동으로 다시 시도 합니다.
 
 ### <a name="usererrorvminternetconnectivityissue"></a>UserErrorVMInternetConnectivityIssue
 
 | 오류 메시지 | 가능한 원인 | 권장 조치 |
 |---|---|---|
-인터넷 연결 문제로 인해 VM이 Azure Backup 서비스에 연결할 수 없습니다. | VM Azure Backup 서비스, Azure Storage 또는 Azure Active Directory 서비스에 대 한 아웃 바운드 연결이 필요 합니다.| -NSG를 사용 하 여 연결을 제한 하는 경우 AzureBackup 서비스 태그를 사용 하 여 Azure Backup 서비스, Azure Storage 또는 Azure Active Directory 서비스에 대 한 Azure Backup 아웃 바운드 액세스를 허용 해야 합니다. 액세스 권한을 부여 하려면 다음 [단계](./backup-sql-server-database-azure-vms.md#nsg-tags) 를 수행 합니다.<br>-DNS가 Azure 끝점을 확인 하 고 있는지 확인 합니다.<br>-VM이 인터넷 액세스를 차단 하는 부하 분산 장치 뒤에 있는지 확인 합니다. Vm에 공용 IP를 할당 하면 검색은 작동 합니다.<br>-위의 세 대상 서비스에 대 한 호출을 차단 하는 방화벽/바이러스 백신/프록시가 없는지 확인 합니다.
+인터넷 연결 문제로 인해 VM이 Azure Backup 서비스에 연결할 수 없습니다. | VM Azure Backup 서비스, Azure Storage 또는 Azure Active Directory 서비스에 대 한 아웃 바운드 연결이 필요 합니다.| -NSG를 사용 하 여 연결을 제한 하는 경우 AzureBackup 서비스 태그를 사용 하 여 Azure Backup 서비스, Azure Storage 또는 Azure Active Directory 서비스에 대 한 아웃 바운드 액세스를 허용 해야 합니다. 액세스 권한을 부여 하려면 다음 [단계](./backup-sql-server-database-azure-vms.md#nsg-tags) 를 수행 합니다.<br>-DNS가 Azure 끝점을 확인 하 고 있는지 확인 합니다.<br>-VM이 인터넷 액세스를 차단 하는 부하 분산 장치 뒤에 있는지 확인 합니다. Vm에 공용 IP를 할당 하면 검색은 작동 합니다.<br>-위의 세 대상 서비스에 대 한 호출을 차단 하는 방화벽/바이러스 백신/프록시가 없는지 확인 합니다.
 
 ## <a name="re-registration-failures"></a>다시 등록 오류
 
@@ -261,7 +268,7 @@ SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files m
 SELECT mf.name AS LogicalName FROM sys.master_files mf
                 INNER JOIN sys.databases db ON db.database_id = mf.database_id
                 WHERE db.name = N'<Database Name>'"
-  ```
+```
 
 복원 작업을 트리거하기 전에이 파일을 배치 해야 합니다.
 

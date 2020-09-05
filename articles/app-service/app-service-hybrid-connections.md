@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/08/2020
 ms.author: ccompy
 ms.custom: seodec18, fasttrack-edit
-ms.openlocfilehash: d55d1c0d72f0122472813fc6e79ba021e8b86e89
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c8b71e4be11a886da3e0889add0a3cdc19a56c3
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85831253"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962420"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Azure App Service 하이브리드 연결
 
@@ -94,10 +94,10 @@ App Service 하이브리드 연결은 기본, 표준, 프리미엄 및 격리 �
 
 | 요금제 | 요금제에서 사용 가능한 하이브리드 연결 수 |
 |----|----|
-| Basic | 요금제 당 5 |
-| 표준 | 요금제 당 25 |
-| PremiumV2 | 앱 당 200 |
-| Isolated | 앱 당 200 |
+| 기본 | 플랜당 5개 |
+| 표준 | 플랜당 25개 |
+| PremiumV2 | 앱당 200개 |
+| Isolated | 앱당 200개 |
 
 App Service 계획 UI는 어떤 앱에서 얼마나 많은 하이브리드 연결을 사용하고 있는지 보여줍니다.  
 
@@ -150,7 +150,7 @@ HCM에 하나 이상의 하이브리드 연결을 추가하려면 다음을 수�
 > Azure Relay는 연결을 위해 웹 소켓을 사용합니다. 이 기능은 Windows Server 2012 이상에서만 사용할 수 있습니다. 따라서 HCM은 Windows Server 2012 이전 버전에서 지원되지 않습니다.
 >
 
-### <a name="redundancy"></a>중복성 ###
+### <a name="redundancy"></a>중복 ###
 
 각 HCM은 여러 하이브리드 연결을 지원할 수 있습니다. 특정 하이브리드 연결이 여러 HCM에서 지원될 수도 있습니다. 기본 동작은 특정 엔드포인트에 대해 구성된 HCM을 통해 트래픽을 라우팅하는 것입니다. 네트워크에서 하이브리드 연결에 대한 고가용성이 필요한 경우에는 개별 컴퓨터에서 여러 HCM을 실행합니다. Relay 서비스가 HCM에 트래픽을 분산하는 데 사용하는 부하 분산 알고리즘은 임의 할당입니다. 
 
@@ -160,7 +160,7 @@ HCM에 하나 이상의 하이브리드 연결을 추가하려면 다음을 수�
 
 ![수동으로 하이브리드 연결 추가][11]
 
-### <a name="upgrade"></a>Upgrade ###
+### <a name="upgrade"></a>업그레이드 ###
 
 문제를 해결하거나 개선 기능을 제공하기 위해 하이브리드 연결 관리자가 정기적으로 업데이트됩니다. 업그레이드가 릴리스되면 HCM UI에 팝업이 표시됩니다. 업그레이드를 적용하면 변경 내용이 적용되고 HCM이 다시 시작됩니다. 
 
@@ -225,8 +225,8 @@ App Service에서 **tcpping** 명령줄 도구는 고급 도구 (Kudu) 콘솔에
 [12]: ./media/app-service-hybrid-connections/hybridconn-bt.png
 
 <!--Links-->
-[HCService]: https://docs.microsoft.com/azure/service-bus-relay/relay-hybrid-connections-protocol/
+[HCService]: /azure/service-bus-relay/relay-hybrid-connections-protocol/
 [portal]: https://portal.azure.com/
-[oldhc]: https://docs.microsoft.com/azure/biztalk-services/integration-hybrid-connection-overview/
+[oldhc]: /azure/biztalk-services/integration-hybrid-connection-overview/
 [sbpricing]: https://azure.microsoft.com/pricing/details/service-bus/
 [armclient]: https://github.com/projectkudu/ARMClient/

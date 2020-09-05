@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.date: 04/21/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: fe2bbc1d6f42819354f48812a34371a49e5acbac
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d4aad485741abc1c0f54e14e00cd8654a8addbca
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999635"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930804"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Azure Files에서 Azure Active Directory Domain Services 인증 사용
 
-[Azure Files](storage-files-introduction.md)   는 온-프레미스 Active Directory Domain Services (AD DS) 및 Azure Active Directory Domain Services (Azure AD DS)의 두 가지 유형의 도메인 서비스를 통해 SMB (서버 메시지 블록)를 통해 id 기반 인증을 지원 합니다. 인증은 지원에 대 한 올바른 도메인 서비스를 선택 하려면 [작동 방법 섹션](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-overview#how-it-works) 을 검토 하는 것이 좋습니다. 설정은 선택한 도메인 서비스에 따라 다릅니다. 이 문서에서는 azure 파일 공유에서 인증을 위해 Azure AD DS를 사용 하도록 설정 하 고 구성 하는 방법을 중점적으로 다룹니다
+[Azure Files](storage-files-introduction.md)   는 온-프레미스 Active Directory Domain Services (AD DS) 및 Azure Active Directory Domain Services (Azure AD DS)의 두 가지 유형의 도메인 서비스를 통해 SMB (서버 메시지 블록)를 통해 id 기반 인증을 지원 합니다. 인증을 위해 올바른 도메인 서비스를 선택 하는 [것은 작동 방법 섹션](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-overview#how-it-works) 을 검토 하는 것이 좋습니다. 설정은 선택한 도메인 서비스에 따라 다릅니다. 이 문서에서는 azure 파일 공유에서 인증을 위해 Azure AD DS를 사용 하도록 설정 하 고 구성 하는 방법을 중점적으로 다룹니다
 
 Azure 파일 공유를 처음 접하는 경우 다음 일련의 문서를 읽기 전에 [계획 가이드](storage-files-planning.md) 를 읽어 보는 것이 좋습니다.
 
@@ -24,7 +24,7 @@ Azure 파일 공유를 처음 접하는 경우 다음 일련의 문서를 읽기
 > Azure Files는 RC4-HMAC 암호화를 사용 하 여 Azure AD DS에서 Kerberos 인증을 지원 합니다. AES Kerberos 암호화는 아직 지원 되지 않습니다.
 > Azure Files azure AD와 전체 동기화를 사용 하 여 Azure AD DS 인증을 지원 합니다. Azure AD에서 제한 된 id 집합만 동기화 하는 Azure AD DS에서 범위 동기화를 사용 하도록 설정한 경우 인증 및 권한 부여는 지원 되지 않습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 Azure 파일 공유에 대해 SMB를 통해 Azure AD를 사용 하도록 설정 하기 전에 다음 필수 구성 요소를 완료 했는지 확인 합니다.
 
@@ -75,13 +75,13 @@ Azure 파일 공유에 대해 SMB를 통해 Azure AD DS 인증을 사용 하도�
 
 ![Azure Files용 SMB를 통한 Azure AD 워크플로를 보여 주는 다이어그램](media/storage-files-active-directory-enable/azure-active-directory-over-smb-workflow.png)
 
-## <a name="1-enable-azure-ad-ds-authentication-for-your-account"></a>1. 계정에 대해 Azure AD DS 인증 사용
+## <a name="enable-azure-ad-ds-authentication-for-your-account"></a>계정에 대해 Azure AD DS 인증 사용
 
 Azure Files에 대해 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정 하려면 Azure Portal, Azure PowerShell 또는 Azure CLI를 사용 하 여 저장소 계정에 대 한 속성을 설정할 수 있습니다. 이 속성을 설정 하면 연결 된 Azure AD DS 배포와 함께 저장소 계정이 암시적으로 "도메인 조인" 됩니다. 그러면 저장소 계정의 모든 신규 및 기존 파일 공유에 대해 SMB를 통한 Azure AD DS 인증을 사용할 수 있습니다.
 
 Azure AD DS를 Azure AD 테 넌 트에 성공적으로 배포한 후에만 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정할 수 있습니다. 자세한 내용은 [필수 구성 요소](#prerequisites)를 참조 하세요.
 
-### <a name="azure-portal"></a>Azure 포털
+# <a name="portal"></a>[포털](#tab/azure-portal)
 
 [Azure Portal](https://portal.azure.com)에서 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정 하려면 다음 단계를 수행 합니다.
 
@@ -94,11 +94,11 @@ Azure AD DS를 Azure AD 테 넌 트에 성공적으로 배포한 후에만 SMB�
 
 ![Azure Portal에서 SMB를 통해 Azure AD DS 인증 사용](media/storage-files-active-directory-enable/portal-enable-active-directory-over-smb.png)
 
-### <a name="powershell"></a>PowerShell  
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Azure PowerShell에서 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정 하려면 최신 Az module (2.4 이상) 또는 Az. Storage 모듈 (1.5 이상)을 설치 합니다. PowerShell을 설치 하는 방법에 대 한 자세한 내용은 [PowerShellGet을 사용 하 여 Windows에 Azure PowerShell 설치](https://docs.microsoft.com/powershell/azure/install-Az-ps)를 참조 하세요.
 
-새 저장소 계정을 만들려면 [AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/New-azStorageAccount?view=azps-2.5.0)를 호출 하 고 **EnableAzureActiveDirectoryDomainServicesForFile** 매개 변수를 **true**로 설정 합니다. 다음 예제에서는 자리 표시자 값을 사용자 고유의 값으로 대체 해야 합니다. 이전 미리 보기 모듈을 사용 하는 경우 기능 사용에 대 한 매개 변수는 **EnableAzureFilesAadIntegrationForSMB**입니다.
+새 저장소 계정을 만들려면 [AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/New-azStorageAccount?view=azps-2.5.0)를 호출 하 고 **EnableAzureActiveDirectoryDomainServicesForFile** 매개 변수를 **true**로 설정 합니다. 다음 예제에서는 자리 표시자 값을 사용자 고유의 값으로 대체 해야 합니다. 이전 미리 보기 모듈을 사용 하는 경우 기능을 사용 하도록 설정 하는 매개 변수는 **EnableAzureFilesAadIntegrationForSMB**입니다.
 
 ```powershell
 # Create a new storage account
@@ -120,7 +120,7 @@ Set-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
 ```
 
 
-### <a name="azure-cli"></a>Azure CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Azure CLI에서 SMB를 통해 Azure AD 인증을 사용 하도록 설정 하려면 최신 CLI 버전 (버전 2.0.70 이상)을 설치 합니다. Azure CLI를 설치 하는 방법에 대 한 자세한 내용은 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 참조 하세요.
 
@@ -137,14 +137,15 @@ az storage account create -n <storage-account-name> -g <resource-group-name> --e
 # Update a new storage account
 az storage account update -n <storage-account-name> -g <resource-group-name> --enable-files-aadds $true
 ```
+---
 
 [!INCLUDE [storage-files-aad-permissions-and-mounting](../../../includes/storage-files-aad-permissions-and-mounting.md)]
 
-이제 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정 하 고 azure AD id를 사용 하 여 Azure 파일 공유에 대 한 액세스를 제공 하는 사용자 지정 역할을 할당 했습니다. 추가 사용자에 게 파일 공유에 대 한 액세스 권한을 부여 하려면 [액세스 권한 할당](#2-assign-access-permissions-to-an-identity) 을 사용 하 여 id를 사용 하 고 [SMB를 통한 NTFS 사용 권한 구성 섹션](#3-configure-ntfs-permissions-over-smb)의 지침을 따르세요.
+이제 SMB를 통해 Azure AD DS 인증을 사용 하도록 설정 하 고 azure AD id를 사용 하 여 Azure 파일 공유에 대 한 액세스를 제공 하는 사용자 지정 역할을 할당 했습니다. 추가 사용자에 게 파일 공유에 대 한 액세스 권한을 부여 하려면 [액세스 권한 할당](#assign-access-permissions-to-an-identity) 을 사용 하 여 id를 사용 하 고 [SMB를 통한 NTFS 사용 권한 구성 섹션](#configure-ntfs-permissions-over-smb)의 지침을 따르세요.
 
 ## <a name="next-steps"></a>다음 단계
 
 Azure Files 및 SMB를 통해 Azure AD를 사용 하는 방법에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [SMB 액세스를 위한 Azure Files id 기반 인증 지원 개요](storage-files-active-directory-overview.md)
+- [SMB 액세스에 대한 Azure Files ID 기반 인증 지원 개요](storage-files-active-directory-overview.md)
 - [FAQ](storage-files-faq.md)

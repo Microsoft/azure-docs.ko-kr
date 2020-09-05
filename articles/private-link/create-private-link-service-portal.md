@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 02/03/2020
 ms.author: allensu
-ms.openlocfilehash: f21b440ee0e2c53d9824300e85b683629c1575da
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 0d873401d377a03581a319769604f3d976f365be
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78252542"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927241"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-the-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 Private Link 서비스 만들기
 
@@ -40,9 +40,9 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 | **\<resource-group-name>**  | myResourceGroupLB |
 | **\<virtual-network-name>** | myVNet          |
 | **\<region-name>**          | 미국 동부 2      |
-| **\<IPv4-address-space>**   | 10.3.0.0\16          |
+| **\<IPv4-address-space>**   | 10.3.0.0/16          |
 | **\<subnet-name>**          | myBackendSubnet        |
-| **\<subnet-address-range>** | 10.3.0.0\24          |
+| **\<subnet-address-range>** | 10.3.0.0/24          |
 
 [!INCLUDE [virtual-networks-create-new](../../includes/virtual-networks-create-new.md)]
 
@@ -60,7 +60,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
     | **리소스 그룹**         | 상자에서 **myResourceGroupLB**를 선택합니다.|
     | **이름**                   | **myLoadBalancer**를 입력합니다.                                   |
     | **지역**         | **미국 동부 2**를 선택합니다.                                        |
-    | **형식**          | **내부**를 선택합니다.                                        |
+    | **유형**          | **내부**를 선택합니다.                                        |
     | **SKU**           | **표준**을 선택합니다.                          |
     | **가상 네트워크**           | **myVNet**을 선택합니다.                          |
     | **IP 주소 할당**              | **고정**을 선택합니다.   |

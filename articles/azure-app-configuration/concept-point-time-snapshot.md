@@ -1,19 +1,19 @@
 ---
 title: 특정 시점에서 키-값 쌍 검색
 titleSuffix: Azure App Configuration
-description: Azure 앱 구성에서 지정 시간 스냅숏을 사용 하 여 이전 키-값 쌍을 검색 합니다.
+description: 키 값에 대 한 변경 기록을 유지 관리 하는 Azure 앱 구성의 지정 시간 스냅숏을 사용 하 여 이전 키-값 쌍을 검색 합니다.
 services: azure-app-configuration
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: b706b5d5ec68daa10fd6eac237b7b7416764167b
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: b1d559d82cb22d8a787785c6d8c6a5101d89793a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830110"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586617"
 ---
 # <a name="point-in-time-snapshot"></a>지정 시간 스냅샷
 

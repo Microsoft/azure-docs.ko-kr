@@ -3,20 +3,20 @@ title: Azure Media Services의 스트리밍 정책 | Microsoft Docs
 description: 이 문서에서는 스트리밍 정책이란 무엇이며 Azure Media Services에서 스트리밍 정책을 사용하는 방법을 설명합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.date: 05/28/2019
-ms.author: juliako
-ms.openlocfilehash: 30164e1af1948f86c68e102f4d348674ea931e7b
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.author: inhenkel
+ms.openlocfilehash: 529d27a831945123e1d2eda225e40864a81ee18e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544016"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257571"
 ---
 # <a name="streaming-policies"></a>스트리밍 정책
 

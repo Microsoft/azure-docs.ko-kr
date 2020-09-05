@@ -1,7 +1,7 @@
 ---
 title: Microsoft PlayReady 라이선스 템플릿을 사용 하 여 v3 Azure Media Services
 description: 이 항목에서는 PlayReady 라이선스를 구성하는 데 사용되는 PlayReady 라이선스 템플릿에 대해 간략히 설명합니다.
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -11,16 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
-ms.author: juliako
-ms.openlocfilehash: ba4b8de4b8cf1d1d1b8124185a8006eb7695b21e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b4131ff0cb2169660b231cdf136f52c3f26a02dc
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074501"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267159"
 ---
-# <a name="media-services-v3-with-playready-license-template"></a>PlayReady 라이선스 템플릿을 사용 하 여 v3 Media Services 
+# <a name="media-services-v3-with-playready-license-template"></a>PlayReady 라이선스 템플릿을 사용 하 여 v3 Media Services
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services를 사용하면 **Microsoft PlayReady**를 사용하여 콘텐츠를 암호화할 수 있습니다. Media Services는 PlayReady 라이선스를 배달하는 서비스도 제공합니다. Media Services API를 사용하여 PlayReady 라이선스를 구성할 수 있습니다. 플레이어가 PlayReady로 보호된 콘텐츠를 재생하려고 하면 라이선스 배달 서비스로 요청이 전송되어 라이선스를 얻습니다. 라이선스 서비스에서 요청을 승인하면 클라이언트로 전송하여 지정된 콘텐츠의 암호를 해독하고 재생하는 데 사용되는 라이선스가 발급됩니다.
 

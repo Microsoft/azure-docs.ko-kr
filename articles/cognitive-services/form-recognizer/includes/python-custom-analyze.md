@@ -5,12 +5,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 11/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 0644dad9e8e6f2999acfa24ea1088207f6d5e692
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 88be632e17912012618ab559f22f97487ad26c9c
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86028051"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723499"
 ---
 ## <a name="analyze-forms-for-key-value-pairs-and-tables"></a>키-값 쌍 및 테이블에 대한 양식 분석
 
@@ -22,6 +22,7 @@ ms.locfileid: "86028051"
 1. `<file type>`을 파일 형식으로 바꿉니다. 지원되는 형식은 `application/pdf`, `image/jpeg`, `image/png`, `image/tiff`입니다.
 1. `<subscription key>`를 구독 키로 바꿉니다.
 
+    # <a name="v20"></a>[v2.0](#tab/v2-0)
     ```python
     ########### Python Form Recognizer Async Analyze #############
     import json
@@ -56,11 +57,52 @@ ms.locfileid: "86028051"
     except Exception as e:
         print("POST analyze failed:\n%s" % str(e))
         quit() 
-    ```
+    ```    
+    # <a name="v21-preview"></a>[v2.1 미리 보기](#tab/v2-1)
+    ```python
+    ########### Python Form Recognizer Async Analyze #############
+    import json
+    import time
+    from requests import get, post
+    
+    # Endpoint URL
+    endpoint = r"<endpoint>"
+    apim_key = "<subsription key>"
+    model_id = "<model_id>"
+    post_url = endpoint + "/formrecognizer/v2.1-preview.1/custom/models/%s/analyze" % model_id
+    source = r"<file path>"
+    params = {
+        "includeTextDetails": True
+    }
+    
+    headers = {
+        # Request headers
+        'Content-Type': '<file type>',
+        'Ocp-Apim-Subscription-Key': apim_key,
+    }
+    with open(source, "rb") as f:
+        data_bytes = f.read()
+    
+    try:
+        resp = post(url = post_url, data = data_bytes, headers = headers, params = params)
+        if resp.status_code != 202:
+            print("POST analyze failed:\n%s" % json.dumps(resp.json()))
+            quit()
+        print("POST analyze succeeded:\n%s" % resp.headers)
+        get_url = resp.headers["operation-location"]
+    except Exception as e:
+        print("POST analyze failed:\n%s" % str(e))
+        quit() 
+    ```    
+
+
+    ---
+
+
 
 1. 코드를 확장명이 .py인 파일로 저장합니다. 예를 들어 *form-recognizer-analyze.py*입니다.
 1. 명령 프롬프트 창을 엽니다.
-1. 프롬프트에서 `python` 명령을 사용하여 샘플을 실행합니다. `python form-recognizer-analyze.py`)을 입력합니다.
+1. 프롬프트에서 `python` 명령을 사용하여 샘플을 실행합니다. 예들 들어 `python form-recognizer-analyze.py`입니다.
 
 **양식 분석** API를 호출하면 **Operation-Location** 헤더가 있는 `201 (Success)` 응답을 받게 됩니다. 이 헤더의 값은 분석 작업의 결과를 추적하는 데 사용하는 ID입니다. 위의 스크립트는 이 헤더 값을 콘솔에 출력합니다.
 

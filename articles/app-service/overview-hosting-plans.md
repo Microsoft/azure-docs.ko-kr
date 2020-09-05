@@ -1,21 +1,21 @@
 ---
-title: App Service 플랜
+title: App Service 계획
 description: Azure App Service에서 App Service 계획의 작동 방식, 고객에 게 요금을 청구 하는 방법 및 요구에 맞게 크기를 조정 하는 방법을 알아봅니다.
 keywords: App Service, Azure App Service, 규모, 확장 가능, 확장성, App Service 계획, App Service 비용
 ms.assetid: dea3f41e-cf35-481b-a6bc-33d7fc9d01b1
 ms.topic: article
-ms.date: 11/09/2017
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 93f823a623145f8dd8bf5118de973dfbc095bfb4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f30221de81b6bef199c0a25e770558c4db8c4006
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87068194"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958515"
 ---
 # <a name="azure-app-service-plan-overview"></a>Azure App Service 계획 개요
 
-App Service의 앱은 _App Service 계획_에서 실행됩니다. App Service 계획은 실행할 웹앱에 대한 컴퓨팅 리소스 세트를 정의합니다. 이러한 계산 리소스는 기존 웹 호스팅의 [_서버 팜과_](https://wikipedia.org/wiki/Server_farm) 유사 합니다. 하나 이상의 앱은 동일한 컴퓨팅 리소스(또는 동일한 App Service 계획)에서 실행하도록 구성될 수 있습니다.
+App Service (Web Apps, API Apps 또는 Mobile Apps)에서 앱은 항상 _App Service 계획_으로 실행 됩니다. 또한 [Azure Functions](../azure-functions/functions-scale.md#app-service-plan) 에는 _App Service 계획_에서 실행 하는 옵션도 있습니다. App Service 계획은 실행할 웹앱에 대한 컴퓨팅 리소스 세트를 정의합니다. 이러한 계산 리소스는 기존 웹 호스팅의 [_서버 팜과_](https://wikipedia.org/wiki/Server_farm) 유사 합니다. 하나 이상의 앱은 동일한 컴퓨팅 리소스(또는 동일한 App Service 계획)에서 실행하도록 구성될 수 있습니다.
 
 특정 영역(예: 서유럽)에서 App Service 계획을 만들 때 해당 지역에서 해당 계획에 대한 컴퓨팅 리소스 세트를 만듭니다. App Service 계획에 정의된 대로 이 App Service 계획에 추가한 모든 앱은 이러한 컴퓨팅 리소스에서 실행됩니다. 각 App Service 계획은 다음을 정의합니다.
 
@@ -57,7 +57,7 @@ App Service에서 앱을 만드는 경우 App Service 계획에 배치합니다.
 
 이러한 방식으로 App Service 계획은 App Service 앱의 배율 단위입니다. 계획이 5개의 VM 인스턴스를 실행하도록 구성되면 계획의 모든 앱은 5개의 모든 인스턴스에서 실행됩니다. 계획이 자동 크기 조정을 위해 구성되면 계획의 모든 앱은 자동 크기 조정 설정에 따라 함께 확장됩니다.
 
-앱의 규모 확장에 대한 자세한 내용은 [수동 또는 자동으로 인스턴스 개수 조정](../monitoring-and-diagnostics/insights-how-to-scale.md)을 참조하세요.
+앱의 규모 확장에 대한 자세한 내용은 [수동 또는 자동으로 인스턴스 개수 조정](../azure-monitor/platform/autoscale-get-started.md)을 참조하세요.
 
 <a name="cost"></a>
 
@@ -65,11 +65,11 @@ App Service에서 앱을 만드는 경우 App Service 계획에 배치합니다.
 
 이 섹션에서는 App Service 앱의 요금 지불 방법을 설명합니다. 자세한 지역 특정 가격 책정 정보는 [App Service 가격 책정](https://azure.microsoft.com/pricing/details/app-service/)을 참조하세요.
 
-**체험** 계층을 제외하고 App Service 계획이 사용하는 컴퓨팅 리소스에 대한 시간당 요금을 사용합니다.
+**무료** 계층을 제외 하 고 App Service 요금제는 사용 하는 계산 리소스에 대 한 요금을 부과 합니다.
 
-- **공유** 계층에서 각 앱은 CPU 시간(분)의 할당량을 수신하므로 _각 앱_은 CPU 할당량에 대한 시간당 요금이 부과됩니다.
-- 전용 계산 계층 (**기본**, **표준**, **프리미엄**, **PremiumV2**)에서 App Service 계획은 앱의 크기를 조정 하는 vm 인스턴스 수를 정의 합니다. 따라서 App Service 계획의 _각 vm 인스턴스_ 는 매시간 요금이 청구 됩니다. 이러한 VM 인스턴스는 여기에서 실행되는 앱의 개수에 관계 없이 동일한 요금이 청구됩니다. 예기치 않은 요금을 방지하려면 [App Service 계획 정리](app-service-plan-manage.md#delete)를 참조하세요.
-- **격리** 계층에서 App Service 환경은 앱을 실행하는 격리된 작업자의 수를 정의하고 _각 작업자_는 시간당 요금이 부과됩니다. 또한 App Service 환경 자체를 실행하기 위한 시간 기반 요금이 있습니다.
+- **공유** 계층에서 각 앱은 cpu 분의 할당량을 수신 하므로 _각 앱_ 은 cpu 할당량에 대 한 요금이 부과 됩니다.
+- 전용 계산 계층 (**기본**, **표준**, **프리미엄**, **PremiumV2**)에서 App Service 계획은 앱 크기를 조정 하는 vm 인스턴스 수를 정의 합니다. 따라서 App Service 계획의 _각 vm 인스턴스에_ 대 한 요금이 부과 됩니다. 이러한 VM 인스턴스는 여기에서 실행되는 앱의 개수에 관계 없이 동일한 요금이 청구됩니다. 예기치 않은 요금을 방지하려면 [App Service 계획 정리](app-service-plan-manage.md#delete)를 참조하세요.
+- **격리** 계층에서 App Service Environment는 앱을 실행 하는 격리 된 작업자 수를 정의 하 고 _각 작업자_ 는 요금이 부과 됩니다. 또한 App Service Environment 자체를 실행 하는에 대 한 플랫 스탬프 요금이 있습니다.
 
 사용자가 사용할 수 있는 App Service 기능 (사용자 지정 도메인, TLS/SSL 인증서, 배포 슬롯, 백업 등) 사용에 대 한 요금은 청구 되지 않습니다. 예외는 다음과 같습니다.
 

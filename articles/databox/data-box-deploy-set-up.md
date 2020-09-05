@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box 설치 자습서 | Microsoft Docs
-description: 장치에 케이블을 연결하고 Azure Data Box에 연결하는 방법을 알아봅니다.
+description: 이 자습서에서는 Azure Data Box를 케이블링하고, Azure Data Box를 연결하고, Azure Data Box를 켜는 방법에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: c74b5ba5101dae9165898aeb4f265d449988ecab
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 53309023a838f4b256327a37866408f556c81d29
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205246"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924159"
 ---
 ::: zone target="docs"
 

@@ -2,26 +2,21 @@
 title: '자습서: Learning at Work와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Learning at Work 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 1d607174-bea1-4f40-8233-54cabe02c66a
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/01/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3249957fa20c208d0fd06c676200753163d4bfc8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a25feca4715313339c4138fcb2abce8801e99cf3
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70376070"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549860"
 ---
 # <a name="tutorial-integrate-learning-at-work-with-azure-active-directory"></a>자습서: Learning at Work와 Azure Active Directory 통합
 

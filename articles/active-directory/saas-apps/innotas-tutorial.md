@@ -2,25 +2,21 @@
 title: '자습서: Innotas와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Innotas 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: eb9e9c2c-4b09-4177-bbab-423fd657448e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 3671f948bb61a348492d89e9b4bf011400d1e986
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 67cc4e7d6d2ca4cbfd51e2be7f027e1557da8829
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67100235"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550474"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-innotas"></a>자습서: Innotas와 Azure Active Directory 통합
 

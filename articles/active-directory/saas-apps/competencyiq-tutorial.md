@@ -2,26 +2,21 @@
 title: '자습서: CompetencyIQ와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 CompetencyIQ 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e262bf7e-cc7d-4d0e-aea7-861f00d8837d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ebfaaa33a839e0836fbeabdc1870001dc65fede
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 31212b4f62aefbf94f59f790210c10928e5cd58d
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73158514"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88519866"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>자습서: CompetencyIQ와 Azure Active Directory 통합
 

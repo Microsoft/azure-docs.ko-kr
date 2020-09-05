@@ -8,12 +8,12 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a93e0b6d29bb10e5e71f48134916cac9cd563fb2
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 3cf14ce3e8ef9b1d783191fe6c01c5e311d57786
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420042"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855945"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>AutoRest를 사용 하 여 Azure Digital Twins에 대 한 사용자 지정 Sdk 만들기
 
@@ -41,10 +41,10 @@ npm install -g autorest@2.0.4413
 Azure Digital Twins Swagger 파일에 대해 AutoRest를 실행 하려면 다음 단계를 수행 합니다.
 1. Azure Digital Twins Swagger 파일 및 함께 제공 되는 예제 폴더를 작업 디렉터리에 복사 합니다.
 2. 명령 프롬프트 창을 사용 하 여 해당 작업 디렉터리로 전환 합니다.
-3. 다음 명령을 사용 하 여 AutoRest를 실행 합니다. `<language>`자리 표시자를 원하는 언어 (,, 등)로 바꿉니다 `--python` `--java` `--go` . [AUTOREST 추가 정보](https://github.com/Azure/autorest)에서 전체 옵션 목록을 찾을 수 있습니다.
+3. 다음 명령을 사용 하 여 AutoRest를 실행 합니다. `<language>`자리 표시자를 원하는 언어 (,, 등)로 바꿉니다 `python` `java` `go` . [AUTOREST 추가 정보](https://github.com/Azure/autorest)에서 전체 옵션 목록을 찾을 수 있습니다.
 
 ```cmd/sh
-autorest --input-file=adtApiSwagger.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
+autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
 ```
 
 결과적으로 작업 디렉터리에 *Adtapi* 라는 새 폴더가 표시 됩니다. 생성 된 SDK 파일에는 *Adtapi*네임 스페이스가 포함 됩니다. 이 문서의 나머지 사용 예에서는이 네임 스페이스를 계속 사용 합니다.
@@ -57,7 +57,7 @@ AutoRest에서 생성 된 파일을 .NET 솔루션에 직접 포함할 수 있�
 
 이 섹션에서는 SDK를 클래스 라이브러리로 빌드하는 방법에 대 한 지침을 제공 합니다 .이 라이브러리는 자체 프로젝트 이며 다른 프로젝트에 포함 될 수 있습니다. 이러한 단계는 **Visual Studio** 를 사용 합니다. [여기](https://visualstudio.microsoft.com/downloads/)에서 최신 버전을 설치할 수 있습니다.
 
-수행하는 단계는 다음과 같습니다.
+단계는 다음과 같습니다.
 
 1. 클래스 라이브러리에 대 한 새 Visual Studio 솔루션 만들기
 2. *Adtapi* 를 프로젝트 이름으로 사용
@@ -83,7 +83,7 @@ SDK를 성공적으로 빌드하려면 프로젝트에 다음 참조가 필요 �
 
 ## <a name="general-guidelines-for-generated-sdks"></a>생성 된 Sdk에 대 한 일반 지침
 
-이 섹션에는 생성 된 SDK 사용에 대 한 및 지침에 대 한 일반 정보가 포함 되어 있습니다.
+이 섹션에는 생성 된 SDK 사용에 대 한 일반 정보 및 지침이 포함 되어 있습니다.
 
 ### <a name="synchronous-and-asynchronous-calls"></a>동기 및 비동기 호출
 

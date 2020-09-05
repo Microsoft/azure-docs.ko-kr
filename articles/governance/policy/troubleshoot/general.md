@@ -1,14 +1,14 @@
 ---
 title: 일반적인 오류 문제 해결
 description: Kubernetes에 대 한 정책 정의, 다양 한 SDK 및 추가 기능 만들기와 관련 된 문제를 해결 하는 방법에 대해 알아봅니다.
-ms.date: 05/22/2020
+ms.date: 08/17/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 6d23a148521506adf0c0fc16913a32aab5eb7a30
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: d4ede1703df922196c89a4c1ca4f37cbc95a6297
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135566"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545542"
 ---
 # <a name="troubleshoot-errors-using-azure-policy"></a>Azure Policy를 사용 하 여 오류 해결
 
@@ -26,7 +26,7 @@ ms.locfileid: "86135566"
 
 ### <a name="scenario-alias-not-found"></a>시나리오: 별칭을 찾을 수 없음
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 Azure Policy [별칭](../concepts/definition-structure.md#aliases) 을 사용 하 여 Azure Resource Manager 속성에 매핑합니다.
 
@@ -40,7 +40,7 @@ Azure Policy [별칭](../concepts/definition-structure.md#aliases) 을 사용 �
 
 ### <a name="scenario-evaluation-details-not-up-to-date"></a>시나리오: 평가 세부 정보가 최신 상태가 아님
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 리소스가 "시작 되지 않음" 상태 이거나 호환성 정보가 최신이 아닙니다.
 
@@ -54,7 +54,7 @@ Azure Policy [별칭](../concepts/definition-structure.md#aliases) 을 사용 �
 
 ### <a name="scenario-evaluation-not-as-expected"></a>시나리오: 평가가 예상과 다른 경우
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 리소스가 해당 리소스에 대해 _준수_ 되거나 _비규격_인 평가 상태에 있지 않습니다.
 
@@ -71,7 +71,7 @@ Azure Policy [별칭](../concepts/definition-structure.md#aliases) 을 사용 �
 
 ### <a name="scenario-enforcement-not-as-expected"></a>시나리오: 예상 대로 적용 되지 않음
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 Azure Policy에 의해 처리 될 것으로 예상 되는 리소스는 [Azure 활동 로그](../../../azure-monitor/platform/platform-logs-overview.md)에 항목이 없습니다.
 
@@ -85,7 +85,7 @@ Azure Policy에 의해 처리 될 것으로 예상 되는 리소스는 [Azure �
 
 ### <a name="scenario-denied-by-azure-policy"></a>시나리오: Azure Policy에 의해 거부 됨
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 리소스 만들기 또는 업데이트가 거부 되었습니다.
 
@@ -101,7 +101,7 @@ Azure Policy에 의해 처리 될 것으로 예상 되는 리소스는 [Azure �
 
 ### <a name="scenario-policy-supported-functions-processed-by-template"></a>시나리오: 템플릿에서 처리 된 정책 지원 함수
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 Azure Policy는 정책 정의 에서만 사용할 수 있는 여러 가지 Azure Resource Manager 템플릿 (ARM 템플릿) 함수 및 함수를 지원 합니다. 리소스 관리자은 이러한 기능을 정책 정의의 일부가 아닌 배포의 일부로 처리 합니다.
 
@@ -117,7 +117,7 @@ Azure Policy는 정책 정의 에서만 사용할 수 있는 여러 가지 Azure
 
 ### <a name="scenario-install-using-helm-chart-fails-on-password"></a>시나리오: 암호에서 투구 차트를 사용 하 여 설치 실패
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 `helm install azure-policy-addon`다음 메시지 중 하나를 사용 하 여 명령이 실패 합니다.
 
@@ -134,7 +134,7 @@ Azure Policy는 정책 정의 에서만 사용할 수 있는 여러 가지 Azure
 
 ### <a name="scenario-install-using-helm-chart-fails-as-name-already-exists"></a>시나리오: 이름이 이미 있으므로 투구 차트를 사용 하는 설치가 실패 함
 
-#### <a name="issue"></a>문제점
+#### <a name="issue"></a>문제
 
 `helm install azure-policy-addon`다음 메시지와 함께 명령이 실패 합니다.
 

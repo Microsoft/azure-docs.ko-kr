@@ -1,23 +1,23 @@
 ---
-title: Azure Portal - Private Link를 사용하여 관리 디스크에 대한 가져오기/내보내기 액세스 제한(미리 보기)
-description: Azure Portal을 사용하여 Private Link(미리 보기)를 관리 디스크에 사용하도록 설정합니다. 가상 네트워크 내에서만 디스크를 안전하게 내보내고 가져올 수 있습니다.
+title: Azure Portal - Private Links를 사용하여 관리 디스크에 대한 가져오기/내보내기 액세스 제한
+description: 현재 미리 보기로 제공되는 Azure Portal을 사용하여 관리 디스크에 대한 Private Links를 사용하도록 설정합니다. 가상 네트워크 내에서 디스크를 안전하게 내보내고 가져올 수 있습니다.
 author: roygara
 ms.service: virtual-machines
 ms.topic: overview
-ms.date: 07/15/2020
+ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 75b5ba995ff87649ec8a7a96a7c816bf2bec7e44
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ab861b3ed265da9060e2367bdfdeeeee7047c584
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86535605"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815864"
 ---
-# <a name="azure-portal---restrict-importexport-access-for-managed-disks-with-private-links-preview"></a>Azure Portal - Private Link를 사용하여 관리 디스크에 대한 가져오기/내보내기 액세스 제한(미리 보기)
+# <a name="use-the-azure-portal-to-restrict-importexport-access-for-managed-disks-with-private-links"></a>Azure Portal을 사용하여 Private Links로 관리 디스크에 대한 가져오기/내보내기 액세스를 제한합니다.
 
-지역 확장을 위해 데이터를 다른 지역으로 내보내고 재해 복구를 수행하고 포렌식 분석을 위해 데이터를 읽을 수 있도록 연결되지 않은 관리 디스크 및 스냅샷에 대한 시간 제한 SAS(공유 액세스 서명) URI를 생성할 수 있습니다. 또한 SAS URI를 사용하여 VHD를 온-프레미스에서 빈 디스크로 직접 업로드할 수 있습니다.  이제 [프라이빗 링크](../private-link/private-link-overview.md)(미리 보기)를 활용하여 Azure 가상 네트워크에서만 Managed Disks로 내보내고 가져오도록 제한할 수 있습니다. 또한 Private Link를 사용하는 경우 데이터가 퍼블릭 인터넷을 통해 이동하지 않고 항상 안전한 Microsoft 백본 네트워크 내에서 이동한다는 것을 확신할 수 있습니다. 
+관리 디스크에 대한 Private Links 지원은 현재 미리 보기로 제공되며 Azure 가상 네트워크 내에서만 발생하도록 관리 디스크의 내보내기 및 가져오기를 제한할 수 있습니다. 지역 확장을 위해 데이터를 다른 지역으로 내보내고 재해 복구를 수행하고 포렌식 분석을 위해 데이터를 읽을 수 있도록 연결되지 않은 관리 디스크 및 스냅샷에 대한 시간 제한 SAS(공유 액세스 서명) URI를 생성할 수 있습니다. 또한 SAS URI를 사용하여 VHD를 온-프레미스에서 빈 디스크로 직접 업로드할 수 있습니다. 가상 네트워크의 클라이언트와 관리 디스크 간의 네트워크 트래픽은 가상 네트워크와 Microsoft 백본 네트워크의 프라이빗 링크만 통과하여 공용 인터넷으로부터의 노출을 제거합니다.
 
 프라이빗 엔드포인트를 만들어 동일한 구독에서 디스크 액세스 리소스를 만들고 이를 가상 네트워크에 연결할 수 있습니다. Private Link를 통해 데이터를 내보내고 가져오려면 디스크 또는 스냅샷을 디스크 액세스에 연결해야 합니다. 또한 디스크 또는 스냅샷의 NetworkAccessPolicy 속성을 `AllowPrivate`으로 설정해야 합니다. 
 
@@ -100,5 +100,5 @@ ms.locfileid: "86535605"
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Private Link에 대한 FAQ](linux/faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
+- [Private Link에 대한 FAQ](./faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
 - [PowerShell을 사용하여 관리 스냅샷을 VHD로 다른 지역의 스토리지 계정에 내보내기/복사](scripts/virtual-machines-windows-powershell-sample-copy-snapshot-to-storage-account.md)

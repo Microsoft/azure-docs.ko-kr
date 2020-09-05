@@ -4,15 +4,16 @@ description: 실행 중인 Azure SQL 데이터베이스에 예약 할인이 적�
 author: yashesvi
 ms.reviewer: yashar
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: banders
-ms.openlocfilehash: 9398a68d384eb7acba15fb64e27d7a2672006bc6
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 1df60eedfb776164be7e78f2994027b8d111828b
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461292"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681960"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-sql-database"></a>Azure SQL Database에 예약 할인이 적용되는 방법
 

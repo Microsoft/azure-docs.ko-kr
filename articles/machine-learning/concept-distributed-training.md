@@ -9,12 +9,12 @@ ms.author: nibaccam
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.openlocfilehash: 52716e070437dd7a6b3b880a5a7f3a4afafe8738
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c2867fc5d57cf9ad6eb6bf2d90e02c61e320120
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82995039"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146660"
 ---
 # <a name="distributed-training-with-azure-machine-learning"></a>Azure Machine Learning를 사용한 분산 학습
 
@@ -50,7 +50,7 @@ ms.locfileid: "82995039"
 
 ## <a name="next-steps"></a>다음 단계
 
-* Python SDK를 사용 하 여 [학습 환경을 설정](how-to-set-up-training-targets.md) 하는 방법을 알아봅니다.
+* Python SDK를 사용 하 여 [모델 학습에 계산 대상을 사용](how-to-set-up-training-targets.md) 하는 방법을 알아봅니다.
 * 기술 예제를 보려면 [참조 아키텍처 시나리오](https://docs.microsoft.com/azure/architecture/reference-architectures/ai/training-deep-learning)를 참조 하십시오.
 * [TensorFlow를 사용 하 여 ML 모델을 학습](how-to-train-tensorflow.md)합니다.
 * [PyTorch를 사용 하 여 ML 모델을 학습](how-to-train-pytorch.md)합니다. 

@@ -1,6 +1,6 @@
 ---
 title: CloudSimple 노드의 Azure VMware 솔루션 개요
-description: CloudSimple 노드 및 개념에 대해 알아봅니다.
+description: 노드, 프로 비전 된 노드, 사설 클라우드 및 CloudSimple 노드 Sku 별 VMware 솔루션을 포함 한 CloudSimple 개념에 대해 알아봅니다.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/20/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 65afe26a98a53b00b72a1ea2b49799db2049b727
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7de4b5faa997d909089daedab7e48e5d5a6de2e7
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024928"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140839"
 ---
 # <a name="cloudsimple-nodes-overview"></a>CloudSimple 노드 개요
 
@@ -38,7 +38,7 @@ ms.locfileid: "77024928"
 
 | SKU           | CS28-노드                 | CS36-노드                 | CS36m-노드                |
 |---------------|-----------------------------|-----------------------------|-----------------------------|
-| 지역        | 미국 동부, 미국 서부            | 미국 동부, 미국 서부            | 서유럽                 |
+| Azure 지역        | 미국 동부, 미국 서부            | 미국 동부, 미국 서부            | 서유럽                 |
 | CPU           | 22.2 g h z, 28 코어 (56 HT) | 22.3 g h z, 36 코어 (72 HT) | 22.3 g h z, 36 코어 (72 HT) |
 | RAM           | 256GB                      | 512 GB                      | 576GB                      |
 | 캐시 디스크    | 1.6-TB NVMe                 | 3.2-TB NVMe                 | 3.2-TB NVMe                 |

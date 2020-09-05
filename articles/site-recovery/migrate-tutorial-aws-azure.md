@@ -1,6 +1,6 @@
 ---
-title: Azure Site Recovery 서비스를 사용하여 Azure로 AWS VM 마이그레이션 | Microsoft Docs
-description: 이 문서에서는 Azure Site Recovery를 사용하여 AWS(Amazon Web Services)에서 실행되는 Windows VM을 Azure로 마이그레이션하는 방법을 설명합니다.
+title: Azure Migrate를 사용하여 AWS VM을 Azure로 마이그레이션
+description: 이 문서에서는 AWS 인스턴스를 Azure로 마이그레이션하는 옵션을 설명하고 Azure Migrate를 권장합니다.
 services: site-recovery
 author: rayne-wiselman
 manager: carmonm
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/27/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: dd91e99b45405cca10b9ddc2982674e72ad6bf86
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 83d8106b9f206da9095c37b6179bdda8001b439c
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281296"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852772"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>AWS(Amazon Web Services)에서 Azure로 VM 마이그레이션
 
@@ -22,7 +22,7 @@ ms.locfileid: "87281296"
 
 ## <a name="migrate-with-azure-migrate"></a>Azure Migrate로 마이그레이션
 
-[Azure Migrate](../migrate/migrate-services-overview.md) 서비스를 사용하여 AWS 인스턴스를 Azure로 마이그레이션하는 것이 좋습니다. Azure Migrate는 Azure Migrate, 기타 Azure 서비스 및 타사 도구를 사용하여 온-프레미스 머신을 Azure로 평가하고 마이그레이션하기 위한 중앙 집중식 허브를 제공합니다.
+[Azure Migrate](../migrate/migrate-services-overview.md) 서비스를 사용하여 AWS EC2 인스턴스를 Azure로 마이그레이션하는 것이 좋습니다. Azure Migrate는 서버 마이그레이션을 위해 특별히 빌드되었습니다. Azure Migrate는 온-프레미스 머신을 Azure로 검색, 평가 및 마이그레이션하기 위한 중앙 허브를 제공합니다.
 
 Azure Migrate를 사용하여 AWS 인스턴스를 마이그레이션하는 [방법을 알아봅니다](../migrate/tutorial-migrate-aws-virtual-machines.md). 
 

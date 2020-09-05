@@ -44,9 +44,6 @@
           href: 'https://github.com/Azure/azure-batch-samples'
     - name: Azure CLI
       href: cli-samples.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 보안
@@ -134,6 +131,8 @@
           href: batch-sig-images.md
         - name: 관리형 이미지 리소스를 사용하여 풀 만들기
           href: batch-custom-images.md
+        - name: 디스크 암호화가 사용된 풀 생성
+          href: disk-encryption.md
         - name: 가상 네트워크에서 풀 만들기
           href: batch-virtual-network.md
         - name: 공용 IP 주소를 사용하여 풀 만들기
@@ -266,6 +265,9 @@
           href: batch-task-complete-event.md
         - name: 태스크 실패 이벤트
           href: batch-task-fail-event.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Azure 업데이트

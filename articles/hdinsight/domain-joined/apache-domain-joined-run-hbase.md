@@ -8,10 +8,10 @@ ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
 ms.openlocfilehash: 89e9faeb3c67d0fd0c57adea3a3f69ec5438e3a0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "73044655"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>자습서: Enterprise Security Package를 사용하여 HDInsight에서 Apache HBase 정책 구성
@@ -95,7 +95,7 @@ SSH를 사용하여 HBase 클러스터를 연결하고 [Apache HBase 셸](https:
 
 **sales_user1** 및 **marketing_user1** 사용자에 대해 Ranger 정책을 만듭니다.
 
-1. **Ranger 관리 UI**를 엽니다. **HBase** 아래에서 **\<ClusterName>_hbase**를 클릭합니다.
+1. **Ranger 관리 UI**를 엽니다. **HBase** 아래의 **\<ClusterName>_hbase**를 클릭합니다.
 
    ![HDInsight Apache Ranger 관리 UI](./media/apache-domain-joined-run-hbase/apache-ranger-admin-login.png)
 

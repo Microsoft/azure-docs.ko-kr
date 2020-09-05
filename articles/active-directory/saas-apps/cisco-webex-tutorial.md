@@ -2,26 +2,21 @@
 title: '자습서: Cisco Webex Meetings와 Azure Active Directory SSO(Single Sign-On) 연결 | Microsoft Docs'
 description: Azure Active Directory 및 Cisco Webex Meetings 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 26704ca7-13ed-4261-bf24-fd6252e2072b
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/21/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a6182159275236f023a1647275ed1fb8c8f4112
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 52481eb40a46457a0374c776ee4897c81ebddf7c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905791"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551288"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex-meetings"></a>자습서: Cisco Webex Meetings와 Azure Active Directory SSO(Single Sign-On) 연결
 
@@ -179,7 +174,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
     b. **SAML 메타데이터 가져오기** 링크를 클릭하여, Azure Portal에서 다운로드한 메타데이터 파일을 업로드합니다.
 
-    c. **내보내기** 단추를 클릭하여 서비스 공급자 메타데이터 파일을 다운로드한 후 Azure Portal의 **기본 SAML 구성** 섹션에서 업로드합니다.
+    다. **내보내기** 단추를 클릭하여 서비스 공급자 메타데이터 파일을 다운로드한 후 Azure Portal의 **기본 SAML 구성** 섹션에서 업로드합니다.
 
     d. **AuthContextClassRef** 텍스트 상자에 `urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified`를 입력하고 Azure AD를 사용하여 MFA를 사용 설정하려는 경우 두 개의 값(예: `urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport;urn:oasis:names:tc:SAML:2.0:ac:classes:X509`)을 입력합니다.
 

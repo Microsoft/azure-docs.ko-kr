@@ -1,27 +1,22 @@
 ---
-title: 'Azure AD 응용 프로그램 프록시: 버전 릴리스 내역 | Microsoft Docs'
+title: 'Azure AD 응용 프로그램 프록시: 버전 릴리스 기록'
 description: 이 문서에서는 Azure AD 응용 프로그램 프록시의 모든 릴리스를 나열 하 고 새로운 기능 및 해결 된 문제에 대해 설명 합니다.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
-editor: ''
 ms.assetid: ''
 ms.service: active-directory
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/22/2020
 ms.subservice: app-mgmt
 ms.author: kenwith
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 042509240eb2b88446d3ac1956d9056d5c39dfc8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3f6b1bb189390f6ddd02e9ea2d636dcaa66a4f19
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019389"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210859"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD 응용 프로그램 프록시: 버전 릴리스 기록
 이 문서에서는 릴리스된 Azure Active Directory (Azure AD) 응용 프로그램 프록시의 버전 및 기능을 나열 합니다. Azure AD 팀은 새로운 기능과 기능으로 응용 프로그램 프록시를 정기적으로 업데이트 합니다. 응용 프로그램 프록시 커넥터는 새 버전이 릴리스되면 자동으로 업데이트 됩니다. 
@@ -68,7 +63,7 @@ Azure AD 응용 프로그램 프록시 커넥터 다운로드 |  [최신 커넥�
 2020 년 4 월 7 일: 다운로드를 위해 릴리스
 
 ### <a name="new-features-and-improvements"></a>새로운 기능 및 향상 기능
--   커넥터는 모든 연결에 TLS 1.2만을 사용 합니다. 자세한 내용은 [커넥터 필수](application-proxy-add-on-premises-application.md#before-you-begin) 구성 요소를 참조 하세요.
+-   커넥터는 모든 연결에 TLS 1.2만을 사용 합니다. 자세한 내용은 [커넥터 필수](application-proxy-add-on-premises-application.md#prerequisites) 구성 요소를 참조 하세요.
 - 커넥터와 Azure 서비스 간의 신호가 개선 되었습니다. 여기에는 커넥터와 Azure 서비스 간의 WCF 통신을 위한 신뢰할 수 있는 세션과 WebSocket 통신을 위한 DNS 캐싱 향상이 포함 됩니다.
 - 커넥터와 백 엔드 응용 프로그램 간의 프록시 구성 지원. 자세한 내용은 [기존 온-프레미스 프록시 서버 작업을](application-proxy-configure-connectors-with-proxy-servers.md)참조 하세요.
 

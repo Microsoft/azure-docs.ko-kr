@@ -6,14 +6,15 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 08/05/2020
+ms.date: 08/12/2020
 ms.author: anfeldma
-ms.openlocfilehash: ee8a34e70cfbbd0df233f21c89bc0e877174d3ce
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 694cb2ddde4f923445119c24fa98f532ab6c3471
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87847213"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998359"
 ---
 # <a name="azure-cosmos-db-net-sdk-v2-for-sql-api-download-and-release-notes"></a>Azure Cosmos DB .NET SDK v2 for SQL API: 다운로드 및 릴리스 정보
 > [!div class="op_single_selector"]
@@ -25,7 +26,8 @@ ms.locfileid: "87847213"
 > * [Java SDK v4](sql-api-sdk-java-v4.md)
 > * [비동기 Java SDK v2](sql-api-sdk-async-java.md)
 > * [동기 Java SDK v2](sql-api-sdk-java.md)
-> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [스프링 데이터 v2](sql-api-sdk-java-spring-v2.md)
+> * [스프링 데이터 v3](sql-api-sdk-java-spring-v3.md)
 > * [Spark 커넥터](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST (영문)](/rest/api/cosmos-db/)

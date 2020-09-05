@@ -1,18 +1,18 @@
 ---
-title: ARM 템플릿을 사용하여 Azure DB for PostgreSQL 만들기
-description: 이 문서에서는 Azure Resource Manager 템플릿을 사용하여 Azure Database for PostgreSQL 서버를 만드는 방법을 알아봅니다.
+title: '빠른 시작: Azure DB for PostgreSQL 만들기 - ARM 템플릿'
+description: 이 문서에서는 Azure Resource Manager 템플릿을 사용하여 Azure Database for PostgreSQL 단일 서버를 만드는 방법을 알아봅니다.
 author: mgblythe
 ms.service: postgresql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: 5bdcbe620e88700c5607162cd2471f6b2c3e7532
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 0661e743fb2493b9eab4b90dcb65297e99c2cc64
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86132832"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661217"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-postgresql---single-server"></a>빠른 시작: ARM 템플릿을 사용하여 Azure Database for PostgreSQL - 단일 서버 만들기
 
@@ -48,7 +48,7 @@ PostgreSQL용 Azure Database는 클라우드에서 항상 사용 가능한 Postg
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-managed-postgresql-with-vnet/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-managed-postgresql-with-vnet/azuredeploy.json" range="001-233" highlight="151,164,178,201,215":::
+:::code language="json" source="~/quickstart-templates/101-managed-postgresql-with-vnet/azuredeploy.json":::
 
 템플릿에서 정의하는 5개의 Azure 리소스는 다음과 같습니다.
 

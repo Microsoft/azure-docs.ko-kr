@@ -13,14 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: juliako
-ms.openlocfilehash: 6d199271d20b9094ffaac0384863a404c7d0ed0b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1d2ef02ea77ad2bca37f1e397b784d06481538fa
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000009"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264014"
 ---
 # <a name="scaling-media-processing-overview"></a>미디어 처리 크기 조정 개요 
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 이 페이지에서는 미디어 처리의 크기를 조정하는 방법과 이유에 대해 간략하게 설명합니다. 
 
 ## <a name="overview"></a>개요

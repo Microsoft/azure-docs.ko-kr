@@ -11,18 +11,18 @@ ms.workload: identity
 ms.date: 07/30/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 2269a8f7f58d35fee5e2ca30a77af5e8cba83678
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: bad4fe7f0cf090e5d61506e775fccf677df45fa5
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87459337"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641979"
 ---
 # <a name="configure-linked-sign-on"></a>연결된 로그온 구성
 
 응용 프로그램 관리에 대 한 [빠른 시작 시리즈](view-applications-portal.md) 에서는 응용 프로그램에 대 한 IdP (id 공급자)로 Azure AD를 사용 하는 방법을 알아보았습니다. 빠른 시작 가이드에서는 SAML 기반 SSO를 설정 합니다. 다른 옵션을 **연결**합니다. 이 문서에서는 연결 된 옵션에 대해 자세히 설명 합니다.
 
-**연결** 된 옵션을 사용 하면 사용자가 조직의 [내 앱](https://myapplications.microsoft.com/) 또는 Office 365 포털에서 앱을 선택할 때 대상 위치를 구성할 수 있습니다.
+**연결** 된 옵션을 사용 하면 사용자가 조직의 [내 앱](https://myapps.microsoft.com/) 또는 Office 365 포털에서 앱을 선택할 때 대상 위치를 구성할 수 있습니다.
 
 링크 옵션이 중요 한 몇 가지 일반적인 시나리오는 다음과 같습니다.
 - Active Directory Federation Services (AD FS)와 같이 현재 페더레이션을 사용 하는 사용자 지정 웹 응용 프로그램에 대 한 링크를 추가 합니다.
@@ -35,7 +35,7 @@ ms.locfileid: "87459337"
 
 신속 하 게 진행 하려면 응용 프로그램 관리에 대 한 [빠른 시작 시리즈](view-applications-portal.md) 를 살펴봅니다. Single Sign-On를 구성 하는 빠른 시작에서 **연결 된** 옵션도 찾을 수 있습니다. 
 
-**연결** 된 옵션은 Azure AD를 통해 로그인 기능을 제공 하지 않습니다. 옵션은 사용자가 앱에서 앱을 선택 [Microsoft 365 하거나 앱](https://myapplications.microsoft.com/) 시작 관리자를 선택 하는 경우 사용자가 전송 되는 위치를 설정 합니다.
+**연결** 된 옵션은 Azure AD를 통해 로그인 기능을 제공 하지 않습니다. 옵션은 사용자가 앱에서 앱을 선택 [Microsoft 365 하거나 앱](https://myapps.microsoft.com/) 시작 관리자를 선택 하는 경우 사용자가 전송 되는 위치를 설정 합니다.
 
 > [!IMPORTANT] 
 > **엔터프라이즈 응용**프로그램의 응용 프로그램을 탐색 하는 데에는 **Single sign-on** 옵션이 없는 몇 가지 시나리오가 있습니다. 
@@ -48,7 +48,7 @@ ms.locfileid: "87459337"
 
 앱에 대 한 링크를 설정 하려면 **Single sign-on** 페이지에서 **연결** 됨을 선택 합니다. 그런 다음 링크를 입력 하 고 **저장**을 선택 합니다. 이러한 옵션을 찾을 수 있는 위치에 대 한 미리 알림이 필요 한가요? [퀵 스타트 시리즈](view-applications-portal.md)를 확인 합니다.
  
-앱을 구성한 후에는 사용자 및 그룹을 할당 합니다. 사용자를 할당 하는 경우 응용 프로그램이 [내 앱](https://myapplications.microsoft.com/) 또는 Microsoft 365 앱 시작 관리자에 표시 되는 시간을 제어할 수 있습니다.
+앱을 구성한 후에는 사용자 및 그룹을 할당 합니다. 사용자를 할당 하는 경우 응용 프로그램이 [내 앱](https://myapps.microsoft.com/) 또는 Microsoft 365 앱 시작 관리자에 표시 되는 시간을 제어할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

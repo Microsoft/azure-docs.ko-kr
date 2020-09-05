@@ -3,13 +3,13 @@ title: 컨테이너 워크로드
 description: Azure Batch의 컨테이너 이미지에서 앱을 실행하고 크기를 조정하는 방법을 알아봅니다. 컨테이너 작업 실행을 지원하는 컴퓨팅 노드 풀을 만듭니다.
 ms.topic: how-to
 ms.date: 05/20/2020
-ms.custom: seodec18
-ms.openlocfilehash: b1310af2797e43659ac8859e74d1be8bdbab3c98
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: a26582572302f670010f3038147687b47feef84a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726726"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933548"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Azure Batch에서 컨테이너 애플리케이션 실행
 

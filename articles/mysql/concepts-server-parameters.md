@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/25/2020
-ms.openlocfilehash: de1345fca418118e88929870cd2f4007dd36b3a4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: e7ca86d0146f05d5171d5eae18aac81d75122bcc
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835989"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258558"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Azure Database for MySQL의 서버 매개 변수
 
@@ -98,7 +98,7 @@ MySQL은 일반적으로 모든 클라이언트 연결에 대 한 스레드를 �
 ### <a name="innodb_file_per_table"></a>innodb_file_per_table
 
 > [!NOTE]
-> `innodb_file_per_table`은 범용 및 메모리 액세스에 최적화 된 가격 책정 계층 에서만 업데이트할 수 있습니다.
+> `innodb_file_per_table` 은 범용 및 메모리 액세스에 최적화 된 가격 책정 계층 에서만 업데이트할 수 있습니다.
 
 MySQL은 테이블을 만드는 동안 제공된 구성에 따라 InnoDB 테이블을 다른 테이블스페이스에 저장합니다. [시스템 테이블스페이스](https://dev.mysql.com/doc/refman/5.7/en/innodb-system-tablespace.html)는 InnoDB 데이터 사전의 스토리지 영역입니다. [file-per-table 테이블스페이스](https://dev.mysql.com/doc/refman/5.7/en/innodb-file-per-table-tablespaces.html)에는 단일 InnoDB 테이블에 대한 데이터 및 인덱스를 포함하며 파일 시스템에 자체 데이터 파일로 저장됩니다. 이 동작은 `innodb_file_per_table` 서버 매개 변수에 의해 제어됩니다. `innodb_file_per_table`을 `OFF`로 설정하면 InnoDB가 시스템 테이블스페이스에 테이블을 만듭니다. 아니면 InnoDB가 file-per-table 테이블스페이스에 테이블을 만듭니다.
 
@@ -212,6 +212,9 @@ Lower_case_table_name은 기본적으로 1로 설정 되며 MySQL 5.6 및 MySQL 
 "행 크기 너무 큼 (> 8126)"과 유사한 오류가 표시 되는 경우 매개 변수 **innodb_strict_mode**를 해제할 수 있습니다. 행 데이터 크기가 8k 보다 크면 서버 매개 변수 **innodb_strict_mode** 를 서버 수준에서 전역적으로 수정할 수 없습니다. 데이터가 손실 될 수 있으므로 오류가 발생 하지 않고 데이터가 잘립니다. 페이지 크기 제한에 맞게 스키마를 수정 하는 것이 좋습니다. 
 
 이 매개 변수는를 사용 하 여 세션 수준에서 설정할 수 있습니다 `init_connect` . 세션 수준에서 **innodb_strict_mode** 설정 하려면 [나열 되지 않은 매개 변수 설정](https://docs.microsoft.com/azure/mysql/howto-server-parameters#setting-parameters-not-listed)을 참조 하세요.
+
+> [!NOTE]
+> 복제 서버를 복제 하는 경우 마스터 서버의 세션 수준에서 **innodb_strict_mode** 을 OFF로 설정 하면 복제가 중단 됩니다. 복제본을 읽은 경우 매개 변수를 OFF로 설정 하는 것이 좋습니다.
 
 ### <a name="sort_buffer_size"></a>sort_buffer_size
 

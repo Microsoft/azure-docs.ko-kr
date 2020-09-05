@@ -13,12 +13,12 @@ ms.date: 05/17/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3d681dd06f07f6174e31b59cccf42df5dc16a1e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f74798eeed4764bf2f7b71cb5049fb1c6b3ae077
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "68779842"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89278652"
 ---
 # <a name="what-is-hybrid-identity-with-azure-active-directory"></a>Azure Active Directory에 대한 하이브리드 ID란?
 
@@ -36,7 +36,7 @@ Azure AD에서 하이브리드 ID를 구현하려면 시나리오에 따라 세 
 
 또한 이러한 인증 방법은 [Single Sign-On](how-to-connect-sso.md) 기능도 제공합니다.  Single Sign-On은 회사 네트워크에 연결된 회사 디바이스에 있을 때 사용자를 자동으로 서명합니다.
 
-자세한 내용은 [Azure Active Directory 하이브리드 ID 솔루션에 적합한 인증 방법 선택](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn)을 참조하세요. 
+자세한 내용은 [Azure Active Directory 하이브리드 ID 솔루션에 적합한 인증 방법 선택](./choose-ad-authn.md)을 참조하세요. 
 
 ## <a name="common-scenarios-and-recommendations"></a>일반적인 시나리오 및 권장 사항 
 
@@ -60,7 +60,7 @@ Azure AD에서 하이브리드 ID를 구현하려면 시나리오에 따라 세 
 > 
 > <sup>3</sup> AD FS를 통해 페더레이션된 Single Sign-On  
 >  
-> <sup>4</sup> AD FS는 엔터프라이즈 PKI와 통합되어 인증서를 사용한 로그인을 허용할 수 있습니다. 이러한 인증서는 MDM 또는 GPO와 같은 신뢰할 수 있는 프로비전 채널이나 스마트 카드 인증서(PIV/CAC 카드 포함) 또는 비즈니스용 Hello(cert-trust)를 통해 배포되는 소프트 인증서일 수 있습니다. 스마트 카드 인증 지원에 대한 자세한 내용은 [이 블로그](https://blogs.msdn.microsoft.com/samueld/2016/07/19/adfs-certauth-aad-o365/)를 참조하세요. 
+> <sup>4</sup> AD FS는 엔터프라이즈 PKI와 통합되어 인증서를 사용한 로그인을 허용할 수 있습니다. 이러한 인증서는 MDM 또는 GPO와 같은 신뢰할 수 있는 프로비전 채널이나 스마트 카드 인증서(PIV/CAC 카드 포함) 또는 비즈니스용 Hello(cert-trust)를 통해 배포되는 소프트 인증서일 수 있습니다. 스마트 카드 인증 지원에 대한 자세한 내용은 [이 블로그](/archive/blogs/samueld/adfs-certauth-aad-o365)를 참조하세요. 
 > 
 
 ## <a name="license-requirements-for-using-azure-ad-connect"></a>Azure AD Connect 사용을 위한 라이선스 요구 사항
@@ -73,5 +73,4 @@ Azure AD에서 하이브리드 ID를 구현하려면 시나리오에 따라 세 
 - [PHS(암호 해시 동기화)란?](whatis-phs.md) 
 - [PTA(통과 인증)란?](how-to-connect-pta.md) 
 - [페더레이션이란?](whatis-fed.md) 
-- [Single Sign-On이란?](how-to-connect-sso.md) 
-
+- [Single Sign-On이란?](how-to-connect-sso.md)

@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 9e8dd4b7d7e6f0de1f3ce19238e4ab1e3cf958e1
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: f200fe96478e15e938899d294ecd5491d6a03206
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034181"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814393"
 ---
 # <a name="what-is-azure-synapse-link-for-azure-cosmos-db-preview"></a>Microsoft Azure Cosmos DB용 Synapse Link(미리 보기)란?
 
@@ -75,7 +75,7 @@ Microsoft Azure Cosmos DB 분석 저장소는 열을 기반으로 Microsoft Azur
 
 ### <a name="integration-with-azure-synapse-analytics"></a><a id="synapse-link-integration"></a>Azure Synapse Analytics와 통합
 
-이제 Synapse Link를 사용하여 Azure Synapse Analytics에서 Microsoft Azure Cosmos DB 컨테이너에 직접 연결하고 별도의 커넥터 없이 분석 저장소에 액세스할 수 있습니다. Azure Synapse Analytics는 현재 [Synapse Apache Spark](../synapse-analytics/spark/apache-spark-concepts.md) 및 [Synapse SQL 서버리스](../synapse-analytics/sql/on-demand-workspace-overview.md)와 함께 Synapse Link를 지원합니다.
+이제 Synapse Link를 사용하여 Azure Synapse Analytics에서 Microsoft Azure Cosmos DB 컨테이너에 직접 연결하고 별도의 커넥터 없이 분석 저장소에 액세스할 수 있습니다. Azure Synapse Analytics는 현재 [Synapse Apache Spark](../synapse-analytics/spark/apache-spark-concepts.md) 및 [Synapse SQL server](../synapse-analytics/sql/on-demand-workspace-overview.md)를 사용 하 여 Synapse 링크를 지원 합니다.
 
 Azure Synapse Analytics에서 지원하는 여러 분석 런타임에서 interop를 사용하여 Microsoft Azure Cosmos DB 분석 저장소의 데이터를 동시에 쿼리할 수 ​​있습니다. 작동 데이터 분석을 위한 추가 데이터 변환이 필요하지 않습니다. 다음을 사용하여 분석 저장소 데이터를 쿼리하고 분석할 수 있습니다.
 

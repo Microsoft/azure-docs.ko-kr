@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8a7a7a6681be78c2777130ca540319eb829d8f9d
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 257656a29733972672570648d4317b7847fedff1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002356"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997679"
 ---
 # <a name="use-log-analytics-for-the-diagnostics-feature-in-windows-virtual-desktop-classic"></a>Windows 가상 데스크톱의 진단 기능 Log Analytics 사용 (클래식)
 
@@ -34,7 +34,7 @@ Windows Virtual Desktop은 관리자가 단일 인터페이스를 통해 문제�
 
 진단 기능과 함께 Log Analytics를 사용 하려면 먼저 [작업 영역을 만들어야](../../azure-monitor/learn/quick-collect-windows-computer.md#create-a-workspace)합니다.
 
-작업 영역을 만든 후에는 [Azure Monitor에 Windows 컴퓨터 연결](../../azure-monitor/platform/agent-windows.md#obtain-workspace-id-and-key) 의 지침에 따라 다음 정보를 가져옵니다.
+작업 영역을 만든 후에는 [Azure Monitor에 Windows 컴퓨터 연결](../../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key) 의 지침에 따라 다음 정보를 가져옵니다.
 
 - 작업 영역 ID
 - 작업 영역의 기본 키

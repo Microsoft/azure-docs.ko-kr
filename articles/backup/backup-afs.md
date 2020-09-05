@@ -3,12 +3,12 @@ title: Azure Portal의 Azure 파일 공유 백업
 description: Azure Portal를 사용 하 여 Recovery Services 자격 증명 모음에서 Azure 파일 공유를 백업 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/20/2020
-ms.openlocfilehash: e0d9edbcb89dbdcac51893eb720da880a150bc7b
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: ca49f1ad48ab0534b27b91ad6a5a50b393cda782
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87532701"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88890351"
 ---
 # <a name="back-up-azure-file-shares"></a>Azure 파일 공유 백업
 
@@ -21,7 +21,7 @@ ms.locfileid: "87532701"
 * 파일 공유 창에서 백업 구성
 * 주문형 백업 작업을 실행하여 복원 지점 만들기
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>전제 조건
 
 * Azure 파일 공유 스냅숏 기반 백업 솔루션에 [대해 알아봅니다](azure-file-share-backup-overview.md) .
 * 파일 공유가 지원 되는 [저장소 계정 유형](azure-file-share-support-matrix.md)중 하나에 있는지 확인 하세요.
@@ -31,7 +31,7 @@ ms.locfileid: "87532701"
 
 ## <a name="configure-backup-from-the-recovery-services-vault"></a>Recovery Services 자격 증명 모음에서 백업 구성
 
-다음 단계에서는 recovery services 자격 증명 모음 창에서 여러 파일 공유에 대 한 백업을 구성 하는 방법을 설명 합니다.
+다음 단계에서는 Recovery Services 자격 증명 모음 창에서 여러 파일 공유에 대 한 백업을 구성 하는 방법을 설명 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에서 파일 공유에 대 한 백업을 구성 하는 데 사용할 Recovery Services 자격 증명 모음을 엽니다.
 
@@ -123,16 +123,16 @@ ms.locfileid: "87532701"
 
 1. Recovery Services 자격 증명 모음을 선택 하려면 다음 중 하나를 수행 합니다.
 
-    * 자격 증명 모음이 이미 있는 경우 기존 복구 서비스 자격 증명 모음 **선택** 라디오 단추를 선택 하 고 **자격 증명 모음 이름** 드롭다운 메뉴에서 기존 자격 증명 모음 중 하나를 선택 합니다.
+    * 자격 증명 모음이 이미 있는 경우 기존 Recovery Services 자격 증명 모음 **선택** 라디오 단추를 선택 하 고 **자격 증명 모음 이름** 드롭다운 메뉴에서 기존 자격 증명 모음 중 하나를 선택 합니다.
 
        ![기존 자격 증명 모음 선택](./media/backup-afs/select-existing-vault.png)
 
-    * 자격 증명 모음이 없는 경우 새 복구 서비스 자격 증명 모음 **만들기** 라디오 단추를 선택 합니다. 자격 증명 모음의 이름을 지정합니다. 파일 공유와 동일한 지역에 생성 됩니다. 기본적으로 자격 증명 모음은 파일 공유와 동일한 리소스 그룹에 만들어집니다. 다른 리소스 그룹을 선택 하려면 **리소스 유형** 드롭다운에서 새 링크 **만들기** 를 선택 하 고 리소스 그룹의 이름을 지정 합니다. **확인** 을 선택하여 계속합니다.
+    * 자격 증명 모음이 없는 경우 새 Recovery Services 자격 증명 모음 **만들기** 라디오 단추를 선택 합니다. 자격 증명 모음의 이름을 지정합니다. 파일 공유와 동일한 지역에 생성 됩니다. 기본적으로 자격 증명 모음은 파일 공유와 동일한 리소스 그룹에 만들어집니다. 다른 리소스 그룹을 선택 하려면 **리소스 유형** 드롭다운에서 새 링크 **만들기** 를 선택 하 고 리소스 그룹의 이름을 지정 합니다. **확인** 을 선택하여 계속합니다.
 
        ![새 자격 증명 모음 만들기](./media/backup-afs/create-new-vault.png)
 
       >[!IMPORTANT]
-      >저장소 계정이 자격 증명 모음에 등록 되어 있거나 보호 하려는 파일 공유를 호스트 하는 저장소 계정 내에 보호 된 공유가 거의 없는 경우 recovery services 자격 증명 모음 이름이 미리 채워지고 [여기에서 자세한 내용을](backup-azure-files-faq.md#why-cant-i-change-the-vault-to-configure-backup-for-the-file-share)편집할 수 없습니다.
+      >저장소 계정이 자격 증명 모음에 등록 되어 있거나 보호 하려는 파일 공유를 호스트 하는 저장소 계정 내에 보호 된 공유가 거의 없는 경우 Recovery Services 자격 증명 모음 이름이 미리 채워지며 [여기에서 자세한 내용을](backup-azure-files-faq.md#why-cant-i-change-the-vault-to-configure-backup-for-the-file-share)편집할 수 없게 됩니다.
 
 1. **백업 정책** 선택에서 다음 중 하나를 수행 합니다.
 
@@ -168,7 +168,7 @@ ms.locfileid: "87532701"
 
 경우에 따라 백업 정책에서 예약 된 시간 외에 백업 스냅숏 또는 복구 지점을 생성할 수 있습니다. 요청 시 백업을 생성 하는 일반적인 이유는 백업 정책을 구성 하는 것입니다. 백업 정책의 일정에 따라 스냅숏이 생성 될 때까지 몇 시간 또는 몇 일이 걸릴 수 있습니다. 백업 정책이 적용될 때까지 데이터를 보호하려면 주문형 백업을 시작합니다. 파일 공유에 대 한 계획 된 변경을 수행 하기 전에 주문형 백업 만들기를 수행 해야 하는 경우가 종종 있습니다.
 
-### <a name="from-the-recovery-services-vault"></a>Recovery services 자격 증명 모음에서
+### <a name="from-the-recovery-services-vault"></a>Recovery Services 자격 증명 모음에서
 
 1. 파일 공유를 백업 하는 데 사용한 Recovery Services 자격 증명 모음을 엽니다. **개요** 창의 **보호 된 항목** 섹션에서 **백업 항목** 을 선택 합니다.
 

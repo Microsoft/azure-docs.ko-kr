@@ -29,8 +29,12 @@
       href: quickstart-configure-your-solution.md
     - name: IoT용 Azure Security Center 모듈 쌍 만들기
       href: quickstart-create-security-twin.md
+    - name: 보안 권장 사항 조사
+      href: quickstart-investigate-security-recommendations.md
     - name: 사용자 지정 보안 경고 만들기
       href: quickstart-create-custom-alerts.md
+    - name: 보안 경고 조사
+      href: quickstart-investigate-security-alerts.md
 - name: 개념
   items:
     - name: 보안 에이전트 인증

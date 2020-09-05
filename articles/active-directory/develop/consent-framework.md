@@ -13,12 +13,12 @@ ms.date: 11/30/2018
 ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev, has-adal-ref
-ms.openlocfilehash: fe321de279397d24e0926cf1ef26a1d66adac8c4
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 75d848c8d4459e5534e2954a11612bdf44f6d1ce
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117314"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141553"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Azure Active Directory 동의 프레임워크
 
@@ -28,7 +28,7 @@ Azure AD(Azure Active Directory) 동의 프레임워크를 사용하면 다중 �
 
 동의 프레임워크는 공용 또는 기밀 클라이언트를 사용하여 인증 코드 부여 및 클라이언트 자격 증명 부여와 같은 다양한 흐름 및 OAuth 2.0을 기반으로 작성됩니다. OAuth 2.0을 사용하여 Azure AD는 전화기, 태블릿, 서버 또는 웹 애플리케이션과 같은 다양한 유형의 클라이언트 애플리케이션을 작성하고 필요한 리소스에 액세스할 수 있습니다.
 
-OAuth 2.0 권한 부여에서 동의 프레임워크를 사용하는 방법에 대한 자세한 내용은 [OAuth 2.0 및 Azure AD를 사용하여 웹 애플리케이션에 대한 액세스 권한 부여](v2-oauth2-auth-code-flow.md) 및 [Azure AD의 인증 시나리오](./authentication-vs-authorization.md)를 참조하세요. Microsoft Graph를 통해 Office 365에 대한 액세스 권한을 부여받는 방법은 [Microsoft Graph를 사용하여 앱 인증](https://developer.microsoft.com/graph/docs/authorization/auth_overview)을 참조하세요.
+OAuth 2.0 권한 부여에서 동의 프레임워크를 사용하는 방법에 대한 자세한 내용은 [OAuth 2.0 및 Azure AD를 사용하여 웹 애플리케이션에 대한 액세스 권한 부여](v2-oauth2-auth-code-flow.md) 및 [Azure AD의 인증 시나리오](./authentication-vs-authorization.md)를 참조하세요. Microsoft Graph를 통해 Office 365에 대한 액세스 권한을 부여받는 방법은 [Microsoft Graph를 사용하여 앱 인증](/graph/)을 참조하세요.
 
 ## <a name="consent-experience---an-example"></a>동의 경험 - 예
 

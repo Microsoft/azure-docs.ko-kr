@@ -2,25 +2,21 @@
 title: '자습서: moconavi와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 moconavi 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e1916224-e1c2-426f-b233-0a2518fa41db
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 038520e662a205bc173035fd19656cbaf4800239
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d2355b26fc6a946e47a3d2c135b7c23729b186c7
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160529"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554669"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>자습서: moconavi와 Azure Active Directory 통합
 

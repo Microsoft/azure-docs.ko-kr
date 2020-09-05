@@ -13,7 +13,7 @@
   items:
     - name: REST API
       items:
-        - name: 'C# 사용'
+        - name: C# 사용
           href: quickstarts/csharp.md
         - name: Java 사용
           href: quickstarts/java.md
@@ -93,7 +93,7 @@
     - name: 기술 자료
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
     - name: API 키 가져오기
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-video-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: 사용해 보세요.
       href: 'https://dev.cognitive.microsoft.com/docs/services/56b43f3ccf5ff8098cef3809/operations/58113fe5e31dac0a1ce6b0a8'
     - name: Bing Video Search API에 대한 분석

@@ -3,22 +3,22 @@ title: Microsoft Azure Recovery Services 자격 증명 모음 삭제
 description: 이 문서에서는 종속성을 제거 하 고 Azure Backup Recovery Services 자격 증명 모음을 삭제 하는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: 5446c54ac070555987dfc05afa67825f307ee61b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c0b75d147abba45a745f811de5e4b8ac45088bd8
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87055206"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826738"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Azure Backup Recovery Services 자격 증명 모음 삭제
 
 이 문서에서는 [Azure Backup](backup-overview.md) Recovery Services 자격 증명 모음을 삭제 하는 방법을 설명 합니다. 종속성을 제거한 후 자격 증명 모음을 삭제 하는 방법에 대 한 지침이 포함 되어 있습니다.
 
-## <a name="before-you-start"></a>시작하기 전 확인 사항
+## <a name="before-you-start"></a>시작하기 전에
 
 다음과 같은 종속성이 있는 Recovery Services 자격 증명 모음을 삭제할 수 없습니다.
 
-- 보호 된 데이터 원본 (예: IaaS Vm, SQL 데이터베이스, Azure 파일 공유 등)을 포함 하는 자격 증명 모음은 삭제할 수 없습니다.  
+- 보호 된 데이터 원본 (예: IaaS Vm, SQL 데이터베이스, Azure 파일 공유)을 포함 하는 자격 증명 모음은 삭제할 수 없습니다.
 - 백업 데이터를 포함 하는 자격 증명 모음은 삭제할 수 없습니다. 백업 데이터를 삭제하면 일시 삭제된 상태로 전환됩니다.
 - 일시 삭제 된 상태에서 백업 데이터를 포함 하는 자격 증명 모음은 삭제할 수 없습니다.
 - 등록 된 저장소 계정이 있는 자격 증명 모음은 삭제할 수 없습니다.
@@ -32,7 +32,7 @@ ms.locfileid: "87055206"
 ## <a name="proper-way-to-delete-a-vault"></a>자격 증명 모음을 삭제 하는 적절 한 방법
 
 >[!WARNING]
->다음 작업은 소거식 이며 실행 취소할 수 없습니다. 보호 된 서버와 연결 된 모든 백업 데이터 및 백업 항목은 영구적으로 삭제 됩니다. 이러한 작업은 주의해서 진행합니다.
+>다음 작업은 소거식 이며 실행 취소할 수 없습니다. 보호 된 서버와 연결 된 모든 백업 데이터 및 백업 항목은 영구적으로 삭제 됩니다. 주의하여 진행하세요.
 
 자격 증명 모음을 제대로 삭제 하려면 다음 순서 대로 단계를 수행 해야 합니다.
 
@@ -43,6 +43,7 @@ ms.locfileid: "87055206"
 - **3 단계**: 다음 세 위치를 모두 확인 하 여 보호 된 항목이 있는지 확인 해야 합니다.
 
   - **클라우드 보호 항목**: **백업 항목**> 자격 증명 모음 대시보드 메뉴로 이동 합니다. 백업 데이터와 함께 백업 **중지** 또는 백업 **데이터를 삭제** 하 여 여기에 나열 된 모든 항목을 제거 해야 합니다.  이러한 항목을 제거 하려면 [다음 단계를 수행](#delete-protected-items-in-the-cloud) 합니다.
+  - **SQL Server 인스턴스**: 자격 증명 모음 대시보드 메뉴로 이동 하 여 **백업 인프라**  >  **보호 된 서버**> 합니다. 보호된 서버에서 등록을 취소할 서버를 선택합니다. 자격 증명 모음을 삭제 하려면 모든 서버의 등록을 취소 해야 합니다. 보호 된 서버를 마우스 오른쪽 단추로 클릭 하 고 **등록 취소**를 선택 합니다.
   - **MARS로 보호 된 서버**: **백업 인프라**  >  **보호 된 서버**> 자격 증명 모음 대시보드 메뉴로 이동 합니다. MARS로 보호 된 서버가 있는 경우 여기에 나열 된 모든 항목은 해당 백업 데이터와 함께 삭제 되어야 합니다. MARS 보호 된 서버를 삭제 하려면 [다음 단계를 수행](#delete-protected-items-on-premises) 합니다.
   - **Mabs 또는 DPM 관리 서버**: **백업 인프라**  >  **백업 관리 서버**> 자격 증명 모음 대시보드 메뉴로 이동 합니다. DPM 또는 MABS (Azure Backup Server)를 사용 하는 경우 여기에 나열 된 모든 항목을 백업 데이터와 함께 삭제 하거나 등록을 취소 해야 합니다. 관리 서버를 삭제 하려면 [다음 단계를 수행](#delete-protected-items-on-premises) 합니다.
 
@@ -84,7 +85,7 @@ ms.locfileid: "87055206"
 1. 자격 증명 모음 대시보드 메뉴에서 **백업 인프라**를 선택 합니다.
 2. 온-프레미스 시나리오에 따라 다음 옵션 중 하나를 선택 합니다.
 
-      - MARS의 경우 **보호 된 서버** 를 선택한 다음 **에이전트를 Azure Backup**합니다. 그런 다음 삭제 하려는 서버를 선택 합니다.
+      - MARS의 경우 **보호 된 서버** 를 선택한 다음  **에이전트를 Azure Backup**합니다. 그런 다음 삭제 하려는 서버를 선택 합니다.
 
         ![MARS의 경우 자격 증명 모음을 선택 하 여 해당 대시보드를 엽니다.](./media/backup-azure-delete-vault/identify-protected-servers.png)
 
@@ -233,9 +234,9 @@ MABS 또는 DPM 관리 콘솔에서 백업 항목을 삭제 하는 데 사용할
     Get-OBPolicy | Remove-OBPolicy -DeleteBackup -SecurityPIN <Security Pin>
     ```
 
-    다음 프롬프트가 표시 되는 게시:
+    그런 다음, 다음 프롬프트가 표시 됩니다.
 
-    *이 백업 정책을 제거 하 시겠습니까 Microsoft Azure Backup? 삭제 된 백업 데이터는 14 일 동안 보존 됩니다. 이 시간 후에는 백업 데이터가 영구적으로 삭제 됩니다. <br/>[Y] 예 [A] 예 [N] 아니요 [S] 아니요 모두 [S] 일시 중지 [?] 도움말 (기본값: "Y"):*
+    *이 백업 정책을 제거 하 시겠습니까 Microsoft Azure Backup? 삭제 된 백업 데이터는 14 일 동안 보존 됩니다. 이 시간 후에는 백업 데이터가 영구적으로 삭제 됩니다. <br/> [Y] 예 [A] 예 [N] 아니요 [S] 아니요 모두 [S] 일시 중지 [?] 도움말 (기본값: "Y"):*
 
 - MABS (Microsoft Azure Backup Server) 또는 DPM (System Center Data Protection Manager)을 사용 하 여 보호 되는 온-프레미스 컴퓨터를 azure에서 삭제 하려면 다음 명령을 사용 하 여 Azure에서 백업 된 데이터를 삭제 합니다.
 
@@ -243,7 +244,7 @@ MABS 또는 DPM 관리 콘솔에서 백업 항목을 삭제 하는 데 사용할
     Get-OBPolicy | Remove-OBPolicy -DeleteBackup -SecurityPIN <Security Pin>
     ```
 
-    다음 프롬프트가 표시 되는 게시:
+    그런 다음, 다음 프롬프트가 표시 됩니다.
 
    *Microsoft Azure Backup* 이 백업 정책을 제거 하 시겠습니까? 삭제 된 백업 데이터는 14 일 동안 보존 됩니다. 이 기간 후에는 백업 데이터가 영구적으로 삭제됩니다. <br/>
    [Y] 예 [A] 예 [N] 아니요 [S] 아니요 모두 [S] 일시 중지 [?] 도움말 (기본값은 "Y"):*
@@ -293,7 +294,7 @@ Recovery Services 자격 증명 모음 삭제하려면
       [<CommonParameters>]
    ```
 
-Recovery services 자격 증명 모음 삭제에 [대해 자세히 알아보세요](/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault) .
+Recovery Services 자격 증명 모음을 삭제 하는 방법에 [대해 자세히 알아보세요](/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault) .
 
 ## <a name="delete-the-recovery-services-vault-by-using-cli"></a>CLI를 사용 하 여 Recovery Services 자격 증명 모음 삭제
 
@@ -302,7 +303,7 @@ Recovery services 자격 증명 모음 삭제에 [대해 자세히 알아보세�
 > [!NOTE]
 > 현재 Azure Backup CLI는 Azure VM 백업만 관리 하도록 지원 하므로 자격 증명 모음을 삭제 하는 다음 명령은 자격 증명 모음에 Azure VM 백업이 포함 된 경우에만 작동 합니다. 자격 증명 모음에 Azure Vm 이외의 형식의 백업 항목이 포함 된 경우 Azure Backup CLI를 사용 하 여 자격 증명 모음을 삭제할 수 없습니다.
 
-기존 Recovery services 자격 증명 모음을 삭제 하려면 다음을 수행 합니다.
+기존 Recovery Services 자격 증명 모음을 삭제 하려면 다음 단계를 수행 합니다.
 
 - 보호를 중지 하 고 백업 데이터를 삭제 하려면
 
@@ -319,7 +320,7 @@ Recovery services 자격 증명 모음 삭제에 [대해 자세히 알아보세�
 
     자세한 내용은이 [문서](/cli/azure/backup/protection#az-backup-protection-disable)를 참조 하세요.
 
-- 기존 Recovery services 자격 증명 모음을 삭제 합니다.
+- 기존 Recovery Services 자격 증명 모음을 삭제 합니다.
 
     ```azurecli
     az backup vault delete [--force]
@@ -356,13 +357,13 @@ ARMClient 명령에 대 한 자세한 내용은 [ARMCLIENT 추가](https://githu
 1. 구독 ID, 리소스 그룹 이름 및 자격 증명 모음 이름을 사용 하 여 다음 명령을 실행 합니다. 종속성이 없는 경우 다음 명령을 실행 하면 자격 증명 모음이 삭제 됩니다.
 
    ```azurepowershell
-   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>?api-version=2015-03-15
+   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<Recovery Services vault name>?api-version=2015-03-15
    ```
 
 2. 자격 증명 모음이 비어 있지 않으면 다음 오류 메시지가 표시 됩니다. 자격 증명 모음 *에 기존 리소스가 있으므로 자격 증명 모음을 삭제할 수 없습니다* . 자격 증명 모음 내에서 보호 된 항목 또는 컨테이너를 제거 하려면 다음 명령을 실행 합니다.
 
    ```azurepowershell
-   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>/registeredIdentities/<container name>?api-version=2016-06-01
+   ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<Recovery Services vault name>/registeredIdentities/<container name>?api-version=2016-06-01
    ```
 
 3. Azure Portal에서 자격 증명 모음이 삭제 되었는지 확인 합니다.

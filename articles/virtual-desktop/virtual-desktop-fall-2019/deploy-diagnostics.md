@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c456f7e82bb605909f31b35cdd838145900396e2
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 61c31b24b01b40da4d73a308a4f304f6ff242e41
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009191"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691414"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Windows 가상 데스크톱 (클래식) 진단 도구 배포
 
@@ -191,12 +191,12 @@ Vm의 상태를 볼 수 있으려면 Log Analytics 연결을 사용 하도록 �
 4.  왼쪽 패널의 관리 섹션에서 **인증**을 선택 합니다.
 5.  **리디렉션 uri** 텍스트 상자에 원하는 리디렉션 uri를 입력 한 다음 메뉴의 왼쪽 위 모서리에서 **저장** 을 선택 합니다.
 6. 유형 아래의 드롭다운 메뉴에서 **웹** 을 선택 합니다.
-7. 앱 개요 페이지에서 URL을 입력 하 고 끝에 **/security/signin-callback** 를 추가 합니다. 예: `https://<yourappname>.azurewebsites.net/security/signin-callback`.
+7. 앱 개요 페이지에서 URL을 입력 하 고 끝에 **/security/signin-callback** 를 추가 합니다. 예를 들어 `https://<yourappname>.azurewebsites.net/security/signin-callback`을 참조하십시오.
 
    > [!div class="mx-imgBorder"]
    > ![URI 리디렉션 페이지](../media/redirect-uri-page.png)
 
-8. 이제 Azure 리소스로 이동 하 여 템플릿에서 제공한 이름으로 Azure 앱 Services 리소스를 선택 하 고 연결 된 URL로 이동 합니다. 예를 들어 템플릿에서 사용한 앱 이름이 인 경우 `contosoapp45` 연결 된 URL은입니다 <https://contosoapp45.azurewebsites.net> .
+8. 이제 Azure 리소스로 이동 하 여 템플릿에서 제공한 이름으로 Azure 앱 Services 리소스를 선택 하 고 연결 된 URL로 이동 합니다. 예를 들어 템플릿에서 사용한 앱 이름이 인 경우 `contosoapp45` 연결 된 URL은입니다 <http://contoso.azurewebsites.net> .
 9. 적절한 Azure Active Directory 사용자 계정을 사용하여 로그인합니다.
 10.   **수락**을 선택합니다.
 

@@ -1,6 +1,6 @@
 ---
 title: Azure CDN에서 HTTP/2 지원 | Microsoft Docs
-description: HTTP/2 및 CDN 지원에 대해 알아봅니다.
+description: Azure Content Delivery Network는 http/2를 지원 합니다 .이는 멀티플렉싱 & 동시성, 헤더 압축 및 스트림 종속성 등의 HTTP/1을 통해 이점이 있습니다.
 services: cdn
 documentationcenter: ''
 author: lichard
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 5/04/2017
 ms.author: ril
-ms.openlocfilehash: 703623e3f7f314d87417458f3f9a218dfdf45427
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 698b1c7734882ea7f11114476b5e9a7f36a23a0e
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67849966"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192628"
 ---
 # <a name="http2-support-in-azure-cdn"></a>Azure CDN에서 HTTP/2 지원
 

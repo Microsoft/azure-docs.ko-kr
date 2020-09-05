@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 Fuze 구성 | Microsoft Docs'
 description: 사용자 계정을 Fuze로 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 34718201-4f0e-4260-9af0-b3b70a1e8265
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: b552b175074262d961e455a2b46727d0fa656b45
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 08fe2cd87200e1a22f36ab01b58c6cf82fd1f007
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920469"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550826"
 ---
 # <a name="tutorial-configure-fuze-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Fuze 구성
 
@@ -37,7 +33,7 @@ ms.locfileid: "87920469"
 > * Azure AD와 Fuze 간에 사용자 특성을 동기화 상태로 유지
 > * Fuze에 대 [한 Single sign-on](https://docs.microsoft.com/azure/active-directory/saas-apps/fuze-tutorial) (권장)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
@@ -66,7 +62,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Fuze를 구�
 
 3. 요구 사항이 수신 되 면 Fuze 담당자는 통합을 사용 하도록 설정 하는 데 필요한 Fuze 인증 토큰을 제공 합니다. 이 값은 Azure Portal Fuze 응용 프로그램의 프로 비전 탭에 있는 비밀 토큰 필드에 입력 됩니다.
 
-## <a name="step-3-add-fuze-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 Fuze 추가
+## <a name="step-3-add-fuze-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 Fuze 추가
 
 Azure AD 응용 프로그램 갤러리에서 Fuze를 추가 하 여 Fuze에 대 한 프로 비전 관리를 시작 합니다. 이전에 SSO에 대해 Fuze를 설정한 경우 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다.
 
@@ -108,7 +104,7 @@ Azure AD 프로비저닝 서비스를 사용하면 애플리케이션에 대한 
 
     ![알림 이메일](common/provisioning-notification-email.png)
 
-7. **Save**을 클릭합니다.
+7. **저장**을 클릭합니다.
 
 8. **매핑** 섹션 아래에서 **Fuze에 사용자 Azure Active Directory 동기화를**선택 합니다.
 
@@ -153,7 +149,7 @@ Azure AD 프로비저닝 서비스를 사용하면 애플리케이션에 대한 
 
 * 06/15/2020-초당 10 개 요청으로 조정 된 통합의 제한 시간 제한입니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [엔터프라이즈 앱에 대 한 사용자 계정 프로 비전 관리](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Azure Active Directory로 애플리케이션 액세스 및 Single Sign-On을 구현하는 방법](../manage-apps/what-is-single-sign-on.md)

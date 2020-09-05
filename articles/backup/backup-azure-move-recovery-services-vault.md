@@ -1,15 +1,15 @@
 ---
 title: 자격 증명 모음 Azure Backup Recovery Services 이동 하는 방법
-description: Azure 구독 및 리소스 그룹에서 recovery services 자격 증명 모음을 이동 하는 방법에 대 한 지침입니다.
+description: Azure 구독 및 리소스 그룹에서 Recovery Services 자격 증명 모음을 이동 하는 방법에 대 한 지침입니다.
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: references_regions
-ms.openlocfilehash: 40ef55fa3b86856051b840c5d88ab8fadae3b7c3
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 69021131f12b57aedcd531997029858b0722933f
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514104"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181513"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Azure 구독 및 리소스 그룹 간에 Recovery Services 자격 증명 모음 이동
 
@@ -17,7 +17,7 @@ ms.locfileid: "86514104"
 
 ## <a name="supported-regions"></a>지원되는 지역
 
-Recovery Services 자격 증명 모음에 대 한 리소스 이동은 오스트레일리아 동부에서 지원 됩니다. 오스트레일리아 남부 동부, 캐나다 중부, 캐나다 동부, 남부 동아시아, 동아시아, 미국 중부, 미국 중 북부, 미국 동부, 미국 동부 2, 미국 서 부, 미국 서 부, 인도 중부, 인도 서 부, 인도 서 부 2, 인도 서 부, 인도 남부, 일본 동부, 일본 서 부, 대한민국 중부, 한국 남부, 북부 유럽 , 유럽 서부, 남아프리카 북, 남아프리카 공화국 서 부, 영국 남부 및 영국 서부.
+Recovery Services 자격 증명 모음에 대 한 리소스 이동은 오스트레일리아 동부에서 지원 됩니다. 오스트레일리아 남부 동부, 캐나다 중부, 캐나다 동부, 남부 동아시아, 동아시아, 미국 중부, 미국 중 북부, 미국 동부, 미국 동부 2, 미국 서 부, 미국 서 부, 미국 서 부 2, 미국 서 부, 미국 서 부 2, 브라질 남부, 인도 서 부, 인도 남부, 일본 서 부, 일본 서 부, 대한민국 중부, 대한민국 , 북부 유럽, 유럽 서부, 남아프리카 북부, 남아프리카 공화국 서 부, 영국 남부 및 영국 서부.
 
 ## <a name="unsupported-regions"></a>지원되지 않는 지역
 
@@ -50,30 +50,30 @@ Recovery Services 자격 증명 모음에 대 한 리소스 이동은 오스트�
 
 ## <a name="use-azure-portal-to-move-recovery-services-vault-to-different-resource-group"></a>Azure Portal를 사용 하 여 Recovery Services 자격 증명 모음을 다른 리소스 그룹으로 이동
 
-복구 서비스 자격 증명 모음 및 연결된 해당 리소스를 다른 리소스 그룹으로 이동하려면
+Recovery Services 자격 증명 모음 및 연결 된 리소스를 다른 리소스 그룹으로 이동 하려면 다음을 수행 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 2. **Recovery Services 자격 증명 모음**의 목록을 열고 이동하려는 자격 증명 모음을 선택합니다. 자격 증명 모음 대시보드가 열리면 다음 이미지에 표시된 것처럼 나타납니다.
 
-   ![복구 서비스 자격 증명 모음 열기](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
+   ![Recovery Services 자격 증명 모음 열기](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
 
-   자격 증명 모음에 대 한 **필수** 정보가 표시 되지 않으면 드롭다운 아이콘을 클릭 합니다. 이제 자격 증명 모음에 대한 Essentials 정보가 표시됩니다.
+   자격 증명 모음에 대 한 **필수** 정보가 표시 되지 않으면 드롭다운 아이콘을 선택 합니다. 이제 자격 증명 모음에 대한 Essentials 정보가 표시됩니다.
 
    ![Essentials 정보 탭](./media/backup-azure-move-recovery-services/essentials-information-tab.png)
 
-3. 자격 증명 모음 개요 메뉴에서 **리소스 그룹** 옆의 **변경**을 클릭하여 **리소스 이동** 블레이드를 엽니다.
+3. 자격 증명 모음 개요 메뉴에서 **리소스 그룹**옆의 **변경** 을 선택 하 여 **리소스 이동** 창을 엽니다.
 
    ![리소스 그룹 변경](./media/backup-azure-move-recovery-services/change-resource-group.png)
 
-4. **리소스 이동** 블레이드에서 선택한 자격 증명 모음에 대해 다음 이미지와 같이 확인란을 선택 하 여 선택적 관련 리소스를 이동 하는 것이 좋습니다.
+4. **리소스 이동** 창에서 선택한 자격 증명 모음에 대해 다음 그림에 표시 된 것 처럼 확인란을 선택 하 여 선택적 관련 리소스를 이동 하는 것이 좋습니다.
 
    ![구독 이동](./media/backup-azure-move-recovery-services/move-resource.png)
 
-5. 대상 리소스 그룹을 추가하려면 **리소스 그룹** 드롭다운 목록에서 기존 리소스 그룹을 선택하거나 **새 그룹 만들기** 옵션을 클릭합니다.
+5. 대상 리소스 그룹을 추가 하려면 **리소스 그룹** 드롭다운 목록에서 기존 리소스 그룹을 선택 하거나 **새 그룹 만들기** 옵션을 선택 합니다.
 
    ![리소스 만들기](./media/backup-azure-move-recovery-services/create-a-new-resource.png)
 
-6. 리소스 그룹을 추가한 후 **새 리소스 ID를 사용하려는 경우 이동한 리소스와 연결된 도구 및 스크립트를 업데이트하지 않으면 정상적으로 작동하지 않는다는 점을 이해합니다.** 옵션을 확인한 다음, **확인**을 클릭하여 자격 증명 모음 이동을 완료합니다.
+6. 리소스 그룹을 추가한 후에 **는 이동 된 리소스와 연결 된 도구와 스크립트가 새 리소스 id를 사용 하도록 업데이트 될 때까지 작동 하지 않는지** 확인 하 고 **확인** 을 선택 하 여 자격 증명 모음 이동을 완료 해야 합니다.
 
    ![확인 메시지](./media/backup-azure-move-recovery-services/confirmation-message.png)
 
@@ -84,13 +84,13 @@ Recovery Services 자격 증명 모음 및 연결된 해당 리소스를 다른 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 2. Recovery Services 자격 증명 모음의 목록을 열고 이동하려는 자격 증명 모음을 선택합니다. 자격 증명 모음 대시보드가 열리면 다음 이미지에 표시된 것처럼 나타납니다.
 
-    ![복구 서비스 자격 증명 모음 열기](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
+    ![Recovery Services 자격 증명 모음 열기](./media/backup-azure-move-recovery-services/open-recover-service-vault.png)
 
-    자격 증명 모음에 대한 **Essentials** 정보가 표시되지 않는 경우 드롭다운 아이콘을 클릭합니다. 이제 자격 증명 모음에 대한 Essentials 정보가 표시됩니다.
+    자격 증명 모음에 대 한 **필수** 정보가 표시 되지 않으면 드롭다운 아이콘을 선택 합니다. 이제 자격 증명 모음에 대한 Essentials 정보가 표시됩니다.
 
     ![Essentials 정보 탭](./media/backup-azure-move-recovery-services/essentials-information-tab.png)
 
-3. 자격 증명 모음 개요 메뉴에서 **구독** 옆의 **변경**을 클릭하여 **리소스 이동** 블레이드를 엽니다.
+3. 자격 증명 모음 개요 메뉴에서 **구독**옆의 **변경** 을 선택 하 여 **리소스 이동** 창을 엽니다.
 
    ![구독 변경](./media/backup-azure-move-recovery-services/change-resource-subscription.png)
 
@@ -99,14 +99,14 @@ Recovery Services 자격 증명 모음 및 연결된 해당 리소스를 다른 
    ![리소스 이동](./media/backup-azure-move-recovery-services/move-resource-source-subscription.png)
 
 5. 자격 증명 모음을 이동하려는 **구독** 드롭다운 목록에서 대상 구독을 선택합니다.
-6. 대상 리소스 그룹을 추가하려면 **리소스 그룹** 드롭다운 목록에서 기존 리소스 그룹을 선택하거나 **새 그룹 만들기** 옵션을 클릭합니다.
+6. 대상 리소스 그룹을 추가 하려면 **리소스 그룹** 드롭다운 목록에서 기존 리소스 그룹을 선택 하거나 **새 그룹 만들기** 옵션을 선택 합니다.
 
    ![구독 추가](./media/backup-azure-move-recovery-services/add-subscription.png)
 
-7. **새 리소스 ID를 사용하려는 경우 이동한 리소스와 연결된 도구 및 스크립트를 업데이트하지 않으면 정상적으로 작동하지 않는다는 점을 이해합니다.** 옵션을 클릭하여 확인한 다음, **확인**을 클릭합니다.
+7. **이동 된 리소스와 연결 된 도구 및 스크립트가 새 리소스 id를 사용 하도록 업데이트 될 때까지 작동 하지** 않습니다. 옵션을 선택 하 여 확인을 선택한 다음 **확인**을 선택 합니다.
 
 > [!NOTE]
-> 구독 간 백업(RS 자격 증명 모음 및 보호된 VM이 다른 구독에 있음)은 지원되는 시나리오가 아닙니다. 또한 LRS(로컬 중복 스토리지)에서 GRS(글로벌 중복 스토리지)로 스토리지 중복 옵션 및 그 반대의 경우는 자격 증명 모음 이동 작업 중 수정할 수 없습니다.
+> 크로스 구독 백업 (RS 자격 증명 모음 및 보호 된 Vm은 서로 다른 구독에 있는 경우)은 지원 되는 시나리오가 아닙니다. 또한 LRS (로컬 중복 저장소)에서 GRS (global 중복 저장소)로 저장소 중복성 옵션을 사용할 수 없으며, 그 반대의 경우도 자격 증명 모음 이동 작업을 수행 하는 동안 수정할 수 없습니다.
 >
 >
 
@@ -141,7 +141,7 @@ az resource move --destination-group <destinationResourceGroupName> --ids <Vault
 ## <a name="post-migration"></a>마이그레이션 후
 
 1. 리소스 그룹에 대 한 액세스 제어를 설정/확인 합니다.  
-2. 이동이 완료된 후 자격 증명 모음에 대해 백업 보고 및 모니터링 기능을 다시 구성해야 합니다. 이전 구성은 이동 작업 중 손실됩니다.
+2. 이동이 완료 된 후에 자격 증명 모음에 대해 백업 보고 및 모니터링 기능을 다시 구성 해야 합니다. 이전 구성은 이동 작업 중 손실됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

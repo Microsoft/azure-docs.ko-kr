@@ -7,12 +7,12 @@ ms.assetid: b8783c10-3a4a-4dd6-af8c-856baafbdde5
 ms.topic: article
 ms.date: 08/03/2016
 ms.custom: seodec18
-ms.openlocfilehash: 2ef4862b629f5d192049c2cb9236a3da2b411960
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: a9d3de5d4a88c782ad541ceb4916ec90a3bdd7b5
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84170769"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958255"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Azure App Service에서 느린 앱 성능 문제 해결
 이 문서에서는 [Azure App Service](https://go.microsoft.com/fwlink/?LinkId=529714)의 느린 앱 성능 문제를 해결하는 데 도움을 줍니다.
@@ -43,7 +43,7 @@ ms.locfileid: "84170769"
 
 ### <a name="1-observe-and-monitor-application-behavior"></a>1. 애플리케이션 작동을 관찰 및 감시
 #### <a name="track-service-health"></a>서비스 상태를 추적합니다.
-Microsoft Azure는 서비스가 중단되거나 성능이 저하될 때마다 경고를 표시합니다. [Azure Portal](https://portal.azure.com/)에서 서비스의 상태를 추적할 수 있습니다. 자세한 내용은 [서비스 상태 추적](../monitoring-and-diagnostics/insights-service-health.md)을 참조하세요.
+Microsoft Azure는 서비스가 중단되거나 성능이 저하될 때마다 경고를 표시합니다. [Azure Portal](https://portal.azure.com/)에서 서비스의 상태를 추적할 수 있습니다. 자세한 내용은 [서비스 상태 추적](../service-health/service-notifications.md)을 참조하세요.
 
 #### <a name="monitor-your-app"></a>앱 모니터링
 이 옵션은 애플리케이션의 문제를 해결할 수 있게 도와줍니다. 앱의 블레이드에서 **요청 및 오류** 타일을 클릭합니다. **메트릭** 블레이드는 추가 가능한 모든 메트릭을 보여 줍니다.
@@ -61,7 +61,7 @@ Microsoft Azure는 서비스가 중단되거나 성능이 저하될 때마다 �
 자세한 내용은 다음을 참조하세요.
 
 * [Azure App Service에서 앱 모니터링](web-sites-monitor.md)
-* [경고 알림 받기](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
+* [경고 알림 받기](../azure-monitor/platform/alerts-overview.md)
 
 #### <a name="monitor-web-endpoint-status"></a>웹 엔드포인트 상태 모니터링
 **표준** 가격 책정 계층에서 앱을 실행할 경우, App Service를 통해 3곳의 지리적 위치에서 엔드포인트 2개를 모니터링할 수 있습니다.
@@ -161,4 +161,4 @@ AutoHeal은 사용자가 선택한 설정(예: 구성 변경, 요청, 메모리 
 
  ![앱을 다시 시작하여 성능 문제 해결](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 
-또한 Azure Powershell을 사용하여 앱을 관리할 수 있습니다. 자세한 내용은 [Azure 리소스 관리자에서 Azure PowerShell 사용](../powershell-azure-resource-manager.md)을 참조하세요.
+또한 Azure Powershell을 사용하여 앱을 관리할 수 있습니다. 자세한 내용은 [Azure 리소스 관리자에서 Azure PowerShell 사용](../azure-resource-manager/management/manage-resources-powershell.md)을 참조하세요.

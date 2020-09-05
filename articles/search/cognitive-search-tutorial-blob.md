@@ -8,18 +8,18 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 07/15/2020
-ms.openlocfilehash: ba30584ca40e7d093ecd9090b82b977d71fc1e0e
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 99d477bb9e8291721022e276c5933ec0ef7f1e37
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503305"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936013"
 ---
 # <a name="tutorial-use-rest-and-ai-to-generate-searchable-content-from-azure-blobs"></a>자습서: REST 및 AI를 사용하여 Azure Blob에서 검색 가능한 콘텐츠 생성
 
 Azure Blob 스토리지에 비정형 텍스트 또는 이미지가 있는 경우 [AI 보강 파이프라인](cognitive-search-concept-intro.md)은 정보를 추출하여 전체 텍스트 검색 또는 지식 마이닝 시나리오에 유용한 새 콘텐츠를 만들 수 있습니다. 파이프라인에서 이미지를 처리할 수 있지만, 이 REST 자습서에서는 텍스트에 중점을 두고 언어 감지 및 자연어 처리를 적용하여 쿼리, 패싯 및 필터에 활용할 수 있는 새로운 필드를 만듭니다.
 
-이 자습서에서는 Postman 및 [Search REST API](https://docs.microsoft.com/rest/api/searchservice/)를 사용하여 다음 작업을 수행합니다.
+이 자습서에서는 Postman 및 [Search REST API](/rest/api/searchservice/)를 사용하여 다음 작업을 수행합니다.
 
 > [!div class="checklist"]
 > * Azure Blob 스토리지에서 PDF, HTML, DOCX 및 PPTX와 같은 전체 문서(비정형 텍스트)로 시작합니다.
@@ -135,7 +135,7 @@ Azure Cognitive Search에서 AI 처리는 인덱싱(또는 데이터 수집) 중
 
 ### <a name="step-1-create-a-data-source"></a>1단계: 데이터 소스 만들기
 
-[데이터 원본 개체](https://docs.microsoft.com/rest/api/searchservice/create-data-source)는 파일이 포함된 Blob 컨테이너에 대한 연결 문자열을 제공합니다.
+[데이터 원본 개체](/rest/api/searchservice/create-data-source)는 파일이 포함된 Blob 컨테이너에 대한 연결 문자열을 제공합니다.
 
 1. **POST** 및 다음 URL을 사용하여 YOUR-SERVICE-NAME을 서비스의 실제 이름으로 바꿉니다.
 
@@ -165,7 +165,7 @@ Azure Cognitive Search에서 AI 처리는 인덱싱(또는 데이터 수집) 중
 
 ### <a name="step-2-create-a-skillset"></a>2단계: 기술 집합 만들기
 
-[기술 세트 개체](https://docs.microsoft.com/rest/api/searchservice/create-skillset)는 콘텐츠에 적용되는 보강 단계 세트입니다. 
+[기술 세트 개체](/rest/api/searchservice/create-skillset)는 콘텐츠에 적용되는 보강 단계 세트입니다. 
 
 1. **PUT** 및 다음 URL을 사용하여 YOUR-SERVICE-NAME을 서비스의 실제 이름으로 바꿉니다.
 
@@ -250,7 +250,7 @@ Azure Cognitive Search에서 AI 처리는 인덱싱(또는 데이터 수집) 중
 
 ### <a name="step-3-create-an-index"></a>3단계: 인덱스 만들기
 
-[인덱스](https://docs.microsoft.com/rest/api/searchservice/create-index)는 Azure Cognitive Search에서 콘텐츠의 반전된 인덱스 및 다른 구문의 물리적 식을 만드는 데 사용되는 스키마를 제공합니다. 인덱스의 가장 큰 구성 요소는 필드 컬렉션입니다. 여기서 데이터 형식과 특성은 Azure Cognitive Search의 콘텐츠와 동작을 결정합니다.
+[인덱스](/rest/api/searchservice/create-index)는 Azure Cognitive Search에서 콘텐츠의 반전된 인덱스 및 다른 구문의 물리적 식을 만드는 데 사용되는 스키마를 제공합니다. 인덱스의 가장 큰 구성 요소는 필드 컬렉션입니다. 여기서 데이터 형식과 특성은 Azure Cognitive Search의 콘텐츠와 동작을 결정합니다.
 
 1. 인덱스 이름을 지정하려면 **PUT** 및 다음 URL을 사용하여 YOUR-SERVICE-NAME을 서비스의 실제 이름으로 바꿉니다.
 
@@ -334,7 +334,7 @@ Azure Cognitive Search에서 AI 처리는 인덱싱(또는 데이터 수집) 중
 
 ### <a name="step-4-create-and-run-an-indexer"></a>4단계: 인덱서 만들기 및 실행
 
-[인덱서](https://docs.microsoft.com/rest/api/searchservice/create-indexer)는 파이프라인을 구동합니다. 지금까지 만든 세 가지 구성 요소(데이터 원본, 기술 세트, 인덱스)는 인덱서에 대한 입력입니다. Azure Cognitive Search에서 인덱서를 만드는 것은 전체 파이프라인을 이동시키는 이벤트입니다. 
+[인덱서](/rest/api/searchservice/create-indexer)는 파이프라인을 구동합니다. 지금까지 만든 세 가지 구성 요소(데이터 원본, 기술 세트, 인덱스)는 인덱서에 대한 입력입니다. Azure Cognitive Search에서 인덱서를 만드는 것은 전체 파이프라인을 이동시키는 이벤트입니다. 
 
 1. 인덱서 이름을 지정하려면 **PUT** 및 다음 URL을 사용하여 YOUR-SERVICE-NAME을 서비스의 실제 이름으로 바꿉니다.
 
@@ -486,7 +486,7 @@ Azure Cognitive Search에서 AI 처리는 인덱싱(또는 데이터 수집) 중
    https://[YOUR-SERVICE-NAME].search.windows.net/indexes/cog-search-demo-idx/docs?search=*&$filter=organizations/any(organizations: organizations eq 'NASDAQ')&$select=metadata_storage_name,organizations&$count=true&api-version=2020-06-30
    ```
 
-이러한 쿼리는 인식 검색을 통해 생성되는 새 필드에 대해 쿼리 구문과 필터를 사용할 수 있는 몇 가지 방법을 보여 줍니다. 자세한 쿼리 예제는 [문서 검색 REST API 예제](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples), [단순 구문 쿼리 예제](search-query-simple-examples.md) 및 [전체 Lucene 쿼리 예제](search-query-lucene-examples.md)를 참조하세요.
+이러한 쿼리는 인식 검색을 통해 생성되는 새 필드에 대해 쿼리 구문과 필터를 사용할 수 있는 몇 가지 방법을 보여 줍니다. 자세한 쿼리 예제는 [문서 검색 REST API 예제](/rest/api/searchservice/search-documents#bkmk_examples), [단순 구문 쿼리 예제](search-query-simple-examples.md) 및 [전체 Lucene 쿼리 예제](search-query-lucene-examples.md)를 참조하세요.
 
 <a name="reset"></a>
 

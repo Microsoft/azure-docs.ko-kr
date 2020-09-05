@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/25/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: aa9327bd0ba6763aa4e89630611aabb3c5195655
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 546c21802d275fe99ed2acbf00e32d37db3603f2
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85448754"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225202"
 ---
 지금은 ultra disks에는 다음과 같은 추가 제한 사항이 있습니다.
 
@@ -26,23 +26,32 @@ ms.locfileid: "85448754"
 
 |영역  |Ultra disks를 지 원하는 가용성 영역 수  |
 |---------|---------|
-|US Gov 버지니아     |없음         |
-|미국 중남부     |없음         |
+|US Gov 버지니아     |None         |
+|US Gov 애리조나     |None         |
+|미국 중남부     |None         |
 |미국 중부     |3 개 영역         |
-|미국 서부     |없음         |
+|미국 서부     |None         |
 |미국 서부 2    |3 개 영역         |
 |미국 동부     |3 개 영역         |
-|미국 동부 2     |두 영역         |
+|미국 동부 2     |3 개 영역         |
 |동남 아시아     |3 개 영역         |
+|동아시아     |None         |
 |북유럽     |3 개 영역          |
 |서유럽     |3 개 영역          |
 |영국 남부     |3 개 영역          |
-|일본 동부     |두 영역         |
+|일본 동부     |3 개 영역         |
 |프랑스 중부    |두 영역        |
+|브라질 남부    |None        |
+|오스트레일리아 동부    |3 개 영역        |
+|캐나다 중부 *    |3 개 영역        |
 
+\* 이 지역의 가용성 영역에 대 한 액세스 권한을 얻으려면 Azure 지원에 문의 하세요.
 
 - 는 다음 VM 시리즈 에서만 지원 됩니다.
     - [ESv3](../articles/virtual-machines/ev3-esv3-series.md#esv3-series)
+    - [Easv4](../articles/virtual-machines/eav4-easv4-series.md#easv4-series)
+    - [Edsv4](../articles/virtual-machines/edv4-edsv4-series.md#edsv4-series)
+    - [Esv4](../articles/virtual-machines/ev4-esv4-series.md#esv4-series)
     - [DSv3](../articles/virtual-machines/dv3-dsv3-series.md#dsv3-series)
     - [FSv2](../articles/virtual-machines/fsv2-series.md)
     - [LSv2](../articles/virtual-machines/lsv2-series.md)

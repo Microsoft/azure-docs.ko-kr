@@ -5,17 +5,17 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: arthii, divswa, logicappspm
 ms.topic: article
-ms.date: 07/28/2020
-ms.openlocfilehash: 675d4bdb0b8c0aa8e034d5a85dc027f642705fa9
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.date: 08/18/2020
+ms.openlocfilehash: 2dd086ccc45458299cf6b8a7ad83d023055c96ae
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386183"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661200"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Azure Logic Apps에서 온-프레미스 데이터 원본에 연결
 
-[로컬 컴퓨터에 온 *-프레미스 데이터 게이트웨이* 를 설치](../logic-apps/logic-apps-gateway-install.md) 하 고 논리 앱에서 온-프레미스의 데이터 원본에 액세스 하려면 먼저 게이트웨이 설치를 위해 Azure에서 게이트웨이 리소스를 만들어야 합니다. 그런 다음 Azure Logic Apps에서 사용할 수 있는 [온-프레미스 커넥터](../connectors/apis-list.md#on-premises-connectors) 에 사용 하려는 트리거와 작업에서이 게이트웨이 리소스를 선택할 수 있습니다.
+[로컬 컴퓨터에 온 *-프레미스 데이터 게이트웨이* 를 설치](../logic-apps/logic-apps-gateway-install.md) 하 고 논리 앱에서 온-프레미스의 데이터 원본에 액세스 하려면 먼저 게이트웨이 설치를 위해 Azure에서 게이트웨이 리소스를 만들어야 합니다. 그런 다음 Azure Logic Apps에서 사용할 수 있는 [온-프레미스 커넥터](../connectors/apis-list.md#on-premises-connectors) 에 사용 하려는 트리거와 작업에서이 게이트웨이 리소스를 선택할 수 있습니다. Azure Logic Apps는 데이터 게이트웨이를 통해 읽기 및 쓰기 작업을 지원 합니다. 그러나 이러한 작업에는 [페이로드 크기 제한](/data-integration/gateway/service-gateway-onprem#considerations)이 있습니다.
 
 이 문서에서는 [로컬 컴퓨터에](../logic-apps/logic-apps-gateway-install.md)이전에 설치 된 게이트웨이에 대 한 Azure 게이트웨이 리소스를 만드는 방법을 보여 줍니다. 게이트웨이에 대 한 자세한 내용은 [게이트웨이의 작동](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service)원리를 참조 하세요.
 
@@ -48,7 +48,7 @@ Azure Logic Apps 온-프레미스 데이터 게이트웨이는 이러한 데이�
 * SQL Server
 * Teradata
 
-Azure Logic Apps는 데이터 게이트웨이를 통해 읽기 및 쓰기 작업을 지원 합니다. 그러나 이러한 작업에는 [페이로드 크기 제한](/data-integration/gateway/service-gateway-onprem#considerations)이 있습니다. 게이트웨이 자체는 추가 비용이 발생 하지 않지만 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md) 은 Azure Logic Apps의 이러한 커넥터 및 기타 작업에 적용 됩니다.
+REST 또는 SOAP를 사용 하 여 HTTP 또는 HTTPS를 통해 데이터 원본에 연결 하는 [사용자 지정 커넥터](../logic-apps/custom-connector-overview.md) 를 만들 수도 있습니다. 게이트웨이 자체는 추가 비용이 발생 하지 않지만 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md) 은 Azure Logic Apps의 이러한 커넥터 및 기타 작업에 적용 됩니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -116,7 +116,7 @@ Azure Logic Apps는 데이터 게이트웨이를 통해 읽기 및 쓰기 작업
 
    고유한 연결 이름을 사용 하면 나중에 여러 연결을 만드는 경우 해당 연결을 쉽게 찾을 수 있습니다. 해당하는 경우 사용자 이름의 정규화된 도메인도 포함됩니다.
 
-   다음은 예제입니다.
+   예를 들면 다음과 같습니다.
 
    ![논리 앱과 데이터 게이트웨이 간에 연결 만들기](./media/logic-apps-gateway-connection/logic-app-gateway-connection.png)
 

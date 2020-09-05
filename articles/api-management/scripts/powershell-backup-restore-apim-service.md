@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - 서비스 백업 및 복원 | Microsoft Docs
-description: Azure PowerShell 스크립트 샘플 - 서비스 백업 및 복원
+description: API 관리 서비스 인스턴스를 백업 및 복원하는 방법을 알아봅니다. 샘플 스크립트를 참조하고 사용 가능한 추가 리소스를 확인합니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,16 +12,16 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 1c56aefb7b30026d1676e8a782fe2f6d394bd1ca
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d80a63b1a52d1ed7750d1a025eb8f4cd9f254a94
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008985"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851072"
 ---
 # <a name="backup-and-restore-service"></a>서비스 백업 및 복원
 
-이 문서에 표시된 이 샘플은 API Management 서비스 인스턴스를 백업 및 복원하는 방법을 보여 줍니다. 
+이 문서의 샘플 스크립트는 API Management 서비스 인스턴스를 백업 및 복원하는 방법을 보여줍니다. 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

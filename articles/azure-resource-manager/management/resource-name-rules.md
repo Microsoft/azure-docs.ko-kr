@@ -3,12 +3,12 @@ title: 리소스 명명 제한
 description: Azure 리소스의 이름을 지정할 때 적용되는 규칙 및 제한 사항을 보여 줍니다.
 ms.topic: conceptual
 ms.date: 05/21/2020
-ms.openlocfilehash: ca13203b6d31c1eeb939c668a58e67f0d462a905
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56c50354a6ecbd6ba1d9a806f986cea1c4f3215f
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85554347"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235981"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Azure 리소스에 대한 명명 규칙 및 제한 사항
 
@@ -392,6 +392,7 @@ ms.locfileid: "85554347"
 > [!div class="mx-tableFixed"]
 > | 엔터티 | 범위 | 길이 | 사용할 수 있는 문자 |
 > | --- | --- | --- | --- |
+> | actionGroups | 리소스 그룹 | 1-260 | 다음을 사용할 수 없습니다.<br>`/` <br><br>공백 또는 마침표로 끝날 수 없습니다.  |
 > | components | 리소스 그룹 | 1-260 | 다음을 사용할 수 없습니다.<br>`%&\?/` <br><br>공백 또는 마침표로 끝날 수 없습니다.  |
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
@@ -695,6 +696,7 @@ ms.locfileid: "85554347"
 > [!div class="mx-tableFixed"]
 > | 엔터티 | 범위 | 길이 | 사용할 수 있는 문자 |
 > | --- | --- | --- | --- |
+> | certificates | 리소스 그룹 | 1-260 | 다음을 사용할 수 없습니다.<br>`/` <br><br>공백 또는 마침표로 끝날 수 없습니다.  | 
 > | serverfarms | 리소스 그룹 | 1-40 | 영숫자 및 하이픈 |
 > | sites | 글로벌 | 2-60 | 영숫자 및 하이픈을 포함합니다.<br><br>하이픈으로 시작하거나 끝날 수 없습니다. |
 > | sites / slots | site | 2-59 | 영숫자 및 하이픈 |

@@ -3,13 +3,14 @@ title: ApplicationInsights.config 참조 - Azure | Microsoft Docs
 description: 데이터 수집 모듈을 사용하거나 사용하지 않도록 설정하고 성능 카운터 및 기타 매개 변수를 추가합니다.
 ms.topic: conceptual
 ms.date: 05/22/2019
+ms.custom: devx-track-csharp
 ms.reviewer: olegan
-ms.openlocfilehash: ec446190cd589eb511a7a905faeb5f29f31e7d69
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 7c0759e78b1adc1704acb602daa12cf9cabbe153
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87310483"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934806"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>ApplicationInsights.config 또는 .xml로 Application Insights SDK 구성
 Application Insights .NET SDK는 NuGet 패키지의 숫자로 구성됩니다. [코어 패키지](https://www.nuget.org/packages/Microsoft.ApplicationInsights) Application Insights에 원격 분석을 보내는 경우에 API를 제공합니다. [추가 패키지](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights)는 해당 컨텍스트 및 애플리케이션에서 원격 분석을 자동으로 추적하기 위해 원격 분석 *모듈* 및 *이니셜라이저*를 제공합니다. 구성 파일을 조정 하 여 원격 분석 모듈 및 이니셜라이저를 사용 하거나 사용 하지 않도록 설정 하 고 그 중 일부에 대 한 매개 변수를 설정할 수 있습니다.
@@ -69,7 +70,7 @@ HTTP 요청의 [응답 시간 및 결과 코드](../../azure-monitor/app/asp-net
 
 * `Microsoft.ApplicationInsights.Web.ExceptionTrackingTelemetryModule`
 * [Microsoft.ApplicationInsights.Web](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web) NuGet 패키지
-* `Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule`-관찰 되지 않은 작업 예외를 추적 합니다.
+* `Microsoft.ApplicationInsights.WindowsServer.UnobservedExceptionTelemetryModule` -관찰 되지 않은 작업 예외를 추적 합니다.
 * `Microsoft.ApplicationInsights.WindowsServer.UnhandledExceptionTelemetryModule` - 작업자 역할, Windows 서비스 및 콘솔 애플리케이션에 대한 처리되지 않은 예외를 추적합니다.
 * [Application Insights Windows Server](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/) NuGet 패키지.
 
@@ -94,8 +95,8 @@ Microsoft.ApplicationInsights 패키지는 SDK의 [코어 API](/dotnet/api/micro
 ## <a name="telemetry-channel"></a>원격 분석 채널
 [원격 분석 채널](telemetry-channels.md) 은 Application Insights 서비스에 대 한 원격 분석의 버퍼링 및 전송을 관리 합니다.
 
-* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`는 웹 응용 프로그램의 기본 채널입니다. 데이터를 메모리에 버퍼링 하 고 재시도 메커니즘과 로컬 디스크 저장소를 활용 하 여 보다 안정적인 원격 분석 배달을 제공 합니다.
-* `Microsoft.ApplicationInsights.InMemoryChannel`는 다른 채널이 구성 되지 않은 경우에 사용 되는 경량 원격 분석 채널입니다. 
+* `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel` 는 웹 응용 프로그램의 기본 채널입니다. 데이터를 메모리에 버퍼링 하 고 재시도 메커니즘과 로컬 디스크 저장소를 활용 하 여 보다 안정적인 원격 분석 배달을 제공 합니다.
+* `Microsoft.ApplicationInsights.InMemoryChannel` 는 다른 채널이 구성 되지 않은 경우에 사용 되는 경량 원격 분석 채널입니다. 
 
 ## <a name="telemetry-initializers-aspnet"></a>원격 분석 이니셜라이저(ASP.NET)
 원격 분석 이니셜라이저는 원격 분석의 모든 항목과 함께 전송 되는 컨텍스트 속성을 설정 합니다.

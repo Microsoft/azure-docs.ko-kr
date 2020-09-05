@@ -1,6 +1,6 @@
 ---
 title: Azure Windows Virtual Machines에서 SQL Server 개요 | Microsoft Docs
-description: Azure Virtual Machines에서 SQL Server의 전체 버전을 실행하는 방법을 알아봅니다.
+description: 온-프레미스 하드웨어를 관리할 필요 없이 클라우드에서 Azure Virtual Machines에서 SQL Server의 전체 버전을 실행 하는 방법에 대해 알아봅니다.
 services: virtual-machines-windows
 documentationcenter: ''
 author: MashaMSFT
@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/27/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 161722d1f80e4bada35548b4e2b4e903c56215ec
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 4bf5b9b6f683783a39b7d34c430f1c6671c35885
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926695"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236372"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>Azure Virtual Machines에서 SQL Server (Windows)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -128,7 +128,7 @@ Azure Portal은 SQL 가상 머신을 포함하여 [모든 Azure SQL 리소스](h
 - [관리형 인스턴스 만들기](../../managed-instance/instance-create-quickstart.md)
 - [SQL Server 가상 컴퓨터 만들기](sql-vm-create-portal-quickstart.md)
 
-## <a name="sql-server-vm-image-refresh-policy"></a><a id="lifecycle"></a>SQL Server VM 이미지 새로 고침 정책
+## <a name="sql-server-vm-image-refresh-policy"></a><a id="lifecycle"></a> SQL Server VM 이미지 새로 고침 정책
 Azure는 지원되는 각 운영 체제, 버전 및 버전 조합에 대한 하나의 가상 머신 이미지만 유지 관리합니다. 즉, 시간이 지남에 따라 이미지를 새로 고치고 이전 이미지는 제거됩니다. 자세한 내용은 [SQL Server VM FAQ](frequently-asked-questions-faq.md#images)의 **이미지** 섹션을 참조하세요.
 
 ## <a name="customer-experience-improvement-program-ceip"></a>CEIP(사용자 환경 개선 프로그램)

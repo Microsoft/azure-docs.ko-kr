@@ -6,18 +6,19 @@ ms.suite: integration
 ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
-ms.openlocfilehash: ec2225633e5621c51067b64af2968a0dc0f5da87
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: fcf7f1a27633c978c10f541d0a341225fbcb126d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001420"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89013778"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Azure Functions 및 Azure Service Bus를 사용 하 여 논리 앱 호출 또는 트리거
 
 장기 실행 수신기 또는 작업을 배포 해야 하는 경우 [Azure Functions](../azure-functions/functions-overview.md) 를 사용 하 여 논리 앱을 트리거할 수 있습니다. 예를 들어 [Azure Service Bus](../service-bus-messaging/service-bus-messaging-overview.md) 큐에서 수신 대기 하 고 즉시 논리 앱을 밀어넣기 트리거로 실행 하는 Azure 함수를 만들 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 * Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 

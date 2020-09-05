@@ -7,18 +7,18 @@ ms.topic: article
 ms.date: 07/13/2020
 ms.author: ccompy
 ms.custom: seodec18, references_regions
-ms.openlocfilehash: 1e5c909dfebf9c2073ac1809e0a1b7dcbcc7a297
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: e79381c156247efafa55de51f7e2e0154dbc1b51
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874200"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962505"
 ---
 # <a name="locking-down-an-app-service-environment"></a>App Service Environment 잠금
 
 ASE(App Service Environment)에는 제대로 작동하기 위해 액세스해야 하는 여러 가지 외부 종속성이 있습니다. ASE는 고객의 Azure VNet(Virtual Network)에 상주합니다. 고객은 ASE 종속성 트래픽을 허용해야 합니다. 이는 VNet의 모든 송신을 잠그려고 하는 고객에게는 문제가 됩니다.
 
-ASE를 관리하는 데 사용되는 여러 인바운드 엔드포인트가 있습니다. 인바운드 관리 트래픽은 방화벽 디바이스를 통해 보낼 수 없습니다. 이 트래픽에 대한 원본 주소는 알려져 있으며 [App Service Environment 관리 주소](https://docs.microsoft.com/azure/app-service/environment/management-addresses) 문서에 게시됩니다. 또한 NSG(네트워크 보안 그룹)에서 인바운드 트래픽을 보호하는 데 사용할 수 있는 AppServiceManagement라는 서비스 태그가 있습니다.
+ASE를 관리하는 데 사용되는 여러 인바운드 엔드포인트가 있습니다. 인바운드 관리 트래픽은 방화벽 디바이스를 통해 보낼 수 없습니다. 이 트래픽에 대한 원본 주소는 알려져 있으며 [App Service Environment 관리 주소](./management-addresses.md) 문서에 게시됩니다. 또한 NSG(네트워크 보안 그룹)에서 인바운드 트래픽을 보호하는 데 사용할 수 있는 AppServiceManagement라는 서비스 태그가 있습니다.
 
 ASE 아웃바운드 종속성은 거의 전적으로 뒤에 고정 주소가 없는 FQDN을 사용하여 정의됩니다. 고정 주소가 없으면 네트워크 보안 그룹을 사용하여 ASE의 아웃바운드 트래픽을 잠글 수 없습니다. 주소는 현재 확인에 기반한 규칙을 설정하고 NSG를 만드는 데 사용할 수 없을 만큼 자주 변경됩니다. 
 
@@ -55,7 +55,7 @@ Azure Firewall을 사용하여 기존 ASE의 송신을 잠그는 단계는 다�
 
    ![서비스 엔드포인트 선택][2]
   
-1. ASE가 있는 VNet에서 AzureFirewallSubnet이라는 서브넷을 만듭니다. [Azure Firewall 설명서](https://docs.microsoft.com/azure/firewall/)의 지침에 따라 Azure Firewall을 만듭니다.
+1. ASE가 있는 VNet에서 AzureFirewallSubnet이라는 서브넷을 만듭니다. [Azure Firewall 설명서](../../firewall/index.yml)의 지침에 따라 Azure Firewall을 만듭니다.
 
 1. [Azure Firewall UI] > [규칙] > [애플리케이션 규칙 컬렉션]에서 [애플리케이션 규칙 컬렉션 추가]를 선택합니다. 이름, 우선 순위를 제공하고 허용을 설정합니다. FQDN 태그 섹션에서 이름을 입력하고, 원본 주소를 *로 설정하며, App Service Environment FQDN 태그 및 Windows 업데이트를 선택합니다. 
    
@@ -69,7 +69,7 @@ Azure Firewall을 사용하여 기존 ASE의 송신을 잠그는 단계는 다�
 
    ![NTP 서비스 태그 네트워크 규칙 추가][6]
    
-1. 인터넷의 다음 홉을 사용하여 [App Service Environment 관리 주소]( https://docs.microsoft.com/azure/app-service/environment/management-addresses)의 관리 주소가 있는 경로 테이블을 만듭니다. 경로 테이블 항목은 비대칭 라우팅 문제를 방지하는 데 필요합니다. 인터넷의 다음 홉을 사용하여 IP 주소 종속성 아래에 명시된 IP 주소 종속성에 대한 경로를 추가합니다. Azure Firewall 개인 IP 주소인 다음 홉을 사용하여 0.0.0.0/0에 대한 경로 테이블에 Virtual Appliance 경로를 추가합니다. 
+1. 인터넷의 다음 홉을 사용하여 [App Service Environment 관리 주소]( ./management-addresses.md)의 관리 주소가 있는 경로 테이블을 만듭니다. 경로 테이블 항목은 비대칭 라우팅 문제를 방지하는 데 필요합니다. 인터넷의 다음 홉을 사용하여 IP 주소 종속성 아래에 명시된 IP 주소 종속성에 대한 경로를 추가합니다. Azure Firewall 개인 IP 주소인 다음 홉을 사용하여 0.0.0.0/0에 대한 경로 테이블에 Virtual Appliance 경로를 추가합니다. 
 
    ![경로 테이블 만들기][4]
    
@@ -77,7 +77,7 @@ Azure Firewall을 사용하여 기존 ASE의 송신을 잠그는 단계는 다�
 
 #### <a name="deploying-your-ase-behind-a-firewall"></a>방화벽 뒤에 ASE 배포
 
-방화벽 뒤에 ASE를 배치하는 단계는 ASE 서브넷을 만든 다음, 이전 단계를 수행해야 한다는 점을 제외하고는 Azure Firewall로 기존 ASE를 구성하는 것과 동일합니다. 기존 서브넷에 ASE를 만들려면 [Resource Manager 템플릿으로 ASE 만들기](https://docs.microsoft.com/azure/app-service/environment/create-from-template) 문서에 설명된 대로 Resource Manager 템플릿을 사용해야 합니다.
+방화벽 뒤에 ASE를 배치하는 단계는 ASE 서브넷을 만든 다음, 이전 단계를 수행해야 한다는 점을 제외하고는 Azure Firewall로 기존 ASE를 구성하는 것과 동일합니다. 기존 서브넷에 ASE를 만들려면 [Resource Manager 템플릿으로 ASE 만들기](./create-from-template.md) 문서에 설명된 대로 Resource Manager 템플릿을 사용해야 합니다.
 
 ## <a name="application-traffic"></a>애플리케이션 트래픽 
 
@@ -88,7 +88,7 @@ Azure Firewall을 사용하여 기존 ASE의 송신을 잠그는 단계는 다�
 
 애플리케이션에 종속성이 있으면 Azure Firewall에 추가해야 합니다. 다른 모든 항목에 대해 HTTP/HTTPS 트래픽 및 네트워크 규칙을 허용하는 애플리케이션 규칙을 만듭니다. 
 
-애플리케이션 요청 트래픽이 제공되는 주소 범위를 알고 있는 경우 ASE 서브넷에 할당된 경로 테이블에 이를 추가할 수 있습니다. 주소 범위가 크거나 지정되지 않은 경우 Application Gateway와 같은 네트워크 어플라이언스를 사용하여 경로 테이블에 추가할 하나의 주소를 제공할 수 있습니다. ILB ASE를 사용하여 Application Gateway를 구성하는 방법에 대한 자세한 내용은 [ILB ASE와 Application Gateway 통합](https://docs.microsoft.com/azure/app-service/environment/integrate-with-application-gateway)을 참조하세요.
+애플리케이션 요청 트래픽이 제공되는 주소 범위를 알고 있는 경우 ASE 서브넷에 할당된 경로 테이블에 이를 추가할 수 있습니다. 주소 범위가 크거나 지정되지 않은 경우 Application Gateway와 같은 네트워크 어플라이언스를 사용하여 경로 테이블에 추가할 하나의 주소를 제공할 수 있습니다. ILB ASE를 사용하여 Application Gateway를 구성하는 방법에 대한 자세한 내용은 [ILB ASE와 Application Gateway 통합](./integrate-with-application-gateway.md)을 참조하세요.
 
 이러한 Application Gateway의 사용은 시스템을 구성하는 방법의 한 예일 뿐입니다. 이 경로를 따른 경우 ASE 서브넷 경로 테이블에 경로를 추가해야 Application Gateway로 전송된 회신 트래픽이 직접 이동하게 됩니다. 
 
@@ -100,7 +100,7 @@ Azure Firewall은 로그를 Azure Storage, Event Hub 또는 Azure Monitor 로그
 AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
 ```
 
-Azure Firewall과 Azure Monitor 로그를 통합하면 모든 애플리케이션 종속성을 알지 못하는 상태에서 애플리케이션을 처음 작동할 때 유용합니다. Azure Monitor 로그에 대한 자세한 내용은 [Azure Monitor에서 로그 데이터 분석](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)을 참조하세요.
+Azure Firewall과 Azure Monitor 로그를 통합하면 모든 애플리케이션 종속성을 알지 못하는 상태에서 애플리케이션을 처음 작동할 때 유용합니다. Azure Monitor 로그에 대한 자세한 내용은 [Azure Monitor에서 로그 데이터 분석](../../azure-monitor/log-query/log-query-overview.md)을 참조하세요.
  
 ## <a name="dependencies"></a>종속성
 
@@ -269,7 +269,7 @@ Azure Firewall을 사용하면 FQDN 태그로 구성된 모든 항목을 자동�
 
 ## <a name="us-gov-dependencies"></a>US Gov 종속성
 
-US Gov 지역의 ASE인 경우 이 문서의 [ASE로 Azure 방화벽 구성](https://docs.microsoft.com/azure/app-service/environment/firewall-integration#configuring-azure-firewall-with-your-ase) 섹션에 있는 지침에 따라 ASE를 사용하여 Azure 방화벽을 구성합니다.
+US Gov 지역의 ASE인 경우 이 문서의 [ASE로 Azure 방화벽 구성](#configuring-azure-firewall-with-your-ase) 섹션에 있는 지침에 따라 ASE를 사용하여 Azure 방화벽을 구성합니다.
 
 US Gov에서 Azure 방화벽 이외의 디바이스를 사용하려는 경우 
 

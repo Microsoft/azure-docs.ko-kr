@@ -1,14 +1,14 @@
 ---
 title: 정책 정의 구조에 대한 세부 정보
 description: 정책 정의를 사용하여 조직에서 Azure 리소스에 대한 규칙을 설정하는 방법을 설명합니다.
-ms.date: 06/12/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 87cdca414a04d287f02fec5b3510c4f561cab8c0
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 076493fa8fd54e9585d09a3dd352eabdee652f18
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117000"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079033"
 ---
 # <a name="azure-policy-definition-structure"></a>Azure Policy 정의 구조
 
@@ -119,10 +119,10 @@ Azure Policy 기본 제공 및 패턴은 [Azure Policy 샘플](../samples/index.
 
 ### <a name="common-metadata-properties"></a>공통 메타 데이터 속성
 
-- `version`(string): 정책 정의의 콘텐츠 버전에 대 한 세부 정보를 추적 합니다.
-- `category`(string): Azure Portal 정책 정의가 표시 되는 범주를 결정 합니다.
-- `preview`(부울): 정책 정의가 _미리 보기_인 경우 True 또는 false 플래그입니다.
-- `deprecated`(부울): 정책 정의가 _사용 되지 않는_것으로 표시 된 경우에 대 한 True 또는 false 플래그입니다.
+- `version` (string): 정책 정의의 콘텐츠 버전에 대 한 세부 정보를 추적 합니다.
+- `category` (string): Azure Portal 정책 정의가 표시 되는 범주를 결정 합니다.
+- `preview` (부울): 정책 정의가 _미리 보기_인 경우 True 또는 false 플래그입니다.
+- `deprecated` (부울): 정책 정의가 _사용 되지 않는_것으로 표시 된 경우에 대 한 True 또는 false 플래그입니다.
 
 > [!NOTE]
 > Azure Policy 서비스는 `version`, `preview` 및 `deprecated` 속성을 사용하여 기본 제공 정책 정의 또는 이니셔티브 및 상태에 대한 변경 수준 전달합니다. `version`의 형식은 `{Major}.{Minor}.{Patch}`입니다. _deprecated_ 또는 _preview_와 같은 특정 상태가 `version` 속성에 추가되거나 다른 속성에 **부울**로 추가됩니다. 버전 Azure Policy 기본 제공 되는 방법에 대 한 자세한 내용은 [기본 제공 버전 관리](https://github.com/Azure/azure-policy/blob/master/built-in-policies/README.md)를 참조 하세요.
@@ -186,9 +186,9 @@ Azure Policy 기본 제공 및 패턴은 [Azure Policy 샘플](../samples/index.
 
 ### <a name="strongtype"></a>strongType
 
-`metadata` 속성 안에 **strongType**을 사용하여 Azure Portal 내에서 다중 선택 옵션 목록을 제공할 수 있습니다. **strongType**은 지원되는 리소스 유형이거나 허용되는 값일 수 있습니다. 리소스 유형이 **strongType**에 유효한지 확인하려면 [Get-AzResourceProvider](/powershell/module/az.resources/get-azresourceprovider)를 사용합니다. _리소스 종류_ **strongType** 의 형식은 `<Resource Provider>/<Resource Type>` 입니다. 예: `Microsoft.Network/virtualNetworks/subnets`.
+`metadata` 속성 안에 **strongType**을 사용하여 Azure Portal 내에서 다중 선택 옵션 목록을 제공할 수 있습니다. **strongType**은 지원되는 리소스 유형이거나 허용되는 값일 수 있습니다. 리소스 유형이 **strongType**에 유효한지 확인하려면 [Get-AzResourceProvider](/powershell/module/az.resources/get-azresourceprovider)를 사용합니다. _리소스 종류_ **strongType** 의 형식은 `<Resource Provider>/<Resource Type>` 입니다. 예들 들어 `Microsoft.Network/virtualNetworks/subnets`입니다.
 
-**Get-AzResourceProvider**에서 반환하지 않는 일부 리소스 유형이 지원됩니다. 해당 항목은 다음과 같습니다.
+**Get-AzResourceProvider**에서 반환하지 않는 일부 리소스 유형이 지원됩니다. 이러한 형식은 다음과 같습니다.
 
 - `Microsoft.RecoveryServices/vaults/backupPolicies`
 
@@ -275,7 +275,8 @@ Azure Policy 기본 제공 및 패턴은 [Azure Policy 샘플](../samples/index.
 - `"less": "dateValue"` | `"less": "stringValue"` | `"less": intValue`
 - `"lessOrEquals": "dateValue"` | `"lessOrEquals": "stringValue"` | `"lessOrEquals": intValue`
 - `"greater": "dateValue"` | `"greater": "stringValue"` | `"greater": intValue`
-- `"greaterOrEquals": "dateValue"` | `"greaterOrEquals": "stringValue"` | `"greaterOrEquals": intValue`
+- `"greaterOrEquals": "dateValue"` | `"greaterOrEquals": "stringValue"` |
+  `"greaterOrEquals": intValue`
 - `"exists": "bool"`
 
 **less**, **lessOrEquals**, **greater**, **greaterOrEquals**의 경우, 속성 유형이 조건 유형과 일치하지 않으면 오류가 발생합니다. 문자열 비교는 `InvariantCultureIgnoreCase`를 사용하여 수행됩니다.
@@ -346,8 +347,7 @@ Azure Policy 기본 제공 및 패턴은 [Azure Policy 샘플](../samples/index.
 
 ### <a name="value"></a>값
 
-**value**를 사용하여 조건을 구성할 수도 있습니다. **value**는 [매개 변수](#parameters), [지원되는 템플릿 함수](#policy-functions) 또는 리터럴에 대해 조건을 확인합니다.
-**value**는 지원되는 모든 [조건](#conditions)과 쌍을 이룹니다.
+**value**를 사용하여 조건을 구성할 수도 있습니다. **value**는 [매개 변수](#parameters), [지원되는 템플릿 함수](#policy-functions) 또는 리터럴에 대해 조건을 확인합니다. **value**는 지원되는 모든 [조건](#conditions)과 쌍을 이룹니다.
 
 > [!WARNING]
 > _템플릿 함수_의 결과가 오류이면 정책 평가가 실패합니다. 실패한 평가는 암시적 **거부**입니다. 자세한 내용은 [템플릿 오류 방지](#avoiding-template-failures)를 참조하세요. **DoNotEnforce**의 [enforcementMode](./assignment-structure.md#enforcement-mode)를 사용하여 새 정책 정의를 테스트하고 검증하는 동안 실패한 평가가 새로운 또는 업데이트된 리소스에 미치는 영향을 방지합니다.
@@ -453,7 +453,7 @@ Azure Policy 기본 제공 및 패턴은 [Azure Policy 샘플](../samples/index.
 - **count.field** (필수): 배열의 경로를 포함하며 배열 별칭이어야 합니다. 배열이 없으면 조건식을 고려하지 않고 식이 _false_로 평가됩니다.
 - **count.where**(선택 사항): **count.field**의 각 [\[\*\] alias](#understanding-the--alias) 배열 멤버를 개별적으로 평가하는 조건식입니다. 이 속성을 제공 하지 않으면 ' field ' 경로를 사용 하는 모든 배열 멤버가 _true_로 평가 됩니다. 속성 내에서 모든 [condition](../concepts/definition-structure.md#conditions)을 사용할 수 있습니다.
   [논리 연산자](#logical-operators)는 이 속성 내에서 복잡한 평가 요구 사항을 만드는 데 사용할 수 있습니다.
-- **\<condition\>**(필수): 값은 count를 만족 하는 항목의 수와 비교 됩니다 **. where** 조건 식. 숫자 [조건](../concepts/definition-structure.md#conditions)을 사용해야 합니다.
+- **\<condition\>** (필수): 값은 count를 만족 하는 항목의 수와 비교 됩니다 **. where** 조건 식. 숫자 [조건](../concepts/definition-structure.md#conditions)을 사용해야 합니다.
 
 #### <a name="count-examples"></a>Count 예
 
@@ -575,7 +575,7 @@ Azure Policy는 다음과 같은 유형의 효과를 지원합니다.
 
 다음 함수는 정책 규칙에서 사용할 수 있지만 Azure Resource Manager 템플릿 (ARM 템플릿)에서 사용 하는 것과는 다릅니다.
 
-- `utcNow()`-ARM 템플릿과 달리이 속성은 _defaultValue_외부에서 사용할 수 있습니다.
+- `utcNow()` -ARM 템플릿과 달리이 속성은 _defaultValue_외부에서 사용할 수 있습니다.
   - 범용 ISO 8601 DateTime 형식 'yyyy-MM-ddTHH : mm : ss.fffffffZ'의 현재 날짜와 시간으로 설정된 문자열을 반환합니다.
 
 다음 함수는 정책 규칙에서만 사용할 수 있습니다.
@@ -651,6 +651,13 @@ Azure Policy는 다음과 같은 유형의 효과를 지원합니다.
   # Use Get-AzPolicyAlias to list aliases for a Namespace (such as Azure Compute -- Microsoft.Compute)
   (Get-AzPolicyAlias -NamespaceMatch 'compute').Aliases
   ```
+
+  > [!NOTE]
+  > [수정](./effects.md#modify) 효과와 함께 사용할 수 있는 별칭을 찾으려면 Azure PowerShell **4.6.0** 이상에서 다음 명령을 사용 합니다.
+  >
+  > ```azurepowershell-interactive
+  > Get-AzPolicyAlias | Select-Object -ExpandProperty 'Aliases' | Where-Object { $_.DefaultMetadata.Attributes -eq 'Modifiable' }
+  > ```
 
 - Azure CLI
 

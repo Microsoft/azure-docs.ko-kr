@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 07/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 273c41a523de8b2776982e5229c5a8b618b82c19
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 45c60069c27a2bb9b34cc53eb394bd44a04bd0ba
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475195"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144620"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 지원되는 Kubernetes 버전
 
@@ -135,12 +135,12 @@ az aks get-versions --location eastus --output table
 
 |  K8s 버전 | 업스트림 릴리스  | AKS 미리 보기  | AKS GA  | 수명 종료 |
 |--------------|-------------------|--------------|---------|-------------|
-| 1.17  | 12 월-09-19  | 1 월 19 일   | 7 월 20 일  | 1.20 GA | 
-| 1.18  | 3 월-23-20  | 5 월 20   | 8 월 20  | 1.21 GA | 
-| 1.19  | 8 월-04-20  | 8 월 20   | 11월 20일  | 1.22 GA | 
-| 1.20  | * 11 월 20 일    | * Dec 20   | * 1 월 21 일  | 1.23 GA | 
+| 1.17  | 12 월-09-19  | 1 월 2019   | 7 월 2020  | 1.20 GA | 
+| 1.18  | 3 월-23-20  | 2020년 5월   | 8 월 2020  | 1.21 GA | 
+| 1.19  | 8 월-04-20  | 8 월 2020   | 11 월 2020  | 1.22 GA | 
+| 1.20  | * 11 월 2020    | * Dec 2020   | * 1 월 2021  | 1.23 GA | 
 
-\*보류 중인 업스트림 릴리스 날짜 확인입니다.
+\* 보류 중인 업스트림 릴리스 날짜 확인입니다.
 
 ## <a name="faq"></a>FAQ
 

@@ -17,12 +17,12 @@ ms.date: 07/17/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad399fc24b2cdfbdc51e7feccba2c05786216b19
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 01c9449a996929eb20acf35897a100dfbb722e82
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846965"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229925"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Azure Active Directory 포털의 감사 작업 보고서 
 
@@ -30,12 +30,12 @@ Azure AD(Azure Active Directory) 보고서를 통해 사용자 환경의 작동 
 
 보고 아키텍처는 다음과 같은 구성 요소로 구성됩니다.
 
-- **활동** 
+- **작업** 
     - **로그인** – [로그인 보고서](concept-sign-ins.md)는 관리되는 애플리케이션 및 사용자 로그인 활동의 사용 정보를 제공합니다.
     - **감사 로그** - Azure AD 내의 다양한 기능에 의해 수행된 모든 변경 내용에 대한 로그를 통한 추적 기능을 제공합니다. 감사 로그의 예제로는 사용자, 앱, 그룹, 역할 및 정책 추가 또는 제거와 같은 Azure AD 내의 모든 리소스에 대한 변경 내용이 있습니다.
 - **보안** 
-    - **위험한 로그인** - [위험한 로그인](concept-risky-sign-ins.md) 은 사용자 계정의 합법적인 소유자가 아닌 사용자가 수행 했을 수 있는 로그인 시도에 대 한 표시기입니다. 
-    - **위험 플래그가 지정된 사용자** - [위험한 사용자](concept-user-at-risk.md)는 손상되었을 수 있는 사용자 계정에 대한 표시기입니다.
+    - **위험한 로그인** - [위험한 로그인](../identity-protection/overview-identity-protection.md) 은 사용자 계정의 합법적인 소유자가 아닌 사용자가 수행 했을 수 있는 로그인 시도에 대 한 표시기입니다. 
+    - **위험 플래그가 지정된 사용자** - [위험한 사용자](../identity-protection/overview-identity-protection.md)는 손상되었을 수 있는 사용자 계정에 대한 표시기입니다.
 
 이 문서에서는 감사 보고서에 대한 개요를 제공합니다.
  
@@ -134,7 +134,7 @@ Azure AD 감사 로그는 규정 준수를 위한 시스템 활동의 기록을 
 
 **활동** 필터는 사용자가 선택한 범주 및 활동 리소스 종류를 기준으로 합니다. 보려는 특정 활동을 선택하거나 모두 선택할 수 있습니다. 
 
-Graph API를 사용 하 여 모든 감사 작업 목록을 가져올 수 있습니다.`https://graph.windows.net/<tenantdomain>/activities/auditActivityTypesV2?api-version=beta`
+Graph API를 사용 하 여 모든 감사 작업 목록을 가져올 수 있습니다. `https://graph.windows.net/<tenantdomain>/activities/auditActivityTypesV2?api-version=beta`
 
 **상태** 필터를 사용 하면 감사 작업 상태를 기준으로 필터링 할 수 있습니다. 상태는 다음 중 하나일 수 있습니다.
 
@@ -147,7 +147,7 @@ Graph API를 사용 하 여 모든 감사 작업 목록을 가져올 수 있습�
 **시작** 필터를 사용 하 여 행위자의 이름 또는 UPN (universal principal name)이 시작 되는 항목을 정의할 수 있습니다. 이름 및 UPN은 대/소문자를 구분 합니다.
 
 **날짜 범위** 필터를 사용 하면 반환 된 데이터에 대 한 기간을 정의할 수 있습니다.  
-가능한 값은
+가능한 값은 다음과 같습니다.
 
 - 7 일
 - 24시간
@@ -163,7 +163,7 @@ Graph API를 사용 하 여 모든 감사 작업 목록을 가져올 수 있습�
 
 **Azure Active Directory** 외에도 Azure Portal에서는 감사 데이터에 대한 다음 두 개의 추가 진입점을 제공합니다.
 
-- 사용자 및 그룹
+- 개요
 - Enterprise 애플리케이션
 
 ### <a name="users-and-groups-audit-logs"></a>사용자 및 그룹 감사 로그
@@ -210,9 +210,9 @@ Graph API를 사용 하 여 모든 감사 작업 목록을 가져올 수 있습�
 
 ## <a name="office-365-activity-logs"></a>Office 365 활동 로그
 
-[Microsoft 365 관리 센터](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center)에서 Office 365 활동 로그를 볼 수 있습니다. Office 365 활동 및 Azure AD 활동 로그가 많은 디렉터리 리소스를 공유 하는 경우에도 Microsoft 365 관리 센터 에서만 Office 365 활동 로그의 전체 보기를 제공 합니다. 
+[Microsoft 365 관리 센터](/office365/admin/admin-overview/about-the-admin-center)에서 Office 365 활동 로그를 볼 수 있습니다. Office 365 활동 및 Azure AD 활동 로그가 많은 디렉터리 리소스를 공유 하는 경우에도 Microsoft 365 관리 센터 에서만 Office 365 활동 로그의 전체 보기를 제공 합니다. 
 
-[Office 365 관리 api](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview)를 사용 하 여 프로그래밍 방식으로 office 365 활동 로그에 액세스할 수도 있습니다.
+[Office 365 관리 api](/office/office-365-management-api/office-365-management-apis-overview)를 사용 하 여 프로그래밍 방식으로 office 365 활동 로그에 액세스할 수도 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

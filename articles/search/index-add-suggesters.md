@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/21/2020
-ms.openlocfilehash: 2a0798ee923624aef9f29c1e9cc30f38b55770a3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4889e73e851e285c84d5d4429298e9a7cdacc140
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565322"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89014390"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>쿼리에서 자동 완성 및 제안 된 결과를 사용 하도록 설정 하는 확인 기 만들기
 
@@ -25,7 +26,7 @@ Azure Cognitive Search에서 "검색 형식"은 [검색 인덱스](search-what-i
 
 이러한 기능은 개별적으로 또는 함께 사용할 수 있습니다. Azure Cognitive Search에서 이러한 동작을 구현 하기 위해 인덱스 및 쿼리 구성 요소가 있습니다. 
 
-+ 인덱스에서 확인 기를 인덱스에 추가 합니다. 포털, [REST API](https://docs.microsoft.com/rest/api/searchservice/create-index)또는 [.net SDK](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)를 사용할 수 있습니다. 이 문서의 나머지 부분에서는 확인 기를 만드는 방법에 대해 집중적으로 설명 합니다.
++ 인덱스에서 확인 기를 인덱스에 추가 합니다. 포털, [REST API](/rest/api/searchservice/create-index)또는 [.net SDK](/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)를 사용할 수 있습니다. 이 문서의 나머지 부분에서는 확인 기를 만드는 방법에 대해 집중적으로 설명 합니다.
 
 + 쿼리 요청에서 [아래에 나열 된 api](#how-to-use-a-suggester)중 하나를 호출 합니다.
 
@@ -37,7 +38,7 @@ Azure Cognitive Search에서 "검색 형식"은 [검색 인덱스](search-what-i
 
 ## <a name="define-a-suggester"></a>확인 기 정의
 
-확인 기를 만들려면 [인덱스 스키마](https://docs.microsoft.com/rest/api/searchservice/create-index) 에 하나를 추가 하 고 [각 속성을 설정](#property-reference)합니다. 확인 기를 만드는 가장 좋은 시기는이를 사용할 필드를 정의 하는 경우입니다.
+확인 기를 만들려면 [인덱스 스키마](/rest/api/searchservice/create-index) 에 하나를 추가 하 고 [각 속성을 설정](#property-reference)합니다. 확인 기를 만드는 가장 좋은 시기는이를 사용할 필드를 정의 하는 경우입니다.
 
 + 문자열 필드만 사용
 
@@ -57,7 +58,7 @@ Azure Cognitive Search에서 "검색 형식"은 [검색 인덱스](search-what-i
 
 분석기를 선택 하면 필드를 토큰화 하 고 그 다음에 접두사를 붙일 방법이 결정 됩니다. 예를 들어 "상황에 맞는"와 같은 하이픈을 사용 하는 문자열의 경우 언어 분석기를 사용 하면 "컨텍스트", "중요", "상황에 맞는" 등의 토큰 조합이 발생 합니다. 표준 Lucene 분석기를 사용 했지만 하이픈을 넣은 문자열이 존재 하지 않습니다. 
 
-분석기를 평가할 때는 [텍스트 분석 API](https://docs.microsoft.com/rest/api/searchservice/test-analyzer) 를 사용 하 여 용어가 토큰화 되는 방법에 대 한 통찰력을 얻고 이후 접두사를 접두사로 사용 하는 방법을 고려 인덱스를 작성 한 후에는 문자열에 대해 다양 한 분석기를 시도 하 여 토큰 출력을 볼 수 있습니다.
+분석기를 평가할 때는 [텍스트 분석 API](/rest/api/searchservice/test-analyzer) 를 사용 하 여 용어가 토큰화 되는 방법에 대 한 통찰력을 얻고 이후 접두사를 접두사로 사용 하는 방법을 고려 인덱스를 작성 한 후에는 문자열에 대해 다양 한 분석기를 시도 하 여 토큰 출력을 볼 수 있습니다.
 
 [사용자 지정 분석기](index-add-custom-analyzers.md) 또는 [미리 정의 된 분석기](index-add-custom-analyzers.md#predefined-analyzers-reference) (표준 Lucene 제외)를 사용 하는 필드는 잘못 된 결과를 방지 하기 위해 명시적으로 허용 되지 않습니다.
 
@@ -72,7 +73,7 @@ Azure Cognitive Search에서 "검색 형식"은 [검색 인덱스](search-what-i
 
 ## <a name="create-using-rest"></a>REST를 사용 하 여 만들기
 
-REST API에서 [Create index](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [Update index](https://docs.microsoft.com/rest/api/searchservice/update-index)를 통해 확인 기를 추가 합니다. 
+REST API에서 [Create index](/rest/api/searchservice/create-index) 또는 [Update index](/rest/api/searchservice/update-index)를 통해 확인 기를 추가 합니다. 
 
   ```json
   {
@@ -110,7 +111,7 @@ REST API에서 [Create index](https://docs.microsoft.com/rest/api/searchservice/
 
 ## <a name="create-using-net"></a>.NET을 사용 하 여 만들기
 
-C #에서 [확인 기 개체](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)를 정의 합니다. `Suggesters`는 컬렉션 이지만 하나의 항목만 사용할 수 있습니다. 
+C #에서 [확인 기 개체](/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet)를 정의 합니다. `Suggesters` 는 컬렉션 이지만 하나의 항목만 사용할 수 있습니다. 
 
 ```csharp
 private static void CreateHotelsIndex(SearchServiceClient serviceClient)
@@ -137,7 +138,7 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 |--------------|-----------------|
 |`name`        |제안기의 이름입니다.|
 |`searchMode`  |후보 구를 검색하는 데 사용되는 전략입니다. 현재 지원 되는 모드는 `analyzingInfixMatching` 현재 단어의 시작 부분에서 일치 하는입니다.|
-|`sourceFields`|제안 내용의 원본인 하나 이상의 필드 목록입니다. 필드는 및 형식 이어야 `Edm.String` 합니다 `Collection(Edm.String)` . 필드에 분석기를 지정 하는 경우 사용자 지정 분석기가 아닌 [이 목록](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.analyzername?view=azure-dotnet) 에서 명명 된 분석기 여야 합니다.<p/> 검색 표시줄이 나 드롭다운 목록에서 완성 된 문자열 인지 여부에 관계 없이 필요한 적절 한 응답에 대해 자신을 지 원하는 필드만 지정 하는 것이 가장 좋습니다.<p/>호텔 이름은 전체 자릿수가 있으므로 좋은 후보입니다. 설명 및 주석과 같은 자세한 정보 필드에는 너무 조밀 하 게 표시 됩니다. 마찬가지로 범주 및 태그와 같은 반복적인 필드도 효과적이 지 않습니다. 예제에는 여러 필드를 포함할 수 있음을 보여 주는 "category"가 포함 되어 있습니다. |
+|`sourceFields`|제안 내용의 원본인 하나 이상의 필드 목록입니다. 필드는 및 형식 이어야 `Edm.String` 합니다 `Collection(Edm.String)` . 필드에 분석기를 지정 하는 경우 사용자 지정 분석기가 아닌 [이 목록](/dotnet/api/microsoft.azure.search.models.analyzername?view=azure-dotnet) 에서 명명 된 분석기 여야 합니다.<p/> 검색 표시줄이 나 드롭다운 목록에서 완성 된 문자열 인지 여부에 관계 없이 필요한 적절 한 응답에 대해 자신을 지 원하는 필드만 지정 하는 것이 가장 좋습니다.<p/>호텔 이름은 전체 자릿수가 있으므로 좋은 후보입니다. 설명 및 주석과 같은 자세한 정보 필드에는 너무 조밀 하 게 표시 됩니다. 마찬가지로 범주 및 태그와 같은 반복적인 필드도 효과적이 지 않습니다. 예제에는 여러 필드를 포함할 수 있음을 보여 주는 "category"가 포함 되어 있습니다. |
 
 <a name="how-to-use-a-suggester"></a>
 
@@ -145,10 +146,10 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 확인 기가 쿼리에 사용 됩니다. 확인 기을 만든 후에는 다음과 같은 Api 중 하나를 호출 하 여 검색을 입력 합니다.
 
-+ [제안 REST API](https://docs.microsoft.com/rest/api/searchservice/suggestions) 
-+ [자동 완성 REST API](https://docs.microsoft.com/rest/api/searchservice/autocomplete) 
-+ [SuggestWithHttpMessagesAsync 메서드](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
-+ [AutocompleteWithHttpMessagesAsync 메서드](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
++ [제안 REST API](/rest/api/searchservice/suggestions) 
++ [자동 완성 REST API](/rest/api/searchservice/autocomplete) 
++ [SuggestWithHttpMessagesAsync 메서드](/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
++ [AutocompleteWithHttpMessagesAsync 메서드](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
 
 검색 응용 프로그램에서 클라이언트 코드는 [JQUERY UI 자동 완성](https://jqueryui.com/autocomplete/) 같은 라이브러리를 활용 하 여 부분 쿼리를 수집 하 고 일치 하는 항목을 제공 해야 합니다. 이 작업에 대 한 자세한 내용은 [클라이언트 코드에 자동 완성 또는 제안 된 결과 추가](search-autocomplete-tutorial.md)를 참조 하세요.
 
@@ -173,4 +174,4 @@ POST /indexes/myxboxgames/docs/autocomplete?search&api-version=2020-06-30
 요청을 공식화 하는 방법에 대해 자세히 알아보려면 다음 문서를 참조 하는 것이 좋습니다.
 
 > [!div class="nextstepaction"]
-> [클라이언트 코드에 자동 완성 및 제안 추가](search-autocomplete-tutorial.md) 
+> [클라이언트 코드에 자동 완성 및 제안 추가](search-autocomplete-tutorial.md)

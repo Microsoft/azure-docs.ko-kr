@@ -3,12 +3,12 @@ title: Recovery Services 자격 증명 모음에 대 한 진단 설정 사용
 description: 이 문서에서는 Azure Backup에 대해 이전 및 새 진단 이벤트를 사용 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 10/30/2019
-ms.openlocfilehash: 7dbc6d97cd923c75a25eadccef2c2292b10deb41
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3d10053bae5148f33dba6d1207a81bdb16c37577
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514148"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182601"
 ---
 # <a name="use-diagnostics-settings-for-recovery-services-vaults"></a>Recovery Services 자격 증명 모음에 대 한 진단 설정 사용
 
@@ -29,7 +29,7 @@ Azure Backup는 다음과 같은 진단 이벤트를 제공 합니다. 각 이�
 * AddonAzureBackupPolicy
 * AddonAzureBackupStorage
 
-[레거시 이벤트](#legacy-event) azurebackupreport를 사용 하는 경우 가장 이른에서 위의 이벤트를 사용 하도록 전환 하는 것이 좋습니다.
+[레거시 이벤트](#legacy-event) azurebackupreport를 계속 사용 하는 경우 위의 이벤트를 사용 하도록 전환 하는 것이 좋습니다.
 
 자세한 내용은 [Azure Backup 진단 이벤트에 대 한 데이터 모델](./backup-azure-reports-data-model.md)을 참조 하세요.
 
@@ -82,7 +82,7 @@ Azure Backup는 다음과 같은 진단 이벤트를 제공 합니다. 각 이�
         | where TimeGenerated >= RangeStart | where OperationName == "Vault"
         | summarize arg_max(TimeGenerated, *) by ResourceId
         | project ResourceId, Category};
-        // Some Workspaces will not have AzureDiagnostics Table, hence you need to use isFuzzy
+        // Some Workspaces will not have AzureDiagnostics Table, so you need to use isFuzzy
     let CombinedVaultTable = (){
         union isfuzzy = true
         (VaultUnderAzureDiagnostics() ),

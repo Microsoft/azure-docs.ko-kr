@@ -1,23 +1,24 @@
 ---
 title: Azure Logic Apps에서 Ethereum Blockchain 커넥터 사용-Azure Blockchain 서비스
 description: Azure Logic Apps에서 Ethereum 블록체인 커넥터를 사용하여 스마트 계약 함수를 트리거하고 스마트 계약 이벤트에 응답합니다.
-ms.date: 10/14/2019
+ms.date: 08/31/2020
 ms.topic: how-to
-ms.reviewer: chrisseg
-ms.openlocfilehash: 61dbda7cd7f486c7a8d838084875b34803833502
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.reviewer: caleteet
+ms.openlocfilehash: 4364d2f616c8eaadedf12baf4bf77810eec69fdb
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077042"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230537"
 ---
 # <a name="use-the-ethereum-blockchain-connector-with-azure-logic-apps"></a>Azure Logic Apps에서 Ethereum 블록체인 커넥터 사용
 
-[Azure Logic Apps](../../logic-apps/index.yml)에서 [Ethereum 블록체인 커넥터](/connectors/blockchainethereum/)를 사용하여 스마트 계약 작업을 수행하고 스마트 계약 이벤트에 응답합니다. 예를 들어 블록체인 원장의 정보를 반환하는 REST 기반 마이크로서비스를 만들려고 한다고 가정해 보겠습니다. 논리 앱을 사용하면 블록체인 원장에 저장된 정보를 쿼리하는 HTTP 요청을 받을 수 있습니다.
+[Azure Logic Apps](../../logic-apps/index.yml)에서 [Ethereum 블록체인 커넥터](/connectors/blockchainethereum/)를 사용하여 스마트 계약 작업을 수행하고 스마트 계약 이벤트에 응답합니다. 이 문서에서는 Ethereum Blockchain 커넥터를 사용 하 여 블록 체인 정보를 다른 서비스로 보내거나 Blockchain 함수를 호출 하는 방법을 설명 합니다. 예를 들어 블록체인 원장의 정보를 반환하는 REST 기반 마이크로서비스를 만들려고 한다고 가정해 보겠습니다. 논리 앱을 사용하면 블록체인 원장에 저장된 정보를 쿼리하는 HTTP 요청을 받을 수 있습니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-선택적 필수 조건 [빠른 시작: Visual Studio Code을 사용 하 여 Azure Blockchain Service consortium 네트워크에 연결](connect-vscode.md)합니다. 이 빠른 시작에서는 [Ethereum용 Azure Blockchain Development Kit](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain)를 설치하고 블록체인 개발 환경을 설정하는 방법을 안내합니다.
+- 선택적 필수 조건 [빠른 시작: Visual Studio Code을 사용 하 여 Azure Blockchain Service consortium 네트워크에 연결](connect-vscode.md)합니다. 이 빠른 시작에서는 [Ethereum용 Azure Blockchain Development Kit](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain)를 설치하고 블록체인 개발 환경을 설정하는 방법을 안내합니다.
+- Azure Logic Apps를 처음 사용 하는 경우 Microsoft Learn 모듈 소개를 검토 [하](/learn/modules/intro-to-logic-apps/) 여 [사용자 지정 커넥터를 사용 하 여 Logic Apps 워크플로에서 API](/learn/modules/logic-apps-and-custom-connectors/)를 Azure Logic Apps 하 고 호출 하는 것이 좋습니다.
 
 ## <a name="create-a-logic-app"></a>논리 앱 만들기
 
@@ -33,7 +34,7 @@ Azure Logic Apps를 사용하면 시스템과 서비스를 통합해야 할 때 
 
 모든 논리 앱은 특정 이벤트가 발생하거나 특정 조건이 충족할 때 실행되는 트리거를 통해 시작되어야 합니다. 트리거가 발생될 때마다 Logic Apps 엔진은 워크플로를 시작하고 실행하는 논리 앱 인스턴스를 만듭니다.
 
-Ethereum 블록체인 커넥터에는 하나의 트리거와 여러 작업이 있습니다. 사용하는 트리거 또는 작업은 시나리오에 따라 달라집니다.
+Ethereum 블록체인 커넥터에는 하나의 트리거와 여러 작업이 있습니다. 사용하는 트리거 또는 작업은 시나리오에 따라 달라집니다. 시나리오와 가장 일치 하는이 문서의 섹션을 따릅니다.
 
 워크플로에서 다음 상황이 발생하는 경우가 있습니다.
 
@@ -52,7 +53,7 @@ Ethereum 블록체인 커넥터에는 하나의 트리거와 여러 작업이 �
 
     ![Event(이벤트) 트리거 속성이 있는 Logic Apps 디자이너](./media/ethereum-logic-app/event-properties.png)
 
-    | 속성 | 설명 |
+    | 속성 | Description |
     |----------|-------------|
     | **계약 ABI** | 계약 ABI(애플리케이션 이진 인터페이스)는 스마트 계약 인터페이스를 정의합니다. 자세한 내용은 [계약 ABI 가져오기](#get-the-contract-abi)를 참조하세요. |
     | **스마트 계약 주소** | 계약 주소는 Ethereum 블록체인의 스마트 계약 대상 주소입니다. 자세한 내용은 [계약 주소 가져오기](#get-the-contract-address)를 참조하세요. |
@@ -78,7 +79,7 @@ Ethereum 블록체인 커넥터에는 하나의 트리거와 여러 작업이 �
 1. Azure Blockchain Service에 대한 [API 연결을 변경하거나 만듭니다](#create-an-api-connection).
 1. 선택한 작업에 따라 제공하는 스마트 계약 함수에 대한 세부 정보는 다음과 같습니다.
 
-    | 속성 | 설명 |
+    | 속성 | Description |
     |----------|-------------|
     | **계약 ABI** | 계약 ABI는 스마트 계약 인터페이스를 정의합니다. 자세한 내용은 [계약 ABI 가져오기](#get-the-contract-abi)를 참조하세요. |
     | **계약 바이트 코드** | 컴파일된 스마트 계약 바이트 코드입니다. 자세한 내용은 [계약 바이트 코드 가져오기](#get-the-contract-bytecode)를 참조하세요. |
@@ -128,7 +129,7 @@ Ethereum Visual Studio Code 확장용 Azure Blockchain Development Kit는 일반
 
     ![연결이 선택된 디자이너 보기](./media/ethereum-logic-app/microservice-logic-app.png)
 
-1. 이제 논리 앱을 사용할 수 있습니다. REST 기반 마이크로서비스를 테스트하려면 논리 앱 요청 URL에 대한 HTTP POST 요청을 실행합니다. **HTTP 요청을 받은 경우** 단계에서 **HTTP POST URL** 콘텐츠를 복사합니다.
+1. 이제 논리 앱을 사용할 수 있습니다. REST 기반 마이크로서비스를 테스트하려면 논리 앱 요청 URL에 대한 HTTP POST 요청을 실행합니다. **Http 요청을 받을 때** 단계에서 **http POST URL** 콘텐츠를 복사 합니다.
 
     ![HTTP POST URL이 있는 Logic Apps 디자이너 창](./media/ethereum-logic-app/post-url.png)
 
@@ -153,10 +154,10 @@ Ethereum 블록체인 커넥터에는 블록체인에 대한 API 연결이 필�
 
 Azure Blockchain Service 멤버에 대한 연결을 설정하는 데 도움이 되기 위해 시나리오에 따라 필요할 수 있는 속성의 목록은 다음과 같습니다.
 
-| 속성 | 설명 |
+| 속성 | Description |
 |----------|-------------|
-|**연결 이름** | API 연결의 이름입니다. 필수 사항입니다. |
-|**Ethereum RPC 끝점** | Azure Blockchain Service 트랜잭션 노드의 HTTP 주소입니다. 필수 사항입니다. 자세한 내용은 [RPC 엔드포인트 가져오기](#get-the-rpc-endpoint)를 참조하세요. |
+|**연결 이름** | API 연결의 이름입니다. 필수 요소. |
+|**Ethereum RPC 끝점** | Azure Blockchain Service 트랜잭션 노드의 HTTP 주소입니다. 필수 요소. 자세한 내용은 [RPC 엔드포인트 가져오기](#get-the-rpc-endpoint)를 참조하세요. |
 |**프라이빗 키** | Ethereum 계정 프라이빗 키입니다. 트랜잭션에는 프라이빗 키 또는 계정 주소와 암호가 필요합니다. 자세한 내용은 [프라이빗 키 가져오기](#get-the-private-key)를 참조하세요. |
 |**계정 주소** | Azure Blockchain Service 멤버의 계정 주소입니다. 트랜잭션에는 프라이빗 키 또는 계정 주소와 암호가 필요합니다. 자세한 내용은 [계정 주소 가져오기](#get-the-account-address)를 참조하세요. |
 |**계정 암호** | 계정 암호는 멤버를 만들 때 설정됩니다. 암호 재설정에 대한 자세한 내용은 [Ethereum 계정](consortium.md#ethereum-account)을 참조하세요.|

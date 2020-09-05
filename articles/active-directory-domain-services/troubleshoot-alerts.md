@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 91a060e8a5fe1bdaf3e6ea08811814297c355108
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 29bd7490ea9a03118f134ba11923ede2075e6fd5
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86222975"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88722588"
 ---
 # <a name="known-issues-common-alerts-and-resolutions-in-azure-active-directory-domain-services"></a>알려진 문제: Azure Active Directory Domain Services 일반적인 경고 및 해결 방법
 
@@ -106,7 +106,7 @@ Azure AD DS에는 활성 구독이 필요 하며 다른 구독으로 이동할 �
 
 Azure AD DS에는 활성 구독이 필요 합니다. 관리 되는 도메인이 연결 된 Azure 구독이 활성 상태가 아닌 경우 갱신 하 여 구독을 다시 활성화 해야 합니다.
 
-1. [Azure 구독을 갱신합니다](https://docs.microsoft.com/azure/billing/billing-subscription-become-disable).
+1. [Azure 구독을 갱신합니다](../cost-management-billing/manage/subscription-disabled.md).
 2. 구독이 갱신 되 면 Azure AD DS 알림을 사용 하 여 관리 되는 도메인을 다시 사용 하도록 설정할 수 있습니다.
 
 관리 되는 도메인을 다시 사용 하도록 설정 하면 관리 되는 도메인의 상태가 2 시간 내에 자동으로 업데이트 되 고 경고가 제거 됩니다.
@@ -162,7 +162,7 @@ Azure AD DS의 가상 네트워크 서브넷에는 자동으로 생성 된 리�
 
 자동으로 생성 된 일부 서비스 주체는 관리 되는 도메인에 대 한 리소스를 관리 하 고 만드는 데 사용 됩니다. 이러한 서비스 사용자 중 한 명에 대 한 액세스 권한이 변경 되 면 도메인은 리소스를 올바르게 관리할 수 없습니다. 다음 단계에서는 서비스 주체에 대 한 액세스 권한을 이해 하 고 부여 하는 방법을 보여 줍니다.
 
-1. [역할 기반 액세스 제어 및 Azure Portal 응용 프로그램에 대 한 액세스 권한을 부여 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)에 대해 알아봅니다.
+1. [역할 기반 액세스 제어 및 Azure Portal 응용 프로그램에 대 한 액세스 권한을 부여 하는 방법](../role-based-access-control/role-assignments-portal.md)에 대해 알아봅니다.
 2. ID *abba844e-bc0e-44b0-947a-dc74e5d09022* 를 사용 하는 서비스 주체에 대 한 액세스를 검토 하 고 이전 날짜에 거부 된 액세스 권한을 부여 합니다.
 
 ## <a name="aadds112-not-enough-ip-address-in-the-managed-domain"></a>AADDS112: 관리되는 도메인에 IP 주소가 충분하지 않음
@@ -276,7 +276,7 @@ Azure AD DS 구성 요소에서 적용 된 정책을 확인 하 고 업데이트
 
 Azure AD DS에는 활성 구독이 필요 합니다. 관리 되는 도메인이 연결 된 Azure 구독이 활성 상태가 아닌 경우 갱신 하 여 구독을 다시 활성화 해야 합니다.
 
-1. [Azure 구독을 갱신합니다](https://docs.microsoft.com/azure/billing/billing-subscription-become-disable).
+1. [Azure 구독을 갱신합니다](../cost-management-billing/manage/subscription-disabled.md).
 2. 구독이 갱신 되 면 Azure AD DS 알림을 사용 하 여 관리 되는 도메인을 다시 사용 하도록 설정할 수 있습니다.
 
 관리 되는 도메인을 다시 사용 하도록 설정 하면 관리 되는 도메인의 상태가 2 시간 내에 자동으로 업데이트 되 고 경고가 제거 됩니다.

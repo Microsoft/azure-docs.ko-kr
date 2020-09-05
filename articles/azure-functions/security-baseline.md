@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 32905383b046148893492640fe42fc721d1944dd
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 5609df554e78996e50dcc57e200bb1dc1282cfb0
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810244"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230503"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Azure Functions에 대 한 Azure 보안 기준
 
@@ -179,7 +179,7 @@ Azure Functions 구현에서 NSGs (네트워크 보안 그룹)를 사용 하는 
 - 함수 앱에 HTTPS를 통해서만 액세스 가능
 - 함수 앱에서 최신 TLS 버전을 사용해야 합니다.
 
-또한 Azure Blueprints에서 주요 환경 아티팩트(예: Azure Resource Manager 템플릿, RBAC(역할 기반 액세스 제어) 및 정책)를 단일 청사진 정의로 패키지하여 대규모 Azure 배포를 간소화할 수 있습니다. 청사진을 새 구독 및 환경에 쉽게 적용하고 버전 관리를 통해 제어와 관리를 세부적으로 조정할 수 있습니다.
+또한 Azure 청사진을 사용 하 여 Azure Resource Manager 템플릿, azure RBAC (역할 기반 액세스 제어) 및 단일 청사진 정의의 정책과 같은 주요 환경 아티팩트를 패키지 하 여 대규모 Azure 배포를 간소화할 수 있습니다. 청사진을 새 구독 및 환경에 쉽게 적용하고 버전 관리를 통해 제어와 관리를 세부적으로 조정할 수 있습니다.
 
 - [Azure Policy를 구성하고 관리하는 방법](../governance/policy/tutorials/create-and-manage.md)
 
@@ -595,9 +595,9 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AD (AZURE ACTIVE DIRECTORY) RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure 함수 제어 평면 (Azure Portal)에 대 한 액세스를 제어 합니다. 
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 azure 함수 제어 평면 (Azure Portal)에 대 한 액세스를 제어 합니다. 
 
-- [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
+- [Azure RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -896,7 +896,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **지침**: 소스 제어에서 ARM 템플릿 및 사용자 지정 Azure 정책 정의를 안전 하 게 저장 하 고 관리 합니다.
 
-- [IaC(Infrastructure as Code) 정의](/azure/devops/learn/what-is-infrastructure-as-code)
+- [코드로 서의 인프라 란?](/azure/devops/learn/what-is-infrastructure-as-code)
 
 - [코드 워크플로로 정책 디자인](../governance/policy/concepts/policy-as-code.md)
 

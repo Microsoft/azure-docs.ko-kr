@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: Azure Media Services에서 동적 암호화, 스트리밍 프로토콜 및 암호화 유형을 사용 하 여 콘텐츠를 보호 하는 방법에 대해 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,17 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/17/2020
-ms.author: juliako
-ms.custom: seodec18
-ms.openlocfilehash: 0be481d90562ca611b021e2f05d9109eb51958c8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: 81ec96d244c36c0328134b415465d632ef6c1dd5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023265"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267924"
 ---
 # <a name="protect-your-content-with-media-services-dynamic-encryption"></a>Media Services 동적 암호화를 사용 하 여 콘텐츠 보호
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services를 사용하여 컴퓨터를 떠날 때부터 스토리지, 처리 및 배달에 이르는 과정 내내 미디어를 보호할 수 있습니다. Media Services를 사용하면 Advanced Encryption Standard(AES-128) 또는 Microsoft PlayReady, Google Widevine 및 Apple FairPlay 등 세 가지 주요 DRM(디지털 권한 관리) 시스템 중 하나로 동적 암호화된 라이브 콘텐츠 및 주문형 콘텐츠를 제공할 수 있습니다. 또한 Media Services는 인증된 클라이언트에게 AES 키 및DRM(PlayReady, Widevine 및 FairPlay) 라이선스를 배달하는 서비스를 제공합니다. 콘텐츠가 AES 암호화 되지 않은 키로 암호화 되 고 HTTPS를 통해 전송 되는 경우 클라이언트에 도달할 때까지 명확 하지 않습니다. 
 
@@ -236,13 +238,13 @@ Media Services 고객은 *토큰 재생 방지* 기능을 통해 동일한 토�
 * `StreamingPolicyWidevineConfiguration.CustomLicenseAcquisitionUrlTemplate`: 이전 템플릿과 동일 합니다. Widevine 전용입니다. 
 * `StreamingPolicyFairPlayConfiguration.CustomLicenseAcquisitionUrlTemplate`: 이전 템플릿과 동일 하며 FairPlay에만 해당 합니다.  
 
-예를 들어:
+예를 들면 다음과 같습니다.
 
 ```csharp
 streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://mykeyserver.hostname.com/envelopekey/{AlternativeMediaId}/{ContentKeyId}";
 ```
 
-`ContentKeyId`에는 요청 된 키의 값이 있습니다. `AlternativeMediaId`사용자 측의 엔터티에 요청을 매핑하려는 경우를 사용할 수 있습니다. 예를 들어를 `AlternativeMediaId` 사용 하 여 사용 권한을 조회할 수 있습니다.
+`ContentKeyId` 에는 요청 된 키의 값이 있습니다. `AlternativeMediaId`사용자 측의 엔터티에 요청을 매핑하려는 경우를 사용할 수 있습니다. 예를 들어를 `AlternativeMediaId` 사용 하 여 사용 권한을 조회할 수 있습니다.
 
 사용자 지정 라이선스/키 취득 Url을 사용 하는 REST 예제는 [스트리밍 정책-만들기](/rest/api/media/streamingpolicies/create)를 참조 하세요.
 
@@ -265,5 +267,5 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 * [DRM으로 보호](protect-with-drm.md)
 * [액세스 제어를 사용 하 여 다중 DRM 콘텐츠 보호 시스템 디자인](design-multi-drm-system-with-access-control.md)
 * [스토리지 쪽 암호화](storage-account-concept.md#storage-side-encryption)
-* [질문과 대답](frequently-asked-questions.md)
+* [자주 묻는 질문](frequently-asked-questions.md)
 * [JSON 웹 토큰 처리기](/dotnet/framework/security/json-web-token-handler)

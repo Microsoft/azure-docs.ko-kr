@@ -3,7 +3,7 @@ title: Azure Media Services v 2에서 v3로 마이그레이션
 description: 이 문서에서는 Azure Media Services v3에서 도입된 변경 내용을 설명하고 두 버전 간의 차이점을 보여 줍니다.
 services: media-services
 documentationcenter: na
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 tags: ''
@@ -13,16 +13,18 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 03/09/2020
-ms.author: juliako
-ms.openlocfilehash: dfbe1e7fdfca6f9959218f47d903301cb4b6d899
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: be0c12eacae9bb13a475de4634746e9d38d35e43
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448389"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267567"
 ---
 # <a name="media-services-v2-vs-v3"></a>Media Services v2와 v3 비교
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 문서에서는 Azure Media Services v3에서 도입된 변경 내용을 설명하고 두 버전 간의 차이점을 보여 줍니다.
 
@@ -52,7 +54,7 @@ ms.locfileid: "87448389"
     string cbcsIV =  Convert.ToBase64String(HexStringToByteArray(cbcsGuid.ToString().Replace("-", string.Empty)));
     ```
 
-    다음 문자열로 바꾸세요.
+    다음과 같이 바꿉니다.
 
     ``` 
     public static byte[] HexStringToByteArray(string hex)
@@ -96,23 +98,23 @@ v3 API는 v2 API와 관련하여 다음과 같은 기능 격차가 있습니다.
 |`id`-(고유) 전체 Azure Resource Manager 경로 ( [자산의](/rest/api/media/assets/createorupdate) 예제 참조)||
 |`name`-(고유) [명명 규칙](media-services-apis-overview.md#naming-conventions) 참조 ||
 |`alternateId`|`AlternateId`|
-|`assetId`|`Id`-(고유) 값은 접두사로 시작 `nb:cid:UUID:` 합니다.|
+|`assetId`|`Id` -(고유) 값은 접두사로 시작 `nb:cid:UUID:` 합니다.|
 |`created`|`Created`|
 |`description`|`Name`|
 |`lastModified`|`LastModified`|
 |`storageAccountName`|`StorageAccountName`|
-|`storageEncryptionFormat`| `Options`(생성 옵션)|
+|`storageEncryptionFormat`| `Options` (생성 옵션)|
 |`type`||
 
 ### <a name="storage-side-encryption"></a>스토리지 쪽 암호화
 
 미사용 자산을 보호하려면 스토리지 쪽 암호화를 사용하여 자산을 암호화해야 합니다. 다음 표는 Media Services에서 스토리지 쪽 암호화가 작동하는 원리를 보여줍니다.
 
-|암호화 옵션|Description|Media Services v2|Media Services v3|
+|암호화 옵션|설명|Media Services v2|Media Services v3|
 |---|---|---|---|
 |Media Services 스토리지 암호화|AES-256 암호화, Media Services에서 관리 하는 키입니다.|지원<sup>(1)</sup>|지원되지 않음<sup>(2)</sup>|
 |[미사용 데이터에 대한 Storage 서비스 암호화](../../storage/common/storage-service-encryption.md)|Azure Storage에서 제공 하는 서버 쪽 암호화, Azure 또는 고객이 관리 하는 키입니다.|지원됨|지원됨|
-|[스토리지 클라이언트 쪽 암호화](../../storage/common/storage-client-side-encryption.md)|Azure storage에서 제공 하는 클라이언트 쪽 암호화는 Key Vault에서 고객이 관리 하는 키입니다.|지원 안 함|지원 안 함|
+|[스토리지 클라이언트 쪽 암호화](../../storage/common/storage-client-side-encryption.md)|Azure storage에서 제공 하는 클라이언트 쪽 암호화는 Key Vault에서 고객이 관리 하는 키입니다.|지원되지 않음|지원되지 않음|
 
 <sup>1</sup> Media Services는 암호화 형식 없이 clear/의 콘텐츠 처리를 지원 하지만 그렇게 하지 않는 것이 좋습니다.
 

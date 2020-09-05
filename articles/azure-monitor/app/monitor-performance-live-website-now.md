@@ -3,12 +3,13 @@ title: Azure Application Insights로 라이브 ASP.NET 웹앱 모니터링 | Mic
 description: 다시 배포하지 않고 웹 사이트의 성능을 모니터링합니다. 온-프레미스 또는 VM에서 호스트되는 ASP.NET 웹앱으로 작업합니다.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 70a405d2c32641be2ed4038fbffebce0e1340f83
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 603cbde20ae6e8d19e4ad3ae290bbfc925483595
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87310449"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923826"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Application Insights 코드 없는 Attach를 사용 하 여 런타임 시 웹 앱 계측
 
@@ -39,10 +40,10 @@ Application Insights를 .NET 웹 애플리케이션에 적용하는 두 가지 �
 
 |  | 빌드 시간 | 실행 시간 |
 | --- | --- | --- |
-| **& 예외 요청** |yes |예 |
+| **& 예외 요청** |예 |예 |
 | **[자세한 예외](./asp-net-exceptions.md)** | |예 |
 | **[종속성 진단](./asp-net-dependencies.md)** |.NET 4.6+, 간단히 |예, 전체 세부 정보: 결과 코드, SQL 명령 텍스트, HTTP 동사|
-| **[시스템 성능 카운터](./performance-counters.md)** |yes |예 |
+| **[시스템 성능 카운터](./performance-counters.md)** |예 |예 |
 | **[사용자 지정 원격 분석에 대 한 API][api]** |예 |아니요 |
 | **[추적 로그 통합](./asp-net-trace-logs.md)** |예 |아니요 |
 | **[사용자 데이터 & 페이지 보기](./javascript.md)** |예 |아니요 |
@@ -243,7 +244,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 `Update-ApplicationInsightsMonitoring -Name appName [-InstrumentationKey "0000000-0000-000-000-0000"`]
 
 * `-Name`: IIS에서 웹앱의 이름
-* `-InstrumentationKey`(선택 사항) 이를 사용 하 여 앱의 원격 분석이 전송 되는 리소스를 변경 합니다.
+* `-InstrumentationKey` (선택 사항) 이를 사용 하 여 앱의 원격 분석이 전송 되는 리소스를 변경 합니다.
 * 이 cmdlet은:
   * 최근에 이 컴퓨터에 다운로드된 SDK 버전으로 명명된 앱을 업그레이드합니다. (`SdkState==EnabledAfterDeployment`인 경우에만 작동)
   * 계측 키를 제공하는 경우 명명된 앱은 해당 키가 있는 리소스에 원격 분석을 전송하도록 다시 구성됩니다. ( `SdkState != Disabled`인 경우 작동)
@@ -303,9 +304,9 @@ Application Insights SDK 버전 2.4은 [.net 4.0을 지원 하기 위한 최신 
  * 종속성 호출(.NET 4.5); 종속성 호출(.NET 4.6)에 값을 반환합니다.
  * 예외 스택 추적 값
 
-[자세히 알아보기](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
+[자세한 정보](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
-## <a name="video"></a>비디오
+## <a name="video"></a>동영상
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 

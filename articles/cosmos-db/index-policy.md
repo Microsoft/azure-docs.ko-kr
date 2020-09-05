@@ -4,14 +4,14 @@ description: Azure Cosmos DB의 자동 인덱싱 및 성능 향상을 위해 기
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 08/11/2020
+ms.date: 08/19/2020
 ms.author: tisande
-ms.openlocfilehash: e1254b31bffa72918b46c550e8354bd1c2195dfb
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: f723d7ac218869313f02212d27d9f96b74bb7f0f
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077597"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607519"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Azure Cosmos DB의 인덱싱 정책
 
@@ -30,15 +30,15 @@ Azure Cosmos DB는 두 가지 인덱싱 모드를 지원 합니다.
 - **없음**: 컨테이너에서 인덱싱을 사용할 수 없습니다. 이는 컨테이너를 보조 인덱스가 없어도 순수 키-값 저장소로 사용할 때 일반적으로 사용 됩니다. 이를 사용 하 여 대량 작업의 성능을 향상 시킬 수도 있습니다. 대량 작업이 완료 되 면 인덱스 모드를 일관 된 상태로 설정 하 고 완료 될 때까지 [IndexTransformationProgress](how-to-manage-indexing-policy.md#dotnet-sdk) 를 사용 하 여 모니터링할 수 있습니다.
 
 > [!NOTE]
-> Azure Cosmos DB는 지연 인덱싱 모드도 지원 합니다. 지연 인덱싱은 엔진이 다른 작업을 수행 하지 않을 때 훨씬 낮은 우선 순위 수준으로 인덱스 업데이트를 수행 합니다. 이로 인해 **일치 하지 않거나 불완전** 한 쿼리 결과가 발생할 수 있습니다. Cosmos 컨테이너를 쿼리하려면 지연 인덱스를 선택 하면 안 됩니다. 6 월 2020에는 새 컨테이너를 지연 인덱싱 모드로 설정 하는 것이 더 이상 허용 되지 않는 변경 내용이 도입 되었습니다. Azure Cosmos DB 계정에 이미 지연 인덱싱이 있는 컨테이너가 하나 이상 포함 되어 있는 경우이 계정은 변경에서 자동으로 제외 됩니다. [Azure 지원](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)에 문의 하 여 예외를 요청할 수도 있습니다.
+> Azure Cosmos DB는 지연 인덱싱 모드도 지원 합니다. 지연 인덱싱은 엔진이 다른 작업을 수행 하지 않을 때 훨씬 낮은 우선 순위 수준으로 인덱스 업데이트를 수행 합니다. 이로 인해 **일치 하지 않거나 불완전** 한 쿼리 결과가 발생할 수 있습니다. Cosmos 컨테이너를 쿼리하려면 지연 인덱스를 선택 하면 안 됩니다. 6 월 2020에는 새 컨테이너를 지연 인덱싱 모드로 설정 하는 것이 더 이상 허용 되지 않는 변경 내용이 도입 되었습니다. Azure Cosmos DB 계정에 이미 지연 인덱싱이 있는 컨테이너가 하나 이상 포함 되어 있는 경우이 계정은 변경에서 자동으로 제외 됩니다. [Azure 지원](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) 에 문의 하 여 예외를 요청할 수도 있습니다 (지연 인덱싱을 지원 하지 않는 [서버](serverless.md) 리스 모드에서 azure Cosmos 계정을 사용 하는 경우 제외).
 
 기본적으로 인덱싱 정책은로 설정 됩니다 `automatic` . `automatic`인덱싱 정책에서 속성을로 설정 하 여 구현 `true` 합니다. 이 속성을로 설정 `true` 하면 Azure CosmosDB가 작성 된 문서를 자동으로 인덱싱할 수 있습니다.
 
-## <a name="including-and-excluding-property-paths"></a><a id="include-exclude-paths"></a>속성 경로 포함 및 제외
+## <a name="including-and-excluding-property-paths"></a><a id="include-exclude-paths"></a> 속성 경로 포함 및 제외
 
 사용자 지정 인덱싱 정책은 명시적으로 포함 되거나 인덱싱에서 제외 되는 속성 경로를 지정할 수 있습니다. 인덱싱된 경로 수를 최적화 하 여 쓰기 작업의 대기 시간 및 대기 시간을 크게 줄일 수 있습니다. 이러한 경로는 [인덱싱 개요 섹션에 설명 된 방법](index-overview.md#from-trees-to-property-paths) 에 따라 다음과 같이 추가 됩니다.
 
-- 스칼라 값 (문자열 또는 숫자)으로 시작 하는 경로는 다음으로 끝납니다.`/?`
+- 스칼라 값 (문자열 또는 숫자)으로 시작 하는 경로는 다음으로 끝납니다. `/?`
 - 배열의 요소는 `/[]` 표기법 (대신)을 통해 함께 처리 됩니다 `/0` `/1` .
 - `/*`와일드 카드를 사용 하 여 노드 아래의 모든 요소를 일치 시킬 수 있습니다.
 
@@ -62,7 +62,7 @@ Azure Cosmos DB는 두 가지 인덱싱 모드를 지원 합니다.
 
 - `locations`' `country` 경로는입니다.`/locations/[]/country/?`
 
-- 아래의 모든 항목에 대 한 경로는 `headquarters` 입니다.`/headquarters/*`
+- 아래의 모든 항목에 대 한 경로는 `headquarters` 입니다. `/headquarters/*`
 
 예를 들어 경로를 포함할 수 있습니다 `/headquarters/employees/?` . 이 경로는 employees 속성을 인덱싱하는 것을 보장 하지만이 속성 내에서 중첩 된 추가 JSON은 인덱싱하지 않습니다.
 
@@ -81,11 +81,11 @@ Azure Cosmos DB는 두 가지 인덱싱 모드를 지원 합니다.
 
 경로를 포함 하거나 제외 하는 경우 다음과 같은 특성이 발생할 수 있습니다.
 
-- `kind`또는 중 하나일 수 있습니다 `range` `hash` . 범위 인덱스 기능은 해시 인덱스의 모든 기능을 제공 하므로 범위 인덱스를 사용 하는 것이 좋습니다.
+- `kind` 또는 중 하나일 수 있습니다 `range` `hash` . 범위 인덱스 기능은 해시 인덱스의 모든 기능을 제공 하므로 범위 인덱스를 사용 하는 것이 좋습니다.
 
-- `precision`는 포함 된 경로에 대 한 인덱스 수준에서 정의 된 숫자입니다. 값은 `-1` 최대 전체 자릿수를 나타냅니다. 이 값을 항상로 설정 하는 것이 좋습니다 `-1` .
+- `precision` 는 포함 된 경로에 대 한 인덱스 수준에서 정의 된 숫자입니다. 값은 `-1` 최대 전체 자릿수를 나타냅니다. 이 값을 항상로 설정 하는 것이 좋습니다 `-1` .
 
-- `dataType`또는 중 하나일 수 있습니다 `String` `Number` . 이는 인덱싱되는 JSON 속성의 형식을 나타냅니다.
+- `dataType` 또는 중 하나일 수 있습니다 `String` `Number` . 이는 인덱싱되는 JSON 속성의 형식을 나타냅니다.
 
 지정 하지 않으면 이러한 속성의 기본값이 다음과 같이 지정 됩니다.
 
@@ -103,9 +103,9 @@ Azure Cosmos DB는 두 가지 인덱싱 모드를 지원 합니다.
 
 예를 들면 다음과 같습니다.
 
-**포함 된 경로**:`/food/ingredients/nutrition/*`
+**포함 된 경로**: `/food/ingredients/nutrition/*`
 
-**제외 된 경로**:`/food/ingredients/*`
+**제외 된 경로**: `/food/ingredients/*`
 
 이 경우 포함 된 경로는 보다 정확 하기 때문에 제외 된 경로 보다 우선 적용 됩니다. 이러한 경로를 기반으로 하는 `food/ingredients` 경로 또는 중첩 된 내의 모든 데이터는 인덱스에서 제외 됩니다. 예외는 포함 된 경로 () 내의 데이터 `/food/ingredients/nutrition/*` 입니다 .이는 인덱싱됩니다.
 
@@ -121,9 +121,9 @@ Azure Cosmos DB는 두 가지 인덱싱 모드를 지원 합니다.
 
 인덱싱 정책에 공간 경로를 정의 하는 경우 ```type``` 해당 경로에 적용 해야 하는 인덱스를 정의 해야 합니다. 공간 인덱스에 사용할 수 있는 형식은 다음과 같습니다.
 
-* 요소
+* Point
 
-* 다각형
+* Polygon
 
 * MultiPolygon
 
@@ -261,6 +261,9 @@ SELECT * FROM c WHERE c.name = "John", c.age = 18 ORDER BY c.name, c.age, c.time
 
 컨테이너의 인덱싱 정책은 [Azure Portal 또는 지원 되는 sdk 중 하나를 사용 하](how-to-manage-indexing-policy.md)여 언제 든 지 업데이트할 수 있습니다. 인덱싱 정책에 대 한 업데이트는 이전 인덱스에서 새 인덱스로의 변환을 트리거합니다 .이 변환은 온라인 및 내부에서 수행 되므로 작업 중에 추가 저장소 공간이 소비 되지 않습니다. 이전 정책의 인덱스는 컨테이너에 대해 프로 비전 된 처리량, 읽기 가용성 또는 처리량에 영향을 주지 않고 새 정책으로 효율적으로 변환 됩니다. 인덱스 변환은 비동기 작업이 며 완료 하는 데 걸리는 시간은 프로 비전 된 처리량, 항목 수 및 크기에 따라 달라 집니다.
 
+> [!IMPORTANT]
+> 인덱스 변환은 [요청 단위](request-units.md)를 사용 하는 작업입니다. 인덱스 변환에서 사용 하는 요청 단위는 [서버](serverless.md) 를 사용 하지 않는 컨테이너를 사용 하는 경우 현재 청구 되지 않습니다. 이러한 요청 단위는 서버 리스가 일반 공급 되 면 청구 됩니다.
+
 > [!NOTE]
 > [Sdk 중 하나를 사용 하 여](how-to-manage-indexing-policy.md)인덱스 변환의 진행률을 추적할 수 있습니다.
 
@@ -284,7 +287,7 @@ SELECT * FROM c WHERE c.name = "John", c.age = 18 ORDER BY c.name, c.age, c.time
 
 - 일관적인로 설정 된 인덱싱 모드
 - 포함 된 경로 없음
-- `/*`제외 된 유일한 경로입니다.
+- `/*` 제외 된 유일한 경로입니다.
 
 ## <a name="next-steps"></a>다음 단계
 

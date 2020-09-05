@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 6a292201796ccb08f684d2c44a3cee71442edbfe
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: f991e38c184fe44f63af63809deb14eda22f8f4c
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85848670"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716727"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Azure Multi-factor Authentication용 NPS 확장의 오류 메시지 해결
 
@@ -43,7 +43,7 @@ Azure Multi-factor Authentication용 NPS 확장에서 오류가 발생하는 경
 | 오류 코드 | 오류 메시지 | 문제 해결 단계 |
 | ---------- | ------------- | --------------------- |
 | **ALTERNATE_LOGIN_ID_ERROR** | 오류: userObjectSid 조회 실패 | 사용자가 온-프레미스 Active Directory 인스턴스에 있는지 확인합니다. 포리스트 간 트러스트를 사용하는 경우 [지원 서비스](#contact-microsoft-support) 추가 지원을 요청하세요. |
-| **ALTERNATE_LOGIN_ID_ERROR** | 오류: 대체 LoginId 조회 실패 | LDAP_ALTERNATE_LOGINID_ATTRIBUTE가 [유효한 Active Directory 특성](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx)으로 설정되어 있는지 확인합니다. <br><br> LDAP_FORCE_GLOBAL_CATALOG가 True로 설정되어 있거나 LDAP_LOOKUP_FORESTS가 비어 있지 않은 값으로 구성된 경우 글로벌 카탈로그를 구성했는지와 AlternateLoginId 특성이 추가되었는지 확인합니다. <br><br> LDAP_LOOKUP_FORESTS가 비어 있지 않은 값으로 구성된 경우 해당 값이 올바른지 확인합니다. 포리스트 이름을 여러 개 있으면 이름은 공백 없이 세미콜론으로 구분해야 합니다. <br><br> 이러한 단계로도 문제가 해결되지 않으면 [지원 서비스에 문의](#contact-microsoft-support)하세요. |
+| **ALTERNATE_LOGIN_ID_ERROR** | 오류: 대체 LoginId 조회 실패 | LDAP_ALTERNATE_LOGINID_ATTRIBUTE가 [유효한 Active Directory 특성](/windows/win32/adschema/attributes-all)으로 설정되어 있는지 확인합니다. <br><br> LDAP_FORCE_GLOBAL_CATALOG가 True로 설정되어 있거나 LDAP_LOOKUP_FORESTS가 비어 있지 않은 값으로 구성된 경우 글로벌 카탈로그를 구성했는지와 AlternateLoginId 특성이 추가되었는지 확인합니다. <br><br> LDAP_LOOKUP_FORESTS가 비어 있지 않은 값으로 구성된 경우 해당 값이 올바른지 확인합니다. 포리스트 이름을 여러 개 있으면 이름은 공백 없이 세미콜론으로 구분해야 합니다. <br><br> 이러한 단계로도 문제가 해결되지 않으면 [지원 서비스에 문의](#contact-microsoft-support)하세요. |
 | **ALTERNATE_LOGIN_ID_ERROR** | 오류: 대체 LoginId 값이 비어 있음 | AlternateLoginId 특성이 사용자에 대해 구성되어 있는지 확인합니다. |
 
 ## <a name="errors-your-users-may-encounter"></a>사용자에게 발생할 수 있는 오류
@@ -99,7 +99,7 @@ Azure Multi-factor Authentication용 NPS 확장에서 오류가 발생하는 경
 
 ### <a name="health-check-script"></a>상태 검사 스크립트
 
-[AZURE MFA Nps 확장 상태 검사 스크립트](https://docs.microsoft.com/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) 는 nps 확장 문제를 해결할 때 기본 상태 검사를 수행 합니다. 스크립트를 실행 하 고 옵션 3을 선택 합니다.
+[AZURE MFA Nps 확장 상태 검사 스크립트](/samples/azure-samples/azure-mfa-nps-extension-health-check/azure-mfa-nps-extension-health-check/) 는 nps 확장 문제를 해결할 때 기본 상태 검사를 수행 합니다. 스크립트를 실행 하 고 옵션 3을 선택 합니다.
 
 ### <a name="contact-microsoft-support"></a>Microsoft 지원에 문의
 

@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/12/2019
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: af75afb2840d2bc14e1fa46310f76f662efa2a54
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 17e01894ac3d26720b1e74be9d0fd7fc193c463f
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87384789"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88077308"
 ---
 # <a name="quickstart-start-monitoring-your-nodejs-web-application-with-azure-application-insights"></a>빠른 시작: Azure Application Insights를 사용하여 Node.js 웹 애플리케이션 모니터링 시작
 
@@ -60,7 +60,7 @@ Application Insights는 온-프레미스 또는 클라우드에서 실행되는�
    npm install applicationinsights --save
    ```
 
-3. 앱의 첫 번째 *.js* 파일을 편집하고, 스크립트의 맨 위쪽에 아래 두 줄을 추가합니다. [Node.js 빠른 시작 앱](../../app-service/app-service-web-get-started-nodejs.md)을 사용하는 경우 *index.js* 파일을 수정합니다. `<instrumentation_key>`를 애플리케이션의 계측 키로 바꿉니다. 
+3. 앱의 첫 번째 *.js* 파일을 편집하고, 스크립트의 맨 위쪽에 아래 두 줄을 추가합니다. [Node.js 빠른 시작 앱](../../app-service/quickstart-nodejs.md)을 사용하는 경우 *index.js* 파일을 수정합니다. `<instrumentation_key>`를 애플리케이션의 계측 키로 바꿉니다. 
 
    ```JavaScript
    const appInsights = require('applicationinsights');

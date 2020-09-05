@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/16/2019
+ms.date: 08/17/2020
 ms.author: ajburnle
 ms.reviewer: vincesm
-ms.custom: it-pro, seodec18
+ms.custom: it-pro, seodec18, contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bae802d8aa9378155bcca0713992a8cc041ea1a9
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 042a881cc6021842dec126c92ff13f306f79dad1
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799025"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705234"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Azure Active Directory의 기본 사용자 권한이란?
 Azure AD(Azure Active Directory)의 모든 사용자에게는 기본 권한 집합이 부여됩니다. 사용자 액세스는 사용자 유형, [역할 할당](active-directory-users-assign-role-azure-portal.md) 및 개별 개체의 소유권으로 구성됩니다. 이 문서에서는 이 기본 권한을 설명하며 멤버와 게스트 사용자 기본값을 비교합니다. 기본 사용자 권한은 Azure AD의 사용자 설정에서만 변경할 수 있습니다.
@@ -26,26 +26,24 @@ Azure AD(Azure Active Directory)의 모든 사용자에게는 기본 권한 집�
 ## <a name="member-and-guest-users"></a>멤버 및 게스트 사용자
 제공되는 기본 권한 세트는 사용자가 테넌트의 기본 멤버(멤버 사용자)인지 아니면 B2B 협업 게스트(게스트 사용자)로 다른 디렉터리에서 전달되었는지에 따라 달라집니다. 게스트 사용자 추가에 대한 자세한 내용은 [Azure AD B2B 협업이란?](../b2b/what-is-b2b.md)을 참조하세요.
 * 멤버 사용자는 애플리케이션을 등록하고, 자신의 프로필 사진과 휴대전화 번호를 관리하며, 자신의 암호를 변경하고, B2B 게스트를 초대할 수 있습니다. 또한 몇 가지 예외가 있지만 모든 디렉터리 정보를 읽을 수 있습니다. 
-* 게스트 사용자에게는 제한된 디렉터리 권한이 있습니다. 예를 들어 게스트 사용자는 자신의 프로필 정보 밖의 테넌트에서 정보를 찾아볼 수 없습니다. 그러나 게스트 사용자는 사용자 계정 이름이나 objectId를 제공하여 다른 사용자 정보를 검색할 수 있습니다. 게스트 사용자는 **게스트 사용자 권한이 제한됨** 설정과 관계없이 그룹 멤버 자격을 비롯한 소속 그룹 속성을 읽을 수 있습니다. 게스트는 다른 테넌트 개체에 대한 정보를 볼 수 없습니다.
-
-게스트에 대한 기본 권한은 기본적으로 제한적입니다. 게스트를 관리자 역할에 추가할 수 있고, 이 경우 해당 역할에 포함된 전체 읽기 쓰기 권한이 부여됩니다. 게스트가 다른 사용자를 초대하는 기능에도 추가적인 제한이 있습니다. **게스트가 초대할 수 있음**을 **아니요**로 설정하면 게스트가 다른 게스트를 초대할 수 없습니다. 방법은 [B2B 협업에 대한 초대 위임](../b2b/delegate-invitations.md)을 참조하세요. 게스트 사용자에게 기본적으로 멤버 사용자와 같은 권한을 부여하려면 **게스트 사용자 권한이 제한됨**을 **아니요**로 설정합니다. 이 설정은 기본적으로 게스트 사용자에게 모든 멤버 사용자 권한을 부여하며 게스트가 관리자 역할에 추가되는 것도 허용합니다.
+* 게스트 사용자에게는 제한된 디렉터리 권한이 있습니다. 사용자는 자신의 프로필을 관리 하 고, 자신의 암호를 변경 하 고, 다른 사용자, 그룹 및 앱에 대 한 일부 정보를 검색할 수 있습니다. 그러나 모든 디렉터리 정보는 읽을 수 없습니다. 예를 들어 게스트 사용자는 사용자, 그룹 및 기타 디렉터리 개체를 열거할 수 없습니다. 게스트를 관리자 역할에 추가할 수 있고, 이 경우 해당 역할에 포함된 전체 읽기 쓰기 권한이 부여됩니다. 게스트가 다른 게스트를 초대할 수도 있습니다.
 
 ## <a name="compare-member-and-guest-default-permissions"></a>멤버 및 게스트 기본 권한 비교
 
-**영역** | **멤버 사용자 권한** | **게스트 사용자 권한**
------------- | --------- | ----------
-사용자 및 연락처 | 사용자 및 연락처의 모든 공용 속성 읽기<br>게스트 초대<br>자신의 암호 변경<br>휴대전화 번호 관리<br>자신의 사진 관리<br>자신의 새로 고침 토큰 무효화 | 자신의 속성 읽기<br>다른 사용자 및 연락처의 표시 이름, 전자 메일, 로그인 이름, 사진, 사용자 계정 이름 및 사용자 유형 속성을 읽습니다.<br>자신의 암호 변경
-그룹 | 보안 그룹 만들기<br>Office 365 그룹 만들기<br>모든 그룹 속성 읽기<br>숨겨지지 않은 그룹 멤버 자격 읽기<br>조인된 그룹의 숨겨진 Office 365의 그룹 멤버 자격 읽기<br>사용자가 소유한 그룹의 속성, 소유권 및 멤버 자격 관리<br>게스트를 소유 그룹에 추가<br>동적 멤버 자격 설정 관리<br>소유 그룹 삭제<br>소유한 Office 365 그룹 복원 | 모든 그룹 속성 읽기<br>숨겨지지 않은 그룹 멤버 자격 읽기<br>조인된 그룹의 숨겨진 Office 365 그룹 멤버 자격 읽기<br>소유 그룹 관리<br>게스트를 소유 그룹에 추가(허용된 경우)<br>소유 그룹 삭제<br>소유한 Office 365 그룹 복원<br>멤버 자격을 포함한 소속 그룹의 속성 읽기
-애플리케이션 | 새 애플리케이션 등록(만들기)<br>등록 및 엔터프라이즈 애플리케이션의 속성 읽기<br>소유 애플리케이션의 애플리케이션 속성, 할당 및 자격 증명 관리<br>사용자에 대한 애플리케이션 암호 만들기 또는 삭제<br>소유 애플리케이션 삭제<br>소유 애플리케이션 복원 | 등록 및 엔터프라이즈 애플리케이션의 속성 읽기<br>소유 애플리케이션의 애플리케이션 속성, 할당 및 자격 증명 관리<br>소유 애플리케이션 삭제<br>소유 애플리케이션 복원
-디바이스 | 모든 디바이스 속성 읽기<br>소유한 디바이스의 모든 속성 읽기<br> | 사용 권한 없음<br>소유 디바이스 삭제<br>
-디렉터리 | 모든 회사 정보 읽기<br>모든 도메인 읽기<br>모든 파트너 계약 읽기 | 표시 이름 및 확인된 도메인 읽기
-역할 및 범위 | 모든 관리 역할 및 멤버 자격 읽기<br>관리 단위의 모든 속성 및 멤버 자격 읽기 | 사용 권한 없음 
-구독 | 모든 구독 읽기<br>서비스 계획 멤버를 사용하도록 설정 | 사용 권한 없음
-정책 | 모든 정책 속성 읽기<br>소유한 정책의 모든 속성 읽기 | 사용 권한 없음
+**영역** | **멤버 사용자 권한** | **기본 게스트 사용자 권한** | **제한 된 게스트 사용자 권한 (미리 보기)**
+------------ | --------- | ---------- | ----------
+사용자 및 연락처 | <ul><li>사용자 및 연락처의 모든 공용 속성 읽기</li><li>게스트 초대<li>자신의 암호 변경<li>휴대전화 번호 관리<li>자신의 사진 관리<li>자신의 새로 고침 토큰 무효화</li></ul> | <ul><li>자신의 속성 읽기<li>다른 사용자 및 연락처의 표시 이름, 전자 메일, 로그인 이름, 사진, 사용자 계정 이름 및 사용자 유형 속성을 읽습니다.<li>자신의 암호 변경<li>표시 이름, 사용자 계정 이름 또는 ObjectId (허용 된 경우)를 사용 하 여 다른 사용자를 검색 합니다.<li>다른 사용자의 관리자 및 직접 보고서 정보 읽기</li></ul> | <ul><li>자신의 속성 읽기<li>자신의 암호 변경</li></ul>
+그룹 | <ul><li>보안 그룹 만들기<li>Office 365 그룹 만들기<li>모든 그룹 속성 읽기<li>숨겨지지 않은 그룹 멤버 자격 읽기<li>조인된 그룹의 숨겨진 Office 365의 그룹 멤버 자격 읽기<li>사용자가 소유한 그룹의 속성, 소유권 및 멤버 자격 관리<li>게스트를 소유 그룹에 추가<li>동적 멤버 자격 설정 관리<li>소유 그룹 삭제<li>소유한 Office 365 그룹 복원</li></ul> | <ul><li>멤버 자격 및 소유권을 포함 하 여 숨겨지지 않은 모든 그룹의 속성 읽기 (조인 되지 않은 그룹 포함)<li>조인된 그룹의 숨겨진 Office 365 그룹 멤버 자격 읽기<li>표시 이름 또는 ObjectId를 기준으로 그룹 검색 (허용 되는 경우)</li></ul> | 사용 권한 없음
+애플리케이션 | <ul><li>새 애플리케이션 등록(만들기)<li>등록 및 엔터프라이즈 애플리케이션의 속성 읽기<li>소유 애플리케이션의 애플리케이션 속성, 할당 및 자격 증명 관리<li>사용자에 대한 애플리케이션 암호 만들기 또는 삭제<li>소유 애플리케이션 삭제<li>소유 애플리케이션 복원</li></ul> | <ul><li>등록 및 엔터프라이즈 애플리케이션의 속성 읽기</li></ul> | <ul><li>등록 및 엔터프라이즈 애플리케이션의 속성 읽기
+디바이스</li></ul> | <ul><li>모든 디바이스 속성 읽기<li>소유한 디바이스의 모든 속성 읽기</li></ul> | 사용 권한 없음 | 사용 권한 없음
+디렉터리 | <ul><li>모든 회사 정보 읽기<li>모든 도메인 읽기<li>모든 파트너 계약 읽기</li></ul> | <ul><li>표시 이름 및 확인된 도메인 읽기</li></ul> | <ul><li>표시 이름 및 확인된 도메인 읽기</li></ul>
+역할 및 범위 | <ul><li>모든 관리 역할 및 멤버 자격 읽기<li>관리 단위의 모든 속성 및 멤버 자격 읽기</li></ul> | 사용 권한 없음 | 사용 권한 없음
+구독 | <ul><li>모든 구독 읽기<li>서비스 계획 멤버를 사용하도록 설정</li></ul> | 사용 권한 없음 | 사용 권한 없음
+정책 | <ul><li>모든 정책 속성 읽기<li>소유한 정책의 모든 속성 읽기</li></ul> | 사용 권한 없음 | 사용 권한 없음
 
 ## <a name="to-restrict-the-default-permissions-for-member-users"></a>멤버 사용자에 대한 기본 권한을 제한하려면
 
-멤버 사용자의 기본 권한은 다음 방식으로 제한할 수 있습니다.
+멤버 사용자에 대 한 기본 권한은 다음과 같은 방법으로 제한할 수 있습니다.
 
 사용 권한 | 설정 설명
 ---------- | ------------
@@ -53,8 +51,23 @@ Azure AD(Azure Active Directory)의 모든 사용자에게는 기본 권한 집�
 사용자가 LinkedIn을 사용 하 여 회사 또는 학교 계정에 연결 하도록 허용 | 이 옵션을 아니요로 설정 하면 사용자가 자신의 회사 또는 학교 계정을 LinkedIn 계정에 연결할 수 없습니다. 자세한 내용은 [LinkedIn 계정 연결 데이터 공유 및 동의](https://docs.microsoft.com/azure/active-directory/users-groups-roles/linkedin-user-consent)(영문)를 참조 하세요.
 보안 그룹 만들기 기능 | 이 옵션을 아니요로 설정하면 사용자가 보안 그룹을 만들 수 없습니다. 전역 관리자 및 사용자 관리자는 보안 그룹을 만들 수 있습니다. 자세한 내용은 [그룹 설정 구성을 위한 Azure Active Directory cmdlet](../users-groups-roles/groups-settings-cmdlets.md)을 참조하세요.
 Office 365 그룹을 만드는 기능 | 이 옵션을 아니요로 설정하면 사용자가 Office 365 그룹을 만들 수 없습니다. 이 옵션을 일부로 설정하면 Office 365 그룹을 만들 수 있는 사용자 집합을 선택할 수 있습니다. 전역 관리자 및 사용자 관리자는 여전히 Office 365 그룹을 만들 수 있습니다. 자세한 내용은 [그룹 설정 구성을 위한 Azure Active Directory cmdlet](../users-groups-roles/groups-settings-cmdlets.md)을 참조하세요.
-Azure AD 관리 포털에 대한 액세스 제한 | 이 옵션을 아니요로 설정 하면 비관리자가 Azure AD 관리 포털을 사용 하 여 Azure AD 리소스를 읽고 관리할 수 있습니다. 예를 통해 관리자가 아닌 모든 관리자가 관리 포털의 Azure AD 데이터에 액세스 하는 것을 제한 합니다. 중요:이 설정은 PowerShell 또는 Visual Studio와 같은 다른 클라이언트를 사용 하 여 Azure AD 데이터에 대 한 액세스를 제한 하지 않습니다. 예로 설정 되 면 관리자가 아닌 특정 사용자에 게 Azure AD 관리 포털을 사용할 수 있는 권한을 부여 하려면 디렉터리 구독자 역할과 같은 모든 관리 역할을 할당 합니다. 이 역할을 통해 기본 디렉터리 정보를 읽을 수 있습니다 .이 정보는 멤버 사용자에 게 기본적으로 포함 됩니다 (게스트 및 서비스 주체는 그렇지 않음).
+Azure AD 관리 포털에 대한 액세스 제한 | 이 옵션을 아니요로 설정 하면 비관리자가 Azure AD 관리 포털을 사용 하 여 Azure AD 리소스를 읽고 관리할 수 있습니다. 예를 통해 관리자가 아닌 모든 관리자가 관리 포털의 Azure AD 데이터에 액세스 하는 것을 제한 합니다.<p>**참고**:이 설정은 PowerShell 또는 Visual Studio와 같은 다른 클라이언트를 사용 하 여 Azure AD 데이터에 대 한 액세스를 제한 하지 않습니다. 예로 설정 된 경우 관리자가 아닌 특정 사용자에 게 azure ad 관리 포털을 사용 하는 기능을 부여 하려면 디렉터리 구독자 역할과 같은 관리 역할을 할당 합니다.<p>이 역할을 통해 기본 디렉터리 정보를 읽을 수 있습니다 .이 정보는 멤버 사용자에 게 기본적으로 포함 됩니다 (게스트 및 서비스 주체는 그렇지 않음).
 다른 사용자를 읽을 수 있는 기능 | 이 설정은 PowerShell에서만 사용할 수 있습니다. 이 플래그를 $false으로 설정 하면 관리자가 아닌 모든 사용자가 디렉터리에서 사용자 정보를 읽을 수 없습니다. 이 플래그는 Exchange Online과 같은 다른 Microsoft 서비스에서 사용자 정보를 읽을 수 없도록 합니다. 이 설정은 특수 한 상황을 위한 것 이며 $false이 플래그를 설정 하지 않는 것이 좋습니다.
+
+
+## <a name="to-restrict-the-default-permissions-for-guest-users"></a>게스트 사용자에 대 한 기본 사용 권한을 제한 하려면
+
+게스트 사용자에 대 한 기본 권한은 다음과 같은 방법으로 제한할 수 있습니다.
+
+>[!NOTE] 
+>게스트 사용자 액세스 제한 설정은 **게스트 사용자 권한이 제한** 된 설정으로 바뀌었습니다. 이 기능을 사용 하는 방법에 대 한 지침은 [Azure Active Directory에서 게스트 액세스 권한 제한 (미리 보기)](../users-groups-roles/users-restrict-guest-permissions.md)을 참조 하세요.
+
+사용 권한 | 설정 설명
+---------- | ------------
+게스트 사용자 액세스 제한 (미리 보기) | 게스트 사용자에 게이 옵션을 설정 하는 것은 기본적으로 게스트 사용자에 게 모든 멤버 사용자 권한을 부여 하는 것과 동일한 액세스 권한을 가집니다.<p>게스트 사용자 액세스로이 옵션을 설정 하는 것은 속성으로 제한 되며 자체 디렉터리 개체의 멤버 자격은 기본적으로 게스트 액세스를 자체 사용자 프로필로 제한 합니다. 사용자 계정 이름 또는 objectId를 사용 하 여 검색 하는 경우에도 다른 사용자에 대 한 액세스는 더 이상 허용 되지 않습니다. 그룹 멤버 자격을 비롯 한 그룹에 대 한 액세스도 더 이상 허용 되지 않습니다. 이 설정은 Microsoft 팀과 같은 다른 Microsoft 서비스의 그룹에 대 한 액세스를 차단 하지 않습니다. 자세히 알아보려면 [Microsoft 팀 게스트 액세스]() 를 참조 하세요.<p>이 권한 설정에 관계 없이 게스트 사용자를 관리자 역할에 계속 추가할 수 있습니다.
+게스트가 초대할 수 있음 | 이 옵션을 예로 설정 하면 게스트가 다른 게스트를 초대할 수 있습니다. 자세히 알아보려면 [B2B 공동 작업에 대 한 초대 위임](https://docs.microsoft.com/azure/active-directory/external-identities/delegate-invitations#configure-b2b-external-collaboration-settings) 을 참조 하세요.
+구성원이 초대할 수 있음 | 구성원은이 옵션을 예로 설정할 수 있습니다 .이 옵션을 예로 설정 하면 디렉터리의 비관리자 구성원이 게스트를 초대할 수 있습니다. 자세히 알아보려면 [B2B 공동 작업에 대 한 초대 위임](https://docs.microsoft.com/azure/active-directory/external-identities/delegate-invitations#configure-b2b-external-collaboration-settings) 을 참조 하세요.
+관리자 및 게스트 초대자 역할의 사용자가 초대할 수 있음 | 이 옵션을 예로 설정 하면 "Guest 초대자" 역할의 관리자와 사용자가 게스트를 초대할 수 있습니다. 예로 설정 된 경우, Guest 초대자 역할의 사용자는 구성원 으로부터 초대할 수 있는 설정에 관계 없이 게스트를 초대할 수 있습니다. 자세히 알아보려면 [B2B 공동 작업에 대 한 초대 위임](https://docs.microsoft.com/azure/active-directory/external-identities/delegate-invitations#assign-the-guest-inviter-role-to-a-user) 을 참조 하세요.
 
 ## <a name="object-ownership"></a>개체 소유권
 
@@ -130,6 +143,7 @@ Azure AD 관리 포털에 대한 액세스 제한 | 이 옵션을 아니요로 �
 
 ## <a name="next-steps"></a>다음 단계
 
+* 게스트 사용자 액세스 제한 설정에 대해 자세히 알아보려면 [Azure Active Directory에서 게스트 액세스 권한 제한 (미리 보기)](../users-groups-roles/users-restrict-guest-permissions.md)을 참조 하세요.
 * Azure AD 관리자 역할을 할당하는 방법에 대한 자세한 내용은 [Azure Active Directory에서 관리자 역할에 사용자 할당](active-directory-users-assign-role-azure-portal.md) 참조
 * Microsoft Azure에서 리소스 액세스를 제어하는 방법을 자세히 알아보려면 [Azure에서 리소스 액세스 이해](../../role-based-access-control/rbac-and-directory-admin-roles.md)
 * Azure 구독에 Azure Active Directory가 연결되는 방법에 대한 자세한 내용은 [Azure 구독을 Azure Active Directory에 연결하는 방법](active-directory-how-subscriptions-associated-directory.md)

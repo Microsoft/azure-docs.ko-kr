@@ -3,17 +3,18 @@ title: 빠른 시작 - 비용 분석을 사용하여 Azure 비용 살펴보기
 description: 이 빠른 시작에서는 비용 분석을 사용하여 Azure 조직 비용을 탐색하고 분석하는 데 도움이 되는 정보를 제공합니다.
 author: bandersmsft
 ms.author: banders
-ms.date: 06/08/2020
+ms.date: 08/20/2020
 ms.topic: quickstart
 ms.service: cost-management-billing
+ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: seodec18
-ms.openlocfilehash: 72c0b55e1ffc300b42181075247ed3efafe2793a
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 8ca9eaeeb8d484c9aeae6646e6f4814afbaed577
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84560575"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718529"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>빠른 시작: 비용 분석을 사용하여 비용 탐색 및 분석
 
@@ -161,6 +162,10 @@ Azure 태그 정책을 사용하여 비용 데이터 가시성을 향상시키�
 
 집계되지 않은 전체 데이터 세트가 필요한 경우 청구 계정에서 해당 데이터 세트를 다운로드합니다. 그런 다음, 포털의 왼쪽 탐색 창에 있는 서비스 목록에서 **비용 관리 + 청구**로 이동합니다. 청구 계정(해당하는 경우)을 선택합니다. **사용량 + 요금**으로 이동한 후 원하는 청구 기간에 대해 **다운로드** 아이콘을 선택합니다.
 
+## <a name="clean-up-resources"></a>리소스 정리
+
+- 비용 분석을 위해 사용자 지정된 보기를 고정하고, 더 이상 필요하지 않은 경우 고정된 대시보드로 이동하여 고정된 보기를 삭제합니다.
+- 사용량 데이터 파일을 다운로드하고, 더 이상 필요하지 않은 경우 해당 파일을 삭제해야 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

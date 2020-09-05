@@ -15,13 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.custom: has-adal-ref, devx-track-javascript
-ms.openlocfilehash: 11158749f3cae222c0948286e7365b1629cebbf2
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: has-adal-ref, devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 65e680a14cfc878b6dc406a179a0aa3afe038563
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543982"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004717"
 ---
 # <a name="security-frame-authentication--mitigations"></a>보안 프레임: 인증 | 완화
 
@@ -288,7 +288,7 @@ ms.locfileid: "87543982"
 모든 들어오거나 나가는 메시지에 대해 항상 Windows 도메인 또는 인증서 인증을 요구하도록 MSMQ를 구성합니다.
 
 ### <a name="example"></a>예제
-아래 WCF 구성 파일의 `<netMsmqBinding/>` 요소는 MSMQ 큐에 연결할 때 WCF가 인증서 인증을 사용하도록 지시합니다. 클라이언트는 X.509 인증서를 사용하여 인증됩니다. 클라이언트 인증서는 서버의 클라이언트 저장소에 있어야 합니다.
+아래 WCF 구성 파일의 `<netMsmqBinding/>` 요소는 MSMQ 큐에 연결할 때 WCF가 인증서 인증을 사용하도록 지시합니다. X.509 인증서를 사용하여 클라이언트를 인증합니다. 서버의 인증서 저장소에 클라이언트 인증서가 있어야 합니다.
 ```
 <bindings>
     <netMsmqBinding>

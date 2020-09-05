@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 5/10/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 64798e22a893c87a17e3f17077860537c7694c40
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 5e3cb07730aafed7d1c339f543e7fb09fe956cab
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448203"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961910"
 ---
 # <a name="use-an-app-service-environment"></a>App Service 환경 사용
 
@@ -54,7 +54,7 @@ ASE에서 앱을 만들려면
 
     b. 구독을 선택합니다.
 
-    c. 리소스 그룹을 선택 하거나 만듭니다.
+    다. 리소스 그룹을 선택 하거나 만듭니다.
 
     d. 웹 앱의 이름을 입력 합니다.
 
@@ -302,5 +302,5 @@ For more specific examples, use: az find "az appservice ase"
 [Kudu]: https://azure.microsoft.com/resources/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [AppDeploy]: ../deploy-local-git.md
 [ASEWAF]: app-service-app-service-environment-web-application-firewall.md
-[AppGW]: ../../application-gateway/application-gateway-web-application-firewall-overview.md
+[AppGW]: ../../web-application-firewall/ag/ag-overview.md
 [logalerts]: ../../azure-monitor/platform/alerts-log.md

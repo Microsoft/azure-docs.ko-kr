@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: d089cb1844356032b956110a7475d839031ef006
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 9596e6a6fd32994f782125c9bd4b8ca6d5a94b03
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849831"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213069"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Azure Functions에 대 한 Azure Blob storage 출력 바인딩
 
@@ -379,8 +379,8 @@ JavaScript에서는 `context.bindings.<name from function.json>`을 사용하여
 
 함수 매개 변수를 다음 형식으로 선언 하 여 blob 저장소에 쓸 수 있습니다.
 
-* 문자열`func.Out(str)`
-* 스트림`func.Out(func.InputStream)`
+* 문자열 `func.Out(str)`
+* 스트림 `func.Out(func.InputStream)`
 
 자세한 내용은 [출력 예제](#example) 를 참조 하십시오.
 

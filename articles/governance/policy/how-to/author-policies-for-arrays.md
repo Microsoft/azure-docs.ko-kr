@@ -1,14 +1,14 @@
 ---
 title: 리소스의 배열 속성에 대한 작성자 정책
 description: 배열 매개 변수 및 배열 언어 식을 사용하고, [*] 별칭을 평가하고, Azure Policy 정의 규칙을 사용하여 요소를 추가하는 방법을 알아봅니다.
-ms.date: 05/20/2020
+ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: f3d30f76d555386e5ab8041a0b8cc82b5b60e28e
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 5b9392a943e264ae5eca989ee87eb9ff09b36972
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684247"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048485"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Azure 리소스의 배열 속성에 대한 작성자 정책
 
@@ -95,7 +95,7 @@ Azure CLI, Azure PowerShell 또는 REST API를 사용하는 경우 매개 변수
 
 각 SDK에서 이 문자열을 사용하려면 다음 명령을 사용합니다.
 
-- Azure CLI: **params** 매개 변수가 지정된 [az policy assignment create](/cli/azure/policy/assignment?view=azure-cli-latest#az-policy-assignment-create) 명령
+- Azure CLI: **params** 매개 변수가 지정된 [az policy assignment create](/cli/azure/policy/assignment#az-policy-assignment-create) 명령
 - Azure PowerShell: **PolicyParameter** 매개 변수가 지정된 [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) cmdlet
 - REST API: 요청 본문에 **properties.parameters** 속성 값으로 포함된 _PUT_ [create](/rest/api/resources/policyassignments/create) 작업
 

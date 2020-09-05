@@ -2,26 +2,21 @@
 title: '자습서: Zoom과 Azure Active Directory SSO(Single Sign-On) 연결 | Microsoft Docs'
 description: Azure Active Directory와 Zoom 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 0ebdab6c-83a8-4737-a86a-974f37269c31
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f9d727154adf0a2099d7a9144c109cef9c91238
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d257935aa3e9ad54b64b0f416119931661809172
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70743979"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545967"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zoom"></a>자습서: Zoom과 Azure Active Directory SSO(Single Sign-On) 연결
 
@@ -87,6 +82,8 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
     b. **식별자(엔터티 ID)** 텍스트 상자에서 `<companyname>.zoom.us` 패턴을 사용하는 URL을 입력합니다.
 
+    다. **회신 URL** 텍스트 상자에서 `https://<companyname>.zoom.us` 패턴을 사용하여 URL을 입력합니다.
+
     > [!NOTE]
     > 이러한 값은 실제 값이 아닙니다. 실제 로그온 URL 및 식별자로 이러한 값을 업데이트합니다. 이러한 값을 얻으려면 [Zoom 클라이언트 지원팀](https://support.zoom.us/hc/)에 문의하세요. Azure Portal의 **기본 SAML 구성** 섹션에 표시된 패턴을 참조할 수도 있습니다.
 
@@ -112,7 +109,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 1. 화면 위쪽에서 **새 사용자**를 선택합니다.
 1. **사용자** 속성에서 다음 단계를 수행합니다.
     1. **이름** 필드에 `B.Simon`을 입력합니다.  
-    1. **사용자 이름** 필드에서 username@companydomain.extension을 입력합니다. `B.Simon@contoso.com`)을 입력합니다.
+    1. **사용자 이름** 필드에서 username@companydomain.extension을 입력합니다. 예들 들어 `B.Simon@contoso.com`입니다.
     1. **암호 표시** 확인란을 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
     1. **만들기**를 클릭합니다.
 
@@ -140,13 +137,13 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 2. **Single Sign-On** 탭을 클릭합니다.
 
-    ![Single Sign-On 탭](./media/zoom-tutorial/ic784700.png "SSO(Single sign-on)")
+    ![Single Sign-On 탭](./media/zoom-tutorial/zoom-sso1.png "SSO(Single sign-on)")
 
-3. **보안 제어**를 클릭하고, **Single Sign-On** 설정으로 이동합니다.
+3. **보안 제어** 탭을 클릭한 다음 **Single Sign-On** 설정으로 이동합니다.
 
 4. Single Sign-On 섹션에서 다음 단계를 수행 합니다.
 
-    ![Single Sign-On 섹션](./media/zoom-tutorial/ic784701.png "SSO(Single sign-on)")
+    ![Single Sign-On 섹션](./media/zoom-tutorial/zoom-sso2.png "SSO(Single sign-on)")
 
     a. **로그인 페이지 URL** 텍스트 상자에, Azure Portal에서 복사한 **로그인 URL** 값을 붙여넣습니다.
 
@@ -162,11 +159,11 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
     ![엔드포인트 복사 단추](./media/zoom-tutorial/endpoint1.png)
 
-    e. Base 64로 인코딩된 인증서를 메모장에서 열고, 내용을 클립보드에 복사한 다음 **ID 공급자 인증서** 텍스트 상자에 붙여넣습니다.
+    e. 메모장에서 Base-64로 인코딩된 인증서를 열고 내용을 클립보드에 복사한 후 **ID 공급자 인증서** 텍스트 상자에 붙여넣습니다.
 
     f. **발급자** 텍스트 상자에 Azure Portal에서 복사한 **Azure AD 식별자** 값을 붙여넣습니다. 
 
-    g. **저장**을 클릭합니다.
+    g. **변경 내용 저장**을 클릭합니다.
 
     > [!NOTE]
     > 자세한 내용은 확대/축소 설명서 [https://zoomus.zendesk.com/hc/articles/115005887566](https://zoomus.zendesk.com/hc/articles/115005887566)를 참조하세요.

@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 7dc0913ab206c6b9152d7d6155642c28b430d6f2
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 263f018155aa6effada3d509c907d825b65a8d45
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836329"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228395"
 ---
 # <a name="azure-security-baseline-for-logic-apps"></a>Logic Apps에 대 한 Azure 보안 기준
 
@@ -94,9 +94,9 @@ Azure Security Center Just-in-time 네트워크 액세스를 사용 하 여 제�
 
 적응 네트워크 강화 Azure Security Center 사용 하 여 실제 트래픽 및 위협 인텔리전스에 따라 포트와 원본 Ip를 제한 하는 NSG 구성을 권장 합니다.
 
-* [Logic Apps에 대 한 인바운드 호출을 보호 하는 방법](./logic-apps-securing-a-logic-app.md#access-to-request-based-triggers)
+* [Logic Apps에 대 한 인바운드 호출을 보호 하는 방법](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
-* [인바운드 IP 주소를 제한 하는 방법](./logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
+* [인바운드 IP 주소를 제한 하는 방법](logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
 
 * [DDoS 보호를 구성 하는 방법](../virtual-network/manage-ddos-protection.md)
 
@@ -182,7 +182,7 @@ Logic Apps의 진단 로그를 사용하도록 설정해야 함
 
 DDoS Protection 표준을 사용하도록 설정해야 합니다.
 
-또한 Azure 청사진을 사용 하 여 단일 청사진 정의에서 Azure Resource Manager 템플릿, RBAC (역할 기반 액세스 제어) 및 정책과 같은 주요 환경 아티팩트를 패키지화 하 여 대규모 Azure 배포를 간소화할 수 있습니다. Blueprint를 새로운 구독 및 환경에 쉽게 적용하고 버전 관리를 통해 제어 및 관리를 세부적으로 조정합니다.
+또한 Azure 청사진을 사용 하 여 단일 청사진 정의에서 Azure Resource Manager 템플릿, azure RBAC (역할 기반 액세스 제어) 및 정책과 같은 주요 환경 아티팩트를 패키지화 하 여 대규모 Azure 배포를 간소화할 수 있습니다. Blueprint를 새로운 구독 및 환경에 쉽게 적용하고 버전 관리를 통해 제어 및 관리를 세부적으로 조정합니다.
 
 * [Azure Policy를 구성하고 관리하는 방법](../governance/policy/tutorials/create-and-manage.md)
 
@@ -368,7 +368,7 @@ Azure 활동 로그 진단 설정을 사용 하도록 설정 하 고 로그를 L
 
 * [PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할의 멤버를 가져오는 방법](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
-* [SAS를 사용 하 여 Azure Logic Apps에서 액세스 및 데이터를 보호 하는 방법](./logic-apps-securing-a-logic-app.md#access-to-request-based-triggers)
+* [SAS를 사용 하 여 Azure Logic Apps에서 액세스 및 데이터를 보호 하는 방법](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -382,7 +382,7 @@ Azure 활동 로그 진단 설정을 사용 하도록 설정 하 고 로그를 L
 
 인프라를 코드로 사용 하는 경우에는 코드에 암호를 저장 하지 않고 대신 Azure Key Vault를 사용 하 여 자격 증명을 저장 하 고 검색 합니다.
 
-* [Logic Apps에서 데이터를 보호 하 고 액세스 하는 방법](./logic-apps-securing-a-logic-app.md)
+* [Logic Apps에서 데이터를 보호 하 고 액세스 하는 방법](logic-apps-securing-a-logic-app.md)
 
 * [Azure Key Vault에서 비밀을 설정 하 고 검색 하는 방법](../key-vault/secrets/quick-create-portal.md)
 
@@ -473,7 +473,7 @@ Azure Active Directory (Azure AD) OAuth를 사용 하는 커넥터의 경우 연
 
 * [Azure에서 명명된 위치를 구성하는 방법](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-* [Logic Apps에서 인바운드 IP 주소를 제한 하는 방법 이해](./logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
+* [Logic Apps에서 인바운드 IP 주소를 제한 하는 방법 이해](logic-apps-securing-a-logic-app.md#restrict-inbound-ip-addresses)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -611,11 +611,11 @@ Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고
 
 해당 하는 경우 미사용 암호화 및 전송 중인 암호화에 대 한 Azure Security Center 권장 사항을 따릅니다.
 
-* [Azure Logic Apps에서 액세스 및 데이터 보안](./logic-apps-securing-a-logic-app.md)
+* [Azure Logic Apps에서 액세스 및 데이터 보안](logic-apps-securing-a-logic-app.md)
 
-* [Azure Logic Apps에서 인바운드 HTTPS 요청 수신 및 응답](../connectors/connectors-native-reqres.md#tls-support)
+* [Azure Logic Apps에서 인바운드 HTTPS 요청 수신 및 응답](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
-* [Azure Logic Apps에서 HTTP 또는 HTTPS를 통해 서비스 엔드포인트 호출](../connectors/connectors-native-http.md#tls-support)
+* [Azure Logic Apps에서 HTTP 또는 HTTPS를 통해 서비스 엔드포인트 호출](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
 * [Azure를 사용 하 여 전송 중인 암호화 이해](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
@@ -633,7 +633,7 @@ Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고
 
 Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
-* [실행 기록 데이터에 대 한 액세스 보호](./logic-apps-securing-a-logic-app.md#access-to-run-history-data)
+* [실행 기록 데이터에 대 한 액세스 보호](logic-apps-securing-a-logic-app.md#access-to-run-history-data)
 
 * [Azure의 고객 데이터 보호 이해](../security/fundamentals/protection-customer-data.md)
 
@@ -641,7 +641,7 @@ Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고
 
 **책임**: 공유됨
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
 **지침**: 특정 사용자나 그룹만 논리 앱 관리, 편집 및 보기와 같은 특정 작업을 실행 하도록 허용할 수 있습니다. 사용자의 권한을 제어 하려면 azure 구독에서 구성원에 사용자 지정 또는 기본 제공 역할을 할당할 수 있도록 azure RBAC (역할 기반 액세스 제어)를 사용 합니다.
 - 논리 앱 참가자: 논리 앱을 관리할 수 있지만 앱에 대한 액세스는 변경할 수 없습니다.
@@ -649,7 +649,7 @@ Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고
 
 다른 사람이 논리 앱을 변경하거나 삭제하지 못하게 하려면 Azure 리소스 잠금을 사용할 수 있습니다. 이 기능은 다른 사람이 프로덕션 리소스를 변경하거나 삭제하지 못하도록 합니다.
 
-* [Azure Logic Apps 작업에 대 한 보안 액세스](./logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
+* [Azure Logic Apps 작업에 대 한 보안 액세스](logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -877,7 +877,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **지침**: 비즈니스 운영에 필요한 Logic Apps 관련 된 리소스 이지만 조직에 대 한 위험이 높아질 수 있으며, 자체 가상 머신 및/또는 가상 네트워크 내에서 격리 되 고 Azure 방화벽 또는 네트워크 보안 그룹을 사용 하 여 충분히 안전 하 게 보호 되어야 합니다.
 
-비즈니스 작업을 수행 하는 데 필요한 Logic Apps, 조직에 대 한 위험이 높아질 수 있으므로, 특정 권한 및 RBAC 경계를 포함 하는 별도의 리소스 그룹을 통해 가능한 모든 경우에 격리 해야 합니다.
+비즈니스 작업을 수행 하는 데 필요 하지만 조직에서 더 높은 위험을 초래할 수 있는 Logic Apps, 특정 권한 및 Azure RBAC 경계를 포함 하는 별도의 리소스 그룹을 통해 가능한 한 격리 해야 합니다.
 
 * [가상 네트워크를 만드는 방법](../virtual-network/quick-create-portal.md)
 
@@ -885,7 +885,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 * [관리 그룹을 만드는 방법](../governance/management-groups/create.md)
 
-* [RBAC를 통해 Logic Apps에 대 한 액세스를 보호 하는 방법](./logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
+* [Azure RBAC를 통해 Logic Apps에 대 한 액세스를 보호 하는 방법](logic-apps-securing-a-logic-app.md#access-to-logic-app-operations)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -911,9 +911,9 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 * [Azure Portal에서 템플릿에 대 한 단일 및 다중 리소스 내보내기](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Azure Logic Apps 용 Azure Resource Manager 템플릿을 배포 하는 방법](./logic-apps-deploy-azure-resource-manager-templates.md)
+* [Azure Logic Apps 용 Azure Resource Manager 템플릿을 배포 하는 방법](logic-apps-deploy-azure-resource-manager-templates.md)
 
-* [보안 작업 매개 변수 이해](./logic-apps-securing-a-logic-app.md#secure-action-parameters)
+* [보안 작업 매개 변수 이해](logic-apps-securing-a-logic-app.md#secure-action-parameters)
 
 * [매개 변수에 대한 보안 권장 사항](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
@@ -947,11 +947,11 @@ Azure Policy를 사용 하 여 Azure Logic Apps 인스턴스에 대 한 표준 �
 
 * [Azure Portal에서 템플릿에 대 한 단일 및 다중 리소스 내보내기](../azure-resource-manager/templates/export-template-portal.md)
 
-* [Azure Logic Apps 용 Azure Resource Manager 템플릿을 배포 하는 방법](./logic-apps-deploy-azure-resource-manager-templates.md)
+* [Azure Logic Apps 용 Azure Resource Manager 템플릿을 배포 하는 방법](logic-apps-deploy-azure-resource-manager-templates.md)
 
-* [실행 기록 입력 및 출력에 대 한 액세스 보호](./logic-apps-securing-a-logic-app.md#obfuscate)
+* [실행 기록 입력 및 출력에 대 한 액세스 보호](logic-apps-securing-a-logic-app.md#obfuscate)
 
-* [매개 변수 입력에 안전 하 게 액세스](./logic-apps-securing-a-logic-app.md#secure-action-parameters)
+* [매개 변수 입력에 안전 하 게 액세스](logic-apps-securing-a-logic-app.md#secure-action-parameters)
 
 * [매개 변수에 대한 보안 권장 사항](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
@@ -1033,11 +1033,11 @@ Azure Policy를 사용 하 여 Azure Logic Apps 인스턴스에 대 한 표준 �
 
 논리 앱을 호스팅하기 위한 ISE (통합 서비스 환경)를 만들 때 Azure Storage에 사용 되는 암호화 키를 더 많이 제어 하려는 경우 Azure Key Vault를 사용 하 여 사용자 고유의 키를 설정, 사용 및 관리할 수 있습니다. 이 기능은 BYOK ("Bring Your Own Key") 라고도 하며, 키를 "고객 관리 키" 라고 합니다.
 
-* [Azure Logic Apps에서 실행 기록의 입력 및 출력 보안](./logic-apps-securing-a-logic-app.md#obfuscate)
+* [Azure Logic Apps에서 실행 기록의 입력 및 출력 보안](logic-apps-securing-a-logic-app.md#obfuscate)
 
 * [매개 변수에 대한 보안 권장 사항](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
-* [Azure Logic Apps에서 매개 변수 입력에 안전 하 게 액세스](./logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
+* [Azure Logic Apps에서 매개 변수 입력에 안전 하 게 액세스](logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
 
 * [Azure Key Vault를 사용 하 여 배포 중에 보안 매개 변수 값 전달](../azure-resource-manager/templates/key-vault-parameter.md)
 
@@ -1069,11 +1069,11 @@ Azure Policy를 사용 하 여 Azure Logic Apps 인스턴스에 대 한 표준 �
 
 코드 내에서 자격 증명을 식별 하는 자격 증명 스캐너를 구현할 수도 있습니다. 또한 자격 증명 스캐너는 검색된 자격 증명을 더 안전한 위치(예: Azure Key Vault)로 이동하도록 추천합니다.
 
-* [Azure Logic Apps에서 실행 기록의 입력 및 출력 보안](./logic-apps-securing-a-logic-app.md#obfuscate)
+* [Azure Logic Apps에서 실행 기록의 입력 및 출력 보안](logic-apps-securing-a-logic-app.md#obfuscate)
 
 * [매개 변수에 대한 보안 권장 사항](../azure-resource-manager/templates/template-best-practices.md#security-recommendations-for-parameters)
 
-* [Azure Logic Apps에서 매개 변수 입력에 안전 하 게 액세스](./logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
+* [Azure Logic Apps에서 매개 변수 입력에 안전 하 게 액세스](logic-apps-securing-a-logic-app.md#access-to-parameter-inputs)
 
 * [Azure Key Vault를 사용 하 여 배포 중에 보안 매개 변수 값 전달](../azure-resource-manager/templates/key-vault-parameter.md)
 
@@ -1133,7 +1133,7 @@ App Service, Data Lake Storage, Blob Storage 등의 비 계산 Azure 리소스�
 
 * [Azure Logic Apps에 대 한 비즈니스 연속성 및 재해 복구에 대해 자세히 알아보세요.](./business-continuity-disaster-recovery-guidance.md)
 
-* [Azure Resource Manager 템플릿을 사용 하 여 Azure Logic Apps에 대 한 배포를 자동화 하는 방법](./logic-apps-azure-resource-manager-templates-overview.md)
+* [Azure Resource Manager 템플릿을 사용 하 여 Azure Logic Apps에 대 한 배포를 자동화 하는 방법](logic-apps-azure-resource-manager-templates-overview.md)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -1151,9 +1151,9 @@ App Service, Data Lake Storage, Blob Storage 등의 비 계산 Azure 리소스�
 
 * [Azure Logic Apps에 대 한 비즈니스 연속성 및 재해 복구에 대해 자세히 알아보세요.](./business-continuity-disaster-recovery-guidance.md)
 
-* [Azure Resource Manager 템플릿을 사용 하 여 Azure Logic Apps에 대 한 배포를 자동화 하는 방법](./logic-apps-azure-resource-manager-templates-overview.md)
+* [Azure Resource Manager 템플릿을 사용 하 여 Azure Logic Apps에 대 한 배포를 자동화 하는 방법](logic-apps-azure-resource-manager-templates-overview.md)
 
-* [SAS를 사용 하 여 Azure Logic Apps에서 액세스 및 데이터를 보호 하는 방법](./logic-apps-securing-a-logic-app.md#access-to-request-based-triggers)
+* [SAS를 사용 하 여 Azure Logic Apps에서 액세스 및 데이터를 보호 하는 방법](logic-apps-securing-a-logic-app.md#access-for-inbound-calls-to-request-based-triggers)
 
 * [Key Vault 키를 백업 하는 방법](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 

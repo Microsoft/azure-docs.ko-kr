@@ -3,26 +3,28 @@ title: Azure CLI 스크립트 예제 - 작업 만들기 및 제출 | Microsoft D
 description: 이 항목의 Azure CLI 스크립트는 작업을 HTTPs URL을 사용하여 간단한 인코딩 Transform으로 제출하는 방법을 보여줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: ''
 ms.service: media-services
 ms.devlang: azurecli
-ms.topic: sample
+ms.topic: how-to
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/01/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c89fe37bb443dbdbb312f2c930a4df8a708bb597
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 0f2e1d901e674c3fecf957bd10314e51195f8b84
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500694"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89295991"
 ---
 # <a name="cli-example-create-and-submit-a-job"></a>CLI 예: 작업 만들기 및 제출
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Media Services v3에서는, 비디오를 처리할 작업을 제출할 때 입력 비디오를 찾을 위치를 Media Services에 알려줘야 합니다. 옵션 중 하나는 다음 문서와 같이 HTTPS URL을 작업 입력으로 지정하는 것입니다. 
 

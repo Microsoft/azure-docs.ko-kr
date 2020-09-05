@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f22e69cbc625d21c398151e413574387a2587790
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 85f14329359eaf051b992f657ac0e4e634d504cf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145278"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020833"
 ---
 # <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Azure Cognitive Search에서 동시성을 관리 하는 방법
 
@@ -22,14 +23,14 @@ ms.locfileid: "86145278"
 > [!Tip]
 > [샘플 c # 솔루션](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) 의 개념 코드는 Azure Cognitive Search에서 동시성 제어가 작동 하는 방식을 설명 합니다. 이 코드는 동시성 제어를 호출하는 조건을 만듭니다. 대부분의 개발자는 [아래의 코드 조각](#samplecode)만 확인해도 되겠지만, 해당 코드를 실행하려는 경우 appsettings.json을 편집하여 서비스 이름과 관리 API 키를 추가하세요. 서비스 URL이 `http://myservice.search.windows.net`인 경우 서비스 이름은 `myservice`입니다.
 
-## <a name="how-it-works"></a>작동 방식
+## <a name="how-it-works"></a>작동 방법
 
 낙관적 동시성은 인덱스, 인덱서, 데이터 원본 및 synonymMap 리소스에 데이터를 기록하는 API 호출에서 액세스 조건을 확인하는 방식으로 구현됩니다.
 
 모든 리소스에는 개체 버전 정보를 제공하는 [*ETag(엔터티 태그)*](https://en.wikipedia.org/wiki/HTTP_ETag)가 있습니다. ETag를 먼저 확인하면 리소스의 ETag가 로컬 복사본과 일치하는지를 확인하여 일반적인 워크플로(가져오기, 논리적으로 수정, 업데이트)에서 동시 업데이트를 방지할 수 있습니다.
 
-+ REST API는 요청 헤더에서 [ETag](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)를 사용합니다.
-+ .NET SDK는 accessCondition 개체를 통해 ETag를 설정하여 리소스에 대해 [If-Match | If-Match-None 헤더](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)를 설정합니다. [IResourceWithETag(.NET SDK)](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.iresourcewithetag)에서 상속하는 모든 개체에는 accessCondition 개체가 있습니다.
++ REST API는 요청 헤더에서 [ETag](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)를 사용합니다.
++ .NET SDK는 accessCondition 개체를 통해 ETag를 설정하여 리소스에 대해 [If-Match | If-Match-None 헤더](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)를 설정합니다. [IResourceWithETag(.NET SDK)](/dotnet/api/microsoft.azure.search.models.iresourcewithetag)에서 상속하는 모든 개체에는 accessCondition 개체가 있습니다.
 
 리소스를 업데이트할 때마다 ETag는 자동으로 변경됩니다. 동시성 관리를 구현할 때는 클라이언트에서 수정한 리소스 복사본과 같은 ETag가 원격 리소스에 포함되어 있어야 하도록 지정하는 사전 조건만 업데이트 요청에 포함하면 됩니다. 동시 프로세스에서 원격 리소스를 이미 변경한 경우 ETag가 사전 조건과 일치하지 않아 요청이 실패하며 HTTP 412가 표시됩니다. .NET SDK를 사용 중이라면 이러한 경우 `CloudException`이 표시됩니다. 여기서 `IsAccessConditionFailed()` 확장 메서드는 true를 반환합니다.
 
@@ -217,6 +218,6 @@ ms.locfileid: "86145278"
 
 ## <a name="see-also"></a>참고 항목
 
-[일반 HTTP 요청 및 응답 헤더](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) 
- [HTTP 상태 코드](https://docs.microsoft.com/rest/api/searchservice/http-status-codes) 
- [인덱스 작업 (REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)
+[일반 HTTP 요청 및 응답 헤더](/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) 
+ [HTTP 상태 코드](/rest/api/searchservice/http-status-codes) 
+ [인덱스 작업 (REST API)](/rest/api/searchservice/index-operations)

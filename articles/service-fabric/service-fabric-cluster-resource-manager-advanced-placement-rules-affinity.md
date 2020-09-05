@@ -7,12 +7,13 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 7bfd261802fbf891b8f45079255783cb1e8ac7d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 9c141cd96877fd140b858d0aaed9197f2de80eca
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75551746"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005737"
 ---
 # <a name="configuring-and-using-service-affinity-in-service-fabric"></a>서비스 패브릭에서 서비스 선호도 구성 및 사용
 선호도는 주로 더 큰 모놀리식 애플리케이션을 클라우드 및 마이크로 서비스 환경으로 쉽게 전환하도록 해주는 컨트롤입니다. 또한 서비스의 성능 향상을 위한 최적화로 사용되지만 이 경우 부작용이 있을 수 있습니다.

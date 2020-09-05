@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/27/2020
-ms.openlocfilehash: f4938d517d9a5c244045798a79f31b96bacd03f5
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 5c5326310887cd5756ae264a35aafe7e771a7863
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87829444"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226797"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Azure Machine Learning 컴퓨팅 인스턴스란?
 
@@ -24,13 +24,13 @@ Azure Machine Learning 계산 인스턴스는 데이터 과학자을 위한 관�
 
 기계 학습을 위해 클라우드에서 완전히 구성 되 고 관리 되는 개발 환경으로 계산 인스턴스를 사용 합니다. 개발 및 테스트 목적으로 학습 및 추론 계산 대상으로 사용할 수도 있습니다.  
 
-프로덕션 등급 모델 학습의 경우 다중 노드 크기 조정 기능이 포함 된 [Azure Machine Learning 계산 클러스터](how-to-set-up-training-targets.md#amlcompute) 를 사용 합니다. 프로덕션 등급 모델 배포의 경우 [Azure Kubernetes Service 클러스터](how-to-deploy-azure-kubernetes-service.md)를 사용 합니다.
+프로덕션 등급 모델 학습의 경우 다중 노드 크기 조정 기능이 포함 된 [Azure Machine Learning 계산 클러스터](how-to-create-attach-compute-sdk.md#amlcompute) 를 사용 합니다. 프로덕션 등급 모델 배포의 경우 [Azure Kubernetes Service 클러스터](how-to-deploy-azure-kubernetes-service.md)를 사용 합니다.
 
 ## <a name="why-use-a-compute-instance"></a>컴퓨팅 인스턴스를 사용하는 이유
 
 컴퓨팅 인스턴스는 기계 학습 개발 환경에 최적화된 완전 관리형 클라우드 기반 워크스테이션입니다. 다음과 같은 이점을 제공합니다.
 
-|주요 이점|설명|
+|주요 이점|Description|
 |----|----|
 |생산성|Azure Machine Learning studio에서 통합 된 노트북 및 다음 도구를 사용 하 여 모델을 빌드 및 배포할 수 있습니다.<br/>-  Jupyter<br/>-  JupyterLab<br/>-RStudio (미리 보기)<br/>계산 인스턴스는 Azure Machine Learning 작업 영역 및 스튜디오와 완전히 통합 됩니다. 작업 영역의 다른 데이터 과학자와 전자 필기장 및 데이터를 공유할 수 있습니다. [SSH](how-to-set-up-vs-code-remote.md) 를 사용 하 여 원격 개발 VS Code를 설정할 수도 있습니다. |
 |관리 및 보안|보안 공간을 줄이고 엔터프라이즈 보안 요구 사항에 따라 규정 준수를 추가합니다. 컴퓨팅 인스턴스는 다음과 같은 강력한 관리 정책과 보안 네트워킹 구성을 제공합니다.<br/><br/>- Resource Manager 템플릿 또는 Azure Machine Learning SDK에서 자동 프로비저닝<br/>- [Azure 역할 기반 access control (Azure RBAC)](/azure/role-based-access-control/overview)<br/>- [가상 네트워크 지원](how-to-enable-virtual-network.md#compute-instance)<br/>- SSH 액세스를 사용하거나 사용하지 않도록 설정하는 SSH 정책<br/>TLS 1.2 사용 |
@@ -80,10 +80,10 @@ Python 패키지는 **Python 3.6 - AzureML** 환경에 모두 설치됩니다.
 
 ### <a name="installing-packages"></a>패키지 설치
 
-Jupyter Notebook 또는 Rstudio에 직접 패키지를 설치할 수 있습니다.
+Jupyter Notebook 또는 RStudio에 직접 패키지를 설치할 수 있습니다.
 
 * RStudio는 오른쪽 아래에 있는 **패키지** 탭 또는 왼쪽 위의 **콘솔** 탭을 사용합니다.  
-* Python: 설치 코드를 추가하고 Jupyter Notebook 셀에서 실행합니다.
+* Python: 설치 코드를 추가 하 고 Jupyter Notebook 셀에를 실행 합니다.
 
 또는 다음과 같은 방법으로 터미널 창에 액세스할 수 있습니다.
 
@@ -138,43 +138,28 @@ Azure Machine Learning Studio의 작업 영역에서 **컴퓨팅**을 선택한 
 
 ### <a name="create-a-compute-instance"></a><a name="create"></a>계산 인스턴스 만들기
 
-Azure Machine Learning studio의 작업 영역에서, 노트북 중 하나를 실행할 준비가 되 면 **계산** 섹션 또는 **노트북** 섹션에서 새 계산 인스턴스를 만듭니다.
-
-:::image type="content" source="media/concept-compute-instance/create-compute-instance.png" alt-text="새 계산 인스턴스 만들기":::
-
-
-|필드  |Description  |
-|---------|---------|
-|컴퓨팅 이름     |  <li>이름은 필수 이며 길이가 3 ~ 007e; 24 자 사이 여야 합니다.</li><li>유효한 문자는 대 문자와 소문자, 숫자 및 **-** 문자입니다.</li><li>이름은 문자로 시작 해야 합니다.</li><li>이름은 Azure 지역 내의 모든 기존 계산에서 고유 해야 합니다. 선택한 이름이 고유 하지 않으면 경고가 표시 됩니다.</li><li>문자를 사용 하는 경우 **-** 이름 뒤에 하나 이상의 문자가와 야 합니다.</li>     |
-|가상 머신 유형 |  CPU 또는 GPU를 선택 합니다. 이 형식을 만든 후에는 변경할 수 없습니다.     |
-|가상 머신 크기     |  지원 되는 가상 머신 크기는 해당 지역에서 제한 될 수 있습니다. [가용성 목록](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) 확인     |
-|SSH 액세스 사용/사용 안 함     |   SSH 액세스는 기본적으로 사용 되지 않습니다.  SSH 액세스는 일 수 없습니다. 만든 후 변경 됩니다. [VS Code 원격](how-to-set-up-vs-code-remote.md) 으로 대화형으로 디버깅 하려는 경우 액세스를 사용 하도록 설정 해야 합니다.   |
-|고급 설정     |  선택 사항입니다. 가상 네트워크를 구성 합니다. **리소스 그룹**, **가상 네트워크**및 **서브넷** 을 지정 하 여 Azure Virtual Network (vnet) 내에서 계산 인스턴스를 만듭니다. 자세한 내용은 vnet에 대 한 다음 [네트워크 요구 사항](how-to-enable-virtual-network.md#compute-instance) 을 참조 하세요.        |
+Azure Machine Learning studio의 작업 영역에서, 노트북 중 하나를 실행할 준비가 되 면 **계산** 섹션 또는 **노트북** 섹션에서 [새 계산 인스턴스를 만듭니다](how-to-create-attach-compute-studio.md#compute-instance) . 
 
 인스턴스를 만들 수도 있습니다.
 * [통합 된 노트북 환경](tutorial-1st-experiment-sdk-setup.md#azure) 에서 직접
 * Azure Portal에서
 * Azure Resource Manager 템플릿에서 예제 템플릿은 [Azure Machine Learning 계산 인스턴스 만들기 템플릿](https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-compute-create-computeinstance)을 참조 하세요.
-* [AZURE MACHINE LEARNING SDK](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-computeinstance/train-on-computeinstance.ipynb) 사용
+* Azure Machine Learning SDK 사용
 * [Azure Machine Learning에 대 한 CLI 확장](reference-azure-machine-learning-cli.md#computeinstance) 에서
 
-VM 제품군 할당량 당 지역별 전용 코어 및 계산 인스턴스 생성에 적용 되는 총 지역 할당량 는 통합 되 고 Azure Machine Learning 교육 계산 클러스터 할당량과 공유 됩니다. 계산 인스턴스를 중지 하는 경우에는 계산 인스턴스를 다시 시작할 수 있도록 할당량을 해제 하지 않습니다.
+VM 제품군 할당량 당 지역별 전용 코어 및 계산 인스턴스 생성에 적용 되는 총 지역 할당량은 통합 되 고 Azure Machine Learning 교육 계산 클러스터 할당량과 공유 됩니다. 계산 인스턴스를 중지 하는 경우에는 계산 인스턴스를 다시 시작할 수 있도록 할당량을 해제 하지 않습니다.
 
 ## <a name="compute-target"></a>컴퓨팅 대상
 
-컴퓨팅 인스턴스는 Azure Machine Learning 컴퓨팅 학습 클러스터와 유사하게 [학습 컴퓨팅 대상](concept-compute-target.md#train)으로 사용할 수 있습니다. 
+계산 인스턴스는 Azure Machine Learning 계산 클러스터와 유사한 [학습 계산 대상](concept-compute-target.md#train) 으로 사용할 수 있습니다. 
 
 계산 인스턴스:
 * 작업 큐가 있습니다.
 * 회사에서 SSH 포트를 열지 않아도 가상 네트워크 환경에서 작업을 안전 하 게 실행 합니다. 작업은 컨테이너 화 된 환경에서 실행 되며 모델 종속성을 Docker 컨테이너에 패키지 합니다.
 * 여러 작은 작업을 병렬로 실행할 수 있습니다 (미리 보기).  코어 당 두 작업은 병렬로 실행할 수 있으며 나머지 작업은 큐에 대기 합니다.
+* 단일 노드 다중 GPU 분산 학습 작업 지원
 
 계산 인스턴스는 테스트/디버그 시나리오에 대 한 로컬 추론 배포 대상으로 사용할 수 있습니다.
-
-> [!NOTE]
-> 분산 학습 작업은 계산 인스턴스에서 지원 되지 않습니다.  분산 학습의 경우 (계산 클러스터) (방법-설정-학습-대상. md # amlcompute)를 사용 합니다.
-
-자세한 내용은 노트북 교육-사전 참조 [einstance](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-computeinstance/train-on-computeinstance.ipynb)를 참조 하세요. 이 노트북은 *학습/사전 주문형 einstance*의 스튜디오 **Samples** 폴더 에서도 사용할 수 있습니다.
 
 ## <a name="what-happened-to-notebook-vm"></a><a name="notebookvm"></a>Notebook VM의 변경 내용
 

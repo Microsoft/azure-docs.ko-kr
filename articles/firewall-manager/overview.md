@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 06/30/2020
+ms.date: 08/25/2020
 ms.author: victorh
-ms.openlocfilehash: 37cbc3737b826060e96524528b065bc8d711bd8b
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: ae220a1b70be7178c4c2fea01103991c8729ae79
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87384772"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855042"
 ---
 # <a name="what-is-azure-firewall-manager"></a>Azure Firewall Manager란?
 
@@ -25,7 +25,7 @@ Firewall Manager는 다음 두 가지 네트워크 아키텍처 유형에 대한
    [Azure Virtual WAN Hub](../virtual-wan/virtual-wan-about.md#resources)는 허브 및 스포크 아키텍처를 쉽게 만들 수 있는 Microsoft 관리 리소스입니다. 보안 및 라우팅 정책이 이러한 허브와 연결된 경우에는 *[보안 가상 허브](secured-virtual-hub.md)* 라고도 합니다. 
 - **Hub 가상 네트워크**
 
-   이는 사용자가 직접 만들고 관리하는 표준 Azure 가상 네트워크입니다. 이러한 허브와 연결된 보안 정책을 *보안 가상 허브*라고도 합니다. 지금은 Azure Firewall Policy만 지원됩니다. 워크로드 서버 및 서비스가 포함된 스포크 가상 네트워크를 피어링할 수 있습니다. 또한 모든 스포크에 피어링되지 않는 독립 실행형 가상 네트워크에서 방화벽을 관리할 수 있습니다.
+   이는 사용자가 직접 만들고 관리하는 표준 Azure 가상 네트워크입니다. 이러한 허브와 연결된 보안 정책을 *보안 가상 허브*라고도 합니다. 지금은 Azure Firewall Policy만 지원됩니다. 워크로드 서버 및 서비스가 포함된 스포크 가상 네트워크를 피어링할 수 있습니다. 어떤 스포크에도 피어링되지 않는 독립 실행형 가상 네트워크에서 방화벽을 관리할 수도 있습니다.
 
 *보안 가상 허브* 및 *허브 가상 네트워크* 아키텍처에 대한 자세한 비교는 [Azure Firewall Manager 아키텍처 옵션이란?](vhubs-and-vnets.md)을 참조하세요.
 
@@ -66,7 +66,7 @@ Azure Firewall 외에도 타사의 SECaaS(Security as a Service) 공급자를 �
 
 이 기능은 보안 가상 허브 배포에만 사용할 수 있습니다.
 
-B2I(분기와 인터넷 간) 트래픽 필터링을 위한 타사 공급자를 B2V(분기와 VNet 간), V2V(VNet 간) 및 V2I(VNet과 인터넷 간)를 위한 Azure Firewall과 함께 사용할 수 있습니다. B2V 또는 V2V에 Azure Firewall이 필요하지 않은 경우, V2I 트래픽 필터링을 위해 타사 공급자를 사용할 수도 있습니다. 
+B2I(분기와 인터넷 간) 트래픽 필터링을 위한 타사 공급자를 B2V(분기와 VNet 간), V2V(VNet 간) 및 V2I(VNet과 인터넷 간)를 위한 Azure Firewall과 함께 사용할 수 있습니다. B2V 또는 V2V에 Azure Firewall이 필요하지 않은 한 V2I 트래픽 필터링을 위해 타사 공급자를 사용할 수도 있습니다. 
 
 ## <a name="region-availability"></a>지역 가용성
 
@@ -78,11 +78,15 @@ Azure Firewall Manager에는 다음과 같이 알려진 문제가 있습니다.
 
 |문제  |설명  |완화 방법  |
 |---------|---------|---------|
-|트래픽 분할은 현재 지원되지 않습니다.|Office 365 및 Azure 퍼블릭 PaaS 트래픽 분할은 현재 지원되지 않습니다. 따라서 V2I 또는 B2I에 대해 타사 공급자를 선택하면 모든 Azure 퍼블릭 PaaS 및 Office 365 트래픽도 파트너 서비스를 통해 전송됩니다.|허브에서 트래픽 분할을 조사 중입니다.
-|지역당 하나의 보안 가상 허브.|지역당 둘 이상의 보안 가상 허브를 가질 수 없습니다.|한 지역에 여러 가상 WAN을 만듭니다.|
+|트래픽 분할|Office 365 및 Azure Public PaaS 트래픽 분할은 현재 지원되지 않습니다. 따라서 V2I 또는 B2I에 대해 타사 공급자를 선택하면 모든 Azure 퍼블릭 PaaS 및 Office 365 트래픽도 파트너 서비스를 통해 전송됩니다.|허브에서 트래픽 분할을 조사 중입니다.
+|지역당 하나의 보안 가상 허브|지역당 둘 이상의 보안 가상 허브를 가질 수 없습니다.|한 지역에 여러 가상 WAN을 만듭니다.|
 |기본 정책은 로컬 정책과 동일한 지역에 있어야 합니다.|기본 정책과 동일한 지역에 모든 로컬 정책을 만듭니다. 보안 허브의 한 지역에 생성된 정책을 다른 지역에서 계속 적용할 수 있습니다.|조사|
-|보안 가상 허브에서 허브 간 통신이 작동하지 않음|보안 가상 허브-보안 가상 허브 통신은 아직 지원되지 않지만 허브-허브 통신은 계속 작동합니다.|조사|
+|보안 가상 허브 배포에서 허브 간 트래픽 필터링|보안 Virtual Hub 간 통신 필터링은 아직 지원되지 않습니다. 그러나 Azure Firewall을 통한 프라이빗 트래픽 필터링을 사용하지 않는 경우 허브 간 통신은 계속 작동합니다.|조사|
+|가상 허브와 다른 지역의 스포크|가상 허브와 다른 지역의 스포크는 지원되지 않습니다.|조사<br><br>지역별 허브를 만들고 허브와 동일한 지역에 피어 Vnet을 만듭니다.|
+|프라이빗 트래픽 필터링이 활성화된 분기 간 트래픽|프라이빗 트래픽 필터링이 활성화된 경우 분기 간 트래픽이 지원되지 않습니다. |조사 중입니다.<br><br>분기 간 연결이 중요한 경우 프라이빗 트래픽을 보호하지 마세요.|
 |동일한 가상 WAN을 공유하는 모든 보안 Virtual Hubs는 동일한 리소스 그룹에 있어야 합니다.|이 동작은 현재 Virtual WAN Hubs에 맞춰 조정됩니다.|여러 Virtual WAN을 만들어 다른 리소스 그룹에서 보안 Virtual Hubs를 만들 수 있도록 합니다.|
+|대량 IP 주소 추가 실패|여러 공용 IP 주소를 추가하면 보안 허브 방화벽이 실패한 상태가 됩니다.|더 작은 공용 IP 주소 증분을 추가합니다. 예를 들어 한 번에 10개를 추가합니다.|
+|사용자 지정 DNS(미리 보기)가 구성된 보안 허브에서 애플리케이션 규칙이 실패합니다.|사용자 지정 DNS(미리 보기)는 강제 터널링이 설정된 보안 허브 배포 및 Hub 가상 네트워크 배포에서 작동하지 않습니다.|조사 중에 수정합니다.|
 
 ## <a name="next-steps"></a>다음 단계
 

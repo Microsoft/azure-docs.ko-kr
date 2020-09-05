@@ -6,14 +6,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 07/20/2020
+ms.date: 08/21/2020
 ms.author: victorh
-ms.openlocfilehash: 0c5302f35665b034bffa343ee90fd4fd609f56e5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 6fb613578e520f50701c9a09169f2d78c0c08c4f
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290158"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723999"
 ---
 # <a name="tutorial-create-and-configure-an-application-gateway-to-host-multiple-web-sites-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 여러 웹 사이트를 호스트하는 애플리케이션 게이트웨이 생성 및 구성
 
@@ -33,9 +33,9 @@ Azure Portal을 사용하여 [애플리케이션 게이트웨이](multiple-site-
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="sign-in-to-azure"></a>Azure에 로그인
+## <a name="prerequisites"></a>사전 요구 사항
 
-[https://portal.azure.com](https://portal.azure.com) 에서 Azure Portal에 로그인합니다.
+[https://portal.azure.com](https://portal.azure.com)에서 Azure Portal에 로그인합니다.
 
 ## <a name="create-an-application-gateway"></a>애플리케이션 게이트웨이 만들기
 
@@ -78,7 +78,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 2. **퍼블릭 IP 주소**에 대해 **새로 만들기**를 선택하고 퍼블릭 IP 주소 이름으로 *myAGPublicIPAddress*를 입력한 후 **확인**을 선택합니다. 
 
-     :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png" alt-text="VNet 만들기":::
+     :::image type="content" source="./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png" alt-text="다른 VNet 만들기":::
 
 3. 완료되면 **다음: 백 엔드**를 선택합니다.
 
@@ -156,14 +156,14 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
     - **리소스 그룹**: 리소스 그룹 이름으로 **myResourceGroupAG**를 선택합니다.
     - **가상 머신 이름**: 가상 머신 이름으로 *contosoVM*을 입력합니다.
-    - **사용자 이름**: 관리자 사용자 이름으로 *azureuser*를 입력합니다.
-    - **암호**: 관리자 암호로 *Azure123456!* 를 입력합니다.
-4. 나머지는 기본값으로 두고 **다음: 디스크**를 선택합니다.  
-5. **디스크** 탭을 기본값으로 두고 **다음: 네트워킹**을 선택합니다.
-6. **네트워킹** 탭에서 **가상 네트워크**로 **myVNet**이 선택되었고 **서브넷**이 **myBackendSubnet**으로 설정되었는지 확인합니다. 나머지는 기본값으로 두고 **다음: 관리**를 선택합니다.<br>Application Gateway는 가상 네트워크 외부의 인스턴스와 통신할 수 있지만, IP가 연결되어야 합니다.
-7. **관리** 탭에서 **부트 진단**을 **해제**합니다. 나머지는 기본값으로 두고 **검토 + 만들기**를 선택합니다.
-8. **검토 + 만들기** 탭에서 설정을 검토하고, 유효성 검사 오류를 수정하고, **만들기**를 선택합니다.
-9. 가상 머신 만들기가 완료되기를 기다렸다가 계속합니다.
+    - **사용자 이름**: 관리자 사용자 이름의 이름을 입력합니다.
+    - **암호**: 관리자의 암호를 입력합니다.
+1. 나머지는 기본값으로 두고 **다음: 디스크**를 선택합니다.  
+2. **디스크** 탭을 기본값으로 두고 **다음: 네트워킹**을 선택합니다.
+3. **네트워킹** 탭에서 **가상 네트워크**로 **myVNet**이 선택되었고 **서브넷**이 **myBackendSubnet**으로 설정되었는지 확인합니다. 나머지는 기본값으로 두고 **다음: 관리**를 선택합니다.<br>Application Gateway는 가상 네트워크 외부의 인스턴스와 통신할 수 있지만, IP가 연결되어야 합니다.
+4. **관리** 탭에서 **부트 진단**을 **해제**합니다. 나머지는 기본값으로 두고 **검토 + 만들기**를 선택합니다.
+5. **검토 + 만들기** 탭에서 설정을 검토하고, 유효성 검사 오류를 수정하고, **만들기**를 선택합니다.
+6. 가상 머신 만들기가 완료되기를 기다렸다가 계속합니다.
 
 ### <a name="install-iis-for-testing"></a>테스트를 위해 IIS 설치
 
@@ -173,7 +173,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
     ![사용자 지정 확장 설치](./media/application-gateway-create-gateway-portal/application-gateway-extension.png)
 
-2. 다음 명령을 실행하여 가상 머신에 IIS를 설치합니다. 
+2. 다음 명령을 실행하여 가상 머신에 IIS를 설치하고 <location\>을 리소스 그룹 영역으로 대체합니다. 
 
     ```azurepowershell-interactive
     Set-AzVMExtension `
@@ -184,7 +184,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
       -ExtensionType CustomScriptExtension `
       -TypeHandlerVersion 1.4 `
       -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' `
-      -Location EastUS
+      -Location <location>
     ```
 
 3. 앞에서 완료한 단계를 사용하여 두 번째 가상 머신을 만들고 IIS를 설치합니다. 가상 머신 이름으로 *fabrikamVM*을 사용하고, **VMName** 설정으로 **Set-AzVMExtension** cmdlet을 사용합니다.
@@ -237,7 +237,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 1. Azure Portal의 왼쪽 메뉴에서 **리소스 그룹**을 선택합니다.
 2. **리소스 그룹** 페이지의 목록에서 **myResourceGroupAG**를 검색하여 선택합니다.
 3. **리소스 그룹** 페이지에서 **리소스 그룹 삭제**를 선택합니다.
-4. **리소스 그룹 이름 입력**에 *myResourceGroupAG*를 입력하고 **삭제**를 선택합니다.
+4. **리소스 그룹 이름 입력**에 *myResourceGroupAG*를 입력한 다음, **삭제**를 선택합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

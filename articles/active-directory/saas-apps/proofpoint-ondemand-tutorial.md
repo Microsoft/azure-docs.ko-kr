@@ -2,26 +2,21 @@
 title: '자습서: Proofpoint on Demand와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Proofpoint on Demand 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 773e7f7d-ec31-411b-860d-6a6633335d43
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34bdd8561b30358e3cb5c9a64ed4405ba8d94588
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c3cebb7a63dd26f4dfb1fa46cb3b31a8b149da1d
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160148"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553435"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proofpoint-on-demand"></a>자습서: Proofpoint on Demand와 Azure Active Directory 통합
 
@@ -41,6 +36,9 @@ Proofpoint on Demand와 Azure AD 통합을 구성하려면 다음 항목이 필�
 
 * Azure AD 구독 Azure AD 환경이 없으면 [여기](https://azure.microsoft.com/pricing/free-trial/)에서 1개월 평가판을 구할 수 있습니다.
 * Proofpoint on Demand Single Sign-On이 설정된 구독
+
+> [!NOTE]
+> Azure AD에서 MFA 또는 Passwordless 인증을 사용하는 경우 SAML 요청에서 AuthnContext 값을 해제합니다. 그렇지 않으면 Azure AD는 AuthnContext의 불일치에 대한 오류를 throw하고 토큰을 애플리케이션으로 다시 보내지 않습니다.
 
 ## <a name="scenario-description"></a>시나리오 설명
 

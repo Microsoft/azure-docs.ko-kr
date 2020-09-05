@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: amishu
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 21f4494bedd824cef373a391c5635e35ec2600d0
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: db7bbfecdb83e12225445905c60afe0999838813
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406880"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918641"
 ---
 # <a name="enable-logging-in-the-speech-sdk"></a>Speech SDK에서 로깅 사용
 
@@ -25,7 +25,7 @@ ms.locfileid: "87406880"
 > [!NOTE]
 > 음성 SDK 버전은 JavaScript를 제외 하 고 지원 되는 모든 Speech SDK 프로그래밍 언어로 1.4.0 되므로 로깅을 사용할 수 있습니다.
 
-## <a name="sample"></a>예제
+## <a name="sample"></a>샘플
 
 로그 파일 이름은 구성 개체에서 지정 됩니다. 을 `SpeechConfig` 예로 가져오고 라는 인스턴스를 만든 것으로 가정 합니다 `config` .
 

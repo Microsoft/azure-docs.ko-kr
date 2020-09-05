@@ -2,13 +2,14 @@
 title: Azure Application Insights의 종속성 추적 | Microsoft Docs
 description: Application Insights를 사용 하 여 온-프레미스 또는 Microsoft Azure 웹 응용 프로그램에서 종속성 호출을 모니터링 합니다.
 ms.topic: conceptual
-ms.date: 06/26/2020
-ms.openlocfilehash: a7f42c19c835e4f5c49f4d7aa91504b606a09f5b
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 08/26/2020
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 3d98fe91994c992d11fc58e3fec42d1796c0c966
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321380"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936540"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Azure 애플리케이션 Insights에서 종속성 추적 
 
@@ -16,9 +17,9 @@ ms.locfileid: "87321380"
 
 ## <a name="automatically-tracked-dependencies"></a>자동으로 추적 되는 종속성
 
-.NET 및 .NET Core 용 Application Insights Sdk는 `DependencyTrackingTelemetryModule` 종속성을 자동으로 수집 하는 원격 분석 모듈인과 함께 제공 됩니다. 이 종속성 컬렉션은 연결 된 공식 문서에 따라 구성 된 경우 [ASP.NET](./asp-net.md) 및 [ASP.NET Core](./asp-net-core.md) 응용 프로그램에 대해 자동으로 사용 하도록 설정 됩니다. `DependencyTrackingTelemetryModule`는 [이](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/) nuget 패키지로 제공 되며 nuget 패키지 또는 중 하나를 사용 하는 경우 자동으로 `Microsoft.ApplicationInsights.Web` 가져옵니다 `Microsoft.ApplicationInsights.AspNetCore` .
+.NET 및 .NET Core 용 Application Insights Sdk는 `DependencyTrackingTelemetryModule` 종속성을 자동으로 수집 하는 원격 분석 모듈인와 함께 제공 됩니다. 이 종속성 컬렉션은 연결 된 공식 문서에 따라 구성 된 경우 [ASP.NET](./asp-net.md) 및 [ASP.NET Core](./asp-net-core.md) 응용 프로그램에 대해 자동으로 사용 하도록 설정 됩니다. `DependencyTrackingTelemetryModule` 는 [이](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/) nuget 패키지로 제공 되며 nuget 패키지 또는 중 하나를 사용 하는 경우 자동으로 `Microsoft.ApplicationInsights.Web` 가져옵니다 `Microsoft.ApplicationInsights.AspNetCore` .
 
- `DependencyTrackingTelemetryModule`는 현재 다음 종속성을 자동으로 추적 합니다.
+ `DependencyTrackingTelemetryModule` 는 현재 다음 종속성을 자동으로 추적 합니다.
 
 |종속성 |세부 정보|
 |---------------|-------|
@@ -34,7 +35,7 @@ ms.locfileid: "87321380"
 
 ## <a name="setup-automatic-dependency-tracking-in-console-apps"></a>콘솔 앱에서 자동 종속성 추적 설정
 
-.NET 콘솔 앱에서 종속성을 자동으로 추적 하려면 Nuget 패키지를 설치 하 `Microsoft.ApplicationInsights.DependencyCollector` 고 다음과 같이 초기화 합니다 `DependencyTrackingTelemetryModule` .
+.NET 콘솔 앱에서 종속성을 자동으로 추적 하려면 NuGet 패키지를 설치 하 `Microsoft.ApplicationInsights.DependencyCollector` 고 다음과 같이 초기화 합니다 `DependencyTrackingTelemetryModule` .
 
 ```csharp
     DependencyTrackingTelemetryModule depModule = new DependencyTrackingTelemetryModule();
@@ -154,7 +155,7 @@ ASP.NET 응용 프로그램의 경우, 계측 엔진을 사용 하거나 System.
 
 ## <a name="logs-analytics"></a>로그(분석)
 
-[Kusto 쿼리 언어](/azure/kusto/query/)에서 종속성을 추적할 수 있습니다. 몇 가지 예제는 다음과 같습니다.
+[Kusto 쿼리 언어](/azure/kusto/query/)에서 종속성을 추적할 수 있습니다. 다음은 몇 가지 예제입니다.
 
 * 실패한 종속성 호출을 찾습니다.
 
@@ -195,7 +196,19 @@ ASP.NET 응용 프로그램의 경우, 계측 엔진을 사용 하거나 System.
 
 ### <a name="how-does-automatic-dependency-collector-report-failed-calls-to-dependencies"></a>*자동 종속성 수집기에서 종속성에 대 한 실패 한 호출을 보고 하는 방법*
 
-* 실패 한 종속성 호출의 ' 성공 ' 필드는 False로 설정 됩니다. `DependencyTrackingTelemetryModule`보고 하지 않습니다 `ExceptionTelemetry` . 종속성에 대 한 전체 데이터 모델은 [여기](data-model-dependency-telemetry.md)에 설명 되어 있습니다.
+* 실패 한 종속성 호출의 ' 성공 ' 필드는 False로 설정 됩니다. `DependencyTrackingTelemetryModule` 보고 하지 않습니다 `ExceptionTelemetry` . 종속성에 대 한 전체 데이터 모델은 [여기](data-model-dependency-telemetry.md)에 설명 되어 있습니다.
+
+### <a name="how-do-i-calculate-ingestion-latency-for-my-dependency-telemetry"></a>*종속성 원격 분석에 대 한 수집 대기 시간을 계산 어떻게 할까요??*
+
+```kusto
+dependencies
+| extend E2EIngestionLatency = ingestion_time() - timestamp 
+| extend TimeIngested = ingestion_time()
+```
+
+### <a name="how-do-i-determine-the-time-the-dependency-call-was-initiated"></a>*어떻게 할까요? 종속성 호출이 시작 된 시간을 확인 하는 방법*
+
+Log Analytics 쿼리 뷰에서는 `timestamp` 종속성 호출 응답이 수신 된 직후에 발생 하는 지 수 종속성 () 호출이 시작 된 순간을 나타냅니다. 종속성 호출이 시작 된 시간을 계산 하려면 `timestamp` 종속성 호출을 기록 하 고이를 뺍니다 `duration` .
 
 ## <a name="open-source-sdk"></a>오픈 소스 SDK
 모든 Application Insights SDK와 마찬가지로 종속성 컬렉션 모듈도 오픈 소스 이기도 합니다. [공식 GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet-server)리포지토리에서 코드를 읽고 참여 하거나 문제를 보고 합니다.

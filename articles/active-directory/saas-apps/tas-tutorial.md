@@ -2,25 +2,21 @@
 title: '자습서: TAS와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 TAS 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 129b6e69-e3b4-41d7-9ab5-a2ddd0068f76
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: efd64830c0d9afa83838adef96cf1c103b4485e8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4aaf4f059976635f32c1a4e6b7130f8835598f98
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68943268"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552138"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tas"></a>자습서: TAS와 Azure Active Directory 통합
 

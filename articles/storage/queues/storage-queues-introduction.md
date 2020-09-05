@@ -1,6 +1,6 @@
 ---
 title: Azure 큐 소개 - Azure Storage
-description: Azure 큐 소개
+description: 대량의 메시지를 저장하기 위한 서비스인 Azure Queues 소개를 참조하세요. 큐 서비스에는 URL 형식, 스토리지 계정, 큐 및 메시지가 포함됩니다.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 03/18/2020
@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: overview
 ms.reviewer: dineshm
-ms.openlocfilehash: 678ab8a3f3dace17671c242939c20cb5499b2e39
-ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
+ms.openlocfilehash: c16f02922b2e815ddd4986ab07bf260b20d871ee
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84805120"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87826503"
 ---
 # <a name="what-are-azure-queues"></a>Azure 큐란?
 
@@ -35,7 +35,7 @@ Azure Queue Storage는 대량의 메시지를 저장하기 위한 서비스입�
 
 * **스토리지 계정:** Azure Storage에 대한 모든 액세스는 Storage 계정을 통해 수행됩니다. 스토리지 계정 용량에 대한 자세한 내용은 [표준 스토리지 계정의 확장성 및 성능 목표](../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json)를 참조하세요.
 
-* **큐:** 큐에는 메시지 세트가 포함됩니다. 큐 이름은 **반드시** 모두 소문자여야 합니다. 큐의 명명에 대한 자세한 내용은 [큐 및 메타데이터 명명](https://msdn.microsoft.com/library/azure/dd179349.aspx)을 참조하세요.
+* **큐:** 큐에는 메시지 집합이 포함됩니다. 큐 이름은 **반드시** 모두 소문자여야 합니다. 큐의 명명에 대한 자세한 내용은 [큐 및 메타데이터 명명](https://msdn.microsoft.com/library/azure/dd179349.aspx)을 참조하세요.
 
 * **메시지:** 최대 64KB인 임의 형식의 메시지입니다. 2017-07-29 미만 버전에서 허용되는 최대 TTL(Time to Live)은 7일입니다. 2017-07-29 이상 버전에서 허용되는 최대 TTL(Time to Live)은 모든 양수 또는 메시지가 만료되지 않는 -1입니다. 이 매개 변수를 생략하면 기본 TTL(Time to Live)은 7일입니다.
 

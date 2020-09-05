@@ -34,8 +34,10 @@
       href: release-notes.md
 - name: 빠른 시작
   items:
-    - name: Synapse 작업 영역 만들기
+    - name: Azure Portal을 사용하여 Synapse 작업 영역 만들기
       href: quickstart-create-workspace.md
+    - name: Azure CLI를 사용하여 Synapse 작업 영역 만들기
+      href: quickstart-create-workspace-cli.md
     - name: Synapse Studio 사용
       href: quickstart-synapse-studio.md
     - name: Power BI 작업 영역 연결
@@ -74,10 +76,10 @@
       href: ./sql/tutorial-connect-power-bi-desktop.md
     - name: 데이터 과학자
       items:
-        - name: NYC 택시 팁 예측
+        - name: Azure AutoML을 사용하여 회귀 실험 실행
+          href: ./spark/apache-spark-azure-machine-learning-tutorial.md
+        - name: Apache Spark MLlib를 사용하여 분류 모델 만들기
           href: ./spark/apache-spark-machine-learning-mllib-notebook.md
-        - name: 추가 라이브러리를 사용하여 Apache Spark 확대
-          href: ./spark/apache-spark-azure-portal-add-libraries.md
     - name: 데이터 분석가
       items:
         - name: SQL 주문형을 사용하여 분석 및 Synapse Studio를 사용하여 시각화
@@ -202,16 +204,22 @@
               href: ./spark/apache-spark-overview.md
             - name: Apache Spark 개념
               href: ./spark/apache-spark-concepts.md
-            - name: 런타임 언어 및 라이브러리 지원
-              href: ./spark/apache-spark-version-support.md
             - name: Delta Lake란?
               href: ./spark/apache-spark-what-is-delta-lake.md
+            - name: Delta Lake 기능 개요
+              href: ./spark/apache-spark-delta-lake-overview.md
             - name: Apache Spark 성능
               href: ./spark/apache-spark-performance.md
             - name: Apache Spark 자동 크기 조정 동작
               href: ./spark/apache-spark-autoscale.md
         - name: 개발
           items:
+            - name: 라이브러리
+              items:
+                - name: 라이브러리 추가 및 관리
+                  href: ./spark/apache-spark-azure-portal-add-libraries.md
+                - name: 런타임 언어 및 라이브러리 지원
+                  href: ./spark/apache-spark-version-support.md
             - name: Azure Synapse Studio Notebook
               href: ./spark/apache-spark-development-using-notebooks.md
             - name: Apache Spark용 .NET
@@ -244,7 +252,7 @@
           items:
             - name: 개요
               href: ./sql-data-warehouse/design-elt-data-loading.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: 최선의 구현 방법
+            - name: 모범 사례
               href: sql/data-loading-best-practices.md
             - name: Columnstore 압축
               href: sql/data-load-columnstore-compression.md
@@ -267,7 +275,7 @@
             - name: 결과 세트 캐싱
               href: /sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: 기계 학습 예측
-              href: ./sql-data-warehouse/sql-data-warehouse-predict.md
+              href: ./sql-data-warehouse/sql-data-warehouse-predict.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: 테이블
               items:
                 - name: 개요
@@ -450,6 +458,8 @@
               href: ./synapse-link/how-to-connect-synapse-link-cosmos-db.md
             - name: Azure Synapse Analytics용 Apache Spark와 함께 Azure Cosmos DB 분석 저장소 쿼리
               href: ./synapse-link/how-to-query-analytical-store-spark.md
+            - name: Apache Spark를 사용하여 Synapse Link에서 SQL 풀로 데이터 복사
+              href: ./synapse-link/how-to-copy-to-sql-pool.md
         - name: Synapse SQL
           items:
             - name: 스토리지의 데이터 쿼리

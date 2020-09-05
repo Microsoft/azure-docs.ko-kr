@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: defb959a56446da337c4c7c16ee118ceecd3e674
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: b8b1440f34feb1cda2661178e520590cb9ec54f1
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846312"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948405"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>조건부 액세스: 클라우드 앱 또는 작업
 
@@ -115,7 +115,7 @@ Microsoft 앱 외에도 관리자는 Azure AD에 등록된 애플리케이션을
 
 - [Azure AD 애플리케이션 프록시](../manage-apps/what-is-application-proxy.md)를 통해 게시된 애플리케이션
 - [갤러리에서 추가된 애플리케이션](../manage-apps/add-application-portal.md)
-- [갤러리에 없는 사용자 지정 애플리케이션](../manage-apps/add-non-gallery-app.md)
+- [갤러리에 없는 사용자 지정 애플리케이션](../manage-apps/view-applications-portal.md)
 - [앱 제공 컨트롤러 및 네트워크를 통해 게시된 레거시 애플리케이션](../manage-apps/secure-hybrid-access.md)
 - [암호 기반 Single Sign-On](../manage-apps/configure-password-single-sign-on-non-gallery-applications.md) 를 사용 하는 응용 프로그램
 

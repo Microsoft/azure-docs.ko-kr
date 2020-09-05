@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ramkris
-ms.openlocfilehash: 493a2b0d0aab47c2e38648ec8f6be75685dfd7ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a522a5a5945fe7a4b63dc759077d744f951a76f
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85119497"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814419"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Microsoft Azure Cosmos DB용 Synapse Link: 근 실시간 분석 사용 사례
 
@@ -34,7 +34,7 @@ Microsoft Azure Cosmos DB용 [Azure Synapse Link](synapse-link.md)는 클라우�
 
 다음 아키텍처에서는 공급망 분석에서 클라우드 네이티브 운영 데이터베이스 및 Synapse Link로 Microsoft Azure Cosmos DB를 활용하는 모습을 보여줍니다.
 
-:::image type="content" source="./media/synapse-link-use-cases/supply-chain-analytics.png" alt-text="공급망 분석의 Azure Cosmos DB에 대 한 Azure Synapse 링크" border="false":::
+:::image type="content" source="./media/synapse-link-use-cases/supply-chain-analytics.png" alt-text="공급망 분석의 Azure Cosmos DB에 대 한 Azure Synapse 링크 " border="false":::
 
 이전 아키텍처를 기반으로 Microsoft Azure Cosmos DB용 Synapse Link를 사용하여 다음과 사용 사례가 가능합니다.
 
@@ -52,9 +52,9 @@ Microsoft Azure Cosmos DB용 [Azure Synapse Link](synapse-link.md)는 클라우�
 
   Microsoft Azure Cosmos DB용 Synapse Link는 다양한 BI(비즈니스 인텔리전스)/보고 시나리오를 지원합니다.
 
-  * Synapse SQL 서버리스와의 네이티브 통합 및 T-SQL 언어의 전체 표현을 사용하여 Microsoft Azure Cosmos DB 분석 저장소에서 작동 데이터를 쿼리합니다.
+  * Synapse SQL server를 사용 하지 않는 기본 및 T-sql 언어의 표현을를 사용 하 여 네이티브 통합을 사용 하 여 Azure Cosmos DB 분석 저장소에서 작동 데이터를 쿼리 합니다.
 
-  * 익숙한 BI 도구에 대한 Synapse SQL 서버리스 지원을 통해 Microsoft Azure Cosmos DB의 자동 새로 고침 BI 대시보드를 모델링하고 게시합니다. Azure Analysis Services, Power BI Premium 등을 예로 들 수 있습니다.
+  * 친숙 한 BI 도구에 대 한 Synapse SQL 서버를 사용 하지 않는 지원을 통해 Azure Cosmos DB를 통해 BI 대시보드를 모델 및 게시 합니다. Azure Analysis Services, Power BI Premium 등을 예로 들 수 있습니다.
 
 다음은 Microsoft Azure Cosmos DB에 일괄 처리 및 스트리밍 데이터 통합에 대한 몇 가지 지침입니다.
 

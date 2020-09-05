@@ -94,8 +94,14 @@
       href: configure-automatic-updates.md
     - name: 언어 팩 설치
       href: language-packs.md
+    - name: Azure Advisor 사용
+      href: azure-advisor.md
+    - name: 해결 권장 사항
+      href: azure-advisor-recommendations.md
 - name: 개념
   items:
+    - name: 인증
+      href: authentication.md
     - name: 안전 URL 목록
       href: safe-url-list.md
     - name: Windows Virtual Desktop 환경
@@ -116,6 +122,14 @@
       href: faq.md
     - name: Windows 10 Enterprise 다중 세션 FAQ
       href: windows-10-multisession-faq.md
+    - name: MSIX 앱 연결
+      items:
+        - name: MSIX 앱 연결이란?
+          href: what-is-app-attach.md
+        - name: 용어
+          href: app-attach-glossary.md
+        - name: FAQ
+          href: app-attach-faq.md
     - name: 데이터 위치
       href: data-locations.md
 - name: 문제 해결
@@ -150,6 +164,10 @@
       href: /windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context
     - name: Azure CLI(명령줄 인터페이스)
       href: /cli/azure/ext/desktopvirtualization/?view=azure-cli-latest
+    - name: Azure 예제 시나리오
+      href: /azure/architecture/example-scenario/wvd/windows-virtual-desktop
+    - name: 이메일 검색
+      href: /windows-server/remote/remote-desktop-services/rds-email-discovery
 - name: 리소스
   items:
     - name: PowerShell

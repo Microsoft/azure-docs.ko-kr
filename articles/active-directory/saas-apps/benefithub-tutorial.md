@@ -2,25 +2,21 @@
 title: '자습서: BenefitHub와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory 및 BenefitHub 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 4069fe32-a452-463f-973e-7aa0baa4c2fa
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 12/31/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27308a18649bc8c8a53e42228bedaa7ee2d7f72f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d66eac504b6bdee4d6d9f4682f1c9d36d9d7e692
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75638797"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88537247"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-benefithub"></a>자습서: BenefitHub와 Azure Active Directory SSO(Single Sign-On) 통합
 

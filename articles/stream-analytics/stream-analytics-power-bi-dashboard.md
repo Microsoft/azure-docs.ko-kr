@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 03/05/2019
-ms.openlocfilehash: 4d0ee48a42814ab2c4229c5f8f239aa1a1c28544
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.date: 8/6/2020
+ms.openlocfilehash: 4c6d1d3877629150493ee2a57a04573760d2772a
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87314223"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870020"
 ---
 # <a name="stream-analytics-and-power-bi-a-real-time-analytics-dashboard-for-streaming-data"></a>Stream Analytics 및 Power BI: 스트리밍 데이터에 대한 실시간 분석 대시보드
 
@@ -39,7 +39,10 @@ Azure Stream Analytics를 사용하면 최고의 비즈니스 인텔리전스 �
 
 2. 왼쪽 메뉴의 **작업 토폴로지**에서 **출력**을 선택합니다. 그런 다음, **+ 추가**를 선택하고 드롭다운 메뉴에서 **Power BI**를 선택합니다.
 
-3. **+ 추가** > **Power BI**를 선택합니다. 다음 세부 정보로 양식을 채우고 **권한 부여**를 선택합니다.
+3. **+ 추가** > **Power BI**를 선택합니다. 그런 다음 양식을 다음과 같이 입력 하 고 사용자 고유의 사용자 id를 사용 하 여 Power BI에 연결 하는 **권한 부여** 를 선택 합니다 (토큰은 90 일 동안 유효함). 
+
+>[!NOTE]
+>프로덕션 작업의 경우 [관리 되는 id를 사용 하 여 Power BI Azure Stream Analytics 작업을 인증 하는](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity)데 연결 하는 것이 좋습니다.
 
    |**설정**  |**제안 값**  |
    |---------|---------|
@@ -230,3 +233,4 @@ Power BI를 사용하여 권한 부여가 새로 고쳐지면 권한 부여 영�
 * [Stream Analytics 출력](stream-analytics-define-outputs.md)
 * [Azure Stream Analytics 쿼리 언어 참조](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Azure Stream Analytics 관리 REST API 참조](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [관리 Id를 사용 하 여 Power BI에 대 한 Azure Stream Analytics 작업 인증](https://docs.microsoft.com/azure/stream-analytics/powerbi-output-managed-identity)

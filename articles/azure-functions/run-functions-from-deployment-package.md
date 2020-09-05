@@ -3,21 +3,18 @@ title: 패키지에서 Azure Functions 실행
 description: 함수 앱 프로젝트 파일을 포함하는 배포 패키지 파일을 탑재하여 Azure Functions 런타임이 함수를 실행하게 합니다.
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: d40896d6a4659945dbeda9ca965366f0b2ca4bd2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2d90cf78263b30b4315199cf1c543186a435f17
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79365274"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639888"
 ---
 # <a name="run-your-azure-functions-from-a-package-file"></a>패키지에서 Azure Functions 실행
 
 Azure의 함수 앱의 배포 패키지 파일에서 직접 함수를 실행할 수 있습니다. 다른 옵션은 함수 앱의 `d:\home\site\wwwroot` 디렉터리에 파일을 배포하는 것입니다.
 
 이 문서에서는 패키지에서 함수를 실행하는 이점에 대해 설명합니다. 또한 함수 앱에서 이 기능을 사용하도록 설정하는 방법을 보여줍니다.
-
-> [!IMPORTANT]
-> [프리미엄 계획](functions-scale.md#premium-plan)에서 Linux 함수 앱에 함수를 배포할 때는 항상 패키지 파일에서를 실행 하 고 [Azure Functions Core Tools를 사용 하 여 앱을 게시](functions-run-local.md#project-file-deployment)해야 합니다.
 
 ## <a name="benefits-of-running-from-a-package-file"></a>패키지 파일에서 실행하는 이점
   
@@ -35,7 +32,7 @@ Azure의 함수 앱의 배포 패키지 파일에서 직접 함수를 실행할 
 
 패키지에서 함수 앱을 실행하도록 설정하려면 함수 앱 설정에 `WEBSITE_RUN_FROM_PACKAGE` 설정을 추가하면 됩니다. `WEBSITE_RUN_FROM_PACKAGE` 설정에는 다음 값 중 하나가 있어야 합니다.
 
-| 값  | 설명  |
+| 값  | Description  |
 |---------|---------|
 | **`1`**  | Windows에서 실행 되는 함수 앱에 권장 됩니다. 함수 앱의 `d:\home\data\SitePackages` 폴더의 패키지 파일에서 실행합니다. [Zip 배포를 사용 하 여 배포](#integration-with-zip-deployment)하지 않는 경우이 옵션을 사용 하려면 폴더에 라는 파일이 있어야 합니다 `packagename.txt` . 이 파일에는 공백 없이 폴더에 패키지 파일 이름만 포함됩니다. |
 |**`<URL>`**  | 실행하려는 특정 패키지 파일의 위치입니다. Blob Storage를 사용하는 경우 [SAS(공유 액세스 서명)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer)가 포함된 프라이빗 컨테이너를 사용하여 Functions 런타임이 패키지에 액세스할 수 있게 해야 합니다. [Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md)를 사용하여 Blob 스토리지 계정에 패키지 파일을 업로드할 수 있습니다. URL을 지정 하는 경우 업데이트 된 패키지를 게시 한 후에도 [트리거를 동기화](functions-deployment-technologies.md#trigger-syncing) 해야 합니다. |
@@ -53,6 +50,9 @@ Azure의 함수 앱의 배포 패키지 파일에서 직접 함수를 실행할 
 ## <a name="integration-with-zip-deployment"></a>Zip 배포와 통합
 
 [Zip 배포][Zip deployment for Azure Functions]는 Azure App Service의 기능으로서 함수 앱 프로젝트를 `wwwroot` 디렉터리에 배포할 수 있습니다. 프로젝트는 .zip 배포 파일로 패키지됩니다. 패키지를 `d:\home\data\SitePackages` 폴더에 배포하는 데 동일한 API를 사용할 수 있습니다. `1`의 `WEBSITE_RUN_FROM_PACKAGE` 앱 설정 값을 사용하여 Zip 배포 API는 `d:\home\site\wwwroot`에 파일을 추출하지 않고 `d:\home\data\SitePackages` 폴더에 패키지를 복사합니다. 또한 `packagename.txt` 파일도 만듭니다. 다시 시작 후 패키지가 `wwwroot` 읽기 전용 파일 시스템으로에 탑재 됩니다. Zip 배포에 대한 자세한 내용은 [Azure Functions에 대한 Zip 배포](deployment-zip-push.md)를 참조하세요.
+
+> [!NOTE]
+> 배포가 발생 하면 함수 앱의 다시 시작이 트리거됩니다. 다시 시작 하기 전에 모든 기존 함수 실행이 완료 되거나 제한 시간이 초과 될 수 있습니다. 자세한 내용은 [배포 동작](functions-deployment-technologies.md#deployment-behaviors)을 참조 하세요.
 
 ## <a name="adding-the-website_run_from_package-setting"></a>WEBSITE_RUN_FROM_PACKAGE 설정 추가
 

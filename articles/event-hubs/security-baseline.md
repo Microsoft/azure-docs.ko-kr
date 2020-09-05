@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: e49a6b8000def0fe175930629b33203adec1b0f5
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: a6beb1023b3c934cdbb4b7dc479d87e23a7c96be
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86537057"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230367"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Event Hubs에 대 한 Azure 보안 기준
 
@@ -36,13 +36,13 @@ Azure 개인 링크 서비스를 사용 하 여 Azure Event Hubs 서비스에 �
 
 방화벽을 사용 하 여 Azure Event Hubs 네임 스페이스를 보호할 수도 있습니다. Azure Event Hubs는 인바운드 방화벽 지원에 대 한 IP 기반 액세스 제어를 지원 합니다. Azure Portal, Azure Resource Manager 템플릿 또는 Azure CLI 또는 Azure PowerShell를 사용 하 여 방화벽 규칙을 설정할 수 있습니다.
 
-Azure Event Hubs에서 virtual network 서비스 끝점을 사용 하는 방법:https://docs.microsoft.com/azure/event-hubs/event-hubs-service-endpoints
+Azure Event Hubs에서 virtual network 서비스 끝점을 사용 하는 방법: https://docs.microsoft.com/azure/event-hubs/event-hubs-service-endpoints
 
 자세한 내용은 azure 개인 링크를 사용 하 여 Azure Event Hubs 통합을 참조 https://docs.microsoft.com/azure/event-hubs/private-link-service 하세요.
 
-Event Hubs 네임 스페이스에서 가상 네트워크 통합 및 방화벽을 사용 하도록 설정 합니다.https://docs.microsoft.com/azure/event-hubs/event-hubs-tutorial-virtual-networks-firewalls
+Event Hubs 네임 스페이스에서 가상 네트워크 통합 및 방화벽을 사용 하도록 설정 합니다. https://docs.microsoft.com/azure/event-hubs/event-hubs-tutorial-virtual-networks-firewalls
 
-Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 하는 방법:https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
+Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 하는 방법: https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
 
 **Azure Security Center 모니터링**: 예
 
@@ -54,7 +54,7 @@ Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 �
 
 NSG 흐름 로그를 사용하도록 설정하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
-Azure Security Center에서 제공 하는 네트워크 보안 이해:https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
+Azure Security Center에서 제공 하는 네트워크 보안 이해: https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
 **Azure Security Center 모니터링**: 예
 
@@ -72,9 +72,9 @@ Azure Security Center에서 제공 하는 네트워크 보안 이해:https://doc
 
 **지침**: DDoS (배포 된 서비스 거부) 공격 으로부터 보호 하기 위해 event hubs와 연결 된 가상 네트워크에서 DDoS Protection Standard를 사용 하도록 설정 합니다. Azure Security Center 통합 위협 인텔리전스를 사용하여 알려진 악성 인터넷 IP 주소 또는 사용하지 않는 인터넷 IP 주소와의 통신을 거부합니다.
 
-DDoS 보호를 구성 하는 방법:[https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection](../virtual-network/manage-ddos-protection.md)
+DDoS 보호를 구성 하는 방법: [https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection](../virtual-network/manage-ddos-protection.md)
 
-Azure Security Center 통합 된 위협 인텔리전스에 대 한 자세한 내용은 다음과 같습니다.https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
+Azure Security Center 통합 된 위협 인텔리전스에 대 한 자세한 내용은 다음과 같습니다. https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
 **Azure Security Center 모니터링**: 예
 
@@ -90,7 +90,7 @@ NSG 흐름 로그를 사용하도록 설정하는 방법: https://docs.microsoft
 
 트래픽 분석을 사용하도록 설정하고 사용하는 방법: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
-Network Watcher를 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/network-watcher/network-watcher-create
+Network Watcher를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 **Azure Security Center 모니터링**: 예
 
@@ -136,7 +136,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
-Event Hubs 네임 스페이스에 대 한 Azure 기본 제공 정책:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
+Event Hubs 네임 스페이스에 대 한 Azure 기본 제공 정책:  https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
 
 
@@ -188,9 +188,9 @@ Azure Monitor에서 경고를 만드는 방법: https://docs.microsoft.com/azure
 
 **지침**: Azure Monitor 내에서 활동 로그 및 이벤트 허브 진단 설정 내에서 event hubs와 관련 된 로그를 구성 하 여 장기 보관 저장소에 대 한 저장소 계정으로 쿼리하거나 쿼리 될 Log Analytics 작업 영역으로 로그를 보냅니다.
 
-Azure Event Hubs에 대 한 진단 설정을 구성 하는 방법:https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs
+Azure Event Hubs에 대 한 진단 설정을 구성 하는 방법: https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs
 
-Azure 활동 로그 이해:https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
+Azure 활동 로그 이해: https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 
 **Azure Security Center 모니터링**: 예
 
@@ -202,9 +202,9 @@ Azure 활동 로그 이해:https://docs.microsoft.com/azure/azure-monitor/platfo
 
 또한 Azure 활동 로그 진단 설정을 사용 하도록 설정 하 고 Azure Storage 계정, 이벤트 허브 또는 Log Analytics 작업 영역으로 보낼 수 있습니다. 활동 로그는 Azure Event Hubs 및 기타 리소스에서 수행 된 작업에 대 한 통찰력을 제공 합니다. 활동 로그를 사용 하 여 Azure Event Hubs 네임 스페이스에 대해 수행 되는 모든 쓰기 작업 (PUT, POST, DELETE)에 대 한 "무엇을, 누가, 언제"를 결정할 수 있습니다.
 
-Azure Event Hubs에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs
+Azure Event Hubs에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs
 
-Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 **Azure Security Center 모니터링**: 예
 
@@ -222,7 +222,7 @@ Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 �
 
 **지침**: Azure Monitor 내에서 조직의 규정 준수 규정에 따라 Log Analytics 작업 영역 보존 기간을 설정 하 여 이벤트 허브 관련 인시던트를 캡처하고 검토 합니다.
 
-Log Analytics 작업 영역에 대 한 로그 보존 매개 변수를 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+Log Analytics 작업 영역에 대 한 로그 보존 매개 변수를 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -233,7 +233,7 @@ Log Analytics 작업 영역에 대 한 로그 보존 매개 변수를 설정 하
 **지침**: 비정상적인 동작에 대 한 로그를 분석 및 모니터링 하 고 event hubs와 관련 된 결과를 정기적으로 검토 합니다. Azure Monitor의 Log Analytics를 사용하여 로그를 검토하고 로그 데이터에 대한 쿼리를 수행합니다. 또는 데이터를 사용하도록 설정하여 Azure Sentinel 또는 타사 SIEM에 온보딩할 수 있습니다.
  
 
-Log Analytics 작업 영역에 대 한 자세한 내용은 다음을 수행 하십시오.https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
+Log Analytics 작업 영역에 대 한 자세한 내용은 다음을 수행 하십시오. https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 
 Azure Monitor에서 사용자 지정 쿼리를 수행하는 방법: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
@@ -249,11 +249,11 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 또는 온보드 데이터를 Azure 센티널로 설정할 수 있습니다. 
 
-Azure 활동 로그를 이해 합니다.https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
+Azure 활동 로그를 이해 합니다. https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 
-Azure Event Hubs에 대 한 진단 설정을 구성 하는 방법:https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs
+Azure Event Hubs에 대 한 진단 설정을 구성 하는 방법: https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs
 
-Log Analytics 작업 영역 로그 데이터를 경고 하는 방법:https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
+Log Analytics 작업 영역 로그 데이터를 경고 하는 방법: https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -293,9 +293,9 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 **지침**: AD (Azure Active Directory)에는 명시적으로 할당 되어야 하며 쿼리할 수 있는 기본 제공 역할이 있습니다. Azure AD PowerShell 모듈을 사용 하 여 임시 쿼리를 수행 하 여 관리 그룹의 구성원 인 계정을 검색 합니다. 
 
-PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할을 가져오는 방법:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
+PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할을 가져오는 방법: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
 
-PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할의 멤버를 가져오는 방법:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
+PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할의 멤버를 가져오는 방법: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
 
 **Azure Security Center 모니터링**: 예
 
@@ -307,7 +307,7 @@ PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할의 멤버를 가
 
 Event Hubs에 대 한 데이터 평면 액세스는 관리 되는 Id 또는 앱 등록 및 공유 액세스 서명을 사용 하 여 Azure AD를 통해 제어 됩니다. 공유 액세스 서명은 event hubs에 연결 하는 클라이언트에서 사용 되며 언제 든 지 다시 생성할 수 있습니다.
 
-Event Hubs에 대 한 공유 액세스 서명 이해:https://docs.microsoft.com/azure/event-hubs/authenticate-shared-access-signature
+Event Hubs에 대 한 공유 액세스 서명 이해: https://docs.microsoft.com/azure/event-hubs/authenticate-shared-access-signature
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -325,9 +325,9 @@ Event Hubs에 대 한 공유 액세스 서명 이해:https://docs.microsoft.com/
 
 - 소유자 권한이 있는 외부 계정은 구독에서 제거해야 합니다.
 
-Azure Security Center를 사용 하 여 id 및 액세스를 모니터링 하는 방법 (미리 보기):https://docs.microsoft.com/azure/security-center/security-center-identity-access
+Azure Security Center를 사용 하 여 id 및 액세스를 모니터링 하는 방법 (미리 보기): https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-Azure Policy 사용 방법:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Azure Policy 사용 방법: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 **Azure Security Center 모니터링**: 예
 
@@ -337,9 +337,9 @@ Azure Policy 사용 방법:https://docs.microsoft.com/azure/governance/policy/tu
 
 **지침**: Microsoft Azure에서는 AZURE ACTIVE DIRECTORY (AD)를 기반으로 하는 리소스 및 응용 프로그램에 대 한 통합 액세스 제어 관리 기능을 제공 합니다. Azure Event Hubs에서 Azure AD를 사용 하는 경우의 주요 이점은 더 이상 코드에 자격 증명을 저장할 필요가 없다는 것입니다. 대신 Microsoft Id 플랫폼에서 OAuth 2.0 액세스 토큰을 요청할 수 있습니다. 토큰을 요청 하는 리소스 이름은 https: \/ /eventhubs.azure.net/입니다. Azure AD는 응용 프로그램을 실행 하는 보안 주체 (사용자, 그룹 또는 서비스 사용자)를 인증 합니다. 인증에 성공 하면 Azure AD는 응용 프로그램에 액세스 토큰을 반환 하 고 응용 프로그램은 액세스 토큰을 사용 하 여 Azure Event Hubs 리소스에 대 한 요청에 권한을 부여할 수 있습니다.
 
-Event Hubs 리소스에 액세스 하기 위해 Azure AD를 사용 하 여 응용 프로그램을 인증 하는 방법:https://docs.microsoft.com/azure/event-hubs/authenticate-application
+Event Hubs 리소스에 액세스 하기 위해 Azure AD를 사용 하 여 응용 프로그램을 인증 하는 방법: https://docs.microsoft.com/azure/event-hubs/authenticate-application
 
-Azure AD를 사용 하 여 SSO 이해:https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
+Azure AD를 사용 하 여 SSO 이해: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -367,7 +367,7 @@ Azure에서 MFA를 사용하도록 설정하는 방법: https://docs.microsoft.c
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7: 관리 계정의 의심스러운 활동에 대한 로그 및 경고
 
@@ -377,7 +377,7 @@ PIM(Privileged Identity Management)을 배포하는 방법: https://docs.microso
 
 Azure AD 위험 검색 이해: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events
 
-사용자 지정 경고 및 알림에 대 한 작업 그룹을 구성 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/action-groups
+사용자 지정 경고 및 알림에 대 한 작업 그룹을 구성 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/action-groups
 
 **Azure Security Center 모니터링**: 예
 
@@ -399,9 +399,9 @@ Azure에서 명명된 위치를 구성하는 방법: https://docs.microsoft.com/
 
 **지침**: Event Hubs와 같은 Azure 리소스에 대 한 중앙 인증 및 권한 부여 시스템으로 AD (Azure Active Directory)를 사용 합니다. 이를 통해 RBAC (역할 기반 액세스 제어)가 중요 한 리소스를 관리할 수 있습니다.
 
- Azure AD 인스턴스를 만들고 구성 하는 방법:https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
+ Azure AD 인스턴스를 만들고 구성 하는 방법: https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
 
-Azure Event Hubs Azure Active Directory (AAD)와 통합 하는 방법에 대해 알아보려면 Azure Active Directory를 사용 하 여 Event Hubs 리소스에 대 한 액세스 권한 부여를 참조 하세요.https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
+Azure Event Hubs Azure Active Directory (AAD)와 통합 하는 방법에 대해 알아보려면 Azure Active Directory를 사용 하 여 Event Hubs 리소스에 대 한 액세스 권한 부여를 참조 하세요. https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -413,11 +413,11 @@ Azure Event Hubs Azure Active Directory (AAD)와 통합 하는 방법에 대해 
 
 추가로 Event Hubs의 공유 액세스 서명을 정기적으로 회전 합니다.
 
-Azure AD 보고 이해:https://docs.microsoft.com/azure/active-directory/reports-monitoring/
+Azure AD 보고 이해: https://docs.microsoft.com/azure/active-directory/reports-monitoring/
 
 Azure ID 액세스 검토를 사용하는 방법: https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
-Event Hubs에 대 한 공유 액세스 서명 이해:https://docs.microsoft.com/azure/event-hubs/authenticate-shared-access-signature
+Event Hubs에 대 한 공유 액세스 서명 이해: https://docs.microsoft.com/azure/event-hubs/authenticate-shared-access-signature
 
 **Azure Security Center 모니터링**: 예
 
@@ -431,7 +431,7 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 Azure 활동 로그를 Azure Monitor에 통합하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-Azure Active Directory를 사용 하 여 Event Hubs 리소스에 대 한 액세스 권한을 부여 합니다.https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
+Azure Active Directory를 사용 하 여 Event Hubs 리소스에 대 한 액세스 권한을 부여 합니다. https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -443,7 +443,7 @@ Azure Active Directory를 사용 하 여 Event Hubs 리소스에 대 한 액세�
 
 Azure AD 위험한 로그인을 확인하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
-Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -455,7 +455,7 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 **지침**: 현재 사용할 수 없음 고객 Lockbox는 Event Hubs에 대해 아직 지원 되지 않습니다.
 
-고객 Lockbox 지원 서비스 목록:https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
+고객 Lockbox 지원 서비스 목록: https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -485,11 +485,11 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 관리 그룹을 만드는 방법: https://docs.microsoft.com/azure/governance/management-groups/create
 
-Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 합니다.https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
+Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 합니다. https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
 
-태그를 만들고 활용 하는 방법:https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+태그를 만들고 활용 하는 방법: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-Virtual Network를 만드는 방법:https://docs.microsoft.com/azure/virtual-network/quick-create-portal
+Virtual Network를 만드는 방법: https://docs.microsoft.com/azure/virtual-network/quick-create-portal
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -501,13 +501,13 @@ Virtual Network를 만드는 방법:https://docs.microsoft.com/azure/virtual-net
 
 Microsoft는 Azure Event Hubs에 대 한 기본 인프라를 관리 하 고 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
-Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 합니다.https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
+Azure Event Hubs 네임 스페이스에 대 한 IP 방화벽 규칙을 구성 합니다. https://docs.microsoft.com/azure/event-hubs/event-hubs-ip-filtering
 
-Azure Event Hubs를 사용 하 여 Virtual Network 서비스 끝점 이해:https://docs.microsoft.com/azure/event-hubs/event-hubs-service-endpoints
+Azure Event Hubs를 사용 하 여 Virtual Network 서비스 끝점 이해: https://docs.microsoft.com/azure/event-hubs/event-hubs-service-endpoints
 
-Azure 개인 링크와 Azure Event Hubs 통합:https://docs.microsoft.com/azure/event-hubs/private-link-service
+Azure 개인 링크와 Azure Event Hubs 통합: https://docs.microsoft.com/azure/event-hubs/private-link-service
 
-네트워크 보안 그룹 및 서비스 태그 이해:https://docs.microsoft.com/azure/virtual-network/security-overview
+네트워크 보안 그룹 및 서비스 태그 이해: https://docs.microsoft.com/azure/virtual-network/security-overview
 
 Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
@@ -519,7 +519,7 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 **지침**: Azure Event Hubs는 기본적으로 TLS 암호화 통신을 적용 합니다. TLS 버전 1.0, 1.1 및 1.2는 현재 지원 됩니다. 그러나 TLS 1.0 및 1.1은 업계 전체를 사용 하지 않는 경로에 있으므로 가능 하면 TLS 1.2를 사용 합니다.
 
-Event Hubs의 보안 기능을 이해 하려면 네트워크 보안:https://docs.microsoft.com/azure/event-hubs/network-security
+Event Hubs의 보안 기능을 이해 하려면 네트워크 보안:  https://docs.microsoft.com/azure/event-hubs/network-security
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -541,7 +541,7 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 **지침**: Azure Event Hubs는 AZURE ACTIVE DIRECTORY (AD)를 사용 하 여 Event Hubs 리소스에 대 한 요청에 권한을 부여할 수 있도록 지원 합니다. Azure AD를 사용 하면 RBAC (역할 기반 액세스 제어)를 사용 하 여 사용자 또는 응용 프로그램 서비스 사용자 일 수 있는 보안 주체에 권한을 부여할 수 있습니다.
 
-Azure Event Hubs에 대 한 Azure AD RBAC 및 사용 가능한 역할 이해:https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
+Azure Event Hubs에 대 한 Azure AD RBAC 및 사용 가능한 역할 이해: https://docs.microsoft.com/azure/event-hubs/authorize-access-azure-active-directory
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -563,7 +563,7 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 **지침**: Azure Event Hubs는 Microsoft에서 관리 하는 키 또는 고객이 관리 하는 키를 사용 하 여 미사용 데이터를 암호화 하는 옵션을 지원 합니다. 이 기능을 사용 하면 미사용 Azure Event Hubs 데이터를 암호화 하는 데 사용 되는 고객 관리 키에 대 한 액세스를 만들고, 회전 하 고, 사용 하지 않도록 설정할 수 있습니다.
 
-Azure Event Hubs을 암호화 하기 위해 고객이 관리 하는 키를 구성 하는 방법:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
+Azure Event Hubs을 암호화 하기 위해 고객이 관리 하는 키를 구성 하는 방법: https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -717,7 +717,7 @@ Azure Graph를 사용하여 쿼리를 만드는 방법: https://docs.microsoft.c
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9: 승인된 Azure 서비스만 사용
 
-**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용한 고객 구독에 만들 수 있는 리소스 종류에 대한 제한을 설정할 수 있습니다.
+**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용하여 고객 구독에서 만들 수 있는 리소스 종류를 제한합니다.
 
 - 허용되지 않는 리소스 종류
 
@@ -747,7 +747,7 @@ Azure Resource Manager에 대한 액세스를 차단하도록 조건부 액세�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12: 사용자가 컴퓨팅 리소스 내에서 스크립트를 실행하는 기능 제한
 
@@ -777,7 +777,7 @@ Azure Resource Manager에 대한 액세스를 차단하도록 조건부 액세�
 
 - Event Hub는 가상 네트워크 서비스 엔드포인트를 사용해야 함
 
-Event Hubs 네임 스페이스에 대 한 Azure 기본 제공 정책:https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
+Event Hubs 네임 스페이스에 대 한 Azure 기본 제공 정책: https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
 사용 가능한 Azure 정책 별칭을 확인하는 방법: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
@@ -799,10 +799,10 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 **지침**: Azure Policy [거부] 및 [배포 되지 않은 경우 배포]를 사용 하 여 Event Hubs 사용 가능한 리소스에서 보안 설정을 적용 합니다. 
 
-Azure Policy를 구성 하 고 관리 하는 방법:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Azure Policy를 구성 하 고 관리 하는 방법:  https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
  
-Azure Policy 효과에 대 한 자세한 내용은 다음과 같습니다.https://docs.microsoft.com/azure/governance/policy/concepts/effects
+Azure Policy 효과에 대 한 자세한 내용은 다음과 같습니다.  https://docs.microsoft.com/azure/governance/policy/concepts/effects
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -830,7 +830,7 @@ Azure Repos 설명서: https://docs.microsoft.com/azure/devops/repos/index?view=
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -876,9 +876,9 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 **지침**: event hubs에 액세스 하는 데 사용 되는 Azure App Service에서 실행 되는 azure 가상 머신 또는 웹 응용 프로그램의 경우 Azure Key Vault와 함께 관리 서비스 ID를 사용 하 여 azure Event Hubs 배포에 대 한 공유 액세스 서명 관리를 간소화 하 고 보호 합니다. Key Vault 일시 삭제를 사용 하도록 설정 했는지 확인 합니다.
 
-Event Hubs 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id 인증:https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest
+Event Hubs 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id 인증: https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest
 
-Event Hubs에 대 한 고객 관리 키 구성:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key 
+Event Hubs에 대 한 고객 관리 키 구성: https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key 
 
 Azure 관리 ID와 통합하는 방법: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
@@ -896,9 +896,9 @@ Key Vault를 만드는 방법: https://docs.microsoft.com/azure/key-vault/quick-
 
 관리 ID를 사용하여 Azure AD(Active Directory)에서 자동으로 관리되는 ID를 Azure 서비스에 제공합니다. 관리 Id를 사용 하면 코드에 자격 증명 없이 Azure Key Vault를 포함 하 여 Azure AD 인증을 지 원하는 모든 서비스에 인증할 수 있습니다.
 
-Event Hubs 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id 인증:https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest 
+Event Hubs 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id 인증: https://docs.microsoft.com/azure/event-hubs/authenticate-managed-identity?tabs=latest 
 
-Event Hubs에 대 한 고객 관리 키 구성:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key 
+Event Hubs에 대 한 고객 관리 키 구성: https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key 
 
 관리 ID를 구성하는 방법: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
 
@@ -944,7 +944,7 @@ Microsoft 맬웨어 방지는 Azure 서비스 (예: Azure Cache for Redis)를 �
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3: 맬웨어 방지 소프트웨어 및 서명이 업데이트되었는지 확인
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -958,7 +958,7 @@ Microsoft 맬웨어 방지는 Azure 서비스 (예: Azure Cache for Redis)를 �
 
 **지침**: Azure Event Hubs에 대 한 지역 재해 복구를 구성 합니다. (가용성 영역을 사용하지 않는 경우)전체 Azure 지역 또는 데이터 센터에서 가동 중지 시간이 발생하면 데이터 처리가 다른 지역 또는 데이터 센터에서 계속 작동되는 것이 중요합니다. 따라서 지리적 재해 복구 및 지리적 복제는 기업에 중요한 기능입니다. Azure Event Hubs는 네임스페이스 수준에서 지리적 재해 복구 및 지리적 복제를 둘 다 지원합니다. 
 
-Azure Event Hubs에 대 한 지역 재해 복구 이해:https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones
+Azure Event Hubs에 대 한 지역 재해 복구 이해: https://docs.microsoft.com/azure/event-hubs/event-hubs-geo-dr#availability-zones
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -970,9 +970,9 @@ Azure Event Hubs에 대 한 지역 재해 복구 이해:https://docs.microsoft.c
 
 다음 PowerShell 명령을 사용 하 여 Key Vault 암호를 정기적으로 자동 백업 하도록 합니다. Backup-AzKeyVaultSecret
 
-미사용 Azure Event Hubs 데이터를 암호화 하기 위해 고객이 관리 하는 키를 구성 하는 방법:https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
+미사용 Azure Event Hubs 데이터를 암호화 하기 위해 고객이 관리 하는 키를 구성 하는 방법: https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
 
-Key Vault 비밀을 백업 하는 방법:https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
+Key Vault 비밀을 백업 하는 방법: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultsecret
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -984,7 +984,7 @@ Key Vault 비밀을 백업 하는 방법:https://docs.microsoft.com/powershell/m
 
  
 
-Azure에서 주요 자격 증명 모음 키를 복원 하는 방법:https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
+Azure에서 주요 자격 증명 모음 키를 복원 하는 방법: https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -996,11 +996,11 @@ Azure에서 주요 자격 증명 모음 키를 복원 하는 방법:https://docs
 
 Event Hubs 데이터를 캡처하는 데 사용 되는 Azure Storage 계정에 대해 일시 삭제를 구성 합니다. 이 기능은 Azure Data Lake Storage Gen 2에서 아직 지원 되지 않습니다.
 
-Key Vault에서 일시 삭제를 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+Key Vault에서 일시 삭제를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
-키를 사용 하 여 키 자격 증명 모음을 설정 합니다.https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
+키를 사용 하 여 키 자격 증명 모음을 설정 합니다. https://docs.microsoft.com/azure/event-hubs/configure-customer-managed-key
 
-Azure Storage blob에 대 한 일시 삭제:https://docs.microsoft.com//azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+Azure Storage blob에 대 한 일시 삭제: https://docs.microsoft.com//azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
 **Azure Security Center 모니터링**: 예
 
@@ -1079,7 +1079,7 @@ Azure Security Center 보안 연락처를 설정하는 방법: https://docs.micr
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11.1: Azure 리소스에 대한 침투 테스트를 정기적으로 수행 및 모든 중요한 보안 결과를 60일 이내에 수정
 
 **지침**: Microsoft Engagement 규칙에 따라 침투 테스트가 microsoft 정책을 위반 하지 않는지 확인 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1 하세요.
-Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 Microsoft의 전략 및 실행에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 Microsoft의 전략 및 실행에 대 한 자세한 내용은 다음에서 확인할 수 있습니다. https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Azure Security Center 모니터링**: 예
 

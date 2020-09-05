@@ -3,12 +3,12 @@ title: IoT Edge 할당량에 대 한 라이브 비디오 분석-Azure
 description: 이 문서에서는 IoT Edge 할당량 및 제한 사항에 대 한 라이브 비디오 분석을 설명 합니다.
 ms.topic: conceptual
 ms.date: 05/22/2020
-ms.openlocfilehash: 90141fa850c9ab3e3abbea15001249da0736ac45
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 32a24079b36655bfdacd25b07d419009f5012507
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091813"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750233"
 ---
 # <a name="quotas-and-limitations"></a>할당량 및 제한 사항
 
@@ -36,21 +36,23 @@ GraphTopologySet를 통해 생성 된 모듈 당 최대 50 그래프 토폴로�
    * 그래프 토폴로지 마다 하나의 RTSP 원본만 허용 됩니다.
 * 프레임 속도로 필터 프로세서
    * RTSP 원본 또는 동작 감지 프로세서에서 즉시 다운스트림 이어야 합니다.
-   * HTTP 확장 프로세서의 다운스트림은 사용할 수 없습니다.
+   * 는 HTTP 또는 gRPC 확장 프로세서의 다운스트림에서 사용할 수 없습니다.
    * 동작 감지 프로세서에서 업스트림 일 수 없습니다.
 * HTTP 확장 프로세서
+   * 그래프 토폴로지에는 이러한 프로세서가 최대 하나만 있을 수 있습니다.
+* gRPC 확장 프로세서
    * 그래프 토폴로지에는 이러한 프로세서가 최대 하나만 있을 수 있습니다.
 * 동작 감지 프로세서
    * RTSP 원본에서 즉시 다운스트림 이어야 합니다.
    * 그래프 토폴로지에는 이러한 프로세서가 최대 하나만 있을 수 있습니다.
-   * HTTP 확장 프로세서의 다운스트림은 사용할 수 없습니다.
+   * 는 HTTP 또는 gRPC 확장 프로세서의 다운스트림에서 사용할 수 없습니다.
 * 신호 게이트 프로세서
    * RTSP 원본에서 즉시 다운스트림 이어야 합니다.
 * 자산 싱크 
    * RTSP 원본 또는 신호 게이트 프로세서에서 즉시 다운스트림 이어야 합니다.
 * 파일 싱크
    * 신호 게이트 프로세서에서 즉시 다운스트림 이어야 합니다.
-   * HTTP 확장 프로세서 또는 동작 감지 프로세서의 바로 다운스트림 일 수 없습니다.
+   * HTTP 또는 gRPC 확장 프로세서 또는 동작 감지 프로세서의 바로 다운스트림 일 수 없습니다.
 * IoT Hub 싱크
    * 은 (는) IoT Hub 소스의 바로 다운스트림으로 수 없습니다.
 

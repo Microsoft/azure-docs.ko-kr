@@ -8,12 +8,12 @@ ms.date: 4/22/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 1eebacefa2e91970263c301de4ff160ea7c9f2eb
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c211c0e5ef0b39f778db7c922fafc735e2411068
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420348"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930046"
 ---
 # <a name="write-client-app-authentication-code"></a>클라이언트 앱 인증 코드 작성
 
@@ -34,16 +34,10 @@ Azure digital Twins의 Api 및 Sdk에 대 한 자세한 내용은 [*방법: Azur
 ## <a name="authentication-and-client-creation-net-c-sdk"></a>인증 및 클라이언트 만들기: .NET (c #) SDK
 
 먼저 .NET SDK 및 인증 도구를 사용 하기 위해 프로젝트에 다음 패키지를 포함 합니다.
-* `Azure.DigitalTwins.Core`(버전 `1.0.0-preview.2` )
+* `Azure.DigitalTwins.Core` (버전 `1.0.0-preview.2` )
 * `Azure.Identity`
 
 선택한 도구에 따라 Visual Studio 패키지 관리자 또는 명령줄 도구를 사용 하 여 패키지를 포함할 수 있습니다 `dotnet` . 
-
-.NET SDK를 사용 하 여 인증 하려면 [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) library에서 정의한 자격 증명 가져오기 방법 중 하나를 사용 합니다.
-
-일반적으로 사용 되는 두 가지는 다음과 같습니다. 
-* [InteractiveBrowserCredential](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet). 이 메서드는 대화형 응용 프로그램을 위한 것 이며 인증을 위해 웹 브라우저를 표시 합니다.
-* [ManagedIdentityCredential](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet). 이 방법은 [관리 id (MSI)](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)가 필요한 경우 (예: Azure Functions 사용 하는 경우에 유용 합니다. 
 
 또한 다음 using 문을 사용 해야 합니다.
 
@@ -51,6 +45,13 @@ Azure digital Twins의 Api 및 Sdk에 대 한 자세한 내용은 [*방법: Azur
 using Azure.Identity;
 using Azure.DigitalTwins.Core;
 ```
+.NET SDK를 사용 하 여 인증 하려면 [Azure. Identity](https://docs.microsoft.com/dotnet/api/azure.identity?view=azure-dotnet) library에서 정의한 자격 증명 가져오기 방법 중 하나를 사용 합니다. 다음은 일반적으로 사용 되는 두 가지 방법입니다 (동일한 응용 프로그램 에서도 함께 사용 됨).
+
+* [InteractiveBrowserCredential](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) 는 대화형 응용 프로그램을 위한 것 이며 인증 된 SDK 클라이언트를 만드는 데 사용할 수 있습니다.
+* [ManagedIdentityCredential](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet) 는 MSI (관리 id)를 필요로 하는 경우에 유용 하며, Azure Functions을 사용 하는 것이 좋습니다.
+
+### <a name="interactivebrowsercredential-method"></a>InteractiveBrowserCredential 메서드
+[InteractiveBrowserCredential](https://docs.microsoft.com/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) 메서드는 대화형 응용 프로그램을 위한 것 이며 인증을 위해 웹 브라우저를 엽니다.
 
 대화형 브라우저 자격 증명을 사용 하 여 인증 된 SDK 클라이언트를 만들려면 다음 코드를 추가 합니다.
 
@@ -79,6 +80,8 @@ try
 >[!NOTE]
 > 위와 같이 클라이언트 ID, 테 넌 트 ID 및 인스턴스 URL을 코드에 직접 저장할 수 있지만, 코드에서 구성 파일 또는 환경 변수 로부터 이러한 값을 가져오는 것이 좋습니다.
 
+### <a name="managedidentitycredential-method"></a>ManagedIdentityCredential 메서드
+ [ManagedIdentityCredential](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet) 메서드는 [관리 id (MSI)](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)가 필요한 경우 (예: Azure Functions 사용 하는 경우에 유용 합니다.
 Azure 함수에서 다음과 같이 관리 되는 id 자격 증명을 사용할 수 있습니다.
 
 ```csharp

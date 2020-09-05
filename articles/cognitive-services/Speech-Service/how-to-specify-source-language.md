@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: qiohu
 zone_pivot_groups: programming-languages-set-two
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 10a07e00d451b5e23f49bbb3b0d358057c629b8c
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 3d761bbad4cb2cd2cdd1c34459f25c811bb41c7e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406676"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918692"
 ---
 # <a name="specify-source-language-for-speech-to-text"></a>음성 텍스트에 대 한 소스 언어 지정
 
@@ -48,7 +48,7 @@ var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioC
 ```
 
 >[!Note]
-> `SpeechRecognitionLanguage`및 `EndpointId` set 메서드는 `SpeechConfig` c #의 클래스에서 더 이상 사용 되지 않습니다. 이러한 메서드는 사용 하지 않는 것이 좋습니다 .을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
+> `SpeechRecognitionLanguage` 및 `EndpointId` set 메서드는 `SpeechConfig` c #의 클래스에서 더 이상 사용 되지 않습니다. 이러한 메서드는 사용 하지 않는 것이 좋습니다 .을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
 
 ::: zone-end
 
@@ -78,7 +78,7 @@ auto recognizer = SpeechRecognizer::FromConfig(speechConfig, sourceLanguageConfi
 ```
 
 >[!Note]
-> `SetSpeechRecognitionLanguage`및 `SetEndpointId` 는 `SpeechConfig` c + + 및 Java의 클래스에서 사용 되지 않는 메서드입니다. 이러한 메서드는 사용 하지 않는 것이 좋습니다 .을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
+> `SetSpeechRecognitionLanguage` 및 `SetEndpointId` 는 `SpeechConfig` c + + 및 Java의 클래스에서 사용 되지 않는 메서드입니다. 이러한 메서드는 사용 하지 않는 것이 좋습니다 .을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
 
 ::: zone-end
 
@@ -107,7 +107,7 @@ SpeechRecognizer recognizer = new SpeechRecognizer(speechConfig, sourceLanguageC
 ```
 
 >[!Note]
-> `setSpeechRecognitionLanguage`및 `setEndpointId` 는 `SpeechConfig` c + + 및 Java의 클래스에서 사용 되지 않는 메서드입니다. 이러한 메서드는 사용 하지 않는 것이 좋습니다 .을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
+> `setSpeechRecognitionLanguage` 및 `setEndpointId` 는 `SpeechConfig` c + + 및 Java의 클래스에서 사용 되지 않는 메서드입니다. 이러한 메서드는 사용 하지 않는 것이 좋습니다 .을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
 
 ::: zone-end
 
@@ -139,7 +139,7 @@ speech_recognizer = speechsdk.SpeechRecognizer(
 ```
 
 >[!Note]
-> `speech_recognition_language`및 `endpoint_id` 속성은 Python의 클래스에서 더 이상 사용 되지 않습니다 `SpeechConfig` . 이러한 속성을 사용 하는 것은 권장 되지 않으며을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
+> `speech_recognition_language` 및 `endpoint_id` 속성은 Python의 클래스에서 더 이상 사용 되지 않습니다 `SpeechConfig` . 이러한 속성을 사용 하는 것은 권장 되지 않으며을 생성할 때 사용 하지 않아야 `SpeechRecognizer` 합니다.
 
 ::: zone-end
 
@@ -195,11 +195,11 @@ SPXSpeechRecognizer* speechRecognizer = [[SPXSpeechRecognizer alloc] initWithSpe
 ```
 
 >[!Note]
-> `speechRecognitionLanguage`및 `endpointId` 속성은 `SPXSpeechConfiguration` 목표-C의 클래스에서 더 이상 사용 되지 않습니다. 이러한 속성을 사용 하는 것은 권장 되지 않으며을 생성할 때 사용 하지 않아야 `SPXSpeechRecognizer` 합니다.
+> `speechRecognitionLanguage` 및 `endpointId` 속성은 `SPXSpeechConfiguration` 목표-C의 클래스에서 더 이상 사용 되지 않습니다. 이러한 속성을 사용 하는 것은 권장 되지 않으며을 생성할 때 사용 하지 않아야 `SPXSpeechRecognizer` 합니다.
 
 ::: zone-end
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 * 음성 텍스트에 대해 지원 되는 언어 및 로캘 목록은 [언어 지원](language-support.md)을 참조 하세요.
 

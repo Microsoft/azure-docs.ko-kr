@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 06/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 817a7c132657ba0ad8910a334b571f9d05481a0d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 70a9d9f8b137f02e647d1ea0edddd409ec3cdaf3
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021225"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079195"
 ---
 # <a name="tutorial-provision-an-azure-spring-cloud-instance-with-terraform"></a>자습서: Terraform을 사용하여 Azure Spring Cloud 인스턴스 프로비저닝
 
@@ -37,7 +37,7 @@ ms.locfileid: "87021225"
 
 1. [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040)에 로그인합니다.
 
-1. [Azure Cloud Shell](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java#use-azure-cloud-shell)을 엽니다.
+1. [Azure Cloud Shell](https://docs.microsoft.com/azure/app-service/quickstart-java#use-azure-cloud-shell)을 엽니다.
 
 1. Cloud Shell 편집기를 시작합니다.
 

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 03/20/2019
+ms.date: 08/10/2020
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31388f27eddcef2c75d4ad4d2030655b35f6aa1c
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: abc0417fc6f97501566f03d7eae0e4274d1dbced
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446958"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182346"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: 버전 릴리스 내역
 Azure Active Directory 팀은 새로운 기능과 성능으로 Azure AD Connect Health를 정기적으로 업데이트합니다. 이 문서는 출시된 버전 및 기능을 나열합니다.  
@@ -31,6 +31,14 @@ Azure Active Directory 팀은 새로운 기능과 성능으로 Azure AD Connect 
 >
 
 동기화용 Azure AD Connect Health는 Azure AD Connect 설치와 통합됩니다. [Azure AD Connect 릴리스 기록](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history)에 대해 자세히 알아보고 기능 피드백의 경우 [Connect Health 사용자 의견 채널](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591)에서 투표하세요.
+
+## <a name="april-2020"></a>2020년 4월
+**에이전트 업데이트**
+
+- AD FS에 대 한 Azure AD Connect Health 에이전트 (버전 3.1.77.0)
+
+   1.   경고가 잘못 보고 된 "AD FS 서비스에 대 한 SPN (서비스 사용자 이름)이 잘못 되었습니다." 경고에 대 한 버그 수정
+
 
 ## <a name="july-2019"></a>2019년 7월
 **에이전트 업데이트**
@@ -217,7 +225,7 @@ Azure Active Directory 팀은 새로운 기능과 성능으로 Azure AD Connect 
 ## <a name="november-2015"></a>2015년 11월
 **새로운 기능:**
 
-* Azure [RBAC (역할 기반 액세스 제어)](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) 에 대 한 지원
+* Azure [RBAC (역할 기반 액세스 제어)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) 에 대 한 지원
 
 **새로운 미리 보기 기능:**
 

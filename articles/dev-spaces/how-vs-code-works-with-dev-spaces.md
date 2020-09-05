@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 description: Kubernetes 응용 프로그램을 디버그 하 고 신속 하 게 반복 하는 데 도움이 되는 Visual Studio Code 및 Azure Dev Spaces 방법을 알아보세요.
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너
-ms.openlocfilehash: 73a2ae1f603626acf7ec4d42838b301c88ee21da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: decf61bd55ed15182f030bb02a2fe9c959749556
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84307353"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209875"
 ---
 # <a name="how-visual-studio-code-works-with-azure-dev-spaces"></a>Azure Dev Spaces에서 Visual Studio Code 작동 하는 방법
 
@@ -43,19 +43,15 @@ AKS 클러스터를 만들고 Visual Studio Code 외부에서 클러스터의 Az
 
 프로젝트를 시작한 후에는 Visual Studio Code에서 직접 개발 공간에서 실행 되는 Java, Node.js 및 .NET Core 서비스를 디버그할 수 있습니다. 디렉터리의 시작 구성은 `.vscode` 개발 공간에서 디버깅을 사용 하도록 설정 하 여 서비스를 실행 하기 위한 추가 디버깅 정보를 제공 합니다. 또한 Visual Studio Code는 dev 공간의 실행 중인 컨테이너에 있는 디버그 프로세스에 연결 하 여 중단점을 설정 하 고, 변수를 검사 하 고, 다른 디버깅 작업을 수행할 수 있습니다.
 
-## <a name="use-visual-studio-code-with-azure-dev-spaces"></a>Azure Dev Spaces에서 Visual Studio Code 사용
+## <a name="next-steps"></a>다음 단계
 
-다음 빠른 시작에서 Azure Dev Spaces 사용 하 Visual Studio Code 및 Azure Dev Spaces 확장을 확인할 수 있습니다.
+Azure Dev Spaces 작동 방법에 대해 자세히 알아보세요.
 
-* [Visual Studio Code 및 Java를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-java]
-* [Visual Studio Code 및 .NET을 사용 하 여 빠르게 반복 하 고 디버그][quickstart-netcore]
-* [Visual Studio Code 및 Node.js를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-node]
+> [!div class="nextstepaction"]
+> [Azure Dev Spaces의 작동 원리](how-dev-spaces-works.md)
 
 [azds-extension]: https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds
 [azds-yaml]: how-dev-spaces-works-prep.md#prepare-your-code
 [csharp-extension]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
 [java-extension]: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debugger-azds
 [maven]: https://maven.apache.org
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md

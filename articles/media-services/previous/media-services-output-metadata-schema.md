@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: e53aad83e79f236bf9a0bb3029e332cad211471a
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: cd81ef78ecc5ef9cea71adb387597681460d50c8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86058098"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89261328"
 ---
 # <a name="output-metadata"></a>출력 메타데이터
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 ## <a name="overview"></a>개요
 인코딩 작업은 일부 인코딩 태스크를 수행할 입력 자산(또는 자산)과 연결됩니다. 예를 들어 MP4 파일을 H.264 MP4 적응 비트 전송률 집합으로 인코딩하며, 미리 보기 이미지와 오버레이를 만듭니다. 태스크가 완료되는 즉시 출력 자산이 생성됩니다.  출력 자산에는 비디오, 오디오, 미리 보기 등이 포함 됩니다. 출력 자산에는 출력 자산에 대 한 메타 데이터가 있는 파일도 포함 됩니다. 메타데이터 XML 파일의 이름은 &lt;source_file_name&gt;_manifest.xml 형식입니다(예: BigBuckBunny_manifest.xml).  
 
@@ -37,7 +40,7 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 인코딩 작업에 대한 AssetFile 항목의 컬렉션입니다.  
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
 | **AssetFile**<br/><br/> minOccurs="0" maxOccurs="1" |AssetFiles 컬렉션의 일부인 AssetFile 요소입니다. |
 
@@ -45,38 +48,38 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | Description |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **이름**<br/><br/> 필요한 공간 |**xs:string** |미디어 자산 파일 이름입니다. |
-| **크기**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:long** |자산 파일의 크기(바이트)입니다. |
-| **Duration**<br/><br/> 필요한 공간 |**xs:duration** |콘텐츠 재생 시간입니다. |
+| **이름**<br/><br/> 필수 |**xs:string** |미디어 자산 파일 이름입니다. |
+| **크기**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:long** |자산 파일의 크기(바이트)입니다. |
+| **Duration**<br/><br/> 필수 |**xs:duration** |콘텐츠 재생 시간입니다. |
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
 | **원본** |이 AssetFile을 생성하기 위해 처리된 입력/원본 미디어 파일의 컬렉션입니다. 자세한 내용은 Source 요소를 참조하세요. |
 | **VideoTracks**<br/><br/> minOccurs="0" maxOccurs="1" |각각의 실제 AssetFile에는 적절한 컨테이너 형식으로 인터리빙된 0개 이상의 비디오 트랙이 포함될 수 있습니다. 자세한 내용은 VideoTracks 요소를 참조하세요. |
 | **AudioTracks**<br/><br/> minOccurs="0" maxOccurs="1" |각각의 실제 AssetFile에는 적절한 컨테이너 형식으로 인터리빙된 0개 이상의 오디오 트랙이 포함될 수 있습니다. 이 요소는 이러한 모든 오디오 트랙의 컬렉션입니다. 자세한 내용은 AudioTracks 요소를 참조하세요. |
 
-## <a name="sources-element"></a><a name="Sources"></a>Sources 요소
+## <a name="sources-element"></a><a name="Sources"></a> Sources 요소
 이 AssetFile을 생성하기 위해 처리된 입력/원본 미디어 파일의 컬렉션입니다.  
 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
-| **소스**<br/><br/> minOccurs="1" maxOccurs="unbounded" |이 자산을 생성할 때 사용되는 입력/원본 파일입니다. 자세한 내용은 Source 요소를 참조하세요. |
+| **원본**<br/><br/> minOccurs="1" maxOccurs="unbounded" |이 자산을 생성할 때 사용되는 입력/원본 파일입니다. 자세한 내용은 Source 요소를 참조하세요. |
 
-## <a name="source-element"></a><a name="Source"></a>Source 요소
+## <a name="source-element"></a><a name="Source"></a> Source 요소
 이 자산을 생성할 때 사용되는 입력/원본 파일입니다.  
 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | Description |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **이름**<br/><br/> 필요한 공간 |**xs:string** |입력 원본 파일 이름입니다. |
+| **이름**<br/><br/> 필수 |**xs:string** |입력 원본 파일 이름입니다. |
 
 ## <a name="videotracks-element"></a><a name="VideoTracks"></a> VideoTracks 요소
 각각의 실제 AssetFile에는 적절한 컨테이너 형식으로 인터리빙된 0개 이상의 비디오 트랙이 포함될 수 있습니다. **VideoTracks** 요소는 모든 비디오 트랙의 컬렉션을 나타냅니다.  
@@ -84,7 +87,7 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
 | **VideoTrack**<br/><br/> minOccurs="1" maxOccurs="unbounded" |부모 AssetFile의 특정 비디오 트랙입니다. 자세한 내용은 VideoTrack 요소를 참조하세요. |
 
@@ -94,20 +97,20 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **ID**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |이 비디오 트랙의 인덱스 (0부터 시작)입니다. **참고:**  이 **id** 는 MP4 파일에 사용 되는 것과 같은 것은 아닙니다. |
-| **FourCC**<br/><br/> 필요한 공간 |**xs:string** |비디오 코덱 FourCC 코드입니다. |
+| **ID**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |이 비디오 트랙의 인덱스 (0부터 시작)입니다. **참고:**  이 **id** 는 MP4 파일에 사용 되는 것과 같은 것은 아닙니다. |
+| **FourCC**<br/><br/> 필수 |**xs:string** |비디오 코덱 FourCC 코드입니다. |
 | **프로필** |**xs:string** |H264 프로파일입니다(H264 코덱에만 적용). |
-| **수준** |**xs:string** |H264 수준입니다(H264 코덱에만 적용). |
-| **Width**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |인코딩된 비디오 너비(픽셀)입니다. |
-| **높이**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |인코딩된 비디오 높이(픽셀)입니다. |
-| **DisplayAspectRatioNumerator**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:double** |비디오 디스플레이 가로 세로 비율의 분자입니다. |
-| **DisplayAspectRatioDenominator**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:double** |비디오 디스플레이 가로 세로 비율의 분모입니다. |
-| **Framerate**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:decimal** |.3f 형식으로 측정된 비디오 프레임 속도입니다. |
-| **TargetFramerate**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:decimal** |.3f 형식으로 기본 설정된 대상 비디오 프레임 속도입니다. |
-| **Bitrate**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |AssetFile에서 계산되는 평균 비디오 비트 전송률(Kb/초)입니다. 기본 스트림 페이로드만 계산되며, 패키징 오버헤드는 포함되지 않습니다. |
-| **TargetBitrate**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |인코딩 기본 설정을 통해 요청된 대로 이 비디오 트랙의 대상 평균 비트 전송률(Kbps)입니다. |
+| **Level** |**xs:string** |H264 수준입니다(H264 코덱에만 적용). |
+| **Width**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |인코딩된 비디오 너비(픽셀)입니다. |
+| **높이**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |인코딩된 비디오 높이(픽셀)입니다. |
+| **DisplayAspectRatioNumerator**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:double** |비디오 디스플레이 가로 세로 비율의 분자입니다. |
+| **DisplayAspectRatioDenominator**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:double** |비디오 디스플레이 가로 세로 비율의 분모입니다. |
+| **Framerate**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:decimal** |.3f 형식으로 측정된 비디오 프레임 속도입니다. |
+| **TargetFramerate**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:decimal** |.3f 형식으로 기본 설정된 대상 비디오 프레임 속도입니다. |
+| **Bitrate**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |AssetFile에서 계산되는 평균 비디오 비트 전송률(Kb/초)입니다. 기본 스트림 페이로드만 계산되며, 패키징 오버헤드는 포함되지 않습니다. |
+| **TargetBitrate**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |인코딩 기본 설정을 통해 요청된 대로 이 비디오 트랙의 대상 평균 비트 전송률(Kbps)입니다. |
 | **MaxGOPBitrate**<br/><br/> minInclusive ="0" |**xs:int** |이 비디오 트랙의 최대 GOP 평균 비트 전송률(Kb/초)입니다. |
 
 ## <a name="audiotracks-element"></a><a name="AudioTracks"></a> AudioTracks 요소
@@ -116,7 +119,7 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
 | **AudioTrack**<br/><br/> minOccurs="1" maxOccurs="unbounded" |부모 AssetFile의 특정 오디오 트랙입니다. 자세한 내용은 AudioTrack 요소를 참조하세요. |
 
@@ -126,18 +129,18 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **ID**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |이 오디오 트랙의 인덱스 (0부터 시작)입니다. **참고:**  이는 MP4 파일에 사용 된 것과 같은 것은 아닙니다. |
+| **ID**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |이 오디오 트랙의 인덱스 (0부터 시작)입니다. **참고:**  이는 MP4 파일에 사용 된 것과 같은 것은 아닙니다. |
 | **Codec** |**xs:string** |오디오 트랙 코덱 문자열입니다. |
 | **EncoderVersion** |**xs:string** |EAC3에 필요한 선택적 인코더 버전 문자열입니다. |
-| **Channels**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |오디오 채널 수입니다. |
-| **SamplingRate**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |오디오 샘플링 속도(샘플/초 또는 Hz)입니다. |
-| **Bitrate**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |AssetFile에서 계산되는 평균 오디오 비트 전송률(bps)입니다. 기본 스트림 페이로드만 계산되며, 패키징 오버헤드는 포함되지 않습니다. |
-| **BitsPerSample**<br/><br/> minInclusive ="0"<br/><br/> 필요한 공간 |**xs:int** |wFormatTag 형식 샘플당 비트입니다. |
+| **채널**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |오디오 채널 수입니다. |
+| **SamplingRate**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |오디오 샘플링 속도(샘플/초 또는 Hz)입니다. |
+| **Bitrate**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |AssetFile에서 계산되는 평균 오디오 비트 전송률(bps)입니다. 기본 스트림 페이로드만 계산되며, 패키징 오버헤드는 포함되지 않습니다. |
+| **BitsPerSample**<br/><br/> minInclusive ="0"<br/><br/> 필수 |**xs:int** |wFormatTag 형식 샘플당 비트입니다. |
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
 | **LoudnessMeteringResultParameters**<br/><br/> minOccurs="0" maxOccurs="1" |음량 측정 결과 매개 변수입니다. 자세한 내용은 LoudnessMeteringResultParameters 요소를 참조하세요. |
 
@@ -147,18 +150,18 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 [XML 예제](#xml)에서 XML 예제를 찾을 수 있습니다.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **DPLMVersionInformation** |**xs:string** |**DPLM**(Dolby Professional Loudness Metering) 개발 키트 버전입니다. |
-| **DialogNormalization**<br/><br/> minInclusive="-31" maxInclusive="-1"<br/><br/> 필요한 공간 |**xs:int** |DPLM을 통해 생성되며, LoudnessMetering을 설정할 때 필요합니다. |
-| **IntegratedLoudness**<br/><br/> minInclusive="-70" maxInclusive="10"<br/><br/> 필요한 공간 |**xs:float** |통합된 음량입니다. |
-| **IntegratedLoudnessUnit**<br/><br/> 필요한 공간 |**xs:string** |통합된 음량 단위입니다. |
-| **IntegratedLoudnessGatingMethod**<br/><br/> 필요한 공간 |**xs:string** |게이팅 식별자입니다. |
+| **DialogNormalization**<br/><br/> minInclusive="-31" maxInclusive="-1"<br/><br/> 필수 |**xs:int** |DPLM을 통해 생성되며, LoudnessMetering을 설정할 때 필요합니다. |
+| **IntegratedLoudness**<br/><br/> minInclusive="-70" maxInclusive="10"<br/><br/> 필수 |**xs:float** |통합된 음량입니다. |
+| **IntegratedLoudnessUnit**<br/><br/> 필수 |**xs:string** |통합된 음량 단위입니다. |
+| **IntegratedLoudnessGatingMethod**<br/><br/> 필수 |**xs:string** |게이팅 식별자입니다. |
 | **IntegratedLoudnessSpeechPercentage**<br/><br/> minInclusive ="0" maxInclusive="100" |**xs:float** |프로그램을 통과하는 음성 콘텐츠(%)입니다. |
-| **SamplePeak**<br/><br/> 필요한 공간 |**xs:float** |다시 설정되거나 마지막으로 지워진 이후 채널당 샘플 최대 사용 절대값입니다.  단위는 dBFS입니다. |
-| **SamplePeakUnit**<br/><br/> fixed="dBFS"<br/><br/> 필요한 공간 |**xs:anySimpleType** |샘플 최대 사용 단위입니다. |
-| **TruePeak**<br/><br/> 필요한 공간 |**xs:float** |다시 설정되거나 마지막으로 지워진 이후 채널당 실제 최대 사용 값입니다(ITU-R BS.1770-2 규격). 단위는 dBTP입니다. |
-| **TruePeakUnit**<br/><br/> fixed="dBTP"<br/><br/> 필요한 공간 |**xs:anySimpleType** |실제 최대 사용 단위입니다. |
+| **SamplePeak**<br/><br/> 필수 |**xs:float** |다시 설정되거나 마지막으로 지워진 이후 채널당 샘플 최대 사용 절대값입니다.  단위는 dBFS입니다. |
+| **SamplePeakUnit**<br/><br/> fixed="dBFS"<br/><br/> 필수 |**xs:anySimpleType** |샘플 최대 사용 단위입니다. |
+| **TruePeak**<br/><br/> 필수 |**xs:float** |다시 설정되거나 마지막으로 지워진 이후 채널당 실제 최대 사용 값입니다(ITU-R BS.1770-2 규격). 단위는 dBTP입니다. |
+| **TruePeakUnit**<br/><br/> fixed="dBTP"<br/><br/> 필수 |**xs:anySimpleType** |실제 최대 사용 단위입니다. |
 
 ## <a name="schema-code"></a>스키마 코드
 ```xml

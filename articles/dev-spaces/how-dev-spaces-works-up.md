@@ -5,12 +5,12 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 description: Azure Dev Spaces 사용 하 여 Azure Kubernetes Service에서 코드를 실행 하는 프로세스를 설명 합니다.
 keywords: azds, Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너
-ms.openlocfilehash: c343c32f0817cc922784bb25283290dc9ed88d29
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9dbc1f0f21c2883e5caadbdae268a515eb94d145
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87072965"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208684"
 ---
 # <a name="how-running-your-code-with-azure-dev-spaces-works"></a>Azure Dev Spaces 작업을 사용 하 여 코드를 실행 하는 방법
 
@@ -130,7 +130,7 @@ install:
 
 위의 예에서 *replicaCount* 속성은 개발자 공간에서 실행할 응용 프로그램의 인스턴스 수를 컨트롤러에 알려 줍니다. 시나리오에 따라이 값을 늘릴 수 있지만 응용 프로그램의 pod에 디버거를 연결 하는 데 영향을 줄 수 있습니다. 자세한 내용은 [문제 해결 문서][troubleshooting]를 참조 하세요.
 
-생성 된 투구 차트에서 컨테이너 이미지는 {{로 설정 됩니다 *. Values. repository}}: {{. Values. tag}}*. `azds.yaml`이 파일은 기본적으로 *$ (tag)로 설정 하 여 $ (tag)* 로 *설정* 합니다 .이 속성은 {{에 대 한 값으로 사용 됩니다. * Values. tag}}*. 이렇게 하면 *install.* .. tag 속성을 설정 하 여 Azure Dev Spaces 실행 될 때 응용 프로그램에 대 한 컨테이너 이미지를 고유한 방식으로 태그를 지정할 수 있습니다. 이 특정 사례에서 이미지는 * \<value from image.repository> $ (tag)* 로 태그가 지정 됩니다. 개발 공간을 인식 하 고 AKS 클러스터에서 컨테이너를 찾기 위해 *$ (tag)* 변수를 *install.* 값으로 사용 해야 합니다.
+생성 된 투구 차트에서 컨테이너 이미지는 {{로 설정 됩니다 *. Values. repository}}: {{. Values. tag}}*. `azds.yaml`이 파일은 기본적으로 *$ (tag)로 설정 하 여 $ (tag)* 로 *설정* 합니다 .이 속성은 {{에 대 한 값으로 사용 됩니다. * Values. tag}}*. 이렇게 하면 *install.* .. tag 속성을 설정 하 여 Azure Dev Spaces 실행 될 때 응용 프로그램에 대 한 컨테이너 이미지를 고유한 방식으로 태그를 지정할 수 있습니다. 이 특정 사례에서 이미지는 * \<value from image.repository> $ (tag)* 로 태그가 지정 됩니다. 개발 공간을 인식 하 고 AKS 클러스터에서 컨테이너를 찾기 위해 *$ (tag)* 변수를   *install.* 값으로 사용 해야 합니다.
 
 위의 예제에서는 install... `azds.yaml` *install.set.ingress.hosts* *Install. ingress* 속성은 공용 끝점에 대 한 호스트 이름 형식을 정의 합니다. 이 속성은 컨트롤러에서 제공 하는 값인 *$ (spacePrefix)*, *$ (rootSpacePrefix)* 및 *$ (hostsuffix)* 도 사용 합니다.
 
@@ -201,14 +201,6 @@ ingress:
 
 신속 하 게 반복 하 고 개발 하는 데 Azure Dev Spaces를 사용 하는 방법에 대 한 자세한 내용은 Kubernetes를 사용 하 [는 로컬 프로세스 작동 방식][how-it-works-local-process-kubernetes] 및 [Azure Dev Spaces를 사용 하 여 코드를 원격으로 디버그][how-it-works-remote-debugging]
 
-Azure Dev Spaces를 사용 하 여 프로젝트를 실행 하려면 다음 빠른 시작을 참조 하세요.
-
-* [Visual Studio Code 및 Java를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-java]
-* [Visual Studio Code 및 .NET을 사용 하 여 빠르게 반복 하 고 디버그][quickstart-netcore]
-* [Visual Studio Code 및 Node.js를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-node]
-* [Visual Studio 및 .NET Core를 사용 하 여 빠르게 반복 하 고 디버그][quickstart-vs]
-* [CLI를 사용 하 여 Kubernetes에서 응용 프로그램 개발][quickstart-cli]
-
 
 [azds-yaml-section]: #how-running-your-code-is-configured
 [helm-upgrade]: https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure
@@ -216,10 +208,5 @@ Azure Dev Spaces를 사용 하 여 프로젝트를 실행 하려면 다음 빠�
 [how-it-works-prep]: how-dev-spaces-works-prep.md
 [how-it-works-remote-debugging]: how-dev-spaces-works-remote-debugging.md
 [how-it-works-routing]: how-dev-spaces-works-routing.md
-[quickstart-cli]: quickstart-cli.md
-[quickstart-java]: quickstart-java.md
-[quickstart-netcore]: quickstart-netcore.md
-[quickstart-node]: quickstart-nodejs.md
-[quickstart-vs]: quickstart-netcore-visualstudio.md
 [sync-section]: #file-synchronization
 [troubleshooting]: troubleshooting.md

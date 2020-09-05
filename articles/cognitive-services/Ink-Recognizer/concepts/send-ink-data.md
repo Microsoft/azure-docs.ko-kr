@@ -3,21 +3,23 @@ title: Ink Recognizer API에 잉크 데이터 보내기
 titleSuffix: Azure Cognitive Services
 description: 다양한 애플리케이션에 대해 Ink Analyzer API를 호출하는 방법을 알아봅니다.
 services: cognitive-services
-author: erhopf
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: conceptual
-ms.date: 05/02/2019
-ms.author: erhopf
-ms.openlocfilehash: 0ad961495d44f13522a3c02224a5612aaedaf076
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 08/24/2020
+ms.author: aahi
+ms.openlocfilehash: 8665e27b6b7c43bce7d749d9bfe0a2f815a0f46d
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79221532"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051103"
 ---
 # <a name="send-ink-data-to-the-ink-recognizer-api"></a>Ink Recognizer API에 잉크 데이터 보내기 
+
+[!INCLUDE [ink-recognizer-deprecation](../includes/deprecation-note.md)]
 
 디지털 잉크 입력이란 필기 및 그리기 같은 입력을 디지털로 표현할 수 있는 기술입니다. 이는 일반적으로 스타일러스와 같은 입력 디바이스의 움직임을 캡처하는 디지타이저를 사용하여 수행됩니다. 디바이스에서 풍부한 디지털 잉크 입력 환경을 계속 사용할 수 있게 되면서, AI 및 기계 학습은 어떤 상황에서도 손으로 그린 도형과 텍스트를 인식할 수 있습니다. Ink Recognizer API를 사용하면 잉크 스트로크를 보내고 이에 대한 자세한 정보를 얻을 수 있습니다. 
 

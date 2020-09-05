@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2020
 ms.author: yelevin
-ms.openlocfilehash: 7dded3b938444198e72d6eb87476f571dd3f4d78
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: b48ff1043ae8128a5cbfdcbba0548d89b5af2624
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836771"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565845"
 ---
 # <a name="permissions-in-azure-sentinel"></a>Azure 센티널의 사용 권한
 
@@ -60,6 +60,10 @@ RBAC를 사용 하 여 보안 운영 팀 내에서 역할을 만들고 할당 �
 
     사용자가 **데이터 커넥터**를 추가 하려면 Azure 센티널 작업 영역에 대 한 사용자 쓰기 권한을 할당 해야 합니다. 또한 관련 커넥터 페이지에 나열 된 대로 각 커넥터에 필요한 추가 사용 권한을 기록해 둡니다.
 
+- 인시던트를 할당 하는 게스트 사용자
+
+    게스트 사용자가 인시던트를 할당할 수 있어야 하는 경우 Azure 센티널 응답자 역할 외에도 사용자에 게 [디렉터리 판독기](../active-directory/users-groups-roles/directory-assign-admin-roles.md#directory-readers)의 역할을 할당 해야 합니다. 이 역할은 Azure RBAC 역할은 아니지만 **Azure Active Directory** *역할이 며 일반* (비 게스트) 사용자에 게는 기본적으로이 역할이 할당 됩니다. 
+
 병렬 비교는 [아래 표](#roles-and-allowed-actions)를 참조 하세요.
 
 ### <a name="other-roles-you-might-see-assigned"></a>할당 된 다른 역할
@@ -76,7 +80,7 @@ Azure 센티널 특정 Azure 역할을 할당 하는 경우 다른 용도로 사
 
 다음 표에는 Azure 센티널의 역할 및 허용 되는 작업이 요약 되어 있습니다. 
 
-| Role | 플레이 북 만들기 및 실행| 통합 문서, 분석 규칙 및 기타 Azure 센티널 리소스 만들기 및 편집 | 인시던트 관리 (해제, 할당 등) | 데이터, 인시던트, 통합 문서 및 기타 Azure 센티널 리소스 보기 |
+| 역할 | 플레이 북 만들기 및 실행| 통합 문서, 분석 규칙 및 기타 Azure 센티널 리소스 만들기 및 편집 | 인시던트 관리 (해제, 할당 등) | 데이터, 인시던트, 통합 문서 및 기타 Azure 센티널 리소스 보기 |
 |---|---|---|---|---|
 | Azure Sentinel 읽기 권한자 | -- | -- | -- | &#10003; |
 | Azure Sentinel 응답자 | -- | -- | &#10003; | &#10003; |

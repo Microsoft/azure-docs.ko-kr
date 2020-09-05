@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: 9afb5b7602b220c25d919f8fe0773d5cfa143d89
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a46cd1b916edeae8a24fb997db46e5a0651567cb
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80991197"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115274"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>빠른 시작: Android 앱에서 사용자 로그인 및 Microsoft Graph API 호출
 
@@ -483,7 +483,7 @@ mMultipleAccountApp.removeAccount(accountList.get(accountListSpinner.getSelected
 액세스 토큰을 가져온 후 Microsoft Graph를 호출하는 데 사용하는 Android 앱을 빌드하기 위한 단계별 가이드를 보려면 [Android 앱에서 사용자 로그인 및 Microsoft Graph 호출](tutorial-v2-android.md) 자습서를 진행해 보세요.
 
 > [!div class="nextstepaction"]
-> [Graph API Android 자습서 호출](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-android)
+> [Graph API Android 자습서 호출](./tutorial-v2-android.md)
 
 ### <a name="msal-for-android-library-wiki"></a>Android용 MSAL 라이브러리 wiki
 

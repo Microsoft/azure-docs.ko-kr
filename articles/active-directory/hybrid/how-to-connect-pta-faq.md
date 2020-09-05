@@ -16,12 +16,12 @@ ms.date: 06/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 118abaef1fd1458057a7dbe28d5cd74ded55fe28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac36650e285c371457b89f7a362b51fa74d7d47c
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358296"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071434"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Azure Active Directory 통과 인증: 질문과 대답
 
@@ -113,7 +113,7 @@ Azure AD Connect를 사용 하 여 암호 해시 동기화에서 통과 인증�
 
 통과 인증 에이전트는 실행되는 동안 활성 상태를 유지하며, 지속적으로 사용자 로그인 요청을 처리합니다. 인증 에이전트를 제거하려는 경우 **제어판 -> 프로그램 -> 프로그램 및 기능**으이로 동한 후 **Microsoft Azure AD Connect Authentication Agent** 및 **Microsoft Azure AD Connect Agent Updater** 프로그램을 둘 다 제거합니다.
 
-위의 단계를 완료한 후 [Azure Active Directory 관리 센터](https://aad.portal.azure.com)에서 통과 인증 블레이드를 확인하는 경우 인증 에이전트가 **비활성** 상태로 표시됩니다. 이는 _예상_된 것입니다. 인증 에이전트는 며칠 후에 목록에서 자동으로 삭제됩니다.
+위의 단계를 완료한 후 [Azure Active Directory 관리 센터](https://aad.portal.azure.com)에서 통과 인증 블레이드를 확인하는 경우 인증 에이전트가 **비활성** 상태로 표시됩니다. 이는 _예상_된 것입니다. 인증 에이전트는 10 일 후에 목록에서 자동으로 삭제 됩니다.
 
 ## <a name="i-already-use-ad-fs-to-sign-in-to-azure-ad-how-do-i-switch-it-to-pass-through-authentication"></a>이미 AD FS를 사용하여 Azure AD에 로그인하고 있습니다. 통과 인증으로 전환하려면 어떻게 하나요?
 

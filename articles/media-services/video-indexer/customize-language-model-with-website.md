@@ -8,14 +8,14 @@ manager: johndeu
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 08/10/2020
 ms.author: kumud
-ms.openlocfilehash: d789d74f79fa691a2d5b374530450d966e0c40ed
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f9eedba6c8aee5c8aab73e2ed598a4511b4c5982
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87047256"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020459"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-website"></a>Video Indexer 웹 사이트를 사용하여 언어 모델 사용자 지정
 
@@ -133,7 +133,9 @@ Video Indexer는 비디오의 비디오에 대 한 사용자의 실제 수정 �
 
     ![언어 모델 편집 기록을 사용자 지정-Video Indexer](./media/customize-language-model/edits.png)
 
-    Video Indexer는 비디오의 기록에서 자동으로 수정 되는 모든 줄을 캡처하고 "기록 편집 내용에서" 라는 텍스트 파일에 자동으로 추가 합니다. 이러한 편집은이 비디오를 인덱싱하는 데 사용 된 특정 언어 모델을 다시 학습 하는 데 사용 됩니다.
+    Video Indexer는 비디오의 기록에서 자동으로 수정 되는 모든 줄을 캡처하고 "기록 편집 내용에서" 라는 텍스트 파일에 자동으로 추가 합니다. 이러한 편집은이 비디오를 인덱싱하는 데 사용 된 특정 언어 모델을 다시 학습 하는 데 사용 됩니다. 
+    
+    [위젯의](video-indexer-embed-widgets.md) 타임 라인에서 수행 된 편집도 포함 됩니다.
     
     이 비디오를 인덱싱할 때 언어 모델을 지정 하지 않은 경우이 비디오에 대 한 모든 편집 내용이 검색 된 비디오 언어 내에서 "Account adaptation" 라는 기본 언어 모델에 저장 됩니다.
     

@@ -1,14 +1,14 @@
 ---
 title: 이니셔티브 정의의 규정 준수
 description: 이니셔티브 정의를 사용 하 여 Access Control, 구성 관리 등의 규정 도메인별 정책을 그룹화 하는 방법을 설명 합니다.
-ms.date: 05/11/2020
+ms.date: 08/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3bcc876cf8fd608d700e39bda11c94395beace80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 296febc1aad62d06c8e9dfcf4f285b16cacf0a40
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84205904"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544624"
 ---
 # <a name="regulatory-compliance-in-azure-policy"></a>Azure Policy의 규정 준수
 

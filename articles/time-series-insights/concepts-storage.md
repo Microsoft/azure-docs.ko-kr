@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/25/2020
 ms.custom: seodec18
-ms.openlocfilehash: 77616afa95b61d5a0ca726db0d66734fc57133f8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a0f1e7789c0cebdd1cb5b22f21151020a0be09c9
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495366"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855124"
 ---
 # <a name="data-storage"></a>데이터 스토리지
 
@@ -24,7 +24,7 @@ Azure Time Series Insights Gen2 환경을 만들 때 다음 두 가지 Azure 리
 * 웜 데이터 저장소에 대해 구성할 수 있는 Azure Time Series Insights Gen2 환경입니다.
 * 콜드 데이터 저장소에 대 한 Azure Storage 계정.
 
-웜 저장소의 데이터는 [시계열 쿼리 api](./time-series-insights-update-tsq.md) 및 [Azure Time Series Insights Gen2 탐색기](./time-series-insights-update-explorer.md)를 통해서만 사용할 수 있습니다. 웜 스토어는 Azure Time Series Insights Gen2 환경을 만들 때 선택한 [보존 기간](./time-series-insights-update-plan.md#the-preview-environment) 내의 최근 데이터를 포함 합니다.
+웜 저장소의 데이터는 [시계열 쿼리 api](./time-series-insights-update-tsq.md) 및 [Azure Time Series Insights tsi 탐색기](./time-series-insights-update-explorer.md)를 통해서만 사용할 수 있습니다. 웜 스토어는 Azure Time Series Insights Gen2 환경을 만들 때 선택한 [보존 기간](./time-series-insights-update-plan.md#the-preview-environment) 내의 최근 데이터를 포함 합니다.
 
 Azure Time Series Insights Gen2는 콜드 스토어 데이터를 [Parquet 파일 형식](#parquet-file-format-and-folder-structure)으로 Azure Blob storage에 저장 합니다. Azure Time Series Insights Gen2는이 콜드 저장소 데이터를 독점적으로 관리 하지만 표준 Parquet 파일로 직접 읽을 수 있습니다.
 
@@ -58,7 +58,7 @@ Azure Time Series Insights Gen2는 Azure Storage 계정에서 각 이벤트의 �
 
 #### <a name="accessing-cold-store-data"></a>콜드 저장소 데이터 액세스
 
-[Azure Time Series Insights Gen2 탐색기](./time-series-insights-update-explorer.md) 및 [시계열 쿼리 api](./time-series-insights-update-tsq.md)를 사용 하 여 데이터에 액세스 하는 것 외에도 콜드 저장소에 저장 된 Parquet 파일에서 직접 데이터에 액세스할 수 있습니다. 예를 들어 Jupyter Notebook에서 데이터를 읽고 변환하고 정리한 다음, 이를 사용하여 동일한 Spark 워크플로에서 Azure Machine Learning 모델을 학습시킬 수 있습니다.
+[Azure Time Series Insights TSI 탐색기](./time-series-insights-update-explorer.md) 및 [시계열 쿼리 api](./time-series-insights-update-tsq.md)를 사용 하 여 데이터에 액세스 하는 것 외에도 콜드 저장소에 저장 된 Parquet 파일에서 직접 데이터에 액세스할 수 있습니다. 예를 들어 Jupyter Notebook에서 데이터를 읽고 변환하고 정리한 다음, 이를 사용하여 동일한 Spark 워크플로에서 Azure Machine Learning 모델을 학습시킬 수 있습니다.
 
 Azure Storage 계정에서 직접 데이터에 액세스 하려면 Azure Time Series Insights Gen2 데이터를 저장 하는 데 사용 되는 계정에 대 한 읽기 권한이 있어야 합니다. 그러면 [Parquet 파일 형식](#parquet-file-format-and-folder-structure) 섹션 아래에서 설명하는 `PT=Time` 폴더에 있는 Parquet 파일의 만든 시간을 기준으로 선택한 데이터를 읽을 수 있습니다.  스토리지 계정에 대한 읽기 액세스를 사용하도록 설정하는 방법에 대한 자세한 내용은 [스토리지 계정 리소스에 대한 액세스 관리](../storage/blobs/storage-manage-access-to-resources.md)를 참조하세요.
 
@@ -84,9 +84,9 @@ Azure Time Series Insights Gen2는 다음과 같이 데이터의 복사본을 �
 
 폴더에 있는 blob 이름의 타임 스탬프는 `PT=Time` 이벤트의 타임 스탬프가 아니라 Azure Time Series Insights Gen2에 대 한 데이터 도착 시간에 해당 합니다.
 
-`PT=TsId` 폴더의 데이터는 시간이 지남에 따라 쿼리에 최적화되며 정적이지 않습니다. 다시 분할 하는 동안 일부 이벤트는 여러 blob에 있을 수 있습니다. 이 폴더에 있는 blob의 이름 지정은 동일 하 게 유지 되지 않을 수 있습니다. 
+`PT=TsId` 폴더의 데이터는 시간이 지남에 따라 쿼리에 최적화되며 정적이지 않습니다. 다시 분할 하는 동안 일부 이벤트는 여러 blob에 있을 수 있습니다. 이 폴더에 있는 blob의 이름 지정은 동일 하 게 유지 되지 않을 수 있습니다.
 
-일반적으로 Parquet 파일을 통해 데이터에 직접 액세스 해야 하는 경우 폴더를 사용 `PT=Time` 합니다.  이후 기능을 사용 하면 폴더에 효율적으로 액세스할 수 `PT=TsId` 있습니다. 
+일반적으로 Parquet 파일을 통해 데이터에 직접 액세스 해야 하는 경우 폴더를 사용 `PT=Time` 합니다.  이후 기능을 사용 하면 폴더에 효율적으로 액세스할 수 `PT=TsId` 있습니다.
 
 > [!NOTE]
 >

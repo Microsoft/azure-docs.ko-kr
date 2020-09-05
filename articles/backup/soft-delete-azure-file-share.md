@@ -4,12 +4,12 @@ description: 일시 삭제 하는 방법에 대 한 자세한 내용은 실수�
 ms.topic: conceptual
 ms.date: 02/02/2020
 ms.custom: references_regions
-ms.openlocfilehash: 0ec2d3bf84aed19b608a92b6f21cd1674ba5b7cf
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 52a116320e07c25d4ee7f00b8063ca15faeb8560
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87282707"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179915"
 ---
 # <a name="accidental-delete-protection-for-azure-file-shares-using-azure-backup"></a>Azure Backup를 사용 하 여 Azure 파일 공유에 대 한 실수로 인 한 삭제 방지
 
@@ -53,7 +53,7 @@ ms.locfileid: "87282707"
 >저장소 계정의 보호 된 파일 공유에 대해 다음 예약 된 백업 작업이 실행 되기 전에 2 단계를 수행 해야 합니다. 백업 작업이 실행 될 때마다 저장소 계정의 모든 파일 공유에 대해 일시 삭제를 다시 사용 하도록 설정 합니다.
 
 >[!WARNING]
->2 단계에서 일시 삭제를 사용 하지 않도록 설정한 후 파일 공유에 대해 수행 되는 삭제 작업은 영구적 삭제 작업입니다. 즉, 일시 삭제를 사용 하지 않도록 설정한 후 백업 된 파일 공유를 실수로 삭제 한 경우에는 모든 스냅숏을 잃게 되며 데이터를 복구할 수 없습니다.
+>2 단계에서 일시 삭제를 사용 하지 않도록 설정한 후 파일 공유에 대해 수행 되는 삭제 작업은 영구적 삭제 작업입니다. 따라서 일시 삭제를 사용 하지 않도록 설정한 후 백업 된 파일 공유를 실수로 삭제 하면 모든 스냅숏이 손실 되며 데이터를 복구할 수 없습니다.
 
 ### <a name="in-the-context-of-a-file-shares-soft-delete-setting-what-changes-does-azure-backup-do-when-i-unregister-a-storage-account"></a>파일 공유의 일시 삭제 설정 컨텍스트에서 저장소 계정의 등록을 취소할 때 Azure Backup 변경 작업은 무엇 인가요?
 

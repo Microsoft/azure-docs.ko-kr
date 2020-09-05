@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 07/31/2020
-ms.openlocfilehash: 93507bae3f817f92cfa427ceca10f651352a46bc
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a8b5ec48b64341ad9eabd087d7ee20bb703198c6
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497582"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816238"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Azure Red Hat OpenShift FAQ
 
@@ -65,25 +65,9 @@ Azure Red Hat OpenShift 4.x 클러스터에서 인프라 노드는 현재 사용
 
 Azure Red Hat OpenShift 3.11 클러스터에서 인프라 노드는 기본적으로 포함 되어 있습니다.
 
-## <a name="upgrades"></a>업그레이드
+## <a name="how-do-i-handle-cluster-upgrades"></a>클러스터 업그레이드를 처리 어떻게 할까요??
 
-###  <a name="what-is-the-general-upgrade-process"></a>일반적인 업그레이드 프로세스는 무엇 인가요?
-
-패치는 클러스터에 자동으로 적용 됩니다. 클러스터에서 패치 업그레이드를 수신 하기 위해 조치를 취할 필요가 없습니다.
-
-업그레이드를 실행 하는 것은 안전 프로세스 이며 클러스터 서비스를 중단 해서는 안 됩니다. 공동 Microsoft-Red Hat 팀은 새 버전을 사용할 수 있거나 일반적인 취약성 및 노출이 해결 될 때 업그레이드 프로세스를 트리거할 수 있습니다. 사용 가능한 업데이트는 스테이징 환경에서 테스트 한 다음 프로덕션 클러스터에 적용 됩니다. 다음 모범 사례에 따라 가동 중지 시간을 최소화 하는 데 도움이 됩니다.
-
-계획 된 유지 관리는 고객과 prescheduled 되지 않습니다. 유지 관리와 관련 된 알림은 전자 메일을 통해 보낼 수 있습니다.
-
-### <a name="what-is-the-azure-red-hat-openshift-maintenance-process"></a>Azure Red Hat OpenShift 유지 관리 프로세스는 무엇 인가요?
-
-Azure Red Hat OpenShift: 업그레이드 및 클라우드 공급자 시작 유지 관리에는 두 가지 유형의 유지 관리가 있습니다.
-- 업그레이드에는 소프트웨어 업그레이드 및 일반적인 취약성 및 노출이 포함 됩니다.
-- 클라우드 공급자에서 시작 된 유지 관리에는 네트워크, 저장소 및 지역 중단이 포함 됩니다. 유지 관리는 클라우드 공급자에 따라 다르며 공급자가 제공한 업데이트를 사용 합니다.
-
-### <a name="what-about-emergency-vs-planned-maintenance-windows"></a>비상 및 계획 된 유지 관리 기간에 대 한 정보
-
-두 가지 유형의 유지 관리를 구분 하지 않습니다. Microsoft 팀은 24/7/365을 사용할 수 있으며 기존의 예약 된 "시간 제한" 유지 관리 기간을 사용 하지 않습니다.
+업그레이드, 유지 관리 및 지원 되는 버전에 대 한 자세한 내용은 [지원 주기 가이드](support-lifecycle.md)를 참조 하세요.
 
 ### <a name="how-will-the-host-operating-system-and-openshift-software-be-updated"></a>호스트 운영 체제 및 OpenShift 소프트웨어는 어떻게 업데이트 되나요?
 
@@ -157,7 +141,7 @@ Azure에서 가상 머신 확장 집합을 사용 하는 경우 기본적으로 
 
 ### <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>다른 구독의 가상 네트워크에 피어 링 하려고 했지만 VNet CIDR 오류를 가져오지 못했습니다.
 
-가상 네트워크가 있는 구독에서 `Microsoft.ContainerService` 다음 명령을 사용 하 여 공급자를 등록 해야 합니다.`az provider register -n Microsoft.ContainerService --wait`
+가상 네트워크가 있는 구독에서 `Microsoft.ContainerService` 다음 명령을 사용 하 여 공급자를 등록 해야 합니다. `az provider register -n Microsoft.ContainerService --wait`
 
 ### <a name="can-we-specify-ip-ranges-for-deployment-on-the-private-vnet-avoiding-clashes-with-other-corporate-vnets-once-peered"></a>사설 VNet에서 배포 하기 위한 IP 범위를 지정 하 여 다른 회사 Vnet 피어 링 한 후 충돌을 방지할 수 있나요?
 
@@ -218,7 +202,7 @@ oc adm policy \
 
 3.11 클러스터의 경우 Azure AD 통합을 사용할 수 있습니다. 
 
-## <a name="storage"></a>스토리지
+## <a name="storage"></a>Storage
 
 ### <a name="is-data-on-my-cluster-encrypted"></a>내 클러스터의 데이터가 암호화 되나요?
 

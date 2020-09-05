@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/22/2019
 author: iqshahmicrosoft
 ms.author: iqshah
-ms.openlocfilehash: c9f6d5d2649aff03d4bfb2770ec97053e70027da
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 814a4012ace95e84e75bcb4071c549822b2b0633
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319884"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182431"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Azure Marketplace에서 VM (가상 컴퓨터) 이미지를 관리 되는 디스크 저장소로 이동 하 고 있습니다.
 

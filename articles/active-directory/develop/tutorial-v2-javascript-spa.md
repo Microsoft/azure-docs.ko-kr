@@ -1,6 +1,7 @@
 ---
-title: JavaScript 단일 페이지 앱 자습서 - Microsoft ID 플랫폼 | Azure
-description: Azure Active Directory v2.0 엔드포인트를 통해 액세스 토큰을 요구하는 API를 JavaScript SPA 애플리케이션에서 호출하는 방법입니다.
+title: JavaScript 단일 페이지 앱 자습서 | Azure
+titleSuffix: Microsoft identity platform
+description: 이 자습서에서는 JavaScript SPA(단일 페이지 앱)가 Microsoft ID 플랫폼에서 발급한 액세스 토큰을 필요로 하는 API를 호출하는 방법을 알아봅니다.
 services: active-directory
 author: navyasric
 manager: CelesteDG
@@ -8,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 03/20/2019
+ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-javascript
-ms.openlocfilehash: 745132284ee48270b46b6bd2f785d8bec19404fb
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 71516104ce5711f716b6af9d37ba96b431749fa3
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129681"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118198"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>JavaScript SPA(단일 페이지 애플리케이션)에서 사용자 로그인 및 Microsoft Graph API 호출
 
@@ -25,8 +26,8 @@ ms.locfileid: "87129681"
 - 액세스 토큰 획득
 - *Microsoft ID 플랫폼 엔드포인트*에서 액세스 토큰을 요구하는 Microsoft Graph API 또는 다른 API 호출
 
->[!NOTE]
-> Microsoft ID 플랫폼을 처음 사용하는 경우 [JavaScript SPA에서 사용자 로그인 및 액세스 토큰 가져오기 빠른 시작](quickstart-v2-javascript.md)부터 시작하는 것이 좋습니다.
+>[!TIP]
+> 이 자습서에서는 단일 페이지 애플리케이션에 대한 암시적 권한 부여 흐름을 사용하도록 제한되는 MSAL.js v1.x를 사용합니다. 대신 모든 새 애플리케이션에서 [MSAL.js 2.x 및 PKCE, CORS를 사용한 인증 코드 흐름](tutorial-v2-javascript-auth-code.md) 지원을 사용하는 것이 좋습니다.
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>이 가이드에서 생성된 샘플 앱의 작동 원리
 
@@ -322,7 +323,7 @@ ms.locfileid: "87129681"
 
  위치:
  - *\<Enter_the_Application_Id_Here>* 는 등록한 애플리케이션의 **애플리케이션(클라이언트) ID**입니다.
- - *\<Enter_the_Cloud_Instance_Id_Here>* 는 Azure 클라우드의 인스턴스입니다. 주 또는 글로벌 Azure 클라우드의 경우 *https://login.microsoftonline.com* 을 입력하면 됩니다. **국가별** 클라우드(예제: 중국)의 경우 [국가별 클라우드](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud)를 참조하세요.
+ - *\<Enter_the_Cloud_Instance_Id_Here>* 는 Azure 클라우드의 인스턴스입니다. 주 또는 글로벌 Azure 클라우드의 경우 *https://login.microsoftonline.com* 을 입력하면 됩니다. **국가별** 클라우드(예제: 중국)의 경우 [국가별 클라우드](./authentication-national-cloud.md)를 참조하세요.
  - *\<Enter_the_Tenant_info_here>* 는 다음 옵션 중 하나로 설정됩니다.
    - 애플리케이션이 *이 조직 디렉터리의 계정*을 지원하는 경우 이 값을 **테넌트 ID** 또는 **테넌트 이름**(예: *contoso.microsoft.com*)으로 바꿉니다.
    - 애플리케이션이 *모든 조직 디렉터리의 계정*을 지원하는 경우 이 값을 **organizations**으로 바꿉니다.
@@ -446,7 +447,7 @@ ms.locfileid: "87129681"
    ```
 
    위치:
-   - *\<Enter_the_Graph_Endpoint_Here>* 는 MS Graph API의 인스턴스입니다. 글로벌 MS Graph API 엔드포인트의 경우 이 문자열을 `https://graph.microsoft.com`으로 바꾸기만 하면 됩니다. 국가별 클라우드 배포는 [Graph API 설명서](https://docs.microsoft.com/graph/deployments)를 참조하세요.
+   - *\<Enter_the_Graph_Endpoint_Here>* 는 MS Graph API의 인스턴스입니다. 글로벌 MS Graph API 엔드포인트의 경우 이 문자열을 `https://graph.microsoft.com`으로 바꾸기만 하면 됩니다. 국가별 클라우드 배포는 [Graph API 설명서](/graph/deployments)를 참조하세요.
 
 1. 다음으로, Microsoft Graph API에 대한 REST 호출을 수행하는 `graph.js`라는 .js 파일을 만들고, 다음 코드를 추가합니다.
 

@@ -3,17 +3,17 @@ title: Blob 인덱스를 사용 하 여 Azure Blob Storage에서 데이터 관�
 description: Blob 인덱스 태그를 사용 하 여 blob 개체를 범주화 하 고, 관리 하 고, 쿼리 하는 방법에 대해 알아봅니다.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 04/24/2020
+ms.date: 08/01/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: hux
-ms.openlocfilehash: 5b41609ec2b7cc9880fb22a76b9e3b40c315bc3c
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: ed70a05e0a6213ce00a6e0514f0741e8abbaeef9
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499877"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690377"
 ---
 # <a name="manage-and-find-data-on-azure-blob-storage-with-blob-index-preview"></a>Blob 인덱스를 사용 하 여 Azure Blob Storage에서 데이터 관리 및 찾기 (미리 보기)
 
@@ -97,15 +97,15 @@ FindBlobsByTags 작업을 통해 인덱스 태그가 지정 된 blob 인덱스 �
 
 아래 표에서는 Findblob Sbytags에 대 한 모든 유효한 연산자를 보여 줍니다.
 
-|  연산자  |  설명  | 예제 |
+|  연산자  |  Description  | 예제 |
 |------------|---------------|---------|
 |     =      |     같음     | "Status" = ' 진행 중 ' | 
-|     >      |  초과 |  "Date" > ' 2018-06-18 ' |
+|     >      |  보다 큼 |  "Date" > ' 2018-06-18 ' |
 |     >=     |  크거나 같음 | "Priority" >= ' 5 ' | 
 |     <      |  보다 작음    | "Age" < ' 32 ' |
 |     <=     |  작거나 같음  | "Company" <= ' Contoso ' |
 |    AND     |  논리적 and  | "Rank" >= ' 010 ' 및 "Rank" < ' 100 ' |
-| @container |  특정 컨테이너에 대 한 범위   | @container= ' videofiles ' 및 "status" = ' done ' |
+| @container |  특정 컨테이너에 대 한 범위   | @container = ' videofiles ' 및 "status" = ' done ' |
 
 > [!NOTE]
 > 태그를 설정 하 고 쿼리 하는 경우 사전순으로 정렬 합니다.
@@ -121,11 +121,11 @@ X-y 헤더는 다른 기존 HTTP 조건부 헤더 (-Match,-None-Match 등)와 �
 
 아래 표에서는 조건부 연산에 대 한 모든 유효한 연산자를 보여 줍니다.
 
-|  연산자  |  설명  | 예제 |
+|  연산자  |  Description  | 예제 |
 |------------|---------------|---------|
 |     =      |     같음     | "Status" = ' 진행 중 ' |
 |     <>     |   같지 않음   | "상태"  <>  ' 완료 '  | 
-|     >      |  초과 |  "Date" > ' 2018-06-18 ' |
+|     >      |  보다 큼 |  "Date" > ' 2018-06-18 ' |
 |     >=     |  크거나 같음 | "Priority" >= ' 5 ' | 
 |     <      |  보다 작음    | "Age" < ' 32 ' |
 |     <=     |  작거나 같음  | "Company" <= ' Contoso ' |

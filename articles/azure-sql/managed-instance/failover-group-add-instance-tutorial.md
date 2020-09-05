@@ -5,19 +5,19 @@ description: 이 자습서에서는 기본 및 보조 Azure SQL Managed Instance
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: high-availability
-ms.custom: sqldbrb=1
+ms.custom: sqldbrb=1, devx-track-azurepowershell
 ms.devlang: ''
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sashan, carlrab
 ms.date: 08/27/2019
-ms.openlocfilehash: 47f33d8b1a7792487491cbe7f2ddb5c7f5b087af
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: a6f400db2a068953080e734148e024b575e3e1e9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002988"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070856"
 ---
 # <a name="tutorial-add-sql-managed-instance-to-a-failover-group"></a>자습서: 장애 조치 (failover) 그룹에 SQL Managed Instance 추가
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -52,7 +52,7 @@ Azure SQL Managed Instance의 관리 되는 인스턴스를 장애 조치 (failo
 ---
 
 
-## <a name="1---create-a-resource-group-and-primary-managed-instance"></a>1-리소스 그룹 및 기본 관리 되는 인스턴스 만들기
+## <a name="create-a-resource-group-and-primary-managed-instance"></a>리소스 그룹 및 기본 관리 되는 인스턴스 만들기
 
 이 단계에서는 Azure Portal 또는 PowerShell을 사용 하 여 장애 조치 (failover) 그룹에 대 한 리소스 그룹 및 기본 관리 되는 인스턴스를 만듭니다. 
 
@@ -404,7 +404,7 @@ PowerShell을 사용 하 여 리소스 그룹 및 기본 관리 되는 인스턴
 
 ---
 
-## <a name="2---create-secondary-virtual-network"></a>2-보조 가상 네트워크 만들기
+## <a name="create-secondary-virtual-network"></a>보조 가상 네트워크 만들기
 
 Azure Portal를 사용 하 여 관리 되는 인스턴스를 만드는 경우 기본 및 보조 관리 되는 인스턴스의 서브넷에 겹치는 범위가 없도록 하기 때문에 가상 네트워크를 별도로 만들어야 합니다. PowerShell을 사용 하 여 관리 되는 인스턴스를 구성 하는 경우 3 단계로 건너뜁니다. 
 
@@ -432,7 +432,7 @@ Azure Portal를 사용 하 여 관리 되는 인스턴스를 만드는 경우 �
     | **주소 공간** | 과 같은 가상 네트워크의 주소 공간 `10.128.0.0/16` 입니다. | 
     | **구독** | 기본 관리 되는 인스턴스 및 리소스 그룹이 상주 하는 구독입니다. |
     | **지역** | 보조 관리 되는 인스턴스를 배포할 위치입니다. |
-    | **서브넷** | 서브넷의 이름입니다. `default`는 기본적으로 제공 됩니다. |
+    | **서브넷** | 서브넷의 이름입니다. `default` 는 기본적으로 제공 됩니다. |
     | **주소 범위**| 서브넷의 주소 범위입니다. 이는와 같이 기본 관리 되는 인스턴스의 가상 네트워크에서 사용 하는 서브넷 주소 범위와 달라 야 합니다 `10.128.0.0/24` .  |
     | &nbsp; | &nbsp; |
 
@@ -444,7 +444,7 @@ Azure Portal를 사용 하 여 관리 되는 인스턴스를 만드는 경우 �
 
 ---
 
-## <a name="3---create-a-secondary-managed-instance"></a>3-보조 관리 되는 인스턴스 만들기
+## <a name="create-a-secondary-managed-instance"></a>보조 관리 되는 인스턴스 만들기
 이 단계에서는 두 개의 관리 되는 인스턴스 간에 네트워킹을 구성 하는 Azure Portal에서 보조 관리 되는 인스턴스를 만듭니다. 
 
 두 번째 관리 되는 인스턴스는 다음을 수행 해야 합니다.
@@ -734,9 +734,9 @@ PowerShell을 사용 하 여 보조 관리 되는 인스턴스를 만듭니다.
 
 ---
 
-## <a name="4---create-a-primary-gateway"></a>4-기본 게이트웨이 만들기 
+## <a name="create-a-primary-gateway"></a>기본 게이트웨이 만들기 
 
-장애 조치 (failover) 그룹에 참여 하는 두 개의 관리 되는 인스턴스는 네트워크 통신을 허용 하기 위해 두 개의 관리 되는 인스턴스의 가상 네트워크 간에 구성 된 Express 경로 또는 게이트웨이가 있어야 합니다. 두 VPN gateway를 연결 하는 대신 [express](../../expressroute/expressroute-howto-circuit-portal-resource-manager.md) 경로를 구성 하도록 선택한 경우 [7 단계로](#7---create-a-failover-group)건너뜁니다.  
+장애 조치 (failover) 그룹에 참여 하는 두 개의 관리 되는 인스턴스는 네트워크 통신을 허용 하기 위해 두 개의 관리 되는 인스턴스의 가상 네트워크 간에 구성 된 Express 경로 또는 게이트웨이가 있어야 합니다. 두 VPN gateway를 연결 하는 대신 [express](../../expressroute/expressroute-howto-circuit-portal-resource-manager.md) 경로를 구성 하도록 선택한 경우 [7 단계로](#create-a-failover-group)건너뜁니다.  
 
 이 문서에서는 두 VPN gateway를 만들고 연결 하는 단계를 제공 하지만 대신 Express 경로를 구성한 경우에는 장애 조치 (failover) 그룹 만들기로 건너뛸 수 있습니다. 
 
@@ -767,7 +767,6 @@ Azure Portal를 사용 하 여 기본 관리 되는 인스턴스의 가상 네�
     | **게이트웨이 유형** | **VPN**을 선택합니다. |
     | **VPN 유형** | **경로 기반**을 선택합니다. |
     | **SKU**| 기본값은 그대로 둡니다 `VpnGw1` . |
-    | **위치**| 기본 관리 되는 인스턴스 및 기본 가상 네트워크가 있는 위치입니다.   |
     | **가상 네트워크**| 섹션 2에서 만든 가상 네트워크 (예:)를 선택 `vnet-sql-mi-primary` 합니다. |
     | **공용 IP 주소**| **새로 만들기**를 선택합니다. |
     | **공용 IP 주소 이름**| IP 주소에 대 한 이름 (예:)을 입력 `primary-gateway-IP` 합니다. |
@@ -831,7 +830,7 @@ PowerShell을 사용 하 여 기본 관리 되는 인스턴스의 가상 네트�
 ---
 
 
-## <a name="5---create-secondary-gateway"></a>5-보조 게이트웨이 만들기 
+## <a name="create-secondary-gateway"></a>보조 게이트웨이 만들기 
 이 단계에서는 Azure Portal를 사용 하 여 보조 관리 되는 인스턴스의 가상 네트워크에 대 한 게이트웨이를 만듭니다. 
 
 
@@ -849,8 +848,7 @@ Azure Portal를 사용 하 여 이전 섹션의 단계를 반복 하 여 보조 
    | **게이트웨이 유형** | **VPN**을 선택합니다. |
    | **VPN 유형** | **경로 기반**을 선택합니다. |
    | **SKU**| 기본값은 그대로 둡니다 `VpnGw1` . |
-   | **위치**| 보조 관리 되는 인스턴스 및 보조 가상 네트워크가 있는 위치입니다.   |
-   | **가상 네트워크**| 섹션 2에서 만든 가상 네트워크 (예:)를 선택 `vnet-sql-mi-secondary` 합니다. |
+   | **가상 네트워크**| 와 같은 보조 관리 되는 인스턴스의 가상 네트워크를 선택 `vnet-sql-mi-secondary` 합니다. |
    | **공용 IP 주소**| **새로 만들기**를 선택합니다. |
    | **공용 IP 주소 이름**| IP 주소에 대 한 이름 (예:)을 입력 `secondary-gateway-IP` 합니다. |
    | &nbsp; | &nbsp; |
@@ -883,7 +881,7 @@ PowerShell을 사용 하 여 보조 관리 되는 인스턴스의 가상 네트�
                      -VirtualNetwork $secondaryVirtualNetwork
    $drLocation = $secondaryVirtualNetwork.Location
    
-   Write-host "Creating primary gateway..."
+   Write-host "Creating secondary gateway..."
    Write-host "This will take some time."
    $secondaryGWPublicIP = New-AzPublicIpAddress -Name $secondaryGWPublicIPAddress -ResourceGroupName $resourceGroupName `
             -Location $drLocation -AllocationMethod Dynamic
@@ -911,7 +909,7 @@ PowerShell을 사용 하 여 보조 관리 되는 인스턴스의 가상 네트�
 ---
 
 
-## <a name="6---connect-the-gateways"></a>6-게이트웨이 연결
+## <a name="connect-the-gateways"></a>게이트웨이 연결
 이 단계에서는 두 가상 네트워크의 두 게이트웨이 간에 양방향 연결을 만듭니다. 
 
 
@@ -923,21 +921,24 @@ Azure Portal를 사용 하 여 두 게이트웨이를 연결 합니다.
 1. [Azure Portal](https://portal.azure.com)에서 **리소스 만들기** 를 선택 합니다.
 1. `connection`검색 상자에를 입력 한 다음 enter 키를 눌러 Microsoft에서 게시 한 **연결** 리소스로 이동 합니다.
 1. **만들기** 를 선택 하 여 연결을 만듭니다. 
-1. **기본 사항** 탭에서 다음 값을 선택 하 고 **확인**을 선택 합니다. 
+1. **기본 사항** 페이지에서 다음 값을 선택 하 고 **확인**을 선택 합니다. 
     1. `VNet-to-VNet` **연결 형식**에 대해를 선택 합니다. 
     1. 드롭다운에서 구독을 선택합니다. 
     1. 드롭다운에서 SQL Managed Instance에 대 한 리소스 그룹을 선택 합니다. 
     1. 드롭다운 목록을 선택 하 여 기본 관리 되는 인스턴스의 위치를 선택 합니다. 
-1. **설정** 탭에서 다음 값을 선택 하거나 입력 한 다음, **확인**을 선택 합니다.
-    1. **첫 번째 가상 네트워크 게이트웨이**(예:)에 대 한 기본 네트워크 게이트웨이를 선택 `Primary-Gateway` 합니다.  
-    1. **두 번째 가상 네트워크 게이트웨이**(예:)에 대 한 보조 네트워크 게이트웨이를 선택 `Secondary-Gateway` 합니다. 
+1. **설정** 페이지에서 다음 값을 선택 하거나 입력 한 다음, **확인**을 선택 합니다.
+    1. **첫 번째 가상 네트워크 게이트웨이**(예:)에 대 한 기본 네트워크 게이트웨이를 선택 `primaryGateway` 합니다.  
+    1. **두 번째 가상 네트워크 게이트웨이**(예:)에 대 한 보조 네트워크 게이트웨이를 선택 `secondaryGateway` 합니다. 
     1. **양방향 연결 설정**옆의 확인란을 선택 합니다. 
     1. 기본 기본 연결 이름을 그대로 두거나 원하는 값으로 이름을 바꿉니다. 
     1. 연결에 대 한 **공유 키 (PSK)** 를 제공 합니다 (예:) `mi1m2psk` . 
+    1. **확인**을 선택하여 설정을 저장합니다. 
 
-   ![게이트웨이 연결 만들기](./media/failover-group-add-instance-tutorial/create-gateway-connection.png)
+    ![게이트웨이 연결 만들기](./media/failover-group-add-instance-tutorial/create-gateway-connection.png)
 
-1. **요약** 탭에서 양방향 연결에 대 한 설정을 검토 한 다음 **확인** 을 선택 하 여 연결을 만듭니다. 
+    
+
+1. **검토 + 만들기** 페이지에서 양방향 연결에 대 한 설정을 검토 한 다음 **확인** 을 선택 하 여 연결을 만듭니다. 
 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -970,7 +971,7 @@ PowerShell을 사용 하 여 두 게이트웨이를 연결 합니다.
 ---
 
 
-## <a name="7---create-a-failover-group"></a>7-장애 조치 (failover) 그룹 만들기
+## <a name="create-a-failover-group"></a>장애 조치 그룹 만들기
 이 단계에서는 장애 조치 (failover) 그룹을 만들고 여기에 관리 되는 인스턴스를 모두 추가 합니다. 
 
 
@@ -1013,7 +1014,7 @@ PowerShell을 사용 하 여 장애 조치 (failover) 그룹을 만듭니다.
 ---
 
 
-## <a name="8---test-failover"></a>8-테스트 장애 조치
+## <a name="test-failover"></a>테스트 장애 조치
 이 단계에서는 장애 조치 (failover) 그룹을 보조 서버로 장애 조치 (failover) 한 다음 Azure Portal를 사용 하 여 장애 복구 (failback) 합니다. 
 
 

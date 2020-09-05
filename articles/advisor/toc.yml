@@ -19,15 +19,15 @@
       href: advisor-get-started.md
 - name: 방법 가이드
   items:
-    - name: Azure 애플리케이션의 안정성 향상
+    - name: 안정성
       href: advisor-high-availability-recommendations.md
-    - name: 리소스 보안 강화
+    - name: 보안
       href: advisor-security-recommendations.md
-    - name: Azure 애플리케이션의 성능 향상
+    - name: 성능 효율성
       href: advisor-performance-recommendations.md
-    - name: 서비스 비용 절감
+    - name: 비용 최적화
       href: advisor-cost-recommendations.md
-    - name: 뛰어난 운영 달성
+    - name: 운영 우수성
       href: advisor-operational-excellence-recommendations.md
     - name: 권장 사항 구성
       href: view-recommendations.md
@@ -35,6 +35,8 @@
       href: permissions.md
     - name: 권장 사항에 대한 경고 구성
       href: advisor-alerts-portal.md
+    - name: 권장 사항 요약 구성
+      href: advisor-recommendations-digest.md
     - name: 권장 사항에 대한 대량 수정
       href: advisor-quick-fix.md
     - name: Azure Resource Graph의 Advisor 데이터

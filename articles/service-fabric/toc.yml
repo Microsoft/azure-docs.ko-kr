@@ -116,9 +116,6 @@
       href: service-fabric-powershell-samples.md
     - name: Service Fabric CLI
       href: samples-cli.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 마이크로 서비스 이해
@@ -127,7 +124,7 @@
       href: service-fabric-content-roadmap.md
     - name: 애플리케이션 시나리오
       href: service-fabric-application-scenarios.md
-    - name: Architecture
+    - name: 아키텍처
       href: service-fabric-architecture.md
     - name: 보안
       items:
@@ -895,6 +892,9 @@
           href: service-fabric-service-model-schema-element-groups.md
     - name: 환경 변수
       href: service-fabric-environment-variables-reference.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Azure 로드맵

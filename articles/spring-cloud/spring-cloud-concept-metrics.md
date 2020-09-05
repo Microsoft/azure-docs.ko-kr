@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/06/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 1fcec8b591192bba862bf91040e5d6ca1ef9bcd8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 4a12658eada3d2660cde86b3eb80e332416ea7a3
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87037732"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89046853"
 ---
 # <a name="understand-metrics-for-azure-spring-cloud"></a>Azure 스프링 클라우드의 메트릭 이해
 
@@ -130,6 +130,8 @@ Azure 스프링 클라우드는 1 분 마다 업데이트 되는 메트릭을 �
 >| tomcat. | tomcat. | 개수 | Tomcat 세션 활성 수 |
 
 ## <a name="see-also"></a>참고 항목
+* [빠른 시작: 로그, 메트릭 및 추적을 사용 하 여 Azure 스프링 클라우드 앱 모니터링](spring-cloud-quickstart-logs-metrics-tracing.md)
+
 * [Azure 메트릭 탐색기 시작](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started)
 
 * [진단 설정을 사용 하 여 로그 및 메트릭 분석](https://docs.microsoft.com/azure/spring-cloud/diagnostic-services)

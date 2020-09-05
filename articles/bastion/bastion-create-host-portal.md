@@ -1,18 +1,18 @@
 ---
 title: 'Azure 방호 호스트 만들기: 포털'
-description: 이 문서에서는 포털을 사용 하 여 Azure 방호 호스트를 만드는 방법에 대해 알아봅니다.
+description: 이 문서에서는 가상 네트워크의 모든 가상 머신에 RDP/SSH 연결을 제공 하는 Azure 방호 호스트를 만드는 방법에 대해 알아봅니다.
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: how-to
 ms.date: 04/24/2020
 ms.author: cherylmc
-ms.openlocfilehash: d18d520419e77a225431d9c2a395f62411656537
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1e0bc9a17a12afac6d91867b19aba0f90b7f6edb
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744275"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270753"
 ---
 # <a name="create-an-azure-bastion-host-using-the-portal"></a>포털을 사용 하 여 Azure 방호 호스트 만들기
 
@@ -30,7 +30,7 @@ ms.locfileid: "84744275"
 
 이 섹션은 Azure Portal에서 새 Azure 방호 리소스를 만드는 데 도움이 됩니다.
 
-1. [Azure Portal](https://portal.azure.com) 메뉴 또는 **홈**페이지에서 **리소스 만들기**를 선택합니다.
+1. [Azure Portal](https://portal.azure.com) 메뉴 또는 **홈** 페이지에서 **리소스 만들기**를 선택합니다.
 
 1. **새로 만들기** 페이지의 *Marketplace 검색* 필드에 **요새**를 입력 한 다음 **Enter** 를 클릭 하 여 검색 결과를 가져옵니다.
 

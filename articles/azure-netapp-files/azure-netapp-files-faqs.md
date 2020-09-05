@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/27/2020
+ms.date: 08/18/2020
 ms.author: b-juche
-ms.openlocfilehash: 7c792ee9c56a044942bb2249a57f2615c72badee
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: eeb22672829dca9ba342079183dcc5ed7c35393c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533141"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590373"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Azure NetApp Files에 대 한 Faq
 
@@ -54,7 +54,9 @@ ms.locfileid: "87533141"
 
 ### <a name="can-the-network-traffic-between-the-azure-vm-and-the-storage-be-encrypted"></a>Azure VM과 저장소 간의 네트워크 트래픽이 암호화 될 수 있나요?
 
-데이터 트래픽 (NFSv3, NFSv 4.1 또는 SMBv3 client에서 Azure NetApp Files 볼륨으로의 트래픽)은 암호화 되지 않습니다. 그러나 Azure VM (NFS 또는 SMB 클라이언트를 실행 하는)에서 Azure NetApp Files로의 트래픽은 다른 Azure VM 간 트래픽과도 안전 합니다. 이 트래픽은 Azure 데이터 센터 네트워크에 대 한 로컬 트래픽입니다. 
+NFSv 4.1 클라이언트와 Azure NetApp Files 볼륨 간의 데이터 트래픽은 AES-256 암호화를 사용 하는 Kerberos를 사용 하 여 암호화할 수 있습니다. 자세한 내용은 [nfsv 4.1 Kerberos 암호화 구성 Azure NetApp Files을](configure-kerberos-encryption.md) 참조 하세요.   
+
+NFSv3 또는 SMBv3 클라이언트 간의 데이터 트래픽이 Azure NetApp Files 볼륨으로 암호화 되지 않습니다. 그러나 Azure VM (NFS 또는 SMB 클라이언트를 실행 하는)에서 Azure NetApp Files로의 트래픽은 다른 Azure VM 간 트래픽과도 안전 합니다. 이 트래픽은 Azure 데이터 센터 네트워크에 대 한 로컬 트래픽입니다. 
 
 ### <a name="can-the-storage-be-encrypted-at-rest"></a>미사용 저장소를 암호화할 수 있나요?
 
@@ -125,7 +127,7 @@ Azure NetApp Files은 NFSv3 및 NFSv 4.1을 지원 합니다. NFS 버전 중 하
 
 ### <a name="how-do-i-enable-root-squashing"></a>루트 squash 병합를 사용 하도록 설정 어떻게 할까요??
 
-Root squash 병합는 현재 지원 되지 않습니다.
+루트 계정이 볼륨의 내보내기 정책을 사용 하 여 볼륨에 액세스할 수 있는지 여부를 지정할 수 있습니다. 자세한 내용은 [NFS 볼륨에 대 한 내보내기 정책 구성](azure-netapp-files-configure-export-policy.md) 을 참조 하세요.
 
 ## <a name="smb-faqs"></a>SMB FAQ
 
@@ -177,6 +179,11 @@ Yes, Azure NetApp Files supports LDAP signing by default. This functionality ena
 
 "사용 권한이 거부 되었습니다." 문제를 방지 하려면 `pcuser` 탑재 지점에 액세스 하기 전에 Windows Active Directory에가 포함 되어 있는지 확인 합니다. `pcuser`"사용 권한이 거부 되었습니다." 문제가 발생 한 후를 추가 하는 경우 액세스를 다시 시도 하기 전에 캐시 항목을 제거 하기 위해 24 시간 동안 기다립니다.
 
+### <a name="when-i-try-to-create-a-dual-protocol-volume-why-does-the-creation-process-fail-with-the-error-failed-to-validate-ldap-configuration-try-again-after-correcting-ldap-configuration"></a>이중 프로토콜 볼륨을 만들려고 할 때 "LDAP 구성의 유효성을 검사 하지 못했습니다." 라는 오류와 함께 만들기 프로세스가 실패 하는 이유는 무엇 인가요?  
+
+DNS 서버에 AD 호스트 컴퓨터의 포인터 (PTR) 레코드가 없을 수 있습니다. DNS 서버에 역방향 조회 영역을 만든 다음 해당 역방향 조회 영역에서 AD 호스트 컴퓨터의 PTR 레코드를 추가 해야 합니다.
+
+예를 들어 AD 컴퓨터의 IP 주소가이 고 `1.1.1.1` , 명령을 사용 하 여 발견 된 ad 컴퓨터의 호스트 이름이이 `hostname` `AD1` 고, 도메인 이름이 인 것으로 가정 합니다 `myDomain.com` .  역방향 조회 영역에 추가 된 PTR 레코드는 이어야 합니다 `1.1.1.1`  ->  `AD1.myDomain.com` .
 
 ## <a name="capacity-management-faqs"></a>용량 관리 Faq
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/15/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 1b32ae55030cc24c8892b204ff7330269993a483
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 15b129db56a9c6854bc3c1f2814a8776ec39adc6
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87098564"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961570"
 ---
 # <a name="availability-zone-support-for-app-service-environments"></a>App Service 환경에 대 한 가용성 영역 지원
 
@@ -77,7 +77,7 @@ ILB ASE는 특정 영역에 고정 되므로 AZ에 명시적으로 배포 된 IL
     ]
 ```
 
-앱 영역을 중복 하 게 하려면 두 영역 ILB Ase를 배포 해야 합니다. 두 영역 ILB Ase은 별도의 가용성 영역에 있어야 합니다. 그런 다음 각 ILB Ase에 앱을 배포 해야 합니다. 앱을 만든 후에는 부하 분산 솔루션을 구성 해야 합니다. 권장 되는 해결책은 [영역 중복 Application Gateway 영역](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant) Ilb ase의 업스트림을 배포 하는 것입니다. 
+앱 영역을 중복 하 게 하려면 두 영역 ILB Ase를 배포 해야 합니다. 두 영역 ILB Ase은 별도의 가용성 영역에 있어야 합니다. 그런 다음 각 ILB Ase에 앱을 배포 해야 합니다. 앱을 만든 후에는 부하 분산 솔루션을 구성 해야 합니다. 권장 되는 해결책은 [영역 중복 Application Gateway 영역](../../application-gateway/application-gateway-autoscaling-zone-redundant.md) Ilb ase의 업스트림을 배포 하는 것입니다. 
 
 ## <a name="in-region-data-residency"></a>지역 데이터 상주 ##
 
@@ -90,5 +90,3 @@ ILB ASE는 특정 영역에 고정 되므로 AZ에 명시적으로 배포 된 IL
 1. [리소스 탐색기](https://resources.azure.com)를 사용 하 여 App Service Environment에 대 한 ARM 리소스로 이동 합니다.  Ase */hostingEnvironments*아래에 나열 됩니다.
 2. *영역* 속성이 ARM json 구문 뷰에 있고 값이 "1", "2", "3" 인 단일 값 JSON 배열을 포함 하는 경우 ASE는 zonally 배포 되 고 고객 데이터는 동일한 지역에 유지 됩니다.
 2. *Zones* 속성이 존재 하지 않거나 속성에 이전에 지정 된 유효한 영역 값이 없는 경우 ASE가 zonally 배포 되지 않고 고객 데이터가 동일한 지역에 독점적으로 저장 되지 않습니다.
-
-

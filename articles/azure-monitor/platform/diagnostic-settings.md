@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.subservice: logs
-ms.openlocfilehash: ff0df654650bb1c32d5c3e9833ebde2a81e3d65c
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 74e0a63da87a79cbd582cd6da5992251fc256504
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799959"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135439"
 ---
 # <a name="create-diagnostic-settings-to-send-platform-logs-and-metrics-to-different-destinations"></a>플랫폼 로그 및 메트릭을 다른 대상으로 전송하는 진단 설정 만들기
 Azure 활동 로그 및 리소스 로그를 포함 한 azure의 [플랫폼 로그](platform-logs-overview.md) 는 azure 리소스 및 해당 리소스가 종속 된 azure 플랫폼에 대 한 자세한 진단 및 감사 정보를 제공 합니다. [플랫폼 메트릭은](data-platform-metrics.md) 기본적으로 수집 되며 일반적으로 Azure Monitor 메트릭 데이터베이스에 저장 됩니다. 이 문서에서는 플랫폼 메트릭 및 플랫폼 로그를 다른 대상으로 보내기 위한 진단 설정을 만들고 구성 하는 방법에 대해 자세히 설명 합니다.
@@ -41,34 +41,24 @@ Azure 활동 로그 및 리소스 로그를 포함 한 azure의 [플랫폼 로�
 
 
 ## <a name="destinations"></a>Destinations
-
-다음 표의 대상에 플랫폼 로그 및 메트릭을 보낼 수 있습니다. 대상에 데이터를 보내는 방법에 대 한 자세한 내용은 다음 표의 각 링크를 따르세요.
+다음 표의 대상에 플랫폼 로그 및 메트릭을 보낼 수 있습니다. 
 
 | 대상 | Description |
 |:---|:---|
-| [Log Analytics 작업 영역](#log-analytics-workspace) | 로그 및 메트릭을 Log Analytics 작업 영역으로 보내면 강력한 로그 쿼리를 사용 하 여 Azure Monitor 수집 된 다른 모니터링 데이터로 분석 하 고 경고 및 시각화와 같은 기타 Azure Monitor 기능을 활용할 수 있습니다. |
-| [Event Hubs](#event-hub) | 로그 및 메트릭을 Event Hubs로 보내면 타사 SIEMs 및 기타 log analytics 솔루션과 같은 외부 시스템으로 데이터를 스트리밍할 수 있습니다. |
-| [Azure storage 계정](#azure-storage) | Azure storage 계정에 로그 및 메트릭을 보관 하는 것은 감사, 정적 분석 또는 백업에 유용 합니다. Azure Monitor 로그 및 Log Analytics 작업 영역에 비해 Azure storage는 비용이 적고 로그가 무기한으로 보관 될 수 있습니다. |
+| [Log Analytics 작업 영역](design-logs-deployment.md) | 로그 및 메트릭을 Log Analytics 작업 영역으로 보내면 강력한 로그 쿼리를 사용 하 여 Azure Monitor 수집 된 다른 모니터링 데이터로 분석 하 고 경고 및 시각화와 같은 기타 Azure Monitor 기능을 활용할 수 있습니다. |
+| [Event Hubs](/azure/event-hubs/) | 로그 및 메트릭을 Event Hubs로 보내면 타사 SIEMs 및 기타 log analytics 솔루션과 같은 외부 시스템으로 데이터를 스트리밍할 수 있습니다.  |
+| [Azure storage 계정](/azure/storage/blobs/) | Azure storage 계정에 로그 및 메트릭을 보관 하는 것은 감사, 정적 분석 또는 백업에 유용 합니다. Azure Monitor 로그 및 Log Analytics 작업 영역에 비해 Azure storage는 비용이 적고 로그가 무기한으로 보관 될 수 있습니다.  |
 
 
-## <a name="prerequisites"></a>필수 조건
-필요한 사용 권한으로 진단 설정의 대상을 만들어야 합니다. 각 대상에 대 한 필수 조건 요구 사항은 아래 섹션을 참조 하세요.
+### <a name="destination-requirements"></a>대상 요구 사항
 
-### <a name="log-analytics-workspace"></a>Log Analytics 작업 영역
-아직 없는 경우 [새 작업 영역을 만듭니다](../learn/quick-create-workspace.md) . 설정을 구성 하는 사용자에 게 두 구독에 대 한 적절 한 RBAC 액세스 권한이 있는 한,이 작업 영역은 로그를 보내는 리소스와 동일한 구독을가지고 있지 않아도 됩니다.
+진단 설정을 만들기 전에 진단 설정의 대상을 만들어야 합니다. 설정을 구성 하는 사용자에 게 두 구독에 대 한 적절 한 RBAC 액세스 권한이 있는 한, 대상은 로그를 보내는 리소스와 동일한 구독을가지고 있지 않아도 됩니다. 다음 표에서는 지역 제한을 포함 하 여 각 대상에 대 한 고유한 요구 사항을 제공 합니다.
 
-### <a name="event-hub"></a>이벤트 허브
-아직 없는 경우 [이벤트 허브를 만듭니다](../../event-hubs/event-hubs-create.md) . 설정을 구성 하는 사용자에 게 두 구독에 대 한 적절 한 RBAC 액세스와 두 구독이 동일한 테 넌 트에 있는 경우, Event Hubs 네임 스페이스는 로그를 내보내는 구독과 동일한 구독을가지고 있지 않아도 됩니다.
-
-네임 스페이스에 대 한 공유 액세스 정책은 스트리밍 메커니즘이 포함 하는 사용 권한을 정의 합니다. Event Hubs로 스트리밍하려면 관리, 보내기 및 수신 권한이 필요 합니다. Event Hubs 네임 스페이스의 구성 탭에 있는 Azure Portal에서 공유 액세스 정책을 만들거나 수정할 수 있습니다. 스트리밍을 포함 하도록 진단 설정을 업데이트 하려면 해당 Event Hubs 권한 부여 규칙에 대 한 ListKey 권한이 있어야 합니다. 
-
-
-### <a name="azure-storage"></a>Azure Storage
-아직 없는 경우 [Azure storage 계정을 만듭니다](../../storage/common/storage-account-create.md) . 설정을 구성 하는 사용자가 두 구독에 대 한 적절 한 RBAC 액세스를 가진 경우 저장소 계정은 로그를 보내는 리소스와 동일한 구독을가지고 있지 않아도 됩니다.
-
-데이터에 대 한 액세스를 더 효율적으로 제어할 수 있도록 저장 된 다른 데이터를 모니터링 하지 않는 기존 저장소 계정을 사용해 서는 안 됩니다. 그러나 활동 로그와 리소스 로그를 함께 보관 하는 경우 동일한 저장소 계정을 사용 하 여 모든 모니터링 데이터를 중앙 위치에 유지 하도록 선택할 수 있습니다.
-
-데이터를 변경할 수 없는 저장소로 보내려면 [Blob 저장소에 대 한 불변성 정책 설정 및 관리](../../storage/blobs/storage-blob-immutability-policies-manage.md)에 설명 된 대로 저장소 계정에 대 한 변경할 수 없는 정책을 설정 합니다. 보호 된 추가 blob 쓰기 사용을 비롯 하 여이 문서의 모든 단계를 수행 해야 합니다.
+| 대상 | 요구 사항 |
+|:---|:---|
+| Log Analytics 작업 영역 | 작업 영역은 모니터링 되는 리소스와 동일한 지역에 있을 필요가 없습니다.|
+| 이벤트 허브(영문) | 네임 스페이스에 대 한 공유 액세스 정책은 스트리밍 메커니즘이 포함 하는 사용 권한을 정의 합니다. Event Hubs로 스트리밍하려면 관리, 보내기 및 수신 권한이 필요 합니다. 스트리밍을 포함 하도록 진단 설정을 업데이트 하려면 해당 Event Hubs 권한 부여 규칙에 대 한 ListKey 권한이 있어야 합니다.<br><br>리소스가 지역별 인 경우 이벤트 허브 네임 스페이스는 모니터링 되는 리소스와 동일한 지역에 있어야 합니다. |
+| Azure Storage 계정 | 데이터에 대 한 액세스를 더 효율적으로 제어할 수 있도록 저장 된 다른 데이터를 모니터링 하지 않는 기존 저장소 계정을 사용해 서는 안 됩니다. 그러나 활동 로그와 리소스 로그를 함께 보관 하는 경우 동일한 저장소 계정을 사용 하 여 모든 모니터링 데이터를 중앙 위치에 유지 하도록 선택할 수 있습니다.<br><br>데이터를 변경할 수 없는 저장소로 보내려면 [Blob 저장소에 대 한 불변성 정책 설정 및 관리](../../storage/blobs/storage-blob-immutability-policies-manage.md)에 설명 된 대로 저장소 계정에 대 한 변경할 수 없는 정책을 설정 합니다. 보호 된 추가 blob 쓰기 사용을 비롯 하 여이 문서의 모든 단계를 수행 해야 합니다.<br><br>리소스가 지역별 인 경우 저장소 계정은 모니터링 되는 리소스와 동일한 지역에 있어야 합니다. |
 
 > [!NOTE]
 > Azure Data Lake Storage Gen2 계정은 현재 Azure Portal에서 유효한 옵션으로 나열될 수 있지만 진단 설정의 대상으로 지원되지 않습니다.

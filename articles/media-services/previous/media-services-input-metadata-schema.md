@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b6d89b36123267c0bdc5d8fdbfd56c83610418c9
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 57a91622bef401d946a383e3be39f2e566fa50b4
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86056211"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267839"
 ---
-# <a name="input-metadata"></a>입력 메타데이터 
+# <a name="input-metadata"></a>입력 메타데이터
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 인코딩 작업은 일부 인코딩 태스크를 수행할 입력 자산(또는 자산)과 연결됩니다.  태스크가 완료되는 즉시 출력 자산이 생성됩니다.  출력 자산에는 비디오, 오디오, 미리 보기, 매니페스트 등이 포함 됩니다. 출력 자산에는 입력 자산에 대 한 메타 데이터가 있는 파일도 포함 됩니다. 메타데이터 XML 파일의 이름 형식은 &lt;asset_id&gt;_metadata.xml입니다(예: 41114ad3-eb5e-4c57-8d92-5354e2b7d4a4_metadata.xml). 여기서 &lt;asset_id&gt;는 입력 자산의 AssetId 값입니다.  
 
@@ -38,7 +40,7 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 
 이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
-| 이름 | 설명 |
+| Name | 설명 |
 | --- | --- |
 | **AssetFile**<br /><br /> minOccurs="1" maxOccurs="unbounded" |단일 자식 요소입니다. 자세한 내용은 [AssetFile 요소](media-services-input-metadata-schema.md#AssetFile)를 참조하세요. |
 
@@ -48,14 +50,14 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
  이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | Description |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **이름**<br /><br /> 필요한 공간 |**xs:string** |자산 파일의 이름입니다. |
-| **크기**<br /><br /> 필요한 공간 |**xs:long** |자산 파일의 크기(바이트)입니다. |
-| **Duration**<br /><br /> 필요한 공간 |**xs:duration** |콘텐츠 재생 시간입니다. 예제: Duration="PT25M37.757S" |
-| **NumberOfStreams**<br /><br /> 필요한 공간 |**xs:int** |자산 파일의 스트림 수입니다. |
-| **FormatNames**<br /><br /> 필요한 공간 |**xs: string** |형식 이름입니다. |
-| **FormatVerboseNames**<br /><br /> 필요한 공간 |**xs: string** |자세한 형식 이름입니다. |
+| **이름**<br /><br /> 필수 |**xs:string** |자산 파일의 이름입니다. |
+| **크기**<br /><br /> 필수 |**xs:long** |자산 파일의 크기(바이트)입니다. |
+| **Duration**<br /><br /> 필수 |**xs:duration** |콘텐츠 재생 시간입니다. 예제: Duration="PT25M37.757S" |
+| **NumberOfStreams**<br /><br /> 필수 |**xs:int** |자산 파일의 스트림 수입니다. |
+| **FormatNames**<br /><br /> 필수 |**xs: string** |형식 이름입니다. |
+| **FormatVerboseNames**<br /><br /> 필수 |**xs: string** |자세한 형식 이름입니다. |
 | **StartTime** |**xs:duration** |콘텐츠 시작 시간입니다. 예제: StartTime="PT2.669S" |
 | **OverallBitRate** |**xs: int** |자산 파일의 평균 비트 전송률(Kbps)입니다. |
 
@@ -65,23 +67,23 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 > 
 
 ### <a name="child-elements"></a>자식 요소
-| Name | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **프로그램**<br /><br /> minOccurs="0" | |자산 파일의 형식이 MPEG-TS인 경우 모든 [Programs 요소](media-services-input-metadata-schema.md#Programs)의 컬렉션입니다. |
 | **VideoTracks**<br /><br /> minOccurs="0" | |각각의 실제 자산 파일에는 적절한 컨테이너 형식으로 인터리빙된 0개 이상의 비디오 트랙이 포함될 수 있습니다. 이 요소에는 자산 파일의 일부인 모든 [VideoTracks](media-services-input-metadata-schema.md#VideoTracks) 컬렉션이 포함됩니다. |
 | **AudioTracks**<br /><br /> minOccurs="0" | |각각의 실제 자산 파일에는 적절한 컨테이너 형식으로 인터리빙된 0개 이상의 오디오 트랙이 포함될 수 있습니다. 이 요소에는 자산 파일의 일부인 모든 [AudioTracks](media-services-input-metadata-schema.md#AudioTracks) 컬렉션이 포함됩니다. |
-| **메타데이터**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |key/value 문자열로 표시되는 자산 파일의 메타데이터입니다. 예를 들어:<br /><br /> **&lt;Metadata key = "language" value = "eng"/&gt;** |
+| **메타데이터**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |key/value 문자열로 표시되는 자산 파일의 메타데이터입니다. 예를 들면 다음과 같습니다.<br /><br /> **&lt;Metadata key = "language" value = "eng"/&gt;** |
 
-## <a name="tracktype"></a><a name="TrackType"></a>TrackType
+## <a name="tracktype"></a><a name="TrackType"></a> TrackType
 이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="attributes"></a>특성
-| Name | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **ID**<br /><br /> 필요한 공간 |**xs:int** |이 오디오 또는 비디오 트랙의 0 기준 인덱스입니다.<br /><br /> 반드시 MP4 파일에 사용되는 TrackID일 필요는 없습니다. |
+| **ID**<br /><br /> 필수 |**xs:int** |이 오디오 또는 비디오 트랙의 0 기준 인덱스입니다.<br /><br /> 반드시 MP4 파일에 사용되는 TrackID일 필요는 없습니다. |
 | **Codec** |**xs:string** |비디오 트랙 코덱 문자열입니다. |
 | **CodecLongName** |**xs: string** |오디오 또는 비디오 트랙 코덱의 긴 이름입니다. |
-| **TimeBase**<br /><br /> 필요한 공간 |**xs:string** |시간 기준입니다. 예제: TimeBase="1/48000" |
+| **TimeBase**<br /><br /> 필수 |**xs:string** |시간 기준입니다. 예제: TimeBase="1/48000" |
 | **NumberOfFrames** |**xs:int** |프레임 수입니다(비디오 트랙의 경우). |
 | **StartTime** |**xs: duration** |트랙 시작 시간입니다. 예제: StartTime="PT2.669S" |
 | **Duration** |**xs:duration** |트랙 지속 시간입니다. 예제: Duration="PTSampleFormat M37.757S" |
@@ -92,12 +94,12 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 > 
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **Disposition**<br /><br /> minOccurs="0" maxOccurs="1" |[StreamDispositionType](media-services-input-metadata-schema.md#StreamDispositionType) |프레젠테이션 정보가 포함됩니다(예: 특정 오디오 트랙이 시각 장애 시청자를 위한 것인지 여부). |
 | **메타데이터**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |다양한 정보를 저장하는 데 사용할 수 있는 일반 key/value 문자열입니다. 예제: key=”language” 및 value=”eng” |
 
-## <a name="audiotracktype-inherits-from-tracktype"></a><a name="AudioTrackType"></a>오디오 형식 유형 (에서 상속)
+## <a name="audiotracktype-inherits-from-tracktype"></a><a name="AudioTrackType"></a> 오디오 형식 유형 (에서 상속)
  **AudioTrackType**는 [TrackType](media-services-input-metadata-schema.md#TrackType)에서 상속되는 전역 복합 형식입니다.  
 
  형식은 자산 파일의 특정 오디오 트랙을 나타냅니다.  
@@ -105,16 +107,16 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
  이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="attributes"></a>특성
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **SampleFormat** |**xs:string** |샘플 형식입니다. |
 | **ChannelLayout** |**xs: string** |채널 레이아웃입니다. |
-| **Channels**<br /><br /> 필요한 공간 |**xs:int** |오디오 채널 수입니다(0개 이상). |
-| **SamplingRate**<br /><br /> 필요한 공간 |**xs:int** |오디오 샘플링 속도(샘플/초 또는 Hz)입니다. |
+| **채널**<br /><br /> 필수 |**xs:int** |오디오 채널 수입니다(0개 이상). |
+| **SamplingRate**<br /><br /> 필수 |**xs:int** |오디오 샘플링 속도(샘플/초 또는 Hz)입니다. |
 | **Bitrate** |**xs:int** |자산 파일에서 계산되는 평균 오디오 비트 전송률(bps)입니다. 기본 스트림 페이로드만 계산되며, 패키징 오버헤드는 이 개수에 포함되지 않습니다. |
 | **BitsPerSample** |**xs:int** |wFormatTag 형식 샘플당 비트입니다. |
 
-## <a name="videotracktype-inherits-from-tracktype"></a><a name="VideoTrackType"></a>비디오 형식 유형 (에서 상속)
+## <a name="videotracktype-inherits-from-tracktype"></a><a name="VideoTrackType"></a> 비디오 형식 유형 (에서 상속)
 **VideoTrackType**는 [TrackType](media-services-input-metadata-schema.md#TrackType)에서 상속되는 전역 복합 형식입니다.  
 
 형식은 자산 파일의 특정 비디오 트랙을 나타냅니다.  
@@ -122,73 +124,73 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
 이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="attributes"></a>특성
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **FourCC**<br /><br /> 필요한 공간 |**xs:string** |비디오 코덱 FourCC 코드입니다. |
+| **FourCC**<br /><br /> 필수 |**xs:string** |비디오 코덱 FourCC 코드입니다. |
 | **프로필** |**xs: string** |비디오 트랙의 프로필입니다. |
-| **수준** |**xs: string** |비디오 트랙의 수준입니다. |
+| **Level** |**xs: string** |비디오 트랙의 수준입니다. |
 | **PixelFormat** |**xs: string** |비디오 트랙의 픽셀 형식입니다. |
-| **Width**<br /><br /> 필요한 공간 |**xs:int** |인코딩된 비디오 너비(픽셀)입니다. |
-| **높이**<br /><br /> 필요한 공간 |**xs:int** |인코딩된 비디오 높이(픽셀)입니다. |
-| **DisplayAspectRatioNumerator**<br /><br /> 필요한 공간 |**xs: double** |비디오 디스플레이 가로 세로 비율의 분자입니다. |
-| **DisplayAspectRatioDenominator**<br /><br /> 필요한 공간 |**xs:double** |비디오 디스플레이 가로 세로 비율의 분모입니다. |
-| **DisplayAspectRatioDenominator**<br /><br /> 필요한 공간 |**xs: double** |비디오 샘플 가로 세로 비율의 분자입니다. |
+| **Width**<br /><br /> 필수 |**xs:int** |인코딩된 비디오 너비(픽셀)입니다. |
+| **높이**<br /><br /> 필수 |**xs:int** |인코딩된 비디오 높이(픽셀)입니다. |
+| **DisplayAspectRatioNumerator**<br /><br /> 필수 |**xs: double** |비디오 디스플레이 가로 세로 비율의 분자입니다. |
+| **DisplayAspectRatioDenominator**<br /><br /> 필수 |**xs:double** |비디오 디스플레이 가로 세로 비율의 분모입니다. |
+| **DisplayAspectRatioDenominator**<br /><br /> 필수 |**xs: double** |비디오 샘플 가로 세로 비율의 분자입니다. |
 | **SampleAspectRatioNumerator** |**xs: double** |비디오 샘플 가로 세로 비율의 분자입니다. |
 | **SampleAspectRatioNumerator** |**xs:double** |비디오 샘플 가로 세로 비율의 분모입니다. |
-| **속도**<br /><br /> 필요한 공간 |**xs:decimal** |.3f 형식으로 측정된 비디오 프레임 속도입니다. |
+| **속도**<br /><br /> 필수 |**xs:decimal** |.3f 형식으로 측정된 비디오 프레임 속도입니다. |
 | **Bitrate** |**xs:int** |자산 파일에서 계산되는 평균 비디오 비트 전송률(Kb/초)입니다. 기본 스트림 페이로드만 계산되며, 패키징 오버헤드는 포함되지 않습니다. |
 | **MaxGOPBitrate** |**xs: int** |이 비디오 트랙의 최대 GOP 평균 비트 전송률(Kb/초)입니다. |
 | **HasBFrames** |**xs:int** |B 프레임의 비디오 트랙 번호입니다. |
 
-## <a name="metadatatype"></a><a name="MetadataType"></a>MetadataType
+## <a name="metadatatype"></a><a name="MetadataType"></a> MetadataType
 **MetadataType**은 자산 파일의 메타데이터를 key/value 문자열로 설명하는 전역 복합 형식입니다. 예제: key=”language” 및 value=”eng”  
 
 이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="attributes"></a>특성
-| 이름 | Type | 설명 |
+| Name | 유형 | Description |
 | --- | --- | --- |
-| **key**<br /><br /> 필요한 공간 |**xs:string** |key/value 쌍의 키입니다. |
-| **value**<br /><br /> 필요한 공간 |**xs:string** |key/value 쌍의 값입니다. |
+| **key**<br /><br /> 필수 |**xs:string** |key/value 쌍의 키입니다. |
+| **value**<br /><br /> 필수 |**xs:string** |key/value 쌍의 값입니다. |
 
-## <a name="programtype"></a><a name="ProgramType"></a>프로그래밍 형식
+## <a name="programtype"></a><a name="ProgramType"></a> 프로그래밍 형식
 **ProgramType**은 프로그램을 설명하는 전역 복합 형식입니다.  
 
 ### <a name="attributes"></a>특성
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
-| **ProgramId**<br /><br /> 필요한 공간 |**xs:int** |Program ID입니다. |
-| **NumberOfPrograms**<br /><br /> 필요한 공간 |**xs:int** |프로그램 수입니다. |
-| **PmtPid**<br /><br /> 필요한 공간 |**xs:int** |PMT(프로그램 맵 테이블)에는 프로그램에 대한 정보가 포함됩니다.  자세한 내용은 [PMT](https://en.wikipedia.org/wiki/MPEG_transport_stream#PMT)를 참조하세요. |
-| **PcrPid**<br /><br /> 필요한 공간 |**xs: int** |디코더에서 사용됩니다. 자세한 내용은 [PCR](https://en.wikipedia.org/wiki/MPEG_transport_stream#PCR)을 참조하세요. |
+| **ProgramId**<br /><br /> 필수 |**xs:int** |Program ID입니다. |
+| **NumberOfPrograms**<br /><br /> 필수 |**xs:int** |프로그램 수입니다. |
+| **PmtPid**<br /><br /> 필수 |**xs:int** |PMT(프로그램 맵 테이블)에는 프로그램에 대한 정보가 포함됩니다.  자세한 내용은 [PMT](https://en.wikipedia.org/wiki/MPEG_transport_stream#PMT)를 참조하세요. |
+| **PcrPid**<br /><br /> 필수 |**xs: int** |디코더에서 사용됩니다. 자세한 내용은 [PCR](https://en.wikipedia.org/wiki/MPEG_transport_stream#PCR)을 참조하세요. |
 | **StartPTS** |**xs: long** |프레젠테이션 시작 타임스탬프입니다. |
 | **EndPTS** |**xs: long** |프레젠테이션 끝 타임스탬프입니다. |
 
-## <a name="streamdispositiontype"></a><a name="StreamDispositionType"></a>StreamDispositionType
+## <a name="streamdispositiontype"></a><a name="StreamDispositionType"></a> StreamDispositionType
 **StreamDispositionType**은 스트림을 설명하는 전역 복합 형식입니다.  
 
 이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="attributes"></a>특성
-| 이름 | Type | Description |
+| Name | 유형 | Description |
 | --- | --- | --- |
-| **기본값**<br /><br /> 필요한 공간 |**xs: int** |기본 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
-| **Dub**<br /><br /> 필요한 공간 |**xs:int** |더빙된 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
-| **원래 이름**<br /><br /> 필요한 공간 |**xs: int** |원본 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
-| **설명**<br /><br /> 필요한 공간 |**xs:int** |이 트랙에 해설이 있음을 나타내려면 이 속성을 1로 설정합니다. |
-| **Lyrics**<br /><br /> 필요한 공간 |**xs:int** |이 트랙에 가사가 있음을 나타내려면 이 속성을 1로 설정합니다. |
-| **Karaoke**<br /><br /> 필요한 공간 |**xs:int** |가라오케 트랙(배경 음악, 보컬 없음)임을 나타내려면 이 성을 1로 설정합니다. |
-| **정해**<br /><br /> 필요한 공간 |**xs:int** |강제 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
-| **HearingImpaired**<br /><br /> 필요한 공간 |**xs:int** |이 트랙은 청각을 어려운 사용자를 위해이 트랙 임을 나타내려면이 특성을 1로 설정 합니다. |
-| **VisualImpaired**<br /><br /> 필요한 공간 |**xs:int** |시각 장애자용 트랙임을 나타내려면 이 속성을 1로 설정합니다. |
-| **CleanEffects**<br /><br /> 필요한 공간 |**xs: int** |이 트랙에 새 효과가 있음을 나타내려면 이 속성을 1로 설정합니다. |
-| **AttachedPic**<br /><br /> 필요한 공간 |**xs: int** |이 트랙에 그림이 있음을 나타내려면 이 속성을 1로 설정합니다. |
+| **기본값**<br /><br /> 필수 |**xs: int** |기본 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
+| **Dub**<br /><br /> 필수 |**xs:int** |더빙된 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
+| **원래 이름**<br /><br /> 필수 |**xs: int** |원본 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
+| **설명**<br /><br /> 필수 |**xs:int** |이 트랙에 해설이 있음을 나타내려면 이 속성을 1로 설정합니다. |
+| **Lyrics**<br /><br /> 필수 |**xs:int** |이 트랙에 가사가 있음을 나타내려면 이 속성을 1로 설정합니다. |
+| **Karaoke**<br /><br /> 필수 |**xs:int** |가라오케 트랙(배경 음악, 보컬 없음)임을 나타내려면 이 성을 1로 설정합니다. |
+| **정해**<br /><br /> 필수 |**xs:int** |강제 프레젠테이션임을 나타내려면 이 속성을 1로 설정합니다. |
+| **HearingImpaired**<br /><br /> 필수 |**xs:int** |이 트랙은 청각을 어려운 사용자를 위해이 트랙 임을 나타내려면이 특성을 1로 설정 합니다. |
+| **VisualImpaired**<br /><br /> 필수 |**xs:int** |시각 장애자용 트랙임을 나타내려면 이 속성을 1로 설정합니다. |
+| **CleanEffects**<br /><br /> 필수 |**xs: int** |이 트랙에 새 효과가 있음을 나타내려면 이 속성을 1로 설정합니다. |
+| **AttachedPic**<br /><br /> 필수 |**xs: int** |이 트랙에 그림이 있음을 나타내려면 이 속성을 1로 설정합니다. |
 
 ## <a name="programs-element"></a><a name="Programs"></a> Programs 요소
 여러 **Program** 요소를 보유하는 래퍼 요소입니다.  
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **프로그램**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[ProgramType](media-services-input-metadata-schema.md#ProgramType) |MPEG-TS 형식의 자산 파일에는 자산 파일의 프로그램에 대한 정보가 포함됩니다. |
 
@@ -198,7 +200,7 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
  이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="child-elements"></a>자식 요소
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **VideoTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[VideoTrackType(TrackType에서 상속)](media-services-input-metadata-schema.md#VideoTrackType) |자산 파일의 비디오 트랙에 대한 정보가 포함됩니다. |
 
@@ -208,11 +210,11 @@ Media Services는 메타데이터를 생성하기 위해 선제적으로 입력 
  이 문서의 끝에 있는 [XML 예제](media-services-input-metadata-schema.md#xml)를 참조하세요.  
 
 ### <a name="elements"></a>요소
-| 이름 | Type | 설명 |
+| Name | 유형 | 설명 |
 | --- | --- | --- |
 | **AudioTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[AudioTrackType(TrackType에서 상속)](media-services-input-metadata-schema.md#AudioTrackType) |자산 파일의 오디오 트랙에 대한 정보가 포함됩니다. |
 
-## <a name="schema-code"></a><a name="code"></a>스키마 코드
+## <a name="schema-code"></a><a name="code"></a> 스키마 코드
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema xmlns:xs="https://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" version="1.0"  

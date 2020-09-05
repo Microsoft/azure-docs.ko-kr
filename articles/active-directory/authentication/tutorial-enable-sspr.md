@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b6fe3238a2ad602b388ff24faaee3a200084ae0
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: a4cdeff5e08813140c45d0a30877c3789d1bc21b
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87419481"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718852"
 ---
 # <a name="tutorial-enable-users-to-unlock-their-account-or-reset-passwords-using-azure-active-directory-self-service-password-reset"></a>자습서: 사용자가 Azure Active Directory 셀프 서비스 암호 재설정을 사용하여 계정의 잠금을 해제하거나 암호를 다시 설정할 수 있도록 설정
 
@@ -148,4 +148,4 @@ SSPR을 사용하도록 설정 및 구성되면 이전 섹션에서 선택한 �
 > * 사용자 권한으로 SSPR 프로세스 테스트
 
 > [!div class="nextstepaction"]
-> [Azure Multi-Factor Authentication 사용](tutorial-mfa-applications.md)
+> [Azure Multi-Factor Authentication 사용](./tutorial-enable-azure-mfa.md)

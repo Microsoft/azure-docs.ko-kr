@@ -10,18 +10,18 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 06/12/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 5dfa105b7af146086da6b72dd55f6fe679832f44
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 39891b69cdb8e7f392657514d255f5f85b3eba60
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87845054"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936030"
 ---
 # <a name="tutorial-use-python-and-ai-to-generate-searchable-content-from-azure-blobs"></a>자습서: Python 및 AI를 사용하여 Azure Blob에서 검색 가능한 콘텐츠 생성
 
 Azure Blob Storage에 비정형 텍스트 또는 이미지가 있는 경우 [AI 보강 파이프라인](cognitive-search-concept-intro.md)은 정보를 추출하여 전체 텍스트 검색 또는 지식 마이닝 시나리오에 유용한 새 콘텐츠를 만들 수 있습니다. 파이프라인에서 이미지를 처리할 수 있지만, 이 Python 자습서에서는 텍스트에 중점을 두고 언어 감지 및 자연어 처리를 적용하여 쿼리, 패싯 및 필터에 활용할 수 있는 새로운 필드를 만듭니다.
 
-이 자습서에서는 Python 및 [Search REST API](https://docs.microsoft.com/rest/api/searchservice/)를 사용하여 다음 작업을 수행합니다.
+이 자습서에서는 Python 및 [Search REST API](/rest/api/searchservice/)를 사용하여 다음 작업을 수행합니다.
 
 > [!div class="checklist"]
 > * Azure Blob Storage에서 PDF, HTML, DOCX 및 PPTX와 같은 전체 문서(비정형 텍스트)로 시작합니다.
@@ -163,7 +163,7 @@ Azure Cognitive Search에서 AI 처리는 인덱싱(또는 데이터 수집) 중
 
 ### <a name="step-1-create-a-data-source"></a>1단계: 데이터 소스 만들기
 
-[데이터 원본 개체](https://docs.microsoft.com/rest/api/searchservice/create-data-source)는 파일이 포함된 Blob 컨테이너에 대한 연결 문자열을 제공합니다.
+[데이터 원본 개체](/rest/api/searchservice/create-data-source)는 파일이 포함된 Blob 컨테이너에 대한 연결 문자열을 제공합니다.
 
 다음 스크립트에서는 자리 표시자 YOUR-BLOB-RESOURCE-CONNECTION-STRING을 이전 단계에서 만든 BLOB의 연결 문자열로 바꿉니다. 컨테이너의 자리 표시자 텍스트를 바꿉니다. 그런 다음, 스크립트를 실행하여 `cogsrch-py-datasource`라는 데이터 원본을 만듭니다.
 
@@ -375,11 +375,11 @@ print(r.status_code)
 
 요청이 성공을 확인하는 201 상태 코드를 반환해야 합니다.
 
-인덱스 정의에 대한 자세한 내용은 [인덱스 만들기(Azure Cognitive Search REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조하세요.
+인덱스 정의에 대한 자세한 내용은 [인덱스 만들기(Azure Cognitive Search REST API)](/rest/api/searchservice/create-index)를 참조하세요.
 
 ### <a name="step-4-create-and-run-an-indexer"></a>4단계: 인덱서 만들기 및 실행
 
-[인덱서](https://docs.microsoft.com/rest/api/searchservice/create-indexer)는 파이프라인을 구동합니다. 지금까지 만든 세 가지 구성 요소(데이터 원본, 기술 세트, 인덱스)는 인덱서에 대한 입력입니다. Azure Cognitive Search에서 인덱서를 만드는 것은 전체 파이프라인을 이동시키는 이벤트입니다. 
+[인덱서](/rest/api/searchservice/create-indexer)는 파이프라인을 구동합니다. 지금까지 만든 세 가지 구성 요소(데이터 원본, 기술 세트, 인덱스)는 인덱서에 대한 입력입니다. Azure Cognitive Search에서 인덱서를 만드는 것은 전체 파이프라인을 이동시키는 이벤트입니다. 
 
 이러한 객체를 인덱서에 서로 연결하려면 필드 매핑을 정의해야 합니다.
 
@@ -512,7 +512,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 이 연습에서는 `content`, `languageCode`, `keyPhrases` 및 `organizations` 등의 추가 필드에 대해 이 작업을 반복합니다. 쉼표로 구분된 목록을 사용하여 `$select`를 통해 여러 필드를 반환할 수 있습니다.
 
-쿼리 문자열의 복잡성 및 길이에 따라 GET 또는 POST를 사용할 수 있습니다. 자세한 내용은 [REST API를 사용한 쿼리](https://docs.microsoft.com/rest/api/searchservice/search-documents)를 참조하세요.
+쿼리 문자열의 복잡성 및 길이에 따라 GET 또는 POST를 사용할 수 있습니다. 자세한 내용은 [REST API를 사용한 쿼리](/rest/api/searchservice/search-documents)를 참조하세요.
 
 <a name="reset"></a>
 

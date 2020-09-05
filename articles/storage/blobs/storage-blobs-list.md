@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: b5ce74e680d79cfee006cb8cade6c22bff3c055f
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 9295b1d8a54d9c3c1a138a54f4b3706bd39227fd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202962"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009545"
 ---
 # <a name="list-blobs-with-net"></a>.NET을 사용하여 Blob 나열
 
@@ -25,14 +26,14 @@ ms.locfileid: "86202962"
 
 스토리지 계정의 Blob을 나열하려면 다음 메서드 중 하나를 호출합니다.
 
-# <a name="net-v12-sdk"></a>[.NET v12 SDK](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 - [BlobContainerClient. GetBlobs](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobs?view=azure-dotnet)
 - [BlobContainerClient.GetBlobsAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsasync?view=azure-dotnet)
 - [BlobContainerClient. GetBlobsByHierarchy](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy?view=azure-dotnet)
 - [BlobContainerClient. Getblobsby3| Async](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync?view=azure-dotnet)
 
-# <a name="net-v11-sdk"></a>[.NET v11 SDK](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 - [CloudBlobClient.ListBlobs](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.listblobs)
 - [CloudBlobClient.ListBlobsSegmented](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.listblobssegmented)
@@ -84,11 +85,11 @@ Blob을 가상 디렉터리로 구성하려면 Blob 이름에 구분 기호 문�
 
 계정에서 계층 구조 네임 스페이스 기능을 사용 하도록 설정한 경우 디렉터리는 가상이 아닙니다. 대신, 구체적이 고 독립적인 개체입니다. 따라서 디렉터리가 길이가 0 인 blob으로 목록에 표시 됩니다.
 
-# <a name="net-v12-sdk"></a>[.NET v12 SDK](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobsFlatListing":::
 
-# <a name="net-v11-sdk"></a>[.NET v11 SDK](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 ```csharp
 private static async Task ListBlobsFlatListingAsync(CloudBlobContainer container, int? segmentSize)
@@ -150,7 +151,7 @@ Blob name: FolderA/FolderB/FolderC/blob3.txt
 
 목록 작업을 계층형으로 호출하는 경우 Azure Storage는 계층의 첫 번째 수준에서 가상 디렉터리 및 Blob을 반환합니다. 다음 디렉터리를 검색하기 위해 재귀 호출에 접두사를 전달할 수 있도록 각 가상 디렉터리의 [Prefix](/dotnet/api/microsoft.azure.storage.blob.cloudblobdirectory.prefix) 속성이 설정됩니다.
 
-# <a name="net-v12-sdk"></a>[.NET v12 SDK](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Blob을 계층적으로 나열 하려면 [BlobContainerClient. GetBlobsByHierarchy](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchy?view=azure-dotnet)또는 [BlobContainerClient](/dotnet/api/azure.storage.blobs.blobcontainerclient.getblobsbyhierarchyasync?view=azure-dotnet) 을 호출 합니다.
 
@@ -158,7 +159,7 @@ Blob을 계층적으로 나열 하려면 [BlobContainerClient. GetBlobsByHierarc
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobsHierarchicalListing":::
 
-# <a name="net-v11-sdk"></a>[.NET v11 SDK](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Blob을 계층형으로 나열하려면 목록 메서드의 `useFlatBlobListing` 매개 변수를 **false**로 설정합니다.
 

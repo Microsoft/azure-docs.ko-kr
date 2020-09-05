@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/04/2020
 ms.author: radeltch
-ms.openlocfilehash: a8503f701a36d7197f85f2c86e37272ccf1cab48
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 5ba5ebcb68ed206bab038f0a892e24834ddb0f22
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760722"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653429"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux-with-azure-netapp-files-for-sap-applications"></a>SAP 응용 프로그램에 대해 Azure NetApp Files을 사용 하는 Red Hat Enterprise Linux에서 SAP NetWeaver에 대 한 Azure Virtual Machines 고가용성
 
@@ -80,7 +80,7 @@ ms.locfileid: "87760722"
   * [High Availability Add-On Administration](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)(고가용성 추가 기능 관리)
   * [High Availability Add-On Reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)(고가용성 추가 기능 참조)
   * [RHEL 7.5에서 독립 실행형 리소스를 사용하여 SAP Netweaver용 ASCS/ERS 구성](https://access.redhat.com/articles/3569681)
-  * [Pacemaker의 RHEL에서 독립 실행형 큐에 넣기 서버 2 (ENSA2)를 사용 하 여 SAP S/4HANA ASCS/ERS 구성](https://access.redhat.com/articles/3974941)
+  * [Pacemaker의 RHEL에서 독립 실행형 큐에 넣기 서버 2 (ENSA2)를 사용 하 여 SAP S/4HANA ASCS/ERS 구성 ](https://access.redhat.com/articles/3974941)
 * Azure 특정 RHEL 설명서:
   * [Support Policies for RHEL High Availability Clusters - Microsoft Azure Virtual Machines as Cluster Members](https://access.redhat.com/articles/3131341)(RHEL 고가용성 클러스터용 지원 정책 - Microsoft Azure Virtual Machines(클러스터 멤버))
   * [Installing and Configuring a Red Hat Enterprise Linux 7.4 (and later) High-Availability Cluster on Microsoft Azure](https://access.redhat.com/articles/3252491)(Microsoft Azure에서 Red Hat Enterprise Linux 7.4 이상 고가용성 클러스터 설치 및 구성)
@@ -156,7 +156,7 @@ Azure NetApp 파일은 여러 [azure 지역](https://azure.microsoft.com/global-
    6. volume sap<b>QAS</b> (nfs://192.168.24.5/usrsap<b>QAS</b>/usrsap<b>QAS</b>pas)
    7. volume sap<b>QAS</b> (nfs://192.168.24.5/usrsap<b>QAS</b>/usrsap<b>QAS</b>.aas)
   
-이 예제에서는 모든 SAP Netweaver 파일 시스템에 Azure NetApp Files를 사용하여 Azure NetApp Files 사용 방법을 설명했습니다. NFS를 통해 탑재할 필요가 없는 SAP 파일 시스템을 [Azure 디스크 스토리지](../../windows/disks-types.md#premium-ssd)로 배포할 수도 있습니다. 이 예제에서 <b>a-e</b>는 Azure NetApp Files에 있어야 하며, <b>f-g</b>(즉, /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>)를 Azure 디스크 스토리지로 배포할 수 있어야 합니다. 
+이 예제에서는 모든 SAP Netweaver 파일 시스템에 Azure NetApp Files를 사용하여 Azure NetApp Files 사용 방법을 설명했습니다. NFS를 통해 탑재할 필요가 없는 SAP 파일 시스템을 [Azure 디스크 스토리지](../../disks-types.md#premium-ssd)로 배포할 수도 있습니다. 이 예제에서 <b>a-e</b>는 Azure NetApp Files에 있어야 하며, <b>f-g</b>(즉, /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>)를 Azure 디스크 스토리지로 배포할 수 있어야 합니다. 
 
 ### <a name="important-considerations"></a>중요 고려 사항
 

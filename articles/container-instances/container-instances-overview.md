@@ -2,14 +2,14 @@
 title: Azure의 서버리스 컨테이너
 description: Azure Container Instances 서비스는 가상 머신을 관리하지 않고 또 더 높은 수준의 오케스트레이터를 채택하지 않고도 Azure에서 격리된 컨테이너를 실행하는 가장 빠르고 간단한 방법을 제공합니다.
 ms.topic: overview
-ms.date: 07/28/2020
+ms.date: 08/10/2020
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 2871aabe4d81cfb1441e9c74c8fa24e4e906d3b9
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: bd68fab380754eca38eebf3fd52634508f282cf6
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498687"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121666"
 ---
 # <a name="what-is-azure-container-instances"></a>Azure Container Instances란?
 
@@ -35,10 +35,15 @@ Azure Container Instances는 IP 주소 및 FQDN(정규화된 도메인 이름)�
 > [!IMPORTANT]
 > 2020년 1월 13일부터 Azure Container Instances는 TLS 1.2를 사용하기 위해 서버 및 애플리케이션의 모든 보안 연결이 필요합니다. TLS 1.0 및 1.1에 대한 지원이 중단됩니다.
 
-## <a name="hypervisor-level-security"></a>하이퍼바이저 수준 보안
+## <a name="compliant-deployments"></a>규격 배포
+
+### <a name="hypervisor-level-security"></a>하이퍼바이저 수준 보안
 
 지금까지는 컨테이너가 애플리케이션 종속성 격리 및 리소스 관리를 제공했지만 적대적인 다중 테넌트 사용을 위해서 충분히 보강되지 않았습니다. Azure Container Instances는 애플리케이션이 VM에서 격리되는 것처럼 컨테이너에서도 격리되도록 보장합니다.
 
+### <a name="customer-data"></a>고객 데이터
+
+ACI 서비스는 컨테이너 그룹이 예상대로 실행되고 있는지 확인하는 데 필요한 최소한의 고객 데이터를 저장합니다. 단일 지역에 고객 데이터를 저장하는 것은 현재 아시아 태평양 지역의 동남 아시아 지역(싱가포르)에서만 사용할 수 있습니다. 다른 모든 지역의 경우 고객 데이터는 [지역](https://azure.microsoft.com/global-infrastructure/geographies/)에 저장됩니다. 자세히 알아보려면 Azure 지원에 문의하세요.
 
 ## <a name="custom-sizes"></a>사용자 지정 크기
 

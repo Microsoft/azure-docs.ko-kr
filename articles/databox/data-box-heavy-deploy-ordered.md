@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box Heavy 주문 자습서 | Microsoft Docs
-description: 배포 필수 구성 요소 및 Azure Data Box Heavy 주문 방법 알아보기
+description: 이 자습서에서는 온-프레미스 데이터를 Azure로 가져올 수 있는 하이브리드 솔루션인 Azure Data Box Heavy와 Data Box Heavy를 정렬하는 방법에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 91d78975106299c3b3a6df6d8dee05f337dd339a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 9b2b97f11c1493deca9b79907e894efbb7b9c456
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83742984"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920996"
 ---
 # <a name="tutorial-order-azure-data-box-heavy"></a>자습서: Azure Data Box Heavy 주문
 

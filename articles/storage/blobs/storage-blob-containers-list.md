@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 01/06/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: da0c5bf6bc371bc512d9264afeab52b9908396fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f443cd5603e6ca0f60dc0e69b734bfa46138d476
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84463561"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018946"
 ---
 # <a name="list-blob-containers-with-net"></a>.NET을 사용 하 여 blob 컨테이너 나열
 
@@ -98,7 +99,7 @@ private static async Task ListContainersWithPrefixAsync(CloudBlobClient blobClie
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 [컨테이너 나열](/rest/api/storageservices/list-containers2) 
  [Blob 리소스 열거](/rest/api/storageservices/enumerating-blob-resources)

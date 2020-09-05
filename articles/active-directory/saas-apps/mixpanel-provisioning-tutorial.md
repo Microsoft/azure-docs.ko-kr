@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 Mixpanel 구성 | Microsoft Docs'
 description: 사용자 계정을 Azure AD에서 Mixpanel로 자동으로 프로 비전 및 프로 비전 해제 하는 방법을 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: Zhchia
 writer: Zhchia
-manager: beatrizd
-ms.assetid: 565cdc45-4377-4b70-870b-64edf3dcc92c
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: Zhchia
-ms.openlocfilehash: b47d377e710d1c56f560b650e34fa67cce6e5b21
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: c17d0d927fab86774f25a3ada1fbb3e675957af8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926334"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552512"
 ---
 # <a name="tutorial-configure-mixpanel-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Mixpanel 구성
 
@@ -35,7 +31,7 @@ ms.locfileid: "87926334"
 > * Mixpanel에서 그룹 및 그룹 멤버 자격 프로 비전
 > * Mixpanel에 대 [한 Single sign-on](https://docs.microsoft.com/azure/active-directory/saas-apps/mixpanel-tutorial) (권장)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 * [Azure AD 테넌트](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
@@ -55,7 +51,7 @@ ms.locfileid: "87926334"
 ![Mixpanel 토큰](./media/mixpanel-provisioning-tutorial/mixpanelscim.png)
 
 
-## <a name="step-3-add-mixpanel-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 Mixpanel 추가
+## <a name="step-3-add-mixpanel-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 Mixpanel 추가
 
 Azure AD 응용 프로그램 갤러리에서 Mixpanel를 추가 하 여 Mixpanel에 대 한 프로 비전 관리를 시작 합니다. 이전에 SSO에 대해 Mixpanel를 설정한 경우 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다. 
 

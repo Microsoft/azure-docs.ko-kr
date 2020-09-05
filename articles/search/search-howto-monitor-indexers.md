@@ -9,12 +9,13 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: 2e62296e95a7b412a24c9d0c151c2bc9175ab4b7
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 649611b2e378cd43286b193c6d40b03b743905cd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529746"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000076"
 ---
 # <a name="how-to-monitor-azure-cognitive-search-indexer-status-and-results"></a>Azure Cognitive Search 인덱서 상태 및 결과를 모니터링 하는 방법
 
@@ -80,7 +81,7 @@ Azure Cognitive Search는 모든 인덱서의 현재 및 과거 실행에 대 �
 
 ## <a name="monitor-using-rest-apis"></a>REST Api를 사용 하 여 모니터링
 
-인덱서 [상태 가져오기 명령을](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status)사용 하 여 인덱서의 상태 및 실행 기록을 검색할 수 있습니다.
+인덱서 [상태 가져오기 명령을](/rest/api/searchservice/get-indexer-status)사용 하 여 인덱서의 상태 및 실행 기록을 검색할 수 있습니다.
 
 ```http
 GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2020-06-30
@@ -125,7 +126,7 @@ api-key: [Search service admin key]
 
 변경 내용 추적 상태를 새로 고치기 위해 인덱서를 다시 설정 하면 **다시 설정** 상태를 사용 하 여 별도의 실행 기록 항목이 추가 됩니다.
 
-상태 코드 및 인덱서 모니터링 데이터에 대 한 자세한 내용은 [Getindexerstatus](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status)를 참조 하세요.
+상태 코드 및 인덱서 모니터링 데이터에 대 한 자세한 내용은 [Getindexerstatus](/rest/api/searchservice/get-indexer-status)를 참조 하세요.
 
 <a name="dotnetsdk"></a>
 
@@ -184,8 +185,8 @@ Latest run
 
 변경 내용 추적 상태를 새로 고치기 위해 인덱서를 다시 설정 하면 **다시 설정** 상태를 사용 하 여 별도의 기록 항목이 추가 됩니다.
 
-상태 코드 및 인덱서 모니터링 정보에 대 한 자세한 내용은 REST API [Getindexerstatus](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status) 를 참조 하십시오.
+상태 코드 및 인덱서 모니터링 정보에 대 한 자세한 내용은 REST API [Getindexerstatus](/rest/api/searchservice/get-indexer-status) 를 참조 하십시오.
 
 문서 관련 오류 또는 경고에 대 한 세부 정보는 목록과를 열거 하 여 검색할 수 있습니다 `IndexerExecutionResult.Errors` `IndexerExecutionResult.Warnings` .
 
-인덱서를 모니터링 하는 데 사용 되는 .NET SDK 클래스에 대 한 자세한 내용은 [Indexerexecutioninfo](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutioninfo?view=azure-dotnet) 및 [Indexerexecutioninfo](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet)를 참조 하세요.
+인덱서를 모니터링 하는 데 사용 되는 .NET SDK 클래스에 대 한 자세한 내용은 [Indexerexecutioninfo](/dotnet/api/microsoft.azure.search.models.indexerexecutioninfo?view=azure-dotnet) 및 [Indexerexecutioninfo](/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet)를 참조 하세요.

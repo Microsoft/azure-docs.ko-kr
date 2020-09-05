@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 16ca4ad1204301542ffaa0177d88b2c2800f13b4
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 0b2b995a6fe4cedd14b2e4ceeddc5747ec2423cf
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836278"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88754806"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>2023 년 3 월 1 일 Azure Resource Manager IaaS 리소스 마이그레이션 
 
@@ -39,9 +39,11 @@ ms.locfileid: "87836278"
 
 - 현재 Azure Resource Manager로의 마이그레이션 계획을 시작 합니다. 
 
+- 영향을 받는 모든 Vm 목록을 만듭니다. [Azure PORTAL Vm 블레이드의](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ClassicCompute%2FVirtualMachines) vm 유형 "Virtual Machines (클래식)"은 구독 내에서 영향을 받는 모든 vm입니다. 
+
 - 클래식 [Linux](./linux/migration-classic-resource-manager-plan.md) 및 [Windows](./windows/migration-classic-resource-manager-plan.md) vm을 Azure Resource Manager로 마이그레이션하는 방법에 [대해 자세히 알아보세요](./windows/migration-classic-resource-manager-overview.md) .
 
-- 자세한 내용은 [클래식에서 Azure Resource Manager로 마이그레이션에 대 한 질문과 대답](./windows/migration-classic-resource-manager-faq.md) 을 참조 하세요.
+- 자세한 내용은 [클래식에서 Azure Resource Manager로 마이그레이션에 대 한 질문과 대답](./migration-classic-resource-manager-faq.md) 을 참조 하세요.
 
 - 기술 관련 질문을 하 고 허용 목록에 구독을 추가 하려면 [지원 담당자에 게 문의 하세요](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"8a82f77d-c3ab-7b08-d915-776b4ff64ff4"}).
 
@@ -57,5 +59,5 @@ ms.locfileid: "87836278"
 
 - [Microsoft Fast track](https://www.microsoft.com/fasttrack): Microsoft fast track 팀은 적격 고객으로 마이그레이션하는 동안 기술 지원을 제공할 수 있습니다. 
 
-- 회사/조직이 microsoft와 파트너 관계를 맺고 있거나 (CSA (클라우드 솔루션 설계자), TAMs (기술 계정 관리자) 등의 Microsoft 전문가와 함께 작업 하는 경우 마이그레이션에 대 한 추가 리소스를 확인 하세요. 
+- 회사/조직이 Microsoft와 파트너 관계를 맺고 있거나 (CSA (클라우드 솔루션 설계자), TAMs (기술 계정 관리자) 등의 Microsoft 전문가와 함께 작업 하는 경우 마이그레이션에 대 한 추가 리소스를 확인 하세요. 
 

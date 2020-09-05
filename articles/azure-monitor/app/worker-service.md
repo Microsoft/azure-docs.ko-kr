@@ -2,13 +2,14 @@
 title: Worker 서비스 앱에 대 한 Application Insights (비 HTTP 앱)
 description: Azure Monitor Application Insights를 사용 하 여 .NET Core/.NET Framework 비 HTTP 앱을 모니터링 합니다.
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 05/11/2020
-ms.openlocfilehash: d429a1e0515d24d1c9953af7815dadf2488be302
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 6f31236e516e44df9f5115e3efeb48db46853e8d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87325409"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933276"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Worker 서비스 응용 프로그램에 대 한 Application Insights (HTTP가 아닌 응용 프로그램)
 
@@ -20,7 +21,7 @@ Application Insights는 `Microsoft.ApplicationInsights.WorkerService` 메시징,
 
 [작업자 서비스에 대 한 APPLICATION INSIGHTS SDK](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) 는 응용 프로그램이 실행 되는 위치와 관계 없이 비 HTTP 응용 프로그램에 가장 적합 합니다. 응용 프로그램이 실행 중이 고 Azure에 네트워크로 연결 되어 있는 경우 원격 분석을 수집할 수 있습니다. Application Insights 모니터링은 .NET Core가 지원 되는 모든 위치에서 지원 됩니다. 이 패키지는 새로 도입 된 [.Net Core 3.0 Worker 서비스](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [Asp.Net Core 2.1/2.2의 백그라운드 작업](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2), 콘솔 앱 (.net Core/.NET Framework) 등에서 사용할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 유효한 Application Insights 계측 키입니다. Application Insights에 원격 분석을 보내려면이 키가 필요 합니다. 계측 키를 가져오기 위해 새 Application Insights 리소스를 만들어야 하는 경우 [Application Insights 리소스 만들기](./create-new-resource.md)를 참조 하세요.
 
@@ -46,7 +47,7 @@ Application Insights는 `Microsoft.ApplicationInsights.WorkerService` 메시징,
 전체 예제는 [여기](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) 에서 공유 됩니다.
 
 1. [.Net Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0) 다운로드 및 설치
-2. Visual Studio 새 프로젝트 템플릿 또는 명령줄을 사용 하 여 새 작업자 서비스 프로젝트를 만듭니다.`dotnet new worker`
+2. Visual Studio 새 프로젝트 템플릿 또는 명령줄을 사용 하 여 새 작업자 서비스 프로젝트를 만듭니다. `dotnet new worker`
 3. 응용 프로그램에 [Microsoft ApplicationInsights. 서비스](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) 패키지를 설치 합니다.
 
 4. `services.AddApplicationInsightsTelemetryWorkerService();` `CreateHostBuilder()` `Program.cs` 다음 예제와 같이 클래스의 메서드에를 추가 합니다.
@@ -124,7 +125,7 @@ Application Insights는 `Microsoft.ApplicationInsights.WorkerService` 메시징,
 `APPINSIGHTS_INSTRUMENTATIONKEY` 또는 `ApplicationInsights:InstrumentationKey`
 
 `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
-디스크나`SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
+디스크나 `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
 일반적으로 `APPINSIGHTS_INSTRUMENTATIONKEY` Web Apps에 배포 된 응용 프로그램에 대 한 계측 키를 웹 작업으로 지정 합니다.
 
@@ -312,7 +313,7 @@ Application Insights는 `Microsoft.ApplicationInsights.WorkerService` 메시징,
 
 ### <a name="eventcounter"></a>EventCounter
 
-`EventCounterCollectionModule`는 기본적으로 사용 하도록 설정 되며, .NET Core 3.0 앱에서 기본 카운터 집합을 수집 합니다. [Eventcounter](eventcounters.md) 자습서에는 수집 된 카운터의 기본 집합이 나열 됩니다. 또한 목록을 사용자 지정 하는 방법에 대 한 지침도 있습니다.
+`EventCounterCollectionModule` 는 기본적으로 사용 하도록 설정 되며, .NET Core 3.0 앱에서 기본 카운터 집합을 수집 합니다. [Eventcounter](eventcounters.md) 자습서에는 수집 된 카운터의 기본 집합이 나열 됩니다. 또한 목록을 사용자 지정 하는 방법에 대 한 지침도 있습니다.
 
 ### <a name="manually-tracking-additional-telemetry"></a>수동으로 추가 원격 분석 추적
 
@@ -349,9 +350,9 @@ Worker 서비스 SDK에서 사용 하는 기본값은 `TelemetryConfiguration` A
 
 `ApplicationInsightsServiceOptions`이 sdk의는 ASP.NET CORE sdk가 아닌 네임 스페이스에 `Microsoft.ApplicationInsights.WorkerService` `Microsoft.ApplicationInsights.AspNetCore.Extensions` 있습니다.
 
-에서 일반적으로 사용 되는 설정`ApplicationInsightsServiceOptions`
+에서 일반적으로 사용 되는 설정 `ApplicationInsightsServiceOptions`
 
-|설정 | 설명 | 기본값
+|설정 | Description | 기본값
 |---------------|-------|-------
 |EnableQuickPulseMetricStream | LiveMetrics 기능 사용/사용 안 함 | true
 |EnableAdaptiveSampling | 적응 샘플링 사용/사용 안 함 | true
@@ -425,7 +426,7 @@ Application Insights는 원격 분석 모듈을 사용 하 여 수동 추적 없
 * `DependencyTrackingTelemetryModule`
 * `PerformanceCollectorModule`
 * `QuickPulseTelemetryModule`
-* `AppServicesHeartbeatTelemetryModule`-(현재이 원격 분석 모듈과 관련 된 문제가 있습니다. 임시 해결 방법은 [GitHub 문제 1689](https://github.com/microsoft/ApplicationInsights-dotnet/issues/1689
+* `AppServicesHeartbeatTelemetryModule` -(현재이 원격 분석 모듈과 관련 된 문제가 있습니다. 임시 해결 방법은 [GitHub 문제 1689](https://github.com/microsoft/ApplicationInsights-dotnet/issues/1689
 )을 참조 하세요.
 * `AzureInstanceMetadataTelemetryModule`
 

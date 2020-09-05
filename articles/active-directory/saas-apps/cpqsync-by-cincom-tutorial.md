@@ -2,26 +2,21 @@
 title: '자습서: CPQSync by Cincom과 Azure Active Directory 연결 | Microsoft Docs'
 description: Azure Active Directory와 CPQSync by Cincom 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: d9411095-859c-4223-8d0b-36d1f89b04d5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/08/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fc9cf236beab78d666f634489a205828050fae4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: db8f7e77570ade206633781c9ba4726f881bff02
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68886390"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549197"
 ---
 # <a name="tutorial-integrate-cpqsync-by-cincom-with-azure-active-directory"></a>자습서: Azure Active Directory와 CPQSync by Cincom 통합
 

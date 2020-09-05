@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 1cf29438d3785a3406aa8ce3b75929a5d5261121
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: fcd9f0759ae885199347cc23d93e8f1c00251387
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87800373"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260529"
 ---
 # <a name="azure-spring-cloud-faq"></a>Azure 스프링 클라우드 FAQ
 
@@ -40,10 +40,10 @@ Azure 스프링 클라우드는 Azure Monitor, Application Insights 및 Log Anal
 
 ### <a name="what-are-the-known-limitations-of-azure-spring-cloud"></a>Azure 스프링 클라우드의 알려진 제한은 무엇 인가요?
 
-Preview 릴리스 중에 Azure 스프링 클라우드에는 다음과 같은 알려진 제한 사항이 있습니다.
-
-* `spring.application.name`는 각 응용 프로그램을 만드는 데 사용 되는 응용 프로그램 이름으로 재정의 됩니다.
-* `server.port`기본값은 포트 80/443입니다. 다른 값이 적용 되 면 80/443으로 재정의 됩니다.
+Azure 스프링 클라우드에는 다음과 같은 알려진 제한 사항이 있습니다.
+    
+* `spring.application.name` 는 각 응용 프로그램을 만드는 데 사용 되는 응용 프로그램 이름으로 재정의 됩니다.
+* `server.port` 기본값은 포트 1025입니다. 다른 값이 적용 되 면 1025으로 재정의 됩니다.
 * Azure Portal 및 Azure Resource Manager 템플릿은 응용 프로그램 패키지 업로드를 지원 하지 않습니다. Azure CLI를 통해 응용 프로그램을 배포 해야만 응용 프로그램 패키지를 업로드할 수 있습니다.
 
 ### <a name="what-pricing-tiers-are-available"></a>어떤 가격 책정 계층을 사용할 수 있나요? 
@@ -88,6 +88,12 @@ Azure 스프링 클라우드는 스프링 클라우드 응용 프로그램 로�
 ### <a name="when-i-deletemove-an-azure-spring-cloud-service-instance-will-its-extension-resources-be-deletedmoved-as-well"></a>Azure 스프링 클라우드 서비스 인스턴스를 삭제/이동할 때 확장 리소스도 삭제/이동 됩니까?
 
 확장 리소스를 소유 하는 리소스 공급자의 논리에 따라 달라 집니다. 인스턴스의 확장 리소스는 `Microsoft.AppPlatform` 동일한 네임 스페이스에 속하지 않으므로 리소스 공급자에 따라 동작이 달라 집니다. 예를 들어, 삭제/이동 작업은 **진단 설정** 리소스에 종속 되지 않습니다. 새 Azure 스프링 클라우드 인스턴스가 삭제 된 것과 동일한 리소스 ID로 프로 비전 되거나 이전 Azure 스프링 클라우드 인스턴스가 다시 이동 되는 경우 이전 **진단 설정** 리소스에서 계속 확장 합니다.
+
+Azure CLI를 사용 하 여 스프링 클라우드의 진단 설정을 삭제할 수 있습니다.
+
+```azurecli
+ az monitor diagnostic-settings delete --name $diagnosticSettingName --resource $azureSpringCloudResourceId
+```
 
 ## <a name="java-runtime-and-os-versions"></a>Java 런타임 및 OS 버전
 

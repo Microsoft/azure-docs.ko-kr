@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: j-martens
 ms.author: jmartens
 ms.date: 06/11/2020
-ms.openlocfilehash: aa754868677802b7d0000045f22090fbca62d9b6
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: fbe3f0109ca3af2cf9ff44061c7882e6bd72c8a6
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87927422"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88508605"
 ---
-# <a name="enterprise-and-basic-editions-of-azure-machine-learning"></a>Azure Machine Learning Enterprise 및 Basic 버전 
+# <a name="enterprise-preview-and-basic-editions-of-azure-machine-learning"></a>Enterprise (preview) 및 기본 버전의 Azure Machine Learning 
 
 Azure Machine Learning은 기계 학습 요구에 맞게 조정 된 두 가지 버전을 제공 합니다. 버전에 따라 개발자 및 데이터 과학자가 작업 영역에서 사용할 수 있는 기계 학습 도구가 달라집니다.
 
@@ -23,7 +23,7 @@ Azure Machine Learning은 기계 학습 요구에 맞게 조정 된 두 가지 �
 
 Edition은 작업 영역을 만들 때마다 할당합니다. 고객은 이 기간 동안 컴퓨팅 및 기타 Azure 리소스에서 발생하는 비용을 지불해야 합니다. [Azure Machine Learning에 대 한 비용을 관리](concept-plan-manage-cost.md)하는 방법을 알아봅니다.
 
-[Basic 작업 영역을 Enterprise Edition으로 업그레이드](how-to-manage-workspace.md#upgrade)하는 방법에 대해 알아보세요. 
+[기본 작업 영역을 Enterprise (preview) 버전으로 업그레이드](how-to-manage-workspace.md#upgrade)하는 방법에 대해 알아봅니다. 
 
 ## <a name="whats-in-each-edition"></a>각 버전의 기능
 

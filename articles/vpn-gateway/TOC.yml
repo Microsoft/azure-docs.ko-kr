@@ -2,7 +2,7 @@
   href: index.yml
 - name: 개요
   items:
-    - name: VPN Gateway 정보
+    - name: VPN Gateway란?
       href: vpn-gateway-about-vpngateways.md
 - name: 자습서
   items:

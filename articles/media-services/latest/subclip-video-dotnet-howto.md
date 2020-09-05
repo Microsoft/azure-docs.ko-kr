@@ -3,7 +3,7 @@ title: Azure Media Services로 인코딩할 경우 비디오를 하위 클립
 description: 이 항목에서는 .NET SDK를 사용 하 여 Azure Media Services 인코딩할 때 비디오를 하위 클립 하는 방법에 대해 설명 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
 ms.date: 06/09/2019
-ms.author: juliako
-ms.openlocfilehash: 31fa7fe6b16b7ba97b8ce5e6697f1aaaf88aa294
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 827fa21fd7f0a3179fb1ed3cd01a461a785829b5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091898"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257401"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Media Services-.NET을 사용 하 여 인코딩할 경우 비디오 하위 클립
 
@@ -34,7 +35,7 @@ ms.locfileid: "87091898"
 - 변환과 입력 및 출력 자산을 만듭니다. .NET 자습서를 [사용 하 여 비디오 업로드, 인코딩 및 스트리밍](stream-files-tutorial-with-api.md) 에서 변환 및 입력 및 출력 자산을 만드는 방법을 확인할 수 있습니다.
 - [인코딩 개념](encoding-concept.md) 항목을 검토 합니다.
 
-## <a name="example"></a>예제
+## <a name="example"></a>예
 
 ```csharp
 /// <summary>

@@ -12,12 +12,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: bd17c20707c3bf1a153e9209cd7e2ec279de0501
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 39062396e0076af5901f2fc7d76f5c989e2ccc3a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85554050"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115257"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>빠른 시작: iOS 또는 macOS 앱에서 사용자 로그인 및 Microsoft Graph API 호출
 
@@ -101,12 +101,12 @@ ms.locfileid: "85554050"
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
-> 1. [Azure AD 국가별 클라우드](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints)에 대한 앱을 빌드하는 경우 'let kGraphEndpoint' 및 'let kAuthority'로 시작하는 줄을 올바른 엔드포인트로 바꿉니다. 글로벌 액세스의 경우 기본값을 사용합니다.
+> 1. [Azure AD 국가별 클라우드](/graph/deployments#app-registration-and-token-service-root-endpoints)에 대한 앱을 빌드하는 경우 'let kGraphEndpoint' 및 'let kAuthority'로 시작하는 줄을 올바른 엔드포인트로 바꿉니다. 글로벌 액세스의 경우 기본값을 사용합니다.
 >     ```swift
 >     let kGraphEndpoint = "https://graph.microsoft.com/"
 >     let kAuthority = "https://login.microsoftonline.com/common"
 >     ```
-> 1. 다른 엔드포인트는 [여기에](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints) 설명되어 있습니다. 예를 들어 Azure AD 독일에서 빠른 시작을 실행하려면 다음을 사용합니다.
+> 1. 다른 엔드포인트는 [여기에](/graph/deployments#app-registration-and-token-service-root-endpoints) 설명되어 있습니다. 예를 들어 Azure AD 독일에서 빠른 시작을 실행하려면 다음을 사용합니다.
 >     ```swift
 >     let kGraphEndpoint = "https://graph.microsoft.de/"
 >     let kAuthority = "https://login.microsoftonline.de/common"
@@ -269,6 +269,6 @@ self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previou
 ### <a name="learn-how-to-create-the-application-used-in-this-quickstart"></a>이 빠른 시작에서 사용되는 애플리케이션을 만드는 방법 알아보기
 
 > [!div class="nextstepaction"]
-> [iOS 및 macOS용 Graph API 자습서 호출](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
+> [iOS 및 macOS용 Graph API 자습서 호출](./tutorial-v2-ios.md)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

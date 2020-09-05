@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: a7553eea8941b93e589f38f8229ef35b70361f8e
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: bf921ce4ce3ad65f0787ccab2f0a064da8973af1
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129188"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115240"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>빠른 시작: Angular 단일 페이지 애플리케이션에서 사용자 로그인 및 액세스 토큰 가져오기
 
@@ -47,7 +47,7 @@ ms.locfileid: "87129188"
 >
 > 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
 > 1. 계정에서 두 개 이상의 테넌트에 액세스할 수 있는 경우 오른쪽 위에서 계정을 선택한 다음, 사용할 Azure AD 테넌트로 포털 세션을 설정합니다.
-> 1. 지침에 따라 Azure Portal에서 [단일 페이지 애플리케이션을 등록](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-app-registration)합니다.
+> 1. 지침에 따라 Azure Portal에서 [단일 페이지 애플리케이션을 등록](./scenario-spa-app-registration.md)합니다.
 > 1. 앱 등록의 **인증** 창에서 새 플랫폼을 추가하고 리디렉션 URI(`http://localhost:4200/`)를 등록합니다.
 > 1. 이 빠른 시작에서는 [암시적 권한 부여 흐름](v2-oauth2-implicit-grant-flow.md)을 사용합니다. **ID 토큰** 및 **액세스 토큰**에 대한 **암시적 권한 부여** 설정을 선택합니다. 이 앱은 사용자를 로그인하고 API를 호출하므로 ID 토큰 및 액세스 토큰이 필요합니다.
 
@@ -99,7 +99,7 @@ ms.locfileid: "87129188"
 >|값 이름|Description|
 >|---------|---------|
 >|Enter_the_Application_Id_Here|이 값은 애플리케이션 등록의 **개요** 페이지에서 **애플리케이션(클라이언트) ID** 값입니다. |
->|Enter_the_Cloud_Instance_Id_Here|Azure 클라우드의 인스턴스입니다. 기본 또는 글로벌 Azure 클라우드의 경우 **https://login.microsoftonline.com** 을 입력합니다. 국가별 클라우드(예: 중국)의 경우 [국가별 클라우드](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud)를 참조하세요.|
+>|Enter_the_Cloud_Instance_Id_Here|Azure 클라우드의 인스턴스입니다. 기본 또는 글로벌 Azure 클라우드의 경우 **https://login.microsoftonline.com** 을 입력합니다. 국가별 클라우드(예: 중국)의 경우 [국가별 클라우드](./authentication-national-cloud.md)를 참조하세요.|
 >|Enter_the_Tenant_Info_Here| 다음 옵션 중 하나로 설정합니다. 애플리케이션이 *이 조직 디렉터리의 계정*을 지원하는 경우 이 값을 디렉터리(테넌트) ID 또는 테넌트 이름(예: **contoso.microsoft.com**)으로 바꿉니다. 애플리케이션이 *모든 조직 디렉터리의 계정*을 지원하는 경우 이 값을 **organizations**으로 바꿉니다. 애플리케이션에서 *모든 조직 디렉터리의 계정 및 개인 Microsoft 계정*을 지원하는 경우 이 값을 **common**으로 바꿉니다. *개인 Microsoft 계정만* 지원하도록 제한하려면 이 값을 **consumers**로 바꿉니다. |
 >|Enter_the_Redirect_Uri_Here|**http://localhost:4200** 으로 바꿉니다.|
 >|cacheLocation  | (선택 사항) 인증 상태에 대한 브라우저 스토리지를 설정합니다. 기본값은 **sessionStorage**입니다.   |
@@ -142,5 +142,4 @@ Node.js를 사용하는 경우:
 다음으로, Angular 자습서에서 사용자를 로그인하고 토큰을 획득하는 방법을 알아보세요.
 
 > [!div class="nextstepaction"]
-> [Angular 자습서](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-angular)
-
+> [Angular 자습서](./tutorial-v2-angular.md)

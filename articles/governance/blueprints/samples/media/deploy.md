@@ -1,14 +1,14 @@
 ---
 title: Media 청사진 샘플 배포
 description: 청사진 아티팩트 매개 변수 세부 정보를 포함하여 Media 청사진 샘플에 대한 단계를 배포합니다.
-ms.date: 02/25/2020
+ms.date: 08/13/2020
 ms.topic: sample
-ms.openlocfilehash: 7c107c49a5ab5ec8c64b2d2deadb2531e8a67f3a
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: c8ac1726bc5007c1790f5efbc45c72f9712fcdf2
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86042801"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208427"
 ---
 # <a name="deploy-the-media-blueprint-sample"></a>Media 청사진 샘플 배포
 

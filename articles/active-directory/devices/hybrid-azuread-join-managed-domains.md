@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4f30202b08328854296b45e0279fc51b25b0a7c
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 56b0685dee518399ae8328ddac18f03e82918a38
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428463"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268420"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>자습서: 관리되는 도메인용 하이브리드 Azure Active Directory 조인 구성
 
@@ -73,9 +73,9 @@ Azure AD Connect에서 Azure AD에 조인된 하이브리드 Azure AD가 될 디
 > [!WARNING]
 > 조직에서 데이터 손실 방지 또는 Azure AD 테넌트 제한과 같은 시나리오에 대한 SSL 트래픽을 가로채는 프록시 서버를 사용하는 경우 'https://device.login.microsoftonline.com '에 대한 트래픽을 TLS 중단-검사에서 제외해야 합니다. 'https://device.login.microsoftonline.com '을 제외하지 않으면 클라이언트 인증서 인증에 방해가 되어 디바이스 등록 및 디바이스 기반 조건부 액세스에 문제가 발생할 수 있습니다.
 
-조직에서 아웃바운드 프록시를 통해 인터넷에 액세스해야 하는 경우 [WPAD(웹 프록시 자동 검색)를 구현](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10))을 사용하여 Windows 10 컴퓨터에서 Azure AD로 디바이스를 등록할 수 있습니다. WPAD 구성 및 관리 문제를 해결하려면 [자동 검색 문제 해결](/previous-versions/tn-archive/cc302643(v=technet.10))을 참조하세요. 1709 업데이트 이전의 Windows 10 디바이스에서 WPAD는 하이브리드 Azure AD 조인과 함께 작동하도록 프록시를 구성하는 데 사용할 수 있는 유일한 옵션입니다. 
+조직에서 아웃바운드 프록시를 통해 인터넷에 액세스해야 하는 경우 [WPAD(웹 프록시 자동 검색)를 구현](/previous-versions/tn-archive/cc995261(v=technet.10))을 사용하여 Windows 10 컴퓨터에서 Azure AD로 디바이스를 등록할 수 있습니다. WPAD 구성 및 관리 문제를 해결하려면 [자동 검색 문제 해결](/previous-versions/tn-archive/cc302643(v=technet.10))을 참조하세요. 1709 업데이트 이전의 Windows 10 디바이스에서 WPAD는 하이브리드 Azure AD 조인과 함께 작동하도록 프록시를 구성하는 데 사용할 수 있는 유일한 옵션입니다. 
 
-WPAD를 사용하지 않는 경우 Windows 10 1709부터 컴퓨터에서 WinHTTP 프록시 설정을 구성할 수 있습니다. 자세한 내용은 [GPO를 통해 배포되는 WinHTTP 프록시 설정](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/) 을 참조하세요.
+WPAD를 사용하지 않는 경우 Windows 10 1709부터 컴퓨터에서 WinHTTP 프록시 설정을 구성할 수 있습니다. 자세한 내용은 [GPO를 통해 배포되는 WinHTTP 프록시 설정](/archive/blogs/netgeeks/winhttp-proxy-settings-deployed-by-gpo) 을 참조하세요.
 
 > [!NOTE]
 > WinHTTP 설정을 사용하여 컴퓨터에서 프록시 설정을 구성하는 경우 구성된 프록시에 연결할 수 없는 모든 컴퓨터는 인터넷에 연결할 수 없습니다.
@@ -174,7 +174,7 @@ Windows 하위 수준 디바이스를 등록하려면 조직에서 [비 Windows 
 ### <a name="using-the-azure-portal"></a>Azure Portal 사용
 
 1. [직접 링크](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices)를 사용하여 디바이스 페이지로 이동합니다.
-2. 디바이스를 찾는 방법에 대한 정보는 [Azure Portal을 사용하여 디바이스 ID를 관리하는 방법](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#locate-devices)에서 찾을 수 있습니다.
+2. 디바이스를 찾는 방법에 대한 정보는 [Azure Portal을 사용하여 디바이스 ID를 관리하는 방법](./device-management-azure-portal.md)에서 찾을 수 있습니다.
 3. **Registered** 열에 **보류 중**이 표시되면 하이브리드 Azure AD 조인이 완료되지 않은 것입니다.
 4. **Registered** 열에 **날짜/시간**이 포함되어 있으면 하이브리드 Azure AD 조인이 완료된 것입니다.
 
@@ -224,7 +224,7 @@ Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -e
 
 도메인 조인 Windows 디바이스에 대한 하이브리드 Azure AD 조인을 완료하는 데 문제가 발생하는 경우 다음을 참조하세요.
 
-- [dsregcmd 명령을 사용하여 디바이스 문제 해결](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
+- [dsregcmd 명령을 사용하여 디바이스 문제 해결](./troubleshoot-device-dsregcmd.md)
 - [하이브리드 Azure Active Directory 조인 디바이스 문제 해결](troubleshoot-hybrid-join-windows-current.md)
 - [하위 수준 디바이스에 조인된 하이브리드 Azure Active Directory 문제 해결](troubleshoot-hybrid-join-windows-legacy.md)
 

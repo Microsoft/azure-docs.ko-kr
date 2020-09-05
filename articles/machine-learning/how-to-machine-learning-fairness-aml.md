@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 07/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ec0c39bad8a7c12822e5ebf5cd4a958aa8653050
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: a0f06c2db0a5bf196ae610efadd85ef1df8defe8
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844646"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691312"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Fairlearn 오픈 소스 패키지와 함께 Azure Machine Learning를 사용 하 여 ML 모델의 공평을 평가 (미리 보기)
 
@@ -33,7 +33,7 @@ ms.locfileid: "87844646"
 
 ## <a name="azure-machine-learning-fairness-sdk"></a>Azure Machine Learning 공평 SDK 
 
-Azure Machine Learning 공평 SDK는 `azureml-contrib-fairness` Azure Machine Learning 내에서 오픈 소스 Python 패키지 [Fairlearn](http://fairlearn.github.io)를 통합 합니다. Azure Machine Learning 내에서 Fairlearn의 통합에 대해 자세히 알아보려면 이러한 [샘플 노트북](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness)을 확인 하세요. Fairlearn에 대 한 자세한 내용은 [예제 가이드](https://fairlearn.github.io/auto_examples/notebooks/index.html) 및 [샘플 노트북](https://github.com/fairlearn/fairlearn/tree/master/notebooks)을 참조 하세요. 
+Azure Machine Learning 공평 SDK는 `azureml-contrib-fairness` Azure Machine Learning 내에서 오픈 소스 Python 패키지 [Fairlearn](http://fairlearn.github.io)를 통합 합니다. Azure Machine Learning 내에서 Fairlearn의 통합에 대해 자세히 알아보려면 이러한 [샘플 노트북](https://github.com/Azure/MachineLearningNotebooks/tree/master/contrib/fairness)을 확인 하세요. Fairlearn에 대 한 자세한 내용은 [예제 가이드](https://fairlearn.github.io/auto_examples/) 및 [샘플 노트북](https://github.com/fairlearn/fairlearn/tree/master/notebooks)을 참조 하세요. 
 
 다음 명령을 사용 하 여 및 패키지를 설치 합니다 `azureml-contrib-fairness` `fairlearn` .
 ```bash

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 19fcde522c5cb0355e53a5616145f27fada7dad9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aea29cfff6b3827cfb9169722e48120e3a5a3709
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78302188"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794314"
 ---
 # <a name="replicate-azure-cosmos-db"></a>복제 (Azure Cosmos DB)
  지정한 횟수만큼 문자열 값을 반복합니다.
@@ -36,9 +36,10 @@ REPLICATE(<str_expr>, <num_expr>)
   문자열 식을 반환합니다.
   
 ## <a name="remarks"></a>설명
-  결과의 최대 길이는 1만 자입니다. 예를 들어 (length (*str_expr*) * *num_expr*) <= 1만입니다.
 
-## <a name="examples"></a>예
+  결과의 최대 길이는 1만 자입니다. 예를 들어 (length (*str_expr*) *  *num_expr*) <= 1만입니다. 이 시스템 함수는 인덱스를 활용 하지 않습니다.
+
+## <a name="examples"></a>예제
   
   다음 예제에서는 쿼리에서를 사용 하는 방법을 보여 줍니다 `REPLICATE` .
   
@@ -51,10 +52,6 @@ SELECT REPLICATE("a", 3) AS replicate
 ```json
 [{"replicate": "aaa"}]
 ```  
-
-## <a name="remarks"></a>설명
-
-이 시스템 함수는 인덱스를 활용 하지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

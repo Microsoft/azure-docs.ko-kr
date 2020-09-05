@@ -11,18 +11,18 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6ede429de686dd005785b44cf5c6d9571aac5a2
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 4a75b6be3796a21e3f765ad69eee0578d5f2e9d0
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117025"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717849"
 ---
 # <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>NPS(네트워크 정책 서버) 확장 및 Azure AD를 사용하여 원격 데스크톱 게이트웨이 인프라 통합
 
 이 문서에서는 Microsoft Azure용 NPS(네트워크 정책 서버) 확장을 사용하여 원격 데스크톱 게이트웨이 인프라를 Azure MFA(Multi-Factor Authentication)와 통합하는 방법에 대해 자세히 설명합니다.
 
-Azure의 NPS (네트워크 정책 서버) 확장을 사용 하면 고객이 Azure의 [MFA (클라우드 기반 Multi-Factor Authentication)](multi-factor-authentication.md)를 사용 하 여 RADIUS(REMOTE AUTHENTICATION DIAL-IN USER SERVICE) (RADIUS) 클라이언트 인증을 보호할 수 있습니다. 이 솔루션은 사용자 로그인 및 트랜잭션에 두 번째 보안 계층을 추가하는 2단계 인증을 제공합니다.
+Azure의 NPS (네트워크 정책 서버) 확장을 사용 하면 고객이 Azure의 [MFA (클라우드 기반 Multi-Factor Authentication)](./concept-mfa-howitworks.md)를 사용 하 여 RADIUS(REMOTE AUTHENTICATION DIAL-IN USER SERVICE) (RADIUS) 클라이언트 인증을 보호할 수 있습니다. 이 솔루션은 사용자 로그인 및 트랜잭션에 두 번째 보안 계층을 추가하는 2단계 인증을 제공합니다.
 
 이 문서에서는 Azure용 NPS 확장을 사용하여 NPS 인프라를 Azure MFA와 통합하는 단계별 지침을 제공합니다. 이렇게 하면 원격 데스크톱 게이트웨이에 로그인하려고 시도하는 사용자를 안전하게 확인할 수 있습니다.
 
@@ -59,7 +59,7 @@ Azure용 NPS 확장을 NPS 및 원격 데스크톱 게이트웨이와 통합한 
 1. 확장이 설치된 NPS 서버에서 RD CAP 정책에 대한 RADIUS 액세스 허용 메시지를 원격 데스크톱 게이트웨이 서버로 보냅니다.
 1. 사용자에게 RD 게이트웨이를 통해 요청된 네트워크 리소스에 대한 액세스 권한이 부여됩니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 섹션에서는 Azure MFA와 원격 데스크톱 게이트웨이를 통합하기 전에 필요한 전제 조건에 대해 자세히 설명합니다. 이 문서를 시작하기 전에 다음과 같은 필수 구성 요소가 있어야 합니다.  
 
@@ -75,7 +75,7 @@ Azure용 NPS 확장을 NPS 및 원격 데스크톱 게이트웨이와 통합한 
 작동 중인 RDS(원격 데스크톱 서비스) 인프라가 있어야 합니다. 이렇게 하지 않으면 빠른 시작 템플릿: [원격 데스크톱 세션 컬렉션 배포 만들기](https://github.com/Azure/azure-quickstart-templates/tree/ad20c78b36d8e1246f96bb0e7a8741db481f957f/rds-deployment)를 사용 하 여 Azure에서이 인프라를 빠르게 만들 수 있습니다.
 
 테스트를 위해 온-프레미스 RDS 인프라를 수동으로 빨리 만들려면 다음 단계에 따라 배포합니다.
-**자세한 정보**: Azure 빠른 시작 및 [기본 rds 인프라 배포](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure) [를 사용 하 여 rds 배포](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-in-azure) .
+**자세한 정보**: Azure 빠른 시작 및 [기본 rds 인프라 배포](/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure) [를 사용 하 여 rds 배포](/windows-server/remote/remote-desktop-services/rds-in-azure) .
 
 ### <a name="azure-mfa-license"></a>Azure MFA 라이선스
 
@@ -89,7 +89,7 @@ NPS 확장을 사용하려면 NPS 역할 서비스가 설치된 Windows Server 2
 
 NPS 역할 서비스는 네트워크 액세스 정책 상태 서비스뿐만 아니라 RADIUS 서버 및 클라이언트 기능도 제공합니다. 이 역할은 인프라에서 적어도 두 대의 컴퓨터, 즉 원격 데스크톱 게이트웨이와 다른 구성원 서버 또는 도메인 컨트롤러에 설치해야 합니다. 기본적으로 이 역할은 원격 데스크톱 게이트웨이로 구성된 컴퓨터에 이미 있습니다.  또한 도메인 컨트롤러 또는 구성원 서버와 같은 다른 컴퓨터에도 NPS 역할을 설치해야 합니다.
 
-NPS 역할 서비스 Windows Server 2012 또는 이전 버전 설치에 대한 자세한 내용은 [NAP 상태 정책 서버 설치(영문)](https://technet.microsoft.com/library/dd296890.aspx)를 참조하세요. 도메인 컨트롤러에 NPS를 설치 하기 위한 권장 사항을 비롯 하 여 NPS에 대 한 모범 사례에 대 한 설명은 [nps에 대 한 모범 사례](https://technet.microsoft.com/library/cc771746)를 참조 하세요.
+NPS 역할 서비스 Windows Server 2012 또는 이전 버전 설치에 대한 자세한 내용은 [NAP 상태 정책 서버 설치(영문)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd296890(v=ws.10))를 참조하세요. 도메인 컨트롤러에 NPS를 설치 하기 위한 권장 사항을 비롯 하 여 NPS에 대 한 모범 사례에 대 한 설명은 [nps에 대 한 모범 사례](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771746(v=ws.10))를 참조 하세요.
 
 ### <a name="azure-active-directory-synched-with-on-premises-active-directory"></a>온-프레미스 Active Directory와 동기화되는 Azure Active Directory
 
@@ -109,7 +109,7 @@ Azure AD 사용자가 MFA를 사용하도록 설정하려면 [클라우드에서
 
 계정에서 MFA를 사용하도록 설정하면 2단계 인증을 사용하여 인증한 두 번째 인증 요소에 사용할 신뢰할 수 있는 디바이스를 성공적으로 구성할 때까지는 MFA 정책이 적용되는 리소스에 로그인할 수 없습니다.
 
-[Azure Multi-Factor Authentication은 무엇을 의미하나요?](../user-help/multi-factor-authentication-end-user.md)의 단계에 따라 사용자 계정으로 MFA용 디바이스를 이해하고 제대로 구성하세요.
+[Azure Multi-Factor Authentication은 무엇을 의미하나요?](../user-help/multi-factor-authentication-end-user-first-time.md)의 단계에 따라 사용자 계정으로 MFA용 디바이스를 이해하고 제대로 구성하세요.
 
 > [!IMPORTANT]
 > 원격 데스크톱 게이트웨이에 대 한 로그인 동작은 Azure Multi-Factor Authentication에서 확인 코드를 입력 하는 옵션을 제공 하지 않습니다. 휴대폰 확인 또는 푸시 알림이 있는 Microsoft Authenticator 앱에 대해 사용자 계정을 구성 해야 합니다.
@@ -250,7 +250,7 @@ RD CAP(원격 데스크톱 연결 권한 부여 정책)는 원격 데스크톱 �
 1. **취소**를 클릭합니다.
 
 >[!NOTE]
-> 연결 요청 정책을 만드는 방법에 대 한 자세한 내용은 동일한 항목에 대 한 [연결 요청 정책 구성](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-configure#add-a-connection-request-policy) 문서를 참조 하세요. 
+> 연결 요청 정책을 만드는 방법에 대 한 자세한 내용은 동일한 항목에 대 한 [연결 요청 정책 구성](/windows-server/networking/technologies/nps/nps-crp-configure#add-a-connection-request-policy) 문서를 참조 하세요. 
 
 ## <a name="configure-nps-on-the-server-where-the-nps-extension-is-installed"></a>NPS 확장이 설치된 서버에 NPS 구성
 
@@ -378,13 +378,13 @@ Azure MFA가 사용자에 대해 작동하는 경우 관련 이벤트 로그를 
 
 고급 문제 해결 옵션을 수행하려면 NPS 서비스가 설치된 NPS 데이터베이스 형식 로그 파일을 참조하세요. 이러한 로그 파일은 _%SystemRoot%\System32\Logs_ 폴더에 쉼표로 구분된 텍스트 파일로 만들어집니다.
 
-이러한 로그 파일에 대한 자세한 내용은 [NPS 데이터베이스 형식 로그 파일 해석(영문)](https://technet.microsoft.com/library/cc771748.aspx)을 참조하세요. 이러한 로그 파일의 항목은 스프레드시트 또는 데이터베이스로 가져오지 않고는 해석하기가 어려울 수 있습니다. 로그 파일을 해석하는 데 도움이 되는 여러 IAS 파서를 온라인으로 찾을 수 있습니다.
+이러한 로그 파일에 대한 자세한 내용은 [NPS 데이터베이스 형식 로그 파일 해석(영문)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10))을 참조하세요. 이러한 로그 파일의 항목은 스프레드시트 또는 데이터베이스로 가져오지 않고는 해석하기가 어려울 수 있습니다. 로그 파일을 해석하는 데 도움이 되는 여러 IAS 파서를 온라인으로 찾을 수 있습니다.
 
 아래 이미지는 다운로드할 수 있는 [셰어웨어 애플리케이션](https://www.deepsoftware.com/iasviewer)의 출력을 보여 줍니다.
 
 ![샘플 셰어웨어 앱 IAS 파서](./media/howto-mfa-nps-extension-rdg/image35.png)
 
-마지막으로 추가적인 문제 해결 옵션을 위해 [Microsoft Message Analyzer](https://technet.microsoft.com/library/jj649776.aspx)와 같은 프로토콜 분석기를 사용할 수 있습니다.
+마지막으로 추가적인 문제 해결 옵션을 위해 [Microsoft Message Analyzer](/message-analyzer/microsoft-message-analyzer-operating-guide)와 같은 프로토콜 분석기를 사용할 수 있습니다.
 
 아래의 Microsoft Message Analyzer 이미지에서는 **CONTOSO\AliceC** 사용자 이름이 포함된 RADIUS 프로토콜에서 필터링된 네트워크 트래픽을 보여줍니다.
 

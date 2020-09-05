@@ -5,28 +5,32 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 06/09/2020
+ms.date: 08/27/2020
 tags: connectors
-ms.openlocfilehash: 8c7a0ddb80ba28548fc1821cc2063e500af0fa66
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 9ed490dba1547db6ec3c0ddcff38aa3e0c393fcf
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286634"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226432"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Azure Logic Apps에서 HTTP 또는 HTTPS를 통해 서비스 엔드포인트 호출
 
-[Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 기본 제공 http 트리거 또는 작업을 사용 하 여 HTTP 또는 HTTPS를 통해 서비스 끝점에 요청을 보내는 자동화 된 작업 및 워크플로를 만들 수 있습니다. 예를 들어 특정 일정에 따라 해당 끝점을 확인 하 여 웹 사이트에 대 한 서비스 끝점을 모니터링할 수 있습니다. 웹 사이트의 작동이 중단 되는 경우와 같이 해당 끝점에서 지정 된 이벤트가 발생 하면 이벤트는 논리 앱의 워크플로를 트리거하고 해당 워크플로에서 작업을 실행 합니다. 대신 인바운드 HTTPS 호출을 수신 하 고 응답 하려면 기본 제공 [요청 트리거 또는 응답 작업](../connectors/connectors-native-reqres.md)을 사용 합니다.
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 기본 제공 http 트리거 또는 작업을 사용 하 여 HTTP 또는 HTTPS를 통해 다른 서비스 및 시스템의 끝점에 아웃 바운드 요청을 보낼 수 있는 자동화 된 작업 및 워크플로를 만들 수 있습니다. 대신 인바운드 HTTPS 호출을 수신 하 고 응답 하려면 기본 제공 [요청 트리거 및 응답 작업](../connectors/connectors-native-reqres.md)을 사용 합니다.
+
+예를 들어 특정 일정에 따라 해당 끝점을 확인 하 여 웹 사이트에 대 한 서비스 끝점을 모니터링할 수 있습니다. 웹 사이트의 작동이 중단 되는 경우와 같이 해당 끝점에서 지정 된 이벤트가 발생 하면 이벤트는 논리 앱의 워크플로를 트리거하고 해당 워크플로에서 작업을 실행 합니다.
 
 * 되풀이 일정에 따라 끝점을 검사 하거나 *폴링* 하려면 워크플로의 첫 단계로 [HTTP 트리거를 추가](#http-trigger) 합니다. 트리거에서 끝점을 확인할 때마다 트리거는 끝점에 *요청* 을 호출 하거나 보냅니다. 엔드포인트의 응답은 논리 앱의 워크플로가 실행될지 여부를 결정합니다. 트리거는 끝점의 응답에서 논리 앱의 동작에 대 한 모든 콘텐츠를 전달 합니다.
 
 * 워크플로의 다른 위치에서 끝점을 호출 하려면 [HTTP 작업을 추가](#http-action)합니다. 엔드포인트의 응답은 워크플로의 나머지 작업을 실행하는 방법을 결정합니다.
 
-이 문서에서는 논리 앱의 워크플로에 HTTP 트리거 또는 작업을 추가 하는 방법을 보여 줍니다.
+이 문서에서는 논리 앱에서 다른 서비스와 시스템에 대 한 아웃 바운드 호출을 보낼 수 있도록 HTTP 트리거와 HTTP 작업을 사용 하는 방법을 보여 줍니다.
+
+[TLS (전송 계층 보안](https://en.wikipedia.org/wiki/Transport_Layer_Security)), 이전에 SSL(SECURE SOCKETS LAYER) (SSL), 자체 서명 된 인증서 또는 [Azure Active Directory 오픈 인증 (Azure AD OAuth)](../active-directory/develop/index.yml)과 같은 논리 앱의 아웃 바운드 호출에 대 한 암호화, 보안 및 권한 부여에 대 한 자세한 내용은 [다른 서비스와 시스템에 대 한 아웃 바운드 호출을 위한 보안 액세스 및 데이터 액세스](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests)를 참조 하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
+* Azure 계정 및 구독 Azure 구독이 없는 경우 [체험 Azure 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
 * 호출 하려는 대상 끝점의 URL입니다.
 
@@ -96,21 +100,27 @@ ms.locfileid: "87286634"
 
 1. 완료 되 면 논리 앱을 저장 해야 합니다. 디자이너 도구 모음에서 **저장**을 선택합니다.
 
-<a name="tls-support"></a>
+## <a name="trigger-and-action-outputs"></a>트리거 및 작업 출력
 
-## <a name="transport-layer-security-tls"></a>TLS(전송 계층 보안)
+이 정보를 반환 하는 HTTP 트리거 또는 작업의 출력에 대 한 자세한 내용은 다음과 같습니다.
 
-대상 끝점의 기능을 기반으로 하는 아웃 바운드 호출은 TLS (전송 계층 보안)를 지원 합니다 .이는 이전에 SSL(Secure Sockets Layer) (SSL) 버전 1.0, 1.1 및 1.2입니다. 가능 하면 지원 되는 가장 높은 버전을 사용 하 여 끝점에 대 한 Logic Apps 협상 합니다.
+| 속성 | 유형 | Description |
+|----------|------|-------------|
+| `headers` | JSON 개체 | 요청의 헤더 |
+| `body` | JSON 개체 | 요청의 본문 콘텐츠가 포함된 개체 |
+| `status code` | 정수 | 요청의 상태 코드 |
+|||
 
-예를 들어 끝점이 1.2을 지 원하는 경우 HTTP 커넥터는 1.2를 먼저 사용 합니다. 그렇지 않으면 커넥터에서 지원 되는 가장 높은 다음 버전을 사용 합니다.
-
-<a name="self-signed"></a>
-
-## <a name="self-signed-certificates"></a>자체 서명된 인증서
-
-* 전역 다중 테 넌 트 Azure 환경에서 논리 앱의 경우 HTTP 커넥터는 자체 서명 된 TLS/SSL 인증서를 허용 하지 않습니다. 논리 앱이 서버에 대 한 HTTP 호출을 수행 하 고 TLS/SSL 자체 서명 된 인증서를 제공 하는 경우 HTTP 호출은 오류가 발생 하 고 실패 `TrustFailure` 합니다.
-
-* [ISE (통합 서비스 환경)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)의 논리 앱에 대해 HTTP 커넥터는 TLS/SSL 핸드셰이크에 자체 서명 된 인증서를 허용 합니다. 그러나 Logic Apps REST API를 사용 하 여 기존 ISE 또는 새 ISE에 대해 [자체 서명 된 인증서 지원을 사용 하도록 설정](../logic-apps/create-integration-service-environment-rest-api.md#request-body) 하 고 위치에 공용 인증서를 설치 해야 합니다 `TrustedRoot` .
+| 상태 코드 | Description |
+|-------------|-------------|
+| 200 | 확인 |
+| 202 | 수락됨 |
+| 400 | 잘못된 요청 |
+| 401 | 권한 없음 |
+| 403 | 사용할 수 없음 |
+| 404 | 찾을 수 없음 |
+| 500 | 내부 서버 오류. 알 수 없는 오류 발생. |
+|||
 
 ## <a name="content-with-multipartform-data-type"></a>Multipart/form 데이터 형식의 콘텐츠
 
@@ -249,29 +259,8 @@ Logic Apps에서 HTTP 트리거 또는 작업을 사용 하는 논리 앱을 이
 * [HTTP 트리거 매개 변수](../logic-apps/logic-apps-workflow-actions-triggers.md#http-trigger)
 * [HTTP 동작 매개 변수](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action)
 
-### <a name="output-details"></a>출력 세부 정보
-
-이 정보를 반환 하는 HTTP 트리거 또는 작업의 출력에 대 한 자세한 내용은 다음과 같습니다.
-
-| 속성 | Type | 설명 |
-|----------|------|-------------|
-| `headers` | JSON 개체 | 요청의 헤더 |
-| `body` | JSON 개체 | 요청의 본문 콘텐츠가 포함된 개체 |
-| `status code` | 정수 | 요청의 상태 코드 |
-|||
-
-| 상태 코드 | Description |
-|-------------|-------------|
-| 200 | 확인 |
-| 202 | 수락됨 |
-| 400 | 잘못된 요청 |
-| 401 | 권한 없음 |
-| 403 | 사용할 수 없음 |
-| 404 | 찾을 수 없음 |
-| 500 | 내부 서버 오류. 알 수 없는 오류 발생. |
-|||
-
 ## <a name="next-steps"></a>다음 단계
 
-* 다른 [Logic Apps 커넥터](../connectors/apis-list.md)에 대해 알아봅니다.
+* [다른 서비스와 시스템에 대 한 아웃 바운드 호출을 위한 보안 액세스 및 데이터 액세스](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests)
+* [Logic Apps용 커넥터](../connectors/apis-list.md)
 

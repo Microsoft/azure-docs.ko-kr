@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 08/06/2020
-ms.openlocfilehash: 5d16e7f81a439d622a418dbc8cdff2d66c2a814f
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.date: 08/28/2020
+ms.openlocfilehash: e568051bfd5ac58f283eac7f9dc8a72be5c9dbbb
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87903564"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079679"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>스트리밍 단위 이해 및 조정
 
@@ -20,7 +20,7 @@ SUs (스트리밍 단위)는 Stream Analytics 작업을 실행 하기 위해 할
 
 Azure Stream Analytics 작업은 대기 시간이 짧은 스트리밍 처리를 위해 모든 처리를 메모리 안에서 수행합니다. 메모리가 부족하면 스트리밍 작업이 실패합니다. 결과적으로, 프로덕션 작업의 경우 스트리밍 작업의 리소스 사용을 모니터링하고 작업을 중단 없이 실행하기에 충분한 리소스가 할당되도록 확인해야 합니다.
 
-0%에서 100% 범위의 SU % 사용률 메트릭은 워크로드의 메모리 사용량을 설명합니다. 최소 사용되는 스트리밍 작업의 경우 이 메트릭은 보통 10~20% 범위입니다. SU % 사용률이 낮고 입력 이벤트가 백로그되면, 워크로드에 더 많은 컴퓨팅 리소스가 필요할 수 있으므로 SU 수를 늘려야 합니다. 경우에 따른 사용량 급증을 대비하여 SU 메트릭을 80% 이하로 유지하는 것이 가장 좋습니다. 리소스 소진을 방지하기 위해 80% SU 사용률 메트릭에 대한 경고를 설정하는 것이 좋습니다. 자세한 내용은 [자습서: Azure Stream Analytics 작업에 대한 경고 설정](stream-analytics-set-up-alerts.md)을 참조하세요.
+0%에서 100% 범위의 SU % 사용률 메트릭은 워크로드의 메모리 사용량을 설명합니다. 최소 사용되는 스트리밍 작업의 경우 이 메트릭은 보통 10~20% 범위입니다. SU% 사용률이 높으면 (80% 이상) 또는 입력 이벤트가 백로그 (CPU 사용량을 표시 하지 않기 때문에 SU% 사용률이 낮은 경우에도)를 사용 하는 경우 워크 로드에 더 많은 계산 리소스가 필요할 수 있으며,이 경우에는 SUs의 수를 늘려야 합니다. 경우에 따른 사용량 급증을 대비하여 SU 메트릭을 80% 이하로 유지하는 것이 가장 좋습니다. 리소스 소진을 방지하기 위해 80% SU 사용률 메트릭에 대한 경고를 설정하는 것이 좋습니다. 자세한 내용은 [자습서: Azure Stream Analytics 작업에 대한 경고 설정](stream-analytics-set-up-alerts.md)을 참조하세요.
 
 ## <a name="configure-stream-analytics-streaming-units-sus"></a>Stream Analytics 스트리밍 단위(SU) 구성
 1. [Azure Portal](https://portal.azure.com/) 에 로그인
@@ -111,7 +111,7 @@ Temporal 조인의 사용 된 메모리 (상태 크기)는 조인의 임시 공�
 
 이 예제에서 광고는 많은 데 사용자가 거의 클릭하지 않는 경우 모든 이벤트를 timewindow에 있도록 해야 합니다. 사용된 메모리는 창 크기와 이벤트 속도에 비례합니다. 
 
-이를 수정 하려면 조인 키 (이 경우 ID)로 분할 된 이벤트 허브에 이벤트를 보내고 다음과 같이 시스템에서 **PARTITION by** 를 사용 하 여 별도로 각 입력 파티션을 처리 하도록 허용 하 여 쿼리를 확장 합니다.
+이를 수정 하려면 조인 키 (이 경우 ID)로 분할 된 이벤트 허브에 이벤트를 보내고 다음과 같이 시스템에서  **PARTITION by** 를 사용 하 여 별도로 각 입력 파티션을 처리 하도록 허용 하 여 쿼리를 확장 합니다.
 
    ```sql
    SELECT clicks.id

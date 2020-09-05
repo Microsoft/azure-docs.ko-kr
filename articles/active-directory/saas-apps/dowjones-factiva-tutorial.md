@@ -2,26 +2,21 @@
 title: '자습서: Dow Jones Factiva와 Azure Active Directory 통합 | Microsoft 문서'
 description: Azure Active Directory와 Dow Jones Factiva 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b36e97e8-37a6-4096-a894-530427ee1331
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d894a024f8847af806be526493d23d562410dc25
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: dff1f204f9ac01f036ce7e700965f1c3a89fc4e0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157307"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555810"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>자습서: Dow Jones Factiva와 Azure Active Directory 통합
 

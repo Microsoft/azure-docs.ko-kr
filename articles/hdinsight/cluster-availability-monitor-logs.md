@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.date: 05/01/2020
-ms.openlocfilehash: 25bda7ed94eef20e22bcf717780d08a3ea5e6521
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.date: 08/12/2020
+ms.openlocfilehash: 19e3f1a157ee2c042dfebfc96c9b51c3c4698ebc
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86077221"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163733"
 ---
 # <a name="how-to-monitor-cluster-availability-with-azure-monitor-logs-in-hdinsight"></a>HDInsight에서 Azure Monitor 로그를 사용 하 여 클러스터 가용성을 모니터링 하는 방법
 
@@ -30,6 +30,8 @@ Azure Monitor 로그를 사용 하면 HDInsight 클러스터와 같은 여러 �
 
 ![HDInsight Operations Management Suite](media/cluster-availability-monitor-logs/azure-portal-monitoring.png)
 
+기본적으로에 지 노드를 제외 하 고 모든 클러스터 노드에 OMS 에이전트를 설치 합니다. OMS 에이전트는 클러스터에 지 노드에 설치 되어 있지 않으므로 기본적으로 Log Analytics에 있는에 지 노드에 대 한 원격 분석은 없습니다.
+
 ## <a name="query-metrics-and-logs-tables"></a>메트릭 및 로그 테이블 쿼리
 
 Azure Monitor 로그 통합이 사용 하도록 설정 되 면 (몇 분 정도 걸릴 수 있음) **Log Analytics 작업 영역** 리소스로 이동 하 여 **로그**를 선택 합니다.
@@ -38,7 +40,7 @@ Azure Monitor 로그 통합이 사용 하도록 설정 되 면 (몇 분 정도 �
 
 로그는 다음과 같은 다양 한 샘플 쿼리를 나열 합니다.
 
-| 쿼리 이름                      | 설명                                                               |
+| 쿼리 이름                      | Description                                                               |
 |---------------------------------|---------------------------------------------------------------------------|
 | 현재 사용 가능한 컴퓨터    | 매 시간 마다 로그를 전송 하는 컴퓨터 수를 차트로 표시 합니다.                     |
 | 하트 비트 나열                 | 지난 1 시간 동안 모든 컴퓨터 하트 비트 나열                           |
@@ -46,7 +48,7 @@ Azure Monitor 로그 통합이 사용 하도록 설정 되 면 (몇 분 정도 �
 | 사용할 수 없는 컴퓨터           | 지난 5 시간 동안 하트 비트를 보내지 않은 모든 알려진 컴퓨터를 나열 합니다. |
 | 가용성 률               | 연결 된 각 컴퓨터의 가용성 률 계산                |
 
-예를 들어 위의 스크린샷에 표시 된 것 처럼 해당 쿼리에서 **실행** 을 선택 하 여 **Availability rate** 샘플 쿼리를 실행 합니다. 이렇게 하면 클러스터의 각 노드에 대 한 가용성 비율이 백분율로 표시 됩니다. 동일한 Log Analytics 작업 영역에 메트릭을 전송 하기 위해 여러 HDInsight 클러스터를 사용 하도록 설정한 경우 해당 클러스터의 모든 노드에 대 한 가용성 비율이 표시 됩니다.
+예를 들어 위의 스크린샷에 표시 된 것 처럼 해당 쿼리에서 **실행** 을 선택 하 여 **Availability rate** 샘플 쿼리를 실행 합니다. 이렇게 하면 클러스터의 각 노드에 대 한 가용성 비율이 백분율로 표시 됩니다. 동일한 Log Analytics 작업 영역에 메트릭을 전송 하기 위해 여러 HDInsight 클러스터를 사용 하도록 설정한 경우 표시 되는 클러스터에서 모든 노드 (에 지 노드 제외)의 가용성 요금이 표시 됩니다.
 
 ![작업 영역 로그의 ' availability rate ' 샘플 쿼리 Log Analytics](media/cluster-availability-monitor-logs/portal-availability-rate.png)
 

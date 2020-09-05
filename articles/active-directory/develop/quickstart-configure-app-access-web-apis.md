@@ -1,5 +1,6 @@
 ---
-title: '빠른 시작: 앱용 웹 API에 액세스 - Microsoft ID 플랫폼 | Azure'
+title: '빠른 시작: 웹 API에 액세스하도록 앱 구성 | Azure'
+titleSuffix: Microsoft identity platform
 description: 이 빠른 시작에서는 리디렉션 URI, 자격 증명 또는 웹 API에 대한 액세스 권한을 포함하도록 Microsoft 플랫폼에 등록된 앱을 구성합니다.
 services: active-directory
 author: rwike77
@@ -8,18 +9,18 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 04/22/2020
+ms.date: 08/05/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, aragra, sureshja
-ms.openlocfilehash: 210ed5b8ad53fd59a46e160fe5fc72633d115d44
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 87c21587567ffe3462e4b702985114ac10454886
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82082325"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140805"
 ---
-# <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>빠른 시작: 웹 API에 액세스하는 클라이언트 애플리케이션 구성
+# <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>빠른 시작: 웹 API에 액세스하도록 클라이언트 애플리케이션 구성
 
 이 빠른 시작에서는 리디렉션 URI, 자격 증명 또는 애플리케이션의 웹 API에 대한 액세스 권한을 추가합니다. 웹 또는 기밀 클라이언트 애플리케이션은 인증이 필요한 권한 부여 흐름에 참가하려면 보안 자격 증명을 설정해야 합니다. Azure Portal에서 지원하는 기본 인증 방법은 클라이언트 ID + 비밀 키입니다. 앱은 이 프로세스 중에 액세스 토큰을 얻습니다.
 
@@ -27,9 +28,8 @@ ms.locfileid: "82082325"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-* [빠른 시작: Microsoft ID 플랫폼에 애플리케이션 등록](quickstart-register-app.md)
-* [Microsoft ID 플랫폼 엔드포인트의 권한 및 동의](v2-permissions-and-consent.md) 검토
-* 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+* 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [빠른 시작: 웹 API를 공개하는 애플리케이션 구성](quickstart-configure-app-expose-web-apis.md)을 완료합니다.
 
 ## <a name="sign-in-to-the-azure-portal-and-select-the-app"></a>Azure Portal에 로그인하고 앱 선택
 
@@ -60,7 +60,7 @@ ms.locfileid: "82082325"
 1. 애플리케이션의 리디렉션 URI를 하나 이상 선택합니다. 사용자 지정 리디렉션 URI를 입력할 수 있습니다. 무엇을 사용해야 하는지 확실하지 않으면 라이브러리 설명서를 확인하세요.
 1. **저장**을 선택합니다.
 
-리디렉션 URI에 적용되는 제한 사항이 있습니다. 자세한 내용은 [리디렉션 URI/회신 URL 제한 및 제한 사항](https://docs.microsoft.com/azure/active-directory/develop/reply-url)을 참조하세요.
+리디렉션 URI에 적용되는 제한 사항이 있습니다. 자세한 내용은 [리디렉션 URI/회신 URL 제한 및 제한 사항](./reply-url.md)을 참조하세요.
 
 > [!NOTE]
 > 대상으로 지정하려는 플랫폼 또는 디바이스에 따라 애플리케이션에 대한 설정을 구성할 수 있는 새 **인증** 설정 환경을 사용해 보세요.
@@ -113,7 +113,7 @@ ms.locfileid: "82082325"
    | **모바일 및 데스크톱 애플리케이션**  | (선택 사항) 데스크톱 및 디바이스용 애플리케이션을 빌드하는 경우 추천되는 **제안된 리디렉션 URI** 중 하나를 선택합니다.<br/>(선택 사항) Azure AD에서 인증 요청에 대한 응답으로 사용자를 리디렉션하는 위치로 사용되는 **사용자 지정 리디렉션 URI**를 입력합니다. 예를 들어 상호 작용을 원하는 .NET Core 애플리케이션의 경우 `http://localhost`를 사용합니다. |
 
    > [!NOTE]
-   > AD FS(Active Directory Federation Services) 및 Azure AD B2C에서 포트 번호도 지정해야 합니다.  예: `http://localhost:1234` 
+   > AD FS(Active Directory Federation Services) 및 Azure AD B2C에서 포트 번호도 지정해야 합니다.  예: `http://localhost:1234`
 
    > [!IMPORTANT]
    > 최신 MSAL(Microsoft 인증 라이브러리) 또는 broker를 사용하지 않는 모바일 애플리케이션의 경우 **데스크톱 + 디바이스**에서 이러한 애플리케이션의 리디렉션 URI를 구성해야 합니다.
@@ -148,7 +148,7 @@ ms.locfileid: "82082325"
 
 ## <a name="add-permissions-to-access-web-apis"></a>웹 API 액세스 권한 추가
 
-[Graph API 로그인 및 읽기 사용자 프로필 권한](https://developer.microsoft.com/graph/docs/concepts/permissions_reference#user-permissions)은 기본적으로 선택됩니다. 각 웹 API에서 다음과 같은 [두 가지 권한 형식](developer-glossary.md#permissions) 중에 선택할 수 있습니다.
+[Graph API 로그인 및 읽기 사용자 프로필 권한](/graph/permissions-reference#user-permissions)은 기본적으로 선택됩니다. 각 웹 API에서 다음과 같은 [두 가지 권한 형식](developer-glossary.md#permissions) 중에 선택할 수 있습니다.
 
 * **애플리케이션 권한**. 클라이언트 애플리케이션이 직접 웹 API에 액세스해야 합니다(사용자 컨텍스트 없음). 이 유형의 권한은 관리자의 동의가 필요합니다. 이 권한은 데스크톱 및 모바일 클라이언트 애플리케이션에 사용할 수 없습니다.
 * **위임된 권한**. 클라이언트 애플리케이션이 로그인된 사용자로 웹 API에 액세스해야 하지만 이 액세스는 선택한 권한에 따라 제한됩니다. 이 형식의 사용 권한은 관리자의 동의를 필요로 하지 않는 한 사용자가 부여할 수 있습니다.
@@ -200,16 +200,7 @@ ms.locfileid: "82082325"
 
 ## <a name="next-steps"></a>다음 단계
 
-다음 문서로 넘어가서 웹 API를 공개하는 방법을 알아보세요.
+애플리케이션에 액세스할 수 있는 계정 유형을 구성하는 방법을 알아보려면 시리즈의 다음 빠른 시작으로 이동합니다. 예를 들어 조직의 사용자(단일 테넌트)에 대해서만 액세스를 제한하거나 다른 Azure AD 테넌트(다중 테넌트)의 사용자 및 개별 MSA(Microsoft 계정)를 가진 사용자에게만 액세스를 허용할 수 있습니다.
+
 > [!div class="nextstepaction"]
-> [빠른 시작: 웹 API를 공개하는 애플리케이션 구성](quickstart-configure-app-expose-web-apis.md)
-
-* 등록된 애플리케이션 및 이들 간의 관계를 나타내는 두 개의 Azure AD 개체에 대한 자세한 내용은 [애플리케이션 개체 및 서비스 주체 개체](app-objects-and-service-principals.md)를 참조하세요.
-
-* Azure Active Directory를 사용해 애플리케이션을 개발할 때 사용해야 하는 브랜딩 지침에 대해 자세히 알아보려면 [애플리케이션에 대한 브랜딩 지침](howto-add-branding-in-azure-ad-apps.md)을 참조하세요.
-
-* [빠른 시작: Microsoft ID 플랫폼에 애플리케이션 등록](quickstart-register-app.md)
-
-* [빠른 시작: 애플리케이션에서 지원되는 계정 수정](quickstart-modify-supported-accounts.md)
-
-* [빠른 시작: Microsoft ID 플랫폼을 사용하여 등록된 애플리케이션 제거](quickstart-remove-app.md)
+> [애플리케이션에서 지원되는 계정 수정](quickstart-modify-supported-accounts.md)

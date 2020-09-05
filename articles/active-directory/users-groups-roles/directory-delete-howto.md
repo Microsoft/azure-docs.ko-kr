@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: addimitu
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d21e0358e2226f93a6c7088906d1146e5e2cf740
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c0b203647bc57c7c7eb48e321895cf3b3fa7d44
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84729033"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795425"
 ---
 # <a name="delete-a-tenant-in-azure-active-directory"></a>Azure Active Directory에서 테넌트 삭제
 
@@ -85,7 +85,7 @@ Microsoft 365 관리 센터를 통해 구독을 **프로비저닝 해제됨** �
 
    ![구독 삭제를 위한 삭제 링크](./media/directory-delete-howto/delete-command.png)
 
-6. **구독 삭제**를 선택하여 구독을 삭제하고 계약조건에 동의합니다. 모든 데이터는 3일 이내에 영구적으로 삭제됩니다. 마음이 바뀌면 3일 기간 중 [구독을 다시 활성화](https://docs.microsoft.com/office365/admin/subscriptions-and-billing/reactivate-your-subscription?view=o365-worldwide)할 수 있습니다.
+6. **구독 삭제**를 선택하여 구독을 삭제하고 계약조건에 동의합니다. 모든 데이터는 3일 이내에 영구적으로 삭제됩니다. 마음이 바뀌면 3일 기간 중 [구독을 다시 활성화](/office365/admin/subscriptions-and-billing/reactivate-your-subscription?view=o365-worldwide)할 수 있습니다.
   
    ![계약조건을 자세히 읽기](./media/directory-delete-howto/delete-terms.png)
 
@@ -97,18 +97,18 @@ Microsoft 365 관리 센터를 통해 구독을 **프로비저닝 해제됨** �
 
 ## <a name="i-have-a-trial-subscription-that-blocks-deletion"></a>삭제를 차단하는 평가판 구독이 있음
 
-개별 사용자가 Office 365를 통해 등록할 수 있는 [셀프 서비스 등록 제품](https://docs.microsoft.com/office365/admin/misc/self-service-sign-up?view=o365-worldwide)(예: Microsoft Power BI, Rights Management Services, Microsoft Power Apps, Dynamics 365)이 있으며, 제품을 등록하면 Azure AD 조직에서 인증을 위한 게스트 사용자도 생성됩니다. 이러한 셀프 서비스 제품은 데이터 손실을 방지하기 위해 조직에서 제품이 완전히 삭제될 때까지 디렉터리 삭제를 차단합니다. 또한 사용자가 제품을 개별적으로 등록했거나 할당받았는지 여부와 관계없이 Azure AD 관리자만 삭제할 수 있습니다.
+개별 사용자가 Office 365를 통해 등록할 수 있는 [셀프 서비스 등록 제품](/office365/admin/misc/self-service-sign-up?view=o365-worldwide)(예: Microsoft Power BI, Rights Management Services, Microsoft Power Apps, Dynamics 365)이 있으며, 제품을 등록하면 Azure AD 조직에서 인증을 위한 게스트 사용자도 생성됩니다. 이러한 셀프 서비스 제품은 데이터 손실을 방지하기 위해 조직에서 제품이 완전히 삭제될 때까지 디렉터리 삭제를 차단합니다. 또한 사용자가 제품을 개별적으로 등록했거나 할당받았는지 여부와 관계없이 Azure AD 관리자만 삭제할 수 있습니다.
 
 할당되는 방법에 따라 두 가지 유형의 셀프 서비스 등록 제품이 있습니다. 
 
 * 조직 수준 할당: Azure AD 관리자는 전체 조직에 제품을 할당하고, 사용자는 개별적으로 라이선스를 받지 않은 경우에도 이 조직 수준 할당으로 서비스를 활발히 사용할 수 있습니다.
 * 사용자 수준 할당: 셀프 서비스 등록 중 개별 사용자는 기본적으로 관리자 없이 자신에게 제품을 할당합니다. 조직이 관리자에 의해 관리되는 경우([비관리형 조직의 관리자 인수](domains-admin-takeover.md) 참조) 관리자는 셀프 서비스 등록 없이 사용자에게 제품을 직접 할당할 수 있습니다.  
 
-셀프 서비스 등록 제품을 삭제하기 시작하면, 해당 작업으로 인해 데이터가 영구적으로 삭제되고 서비스에 대한 모든 사용자 액세스가 제거됩니다. 제품이 개별적으로 또는 조직 수준에서 할당된 모든 사용자는 로그인 또는 기존 데이터에 대한 액세스가 차단됩니다. [Microsoft Power BI 대시보드](https://docs.microsoft.com/power-bi/service-export-to-pbix) 또는 [Rights Management Services 정책 구성](https://docs.microsoft.com/azure/information-protection/configure-policy#how-to-configure-the-azure-information-protection-policy)과 같은 셀프 서비스 등록 제품의 데이터 손실을 방지하려면 데이터를 다른 위치에 백업하고 저장해야 합니다.
+셀프 서비스 등록 제품을 삭제하기 시작하면, 해당 작업으로 인해 데이터가 영구적으로 삭제되고 서비스에 대한 모든 사용자 액세스가 제거됩니다. 제품이 개별적으로 또는 조직 수준에서 할당된 모든 사용자는 로그인 또는 기존 데이터에 대한 액세스가 차단됩니다. [Microsoft Power BI 대시보드](/power-bi/service-export-to-pbix) 또는 [Rights Management Services 정책 구성](/azure/information-protection/configure-policy#how-to-configure-the-azure-information-protection-policy)과 같은 셀프 서비스 등록 제품의 데이터 손실을 방지하려면 데이터를 다른 위치에 백업하고 저장해야 합니다.
 
-현재 사용할 수 있는 셀프 서비스 등록 제품 및 서비스에 대한 자세한 내용은 [사용 가능한 셀프 서비스 프로그램](https://docs.microsoft.com/office365/admin/misc/self-service-sign-up?view=o365-worldwide#available-self-service-programs)을 참조하세요.
+현재 사용할 수 있는 셀프 서비스 등록 제품 및 서비스에 대한 자세한 내용은 [사용 가능한 셀프 서비스 프로그램](/office365/admin/misc/self-service-sign-up?view=o365-worldwide#available-self-service-programs)을 참조하세요.
 
-평가판 Office 365 구독(유료 파트너/CSP, 기업계약 또는 볼륨 라이선스를 포함하지 않음)이 만료될 경우 예상되는 결과는 다음 표를 참조하세요. Office 365 데이터 보존 및 구독 수명 주기에 대한 자세한 내용은 [비즈니스용 Office 365 구독이 종료되면 내 데이터와 액세스 권한에 어떤 변화가 있나요?](https://docs.microsoft.com/office365/admin/subscriptions-and-billing/what-if-my-subscription-expires?view=o365-worldwide)를 참조하세요.
+평가판 Office 365 구독(유료 파트너/CSP, 기업계약 또는 볼륨 라이선스를 포함하지 않음)이 만료될 경우 예상되는 결과는 다음 표를 참조하세요. Office 365 데이터 보존 및 구독 수명 주기에 대한 자세한 내용은 [비즈니스용 Office 365 구독이 종료되면 내 데이터와 액세스 권한에 어떤 변화가 있나요?](/office365/admin/subscriptions-and-billing/what-if-my-subscription-expires?view=o365-worldwide)를 참조하세요.
 
 제품 상태 | 데이터 | 데이터 액세스
 ------------- | ---- | --------------
@@ -143,4 +143,4 @@ Microsoft Power BI 또는 Azure Rights Management Services와 같은 셀프 서�
 
 ## <a name="next-steps"></a>다음 단계
 
-[Azure Active Directory 설명서](https://docs.microsoft.com/azure/active-directory/)
+[Azure Active Directory 설명서](../index.yml)

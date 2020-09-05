@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: seoapr2020
+ms.custom: contperfq1
 ms.date: 05/27/2020
-ms.openlocfilehash: e93d750dd2feaa70692ab1077ee4333c835417db
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 5495e6c6392ba2e824a0a70717bd19747db9b754
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076779"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88754959"
 ---
 # <a name="connect-to-apache-beeline-on-hdinsight-or-install-it-locally"></a>HDInsight의 Apache Beeline에 연결 하거나 로컬로 설치
 
@@ -146,7 +146,7 @@ Beeline는 헤드 노드에 포함 되지만 로컬에서 설치 하는 것이 �
 
 1. .Bashrc 파일을 추가로 수정 합니다. 보관 파일의 압축을 푼 경로를 확인 해야 합니다. [Linux 용 Windows 하위 시스템](https://docs.microsoft.com/windows/wsl/install-win10)을 사용 하 고 정확한 단계를 수행한 경우 경로는 `/mnt/c/Users/user/` `user` 입니다. 여기서는 사용자 이름입니다.
 
-    1. 다음 파일을 엽니다.`nano ~/.bashrc`
+    1. 다음 파일을 엽니다. `nano ~/.bashrc`
 
     1. 적절 한 경로를 사용 하 여 아래 명령을 수정한 후 .bashrc 파일의 끝에 입력 합니다.
 

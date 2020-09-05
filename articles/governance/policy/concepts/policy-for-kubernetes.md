@@ -3,12 +3,12 @@ title: 미리 보기 - Kubernetes용 Azure Policy 알아보기
 description: Azure Policy에서 Rego 및 Open Policy Agent를 사용하여 Azure 또는 온-프레미스에서 Kubernetes를 실행하는 클러스터를 관리하는 방법을 알아봅니다. 이 기능은 미리 보기 기능입니다.
 ms.date: 08/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: dc81d22677eeab16ae06e782c5ae47c121af04c6
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: e9da5caf13994e1c198345958feec43867c0b5f5
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88003493"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509878"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters-preview"></a>Kubernetes용 Azure Policy 클러스터 이해(미리 보기)
 
@@ -73,19 +73,19 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-   
+
      # Provider register: Register the Azure Kubernetes Service provider
      az provider register --namespace Microsoft.ContainerService
-   
+
      # Provider register: Register the Azure Policy provider
      az provider register --namespace Microsoft.PolicyInsights
-   
+
      # Feature register: enables installing the add-on
      az feature register --namespace Microsoft.ContainerService --name AKS-AzurePolicyAutoApprove
-     
+
      # Use the following to confirm the feature has registered
      az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKS-AzurePolicyAutoApprove')].   {Name:name,State:properties.state}"
-     
+
      # Once the above shows 'Registered' run the following to propagate the update
      az provider register -n Microsoft.ContainerService
      ```
@@ -135,7 +135,7 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
      <a name="migrate-from-v1"></a>
      > [!NOTE]
      > **추가 기능 사용** 단추가 회색으로 표시되면 구독이 미리 보기에 아직 추가되지 않은 것입니다. **추가 기능 사용 안 함** 단추를 사용 하 고 마이그레이션 경고 v2 메시지가 표시 되 면 v1 추가 기능이 설치 되어 v2 정책 정의를 할당 하기 전에 제거 해야 합니다. _사용 되지 않는_ v1 추가 기능은 2020 년 8 월 24 일부 터 v2 추가 기능으로 자동으로 대체 됩니다. 그런 다음 새 v2 버전의 정책 정의를 할당 해야 합니다. 지금 업그레이드 하려면 다음 단계를 수행 합니다.
-     > 
+     >
      > 1. AKS 클러스터의 **정책 (미리 보기)** 페이지를 방문 하 여 AKS 클러스터의 v1 추가 기능이 설치 되어 있는지 확인 하 고 "현재 클러스터에서 Azure Policy 추가 기능을 사용 합니다. 메시지.
      > 1. [추가 기능을 제거](#remove-the-add-on-from-aks)합니다.
      > 1. 추가 기능 **사용** 단추를 선택 하 여 v2 버전의 추가 기능을 설치 합니다.
@@ -185,16 +185,16 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-     
+
      # Provider register: Register the Azure Policy provider
      az provider register --namespace 'Microsoft.PolicyInsights'
      ```
 
    - Azure PowerShell
-   
+
      ```azurepowershell-interactive
      # Log in first with Connect-AzAccount if you're not using Cloud Shell
-   
+
      # Provider register: Register the Azure Policy provider
      Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
      ```
@@ -205,7 +205,7 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
 
 1. Azure Arc에 대해 Kubernetes 클러스터를 사용하도록 설정했습니다. 자세한 내용은 [Azure Arc에 Kubernetes 클러스터 온보딩](../../../azure-arc/kubernetes/connect-cluster.md)을 참조하세요.
 
-1. Azure Arc 지원 Kubernetes 클러스터의 정규화된 Azure 리소스 ID가 있어야 합니다. 
+1. Azure Arc 지원 Kubernetes 클러스터의 정규화된 Azure 리소스 ID가 있어야 합니다.
 
 1. 추가 기능에 대한 포트를 엽니다. Azure Policy 추가 기능은 이러한 도메인과 포트를 사용하여 정책 정의 및 할당을 가져오고 클러스터의 규정 준수를 Azure Policy에 다시 보고합니다.
 
@@ -226,7 +226,7 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
 
    - Azure PowerShell
 
-     ```azure powershell-interactive
+     ```azurepowershell-interactive
      $sp = New-AzADServicePrincipal -Role "Policy Insights Data Writer (Preview)" -Scope "/subscriptions/<subscriptionId>/resourceGroups/<rg>/providers/Microsoft.Kubernetes/connectedClusters/<clusterName>"
 
      @{ appId=$sp.ApplicationId;password=[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret));tenant=(Get-AzContext).Tenant.Id } | ConvertTo-Json
@@ -289,16 +289,16 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
 
      ```azurecli-interactive
      # Log in first with az login if you're not using Cloud Shell
-     
+
      # Provider register: Register the Azure Policy provider
      az provider register --namespace 'Microsoft.PolicyInsights'
      ```
 
    - Azure PowerShell
-   
+
      ```azurepowershell-interactive
      # Log in first with Connect-AzAccount if you're not using Cloud Shell
-   
+
      # Provider register: Register the Azure Policy provider
      Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
      ```
@@ -310,7 +310,7 @@ Azure Policy 추가 기능을 설치하거나 서비스 기능을 사용하도�
      ```bash
      # Get the kube-apiserver pod name
      kubectl get pods -n kube-system
-   
+
      # Find the aadClientID value
      kubectl exec <kube-apiserver pod name> -n kube-system cat /etc/kubernetes/azure.json
      ```
@@ -393,21 +393,20 @@ Kubernetes 클러스터에 정책 정의를 할당하려면 적절한 RBAC(역�
 
 1. **범위**를 정책 할당이 적용될 관리 그룹, 구독 또는 Kubernetes 클러스터의 리소스 그룹으로 설정합니다.
 
-   > [!NOTE]    
+   > [!NOTE]
    > Kubernetes 정의를 위해 Azure Policy를 할당할 경우 **범위**에 클러스터 리소스가 포함되어야 합니다. AKS 엔진 클러스터의 경우 **범위**는 클러스터의 리소스 그룹이어야 합니다.
 
-1. 쉽게 식별할 수 있도록 정책 할당에 **이름**과 **설명**을 지정합니다.    
+1. 쉽게 식별할 수 있도록 정책 할당에 **이름**과 **설명**을 지정합니다.
 
-1. [정책 적용](./assignment-structure.md#enforcement-mode)을 값 중 하나로 설정합니다.    
-   알아봅니다.   
+1. [정책 적용](./assignment-structure.md#enforcement-mode) 을 아래 값 중 하나로 설정 합니다.
 
-   - **사용** - 클러스터에서 정책을 적용합니다. 위반이 있는 Kubernetes 허용 요청이 거부됩니다.    
+   - **사용** - 클러스터에서 정책을 적용합니다. 위반이 있는 Kubernetes 허용 요청이 거부됩니다.
 
    - **사용 안 함** - 클러스터에서 정책을 적용하지 않습니다. 위반이 있는 Kubernetes 허용 요청이 거부되지 않습니다. 규정 준수 평가 결과는 계속 제공됩니다. 실행 중인 클러스터에 새 정책 정의를 롤아웃하는 경우 위반이 있는 허용 요청은 거부되지 않으므로 ‘사용 안 함’ 옵션이 정책 정의를 테스트하는 데 도움이 됩니다.
 
-1. **다음**을 선택합니다. 
+1. **다음**을 선택합니다.
 
-1. **매개 변수 값** 설정 
+1. **매개 변수 값** 설정
 
    - 정책 평가에서 Kubernetes 네임스페이스를 제외하려면 **네임 스페이스 제외** 매개 변수에 네임스페이스 목록을 지정합니다. _kube-system_, _gatekeeper-system_ 및 _azure-arc_를 제외하는 것이 좋습니다.
 

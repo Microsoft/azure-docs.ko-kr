@@ -12,12 +12,12 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-java
-ms.openlocfilehash: 86c2bc86a4eeea8b04c4f22c20edade2eac2a811
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: ef4b42b56ea3e9e73de6d5bc793b2f1b206f34f3
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439037"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87829988"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>자습서: Linux 디바이스용 Java IoT Edge 모듈 개발
 
@@ -62,7 +62,7 @@ Java에서 IoT Edge 모듈을 개발하려면 다음 추가 필수 구성 요소
 * [Maven](https://maven.apache.org/)
 
    >[!TIP]
-   >Java 및 Maven에 대한 환경 변수는 설치 프로세스 중에 추가됩니다. 이러한 환경 변수를 추가하는 동안 열려 있는 Visual Studio Code 터미널, PowerShell 또는 명령 프롬프트 인스턴스를 다시 시작합니다. 그러면 앞으로 이러한 유틸리티에서 Java 및 Maven 명령을 인식합니다.
+   >Java 및 Maven 설치 프로세스는 시스템에 환경 변수를 추가합니다. 설치를 완료한 후 열려 있는 Visual Studio Code 터미널, Powershell 또는 명령 프롬프트 인스턴스를 다시 시작합니다. 이 단계를 통해 이러한 유틸리티는 앞으로 Java 및 Maven 명령을 인식합니다.
 
 ## <a name="create-a-module-project"></a>모듈 프로젝트 만들기
 

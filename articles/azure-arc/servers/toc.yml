@@ -1,0 +1,58 @@
+- name: Azure Arc 사용 서버 설명서
+  href: index.yml
+- name: 개요
+  items:
+    - name: Azure Arc 지원 서버 정보
+      href: overview.md
+    - name: Connected Machine 에이전트의 새로운 기능
+      href: agent-release-notes.md
+- name: 빠른 시작
+  items:
+    - name: Arc 지원 서버 에이전트 사용
+      href: ./learn/quick-enable-hybrid-vm.md
+- name: 자습서
+  items:
+    - name: 규정 준수를 평가하는 정책 할당
+      href: ./learn/tutorial-assign-policy-portal.md
+    - name: 컴퓨터 모니터링
+      href: ./learn/tutorial-enable-vm-insights.md
+- name: 개념
+  items:
+    - name: 보안
+      items:
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: security-controls-policy.md
+        - name: 보안 개요
+          href: security-overview.md
+- name: 방법 가이드
+  items:
+    - name: Azure Arc에 연결
+      items:
+        - name: Connected Machine 에이전트 개요
+          href: agent-overview.md
+        - name: Azure Portal에서 Azure Arc에 머신 연결
+          href: onboard-portal.md
+        - name: 서비스 주체를 사용하여 규모에 맞게 머신 연결
+          href: onboard-service-principal.md
+        - name: PowerShell DSC를 사용하여 Azure Arc에 머신 연결
+          href: onboard-dsc.md
+    - name: 관리
+      items:
+        - name: Azure VM 확장 관리 및 사용
+          href: manage-vm-extensions.md
+        - name: 에이전트 관리
+          href: manage-agent.md
+    - name: 문제 해결
+      items:
+        - name: 에이전트 연결 문제
+          href: troubleshoot-agent-onboard.md
+    - name: 참조
+      items:
+        - name: 지역 가용성 및 데이터 상주
+          href: data-residency.md
+        - name: REST (영문)
+          href: /rest/api/hybridcompute
+        - name: Azure Policy 기본 제공 기능
+          displayName: 'samples, policies, definitions'
+          href: policy-reference.md

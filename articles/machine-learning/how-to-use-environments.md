@@ -3,20 +3,20 @@ title: 소프트웨어 환경 사용
 titleSuffix: Azure Machine Learning
 description: 모델 학습 및 배포를 위한 환경을 만들고 관리 합니다. 환경에 대 한 Python 패키지 및 기타 설정을 관리 합니다.
 services: machine-learning
-author: rastala
-ms.author: roastala
+author: saachigopal
+ms.author: sagopal
 ms.reviewer: nibaccam
 ms.service: machine-learning
 ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 3fb13a4912fbd2a9bea39b56333adbd1329efef6
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 3368a42248e084476eb27318abbcd1ca9fbfdacf
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985906"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927547"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Azure Machine Learning에서 소프트웨어 환경을 만들고 & 사용
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -62,11 +62,6 @@ ws = Workspace.from_config()
 env = Environment.get(workspace=ws, name="AzureML-Minimal")
 ```
 
-큐 레이트 환경을 수정 하려면 복사 해야 합니다.
-
-```python
-env = Environment.get(workspace=ws, name="AzureML-Tutorial").clone("new_env")
-```
 다음 코드를 사용 하 여 큐 레이트 환경과 해당 패키지를 나열할 수 있습니다.
 
 ```python
@@ -158,7 +153,7 @@ Conda, pip 또는 private wheel 파일을 사용하여 환경에 패키지를 �
 
 Conda 패키지 리포지토리에서 패키지를 사용할 수 있는 경우 pip 설치 대신 Conda 설치를 사용 하는 것이 좋습니다. Conda 패키지에는 일반적으로 더 안정적으로 설치 하는 미리 빌드된 이진 파일이 제공 됩니다.
 
-다음은 환경에 추가하는 예제입니다. 이 예제에서는 `numpy` 1.17.0 버전을 추가합니다. 패키지도 추가 `pillow` `myenv` 합니다. 이 예제에서는 각각 [`add_conda_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-conda-package-conda-package-) 메서드 및 [`add_pip_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-pip-package-pip-package-) 메서드를 사용합니다.
+다음 예에서는 환경에를 추가 합니다 `myenv` . 이 예제에서는 `numpy` 1.17.0 버전을 추가합니다. 또한 패키지를 추가 `pillow` 합니다. 이 예제에서는 각각 [`add_conda_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-conda-package-conda-package-) 메서드 및 [`add_pip_package()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py#add-pip-package-pip-package-) 메서드를 사용합니다.
 
 ```python
 from azureml.core.environment import Environment
@@ -247,7 +242,14 @@ build = env.build(workspace=ws)
 build.wait_for_completion(show_output=True)
 ```
 
-먼저 메서드를 사용 하 여 이미지를 로컬로 빌드하는 것이 유용 [`build_local()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#build-local-workspace--platform-none----kwargs-) 합니다. 선택적 매개 변수를 설정 하면 `pushImageToWorkspaceAcr = True` 결과 이미지가 AZURE ML 작업 영역 컨테이너 레지스트리로 푸시됩니다. 
+먼저 메서드를 사용 하 여 이미지를 로컬로 빌드하는 것이 유용 [`build_local()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#build-local-workspace--platform-none----kwargs-) 합니다. Docker 이미지를 작성 하려면 선택적 매개 변수를 설정 `useDocker=True` 합니다. 결과 이미지를 AzureML 작업 영역 컨테이너 레지스트리에 푸시 하려면를 설정 `pushImageToWorkspaceAcr=True` 합니다.
+
+```python
+build = env.build_local(workspace=ws, useDocker=True, pushImageToWorkspaceAcr=True)
+```
+
+> [!WARNING]
+>  환경에서 종속성 또는 채널의 순서를 변경 하면 새 환경이 생성 되 고 새 이미지 빌드가 필요 합니다. 또한 `build()` 새 버전이 있는 경우 기존 이미지에 대해 메서드를 호출 하면 해당 종속성이 업데이트 됩니다. 
 
 ## <a name="enable-docker"></a>Docker 사용
 
@@ -325,7 +327,7 @@ myenv.python.interpreter_path = "/opt/miniconda/bin/python"
 등록 된 환경의 경우 다음 코드를 사용 하 여 이미지 세부 정보를 검색할 수 있습니다 `details` . 여기서는 [Dockerimagedetails](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.dockerimagedetails?view=azure-ml-py) (AzureML Python SDK >= 1.11)의 인스턴스이고 dockerfile, registry 및 image 이름과 같은 환경 이미지에 대 한 모든 정보를 제공 합니다.
 
 ```python
-details = environment.get_image_details()
+details = environment.get_image_details(workspace=ws)
 ```
 
 ## <a name="use-environments-for-training"></a>교육용 환경 사용
@@ -419,10 +421,6 @@ service = Model.deploy(
 ## <a name="notebooks"></a>Notebooks
 
 이 [문서](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#add-new-kernels) 에서는 노트북에 커널로 Conda 환경을 설치 하는 방법에 대 한 정보를 제공 합니다.
-
-이 [예제 전자 필기장은](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training/using-environments) 이 문서에 설명 되어 있는 개념과 메서드를 확장 합니다.
-
-이 [예제 노트북은](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local/train-on-local.ipynb) 여러 유형의 환경에서 로컬로 모델을 학습 하는 방법을 보여 줍니다.
 
 [사용자 지정 docker 기본 이미지를 사용 하 여 모델 배포](how-to-deploy-custom-docker-image.md) 사용자 지정 docker 기본 이미지를 사용 하 여 모델을 배포 하는 방법을 보여 줍니다.
 

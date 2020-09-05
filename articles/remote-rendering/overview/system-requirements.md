@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
-ms.openlocfilehash: 9754636063e29592595ee57d09164ae1134341a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 81480bea735017d3fc59e9c6cf126c2146a0c968
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84300609"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798468"
 ---
 # <a name="system-requirements"></a>시스템 요구 사항
 
@@ -24,7 +24,7 @@ ms.locfileid: "84300609"
 
 * Windows 10 버전 1903 이상
 * 최신 그래픽 드라이버.
-* 선택 사항: 원격으로 렌더링 된 콘텐츠의 로컬 미리 보기 (예: Unity)를 사용 하려는 경우 H265 하드웨어 비디오 디코더를 사용 합니다.
+* 선택 사항: 원격으로 렌더링 된 콘텐츠의 로컬 미리 보기 (예: Unity)를 사용 하려는 경우 [H265 하드웨어 비디오 디코더](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7)를 사용 합니다.
 
 > [!IMPORTANT]
 > Windows update는 항상 최신 GPU 드라이버를 제공 하지 않습니다. 최신 드라이버는 GPU 제조업체의 웹 사이트를 참조 하세요.
@@ -52,7 +52,7 @@ Azure 원격 렌더링은 현재 **HoloLens 2** 및 Windows 데스크톱을 대�
 1. **Microsoft Store**를 시작 합니다.
 1. 오른쪽 위에 있는 **"..."** 단추를 클릭 합니다.
 1. **다운로드 및 업데이트를**선택 합니다.
-1. **장치 제조업체에서 HEVC 비디오 확장**목록을 검색 합니다.
+1. **장치 제조업체에서 HEVC 비디오 확장**목록을 검색 합니다. 이 항목이 업데이트 아래에 나열 되어 있지 않으면 최신 버전이 이미 설치 되어 있는 것입니다.
 1. 나열 된 코덱에 버전 **1.0.21821.0**이상이 있는지 확인 합니다.
 1. **업데이트 가져오기** 단추를 클릭 하 고 설치가 완료 될 때까지 기다립니다.
 
@@ -74,7 +74,7 @@ Azure 원격 렌더링은 현재 **HoloLens 2** 및 Windows 데스크톱을 대�
   * **UWP(유니버설 Windows 플랫폼) 개발**
 * **Windows SDK 10.0.18362.0** [(다운로드)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * **GIT** [(다운로드)](https://git-scm.com/downloads)
-* 선택 사항: 데스크톱 PC의 서버에서 비디오 스트림을 보려면 **HEVC 비디오 확장** [(Microsoft Store 링크)](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7)이 필요 합니다.
+* 선택 사항: 데스크톱 PC의 서버에서 비디오 스트림을 보려면 **HEVC 비디오 확장** [(Microsoft Store 링크)](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7)이 필요 합니다. 스토어에서 업데이트를 확인 하 여 최신 버전이 설치 되어 있는지 확인 합니다.
 
 ## <a name="unity"></a>Unity
 

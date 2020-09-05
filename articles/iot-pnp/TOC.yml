@@ -69,6 +69,8 @@
       href: howto-use-iot-pnp-cli.md
     - name: Digital Twins 관리
       href: howto-manage-digital-twin.md
+    - name: 디바이스 인증
+      href: howto-certify-device.md
 - name: 참조
   items:
     - name: 라이브러리 및 SDK

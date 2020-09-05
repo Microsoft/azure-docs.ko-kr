@@ -4,12 +4,12 @@ description: Azure Notebooks 미리 보기에서 Jupyter Notebook을 만들고 �
 ms.topic: quickstart
 ms.date: 12/04/2018
 ms.custom: devx-track-python
-ms.openlocfilehash: 19773a6857d58f5b6af2a02ac28a3414c51fc917
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 77575b5b9e006ac9881d03dc95509d55c53c26d7
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849404"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589336"
 ---
 # <a name="quickstart-create-and-share-a-notebook-in-azure-notebooks-preview"></a>빠른 시작: Azure Notebooks 미리 보기에서 Notebook 만들기 및 공유
 
@@ -106,4 +106,4 @@ Notebook을 공유하려면 필요한 경우 프로젝트 페이지로 다시 �
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [자습서: 선형 회귀 분석을 실행할 Jupyter Notebook 생성 및 실행](tutorial-create-run-jupyter-notebook.md)
+> [자습서: 선형 회귀 분석을 실행할 Jupyter Notebook 만들기 및 실행](tutorial-create-run-jupyter-notebook.md)

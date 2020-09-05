@@ -1,20 +1,20 @@
 ---
 title: Azure Key Vault - CLI로 일시 삭제를 사용하는 방법
-description: CLI 코드 캡처를 통한 일시 삭제의 사용 사례 예제
+description: Azure CLI를 사용하여 키 자격 증명 모음 및 키 자격 증명 모음 개체를 복구할 수 있는 Azure Key Vault의 일시 삭제 기능을 사용하는 방법을 알아봅니다.
 services: key-vault
-author: msmbaldwin
-manager: rkarlin
+author: ShaneBala-keyvault
+manager: ravijan
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
-ms.date: 08/12/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 7023a2301b6b6137f7a0485523c68f21d72d67a9
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.topic: how-to
+ms.date: 08/11/2020
+ms.author: sudbalas
+ms.openlocfilehash: a86402fec698a299c7f233dcd8c7fde8270dd74d
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87385741"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585664"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>CLI로 Key Vault 일시 삭제를 사용하는 방법
 
@@ -58,11 +58,7 @@ az keyvault update -n ContosoVault --enable-soft-delete true
 
 ### <a name="new-key-vault"></a>새로운 Key Vault
 
-새로운 Key Vault에 대한 일시 삭제를 사용하도록 설정하는 것은 만들면서 생성 명령에 일시 삭제 사용 플래그를 추가하면 됩니다.
-
-```azurecli
-az keyvault create --name ContosoVault --resource-group ContosoRG --enable-soft-delete true --location westus
-```
+일시 삭제는 기본적으로 모든 키 자격 증명 모음에서 자동으로 활성화됩니다. 2020년 12월 31일까지 일시 삭제가 활성화되지 않으면 더 이상 새 키 자격 증명 모음을 만들 수 없습니다.
 
 ### <a name="verify-soft-delete-enablement"></a>일시 삭제 사용 확인
 

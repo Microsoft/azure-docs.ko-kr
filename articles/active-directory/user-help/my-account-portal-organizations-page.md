@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: bd8b8deed2afafc22e99ac15f2bcffdf65af83c4
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: bb0f0b93f3890a06f4ecbdc6cf39a173ea048940
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422449"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798179"
 ---
 # <a name="manage-your-connected-organizations-from-the-organizations-page"></a>조직 페이지에서 연결된 조직 관리
 
@@ -30,7 +30,7 @@ ms.locfileid: "87422449"
 - **기타 조직.** 기타 조직은 이전에 회사 또는 학교 계정을 사용하여 로그인한 임의의 그룹입니다. 언제든지 이러한 조직 중 어느 곳도 나갈 수 있습니다.
 
 >[!Important]
->이 문서는 회사 또는 학교 계정에 연결된 조직 정보를 업데이트하려는 사용자를 위해 작성되었습니다. 직원용 및 기타 용도의 그룹 및 사용자 관리에 관한 정보를 찾는 관리자는 [엔터프라이즈 사용자 관리 문서](https://docs.microsoft.com/azure/active-directory/users-groups-roles/index)를 참조하세요.
+>이 문서는 회사 또는 학교 계정에 연결된 조직 정보를 업데이트하려는 사용자를 위해 작성되었습니다. 직원용 및 기타 용도의 그룹 및 사용자 관리에 관한 정보를 찾는 관리자는 [엔터프라이즈 사용자 관리 문서](../users-groups-roles/index.yml)를 참조하세요.
 
 ## <a name="view-your-organizations"></a>조직 보기
 
@@ -61,7 +61,7 @@ ms.locfileid: "87422449"
 
 조직을 본 후 다음을 수행할 수 있습니다.
 
-- [보안 정보](user-help-security-info-overview.md)를 보거나 관리합니다.
+- [보안 정보](./security-info-setup-signin.md)를 보거나 관리합니다.
 
 - 연결된 [디바이스](my-account-portal-devices-page.md)를 보거나 관리합니다.
 

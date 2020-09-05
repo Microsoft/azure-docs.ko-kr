@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-ms.date: 04/28/2020
-ms.openlocfilehash: 10c0d3d5f043d31454810b55e808cd6df01467a4
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.date: 08/27/2020
+ms.openlocfilehash: a269796c072a235e4ecd47731ca37a774750a3cf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448752"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018368"
 ---
 # <a name="creating-and-using-active-geo-replication---azure-sql-database"></a>활성 지역 복제 만들기 및 사용-Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -114,7 +114,7 @@ ms.locfileid: "87448752"
 장애 조치 (failover) 후 응용 프로그램이 새 주 데이터베이스에 즉시 액세스할 수 있도록 하려면 보조 서버와 데이터베이스에 대 한 인증 요구 사항이 올바르게 구성 되어 있는지 확인 합니다. 자세한 내용은 [재해 복구 후의 SQL Database 보안](active-geo-replication-security-configure.md)을 참조하세요. 장애 조치 (failover) 후 준수를 보장 하려면 보조 데이터베이스에 대 한 백업 보존 정책이 주 데이터베이스의 백업 보존 정책과 일치 하는지 확인 합니다. 이러한 설정은 데이터베이스에 포함 되지 않으며 복제 되지 않습니다. 기본적으로 보조 복제본은 7 일의 기본 PITR 보존 기간으로 구성 됩니다. 자세한 내용은 [SQL Database 자동화된 백업](automated-backups-overview.md)을 참조하세요.
 
 > [!IMPORTANT]
-> 데이터베이스가 장애 조치 (failover) 그룹의 구성원 인 경우 지역에서 복제 장애 조치 (failover) 명령을 사용 하 여 장애 조치 (failover)를 시작할 수 없습니다. 그룹에 대해 장애 조치 (failover) 명령을 사용 합니다. 개별 데이터베이스를 장애 조치 (failover) 해야 하는 경우 먼저 장애 조치 (failover) 그룹에서 제거 해야 합니다. 자세한 내용은 [장애 조치 (failover) 그룹](auto-failover-group-overview.md) 을 참조 하세요.
+> 데이터베이스가 장애 조치 (failover) 그룹의 구성원 인 경우 지역에서 복제 장애 조치 (failover) 명령을 사용 하 여 장애 조치 (failover)를 시작할 수 없습니다. 그룹에 대해 장애 조치 (failover) 명령을 사용 합니다. 개별 데이터베이스를 장애 조치 (failover) 해야 하는 경우 먼저 장애 조치 (failover) 그룹에서 제거 해야 합니다. 자세한 내용은  [장애 조치 (failover) 그룹](auto-failover-group-overview.md) 을 참조 하세요.
 
 ## <a name="configuring-secondary-database"></a>보조 데이터베이스 구성
 
@@ -178,7 +178,8 @@ SQL Database 컴퓨팅 크기에 대한 자세한 내용은 [SQL Database 서비
 
 ### <a name="on-the-master-of-the-secondary-server"></a>보조 서버의 마스터
 
-1. 변경 작업을 수행 하는 클라이언트의 허용 목록에 IP 주소를 추가 합니다. 주 서버의 정확한 IP 주소와 동일 해야 합니다.
+1. 보조 서버에 대 한 방화벽 규칙의 허용 목록에 클라이언트 IP 주소를 추가 합니다. 주 서버에 추가 된 것과 정확히 동일한 클라이언트 IP 주소가 보조 데이터베이스에도 추가 되었는지 확인 합니다. ALTER DATABASE ADD SECONDARY 명령을 실행 하 여 지역에서 복제를 시작 하기 전에 수행 해야 하는 필수 단계입니다.
+
 1. 동일한 사용자 이름 및 SID를 사용 하 여 주 서버에서와 동일한 로그인을 만듭니다.
 
    ```sql
@@ -245,7 +246,7 @@ RPO와 관련 하 여 지연을 모니터링 하려면 주 데이터베이스에
 > [!IMPORTANT]
 > 이러한 Transact-SQL 명령은 활성 지역 복제에만 적용되고 장애 조치(failover) 그룹에는 적용되지 않습니다. 따라서 장애 조치 (failover) 그룹만 지원 하므로 SQL Managed Instance 인스턴스에는 적용 되지 않습니다.
 
-| 명령 | Description |
+| 명령 | 설명 |
 | --- | --- |
 | [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |기존 데이터베이스에 대한 보조 데이터베이스를 만들고 데이터 복제를 시작하려면 ADD SECONDARY ON SERVER 인수를 사용합니다. |
 | [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |장애 조치를 시작하기 위해 보조 데이터베이스를 기본 데이터베이스로 전환하려면 FAILOVER 또는 FORCE_FAILOVER_ALLOW_DATA_LOSS를 사용합니다. |
@@ -262,7 +263,7 @@ RPO와 관련 하 여 지연을 모니터링 하려면 주 데이터베이스에
 > [!IMPORTANT]
 > PowerShell Azure Resource Manager 모듈은 여전히 Azure SQL Database에서 지원되지만 향후의 모든 개발은 Az.Sql 모듈을 위한 것입니다. 이러한 cmdlet은 [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/)을 참조하세요. Az 모듈 및 AzureRm 모듈의 명령에 대한 인수는 실질적으로 동일합니다.
 
-| cmdlet | Description |
+| cmdlet | 설명 |
 | --- | --- |
 | [Get-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabase) |하나 이상의 데이터베이스를 가져옵니다. |
 | [New-AzSqlDatabaseSecondary](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabasesecondary) |기존 데이터베이스에 대한 보조 데이터베이스를 만들고 데이터 복제를 시작합니다. |
@@ -276,7 +277,7 @@ RPO와 관련 하 여 지연을 모니터링 하려면 주 데이터베이스에
 
 ### <a name="rest-api-manage-failover-of-single-and-pooled-databases"></a>REST API: 단일 및 풀링된 데이터베이스의 장애 조치 (failover) 관리
 
-| API | Description |
+| API | 설명 |
 | --- | --- |
 | [데이터베이스 생성 또는 업데이트(createMode=Restore)](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) |주 보조 데이터베이스 또는 보조 데이터베이스를 만들거나, 업데이트하거나, 복원합니다. |
 | [데이터베이스 만들기 또는 업데이트 상태 가져오기](https://docs.microsoft.com/rest/api/sql/databases/createorupdate) |만들기 작업 동안 상태를 반환합니다. |

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/13/2019
 ms.author: mayg
-ms.openlocfilehash: e4525bdc6165e8e736db5f539c764d25250cb248
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46db5f7d3e5d3844fb297e512d8d701e6da79de9
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700888"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654313"
 ---
 # <a name="azure-expressroute-with-azure-site-recovery"></a>Azure Site Recovery를 사용한 Azure ExpressRoute
 
@@ -35,7 +35,7 @@ Site Recovery는 공용 끝점을 통해 대상 Azure 지역에서 Azure Storage
 
 구성 서버에 대 한 [네트워킹 요구 사항도](vmware-azure-configuration-server-requirements.md#network-requirements) 충족 되는지 확인 합니다. Site Recovery의 복제 오케스트레이션을 위해 구성 서버에서 특정 URL에 연결해야 합니다. 이 연결에는 ExpressRoute를 사용할 수 없습니다. 
 
-온-프레미스에서 프록시를 사용 하 고 복제 트래픽에 대해 Express 경로를 사용 하려는 경우 구성 서버 및 프로세스 서버에서 프록시 바이패스 목록을 구성 해야 합니다. 아래의 단계를 수행합니다.
+온-프레미스에서 프록시를 사용 하 고 복제 트래픽에 대해 Express 경로를 사용 하려는 경우 구성 서버 및 프로세스 서버에서 프록시 바이패스 목록을 구성 해야 합니다. 아래 단계를 따릅니다.
 
 - 시스템 사용자 컨텍스트에 액세스 하려면 [여기](https://aka.ms/PsExec) 에서 PsExec 도구를 다운로드 하세요.
 - 다음 명령줄을 실행 하 여 Internet Explorer를 시스템 사용자 컨텍스트에서 엽니다. psexec-i "%Programfiles%\internet explorer\ Explorer\iexplore.exe"
@@ -50,7 +50,7 @@ Site Recovery는 공용 끝점을 통해 대상 Azure 지역에서 Azure Storage
 
 ## <a name="azure-to-azure-replication-with-expressroute"></a>ExpressRoute를 사용한 Azure와 Azure 간 복제
 
-Azure Site Recovery를 사용하면 [Azure 가상 머신](azure-to-azure-architecture.md)의 재해 복구가 가능합니다. Azure 가상 머신이 [Azure Managed Disks](../virtual-machines/windows/managed-disks-overview.md)를 사용하는지 여부에 따라 복제 데이터가 대상 Azure 지역의 Azure Storage 계정 또는 복제본 Managed Disks로 전송됩니다. 복제 엔드포인트가 공용이라고 해도 기본적으로 Azure VM 복제에 대한 복제 트래픽은 원본 가상 네트워크가 존재하는 Azure 지역과 무관하게 인터넷을 통과하지 않습니다. [사용자 지정 경로](../virtual-network/virtual-networks-udr-overview.md#custom-routes)를 사용하여 Azure 기본 시스템 경로의 0.0.0.0/0 주소 접두사를 재정의하고 VM 트래픽을 온-프레미스 NVA(네트워크 가상 어플라이언스)로 우회시킬 수 있지만 Site Recovery 복제에는 이 구성이 권장되지 않습니다. 사용자 지정 경로를 사용하는 경우 복제 트래픽이 Azure 경계를 나가지 않도록 "Storage"에 대한 가상 네트워크에서 [가상 네트워크 서비스 엔드포인트를 생성](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage)해야 합니다.
+Azure Site Recovery를 사용하면 [Azure 가상 머신](azure-to-azure-architecture.md)의 재해 복구가 가능합니다. Azure 가상 머신이 [Azure Managed Disks](../virtual-machines/managed-disks-overview.md)를 사용하는지 여부에 따라 복제 데이터가 대상 Azure 지역의 Azure Storage 계정 또는 복제본 Managed Disks로 전송됩니다. 복제 엔드포인트가 공용이라고 해도 기본적으로 Azure VM 복제에 대한 복제 트래픽은 원본 가상 네트워크가 존재하는 Azure 지역과 무관하게 인터넷을 통과하지 않습니다. [사용자 지정 경로](../virtual-network/virtual-networks-udr-overview.md#custom-routes)를 사용하여 Azure 기본 시스템 경로의 0.0.0.0/0 주소 접두사를 재정의하고 VM 트래픽을 온-프레미스 NVA(네트워크 가상 어플라이언스)로 우회시킬 수 있지만 Site Recovery 복제에는 이 구성이 권장되지 않습니다. 사용자 지정 경로를 사용하는 경우 복제 트래픽이 Azure 경계를 나가지 않도록 "Storage"에 대한 가상 네트워크에서 [가상 네트워크 서비스 엔드포인트를 생성](azure-to-azure-about-networking.md#create-network-service-endpoint-for-storage)해야 합니다.
 
 Azure VM 재해 복구의 경우 기본적으로 ExpressRoute는 복제에 필요하지 않습니다. 가상 머신이 대상 Azure 지역으로 장애 조치된 후 [프라이빗 피어링](../expressroute/expressroute-circuit-peerings.md#privatepeering)을 사용하여 해당 가상 머신에 액세스할 수 있습니다. 데이터 전송 가격은 Azure 지역 전체의 데이터 복제 모드에 관계 없이 적용 됩니다.
 

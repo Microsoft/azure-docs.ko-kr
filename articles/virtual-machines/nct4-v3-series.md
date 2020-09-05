@@ -8,16 +8,16 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 08/10/2020
 ms.author: vikancha
-ms.openlocfilehash: ab0205f05fc1d58157f4363dcc73564f3d4786b2
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 73d583cb371876cefc10c982dbe66f6e15bddf03
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068309"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932613"
 ---
 # <a name="ncast4_v3-series"></a>NCasT4_v3 시리즈 
 
-NCasT4_v3 시리즈 가상 머신은 [Nvidia Tesla T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) GPU 및 AMD Epyc 7V12 (로마) cpu로 구동 됩니다. Vm은 각각 16gb의 메모리를 포함 하는 최대 4 개의 NVIDIA T4 Gpu를 포함 하 고 있으며,이는 최대 64 비 다중 스레드 AMD EPYC 7V12 (로마) 프로세서 코어 및 440 GiB의 시스템 메모리입니다. 이러한 가상 머신은 TensorFlow, Pytorch, Caffe 및 기타 프레임 워크를 활용 하는 ML 및 AI 워크 로드를 실행 하는 데 적합 하며 NVIDIA GRID 기술을 사용 하는 그래픽 워크 로드입니다.
+NCasT4_v3 시리즈 가상 머신은 [Nvidia Tesla T4](https://www.nvidia.com/en-us/data-center/tesla-t4/) GPU 및 AMD Epyc 7V12 (로마) cpu로 구동 됩니다. Vm은 각각 16gb의 메모리를 포함 하는 최대 4 개의 NVIDIA T4 Gpu를 포함 하 고 있으며,이는 최대 64 비 다중 스레드 AMD EPYC 7V12 (로마) 프로세서 코어 및 440 GiB의 시스템 메모리입니다. 이러한 가상 머신은 TensorFlow, Pytorch, Caffe 및 기타 프레임 워크를 활용 하는 ML 및 AI 워크 로드를 실행 하는 데 적합 하며 NVIDIA GRID 기술을 사용 하는 그래픽 워크 로드입니다. NCasT4_v3 시리즈는 유추 워크 로드를 실행 하는 데 적합 합니다.
 
 <br>
 
@@ -34,9 +34,9 @@ Premium Storage 캐싱:  지원됨
 | 크기 | vCPU | 메모리: GiB | 임시 스토리지(SSD) GiB | GPU | GPU 메모리: GiB | 최대 데이터 디스크 수 | 최대 NIC 수 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Standard_NC4as_T4_v3 |4 |28 |180 | 1 | 16 | 8 | 2 |
-| Standard_NV8as_T4_v3 |8 |56 |360 | 1 | 16 | 16 | 4  |
-| Standard_NV16as_T4_v3 |16 |110 |360 | 16 | 8 | 32 | 8  |
-| Standard_NV64as_T4_v3 |64 |440 |2880 | 64 | 16 | 32 | 8  |
+| Standard_NC8as_T4_v3 |8 |56 |360 | 1 | 16 | 16 | 4  |
+| Standard_NC16as_T4_v3 |16 |110 |360 | 1 | 16 | 32 | 8  |
+| Standard_NC64as_T4_v3 |64 |440 |2880 | 4 | 64 | 32 | 8  |
 
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]

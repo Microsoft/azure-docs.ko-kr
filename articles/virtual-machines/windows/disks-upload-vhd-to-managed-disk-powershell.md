@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 4cc00ecb3810b1499f52ea9f3a0c110e92c75dff
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ec765e2eb635449140d60ee98762e35aea12fe44
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87009615"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88689612"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Azure에 VHD를 업로드 하거나 관리 디스크를 다른 지역에 복사-Azure PowerShell
 
 [!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 - [AzCopy v10의 최신 버전](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy)을 다운로드 합니다.
 - [Azure PowerShell 모듈을 설치](/powershell/azure/install-Az-ps)합니다.
@@ -28,7 +28,7 @@ ms.locfileid: "87009615"
 
 ## <a name="getting-started"></a>시작
 
-GUI를 통해 디스크를 업로드 하는 것을 선호 하는 경우 Azure Storage 탐색기를 사용 하 여이 작업을 수행할 수 있습니다. 자세한 내용은 [Azure Storage 탐색기를 사용 하 여 Azure managed disks 관리](disks-use-storage-explorer-managed-disks.md) 를 참조 하세요.
+GUI를 통해 디스크를 업로드 하는 것을 선호 하는 경우 Azure Storage 탐색기를 사용 하 여이 작업을 수행할 수 있습니다. 자세한 내용은 [Azure Storage 탐색기를 사용 하 여 Azure managed disks 관리](../disks-use-storage-explorer-managed-disks.md) 를 참조 하세요.
 
 Azure에 VHD를 업로드 하려면이 업로드 프로세스에 대해 구성 된 빈 관리 디스크를 만들어야 합니다. 계정을 만들기 전에 이러한 디스크에 대해 알아야 하는 추가 정보가 있습니다.
 

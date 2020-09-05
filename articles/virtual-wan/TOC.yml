@@ -2,18 +2,8 @@
   href: index.yml
 - name: 개요
   items:
-    - name: 가상 WAN 정보
+    - name: Virtual WAN이란?
       href: virtual-wan-about.md
-    - name: Architecture
-      items:
-        - name: Virtual WAN으로 마이그레이션
-          href: migrate-from-hub-spoke-topology.md
-        - name: 글로벌 전송 네트워크 아키텍처
-          href: virtual-wan-global-transit-network-architecture.md
-        - name: SD-WAN 연결 아키텍처
-          href: sd-wan-connectivity-architecture.md
-        - name: 중국과 상호 연결
-          href: interconnect-china.md
 - name: 자습서
   items:
     - name: 사이트 간 연결 만들기
@@ -36,15 +26,21 @@
           href: virtual-wan-locations-partners.md
         - name: 파트너를 위한 자동화 지침
           href: virtual-wan-configure-automation-providers.md
-    - name: 가격 책정 개념
-      href: pricing-concepts.md
-    - name: 가상 허브의 NVA 정보
-      href: about-nva-hub.md
+    - name: Architecture
+      items:
+        - name: Virtual WAN으로 마이그레이션
+          href: migrate-from-hub-spoke-topology.md
+        - name: 글로벌 전송 네트워크 아키텍처
+          href: virtual-wan-global-transit-network-architecture.md
+        - name: SD-WAN 연결 아키텍처
+          href: sd-wan-connectivity-architecture.md
+        - name: 중국과 상호 연결
+          href: interconnect-china.md
     - name: 라우팅
       items:
         - name: 가상 허브 라우팅 정보
           href: about-virtual-hub-routing.md
-        - name: 시나리오
+        - name: 라우팅 시나리오
           items:
             - name: 보편적 연결(Any-to-Any)
               href: scenario-any-to-any.md
@@ -56,13 +52,13 @@
               href: scenario-shared-services-vnet.md
             - name: NVA를 통한 라우팅
               href: scenario-route-through-nva.md
-            - name: NVA를 통한 라우팅 - 사용자 지정(미리 보기)
+            - name: NVA를 통한 라우팅 - 사용자 지정
               href: scenario-route-through-nvas-custom.md
             - name: Azure Firewall - 사용자 지정
               href: scenario-route-between-vnets-firewall.md
     - name: 모니터링
       items:
-        - name: 가상 WAN에 대한 Azure Monitor 정보(미리 보기)
+        - name: Virtual WAN에 대한 Azure Monitor Insights 정보
           href: azure-monitor-insights.md
     - name: 사이트 간
       items:
@@ -70,11 +66,15 @@
           href: virtual-wan-ipsec.md
         - name: 여러 ISP 링크 - Azure 경로 선택
           href: path-selection-multiple-links.md
+    - name: 가격 책정 개념
+      href: pricing-concepts.md
+    - name: 가상 허브의 NVA 정보
+      href: about-nva-hub.md
 - name: 방법 가이드
   items:
     - name: 가상 WAN SKU 업그레이드
       href: upgrade-virtual-wan.md
-    - name: 가상 허브(미리 보기)에서 NVA 만들기
+    - name: 가상 허브에서 NVA 만들기
       href: How-to-nva-hub.md
     - name: ExpressRoute
       items:
@@ -136,6 +136,10 @@
       items:
         - name: 로그 및 메트릭
           href: logs-metrics.md
+    - name: Private Link
+      items:
+        - name: Private Link 연결 구성
+          href: howto-private-link.md
 - name: 참조
   items:
     - name: Azure PowerShell
@@ -150,14 +154,16 @@
   items:
     - name: FAQ
       href: virtual-wan-faq.md
-    - name: Azure 로드맵
-      href: 'https://azure.microsoft.com/roadmap/?category=networking'
-    - name: 블로그
-      href: 'https://azure.microsoft.com/blog/topics/networking'
-    - name: 구독 및 서비스 한도
-      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
     - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/virtual-wan'
+    - name: 구독 및 서비스 한도
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
+    - name: 네트워킹 로드맵
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: 네트워킹 블로그
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: 네트워킹 업데이트 알림
+      href: 'https://azure.microsoft.com/updates/?category=networking'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: SLA

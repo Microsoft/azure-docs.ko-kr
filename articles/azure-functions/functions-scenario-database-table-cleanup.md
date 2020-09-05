@@ -3,13 +3,14 @@ title: Azure Functions를 사용 하 여 데이터베이스 정리 작업 수행
 description: Azure Functions를 사용하여 Azure SQL Database에 연결하여 행을 주기적으로 정리하는 작업을 예약합니다.
 ms.assetid: 076f5f95-f8d2-42c7-b7fd-6798856ba0bb
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 10/02/2019
-ms.openlocfilehash: 29e90838d91de69af43ae9cf8ec0d99b534f66be
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0b5e255d7d108eb063ece4e5489a8762261a0bed
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506080"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207254"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Azure Functions를 사용하여 Azure SQL Database에 연결
 
@@ -17,7 +18,7 @@ ms.locfileid: "86506080"
 
 C# 함수를 처음 사용하는 경우 [Azure Functions C# 개발자 참조](functions-dotnet-class-library.md)를 참고해야 합니다.
 
-## <a name="prerequisites"></a>사전 준비 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 + [Visual Studio를 사용 하 여 첫 번째 함수 만들기](functions-create-your-first-function-visual-studio.md) 문서의 단계를 완료 하 여 버전 2.x 또는 이후 버전의 런타임을 대상으로 하는 로컬 함수 앱을 만듭니다. 또한 프로젝트를 Azure의 함수 앱에 게시했어야 합니다.
 

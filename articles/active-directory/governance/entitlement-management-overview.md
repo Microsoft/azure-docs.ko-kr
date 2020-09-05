@@ -12,16 +12,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 08/25/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 710c81c7b5c6abbf499f2cb43570db94df1a3db5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: contperfq1
+ms.openlocfilehash: dbcd8ab2f2825e18943436dcc1a9ca4ff38e2d8d
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034405"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871210"
 ---
 # <a name="what-is-azure-ad-entitlement-management"></a>Azure AD 권한 관리란?
 
@@ -54,7 +55,10 @@ Azure AD 권한 관리는 이러한 문제를 해결하는 데 도움이 될 수
 - 관리자가 아닌 사용자에게 액세스 패키지를 만들 수 있는 권한을 위임합니다. 이러한 액세스 패키지에는 사용자가 요청할 수 있는 리소스가 포함되어 있으며, 위임된 액세스 패키지 관리자는 사용자가 요청할 수 있는 규칙, 액세스를 승인해야 하는 사용자 및 액세스가 만료되는 시기에 대한 정책을 정의할 수 있습니다.
 - 사용자가 액세스를 요청할 수 있는 연결된 조직을 선택합니다.  아직 디렉터리에 없는 사용자가 액세스를 요청하고 승인되면 해당 사용자가 자동으로 디렉터리로 초대되고 액세스 권한이 할당됩니다.  액세스가 만료되면 다른 액세스 패키지 할당이 없는 경우 디렉터리의 B2B 계정이 자동으로 제거될 수 있습니다.
 
-[첫 번째 액세스 패키지 만들기 자습서](entitlement-management-access-package-first.md)를 시작할 수 있습니다. 또한 다음을 포함하여 [일반적인 시나리오](entitlement-management-scenarios.md)를 참조하거나 비디오를 시청할 수 있습니다.
+>[!NOTE]
+>자격 관리를 시도할 준비가 되었으면 [첫 번째 액세스 패키지 만들기 자습서](entitlement-management-access-package-first.md)를 시작할 수 있습니다.
+
+또한 다음을 포함하여 [일반적인 시나리오](entitlement-management-scenarios.md)를 참조하거나 비디오를 시청할 수 있습니다.
 
 - [조직에서 Azure AD 권한 관리를 배포하는 방법](https://www.youtube.com/watch?v=zaaKvaaYwI4)
 - [Azure AD 권한 관리의 사용을 모니터링하고 크기를 조정하는 방법](https://www.youtube.com/watch?v=omtNJ7ySjS0)
@@ -102,7 +106,7 @@ Azure AD 권한 관리는 이러한 문제를 해결하는 데 도움이 될 수
 액세스 패키지는 액세스 할당을 위해 다른 메커니즘을 대체하지 않습니다.  다음과 같은 상황에서 가장 적합합니다.
 
 - 직원에게는 특정 작업에 대해 시간이 제한된 액세스가 필요합니다.  예를 들어 그룹 기반 라이선스 및 동적 그룹을 사용하여 모든 직원에게 Exchange Online 사서함이 있는지 확인한 다음, 직원에게 다른 부서의 부서 리소스를 읽는 등의 추가 액세스가 필요한 상황에서 액세스 패키지를 사용할 수 있습니다.
-- 직원 관리자 또는 지정된 다른 개인이 액세스를 승인해야 합니다.
+- 직원의 관리자 또는 기타 지정된 개인의 승인이 필요한 액세스입니다.
 - 각 부서에서 IT의 개입 없이 리소스에 대한 자체의 액세스 정책을 관리하려고 합니다.  
 - 둘 이상의 조직에서 프로젝트를 협업하고 있으며, 그 결과로 Azure AD B2B를 통해 한 조직의 여러 사용자를 호출하여 다른 조직의 리소스에 액세스해야 합니다.
 
@@ -149,7 +153,7 @@ Azure AD Premium P2 라이선스가 필요하지 **않은** 작업은 다음과 
 - 카탈로그 작성자, 카탈로그 소유자 및 액세스 패키지 관리자와 같은 관리 작업을 위임받은 사용자에게는 라이선스가 필요하지 않습니다.
 - 액세스 패키지를 **요청할 수 있지만** 액세스 패키지를 요청하지 않는 게스트에게는 라이선스가 필요하지 **않습니다**.
 
-멤버 사용자(직원)를 위해 구매하는 각 유료 Azure AD Premium P2 라이선스의 경우 Azure AD B2B를 사용하여 최대 5명의 게스트 사용자를 초대할 수 있습니다. 이러한 게스트 사용자는 Azure AD Premium P2 기능도 사용할 수 있습니다. 자세한 내용은 [Azure AD B2B 협업 라이선스 지침](../b2b/licensing-guidance.md)을 참조하세요.
+멤버 사용자(직원)를 위해 구매하는 각 유료 Azure AD Premium P2 라이선스의 경우 Azure AD B2B를 사용하여 최대 5명의 게스트 사용자를 초대할 수 있습니다. 이러한 게스트 사용자는 Azure AD Premium P2 기능도 사용할 수 있습니다. 자세한 내용은 [Azure AD B2B 협업 라이선스 지침](../external-identities/licensing-guidance.md)을 참조하세요.
 
 라이선스에 대한 자세한 내용은 [Azure Active Directory 포털을 사용하여 라이선스 할당 또는 제거](../fundamentals/license-users-groups.md)를 참조하세요.
 

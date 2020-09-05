@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 421fddb819d4d396d3ab8890789e58ccb935cbc0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d47f6c20246e3210b58dbc9c802a11c866ae305e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85806814"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935010"
 ---
 # <a name="monitor-operations-and-activity-of-azure-cognitive-search"></a>Azure Cognitive Search의 작업 및 활동 모니터링
 
@@ -59,7 +59,7 @@ Azure Cognitive Search는 포털에서 또는 이러한 [REST api](#monitoring-a
 
 ### <a name="activity-logs-and-service-health"></a>활동 로그 및 서비스 상태
 
-포털의 [**활동 로그**](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view) 페이지는 Azure Resource Manager에서 정보를 수집 하 고 서비스 상태에 대 한 변경 내용을 보고 합니다. 서비스 상태와 관련 된 위험, 오류 및 경고 조건에 대 한 활동 로그를 모니터링할 수 있습니다.
+포털의 [**활동 로그**](../azure-monitor/platform/activity-log.md#view-the-activity-log) 페이지는 Azure Resource Manager에서 정보를 수집 하 고 서비스 상태에 대 한 변경 내용을 보고 합니다. 서비스 상태와 관련 된 위험, 오류 및 경고 조건에 대 한 활동 로그를 모니터링할 수 있습니다.
 
 공통 항목에는 API 키에 대 한 참조- *관리자 키 가져오기* 및 *쿼리 키 가져오기*와 같은 일반 정보 알림이 포함 됩니다. 이러한 활동은 관리 키 (개체 만들기 또는 삭제) 또는 쿼리 키를 사용 하 여 수행 된 요청을 나타내지만 요청 자체를 표시 하지는 않습니다. 이 수준에 대 한 자세한 내용은 진단 로깅을 구성 해야 합니다.
 
@@ -75,13 +75,13 @@ Azure Cognitive Search는 포털에서 또는 이러한 [REST api](#monitoring-a
  "계층 제한과 관련 하 여 사용 상태")
 
 > [!NOTE]
-> 현재 저장소와 관련 된 경고를 사용할 수 없습니다. 저장소 소비는 집계 되지 않으며 Azure Monitor의 **Azuremetrics** 테이블에 기록 되지 않습니다. 저장소 경고를 가져오려면 코드에서 저장소 크기를 확인 하 고 응답을 처리 하는 리소스 관련 알림을 내보내는 [사용자 지정 솔루션](../azure-monitor/insights/solutions-creating.md) 을 만들어야 합니다.
+> 현재 저장소와 관련 된 경고를 사용할 수 없습니다. 저장소 소비는 집계 되지 않으며 Azure Monitor의 **Azuremetrics** 테이블에 기록 되지 않습니다. 저장소 경고를 가져오려면 코드에서 저장소 크기를 확인 하 고 응답을 처리 하는 리소스 관련 알림을 내보내는 [사용자 지정 솔루션](../azure-monitor/insights/solutions.md) 을 만들어야 합니다.
 
 <a name="add-azure-monitor"></a>
 
 ## <a name="add-on-monitoring-with-azure-monitor"></a>Azure Monitor로 추가 모니터링
 
-Azure Cognitive Search을 비롯 한 많은 서비스는 추가 경고, 메트릭 및 로깅 진단 데이터를 위해 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/) 와 통합 됩니다. 
+Azure Cognitive Search을 비롯 한 많은 서비스는 추가 경고, 메트릭 및 로깅 진단 데이터를 위해 [Azure Monitor](../azure-monitor/index.yml) 와 통합 됩니다. 
 
 데이터 수집 및 저장소에 대 한 제어를 원하는 경우 검색 서비스에 대 한 [진단 로깅을 사용 하도록 설정](search-monitor-logs.md) 합니다. Azure Monitor에서 캡처한 기록 이벤트는 **Azurediagnostics** 테이블에 저장 되 고 쿼리 및 인덱싱과 관련 된 작업 데이터로 구성 됩니다.
 
@@ -107,4 +107,4 @@ $Filter 매개 변수를 포함 하는 쿼리 문자열과 별도로이 정보�
 Azure Cognitive Search와 같은 리소스를 포함 하 여 Azure 서비스를 감독 하는 데 Azure Monitor 능숙가 필요 합니다. Azure Monitor에 익숙하지 않은 경우 리소스와 관련 된 문서를 검토 하는 시간을 소요 합니다. 자습서 외에도 다음 문서를 시작 하는 것이 좋습니다.
 
 > [!div class="nextstepaction"]
-> [Azure Monitor를 사용하여 Azure 리소스 모니터링](https://docs.microsoft.com/azure/azure-monitor/insights/monitor-azure-resource)
+> [Azure Monitor를 사용하여 Azure 리소스 모니터링](../azure-monitor/insights/monitor-azure-resource.md)

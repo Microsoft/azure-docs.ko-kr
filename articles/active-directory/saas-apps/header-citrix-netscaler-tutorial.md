@@ -2,26 +2,21 @@
 title: '자습서: Citrix NetScaler와 Azure Active Directory Single Sign-On 통합(헤더 기반 인증) | Microsoft Docs'
 description: 헤더 기반 인증을 사용하여 Azure Active Directory 및 Citrix NetScaler 간에 SSO(Single Sign-On)를 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b0adc7bf-696d-44c9-a57a-f9e9471b8710
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/13/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07ea6824975d0cb3f4b909db41188c490bbba6d2
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 48fedf7f3a73ce7fde60a1df80d971a5d7f88dd7
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80477947"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88540609"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-citrix-netscaler-header-based-authentication"></a>자습서: Citrix NetScaler와 Azure Active Directory Single Sign-On 통합(헤더 기반 인증)
 

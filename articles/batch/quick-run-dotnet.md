@@ -1,29 +1,31 @@
 ---
-title: Azure 빠른 시작 - Batch 작업 실행 - .NET
-description: Batch .NET 클라이언트 라이브러리를 사용하여 C# 애플리케이션에서 Azure Batch 샘플 작업 및 태스크를 빠르게 실행합니다.
+title: 빠른 시작 - .NET API를 사용하여 첫 번째 Azure Batch 작업 실행
+description: 이 빠른 시작에서는 Batch .NET 클라이언트 라이브러리를 사용하여 C# 애플리케이션에서 Azure Batch 샘플 작업 및 태스크를 실행합니다.
 ms.topic: quickstart
-ms.date: 11/29/2018
-ms.custom: mvc
-ms.openlocfilehash: 1163d63f8cbd6afedfb6e5323fa469059fa8021c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 08/17/2020
+ms.custom: mvc, devx-track-csharp
+ms.openlocfilehash: 9087261865b07d32afab65012e04ea478cb60611
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82117219"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88921650"
 ---
 # <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>빠른 시작: .NET API를 사용하여 첫 번째 Azure Batch 작업 실행
 
-이 빠른 시작에서는 Azure Batch .NET API를 기반으로 하여 빌드된 C# 애플리케이션에서 Azure Batch 작업을 실행합니다. 앱은 여러 개의 입력 데이터 파일을 Azure 스토리지에 업로드한 다음, Batch 컴퓨팅 노드(가상 머신)의 *풀*을 만듭니다. 그런 다음 *태스크*를 실행하는 샘플 *작업*을 만들어 기본 명령을 사용하여 풀에서 각 입력 파일을 처리합니다. 이 빠른 시작을 완료하면, Batch 서비스의 주요 개념을 이해하고 더 큰 규모의 더 실제적인 작업으로 Batch를 시도할 준비가 됩니다.
+Azure Batch .NET API에 빌드된 C# 애플리케이션에서 작업을 실행하여 Azure Batch를 시작합니다. 앱은 여러 개의 입력 데이터 파일을 Azure 스토리지에 업로드한 다음, Batch 컴퓨팅 노드(가상 머신)의 풀을 만듭니다. 그런 다음 태스크를 실행하는 샘플 작업을 만들어 기본 명령을 사용하여 풀에서 각 입력 파일을 처리합니다.
 
-![빠른 시작 앱 워크플로](./media/quick-run-dotnet/sampleapp.png)
+이 빠른 시작을 완료하면, Batch 서비스의 주요 개념을 이해하고 더 큰 규모의 더 실제적인 작업으로 Batch를 시도할 준비가 됩니다.
 
-[!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
+![Azure Batch 앱 워크플로의 개요를 보여주는 다이어그램입니다.](./media/quick-run-dotnet/sampleapp.png)
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-* Linux, macOS 또는 Windows의 경우 [Visual Studio 2017 이상](https://www.visualstudio.com/vs) 또는 [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1). 
+- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* Batch 계정 및 연결된 Azure Storage 계정. 이러한 계정을 만들려면 [Azure Portal](quick-create-portal.md) 또는 [Azure CLI](quick-create-cli.md)를 사용하는 Batch 빠른 시작을 참조하세요. 
+- Batch 계정 및 연결된 Azure Storage 계정. 이러한 계정을 만들려면 [Azure Portal](quick-create-portal.md) 또는 [Azure CLI](quick-create-cli.md)를 사용하는 Batch 빠른 시작을 참조하세요.
+
+- Linux, macOS 또는 Windows의 경우 [Visual Studio 2017 이상](https://www.visualstudio.com/vs) 또는 [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1). 
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
@@ -60,11 +62,11 @@ private const string StorageAccountKey  = "xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfw
 
 작동 중인 Batch 워크플로를 보려면 Visual Studio 또는 명령줄에서 `dotnet build` 및 `dotnet run` 명령을 사용하여 애플리케이션을 빌드 및 실행합니다. 애플리케이션이 실행되면 코드를 검토하여 애플리케이션의 각 부분에서 수행하는 작업을 알아봅니다. 예를 들어 Visual Studio의 경우 다음과 같습니다.
 
-* [솔루션 탐색기]에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **솔루션 빌드**를 클릭합니다. 
+- [솔루션 탐색기]에서 솔루션을 마우스 오른쪽 단추로 클릭하고 **솔루션 빌드**를 클릭합니다. 
 
-* 메시지가 표시되면 모든 NuGet 패키지 복원을 확인합니다. 누락된 패키지를 다운로드해야 하는 경우 [NuGet 패키지 관리자](https://docs.nuget.org/consume/installing-nuget)가 설치되어 있는지 확인합니다.
+- 메시지가 표시되면 모든 NuGet 패키지 복원을 확인합니다. 누락된 패키지를 다운로드해야 하는 경우 [NuGet 패키지 관리자](https://docs.nuget.org/consume/installing-nuget)가 설치되어 있는지 확인합니다.
 
-그런 다음 실행합니다. 샘플 애플리케이션을 실행하는 경우 콘솔 출력은 다음과 비슷합니다. 실행 중에 풀의 컴퓨팅 노드가 시작되는 동안 `Monitoring all tasks for 'Completed' state, timeout in 00:30:00...`에서 일시 중지가 발생합니다. 첫 번째 컴퓨팅 노드가 실행되는 즉시 실행되도록 태스크를 큐에 넣습니다. [Azure Portal](https://portal.azure.com)에서 Batch 계정으로 이동하여 풀, 컴퓨팅 노드, 작업 및 태스크를 모니터링합니다.
+샘플 애플리케이션을 실행하는 경우 콘솔 출력은 다음과 비슷합니다. 실행 중에 풀의 컴퓨팅 노드가 시작되는 동안 `Monitoring all tasks for 'Completed' state, timeout in 00:30:00...`에서 일시 중지가 발생합니다. 첫 번째 컴퓨팅 노드가 실행되는 즉시 실행되도록 태스크를 큐에 넣습니다. [Azure Portal](https://portal.azure.com)에서 Batch 계정으로 이동하여 풀, 컴퓨팅 노드, 작업 및 태스크를 모니터링합니다.
 
 ```
 Sample start: 11/16/2018 4:02:54 PM
@@ -93,17 +95,16 @@ stderr:
 
 기본 구성에서 애플리케이션을 실행하는 경우 일반적인 실행 시간은 약 5분입니다. 초기 풀 설정에 가장 많은 시간이 걸립니다. 작업을 다시 실행하려면 이전 실행의 작업은 삭제하는 대신 풀은 삭제하지 않습니다. 미리 구성된 풀에서 작업은 몇 초 내에 완료됩니다.
 
-
 ## <a name="review-the-code"></a>코드 검토
 
 이 빠른 시작의 .NET 앱은 다음을 수행합니다.
 
-* 세 개의 작은 텍스트 파일을 Azure Storage 계정의 Blob 컨테이너에 업로드합니다. 이러한 파일은 Batch에서 처리하기 위한 입력입니다.
-* Windows Server를 실행하는 컴퓨팅 노드 풀을 만듭니다.
-* 노드에서 실행할 하나의 작업과 세 개의 태스크를 만듭니다. 각 태스크는 Windows 명령줄을 사용하여 입력 파일 중 하나를 처리합니다. 
-* 태스크에서 반환된 파일을 표시합니다.
+- 세 개의 작은 텍스트 파일을 Azure Storage 계정의 Blob 컨테이너에 업로드합니다. 이러한 파일은 Batch에서 처리하기 위한 입력입니다.
+- Windows Server를 실행하는 컴퓨팅 노드 풀을 만듭니다.
+- 노드에서 실행할 하나의 작업과 세 개의 태스크를 만듭니다. 각 태스크는 Windows 명령줄을 사용하여 입력 파일 중 하나를 처리합니다. 
+- 태스크에서 반환된 파일을 표시합니다.
 
-자세한 내용은 `Program.cs` 파일 및 다음 섹션을 참조하세요. 
+자세한 내용은 `Program.cs` 파일 및 다음 섹션을 참조하세요.
 
 ### <a name="preliminaries"></a>준비 단계
 
@@ -245,7 +246,6 @@ foreach (CloudTask task in completedtasks)
 ## <a name="next-steps"></a>다음 단계
 
 이 빠른 시작에서는 Batch .NET API를 통해 빌드된 작은 앱을 실행하여 Batch 풀과 Batch 작업을 만들었습니다. 작업에서 샘플 태스크를 실행했고, 노드에서 만들어진 출력을 다운로드했습니다. 이제 Batch 서비스의 핵심 개념을 이해 했으므로 더 큰 규모의 더 실제적인 작업 부하로 Batch를 시도할 준비가 되었습니다. Azure Batch에 대해 자세히 알아보고 실제 애플리케이션으로 병렬 작업을 단계별로 진행하려면 Batch .NET 자습서로 계속 진행하세요.
-
 
 > [!div class="nextstepaction"]
 > [.NET을 사용하여 병렬 작업 처리](tutorial-parallel-dotnet.md)

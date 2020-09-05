@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: acd030d8108ef3983be29fe85de6d7b3caf620af
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: b20612756050ae2e9d39f59d049b8c097e3b8010
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849338"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88651219"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Azure Machine Learning에서 데이터 집합으로 학습
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "87849338"
 
 Azure Machine Learning 데이터 집합은 [평가기](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py), 하이퍼 [드라이브](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) 및 [Azure Machine Learning 파이프라인과](how-to-create-your-first-pipeline.md) [같은 Azure Machine Learning](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py)교육 제품과 원활한 통합을 제공 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 데이터 집합을 만들고 학습 하려면 다음이 필요 합니다.
 
@@ -90,7 +90,7 @@ TabularDataset 개체는 TabularDataset의 데이터를 pandas 또는 Spark 데�
 
 * 스크립트에 대 한 스크립트 디렉터리입니다. 이 디렉터리의 모든 파일은 실행을 위해 클러스터 노드로 업로드됩니다.
 * 학습 스크립트 *train_titanic. py*.
-* 학습을 위한 입력 데이터 집합 `titanic_ds` 입니다. `as_named_input()`는 학습 스크립트의 할당 된 이름으로 입력 데이터 집합을 참조할 수 있도록 해야 `titanic` 합니다. 
+* 학습을 위한 입력 데이터 집합 `titanic_ds` 입니다. `as_named_input()` 는 학습 스크립트의 할당 된 이름으로 입력 데이터 집합을 참조할 수 있도록 해야 `titanic` 합니다. 
 * 실험의 계산 대상입니다.
 * 실험에 대 한 환경 정의입니다.
 
@@ -115,7 +115,7 @@ experiment_run.wait_for_completion(show_output=True)
 
 ### <a name="create-a-filedataset"></a>FileDataset 만들기
 
-다음 예제에서는 웹 url에서 등록 되지 않은 FileDataset을 만듭니다. 다른 원본에서 [데이터 집합을 만드는 방법](https://aka.ms/azureml/howto/createdatasets) 에 대해 자세히 알아보세요.
+다음 예제에서는 웹 url에서 등록 되지 않은 FileDataset을 만듭니다. 다른 원본에서 [데이터 집합을 만드는 방법](how-to-create-register-datasets.md) 에 대해 자세히 알아보세요.
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -201,7 +201,7 @@ y_test = load_data(y_test, True).reshape(-1)
 
 스크립트가 데이터 집합에서 참조 하는 모든 파일을 처리 하 고 계산 디스크가 전체 데이터 집합에 적합 한 경우 storage 서비스에서 데이터를 스트리밍하는 오버 헤드를 방지 하기 위해를 다운로드 하는 것이 좋습니다. 데이터 크기가 계산 디스크 크기를 초과 하는 경우 다운로드를 수행할 수 없습니다. 이 시나리오에서는 스크립트에서 사용 하는 데이터 파일만 처리할 때 로드 되므로 탑재 하는 것이 좋습니다.
 
-다음 코드는 `dataset` 에서 임시 디렉터리에 탑재 합니다.`mounted_path`
+다음 코드는 `dataset` 에서 임시 디렉터리에 탑재 합니다. `mounted_path`
 
 ```python
 import tempfile

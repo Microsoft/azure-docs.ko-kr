@@ -2,25 +2,21 @@
 title: '자습서: Chatwork와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 Chatwork 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 0982ee1d-7ae2-415b-9e47-cfc72e1885ca
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 368b87a4abd5b55a807f7184c3a56876169b2517
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: fdf9e16e5578f794d01671d391f3568eae6555cc
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87293546"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586242"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-chatwork"></a>자습서: Chatwork와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -87,7 +83,9 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
     **로그인 URL** 텍스트 상자에서 `https://www.chatwork.com/s/<TENANT_NAME>` 패턴을 사용하여 URL을 입력합니다.
 
     > [!NOTE]
-    > 이 값은 실제 값이 아닙니다. 이 값을 실제 로그온 URL로 업데이트합니다. 값을 얻으려면 [Chatwork 클라이언트 지원 팀](mailto:info@support.chatwork.com)에 문의하세요. Azure Portal의 **기본 SAML 구성** 섹션에 표시된 패턴을 참조할 수도 있습니다.
+    > 이 값은 실제 값이 아닙니다. **Chatwork SSO 구성** 후에 설정한 프라이빗 로그인 URL로 값을 업데이트합니다.
+
+1. Chatwork 애플리케이션은 **고유한 사용자 ID** 특성 값이 Chatwork에 등록된 이메일 주소와 일치할 것으로 예상합니다. 특성은 기본적으로 **user.principalname**에 매핑됩니다. 주체 이름이 이메일 주소와 다른 경우  **고유한 사용자 ID**를 **user.mail**에 매핑합니다.
 
 1. **SAML로 Single Sign-On 설정** 페이지의 **SAML 서명 인증서** 섹션에서 **인증서(Base64)** 를 찾은 후 **다운로드**를 선택하여 인증서를 다운로드하고 컴퓨터에 저장합니다.
 
@@ -129,11 +127,11 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 ## <a name="configure-chatwork-sso"></a>Chatwork SSO 구성
 
-**Chatwork** 쪽에서 Single Sign-On을 구성하려면 Azure Portal에서 다운로드한 **인증서(Base64)** 와 적절히 복사한 URL을 [Chatwork 지원 팀](mailto:info@support.chatwork.com)으로 보내야 합니다. 이렇게 설정하면 SAML SSO 연결이 양쪽에서 제대로 설정됩니다.
+**Chatwork** 쪽에서 Single Sign-On을 구성하려면 [Chatwork 관리 가이드](https://download.chatwork.com/Chatwork_AdminGuide.pdf)를 읽고 Chatwork 설정을 구성합니다.
 
 ### <a name="create-chatwork-test-user"></a>Chatwork 테스트 사용자 만들기
 
-이 섹션에서는 Chatwork에 B.Simon이라는 사용자를 만듭니다. Chatwork 플랫폼에서 사용자를 추가하려면  [Chatwork 지원 팀](mailto:info@support.chatwork.com)에 문의하세요. Single Sign-On을 사용하려면 먼저 사용자를 만들고 활성화해야 합니다.
+이 섹션에서는 Chatwork에 B.Simon이라는 사용자를 만듭니다. [Chatwork 관리 가이드](https://download.chatwork.com/Chatwork_AdminGuide.pdf)에 액세스하여 사용자를 Chatwork 플랫폼에 추가합니다.
 
 ## <a name="test-sso"></a>SSO 테스트 
 

@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: johndeu
-ms.openlocfilehash: 83e945fccfbfbec207723d6c16f2a4dfc7290c52
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 84e94a431efdc84ff6896de416bd222120784899
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000050"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264286"
 ---
-# <a name="media-services-operations-rest-api-overview"></a>Media Services Operations REST API 개요 
+# <a name="media-services-operations-rest-api-overview"></a>Media Services Operations REST API 개요
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](../latest/index.yml)의 최신 버전을 확인하세요. 또한 [v2에서 v3로의 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)을 참조하세요.
@@ -60,7 +62,7 @@ REST를 사용할 때 적용되는 고려 사항은 다음과 같습니다.
 ## <a name="standard-http-request-headers-supported-by-media-services"></a>Media Services에서 지원하는 표준 HTTP 요청 헤더
 Media Services에서 작성한 모든 호출에는 귀하의 요청에 포함해야 하는 필수 헤더 집합이 있으며 포함할 수도 있는 선택적 헤더 집합도 있습니다. 아래 표에서는 필수 헤더를 나열합니다.
 
-| 헤더 | 형식 | 값 |
+| 헤더 | 유형 | 값 |
 | --- | --- | --- |
 | 권한 부여 |전달자 |전달자는 승인된 유일한 권한 부여 메커니즘입니다. 이 값은 Azure Active Directory에서 제공한 액세스 토큰도 포함해야 합니다. |
 | x-ms-version |Decimal |2.17(또는 최신 버전)|
@@ -74,7 +76,7 @@ Media Services에서 작성한 모든 호출에는 귀하의 요청에 포함해
 
 다음은 선택적 헤더의 집합입니다.
 
-| 헤더 | 형식 | 값 |
+| 헤더 | 유형 | 값 |
 | --- | --- | --- |
 | 날짜 |RFC 1123 날짜 |요청 타임스탬프 |
 | 동의함 |내용 유형 |다음과 같은 응답에 대해 요청된 콘텐츠 형식:<p> -application/json;odata=verbose<p> - application/atom+xml<p> Blob 인출과 같이 다른 콘텐츠 유형이 응답에 있을 수 있습니다. 여기서 성공적인 응답은 Blob 스트림을 페이로드로 포함합니다. |
@@ -88,7 +90,7 @@ Media Services에서 작성한 모든 호출에는 귀하의 요청에 포함해
 ## <a name="standard-http-response-headers-supported-by-media-services"></a>Media Services에서 지원되는 표준 HTTP 응답 헤더
 다음은 요청한 리소스 및 수행하려는 작업에 따라 사용자에게 반환될 수 있는 헤더 집합입니다.
 
-| 헤더 | 형식 | 값 |
+| 헤더 | 유형 | Value |
 | --- | --- | --- |
 | request-id |String |현재 작업에 대한 고유 식별자로 서비스를 생성합니다. |
 | client-request-id |String |호출자가 원래 요청을 통해 지정한 식별자입니다(있는 경우). |
@@ -104,7 +106,7 @@ Media Services에서 작성한 모든 호출에는 귀하의 요청에 포함해
 | GET |개체의 현재 값을 반환합니다. |
 | POST |제공된 데이터를 기반으로 개체를 만들거나 명령을 제출합니다. |
 | PUT |개체를 바꾸거나 명명된 개체(있는 경우)를 만듭니다. |
-| DELETE |개체를 삭제합니다. |
+| Delete |개체를 삭제합니다. |
 | MERGE |명명된 속성 변경 내용으로 기존 개체를 업데이트합니다. |
 | HEAD |GET 응답에 대한 개체의 메타데이터를 반환합니다. |
 

@@ -11,12 +11,12 @@ author: aashishb
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 3e10841852b8a89b344d3bfd9311db8abe15642a
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 0afb7906e102e4f0fb49245949b08618da1693ec
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319544"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265680"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS를 사용하여 Azure Machine Learning을 통해 웹 서비스 보호
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "87319544"
 > [!TIP]
 > Azure Machine Learning SDK는 보안 통신과 관련 된 속성에 "SSL" 이라는 용어를 사용 합니다. 이는 웹 서비스에서 *TLS*를 사용 하지 않는다는 의미는 아닙니다. SSL은 보다 일반적으로 인식 되는 용어입니다.
 >
-> 특히 Azure Machine Learning를 통해 배포 된 웹 서비스는 TLS 버전 1.2만 지원 합니다.
+> 특히 Azure Machine Learning를 통해 배포 된 웹 서비스는 TLS 버전 1.1만 지원 합니다.
 
 TLS 및 SSL은 모두 암호화 및 id 확인에 도움이 되는 *디지털 인증서*를 사용 합니다. 디지털 인증서의 작동 방식에 대 한 자세한 내용은 위키백과 토픽 [공개 키 인프라](https://en.wikipedia.org/wiki/Public_key_infrastructure)를 참조 하세요.
 
@@ -71,7 +71,7 @@ TLS/SSL 인증서 (디지털 인증서)를 가져오는 방법에는 여러 가�
 > [!WARNING]
 > *자체 서명* 된 인증서는 개발용 으로만 사용 합니다. 프로덕션 환경에서는 사용 하지 마세요. 자체 서명된 인증서로 인해 클라이언트 애플리케이션에 문제가 발생할 수 있습니다. 자세한 내용은 클라이언트 응용 프로그램에서 사용 하는 네트워크 라이브러리 설명서를 참조 하세요.
 
-## <a name="enable-tls-and-deploy"></a><a id="enable"></a>TLS를 사용 하도록 설정 하 고 배포
+## <a name="enable-tls-and-deploy"></a><a id="enable"></a> TLS를 사용 하도록 설정 하 고 배포
 
 TLS를 사용 하는 서비스를 배포 (또는 다시 배포) 하려면 해당 되는 모든 위치에서 *ssl_enabled* 매개 변수를 "True"로 설정 합니다. *Ssl_certificate* 매개 변수를 *인증서* 파일의 값으로 설정 합니다. *Ssl_key* 를 *키* 파일의 값으로 설정 합니다.
 

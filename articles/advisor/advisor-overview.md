@@ -3,12 +3,12 @@ title: Azure Advisor 소개
 description: Azure Advisor를 사용하여 Azure 배포를 최적화합니다.
 ms.topic: article
 ms.date: 02/01/2019
-ms.openlocfilehash: 17b68e220b7011dee2cc8fca440d58d980c28e6d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 27e49fa28e7b02b873ca145d514920784689b407
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057690"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654024"
 ---
 # <a name="introduction-to-azure-advisor"></a>Azure Advisor 소개
 
@@ -55,7 +55,7 @@ Advisor 대시보드에 모든 구독에 대한 개인화된 권장 사항이 �
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Advisor는 어떤 리소스에 대해 권장 사항을 제공하나요?
 
-Advisor는 Application Gateway, App Services, 가용성 집합, Azure Cache, Azure Data Factory, Azure Database for MySQL, Azure Database for PostgreSQL, Azure Database for MariaDB, Azure Express 경로, Azure Cosmos DB, Azure 공용 IP 주소, SQL Data Warehouse, SQL server, storage 계정, Traffic Manager 프로필 및 가상 컴퓨터에 대 한 권장 사항을 제공 합니다.
+Advisor는 Application Gateway, App Services, 가용성 집합, Azure Cache, Azure Data Factory, Azure Database for MySQL, Azure Database for PostgreSQL, Azure Database for MariaDB, Azure Express 경로, Azure Cosmos DB, Azure 공용 IP 주소, Azure Synapse 분석, SQL server, storage 계정, Traffic Manager 프로필 및 가상 컴퓨터에 대 한 권장 사항을 제공 합니다.
 
 Azure Advisor에는 추가 리소스 유형에 대 한 권장 사항을 포함 하는 [Azure Security Center](../security-center/security-center-recommendations.md) 의 권장 사항도 포함 되어 있습니다.
 

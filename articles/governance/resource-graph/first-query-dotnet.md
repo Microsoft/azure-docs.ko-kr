@@ -3,12 +3,13 @@ title: '빠른 시작: 첫 번째 .NET Core 쿼리'
 description: 이 빠른 시작에서는 .NET Core용 Resource Graph NuGet 패키지를 사용하도록 설정하고 첫 번째 쿼리를 실행하는 단계를 수행합니다.
 ms.date: 06/29/2020
 ms.topic: quickstart
-ms.openlocfilehash: b452329148f607b6a71c366c51745906247a43a1
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 0470f100b6323f760bc48af70e8a6c11b94dfb3c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85802594"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005873"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-net-core"></a>빠른 시작: .NET Core를 사용하여 첫 번째 Resource Graph 쿼리 실행
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020, devx-track-python
 ms.date: 04/27/2020
-ms.openlocfilehash: 2ab996c3f3310656e7b85dded8e57a129b901660
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: bd61c6812d794d30e28f087dabf58db51e9c3296
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873809"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230418"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Apache Spark MLlib을 사용하여 Machine Learning 애플리케이션 빌드 및 데이터 세트 분석
 
@@ -44,7 +44,7 @@ MLlib는 다음과 같은 기계 학습 작업에 유용한 여러 유틸리티�
 
 ## <a name="create-an-apache-spark-mllib-machine-learning-app"></a>Apache Spark MLlib 기계 학습 앱 만들기
 
-1. PySpark 커널을 사용하여 Jupyter 노트북을 만듭니다. 자세한 지침은 [Jupyter 노트북 만들기](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook)를 참조하세요.
+1. PySpark 커널을 사용하여 Jupyter 노트북을 만듭니다. 지침은 [Jupyter 노트북 파일 만들기](./apache-spark-jupyter-spark-sql.md#create-a-jupyter-notebook-file)를 참조 하세요.
 
 2. 이 애플리케이션에 필요한 형식을 가져옵니다. 다음 코드를 복사 하 여 빈 셀에 붙여넣은 다음 **shift + enter**를 누릅니다.
 
@@ -108,7 +108,7 @@ Spark 컨텍스트를 사용 하 여 원시 CSV 데이터를 메모리에 구조
 
     출력을 보면 입력 파일의 스키마를 알 수 있습니다. 모든 설정의 이름 및 설정의 유형을 포함 합니다. 또한 주소, 검사 데이터 및 위치도 다른 항목 중에서 선택할 수 있습니다.
 
-3. 다음 코드를 실행하여 예측 분석에 유용한 몇 개 열이 포함된 데이터 프레임(*df*) 및 임시 테이블(*CountResults*)을 만듭니다. `sqlContext`는 구조화 된 데이터에 대 한 변환을 수행 하는 데 사용 됩니다.
+3. 다음 코드를 실행하여 예측 분석에 유용한 몇 개 열이 포함된 데이터 프레임(*df*) 및 임시 테이블(*CountResults*)을 만듭니다. `sqlContext` 는 구조화 된 데이터에 대 한 변환을 수행 하는 데 사용 됩니다.
 
     ```PySpark
     schema = StructType([
@@ -349,7 +349,7 @@ model = pipeline.fit(labeledData)
     plt.axis('equal')
     ```
 
-    다음과 같은 출력이 표시됩니다.
+    다음 출력이 표시됩니다.
 
     ![Spark machine learning 응용 프로그램 출력-실패 한 음식 검사의 원형 차트 백분율입니다.](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png "Spark machine learning 결과 출력")
 

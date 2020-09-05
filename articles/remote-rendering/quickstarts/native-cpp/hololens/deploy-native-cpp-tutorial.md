@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/08/2020
 ms.topic: quickstart
-ms.openlocfilehash: 6b3909281cf475a003ffaaef6f6f48441337728e
-ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
+ms.openlocfilehash: 71760e9b54ff3a520f0784ecda4484bb3ea047e3
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84810227"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892663"
 ---
 # <a name="quickstart-deploy-native-c-sample-to-hololens"></a>빠른 시작: HoloLens에 네이티브 C++ 샘플 배포
 
@@ -62,7 +62,6 @@ Visual Studio 2019를 사용하여 *NativeCpp/HoloLens* 하위 디렉터리에 �
 ![Visual Studio 구성](media/vs-config-native-cpp-tutorial.png)
 
 계정 자격 증명은 자습서의 소스 코드에서 하드 코딩되므로 올바른 자격 증명으로 변경합니다. 이렇게 하려면 Visual Studio 내에서 `HolographicAppMain.cpp` 파일을 열고 `HolographicAppMain` 클래스의 생성자 내에서 프런트 엔드가 만들어지는 파트를 변경합니다.
-
 
 ```cpp
 // 2. Create front end

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: b49669dac2b28dac631f71b9cd07c0851ff8df05
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 42ec5a661bd7b42ba5de5bfa99b3898291cc60fa
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448854"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935605"
 ---
 # <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>공용 기본 Load Balancer용 Azure Monitor 로그
 
@@ -29,7 +29,7 @@ Azure에서 기본 Load Balancer를 관리하고 문제를 해결하는 데 다�
 * **상태 프로브 로그:** 상태 프로브 오류 때문에 부하 분산 장치에서 요청을 받지 않는 백 엔드 풀에 있는 인스턴스의 수와 같은 상태 프로브에서 발견한 문제를 보기 위해 이 로그를 사용할 수 있습니다. 상태 프로브 상태가 변경되는 경우에 이 로그가 기록됩니다.
 
 > [!IMPORTANT]
-> **상태 프로브 이벤트 로그는 현재 작동 하지 않으며 [Azure Load Balancer에 대 한 알려진 문제](whats-new.md#known-issues)에 나열 됩니다.** Azure Monitor 로그는 현재 공용 기본 부하 분산 장치에 대해서만 작동 합니다. 로그는 Resource Manager 배포 모델에 배포된 리소스에서만 사용할 수 있습니다. 클래식 배포 모델에서 리소스에 대한 로그를 사용할 수 없습니다. 배포 모델에 대한 자세한 내용은 [리소스 관리자 배포 및 클래식 배포 이해](../azure-resource-manager/management/deployment-models.md)를 참조하세요.
+> **상태 프로브 이벤트 로그는 현재 작동 하지 않으며 [Azure Load Balancer에 대 한 알려진 문제](whats-new.md#known-issues)에 나열 됩니다.** 로그는 Resource Manager 배포 모델에 배포된 리소스에서만 사용할 수 있습니다. 클래식 배포 모델에서 리소스에 대한 로그를 사용할 수 없습니다. 배포 모델에 대한 자세한 내용은 [리소스 관리자 배포 및 클래식 배포 이해](../azure-resource-manager/management/deployment-models.md)를 참조하세요.
 
 ## <a name="enable-logging"></a>로깅 사용
 

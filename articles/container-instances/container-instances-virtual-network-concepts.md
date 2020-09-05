@@ -2,14 +2,14 @@
 title: 가상 네트워크를 사용 하는 시나리오
 description: Azure 가상 네트워크에 컨테이너 그룹을 배포 하는 시나리오, 리소스 및 제한 사항입니다.
 ms.topic: article
-ms.date: 04/29/2020
+ms.date: 08/11/2020
 ms.author: danlep
-ms.openlocfilehash: c4e983e7d83e661b4ba50ebe2c6d65bce2f42514
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 0474a5f85829080a89a74195483484c464de5840
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259537"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870768"
 ---
 # <a name="virtual-network-scenarios-and-resources"></a>가상 네트워크 시나리오 및 리소스
 
@@ -42,6 +42,8 @@ Azure Virtual Network에 컨테이너 그룹을 배포하는 경우 다음과 �
 * 가상 네트워크에 배포 된 컨테이너 그룹에서 [관리 되는 id](container-instances-managed-identity.md) 를 사용할 수 없습니다.
 * 가상 네트워크에 배포 된 컨테이너 그룹에서 [선거의 프로브](container-instances-liveness-probe.md) 또는 [준비 프로브](container-instances-readiness-probe.md) 를 사용 하도록 설정할 수 없습니다.
 * 추가 네트워킹 리소스 때문에 가상 네트워크에 대 한 배포는 일반적으로 표준 컨테이너 인스턴스를 배포 하는 것 보다 느립니다.
+
+[!INCLUDE [container-instances-restart-ip](../../includes/container-instances-restart-ip.md)]
 
 ## <a name="where-to-deploy"></a>배포할 위치
 
@@ -78,6 +80,7 @@ Resource Manager 템플릿, YAML 파일 또는 프로그래밍 방식을 사용�
 * Azure CLI에 대 한 배포 예제는 [Azure virtual network에 컨테이너 인스턴스 배포](container-instances-vnet.md)를 참조 하세요.
 * Resource Manager 템플릿을 사용하여 새 가상 네트워크, 서브넷, 네트워크 프로필 및 컨테이너 그룹을 배포하려면 [VNet을 사용하여 Azure 컨테이너 그룹 만들기](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-vnet
 )를 참조하세요.
+* [Azure Portal](container-instances-quickstart-portal.md) 사용 하 여 컨테이너 인스턴스를 만들 때 **네트워킹** 탭에서 새 가상 네트워크 또는 exsting 가상 네트워크에 대 한 설정을 제공할 수도 있습니다.
 
 
 <!-- IMAGES -->

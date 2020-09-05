@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 08/05/2020
+ms.date: 08/12/2020
 ms.author: anfeldma
-ms.openlocfilehash: 5f0d66a515ed13f96645e5916af2b01841950375
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 6d25eb2965e31211c0d30ec8d5e3e376176147c0
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846601"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590050"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>.NET 변경 피드 프로세서 SDK: 다운로드 및 릴리스 정보
 
@@ -27,7 +27,8 @@ ms.locfileid: "87846601"
 > * [Java SDK v4](sql-api-sdk-java-v4.md)
 > * [Async Java SDK v2](sql-api-sdk-async-java.md)
 > * [Sync Java SDK v2](sql-api-sdk-java.md)
-> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [스프링 데이터 v2](sql-api-sdk-java-spring-v2.md)
+> * [스프링 데이터 v3](sql-api-sdk-java-spring-v3.md)
 > * [Spark 커넥터](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * 단계 (/rest/api
@@ -49,6 +50,9 @@ ms.locfileid: "87846601"
 ## <a name="release-notes"></a>릴리스 정보
 
 ### <a name="v2-builds"></a>v2 빌드
+
+### <a name="232"></a><a name="2.3.2"/>2.3.2
+* 핫 마이그레이션 경로를 사용 하도록 설정 하는 [V3 SDK](sql-api-sdk-dotnet-standard.md) 와의 임대 저장소 호환성이 추가 되었습니다. 응용 프로그램은 V3 SDK로 마이그레이션하고 상태를 잃지 않고 변경 피드 프로세서 라이브러리로 다시 마이그레이션할 수 있습니다.
 
 ### <a name="231"></a><a name="2.3.1"/>2.3.1
 * `FeedProcessing.ChangeFeedObserverCloseReason.Unknown` `FeedProcessing.IChangeFeedObserver.CloseAsync` 파티션을 찾을 수 없거나 대상 복제본이 읽기 세션에서 최신 상태가 아닌 경우 close 이유가로 전송 되는 경우를 수정 했습니다. 이러한 경우에 `FeedProcessing.ChangeFeedObserverCloseReason.ResourceGone` `FeedProcessing.ChangeFeedObserverCloseReason.ReadSessionNotAvailable` 는 이제 닫는 이유가 사용 됩니다.
@@ -193,6 +197,7 @@ Microsoft는 매끄럽게 최신/지원 버전으로 전환할 수 있도록 적
 
 | 버전 | 출시 날짜 | 사용 중지 날짜 |
 | --- | --- | --- |
+| [2.3.2](#2.3.2) |2020년 8월 11일 |--- |
 | [2.3.1](#2.3.1) |2020 년 7 월 30 일 |--- |
 | [2.3.0](#2.3.0) |2020년 4월 2일 |--- |
 | [2.2.8](#2.2.8) |2019년 10월 28일 |--- |

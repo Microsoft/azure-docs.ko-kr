@@ -3,15 +3,16 @@ title: Azure Storage에 예약 할인이 적용되는 방식 이해 | Microsoft 
 description: 블록 Blob 및 Azure Data Lake Storage Gen2 리소스에 Azure Storage 예약된 용량 할인이 적용되는 방법에 대해 알아봅니다.
 author: tamram
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: tamram
-ms.openlocfilehash: b6360619b7666ab7836a751491e05e379df32d93
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: fc1110c124f5e4e6d30c27de0911f86c186b67c2
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199197"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681637"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-storage"></a>Azure Storage에 예약 할인이 적용되는 방식 이해
 

@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 0bdc9451f0dbc32e14197cde48a3613196b864c0
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: eca9596666b318b71bb1deec64e3a7d037e8fa0d
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037136"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654330"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Azure Files에 대한 FAQ(질문과 대답)
 [Azure Files](storage-files-introduction.md)는 산업 표준 [SMB(서버 메시지 블록) 프로토콜](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx)을 통해 액세스할 수 있는, 클라우드에서 완전히 관리되는 파일 공유를 제공합니다. Azure 파일 공유를 Windows, Linux 및 macOS의 클라우드 또는 온-프레미스 배포에 동시에 탑재할 수 있습니다. 데이터가 사용되는 위치 가까이에 대한 빠른 액세스를 위해 Azure 파일 동기화를 사용하여 Windows Server 컴퓨터에서 Azure 파일 공유를 캐시할 수도 있습니다.
@@ -54,7 +54,7 @@ ms.locfileid: "88037136"
 
     Azure Virtual Machines에 호스트된 Azure Files 및 파일 서버를 둘 다 적절히 활용하는 방법 중 하나는(Azure 디스크를 백 엔드 스토리지로 사용하는 것 외에) 클라우드 VM에서 호스트되는 파일 서버에 Azure 파일 동기화를 설치하는 것입니다. Azure 파일 공유가 파일 서버와 동일한 지역에 있으면 클라우드 계층화를 사용하도록 설정하고 사용 가능한 볼륨 공간 비율을 최대값(99%)으로 설정할 수 있습니다. 이렇게 하면 데이터의 최소 중복을 보장합니다. NFS 프로토콜 지원을 필요로 하는 애플리케이션과 같이 파일 서버와 함께 원하는 애플리케이션을 사용할 수도 있습니다.
 
-    Azure에서 고성능 및 고가용성 파일 서버를 설정하는 옵션에 대한 자세한 내용은 [Microsoft Azure에서 IaaS VM 게스트 클러스터 배포](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)를 참조하세요. Azure Files 및 Azure 디스크 간의 차이점에 대한 심도 있는 설명을 보려면 [핵심 Azure Storage 서비스 소개](../common/storage-introduction.md)를 참조하세요. Azure 디스크에 대한 자세한 내용은 [Azure Managed Disks 개요](../../virtual-machines/windows/managed-disks-overview.md)를 참조하세요.
+    Azure에서 고성능 및 고가용성 파일 서버를 설정하는 옵션에 대한 자세한 내용은 [Microsoft Azure에서 IaaS VM 게스트 클러스터 배포](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)를 참조하세요. Azure Files 및 Azure 디스크 간의 차이점에 대한 심도 있는 설명을 보려면 [핵심 Azure Storage 서비스 소개](../common/storage-introduction.md)를 참조하세요. Azure 디스크에 대한 자세한 내용은 [Azure Managed Disks 개요](../../virtual-machines/managed-disks-overview.md)를 참조하세요.
 
 * <a id="get-started"></a>
   **Azure Files 사용을 시작하려면 어떻게 해야 하나요?**  
@@ -77,13 +77,14 @@ ms.locfileid: "88037136"
     > [!NOTE]
     > Blob 스토리지 계정 또는 *프리미엄* 범용(GPv1 또는 GPv2) 스토리지 계정에서 Azure 파일 공유를 만들 수 없습니다. 표준 Azure 파일 공유는 *표준* 범용 계정에만 생성되어야 하며 프리미엄 Azure 파일 공유는 FileStorage 스토리지 계정에만 생성되어야 합니다. *프리미엄* 범용(GPv1 및 GPv2) 스토리지 계정은 프리미엄 페이지 Blob 전용입니다. 
 
+* <a id="file-locking"></a>
+  **파일 잠금을 지원 Azure Files?**  
+    예, Azure Files는 SMB/Windows 스타일 파일 잠금을 완벽하게 지원합니다. [세부 정보를 참조하세요](https://docs.microsoft.com/rest/api/storageservices/managing-file-locks).
+
 * <a id="give-us-feedback"></a>
   **Azure Files에 특정 기능이 추가되는 것을 정말 보고 싶습니다. 추가해줄 수 있나요?**  
     Azure Files 팀은 당사 서비스에 대한 여러분의 모든 의견을 환영합니다. [Azure Files UserVoice](https://feedback.azure.com/forums/217298-storage/category/180670-files)에서 기능 요청에 투표하세요. 많은 새로운 기능으로 고객에게 만족을 드리고 싶습니다.
 
-  **Azure Files는 파일 잠금을 지원하나요?**  
-    예, Azure Files는 SMB/Windows 스타일 파일 잠금을 완벽하게 지원합니다. [세부 정보를 참조하세요](https://docs.microsoft.com/rest/api/storageservices/managing-file-locks). 
-    
 ## <a name="azure-file-sync"></a>Azure 파일 동기화
 
 * <a id="afs-region-availability"></a>
@@ -208,6 +209,13 @@ ms.locfileid: "88037136"
 **Azure Files는 어떤 데이터 규정 준수 정책을 지원하나요?**  
 
    Azure Files는 Azure Storage의 다른 스토리지 서비스에서 사용되는 동일한 스토리지 아키텍처를 기반으로 하여 실행됩니다. Azure Files는 다른 Azure Storage 서비스에서 사용되는 동일한 데이터 규정 준수 정책을 적용합니다. Azure Storage 데이터 규정 준수에 대한 자세한 내용은 [Azure Storage 준수 제품](https://docs.microsoft.com/azure/storage/common/storage-compliance-offerings)을 참조하고, [Microsoft Trust Center](https://microsoft.com/trustcenter/default.aspx)로 이동하여 참조할 수 있습니다.
+
+* <a id="file-auditing"></a>
+**Azure Files에서 파일 액세스 및 변경 내용을 감사 하려면 어떻게 해야 하나요?**
+
+  Azure Files에 대 한 감사 기능을 제공 하는 두 가지 옵션이 있습니다.
+  - 사용자가 직접 Azure 파일 공유에 액세스 하는 경우 [Azure Storage 로그 (미리 보기)](https://docs.microsoft.com/azure/storage/common/monitor-storage?tabs=azure-powershell#logs-in-azure-monitor-preview) 를 사용 하 여 파일 변경 내용 및 사용자 액세스를 추적할 수 있습니다. 이러한 로그는 문제 해결을 위해 사용할 수 있으며, 요청은 최상의 노력을 기반으로 기록 됩니다.
+  - 사용자가 Azure File Sync 에이전트가 설치 된 Windows Server를 통해 Azure 파일 공유에 액세스 하는 경우 [감사 정책](https://docs.microsoft.com/windows/security/threat-protection/auditing/apply-a-basic-audit-policy-on-a-file-or-folder) 또는 타사 제품을 사용 하 여 Windows server에서 파일 변경 내용 및 사용자 액세스를 추적 합니다. 
    
 ### <a name="ad-ds--azure-ad-ds-authentication"></a>AD DS & Azure AD DS 인증
 * <a id="ad-support-devices"></a>
@@ -274,7 +282,6 @@ ms.locfileid: "88037136"
 **Get/Set/Copy directory/file Windows Acl을 지 원하는 REST Api가 있나요?**
 
     예, [2019-07-07](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#version-2019-07-07) 이상의 REST API를 사용하는 경우 디렉터리 또는 파일의 NTFS ACL을 가져오거나 설정하거나 복사하는 REST API를 지원합니다. REST 기반 도구: [AzCopy v 10.4 +](https://github.com/Azure/azure-storage-azcopy/releases)에서 Windows acl 유지도 지원 합니다.
-
 
 ## <a name="on-premises-access"></a>온-프레미스 액세스
 

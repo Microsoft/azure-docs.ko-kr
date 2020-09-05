@@ -10,12 +10,13 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: e650529f3adb998ce683354565acdeb3928b50c3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bec31f830adddfc7251ce36e13ef0bfaa0af7638
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72931766"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88931712"
 ---
 # <a name="moderate-with-custom-image-lists-in-c"></a>C#에서 사용자 지정 이미지 목록을 사용하여 조정
 
@@ -34,7 +35,7 @@ ms.locfileid: "72931766"
 
 이 가이드의 콘솔 응용 프로그램에서는 이미지 목록 API를 사용 하 여 수행할 수 있는 작업 중 일부를 시뮬레이션 합니다.
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다. 
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다. 
 
 ## <a name="sign-up-for-content-moderator-services"></a>Content Moderator 서비스 등록
 
@@ -72,7 +73,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Content Moderator 클라이언트 만들기
 
-다음 코드를 추가하여 구독에 대한 Content Moderator 클라이언트를 만듭니다. 및 `CMSubscriptionKey` 필드 `AzureEndpoint` 를 끝점 URL 및 구독 키의 값으로 업데이트 합니다. Azure Portal에서 리소스의 **빠른 시작** 탭에서 찾을 수 있습니다.
+다음 코드를 추가하여 구독에 대한 Content Moderator 클라이언트를 만듭니다. `AzureEndpoint`및 필드를 `CMSubscriptionKey` 끝점 URL 및 구독 키의 값으로 업데이트 합니다. Azure Portal에서 리소스의 **빠른 시작** 탭에서 찾을 수 있습니다.
 
 ```csharp
 /// <summary>

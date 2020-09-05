@@ -3,12 +3,12 @@ title: Azure Service Fabric 클러스터에서 인증서 관리
 description: Service Fabric 클러스터에서 새 인증서를 추가, 교체 및 제거하는 방법을 설명합니다.
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.openlocfilehash: 43e9c95e0fb8484f7b24c5a0c409d3aa6a68eabc
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: b1ccf83e666f9106a31809ff41d55062826be78c
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658376"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869765"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Azure에서 서비스 패브릭 클러스터에 대한 인증서 추가 또는 제거
 Service Fabric이 X.509 인증서를 사용하는 방법을 숙지하고 [클러스터 보안 시나리오](service-fabric-cluster-security.md)를 읽어보는 것이 좋습니다. 다음 과정으로 진행하기 전에 클러스터 인증서가 무엇이며 어떤 용도로 사용되는지를 이해해야 합니다.
@@ -260,7 +260,7 @@ Get-ServiceFabricClusterHealth
 
 관리자 또는 읽기 전용 등, 두 종류의 클라이언트 인증서를 추가할 수 있습니다. 그런 다음 이 인증서를 사용하여 클러스터에서의 관리자 작업과 쿼리 작업에 대한 액세스를 제어합니다. 기본적으로 클러스터 인증서는 허용된 관리자 인증서 목록에 추가됩니다.
 
-클라이언트 수를 원하는 대로 지정할 수 있습니다. 추가/삭제될 때마다 Service Fabric 클러스터에서 구성이 업데이트됩니다.
+원하는 수의 클라이언트 인증서를 지정할 수 있습니다. 각 추가/삭제는 Service Fabric 클러스터에 대 한 구성 업데이트를 발생 합니다.
 
 
 ### <a name="adding-client-certificates---admin-or-read-only-via-portal"></a>포털을 통해 관리자 또는 읽기 전용 클라이언트 인증서 추가

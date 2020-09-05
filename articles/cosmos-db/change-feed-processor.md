@@ -8,12 +8,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 4325f75ac8181e088d64e53d3f65e085a09c0224
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 3a802cc3d6178302445e0c31c52785d00207d0bd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85119412"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998546"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Azure Cosmos DB의 변경 피드 프로세서
 
@@ -95,11 +96,23 @@ ms.locfileid: "85119412"
 
 Cosmos 컨테이너 내부 및 외부의 데이터 이동은 항상 RU를 사용하므로 사용된 RU 요금이 청구됩니다. 임대 컨테이너에서 사용되는 RU 요금이 청구됩니다.
 
+## <a name="where-to-host-the-change-feed-processor"></a>변경 피드 프로세서를 호스트할 위치
+
+변경 피드 프로세서는 장기 실행 프로세스나 작업을 지 원하는 모든 플랫폼에서 호스팅될 수 있습니다.
+
+* 연속 실행 중인 [Azure WebJob](https://docs.microsoft.com/learn/modules/run-web-app-background-task-with-webjobs/).
+* [Azure 가상 컴퓨터](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs#azure-virtual-machines)의 프로세스입니다.
+* [Azure Kubernetes Service](https://docs.microsoft.com/azure/architecture/best-practices/background-jobs#azure-kubernetes-service)의 백그라운드 작업입니다.
+* [ASP.NET 호스 티 드 서비스](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services)입니다.
+
+변경 피드 프로세서는 수명이 짧은 환경에서 실행 될 수 있지만, 임대 컨테이너는 상태를 유지 하기 때문에 이러한 환경의 시작 및 중지 주기는 환경을 시작할 때마다 프로세서를 시작 하는 오버 헤드로 인해 알림을 수신 하는 지연을 추가 합니다.
+
 ## <a name="additional-resources"></a>추가 리소스
 
 * [Azure Cosmos DB SDK](sql-api-sdk-dotnet.md)
-* [GitHub의 사용 샘플](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
-* [GitHub의 추가 샘플](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
+* [GitHub에서 샘플 응용 프로그램 완료](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
+* [GitHub의 추가 사용 샘플](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
+* [변경 피드 프로세서에 대 한 Cosmos DB 워크숍 랩](https://azurecosmosdb.github.io/labs/dotnet/labs/08-change_feed_with_azure_functions.html#consume-cosmos-db-change-feed-via-the-change-feed-processor)
 
 ## <a name="next-steps"></a>다음 단계
 

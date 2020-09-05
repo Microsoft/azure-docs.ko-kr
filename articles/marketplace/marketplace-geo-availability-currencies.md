@@ -7,12 +7,12 @@ ms.topic: reference
 author: keferna
 ms.author: keferna
 ms.date: 07/29/2020
-ms.openlocfilehash: bf6215bd9225292f7b85ed6d4c4566cd4ee860b7
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 2ff8d962479188ddf324dc5ff75d22eac4fed3d6
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87902102"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826772"
 ---
 # <a name="geographic-availability-and-currency-support-for-commercial-marketplace"></a>상업용 마켓플레이스의 지리적 가용성 및 통화 지원
 
@@ -172,18 +172,21 @@ ms.locfileid: "87902102"
 
 ## <a name="how-we-convert-currency"></a>통화를 변환 하는 방법
 
-모든 유료 제품 형식에 대해 Isv는 USD로 가격을 입력 하거나 현지 통화로 가격을 업로드 하는 옵션을 제공 합니다. USD에 입력 된 가격은 페이지가 저장 될 때 자동으로 현지 통화로 변환 됩니다. 파트너 센터에서 사용 하는 요금은 매일 업데이트 됩니다. Isv는 가격을 내보내고 변환 된 항목을 검토할 수 있습니다.
+모든 유료 제품 유형에 대해 USD로 가격을 입력 하거나 현지 통화로 가격을 업로드 하는 옵션을 선택할 수 있습니다. USD에 입력 된 가격은 페이지가 저장 될 때 자동으로 현지 통화로 변환 됩니다. 파트너 센터에서 사용 하는 요금은 매일 업데이트 됩니다. 가격을 내보내고 변환 된 항목을 검토할 수 있습니다.
 
 게시 하기 전에 가격을 조정 하려면 가격 책정 스프레드시트를 내보내고 수정한 다음 변경 내용으로 업로드 하면 됩니다.
 
 > [!NOTE]
 > 플랜의 시장 가격이 게시된 후에는 나중에 변경할 수 없습니다. 가격을 게시하기 직전에 가격이 적절한지 확인하려면 가격 책정 스프레드시트를 내보내고 각 시장의 가격을 검토합니다.
 
-## <a name="rate-changes"></a>변경 률
+제품 가격은 항상 현지 통화로 고객에 게 표시 됩니다. 파트너 센터에서 선택한 가격은 파트너 센터에 가격을 저장할 때의 환율에 따라 고객의 현지 통화로 변환 됩니다. 제품을 다시 게시 하지 않는 한 온라인 상점에서 고객에 게 표시 되는 가격은 변경 되지 않습니다.
 
-현지 가격을 계산 하는 데 사용 하는 요금은 매일 업데이트 됩니다. 이 계산은 ISV가 페이지를 저장할 때 수행 되며 게시 전에 가격을 내보내고 검토 하 여 모든 요금을 검토할 수 있습니다.
+Microsoft는 현지 통화로 고객의 지불을 받고 현지 통화로 사용자를 지불 합니다. Microsoft는 구매한 날의 환율을 사용 하 여 고객 현지 통화를 현지 통화로 변환 합니다.
 
-### <a name="retrieving-currency-information-by-api"></a>API로 통화 정보 검색
+> [!NOTE]
+> Microsoft는 Microsoft 국채 요금을 사용 하 여 제품 가격을 변환 합니다.
+
+## <a name="retrieving-currency-information-by-api"></a>API로 통화 정보 검색
 
 API를 사용 하 여 개별 가격 (설정 된 방법에 따라, 저장 된 날짜의 환율에 따라 영향을 받을 수 있음)은 API를 사용 하 여 검색할 수 있습니다. 통화 정보는 사용할 수 없습니다.
 
@@ -193,7 +196,7 @@ API를 사용 하 여 개별 가격 (설정 된 방법에 따라, 저장 된 날
 - [Azure 컨테이너 제안 만들기](partner-center-portal/create-azure-container-offer.md)
 - [Azure 가상 머신 제품 만들기](partner-center-portal/azure-vm-create-offer.md)
 - [컨설팅 서비스 제품 만들기](partner-center-portal/create-consulting-service-offer.md)
-- [고객 Engagement & PowerApps 제품에 대 한 Dynamics 365 만들기](partner-center-portal/create-new-customer-engagement-offer.md)
+- [Dynamics 365 for Customer Engagement 및 PowerApps 제품 만들기](partner-center-portal/create-new-customer-engagement-offer.md)
 - [Dynamics 365 for Operations 제품 만들기](partner-center-portal/create-new-operations-offer.md)
 - [Dynamics 365 Business Central 제품 만들기](partner-center-portal/create-new-business-central-offer.md)
 - [IoT Edge 모듈 제품 만들기](partner-center-portal/azure-iot-edge-module-creation.md)

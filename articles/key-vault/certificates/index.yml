@@ -11,12 +11,12 @@ metadata:
   author: msmbaldwin
   ms.author: mbaldwin
   ms.date: 04/07/2020
-  ms.openlocfilehash: 365f0b07370937a73d3925373be0be544a182865
-  ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+  ms.openlocfilehash: 5a716ad70a31342467eb0944b3e6d1f5d80d5166
+  ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87386778"
+  ms.lasthandoff: 08/27/2020
+  ms.locfileid: "89000909"
 landingContent:
 - title: 인증서
   linkLists:
@@ -46,6 +46,18 @@ landingContent:
       url: quick-create-python.md
     - text: Key Vault에서 인증서 가져오기
       url: tutorial-import-certificate.md
+- title: Key Vault 인증서용 클라이언트 라이브러리
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: .NET 클라이언트 라이브러리
+      url: /dotnet/api/azure.security.keyvault.certificates?view=azure-dotnet
+    - text: Python 클라이언트 라이브러리
+      url: /python/api/overview/azure/keyvault-certificates-readme?view=azure-python
+    - text: Java 클라이언트 라이브러리
+      url: https://apidocs.chargebee.com/docs/api?lang=java#client_library
+    - text: Node.js 클라이언트 라이브러리
+      url: /javascript/api/@azure/keyvault-certificates/?view=azure-node-latest
 - title: Key Vault에 대한 자세한 정보
   linkLists:
   - linkListType: overview

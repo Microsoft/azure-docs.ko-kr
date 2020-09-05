@@ -1,14 +1,14 @@
 ---
 title: 모범 사례
 description: Azure Batch 솔루션을 개발하기 위한 모범 사례와 유용한 팁에 대해 알아봅니다.
-ms.date: 07/30/2020
+ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 535deebd0ba683d9387408ad081d165a504c91d1
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: ca6e491586fd653f39da7466ea116109000facd6
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87474906"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146541"
 ---
 # <a name="azure-batch-best-practices"></a>Azure Batch 모범 사례
 
@@ -29,12 +29,12 @@ ms.locfileid: "87474906"
     개별 노드를 항상 사용할 수 있는 것은 아닙니다. 흔치 않은 경우이지만 하드웨어 오류, 운영 체제 업데이트 및 기타 여러 가지 문제로 인해 개별 노드가 오프라인 상태가 될 수 있습니다. Batch 워크로드에 결정적이고 보장된 진행률이 필요한 경우 여러 노드가 있는 풀을 할당해야 합니다.
 
 - **리소스 이름을 다시 사용하지 않습니다.**
-    Batch 리소스(작업, 풀 등)는 시간이 지남에 따라 변하는 경우가 많습니다. 예를 들어 월요일에 풀을 만들고, 화요일에 풀을 삭제한 다음, 목요일에 다른 풀을 만들 수 있습니다. 새로 만드는 각 리소스에는 이전에 사용하지 않은 고유한 이름을 지정해야 합니다. 이 작업은 GUID를 전체 리소스 이름 또는 그 일부로 사용하거나 리소스를 만든 시간을 리소스 이름에 포함하여 수행할 수 있습니다. Batch는 [DisplayName](/dotnet/api/microsoft.azure.batch.jobspecification.displayname?view=azure-dotnet)을 지원합니다. 이는 실제 리소스 ID가 그다지 친숙하지 않은 리소스인 경우에도 사람이 읽을 수 있는 이름을 지정하는 데 사용할 수 있습니다. 고유한 이름을 사용하면 로그 및 메트릭에서 작업을 수행한 특정 리소스를 쉽게 구분할 수 있습니다. 또한 리소스에 대한 지원 사례를 제출해야 하는 경우 모호성도 제거됩니다.
+    Batch 리소스(작업, 풀 등)는 시간이 지남에 따라 변하는 경우가 많습니다. 예를 들어 월요일에 풀을 만들고, 화요일에 풀을 삭제한 다음, 목요일에 다른 풀을 만들 수 있습니다. 새로 만드는 각 리소스에는 이전에 사용하지 않은 고유한 이름을 지정해야 합니다. 이 작업은 GUID를 전체 리소스 이름 또는 그 일부로 사용하거나 리소스를 만든 시간을 리소스 이름에 포함하여 수행할 수 있습니다. Batch는 [DisplayName](/dotnet/api/microsoft.azure.batch.jobspecification.displayname)을 지원합니다. 이는 실제 리소스 ID가 그다지 친숙하지 않은 리소스인 경우에도 사람이 읽을 수 있는 이름을 지정하는 데 사용할 수 있습니다. 고유한 이름을 사용하면 로그 및 메트릭에서 작업을 수행한 특정 리소스를 쉽게 구분할 수 있습니다. 또한 리소스에 대한 지원 사례를 제출해야 하는 경우 모호성도 제거됩니다.
 
 - **풀 유지 관리 및 실패 시 연속성.**
     작업에서 풀을 동적으로 사용하는 것이 가장 좋습니다. 작업에서 동일한 풀을 모든 대상에 사용하는 경우 풀에 문제가 있으면 작업이 실행되지 않을 수 있습니다. 이는 시간이 중요한 워크로드에 특히 중요합니다. 이 문제를 해결하려면 각 작업을 예약할 때 풀을 동적으로 선택하거나 만들거나, 비정상 풀을 무시할 수 있도록 풀 이름을 재정의하는 방법을 사용합니다.
 
-- **풀 유지 관리 및 실패 시 비즈니스 연속성.** 내부 오류, 용량 제약 조건 등과 같이 풀이 필요한 크기로 조정되지 않도록 하는 여러 가지 원인이 있을 수 있습니다. 따라서 필요한 경우 다른 풀(다른 VM 크기일 수 있음 - Batch에서 [UpdateJob](/dotnet/api/microsoft.azure.batch.protocol.joboperationsextensions.update?view=azure-dotnet)을 통해 이를 지원함)에서 작업의 대상을 변경할 수 있도록 준비해야 합니다. 정적 풀 ID는 절대로 삭제되거나 변경되지 않는다는 가정 하에 사용하지 않도록 합니다.
+- **풀 유지 관리 및 실패 시 비즈니스 연속성.** 내부 오류, 용량 제약 조건 등과 같이 풀이 필요한 크기로 조정되지 않도록 하는 여러 가지 원인이 있을 수 있습니다. 따라서 필요한 경우 다른 풀(다른 VM 크기일 수 있음 - Batch에서 [UpdateJob](/dotnet/api/microsoft.azure.batch.protocol.joboperationsextensions.update)을 통해 이를 지원함)에서 작업의 대상을 변경할 수 있도록 준비해야 합니다. 정적 풀 ID는 절대로 삭제되거나 변경되지 않는다는 가정 하에 사용하지 않도록 합니다.
 
 ### <a name="pool-lifetime-and-billing"></a>풀 수명 및 청구
 
@@ -57,9 +57,13 @@ Batch 풀에서 Azure의 가동 중지 시간 이벤트를 경험할 수 있습�
 
 노드가 실패하면 Batch에서 자동으로 사용자를 대신하여 이러한 컴퓨팅 노드를 복구하려고 시도합니다. 이 경우 복구된 노드에서 실행되는 모든 태스크를 다시 예약하는 작업이 트리거될 수 있습니다. 중단되는 태스크에 대한 자세한 내용은 [다시 시도 디자인](#design-for-retries-and-re-execution)을 참조하세요.
 
+### <a name="custom-image-pools"></a>사용자 지정 이미지 풀
+
+Virtual Machine 구성을 사용하여 Azure Batch 풀을 만들 경우 풀에서 각 컴퓨팅 노드에 대해 운영 체제를 제공하는 VM 이미지를 지정합니다. 지원 되는 Azure Marketplace 이미지를 사용 하 여 풀을 만들거나 [공유 이미지 갤러리 이미지를 사용 하 여 사용자 지정 이미지를 만들](batch-sig-images.md)수 있습니다. [관리 되는 이미지](batch-custom-images.md) 를 사용 하 여 사용자 지정 이미지 풀을 만들 수도 있지만 가능 하면 항상 공유 이미지 갤러리를 사용 하 여 사용자 지정 이미지를 만드는 것이 좋습니다. 공유 이미지 갤러리를 사용 하면 풀을 더 빠르게 프로 비전 하 고, 많은 양의 Vm을 확장 하 고, Vm을 프로 비전 할 때 안정성을 높일 수 있습니다.
+
 ### <a name="third-party-images"></a>타사 이미지
 
-풀은 Azure Marketplace에 게시 된 타사 이미지를 사용 하 여 만들 수 있습니다. 사용자 구독 모드 Batch 계정을 사용 하면 특정 타사 이미지를 사용 하 여 풀을 만들 때 "marketplace 구매 자격 확인으로 인해 할당 하지 못했습니다." 라는 오류가 표시 될 수 있습니다. 이 오류를 해결 하려면 이미지 게시자가 설정한 약관에 동의 합니다. [Azure Powershell](https://docs.microsoft.com/powershell/module/azurerm.marketplaceordering/set-azurermmarketplaceterms?view=azurermps-6.13.0) 또는 [Azure CLI](https://docs.microsoft.com/cli/azure/vm/image/terms?view=azure-cli-latest)를 사용 하 여이 작업을 수행할 수 있습니다.
+풀은 Azure Marketplace에 게시 된 타사 이미지를 사용 하 여 만들 수 있습니다. 사용자 구독 모드 Batch 계정을 사용 하면 특정 타사 이미지를 사용 하 여 풀을 만들 때 "marketplace 구매 자격 확인으로 인해 할당 하지 못했습니다." 라는 오류가 표시 될 수 있습니다. 이 오류를 해결 하려면 이미지 게시자가 설정한 약관에 동의 합니다. [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.marketplaceordering/set-azurermmarketplaceterms) 또는 [Azure CLI](https://docs.microsoft.com/cli/azure/vm/image/terms)를 사용 하 여이 작업을 수행할 수 있습니다.
 
 ### <a name="azure-region-dependency"></a>Azure 지역 종속성
 
@@ -79,7 +83,7 @@ Batch 풀에서 Azure의 가동 중지 시간 이벤트를 경험할 수 있습�
 
 Batch 작업의 수명은 시스템에서 해당 작업이 삭제될 때까지 무한합니다. 해당 상태는 더 많은 태스크를 예약할 수 있는지 여부를 나타냅니다.
 
-명시적으로 종료되지 않으면 작업이 자동으로 완료됨 상태로 전환되지 않습니다. 이는 [onAllTasksComplete](/dotnet/api/microsoft.azure.batch.common.onalltaskscomplete?view=azure-dotnet) 속성 또는 [maxWallClockTime](/rest/api/batchservice/job/add#jobconstraints)을 통해 자동으로 트리거될 수 있습니다.
+명시적으로 종료되지 않으면 작업이 자동으로 완료됨 상태로 전환되지 않습니다. 이는 [onAllTasksComplete](/dotnet/api/microsoft.azure.batch.common.onalltaskscomplete) 속성 또는 [maxWallClockTime](/rest/api/batchservice/job/add#jobconstraints)을 통해 자동으로 트리거될 수 있습니다.
 
 기본 [활성 작업 및 작업 일정 할당량](batch-quota-limit.md#resource-quotas)이 있습니다. 완료됨 상태의 작업 및 작업 일정은 이 할당량에 계산되지 않습니다.
 
@@ -95,7 +99,7 @@ Batch는 [OutputFiles](batch-task-output-files.md) 및 다양한 공유 파일 �
 
 ### <a name="manage-task-lifetime"></a>태스크 수명 관리
 
-태스크가 더 이상 필요하지 않은 경우 삭제하거나 [retentionTime](/dotnet/api/microsoft.azure.batch.taskconstraints.retentiontime?view=azure-dotnet) 태스크 제약 조건을 설정합니다. `retentionTime`이 설정되면 `retentionTime`이 만료될 때 태스크에서 사용한 디스크 공간을 Batch에서 자동으로 정리합니다.
+태스크가 더 이상 필요하지 않은 경우 삭제하거나 [retentionTime](/dotnet/api/microsoft.azure.batch.taskconstraints.retentiontime) 태스크 제약 조건을 설정합니다. `retentionTime`이 설정되면 `retentionTime`이 만료될 때 태스크에서 사용한 디스크 공간을 Batch에서 자동으로 정리합니다.
 
 태스크를 삭제하는 경우 두 가지 작업이 수행됩니다. 이렇게 하면 태스크가 작업에 쌓이지 않습니다. 이로 인해 완료됨 태스크를 통해 필터링해야 하므로 관심 있는 태스크를 쿼리하거나 검색하는 것이 더 어려워질 수 있습니다. 또한 노드에서 해당 태스크 데이터를 정리합니다(`retentionTime`에 아직 도달하지 않은 경우). 이렇게 하면 노드에서 태스크 데이터를 채우지 않고 디스크 공간이 부족하지 않도록 할 수 있습니다.
 
@@ -109,7 +113,7 @@ Batch는 노드에 대한 과도한 구독 태스크를 지원합니다(노드�
 
 ### <a name="design-for-retries-and-re-execution"></a>다시 시도 및 다시 실행 디자인
 
-Batch는 태스크를 자동으로 다시 시도할 수 있습니다. 사용자 제어 다시 시도 및 내부 다시 시도의 두 가지 유형이 있습니다. 사용자 제어 다시 시도는 태스크의 [maxTaskRetryCount](/dotnet/api/microsoft.azure.batch.taskconstraints.maxtaskretrycount?view=azure-dotnet)로 지정됩니다. 태스크에 지정된 프로그램이 0이 아닌 종료 코드를 사용하여 종료되면 태스크가 `maxTaskRetryCount` 값까지 다시 시도됩니다.
+Batch는 태스크를 자동으로 다시 시도할 수 있습니다. 사용자 제어 다시 시도 및 내부 다시 시도의 두 가지 유형이 있습니다. 사용자 제어 다시 시도는 태스크의 [maxTaskRetryCount](/dotnet/api/microsoft.azure.batch.taskconstraints.maxtaskretrycount)로 지정됩니다. 태스크에 지정된 프로그램이 0이 아닌 종료 코드를 사용하여 종료되면 태스크가 `maxTaskRetryCount` 값까지 다시 시도됩니다.
 
 흔치 않은 경우이지만 태스크가 실행되는 동안 내부 상태를 업데이트할 수 없거나 노드에 오류가 발생하는 것과 같이 컴퓨팅 노드의 오류로 인해 태스크를 내부적으로 다시 시도할 수 있습니다. 태스크를 포기하고 Batch(잠재적으로 다른 컴퓨팅 노드)에서 다시 예약할 태스크를 지연시키기 전에 가능한 경우 태스크는 내부 제한까지 동일한 컴퓨팅 노드에서 다시 시도됩니다.
 
@@ -188,7 +192,7 @@ UDR(사용자 정의 경로)의 경우 시간이 지남에 따라 주소가 변�
 
 ### <a name="retry-requests-automatically"></a>자동으로 요청 다시 시도
 
-Batch 서비스 클라이언트에는 서비스 유지 관리 기간 동안만이 아니라 정상 작업 중에도 요청을 자동으로 다시 시도할 수 있는 적절한 다시 시도 정책이 있어야 합니다. 이러한 다시 시도 정책에는 5분 이상의 간격이 적용되어야 합니다. 자동 다시 시도 기능은 [.NET RetryPolicyProvider 클래스](/dotnet/api/microsoft.azure.batch.retrypolicyprovider?view=azure-dotnet)와 같은 다양한 Batch SDK와 함께 제공됩니다.
+Batch 서비스 클라이언트에는 서비스 유지 관리 기간 동안만이 아니라 정상 작업 중에도 요청을 자동으로 다시 시도할 수 있는 적절한 다시 시도 정책이 있어야 합니다. 이러한 다시 시도 정책에는 5분 이상의 간격이 적용되어야 합니다. 자동 다시 시도 기능은 [.NET RetryPolicyProvider 클래스](/dotnet/api/microsoft.azure.batch.retrypolicyprovider)와 같은 다양한 Batch SDK와 함께 제공됩니다.
 
 ### <a name="static-public-ip-addresses"></a>고정 공용 IP 주소
 

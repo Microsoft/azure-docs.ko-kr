@@ -23,7 +23,7 @@
             - name: 데이터 과학 Virtual Machine
               href: ../../machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Machine Learning
-              href: ../../machine-learning/tutorial-resource-manager-workspace.md?toc=/azure/azure-resource-manager/templates/toc.json
+              href: ../../machine-learning/how-to-create-workspace-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: 분석
           items:
             - name: Analysis Services
@@ -283,7 +283,7 @@
           href: template-expressions.md
         - name: 매개 변수
           href: template-parameters.md
-        - name: 변수
+        - name: variables
           href: template-variables.md
         - name: 사용자 정의 함수
           href: template-user-defined-functions.md

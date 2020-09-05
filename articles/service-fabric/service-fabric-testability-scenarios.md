@@ -5,12 +5,13 @@ author: motanv
 ms.topic: conceptual
 ms.date: 10/1/2019
 ms.author: motanv
-ms.openlocfilehash: 336cd048704055e07de1a20f0694bd5816265a8a
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 17f0af8c041042ddceccc1f8701e44ab8522840f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86245571"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022125"
 ---
 # <a name="testability-scenarios"></a>테스트 용이성 시나리오
 클라우드 인프라 같은 대규모 분산 시스템은 본질적으로 불안정합니다. Azure 서비스 패브릭은 개발자에게 불안정한 인프라를 기반으로 실행되는 서비스를 작성할 수 있는 기능을 제공합니다. 고품질 서비스를 작성하려면 개발자는 이처럼 불안정한 인프라에서 서비스의 안정성을 테스트하도록 유도할 수 있어야 합니다.
@@ -124,7 +125,7 @@ class Test
 
 PowerShell
 
-Service Fabric Powershell 모듈에는 비정상 상황 시나리오를 시작 하는 두 가지 방법이 포함 되어 있습니다. `Invoke-ServiceFabricChaosTestScenario`는 클라이언트 기반 이며, 클라이언트 컴퓨터가 테스트를 통해 중간에 종료 되는 경우 더 이상 오류가 발생 하지 않습니다. 또는 컴퓨터 종료 시 테스트 실행을 유지 하는 일련의 명령이 있습니다. `Start-ServiceFabricChaos`Faultanalysisservice의입니다 라는 상태 저장 및 안정적인 시스템 서비스를 사용 하 여 TimeToRun가 가동 될 때까지 오류가 계속 해 서 발생 하는지 확인 합니다. `Stop-ServiceFabricChaos`를 사용 하 여 시나리오를 수동으로 중지 하 고 `Get-ServiceFabricChaosReport` 보고서를 가져올 수 있습니다. 자세한 내용은 [Azure Service Fabric Powershell 참조](/powershell/module/servicefabric/?view=azureservicefabricps) 및 [Service Fabric 클러스터에서 비정상 상황 제어 유도](service-fabric-controlled-chaos.md)를 참조 하세요.
+Service Fabric Powershell 모듈에는 비정상 상황 시나리오를 시작 하는 두 가지 방법이 포함 되어 있습니다. `Invoke-ServiceFabricChaosTestScenario` 는 클라이언트 기반 이며, 클라이언트 컴퓨터가 테스트를 통해 중간에 종료 되는 경우 더 이상 오류가 발생 하지 않습니다. 또는 컴퓨터 종료 시 테스트 실행을 유지 하는 일련의 명령이 있습니다. `Start-ServiceFabricChaos` Faultanalysisservice의입니다 라는 상태 저장 및 안정적인 시스템 서비스를 사용 하 여 TimeToRun가 가동 될 때까지 오류가 계속 해 서 발생 하는지 확인 합니다. `Stop-ServiceFabricChaos` 를 사용 하 여 시나리오를 수동으로 중지 하 고 `Get-ServiceFabricChaosReport` 보고서를 가져올 수 있습니다. 자세한 내용은 [Azure Service Fabric Powershell 참조](/powershell/module/servicefabric/?view=azureservicefabricps) 및 [Service Fabric 클러스터에서 비정상 상황 제어 유도](service-fabric-controlled-chaos.md)를 참조 하세요.
 
 ```powershell
 $connection = "localhost:19000"

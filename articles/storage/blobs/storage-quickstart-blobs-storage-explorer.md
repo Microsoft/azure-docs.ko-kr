@@ -1,7 +1,7 @@
 ---
 title: 빠른 시작 - Azure Storage Explorer를 사용하여 Blob 만들기
 titleSuffix: Azure Storage
-description: 이 빠른 시작에서는 Azure Storage Explorer를 사용하여 컨테이너와 Blob을 만들고, 로컬 컴퓨터에 Blob을 다운로드하고, 컨테이너의 모든 Blob을 확인하는 방법에 대해 알아봅니다.
+description: Azure Storage Explorer를 사용하여 컨테이너와 Blob을 만들고, 로컬 컴퓨터에 Blob을 다운로드하고, 컨테이너의 모든 Blob을 확인하는 방법에 대해 알아봅니다.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,12 +9,12 @@ ms.subservice: blobs
 ms.topic: quickstart
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 3ed0885152b15ef365d0e02c198b684bedd2f95b
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f8768a1b2542eb0461ef0c50c96e22c80eced57a
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083653"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836465"
 ---
 # <a name="quickstart-use-azure-storage-explorer-to-create-a-blob"></a>빠른 시작: Azure Storage Explorer를 사용하여 Blob 만들기
 

@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - vnet 간 VPN 구성 | Microsoft Docs
-description: 사이트 간 VPN을 구성합니다.
+description: PowerShell 스크립트를 사용하여 사이트 간, VNet 간 VPN 게이트웨이 연결을 구성하는 방법을 알아봅니다.
 services: vpn-gateway
 documentationcenter: vpn-gateway
 author: kumudD
@@ -9,12 +9,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 01/09/2020
 ms.author: alzam
-ms.openlocfilehash: 5a69df3893a3bf32ca2af1be62744991346ee048
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 949c2b7810bc6b4f5a80b9932427f4aa3565794e
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87068367"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88030370"
 ---
 # <a name="use-powershell-to-configure-a-vnet-to-vnet-vpn-gateway-connection"></a>PowerShell을 사용하여 VNet-VNet VPN 게이트웨이 연결 구성
 

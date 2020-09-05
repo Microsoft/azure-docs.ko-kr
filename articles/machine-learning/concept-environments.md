@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: larryfr
 author: BlackMist
 ms.date: 07/08/2020
-ms.openlocfilehash: 828c8a33315f5a76eea780705e2cdf3c2871bd14
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cc4c39cf26f3ab8d1037222f967789bfbeca05ba
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87012810"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166776"
 ---
 # <a name="what-are-azure-machine-learning-environments"></a>Azure Machine Learning 환경 이란 무엇 인가요?
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -94,7 +94,7 @@ Azure Machine Learning 서비스는 환경 정의를 Docker 이미지 및 conda 
  * Conda 정의에 있는 Python 패키지 목록
  * Spark 정의의 패키지 목록 
 
-해시는 환경 이름 또는 버전에 종속 되지 않습니다. 환경 이름을 바꾸거나 기존 환경에 대 한 정확한 속성 및 패키지를 사용 하 여 새 환경을 만든 경우 해시 값은 동일 하 게 유지 됩니다. 그러나 Python 패키지를 추가 또는 제거 하거나 패키지 버전을 변경 하는 등 환경 정의를 변경 하면 해시 값이 변경 됩니다. 큐 레이트 환경을 변경 하면 해시가 무효화 되 고 새 "비 큐 레이트" 환경에서 결과가 발생 한다는 점에 유의 해야 합니다.
+해시는 환경 이름 또는 버전에 종속 되지 않습니다. 환경 이름을 바꾸거나 기존 환경에 대 한 정확한 속성 및 패키지를 사용 하 여 새 환경을 만든 경우 해시 값은 동일 하 게 유지 됩니다. 그러나 Python 패키지를 추가 또는 제거 하거나 패키지 버전을 변경 하는 등 환경 정의를 변경 하면 해시 값이 변경 됩니다. 환경에서 종속성 또는 채널의 순서를 변경 하면 새 환경이 생성 되므로 새 이미지 빌드가 필요 합니다. 큐 레이트 환경을 변경 하면 해시가 무효화 되 고 새 "비 큐 레이트" 환경에서 결과가 발생 한다는 점에 유의 해야 합니다.
 
 계산 된 해시 값은 작업 영역 및 전역 ACR (또는 로컬 실행의 경우 계산 대상)의 해시 값과 비교 됩니다. 일치 하는 항목이 있으면 캐시 된 이미지를 가져오고, 그렇지 않으면 이미지 빌드가 트리거됩니다. 캐시 된 이미지를 가져오는 기간에는 다운로드 시간이 포함 되지만 새로 빌드된 이미지를 가져오는 기간에는 빌드 시간과 다운로드 시간이 모두 포함 됩니다. 
 
@@ -105,7 +105,7 @@ Azure Machine Learning 서비스는 환경 정의를 Docker 이미지 및 conda 
 >[!IMPORTANT]
 > 예를 들어 고정 해제 된 패키지 종속성을 사용 하 여 환경을 만드는 경우 환경을 만들 때 ```numpy``` 설치 된 패키지 버전을 _at the time of environment creation_계속 사용 하 게 됩니다. 또한 일치 하는 정의가 있는 이후의 모든 환경은 이전 버전을 계속 사용 합니다. 
 
-패키지를 업데이트 하려면 이미지를 다시 작성 하는 예를 들어 버전 번호를 지정 ```numpy==1.18.1``` 합니다. 중첩 된 항목을 포함 한 새 종속성이 설치 되어 이전에 작업 중인 시나리오가 중단 될 수 있습니다.
+패키지를 업데이트 하려면 이미지를 다시 작성 하는 예를 들어 버전 번호를 지정 ```numpy==1.18.1``` 합니다. 중첩 된 항목을 포함 한 새 종속성이 설치 되어 이전에 작업 중인 시나리오가 중단 될 수 있습니다. 
 
 > [!WARNING]
 >  재현 가능성 [메서드는](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py#build-workspace--image-build-compute-none-) 캐시 된 이미지를 다시 작성 합니다 .이는 고정 되지 않은 패키지를 업데이트 하 고 해당 캐시 된 이미지에 해당 하는 모든 환경 정의에 대해를 중단 시킬 수 있습니다.

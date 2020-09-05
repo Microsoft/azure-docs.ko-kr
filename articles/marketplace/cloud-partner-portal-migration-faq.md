@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: fe909ba25191aa21e8a5bfa51c72690fd9c402eb
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 55b789363397945e01d02d76cb0e573660d18b67
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056553"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607498"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Cloud 파트너 포털에서 파트너 센터로 전환 하는 방법에 대 한 질문과 대답
 
@@ -20,17 +20,17 @@ Cloud 파트너 포털 파트너 센터로 전환 되었습니다. 파트너 센
 
 ## <a name="what-does-the-transition-to-partner-center-mean-for-me"></a>파트너 센터로 전환 하는 것은 무엇을 의미 하나요?
 
-파트너 센터에서 평소와 같이 비즈니스를 계속 진행할 수 있습니다.
+파트너 센터에서 비즈니스를 계속 진행할 수 있습니다.
 
 | 영역<img src="" width=200px> | 변경 |
 | --- | --- |
 | 계정 | 새 파트너 센터 계정을 만들 필요가 없습니다. 기존 Cloud 파트너 포털 자격 증명을 사용 하 여 파트너 센터에 로그인 할 수 있습니다. 그러면 이제 계정, 사용자, 사용 권한 및 청구를 관리할 수 있습니다. 게시 계약과 회사 프로필 정보는 지급 프로필 정보, 사용자 계정 및 사용 권한, 활성 제품 등의 새 파트너 센터 계정으로 마이그레이션됩니다. [파트너 센터의 상업 마켓플레이스 계정 관리](partner-center-portal/manage-account.md)에서 자세히 알아보세요. |
 | 제공 게시 및 제공 관리 환경 | 제품 데이터를 Cloud 파트너 포털에서 파트너 센터로 이동 했습니다. 이제 향상 된 사용자 환경 및 직관적인 인터페이스를 제공 하는 파트너 센터에서 귀하의 제품에 액세스 합니다. [상업적 marketplace에서 기존 제품을 업데이트](partner-center-portal/update-existing-offer.md)하는 방법을 알아봅니다. |
-| 상업적 marketplace에서 제품의 가용성 | 변경 내용이 없습니다. 제품이 상업적 marketplace에 살고 있는 경우 계속 해 서 라이브 상태로 유지 됩니다. |
+| 상업적 marketplace에서 제품의 가용성 | 변경 내용이 없습니다. 제품이 상업적 marketplace에 살고 있으면 계속 라이브 됩니다. |
 | 새로운 구매 및 배포 | 변경 내용이 없습니다. 고객은 중단 없이 제품을 계속 구매 하 고 배포할 수 있습니다. |
 | 지급 | 모든 구매 및 배포는 정상적으로 계속 청구 됩니다. [상업적 marketplace에서 지불 하는](partner-center-portal/get-paid.md)방법에 대해 자세히 알아보세요. |
 | 기존 [Cloud 파트너 포털 API와 API 통합](cloud-partner-portal-api-overview.md) | 기존 Cloud 파트너 포털 Api는 계속 지원 되 고 기존 통합은 계속 작동 합니다. 자세한 내용은 [CLOUD 파트너 포털 REST Api가 지원 되나요?](#are-the-cloud-partner-portal-rest-apis-still-supported) |
-| 분석 | 파트너 센터에서 분석을 확인 하 여 상업적 marketplace에서 판매를 지속적으로 모니터링 하 고, 성능을 평가 하 고, 제품을 최적화할 수 있습니다. CPP와 파트너 센터에서 분석 보고서가 표시 되는 방식에는 차이가 있습니다. 예를 들어, CPP의 **판매자 Insights** 에는 사용 빈도 기반 제공 및 비 사용량 기반 제안의 데이터를 표시 하는 **주문 & 사용** 탭이 있습니다. 반면 파트너 센터의 **주문** 페이지에는 SaaS 제품에 대 한 별도의 탭이 있습니다. [파트너 센터의 상업 marketplace에 대 한 액세스 분석 보고서](partner-center-portal/analytics.md)에서 자세히 알아보세요. |
+| 분석 | 파트너 센터에서 분석을 확인 하 여 상업적 marketplace에서 판매를 지속적으로 모니터링 하 고, 성능을 평가 하 고, 제품을 최적화할 수 있습니다. CPP와 파트너 센터에서 분석 보고서가 표시 되는 방식에는 차이가 있습니다. 예를 들어, CPP의 **판매자 Insights** 에는 사용 빈도 기반 제품 및 사용 불가능 기반 제안의 데이터를 표시 하는 **주문 & 사용** 탭이 있습니다. 반면 파트너 센터의 **주문** 페이지에는 SaaS 제품에 대 한 별도의 탭이 있습니다. [파트너 센터의 상업 marketplace에 대 한 액세스 분석 보고서](partner-center-portal/analytics.md)에서 자세히 알아보세요. |
 |||
 
 ## <a name="do-i-need-to-create-a-new-account-to-manage-my-offers-in-partner-center"></a>파트너 센터에서 내 제품을 관리 하는 새 계정을 만들어야 하나요?
@@ -135,7 +135,7 @@ Cloud 파트너 포털와 파트너 센터 간의 차이점은 다음과 같습�
 
 ### <a name="modular-publishing-capabilities"></a>모듈식 게시 기능
 
-파트너 센터는 항상 모든 업데이트를 한 번에 게시하는 대신 게시하려는 변경 내용을 선택할 수 있는 모듈식 게시 옵션을 제공합니다. 예를 들어 다음 화면에서는 게시 하도록 선택한 변경 내용만 **속성** 및 **제안 목록**에 적용 되는 변경 내용을 보여 줍니다. 미리 보기 페이지에서 변경한 내용은 게시 되지 않습니다.
+파트너 센터는 항상 모든 업데이트를 한 번에 게시하는 대신 게시하려는 변경 내용을 선택할 수 있는 모듈식 게시 옵션을 제공합니다. 예를 들어 다음 화면에서는 게시 하도록 선택한 변경 내용만 **속성** 및  **제안 목록**에 적용 되는 변경 내용을 보여 줍니다. 미리 보기 페이지에서 변경한 내용은 게시 되지 않습니다.
 
 [![파트너 센터 검토 및 게시 페이지를 보여 주는 스크린샷](media/cpp-pc-faq/review-page.png "파트너 센터 검토 및 게시 페이지를 표시 합니다.")](media/cpp-pc-faq/review-page.png#lightbox)
 
@@ -153,7 +153,7 @@ Cloud 파트너 포털와 파트너 센터 간의 차이점은 다음과 같습�
 
 [![스크린샷 파트너 센터 계획 페이지를 표시 합니다.](media/cpp-pc-faq/plans.png "파트너 센터 계획 페이지를 표시 합니다.")](media/cpp-pc-faq/plans.png#lightbox)
 
-또한 Cloud 파트너 포털의 **Marketplace** 또는 **Storefront Details** (컨설팅 서비스, Power BI 앱) 페이지에서 이전에 제공한 정보는 이제 파트너 센터의 **제품 목록** 페이지에서 수집 됩니다.
+또한 Cloud 파트너 포털의 **Marketplace** 또는 **Storefront Details**  (컨설팅 서비스, Power BI 앱) 페이지에서 이전에 제공한 정보는 이제 파트너 센터의 **제품 목록** 페이지에서 수집 됩니다.
 
 [![스크린샷 파트너 센터 제품 목록 페이지를 표시 합니다.](media/cpp-pc-faq/offer-listing.png "파트너 센터 제공 목록 페이지를 표시 합니다.")](media/cpp-pc-faq/offer-listing.png#lightbox)
 
@@ -181,6 +181,6 @@ Cloud 파트너 포털 Api는 파트너 센터와 통합 되며 계속 해 서 �
 
 | API <img src="" width=100px>| 변경 내용 설명 | 영향 |
 | --- | --- | --- |
-| POST 게시, GoLive, 취소 | 마이그레이션된 제품의 경우 응답 헤더의 형식은 서로 다르지만 작업 상태를 검색하기 위한 상대 경로를 나타내는 것과 동일한 방식으로 계속 작동합니다. | 제안에 대 한 해당 POST 요청을 전송 하는 경우 위치 헤더는 제품의 마이그레이션 상태에 따라 다음 두 가지 형식 중 하나를 갖게 됩니다. <ul><li>마이그레이션되지 않은 제품:`/api/operations/{PublisherId}${offerId}$2$preview?api-version=2017-10-31`</li><li>마이그레이션된 제안:`/api/publishers/{PublisherId}/offers/{offereId}/operations/408a4835-0000-1000-0000-000000000000?api-version=2017-10-31`</li></ul>|
+| POST 게시, GoLive, 취소 | 마이그레이션된 제품의 경우 응답 헤더의 형식은 서로 다르지만 작업 상태를 검색하기 위한 상대 경로를 나타내는 것과 동일한 방식으로 계속 작동합니다. | 제안에 대 한 해당 POST 요청을 전송 하는 경우 위치 헤더는 제품의 마이그레이션 상태에 따라 다음 두 가지 형식 중 하나를 갖게 됩니다. <ul><li>마이그레이션되지 않은 제품: `/api/operations/{PublisherId}${offerId}$2$preview?api-version=2017-10-31`</li><li>마이그레이션된 제안: `/api/publishers/{PublisherId}/offers/{offereId}/operations/408a4835-0000-1000-0000-000000000000?api-version=2017-10-31`</li></ul>|
 | GET 작업 | 이전에 응답에서 ' 알림-전자 메일 ' 필드를 지 원하는 제품의 경우이 필드는 더 이상 사용 되지 않으며 마이그레이션된 제안에 대해 더 이상 반환 되지 않습니다. | 마이그레이션된 제품의 경우 요청에 지정된 이메일 목록에 더 이상 알림을 보내지 않습니다. 대신, API 서비스는 이메일을 보내기 위해 파트너 센터의 알림 이메일 프로세스와 정렬됩니다. 특히, 작업 진행률에 대 한 알림은 파트너 센터에서 계정 설정의 판매자 연락처 정보 섹션에 설정 된 전자 메일 주소에 전송 됩니다.<br><br>파트너 센터의 [계정 설정](https://partner.microsoft.com/dashboard/account/management) 에 있는 판매자 연락처 정보 섹션에 설정 된 전자 메일 주소가 알림을 수신 하도록 올바른지 확인 합니다. |
 |||

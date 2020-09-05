@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 62669457f73ba78186614433fb6d10cc4dc01089
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: b5865f2fd76c1159f7f72633362a96335af8a059
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85565517"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509368"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>빠른 시작: Unity를 사용하여 모델 렌더링
 
@@ -84,7 +84,7 @@ Unity Hub를 열고 *ARR\azure-remote-rendering\Unity\Quickstart* 폴더인 샘�
 
 ### <a name="create-a-session-and-view-the-default-model"></a>세션을 만들고 기본 모델 보기
 
-Unity의 **재생** 단추를 눌러 세션을 시작합니다. *게임* 패널의 뷰포트 맨 아래에 상태 텍스트가 있는 오버레이가 표시됩니다. 이 세션은 일련의 상태 전환 과정을 거치게 됩니다. **시작** 상태에서는 원격 VM이 스핀업되며, 몇 분 정도 걸립니다. 성공하면 상태가 **준비**로 전환됩니다. 이제 세션이 **연결 중** 상태로 전환되고, 해당 VM의 렌더링 런타임에 도달하려고 시도합니다. 성공하면 샘플이 **연결됨** 상태로 전환됩니다. 이제 렌더링에 사용할 모델 다운로드가 시작됩니다. 모델의 크기 때문에 다운로드에 몇 분 정도 걸릴 수 있습니다. 다운로드가 완료되면 원격으로 렌더링되는 모델이 표시됩니다.
+Unity의 **재생** 단추를 눌러 세션을 시작합니다. *게임* 패널의 뷰포트 맨 아래에 상태 텍스트가 있는 오버레이가 표시됩니다. 이 세션은 일련의 상태 전환 과정을 거치게 됩니다. **시작** 상태에서는 서버가 스핀업되며, 몇 분 정도 걸립니다. 성공하면 상태가 **준비**로 전환됩니다. 이제 세션이 **연결 중** 상태로 전환되고, 해당 서버의 렌더링 런타임에 도달하려고 시도합니다. 성공하면 샘플이 **연결됨** 상태로 전환됩니다. 이제 렌더링에 사용할 모델 다운로드가 시작됩니다. 모델의 크기 때문에 다운로드에 몇 분 정도 걸릴 수 있습니다. 다운로드가 완료되면 원격으로 렌더링되는 모델이 표시됩니다.
 
 ![샘플의 출력](media/arr-sample-output.png)
 

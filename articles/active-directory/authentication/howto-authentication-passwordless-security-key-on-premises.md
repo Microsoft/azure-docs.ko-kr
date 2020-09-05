@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81cd2649ff056ab107491cf60602f0da7435b228
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9f20da2d2ecb4426c0deb1c01591ead5933090f6
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550634"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716999"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Azure Active Directory (미리 보기)를 사용 하 여 온-프레미스 리소스에 대해 암호 없는 보안 키 로그인 사용
 
@@ -48,10 +48,10 @@ Azure AD Kerberos 서버 개체는 온-프레미스 Active Directory 만든 다�
 
 - 장치에서 Windows 10 Insider Build 18945 이상 버전을 실행 해야 합니다.
 - [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect)버전 1.4.32.0 이상 이어야 합니다.
-  - 사용 가능한 Azure AD 하이브리드 인증 옵션에 대 한 자세한 내용은 [Azure Active Directory 하이브리드 id 솔루션에 적합 한 인증 방법 선택](../../security/fundamentals/choose-ad-authn.md) 및 [Azure AD Connect에 사용할 설치 유형 선택](../hybrid/how-to-connect-install-select-installation.md)을 참조 하세요.
+  - 사용 가능한 Azure AD 하이브리드 인증 옵션에 대 한 자세한 내용은 [Azure Active Directory 하이브리드 id 솔루션에 적합 한 인증 방법 선택](../hybrid/choose-ad-authn.md) 및 [Azure AD Connect에 사용할 설치 유형 선택](../hybrid/how-to-connect-install-select-installation.md)을 참조 하세요.
 - Windows Server 도메인 컨트롤러에는 다음 패치가 설치 되어 있어야 합니다.
-    - Windows Server 2016-https://support.microsoft.com/help/4534307/windows-10-update-kb4534307
-    - Windows Server 2019-https://support.microsoft.com/help/4534321/windows-10-update-kb4534321
+    - Windows Server 2016- https://support.microsoft.com/help/4534307/windows-10-update-kb4534307
+    - Windows Server 2019- https://support.microsoft.com/help/4534321/windows-10-update-kb4534321
 
 ### <a name="supported-scenarios"></a>지원되는 시나리오
 
@@ -75,7 +75,7 @@ Azure AD Kerberos 서버 개체는 온-프레미스 Active Directory 만든 다�
 관리자는 Azure AD Connect 서버에서 PowerShell 도구를 사용 하 여 온-프레미스 디렉터리에 Azure AD Kerberos 서버 개체를 만듭니다. Azure AD 사용자를 포함 하는 조직의 각 도메인 및 포리스트에서 다음 단계를 실행 합니다.
 
 1. 최신 버전의 Azure AD Connect로 업그레이드 합니다. 이 지침에서는 하이브리드 환경을 지원 하도록 Azure AD Connect를 이미 구성 했다고 가정 합니다.
-1. Azure AD Connect 서버에서 관리자 권한으로 PowerShell 프롬프트를 열고로 이동 합니다.`C:\Program Files\Microsoft Azure Active Directory Connect\AzureADKerberos\`
+1. Azure AD Connect 서버에서 관리자 권한으로 PowerShell 프롬프트를 열고로 이동 합니다. `C:\Program Files\Microsoft Azure Active Directory Connect\AzureADKerberos\`
 1. 다음 PowerShell 명령을 실행 하 여 온-프레미스 Active Directory 도메인 및 Azure Active Directory 테 넌 트 둘 다에서 새 Azure AD Kerberos 서버 개체를 만듭니다.
 
 > [!NOTE]
@@ -114,7 +114,7 @@ Get-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -DomainCre
 | ID | AD DS DC 개체의 고유 ID입니다. 이 ID는 "슬롯" 또는 "분기 ID" 라고도 합니다. |
 | DomainDnsName | Active Directory 도메인 DNS 도메인 이름입니다. |
 | 컴퓨터 계정 | Azure AD Kerberos 서버 개체 (DC)의 컴퓨터 계정 개체입니다. |
-| UserAccount | Azure AD Kerberos 서버 TGT 암호화 키를 보유 하는 사용 하지 않도록 설정 된 사용자 계정 개체입니다. 이 계정의 DN은 다음과 같습니다.`CN=krbtgt_AzureAD,CN=Users,<Domain-DN>` |
+| UserAccount | Azure AD Kerberos 서버 TGT 암호화 키를 보유 하는 사용 하지 않도록 설정 된 사용자 계정 개체입니다. 이 계정의 DN은 다음과 같습니다. `CN=krbtgt_AzureAD,CN=Users,<Domain-DN>` |
 | KeyVersion | Azure AD Kerberos 서버 TGT 암호화 키의 키 버전입니다. 이 버전은 키를 만들 때 할당 됩니다. 그런 다음 키를 회전할 때마다 버전이 증가 합니다. 증분은 복제 메타 데이터를 기반으로 하며 1 보다 클 수 있습니다. 예를 들어 초기 *Keyversion* 은 *192272*일 수 있습니다. 키를 처음 회전할 때 버전은 *212621*로 이동 될 수 있습니다. 확인 해야 하는 중요 한 점은 온-프레미스 개체의 *keyversion* 과 클라우드 개체의 *cloudkeyversion* 이 동일한 지 확인 하는 것입니다. |
 | KeyUpdatedOn | Azure AD Kerberos 서버 TGT 암호화 키가 업데이트 또는 생성 된 날짜와 시간입니다. |
 | KeyUpdatedFrom | Azure AD Kerberos 서버 TGT 암호화 키가 마지막으로 업데이트 된 DC입니다. |

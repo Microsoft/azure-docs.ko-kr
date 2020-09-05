@@ -1,7 +1,7 @@
 ---
 title: CloudSimple 활동 관리
 titleSuffix: Azure VMware Solution by CloudSimple
-description: CloudSimple을 사용한 VMware 솔루션의 활동 개념에 대해 설명 합니다.
+description: 활동을 요약 하 고 추가 세부 정보를 확인할 수 있는 활동 페이지에 대해 알아봅니다. 활동에는 경고, 이벤트, 작업 및 감사 작업이 포함 됩니다.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 04/30/2019
@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 985fcc0aa99723fde5e0c11babe3777c31cbd4c3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f77e996e83819b78bb9ab4484b9a1d3653a97560
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77025098"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140975"
 ---
 # <a name="activity-management-overview"></a>작업 관리 개요
 

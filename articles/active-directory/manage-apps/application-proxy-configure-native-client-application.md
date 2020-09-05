@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca5cdb592de29f8c5396a68a7c36e6994df906cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3f8494852bcff49602645c940470b529302f119f
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764811"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165076"
 ---
 # <a name="how-to-enable-native-client-applications-to-interact-with-proxy-applications"></a>네이티브 클라이언트 앱이 프록시 애플리케이션과 상호 작용할 수 있도록 설정하는 방법
 
@@ -124,4 +124,4 @@ if (authResult != null)
 
 네이티브 애플리케이션 흐름에 대한 자세한 내용은 [Azure Active Directory의 네이티브 앱](../azuread-dev/native-app.md)을 참조하세요.
 
-[Azure Active Directory의 애플리케이션에 대한 Single Sign-On](what-is-single-sign-on.md#choosing-a-single-sign-on-method) 설정 방법에 대해 알아봅니다.
+[Azure Active Directory의 애플리케이션에 대한 Single Sign-On](sso-options.md#choosing-a-single-sign-on-method) 설정 방법에 대해 알아봅니다.

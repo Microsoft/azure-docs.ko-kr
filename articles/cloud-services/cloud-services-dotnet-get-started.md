@@ -7,15 +7,16 @@ author: tgore03
 manager: carmonm
 ms.service: cloud-services
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: tagore
-ms.openlocfilehash: 71020453f51e5baa9172ad8902eeb537dd55763b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d00db9909f05028b55505400d0810b00e0114c0
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255231"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932545"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Azure Cloud Services 및 ASP.NET 시작
 
@@ -37,12 +38,12 @@ ms.locfileid: "85255231"
 ## <a name="what-youll-learn"></a>학습할 내용
 * Azure SDK를 설치하여 사용자 컴퓨터에서 Azure를 개발할 수 있도록 하는 방법
 * ASP.NET MVC 웹 역할 및 두 개의 작업자 역할을 사용하여 Visual Studio 클라우드 서비스 프로젝트를 만드는 방법
-* Azure Storage 에뮬레이터를 사용하여 클라우드 서비스 프로젝트를 로컬에서 테스트하는 방법
+* Azure Storage 에뮬레이터를 사용 하 여 클라우드 서비스 프로젝트를 로컬로 테스트 하는 방법입니다.
 * Azure 클라우드 서비스에 클라우드 프로젝트를 게시하고 Azure Storage 계정을 사용하여 테스트하는 방법
 * 파일을 업로드하고 Azure Blob service에 저장하는 방법
 * 계층 간 통신에 Azure 큐 서비스를 사용하는 방법
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 이 자습서에서는 *웹 역할* 및 *작업자 역할* 용어와 같이 [Azure Cloud Services에 대한 기본 개념](cloud-services-choose-me.md)을 알고 있다고 가정합니다.  또한 Visual Studio에서 [ASP.NET MVC](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)(영문) 또는 [웹 양식](https://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)(영문) 프로젝트를 작업하는 방법도 알고 있다고 가정합니다. 애플리케이션 예제는 MVC를 사용하지만, 자습서 내용의 대부분은 Web Forms에도 적용됩니다.
 
 Azure 구독 없이도 로컬에서 앱을 실행할 수 있지만 애플리케이션을 클라우드에 배포하려면 구독이 필요합니다. 계정이 없는 경우 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668)하거나 [무료 평가판을 등록](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668)할 수 있습니다.
@@ -94,13 +95,13 @@ Azure 구독 없이도 로컬에서 앱을 실행할 수 있지만 애플리케�
      ![인덱스 페이지](./media/cloud-services-dotnet-get-started/list.png)
 11. 광고에 해당하는 **자세히** 를 클릭하여 전체 크기 이미지를 표시합니다.
 
-     ![자세히 페이지](./media/cloud-services-dotnet-get-started/details.png)
+     ![세부 정보 페이지](./media/cloud-services-dotnet-get-started/details.png)
 
 클라우드 연결 없이 애플리케이션을 전적으로 로컬 컴퓨터에서 실행했습니다. 스토리지 에뮬레이터는 큐 및 Blob 데이터를 SQL Server Express LocalDB 데이터베이스에 저장하고, 애플리케이션은 다른 LocalDB 데이터베이스에 광고 데이터를 저장합니다. 웹 앱이 처음으로 액세스하려고 시도했을 때 Entity Framework Code First는 자동으로 광고 데이터베이스를 만들었습니다.
 
 다음 섹션에서는 솔루션이 클라우드에서 실행될 때 큐, Blob 및 애플리케이션 데이터베이스에 대해 Azure 클라우드 리소스를 사용하도록 솔루션을 구성합니다. 로컬에서 계속 실행하고 클라우드 스토리지 및 데이터베이스 리소스를 사용하려면 그렇게 할 수 있습니다. 어떻게 할지는 연결 문자열을 설정하기에 달려 있습니다.
 
-## <a name="deploy-the-application-to-azure"></a>Azure에 애플리케이션 배포
+## <a name="deploy-the-application-to-azure"></a>애플리케이션을 Azure에 배포합니다.
 클라우드에서 애플리케이션을 실행하려면 다음 단계를 수행합니다.
 
 * Azure 클라우드 서비스를 만듭니다.

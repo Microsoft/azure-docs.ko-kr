@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16a9c8ddfbc2c2a45067080dc68a759de226591b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0b8e107fb377a30b35f0941b89c490e11fc458c
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85339581"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783538"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 리소스 카탈로그 만들기 및 관리
 
@@ -53,7 +53,7 @@ ms.locfileid: "85339581"
 
 ### <a name="creating-a-catalog-programmatically"></a>프로그래밍 방식으로 카탈로그 만들기
 
-Microsoft Graph를 사용 하 여 카탈로그를 만들 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageCatalog를 만들](https://docs.microsoft.com/graph/api/accesspackagecatalog-post?view=graph-rest-beta)수 있습니다.
+Microsoft Graph를 사용 하 여 카탈로그를 만들 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageCatalog를 만들](/graph/api/accesspackagecatalog-post?view=graph-rest-beta)수 있습니다.
 
 ## <a name="add-resources-to-a-catalog"></a>카탈로그에 리소스 추가
 
@@ -83,7 +83,7 @@ Microsoft Graph를 사용 하 여 카탈로그를 만들 수도 있습니다.  �
 
 ### <a name="adding-a-resource-to-a-catalog-programmatically"></a>프로그래밍 방식으로 카탈로그에 리소스 추가
 
-Microsoft Graph를 사용 하 여 카탈로그에 리소스를 추가할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할 또는 카탈로그 및 리소스 소유자의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageResourceRequest를 만들](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta)수 있습니다.
+Microsoft Graph를 사용 하 여 카탈로그에 리소스를 추가할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하 여 적절 한 역할 또는 카탈로그 및 리소스 소유자의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageResourceRequest를 만들](/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta)수 있습니다.
 
 ## <a name="remove-resources-from-a-catalog"></a>카탈로그에서 리소스 제거
 
@@ -155,7 +155,7 @@ Microsoft Graph를 사용 하 여 카탈로그에 리소스를 추가할 수도 
 
 ### <a name="deleting-a-catalog-programmatically"></a>프로그래밍 방식으로 카탈로그 삭제
 
-Microsoft Graph를 사용 하 여 카탈로그를 삭제할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageCatalog를 삭제할](https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta)수 있습니다.
+Microsoft Graph를 사용 하 여 카탈로그를 삭제할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageCatalog를 삭제할](/graph/api/accesspackagecatalog-delete?view=graph-rest-beta)수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

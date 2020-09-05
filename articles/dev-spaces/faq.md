@@ -5,12 +5,12 @@ ms.date: 01/28/2020
 ms.topic: conceptual
 description: Azure Dev Spaces에 대 한 일반적인 질문에 대 한 답변을 찾습니다.
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너, Helm, 서비스 메시, 서비스 메시 라우팅, kubectl, k8s '
-ms.openlocfilehash: 27e834e71f9e5cfdf3d72fb3b221c24edecab4e8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 739cfdb4f930d384e180ffd0f3ce2311cd41c70a
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258311"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207985"
 ---
 # <a name="frequently-asked-questions-about-azure-dev-spaces"></a>Azure Dev Spaces에 대 한 질문과 대답
 
@@ -37,9 +37,6 @@ Azure Dev Spaces [는 AKS에서 현재 지원 되는 GA (일반 공급) 버전�
 * 투구 차트는 또는 전체 이미지 태그의 일부를 값의 값으로 전달 하는 것을 지원 해야 합니다 *. yaml*.
 * 수신으로 모든 항목을 수정 하는 경우 Azure Dev Spaces에서 제공 하는 수신 솔루션을 사용 하도록 투구 차트를 업데이트할 수도 있습니다.
 * [Azure Dev Spaces에서 제공 하는 라우팅 기능][dev-spaces-routing]을 사용 하려는 경우 개별 프로젝트에 대 한 모든 서비스는 단일 Kubernetes 네임 스페이스 내에 있어야 하며 간단한 이름 (예: *서비스 a)* 을 사용 하 여 배포 해야 합니다. 표준 투구 차트에서이 명명 업데이트는 *Fullnameoverride* 속성의 값을 지정 하 여 수행할 수 있습니다.
-
-사용자 고유의 Dockerfile 또는 투구 차트를 Azure Dev Spaces와 함께 작동 하는 기존 버전과 비교 하려면 [빠른][quickstart-cli]시작에서 생성 된 파일을 검토 합니다.
-
 
 ## <a name="can-i-modify-the-files-generated-by-azure-dev-spaces"></a>Azure Dev Spaces에서 생성 된 파일을 수정할 수 있습니까?
 
@@ -115,7 +112,6 @@ Visual Studio에서는 Azure Dev Spaces를 통해 디버깅 하는 데 필요한
 [ingress-https-traefik]: how-to/ingress-https-traefik.md#configure-the-traefik-ingress-controller-to-use-https
 [istio]: https://istio.io/
 [linkerd]: https://linkerd.io/
-[quickstart-cli]: quickstart-cli.md
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
 [vs-code-multi-root-workspaces]: https://code.visualstudio.com/docs/editor/multi-root-workspaces
 [windows-containers]: how-to/run-dev-spaces-windows-containers.md

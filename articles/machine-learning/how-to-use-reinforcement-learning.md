@@ -10,12 +10,12 @@ author: peterclu
 ms.date: 05/05/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0a043bf79818480e045fb1f82640639fd7dcb232
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: b5ad09925c4a81dd09bd1ddf171ffccb8413b12b
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87847638"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650828"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Azure Machine Learning을 사용하는 보충 학습(미리 보기)
 
@@ -34,7 +34,7 @@ ms.locfileid: "87847638"
 > * 실험을 제출하여 실행 시작
 > * 결과 보기
 
-이 문서는 Azure Machine Learning Notebook [GitHub 리포지토리](https://aka.ms/azureml-rl-notebooks)에서 찾을 수 있는 [RLlib Pong 예제](https://aka.ms/azureml-rl-pong)를 기반으로 합니다.
+이 문서는 Azure Machine Learning Notebook [GitHub 리포지토리](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/reinforcement-learning/README.md)에서 찾을 수 있는 [RLlib Pong 예제](https://aka.ms/azureml-rl-pong)를 기반으로 합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -433,4 +433,4 @@ run.wait_for_completion()
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 IMPALA 학습 에이전트를 사용하여 보충 학습 에이전트를 학습시키는 방법을 알아보았습니다. 추가 예제를 보려면 [Azure Machine Learning 보충 학습 GitHub 리포지토리](https://aka.ms/azureml-rl-notebooks)로 이동하세요.
+이 문서에서는 IMPALA 학습 에이전트를 사용하여 보충 학습 에이전트를 학습시키는 방법을 알아보았습니다. 추가 예제를 보려면 [Azure Machine Learning 보충 학습 GitHub 리포지토리](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/reinforcement-learning/README.md)로 이동하세요.

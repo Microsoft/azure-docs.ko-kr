@@ -12,12 +12,12 @@ ms.date: 02/28/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cb3bb363b1d6be72fe8941cad509b4c3525cfa15
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 54d92da469625a3b81d0027558ec14166d916b80
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87169432"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163189"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Azure Active Directory B2C에서 사용자 지정 정책 시작
 
@@ -213,6 +213,6 @@ GitHub에서 사용자 지정 정책 시작 팩을 가져온 다음, Azure AD B2
 
 ## <a name="next-steps"></a>다음 단계
 
-다음으로, Azure AD(Azure Active Directory)를 ID 공급자로 추가해 봅니다. 이 시작 가이드에서 사용된 기본 파일에는 이미 다른 ID 공급자(예: Azure AD)를 추가하는 데 필요한 내용 중 일부가 포함되어 있습니다.
+다음으로, Azure AD(Azure Active Directory)를 ID 공급자로 추가해 봅니다. 이 시작 가이드에서 사용된 기본 파일에는 이미 다른 ID 공급자(예: Azure AD)를 추가하는 데 필요한 내용 중 일부가 포함되어 있습니다. Id 공급자로 Azure AD를 설정 하는 방법에 대 한 자세한 내용은 [Active Directory B2C 사용자 지정 정책을 사용 하 여 Azure Active Directory 계정으로 등록 및 로그인 설정](identity-provider-azure-ad-single-tenant-custom.md)을 참조 하세요. 
 
-Azure AD 및 ID 공급자 설정에 대한 자세한 내용은 [Active Directory B2C 사용자 지정 정책을 사용하여 Azure Active Directory 계정을 통한 등록 및 로그인 설정](identity-provider-azure-ad-single-tenant-custom.md)을 참조하세요.
+사용자 지정 정책을 사용 하 여 ISV 통합을 구현 하는 방법에 대 한 자세한 내용은 [파트너 갤러리](partner-gallery.md) 를 참조 하세요. 

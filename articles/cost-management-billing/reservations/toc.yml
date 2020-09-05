@@ -5,78 +5,16 @@
   items:
     - name: Azure Reservations란?
       href: save-compute-costs-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
-- name: 방법 가이드
-  items:
-    - name: 구매할 항목 확인
-      items:
-        - name: 구매할 예약 선택
-          href: determine-reservation-purchase.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: 예약 구매
-      items:
-        - name: Azure 예약 구매
-          href: prepare-buy-reservation.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: App Service
-          href: prepay-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Azure Cache for Redis 예약
-          href: ../../azure-cache-for-redis/cache-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Azure Database for MariaDB
-          href: ../../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Azure Database for MySQL
-          href: ../../mysql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Azure Database for PostgreSQL
-          href: ../../postgresql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Azure Synapse Analytics
-          href: prepay-sql-data-warehouse-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Azure Storage
-          href: ../../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Cosmos DB
-          href: ../../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Databricks
-          href: prepay-databricks-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Data Explorer
-          href: /azure/data-explorer/pricing-reserved-capacity?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: Dedicated Host
-          href: ../../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: 디스크 스토리지
-          href: ../../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: SAP HANA 큰 인스턴스
-          href: prepay-hana-large-instances-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: 소프트웨어 플랜
-          href: ../../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: SQL Database
-          href: ../../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: 가상 머신
-          href: ../../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: '구매 후 보기, 관리 및 최적화'
-      items:
-        - name: 예약 및 사용률 보기
-          href: view-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: CSP로 예약 보기
-          href: how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: 예약 관리
-          href: manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: 최적화 설정 변경
-          href: manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances
-        - name: 예약 교환 및 환불
-          href: exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: 비용 보고
-      items:
-        - name: 예약 트랜잭션 보기
-          href: view-purchase-refunds.md?toc=/azure/cost-management-billing/reservations/toc.json
-        - name: 예약 비용 차지백(charge back)
-          href: charge-back-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
-    - name: 예약 갱신
-      items:
-        - name: 예약 갱신
-          href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: 개념
   items:
+    - name: VM 인스턴스 크기 유연성
+      href: ../../virtual-machines/reserved-vm-instance-size-flexibility.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: 예약 권장 사항
       href: reserved-instance-purchase-recommendations.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: Azure 예약 할인이 적용되는 방식
+      href: reservation-discount-application.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: 할인 적용 방식
       items:
-        - name: Azure 예약 할인이 적용되는 방식
-          href: reservation-discount-application.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: App Service
           href: reservation-discount-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Azure Cache for Redis
@@ -115,6 +53,70 @@
       href: understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: 기업 고객에 대한 사용량 현황 데이터
       href: understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/reservations/toc.json
+- name: 방법 가이드
+  items:
+    - name: 구매할 항목 확인
+      items:
+        - name: 구매할 예약 선택
+          href: determine-reservation-purchase.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: 예약 구매
+      items:
+        - name: Azure 예약 구매
+          href: prepare-buy-reservation.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: App Service
+          href: prepay-app-service-isolated-stamp.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Cache for Redis 예약
+          href: ../../azure-cache-for-redis/cache-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Database for MariaDB
+          href: ../../mariadb/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Database for MySQL
+          href: ../../mysql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Database for PostgreSQL
+          href: ../../postgresql/concept-reserved-pricing.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Synapse Analytics
+          href: prepay-sql-data-warehouse-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Azure Storage
+          href: ../../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Cosmos DB
+          href: ../../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Databricks
+          href: prepay-databricks-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Data Explorer
+          href: /azure/data-explorer/pricing-reserved-capacity?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: Dedicated Host
+          href: ../../virtual-machines/prepay-dedicated-hosts-reserved-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 디스크 스토리지
+          href: ../../virtual-machines/disks-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: SAP HANA 큰 인스턴스
+          href: prepay-hana-large-instances-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 소프트웨어 플랜
+          href: ../../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: SQL Database
+          href: ../../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 가상 머신
+          href: ../../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: '구매 후 보기, 관리 및 최적화'
+      items:
+        - name: 예약 및 사용률 보기
+          href: view-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: CSP로 예약 보기
+          href: how-to-view-csp-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 예약 관리
+          href: manage-reserved-vm-instance.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 최적화 설정 변경
+          href: manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances
+        - name: 예약 교환 및 환불
+          href: exchange-and-refund-azure-reservations.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: 비용 보고
+      items:
+        - name: 예약 트랜잭션 보기
+          href: view-purchase-refunds.md?toc=/azure/cost-management-billing/reservations/toc.json
+        - name: 예약 비용 차지백(charge back)
+          href: charge-back-usage.md?toc=/azure/cost-management-billing/reservations/toc.json
+    - name: 예약 갱신
+      items:
+        - name: 예약 갱신
+          href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
 - name: 참조
   items:
     - name: 예약 REST API

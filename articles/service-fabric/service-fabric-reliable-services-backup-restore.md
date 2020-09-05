@@ -5,12 +5,13 @@ author: mcoskun
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: mcoskun
-ms.openlocfilehash: bf004b913c032d8a121bf4d508adf4cf9be1c7f9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a60ebff06562c12415b2a106a9a11127feb94dab
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86253323"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021989"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Reliable Services 및 Reliable Actors 백업 및 복원
 Azure 서비스 패브릭은 여러 노드에 걸쳐 상태를 복제하여 고가용성을 유지하는 고가용성 플랫폼입니다.  따라서 클러스터의 한 노드에서 오류가 발생해도 서비스를 지속적으로 사용할 수 있습니다. 많은 경우 플랫폼에서 제공하는 이러한 기본 제공 중복성으로 충분하지만 어떤 경우에는 서비스를 위해 (외부 저장소에) 데이터를 백업하는 것이 바람직합니다.
@@ -97,7 +98,7 @@ private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo, Cancellation
 
 위의 예제에서 `ExternalBackupStore`는 Azure Blob Storage와의 인터페이스에 사용되는 샘플 클래스이고, `UploadBackupFolderAsync`는 폴더를 압축하여 Azure Blob Storage에 배치하는 메서드입니다.
 
-다음 사항에 유의합니다.
+다음 사항에 유의하세요.
 
   - 특정 시점에서 처리 중인 복제본 당 하나의 백업 작업만이 존재할 수 있습니다. 한 번에 둘 이상의 `BackupAsync` 호출은 처리 중인 백업을 하나로 제한하기 위해 `FabricBackupInProgressException`이 발생됩니다(throw).
   - 백업 진행 중에 복제본 장애 조치가 발생하면 백업이 완료되지 않을 수 있습니다. 따라서 장애 조치가 완료되면 서비스에서 필요에 따라 `BackupAsync`를 호출하여 백업을 다시 시작해야 합니다.
@@ -166,7 +167,7 @@ protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, C
 
 이제 "삭제되거나 손실된 서비스" 섹션의 단계를 사용하여 버그가 있는 코드로 손상되기 이전의 상태로 서비스 상태를 복원할 수 있습니다.
 
-다음 사항에 유의합니다.
+다음 사항에 유의하세요.
 
   - 복원할 때 복원 중인 백업이 데이터 손실 이전의 파티션 상태보다 오래된 것일 가능성이 있습니다. 이 때문에 가능한 많은 데이터를 복구하기 위한 마지막 수단으로만 복원해야 합니다.
   - 백업 폴더 경로와 백업 폴더 내 파일 경로를 나타내는 문자열은 FabricDataRoot 경로 및 애플리케이션 형식 이름의 길이에 따라 255자보다 길 수 있습니다. 이로 인해 `Directory.Move`와 같은 일부 .NET 메서드에서 `PathTooLongException` 예외가 발생(throw)될 수 있습니다. 한 가지 해결 방법은 `CopyFile`과 같은 kernel32 API를 직접 호출하는 것입니다.

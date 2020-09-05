@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: ff3e5431481cba0d2d806d60ba5d7a291d1b2b69
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 6ff56ba6dc85901c8cdc7a9b06fbc261feb8792d
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810119"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055331"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Azure Functions JavaScript 개발자 가이드
 
@@ -20,7 +20,7 @@ Express.js, Node.js 또는 JavaScript developer로 Azure Functions를 처음 접
 
 | 시작 | 개념| 단계별 학습 |
 | -- | -- | -- | 
-| <ul><li>[Visual Studio Code를 사용 하Node.js 함수](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)</li><li>[터미널/명령 프롬프트를 사용 하Node.js 함수](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)</li></ul> | <ul><li>[개발자 가이드](functions-reference.md)</li><li>[호스팅 옵션](functions-scale.md)</li><li>[TypeScript 함수](#typescript)</li><li>[성능 &nbsp; 고려 사항](functions-best-practices.md)</li></ul> | <ul><li>[서버리스 애플리케이션 만들기](/learn/paths/create-serverless-applications/)</li><li>[서버를 사용 하지 않는 Api에 Node.js 및 Express Api 리팩터링](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
+| <ul><li>[ Visual Studio Code를 사용 하Node.js 함수](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)</li><li>[ 터미널/명령 프롬프트를 사용 하Node.js 함수](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)</li></ul> | <ul><li>[개발자 가이드](functions-reference.md)</li><li>[호스팅 옵션](functions-scale.md)</li><li>[TypeScript 함수](#typescript)</li><li>[성능 &nbsp; 고려 사항](functions-best-practices.md)</li></ul> | <ul><li>[서버리스 애플리케이션 만들기](/learn/paths/create-serverless-applications/)</li><li>[서버를 사용 하지 않는 Api에 Node.js 및 Express Api 리팩터링](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
 
 ## <a name="javascript-function-basics"></a>JavaScript 함수 기본 사항
 
@@ -133,7 +133,7 @@ JavaScript에서 [바인딩](functions-triggers-bindings.md)은 함수의 functi
    };
    ```
 
-### <a name="outputs"></a>outputs
+### <a name="outputs"></a>출력
 출력(`direction === "out"`의 바인딩)은 다양한 방법으로 함수에서 작성될 수 있습니다. 모든 경우에 *function.json*에 정의된 대로 바인딩의 `name` 속성은 함수에서 작성된 개체 멤버의 이름에 해당합니다. 
 
 다음 방법 중 하나로 출력 바인딩에 데이터를 할당할 수 있습니다 (이러한 메서드를 결합 하지 않음).
@@ -183,15 +183,38 @@ JavaScript에서 [바인딩](functions-triggers-bindings.md)은 함수의 functi
 `dataType`에 대한 옵션은 `binary`, `stream` 및 `string`입니다.
 
 ## <a name="context-object"></a>context 개체
-런타임은 함수로 데이터를 전달하거나 전달받으며 사용자가 런타임과 통신할 수 있도록 하는 `context` 개체를 사용합니다. 내보낸 함수가 동기화된 경우 컨텍스트 개체는 바인딩에서 데이터를 읽고 설정하고, 로그를 작성하고, `context.done` 콜백을 사용하는 데 사용될 수 있습니다.
 
-`context` 개체는 항상 함수의 첫 번째 매개 변수입니다. `context.done` 및 `context.log`와 같은 중요한 메서드가 있으므로 포함되어야 합니다. 원하는 개체 이름(예: `ctx` 또는 `c`)을 지정할 수 있습니다.
+런타임은 개체를 사용 하 여 `context` 함수와 런타임에 데이터를 전달 합니다. 바인딩에서 데이터를 읽고 설정 하 고 로그에 쓰는 데 사용 되는 `context` 개체는 항상 함수에 전달 되는 첫 번째 매개 변수입니다.
+
+동기 코드를 포함 하는 함수의 경우 컨텍스트 개체는 `done` 함수 처리가 완료 될 때 호출 하는 콜백을 포함 합니다. `done`비동기 코드를 작성할 때 명시적 호출은 필요 하지 않습니다. `done` 콜백은 암시적으로 호출 됩니다.
 
 ```javascript
-// You must include a context, but other arguments are optional
-module.exports = function(ctx) {
-    // function logic goes here :)
-    ctx.done();
+module.exports = (context) => {
+
+    // function logic goes here
+
+    context.log("The function has executed.");
+
+    context.done();
+};
+```
+
+함수로 전달 되는 컨텍스트는 `executionContext` 속성을 노출 합니다. 속성은 다음 속성을 포함 하는 개체입니다.
+
+| 속성 이름  | Type  | Description |
+|---------|---------|---------|
+| `invocationId` | String | 특정 함수 호출에 대 한 고유 식별자를 제공 합니다. |
+| `functionName` | 문자열 | 실행 중인 함수의 이름을 제공 합니다. |
+| `functionDirectory` | 문자열 | 함수 앱 디렉터리를 제공 합니다. |
+
+다음 예제에서는를 반환 하는 방법을 보여 줍니다 `invocationId` .
+
+```javascript
+module.exports = (context, req) => {
+    context.res = {
+        body: context.executionContext.invocationId
+    };
+    context.done();
 };
 ```
 
@@ -201,7 +224,7 @@ module.exports = function(ctx) {
 context.bindings
 ```
 
-바인딩 데이터를 읽거나 할당 하는 데 사용 되는 명명 된 개체를 반환 합니다. 입력 및 트리거 바인딩 데이터는의 속성을 읽어 액세스할 수 있습니다 `context.bindings` . 출력 바인딩 데이터는에 데이터를 추가 하 여 할당할 수 있습니다.`context.bindings`
+바인딩 데이터를 읽거나 할당 하는 데 사용 되는 명명 된 개체를 반환 합니다. 입력 및 트리거 바인딩 데이터는의 속성을 읽어 액세스할 수 있습니다 `context.bindings` . 출력 바인딩 데이터는에 데이터를 추가 하 여 할당할 수 있습니다. `context.bindings`
 
 예를 들어 function.json의 다음 바인딩 정의를 통해 `context.bindings.myInput`에서 큐의 콘텐츠에 액세스하고 `context.bindings.myOutput`을 사용하여 출력을 큐에 할당할 수 있습니다.
 
@@ -270,7 +293,7 @@ context.log(message)
 기본 추적 수준에서 스트리밍 함수 로그에 기록할 수 있습니다. `context.log`에 다른 추적 수준에서 함수 로그를 작성할 수 있는 추가 로깅 메서드가 제공됩니다.
 
 
-| 메서드                 | 설명                                |
+| 메서드                 | Description                                |
 | ---------------------- | ------------------------------------------ |
 | **오류 (_메시지_)**   | 오류 수준 로깅 또는 더 낮은 수준의 로깅에 씁니다.   |
 | **warn(_message_)**    | 경고 수준 로깅 또는 더 낮은 수준의 로깅에 씁니다. |
@@ -347,7 +370,7 @@ HTTP, 웹후크 트리거 및 HTTP 출력 바인딩은 요청 및 응답 개체�
 
 `context.req`(요청) 개체의 속성은 다음과 같습니다.
 
-| 속성      | 설명                                                    |
+| 속성      | Description                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | 요청의 본문을 포함하는 개체입니다.               |
 | _머리글과_     | 요청 헤더를 포함하는 개체입니다.                   |
@@ -362,7 +385,7 @@ HTTP, 웹후크 트리거 및 HTTP 출력 바인딩은 요청 및 응답 개체�
 
 `context.res`(응답) 개체의 속성은 다음과 같습니다.
 
-| 속성  | 설명                                               |
+| 속성  | Description                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | 응답의 본문을 포함하는 개체입니다.         |
 | _머리글과_ | 응답 헤더를 포함하는 개체입니다.             |
@@ -564,7 +587,7 @@ module.exports = myObj;
 
 매개 변수를 사용 하 여 시작 하면 `--inspect` Node.js 프로세스가 지정 된 포트에서 디버깅 클라이언트를 수신 대기 합니다. Azure Functions 2.x에서는 환경 변수 또는 앱 설정을 추가 하 여 코드를 실행 하는 Node.js 프로세스에 전달할 인수를 지정할 수 있습니다 `languageWorkers:node:arguments = <args>` . 
 
-로컬로 디버그 하려면 `"languageWorkers:node:arguments": "--inspect=5858"` `Values` 파일 [의local.settings.js](./functions-run-local.md#local-settings-file) 에를 추가 하 고 포트 5858에 디버거를 연결 합니다.
+로컬로 디버그 하려면 `"languageWorkers:node:arguments": "--inspect=5858"` `Values` 파일 [ 의local.settings.js](./functions-run-local.md#local-settings-file) 에를 추가 하 고 포트 5858에 디버거를 연결 합니다.
 
 VS Code를 사용 하 여 디버깅 하는 경우 `--inspect` `port` 파일의 프로젝트 launch.js에 있는 값을 사용 하 여 매개 변수가 자동으로 추가 됩니다.
 

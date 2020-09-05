@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: fd195fee513b2eed9049c7841f791d73a41b876b
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: f7f559a0f0cfeddcba6e3f563c0a74a2472887d7
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87366836"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226780"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mariadb"></a>Azure Database for MariaDB에 대 한 Azure 보안 기준
 
@@ -34,11 +34,11 @@ Azure Database for MariaDB에 대 한 Azure 보안 기준에는 배포의 보안
 
 방화벽 규칙을 사용 하 여 Azure Database for MariaDB를 보호할 수도 있습니다. 서버 방화벽은 권한이 있는 컴퓨터를 지정할 때까지 데이터베이스 서버에 대한 모든 액세스를 차단합니다. 방화벽을 구성하려면 허용 가능한 IP 주소 범위를 지정하는 방화벽 규칙을 생성해야 합니다. 서버 수준의 방화벽 규칙을 만들 수 있습니다.
 
-Azure Database for MariaDB에 대 한 개인 링크를 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
+Azure Database for MariaDB에 대 한 개인 링크를 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
 
-Azure Database for MariaDB 서버에서 VNet 서비스 끝점 및 VNet 규칙을 만들고 관리 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
+Azure Database for MariaDB 서버에서 VNet 서비스 끝점 및 VNet 규칙을 만들고 관리 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
 
-Azure Database for MariaDB 방화벽 규칙을 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
+Azure Database for MariaDB 방화벽 규칙을 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
 
 **Azure Security Center 모니터링**: 예
 
@@ -48,9 +48,9 @@ Azure Database for MariaDB 방화벽 규칙을 구성 하는 방법:https://docs
 
 **지침**: 개인 끝점에 대 한 Azure Database for MariaDB 서버가 보호 되는 경우 동일한 가상 네트워크에 가상 컴퓨터를 배포할 수 있습니다. 데이터 반출의 위험을 줄이기 위해 NSG(네트워크 보안 그룹)를 사용할 수 있습니다. NSG 흐름 로그를 사용하도록 설정하고, 트래픽 감사를 위해 로그를 스토리지 계정에 보냅니다. 또한 NSG 흐름 로그를 Log Analytics 작업 영역에 보내고, 트래픽 분석을 사용하여 Azure 클라우드의 트래픽 흐름에 대한 인사이트를 제공할 수 있습니다. 트래픽 분석의 장점 중 일부는 네트워크 활동을 시각화하고, 핫 스폿을 식별하며, 보안 위협을 식별하고, 트래픽 흐름 패턴을 이해하며, 잘못된 네트워크 구성을 파악할 수 있다는 것입니다.
 
-Azure Database for MariaDB에 대 한 개인 링크를 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
+Azure Database for MariaDB에 대 한 개인 링크를 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-privatelink-portal
 
-NSG 흐름 로그를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal 트래픽 분석를 사용 하도록 설정 하 고 사용 하는 방법:https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+NSG 흐름 로그를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal 트래픽 분석를 사용 하도록 설정 하 고 사용 하는 방법: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
 
 
@@ -72,7 +72,7 @@ NSG 흐름 로그를 사용 하도록 설정 하는 방법: https://docs.microso
 
 DDoS 공격 으로부터 보호 하기 위해 Azure Database for MariaDB 인스턴스와 연결 된 가상 네트워크에서 DDoS Protection 표준을 사용 하도록 설정 합니다. Azure Security Center 통합 위협 인텔리전스를 사용하여 알려진 악성 인터넷 IP 주소 또는 사용하지 않는 인터넷 IP 주소와의 통신을 거부합니다.
 
-Azure Database for MariaDB에 대 한 Advanced Threat Protection을 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Azure Database for MariaDB에 대 한 Advanced Threat Protection을 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
 DDoS Protection을 구성하는 방법: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
 
@@ -86,7 +86,7 @@ DDoS Protection을 구성하는 방법: https://docs.microsoft.com/azure/virtual
 
 **지침**: 개인 끝점에 대 한 Azure Database for MariaDB 서버가 보호 되는 경우 동일한 가상 네트워크에 가상 컴퓨터를 배포할 수 있습니다. 그런 다음, 데이터 반출의 위험을 줄이기 위해 NSG(네트워크 보안 그룹)를 구성할 수 있습니다. NSG 흐름 로그를 사용하도록 설정하고, 트래픽 감사를 위해 로그를 스토리지 계정에 보냅니다. 또한 NSG 흐름 로그를 Log Analytics 작업 영역에 보내고, 트래픽 분석을 사용하여 Azure 클라우드의 트래픽 흐름에 대한 인사이트를 제공할 수 있습니다. 트래픽 분석의 장점 중 일부는 네트워크 활동을 시각화하고, 핫 스폿을 식별하며, 보안 위협을 식별하고, 트래픽 흐름 패턴을 이해하며, 잘못된 네트워크 구성을 파악할 수 있다는 것입니다.
 
-NSG 흐름 로그를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal 트래픽 분석를 사용 하도록 설정 하 고 사용 하는 방법:https://docs.microsoft.com/azure/network-watcher/traffic-analytics
+NSG 흐름 로그를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal 트래픽 분석를 사용 하도록 설정 하 고 사용 하는 방법: https://docs.microsoft.com/azure/network-watcher/traffic-analytics
 
 
 
@@ -97,7 +97,7 @@ NSG 흐름 로그를 사용 하도록 설정 하는 방법: https://docs.microso
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6: 네트워크 기반 IDS/IPS(침입 탐지/침입 방지 시스템) 배포
 
 **지침**: Azure Database for MariaDB에 Advanced Threat Protection을 사용 합니다. Advanced Threat Protection은 비정상적이며 잠재적으로 유해한 데이터베이스 액세스 또는 악용 시도를 나타내는 비정상 활동을 탐지합니다.
-Azure Database for MariaDB에 대 한 Advanced Threat Protection을 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Azure Database for MariaDB에 대 한 Advanced Threat Protection을 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
 
 **Azure Security Center 모니터링**: 예
@@ -118,13 +118,13 @@ Azure Database for MariaDB에 대 한 Advanced Threat Protection을 구성 하�
 **지침**: Azure Database for MariaDB 인스턴스에 액세스 해야 하는 리소스의 경우 가상 네트워크 서비스 태그를 사용 하 여 네트워크 보안 그룹 또는 Azure 방화벽에서 네트워크 액세스 제어를 정의 합니다. 보안 규칙을 만들 때 특정 IP 주소 대신 서비스 태그를 사용할 수 있습니다. 서비스 태그 이름(예: SQL.WestUs)을 규칙의 적절한 원본 또는 대상 필드에 지정하면 해당 서비스에 대한 트래픽을 허용하거나 거부할 수 있습니다. Microsoft는 서비스 태그에 포함되는 주소 접두사를 관리하고 주소가 변경되면 서비스 태그를 자동으로 업데이트합니다.
 참고: Azure Database for MariaDB는 "Microsoft .Sql" 서비스 태그를 사용 합니다.
 
-서비스 태그를 사용 하는 방법에 대 한 자세한 내용은 https://docs.microsoft.com/azure/virtual-network/service-tags-overview Azure Database for MariaDB의 서비스 태그 사용 이해:https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet#terminology-and-description
+서비스 태그를 사용 하는 방법에 대 한 자세한 내용은 https://docs.microsoft.com/azure/virtual-network/service-tags-overview Azure Database for MariaDB의 서비스 태그 사용 이해: https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet#terminology-and-description
 
 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9: 네트워크 디바이스에 대한 표준 보안 구성 유지 관리
 
@@ -145,7 +145,7 @@ Azure Blueprint를 만드는 방법: https://docs.microsoft.com/azure/governance
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="110-document-traffic-configuration-rules"></a>1.10: 트래픽 구성 규칙 문서화
 
@@ -159,12 +159,12 @@ Azure PowerShell 또는 Azure CLI를 사용 하 여 태그를 기준으로 리�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11: 자동화된 도구를 사용하여 네트워크 리소스 구성 모니터링 및 변경 내용 검색
 
 **지침**: Azure 활동 로그를 사용 하 여 네트워크 리소스 구성을 모니터링 하 고 Azure Database for MariaDB 인스턴스와 관련 된 네트워크 리소스에 대 한 변경 내용을 검색 합니다. Azure Monitor 내에서 중요한 네트워크 리소스가 변경되면 트리거되는 경고를 만듭니다.
-Azure 활동 로그 이벤트를 확인 하 고 검색 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view Azure Monitor에서 경고를 만드는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
+Azure 활동 로그 이벤트를 확인 하 고 검색 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view Azure Monitor에서 경고를 만드는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 
 
@@ -188,9 +188,9 @@ Azure 활동 로그 이벤트를 확인 하 고 검색 하는 방법: https://do
 ### <a name="22-configure-central-security-log-management"></a>2.2: 중앙 보안 로그 관리 구성
 
 **지침**: 진단 설정 및 서버 로그를 사용 하도록 설정 하 고 로그를 수집 하 여 Azure Database for MariaDB 인스턴스에 의해 생성 된 보안 데이터를 집계 합니다. Azure Monitor 내에서 Log Analytics 작업 영역을 사용하여 분석을 쿼리 및 수행하고, Azure Storage 계정을 장기/보관 스토리지에 사용할 수 있습니다. 또는 데이터를 사용하도록 설정하여 Azure Sentinel 또는 타사 SIEM에 온보딩할 수 있습니다.
-Azure Database for MariaDB에 대 한 서버 로그를 구성 및 액세스 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-server-logs
+Azure Database for MariaDB에 대 한 서버 로그를 구성 및 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-server-logs
 
-Azure Database for MariaDB에 대 한 감사 로그를 구성 하 고 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal Azure 센티널을 등록 하는 방법:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+Azure Database for MariaDB에 대 한 감사 로그를 구성 하 고 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal Azure 센티널을 등록 하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 
 
@@ -202,7 +202,7 @@ Azure Database for MariaDB에 대 한 감사 로그를 구성 하 고 액세스 
 
 **지침**: 감사, 보안 및 진단 로그에 액세스 하기 위해 Azure Database for MariaDB 인스턴스에서 진단 설정을 사용 하도록 설정 합니다. 구체적으로는 MariaDB 감사 로그를 사용 하도록 설정 했는지 확인 합니다. 자동으로 사용할 수 있는 활동 로그에는 이벤트 원본, 날짜, 사용자, 타임스탬프, 원본 주소, 대상 주소 및 기타 유용한 요소가 포함됩니다. Azure 활동 로그 진단 설정을 사용하도록 설정하고, 로그를 동일한 Log Analytics 작업 영역 또는 스토리지 계정에 보낼 수도 있습니다.
 
-Azure Database for MariaDB에 대 한 서버 로그를 구성 하 고 액세스 하는 방법: Azure Database for MariaDB에 대 한 감사 로그를 구성 하 고 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-server-logs https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal Azure 활동 로그에 대 한 진단 설정을 구성 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Azure Database for MariaDB에 대 한 서버 로그를 구성 하 고 액세스 하는 방법: Azure Database for MariaDB에 대 한 감사 로그를 구성 하 고 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-server-logs https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal Azure 활동 로그에 대 한 진단 설정을 구성 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 
 
@@ -222,13 +222,13 @@ Azure Database for MariaDB에 대 한 서버 로그를 구성 하 고 액세스 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5: 보안 로그 스토리지 보존 기간 구성
 
 **지침**: Azure Monitor 내에서 Azure Database for MariaDB 로그를 저장 하는 데 사용 되는 Log Analytics 작업 영역에 대해 조직의 규정 준수 규정에 따라 보존 기간을 설정 합니다. Azure Storage 계정을 장기/보관 스토리지에 사용합니다.
-Log Analytics 작업 영역에 대 한 로그 보존 매개 변수를 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period Azure Storage 계정에 리소스 로그 저장:https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage
+Log Analytics 작업 영역에 대 한 로그 보존 매개 변수를 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period Azure Storage 계정에 리소스 로그 저장: https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-storage
 
 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="26-monitor-and-review-logs"></a>2.6: 로그 모니터링 및 검토
 
@@ -236,13 +236,13 @@ Log Analytics 작업 영역에 대 한 로그 보존 매개 변수를 설정 하
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-Log Analytics 작업 영역에 대 한 자세한 내용은 다음을 수행 하십시오.https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
+Log Analytics 작업 영역에 대 한 자세한 내용은 다음을 수행 하십시오. https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 
 Azure Monitor에서 사용자 지정 쿼리를 수행하는 방법: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2.7: 비정상 활동에 대한 경고 사용
 
@@ -250,11 +250,11 @@ Azure Monitor에서 사용자 지정 쿼리를 수행하는 방법: https://docs
 
 또한, 유틸리티에 대 한 서버 로그 및 진단 설정을 사용 하도록 설정 하 고 Log Analytics 작업 영역으로 로그를 보낼 수 있습니다. SOAR(보안 오케스트레이션 자동화 응답) 솔루션을 제공하므로 Log Analytics 작업 영역을 Azure Sentinel에 온보딩합니다. 이를 통해 플레이북(자동화된 솔루션)을 만들어 보안 문제를 수정하는 데 사용할 수 있습니다.
 
-Aadb에 대해 Advanced Threat Protection을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Aadb에 대해 Advanced Threat Protection을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
-을 구성 하 고 다음을 수행 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-server-logs
+을 구성 하 고 다음을 수행 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-server-logs
 
-MariaDB에 대해 감사 로그를 구성 하 고 액세스 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
+MariaDB에 대해 감사 로그를 구성 하 고 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -294,9 +294,9 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 **지침**: MariaDB 인스턴스의 관리 평면 (Azure Portal/Azure Resource Manager)에 대 한 관리 권한이 있는 사용자 계정의 인벤토리를 유지 관리 합니다. 또한는 MariaDB 인스턴스의 데이터 평면에 대 한 액세스 권한이 있는 관리 계정의 인벤토리를 유지 관리 합니다. (MariaDB 서버를 만들 때 관리자 사용자에 대 한 자격 증명을 제공 합니다. 이 관리자를 사용 하 여 추가 Aadb 사용자를 만들 수 있습니다.)
 
-MariaDB에 대 한 액세스 관리 이해:https://docs.microsoft.com/azure/mariadb/concepts-security#access-management
+MariaDB에 대 한 액세스 관리 이해: https://docs.microsoft.com/azure/mariadb/concepts-security#access-management
 
-Azure 구독에 대 한 Azure 기본 제공 역할 이해:https://docs.microsoft.com/azure/role-based-access-control/built-in-roles
+Azure 구독에 대 한 Azure 기본 제공 역할 이해: https://docs.microsoft.com/azure/role-based-access-control/built-in-roles
 
 
 **Azure Security Center 모니터링**: 예
@@ -309,12 +309,12 @@ Azure 구독에 대 한 Azure 기본 제공 역할 이해:https://docs.microsoft
 
 Azure는 MariaDB 리소스 자체를 만들 때 강력한 암호를 사용 하 여 관리자를 강제로 만듭니다. 그러나, MariaDB 인스턴스를 만든 후에는 계정을 만든 첫 번째 서버 관리자 계정을 사용 하 여 추가 사용자를 만들고 해당 사용자에 게 관리 액세스 권한을 부여할 수 있습니다. 이러한 계정을 만드는 경우 각 계정마다 서로 다른 강력한 암호를 구성해야 합니다.
 
-Aadb의 추가 계정을 만드는 방법:https://docs.microsoft.com/azure/mariadb/howto-create-users
+Aadb의 추가 계정을 만드는 방법: https://docs.microsoft.com/azure/mariadb/howto-create-users
 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3: 전용 관리 계정 사용
 
@@ -324,13 +324,13 @@ Azure Security Center ID 및 액세스 이해: https://docs.microsoft.com/azure/
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4: Azure Active Directory에서 SSO(Single Sign-On) 사용
 
 **지침**: MariaDB에 대 한 데이터 평면 액세스는 데이터베이스에 저장 된 id로 제어 되며 SSO를 지원 하지 않습니다. MariaDB에 대 한 제어 평면 액세스는 REST API를 통해 사용할 수 있으며 SSO를 지원 합니다. 인증을 위해 요청에 대한 권한 부여 헤더를 Azure Active Directory에서 가져오는 JSON Web Token으로 설정합니다.
 
-Azure Database for MariaDB REST API 이해:https://docs.microsoft.com/rest/api/mariadb/
+Azure Database for MariaDB REST API 이해: https://docs.microsoft.com/rest/api/mariadb/
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -358,7 +358,7 @@ Azure에서 MFA를 사용하도록 설정하는 방법: https://docs.microsoft.c
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7: 관리 계정의 의심스러운 활동에 대한 로그 및 경고
 
@@ -366,7 +366,7 @@ Azure에서 MFA를 사용하도록 설정하는 방법: https://docs.microsoft.c
 
 또한 환경에서 의심스러운 작업이나 안전하지 않은 활동이 발생하는 경우 Azure AD PIM(Privileged Identity Management)을 사용하여 로그 및 경고를 생성할 수 있습니다. Azure AD 위험 검색을 사용하여 위험한 사용자 동작에 대한 경고 및 보고서를 봅니다.
 
-MariaDB에 대 한 Advanced Threat Protection을 설정 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+MariaDB에 대 한 Advanced Threat Protection을 설정 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
 PIM(Privileged Identity Management)을 배포하는 방법: https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan
 
@@ -374,7 +374,7 @@ Azure AD 위험 검색 이해: https://docs.microsoft.com/azure/active-directory
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8: 승인된 위치에서만 Azure 리소스 관리
 
@@ -384,7 +384,7 @@ Azure에서 명명된 위치를 구성하는 방법: https://docs.microsoft.com/
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="39-use-azure-active-directory"></a>3.9: Azure Active Directory 사용
 
@@ -392,7 +392,7 @@ Azure에서 명명된 위치를 구성하는 방법: https://docs.microsoft.com/
 
 Azure AD 인증은 MariaDB 데이터 평면에 직접 액세스 하는 데 사용할 수 없지만, Azure AD 자격 증명은 관리 평면 수준에서 관리 (예: Azure Portal) 하는 데 사용할 수 있습니다.
 
-Aadb의 관리자 암호를 업데이트 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-create-manage-server-portal#update-admin-password
+Aadb의 관리자 암호를 업데이트 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-create-manage-server-portal#update-admin-password
 
 **Azure Security Center 모니터링**: 예
 
@@ -414,9 +414,9 @@ Azure ID 액세스 검토를 사용하는 방법: https://docs.microsoft.com/azu
 
 **지침**: Aadb 및 Azure Active Directory에 대 한 진단 설정을 사용 하도록 설정 하 여 모든 로그를 Log Analytics 작업 영역으로 보냅니다. Log Analytics 작업 영역 내에서 원하는 경고 (예: 인증 시도 실패)를 구성 합니다.
 
-MariaDB의 서버 로그를 구성 및 액세스 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-server-logs
+MariaDB의 서버 로그를 구성 및 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-server-logs
 
-MariaDB에 대해 감사 로그를 구성 하 고 액세스 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
+MariaDB에 대해 감사 로그를 구성 하 고 액세스 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-audit-logs-portal
 
 Azure 활동 로그를 Azure Monitor에 통합하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
@@ -430,9 +430,9 @@ Azure 활동 로그를 Azure Monitor에 통합하는 방법: https://docs.micros
 
 Azure Active Directory의 ID 보호 및 위험 검색 기능을 사용하여 탐지된 의심스러운 작업에 대해 자동화된 대응을 구성할 수 있습니다. 조직의 보안 대응을 구현하기 위해 Azure Sentinel을 통해 자동화된 대응을 사용하도록 설정할 수 있습니다.
 
-Aadb에 대해 Advanced Threat Protection을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
+Aadb에 대해 Advanced Threat Protection을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-database-threat-protection-portal
 
-Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
 Azure AD 위험한 로그인을 확인하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
@@ -464,7 +464,7 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2: 중요한 정보를 저장하거나 처리하는 시스템 격리
 
@@ -474,11 +474,11 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 관리 그룹을 만드는 방법: https://docs.microsoft.com/azure/governance/management-groups/create
 
-Azure Database for MariaDB에 대 한 개인 링크를 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
+Azure Database for MariaDB에 대 한 개인 링크를 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
 
-Azure Database for MariaDB에 대 한 서비스 끝점을 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
+Azure Database for MariaDB에 대 한 서비스 끝점을 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-manage-vnet-portal
 
-Azure Database for MariaDB에 대 한 방화벽 규칙을 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
+Azure Database for MariaDB에 대 한 방화벽 규칙을 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-firewall-rules
 
 **Azure Security Center 모니터링**: 사용할 수 없음
 
@@ -490,19 +490,19 @@ Azure Database for MariaDB에 대 한 방화벽 규칙을 구성 하는 방법:h
 
 Microsoft는 MariaDB의 기본 인프라를 관리 하 고 고객 데이터 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
-Azure Database for MariaDB에 대 한 데이터 반출을 완화 하는 방법:https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
+Azure Database for MariaDB에 대 한 데이터 반출을 완화 하는 방법: https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-private-link
 
 Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4: 전송 중인 모든 중요한 정보 암호화
 
 **지침**: Azure Database for MariaDB TLS (Transport Layer Security)를 사용 하 여 Azure Database for MariaDB 서버를 클라이언트 응용 프로그램에 연결 하는 것을 지원 합니다 (이전에는 SSL(SECURE SOCKETS LAYER) (SSL)). 데이터베이스 서버와 클라이언트 애플리케이션 간에 TLS 연결을 적용하면 서버와 애플리케이션 간의 데이터 스트림을 암호화하여 "메시지 가로채기(man in the middle)" 공격으로부터 보호할 수 있습니다. Azure Portal에서 "SSL 연결 적용"이 모든 Fadb 인스턴스에 대해 사용 하도록 설정 되어 있는지 확인 합니다.
 
-MariaDB에 대해 전송 중 암호화를 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-configure-ssl
+MariaDB에 대해 전송 중 암호화를 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-configure-ssl
 
 **Azure Security Center 모니터링**: 사용할 수 없음
 
@@ -522,15 +522,15 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AZURE AD RBAC를 사용 하 여 azure Database For MariaDB 관리 평면 (Azure Portal/Azure Resource Manager)에 대 한 액세스를 제어 합니다. 데이터 평면 액세스(데이터베이스 자체 내)의 경우 SQL 쿼리를 사용하여 사용자를 만들고 사용자 권한을 구성합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 azure Database For MariaDB 관리 평면 (Azure Portal/Azure Resource Manager)에 대 한 액세스를 제어 합니다. 데이터 평면 액세스(데이터베이스 자체 내)의 경우 SQL 쿼리를 사용하여 사용자를 만들고 사용자 권한을 구성합니다.
 
-Azure에서 RBAC를 구성하는 방법: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+Azure RBAC를 구성 하는 방법: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
-MariaDB 용 SQL을 사용 하 여 사용자 액세스를 구성 하는 방법:https://docs.microsoft.com/azure/mariadb/howto-create-users
+MariaDB 용 SQL을 사용 하 여 사용자 액세스를 구성 하는 방법: https://docs.microsoft.com/azure/mariadb/howto-create-users
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7: 호스트 기반 데이터 손실 방지를 사용하여 액세스 제어 적용
 
@@ -548,7 +548,7 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 **지침**: Azure Database for MariaDB 서비스는 미사용 데이터의 저장소 암호화를 위한 FIPS 140-2 유효성 검사 암호화 모듈을 사용 합니다. 백업이 포함된 데이터는 디스크에서 암호화되며, 쿼리를 실행하는 동안 만든 임시 파일은 제외됩니다. 이 서비스는 Azure 스토리지 암호화에 포함된 AES 256비트 암호화를 사용하며, 키는 시스템에서 관리됩니다. 스토리지 암호화는 항상 켜져 있고 해제할 수 없습니다.
 
-MariaDB의 미사용 암호화 이해:https://docs.microsoft.com/azure/mariadb/concepts-security
+MariaDB의 미사용 암호화 이해: https://docs.microsoft.com/azure/mariadb/concepts-security
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -710,7 +710,7 @@ Azure Graph를 사용하여 쿼리를 만드는 방법: https://docs.microsoft.c
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9: 승인된 Azure 서비스만 사용
 
-**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용한 고객 구독에 만들 수 있는 리소스 종류에 대한 제한을 설정할 수 있습니다.
+**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용하여 고객 구독에서 만들 수 있는 리소스 종류를 제한합니다.
 
 - 허용되지 않는 리소스 종류
 
@@ -745,7 +745,7 @@ Azure Resource Manager에 대한 액세스를 차단하도록 조건부 액세�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12: 사용자가 컴퓨팅 리소스 내에서 스크립트를 실행하는 기능 제한
 
@@ -786,7 +786,7 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7.2: 보안 운영 체제 구성 설정
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -808,7 +808,7 @@ Azure Policy 효과 이해: https://docs.microsoft.com/azure/governance/policy/c
 
 ### <a name="74-maintain-secure-operating-system-configurations"></a>7.4: 보안 운영 체제 구성 유지 관리
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -828,7 +828,7 @@ Azure Repos 설명서: https://docs.microsoft.com/azure/devops/repos/index?view=
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -848,7 +848,7 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 ### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8: 운영 체제용 시스템 구성 관리 도구 배포
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -868,7 +868,7 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10: 운영 체제에 대한 자동화된 구성 모니터링 구현
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -958,9 +958,9 @@ Microsoft 맬웨어 방지 프로그램은 Azure 서비스 (예: Azure Database 
 
 **지침**: Azure Database for MariaDB은 전체, 차등 및 트랜잭션 로그 백업을 수행 합니다.  Azure Database for MariaDB는 자동으로 서버 백업을 만들어 사용자가 로컬로 구성한 중복 스토리지 또는 지역 중복 스토리지에 저장합니다. 백업을 사용하여 특정 시점의 서버를 복원할 수 있습니다. 백업 및 복원은 실수로 인한 손상이나 삭제로부터 데이터를 보호하므로 비즈니스 연속성 전략의 필수적인 부분입니다.  기본 백업 보존 기간은 7일입니다. 필요에 따라 최대 35일까지 구성할 수 있습니다. 모든 백업은 AES 256비트 암호화를 사용하여 암호화됩니다.
 
-MariaDB에 대 한 백업 이해:https://docs.microsoft.com/azure/mariadb/concepts-backup
+MariaDB에 대 한 백업 이해:  https://docs.microsoft.com/azure/mariadb/concepts-backup
 
-MariaDB 초기 구성 이해:https://docs.microsoft.com/azure/mariadb/tutorial-design-database-using-portal
+MariaDB 초기 구성 이해: https://docs.microsoft.com/azure/mariadb/tutorial-design-database-using-portal
 
 
 
@@ -974,7 +974,7 @@ MariaDB 초기 구성 이해:https://docs.microsoft.com/azure/mariadb/tutorial-d
 
 Aadb 서버에 저장 된 데이터에 대 한 클라이언트 쪽 데이터 암호화를 위해 Key Vault를 사용 하는 경우 키의 자동 백업을 정기적으로 수행 해야 합니다.
 
-MariaDB에 대 한 백업 이해:https://docs.microsoft.com/azure/mariadb/concepts-backup
+MariaDB에 대 한 백업 이해:  https://docs.microsoft.com/azure/mariadb/concepts-backup
 
 Key Vault 키를 백업하는 방법: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
 
@@ -989,7 +989,7 @@ Key Vault 키를 백업하는 방법: https://docs.microsoft.com/powershell/modu
 
 예상 복구 시간은 데이터베이스 크기, 트랜잭션 로그 크기, 네트워크 대역폭 및 동일한 지역에서 동시에 복구되는 데이터베이스의 총 수를 포함한 여러 요소에 따라 달라집니다. 복구 시간은 일반적으로 12시간 미만입니다.
 
-Azure Database for MariaDB에서의 백업 및 복원 이해:https://docs.microsoft.com/azure/mariadb/concepts-backup#restore
+Azure Database for MariaDB에서의 백업 및 복원 이해:  https://docs.microsoft.com/azure/mariadb/concepts-backup#restore
 
 
 **Azure Security Center 모니터링**: 해당 없음
@@ -1000,7 +1000,7 @@ Azure Database for MariaDB에서의 백업 및 복원 이해:https://docs.micros
 
 **지침**: Azure Database for MariaDB은 전체, 차등 및 트랜잭션 로그 백업을 수행 합니다. 이러한 백업을 사용하면 서버를 구성된 백업 보존 기간 내의 특정 시점으로 복원할 수 있습니다. 기본 백업 보존 기간은 7일입니다. 필요에 따라 최대 35일까지 구성할 수 있습니다. 모든 백업은 AES 256비트 암호화를 사용하여 암호화됩니다.
 
-Azure Database for MariaDB에서의 백업 및 복원 이해:https://docs.microsoft.com/azure/mariadb/concepts-backup
+Azure Database for MariaDB에서의 백업 및 복원 이해:  https://docs.microsoft.com/azure/mariadb/concepts-backup
 
 
 **Azure Security Center 모니터링**: 예
@@ -1029,9 +1029,9 @@ Azure Database for MariaDB에서의 백업 및 복원 이해:https://docs.micros
 
 또한 태그를 사용하여 구독(예: 프로덕션, 비 프로덕션)을 명확하게 표시하고 Azure 리소스, 특히 중요한 데이터를 처리하는 리소스를 명확하게 식별하고 분류하는 명명 시스템을 만듭니다.  인시던트가 발생한 Azure 리소스 및 환경의 중요도에 따라 경고의 수정에 대한 우선 순위를 지정해야 합니다.
 
-- Azure Security Center의 보안 경고:https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
+- Azure Security Center의 보안 경고: https://docs.microsoft.com/azure/security-center/security-center-alerts-overview
 
-- 태그를 사용 하 여 Azure 리소스를 구성 합니다.https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- 태그를 사용 하 여 Azure 리소스를 구성 합니다. https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
 **Azure Security Center 모니터링**: 예
 
@@ -1089,12 +1089,12 @@ Azure Database for MariaDB에서의 백업 및 복원 이해:https://docs.micros
 
 https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
-Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.  https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ## <a name="next-steps"></a>다음 단계
 

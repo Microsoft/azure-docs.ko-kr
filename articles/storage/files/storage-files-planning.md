@@ -7,12 +7,13 @@ ms.topic: conceptual
 ms.date: 1/3/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2e8a2030acd4297ab3032e8f1e3bde5b6df66659
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.custom: references_regions
+ms.openlocfilehash: db7ae0bd33bc52f80788db4994dcf2a3ca4d909a
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88037170"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705914"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Azure Files 배포에 대한 계획
 [Azure Files](storage-files-introduction.md) 는 서버를 사용 하지 않는 azure 파일 공유를 직접 탑재 하거나 Azure File Sync를 사용 하 여 온-프레미스에서 azure 파일 공유를 캐시 하는 두 가지 주요 방법으로 배포할 수 있습니다. 선택 하는 배포 옵션에 따라 배포를 계획할 때 고려해 야 할 사항이 변경 됩니다. 
@@ -36,7 +37,7 @@ Azure 파일 공유를 저장소 계정에 배포할 때는 다음을 수행 하
 
 ## <a name="identity"></a>ID
 Azure 파일 공유에 액세스 하려면 파일 공유의 사용자를 인증 하 고 공유에 액세스할 수 있는 권한을 부여 해야 합니다. 이 작업은 파일 공유에 액세스 하는 사용자의 id를 기반으로 수행 됩니다. Azure Files는 세 가지 주요 id 공급자와 통합 됩니다.
-- **온-프레미스 Active Directory Domain Services (AD DS 또는 온-프레미스 AD DS)** (미리 보기): Azure Storage 계정은 Windows Server 파일 서버 또는 NAS 장치와 마찬가지로 고객이 소유 하는 Active Directory Domain Services 도메인에 가입할 수 있습니다. 도메인 컨트롤러를 온-프레미스, Azure VM 또는 다른 클라우드 공급자의 VM으로 배포할 수 있습니다. Azure Files은 도메인 컨트롤러가 호스트 되는 위치와 무관 합니다. 저장소 계정이 도메인에 가입 되 면 최종 사용자는를 사용 하 여 PC에 로그인 한 사용자 계정을 사용 하 여 파일 공유를 탑재할 수 있습니다. AD 기반 인증은 Kerberos 인증 프로토콜을 사용 합니다.
+- **온-프레미스 Active Directory Domain Services (AD DS 또는 온-프레미스 AD DS)**: Azure Storage 계정은 Windows Server 파일 서버 또는 NAS 장치와 마찬가지로 고객이 소유 하는 Active Directory Domain Services 도메인에 가입할 수 있습니다. 도메인 컨트롤러를 온-프레미스, Azure VM 또는 다른 클라우드 공급자의 VM으로 배포할 수 있습니다. Azure Files은 도메인 컨트롤러가 호스트 되는 위치와 무관 합니다. 저장소 계정이 도메인에 가입 되 면 최종 사용자는를 사용 하 여 PC에 로그인 한 사용자 계정을 사용 하 여 파일 공유를 탑재할 수 있습니다. AD 기반 인증은 Kerberos 인증 프로토콜을 사용 합니다.
 - **Azure Active Directory Domain Services (azure AD DS)**: azure AD DS는 azure 리소스에 사용할 수 있는 Microsoft 관리 도메인 컨트롤러를 제공 합니다. Azure AD DS에 저장소 계정을 조인 하는 도메인은 고객이 소유한 Active Directory에 가입 하는 도메인에 비슷한 이점을 제공 합니다. 이 배포 옵션은 AD 기반 사용 권한이 필요한 응용 프로그램 리프트 및 시프트 시나리오에 가장 유용 합니다. Azure AD DS는 AD 기반 인증을 제공 하므로이 옵션은 또한 Kerberos 인증 프로토콜을 사용 합니다.
 - Azure **storage 계정 키**: azure 저장소 계정 키를 사용 하 여 azure 파일 공유를 탑재할 수도 있습니다. 이러한 방식으로 파일 공유를 탑재 하기 위해 저장소 계정 이름이 사용자 이름으로 사용 되 고 저장소 계정 키가 암호로 사용 됩니다. 저장소 계정 키를 사용 하 여 Azure 파일 공유를 탑재 하는 작업은 실제로 관리자 작업입니다. 탑재 된 파일 공유에는 Acl이 있는 경우에도 공유의 모든 파일 및 폴더에 대 한 전체 권한이 있기 때문입니다. 저장소 계정 키를 사용 하 여 SMB를 통해 탑재 하는 경우 NTLMv2 인증 프로토콜이 사용 됩니다.
 
@@ -103,7 +104,7 @@ Azure Storage에 대 한 ATP (Advanced Threat Protection)는 저장소 계정에
 ## <a name="storage-tiers"></a>스토리지 계층
 [!INCLUDE [storage-files-tiers-overview](../../../includes/storage-files-tiers-overview.md)]
 
-일반적으로 Azure Files 기능 및 다른 서비스와의 상호 운용성은 프리미엄 파일 공유와 표준 파일 공유 사이에서 동일 하지만 몇 가지 중요 한 차이점이 있습니다.
+일반적으로 Azure Files 기능 및 다른 서비스와의 상호 운용성은 프리미엄 파일 공유와 표준 파일 공유 (트랜잭션 최적화, 핫 및 쿨 파일 공유 포함) 간에 동일 하지만 몇 가지 중요 한 차이점이 있습니다.
 - **청구 모델**
     - 프리미엄 파일 공유는 프로 비전 된 청구 모델을 사용 하 여 청구 됩니다. 즉, 실제로 요청 하는 저장소 크기 보다 프로 비전 하는 저장소 용량에 대 한 비용을 지불 합니다. 
     - 표준 파일 공유에는 종 량 제 모델을 사용 하 여 요금이 청구 됩니다. 여기에는 실제로 소비 하는 저장소의 양에 대 한 기본 저장소 비용과 공유 사용 방법에 따라 추가 트랜잭션 비용이 포함 됩니다. 표준 파일 공유를 사용 하는 경우 Azure 파일 공유를 사용 (읽기/쓰기/탑재) 하면 청구서가 증가 합니다.
@@ -180,7 +181,7 @@ Azure Storage에 대 한 ATP (Advanced Threat Protection)는 저장소 계정에
 #### <a name="limitations"></a>제한 사항
 [!INCLUDE [storage-files-tiers-large-file-share-availability](../../../includes/storage-files-tiers-large-file-share-availability.md)]
 
-## <a name="redundancy"></a>중복성
+## <a name="redundancy"></a>중복
 [!INCLUDE [storage-files-redundancy-overview](../../../includes/storage-files-redundancy-overview.md)]
 
 ## <a name="migration"></a>마이그레이션

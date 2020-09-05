@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/22/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: 8dd108e8c2877c7fe459819bf01b0e5b206cd9c0
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: b96b679e967fd898f072b4b1ae195e3dd1061c04
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445573"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235698"
 ---
 # <a name="plan-cloud-hr-application-to-azure-active-directory-user-provisioning"></a>사용자 프로 비전을 Azure Active Directory 클라우드 HR 응용 프로그램 계획
 
@@ -52,11 +52,11 @@ Azure AD 사용자 프로 비전과 클라우드 HR 앱 통합은 다음을 수�
 - 클라우드 HR 앱에서 검색 된 변경 정보만 기반으로 하나 이상의 Active Directory 포리스트, 도메인 및 Ou로 사용자를 동기화 할 수 있어야 합니다.
 - 전자 메일에 Office 365를 사용 합니다.
 
-## <a name="learn"></a>Learn
+## <a name="learn"></a>배우기
 
 사용자 프로 비전은 지속적인 id 거 버 넌 스를 위한 토대를 만듭니다. 이를 통해 신뢰할 수 있는 id 데이터를 사용 하는 비즈니스 프로세스의 품질을 향상 시킬 수 있습니다.
 
-### <a name="terms"></a>사용 약관
+### <a name="terms"></a>용어
 
 이 문서에서는 다음과 같은 용어를 사용 합니다.
 
@@ -79,9 +79,9 @@ HR 중심 IT 프로 비전의이 기능은 다음과 같은 중요 한 비즈니
 
 또한 클라우드 HR 앱에서 소스인 Active Directory 또는 Azure AD로 프로 비전 되는 모든 사용자에 대해 유효한 Azure AD Premium P1 이상의 구독 라이선스가 필요 합니다. 클라우드 HR 앱에서 소유 하 고 있는 라이선스 수가 잘못 된 경우 사용자 프로 비전 중에 오류가 발생할 수 있습니다.
 
-### <a name="prerequisites"></a>사전 요구 사항
+### <a name="prerequisites"></a>필수 구성 요소
 
-- Azure AD Connect 프로 비전 에이전트를 구성 하는 Azure AD [하이브리드 id 관리자](../users-groups-roles/directory-assign-admin-roles.md#hybrid-identity-administrator) 입니다.
+- Azure AD Connect 프로 비전 에이전트를 구성 하는 Azure AD [하이브리드 id 관리자](../users-groups-roles/directory-assign-admin-roles.md#hybrid-identity-administrator)  입니다.
 - Azure Portal에서 프로 비전 앱을 구성 하는 Azure AD [응용 프로그램 관리자](../users-groups-roles/directory-assign-admin-roles.md#application-administrator) 역할
 - 클라우드 HR 앱의 테스트 및 프로덕션 인스턴스입니다.
 - 클라우드 HR 앱에서 시스템 통합 사용자를 만들고 테스트 목적으로 직원 데이터를 변경 하는 관리자 권한
@@ -167,7 +167,7 @@ HR 비즈니스 프로세스와 id 워크플로를 클라우드 HR 앱에서 대
 - 프로 비전 에이전트 Azure AD Connect
 - Active Directory 도메인
 
-Azure AD Connect 프로 비전 에이전트 배포 토폴로지는 클라우드 HR 앱 테 넌 트 수 Active Directory 및 통합 하려는 하위 도메인의 수에 따라 달라 집니다. Active Directory 도메인이 여러 개 있는 경우에는 Active Directory 도메인이 연속 되었는지 또는 [비연속](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/disjoint-namespace)인지에 따라 달라 집니다.
+Azure AD Connect 프로 비전 에이전트 배포 토폴로지는 클라우드 HR 앱 테 넌 트 수 Active Directory 및 통합 하려는 하위 도메인의 수에 따라 달라 집니다. Active Directory 도메인이 여러 개 있는 경우에는 Active Directory 도메인이 연속 되었는지 또는 [비연속](/windows-server/identity/ad-ds/plan/disjoint-namespace)인지에 따라 달라 집니다.
 
 결정에 따라 배포 시나리오 중 하나를 선택 합니다.
 
@@ -257,7 +257,7 @@ Joiners 프로세스를 시작 하는 경우 다음 요구 사항을 수집 합�
 
 Joiners-Leavers 프로세스를 시작 하는 경우 다음 요구 사항을 수집 합니다.
 
-| Process | 요구 사항 |
+| 프로세스 | 요구 사항 |
 | - | - |
 | **Joiners** | Id 수명 주기 관점에서 rehires을 어떻게 처리 하나요? 이전 직원 Id를 계속 고용 하나요? |
 | | 향후에는 고용를 처리 하 고 사전에 Active Directory 계정을 만들어야 하나요? 이러한 계정은 사용 또는 사용 안 함 상태로 생성 되나요? |
@@ -276,7 +276,7 @@ Joiners-Leavers 프로세스를 시작 하는 경우 다음 요구 사항을 수
 
 Joiners-Leavers 프로세스를 시작 하는 경우 다음 요구 사항을 수집 합니다.
 
-| Process | 요구 사항 |
+| 프로세스 | 요구 사항 |
 | - | - |
 | **Joiners** | Active Directory 계정 생성 프로세스 수동, 자동화 또는 부분적으로 자동화 되었습니까? |
 | | 클라우드 HR 앱에서 Active Directory로 사용자 지정 특성을 전파할 계획 입니까? |
@@ -313,7 +313,7 @@ Switch([Municipality], "OU=Default,OU=Users,DC=contoso,DC=com", "Dallas", "OU=Da
 
 ## <a name="plan-for-password-delivery-of-new-user-accounts"></a>새 사용자 계정의 암호 전달 계획
 
-Joiners 프로세스를 시작 하는 경우 새 사용자 계정의 임시 암호를 설정 하 고 제공 해야 합니다. Azure AD 사용자 프로 비전에 클라우드 HR을 사용 하면 하루에 사용자에 대 한 Azure AD SSPR ( [셀프 서비스 암호 재설정](../authentication/quickstart-sspr.md) ) 기능을 롤아웃할 수 있습니다.
+Joiners 프로세스를 시작 하는 경우 새 사용자 계정의 임시 암호를 설정 하 고 제공 해야 합니다. Azure AD 사용자 프로 비전에 클라우드 HR을 사용 하면 하루에 사용자에 대 한 Azure AD SSPR ( [셀프 서비스 암호 재설정](../authentication/tutorial-enable-sspr.md) ) 기능을 롤아웃할 수 있습니다.
 
 SSPR는 IT 관리자가 사용자가 암호를 재설정 하거나 계정의 잠금을 해제할 수 있도록 하는 간단한 방법입니다. 클라우드 HR 앱에서 **모바일 번호** 특성을 프로 비전 하 여 Active Directory 하 고 Azure AD와 동기화 할 수 있습니다. **모바일 번호** 특성이 Azure AD에 있는 후 사용자 계정에 대해 SSPR를 사용 하도록 설정할 수 있습니다. 그런 다음, 새 사용자는 인증을 위해 등록 되 고 확인 된 휴대폰 번호를 사용할 수 있습니다.
 

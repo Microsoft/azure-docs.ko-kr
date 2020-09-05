@@ -5,14 +5,15 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
+ms.custom: devx-track-csharp
 ms.date: 03/04/2019
 ms.author: zhshang
-ms.openlocfilehash: 75d9977546c2a085765310a5654897f739a271ae
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 54a4c9374c064073620f2679e7c7511e30c45de6
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "65595403"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050644"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-c"></a>빠른 시작: C\#을 사용하여 Azure Functions와 SignalR Service로 대화방 만들기
 
@@ -26,13 +27,21 @@ Visual Studio 2019가 아직 설치되지 않은 경우 **평가판** [Visual St
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
+
 ## <a name="log-in-to-azure"></a>Azure에 로그인
 
 Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 로그인합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
+
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
+
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Azure 함수 앱을 구성하고 실행합니다.
 
@@ -66,10 +75,15 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
         ```bash
         func start
         ```
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -77,3 +91,5 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
 
 > [!div class="nextstepaction"]
 > [Visual Studio를 사용하여 Azure Functions 개발](../azure-functions/functions-develop-vs.md)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qscsharp)

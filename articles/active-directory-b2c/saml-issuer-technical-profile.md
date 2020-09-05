@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/27/2020
+ms.date: 08/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d709bf02f1cb504121e52f88385d0f6c074b24a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bb5383ee7930cb3d54593f71a709c033d3850889
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85203591"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88521215"
 ---
 # <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Azure Active Directory B2C 사용자 지정 정책에서 SAML 토큰 발급자의 기술 프로필 정의
 
@@ -57,6 +57,7 @@ Azure AD B2C(Azure Active Directory B2C)는 각 인증 흐름을 처리할 때 �
 | attribute | 필수 | Description |
 | --------- | -------- | ----------- |
 | IssuerUri | 예 | SAML 응답에 표시되는 발급자 이름입니다. 이 값은 신뢰 당사자 애플리케이션에 구성된 이름과 같아야 합니다. |
+| XmlSignatureAlgorithm | 예 | Azure AD B2C에서 SAML 어설션에 서명 하는 데 사용 하는 메서드입니다. 가능한 값은 `Sha256`, `Sha384`, `Sha512` 또는 `Sha1`입니다. 양쪽의 서명 알고리즘을 같은 값으로 구성해야 합니다. 인증서가 지원하는 알고리즘만 사용하세요. SAML 응답을 구성 하려면 신뢰 당사자 [SAML 메타 데이터](relyingparty.md#metadata) 를 참조 하세요.|
 
 ## <a name="cryptographic-keys"></a>암호화 키
 
@@ -76,15 +77,4 @@ CryptographicKeys 요소에는 다음 특성이 포함됩니다.
 SAML 발급자 기술 프로필을 사용하는 예제는 다음 문서를 참조하세요.
 
 - [Azure AD B2C에 SAML 애플리케이션 등록](connect-with-saml-service-providers.md)
-
-
-
-
-
-
-
-
-
-
-
 

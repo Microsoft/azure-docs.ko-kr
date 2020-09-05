@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7d7227a0eeaa496dd774eb962946a4ee85e22009
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8dc18af933a4570112beb025c1fb9163abafffff
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080029"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935945"
 ---
 #    <a name="named-entity-recognition-cognitive-skill"></a>명명된 엔터티 인식 기술
 
@@ -32,7 +32,7 @@ ms.locfileid: "85080029"
 Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 ## <a name="data-limits"></a>데이터 제한
-레코드의 최대 크기는 [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)에 의해 측정된 대로 50,000자여야 합니다. 핵심 구문 추출기로 보내기 전에 데이터를 분할해야 할 경우 [텍스트 분할 기술](cognitive-search-skill-textsplit.md) 사용을 고려합니다.
+레코드의 최대 크기는 [`String.Length`](/dotnet/api/system.string.length)에 의해 측정된 대로 50,000자여야 합니다. 핵심 구문 추출기로 보내기 전에 데이터를 분할해야 할 경우 [텍스트 분할 기술](cognitive-search-skill-textsplit.md) 사용을 고려합니다.
 
 ## <a name="skill-parameters"></a>기술 매개 변수
 
@@ -46,14 +46,14 @@ Microsoft.Skills.Text.NamedEntityRecognitionSkill
 
 ## <a name="skill-inputs"></a>기술 입력
 
-| 입력 이름      | 설명                   |
+| 입력 이름      | Description                   |
 |---------------|-------------------------------|
 | languageCode  | 선택 사항입니다. 기본값은 `"en"`입니다.  |
 | text          | 분석할 텍스트입니다.          |
 
 ## <a name="skill-outputs"></a>기술 출력
 
-| 출력 이름     | 설명                   |
+| 출력 이름     | Description                   |
 |---------------|-------------------------------|
 | persons      | 각 문자열이 사람 이름을 나타내는 경우 문자열 배열입니다. |
 | 위치  | 각 문자열이 위치를 나타내는 경우 문자열 배열입니다. |

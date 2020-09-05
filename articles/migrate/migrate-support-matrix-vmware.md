@@ -3,12 +3,12 @@ title: Azure Migrate의 VMware 평가 지원
 description: Azure Migrate:Server Assessment 도구를 사용하여 VM을 평가하기 위한 VMware에 대한 지원을 알아봅니다.
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 9c9b1f7687d1ab1af36ac603501ecbaa7affd9b6
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 4f724297f216267dadda31be4bd548eb241b9845
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387033"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266972"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>VMware 평가에 대한 지원 매트릭스 
 
@@ -40,6 +40,7 @@ VMware VM을 Azure로 마이그레이션하려면 [마이그레이션 지원 매
 **VMware** | **세부 정보**
 --- | ---
 **VMware VM** | 모든 운영 체제의 마이그레이션을 평가할 수 있습니다. 
+**스토리지** | SCSI, IDE 및 SATA 기반 컨트롤러에 연결 된 디스크가 지원 됩니다.
 
 
 ## <a name="azure-migrate-appliance-requirements"></a>Azure Migrate 어플라이언스 요구 사항

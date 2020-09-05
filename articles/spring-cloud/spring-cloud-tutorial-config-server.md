@@ -7,12 +7,12 @@ ms.author: brendm
 author: bmitchell287
 ms.date: 10/18/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: dd97932d0aaa89373636a60e793f531cda18abdd
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
-ms.translationtype: HT
+ms.openlocfilehash: 38ef1188503d0076cfd98843f6f68c990fba7463
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091439"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762376"
 ---
 # <a name="set-up-a-spring-cloud-config-server-instance-for-your-service"></a>서비스용 Spring Cloud Config 서버 인스턴스 설정
 
@@ -146,14 +146,14 @@ SSH를 사용하는 프라이빗 Git 리포지토리를 설정하는 데 사용�
 
     * **기본 인증**: **기본 리포지토리** 섹션의 **Uri** 상자에서 리포지토리 URI를 붙여넣은 다음, **인증**("연필" 아이콘) 단추를 선택합니다. **인증 편집** 창의 **인증 유형** 드롭다운 목록에서 **HTTP Basic**을 선택한 다음, 사용자 이름과 암호/토큰을 입력하여 Azure Spring Cloud에 대한 액세스 권한을 부여합니다. **확인**을 선택한 다음, **적용**을 클릭하여 Config 서버 인스턴스 설정을 완료합니다.
 
-    ![인증 편집 창](media/spring-cloud-tutorial-config-server/basic-auth.png)
+    ![인증 편집 창 기본 인증](media/spring-cloud-tutorial-config-server/basic-auth.png)
     
     > [!CAUTION]
     > 일부 리포지토리 서버(예: GitHub)에서는 암호와 같은 *personal-token* 또는 *access-token*을 **기본 인증**에 사용합니다. 이러한 종류의 토큰은 만료되지 않으므로 Azure Spring Cloud에서 암호로 사용할 수 있습니다. 그러나 다른 Git 리포지토리 서버(예: Bitbucket 및 Azure DevOps)의 경우 *access-token*은 1~2시간 후에 만료됩니다. 즉, Azure Spring Cloud에서 이러한 리포지토리 서버를 사용하는 경우에는 이 옵션을 사용할 수 없습니다.
 
     * **SSH**: **기본 리포지토리** 섹션의 **Uri** 상자에서 리포지토리 URI를 붙여넣은 다음, **인증**("연필" 아이콘) 단추를 선택합니다. **인증 편집** 창의 **인증 유형** 드롭다운 목록에서 **SSH**를 선택한 다음, **프라이빗 키**를 입력합니다. 필요에 따라 **호스트 키** 및 **호스트 키 알고리즘**을 지정합니다. Config 서버 리포지토리에 공개 키를 포함해야 합니다. **확인**을 선택한 다음, **적용**을 클릭하여 Config 서버 인스턴스 설정을 완료합니다.
 
-    ![인증 편집 창](media/spring-cloud-tutorial-config-server/ssh-auth.png)
+    ![인증 편집 창 ssh 인증](media/spring-cloud-tutorial-config-server/ssh-auth.png)
 
 #### <a name="pattern-repository"></a>패턴 리포지토리
 
@@ -182,6 +182,48 @@ spring:
 
 YAML 파일의 정보가 Azure Portal에 표시됩니다. **적용**을 선택하여 완료합니다. 
 
+## <a name="using-azure-repos-for-azure-spring-cloud-configuration"></a>Azure 스프링 클라우드 구성에 Azure Repos 사용
+
+Azure 스프링 클라우드는 공용, SSH로 보호 또는 HTTP 기본 인증을 사용 하 여 보호 되는 Git 리포지토리에 액세스할 수 있습니다. Azure Repos를 사용 하 여 쉽게 만들고 관리할 수 있으므로 해당 마지막 옵션을 사용 합니다.
+
+### <a name="get-repo-url-and-credentials"></a>리포지토리 url 및 자격 증명 가져오기
+1. 프로젝트에 대 한 Azure Repos 포털에서 "복제" 단추를 클릭 합니다.
+
+    ![복제 단추](media/spring-cloud-tutorial-config-server/clone-button.png)
+
+1. 텍스트 상자에서 클론 URL을 복사 합니다. 이 URL은 일반적으로 다음과 같은 형식입니다.
+
+    ```Text
+    https://<organization name>@dev.azure.com/<organization name>/<project name>/_git/<repository name>
+    ```
+
+    을 포함 하 여 전후 모든 항목 `https://` `dev.azure.com` 을 제거 `@` 합니다. 결과 URL의 형식은 다음과 같아야 합니다.
+
+    ```Text
+    https://dev.azure.com/<organization name>/<project name>/_git/<repository name>
+    ```
+
+    다음 섹션에서 사용 하기 위해이 URL을 저장 합니다.
+
+1. "Git 자격 증명 생성"을 클릭 합니다. 사용자 이름 및 암호가 표시 됩니다. 다음 섹션에서 사용 하기 위해 저장 합니다.
+
+
+### <a name="configure-azure-spring-cloud-to-access-the-git-repository"></a>Git 리포지토리에 액세스하도록 Azure Spring Cloud 구성
+
+1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
+
+1. Azure Spring Cloud **개요** 페이지로 이동합니다.
+
+1. 구성할 서비스를 선택합니다.
+
+1. 서비스 페이지의 왼쪽 창에 있는 **설정**에서 **구성 서버** 탭을 선택 합니다. 이전에 만든 리포지토리를 구성 합니다.
+   - 이전 섹션에서 저장 한 리포지토리 URL 추가
+   - 설정을 클릭 하 고 다음을 선택 합니다. `Authentication``HTTP Basic`
+   - __사용자 이름은__ 이전 섹션에서 저장 한 사용자 이름입니다.
+   - __암호__ 는 이전 섹션에서 저장 한 암호입니다.
+   - "적용"을 클릭 하 고 작업이 성공할 때까지 기다립니다.
+
+   ![Spring Cloud 구성 서버](media/spring-cloud-tutorial-config-server/config-server-azure-repos.png)
 
 ## <a name="delete-your-app-configuration"></a>앱 구성 삭제
 

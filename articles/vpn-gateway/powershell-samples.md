@@ -1,22 +1,22 @@
 ---
 title: VPN Gateway에 대한 Azure PowerShell 샘플
-description: VPN Gateway에 대한 Azure PowerShell 샘플
+description: 이러한 Azure PowerShell 스크립트를 사용하여 VPN 게이트웨이를 만들고, 사이트 간 및 Vnet 간 연결을 만들고, VPN 디바이스 템플릿을 다운로드합니다.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: sample
 ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: fcae37da3ef9c5b2b7633db1dd16cec247a782af
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 84aa01722a9be078f361bd482c8c95be675e6ef9
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203820"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88035335"
 ---
 # <a name="azure-powershell-samples-for-vpn-gateway"></a>VPN Gateway에 대한 Azure PowerShell 샘플
 
-다음 표에는 Azure PowerShell 스크립트에 대한 링크가 포함됩니다.
+다음 표에는 Azure PowerShell 스크립트에 대한 링크가 포함되어 있습니다.
 
 | 스크립트 | Description |
 |----|----|

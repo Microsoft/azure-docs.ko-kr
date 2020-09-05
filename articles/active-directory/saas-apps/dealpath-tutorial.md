@@ -2,26 +2,21 @@
 title: Dealpath와 Azure Active Directory 통합 | Microsoft Docs
 description: Azure Active Directory 및 Dealpath 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 51ace608-5a4f-48c0-9446-d9f86ad2e890
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 020b34cc4487879b374ff3ddb4a1bb76f14093bc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5bae2173fc49cb9f41787905be66cf32a99fa03a
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73159275"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88537003"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dealpath"></a>자습서: Azure Active Directory와 Dealpath 통합
 

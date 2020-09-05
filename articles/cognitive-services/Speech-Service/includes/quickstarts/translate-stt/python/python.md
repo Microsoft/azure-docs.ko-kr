@@ -9,14 +9,14 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 12/09/2019
 ms.author: chlandsi
-ms.openlocfilehash: e869a6581ac29ac234c075d258b59dbd45045ee2
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 0d8128d02409072b2c43fb2c0de3766e7c8ed63d
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78925779"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226459"
 ---
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 시작하기 전에 다음을 확인해야 합니다.
 
@@ -76,7 +76,7 @@ ms.locfileid: "78925779"
 
 1. 동일한 파일에서 `YourSubscriptionKey` 문자열을 구독 키로 바꿉니다.
 
-1. 문자열 `YourServiceRegion`을 구독과 연결된 [지역](../../../../regions.md)으로 바꿉니다(예를 들어 평가판 구독에 대해 `westus`).
+1. `YourServiceRegion` 문자열을 구독과 연결된 [Azure 지역](../../../../regions.md)으로 바꿉니다.
 
 1. `quickstart.py`에 대한 변경 내용을 저장합니다.
 

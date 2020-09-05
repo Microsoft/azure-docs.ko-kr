@@ -11,16 +11,16 @@ ms.topic: overview
 ms.date: 05/26/2020
 ms.author: swmachan
 ms.custom: seodec18
-ms.openlocfilehash: 7044954d2ba67e61172c08c0a77acaaaec3822c6
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 5da9e5b38b88a5a148bd3d85664daa523153086b
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83992677"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589454"
 ---
 # <a name="what-is-the-translator"></a>Translator란?
 
-Translator는 애플리케이션, 웹 사이트, 도구 및 솔루션에 쉽게 통합할 수 있습니다. [60개국 초과 언어](languages.md)로 제공되는 다국어 사용자 환경을 추가할 수 있게 해주며, 텍스트-텍스트 언어 번역에 사용되는 모든 운영 체제가 설치된 모든 하드웨어 플랫폼에서 사용할 수 있습니다.
+Translator는 애플리케이션, 웹 사이트, 도구 및 솔루션에 쉽게 통합할 수 있습니다. [70개국 초과 언어](languages.md)로 제공되는 다국어 사용자 환경을 추가할 수 있게 해주며, 텍스트 간 언어 번역에 사용되는 운영 체제가 설치된 모든 하드웨어 플랫폼에서 사용할 수 있습니다.
 
 Translator는 클라우드의 AI 알고리즘 및 기계 학습의 [Azure Cognitive Services](https://docs.microsoft.com/azure/?pivot=products&panel=ai) 컬렉션에 포함되며, 사용자 개발 프로젝트에서 쉽게 사용할 수 있습니다.
 

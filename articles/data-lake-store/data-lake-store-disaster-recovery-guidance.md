@@ -1,17 +1,17 @@
 ---
 title: Azure Data Lake Storage Gen1용 재해 복구 지침 | Microsoft Docs
-description: Azure Data Lake Storage Gen1에 대 한 고가용성 및 재해 복구에 대 한 지침
+description: Azure Data Lake Storage Gen1의 로컬 중복 저장소를 벗어난 지역 전체 중단 또는 실수로 인 한 삭제 로부터 데이터를 추가로 보호 하는 방법에 대해 알아봅니다.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: twooley
-ms.openlocfilehash: ebcdeed608a5b9dc6202071869c4df1dcfd327a8
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: b124f828c4a6a019c45243528ed2d957e3f781f3
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87512757"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191425"
 ---
 # <a name="high-availability-and-disaster-recovery-guidance-for-data-lake-storage-gen1"></a>Data Lake Storage Gen1에 대 한 고가용성 및 재해 복구 지침
 

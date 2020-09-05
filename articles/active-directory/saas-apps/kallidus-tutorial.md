@@ -2,26 +2,21 @@
 title: '자습서: Kallidus와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Kallidus 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: CelesteDG
 ms.reviewer: celested
-ms.assetid: 5a562a8d-0c2a-442e-87b5-db7e74aef0d6
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/05/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3caa48e1461552f2999aa2fd91447a41d146379
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b743043d7a7c211ad024b2c1f2fe51f807c50beb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76120318"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546862"
 ---
 # <a name="tutorial-integrate-kallidus-with-azure-active-directory"></a>자습서: Azure Active Directory와 Kallidus 통합
 

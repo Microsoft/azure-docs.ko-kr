@@ -2,25 +2,21 @@
 title: '자습서: Freshservice와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Freshservice 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3dd22b1f-445d-45c6-8eda-30207eb9a1a8
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 07/29/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06b52ec552434f74c56333d1afe00cde2a285418
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 9e53881d5b28b61cd220b14e02c411db53d19d36
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905434"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550999"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-freshservice"></a>자습서: Freshservice와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -60,7 +56,7 @@ Freshservice의 Azure AD 통합을 구성하려면 갤러리의 Freshservice를 
 1. **갤러리에서 추가** 섹션의 검색 상자에 **Freshservice**를 입력합니다.
 1. 결과 패널에서 **Freshservice**를 선택한 후 앱을 추가합니다. 앱이 테넌트에 추가될 때까지 잠시 동안 기다려 주세요.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-freshservice"></a>Freshservice에 대한 Azure AD Single Sign-On 구성 및 테스트
+## <a name="configure-and-test-azure-ad-sso-for-freshservice"></a>Freshservice에 대한 Azure AD SSO 구성 및 테스트
 
 테스트 사용자 **B.Simon**을 사용하여 Freshservice로 Azure AD SSO를 구성 및 테스트합니다. SSO가 작동하려면 Azure AD 사용자와 Freshservice의 관련 사용자 간에 연결 관계가 설정되어야 합니다.
 
@@ -132,7 +128,15 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 ## <a name="configure-freshservice-sso"></a>Freshservice SSO 구성
 
-1. 새 웹 브라우저 창을 열고, Freshservice 회사 사이트에 관리자 권한으로 로그인합니다.
+1. Freshservice 내에서 구성을 자동화하려면 **확장 설치**를 클릭하여 **내 앱 보안 로그인 브라우저 확장**을 설치해야 합니다.
+
+    ![내 앱 확장](common/install-myappssecure-extension.png)
+
+1. 브라우저에 확장을 추가한 후 **Freshservice 설정**을 클릭하면 Freshservice 애플리케이션으로 이동됩니다. 애플리케이션에서 관리자 자격 증명을 입력하여 Freshservice에 로그인합니다. 브라우저 확장이 애플리케이션을 자동으로 구성하고 3-6단계를 자동으로 수행합니다.
+
+    ![설정 구성](common/setup-sso.png)
+
+1. Freshservice를 수동으로 설정하려면 Freshservice 회사 사이트에 관리자 권한으로 로그인합니다.
 
 1. 왼쪽 메뉴에서 **관리자**를 클릭하고, **일반 설정**에서 **기술 지원팀 보안**을 선택합니다.
 

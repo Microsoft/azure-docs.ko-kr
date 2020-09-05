@@ -3,12 +3,13 @@ title: 클라이언트에서 게시 이벤트를 인증 하 여 사용자 지정
 description: 이 문서에서는 사용자 지정 항목 Event Grid 클라이언트 게시 이벤트를 인증 하는 다양 한 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 8b08c46fdeadccfad0471ddfa4f9ba2762a951a0
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: e934ce0d8f5e31dc8dd7592a2e553cd278af2b10
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837400"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019116"
 ---
 # <a name="authenticate-publishing-clients-azure-event-grid"></a>게시 클라이언트 인증 (Azure Event Grid)
 이 문서에서는 **액세스 키** 또는 **SAS (공유 액세스 서명)** 토큰을 사용 하 여 Azure Event Grid 토픽 또는 도메인에 이벤트를 게시 하는 클라이언트 인증에 대 한 정보를 제공 합니다. SAS 토큰을 사용 하는 것이 좋지만 키 인증을 사용 하면 간단한 프로그래밍이 가능 하며 기존의 많은 webhook 게시자와 호환 됩니다.  

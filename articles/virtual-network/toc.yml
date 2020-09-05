@@ -12,6 +12,8 @@
       href: quick-create-powershell.md
     - name: 가상 네트워크 만들기 - Azure CLI
       href: quick-create-cli.md
+    - name: 가상 네트워크 만들기 - ARM 템플릿
+      href: quick-create-template.md
   expanded: true
 - name: 자습서
   items:
@@ -35,9 +37,6 @@
       href: powershell-samples.md
     - name: 리소스 관리자 템플릿
       href: template-samples.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 비즈니스 연속성
@@ -95,7 +94,11 @@
     - name: 보안
       items:
         - name: 네트워크 보안 그룹
-          href: security-overview.md
+          items:
+            - name: 개요
+              href: security-overview.md
+            - name: 작동 방식
+              href: network-security-group-how-it-works.md
         - name: 애플리케이션 보안 그룹
           href: application-security-groups.md
         - name: 서비스 태그
@@ -108,6 +111,9 @@
           href: ddos-protection-overview.md
         - name: 가상 네트워크 TAP
           href: virtual-network-tap-overview.md
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
     - name: 서브넷
       items:
         - name: 서브넷 확장
@@ -220,6 +226,12 @@
               href: ipv6-reserve-public-ip-address-prefix.md
         - name: IP 주소
           items:
+            - name: 공용 IP 주소 만들기 - 포털
+              href: create-public-ip-portal.md
+            - name: 공용 IP 주소 만들기 - PowerShell
+              href: create-public-ip-powershell.md
+            - name: 공용 IP 주소 만들기 - Azure CLI
+              href: create-public-ip-cli.md
             - name: 공용 IP 주소 관리
               href: virtual-network-public-ip-address.md
             - name: 공용 IP 접두사 관리
@@ -420,12 +432,15 @@
       href: 'https://docs.microsoft.com/javascript/azure#azure-sdk'
     - name: Python
       href: 'https://azure.microsoft.com/develop/python/'
-    - name: REST
+    - name: REST (영문)
       href: /rest/api/virtual-network
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.network/allversions
     - name: 코드 샘플
       href: 'https://azure.microsoft.com/resources/samples/?service=virtual-network'
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

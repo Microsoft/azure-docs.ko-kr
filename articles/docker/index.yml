@@ -3,19 +3,19 @@ title: Azure의 Docker 설명서
 summary: Docker는 Linux 및 Windows에서 컨테이너와 함께 빠르게 사용할 수 있는 인기 있는 컨테이너 관리 및 이미징 플랫폼입니다. Azure에서 Docker를 활용하는 방법을 알아봅니다.
 metadata:
   title: Azure의 Docker 설명서
-  description: Docker는 Linux 및 Windows에서 컨테이너와 함께 빠르게 사용할 수 있는 인기 있는 컨테이너 관리 및 이미징 플랫폼입니다. Azure에서 Docker를 활용하는 방법을 알아봅니다.
+  description: Docker는 Linux 및 Windows에서 컨테이너와 함께 빠르게 사용할 수 있는 인기 있는 컨테이너 관리 및 이미징 플랫폼입니다.
   services: multiple
   ms.service: multiple
   ms.topic: landing-page
   author: georgewallace
   ms.author: gwallace
   ms.date: 03/08/2020
-  ms.openlocfilehash: 9205a47ee0ba3e6e0b328c8f481b15fe593ec5fb
-  ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+  ms.openlocfilehash: 94d5dd74aad11e2271de52dd082cfb9287eb10c1
+  ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/11/2020
-  ms.locfileid: "88080388"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88224580"
 landingContent:
 - title: Azure에 Docker 배포
   linkLists:

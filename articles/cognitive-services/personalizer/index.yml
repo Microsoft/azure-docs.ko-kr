@@ -12,12 +12,12 @@ metadata:
   title: Personalizer 설명서
   titleSuffix: Azure Cognitive Services
   description: Azure Personalizer는 사용자에게 표시할 최상의 환경을 선택할 수 있는 클라우드 기반 API 서비스로, 사용자의 실시간 동작을 통해 학습합니다.
-  ms.openlocfilehash: 0c8e99ab2817cd9aaa2de60b9996b3d47b10a1ff
-  ms.sourcegitcommit: a8928136b49362448e992a297db1072ee322b7fd
+  ms.openlocfilehash: 28197f7408ea93ed07d09e1ae44e7924f4605a14
+  ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/11/2020
-  ms.locfileid: "84717920"
+  ms.lasthandoff: 08/18/2020
+  ms.locfileid: "88506552"
 landingContent:
 - title: Personalizer 정보
   linkLists:
@@ -49,7 +49,7 @@ landingContent:
     links:
     - text: .NET 웹앱에서 Personalizer 사용
       url: tutorial-use-personalizer-web-app.md
-    - text: Azure Notebook으로 Personalizer 사용
+    - text: Azure Notebook 파일로 Personalizer 사용
       url: tutorial-use-azure-notebook-generate-loop-data.md
   - linkListType: how-to-guide
     links:

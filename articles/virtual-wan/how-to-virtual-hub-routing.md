@@ -8,22 +8,18 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 634967fbe50c74770bdc3b526d68896728e4ee07
-ms.sourcegitcommit: 29400316f0c221a43aff3962d591629f0757e780
+ms.openlocfilehash: 00d79f8058d7d478f7fe97ba9677e47098b70e1b
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/02/2020
-ms.locfileid: "87513063"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89145929"
 ---
 # <a name="how-to-configure-virtual-hub-routing"></a>가상 허브 라우팅을 구성하는 방법
 
 가상 허브는 사이트 간 VPN 게이트웨이, Express 경로 게이트웨이, 지점 및 사이트 간 게이트웨이 및 Azure 방화벽과 같은 여러 게이트웨이를 포함할 수 있습니다. 가상 허브의 라우팅 기능은 BGP (Border Gateway Protocol)를 사용 하는 게이트웨이와 전송 라우팅을 비롯 한 모든 라우팅을 관리 하는 라우터에서 제공 됩니다. 또한이 라우터는 가상 허브에 연결 하는 가상 네트워크 간의 전송 연결을 제공 하며 50 Gbps의 최대 집계 처리량을 지원할 수 있습니다. 이러한 라우팅 기능은 표준 가상 WAN 고객에 게 적용 됩니다.
 
 자세한 내용은 [가상 허브 라우팅 정보](about-virtual-hub-routing.md)를 참조 하세요.
-
-> [!NOTE]
-> 이러한 기능 중 일부는 여전히 롤아웃 될 수 있습니다. 이는 8 월 17 일에 완료 될 것으로 예상 됩니다.
->
 
 ## <a name="create-a-route-table"></a><a name="create-table"></a>경로 테이블 만들기
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.date: 08/06/2020
-ms.openlocfilehash: 1d11318d2af640a0cf417286ee777ce833297a4f
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: f9c5b8ae16cb43576d788f72478e2cfba521a736
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873605"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749877"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Apache Hadoop, Apache Spark, Apache Kafka 등을 사용하여 HDInsight에서 클러스터 설정
 
@@ -97,13 +97,13 @@ HDInsight 클러스터를 사용하면 클러스터 생성 중에 다음과 같�
 
 HTTP 사용자 이름에는 다음과 같은 제한 사항이 있습니다.
 
-* 허용 되는 특수 문자: `_` 및`@`
+* 허용 되는 특수 문자: `_` 및 `@`
 * 허용 되지 않는 문자: #;. "', \/ : '! *? $ () {} [] <>|&--= +% ~ ^ space
 * 최대 길이: 20
 
 SSH 사용자 이름에는 다음과 같은 제한 사항이 있습니다.
 
-* 허용 되는 특수 문자: `_` 및`@`
+* 허용 되는 특수 문자: `_` 및 `@`
 * 허용 되지 않는 문자: #;. "', \/ : '! *? $ () {} [] <>|&--= +% ~ ^ space
 * 최대 길이: 64
 * 예약 된 이름: hadoop, 사용자, oozie, hive, mapred, ambari-qa, 사육 사, tez, hdfs, sqoop, yarn, hcat, ams, hbase, 스톰, 관리자, 관리자, 사용자, user1, 테스트, 사용자 2, test1, user3, 1, 1, 123, a, actuser, adm, 2, aspnet, backup, console, david, guest, john, owner, root, server, sql, support, support_388945a0, sys, test2, test3, user4, user5, spark
@@ -133,6 +133,9 @@ HDInsight의 저장소 옵션에 대 한 자세한 내용은 [Azure hdinsight �
 
 > [!IMPORTANT]
 > 클러스터를 만든 후 보안 저장소 전송을 사용 하도록 설정 하면 저장소 계정을 사용 하 여 오류가 발생할 수 있으므로 권장 되지 않습니다. 보안 전송이 이미 활성화 된 저장소 계정을 사용 하 여 새 클러스터를 만드는 것이 좋습니다.
+
+> [!Note]  
+> Azure HDInsight는 Azure Storage에 저장 된 데이터를 한 지역에서 다른 지역으로 자동으로 전송 하거나 이동 하거나 복사 하지 않습니다.
 
 ### <a name="metastore-settings"></a>Metastore 설정
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
+ms.date: 08/20/2020
 ms.author: panosper
-ms.openlocfilehash: f647727c01bbddafe3b10877af3e1d5652bedd29
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f06fda777cbebd8034ac4fd9254a4bd172d011a4
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833590"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661506"
 ---
 # <a name="text-to-speech-frequently-asked-questions"></a>Text to Speech에 대한 FAQ(질문과 대답)
 
@@ -59,7 +59,7 @@ ms.locfileid: "85833590"
 
 **Q: 내 요청이 제한되나요?**
 
-**A**: REST API는 표준 구독에 대 한 요청을 5 초 당 25로 제한 합니다. Free 계층 (F0)은 분당 20 개의 요청으로 제한 됩니다.
+**A**: [Speech Services 할당량 및 제한을](speech-services-quotas-and-limits.md)참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.custom: amqp
-ms.openlocfilehash: a3258de2ed7269ab50e6feca3c421d55de5a9d91
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: amqp, devx-track-csharp
+ms.openlocfilehash: a10c8b21da1e4dc08a186ccb6ba6528b7a655943
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759773"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022074"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>포털 및 .NET 디바이스를 사용하여 IoT Hub 모듈 ID 및 모듈 쌍 시작
 
@@ -93,7 +93,7 @@ IoT Hub에서 모듈 ID를 성공적으로 만들었습니다. 시뮬레이트�
 
 ### <a name="get-your-module-connection-string"></a>모듈 연결 문자열 가져오기
 
-콘솔 앱에 대 한 모듈 연결 문자열이 필요 합니다. 아래 단계를 수행합니다.
+콘솔 앱에 대 한 모듈 연결 문자열이 필요 합니다. 다음 단계를 수행합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 

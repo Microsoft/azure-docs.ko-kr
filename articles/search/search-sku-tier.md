@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: 93fb65fc7c7551635c49e33d0f626d72c2755a11
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: ac08f2cee19b2d8860323c48d89205d5ca939157
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553974"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88922806"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 가격 책정 계층 선택
 
@@ -97,8 +97,8 @@ Azure Cognitive Search을 기반으로 하는 솔루션은 다음과 같은 방�
 
 | 작업(Operation) | 청구 영향 |
 |-----------|----------------|
-| 문서 크랙, 텍스트 추출 | 무료 |
-| 문서 크랙, 이미지 추출 | 문서에서 추출 된 이미지의 수에 따라 요금이 청구 됩니다. [인덱서 구성](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-parameters)에서 **imageaction** 은 이미지 추출을 트리거하는 매개 변수입니다. **Imageaction** 이 "none" (기본값)으로 설정 된 경우 이미지 추출에 대 한 요금이 청구 되지 않습니다. 이미지 추출 율은 Azure Cognitive Search에 대 한 [가격 책정 세부 정보](https://azure.microsoft.com/pricing/details/search/) 페이지에 설명 되어 있습니다.|
+| 문서 크랙, 텍스트 추출 | Free |
+| 문서 크랙, 이미지 추출 | 문서에서 추출 된 이미지의 수에 따라 요금이 청구 됩니다. [인덱서 구성](/rest/api/searchservice/create-indexer#indexer-parameters)에서 **imageaction** 은 이미지 추출을 트리거하는 매개 변수입니다. **Imageaction** 이 "none" (기본값)으로 설정 된 경우 이미지 추출에 대 한 요금이 청구 되지 않습니다. 이미지 추출 율은 Azure Cognitive Search에 대 한 [가격 책정 세부 정보](https://azure.microsoft.com/pricing/details/search/) 페이지에 설명 되어 있습니다.|
 | [기본 제공 인지 기술](cognitive-search-predefined-skills.md) | Cognitive Services를 직접 사용 하 여 작업을 수행한 것과 동일한 요금으로 청구 됩니다. |
 | 사용자 지정 기술 | 사용자 지정 기술은 사용자가 제공 하는 기능입니다. 사용자 지정 기술 사용 비용은 사용자 지정 코드가 다른 요금제 서비스를 호출 하는지 여부에 따라 전적으로 달라 집니다. |
 
@@ -130,7 +130,7 @@ SU는 서비스에서 사용 하는 *복제본* 및 *파티션* **(R x P = SU)**
 
 + 인덱싱 등의 리소스를 많이 사용 하는 작업을 확장 한 다음 일반 쿼리 워크 로드에 대해 다시 조정 합니다. Azure Cognitive Search에 대 한 최소 구성 (하나의 파티션과 하나의 복제본으로 구성 된 SU)부터 시작 하 여 더 많은 용량이 필요한 경우를 나타내는 사용 패턴을 식별 하는 사용자 활동을 모니터링 합니다. 예측 가능한 패턴이 있는 경우 크기 조정을 활동과 동기화 할 수 있습니다 .이를 자동화 하는 코드를 작성 해야 합니다.
 
-또한 기본 제공 도구 및 지출 관련 기능에 대 한 [청구 및 비용 관리](https://docs.microsoft.com/azure/billing/billing-getting-started) 를 방문해 보세요.
+또한 기본 제공 도구 및 지출 관련 기능에 대 한 [청구 및 비용 관리](../cost-management-billing/manage/getting-started.md) 를 방문해 보세요.
 
 임시 방식으로 검색 서비스를 종료 하는 것은 불가능 합니다. 전용 리소스는 항상 작동 하며 서비스 수명 동안 독점적으로 사용 하도록 할당 됩니다. 서비스 삭제는 영구적 이며 연결 된 데이터도 삭제 합니다.
 
@@ -175,7 +175,7 @@ Azure Cognitive Search에서 용량은 *복제본* 및 *파티션으로*구성 �
 
 전용 리소스는 개발 중에 인덱스 수량, 크기 및 쿼리 볼륨의 보다 현실적인 추정치를 위해 더 큰 샘플링 및 처리 시간을 수용할 수 있습니다. 일부 고객은 청구 가능한 계층으로 바로 이동한 다음 개발 프로젝트가 성숙 될 때 재평가 됩니다.
 
-1. [각 계층에서 서비스 제한을 검토](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#index-limits) 하 여 하위 계층이 필요한 인덱스 수를 지원할 수 있는지 확인 합니다. 기본, S1 및 S2 계층 전체에서 인덱스 제한은 각각 15, 50 및 200입니다. 저장소에 최적화 된 계층은 매우 큰 인덱스를 적게 지원 하도록 설계 되었기 때문에 인덱스가 10 개로 제한 됩니다.
+1. [각 계층에서 서비스 제한을 검토](./search-limits-quotas-capacity.md#index-limits) 하 여 하위 계층이 필요한 인덱스 수를 지원할 수 있는지 확인 합니다. 기본, S1 및 S2 계층 전체에서 인덱스 제한은 각각 15, 50 및 200입니다. 저장소에 최적화 된 계층은 매우 큰 인덱스를 적게 지원 하도록 설계 되었기 때문에 인덱스가 10 개로 제한 됩니다.
 
 1. [청구 가능 계층에서 서비스 만들기](search-create-service-portal.md):
 

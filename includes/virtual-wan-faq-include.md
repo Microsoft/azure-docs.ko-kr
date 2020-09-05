@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: include
-ms.date: 06/26/2020
+ms.date: 08/18/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: dececd066597682e240e737727d3bcaf8f8f3619
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: eec99ae353d4e5ca1bede1afef135def96207c50
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87375668"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88604693"
 ---
 ### <a name="does-the-user-need-to-have-hub-and-spoke-with-sd-wanvpn-devices-to-use-azure-virtual-wan"></a>Azure Virtual WAN을 사용하려면 사용자에게 SD-WAN/VPN 디바이스를 사용하는 허브 및 스포크가 있어야 하나요?
 
@@ -119,7 +119,7 @@ Virtual WAN은 VPN과 ExpressRoute 모두에 최대 20Gbps의 집계 처리량�
 
 ### <a name="what-if-a-device-i-am-using-is-not-in-the-virtual-wan-partner-list-can-i-still-use-it-to-connect-to-azure-virtual-wan-vpn"></a>사용 중인 디바이스가 Virtual WAN 파트너 목록에 없는 경우 어떻게 되나요? 계속 Azure Virtual WAN VPN에 연결할 수 있나요?
 
-네, 디바이스가 IPsec IKEv1 또는 IKEv2를 지원하는 경우 연결할 수 있습니다. Virtual WAN 파트너는 디바이스에서 Azure VPN 엔드포인트로의 연결을 자동화합니다. 이는 ‘분기 정보 업로드’, ‘IPsec 및 구성’ 및 ‘연결성’과 같은 단계를 자동화하는 것을 의미합니다. 디바이스가 Virtual WAN 파트너 에코시스템에서 온 것이 아니기 때문에 IPsec 연결을 설정하려면 Azure 구성을 가져오고 디바이스를 업데이트하는 작업을 수동으로 많이 수행해야 합니다.
+네, 디바이스가 IPsec IKEv1 또는 IKEv2를 지원하는 경우 연결할 수 있습니다. Virtual WAN 파트너는 디바이스에서 Azure VPN 엔드포인트로의 연결을 자동화합니다. 이는 '분기 정보 업로드', 'IPsec 및 구성', '연결' 등의 단계를 자동화하는 것을 의미합니다. 디바이스가 Virtual WAN 파트너 에코시스템에서 온 것이 아니기 때문에 IPsec 연결을 설정하려면 Azure 구성을 가져오고 디바이스를 업데이트하는 작업을 수동으로 많이 수행해야 합니다.
 
 ### <a name="how-do-new-partners-that-are-not-listed-in-your-launch-partner-list-get-onboarded"></a>출시 파트너 목록에 없는 새 파트너는 어떻게 온보딩하나요?
 
@@ -187,7 +187,7 @@ NVA(네트워크 가상 어플라이언스)는 가상 허브 내에 배포할 �
 
 ### <a name="is-there-a-network-throughput-or-connection-limit-when-using-azure-virtual-wan"></a>Azure Virtual WAN을 사용할 때 네트워크 처리량 또는 연결 제한이 있나요?
 
-네트워크 처리량은 가상 WAN 허브의 서비스 단위로 제한됩니다. 가상 WAN을 원하는 만큼 사용할 수 있지만, 각 Virtual WAN은 지역마다 1개의 허브를 허용합니다. 각 허브에서 VPN 집계 처리량은 최대 20Gbps, ExpressRoute 집계 처리량은 최대 20Gbps, 사용자 VPN/지점 및 사이트 간 VPN 집계 처리량은 최대 20Gbps입니다. 가상 허브의 라우터는 VNet 간 트래픽 흐름에 대해 최대 50Gbps를 지원하며, Virtual WAN 허브의 모든 VNet에 있는 전체 VM 워크로드가 2000개라고 가정합니다.
+네트워크 처리량은 가상 WAN 허브의 서비스 단위로 제한됩니다. 가상 WAN을 원하는 만큼 사용할 수 있지만, 각 Virtual WAN은 지역마다 1개의 허브를 허용합니다. 각 허브에서 VPN 집계 처리량은 최대 20Gbps, ExpressRoute 집계 처리량은 최대 20Gbps, 사용자 VPN/지점 및 사이트 간 VPN 집계 처리량은 최대 20Gbps입니다. 가상 허브의 라우터는 VNet 간 트래픽 흐름에 대해 최대 50Gbps를 지원하며, 단일 가상 허브에 연결된 모든 VNet에 있는 전체 VM 워크로드가 2000개라고 가정합니다.
 
 VPN 사이트는 허브에 연결할 때 연결을 사용합니다. Virtual WAN은 가상 허브당 최대 1000개 연결 또는 2000개 IPsec 터널을 지원합니다. 원격 사용자는 가상 허브에 연결할 때 P2S VPN 게이트웨이에 연결하며, 이 게이트웨이는 가상 허브의 P2S VPN 게이트웨이에 대해 선택한 배율 단위(대역폭)에 따라 최대 10,000명의 사용자를 지원합니다.
 
@@ -215,7 +215,7 @@ VPN 사이트는 허브에 연결할 때 연결을 사용합니다. Virtual WAN�
 
 예. IPsec을 지원하는 인터넷 연결과 물리적 디바이스(가급적이면 Microsoft의 통합 [Virtual WAN 파트너](../articles/virtual-wan/virtual-wan-locations-partners.md))만 있으면 됩니다. 선택적으로 선호하는 디바이스에서 Azure로의 연결과 구성을 수동으로 관리할 수 있습니다.
 
-### <a name="how-do-i-enable-default-route-00000-in-a-connection-vpn-expressroute-or-virtual-network"></a>어떻게 연결(VPN, ExpressRoute 또는 가상 네트워크)에서 기본 경로(0.0.0.0/0)를 사용하도록 설정할 수 있을까요?
+### <a name="how-do-i-enable-default-route-00000-in-a-connection-vpn-expressroute-or-virtual-network"></a>어떻게 연결(VPN, ExpressRoute 또는 Virtual Network)에서 기본 경로(0.0.0.0/0)를 사용하도록 설정할 수 있을까요?
 
 연결의 플래그가 '사용'일 경우 가상 허브가 학습된 기본 경로를 가상 네트워크/사이트 간 VPN/ExpressRoute 연결에 전파할 수 있습니다. 사용자가 가상 네트워크 연결, VPN 연결 또는 ExpressRoute 연결을 편집할 때 이 플래그를 볼 수 있습니다. 사이트 또는 ExpressRoute 회로가 허브에 연결된 경우 기본적으로 이 플래그는 사용하지 않도록 설정됩니다. VNet을 가상 허브에 연결하기 위해 가상 네트워크 연결을 추가하면 기본적으로 사용하도록 설정됩니다. 기본 경로는 Virtual WAN 허브에서 시작되지 않습니다. 허브에 방화벽을 배포한 결과로 Virtual WAN 허브에서 학습했거나 다른 연결된 사이트에서 강제 터널링을 사용할 경우 기본 경로가 전파됩니다.
 
@@ -239,11 +239,11 @@ ER 간 전송은 항상 Global Reach를 통해 수행됩니다. 가상 허브 �
 
 ### <a name="does-virtual-wan-prefer-expressroute-over-vpn-for-traffic-egressing-azure"></a>Virtual WAN은 트래픽 집계 Azure에 VPN을 통한 ExpressRoute를 선호하나요?
 
-예 
+예.
 
-### <a name="when-a-virtual-wan-hub-has-an-expressroute-circuit-and-a-vpn-site-connected-to-it-what-would-cause-a-vpn-connection-route-to-be-prefered-over-expressroute"></a>Virtual WAN 허브에 ExpressRoute 회로와 VPN 사이트가 연결된 경우 ExpressRoute보다 VPN 연결 경로가 선호되는 이유는 무엇인가요?
+### <a name="when-a-virtual-wan-hub-has-an-expressroute-circuit-and-a-vpn-site-connected-to-it-what-would-cause-a-vpn-connection-route-to-be-preferred-over-expressroute"></a>Virtual WAN 허브에 ExpressRoute 회로와 VPN 사이트가 연결된 경우 ExpressRoute보다 VPN 연결 경로가 선호되는 이유는 무엇인가요?
 
-ExpressRoute 회로가 가상 허브에 연결되면 온-프레미스와 Azure 간의 통신에 사용되는 첫 번째 노드는 Microsoft 에지 라우터입니다. 이러한 에지 라우터는 Virtual WAN ExpressRoute 게이트웨이와 통신하고, 이러한 게이트웨이는 Virtual WAN의 모든 게이트웨이 간 경로를 제어하는 가상 허브 라우터의 경로를 학습합니다. Microsoft 에지 라우터는 가상 허브 ExpressRoute 경로를 온-프레미스에서 학습한 경로보다 우선적으로 처리합니다. 어떠한 이유로 VPN 연결이 가상 허브가 경로를 학습하는 주요 매체가 되는 경우(예: ExpressRoute와 VPN 간의 장애 조치(failover) 시나리오) VPN 사이트의 AS 경로 길이가 더 길지 않은 이상, 가상 허브는 VPN 학습 경로를 ExpressRoute 게이트웨이와 계속 공유하므로 Microsoft Edge 라우터가 온-프레미스 경로보다 VPN 경로를 선호하게 됩니다. 
+ExpressRoute 회로가 가상 허브에 연결되면 온-프레미스와 Azure 간의 통신에 사용되는 첫 번째 노드는 Microsoft 에지 라우터입니다. 이러한 에지 라우터는 Virtual WAN ExpressRoute 게이트웨이와 통신하고, 이러한 게이트웨이는 Virtual WAN의 모든 게이트웨이 간 경로를 제어하는 가상 허브 라우터의 경로를 학습합니다. Microsoft 에지 라우터는 가상 허브 ExpressRoute 경로를 온-프레미스에서 학습한 경로보다 우선적으로 처리합니다. 어떠한 이유로 VPN 연결이 가상 허브가 경로를 학습하는 주요 매체가 되는 경우(예: ExpressRoute와 VPN 간의 장애 조치(failover) 시나리오) VPN 사이트의 AS 경로 길이가 더 길지 않은 이상, 가상 허브는 VPN 학습 경로를 ExpressRoute 게이트웨이와 계속 공유하므로 Microsoft Edge 라우터가 온-프레미스 경로보다 VPN 경로를 선호하게 됩니다.
 
 ### <a name="when-two-hubs-hub-1-and-2-are-connected-and-there-is-an-expressroute-circuit-connected-as-a-bow-tie-to-both-the-hubs-what-is-the-path-for-a-vnet-connected-to-hub-1-to-reach-a-vnet-connected-in-hub-2"></a>두 개의 허브(허브 1 및 2)가 연결되어 있고 ExpressRoute 회로가 두 개의 허브에 보타이로 연결된 경우 허브 1에 연결된 VNet이 허브 2에 연결된 VNet에 연결하는 경로는 무엇입니까?
 
@@ -253,9 +253,13 @@ ExpressRoute 회로가 가상 허브에 연결되면 온-프레미스와 Azure �
 
 IPv6는 Virtual WAN 허브 및 해당 게이트웨이에서 지원되지 않습니다. IPv6를 지원하는 VNet이 있고 해당 VNet을 Virtual WAN에 연결하려는 경우에는 이 시나리오가 현재 지원되지 않습니다.
 
-### <a name="what-is-the-recommended-api-version-to-be-used-by-scripts-automating-various-virtual-wan-functionality-"></a>스크립트에서 다양한 Virtual WAN 기능을 자동화하는 데 사용할 수 있는 권장 API 버전은 무엇인가요?
+### <a name="what-is-the-recommended-api-version-to-be-used-by-scripts-automating-various-virtual-wan-functionalities"></a>스크립트에서 다양한 Virtual WAN 기능을 자동화하는 데 사용할 수 있는 권장 API 버전은 무엇인가요?
 
 05-01-2020(2020년 5월 1일) 이상 버전이 필요합니다. 
+
+### <a name="are-there-any-virtual-wan-limits"></a>Virtual WAN 제한이 있나요?
+
+구독 및 서비스 제한 페이지에서 [Virtual WAN 제한](../articles/azure-resource-manager/management/azure-subscription-service-limits.md#virtual-wan-limits) 섹션을 참조하세요.
 
 ### <a name="what-are-the-differences-between-the-virtual-wan-types-basic-and-standard"></a>Virtual WAN 유형(기본 및 표준) 사이의 차이점은 무엇인가요?
 

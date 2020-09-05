@@ -5,15 +5,15 @@ author: ramonarguelles
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: rgarcia
-ms.date: 02/24/2019
+ms.date: 07/31/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 71b3027d86400d6921895f86e257ddff2961f91f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8ff431c27dd53e82f9003b658c82ceb3efb5d320
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77615145"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810023"
 ---
 # <a name="tutorial-sharing-azure-spatial-anchors-across-sessions-and-devices-with-an-azure-cosmos-db-back-end"></a>자습서: Azure Cosmos DB 백 엔드를 사용하여 세션 및 디바이스에서 Azure Spatial Anchors 공유
 
@@ -21,7 +21,7 @@ ms.locfileid: "77615145"
 
 ![개체 지속성을 보여주는 GIF](./media/persistence.gif)
 
-이 자습서에서는 Unity와 Azure Cosmos DB를 사용하지만, 디바이스 간에 Spatial Anchor 식별자를 공유하는 방법을 보여드리는 것이 그 목적입니다. 다른 언어와 백 엔드 기술을 사용하여 동일한 목표를 달성할 수 있습니다. 또한 이 자습서에 사용되는 ASP.NET Core 웹앱은 .NET Core 2.2 SDK가 필요합니다. 현재 Windows용 Web Apps에서는 정상적으로 실행되지만, Linux용 Web Apps에서는 실행되지 않습니다.
+이 자습서에서는 Unity와 Azure Cosmos DB를 사용하지만, 디바이스 간에 Spatial Anchor 식별자를 공유하는 방법을 보여드리는 것이 그 목적입니다. 다른 언어와 백 엔드 기술을 사용하여 동일한 목표를 달성할 수 있습니다.
 
 ## <a name="create-a-database-account"></a>데이터베이스 계정 만들기
 
@@ -42,14 +42,6 @@ ms.locfileid: "77615145"
 `StorageConnectionString` 속성을 찾은 다음, [데이터베이스 계정 만들기 단계](#create-a-database-account)에서 복사한 `Connection String` 값으로 설정합니다. 파일을 저장합니다.
 
 공유 서비스를 다시 게시하고 샘플 앱을 실행할 수 있습니다.
-
-## <a name="troubleshooting"></a>문제 해결
-
-### <a name="unity-20193"></a>Unity 2019.3
-
-호환성이 손상되는 변경으로 인해 Unity 2019.3은 현재 지원되지 않습니다. Unity 2019.1 또는 2019.2를 사용하세요.
-
-[!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 
 ## <a name="next-steps"></a>다음 단계
 

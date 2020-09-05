@@ -4,18 +4,18 @@ description: OS 및 런타임, 앱의 런타임 및 패치 수준, 업데이트 
 ms.topic: article
 ms.date: 02/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: 93716ab36bc475b092542d1eef40cfe9d75ad819
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 831ba5f055b70e2f46cb8c6a941c0401df347dd5
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87414941"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961519"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Azure App Service의 OS 및 런타임 패치
 
 이 문서에서는 [App Service](overview.md)의 OS 또는 소프트웨어에 대한 특정 버전 정보를 가져오는 방법을 보여 줍니다. 
 
-App Service는 Platform-as-a-Service입니다. 이것은 OS 및 애플리케이션 스택이 Azure에 의해 관리된다는 것을 의미합니다. 따라서 사용자는 애플리케이션과 해당 데이터만 관리하면 됩니다. OS 및 애플리케이션 스택에 대한 추가 제어 기능은 [Azure Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/)에서 사용할 수 있습니다. 이 사실에 유의한다고 해도, 다음과 같은 추가 정보를 알면 App Service를 사용할 때 도움이 될 수 있습니다.
+App Service는 Platform-as-a-Service입니다. 이것은 OS 및 애플리케이션 스택이 Azure에 의해 관리된다는 것을 의미합니다. 따라서 사용자는 애플리케이션과 해당 데이터만 관리하면 됩니다. OS 및 애플리케이션 스택에 대한 추가 제어 기능은 [Azure Virtual Machines](../virtual-machines/index.yml)에서 사용할 수 있습니다. 이 사실에 유의한다고 해도, 다음과 같은 추가 정보를 알면 App Service를 사용할 때 도움이 될 수 있습니다.
 
 -   OS 업데이트 방법 및 시기
 -   App Service가 심각한 취약점(예: 제로 데이)에 대해 패치되는 방법
@@ -25,7 +25,7 @@ App Service는 Platform-as-a-Service입니다. 이것은 OS 및 애플리케이�
 
 ## <a name="how-and-when-are-os-updates-applied"></a>OS 업데이트 방법 및 시기
 
-Azure는 App Service 리소스를 실행하는 2개의 수준, 즉 물리적 서버와 게스트 VM(가상 컴퓨터)의 OS 패치를 관리합니다. 둘 다 매월 업데이트되며, 월별 [화요일 패치](https://technet.microsoft.com/security/bulletins.aspx) 일정에 맞춰집니다. 이러한 업데이트는 Azure SLA의 고가용성을 보장하는 방식으로 자동으로 적용됩니다. 
+Azure는 App Service 리소스를 실행하는 2개의 수준, 즉 물리적 서버와 게스트 VM(가상 컴퓨터)의 OS 패치를 관리합니다. 둘 다 매월 업데이트되며, 월별 [화요일 패치](/security-updates/) 일정에 맞춰집니다. 이러한 업데이트는 Azure SLA의 고가용성을 보장하는 방식으로 자동으로 적용됩니다. 
 
 업데이트가 적용되는 방식에 대한 자세한 내용은 [Demystifying the magic behind App Service OS updates](https://azure.github.io/AppService/2018/01/18/Demystifying-the-magic-behind-App-Service-OS-updates.html)(App Service OS 업데이트의 마법 분석)를 참조하세요.
 
@@ -55,7 +55,7 @@ Azure는 App Service 리소스를 실행하는 2개의 수준, 즉 물리적 서
 
 ### <a name="new-major-and-minor-versions"></a>새 주 버전 및 부 버전
 
-새 주 버전 또는 부 버전이 추가되면 기존 버전과 병렬로 설치됩니다. 앱을 수동으로 새 버전으로 업그레이드할 수 있습니다. 구성 파일(예: `web.config` 및 `package.json`)에서 런타임 버전을 구성한 경우 동일한 방법으로 업그레이드해야 합니다. App Service 설정을 사용하여 런타임 버전을 구성한 경우 [Azure Portal](https://portal.azure.com)에서 변경하거나 다음 예제와 같이 [Cloud Shell](../cloud-shell/overview.md)에서 [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) 명령을 실행하여 변경할 수 있습니다.
+새 주 버전 또는 부 버전이 추가되면 기존 버전과 병렬로 설치됩니다. 앱을 수동으로 새 버전으로 업그레이드할 수 있습니다. 구성 파일(예: `web.config` 및 `package.json`)에서 런타임 버전을 구성한 경우 동일한 방법으로 업그레이드해야 합니다. App Service 설정을 사용하여 런타임 버전을 구성한 경우 [Azure Portal](https://portal.azure.com)에서 변경하거나 다음 예제와 같이 [Cloud Shell](../cloud-shell/overview.md)에서 [Azure CLI](/cli/azure/get-started-with-azure-cli) 명령을 실행하여 변경할 수 있습니다.
 
 ```azurecli-interactive
 az webapp config set --net-framework-version v4.7 --resource-group <groupname> --name <appname>
@@ -75,7 +75,7 @@ az webapp config set --java-version 1.8 --java-container Tomcat --java-container
 
 다음 표에서는 앱을 실행하는 언어 런타임의 Windows 버전을 확인하는 방법을 보여 줍니다.
 
-| 정보 | 찾는 위치 | 
+| 정보 산업 | 찾는 위치 | 
 |-|-|
 | Windows 버전 | `https://<appname>.scm.azurewebsites.net/Env.cshtml` 참조(시스템 정보 아래에 제공됨) |
 | .NET 버전 | `https://<appname>.scm.azurewebsites.net/DebugConsole`의 명령 프롬프트에서 다음 명령을 실행합니다. <br>`reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"` |
@@ -86,11 +86,11 @@ az webapp config set --java-version 1.8 --java-container Tomcat --java-container
 | Java 버전 | `https://<appname>.scm.azurewebsites.net/DebugConsole`의 명령 프롬프트에서 다음 명령을 실행합니다. <br> `java -version` |  
 
 > [!NOTE]  
-> 레지스트리 위치 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages`에 액세스합니다. 여기에는 ["KB" 패치](https://docs.microsoft.com/security-updates/SecurityBulletins/securitybulletins)에 대한 정보가 저장되고 잠겨집니다.
+> 레지스트리 위치 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages`에 액세스합니다. 여기에는 ["KB" 패치](/security-updates/SecurityBulletins/securitybulletins)에 대한 정보가 저장되고 잠겨집니다.
 >
 >
 
-## <a name="more-resources"></a>추가 리소스
+## <a name="more-resources"></a>기타 참고 자료
 
 [보안 센터: 보안](https://www.microsoft.com/en-us/trustcenter/security)  
 [Azure App Service의 64비트 ASP.NET Core](https://gist.github.com/glennc/e705cd85c9680d6a8f1bdb62099c7ac7)

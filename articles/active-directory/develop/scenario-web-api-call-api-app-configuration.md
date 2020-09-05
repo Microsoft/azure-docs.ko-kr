@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/05/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 29c57411a2a35c36d0b4a9d4def931821b795094
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: e9faea3462ae953e474b5053b651808b03f07c23
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121139"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855464"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>웹 Api를 호출 하는 웹 API: 코드 구성
 
@@ -71,7 +71,7 @@ Microsoft. Identity는 구성 또는 코드를 통해 인증서를 설명 하는
 
 ## <a name="startupcs"></a>Startup.cs
 
-Web API가 다운스트림 웹 Api를 호출 하도록 하려면 Startup.cs를 사용 하 여 뒤에 줄을 추가한 다음, 예를 들어, `.AddMicrosoftWebApiCallsWebApi()` `.AddMicrosoftWebApiAuthentication(Configuration)` `.AddInMemoryTokenCaches()` *Startup.cs*에서 토큰 캐시 구현을 선택 합니다.
+Web API가 다운스트림 웹 Api를 호출 하도록 하려면 Startup.cs를 사용 하 여 뒤에 줄을 추가한 다음, 예를 들어, `.EnableTokenAcquisitionToCallDownstreamApi()` `.AddMicrosoftIdentityWebApi(Configuration)` `.AddInMemoryTokenCaches()` *Startup.cs*에서 토큰 캐시 구현을 선택 합니다.
 
 ```csharp
 using Microsoft.Identity.Web;
@@ -82,9 +82,10 @@ public class Startup
   public void ConfigureServices(IServiceCollection services)
   {
    // ...
-   services.AddMicrosoftWebApiAuthentication(Configuration)
-           .AddMicrosoftWebApiCallsWebApi(Configuration)
-           .AddInMemoryTokenCaches();
+    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddMicrosoftIdentityWebApi(Configuration, "AzureAd")
+                .EnableTokenAcquisitionToCallDownstreamApi()
+                .AddInMemoryTokenCaches();
   // ...
   }
   // ...
@@ -92,8 +93,6 @@ public class Startup
 ```
 
 웹 앱과 마찬가지로 다양 한 토큰 캐시 구현을 선택할 수 있습니다. 자세한 내용은 GitHub의 [Microsoft id 웹 wiki-토큰 캐시 serialization](https://aka.ms/ms-id-web/token-cache-serialization) 을 참조 하세요.
-
-Web API가 특정 범위를 필요로 하는 경우 필요에 따라에 인수로 전달할 수 있습니다 `AddMicrosoftWebApiCallsWebApi` .
 
 # <a name="java"></a>[Java](#tab/java)
 

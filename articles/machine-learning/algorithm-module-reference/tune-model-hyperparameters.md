@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 06/17/2020
-ms.openlocfilehash: 01e33f7b0133eb5d081e6e8f3c3c9497c11bae95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 916d23670e1db22efe43e2966d96aa1c82f1852a
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84983410"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782161"
 ---
 # <a name="tune-model-hyperparameters"></a>모델 하이퍼 매개 변수 튜닝
 
@@ -77,11 +77,11 @@ ms.locfileid: "84983410"
 
 교육이 완료 되 면 다음을 수행 합니다.
 
-+ 최적 모델에 대 한 정확도 메트릭 집합을 보려면 모듈을 마우스 오른쪽 단추로 클릭 한 다음 **시각화**를 선택 합니다.
++ 스윕 결과를 보려면 모듈을 마우스 오른쪽 단추로 클릭 한 다음 **시각화**를 선택 합니다.
 
-    출력에는 모델 유형에 적용 되는 모든 정확도 메트릭이 포함 되지만 순위를 지정 하기 위해 선택한 메트릭은 "best"로 간주 되는 모델을 결정 합니다.
+    출력에는 모델 유형에 적용 되는 모든 매개 변수 스윕 및 정확도 메트릭이 포함 되어 있지만 순위에 대해 선택한 메트릭은 "최상"으로 간주 되는 모델을 결정 합니다.
 
-+ 학습 된 모델의 스냅숏을 저장 하려면 **모델 학습** 모듈의 오른쪽 패널에서 **출력** 탭을 선택 합니다. **데이터 집합 등록** 아이콘을 선택 하 여 모델을 재사용 가능한 모듈로 저장 합니다.
++ 학습 된 모델의 스냅숏을 저장 하려면 **모델 학습** 모듈의 오른쪽 패널에서 **출력 + 로그** 탭을 선택 합니다. **데이터 집합 등록** 아이콘을 선택 하 여 모델을 재사용 가능한 모듈로 저장 합니다.
 
 
 ## <a name="technical-notes"></a>기술 정보

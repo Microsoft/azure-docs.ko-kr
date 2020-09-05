@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ed6587cab1e90c9b4bd4ceffa64c77fa5d8de574
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: c261ea174f37de51a8fbd5b36aeb40c26d44e6a9
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88005706"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691397"
 ---
 # <a name="deploy-a-windows-virtual-desktop-classic-management-tool-with-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용 하 여 Windows 가상 데스크톱 (클래식) 관리 도구 배포
 
@@ -83,7 +83,7 @@ GitHub Azure Resource Manager 템플릿을 완료하면 두 개의 앱 서비스
 
 동의하는 데 사용할 사용자를 결정한 후에는 다음 지침에 따라 도구에 대해 동의합니다.
 
-1. Azure 리소스로 이동 하 여 템플릿에서 제공한 이름 (예: Apr3UX)으로 Azure 앱 Services 리소스를 선택 하 고 연결 된 URL로 이동 합니다. 예를 들면 <https://rdmimgmtweb-210520190304.azurewebsites.net> 입니다.
+1. Azure 리소스로 이동 하 여 템플릿에서 제공한 이름 (예: Apr3UX)으로 Azure 앱 Services 리소스를 선택 하 고 연결 된 URL로 이동 합니다. 예를 들면  `https://rdmimgmtweb-210520190304.azurewebsites.net` 입니다.
 2. 적절한 Azure Active Directory 사용자 계정을 사용하여 로그인합니다.
 3. 글로벌 관리자로 인증하면 **조직 대신 동의** 확인란을 선택할 수 있습니다. **동의**를 선택하여 동의합니다.
 

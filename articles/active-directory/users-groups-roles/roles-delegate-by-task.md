@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bc1546566e5bb79a207899fab7418480e5cfab0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 692b20bf301bbd7bf03ea1af5527e08d947b50da
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85117882"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798366"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Azure Active Directory에서 관리 작업별 관리자 역할
 
@@ -42,7 +42,7 @@ Task | 최소 권한 역할 | 추가 역할
 
 Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
-Azure AD B2C 디렉터리 만들기 | 모든 비 게스트 사용자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 
+Azure AD B2C 디렉터리 만들기 | 모든 비 게스트 사용자([설명서 참조](../fundamentals/users-default-permissions.md)) | 
 B2C 애플리케이션 만들기 | 전역 관리자 | 
 엔터프라이즈 애플리케이션 만들기 | 클라우드 애플리케이션 관리자 | 애플리케이션 관리자
 B2C 정책 만들기, 읽기, 업데이트 및 삭제 | B2C IEF 정책 관리자 | 
@@ -54,7 +54,7 @@ ID 공급자 만들기, 읽기, 업데이트 및 삭제 | 외부 ID 공급자 �
 사용자 특정 만들기, 읽기, 업데이트 및 삭제 | 외부 ID 사용자 흐름 특성 관리자 | 
 사용자 만들기, 읽기, 업데이트 및 삭제 | 사용자 관리자
 모든 구성 읽기 | 글로벌 읽기 권한자 | 
-B2C 감사 로그 읽기 | 전역 판독기 ([설명서 참조](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-faqs)) | 
+B2C 감사 로그 읽기 | 전역 판독기 ([설명서 참조](../../active-directory-b2c/faq.md)) | 
 
 > [!NOTE]
 > Azure AD B2C 전역 판독기에는 Azure AD 전역 관리자와 같은 권한이 없습니다. 전역 관리자 권한이 Azure AD B2C 경우 Azure AD 디렉터리가 아니라 Azure AD B2C 디렉터리에 있는지 확인 합니다.
@@ -64,7 +64,7 @@ B2C 감사 로그 읽기 | 전역 판독기 ([설명서 참조](https://docs.mic
 Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
 회사 브랜딩 구성 | 전역 관리자 | 
-모든 구성 읽기 | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions))
+모든 구성 읽기 | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md))
 
 ## <a name="company-properties"></a>회사 속성
 
@@ -92,25 +92,25 @@ Task | 최소 권한 역할 | 추가 역할
 
 Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
-서비스 추가 또는 삭제 | 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-operations)) | 
-동기화 오류 수정 적용 | 기여자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 소유자
-알림 구성 | 기여자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 소유자
-설정 구성 | 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-operations)) | 
-동기화 알림 구성 | 기여자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 소유자
+서비스 추가 또는 삭제 | 소유자([설명서 참조](../hybrid/how-to-connect-health-operations.md)) | 
+동기화 오류 수정 적용 | 기여자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 소유자
+알림 구성 | 기여자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 소유자
+설정 구성 | 소유자([설명서 참조](../hybrid/how-to-connect-health-operations.md)) | 
+동기화 알림 구성 | 기여자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 소유자
 ADFS 보안 보고서 읽기 | 보안 Reader | 기여자, 소유자
-모든 구성 읽기 | 읽기 권한자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 기여자, 소유자
-동기화 오류 읽기 | 읽기 권한자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 기여자, 소유자
-동기화 서비스 읽기 | 읽기 권한자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 기여자, 소유자
-메트릭 및 경고 보기 | 읽기 권한자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 기여자, 소유자
-메트릭 및 경고 보기 | 읽기 권한자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 기여자, 소유자
-동기화 서비스 메트릭 및 경고 보기 | 읽기 권한자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context)) | 기여자, 소유자
+모든 구성 읽기 | 읽기 권한자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 기여자, 소유자
+동기화 오류 읽기 | 읽기 권한자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 기여자, 소유자
+동기화 서비스 읽기 | 읽기 권한자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 기여자, 소유자
+메트릭 및 경고 보기 | 읽기 권한자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 기여자, 소유자
+메트릭 및 경고 보기 | 읽기 권한자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 기여자, 소유자
+동기화 서비스 메트릭 및 경고 보기 | 읽기 권한자([설명서 참조](../fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context)) | 기여자, 소유자
 
 ## <a name="custom-domain-names"></a>사용자 지정 도메인 이름
 
 Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
 도메인 관리 | 전역 관리자 | 
-모든 구성 읽기 | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions))
+모든 구성 읽기 | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md))
 
 ## <a name="domain-services"></a>Domain Services
 
@@ -126,7 +126,7 @@ Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
 디바이스 사용 안 함 | 클라우드 디바이스 관리자 | 
 디바이스 사용 | 클라우드 디바이스 관리자 | 
-기본 구성 읽기 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 
+기본 구성 읽기 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md)) | 
 BitLocker 키 읽기 | 보안 Reader | 암호 관리자, 보안 관리자
 
 ## <a name="enterprise-applications"></a>Enterprise 애플리케이션
@@ -136,18 +136,18 @@ Task | 최소 권한 역할 | 추가 역할
 모든 위임된 권한에 동의 | 클라우드 애플리케이션 관리자 | 애플리케이션 관리자
 Microsoft Graph를 포함 하지 않는 응용 프로그램 권한에 동의 | 클라우드 애플리케이션 관리자 | 애플리케이션 관리자
 Microsoft Graph에 대 한 응용 프로그램 사용 권한에 동의 | 권한 있는 역할 관리자 | 
-자체 데이터에 액세스하는 애플리케이션에 동의 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 
+자체 데이터에 액세스하는 애플리케이션에 동의 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md)) | 
 엔터프라이즈 애플리케이션 만들기 | 클라우드 애플리케이션 관리자 | 애플리케이션 관리자
 애플리케이션 프록시 관리 | 애플리케이션 관리자 | 
 사용자 설정 관리 | 전역 관리자 | 
 그룹 또는 앱의 액세스 검토 읽기 | 보안 Reader | 보안 관리자, 사용자 관리자
-모든 구성 읽기 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 
-엔터프라이즈 애플리케이션 할당 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
-엔터프라이즈 애플리케이션 소유자 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
-엔터프라이즈 애플리케이션 속성 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
-엔터프라이즈 애플리케이션 프로비전 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
-엔터프라이즈 애플리케이션 셀프 서비스 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
-Single Sign-On 속성 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
+모든 구성 읽기 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md)) | 
+엔터프라이즈 애플리케이션 할당 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
+엔터프라이즈 애플리케이션 소유자 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
+엔터프라이즈 애플리케이션 속성 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
+엔터프라이즈 애플리케이션 프로비전 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
+엔터프라이즈 애플리케이션 셀프 서비스 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
+Single Sign-On 속성 업데이트 | 엔터프라이즈 애플리케이션 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 클라우드 애플리케이션 관리자, 애플리케이션 관리자
 
 ## <a name="entitlement-management"></a>권한 관리
 Task | 최소 권한 역할 | 추가 역할
@@ -165,13 +165,13 @@ Task | 최소 권한 역할 | 추가 역할
 그룹 또는 앱의 액세스 검토 만들기, 업데이트 또는 삭제 | 사용자 관리자 | 
 그룹 만료 관리 | 사용자 관리자 | 
 그룹 설정 관리 | 그룹 관리자 | 사용자 관리자 | 
-모든 구성 읽기(숨겨진 멤버 자격 제외) | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions))
+모든 구성 읽기(숨겨진 멤버 자격 제외) | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md))
 숨겨진 멤버 자격 읽기 | 그룹 멤버 | 그룹 소유자, 암호 관리자, Exchange 관리자, SharePoint 관리자, 팀 관리자, 사용자 관리자
 숨겨진 구성원이 있는 그룹의 멤버 자격 읽기 | 기술 지원팀 관리자 | 사용자 관리자, 팀 관리자
 라이선스 해지 | 라이선스 관리자 | 사용자 관리자
-그룹 멤버 자격 업데이트 | 그룹 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 사용자 관리자
-그룹 소유자 업데이트 | 그룹 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 사용자 관리자
-그룹 속성 업데이트 | 그룹 소유자([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 사용자 관리자
+그룹 멤버 자격 업데이트 | 그룹 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 사용자 관리자
+그룹 소유자 업데이트 | 그룹 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 사용자 관리자
+그룹 속성 업데이트 | 그룹 소유자([설명서 참조](../fundamentals/users-default-permissions.md)) | 사용자 관리자
 그룹 삭제 | 그룹 관리자 | 사용자 관리자
 
 ## <a name="identity-protection"></a>ID 보호
@@ -194,7 +194,7 @@ MFA 정책을 구성하고 설정/해제| 보안 관리자 |
 Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
 라이선스 할당 | 라이선스 관리자 | 사용자 관리자
-모든 구성 읽기 | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions))
+모든 구성 읽기 | 디렉터리 읽기 권한자 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md))
 라이선스 해지 | 라이선스 관리자 | 사용자 관리자
 구독 체험 또는 구입 | 대금 청구 관리자 | 
 
@@ -275,7 +275,7 @@ Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------
 역할 할당 관리 | 권한 있는 역할 관리자 | 
 Azure AD 역할의 액세스 검토 읽기  | 보안 Reader | 보안 관리자, 권한 있는 역할 관리자
-모든 구성 읽기 | 기본 사용자 역할([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions)) | 
+모든 구성 읽기 | 기본 사용자 역할([설명서 참조](../fundamentals/users-default-permissions.md)) | 
 
 ## <a name="security---authentication-methods"></a>보안 - 인증 방법
 
@@ -342,7 +342,7 @@ Task | 최소 권한 역할 | 추가 역할
 제한된 관리자의 새로 고침 토큰 무효화(설명서 참조) | 사용자 관리자 | 
 비 관리자의 새로 고침 토큰 무효화(설명서 참조) | 암호 관리자 | 사용자 관리자
 권한 있는 관리자의 새로 고침 토큰 무효화(설명서 참조) | 권한 있는 인증 관리자 | 
-기본 구성 읽기 | 기본 사용자 역할 ([설명서 참조](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions) ) | 
+기본 구성 읽기 | 기본 사용자 역할 ([설명서 참조](../fundamentals/users-default-permissions.md) ) | 
 제한된 관리자의 암호 재설정(설명서 참조) | 사용자 관리자 | 
 비 관리자의 암호 재설정(설명서 참조) | 암호 관리자 | 사용자 관리자
 권한 있는 관리자의 암호 재설정 | 권한 있는 인증 관리자 | 
@@ -353,7 +353,7 @@ Task | 최소 권한 역할 | 추가 역할
 사용자 설정 업데이트 | 전역 관리자 | 
 
 
-## <a name="support"></a>Support(지원)
+## <a name="support"></a>지원
 
 Task | 최소 권한 역할 | 추가 역할
 ---- | --------------------- | ----------------

@@ -1,18 +1,18 @@
 ---
-title: ARM 템플릿을 사용하여 Azure DB for MySQL 만들기
-description: 이 문서에서는 Azure Resource Manager 템플릿을 사용하여 가상 네트워크 통합을 통해 Azure Database for MySQL 서버를 만드는 방법을 알아봅니다.
+title: '빠른 시작: Azure DB for MySQL 만들기 - ARM 템플릿'
+description: 이 빠른 시작에서는 Azure Resource Manager 템플릿을 사용하여 가상 네트워크 통합을 통해 Azure Database for MySQL 서버를 만드는 방법을 알아봅니다.
 author: mgblythe
 ms.service: mysql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/19/2020
-ms.openlocfilehash: 72ace8a94d16b79f756c83393db2b39a1c0df714
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 47c203eaea0c3fc2a39267ed78eb603c4836cd2b
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134848"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660284"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql-server"></a>빠른 시작: ARM 템플릿을 사용하여 Azure Database for MySQL 서버 만들기
 
@@ -48,7 +48,7 @@ Azure Database for MySQL은 클라우드에서 고가용성 MySQL 데이터베�
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-managed-mysql-with-vnet/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-managed-mysql-with-vnet/azuredeploy.json" range="001-231" highlight="149,162,176,199,213":::
+:::code language="json" source="~/quickstart-templates/101-managed-mysql-with-vnet/azuredeploy.json":::
 
 템플릿에서 정의하는 5개의 Azure 리소스는 다음과 같습니다.
 

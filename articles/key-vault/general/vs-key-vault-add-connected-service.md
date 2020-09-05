@@ -5,16 +5,16 @@ services: key-vault
 author: ghogen
 manager: jillfra
 ms.service: key-vault
-ms.custom: vs-azure
-ms.topic: conceptual
+ms.custom: vs-azure, devx-track-csharp
+ms.topic: how-to
 ms.date: 08/07/2019
 ms.author: ghogen
-ms.openlocfilehash: e8c452ffb40b27ed84061e93c1758b3d403052fe
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: 3d39ad2016da1525658944f4f13185e9df9855af
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88054431"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89007097"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Visual Studio 연결된 서비스를 사용하여 웹 애플리케이션에 Key Vault 추가
 
@@ -88,7 +88,7 @@ Key Vault를 사용하도록 설정하기 위해 프로젝트에서 연결된 �
 ## <a name="access-your-secrets-aspnet"></a>비밀에 액세스 (ASP.NET)
 `appSettings`런타임에 true 값으로 대체 되는 요소의 더미 값을 web.config 파일에 포함 하도록 구성을 설정할 수 있습니다. 그런 다음 데이터 구조를 통해이에 액세스할 수 있습니다 `ConfigurationManager.AppSettings` .
 
-1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 NuGet 패키지 관리를 선택 합니다. 찾아보기 탭에서 urationBuilders를 찾아서Microsoft.Configuration.Config설치 [합니다.](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Azure/)
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 NuGet 패키지 관리를 선택 합니다. 찾아보기 탭에서 urationBuilders를 찾아서Microsoft.Configuration.Config설치 [ 합니다.](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Azure/)
  
 1. web.config 파일을 열고 다음 코드를 작성 합니다.
     1. `configSections`및 추가 `configBuilders` :
@@ -154,7 +154,7 @@ Key Vault Visual studio에 로그인 하는 것과 다른 Microsoft 계정에서
 
 ### <a name="added-files-for-aspnet-core"></a>ASP.NET Core에 대 한 추가 된 파일
 
-- `ConnectedService.json`연결 된 서비스 공급자, 버전 및 설명서 링크에 대 한 일부 정보를 기록 하는를 추가 했습니다.
+- `ConnectedService.json` 연결 된 서비스 공급자, 버전 및 설명서 링크에 대 한 일부 정보를 기록 하는를 추가 했습니다.
 
 ### <a name="project-file-changes-for-aspnet-core"></a>ASP.NET Core에 대 한 프로젝트 파일 변경
 
@@ -192,7 +192,7 @@ Key Vault Visual studio에 로그인 하는 것과 다른 Microsoft 계정에서
 
 ### <a name="added-files-for-aspnet-framework"></a>ASP.NET Framework에 대 한 추가 된 파일
 
-- `ConnectedService.json`연결 된 서비스 공급자, 버전 및 설명서에 대 한 링크와 관련 된 정보를 기록 하는를 추가 했습니다.
+- `ConnectedService.json` 연결 된 서비스 공급자, 버전 및 설명서에 대 한 링크와 관련 된 정보를 기록 하는를 추가 했습니다.
 
 ### <a name="project-file-changes-for-aspnet-framework"></a>ASP.NET Framework에 대 한 프로젝트 파일 변경 내용
 

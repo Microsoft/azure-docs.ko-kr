@@ -11,14 +11,14 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 07/21/2020
-ms.openlocfilehash: 64a21c0d0edcd035bdf42c3b17c5f2c0131dabfa
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: bb69d48fe4e65d0fc27db027aecab0f1a745e8d5
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117034"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566185"
 ---
-# <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>VCore 구매 모델을 사용 하 여 단일 데이터베이스에 대 한 리소스 제한
+# <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>vCore 구매 모델을 사용한 단일 데이터베이스에 대한 리소스 제한
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 이 문서에서는 vCore 구매 모델을 사용 하 여 Azure SQL Database의 단일 데이터베이스에 대 한 자세한 리소스 제한을 제공 합니다.
@@ -43,7 +43,7 @@ ms.locfileid: "87117034"
 |최소-최대 메모리 (GB)|2.02-3|2.05-6|2.10-12|2.25-18|3.00-24|
 |최소-최대 자동 일시 중지 지연 시간 (분)|60-10080|60-10080|60-10080|60-10080|60-10080|
 |Columnstore 지원 여부|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|512|1024|1024|1024|1536|
 |최대 로그 크기(GB)|154|307|307|307|461|
 |TempDB 최대 데이터 크기 (GB)|32|64|128|192|256|
@@ -54,11 +54,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|75|150|300|450|600|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="gen5-compute-generation-part-2"></a>Gen5 계산 생성 (2 부)
 
@@ -69,7 +69,7 @@ ms.locfileid: "87117034"
 |최소-최대 메모리 (GB)|3.75-30|4.50-36|5.25-42|경우 6.00-48|
 |최소-최대 자동 일시 중지 지연 시간 (분)|60-10080|60-10080|60-10080|60-10080|
 |Columnstore 지원 여부|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|1536|3072|3072|3072|
 |최대 로그 크기(GB)|461|461|461|922|
 |TempDB 최대 데이터 크기 (GB)|320|384|448|512|
@@ -80,11 +80,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|750|900|1050|1200|
 |최대 동시 세션|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="gen5-compute-generation-part-3"></a>Gen5 계산 생성 (3 부)
 
@@ -95,9 +95,9 @@ ms.locfileid: "87117034"
 |최소-최대 메모리 (GB)|6.75-54|7.5-60|9-72|12-96|15-120|
 |최소-최대 자동 일시 중지 지연 시간 (분)|60-10080|60-10080|60-10080|60-10080|60-10080|
 |Columnstore 지원 여부|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|3072|3072|4096|4096|4096|
-|최대 로그 크기(GB)|922|922|1,229|1,229|1,229|
+|최대 로그 크기(GB)|922|922|1024|1024|1024|
 |TempDB 최대 데이터 크기 (GB)|576|640|768|1024|1280|
 |스토리지 유형|원격 SSD|원격 SSD|원격 SSD|원격 SSD|원격 SSD|
 |IO 대기 시간(근사치)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|
@@ -106,11 +106,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|1350|1500|1800|2400|3000|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 
 ## <a name="hyperscale---provisioned-compute---gen4"></a>하이퍼 규모 프로 비전 된 계산-Gen4
@@ -124,7 +124,7 @@ ms.locfileid: "87117034"
 |메모리(GB)|7|14|21|28|35|42|
 |[RBPEX](service-tier-hyperscale.md#compute) 크기가|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|
 |Columnstore 지원 여부|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(TB)|100 |100 |100 |100 |100 |100|
 |최대 로그 크기(TB)|제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |
 |TempDB 최대 데이터 크기 (GB)|32|64|96|128|160|192|
@@ -135,12 +135,12 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|200|400|600|800|1000|1200|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|
 |보조 복제본|0-4|0-4|0-4|0-4|0-4|0-4|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |읽기 확장|예|예|예|예|예|예|
 |백업 저장소 보존|7 일|7 일|7 일|7 일|7 일|7 일|
 |||
 
-\*로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
+\* 로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
 
 ### <a name="gen4-compute-generation-part-2"></a>Gen4 계산 생성 (2 부)
 
@@ -151,7 +151,7 @@ ms.locfileid: "87117034"
 |메모리(GB)|49|56|63|70|112|159.5|
 |[RBPEX](service-tier-hyperscale.md#compute) 크기가|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|
 |Columnstore 지원 여부|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(TB)|100 |100 |100 |100 |100 |100 |
 |최대 로그 크기(TB)|제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |
 |TempDB 최대 데이터 크기 (GB)|224|256|288|320|512|768|
@@ -162,12 +162,12 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|1400|1600|1800|2000|3200|4800|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|
 |보조 복제본|0-4|0-4|0-4|0-4|0-4|0-4|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |읽기 확장|예|예|예|예|예|예|
 |백업 저장소 보존|7 일|7 일|7 일|7 일|7 일|7 일|
 |||
 
-\*로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
+\* 로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
 
 ## <a name="hyperscale---provisioned-compute---gen5"></a>하이퍼 규모 프로 비전 된 계산-Gen5
 
@@ -180,7 +180,7 @@ ms.locfileid: "87117034"
 |메모리(GB)|10.4|20.8|31.1|41.5|51.9|62.3|72.7|
 |[RBPEX](service-tier-hyperscale.md#compute) 크기가|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|
 |Columnstore 지원 여부|예|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(TB)|100 |100 |100 |100 |100 |100 |100|
 |최대 로그 크기(TB)|제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |
 |TempDB 최대 데이터 크기 (GB)|64|128|192|256|320|384|448|
@@ -191,12 +191,12 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|200|400|600|800|1000|1200|1400|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|30,000|
 |보조 복제본|0-4|0-4|0-4|0-4|0-4|0-4|0-4|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |읽기 확장|예|예|예|예|예|예|예|
 |백업 저장소 보존|7 일|7 일|7 일|7 일|7 일|7 일|7 일|
 |||
 
-\*로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
+\* 로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
 
 ### <a name="gen5-compute-generation-part-2"></a>Gen5 계산 생성 (2 부)
 
@@ -207,7 +207,7 @@ ms.locfileid: "87117034"
 |메모리(GB)|83|93.4|103.8|124.6|166.1|207.6|415.2|
 |[RBPEX](service-tier-hyperscale.md#compute) 크기가|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|3 x 메모리|
 |Columnstore 지원 여부|예|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(TB)|100 |100 |100 |100 |100 |100 |100 |
 |최대 로그 크기(TB)|제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |제한 없음 |
 |TempDB 최대 데이터 크기 (GB)|512|576|640|768|1024|1280|2560|
@@ -218,14 +218,14 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|1600|1800|2000|2400|3200|4000|8000|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|30,000|
 |보조 복제본|0-4|0-4|0-4|0-4|0-4|0-4|0-4|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |읽기 확장|예|예|예|예|예|예|예|
 |백업 저장소 보존|7 일|7 일|7 일|7 일|7 일|7 일|7 일|
 |||
 
-\*로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
+\* 로컬 SSD IO 외에도 작업은 원격 [페이지 서버](service-tier-hyperscale.md#page-server) io를 사용 합니다. 유효 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 Io 관리](resource-limits-logical-server.md#resource-governance)및 [리소스 사용률 통계의 데이터 io](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)를 참조 하세요.
 
-#### <a name="notes"></a>참고
+#### <a name="notes"></a>메모
 
 **참고 1**: hyperscale은 별도의 계산 및 저장소 구성 요소를 포함 하는 다중 계층 아키텍처입니다. [대규모 서비스 계층 아키텍처](service-tier-hyperscale.md#distributed-functions-architecture)
 
@@ -244,7 +244,7 @@ ms.locfileid: "87117034"
 |vCore 수|1|2|3|4|5|6|
 |메모리(GB)|7|14|21|28|35|42|
 |Columnstore 지원 여부|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|1024|1024|1536|1536|1536|3072|
 |최대 로그 크기(GB)|307|307|461|461|461|922|
 |TempDB 최대 데이터 크기 (GB)|32|64|96|128|160|192|
@@ -255,11 +255,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|200|400|600|800|1000|1200|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="gen4-compute-generation-part-2"></a>Gen4 계산 생성 (2 부)
 
@@ -269,7 +269,7 @@ ms.locfileid: "87117034"
 |vCore 수|7|8|9|10|16|24|
 |메모리(GB)|49|56|63|70|112|159.5|
 |Columnstore 지원 여부|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|3072|3072|3072|3072|4096|4096|
 |최대 로그 크기(GB)|922|922|922|922|1,229|1,229|
 |TempDB 최대 데이터 크기 (GB)|224|256|288|320|512|768|
@@ -280,11 +280,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|1400|1600|1800|2000|3200|4800|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ## <a name="general-purpose---provisioned-compute---gen5"></a>범용 프로 비전 된 계산-Gen5
 
@@ -296,7 +296,7 @@ ms.locfileid: "87117034"
 |vCore 수|2|4|6|8|10|12|14|
 |메모리(GB)|10.4|20.8|31.1|41.5|51.9|62.3|72.7|
 |Columnstore 지원 여부|예|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|1024|1024|1536|1536|1536|3072|3072|
 |최대 로그 크기(GB)|307|307|461|461|461|922|922|
 |TempDB 최대 데이터 크기 (GB)|64|128|192|256|320|384|384|
@@ -307,11 +307,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|200|400|600|800|1000|1200|1400|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="gen5-compute-generation-part-2"></a>Gen5 계산 생성 (2 부)
 
@@ -321,9 +321,9 @@ ms.locfileid: "87117034"
 |vCore 수|16|18|20|24|32|40|80|
 |메모리(GB)|83|93.4|103.8|124.6|166.1|207.6|415.2|
 |Columnstore 지원 여부|예|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|3072|3072|3072|4096|4096|4096|4096|
-|최대 로그 크기(GB)|922|922|922|1,229|1,229|1,229|1,229|
+|최대 로그 크기(GB)|922|922|922|1024|1024|1024|1024|
 |TempDB 최대 데이터 크기 (GB)|512|576|640|768|1024|1280|2560|
 |스토리지 유형|원격 SSD|원격 SSD|원격 SSD|원격 SSD|원격 SSD|원격 SSD|원격 SSD|
 |IO 대기 시간(근사치)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|5-7ms(쓰기)<br>5-10ms(읽기)|
@@ -332,11 +332,11 @@ ms.locfileid: "87117034"
 |최대 동시 작업자(요청)|1600|1800|2000|2400|3200|4000|8000|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ## <a name="general-purpose---provisioned-compute---fsv2-series"></a>범용 프로 비전 된 계산-Fsv2 시리즈
 
@@ -348,7 +348,7 @@ ms.locfileid: "87117034"
 |vCore 수|8|10|12|14|16|
 |메모리(GB)|15.1|18.9|22.7|26.5|30.2|
 |Columnstore 지원 여부|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|1024|1024|1024|1024|1536|
 |최대 로그 크기(GB)|336|336|336|336|512|
 |TempDB 최대 데이터 크기 (GB)|333|333|333|333|333|
@@ -360,11 +360,11 @@ ms.locfileid: "87117034"
 |최대 동시 로그인|800|1000|1200|1400|1600|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="fsv2-series-compute-generation-part-2"></a>Fsv2 시리즈 계산 생성 (2 부)
 
@@ -374,7 +374,7 @@ ms.locfileid: "87117034"
 |vCore 수|18|20|24|32|36|72|
 |메모리(GB)|34.0|37.8|45.4|60.5|68.0|136.0|
 |Columnstore 지원 여부|예|예|예|예|예|예|
-|메모리 내 OLTP 스토리지(GB)|N/A|N/A|N/A|N/A|N/A|N/A|
+|메모리 내 OLTP 스토리지(GB)|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |최대 데이터 크기(GB)|1536|1536|1536|3072|3072|4096|
 |최대 로그 크기(GB)|512|512|512|1024|1024|1024|
 |TempDB 최대 데이터 크기 (GB)|83.25|92.5|111|148|166.5|333|
@@ -386,11 +386,11 @@ ms.locfileid: "87117034"
 |최대 동시 로그인|1800|2000|2400|3200|3600|7200|
 |최대 동시 세션|30,000|30,000|30,000|30,000|30,000|30,000|
 |복제본 수|1|1|1|1|1|1|
-|다중 AZ|N/A|N/A|N/A|N/A|N/A|N/A|
-|읽기 확장|N/A|N/A|N/A|N/A|N/A|N/A|
+|다중 AZ|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
+|읽기 확장|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|해당 없음|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ## <a name="business-critical---provisioned-compute---gen4"></a>중요 비즈니스용 프로 비전 된 계산-Gen4
 
@@ -421,7 +421,7 @@ ms.locfileid: "87117034"
 |읽기 확장|예|예|예|예|예|예|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="gen4-compute-generation-part-2"></a>Gen4 계산 생성 (2 부)
 
@@ -447,7 +447,7 @@ ms.locfileid: "87117034"
 |읽기 확장|예|예|예|예|예|예|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ## <a name="business-critical---provisioned-compute---gen5"></a>중요 비즈니스용 프로 비전 된 계산-Gen5
 
@@ -475,7 +475,7 @@ ms.locfileid: "87117034"
 |읽기 확장|예|예|예|예|예|예|예|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ### <a name="gen5-compute-generation-part-2"></a>Gen5 계산 생성 (2 부)
 
@@ -487,7 +487,7 @@ ms.locfileid: "87117034"
 |Columnstore 지원 여부|예|예|예|예|예|예|예|
 |메모리 내 OLTP 스토리지(GB)|15.77|18.14|20.51|25.25|37.94|52.23|131.64|
 |최대 데이터 크기(GB)|3072|3072|3072|4096|4096|4096|4096|
-|최대 로그 크기(GB)|922|922|922|1,229|1,229|1,229|1,229|
+|최대 로그 크기(GB)|922|922|922|1024|1024|1024|1024|
 |TempDB 최대 데이터 크기 (GB)|512|576|640|768|1024|1280|2560|
 |스토리지 유형|로컬 SSD|로컬 SSD|로컬 SSD|로컬 SSD|로컬 SSD|로컬 SSD|로컬 SSD|
 |IO 대기 시간(근사치)|1-2ms(쓰기)<br>1-2ms(읽기)|1-2ms(쓰기)<br>1-2ms(읽기)|1-2ms(쓰기)<br>1-2ms(읽기)|1-2ms(쓰기)<br>1-2ms(읽기)|1-2ms(쓰기)<br>1-2ms(읽기)|1-2ms(쓰기)<br>1-2ms(읽기)|1-2ms(쓰기)<br>1-2ms(읽기)|
@@ -501,7 +501,7 @@ ms.locfileid: "87117034"
 |읽기 확장|예|예|예|예|예|예|예|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 ## <a name="business-critical---provisioned-compute---m-series"></a>중요 비즈니스용 프로 비전 된 계산-M 시리즈
 
@@ -529,7 +529,7 @@ ms.locfileid: "87117034"
 |읽기 확장|예|예|예|예|예|예|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 > [!IMPORTANT]
 > 경우에 따라 사용하지 않는 공간을 회수하기 위해 데이터베이스를 축소해야 할 수도 있습니다. 자세한 내용은 [Azure SQL Database에서 파일 공간 관리](file-space-manage.md)를 참조 하세요.
@@ -558,7 +558,7 @@ ms.locfileid: "87117034"
 |읽기 확장|예|예|예|예|예|
 |포함되는 백업 스토리지|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|DB 크기의 1배|
 
-\*8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
+\* 8kb에서 64 KB 사이의 최대 IO 크기 값입니다. 실제 IOPS는 워크 로드에 따라 달라 집니다. 자세한 내용은 [데이터 IO 관리](resource-limits-logical-server.md#resource-governance)를 참조 하세요.
 
 > [!IMPORTANT]
 > 경우에 따라 사용하지 않는 공간을 회수하기 위해 데이터베이스를 축소해야 할 수도 있습니다. 자세한 내용은 [Azure SQL Database에서 파일 공간 관리](file-space-manage.md)를 참조 하세요.

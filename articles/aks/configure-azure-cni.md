@@ -4,12 +4,12 @@ description: AKS 클러스터를 기존 가상 네트워크와 서브넷에 배�
 services: container-service
 ms.topic: article
 ms.date: 06/03/2019
-ms.openlocfilehash: b1bf459c530195b8855169123b8f496e4969403b
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 0506eb6350358f7256a61c8d6f164b6594d20554
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87872432"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566117"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 Azure CNI 네트워킹 구성
 
@@ -49,7 +49,7 @@ AKS 클러스터에 대한 IP 주소 계획은 노드 및 Pod에 대한 하나 �
 
 | 주소 범위 / Azure 리소스 | 한도 및 크기 조정 |
 | --------- | ------------- |
-| 가상 네트워크 | Azure Virtual Network는 /8 이하일 수 있지만 구성된 IP 주소 수는 65,536개로 제한됩니다. |
+| 가상 네트워크 | Azure Virtual Network는 /8 이하일 수 있지만 구성된 IP 주소 수는 65,536개로 제한됩니다. 주소 공간을 구성 하기 전에 다른 가상 네트워크의 서비스와 통신 하는 등 모든 네트워킹 요구 사항을 고려 하세요. 예를 들어 너무 많은 주소 공간을 구성 하는 경우 네트워크 내에서 다른 주소 공간을 겹칠 때 문제가 발생할 수 있습니다.|
 | 서브넷 | 클러스터에서 프로비전될 수 있는 노드, 포드와 모든 Kubernetes 및 Azure 리소스를 수용할 만큼 커야 합니다. 예를 들어, 내부 Azure Load Balancer를 배포하는 경우, 해당 프런트 엔드 IP는 공용 IP가 아닌 클러스터 서브넷에서 할당됩니다. 서브넷 크기도 업그레이드 작업이나 향후의 크기 조정 요구를 반영해야 합니다.<p />업그레이드 작업을 위한 추가 노드를 포함한 *최소* 서브넷 크기를 계산하려면`(number of nodes + 1) + ((number of nodes + 1) * maximum pods per node that you configure)`<p/>50 노드 클러스터의 예: `(51) + (51  * 30 (default)) = 1,581`(/21 이상)<p/>추가 10개 노드를 확장하는 프로비전도 포함하는 50개 노드 클러스터의 예: `(61) + (61 * 30 (default)) = 1,891` (/21 이상)<p>클러스터를 만들 때 노드당 최대 Pod를 지정하지 않으면 노드당 최대 Pod 수는 *30*개로 설정됩니다. 필요한 최소 IP 주소 수는 이 값을 기준으로 합니다. 다른 최댓값을 기준으로 최소 IP 주소 요구 사항을 계산하는 경우 [노드당 최대 Pod 수를 구성하는 방법](#configure-maximum---new-clusters)을 참조하여 클러스터를 배포할 때 이 값을 설정하세요 |
 | Kubernetes 서비스 주소 범위 | 이 범위는 이 가상 네트워크 또는 이 가상 네트워크에 연결된 모든 네트워크 요소에서 사용하지 말아야 합니다. 서비스 주소 CIDR은 /12보다 작아야 합니다. 여러 AKS 클러스터에서이 범위를 재사용할 수 있습니다. |
 | Kubernetes DNS 서비스 IP 주소 | 클러스터 서비스 검색에서 사용되는 Kubernetes 서비스 주소 범위 내의 IP 주소입니다(kube-dns). .1과 같은 주소 범위의 첫 번째 IP 주소를 사용하지 마세요. 서브넷 범위의 첫 번째 주소는 *kubernetes.default.svc.cluster.local* 주소에 사용됩니다. |
@@ -145,13 +145,17 @@ Azure Portal의 다음 스크린샷은 AKS 클러스터를 만드는 동안 이�
 
 ![Azure Portal의 고급 네트워킹 구성][portal-01-networking-advanced]
 
-## <a name="frequently-asked-questions"></a>질문과 대답
+## <a name="frequently-asked-questions"></a>자주 묻는 질문
 
 다음과 같은 질문과 대답은 **Azure CNI** 네트워킹 구성에 적용됩니다.
 
 * *내 클러스터 서브넷에 VM을 배포할 수 있나요?*
 
   예.
+
+* *외부 시스템에서 Azure CNI 사용 pod에서 발생 하는 트래픽에 대해 어떤 원본 IP를 사용 하나요?*
+
+  AKS 클러스터와 동일한 가상 네트워크에 있는 시스템은 pod에서 들어오는 트래픽에 대 한 원본 주소로 pod IP를 확인 합니다. AKS 클러스터 가상 네트워크 외부의 시스템은 pod에서 들어오는 트래픽에 대 한 원본 주소로 노드 IP를 확인 합니다. 
 
 * *Pod 별 네트워크 정책을 구성할 수 있나요?*
 

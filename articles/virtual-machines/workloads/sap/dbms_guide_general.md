@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 34b7f4bc55fc8e33b7d66f53e6f2fc241801f965
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 15c0368b2d0bd85f6fee65ffa2c9d6776d07f162
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827421"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650618"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>SAP 워크로드용 Azure Virtual Machines DBMS 배포 시 고려 사항
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -111,10 +111,7 @@ Microsoft Azure 아키텍처 및 Microsoft Azure Virtual Machines 배포와 작�
 ## <a name="storage-structure-of-a-vm-for-rdbms-deployments"></a><a name="65fa79d6-a85f-47ee-890b-22e794f51a64"></a>RDBMS 배포를 위한 VM의 스토리지 구조
 이 챕터를 수행하려면 [배포 가이드][deployment-guide]의 [이 챕터][deployment-guide-3]에 제공된 정보를 읽고 이해합니다. 이 챕터를 읽기 전에 다양한 VM 시리즈와 Standard 및 Premium Storage 간의 차이점을 이해하고 파악해야 합니다. 
 
-Azure VM용 Azure Storage에 대한 자세한 내용은 다음을 참조하세요.
-
-- [Azure Windows VM을 위한 관리 디스크 소개](../../windows/managed-disks-overview.md).
-- [Azure Linux VM을 위한 관리 디스크 소개](../../linux/managed-disks-overview.md).
+Azure Vm에 대 한 Azure Storage에 대해 알아보려면 [Azure vm 용 managed Disks 소개](../../managed-disks-overview.md)를 참조 하세요.
 
 기본 구성에서는 일반적으로 운영 체제, DBMS 및 최종 SAP 이진 파일이 데이터베이스 파일과 분리된 배포 구조를 사용하는 것이 좋습니다. Azure Virtual Machines에서 실행되는 SAP 시스템에 운영 체제, 데이터베이스 관리 시스템 실행 파일 및 SAP 실행 파일과 함께 기본 VHD(또는 디스크)를 설치하는 것이 좋습니다. 
 
@@ -221,7 +218,7 @@ Premium Storage의 경우 캐싱 옵션은 다음과 같습니다.
 
 Premium Storage의 경우 SAP 데이터베이스의 **데이터 파일 읽기 캐싱**을 사용하고 **로그 파일의 디스크에 대한 캐싱 없음**을 선택하는 것이 좋습니다.
 
-M 시리즈 배포의 경우 DBMS 배포에 Azure Write Accelerator를 사용하는 것이 좋습니다. Azure Write Accelerator에 대한 세부 정보, 제한 및 배포는 [Write Accelerator 사용](../../windows/how-to-enable-write-accelerator.md)을 참조하세요.
+M 시리즈 배포의 경우 DBMS 배포에 Azure Write Accelerator를 사용하는 것이 좋습니다. Azure Write Accelerator에 대한 세부 정보, 제한 및 배포는 [Write Accelerator 사용](../../how-to-enable-write-accelerator.md)을 참조하세요.
 
 
 ### <a name="azure-nonpersistent-disks"></a>Azure 비영구 디스크

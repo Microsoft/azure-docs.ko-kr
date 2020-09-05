@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box Disk에 데이터를 복사하는 자습서 | Microsoft Docs
-description: 이 자습서를 사용하여 Azure Data Box Disk에 데이터를 복사하는 방법 알아보기
+description: 이 자습서에는 호스트 컴퓨터에서 Azure Data Box Disk로 데이터를 복사한 다음, 체크섬을 생성하여 데이터 무결성을 확인하는 방법을 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: ff57a67d5e6d617d6d51c924161f586f90f92c3c
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: d33f53ef3d6ea0ef6a3040a82ec17b3089075949
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231542"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927116"
 ---
 ::: zone target="docs"
 

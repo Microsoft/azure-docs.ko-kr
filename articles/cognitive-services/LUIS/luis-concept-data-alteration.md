@@ -3,12 +3,13 @@ title: 데이터 변경-LUIS
 description: Language Understanding(LUIS)에서 예측 전에 데이터를 변경하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: 3a88739caa9b35679f10b0cb63a804e9464c871c
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c675ac246f397b5949c870ad91ab936bbd92c7ef
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872255"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934670"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>예측 이전 또는 도중에 발언 데이터 변경
 LUIS는 예측 전이나 예측 중에 발화를 조작할 수 있는 방법을 제공합니다. 여기에는 미리 작성 한 [datetimeV2](luis-reference-prebuilt-datetimev2.md)에 대 한 [맞춤법 수정](luis-tutorial-bing-spellcheck.md), 표준 시간대 문제 해결 등이 포함 됩니다.
@@ -80,7 +81,7 @@ LUIS 앱이 미리 작성 된 [datetimeV2](luis-reference-prebuilt-datetimev2.md
 V3에서는 `datetimeReference` 표준 시간대 오프셋을 결정 합니다. [V3 예측](luis-migration-api-v3.md#v3-post-body)에 대해 자세히 알아보세요.
 
 ### <a name="v2-prediction-api-to-alter-timezone"></a>표준 시간대를 변경 하는 V2 예측 API
-표준 시간대는 API 버전에 따라 매개 변수를 `timezoneOffset` 사용 하 여 사용자의 표준 시간대를 끝점에 추가 하 여 수정 됩니다. 매개 변수 값은 시간을 변경 하는 양수 또는 음수 (분)입니다.
+표준 시간대는 `timezoneOffset` API 버전에 따라 매개 변수를 사용 하 여 사용자의 표준 시간대를 끝점에 추가 하 여 수정 됩니다. 매개 변수 값은 시간을 변경 하는 양수 또는 음수 (분)입니다.
 
 #### <a name="v2-prediction-daylight-savings-example"></a>V2 예측 일광 절약 예제
 일광 절약 시간제를 조정 하기 위해 반환 된 미리 작성 된 datetimeV2이 필요한 경우에는 [끝점](https://go.microsoft.com/fwlink/?linkid=2092356) 쿼리에 대해 몇 분 안에 querystring 매개 변수를 사용 해야 합니다.

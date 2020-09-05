@@ -27,13 +27,13 @@
     - name: 이벤트 보내기 및 받기
       items:
         - name: .NET(Azure.Messaging.EventHubs)
-          href: get-started-dotnet-standard-send-v2.md
+          href: event-hubs-dotnet-standard-getstarted-send.md
         - name: Java(azure-messaging-eventhubs)
-          href: get-started-java-send-v2.md
+          href: event-hubs-java-get-started-send.md
         - name: Python(azure-eventhub 버전 5)
-          href: get-started-python-send-v2.md
+          href: event-hubs-python-get-started-send.md
         - name: JavaScript(azure/event-hubs 버전 5)
-          href: get-started-node-send-v2.md
+          href: event-hubs-node-get-started-send.md
         - name: Go
           href: event-hubs-go-get-started-send.md
         - name: C(보내기 전용)
@@ -43,13 +43,9 @@
     - name: 송신 및 수신 이벤트(이전 버전/패키지)
       items:
         - name: .NET(Microsoft.Azure.EventHubs)
-          href: event-hubs-dotnet-standard-getstarted-send.md
+          href: event-hubs-dotnet-standard-get-started-send-legacy.md
         - name: Java(azure-eventhubs)
-          href: event-hubs-java-get-started-send.md
-        - name: Python(azure-eventhub 버전 1)
-          href: event-hubs-python-get-started-send.md
-        - name: JavaScript(azure/event-hubs 버전 2)
-          href: event-hubs-node-get-started-send.md
+          href: event-hubs-java-get-started-send-legacy.md
         - name: .NET Framework(Microsoft.ServiceBus)
           href: event-hubs-dotnet-framework-getstarted-send.md
     - name: 이벤트 캡처
@@ -58,9 +54,7 @@
           href: event-hubs-capture-enable-through-portal.md
         - name: Resource Manager 템플릿을 사용하여 Event Hubs 캡처를 사용하도록 설정
           href: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
-        - name: Python을 사용하여 캡처된 데이터 읽기(azure-eventhub 버전 5)
-          href: get-started-capture-python-v2.md
-        - name: Python을 사용하여 캡처된 데이터 읽기(azure-eventhub 버전 1)
+        - name: Python을 사용하여 캡처된 데이터 읽기
           href: event-hubs-capture-python.md
     - name: Apache Kafka용 Event Hubs로 스트리밍
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
@@ -81,9 +75,6 @@
   items:
     - name: 코드 샘플
       href: event-hubs-samples.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: Event Hubs 용어
@@ -134,8 +125,12 @@
       maintainContext: true
 - name: 방법 가이드
   items:
-    - name: 지역 간 이동
-      href: move-across-regions.md
+    - name: 이동
+      items:
+        - name: 네임스페이스를 다른 영역으로 이동
+          href: move-across-regions.md
+        - name: 전용 클러스터를 다른 지역으로 이동
+          href: move-cluster-across-regions.md
     - name: 동적으로 파티션 추가
       href: dynamically-add-partitions.md
     - name: Azure Stack Hub에서 Blob Storage를 검사점 저장소로 사용
@@ -188,6 +183,8 @@
           href: event-hubs-kafka-flink-tutorial.md
         - name: 허브와 Apache Kafka 연결 통합(미리 보기)
           href: event-hubs-kafka-connect-tutorial.md
+        - name: Debezium과 Apache Kafka 연결 통합(미리 보기)
+          href: event-hubs-kafka-connect-debezium.md
         - name: 이벤트 허브에 Akka Streams 연결
           href: event-hubs-kafka-akka-streams-tutorial.md
         - name: FAQ - Kafka용 Event Hubs
@@ -294,6 +291,9 @@
       href: event-hubs-quotas.md
     - name: Apache Kafka 구성
       href: apache-kafka-configurations.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

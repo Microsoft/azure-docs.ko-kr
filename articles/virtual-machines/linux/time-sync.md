@@ -10,14 +10,14 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/17/2018
+ms.date: 08/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 4214fca9e295dc7716d8e2c069f52c719aa74697
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 8a122a36b14bd3c5f4912387dc98585cb89ab53b
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292106"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705643"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Azure에서 Linux VM의 시간 동기화
 
@@ -64,7 +64,7 @@ Azure 호스트는 GPS 안테나가 있는 Microsoft 소유의 Stratum 1 디바�
 - NTP 서버에서 시간을 가져오는 1차로서 NTP. 예를 들어 Ubuntu 16.04 LTS Marketplace 이미지는 **ntp.ubuntu.com**을 사용합니다.
 - VM이 유지 관리를 위해 일시 중지된 후 VM에 호스트 시간을 통신하고 수정하는 데 사용되는 2차로서 VMICTimeSync 서비스. Azure 호스트는 정확한 시간을 유지하기 위해 Microsoft 소유의 Stratum 1 디바이스를 사용합니다.
 
-최신 Linux 배포에서 VMICTimeSync 서비스는 PTP(Precision Time Protocol)를 사용하지만, 이전 배포는 PTP를 지원하지 않을 수 있고 호스트에서 시간을 가져오기 위해 NTP로 대체됩니다.
+최신 Linux 배포판에서 VMICTimeSync 서비스는 PTP (Precision Time Protocol) 하드웨어 클록 원본을 제공 하지만 이전 배포는이 클록 원본을 제공 하지 않을 수 있으며 호스트에서 시간을 가져오기 위해 NTP로 대체 합니다.
 
 NTP가 올바르게 동기화하고 있는지 확인하려면 `ntpq -p` 명령을 실행합니다.
 
@@ -112,9 +112,9 @@ root        391      2  0 17:52 ?        00:00:00 [hv_balloon]
 ```
 
 
-### <a name="check-for-ptp"></a>PTP 확인
+### <a name="check-for-ptp-clock-source"></a>PTP 클록 소스 확인
 
-최신 버전의 Linux, PTP(Precision Time Protocol) 시계 원본은 VMICTimeSync 공급자의 일부로 사용할 수 있습니다. 이전 버전의 Red Hat Enterprise Linux 또는 CentOS 7.x에서 [Linux 통합 서비스](https://github.com/LIS/lis-next)를 다운로드하여 업데이트된 드라이버를 설치하는 데 사용할 수 있습니다. PTP를 사용할 경우 Linux 디바이스는 /dev/ptp*x* 형식입니다. 
+최신 버전의 Linux, PTP(Precision Time Protocol) 시계 원본은 VMICTimeSync 공급자의 일부로 사용할 수 있습니다. 이전 버전의 Red Hat Enterprise Linux 또는 CentOS 7.x에서 [Linux 통합 서비스](https://github.com/LIS/lis-next)를 다운로드하여 업데이트된 드라이버를 설치하는 데 사용할 수 있습니다. PTP 클록 원본을 사용할 수 있는 경우 Linux 장치는/dev/ptp*x*형식이 됩니다. 
 
 사용 가능한 PTP 시계 원본을 확인합니다.
 

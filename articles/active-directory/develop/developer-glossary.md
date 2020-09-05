@@ -12,12 +12,12 @@ ms.date: 04/24/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma
-ms.openlocfilehash: 298c5b96951ed616b324535cf3fe2585180789a1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 781aa48442d80e55128314dd1e271532162df32c
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117246"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89178827"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Microsoft id 플랫폼 개발자 용어집
 
@@ -60,7 +60,7 @@ Azure AD가 애플리케이션 등록 시 부여하는 고유 식별자로, 해�
 
 자세한 내용은 [Azure Active Directory와 애플리케이션 통합][AAD-Integrating-Apps]을 참조하세요.
 
-## <a name="authentication"></a>authentication
+## <a name="authentication"></a>인증
 
 ID 및 액세스 제어에 사용할 보안 주체를 만들기 위한 기반을 제공하도록 당사자에게 합법적인 자격 증명을 하게 챌린지하는 작업. 예를 들어 [OAuth2 권한 부여](#authorization-grant) 시 당사자 인증은 사용된 권한 부여에 따라 [리소스 소유자](#resource-owner) 또는 [클라이언트 애플리케이션](#client-application)의 역할을 수행합니다.
 
@@ -164,7 +164,7 @@ Microsoft ID 플랫폼은 Azure AD(Azure Active Directory) ID 서비스와 개�
 
 역할은 리소스 정의 문자열(예: "비용 승인자", "읽기 전용", "Directory.ReadWrite.All")로, 리소스의 [애플리케이션 매니페스트](#application-manifest)를 통해 [Azure Portal][AZURE-portal]에서 관리되며, 리소스의 [appRoles 속성][Graph-Sp-Resource]에 저장됩니다. Azure Portal은 "user" 역할에 사용자를 할당하고 클라이언트 [애플리케이션 사용 권한](#permissions)을 구성하는 데 사용되어 "application" 역할에 액세스합니다.
 
-Microsoft Graph API에 의해 노출 되는 응용 프로그램 역할에 대 한 자세한 내용은 [Graph API 사용 권한 범위][Graph-Perm-Scopes]를 참조 하세요. 단계별 구현 예제는 [RBAC 및 Azure Portal을 사용하여 액세스 관리][AAD-RBAC]를 참조하세요.
+Microsoft Graph API에 의해 노출 되는 응용 프로그램 역할에 대 한 자세한 내용은 [Graph API 사용 권한 범위][Graph-Perm-Scopes]를 참조 하세요. 단계별 구현 예제는 [Azure Portal을 사용 하 여 Azure 역할 할당 추가 또는 제거][AAD-RBAC]를 참조 하세요.
 
 ## <a name="scopes"></a>범위
 

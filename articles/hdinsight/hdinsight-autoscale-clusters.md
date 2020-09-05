@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive,seoapr2020
-ms.date: 04/29/2020
-ms.openlocfilehash: 29c04fc8f6af016200e06ad239095a3665de5869
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.custom: contperfq1
+ms.date: 08/21/2020
+ms.openlocfilehash: 4c4b9c60eb967b5791af724e5c15bba887263d44
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086435"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757866"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters"></a>Azure HDInsight 클러스터 자동 크기 조정
 
@@ -74,12 +74,12 @@ Azure HDInsight의 무료 자동 크기 조정 기능은 이전에 설정한 조
 
 | 버전 | Spark | Hive | LLAP | HBase | Kafka | Storm | ML |
 |---|---|---|---|---|---|---|---|
-| HDInsight 3.6 (ESP 제외) | Yes | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
-| HDInsight 4.0 (ESP 제외) | Yes | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
-| HDInsight 3.6 및 ESP | Yes | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
-| HDInsight 4.0 및 ESP | Yes | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
+| HDInsight 3.6 (ESP 제외) | 예 | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
+| HDInsight 4.0 (ESP 제외) | 예 | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
+| HDInsight 3.6 및 ESP | 예 | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
+| HDInsight 4.0 및 ESP | 예 | 예 | 예 | 예* | 아니요 | 아니요 | 아니요 |
 
-\*HBase 클러스터는 부하를 기반으로 하지 않는 일정 기반 크기 조정에 대해서만 구성할 수 있습니다.
+\* HBase 클러스터는 부하를 기반으로 하지 않는 일정 기반 크기 조정에 대해서만 구성할 수 있습니다.
 
 ## <a name="get-started"></a>시작하기
 
@@ -133,7 +133,7 @@ Azure Portal을 사용하여 HDInsight 클러스터를 만드는 방법에 대�
 
 #### <a name="load-based-autoscaling"></a>부하 기반 자동 크기 조정
 
-`autoscale` `computeProfile`  >  `workernode` `minInstanceCount` `maxInstanceCount` 아래 json 코드 조각에 표시 된 것 처럼, 속성을 사용 하 여 섹션에 노드를 추가 하 여 Azure Resource Manager 템플릿을 사용 하 여 부하 기반 자동 크기 조정을 사용 하 여 HDInsight 클러스터를 만들 수 있습니다.
+`autoscale` `computeProfile`  >  `workernode` `minInstanceCount` `maxInstanceCount` 아래 json 코드 조각에 표시 된 것 처럼, 속성을 사용 하 여 섹션에 노드를 추가 하 여 Azure Resource Manager 템플릿을 사용 하 여 부하 기반 자동 크기 조정을 사용 하 여 HDInsight 클러스터를 만들 수 있습니다. 전체 resource manager 템플릿은 [빠른 시작 템플릿: Loadbased 자동 크기 조정을 사용 하는 Spark 클러스터 배포](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-autoscale-loadbased)를 참조 하세요.
 
 ```json
 {
@@ -161,7 +161,7 @@ Azure Portal을 사용하여 HDInsight 클러스터를 만드는 방법에 대�
 
 #### <a name="schedule-based-autoscaling"></a>일정 기반 자동 크기 조정
 
-`autoscale`섹션에 노드를 추가 하 여 Azure Resource Manager 템플릿에 대 한 일정 기반 자동 크기 조정을 사용 하 여 HDInsight 클러스터를 만들 수 있습니다 `computeProfile`  >  `workernode` . 노드에는 변경 내용이 발생 하는 `autoscale` `recurrence` 경우를 `timezone` 설명 하는 및가 포함 된이 포함 됩니다 `schedule` .
+`autoscale`섹션에 노드를 추가 하 여 Azure Resource Manager 템플릿에 대 한 일정 기반 자동 크기 조정을 사용 하 여 HDInsight 클러스터를 만들 수 있습니다 `computeProfile`  >  `workernode` . 노드에는 변경 내용이 발생 하는 `autoscale` `recurrence` 경우를 `timezone` 설명 하는 및가 포함 된이 포함 됩니다 `schedule` . 전체 resource manager 템플릿은 [일정 기반 자동 크기 조정을 사용 하 여 Spark 클러스터 배포](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-autoscale-schedulebased)를 참조 하세요.
 
 ```json
 {
@@ -225,7 +225,7 @@ Azure Portal에 나열 된 클러스터 상태를 통해 자동 크기 조정 �
 
 표시 될 수 있는 모든 클러스터 상태 메시지는 아래 목록에 설명 되어 있습니다.
 
-| 클러스터 상태 | Description |
+| 클러스터 상태 | 설명 |
 |---|---|
 | 실행 중 | 클러스터가 정상적으로 작동 하 고 있습니다. 모든 이전 자동 크기 조정 작업이 성공적으로 완료 되었습니다. |
 | 업데이트  | 클러스터 자동 크기 조정 구성을 업데이트 하 고 있습니다.  |
@@ -258,6 +258,26 @@ Azure Portal에 나열 된 클러스터 상태를 통해 자동 크기 조정 �
 ### <a name="minimum-cluster-size"></a>최소 클러스터 크기
 
 클러스터를 3 개 미만의 노드로 확장 하지 마십시오. 클러스터를 3 개 미만의 노드로 확장 하면 파일 복제가 충분 하지 않기 때문에 안전 모드에서 중단 될 수 있습니다.  자세한 내용은 [안전 모드에서 중단 하기](./hdinsight-scaling-best-practices.md#getting-stuck-in-safe-mode)를 참조 하세요.
+
+### <a name="llap-daemons-count"></a>LLAP 디먼 수
+
+자동 크기 조정 기능이 설정 된 LLAP 클러스터의 경우에는 자동 크기 조정/아래로 이벤트를 통해 LLAP 디먼 수가 활성 작업자 노드 수로 확장/축소 됩니다. 하지만 디먼 수의 이러한 변경은 Ambari의 **num_llap_nodes** 구성에서 지속 되지 않습니다. Hive 서비스를 수동으로 다시 시작 하는 경우 Ambari의 구성에 따라 LLAP 디먼 수가 다시 설정 됩니다.
+
+다음 시나리오를 살펴보겠습니다.
+1. LLAP 자동 크기 조정 사용 클러스터는 작업자 노드 3 개를 사용 하 여 만들어지며, 부하 기반 자동 크기 조정 기능은 최소 작업자 노드를 3으로, 최대 작업자 노드는 10으로 설정 합니다.
+2. LLAP 구성 및 Ambari에 따른 LLAP 디먼 count 구성은 3 개의 작업자 노드를 사용 하 여 만들어졌기 때문에 3입니다.
+3. 그런 다음 클러스터의 로드로 인해 자동 크기 조정이 트리거됩니다. 이제 클러스터가 10 개의 노드로 확장 됩니다.
+4. 정기적인 간격으로 실행 되는 자동 크기 조정 검사는 LLAP 디먼 개수가 3 이지만 활성 작업자 노드 수는 10 이지만 자동 크기 조정 프로세스는 이제 LLAP 데몬 수를 10으로 증가 시킬 수 있지만이 변경 내용은 Ambari Config-num_llap_nodes에 유지 되지 않습니다.
+5. 이제 자동 크기 조정을 사용할 수 없습니다.
+6. 이제 클러스터에 10 개의 작업자 노드와 10 개의 LLAP 디먼이 있습니다.
+7. LLAP 서비스를 수동으로 다시 시작 합니다.
+8. 다시 시작 하는 동안 LLAP 구성에서 num_llap_nodes 구성을 확인 하 고 값을 3으로 확인 하 여 디먼의 3 개 인스턴스를 회전 하지만 작업자 노드 수는 10입니다. 이제 두 항목이 일치 하지 않습니다.
+
+이 문제가 발생 하는 경우 고급 hive-대화형에서 현재 활성 작업자 노드 수와 일치 하도록 **num_llap_node 구성 (HIVE LLAP 데몬을 실행 하는 데 필요한 노드 수)** 을 수동으로 변경 해야 합니다.
+
+**참고**
+
+자동 크기 조정 이벤트는 Ambari에서 Hive 구성의 **최대 총 동시 쿼리** 수를 변경 하지 않습니다. 즉, Hive 서버 2 대화형 서비스는 **로드/일정에 따라 LLAP 디먼 수가 확장 및 축소 되는 경우에도 언제 든 지 지정 된 수의 동시 쿼리를 처리할 수 있습니다**. 일반적인 권장 사항은 수동 작업을 피할 수 있도록 최대 사용량 시나리오에 대해이 구성을 설정 하는 것입니다. 그러나 **최대 총 동시 쿼리 수 구성에 대 한 높은 값을 설정 하면 최소한의 작업자 노드가 지정 된 수의 Tez Ams (최대 총 동시 쿼리 수 구성)를 수용할 수 없는 경우 Hive 서버 2 대화형 서비스 다시 시작이 실패할 수 있습니다** .
 
 ## <a name="next-steps"></a>다음 단계
 

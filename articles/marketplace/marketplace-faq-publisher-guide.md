@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 07/22/2020
-ms.openlocfilehash: 20c82793726221515ad4d1019f4d8f4754b3ae08
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 82a6b2674fe73bd448bb7ccbd230e837bd1cbb2a
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036575"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607327"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Microsoft 상업적 marketplace에 대 한 일반적인 질문
 
@@ -120,11 +120,11 @@ Microsoft는 많은 국가/지역에서 세금 납부를 관리하고 재판매�
 
 게시 프로세스 중에 제품 미리 보기에 대한 액세스 권한이 제공됩니다. **미리 보기** 탭에서 지정한 사용자만 액세스할 수 있으며, 다른 사용자는 이 제품을 볼 수 없습니다. 미리 보기를 구매하고 프로세스를 테스트할 수 있지만 제품의 설정에 따라 전체 금액이 청구됩니다.
 
-매우 저렴한 가격으로 구매를 완료하려면 단독으로 볼 수 있고 테스트 비용으로 수락할 수 있는 비용의 프라이빗 플랜을 게시하는 것이 좋습니다. 금액($0.00)은 지원되지만 유료 구독처럼 전체 환경을 반영하지는 않으므로 $1.00에 가격을 설정하는 것이 좋습니다.
+저렴 한 가격으로 구매를 완료 하려면 사용자가 볼 수 있는 비공개 요금제를 게시 하는 것이 좋습니다. 가격에는 테스트 비용으로 수락할 수 있습니다. 금액($0.00)은 지원되지만 유료 구독처럼 전체 환경을 반영하지는 않으므로 $1.00에 가격을 설정하는 것이 좋습니다.
 
 ### <a name="what-are-leads-from-the-commercial-marketplace-and-what-should-i-do-with-them"></a>상업용 마켓플레이스의 잠재 고객이란 무엇이며 어떻게 해야 하나요?
 
-고객이 Microsoft AppSource 및 Azure Marketplace 스토어의 제품을 사용하는 경우 정보가 캡처됩니다. 고객이 충분한 관심을 보인 후 잠재 고객이 생성되고 선택한 시스템으로 영업 기회가 전송됩니다. 상업적 marketplace를 성공적으로 완료 한 게시자는 잠재 고객을 안내 하 고 관계를 개발 하며 관심을 계산 하는 경우가 많습니다.
+고객이 Microsoft AppSource 제품을 사용 하 고 온라인 상점을 Azure Marketplace 하면 정보가 캡처됩니다. 고객이 충분한 관심을 보인 후 잠재 고객이 생성되고 선택한 시스템으로 영업 기회가 전송됩니다. 상업적 marketplace를 성공적으로 완료 한 게시자는 잠재 고객을 안내 하 고 관계를 개발 하며 관심을 계산 하는 경우가 많습니다.
 
 자세한 내용은 [마켓플레이스 제품의 잠재 고객](partner-center-portal/commercial-marketplace-get-customer-leads.md)을 참조하세요.
 
@@ -140,7 +140,7 @@ Microsoft는 많은 국가/지역에서 세금 납부를 관리하고 재판매�
 
 ### <a name="can-my-offer-appear-in-both-microsoft-appsource-and-azure-marketplace"></a>내 제품이 Microsoft AppSource와 Azure Marketplace에 모두 표시되나요?
 
-Microsoft AppSource는 비즈니스 및 산업 솔루션의 대상이며 Azure Marketplace는 IT 및 개발자 솔루션을 위해 디자인되었습니다. 제품 만들기 중에 선택한 범주 및 산업을 기반으로 각 스토어에서 제품을 사용할 수 있습니다. 드문 경우지만 제품이 두 스토어의 사용자와 모두 관련되는 경우 둘 다에 표시될 수 있습니다.
+Microsoft AppSource는 비즈니스 및 산업 솔루션의 대상이며 Azure Marketplace는 IT 및 개발자 솔루션을 위해 디자인되었습니다. 제품을 만들 때 선택한 범주와 산업을 기반으로 하는 각 온라인 상점에서 제공을 사용할 수 있습니다. 드문 경우 지만 제품이 두 온라인 상점의 사용자와 관련이 있는 경우 둘 다에 표시 될 수 있습니다.
 
 ### <a name="what-is-the-cloud-solution-provider-program"></a>클라우드 솔루션 공급자 프로그램이란?
 

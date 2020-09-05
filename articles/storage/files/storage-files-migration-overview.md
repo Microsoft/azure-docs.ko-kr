@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 3/18/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: d979d2d0167a4398d31271bb896c812bbe86be73
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 4223e3bc572a689472dce136b60599034566b274
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87827863"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654262"
 ---
 # <a name="migrate-to-azure-file-shares"></a>Azure 파일 공유로 마이그레이션
 
@@ -26,7 +26,7 @@ Azure에는 사용 가능한 클라우드 저장소 유형이 여러 개 있습�
 
 [Azure 파일 공유](storage-files-introduction.md) 는 범용 파일 데이터에 적합 합니다. 이 데이터에는에 대 한 온-프레미스 SMB 또는 NFS 공유를 사용 하는 모든 항목이 포함 됩니다. [Azure File Sync](storage-sync-files-planning.md)를 사용 하 여 Windows Server 온-프레미스를 실행 하는 서버에서 여러 Azure 파일 공유의 콘텐츠를 캐시할 수 있습니다.
 
-현재 온-프레미스 서버에서 실행 되는 앱의 경우 Azure 파일 공유에 파일을 저장 하는 것이 좋을 수 있습니다. 앱을 Azure로 이동 하 고 Azure 파일 공유를 공유 저장소로 사용할 수 있습니다. 이 시나리오에 대 한 [Azure 디스크](../../virtual-machines/windows/managed-disks-overview.md) 를 고려할 수도 있습니다.
+현재 온-프레미스 서버에서 실행 되는 앱의 경우 Azure 파일 공유에 파일을 저장 하는 것이 좋을 수 있습니다. 앱을 Azure로 이동 하 고 Azure 파일 공유를 공유 저장소로 사용할 수 있습니다. 이 시나리오에 대 한 [Azure 디스크](../../virtual-machines/managed-disks-overview.md) 를 고려할 수도 있습니다.
 
 일부 클라우드 앱은 SMB 또는 컴퓨터 로컬 데이터 액세스 또는 공유 액세스에 의존 하지 않습니다. 이러한 앱에 대해 [Azure blob](../blobs/storage-blobs-overview.md) 과 같은 개체 저장소를 선택 하는 것이 가장 좋습니다.
 
@@ -126,7 +126,7 @@ Microsoft 및 기타에서 사용할 수 있는 몇 가지 파일 복사 도구�
 |![권장하지 않음](media/storage-files-migration-overview/circle-red-x.png)| Azure 데이터 팩터리 | 지원됨. | 메타 데이터를 복사 하지 않습니다. |
 |||||
 
-*\*전체 충실도: Azure 파일 공유 기능을 충족 하거나 초과 합니다.*
+*\* 전체 충실도: Azure 파일 공유 기능을 충족 하거나 초과 합니다.*
 
 ### <a name="migration-helper-tools"></a>마이그레이션 도우미 도구
 

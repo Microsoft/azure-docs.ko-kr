@@ -10,12 +10,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: overview
 ms.date: 05/08/2018
-ms.openlocfilehash: 03fdbf6979db3249d1322a3025b48de81b953ae1
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: b1357c9bb125cb881ac4aa6dd31c9dcaf53954f0
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82856224"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87919942"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Data Science Virtual Machine 기반 팀 분석 및 AI 환경 
 [DSVM](overview.md)(Data Science Virtual Machine)은 미리 빌드된 AI(인공 지능) 및 데이터 분석용 소프트웨어가 포함된 다양한 환경을 Azure 플랫폼에 제공합니다.
@@ -40,7 +40,7 @@ DSVM은 Azure 인프라 수준에서 작동하므로, IT 관리자가 엔터프�
 * [네트워크 보안](https://docs.microsoft.com/azure/security/fundamentals/network-security)
 * [모니터링](https://docs.microsoft.com/azure/virtual-machines/windows/monitor) 및 [관리](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)
 * [로깅 및 감사](https://docs.microsoft.com/azure/security/fundamentals/log-audit)
-* [역할 기반 액세스 제어](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Azure RBAC(Azure 역할 기반 액세스 제어)](https://docs.microsoft.com/azure/role-based-access-control/overview)
 * [정책 설정 및 적용](../../governance/policy/overview.md)
 * [맬웨어 방지](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
 * [암호화](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption-overview)

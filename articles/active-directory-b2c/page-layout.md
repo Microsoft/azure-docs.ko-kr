@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 07/30/2020
+ms.date: 08/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4548b50e4168f260cb401c40dd4e61192cea1015
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 868d99a82009dc8545fc24ad1cfa1da3959da131
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489540"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852068"
 ---
 # <a name="page-layout-versions"></a>페이지 레이아웃 버전
 
@@ -24,56 +24,125 @@ ms.locfileid: "87489540"
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-## <a name="210"></a>2.1.0
+## <a name="self-asserted-page-selfasserted"></a>자체 어설션 페이지 (selfasserted)
 
-- 자체 어설션 페이지 ( `selfasserted` )
-  - 지역화 및 내게 필요한 옵션 수정.
-- 통합 SSP 페이지 ( `unifiedssp` )
-  - 여러 등록 링크에 대 한 지원이 추가 되었습니다.
-  - 정책에 정의 된 조건자 규칙에 따라 사용자 입력 유효성 검사에 대 한 지원이 추가 되었습니다.
+**2.1.0**
 
-## <a name="200"></a>2.0.0
+- 지역화 및 내게 필요한 옵션 수정.
 
-- 자체 어설션 페이지 ( `selfasserted` )
-  - 사용자 지정 정책의 [표시 컨트롤](display-controls.md) 에 대 한 지원이 추가 되었습니다.
+**2.0.0**
 
-## <a name="120"></a>1.2.0
+- 사용자 지정 정책의 [표시 컨트롤](display-controls.md) 에 대 한 지원이 추가 되었습니다.
 
-- 모든 페이지
-  -  접근성 수정
-  - 이제 `data-preload="true"` [HTML 태그에](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) 특성을 추가 하 여 CSS 및 JavaScript에 대 한 로드 순서를 제어할 수 있습니다.
-    - 연결 된 CSS 파일을 HTML 템플릿과 동시에 로드 하 여 파일 로드 사이에 ' 깜박임 ' 하지 않도록 합니다.
-    - `script`페이지를 로드 하기 전에 태그를 가져오고 실행 하는 순서를 제어 합니다.
-  - 전자 메일 필드는 지금 이며 `type=email` 모바일 키보드는 올바른 제안 사항을 제공 합니다.
-  - Chrome 변환 지원
-- 통합 및 자체 어설션된 페이지
-  - 이제 사용자 이름/전자 메일 및 암호 필드에 `form` HTML 요소를 사용 하 여 Edge 및 Internet Explorer (IE)가이 정보를 제대로 저장할 수 있도록 합니다.
-- 자체 어설션된 페이지
-  - 사용자 환경을 개선 하기 위해 구성 가능한 사용자 입력 유효성 검사 지연을 추가 했습니다.
+**1.2.0**
 
-## <a name="110"></a>1.1.0
+- 이제 사용자 이름/전자 메일 및 암호 필드에 `form` HTML 요소를 사용 하 여 Edge 및 Internet Explorer (IE)가이 정보를 제대로 저장할 수 있도록 합니다.
+- 사용자 환경을 개선 하기 위해 구성 가능한 사용자 입력 유효성 검사 지연을 추가 했습니다.
+-  접근성 수정
+- 이제 `data-preload="true"` [HTML 태그에](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) 특성을 추가 하 여 CSS 및 JavaScript에 대 한 로드 순서를 제어할 수 있습니다.
+  - 연결 된 CSS 파일을 HTML 템플릿과 동시에 로드 하 여 파일 로드 사이에 ' 깜박임 ' 하지 않도록 합니다.
+  - `script`페이지를 로드 하기 전에 태그를 가져오고 실행 하는 순서를 제어 합니다.
+- 전자 메일 필드는 지금 이며 `type=email` 모바일 키보드는 올바른 제안 사항을 제공 합니다.
+- Chrome 변환 지원
 
-- 예외 페이지 (globalexception)
-  - 내게 필요한 옵션 수정
-  - 정책의 연락처가 없을 때 기본 메시지가 제거 됨
-  - 기본 CSS 제거 됨
-- MFA 페이지 (다단계)
-  - ' 코드 확인 ' 단추 제거 됨
-  - 이제 코드에 대 한 입력 필드에 최대 6 자까지 입력을 사용 합니다.
-  - 페이지는 단추를 클릭 하지 않고 6 자리 코드를 입력할 때 입력 한 코드를 자동으로 확인 하려고 시도 합니다.
-  - 코드가 잘못 된 경우 입력 필드가 자동으로 지워집니다.
-  - 잘못 된 코드를 사용 하 여 3 번 시도 하면 B2C는 신뢰 당사자에 게 오류를 다시 보냅니다.
-  -  접근성 수정
-  - 기본 CSS 제거 됨
-- 자체 어설션 페이지 (selfasserted)
-  - 제거 경고 취소
-  - 오류 요소에 대 한 CSS 클래스
-  - 향상 된 오류 논리 표시/숨기기
-  - 기본 CSS 제거 됨
-- 통합 SSP (unifiedssp)
-  - KMSI (로그인 유지) 컨트롤이 추가 됨
+**1.1.0**
 
-## <a name="100"></a>1.0.0
+- 제거 경고 취소
+- 오류 요소에 대 한 CSS 클래스
+- 향상 된 오류 논리 표시/숨기기
+- 기본 CSS 제거 됨
+
+**1.0.0**
+
+- 초기 릴리스
+
+## <a name="unified-sign-in-sign-up-page-with-password-reset-link-unifiedssp"></a>암호 재설정 링크를 사용 하는 통합 로그인 등록 페이지 (unifiedssp)
+
+**2.1.0**
+
+- 여러 등록 링크에 대 한 지원이 추가 되었습니다.
+- 정책에 정의 된 조건자 규칙에 따라 사용자 입력 유효성 검사에 대 한 지원이 추가 되었습니다.
+
+**1.2.0**
+
+- 이제 사용자 이름/전자 메일 및 암호 필드에 `form` HTML 요소를 사용 하 여 Edge 및 Internet Explorer (IE)가이 정보를 제대로 저장할 수 있도록 합니다.
+-  접근성 수정
+- 이제 `data-preload="true"` [HTML 태그에](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) 특성을 추가 하 여 CSS 및 JavaScript에 대 한 로드 순서를 제어할 수 있습니다.
+  - 연결 된 CSS 파일을 HTML 템플릿과 동시에 로드 하 여 파일 로드 사이에 ' 깜박임 ' 하지 않도록 합니다.
+  - `script`페이지를 로드 하기 전에 태그를 가져오고 실행 하는 순서를 제어 합니다.
+- 전자 메일 필드는 지금 이며 `type=email` 모바일 키보드는 올바른 제안 사항을 제공 합니다.
+- Chrome 변환 지원
+
+**1.1.0**
+
+- KMSI (로그인 유지) 컨트롤이 추가 됨
+
+**1.0.0**
+
+- 초기 릴리스
+
+## <a name="mfa-page-multifactor"></a>MFA 페이지 (다단계)
+
+**1.2.1**
+
+- 기본 템플릿에 대 한 내게 필요한 옵션 수정
+
+**1.2.0**
+
+-  접근성 수정
+- 이제 `data-preload="true"` [HTML 태그에](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) 특성을 추가 하 여 CSS 및 JavaScript에 대 한 로드 순서를 제어할 수 있습니다.
+  - 연결 된 CSS 파일을 HTML 템플릿과 동시에 로드 하 여 파일 로드 사이에 ' 깜박임 ' 하지 않도록 합니다.
+  - `script`페이지를 로드 하기 전에 태그를 가져오고 실행 하는 순서를 제어 합니다.
+- 전자 메일 필드는 지금 이며 `type=email` 모바일 키보드는 올바른 제안 사항을 제공 합니다.
+- Chrome 변환 지원
+
+**1.1.0**
+
+- ' 코드 확인 ' 단추 제거 됨
+- 이제 코드에 대 한 입력 필드에 최대 6 자까지 입력을 사용 합니다.
+- 페이지는 단추를 클릭 하지 않고 6 자리 코드를 입력할 때 입력 한 코드를 자동으로 확인 하려고 시도 합니다.
+- 코드가 잘못 된 경우 입력 필드가 자동으로 지워집니다.
+- 잘못 된 코드를 사용 하 여 3 번 시도 하면 B2C는 신뢰 당사자에 게 오류를 다시 보냅니다.
+-  접근성 수정
+- 기본 CSS 제거 됨
+
+**1.0.0**
+
+- 초기 릴리스
+
+## <a name="exception-page-globalexception"></a>예외 페이지 (globalexception)
+
+**1.2.0**
+
+-  접근성 수정
+- 이제 `data-preload="true"` [HTML 태그에](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) 특성을 추가 하 여 CSS 및 JavaScript에 대 한 로드 순서를 제어할 수 있습니다.
+  - 연결 된 CSS 파일을 HTML 템플릿과 동시에 로드 하 여 파일 로드 사이에 ' 깜박임 ' 하지 않도록 합니다.
+  - `script`페이지를 로드 하기 전에 태그를 가져오고 실행 하는 순서를 제어 합니다.
+- 전자 메일 필드는 지금 이며 `type=email` 모바일 키보드는 올바른 제안 사항을 제공 합니다.
+- Chrome 변환 지원
+
+**1.1.0**
+
+- 내게 필요한 옵션 수정
+- 정책의 연락처가 없을 때 기본 메시지가 제거 됨
+- 기본 CSS 제거 됨
+
+**1.0.0**
+
+- 초기 릴리스
+
+## <a name="other-pages-providerselection-claimsconsent-unifiedssd"></a>기타 페이지 (ProviderSelection, ClaimsConsent, UnifiedSSD)
+
+**1.2.0**
+
+-  접근성 수정
+- 이제 `data-preload="true"` [HTML 태그에](custom-policy-ui-customization.md#guidelines-for-using-custom-page-content) 특성을 추가 하 여 CSS 및 JavaScript에 대 한 로드 순서를 제어할 수 있습니다.
+  - 연결 된 CSS 파일을 HTML 템플릿과 동시에 로드 하 여 파일 로드 사이에 ' 깜박임 ' 하지 않도록 합니다.
+  - `script`페이지를 로드 하기 전에 태그를 가져오고 실행 하는 순서를 제어 합니다.
+- 전자 메일 필드는 지금 이며 `type=email` 모바일 키보드는 올바른 제안 사항을 제공 합니다.
+- Chrome 변환 지원
+
+**1.0.0**
 
 - 초기 릴리스
 

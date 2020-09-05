@@ -8,15 +8,15 @@
 - name: 자습서
   items:
     - name: G Suite
-      href: /azure/active-directory/saas-apps/google-apps-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+      href: ../saas-apps/google-apps-provisioning-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: ServiceNow
-      href: /azure/active-directory/saas-apps/servicenow-provisioning-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+      href: ../saas-apps/servicenow-provisioning-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: AWS(Amazon Web Services) - 역할 프로비저닝
-      href: /azure/active-directory/saas-apps/amazon-web-service-tutorial#configure-azure-ad-single-sign-ont?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+      href: ../saas-apps/amazon-web-service-tutorial.md?context=azure/active-directory/app-provisioning/context/app-provisioning-context#configure-azure-ad-sso
     - name: Workday
-      href: /azure/active-directory/saas-apps/workday-inbound-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+      href: ../saas-apps/workday-inbound-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: SAP SuccessFactors
-      href: /azure/active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+      href: ../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: 모든 통합 갤러리 앱
       href: /azure/active-directory/saas-apps
 - name: 개념
@@ -57,7 +57,9 @@
           href: export-import-provisioning-configuration.md
     - name: 애플리케이션 프로비저닝 문제 해결
       items:
-        - name: 앱 프로비전 문제 해결
+        - name: 알려진 문제
+          href: known-issues.md
+        - name: 구성 문제 해결
           href: application-provisioning-config-problem.md
         - name: 격리 상태
           href: application-provisioning-quarantine-status.md
@@ -70,7 +72,7 @@
         - name: 원본 특성 누락
           href: user-provisioning-sync-attributes-for-mapping.md
         - name: 프로비저닝 로그
-          href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/app-provisioning/context/app-provisioning-context
+          href: ../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: SCIM 엔드포인트 빌드 및 프로비저닝 구성
       href: use-scim-to-provision-users-and-groups.md
     - name: MS Graph를 사용하여 구성 자동화
@@ -96,11 +98,11 @@
 - name: 리소스
   items:
     - name: 개발자를 위한 지원 및 도움말 옵션
-      href: /azure/active-directory/develop/developer-support-help-options
+      href: ../develop/developer-support-help-options.md
     - name: Azure 피드백 포럼
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Microsoft Q&A 질문 페이지
-      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
+      href: /answers/topics/azure-active-directory.html
     - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/active-directory'
     - name: 서비스 업데이트

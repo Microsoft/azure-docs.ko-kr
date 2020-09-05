@@ -10,14 +10,14 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/05/2019
 ms.author: joelpell
-ms.openlocfilehash: 520754c08fc9bf89949739987b41974eccdcd29d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: cd9e539e01e8e11d866186552ab3b8dde7e03f91
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87292139"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654772"
 ---
-# <a name="optimize-performance-on-the-lsv2-series-virtual-machines"></a>Lsv2 시리즈 가상 머신에서 성능 최적화
+# <a name="optimize-performance-on-the-lsv2-series-linux-virtual-machines"></a>Lsv2 시리즈 Linux 가상 머신에서 성능 최적화
 
 Lsv2 시리즈 가상 머신은 광범위한 애플리케이션과 업계에서 로컬 스토리지에 대한 높은 I/O와 처리량이 필요한 다양한 워크로드를 지원합니다.  Lsv2 시리즈는 빅 데이터, SQL, NoSQL 데이터베이스, 데이터 웨어하우징 및 Cassandra, MongoDB, Cloudera, Redis 등의 대규모 트랜잭션 데이터베이스에 적합합니다.
 
@@ -83,7 +83,7 @@ Lsv2 시리즈 VM은 Zen 마이크로아키텍처를 기반으로 하는 AMD EYP
 - VM이 비정상 상태가 되고 하드웨어 문제로 인해 다른 노드로 서비스 치료가 필요합니다.
 - 소수의 계획된 유지 관리가 서비스를 위해 다른 호스트에 VM을 할당해야 하는 작업을 처리하고 있습니다.
 
-로컬 스토리지에 데이터를 백업하는 옵션에 대한 자세한 내용은 [Azure IaaS 디스크의 백업 및 재해 복구](backup-and-disaster-recovery-for-azure-iaas-disks.md)를 참조하세요.
+로컬 스토리지에 데이터를 백업하는 옵션에 대한 자세한 내용은 [Azure IaaS 디스크의 백업 및 재해 복구](../backup-and-disaster-recovery-for-azure-iaas-disks.md)를 참조하세요.
 
 ## <a name="frequently-asked-questions"></a>질문과 대답
 

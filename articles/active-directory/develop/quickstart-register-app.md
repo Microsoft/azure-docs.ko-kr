@@ -12,12 +12,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 79983678d13b810a521a00ba2c1978de92a5029f
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: 65fff06b4a2d28bbc276920ccbaba90d814d03f3
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81309515"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115359"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>빠른 시작: Microsoft ID 플랫폼에 애플리케이션 등록
 
@@ -50,7 +50,7 @@ ms.locfileid: "81309515"
     * 웹 애플리케이션의 경우 앱의 기준 URL을 제공합니다. 예를 들어 `https://localhost:31544`은 로컬 컴퓨터에서 실행 중인 웹앱의 URL일 수 있습니다. 사용자는 이 URL을 사용하여 웹 클라이언트 애플리케이션에 로그인합니다.
     * 공용 클라이언트 애플리케이션의 경우 Azure AD에서 토큰 응답을 반환하는 데 사용하는 URI를 제공합니다. 애플리케이션에 고유하게 해당되는 값을 입력합니다(예: `myapp://auth`).
 
-    웹 애플리케이션 또는 네이티브 애플리케이션에 대한 예제는 [Microsoft ID 플랫폼](https://docs.microsoft.com/azure/active-directory/develop)의 빠른 시작을 참조하세요.
+    웹 애플리케이션 또는 네이티브 애플리케이션에 대한 예제는 [Microsoft ID 플랫폼](./index.yml)의 빠른 시작을 참조하세요.
 
 1. 작업을 마쳤으면 **등록**을 선택합니다.
 
@@ -70,7 +70,7 @@ Azure AD는 앱에 고유한 애플리케이션 또는 클라이언트, ID를 �
 
 * 지원되는 계정을 관리하려면 [빠른 시작: 애플리케이션에서 지원되는 계정 수정](quickstart-modify-supported-accounts.md)을 참조하세요.
 
-* 앱을 빌드하고 기능을 추가하려면 [Microsoft ID 플랫폼](https://docs.microsoft.com/azure/active-directory/develop)의 빠른 시작을 참조하세요.
+* 앱을 빌드하고 기능을 추가하려면 [Microsoft ID 플랫폼](./index.yml)의 빠른 시작을 참조하세요.
 
 * 등록된 애플리케이션 및 이들 간의 관계를 나타내는 두 개의 Azure AD 개체에 대한 자세한 내용은 [애플리케이션 개체 및 서비스 주체 개체](app-objects-and-service-principals.md)를 참조하세요.
 

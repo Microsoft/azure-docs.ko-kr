@@ -1,6 +1,6 @@
 ---
 title: '자습서: 여행 모드별 여러 경로 찾기 | Microsoft Azure Maps'
-description: 이 자습서에서는 Microsoft Azure Maps를 사용하여 다양한 여행 모드에 대한 경로를 찾는 방법을 알아봅니다.
+description: Azure Maps를 사용하여 관심 지점까지의 특정 이동 모드 경로를 찾는 방법을 알아봅니다. 지도에 여러 경로를 표시하는 방법을 참조하세요.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 01/14/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-javascript
-ms.openlocfilehash: 0cb3c1eadae426cef59b7aad8821343c23e76d79
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7d17b9474edef245f7db16f33c72d722f356f712
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289545"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88037595"
 ---
 # <a name="tutorial-find-routes-for-different-modes-of-travel-using-azure-maps"></a>자습서: Azure Maps를 사용하여 여러 여행 모드에 대한 경로 찾기
 

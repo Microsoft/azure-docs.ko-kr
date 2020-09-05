@@ -10,13 +10,13 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 4/26/2019
 ms.author: scottwhi
-ms.custom: devx-track-python, devx-track-javascript
-ms.openlocfilehash: 49daf816c4075820c9efc93611f33c4854a6042d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: d82445499ffa42b1e3a0e949d95eadf61dfdd4c1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849576"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88925082"
 ---
 # <a name="use-an-insights-token-to-get-insights-for-an-image"></a>Insights 토큰을 사용 하 여 이미지에 대 한 통찰력 얻기
 
@@ -26,7 +26,7 @@ Bing Visual Search API는 사용자가 제공하는 이미지에 대한 정보�
 
 * [Java](quickstarts/java.md)
 
-* [Node.js](quickstarts/nodejs.md)
+* [Node.JS](quickstarts/nodejs.md)
 
 * [Python](quickstarts/python.md)).
 
@@ -373,7 +373,7 @@ public class InsightsToken {
 
 * Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/cognitive-services/)
 * Azure 구독을 만든 후에는 Azure Portal에서 <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="Bing Search 리소스 만들기"  target="_blank">Bing Search 리소스 만들기<span class="docon docon-navigate-external x-hidden-focus"></span></a>를 수행하여 키와 엔드포인트를 가져옵니다. 배포 후 **리소스로 이동**을 클릭합니다.
-* 이 코드를 실행 하려면 [6Node.js](https://nodejs.org/en/download/) 있어야 합니다.
+* 이 코드를 실행 하려면 [ 6Node.js](https://nodejs.org/en/download/) 있어야 합니다.
 
 ## <a name="run-the-javascript-application"></a>JavaScript 응용 프로그램 실행
 

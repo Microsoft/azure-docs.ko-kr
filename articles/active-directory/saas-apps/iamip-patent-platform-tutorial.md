@@ -2,25 +2,21 @@
 title: '자습서: IamIP Patent Platform과 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory 및 IamIP Patent Platform 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 8d5b4fc1-e8fd-4418-a369-189272fef80d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7d487aaf7ba4aaf666962cf91ca86d46115055b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1a2139b7a0f7d51b6c759a98c93c5250666f15a9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78190741"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88525142"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-iamip-patent-platform"></a>자습서: IamIP Patent Platform과 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -121,7 +117,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 1. 화면 위쪽에서 **새 사용자**를 선택합니다.
 1. **사용자** 속성에서 다음 단계를 완료합니다.
    1. **이름** 상자에서 **B.Simon**을 입력합니다.  
-   1. **사용자 이름** 상자에서 \<username>@\<companydomain>.\<extension>을 입력합니다. `B.Simon@contoso.com`)을 입력합니다.
+   1. **사용자 이름** 상자에 \<username>@\<companydomain>.\<extension>을 입력합니다. `B.Simon@contoso.com`)을 입력합니다.
    1. **암호 표시**를 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
    1. **만들기**를 선택합니다.
 

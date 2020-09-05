@@ -8,13 +8,13 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.devlang: rest-api
 ms.topic: tutorial
-ms.date: 04/25/2020
-ms.openlocfilehash: 66289c512a746a30ed8dbd3e5c2df92bea27d907
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.date: 08/21/2020
+ms.openlocfilehash: 887017f60deb832bd5c53f28bde4b57a3d82bde5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85565836"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918046"
 ---
 # <a name="tutorial-query-a-cognitive-search-index-from-power-apps"></a>자습서: Power Apps에서 Cognitive Search 인덱스 쿼리
 
@@ -92,7 +92,7 @@ Power Apps의 커넥터는 데이터 원본 연결입니다. 이 단계에서는
 
 1. *select*: `HotelName,Description,Address/City`를 **기본값**으로, **필수**를 *False*로, **표시 유형**을 *none*으로 설정합니다.  
 
-    :::image type="content" source="./media/search-howto-powerapps/1-10-4-parameter-metadata-select.png" alt-text="version 매개 변수 메타데이터" border="true":::
+    :::image type="content" source="./media/search-howto-powerapps/1-10-4-parameter-metadata-select.png" alt-text="매개 변수 메타데이터 선택" border="true":::
 
 1. *api-version*: `2020-06-30`을 **기본값**으로, **필수**를 *True*로, **표시 유형**을 *internal*로 설정합니다.  
 
@@ -261,5 +261,4 @@ Power Apps의 커넥터는 데이터 원본 연결입니다. 이 단계에서는
 Power Apps를 사용하면 사용자 지정 앱의 빠른 애플리케이션 개발이 가능합니다. 이제 검색 인덱스에 연결하는 방법을 알고 있으므로 사용자 지정 Power App에서 풍부한 시각화 환경을 만드는 방법에 대해 자세히 알아보세요.
 
 > [!div class="nextstepaction"]
-> [Power Apps 학습 카탈로그](https://docs.microsoft.com/powerapps/learning-catalog/get-started)
-
+> [Power Apps 학습 카탈로그](/powerapps/learning-catalog/get-started)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 82c8b71c154336cf59610d8f0b99e70eccee266f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f2ff81c1f1989e28fa48e4307a13433a7b98e915
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84688588"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051052"
 ---
 # <a name="upgrade-an-ipv4-application-to-ipv6-in-azure-virtual-network---powershell"></a>Azure virtual network에서 IPv4 응용 프로그램을 IPv6로 업그레이드-PowerShell
 
@@ -36,7 +36,7 @@ PowerShell을 로컬로 설치하고 사용하도록 선택하는 경우, 이 �
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-이 문서에서는 [빠른 시작: 표준 Load Balancer Azure PowerShell 만들기](../load-balancer/quickstart-create-standard-load-balancer-powershell.md)에 설명 된 대로 표준 Load Balancer를 배포 했다고 가정 합니다.
+이 문서에서는 [빠른 시작: 표준 Load Balancer Azure PowerShell 만들기](../load-balancer/quickstart-load-balancer-standard-public-powershell.md)에 설명 된 대로 표준 Load Balancer를 배포 했다고 가정 합니다.
 
 ## <a name="retrieve-the-resource-group"></a>리소스 그룹 검색
 

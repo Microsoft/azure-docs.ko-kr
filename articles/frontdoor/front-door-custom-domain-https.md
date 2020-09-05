@@ -3,7 +3,7 @@ title: 자습서 - Azure Front Door용 사용자 지정 도메인에 HTTPS 구�
 description: 이 자습서에서는 사용자 지정 도메인에 대한 Azure Front Door 구성에서 HTTPS를 활성화하거나 비활성화하는 방법을 알아봅니다.
 services: frontdoor
 documentationcenter: ''
-author: sharad4u
+author: duongau
 editor: ''
 ms.service: frontdoor
 ms.workload: infrastructure-services
@@ -11,13 +11,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/05/2018
-ms.author: sharadag
-ms.openlocfilehash: 56a2246b4f1da51d9b18a34279eff04264530ef5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.author: duau
+ms.openlocfilehash: 3956a843e67dba82486f350fc4380d4c8f6065f1
+ms.sourcegitcommit: 5a3b9f35d47355d026ee39d398c614ca4dae51c6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82160088"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89399823"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>자습서: Front Door 사용자 지정 도메인에서 HTTPS 구성
 
@@ -68,6 +68,9 @@ Azure Front Door에서 관리되는 인증서를 사용하면 단 몇 번의 클
 4. 저장을 클릭합니다.
 
 5. [도메인의 유효성 검사](#validate-the-domain)를 진행합니다.
+
+> [!NOTE]
+> AFD 관리형 인증서의 경우 DigiCert의 64자 제한이 적용됩니다. 해당 제한을 초과하면 유효성 검사가 실패합니다.
 
 
 ### <a name="option-2-use-your-own-certificate"></a>옵션 2: 사용자 고유의 인증서 사용

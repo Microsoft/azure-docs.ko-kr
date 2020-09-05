@@ -7,12 +7,25 @@
       href: ../azure-management.md
     - name: 관리 그룹
       href: ./overview.md
+- name: 빠른 시작
+  expanded: true
+  items:
+    - name: 관리 그룹 만들기 - Portal
+      displayName: hierarchy
+      href: ./create-management-group-portal.md
+    - name: 관리 그룹 만들기 - Azure CLI
+      displayName: hierarchy
+      href: ./create-management-group-azure-cli.md
+    - name: 관리 그룹 만들기 - Azure PowerShell
+      displayName: hierarchy
+      href: ./create-management-group-powershell.md
+    - name: 관리 그룹 만들기 - REST
+      displayName: hierarchy
+      href: ./create-management-group-rest-api.md
 - name: 방법 가이드
   expanded: true
   items:
-    - name: 관리 그룹 만들기
-      href: ./create.md
-    - name: 리소스 관리
+    - name: 리소스 계층 구조 관리
       href: ./manage.md
     - name: 리소스 계층 구조 보호
       href: ./how-to/protect-resource-hierarchy.md

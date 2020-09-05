@@ -9,16 +9,16 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: a1f977cef614a52853407c0d0665399f1a249c53
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c8eae70b88aa454e5d712b3c5b7930b12d169912
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422065"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078251"
 ---
 # <a name="transition-to-metrics-in-azure-monitor"></a>Azure Monitor에서 메트릭으로 전환
 
-이제 Azure Storage Azure Monitor 플랫폼에 메트릭을 통합 합니다. 이 문서는 전환을 수행 하는 데 도움이 됩니다.
+**2023 년 8 월 31** 일에는 스토리지 분석 메트릭을 사용 하 *는 것이 좋습니다* . 클래식 메트릭을 사용 하는 경우 해당 날짜 이전의 Azure Monitor의 메트릭으로 전환 해야 합니다. 이 문서는 전환을 수행 하는 데 도움이 됩니다.
 
 ## <a name="steps-to-complete-the-transition"></a>전환을 완료 하는 단계
 
@@ -74,14 +74,14 @@ Azure Monitor의 메트릭에 대 한 자세한 내용은 [Azure Monitor의 메�
 
 | 클래식 메트릭 | Azure Monitor의 메트릭 |
 | ------------------- | ----------------- |
-| `AnonymousAuthorizationError` | 차원이이 `ResponseType` `AuthorizationError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousClientOtherError` | 차원이이 `ResponseType` `ClientOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousClientTimeoutError` | 차원이이 `ResponseType` `ClientTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousNetworkError` | 차원이이 `ResponseType` `NetworkError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousServerOtherError` | 차원이이 `ResponseType` `ServerOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousServerTimeoutError` | 차원이이 `ResponseType` `ServerTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousSuccess` | 차원이이 `ResponseType` `Success` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
-| `AnonymousThrottlingError` | 차원이 `ResponseType` `ClientThrottlingError` 또는이 `ServerBusyError` 고 차원이 `Authentication` 와 같은 트랜잭션`Anonymous` |
+| `AnonymousAuthorizationError` | 차원이이 `ResponseType` `AuthorizationError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousClientOtherError` | 차원이이 `ResponseType` `ClientOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousClientTimeoutError` | 차원이이 `ResponseType` `ClientTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousNetworkError` | 차원이이 `ResponseType` `NetworkError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousServerOtherError` | 차원이이 `ResponseType` `ServerOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousServerTimeoutError` | 차원이이 `ResponseType` `ServerTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousSuccess` | 차원이이 `ResponseType` `Success` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
+| `AnonymousThrottlingError` | 차원이 `ResponseType` `ClientThrottlingError` 또는이 `ServerBusyError` 고 차원이 `Authentication` 와 같은 트랜잭션 `Anonymous` |
 | `AuthorizationError` | `ResponseType`차원이 인 트랜잭션`AuthorizationError` |
 | `Availability` | `Availability` |
 | `AverageE2ELatency` | `SuccessE2ELatency` |
@@ -95,15 +95,15 @@ Azure Monitor의 메트릭에 대 한 자세한 내용은 [Azure Monitor의 메�
 | `PercentServerOtherError` | `ResponseType`차원이 인 트랜잭션`ServerOtherError` |
 | `PercentSuccess` | `ResponseType`차원이 인 트랜잭션`Success` |
 | `PercentThrottlingError` | 차원이 `ResponseType` 또는와 같은 트랜잭션 `ClientThrottlingError``ServerBusyError` |
-| `PercentTimeoutError` | 차원이 다음 보다 `ResponseType` 크거나 `ServerTimeoutError` `ResponseType` 같은 트랜잭션`ClientTimeoutError` |
-| `SASAuthorizationError` | 차원이이 `ResponseType` `AuthorizationError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASClientOtherError` | 차원이이 `ResponseType` `ClientOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASClientTimeoutError` | 차원이이 `ResponseType` `ClientTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASNetworkError` | 차원이이 `ResponseType` `NetworkError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASServerOtherError` | 차원이이 `ResponseType` `ServerOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASServerTimeoutError` | 차원이이 `ResponseType` `ServerTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASSuccess` | 차원이이 `ResponseType` `Success` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
-| `SASThrottlingError` | 차원이 `ResponseType` `ClientThrottlingError` 또는이 `ServerBusyError` 고 차원이 `Authentication` 와 같은 트랜잭션`SAS` |
+| `PercentTimeoutError` | 차원이 다음 보다 `ResponseType` 크거나 `ServerTimeoutError` `ResponseType` 같은 트랜잭션 `ClientTimeoutError` |
+| `SASAuthorizationError` | 차원이이 `ResponseType` `AuthorizationError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASClientOtherError` | 차원이이 `ResponseType` `ClientOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASClientTimeoutError` | 차원이이 `ResponseType` `ClientTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASNetworkError` | 차원이이 `ResponseType` `NetworkError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASServerOtherError` | 차원이이 `ResponseType` `ServerOtherError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASServerTimeoutError` | 차원이이 `ResponseType` `ServerTimeoutError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASSuccess` | 차원이이 `ResponseType` `Success` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
+| `SASThrottlingError` | 차원이 `ResponseType` `ClientThrottlingError` 또는이 `ServerBusyError` 고 차원이 `Authentication` 와 같은 트랜잭션 `SAS` |
 | `ServerOtherError` | `ResponseType`차원이 인 트랜잭션`ServerOtherError` |
 | `ServerTimeoutError` | `ResponseType`차원이 인 트랜잭션`ServerTimeoutError` |
 | `Success` | `ResponseType`차원이 인 트랜잭션`Success` |

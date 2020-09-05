@@ -40,11 +40,6 @@
       href: tutorial-kubernetes-app-update.md
     - name: 7- 클러스터 업그레이드
       href: tutorial-kubernetes-upgrade-cluster.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 클러스터 및 워크로드
@@ -129,6 +124,8 @@
       href: security-hardened-vm-host-image.md
     - name: Azure Kubernetes Service Diagnostics 개요
       href: concepts-diagnostics.md
+    - name: 지속 가능한 소프트웨어 엔지니어링
+      href: concepts-sustainable-software-engineering.md
 - name: 방법 가이드
   items:
     - name: 클러스터 작업
@@ -141,7 +138,7 @@
           href: uptime-sla.md
         - name: 근접 배치 그룹 사용(미리 보기)
           href: reduce-latency-ppg.md
-        - name: 노드 이미지 업그레이드(미리 보기)
+        - name: 노드 이미지 업그레이드
           href: node-image-upgrade.md
         - name: 프로세스 노드 OS 업데이트
           href: node-updates-kured.md
@@ -170,6 +167,8 @@
         - name: Terraform을 사용하여 AKS 배포
           href: ../terraform/terraform-create-k8s-cluster-with-tf-and-aks.md
           maintainContext: true
+        - name: Kubernetes 리소스 뷰어 사용(미리 보기)
+          href: kubernetes-portal.md
         - name: Kubernetes 대시보드 사용
           href: kubernetes-dashboard.md
     - name: 데이터 볼륨 구성
@@ -364,6 +363,8 @@
           href: ssh.md
         - name: Linux 성능 도구
           href: troubleshoot-linux.md
+        - name: Resource Health 이벤트 확인(미리 보기)
+          href: aks-resource-health.md
 - name: 참조
   items:
     - name: Azure CLI
@@ -382,6 +383,9 @@
       href: /javascript/api/overview/azure/container-service
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.containerservice/managedclusters
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

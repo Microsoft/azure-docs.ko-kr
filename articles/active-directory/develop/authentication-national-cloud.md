@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: negoe
 ms.reviewer: negoe,celested
 ms.custom: aaddev,references_regions
-ms.openlocfilehash: 9d703eab97b087ed6b3e4d9c3519a7e3ee7489cd
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: d27498748f03fb101d165351ec80c77d57f78f1a
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117416"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141502"
 ---
 # <a name="national-clouds"></a>국가별 클라우드
 
@@ -67,7 +67,7 @@ ms.locfileid: "88117416"
 
 ## <a name="microsoft-graph-api"></a>Microsoft Graph API
 
-국가별 클라우드 환경에서 Microsoft Graph API를 호출하는 방법을 알아보려면 [국가별 클라우드 배포의 Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/deployments)로 이동하세요.
+국가별 클라우드 환경에서 Microsoft Graph API를 호출하는 방법을 알아보려면 [국가별 클라우드 배포의 Microsoft Graph](/graph/deployments)로 이동하세요.
 
 > [!IMPORTANT]
 > 글로벌 서비스의 특정 지역에서 제공되는 특정 서비스와 기능이 모든 국가별 클라우드에서 제공되지 않을 수도 있습니다. 사용 가능한 서비스를 확인하려면 [지역별 사용 가능한 제품](https://azure.microsoft.com/global-infrastructure/services/?products=all&regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia,china-non-regional,china-east,china-east-2,china-north,china-north-2,germany-non-regional,germany-central,germany-northeast)으로 이동하세요.

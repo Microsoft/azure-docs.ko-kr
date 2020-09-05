@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 57eb005109b97a423f9218ee6a47ce5bb06c3853
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b80f27e490dd3b1890eab7740fb4650ba4280abb
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505349"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207808"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>InfluxData Telegraf 에이전트를 사용하여 Linux VM에 대한 사용자 지정 메트릭 수집
 
@@ -44,7 +44,7 @@ Azure Monitor를 사용하면 애플리케이션 원격 분석, Azure 리소스�
 1. VM 이름 (예: **MyTelegrafVM**)을 제공 합니다.  
 1. 디스크 유형은 **SSD**로 그대로 둡니다. 그런 다음 **azureuser**와 같은 **사용자 이름을**제공 합니다. 
 1. **인증 유형**으로 **암호**를 선택 합니다. 나중에 이 VM에 대해 SSH를 수행할 때 사용할 암호를 입력합니다. 
-1. **새 리소스 그룹을 만들도록**선택 합니다. 그런 다음 **Myresourcegroup**과 같은 이름을 제공 합니다. **위치**를 선택 합니다. 그런 다음 **확인**을 선택합니다. 
+1. **새 리소스 그룹을 만들도록**선택 합니다. 그런 다음 **Myresourcegroup**과 같은 이름을 제공 합니다. **위치**를 선택 합니다. 그런 다음, **확인**을 선택합니다. 
 
     ![Ubuntu VM 만들기](./media/collect-custom-metrics-linux-telegraf/create-vm.png)
 
@@ -127,7 +127,7 @@ sudo systemctl start telegraf
 
 ## <a name="additional-configuration"></a>추가 구성 
 
-앞의 연습에서는 몇 가지 기본 입력 플러그 인에서 메트릭을 수집 하도록 Telegraf agent를 구성 하는 방법에 대 한 정보를 제공 합니다. Telegraf 에이전트는 추가 구성 옵션을 지 원하는 몇 가지 추가 구성 옵션을 포함 하 여 150 이상의 입력 플러그 인을 지원 합니다. InfluxData는 [지원되는 플러그 인 목록](https://docs.influxdata.com/telegraf/v1.7/plugins/inputs/) 및 [구성 방법](https://docs.influxdata.com/telegraf/v1.7/administration/configuration/)에 대한 지침을 게시합니다.  
+앞의 연습에서는 몇 가지 기본 입력 플러그 인에서 메트릭을 수집 하도록 Telegraf agent를 구성 하는 방법에 대 한 정보를 제공 합니다. Telegraf 에이전트는 추가 구성 옵션을 지 원하는 몇 가지 추가 구성 옵션을 포함 하 여 150 이상의 입력 플러그 인을 지원 합니다. InfluxData는 [지원되는 플러그 인 목록](https://docs.influxdata.com/telegraf/v1.15/plugins/inputs/) 및 [구성 방법](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/)에 대한 지침을 게시합니다.  
 
 또한 이 연습에서는 Telegraf 에이전트를 사용하여 에이전트가 배포된 VM에 대한 메트릭을 내보냈습니다. Telegraf 에이전트를 다른 리소스에 대한 메트릭의 수집기와 전달자로 사용할 수도 있습니다. 다른 Azure 리소스에 대한 메트릭을 내보내도록 에이전트를 구성하는 방법을 알아보려면 [Telegraf에 대한 Azure Monitor 사용자 지정 메트릭 출력](https://github.com/influxdata/telegraf/blob/fb704500386214655e2adb53b6eb6b15f7a6c694/plugins/outputs/azure_monitor/README.md)을 참조하세요.  
 

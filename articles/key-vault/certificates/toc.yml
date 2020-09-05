@@ -19,9 +19,6 @@
       href: quick-create-python.md
 - name: 샘플
   items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ../policy-samples.md?toc=/azure/key-vault/certificates/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
     - name: Key Vault 코드 샘플
       href: 'https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-key-vault'
 - name: 자습서
@@ -46,6 +43,8 @@
       href: how-to-integrate-certificate-authority.md
     - name: 문제 해결 - 인증서 가져오기
       href: import-cert-faqs.md
+    - name: 키 자격 증명 모음에서 인증서 내보내기
+      href: how-to-export-certificate.md
 - name: 참조
   items:
     - name: Azure PowerShell
@@ -60,11 +59,14 @@
       href: 'https://docs.microsoft.com/javascript/api/overview/azure/key-vault-index?view=azure-node-latest'
     - name: Python
       href: /python/api/overview/azure/keyvault-certificates-readme?view=azure-python
-    - name: REST
+    - name: REST (영문)
       href: /rest/api/keyvault
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.keyvault/allversions
       displayName: ARM
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ../policy-reference.md?toc=/azure/key-vault/certificates/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

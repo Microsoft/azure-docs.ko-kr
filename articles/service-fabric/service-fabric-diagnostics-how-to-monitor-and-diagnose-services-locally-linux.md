@@ -3,12 +3,13 @@ title: Linux에서 Azure Service Fabric 앱 디버그
 description: 로컬 Linux 개발 컴퓨터에서 Service Fabric 서비스를 모니터링하고 진단하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: 6f637721d24045f5ca3386ffc31775d469e88537
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 523cb0d1a8e8f322c1936f1fe52a954399b2acc5
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86247560"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999770"
 ---
 # <a name="monitor-and-diagnose-services-in-a-local-linux-machine-development-setup"></a>로컬 Linux 컴퓨터 개발 설치에서 서비스 모니터링 및 진단
 

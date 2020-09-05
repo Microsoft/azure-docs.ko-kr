@@ -3,12 +3,12 @@ title: 템플릿 함수 - 리소스
 description: Azure Resource Manager 템플릿에서 리소스에 대한 값을 검색하는 데 사용할 수 있는 함수에 대해 설명합니다.
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: 89241558164505573e098bdf580af6542c6095c5
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 7f485d258074959c4a0a17449c65c38fa9648502
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372385"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661404"
 ---
 # <a name="resource-functions-for-arm-templates"></a>ARM 템플릿의 리소스 함수
 
@@ -166,8 +166,8 @@ Resource Manager는 ARM(Azure Resource Manager) 템플릿에서 리소스 값을
 | Microsoft.DevTestLab/labs/schedules | [ListApplicable](/rest/api/dtl/schedules/listapplicable) |
 | Microsoft.DevTestLab/labs/users/serviceFabrics | [ListApplicableSchedules](/rest/api/dtl/servicefabrics/listapplicableschedules) |
 | Microsoft.DevTestLab/labs/virtualMachines | [ListApplicableSchedules](/rest/api/dtl/virtualmachines/listapplicableschedules) |
-| Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/databaseaccounts/listconnectionstrings) |
-| Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/databaseaccounts/listkeys) |
+| Microsoft.DocumentDB/databaseAccounts | [listConnectionStrings](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listconnectionstrings) |
+| Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/databaseaccounts/listkeys) |
 | Microsoft.DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Microsoft.DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
 | Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/version2020-06-01/domains/listsharedaccesskeys) |
@@ -399,7 +399,7 @@ listKeyValue 예제는 [빠른 시작: Azure App Configuration 및 Resource Mana
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | Type | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
 | resourceName 또는 resourceIdentifier |예 |문자열 |리소스의 이름 또는 고유 식별자입니다. 현재 템플릿의 리소스를 참조할 경우 리소스 이름만 매개 변수로 지정합니다. 이전에 배포된 리소스를 참조하거나 리소스 이름이 모호한 경우 리소스 ID를 제공합니다. |
 | apiVersion |예 |문자열 |지정된 리소스의 API 버전입니다. **리소스가 동일한 템플릿 내에서 프로비저닝되지 않은 경우 이 매개 변수가 필요합니다.** 일반적으로 **yyyy-mm-dd** 형식입니다. 리소스에 대한 유효한 API 버전은 [템플릿 참조](/azure/templates/)를 참조하세요. |
@@ -458,7 +458,7 @@ listKeyValue 예제는 [빠른 시작: Azure App Configuration 및 Resource Mana
 
 reference 함수를 사용하여 복사 루프에서 `count` 속성의 값을 설정할 수 없습니다. 루프에서 다른 속성을 설정하는 데는 이 함수를 사용할 수 있습니다. reference 함수가 확인되기 전에 해당 속성을 확인해야 하기 때문에 count 속성에 대해 참조가 차단됩니다.
 
-중첩 된 템플릿의 출력 섹션에서 reference 함수 또는 list * 함수를 사용 하려면를 ```expressionEvaluationOptions``` [내부 범위](linked-templates.md#expression-evaluation-scope-in-nested-templates) 평가를 사용 하도록 설정 하거나 중첩 된 템플릿 대신 연결 된를 사용 하도록 설정 해야 합니다.
+중첩 된 템플릿의 출력 섹션에서 reference 함수 또는 list * 함수를 사용 하려면를  ```expressionEvaluationOptions``` [내부 범위](linked-templates.md#expression-evaluation-scope-in-nested-templates) 평가를 사용 하도록 설정 하거나 중첩 된 템플릿 대신 연결 된를 사용 하도록 설정 해야 합니다.
 
 조건부로 배포되는 리소스에서 **reference** 함수를 사용하는 경우 리소스가 배포되지 않은 경우에도 함수가 평가됩니다.  **reference** 함수가 존재하지 않는 리소스를 참조하는 경우 오류가 발생합니다. 리소스가 배포되는 경우에만 함수가 평가되도록 하려면 **if** 함수를 사용합니다. If 및 reference를 조건부로 배포된 리소스와 함께 사용하는 샘플 템플릿에 대해서는 [if 함수](template-functions-logical.md#if)를 참조하세요.
 
@@ -728,7 +728,7 @@ resourceGroup 함수는 일반적으로 리소스 그룹과 동일한 위치에 
 | resourceGroupName |예 |문자열 |기본값은 현재 리소스 그룹입니다. 다른 리소스 그룹에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. 리소스 그룹의 범위에 배포하는 경우에만 이 값을 제공합니다. |
 | resourceType |예 |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
 | resourceName1 |예 |문자열 |리소스의 이름입니다. |
-| resourceName2 |아니요 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 종류에 더 많은 세그먼트가 포함된 경우 리소스 이름을 매개 변수로 계속 추가합니다.
 
@@ -862,7 +862,7 @@ ID를 다른 형식으로 가져오려면 다음을 참조하세요.
 
 기본 값을 사용한 이전 예제의 출력은 다음과 같습니다.
 
-| 속성 | Type | 값 |
+| 속성 | 유형 | 값 |
 | ---- | ---- | ----- |
 | sameRGOutput | String | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | String | /subscriptions/{current-sub-id}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
@@ -918,12 +918,12 @@ ID를 다른 형식으로 가져오려면 다음을 참조하세요.
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 종류 | 설명 |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |예 |문자열(GUID 형식) |기본값은 현재 구독입니다. 다른 구독에서 리소스를 검색해야 하는 경우 이 값을 지정합니다. |
 | resourceType |예 |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
 | resourceName1 |예 |문자열 |리소스의 이름입니다. |
-| resourceName2 |아니요 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 종류에 더 많은 세그먼트가 포함된 경우 리소스 이름을 매개 변수로 계속 추가합니다.
 
@@ -1000,11 +1000,11 @@ ID를 다른 형식으로 가져오려면 다음을 참조하세요.
 
 ### <a name="parameters"></a>매개 변수
 
-| 매개 변수 | 필수 | 종류 | Description |
+| 매개 변수 | 필수 | Type | Description |
 |:--- |:--- |:--- |:--- |
 | resourceType |예 |문자열 |리소스 공급자 네임스페이스를 포함하는 리소스 유형입니다. |
 | resourceName1 |예 |문자열 |리소스의 이름입니다. |
-| resourceName2 |아니요 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
+| resourceName2 |예 |문자열 |필요한 경우 다음 리소스 이름 세그먼트입니다. |
 
 리소스 종류에 더 많은 세그먼트가 포함된 경우 리소스 이름을 매개 변수로 계속 추가합니다.
 

@@ -1,23 +1,23 @@
 ---
 title: 성능 조정-Azure Data Lake Storage Gen1의 Hive
-description: HdInsight 및 Azure Data Lake Storage Gen1의 Hive에 대 한 성능 조정 지침
+description: HdInsight 및 Azure Data Lake Storage Gen1의 Hive에 대 한 성능 조정에 대해 알아봅니다. I/o를 많이 사용 하는 쿼리의 경우 더 나은 성능을 얻으려면 Hive를 조정 합니다.
 author: stewu
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 9e05773955fb79007a5d5899babf8680c69aa654
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: d10b1811257e14238cb04a79ff184cee57aab471
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281721"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189961"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>HDInsight의 Hive 및 Azure Data Lake Storage Gen1에 대한 성능 조정 지침
 
 서로 다른 여러 사용 사례 간에 적절한 성능을 제공하도록 기본 설정이 지정되었습니다.  I/O 집약적인 쿼리의 경우 Azure Data Lake Storage Gen1로 더 나은 성능을 얻도록 Hive를 조정할 수 있습니다.  
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 * **Azure 구독**. [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 * **Data Lake Storage Gen1 계정**. 만드는 방법에 대 한 지침은 [Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md) 을 참조 하세요.

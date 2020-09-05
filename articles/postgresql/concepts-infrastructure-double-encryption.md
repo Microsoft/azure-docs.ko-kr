@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: 8468d733756ef92ffc9078e945dc46d23e1ab54a
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: d54bef277d80a178c45ce918290d46c11387b7d1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067497"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918097"
 ---
 # <a name="azure-database-for-postgresql-infrastructure-double-encryption"></a>Azure Database for PostgreSQL 인프라 이중 암호화
 
@@ -47,7 +47,7 @@ Azure Database for PostgreSQL에서 제공 하는 암호화 기능은 함께 사
 
 |  ##   | 기본 암호화 | 인프라 이중 암호화 | 고객 관리 키를 사용 하 여 데이터 암호화  |
 |:------|:------------------:|:--------------------------------:|:--------------------------------------------:|
-| 1     | *예*              | *아니요*                             | ‘아니요’                                         |
+| 1     | *예*              | *아니요*                             | *아니요*                                         |
 | 2     | *예*              | *예*                            | *아니요*                                         |
 | 3     | *예*              | *아니요*                             | *예*                                        |
 | 4     | *예*              | *예*                            | *예*                                        |
@@ -62,6 +62,12 @@ Azure Database for PostgreSQL에서 제공 하는 암호화 기능은 함께 사
 Azure Database for PostgreSQL에서 서비스 관리 키를 사용 하는 인프라 이중 암호화에 대 한 지원에는 다음과 같은 제한 사항이 있습니다.
 
 * 이 기능에 대 한 지원은 **범용** 및 메모리 액세스에 **최적화** 된 가격 책정 계층으로 제한 됩니다.
+* 다음 지역에서 인프라 더블 암호화를 사용 하 여 Azure Database for PostgreSQL를 만들 수 있습니다.
+
+   * 미국 동부
+   * 미국 중남부
+   * 미국 서부 2
+   
 * 이 기능은 최대 16TB의 저장소를 지 원하는 지역 및 서버 에서만 지원 됩니다. 최대 16TB의 저장소를 지 원하는 Azure 지역 목록은 [저장소 설명서](concepts-pricing-tiers.md#storage)를 참조 하세요.
 
     > [!NOTE]

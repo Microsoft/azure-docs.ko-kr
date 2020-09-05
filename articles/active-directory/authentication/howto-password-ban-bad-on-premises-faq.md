@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24db7981557cf76f9108a1dca37ea4c4c9f51951
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: a39871fd6e2aef2e5120030d17192bb32ba2613b
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283081"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003476"
 ---
 # <a name="azure-ad-password-protection-on-premises-frequently-asked-questions"></a>Azure AD 암호 보호 온-프레미스 질문과 대답
 
@@ -46,7 +46,15 @@ Azure AD 포털에서는 공용이 아닌 클라우드에서 온-프레미스 �
 
 암호 집합 (암호 재설정이 라고도 함)은 관리자가 Active Directory 사용자 및 컴퓨터 관리 도구를 사용 하는 등의 방법으로 계정의 암호를 새 암호로 바꿀 때입니다. 이 작업을 수행 하려면 높은 수준의 권한 (일반적으로 도메인 관리자)이 필요 하며, 작업을 수행 하는 사용자는 일반적으로 이전 암호를 알지 못합니다. 지원 센터 시나리오에서는 암호를 잊어버린 사용자를 지원할 때 처럼 종종 암호 집합을 수행 합니다. 또한 암호를 사용 하 여 처음으로 새 사용자 계정을 만들 때 암호 설정 이벤트가 표시 됩니다.
 
-암호 유효성 검사 정책은 암호 변경 또는 설정의 수행 여부에 관계 없이 동일 하 게 동작 합니다. Azure AD 암호 보호 DC 에이전트 서비스는 다른 이벤트를 기록 하 여 암호 변경 또는 설정 작업이 수행 되었는지 여부를 알려 줍니다.  [AZURE AD 암호 보호 모니터링 및 로깅을](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-monitor)참조 하세요.
+암호 유효성 검사 정책은 암호 변경 또는 설정의 수행 여부에 관계 없이 동일 하 게 동작 합니다. Azure AD 암호 보호 DC 에이전트 서비스는 다른 이벤트를 기록 하 여 암호 변경 또는 설정 작업이 수행 되었는지 여부를 알려 줍니다.  [AZURE AD 암호 보호 모니터링 및 로깅을](./howto-password-ban-bad-on-premises-monitor.md)참조 하세요.
+
+**Q: Azure AD 암호 보호는 설치 된 후 기존 암호의 유효성을 검사 하나요?**
+
+아니요-Azure AD 암호 보호는 암호 변경 또는 설정 작업 중에 일반 텍스트 암호에 대해서만 암호 정책을 적용할 수 있습니다. Active Directory에서 암호를 수락 하면 해당 암호의 인증 프로토콜 관련 해시만 유지 됩니다. 일반 텍스트 암호는 유지 되지 않으므로 Azure AD 암호 보호는 기존 암호의 유효성을 검사할 수 없습니다.
+
+Azure AD 암호 보호의 초기 배포 후에는 모든 사용자와 계정이 기존 암호가 일반적으로 시간에 따라 만료 되므로 Azure AD 암호 보호의 유효성을 검사 하는 암호를 사용 하기 시작 합니다. 원하는 경우 사용자 계정 암호의 일회성 수동 만료로이 프로세스의 가속화를 설정할 수 있습니다.
+
+"암호 사용 기간 제한 없음"으로 구성 된 계정은 수동 만료가 완료 되지 않는 한 강제로 암호를 변경 하지 않습니다.
 
 **Q: Active Directory 사용자 및 컴퓨터 관리 스냅인을 사용 하 여 약한 암호를 설정 하려고 할 때 중복 된 암호 거부 이벤트가 기록 되는 이유는 무엇 인가요?**
 
@@ -54,7 +62,7 @@ Active Directory 사용자 및 컴퓨터 관리 스냅인은 먼저 Kerberos 프
 
 **Q: Azure AD 암호 보호 암호 유효성 검사 이벤트가 빈 사용자 이름으로 기록 되는 이유는 무엇 인가요?**
 
-Active Directory는 [NetValidatePasswordPolicy](https://docs.microsoft.com/windows/win32/api/lmaccess/nf-lmaccess-netvalidatepasswordpolicy) api를 사용 하는 등의 방법으로 도메인의 현재 암호 복잡성 요구 사항을 통과 하는지 확인 하기 위해 암호를 테스트 하는 기능을 지원 합니다. 이러한 방식으로 암호의 유효성을 검사 하는 경우 테스트에는 Azure AD 암호 보호와 같이 암호 필터 dll 기반 제품의 유효성 검사도 포함 되지만 지정 된 암호 필터 dll에 전달 된 사용자 이름은 비어 있습니다. 이 시나리오에서 Azure AD 암호 보호는 현재 영향을 받은 암호 정책을 사용 하 여 암호의 유효성을 검사 하 고 결과를 캡처하기 위해 이벤트 로그 메시지를 발행 하지만 이벤트 로그 메시지에는 빈 사용자 이름 필드가 있습니다.
+Active Directory는 [NetValidatePasswordPolicy](/windows/win32/api/lmaccess/nf-lmaccess-netvalidatepasswordpolicy) api를 사용 하는 등의 방법으로 도메인의 현재 암호 복잡성 요구 사항을 통과 하는지 확인 하기 위해 암호를 테스트 하는 기능을 지원 합니다. 이러한 방식으로 암호의 유효성을 검사 하는 경우 테스트에는 Azure AD 암호 보호와 같이 암호 필터 dll 기반 제품의 유효성 검사도 포함 되지만 지정 된 암호 필터 dll에 전달 된 사용자 이름은 비어 있습니다. 이 시나리오에서 Azure AD 암호 보호는 현재 영향을 받은 암호 정책을 사용 하 여 암호의 유효성을 검사 하 고 결과를 캡처하기 위해 이벤트 로그 메시지를 발행 하지만 이벤트 로그 메시지에는 빈 사용자 이름 필드가 있습니다.
 
 **Q: 다른 암호 필터 기반 제품과 함께 Azure AD 암호 보호를 설치 하는 것이 지원 되나요?**
 
@@ -74,13 +82,13 @@ FRS(DFSR에 대한 선행 기술)는 대부분의 알려진 문제를 포함하�
 
 자세한 내용은 다음 문서를 참조하세요.
 
-[DFSR로 sysvol 복제를 마이그레이션하는 사례](https://blogs.technet.microsoft.com/askds/2010/04/22/the-case-for-migrating-sysvol-to-dfsr)
+[DFSR로 sysvol 복제를 마이그레이션하는 사례](/archive/blogs/askds/the-case-for-migrating-sysvol-to-dfsr)
 
 [FRS의 경우 종료가 가깝습니다.](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs)
 
 도메인이 아직 DFSR을 사용 하지 않는 경우 Azure AD 암호 보호를 설치 하기 전에 DFSR을 사용 하도록 마이그레이션해야 합니다. 자세한 내용은 다음 링크를 참조 하세요.
 
-[SYSVOL 복제 마이그레이션 가이드: FRS에서 DFS 복제으로](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10))
+[SYSVOL 복제 마이그레이션 가이드: FRS에서 DFS 복제으로](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10))
 
 > [!WARNING]
 > Azure AD 암호 보호 DC 에이전트 소프트웨어는 현재 sysvol 복제를 위해 여전히 FRS를 사용 하는 도메인의 도메인 컨트롤러에 설치 되지만이 환경에서는 소프트웨어가 제대로 작동 하지 않습니다. 추가 부정적 부작용에는 복제에 실패 한 개별 파일이 포함 되며 sysvol 복원 절차는 성공 하는 것 처럼 보이지만 자동으로 모든 파일을 복제 하지 못합니다. DFSR의 내재 된 혜택을 제공 하 고 Azure AD 암호 보호 배포의 차단을 해제 하기 위해 가능한 한 빨리 DFSR을 사용 하려면 도메인을 마이그레이션해야 합니다. 이후 버전의 소프트웨어는 여전히 FRS를 사용 하는 도메인에서 실행 되는 경우 자동으로 사용 하지 않도록 설정 됩니다.
@@ -101,7 +109,7 @@ FRS(DFSR에 대한 선행 기술)는 대부분의 알려진 문제를 포함하�
 
 예. Azure AD 암호 보호 프록시 서비스와 Azure AD Connect는 서로 직접적으로 충돌하지 않습니다.
 
-아쉽게도 Azure AD 암호 보호 프록시 소프트웨어에 의해 설치 되는 Microsoft Azure AD Connect Agent 업데이트 서비스와 [Azure Active Directory 응용 프로그램 프록시](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) 소프트웨어에 의해 설치 되는 서비스 버전 사이에 비 호환성이 있습니다. 이러한 비 호환성으로 인해 에이전트 업데이트 서비스에서 소프트웨어 업데이트를 위해 Azure에 연결 하지 못할 수 있습니다. Azure AD 암호 보호 프록시를 설치 하 고 동일한 컴퓨터에 Azure Active Directory 응용 프로그램 프록시 하는 것은 권장 되지 않습니다.
+아쉽게도 Azure AD 암호 보호 프록시 소프트웨어에 의해 설치 되는 Microsoft Azure AD Connect Agent 업데이트 서비스와 [Azure Active Directory 응용 프로그램 프록시](../manage-apps/application-proxy.md) 소프트웨어에 의해 설치 되는 서비스 버전 사이에 비 호환성이 있습니다. 이러한 비 호환성으로 인해 에이전트 업데이트 서비스에서 소프트웨어 업데이트를 위해 Azure에 연결 하지 못할 수 있습니다. Azure AD 암호 보호 프록시를 설치 하 고 동일한 컴퓨터에 Azure Active Directory 응용 프로그램 프록시 하는 것은 권장 되지 않습니다.
 
 **Q: DC 에이전트와 프록시를 설치 하 고 등록 해야 하는 순서는 무엇입니까?**
 

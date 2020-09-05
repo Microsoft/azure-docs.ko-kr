@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: 4dd7ca8f926862487b9505731c0662e68ee3d7c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1c646c750cb54228211fadb0a4f6733d495e9219
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81311273"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892068"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>IoT Edge 장치에 보안 모듈 배포
 
@@ -34,7 +34,7 @@ ms.locfileid: "81311273"
 
 다음 단계를 사용 하 여 IoT Edge 용 IoT 보안 모듈에 대 한 Azure Security Center를 배포 합니다.
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 1. IoT Hub에서 장치가 [IoT Edge 장치로 등록](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal)되어 있는지 확인 합니다.
 
@@ -47,7 +47,7 @@ ms.locfileid: "81311273"
     - 다음 명령을 실행 하 여 AuditD가 활성 상태 인지 확인 합니다.
 
     `sudo systemctl status auditd`<br>
-    - 예상 응답은 다음과 같습니다.`active (running)`
+    - 예상 응답은 다음과 같습니다. `active (running)`
 
 ### <a name="deployment-using-azure-portal"></a>Azure Portal를 사용 하 여 배포
 
@@ -93,9 +93,21 @@ IoT에 대 한 Azure Security Center에 대 한 IoT Edge 배포를 완료 하려
 
 1. 모듈 쌍 **설정** 탭에서 다음 구성을 추가 합니다.
 
-    ``` json
-      "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
-    ```
+   모듈 쌍 속성:
+   
+   ``` json
+     "ms_iotn:urn_azureiot_Security_SecurityAgentConfiguration"
+   ```
+
+   모듈 쌍 속성 내용: 
+
+   ```json
+     {
+
+     }
+   ```
+    
+   에이전트를 구성 하는 방법에 대 한 자세한 내용은 [보안 에이전트 구성](https://docs.microsoft.com/azure/asc-for-iot/how-to-agent-configuration)을 참조 하세요.
 
 1. **업데이트**를 선택합니다.
 
@@ -165,7 +177,7 @@ IoT에 대 한 Azure Security Center에 대 한 IoT Edge 배포를 완료 하려
 
 1. 다음 컨테이너가 실행 중인지 확인 합니다.
 
-   | Name | IMAGE |
+   | 이름 | IMAGE |
    | --- | --- |
    | azureiotsecurity | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.2 |
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |

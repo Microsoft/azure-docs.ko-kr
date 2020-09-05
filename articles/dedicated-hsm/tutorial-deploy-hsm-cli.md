@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 02b15f88e05abc918100f5e6b1ad1cdd60954a9d
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: e4403252396aab91fa960ed7258d433e27db950a
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87486989"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258249"
 ---
 # <a name="tutorial-deploying-hsms-into-an-existing-virtual-network-using-cli"></a>자습서: CLI를 사용하여 기존 가상 네트워크에 HSM 배포
 
@@ -38,7 +38,7 @@ Azure Dedicated HSM은 단일 고객이 사용할 수 있는 완전한 관리 �
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-Azure Dedicated HSM을 현재 Azure Portal에서 사용할 수 없습니다. 서비스와의 모든 상호 작용은 명령줄이나 PowerShell을 통해 이루어집니다. 이 자습서에서는 Azure Cloud Shell의 명령줄(CLI) 인터페이스를 사용합니다. Azure CLI를 처음 사용하는 경우 [Azure CLI 2.0 시작](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)에 있는 시작 지침을 따릅니다.
+Azure Dedicated HSM을 현재 Azure Portal에서 사용할 수 없습니다. 서비스와의 모든 상호 작용은 명령줄이나 PowerShell을 통해 이루어집니다. 이 자습서에서는 Azure Cloud Shell의 명령줄(CLI) 인터페이스를 사용합니다. Azure CLI를 처음 사용하는 경우 [Azure CLI 2.0 시작](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)에 있는 시작 지침을 따릅니다.
 
 가정:
 

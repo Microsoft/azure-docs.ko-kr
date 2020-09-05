@@ -1,18 +1,18 @@
 ---
 title: 'Azure Express 경로: Global Reach를 사용 하 여 Microsoft 클라우드에 연결'
-description: 이 문서에서는 ExpressRoute Global Reach에 대해 설명합니다.
+description: Azure Express 경로 Global Reach에서 Express 경로 회로를 함께 연결 하 여 온-프레미스 네트워크 간에 개인 네트워크를 만드는 방법에 대해 알아봅니다.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 06/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 5022efacf33a2c07f1388666b5de26ee86322739
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5c747253a56476b0fd9431311294d487ef336e69
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84636736"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190760"
 ---
 # <a name="expressroute-global-reach"></a>ExpressRoute Global Reach
 ExpressRoute는 온-프레미스 네트워크를 Microsoft 클라우드에 연결하기 위한 프라이빗이고 탄력적인 방법입니다. Azure와 같은 여러 Microsoft 클라우드 서비스, 개인 데이터 센터 또는 회사 네트워크에서 Office 365에 액세스할 수 있습니다. 예를 들어, 실리콘밸리의 ExpressRoute 회로를 사용하는 샌프란시스코 지사와, 런던의 ExpressRoute 회로를 사용하는 런던 지사가 있을 수 있습니다. 두 지사는 모두 미국 서부와 영국 남부에서 Azure 리소스에 고속으로 연결할 수 있습니다. 그러나 해당 지점은 서로 데이터를 직접 교환할 수 없습니다. 즉, 10.0.1.0/24는 10.0.3.0/24 및 10.0.4.0/24에 데이터를 보낼 수 있지만, 10.0.2.0/24에는 보낼 수 없습니다.
@@ -21,7 +21,7 @@ ExpressRoute는 온-프레미스 네트워크를 Microsoft 클라우드에 연�
 
 **ExpressRoute Global Reach**를 사용하면 온-프레미스 네트워크 간의 프라이빗 네트워크를 설정하기 위해 ExpressRoute 회로를 함께 연결할 수 있습니다. 위의 예제에서 ExpressRoute Global Reach가 추가됨에 따라 샌프란시스코 사무실(10.0.1.0/24)은 기존 ExpressRoute 회로 및 Microsoft의 글로벌 네트워크를 통해 런던 사무실(10.0.2.0/24)과 데이터를 교환할 수 있습니다. 
 
-![는][2]
+![다음과 같이 바꿉니다.][2]
 
 ## <a name="use-case"></a>사용 사례
 ExpressRoute Global Reach는 서비스 공급자의 WAN 구현을 보완하고 전 세계에 있는 지점을 연결하도록 설계되었습니다. 예를 들어, 서비스 공급자가 미국에서 주로 운영되고 미국 내 모든 지점을 연결했지만, 서비스 공급자가 일본과 홍콩에서는 운영되지 않는 경우, ExpressRoute Global Reach를 사용하여 로컬 서비스 공급자와 작업할 수 있고 Microsoft는 ExpressRoute와 글로벌 네트워크를 사용하여 해당 지역의 지점과 미국 내 지점을 연결합니다.

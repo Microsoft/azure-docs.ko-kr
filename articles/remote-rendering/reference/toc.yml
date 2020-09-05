@@ -1,4 +1,4 @@
-- name: VM 크기
+- name: 서버 크기
   href: vm-sizes.md
 - name: 모델 형식에 대한 재질 매핑
   href: material-mapping.md

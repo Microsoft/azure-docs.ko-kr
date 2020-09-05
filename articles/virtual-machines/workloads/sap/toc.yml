@@ -108,6 +108,8 @@
           href: sap-hana-high-availability.md
         - name: RHEL에서 SAP HANA 시스템 복제 설정
           href: sap-hana-high-availability-rhel.md
+        - name: RHEL에서 ANF를 사용하여 SAP HANA 시스템 복제 설정
+          href: sap-hana-high-availability-netapp-files-red-hat.md
         - name: SLES에서 SAP HANA 스케일 아웃 및 Pacemaker 문제 해결
           href: hana-vm-troubleshoot-scale-out-ha-on-sles.md
         - name: SLES에서 Azure NetApp Files를 사용하여 대기 노드를 통한 SAP HANA 스케일 아웃
@@ -225,6 +227,8 @@
               href: high-availability-guide-rhel-netapp-files.md
         - name: SAP 다중 SID
           items:
+            - name: (A)SCS 인스턴스에 Azure Shared Disk를 사용하는 Windows
+              href: sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md
             - name: (A)SCS 인스턴스에 공유 디스크를 사용하는 Windows
               href: sap-ascs-ha-multi-sid-wsfc-shared-disk.md
             - name: (A)SCS 인스턴스에 SOFS 파일 공유를 사용하는 Windows
@@ -289,12 +293,16 @@
       href: azure-monitor-overview.md
     - name: SAP 솔루션 공급자를 위한 Azure Monitor
       href: azure-monitor-providers.md
+    - name: SAP 솔루션을 위한 Azure Monitor 구성
+      href: azure-monitor-sap-quickstart.md
     - name: SAP 솔루션을 위한 Azure Monitor FAQ
       href: azure-monitor-faq.md
 - name: 참조
   items:
     - name: Azure CLI
       href: /cli/azure/ext/sap-hana/hanainstance
+    - name: Azure PowerShell
+      href: /powershell/module/az.hanaonazure/#sap-hana-on-azure
 - name: 리소스
   items:
     - name: Azure 로드맵

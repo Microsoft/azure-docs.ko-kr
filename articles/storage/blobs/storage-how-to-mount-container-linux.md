@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 8dc7c16b83816d2b408cef7ade06767bfe2a4582
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 297595c6c4a9c82c3d0293f2cea2db66ea9ca54a
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87826551"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180408"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>blobfuse를 사용하여 Blob Storage를 파일 시스템으로 탑재하는 방법
 
@@ -76,6 +76,7 @@ Blobfuse는 열려있는 파일이 있으면 버퍼링하고 캐시하기 위해
 ### <a name="optional-use-a-ramdisk-for-the-temporary-path"></a>(선택 사항) 임시 경로로 RAM 디스크 사용
 다음 예제에서는 blobfuse에 대한 디렉터리를 만들고 16GB의 RAM 디스크를 만듭니다. 필요에 따라 크기를 선택합니다. 이 RAM 디스크를 사용하면 blobfuse에서 최대 16GB 크기의 파일을 열 수 있습니다. 
 ```bash
+sudo mkdir /mnt/ramdisk
 sudo mount -t tmpfs -o size=16g tmpfs /mnt/ramdisk
 sudo mkdir /mnt/ramdisk/blobfusetmp
 sudo chown <youruser> /mnt/ramdisk/blobfusetmp

@@ -12,12 +12,12 @@ ms.date: 02/03/2020
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: aa9813480425d179bdd11bac6f6f944f9f65e3ab
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 78204be967bafdd7d01af4f9f286bd15347e4a9f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83741956"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798043"
 ---
 # <a name="sign-in-and-start-apps-from-the-my-apps-portal"></a>내 앱 포털에서 로그인하고 앱 시작
 
@@ -33,7 +33,7 @@ ms.locfileid: "83741956"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-portal.md)]
 
 > [!Important]
-> 이 콘텐츠는 내 앱 사용자를 위한 것입니다. 관리자인 경우 [애플리케이션 관리 설명서](https://docs.microsoft.com/azure/active-directory/manage-apps)에서 클라우드 기반 앱을 설정 및 관리하는 방법에 대한 더 자세한 정보를 확인할 수 있습니다.
+> 이 콘텐츠는 내 앱 사용자를 위한 것입니다. 관리자인 경우 [애플리케이션 관리 설명서](../manage-apps/index.yml)에서 클라우드 기반 앱을 설정 및 관리하는 방법에 대한 더 자세한 정보를 확인할 수 있습니다.
 
 ## <a name="supported-browsers"></a>지원되는 브라우저
 
@@ -59,7 +59,7 @@ ms.locfileid: "83741956"
 
 - **최근에 사용** 섹션에서 마지막으로 사용한 앱을 확인합니다.
 
-- [애플리케이션 프록시](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)를 통해 원격으로 내부 회사 URL을 사용합니다.
+- [애플리케이션 프록시](../manage-apps/application-proxy.md)를 통해 원격으로 내부 회사 URL을 사용합니다.
 
 ### <a name="to-download-and-install-the-extension"></a>확장을 다운로드하여 설치하려면
 

@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 ms.date: 04/16/2019
-ms.openlocfilehash: 23ce3272d99401340d784f88dd537baa55774a63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: de8d1b7aba7763799228c831af61bf83a79937bb
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708827"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167983"
 ---
 # <a name="azure-sql-managed-instance-content-reference"></a>Azure SQL Managed Instance 콘텐츠 참조
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -75,6 +75,14 @@ ms.locfileid: "84708827"
 - [이벤트 파일에 확장 이벤트 저장](../database/xevent-code-event-file.md)
 - [확장 이벤트를 링 버퍼에 저장 합니다.](../database/xevent-code-ring-buffer.md)
 
+### <a name="alerting"></a>경고
+
+- [관리 되는 인스턴스에 대 한 경고 만들기](alerts-create.md)
+
+## <a name="operations"></a>작업
+
+- [SQL Managed Instance에서 사용자가 시작한 수동 장애 조치](user-initiated-failover.md)
+
 ## <a name="develop-applications"></a>애플리케이션 개발
 
 - [연결](../database/connect-query-content-reference-guide.md#libraries)
@@ -99,8 +107,6 @@ ms.locfileid: "84708827"
 - [SaaS 디자인 패턴](../database/saas-tenancy-app-design-patterns.md)
 - [SaaS 비디오 사용](../database/saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [SaaS 앱 보안](../database/saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
-
-
 
 ## <a name="next-steps"></a>다음 단계
 

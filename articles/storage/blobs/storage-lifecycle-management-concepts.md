@@ -8,12 +8,13 @@ ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: yzheng
-ms.openlocfilehash: 865263d22d6f92dec74ef2820e80481e1a308804
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b1bf8fbfb6d2c141a2b18c3599631f6383883908
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494556"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074426"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Azure Blob Storage 수명 주기 관리
 
@@ -220,18 +221,18 @@ Azure Resource Manager 템플릿을 사용 하 여 수명 주기 관리를 정�
 
 정책은 규칙의 컬렉션입니다.
 
-| 매개 변수 이름 | 매개 변수 유형 | 참고 |
+| 매개 변수 이름 | 매개 변수 형식 | 참고 |
 |----------------|----------------|-------|
 | `rules`        | 규칙 개체의 배열 | 정책에 하나 이상의 규칙이 필요 합니다. 정책에서 최대 100 개의 규칙을 정의할 수 있습니다.|
 
 정책 내의 각 규칙에는 다음과 같은 몇 가지 매개 변수가 있습니다.
 
-| 매개 변수 이름 | 매개 변수 유형 | 참고 | 필수 |
+| 매개 변수 이름 | 매개 변수 형식 | 참고 | 필수 |
 |----------------|----------------|-------|----------|
-| `name`         | String |규칙 이름에는 최대 256 자의 영숫자 문자를 사용할 수 있습니다. 규칙 이름은 대/소문자를 구분합니다.  정책 내에서 고유해야 합니다. | 참 |
-| `enabled`      | 부울 | 규칙을 일시적으로 사용 하지 않도록 설정할 수 있도록 하는 선택적 부울입니다. 설정 되지 않은 경우 기본값은 true입니다. | False | 
-| `type`         | 열거형 값 | 현재 유효한 형식은 `Lifecycle` 입니다. | 참 |
-| `definition`   | 수명 주기 규칙을 정의하는 개체 | 각 정의는 필터 집합과 작업 집합으로 구성됩니다. | 참 |
+| `name`         | 문자열 |규칙 이름에는 최대 256 자의 영숫자 문자를 사용할 수 있습니다. 규칙 이름은 대/소문자를 구분합니다.  정책 내에서 고유해야 합니다. | True |
+| `enabled`      | 부울 | 규칙을 일시적으로 사용 하지 않도록 설정할 수 있도록 하는 선택적 부울입니다. 설정 되지 않은 경우 기본값은 true입니다. | 거짓 | 
+| `type`         | 열거형 값 | 현재 유효한 형식은 `Lifecycle` 입니다. | True |
+| `definition`   | 수명 주기 규칙을 정의하는 개체 | 각 정의는 필터 집합과 작업 집합으로 구성됩니다. | True |
 
 ## <a name="rules"></a>규칙
 
@@ -301,9 +302,9 @@ Azure Resource Manager 템플릿을 사용 하 여 수명 주기 관리를 정�
 
 | 작업        | 기본 Blob                                   | 스냅샷      |
 |---------------|---------------------------------------------|---------------|
-| tierToCool    | 현재 핫 계층에서 Blob을 지원합니다.         | 지원 안 함 |
-| tierToArchive | 현재 핫 또는 쿨 계층에서 Blob을 지원합니다. | 지원 안 함 |
-| 삭제        | 지원됨                                   | 지원됨     |
+| tierToCool    | 현재 핫 계층에서 Blob을 지원합니다.         | 지원되지 않음 |
+| tierToArchive | 현재 핫 또는 쿨 계층에서 Blob을 지원합니다. | 지원되지 않음 |
+| delete        | 지원됨                                   | 지원됨     |
 
 >[!NOTE]
 >동일한 Blob에 작업을 두 개 이상 정의하는 경우 수명 주기 관리는 가장 저렴한 작업을 Blob에 적용합니다. 예를 들어 `delete` 작업은 `tierToArchive` 작업보다 저렴합니다. `tierToArchive` 작업은 `tierToCool` 작업보다 저렴합니다.

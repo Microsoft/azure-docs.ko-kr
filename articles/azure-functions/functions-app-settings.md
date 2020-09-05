@@ -3,12 +3,12 @@ title: Azure Functions에 대한 앱 설정 참조
 description: Azure Functions 앱 설정 또는 환경 변수에 대한 참조 설명서입니다.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 2be13fbdbf8ce75a051448bfb46d2a41ad425be8
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: b17db828aeb19c3347c0db4babf0eee2b9d5f280
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242766"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589303"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Azure Functions에 대한 앱 설정 참조
 
@@ -19,7 +19,7 @@ ms.locfileid: "86242766"
 [host.json](functions-host-json.md) 파일과 [local.settings.json](functions-run-local.md#local-settings-file) 파일에는 다른 전역 구성 옵션이 있습니다.
 
 > [!NOTE]  
-> 응용 프로그램 설정을 사용 하 여 파일 자체에서 host.js를 변경할 필요 없이 값 설정에 대 한 host.js를 재정의할 수 있습니다. 이 기능은 특정 환경에 대 한 설정에서 특정 host.js를 구성 하거나 수정 해야 하는 경우에 유용 합니다. 이렇게 하면 프로젝트를 다시 게시 하지 않고도 설정 host.js을 변경할 수 있습니다. 자세한 내용은 [참조에서host.js문서](functions-host-json.md#override-hostjson-values)를 참조 하세요.  
+> 응용 프로그램 설정을 사용 하 여 파일 자체에서 host.js를 변경할 필요 없이 값 설정에 대 한 host.js를 재정의할 수 있습니다. 이 기능은 특정 환경에 대 한 설정에서 특정 host.js를 구성 하거나 수정 해야 하는 경우에 유용 합니다. 이렇게 하면 프로젝트를 다시 게시 하지 않고도 설정 host.js을 변경할 수 있습니다. 자세한 내용은 [ 참조에서host.js문서](functions-host-json.md#override-hostjson-values)를 참조 하세요.  
 
 ## <a name="appinsights_instrumentationkey"></a>APPINSIGHTS_INSTRUMENTATIONKEY
 
@@ -41,16 +41,16 @@ Application Insights에 대 한 연결 문자열입니다. `APPLICATIONINSIGHTS_
 
 기본적으로 [함수 프록시](functions-proxies.md) 는 바로 가기를 사용 하 여 프록시의 API 호출을 동일한 함수 앱의 함수로 직접 보냅니다. 이 바로 가기는 새 HTTP 요청을 만드는 대신 사용 됩니다. 이 설정을 사용 하면 바로 가기 동작을 사용 하지 않도록 설정할 수 있습니다.
 
-|키|값|설명|
+|키|값|Description|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|지역 함수 앱의 함수를 가리키는 백 엔드 URL을 사용 하는 호출은 함수로 직접 전송 되지 않습니다. 대신 요청은 함수 앱에 대 한 HTTP 프런트 엔드로 다시 전달 됩니다.|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|지역 함수 앱의 함수를 가리키는 백 엔드 URL을 사용 하는 호출은 함수로 직접 전달 됩니다. 기본값입니다. |
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|지역 함수 앱의 함수를 가리키는 백 엔드 URL을 사용 하는 호출은 함수로 직접 전달 됩니다. 이것은 기본값입니다. |
 
 ## <a name="azure_function_proxy_backend_url_decode_slashes"></a>AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES
 
 이 설정은 문자를 `%2F` 백 엔드 URL에 삽입할 때 경로 매개 변수에서 슬래시로 디코딩되는 지 여부를 제어 합니다. 
 
-|키|값|설명|
+|키|값|Description|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|인코딩된 슬래시가 있는 경로 매개 변수는 디코딩됩니다. |
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|모든 경로 매개 변수는 기본 동작인 변경 되지 않은 상태로 전달 됩니다. |
@@ -79,7 +79,7 @@ Application Insights에 대 한 연결 문자열입니다. `APPLICATIONINSIGHTS_
 
 ## <a name="azurefunctionsjobhost__"></a>AzureFunctionsJobHost__\*
 
-버전 2.x 이상 버전의 함수 런타임에서는 응용 프로그램 설정이 현재 환경의 설정 [에host.js](functions-host-json.md) 를 재정의할 수 있습니다. 이러한 재정의는 이라는 응용 프로그램 설정으로 표현 됩니다 `AzureFunctionsJobHost__path__to__setting` . 자세한 내용은 [값에 대 한 host.js재정의](functions-host-json.md#override-hostjson-values)를 참조 하세요.
+버전 2.x 이상 버전의 함수 런타임에서는 응용 프로그램 설정이 현재 환경의 설정 [ 에host.js](functions-host-json.md) 를 재정의할 수 있습니다. 이러한 재정의는 이라는 응용 프로그램 설정으로 표현 됩니다 `AzureFunctionsJobHost__path__to__setting` . 자세한 내용은 [값에 대 한 host.js재정의](functions-host-json.md#override-hostjson-values)를 참조 하세요.
 
 ## <a name="azurewebjobsdashboard"></a>AzureWebJobsDashboard
 
@@ -126,7 +126,7 @@ Application Insights에 대 한 연결 문자열입니다. `APPLICATIONINSIGHTS_
 
 |키|샘플 값|
 |---|------------|
-|AzureWebJobsSecretStorageType|파일|
+|AzureWebJobsSecretStorageType|Files|
 
 ## <a name="azurewebjobsstorage"></a>AzureWebJobsStorage
 
@@ -234,8 +234,8 @@ _이 설정은 현재 미리 보기로 있습니다._
 
 함수 앱이 확장할 수 있는 최대 인스턴스 수입니다. 기본값은 무제한입니다.
 
-> [!NOTE]
-> 이 설정은 미리 보기 기능이며 값이 <= 5로 설정된 경우에만 신뢰할 수 있습니다.
+> [!IMPORTANT]
+> 이 설정은 미리 보기로 제공 됩니다.  [Function max scale out에 대 한 응용 프로그램 속성이](./functions-scale.md#limit-scale-out) 추가 되었으며 확장을 제한 하는 데 권장 되는 방법입니다.
 
 |키|샘플 값|
 |---|------------|

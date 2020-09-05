@@ -1,18 +1,18 @@
 ---
 title: Azure 앱 구성 FAQ
-description: Azure 앱 구성에 대 한 질문과 대답
+description: Azure Key Vault와 다른 Azure 앱 구성에 대 한 FAQ (질문과 대답)를 참조 하세요.
 services: azure-app-configuration
 author: lisaguthrie
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: lcozzens
-ms.openlocfilehash: 25187fd055f40e8b32d840ead2a9c54882446b88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1483230313b9e1b8e59cafea478b14ba0dfcc70
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80348781"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587347"
 ---
 # <a name="azure-app-configuration-faq"></a>Azure 앱 구성 FAQ
 
@@ -107,7 +107,7 @@ App Service와 앱 구성 간에 설정을 가져오거나 내보낼 수도 있�
 
 응용 프로그램에서 HTTP 상태 코드 429 응답을 정기적으로 실행 하는 경우이를 다시 디자인 하 여 요청 수를 줄이는 것이 좋습니다. 자세한 내용은 [앱 구성에 대 한 요청 축소](./howto-best-practices.md#reduce-requests-made-to-app-configuration) 를 참조 하세요.
 
-## <a name="my-application-receives-http-status-code-429-responses-why"></a>응용 프로그램에서 HTTP 상태 코드 429 응답을 수신 합니다. 이유
+## <a name="my-application-receives-http-status-code-429-responses-why"></a>응용 프로그램에서 HTTP 상태 코드 429 응답을 수신 합니다. 그 이유는 무엇일까요?
 
 다음과 같은 상황에서 HTTP 상태 코드 429 응답을 받게 됩니다.
 

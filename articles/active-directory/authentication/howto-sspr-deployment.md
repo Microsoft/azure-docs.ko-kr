@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a56f7248d5782b63befc55c4215360e0f5cb52b2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c9f59c7bb9b3977bdff7e3fd1ab78ed6fa2e412
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84338569"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717747"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Azure Active Directory 셀프 서비스 암호 재설정 배포 계획
 
@@ -30,7 +30,7 @@ ms.locfileid: "84338569"
 SSPR은 다음과 같은 주요 기능을 제공합니다.
 
 * 셀프 서비스를 사용하면 최종 사용자가 관리자나 기술 지원팀에 지원을 요청하지 않고도 만료된 암호나 만료되지 않은 암호를 재설정할 수 있습니다.
-* [암호 쓰기 저장](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)을 사용하면 클라우드를 통해 온-프레미스 암호 및 계정 잠금을 관리할 수 있습니다.
+* [암호 쓰기 저장](./concept-sspr-writeback.md)을 사용하면 클라우드를 통해 온-프레미스 암호 및 계정 잠금을 관리할 수 있습니다.
 * 암호 관리 활동 보고서는 조직에서 발생하는 암호 재설정 및 등록 활동에서 관리자의 이해도를 높여줍니다.
 
 이 배포 가이드에서는 SSPR 롤아웃을 계획하고 테스트하는 방법을 보여 줍니다.
@@ -42,7 +42,7 @@ SSPR은 다음과 같은 주요 기능을 제공합니다.
 
 ## <a name="learn-about-sspr"></a>SSPR에 대해 알아보기
 
-SSPR에 대해 자세히 알아봅니다. 다음 [작동 방법을 참조하세요. Azure AD 셀프 서비스 암호 재설정](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks)을 참조하세요.
+SSPR에 대해 자세히 알아봅니다. 다음 [작동 방법을 참조하세요. Azure AD 셀프 서비스 암호 재설정](./concept-sspr-howitworks.md)을 참조하세요.
 
 ### <a name="key-benefits"></a>주요 이점
 
@@ -60,7 +60,7 @@ SSPR을 사용하는 경우의 주요 이점은 다음과 같습니다.
 
 Azure Active Directory는 사용자별로 사용이 허가 됩니다. 즉, 각 사용자에게는 사용하는 기능에 대한 적절한 라이선스가 필요합니다. SSPR에는 그룹 기반 라이선싱을 사용하는 것이 좋습니다. 
 
-버전과 기능을 비교하고 그룹 또는 사용자 기반 라이선싱을 사용하려면 [Azure AD 셀프 서비스 암호 재설정에 대한 라이선싱 요구 사항](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing)을 참조하세요.
+버전과 기능을 비교하고 그룹 또는 사용자 기반 라이선싱을 사용하려면 [Azure AD 셀프 서비스 암호 재설정에 대한 라이선싱 요구 사항](./concept-sspr-licensing.md)을 참조하세요.
 
 가격 책정에 대한 자세한 내용은 [Azure Active Directory 가격 책정](https://azure.microsoft.com/pricing/details/active-directory/)을 참조하세요.
 
@@ -83,10 +83,10 @@ Azure Active Directory는 사용자별로 사용이 허가 됩니다. 즉, 각 �
 | 온라인 과정|[Microsoft Azure Active Directory에서 ID 관리](https://www.pluralsight.com/courses/microsoft-azure-active-directory-managing-identities) SSPR을 사용하여 사용자에게 안전한 최신 환경을 제공할 수 있습니다. 특히 "[Azure Active Directory 사용자 및 그룹 관리](https://app.pluralsight.com/library/courses/microsoft-azure-active-directory-managing-identities/table-of-contents)" 모듈을 참조하세요. |
 |Pluralsight 유료 과정 |[ID 및 액세스 관리 문제](https://www.pluralsight.com/courses/identity-access-management-issues) 조직에서 알아야 하는 IAM 및 보안 문제에 대해 알아봅니다. 특히 "기타 인증 방법" 모듈을 참조하세요.|
 | |[Microsoft Enterprise Mobility Suite 시작](https://www.pluralsight.com/courses/microsoft-enterprise-mobility-suite-getting-started) 인증, 권한 부여, 암호화 및 안전한 모바일 환경을 허용하는 방식으로 온-프레미스 자산을 클라우드로 확장하는 모범 사례를 알아봅니다. 특히 "Microsoft Azure Active Directory Premium의 고급 기능 구성" 모듈을 참조하세요.
-|자습서 |[Azure AD 셀프 서비스 암호 재설정 파일럿 배포 완료](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot) |
-| |[비밀번호 쓰기 저장을 사용하도록 설정](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-writeback) |
-| |[Windows 10의 로그인 화면에서 Azure AD 암호 재설정](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-windows) |
-| FAQ|[암호 관리 질문과 대답](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-faq) |
+|자습서 |[Azure AD 셀프 서비스 암호 재설정 파일럿 배포 완료](./tutorial-enable-sspr.md) |
+| |[비밀번호 쓰기 저장을 사용하도록 설정](./tutorial-enable-sspr-writeback.md) |
+| |[Windows 10의 로그인 화면에서 Azure AD 암호 재설정](./howto-sspr-windows.md) |
+| FAQ|[암호 관리 질문과 대답](./active-directory-passwords-faq.md) |
 
 
 ### <a name="solution-architecture"></a>솔루션 아키텍처
@@ -103,7 +103,7 @@ Azure Active Directory는 사용자별로 사용이 허가 됩니다. 즉, 각 �
 
 * 하이브리드 사용자의 경우 SSPR은 Azure AD Connect 서비스를 통해 암호를 온-프레미스 Active Directory에 다시 작성합니다. 
 
-참고: [PHS(암호 해시 동기화)](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-phs)를 사용하지 않도록 설정한 사용자의 경우 SSPR은 온-프레미스 Active Directory에만 암호를 저장합니다.
+참고: [PHS(암호 해시 동기화)](../hybrid/whatis-phs.md)를 사용하지 않도록 설정한 사용자의 경우 SSPR은 온-프레미스 Active Directory에만 암호를 저장합니다.
 
 ### <a name="best-practices"></a>모범 사례
 
@@ -141,9 +141,9 @@ Microsoft는 조직이 SSPR 및 다단계 인증을 위한 결합된 등록 환�
 
 ### <a name="plan-a-pilot"></a>파일럿 계획
 
-SSPR의 초기 구성은 테스트 환경에 있는 것이 좋습니다. 조직의 사용자 하위 집합에 SSPR을 사용하도록 설정하여 파일럿 그룹을 시작합니다. [파일럿에 대한 모범 사례](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-deployment-plans)를 참조하세요.
+SSPR의 초기 구성은 테스트 환경에 있는 것이 좋습니다. 조직의 사용자 하위 집합에 SSPR을 사용하도록 설정하여 파일럿 그룹을 시작합니다. [파일럿에 대한 모범 사례](../fundamentals/active-directory-deployment-plans.md)를 참조하세요.
 
-그룹을 만들려면 [Azure Active Directory에서 그룹 만들기 및 멤버 추가](https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal) 방법을 참조하세요. 
+그룹을 만들려면 [Azure Active Directory에서 그룹 만들기 및 멤버 추가](../fundamentals/active-directory-groups-create-azure-portal.md) 방법을 참조하세요. 
 
 ## <a name="plan-configuration"></a>구성 계획
 
@@ -172,7 +172,7 @@ SSPR을 사용하는 경우 파일럿 환경에서 적절한 보안 그룹을 �
 
 ### <a name="authentication-methods"></a>인증 방법
 
-SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도록 설정한 인증 방법으로 데이터를 표시하는 경우에만 자신의 암호를 재설정할 수 있습니다. 방법에는 전화, Authenticator 앱 알림, 보안 질문 등이 포함됩니다. 자세한 내용은 [인증 방법이란?](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods)을 참조하세요.
+SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도록 설정한 인증 방법으로 데이터를 표시하는 경우에만 자신의 암호를 재설정할 수 있습니다. 방법에는 전화, Authenticator 앱 알림, 보안 질문 등이 포함됩니다. 자세한 내용은 [인증 방법이란?](./concept-authentication-methods.md)을 참조하세요.
 
 다음 인증 방법 설정을 사용하는 것이 좋습니다.
 
@@ -180,7 +180,7 @@ SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도�
 
 * 조직에 적합한 수준으로 **재설정에 필요한 방법 수**를 설정합니다. 하나는 최소한의 마찰이 필요하며 두 개는 보안 태세를 강화할 수 있습니다. 
 
-참고: 사용자에게는 [Azure Active Directory의 암호 정책 및 제한 사랑](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-policy)에 구성된 인증 방법이 있어야 합니다.
+참고: 사용자에게는 [Azure Active Directory의 암호 정책 및 제한 사랑](./concept-sspr-policy.md)에 구성된 인증 방법이 있어야 합니다.
 
 ### <a name="registration-settings"></a>등록 설정
 
@@ -196,11 +196,11 @@ SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도�
 
 문제가 발생한 사용자가 즉시 도움을 받을 수 있도록 기술 지원팀 이메일 또는 URL을 사용자 지정해야 합니다. 이 옵션을 사용자에게 익숙한 일반적인 기술 지원팀 이메일 주소나 웹 페이지로 설정합니다. 
 
-자세한 내용은 [셀프 서비스 암호 재설정을 위한 Azure AD 기능 사용자 지정](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-customization)을 참조하세요.
+자세한 내용은 [셀프 서비스 암호 재설정을 위한 Azure AD 기능 사용자 지정](./howto-sspr-customization.md)을 참조하세요.
 
 ### <a name="password-writeback"></a>암호 쓰기 저장
 
-**암호 쓰기 저장**은 [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)를 통해 활성화되며 클라우드의 암호 재설정 항목을 실시간으로 기존 온-프레미스 디렉터리에 다시 쓸 수 있는 기능입니다. 자세한 내용은 [암호 쓰기 저장이란?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)을 참조하세요.
+**암호 쓰기 저장**은 [Azure AD Connect](../hybrid/whatis-hybrid-identity.md)를 통해 활성화되며 클라우드의 암호 재설정 항목을 실시간으로 기존 온-프레미스 디렉터리에 다시 쓸 수 있는 기능입니다. 자세한 내용은 [암호 쓰기 저장이란?](./concept-sspr-writeback.md)을 참조하세요.
 
 다음 설정을 사용하는 것이 좋습니다.
 
@@ -220,7 +220,7 @@ SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도�
 
 ### <a name="environments-with-multiple-identity-management-systems"></a>여러 ID 관리 시스템을 사용하는 환경
 
-일부 환경에는 여러 ID 관리 시스템이 있습니다. Oracle AM 및 SiteMinder와 같은 온-프레미스 ID 관리자는 암호의 AD와 동기화해야 합니다. 이 작업은 PCNS(Password Change Notification Service)과 같은 도구를 MIM(Microsoft Identity Manager)과 함께 사용하여 수행할 수 있습니다. 더 복잡한 시나리오에 대한 정보를 찾으려면 [도메인 컨트롤러에서 MIM 암호 변경 알림 서비스 배포](https://docs.microsoft.com/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller) 문서를 참조하세요.
+일부 환경에는 여러 ID 관리 시스템이 있습니다. Oracle AM 및 SiteMinder와 같은 온-프레미스 ID 관리자는 암호의 AD와 동기화해야 합니다. 이 작업은 PCNS(Password Change Notification Service)과 같은 도구를 MIM(Microsoft Identity Manager)과 함께 사용하여 수행할 수 있습니다. 더 복잡한 시나리오에 대한 정보를 찾으려면 [도메인 컨트롤러에서 MIM 암호 변경 알림 서비스 배포](/microsoft-identity-manager/deploying-mim-password-change-notification-service-on-domain-controller) 문서를 참조하세요.
 
 ## <a name="plan-testing-and-support"></a>테스트 및 지원 계획
 
@@ -228,7 +228,7 @@ SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도�
 
 ### <a name="plan-testing"></a>테스트 계획
 
-배포가 정상적으로 작동하도록 하려면 테스트 사례 집합을 계획하여 구현의 유효성을 검사합니다. 테스트 사례를 평가하려면 암호가 있는 관리자가 아닌 테스트 사용자가 필요합니다. 사용자를 만들어야 하는 경우 [Azure Active Directory에 새 사용자 추가](https://docs.microsoft.com/azure/active-directory/add-users-azure-active-directory)를 참조하세요.
+배포가 정상적으로 작동하도록 하려면 테스트 사례 집합을 계획하여 구현의 유효성을 검사합니다. 테스트 사례를 평가하려면 암호가 있는 관리자가 아닌 테스트 사용자가 필요합니다. 사용자를 만들어야 하는 경우 [Azure Active Directory에 새 사용자 추가](../fundamentals/add-users-azure-active-directory.md)를 참조하세요.
 
 다음 표에는 정책에 따라 조직에 예상되는 결과를 문서화하는 데 사용할 수 있는 유용한 테스트 시나리오가 포함되어 있습니다.
 <br>
@@ -246,7 +246,7 @@ SSPR이 사용하도록 설정된 경우 사용자는 관리자가 사용하도�
 | Windows 10 Azure AD 조인 또는 하이브리드 Azure AD 조인 장치 잠금 화면에서 사용자 암호 재설정| 사용자가 암호를 재설정할 수 있음 |
 | SSPR 등록 및 사용 현황 데이터가 거의 실시간으로 관리자에게 제공됨| 감사 로그를 통해 사용 가능 |
 
-또한 [Azure AD 셀프 서비스 암호 재설정 파일럿 배포 완료](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot)를 참조할 수 있습니다. 이 자습서에서는 조직의 SSPR에서 파일럿 배포를 활성화하고 관리자가 아닌 계정을 사용하여 테스트합니다.
+또한 [Azure AD 셀프 서비스 암호 재설정 파일럿 배포 완료](./tutorial-enable-sspr.md)를 참조할 수 있습니다. 이 자습서에서는 조직의 SSPR에서 파일럿 배포를 활성화하고 관리자가 아닌 계정을 사용하여 테스트합니다.
 
 ### <a name="plan-support"></a>지원 계획
 
@@ -289,20 +289,20 @@ SSPR은 일반적으로 사용자 문제를 초래하지 않지만, 발생할 �
 
 **이제 SSPR을 배포할 준비가 되었습니다!**
 
-다음 영역을 구성하는 전체 단계별 지침은 [셀프 서비스 암호 재설정 사용](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-sspr-pilot#enable-self-service-password-reset)을 참조하세요.
+다음 영역을 구성하는 전체 단계별 지침은 [셀프 서비스 암호 재설정 사용](./tutorial-enable-sspr.md#enable-self-service-password-reset)을 참조하세요.
 
-1. [인증 방법](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods)
+1. [인증 방법](./concept-authentication-methods.md)
 
-1. [등록 설정](https://docs.microsoft.com/azure/active-directory/authentication/concept-registration-mfa-sspr-combined)
+1. [등록 설정](./concept-registration-mfa-sspr-combined.md)
 
 1. [알림 설정](#notifications-settings)
 
-1. [사용자 지정 설정](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-customization)
+1. [사용자 지정 설정](./howto-sspr-customization.md)
 
-1. [온-프레미스 통합](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-writeback)
+1. [온-프레미스 통합](./tutorial-enable-sspr-writeback.md)
 
 ### <a name="enable-sspr-in-windows"></a>Windows에서 SSPR 사용
-Windows 7, 8, 8.1 및 10을 실행하는 컴퓨터의 경우 [사용자가 Windows 로그인 화면에서 암호를 재설정하도록 설정](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-windows)할 수 있습니다.
+Windows 7, 8, 8.1 및 10을 실행하는 컴퓨터의 경우 [사용자가 Windows 로그인 화면에서 암호를 재설정하도록 설정](./howto-sspr-windows.md)할 수 있습니다.
 
 ## <a name="manage-sspr"></a>SSPR 관리
 
@@ -310,41 +310,41 @@ Azure AD는 감사 및 보고서를 통해 SSPR 성능에 대한 추가 정보�
 
 ### <a name="password-management-activity-reports"></a>암호 관리 활동 보고서 
 
-Azure Portal에서 미리 빌드된 보고서를 사용하여 SSPR 성능을 측정할 수 있습니다. 적절히 라이선스를 받은 경우 사용자 지정 쿼리를 만들 수도 있습니다. 자세한 내용은 [Azure AD 암호 관리에 대한 보고 옵션](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-reporting)을 참조하세요.
+Azure Portal에서 미리 빌드된 보고서를 사용하여 SSPR 성능을 측정할 수 있습니다. 적절히 라이선스를 받은 경우 사용자 지정 쿼리를 만들 수도 있습니다. 자세한 내용은 [Azure AD 암호 관리에 대한 보고 옵션](./howto-sspr-reporting.md)을 참조하세요.
 
 > [!NOTE]
->  사용자는 [전역 관리자](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)여야 하며 조직의 이 데이터를 수집하기 위해 옵트인해야 합니다. 옵트인하려면 적어도 한 번 보고 탭이나 감사 로그를 방문해야 합니다. 그때까지는 조직에 데이터가 수집되지 않습니다.
+>  사용자는 [전역 관리자](../users-groups-roles/directory-assign-admin-roles.md)여야 하며 조직의 이 데이터를 수집하기 위해 옵트인해야 합니다. 옵트인하려면 적어도 한 번 보고 탭이나 감사 로그를 방문해야 합니다. 그때까지는 조직에 데이터가 수집되지 않습니다.
 
-등록 및 암호 재설정을 위한 감사 로그는 30일 동안 사용할 수 있습니다. 회사 내의 보안 감사에 더 긴 보존이 필요한 경우 로그를 내보내고 [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-active-directory), Splunk 또는 ArcSight와 같은 SIEM 도구로 사용해야 합니다.
+등록 및 암호 재설정을 위한 감사 로그는 30일 동안 사용할 수 있습니다. 회사 내의 보안 감사에 더 긴 보존이 필요한 경우 로그를 내보내고 [Azure Sentinel](../../sentinel/connect-azure-active-directory.md), Splunk 또는 ArcSight와 같은 SIEM 도구로 사용해야 합니다.
 
 ![SSPR 보고 스크린샷](./media/howto-sspr-deployment/sspr-reporting.png)
 
 ### <a name="authentication-methods--usage-and-insights"></a>인증 방법 - 사용량 및 인사이트
 
-[사용량 및 인사이트](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-methods-usage-insights)를 사용하여 Azure MFA 및 SSPR 같은 기능의 인증 방법이 조직에서 작동되는 방식을 이해할 수 있습니다. 이 보고 기능은 등록 방법 및 사용 방법을 이해할 수 있는 수단을 조직에 제공합니다.
+[사용량 및 인사이트](./howto-authentication-methods-usage-insights.md)를 사용하여 Azure MFA 및 SSPR 같은 기능의 인증 방법이 조직에서 작동되는 방식을 이해할 수 있습니다. 이 보고 기능은 등록 방법 및 사용 방법을 이해할 수 있는 수단을 조직에 제공합니다.
 
 ### <a name="troubleshoot"></a>문제 해결
 
-* [셀프 서비스 암호 재설정 문제 해결](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-troubleshoot)을 참조하세요. 
+* [셀프 서비스 암호 재설정 문제 해결](./active-directory-passwords-troubleshoot.md)을 참조하세요. 
 
-* [암호 관리 질문과 대답](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-passwords-faq)을 따르세요. 
+* [암호 관리 질문과 대답](./active-directory-passwords-faq.md)을 따르세요. 
 
 ### <a name="helpful-documentation"></a>유용한 설명서
 
-* [인증 방법이란?](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-methods)
+* [인증 방법이란?](./concept-authentication-methods.md)
 
-* [작동 방법: Azure AD 셀프 서비스 암호 재설정이란?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks)
+* [작동 방법: Azure AD 셀프 서비스 암호 재설정이란?](./concept-sspr-howitworks.md)
 
-* [Azure AD의 셀프 서비스 암호 재설정 기능 사용자 지정](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-customization)
+* [Azure AD의 셀프 서비스 암호 재설정 기능 사용자 지정](./howto-sspr-customization.md)
 
-* [Azure Active Directory에서 암호 정책 및 제한](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-policy) 문서를 검토하세요.
+* [Azure Active Directory에서 암호 정책 및 제한](./concept-sspr-policy.md) 문서를 검토하세요.
 
-* [비밀번호 쓰기 저장이란?](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-writeback)
+* [비밀 번호 쓰기 저장 이란?](./concept-sspr-writeback.md)
 
 ## <a name="next-steps"></a>다음 단계
 
 * SSPR 배포를 시작하려면 [Azure AD 셀프 서비스 암호 재설정을 사용](tutorial-enable-sspr.md)을 참조하세요.
 
-* [Azure AD 암호 보호 구현 고려](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad)
+* [Azure AD 암호 보호 구현 고려](./concept-password-ban-bad.md)
 
-* [Azure AD 스마트 잠금 구현 고려](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-smart-lockout)
+* [Azure AD 스마트 잠금 구현 고려](./howto-password-smart-lockout.md)

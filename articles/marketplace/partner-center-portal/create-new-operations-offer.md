@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 553fd4e49d274fcf4c25356764182d54b91149e4
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 79bf5f0d6b7e3fa4735d94c7b26c1736ab25113e
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036643"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88817003"
 ---
 # <a name="create-a-dynamics-365-for-operations-offer"></a>Dynamics 365 for Operations 제품 만들기
 
@@ -21,7 +21,7 @@ ms.locfileid: "88036643"
 시작하기 전에 [파트너 센터에서 상업용 Marketplace 계정을 만듭니다](create-account.md)(아직 만들지 않은 경우). 계정이 상업용 Marketplace 프로그램에 등록되어 있는지 확인합니다.
 
 >[!NOTE]
-> 제품이 게시되면 파트너 센터에서 만든 제품의 편집 내용은 시스템에만 업데이트되고 다시 게시된 후에 저장됩니다. 제품을 변경한 후 게시하기 위해 제출해야 합니다.
+> 제품을 게시 한 후에는 게시에 대 한 제품을 다시 제출한 후에만 파트너 센터 및 온라인 스토어에서 제품에 대 한 편집 내용이 업데이트 됩니다.
 
 ## <a name="create-a-new-offer"></a>새 제안 만들기
 
@@ -32,17 +32,17 @@ ms.locfileid: "88036643"
     ![왼쪽 탐색 메뉴를 보여 줍니다.](./media/new-offer-dynamics-365-operations.png)
 
 > [!NOTE]
-> 제품을 게시한 후 파트너 센터에서 해당 제품에 대해 편집한 내용은 제품을 다시 게시해야 상점에 표시됩니다. 변경한 후에는 항상 다시 게시해야 합니다.
+> 제품을 게시 한 후에는 제품을 다시 게시 한 후에만 파트너 센터에서 해당 제품에 대 한 편집 내용이 온라인 매장에 표시 됩니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
 
 ## <a name="new-offer"></a>새 제안
 
 **제품 ID**를 입력합니다. 계정의 각 제품에 대한 고유 식별자입니다.
 
-- 이 ID는 Marketplace 제품 및 Azure Resource Manager 템플릿의 웹 주소에서 고객에게 표시됩니다(해당하는 경우).
-- 소문자와 숫자만 사용할 수 있습니다. 하이픈 및 밑줄을 포함할 수 있지만 공백은 포함할 수 없으며 50자로 제한됩니다. 예를 들어 여기에 **test-offer-1**을 입력하면 제품 웹 주소가 `https://azuremarketplace.microsoft.com/marketplace/../test-offer-1`이 됩니다.
+- 이 ID는 마켓플레이스 제품 및 Azure Resource Manager 템플릿의 웹 주소에서 고객에게 표시됩니다(해당하는 경우).
+- 소문자와 숫자만 사용할 수 있습니다. 하이픈 및 밑줄을 포함할 수 있지만 공백은 포함할 수 없으며, 50자로 제한됩니다. 예를 들어 여기에 **test-offer-1**을 입력하면 제품 웹 주소가 `https://azuremarketplace.microsoft.com/marketplace/../test-offer-1`이 됩니다.
 - **만들기**를 선택한 후에는 제품 ID를 변경할 수 없습니다.
 
-**제품 별칭**을 입력합니다. 파트너 센터의 제품에 사용되는 이름입니다.
+**제품 별칭**을 입력합니다. 파트너 센터에서 제품에 사용되는 이름입니다.
 
 - 이 이름은 Marketplace에서 사용되지 않으며 고객에게 표시되는 제품 이름 및 기타 값과 다릅니다.
 
@@ -71,9 +71,9 @@ CRM(고객 관계 관리) 시스템을 연결하여 고객 연락처 정보를 �
 
 ### <a name="test-drive"></a>시험 사용
 
-시험 사용은 "구입 전 체험" 옵션을 제공하여 잠재적인 고객에게 제안을 선보임으로써 구매 전환율을 높이고 적절한 잠재 고객을 창출할 수 있는 유용한 방법입니다. 자세히 알아보려면 [테스트 드라이브인 무엇 인가요?](../what-is-test-drive.md)를 시작 합니다.
+시험 사용은 "구입 전 체험" 옵션을 제공하여 잠재적인 고객에게 제품을 선보임으로써 구매 전환율을 높이고 적절한 잠재 고객을 창출할 수 있는 유용한 방법입니다. 자세히 알아보려면 [테스트 드라이브인 무엇 인가요?](../what-is-test-drive.md)를 시작 합니다.
 
-시험 사용을 고정된 시간 동안 사용하도록 설정하려면 **시험 사용을 사용하도록 설정** 확인란을 선택합니다. 제품에서 시험 사용을 제거하려면 이 확인란 선택을 취소합니다.
+일정 기간 동안 시험 사용을 사용하도록 설정하려면 **시험 사용을 사용하도록 설정** 확인란을 선택합니다. 제품에서 시험 사용을 제거하려면 이 확인란을 선택 취소합니다.
 
 ### <a name="customer-leads"></a>잠재 고객
 
@@ -134,7 +134,7 @@ Microsoft AppSource에서 제공 정보를 표시 하는 방법의 예는 다음
 7. 개인 정보 보호 정책
 8. Offer name
 9. 스크린샷/비디오
-10. 설명
+10. Description
 
 ### <a name="name"></a>속성
 
@@ -193,12 +193,16 @@ Microsoft AppSource에서 제공 정보를 표시 하는 방법의 예는 다음
 
 #### <a name="store-logos"></a>스토어 로고
 
-두 픽셀 크기의 제품 로고를 제공합니다.
+**큰** 크기의 로고에 대 한 PNG 파일을 제공 합니다. 파트너 센터는이를 사용 하 여 **작은** 로고를 만듭니다. 필요에 따라 나중에 다른 이미지로이를 바꿀 수 있습니다.
 
-- **작음**(48 x 48)
-- **대형**(216 x 216)
+- **큼** (216 x 216에서 350 x 350 px, required)
+- **작음** (48 x 48 px, 선택 사항)
+
+이러한 로고는 목록의 다른 위치에서 사용 됩니다.
 
 [!INCLUDE [logos-appsource-only](../includes/logos-appsource-only.md)]
+
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>스크린샷
 

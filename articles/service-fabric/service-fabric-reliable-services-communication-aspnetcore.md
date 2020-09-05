@@ -5,12 +5,13 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: vturecek
-ms.openlocfilehash: 73ba08406e224d6c2a0d5dcaba7e7896dcb4d740
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 69423e7545178fd74ad44f5cab7b37b6f24b3577
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529304"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022193"
 ---
 # <a name="aspnet-core-in-azure-service-fabric-reliable-services"></a>Azure Service Fabric에서 ASP.NET Core Reliable Services
 
@@ -92,7 +93,7 @@ Kestrel과 HTTP.sys 구현은 모두 똑같은 `ICommunicationListener` 방식�
 따라서 Kestrel과 HTTP.sys 구현은 모두 `ICommunicationListener` 확장 메서드에서 제공 하는 미들웨어를 표준화 `UseServiceFabricIntegration` 합니다. 따라서 클라이언트는 HTTP 410 응답에서 서비스 끝점 다시 확인 작업을 수행 하기만 하면 됩니다.
 
 ## <a name="httpsys-in-reliable-services"></a>Reliable Services HTTP.sys
-**ServiceFabric AspNetCore** NuGet 패키지를 가져와 Reliable Services에서 HTTP.sys를 사용할 수 있습니다. 이 패키지에는 `HttpSysCommunicationListener` 의 구현인가 포함 되어 있습니다 `ICommunicationListener` . `HttpSysCommunicationListener`를 사용 하면 HTTP.sys를 웹 서버로 사용 하 여 신뢰할 수 있는 서비스 내에 ASP.NET Core WebHost를 만들 수 있습니다.
+**ServiceFabric AspNetCore** NuGet 패키지를 가져와 Reliable Services에서 HTTP.sys를 사용할 수 있습니다. 이 패키지에는 `HttpSysCommunicationListener` 의 구현인가 포함 되어 있습니다 `ICommunicationListener` . `HttpSysCommunicationListener` 를 사용 하면 HTTP.sys를 웹 서버로 사용 하 여 신뢰할 수 있는 서비스 내에 ASP.NET Core WebHost를 만들 수 있습니다.
 
 HTTP.sys는 [WINDOWS HTTP 서버 API](/windows/win32/http/http-api-start-page)를 기반으로 합니다. 이 API는 **HTTP.sys** 커널 드라이버를 사용 하 여 HTTP 요청을 처리 하 고 웹 응용 프로그램을 실행 하는 프로세스로 라우팅합니다. 이를 통해 동일한 물리적 컴퓨터 또는 가상 컴퓨터의 여러 프로세스가 동일한 포트에서 웹 응용 프로그램을 호스팅할 수 있으며,이는 고유한 URL 경로 또는 호스트 이름으로 명확 하 게 구분 됩니다. 이러한 기능은 동일한 클러스터에서 여러 웹 사이트를 호스팅하는 Service Fabric에서 유용합니다.
 
@@ -129,7 +130,7 @@ protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceLis
 
 ### <a name="httpsys-in-a-stateful-service"></a>상태 저장 서비스의 HTTP.sys
 
-`HttpSysCommunicationListener`는 기본 **HTTP.sys** 포트 공유 기능과 관련 된 복잡 한 상태 저장 서비스에서 사용 하도록 설계 되지 않았습니다. 자세한 내용은 HTTP.sys를 사용 하는 동적 포트 할당에 대 한 다음 섹션을 참조 하세요. 상태 저장 서비스의 경우 Kestrel이 제안 된 웹 서버입니다.
+`HttpSysCommunicationListener` 는 기본 **HTTP.sys** 포트 공유 기능과 관련 된 복잡 한 상태 저장 서비스에서 사용 하도록 설계 되지 않았습니다. 자세한 내용은 HTTP.sys를 사용 하는 동적 포트 할당에 대 한 다음 섹션을 참조 하세요. 상태 저장 서비스의 경우 Kestrel이 제안 된 웹 서버입니다.
 
 ### <a name="endpoint-configuration"></a>엔드포인트 구성
 
@@ -189,7 +190,7 @@ HTTP.sys에서 동적으로 할당 된 포트를 사용 하려면 `Port` 구성�
 구성에 의해 할당 된 동적 포트는 `Endpoint` *호스트 프로세스 당*하나의 포트만 제공 합니다. 현재 Service Fabric 호스팅 모델을 사용 하면 여러 서비스 인스턴스 및/또는 복제본을 동일한 프로세스에서 호스팅할 수 있습니다. 즉, 구성을 통해 할당 될 때 각 항목은 동일한 포트를 공유 `Endpoint` 합니다. 여러 **HTTP.sys** 인스턴스는 기본 **HTTP.sys** 포트 공유 기능을 사용 하 여 포트를 공유할 수 있습니다. 그러나 `HttpSysCommunicationListener` 클라이언트 요청에 대 한 복잡성으로 인해에서 지원 되지 않습니다. 동적 포트 사용의 경우 Kestrel이 제안 된 웹 서버입니다.
 
 ## <a name="kestrel-in-reliable-services"></a>Reliable Services의 Kestrel
-**ServiceFabric. AspNetCore** NuGet 패키지를 가져와 Reliable Services에서 kestrel을 사용할 수 있습니다. 이 패키지에는 `KestrelCommunicationListener` 의 구현인가 포함 되어 있습니다 `ICommunicationListener` . `KestrelCommunicationListener`웹 서버로 Kestrel을 사용 하 여 신뢰할 수 있는 서비스 내에 ASP.NET Core WebHost를 만들 수 있습니다.
+**ServiceFabric. AspNetCore** NuGet 패키지를 가져와 Reliable Services에서 kestrel을 사용할 수 있습니다. 이 패키지에는 `KestrelCommunicationListener` 의 구현인가 포함 되어 있습니다 `ICommunicationListener` . `KestrelCommunicationListener` 웹 서버로 Kestrel을 사용 하 여 신뢰할 수 있는 서비스 내에 ASP.NET Core WebHost를 만들 수 있습니다.
 
 Kestrel은 ASP.NET Core의 플랫폼 간 웹 서버입니다. HTTP.sys와 달리 Kestrel은 중앙 집중식 끝점 관리자를 사용 하지 않습니다. 또한 HTTP.sys와 달리 Kestrel은 여러 프로세스 간의 포트 공유를 지원 하지 않습니다. Kestrel의 각 인스턴스는 고유한 포트를 사용해야 합니다. Kestrel에 대 한 자세한 내용은 [구현 세부 정보](/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2)를 참조 하세요.
 
@@ -470,7 +471,7 @@ Kestrel은 외부 인터넷 연결 HTTP 끝점을 노출 하는 프런트 엔드
  
 상태 비저장 서비스는 인터넷에 노출 되는 경우 부하 분산 장치를 통해 연결할 수 있는 잘 알려진 안정적인 끝점을 사용 해야 합니다. 응용 프로그램의 사용자에 게이 URL을 제공 합니다. 다음 구성이 권장됩니다.
 
-| 형식 | 권장 | 메모 |
+| Type | 권장 | 메모 |
 | ---- | -------------- | ----- |
 | 웹 서버 | Kestrel | Windows 및 Linux에서 지원 되므로 kestrel은 기본 웹 서버입니다. |
 | 포트 구성 | static | 잘 알려진 정적 포트는 ServiceManifest.xml의 `Endpoints` 구성에 구성해야 합니다(예: HTTP의 경우 80, HTTPS의 경우 443). |
@@ -495,7 +496,7 @@ Kestrel은 외부 인터넷 연결 HTTP 끝점을 노출 하는 프런트 엔드
 ### <a name="internal-only-stateless-aspnet-core-service"></a>내부 전용 ASP.NET Core 상태 비저장 서비스
 클러스터 내에서만 호출되는 상태 비저장 서비스는 고유한 URL과 동적으로 할당된 포트를 사용하여 여러 서비스 간의 공동 작업을 확인해야 합니다. 다음 구성이 권장됩니다.
 
-| 형식 | 권장 | 메모 |
+| Type | 권장 | 메모 |
 | ---- | -------------- | ----- |
 | 웹 서버 | Kestrel | 내부 상태 비저장 서비스에 HTTP.sys를 사용할 수 있지만, Kestrel은 여러 서비스 인스턴스에서 호스트를 공유할 수 있도록 하는 최상의 서버입니다.  |
 | 포트 구성 | 동적으로 할당 | 상태 저장 서비스의 여러 복제본이 호스트 프로세스 또는 호스트 운영 체제를 공유할 수 있으므로 고유한 포트가 필요 합니다. |
@@ -505,7 +506,7 @@ Kestrel은 외부 인터넷 연결 HTTP 끝점을 노출 하는 프런트 엔드
 ### <a name="internal-only-stateful-aspnet-core-service"></a>내부 전용 ASP.NET Core 상태 저장 서비스
 클러스터 내에서만 호출되는 상태 저장 서비스는 동적으로 할당된 포트를 사용하여 여러 서비스 간의 공동 작업을 확인해야 합니다. 다음 구성이 권장됩니다.
 
-| 형식 | 권장 | 메모 |
+| Type | 권장 | 메모 |
 | ---- | -------------- | ----- |
 | 웹 서버 | Kestrel | 는 `HttpSysCommunicationListener` 복제본이 호스트 프로세스를 공유 하는 상태 저장 서비스에서 사용 하도록 설계 되지 않았습니다. |
 | 포트 구성 | 동적으로 할당 | 상태 저장 서비스의 여러 복제본이 호스트 프로세스 또는 호스트 운영 체제를 공유할 수 있으므로 고유한 포트가 필요 합니다. |

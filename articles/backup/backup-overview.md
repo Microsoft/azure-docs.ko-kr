@@ -4,12 +4,12 @@ description: Azure Backup 서비스에 대해 간략히 설명하고, BCDR(비�
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 70fcbc432c3a3584047fe5ac39f217981a73df71
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: da4f9b4814e93a964105a7ed3ea4addaecd43864
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513526"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88611231"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Azure Backup 서비스란?
 
@@ -19,7 +19,7 @@ Azure Backup 서비스는 데이터를 백업하고 Microsoft Azure 클라우드
 
 ## <a name="what-can-i-back-up"></a>어떤 것을 백업할 수 있나요?
 
-- **온-프레미스** - [MARS(Microsoft Azure Recovery Services) 에이전트](backup-support-matrix-mars-agent.md)를 사용하여 파일, 폴더 및 시스템 상태를 백업합니다. 또는 DPM 또는 Azure Backup Server(MABS) 에이전트를 사용하여 온-프레미스 VM([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) 및 [VMWare](backup-azure-backup-server-vmware.md))과 기타 [온-프레미스 워크로드](backup-mabs-protection-matrix.md)를 보호합니다.
+- **온-프레미스** - [MARS(Microsoft Azure Recovery Services) 에이전트](backup-support-matrix-mars-agent.md)를 사용하여 파일, 폴더 및 시스템 상태를 백업합니다. 또는 DPM이나 Azure Backup Server(MABS) 에이전트를 사용하여 온-프레미스 VM([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) 및 [VMware](backup-azure-backup-server-vmware.md))과 기타 [온-프레미스 워크로드](backup-mabs-protection-matrix.md)를 보호합니다.
 - **Azure VM** - [전체 Windows/Linux VM](backup-azure-vms-introduction.md)을 백업하거나(백업 확장 사용), [MARS 에이전트](backup-azure-manage-mars.md)를 사용하여 파일, 폴더 및 시스템 상태를 백업합니다.
 - **Azure Files 공유** - [스토리지 계정에 Azure File 공유 백업](backup-afs.md)
 - **Azure VM의 SQL Server** -  [Azure VM에서 실행되는 SQL Server 데이터베이스를 백업합니다](backup-azure-sql-database.md).

@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: e150143e726c75d96372b11fb3d451f0dc9956bc
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 784ee418c3713cce53d7e99e30fd445e75d144da
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422484"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798213"
 ---
 # <a name="manage-your-connected-devices-from-the-devices-page"></a>디바이스 페이지에서 연결된 디바이스 관리
 
@@ -27,7 +27,7 @@ ms.locfileid: "87422484"
 - 더 이상 소유하지 않거나, 분실하거나, 도난당한 디바이스를 사용하지 않도록 설정합니다.
 
 >[!Important]
->이 문서는 회사 또는 학교 계정에 연결된 디바이스 정보를 업데이트하려는 사용자를 위해 작성되었습니다. 직원용 및 기타 용도의 디바이스 관리에 대한 정보를 찾는 관리자는 [디바이스 ID 설명서](https://docs.microsoft.com/azure/active-directory/devices/index)를 참조하세요.
+>이 문서는 회사 또는 학교 계정에 연결된 디바이스 정보를 업데이트하려는 사용자를 위해 작성되었습니다. 직원용 및 기타 용도의 디바이스 관리에 대한 정보를 찾는 관리자는 [디바이스 ID 설명서](../devices/index.yml)를 참조하세요.
 
 ## <a name="view-your-connected-devices"></a>연결된 디바이스 보기
 
@@ -68,7 +68,7 @@ ms.locfileid: "87422484"
 
 연결된 디바이스를 확인한 후 수행할 수 있는 작업은 다음과 같습니다.
 
-- [보안 정보](user-help-security-info-overview.md)를 보거나 관리하도록 선택
+- [보안 정보](./security-info-setup-signin.md)를 보거나 관리하도록 선택
 
 - [조직](my-account-portal-organizations-page.md) 보기 및 관리
 

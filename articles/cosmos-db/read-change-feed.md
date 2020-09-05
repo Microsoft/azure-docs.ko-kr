@@ -7,18 +7,18 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/20/2020
 ms.reviewer: sngun
-ms.openlocfilehash: d7408f3b3e955d397ba4a54d07323f80dd72c3d3
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 23f99dc5c648948ce07f1b40106667d24906328a
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697339"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236797"
 ---
 # <a name="reading-azure-cosmos-db-change-feed"></a>Cosmos DB 변경 피드 읽기
 
-푸시 모델 또는 풀 모델 중 하나를 사용하여 Azure Cosmos DB 변경 피드로 작업할 수 있습니다. 푸시 모델을 사용하면 클라이언트가 서버의 작업을 요청하며, 변경 내용을 처리하기 위한 비즈니스 논리가 있습니다. 그러나 변경 내용을 확인하고 마지막으로 처리된 변경 내용에 대한 상태를 저장하는 것에 대한 복잡성은 서버에서 처리됩니다.
+푸시 모델 또는 풀 모델 중 하나를 사용하여 Azure Cosmos DB 변경 피드로 작업할 수 있습니다. 밀어넣기 모델을 사용 하면 서버 (변경 피드)가이 작업을 처리 하는 비즈니스 논리가 있는 클라이언트에 작업을 푸시합니다. 그러나 작업을 확인 하 고 마지막으로 처리 된 작업의 상태를 저장 하는 것은 서버에서 처리 됩니다.
 
-풀 모델을 사용하는 경우 서버가 작업을 요청하고, 종종 중앙 작업 큐에서 작업을 요청합니다. 이 경우 클라이언트는 변경 내용을 처리하는 비즈니스 논리가 있을 뿐만 아니라 마지막으로 처리된 변경 내용에 대한 상태를 저장하고, 여러 클라이언트에서 동시에 변경 사항을 처리하는 부하 분산을 처리하며, 오류를 처리할 수 있습니다.
+끌어오기 모델을 사용 하는 경우 클라이언트는 서버에서 작업을 가져와야 합니다. 이 경우 클라이언트는 작업 처리를 위한 비즈니스 논리 뿐만 아니라 마지막으로 처리 된 작업의 상태를 저장 하 고, 여러 클라이언트에서 동시에 작업을 처리 하는 부하 분산을 처리 하 고, 오류를 처리 합니다.
 
 Azure Cosmos DB 변경 피드를 읽을 때 일반적으로 다음 사항에 대해 걱정할 필요가 없으므로 푸시 모델을 사용하는 것이 좋습니다.
 

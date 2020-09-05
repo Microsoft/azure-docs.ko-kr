@@ -8,21 +8,21 @@ ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 699715e1188616c2d6bda47016ec1ea7b05cef83
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3e8a94b6b9b71d2d71b634edd70ea4150652b143
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83125595"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932800"
 ---
 # <a name="configure-ip-firewall-for-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 IP 방화벽 구성
 
 Azure Cognitive Search는 인바운드 방화벽 지원에 대 한 IP 규칙을 지원 합니다. 이 모델은 검색 서비스에 대 한 추가 보안 계층을 제공 합니다 .이는 Azure 가상 네트워크 보안 그룹에서 찾을 수 있는 IP 규칙과 비슷합니다. 이러한 IP 규칙을 사용 하 여 승인 된 컴퓨터 및/또는 클라우드 서비스 에서만 액세스할 수 있도록 검색 서비스를 구성할 수 있습니다. 이러한 승인 된 컴퓨터 및 서비스 집합에서 검색 서비스에 저장 된 데이터에 액세스 하려면 여전히 호출자가 유효한 권한 부여 토큰을 제공 해야 합니다.
 
 > [!Important]
-> Azure Portal 또는 [관리 REST API 버전 2020-03-13](https://docs.microsoft.com/rest/api/searchmanagement/)을 사용 하 여 Azure Cognitive Search 서비스의 IP 규칙을 구성할 수 있습니다.
+> Azure Portal 또는 [관리 REST API 버전 2020-03-13](/rest/api/searchmanagement/)을 사용 하 여 Azure Cognitive Search 서비스의 IP 규칙을 구성할 수 있습니다.
 
-## <a name="configure-an-ip-firewall-using-the-azure-portal"></a><a id="configure-ip-policy"></a>Azure Portal를 사용 하 여 IP 방화벽 구성
+## <a name="configure-an-ip-firewall-using-the-azure-portal"></a><a id="configure-ip-policy"></a> Azure Portal를 사용 하 여 IP 방화벽 구성
 
 Azure Portal에서 IP 액세스 제어 정책을 설정 하려면 Azure Cognitive Search 서비스 페이지로 이동 하 여 탐색 메뉴에서 **네트워킹** 을 선택 합니다. 끝점 네트워킹 연결은 **공용**이어야 합니다. 연결이 **개인**으로 설정 된 경우 개인 끝점을 통해서만 검색 서비스에 액세스할 수 있습니다.
 
@@ -39,7 +39,7 @@ Azure Portal은 CIDR 형식으로 IP 주소와 IP 주소 범위를 지정 하는
 
 포털에서 클라이언트 IP 주소를 자동으로 검색 합니다. 컴퓨터 또는 네트워크 게이트웨이의 클라이언트 IP 주소일 수 있습니다. 프로덕션으로 작업을 수행 하기 전에이 IP 주소를 제거 해야 합니다.
 
-현재 IP를 ip 목록에 추가 하려면 **클라이언트 ip 주소 추가**를 선택 합니다. 그런 다음, **저장**을 선택합니다.
+현재 IP를 ip 목록에 추가 하려면 **클라이언트 ip 주소 추가**를 선택 합니다. 그런 다음 **저장**을 선택합니다.
 
 ![현재 IP를 허용 하도록 IP 방화벽 설정을 구성 하는 방법을 보여 주는 스크린샷](./media/service-configure-firewall/enable-current-ip.png)
 

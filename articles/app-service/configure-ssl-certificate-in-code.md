@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: d76bac60bae11f0843d81de523030154af62a373
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b62352d09419de11135f4d7a2740e0e74b80255d
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80811702"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962131"
 ---
 # <a name="use-a-tlsssl-certificate-in-your-code-in-azure-app-service"></a>Azure App Service의 코드에서 TLS/SSL 인증서 사용
 
@@ -20,16 +20,16 @@ ms.locfileid: "80811702"
 
 TLS/SSL 인증서를 App Service 관리 하도록 허용 하는 경우 인증서와 응용 프로그램 코드를 별도로 유지 관리 하 고 중요 한 데이터를 보호할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 방법 가이드를 수행하려면 다음이 필요합니다.
 
-- [App Service 앱 만들기](/azure/app-service/)
+- [App Service 앱 만들기](./index.yml)
 - [앱에 인증서 추가](configure-ssl-certificate.md)
 
 ## <a name="find-the-thumbprint"></a>지문 찾기
 
-<a href="https://portal.azure.com" target="_blank">Azure Portal</a>의 왼쪽 메뉴에서 **App Services**를 선택  >  **\<app-name>** 합니다.
+<a href="https://portal.azure.com" target="_blank">Azure Portal</a>의 왼쪽 메뉴에서 **App Services** >  **\<app-name>** 를 선택합니다.
 
 앱의 왼쪽 탐색 영역에서 **TLS/SSL 설정**을 선택 하 고 **개인 키 인증서 (.Pfx)** 또는 **공개 키 인증서 (.cer)** 를 선택 합니다.
 
@@ -164,4 +164,4 @@ Node.js, PHP, Python, Java 또는 Ruby의 파일에서 TLS/SSL 인증서를 로�
 * [Azure App Service에서 TLS/SSL 바인딩으로 사용자 지정 DNS 이름 보호](configure-ssl-bindings.md)
 * [HTTPS 적용](configure-ssl-bindings.md#enforce-https)
 * [TLS 1.1/1.2 적용](configure-ssl-bindings.md#enforce-tls-versions)
-* [FAQ: App Service Certificate](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/)
+* [FAQ: App Service Certificate](./faq-configuration-and-management.md)

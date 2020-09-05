@@ -2,25 +2,21 @@
 title: '자습서: Rollbar와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Rollbar 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 57537e54-9388-4272-a610-805ce45a451f
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
-ms.openlocfilehash: d76f4e9d61d8fd210fe9332084f9f44d19e54eed
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 253621fe257a0b1a1b3bdaa2578fd7df10b03f73
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67092687"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88528593"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rollbar"></a>자습서: Azure Active Directory와 Rollbar 통합
 

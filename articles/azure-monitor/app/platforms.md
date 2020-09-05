@@ -4,12 +4,12 @@ description: Application Insights 사용할 수 있는 언어, 플랫폼 및 통
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.reviewer: olegan
-ms.openlocfilehash: 35dc6c5146edd13309a42702d1bc247333ff0fd7
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: d3bb1473d94db04d1dedf2b09e19b83197cc6e0e
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87322451"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225107"
 ---
 # <a name="supported-languages"></a>지원되는 언어
 
@@ -37,6 +37,8 @@ ms.locfileid: "87322451"
 * [Python](./opencensus-python.md)
 * [유니버설 Windows 앱](../learn/mobile-center-quickstart.md)(App Center)
 * [Windows 데스크톱 애플리케이션, 서비스 및 작업자 역할](./windows-desktop.md)
+* [React](./javascript-react-plugin.md)
+* [React Native](./javascript-react-native-plugin.md)
 
 ## <a name="logging-frameworks"></a>로깅 프레임워크
 * [ILogger](./ilogger.md)

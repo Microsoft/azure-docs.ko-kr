@@ -6,13 +6,13 @@ ms.author: sudbalas
 ms.date: 06/08/2020
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
-ms.openlocfilehash: aaaeec3a20088cad447ab0e8034d12ef3268fae3
-ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
+ms.topic: how-to
+ms.openlocfilehash: 6336a0d4d8aa9c781befed0470d9a190af5aa9eb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84793232"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930862"
 ---
 # <a name="authenticate-to-azure-key-vault"></a>Azure Key Vault에 인증
 
@@ -112,14 +112,9 @@ Azure Key Vault는 애플리케이션 비밀의 스토리지를 중앙 집중화
 1. 인증서 만들기
 
     * 옵션 1: [OpenSSL](https://www.openssl.org/)을 사용하여 인증서를 만듭니다(테스트 목적으로만 사용, 프로덕션에서 자체 서명된 인증서 사용 안 함).
-
-    ```console
-    openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
-    ```
-
     * 옵션 2: 키 자격 증명 모음을 사용하여 인증서 만듭니다. [Azure Key Vault에서 인증서 만들기](https://docs.microsoft.com/azure/key-vault/certificates/certificate-scenarios#creating-your-first-key-vault-certificate)
 
-1. PEM 형식으로 인증서 다운로드
+1. PEM/PFX 형식으로 인증서 다운로드
 1. Azure Portal에 로그인 및 Azure Active Directory로 이동
 1. "앱 등록" 클릭
 1. 1부에서 만든 서비스 주체 선택

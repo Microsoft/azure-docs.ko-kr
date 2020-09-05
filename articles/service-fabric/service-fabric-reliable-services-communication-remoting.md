@@ -5,12 +5,13 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: a3f19d1240c2dcf1e62d5723c40b4f7c8b2154f0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 246b1456c05605c4015c19e1a139e9ad65f6eaba
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86253289"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022159"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Reliable Services로 C#에서 서비스 원격 호출
 
@@ -211,7 +212,7 @@ V1에서 V2로 업그레이드하려면 2단계 업그레이드가 필요합니�
     }
     ```
 
-    c. V1 및 V2 수신기와 V2 클라이언트를 사용하려면 원격 인터페이스에 어셈블리 특성을 추가합니다.
+    다. V1 및 V2 수신기와 V2 클라이언트를 사용하려면 원격 인터페이스에 어셈블리 특성을 추가합니다.
     ```csharp
     [assembly: FabricTransportServiceRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2|RemotingListenerVersion.V1, RemotingClientVersion = RemotingClientVersion.V2)]
 
@@ -338,7 +339,7 @@ V1에서 V2(인터페이스 호환 가능, V2_1이라고 함)로 업그레이드
     }
     ```
 
-    c. V1 및 V2_1 수신기와 V2_1 클라이언트를 사용하기 위해 원격 인터페이스에 어셈블리 특성을 추가합니다.
+    다. V1 및 V2_1 수신기와 V2_1 클라이언트를 사용하기 위해 원격 인터페이스에 어셈블리 특성을 추가합니다.
     ```csharp
    [assembly: FabricTransportServiceRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1 | RemotingListenerVersion.V1, RemotingClientVersion = RemotingClientVersion.V2_1)]
 

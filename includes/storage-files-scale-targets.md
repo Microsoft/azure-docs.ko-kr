@@ -4,12 +4,12 @@ ms.service: storage
 ms.topic: include
 ms.date: 05/06/2019
 ms.author: rogarana
-ms.openlocfilehash: ae431d27af4a1717a32e348ba852f9b2b9fe9331
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 8034a7a520cc50b2e57e0ad26205da2e408296a1
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87451122"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88760593"
 ---
 | 리소스 | 표준 파일 공유 | 프리미엄 파일 공유 |
 |----------|---------------|------------------------------------------|
@@ -17,7 +17,7 @@ ms.locfileid: "87451122"
 | 파일 공유의 최대 크기 | 100TiB*, 5TiB | 100TiB |
 | 파일 공유의 최대 파일 크기 | 1TiB | 4TiB |
 | 파일 공유의 최소 파일 수 | 제한 없음 | 제한 없음 |
-| 공유당 최대 IOPS | 10,000IOPS*, 1,000IOPS | 100,000 IOPS |
+| 공유당 최대 IOPS | 100ms에 10,000 IOPS*, 1,000 IOPS 또는 100개의 요청 | 100,000 IOPS |
 | 파일 공유당 저장된 액세스 정책의 최대 수 | 5 | 5 |
 | 단일 파일 공유에 대한 대상 처리량 | 최대 300MiB/초*, 최대 60MiB/초  | 프리미엄 파일 공유 수신 및 송신 값 참조|
 | 단일 파일 공유에 대한 최대 송신 속도 | 표준 파일 공유 대상 처리량 참조 | 최대 6,204MiB/초 |

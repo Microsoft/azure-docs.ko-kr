@@ -11,12 +11,12 @@ ms.date: 03/24/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: synapse-analytics
-ms.openlocfilehash: 7678fedeb3df3b9d27fba603db8f66b692729506
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9eb1006bdba6c69136c972359bb13420a04f4180
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85211700"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048027"
 ---
 # <a name="monitor-your-azure-synapse-analytics-sql-pool-workload-using-dmvs"></a>Dmv를 사용 하 여 Azure Synapse Analytics SQL 풀 워크 로드 모니터링
 
@@ -102,8 +102,8 @@ DSQL 계획의 시간이 생각보다 오래 걸리는 경우 계획이 여러 D
 
 한 단계에서 추가 세부 정보를 조사하려면 오래 실행되는 쿼리 단계의 *operation_type* 열을 확인하고 **단계 인덱스**를 적어 둡니다.
 
-* OnOperation, RemoteOperation, ReturnOperation 등의 **SQL 작업**에 대해 3a단계를 진행합니다.
-* ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation 등의 **데이터 이동 작업**에 대해 3b단계를 진행합니다.
+* **SQL 작업**: Onoperation, Remoteoperation, ReturnOperation에 대해 3 단계를 진행 합니다.
+* **데이터 이동 작업**에 대해 4 단계를 진행 합니다. ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, 파티션 된 MoveOperation, Moveoperation, copyoperation.
 
 ### <a name="step-3-investigate-sql-on-the-distributed-databases"></a>3 단계: 분산 데이터베이스에서 SQL 조사
 

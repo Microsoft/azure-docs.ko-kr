@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 12/18/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: edb84810b7391242e9ac90b1502c18f9af4e4698
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 0eabe147563ee712e20e57aafc1029daf2a8610a
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433177"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641044"
 ---
 # <a name="common-query-patterns-in-azure-stream-analytics"></a>Azure Stream Analytics의 일반적인 쿼리 패턴
 
@@ -46,7 +46,7 @@ JSON 및 Avro는 둘 다 중첩된 개체(레코드) 또는 배열과 같은 복
 
 **Output ArchiveOutput**:
 
-| Make | Time |
+| 계정을 | Time |
 | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |
@@ -121,14 +121,14 @@ HAVING [Count] >= 3
 
 **입력**:
 
-| Make | Time | 무게 |
+| 계정을 | Time | 무게 |
 | --- | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |"1000" |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |"2000" |
 
 **출력**:
 
-| Make | Time | 무게 |
+| 계정을 | Time | 무게 |
 | --- | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |"1000" |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |"2000" |
@@ -146,7 +146,7 @@ FROM Input
 
 **입력**:
 
-| Make | Time | 무게 |
+| 계정을 | Time | 무게 |
 | --- | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |1000 |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |2000 |
@@ -154,7 +154,7 @@ FROM Input
 
 **출력**:
 
-| Make | Time |
+| 계정을 | Time |
 | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |
@@ -207,14 +207,14 @@ WHERE
 
 **입력**:
 
-| Make | Time |
+| 계정을 | Time |
 | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |
 | Make2 |2015-01-01T00:오전 12:02.0000000Z |
 
 **출력**:
 
-| Make | Time |
+| 계정을 | Time |
 | --- | --- |
 | Make2 |2015-01-01T00:오전 12:02.0000000Z |
 
@@ -293,7 +293,7 @@ FROM
 
 **입력**:
 
-| Make | Time | 무게 |
+| 계정을 | Time | 무게 |
 | --- | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |1000 |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |2000 |
@@ -301,7 +301,7 @@ FROM
 
 **출력**:
 
-| Make | 개수 |
+| 계정을 | 개수 |
 | --- | --- |
 | Make1 | 2 |
 | Make2 | 1 |
@@ -547,7 +547,7 @@ WHERE
 
 **입력**:  
 
-| DeviceId | Time | attribute | 값 |
+| deviceId | Time | attribute | 값 |
 | --- | --- | --- | --- |
 | 1 |2018-07-27T00:00:01.0000000Z |온도 |50 |
 | 1 |2018-07-27T00:00:01.0000000Z |온도 |50 |
@@ -596,7 +596,7 @@ GROUP BY DeviceId,TumblingWindow(minute, 5)
 
 **입력**:
 
-| Make | Time |
+| 계정을 | Time |
 | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |
 | Make2 |2015-01-01T00:오전 12:02.0000000Z |
@@ -633,7 +633,7 @@ FROM
 
 **입력**:
 
-| Make | Time | 무게 |
+| 계정을 | Time | 무게 |
 | --- | --- | --- |
 | Make1 |2015-01-01T00:오전 12:01.0000000Z |"1000" |
 | Make1 |2015-01-01T00:오전 12:02.0000000Z |"2000" |
@@ -863,10 +863,10 @@ From
 
 ```SQL
 SELECT *
-FROM intput TIMESTAMP BY time OVER ATM_id
+FROM input TIMESTAMP BY time OVER ATM_id
 MATCH_RECOGNIZE (
-    PARTITON BY ATM_id
     LIMIT DURATION(minute, 1)
+    PARTITON BY ATM_id
     MEASURES
         First(Warning.ATM_id) AS ATM_id,
         First(Warning.Operation_Id) AS First_Warning_Operation_id,

@@ -5,12 +5,12 @@ author: mscurrell
 ms.topic: how-to
 ms.date: 03/19/2020
 ms.custom: seodec18
-ms.openlocfilehash: 48350a684844ca0e1624826afeca8e0b9ab36f3b
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: e33119213d4ae28347334e60923d5ba222cd3a66
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959996"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816697"
 ---
 # <a name="use-low-priority-vms-with-batch"></a>Batch에서 낮은 우선 순위 VM 사용
 
@@ -23,7 +23,7 @@ Azure Batch는 낮은 우선 순위 VM(가상 머신)을 사용하여 Batch 워�
 우선 순위가 낮은 VM은 전용 VM에 비해 상당히 저렴한 가격으로 제공됩니다. 가격 책정 세부 정보에 대해서는 [Batch 가격 책정](https://azure.microsoft.com/pricing/details/batch/)을 참조하세요.
 
 > [!NOTE]
-> 이제 [스폿 VM](https://azure.microsoft.com/pricing/spot/)은 [단일 인스턴스 VM](../virtual-machines/linux/spot-vms.md) 및 [VM 확장 집합](../virtual-machine-scale-sets/use-spot.md)에 사용 가능합니다. 스폿 VM은 우선 순위가 낮은 VM이 개선된 것으로, 스폿 VM을 할당하는 경우 가격 책정이 다를 수 있고 선택적인 최대 가격을 설정할 수 있다는 점에서 다릅니다.
+> 이제 [스폿 VM](https://azure.microsoft.com/pricing/spot/)은 [단일 인스턴스 VM](../virtual-machines/spot-vms.md) 및 [VM 확장 집합](../virtual-machine-scale-sets/use-spot.md)에 사용 가능합니다. 스폿 VM은 우선 순위가 낮은 VM이 개선된 것으로, 스폿 VM을 할당하는 경우 가격 책정이 다를 수 있고 선택적인 최대 가격을 설정할 수 있다는 점에서 다릅니다.
 >
 > Azure Batch 풀은 새 버전의 [Batch API 및 도구](./batch-apis-tools.md)를 사용하여 출시 후 몇 개월 이내에 스폿 VM을 지원합니다. 스폿 VM 지원이 제공되면 우선 순위가 낮은 VM은 더 이상 사용되지 않습니다. 스폿 VM으로 마이그레이션하기에 충분한 시간을 허용하기 위해 최소 12개월 동안 현재 API 및 도구 버전을 사용하여 계속 지원합니다. 
 >

@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: mlearned
-ms.openlocfilehash: 69e60c3e4ac91a5d0ca9a0245dc61f090c625c60
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 35424c0a9e566a9dfa780c524e23945348335040
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86499868"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225991"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Service)에서 Kubernetes 웹 대시보드에 액세스
 
@@ -20,7 +20,7 @@ Kubernetes에는 기본 관리 작업에 사용할 수 있는 웹 대시보드�
 Kubernetes 대시보드에 대한 자세한 내용은 [Kubernetes 웹 UI 대시보드][kubernetes-dashboard]를 참조하세요. AKS는 버전 2.0 이상의 오픈 소스 대시보드를 사용 합니다.
 
 > [!WARNING]
-> **AKS 대시보드 추가 기능이 사용 중단 되도록 설정 되었습니다.** 
+> **AKS 대시보드 추가 기능이 사용 중단 되도록 설정 되었습니다. 대신 [Azure Portal (미리 보기)에서 Kubernetes 리소스 뷰][kubernetes-portal] 를 사용 합니다.** 
 > * Kubernetes 대시보드는 1.18 미만의 Kubernetes 버전을 실행 하는 클러스터에 대해 기본적으로 사용 하도록 설정 됩니다.
 > * Kubernetes 1.18 이상에서 만든 모든 새 클러스터에 대해 기본적으로 대시보드 추가 기능이 사용 하지 않도록 설정 됩니다. 
  > * Kubernetes 1.19부터 미리 보기에서 AKS은 더 이상 관리 되는 kube 추가 기능을 설치 하는 것을 지원 하지 않습니다. 
@@ -54,8 +54,8 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 > [!NOTE]
 > 에서 대시보드가 표시 되지 않으면 `http://127.0.0.1:8001` 다음 주소로 수동으로 라우팅할 수 있습니다. 1.16 이상의 클러스터에는 https를 사용 하 고 별도의 끝점이 필요 합니다.
-> * K8s 1.16 이상:`http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
-> * K8s 1.15 이상:`http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy`
+> * K8s 1.16 이상: `http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy`
+> * K8s 1.15 이상: `http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy`
 
 <!--
 ![The login page of the Kubernetes web dashboard](./media/kubernetes-dashboard/dashboard-login.png)
@@ -117,7 +117,7 @@ After you choose a method to sign in, the Kubernetes dashboard is displayed. If 
 
 Azure AD를 사용 하도록 설정 된 azure ad 및 비 Azure AD 사용 클러스터의 경우 kubeconfig를 전달할 수 있습니다. 액세스 토큰이 유효한 지 확인 합니다. 토큰이 만료 된 경우 kubectl를 통해 토큰을 새로 고칠 수 있습니다.
 
-1. Admin kubeconfig을로 설정 합니다.`az aks get-credentials -a --resource-group <RG_NAME> --name <CLUSTER_NAME>`
+1. Admin kubeconfig을로 설정 합니다. `az aks get-credentials -a --resource-group <RG_NAME> --name <CLUSTER_NAME>`
 1. 선택 `Kubeconfig` 하 고 클릭 `Choose kubeconfig file` 하 여 파일 선택기 열기
 1. Kubeconfig 파일 선택 (기본값은 $HOME/.kube/config)
 1. `Sign In`을 클릭합니다.
@@ -209,3 +209,4 @@ Kubernetes 대시보드에 대한 자세한 내용은 [Kubernetes 웹 UI 대시�
 [az-aks-browse]: /cli/azure/aks#az-aks-browse
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [install-azure-cli]: /cli/azure/install-azure-cli
+[kubernetes-portal]: ./kubernetes-portal.md

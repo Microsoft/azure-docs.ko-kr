@@ -3,18 +3,18 @@ title: REST API를 사용 하 여 Azure 파일 공유 백업
 description: REST API를 사용 하 여 Recovery Services 자격 증명 모음에서 Azure 파일 공유를 백업 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 02/16/2020
-ms.openlocfilehash: f48ebbd20d6775fe61c3e3dbb07e8f71af41635a
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 8d2d8ed88da133986540a293185c8e37000ab87b
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036745"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88824868"
 ---
 # <a name="backup-azure-file-share-using-azure-backup-via-rest-api"></a>Rest API를 통해 Azure Backup를 사용 하 여 Azure 파일 공유 백업
 
 이 문서에서는 REST API를 통해 Azure Backup를 사용 하 여 Azure 파일 공유를 백업 하는 방법을 설명 합니다.
 
-이 문서에서는 파일 공유에 대 한 백업 구성에 대 한 복구 서비스 자격 증명 모음 및 정책을 이미 만들었다고 가정 합니다. 그렇지 않은 경우 새 자격 증명 모음 및 정책을 만들기 위한 [자격 증명 모음 만들기](./backup-azure-arm-userestapi-createorupdatevault.md) 및 [정책 만들기](./backup-azure-arm-userestapi-createorupdatepolicy.md) REST API 자습서를 참조 하세요.
+이 문서에서는 파일 공유에 대 한 백업을 구성 하기 위한 Recovery Services 자격 증명 모음 및 정책을 이미 만들었다고 가정 합니다. 그렇지 않은 경우 새 자격 증명 모음 및 정책을 만들기 위한 [자격 증명 모음 만들기](./backup-azure-arm-userestapi-createorupdatevault.md) 및 [정책 만들기](./backup-azure-arm-userestapi-createorupdatepolicy.md) REST API 자습서를 참조 하세요.
 
 이 문서에서는 다음 리소스를 사용 합니다.
 
@@ -54,13 +54,13 @@ POST URI에는 `{subscriptionId}` , `{vaultName}` , `{vaultresourceGroupName}` �
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/refreshContainers?api-version=2016-12-01&$filter=backupManagementType eq 'AzureStorage'
 ```
 
-#### <a name="responses"></a>응답
+#### <a name="responses-to-the-refresh-operation"></a>새로 고침 작업에 대 한 응답
 
 '새로 고침' 작업은 [비동기 작업](../azure-resource-manager/management/async-operations.md)입니다. 즉, 이 작업은 별도로 추적해야 하는 다른 작업을 만듭니다.
 
 이는 다른 작업을 만들 때 202 (수락 됨)와 해당 작업이 완료 될 때 200 (OK)의 두 응답을 반환 합니다.
 
-##### <a name="example-responses"></a>예제 응답
+##### <a name="example-responses-to-the-refresh-operation"></a>새로 고침 작업에 대 한 예제 응답
 
 *POST* 요청을 제출하면 202(수락됨) 응답이 반환됩니다.
 
@@ -156,7 +156,7 @@ protectableContainers/StorageContainer;Storage;AzureFiles;testvault2",
 }
 ```
 
-친숙 한 이름으로 응답 본문에서 *testvault2* 저장소 계정을 찾을 수 있으므로 위에서 수행한 새로 고침 작업이 성공 했습니다. Recovery services 자격 증명 모음은 이제 동일한 구독에서 보호 되지 않는 파일 공유의 저장소 계정을 성공적으로 검색할 수 있습니다.
+친숙 한 이름으로 응답 본문에서 *testvault2* 저장소 계정을 찾을 수 있으므로 위에서 수행한 새로 고침 작업이 성공 했습니다. 이제 Recovery Services 자격 증명 모음이 동일한 구독에서 보호 되지 않는 파일 공유의 저장소 계정을 성공적으로 검색할 수 있습니다.
 
 ### <a name="register-storage-account-with-recovery-services-vault"></a>Recovery Services 자격 증명 모음에 저장소 계정 등록
 
@@ -175,7 +175,7 @@ URI에 대 한 변수를 다음과 같이 설정 합니다.
    이 예제에서는 *StorageContainer입니다. 저장할 AzureFiles; testvault2*
 
 >[!NOTE]
-> 항상 응답의 name 특성을 사용 하 여이 요청에 입력 합니다. 하드 코드 하거나 컨테이너 이름 형식을 만들지 마십시오. 이를 만들거나 하드 코딩 하는 경우 나중에 컨테이너 이름 형식이 변경 되 면 API 호출이 실패 합니다.
+> 항상 응답의 name 특성을 사용 하 여이 요청에 입력 합니다. 하드 코드 하거나 컨테이너 이름 형식을 만들지 마세요. 이를 만들거나 하드 코딩 하는 경우 나중에 컨테이너 이름 형식이 변경 되 면 API 호출이 실패 합니다.
 
 <br>
 
@@ -421,7 +421,7 @@ x-ms-routing-request-id  : CENTRALUSEUAP:20200127T105412Z:b55527fa-f473-4f09-b16
 Date : Mon, 27 Jan 2020 10:54:12 GMT
 ```
 
-그런 다음 *GET* 명령을 사용 하 여 location Header 또는 AsyncOperation 헤더를 사용 하 여 결과 작업을 추적 합니다.
+그런 다음  *GET* 명령을 사용 하 여 location Header 또는 AsyncOperation 헤더를 사용 하 여 결과 작업을 추적 합니다.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/c3a52d1d-0853-4211-8141-477c65740264?api-version=2016-12-01
@@ -467,7 +467,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 주문형 백업을 트리거하려면 요청 본문의 구성 요소는 다음과 같습니다.
 
-| 속성       | Type                       | 설명                       |
+| Name       | 유형                       | 설명                       |
 | ---------- | -------------------------- | --------------------------------- |
 | 속성 | AzurefilesharebackupReques | BackupRequestResource 속성 |
 
@@ -487,13 +487,13 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 }
 ```
 
-### <a name="responses"></a>응답
+### <a name="responses-to-the-on-demand-backup-operation"></a>주문형 백업 작업에 대 한 응답
 
 주문형 백업의 트리거는 [비동기 작업](../azure-resource-manager/management/async-operations.md)입니다. 즉, 이 작업은 별도로 추적해야 하는 다른 작업을 만듭니다.
 
 이 메서드는 다른 작업이 생성 될 때 202 (수락 됨) 및 해당 작업이 완료 될 때 200 (OK)의 두 응답을 반환 합니다.
 
-### <a name="example-responses"></a>예제 응답
+### <a name="example-responses-to-the-on-demand-backup-operation"></a>주문형 백업 작업에 대 한 예제 응답
 
 주문형 백업에 대한 *POST* 요청을 제출하면 초기 응답은 위치 헤더 또는 Azure-async-header를 사용한 202(수락됨)입니다.
 
@@ -516,7 +516,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 'Content-Length': '0'
 ```
 
-그런 다음 *GET* 명령을 사용 하 여 location Header 또는 AsyncOperation 헤더를 사용 하 여 결과 작업을 추적 합니다.
+그런 다음  *GET* 명령을 사용 하 여 location Header 또는 AsyncOperation 헤더를 사용 하 여 결과 작업을 추적 합니다.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupOperations/dc62d524-427a-4093-968d-e951c0a0726e?api-version=2016-12-01

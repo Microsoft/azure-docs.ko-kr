@@ -1,17 +1,17 @@
 ---
 title: '자습서: Azure FXT Edge Filer 클러스터에 노드 추가'
-description: Azure FXT Edge Filer 스토리지 캐시에 노드를 추가하는 방법
+description: Azure FXT Edge 필터 스토리지 캐시에 클러스터 노드를 추가하고 HA(고가용성) 기능을 사용하도록 설정하는 방법에 대해 알아봅니다.
 author: ekpgh
 ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 6251fe8f88b7db25e3c09898540e07754d72fb0d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5b62927930212fc7e59fc4329a29ceecbe2815e5
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75551950"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185335"
 ---
 # <a name="tutorial-add-cluster-nodes-to-an-azure-fxt-edge-filer-cluster"></a>자습서: Azure FXT Edge Filer 클러스터에 클러스터 노드 추가
 

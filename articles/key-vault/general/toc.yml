@@ -39,9 +39,6 @@
   items:
     - name: Key Vault 코드 샘플
       href: 'https://docs.microsoft.com/samples/browse/?expanded=azure&products=azure-key-vault'
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ../policy-samples.md?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
 - name: 개념
   items:
     - name: 기본 개념
@@ -62,6 +59,9 @@
           href: security-baseline.md
         - name: Azure Key Vault에 대한 보안 추천 사항
           href: security-recommendations.md
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ../security-controls-policy.md?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
     - name: 알림(미리 보기)
       items:
         - name: Azure Event Grid를 사용하여 모니터링(미리 보기)
@@ -86,10 +86,16 @@
       items:
         - name: Key Vault에 인증
           href: authentication.md
-        - name: App Service 관리 ID 사용
-          href: managed-identity.md
-        - name: 액세스 제어 정책 사용
-          href: group-permissions-for-apps.md
+        - name: 액세스 정책 할당
+          items:
+            - name: CLI
+              href: assign-access-policy-cli.md
+            - name: PowerShell
+              href: assign-access-policy-powershell.md
+            - name: 포털
+              href: assign-access-policy-portal.md
+        - name: '키, 비밀 및 인증서에 대한 액세스를 관리하기 위해 Azure RBAC 사용(미리 보기)'
+          href: rbac-guide.md
         - name: 액세스 문제 해결
           href: troubleshooting-access-issues.md
     - name: 개발
@@ -138,6 +144,8 @@
           href: move-region.md
 - name: 참조
   items:
+    - name: 클라이언트 라이브러리
+      href: client-libraries.md
     - name: REST API 오류 코드 - Azure Key Vault
       href: rest-error-codes.md
     - name: 공통 매개 변수 및 헤더
@@ -156,11 +164,14 @@
       href: 'https://docs.microsoft.com/javascript/api/overview/azure/key-vault-index?view=azure-node-latest'
     - name: Python
       href: /python/api/overview/azure/keyvault/management?view=azure-python
-    - name: REST
+    - name: REST (영문)
       href: /rest/api/keyvault
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.keyvault/allversions
       displayName: ARM
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ../policy-reference.md?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

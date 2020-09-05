@@ -2,25 +2,21 @@
 title: '자습서: Jive와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Jive 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9fc5659a-c116-4a1b-a601-333325a26b46
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87488c05aa5f7503529d2bf24c0af6a12fa92bc8
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 432ca72a667caa9c2a78b08396884d957b4c650b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85848604"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547106"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jive"></a>자습서: Jive와 Azure Active Directory SSO(Single Sign-On) 통합
 

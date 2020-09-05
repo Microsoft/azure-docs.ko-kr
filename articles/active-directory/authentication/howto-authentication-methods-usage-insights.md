@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 053b052abf6f23c385dc7447639aa40b6c2c58a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f75c08f0a390e798435b70bbe2409ec4a9732214
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81680198"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717169"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>인증 방법 사용 & insights (미리 보기)
 
@@ -98,6 +98,6 @@ ms.locfileid: "81680198"
 
 ## <a name="next-steps"></a>다음 단계
 
-- [인증 방법 사용 보고서 API 사용](https://docs.microsoft.com/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
+- [인증 방법 사용 보고서 API 사용](/graph/api/resources/authenticationmethods-usage-insights-overview?view=graph-rest-beta)
 - [조직에 대 한 인증 방법 선택](concept-authentication-methods.md)
 - [결합 된 등록 환경](concept-registration-mfa-sspr-combined.md)

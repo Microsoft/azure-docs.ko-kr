@@ -2,17 +2,18 @@
 title: Azure Reservations 관리
 description: Azure Reservations를 관리하는 방법을 알아봅니다. 예약 범위를 변경하고, 예약을 분할하고, 예약 사용을 최적화하는 단계를 알아봅니다.
 ms.service: cost-management-billing
+ms.subservice: reservations
 author: bandersmsft
 ms.reviewer: yashesvi
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: f3e4a772382606178d6cd5b0dcb92b0d1bc28695
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: f67cbb70d7064b894b9042bba42f48e4fb6a6b5e
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461819"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684782"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Azure 리소스에 대한 예약 관리
 

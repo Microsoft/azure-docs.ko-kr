@@ -9,12 +9,12 @@ ms.service: iot-pnp
 services: iot-pnp
 manager: eliotgra
 ms.custom: references_regions
-ms.openlocfilehash: 7f889d6730012a11ebf82a78583ef420b7621075
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 32a873af3d287c3bd1e83de6db8e17ebc1d2958b
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337656"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855621"
 ---
 # <a name="what-is-iot-plug-and-play-preview"></a>IoT 플러그 앤 플레이 미리 보기란?
 
@@ -61,6 +61,10 @@ IoT 플러그 앤 플레이 디바이스를 IoT 허브에 연결하면 [Azure Io
 
 > [!Important]
 > IoT 플러그 앤 플레이 디바이스는 WebSocket을 통해 MQTT 또는 MQTT를 사용해야 합니다. AMQP 또는 HTTP와 같은 다른 프로토콜은 IoT 플러그 앤 플레이 디바이스를 구현하는 데 유효하지 않습니다.
+
+## <a name="device-certification"></a>디바이스 인증
+
+[IoT 플러그 앤 플레이 디바이스 인증 프로그램](howto-certify-device.md)은 디바이스가 IoT 플러그 앤 플레이 인증 요구 사항을 충족하는지 확인합니다. 인증된 디바이스를 공용 [Azure IoT 디바이스 카탈로그 인증](https://aka.ms/devicecatalog)에 추가할 수 있습니다.
 
 ## <a name="regional-availability"></a>국가별 가용성
 

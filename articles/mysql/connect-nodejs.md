@@ -1,5 +1,5 @@
 ---
-title: Node.js를 사용하여 연결 - Azure Database for MySQL
+title: '빠른 시작: Node.js를 사용하여 연결 - Azure Database for MySQL'
 description: 이 빠른 시작에서는 MySQL용 Azure Database에서 데이터를 연결하고 쿼리하는 데 사용할 수 있는 몇 가지 Node.js 코드 샘플을 제공합니다.
 author: ajlam
 ms.author: andrela
@@ -8,12 +8,12 @@ ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-t
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 5/26/2020
-ms.openlocfilehash: 9d3e2d744c4800c06503483c6e7270ad1ca60e2c
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 1f8f4dee2ed1e6dc5cdf6985c1149db0dcaed7c2
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423187"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185930"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-mysql"></a>빠른 시작: Node.js를 사용하여 MySQL용 Azure Database에서 데이터 연결 및 쿼리
 
@@ -33,7 +33,7 @@ ms.locfileid: "87423187"
 
 사용하는 플랫폼에 따라 적절한 섹션의 지침을 수행하여 [Node.js](https://nodejs.org)를 설치합니다. npm을 사용하여 프로젝트 폴더에 [mysql](https://www.npmjs.com/package/mysql) 패키지와 해당 종속 항목을 설치합니다.
 
-### <a name="windows"></a>**Windows**
+### <a name="windows"></a>Windows
 
 1. [Node.js 다운로드 페이지](https://nodejs.org/en/download/)를 방문하여 원하는 Windows 설치 관리자 옵션을 선택합니다.
 2. 로컬 프로젝트 폴더를 만듭니다(예: `nodejsmysql`). 
@@ -48,7 +48,7 @@ ms.locfileid: "87423187"
 
 5. `npm list` 출력 텍스트를 확인하여 설치를 확인합니다. 버전 번호는 새 패치가 출시될 때마다 달라질 수 있습니다.
 
-### <a name="linux-ubuntu"></a>**Linux(Ubuntu)**
+### <a name="linux-ubuntu"></a>Linux(Ubuntu)
 
 1. 다음 명령을 실행하여 **Node.js** 및 **npm**(Node.js용 패키지 관리자)을 설치합니다.
 
@@ -66,7 +66,7 @@ ms.locfileid: "87423187"
    ```
 3. npm list 출력 텍스트를 확인하여 설치를 확인합니다. 버전 번호는 새 패치가 출시될 때마다 달라질 수 있습니다.
 
-### <a name="mac-os"></a>**Mac OS**
+### <a name="mac-os"></a>Mac OS
 
 1. **Node.js** 및 사용하기 쉬운 Mac OS X용 패키지 관리자인 **brew**를 설치하려면 다음 명령을 입력합니다.
 

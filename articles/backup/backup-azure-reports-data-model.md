@@ -3,12 +3,12 @@ title: Azure Backup 진단 이벤트에 대 한 데이터 모델
 description: 이 데이터 모델은 Log Analytics (LA)로 진단 이벤트를 보내는 리소스 특정 모드를 참조 합니다.
 ms.topic: conceptual
 ms.date: 10/30/2019
-ms.openlocfilehash: 46d40694da4eb025afc11da0f14b28691bf13bb8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: adc1442b674b9a6e947ef65967a2c2f1359e7d8a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538873"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017586"
 ---
 # <a name="data-model-for-azure-backup-diagnostics-events"></a>Azure Backup 진단 이벤트에 대 한 데이터 모델
 
@@ -53,7 +53,7 @@ ms.locfileid: "86538873"
 | ProtectedContainerWorkloadType    | 텍스트          | 백업 된 보호 된 컨테이너의 유형입니다. 예: IaaSVMContainer |
 | ProtectionGroupName               | 텍스트          | 해당 하는 경우 백업 항목이 보호 되는 보호 그룹 이름, SC DPM 및 MABS (해당 하는 경우) |
 | ResourceGroupName                 | 텍스트          | 수집 되는 데이터에 대 한 리소스의 리소스 그룹 (예: Recovery Services 자격 증명 모음) |
-| schemaVersion                     | 텍스트          | 이 필드는 스키마의 현재 버전을 나타내며, **V2** 입니다. |
+| schemaVersion                     | 텍스트          | 이 필드는 스키마의 현재 버전을 나타냅니다. **V2** |
 | SecondaryBackupProtectionState    | 텍스트          | 백업 항목에 대해 보조 보호를 사용하도록 설정할지 여부  |
 | 시스템 상태                             | 텍스트          | 백업 항목 개체의 상태입니다. 예: 활성, 삭제됨 |
 | StorageReplicationType            | 텍스트          | 자격 증명 모음에 대 한 저장소 복제 유형입니다. 예: GeoRedundant |
@@ -84,7 +84,7 @@ ms.locfileid: "86538873"
 | BackupItemUniqueId             | 텍스트          | 경고와 연결 된 백업 항목의 고유 식별자 |
 | BackupManagementServerUniqueId | 텍스트          | 해당 하는 경우 백업 항목을 보호 하는 백업 관리 서버를 고유 하 게 식별 하는 필드입니다. |
 | BackupManagementType           | 텍스트          | 백업 작업을 수행 하는 서버에 대 한 공급자 유형 (예: 예 iaasvm, FileFolder) |
-| CountOfAlertsConsolidated      | Number        | 통합된 경고인 경우 통합된 경고 수  |
+| CountOfAlertsConsolidated      | Number        | 통합 된 경고 인 경우 통합 된 경고 수  |
 | ProtectedContainerUniqueId     | 텍스트          | 경고와 연결 된 보호 된 서버의 고유 식별자입니다. |
 | RecommendedAction              | 텍스트          | 경고를 해결하기 위한 권장 작업                      |
 | schemaVersion                  | 텍스트          | 스키마의 현재 버전(예: **V2**)            |
@@ -162,15 +162,15 @@ ms.locfileid: "86538873"
 | DiffBackupDaysOfTheWeek         | 텍스트           | Azure VM 백업에서 SQL에 대 한 차등 백업의 요일 |
 | DiffBackupFormat                | 텍스트           | Azure VM 백업에서 SQL에 대한 차등 백업의 형식   |
 | Diffbackup보존 기간     | 10진수 | Azure VM 백업에서 SQL에 대 한 차등 백업의 보존 기간 |
-| DiffBackupTime 시간                  | Time           | Azure VM 백업에서 SQL에 대한 차등 백업 시간     |
+| DiffBackupTime 시간                  | 시간           | Azure VM 백업에서 SQL에 대한 차등 백업 시간     |
 | LogBackupFrequency              | 10진수 | SQL에 대한 로그 백업의 빈도                            |
 | Logbackup보존 기간      | 10진수 | Azure VM 백업에서 SQL에 대 한 로그 백업의 보존 기간 |
-| MonthlyRetentionDaysOfTheMonth  | 텍스트           | 매월 보존이 구성 된 월의 주입니다.  예를 들어, First, Last 등입니다. |
+| MonthlyRetentionDaysOfTheMonth  | 텍스트           | 매월 보존이 구성 된 월의 주입니다.  예를 들어, First, Last |
 | MonthlyRetentionDaysOfTheWeek   | 텍스트           | 매월 보존에 대해 선택한 주의 요일              |
 | MonthlyRetentionDuration        | 텍스트           | 구성된 백업에 대한 총 보존 기간(월)    |
 | MonthlyRetentionFormat          | 텍스트           | 월별 보존에 대 한 구성 유형입니다. 예를 들어 매일, 매주 기준으로 매주 |
 | MonthlyRetentionTimes           | 텍스트           | 매월 보존이 구성된 날짜 및 시간           |
-| MonthlyRetentionWeeksOfTheMonth | 텍스트           | 매월 보존이 구성 된 월의 주입니다.   예를 들어, First, Last 등입니다. |
+| MonthlyRetentionWeeksOfTheMonth | 텍스트           | 매월 보존이 구성 된 월의 주입니다.   예를 들어, First, Last |
 | PolicyName                      | 텍스트           | 지정된 정책의 이름                                   |
 | PolicyUniqueId                  | 텍스트           | 정책을 식별하는 고유 ID                             |
 | PolicyTimeZone                  | 텍스트           | 로그에서 정책 시간 필드가 지정 되는 표준 시간대 |

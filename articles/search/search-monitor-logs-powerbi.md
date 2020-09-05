@@ -7,15 +7,15 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/24/2020
-ms.openlocfilehash: d529e4e4b79f0c34eb8f95b028cca730b316d5f6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2caf4c66cdbb11ed42c4131ef1584c372ec10332
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87060312"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935112"
 ---
 # <a name="visualize-azure-cognitive-search-logs-and-metrics-with-power-bi"></a>Power BI를 사용 하 여 Azure Cognitive Search 로그 및 메트릭 시각화
-[Azure Cognitive Search](https://docs.microsoft.com/azure/search/search-what-is-azure-search) 를 사용 하면 Azure Storage 계정에서 검색 서비스에 대 한 작업 로그 및 서비스 메트릭을 저장할 수 있습니다. 이 페이지에서는 Power BI 템플릿 앱을 통해 해당 정보를 시각화할 수 있는 방법에 대 한 지침을 제공 합니다. 앱은 검색, 인덱싱, 작업 및 서비스 메트릭에 대 한 정보를 포함 하 여 검색 서비스에 대 한 자세한 정보를 제공 합니다.
+[Azure Cognitive Search](./search-what-is-azure-search.md) 를 사용 하면 Azure Storage 계정에서 검색 서비스에 대 한 작업 로그 및 서비스 메트릭을 저장할 수 있습니다. 이 페이지에서는 Power BI 템플릿 앱을 통해 해당 정보를 시각화할 수 있는 방법에 대 한 지침을 제공 합니다. 앱은 검색, 인덱싱, 작업 및 서비스 메트릭에 대 한 정보를 포함 하 여 검색 서비스에 대 한 자세한 정보를 제공 합니다.
 
 Azure Cognitive Search: [Power BI Apps marketplace](https://appsource.microsoft.com/marketplace/apps)에서 **로그 및 메트릭 분석** Power BI 템플릿 앱을 찾을 수 있습니다.
 
@@ -23,7 +23,7 @@ Azure Cognitive Search: [Power BI Apps marketplace](https://appsource.microsoft.
 
 1. 검색 서비스에 대 한 메트릭 및 리소스 로깅 사용:
 
-    1. 로그를 보관할 수 있는 기존 [Azure Storage 계정을](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) 만들거나 확인 합니다.
+    1. 로그를 보관할 수 있는 기존 [Azure Storage 계정을](../storage/common/storage-account-create.md) 만들거나 확인 합니다.
     1. Azure Portal에서 Azure Cognitive Search 서비스로 이동 합니다.
     1. 왼쪽 열의 모니터링 섹션에서 **진단 설정** 을 선택 합니다.
 
@@ -98,8 +98,8 @@ Azure Cognitive Search: [Power BI Apps marketplace](https://appsource.microsoft.
 1. 데이터 집합을 계속 새로 고치는 지 확인 합니다. 새로 고침 상태 표시기는 위의 8 단계에서 표시 됩니다. 그래도 새로 고치는 경우 새로 고침이 완료 될 때까지 기다렸다가 보고서를 열고 새로 고칩니다.
 
 ## <a name="next-steps"></a>다음 단계
-[Azure Cognitive Search에 대 한 자세한 정보](https://docs.microsoft.com/azure/search/)
+[Azure Cognitive Search에 대 한 자세한 정보](./index.yml)
 
-[Power BI란?](https://docs.microsoft.com/power-bi/fundamentals/power-bi-overview)
+[Power BI란?](/power-bi/fundamentals/power-bi-overview)
 
-[Power BI 서비스의 디자이너를 위한 기본 개념](https://docs.microsoft.com/power-bi/service-basic-concepts)
+[Power BI 서비스의 디자이너를 위한 기본 개념](/power-bi/service-basic-concepts)

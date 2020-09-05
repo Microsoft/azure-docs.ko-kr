@@ -4,15 +4,15 @@ description: 최신 릴리스 정보, 알려진 문제, 버그 수정, 사용되
 services: load-balancer
 author: anavinahar
 ms.service: load-balancer
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: anavin
-ms.openlocfilehash: 24c5133b9c012b628e43e956c56d5112e1ad4649
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: ffea6cdd1c8558a07559829b025cb5338cc59ee3
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447024"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586718"
 ---
 # <a name="whats-new-in-azure-load-balancer"></a>Azure Load Balancer의 새로운 기능
 
@@ -27,7 +27,7 @@ Azure Load Balancer는 정기적으로 업데이트됩니다. 최신 공지 사�
 
 ## <a name="recent-releases"></a>최근 릴리스
 
-| Type |Name |Description  |추가된 날짜  |
+| Type |속성 |Description  |추가된 날짜  |
 | ------ |---------|---------|---------|
 | 기능 | IP 기반 백 엔드 풀 관리 지원(미리 보기) | Azure Load Balancer는 IPv4 또는 IPv6 주소를 통해 백 엔드 풀에서 리소스 추가 및 제거를 지원합니다. 이렇게 하면 Load Balancer와 연결된 컨테이너, 가상 머신 및 가상 머신 확장 집합을 쉽게 관리할 수 있습니다. 또한 관련 리소스를 만들기 전에 IP 주소를 백 엔드 풀의 일부로 예약할 수 있습니다. [여기](backend-pool-management.md)에서 자세히 알아보세요.|2020년 7월 |
 | 기능| Azure Monitor를 사용하는 Azure Load Balancer Insights | 네트워크용 Azure Monitor의 일부로 빌드된 고객은 이제 Azure Portal에서 메트릭으로 미리 구성된 표준 Load Balancers용 모든 Load Balancer 구성과 상태 대시보드에 대한 토폴로지 맵을 보유하고 있습니다. [시작 및 자세한 정보](https://azure.microsoft.com/blog/introducing-azure-load-balancer-insights-using-azure-monitor-for-networks/) | 2020년 6월 |
@@ -39,7 +39,7 @@ Azure Load Balancer는 정기적으로 업데이트됩니다. 최신 공지 사�
 
 현재 제품 그룹에서 다음과 같은 알려진 문제를 해결하기 위해 적극적으로 작업 중입니다.
 
-|문제 |설명  |완화 방법  |
+|문제 |Description  |완화 방법  |
 | ---------- |---------|---------|
 | Log Analytics 내보내기 | Log Analytics에서 표준 Load Balancer의 메트릭과 기본 Load Balancer의 상태 프로브 상태 로그를 내보낼 수 없음  | [표준 Load Balancer의 다차원 메트릭에 Azure Monitor를 활용](load-balancer-standard-diagnostics.md)합니다. Log Analytics를 모니터링에 사용할 수는 없지만, Azure Monitor는 다양한 다차원 메트릭 세트에 대한 시각화를 제공합니다. Load Balancer의 인사이트 하위 블레이드를 통해 미리 구성된 메트릭 대시보드를 활용할 수 있습니다. 기본 Load Balancer 사용하는 경우 프로덕션 수준 메트릭 모니터링이 가능하도록 [표준으로 업그레이드](upgrade-basic-standard.md)하세요.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: a43637071ec1a9962c8aa1b2262e07354293f12b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2918c5842d6470e634518ff9c12f6f04aefc920
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512431"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185386"
 ---
 # <a name="what-is-azure-importexport-service"></a>Azure Import/Export 서비스란?
 
@@ -123,11 +123,12 @@ Azure Import/Export 서비스는 모든 Azure Storage 계정으로의 데이터 
 |미국 동부    | 북유럽        | 인도 중부        |US Gov 아이오와         |
 |미국 서부     |서유럽         | 인도 남부        | US DoD 동부        |
 |미국 동부 2    | 동아시아        |  인도 서부        | US DoD 중부        |
-|미국 서부 2     | 동남아시아        | 캐나다 중부        | 중국 동부         |
+|미국 서부 2     | 동남 아시아        | 캐나다 중부        | 중국 동부         |
 |미국 중부     | 오스트레일리아 동부        | 캐나다 동부        | 중국 북부        |
 |미국 중북부     |  오스트레일리아 남동부       | 브라질 남부        | 영국 남부        |
 |미국 중남부     | 일본 서부        |한국 중부         | 독일 중부        |
 |미국 중서부     |  일본 동부       | US Gov 버지니아        | 독일 북동부        |
+|남아프리카 공화국 서부   |  남아프리카 북부 |
 
 ## <a name="security-considerations"></a>보안 고려 사항
 

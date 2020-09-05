@@ -1,17 +1,17 @@
 ---
 title: Stream Analytics에서 Data Lake Storage Gen1로 데이터 스트리밍-Azure
-description: Azure Stream Analytics를 사용 하 여 데이터를 Azure Data Lake Storage Gen1으로 스트리밍합니다.
+description: Azure Storage blob에서 데이터를 읽는 간단한 시나리오를 사용 하 여 Azure Stream Analytics 작업에 대 한 출력으로 Azure Data Lake Storage Gen1를 사용 하는 방법에 대해 알아봅니다.
 author: twooley
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/30/2018
 ms.author: twooley
-ms.openlocfilehash: 42c7894c33fe0f09748beee20508e7670545c0ed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8ef3d7400b64617df8d81c7b84e680496776b5bd
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515162"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192146"
 ---
 # <a name="stream-data-from-azure-storage-blob-into-azure-data-lake-storage-gen1-using-azure-stream-analytics"></a>Azure Stream Analytics를 사용하여 Azure Storage Blob에서 Azure Data Lake Storage Gen1에 데이터 스트리밍
 이 문서에서는 Azure Stream Analytics 작업에 대 한 출력으로 Azure Data Lake Storage Gen1를 사용 하는 방법에 대해 알아봅니다. 이 문서에서는 Azure Storage Blob(입력)에서 데이터를 읽고 Data Lake Storage Gen1(출력)에 데이터를 기록하는 간단한 시나리오를 보여줍니다.

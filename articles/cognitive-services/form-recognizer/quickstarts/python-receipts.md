@@ -10,27 +10,27 @@ ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 329b8d4dfaa7fb2d30757be0519eebba24cf38a8
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: a93ec3157900a83e799f845e868546cbf5ef6ca9
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876838"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88823866"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-python"></a>빠른 시작: Python과 Form Recognizer REST API를 사용하여 영수증 데이터 추출
 
 이 빠른 시작에서는 Python과 Azure Form Recognizer REST API를 사용하여 USA 판매 영수증의 관련 정보를 추출하고 식별합니다.
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
 이 빠른 시작을 완료하려면 다음 항목이 있어야 합니다.
 - 샘플을 로컬로 실행하려면 [Python](https://www.python.org/downloads/)이 설치되어 있어야 합니다.
-- 영수증 이미지의 URL. 이 빠른 시작에서는 [샘플 이미지](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/contoso-allinone.jpg)를 사용할 수 있습니다.
+- 영수증의 이미지입니다. 이 빠른 시작에서는 [샘플 이미지](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/contoso-allinone.jpg)를 사용할 수 있습니다.
 
 > [!NOTE]
-> 이 빠른 시작에서는 URL로 액세스하는 원격 수신을 사용합니다. 로컬 파일을 대신 사용하려면 [참조 설명서](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)를 참조하세요.
+> 이 빠른 시작에서는 로컬 파일을 사용합니다. URL로 액세스하는 영수증 이미지를 대신 사용하려면 [참조 설명서](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)를 참조하세요.
 
 ## <a name="create-a-form-recognizer-resource"></a>Form Recognizer 리소스 만들기
 
@@ -41,10 +41,12 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 영수증 분석을 시작하기 위해, 아래 Python 스크립트를 사용하여 **[Analyze Receipt](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)** API를 호출합니다. 스크립트를 실행하기 전에 다음과 같이 변경합니다.
 
 1. `<Endpoint>`를 Form Recognizer 구독에서 얻은 엔드포인트로 바꿉니다.
-1. `<your receipt URL>`을 영수증 이미지의 URL 주소로 바꿉니다.
+1. `<path to your receipt>`을 로컬 양식 문서에 대한 경로로 바꿉니다.
 1. `<subscription key>`를 이전 단계에서 복사한 구독 키로 바꿉니다.
 
-    ```python
+# <a name="v20"></a>[v2.0](#tab/v2-0)
+
+```python
     ########### Python Form Recognizer Async Receipt #############
 
     import json
@@ -80,7 +82,54 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
     except Exception as e:
         print("POST analyze failed:\n%s" % str(e))
         quit()
-    ```
+```
+    
+# <a name="v21-preview1"></a>[v2.1-preview.1](#tab/v2-1)    
+```python
+    ########### Python Form Recognizer Async Receipt #############
+
+    import json
+    import time
+    from requests import get, post
+    
+    # Endpoint URL
+    endpoint = r"<Endpoint>"
+    apim_key = "<subscription key>"
+    post_url = endpoint + "/formrecognizer/v2.1-preview.1/prebuilt/receipt/analyze"
+    source = r"<path to your receipt>"
+    
+    headers = {
+        # Request headers
+        'Content-Type': '<file type>',
+        'Ocp-Apim-Subscription-Key': apim_key,
+    }
+    
+    params = {
+        "includeTextDetails": True
+        "locale": "en-US"
+    }
+    
+    with open(source, "rb") as f:
+        data_bytes = f.read()
+    
+    try:
+        resp = post(url = post_url, data = data_bytes, headers = headers, params = params)
+        if resp.status_code != 202:
+            print("POST analyze failed:\n%s" % resp.text)
+            quit()
+        print("POST analyze succeeded:\n%s" % resp.headers)
+        get_url = resp.headers["operation-location"]
+    except Exception as e:
+        print("POST analyze failed:\n%s" % str(e))
+        quit()
+```
+
+> [!NOTE]
+> **언어 입력** 
+>
+> Analzye Receipt 2.1 릴리스 작업에는 영수증의 언어, 로캘에 대한 선택적 요청 매개 변수가 있습니다. 지원되는 로캘은 en-AU, en-CA, en-GB, en-IN, en-US입니다. 
+
+---
 
 1. 코드를 확장명이 .py인 파일로 저장합니다. 예: *form-recognizer-receipts.py*.
 1. 명령 프롬프트 창을 엽니다.
@@ -88,9 +137,15 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 **Operation-Location** 헤더가 포함된 `202 (Success)` 응답을 받게 되며, 스크립트가 콘솔에 인쇄됩니다. 이 헤더에는 비동기 작업 상태를 쿼리하고 결과를 가져오는 데 사용할 수 있는 작업 ID가 포함됩니다. 다음 예제 값에서 `operations/` 다음 문자열은 작업 ID입니다.
 
+# <a name="v20"></a>[v2.0](#tab/v2-0)    
 ```console
 https://cognitiveservice/formrecognizer/v2.0/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
+# <a name="v21-preview1"></a>[v2.1-preview.1](#tab/v2-1)    
+```console
+https://cognitiveservice/formrecognizer/v2.1-preview.1/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+```
+---
 
 ## <a name="get-the-receipt-results"></a>영수증 결과 가져오기
 
@@ -128,13 +183,13 @@ while n_try < n_tries:
 
 ### <a name="examine-the-response"></a>응답 검사
 
-스크립트는 **영수증 분석** 작업이 완료될 때까지 콘솔에 응답을 출력합니다. 그런 다음, 추출된 텍스트 데이터를 JSON 형식으로 출력합니다. `"recognitionResults"` 필드에는 영수증에서 추출된 텍스트의 모든 줄이 `"understandingResults"` 필드에는 영수증의 가장 적절한 부분에 대한 키/값 정보가 포함됩니다.
+스크립트는 **영수증 분석** 작업이 완료될 때까지 콘솔에 응답을 출력합니다. 그런 다음, 추출된 텍스트 데이터를 JSON 형식으로 출력합니다. `"readResults"` 필드에는 영수증에서 추출된 텍스트의 모든 줄이 `"documentResults"` 필드에는 영수증의 가장 적절한 부분에 대한 키/값 정보가 포함됩니다.
 
 다음 영수증 이미지와 해당 JSON 출력을 참조하세요. 출력은 가독성을 위해 줄였습니다.
 
 ![Contoso 매장의 영수증](../media/contoso-allinone.jpg)
 
-`"recognitionResults"` 노드에는 인식된 모든 텍스트가 포함됩니다. 텍스트는 페이지별로, 그 다음에는 줄별로, 그 다음에는 개별 단어별로 정리됩니다. `"understandingResults"` 노드에는 모델이 검색한 수신 특정 값이 포함됩니다. 여기서는 세금, 합계, 판매자 주소 등과 같은 유용한 키/값 쌍을 찾을 수 있습니다.
+`"readResults"` 노드에는 인식된 모든 텍스트가 포함됩니다. 텍스트는 페이지별로, 그 다음에는 줄별로, 그 다음에는 개별 단어별로 정리됩니다. `"documentResults"` 노드에는 모델이 검색한 수신 특정 값이 포함됩니다. 여기서는 세금, 합계, 판매자 주소 등과 같은 유용한 키/값 쌍을 찾을 수 있습니다.
 
 ```json
 { 

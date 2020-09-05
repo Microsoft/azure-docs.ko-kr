@@ -2,13 +2,13 @@
 title: 엔터티 형식-LUIS
 description: 엔터티는 예측 런타임에 사용자 utterance에서 데이터를 추출 합니다. _선택적인_보조 목적은 엔터티를 기능으로 사용 하 여 의도 또는 다른 엔터티의 예측을 높이는 것입니다.
 ms.topic: conceptual
-ms.date: 06/10/2020
-ms.openlocfilehash: ced4a3e23b8e532b54d0b3cf974dab233b81b375
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.date: 08/06/2020
+ms.openlocfilehash: 8751bdd52bb1c3738103dc074184a3cf72bfeb09
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337622"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207758"
 ---
 # <a name="extract-data-with-entities"></a>엔터티를 사용 하 여 데이터 추출
 
@@ -100,7 +100,7 @@ ms.locfileid: "87337622"
 |엔터티 유형|용도|
 |--|--|
 |[**컴퓨터-학습**](tutorial-machine-learned-entity.md)|레이블이 지정 된 예제에서 배운 중첩 된 복잡 한 데이터를 추출 합니다. |
-|[**목록**](reference-entity-list.md)|**정확히 일치**하는 텍스트를 사용 하 여 추출 된 항목 및 해당 동의어의 목록입니다.|
+|[**은**](reference-entity-list.md)|**정확히 일치**하는 텍스트를 사용 하 여 추출 된 항목 및 해당 동의어의 목록입니다.|
 |[**패턴. 모든**](#patternany-entity)|엔터티 끝을 찾는 엔터티는 자유 형식 이므로 확인 하기 어렵습니다. [패턴](luis-concept-patterns.md)에서만 사용할 수 있습니다.|
 |[**미리 빌드됨**](luis-reference-prebuilt-entities.md)|URL, 전자 메일 등의 특정 종류의 데이터를 추출 하도록 이미 학습 되었습니다. 이러한 미리 빌드된 엔터티 중 일부는 오픈 소스 [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) 프로젝트에 정의되어 있습니다. 특정 문화권이나 엔터티가 현재 지원되지 않은 경우 프로젝트에 적용됩니다.|
 |[**정규식**](reference-entity-regular-expression.md)|**정확히 일치**하는 텍스트를 위해 정규식을 사용 합니다.|
@@ -140,9 +140,16 @@ Utterance에는 데이터의 의미가 utterance 내의 컨텍스트를 기반�
 
 [제한](luis-limits.md#model-limits)보다 더 많이 필요한 경우 지원 담당자에 게 문의 하세요. 이렇게 하려면 시스템에 대한 자세한 정보를 수집하고 [LUIS](luis-reference-regions.md#luis-website) 웹 사이트로 이동한 다음, **지원**을 선택하세요. Azure 구독에 지원 서비스가 포함된 경우, [Azure 기술 지원](https://azure.microsoft.com/support/options/)에 문의하세요.
 
-## <a name="entity-prediction-status"></a>엔터티 예측 상태
+## <a name="entity-prediction-status-and-errors"></a>엔터티 예측 상태 및 오류
 
-LUIS 포털은 엔터티에 utterance 예제에 대해 선택한 엔터티와 다른 엔터티 예측이 있는 경우를 표시 합니다. 이 다른 점수는 현재 학습 된 모델을 기반으로 합니다. 이 정보를 사용 하 여 다음 중 하나 이상을 사용 하 여 학습 오류를 해결할 수 있습니다.
+LUIS 포털은 엔터티에 utterance 예제에 대해 선택한 엔터티와 다른 엔터티 예측이 있는 경우를 표시 합니다. 이 다른 점수는 현재 학습 된 모델을 기반으로 합니다. 
+
+:::image type="content" source="./media/luis-concept-entities/portal-entity-prediction-error.png" alt-text="LUIS 포털은 엔터티에 utterance 예제에 대해 선택한 엔터티와 다른 엔터티 예측이 있는 경우를 표시 합니다.":::
+
+Erroring 텍스트는 예제 utterance 내에서 강조 표시 되 고 utterance line 예제에는 빨간색 삼각형으로 표시 되는 오른쪽에 대 한 오류 표시기가 있습니다. 
+
+이 정보를 사용 하 여 다음 중 하나 이상을 사용 하 여 엔터티 오류를 해결할 수 있습니다.
+* 강조 표시 된 텍스트는 자주입니다. 수정, 검토, 수정 및 다시 학습. 
 * 엔터티의 개념을 식별 하는 데 도움이 되는 엔터티의 [기능](luis-concept-feature.md) 을 만듭니다.
 * 엔터티를 사용 하 여 [예제 길이 발언](luis-concept-utterance.md) 및 레이블 추가
 * 엔터티 개념을 식별 하는 데 도움이 될 수 있는 예측 끝점에서 수신 된 길이 발언에 대 한 [활성 학습 제안을 검토](luis-concept-review-endpoint-utterances.md) 합니다.

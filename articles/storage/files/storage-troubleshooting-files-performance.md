@@ -4,15 +4,15 @@ description: Azure 파일 공유의 알려진 성능 문제를 해결 합니다.
 author: gunjanj
 ms.service: storage
 ms.topic: troubleshooting
-ms.date: 04/25/2019
+ms.date: 08/24/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 6739e5619a0dcaa940d38571c4a88c4f68971dfe
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: fe1460d4353addff1b8e3095cfe06c1fcb3b7bd0
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009276"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782373"
 ---
 # <a name="troubleshoot-azure-files-performance-issues"></a>Azure Files 성능 문제 해결
 
@@ -20,9 +20,9 @@ ms.locfileid: "88009276"
 
 ## <a name="high-latency-low-throughput-and-general-performance-issues"></a>대기 시간이 짧고 처리량이 높고 일반 성능 문제가 발생 합니다.
 
-### <a name="cause-1-share-experiencing-throttling"></a>원인 1: 제한 발생 공유
+### <a name="cause-1-share-was-throttled"></a>원인 1: 공유가 제한 됨
 
-프리미엄 공유의 기본 할당량은 100 GiB, 100 기준선 IOPS를 제공 합니다 (한 시간 동안 300까지 증가 시킬 수 있음). 프로 비전 및 IOPS와의 관계에 대 한 자세한 내용은 계획 가이드의 [프로 비전 된 공유](storage-files-planning.md#understanding-provisioning-for-premium-file-shares) 섹션을 참조 하십시오.
+파일 공유에 대 한 IOPS, 수신 또는 송신 제한에 도달 하면 요청이 제한 됩니다. 표준 및 프리미엄 파일 공유에 대 한 한도를 이해 하려면 [파일 공유 및 파일 배율 목표](https://docs.microsoft.com/azure/storage/files/storage-files-scale-targets#file-share-and-file-scale-targets)를 참조 하세요.
 
 공유를 제한 하 고 있는지 확인 하려면 포털에서 Azure 메트릭을 활용할 수 있습니다.
 
@@ -45,9 +45,10 @@ ms.locfileid: "88009276"
 > [!NOTE]
 > 파일 공유를 제한 하는 경우 경고를 수신 하려면 [파일 공유를 제한 하는 경우 경고를 만드는 방법](#how-to-create-an-alert-if-a-file-share-is-throttled)을 참조 하세요.
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 
-- 공유에서 더 높은 할당량을 지정 하 여 공유 프로 비전 된 용량을 늘립니다.
+- 표준 파일 공유를 사용 하는 경우 저장소 계정에서 [대량 파일 공유](https://docs.microsoft.com/azure/storage/files/storage-files-how-to-create-large-file-share?tabs=azure-portal) 를 사용 하도록 설정 합니다. 대량 파일 공유는 공유 당 최대 1만 IOPS를 지원 합니다.
+- 프리미엄 파일 공유를 사용 하는 경우 프로 비전 된 파일 공유 크기를 늘려 IOPS 제한을 늘립니다. 자세한 내용은 Azure Files 계획 가이드의 [premium 파일 공유에 대 한 프로 비전 이해](https://docs.microsoft.com/azure/storage/files/storage-files-planning#understanding-provisioning-for-premium-file-shares) 섹션을 참조 하십시오.
 
 ### <a name="cause-2-metadatanamespace-heavy-workload"></a>원인 2: 메타 데이터/네임 스페이스 작업량이 많은 작업
 
@@ -66,7 +67,7 @@ ms.locfileid: "88009276"
 
 고객이 사용 하는 응용 프로그램이 단일 스레드 인 경우 프로 비전 된 공유 크기에 따라 허용 되는 최대 크기 보다 훨씬 낮은 IOPS/처리량이 발생할 수 있습니다.
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 
 - 스레드 수를 늘려 응용 프로그램 병렬 처리를 늘립니다.
 - 병렬 처리를 사용할 수 있는 응용 프로그램으로 전환 합니다. 예를 들어 복사 작업의 경우 고객은 Windows 클라이언트의 AzCopy 또는 RoboCopy를 사용 하거나 Linux 클라이언트에서 **parallel** 명령을 사용할 수 있습니다.
@@ -77,7 +78,7 @@ ms.locfileid: "88009276"
 
 클라이언트 VM은 파일 공유와 다른 지역에 있을 수 있습니다.
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 
 - 파일 공유와 동일한 지역에 있는 VM에서 응용 프로그램을 실행 합니다.
 

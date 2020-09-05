@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: vitrinh
-ms.openlocfilehash: 1f5609eae106e04928bc2c49bd84aa651b224611
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 787c39681d0e9aff25d205c7b195be00b8c0bc9c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261582"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020017"
 ---
 # <a name="convert-session-token-formats-in-net-sdk"></a>.NET SDK에서 세션 토큰 형식 변환
 
@@ -31,11 +32,11 @@ ms.locfileid: "85261582"
 
 ### <a name="simple-session-token"></a>단순 세션 토큰
 
-단순 세션 토큰의 형식은 다음과 같습니다.`{pkrangeid}:{globalLSN}`
+단순 세션 토큰의 형식은 다음과 같습니다. `{pkrangeid}:{globalLSN}`
 
 ### <a name="vector-session-token"></a>벡터 세션 토큰
 
-벡터 세션 토큰의 형식은 다음과 같습니다.`{pkrangeid}:{Version}#{GlobalLSN}#{RegionId1}={LocalLsn1}#{RegionId2}={LocalLsn2}....#{RegionIdN}={LocalLsnN}`
+벡터 세션 토큰의 형식은 다음과 같습니다. `{pkrangeid}:{Version}#{GlobalLSN}#{RegionId1}={LocalLsn1}#{RegionId2}={LocalLsn2}....#{RegionIdN}={LocalLsnN}`
 
 ## <a name="convert-to-simple-session-token"></a>단순 세션 토큰으로 변환
 

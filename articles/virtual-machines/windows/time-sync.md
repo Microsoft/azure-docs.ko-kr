@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 1717ebd5709c05e33e658d3798494324a702b1d9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 830bdd45be4b0365ac45bc3ea366b99a34882a4c
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87074051"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871482"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Azure의 Windows VM에 대한 시간 동기화
 
@@ -60,7 +60,7 @@ Azure에 호스팅된 Windows VM에 대한 시간 동기화를 구성할 수 있
 - time.windows.com에서 정보를 가져오는 NtpClient 공급자.
 - VM이 유지 관리를 위해 일시 중지된 후 VM에 호스트 시간을 통신하고 수정하는 데 사용되는 VMICTimeSync 서비스. Azure 호스트는 정확한 시간을 유지하기 위해 Microsoft 소유의 Stratum 1 디바이스를 사용합니다.
 
-w32time은 계층 수준, 루트 지연, 루트 분산, 시간 오프셋의 우선 순위로 시간 공급자를 사용합니다. 대부분의 경우에 w32time은 time.windows.com이 하위 계층을 보고하기 때문에 호스트보다time.windows.com을 우선합니다. 
+w32time은 계층 수준, 루트 지연, 루트 분산, 시간 오프셋의 우선 순위로 시간 공급자를 사용합니다. 대부분의 경우 Azure VM의 w32time은 평가로 인해 두 시간 원본을 비교 하 여 호스트 시간을 선호 합니다. 
 
 도메인에 연결된 머신의 경우 도메인 자체가 시간 동기화 계층 구조를 설정하지만 포리스트 루트는 임의 위치에서 여전히 시간이 걸리며 다음 고려 사항은 여전히 유효합니다.
 
@@ -115,8 +115,8 @@ w32tm /query /source
 
 확인할 수 있는 출력 및 해당 의미는 다음과 같습니다.
     
-- **time.windows.com** - w32time은 기본 구성의 time.windows.com에서 시간을 가져옵니다. 시간 동기화 품질은 인터넷 연결에 따라 달라지며 패킷 지연의 영향을 받습니다. 이 출력은 기본 설정에서 생성된 일반 출력입니다.
-- **VM IC 시간 동기화 공급자** - VM은 호스트에서 시간을 동기화합니다. 이는 호스트 전용 시간 동기화를 옵트인하거나 NtpServer를 현재 사용할 수 없는 경우의 일반적인 결과입니다. 
+- **time.windows.com** - w32time은 기본 구성의 time.windows.com에서 시간을 가져옵니다. 시간 동기화 품질은 인터넷 연결에 따라 달라지며 패킷 지연의 영향을 받습니다. 이는 물리적 컴퓨터에서 얻게 되는 일반적인 출력입니다.
+- **VM IC 시간 동기화 공급자** - VM은 호스트에서 시간을 동기화합니다. 이것은 Azure에서 실행 되는 가상 컴퓨터에서 얻을 수 있는 일반적인 출력입니다. 
 - *도메인 서버* - 현재 머신은 도메인에 있으며 해당 도메인은 시간 동기화 계층 구조를 정의합니다.
 - *기타 일부 서버* - w32time은 해당 다른 서버에서 시간을 가져오도록 명시적으로 구성되었습니다. 시간 동기화 품질은 이 시간 서버 품질에 따라 달라집니다.
 - **로컬 CMOS 시계** - 시계가 동기화되지 않았습니다. w32time이 다시 부팅 뒤 시작할 충분한 시간이 없는 경우 또는 모든 구성된 시간 원본을 사용할 수 없는 경우 이 출력을 얻을 수 있습니다.
@@ -160,7 +160,7 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\w32time\Config /v U
 w32tm /config /update
 ```
 
-w32time이 새 폴링 간격을 사용할 수 있으려면 NtpServers가 이를 사용하는 것으로 표시되어야 합니다. 서버에 0x1 Bitflag 마스크로 주석이 표시되는 경우에는 이 메커니즘을 재정의하고 w32time은 대신 SpecialPollInterval을 사용합니다. 지정된 NTP 서버는 0x8 플래그를 사용하거나 전혀 플래그를 사용하지 않아야 합니다.
+W32time이 새 폴링 간격을 사용할 수 있도록 하려면 NtpServers를 사용 하는 것으로 표시 해야 합니다. 서버에 0x1 Bitflag 마스크로 주석이 표시되는 경우에는 이 메커니즘을 재정의하고 w32time은 대신 SpecialPollInterval을 사용합니다. 지정된 NTP 서버는 0x8 플래그를 사용하거나 전혀 플래그를 사용하지 않아야 합니다.
 
 사용된 NTP 서버에 사용되고 있는 플래그를 확인합니다.
 
@@ -173,6 +173,6 @@ w32tm /dumpreg /subkey:Parameters | findstr /i "ntpserver"
 시간 동기화에 대한 자세한 세부 정보에 대한 링크는 다음과 같습니다.
 
 - [Windows 시간 서비스 도구 및 설정](/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings)
-- [Windows Server 2016 개선 사항](/windows-server/networking/windows-time-service/windows-server-2016-improvements)
-- [Windows Server 2016에 대 한 정확한 시간](/windows-server/networking/windows-time-service/accurate-time)
+- [Windows Server 2016 개선 사항 ](/windows-server/networking/windows-time-service/windows-server-2016-improvements)
+- [Windows Server 2016의 정확한 시간](/windows-server/networking/windows-time-service/accurate-time)
 - [정확도가 높은 환경에 맞게 Windows 시간 서비스를 구성할 수 있는 지원 범위](/windows-server/networking/windows-time-service/support-boundary)

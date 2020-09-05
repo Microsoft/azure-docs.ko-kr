@@ -4,15 +4,15 @@ description: Azure Cosmos 계정에서 방화벽을 지원하도록 IP 액세스
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 10/31/2019
+ms.date: 08/24/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 36afc42844203436313f2a5b15975746f2acd349
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 69c39d2478ed7d488c1209c2c7e16c241c59bcef
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87494358"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814181"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>Azure Cosmos DB에서 IP 방화벽 구성
 
@@ -52,7 +52,7 @@ IP 액세스 제어가 켜지면 Azure Portal에서는 IP 주소, IP 주소 범�
 
 고정 IP를 제공하지 않는 서비스(예: Azure Stream Analytics 및 Azure Functions)에서 Azure Cosmos DB 계정에 액세스하는 경우 IP 방화벽을 사용하여 액세스를 제한할 수 있습니다. 다음 스크린샷에 표시 된 것 처럼 **azure 데이터 센터 내에서 연결 허용** 옵션을 선택 하 여 azure 내의 다른 원본에서 액세스를 사용 하도록 설정할 수 있습니다.
 
-:::image type="content" source="./media/how-to-configure-firewall/enable-azure-services.png" alt-text="Azure Portal에서 방화벽 페이지를 여는 방법을 보여 주는 스크린샷":::
+:::image type="content" source="./media/how-to-configure-firewall/enable-azure-services.png" alt-text="Azure 데이터 센터에서 연결을 허용 하는 방법을 보여 주는 스크린샷":::
 
 이 옵션을 사용 하도록 설정 하면 허용 되는 `0.0.0.0` ip 주소 목록에 ip 주소가 추가 됩니다. `0.0.0.0`Ip 주소는 Azure 데이터 센터 ip 범위에서 Azure Cosmos DB 계정에 대 한 요청을 제한 합니다. 이 설정은 Azure Cosmos DB 계정에 대해 다른 IP 범위의 액세스를 허용하지 않습니다.
 
@@ -65,7 +65,7 @@ IP 액세스 제어가 켜지면 Azure Portal에서는 IP 주소, IP 주소 범�
 
 포털은 클라이언트 IP 주소를 자동으로 검색합니다. 이 주소는 머신의 클라이언트 IP 주소이거나 네트워크 게이트웨이의 IP 주소일 수 있습니다. 프로덕션에 대한 워크로드를 수행하기 전에 이 IP 주소를 제거해야 합니다.
 
-현재 IP를 IP 목록에 추가하려면 **내 현재 IP 추가**를 선택합니다. 그런 다음, **저장**을 선택합니다.
+현재 IP를 IP 목록에 추가하려면 **내 현재 IP 추가**를 선택합니다. 그런 다음 **저장**을 선택합니다.
 
 :::image type="content" source="./media/how-to-configure-firewall/enable-current-ip.png" alt-text="현재 IP의 방화벽 설정을 구성하는 방법을 보여주는 스크린샷":::
 
@@ -95,7 +95,44 @@ Azure Cosmos DB를 사용하여 중간 계층 서비스를 호스트하는 데 [
 
 ## <a name="configure-an-ip-firewall-by-using-a-resource-manager-template"></a><a id="configure-ip-firewall-arm"></a>Resource Manager 템플릿을 사용하여 IP 방화벽 구성
 
-Azure Cosmos DB 계정에 대한 액세스 제어를 구성하려면 Resource Manager 템플릿에서는 허용된 IP 범위 목록과 함께 **ipRangeFilter** 특성을 지정해야 합니다. 이미 배포된 Cosmos 계정에 IP 방화벽을 구성하는 경우 `locations` 배열이 현재 배포된 것과 일치하는지 확인합니다. `locations` 배열과 기타 속성을 동시에 수정할 수 없습니다. Azure Cosmos DB에 대 한 Azure Resource Manager 템플릿에 대 한 자세한 내용 및 예제는 [Azure Resource Manager 템플릿](resource-manager-samples.md) 을 참조 하세요 Azure Cosmos DB
+Azure Cosmos DB 계정에 대 한 액세스 제어를 구성 하려면 리소스 관리자 템플릿이 허용 되는 IP 범위의 배열이 포함 된 **ipRules** 속성을 지정 하는지 확인 합니다. 이미 배포된 Cosmos 계정에 IP 방화벽을 구성하는 경우 `locations` 배열이 현재 배포된 것과 일치하는지 확인합니다. `locations` 배열과 기타 속성을 동시에 수정할 수 없습니다. Azure Cosmos DB에 대 한 Azure Resource Manager 템플릿에 대 한 자세한 내용 및 예제는 [Azure Resource Manager 템플릿](resource-manager-samples.md) 을 참조 하세요 Azure Cosmos DB
+
+> [!IMPORTANT]
+> **IpRules** 속성은 API 버전 2020-04-01에서 도입 되었습니다. 이전 버전에서는 쉼표로 구분 된 IP 주소 목록 인 **ipRangeFilter** 속성을 대신 제공 했습니다.
+
+아래 예제에서는 API 버전 2020-04-01 이상에서 **ipRules** 속성을 노출 하는 방법을 보여 줍니다.
+
+```json
+{
+  "type": "Microsoft.DocumentDB/databaseAccounts",
+  "name": "[variables('accountName')]",
+  "apiVersion": "2020-04-01",
+  "location": "[parameters('location')]",
+  "kind": "GlobalDocumentDB",
+  "properties": {
+    "consistencyPolicy": "[variables('consistencyPolicy')[parameters('defaultConsistencyLevel')]]",
+    "locations": "[variables('locations')]",
+    "databaseAccountOfferType": "Standard",
+    "enableAutomaticFailover": "[parameters('automaticFailover')]",
+    "ipRules": [
+      {
+        "ipAddressOrRange": "40.76.54.131"
+      },
+      {
+        "ipAddressOrRange": "52.176.6.30"
+      },
+      {
+        "ipAddressOrRange": "52.169.50.45"
+      },
+      {
+        "ipAddressOrRange": "52.187.184.26"
+      }
+    ]
+  }
+}
+```
+
+2020-04-01 이전의 모든 API 버전에 대 한 동일한 예제는 다음과 같습니다.
 
 ```json
 {
@@ -141,7 +178,7 @@ az cosmosdb create \
 # Create a Cosmos DB account with default values and IP Firewall enabled
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
-$ipRangeFilter = "192.168.221.17,183.240.196.255,40.76.54.131"
+$ipRules = @("192.168.221.17","183.240.196.255","40.76.54.131")
 
 $locations = @(
     @{ "locationName"="West US 2"; "failoverPriority"=0; "isZoneRedundant"=False },
@@ -152,11 +189,11 @@ $locations = @(
 $CosmosDBProperties = @{
     "databaseAccountOfferType"="Standard";
     "locations"=$locations;
-    "ipRangeFilter"=$ipRangeFilter
+    "ipRules"=$ipRules
 }
 
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
-    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -ApiVersion "2020-04-01" -ResourceGroupName $resourceGroupName `
     -Name $accountName -PropertyObject $CosmosDBProperties
 ```
 
@@ -179,6 +216,10 @@ Azure Cosmos DB 계정에 진단 로깅을 사용하도록 설정합니다. 이�
 ### <a name="requests-from-a-subnet-with-a-service-endpoint-for-azure-cosmos-db-enabled"></a>Azure Cosmos DB에 대해 서비스 엔드포인트를 설정한 서브넷의 요청
 
 Azure Cosmos DB에 대한 서비스 엔드포인트가 활성화된 가상 네트워크에 위치한 서브넷의 요청은 가상 네트워크 및 서브넷 ID를 Azure Cosmos DB 계정에 전송합니다. 이러한 요청에는 원본의 공용 IP가 없으므로 IP 필터에 의해 거부됩니다. 가상 네트워크에 있는 특정 서브넷의 액세스를 허용하려면 [Azure Cosmos DB 계정의 가상 네트워크 및 서브넷 기반 액세스를 구성하는 방법](how-to-configure-vnet-service-endpoint.md)에 설명된 대로 액세스 제어 목록을 추가합니다. 방화벽 규칙을 적용하는 데 최대 15분이 걸릴 수 있습니다.
+
+### <a name="private-ip-addresses-in-list-of-allowed-addresses"></a>허용 된 주소 목록의 개인 IP 주소
+
+개인 IP 주소를 포함 하는 허용 된 주소 목록을 사용 하 여 Azure Cosmos 계정을 만들거나 업데이트 하지 못합니다. 목록에 개인 IP 주소가 지정 되어 있지 않은지 확인 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

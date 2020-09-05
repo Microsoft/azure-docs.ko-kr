@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 04/14/2020
+ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: ba121400368f37c4a562a9c34e209c59d15b173c
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 57fb91e9ead98f6c52fd3f659f4aa12692816297
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81404104"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549550"
 ---
 # <a name="quickstart-how-to-build-an-object-detector-with-custom-vision"></a>빠른 시작: Custom Vision을 사용하여 개체 탐지기를 빌드하는 방법
 
 이 빠른 시작에서는 Custom Vision 웹 사이트를 통해 개체 탐지기를 빌드하는 방법에 대해 알아봅니다. 탐지기 모델이 작성되면 Custom Vision Service를 사용하여 개체를 감지할 수 있습니다.
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -55,6 +55,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
     |---|---|
     |__일반__| 광범위한 개체 감지 작업에 맞게 최적화됩니다. 다른 도메인이 적절하지 않거나 선택할 도메인을 잘 모르겠으면 일반 도메인을 선택합니다. |
     |__로고__|이미지에서 브랜드 로고를 찾도록 최적화됩니다.|
+    |__선반 위의 제품__|선반에서 제품을 검색하고 분류하는 데 최적화되어 있습니다.|
     |__압축 도메인__| 모바일 디바이스의 실시간 개체 감지 제약 조건에 맞게 최적화됩니다. 압축 도메인에서 생성된 모델을 로컬에서 실행하기 위해 내보낼 수 있습니다.|
 
 1. 마지막으로 __프로젝트 만들기__를 선택합니다.

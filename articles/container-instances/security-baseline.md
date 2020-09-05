@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 996793f2851949f7474312a18ccff04e88db2232
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 87421509326ef8837a9787ed01a70915c7c5aafa
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86259167"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230741"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Container Instances에 대 한 Azure 보안 기준
 
@@ -155,7 +155,7 @@ Container Instances에 대 한 Azure 보안 기준에는 배포의 보안 상태
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9: 네트워크 디바이스에 대한 표준 보안 구성 유지 관리
 
-**지침**: azure 청사진을 사용 하 여 Azure 리소스 관리자 템플릿, RBAC 컨트롤 및 정책과 같은 주요 환경 아티팩트를 단일 청사진 정의로 패키지화 하 여 대규모 azure 배포를 간소화할 수도 있습니다. 청사진을 새 구독에 적용 하 고 버전 관리를 통해 제어 및 관리를 세부적으로 조정할 수 있습니다. 
+**지침**: azure 청사진을 사용 하 여 Azure 리소스 관리자 템플릿, azure RBAC 컨트롤 및 정책과 같은 주요 환경 아티팩트를 단일 청사진 정의로 패키지화 하 여 대규모 azure 배포를 간소화할 수도 있습니다. 청사진을 새 구독에 적용 하 고 버전 관리를 통해 제어 및 관리를 세부적으로 조정할 수 있습니다. 
 
 * [Azure Policy를 구성하고 관리하는 방법](../governance/policy/tutorials/create-and-manage.md)
 
@@ -186,7 +186,7 @@ Azure PowerShell 또는 Azure CLI를 사용 하 여 태그를 기준으로 리�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11: 자동화된 도구를 사용하여 네트워크 리소스 구성 모니터링 및 변경 내용 검색
 
@@ -488,7 +488,7 @@ Azure Active Directory 사용자 계정에 대한 진단 설정을 만들고 감
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2: 중요한 정보를 저장하거나 처리하는 시스템 격리
 
@@ -541,7 +541,7 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: 활성 검색 도구를 사용하여 중요한 데이터 식별
 
@@ -557,9 +557,9 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AZURE AD RBAC를 사용 하 여 Azure Container Instances 데이터 및 리소스에 대 한 액세스를 제어 합니다. 
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Container Instances 데이터 및 리소스에 대 한 액세스를 제어 합니다. 
 
-* [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
+* [Azure RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
 
 
 **Azure Security Center 모니터링**: 해당 없음
@@ -738,7 +738,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: 컴퓨팅 리소스 내에서 승인되지 않은 소프트웨어 애플리케이션 모니터링
 
@@ -919,17 +919,17 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
 
-**지침**: 컨테이너 이미지를 Azure Container Registry에 저장 하 고 RBAC를 활용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
+**지침**: 컨테이너 이미지를 Azure Container Registry에 저장 하 고 Azure RBAC를 활용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
 
-* [Azure의 RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
+* [Azure RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-* [Container Registry에 대 한 RBAC 이해](../container-registry/container-registry-roles.md)
+* [Container Registry에 대 한 Azure RBAC 이해](../container-registry/container-registry-roles.md)
 
-* [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
+* [Azure RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 
 **Azure Security Center 모니터링**: 해당 없음
@@ -1129,7 +1129,7 @@ Microsoft 맬웨어 방지는 Azure 서비스 (예: Azure Container Instances)�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2: 인시던트 점수 매기기 및 우선 순위 지정 절차 만들기
 
@@ -1172,7 +1172,7 @@ Microsoft 맬웨어 방지는 Azure 서비스 (예: Azure Container Instances)�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

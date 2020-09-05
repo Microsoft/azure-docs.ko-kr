@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/04/2020
+ms.date: 08/28/2020
 ms.author: radeltch
-ms.openlocfilehash: 75573cb49bcc0aca206ad8f13f060121e70a0621
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 089976f6e97e303dd8faaf854e453a558b9eba84
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760620"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89067589"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>SAP 애플리케이션용 Azure NetApp Files를 사용하여 SUSE Linux Enterprise Server에서 Azure VM의 SAP NetWeaver 고가용성 실현
 
@@ -163,7 +163,7 @@ Azure NetApp Files는 여러 [Azure 지역](https://azure.microsoft.com/global-i
    7. 볼륨 sap<b>QAS</b>(nfs://10.1.0.4/usrsap<b>qas</b>/usrsap<b>QAS</b>aas)
 
    
-이 예제에서는 모든 SAP Netweaver 파일 시스템에 Azure NetApp Files를 사용하여 Azure NetApp Files 사용 방법을 설명했습니다. NFS를 통해 탑재할 필요가 없는 SAP 파일 시스템을 [Azure 디스크 스토리지](../../windows/disks-types.md#premium-ssd)로 배포할 수도 있습니다. 이 예제에서 <b>a-e</b>는 Azure NetApp Files에 있어야 하며, <b>f-g</b>(즉, /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>)를 Azure 디스크 스토리지로 배포할 수 있어야 합니다. 
+이 예제에서는 모든 SAP Netweaver 파일 시스템에 Azure NetApp Files를 사용하여 Azure NetApp Files 사용 방법을 설명했습니다. NFS를 통해 탑재할 필요가 없는 SAP 파일 시스템을 [Azure 디스크 스토리지](../../disks-types.md#premium-ssd)로 배포할 수도 있습니다. 이 예제에서 <b>a-e</b>는 Azure NetApp Files에 있어야 하며, <b>f-g</b>(즉, /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>)를 Azure 디스크 스토리지로 배포할 수 있어야 합니다. 
 
 ### <a name="important-considerations"></a>중요 고려 사항
 
@@ -575,7 +575,7 @@ SUSE 고가용성 아키텍처의 SAP Netweaver에 Azure NetApp Files를 고려�
      op monitor interval=20s timeout=40s
    
    # If using NFSv4.1
-   sudo crm configure primitive fs_<b>QAS</b>_ERS Filesystem device='<b>10.1.0.4</b>:/usrsap<b>qas</b>/usrsap<b>QAS</b>ers' directory='/usr/sap/<b>QAS</b>/ERS<b>01</b>' fstype='nfs' options='sec=sys,vers=4.1'\
+   sudo crm configure primitive fs_<b>QAS</b>_ERS Filesystem device='<b>10.1.0.4</b>:/usrsap<b>qas</b>/usrsap<b>QAS</b>ers' directory='/usr/sap/<b>QAS</b>/ERS<b>01</b>' fstype='nfs' options='sec=sys,vers=4.1' \
      op start timeout=60s interval=0 \
      op stop timeout=60s interval=0 \
      op monitor interval=20s timeout=40s

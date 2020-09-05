@@ -13,12 +13,12 @@ ms.date: 08/7/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 3abef3324bee61f2d7eb96c80750ad589b15f342
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 018d67b3e4e730cd46eb524a8927b3a6d68d74e8
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87987038"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958663"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Microsoft ID 플랫폼 및 OAuth 2.0 On-Behalf-Of 흐름
 
@@ -153,7 +153,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 ```
 
 > [!NOTE]
-> 위의 액세스 토큰은 마이크로 Osft 그래프에 대 한 v 1.0 형식 토큰입니다. 토큰 형식이 액세스 되는 **리소스** 를 기반으로 하 고 요청 하는 데 사용 되는 끝점과 관련이 없기 때문입니다. Microsoft Graph는 v1.0 토큰을 허용하도록 설정되어 있으므로 클라이언트가 Microsoft Graph에 대한 토큰을 요청할 때 Microsoft ID 플랫폼이 v1.0 액세스 토큰을 생성합니다. 다른 앱은 v2.0 형식 토큰, v 1.0 형식 토큰 또는 독점적 이거나 암호화 된 토큰 형식을 원합니다.  V1.0 및 v2.0 끝점 모두 토큰 형식을 내보낼 수 있습니다. 이렇게 하면 클라이언트가 토큰을 요청한 방법이 나 위치에 관계 없이 리소스에서 항상 올바른 토큰 형식을 가져올 수 있습니다. 
+> 위의 액세스 토큰은 Microsoft Graph에 대 한 v 1.0 형식 토큰입니다. 토큰 형식이 액세스 되는 **리소스** 를 기반으로 하 고 요청 하는 데 사용 되는 끝점과 관련이 없기 때문입니다. Microsoft Graph는 v1.0 토큰을 허용하도록 설정되어 있으므로 클라이언트가 Microsoft Graph에 대한 토큰을 요청할 때 Microsoft ID 플랫폼이 v1.0 액세스 토큰을 생성합니다. 다른 앱은 v2.0 형식 토큰, v 1.0 형식 토큰 또는 독점적 이거나 암호화 된 토큰 형식을 원합니다.  V1.0 및 v2.0 끝점 모두 토큰 형식을 내보낼 수 있습니다. 이렇게 하면 클라이언트가 토큰을 요청한 방법이 나 위치에 관계 없이 리소스에서 항상 올바른 토큰 형식을 가져올 수 있습니다. 
 >
 > 애플리케이션에만 액세스 토큰이 표시되어야 합니다. 클라이언트는 이를 검사하지 **않아야 합니다**. 코드의 다른 앱에 대 한 액세스 토큰을 검사 하면 앱에서 토큰의 형식을 변경 하거나 해당 앱의 암호화를 시작할 때 앱이 예기치 않게 중단 됩니다. 
 

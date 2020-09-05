@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 76312a55262d316c679bde2a69e8b98844addcb0
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 959a88335c581b998e9cf9c2e6df26354e2a5dc3
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963872"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226372"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Batch에 대 한 Azure 보안 기준
 
@@ -522,7 +522,7 @@ https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tag
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2: 중요한 정보를 저장하거나 처리하는 시스템 격리
 
@@ -572,7 +572,7 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide#encryptio
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: 활성 검색 도구를 사용하여 중요한 데이터 식별
 
@@ -596,13 +596,13 @@ https://docs.microsoft.com/azure/storage/common/storage-security-guide
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AAD (AZURE ACTIVE DIRECTORY) RBAC (역할 기반 액세스 제어)를 사용 하 여 batch 계정, batch 풀 및 저장소 계정을 비롯 한 Azure 리소스의 관리 평면에 대 한 액세스를 제어 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 batch 계정, batch 풀 및 저장소 계정을 비롯 한 azure 리소스의 관리 평면에 대 한 액세스를 제어 합니다.
 
 Azure RBAC 이해: 
 
 https://docs.microsoft.com/azure/role-based-access-control/overview
 
-Azure에서 RBAC를 구성하는 방법: 
+Azure RBAC를 구성 하는 방법:
 
 https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
@@ -881,7 +881,7 @@ Azure Batch 풀의 사용자 (관리자가 아닌)에 게 작업을 실행 하�
 
 https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
 
-Azure Policy를 구성 하 고 관리 하는 방법:
+Azure Policy를 구성하고 관리하는 방법: 
 
 https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -942,13 +942,13 @@ https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전 하 게 저장
 
-**지침**: Azure Batch 풀에 대해 사용자 지정 이미지를 사용 하는 경우 권한 있는 사용자만 이미지에 액세스할 수 있도록 RBAC (역할 기반 액세스 제어)를 사용 합니다.
+**지침**: Azure Batch 풀에 사용자 지정 이미지를 사용 하는 경우 azure RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
 
-Azure의 RBAC 이해:
+Azure RBAC 이해: 
 
 https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles
 
-Azure에서 RBAC를 구성하는 방법: 
+Azure RBAC를 구성 하는 방법:
 
 https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal
 
@@ -1070,7 +1070,7 @@ https://docs.microsoft.com/azure/security/fundamentals/antimalware
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3: 맬웨어 방지 소프트웨어 및 서명을 업데이트 해야 합니다.
 

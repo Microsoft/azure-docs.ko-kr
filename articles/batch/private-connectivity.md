@@ -4,12 +4,12 @@ description: 개인 끝점을 사용 하 여 Azure Batch 계정에 비공개로 
 ms.topic: how-to
 ms.date: 08/07/2020
 ms.custom: references_regions
-ms.openlocfilehash: fac9523dc2ecabaec5d1c108e0ddd7536f01f077
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 0fd16e4e11d0b3f08a7ba0e2f425785e3cce7927
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88004247"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814113"
 ---
 # <a name="use-private-endpoints-with-azure-batch-accounts"></a>Azure Batch 계정으로 프라이빗 엔드포인트 사용
 
@@ -19,7 +19,8 @@ ms.locfileid: "88004247"
 
 개인 링크를 사용 하면 사용자가 가상 네트워크 또는 피어 링 가상 네트워크 내에서 Azure Batch 계정에 액세스할 수 있습니다. 개인 링크에 매핑된 리소스는 VPN 또는 [Azure express](../expressroute/expressroute-introduction.md)경로를 통해 개인 피어 링을 통해 온-프레미스 에서도 액세스할 수 있습니다. [자동 또는 수동 승인 방법을](../private-link/private-endpoint-overview.md#access-to-a-private-link-resource-using-approval-workflow)사용 하 여 개인 링크로 구성 된 Azure Batch 계정에 연결할 수 있습니다.
 
-Azure Batch의 개인 연결에 대 한 지원은 현재 미국 서 부, 미국 서 부 2, 미국 동부, 미국 서 부, US Gov 버지니아, US Gov 애리조나, 동아시아, 프랑스 및 영국 남부 Azure 지역에서 사용할 수 있습니다.
+> [!IMPORTANT]
+> Azure Batch의 개인 연결에 대 한 지원은 현재 미국 중부, 미국 중 북부, 미국 중 북부, 미국 서 부, 미국 서 부, 미국 동부 2, 미국 서 부, 미국 서 부 2, 동아시아, 프랑스 중부, 영국 남부, 유럽 서부 유럽 서 부, 일본 동부, 일본 서 부, 오스트레일리아 동부, 모든 US Gov 및 US DoD 지역에서 사용할 수 있습니다.
 
 이 문서에서는 개인 일괄 처리 계정을 만들고 개인 끝점을 사용 하 여 액세스 하는 단계를 설명 합니다.
 

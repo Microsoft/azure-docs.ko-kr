@@ -12,7 +12,7 @@
   items:
     - name: REST API
       items:
-        - name: 'C# 사용'
+        - name: C# 사용
           href: quickstarts/csharp.md
         - name: Java 사용
           href: quickstarts/java.md
@@ -93,7 +93,7 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/search-api/image/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/555907-bing-search'
-    - name: 스택 오버플로
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/bing-search'
     - name: 국가별 가용성
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
@@ -102,7 +102,7 @@
     - name: 기술 자료
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
     - name: API 키 가져오기
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: 사용해 보세요.
       href: 'https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/'
     - name: Bing Image Search 엔드포인트

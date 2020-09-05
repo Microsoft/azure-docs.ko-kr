@@ -11,12 +11,12 @@ author: ajetasin
 ms.author: ajetasi
 ms.reviewer: sstein
 ms.date: 11/04/2019
-ms.openlocfilehash: 90d3507a8867ad3556891f6001f0e15ebda8c4f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 945e9019d75f9597d89a63c9322cbd4a8d502f15
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84345362"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869867"
 ---
 # <a name="stream-data-into-azure-sql-database-using-azure-stream-analytics-integration-preview"></a>Azure Stream Analytics 통합 (미리 보기)을 사용 하 여 Azure SQL Database로 데이터 스트리밍
 
@@ -31,7 +31,7 @@ ms.locfileid: "84345362"
 - 미리 보기 데이터에 대 한 추가 사용 편의성: 선택한 테이블의 컨텍스트에서 이벤트 원본 (이벤트 허브/IoT Hub)에서 들어오는 데이터 미리 보기
 
 > [!IMPORTANT]
-> Azure Stream Analytics 작업은 Azure SQL Database, Azure SQL Managed Instance 또는 Azure Synapse Analytics (이전의 Azure SQL Data Warehouse)로 출력 될 수 있습니다. 자세한 내용은 [출력](../../stream-analytics/stream-analytics-define-outputs.md#sql-database)을 참조 하세요.
+> Azure Stream Analytics 작업은 Azure SQL Database, Azure SQL Managed Instance 또는 Azure Synapse Analytics (이전의 Azure SQL Data Warehouse)로 출력 될 수 있습니다. 자세한 내용은 [출력](../../stream-analytics/sql-database-output.md)을 참조 하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -50,7 +50,7 @@ ms.locfileid: "84345362"
 
 3. 스트리밍 데이터를이 데이터베이스로 수집 시작 하려면 **만들기** 를 선택 하 고 스트리밍 작업에 이름을 지정한 후 **다음: 입력**을 선택 합니다.
 
-    ![Stream Analytics 작업 만들기](./media/stream-data-stream-analytics-integration/create-job.png)
+    ![Stream Analytics 작업 기본 사항 구성](./media/stream-data-stream-analytics-integration/create-job.png)
 
 4. 이벤트 원본 정보를 입력 하 고 **다음: 출력**을 선택 합니다.
 
@@ -64,7 +64,7 @@ ms.locfileid: "84345362"
 
       여기에서 만든 새 Azure Stream Analytics 작업 마다 소비자 그룹과 정책을 만드는 것이 좋습니다. 소비자 그룹은 5 명의 동시 판독기만 허용 하므로 각 작업에 대 한 전용 소비자 그룹을 제공 하면 해당 제한을 초과 하 여 발생할 수 있는 오류를 방지할 수 있습니다. 전용 정책을 사용 하면 다른 리소스에 영향을 주지 않고 키를 회전 하거나 사용 권한을 해지할 수 있습니다.
 
-     ![Stream Analytics 작업 만들기](./media/stream-data-stream-analytics-integration/create-job-output.png)
+     ![Stream Analytics 작업 출력 구성](./media/stream-data-stream-analytics-integration/create-job-output.png)
 
 5. 스트리밍 데이터를 수집 하려는 테이블을 선택 합니다. 완료 되 면 **만들기**를 선택 합니다.
 

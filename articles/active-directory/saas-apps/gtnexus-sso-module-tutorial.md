@@ -2,26 +2,21 @@
 title: '자습서: GTNexus SSO System과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 GTNexus SSO System 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: e677a161-1662-4eb3-b48a-b2835470b59e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/08/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99f9ad340ea3119d9d08eebef3102af8ba2c014e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e0ea1d3f5c2676176e2f6e15077d13ec43e673af
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157931"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544301"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>자습서: GTNexus SSO System과 Azure Active Directory 통합
 

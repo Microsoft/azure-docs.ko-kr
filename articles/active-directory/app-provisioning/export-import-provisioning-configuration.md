@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 03/19/2020
 ms.author: kenwith
-ms.openlocfilehash: ef4fbf582baf1e4b81d49c81a8b0e16674e64841
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e34656d6ce515cabe955c101f7b52ac0f2ade8db
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781725"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235820"
 ---
 # <a name="how-to-export-provisioning-configuration-and-roll-back-to-a-known-good-state"></a>방법: 프로 비전 구성 내보내기 및 알려진 정상 상태로 롤백
 
@@ -39,8 +39,8 @@ ms.locfileid: "84781725"
 
 구성을 내보내고 저장 하면 이전 버전의 구성으로 롤백할 수 있습니다. 특성 매핑 또는 범위 지정 필터를 변경 하는 경우 언제 든 지 프로 비전 구성을 내보내고 나중에 사용 하기 위해 저장 하는 것이 좋습니다. 위의 단계에서 다운로드 한 JSON 파일을 열고 JSON 파일의 전체 내용을 복사 하 고 스키마 편집기에서 JSON 페이로드의 전체 내용을 바꾸고 저장 하기만 하면 됩니다. 활성 프로 비전 주기가 있으면 완료 되 고 다음 주기에 업데이트 된 스키마가 사용 됩니다. 또한 다음 주기는 새로운 구성에 따라 모든 사용자 및 그룹을 다시 평가 하는 초기 주기로 사용 됩니다. 이전 구성으로 롤백할 때 다음 사항을 고려 하십시오.
 
-- 사용자를 다시 평가 하 여 범위에 속해야 하는지 확인 합니다. 범위 지정 필터가 변경 된 경우 사용자가 범위를 초과 하지 않으면 사용 하지 않도록 설정 됩니다. 대부분의 경우이 동작은 원하는 동작 이지만,이를 방지 하 고 [범위 삭제 생략](https://docs.microsoft.com/azure/active-directory/app-provisioning/skip-out-of-scope-deletions) 기능을 사용할 수 있는 경우가 있습니다. 
-- 프로 비전 구성을 변경 하면 서비스가 다시 시작 되 고 [초기 순환이](https://docs.microsoft.com/azure/active-directory/app-provisioning/how-provisioning-works#provisioning-cycles-initial-and-incremental)트리거됩니다.
+- 사용자를 다시 평가 하 여 범위에 속해야 하는지 확인 합니다. 범위 지정 필터가 변경 된 경우 사용자가 범위를 초과 하지 않으면 사용 하지 않도록 설정 됩니다. 대부분의 경우이 동작은 원하는 동작 이지만,이를 방지 하 고 [범위 삭제 생략](./skip-out-of-scope-deletions.md) 기능을 사용할 수 있는 경우가 있습니다. 
+- 프로 비전 구성을 변경 하면 서비스가 다시 시작 되 고 [초기 순환이](./how-provisioning-works.md#provisioning-cycles-initial-and-incremental)트리거됩니다.
 
 ## <a name="export-and-import-your-provisioning-configuration-by-using-the-microsoft-graph-api"></a>Microsoft Graph API를 사용 하 여 프로 비전 구성 내보내기 및 가져오기
 

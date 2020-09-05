@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 475933bcc9219808087671d49778cc3696d8c815
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: c6b39d810a7d59bf5c65e5bdb439f610565ba9e0
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500796"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227749"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql-single-server"></a>Azure Database for PostgreSQL 단일 서버에 대한 Azure 보안 기준
 
@@ -549,9 +549,9 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Database for PostgreSQL 제어 평면 (예: Azure Portal)에 대 한 액세스를 제어 합니다. 데이터 평면 액세스(데이터베이스 자체 내)의 경우 SQL 쿼리를 사용하여 사용자를 만들고 사용자 권한을 구성합니다. RBAC는 데이터베이스 내의 사용자 권한에 영향을 주지 않습니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Database for PostgreSQL 제어 평면 (예: Azure Portal)에 대 한 액세스를 제어 합니다. 데이터 평면 액세스(데이터베이스 자체 내)의 경우 SQL 쿼리를 사용하여 사용자를 만들고 사용자 권한을 구성합니다. Azure RBAC는 데이터베이스 내의 사용자 권한에 영향을 주지 않습니다.
 
-Azure에서 RBAC를 구성하는 방법: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+Azure RBAC를 구성 하는 방법: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
 SQL을 사용하여 Azure Database for PostgreSQL에 대한 사용자 액세스를 구성하는 방법: https://docs.microsoft.com/azure/postgresql/howto-create-users
 

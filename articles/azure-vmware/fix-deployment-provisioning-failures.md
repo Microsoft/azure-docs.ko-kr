@@ -1,18 +1,18 @@
 ---
 title: Azure VMware 솔루션 배포 또는 프로 비전 오류에 대 한 도움말 보기
-description: Avs (Azure VMware Solution) 사설 클라우드에서 필요한 정보를 가져와 AVS 배포 또는 프로 비전 오류에 대 한 서비스 요청을 파일 하는 방법입니다.
+description: Azure vmware 솔루션 사설 클라우드에서 필요한 정보를 가져와 Azure VMware 솔루션 배포 또는 프로 비전 오류에 대 한 서비스 요청을 수행 하는 방법입니다.
 ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: 05c9dee088b37c37cdcdee7e745cdcd2222b63e0
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 63d5440a9e2b15463e465e1d32762889508feca1
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514580"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752228"
 ---
 # <a name="get-help-with-azure-vmware-solution-deployment-or-provisioning-failures"></a>Azure VMware 솔루션 배포 또는 프로 비전 오류에 대 한 도움말 보기
 
-이 문서에서는 Azure Portal에서 SR (서비스 요청)을 열어 사설 클라우드에서 Azure VMware 솔루션 (AVS) 배포 또는 프로 비전 실패에 대 한 도움말을 얻는 방법에 대해 알아봅니다. 그러나 먼저 Azure Portal에서 몇 가지 주요 정보를 수집 해야 합니다. 대부분의 경우에는 다음이 필요 합니다.
+이 문서에서는 Azure Portal에서 SR (서비스 요청)을 열어 사설 클라우드에서 Azure VMware 솔루션 배포 또는 프로 비전 실패에 대 한 도움말을 얻는 방법에 대해 알아봅니다. 그러나 먼저 Azure Portal에서 몇 가지 주요 정보를 수집 해야 합니다. 대부분의 경우에는 다음이 필요 합니다.
 
 - 실패 한 배포의 상관 관계 ID
 - Express 경로 회로 ID (사설 클라우드 Express 경로 회로를 사용 하 여 기존 사설 클라우드를 확장 하거나 피어 링 하려고 시도 하 고 실패 함)
@@ -27,10 +27,10 @@ ms.locfileid: "86514580"
 
 이 상관 관계 ID를 복사 하 고 저장 하 여 서비스 요청에 포함 합니다. 자세한 내용은이 문서의 끝에 있는 [지원 요청 만들기](#create-your-support-request) 를 참조 하세요.
 
-사전 유효성 검사 단계에서 오류가 발생 하는 경우 사설 클라우드를 배포 하기 전에 상관 관계 ID가 생성 되지 않습니다. 이 경우 다음을 포함 하 여 AVS 사설 클라우드를 만들 때 사용한 정보를 간단히 제공할 수 있습니다.
+사전 유효성 검사 단계에서 오류가 발생 하는 경우 사설 클라우드를 배포 하기 전에 상관 관계 ID가 생성 되지 않습니다. 이 경우 다음을 포함 하 여 Azure VMware 솔루션 사설 클라우드를 만들 때 사용한 정보를 간단히 제공할 수 있습니다.
 
 - 위치
-- 리소스 그룹
+- Resource group
 - 리소스 이름
  
 ### <a name="collect-a-summary-of-errors"></a>오류 요약 수집
@@ -53,7 +53,7 @@ ms.locfileid: "86514580"
 
 그런 다음 리소스 이름 또는 리소스를 만드는 데 사용한 다른 고유한 정보를 검색 하 여 실패 한 배포와 해당 상관 관계 ID를 찾습니다. 다음 예제에서는 사설 클라우드 리소스 (pc03)에 대 한 검색 결과를 보여 줍니다.
  
-:::image type="content" source="media/fix-deployment-provisioning-failures/find-past-deployments.png" alt-text="실패 한 이전의 AVS 배포를 찾습니다.":::
+:::image type="content" source="media/fix-deployment-provisioning-failures/find-past-deployments.png" alt-text="실패 한 이전 Azure VMware 솔루션 배포를 찾습니다.":::
  
 실패 한 배포의 작업 이름을 선택 하면 세부 정보가 포함 된 창이 열립니다. JSON 탭을 선택 하 고 correlationId를 찾습니다. 를 복사 하 여 SR에 포함 합니다. 
  
@@ -63,7 +63,7 @@ ms.locfileid: "86514580"
 
 포털에서 사설 클라우드를 볼 때 **연결 > express** 경로를 선택 하 고 **express 경로 ID** 를 클립보드에 복사 합니다.
  
-:::image type="content" source="media/fix-deployment-provisioning-failures/expressroute-id.png" alt-text="Express 경로 ID를 수집 합니다."::: 
+:::image type="content" source="media/fix-deployment-provisioning-failures/expressroute-id.png" alt-text="Express 경로 ID를 클립보드로 복사 합니다."::: 
  
 새 지원 요청의 해당 필드에 Express 경로 ID를 붙여 넣습니다. 자세한 내용은 다음 섹션의 [지원 요청 만들기](#create-your-support-request)섹션을 참조 하세요.
  
@@ -74,11 +74,11 @@ ms.locfileid: "86514580"
 
 지원 요청을 만드는 방법에 대 한 일반적인 지침은 [Azure 지원 요청을 만드는 방법](../azure-portal/supportability/how-to-create-azure-support-request.md)을 참조 하세요. 
 
-다음은 AVS 배포 또는 프로 비전 실패를 위한 SR 만들기와 관련 된 추가 지침입니다.
+Azure VMware 솔루션 배포 또는 프로 비전 실패를 위한 SR 만들기와 관련 된 추가 지침은 다음과 같습니다.
 
 1. **도움말** 아이콘을 선택 하 고 **+ 새 지원 요청**을 선택 합니다.
 
-    :::image type="content" source="media/fix-deployment-provisioning-failures/open-sr-on-avs.png" alt-text="Express 경로 ID를 수집 합니다.":::
+    :::image type="content" source="media/fix-deployment-provisioning-failures/open-sr-on-avs.png" alt-text="SR의 Express 경로 ID를 수집 합니다.":::
 
 2. 모든 필수 필드를 입력 하 고 **기본 사항** 탭에서 다음을 수행 합니다.
 

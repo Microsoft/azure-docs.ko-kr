@@ -3,15 +3,15 @@ title: Azure DevTest Labs에서 데이터 디스크를 가상 머신에 연결 �
 description: Azure DevTest Labs에서 데이터 디스크를 가상 머신에 연결하거나 분리하는 방법 알아보기
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a5faae56307639e369130ec7443c8bceab2f794d
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 222bf06dc07cc2538bc0512b4a41b7bd91bc1ebf
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287572"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653922"
 ---
 # <a name="attach-or-detach-a-data-disk-to-a-virtual-machine-in-azure-devtest-labs"></a>Azure DevTest Labs에서 데이터 디스크를 가상 머신에 연결 또는 분리
-[Azure Managed Disks](../virtual-machines/windows/managed-disks-overview.md)는 가상 머신 데이터 디스크와 연결된 스토리지 계정을 관리합니다. 사용자가 새 데이터 디스크를 VM에 연결하고 필요한 디스크의 유형과 크기를 지정하면, Azure에서 디스크가 자동으로 만들어지고 관리됩니다. 그런 다음 데이터 디스크를 VM에서 분리하고 동일한 VM에 나중에 다시 연결하거나 동일한 사용자에 속하는 다른 VM에 연결할 수 있습니다.
+[Azure Managed Disks](../virtual-machines/managed-disks-overview.md)는 가상 머신 데이터 디스크와 연결된 스토리지 계정을 관리합니다. 사용자가 새 데이터 디스크를 VM에 연결하고 필요한 디스크의 유형과 크기를 지정하면, Azure에서 디스크가 자동으로 만들어지고 관리됩니다. 그런 다음 데이터 디스크를 VM에서 분리하고 동일한 VM에 나중에 다시 연결하거나 동일한 사용자에 속하는 다른 VM에 연결할 수 있습니다.
 
 이 기능은 개별 가상 머신 외부에서 스토리지나 소프트웨어를 관리하는 데 편리합니다. 스토리지나 소프트웨어가 데이터 디스크 내에 이미 존재하는 경우 해당 데이터 디스크를 소유하는 사용자가 소유한 모든 VM에 쉽게 연결, 분리 및 다시 연결할 수 있습니다.
 

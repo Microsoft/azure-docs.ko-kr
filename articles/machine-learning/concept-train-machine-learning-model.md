@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: dee74c787f6546494d12ea582eab383fbd99079d
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: d0341e5a4d5dc036a4c3f90b2a25003137602694
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876906"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144841"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Azure Machine Learning을 사용하여 모델 학습
 
@@ -55,7 +55,7 @@ Azure Machine Learning을 사용하는 일반적인 학습 작업은 [RunConfigu
 * [실행 구성이란?](concept-azure-machine-learning-architecture.md#run-configurations)
 * [자습서: 첫 번째 ML 모델 학습](tutorial-1st-experiment-sdk-train.md)
 * [예제: 학습 모델의 Jupyter Notebook 예제](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training)
-* [방법: 모델 학습의 컴퓨팅 대상 설정 및 사용](how-to-set-up-training-targets.md)
+* [방법: 모델 학습에 계산 대상 사용](how-to-set-up-training-targets.md)
 
 ### <a name="automated-machine-learning"></a>자동화된 Machine Learning
 
@@ -90,7 +90,7 @@ Azure Machine Learning을 사용하는 일반적인 학습 작업은 [RunConfigu
 * [자습서: 일괄 처리 채점에 Azure Machine Learning 파이프라인 사용](tutorial-pipeline-batch-scoring-classification.md)
 * [예제: 기계 학습 파이프라인에 대한 Jupyter Notebook 예제](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 * [예제: 자동화된 기계 학습을 사용하는 파이프라인](https://aka.ms/pl-automl)
-* [예제: 예측 도구를 사용하는 파이프라인](https://aka.ms/pl-estimator)
+* [예제: 예측 도구를 사용하는 파이프라인](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-how-to-use-estimatorstep.ipynb)
 
 ### <a name="understand-what-happens-when-you-submit-a-training-job"></a>학습 작업을 제출할 때 수행 되는 작업 이해
 
@@ -108,7 +108,7 @@ Azure 교육 수명 주기는 다음으로 구성 됩니다.
     1. 이 파일을 찾을 수 없는 경우 시스템은 새 이미지를 빌드합니다 (작업 영역 ACR에 캐시 및 등록 됨).
 1. 계산 노드의 임시 저장소에 압축 된 프로젝트 파일 다운로드
 1. 프로젝트 파일 압축 풀기
-1. 실행 하는 계산 노드`python <entry script> <arguments>`
+1. 실행 하는 계산 노드 `python <entry script> <arguments>`
 1. `./outputs`작업 영역과 연결 된 저장소 계정에 기록 된 로그, 모델 파일 및 기타 파일 저장
 1. 임시 저장소 제거를 포함 하 여 계산 확장 
 
@@ -160,4 +160,4 @@ VS Code 확장을 사용 하 여 교육 작업을 실행 하 고 관리할 수 �
 
 ## <a name="next-steps"></a>다음 단계
 
-[학습 환경 설정](how-to-set-up-training-targets.md) 방법을 알아봅니다.
+[모델 학습에 계산 대상을 사용](how-to-set-up-training-targets.md)하는 방법에 대해 알아봅니다.

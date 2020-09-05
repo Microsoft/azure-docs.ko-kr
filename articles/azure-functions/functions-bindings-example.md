@@ -3,14 +3,15 @@ title: Azure Functions 트리거 및 바인딩 예
 description: Azure 함수 바인딩을 구성 하는 방법 알아보기
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: 8685c0fe02ad6c68918736e857c2015e2bfb4595
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c95524a5de6696bd0ffe7463451d152a9d3a19b4
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74227236"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205963"
 ---
 # <a name="azure-functions-trigger-and-binding-example"></a>Azure Functions 트리거 및 바인딩 예
 
@@ -45,7 +46,7 @@ Azure Queue 스토리지에 새 메시지가 나타날 때마다 Azure Table Sto
 
 `bindings` 배열의 두 번째 요소는 Azure Table Storage 출력 바인딩입니다. `type` 및 `direction` 속성은 바인딩을 식별합니다. `name` 속성은 함수가 새 테이블 행을 제공하는 방법을 지정하며 이 경우 함수 반환 값을 사용합니다. 테이블의 이름은 `tableName`에 있으며 연결 문자열은 `connection`으로 식별되는 앱 설정에 있습니다.
 
-Azure Portal에서 *function.json*의 내용을 보고 편집하려면 함수의 **통합** 탭에서 **고급 편집기**를 클릭합니다.
+Azure Portal에서 *function.js* 의 내용을 보고 편집 하려면 함수의 **통합** 탭에서 **고급 편집기** 옵션을 클릭 합니다.
 
 > [!NOTE]
 > `connection`의 값은 연결 문자열 자체가 아닌 연결 문자열을 포함하는 앱 설정의 이름입니다. 바인딩은 *function.json*에 서비스 비밀이 포함되지 않은 모범 사례를 실행하기 위해 앱 설정에 저장된 연결 문자열을 사용합니다.
@@ -82,7 +83,7 @@ public class Person
 
 ## <a name="javascript-example"></a>JavaScript 예제
 
-JavaScript 함수를 사용 하 여 파일 *에 대해 동일한function.js* 를 사용할 수 있습니다.
+JavaScript 함수를 사용 하 여 파일 * 에 대해 동일한function.js* 를 사용할 수 있습니다.
 
 ```javascript
 // From an incoming queue message that is a JSON object, add fields and write to Table Storage

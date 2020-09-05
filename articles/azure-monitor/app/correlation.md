@@ -6,13 +6,13 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
-ms.custom: devx-track-python
-ms.openlocfilehash: f2645cc76f6b1a59e84ee01cbc8d4c650cd6c789
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-python, devx-track-csharp
+ms.openlocfilehash: b48b02d20ed3d0b731f04d2c6568274bc0262e2e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843627"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933361"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Application Insights의 원격 분석 상관 관계
 
@@ -32,9 +32,9 @@ Application Insights는 분산 원격 분석 상관 관계에 대한 [데이터 
 
 마이크로 서비스 환경에서 구성 요소의 추적은 다른 스토리지 항목으로 이동할 수 있습니다. 모든 구성 요소에는 자체의 계측 키가 Application Insights에 있을 수 있습니다. 논리 작업에 대 한 원격 분석을 가져오기 위해 Application Insights는 모든 저장소 항목의 데이터를 쿼리 합니다. 저장소 항목 수가 클 경우 다음을 찾을 위치에 대 한 힌트가 필요 합니다. Application Insights 데이터 모델에서는 이 문제를 해결하기 위해 두 가지 필드, 즉 `request.source` 및 `dependency.target`을 정의합니다. 첫 번째 필드는 종속성 요청을 시작한 구성 요소를 식별 합니다. 두 번째 필드는 종속성 호출의 응답을 반환한 구성 요소를 식별 합니다.
 
-## <a name="example"></a>예제
+## <a name="example"></a>예
 
-예를 살펴보겠습니다. 주식 가격 이라는 응용 프로그램은 Stock 이라는 외부 API를 사용 하 여 재고의 현재 시장 가격을 보여 줍니다. 주식 가격 응용 프로그램에는를 사용 하 여 클라이언트 웹 브라우저에서 열리는 스톡 페이지 라는 페이지가 있습니다 `GET /Home/Stock` . 응용 프로그램은 HTTP 호출을 사용 하 여 스톡 API를 쿼리 합니다 `GET /api/stock/value` .
+예제를 살펴보겠습니다. 주식 가격 이라는 응용 프로그램은 Stock 이라는 외부 API를 사용 하 여 재고의 현재 시장 가격을 보여 줍니다. 주식 가격 응용 프로그램에는를 사용 하 여 클라이언트 웹 브라우저에서 열리는 스톡 페이지 라는 페이지가 있습니다 `GET /Home/Stock` . 응용 프로그램은 HTTP 호출을 사용 하 여 스톡 API를 쿼리 합니다 `GET /api/stock/value` .
 
 쿼리를 실행하여 결과 원격 분석을 분석할 수 있습니다.
 
@@ -313,7 +313,7 @@ logger.warning('After the span')
 - `ILogger`[로그 범위](/aspnet/core/fundamentals/logging#log-scopes)를 사용 합니다.
 - WCF(Windows Communication Foundation) 및 HTTP는 "현재" 컨텍스트 전파를 연결합니다.
 
-그러나 이러한 메서드는 자동 분산 추적 지원을 사용 하지 않았습니다. `DiagnosticSource`자동 컴퓨터 간 상관 관계를 지원 합니다. .NET 라이브러리는 `DiagnosticSource` HTTP와 같은 전송을 통해 상관 관계 컨텍스트의 자동 크로스 컴퓨터 전파를 지원 하 고 허용 합니다.
+그러나 이러한 메서드는 자동 분산 추적 지원을 사용 하지 않았습니다. `DiagnosticSource` 자동 컴퓨터 간 상관 관계를 지원 합니다. .NET 라이브러리는 `DiagnosticSource` HTTP와 같은 전송을 통해 상관 관계 컨텍스트의 자동 크로스 컴퓨터 전파를 지원 하 고 허용 합니다.
 
 의 [활동 사용자 가이드](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md) 에서는 `DiagnosticSource` 추적 활동의 기본 사항을 설명 합니다.
 

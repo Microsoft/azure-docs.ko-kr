@@ -1,14 +1,14 @@
 ---
-title: '빠른 시작: 기술 자료 만들기, 학습 및 게시-QnA Maker'
+title: '빠른 시작: 기술 자료 만들기, 교육 및 게시 - QnA Maker'
 description: FAQ 또는 제품 설명서 등, 사용자 고유의 콘텐츠에서 QnA Maker 기술 자료(KB)를 만들 수 있습니다. 이 문서에는 간단한 FAQ 웹 페이지에서 QnA Maker 기술 자료를 만들어 QnA Maker 질문에 답변하는 예가 포함되어 있습니다.
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: 12f46e9a72f0a3b027fe67e5b8bf27c940685cfe
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
-ms.translationtype: MT
+ms.openlocfilehash: 77ddb2a0a149729af72066b53c17b1dcb08a2992
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84340592"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88540757"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>빠른 시작: QnA Maker 기술 자료 만들기, 학습 및 게시
 
@@ -17,7 +17,7 @@ FAQ 또는 제품 설명서 등, 사용자 고유의 콘텐츠에서 QnA Maker �
 ## <a name="prerequisites"></a>사전 요구 사항
 
 > [!div class="checklist"]
-> * Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+> * Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 > * Azure Portal에서 만든 QnA Maker [리소스](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker)입니다. 리소스를 만들 때 선택한 Azure Active Directory ID, 구독, QnA 리소스 이름을 기억하세요.
 
 ## <a name="create-your-first-qna-maker-knowledge-base"></a>첫 번째 QnA Maker 기술 자료 만들기
@@ -47,7 +47,7 @@ FAQ 또는 제품 설명서 등, 사용자 고유의 콘텐츠에서 QnA Maker �
     |**+ URL 추가**|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/troubleshooting`|
     |**잡담**|**Professional** 선택|
 
-1. **5 단계**에서 **KB 만들기**를 선택 합니다.
+1. **5단계**에서는 **KB 만들기**를 선택합니다.
 
     추출 프로세스는 문서를 읽고 질문과 답변을 확인하는 데 몇 분 정도가 걸립니다.
 
@@ -114,7 +114,7 @@ FAQ 또는 제품 설명서 등, 사용자 고유의 콘텐츠에서 QnA Maker �
 
 1. 새 브라우저 탭에서 Azure Portal의 Azure Bot Service 만들기 페이지가 열립니다. Azure Bot Service를 구성합니다. 봇과 QnA Maker는 웹앱 서비스 플랜을 공유할 수 있지만, 웹앱을 공유할 수는 없습니다. 즉, 봇의 **앱 이름**이 QnA Maker 서비스의 앱 이름과 달라야 합니다.
 
-    * **시겠습니까**
+    * **해야 할 일**
         * 고유하지 않은 경우 봇 핸들을 변경합니다.
         * SDK 언어를 선택합니다. 봇이 만들어지면 로컬 개발 환경에 코드를 다운로드하고 개발 프로세스를 계속할 수 있습니다.
     * **안 함**
@@ -124,7 +124,7 @@ FAQ 또는 제품 설명서 등, 사용자 고유의 콘텐츠에서 QnA Maker �
 
 
 1. 봇을 만든 후 **봇 서비스** 리소스를 엽니다.
-1. **Bot Management**에서 **웹 채팅에서 테스트**를 선택 합니다.
+1. **봇 관리**에서 **웹 채팅에서 테스트**를 선택합니다.
 1. **메시지 입력**의 채팅 프롬프트에서 다음을 입력합니다.
 
     `Azure services?`
@@ -135,7 +135,7 @@ FAQ 또는 제품 설명서 등, 사용자 고유의 콘텐츠에서 QnA Maker �
 
 ## <a name="what-did-you-accomplish"></a>수행했던 작업은 무엇인가요?
 
-새 기술 자료를 만들고 기술 자료에 공용 URL을 추가 하 고, 사용자 고유의 QnA 쌍을 추가 하 고, 학습 하 고, 테스트 하 고, 게시 했습니다.
+새 기술 자료를 만들고, 기술 자료에 공용 URL을 추가하고, 사용자 고유의 QnA 쌍을 추가하고, 기술 자료를 학습, 테스트 및 게시했습니다.
 
 기술 자료를 게시한 후 봇을 만들고, 봇을 테스트했습니다.
 

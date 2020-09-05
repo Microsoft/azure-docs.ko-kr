@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 07/01/2020
 ms.author: pafarley
-ms.openlocfilehash: 16869ab3a1961879cfcda1eaa383073cd2309a01
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 981c6f6bb2b0eb597b32ce8e428ef0aa7d19929b
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433445"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88003368"
 ---
 # <a name="tutorial-create-a-form-processing-app-with-ai-builder"></a>자습서: AI Builder를 사용하여 양식 처리 앱 만들기
 
@@ -33,7 +33,7 @@ ms.locfileid: "87433445"
 ## <a name="prerequisites"></a>필수 구성 요소
 
 * 학습/테스트 데이터에 사용할 동일한 형식의 양식 세트 5개 이상. 학습 데이터 세트를 결합하는 옵션 및 팁에 대한 자세한 내용은 [학습 데이터 세트 빌드](./build-training-data-set.md)를 참조하세요. 이 빠른 시작에서는 [샘플 데이터 세트](https://go.microsoft.com/fwlink/?linkid=2128080)의 **Train** 폴더에 있는 파일을 사용할 수 있습니다.
-* Power Apps 또는 Power Automate 라이선스 - [라이선스 가이드](https://go.microsoft.com/fwlink/?linkid=2085130)를 참조하세요. 라이선스에 [Dataflex Pro](https://powerplatform.microsoft.com/en-us/common-data-service/)가 포함되어야 합니다.
+* Power Apps 또는 Power Automate 라이선스 - [라이선스 가이드](https://go.microsoft.com/fwlink/?linkid=2085130)를 참조하세요. 라이선스에는 [Common Data Service](https://powerplatform.microsoft.com/en-us/common-data-service/)가 포함되어야 합니다.
 * AI Builder [추가 기능 또는 평가판](https://go.microsoft.com/fwlink/?LinkId=2113956&clcid=0x409)
 
 

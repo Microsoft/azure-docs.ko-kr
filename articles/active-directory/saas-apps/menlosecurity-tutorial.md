@@ -2,25 +2,21 @@
 title: '자습서: Menlo Security와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Menlo Security 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9e63fe6b-0ad0-405d-9e41-6a1a40a41df8
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 172fe6a6b5b8e7c649adc58e69e71c54a0f8bde9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cc42414d4aae6a575429e17d577b175f55bf3c01
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160733"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518835"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>자습서: Menlo Security와 Azure Active Directory 통합
 

@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/16/2020
 ms.author: iainfou
-ms.openlocfilehash: 69bb61012082404dfd6488b5e0606e5966c2fcef
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 6f166cdcb5f3764d7b264fdb4ebc082ece4c798b
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87504654"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245097"
 ---
 # <a name="tutorial-create-and-use-replica-sets-for-resiliency-or-geolocation-in-azure-active-directory-domain-services-preview"></a>자습서: 복제본 세트를 만들어서 Azure Active Directory Domain Services(미리 보기)의 복원력 또는 지리적 위치에 사용
 
@@ -42,11 +42,11 @@ Azure 구독이 없는 경우 시작하기 전에 [계정을 만드세요](https
     * Azure 구독이 없는 경우 [계정을 만듭니다](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * 온-프레미스 디렉터리 또는 클라우드 전용 디렉터리와 동기화되어 구독과 연결된 Azure Active Directory 테넌트
     * 필요한 경우 [Azure Active Directory 테넌트를 만들거나][create-azure-ad-tenant][Azure 구독을 계정에 연결합니다][associate-azure-ad-tenant].
-* 복제본 세트를 사용하여 만들고 Azure AD 테넌트에 구성한 Azure Active Directory Domain Services 관리되는 도메인.
+* Azure Resource Manager 배포 모델을 사용하여 만들고 Azure AD 테넌트에 구성된 Azure Active Directory Domain Services 관리형 도메인입니다.
     * 필요한 경우 [Azure Active Directory Domain Services 관리형 도메인을 만들고 구성합니다][tutorial-create-instance].
 
     > [!IMPORTANT]
-    > 복제본 세트를 사용하는 관리되는 도메인을 만들어야 합니다. 이 미리 보기 전에 만든 기존 관리되는 도메인은 복제본 세트를 지원하지 않습니다. 또한 관리되는 도메인에 대해 적어도 *Enterprise* SKU를 사용해야 합니다. 필요한 경우 [관리되는 도메인의 SKU를 변경][howto-change-sku]하세요.
+    > 클래식 배포 모델을 사용하여 만든 관리되는 도메인은 복제본 세트를 사용할 수 없습니다. 또한 관리되는 도메인에 대해 적어도 *Enterprise* SKU를 사용해야 합니다. 필요한 경우 [관리되는 도메인의 SKU를 변경][howto-change-sku]하세요.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Azure Portal에 로그인
 

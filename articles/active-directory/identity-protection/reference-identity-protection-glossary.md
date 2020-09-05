@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a3e2df956aaa4f9fd0af83dd2a18e04d731c714
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1a17f52e519a84c58c9ed5b75259cc0b96d0a175
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74232355"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949177"
 ---
 # <a name="azure-active-directory-identity-protection-glossary"></a>Azure Active Directory ID 보호 용어집
 
@@ -160,4 +160,4 @@ Azure Active Directory에서 ID를 인증하는 프로세스 또는 동작이며
 
 ## <a name="see-also"></a>참조
 
-- [Azure Active Directory ID 보호](../active-directory-identityprotection.md)
+- [Azure Active Directory ID 보호](./overview-identity-protection.md)

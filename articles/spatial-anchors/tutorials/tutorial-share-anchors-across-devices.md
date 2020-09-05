@@ -5,15 +5,15 @@ author: ramonarguelles
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: rgarcia
-ms.date: 02/24/2019
+ms.date: 07/31/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3b377f87bdba40c90cb3af6caef2c089d7b7de49
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 12a15a2d0cd45207b4adefc7315e48c6d642c0f7
+ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77615488"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810180"
 ---
 # <a name="tutorial-share-azure-spatial-anchors-across-sessions-and-devices"></a>자습서: 세션 및 디바이스에서 Azure Spatial Anchors 공유
 
@@ -34,7 +34,7 @@ Azure Spatial Anchors는 시간이 지남에 따라 디바이스에서 위치를
 
 [!INCLUDE [Share Anchors Sample Prerequisites](../../../includes/spatial-anchors-share-sample-prereqs.md)]
 
-이 자습서에서는 Unity와 Azure ASP.NET Core 웹앱을 사용하지만 다른 디바이스 간에 Azure Spatial Anchor 식별자를 공유하는 방법에 대한 예를 보여줄 뿐입니다. 다른 언어와 백 엔드 기술을 사용하여 동일한 목표를 달성할 수 있습니다. 또한 이 자습서에 사용되는 ASP.NET Core 웹앱은 .NET Core 2.2 SDK에 종속됩니다. 일반 Azure Web Apps(Windows용)에서는 정상적으로 실행되지만, 현재 Linux용 Azure Web Apps에서는 작동하지 않습니다.
+이 자습서에서는 Unity와 Azure ASP.NET Core 웹앱을 사용하지만 다른 디바이스 간에 Azure Spatial Anchor 식별자를 공유하는 방법에 대한 예를 보여줄 뿐입니다. 다른 언어와 백 엔드 기술을 사용하여 동일한 목표를 달성할 수 있습니다.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
@@ -56,7 +56,7 @@ VS Code에 서비스를 배포하기 전에 리소스 그룹 및 App Service 계
 
 ### <a name="sign-in-to-azure"></a>Azure에 로그인
 
-<a href="https://portal.azure.com/" target="_blank">Azure Portal</a>로 이동하여 Azure 구독에 로그인합니다.
+<a href="https://portal.azure.com/" target="_blank">Azure Portal</a>로 이동하고 Azure 구독에 로그인합니다.
 
 ### <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
@@ -74,27 +74,21 @@ VS Code에 서비스를 배포하기 전에 리소스 그룹 및 App Service 계
 
 **호스팅 계획 구성** 대화 상자에서 다음 설정을 사용합니다.
 
-| 설정 | 제안 값 | Description |
+| 설정 | 제안 값 | 설명 |
 |-|-|-|
-|App Service 계획| MySharingServicePlan | App Service 플랜의 이름입니다. |
+|App Service 플랜| MySharingServicePlan | App Service 플랜의 이름입니다. |
 | 위치 | 미국 서부 | 웹앱이 호스팅된 데이터 센터입니다. |
 | 크기 | 무료 | 호스팅 기능을 결정하는 [가격 책정 계층](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)입니다. |
 
 **확인**을 선택합니다.
 
-Visual Studio Code를 열고 `Sharing\SharingServiceSample` 폴더에서 프로젝트를 엽니다. <a href="https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">이 자습서</a>를 따라 Visual Studio Code를 통해 공유 서비스를 배포합니다. 'Visual Studio Code를 사용하여 열기' 섹션에서 시작하는 단계를 따를 수 있습니다. 배포하고 게시해야 하는 프로젝트(SharingServiceSample)가 이미 있으므로 위 단계에서 설명한 대로 다른 mvc 프로젝트를 만들지 마십시오.
+Visual Studio Code를 열고 `Sharing\SharingServiceSample` 폴더에서 프로젝트를 엽니다. <a href="https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">이 자습서</a>를 따라 Visual Studio Code를 통해 공유 서비스를 배포합니다. 'Visual Studio Code를 사용하여 열기' 섹션에서 시작하는 단계를 따를 수 있습니다. 배포하고 게시해야 하는 프로젝트(SharingServiceSample)가 이미 있으므로 위 단계에서 설명한 대로 다른 ASP.NET 프로젝트를 만들지 마세요.
 
 ---
 
 ## <a name="deploy-the-sample-app"></a>샘플 앱 배포
 
 [!INCLUDE [Run Share Anchors Sample](../../../includes/spatial-anchors-run-share-sample.md)]
-
-## <a name="troubleshooting"></a>문제 해결
-
-### <a name="unity-20193"></a>Unity 2019.3
-
-호환성이 손상되는 변경으로 인해 Unity 2019.3은 현재 지원되지 않습니다. Unity 2019.1 또는 2019.2를 사용하세요.
 
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 

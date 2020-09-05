@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef1ffb5ec0b39c5331afbc55d99268d9a3997e62
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: efd98cab50c3239d3202e6feabe18f45a4240293
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764454"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641180"
 ---
 # <a name="compare-remote-access-solutions"></a>원격 액세스 솔루션 비교
 
@@ -59,7 +59,7 @@ Azure AD 애플리케이션 프록시는 유사한 제품과 비교할 때 다�
    - 조건부 액세스 및 Multi-Factor Authentication 같은 기능을 쉽게 사용할 수 있습니다.
 - 완충 영역에 구성 요소 없음
 - 필요한 인바운드 연결 없음
-- 사용자가 O365, Azure AD 통합 SaaS 앱 및 온-프레미스 웹앱을 포함한 모든 애플리케이션을 사용하기 위해 이동할 수 있는 단일 액세스 패널 
+- 사용자가 O365, Azure AD 통합 SaaS 앱 및 온-프레미스 웹 앱을 포함 하 여 모든 응용 프로그램에 대해 이동할 수 있는 내 앱 페이지 하나 
 
 
 ## <a name="next-steps"></a>다음 단계

@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08d56a13d0a2e373a725320e132df739d806f2e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4ab60cb83e68a0c325ec1e2ac102870493016b57
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608231"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231234"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure Monitor 로그를 사용하여 Azure AD 활동 로그 분석
 
@@ -36,9 +36,9 @@ ms.locfileid: "85608231"
 
 필수 조건을 충족하려면 다음이 필요합니다.
 
-* Azure 구독의 Log Analytics 작업 영역. [Log Analytics 작업 영역을 만드는 방법](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace)을 알아봅니다.
+* Azure 구독의 Log Analytics 작업 영역. [Log Analytics 작업 영역을 만드는 방법](../../azure-monitor/learn/quick-create-workspace.md)을 알아봅니다.
 * 먼저 [Azure AD 활동 로그를 Log Analytics 작업 영역으로 라우팅](howto-integrate-activity-logs-with-log-analytics.md)하는 단계를 완료합니다.
-*  Log Analytics 작업 영역에 [액세스](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions)
+*  Log Analytics 작업 영역에 [액세스](../../azure-monitor/platform/manage-access.md#manage-access-using-workspace-permissions)
 * Azure Active Directory에서 다음 역할(Azure Active Directory 포털을 통해 Log Analytics에 액세스하는 경우)
     - 보안 관리자
     - 보안 판독기
@@ -96,7 +96,7 @@ AuditLogs
 
 3. 경고의 이름과 설명을 입력하고, 심각도 수준을 선택합니다. 예를 들어, **정보**로 설정할 수 있습니다.
 
-4. 신호가 발생할 때 경고를 받을 **작업 그룹**을 선택합니다. 메일 또는 문자 메시지를 통해 팀에게 알리도록 선택하거나, 웹후크, Azure Functions 또는 논리 앱을 사용하여 작업을 자동화할 수도 있습니다. [Azure Portal에서 경고 그룹 만들기 및 관리](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)에 대해 자세히 알아봅니다.
+4. 신호가 발생할 때 경고를 받을 **작업 그룹**을 선택합니다. 메일 또는 문자 메시지를 통해 팀에게 알리도록 선택하거나, 웹후크, Azure Functions 또는 논리 앱을 사용하여 작업을 자동화할 수도 있습니다. [Azure Portal에서 경고 그룹 만들기 및 관리](../../azure-monitor/platform/action-groups.md)에 대해 자세히 알아봅니다.
 
 5. 경고를 구성한 후에는 **경고 만들기**를 선택하여 사용하도록 설정합니다. 
 
@@ -113,6 +113,6 @@ Azure AD 활동 로그에서 미리 빌드된 로그 분석 보기를 다운로�
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure Monitor 로그에서 쿼리 시작](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
-* [Azure Portal에서 경고 그룹 만들기 및 관리](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)
+* [Azure Monitor 로그에서 쿼리 시작](../../azure-monitor/log-query/get-started-queries.md)
+* [Azure Portal에서 경고 그룹 만들기 및 관리](../../azure-monitor/platform/action-groups.md)
 * [Azure Active Directory용 로그 분석 보기 설치 및 사용](howto-install-use-log-analytics-views.md)

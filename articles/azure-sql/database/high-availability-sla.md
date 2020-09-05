@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: sashan
 ms.author: sashan
 ms.reviewer: carlrab, sashan
-ms.date: 04/02/2020
-ms.openlocfilehash: ab3d0a4b33bd2e424141adc9f6b8739380c2947b
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.date: 08/12/2020
+ms.openlocfilehash: 62dfa3214b86139a8f836b3d9bd72585653b7fa2
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542011"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189933"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Azure SQL Database 및 SQL Managed Instance에 대 한 고가용성
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -103,7 +103,7 @@ Hyperscale의 가용성 모델에는 다음 4 개의 계층이 포함 됩니다.
 |:---|:---|:---|:---|
 |데이터베이스|[AzSqlDatabaseFailover](https://docs.microsoft.com/powershell/module/az.sql/invoke-azsqldatabasefailover)|[데이터베이스 장애 조치](/rest/api/sql/databases(failover)/failover/)|[az rest](https://docs.microsoft.com/cli/azure/reference-index#az-rest) 를 사용 하 여에서 REST API 호출을 호출할 수 있습니다 Azure CLI|
 |탄력적 풀|[AzSqlElasticPoolFailover](https://docs.microsoft.com/powershell/module/az.sql/invoke-azsqlelasticpoolfailover)|[탄력적 풀 장애 조치 (failover)](/rest/api/sql/elasticpools(failover)/failover/)|[az rest](https://docs.microsoft.com/cli/azure/reference-index#az-rest) 를 사용 하 여에서 REST API 호출을 호출할 수 있습니다 Azure CLI|
-|관리되는 인스턴스|[AzSqlInstanceFailover](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[관리 되는 인스턴스-장애 조치](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[az sql mi 장애 조치](/cli/azure/sql/mi/#az-sql-mi-failover)|
+|관리되는 인스턴스|[AzSqlInstanceFailover](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover/)|[관리 되는 인스턴스-장애 조치](https://docs.microsoft.com/rest/api/sql/managed%20instances%20-%20failover/failover)|[az sql mi 장애 조치](/cli/azure/sql/mi/#az-sql-mi-failover)|
 
 > [!IMPORTANT]
 > 장애 조치 (Failover) 명령은 Hyperscale 데이터베이스의 읽기 가능한 보조 복제본에 사용할 수 없습니다.
@@ -117,4 +117,5 @@ Azure SQL Database 및 Azure SQL Managed Instance 기능은 Azure 플랫폼과 �
 - [Azure 가용성 영역](../../availability-zones/az-overview.md) 알아보기
 - [Service Fabric](../../service-fabric/service-fabric-overview.md) 에 대해 알아보기
 - [Azure Traffic Manager](../../traffic-manager/traffic-manager-overview.md) 알아보기
+- [SQL Managed Instance에서 수동 장애 조치 (failover)를 시작 하는 방법을](../managed-instance/user-initiated-failover.md) 알아봅니다.
 - 고가용성 및 재해 복구의 추가 옵션은 [비즈니스 연속성](business-continuity-high-availability-disaster-recover-hadr-overview.md)을 참조하세요.

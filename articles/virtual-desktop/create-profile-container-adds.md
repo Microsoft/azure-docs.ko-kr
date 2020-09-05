@@ -6,18 +6,18 @@ ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 91f5ef4a5065079f0fe385b92af2a1c4bfa5ee84
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ea834ed874f3011d95f8b924df860576f72bc4ee
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007712"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825616"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-azure-ad-ds"></a>Azure Files 및 Azure AD DS를 사용 하 여 프로필 컨테이너 만들기
 
 이 문서에서는 Azure Files 및 Azure Active Directory Domain Services (AD DS)를 사용 하 여 FSLogix 프로필 컨테이너를 만드는 방법을 보여 줍니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 준비 사항
 
 이 문서에서는 Azure AD DS 인스턴스를 이미 설정 했다고 가정 합니다. 아직 없는 경우 먼저 [기본 관리 되는 도메인 만들기](../active-directory-domain-services/tutorial-create-instance.md) 의 지침에 따라 다음을 반환 합니다.
 
@@ -107,25 +107,31 @@ ms.locfileid: "88007712"
     - `<share-name>`을 이전에 만든 공유의 이름으로 바꿉니다.
     - `<storage-account-key>`을 Azure의 저장소 계정 키로 바꿉니다.
 
-    예:
+    예를 들어:
 
      ```cmd
      net use y: \\fsprofile.file.core.windows.net\share HDZQRoFP2BBmoYQ=(truncated)= /user:Azure\fsprofile)
      ```
 
-8. 다음 명령을 실행 하 여 Azure Files 공유에 대 한 모든 권한을 사용자에 게 부여 합니다.
+8. 다음 명령을 실행 하 여 Windows 가상 데스크톱 사용자가 다른 사용자의 프로필 컨테이너에 대 한 액세스를 차단 하는 동안 자신의 프로필 컨테이너를 만들 수 있도록 합니다.
 
      ```cmd
-     icacls <mounted-drive-letter>: /grant <user-email>:(f)
+     icacls <mounted-drive-letter>: /grant <user-email>:(M)
+     icacls <mounted-drive-letter>: /grant "Creator Owner":(OI)(CI)(IO)(M)
+     icacls <mounted-drive-letter>: /remove "Authenticated Users"
+     icacls <mounted-drive-letter>: /remove "Builtin\Users"
      ```
 
-    - `<mounted-drive-letter>`사용자가 사용 하려는 드라이브의 문자로 대체 합니다.
-    - 를 `<user-email>` 이 프로필을 사용 하 여 세션 호스트 vm에 액세스 하는 사용자의 UPN으로 바꿉니다.
+    - `<mounted-drive-letter>`드라이브를 매핑하는 데 사용한 드라이브의 문자로 대체 합니다.
+    - `<user-email>`공유에 대 한 액세스를 필요로 하는 사용자를 포함 하는 사용자 또는 Active Directory 그룹의 UPN으로 대체 합니다.
 
-    예:
+    예를 들어:
 
      ```cmd
-     icacls y: /grant john.doe@contoso.com:(f)
+     icacls <mounted-drive-letter>: /grant john.doe@contoso.com:(M)
+     icacls <mounted-drive-letter>: /grant "Creator Owner":(OI)(CI)(IO)(M)
+     icacls <mounted-drive-letter>: /remove "Authenticated Users"
+     icacls <mounted-drive-letter>: /remove "Builtin\Users"
      ```
 
 ## <a name="create-a-profile-container"></a>프로필 컨테이너 만들기
@@ -200,7 +206,7 @@ FSLogix 프로필 컨테이너를 구성 하려면:
 
     이전 cmdlet과 마찬가지로 `<your-wvd-tenant>` , `<wvd-pool>` 및를 `<user-principal>` 관련 값으로 바꾸어야 합니다.
 
-    예:
+    예를 들어:
 
      ```powershell
      $pool1 = "contoso"

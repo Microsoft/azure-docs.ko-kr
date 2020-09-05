@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: dapine
-ms.openlocfilehash: db1b88b9c22012cb4e6b5025dda31432c9278ff8
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 808d42c821272882bbf0e01a36e49f7f10b30efa
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080901"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88505030"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Azure Cognitive Services 가상 네트워크 구성
 
@@ -54,6 +54,7 @@ Vnet (가상 네트워크)는 [Cognitive Services을 사용할 수 있는 지역
 > * [텍스트 분석](./text-analytics/index.yml)
 > * [QnA Maker](./qnamaker/index.yml)
 > * [Translator Text](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#virtual-network-support)
+> * [몰입형 리더](./immersive-reader/index.yml)
 
 ## <a name="service-tags"></a>서비스 태그
 
@@ -66,12 +67,13 @@ Cognitive Services는 네트워크 규칙 구성에 대 한 서비스 태그를 
 > * [Custom Vision](./custom-vision-service/index.yml)
 > * [Face](./face/index.yml)
 > * [Form Recognizer](./form-recognizer/index.yml)
-> * [Language Understanding (LUIS)](./luis/index.yml)
+> * [언어 이해(LUIS)](./luis/index.yml)
 > * [Personalizer](./personalizer/index.yml)
 > * [텍스트 분석](./text-analytics/index.yml)
 > * [QnA Maker](./qnamaker/index.yml)
 > * [Translator](./translator/index.yml)
 > * [음성 서비스](./speech-service/index.yml)
+> * [몰입형 리더](./immersive-reader/index.yml)
 
 ## <a name="change-the-default-network-access-rule"></a>기본 네트워크 액세스 규칙 변경
 

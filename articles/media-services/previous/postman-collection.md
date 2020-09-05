@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 2d3bf8b43bc12a2a8a193ea2708ab1668235edde
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f5f7a40cb72e1ae58f7962c4c8b80195a82ebdc5
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87047570"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259271"
 ---
-# <a name="import-a-postman-collection-with-on-demand-streaming-operations"></a>주문형 스트리밍 작업으로 Postman 컬렉션 가져오기 
+# <a name="import-a-postman-collection-with-on-demand-streaming-operations"></a>주문형 스트리밍 작업으로 Postman 컬렉션 가져오기
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 이 문서에는 Azure Media Services REST API를 호출하는 그룹화된 HTTP 요청이 포함된 **Postman** 컬렉션 정의가 포함되어 있습니다. Media Services REST API를 호출하는 데 사용할 수 있도록 **Postman**을 구성하는 방법에 대해 자세히 알아보려면 [Media Services REST API 호출에 대해 Postman 구성](media-rest-apis-with-postman.md) 자습서를 참조하세요.
 

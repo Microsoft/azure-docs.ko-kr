@@ -7,12 +7,12 @@ ms.author: andrela
 ms.custom: mvc
 ms.topic: overview
 ms.date: 3/18/2020
-ms.openlocfilehash: c5758fa367ac17ceb687212b4073fd2c1a5c18f6
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 37bc99d9f83f185a5372fd45634351987b85e20b
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206409"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88763663"
 ---
 # <a name="what-is-azure-database-for-mysql"></a>MySQL용 Azure Database란?
 
@@ -37,6 +37,9 @@ Azure Database for MySQL은 [MySQL 커뮤니티 버전](https://www.mysql.com/pr
 일련의 Azure CLI 샘플은 다음을 참조하세요.
 
 - [MySQL용 Azure Database에 대한 Azure CLI 샘플](sample-scripts-azure-cli.md)
+
+## <a name="automated-patching"></a>자동화된 패치
+서비스는 기본 하드웨어, OS 및 데이터베이스 엔진의 자동화된 패치를 수행합니다. 패치에는 기본 하드웨어, OS 및 데이터베이스 엔진에 대한 보안 및 소프트웨어 업데이트가 포함됩니다. MySQL 엔진의 경우 부 버전 업그레이드는 자동으로 적용되며 패치 릴리스의 일부로 포함됩니다. 커뮤니티에서 부 버전을 릴리스하면 서비스 테스트 주기의 일부로 자동으로 통합됩니다. 부 버전의 테스트는 MySQL의 정식 작업 중 일부에 대해 수행됩니다. MySQL 엔진의 부 버전 릴리스는 안정성(충돌 없음), 가용성, 보안 및 성능에 대해 평가됩니다. 모든 부 버전이 서비스에서 프로덕션으로 릴리스되는 것은 아니지만 버그 수정의 중요도와 새 증분 값에 따라 평가됩니다. 이는 새 증분 값 간에 적절한 균형을 유지하고 안정성을 위해 시스템의 변수를 최소화하기 위한 것입니다. 패치를 적용하는 데 필요한 사용자 작업 또는 구성 설정은 없습니다. 패치 주기는 페이로드의 중요도에 따라 관리되는 서비스입니다. 일반적으로 서비스는 연속 통합 및 릴리스의 일부로 월별 릴리스 일정을 따릅니다. 사용자는 [계획된 유지 관리 알림](concepts-monitoring.md)을 구독하여 이벤트 72시간 전에 예정된 유지 관리 알림을 받을 수 있습니다.
 
 ## <a name="adjust-performance-and-scale-within-seconds"></a>몇 초 이내 성능 및 규모 조정
 MySQL는 Azure Database는 다음과 같은 여러 서비스 계층을 제공합니다. 기본, 범용 및 메모리 최적화의 세 가지 가격 책정 계층 중 하나에서 만들 수 있습니다. 각 계층은 경량급에서 중량급까지 데이터베이스 워크로드를 지원하기 위해 다양한 성능 및 기능을 제공합니다. 한 달에 몇 달러로 작은 데이터베이스에 첫 번째 앱을 빌드하고 솔루션의 요구에 맞게 규모를 조정할 수 있습니다. 동적 확장성을 사용하면 데이터베이스가 빠르게 변화하는 리소스 요구 사항에 투명하게 대응할 수 있습니다. 필요할 경우 필요한 리소스에 대해서만 요금을 지불합니다. 자세한 내용은  [가격 책정 계층](concepts-service-tiers.md)을 참조하세요.

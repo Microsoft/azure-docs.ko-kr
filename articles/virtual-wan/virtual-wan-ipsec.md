@@ -1,18 +1,18 @@
 ---
 title: Azure 가상 WAN 기본 IPsec 정책 | Microsoft Docs
-description: 이 문서에서는 가상 WAN의 IPsec 정책에 대 한 정보를 제공 합니다.
+description: 기본 초기자 및 응답자 정책과 사용자 지정 정책 조합을 포함 하 여 Azure 가상 WAN IPsec 연결 정책에 대해 알아봅니다.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: cherylmc
-ms.openlocfilehash: 877a17327f13e407f86cb3a1a21f051572f74343
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 784f43cfa259ad7bdf161aea8e9b1ce559855db7
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73499716"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213903"
 ---
 # <a name="virtual-wan-default-policies-for-ipsec-connectivity"></a>IPsec 연결에 대 한 가상 WAN 기본 정책
 

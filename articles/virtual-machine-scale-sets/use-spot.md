@@ -8,13 +8,13 @@ ms.service: virtual-machine-scale-sets
 ms.subservice: spot
 ms.date: 03/25/2020
 ms.reviewer: jagaveer
-ms.custom: jagaveer, devx-track-azurecli
-ms.openlocfilehash: de8cfa66d6d52fe16cc40c5df0f41a39fff134fd
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: jagaveer, devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: b5888000028ba87d503bb0bc690aad6628a51a37
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832640"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89072743"
 ---
 # <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>가상 머신 확장 집합에 대 한 Azure 스폿 Vm 
 
@@ -146,7 +146,7 @@ $vmssConfig = New-AzVmssConfig `
 **A:** 아니요 `Spot` . 플래그 설정은 만들 때에만 지원 됩니다.
 
 
-**Q:** `low`낮은 우선 순위의 확장 집합에를 사용 하는 경우를 대신 사용 해야 하나요 `Spot` ?
+**Q:** `low` 낮은 우선 순위의 확장 집합에를 사용 하는 경우를 대신 사용 해야 하나요 `Spot` ?
 
 **A:** 지금은 `low` 및 `Spot` 가 모두 작동 하지만를 사용 하도록 전환 하기 시작 해야 합니다 `Spot` .
 

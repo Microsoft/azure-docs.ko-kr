@@ -6,12 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: 853d3fa79436d9af0119aada86d283f9970d4ef2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 59781f9b86764d0982e1612f9671e8f0919ed490
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262806"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009511"
 ---
 # <a name="create-containers-with-large-partition-key"></a>파티션 키가 많은 컨테이너 만들기
 

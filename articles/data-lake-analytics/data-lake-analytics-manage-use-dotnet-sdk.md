@@ -7,12 +7,13 @@ ms.assetid: 811d172d-9873-4ce9-a6d5-c1a26b374c79
 ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 06/18/2017
-ms.openlocfilehash: 12043ead1c7d59cc3955bb927fabb54278c18bd5
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b06530488e74120f3cc511694d290840269db453
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87127692"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020068"
 ---
 # <a name="manage-azure-data-lake-analytics-a-net-app"></a>Azure Data Lake Analytics .NET 앱 관리
 
@@ -217,7 +218,7 @@ if (adlaClient.Account.Exists(rg, adla))
 
 데이터 레이크 분석은 현재 다음 데이터 원본을 지원합니다.
 
-* [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md)
+* [Azure Data Lake Storage](../data-lake-store/data-lake-store-overview.md)
 * [Azure Storage 계정](../storage/common/storage-introduction.md)
 
 ### <a name="link-to-an-azure-storage-account"></a>Azure Storage 계정에 대한 링크

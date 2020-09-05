@@ -2,13 +2,14 @@
 title: Azure Relay .NET Standard API 개요 | Microsoft Docs
 description: 이 문서에서는 Azure Relay 하이브리드 연결 .NET Standard API에 대 한 개요를 요약 합니다.
 ms.topic: article
+ms.custom: devx-track-csharp
 ms.date: 06/23/2020
-ms.openlocfilehash: 1d5aeed2ea76f47608ef03103b11fa236ec0362e
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 44d5800c08b49118e99a678e31d02e5b7a1f550c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87532903"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935673"
 ---
 # <a name="azure-relay-hybrid-connections-net-standard-api-overview"></a>Azure Relay 하이브리드 연결 .NET Standard API 개요
 
@@ -69,7 +70,7 @@ await listener.OpenAsync();
 var hybridConnectionStream = await listener.AcceptConnectionAsync();
 ```
 
-#### <a name="client"></a>클라이언트
+#### <a name="client"></a>Client
 
 [HybridConnectionClient][HCClient] 개체를 사용하면 다음과 같이 `HybridConnectionStream` 개체를 가져올 수 있습니다.
 

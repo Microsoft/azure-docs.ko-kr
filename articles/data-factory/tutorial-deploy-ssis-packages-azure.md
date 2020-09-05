@@ -9,17 +9,17 @@ ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 07/06/2020
+ms.date: 08/11/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 76c936cb0c1a95ca1bf5919cbf2753fb6f050687
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 840ccb00fdc91cc44fee46500bbc7237fe55ff2a
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85971014"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185522"
 ---
 # <a name="provision-the-azure-ssis-integration-runtime-in-azure-data-factory"></a>Azure Data Factory에서 Azure-SSIS 통합 런타임 프로비저닝
 
@@ -127,93 +127,99 @@ Azure Portal을 통해 데이터 팩터리를 만들려면 [UI를 통해 데이�
 
 ### <a name="deployment-settings-page"></a>배포 설정 페이지
 
-**통합 런타임 설치** 창의 **배포 설정** 페이지에서 다음 단계를 완료합니다.
+**통합 런타임 설치** 창의 **배포 설정** 페이지에서 SSISDB 및 또는 Azure-SSIS IR 패키지 저장소를 만드는 옵션이 있습니다.
 
-   1. **Create SSIS catalog (SSISDB) hosted by Azure SQL Database server/Managed Instance to store your projects/packages/environments/execution logs**(Azure SQL Database 서버/Managed Instance에서 호스팅하는 SSIS 카탈로그(SSISDB)를 만들어서 프로젝트/패키지/환경/실행 로그 저장) 확인란을 선택하여 패키지를 SSISDB(프로젝트 배포 모델)에 배포할 것인지 여부를 선택합니다. 또는 Azure SQL Managed Instance(패키지 배포 모델)가 호스트하는 파일 시스템, Azure Files 또는 SQL Server 데이터베이스(MSDB)에 패키지를 배포하려는 경우에는 SSISDB를 만들 필요가 없습니다.
+#### <a name="creating-ssisdb"></a>SSISDB 생성
+
+**통합 런타임 설정** 창의 **배포 설정** 페이지에서 SSISDB(프로젝트 배포 모델)에 패키지를 배포하려면 **프로젝트/패키지/환경/실행 로그를 저장하기 위해 Azure SQL Database 서버/Managed Instance가 호스트하는 SSIS 카탈로그(SSISDB) 만들기** 확인란을 선택합니다. 또는 Azure SQL Managed Instance(패키지 배포 모델)가 호스트하는 파일 시스템, Azure Files 또는 SQL Server 데이터베이스(MSDB)에 패키지를 배포하려는 경우에는 SSISDB를 만들거나 확인란을 선택할 필요가 없습니다.
+
+배포 모델에 관계없이 Azure SQL Managed Instance가 호스트하는 SQL Server 에이전트를 사용하여 패키지 실행을 오케스트레이션/예약하려는 경우 SSISDB에서 사용하도록 설정되어 있으므로 이 확인란을 선택합니다. 자세한 내용은 [Azure SQL Managed Instance 에이전트를 통해 SSIS 패키지 실행 예약](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-managed-instance-agent)을 참조하세요.
    
-      배포 모델에 관계없이, SSISDB에서 사용하도록 설정된 이 확인란을 선택하여 Azure SQL Managed Instance가 호스트하는 SQL Server 에이전트를 사용하여 패키지 실행을 오케스트레이션/예약할 것인지 여부를 선택하면 됩니다. 자세한 내용은 [Azure SQL Managed Instance 에이전트를 통해 SSIS 패키지 실행 예약](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-managed-instance-agent)을 참조하세요.
+확인란을 선택한 경우 다음 단계를 완료하여 사용자를 대신하여 만들고 관리할 SSISDB를 호스트하는 사용자 고유의 데이터베이스 서버를 가져옵니다.
+
+   ![SSISDB의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings.png)
    
-      이 확인란을 선택하면 사용자 대신 만들고 관리할 SSISDB를 호스트하기 위한 고유의 데이터베이스 서버를 가져와야 합니다.
+   1. **구독**에서는 SSISDB를 호스트하는 데이터베이스 서버가 있는 Azure 구독을 선택합니다. 
 
-      ![SSISDB의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings.png)
+   1. **위치**에서는 SSISDB를 호스트하는 데이터베이스 서버의 위치를 선택합니다. 통합 런타임과 동일한 위치를 선택하는 것이 좋습니다.
+
+   1. **카탈로그 데이터베이스 서버 엔드포인트**로는 SSISDB를 호스트하는 데이터베이스 서버의 엔드포인트를 선택합니다. 
    
-      1. **구독**에서는 SSISDB를 호스트하는 데이터베이스 서버가 있는 Azure 구독을 선택합니다. 
+      선택한 데이터베이스 서버에 따라 사용자를 대신하여 SSISDB 인스턴스를 단일 데이터베이스, 탄력적 풀의 일부 또는 관리형 인스턴스로 만들 수 있습니다. 이는 공용 네트워크에서 액세스하거나 가상 네트워크에 조인하여 액세스할 수 있습니다. SSISDB를 호스트할 데이터베이스 서버의 유형을 선택하는 방법에 대한 지침은 [SQL Database 및 SQL Managed Instance 비교](../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance)를 참조하세요.   
 
-      1. **위치**에서는 SSISDB를 호스트하는 데이터베이스 서버의 위치를 선택합니다. 통합 런타임과 동일한 위치를 선택하는 것이 좋습니다.
+      IP 방화벽 규칙/가상 네트워크 서비스 엔드포인트가 있는 Azure SQL Database 서버 또는 프라이빗 엔드포인트가 있는 관리형 인스턴스를 선택하여 SSISDB를 호스팅하거나 자체 호스팅 IR을 구성하지 않고 온-프레미스 데이터에 액세스해야 하는 경우 Azure-SSIS IR을 가상 네트워크에 조인해야 합니다. 자세한 내용은 [가상 네트워크에서 Azure-SSIS IR 만들기](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)를 참조하세요.
 
-      1. **카탈로그 데이터베이스 서버 엔드포인트**로는 SSISDB를 호스트하는 데이터베이스 서버의 엔드포인트를 선택합니다. 
+   1. SSISDB를 호스팅할 데이터베이스 서버의 인증 방법을 선택하려면 **ADF의 관리 ID를 통한 Azure AD 인증 사용** 확인란을 선택합니다. 데이터 팩터리의 관리 ID를 통한 SQL 인증 또는 Azure AD 인증을 선택합니다.
+
+      확인란을 선택하면 데이터 팩터리의 관리 ID를 데이터베이스 서버에 대한 액세스 권한이 있는 Azure AD 그룹에 추가해야 합니다. 자세한 내용은 [Azure AD 인증을 사용하여 Azure-SSIS IR 만들기](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)를 참조하세요.
    
-         선택한 데이터베이스 서버에 따라 사용자를 대신하여 SSISDB 인스턴스를 단일 데이터베이스, 탄력적 풀의 일부 또는 관리형 인스턴스로 만들 수 있습니다. 이는 공용 네트워크에서 액세스하거나 가상 네트워크에 조인하여 액세스할 수 있습니다. SSISDB를 호스트할 데이터베이스 서버의 유형을 선택하는 방법에 대한 지침은 [SQL Database 및 SQL Managed Instance 비교](../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance)를 참조하세요.   
+   1. **관리 사용자 이름**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 사용자 이름을 입력합니다. 
 
-         IP 방화벽 규칙/가상 네트워크 서비스 엔드포인트가 있는 Azure SQL Database 서버 또는 프라이빗 엔드포인트가 있는 관리형 인스턴스를 선택하여 SSISDB를 호스팅하거나 자체 호스팅 IR을 구성하지 않고 온-프레미스 데이터에 액세스해야 하는 경우 Azure-SSIS IR을 가상 네트워크에 조인해야 합니다. 자세한 내용은 [가상 네트워크에서 Azure-SSIS IR 만들기](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)를 참조하세요.
+   1. **관리자 암호**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 암호를 입력합니다. 
 
-      1. SSISDB를 호스팅할 데이터베이스 서버의 인증 방법을 선택하려면 **ADF의 관리 ID를 통한 AAD 인증 사용** 확인란을 선택합니다. 데이터 팩터리의 관리 ID를 통한 SQL 인증 또는 Azure AD 인증을 선택합니다.
+   1. **카탈로그 데이터베이스 서비스 계층**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 서비스 계층을 선택합니다. 기본, 표준 또는 프리미엄 계층을 선택하거나 탄력적 풀 이름을 선택합니다.
 
-         확인란을 선택하면 데이터 팩터리의 관리 ID를 데이터베이스 서버에 대한 액세스 권한이 있는 Azure AD 그룹에 추가해야 합니다. 자세한 내용은 [Azure AD 인증을 사용하여 Azure-SSIS IR 만들기](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)를 참조하세요.
+**연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **다음**을 선택합니다.
+
+#### <a name="creating-azure-ssis-ir-package-stores"></a>Azure-SSIS IR 패키지 저장소 만들기
+
+**통합 런타임 설정** 창의 **배포 설정** 페이지에서 Azure-SSIS IR 패키지 저장소를 통해 MSDB, 파일 시스템 또는 Azure Files(패키지 배포 모델)에 배포된 패키지를 관리하려면 **Azure SQL Managed Instance가 호스트하는 파일 시스템/Azure Files/SQL Server 데이터베이스(MSDB)에 배포되는 패키지를 관리할 패키지 저장소 만들기** 확인란을 선택합니다.
    
-      1. **관리 사용자 이름**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 사용자 이름을 입력합니다. 
-
-      1. **관리자 암호**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 SQL 인증 암호를 입력합니다. 
-
-      1. **카탈로그 데이터베이스 서비스 계층**에 대해 SSISDB를 호스팅할 데이터베이스 서버의 서비스 계층을 선택합니다. 기본, 표준 또는 프리미엄 계층을 선택하거나 탄력적 풀 이름을 선택합니다.
-
-   1. **Azure SQL Managed Instance가 호스트하는 파일 시스템/Azure Files/SQL Server 데이터베이스(MSDB)에 배포되는 패키지를 관리할 패키지 저장소 만들기** 확인란을 선택하여 MSDB, 파일 시스템 또는 Azure Files(패키지 배포 모델)에 배포된 패키지를 Azure-SSIS IR 패키지 저장소를 통해 관리할 것인지 여부를 선택합니다.
+Azure-SSIS IR 패키지 저장소를 사용하면 [레거시 SSIS 패키지 저장소](https://docs.microsoft.com/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017)와 비슷하게 SSMS를 통해 패키지를 가져오고/내보내고/삭제하고/실행하고 실행 중인 패키지를 모니터링/중지할 수 있습니다. 자세한 내용은 [Azure-SSIS IR 패키지 저장소를 사용하여 SSIS 패키지 관리](https://docs.microsoft.com/azure/data-factory/azure-ssis-integration-runtime-package-store)를 참조하세요.
    
-      Azure-SSIS IR 패키지 저장소를 사용하면 [레거시 SSIS 패키지 저장소](https://docs.microsoft.com/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017)와 비슷하게 SSMS를 통해 패키지를 가져오고/내보내고/삭제하고/실행하고 실행 중인 패키지를 모니터링/중지할 수 있습니다. 자세한 내용은 [Azure-SSIS IR 패키지 저장소를 사용하여 SSIS 패키지 관리](https://docs.microsoft.com/azure/data-factory/azure-ssis-integration-runtime-package-store)를 참조하세요.
+이 확인란을 선택하면 **새로 만들기**를 선택하여 Azure-SSIS IR에 여러 패키지 저장소를 추가할 수 있습니다. 반대로, 패키지 저장소 하나를 여러 Azure SSIS IR이 공유할 수 있습니다.
+
+![MSDB/파일 시스템/Azure Files의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings2.png)
+
+**패키지 저장소 추가** 창에서 다음 단계를 완료합니다.
    
-      이 확인란을 선택하면 **새로 만들기**를 선택하여 Azure-SSIS IR에 여러 패키지 저장소를 추가할 수 있습니다. 반대로, 패키지 저장소 하나를 여러 Azure SSIS IR이 공유할 수 있습니다.
+   1. **패키지 저장소 이름**으로 패키지 저장소의 이름을 입력합니다. 
 
-      ![MSDB/파일 시스템/Azure Files의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings2.png)
+   1. **패키지 저장소 연결된 서비스**로는 패키지가 배포되는 파일 시스템/Azure Files/Azure SQL Managed Instance 대한 액세스 정보를 저장하는 기존의 연결된 서비스를 선택하거나, **새로 만들기**를 선택하여 새로 만듭니다. **새 연결된 서비스** 창에서 다음 단계를 완료합니다. 
 
-      **패키지 저장소 추가** 창에서 다음 단계를 완료합니다.
-   
-      1. **패키지 저장소 이름**으로 패키지 저장소의 이름을 입력합니다. 
+      ![연결된 서비스의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
 
-      1. **패키지 저장소 연결된 서비스**로는 패키지가 배포되는 파일 시스템/Azure Files/Azure SQL Managed Instance 대한 액세스 정보를 저장하는 기존의 연결된 서비스를 선택하거나, **새로 만들기**를 선택하여 새로 만듭니다. **새 연결된 서비스** 창에서 다음 단계를 완료합니다. 
-
-         ![연결된 서비스의 배포 설정](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
-
-         1. **이름**에는 연결된 서비스의 이름을 입력합니다. 
+      1. **이름**에는 연결된 서비스의 이름을 입력합니다. 
          
-         1. **설명**에는 연결된 서비스에 대한 설명을 입력합니다. 
+      1. **설명**에는 연결된 서비스에 대한 설명을 입력합니다. 
          
-         1. **형식**으로는 **Azure File Storage**, **Azure SQL Managed Instance** 또는 **파일 시스템**을 선택합니다.
+      1. **형식**으로는 **Azure File Storage**, **Azure SQL Managed Instance** 또는 **파일 시스템**을 선택합니다.
 
-         1. 항상 Azure-SSIS IR를 사용하여 패키지 저장소에 대한 액세스 정보를 가져오기 때문에 **통합 런타임을 통해 연결**을 무시해도 됩니다.
+      1. 항상 Azure-SSIS IR를 사용하여 패키지 저장소에 대한 액세스 정보를 가져오기 때문에 **통합 런타임을 통해 연결**을 무시해도 됩니다.
 
-         1. **Azure File Storage**를 선택하는 경우 다음 단계를 완료합니다. 
+      1. **Azure File Storage**를 선택하는 경우 다음 단계를 완료합니다. 
 
-            1. **계정 선택 방법**으로는 **Azure 구독에서 선택** 또는 **수동으로 입력**을 선택합니다.
+         1. **계정 선택 방법**으로는 **Azure 구독에서 선택** 또는 **수동으로 입력**을 선택합니다.
          
-            1. **Azure 구독에서 선택**을 선택하는 경우 관련된 **Azure 구독**, **스토리지 계정 이름** 및 **파일 공유**를 선택합니다.
+         1. **Azure 구독에서 선택**을 선택하는 경우 관련된 **Azure 구독**, **스토리지 계정 이름** 및 **파일 공유**를 선택합니다.
             
-            1. **수동으로 입력**을 선택하는 경우 **호스트**로 `\\<storage account name>.file.core.windows.net\<file share name>`을 입력하고, **사용자 이름**으로 `Azure\<storage account name>`을 입력하고, **암호**로 `<storage account key>`를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+         1. **수동으로 입력**을 선택하는 경우 **호스트**로 `\\<storage account name>.file.core.windows.net\<file share name>`을 입력하고, **사용자 이름**으로 `Azure\<storage account name>`을 입력하고, **암호**로 `<storage account key>`를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-         1. **Azure SQL Managed Instance**를 선택하는 경우 다음 단계를 완료합니다. 
+      1. **Azure SQL Managed Instance**를 선택하는 경우 다음 단계를 완료합니다. 
 
-            1. **연결 문자열**을 선택하여 수동으로 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+         1. **연결 문자열**을 선택하여 수동으로 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
          
-            1. **연결 문자열**을 선택하는 경우 다음 단계를 완료합니다. 
+         1. **연결 문자열**을 선택하는 경우 다음 단계를 완료합니다. 
 
-               1. **정규화된 도메인 이름**으로 Azure SQL Managed Instance의 프라이빗 엔드포인트인 `<server name>.<dns prefix>.database.windows.net` 또는 퍼블릭 엔드포인트인 `<server name>.public.<dns prefix>.database.windows.net,3342`를 입력합니다. 프라이빗 엔드포인트를 입력하면 ADF UI가 연결할 수 없기 때문에 **연결 테스트**를 사용할 수 없습니다.
+            1. **정규화된 도메인 이름**으로 Azure SQL Managed Instance의 프라이빗 엔드포인트인 `<server name>.<dns prefix>.database.windows.net` 또는 퍼블릭 엔드포인트인 `<server name>.public.<dns prefix>.database.windows.net,3342`를 입력합니다. 프라이빗 엔드포인트를 입력하면 ADF UI가 연결할 수 없기 때문에 **연결 테스트**를 사용할 수 없습니다.
 
-               1. **데이터베이스 이름**으로 `msdb`를 입력합니다.
+            1. **데이터베이스 이름**으로 `msdb`를 입력합니다.
                
-               1. **인증 형식**으로 **SQL 인증**, **관리 ID** 또는 **서비스 주체**를 선택합니다.
+            1. **인증 형식**으로 **SQL 인증**, **관리 ID** 또는 **서비스 주체**를 선택합니다.
 
-               1. **SQL 인증**을 선택하는 경우 관련 **사용자 이름** 및 **암호**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+            1. **SQL 인증**을 선택하는 경우 관련 **사용자 이름** 및 **암호**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-               1. **관리 ID**를 선택하는 경우 Azure SQL Managed Instance에 대한 액세스 권한을 ADF 관리 ID에 부여합니다.
+            1. **관리 ID**를 선택하는 경우 Azure SQL Managed Instance에 대한 액세스 권한을 ADF 관리 ID에 부여합니다.
 
-               1. **서비스 주체**를 선택하는 경우 관련 **서비스 주체 ID** 및 **서비스 주체 키**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+            1. **서비스 주체**를 선택하는 경우 관련 **서비스 주체 ID** 및 **서비스 주체 키**를 입력하거나 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-         1. **파일 시스템**을 선택하는 경우 패키지가 배포되는 폴더의 UNC 경로를 **호스트**로 입력하고, 관련 **사용자 이름** 및 **암호**을 입력하거나, 비밀로 저장된 **Azure Key Vault**를 선택합니다.
+      1. **파일 시스템**을 선택하는 경우 패키지가 배포되는 폴더의 UNC 경로를 **호스트**로 입력하고, 관련 **사용자 이름** 및 **암호**을 입력하거나, 비밀로 저장된 **Azure Key Vault**를 선택합니다.
 
-         1. **연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **만들기**를 선택합니다.
+      1. **연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **만들기**를 선택합니다.
 
-      추가된 패키지 저장소가 **배포 설정** 페이지에 표시됩니다. 저장소를 제거하려면 해당 확인란을 선택한 다음, **삭제**를 선택합니다.
+   1. 추가된 패키지 저장소가 **배포 설정** 페이지에 표시됩니다. 저장소를 제거하려면 해당 확인란을 선택한 다음, **삭제**를 선택합니다.
 
-   1. **연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **다음**을 선택합니다.
+**연결 테스트**를 선택하고(해당하는 경우), 테스트가 성공하면 **다음**을 선택합니다.
 
 ### <a name="advanced-settings-page"></a>고급 설정 페이지
 

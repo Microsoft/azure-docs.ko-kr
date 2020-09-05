@@ -3,22 +3,21 @@ title: 이벤트 프로세서 호스트를 사용하여 이벤트 수신 - Azure
 description: 이 문서에서는 검사점, 임대 및 병렬 읽기 이벤트의 관리를 간소화하는 Azure Event Hubs의 이벤트 프로세서 호스트에 대해 설명합니다.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: dd11e3ef77ff665a0207a2cf7e63b1b9f2df0e08
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 27b587e6562b5ba0c9bf28a52a00a9d8e7d9201c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87002525"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010463"
 ---
 # <a name="event-processor-host"></a>이벤트 프로세서 호스트
 > [!NOTE]
-> 이 문서는 Azure Event Hubs SDK의 이전 버전에 적용 됩니다. 최신 버전의 SDK로 코드를 마이그레이션하는 방법에 대 한 자세한 내용은 이러한 마이그레이션 가이드를 참조 하세요. 
+> 이 문서는 Azure Event Hubs SDK의 이전 버전에 적용 됩니다. 최신 버전의 SDK는 [응용 프로그램의 여러 인스턴스에서 파티션 부하 분산](event-processor-balance-partition-load.md)을 참조 하세요. 최신 버전의 SDK로 코드를 마이그레이션하는 방법에 대 한 자세한 내용은 이러한 마이그레이션 가이드를 참조 하세요. 
 > - [.NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/migration-guide.md)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md)
 > - [Java 스크립트](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md)
->
-> 또한 [응용 프로그램의 여러 인스턴스에 걸쳐 파티션 부하 분산](event-processor-balance-partition-load.md)을 참조 하세요.
 
 Azure Event Hubs는 저렴한 비용으로 수백만 개의 이벤트를 스트리밍하는 데 사용할 수 있는 강력한 원격 분석 수집 서비스입니다. 이 아티클에서는 검사점, 임대 및 병렬 이벤트 판독기의 관리를 간소화하는 지능형 소비자 에이전트인 EPH(*이벤트 프로세서 호스트*)를 사용하여 수집된 이벤트를 사용하는 방법을 설명합니다.  
 
@@ -192,10 +191,10 @@ Epoch를 사용 하 여 수신기를 만든 다음 동일한 소비자 그룹에
 이제 이벤트 프로세서 호스트에 익숙해졌으므로 다음 아티클을 참조하여 Event Hubs에 대해 자세히 알아봅니다.
 
 - Event Hubs 시작
-    - [.NET Core](get-started-dotnet-standard-send-v2.md)
-    - [Java](get-started-java-send-v2.md)
-    - [Python](get-started-python-send-v2.md)
-    - [JavaScript](get-started-node-send-v2.md)
+    - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
+    - [Java](event-hubs-java-get-started-send.md)
+    - [Python](event-hubs-python-get-started-send.md)
+    - [JavaScript](event-hubs-node-get-started-send.md)
 * [Event Hubs 프로그래밍 가이드](event-hubs-programming-guide.md)
 * [Event Hubs의 가용성 및 일관성](event-hubs-availability-and-consistency.md)
 * [Event Hubs FAQ](event-hubs-faq.md)

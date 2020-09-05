@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: d190d3f133c4b12b58dade878dc66755c25e1ed8
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 99c5ff39820b652a33ab670e63ca709f8747c4cf
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078377"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751288"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>온-프레미스 Apache Hadoop 클러스터를 Azure HDInsight로 마이그레이션 - 보안 및 DevOps 모범 사례
 
@@ -51,7 +51,7 @@ ESP는 Apache Hadoop, Apache Spark, Apache HBase, Apache Kafka 및 Interactive Q
     |LDAPS URL|예를 들면 `ldaps://contoso.onmicrosoft.com:636` 입니다.|
     |사용자 그룹 액세스|클러스터에 동기화할 사용자가 속하는 보안 그룹입니다(예: `HiveUsers`). 여러 사용자 그룹을 지정하려면 세미콜론 ‘;’으로 구분합니다. 그룹은 ESP 클러스터를 만들기 전에 디렉터리에 있어야 합니다.|
 
-자세한 내용은 다음 항목을 참조하세요.
+자세한 내용은 다음 아티클을 참조하세요.
 
 - [도메인에 가입된 HDInsight 클러스터를 사용하는 Apache Hadoop 보안 소개](../domain-joined/hdinsight-security-overview.md)
 - [HDInsight에서 Azure 도메인에 가입된 Apache Hadoop 클러스터 계획](../domain-joined/apache-domain-joined-architecture.md)
@@ -81,7 +81,7 @@ ESP는 Apache Hadoop, Apache Spark, Apache HBase, Apache Kafka 및 Interactive Q
     - Microsoft 관리 키 또는 고객 관리 키를 사용하는 투명한 서버 쪽 암호화입니다.
     - 클라이언트 쪽 암호화, https 및 TLS를 사용 하는 전송 암호화
 
-자세한 내용은 다음 항목을 참조하세요.
+자세한 내용은 다음 아티클을 참조하세요.
 
 - [Azure Virtual Networks 개요](../../virtual-network/virtual-networks-overview.md)
 - [Azure 네트워크 보안 그룹 개요](../../virtual-network/security-overview.md)
@@ -111,8 +111,6 @@ ESP는 Apache Hadoop, Apache Spark, Apache HBase, Apache Kafka 및 Interactive Q
 자세한 내용은 [HDInsight 클러스터를 새 버전으로 업그레이드](../hdinsight-upgrade-cluster.md)문서를 참조 하세요.
 
 ## <a name="patch-cluster-operating-systems"></a>클러스터 운영 체제 패치
-
-관리되는 Hadoop 서비스인 HDInsight는 HDInsight 클러스터에서 사용하는 VM의 OS를 패치하는 작업을 담당합니다.
 
 자세한 내용은 [HDInsight에 대 한 OS 패치](../hdinsight-os-patching.md)문서를 참조 하세요.
 

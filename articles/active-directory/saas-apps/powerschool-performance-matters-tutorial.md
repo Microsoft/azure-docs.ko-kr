@@ -2,25 +2,21 @@
 title: '자습서: Powerschool Performance Matters와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Powerschool Performance Matters 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3e6fb0e7-d7c1-4eea-9bc1-69be1daadc45
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/08/2019
 ms.author: jeedes
-ms.openlocfilehash: 5097292ba722567e16c4573d46a70edb326c3ab5
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: c2b030998a17eca493bc64d6bf33b628b6ac6807
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85800714"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553676"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-powerschool-performance-matters"></a>자습서: Powerschool Performance Matters와 Azure Active Directory 통합
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
 ms.author: memildin
-ms.openlocfilehash: 67017bdc98b997c728c4d5dcfab92e0804498060
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7469d60095026c8a016fc1ecaa1a4f92361800f3
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084010"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019382"
 ---
 # <a name="quickstart-onboard-your-azure-stack-virtual-machines-to-security-center"></a>빠른 시작: Azure Stack 가상 머신을 Security Center에 온보딩
 Azure 구독을 온보딩한 후 Azure Stack 마켓플레이스에서 **Azure Monitor, Update 및 Configuration Management** 가상 머신 확장을 추가하여 Azure Stack에서 실행 중인 가상 머신을 보호하도록 Security Center를 설정할 수 있습니다.
@@ -72,7 +72,7 @@ Security Center를 시작하려면 Microsoft Azure에 대한 구독이 있어야
 7. 필요한 구성 설정을 제공했으면 **확인**을 클릭합니다.
 8. 확장 설치가 완료되면 상태가 **프로비전 성공**으로 표시됩니다. Security Center 포털에 가상 머신이 나타나기까지 최대 1시간이 걸릴 수 있습니다.
 
-Windows용 에이전트 설치 및 구성에 대한 자세한 내용은 [Windows 컴퓨터 연결](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard)을 참조하세요.
+Windows용 에이전트 설치 및 구성에 대한 자세한 내용은 [Windows 컴퓨터 연결](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard)을 참조하세요.
 
 Linux 에이전트 문제 해결 방법은 [Azure Log Analytics Linux 에이전트 문제 해결](../azure-monitor/platform/agent-linux-troubleshoot.md)을 참조하세요.
 

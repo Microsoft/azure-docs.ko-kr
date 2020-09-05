@@ -12,16 +12,16 @@ ms.date: 02/21/2020
 ms.author: kenwith
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04b0b0120a514591fb4fa23656906203acf443b4
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 7875bfc55d4530f7f56a96599491cab4a98ced04
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87799505"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642030"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Azure Active Directory에서 엔터프라이즈 앱에 사용자 또는 그룹 할당
 
-이 문서에서는 Azure Portal 내에서 또는 PowerShell을 사용하여 Azure AD(Azure Active Directory)에서 엔터프라이즈 애플리케이션에 사용자 또는 그룹을 할당하는 방법을 보여줍니다. 애플리케이션에 사용자를 할당하면 쉽게 액세스할 수 있도록 애플리케이션이 사용자의 [내 앱 액세스 패널](https://myapps.microsoft.com/)에 표시됩니다. 애플리케이션이 역할을 노출하는 경우 사용자에게 특정 역할을 할당할 수도 있습니다.
+이 문서에서는 Azure Portal 내에서 또는 PowerShell을 사용하여 Azure AD(Azure Active Directory)에서 엔터프라이즈 애플리케이션에 사용자 또는 그룹을 할당하는 방법을 보여줍니다. 응용 프로그램에 사용자를 할당 하면 쉽게 액세스할 수 있도록 사용자의 [내 앱](https://myapps.microsoft.com/) 에 응용 프로그램이 표시 됩니다. 애플리케이션이 역할을 노출하는 경우 사용자에게 특정 역할을 할당할 수도 있습니다.
 
 더 많은 제어를 위해 특정 유형의 엔터프라이즈 애플리케이션을 [사용자 할당이 필요](#configure-an-application-to-require-user-assignment)하도록 구성할 수 있습니다. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "87799505"
 
 이 옵션을 **No**로 설정했거나 애플리케이션이 다른 SSO 모드를 사용하기 때문에 할당이 *필요하지 않은* 경우 애플리케이션의 **속성** 페이지에 애플리케이션 또는 **사용자 액세스 URL**에 대한 직접 링크가 있으면 모든 사용자가 애플리케이션에 액세스할 수 있습니다. 
 
-이 설정은 애플리케이션이 내 앱 엑세스 패널에 표시되는지 여부에 영향을 주지 않습니다. 사용자 또는 그룹을 애플리케이션에 할당하면 애플리케이션이 사용자의 내 앱 액세스 패널에 표시됩니다. 배경은 [앱에 대한 액세스 관리](what-is-access-management.md)를 참조하세요.
+이 설정은 응용 프로그램이 내 앱에 표시 되는지 여부에 영향을 주지 않습니다. 사용자 또는 그룹을 애플리케이션에 할당하면 애플리케이션이 사용자의 내 앱 액세스 패널에 표시됩니다. 배경은 [앱에 대한 액세스 관리](what-is-access-management.md)를 참조하세요.
 
 
 애플리케이션에 대한 사용자 할당을 요구하려면 다음을 수행합니다.
@@ -161,7 +161,7 @@ ms.locfileid: "87799505"
 ## <a name="related-articles"></a>관련 문서
 
 - [애플리케이션에 대한 최종 사용자 액세스에 대해 자세히 알아보기](end-user-experiences.md)
-- [Azure AD 액세스 패널 배포 계획](access-panel-deployment-plan.md)
+- [Azure AD 내 앱 배포 계획](access-panel-deployment-plan.md)
 - [앱에 대한 액세스 관리](what-is-access-management.md)
  
 ## <a name="next-steps"></a>다음 단계

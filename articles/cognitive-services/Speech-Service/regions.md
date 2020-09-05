@@ -8,23 +8,27 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 08/20/2020
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 27e26bb37b444b49797d46dd4e12b61f8fe11b16
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.openlocfilehash: b0574c41042e172af78365bb273c81729ce204ab
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84782537"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749305"
 ---
 # <a name="speech-service-supported-regions"></a>음성 서비스 지원 지역
 
 음성 서비스를 통해 애플리케이션에서 오디오를 텍스트로 변환하고, 음성 번역을 수행하고, 텍스트를 음성으로 변환할 수 있습니다. 음성 SDK 및 REST API에 대한 고유한 엔드포인트를 사용하여 여러 지역에서 서비스를 사용할 수 있습니다.
 
-모든 지역의 음성 환경에 대 한 사용자 지정 구성을 수행 하는 음성 포털은 다음 위치에서 제공 됩니다.https://speech.microsoft.com
+모든 지역의 음성 환경에 대 한 사용자 지정 구성을 수행 하는 음성 포털은 다음 위치에서 제공 됩니다. https://speech.microsoft.com
 
-음성 서비스 호출에 대 한 호출이 구독의 지역과 일치 하는지 확인 합니다.
+지역을 고려할 때 다음 사항에 유의 하세요.
+
+* 응용 프로그램에서 [음성 SDK](speech-sdk.md)를 사용 하는 경우 음성 구성을 만들 때와 같은 지역 식별자를 제공 `westus` 합니다.
+* 애플리케이션에서 Speech 서비스의 [REST API](rest-apis.md) 중 하나를 사용하는 경우 지역은 요청 시 사용하는 엔드포인트 URI의 일부가 됩니다.
+* 지역에 대해 만든 키는 해당 지역에서만 유효합니다. 다른 지역에서 사용하려고 하면 인증 오류가 발생합니다.
 
 ## <a name="speech-sdk"></a>Speech SDK
 
@@ -32,7 +36,7 @@ ms.locfileid: "84782537"
 
 ### <a name="speech-to-text-text-to-speech-and-translation"></a>음성 텍스트, 텍스트 음성 변환 및 번역
 
-음성 사용자 지정 포털은 다음 위치에서 제공 됩니다.https://speech.microsoft.com
+음성 사용자 지정 포털은 다음 위치에서 제공 됩니다. https://speech.microsoft.com
 
 음성 **인식**, **텍스트 음성**변환 및 **번역**을 위해 음성 서비스를 이러한 지역에서 사용할 수 있습니다.
 

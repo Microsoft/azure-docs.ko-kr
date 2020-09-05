@@ -3,14 +3,15 @@ title: Azure Functions C# 스크립트 개발자 참조
 description: C# 스크립트를 사용하여 Azure Functions를 개발하는 방법을 알아봅니다.
 author: craigshoemaker
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 12/12/2017
 ms.author: cshoe
-ms.openlocfilehash: 177e9fcd872c594fbfb5f29077235113c6342860
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4d5388f850f47323f6ad79f9f91e617e506546bf
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506149"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205443"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Azure Functions C# 스크립트(.csx) 개발자 참조
 

@@ -10,12 +10,13 @@ ms.topic: how-to
 ms.date: 06/16/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: bab78d60e5007d9c3eb61afa7bc63a9b44e47aa1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 8ec35a651d4d3ef9e0877463329a654bc7491f4c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888024"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89001879"
 ---
 # <a name="transfer-data-with-the-data-movement-library"></a>데이터 이동 라이브러리를 사용하여 데이터 전송
 
@@ -37,7 +38,7 @@ Azure Storage 데이터 이동 라이브러리는 blob 및 파일의 고성능 �
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Azure storage 계정](storage-account-create.md)
 
-## <a name="setup"></a>설정
+## <a name="setup"></a>설치
 
 1. [.NET Core 설치 가이드](https://www.microsoft.com/net/core)를 방문하여 .NET Core를 설치합니다. 사용자 환경을 선택할 때 명령줄 옵션을 선택합니다.
 2. 명령줄에서 프로젝트에 대한 디렉터리를 만듭니다. 이 디렉터리로 이동한 다음 `dotnet new console -o <sample-project-name>`를 입력하여 C# 콘솔 프로젝트를 만듭니다.

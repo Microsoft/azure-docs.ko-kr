@@ -1,20 +1,20 @@
 ---
-title: Application Gateway 구성 요소
+title: 응용 프로그램 게이트웨이 구성 요소
 description: 이 문서에서는 응용 프로그램 게이트웨이의 다양 한 구성 요소에 대 한 정보를 제공 합니다.
 services: application-gateway
-author: abshamsft
+author: surajmb
 ms.service: application-gateway
 ms.topic: conceptual
-ms.date: 07/20/2020
-ms.author: absha
-ms.openlocfilehash: 20d43666919f8528c25735592c2727601af10bbb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/21/2020
+ms.author: surmb
+ms.openlocfilehash: ebd06b0b78ee511dce535ff4220df03087fb6906
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87088090"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723319"
 ---
-# <a name="application-gateway-components"></a>Application Gateway 구성 요소
+# <a name="application-gateway-components"></a>응용 프로그램 게이트웨이 구성 요소
 
  응용 프로그램 게이트웨이는 클라이언트의 단일 연락 지점으로 사용 됩니다. 들어오는 응용 프로그램 트래픽을 Azure Vm, 가상 머신 확장 집합, Azure App Service 및 온-프레미스/외부 서버를 포함 하는 여러 백 엔드 풀에 분산 합니다. 트래픽을 분산 하기 위해 application gateway는이 문서에 설명 된 여러 구성 요소를 사용 합니다.
 
@@ -69,9 +69,9 @@ Application Gateway를 사용 하면 기본 오류 페이지를 표시 하는 �
 
 - **기본**. 이 유형의 수신기는 단일 도메인 사이트를 수신 대기 합니다. 여기에는 응용 프로그램 게이트웨이의 IP 주소에 대 한 단일 DNS 매핑이 있습니다. 이 수신기 구성은 응용 프로그램 게이트웨이 뒤에 단일 사이트를 호스트 하는 경우에 필요 합니다.
 
-- **다중 사이트**. 이 수신기 구성은 동일한 응용 프로그램 게이트웨이에서 둘 이상의 웹 응용 프로그램에 대 한 호스트 이름 또는 도메인 이름을 기반으로 하는 라우팅을 구성 하려는 경우에 필요 합니다. 이를 통해 하나의 응용 프로그램 게이트웨이에 최대 100 개 이상의 웹 사이트를 추가 하 여 배포에 보다 효율적인 토폴로지를 구성할 수 있습니다. 각 웹 사이트는 고유한 백 엔드 풀로 이동할 수 있습니다. 예를 들어, contoso.com, fabrikam.com 및 adatum.com 라는 세 개의 도메인은 응용 프로그램 게이트웨이의 IP 주소를 가리킵니다. 3 개의 [다중 사이트 수신기](multiple-site-overview.md) 를 만들고 각 포트 및 프로토콜 설정에 대해 각 수신기를 구성 합니다. 
+- **다중 사이트**. 이 수신기 구성은 동일한 응용 프로그램 게이트웨이에서 둘 이상의 웹 응용 프로그램에 대 한 호스트 이름 또는 도메인 이름을 기반으로 하는 라우팅을 구성 하려는 경우에 필요 합니다. 이 기능을 사용하면 최대 100개의 웹 사이트를 하나의 애플리케이션 게이트웨이에 추가하여 배포에 대해 보다 효율적인 토폴로지를 구성할 수 있습니다. 각 웹 사이트는 고유한 백 엔드 풀로 이동할 수 있습니다. 예를 들어 contoso.com, fabrikam.com 및 adatum.com이라는 세 개의 도메인이 애플리케이션 게이트웨이의 IP 주소를 가리킵니다. 3 개의 [다중 사이트 수신기](multiple-site-overview.md) 를 만들고 각 포트 및 프로토콜 설정에 대해 각 수신기를 구성 합니다. 
 
-    다중 사이트 수신기에서 와일드 카드 호스트 이름을 정의 하 고 수신기 당 최대 5 개의 호스트 이름을 정의할 수도 있습니다. 자세한 내용은 [수신기의 와일드 카드 호스트 이름 (미리 보기)](multiple-site-overview.md#wildcard-host-names-in-listener-preview)을 참조 하세요.
+    또한 다중 사이트 수신기에서 와일드카드 호스트 이름을 정의하고 수신기당 최대 5개의 호스트 이름을 정의할 수 있습니다. 자세한 내용은 [수신기의 와일드 카드 호스트 이름 (미리 보기)](multiple-site-overview.md#wildcard-host-names-in-listener-preview)을 참조 하세요.
 
     다중 사이트 수신기를 구성 하는 방법에 대 한 자세한 내용은 [Azure Portal를 사용 하 여 Application Gateway에서 다중 사이트 호스팅](create-multiple-sites-portal.md)을 참조 하세요.
 
@@ -99,7 +99,7 @@ Application Gateway를 사용 하면 기본 오류 페이지를 표시 하는 �
 
 자세한 내용은 [응용 프로그램 게이트웨이에서 트래픽 리디렉션](redirect-overview.md)을 참조 하세요.
 
-### <a name="rewrite-http-headers-and-url"></a>HTTP 헤더 및 URL 다시 작성
+### <a name="rewrite-http-headers-and-url"></a>HTTP 헤더 및 URL 다시 쓰기
 
 다시 쓰기 규칙을 사용 하 여 요청 및 응답 패킷이 응용 프로그램 게이트웨이를 통해 클라이언트와 백 엔드 풀 간에 이동할 때 URL 경로 및 쿼리 문자열 매개 변수 뿐만 아니라 HTTP 요청 및 응답 헤더를 추가, 제거 또는 업데이트할 수 있습니다.
 

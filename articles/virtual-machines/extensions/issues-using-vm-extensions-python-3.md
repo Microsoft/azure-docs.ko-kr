@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 04/22/2020
+ms.date: 08/25/2020
 ms.assetid: 3cd520fd-eaf7-4ef9-b4d3-4827057e5028
-ms.openlocfilehash: 944abc62f25473ea52836af7dc1fdcd1e16d9269
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 15ece836e172b8316222ea606ca638650795d5d7
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82120783"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852604"
 ---
 # <a name="issues-using-vm-extensions-in-python-3-enabled-linux-azure-virtual-machines-systems"></a>Python 3 사용 Linux Azure Virtual Machines 시스템에서 VM 확장을 사용 하는 문제
 
@@ -28,7 +28,7 @@ ms.locfileid: "82120783"
 >
 > 프로덕션 환경에 **python** 2.x를 설치 하기 전에 python 2.x의 장기 지원, 특히 보안 업데이트를 받을 수 있는 기능을 고려 합니다. 언급 된 확장 중 일부를 비롯 한 제품 ( **python 3.8** 지원으로 업데이트)은 python 2.x 사용을 중단 해야 합니다.
 
-일부 Linux 배포판은 Python 3.8로 전환 되 고 `/usr/bin/python` python 용 레거시 entrypoint를 모두 제거 했습니다. 이러한 전환은 다음 조건에 따라 특정 VM (가상 머신) 확장의 자동화 된 자동 배포에 영향을 줍니다.
+일부 Linux 배포판은 Python 3.8로 전환 되 고 `/usr/bin/python` python 용 레거시 entrypoint를 모두 제거 했습니다. 이러한 전환은 다음과 같은 두 가지 조건을 사용 하 여 특정 VM (가상 머신) 확장의 자동화 된 자동 배포에 영향을 줍니다.
 
 - Python 3.x 지원으로 전환 중인 확장
 - 레거시 entrypoint를 사용 하는 확장 `/usr/bin/python`
@@ -43,50 +43,52 @@ ms.locfileid: "82120783"
 
 ## <a name="resolution"></a>해결 방법
 
-앞의 요약에서 설명한 알려진 영향을 받는 시나리오에 확장을 배포 하기 전에 다음과 같은 일반적인 권장 사항을 고려 합니다.
+앞의 요약에 설명 된 대로 알려진 영향을 받는 시나리오에 확장을 배포 하기 전에 다음과 같은 일반적인 권장 사항을 고려 합니다.
 
-1.  확장을 배포 하기 전에 `/usr/bin/python` Linux 배포 공급 업체에서 제공 하는 방법을 사용 하 여 symlink를 복원 합니다.
+1. 확장을 배포 하기 전에 `/usr/bin/python` Linux 배포 공급 업체에서 제공 하는 방법을 사용 하 여 symlink를 복원 합니다.
 
-    - 예를 들어 **Python 2.7**의 경우 다음을 사용 합니다.`sudo apt update && sudo apt install python-is-python2`
+   - 예를 들어 **Python 2.7**의 경우 다음을 사용 합니다. `sudo apt update && sudo apt install python-is-python2`
 
-2.  이 문제가 발생 하는 인스턴스를 이미 배포한 경우 **VM 블레이드에서** **명령 실행** 기능을 사용 하 여 위에서 언급 한 명령을 실행 합니다. 실행 명령 확장 자체는 Python 3.8 전환의 영향을 받지 않습니다.
+1. 이 권장 사항은 Azure 고객을 위한 것 이며 Azure Stack에서 지원 되지 않습니다.
 
-3.  새 인스턴스를 배포 하 고 프로 비전 시 확장을 설정 해야 하는 경우 **클라우드 초기화** 사용자 데이터를 사용 하 여 위에서 언급 한 패키지를 설치 합니다.
+   - 이 문제가 발생 하는 인스턴스를 이미 배포한 경우 VM 블레이드에서 명령 실행 기능을 사용 하 여 위에서 언급 한 명령을 실행 합니다. 실행 명령 확장 자체는 Python 3.8 전환의 영향을 받지 않습니다.
 
-    예를 들어 Python 2.7:
+1. 새 인스턴스를 배포 하 고 프로 비전 시 확장을 설정 해야 하는 경우 **클라우드 초기화** 사용자 데이터를 사용 하 여 위에서 언급 한 패키지를 설치 합니다.
 
-    ```
-    # create cloud-init config
-    cat > cloudinitConfig.json <<EOF
-    #cloud-config
-    package_update: true
+   예를 들어 Python 2.7:
+
+   ```python
+   # create cloud-init config
+   cat > cloudinitConfig.json <<EOF
+   #cloud-config
+   package_update: true
     
-    runcmd:
-    - sudo apt update
-    - sudo apt install python-is-python2 
-    EOF
-    
-    # create VM
-    az vm create \
-        --resource-group <resourceGroupName> \
-        --name <vmName> \
-        --image <Ubuntu 20.04 Image URN> \
-        --admin-username azadmin \
-        --ssh-key-value "<sshPubKey>" \
-        --custom-data ./cloudinitConfig.json
-    ```
+   runcmd:
+   - sudo apt update
+   - sudo apt install python-is-python2 
+   EOF
 
-4.  조직의 정책 관리자가 Vm에 확장을 배포 하지 않아야 하는 경우 프로 비전 시간에 확장 지원을 사용 하지 않도록 설정할 수 있습니다.
+   # create VM
+   az vm create \
+       --resource-group <resourceGroupName> \
+       --name <vmName> \
+       --image <Ubuntu 20.04 Image URN> \
+       --admin-username azadmin \
+       --ssh-key-value "<sshPubKey>" \
+       --custom-data ./cloudinitConfig.json
+   ```
 
-    - REST API
+1. 조직의 정책 관리자가 Vm에 확장을 배포 하지 않아야 하는 경우 프로 비전 시간에 확장 지원을 사용 하지 않도록 설정할 수 있습니다.
 
-      이 속성을 사용 하 여 VM을 배포할 수 있는 경우 확장을 사용 하지 않도록 설정 하 고 설정 하려면:
+   - REST API
 
-      ```
-        "osProfile": {
-          "allowExtensionOperations": false
-        },
-      ```
+     이 속성을 사용 하 여 VM을 배포할 수 있는 경우 확장을 사용 하지 않도록 설정 하 고 설정 하려면:
+
+     ```python
+       "osProfile": {
+         "allowExtensionOperations": false
+       },
+     ```
 
 ## <a name="next-steps"></a>다음 단계
 

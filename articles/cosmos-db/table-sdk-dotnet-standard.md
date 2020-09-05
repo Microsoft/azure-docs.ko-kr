@@ -8,12 +8,13 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: 097868c0f6c64ad8b58dce365a2232bb02b786e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: bf8563274d7aa677249335612d0156d6a5ecbd95
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84168202"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018453"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>Azure Cosmos DB Table .NET Standard API: 다운로드 및 릴리스 정보
 > [!div class="op_single_selector"]
@@ -27,7 +28,7 @@ ms.locfileid: "84168202"
 |   |   |
 |---|---|
 |**SDK 다운로드**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
-|**예제**|[Cosmos DB Table API .NET 샘플](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
+|**샘플**|[Cosmos DB Table API .NET 샘플](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
 |**빠른 시작**|[빠른 시작](create-table-dotnet.md)|
 |**자습서**|[자습서](tutorial-develop-table-dotnet.md)|
 |**현재 지원되는 프레임워크**|[Microsoft .NET Standard 2.0](https://www.nuget.org/packages/NETStandard.Library)|
@@ -41,6 +42,14 @@ ms.locfileid: "84168202"
 
 ## <a name="release-notes-for-100-series"></a>1.0.0 시리즈에 대 한 릴리스 정보
 1.0.0 시리즈는 [Microsoft.Azure.DocumentDB. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/)에 대 한 종속성을 사용 합니다.
+
+### <a name="108"></a><a name="1.0.8"></a>1.0.8
+* Cosmosdb 끝점 인 경우 TTL 속성 설정에 대 한 지원 추가 
+* 제한 시간 및 태스크 취소 시 다시 시도 정책 적용 예외
+* Asp .net 응용 프로그램에서 일시적인 작업 취소 됨 예외가 표시 됨
+* 보조 끝점 전용 위치 모드에서 azure table storage 검색을 수정 합니다.
+* `Microsoft.Azure.DocumentDB.Core`일시적 null 참조 예외를 해결 하는 2.11.2에 종속성 버전 업데이트
+* `Odata.Core`종속성 버전을 azure shell과의 호환성 충돌을 해결 하는 7.6.4로 업데이트 합니다.
 
 ### <a name="107"></a><a name="1.0.7"></a>1.0.7
 * SourceLevels로 옵트인 (opt app.config in) 할 수 있는 테이블 SDK 기본 추적 수준을로 설정 하 여 성능 향상

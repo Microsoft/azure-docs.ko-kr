@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 52427cbaa418e0335797fe0a98c26c3fb84cf670
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: dddcdd52709c634f0dcf67cb982804f5556e88b9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87304176"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548338"
 ---
 # <a name="register-a-saas-application"></a>SaaS 애플리케이션 등록
 
@@ -82,14 +82,14 @@ Azure AD의 기능을 사용하려는 모든 애플리케이션이 먼저 Azure 
 
 |  속성 이름     |  필수         |  Description |
 |  ---------------   |  ---------------  | ------------ |
-|  `grant-type`      |  True      |  권한 부여 유형입니다. 대신 `"client_credentials"`를 |
+|  `grant_type`      |  True      |  권한 부여 유형입니다. `"client_credentials"`을 사용합니다. |
 |  `client_id`       |  True      |  Azure AD 앱과 연결된 클라이언트/앱 식별자입니다. |
 |  `client_secret`   |  True      |  Azure AD 앱과 연결 된 암호입니다. |
 |  `resource`        |  True      |  토큰이 요청된 대상 리소스입니다. `20e940b3-4c77-4b0b-9a53-9e16a1b010a7`이 경우 Marketplace SAAS API는 항상 대상 리소스 이므로를 사용 합니다. |
 
 ##### <a name="response"></a>*Response*
 
-|  Name     |  Type         |  설명 |
+|  Name     |  Type         |  Description |
 |  ------   |  ---------------  | ------------ |
 |  200 정상   |  TokenResponse    |  요청이 성공했습니다. |
 

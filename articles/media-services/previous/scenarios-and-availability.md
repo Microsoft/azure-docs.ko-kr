@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 81d1c86bc5130d616712d022efd4b111b8b939dd
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: eb9d901a32d558f676ba10eaf65b54c51bfbcda8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542381"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89259186"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>시나리오 및 데이터 센터에서 Media Services 기능의 사용 가용성
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > Media Services v2에는 새로운 특징 또는 기능이 추가되지 않습니다. <br/>[Media Services v3](../latest/index.yml)의 최신 버전을 확인하세요. 또한 [v2에서 v3로의 마이그레이션 지침](../latest/migrate-from-v2-to-v3.md)을 참조하세요.
@@ -33,7 +35,7 @@ AMS는 전 세계 여러 데이터 센터에서 작동합니다. 이러한 데�
 
 ## <a name="overview"></a>개요
 
-### <a name="prerequisites"></a>사전 요구 사항
+### <a name="prerequisites"></a>필수 구성 요소
 
 Azure Media Services 사용을 시작하려면 다음이 있어야 합니다.
 
@@ -177,9 +179,9 @@ Media Services 고객은 **표준** 스트리밍 엔드포인트나 **프리미�
 
 #### <a name="availability"></a>가용성
 
-|이름|상태|데이터 센터
+|Name|상태|데이터 센터
 |---|---|---|
-|Standard|GA|모두|
+|표준|GA|모두|
 |Premium|GA|모두|
 
 ### <a name="live-encoding"></a>라이브 인코딩

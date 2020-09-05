@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 146b9a04b190808848af56612e14a05a617c7109
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: d06186b2ce4d8bb9143663d41f03b9508e4bd00e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87554823"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005958"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>ML 실행 로그 및 메트릭 모니터링 및 보기
 
@@ -111,8 +111,7 @@ RunDetails(run).show()
 
 실행 목록 테이블을 편집 하 여 여러 실행을 선택 하 고 실행에 대 한 마지막, 최소 또는 최대 로그 값을 표시할 수도 있습니다. 여러 실행에서 기록 된 메트릭 값과 집계를 비교 하려면 차트를 사용자 지정 합니다.
 
-:::image type="content" source="media/how-to-track-experiments/experimentation-tab.gif" alt-text="Azure Machine Learning 스튜디오에서 세부 정보 실행":::
-
+![Azure Machine Learning 스튜디오에서 세부 정보 실행](media/how-to-track-experiments/experimentation-tab.gif)
 
 ### <a name="format-charts-in-the-studio"></a>스튜디오에서 차트 서식 지정
 

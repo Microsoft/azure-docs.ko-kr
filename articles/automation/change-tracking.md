@@ -3,14 +3,14 @@ title: Azure Automation 변경 내용 추적 및 인벤토리 개요
 description: 이 문서에서는 사용자 환경에서 소프트웨어 및 Microsoft 서비스 변경 내용을 식별 하는 데 도움이 되는 변경 내용 추적 및 인벤토리 기능을 설명 합니다.
 services: automation
 ms.subservice: change-inventory-management
-ms.date: 06/08/2020
+ms.date: 08/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: ca96f817407aaef808fa10fbedec7af7b5912dc8
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 2fe92942e263cf53b9827ccbcb13a2d7bafc367c
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447924"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511051"
 ---
 # <a name="change-tracking-and-inventory-overview"></a>변경 내용 추적 및 인벤토리 개요
 
@@ -26,10 +26,10 @@ ms.locfileid: "87447924"
 > [!NOTE]
 > Azure Resource Manager 속성 변경 내용을 추적하려면 Azure Resource Graph [변경 기록](../governance/resource-graph/how-to/get-resource-changes.md)을 참조하세요.
 
-변경 내용 추적 및 인벤토리는 Azure Monitor에서 데이터를 가져옵니다. Log Analytics 작업 영역에 연결 된 가상 컴퓨터는 Log Analytics 에이전트를 사용 하 여 모니터링 되는 서버에서 설치 된 소프트웨어, Microsoft 서비스, Windows 레지스트리 및 파일, Linux 디먼의 변경 내용에 대 한 데이터를 수집 합니다. 데이터를 사용할 수 있는 경우 에이전트는 처리를 위해 Azure Monitor에 데이터를 보냅니다. Azure Monitor는 수신한 데이터에 논리를 적용하고, 데이터를 기록하고 사용할 수 있게 만듭니다. 
+변경 내용 추적 및 인벤토리는 Azure Monitor에서 데이터를 가져옵니다. Log Analytics 작업 영역에 연결 된 가상 컴퓨터는 Log Analytics 에이전트를 사용 하 여 모니터링 되는 서버에서 설치 된 소프트웨어, Microsoft 서비스, Windows 레지스트리 및 파일, Linux 디먼의 변경 내용에 대 한 데이터를 수집 합니다. 데이터를 사용할 수 있는 경우 에이전트는 데이터를 처리를 위해 Azure Monitor 보냅니다. Azure Monitor는 수신한 데이터에 논리를 적용하고, 데이터를 기록하고 사용할 수 있게 만듭니다.
 
 > [!NOTE]
-> 변경 내용 추적 및 인벤토리 기능을 사용하려면 Automation 계정의 동일한 구독 및 지역에서 모든 VM을 찾아야 합니다.
+> 변경 내용 추적 및 인벤토리를 사용 하려면 Log Analytics 작업 영역을 Automation 계정에 연결 해야 합니다. 지원되는 지역 목록은 [Azure 작업 영역 매핑](./how-to/region-mappings.md)을 참조하세요. 지역 매핑은 Automation 계정과 별도의 지역에 있는 VM을 관리하는 기능에 영향을 주지 않습니다.
 
 현재 변경 내용 추적 및 인벤토리는 다음 항목을 지원하지 않습니다.
 
@@ -53,7 +53,7 @@ ms.locfileid: "87447924"
 
 ## <a name="supported-operating-systems"></a>지원되는 운영 체제
 
-변경 내용 추적 및 인벤토리는 Log Analytics 에이전트 요구 사항을 충족하는 모든 운영 체제에서 지원됩니다. 공식 운영 체제 버전은 Windows Server 2008 SP1 이상 및 Windows 7 SP1 이상입니다. 이 기능은 여러 Linux 운영 체제 에서도 지원 됩니다. Log Analytics를 지 원하는 운영 체제는 [Log Analytics 에이전트 개요](../azure-monitor/platform/log-analytics-agent.md)를 참조 하세요.
+변경 내용 추적 및 인벤토리는 Log Analytics 에이전트 요구 사항을 충족하는 모든 운영 체제에서 지원됩니다. 공식 운영 체제 버전은 Windows Server 2008 SP1 이상 및 Windows 7 SP1 이상입니다. 이 기능은 여러 Linux 운영 체제 에서도 지원 됩니다. 지원 되는 운영 체제 목록은 [Log Analytics 에이전트 개요](../azure-monitor/platform/log-analytics-agent.md)를 참조 하세요.
 
 TLS 1.2에 대 한 클라이언트 요구 사항을 이해 하려면 [Azure Automation에 대 한 tls 1.2 적용](automation-managing-data.md#tls-12-enforcement-for-azure-automation)을 참조 하세요.
 

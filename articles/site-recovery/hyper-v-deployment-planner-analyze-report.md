@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.author: mayg
-ms.openlocfilehash: 0d39f763d3cdc90f89e0bcd17d0facc67551ffc0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2bb351de292ff2015cdcbd388155063a86a7359
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710272"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653582"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report"></a>Azure Site Recovery Deployment Planner 보고서 분석
 이 문서는 Hyper-V에서 Azure로의 복제 시나리오에 대해 Azure Site Recovery Deployment Planner에서 생성한 Excel 보고서에 포함된 시트에 대해 설명합니다.
@@ -179,7 +179,7 @@ Site Recovery Deployment Planner에서 생성된 Excel 보고서의 "호환되�
 
 **VM 이름**: 보고서가 생성될 때 VMListFile에 사용되는 VM 이름입니다. 또한 이 열에는 VM에 연결된 디스크(VHD)가 나열됩니다. 이 이름에는 프로파일링 기간 동안 VM이 도구를 검색했을 때 VM이 있었던 Hyper-V 호스트 이름이 포함됩니다.
 
-**VM 호환성**: 값은 **예** 및 **예**\*입니다. **예** \* 는 VM이 [Premium ssd](../virtual-machines/windows/disks-types.md)에 적합 한 인스턴스에 대 한입니다. 여기서 프로파일링된 높은 변동 또는 IOPS 디스크는 디스크에 매핑된 크기 보다 높은 프리미엄 디스크 크기에 적합합니다. 스토리지 계정은 크기에 따라 디스크를 매핑할 프리미엄 스토리지 디스크 유형을 결정합니다. 
+**VM 호환성**: 값은 **예** 및 **예**\*입니다. **예** \* 는 VM이 [Premium ssd](../virtual-machines/disks-types.md)에 적합 한 인스턴스에 대 한입니다. 여기서 프로파일링된 높은 변동 또는 IOPS 디스크는 디스크에 매핑된 크기 보다 높은 프리미엄 디스크 크기에 적합합니다. 스토리지 계정은 크기에 따라 디스크를 매핑할 프리미엄 스토리지 디스크 유형을 결정합니다. 
 * 128GB 미만은 P10입니다.
 * 128~256GB는 P15입니다.
 * 256GB ~ 512GB는 P20입니다.

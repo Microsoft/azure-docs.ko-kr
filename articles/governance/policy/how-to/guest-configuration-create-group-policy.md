@@ -1,29 +1,29 @@
 ---
 title: Windows에 대 한 그룹 정책 기준에서 게스트 구성 정책 정의를 만드는 방법
 description: 그룹 정책 Windows Server 2019 보안 기준에서 정책 정의로 변환 하는 방법에 대해 알아봅니다.
-ms.date: 06/05/2020
+ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: bbb634ed55acf8aa994045fbef6569fae031c841
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 58fe4fa3e5056192fa5febe4883a1457d130871b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86080672"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547771"
 ---
 # <a name="how-to-create-guest-configuration-policy-definitions-from-group-policy-baseline-for-windows"></a>Windows에 대 한 그룹 정책 기준에서 게스트 구성 정책 정의를 만드는 방법
 
-사용자 지정 정책 정의를 만들기 전에 [Azure Policy 게스트 구성](../concepts/guest-configuration.md)에서 개념 개요 정보를 읽는 것이 좋습니다. Linux에 대 한 사용자 지정 게스트 구성 정책 정의를 만드는 방법에 대 한 자세한 내용은 [linux 용 게스트 구성 정책을 만드는 방법](./guest-configuration-create-linux.md)을 참조 하세요. Windows에 대 한 사용자 지정 게스트 구성 정책 정의를 만드는 방법에 대 한 자세한 내용은 [windows 용 게스트 구성 정책을 만드는 방법](./guest-configuration-create.md)을 참조 하세요. 
+사용자 지정 정책 정의를 만들기 전에 [Azure Policy 게스트 구성](../concepts/guest-configuration.md)에서 개념 개요 정보를 읽는 것이 좋습니다. Linux에 대 한 사용자 지정 게스트 구성 정책 정의를 만드는 방법에 대 한 자세한 내용은 [linux 용 게스트 구성 정책을 만드는 방법](./guest-configuration-create-linux.md)을 참조 하세요. Windows에 대 한 사용자 지정 게스트 구성 정책 정의를 만드는 방법에 대 한 자세한 내용은 [windows 용 게스트 구성 정책을 만드는 방법](./guest-configuration-create.md)을 참조 하세요.
 
-Windows를 감사할 때 게스트 구성은 DSC([Desired State Configuration](/powershell/scripting/dsc/overview/overview)) 리소스 모듈을 사용하여 구성 파일을 만듭니다. DSC 구성은 컴퓨터가 충족해야 하는 조건을 정의합니다. 구성 평가가 **비준수**인 경우 정책 효과 *auditIfNotExists* 이 트리거됩니다. [Azure Policy 게스트 구성은](../concepts/guest-configuration.md) 컴퓨터 내의 설정만 감사 합니다.
+Windows를 감사할 때 게스트 구성은 DSC([Desired State Configuration](/powershell/scripting/dsc/overview/overview)) 리소스 모듈을 사용하여 구성 파일을 만듭니다. DSC 구성은 컴퓨터가 충족해야 하는 조건을 정의합니다. 구성 평가가 **비준수**인 경우 정책 효과 *auditIfNotExists* 이 트리거됩니다.
+[Azure Policy 게스트 구성은](../concepts/guest-configuration.md) 컴퓨터 내의 설정만 감사 합니다.
 
 > [!IMPORTANT]
 > 게스트 구성을 사용 하는 사용자 지정 정책 정의는 미리 보기 기능입니다.
 >
-> 게스트 구성 확장은 Azure Virtual Machines에서 감사를 수행하는 데 필요합니다.
-> 모든 Windows 컴퓨터에서 확장을 대규모로 배포하려면 다음 정책 정의를 할당합니다.
->   - [Windows VM에서 게스트 구성 정책을 사용하도록 설정하기 위한 필수 조건 배포](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0ecd903d-91e7-4726-83d3-a229d7f2e293)
+> 게스트 구성 확장은 Azure Virtual Machines에서 감사를 수행하는 데 필요합니다. 모든 Windows 컴퓨터에서 확장을 대규모로 배포하려면 다음 정책 정의를 할당합니다.
+> - [Windows VM에서 게스트 구성 정책을 사용하도록 설정하기 위한 필수 조건 배포](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0ecd903d-91e7-4726-83d3-a229d7f2e293)
 
-DSC 커뮤니티는 내보낸 그룹 정책 템플릿을 DSC 형식으로 변환 하기 위해 [BaselineManagement 모듈](https://github.com/microsoft/BaselineManagement) 을 게시 했습니다. GuestConfiguration cmdlet과 함께 BaselineManagement 모듈은 그룹 정책 콘텐츠에서 Windows 용 Azure Policy 게스트 구성 패키지를 만듭니다. BaselineManagement 모듈을 사용 하는 방법에 대 한 자세한 내용은 [빠른 시작: DSC로 그룹 정책 변환](/powershell/scripting/dsc/quickstarts/gpo-quickstart)문서를 참조 하세요. 
+DSC 커뮤니티는 내보낸 그룹 정책 템플릿을 DSC 형식으로 변환 하기 위해 [BaselineManagement 모듈](https://github.com/microsoft/BaselineManagement) 을 게시 했습니다. GuestConfiguration cmdlet과 함께 BaselineManagement 모듈은 그룹 정책 콘텐츠에서 Windows 용 Azure Policy 게스트 구성 패키지를 만듭니다. BaselineManagement 모듈을 사용 하는 방법에 대 한 자세한 내용은 [빠른 시작: DSC로 그룹 정책 변환](/powershell/scripting/dsc/quickstarts/gpo-quickstart)문서를 참조 하세요.
 
 이 가이드에서는 GPO (그룹 정책 개체)에서 Azure Policy 게스트 구성 패키지를 만드는 프로세스를 안내 합니다. 이 연습에서는 Windows Server 2019 보안 기준의 변환을 간략하게 설명 하는 동안 다른 Gpo에 동일한 프로세스를 적용할 수 있습니다.  
 
@@ -62,7 +62,7 @@ PowerShell에서 **DSC**, **GuestConfiguration**, **기준 관리**및 관련 Az
 
 ## <a name="convert-from-group-policy-to-azure-policy-guest-configuration"></a>그룹 정책에서 Azure Policy 게스트 구성으로 변환
 
-그런 다음 게스트 구성 및 기준 관리 모듈을 사용 하 여 다운로드 한 서버 2019 기준을 게스트 구성 패키지로 변환 합니다. 
+그런 다음 게스트 구성 및 기준 관리 모듈을 사용 하 여 다운로드 한 서버 2019 기준을 게스트 구성 패키지로 변환 합니다.
 
 1. 기본 관리 모듈을 사용 하 여 그룹 정책를 필요한 상태 구성으로 변환 합니다.
 
@@ -203,5 +203,5 @@ _DeployIfNotExists_ 효과와 함께 정책 정의를 할당하려면 추가 액
 ## <a name="next-steps"></a>다음 단계
 
 - [게스트 구성](../concepts/guest-configuration.md)을 사용하여 VM을 감사하는 방법을 알아봅니다.
-- [프로그래밍 방식으로 정책을 만드는](programmatically-create.md) 방법을 이해합니다.
-- [규정 준수 데이터를 가져오는](get-compliance-data.md) 방법을 알아봅니다.
+- [프로그래밍 방식으로 정책을 만드는](./programmatically-create.md) 방법을 이해합니다.
+- [규정 준수 데이터를 가져오는](./get-compliance-data.md) 방법을 알아봅니다.

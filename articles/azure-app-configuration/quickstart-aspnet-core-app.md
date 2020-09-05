@@ -1,19 +1,20 @@
 ---
 title: ASP.NET Core 지원 Azure App Configuration용 빠른 시작 | Microsoft Docs
-description: ASP.NET Core 앱 지원 Azure App Configuration 사용을 위한 빠른 시작
+description: Azure App Configuration을 사용하여 ASP.NET Core 앱을 만들어 ASP.NET Core 애플리케이션을 위한 애플리케이션 설정의 스토리지 및 관리를 중앙 집중화합니다.
 services: azure-app-configuration
 author: lisaguthrie
 ms.service: azure-app-configuration
 ms.devlang: csharp
+ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 02/19/2020
 ms.author: lcozzens
-ms.openlocfilehash: 069bce6f2f8e46679cbc82dd92c9fd73bfecde85
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 41675eb1911eede750b5a9cdc19cfe49e4699bac
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373524"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590305"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>빠른 시작: App Configuration을 사용하여 ASP.NET Core 앱 만들기
 

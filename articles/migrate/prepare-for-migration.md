@@ -4,12 +4,12 @@ description: Azure Migrate를 사용하여 마이그레이션하기 위한 온-�
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.custom: MVC
-ms.openlocfilehash: b92a26732f59235dac4c03f4e648d36dadd6c4ac
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8acbb867d98a547787e207c410d4e1a852aa68f3
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077978"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606827"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Azure로 마이그레이션하기 위한 온-프레미스 머신 준비
 
@@ -129,6 +129,7 @@ Azure VM에는 기본적으로 임시 스토리지로 사용할 D 드라이브�
 **ssh 사용** | ssh를 사용하도록 설정되고 다시 부팅 시 sshd 서비스가 자동으로 시작되도록 설정되어 있는지 확인합니다.<br/><br/> 들어오는 ssh 연결 요청이 OS 방화벽 또는 스크립팅 가능한 규칙으로 차단되지 않도록 합니다.| 위에서 설명한 버전을 제외한 모든 버전에서는 수동으로 설정합니다.
 
 다음 표에는 위에 나열된 운영 체제에 대해 자동으로 수행되는 단계가 요약되어 있습니다.
+
 
 | 작업                                      | 에이전트\-기반 VMware 마이그레이션 | 에이전트 없는 VMware 마이그레이션 | Hyper\-V   |
 |---------------------------------------------|-------------------------------|----------------------------|------------|

@@ -1,17 +1,17 @@
 ---
 title: Azure 앱 구성 키-값 저장소 이해
-description: 구성 데이터가 Azure 앱 구성에 저장 되는 방식을 이해 합니다.
+description: 구성 데이터를 키 값으로 저장 하는 Azure 앱 구성의 키-값 저장소를 이해 합니다. 키-값은 응용 프로그램 설정에 대 한 표현입니다.
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/19/2020
-ms.openlocfilehash: 9a0ed747ea0c894214a633bdbc8141e95e95b5fb
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: b1998532c3d9e4272d91280d57d9ea2f6e7a262c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830039"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586395"
 ---
 # <a name="keys-and-values"></a>키 및 값
 

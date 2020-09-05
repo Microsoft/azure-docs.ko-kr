@@ -6,12 +6,13 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
-ms.openlocfilehash: eb950f6029511cf834791c161e6a730bcadcabcc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 1044af94df43e61ae8c0032041bc80a356331f1a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515666"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022465"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>.NET SDK를 사용 하 여 Data Lake Storage Gen1에 대 한 파일 시스템 작업
 
@@ -27,7 +28,7 @@ ms.locfileid: "85515666"
 
 .NET SDK를 사용 하 여 Data Lake Storage Gen1에 대 한 계정 관리 작업을 수행 하는 방법에 대 한 지침은 [.NET sdk를 사용 하 여 Data Lake Storage Gen1의 계정 관리 작업](data-lake-store-get-started-net-sdk.md)을 참조 하세요.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * **Visual Studio 2013 이상** 이 문서의 지침에서는 Visual Studio 2019을 사용 합니다.
 
@@ -48,8 +49,8 @@ ms.locfileid: "85515666"
    1. **NuGet 패키지 관리자** 탭에서 **패키지 원본** 이 **nuget.org**로 설정 되어 있는지 확인 합니다. 또한 **시험판 포함** 확인란이 선택 되어 있는지 확인 합니다.
    1. 다음 NuGet 패키지를 검색하고 설치합니다.
 
-      * `Microsoft.Azure.DataLake.Store`-이 문서에서는 v 1.0.0을 사용 합니다.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`-이 문서에서는 v 2.3.1을 사용 합니다.
+      * `Microsoft.Azure.DataLake.Store` -이 문서에서는 v 1.0.0을 사용 합니다.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication` -이 문서에서는 v 2.3.1을 사용 합니다.
 
       **NuGet 패키지 관리자**를 닫습니다.
 
@@ -198,7 +199,7 @@ client.DeleteRecursive("/Test");
 * [GitHub의 기본 샘플](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
 * [GitHub의 고급 샘플](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 * [.NET SDK를 사용한 Data Lake Storage Gen1의 계정 관리 작업](data-lake-store-get-started-net-sdk.md)
 * [Data Lake Storage Gen1 .NET SDK 참조](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)

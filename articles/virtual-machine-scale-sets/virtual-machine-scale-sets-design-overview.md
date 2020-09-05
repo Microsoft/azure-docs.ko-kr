@@ -10,12 +10,12 @@ ms.subservice: management
 ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 5aad73db2f01cec8c1c8b0144d29c105b6e8ae0e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 99dc7a2350631f662e1c993908f7ef56e4f9a194
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87080508"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648567"
 ---
 # <a name="design-considerations-for-scale-sets"></a>확장 집합 디자인 고려 사항
 이 문서에서는 Virtual Machine Scale Sets를 설계할 때 고려할 사항에 대해 논의합니다. Virtual Machine Scale Sets에 대한 자세한 내용은 [Virtual Machine Scale Sets 개요](./overview.md)를 참조하세요.
@@ -42,7 +42,7 @@ ms.locfileid: "87080508"
 ## <a name="storage"></a>스토리지
 
 ### <a name="scale-sets-with-azure-managed-disks"></a>Azure Managed Disks를 사용하는 확장 집합
-확장 집합은 기존의 Azure Storage 계정 대신 [Azure Managed Disks](../virtual-machines/windows/managed-disks-overview.md)를 사용하여 만들 수 있습니다. Managed Disks는 다음과 같은 이점을 제공합니다.
+확장 집합은 기존의 Azure Storage 계정 대신 [Azure Managed Disks](../virtual-machines/managed-disks-overview.md)를 사용하여 만들 수 있습니다. Managed Disks는 다음과 같은 이점을 제공합니다.
 - 확장 집합 VM에 대한 Azure Storage 계정의 집합을 미리 만들 필요가 없습니다.
 - 확장 집합에서 VM에 대한 [연결된 데이터 디스크](virtual-machine-scale-sets-attached-disks.md)를 정의할 수 있습니다.
 - [집합에서 최대 1,000개의 VM을 지원](virtual-machine-scale-sets-placement-groups.md)하도록 확장 집합을 구성할 수 있습니다. 

@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 74007f5d10d58cf9680d4531304098cabe9b6d8b
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: e7bae2ad19aaf4f1c93d8d2bdefa7fa9f0414860
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87115668"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923690"
 ---
 # <a name="about-azure-key-vault-certificates"></a>Azure Key Vault 인증서 정보
 
@@ -44,7 +44,8 @@ Key Vault 인증서가 만들어지면 PFX 또는 PEM 형식의 프라이빗 키
 
 주소 지정이 가능한 키는 내보낼 수 없는 KV 인증서와 더 관련이 있습니다. 주소 지정 가능한 KV 키의 작업은 KV 인증서를 만드는 데 사용되는 KV 인증서 정책의 *keyusage* 필드에서 매핑됩니다.  
 
-두 가지 유형의 키, 즉 *RSA* 또는 인증서가 있는 *RSA HSM*이 지원됩니다. 내보내기 가능한 키는 RSA에서만 허용되며, RSA HSM에서는 지원되지 않습니다.  
+ - 지원되는 키 유형: RSA, RSA-HSM, EC, EC-HSM, oct([여기](https://docs.microsoft.com/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype)에 나열됨) Exportable은 RSA, EC에서만 사용할 수 있습니다. HSM 키는 내보낼 수 없습니다.
+
 
 ## <a name="certificate-attributes-and-tags"></a>인증서 특성 및 태그
 
@@ -84,7 +85,8 @@ Key Vault 인증서를 처음부터 새로 만드는 경우 정책을 제공해�
 크게 보자면, 인증서 정책에는 다음 정보가 포함됩니다(해당 정의는 [여기](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultcertificatepolicy?view=azps-4.4.0)에서 찾을 수 있음).  
 
 -   X509 인증서 속성: 주체 이름, 주체 대체 이름, x509 인증서 요청을 만드는 데 사용되는 기타 속성을 포함합니다.  
--   키 속성: 키 유형, 키 길이, 내보낼 수 있는 ReuseKeyOnRenewal 필드를 포함합니다. 이러한 필드는 키를 생성하는 방법을 키 자격 증명 모음에 지시합니다.  
+-   키 속성: 키 유형, 키 길이, 내보낼 수 있는 ReuseKeyOnRenewal 필드를 포함합니다. 이러한 필드는 키를 생성하는 방법을 키 자격 증명 모음에 지시합니다. 
+     - 지원되는 키 유형: RSA, RSA-HSM, EC, EC-HSM, oct([여기](https://docs.microsoft.com/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype)에 나열됨) 
 -   비밀 속성: 인증서를 비밀 번호로 검색하기 위해 비밀 값을 생성하기 위한 주소 지정 가능한 비밀의 콘텐츠 형식과 같은 비밀 속성을 포함합니다.  
 -   수명 작업: KV 인증서에 대한 수명 작업을 포함합니다. 각 수명 작업에 포함되는 항목은 다음과 같습니다.  
 

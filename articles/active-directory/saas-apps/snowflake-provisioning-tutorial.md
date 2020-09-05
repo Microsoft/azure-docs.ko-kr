@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 눈송이 구성 Microsoft Docs'
 description: 사용자 계정을 눈송이에 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: f9ce85f4-0992-4bc6-8276-4b2efbce8dcb
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 7c43d3dd0c8a0d9f6d31d8e379fd195adfd7873f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 7fbf7743eb1c037a364e1004fc3be30db6777bb0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925416"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546645"
 ---
 # <a name="tutorial-configure-snowflake-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 눈송이 구성
 
@@ -38,7 +34,7 @@ ms.locfileid: "87925416"
 > * 눈송이에서 그룹 및 그룹 멤버 자격 프로 비전
 > * 눈송이에 대 [한 Single sign-on](https://docs.microsoft.com/azure/active-directory/saas-apps/snowflake-tutorial) (권장)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
@@ -68,7 +64,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 눈송이를
 
     ![눈송이 SCIM 추가](media/Snowflake-provisioning-tutorial/image02.png)
 
-## <a name="step-3-add-snowflake-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 눈송이 추가
+## <a name="step-3-add-snowflake-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 눈송이 추가
 
 Azure AD 응용 프로그램 갤러리에서 눈송이를 추가 하 여 눈송이로의 프로 비전 관리를 시작 합니다. 이전에 SSO에 대 한 눈송이를 설정 했다면 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다. 
 
@@ -111,7 +107,7 @@ Azure AD 프로비저닝 서비스를 사용하면 애플리케이션에 대한 
 
     ![알림 이메일](common/provisioning-notification-email.png)
 
-8. **Save**을 클릭합니다.
+8. **저장**을 클릭합니다.
 
 9. **매핑** 섹션에서 **Azure Active Directory 사용자를 눈송이에 동기화를**선택 합니다.
 
@@ -168,7 +164,7 @@ Azure AD 프로비저닝 서비스를 사용하면 애플리케이션에 대한 
 
 * 07/21/2020-활성 특성을 통해 모든 사용자에 대해 일시 삭제를 사용 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [엔터프라이즈 앱에 대 한 사용자 계정 프로 비전 관리](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Azure Active Directory로 애플리케이션 액세스 및 Single Sign-On을 구현하는 방법](../manage-apps/what-is-single-sign-on.md)

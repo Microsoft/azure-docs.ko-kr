@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: f7295515b75ba7e26454f8b6ce6e0d660657ec4e
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 9355482c26cabb96fc6292bab5d542f36aec6a8c
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86055242"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509759"
 ---
 # <a name="develop-arm-templates-for-cloud-consistency"></a>클라우드 일관성을 위한 ARM 템플릿 개발
 
@@ -439,7 +439,7 @@ API 프로필은 템플릿의 필수 요소가 아닙니다. 요소를 추가해
 * 연결 문자열(MySql, SQLServer, SQLAzure, Custom, NotificationHub, ServiceBus, EventHub, ApiHub, DocDb, RedisCache, PostgreSQL)
 * Traffic Manager
 * 공용 IP 주소의 domainNameLabel
-* 클라우드 서비스
+* Cloud Services
 
 일반적으로, 템플릿에 하드 코딩된 엔드포인트를 사용하면 안 됩니다. 모범 사례는 reference 템플릿 함수를 사용하여 엔드포인트를 동적으로 검색하는 것입니다. 예를 들어, 가장 일반적으로 하드 코딩되는 엔드포인트는 스토리지 계정의 엔드포인트 네임스페이스입니다. 각 스토리지 계정에는 스토리지 계정 이름과 엔드포인트 네임스페이스를 연결하여 생성된 고유 FQDN이 있습니다. mystorageaccount1이라는 Blob Storage 계정은 클라우드에 따라 다른 FQDN을 생성합니다.
 
@@ -570,7 +570,7 @@ Get-AzureRmVMSize -Location "West Europe"
 }
 ```
 
-동일한 변경 내용이 [데이터 디스크](../../virtual-machines/windows/using-managed-disks-template-deployments.md)에도 적용됩니다.
+동일한 변경 내용이 [데이터 디스크](../../virtual-machines/using-managed-disks-template-deployments.md)에도 적용됩니다.
 
 ### <a name="verify-that-vm-extensions-are-available-in-azure-stack"></a>Azure Stack에서 VM 확장을 사용할 수 있는지 확인
 

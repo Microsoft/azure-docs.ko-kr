@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6f5cabace81d53edf36ac6be0a2eb8830e6cc5f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e4e09637a7d990e1555b5443b9931cf8ff8c271b
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035080"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718869"
 ---
 # <a name="frequently-asked-questions-about-azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication에 대한 질문과 대답
 
@@ -259,6 +259,6 @@ Windows Server 2012 R2의 보안 변경 때문에 Azure Multi-Factor Authenticat
 여기에서 질문에 대답할 수 없는 경우 다음 지원 옵션을 사용할 수 있습니다.
 
 * [Microsoft 지원 기술 자료](https://support.microsoft.com)에서 일반적인 기술 문제에 대한 솔루션을 검색합니다.
-* 커뮤니티에서 기술 질문 및 답변을 검색 하 여 찾아보거나 [Azure Active Directory Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)에서 질문 합니다.
+* 커뮤니티에서 기술 질문 및 답변을 검색 하 여 찾아보거나 [Azure Active Directory Q&A](/answers/topics/azure-active-directory.html)에서 질문 합니다.
 * [Azure Multi-Factor Authentication 서버 지원을](https://support.microsoft.com/oas/default.aspx?prid=14947)통해 Microsoft 전문가에 게 문의 하세요. 문의하는 경우 가능한 문제에 대한 많은 정보를 제공해주시면 도움이 됩니다. 오류를 발견한 페이지, 특정 오류 코드, 특정 세션 ID 및 오류를 발견한 사용자의 ID를 포함하는 정보를 제공해 주시면 됩니다.
 * 레거시 PhoneFactor 고객이 질문 하거나 암호 재설정에 대 한 도움이 필요한 경우 [phonefactorsupport@microsoft.com](mailto:phonefactorsupport@microsoft.com) 전자 메일 주소를 사용 하 여 지원 사례를 여세요.

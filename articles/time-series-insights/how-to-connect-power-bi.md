@@ -7,13 +7,13 @@ manager: diviso
 services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 06/30/2020
-ms.openlocfilehash: b9d91921fc375a1209e8fa8df6e3c6ff56e55be0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/26/2020
+ms.openlocfilehash: f15686cf07bae4aee41095c970cd8a474724c2ed
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87046716"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230979"
 ---
 # <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Power BI의 Azure Time Series Insights에서 데이터 시각화
 
@@ -52,20 +52,20 @@ Azure Time Series Insights 환경을 Power BI에 연결 하려면 다음 단계�
 
 시작하기:
 
-1. Azure Time Series Insights Gen2 탐색기를 열고 데이터를 만들어 둡니다.
+1. Azure Time Series Insights 탐색기를 열고 데이터를 만들어 둡니다.
 1. 만족 하는 보기를 만들었으면 **추가 작업** 드롭다운 메뉴로 이동 하 여 **Power BI에 연결**을 선택 합니다.
 
-    [![Azure Time Series Insights Gen2 Explorer 내보내기](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
+    [![Azure Time Series Insights 탐색기 내보내기](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
 
 1. 이 탭 내에서 매개 변수를 설정 합니다.
 
    1. 보려는 상대 기간을 지정 합니다. 기존 보기에 만족 하는 경우 **기존 기간**으로 그대로 둡니다.
-   
-   1. **집계** **이벤트와 원시 이벤트**중에서 선택 합니다. 
-   
+
+   1. **집계** **이벤트와 원시 이벤트**중에서 선택 합니다.
+
        > [!NOTE]
-       > Power BI 나중에 언제 든 지 데이터를 집계할 수 있지만 집계 후에는 원시 데이터로 되돌릴 수 없습니다. 
-       
+       > Power BI 나중에 언제 든 지 데이터를 집계할 수 있지만 집계 후에는 원시 데이터로 되돌릴 수 없습니다.
+
        > [!NOTE]
        > 원시 이벤트 수준 데이터에는 25만 이벤트 수 제한이 있습니다.
 
@@ -89,7 +89,7 @@ Azure Time Series Insights 환경을 Power BI에 연결 하려면 다음 단계�
     [![Azure Time Series Insights에 Power BI 연결](media/how-to-connect-power-bi/connect-to-time-series-insights.png)](media/how-to-connect-power-bi/connect-to-time-series-insights.png#lightbox)
 
     또는 **Azure** 탭으로 이동 하 **Azure Time Series Insights (베타)** 를 선택한 다음 **연결**을 선택 합니다.
-    
+
 1. 타사 리소스에 연결할 수 있는 권한을 요청 하는 메시지 대화 상자가 표시 됩니다. **계속**을 선택 합니다.
 
     [![사용자 지정 쿼리 만들기 선택](media/how-to-connect-power-bi/confirm-the-connection.png)](media/how-to-connect-power-bi/confirm-the-connection.png#lightbox)
@@ -112,17 +112,17 @@ Azure Time Series Insights 환경을 Power BI에 연결 하려면 다음 단계�
 
     [![보고서 뷰 선택](media/how-to-connect-power-bi/select-the-report-view.png)](media/how-to-connect-power-bi/select-the-report-view.png#lightbox)
 
-1.  **시각화** 열에서 원하는 시각적 개체를 선택 합니다. 예를 들어 **꺾은선형 차트**를 선택 합니다. 그러면 캔버스에 빈 꺾은선형 차트가 추가 됩니다.
+1. **시각화** 열에서 원하는 시각적 개체를 선택 합니다. 예를 들어 **꺾은선형 차트**를 선택 합니다. 그러면 캔버스에 빈 꺾은선형 차트가 추가 됩니다.
 
-1.  **필드** 목록에서 **_Timestamp** 을 선택 하 고 **축** 필드로 끌어 X 축을 따라 항목을 표시 합니다. **축** 에 대 한 값으로 **_Timestamp** 로 전환 (기본값은 **날짜 계층 구조**) 해야 합니다.
+1. **필드** 목록에서 **_Timestamp** 을 선택 하 고 **축** 필드로 끌어 X 축을 따라 항목을 표시 합니다. **축** 에 대 한 값으로 **_Timestamp** 로 전환 (기본값은 **날짜 계층 구조**) 해야 합니다.
 
     [![보고서 뷰 선택](media/how-to-connect-power-bi/select-timestamp.png)](media/how-to-connect-power-bi/select-timestamp.png#lightbox)
 
-1.  다시 **필드** 목록에서 **Timeseriesid** 를 선택 하 고 **값** 필드로 끌어 Y 축을 따라 항목을 표시 합니다.
+1. 다시 **필드** 목록에서 **Timeseriesid** 를 선택 하 고 **값** 필드로 끌어 Y 축을 따라 항목을 표시 합니다.
 
     [![꺾은선형 차트 만들기](media/how-to-connect-power-bi/power-bi-line-chart.png)](media/how-to-connect-power-bi/power-bi-line-chart.png#lightbox)
 
-1.  캔버스에 다른 차트를 추가 하려면 캔버스에서 꺾은선형 차트 외부의 아무 곳 이나 선택 하 고이 프로세스를 반복 합니다.
+1. 캔버스에 다른 차트를 추가 하려면 캔버스에서 꺾은선형 차트 외부의 아무 곳 이나 선택 하 고이 프로세스를 반복 합니다.
 
     [![공유할 추가 차트 만들기](media/how-to-connect-power-bi/power-bi-additional-charts.png)](media/how-to-connect-power-bi/power-bi-additional-charts.png#lightbox)
 

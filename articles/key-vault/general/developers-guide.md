@@ -5,15 +5,15 @@ services: key-vault
 author: msmbaldwin
 ms.service: key-vault
 ms.subservice: general
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/11/2020
 ms.author: mbaldwin
-ms.openlocfilehash: c1a5d302f63f57a142d014c8ef66d02405e119ea
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 2f90ba0bb732930b4cf3b1c832c6954683119f5f
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531169"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585868"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Azure Key Vault 개발자 가이드
 
@@ -51,7 +51,7 @@ Key Vault에서 키, 암호 또는 인증서를 사용하기 전에 다음 문�
 - [REST를 사용한 비밀 작업](/rest/api/keyvault/#secret-operations)
 - [Python을 사용 하 여 암호 설정 및 검색](../secrets/quick-create-python.md)
 - [Java를 사용 하 여 암호 설정 및 검색](../secrets/quick-create-java.md)
-- [Node.js를 사용 하 여 암호 설정 및 검색](../secrets/quick-create-node.md)
+- [Node.js를 사용 하 여 암호 설정 및 검색 ](../secrets/quick-create-node.md)
 - [.NET을 사용 하 여 암호 설정 및 검색 (v4 SDK)](../secrets/quick-create-net.md)
 - [Azure Resource Manager 템플릿을 통한 Key Vault 만들기 및 암호 추가](../secrets/quick-create-template.md)
 

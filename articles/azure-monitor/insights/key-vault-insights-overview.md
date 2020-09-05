@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/13/2019
-ms.openlocfilehash: 7b52a1ee67c22fb3bded49a80d35305bdf612f10
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c669946ab76fcaeaaa6fd681f521408643c5a63c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498957"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88531262"
 ---
 # <a name="monitoring-your-key-vault-service-with-azure-monitor-for-key-vault-preview"></a>Azure Monitor for Key Vault(미리 보기)를 사용하여 키 자격 증명 모음 서비스 모니터링
 Azure Monitor for Key Vault(미리 보기)는 Key Vault 요청, 성능, 실패 및 대기 시간에 대한 통합 보기를 제공하여 키 자격 증명 모음을 종합적으로 모니터링합니다.
@@ -45,7 +45,7 @@ Azure Monitor for Key Vault는 로그와 메트릭을 결합하여 글로벌 모
 
 Azure Monitor에서 구독에 속한 여러 키 자격 증명 모음의 요청, 대기 시간 및 오류 세부 정보를 볼 수 있으며 성능문제와 제한 시나리오를 식별하는 데 도움이 됩니다.
 
-모든 구독의 스토리지 계정 사용률 및 작업을 보려면 다음 단계를 수행합니다.
+모든 구독에서 키 자격 증명 모음의 사용률 및 작업을 보려면 다음 단계를 수행 합니다.
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 

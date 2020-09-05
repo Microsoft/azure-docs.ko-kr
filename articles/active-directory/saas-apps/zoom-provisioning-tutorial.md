@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 확대/축소 구성 Microsoft Docs'
 description: Azure AD에서 사용자 계정을 자동으로 프로 비전 및 프로 비전 해제 하 여 확대/축소 하는 방법을 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 3a2e4bbff1274a2473ac961b8355ca4193dcc69f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 15e3d72661ad35335c744fbaf0ab39627d254750
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924906"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545984"
 ---
 # <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 확대/축소 구성
 
@@ -34,7 +30,7 @@ ms.locfileid: "87924906"
 > * Azure AD와 Zoom 간에 사용자 특성을 동기화 상태로 유지
 > * [Single sign-on](https://docs.microsoft.com/azure/active-directory/saas-apps/zoom-tutorial) 을 확대/축소 (권장)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
@@ -50,7 +46,7 @@ ms.locfileid: "87924906"
 
 ## <a name="step-2-configure-zoom-to-support-provisioning-with-azure-ad"></a>2단계. Azure AD를 사용 하 여 프로 비전을 지원 하도록 확대/축소 구성
 
-1. [확대/축소 관리 콘솔](https://zoom.us/signin)에 로그인 합니다. 왼쪽 탐색 창에서 **개발자를 위한 고급 > 확대/축소** 로 이동 합니다.
+1. [확대/축소 관리 콘솔](https://zoom.us/signin)에 로그인 합니다. 왼쪽 탐색 창에서 **고급 > App Marketplace** 로 이동 합니다.
 
     ![통합 확대/축소](media/zoom-provisioning-tutorial/zoom01.png)
 
@@ -70,7 +66,7 @@ ms.locfileid: "87924906"
 
     ![확대/축소 설치](media/zoom-provisioning-tutorial/zoom05.png)
 
-## <a name="step-3-add-zoom-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 확대/축소 추가
+## <a name="step-3-add-zoom-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 확대/축소 추가
 
 Azure AD 응용 프로그램 갤러리에서 확대/축소를 추가 하 여 확대/축소 프로 비전 관리를 시작 합니다. 이전에 SSO에 대 한 확대/축소를 설정한 경우 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다. 
 

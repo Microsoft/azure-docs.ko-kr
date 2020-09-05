@@ -3,23 +3,25 @@ title: 콘텐츠 인식 인코딩에 대 한 사전 설정-Azure Media Services
 description: 이 문서에서는 Microsoft Azure Media Services v3의 콘텐츠 인식 인코딩에 대해 설명 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/29/2020
-ms.author: juliako
-ms.custom: ''
-ms.openlocfilehash: 3669919a8ddf4ffcbcf0d3e7e060c62f4c8df1c6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 853381dbccea5374806fbeadb1d29632f0525fdb
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039145"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265612"
 ---
 # <a name="use-the-content-aware-encoding-preset-to-find-the-optimal-bitrate-value-for-a-given-resolution"></a>콘텐츠 인식 인코딩 미리 설정을 사용 하 여 지정 된 해상도에 대 한 최적의 비트 전송률 값을 찾습니다.
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 [적응 비트 전송률 스트리밍을](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)통해 콘텐츠를 준비할 수 있도록 하려면 비디오를 여러 비트 전송률 (높음-낮음)으로 인코딩해야 합니다. 이렇게 하면 비트 전송률이 감소 하므로 비디오의 해상도는 품질의 정상 저하를 보장할 수 있습니다. 이러한 다중 비트 전송률 인코딩은 해상도 및 비트 전송률의 테이블을 사용 하 여이에 대 한 인코딩 사다리를 사용 합니다. [기본 제공 인코딩 기본 설정](/rest/api/media/transforms/createorupdate#encodernamedpreset)Media Services을 참조 하세요.
 

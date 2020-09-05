@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 07/18/2019
 ms.author: curtand
 ms.custom: user-help
-ms.openlocfilehash: c7e2b522d475a49f694a8cb57bf57f62900948b0
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 42ced6632ebfa56af8fe13a02f531b9835e13df3
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743182"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799386"
 ---
 # <a name="sign-in-using-two-step-verification-or-security-info"></a>2단계 인증 또는 보안 정보를 사용하여 로그인
 
@@ -90,9 +90,9 @@ ms.locfileid: "83743182"
 
 ## <a name="next-steps"></a>다음 단계
 
-- [보안 정보(미리 보기) 개요](user-help-security-info-overview.md) 문서에서 보안 정보에 대해 자세히 알아봅니다.
+- [보안 정보(미리 보기) 개요](./security-info-setup-signin.md) 문서에서 보안 정보에 대해 자세히 알아봅니다.
 
-- [2단계 인증 개요](user-help-two-step-verification-overview.md) 문서에서 2단계 인증에 대해 알아봅니다.
+- [2단계 인증 개요](./multi-factor-authentication-end-user-first-time.md) 문서에서 2단계 인증에 대해 알아봅니다.
 
 - 암호를 분실했거나 잊어버린 경우 [암호 재설정 포털](https://passwordreset.microsoftonline.com/)에서 암호를 다시 설정합니다.
 

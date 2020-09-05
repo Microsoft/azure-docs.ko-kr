@@ -8,23 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
-ms.date: 06/25/2020
+ms.date: 08/20/2020
 ms.author: trbye
-ms.openlocfilehash: 43efc770f3a3b29a1b0fc214d2927c8c153dff96
-ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
+ms.openlocfilehash: cc29eb959876a0c9c6f8c8e5dee2d18aaa5443ac
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85391641"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825361"
 ---
 # <a name="what-is-the-speech-service"></a>Speech Service란?
 
-Speech Service는 음성 텍스트 변환, 텍스트 음성 변환 및 음성 번역을 단일 Azure 구독에 통합한 것입니다. [Speech SDK](speech-sdk-reference.md), [Speech Devices SDK](https://aka.ms/sdsdk-quickstart) 또는 [REST API](rest-apis.md)를 사용하여 애플리케이션, 도구 및 디바이스에 음성을 쉽게 추가할 수 있습니다.
+Speech Service는 음성 텍스트 변환, 텍스트 음성 변환 및 음성 번역을 단일 Azure 구독에 통합한 것입니다. [Speech CLI](spx-overview.md), [Speech SDK](speech-sdk-reference.md), [Speech Devices SDK](https://aka.ms/sdsdk-quickstart), [Speech Studio](https://speech.microsoft.com/) 또는 [REST API](rest-apis.md)를 통해 애플리케이션, 도구 및 디바이스를 음성으로 쉽게 사용할 수 있습니다.
 
 > [!IMPORTANT]
 > Speech Service는 Bing Speech API 및 Translator Speech를 대체했습니다. 마이그레이션 지침에 대해서는 _방법 가이드 > 마이그레이션_을 참조하세요.
 
-Speech Service를 구성하는 기능은 다음과 같습니다. 이 표의 링크를 사용하여 각 기능의 일반적인 사용 사례를 알아보거나 API 참조를 검색할 수 있습니다.
+Speech Service 기능 중 일부는 다음과 같습니다. 이 표의 링크를 사용하여 각 기능의 일반적인 사용 사례에 대해 자세히 알아보거나 API 참조를 찾아볼 수 있습니다.
 
 | 서비스 | 기능 | Description | SDK) | REST (영문) |
 |---------|---------|-------------|-----|------|
@@ -42,20 +42,61 @@ Speech Service를 구성하는 기능은 다음과 같습니다. 이 표의 링�
 
 [!INCLUDE [TLS 1.2 enforcement](../../../includes/cognitive-services-tls-announcement.md)]
 
-## <a name="try-the-speech-service"></a>Speech Service 사용해 보기
+## <a name="try-the-speech-service-for-free"></a>Speech Service 체험해 보기
 
-각각이 10분 이내에 코드를 실행할 수 있게 디자인된 가장 인기 있는 프로그래밍 언어로 빠른 시작을 제공합니다. 이 표에는 각 기능에 대해 가장 인기 있는 빠른 시작이 포함되어 있습니다. 왼쪽 탐색 영역을 사용하여 추가 언어 및 플랫폼을 확인하세요.
+다음 단계에서는 Microsoft 계정과 Azure 계정이 모두 필요합니다. Microsoft 계정이 없으면 [Microsoft 계정 포털](https://account.microsoft.com/account)에서 무료로 한 계정에 가입할 수 있습니다. **Microsoft에 로그인**을 선택한 다음, 로그인하라는 메시지가 표시되면 **Microsoft 계정 만들기**를 선택합니다. 단계에 따라 새 Microsoft 계정을 만들고 확인합니다.
 
-| 음성 텍스트 변환(SDK) | 텍스트 음성 변환(SDK) | 번역(SDK) |
-|----------------------|----------------------|-------------------|
-| [오디오 파일에서 음성 인식](quickstarts/speech-to-text-from-file.md) | [오디오 파일로 음성 합성](quickstarts/text-to-speech-audio-file.md) | [음성을 텍스트로 변환](quickstarts/translate-speech-to-text.md) |
-| [마이크에서 음성 인식](quickstarts/speech-to-text-from-microphone.md) | [스피커로 음성 합성](quickstarts/text-to-speech.md) | [음성을 여러 대상 언어로 번역](quickstarts/translate-speech-to-text-multiple-languages.md) |
-| [Blob 스토리지에 저장된 음성 인식](quickstarts/from-blob.md) | [긴 형식의 오디오에 대한 비동기 합성](quickstarts/text-to-speech/async-synthesis-long-form-audio.md) | [음성을 음성으로 번역](quickstarts/translate-speech-to-speech.md) |
+Microsoft 계정이 있으면 [Azure 가입 페이지](https://azure.microsoft.com/free/ai/)로 이동하고, **평가판 시작**을 선택한 다음, Microsoft 계정을 사용하여 새 Azure 계정을 만듭니다.
 
 > [!NOTE]
-> 음성 텍스트 변환 및 텍스트 음성 변환은 REST 엔드포인트와 연결된 빠른 시작일 수도 있습니다.
+> Speech Service에는 체험 및 구독의 두 가지 서비스 계층이 있으며, 제한 사항과 혜택이 서로 다릅니다. Azure 체험 계정에 가입하면 유료 Speech Service 구독에 적용할 수 있는 $200의 서비스 크레딧이 제공되며, 최대 30일 동안 유효합니다.
+>
+> 적은 볼륨의 Speech Service 체험 계층을 사용하는 경우 평가판 또는 서비스 크레딧이 만료된 후에도 이 체험 구독을 유지할 수 있습니다.
+>
+> 자세한 내용은 [Cognitive Services 가격 - Speech Service](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)를 참조하세요.
 
-Speech Service를 사용해 본 후에는 다양한 시나리오를 해결하는 방법을 설명하는 자습서를 진행해 보세요.
+### <a name="create-the-azure-resource"></a>Azure 리소스 만들기
+
+Speech 서비스 리소스(체험 또는 유료 계층)를 Azure 계정에 추가하려면 다음을 수행합니다.
+
+1. Microsoft 계정을 사용하여 [Azure Portal](https://portal.azure.com/)에 로그인합니다.
+
+1. 포털의 왼쪽 위에서 **리소스 만들기**를 선택합니다. **리소스 만들기**가 표시되지 않으면 언제든지 화면의 왼쪽 위 모서리에서 접혀 있는 메뉴를 선택하여 찾을 수 있습니다.
+
+1. **새로 만들기** 창의 검색 상자에서 "speech"를 입력하고 ENTER 키를 누릅니다.
+
+1. 검색 결과에서 **Speech**를 선택합니다.
+
+   ![음성 검색 결과](media/index/speech-search.png)
+
+1. **만들기**를 선택하고 다음을 수행합니다.
+
+   - 새 리소스에 대한 고유한 이름을 지정합니다. 이름은 동일한 서비스에 연결된 여러 구독을 구분하는 데 도움이 됩니다.
+   - 새 리소스가 연결되는 Azure 구독을 선택하여 요금이 얼마나 청구되는지 확인합니다.
+   - 리소스가 사용될 [지역](regions.md)을 선택합니다.
+   - F0(체험) 또는 S0(유료) 가격 책정 계층을 선택합니다. 각 계층의 가격 책정 및 사용 할당량에 대한 전체 정보를 보려면 **전체 가격 책정 세부 정보 보기**를 선택하세요.
+   - 이 Speech 구독에 대한 새 리소스 그룹을 만들거나 기존 리소스 그룹에 해당 구독을 할당합니다. 리소스 그룹은 다양한 Azure 구독의 구성을 유지하는 데 도움이 됩니다.
+   - **만들기**를 선택합니다. 그러면 배포 개요로 이동하여 배포 진행률 메시지가 표시됩니다.
+
+> [!NOTE]
+> 표준 계층 구독은 하나 이상의 지역에서 무제한으로 만들 수 있지만, 체험 계층 구독은 하나만 만들 수 있습니다. 7일 동안 사용하지 않은 상태로 유지되는 체험 계층의 모델 배포 서비스는 자동으로 해제됩니다.
+
+새 Speech 리소스를 배포하는 데 몇 분 정도 걸립니다. 배포가 완료되면 **리소스로 이동**을 선택하고, 왼쪽 탐색 창에서 **키**를 선택하여 Speech Service 구독 키를 표시합니다. 각 구독에는 두 개의 키가 있으며, 애플리케이션에서 두 키 중 하나를 사용할 수 있습니다. 키를 코드 편집기 또는 다른 위치에 빨리 복사하여 붙여넣으려면 각 키 옆의 복사 단추를 선택하고, 창을 전환하여 클립보드 내용을 원하는 위치에 붙여넣습니다.
+
+> [!IMPORTANT]
+> 이러한 구독 키는 Cognitive Service API에 액세스하는 데 사용됩니다. 키를 공유하지 마세요. 예를 들어 Azure Key Vault를 사용하여 안전하게 저장합니다. 또한 이러한 키는 정기적으로 다시 생성하는 것이 좋습니다. API 호출을 수행하는 데는 하나의 키만 필요합니다. 첫 번째 키를 다시 생성하는 경우 두 번째 키를 사용하여 서비스에 계속 액세스할 수 있습니다.
+
+## <a name="complete-a-quickstart"></a>빠른 시작 완료
+
+Microsoft는 빠른 시작을 가장 많이 사용되는 프로그래밍 언어로 제공하며, 각각 기본 디자인 패턴을 학습하고 코드를 10분 이내에 실행할 수 있도록 설계되었습니다. 각 기능에 대한 빠른 시작은 다음 목록을 참조하세요.
+
+* [음성 텍스트 변환 빠른 시작](speech-to-text-basics.md)
+* [텍스트 음성 변환 빠른 시작](get-started-text-to-speech.md)
+* [음성 번역 빠른 시작](speech-translation-basics.md)
+* [의도 인식 빠른 시작](quickstarts/intent-recognition.md)
+* [화자 인식 빠른 시작](speaker-recognition-basics.md)
+
+Speech Service를 시작한 후에는 다양한 시나리오를 해결하는 방법을 보여 주는 자습서를 수행해 보세요.
 
 - [자습서: Speech SDK 및 LUIS, C#을 사용하여 음성에서 의도 인식](how-to-recognize-intents-from-speech-csharp.md)
 - [자습서: 음성 SDK, C#으로 음성을 지원하도록 봇 설정](tutorial-voice-enable-your-bot-speech-sdk.md)
@@ -74,6 +115,8 @@ Speech Service를 사용해 본 후에는 다양한 시나리오를 해결하는
 
 Speech Service는 기본 제공 모델에서 효율적으로 작동하지만, 제품 또는 환경에 맞게 경험을 추가로 사용자 지정하고 튜닝할 수 있습니다. 사용자 지정 옵션은 음향 모델 조정부터 브랜드를 위한 고유한 음성 글꼴까지 다양합니다.
 
+다른 제품은 의료 또는 보험과 같은 특정 목적에 맞게 튜닝된 음성 모델을 제공하지만, 모든 사용자가 동일하게 사용할 수 있습니다. Azure Speech의 사용자 지정은 다른 사용자 또는 고객이 사용할 수 없는 *고유한* 경쟁 우위의 일부가 됩니다. 즉, 모델은 사용 사례에만 맞게 전용 및 사용자 지정 방식으로 튜닝됩니다.
+
 | Speech Service | 플랫폼 | Description |
 | -------------- | -------- | ----------- |
 | 음성 텍스트 변환 | [Custom Speech](https://aka.ms/customspeech) | 사용자의 요구 사항과 사용 가능한 데이터에 맞게 음성 인식 모델을 사용자 지정합니다. 말하기 스타일, 어휘 및 배경 소음과 같은 음성 인식 장벽을 해결하세요. |
@@ -90,4 +133,5 @@ Speech Service는 기본 제공 모델에서 효율적으로 작동하지만, �
 ## <a name="next-steps"></a>다음 단계
 
 > [!div class="nextstepaction"]
-> [평가판 Speech Service 구독 키 받기](get-started.md)
+> [음성 텍스트 변환 시작](speech-to-text-basics.md)
+> [텍스트 음성 변환 시작](get-started-text-to-speech.md)

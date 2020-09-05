@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 5d4b87c14422744fd62d42a4d8e5b1ca0f34ffac
-ms.sourcegitcommit: 14bf4129a73de2b51a575c3a0a7a3b9c86387b2c
+ms.openlocfilehash: 07945926600163a3fca228ef6d848b50efc4318d
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87439724"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042805"
 ---
 # <a name="tutorial-perform-image-classification-at-the-edge-with-custom-vision-service"></a>자습서: Custom Vision Service를 사용하여 에지에서 이미지 분류 수행
 
@@ -435,7 +435,7 @@ Visual Studio Code에서 IoT Edge 디바이스의 이름을 마우스 오른쪽 
 > [!NOTE]
 > 처음에는 cameraCapture 모듈의 출력에 연결 오류가 표시될 수 있습니다. 배포되어 시작하는 모듈 간의 지연 때문입니다.
 >
-> cameraCapture 모듈은 성공할 때까지 자동으로 연결을 다시 시도합니다. 그 후 아래와 같이 예상 이미지 분류 메시지가 표시됩니다.
+> cameraCapture 모듈은 성공할 때까지 자동으로 연결을 다시 시도합니다. 성공적으로 연결되면 아래에 설명된 예상 이미지 분류 메시지가 표시됩니다.
 
 cameraCapture 모듈에서 메시지로 전송되는 Custom Vision 모듈의 결과는 이미지가 hemlock 또는 cherry 트리일 가능성을 포함합니다. 이미지는 hemlock이므로 확률은 1.0으로 표시됩니다.
 

@@ -16,10 +16,10 @@ ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
 ms.openlocfilehash: 940636a5e368a84aaaf0d4490bf874d56d3ddb6e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "78251902"
 ---
 # <a name="tutorial-load-balance-vms-within-an-availability-zone-with-standard-load-balancer-by-using-the-azure-portal"></a>자습서: Azure Portal에서 표준 Load Balancer를 사용하여 가용성 영역 내부의 VM 부하 분산
@@ -146,7 +146,7 @@ ms.locfileid: "78251902"
 
 1. 맨 왼쪽 메뉴에서 **모든 리소스**를 선택합니다. 그런 다음, 리소스 목록에서 **myVM1**을 선택합니다. **myResourceGroupZLB** 리소스 그룹에 있습니다.
 2. **개요** 페이지에서 **연결**을 선택하여 VM으로 이동하는 데 RDP를 사용합니다.
-3. VM을 만들 때 지정한 사용자 이름 및 암호를 사용하여 VM에 로그인합니다. VM을 만들 때 입력한 자격 증명을 지정하려면 **추가 선택 사항**을 선택해야 할 수도 있습니다. 그런 다음, **다른 계정 사용**을 선택합니다. 그런 다음, **확인**을 선택합니다. 로그인 프로세스 중에 인증서 경고가 나타날 수 있습니다. **예**를 선택하여 연결을 진행합니다.
+3. VM을 만들 때 지정한 사용자 이름 및 암호를 사용하여 VM에 로그인합니다. VM을 만들 때 입력한 자격 증명을 지정하려면 **추가 선택 사항**을 선택해야 할 수도 있습니다. 그런 다음 **다른 계정 사용**을 선택합니다. 그런 다음, **확인**을 선택합니다. 로그인 프로세스 중에 인증서 경고가 나타날 수 있습니다. **예**를 선택하여 연결을 진행합니다.
 4. 서버 바탕 화면에서 **Windows 관리 도구** > **Windows PowerShell**로 이동합니다.
 6. **PowerShell** 창에서 다음 명령을 실행하여 IIS 서버를 설치합니다. 이러한 명령은 기본 iisstart.htm 파일을 제거한 다음, VM의 이름을 표시하는 새 iisstart.htm 파일을 추가합니다.
 

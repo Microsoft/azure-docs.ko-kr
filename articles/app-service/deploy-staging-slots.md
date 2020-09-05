@@ -5,12 +5,12 @@ ms.assetid: e224fc4f-800d-469a-8d6a-72bcde612450
 ms.topic: article
 ms.date: 04/30/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 19a7bc70bd782f9b684cb48672147f5009e4a08f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b12b85a2248d7709066ba3218327e0a5d52a0192
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073860"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962165"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Azure App Service에서 스테이징 환경 설정
 <a name="Overview"></a>
@@ -62,7 +62,7 @@ ms.locfileid: "87073860"
 
 6. 슬롯의 리소스 페이지에서 앱 URL을 선택 합니다. 배포 슬롯에는 고유한 호스트 이름이 있으며 라이브 앱 이기도 합니다. 배포 슬롯에 대 한 공용 액세스를 제한 하려면 [AZURE APP SERVICE IP 제한](app-service-ip-restrictions.md)을 참조 하세요.
 
-다른 슬롯에서 설정을 복제하더라도 새 배포 슬롯에는 내용이 없습니다. 예를 들어 Git를 [사용 하 여이 슬롯에 게시할](app-service-deploy-local-git.md)수 있습니다. 다른 리포지토리 분기 또는 다른 리포지토리로부터 슬롯에 배포할 수 있습니다.
+다른 슬롯에서 설정을 복제하더라도 새 배포 슬롯에는 내용이 없습니다. 예를 들어 Git를 [사용 하 여이 슬롯에 게시할](./deploy-local-git.md)수 있습니다. 다른 리포지토리 분기 또는 다른 리포지토리로부터 슬롯에 배포할 수 있습니다.
 
 <a name="AboutConfiguration"></a>
 
@@ -83,7 +83,7 @@ ms.locfileid: "87073860"
 
 1. [로컬 캐시](overview-local-cache.md) 를 사용 하는 경우 소스 슬롯의 각 인스턴스에서 응용 프로그램 루트 ("/")에 대 한 HTTP 요청을 수행 하 여 로컬 캐시 초기화를 트리거합니다. 각 인스턴스가 HTTP 응답을 반환할 때까지 기다립니다. 로컬 캐시 초기화를 수행 하면 각 인스턴스에서 다른 다시 시작이 발생 합니다.
 
-1. [사용자 지정 준비](#Warm-up)상태에서 [자동 교환이](#Auto-Swap) 설정 된 경우 원본 슬롯의 각 인스턴스에서 응용 프로그램 루트 ("/")에 대 한 HTTP 요청을 만들어 [응용 프로그램 시작](https://docs.microsoft.com/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization) 을 트리거합니다.
+1. [사용자 지정 준비](#Warm-up)상태에서 [자동 교환이](#Auto-Swap) 설정 된 경우 원본 슬롯의 각 인스턴스에서 응용 프로그램 루트 ("/")에 대 한 HTTP 요청을 만들어 [응용 프로그램 시작](/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization) 을 트리거합니다.
 
     `applicationInitialization`을 지정 하지 않으면 각 인스턴스에서 원본 슬롯의 응용 프로그램 루트에 대 한 HTTP 요청을 트리거합니다. 
     
@@ -222,7 +222,7 @@ Preview를 사용 하 여 교환 하려면:
 
 ## <a name="monitor-a-swap"></a>교환 모니터링
 
-[교환 작업](#AboutConfiguration) 을 완료 하는 데 시간이 오래 걸리면 [활동 로그](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)에서 교환 작업에 대 한 정보를 가져올 수 있습니다.
+[교환 작업](#AboutConfiguration) 을 완료 하는 데 시간이 오래 걸리면 [활동 로그](../azure-monitor/platform/platform-logs-overview.md)에서 교환 작업에 대 한 정보를 가져올 수 있습니다.
 
 포털의 앱 리소스 페이지에 있는 왼쪽 창에서 **활동 로그**를 선택 합니다.
 
@@ -335,7 +335,7 @@ Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microso
 
 ## <a name="automate-with-resource-manager-templates"></a>리소스 관리자 템플릿으로 자동화
 
-[Azure Resource Manager 템플릿은](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview) Azure 리소스의 배포 및 구성을 자동화 하는 데 사용 되는 선언적 JSON 파일입니다. 리소스 관리자 템플릿을 사용 하 여 슬롯을 교환 하려면 *Microsoft 웹/사이트/슬롯* 및 *microsoft 웹/사이트* 리소스에서 두 개의 속성을 설정 합니다.
+[Azure Resource Manager 템플릿은](../azure-resource-manager/templates/overview.md) Azure 리소스의 배포 및 구성을 자동화 하는 데 사용 되는 선언적 JSON 파일입니다. 리소스 관리자 템플릿을 사용 하 여 슬롯을 교환 하려면 *Microsoft 웹/사이트/슬롯* 및 *microsoft 웹/사이트* 리소스에서 두 개의 속성을 설정 합니다.
 
 - `buildVersion`: 슬롯에 배포 된 앱의 현재 버전을 나타내는 문자열 속성입니다. 예를 들면 "v1", "1.0.0.1" 또는 "2019-09-20T11:53:25.2887393-07:00"입니다.
 - `targetBuildVersion`: 슬롯에 포함 해야 하는 항목을 지정 하는 문자열 속성입니다 `buildVersion` . TargetBuildVersion가 현재와 같지 않으면 지정 된 `buildVersion` 이 있는 슬롯을 검색 하 여 교환 작업을 트리거합니다 `buildVersion` .
@@ -423,7 +423,6 @@ Remove-AzResource -ResourceGroupName [resource group name] -ResourceType Microso
       ...
     </conditions>
     ```
-- 일부 [IP 제한 규칙](app-service-ip-restrictions.md) 은 교환 작업에서 응용 프로그램에 HTTP 요청을 보내지 못하도록 할 수 있습니다. 로 시작 하 `10.` 고 `100.` 배포에 내부적으로 사용 되는 IPv4 주소 범위입니다. 앱에 연결 하도록 허용 해야 합니다.
 
 - 슬롯 교체 후에는 앱에서 예기치 않은 다시 시작이 발생할 수 있습니다. 이는 교환 후 호스트 이름 바인딩 구성이 동기화 되지 않아 자체적으로 다시 시작 되지 않기 때문입니다. 그러나 특정 기본 저장소 이벤트 (예: 저장소 볼륨 장애 조치 (failover))는 이러한 불일치를 감지 하 여 모든 작업자 프로세스를 강제로 다시 시작할 수 있습니다. 이러한 유형의 다시 시작을 최소화 하려면 *모든 슬롯*에서 [ `WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG=1` 앱 설정을](https://github.com/projectkudu/kudu/wiki/Configurable-settings#disable-the-generation-of-bindings-in-applicationhostconfig) 설정 합니다. 그러나이 앱 설정은 WCF (Windows Communication Foundation) 앱에서 작동 *하지* 않습니다.
 

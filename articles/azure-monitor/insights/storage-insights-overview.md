@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/11/2020
-ms.openlocfilehash: 7daba35b9247443c84cedad03f252ea6858da236
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 6d6754594a321d297d983f9bd7e90ce074857919
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327347"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961978"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Storage용 Azure Monitor를 사용하여 스토리지 서비스 모니터링
 
@@ -54,11 +54,11 @@ Azure Monitor에서 구독의 여러 스토리지 계정의 트랜잭션, 대기
 
 ### <a name="overview-workbook"></a>개요 통합 문서
 
-선택한 구독에 대한 **개요** 통합 문서의 테이블에는 구독 내에 그룹화된 최대 10개의 스토리지 계정에 대한 대화형 스토리지 메트릭 및 서비스 가용성 상태가 표시됩니다. 다음 드롭다운 목록에서 선택하는 옵션을 기준으로 결과를 필터링할 수 있습니다.
+선택한 구독의 **개요** 통합 문서에서 테이블은 구독 내에 그룹화 된 최대 5 개의 저장소 계정에 대 한 대화형 저장소 메트릭 및 서비스 가용성 상태를 표시 합니다. 다음 드롭다운 목록에서 선택하는 옵션을 기준으로 결과를 필터링할 수 있습니다.
 
 * **구독** - 스토리지 계정이 있는 구독만 나열됩니다.  
 
-* **스토리지 계정** - 기본적으로 10개의 스토리지 계정이 미리 선택되어 있습니다. 범위 선택기에서 모든 스토리지 계정 또는 여러 스토리지 계정을 선택하는 경우 최대 200개의 스토리지 계정이 반환됩니다. 예를 들어 선택한 3개의 구독에 대해 총 573개의 스토리지 계정이 있는 경우 200개 계정만 표시됩니다. 
+* **저장소 계정** -기본적으로 5 개의 저장소 계정이 미리 선택 되어 있습니다. 범위 선택기에서 모든 스토리지 계정 또는 여러 스토리지 계정을 선택하는 경우 최대 200개의 스토리지 계정이 반환됩니다. 예를 들어 선택한 3개의 구독에 대해 총 573개의 스토리지 계정이 있는 경우 200개 계정만 표시됩니다. 
 
 * **시간 범위** - 기본적으로는 선택한 항목을 기준으로 지난 4시간의 정보를 표시합니다.
 

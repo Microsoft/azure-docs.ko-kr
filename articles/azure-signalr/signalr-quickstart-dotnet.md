@@ -5,14 +5,15 @@ author: sffamily
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
+ms.custom: devx-track-csharp
 ms.date: 04/20/2019
 ms.author: zhshang
-ms.openlocfilehash: ec5b7a75bced4b7cd81a120925558b8c1be57818
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8797d17ac439882415a9f5360fded28cb55484d5
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74158183"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050542"
 ---
 # <a name="quickstart-create-a-chat-room-with-aspnet-and-signalr-service"></a>빠른 시작: ASP.NET과 SignalR Service를 사용하여 대화방 만들기
 
@@ -30,15 +31,21 @@ ASP.NET SignalR과 ASP.NET Core SignalR의 기능을 비교한 전체 목록을 
 * [.NET 4.6.1](https://www.microsoft.com/net/download/windows)
 * [ASP.NET SignalR 2.4.1](https://www.nuget.org/packages/Microsoft.AspNet.SignalR/)
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
+
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
 Azure 계정을 사용하여 [Azure Portal](https://portal.azure.com/) 에 로그인합니다.
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
 ASP.NET SignalR 애플리케이션에는 *서버리스* 모드가 지원되지 않습니다. Azure SignalR Service 인스턴스에는 항상 *기본*이나 *클래식*을 사용하세요.
 
 [SignalR Service 스크립트 만들기](scripts/signalr-cli-create-service.md)를 통해 이 빠른 시작에 사용되는 Azure 리소스를 만들 수도 있습니다.
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
 
 ## <a name="clone-the-sample-application"></a>샘플 애플리케이션 복제
 
@@ -51,6 +58,8 @@ ASP.NET SignalR 애플리케이션에는 *서버리스* 모드가 지원되지 �
     ```bash
     git clone https://github.com/aspnet/AzureSignalR-samples.git
     ```
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
 
 ## <a name="configure-and-run-chat-room-web-app"></a>대화방 웹앱 구성 및 실행
 
@@ -96,6 +105,8 @@ ASP.NET SignalR 애플리케이션에는 *서버리스* 모드가 지원되지 �
 
 1. **F5** 키를 눌러 디버그 모드로 프로젝트를 실행합니다. 애플리케이션이 로컬에서 실행되는 것을 볼 수 있습니다. 애플리케이션이 SignalR 런타임을 자체적으로 호스팅하는 대신 Azure SignalR Service에 연결합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
 
@@ -114,9 +125,14 @@ ASP.NET SignalR 애플리케이션에는 *서버리스* 모드가 지원되지 �
 
 잠시 후, 리소스 그룹 및 해당 그룹에 포함된 모든 리소스가 삭제됩니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
+
 ## <a name="next-steps"></a>다음 단계
 
 이 빠른 시작에서는 새 Azure SignalR Service 리소스를 만들어서, ASP.NET 웹앱에서 사용했습니다. 다음에는 ASP.NET Core와 Azure SignalR Service를 사용하여 실시간 애플리케이션을 개발하는 방법을 알아봅니다.
 
 > [!div class="nextstepaction"]
 > [ASP.NET Core와 Azure SignalR Service](./signalr-quickstart-dotnet-core.md)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsnet)
+

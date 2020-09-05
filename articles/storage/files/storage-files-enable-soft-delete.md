@@ -8,12 +8,12 @@ ms.date: 05/28/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: f432c544d8632a548c397b63ffa8066f63424f67
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2d2a000879a95f86a6cdda3324add5b692476eee
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86528386"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590118"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Azure 파일 공유에서 일시 삭제 사용
 
@@ -22,6 +22,8 @@ Azure Storage는 파일 공유 (미리 보기)에 대 한 일시 삭제를 제�
 다음 섹션에서는 기존 스토리지 계정에서 Azure 파일 공유에 대해 일시 삭제를 사용하도록 설정하고 사용하는 방법을 보여 줍니다.
 
 # <a name="portal"></a>[포털](#tab/azure-portal)
+
+## <a name="getting-started"></a>시작
 
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 1. 스토리지 계정으로 이동하고 **파일 서비스**에서 **일시 삭제**를 선택합니다.
@@ -33,7 +35,13 @@ Azure Storage는 파일 공유 (미리 보기)에 대 한 일시 삭제를 제�
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-일시 삭제 cmdlet은 2.1.1 모듈의 미리 보기 버전에서 사용할 수 있습니다. 일시 삭제를 사용하도록 설정하려면 파일 클라이언트의 서비스 속성을 업데이트해야 합니다. 다음 예제에서는 스토리지 계정의 모든 파일 공유에 대해 일시 삭제를 사용하도록 설정합니다.
+## <a name="prerequisite"></a>필수 조건
+
+일시 삭제 cmdlet은 현재 Az. Storage 모듈의 [2.1.1-preview](https://www.powershellgallery.com/packages/Az.Storage/2.1.1-preview) 및 [2.3.1](https://www.powershellgallery.com/packages/Az.Storage/2.3.1-preview) 버전 에서만 사용할 수 있습니다. 
+
+## <a name="getting-started"></a>시작
+
+일시 삭제를 사용하도록 설정하려면 파일 클라이언트의 서비스 속성을 업데이트해야 합니다. 다음 예제에서는 스토리지 계정의 모든 파일 공유에 대해 일시 삭제를 사용하도록 설정합니다.
 
 ```azurepowershell-interactive
 $rgName = "yourResourceGroupName"

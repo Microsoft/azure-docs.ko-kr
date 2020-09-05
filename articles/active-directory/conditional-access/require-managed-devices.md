@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf3fd50b907e69311c475af844c7969f081a3094
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 7d3fbb06355772794fbe3fab5cdf3c8622c2baf4
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849933"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948830"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>방법: 조건부 액세스를 사용 하 여 클라우드 앱 액세스를 위한 관리 되는 장치 요구
 
@@ -28,7 +28,7 @@ ms.locfileid: "85849933"
 
 클라우드 앱 액세스를 위한 관리 되는 장치 요구는 **AZURE Ad 조건부 액세스** 와 **azure ad 장치 관리** 를 함께 연결 합니다. 이러한 내용에 익숙하지 않은 경우 먼저 다음 항목을 읽어보세요.
 
-- **[Azure Active Directory의 조건부 액세스](../active-directory-conditional-access-azure-portal.md)** -이 문서에서는 조건부 액세스 및 관련 용어에 대 한 개념적인 개요를 제공 합니다.
+- **[Azure Active Directory의 조건부 액세스](./overview.md)** -이 문서에서는 조건부 액세스 및 관련 용어에 대 한 개념적인 개요를 제공 합니다.
 - **[Azure Active Directory의 디바이스 관리 소개](../devices/overview.md)** - 이 문서에서는 디바이스를 조직에서 제어해야 하는 다양한 옵션에 대해 간략히 설명합니다. 
 - **Windows 10 크리에이터 업데이트 (버전 1703)** 이상에서 Chrome을 지원 하려면 [windows 10 계정 확장](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji)을 설치 합니다. 이 확장은 조건부 액세스 정책에서 장치 관련 세부 정보를 요구 하는 경우에 필요 합니다.
 

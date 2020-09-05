@@ -17,11 +17,27 @@
     - name: 동작을 감지하고 Media Services에 비디오 녹화
       href: detect-motion-record-video-clips-media-services-quickstart.md
     - name: 동작 감지 및 이벤트 내보내기
-      href: detect-motion-emit-events-quickstart.md
+      items:
+        - name: 직접 메서드 호출 사용
+          displayName: 'detect motion, emit events'
+          href: detect-motion-emit-events-quickstart.md
     - name: 동작을 감지하고 에지 디바이스에 비디오 녹화
-      href: detect-motion-record-video-clips-edge-devices-quickstart.md
-    - name: 사용자 고유의 모델로 Live Video Analytics 실행
-      href: use-your-model-quickstart.md
+      items:
+        - name: 직접 메서드 호출 사용
+          displayName: 'detect motion, record video on edge devices'
+          href: detect-motion-record-video-clips-edge-devices-quickstart.md
+    - name: 사용자 고유의 모델로 라이브 비디오 분석
+      items:
+        - name: HTTP 확장 사용
+          items:
+            - name: 직접 메서드 호출 사용
+              displayName: 'analyze, your own model, http'
+              href: use-your-model-quickstart.md
+        - name: gRPC 확장 사용
+          items:
+            - name: 직접 메서드 호출 사용
+              displayName: 'analyze, your own model, grpc'
+              href: analyze-live-video-use-your-grpc-model-quickstart.md
 - name: 자습서
   items:
     - name: 연속 비디오 녹화
@@ -30,14 +46,23 @@
       href: event-based-video-recording-tutorial.md
     - name: 여러 날 녹음/녹화 재생
       href: playback-multi-day-recordings-tutorial.md
+    - name: 라이브 비디오 분석
+      items:
+        - name: HTTP 확장을 통한 OVMS 사용
+          displayName: 'intel, OpenVINO'
+          href: use-intel-openvino-tutorial.md
 - name: 샘플
   items:
-    - name: IoT Edge C# 샘플의 Live Video Analytics
+    - name: C# 직접 메서드 샘플
       href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp'
+    - name: Python 직접 메서드 샘플
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-python'
 - name: 개념
   items:
     - name: 미디어 그래프
       href: media-graph-concept.md
+    - name: 미디어 그래프 확장
+      href: media-graph-extension-concept.md
     - name: 비디오 녹화
       href: video-recording-concept.md
     - name: 비디오 재생
@@ -62,14 +87,18 @@
       href: playback-recordings-how-to.md
     - name: 녹음/녹화 정책 관리
       href: manage-recording-policy-how-to.md
-    - name: 선택한 AI를 사용하여 라이브 비디오 분석
-      href: analyze-with-ai-your-choice-how-to.md
     - name: 포털을 사용하여 직접 메서드 호출
       href: use-azure-portal-to-invoke-direct-methods.md
     - name: 문제 해결
       href: troubleshoot-how-to.md
 - name: 참조
   items:
+    - name: HTTP 데이터 계약
+      href: http-data-contract.md
+    - name: gRPC 데이터 계약
+      href: grpc-data-contract.md
+    - name: 유추 메타데이터 스키마
+      href: inference-metadata-schema.md
     - name: 직접 메서드
       href: direct-methods.md
     - name: 모듈 쌍 구성 스키마

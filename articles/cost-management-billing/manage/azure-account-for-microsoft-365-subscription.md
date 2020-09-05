@@ -5,15 +5,16 @@ author: JiangChen79
 ms.reviewer: adwise
 tags: billing,top-support-issue
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 06/15/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 050bd9c420ccecdb91a6c438782d9be1c6c23b88
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: e2561b6cfce0da2ede9cda567091f9a7e23610de
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461887"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88682997"
 ---
 # <a name="sign-up-for-a-microsoft-365-subscription-with-your-azure-account"></a>Azure 계정으로 Microsoft 365 구독에 가입
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
-ms.date: 06/17/2020
+ms.date: 08/13/2020
 ms.author: diberry
-ms.openlocfilehash: cc14f1cd60f048ba01060b9ebdbca434af6b9751
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 4c9dc04770e5fadd72c5460a4b44c05ffda47cb7
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145625"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245454"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Azure 리소스 제작 키로 마이그레이션
 
@@ -34,6 +34,7 @@ LUIS () 제작 인증을 전자 메일 계정에서 Azure 리소스로 변경 �
 
 ## <a name="note-before-you-migrate"></a>마이그레이션 전 주의 사항
 
+* **2020 년 11 월 2**일부 터 제작 환경을 마이그레이션해야 합니다. 
 * 마이그레이션은 단방향 프로세스입니다. 마이그레이션한 후에는 뒤로 이동할 수 없습니다.
 * 응용 프로그램의 소유자 인 경우 응용 프로그램은 자동으로 마이그레이션됩니다.
 * 소유자는 마이그레이션할 앱의 하위 집합을 선택할 수 없으며 프로세스를 되돌릴 수 없습니다.
@@ -51,7 +52,7 @@ LUIS () 제작 인증을 전자 메일 계정에서 Azure 리소스로 변경 �
 
 ## <a name="migration-prerequisites"></a>마이그레이션 필수 조건
 
-* 유효한 Azure 구독과 연결 해야 합니다. 테 넌 트 관리자에 게 구독에 대 한 추가를 요청 하거나 [무료로 등록할](https://azure.microsoft.com/free/)수 있습니다.
+* 유효한 Azure 구독과 연결 해야 합니다. 테 넌 트 관리자에 게 구독에 대 한 추가를 요청 하거나 [무료로 등록할](https://azure.microsoft.com/free/cognitive-services)수 있습니다.
 * LUIS 포털에서 또는 Azure Portal에서 LUIS Azure 제작 리소스를 만들어야 합니다. LUIS 포털에서 제작 리소스를 만드는 과정은 다음 섹션에서 설명 하는 마이그레이션 흐름의 일부입니다.
 * 응용 프로그램의 협력자 인 경우 응용 프로그램이 자동으로 마이그레이션되지 않습니다. 이러한 응용 프로그램을 내보내거나 [내보내기 API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40)를 사용 하 여 백업 하는 것이 좋습니다. 마이그레이션 후 앱을 다시 LUIS으로 가져올 수 있습니다. 가져오기 프로세스에서는 사용자가 소유자 인 새 앱 ID를 사용 하 여 새 앱을 만듭니다.
 * 응용 프로그램의 소유자 인 경우 자동으로 마이그레이션될 앱을 내보낼 필요가 없습니다. 각 앱의 협력자 목록을 저장 하는 것이 좋습니다. 이 목록을 포함 하는 전자 메일 템플릿은 선택적으로 마이그레이션 프로세스의 일부로 제공 됩니다.
@@ -59,7 +60,7 @@ LUIS () 제작 인증을 전자 메일 계정에서 Azure 리소스로 변경 �
 
 |포털|용도|
 |--|--|
-|[Azure](https://azure.microsoft.com/free/)| 예측 및 제작 리소스를 만듭니다.<br> 리소스에 참가자를 할당 합니다.|
+|[Azure](https://azure.microsoft.com/free/cognitive-services)| 예측 및 제작 리소스를 만듭니다.<br> 리소스에 참가자를 할당 합니다.|
 |[LUIS](https://www.luis.ai)| 새 제작 리소스로 마이그레이션합니다.<br> 마이그레이션 흐름에서 새 제작 리소스를 만듭니다.<br> Azure 리소스 **관리**페이지에서 예측 및 리소스 제작 리소스를 앱에 할당 또는 할당 해제  >  **Azure resources** 합니다. <br> 응용 프로그램을 한 제작 리소스에서 다른 제작 리소스로 이동 합니다.  |
 
 > [!Note]

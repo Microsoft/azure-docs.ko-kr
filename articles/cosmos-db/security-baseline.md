@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 3431ad88a27da9d83b75ed3661d6129f157b9b1f
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 99985ba8540a347977b9eaf2e733a308fa777b97
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87531509"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231404"
 ---
 # <a name="azure-security-baseline-for-cosmos-db"></a>Cosmos DB에 대 한 Azure 보안 기준
 
@@ -34,13 +34,13 @@ Cosmos DB에 대 한 Azure 보안 기준에는 배포의 보안 상태를 개선
 
 IP 방화벽을 사용 하 여 Azure Cosmos 계정에 저장 된 데이터를 보호할 수도 있습니다. Azure Cosmos DB는 인바운드 방화벽 지원을 위해 IP 기반 액세스 제어를 지원합니다. Azure Portal, Azure Resource Manager 템플릿 또는 Azure CLI 또는 Azure PowerShell를 사용 하 여 Azure Cosmos 계정에 IP 방화벽을 설정할 수 있습니다.
 
-Azure 개인 링크 개요:https://docs.microsoft.com/azure/private-link/private-link-overview
+Azure 개인 링크 개요: https://docs.microsoft.com/azure/private-link/private-link-overview
 
-Azure Cosmos DB에 대 한 개인 끝점을 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints 
+Azure Cosmos DB에 대 한 개인 끝점을 구성 하는 방법:  https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints 
 
-보안 구성을 사용 하 여 네트워크 보안 그룹을 만드는 방법:https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
+보안 구성을 사용 하 여 네트워크 보안 그룹을 만드는 방법:  https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
 
-Cosmos DB에서 IP 방화벽을 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-firewall
+Cosmos DB에서 IP 방화벽을 구성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/how-to-configure-firewall
 
 **Azure Security Center 모니터링**: 예
 
@@ -52,7 +52,7 @@ Cosmos DB에서 IP 방화벽을 구성 하는 방법:https://docs.microsoft.com/
 
 Azure Cosmos 계정과 동일한 가상 네트워크에 가상 머신을 배포 하는 경우 NSG (네트워크 보안 그룹)를 사용 하 여 데이터 exfiltration의 위험을 줄일 수 있습니다. NSG 흐름 로그를 사용 하도록 설정 하 고 로그를 트래픽 감사에 대 한 Azure Storage 계정으로 보냅니다. 또한 NSG 흐름 로그를 Log Analytics 작업 영역에 보내고, 트래픽 분석을 사용하여 Azure 클라우드의 트래픽 흐름에 대한 인사이트를 제공할 수 있습니다. 트래픽 분석의 장점 중 일부는 네트워크 활동을 시각화하고, 핫 스폿을 식별하며, 보안 위협을 식별하고, 트래픽 흐름 패턴을 이해하며, 잘못된 네트워크 구성을 파악할 수 있다는 것입니다.
 
-Azure Security Center에서 제공 하는 네트워크 보안 이해:https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
+Azure Security Center에서 제공 하는 네트워크 보안 이해: https://docs.microsoft.com/azure/security-center/security-center-network-recommendations
 
 NSG 흐름 로그를 사용하도록 설정하는 방법: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
 
@@ -66,7 +66,7 @@ NSG 흐름 로그를 사용하도록 설정하는 방법: https://docs.microsoft
 
 **지침**: CORS (원본 간 리소스 공유) 기능을 사용 하 여 한 도메인에서 실행 되는 웹 응용 프로그램이 다른 도메인의 리소스에 액세스할 수 있도록 설정 합니다. 웹 브라우저는 웹 페이지가 다른 도메인의 API를 호출하지 못하게 차단하는 동일 원본 정책이라고 하는 보안 제한을 구현합니다. 그러나 CORS는 원본 도메인이 다른 도메인의 Api를 호출할 수 있는 안전한 방법을 제공 합니다. Azure Cosmos 계정에 CORS 지원을 사용하도록 설정하면 오직 인증된 요청만 평가하여 사용자가 지정한 규칙에 따라 허용 여부가 결정됩니다.
 
-원본 간 리소스 공유를 구성 합니다.https://docs.microsoft.com/azure/cosmos-db/how-to-configure-cross-origin-resource-sharing
+원본 간 리소스 공유를 구성 합니다. https://docs.microsoft.com/azure/cosmos-db/how-to-configure-cross-origin-resource-sharing
 
 **Azure Security Center 모니터링**: 예
 
@@ -78,11 +78,11 @@ NSG 흐름 로그를 사용하도록 설정하는 방법: https://docs.microsoft
 
 DDoS 공격 으로부터 보호 하기 위해 Azure Cosmos DB 인스턴스와 연결 된 가상 네트워크에서 DDoS Protection 표준을 사용 하도록 설정 합니다. Azure Security Center 통합 위협 인텔리전스를 사용하여 알려진 악성 인터넷 IP 주소 또는 사용하지 않는 인터넷 IP 주소와의 통신을 거부합니다.
 
-Azure Cosmos DB Advanced Threat Protection을 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
+Azure Cosmos DB Advanced Threat Protection을 구성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
 
 DDoS Protection을 구성하는 방법: https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection
 
-Azure Security Center 통합 위협 인텔리전스 이해:https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
+Azure Security Center 통합 위협 인텔리전스 이해: https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
 **Azure Security Center 모니터링**: 예
 
@@ -104,7 +104,7 @@ NSG 흐름 로그를 사용하도록 설정하는 방법: https://docs.microsoft
 
 **지침**: Azure Cosmos DB에 대해 ATP (Advanced Threat Protection)를 사용 합니다. Azure Cosmos DB에 대 한 ATP는 Azure Cosmos 계정을 액세스 하거나 악용 하려는 비정상적이 고 잠재적으로 유해한 시도를 감지 하는 추가 보안 인텔리전스 계층을 제공 합니다. 이 보호 계층을 사용 하면 위협을 해결 하 고 중앙 보안 모니터링 시스템과 통합할 수 있습니다. 
 
-Cosmos DB Advanced Threat Protection을 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
+Cosmos DB Advanced Threat Protection을 구성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
 
 **Azure Security Center 모니터링**: 예
 
@@ -186,7 +186,7 @@ Azure Monitor에서 경고를 만드는 방법: https://docs.microsoft.com/azure
 
 **지침**: Azure Monitor을 통해 로그를 수집 하 여 Azure Cosmos DB에서 생성 된 보안 데이터를 집계 합니다. Azure Monitor 내에서 Log Analytics 작업 영역을 사용 하 여 분석을 쿼리하고 수행 하 고 장기/보관 저장소에 저장소 계정을 사용 합니다. 또는 Azure Sentinel 또는 타사 SIEM(Security Incident and Event Management)을 사용하도록 설정하고 데이터를 온보딩할 수 있습니다. 
 
-Azure Cosmos DB에 대 한 진단 로그를 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/cosmos-db/logging
+Azure Cosmos DB에 대 한 진단 로그를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/cosmos-db/logging
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -198,9 +198,9 @@ Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/senti
 
 **지침**: Azure Cosmos DB에 대 한 진단 설정을 사용 하도록 설정 하 고 Log Analytics 작업 영역 또는 저장소 계정에 로그를 보냅니다. Azure Cosmos DB의 진단 설정은 리소스 로그를 수집 하는 데 사용 됩니다. 이러한 로그는 요청당 캡처되고 "데이터 평면 로그" 라고도 합니다. 데이터 평면 작업의 몇 가지 예로는 delete, insert 및 read가 있습니다. Azure 활동 로그 진단 설정을 사용 하도록 설정 하 고 동일한 Log Analytics 작업 영역으로 보낼 수도 있습니다.
 
-Azure Cosmos DB에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/cosmos-db/logging
+Azure Cosmos DB에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/cosmos-db/logging
 
-Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -218,7 +218,7 @@ Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 �
 
 **지침**: Azure Monitor에서 조직의 규정 준수 규정에 따라 Azure Cosmos DB 인스턴스와 연결 된 Log Analytics 작업 영역에 대 한 로그 보존 기간을 설정 합니다.
 
-로그 보존 매개 변수를 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+로그 보존 매개 변수를 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -228,7 +228,7 @@ Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 �
 
 **지침**: 작업 영역 Log Analytics에서 쿼리를 수행 하 여 용어를 검색 하 고, 추세를 식별 하 고, 패턴을 분석 하 고, 수집한 Azure Cosmos DB 로그를 기반으로 많은 기타 정보를 제공할 수 있습니다.
 
-Log Analytics 작업 영역에서 Azure Cosmos DB에 대 한 쿼리를 수행 하는 방법:https://docs.microsoft.com/azure/cosmos-db/monitor-cosmos-db
+Log Analytics 작업 영역에서 Azure Cosmos DB에 대 한 쿼리를 수행 하는 방법: https://docs.microsoft.com/azure/cosmos-db/monitor-cosmos-db
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -242,11 +242,11 @@ Log Analytics 작업 영역에서 Azure Cosmos DB에 대 한 쿼리를 수행 �
 
 또한 Log Analytics 작업 영역을 Azure 센티널에 등록 하 여 보안 오케스트레이션 자동화 된 응답 (대화 충성도) 솔루션을 제공할 수 있습니다. 이를 통해 플레이북(자동화된 솔루션)을 만들어 보안 문제를 수정하는 데 사용할 수 있습니다. 또한 Azure Monitor를 사용 하 여 Log Analytics 작업 영역에서 사용자 지정 로그 경고를 만들 수 있습니다.
 
-Azure Cosmos DB에 대 한 위협 방지 경고 목록:https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurecosmos
+Azure Cosmos DB에 대 한 위협 방지 경고 목록: https://docs.microsoft.com/azure/security-center/alerts-reference#alerts-azurecosmos
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-Azure Monitor를 사용 하 여 로그 경고 만들기, 보기 및 관리:https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log
+Azure Monitor를 사용 하 여 로그 경고 만들기, 보기 및 관리: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log
 
 **Azure Security Center 모니터링**: 예
 
@@ -292,17 +292,17 @@ Azure Cosmos DB은 Azure Cosmos DB의 일반적인 관리 시나리오에 대 �
 
 또한 Azure Cosmos DB의 일부 동작은 Azure Active Directory 및 계정 관련 마스터 키로 제어할 수 있습니다.  ' DisableKeyBasedMetadataWriteAccess ' 계정 설정을 사용 하 여 키 액세스를 제어 합니다.
 
-Azure Cosmos DB의 역할 기반 액세스 제어를 이해 합니다.https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
+Azure Cosmos DB의 역할 기반 액세스 제어를 이해 합니다. https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
 
-Azure Cosmos DB 작업을 사용 하 여 사용자 지정 역할을 빌드합니다 (Microsoft.DocumentDB 네임 스페이스).https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdocumentdb
+Azure Cosmos DB 작업을 사용 하 여 사용자 지정 역할을 빌드합니다 (Microsoft.DocumentDB 네임 스페이스). https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations#microsoftdocumentdb
 
-Azure Active Directory에서 새 역할을 만듭니다.https://docs.microsoft.com/azure/role-based-access-control/custom-roles
+Azure Active Directory에서 새 역할을 만듭니다. https://docs.microsoft.com/azure/role-based-access-control/custom-roles
 
-PowerShell을 사용 하 여 Azure Active Directory에서 디렉터리 역할을 가져오는 방법:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
+PowerShell을 사용 하 여 Azure Active Directory에서 디렉터리 역할을 가져오는 방법: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
 
-PowerShell을 사용 하 여 Azure Active Directory에서 디렉터리 역할의 멤버를 가져오는 방법:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
+PowerShell을 사용 하 여 Azure Active Directory에서 디렉터리 역할의 멤버를 가져오는 방법: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
 
-데이터 작업에 대 한 사용자 액세스 제한:https://docs.microsoft.com/azure/cosmos-db/how-to-restrict-user-data
+데이터 작업에 대 한 사용자 액세스 제한: https://docs.microsoft.com/azure/cosmos-db/how-to-restrict-user-data
 
 **Azure Security Center 모니터링**: 예
 
@@ -312,11 +312,11 @@ PowerShell을 사용 하 여 Azure Active Directory에서 디렉터리 역할의
 
 **지침**: 기본 또는 빈 암호의 개념은 Azure AD 또는 Azure Cosmos DB와 관련 하 여 존재 하지 않습니다. 대신, Azure Cosmos DB는 두 가지 유형의 키를 사용 하 여 사용자를 인증 하 고 해당 데이터 및 리소스에 대 한 액세스를 제공 합니다. 마스터 키 및 리소스 토큰입니다. 언제 든 지 키를 다시 생성할 수 있습니다.
 
-Azure Cosmos DB 데이터에 대 한 보안 액세스 이해:https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data
+Azure Cosmos DB 데이터에 대 한 보안 액세스 이해: https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data
 
-Azure Cosmos DB 키를 다시 생성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/manage-with-powershell#regenerate-keys
+Azure Cosmos DB 키를 다시 생성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/manage-with-powershell#regenerate-keys
 
-Azure Active Directory를 사용 하 여 프로그래밍 방식으로 키에 액세스 하는 방법:https://docs.microsoft.com/azure/cosmos-db/certificate-based-authentication
+Azure Active Directory를 사용 하 여 프로그래밍 방식으로 키에 액세스 하는 방법: https://docs.microsoft.com/azure/cosmos-db/certificate-based-authentication
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -336,9 +336,9 @@ Azure Active Directory를 사용 하 여 프로그래밍 방식으로 키에 액
 
 **지침**: Azure Cosmos DB는 두 가지 유형의 키를 사용 하 여 사용자에 게 권한을 부여 하 고 데이터 평면 수준에서 Sso (Single sign-on)를 지원 하지 않습니다. Cosmos DB에 대 한 제어 평면에 대 한 액세스는 REST API를 통해 제공 되며 SSO를 지원 합니다. 인증을 위해 요청에 대한 권한 부여 헤더를 Azure Active Directory에서 가져오는 JSON Web Token으로 설정합니다.
 
-Azure Database for Cosmos DB REST API 이해:https://docs.microsoft.com/rest/api/cosmos-db/
+Azure Database for Cosmos DB REST API 이해: https://docs.microsoft.com/rest/api/cosmos-db/
 
-Azure Active Directory를 사용 하 여 SSO 이해:https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
+Azure Active Directory를 사용 하 여 SSO 이해: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -354,7 +354,7 @@ Azure Security Center 내에서 ID 및 액세스를 모니터링하는 방법: h
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6: 모든 관리 작업에 전용 컴퓨터(Privileged Access Workstation) 사용
 
@@ -398,9 +398,9 @@ Azure에서 명명된 위치를 구성하는 방법: https://docs.microsoft.com/
 
 **지침**: Azure AD(Active Directory)를 중앙 인증 및 권한 부여 시스템으로 사용합니다. Azure AD는 강력한 암호화를 저장 데이터 및 전송 중 데이터에 사용하여 데이터를 보호합니다. 또한 Azure AD는 사용자 자격 증명을 솔트하고, 해시하고, 안전하게 저장합니다.
 
-Azure Active Directory 인스턴스를 만들고 구성 하는 방법:https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance
+Azure Active Directory 인스턴스를 만들고 구성 하는 방법: https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance
 
-Azure SQL을 사용 하 여 Azure Active Directory 인증을 구성 하 고 관리 하는 방법:https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
+Azure SQL을 사용 하 여 Azure Active Directory 인증을 구성 하 고 관리 하는 방법: https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -432,9 +432,9 @@ Azure 활동 로그를 Azure Monitor에 통합하는 방법: https://docs.micros
 
 또한 Azure AD ID 보호 및 위험 검색 기능을 사용 하 여 사용자 id와 관련 된 검색 된 의심 스러운 작업에 대 한 자동화 된 응답을 구성할 수 있습니다. 또한 추가 조사를 위해 Azure 센티널에 로그를 수집할 수 있습니다.
 
-위험한 로그인 Azure Active Directory 확인 하는 방법:https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
+위험한 로그인 Azure Active Directory 확인 하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
-Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -472,13 +472,13 @@ Customer Lockbox 지원 서비스 목록: https://docs.microsoft.com/azure/secur
 
 추가 Azure 구독을 만드는 방법: https://docs.microsoft.com/azure/billing/billing-create-subscription
 
-관리 그룹을 만드는 방법:https://docs.microsoft.com/azure/governance/management-groups/create
+관리 그룹을 만드는 방법: https://docs.microsoft.com/azure/governance/management-groups/create
 
 태그를 만들고 사용하는 방법: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-Azure Cosmos DB에 대 한 개인 끝점을 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints
+Azure Cosmos DB에 대 한 개인 끝점을 구성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/how-to-configure-private-endpoints
 
-보안 구성을 사용 하 여 네트워크 보안 그룹을 만드는 방법:https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
+보안 구성을 사용 하 여 네트워크 보안 그룹을 만드는 방법: https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -494,7 +494,7 @@ Azure Cosmos DB에 대 한 개인 끝점을 구성 하는 방법:https://docs.mi
 
 또한 가상 컴퓨터를 사용 하 여 Azure Cosmos DB 인스턴스에 액세스 하는 경우 개인 링크, 방화벽, 네트워크 보안 그룹 및 서비스 태그를 활용 하 여 데이터 exfiltration의 가능성을 완화 합니다. Microsoft는 Azure Cosmos DB에 대 한 기본 인프라를 관리 하 고, 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
-Cosmos DB Advanced Threat Protection을 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
+Cosmos DB Advanced Threat Protection을 구성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/cosmos-db-advanced-threat-protection
 
 Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
@@ -506,7 +506,7 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 **지침**: Azure Cosmos DB에 대 한 모든 연결은 HTTPS를 지원 합니다. Azure Cosmos DB는 TLS 1.2도 지원 합니다. 최소 TLS 버전 서버 쪽을 적용할 수 있습니다. 이렇게 하려면에 문의 하세요 [azurecosmosdbtls@service.microsoft.com](mailto:azurecosmosdbtls@service.microsoft.com) .
 
-Cosmos DB 보안 개요:https://docs.microsoft.com/azure/cosmos-db/database-security
+Cosmos DB 보안 개요: https://docs.microsoft.com/azure/cosmos-db/database-security
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -530,7 +530,7 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 **지침**: Azure Cosmos DB에서는 Azure Cosmos DB의 일반적인 관리 시나리오에 대 한 기본 제공 RBAC (역할 기반 액세스 제어)를 제공 합니다. Azure Active Directory에 프로필이 있는 개인은 이러한 Azure 역할을 사용자, 그룹, 서비스 주체 또는 관리 되는 id에 할당 하 여 리소스에 대 한 액세스를 부여 하거나 거부 하 고 Azure Cosmos DB 리소스에 대 한 작업을 수행할 수 있습니다. 역할 할당은 제어 평면 액세스 전용으로 범위가 지정 됩니다. 여기에는 Azure Cosmos 계정, 데이터베이스, 컨테이너 및 제안 (처리량)에 대 한 액세스가 포함 됩니다.
 
-Azure Cosmos DB에서 RBAC를 구현 하는 방법:https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
+Azure Cosmos DB에서 RBAC를 구현 하는 방법: https://docs.microsoft.com/azure/cosmos-db/role-based-access-control
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -554,11 +554,11 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 기본적으로 Microsoft는 Azure Cosmos 계정에서 데이터를 암호화 하는 데 사용 되는 키를 관리 합니다. 필요에 따라 사용자 고유의 키를 사용 하 여 두 번째 암호화 계층을 추가 하도록 선택할 수 있습니다.
 
-Azure Cosmos DB를 사용 하 여 미사용 암호화 이해:https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
+Azure Cosmos DB를 사용 하 여 미사용 암호화 이해: https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
 
-Azure Cosmos DB를 사용 하 여 미사용 암호화를 위한 키 관리 이해:https://docs.microsoft.com/azure/cosmos-db/cosmos-db-security-controls
+Azure Cosmos DB를 사용 하 여 미사용 암호화를 위한 키 관리 이해: https://docs.microsoft.com/azure/cosmos-db/cosmos-db-security-controls
 
-Azure Cosmos DB 계정에 대해 고객이 관리 하는 키를 구성 하는 방법:https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk
+Azure Cosmos DB 계정에 대해 고객이 관리 하는 키를 구성 하는 방법: https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -586,11 +586,11 @@ Azure 활동 로그 이벤트에 대한 경고를 만드는 방법: https://docs
 
 Microsoft는 Azure Cosmos DB 인스턴스를 지 원하는 기본 호스트에서 시스템 패치 및 취약성 관리를 수행 합니다. Azure 내에서 고객 데이터를 안전하게 유지하기 위해 Microsoft는 강력한 데이터 보호 제어 및 기능 모음을 구현하고 유지 관리합니다.
 
-Azure Security Center에서 사용할 수 있는 지원 되는 기능은 다음과 같습니다.https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows
+Azure Security Center에서 사용할 수 있는 지원 되는 기능은 다음과 같습니다. https://docs.microsoft.com/azure/security-center/security-center-services?tabs=features-windows
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2: 자동화된 운영 체제 패치 관리 솔루션 배포
 
@@ -642,7 +642,7 @@ Azure Resource Graph를 사용하여 쿼리를 만드는 방법: https://docs.mi
 
 Azure 구독을 확인하는 방법: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
-Azure 역할 기반 액세스 제어 이해:https://docs.microsoft.com/azure/role-based-access-control/overview
+Azure 역할 기반 액세스 제어 이해: https://docs.microsoft.com/azure/role-based-access-control/overview
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -654,7 +654,7 @@ Azure 역할 기반 액세스 제어 이해:https://docs.microsoft.com/azure/rol
 
 태그를 만들고 사용하는 방법: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
 
-태그를 지 원하는 Azure Cosmos DB 리소스는 다음과 같습니다.https://docs.microsoft.com/azure/azure-resource-manager/management/tag-support#microsoftdocumentdb
+태그를 지 원하는 Azure Cosmos DB 리소스는 다음과 같습니다. https://docs.microsoft.com/azure/azure-resource-manager/management/tag-support#microsoftdocumentdb
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -698,7 +698,7 @@ Azure Graph를 사용하여 쿼리를 만드는 방법: https://docs.microsoft.c
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6: 컴퓨팅 리소스 내에서 승인되지 않은 소프트웨어 애플리케이션 모니터링
 
@@ -916,7 +916,7 @@ Azure 관리 ID와 통합하는 방법: https://docs.microsoft.com/azure/azure-a
 
 **지침**: 자격 증명 스캐너를 구현하여 코드 내에서 자격 증명을 식별합니다. 또한 자격 증명 스캐너는 검색된 자격 증명을 더 안전한 위치(예: Azure Key Vault)로 이동하도록 추천합니다.
 
-자격 증명 스캐너를 설정 하는 방법:https://secdevtools.azurewebsites.net/helpcredscan.html
+자격 증명 스캐너를 설정 하는 방법: https://secdevtools.azurewebsites.net/helpcredscan.html
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -963,7 +963,7 @@ Azure Cosmos DB를 포함 하 여 비 계산 Azure 리소스에 업로드 되는
 
 **지침**: Azure Cosmos DB는 4 시간 마다 데이터의 스냅숏을 생성 합니다. 모든 백업은 스토리지 서비스에서 개별적으로 저장되고 이러한 백업은 지역 재해에 대비한 복원을 위해 전역적으로 복제됩니다. 지정된 시간에는 마지막 두 스냅샷만 유지됩니다. 단, 컨테이너 또는 데이터베이스가 삭제된 경우 Azure Cosmos DB는 지정된 컨테이너 또는 데이터베이스의 기존 스냅샷을 30일 동안 유지합니다. 백업에서 복원 하려면 Azure 지원에 문의 하세요.
 
-자동화 된 백업 Azure Cosmos DB 이해:https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
+자동화 된 백업 Azure Cosmos DB 이해: https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -975,9 +975,9 @@ Azure Cosmos DB를 포함 하 여 비 계산 Azure 리소스에 업로드 되는
 
 Key Vault를 사용 하 여 Cosmos DB 인스턴스의 자격 증명을 저장 하는 경우 키의 자동 백업을 정기적으로 수행 해야 합니다.
 
-자동화 된 백업 Azure Cosmos DB 이해:https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
+자동화 된 백업 Azure Cosmos DB 이해: https://docs.microsoft.com/azure/cosmos-db/online-backup-and-restore
 
-Azure Cosmos DB에서 데이터를 복원 하는 방법:https://docs.microsoft.com/azure/cosmos-db/how-to-backup-and-restore
+Azure Cosmos DB에서 데이터를 복원 하는 방법: https://docs.microsoft.com/azure/cosmos-db/how-to-backup-and-restore
 
 Key Vault 키를 백업하는 방법: https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey
 
@@ -1013,13 +1013,13 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 Key Vault에서 일시 삭제를 사용하도록 설정하여 실수로 또는 악의적으로 삭제되지 않도록 키를 보호합니다.
 
-Azure Cosmos DB의 데이터 암호화 이해:https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
+Azure Cosmos DB의 데이터 암호화 이해: https://docs.microsoft.com/azure/cosmos-db/database-encryption-at-rest
 
-Key Vault에서 일시 삭제를 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+Key Vault에서 일시 삭제를 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ## <a name="incident-response"></a>사고 대응
 
@@ -1029,7 +1029,7 @@ Key Vault에서 일시 삭제를 사용 하도록 설정 하는 방법:https://d
 
 **지침**: 조직에 대한 인시던트 대응 지침을 작성합니다. 탐지에서 인시던트 사후 검토까지의 인시던트 처리/관리 단계뿐만 아니라 담당자의 모든 역할도 정의하는 인시던트 대응 계획이 작성되어 있는지 확인합니다.
 
-또한 NIST의 컴퓨터 보안 인시던트 처리 가이드를 활용 하 여 고유한 인시던트 대응 계획을 만들 수 있습니다.https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
+또한 NIST의 컴퓨터 보안 인시던트 처리 가이드를 활용 하 여 고유한 인시던트 대응 계획을 만들 수 있습니다. https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
 Azure Security Center 내에서 워크플로 자동화를 구성하는 방법: https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide
 
@@ -1102,11 +1102,11 @@ Azure Security Center 보안 연락처를 설정하는 방법: https://docs.micr
 
 **지침**: 다음 Microsoft 시행 규칙에 따라 침투 테스트에서 Microsoft 정책을 위반하지 않는지 확인합니다. https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1
 
-Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
+Microsoft에서 관리 하는 클라우드 인프라, 서비스 및 응용 프로그램에 대 한 레드 팀 및 라이브 사이트 침투 테스트에 대 한 자세한 내용은 다음에서 확인할 수 있습니다.  https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ## <a name="next-steps"></a>다음 단계
 

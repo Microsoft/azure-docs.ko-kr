@@ -11,12 +11,12 @@ metadata:
   author: bmitchell287
   ms.author: brendm
   ms.date: 09/26/2019
-  ms.openlocfilehash: fd012e58928b7844b122a826769167cb525f5ba1
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: 277d058427cc9527e6ed71ed252a4930489353fd
+  ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "77138191"
+  ms.lasthandoff: 08/28/2020
+  ms.locfileid: "89049896"
 landingContent:
 - title: Azure Spring Cloud 정보
   linkLists:
@@ -26,14 +26,14 @@ landingContent:
       url: spring-cloud-overview.md
     - text: Azure Spring Cloud 할당량 및 제한 이해
       url: spring-cloud-quotas.md
-- title: 시작하기
+- title: 시작
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 포털을 사용하여 Java Spring 앱 시작
-      url: spring-cloud-quickstart-launch-app-portal.md
-    - text: Azure CLI를 사용하여 Java Spring 앱 시작
-      url: spring-cloud-quickstart-launch-app-cli.md
+    - text: 빠른 시작 - 첫 번째 Azure Spring Cloud 애플리케이션 배포
+      url: spring-cloud-quickstart.md
+    - text: Piggy Metrics 샘플 앱 소개
+      url: spring-cloud-quickstart-sample-app-introduction.md
   - linkListType: tutorial
     links:
     - text: 배포용 Java Spring 앱 준비

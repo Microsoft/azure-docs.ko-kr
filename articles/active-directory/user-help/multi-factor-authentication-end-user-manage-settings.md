@@ -12,12 +12,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/06/2020
 ms.author: curtand
-ms.openlocfilehash: 259468d0d3b04b354e782529cefa2149974c9ca0
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: e0a6c566e8e0dfb77b5899f735020d0f1facf3d1
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85983308"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798383"
 ---
 # <a name="change-your-two-factor-verification-method-and-settings"></a>2단계 인증 방법 및 설정 변경
 
@@ -31,10 +31,10 @@ ms.locfileid: "85983308"
 
 ## <a name="using-the-additional-security-verification-page"></a>추가 보안 인증 페이지 사용하기
 
-조직에서 2단계 인증을 설정하고 관리하는 방법을 상세하게 안내한 경우, 먼저 해당 지침을 따라야 합니다. 조직에서 안내하지 않은 경우에는 [추가 보안 인증](https://docs.microsoft.com/azure/active-directory/user-help/multi-factor-authentication-end-user-first-time) 페이지에서 보안 인증 방법 설정을 확인할 수 있습니다.
+조직에서 2단계 인증을 설정하고 관리하는 방법을 상세하게 안내한 경우, 먼저 해당 지침을 따라야 합니다. 조직에서 안내하지 않은 경우에는 [추가 보안 인증](./multi-factor-authentication-end-user-first-time.md) 페이지에서 보안 인증 방법 설정을 확인할 수 있습니다.
 
 >[!Note]
->화면에 표시되는 내용이 이 문서에서 안내하는 내용과 같지 않다면 관리자가 **보안 정보(미리 보기)** 환경을 설정한 것이거나 조직에서 사용자 지정 포털을 제공하는 것입니다. 새로운 보안 정보 환경에 대한 자세한 내용은 [보안 정보(미리 보기) 개요](user-help-security-info-overview.md)를 참조하세요. 조직의 사용자 지정 포털에 대한 자세한 내용은 조직의 기술 지원팀으로 문의하세요.
+>화면에 표시되는 내용이 이 문서에서 안내하는 내용과 같지 않다면 관리자가 **보안 정보(미리 보기)** 환경을 설정한 것이거나 조직에서 사용자 지정 포털을 제공하는 것입니다. 새로운 보안 정보 환경에 대한 자세한 내용은 [보안 정보(미리 보기) 개요](./security-info-setup-signin.md)를 참조하세요. 조직의 사용자 지정 포털에 대한 자세한 내용은 조직의 기술 지원팀으로 문의하세요.
 
 ### <a name="to-get-to-the-additional-security-verification-page"></a>추가 보안 인증 페이지로 이동하려면
 

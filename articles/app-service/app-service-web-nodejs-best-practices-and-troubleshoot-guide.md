@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 3fd9a013eb3318abc48745e163d9ee0118b52b1d
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 3b4a9547a1bd62b7464b4a79fe68720572630f3d
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077478"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961893"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Azure App Service Windows의 노드 애플리케이션에 대한 모범 사례 및 문제 해결 가이드
 
@@ -269,13 +269,13 @@ win32 오류 코드를 표시하도록 애플리케이션에 대해 FREB를 사�
 
 NODE.exe에 `NODE_PENDING_PIPE_INSTANCES`라는 설정이 있습니다. Azure App Service에서 이 값은5000으로 설정됩니다. 따라서 node.exe는 명명된 파이프에서 한 번에 5000개의 요청만 받아들일 수 있습니다. 이 값은 Azure App Service에서 실행 중인 대부분의 노드 애플리케이션에서 충분합니다. `NODE_PENDING_PIPE_INSTANCES`에 대한 값이 높으므로 Azure App Service에 503.1003이 표시되지 않아야 합니다.
 
-## <a name="more-resources"></a>추가 리소스
+## <a name="more-resources"></a>기타 참고 자료
 
 Azure App Service에서 다음 링크를 따라 node.js 애플리케이션에 대해 자세히 알아보세요.
 
 * [Azure App Service에서 Node.js 웹앱 시작](quickstart-nodejs.md)
-* [Azure App Service에서 Node.js 웹앱을 디버그하는 방법](https://blogs.msdn.microsoft.com/azureossds/2018/08/03/debugging-node-js-apps-on-azure-app-services/)
+* [Azure App Service에서 Node.js 웹앱을 디버그하는 방법](/archive/blogs/azureossds/debugging-node-js-apps-on-azure-app-services)
 * [Azure 애플리케이션에 Node.js 모듈 사용](../nodejs-use-node-modules-azure-apps.md)
-* [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
+* [Azure App Service Web Apps: Node.js](/archive/blogs/silverlining/windows-azure-websites-node-js)
 * [Node.js 개발자 센터](../nodejs-use-node-modules-azure-apps.md)
 * [Super 암호 Kudu 디버그 콘솔 탐색](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)

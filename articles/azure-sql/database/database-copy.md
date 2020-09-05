@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
 ms.date: 07/29/2020
-ms.openlocfilehash: 4189ea5fd0b2b52b5bf1e0614e4b43b9411df31d
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 02ff222337e1b1c22df79724c232d4ca2b8b9f67
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87530380"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225736"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-a-database-in-azure-sql-database"></a>Azure SQL Database에서 트랜잭션 측면에서 일관 된 데이터베이스 복사본 복사
 
@@ -118,7 +118,7 @@ T-sql을 사용 하 여 다른 구독에 있는 서버에 데이터베이스를 
 > [Azure Portal](https://portal.azure.com)PowerShell 및 Azure CLI는 다른 구독에 대 한 데이터베이스 복사를 지원 하지 않습니다.
 
 > [!TIP]
-> T-sql을 사용 하는 데이터베이스 복사는 다른 Azure 테 넌 트의 구독에서 데이터베이스를 복사 하는 것을 지원 합니다.
+> T-sql을 사용 하는 데이터베이스 복사는 다른 Azure 테 넌 트의 구독에서 데이터베이스를 복사 하는 것을 지원 합니다. 이 기능은 SQL 인증 로그인을 사용 하 여 대상 서버에 로그인 하는 경우에만 지원 됩니다.
 
 ## <a name="monitor-the-progress-of-the-copying-operation"></a>복사 작업 진행률 모니터링
 

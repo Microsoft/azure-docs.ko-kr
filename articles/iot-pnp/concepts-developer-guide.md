@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ef221ea068f2786a4a84f20a29e80dd7176f06c6
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: f1860f9645a50789803d509a6a1ea98bc0ea1a9e
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337418"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950139"
 ---
 # <a name="iot-plug-and-play-preview-developer-guide"></a>IoT 플러그 앤 플레이 Preview 개발자 가이드
 
@@ -47,13 +47,23 @@ DeviceClient.CreateFromConnectionString(
 
 모델 ID 알림이 Sdk의 다음 버전에 추가 되었습니다.
 
-|SDK)|버전|
+|SDK|버전|
 |---|-------|
 |C-SDK|1.3.9|
 |.NET|1.27.0|
 |Java|1.14.0|
 |노드|1.17.0|
 |Python|2.1.4|
+
+## <a name="dps-payload"></a>DPS 페이로드
+
+[DPS (장치 프로 비전 서비스)](../iot-dps/about-iot-dps.md) 를 사용 하는 장치에는 `modelId` 다음 JSON 페이로드를 사용 하 여 프로 비전 프로세스 중에 사용할가 포함 될 수 있습니다.
+
+```json
+{
+    "modelId" : "dtmi:com:example:Thermostat;1"
+}
+```
 
 ## <a name="implement-telemetry-properties-and-commands"></a>원격 분석, 속성 및 명령 구현
 
@@ -417,7 +427,7 @@ POST /digitalTwins/t-123/components/Thermostat/commands/restart
 
 이제 장치 모델링에 대해 알아보았습니다. 몇 가지 추가 리소스는 다음과 같습니다.
 
-- [디지털 쌍 정의 언어 (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl)
+- [DTDL(디지털 쌍 정의 언어)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [C 디바이스 SDK](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 - [IoT REST API](https://docs.microsoft.com/rest/api/iothub/device)
 - [모델 구성 요소](./concepts-components.md)

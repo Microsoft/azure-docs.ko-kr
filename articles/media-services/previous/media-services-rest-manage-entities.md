@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 0e79469aa0e405a0096d483ae290d10415fe74f3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 95124f101b1f14a70dabedd7d44077c5c1b6e99c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000060"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264269"
 ---
-# <a name="managing-media-services-entities-with-rest"></a>REST를 사용하여 Media Services 엔터티 관리  
+# <a name="managing-media-services-entities-with-rest"></a>REST를 사용하여 Media Services 엔터티 관리
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector"]
 > * [REST (영문)](media-services-rest-manage-entities.md)

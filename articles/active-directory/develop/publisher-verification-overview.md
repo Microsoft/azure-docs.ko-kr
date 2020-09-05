@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: f611eefc50fede2ef4d738cd5abfd6afcc08b9ff
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 286f813c825bcc05ce8e9fa43df5dc0299625277
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120782"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068476"
 ---
 # <a name="publisher-verification-preview"></a>게시자 확인(미리 보기)
 
@@ -42,13 +42,13 @@ Microsoft ID 플랫폼과 통합하는 애플리케이션 개발자의 신뢰성
 
 -  [확인](/partner-center/verification-responses) 프로세스를 완료한 유효한 [Microsoft 파트너 네트워크 계정](https://partner.microsoft.com/membership)의 MPN ID. MPN 계정은 조직의 [PGA(파트너 글로벌 계정)](/partner-center/account-structure#the-top-level-is-the-partner-global-account-pga)여야 합니다. 
 
--  DNS가 확인된 [사용자 지정 도메인](../fundamentals/add-custom-domain.md)을 사용하는 Azure AD 테넌트. 사용자 지정 도메인은 이전 단계에서 확인하는 동안 사용된 이메일 주소의 도메인과 일치해야 합니다. 
+-  [게시자 도메인](howto-configure-publisher-domain.md) 을 구성 하 여 Azure AD 테 넌 트에 등록 된 앱입니다.
 
--  이전에 사용한 것과 동일한 도메인을 사용하여 구성된 [게시자 도메인](howto-configure-publisher-domain.md)을 사용하여 Azure AD 테넌트에 등록된 앱 
+-  MPN 계정 확인 중에 사용 되는 전자 메일 주소의 도메인은 앱 또는 Azure AD 테 넌 트에 추가 된 DNS 확인 [사용자 지정 도메인](../fundamentals/add-custom-domain.md) 에 구성 된 게시자 도메인과 일치 해야 합니다. 
 
 -  확인을 수행하는 사용자는 Azure AD의 앱 등록과 파트너 센터의 MPN 계정을 변경할 수 있는 권한이 있어야 합니다. 
 
-    -  Azure AD에서 이 사용자는 앱의 소유자이거나 [역할](../users-groups-roles/directory-assign-admin-roles.md)로 애플리케이션 관리자, 클라우드 애플리케이션 관리자, 글로벌 관리자 중 하나가 할당되어야 합니다. 
+    -  Azure AD에서이 사용자는 응용 프로그램 관리, 클라우드 응용 프로그램 관리자 또는 전역 관리자 [역할](../users-groups-roles/directory-assign-admin-roles.md)중 하나의 구성원 이어야 합니다. 
 
     -  파트너 센터에서 이 사용자는 [역할](/partner-center/permissions-overview)로 MPN 관리자, 계정 관리자 또는 글로벌 관리자(Azure AD의 공유 역할) 중 하나가 할당되어야 합니다.
     

@@ -8,19 +8,19 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 07/27/2020
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 901815ba40459bd50562e557a0a766474c731ce0
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: a3f2a23da5baa3a5d1955b10d18411fcedc3acd1
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87476113"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798298"
 ---
-# <a name="troubleshooting-roles-assigned-to-cloud-groups"></a>클라우드 그룹에 할당 된 역할 문제 해결
+# <a name="troubleshooting-roles-assigned-to-cloud-groups"></a>클라우드 그룹에 할당된 역할 문제 해결
 
 다음은 Azure Active Directory (Azure AD)에서 그룹에 역할을 할당 하기 위한 몇 가지 일반적인 질문과 문제 해결 팁입니다.
 
@@ -40,8 +40,8 @@ ms.locfileid: "87476113"
 
 **A:** 사용자는 역할 할당 가능 그룹의 소유자 일 수 있습니다. 권한 상승을 방지 하기 위해 역할 할당 그룹의 소유자를 보호 합니다. 예를 들어 그룹 Contoso_Security_Admins 보안 관리자 역할에 할당 된 경우 (Bob은 그룹 소유자이 고 Alice는 조직의 암호 관리자 인 경우)가 될 수 있습니다. 이 보호가 없는 경우 Alice는 Bob의 자격 증명을 다시 설정 하 고 id를 사용할 수 있습니다. 그런 다음 Alice는 그룹 Contoso_Security_Admins 그룹에 자신 또는 사람을 추가 하 여 조직의 보안 관리자가 될 수 있습니다. 사용자가 그룹 소유자 인지 확인 하려면 해당 사용자의 소유 개체 목록을 가져오고 isAssignableToRole가 true로 설정 된 그룹이 있는지 확인 합니다. 그렇다면 해당 사용자는 보호 되 고 동작은 의도 된 것입니다. 소유 개체를 가져오려면 다음 설명서를 참조 하세요.
 
-- [Get-AzureADUserOwnedObject](https://docs.microsoft.com/powershell/module/azuread/get-azureaduserownedobject?view=azureadps-2.0)  
-- [OwnedObjects 나열](https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0&tabs=http)
+- [Get-AzureADUserOwnedObject](/powershell/module/azuread/get-azureaduserownedobject?view=azureadps-2.0)  
+- [OwnedObjects 나열](/graph/api/user-list-ownedobjects?tabs=http&view=graph-rest-1.0)
 
 **Q:** Azure AD 역할에 할당 될 수 있는 그룹에 대 한 액세스 검토를 만들 수 있습니다 (특히 isAssignableToRole 속성이 true로 설정 된 그룹).  
 
@@ -51,7 +51,7 @@ ms.locfileid: "87476113"
 
 **A:** 네 당신은 할 수 있어요. 전역 관리자 및 사용자 관리자는 액세스 패키지에 모든 그룹을 배치할 수 있습니다. 전역 관리자에 대 한 변경 사항은 없지만 사용자 관리자 역할 사용 권한은 약간 변경 됩니다. 액세스 패키지에 역할 할당 가능 그룹을 추가 하려면 사용자 관리자 및 역할 할당 가능 그룹의 소유자 여야 합니다. 엔터프라이즈 라이선스 관리에서 액세스 패키지를 만들 수 있는 사람을 보여 주는 전체 표는 다음과 같습니다.
 
-Azure AD 디렉터리 역할 | 자격 관리 역할 | 보안 그룹을 추가할 수 있음\* | Office 365 그룹을 추가할 수 있습니다.\* | 앱 추가 가능 | SharePoint Online 사이트 추가 가능
+Azure AD 디렉터리 역할 | 자격 관리 역할 | 보안 그룹을 추가할 수 있음\* | Microsoft 365 그룹 추가 가능\* | 앱 추가 가능 | SharePoint Online 사이트 추가 가능
 ----------------------- | --------------------------- | ----------------------- | ------------------------- | ----------- |  -----------------------------
 전역 관리자 | 해당 없음 | ✔️ | ✔️ | ✔️  | ✔️
 사용자 관리자  | 해당 없음  | ✔️  | ✔️  | ✔️

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0f4d9811dc288222c0a2190805a8b052cb1ae47b
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 995d621ffbabd6743d248812c88ebe7e65da24ca
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563928"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88796955"
 ---
 # <a name="manage-digital-twins"></a>Digital Twins 관리
 
@@ -37,18 +37,22 @@ await client.CreateDigitalTwinAsync("myNewTwinID", initData);
 
 필요에 따라 디지털 쌍의 모든 속성에 대해 초기 값을 제공할 수 있습니다. 
 
-모델 및 초기 속성 값은 `initData` 관련 데이터를 포함 하는 JSON 문자열인 매개 변수를 통해 제공 됩니다.
+모델 및 초기 속성 값은 `initData` 관련 데이터를 포함 하는 JSON 문자열인 매개 변수를 통해 제공 됩니다. 이 개체를 구조화 하는 방법에 대 한 자세한 내용은 다음 섹션을 계속 진행 하세요.
 
 > [!TIP]
 > 쌍을 만들거나 업데이트 한 후에는 변경 내용이 [쿼리에](how-to-query-graph.md)반영 될 때까지 최대 10 초의 대기 시간이 있을 수 있습니다. 이 `GetDigitalTwin` [문서의 뒷부분에서](#get-data-for-a-digital-twin)설명 하는 api는 이러한 지연 시간을 발생 하지 않으므로 즉각적인 응답이 필요한 경우 쿼리 대신 api 호출을 사용 하 여 새로 만든 쌍를 확인 합니다. 
 
-### <a name="initialize-properties"></a>속성 초기화
+### <a name="initialize-model-and-properties"></a>모델 및 속성 초기화
 
-쌍 생성 API는 쌍 속성의 유효한 JSON 설명으로 직렬화 할 수 있는 개체를 허용 합니다. 쌍의 JSON 형식에 대 한 설명은 [*개념: Digital 쌍 및 쌍 그래프*](concepts-twins-graph.md) 를 참조 하세요.
+쌍 생성 API는 쌍 속성의 유효한 JSON 설명으로 직렬화 된 개체를 허용 합니다. 쌍의 JSON 형식에 대 한 설명은 [*개념: Digital 쌍 및 쌍 그래프*](concepts-twins-graph.md) 를 참조 하세요. 
+
+먼저 쌍 및 해당 속성 데이터를 나타내는 데이터 개체를 만듭니다. 그런 다음를 사용 `JsonSerializer` 하 여이의 serialize 된 버전을 매개 변수에 대 한 API 호출에 전달할 수 있습니다 `initdata` .
 
 매개 변수 개체는 수동으로 만들거나 제공 된 도우미 클래스를 사용 하 여 만들 수 있습니다. 다음은 각각의 예제입니다.
 
 #### <a name="create-twins-using-manually-created-data"></a>수동으로 만든 데이터를 사용 하 여 쌍 만들기
+
+사용자 지정 도우미 클래스를 사용 하지 않으면에서 쌍의 속성을 나타낼 수 있습니다 `Dictionary<string, object>` . 여기서은 `string` 속성의 이름이 고는 `object` 속성 및 해당 값을 나타내는 개체입니다.
 
 ```csharp
 // Define the model type for the twin to be created
@@ -68,6 +72,8 @@ client.CreateDigitalTwin("myNewRoomID", JsonSerializer.Serialize<Dictionary<stri
 
 #### <a name="create-twins-with-the-helper-class"></a>도우미 클래스를 사용 하 여 쌍 만들기
 
+의 도우미 클래스를 `BasicDigitalTwin` 사용 하면 "쌍" 개체에 속성 필드를 더 직접 저장할 수 있습니다. 를 사용 하 여 속성 목록을 빌드할 수 있습니다 `Dictionary<string, object>` . 그러면이 개체를 직접 쌍으로 개체에 추가할 수 있습니다 `CustomProperties` .
+
 ```csharp
 BasicDigitalTwin twin = new BasicDigitalTwin();
 twin.Metadata = new DigitalTwinMetadata();
@@ -81,6 +87,13 @@ twin.CustomProperties = props;
 client.CreateDigitalTwin("myNewRoomID", JsonSerializer.Serialize<BasicDigitalTwin>(twin));
 ```
 
+>[!NOTE]
+> `BasicDigitalTwin` 개체는 필드와 함께 제공 `Id` 됩니다. 이 필드는 비워 둘 수 있지만 ID 값을 추가 하는 경우 호출에 전달 된 ID 매개 변수와 일치 해야 `CreateDigitalTwin` 합니다. 위의 예에서는 다음과 같습니다.
+>
+>```csharp
+>twin.Id = "myNewRoomID";
+>```
+
 ## <a name="get-data-for-a-digital-twin"></a>디지털 쌍에 대 한 데이터 가져오기
 
 다음을 호출 하 여 모든 디지털 쌍의 전체 데이터에 액세스할 수 있습니다.
@@ -91,8 +104,10 @@ object result = await client.GetDigitalTwin(id);
 
 이 호출은 쌍 데이터를 JSON 문자열로 반환 합니다. 
 
-> [!TIP]
-> 를 사용 하 여 쌍을 검색할 때 한 번 이상 설정 된 속성만 반환 됩니다 `GetDigitalTwin` .
+를 사용 하 여 쌍을 검색할 때 한 번 이상 설정 된 속성만 반환 됩니다 `GetDigitalTwin` .
+
+>[!TIP]
+>쌍 `displayName` 에 대 한는 해당 모델 메타 데이터의 일부 이므로 쌍 인스턴스에 대 한 데이터를 가져올 때 표시 되지 않습니다. 이 값을 확인 하려면 [모델에서 검색할](how-to-manage-model.md#retrieve-models)수 있습니다.
 
 단일 API 호출을 사용 하 여 여러 쌍을 검색 하려면 [*방법: 쌍 그래프 쿼리*](how-to-query-graph.md)의 쿼리 API 예를 참조 하세요.
 
@@ -158,7 +173,7 @@ object result = await client.GetDigitalTwin(id);
 
 와 같이 선택한 JSON 구문 분석 라이브러리를 사용 하 여 쌍에 대해 반환 된 JSON을 구문 분석할 수 있습니다 `System.Text.Json` .
 
-SDK에 포함 된 serialization 도우미 클래스를 사용할 수도 있습니다 .이 클래스 `BasicDigitalTwin` 는 미리 구문 분석 된 형식으로 핵심 쌍 메타 데이터 및 속성을 반환 합니다. 다음은 예제입니다.
+SDK에 포함 된 serialization 도우미 클래스를 사용할 수도 있습니다 .이 클래스 `BasicDigitalTwin` 는 미리 구문 분석 된 형식으로 핵심 쌍 메타 데이터 및 속성을 반환 합니다. 예를 들면 다음과 같습니다.
 
 ```csharp
 Response<string> res = client.GetDigitalTwin(twin_id);
@@ -180,6 +195,8 @@ foreach (string prop in twin.CustomProperties.Keys)
 ```csharp
 await client.UpdateDigitalTwin(id, patch);
 ```
+
+Patch 호출은 모든 속성을 원하는 대로 단일 쌍으로 업데이트할 수 있습니다. 여러 쌍에서 속성을 업데이트 해야 하는 경우에는 각 쌍에 대해 별도의 업데이트 호출이 필요 합니다.
 
 > [!TIP]
 > 쌍을 만들거나 업데이트 한 후에는 변경 내용이 [쿼리에](how-to-query-graph.md)반영 될 때까지 최대 10 초의 대기 시간이 있을 수 있습니다. 이 `GetDigitalTwin` [문서 앞부분에서](#get-data-for-a-digital-twin)설명 하는 api는 이러한 지연 시간을 발생 하지 않으므로 즉각적인 응답이 필요한 경우 쿼리 대신 api 호출을 사용 하 여 새로 업데이트 된 쌍를 확인 합니다. 
@@ -204,6 +221,7 @@ await client.UpdateDigitalTwin(id, patch);
 수동으로 또는 [SDK](how-to-use-apis-sdks.md)에서 serialization 도우미 클래스를 사용 하 여 패치를 만들 수 있습니다. 다음은 각각의 예제입니다.
 
 #### <a name="create-patches-manually"></a>수동으로 패치 만들기
+
 ```csharp
 List<object> twinData = new List<object>();
 twinData.Add(new Dictionary<string, object>() {
@@ -257,7 +275,7 @@ await client.UpdateDigitalTwinAsync(twinId, uou.Serialize());
 
 이 작업은 패치로 수정 되는 디지털 쌍이 새 모델을 준수 하는 경우에만 성공 합니다. 
 
-다음과 같은 예제를 참조하세요.
+다음 예제를 살펴보겠습니다.
 1. *Foo_old*모델을 사용 하는 디지털 쌍을 생각해 보세요. *foo_old* 은 필요한 속성 *질량*을 정의 합니다.
 2. 새 모델 *foo_new* 는 속성 질량을 정의 하 고 새 필수 속성 *온도*를 추가 합니다.
 3. 패치 후에 디지털 쌍에는 질량 속성과 온도 속성이 모두 있어야 합니다. 
@@ -278,6 +296,19 @@ await client.UpdateDigitalTwinAsync(twinId, uou.Serialize());
   }
 ]
 ```
+
+### <a name="handle-conflicting-update-calls"></a>충돌 하는 업데이트 호출 처리
+
+Azure Digital Twins는 들어오는 모든 요청이 차례로 처리 되도록 합니다. 즉, 여러 함수가 쌍의 동일한 속성을 동시에 업데이트 하려고 하는 경우에도 충돌을 처리 하기 위해 명시적인 잠금 코드를 작성할 **필요가 없습니다** .
+
+이 동작은 쌍 단위로 발생 합니다. 
+
+예를 들어 이러한 세 호출이 동시에 도착 하는 시나리오를 가정해 보겠습니다. 
+*   *Twin1* 에 속성 A 쓰기
+*   *Twin1* 에 속성 B 쓰기
+*   *Twin2* 에 속성 A 쓰기
+
+*Twin1* 를 수정 하는 두 호출은 한 번 실행 되며 변경 내용에 대 한 변경 메시지가 생성 됩니다. *Twin2* 를 수정 하는 호출은 충돌 없이 동시에 실행 될 수 있습니다 (도착 하는 즉시).
 
 ## <a name="delete-a-digital-twin"></a>디지털 쌍 삭제
 

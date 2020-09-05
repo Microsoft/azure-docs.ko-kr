@@ -1,6 +1,6 @@
 ---
 title: Azure Key Vault의 가상 네트워크 서비스 엔드포인트 - Azure Key Vault | Microsoft Docs
-description: Key Vault의 가상 네트워크 서비스 엔드포인트 개요
+description: 사용 시나리오를 포함 하 여 지정 된 가상 네트워크에 대 한 액세스를 제한 하는 Azure Key Vault의 가상 네트워크 서비스 끝점을 사용 하는 방법을 알아봅니다.
 services: key-vault
 author: amitbapat
 ms.author: ambapat
@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 34e1b7e58a3ceb6c1c2d2b6bc4efd34ee93e9e4e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 891ea69dc6d53370f5f73f8bb3072a9795f07635
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090487"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190581"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Azure Key Vault의 가상 네트워크 서비스 엔드포인트
 

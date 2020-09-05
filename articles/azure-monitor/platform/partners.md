@@ -4,12 +4,12 @@ description: Azure Monitor의 파트너와, 파트너 통합을 위한 설명서
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: 994dfe0d7e252fd2aea489c363e76f0956715048
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 2e3fae1b942083d78798fccebd7a7f2c58f7659a
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318337"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142413"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Azure Monitor 파트너 통합
 
@@ -184,6 +184,16 @@ OpsGenie는 Azure가 생성한 경고의 디스패처 역할을 합니다. OpsGe
 
 [설명서로 이동합니다.][pagerduty-doc]
 
+## <a name="promitor"></a>Promitor
+
+![Promitor 로고](./media/partners/promitor.png)
+
+Promitor은 Atlassian Statuspage, 프로메테우스 및 StatsD와 같은 시스템에서 메트릭을 사용할 수 있도록 하는 Azure Monitor scraper입니다.
+
+모든 메트릭을 Azure Monitor로 푸시하고 필요할 때 사용 합니다.
+
+[자세한 정보][promitor-doc]
+
 ## <a name="qradar"></a>QRadar
 
 ![QRadar 로고](./media/partners/qradar.png)
@@ -293,6 +303,7 @@ Turbonomic은 성능, 비용 및 규정 준수를 실시간으로 동시에 최�
 [newrelic-doc]: https://newrelic.com/azure "NewRelic 설명서."
 [opsgenie-doc]: https://www.opsgenie.com/docs/integrations/azure-integration "OpsGenie 설명서."
 [pagerduty-doc]: https://www.pagerduty.com/docs/guides/azure-integration-guide/ "PagerDuty 설명서."
+[promitor-doc]: https://promitor.io/ "Promitor 설명서."
 [qradar-doc]: https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0 "QRadar 설명서."
 [sciencelogic-doc]: https://www.sciencelogic.com/product/technologies/microsoft/azure "ScienceLogic 설명서."
 [serverless360-doc]: https://docs.serverless360.com/docs/ "Serverless360 설명서."

@@ -1,19 +1,19 @@
 ---
 title: Microsoft Azure StorSimple Data Manager 작업에 .NET SDK 사용
-description: .NET SDK를 사용하여 StorSimple 데이터 관리자 작업을 시작하는 방법에 대해 알아보기
+description: StorSimple Data Manager 서비스 내에서 .NET SDK를 사용 하 여 StorSimple 장치 데이터를 변환 하는 방법에 대해 알아봅니다.
 author: alkohli
 ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 316eddc98de78974bb2583f91ced635b148686c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e34701640de24a4c3c13f8d10073b4392af2f28a
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85514894"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183652"
 ---
-# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>.NET SDK를 사용 하 여 데이터 변환 시작
+# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>.NET SDK를 사용하여 데이터 변환 시작
 
 ## <a name="overview"></a>개요
 
@@ -26,7 +26,7 @@ ms.locfileid: "85514894"
  
   이 문서에서는 샘플 .NET 콘솔 애플리케이션을 만들어 데이터 변환 작업을 시작하고 완료하기 위해 추적하는 방법을 자세히 설명합니다. 자동화를 통해 데이터 변환을 시작하는 방법에 대한 자세한 내용을 보려면 [Azure Automation Runbook을 사용하여 데이터 변환 작업 트리거](storsimple-data-manager-job-using-automation.md)로 이동합니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>전제 조건
 
 시작하기 전에 다음 항목이 있어야 합니다.
 *   다음을 실행하는 컴퓨터:

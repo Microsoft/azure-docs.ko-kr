@@ -2,25 +2,21 @@
 title: '자습서: Workrite와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Workrite 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 2a5c2956-a011-4d5c-877b-80679b6587b5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 026ad76fa82a28ca3e7f29de2e656994b9cad634
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 16c5d518809ed2490cfa41351d6ff9d9abbd70f0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086765"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88526820"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workrite"></a>자습서: Workrite와 Azure Active Directory 통합
 

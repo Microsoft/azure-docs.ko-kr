@@ -46,6 +46,8 @@
       href: disable-private-link-service-network-policy.md
     - name: 프라이빗 엔드포인트 관리
       href: manage-private-endpoint.md
+    - name: Azure Firewall을 사용하여 트래픽 검사
+      href: inspect-traffic-with-azure-firewall.md
     - name: 문제 해결
       items:
         - name: 프라이빗 엔드포인트 연결 문제 해결

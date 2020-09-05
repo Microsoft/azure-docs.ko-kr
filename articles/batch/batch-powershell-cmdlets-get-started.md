@@ -3,13 +3,13 @@ title: PowerShell 시작
 description: Batch 리소스를 관리하는 데 사용할 수 있는 Azure PowerShell cmdlet에 대한 간략한 소개입니다.
 ms.topic: how-to
 ms.date: 01/15/2019
-ms.custom: seodec18
-ms.openlocfilehash: 2c80da92c7acad5180c763d259357f5369f225f7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: seodec18, devx-track-azurepowershell
+ms.openlocfilehash: 3c152733ee3a75732d119db16f7db7c266740fdb
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092782"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079849"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>PowerShell cmdlet을 사용한 Batch 리소스 관리
 

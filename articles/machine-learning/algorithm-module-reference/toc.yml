@@ -192,3 +192,5 @@
       href: web-service-input-output.md
 - name: 모듈 오류 및 문제 해결
   href: designer-error-codes.md
+- name: 그래프 검색 쿼리 구문
+  href: graph-search-syntax.md

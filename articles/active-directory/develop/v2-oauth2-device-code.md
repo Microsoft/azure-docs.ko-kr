@@ -13,12 +13,12 @@ ms.date: 11/19/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: a0677603f02b429c269c0f93ef348b2b1d717a9f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c757f3e067aeac5d8145ca47b2eac145daba574
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82689773"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272453"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-device-authorization-grant-flow"></a>Microsoft id 플랫폼 및 OAuth 2.0 장치 권한 부여 흐름
 
@@ -53,9 +53,9 @@ scope=user.read%20openid%20profile
 
 | 매개 변수 | 조건 | 설명 |
 | --- | --- | --- |
-| `tenant` | 필요한 공간 | /공용/소비자 또는/organizations. 일 수 있습니다.  GUID 또는 친숙 한 이름 형식의 사용 권한을 요청 하려는 디렉터리 테 넌 트가 될 수도 있습니다.  |
+| `tenant` | 필수 | /공용/소비자 또는/organizations. 일 수 있습니다.  GUID 또는 친숙 한 이름 형식의 사용 권한을 요청 하려는 디렉터리 테 넌 트가 될 수도 있습니다.  |
 | `client_id` | 필수 | [Azure Portal - 앱 등록](https://go.microsoft.com/fwlink/?linkid=2083908) 환경이 앱에 할당한 **애플리케이션(클라이언트) ID**입니다. |
-| `scope` | 권장 | 사용자가 동의하게 할 공백으로 구분된 [범위](v2-permissions-and-consent.md) 목록입니다.  |
+| `scope` | 필수 | 사용자가 동의하게 할 공백으로 구분된 [범위](v2-permissions-and-consent.md) 목록입니다.  |
 
 ### <a name="device-authorization-response"></a>디바이스 권한 부여 응답
 
@@ -92,7 +92,7 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
 
 | 매개 변수 | 필수 | 설명|
 | -------- | -------- | ---------- |
-| `tenant`  | 필요한 공간 | 초기 요청에 사용 되는 것과 동일한 테 넌 트 또는 테 넌 트 별칭입니다. |
+| `tenant`  | 필수 | 초기 요청에 사용 되는 것과 동일한 테 넌 트 또는 테 넌 트 별칭입니다. |
 | `grant_type` | 필수 | `urn:ietf:params:oauth:grant-type:device_code`이어야 합니다.|
 | `client_id`  | 필수 | 초기 요청에 사용된 `client_id`과(와) 일치해야 합니다. |
 | `device_code`| 필수 | 디바이스 권한 요청에서 반환된 `device_code`입니다.  |

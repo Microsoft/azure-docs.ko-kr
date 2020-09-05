@@ -1,14 +1,14 @@
 ---
 title: Azure DevTest Labs에서 랩에 아티팩트 리포지토리 추가 Microsoft Docs
-description: Azure DevTest labs에서 랩에 아티팩트 리포지토리를 추가 하는 방법에 대해 알아봅니다.
+description: 공용 아티팩트 리포지토리에서 사용할 수 없는 도구를 저장할 Azure DevTest Labs에서 랩에 대 한 고유한 아티팩트 리포지토리를 지정 하는 방법에 대해 알아봅니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: d823f437cddef0a33c7d7ea3b4c4fbdaad90fb8e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7553f6b1afa416a5428577a8313bdadb669e32c2
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87013462"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270991"
 ---
 # <a name="add-an-artifact-repository-to-your-lab-in-devtest-labs"></a>DevTest Labs에서 랩에 아티팩트 리포지토리 추가
 DevTest Labs를 사용 하면 vm을 만들 때 또는 VM이 만들어진 후 VM에 추가할 아티팩트를 지정할 수 있습니다. 이 아티팩트는 VM에 설치 하려는 도구 또는 응용 프로그램 일 수 있습니다. 아티팩트는 GitHub 또는 Azure DevOps Git 리포지토리에서 로드 된 JSON 파일에 정의 됩니다.
@@ -19,7 +19,7 @@ DevTest Labs에서 유지 관리 하는 [공용 아티팩트 리포지토리](ht
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>사전 요구 사항
 랩에 리포지토리를 추가하려면 먼저 리포지토리에서 특정 정보를 가져옵니다. 다음 섹션에서는 **GitHub** 또는 **Azure devops**에서 호스트 되는 리포지토리에 필요한 정보를 가져오는 방법을 설명 합니다.
 
 ### <a name="get-the-github-repository-clone-url-and-personal-access-token"></a>GitHub 리포지토리 복제 URL 및 개인 액세스 토큰 가져오기
@@ -338,7 +338,7 @@ Set-AzContext -SubscriptionId <Your Azure subscription ID>
 ### <a name="parameters"></a>매개 변수
 이 문서의 샘플 PowerShell 스크립트는 다음 매개 변수를 사용 합니다.
 
-| 매개 변수 | Description |
+| 매개 변수 | 설명 |
 | --------- | ----------- |
 | 랩 이름 | 랩의 이름입니다. |
 | ArtifactRepositoryName | 새 아티팩트 리포지토리의 이름입니다. 스크립트가 지정 되지 않은 경우 해당 리포지토리의 임의 이름을 만듭니다. |
@@ -360,7 +360,7 @@ if ($ArtifactRepositoryName -eq $null){
 
 ### <a name="powershell-commands-used-in-the-script"></a>스크립트에 사용 되는 PowerShell 명령
 
-| PowerShell 명령 | 참고 |
+| PowerShell 명령 | 메모 |
 | ------------------ | ----- |
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | 이 명령은 해당 위치와 같은 랩에 대 한 세부 정보를 가져오는 데 사용 됩니다. |
 | [New-AzResource](/powershell/module/az.resources/new-azresource) | 아티팩트 리포지토리를 추가 하기 위한 특정 명령은 없습니다. 일반 [AzResource](/powershell/module/az.resources/new-azresource) cmdlet은 작업을 수행 합니다. 이 cmdlet에는 만들 리소스 유형을 알 수 있도록 **ResourceId** 또는 **context.resourcename** 및 **ResourceType** 쌍이 필요 합니다. 이 샘플 스크립트는 리소스 이름 및 리소스 형식 쌍을 사용 합니다. <br/><br/>아티팩트와 동일한 리소스 그룹 및 동일한 위치에 아티팩트 리포지토리 원본을 만들고 있습니다.|

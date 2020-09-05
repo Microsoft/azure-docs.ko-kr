@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: asrastog
-ms.openlocfilehash: 92fc5bb88ff5efd8fe1a8cd61be833b3984b673a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f77a5b634b035b7cc1142645d355fe6c3756226b
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73605612"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004071"
 ---
 # <a name="query-avro-data-by-using-azure-data-lake-analytics"></a>Azure Data Lake Analytics를 사용하여 Avro 데이터 쿼리
 
@@ -20,7 +20,7 @@ ms.locfileid: "73605612"
 
 이러한 문제는 Azure IoT Hub에서 Azure Blob storage로 메시지를 라우팅하는 경우 기본적으로 IoT Hub는 메시지 본문 속성과 메시지 속성을 모두 포함 하는 Avro 형식으로 콘텐츠를 기록 하는 것입니다. Avro 형식은 다른 끝점에는 사용 되지 않습니다. Avro 형식은 데이터와 메시지 보존에 적합하지만 이를 사용하여 데이터를 쿼리하기에 어렵습니다. 반면 JSON 또는 CSV 형식은 데이터를 쿼리하기에 훨씬 용이합니다. 이제 IoT Hub는 AVRO 뿐만 아니라 JSON의 Blob storage에 데이터를 쓸 수 있습니다.
 
-자세한 내용은 [Azure Storage를 라우팅 끝점으로 사용](iot-hub-devguide-messages-d2c.md#azure-storage)을 참조 하세요.
+자세한 내용은 [Azure Storage를 라우팅 끝점으로 사용](iot-hub-devguide-messages-d2c.md#azure-storage-as-a-routing-endpoint)을 참조 하세요.
 
 비관계형 빅 데이터 요구 사항 및 형식을 해결하고 이 어려움을 이겨내려면 데이터 변환 및 크기 조정 모두에 대해 여러 빅 데이터 패턴을 사용할 수 있습니다. 이런 패턴 중 하나인 "쿼리당 지불"은 Azure Data Lake Analytics이며, 이 문서의 핵심 내용입니다. Hadoop 또는 기타 솔루션에서 쿼리를 쉽게 실행할 수 있지만 Data Lake Analytics는 이 "쿼리당 지불" 방법에 더 적합합니다.
 

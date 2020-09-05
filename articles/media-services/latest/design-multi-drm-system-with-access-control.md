@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/21/2018
+ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: 79f06bd5d6af05e334faf4e1f6d8cd3e358f89ba
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: dba0f82ced5500dc85c3254bea6a2a0066770b1e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039194"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265663"
 ---
-# <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>액세스 제어가 포함된 다중 DRM 콘텐츠 보호 시스템 설계 
+# <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>액세스 제어가 포함된 다중 DRM 콘텐츠 보호 시스템 설계
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 OTT(Over-the-Top) 또는 온라인 스트리밍 솔루션을 위한 DRM(디지털 권한 관리) 하위 시스템을 디자인하고 구축하는 것은 복잡한 작업입니다. 일반적으로 운영자/온라인 비디오 공급자는 이러한 작업을 전문화된 DRM 서비스 공급자에게 아웃소싱합니다. 이 문서의 목표는 OTT 또는 온라인 스트리밍 솔루션에서 엔드투엔드 DRM 하위 시스템의 참조 디자인 및 참조 구현을 제공하는 것입니다.
 
@@ -358,6 +360,6 @@ protectionInfo.type으로 "FairPlay"를 입력하고 FPS AC 경로(FairPlay 스�
 
 ## <a name="next-steps"></a>다음 단계
 
-* [질문과 대답](frequently-asked-questions.md)
+* [자주 묻는 질문](frequently-asked-questions.md)
 * [콘텐츠 보호 개요](content-protection-overview.md)
 * [DRM을 사용하여 콘텐츠 보호](protect-with-drm.md)

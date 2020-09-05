@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/15/2020
-ms.openlocfilehash: 1081865a2e138af38ba171197719f08dedf6ffdb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 07a8c26f7fc314680c51270ebafe03d4e3a84757
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81408933"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749847"
 ---
 # <a name="managed-identities-in-azure-hdinsight"></a>Azure HDInsight에서 관리 되는 id
 
@@ -25,7 +25,9 @@ ms.locfileid: "81408933"
 
 ## <a name="hdinsight-managed-identity-implementation"></a>HDInsight 관리 id 구현
 
-Azure HDInsight에서 관리 id는 클러스터의 각 노드에 프로 비전 됩니다. 그러나 이러한 id 구성 요소는 HDInsight 서비스 에서만 사용할 수 있습니다. 현재 HDInsight 클러스터 노드에 설치 된 관리 되는 id를 사용 하 여 액세스 토큰을 생성 하는 데 지원 되는 방법은 없습니다. 일부 Azure 서비스의 경우 관리 되는 id는 액세스 토큰을 획득 하는 데 사용할 수 있는 끝점을 사용 하 여 구현 됩니다. 다른 Azure 서비스와 상호 작용 하기 위해 토큰을 사용 합니다.
+Azure HDInsight에서 관리 되는 id는 HDInsight 서비스에서 내부 구성 요소에 대해서만 사용할 수 있습니다. 현재 외부 서비스에 액세스 하기 위해 HDInsight 클러스터 노드에 설치 된 관리 되는 id를 사용 하 여 액세스 토큰을 생성 하는 데 지원 되는 방법은 없습니다. 계산 Vm과 같은 일부 Azure 서비스의 경우 관리 되는 id는 액세스 토큰을 획득 하는 데 사용할 수 있는 끝점을 사용 하 여 구현 됩니다. 이 끝점은 현재 HDInsight 노드에서 사용할 수 없습니다.
+
+분석 작업 (예: SCALA 작업)에 비밀/암호를 넣지 않도록 응용 프로그램을 부트스트랩 해야 하는 경우 스크립트 작업을 사용 하 여 클러스터 노드에 자신의 인증서를 distrubte 다음 해당 인증서를 사용 하 여 액세스 토큰을 가져오기가 수 있습니다 (예: Azure KeyVault 액세스).
 
 ## <a name="create-a-managed-identity"></a>관리 ID 만들기
 
@@ -33,7 +35,7 @@ Azure HDInsight에서 관리 id는 클러스터의 각 노드에 프로 비전 �
 
 * [Azure Portal](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)
 * [Azure PowerShell](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)
-* [Azure 리소스 관리자](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md)
+* [Azure Resource Manager](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md)
 * [Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
 
 관리 id를 구성 하는 나머지 단계는 사용 되는 시나리오에 따라 달라 집니다.

@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 12/13/2019
 ms.author: rogardle
 ms.custom: ''
-ms.openlocfilehash: 4be24d645d2145ee07f9b9a4696b825a26dcf5c9
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 8feede515cf7ed861f3219fdf5f4642a33c9e83e
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87448755"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690360"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Azure의 Oracle Database Enterprise Edition에 대 한 참조 아키텍처
 
@@ -79,7 +79,7 @@ Oracle Database 버전 12.2 이상에서는 단일 Oracle Data Guard broker 구�
 
 ![Data Guard Broker-FSFO에서 가용성 영역을 사용 하는 Oracle Database](./media/oracle-reference-architecture/oracledb_dg_fsfo_az.png)
 
-위의 다이어그램에서 클라이언트 시스템은 웹을 통해 Oracle 백 엔드에서 사용자 지정 응용 프로그램에 액세스 합니다. 웹 프런트 엔드는 부하 분산 장치에 구성 됩니다. 웹 프런트 엔드는 해당 응용 프로그램 서버에 대 한 호출을 수행 하 여 작업을 처리 합니다. 응용 프로그램 서버는 주 Oracle 데이터베이스를 쿼리 합니다. Oracle 데이터베이스는 라이선스 비용을 절감 하 고 성능을 최대화 하기 위해 제약이 있는 [코어 vCPUs](../../../virtual-machines/windows/constrained-vcpu.md) 가 포함 된 하이퍼 스레드 [메모리 최적화 가상 머신을](../../sizes-memory.md) 사용 하 여 구성 되었습니다. 여러 프리미엄 또는 ultra disks (Managed Disks)는 성능과 고가용성에 사용 됩니다.
+위의 다이어그램에서 클라이언트 시스템은 웹을 통해 Oracle 백 엔드에서 사용자 지정 응용 프로그램에 액세스 합니다. 웹 프런트 엔드는 부하 분산 장치에 구성 됩니다. 웹 프런트 엔드는 해당 응용 프로그램 서버에 대 한 호출을 수행 하 여 작업을 처리 합니다. 응용 프로그램 서버는 주 Oracle 데이터베이스를 쿼리 합니다. Oracle 데이터베이스는 라이선스 비용을 절감 하 고 성능을 최대화 하기 위해 제약이 있는 [코어 vCPUs](../../../virtual-machines/constrained-vcpu.md) 가 포함 된 하이퍼 스레드 [메모리 최적화 가상 머신을](../../sizes-memory.md) 사용 하 여 구성 되었습니다. 여러 프리미엄 또는 ultra disks (Managed Disks)는 성능과 고가용성에 사용 됩니다.
 
 Oracle 데이터베이스는 고가용성을 위해 여러 가용성 영역에 배치 됩니다. 각 영역은 독립 된 전원, 냉각 및 네트워킹을 갖춘 하나 이상의 데이터 센터로 구성 됩니다. 복원 력을 보장 하기 위해 사용 가능한 모든 지역에는 최소 3 개의 개별 영역이 설정 됩니다. 지역 내에서 가용성 영역을 물리적으로 분리 하는 것은 데이터 센터 오류 로부터 데이터를 보호 합니다. 또한 중단이 발생 한 경우 두 개의 FSFO 관찰자가 데이터베이스를 시작 하 고 장애 조치 (failover) 할 때 데이터베이스를 보조 데이터베이스로 장애 조치 (failover) 하도록 설정 됩니다. 
 
@@ -113,7 +113,7 @@ Oracle Data Guard Far 동기화는 Oracle 데이터베이스에 대해 제로 �
 
 GoldenGate를 사용 하면 엔터프라이즈 전체에서 여러 유형의 여러 플랫폼 간에 트랜잭션 수준에서 데이터를 교환 및 조작할 수 있습니다. 기존 인프라의 트랜잭션 무결성 및 최소 오버 헤드로 커밋된 트랜잭션을 이동 합니다. 모듈식 아키텍처를 사용 하면 선택한 데이터 레코드, 트랜잭션 변경 내용, 다양 한 토폴로지에서 DDL (데이터 정의 언어)에 대 한 변경 내용을 추출 하 고 복제할 수 있습니다.
 
-Oracle GoldenGate를 사용 하면 양방향 복제를 제공 하 여 고가용성을 위해 데이터베이스를 구성할 수 있습니다. 이렇게 하면 **다중 마스터** 또는 **활성-활성 구성을**설정할 수 있습니다. 다음 다이어그램은 Azure의 Oracle GoldenGate 활성-활성 설치에 권장 되는 아키텍처입니다. 다음 아키텍처에서는 라이선스 비용을 절감 하 고 성능을 최대화 하기 위해 [제약이 있는 코어 vCPUs](../../../virtual-machines/windows/constrained-vcpu.md) 가 포함 된 하이퍼 스레드 [메모리 최적화 가상 머신을](../../sizes-memory.md) 사용 하 여 Oracle 데이터베이스를 구성 했습니다. 성능 및 가용성을 위해 여러 프리미엄 또는 ultra 디스크 (관리 디스크)가 사용 됩니다.
+Oracle GoldenGate를 사용 하면 양방향 복제를 제공 하 여 고가용성을 위해 데이터베이스를 구성할 수 있습니다. 이렇게 하면 **다중 마스터** 또는 **활성-활성 구성을**설정할 수 있습니다. 다음 다이어그램은 Azure의 Oracle GoldenGate 활성-활성 설치에 권장 되는 아키텍처입니다. 다음 아키텍처에서는 라이선스 비용을 절감 하 고 성능을 최대화 하기 위해 [제약이 있는 코어 vCPUs](../../../virtual-machines/constrained-vcpu.md) 가 포함 된 하이퍼 스레드 [메모리 최적화 가상 머신을](../../sizes-memory.md) 사용 하 여 Oracle 데이터베이스를 구성 했습니다. 성능 및 가용성을 위해 여러 프리미엄 또는 ultra 디스크 (관리 디스크)가 사용 됩니다.
 
 ![Data Guard Broker-FSFO에서 가용성 영역을 사용 하는 Oracle Database](./media/oracle-reference-architecture/oracledb_gg_az.png)
 
@@ -215,7 +215,7 @@ Oracle 워크 로드를 Azure에 배포 하는 경우 Microsoft는 모든 호스
 
 ## <a name="architecture-and-design-considerations"></a>아키텍처 및 디자인 고려 사항
 
-- 라이선스 비용을 절감 하 고 성능을 최대화 하려면 Oracle Database VM에 대해 [제약이 있는 코어 vCPUs](../../../virtual-machines/windows/constrained-vcpu.md) 가 포함 된 하이퍼 스레드 [메모리 최적화 가상 머신을](../../sizes-memory.md) 사용 하는 것이 좋습니다. 성능 및 가용성을 위해 여러 프리미엄 또는 ultra disks (관리 디스크)를 사용 합니다.
+- 라이선스 비용을 절감 하 고 성능을 최대화 하려면 Oracle Database VM에 대해 [제약이 있는 코어 vCPUs](../../../virtual-machines/constrained-vcpu.md) 가 포함 된 하이퍼 스레드 [메모리 최적화 가상 머신을](../../sizes-memory.md) 사용 하는 것이 좋습니다. 성능 및 가용성을 위해 여러 프리미엄 또는 ultra disks (관리 디스크)를 사용 합니다.
 - 관리 디스크를 사용 하는 경우 재부팅 시 디스크/장치 이름이 변경 될 수 있습니다. 다시 부팅 간에 탑재를 유지 하려면 이름 대신 장치 UUID를 사용 하는 것이 좋습니다. 자세한 내용은 [여기](../../../virtual-machines/linux/configure-raid.md#add-the-new-file-system-to-etcfstab)를 참조하세요.
 - 가용성 영역을 사용 하 여 지역에서 고가용성을 구현 합니다.
 - Oracle 데이터베이스에 대 한 ultra disks (사용 가능한 경우) 또는 프리미엄 디스크를 사용 하는 것이 좋습니다.

@@ -1,6 +1,6 @@
 ---
 title: Azure CDN 끝점 문제 해결-404 상태 코드
-description: Azure CDN 엔드포인트에서 404 응답 코드 문제를 해결합니다.
+description: 404 HTTP 응답 상태 코드를 반환 하는 Azure Content Delivery Network 끝점의 문제를 해결 하는 방법에 대해 알아봅니다.
 services: cdn
 documentationcenter: ''
 author: zhangmanling
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 6476993627708670a210cce50072f1b183d90a8a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d6ad0b8b37bd4f04c22ed52d4ac6717202f22889
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888673"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192488"
 ---
 # <a name="troubleshooting-azure-cdn-endpoints-that-return-a-404-status-code"></a>404 상태 코드를 반환하는 Azure CDN 엔드포인트 문제 해결
 이 문서에서는 404 HTTP 응답 상태 코드를 반환하는 Azure CDN(Content Delivery Network) 엔드포인트의 문제를 해결할 수 있습니다.
@@ -51,7 +51,7 @@ CDN 프로필 및 엔드포인트을 만들었지만 콘텐츠를 CDN에서 사�
 ### <a name="check-the-origin-file"></a>원본 파일 확인
 먼저 캐시할 파일을 원본 서버에서 사용할 수 있고 인터넷에서 공개적으로 액세스할 수 있는지 확인합니다. 이 작업을 수행하는 가장 빠른 방법은 프라이빗 또는 Incognito(시크릿) 세션에서 브라우저를 열고 해당 파일을 직접 찾아보는 것입니다. 주소 상자에 URL을 입력하거나 붙여넣고 예상하는 파일이 나오는지 확인합니다. 예를 들어 Azure Storage 계정에 https:\//cdndocdemo.blob.core.windows.net/publicblob/lorem.txt에서 액세스할 수 있는 파일이 있다고 가정합니다. 이 파일의 콘텐츠를 성공적으로 로드할 수 있으면 테스트를 통과한 것입니다.
 
-![성공!](./media/cdn-troubleshoot-endpoint/cdn-origin-file.png)
+![성공했습니다.](./media/cdn-troubleshoot-endpoint/cdn-origin-file.png)
 
 > [!WARNING]
 > 이 방법은 파일이 공개적으로 사용 가능한지 확인하는 가장 빠르고 쉬운 방법이지만, 조직의 일부 네트워크 구성에 따라 이 파일이 살제 네트워크 사용자에게만 보이는 경우에도(Azure에서 호스팅되어 있는 경우도 마찬가지) 공개적으로 사용 가능한 것으로 보일 수 있습니다. 그렇게 되지 않으려면 조직의 네트워크에 연결되지 않은 모바일 디바이스나 Azure의 가상 컴퓨터처럼 외부 브라우저를 사용하여 파일을 테스트합니다.

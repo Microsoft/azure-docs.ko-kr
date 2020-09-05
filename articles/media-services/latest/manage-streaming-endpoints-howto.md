@@ -3,7 +3,7 @@ title: Azure Media Services v3을 사용 하 여 스트리밍 끝점 관리
 description: 이 문서에서는 Azure Media Services v3을 사용 하 여 스트리밍 끝점을 관리 하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 writer: juliako
 manager: femila
 editor: ''
@@ -12,17 +12,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/11/2020
-ms.author: juliako
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6c88a1f36d4e3405b44f36864262b2ab97517933
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 08730961d81cd14b5ba8af0778d2de4078398bff
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500558"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266547"
 ---
 # <a name="manage-streaming-endpoints-with--media-services-v3"></a>Media Services v3을 사용 하 여 스트리밍 끝점 관리
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Media Services 계정이 만들어지면 **기본** [스트리밍 끝점이](streaming-endpoint-concept.md) **중지** 됨 상태에서 계정에 추가 됩니다. 콘텐츠 스트리밍을 시작 하 고 [동적 패키징](dynamic-packaging-overview.md) 및 [동적 암호화](content-protection-overview.md)를 활용 하려면 콘텐츠를 스트리밍 하려는 스트리밍 끝점이 **실행** 상태에 있어야 합니다.
 
@@ -45,7 +47,7 @@ Media Services 계정이 만들어지면 **기본** [스트리밍 끝점이](str
 POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaservices/slitestmedia10/streamingEndpoints/myStreamingEndpoint1/start?api-version=2018-07-01
 ```
 
-자세한 내용은 다음을 참조하세요. 
+자세한 내용은 다음을 참조하십시오. 
 
 * [StreamingEndpoint 참조 시작](/rest/api/media/streamingendpoints/start) 설명서입니다.
 * 스트리밍 끝점을 시작 하는 작업은 비동기 작업입니다. 
@@ -57,7 +59,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
  
 1. [Azure Portal](https://portal.azure.com/)에 로그인합니다.
 1. Azure Media Services 계정으로 이동 합니다.
-1. 왼쪽 창에서 **스트리밍 끝점**을 선택 합니다.
+1. 왼쪽 창에서  **스트리밍 끝점**을 선택 합니다.
 1. 시작 하려는 스트리밍 끝점을 선택 하 고 **시작**을 선택 합니다.
 
 ## <a name="use-the-azure-cli"></a>Azure CLI 사용

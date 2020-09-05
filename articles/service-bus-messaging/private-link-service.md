@@ -5,12 +5,12 @@ author: spelluru
 ms.author: spelluru
 ms.date: 06/23/2020
 ms.topic: article
-ms.openlocfilehash: ef469eb74c3dd7d82dec908dba8c53136df206e4
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 4f3b67794d1a7f3935c79c70f18b8bd4a1e0d7ef
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423425"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716625"
 ---
 # <a name="allow-access-to-azure-service-bus-namespaces-via-private-endpoints"></a>전용 끝점을 통해 Azure Service Bus 네임 스페이스에 대 한 액세스 허용
 
@@ -234,7 +234,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName  `
 
 ## <a name="validate-that-the-private-link-connection-works"></a>프라이빗 링크 연결이 작동하는지 확인
 
-프라이빗 엔드포인트 리소스의 동일한 서브넷 내에 있는 리소스가 개인 IP 주소를 통해 Service Bus 네임스페이스에 연결되고 개인 DNS 영역 통합이 올바르게 통합되었는지 확인해야 합니다.
+개인 끝점의 가상 네트워크 내에 있는 리소스가 개인 IP 주소를 통해 Service Bus 네임 스페이스에 연결 되어 있고 올바른 개인 DNS 영역 통합이 있는지 확인 해야 합니다.
 
 먼저 [Azure Portal에서 Windows 가상 머신 만들기](../virtual-machines/windows/quick-create-portal.md)의 단계에 따라 가상 머신을 만듭니다.
 

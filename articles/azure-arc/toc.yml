@@ -2,70 +2,9 @@
   href: index.yml
 - name: 개요
   items:
-    - name: Arc 지원 Kubernetes 정보
-      href: ./kubernetes/overview.md
-    - name: Azure Arc 지원 서버 정보
-      href: ./servers/overview.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      items:
-        - name: Arc 지원 Kubernetes
-          href: ./kubernetes/policy-samples.md
-        - name: Arc 지원 서버
-          href: ./servers/policy-samples.md
-- name: 개념
-  items:
-    - name: 보안
-      items:
-        - name: Azure Policy의 보안 컨트롤
-          displayName: 'regulatory, compliance, standards, domains'
-          href: ./servers/security-controls-policy.md
-- name: 방법 가이드
-  items:
-    - name: Arc 지원 Kubernetes
-      items:
-        - name: Azure Arc에 연결
-          items:
-            - name: 클러스터 연결
-              href: ./kubernetes/connect-cluster.md
-            - name: 서비스 사용자 온보딩
-              href: ./kubernetes/create-onboarding-service-principal.md
-        - name: 관리
-          items:
-            - name: GitOps를 사용하여 구성 배포
-              href: ./kubernetes/use-gitops-connected-cluster.md
-            - name: GitOps를 사용하여 Helm 차트 배포
-              href: ./kubernetes/use-gitops-with-helm.md
-            - name: Azure Policy를 사용하여 GitOps 적용
-              href: ./kubernetes/use-azure-policy.md
-            - name: 컨테이너용 Azure Monitor를 사용하여 모니터링
-              href: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md?toc=/azure/azure-arc/toc.json
-            - name: Azure Policy를 사용한 허용 제어 정책
-              href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/toc.json
-            - name: IoT 워크로드 배포
-              href: ./kubernetes/deploy-azure-iot-edge-workloads.md
-        - name: 문제 해결
-          href: ./kubernetes/Troubleshooting.md
-    - name: Arc 지원 서버
-      items:
-        - name: Azure Arc에 연결
-          items:
-            - name: Connected Machine 에이전트 개요
-              href: ./servers/agent-overview.md
-            - name: Azure Portal에서 Azure Arc에 머신 연결
-              href: ./servers/onboard-portal.md
-            - name: 서비스 주체를 사용하여 규모에 맞게 머신 연결
-              href: ./servers/onboard-service-principal.md
-            - name: PowerShell DSC를 사용하여 Azure Arc에 머신 연결
-              href: ./servers/onboard-dsc.md
-        - name: 관리
-          items:
-            - name: Azure VM 확장 관리 및 사용
-              href: ./servers/manage-vm-extensions.md
-            - name: 에이전트 관리
-              href: ./servers/manage-agent.md
-        - name: 문제 해결
-          items:
-            - name: 에이전트 연결 문제
-              href: ./servers/troubleshoot-agent-onboard.md
+    - name: Azure Arc 정보
+      href: overview.md
+- name: Arc 지원 서버 >
+  href: ./servers/overview.md
+- name: Arc 지원 Kubernetes >
+  href: ./kubernetes/overview.md

@@ -58,10 +58,8 @@
       href: remote-work-support.md
     - name: 네트워크 규칙의 FQDN
       href: fqdn-filtering-network-rules.md
-    - name: 개념
-      items:
-        - name: 보안 기준
-          href: security-baseline.md
+    - name: 보안 기준
+      href: security-baseline.md
 - name: 방법 가이드
   items:
     - name: Azure PowerShell을 사용하여 배포

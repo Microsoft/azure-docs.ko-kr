@@ -3,12 +3,12 @@ title: Application Insights 배포를 설계하는 방법 - 하나의 리소스 
 description: 개발, 테스트 및 프로덕션 스탬프에 대한 다양한 리소스에 직접 원격 분석
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 4f539862432fcdc67632e91caadf71d6584fbc3e
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 264cbe35e7af50577b345d686b639e47760f428d
+ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420569"
+ms.lasthandoff: 08/16/2020
+ms.locfileid: "88258721"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>배포해야 하는 Application Insights 리소스의 수
 
@@ -41,7 +41,7 @@ ms.locfileid: "87420569"
 
 ## <a name="dynamic-instrumentation-key"></a><a name="dynamic-ikey"></a> 동적 계측 키
 
-코드가 프로덕션 단계 간에 이동함에 따라 보다 쉽게 ikey를 변경할 수 있도록 구성 파일 대신 코드에 설정합니다.
+코드가 프로덕션 단계 사이에서 이동할 때 ikey를 더 쉽게 변경할 수 있도록 하드 코드 된/정적 값을 사용 하는 대신 코드에서 키를 동적으로 참조 합니다.
 
 ASP.NET 서비스의 global.aspx.cs 같은 초기화 메서드에서 키를 설정합니다.
 

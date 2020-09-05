@@ -11,7 +11,7 @@
   items:
     - name: REST API
       items:
-        - name: 'C#'
+        - name: C#
           href: quickstarts/csharp.md
         - name: Go
           href: quickstarts/go.md
@@ -88,7 +88,7 @@
 - name: 리소스
   items:
     - name: API 키 가져오기
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: Bing Web Search 엔드포인트
       href: web-search-endpoints.md
     - name: 가격 책정

@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e72e3cb3ccc6273a9b698475c5e5aa0bb87b8b7
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: bdcf5ded2f2cf49048b70dedb11f25e67766e938
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87828798"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177621"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Azure Active Directory Connect Health 작업
 이 항목에서는 Azure AD(Azure Active Directory) Connect Health를 사용하여 수행할 수 있는 다양한 작업에 대해 설명합니다.
@@ -103,8 +103,8 @@ Azure Active Directory Domain Services용 Azure AD Connect Health:
    <br><br>
 
 [//]: # (RBAC 섹션의 시작)
-## <a name="manage-access-with-role-based-access-control"></a>역할 기반 Access Control로 액세스 관리
-Azure AD Connect Health에 대 한 [azure 역할 기반 액세스 제어 (AZURE RBAC)](../../role-based-access-control/role-assignments-portal.md) 는 전역 관리자가 아닌 사용자 및 그룹에 대 한 액세스를 제공 합니다. RBAC는 의도한 사용자 및 그룹에 역할을 할당하고 디렉터리 내의 전역 관리자를 제한하는 메커니즘을 제공합니다.
+## <a name="manage-access-with-azure-rbac"></a>Azure RBAC를 사용 하 여 액세스 관리
+Azure AD Connect Health에 대 한 [azure 역할 기반 액세스 제어 (AZURE RBAC)](../../role-based-access-control/role-assignments-portal.md) 는 전역 관리자가 아닌 사용자 및 그룹에 대 한 액세스를 제공 합니다. Azure RBAC는 의도 된 사용자 및 그룹에 역할을 할당 하 고 디렉터리 내에서 전역 관리자를 제한 하는 메커니즘을 제공 합니다.
 
 ### <a name="roles"></a>역할
 Azure AD Connect Health는 다음과 같은 기본 제공 역할을 지원합니다.
@@ -135,12 +135,12 @@ Azure AD Connect Health 내에서 *모든 서비스 인스턴스* 수준으로 �
    ![Azure AD Connect Health 리소스 사이드바 스크린샷](./media/how-to-connect-health-operations/startRBAC.png)
 2. **추가**를 선택합니다.
 3. **역할 선택** 창에서 역할(예: **소유자**)을 선택합니다.<br>
-   ![Azure AD Connect Health RBAC 사용자 창 스크린샷](./media/how-to-connect-health-operations/RBAC_add.png)
+   ![Azure AD Connect Health 및 Azure RBAC 구성 메뉴의 스크린샷](./media/how-to-connect-health-operations/RBAC_add.png)
 4. 사용자 또는 그룹을 대상으로 한 이름 또는 식별자를 입력합니다. 동시에 하나 이상의 사용자 또는 그룹을 선택할 수 있습니다. **선택**을 클릭합니다.
-   ![Azure AD Connect Health RBAC 사용자 창 스크린샷](./media/how-to-connect-health-operations/RBAC_select_users.png)
+   ![Azure AD Connect Health 및 Azure RBAC 역할 목록의 스크린샷](./media/how-to-connect-health-operations/RBAC_select_users.png)
 5. **확인**을 선택합니다.<br>
 6. 역할 할당이 완료되면 사용자 및 그룹이 목록에 표시됩니다.<br>
-   ![새 사용자가 강조 표시된 Azure AD Connect Health RBAC 사용자 창 스크린샷](./media/how-to-connect-health-operations/RBAC_user_list.png)
+   ![Azure AD Connect Health 및 Azure RBAC와 새 사용자가 강조 표시 된 스크린샷](./media/how-to-connect-health-operations/RBAC_user_list.png)
 
 이제 할당된 역할에 따라 나열된 사용자 및 그룹에 액세스 권한이 있습니다.
 
@@ -153,7 +153,7 @@ Azure AD Connect Health 내에서 *모든 서비스 인스턴스* 수준으로 �
 #### <a name="step-3-share-the-blade-location-with-users-or-groups"></a>3단계: 사용자 또는 그룹을 사용하여 블레이드 위치 공유
 1. 사용 권한을 할당하면 사용자가 [여기](https://aka.ms/aadconnecthealth)로 이동하여 Azure AD Connect Health에 액세스할 수 있습니다.
 2. 블레이드에서 사용자는 블레이드 또는 블레이드의 서로 다른 부분을 대시보드에 고정할 수 있습니다. **대시보드에 고정** 아이콘을 클릭하면 됩니다.<br>
-   ![고정 아이콘이 강조 표시된 Azure AD Connect Health RBAC 고정 블레이드 스크린샷](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
+   ![고정 아이콘이 강조 표시 된 Azure AD Connect Health 및 Azure RBAC pin 블레이드 스크린샷](./media/how-to-connect-health-operations/RBAC_pin_blade.png)
 
 > [!NOTE]
 > 구독자 역할이 할당된 사용자는 Azure Marketplace에서 Azure AD Connect Health 확장을 가져올 수 없습니다. 사용자가 가져오기에 필요한 "만들기" 작업을 수행할 수 없습니다. 사용자는 앞의 링크로 이동하여 블레이드에 액세스할 수 있습니다. 이후 사용의 경우 사용자는 대시보드에 블레이드를 고정할 수 있습니다.
@@ -161,8 +161,8 @@ Azure AD Connect Health 내에서 *모든 서비스 인스턴스* 수준으로 �
 >
 
 ### <a name="remove-users-or-groups"></a>사용자 또는 그룹 제거
-Azure AD Connect Health RBAC에 추가된 사용자 또는 그룹을 제거할 수 있습니다. 사용자 또는 그룹을 마우스 오른쪽 단추로 클릭하고 **제거**를 선택하면 됩니다.<br>
-![제거가 강조 표시된 Azure AD Connect Health RBAC 사용자 창 스크린샷](./media/how-to-connect-health-operations/RBAC_remove.png)
+Azure AD Connect Health 및 Azure RBAC에 추가 된 사용자 또는 그룹을 제거할 수 있습니다. 사용자 또는 그룹을 마우스 오른쪽 단추로 클릭하고 **제거**를 선택하면 됩니다.<br>
+![제거 강조 표시 된 Azure AD Connect Health 및 Azure RBAC의 스크린샷](./media/how-to-connect-health-operations/RBAC_remove.png)
 
 [//]: # (RBAC 섹션의 끝)
 

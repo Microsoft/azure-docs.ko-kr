@@ -4,17 +4,17 @@ description: Azure 프라이빗 엔드포인트를 사용하여 비공개로 웹
 author: ericgre
 ms.assetid: 2dceac28-1ba6-4904-a15d-9e91d5ee162c
 ms.topic: article
-ms.date: 07/07/2020
+ms.date: 08/12/2020
 ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 4fab75aef2a94ba7108085e9d5b5dbbf190342f6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 16ce03ad8d6af1908a9ea4d3b7759bb5eb3c1139
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87068293"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961553"
 ---
 # <a name="using-private-endpoints-for-azure-web-app-preview"></a>Azure 웹앱용 프라이빗 엔드포인트 사용(미리 보기)
 
@@ -70,7 +70,7 @@ VNet과 웹앱 사이에 보안 연결이 필요한 경우 서비스 엔드포�
 기본적으로 개인 끝점을 사용 하지 않고 웹 앱의 공개 이름은 클러스터에 대 한 정식 이름입니다.
 예를 들어 이름 확인은 다음과 같습니다.
 
-|이름 |유형 |Value |
+|Name |Type |값 |
 |-----|-----|------|
 |mywebapp.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
 |clustername.azurewebsites.windows.net|CNAME|cloudservicename.cloudapp.net|
@@ -80,7 +80,7 @@ VNet과 웹앱 사이에 보안 연결이 필요한 경우 서비스 엔드포�
 개인 끝점을 배포할 때 정식 이름 mywebapp.privatelink.azurewebsites.net을 가리키도록 DNS 항목을 업데이트 합니다.
 예를 들어 이름 확인은 다음과 같습니다.
 
-|이름 |유형 |Value |설명 |
+|Name |Type |값 |설명 |
 |-----|-----|------|-------|
 |mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
 |mywebapp.privatelink.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
@@ -91,7 +91,7 @@ VNet과 웹앱 사이에 보안 연결이 필요한 경우 서비스 엔드포�
 만들어야 하는 DNS 영역은 **privatelink.azurewebsites.net**입니다. A 레코드와 개인 끝점 IP를 사용 하 여 웹 앱에 대 한 레코드를 등록 합니다.
 예를 들어 이름 확인은 다음과 같습니다.
 
-|이름 |유형 |Value |설명 |
+|Name |Type |값 |설명 |
 |-----|-----|------|-------|
 |mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
 |mywebapp.privatelink.azurewebsites.net|A|10.10.10.8|<-개인 끝점 IP 주소를 가리키도록 DNS 시스템에서이 항목을 관리 합니다.|
@@ -103,7 +103,7 @@ VNet과 웹앱 사이에 보안 연결이 필요한 경우 서비스 엔드포�
 
 Kudu 콘솔 또는 Kudu REST API (예: Azure DevOps 자체 호스팅 에이전트로 배포)의 경우 Azure DNS 개인 영역 또는 사용자 지정 DNS 서버에서 두 개의 레코드를 만들어야 합니다. 
 
-| 이름 | 유형 | Value |
+| Name | Type | 값 |
 |-----|-----|-----|
 | mywebapp.privatelink.azurewebsites.net | A | PrivateEndpointIP | 
 | mywebapp.scm.privatelink.azurewebsites.net | A | PrivateEndpointIP | 
@@ -128,19 +128,23 @@ Private Link 기능 및 프라이빗 엔드포인트는 정기적으로 개선�
 - Azure CLI를 사용 하 여 웹 앱에 대 한 개인 끝점을 배포 하려면 Azure CLI를 사용 하 [여 웹 앱에 비공개로 연결 하는 방법][howtoguide2] 을 참조 하세요.
 - PowerShell을 사용 하 여 웹 앱에 대 한 개인 끝점을 배포 하려면 PowerShell을 사용 하 여 [비공개로 웹 앱에 연결 하는 방법][howtoguide3] 을 참조 하세요.
 - Azure 템플릿을 사용 하 여 웹 앱에 대 한 개인 끝점을 배포 하려면 Azure 템플릿을 사용 하 여 [웹 앱에 비공개로 연결 하는 방법][howtoguide4] 을 참조 하세요.
+- 종단 간 예제, ARM 템플릿을 사용 하 여 VNet 삽입 및 개인 끝점을 사용 하 여 보안 백 엔드 웹 앱에 프런트 엔드 웹 앱을 연결 하는 방법이 [빠른][howtoguide5] 시작을 참조 하세요.
+- 종단 간 예제, terraform을 사용 하 여 VNet 삽입 및 개인 끝점을 사용 하 여 보안 백 엔드 웹 앱에 프런트 엔드 웹 앱을 연결 하는 방법이 [샘플][howtoguide6] 을 참조 하세요.
 
 
 <!--Links-->
-[serviceendpoint]: https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview
-[privatelink]: https://docs.microsoft.com/azure/private-link/private-link-overview
-[vnetintegrationfeature]: https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet
-[disablesecuritype]: https://docs.microsoft.com/azure/private-link/disable-private-endpoint-network-policy
-[accessrestrictions]: https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions
+[serviceendpoint]: ../../virtual-network/virtual-network-service-endpoints-overview.md
+[privatelink]: ../../private-link/private-link-overview.md
+[vnetintegrationfeature]: ../web-sites-integrate-with-vnet.md
+[disablesecuritype]: ../../private-link/disable-private-endpoint-network-policy.md
+[accessrestrictions]: ../app-service-ip-restrictions.md
 [tcpproxy]: ../../private-link/private-link-service-overview.md#getting-connection-information-using-tcp-proxy-v2
-[dnsvalidation]: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain
-[pllimitations]: https://docs.microsoft.com/azure/private-link/private-endpoint-overview#limitations
+[dnsvalidation]: ../app-service-web-tutorial-custom-domain.md
+[pllimitations]: ../../private-link/private-endpoint-overview.md#limitations
 [pricing]: https://azure.microsoft.com/pricing/details/private-link/
-[howtoguide1]: https://docs.microsoft.com/azure/private-link/create-private-endpoint-webapp-portal
-[howtoguide2]: https://docs.microsoft.com/azure/app-service/scripts/cli-deploy-privateendpoint
-[howtoguide3]: https://docs.microsoft.com/azure/app-service/scripts/powershell-deploy-private-endpoint
-[howtoguide4]: https://docs.microsoft.com/azure/app-service/scripts/template-deploy-private-endpoint
+[howtoguide1]: ../../private-link/create-private-endpoint-webapp-portal.md
+[howtoguide2]: ../scripts/cli-deploy-privateendpoint.md
+[howtoguide3]: ../scripts/powershell-deploy-private-endpoint.md
+[howtoguide4]: ../scripts/template-deploy-private-endpoint.md
+[howtoguide5]: https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-privateendpoint-vnet-injection
+[howtoguide6]: ../scripts/terraform-secure-backend-frontend.md

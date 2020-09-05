@@ -9,16 +9,16 @@ ms.service: virtual-machines-sql
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 07/15/2020
+ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 6ce142f196da9207dd26b1917190ebdcba50fe74
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a74a791c8c6a95c71faf1f4a0ce6eaacd7c68901
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86531585"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003000"
 ---
 # <a name="configure-an-availability-group-for-sql-server-on-azure-vm-powershell--az-cli"></a>Azure VM에서 SQL Server에 대 한 가용성 그룹 구성 (PowerShell & Az CLI)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -35,7 +35,7 @@ Always On 가용성 그룹을 구성 하려면 다음 필수 구성 요소가 �
 - 도메인 컨트롤러를 포함하는 리소스 그룹 
 - *동일한* 가용성 집합 또는 [SQL VM 리소스 공급자에 등록](sql-vm-resource-provider-register.md)된 *다른* 가용성 영역에서 [SQL Server 2016 이상의 Enterprise edition을 실행 하는 Azure의 도메인에](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) 가입 된 vm 하나 이상  
 - 최신 버전의 [PowerShell](/powershell/scripting/install/installing-powershell) 또는 [Azure CLI](/cli/azure/install-azure-cli)입니다. 
-- 2개의 사용 가능한(엔터티에서 사용하지 않음) IP 주소. 하나는 내부 부하 분산 장치용입니다. 다른 하나는 가용성 그룹과 동일한 서브넷 내의 가용성 그룹 수신기용입니다. 기존 부하 분산 장치를 사용하는 경우 가용성 그룹 수신기에 사용 가능한 IP 주소가 하나만 필요합니다. 
+- 2개의 사용 가능한(엔터티에서 사용하지 않음) IP 주소. 하나는 내부 부하 분산 장치용입니다. 다른 하나는 가용성 그룹과 동일한 서브넷 내의 가용성 그룹 수신기용입니다. 기존 부하 분산 장치를 사용 하는 경우 가용성 그룹 수신기에 대해 사용 가능한 IP 주소가 하나만 필요 합니다. 
 
 ## <a name="permissions"></a>사용 권한
 
@@ -44,7 +44,7 @@ Azure CLI를 사용하여 Always On 가용성 그룹을 구성하려면 다음 �
 - 도메인에서 **컴퓨터 개체 만들기** 권한이 있는 기존 도메인 사용자 계정. 예를 들어 도메인 관리자 계정에는 일반적으로 충분한 권한이 있습니다(예: account@domain.com). 또한 이 계정은 클러스터를 만들 각 VM의 로컬 관리자 그룹에 속해 있어야 합니다.
 - SQL Server를 제어하는 도메인 사용자 계정. 
  
-## <a name="step-1-create-a-storage-account-as-a-cloud-witness"></a>1단계: 클라우드 감시로 스토리지 계정 만들기
+## <a name="create-a-storage-account-as-a-cloud-witness"></a>클라우드 감시로 저장소 계정 만들기
 클러스터에는 클라우드 감시 역할을 할 스토리지 계정이 필요합니다. 기존 스토리지 계정을 사용하거나 새 스토리지 계정을 만들 수 있습니다. 기존 스토리지 계정을 사용하려면 다음 섹션으로 건너뜁니다. 
 
 다음은 스토리지 계정을 만드는 코드 조각입니다. 
@@ -77,11 +77,10 @@ New-AzStorageAccount -ResourceGroupName <resource group name> -Name <name> `
     -SkuName Standard_LRS -Location <region> -Kind StorageV2 `
     -AccessTier Hot -EnableHttpsTrafficOnly
 ```
+
 ---
 
-
-
-## <a name="step-2-define-windows-failover-cluster-metadata"></a>2단계: Windows 장애 조치(failover) 클러스터 메타데이터 정의
+## <a name="define-windows-failover-cluster-metadata"></a>Windows 장애 조치 (failover) 클러스터 메타 데이터 정의
 
 Azure CLI [az sql vm group](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) 명령 그룹은 가용성 그룹을 호스팅하는 WSFC(Windows Server 장애 조치(Failover) 클러스터) 서비스의 메타데이터를 관리합니다. 클러스터 메타데이터에는 Active Directory 도메인, 클러스터 계정, 클라우드 감시로 사용되는 스토리지 계정 및 SQL Server 버전이 포함됩니다. [az sql vm group create](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create)를 사용하여 첫 번째 SQL Server VM이 추가될 때 클러스터가 정의된 대로 만들어지도록 WSFC의 메타데이터를 정의합니다. 
 
@@ -126,7 +125,7 @@ $group = New-AzSqlVMGroup -Name <name> -Location <regio>
 
 ---
 
-## <a name="step-3-add-sql-server-vms-to-the-cluster"></a>3단계: 클러스터에 SQL Server VM 추가
+## <a name="add-vms-to-the-cluster"></a>클러스터에 Vm 추가
 
 클러스터에 첫 번째 SQL Server VM을 추가하면 클러스터가 만들어집니다. [az sql vm add-to-group](https://docs.microsoft.com/cli/azure/sql/vm?view=azure-cli-latest#az-sql-vm-add-to-group) 명령은 이전에 지정한 이름으로 클러스터를 만들고, SQL Server VM에 클러스터 역할을 설치하고, 클러스터에 SQL Server VM을 추가합니다. 이후에 `az sql vm add-to-group` 명령을 사용하면 새로 만든 클러스터에 더 많은 SQL Server VM이 추가됩니다. 
 
@@ -185,14 +184,14 @@ Update-AzSqlVM -ResourceId $sqlvm2.ResourceId -SqlVM $sqlvmconfig2
 
 ---
 
-## <a name="step-4-create-the-availability-group"></a>4단계: 가용성 그룹 만들기
+## <a name="create-availability-group"></a>가용성 그룹 만들기
 
 [SQL Server Management Studio](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio), [PowerShell](/sql/database-engine/availability-groups/windows/create-an-availability-group-sql-server-powershell) 또는 [Transact-SQL](/sql/database-engine/availability-groups/windows/create-an-availability-group-transact-sql)을 사용하여 일반적인 방법으로 가용성 그룹을 직접 만듭니다. 
 
 >[!IMPORTANT]
 > 수신기는 다음 섹션에서 Azure CLI를 통해 만들어지므로 만들지 *않습니다*.  
 
-## <a name="step-5-create-the-internal-load-balancer"></a>5단계: 내부 부하 분산 장치 만들기
+## <a name="create-internal-load-balancer"></a>내부 부하 분산 장치 만들기
 
 Always On 가용성 그룹 수신기를 사용하려면 Azure Load Balancer의 내부 인스턴스가 필요합니다. 내부 부하 분산 장치는 더 빠른 장애 조치(failover) 및 다시 연결을 허용하는 가용성 그룹 수신기에 대한 "부동" IP 주소를 제공합니다. 가용성 그룹의 SQL Server VM이 동일한 가용성 집합의 일부인 경우 기본 부하 분산 장치를 사용할 수 있습니다. 그렇지 않으면 표준 부하 분산 장치를 사용해야 합니다.  
 
@@ -228,7 +227,7 @@ New-AzLoadBalancer -name sqlILB -ResourceGroupName <resource group name> `
 >[!IMPORTANT]
 > 각 SQL Server VM에 대한 공용 IP 리소스에 표준 부하 분산 장치와 호환되는 표준 SKU가 있어야 합니다. VM 공용 IP 리소스의 SKU를 확인하려면 **리소스 그룹**으로 이동하여 원하는 SQL Server VM에 대한 **공용 IP 주소** 리소스를 선택하고 **개요** 창의 **SKU** 아래에서 값을 찾습니다.  
 
-## <a name="step-6-create-the-availability-group-listener"></a>6단계: 가용성 그룹 수신기 만들기
+## <a name="create-listener"></a>수신기 만들기
 
 수동으로 가용성 그룹을 만든 후 [az sql vm ag-listener](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-latest#az-sql-vm-group-ag-listener-create)를 사용하여 수신기를 만들 수 있습니다. 
 
@@ -283,7 +282,7 @@ New-AzAvailabilityGroupListener -Name <listener name> -ResourceGroupName <resour
 
 ---
 
-## <a name="modify-the-number-of-replicas-in-an-availability-group"></a>가용성 그룹의 복제본 수 수정
+## <a name="modify-number-of-replicas"></a>복제본 수 수정 
 Azure에서 호스팅되는 SQL Server VM에 가용성 그룹을 배포하면 더 복잡해집니다. 이제 리소스 공급자와 가상 머신 그룹이 리소스를 관리합니다. 따라서 가용성 그룹에서 복제본을 추가하거나 제거할 때 SQL Server VM에 대한 정보로 수신기 메타데이터를 업데이트하는 추가 단계가 있습니다. 가용성 그룹의 복제본 수를 수정하는 경우 [az sql vm group ag-listener update](/cli/azure/sql/vm/group/ag-listener?view=azure-cli-2018-03-01-hybrid#az-sql-vm-group-ag-listener-update) 명령을 사용하여 SQL Server VM의 메타데이터로 수신기도 업데이트해야 합니다. 
 
 
@@ -408,7 +407,7 @@ Azure에서 호스팅되는 SQL Server VM에 가용성 그룹을 배포하면 �
 
 ---
 
-## <a name="remove-the-availability-group-listener"></a>가용성 그룹 수신기 제거
+## <a name="remove-listener"></a>수신기 제거
 나중에 Azure CLI로 구성된 가용성 그룹 수신기를 제거해야 하는 경우 SQL VM 리소스 공급자를 이용해야 합니다. 수신기가 SQL VM 리소스 공급자를 통해 등록되었으므로 SQL Server Management Studio를 통해 수신기를 삭제하는 것만으로는 충분하지 않습니다. 
 
 가장 좋은 방법은 Azure CLI에서 다음 코드 조각을 사용하여 SQL VM 리소스 공급자를 통해 삭제하는 것입니다. 이렇게 하면 SQL VM 리소스 공급자에서 가용성 그룹 수신기 메타데이터가 제거됩니다. 또한 가용성 그룹에서 수신기가 물리적으로 삭제됩니다. 
@@ -431,6 +430,65 @@ az sql vm group ag-listener delete --group-name <cluster name> --name <listener 
 
 Remove-AzAvailabilityGroupListener -Name <Listener> `
    -ResourceGroupName <Resource Group Name> -SqlVMGroupName <cluster name>
+```
+
+---
+
+## <a name="remove-cluster"></a>클러스터 제거
+
+클러스터에서 모든 노드를 제거 하 여 삭제 한 다음 SQL VM 리소스 공급자에서 클러스터 메타 데이터를 제거 합니다. Azure CLI 또는 PowerShell을 사용 하 여이 작업을 수행할 수 있습니다. 
+
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+먼저 클러스터에서 모든 SQL Server Vm을 제거 합니다. 
+
+```azurecli-interactive
+# Remove the VM from the cluster metadata
+# example: az sql vm remove-from-group --name SQLVM2 --resource-group SQLVM-RG
+
+az sql vm remove-from-group --name <VM1 name>  --resource-group <resource group name>
+az sql vm remove-from-group --name <VM2 name>  --resource-group <resource group name>
+```
+
+클러스터의 유일한 Vm 인 경우 클러스터가 제거 됩니다. 클러스터의 다른 Vm이 제거 된 SQL Server Vm과 분리 되어 있으면 다른 Vm은 제거 되지 않고 클러스터가 제거 되지 않습니다. 
+
+다음으로 SQL VM 리소스 공급자에서 클러스터 메타 데이터를 제거 합니다. 
+
+```azurecli-interactive
+# Remove the cluster from the SQL VM RP metadata
+# example: az sql vm group delete --name Cluster --resource-group SQLVM-RG
+
+az sql vm group delete --name <cluster name> Cluster --resource-group <resource group name>
+```
+
+
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+먼저 클러스터에서 모든 SQL Server Vm을 제거 합니다. 이렇게 하면 클러스터에서 노드를 물리적으로 제거 하 고 클러스터를 제거 합니다. 
+
+```powershell-interactive
+# Remove the SQL VM from the cluster
+# example: $sqlvm = Get-AzSqlVM -Name SQLVM3 -ResourceGroupName SQLVM-RG
+#  $sqlvm. SqlVirtualMachineGroup = ""
+#  Update-AzSqlVM -ResourceId $sqlvm -SqlVM $sqlvm
+
+$sqlvm = Get-AzSqlVM -Name <VM Name> -ResourceGroupName <Resource Group Name>
+   $sqlvm. SqlVirtualMachineGroup = ""
+   
+   Update-AzSqlVM -ResourceId $sqlvm -SqlVM $sqlvm
+```
+
+클러스터의 유일한 Vm 인 경우 클러스터가 제거 됩니다. 클러스터의 다른 Vm이 제거 된 SQL Server Vm과 분리 되어 있으면 다른 Vm은 제거 되지 않고 클러스터가 제거 되지 않습니다. 
+
+다음으로 SQL VM 리소스 공급자에서 클러스터 메타 데이터를 제거 합니다. 
+
+```powershell-interactive
+# Remove the cluster metadata
+# example: Remove-AzSqlVMGroup -ResourceGroupName "SQLVM-RG" -Name "Cluster"
+
+Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster name> "
 ```
 
 ---

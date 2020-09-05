@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 0d8d9f598da41b2bd39369e063200f5445ba740a
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 20845a6f1238095b40c9b05b5f5d8d85217b6db5
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87554811"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950411"
 ---
 # <a name="enable-logging-in-azure-machine-learning-designer-preview-pipelines"></a>Azure Machine Learning designer (미리 보기) 파이프라인에서 로깅 사용
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -78,5 +78,5 @@ Python SDK를 사용 하 여 값을 기록 하는 방법에 대 한 자세한 �
 
 이 문서에서는 디자이너에서 로그를 사용 하는 방법을 알아보았습니다. 다음 단계는 다음 관련 문서를 참조 하세요.
 
-* 디자이너 파이프라인 문제를 해결 하는 방법에 대해 알아봅니다. [ML 파이프라인 문제 해결 디버그 &](how-to-debug-pipelines.md#azure-machine-learning-designer-preview)를 참조 하세요.
+* 디자이너 파이프라인 문제를 해결 하는 방법에 대해 알아봅니다. [ML 파이프라인 문제 해결 디버그 &](how-to-debug-pipelines.md#logging-in-azure-machine-learning-designer-preview)를 참조 하세요.
 * Python SDK를 사용 하 여 SDK 제작 환경에서 메트릭을 기록 하는 방법에 대해 알아봅니다. [AZURE ML 학습 실행에서 로깅 사용](how-to-track-experiments.md)을 참조 하세요.

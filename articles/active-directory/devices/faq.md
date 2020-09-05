@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7637a4280d725aa8cd3482641645dbe19cb56210
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c8d03b8f13a016dc21e37b82f66abc8050ef17d8
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84689047"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266785"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Azure Active Directory 디바이스 관리 FAQ
 
@@ -62,7 +62,7 @@ Azure Portal에서 **모든 디바이스** 보기를 사용하세요. PowerShell
 - 사용자가 내 앱 포털에서 장치를 사용 하지 않도록 설정 합니다. 
 - 관리자 (또는 사용자)가 Azure Portal 또는 PowerShell을 사용 하 여 장치를 삭제 하거나 사용 하지 않도록 설정 합니다.
 - 하이브리드 Azure AD 조인만: 관리자가 장치 OU를 동기화 범위에서 제거 하 여 Azure AD에서 장치를 삭제 함
-- Azure AD connect를 버전 1.4. xx. x로 업그레이드 합니다. [Azure AD Connect 1.4. x x x x. x 및 장치 disappearance을 이해](/azure/active-directory/hybrid/reference-connect-device-disappearance)합니다.
+- Azure AD connect를 버전 1.4. xx. x로 업그레이드 합니다. [Azure AD Connect 1.4. x x x x. x 및 장치 disappearance을 이해](../hybrid/reference-connect-device-disappearance.md)합니다.
 
 
 이러한 작업을 수정 하는 방법에 대 한 자세한 내용은 아래를 참조 하세요.
@@ -312,7 +312,7 @@ UPN 변경은 Windows 10 2004 업데이트에서 지원 됩니다. 이 업데이
 **A:** 다음 단계를 수행 합니다.
 
 1.    [준수 정책 만들기](/intune/compliance-policy-create-mac-os)
-1.    [MacOS 장치에 대 한 조건부 액세스 정책 정의](../active-directory-conditional-access-azure-portal.md) 
+1.    [MacOS 장치에 대 한 조건부 액세스 정책 정의](../conditional-access/overview.md) 
 
 **설명**
 

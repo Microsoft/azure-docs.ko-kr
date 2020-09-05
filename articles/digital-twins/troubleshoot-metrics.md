@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/4/2020
 ms.topic: troubleshooting
 ms.service: digital-twins
-ms.openlocfilehash: 5e061e4d6f9e67cc7d92548f54add94097ede7d1
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: ecd402c30fee63ad594fff5e4fdc3b1610fe7e4e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905207"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003884"
 ---
 # <a name="troubleshooting-azure-digital-twins-metrics"></a>Azure Digital Twins 문제 해결: 메트릭
 
@@ -24,7 +24,7 @@ ms.locfileid: "87905207"
 
 1. Azure Digital Twins 인스턴스를 만듭니다. [*방법: 인스턴스 및 인증 설정*](how-to-set-up-instance-scripted.md)에서 Azure Digital twins 인스턴스를 설정 하는 방법에 대 한 지침을 찾을 수 있습니다.
 
-2. [Azure Portal](https:/portal.azure.com) 에서 Azure Digital twins 인스턴스를 찾습니다. 포털 검색 표시줄에 이름을 입력 하 여 페이지를 열 수 있습니다. 
+2. [Azure Portal](https://portal.azure.com) 에서 Azure Digital twins 인스턴스를 찾습니다. 포털 검색 표시줄에 이름을 입력 하 여 페이지를 열 수 있습니다. 
 
     인스턴스의 메뉴에서 **메트릭**을 선택 합니다.
    
@@ -88,9 +88,9 @@ API 요청으로 수행 해야 하는 메트릭:
 
 | 메트릭 | 메트릭 표시 이름 | 단위 | 집계 유형| 설명 | 차원 |
 | --- | --- | --- | --- | --- | --- |
-| MessagesRouted | 메시지 라우팅 (미리 보기) | 개수 | 합계 | Event Hub, Service Bus, Event Grid 등의 끝점 Azure 서비스로 라우팅되는 메시지 수입니다. | 연산의 <br>결과 |
-| RoutingFailureRate | 라우팅 실패율 (미리 보기) | 백분율 | 평균 | Azure Digital Twins에서 Event Hub, Service Bus, Event Grid 등의 끝점 Azure 서비스로 라우팅되는 오류를 발생 시키는 이벤트의 백분율입니다. | 연산의 <br>결과 |
-| RoutingLatency | 라우팅 대기 시간 (미리 보기) | 밀리초 | 평균 | Azure Digital Twins에서 라우팅하는 이벤트 사이에 경과 된 시간은 이벤트 허브, Service Bus 또는 Event Grid와 같은 끝점 Azure 서비스에 게시 될 때까지 적용 됩니다. | 연산의 <br>결과 |
+| MessagesRouted | 메시지 라우팅 (미리 보기) | 개수 | 합계 | Event Hub, Service Bus, Event Grid 등의 끝점 Azure 서비스로 라우팅되는 메시지 수입니다. | 끝점 형식, <br>결과 |
+| RoutingFailureRate | 라우팅 실패율 (미리 보기) | 백분율 | 평균 | Azure Digital Twins에서 Event Hub, Service Bus, Event Grid 등의 끝점 Azure 서비스로 라우팅되는 오류를 발생 시키는 이벤트의 백분율입니다. | 끝점 형식, <br>결과 |
+| RoutingLatency | 라우팅 대기 시간 (미리 보기) | 밀리초 | 평균 | Azure Digital Twins에서 라우팅하는 이벤트 사이에 경과 된 시간은 이벤트 허브, Service Bus 또는 Event Grid와 같은 끝점 Azure 서비스에 게시 될 때까지 적용 됩니다. | 끝점 형식, <br>결과 |
 
 ## <a name="dimensions"></a>차원
 
@@ -100,7 +100,7 @@ API 요청으로 수행 해야 하는 메트릭:
 | --- | --- |
 | 인증 | OAuth |
 | 작업 (API 요청) | DigitalTwins/DigitalTwins/delete, <br>DigitalTwins/DigitalTwins/write, <br>DigitalTwins/DigitalTwins/read, <br>DigitalTwins/eventroutes/읽기, <br>DigitalTwins/eventroutes/write, <br>DigitalTwins/eventroutes/삭제, <br>DigitalTwins/모델/읽기, <br>DigitalTwins/모델/쓰기, <br>DigitalTwins/모델/삭제, <br>DigitalTwins/쿼리/동작 |
-| 작업 (라우팅) | Event Grid <br>이벤트 허브, <br>Service Bus |
+| 엔드포인트 유형 | Event Grid <br>이벤트 허브, <br>Service Bus |
 | 프로토콜 | HTTPS |
 | 결과 | 성공할 <br>실패 |
 | 상태 코드 | 200, 404, 500 등이 있습니다. |

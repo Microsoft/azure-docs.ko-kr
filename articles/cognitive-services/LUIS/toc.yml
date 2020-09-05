@@ -22,11 +22,7 @@
     - name: 브라우저 사용
       href: luis-get-started-get-intent-from-browser.md
     - name: SDK 사용
-      items:
-        - name: 앱 작성
-          href: sdk-authoring.md
-        - name: 예측 엔드포인트 쿼리
-          href: sdk-query-prediction-endpoint.md
+      href: azure-sdk-quickstart.md
     - name: REST API 사용
       items:
         - name: 의도 알기

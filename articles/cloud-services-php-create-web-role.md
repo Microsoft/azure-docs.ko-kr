@@ -13,12 +13,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
-ms.openlocfilehash: fd04c6315a5a6915159c0cbb6a9640ae0695ed73
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 1bf0ea35c51b063a7720a1542a23a49fbcdbc557
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117232"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892986"
 ---
 # <a name="create-php-web-and-worker-roles"></a>PHP 웹 및 작업자 역할 만들기
 
@@ -153,7 +153,7 @@ PS C:\myProject> Add-AzurePHPWorkerRole roleName
 
 ## <a name="run-your-application-in-the-compute-and-storage-emulators"></a>컴퓨팅 및 스토리지 에뮬레이터에서 애플리케이션 실행
 
-Azure 에뮬레이터는 클라우드에 배포하기 전에 Azure 애플리케이션을 테스트할 수 있는 로컬 환경을 제공합니다. 에뮬레이터와 Azure 환경 사이에는 약간의 차이가 있습니다. 이해하기 쉽도록 [개발 및 테스트에 Azure Storage 에뮬레이터 사용](storage/common/storage-use-emulator.md)을 참조하세요.
+Azure 에뮬레이터는 클라우드에 배포하기 전에 Azure 애플리케이션을 테스트할 수 있는 로컬 환경을 제공합니다. 에뮬레이터와 Azure 환경 사이에는 약간의 차이가 있습니다. 이를 더 잘 이해 하려면 [개발 및 테스트에 Azure Storage 에뮬레이터 사용](storage/common/storage-use-emulator.md)을 참조 하세요.
 
 컴퓨팅 에뮬레이터를 사용하려면 PHP를 로컬로 설치해야 합니다. 컴퓨팅 에뮬레이터는 로컬 PHP 설치를 사용하여 애플리케이션을 실행합니다.
 

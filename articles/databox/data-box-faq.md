@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 3024c79b6295762636518e3f77d506ad45f73682
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7fbc69100a2cc5c23150fcc0c19e6c38ba6d438d
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87090759"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051171"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: 질문과 대답
 
@@ -56,6 +56,18 @@ A.  Data Box를 사용할 수 있는 국가/지역에 대한 내용은 [지역 �
 
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box"></a>17. Data Box에 데이터를 저장할 수 있는 지역은 어떻게 되나요?
 A. Data Box는 미국, 서유럽, 북유럽, 프랑스, 영국, 일본, 오스트레일리아 및 캐나다 내의 모든 지역에서 지원됩니다. 자세한 내용은 [지역 가용성](data-box-overview.md#region-availability)을 참조하세요.
+
+### <a name="q-how-can-i-import-source-data-at-my-location-in-a-particular-country-to-an-azure-region-in-a-different-countryregion-or-export-data-from-an-azure-region-in-one-country-to-a-different-countryregion"></a>17. 특정 국가의 위치에 있는 원본 데이터를 다른 국가/지역의 Azure 지역으로 가져오거나 한 국가의 Azure 지역에서 다른 국가/지역으로 데이터를 내보낼 수 있나요?
+
+Data Box는 해당 대상과 동일한 국가/지역 내 에서만 데이터 수집 또는 송신을 지원 하 고 국가별 테두리를 교차 하지 않습니다. 유일한 예외는 eu (유럽 연합)의 주문에 대 한 것입니다 .이 경우 데이터 상자는 EU 국가/지역에 제공 될 수 있습니다.
+
+예를 들어 가져오기 시나리오에서 Azure WestUS 저장소 계정으로 이동 하고자 하는 캐나다의 원본 데이터가 있는 경우 다음과 같은 방법으로이를 달성할 수 있습니다.
+
+1. Cananda에서 저장소 계정을 선택 하 여 캐나다의 Data Box 주문 합니다. 이 장치는 캐나다의 Azure 데이터 센터에서 주문 생성 중에 제공 된 배송 주소 (캐나다)로 배송 됩니다.
+
+2. Data Box에 대 한 온-프레미스 데이터 복사가 완료 되 면 해당 장치를 캐나다의 Azure 데이터 센터로 반환 합니다. 그러면 Data Box에 있는 데이터가 주문 생성 중에 선택한 캐나다 Azure 지역의 대상 저장소 계정에 업로드 됩니다.
+
+3. 그런 다음 AzCopy와 같은 도구를 사용 하 여 WestUS의 저장소 계정에 데이터를 복사할 수 있습니다. 이 단계에서는 Data Box 요금 청구에 포함 되지 않은 [표준 저장소](https://azure.microsoft.com/pricing/details/storage/) 및 [대역폭 요금이](https://azure.microsoft.com/pricing/details/bandwidth/) 발생 합니다.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues-with-data-box"></a>17. Data Box에 문제가 발생하면 어디로 연락해야 하나요?
 A. Data Box에 문제가 발생하면 [Microsoft 지원](data-box-disk-contact-microsoft-support.md)에 문의하세요.

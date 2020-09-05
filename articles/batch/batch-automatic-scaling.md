@@ -3,13 +3,13 @@ title: Azure Batch 풀에서 자동으로 컴퓨팅 노드 크기 조정
 description: 풀의 컴퓨팅 노드 수를 동적으로 조정하려면 클라우드 풀에서 자동 크기 조정을 사용하도록 설정합니다.
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.custom: H1Hack27Feb2017,fasttrack-edit
-ms.openlocfilehash: 0309a5665cf9338340a21f4c8d0eb5bc3c848a04
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.custom: H1Hack27Feb2017, fasttrack-edit, devx-track-csharp
+ms.openlocfilehash: e3e7a354e015ffa8a6164de59edcf572ab773319
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387475"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932324"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Batch 풀에서 컴퓨팅 노드의 크기를 조정하는 자동 수식 만들기
 
@@ -94,7 +94,7 @@ $NodeDeallocationOption = taskcompletion;
 
 이러한 서비스 정의 변수의 값을 가져오고 설정 하 여 풀의 계산 노드 수를 관리할 수 있습니다.
 
-| 변수 | 설명 |
+| 변수 | Description |
 | --- | --- |
 | $TargetDedicatedNodes |풀에 대한 전용 컴퓨팅 노드의 대상 수입니다. 풀에서 항상 원하는 수의 노드를 얻지 못할 수 있으므로 대상으로 지정 합니다. 예를 들어 풀이 초기 대상에 도달 하기 전에 자동 크기 조정 평가에 의해 전용 노드의 목표 수가 수정 되는 경우 풀은 대상에 도달 하지 못할 수 있습니다. <br /><br /> 대상이 Batch 계정 노드 또는 코어 할당량을 초과 하는 경우 Batch 서비스 모드에서 만든 계정의 풀에서 목표를 달성할 수 없습니다. 대상이 구독의 공유 코어 할당량을 초과 하는 경우 사용자 구독 모드에서 만든 계정의 풀에서 해당 목표를 달성할 수 없습니다.|
 | $TargetLowPriorityNodes |풀에 대한 우선 순위가 낮은 컴퓨팅 노드의 목표 수입니다. 풀에서 항상 원하는 수의 노드를 얻지 못할 수 있으므로 대상으로 지정 합니다. 예를 들어 풀이 초기 대상에 도달 하기 전에 자동 크기 조정 평가에 의해 우선 순위가 낮은 노드의 목표 수가 수정 되는 경우 풀이 대상에 도달 하지 못할 수 있습니다. 목표가 Batch 계정 노드 또는 코어 할당량을 초과하는 경우 풀에서 해당 목표에 도달하지 못할 수도 있습니다. <br /><br /> 우선 순위가 낮은 컴퓨팅 노드에 대한 자세한 내용은 [Batch에서 낮은 우선 순위 VM 사용](batch-low-pri-vms.md)을 참조하세요. |
@@ -227,7 +227,7 @@ $NodeDeallocationOption = taskcompletion;
 <table>
   <tr>
     <th>메트릭</th>
-    <th>설명</th>
+    <th>Description</th>
   </tr>
   <tr>
     <td><b>리소스</b></td>
@@ -287,7 +287,7 @@ $CPUPercent.GetSample(TimeInterval_Minute * 5)
 | GetSamplePeriod() |기록 샘플 데이터 집합에서 가져온 샘플의 기간을 반환합니다. |
 | Count() |메트릭 기록에 있는 총 샘플 수를 반환합니다. |
 | HistoryBeginTime() |메트릭에 대해 사용 가능한 가장 오래된 데이터 샘플의 타임스탬프를 반환합니다. |
-| GetSamplePercent() |지정된 시간 간격에 사용할 수 있는 샘플의 백분율을 반환합니다. 예: `doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`. 반환된 샘플의 백분율이 지정한 `samplePercent`보다 작은 경우 `GetSample` 메서드가 실패하기 때문에 `GetSamplePercent` 메서드를 사용하여 먼저 확인할 수 있습니다. 그런 다음 비효율적인 샘플이 존재하는 경우 자동 크기 조정 평가를 중단하지 않고 대체 작업을 수행할 수 있습니다. |
+| GetSamplePercent() |지정된 시간 간격에 사용할 수 있는 샘플의 백분율을 반환합니다. 예: `doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )` 반환된 샘플의 백분율이 지정한 `samplePercent`보다 작은 경우 `GetSample` 메서드가 실패하기 때문에 `GetSamplePercent` 메서드를 사용하여 먼저 확인할 수 있습니다. 그런 다음 비효율적인 샘플이 존재하는 경우 자동 크기 조정 평가를 중단하지 않고 대체 작업을 수행할 수 있습니다. |
 
 ### <a name="samples"></a>샘플
 

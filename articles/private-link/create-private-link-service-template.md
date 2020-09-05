@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/29/2020
 ms.author: allensu
-ms.openlocfilehash: 2a3c7245a4e6c69e87791ca3364ad588b82572c6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: dce80d70af7cd711cf852a60b98ad65b6d21117f
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529610"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705251"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-an-arm-template"></a>빠른 시작: ARM 템플릿을 사용하여 프라이빗 링크 서비스 만들기
 
@@ -37,7 +37,7 @@ ms.locfileid: "86529610"
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-privatelink-service/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-privatelink-service/azuredeploy.json" range="001-432" highlight="263-289":::
+:::code language="json" source="~/quickstart-templates/101-privatelink-service/azuredeploy.json":::
 
 템플릿에는 여러 개의 Azure 리소스가 정의되어 있습니다.
 

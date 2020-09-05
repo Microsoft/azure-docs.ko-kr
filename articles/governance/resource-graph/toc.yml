@@ -82,30 +82,34 @@
   href: ./troubleshoot/general.md
 - name: 참조
   items:
-    - name: Azure CLI
-      href: /cli/azure/ext/resource-graph/graph
-    - name: Azure PowerShell
-      href: /powershell/module/az.resourcegraph/
-    - name: Azure SDK for .NET
-      href: /dotnet/api/Microsoft.Azure.Management.ResourceGraph
-    - name: Azure SDK for .NET(NuGet)
-      href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceGraph/'
-    - name: Azure SDK for Go
-      href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/resourcegraph/mgmt/2019-04-01/resourcegraph'
-    - name: Java용 Azure SDK
-      href: /java/api/overview/azure/resourcegraph/management?view=azure-java-stable
-    - name: Java용 Azure SDK(Maven)
-      href: 'https://search.maven.org/artifact/com.microsoft.azure.resourcegraph.v2019_04_01/azure-mgmt-resourcegraph/1.0.0-beta/jar'
-    - name: JavaScript용 Azure SDK
-      href: /javascript/api/@azure/arm-resourcegraph
-    - name: Python용 Azure SDK
-      href: /python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph
-    - name: Ruby용 Azure SDK(Gem)
-      href: 'https://rubygems.org/gems/azure_mgmt_resourcegraph'
-    - name: REST (영문)
-      href: /rest/api/azure-resourcegraph/
-    - name: OpenAPI
-      href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/stable/2019-04-01'
+    - name: 바로 가기 키
+      href: ./reference/keyboard-shortcuts.md
+    - name: CLI 및 SDK
+      items:
+        - name: Azure CLI
+          href: /cli/azure/ext/resource-graph/graph
+        - name: Azure PowerShell
+          href: /powershell/module/az.resourcegraph/
+        - name: Azure SDK for .NET
+          href: /dotnet/api/Microsoft.Azure.Management.ResourceGraph
+        - name: Azure SDK for .NET(NuGet)
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceGraph/'
+        - name: Azure SDK for Go
+          href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/resourcegraph/mgmt/2019-04-01/resourcegraph'
+        - name: Java용 Azure SDK
+          href: /java/api/overview/azure/resourcegraph/management
+        - name: Java용 Azure SDK(Maven)
+          href: 'https://search.maven.org/artifact/com.microsoft.azure.resourcegraph.v2019_04_01/azure-mgmt-resourcegraph/1.0.0-beta/jar'
+        - name: JavaScript용 Azure SDK
+          href: /javascript/api/@azure/arm-resourcegraph
+        - name: Python용 Azure SDK
+          href: /python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph
+        - name: Ruby용 Azure SDK(Gem)
+          href: 'https://rubygems.org/gems/azure_mgmt_resourcegraph'
+        - name: REST (영문)
+          href: /rest/api/azure-resourcegraph/
+        - name: OpenAPI
+          href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/resourcegraph/resource-manager/Microsoft.ResourceGraph/stable/2019-04-01'
     - name: 리소스 관리자 템플릿
       href: /azure/templates/microsoft.resourcegraph/allversions
     - name: Resource Graph 테이블 및 리소스 종류

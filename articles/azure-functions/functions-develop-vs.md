@@ -1,15 +1,15 @@
 ---
 title: Visual Studio를 사용하여 Azure Functions 개발
 description: Visual Studio 2019 용 Azure Functions 도구를 사용 하 여 Azure Functions를 개발 하 고 테스트 하는 방법을 알아봅니다.
-ms.custom: vs-azure
+ms.custom: vs-azure, devx-track-csharp
 ms.topic: conceptual
 ms.date: 06/10/2020
-ms.openlocfilehash: 0df65c4cdbf40b49bc265f4accafde67f41dafb7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0ee5d270db2149be0cfbf6bf06f87a5d0133c6ef
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84731036"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612812"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Visual Studio를 사용하여 Azure Functions 개발  
 
@@ -27,7 +27,7 @@ Visual Studio는 함수를 개발할 때 다음과 같은 이점을 제공 합�
 
 별도로 언급 하지 않는 한, 표시 되는 프로시저와 예제는 Visual Studio 2019에 대 한 것입니다. 
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>사전 요구 사항
 
 - Azure Functions 도구. Azure 함수 도구를 추가 하려면 Visual Studio 설치에 **azure 개발** 워크 로드를 포함 합니다. Azure Functions 도구는 Visual Studio 2017부터 Azure 개발 워크 로드에서 사용할 수 있습니다.
 
@@ -88,7 +88,7 @@ Visual Studio는 프로젝트를 게시할 때 local.settings.js의 설정을 �
 
 ## <a name="configure-the-project-for-local-development"></a>로컬 개발에 대한 프로젝트 구성
 
-함수 런타임에서 Azure Storage 계정을 내부적으로 사용합니다. HTTP 및 웹 후크가 아닌 모든 트리거 형식에 대해 `Values.AzureWebJobsStorage` 키를 유효한 Azure Storage 계정 연결 문자열로 설정 합니다. 함수 앱은 프로젝트에 필요한 연결 설정에 [Azure storage 에뮬레이터](../storage/common/storage-use-emulator.md) 를 사용할 수도 있습니다 `AzureWebJobsStorage` . 에뮬레이터를 사용 하려면 값을 `AzureWebJobsStorage` 로 설정 `UseDevelopmentStorage=true` 합니다. 배포 하기 전에이 설정을 실제 저장소 계정 연결 문자열로 변경 합니다.
+함수 런타임에서 Azure Storage 계정을 내부적으로 사용합니다. HTTP 및 웹 후크가 아닌 모든 트리거 형식에 대해 `Values.AzureWebJobsStorage` 키를 유효한 Azure Storage 계정 연결 문자열로 설정 합니다. 함수 앱은 프로젝트에 필요한 연결 설정에 [Azure Storage 에뮬레이터](../storage/common/storage-use-emulator.md) 를 사용할 수도 있습니다 `AzureWebJobsStorage` . 에뮬레이터를 사용 하려면 값을 `AzureWebJobsStorage` 로 설정 `UseDevelopmentStorage=true` 합니다. 배포 하기 전에이 설정을 실제 저장소 계정 연결 문자열로 변경 합니다.
 
 스토리지 계정 연결 문자열을 설정하려면 다음을 수행합니다.
 

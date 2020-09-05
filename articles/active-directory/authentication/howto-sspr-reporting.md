@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e3425407fdb131fb1499b2cd085fbe6d427804a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 9c8557457e3a1dc7d0ed1e50da3070360b1fd76f
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87035301"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717730"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Azure AD 암호 관리에 대한 보고 옵션
 
@@ -53,7 +53,7 @@ Azure Portal 환경에서 암호 재설정 및 암호 재설정 등록 활동을
 
 ### <a name="combined-registration"></a>결합 등록
 
-[결합 된 등록](https://docs.microsoft.com/azure/active-directory/authentication/concept-registration-mfa-sspr-combined)을 사용 하도록 설정한 경우 감사 로그의 사용자 활동에 대 한 정보는 **보안**  >  **인증 방법**에서 찾을 수 있습니다.
+[결합 된 등록](./concept-registration-mfa-sspr-combined.md)을 사용 하도록 설정한 경우 감사 로그의 사용자 활동에 대 한 정보는 **보안**  >  **인증 방법**에서 찾을 수 있습니다.
 
 ## <a name="description-of-the-report-columns-in-the-azure-portal"></a>Azure Portal의 보고서 열 설명
 
@@ -179,7 +179,7 @@ Azure Portal 환경에서 암호 재설정 및 암호 재설정 등록 활동을
 * [SSPR에서 사용하는 데이터는 무엇이며, 사용자에 대해 어떤 데이터를 채워야 합니까?](howto-sspr-authenticationdata.md)
 * [사용자가 사용할 수 있는 인증 방법은 무엇입니까?](concept-sspr-howitworks.md#authentication-methods)
 * [SSPR에서 사용하는 정책 옵션은 무엇입니까?](concept-sspr-policy.md)
-* [비밀번호 쓰기 저장은 무엇이며, 왜 관심을 가져야 합니까?](howto-sspr-writeback.md)
+* [비밀번호 쓰기 저장은 무엇이며, 왜 관심을 가져야 합니까?](./tutorial-enable-sspr-writeback.md)
 * [모든 SSPR 옵션과 그 의미는 무엇입니까?](concept-sspr-howitworks.md)
 * [무엇인가 손상된 문제가 있습니다. SSPR 문제는 어떻게 해결합니까?](active-directory-passwords-troubleshoot.md)
 * [다른 곳에서 다루지 않았던 질문이 있습니다.](active-directory-passwords-faq.md)

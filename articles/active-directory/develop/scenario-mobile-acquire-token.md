@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 79b9be504639b35c7c15d427bd7766ed2dd15535
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: dfccc274ef920c59d39c160055ab27a6900c839c
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121088"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141281"
 ---
 # <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>웹 Api를 호출 하는 모바일 앱에 대 한 토큰 가져오기
 
@@ -209,7 +209,7 @@ catch(MsalUiRequiredException)
 
 `AcquireTokenInteractive`에는 필수 매개 변수가 `scopes` 하나만 있습니다. `scopes`매개 변수는 토큰을 필요로 하는 범위를 정의 하는 문자열을 열거 합니다. Microsoft Graph에 대 한 토큰의 경우 각 Microsoft Graph API에 대 한 API 참조에서 필요한 범위를 찾을 수 있습니다. 참조에서 "사용 권한" 섹션으로 이동 합니다.
 
-예를 들어 [사용자의 연락처를 나열](/graph/api/user-list-contacts)하려면 "User. read", "Contact. read" 범위를 사용 합니다. 자세한 내용은 [Microsoft Graph 사용 권한 참조](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)를 참조하세요.
+예를 들어 [사용자의 연락처를 나열](/graph/api/user-list-contacts)하려면 "User. read", "Contact. read" 범위를 사용 합니다. 자세한 내용은 [Microsoft Graph 사용 권한 참조](/graph/permissions-reference)를 참조하세요.
 
 Android에서를 사용 하 여 앱을 만들 때 부모 활동을 지정할 수 있습니다 `PublicClientApplicationBuilder` . 이때 부모 활동을 지정 하지 않으면 나중에 `.WithParentActivityOrWindow` 다음 섹션에서와 같이을 사용 하 여 지정할 수 있습니다. 부모 작업을 지정 하는 경우 토큰은 상호 작용 후 해당 부모 작업으로 돌아갑니다. 지정 하지 않으면 `.ExecuteAsync()` 호출에서 예외가 throw 됩니다.
 

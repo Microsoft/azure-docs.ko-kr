@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: a5d002532adb043fa5196231964d5b6e2c81417c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a04f4879bbd06c2fa6c1af921d7adafdef9417d6
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84706378"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871448"
 ---
 # <a name="connect-your-application-to-azure-sql-managed-instance"></a>애플리케이션을 Azure SQL Managed Instance에 연결
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -42,7 +42,7 @@ Sql Managed Instance에서 다른 가상 네트워크에 있는 경우 응용 �
 
 가상 네트워크를 연결 하는 두 가지 옵션이 있습니다.
 
-- [Azure VPN 피어 링](../../virtual-network/virtual-network-peering-overview.md)
+- [Azure VNet 피어 링](../../virtual-network/virtual-network-peering-overview.md)
 - VNet 간 VPN 게이트웨이([Azure Portal](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md), [PowerShell](../../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md), [Azure CLI](../../vpn-gateway/vpn-gateway-howto-vnet-vnet-cli.md))
 
 피어 링은 Microsoft 백본 네트워크를 사용 하기 때문에 더 좋습니다. 따라서 연결 관점에서 피어 링 가상 네트워크와 동일한 가상 네트워크에 있는 가상 컴퓨터 간의 대기 시간 차이가 크게 차이가 없습니다. 가상 네트워크 피어 링은 동일한 지역의 네트워크로 제한 됩니다.  
@@ -63,7 +63,7 @@ Sql Managed Instance에서 다른 가상 네트워크에 있는 경우 응용 �
 
 ## <a name="connect-the-developer-box"></a>개발자 상자 연결
 
-또한 개발자 상자를 SQL Managed Instance에 연결할 수 있습니다. SQL Managed Instance은 개인 IP 주소를 통해서만 액세스할 수 있으므로 개발자 상자에서 액세스 하려면 먼저 개발자 상자와 SQL Managed Instance 가상 네트워크 간에 연결을 설정 해야 합니다. 이렇게 하려면 네이티브 Azure 인증서 인증을 사용 하 여 가상 네트워크에 지점 및 사이트 간 연결을 구성 합니다. 자세한 내용은 [온-프레미스 컴퓨터에서 AZURE SQL Managed Instance 연결 하도록 지점 및 사이트 간 연결 구성](point-to-site-p2s-configure.md)을 참조 하세요.
+또한 개발자 상자를 SQL Managed Instance에 연결할 수 있습니다. SQL Managed Instance은 개인 IP 주소를 통해서만 액세스할 수 있으므로 개발자 상자에서 액세스 하려면 먼저 개발자 상자와 SQL Managed Instance 가상 네트워크 간에 연결을 설정 해야 합니다. 이렇게 하려면 네이티브 Azure 인증서 인증을 사용 하 여 가상 네트워크에 지점 및 사이트 간 연결을 구성 합니다. 자세한 내용은  [온-프레미스 컴퓨터에서 AZURE SQL Managed Instance 연결 하도록 지점 및 사이트 간 연결 구성](point-to-site-p2s-configure.md)을 참조 하세요.
 
 ## <a name="connect-with-vnet-peering"></a>VNet 피어 링을 사용 하 여 연결
 

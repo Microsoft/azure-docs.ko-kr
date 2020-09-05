@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 787f30302d163dc0097cde1be31e745d7f29bb64
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 1e537c6f61a7c461b2a9edb4097fba95f5c66a6f
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129783"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88120527"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>빠른 시작: JavaScript SPA에서 사용자 로그인 및 액세스 토큰 가져오기
 
@@ -111,7 +111,7 @@ ms.locfileid: "87129783"
 >
 > 위치:
 > - *\<Enter_the_Application_Id_Here>* 는 등록한 애플리케이션의 **애플리케이션(클라이언트) ID**입니다.
-> - *\<Enter_the_Cloud_Instance_Id_Here>* 는 Azure 클라우드의 인스턴스입니다. 주 또는 글로벌 Azure 클라우드의 경우 *https://login.microsoftonline.com* 을 입력하면 됩니다. **국가별** 클라우드(예제: 중국)의 경우 [국가별 클라우드](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud)를 참조하세요.
+> - *\<Enter_the_Cloud_Instance_Id_Here>* 는 Azure 클라우드의 인스턴스입니다. 주 또는 글로벌 Azure 클라우드의 경우 *https://login.microsoftonline.com* 을 입력하면 됩니다. **국가별** 클라우드(예제: 중국)의 경우 [국가별 클라우드](./authentication-national-cloud.md)를 참조하세요.
 > - *\<Enter_the_Tenant_info_here>* 는 다음 옵션 중 하나로 설정됩니다.
 >    - 애플리케이션이 *이 조직 디렉터리의 계정*을 지원하는 경우 이 값을 **테넌트 ID** 또는 **테넌트 이름**(예: *contoso.microsoft.com*)으로 바꿉니다.
 >    - 애플리케이션이 *모든 조직 디렉터리의 계정*을 지원하는 경우 이 값을 **organizations**으로 바꿉니다.
@@ -144,7 +144,7 @@ ms.locfileid: "87129783"
 > [!div renderon="docs"]
 >
 > 위치:
-> - *\<Enter_the_Graph_Endpoint_Here>* 는 API 호출이 수행될 엔드포인트입니다. 주 또는 글로벌 Microsoft Graph API 서비스의 경우 `https://graph.microsoft.com`을 입력하기만 하면 됩니다. 자세한 내용은 [국가별 클라우드 배포](https://docs.microsoft.com/graph/deployments)를 참조하세요.
+> - *\<Enter_the_Graph_Endpoint_Here>* 는 API 호출이 수행될 엔드포인트입니다. 주 또는 글로벌 Microsoft Graph API 서비스의 경우 `https://graph.microsoft.com`을 입력하기만 하면 됩니다. 자세한 내용은 [국가별 클라우드 배포](/graph/deployments)를 참조하세요.
 >
 > #### <a name="step-4-run-the-project"></a>4단계: 프로젝트 실행
 
@@ -300,7 +300,7 @@ myMSALObj.acquireTokenPopup(requestObj)
 이 빠른 시작에 대한 애플리케이션 빌드에 대한 더 자세한 단계별 가이드는 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
-> [MS Graph에 로그인하고 호출하는 자습서](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-javascriptspa)
+> [MS Graph에 로그인하고 호출하는 자습서](./tutorial-v2-javascript-spa.md)
 
 설명서, FAQ, 문제 등에 대한 MSAL 리포지토리를 찾아보려면 다음을 참조하세요.
 

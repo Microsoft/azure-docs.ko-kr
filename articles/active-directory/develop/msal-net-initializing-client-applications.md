@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 04/12/2019
 ms.author: marsma
 ms.reviewer: saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 57ce6ab31421cd4016f7e204eeabce82f2f7e6a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp, aaddev
+ms.openlocfilehash: 30f9f1998ee133c2546c9f4de7a99c51feb8740f
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77083999"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88166198"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>MSAL.NET를 사용 하 여 클라이언트 응용 프로그램 초기화
 이 문서에서는 .NET 용 Microsoft Authentication Library (MSAL.NET)를 사용 하 여 공용 클라이언트 및 기밀 클라이언트 응용 프로그램을 초기화 하는 방법을 설명 합니다.  클라이언트 응용 프로그램 유형 및 응용 프로그램 구성 옵션에 대 한 자세한 내용은 [개요](msal-client-applications.md)를 참조 하세요.
@@ -96,7 +96,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 공용 클라이언트나 기밀 클라이언트 응용 프로그램 작성기에서 설정할 수 있는 한정자는 다음과 같습니다.
 
-|한정자 | 설명|
+|한정자 | Description|
 |--------- | --------- |
 |`.WithAuthority()`7 재정의 | Azure 클라우드, 대상 그룹, 테 넌 트 (테 넌 트 ID 또는 도메인 이름)를 선택 하거나 직접 인증 기관 URI를 제공 하 여 응용 프로그램 기본 기관을 Azure AD 기관에 설정 합니다.|
 |`.WithAdfsAuthority(string)` | 응용 프로그램 기본 기관을 ADFS 기관으로 설정 합니다.|
@@ -115,7 +115,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Xamarin.ios에서 공용 클라이언트 응용 프로그램 작성기에 대해 설정할 수 있는 한정자는 다음과 같습니다.
 
-|한정자 | 설명|
+|한정자 | Description|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Xamarin.ios만**해당: io 키 체인 보안 그룹 (캐시 지 속성)을 설정 합니다.|
 
@@ -123,7 +123,7 @@ Xamarin.ios에서 공용 클라이언트 응용 프로그램 작성기에 대해
 
 기밀 클라이언트 응용 프로그램 빌더에 대해 설정할 수 있는 한정자는 다음과 같습니다.
 
-|한정자 | 설명|
+|한정자 | Description|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Azure AD를 사용 하 여 응용 프로그램을 식별 하는 인증서를 설정 합니다.|
 |`.WithClientSecret(string clientSecret)` | Azure AD를 사용 하 여 응용 프로그램을 식별 하는 클라이언트 암호 (앱 암호)를 설정 합니다.|

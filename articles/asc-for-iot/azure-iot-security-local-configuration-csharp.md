@@ -10,17 +10,18 @@ editor: ''
 ms.assetid: 2cf6a49b-5d35-491f-abc3-63ec24eb4bc2
 ms.subservice: asc-for-iot
 ms.devlang: na
+ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/26/2019
 ms.author: mlottner
-ms.openlocfilehash: fc869a8ab905275c8082c4fd375f8f6d6d48d97e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eab7764ede300ca355ec6193312279c5726f8a01
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85205461"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212397"
 ---
 # <a name="understanding-the-local-configuration-file-c-agent"></a>로컬 구성 파일 이해 (c # 에이전트)
 
@@ -48,7 +49,7 @@ Windows의 경우:
 
 ### <a name="generalconfig-configurations"></a>General.config 구성
 
-| 구성 이름 | 가능한 값 | 설명 |
+| 구성 이름 | 가능한 값 | 세부 정보 |
 |:-----------|:---------------|:--------|
 | 인 | GUID | 에이전트 고유 식별자 |
 | readRemoteConfigurationTimeout | TimeSpan | IoT Hub에서 원격 구성을 가져오는 기간입니다. 에이전트가 지정 된 시간 내에 구성을 인출할 수 없는 경우 작업 시간이 초과 됩니다.|
@@ -83,7 +84,7 @@ Windows의 경우:
 
 ### <a name="authenticationconfig"></a>Authentication.config
 
-| 구성 이름 | 가능한 값 | 설명 |
+| 구성 이름 | 가능한 값 | 세부 정보 |
 |:-----------|:---------------|:--------|
 | moduleName | string | 보안 모듈 id의 이름입니다. 이 이름은 장치의 모듈 id 이름과 일치 해야 합니다. |
 | deviceId | string | Azure IoT Hub에 등록 된 장치의 ID입니다. || schedulerInterval | TimeSpan 문자열 | 내부 스케줄러 간격입니다. |
@@ -115,7 +116,7 @@ Windows의 경우:
 
 ### <a name="securityiotinterfaceconfig"></a>SecurityIotInterface.config
 
-| 구성 이름 | 가능한 값 | 설명 |
+| 구성 이름 | 가능한 값 | 세부 정보 |
 |:-----------|:---------------|:--------|
 | transportType | "Ampq" "Mqtt" | IoT Hub 전송 유형입니다. |
 |

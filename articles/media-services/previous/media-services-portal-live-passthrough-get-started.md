@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 51d3d859bbd176a6e1fac92b75c6120301a5066f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 15b876104dfa1a35077a34aa178d650e2d68855e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084520"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266734"
 ---
 # <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Azure Portal를 사용 하 여 온-프레미스 인코더에서 라이브 스트리밍 수행
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 > [!div class="op_single_selector"]
 > * [포털](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
@@ -34,7 +37,7 @@ ms.locfileid: "87084520"
 
 이 자습서에서는 Azure 포털을 사용하여 통과 배달을 위해 구성된 **채널** 을 만드는 단계를 안내합니다. 
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 자습서를 완료하는 데 필요한 조건은 다음과 같습니다.
 
 * Azure 계정. 자세한 내용은 [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요. 
@@ -111,7 +114,7 @@ Azure 포털에서 생성된 알림 및 오류를 보려면 알림 아이콘을 
 1. [Azure Portal](https://portal.azure.com/)에서 Azure Media Services 계정을 선택합니다.
 2. **설정** 창에서 **라이브 스트리밍**을 클릭합니다. 
    
-    ![시작](./media/media-services-portal-passthrough-get-started/media-services-getting-started.png)
+    ![시작하기](./media/media-services-portal-passthrough-get-started/media-services-getting-started.png)
    
     **라이브 스트리밍** 창이 나타납니다.
 3. **빠른 생성** 을 클릭하여 RTMP 수집 프로토콜로 통과 채널을 만듭니다.

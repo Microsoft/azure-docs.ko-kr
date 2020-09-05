@@ -4,16 +4,16 @@ description: Visual Studio에서 Azure WebJobs를 개발 하 고 예약 된 작�
 author: ggailey777
 ms.assetid: a3a9d320-1201-4ac8-9398-b4c9535ba755
 ms.topic: conceptual
-ms.custom: vs-azure
+ms.custom: devx-track-csharp, vs-azure
 ms.date: 07/30/2020
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: f6ebb20eb66e2449f6627b3c6ce45fd88b8640aa
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: de10903be86b52b3415b57a53be81e7fd1661f63
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009790"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226032"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio"></a>Visual Studio를 사용 하 여 WebJobs 개발 및 배포
 
@@ -55,9 +55,9 @@ Visual Studio는 WebJobs 사용 프로젝트에 다음 항목을 추가 합니�
 
 ### <a name="prerequisites"></a>필수 구성 요소
 
-[Azure 개발 워크 로드](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads)를 사용 하 여 visual studio 2017 또는 visual studio 2019를 설치 합니다.
+[Azure 개발 워크 로드](/visualstudio/install/install-visual-studio#step-4---choose-workloads)를 사용 하 여 visual studio 2017 또는 visual studio 2019를 설치 합니다.
 
-### <a name="enable-webjobs-deployment-for-an-existing-console-app-project"></a><a id="convert"></a>기존 콘솔 응용 프로그램 프로젝트에 WebJobs 배포 사용
+### <a name="enable-webjobs-deployment-for-an-existing-console-app-project"></a><a id="convert"></a> 기존 콘솔 응용 프로그램 프로젝트에 WebJobs 배포 사용
 
 다음 두 가지 옵션을 사용할 수 있습니다.
 
@@ -120,7 +120,7 @@ Visual Studio는 WebJobs 사용 프로젝트에 다음 항목을 추가 합니�
 2. [Azure WebJob 추가](#configure) 대화 상자를 완료 하 고 **확인**을 선택 합니다.
 
 
-### <a name="webjob-publish-settingsjson-file"></a><a id="publishsettings"></a>파일에webjob-publish-settings.js
+### <a name="webjob-publish-settingsjson-file"></a><a id="publishsettings"></a> 파일에webjob-publish-settings.js
 WebJobs 배포용 콘솔 앱을 구성 하는 경우 Visual Studio는 [WebJobs](https://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) NuGet 패키지를 설치 하 고 WebJobs 프로젝트의 프로젝트 *속성* 폴더에 있는 파일 *에 대 한webjob-publish-settings.js* 에 일정 정보를 저장 합니다. 다음은 이 파일의 예입니다.
 
 ```json
@@ -137,7 +137,7 @@ WebJobs 배포용 콘솔 앱을 구성 하는 경우 Visual Studio는 [WebJobs](
 
 이 파일을 직접 편집할 수도 있고 Visual Studio에 제공되는 IntelliSense를 사용할 수도 있습니다. 파일 스키마는에 저장 되며 [https://schemastore.org](http://schemastore.org/schemas/json/webjob-publish-settings.json) 여기에서 볼 수 있습니다.  
 
-### <a name="webjobs-listjson-file"></a><a id="webjobslist"></a>파일에webjobs-list.js
+### <a name="webjobs-listjson-file"></a><a id="webjobslist"></a> 파일에webjobs-list.js
 WebJob 지원 프로젝트를 웹 프로젝트에 연결하면 Visual Studio는 WebJob 프로젝트의 이름을 웹 프로젝트의 *Properties* 폴더에 있는 *webjobs-list.json* 파일에 저장합니다. 이 목록에는 다음 예와 같은 여러 WebJob 프로젝트가 포함될 수 있습니다.
 
 ```json
@@ -176,7 +176,7 @@ WebJob 배포 정보:
 
 * 명령줄 배포에 대한 자세한 내용은 [Azure WebJob의 명령줄 또는 지속적인 전송 사용](https://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)을 참조하세요.
 
-* WebJob을 배포 하 고 WebJob의 유형을 변경 하 고 다시 배포 하는 경우 파일 *에서webjobs-publish-settings.js* 을 삭제 합니다. 이렇게 하면 Visual Studio에서 게시 옵션을 다시 표시 하므로 WebJob의 유형을 변경할 수 있습니다.
+* WebJob을 배포 하 고 WebJob의 유형을 변경 하 고 다시 배포 하는 경우 파일 * 에서webjobs-publish-settings.js* 을 삭제 합니다. 이렇게 하면 Visual Studio에서 게시 옵션을 다시 표시 하므로 WebJob의 유형을 변경할 수 있습니다.
 
 * WebJob을 배포하고 나중에 실행 모드를 연속에서 비연속으로 또는 그 반대로 변경하면 Visual Studio는 사용자가 WebJob을 다시 배포할 때 Azure에서 새 WebJob을 만듭니다. 다른 일정 설정을 변경 하는 경우 실행 모드를 동일 하거나 예약 된 요청 사이에서 전환 하는 경우 Visual Studio는 새 작업을 만드는 대신 기존 작업을 업데이트 합니다.
 
@@ -184,9 +184,9 @@ WebJob 배포 정보:
 
 WebJob의 형식은 *트리거됨* 또는 *연속*일 수 있습니다.
 
-- 트리거됨 (기본값): 트리거된 WebJob은 바인딩 이벤트 또는 [일정](#scheduling-a-triggered-webjob)에 따라 시작 하거나 요청 시 수동으로 트리거할 때 시작 됩니다. 웹 앱이 실행 되는 모든 인스턴스에서 실행 되지만 필요에 따라 WebJob을 단일 인스턴스로 제한할 수 있습니다.
+- 트리거됨 (기본값): 트리거된 WebJob은 바인딩 이벤트 또는 [일정](#scheduling-a-triggered-webjob)에 따라 시작 하거나 요청 시 수동으로 트리거할 때 시작 됩니다. 웹 앱이 실행 되는 단일 인스턴스에서 실행 됩니다.
 
-- 연속: WebJob을 만들 때 [연속](#continuous-execution) webjob이 즉시 시작 됩니다. 이 유형의 WebJob은 제한 없는 작업 또는 장기 실행 작업에 가장 적합 합니다. 작업을 종료하는 경우 다시 시작할 수 있습니다.  
+- 연속: WebJob을 만들 때 [연속](#continuous-execution) webjob이 즉시 시작 됩니다. 기본적으로 모든 웹 앱 크기 조정 된 인스턴스에서 실행 되지만 *설정. 작업*을 통해 단일 인스턴스로 실행 되도록 구성할 수 있습니다.
 
 [!INCLUDE [webjobs-alwayson-note](../../includes/webjobs-always-on-note.md)]
 

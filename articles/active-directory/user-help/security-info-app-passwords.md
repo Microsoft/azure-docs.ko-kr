@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 02/13/2018
 ms.author: curtand
-ms.openlocfilehash: e5ad882f172007e2563f832ec8eb61145cd0b36a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 9de054162a59b10fbd02bed9b3e84634ee12125b
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744502"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799199"
 ---
 # <a name="create-app-passwords-from-the-security-info-preview-page"></a>보안 정보(미리 보기) 페이지에서 앱 암호 만들기
 
@@ -84,4 +84,4 @@ Outlook 2010과 같은 특정 앱은 2단계 인증을 지원하지 않습니다
 
 ## <a name="for-more-information"></a>참조 항목
 
-- **보안 정보** 페이지 및 설정 방법에 대한 자세한 내용은 [보안 정보 개요](user-help-security-info-overview.md)를 참조하세요.
+- **보안 정보** 페이지 및 설정 방법에 대한 자세한 내용은 [보안 정보 개요](./security-info-setup-signin.md)를 참조하세요.

@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Azure Media Services에 대 한 용어 및 개념에 대해 알아봅니다.
 services: media-servicesgit
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/18/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 5f0436394d6d45e8a8e112cc59bc7be50356ce10
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 895e29608a9f0d80b8e03c3bc95c3c74005f7c4c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092102"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269712"
 ---
 # <a name="media-services-terminology-and-concepts"></a>Media Services 용어 및 개념
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 항목에서는 Azure Media Services 용어 및 개념에 대 한 간략 한 개요를 제공 합니다. 또한이 문서에서는 Media Services v3 개념 및 기능에 대해 자세히 설명 하는 문서에 대 한 링크도 제공 합니다.
 
@@ -34,7 +36,7 @@ ms.locfileid: "87092102"
 
 ## <a name="media-services-v3-terminology"></a>Media Services v3 용어
 
-|용어|Description|
+|용어|설명|
 |---|---|
 |라이브 이벤트|**라이브 이벤트** 는 비디오, 오디오 및 실시간 메타 데이터의 라이브 스트림 수집, 코드 변환 (선택 사항) 및 패키징을 위한 파이프라인을 나타냅니다.<br/><br/>Media Services v2 Api에서 마이그레이션하는 고객의 경우 **라이브 이벤트** 는 v 2의 **채널** 엔터티를 대체 합니다. 자세한 내용은 [v2에서 v3로 마이그레이션](migrate-from-v2-to-v3.md)을 참조 하세요.|
 |스트리밍 끝점/패키징/원본|**스트리밍 끝점** 은 라이브 및 주문형 콘텐츠를 클라이언트 플레이어 응용 프로그램에 직접 배달할 수 있는 동적 (just-in-time) 패키징 및 원본 서비스를 나타냅니다. 일반 스트리밍 미디어 프로토콜 (HLS 또는 대시) 중 하나를 사용 합니다. 또한 **스트리밍 끝점** 은 업계 최고의 drms (디지털 권한 관리 시스템)에 대 한 동적 (just-in-time) 암호화를 제공 합니다.<br/><br/>미디어 스트리밍 업계에서이 서비스를 일반적으로 패키지 작성 또는 **원본**이라고 **합니다.**  이 기능에 대 한 업계의 다른 일반적인 용어에는 JITP (just-in-time) 또는 JITE (just-in-time 암호화)가 포함 됩니다.

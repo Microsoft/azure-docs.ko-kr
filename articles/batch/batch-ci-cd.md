@@ -5,12 +5,12 @@ author: chrisreddington
 ms.author: chredd
 ms.date: 03/28/2019
 ms.topic: how-to
-ms.openlocfilehash: 3569e5cc25491fd408f7aec57a51d11f56dbd1fe
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 9612c61945a41b30fb5d4768e1eb0909a07911d3
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145260"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229398"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Azure Pipelines를 사용하여 HPC 솔루션 빌드 및 배포
 
@@ -28,8 +28,8 @@ Azure Pipelines는 소프트웨어의 빌드, 배포, 테스트 및 모니터링
 
 이 문서의 단계를 수행하려면 Azure DevOps 조직과 팀 프로젝트가 필요합니다.
 
-* [Azure DevOps 조직 만들기](/azure/devops/organizations/accounts/create-organization?view=azure-devops)
-* [Azure DevOps에서 프로젝트 만들기](/azure/devops/organizations/projects/create-project?view=azure-devops)
+* [Azure DevOps 조직 만들기](/azure/devops/organizations/accounts/create-organization)
+* [Azure DevOps에서 프로젝트 만들기](/azure/devops/organizations/projects/create-project)
 
 ### <a name="source-control-for-your-environment"></a>환경의 소스 제어
 
@@ -48,7 +48,7 @@ Azure Pipelines는 소프트웨어의 빌드, 배포, 테스트 및 모니터링
 
 이 섹션에서는 사용자가 버전 제어 및 Resource Manager 템플릿 설계에 대해 잘 알고 있다고 가정합니다. 이러한 개념을 잘 모른다면 다음 페이지에서 관련 정보를 살펴보세요.
 
-* [소스 제어란?](/azure/devops/user-guide/source-control?view=azure-devops)
+* [소스 제어란?](/azure/devops/user-guide/source-control)
 * [Azure Resource Manager 템플릿의 구조 및 구문 이해](../azure-resource-manager/templates/template-syntax.md)
 
 #### <a name="azure-resource-manager-templates"></a>Azure 리소스 관리자 템플릿
@@ -309,7 +309,7 @@ Azure Pipelines는 소프트웨어의 빌드, 배포, 테스트 및 모니터링
 
 ## <a name="continuous-integration"></a>연속 통합
 
-Azure DevOps Services의 [Azure Pipelines](/azure/devops/pipelines/get-started/?view=azure-devops)를 사용하면 애플리케이션의 빌드, 테스트 및 배포 파이프라인을 구현하는 데 도움이 됩니다.
+Azure DevOps Services의 [Azure Pipelines](/azure/devops/pipelines/get-started/)를 사용하면 애플리케이션의 빌드, 테스트 및 배포 파이프라인을 구현하는 데 도움이 됩니다.
 
 파이프라인의 이 단계에서는 일반적으로 코드를 검증하고 소프트웨어의 적절한 부분을 빌드하기 위해 테스트가 실행됩니다. 테스트의 개수와 유형, 그리고 실행해야 하는 추가 작업은 전체 빌드 및 릴리스 전략에 따라 달라집니다.
 
@@ -323,9 +323,9 @@ Azure DevOps Services의 [Azure Pipelines](/azure/devops/pipelines/get-started/?
 
 1. 빌드 파이프라인을 만드는 두 가지 옵션이 있습니다.
 
-    a. [비주얼 디자이너를 사용합니다](/azure/devops/pipelines/get-started-designer?view=azure-devops&tabs=new-nav). 이를 위해서는 **새 파이프라인** 페이지에서 “비주얼 디자이너 사용”을 클릭합니다.
+    a. [비주얼 디자이너를 사용합니다](/azure/devops/pipelines/get-started-designer). 이를 위해서는 **새 파이프라인** 페이지에서 “비주얼 디자이너 사용”을 클릭합니다.
 
-    b. [YAML 빌드를 사용합니다](/azure/devops/pipelines/get-started-yaml?view=azure-devops). 새 파이프라인 페이지에서 Azure Repos 또는 GitHub 옵션을 클릭하여 새 YAML 파이프라인을 만들 수 있습니다. 또는 아래 예제를 소스 제어에 저장하고 비주얼 디자이너를 클릭하여 기존 YAML 파일을 참조한 다음 YAML 템플릿을 사용할 수도 있습니다.
+    b. [YAML 빌드를 사용합니다](/azure/devops/pipelines/get-started-yaml). 새 파이프라인 페이지에서 Azure Repos 또는 GitHub 옵션을 클릭하여 새 YAML 파이프라인을 만들 수 있습니다. 또는 아래 예제를 소스 제어에 저장하고 비주얼 디자이너를 클릭하여 기존 YAML 파일을 참조한 다음 YAML 템플릿을 사용할 수도 있습니다.
 
     ```yml
     # To publish an application into Azure Batch, we need to
@@ -357,7 +357,7 @@ Azure DevOps Services의 [Azure Pipelines](/azure/devops/pipelines/get-started/?
     ![빌드의 라이브 출력 보기](media/batch-ci-cd/Build-1.jpg)
 
 > [!NOTE]
-> 클라이언트 애플리케이션을 사용하여 HPC Batch 애플리케이션을 실행하는 경우, 이 애플리케이션에 대한 별도의 빌드 정의를 만들어야 합니다. [Azure Pipelines](/azure/devops/pipelines/get-started/index?view=azure-devops) 설명서에서 방법 가이드를 확인할 수 있습니다.
+> 클라이언트 애플리케이션을 사용하여 HPC Batch 애플리케이션을 실행하는 경우, 이 애플리케이션에 대한 별도의 빌드 정의를 만들어야 합니다. [Azure Pipelines](/azure/devops/pipelines/get-started/index) 설명서에서 방법 가이드를 확인할 수 있습니다.
 
 ## <a name="continuous-deployment"></a>연속 배포
 

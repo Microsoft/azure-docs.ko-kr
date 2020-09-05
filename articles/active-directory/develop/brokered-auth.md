@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 09/14/2019
+ms.date: 08/25/2020
 ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman, hahamil, brianmel
-ms.openlocfilehash: a734589178438fd65d9a2d156fd91fc82807f578
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9042318d29b9a7fc8c2064bdf845d6f0d5a4f3e8
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76697900"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853864"
 ---
 # <a name="brokered-authentication-in-android"></a>Android에서 조정 된 인증
 
@@ -58,7 +58,7 @@ Broker 호스팅 앱은 언제 든 지 앱 스토어 (일반적으로 Google Pla
 
 Broker가 장치에 설치 되 면 모든 후속 대화형 토큰 요청 (에 대 한 호출 `acquireToken()` )은 MSAL에 의해 로컬이 아닌 broker에서 처리 됩니다. 이전에 MSAL에서 사용할 수 있는 모든 SSO 상태를 broker에서 사용할 수 없습니다. 따라서 사용자가 다시 인증 하거나 장치에 알려진 기존 계정 목록에서 계정을 선택 해야 합니다.
 
-Broker를 설치 하는 경우에는 사용자가 다시 로그인 할 필요가 없습니다. 사용자가를 확인 해야 하는 경우에만 `MsalUiRequiredException` 다음 요청이 broker로 이동 합니다. `MsalUiRequiredException`는 여러 가지 이유로 throw 되며 대화형으로 해결 해야 합니다. 몇 가지 일반적인 이유는 다음과 같습니다.
+Broker를 설치 하는 경우에는 사용자가 다시 로그인 할 필요가 없습니다. 사용자가를 확인 해야 하는 경우에만 `MsalUiRequiredException` 다음 요청이 broker로 이동 합니다. `MsalUiRequiredException` 는 여러 가지 이유로 throw 되며 대화형으로 해결 해야 합니다. 몇 가지 일반적인 이유는 다음과 같습니다.
 
 - 사용자가 계정과 연결 된 암호를 변경 했습니다.
 - 사용자 계정이 더 이상 조건부 액세스 정책을 충족 하지 않습니다.
@@ -76,7 +76,7 @@ Intune 회사 포털 설치 되어 있고 활성 broker로 작동 하 고 Micros
 
 Broker와 호환 되는 리디렉션 URI를 등록 해야 합니다. 브로커의 리디렉션 URI에는 앱의 패키지 이름 뿐만 아니라 앱의 서명에 대 한 b a s e 64로 인코딩된 표현이 포함 되어야 합니다.
 
-리디렉션 URI의 형식은 다음과 같습니다.`msauth://<yourpackagename>/<base64urlencodedsignature>`
+리디렉션 URI의 형식은 다음과 같습니다. `msauth://<yourpackagename>/<base64urlencodedsignature>`
 
 앱의 서명 키를 사용 하 여 Base64 url 인코딩된 서명을 생성 합니다. 디버그 서명 키를 사용 하는 몇 가지 예제 명령은 다음과 같습니다.
 
@@ -122,3 +122,12 @@ MSAL은 다음 두 가지 방법으로 broker와 통신 합니다.
 
 - 사용자에 게 Microsoft Authenticator 앱 및 Intune 회사 포털에 대 한 전원 최적화를 사용 하지 않도록 설정 합니다.
 - 사용자에 게 권한을 부여 하도록 요청 `"READ_CONTACTS"`
+
+## <a name="verifying-broker-integration"></a>Broker 통합 확인
+
+Broker 통합이 작동 한다는 것을 즉시 알 수는 없지만 다음 단계를 사용 하 여 확인할 수 있습니다.
+
+1. Android 장치에서 broker를 사용 하 여 요청을 완료 합니다.
+1. Android 장치의 설정에서 인증 한 계정에 해당 하는 새로 만든 계정을 찾습니다. 계정은 *회사 계정*형식 이어야 합니다.
+
+테스트를 반복 하려는 경우 설정에서 계정을 제거할 수 있습니다.

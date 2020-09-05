@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: seoapr2020
-ms.date: 04/17/2020
-ms.openlocfilehash: 3614fac027dd32ab5f5d70f5835432ac3b9b512d
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.date: 08/21/2020
+ms.custom: contperfq1
+ms.openlocfilehash: f6d8f804fa26383435d191af27289ffd2ecb3e0b
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207732"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755095"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Apache Hive와 Apache Beeline 클라이언트 사용
 
@@ -25,7 +25,7 @@ Beeline은 HDInsight 클러스터의 헤드 노드에 포함된 Hive 클라이�
 
 * HDInsight의 Hadoop 클러스터 [Linux에서 HDInsight 시작](./apache-hadoop-linux-tutorial-get-started.md)을 참조하세요.
 
-* 클러스터의 기본 저장소에 대 한 URI 체계를 확인 합니다. 예를 들어 `wasb://` Azure Storage, `abfs://` Azure Data Lake Storage Gen2, Azure Data Lake Storage Gen1의 경우입니다 `adl://` . Azure Storage에 대해 보안 전송이 사용 되는 경우 URI는 `wasbs://` 입니다. 자세한 내용은 [보안 전송](../../storage/common/storage-require-secure-transfer.md)을 참조 하세요.
+* 클러스터의 기본 저장소에 대 한 URI 체계를 확인 합니다. 예를 들어  `wasb://` Azure Storage, `abfs://` Azure Data Lake Storage Gen2, Azure Data Lake Storage Gen1의 경우입니다 `adl://` . Azure Storage에 대해 보안 전송이 사용 되는 경우 URI는 `wasbs://` 입니다. 자세한 내용은 [보안 전송](../../storage/common/storage-require-secure-transfer.md)을 참조 하세요.
 
 * 옵션 1: SSH 클라이언트 자세한 내용은 [SSH를 사용하여 HDInsight(Apache Hadoop)에 연결](../hdinsight-hadoop-linux-use-ssh-unix.md)을 참조하세요. 이 문서의 단계는 대부분 SSH 세션에서 클러스터로 Beeline를 사용 하 고 있다고 가정 합니다.
 

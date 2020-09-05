@@ -2,26 +2,21 @@
 title: '자습서: Sage Intacct와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Sage Intacct 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 92518e02-a62c-4b1b-a8e9-2803eb2b49ac
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/12/2019
+ms.date: 08/05/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d05e48cdaf75af5acb09713679d3aa21450b433
-ms.sourcegitcommit: 5504d5a88896c692303b9c676a7d2860f36394c1
+ms.openlocfilehash: 79a77d3c55ee4ac545712329f0054123bec8fcae
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84509375"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88535845"
 ---
 # <a name="tutorial-integrate-sage-intacct-with-azure-active-directory"></a>자습서: Azure Active Directory와 Sage Intacct 통합
 
@@ -45,6 +40,7 @@ Azure AD와 SaaS 앱 통합에 대한 자세한 내용은 [Azure Active Director
 이 자습서에서는 테스트 환경에서 Azure AD SSO를 구성하고 테스트합니다.
 
 * Sage Intacct는 **IDP** 시작 SSO를 지원합니다.
+* Sage Intacct가 구성되면 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 반입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법을 알아봅니다](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-sage-intacct-from-the-gallery"></a>갤러리에서 Sage Intacct 추가
 
@@ -57,7 +53,7 @@ Sage Intacct의 Azure AD 통합을 구성하려면 갤러리의 Sage Intacct를 
 1. **갤러리에서 추가** 섹션의 검색 상자에 **Sage Intacct**를 입력합니다.
 1. 결과 패널에서 **Sage Intacct**를 선택한 후 앱을 추가합니다. 앱이 테넌트에 추가될 때까지 잠시 동안 기다려 주세요.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-sage-intacct"></a>Sage Intacct용 Azure AD Single Sign-On 구성 및 테스트
+## <a name="configure-and-test-azure-ad-sso-for-sage-intacct"></a>Sage Intacct에 대한 Azure AD SSO 구성 및 테스트
 
 **B.Simon**이라는 테스트 사용자를 사용하여 Sage Intacct에서 Azure AD SSO를 구성하고 테스트합니다. SSO가 작동하려면 Azure AD 사용자와 Sage Intacct의 관련 사용자 간에 연결 관계를 설정해야 합니다.
 
@@ -227,3 +223,4 @@ Azure AD 사용자가 Sage Intacct에 로그인할 수 있도록 설정하려면
 
 - [Azure Active Directory의 조건부 액세스란?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Microsoft Cloud App Security의 세션 제어란?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

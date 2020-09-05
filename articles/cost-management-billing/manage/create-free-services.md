@@ -3,15 +3,16 @@ title: Azure 체험 계정으로 평가판 서비스 만들기
 description: Azure 무료 계정에 포함된 서비스를 만드는 방법을 알아봅니다. 이러한 서비스를 사용할 수 있는 모든 지역에서 만들 수 있습니다.
 author: amberbhargava
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/12/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 540988892a5f5f650a8594b74792e45d25ca9036
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 5e08a3e09a0db7620d65b349243cd39540fae144
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460952"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690003"
 ---
 # <a name="create-services-included-with-azure-free-account"></a>Azure 무료 계정에 포함된 서비스 만들기
 

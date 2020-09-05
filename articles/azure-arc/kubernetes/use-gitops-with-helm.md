@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Azure Arc 사용 클러스터 구성(미리 보기)을 위한 Helm에서 GitOps 사용
 keywords: GitOps, Kubernetes, K8s, Azure, Helm, Arc, AKS, Azure Kubernetes Service, 컨테이너
-ms.openlocfilehash: 44803338a27fc492f4dc896a0edb398b2ce486ea
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: cca48910b679ff8f72ee06f4ed990bd480fb2200
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926130"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723642"
 ---
 # <a name="deploy-helm-charts-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Kubernetes 클러스터에서 GitOps를 사용 하 여 투구 차트 배포 (미리 보기)
 
@@ -53,7 +53,7 @@ arc-helm-demo  eastus      k8s-clusters
 
 ```bash
 ├── charts
-│   └── azure-vote
+│   └── azure-arc-sample
 │       ├── Chart.yaml
 │       ├── templates
 │       │   ├── NOTES.txt
@@ -61,25 +61,25 @@ arc-helm-demo  eastus      k8s-clusters
 │       │   └── service.yaml
 │       └── values.yaml
 └── releases
-    └── vote-app.yaml
+    └── app.yaml
 ```
 
-Git 리포지토리에는 투구 차트를 포함 하는 디렉터리와 릴리스 구성을 포함 하는 두 개의 디렉터리가 있습니다. 디렉터리에서 `releases` 에는 `vote-app.yaml` 아래에 표시 된 HelmRelease 구성이 포함 되어 있습니다.
+Git 리포지토리에는 투구 차트를 포함 하는 디렉터리와 릴리스 구성을 포함 하는 두 개의 디렉터리가 있습니다. 디렉터리에서 `releases` 에는 `app.yaml` 아래에 표시 된 HelmRelease 구성이 포함 되어 있습니다.
 
-```bash
+```yaml
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: vote-app
+  name: azure-arc-sample
   namespace: arc-k8s-demo
 spec:
   releaseName: arc-k8s-demo
   chart:
     git: https://github.com/Azure/arc-helm-demo
     ref: master
-    path: charts/azure-vote
+    path: charts/azure-arc-sample
   values:
-    frontendServiceName: arc-k8s-demo-vote-front
+    serviceName: arc-k8s-demo
 ```
 
 Helm 릴리스 구성에는 다음 필드가 포함되어 있습니다.
@@ -96,10 +96,10 @@ HelmRelease에 대한 자세한 내용은 공식 [Helm 연산자 설명서](http
 
 ## <a name="create-a-configuration"></a>구성 만들기
 
-`k8sconfiguration`에 대한 Azure CLI 확장을 사용하여 연결된 클러스터를 예제 Git 리포지토리에 연결해 보겠습니다. 이 구성 이름을 `azure-voting-app`으로 지정하고 `arc-k8s-demo` 네임스페이스에 Flux 연산자를 배포합니다.
+`k8sconfiguration`에 대한 Azure CLI 확장을 사용하여 연결된 클러스터를 예제 Git 리포지토리에 연결해 보겠습니다. 이 구성 이름을 `azure-arc-sample`으로 지정하고 `arc-k8s-demo` 네임스페이스에 Flux 연산자를 배포합니다.
 
 ```bash
-az k8sconfiguration create --name azure-voting-app \
+az k8sconfiguration create --name azure-arc-sample \
   --resource-group $RESOURCE_GROUP --cluster-name $CLUSTER_NAME \
   --operator-instance-name flux --operator-namespace arc-k8s-demo \
   --operator-params='--git-readonly --git-path=releases' \
@@ -118,7 +118,7 @@ az k8sconfiguration create --name azure-voting-app \
 Azure CLI를 사용하여 `sourceControlConfiguration`이 성공적으로 만들어졌는지 확인합니다.
 
 ```console
-az k8sconfiguration show --resource-group $RESOURCE_GROUP --name azure-voting-app --cluster-name $CLUSTER_NAME --cluster-type connectedClusters
+az k8sconfiguration show --resource-group $RESOURCE_GROUP --name azure-arc-sample --cluster-name $CLUSTER_NAME --cluster-type connectedClusters
 ```
 
 `sourceControlConfiguration`리소스는 준수 상태, 메시지 및 디버깅 정보로 업데이트 됩니다.
@@ -139,8 +139,8 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
     "chartValues": "--set helm.versions=v3",
     "chartVersion": "0.6.0"
   },
-  "id": "/subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourceGroups/AzureArcTest/providers/Microsoft.Kubernetes/connectedClusters/AzureArcTest1/providers/Microsoft.KubernetesConfiguration/sourceControlConfigurations/azure-voting-app",
-  "name": "azure-voting-app",
+  "id": "/subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourceGroups/AzureArcTest/providers/Microsoft.Kubernetes/connectedClusters/AzureArcTest1/providers/Microsoft.KubernetesConfiguration/sourceControlConfigurations/azure-arc-sample",
+  "name": "azure-arc-sample",
   "operatorInstanceName": "flux",
   "operatorNamespace": "arc-k8s-demo",
   "operatorParams": "--git-readonly --git-path=releases",
@@ -156,10 +156,10 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 ## <a name="validate-application"></a>애플리케이션 유효성 검사
 
-다음 명령을 실행 하 고 브라우저에서로 이동 하 여 `localhost:3000` 응용 프로그램이 실행 중인지 확인 합니다.
+다음 명령을 실행 하 고 브라우저에서로 이동 하 여 `localhost:8080` 응용 프로그램이 실행 중인지 확인 합니다.
 
 ```bash
-kubectl port-forward -n arc-k8s-demo svc/arc-k8s-demo-vote-front 3000:80
+kubectl port-forward -n arc-k8s-demo svc/arc-k8s-demo 8080:8080
 ```
 
 ## <a name="next-steps"></a>다음 단계

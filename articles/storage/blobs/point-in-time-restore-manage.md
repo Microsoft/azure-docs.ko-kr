@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 06/11/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 6948d4d786e918e5f3e32e6bdf2f7e23940f6815
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9a4c68454807cb26ac62799b598f146680e37c42
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445443"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230180"
 ---
 # <a name="enable-and-manage-point-in-time-restore-for-block-blobs-preview"></a>블록 Blob에 대한 지정 시간 복원 설정 및 관리(미리 보기)
 
@@ -184,4 +184,4 @@ $job | Wait-Job
 - [블록 Blob에 대한 지정 시간 복원(미리 보기)](point-in-time-restore-overview.md)
 - [일시 삭제](soft-delete-overview.md)
 - [변경 피드(미리 보기)](storage-blob-change-feed.md)
-- [Blob 버전 관리(미리 보기)](versioning-overview.md)
+- [Blob 버전 관리](versioning-overview.md)

@@ -1,32 +1,32 @@
 ---
 title: Microsoft AppSource 및 Azure Marketplace 비교
-description: 이 문서에서는 Microsoft 상업적 marketplace 상점 Microsoft AppSource와 Azure Marketplace 간의 차이점을 설명 합니다.
+description: 이 문서에서는 Microsoft 상업적 marketplace online 매장-Microsoft AppSource와 Azure Marketplace 간의 차이점을 설명 합니다.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: fc0a03871ee3191f24a886cc1b9d7f90e8d54b62
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 10560d1407d4e9f899578d6d4eb9cdf9b7fe7dc9
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121812"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607476"
 ---
 # <a name="comparing-microsoft-appsource-and-azure-marketplace"></a>Microsoft AppSource 및 Azure Marketplace 비교
 
-Microsoft 상업적 marketplace에는 [Microsoft AppSource](https://appsource.microsoft.com) 및 [Azure Marketplace](https://azuremarketplace.microsoft.com)포함 되어 있습니다. 각 storefront는 고유한 고객 요구 사항과 서로 다른 대상 그룹을 제공 하므로 적절 한 고객은 솔루션 또는 서비스를 사용할 수 있는지 확인할 수 있습니다.
+Microsoft 상업적 marketplace에는 [Microsoft AppSource](https://appsource.microsoft.com) 및 [Azure Marketplace](https://azuremarketplace.microsoft.com)포함 되어 있습니다. 각 온라인 스토어는 고유한 고객 요구 사항과 서로 다른 대상 그룹을 제공 하므로 적절 한 고객은 솔루션 또는 서비스를 사용할 수 있는지 확인할 수 있습니다.
 
-## <a name="understanding-the-differences-between-storefronts"></a>상점 간의 차이점 이해
+## <a name="understanding-the-differences-between-online-stores"></a>온라인 상점 간의 차이점 이해
 
-Storefront을 선택 하려면 먼저 제품의 대상 사용자를 식별 합니다. 여러 상점에서 대상 사용자 그룹을 지정하는 경우 여러 상점에서 판매하기 위해 한 번씩 게시할 수 있습니다.
+온라인 스토어를 선택 하려면 먼저 제품의 대상 사용자를 식별 합니다. 여러 온라인 상점에서 대상 그룹을 지정 하는 경우 여러 매장에서 판매 하기 위해 한 번 게시할 수 있습니다.
 
 | Azure Marketplace | AppSource |
 |:--- |:--- |
 | IT 전문가 및 개발자 | 비즈니스 사용자 및 비즈니스 의사 결정권자 |
 
-다음 표에서는 상점 사용의 이점에 대해 설명합니다.
+다음 표에서는 온라인 저장소 사용의 이점에 대해 설명 합니다.
 
 | 이점 | Azure Marketplace | AppSource |
 |:--- |:--- | :--- |

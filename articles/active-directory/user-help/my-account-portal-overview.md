@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: da00d77138eb3ff737c26d7fa52ab0bb56ec6ae4
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
-ms.translationtype: HT
+ms.openlocfilehash: 95947a9350f19f0f0ff45b7c65e14729b66f26cf
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87422416"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798162"
 ---
 # <a name="what-is-the-my-account-portal"></a>내 계정 포털이란?
 
@@ -33,11 +33,11 @@ ms.locfileid: "87422416"
 ![내 계정 포털, 개요 페이지](media/my-account-portal/my-account-portal-overview.png)
 
 >[!Important]
->이 문서는 해당 보안 정보, 디바이스 정보, 암호, 연결된 조직, 언어 설정, 개인 정보 또는 이전 로그인 정보를 업데이트하기 위해 내 계정 포털에 가져오려는 사용자를 위해 작성되었습니다. 직원 및 기타 용도로 인증 및 기타 Azure AD(Azure Active Directory) 기능을 설정하는 방법에 대한 정보를 찾는 관리자는 [관리자를 위한 Azure AD 설명서](https://docs.microsoft.com/azure/active-directory/)를 참조하세요.
+>이 문서는 해당 보안 정보, 디바이스 정보, 암호, 연결된 조직, 언어 설정, 개인 정보 또는 이전 로그인 정보를 업데이트하기 위해 내 계정 포털에 가져오려는 사용자를 위해 작성되었습니다. 직원 및 기타 용도로 인증 및 기타 Azure AD(Azure Active Directory) 기능을 설정하는 방법에 대한 정보를 찾는 관리자는 [관리자를 위한 Azure AD 설명서](../index.yml)를 참조하세요.
 
 ## <a name="next-steps"></a>다음 단계
 
-- [보안 정보](user-help-security-info-overview.md)를 보거나 관리하려면 선택합니다.
+- [보안 정보](./security-info-setup-signin.md)를 보거나 관리하려면 선택합니다.
 
 - 연결된 [디바이스](my-account-portal-devices-page.md) 보기 또는 관리
 

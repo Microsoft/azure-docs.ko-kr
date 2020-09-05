@@ -3,19 +3,19 @@ title: Azure Data Box를 사용 하 여 오프 라인 백업
 description: Azure Data Box를 사용 하 여 MARS 에이전트에서 Recovery Services 자격 증명 모음으로 대량 초기 백업 데이터를 오프 라인으로 설정 하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: e377ccde714c1486ff731d24d5a0cd64364bca37
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5a4aeebeddcca4adcac511c7c225c8809dd29c93
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091031"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180935"
 ---
 # <a name="azure-backup-offline-backup-by-using-azure-data-box"></a>Azure Data Box를 사용한 Azure Backup 오프라인 백업
 
-[Azure Data Box](../databox/data-box-overview.md) 를 사용 하 여 네트워크를 사용 하지 않고 Recovery Services 자격 증명 모음에 대 한 MARS (large 초기 Microsoft Azure Recovery Services) 백업을 오프 라인으로 초기값으로 지정할 수 있습니다. 이 프로세스는 대기 시간이 긴 네트워크를 통해 많은 양의 백업 데이터를 온라인으로 이동 하는 시간 및 네트워크 대역폭을 절약 합니다. 이 기능은 현재 미리 보기 상태입니다. Azure Data Box을 기반으로 하는 오프 라인 백업은 [Azure Import/Export 서비스를 기반으로 하는 오프 라인 백업에](./backup-azure-backup-import-export.md)비해 두 가지 이점을 제공 합니다.
+[Azure Data Box](../databox/data-box-overview.md) 를 사용 하 여 네트워크를 사용 하지 않고 Recovery Services 자격 증명 모음에 대 한 MARS (large 초기 Microsoft Azure Recovery Services) 백업을 오프 라인으로 초기값으로 지정할 수 있습니다. 이 프로세스는 대기 시간이 긴 네트워크를 통해 대량 백업 데이터를 온라인으로 이동하는 데 사용되었을 시간과 네트워크 대역폭을 절약합니다. 이 기능은 현재 미리 보기 상태입니다. Azure Data Box 기반의 오프라인 백업은 [Azure Import/Export 서비스 기반의 오프라인 백업](./backup-azure-backup-import-export.md)에 비해 다음 두 가지 고유한 이점이 있습니다.
 
-- 사용자 고유의 Azure 호환 디스크 및 커넥터를 조달 하지 않아도 됩니다. Azure Data Box는 선택한 [DATA BOX SKU](https://azure.microsoft.com/services/databox/data/)와 연결 된 디스크를 제공 합니다.
-- Azure Backup (MARS 에이전트)는 Azure Data Box의 지원 되는 Sku에 백업 데이터를 직접 쓸 수 있습니다. 이 기능을 통해 초기 백업 데이터에 대 한 준비 위치를 프로 비전 할 필요가 없습니다. 또한 디스크에 해당 데이터를 포맷 하 고 복사 하는 유틸리티가 필요 하지 않습니다.
+- 사용자 고유의 Azure 호환 디스크 및 커넥터를 조달 하지 않아도 됩니다. Azure Data Box에서 선택한 [Data Box SKU](https://azure.microsoft.com/services/databox/data/)와 관련된 디스크를 제공합니다.
+- Azure Backup(MARS 에이전트)에서 Azure Data Box의 지원되는 SKU에 백업 데이터를 직접 쓸 수 있습니다. 이 기능을 사용하면 초기 백업 데이터에 사용할 스테이징 위치를 프로비저닝하지 않아도 됩니다. 디스크를 포맷하고 해당 데이터를 디스크에 복사하는 유틸리티도 필요하지 않습니다.
 
 ## <a name="azure-data-box-with-the-mars-agent"></a>MARS 에이전트를 사용 하 여 Azure Data Box
 
@@ -43,12 +43,12 @@ Azure Data Box를 사용 하 여 MARS 에이전트에서 데이터를 시드 하
 | Windows Server 2008 R2 SP1 64비트     | Standard, Enterprise, Datacenter, Foundation                |
 | Windows Server 2008 SP2 64 비트        | Standard, Enterprise, Datacenter                            |
 
-## <a name="backup-data-size-and-supported-data-box-skus"></a>백업 데이터 크기 및 지원 되는 Data Box Sku
+## <a name="backup-data-size-and-supported-data-box-skus"></a>백업 데이터 크기 및 지원되는 Data Box SKU
 
-| 서버 당 백업 데이터 크기 (MARS의 압축 후) * | 지원 되는 Azure Data Box SKU                                      |
+| 서버 당 백업 데이터 크기 (MARS의 압축 후) * | 지원되는 Azure Data Box SKU                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <= 7.2 TB                                                    | [디스크 Azure Data Box](../databox/data-box-disk-overview.md) |
-| >7.2 TB 및 <= 80 TB * *                                      | [Azure Data Box (100 TB)](../databox/data-box-overview.md) |
+| >7.2 TB 및 <= 80 TB * *                                      | [Azure Data Box(100TB)](../databox/data-box-overview.md) |
 
 * 일반적인 압축 요금은 10%에서 20% 사이입니다. <br>
 * * 단일 MARS 서버에 대해 80 TB 이상의 초기 백업 데이터를 필요로 하는 경우에는에 문의 하세요 [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) .
@@ -56,7 +56,7 @@ Azure Data Box를 사용 하 여 MARS 에이전트에서 데이터를 시드 하
 >[!IMPORTANT]
 >단일 서버에서 초기 백업 데이터는 단일 Azure Data Box 인스턴스 또는 Azure Data Box 디스크에 포함 되어야 하며, 동일한 또는 다른 Sku의 여러 장치 간에 공유할 수 없습니다. 그러나 Azure Data Box 장치는 여러 서버의 초기 백업을 포함할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 ### <a name="azure-subscription-and-required-permissions"></a>Azure 구독 및 필요한 권한
 
@@ -111,7 +111,7 @@ AzureRM 모듈이 없음을 확인 한 후에는 다음 방법 중 하나를 사
 
 Msi 파일을 사용 하 여 Azure PowerShell 설치할 수도 있습니다. 제거 하려면 제어판의 **프로그램 제거** 옵션을 사용 하 여 제거 합니다.
 
-### <a name="order-and-receive-the-data-box-device"></a>Data Box 장치 순서 및 수신
+### <a name="order-and-receive-the-data-box-device"></a>Data Box 디바이스 주문 및 수령
 
 Mars 및 Azure Data Box를 사용 하는 오프 라인 백업 프로세스를 수행 하려면 MARS 에이전트를 사용 하 여 오프 라인 백업을 트리거하기 전에 Data Box 장치가 배달 된 상태 여야 합니다. 요구 사항에 가장 적합 한 SKU를 주문 하려면 [백업 데이터 크기 및 지원 되는 Data Box sku](#backup-data-size-and-supported-data-box-skus)를 참조 하세요. [자습서: Azure Data Box 디스크 순서](../databox/data-box-disk-deploy-ordered.md) 를 정렬 하 고 Data Box 장치를 수신 하는 단계를 수행 합니다.
 
@@ -195,7 +195,7 @@ NFS 프로토콜을 사용 하 여 Data Box 장치를 로컬 시스템으로 탑
 
     ![구독 ID에 대 한 Data Box 작업 페치](./media/offline-backup-azure-data-box/fetching-databox-jobs.png)
 
-1. Data Box 디스크의 압축을 풀고 연결 하 고 잠금을 해제 한 올바른 Data Box 순서를 선택 합니다. **새로 만들기**를 선택합니다.
+1. Data Box 디스크의 압축을 풀고 연결 하 고 잠금을 해제 한 올바른 Data Box 순서를 선택 합니다. **다음**을 선택합니다.
 
     ![Data Box 주문 선택](./media/offline-backup-azure-data-box/select-databox-order.png)
 
@@ -208,7 +208,7 @@ NFS 프로토콜을 사용 하 여 Data Box 장치를 로컬 시스템으로 탑
     ![네트워크 경로를 입력 하십시오.](./media/offline-backup-azure-data-box/enter-network-path.png)
 
     >[!IMPORTANT]
-    > Azure Data Box 디스크의 루트 디렉터리에 대 한 네트워크 경로를 제공 합니다. 이 디렉터리는 *Pageblob*이름으로 디렉터리를 포함 해야 합니다.
+    > Azure Data Box 디스크의 루트 디렉터리에 대한 네트워크 경로를 제공합니다. 이 디렉터리는 *Pageblob*이름으로 디렉터리를 포함 해야 합니다.
     >
     >![Azure Data Box 디스크의 루트 디렉터리](./media/offline-backup-azure-data-box/root-directory.png)
     >
@@ -240,7 +240,7 @@ MARS 에이전트는 선택한 데이터를 Azure Data Box 장치에 백업 하�
 
 - 이 문서의 단계에 따라 [Azure에 Azure Data Box 디스크를 배송](../databox/data-box-disk-deploy-picked-up.md)합니다. Azure Data Box 100-TB 장치를 사용 하는 경우 다음 단계에 따라 [Azure Data Box 장치를 Azure에 제공](../databox/data-box-deploy-picked-up.md)합니다.
 
-- Azure Portal에서 [Data Box 작업을 모니터링](../databox/data-box-disk-deploy-upload-verify.md) 합니다. Azure Data Box 작업이 완료 되 면 MARS 에이전트는 다음 예약 된 백업 시 저장소 계정에서 Recovery Services 자격 증명 모음으로 데이터를 자동으로 이동 합니다. 그런 다음 복구 지점을 성공적으로 만든 경우 백업 작업을 *작업 완료* 로 표시 합니다.
+- Azure Portal에서 [Data Box 작업을 모니터링](../databox/data-box-disk-deploy-upload-verify.md)합니다. Azure Data Box 작업이 완료 되 면 MARS 에이전트는 다음 예약 된 백업 시 저장소 계정에서 Recovery Services 자격 증명 모음으로 데이터를 자동으로 이동 합니다. 그런 다음 복구 지점을 성공적으로 만든 경우 백업 작업을 *작업 완료* 로 표시 합니다.
 
     >[!NOTE]
     >MARS 에이전트는 정책을 만드는 동안 예약 된 시간에 백업을 트리거합니다. 이러한 작업은 작업이 완료 될 때까지 "Azure Data Box 작업이 완료 될 때까지 기다리는 중" 플래그를 지정 합니다.
@@ -259,13 +259,13 @@ MARS (Microsoft Azure Recovery Services) 에이전트가 테 넌 트에서 사�
 
 문제가 앞에서 설명한 것과 동일한 지 여부를 확인 하려면 다음 단계 중 하나를 수행 합니다.
 
-#### <a name="step-1"></a>1단계
+#### <a name="step-1-of-verification"></a>1 단계 확인
 
 오프 라인 백업을 구성할 때 MAB 콘솔에 다음 오류 메시지가 표시 되는지 확인 합니다.
 
 ![현재 Azure 계정에 대 한 오프 라인 백업 정책을 만들 수 없습니다.](./media/offline-backup-azure-data-box/unable-to-create-policy.png)
 
-#### <a name="step-2"></a>2단계
+#### <a name="step-2-of-verification"></a>2 단계 확인
 
 1. 설치 경로에서 **임시** 폴더를 엽니다. 기본 임시 폴더 경로는 *C:\Program Files\Microsoft Azure Recovery Services Agent\Temp*입니다. *Cbuicurr* 파일을 찾고 파일을 엽니다.
 
@@ -275,18 +275,18 @@ MARS (Microsoft Azure Recovery Services) 에이전트가 테 넌 트에서 사�
 
 이 문제를 해결 하기 위한 해결 방법으로 다음 단계를 수행 하 고 정책 구성을 다시 시도 합니다.
 
-#### <a name="step-1"></a>1단계
+#### <a name="step-1-of-workaround"></a>해결 방법 1 단계
 
 가져오기 또는 내보내기 작업을 만들 구독에 대 한 관리자 액세스 권한이 있는 다른 계정을 사용 하 여 MAB UI에 표시 되는 PowerShell에 로그인 합니다.
 
-#### <a name="step-2"></a>2단계
+#### <a name="step-2-of-workaround"></a>해결 방법 2 단계
 
 다른 서버에 오프 라인 시드가 구성 되어 있지 않고 다른 서버가 응용 프로그램에 종속 되어 있지 않은 경우 `AzureOfflineBackup_<Azure User Id>` 이 응용 프로그램을 삭제 합니다. **Azure Portal**  >  **Azure Active Directory**  >  **앱 등록**를 선택 합니다.
 
 >[!NOTE]
 > `AzureOfflineBackup_<Azure User Id>`응용 프로그램에 다른 오프 라인 시드가 구성 되어 있지 않은지 확인 하 고 다른 서버가이 응용 프로그램에 종속 되어 있지 않은지 확인 하십시오. **Settings**  >  **공개 키** 섹션 아래의 설정**키** 로 이동 합니다. 다른 공개 키를 추가 하지 않아야 합니다. 참조는 다음 스크린샷을 참조 하세요.
 >
->![공개 키](./media/offline-backup-azure-data-box/public-keys.png)
+>![퍼블릭 키](./media/offline-backup-azure-data-box/public-keys.png)
 
 #### <a name="step-3"></a>3단계
 
@@ -305,9 +305,9 @@ MARS (Microsoft Azure Recovery Services) 에이전트가 테 넌 트에서 사�
 5. 레지스트리 *컴퓨터 \ HKEY_LOCAL_MACHINE \Software\microsoft\windows Azure Backup\Config\CloudBackupProvider.로 이동 합니다.* **Cloudbackupprovider**를 마우스 오른쪽 단추로 클릭 하 고 이름이 인 새 문자열 값을 추가 `AzureADAppCertThumbprint_<Azure User Id>` 합니다.
 
     >[!NOTE]
-    > Azure 사용자 ID를 가져오려면 다음 작업 중 하나를 수행 합니다.
+    > Azure 사용자 ID를 가져오려면 다음 작업 중 하나를 수행합니다.
     >
-    >- Azure에 연결 된 PowerShell에서 `Get-AzureRmADUser -UserPrincipalName "Account Holder's email as defined in the portal"` 명령을 실행 합니다.
+    >- Azure에 연결된 PowerShell에서 `Get-AzureRmADUser -UserPrincipalName "Account Holder's email as defined in the portal"` 명령을 실행합니다.
     > - `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\DbgSettings\OnlineBackup`이름이 *currentuserid*인 레지스트리 경로로 이동 합니다.
 
 6. 이전 단계에서 추가 된 문자열을 마우스 오른쪽 단추로 클릭 하 고 **수정**을 선택 합니다. 값에서 2 단계에서 내보낸 인증서의 지문을 제공 합니다. **확인**을 선택합니다.

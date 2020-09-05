@@ -8,12 +8,13 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 98054060210f55803d6e2811e1f494fd3ff00e48
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 56ec893de159f4c8a90c5a229ccf7669856fb066
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76838261"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020221"
 ---
 # <a name="how-to-process-and-extract-information-from-images-in-ai-enrichment-scenarios"></a>AI 보강 시나리오에서 이미지의 정보를 처리 하 고 추출 하는 방법
 
@@ -42,7 +43,7 @@ Azure Cognitive Search는 이미지 및 이미지 파일을 사용 하기 위한
 
 정규화된 이미지의 최대 너비와 높이에 대한 2000 픽셀이라는 기본값은 [OCR 기술](cognitive-search-skill-ocr.md) 및 [이미지 분석 기술](cognitive-search-skill-image-analysis.md)에서 지원하는 최대 크기에 기반합니다. [OCR 기술은](cognitive-search-skill-ocr.md) 영어가 아닌 언어의 경우 최대 너비와 높이를 4200, 영어의 경우 1만을 지원 합니다.  최대 한도를 늘리면 기술 정의 및 문서 언어에 따라 큰 이미지에서 처리가 실패할 수 있습니다. 
 
-다음과 같이 [인덱서 정의](https://docs.microsoft.com/rest/api/searchservice/create-indexer)에서 imageAction을 지정합니다.
+다음과 같이 [인덱서 정의](/rest/api/searchservice/create-indexer)에서 imageAction을 지정합니다.
 
 ```json
 {
@@ -64,7 +65,7 @@ Azure Cognitive Search는 이미지 및 이미지 파일을 사용 하기 위한
 |--------------------|-----------------------------------------|
 | 데이터               | JPEG 형식의 BASE64 인코딩된 정규화된 이미지 문자열입니다.   |
 | width              | 픽셀 단위로 정규화된 이미지의 너비입니다. |
-| height             | 픽셀 단위로 정규화된 이미지의 높이입니다. |
+| 키             | 픽셀 단위로 정규화된 이미지의 높이입니다. |
 | originalWidth      | 정규화 이전에 이미지의 원래 너비입니다. |
 | originalHeight      | 정규화 이전에 이미지의 원래 높이입니다. |
 | rotationFromOriginal |  정규화된 이미지를 만들기 위해 발생한 시계 반대 방향 회전입니다. 0도에서 360도 사이의 값입니다. 이 단계에서는 카메라 또는 스캐너에서 생성하는 이미지의 메타데이터를 읽습니다. 일반적으로 90도의 배수입니다. |
@@ -213,8 +214,8 @@ merged_text 필드가 있으므로 인덱서 정의에서 검색 가능한 필�
         }
 ```
 
-## <a name="see-also"></a>참조
-+ [인덱서 만들기 (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
+## <a name="see-also"></a>참고 항목
++ [인덱서 만들기 (REST)](/rest/api/searchservice/create-indexer)
 + [이미지 분석 기술](cognitive-search-skill-image-analysis.md)
 + [OCR 기술](cognitive-search-skill-ocr.md)
 + [텍스트 병합 기술](cognitive-search-skill-textmerger.md)

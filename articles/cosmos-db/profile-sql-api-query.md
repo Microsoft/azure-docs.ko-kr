@@ -7,12 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: girobins
-ms.openlocfilehash: 8bec102064d6269964cb917d745af206acf948ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 71ebc90834083def5b82e16dc387a6e61943206d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262551"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021751"
 ---
 # <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>.NET SDK를 사용 하 여 SQL 쿼리 실행 메트릭 가져오기 및 쿼리 성능 분석
 
@@ -233,7 +234,7 @@ WHERE c.description = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, 
 
 쿼리 성능 튜닝에 대 한 자세한 내용은 [쿼리 성능 조정](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) 문서를 참조 하세요.
 
-## <a name="references"></a><a id="References"></a>참조
+## <a name="references"></a><a id="References"></a>참고자료
 
 - [Azure Cosmos DB SQL 사양](https://go.microsoft.com/fwlink/p/?LinkID=510612)
 - [ANSI SQL 2011](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)

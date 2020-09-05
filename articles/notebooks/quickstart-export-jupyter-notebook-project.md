@@ -3,12 +3,12 @@ title: Azure Notebooks 미리 보기에서 Jupyter Notebook 프로젝트 내보�
 description: Jupyter Notebook 프로젝트를 빠르게 내보냅니다.
 ms.topic: quickstart
 ms.date: 06/29/2020
-ms.openlocfilehash: ad37db7e9bdb1251a3e62bd567960979f556b489
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a2e76f2c1956df4d0de59cfb429dc1c9dce85a62
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85832035"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892102"
 ---
 # <a name="quickstart-export-a-jupyter-notebook-project-in-azure-notebooks-preview"></a>빠른 시작: Azure Notebooks 미리 보기에서 Jupyter Notebook 프로젝트 내보내기
 
@@ -17,6 +17,7 @@ ms.locfileid: "85832035"
 이 빠른 시작에서는 다른 Jupyter Notebook 솔루션에 사용할 Azure Notebooks 프로젝트를 다운로드합니다. 
 
 ## <a name="prerequisites"></a>필수 구성 요소
+
 기존 Azure Notebooks 프로젝트
 
 ## <a name="export-an-azure-notebooks-project"></a>Azure Notebooks 프로젝트 내보내기
@@ -49,7 +50,7 @@ Azure Notebooks 미리 보기와 일치하는 환경을 만들려면 GitHub에 �
 
 ## <a name="use-notebooks-in-visual-studio-code"></a>Visual Studio Code에서 Notebook 사용
 
-[VS Code](https://code.visualstudio.com/)는 로컬로 또는 원격 컴퓨팅에 연결하여 사용할 수 있는 무료 코드 편집기입니다. Python 확장과 함께 사용하면 Jupyter Notebook 작업을 위한 풍부한 기본 환경을 포함하여 완전한 Python 개발용 환경을 제공합니다. 
+[VS Code](https://code.visualstudio.com/)는 로컬로 또는 원격 컴퓨팅에 연결하여 사용할 수 있는 무료 코드 편집기입니다. Python 확장과 함께 사용하면 Jupyter Notebooks 작업을 위한 풍부한 기본 환경을 포함하여 완전한 Python 개발용 환경을 제공합니다. 
 
 ![VS Code Jupyter Notebook 지원](media/vs-code-jupyter-notebook.png)
 

@@ -22,6 +22,9 @@
     - name: 지속성 함수 만들기 - Python
       displayName: 'get started, chaining'
       href: quickstart-python-vscode.md
+    - name: 지속성 함수 만들기 - PowerShell
+      displayName: 'get started, chaining'
+      href: quickstart-powershell-vscode.md
 - name: 자습서
   items:
     - name: 함수 체이닝

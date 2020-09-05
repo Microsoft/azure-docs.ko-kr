@@ -3,22 +3,25 @@ title: 스트리밍 로케이터 및 빌드 Url 만들기-Azure Media Services
 description: 이 문서에서는 스트리밍 로케이터 및 빌드 Url을 만드는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/04/2020
-ms.author: juliako
-ms.openlocfilehash: 4e6e0d18665ac5fc28da2935c20b467f9d7662d8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c00729e236cb314f47df8f622db2e19438af61ab
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023248"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267907"
 ---
 # <a name="create-a-streaming-locator-and-build-urls"></a>스트리밍 로케이터 생성 및 URL 빌드
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services에서 스트리밍 URL을 작성 하려면 먼저 [스트리밍 로케이터](streaming-locators-concept.md)를 만들어야 합니다. 그런 다음 [스트리밍 끝점](/rest/api/media/streamingendpoints) 호스트 이름 및 **스트리밍 로케이터** 경로를 연결 합니다. 이 샘플에서는 *기본* **스트리밍 엔드포인트**가 사용됩니다. 미디어 서비스 계정을 처음 만들 때이 *기본* **스트리밍 끝점** 은 중지 됨 상태가 되므로 **시작** 을 호출 하 여 스트리밍을 시작 해야 합니다.
 

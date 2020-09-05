@@ -10,12 +10,12 @@ metadata:
   author: genlin
   ms.author: genli
   ms.date: 09/09/2019
-  ms.openlocfilehash: b78ce7baf60431e0f9ee1b1218d2d57019b35359
-  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+  ms.openlocfilehash: 7367bc378cf2a271d69d78cd08c4d1252b11fd62
+  ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/23/2020
-  ms.locfileid: "87068974"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88816391"
 landingContent:
 - title: 배포 오류 문제 해결
   linkLists:
@@ -88,13 +88,13 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: 가상 디스크 FAQ
-      url: ../linux/faq-for-disks.md
+      url: ../faq-for-disks.md
     - text: VM 크기 조정 시 할당 오류 문제 해결
       url: ./allocation-failure.md
     - text: VM에서 임시 드라이브 이해
-      url: ../linux/managed-disks-overview.md#temporary-disk
+      url: ../managed-disks-overview.md#temporary-disk
     - text: Azure Managed Disks 개요
-      url: ../linux/managed-disks-overview.md
+      url: ../managed-disks-overview.md
     - text: Azure VM 디스크와 관리되지 않는 프리미엄 디스크에 대한 FAQ
       url: ../linux/convert-unmanaged-to-managed-disks.md
 - title: 디스크 암호화 문제

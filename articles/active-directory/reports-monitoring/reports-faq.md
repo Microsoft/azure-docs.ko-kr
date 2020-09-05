@@ -16,12 +16,12 @@ ms.date: 05/12/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35aa75fcbd579c3e2c587b370b0926393b4e58c1
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 352b4d46e1693580c386f11f7f4d949740f90cc6
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87383769"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231047"
 ---
 # <a name="frequently-asked-questions-around-azure-active-directory-reports"></a>Azure Active Directory 보고서 관련 자주 묻는 질문
 
@@ -37,7 +37,7 @@ ms.locfileid: "87383769"
 
 **Q: 현재는 `https://graph.windows.net/<tenant-name>/reports/` 끝점 api를 사용 하 여 AZURE AD 보안 보고서 (특정 유형의 검색 (예: 누출 된 자격 증명 또는 익명 IP 주소에서의 로그인)를 프로그래밍 방식으로 보고 시스템으로 끌어옵니다. 어떻게 전환 해야 하나요?**
 
-**A:**  [Id 보호 위험 검색 API](../identity-protection/graph-get-started.md)   를 사용 하 여 Microsoft Graph 통해 보안 검색에 액세스할 수 있습니다. 이 새로운 형식을 사용 하면 고급 필터링, 필드 선택 등을 통해 데이터를 쿼리 하는 방법에 더 많은 유연성을 제공 하 고, SIEMs 및 기타 데이터 수집 도구와 쉽게 통합 하기 위해 위험 검색을 한 가지 유형으로 표준화할 수 있습니다. 데이터가 다른 형식으로 되어 있으므로 이전 쿼리를 새 쿼리로 대체할 수 없습니다. 그러나 [새로운 API는 Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent)를 사용합니다. 이것은 O365 또는 Azure AD와 같은 API에 대한 Microsoft 표준입니다. 따라서 필요한 작업을 통해 현재 Microsoft Graph 투자를 연장 하거나이 새로운 표준 플랫폼으로의 전환을 시작할 수 있습니다.
+**A:**  [Id 보호 위험 검색 API](../identity-protection/howto-identity-protection-graph-api.md)   를 사용 하 여 Microsoft Graph 통해 보안 검색에 액세스할 수 있습니다. 이 새로운 형식을 사용 하면 고급 필터링, 필드 선택 등을 통해 데이터를 쿼리 하는 방법에 더 많은 유연성을 제공 하 고, SIEMs 및 기타 데이터 수집 도구와 쉽게 통합 하기 위해 위험 검색을 한 가지 유형으로 표준화할 수 있습니다. 데이터가 다른 형식으로 되어 있으므로 이전 쿼리를 새 쿼리로 대체할 수 없습니다. 그러나 [새로운 API는 Microsoft Graph](/graph/api/resources/identityriskevent?view=graph-rest-beta)를 사용합니다. 이것은 O365 또는 Azure AD와 같은 API에 대한 Microsoft 표준입니다. 따라서 필요한 작업을 통해 현재 Microsoft Graph 투자를 연장 하거나이 새로운 표준 플랫폼으로의 전환을 시작할 수 있습니다.
 
 ---
 
@@ -89,7 +89,7 @@ ms.locfileid: "87383769"
 
 **Q: Office 365 활동 로그에 대한 정보를 얻기 위해 어떤 API를 사용해야 합니까?**
 
-**A:** [Office 365 관리 api](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview) 를 사용 하 여 api를 통해 Office 365 활동 로그에 액세스 합니다.
+**A:** [Office 365 관리 api](/office/office-365-management-api/office-365-management-apis-overview) 를 사용 하 여 api를 통해 Office 365 활동 로그에 액세스 합니다.
 
 ---
 
@@ -156,10 +156,10 @@ ms.locfileid: "87383769"
 * **적용되지 않음**: 정책 조건이 충족되지 않았기 때문일 수 있습니다.
 * **사용 안 함**: 정책이 사용 안 함 상태이기 때문입니다. 
     
-**Q: 모든 로그인 보고서의 정책 이름이 CA의 정책 이름과 일치 하지 않습니다. 굳이?**
+**Q: 모든 로그인 보고서의 정책 이름이 CA의 정책 이름과 일치 하지 않습니다. 이유는 무엇입니까?**
 
 **A:** 모든 로그인 보고서의 정책 이름은 로그인 시점의 CA 정책 이름을 기준으로 합니다. 나중, 즉 로그인 후에 정책 이름을 업데이트했다면 이 값이 CA의 정책 이름과 일관되지 않을 수 있습니다.
 
 **Q: 조건부 액세스 정책으로 인해 로그인이 차단 되었지만 로그인 활동 보고서에 로그인이 성공 했음을 표시 합니다. 굳이?**
 
-**A:** 현재 로그인 보고서는 조건부 액세스가 적용 될 때 Exchange ActiveSync 시나리오에 대 한 정확한 결과를 표시 하지 않을 수 있습니다. 보고서의 로그인 결과에 성공한 로그인이 표시 되는 경우에는 조건부 액세스 정책으로 인해 실제로 로그인에 실패 하는 경우가 있을 수 있습니다. 
+**A:** 현재 로그인 보고서는 조건부 액세스가 적용 될 때 Exchange ActiveSync 시나리오에 대 한 정확한 결과를 표시 하지 않을 수 있습니다. 보고서의 로그인 결과에 성공한 로그인이 표시 되는 경우에는 조건부 액세스 정책으로 인해 실제로 로그인에 실패 하는 경우가 있을 수 있습니다.

@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 06/12/2020
-ms.openlocfilehash: 0fd391bfb7ed8944866b80acb31d76ea43c77912
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 329d3208037548bd1cb5a5564a4a393747ed48f0
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986389"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017280"
 ---
 # <a name="troubleshoot-azure-sql-database-and-azure-sql-managed-instance-performance-issues-with-intelligent-insights"></a>Intelligent Insights에서 Azure SQL Database 및 Azure SQL Managed Instance 성능 문제 해결
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -168,7 +168,7 @@ MAXDOP 서버 구성 옵션을 기본값인 0으로 설정 하면 데이터베�
 
 래치 경합을 처리하는 한 가지 방법은 순차적 인덱스 키를 순차적이지 않은 키로 바꿔 인덱스 범위에서 삽입을 균등하게 분산하는 것입니다. 일반적으로 인덱스의 선행 열이 워크로드를 비례적으로 배포합니다. 고려해야 할 다른 방법은 테이블 분할입니다. 과도한 래치 경합을 완화하기 위한 일반적인 방법은 분할된 테이블에 계산 열이 있는 해시 분할 스키마를 만드는 것입니다. 페이지 래치 IO 경합이 발생하는 경우 인덱스를 사용하면 이 성능 문제를 완화할 수 있습니다.
 
-자세한 내용은 [SQL Server에서 래치 경합 진단 및 해결](https://download.microsoft.com/download/B/9/E/B9EDF2CD-1DBF-4954-B81E-82522880A2DC/SQLServerLatchContention.pdf)(PDF 다운로드)을 참조하세요.
+자세한 내용은 [SQL Server에서 래치 경합 진단 및 해결](http://databaser.net/moniwiki/pds/PerformanceTuning/SQLServerLatchContention.pdf)(PDF 다운로드)을 참조하세요.
 
 ## <a name="missing-index"></a>인덱스 누락
 

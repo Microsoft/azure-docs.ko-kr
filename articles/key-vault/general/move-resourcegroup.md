@@ -7,16 +7,16 @@ manager: ravijan
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/29/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another resource group.
-ms.openlocfilehash: bbc27af9eb448911093473d6ab20fde8004c7b88
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fe8051d551077666c06ac033f22303fd643ac602
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87099588"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585736"
 ---
 # <a name="moving-an-azure-key-vault-across-resource-groups"></a>리소스 그룹 간에 Azure Key Vault 이동
 
@@ -32,11 +32,11 @@ ms.locfileid: "87099588"
 
 2년 동안 유효한 인증서를 생성하는 키 자격 증명 모음에 연결된 애플리케이션이 있습니다. 키 자격 증명 모음을 이동 하려는 리소스 그룹에는 1 년 이상 유효한 인증서 생성을 차단 하는 정책 할당이 있습니다. 키 자격 증명 모음을 새 리소스 그룹으로 이동한 후 2 년 동안 유효한 인증서를 만드는 작업은 Azure 정책 할당에 의해 차단 됩니다.
 
-### <a name="solution"></a>해결 방법
+### <a name="solution"></a>솔루션
 
 Azure Portal의 Azure Policy 페이지로 이동 하 고, 이동 하는 리소스 그룹 뿐만 아니라 현재 리소스 그룹에 대 한 정책 할당을 확인 하 고 불일치가 없는지 확인 하십시오.
 
-## <a name="procedure"></a>절차
+## <a name="procedure"></a>프로시저
 
 1. Azure Portal에 로그인
 2. 키 자격 증명 모음으로 이동

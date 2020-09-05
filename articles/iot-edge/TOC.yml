@@ -207,10 +207,14 @@
           href: ../azure-sql-edge/deploy-portal.md?toc=/azure/iot-edge/toc.json&bc=/azure/iot-edge/breadcrumb/toc.json
     - name: DevOps 도구로 관리
       items:
-        - name: Azure DevOps Projects
-          href: how-to-devops-project.md
+        - name: Azure DevOps Starter
+          href: how-to-devops-starter.md
         - name: Azure DevOps
-          href: how-to-ci-cd.md
+          items:
+            - name: YAML
+              href: how-to-continuous-integration-continuous-deployment.md
+            - name: 클래식 편집기
+              href: how-to-continuous-integration-continuous-deployment-classic.md
     - name: 문제 해결
       items:
         - name: 표준 진단 단계

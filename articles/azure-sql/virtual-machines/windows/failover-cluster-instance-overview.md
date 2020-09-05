@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 8a5374bf15798fd7e53f0d93e69f2f40a2d57b94
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: e5862daa21f8bf0075bb1dee567cbe887ec32d72
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533821"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653276"
 ---
 # <a name="failover-cluster-instances-with-sql-server-on-azure-virtual-machines"></a>Azure Virtual Machines에서 SQL Server를 사용 하 여 장애 조치 (Failover) 클러스터 인스턴스
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -51,14 +51,14 @@ Azure Vm에서 SQL Server는 SQL Server 장애 조치 (failover) 클러스터 �
 |**최소 OS 버전**| 모두 |Windows Server 2012|Windows Server 2016|
 |**최소 SQL Server 버전**|모두|SQL Server 2012|SQL Server 2016|
 |**지원 되는 VM 가용성** |근접 배치 그룹을 사용 하는 가용성 집합 |가용성 집합 및 가용성 영역|가용성 집합 |
-|**FileStream 지원**|예|예|예 |
-|**Azure blob 캐시**|아니요|예|예|
+|**FileStream 지원**|예|아니요|예 |
+|**Azure blob 캐시**|아니요|아니요|예|
 
 이 섹션의 나머지 부분에서는 Azure Vm에서 SQL Server 하는 데 사용할 수 있는 각 저장소 옵션의 이점 및 제한 사항을 나열 합니다. 
 
 ### <a name="azure-shared-disks"></a>Azure 공유 디스크
 
-[Azure 공유 디스크](../../../virtual-machines/windows/disks-shared.md) 는 [azure managed disks](../../../virtual-machines/windows/managed-disks-overview.md)의 기능입니다. Windows Server 장애 조치 (Failover) 클러스터링은 장애 조치 (failover) 클러스터 인스턴스에서 Azure 공유 디스크 사용을 지원 합니다. 
+[Azure 공유 디스크](../../../virtual-machines/windows/disks-shared.md) 는 [azure managed disks](../../../virtual-machines/managed-disks-overview.md)의 기능입니다. Windows Server 장애 조치 (Failover) 클러스터링은 장애 조치 (failover) 클러스터 인스턴스에서 Azure 공유 디스크 사용을 지원 합니다. 
 
 **지원 되는 OS**: 모두   
 **지원 되는 SQL 버전**: 모두     

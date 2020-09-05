@@ -2,26 +2,21 @@
 title: 애플리케이션 프록시 문제 해결 | Microsoft Docs
 description: Azure AD 애플리케이션 프록시에서 오류를 해결하는 방법을 설명합니다.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 06/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57a77b486239f1fd49a4979d7acbbfc8f0254311
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 413cfe4f3aed446ad26a210b4faa452c4f624685
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85848452"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640857"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>애플리케이션 프록시 문제 및 오류 메시지 문제 해결
 
@@ -84,12 +79,13 @@ Get-EventLog application –source "Microsoft AAD Application Proxy Connector" �
 | 현재 이 회사 앱에 액세스할 수 없습니다. 나중에 다시 시도하세요. 커넥터 제한 시간이 초과되었습니다. | 온-프레미스 쪽에서이 응용 프로그램에 대해 올바르게 정의 되지 않은 경우 사용자가 게시 한 앱에 액세스 하려고 하면이 오류가 발생할 수 있습니다. 사용자에 게 온-프레미스 컴퓨터에서이 백 엔드 응용 프로그램에 대해 정의 된 적절 한 사용 권한이 있는지 확인 합니다. |
 | 이 회사 앱에 액세스할 수 없습니다. 이 애플리케이션에 액세스할 수 있는 권한이 없습니다. 권한 부여에 실패했습니다. 사용자에 게 Azure Active Directory Premium에 대 한 라이선스가 있는지 확인 합니다. | 구독자의 관리자가 프리미엄 라이선스를 사용 하 여 명시적으로 할당 하지 않은 경우 사용자가 게시 한 앱에 액세스 하려고 하면이 오류가 발생할 수 있습니다. 구독자의 Active Directory **라이선스** 탭으로 이동 하 여이 사용자 또는 사용자 그룹에 프리미엄 라이선스가 할당 되었는지 확인 합니다. |
 | 지정 된 호스트 이름을 가진 서버를 찾을 수 없습니다. | 응용 프로그램의 사용자 지정 도메인이 올바르게 구성 되지 않은 경우 사용자가 게시 한 앱에 액세스 하려고 하면이 오류가 발생할 수 있습니다. [Azure에서 사용자 지정 도메인 작업](application-proxy-configure-custom-domain.md) 의 단계를 수행 하 여 도메인에 대 한 인증서를 업로드 하 고 DNS 레코드를 올바르게 구성 했는지 확인 AD 응용 프로그램 프록시 |
+|사용 권한 없음:이 회사 앱에 액세스할 수 없거나 사용자에 게 권한을 부여할 수 없습니다. 사용자가 온-프레미스 AD에 정의 되어 있고 사용자가 온-프레미스 AD에서 앱에 액세스할 수 있는지 확인 합니다. | 권한 부여 정보에 액세스 하는 데 문제가 있을 수 있습니다. [일부 응용 프로그램 및 api는 계정 개체에 대 한 권한 부여 정보에 액세스 해야]( https://support.microsoft.com/help/331951/some-applications-and-apis-require-access-to-authorization-information)합니다 .를 참조 하세요. 간단히 말해서 해결할 앱 프록시 커넥터 컴퓨터 계정을 "Windows 인증 액세스 그룹" builtin 도메인 그룹에 추가 합니다. |
 
 ## <a name="my-error-wasnt-listed-here"></a>내 오류가 여기에 나열되지 않았습니다.
 
 Azure AD 애플리케이션 프록시에 이 문제 해결 가이드에 나열되지 않은 오류 또는 문제가 발생한 경우 알려주시기 바랍니다. 발생한 오류의 세부 정보를 [피드백 팀](mailto:aadapfeedback@microsoft.com)에게 전자 메일로 보내 주세요.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 * [Azure Active Directory에 대한 애플리케이션 프록시 사용](application-proxy-add-on-premises-application.md)
 * [애플리케이션 프록시를 사용하여 애플리케이션 게시](application-proxy-add-on-premises-application.md)
 * [Single Sign-On 사용](application-proxy-configure-single-sign-on-with-kcd.md)

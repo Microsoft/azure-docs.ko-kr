@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: 이 문서에서는 시간 이동 및 라이브 출력을 사용 하 여 라이브 스트림을 기록 하 고 주문형 재생을 만드는 방법을 설명 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 05/07/2020
-ms.author: juliako
-ms.openlocfilehash: 8c5afe45ce864ba76d5d637df3534d426d39167a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: f188d959bf702a2907fe34805b41fa62cae7ee40
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000995"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265391"
 ---
 # <a name="use-time-shifting-and-live-outputs-to-create-on-demand-video-playback"></a>시간 이동 및 라이브 출력을 사용 하 여 주문형 비디오 재생 만들기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services [라이브 출력](/rest/api/media/liveoutputs) 개체는 라이브 스트림을 catch 하 고 Media Services 계정의 자산으로 기록 하는 디지털 비디오 레코더와 비슷합니다. 기록 된 콘텐츠는 [자산](/rest/api/media/assets) 리소스로 정의 된 컨테이너에 유지 됩니다. 컨테이너는 계정에 연결 된 Azure Storage 계정에 있습니다. 또한 라이브 출력을 사용 하면 보관 기록에 보관 되는 스트림 양 (예: 클라우드 DVR의 용량) 또는 뷰어가 라이브 스트림 감시를 시작할 수 있는 경우와 같이 나가는 라이브 스트림의 일부 속성을 제어할 수 있습니다. 디스크의 보관 파일은 실시간 출력의 **archiveWindowLength** 속성에 지정 된 양의 내용만 보유 하는 순환 보관 "창"입니다. 이 창 외부에 속하는 콘텐츠는 저장소 컨테이너에서 자동으로 삭제 되며 복구할 수 없습니다. ArchiveWindowLength 값은 DVR의 용량을 지정 하는 ISO-8601 timespan 기간 (예: PTHH: MM: SS)을 나타냅니다. 값은 최소 1 분에서 최대 25 시간까지 설정할 수 있습니다.
 
@@ -45,7 +47,7 @@ Azure Media Services [라이브 출력](/rest/api/media/liveoutputs) 개체는 �
 
 스트리밍 로케이터를 사용 하 여 라이브 출력의 자산을 게시 한 경우 라이브 이벤트 (DVR 창 길이까지)는 스트리밍 로케이터가 만료 또는 삭제 될 때까지 계속 해 서 볼 수 있습니다.
 
-자세한 내용은 다음을 참조하세요.
+자세한 내용은 다음을 참조하십시오.
 
 - [라이브 스트리밍 개요](live-streaming-overview.md)
 - [라이브 스트리밍 자습서](stream-live-tutorial-with-api.md)

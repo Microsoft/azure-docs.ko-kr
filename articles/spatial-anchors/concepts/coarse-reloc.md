@@ -8,12 +8,13 @@ ms.author: bobuc
 ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 4ed1a7cacc6c40cb12976c8703164d46e0dc0458
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 02f5c570b7400266ac648eaa257fb76d26819a40
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202383"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003187"
 ---
 # <a name="coarse-relocalization"></a>광역 위치 재결정
 
@@ -122,9 +123,9 @@ cloudSpatialAnchorSession.LocationProvider(sensorProvider);
 
 |                 | 실내 | 야외 |
 |-----------------|---------|----------|
-| **GPS**         | 해제 | 켜기 |
+| **GPS**         | 꺼짐 | 설정 |
 | **무선**        | 켜기 | 설정 (선택 사항) |
-| **오류 있는 오류** | 설정 (주의 사항, 아래 참조) | 해제 |
+| **오류 있는 오류** | 설정 (주의 사항, 아래 참조) | 끄기 |
 
 ### <a name="enabling-gps"></a>GPS 사용
 
@@ -658,7 +659,7 @@ GPS를 사용 하 여 쿼리할 때 동일한 추론을 적용 합니다. 장치
 
 |                 | HoloLens | Android | iOS |
 |-----------------|----------|---------|-----|
-| **GPS**         | 해당 없음 | [Locationmanager][3] API (GPS 및 네트워크 모두)를 통해 지원 됨 | [Cllocationmanager][4] api를 통해 지원 됨 |
+| **GPS**         | N/A | [Locationmanager][3] API (GPS 및 네트워크 모두)를 통해 지원 됨 | [Cllocationmanager][4] api를 통해 지원 됨 |
 | **무선**        | 3 초 마다 한 번의 검색 속도로 지원 됨 | 지원됨. API 수준 28부터 WiFi 검색은 2 분 마다 4 개의 호출로 제한 됩니다. Android 10에서는 개발자 설정 메뉴에서 제한을 사용 하지 않도록 설정할 수 있습니다. 자세한 내용은 [Android 설명서][5]를 참조 하세요. | 해당 없음-공용 API 없음 |
 | **오류 있는 오류** | [Eddystone][1] 및 [ibeacon 장치로][2] 제한 | [Eddystone][1] 및 [ibeacon 장치로][2] 제한 | [Eddystone][1] 및 [ibeacon 장치로][2] 제한 |
 

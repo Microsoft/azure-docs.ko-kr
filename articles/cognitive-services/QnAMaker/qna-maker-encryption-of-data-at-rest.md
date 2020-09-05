@@ -7,14 +7,14 @@ manager: venkyv
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 07/10/2020
+ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 1ca0dda046329e95c649540fd42f96ca43838c85
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e744423e00377ef763824f6e39865e6b3e8ee475
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086708"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89073542"
 ---
 # <a name="qna-maker-encryption-of-data-at-rest"></a>휴지 상태의 데이터 암호화 QnA Maker
 
@@ -22,7 +22,7 @@ QnA Maker은 클라우드에 유지 될 때 데이터를 자동으로 암호화 
 
 ## <a name="about-encryption-key-management"></a>암호화 키 관리 정보
 
-기본적으로 구독은 Microsoft에서 관리 하는 암호화 키를 사용 합니다. 사용자 고유의 키를 사용 하 여 구독을 관리 하는 옵션도 있습니다. CMK (고객이 관리 하는 키)는 액세스 제어를 만들고, 회전 하 고, 사용 하지 않도록 설정 하 고, 취소할 수 있는 유연성을 제공 합니다. 데이터를 보호 하는 데 사용 되는 암호화 키를 감사할 수도 있습니다.
+기본적으로 구독은 Microsoft에서 관리하는 암호화 키를 사용합니다. CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 구독을 관리 하는 옵션도 있습니다. CMK는 액세스 제어를 만들고, 회전 하 고, 비활성화 하 고, 취소할 수 있는 유연성을 제공 합니다. 데이터를 보호하는 데 사용되는 암호화 키를 감사할 수도 있습니다. CMK가 구독에 대해 구성 된 경우 두 번째 보안 계층을 제공 하는 동시에 두 번째 암호화가 제공 되며,이를 통해 Azure Key Vault를 통해 암호화 키를 제어할 수 있습니다.
 
 QnA Maker는 Azure search에서 CMK 지원을 사용 합니다. [Azure Search에서 Azure Key Vault를 사용 하 여 Cmk](https://docs.microsoft.com/azure/search/search-security-manage-encryption-keys)를 만들어야 합니다. CMK를 사용 하도록 설정 하려면이 Azure 인스턴스를 QnA Maker 서비스와 연결 해야 합니다.
 
@@ -35,17 +35,17 @@ QnA Maker 서비스는 Azure Search 서비스의 CMK를 사용 합니다. CMKs�
 
 1. 새 Azure Search 인스턴스를 만들고 [Azure Cognitive Search에 대 한 고객이 관리 하는 주요 필수 조건](https://docs.microsoft.com/azure/search/search-security-manage-encryption-keys#prerequisites)에 설명 된 필수 구성 요소를 사용 하도록 설정 합니다.
 
-   ![암호화 설정 보기](../media/cognitive-services-encryption/qna-encryption-1.png)
+   ![암호화 설정 보기 1](../media/cognitive-services-encryption/qna-encryption-1.png)
 
 2. QnA Maker 리소스를 만들면 자동으로 Azure Search 인스턴스와 연결 됩니다. CMK와 함께 사용할 수 없습니다. CMK를 사용 하려면 1 단계에서 만든 Azure Search의 새로 만든 인스턴스를 연결 해야 합니다. 특히 `AzureSearchAdminKey` QnA Maker 리소스에서 및를 업데이트 해야 `AzureSearchName` 합니다.
 
-   ![암호화 설정 보기](../media/cognitive-services-encryption/qna-encryption-2.png)
+   ![암호화 설정 보기 2](../media/cognitive-services-encryption/qna-encryption-2.png)
 
 3. 다음으로 새 응용 프로그램 설정을 만듭니다.
-   * **이름**: 다음으로 설정 합니다.`CustomerManagedEncryptionKeyUrl`
+   * **이름**: 다음으로 설정 합니다. `CustomerManagedEncryptionKeyUrl`
    * **Value**: Azure Search 인스턴스를 만들 때 1 단계에서 얻은 값입니다.
 
-   ![암호화 설정 보기](../media/cognitive-services-encryption/qna-encryption-3.png)
+   ![암호화 설정 3 보기](../media/cognitive-services-encryption/qna-encryption-3.png)
 
 4. 완료 되 면 런타임을 다시 시작 합니다. 이제 QnA Maker 서비스는 CMK를 사용 합니다.
 

@@ -6,15 +6,16 @@ ms.author: banders
 ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
+ms.subservice: cloudyn
 ms.reviewer: vitavor
 ms.custom: seodec18
 ROBOTS: NOINDEX
-ms.openlocfilehash: 892df9a6e0eb4d791f818eed0a78c96a829e25a0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 03d5e3959b85a2b0bd9ae30744051895ff026b77
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79464226"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691227"
 ---
 # <a name="view-key-cost-metrics-with-dashboards"></a>대시보드를 사용하여 주요 비용 메트릭 보기
 
@@ -27,7 +28,7 @@ Cloudyn의 대시보드에서는 개요 수준의 보고서를 확인할 수 있
 - 재무 담당자
 - 애플리케이션 또는 프로젝트 소유자
 - DevOps 엔지니어
-- 경영진
+- 임원
 
 대시보드는 여러 위젯으로 구성되며, 각 위젯은 기본적으로 보고서 썸네일입니다. 위젯을 클릭하면 보고서가 열립니다. 보고서를 사용자 지정하면 보고서가 내 보고서에 저장되고 대시보드에 추가됩니다.
 

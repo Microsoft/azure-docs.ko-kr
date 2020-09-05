@@ -6,15 +6,15 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 05/26/2020
+ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 3361241bf0a330abc18701f93460208b8804a7dc
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 04e21e4bcd56506ba27730ebc1f9b0db8dc39615
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83994264"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509688"
 ---
 # <a name="view-system-test-results"></a>시스템 테스트 결과 보기
 
@@ -54,11 +54,11 @@ ms.locfileid: "83994264"
 
 다운로드한 zip 아카이브에는 파일 3개가 들어 있습니다.
 
-1.  **사용자 지정 mt.exe:** 이 파일에는 사용자 데이터를 사용 하 여 학습 한 모델에서 수행 하는 대상 언어로 원본 언어 문장의 기계 번역이 포함 됩니다.
+1.  **custom.mt.txt:** 이 파일에는 사용자 데이터를 사용 하 여 학습 한 모델에서 수행 하는 대상 언어로 원본 언어 문장의 기계 번역이 포함 됩니다.
 
-2.  **참조 txt:** 이 파일에는 대상 언어로 된 소스 언어 문장의 번역이 사용자에 게 포함 되어 있습니다.
+2.  **ref.txt:** 이 파일에는 대상 언어로 된 소스 언어 문장의 번역이 사용자에 게 포함 되어 있습니다.
 
-3.  **원본 .txt:** 이 파일은 소스 언어의 문장을 포함 합니다.
+3.  **source.txt:** 이 파일은 소스 언어의 문장을 포함 합니다.
 
     ![다운로드한 시스템 테스트 결과](media/how-to/how-to-download-system-test.png)
 
@@ -68,7 +68,7 @@ ms.locfileid: "83994264"
 
 1.  프로젝트를 선택하고 [모델] 탭으로 이동합니다.
 
-2. 성공적으로 학습 된 모델의 경우 배포 되지 않은 경우 "배포" 단추를 표시 합니다.
+2. 성공적으로 훈련된 모델에는 (아직 배포되지 않은 경우) “배포” 단추가 표시됩니다.
 
     ![모델 배포](media/how-to/how-to-deploy-model.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "83994264"
 
     ![모델 배포](media/how-to/how-to-deploy-model-regions.png)
 
-5.  "상태" 열에서 모델의 상태를 볼 수 있습니다.
+5.  “상태” 열에서 모델의 상태를 확인할 수 있습니다.
 
 >[!Note]
 >사용자 지정 변환기는 언제 든 지 작업 영역 내에서 10 개의 배포 된 모델을 지원 합니다.
@@ -102,6 +102,6 @@ ms.locfileid: "83994264"
 
 ## <a name="next-steps"></a>다음 단계
 
-- [변환기 V3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)을 통해 배포 된 사용자 지정 변환 모델 사용을 시작 합니다.
+- 배포된 사용자 지정 번역 모델을 [Microsoft Translator Text API V3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)를 통해 사용합니다.
 - [설정을 관리](how-to-manage-settings.md)하여 작업 영역을 공유하고 구독 키를 관리하는 방법을 알아봅니다.
 - [Microsoft Translator Hub](https://hub.microsofttranslator.com)에서 [작업 영역과 프로젝트를 마이그레이션하는 방법](how-to-migrate.md)을 알아봅니다.

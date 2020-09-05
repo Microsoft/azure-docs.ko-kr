@@ -1,14 +1,14 @@
 ---
 title: 배포 순서 이해
 description: 청사진을 할당 하는 동안 청사진 아티팩트가 배포 되는 기본 순서와 배포 순서를 사용자 지정 하는 방법에 대해 알아봅니다.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: d4a3b07e158aa7e4514ea9543bf44ad57e379d24
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 8305e5d44caef0f35e5b4beb4b70be9736272fa7
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970623"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051477"
 ---
 # <a name="understand-the-deployment-sequence-in-azure-blueprints"></a>Azure Blueprint의 배포 순서 이해
 
@@ -141,8 +141,8 @@ JSON에서 `dependsOn` 속성을 정의하여 순서를 지정할 수 있습니�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [청사진 수명 주기](lifecycle.md)에 대해 알아봅니다.
-- [정적 및 동적 매개 변수](parameters.md) 사용 방법 이해
-- [청사진 리소스 잠금](resource-locking.md)을 활용하는 방법 알아보기
+- [청사진 수명 주기](./lifecycle.md)에 대해 알아봅니다.
+- [정적 및 동적 매개 변수](./parameters.md) 사용 방법 이해
+- [청사진 리소스 잠금](./resource-locking.md)을 활용하는 방법 알아보기
 - [기존 할당을 업데이트](../how-to/update-existing-assignments.md)하는 방법 알아보기
 - [일반 문제 해결 방법](../troubleshoot/general.md)을 통해 청사진 할당 중에 발생하는 문제 해결

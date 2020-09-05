@@ -5,12 +5,13 @@ author: LMWF
 ms.topic: conceptual
 ms.date: 6/12/2017
 ms.author: lemai
-ms.openlocfilehash: e24faa22445ddc40fad63a91442e7cec3e14a5e1
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 9c31040ec13084f9e4b08bbc9a347e4ad44975bf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86246094"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021258"
 ---
 # <a name="replacing-the-start-node-and-stop-node-apis-with-the-node-transition-api"></a>시작 노드 및 중지 노드 API를 노드 전환 API로 바꾸기
 

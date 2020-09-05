@@ -3,18 +3,18 @@ title: Azure CDN 설명서
 summary: Azure CDN(Content Delivery Network)는 고대역폭 컨텐츠를 제공하는 글로벌 CDN 솔루션입니다. Azure 또는 다른 위치에서 호스팅할 수 있습니다. Azure CDN을 사용하면 가장 가까운 POP(Point of Presence) 서버를 사용하여 Azure Blob Storage, 웹 애플리케이션 또는 공개적으로 액세스 가능한 웹 서버에서 로드된 정적 개체를 캐시할 수 있습니다. Azure CDN은 다양한 네트워크를 활용하고 최적화를 라우팅하여 캐싱할 수 없는 동적 콘텐츠를 가속화할 수 있습니다.
 metadata:
   title: Azure CDN 설명서 - 자습서, API 참조
-  description: Azure CDN(Content Delivery Network)는 고대역폭 컨텐츠를 제공하는 글로벌 CDN 솔루션입니다. Azure 또는 다른 위치에서 호스팅할 수 있습니다. Azure CDN을 사용하면 가장 가까운 POP(Point of Presence) 서버를 사용하여 Azure Blob Storage, 웹 애플리케이션 또는 공개적으로 액세스 가능한 웹 서버에서 로드된 정적 개체를 캐시할 수 있습니다. Azure CDN은 다양한 네트워크를 활용하고 최적화를 라우팅하여 캐싱할 수 없는 동적 콘텐츠를 가속화할 수 있습니다.
+  description: Azure 또는 다른 위치에서 호스트할 수 있는 고대역폭 콘텐츠를 제공하기 위한 솔루션인 Azure Content Delivery Network에 대해 알아봅니다.
   ms.service: azure-cdn
   ms.topic: landing-page
   author: asudbring
   ms.author: allensu
   ms.date: 02/24/2020
-  ms.openlocfilehash: c3c9cd72a85744ac6b609b178ac4e7c2413b4080
-  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+  ms.openlocfilehash: ed3c4f1794407ccdb841ea3c6ca35ff4d8e1a808
+  ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85554315"
+  ms.lasthandoff: 08/13/2020
+  ms.locfileid: "88192451"
 landingContent:
 - title: Azure CDN 정보
   linkLists:

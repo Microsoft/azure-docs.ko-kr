@@ -1,5 +1,5 @@
 ---
-title: 파일 포함
+title: 포함 파일
 description: 포함 파일
 services: azure-sentinel
 author: yelevin
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/28/2020
 ms.author: yelevin
 ms.custom: include file
-ms.openlocfilehash: 76020b3c1f28e5b5f6363aef181b76bc93a9613e
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 63cb53dc60a718892d4bf86140e7fd51303bd61c
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87294240"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761725"
 ---
 ### <a name="the-data-model-of-the-schema"></a>스키마의 데이터 모델
 
@@ -25,7 +25,7 @@ ms.locfileid: "87294240"
 | **분류** | 문자열 | 인시던트 종료 분류 |
 | **ClassificationComment** | 문자열 | 인시던트 종료 분류 주석 |
 | **ClassificationReason** | 문자열 | 문제를 닫은 분류 이유 |
-| **ClosureTime** | Datetime | 인시던트가 마지막으로 종결 된 시간에 대 한 타임 스탬프 (UTC)입니다. |
+| **Closed 시간** | Datetime | 인시던트가 마지막으로 종결 된 시간에 대 한 타임 스탬프 (UTC)입니다. |
 | **설명** | 동적 | 인시던트 설명 |
 | **CreatedTime** | Datetime | 인시던트가 생성 된 시간에 대 한 타임 스탬프 (UTC) |
 | **설명** | string | 문제 설명 |

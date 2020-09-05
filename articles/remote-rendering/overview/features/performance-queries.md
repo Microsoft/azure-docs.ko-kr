@@ -5,12 +5,13 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/10/2020
 ms.topic: article
-ms.openlocfilehash: 3207ffca6fd0fbc943f4a2873b8b6c9029d565af
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c7212157bb7ef541ac1eb1753f46ea6ad434c2ca
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84022797"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89013370"
 ---
 # <a name="server-side-performance-queries"></a>서버 쪽 성능 쿼리
 
@@ -110,7 +111,8 @@ void QueryPerformanceAssessment(ApiHandle<AzureSession> session)
     assessmentQuery->Completed([] (ApiHandle<PerformanceAssessmentAsync> res)
     {
         // do something with the result:
-        PerformanceAssessment result = *res->Result();
+        PerformanceAssessment result = res->GetResult();
+
         // ...
 
     });

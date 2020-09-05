@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/05/2020
-ms.openlocfilehash: 14634fac5d4501572a54f80f01a37e440d69d09b
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: e279f0ba5186ae4e4ad4b403ad823a59ee085170
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86075538"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997560"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>HDInsight 클러스터에 대한 로그 관리
 
@@ -67,7 +67,7 @@ HDInsight 클러스터에서 실행 중인 워크로드 유형을 이해하여 �
 
 * 클러스터에서 또는 둘 이상의 클러스터에서 로그를 수집하고 감사, 모니터링, 계획, 경고 등의 목적에 사용할 수 있도록 정렬하는 방안을 고려해 봅니다. 사용자 정의 솔루션을 사용하여 정기적으로 로그 파일에 액세스 및 다운로드하고, 로그 파일을 결합 및 분석하여 대시보드 표시를 제공할 수 있습니다. 보안 또는 실패 감지에 대해 경고하는 추가 기능을 추가할 수도 있습니다. 이러한 기능은 PowerShell, HDInsight SDK 또는 Azure 클래식 배포 모델에 액세스하는 코드를 사용하여 빌드할 수 있습니다.
 
-* 모니터링 솔루션 또는 서비스가 유용한 이점이 될 수 있는지 여부를 고려합니다. Microsoft System Center에서는 [HDInsight 관리 팩](https://www.microsoft.com/download/details.aspx?id=42521)을 제공합니다. Apache Chukwa 및 Ganglia 같은 타사 도구를 사용하여 로그를 수집하고 중앙 집중화할 수도 있습니다. 대부분의 회사에서는 Hadoop 기반의 빅 데이터 솔루션을 모니터링 하는 서비스를 제공 합니다. 예를 들어 센터, Compuware APM, Sematext SPM, Zettaset Orchestrator 등이 있습니다.
+* 모니터링 솔루션 또는 서비스가 유용한 이점이 될 수 있는지 여부를 고려합니다. Microsoft System Center에서는 [HDInsight 관리 팩](https://systemcenter.wiki/?Get_ManagementPackBundle=Microsoft.HDInsight.mpb&FileMD5=10C7D975C6096FFAA22C84626D211259)을 제공합니다. Apache Chukwa 및 Ganglia 같은 타사 도구를 사용하여 로그를 수집하고 중앙 집중화할 수도 있습니다. 대부분의 회사에서는 Hadoop 기반의 빅 데이터 솔루션을 모니터링 하는 서비스를 제공 합니다. 예를 들어 센터, Compuware APM, Sematext SPM, Zettaset Orchestrator 등이 있습니다.
 
 ## <a name="step-2-manage-cluster-service-versions-and-view-logs"></a>2 단계: 클러스터 서비스 버전 관리 및 로그 보기
 

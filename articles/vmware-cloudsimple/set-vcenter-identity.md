@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: e040f42db195760cf40f6dbdf651826b544b65a4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f6f3b10219775adb02d47a91da2573ea99f30ac0
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507576"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212253"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Active Directory 사용할 vCenter id 원본 설정
 
@@ -41,6 +41,9 @@ VMware vCenter는 vCenter에 액세스 하는 사용자를 인증 하는 데 다
 * [온-프레미스 Active Directory Single Sign-On id 원본으로 추가](#add-on-premises-active-directory-as-a-single-sign-on-identity-source)
 * [사설 클라우드에서 새 Active Directory 설정](#set-up-new-active-directory-on-a-private-cloud)
 * [Azure에서 Active Directory 설정](#set-up-active-directory-on-azure)
+
+> [!IMPORTANT]
+> **Active Directory (Windows 통합 인증)은 지원 되지 않습니다.** LDAP 옵션만 Active Directory id 원본으로 지원 됩니다.
 
 ## <a name="add-on-premises-active-directory-as-a-single-sign-on-identity-source"></a>온-프레미스 Active Directory을 Single Sign-on Id 원본으로 추가
 

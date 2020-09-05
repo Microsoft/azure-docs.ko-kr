@@ -2,25 +2,21 @@
 title: '자습서: GitHub와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 GitHub 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 8761f5ca-c57c-4a7e-bf14-ac0421bd3b5e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 06/17/2020
+ms.date: 08/07/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 718d51c94d05e8e18f2b254b5e81e346a67205a1
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 7153a1279785cfe79d23b2b5ba843ec9f5cd4965
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87170534"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550747"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>자습서: GitHub와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -45,7 +41,7 @@ GitHub와 Azure AD 통합을 구성하려면 다음 항목이 필요합니다.
 * GitHub에서 **SP** 시작 SSO를 지원합니다.
 
 * GitHub에서 [**자동** 사용자 프로비저닝(조직 초대)](github-provisioning-tutorial.md)을 지원합니다.
-* GitHub를 구성한 후에는 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 침입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법 알아보기](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad)
+* GitHub가 구성되면 세션 제어를 적용하여 조직의 중요한 데이터의 반출 및 반입을 실시간으로 보호할 수 있습니다. 세션 제어는 조건부 액세스에서 확장됩니다. [Microsoft Cloud App Security를 사용하여 세션 제어를 적용하는 방법 알아보기](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad)
 
 ## <a name="adding-github-from-the-gallery"></a>갤러리에서 GitHub 추가
 
@@ -139,7 +135,13 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 1. **사용자 및 그룹** 대화 상자의 사용자 목록에서 **B.Simon**을 선택한 다음, 화면 아래쪽에서 **선택** 단추를 클릭합니다.
 1. SAML 어설션에 역할 값이 필요한 경우 **역할 선택** 대화 상자의 목록에서 사용자에 대한 적절한 역할을 선택한 다음, 화면의 아래쪽에 있는 **선택** 단추를 클릭합니다.
-1. **할당 추가** 대화 상자에서 **할당** 단추를 클릭합니다.
+
+    ![사용자 역할](./media/github-tutorial/user-role.png)
+
+    > [!NOTE]
+    > **역할 선택** 옵션이 비활성화되고 선택한 사용자의 기본 역할은 USER입니다.
+
+7. **할당 추가** 대화 상자에서 **할당** 단추를 클릭합니다.
 
 ## <a name="configure-github-sso"></a>GitHub SSO 구성
 
@@ -147,11 +149,11 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 2. **설정**으로 이동하고 **보안**을 클릭합니다.
 
-    ![설정](./media/github-tutorial/tutorial_github_config_github_03.png)
+    ![설정](./media/github-tutorial/security.png)
 
 3. **SAML 인증 사용** 상자를 확인하여 Single Sign-On 구성 필드를 표시합니다. 다음 단계를 수행합니다.
 
-    ![설정](./media/github-tutorial/tutorial_github_config_github_13.png)
+    ![설정](./media/github-tutorial/saml-sso.png)
 
     a. **Single Sign-On URL** 값을 복사하고 이 값을 Azure Portal의 **기본 SAML 구성**에 있는 **로그온 URL** 텍스트 상자에 붙여넣습니다.
     
@@ -159,7 +161,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 4. 다음 필드를 구성합니다.
 
-    ![설정](./media/github-tutorial/tutorial_github_config_github_051.png)
+    ![설정](./media/github-tutorial/configure.png)
 
     a. **로그온 URL** 텍스트 상자에 Azure Portal에서 복사한 **로그인 URL** 값을 붙여넣습니다.
 
@@ -175,7 +177,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 5. **SAML 구성 테스트**를 클릭하여 SSO 동안 유효성 검사 실패 또는 오류가 없는지 확인합니다.
 
-    ![설정](./media/github-tutorial/tutorial_github_config_github_06.png)
+    ![설정](./media/github-tutorial/test.png)
 
 6. 페이지 맨 아래에 있는 **저장**
 
@@ -192,21 +194,21 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 2. **피플**을 클릭합니다.
 
-    ![사람](./media/github-tutorial/tutorial_github_config_github_08.png "사람")
+    ![사람](./media/github-tutorial/people.png "사람")
 
 3. **멤버 초대**를 클릭합니다.
 
-    ![사용자 초대](./media/github-tutorial/tutorial_github_config_github_09.png "사용자 초대")
+    ![사용자 초대](./media/github-tutorial/invite-member.png "사용자 초대")
 
 4. **멤버 초대** 대화 상자 페이지에서 다음 단계를 수행합니다.
 
     a. **전자 메일** 텍스트 상자에 Britta Simon 계정의 전자 메일 주소를 입력합니다.
 
-    ![피플 초대](./media/github-tutorial/tutorial_github_config_github_10.png "피플 초대")
+    ![피플 초대](./media/github-tutorial/email-box.png "피플 초대")
 
     b. **초대 보내기**를 클릭합니다.
 
-    ![피플 초대](./media/github-tutorial/tutorial_github_config_github_11.png "피플 초대")
+    ![피플 초대](./media/github-tutorial/send-invitation.png "피플 초대")
 
     > [!NOTE]
     > Azure Active Directory 계정 보유자는 활성화되기 전에 전자 메일을 받고 링크를 따라 계정을 확인합니다.

@@ -3,12 +3,13 @@ title: 메시지 전송, 잠금 및 정착지 Azure Service Bus
 description: 이 문서에서는 메시지 전송, 잠금 및 결산일 작업 Azure Service Bus에 대 한 개요를 제공 합니다.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 22be139fccdeecee846c204a8035804fb897ae5a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: fd71edd12e478bcd5f14815c105c14482cf7e2bd
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85341156"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020034"
 ---
 # <a name="message-transfers-locks-and-settlement"></a>메시지 전송, 잠금 및 확인
 

@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: Microsoft Azure Media Services v3로 개발 시 엔터티와 API에 적용되는 규칙에 대해 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/21/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 703c08cd5a884c8bfdd027b4ecf457c9e954a2dc
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6cb771b8df4ab81ff9c538a38b084856b1dfbc39
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87043411"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267278"
 ---
 # <a name="develop-with-media-services-v3-apis"></a>Microsoft Azure Media Services v3 API로 개발
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 개발자인 경우 Media Services [REST API](/rest/api/media/) 또는 REST API와 상호 작용할 수 있도록 하는 클라이언트 라이브러리를 사용하여 사용자 지정 미디어 워크플로를 손쉽게 만들고, 관리하고 유지할 수 있습니다. [Media Services v3](https://aka.ms/ams-v3-rest-sdk) API는 OpenAPI 사양(이전 명칭 Swagger)에 기반을 두고 있습니다.
 
@@ -86,7 +88,7 @@ Azure Resource Manager의 이름을 지정하는 방법에 대한 자세한 내�
 
 Azure Microsoft Azure Media Services [Swagger 파일](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01/streamingservice.json)에 `x-ms-long-running-operation`으로 표시되는 작업은 장기 실행 작업입니다. 
 
-비동기 Azure 작업을 추적하는 방법에 대한 자세한 내용은 [비동기 작업](../../azure-resource-manager/management/async-operations.md#monitor-status-of-operation)을 참조하세요.
+비동기 Azure 작업을 추적하는 방법에 대한 자세한 내용은 [비동기 작업](../../azure-resource-manager/management/async-operations.md)을 참조하세요.
 
 Microsoft Azure Media Services에는 다음과 같은 장기 실행 작업이 있습니다.
 

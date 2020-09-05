@@ -4,19 +4,19 @@ description: 외부 Id의 사용자 지정 승인 워크플로에 대 한 API �
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: how-to
+ms.topic: article
 ms.date: 06/16/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d1a4495b1d637b1cf8592f8c17e63ad456ea3c4
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: d664d7cd169593924917bb02a0220e4047eb0cdb
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909193"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165249"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>셀프 서비스 등록에 사용자 지정 승인 워크플로 추가
 
@@ -65,7 +65,7 @@ Azure AD를 사용 하 여 인증 하 고 사용자를 만들 수 있는 권한�
 
   ![승인 상태 API 커넥터 구성 확인](./media/self-service-sign-up-add-approvals/check-approval-status-api-connector-config-alt.png)
 
-- **승인 요청** -사용자가 특성 컬렉션 페이지를 완료 한 후, 사용자 계정을 만들기 전에 승인을 요청 하기 전에 승인 시스템에 대 한 호출을 보냅니다. 승인 요청을 자동으로 부여 하거나 수동으로 검토할 수 있습니다. "요청 승인" API 커넥터의 예입니다. 승인 시스템에서 승인 결정을 내리는 데 필요한 모든 **클레임** 을 선택 합니다.
+- **승인 요청** -사용자가 특성 컬렉션 페이지를 완료 한 후, 사용자 계정을 만들기 전에 승인을 요청 하기 전에 승인 시스템에 대 한 호출을 보냅니다. 승인 요청을 자동으로 부여 하거나 수동으로 검토할 수 있습니다. "요청 승인" API 커넥터의 예입니다. 
 
   ![요청 승인 API 커넥터 구성](./media/self-service-sign-up-add-approvals/create-approval-request-api-connector-config-alt.png)
 
@@ -90,28 +90,33 @@ Azure AD를 사용 하 여 인증 하 고 사용자를 만들 수 있는 권한�
 
 ## <a name="control-the-sign-up-flow-with-api-responses"></a>API 응답을 사용 하 여 등록 흐름 제어
 
-승인 시스템은 두 API 끝점의 [api 응답 형식을](self-service-sign-up-add-api-connector.md#expected-response-types-from-the-web-api) 사용 하 여 등록 흐름을 제어할 수 있습니다.
+승인 시스템은 등록 흐름을 제어 하기 위해 호출 될 때 응답을 사용할 수 있습니다. 
 
 ### <a name="request-and-responses-for-the-check-approval-status-api-connector"></a>"승인 상태 확인" API 커넥터에 대 한 요청 및 응답
 
 "승인 상태 확인" API 커넥터에서 API가 받은 요청의 예:
 
 ```http
-POST <Approvals-API-endpoint>
+POST <API-endpoint>
 Content-type: application/json
 
 {
- "email": "johnsmith@outlook.com",
- "identities": [
+ "email": "johnsmith@fabrikam.onmicrosoft.com",
+ "identities": [ //Sent for Google and Facebook identity providers
      {
      "signInType":"federated",
      "issuer":"facebook.com",
      "issuerAssignedId":"0123456789"
      }
  ],
+ "displayName": "John Smith",
+ "givenName":"John",
+ "lastName":"Smith",
  "ui_locales":"en-US"
 }
 ```
+
+API로 전송 되는 정확한 클레임은 id 공급자가 제공 하는 정보에 따라 달라 집니다. ' email '은 항상 전송 됩니다.
 
 #### <a name="continuation-response-for-check-approval-status"></a>"승인 상태 확인"에 대 한 연속 응답
 
@@ -169,12 +174,12 @@ Content-type: application/json
 "요청 승인" API 커넥터에서 API가 받은 HTTP 요청의 예:
 
 ```http
-POST <Approvals-API-endpoint>
+POST <API-endpoint>
 Content-type: application/json
 
 {
- "email": "johnsmith@outlook.com",
- "identities": [
+ "email": "johnsmith@fabrikam.onmicrosoft.com",
+ "identities": [ //Sent for Google and Facebook identity providers
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -182,11 +187,21 @@ Content-type: application/json
      }
  ],
  "displayName": "John Smith",
- "city": "Redmond",
- "extension_<extensions-app-id>_CustomAttribute": "custom attribute value",
+ "givenName":"John",
+ "surname":"Smith",
+ "jobTitle":"Supplier",
+ "streetAddress":"1000 Microsoft Way",
+ "city":"Seattle",
+ "postalCode": "12345",
+ "state":"Washington",
+ "country":"United States",
+ "extension_<extensions-app-id>_CustomAttribute1": "custom attribute value",
+ "extension_<extensions-app-id>_CustomAttribute2": "custom attribute value",
  "ui_locales":"en-US"
 }
 ```
+
+API로 전송 되는 정확한 클레임은 사용자 로부터 수집 된 정보나 id 공급자가 제공 하는 정보에 따라 달라 집니다.
 
 #### <a name="continuation-response-for-request-approval"></a>"요청 승인"에 대 한 연속 응답
 
@@ -257,7 +272,7 @@ Content-type: application/json
 
 사용자가 Google 또는 Facebook 계정으로 로그인 한 경우 [사용자 만들기 API](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0&tabs=http)를 사용할 수 있습니다.
 
-1. 승인 시스템은 사용자 흐름에서 HTTP 요청을 수신 합니다.
+1. 승인 시스템은를 사용 하 여 사용자 흐름에서 HTTP 요청을 받습니다.
 
 ```http
 POST <Approvals-API-endpoint>
@@ -303,15 +318,15 @@ Content-type: application/json
 }
 ```
 
-| 매개 변수                                           | 필수 | 설명                                                                                                                                                            |
+| 매개 변수                                           | 필수 | Description                                                                                                                                                            |
 | --------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | userPrincipalName                                   | 예      | `email`API에 전송 된 클레임을 사용 하 여를 생성 하 고, `@` 문자를로 바꾸고 `_` ,을로 미리 보류할 수 있습니다 `#EXT@<tenant-name>.onmicrosoft.com` . |
 | accountEnabled                                      | 예      | `true`로 설정해야 합니다.                                                                                                                                                 |
 | mail                                                | 예      | `email`API로 전송 된 클레임에 해당 합니다.                                                                                                               |
 | userType                                            | 예      | `Guest`이어야 합니다. 이 사용자를 게스트 사용자로 지정 합니다.                                                                                                                 |
 | ID                                          | 예      | 페더레이션된 id 정보입니다.                                                                                                                                    |
-| \<otherBuiltInAttribute>                            | 아니요       | `displayName`, 및 기타와 같은 기타 기본 제공 특성 `city` 매개 변수 이름은 API 커넥터에서 보낸 매개 변수와 같습니다.                            |
-| \<extension\_\{extensions-app-id}\_CustomAttribute> | 아니요       | 사용자에 대 한 사용자 지정 특성입니다. 매개 변수 이름은 API 커넥터에서 보낸 매개 변수와 같습니다.                                                            |
+| \<otherBuiltInAttribute>                            | 예       | `displayName`, 및 기타와 같은 기타 기본 제공 특성 `city` 매개 변수 이름은 API 커넥터에서 보낸 매개 변수와 같습니다.                            |
+| \<extension\_\{extensions-app-id}\_CustomAttribute> | 예       | 사용자에 대 한 사용자 지정 특성입니다. 매개 변수 이름은 API 커넥터에서 보낸 매개 변수와 같습니다.                                                            |
 
 ### <a name="for-a-federated-azure-active-directory-user"></a>페더레이션된 Azure Active Directory 사용자의 경우
 

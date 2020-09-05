@@ -2,18 +2,18 @@
 title: Azure Data Box에서 데이터를 내보내는 자습서 | Microsoft Docs
 description: 배포 필수 구성 요소 및 Azure Data Box에서 데이터를 내보내는 방법에 대해 알아봅니다.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: pod
 ms.topic: how-to
 ms.date: 07/10/2020
-ms.author: v-grpr
-ms.openlocfilehash: 5b17488ebab8dc29221723fabf8efe0c00467509
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.author: twooley
+ms.openlocfilehash: 0ddadd8d2bddda0fdff6a126fe6c09d863139b44
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86209455"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783623"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box-preview"></a>자습서: Azure Data Box (미리 보기)에 대 한 내보내기 순서 만들기
 
@@ -66,11 +66,11 @@ Azure Data Box은 Azure에서 사용자의 위치로 데이터를 이동할 수 
 
 4. 사용자의 지역에서 Azure Data Box 서비스를 사용할 수 있는지 확인 합니다. 다음 정보를 입력하거나 선택하고 **적용**을 클릭합니다.
 
-    |Setting  |값  |
+    |설정  |값  |
     |---------|---------|
     |전송 형식     | **Azure로 내보내기를**선택 합니다.        |
     |Subscription     | Data Box 서비스에 대한 EA, CSP 또는 Azure 스폰서쉽 구독을 선택합니다. <br> 구독은 대금 청구 계정에 연결됩니다.       |
-    |리소스 그룹     |    기존 리소스 그룹을 선택 합니다. <br> 리소스 그룹은 함께 관리하거나 배포할 수 있는 리소스에 대한 논리 컨테이너입니다.         |
+    |Resource group     |    기존 리소스 그룹을 선택합니다. <br> 리소스 그룹은 함께 관리하거나 배포할 수 있는 리소스에 대한 논리 컨테이너입니다.         |
     |원본 Azure 지역    |    현재 데이터가 있는 Azure 지역을 선택 합니다.         |
     |대상 국가     |     장치를 배송 하려는 국가를 선택 합니다.        |
 
@@ -84,8 +84,8 @@ Azure Data Box은 Azure에서 사용자의 위치로 데이터를 이동할 수 
 
     |설정  |값  |
     |---------|---------|
-    |구독     | 구독은 이전에 선택한 내용에 따라 자동으로 채워집니다.|
-    |리소스 그룹 | 이전에 선택한 리소스 그룹입니다. |
+    |Subscription     | 이전에 선택한 내용에 따라 구독이 자동으로 채워집니다.|
+    |Resource group | 이전에 선택한 리소스 그룹입니다. |
     |내보내기 주문 이름     |  주문을 추적하는 데 친숙한 이름을 입력합니다. <br> 이 이름은 2~24자 사이의 문자, 숫자 및 하이픈일 수 있습니다. <br> 이름은 문자 또는 숫자로 시작하고 끝나야 합니다.      |
 
     ![내보내기 주문 기본 사항](media/data-box-deploy-export-ordered/azure-data-box-export-03.png)
@@ -98,7 +98,7 @@ Azure Data Box은 Azure에서 사용자의 위치로 데이터를 이동할 수 
 
 8. **내보내기 옵션 선택**에서 내보내기 옵션 세부 정보를 지정 합니다. 다음 정보를 입력 하거나 선택 하 고 **추가**를 선택 합니다.
 
-    |Setting  |값  |
+    |설정  |값  |
     |---------|---------|
     |스토리지 계정     | 데이터를 내보낼 Azure Storage 계정입니다. |
     |내보내기 유형     | **모든 개체** 에서 내보내고 **XML 파일을 사용**하는 데이터 형식을 지정 합니다.<ul><li> **모든 개체** - **전송 옵션**에 대 한 선택 항목에 따라 작업에서 모든 데이터를 내보내도록 지정 합니다.</li><li> **Xml 파일 사용** – 저장소 계정에서 내보낼 blob 및/또는 파일의 경로 및 접두사 집합을 포함 하는 xml 파일을 지정 합니다. XML 파일은 선택한 저장소 계정의 컨테이너에 있어야 하 고, 파일 공유에서 선택 하는 기능은 현재 지원 되지 않습니다. 파일은 비어 있지 않은 .xml 파일 이어야 합니다.</li></ul>        |

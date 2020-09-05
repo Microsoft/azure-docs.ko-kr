@@ -2,25 +2,21 @@
 title: '자습서: Trakopolis와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Trakopolis 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 73d67c3e-4b4b-4d3b-aa58-6699ea1ccea3
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 1316e3274b851c41af21b94847ed16491310e908
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 35d87b7f7f9d2baf67a65cfcee4b2b72c43403db
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67088342"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552074"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trakopolis"></a>자습서: Trakopolis와 Azure Active Directory 통합
 

@@ -8,7 +8,7 @@
     - name: 상용 마켓플레이스 개요 및 혜택
       href: ./marketplace-publishers-guide.md
       items:
-        - name: '하나의 Marketplace, 두 개의 상점'
+        - name: '한 개의 마켓플레이스, 두 개의 온라인 스토어'
           href: ./comparing-appsource-azure-marketplace.md
         - name: 옵션 및 고려 사항 게시
           href: ./determine-your-listing-type.md
@@ -17,12 +17,16 @@
               href: ./lead-management-for-cloud-marketplace.md
             - name: 상용 마켓플레이스에서의 거래
               href: ./marketplace-commercial-transaction-capabilities-and-considerations.md
+            - name: 플랜 및 가격 책정
+              href: plans-pricing.md
             - name: 프라이빗 제품
               href: ./private-offers.md
             - name: 표준 계약
               href: ./standard-contract.md
             - name: Azure 파트너 고객 사용량 특성
               href: ./azure-partner-customer-usage-attribution.md
+            - name: 지원되는 국가 및 지역
+              href: ./sell-from-countries.md
         - name: 제품 형식별 게시 가이드
           href: ./publisher-guide-by-offer-type.md
           items:
@@ -32,8 +36,6 @@
               href: ./marketplace-solution-templates.md
             - name: Azure 앱 관리형 애플리케이션
               href: ./marketplace-managed-apps.md
-            - name: SaaS 앱
-              href: ./marketplace-saas-applications-technical-publishing-guide.md
             - name: 컨테이너
               href: ./marketplace-containers.md
             - name: IoT Edge 모듈
@@ -109,9 +111,9 @@
               href: ./partner-center-portal/create-azure-container-technical-assets.md
             - name: Azure Container 제품 만들기
               href: ./partner-center-portal/create-azure-container-offer.md
-        - name: 가상 머신 제안
+        - name: Virtual Machine 제품
           items:
-            - name: Azure 가상 머신 제품 만들기
+            - name: Azure Virtual Machine 제품 만들기
               href: ./partner-center-portal/azure-vm-create-offer.md
             - name: Azure VM 기술 자산 만들기
               items:
@@ -165,10 +167,8 @@
               href: ./partner-center-portal/create-power-bi-app-offer.md
         - name: SaaS 제품
           items:
-            - name: SaaS 제품 만들기 검사 목록
-              href: ./partner-center-portal/offer-creation-checklist.md
-            - name: SaaS 제품 만들기
-              href: ./partner-center-portal/create-new-saas-offer.md
+            - name: SaaS 제품 계획
+              href: plan-saas-offer.md
             - name: SaaS에 대한 Azure AD 인증
               items:
                 - name: Azure AD 및 SaaS 개요
@@ -177,6 +177,26 @@
                   href: ./azure-ad-transactable-saas-landing-page.md
                 - name: 체험 또는 평가판의 방문 페이지
                   href: ./azure-ad-free-or-trial-landing-page.md
+            - name: SaaS 요금 청구
+              href: ./partner-center-portal/saas-metered-billing.md
+            - name: SaaS 제품 만들기 및 게시
+              items:
+                - name: SaaS 제품 만들기
+                  href: create-new-saas-offer.md
+                - name: SaaS 제품 속성 구성
+                  href: create-new-saas-offer-properties.md
+                - name: SaaS 제품 목록 구성
+                  href: create-new-saas-offer-listing.md
+                - name: 미리 보기 대상 추가
+                  href: create-new-saas-offer-preview.md
+                - name: 기술 세부 정보 추가
+                  href: create-new-saas-offer-technical.md
+                - name: 플랜 만들기
+                  href: create-new-saas-offer-plans.md
+                - name: SaaS 제품 테스트 및 게시
+                  href: test-publish-saas-offer.md
+            - name: SaaS 제품 마케팅
+              href: create-new-saas-offer-marketing.md
             - name: SaaS 처리 API
               href: ./partner-center-portal/pc-saas-fulfillment-apis.md
               items:
@@ -188,8 +208,6 @@
                   href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
                 - name: SaaS 처리 API - FAQ
                   href: ./partner-center-portal/saas-fulfillment-apis-faq.md
-            - name: SaaS 요금 청구
-              href: ./partner-center-portal/saas-metered-billing.md
         - name: 잠재 고객 관리 개요
           href: ./partner-center-portal/commercial-marketplace-get-customer-leads.md
           items:
@@ -207,8 +225,6 @@
               href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
         - name: Marketplace 계량 서비스
           items:
-            - name: 변칙 검색 서비스
-              href: ./partner-center-portal/anomaly-detection-service-for-metered-billing.md
             - name: 인증 전략
               href: ./partner-center-portal/marketplace-metering-service-authentication.md
             - name: Marketplace 계량 서비스 API
@@ -234,7 +250,7 @@
       href: review-publish-offer.md
     - name: 기존 제품 업데이트
       href: ./partner-center-portal/update-existing-offer.md
-    - name: 활성화 혜택
+    - name: 마켓플레이스 보상 활성화
       href: ./partner-center-portal/marketplace-rewards.md
     - name: 파트너 센터 분석
       items:
@@ -304,3 +320,7 @@
           href: ./cloud-partner-portal-api-troubleshooting-authentication-errors.md
     - name: 지원 옵션
       href: ./partner-center-portal/support.md
+    - name: 리소스
+      items:
+        - name: 지원되는 HTML 태그
+          href: supported-html-tags.md

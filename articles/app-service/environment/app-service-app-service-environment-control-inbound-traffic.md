@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 01/11/2017
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: 5efca8ab51c789a619e48b1ae96a53494ae411ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fe9326ea9ebd5afe981b7ba6c34b1a5d51e084b0
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85831168"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962063"
 ---
 # <a name="how-to-control-inbound-traffic-to-an-app-service-environment"></a>App Service Environment로의 인바운드 트래픽을 제어하는 방법
 ## <a name="overview"></a>개요
@@ -31,8 +31,8 @@ App Service Environment를 Azure Resource Manager 가상 네트워크에서 **�
 
 다음 목록에는 App Service Environment에서 사용 하는 포트가 나와 있습니다. 명확하게 언급이 없는 한 모든 포트는 **TCP**입니다.
 
-* 454: TLS를 통해 App Service 환경을 관리 하 고 유지 관리 하기 위해 Azure 인프라에서 사용 되는 **필수 포트** 입니다.  이 포트에 대 한 트래픽을 차단 하지 않습니다.  이 포트는 항상 ASE의 공용 VIP에 바인딩됩니다.
-* 455: TLS를 통해 App Service 환경을 관리 하 고 유지 관리 하기 위해 Azure 인프라에서 사용 되는 **필수 포트** 입니다.  이 포트에 대 한 트래픽을 차단 하지 않습니다.  이 포트는 항상 ASE의 공용 VIP에 바인딩됩니다.
+* 454: TLS를 통해 App Service 환경을 관리 하 고 유지 관리 하기 위해 Azure 인프라에서 사용 되는  **필수 포트** 입니다.  이 포트에 대 한 트래픽을 차단 하지 않습니다.  이 포트는 항상 ASE의 공용 VIP에 바인딩됩니다.
+* 455: TLS를 통해 App Service 환경을 관리 하 고 유지 관리 하기 위해 Azure 인프라에서 사용 되는  **필수 포트** 입니다.  이 포트에 대 한 트래픽을 차단 하지 않습니다.  이 포트는 항상 ASE의 공용 VIP에 바인딩됩니다.
 * 80: App Service 환경의 App Service 계획에서 실행되는 앱에 대한 인바운드 HTTP 트래픽의 기본 포트입니다.  ILB 지원 ASE에서 이 포트는 ASE의 ILB 주소에 바인딩됩니다.
 * 443: App Service Environment App Service 계획에서 실행 되는 앱에 대 한 인바운드 TLS 트래픽의 기본 포트입니다.  ILB 지원 ASE에서 이 포트는 ASE의 ILB 주소에 바인딩됩니다.
 * 21: FTP에 대한 컨트롤 채널입니다.  FTP를 사용 하지 않는 경우이 포트를 안전 하 게 차단할 수 있습니다.  ILB 지원 ASE에서 이 포트는 ASE의 ILB 주소에 바인딩될 수 있습니다.
@@ -86,7 +86,7 @@ Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityR
 Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Set-AzureNetworkSecurityRule -Name "RESTRICT FTPDataRange" -Type Inbound -Priority 500 -Action Allow -SourceAddressPrefix '1.2.3.4/32'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '10001-10020' -Protocol TCP
 ```
 
-(**참고:** 데이터 채널 포트 범위는 미리 보기 기간 동안 변경 될 수 있습니다.)
+(**참고:**  데이터 채널 포트 범위는 미리 보기 기간 동안 변경 될 수 있습니다.)
 
 Visual Studio를 통한 원격 디버깅을 사용하는 경우 다음과 같은 규칙에 따라 액세스 권한을 부여할 수 있습니다.  각 버전에는 원격 디버깅을 위해 다른 포트를 사용 하기 때문에 지원 되는 각 버전의 Visual Studio에 대 한 별도의 규칙이 있습니다.  FTP 액세스와 마찬가지로 원격 디버깅 트래픽은 기존 WAF 또는 프록시 디바이스를 통해 제대로 흐르지 않을 수 있습니다.  대신 *SourceAddressPrefix* 를 Visual Studio를 실행하는 개발자 컴퓨터의 IP 주소 범위로 설정할 수 있습니다.
 
@@ -130,12 +130,11 @@ App Service 환경을 시작 하려면 [App Service Environment 소개][IntroToA
 [!INCLUDE [app-service-web-try-app-service](../../../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[virtualnetwork]: https://azure.microsoft.com/documentation/articles/virtual-networks-faq/
+[virtualnetwork]: ../../virtual-network/virtual-networks-faq.md
 [HowToCreateAnAppServiceEnvironment]: app-service-web-how-to-create-an-app-service-environment.md
-[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
+[NetworkSecurityGroups]: ../../virtual-network/virtual-network-vnet-plan-design-arm.md
 [IntroToAppServiceEnvironment]:  app-service-app-service-environment-intro.md
 [SecurelyConnecttoBackend]:  app-service-app-service-environment-securely-connecting-to-backend-resources.md
 [NewPortal]:  https://portal.azure.com  
 
 <!-- IMAGES -->
-

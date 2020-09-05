@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory를 사용 하 여 자동 사용자 프로 비전을 위한 Net관리자 콘솔 구성 Microsoft Docs'
 description: 사용자 계정을 Netskope 관리자 콘솔에 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: e99f0e0f-28d0-43c6-a52b-df873fb9d551
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: eaee8e3305572d696e52c3879be2e2b9924bc93f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cef356619d437d53d94c8f5d3be67cf6ac95501c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77061291"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554556"
 ---
 # <a name="tutorial-configure-netskope-administrator-console-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Netskope 관리자 콘솔 구성
 

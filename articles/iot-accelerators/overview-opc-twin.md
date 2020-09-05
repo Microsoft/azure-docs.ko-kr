@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 91448f55f0ebb88ba6c685b960ece9d91cb98e25
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 169a3149a2d8d02d486bc126071b17e9a4f7ed72
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "73826233"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167473"
 ---
 # <a name="what-is-opc-twin"></a>OPC 쌍이란?
 
@@ -29,7 +29,7 @@ OPC 쌍을 사용하면 팩터리 운영자는 팩터리 네트워크를 검사�
 OPC 쌍을 사용하면 팩터리 운영자는 이벤트에 반응하고 클라우드에서 작업 머신을 자동 또는 수동으로 즉시 재구성할 수 있습니다. OPC 쌍은 OPC UA 서버에서 서비스를 호출하고, 변수의 읽기/쓰기뿐만 아니라 해당 주소 공간을 찾아보고, 메서드를 실행하는 REST API를 제공합니다. 예를 들어, 보일러는 온도 KPI를 사용하여 생산 라인을 제어합니다. 온도 센서는 OPC 게시자를 사용하여 데이터의 변경 내용을 게시합니다. 팩터리 운영자는 온도가 임계값에 도달했다는 경고를 받습니다. 생산 라인은 자동으로 OPC 쌍을 통해 온도를 내립니다. 팩터리 운영자는 온도가 내려갔다는 알림을 받습니다.
 
 ## <a name="authentication"></a>인증
-인증 및 간단한 개발자 환경에 간단한 OPC 쌍을 사용할 수 있습니다.
+간단한 인증 및 간단한 개발자 환경에 OPC 쌍을 사용할 수 있습니다.
 
 ### <a name="simple-authentication"></a>간단한 인증 
 OPC 쌍은 AAD(Azure Active Directory) 기반 인증 및 엔드투엔드의 감사를 사용합니다. 예를 들어, OPC 쌍은 운영자가 머신에서 수행한 작업을 파악하도록 하기 위해 애플리케이션을 OPC 쌍 위에 빌드할 수 있습니다. 머신 쪽에서 OPC UA 감사를 통해 이루어집니다. 클라우드 쪽에서는 REST API에 불변성 클라이언트 감사 로그 및 AAD 인증을 저장해서 수행합니다.

@@ -10,18 +10,18 @@ ms.date: 06/10/2020
 ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.topic: quickstart
-ms.openlocfilehash: 675ddf073393afde6ac8d08a65b40da11d90d3ea
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 9b89c0a4135bf595991439dd47e57a870ea2b0d1
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86026664"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855070"
 ---
 # <a name="quickstart-create-an-ubuntu-data-science-virtual-machine-using-an-arm-template"></a>빠른 시작: ARM 템플릿을 사용하여 Ubuntu Data Science Virtual Machine 만들기
 
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-이 빠른 시작에서는 ARM 템플릿(Azure Resource Manager 템플릿)을 사용하여 Ubuntu 18.04 Data Science Virtual Machine을 만드는 방법을 보여줍니다. Data Science Virtual Machine은 데이터 과학과 기계 학습 프레임워크 및 도구 제품군이 미리 로드된 클라우드 기반 가상 머신입니다. GPU 기반 컴퓨팅 리소스에 배포되는 경우 모든 도구와 라이브러리는 GPU를 사용하도록 구성됩니다. 
+이 빠른 시작에서는 ARM 템플릿(Azure Resource Manager 템플릿)을 사용하여 Ubuntu 18.04 Data Science Virtual Machine을 만드는 방법을 보여줍니다. Data Science Virtual Machine은 데이터 과학과 기계 학습 프레임워크 및 도구 제품군이 미리 로드된 클라우드 기반 가상 머신입니다. GPU 기반 컴퓨팅 리소스에 배포되는 경우 모든 도구와 라이브러리는 GPU를 사용하도록 구성됩니다.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -37,12 +37,17 @@ ms.locfileid: "86026664"
 
 ## <a name="review-the-template"></a>템플릿 검토
 
-이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-vm-ubuntu-DSVM-GPU-or-CPU/)에서 나온 것입니다. 이 문서의 전체 템플릿은 너무 길어서 여기에 표시할 수 없습니다. 전체 템플릿을 보려면 [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json)을 참조하세요. DSVM의 세부 정보를 정의하는 부분은 다음과 같습니다.
+이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-vm-ubuntu-DSVM-GPU-or-CPU/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json" range="235-276":::
+:::code language="json" source="~/quickstart-templates/101-vm-ubuntu-DSVM-GPU-or-CPU/azuredeploy.json":::
 
 다음 리소스는 템플릿에 정의되어 있습니다.
 
+* [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+* [Microsoft.Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups)
+* [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
+* [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
+* [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts)
 * [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines): 클라우드 기반 가상 머신을 만듭니다. 이 템플릿에서 가상 머신은 Ubuntu 18.04를 실행 하는 Data Science Virtual Machine으로 구성됩니다.
 
 ## <a name="deploy-the-template"></a>템플릿 배포
@@ -74,7 +79,7 @@ read
 
 Data Science Virtual Machine을 보려면 다음을 수행합니다.
 
-1. https://portal.azure.com 로 이동합니다.
+1. [Azure Portal](https://portal.azure.com)로 이동
 1. 로그인합니다.
 1. 방금 만든 리소스 그룹을 선택합니다.
 

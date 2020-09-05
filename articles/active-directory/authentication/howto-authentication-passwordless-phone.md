@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5022dfc5811f3db59774a46a7034ff14c4dcf4a8
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 6ed1c3628b33d3ed29c3af3b773f2b635e684a67
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87428017"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717050"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Microsoft Authenticator 앱 (미리 보기)을 사용 하 여 암호 없는 로그인 사용
 
@@ -62,7 +62,7 @@ ms.locfileid: "87428017"
 1. **Microsoft Authenticator**의 계정 드롭다운 메뉴에서 **휴대폰 로그인 사용** 을 선택 합니다.
 1. 앱의 지침에 따라 암호 없는 휴대폰 로그인에 대 한 등록을 완료 합니다. 
 
-조직에서는 사용자에 게 암호를 지정 [하지 않고 휴대폰으로 로그인을](../user-help/microsoft-authenticator-app-phone-signin-faq.md) 지정 하 여 Microsoft Authenticator 앱에서 추가 지원을 설정 하 고 휴대폰 로그인을 사용 하도록 설정할 수 있습니다. 이러한 설정을 적용 하려면 로그 아웃 한 후 다시 테 넌 트에 다시 로그인 해야 할 수 있습니다. 
+조직에서는 사용자에 게 암호를 지정 [하지 않고 휴대폰으로 로그인을](../user-help/user-help-auth-app-sign-in.md) 지정 하 여 Microsoft Authenticator 앱에서 추가 지원을 설정 하 고 휴대폰 로그인을 사용 하도록 설정할 수 있습니다. 이러한 설정을 적용 하려면 로그 아웃 한 후 다시 테 넌 트에 다시 로그인 해야 할 수 있습니다. 
 
 ## <a name="sign-in-with-passwordless-credential"></a>암호 없는 자격 증명을 사용 하 여 로그인
 

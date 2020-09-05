@@ -1,6 +1,6 @@
 ---
 title: Azure Active Directory의 응급 상황에서 사용자 액세스 취소 | Microsoft Docs
-description: Azure Active Directory의 Azure AD 관리 센터에서 사용자 대량 추가
+description: Azure Active Directory에서 사용자에 대 한 모든 액세스를 취소 하는 방법
 services: active-directory
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,12 +13,12 @@ ms.reviewer: krbain
 ms.date: 07/15/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbb2ad8e6d37190d0473f3f9f4af7738edd3b27f
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 76a2e4cb170ca5bee41c0ae8f3e0557eab19562e
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475212"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89147136"
 ---
 # <a name="revoke-user-access-in-azure-active-directory"></a>Azure Active Directory에서 사용자 액세스 취소
 
@@ -38,7 +38,7 @@ ms.locfileid: "87475212"
 
 그런 다음 Azure AD는 해당 권한 부여 정책을 다시 평가 합니다. 사용자에 게 계속 권한이 부여 된 경우 Azure AD는 새 액세스 토큰과 새로 고침 토큰을 발급 합니다.
 
-액세스 토큰은 토큰의 수명 보다 짧은 시간 내에 액세스를 취소 해야 하는 경우에 보안 문제가 될 수 있습니다. 일반적으로 약 1 시간입니다. 이러한 이유로 Microsoft는 거의 실시간으로 액세스 토큰을 무효화 하는 데 도움이 되는 Office 365 응용 프로그램에 [지속적으로 액세스를 평가](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-continuous-access-evaluation) 하는 데 적극적으로 노력 하 고 있습니다.  
+액세스 토큰은 토큰의 수명 보다 짧은 시간 내에 액세스를 취소 해야 하는 경우에 보안 문제가 될 수 있습니다. 일반적으로 약 1 시간입니다. 이러한 이유로 Microsoft는 거의 실시간으로 액세스 토큰을 무효화 하는 데 도움이 되는 Office 365 응용 프로그램에 [지속적으로 액세스를 평가](../conditional-access/concept-continuous-access-evaluation.md) 하는 데 적극적으로 노력 하 고 있습니다.  
 
 ## <a name="session-tokens-cookies"></a>세션 토큰 (쿠키)
 
@@ -60,13 +60,13 @@ ms.locfileid: "87475212"
 
 Active Directory 관리자는 온-프레미스 네트워크에 연결 하 고 PowerShell을 연 후 다음 작업을 수행 합니다.
 
-1. Active Directory에서 사용자를 사용 하지 않도록 설정 합니다. [사용 안 함-ADAccount](https://docs.microsoft.com/powershell/module/addsadministration/disable-adaccount?view=win10-ps)를 참조 하세요.
+1. Active Directory에서 사용자를 사용 하지 않도록 설정 합니다. [사용 안 함-ADAccount](/powershell/module/addsadministration/disable-adaccount?view=win10-ps)를 참조 하세요.
 
     ```PowerShell
     Disable-ADAccount -Identity johndoe  
     ```
 
-1. Active Directory에서 사용자의 암호를 두 번 다시 설정 합니다. [Set-ADAccountPassword](https://docs.microsoft.com/powershell/module/addsadministration/set-adaccountpassword?view=win10-ps)를 참조 하세요.
+1. Active Directory에서 사용자의 암호를 두 번 다시 설정 합니다. [Set-ADAccountPassword](/powershell/module/addsadministration/set-adaccountpassword?view=win10-ps)를 참조 하세요.
 
     > [!NOTE]
     > 사용자 암호를 두 번 변경 하는 이유는 특히 온-프레미스 암호 복제에서 지연이 발생 하는 경우 해시 패스의 위험을 완화 하는 것입니다. 안전 하 게이 계정이 손상 되었다고 가정할 수 있는 경우 암호를 한 번만 다시 설정할 수 있습니다.
@@ -83,18 +83,18 @@ Active Directory 관리자는 온-프레미스 네트워크에 연결 하 고 Po
 
 Azure Active Directory 관리자 권한으로 PowerShell을 열고를 실행 ``Connect-AzureAD`` 하 고 다음 작업을 수행 합니다.
 
-1. Azure AD에서 사용자를 사용 하지 않도록 설정 합니다. [Get-azureaduser](https://docs.microsoft.com/powershell/module/azuread/Set-AzureADUser?view=azureadps-2.0)를 참조 하세요.
+1. Azure AD에서 사용자를 사용 하지 않도록 설정 합니다. [Get-azureaduser](/powershell/module/azuread/Set-AzureADUser?view=azureadps-2.0)를 참조 하세요.
 
     ```PowerShell
     Set-AzureADUser -ObjectId johndoe@contoso.com -AccountEnabled $false
     ```
-1. 사용자의 Azure AD 새로 고침 토큰을 해지 합니다. [AzureADUserAllRefreshToken](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0)를 참조 하세요.
+1. 사용자의 Azure AD 새로 고침 토큰을 해지 합니다. [AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0)를 참조 하세요.
 
     ```PowerShell
     Revoke-AzureADUserAllRefreshToken -ObjectId johndoe@contoso.com
     ```
 
-1. 사용자의 장치를 사용 하지 않도록 설정 합니다. [AzureADUserRegisteredDevice](https://docs.microsoft.com/powershell/module/azuread/get-azureaduserregistereddevice?view=azureadps-2.0)를 참조 하세요.
+1. 사용자의 장치를 사용 하지 않도록 설정 합니다. [AzureADUserRegisteredDevice](/powershell/module/azuread/get-azureaduserregistereddevice?view=azureadps-2.0)를 참조 하세요.
 
     ```PowerShell
     Get-AzureADUserRegisteredDevice -ObjectId johndoe@contoso.com | Set-AzureADDevice -AccountEnabled $false
@@ -102,9 +102,9 @@ Azure Active Directory 관리자 권한으로 PowerShell을 열고를 실행 ``C
 
 ## <a name="optional-steps"></a>선택적 단계
 
-- [Intune 관리 응용 프로그램에서 회사 데이터를 초기화](https://docs.microsoft.com/mem/intune/apps/apps-selective-wipe)합니다.
+- [Intune 관리 응용 프로그램에서 회사 데이터를 초기화](/mem/intune/apps/apps-selective-wipe)합니다.
 
-- [회사 소유의 장치 초기화 장치를 공장 기본 설정으로 다시 설정](https://docs.microsoft.com/mem/intune/remote-actions/devices-wipe)합니다.
+- [회사 소유의 장치 초기화 장치를 공장 기본 설정으로 다시 설정](/mem/intune/remote-actions/devices-wipe)합니다.
 
 > [!NOTE]
 > 초기화 후에는 장치의 데이터를 복구할 수 없습니다.

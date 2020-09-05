@@ -8,12 +8,13 @@ ms.author: anfeldma
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 1dd6bdc66146eb7dfe155e7d1091eee5cca450a0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: bc5af781b86ef559abaf33b0cb027ef14adb4262
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290912"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021904"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Azure Cosmos DB .NET SDK를 사용하는 경우 문제 진단 및 해결
 
@@ -51,7 +52,7 @@ ms.locfileid: "87290912"
 ### <a name="check-the-portal-metrics"></a>포털 메트릭 확인
 [포털 메트릭을](monitor-accounts.md) 확인 하면 클라이언트 쪽 문제 인지 또는 서비스에 문제가 있는지 확인 하는 데 도움이 됩니다. 예를 들어, 메트릭에 처리율이 제한 된 요청 (HTTP 상태 코드 429)이 포함 된 경우 요청을 제한 하는 것을 의미 하는 요청 [빈도 너무 큼](troubleshoot-request-rate-too-large.md) 섹션을 확인 합니다. 
 
-## <a name="common-error-status-codes"></a>일반적인 오류 상태 코드<a id="error-codes"></a>
+## <a name="common-error-status-codes"></a>일반적인 오류 상태 코드 <a id="error-codes"></a>
 
 | 상태 코드 | 설명 | 
 |----------|-------------|

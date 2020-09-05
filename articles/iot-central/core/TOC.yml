@@ -10,10 +10,12 @@
       href: overview-iot-central-developer.md
     - name: 최근 업데이트
       items:
+        - name: 2020년 7월 새로운 기능 및 업데이트된 기능
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-july-2020/'
         - name: 2020년 6월 새로운 기능 및 업데이트된 기능
-          href: 'https://azure.microsoft.com/en-us/updates/azure-iot-central-feature-updates-june-2020/'
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-june-2020/'
         - name: 2020년 6월 UI 및 문서 업데이트
-          href: 'https://azure.microsoft.com/en-us/updates/azure-iot-central-ui-documenation-updates-june-2020/'
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-ui-documenation-updates-june-2020/'
         - name: 2020년 5월 작업 및 메트릭 업데이트
           href: 'https://azure.microsoft.com/updates/azure-iot-central-jobs-and-metrics-feature-updates-may-2020/'
         - name: 2020년 5월 대시보드 업데이트
@@ -121,6 +123,8 @@
           href: howto-create-custom-analytics.md
         - name: Power BI에서 데이터 시각화
           href: howto-connect-powerbi.md
+        - name: 파일 업로드 구성 및 사용
+          href: howto-configure-file-uploads.md
     - name: 관리
       items:
         - name: 애플리케이션 관리
@@ -139,6 +143,8 @@
               href: howto-monitor-application-health.md
             - name: 애플리케이션 정보
               href: howto-get-app-info.md
+            - name: Roll X.509 인증서
+              href: how-to-roll-x509-certificates.md
         - name: 다른 장소에서 관리
           items:
             - name: Azure Portal에서 관리
@@ -157,6 +163,10 @@
               href: howto-manage-preferences.md
             - name: 라이브 채팅 토글
               href: howto-show-hide-chat.md
+    - name: 문제 해결
+      items: null
+      '-name': Device connections
+      href: troubleshoot-connection.md
 - name: 참조
   items:
     - name: Azure CLI

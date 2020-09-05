@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 07/09/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f5a2205ec835fb630933dd85b4b0e5846ae864cb
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 42738ff71432284a156d0dfbb1f6cf160cbf4032
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236186"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653253"
 ---
 # <a name="migrate-log-disk-to-ultra-disk"></a>로그 디스크를 울트라 디스크로 마이그레이션
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -36,7 +36,7 @@ Azure ultra disks는 Azure VM (가상 머신)의 SQL Server에 대해 높은 처
 
 VM에서 ultradisk compatibility를 사용 하도록 설정 하면 가상 머신에 울트라 SSD을 연결 합니다. 
 
-울트라 디스크는 VM 크기 및 지역의 하위 집합에서 지원 됩니다. 계속 하기 전에 VM이 ultra disk를 지 원하는 지역, 영역 및 크기 인지 확인 합니다. Azure CLI 또는 PowerShell을 사용 하 여 [VM 크기와 지역을 확인 하 고 유효성을 검사할](../../../virtual-machines/windows/disks-enable-ultra-ssd.md#determine-vm-size-and-region-availability) 수 있습니다. 
+울트라 디스크는 VM 크기 및 지역의 하위 집합에서 지원 됩니다. 계속 하기 전에 VM이 ultra disk를 지 원하는 지역, 영역 및 크기 인지 확인 합니다. Azure CLI 또는 PowerShell을 사용 하 여 [VM 크기와 지역을 확인 하 고 유효성을 검사할](../../../virtual-machines/disks-enable-ultra-ssd.md#determine-vm-size-and-region-availability) 수 있습니다. 
 
 ### <a name="enable-compatibility"></a>호환성 사용
 
@@ -50,7 +50,7 @@ VM에서 ultradisk compatibility를 사용 하도록 설정 하면 가상 머신
 
 1. **예** 를 선택 하 여 **Ultra Disk 호환성을 사용 하도록 설정**합니다. 
 
-   :::image type="content" source="../../../../includes/media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png" alt-text="Azure Portal의 설정에서 디스크에 대 한 추가 설정을 선택 합니다.":::
+   :::image type="content" source="../../../virtual-machines/media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png" alt-text="Azure Portal의 설정에서 디스크에 대 한 추가 설정을 선택 합니다.":::
 
 1. **저장**을 선택합니다. 
 
@@ -58,7 +58,7 @@ VM에서 ultradisk compatibility를 사용 하도록 설정 하면 가상 머신
 
 ### <a name="attach-disk"></a>디스크 연결
 
-Azure Portal를 사용 하 여 가상 머신에 울트라 디스크를 연결 합니다. 자세한 내용은 [ultra Disk 연결](../../../virtual-machines/windows/disks-enable-ultra-ssd.md#attach-an-ultra-disk-using-the-azure-portal) 을 참조 하세요.
+Azure Portal를 사용 하 여 가상 머신에 울트라 디스크를 연결 합니다. 자세한 내용은 [ultra Disk 연결](../../../virtual-machines/disks-enable-ultra-ssd.md#attach-an-ultra-disk-using-the-azure-portal) 을 참조 하세요.
 
 디스크가 연결 되 면 Azure Portal를 사용 하 여 VM을 한 번 더 시작 합니다. 
 

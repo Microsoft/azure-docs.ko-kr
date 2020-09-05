@@ -7,13 +7,13 @@ author: kromerm
 manager: anandsub
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 04/27/2020
-ms.openlocfilehash: 2edd5b661240b6156cf8a02059b2b9a668c402f3
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.date: 08/16/2020
+ms.openlocfilehash: 0a691b562ebf030712eb0c13a688ea9a52fdb164
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83829123"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88263472"
 ---
 # <a name="troubleshoot-data-flows-in-azure-data-factory"></a>Azure Data Factory의 데이터 흐름 문제 해결
 
@@ -70,6 +70,13 @@ ms.locfileid: "83829123"
 - **원인**: 백엔드 서비스 오류입니다. 작업을 다시 시도하고 디버그 세션을 다시 시작할 수도 있습니다.
 - **권장 사항**: 다시 시도 및 다시 시작을 통해 문제가 해결되지 않으면 고객 지원팀에 문의하세요.
 
+### <a name="error-code-debug-data-preview-no-output-data-on-join"></a>오류 코드: 데이터 미리 보기 디버그 조인에 출력 데이터가 없습니다.
+
+- **메시지**: 너무 적은 수의 샘플링으로 인해 발생할 수 있는 null 값 또는 누락 된 값이 많습니다. 디버그 행 제한을 업데이트 하 고 데이터를 새로 고쳐 보세요.
+- **원인**: 조인 조건이 행과 일치 하지 않거나 데이터 미리 보기 중에 많은 null을 생성 했습니다.
+- **권장 사항**: 디버그 설정으로 이동 하 여 원본 행 제한의 행 수를 늘립니다. 더 많은 데이터를 처리 하기에 충분 한 데이터 흐름 클러스터가 있는 select 및 Azure IR 있는지 확인 합니다.
+
+
 ## <a name="general-troubleshooting-guidance"></a>일반 문제 해결 지침
 
 1. 데이터 세트 연결의 상태를 확인합니다. 각 원본 및 싱크 변환에서 사용 중인 각각의 데이터 세트에 대해 연결된 서비스를 방문하고 연결을 테스트합니다.
@@ -78,11 +85,11 @@ ms.locfileid: "83829123"
 
 ## <a name="next-steps"></a>다음 단계
 
-자세한 문제 해결 도움말은 다음 리소스를 참조하세요.
-*  [Data Factory 블로그](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+문제 해결을 위한 도움이 필요한 경우 다음 리소스를 참조하세요.
+*  [Data Factory 블로그](https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog)
 *  [Data Factory 기능 요청](https://feedback.azure.com/forums/270578-data-factory)
-*  [Azure 비디오](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
+*  [Azure 비디오](https://www.youtube.com/channel/UC2S0k7NeLcEm5_IhHUwpN0g/videos)
 *  [Microsoft Q&A 질문 페이지](https://docs.microsoft.com/answers/topics/azure-data-factory.html)
-*  [Data Factory에 대한 스택 오버플로 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
+*  [Data Factory에 대한 Stack Overflow 포럼](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Data Factory에 대한 Twitter 정보](https://twitter.com/hashtag/DataFactory)
 *  [ADF 매핑 데이터 흐름 성능 가이드](concepts-data-flow-performance.md)

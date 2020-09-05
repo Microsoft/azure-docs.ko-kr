@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
 ms.custom: mvc
-ms.openlocfilehash: 991123b4373332503eff242315e1596a091473c1
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 197e5c7bed569e67376f9c28fe0d2e050016cce8
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86243667"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922407"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>자습서: Azure Container Registry 배포 및 사용
 
@@ -60,9 +60,12 @@ az acr login --name <acrName>
 
 현재 로컬 이미지 목록을 보려면 [docker images][docker-images] 명령을 사용합니다.
 
-```
+```azurecli
 $ docker images
+```
+위의 명령 출력에는 현재 로컬 이미지 목록이 표시됩니다.
 
+```
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
 azure-vote-front             latest              4675398c9172        13 minutes ago      694MB
 redis                        latest              a1b99da73d05        7 days ago          106MB
@@ -83,11 +86,15 @@ az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginSe
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v1
 ```
 
-태그가 적용되었는지 확인하려면 [docker images][docker-images] 명령을 다시 사용합니다. ACR 인스턴스 주소와 버전 번호가 이미지의 태그로 지정되었습니다.
+태그가 적용되었는지 확인하려면 [docker images][docker-images] 명령을 다시 사용합니다. 
+
+```azurecli
+$ docker images
+```
+
+ACR 인스턴스 주소와 버전 번호가 이미지의 태그로 지정되었습니다.
 
 ```
-$ docker images
-
 REPOSITORY                                           TAG           IMAGE ID            CREATED             SIZE
 azure-vote-front                                     latest        eaf2b9c57e5e        8 minutes ago       716 MB
 mycontainerregistry.azurecr.io/azure-vote-front      v1            eaf2b9c57e5e        8 minutes ago       716 MB
@@ -139,7 +146,7 @@ v1
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 AKS 클러스터에서 사용하기 위해 Azure Container Registry를 만들고 이미지를 푸시했습니다. 구체적으로 다음 작업 방법을 알아보았습니다.
+이 자습서에서는 AKS 클러스터에서 사용하기 위해 Azure Container Registry를 만들고 이미지를 푸시했습니다. 다음 방법에 대해 알아보았습니다.
 
 > [!div class="checklist"]
 > * ACR(Azure Container Registry) 인스턴스 만들기

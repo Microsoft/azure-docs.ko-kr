@@ -8,19 +8,19 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.openlocfilehash: edce8f3460e92eef4f6665b1b38a61582d6841ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b428ff4a9a4f4b9110e88dba57cfad20f2221cf1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560378"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936166"
 ---
 # <a name="debug-sessions-in-azure-cognitive-search"></a>Azure Cognitive Search의 디버그 세션
 
 디버그 세션은 Azure Portal의 기존 기술 세트와 작동하는 비주얼 편집기입니다. 디버그 세션 내에서 오류를 식별 및 해결하고, 변경 내용의 유효성을 검사하고, 변경 내용을 AI 보강 파이프라인의 기술 세트에 밀어넣을 수 있습니다.
 
 > [!Important]
-> 디버그 세션은 서비스 수준 계약 없이 제공 되는 미리 보기 기능이 며 프로덕션 워크 로드에는 권장 되지 않습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
+> 디버그 세션은 서비스 수준 계약 없이 제공되는 미리 보기 기능으로, 프로덕션 워크로드에는 권장되지 않습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 >
 
 ## <a name="using-debug-sessions"></a>디버그 세션 사용
@@ -95,4 +95,4 @@ ms.locfileid: "85560378"
 디버그 세션의 요소를 이해했으면 실습 환경에 대한 자습서를 사용해보세요.
 
 > [!div class="nextstepaction"]
-> [디버그 세션 기능 자습서 살펴보기](https://docs.microsoft.com/azure/search/cognitive-search-tutorial-debug-sessions)
+> [디버그 세션 기능 자습서 살펴보기](./cognitive-search-tutorial-debug-sessions.md)

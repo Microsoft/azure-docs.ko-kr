@@ -7,36 +7,36 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/30/2020
-ms.openlocfilehash: 1e5269333de27c146d4b9e2040801c4b14564125
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/26/2020
+ms.openlocfilehash: 0f1050bf58e0cd8d9a601d60a4c5dc22a5420483
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562630"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949034"
 ---
-# <a name="upgrade-to-the-latest-azure-cognitive-search-service-rest-api-version"></a>최신 Azure Cognitive Search service REST API 버전으로 업그레이드
+# <a name="upgrade-to-the-latest-rest-api-in-azure-cognitive-search"></a>Azure Cognitive Search에서 최신 REST API로 업그레이드
 
-이전 버전의 [검색 REST API](https://docs.microsoft.com/rest/api/searchservice/)를 사용 하는 경우이 문서를 사용 하면 일반적으로 제공 되는 최신 API 버전인 2020-06-30을 사용 하도록 응용 프로그램을 업그레이드할 수 있습니다.
+이전 버전의 [**검색 REST API**](/rest/api/searchservice/)를 사용 하는 경우이 문서는 응용 프로그램을 일반적으로 사용할 수 있는 최신 API 버전인 **2020-06-30**로 업그레이드 하는 데 도움이 됩니다.
 
-REST API 버전 2020-06-30에는 이전 버전에서 변경 된 내용이 포함 되어 있습니다. 이는 대부분 이전 버전과 호환되기 때문에 이전에 사용하던 버전에 따라 간단히 코드를 변경할 수 있습니다. [업그레이드 단계](#UpgradeSteps) 에서는 새 기능을 사용 하는 데 필요한 코드 변경 사항을 간략하게 설명 합니다.
+버전 2020-06-30에는 중요 한 새 기능 ([기술 자료 저장소](knowledge-store-concept-intro.md))이 포함 되어 있으며 몇 가지 사소한 동작 변경 내용이 도입 되었습니다. 따라서 이전 버전 (2019-05-06)에서 업그레이드 하는 경우에는이 버전이 이전 버전과 호환 되므로 코드를 변경 해야 합니다.
 
 > [!NOTE]
-> Azure Cognitive Search 서비스 인스턴스는 이전 버전을 비롯 한 다양 한 REST API 버전을 지원 합니다. 이러한 API 버전을 계속 사용할 수 있지만 새 기능에 액세스할 수 있도록 코드를 최신 버전으로 마이그레이션하는 것이 좋습니다.
+> 검색 서비스는 이전 버전을 포함 하 여 다양 한 REST API 버전을 지원 합니다. 이러한 API 버전을 계속 사용할 수 있지만 새 기능에 액세스할 수 있도록 코드를 최신 버전으로 마이그레이션하는 것이 좋습니다. 시간이 지남에 따라 REST API의 가장 오래 된 버전은 더 이상 지원 되지 않으며 [더 이상 지원 되지](search-api-versions.md#unsupported-versions)않습니다.
 
 <a name="UpgradeSteps"></a>
 
 ## <a name="how-to-upgrade"></a>업그레이드하는 방법
 
-새 버전으로 업그레이드 하는 경우 버전 번호를 변경 하는 것 외에는 코드를 변경할 필요가 없습니다. 코드를 변경해야 하는 유일한 경우는 다음과 같습니다.
+새 버전으로 업그레이드 하는 경우 버전 번호를 변경 하는 것 외에는 코드를 변경 하지 않아도 됩니다. 코드를 변경해야 하는 유일한 경우는 다음과 같습니다.
 
 * 인식할 수 없는 속성이 API 응답에 반환되는 경우 코드가 실패합니다. 기본적으로 애플리케이션은 이해하지 못하는 속성을 무시합니다.
 
-* 코드는 API 요청을 보관하고 새 API 버전으로 다시 전송하려 합니다. 예를 들어 애플리케이션이 검색 API에서 반환된 연속 토큰을 보관하는 경우 이런 현상이 발생할 수 있습니다(자세한 내용은 [검색 API 참조](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)의 `@search.nextPageParameters`를 참조).
+* 코드는 API 요청을 보관하고 새 API 버전으로 다시 전송하려 합니다. 예를 들어 애플리케이션이 검색 API에서 반환된 연속 토큰을 보관하는 경우 이런 현상이 발생할 수 있습니다(자세한 내용은 [검색 API 참조](/rest/api/searchservice/Search-Documents)의 `@search.nextPageParameters`를 참조).
 
 * 코드는 2019-05-06를 이전의 API 버전을 참조 하며 해당 릴리스의 주요 변경 내용 중 하나 이상이 적용 됩니다. [2019-05-06로 업그레이드](#upgrade-to-2019-05-06) 섹션에서 자세한 정보를 제공 합니다. 
 
-이러한 상황 중 하나라도 해당 하는 경우 코드를 적절 하 게 변경 해야 할 수 있습니다. 그렇지 않으면 새 버전에 추가 된 기능을 사용 하 여 시작 하려는 경우가 아니면 변경할 필요가 없습니다.
+이러한 상황 중 하나라도 해당 하는 경우 코드를 적절 하 게 변경 해야 할 수 있습니다. 그렇지 않으면 새 버전에 추가 된 기능을 사용 하 여 시작 하는 것이 좋습니다.
 
 ## <a name="upgrade-to-2020-06-30"></a>2020-06-30로 업그레이드
 
@@ -61,9 +61,9 @@ REST API 버전 2020-06-30에는 이전 버전에서 변경 된 내용이 포함
 * Azure Blob 인덱싱의 일부인 [JsonLines 구문 분석 모드](search-howto-index-json-blobs.md)는 JSON 엔터티 마다 줄 바꿈으로 구분 된 하나의 검색 문서를 만듭니다.
 * [Ai 보강](cognitive-search-concept-intro.md) 는 Cognitive Services ai 보강 엔진을 활용 하는 인덱싱을 제공 합니다.
 
-### <a name="breaking-changes"></a>주요 변경 내용
+### <a name="breaking-changes"></a>호환성이 손상되는 변경
 
-이전 API 버전에 대해 작성 된 기존 코드는 api-version = 2019-05-06에서 중단 됩니다. 코드에는 다음 기능이 포함 되어 있습니다.
+이전 API 버전에 대해 작성 된 기존 코드는 api-version = 2019-05-06 이상에서 중단 됩니다. 코드에는 다음 기능이 포함 되어 있습니다.
 
 #### <a name="indexer-for-azure-cosmos-db---datasource-is-now-type-cosmosdb"></a>Azure Cosmos DB-datasource의 인덱서는 이제 "type": "cosmosdb"입니다.
 
@@ -146,4 +146,4 @@ API 버전 2017-11-11-Preview를 사용 하 여 다음 단계를 수행 하 여 
 검색 REST API 참조 설명서를 검토 합니다. 문제가 발생 하는 경우 [Stack Overflow](https://stackoverflow.com/) 에 대 한 도움을 요청 하거나 [고객 지원에 문의](https://azure.microsoft.com/support/community/?product=search)하세요.
 
 > [!div class="nextstepaction"]
-> [검색 서비스 REST API 참조](https://docs.microsoft.com/rest/api/searchservice/)
+> [검색 서비스 REST API 참조](/rest/api/searchservice/)

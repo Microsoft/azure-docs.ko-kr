@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 741bf9e2aba6f893f670e86fb8bf5cd6c8b9d803
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 27d5427d34de591f9cfeab2310d79a2fde217624
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201984"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917876"
 ---
-# <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Azure Cognitive Search의 OData 논리 연산자- `and` , `or` ,`not`
+# <a name="odata-logical-operators-in-azure-cognitive-search---and-or-not"></a>Azure Cognitive Search의 OData 논리 연산자- `and` , `or` , `not`
 
 Azure Cognitive Search의 [OData 필터 식은](query-odata-filter-orderby-syntax.md) 또는로 계산 되는 부울 식입니다 `true` `false` . [간단한](search-query-odata-comparison-operators.md) 필터를 작성 하 고 [부울 대 수](https://en.wikipedia.org/wiki/Boolean_algebra)의 논리 연산자를 사용 하 여 작성 하 여 복잡 한 필터를 작성할 수 있습니다.
 
@@ -58,17 +58,17 @@ logical_expression ::=
 
 논리적 식에는 두 가지 형태가 있습니다. 여기에는 `and` / `or` 두 개의 하위 식과 단항 ( `not` )이 있습니다. 여기에는 하나만 있습니다. 하위 식은 모든 종류의 부울 식일 수 있습니다.
 
-- 형식의 필드 또는 범위 변수`Edm.Boolean`
+- 형식의 필드 또는 범위 변수 `Edm.Boolean`
 - 또는와 같은 형식의 값을 반환 하는 함수 `Edm.Boolean` `geo.intersects``search.ismatch`
-- [비교 식](search-query-odata-comparison-operators.md)(예:`rating gt 4`
-- [컬렉션 식](search-query-odata-collection-operators.md)(예:`Rooms/any(room: room/Type eq 'Deluxe Room')`
+- [비교 식](search-query-odata-comparison-operators.md)(예: `rating gt 4`
+- [컬렉션 식](search-query-odata-collection-operators.md)(예: `Rooms/any(room: room/Type eq 'Deluxe Room')`
 - 부울 리터럴 `true` 또는 `false` 입니다.
 - , 및를 사용 하 여 생성 된 다른 논리 식 `and` `or` `not` 입니다.
 
 > [!IMPORTANT]
 > 모든 종류의 하위 식을와 함께 사용할 수 없는 경우도 있습니다 `and` / `or` (특히 람다 식 내에서). 자세한 내용은 [Azure Cognitive Search의 OData 컬렉션 연산자](search-query-odata-collection-operators.md#limitations) 를 참조 하세요.
 
-### <a name="logical-operators-and-null"></a>논리 연산자 및`null`
+### <a name="logical-operators-and-null"></a>논리 연산자 및 `null`
 
 함수 및 비교와 같은 대부분의 부울 식은 값을 생성할 수 없으며 `null` 논리 연산자는 리터럴에 직접 적용할 수 없습니다 `null` . 예를 들어 `x and null` 는 허용 되지 않습니다. 그러나 부울 필드는이 될 수 `null` 있으므로 `and` , 및 연산자가 null 인 경우의 동작에 대해 알고 있어야 합니다 `or` `not` . 다음 표에 요약 되어 `b` 있습니다. 여기서은 형식의 필드입니다 `Edm.Boolean` .
 
@@ -120,4 +120,4 @@ logical_expression ::=
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

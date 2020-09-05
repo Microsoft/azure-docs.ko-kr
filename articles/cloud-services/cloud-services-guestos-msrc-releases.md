@@ -1,6 +1,6 @@
 ---
 title: Azure 게스트 OS에 적용된 업데이트 목록 | Microsoft Docs
-description: 게스트 OS 릴리스에 적용된 업데이트 목록
+description: 이 문서에서는 다른 Azure 게스트 OS에 적용 된 Microsoft 보안 대응 센터 업데이트를 나열 합니다. 사용 중인 게스트 OS에 업데이트가 적용 되는지 확인 합니다.
 services: cloud-services
 documentationcenter: na
 author: yohaddad
@@ -10,46 +10,99 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 8/11/2020
+ms.date: 8/17/2020
 ms.author: yohaddad
-ms.openlocfilehash: a8755c593f4009d4cacc3d411eb1bc1cb8ddc50d
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 5e5bcef36bb283b8b3f2b67578e0f3118302d936
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079161"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510167"
 ---
 # <a name="azure-guest-os"></a>Azure 게스트 OS
 다음 테이블에서 Azure 게스트 OS에 적용된 Microsoft 보안 대응 센터(MSRC) 업데이트를 보여줍니다. 사용 중인 게스트 OS에 특정 업데이트가 적용되는 경우 이 문서를 검색합니다. 도입된 특정 [제품군][family-explain] 설명에 업데이트가 항상 수행됩니다.
 
-## <a name="july-2020-guest-os"></a>게스트 OS 7 월 2020
+## <a name="august-2020-guest-os"></a>2020 년 8 월 게스트 OS
 >[!NOTE]
->7 월 게스트 OS는 현재 자동 업데이트를 위해 구성 된 클라우드 서비스 Vm에 출시 됩니다. 롤아웃이 완료되면 이 버전은 Azure Portal 및 구성 파일을 통해 수동으로 업데이트할 수 있습니다. 다음 패치는 7 월 게스트 OS에 포함 되어 있습니다. 이 목록은 변경될 수 있습니다.
+>8 월 게스트 OS가 자동 업데이트를 위해 구성 된 클라우드 서비스 Vm에 현재 롤아웃 되 고 있습니다. 롤아웃이 완료되면 이 버전은 Azure Portal 및 구성 파일을 통해 수동으로 업데이트할 수 있습니다. 8 월 게스트 OS에는 다음 패치가 포함 되어 있습니다. 이 목록은 변경될 수 있습니다.
 
 
 | 제품 범주 | 부모 기술 자료 문서 | 취약성 설명 | 게스트 OS | 처음 도입된 날짜 |
 | --- | --- | --- | --- | --- |
-|  Rel 20-07 |  [4565479]  |  Internet Explorer | 2.100, 3.87, 4.80 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565511]  |  최신 누적 업데이트 (LCU) | 5.45 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4558998]  |  최신 누적 업데이트 (LCU) | 6.21 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565524]  |  월간 롤업 | 2.100 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565616]  |  월간 롤업 | 2.100 | 2020 년 7 월 16 일 |
-|  Rel 20-07 |  [4565354]  |  서비스 스택 업데이트 | 2.100 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565612]  |  월간 롤업 | 2.100 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565615]  |  월간 롤업 | 3.87 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4566426]  |  서비스 스택 업데이트 | 3.87 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565537]  |  월간 롤업 | 3.87 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565610]  |  월간 롤업 | 3.87 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565541]  |  월간 롤업 | 4.80 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4566425]  |  서비스 스택 업데이트 | 4.80 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565614]  |  월간 롤업 | 4.80 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565613]  |  월간 롤업 | 4.80 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565912]  |  서비스 스택 업데이트 | 5.45 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4565628]  |  월간 롤업 | 5.45 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4494175]  |  마이크로코드 | 5.45 | 2020 년 2 월 25 일 |
-|  Rel 20-07 |  [4565632]  |  월간 롤업 | 6.21 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4558997]  |  서비스 스택 업데이트 | 6.21 | 2020 년 7 월 14 일 |
-|  Rel 20-07 |  [4494174]  |  마이크로코드 | 6.21 | 2020 년 2 월 25 일 |
+|  Rel 20-08 |  [4571687]  |  IE 누적 업데이트 | 2.101, 3.88, 4.81 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4561600]  |  플래시 업데이트 | 3.88, 4.81, 5.46, 6.22 | 6 월 9 일, 2020 |
+|  Rel 20-08 |  [4571694]  |  최신 누적 업데이트 | 6.22 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4565349]  |  최신 누적 업데이트 | 5.46 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4570673]  |  서비스 스택 업데이트 | 2.101 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4571729]  |  월간 롤업 | 2.101 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569767]  |  .NET Framework 3.5.1 보안 및 품질 롤업 | 2.101 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569780]  |  .NET Framework 4.5.2 보안 및 품질 롤업 | 2.101 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569765]  |  .NET Framework 3.5 보안 및 품질 롤업 | 3.88 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569779]  |  .NET Framework 4.5.2 보안 및 품질 롤업 | 3.88 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4566426]  |  서비스 스택 업데이트 | 3.88 | 2020 년 7 월 14 일 |
+|  Rel 20-08 |  [4571736]  |  월간 롤업 | 3.88 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4566425]  |  서비스 스택 업데이트 | 4.81 | 2020 년 7 월 14 일 |
+|  Rel 20-08 |  [4571703]  |  월간 롤업 | 4.81 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569768]  |  .NET Framework 3.5 보안 및 품질 롤업 | 4.81 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569778]  |  .NET Framework 4.5.2 보안 및 품질 롤업 | 4.81 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4494175]  |  마이크로코드 | 5.46 | 2020 년 2 월 25 일 |
+|  Rel 20-08 |  [4565912]  |  서비스 스택 업데이트 | 5.46 | 2020 년 7 월 14 일 |
+|  Rel 20-08 |  [4569746]  |  .NET Framework 4.8 보안 및 품질 롤업 | 5.46 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569776]  |  .NET Framework 3.5 및 4.7.2 누적 업데이트 | 6.22 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4569750]  |  .NET Framework 3.5 및 4.8 누적 업데이트 | 6.22 | 8 월 11 일, 2020 |
+|  Rel 20-08 |  [4566424]  |  서비스 스택 업데이트 | 6.22 | 8 월 11 일, 2020 |
+
+
+
+[4571687]: https://support.microsoft.com/kb/4571687
+[4561600]: https://support.microsoft.com/kb/4561600
+[4571694]: https://support.microsoft.com/kb/4571694
+[4565349]: https://support.microsoft.com/kb/4565349
+[4570673]: https://support.microsoft.com/kb/4570673
+[4571729]: https://support.microsoft.com/kb/4571729
+[4569767]: https://support.microsoft.com/kb/4569767
+[4569780]: https://support.microsoft.com/kb/4569780
+[4569765]: https://support.microsoft.com/kb/4569765
+[4569779]: https://support.microsoft.com/kb/4569779
+[4566426]: https://support.microsoft.com/kb/4566426
+[4571736]: https://support.microsoft.com/kb/4571736
+[4566425]: https://support.microsoft.com/kb/4566425
+[4571703]: https://support.microsoft.com/kb/4571703
+[4569768]: https://support.microsoft.com/kb/4569768
+[4569778]: https://support.microsoft.com/kb/4569778
+[4494175]: https://support.microsoft.com/kb/4494175
+[4565912]: https://support.microsoft.com/kb/4565912
+[4569746]: https://support.microsoft.com/kb/4569746
+[4569776]: https://support.microsoft.com/kb/4569776
+[4569750]: https://support.microsoft.com/kb/4569750
+[4566424]: https://support.microsoft.com/kb/4566424
+
+
+## <a name="july-2020-guest-os"></a>게스트 OS 7 월 2020
+
+| 제품 범주 | 부모 기술 자료 문서 | 취약성 설명 | 게스트 OS | 처음 도입된 날짜 |
+| --- | --- | --- | --- | --- |
+|  Rel 20-07 |  [4565479]  |  Internet Explorer | [2.100], [3.87], [4.80] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565511]  |  최신 누적 업데이트 (LCU) | [5.45] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4558998]  |  최신 누적 업데이트 (LCU) | [6.21] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565524]  |  월간 롤업 | [2.100] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565616]  |  월간 롤업 | [2.100] | 2020 년 7 월 16 일 |
+|  Rel 20-07 |  [4565354]  |  서비스 스택 업데이트 | [2.100] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565612]  |  월간 롤업 | [2.100] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565615]  |  월간 롤업 | [3.87] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4566426]  |  서비스 스택 업데이트 | [3.87] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565537]  |  월간 롤업 | [3.87] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565610]  |  월간 롤업 | [3.87] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565541]  |  월간 롤업 | [4.80] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4566425]  |  서비스 스택 업데이트 | [4.80] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565614]  |  월간 롤업 | [4.80] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565613]  |  월간 롤업 | [4.80] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565912]  |  서비스 스택 업데이트 | [5.45] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4565628]  |  월간 롤업 | [5.45] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4494175]  |  마이크로코드 | [5.45] | 2020 년 2 월 25 일 |
+|  Rel 20-07 |  [4565632]  |  월간 롤업 | [6.21] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4558997]  |  서비스 스택 업데이트 | [6.21] | 2020 년 7 월 14 일 |
+|  Rel 20-07 |  [4494174]  |  마이크로코드 | [6.21] | 2020 년 2 월 25 일 |
 
 
 [4565479]: https://support.microsoft.com/kb/4565479
@@ -73,6 +126,11 @@ ms.locfileid: "88079161"
 [4565632]: https://support.microsoft.com/kb/4565632
 [4558997]: https://support.microsoft.com/kb/4558997
 [4494174]: https://support.microsoft.com/kb/4494174
+[2.100]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-2-releases
+[3.87]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-3-releases
+[4.80]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-4-releases
+[5.45]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-5-releases
+[6.21]: https://docs.microsoft.com/azure/cloud-services/cloud-services-guestos-update-matrix#family-6-releases
 
 
 ## <a name="june-2020-guest-os"></a>6 월 2020 게스트 OS
@@ -119,7 +177,7 @@ ms.locfileid: "88079161"
 
 | 제품 범주 | 부모 기술 자료 문서 | 취약성 설명 | 게스트 OS | 처음 도입된 날짜 |
 | --- | --- | --- | --- | --- |
-|  Rel 20-05  |  [4556798]  |  Internet Explorer   |  [2.98], [3.85], [4.78]  |  2020년 5월 12일  |
+|  Rel 20-05  |  [4556798]  |  Internet Explorer   |  [2.98],  [3.85], [4.78]  |  2020년 5월 12일  |
 |  Rel 20-05  |  [4556813]  |  LCU(최신 누적 업데이트)   |  [5.43]  |  2020년 5월 12일  |
 |  Rel 20-05  |  [4551853]  |  LCU(최신 누적 업데이트)   |  [6.19]  |  2020년 5월 12일  |
 |  Rel 20-05  |  [4552940]  |  월간 롤업   |  [2.98]  |  2020년 5월 12일  |

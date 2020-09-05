@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b27bd52ad8794222d52d37032b0cd4fdf99f47b7
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f1b9e2af7cb6dd234e58218c6a33c01f321de947
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87057925"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798519"
 ---
 # <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Azure Active Directory에서 Microsoft Graph API를 사용하여 사용자 지정 관리자 역할 할당 
 
@@ -136,7 +136,7 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
-관리 단위 범위 지정에는 기본 제공 역할의 하위 집합만 사용할 수 있습니다. 관리 단위에 대해 지원 되는 기본 제공 역할 목록은 [이 설명서](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-admin-units-assign-roles) 를 참조 하세요.
+관리 단위 범위 지정에는 기본 제공 역할의 하위 집합만 사용할 수 있습니다. 관리 단위에 대해 지원 되는 기본 제공 역할 목록은 [이 설명서](./roles-admin-units-assign-roles.md) 를 참조 하세요.
 
 ## <a name="get-operations-on-roleassignment"></a>RoleAssignment에 대한 GET 작업
 

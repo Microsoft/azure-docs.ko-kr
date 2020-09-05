@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 08/03/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 580d3cea94e3c550954fc0fa1aa6f2c3a73e9386
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 5ff2fe74a0dd5064232fcef3178aec2967ef6812
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87554835"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88683864"
 ---
 # <a name="tutorial-for-configuring-onfido-with-azure-active-directory-b2c"></a>Azure Active Directory B2C로 Onfido 구성에 대 한 자습서
 
@@ -84,7 +84,7 @@ Onfido에 대 한 자세한 내용은 [ONFIDO API 설명서](https://documentati
 
 응용 프로그램 설정은 [Azure의 App service](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings)에서 구성할 수 있습니다. App service를 사용 하면 설정을 리포지토리로 체크 인하지 않고도 안전 하 게 구성할 수 있습니다. Rest API에는 다음 설정이 필요 합니다.
 
-| 응용 프로그램 설정 이름 | 원본 | 참고 |
+| 응용 프로그램 설정 이름 | 원본 | 메모 |
 |:-------------------------|:-------|:-------|
 |OnfidoSettings: AuthToken| Onfido 계정 |
 
@@ -126,7 +126,7 @@ Onfido에 대 한 자세한 내용은 [ONFIDO API 설명서](https://documentati
 
 제공 된 사용자 지정 정책에서 다음 자리 표시자를 찾고를 인스턴스의 해당 값으로 바꿉니다.
 
-| 자리 표시자 | 대체할 값 | 예제  |
+| 자리표시자 | 대체할 값 | 예제  |
 |:---------------|:----------------|:-------------------|
 | {your_tenant_name}  | 테 넌 트 약식 이름 |  yourtenant.onmicrosoft.com의 "모든 테 넌 트" |
 | {your_tenantID} | Azure AD B2C 테 넌 트의 TenantID | 01234567-89ab-cdef-0123-456789abcdef           |
@@ -136,7 +136,7 @@ Onfido에 대 한 자세한 내용은 [ONFIDO API 설명서](https://documentati
 | {your_tenant_extensions_app_objectid}                  | 테 넌 트 저장소 응용 프로그램의 개체 ID                                   | 01234567-89ab-cdef-0123-456789abcdef         |
 | {your_app_insights_instrumentation_key} | App insights 인스턴스의 계측 키 *| 01234567-89ab-cdef-0123-456789abcdef|
 |{your_ui_file_base_url}| UI **ocean_blue** **, 배포 및** **자산** 폴더가 위치한 위치의 URL | https://yourstorage.blob.core.windows.net/UI/|
-| {your_app_service_URL}                                 | 설정한 app service의 URL                                             | <https://yourapp.azurewebsites.net>          |
+| {your_app_service_URL}                                 | 설정한 app service의 URL                                             | `https://yourapp.azurewebsites.net`          |
 
 * App insights는 다른 테 넌 트에 있을 수 있습니다. 이 단계는 선택 사항입니다. 필요 하지 않은 경우 해당 TechnicalProfiles 및 OrchestrationSteps를 제거 합니다.
 

@@ -3,12 +3,13 @@ title: PowerShell을 사용 하 여 앱 업그레이드 Service Fabric
 description: 이 문서는 PowerShell을 사용하여 서비스 패브릭 애플리케이션의 배포, 코드 변경, 업그레이드 롤아웃 환경을 안내합니다.
 ms.topic: conceptual
 ms.date: 8/5/2020
-ms.openlocfilehash: 2bd74d071d5dfb3385d4203704eacd5ba685917e
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 61eba8b7285c2a015ee40d48bc4a73850b412576
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88064590"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89075191"
 ---
 # <a name="service-fabric-application-upgrade-using-powershell"></a>PowerShell을 사용하여 서비스 패브릭 애플리케이션 업그레이드
 > [!div class="op_single_selector"]

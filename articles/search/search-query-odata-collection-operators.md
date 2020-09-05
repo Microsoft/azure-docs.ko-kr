@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 47e7e09bae082141efd872d3a90ecc30a3be04e5
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 4c1243d5d9122539466e94b6bbfdd5ced588e69a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146067"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934908"
 ---
-# <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>Azure Cognitive Search의 OData 컬렉션 연산자- `any` 및`all`
+# <a name="odata-collection-operators-in-azure-cognitive-search---any-and-all"></a>Azure Cognitive Search의 OData 컬렉션 연산자- `any` 및 `all`
 
 Azure Cognitive Search와 함께 사용할 [OData 필터 식을](query-odata-filter-orderby-syntax.md) 작성할 때 컬렉션 필드에 대해 필터링 하는 것이 유용한 경우가 많습니다. 및 연산자를 사용 하 여이를 달성할 수 있습니다 `any` `all` .
 
@@ -62,7 +62,7 @@ lambda_expression ::= identifier ':' boolean_expression
 
 컬렉션 필터의 **람다 식은** 프로그래밍 언어의 루프 본문과 같습니다. 반복 하는 동안 컬렉션의 현재 요소를 보유 하는 **범위 변수**라고 하는 변수를 정의 합니다. 또한 컬렉션의 각 요소에 대 한 범위 변수에 적용할 필터 기준이 되는 또 다른 부울 식을 정의 합니다.
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 해당 필드에 `tags` "wifi" 문자열이 정확히 포함 된 문서를 찾습니다.
 
@@ -107,4 +107,4 @@ rooms/all(room: room/amenities/any(a: a eq 'tv') and room/baseRate lt 100.0)
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

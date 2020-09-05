@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 15838e1e9acf328a0deaa981d1227c22c08dbbdf
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 66837a0e4118695b19776972fdb4fd88a70ee561
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832266"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88690326"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>SAP 워크로드용 Azure Virtual Machines DBMS 배포
 
@@ -247,7 +247,7 @@ ms.locfileid: "87832266"
 [storage-azure-cli-copy-blobs]:../../../storage/common/storage-azure-cli.md#copy-blobs
 [storage-introduction]:../../../storage/common/storage-introduction.md
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
-[storage-premium-storage-preview-portal]:../../windows/disks-types.md
+[storage-premium-storage-preview-portal]:../../disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
 [storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
@@ -353,9 +353,9 @@ SAP 설치 설명서에 따라 모든 Oracle 관련 파일을 VM의 OS 디스크
 tempfiles를 위한 적절한 양의 공간 크기를 결정하려면 기존 시스템의 tempfiles 크기를 확인할 수 있습니다.
 
 ### <a name="storage-configuration"></a>스토리지 구성
-NTFS로 포맷된 디스크를 사용하는 하나의 Oracle 인스턴스만 지원됩니다. 모든 데이터베이스 파일은 Managed Disks(권장) 또는 VHD의 NTFS 파일 시스템에 저장되어야 합니다. 이러한 디스크는 Azure VM에 탑재되며, [Azure 페이지 Blob 스토리지](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) 또는 [Azure Managed Disks](../../windows/managed-disks-overview.md)를 기준으로 합니다. 
+NTFS로 포맷된 디스크를 사용하는 하나의 Oracle 인스턴스만 지원됩니다. 모든 데이터베이스 파일은 Managed Disks(권장) 또는 VHD의 NTFS 파일 시스템에 저장되어야 합니다. 이러한 디스크는 Azure VM에 탑재되며, [Azure 페이지 Blob 스토리지](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) 또는 [Azure Managed Disks](../../managed-disks-overview.md)를 기준으로 합니다. 
 
-[Azure Managed Disks](../../windows/managed-disks-overview.md)를 사용하는 것이 좋습니다. 또한 Oracle Database 배포에는 [프리미엄 SSD](../../windows/disks-types.md)를 사용하는 것이 좋습니다.
+[Azure Managed Disks](../../managed-disks-overview.md)를 사용하는 것이 좋습니다. 또한 Oracle Database 배포에는 [프리미엄 SSD](../../disks-types.md)를 사용하는 것이 좋습니다.
 
 네트워크 드라이브 또는 Azure 파일 서비스와 같은 원격 공유는 Oracle Database 파일에 대해 지원되지 않습니다. 자세한 내용은 다음을 참조하세요.
 
@@ -404,7 +404,7 @@ Azure 디스크에 대한 IOPS 처리량의 할당량이 존재합니다. 이 �
 
 
 #### <a name="write-accelerator"></a>Write Accelerator
-Azure M 시리즈 VM의 경우 Azure Write Accelerator를 사용하면 Azure Premium Storage와 비교할 때 온라인 다시 실행 로그에 대기 시간 쓰기를 요소별로 줄일 수 있습니다. 온라인 다시 실행 로그 파일에 사용되는 Azure Premium Storage 기반의 디스크(VHD)에 대해 Azure Write Accelerator를 사용하도록 설정합니다. 자세한 내용은 [Write Accelerator](../../linux/how-to-enable-write-accelerator.md)를 참조하세요.
+Azure M 시리즈 VM의 경우 Azure Write Accelerator를 사용하면 Azure Premium Storage와 비교할 때 온라인 다시 실행 로그에 대기 시간 쓰기를 요소별로 줄일 수 있습니다. 온라인 다시 실행 로그 파일에 사용되는 Azure Premium Storage 기반의 디스크(VHD)에 대해 Azure Write Accelerator를 사용하도록 설정합니다. 자세한 내용은 [Write Accelerator](../../how-to-enable-write-accelerator.md)를 참조하세요.
 
 
 ### <a name="backuprestore"></a>백업/복원
@@ -442,11 +442,11 @@ SAP 설치 설명서에 따라 Oracle 관련 파일을 VM의 부팅 디스크용
 
 ### <a name="storage-configuration"></a>스토리지 구성
 
-ext4, xfs 또는 Oracle ASM의 파일 시스템은 Azure에서 Oracle Database 파일에 대해 지원됩니다. 모든 데이터베이스 파일은 VHD 또는 Managed Disks 기반의 파일 시스템에 저장되어야 합니다. 이러한 디스크는 Azure VM에 탑재되며, [Azure 페이지 Blob 스토리지](<https://docs.microsoft.com/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs>) 또는 [Azure Managed Disks](../../windows/managed-disks-overview.md)를 기준으로 합니다.
+ext4, xfs 또는 Oracle ASM의 파일 시스템은 Azure에서 Oracle Database 파일에 대해 지원됩니다. 모든 데이터베이스 파일은 VHD 또는 Managed Disks 기반의 파일 시스템에 저장되어야 합니다. 이러한 디스크는 Azure VM에 탑재되며, [Azure 페이지 Blob 스토리지](<https://docs.microsoft.com/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs>) 또는 [Azure Managed Disks](../../managed-disks-overview.md)를 기준으로 합니다.
 
-Oracle Linux UEK 커널의 경우 [Azure 프리미엄 SSD](../../windows/premium-storage-performance.md#disk-caching)를 지원하려면 최소 UEK 버전 4가 필요합니다.
+Oracle Linux UEK 커널의 경우 [Azure 프리미엄 SSD](../../premium-storage-performance.md#disk-caching)를 지원하려면 최소 UEK 버전 4가 필요합니다.
 
-[Azure Managed Disks](../../windows/managed-disks-overview.md)를 사용하는 것이 좋습니다. 또한 Oracle Database 배포에는 [Azure 프리미엄 SSD](../../windows/disks-types.md)를 사용하는 것이 좋습니다.
+[Azure Managed Disks](../../managed-disks-overview.md)를 사용하는 것이 좋습니다. 또한 Oracle Database 배포에는 [Azure 프리미엄 SSD](../../disks-types.md)를 사용하는 것이 좋습니다.
 
 네트워크 드라이브 또는 Azure 파일 서비스와 같은 원격 공유는 Oracle Database 파일에 대해 지원되지 않습니다. 자세한 내용은 
 
@@ -498,7 +498,7 @@ Oracle의 온라인 다시 실행 로그를 호스팅하기 위한 디스크 선
 
 
 #### <a name="write-accelerator"></a>Write Accelerator
-Azure M 시리즈 VM의 경우, Azure Write Accelerator를 사용하면 Azure Premium Storage 성능에 비해 온라인 다시 실행 로그에 대기 시간 쓰기를 요소별로 줄일 수 있습니다. 온라인 다시 실행 로그 파일에 사용되는 Azure Premium Storage 기반의 디스크(VHD)에 대해 Azure Write Accelerator를 사용하도록 설정합니다. 자세한 내용은 [Write Accelerator](../../linux/how-to-enable-write-accelerator.md)를 참조하세요.
+Azure M 시리즈 VM의 경우, Azure Write Accelerator를 사용하면 Azure Premium Storage 성능에 비해 온라인 다시 실행 로그에 대기 시간 쓰기를 요소별로 줄일 수 있습니다. 온라인 다시 실행 로그 파일에 사용되는 Azure Premium Storage 기반의 디스크(VHD)에 대해 Azure Write Accelerator를 사용하도록 설정합니다. 자세한 내용은 [Write Accelerator](../../how-to-enable-write-accelerator.md)를 참조하세요.
 
 
 ### <a name="backuprestore"></a>백업/복원

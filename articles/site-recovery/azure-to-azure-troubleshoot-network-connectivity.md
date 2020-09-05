@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: 9600f1cae61b59af5d026eb74f504658395a11ae
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: afa2cbdb7b0703f9fc0b419442570744c6fefae1
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835887"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049692"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Azure 간 VM 네트워크 연결 문제 해결
 
@@ -18,7 +18,7 @@ ms.locfileid: "87835887"
 
 Site Recovery 복제가 작동하려면 VM에서 특정 URL 또는 IP 범위에 대한 아웃바운드 연결이 필요합니다. VM이 방화벽 뒤에 있거나 NSG(네트워크 보안 그룹) 규칙을 사용하여 아웃바운드 연결을 제어하는 경우 이러한 문제 중 하나가 발생할 수 있습니다.
 
-| **이름**                  | **상용**                               | **정부**                                 | **설명** |
+| **이름**                  | **상업용**                               | **정부**                                 | **설명** |
 | ------------------------- | -------------------------------------------- | ---------------------------------------------- | ----------- |
 | 스토리지                   | `*.blob.core.windows.net`                  | `*.blob.core.usgovcloudapi.net`              | VM에서 원본 지역의 캐시 스토리지 계정에 데이터를 쓸 수 있도록 하는 데 필요합니다. Vm에 대 한 모든 캐시 저장소 계정을 알고 있는 경우 특정 저장소 계정 Url에 대해 허용 목록을 사용할 수 있습니다. 예를 들어 `cache1.blob.core.windows.net` `cache2.blob.core.windows.net` 대신 및입니다 `*.blob.core.windows.net` . |
 | Azure Active Directory    | `login.microsoftonline.com`                | `login.microsoftonline.us`                   | Site Recovery 서비스 URL에 대한 권한 부여 및 인증에 필요합니다. |
@@ -80,11 +80,8 @@ Office 365 인증 및 id IP4 끝점에 대 한 연결을 설정할 수 없습니
 
      :::image type="content" source="./media/azure-to-azure-about-networking/aad-tag.png" alt-text="aad-tag":::
 
-1. 대상 위치에 해당 하는 Site Recovery Ip에 대해 HTTPS 포트 443 아웃 바운드 규칙을 만듭니다.
-
-   | 위치 | Site Recovery IP 주소 | Site Recovery 모니터링 IP 주소 |
-   | --- | --- | --- |
-   | 미국 중부 | 40.69.144.231 | 52.165.34.144 |
+1. 위의 보안 규칙과 마찬가지로 대상 위치에 해당 하는 NSG에서 "CentralUS"에 대 한 아웃 바운드 HTTPS (443) 보안 규칙을 만듭니다. 이를 통해 Site Recovery 모니터링에 액세스할 수 있습니다.
+1. NSG에서 "AzureSiteRecovery"에 대 한 아웃 바운드 HTTPS (443) 보안 규칙을 만듭니다. 이를 통해 모든 지역에서 Site Recovery 서비스에 액세스할 수 있습니다.
 
 #### <a name="nsg-rules---central-us"></a>NSG 규칙 - 미국 중부
 
@@ -100,11 +97,8 @@ Office 365 인증 및 id IP4 끝점에 대 한 연결을 설정할 수 없습니
    - **대상 서비스 태그**: _AzureActiveDirectory_
    - **대상 포트 범위**: _443_
 
-1. 원본 위치에 해당 하는 Site Recovery Ip에 대해 HTTPS 포트 443 아웃 바운드 규칙을 만듭니다.
-
-   | 위치 | Site Recovery IP 주소 | Site Recovery 모니터링 IP 주소 |
-   | --- | --- | --- |
-   | 미국 동부 | 13.82.88.226 | 104.45.147.24 |
+1. 위의 보안 규칙과 마찬가지로, 원본 위치에 해당 하는 NSG에 대 한 아웃 바운드 HTTPS (443) 보안 규칙을 만듭니다. 이를 통해 Site Recovery 모니터링에 액세스할 수 있습니다.
+1. NSG에서 "AzureSiteRecovery"에 대 한 아웃 바운드 HTTPS (443) 보안 규칙을 만듭니다. 이를 통해 모든 지역에서 Site Recovery 서비스에 액세스할 수 있습니다.
 
 ### <a name="issue-3-site-recovery-configuration-failed-151197"></a>문제 3: Site Recovery 구성이 실패했습니다(151197).
 
@@ -127,8 +121,8 @@ Azure Site Recovery는 지역에 따라 [Site Recovery IP 범위](azure-to-azure
 1. 모바일 서비스 에이전트는 Windows 및 Linux에서 IE의 프록시 설정을 검색 합니다 `/etc/environment` .
 1. Azure Site Recovery 모바일 서비스에 대해서만 프록시를 설정 하는 것을 선호 하는 경우에는 다음 위치에 있는 _Proxyinfo._ 에 프록시 세부 정보를 제공 하면 됩니다.
 
-   - **Linux**:`/usr/local/InMage/config/`
-   - **Windows**:`C:\ProgramData\Microsoft Azure Site Recovery\Config`
+   - **Linux**: `/usr/local/InMage/config/`
+   - **Windows**: `C:\ProgramData\Microsoft Azure Site Recovery\Config`
 
 1. _Proxyinfo_ 는 다음과 같은 _INI_ 형식의 프록시 설정이 있어야 합니다.
 
@@ -147,4 +141,4 @@ Azure Site Recovery는 지역에 따라 [Site Recovery IP 범위](azure-to-azure
 
 ## <a name="next-steps"></a>다음 단계
 
-[Azure Vm을 다른 Azure 지역에 복제](azure-to-azure-how-to-enable-replication.md)
+[Azure VM을 다른 Azure 지역에 복제](azure-to-azure-how-to-enable-replication.md)

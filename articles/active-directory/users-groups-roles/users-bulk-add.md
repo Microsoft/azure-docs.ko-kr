@@ -5,7 +5,7 @@ services: active-directory
 author: curtand
 ms.author: curtand
 manager: mtillman
-ms.date: 04/27/2020
+ms.date: 08/11/2020
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -13,12 +13,12 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f603623e2b47a8ac1a8530880e10c919f63b66c
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 64fc4e1192a1ec33b1d13c38d66e9aab5cbe256b
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87423612"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705625"
 ---
 # <a name="bulk-create-users-in-azure-active-directory"></a>Azure Active Directory에서 사용자 대량 만들기
 
@@ -34,6 +34,9 @@ Azure AD(Azure Active Directory)는 사용자 대량 만들기 및 삭제 작업
 
 ![업로드용 스프레드시트 및 각 행과 열에 대한 용도 및 값에 대한 설명](./media/users-bulk-add/create-template-example.png)
 
+> [!WARNING]
+> CSV 템플릿을 사용 하 여 하나의 항목만 추가 하는 경우 행 3을 유지 하 고 행 4에 새 항목을 추가 해야 합니다.
+
 ### <a name="csv-template-structure"></a>CSV 템플릿 구조
 
 다운로드된 CSV 템플릿의 행은 다음과 같습니다.
@@ -46,7 +49,7 @@ Azure AD(Azure Active Directory)는 사용자 대량 만들기 및 삭제 작업
 
 - 업로드 템플릿의 처음 두 행은 제거하거나 수정하면 안 됩니다. 이렇게 하면 업로드를 처리할 수 없습니다.
 - 필수 열이 먼저 나열됩니다.
-- 이 템플릿에 새 열을 추가하지 않는 것이 좋습니다. 새로 추가하는 열은 무시되고 처리되지 않습니다.
+- 템플릿에 새 열을 추가하지 않는 것이 좋습니다. 새로 추가하는 열은 무시되고 처리되지 않습니다.
 - 가능한 자주 최신 버전의 CSV 템플릿을 다운로드하는 것이 좋습니다.
 - 필드 앞/뒤에 의도 하지 않은 공백이 없는지 확인 해야 합니다. **사용자 계정 이름의**경우 이러한 공백이 있으면 가져오기 오류가 발생 합니다.
 

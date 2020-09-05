@@ -4,12 +4,12 @@ description: 이 자습서에서는 Azure CLI를 사용하여 Azure VM에서 실
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c47f03b2ac1640c12a833f8bdb53b5d6493d7eb6
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 13cd6e33fbec261b52aae73b1b01fe26764885fe
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489438"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757356"
 ---
 # <a name="tutorial-manage-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>자습서: Azure CLI를 사용하여 Azure VM의 SAP HANA 데이터베이스 관리
 
@@ -80,7 +80,7 @@ cb110094-9b15-4c55-ad45-6899200eb8dd  SAPHANA
 
 ## <a name="protect-new-databases-added-to-an-sap-hana-instance"></a>SAP HANA 인스턴스에 추가된 새 데이터베이스 보호
 
-[SAP HANA 인스턴스를 복구 서비스 자격 증명 모음에 등록](tutorial-sap-hana-backup-cli.md#register-and-protect-the-sap-hana-instance)하면 이 인스턴스의 모든 데이터베이스가 자동으로 검색됩니다.
+[SAP HANA 인스턴스를 Recovery Services 자격 증명 모음에 등록](tutorial-sap-hana-backup-cli.md#register-and-protect-the-sap-hana-instance)하면 이 인스턴스의 모든 데이터베이스가 자동으로 검색됩니다.
 
 그러나 나중에 SAP HANA 인스턴스에 새 데이터베이스를 추가할 때는 [az backup protectable-item initialize](/cli/azure/backup/protectable-item?view=azure-cli-latest#az-backup-protectable-item-initialize) cmdlet을 사용합니다. 이 cmdlet은 추가된 새 데이터베이스를 검색합니다.
 

@@ -8,12 +8,12 @@ ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: 632071c2a9597fc11ab4ffc0971493ef5b52d807
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f405219701e910159de6f4fc91e9960a76f5a0cd
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86083562"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935316"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>빠른 시작: Azure Portal에서 Azure Cognitive Search 인덱스 만들기
 > [!div class="op_single_selector"]
@@ -140,7 +140,7 @@ ms.locfileid: "86083562"
 
 앞으로 기본 제공 [**검색 탐색기**](search-explorer.md) 쿼리 페이지를 사용하여 쿼리할 준비가 된 검색 인덱스가 있어야 합니다. 임의의 쿼리 문자열을 테스트할 수 있도록 검색 상자를 제공합니다.
 
-**검색 탐색기**는 [REST API 요청](https://docs.microsoft.com/rest/api/searchservice/search-documents)만 처리할 수 있지만, [단순 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 및 [완전한 Lucene 쿼리 파서](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)에 대한 구문과 [문서 REST API 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples) 작업에 제공되는 모든 검색 매개 변수를 허용합니다.
+**검색 탐색기**는 [REST API 요청](/rest/api/searchservice/search-documents)만 처리할 수 있지만, [단순 쿼리 구문](/rest/api/searchservice/simple-query-syntax-in-azure-search) 및 [완전한 Lucene 쿼리 파서](/rest/api/searchservice/lucene-query-syntax-in-azure-search)에 대한 구문과 [문서 REST API 검색](/rest/api/searchservice/search-documents#bkmk_examples) 작업에 제공되는 모든 검색 매개 변수를 허용합니다.
 
 > [!TIP]
 > [Azure Cognitive Search 개요 비디오](https://channel9.msdn.com/Events/Connect/2016/138)의 6분 8초에 다음 단계가 설명되어 있습니다.
@@ -188,7 +188,7 @@ Bing 이나 Google 검색, 또는 완전히 지정된 쿼리 식에서 수행할
 
 * **$filter** 매개 변수는 사용자가 입력한 조건과 일치하는 결과를 반환합니다. 이 예에서는 등급이 4보다 큽니다.
 
-* 필터 구문은 OData 구조입니다. 자세한 내용은 [OData 필터 구문](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)을 참조하세요.
+* 필터 구문은 OData 구조입니다. 자세한 내용은 [OData 필터 구문](/rest/api/searchservice/odata-expression-syntax-for-azure-search)을 참조하세요.
 
 ### <a name="facet-the-query"></a><a name="facet-query"></a> 쿼리 패싯
 
@@ -207,7 +207,7 @@ Bing 이나 Google 검색, 또는 완전히 지정된 쿼리 식에서 수행할
 
 * 필터링 가능한 필드만 패싯이 가능합니다. 검색이 가능한 필드만 결과에 반환할 수 있습니다.
 
-* *등급* 필드는 배정밀도 부동 소수점이며 그룹화는 정확한 값으로 지정됩니다. 간격(예: "3성 등급", "4성 등급" 등)별 그룹화에 대한 자세한 내용은 [Azure Cognitive Search에서 패싯 탐색을 구현하는 방법](https://docs.microsoft.com/azure/search/search-faceted-navigation#filter-based-on-a-range)을 참조하세요.
+* *등급* 필드는 배정밀도 부동 소수점이며 그룹화는 정확한 값으로 지정됩니다. 간격(예: "3성 등급", "4성 등급" 등)별 그룹화에 대한 자세한 내용은 [Azure Cognitive Search에서 패싯 탐색을 구현하는 방법](./search-faceted-navigation.md#filter-based-on-a-range)을 참조하세요.
 
 
 ### <a name="highlight-search-results"></a><a name="highlight-query"></a> 검색 결과 강조
@@ -240,11 +240,11 @@ Bing 이나 Google 검색, 또는 완전히 지정된 쿼리 식에서 수행할
 
 유사 항목 검색 및 와일드카드 검색은 검색 출력에 영향을 줍니다. 이러한 쿼리 형식에서 언어 분석이 수행되지 않습니다. 유사 항목 및 와일드카드 검색을 사용하기 전에 [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md#stage-2-lexical-analysis)을 검토하고 어휘 분석의 예외에 대한 섹션을 찾습니다.
 
-전체 쿼리 파서를 통해 지원되는 쿼리 시나리오에 대한 자세한 내용은 [Azure Cognitive Search의 Lucene 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)을 참조하세요.
+전체 쿼리 파서를 통해 지원되는 쿼리 시나리오에 대한 자세한 내용은 [Azure Cognitive Search의 Lucene 쿼리 구문](/rest/api/searchservice/lucene-query-syntax-in-azure-search)을 참조하세요.
 
 ### <a name="try-geospatial-search"></a><a name="geo-search"></a> 지리 공간 검색 시도
 
-지리 공간 검색은 좌표가 포함된 필드의 [edm.GeographyPoint 데이터 유형](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)을 통해 지원됩니다. Geosearch는 [OData 필터 구문](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)에 지정된 필터 유형입니다.
+지리 공간 검색은 좌표가 포함된 필드의 [edm.GeographyPoint 데이터 유형](/rest/api/searchservice/supported-data-types)을 통해 지원됩니다. Geosearch는 [OData 필터 구문](/rest/api/searchservice/odata-expression-syntax-for-azure-search)에 지정된 필터 유형입니다.
 
 #### <a name="example-geo-coordinate-filters-searchcounttruefiltergeodistancelocationgeographypoint-12212-4767-le-5"></a>예제(지리적 좌표 필터): `search=*&$count=true&$filter=geo.distance(Location,geography'POINT(-122.12 47.67)') le 5`
 
@@ -256,7 +256,7 @@ Bing 이나 Google 검색, 또는 완전히 지정된 쿼리 식에서 수행할
 
 이 자습서에서는 Azure Portal을 사용하여 Azure Cognitive Search를 간략하게 소개했습니다.
 
-**데이터 가져오기** 마법사를 사용하여 검색 인덱스를 만드는 방법을 배웠습니다. [게시된 인덱스에 대한 지원되는 수정](https://docs.microsoft.com/rest/api/searchservice/update-index)을 포함하여 [인덱서](search-indexer-overview.md) 및 인덱스 디자인에 대한 기본 워크플로를 알아보았습니다.
+**데이터 가져오기** 마법사를 사용하여 검색 인덱스를 만드는 방법을 배웠습니다. [게시된 인덱스에 대한 지원되는 수정](/rest/api/searchservice/update-index)을 포함하여 [인덱서](search-indexer-overview.md) 및 인덱스 디자인에 대한 기본 워크플로를 알아보았습니다.
 
 Azure Portal에서 **검색 탐색기**를 사용하여 필터, 적중 항목 강조 표시, 유사 항목 검색, 지리적 검색 등의 주요 기능을 보여주는 실습 예제를 통해 몇 가지 기본 쿼리 구문을 알아보았습니다.
 
@@ -280,4 +280,4 @@ Azure Portal에서 **검색 탐색기**를 사용하여 필터, 적중 항목 �
 클라우드 비용을 최적화하여 비용을 절감하고 싶습니까?
 
 > [!div class="nextstepaction"]
-> [Cost Management를 통한 비용 분석 시작](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+> [Cost Management를 통한 비용 분석 시작](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

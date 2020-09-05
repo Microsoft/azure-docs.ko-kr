@@ -3,12 +3,12 @@ title: Azure VMware 솔루션에 대 한 Azure Backup Server 설정
 description: Azure Backup Server를 사용 하 여 가상 컴퓨터를 백업 하도록 Azure VMware 솔루션 환경을 설정 합니다.
 ms.topic: how-to
 ms.date: 06/09/2020
-ms.openlocfilehash: c45d2030e282057c487d142669ab634cd81f6929
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0dd2b16254e697a08d0ff542a5ddcb3fc7e4103d
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079539"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750624"
 ---
 # <a name="set-up-azure-backup-server-for-azure-vmware-solution"></a>Azure VMware 솔루션에 대 한 Azure Backup Server 설정
 
@@ -56,7 +56,7 @@ Azure VMware 솔루션에 대 한 Azure Backup Server를 설정 하려면 다음
 
 Azure Backup Server는 azure VMware 솔루션 Vm을 보호 하기 위해 Azure IaaS (infrastructure as a service) VM으로 배포 됩니다.
 
-:::image type="content" source="media/avs-backup/deploy-mabs-avs-diagram.png" alt-text="AVS 배포 아키텍처" border="false":::
+:::image type="content" source="media/avs-backup/deploy-mabs-avs-diagram.png" alt-text="Azure Backup Server는 azure VMware 솔루션 Vm을 보호 하기 위해 Azure IaaS (infrastructure as a service) VM으로 배포 됩니다." border="false":::
 
 ## <a name="prerequisites-for-the-azure-backup-server-environment"></a>Azure Backup Server 환경의 필수 구성 요소
 
@@ -138,38 +138,38 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
 1. [Azure Portal](https://portal.azure.com/)에서 구독에 로그인합니다.
 
-1. 왼쪽 메뉴에서 **모든 서비스**를 선택 합니다.
+1. 왼쪽 메뉴에서 **모든 서비스**를 선택합니다.
 
-   ![모든 서비스 선택](../backup/media/backup-create-rs-vault/click-all-services.png)
+   ![왼쪽 메뉴에서 모든 서비스를 선택 합니다.](../backup/media/backup-create-rs-vault/click-all-services.png)
 
 1. **모든 서비스** 대화 상자에서 **Recovery Services** 를 입력 하 고 목록에서 **Recovery Services 자격 증명 모음** 을 선택 합니다.
 
-   ![Recovery Services 자격 증명 모음 입력 및 선택](../backup/media/backup-create-rs-vault/all-services.png)
+   ![을 입력 하 고 Recovery Services 자격 증명 모음을 선택 합니다.](../backup/media/backup-create-rs-vault/all-services.png)
 
    구독의 Recovery Services 자격 증명 모음 목록이 표시됩니다.
 
-1. **Recovery Services 자격 증명 모음** 대시보드에서 **추가**를 선택 합니다.
+1. **Recovery Services 자격 증명 모음** 대시보드에서 **추가**를 선택합니다.
 
-   ![Recovery Services 자격 증명 모음 추가](../backup/media/backup-create-rs-vault/add-button-create-vault.png)
+   ![Recovery Services 자격 증명 모음을 추가 합니다.](../backup/media/backup-create-rs-vault/add-button-create-vault.png)
 
    **Recovery Services 자격 증명 모음** 대화 상자가 열립니다.
 
 1. **이름**, **구독**, **리소스 그룹**및 **위치**에 대 한 값을 입력 합니다.
 
-   ![Recovery Services 자격 증명 모음 구성](../backup/media/backup-create-rs-vault/create-new-vault-dialog.png)
+   ![Recovery Services 자격 증명 모음을 구성 합니다.](../backup/media/backup-create-rs-vault/create-new-vault-dialog.png)
 
-   - **이름**: 자격 증명 모음을 식별하기 위한 이름을 입력합니다. 이름은 Azure 구독에 고유해야 합니다. 최소 50 2 개 이상의 문자를 포함 하는 이름을 지정 합니다. 이름은 문자로 시작해야 하며, 문자, 숫자, 하이픈만 포함할 수 있습니다.
+   - **Name**: 자격 증명 모음을 식별하기 위한 이름을 입력합니다. 이름은 Azure 구독에 고유해야 합니다. 최소 50 2 개 이상의 문자를 포함 하는 이름을 지정 합니다. 이름은 문자로 시작해야 하며, 문자, 숫자, 하이픈만 포함할 수 있습니다.
    - **구독**: 사용할 구독을 선택합니다. 단일 구독의 멤버인 경우 해당 이름이 표시됩니다. 사용할 구독을 잘 모르는 경우 기본(제안된) 구독을 사용합니다. 회사 또는 학교 계정이 둘 이상의 Azure 구독과 연결된 경우에만 여러 항목을 선택할 수 있습니다.
    - **리소스 그룹**: 기존 리소스 그룹을 사용하거나 새 리소스 그룹을 만듭니다. 구독에서 사용 가능한 리소스 그룹 목록을 보려면 **기존 그룹 사용**을 선택한 다음, 드롭다운 목록에서 리소스를 선택합니다. 새 리소스 그룹을 만들려면 **새로 만들기**를 선택하고 이름을 입력합니다.
    - **위치**: 자격 증명 모음에 대한 지리적 지역을 선택합니다. Azure VMware 솔루션 가상 머신을 보호 하는 자격 증명 모음을 만들려면 Azure VMware 솔루션 사설 클라우드와 동일한 지역에 자격 증명 모음이 *있어야* 합니다.
 
 1. Recovery Services 자격 증명 모음을 만들 준비가 되면 **만들기**를 선택합니다.
 
-   ![Recovery Services 자격 증명 모음 만들기](../backup/media/backup-create-rs-vault/click-create-button.png)
+   ![Recovery Services 자격 증명 모음을 만듭니다.](../backup/media/backup-create-rs-vault/click-create-button.png)
 
    Recovery Services 자격 증명 모음을 만드는 데 어느 정도 시간이 걸릴 수 있습니다. 포털의 오른쪽 위 모퉁이에 있는 **알림** 영역에서 상태 알림을 모니터링 합니다. 자격 증명 모음이 생성되면 Recovery Services 자격 증명 모음 목록에서 볼 수 있습니다. 자격 증명 모음이 표시되지 않으면 **새로 고침**을 선택합니다.
 
-   ![백업 자격 증명 모음 목록 새로 고침](../backup/media/backup-create-rs-vault/refresh-button.png)
+   ![백업 자격 증명 모음 목록을 새로 고칩니다.](../backup/media/backup-create-rs-vault/refresh-button.png)
 
 ## <a name="set-storage-replication"></a>스토리지 복제 설정
 
@@ -184,7 +184,7 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
 1. 저장소 복제 유형을 선택 하 고 **저장**을 선택 합니다.
 
-   ![새 자격 증명 모음에 대 한 저장소 구성 설정](../backup/media/backup-try-azure-backup-in-10-mins/recovery-services-vault-backup-configuration.png)
+   ![새 자격 증명 모음에 대 한 저장소 구성을 설정 합니다.](../backup/media/backup-try-azure-backup-in-10-mins/recovery-services-vault-backup-configuration.png)
 
 ## <a name="download-and-install-the-software-package"></a>소프트웨어 패키지 다운로드 및 설치
 
@@ -198,7 +198,7 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
    1. 리소스 목록에서 **Recovery Services**를 입력합니다.
 
-   1. 입력을 시작하면 입력 내용에 따라 목록이 필터링됩니다. **Recovery Services 자격 증명 모음**이 표시되면 이를 선택합니다.
+   1. 입력을 시작하면 입력한 내용을 바탕으로 목록이 필터링됩니다. **Recovery Services 자격 증명 모음**이 표시되면 이를 선택합니다.
 
    ![Recovery Services 자격 증명 모음 만들기 1 단계](../backup/media/backup-azure-microsoft-azure-backup/open-recovery-services-vault.png)
 
@@ -206,15 +206,15 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
    선택한 자격 증명 모음 대시보드가 열립니다.
 
-   ![자격 증명 모음 대시보드 열기](../backup/media/backup-azure-microsoft-azure-backup/vault-dashboard.png)
+   ![선택한 자격 증명 모음 대시보드가 열립니다.](../backup/media/backup-azure-microsoft-azure-backup/vault-dashboard.png)
 
    **설정** 옵션은 기본적으로 열립니다. 닫혀 있는 경우 **설정** 을 선택 하 여 엽니다.
 
-   ![자격 증명 모음 설정 열기 옵션](../backup/media/backup-azure-microsoft-azure-backup/vault-setting.png)
+   ![설정 옵션은 기본적으로 열립니다. 닫혀 있는 경우 설정을 선택 하 여 엽니다.](../backup/media/backup-azure-microsoft-azure-backup/vault-setting.png)
 
 1. **백업** 을 선택 하 여 **시작** 마법사를 엽니다.
 
-   ![시작 마법사를 엽니다.](../backup/media/backup-azure-microsoft-azure-backup/getting-started-backup.png)
+   ![백업을 선택 하 여 시작 마법사를 엽니다.](../backup/media/backup-azure-microsoft-azure-backup/getting-started-backup.png)
 
 1. 열리는 창에서 다음을 수행 합니다.
 
@@ -241,7 +241,7 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
    > [!NOTE]
    > 모든 파일을 동일한 폴더에 다운로드 해야 합니다. 파일의 다운로드 크기는 3gb 보다 크므로 다운로드를 완료 하는 데 최대 60 분이 걸릴 수 있습니다. 
 
-   ![다운로드 센터에서 파일 선택](../backup/media/backup-azure-microsoft-azure-backup/downloadcenter.png)
+   ![다운로드 페이지에서 모든 파일을 선택 하 고 다음을 선택 합니다.](../backup/media/backup-azure-microsoft-azure-backup/downloadcenter.png)
 
 ### <a name="extract-the-software-package"></a>소프트웨어 패키지 추출
 
@@ -256,9 +256,9 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
 1. 추출 **을 선택 하** 여 추출 프로세스를 시작 합니다.
 
-   ![설치 마법사 Microsoft Azure Backup](../backup/media/backup-azure-microsoft-azure-backup/extract/03.png)
+   ![추출을 선택 하 여 추출 프로세스를 시작 합니다.](../backup/media/backup-azure-microsoft-azure-backup/extract/03.png)
 
-1. 압축이 풀리면 **setup.exe를 실행** 하는 옵션을 선택한 다음 **마침**을 선택 합니다.
+1. 압축이 풀리면 **setup.exe를 실행 ** 하는 옵션을 선택한 다음 **마침**을 선택 합니다.
 
 > [!TIP]
 > 소프트웨어 패키지를 추출한 폴더에서 setup.exe 파일을 찾을 수도 있습니다.
@@ -267,17 +267,17 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
 1. 설치 **의 설치 창**에서 **Microsoft Azure Backup** 을 선택 하 여 설치 마법사를 엽니다.
 
-   ![설치 마법사 Microsoft Azure Backup 설치 단추](../backup/media/backup-azure-microsoft-azure-backup/launch-screen2.png)
+   ![설치의 설치 창에서 Microsoft Azure Backup을 선택 하 여 설치 마법사를 엽니다.](../backup/media/backup-azure-microsoft-azure-backup/launch-screen2.png)
 
 1. **시작** 화면에서 **다음** 을 선택 하 여 **필수 구성 요소 확인** 페이지로 이동 합니다.
 
 1. **확인을 다시** 선택 하 여 Azure Backup Server에 대 한 하드웨어 및 소프트웨어 필수 구성 요소가 충족 되는지 확인 합니다. 성공적으로 충족 되 면 **다음**을 선택 합니다.
 
-   ![필수 구성 요소 확인 Azure Backup Server](../backup/media/backup-azure-microsoft-azure-backup/prereq/prereq-screen2.png)
+   ![ 확인을 다시 선택 하 여 Azure Backup Server에 대 한 하드웨어 및 소프트웨어 필수 구성 요소가 충족 되는지 확인 합니다. 성공적으로 충족 되 면 다음을 선택 합니다.](../backup/media/backup-azure-microsoft-azure-backup/prereq/prereq-screen2.png)
 
 1. Azure Backup Server 설치 패키지는 필요한 적절 한 SQL Server 이진 파일과 함께 제공 됩니다. 새 Azure Backup Server 설치를 시작 하는 경우 **이 설치 옵션을 사용 하 여 SQL Server의 새 인스턴스 설치** 를 선택 합니다. 그런 다음 **확인 및 설치**를 선택 합니다.
 
-   ![SQL Server Azure Backup Server 확인](../backup/media/backup-azure-microsoft-azure-backup/sql/01.png)
+   ![Azure Backup Server 설치 패키지는 필요한 적절 한 SQL Server 이진 파일과 함께 제공 됩니다.](../backup/media/backup-azure-microsoft-azure-backup/sql/01.png)
 
    > [!NOTE]
    > 사용자 고유의 SQL Server 인스턴스를 사용 하려는 경우 지원 되는 SQL Server 버전은 SQL Server 2014 SP1 이상, 2016 및 2017입니다. 모든 SQL Server 버전은 Standard 또는 Enterprise 64비트여야 합니다. Azure Backup Server은 원격 SQL Server 인스턴스에서 작동 하지 않습니다. Azure Backup Server에서 사용하는 인스턴스는 로컬이어야 합니다. Azure Backup Server에 기존 SQL Server 인스턴스를 사용 하는 경우 설치 프로그램은 SQL Server의 명명 된 *인스턴스만* 사용 하도록 지원 합니다.
@@ -321,18 +321,18 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
    > [!NOTE]
    > Azure에 백업 하려면 스크래치 위치가 필요 합니다. 스크래치 위치가 클라우드로 백업할 계획된 데이터의 5%인지 확인하세요. 디스크 보호의 경우 설치가 완료 된 후 별도의 디스크를 구성 해야 합니다. 저장소 풀에 대 한 자세한 내용은 [저장소 풀 및 디스크 저장소 구성](/previous-versions/system-center/system-center-2012-r2/hh758075(v=sc.12))을 참조 하세요.
 
-   ![설치 설정 Microsoft Azure Backup](../backup/media/backup-azure-microsoft-azure-backup/space-screen.png)
+   ![Microsoft Azure Backup Server 파일의 설치 위치를 지정 하 고 다음을 선택 합니다.](../backup/media/backup-azure-microsoft-azure-backup/space-screen.png)
 
 1. 제한 된 로컬 사용자 계정에 대 한 강력한 암호를 입력 하 고 **다음**을 선택 합니다.
 
-   ![설치 보안 설정 Microsoft Azure Backup](../backup/media/backup-azure-microsoft-azure-backup/security-screen.png)
+   ![제한 된 로컬 사용자 계정에 대 한 강력한 암호를 입력 하 고 다음을 선택 합니다.](../backup/media/backup-azure-microsoft-azure-backup/security-screen.png)
 
 1. Microsoft 업데이트를 사용 하 여 업데이트를 확인할 지 여부를 선택 하 고 **다음**을 선택 합니다.
 
    > [!NOTE]
    > Windows 및 Azure Backup Server와 같은 기타 제품에 대 한 보안 및 중요 업데이트를 제공 하는 Microsoft 업데이트로 리디렉션하 Windows 업데이트 하는 것이 좋습니다.
 
-   ![설치 Microsoft 업데이트 옵트인 (Opt In) Microsoft Azure Backup](../backup/media/backup-azure-microsoft-azure-backup/update-opt-screen2.png)
+   ![Microsoft 업데이트를 사용 하 여 업데이트를 확인할 지 여부를 선택 하 고 다음을 선택 합니다.](../backup/media/backup-azure-microsoft-azure-backup/update-opt-screen2.png)
 
 1. **설정 요약**을 검토 하 고 **설치**를 선택 합니다.
 
@@ -352,7 +352,7 @@ Recovery Services 자격 증명 모음은 시간에 따라 생성 된 복구 위
 
    Microsoft Azure Recovery Services 에이전트 설치가 완료 되 면 설치 단계가 SQL Server 및 Azure Backup Server 구성 요소의 설치 및 구성으로 이동 합니다.
 
-   ![설치 프로그램 Microsoft Azure Backup](../backup/media/backup-azure-microsoft-azure-backup/final-install/venus-installation-screen.png)
+   ![Microsoft Azure Recovery Services 에이전트 설치가 완료 되 면 설치 단계가 SQL Server 및 Azure Backup Server 구성 요소의 설치 및 구성으로 이동 합니다.](../backup/media/backup-azure-microsoft-azure-backup/final-install/venus-installation-screen.png)
 
 1. 설치 단계가 완료 되 면 **닫기**를 선택 합니다.
 

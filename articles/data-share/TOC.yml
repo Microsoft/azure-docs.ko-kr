@@ -1,11 +1,19 @@
 - name: Azure Data Share 설명서
   href: index.yml
 - name: 개요
+  expanded: true
   items:
     - name: Azure Data Share란?
       href: overview.md
     - name: 지원되는 데이터 저장소
       href: supported-data-stores.md
+- name: 빠른 시작
+  items:
+    - name: 데이터 공유 - Azure Portal
+      href: share-your-data-portal.md
+    - name: 데이터 공유 - ARM 템플릿
+      displayName: Resource Manager
+      href: share-your-data-arm.md
 - name: 자습서
   expanded: true
   items:
@@ -19,6 +27,8 @@
       href: terminology.md
     - name: 역할 및 요구 사항
       href: concepts-roles-permissions.md
+    - name: 가격 책정 이해
+      href: concepts-pricing.md
 - name: 샘플
   items:
     - name: 코드 샘플
@@ -27,14 +37,23 @@
       href: samples-powershell.md
 - name: 방법 가이드
   items:
+    - name: 소스별 데이터 공유 및 수신
+      items:
+        - name: Azure Storage에서 공유
+          href: how-to-share-from-storage.md
+        - name: Azure SQL Database 또는 Synapse Analytics에서 공유
+          href: how-to-share-from-sql.md
+        - name: Azure Data Explorer에서 공유
+          href: /azure/data-explorer/data-share
+          maintainContext: true
     - name: 모니터
       href: how-to-monitor.md
-    - name: 데이터 세트 매핑 구성
-      href: how-to-configure-mapping.md
     - name: 문제 해결
       href: data-share-troubleshoot.md
     - name: 데이터 세트 추가
       href: how-to-add-datasets.md
+    - name: 데이터 세트 매핑 구성
+      href: how-to-configure-mapping.md
     - name: 수신자 추가
       href: how-to-add-recipients.md
     - name: 초대 삭제

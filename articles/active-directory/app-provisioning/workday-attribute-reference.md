@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/25/2020
 ms.author: kenwith
 ms.reviewer: celested
-ms.openlocfilehash: 8c508e65ef2c6d62716454af151feb0a1c80bba0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 036b3af03dec2bdaa7feacc94abca930ebd9b317
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84781111"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235386"
 ---
 # <a name="workday-attribute-reference"></a>Workday 특성 참조
 
@@ -211,7 +211,7 @@ ms.locfileid: "84781111"
 ## <a name="custom-xpath-values"></a>사용자 지정 XPATH 값
 아래 표에서는 Workday에서 Active Directory 또는 Azure AD로 작업자를 프로 비전 할 때 일반적으로 사용 되는 다른 사용자 지정 XPATH API 식의 목록을 제공 합니다. [자습서: 구성 관리](../saas-apps/workday-inbound-tutorial.md#managing-your-configuration)섹션에 나오는 지침을 참조 하 여 Workday 버전으로 여기에 제공 된 XPATH API 식을 테스트 하세요.
 
-이러한 통합을 구현 하는 고객의 혜택을 얻기 위해 XPATH 테이블에 더 많은 특성을 추가 하려면 아래에 의견을 남겨 두거나 문서에 직접 [참여](https://docs.microsoft.com/contribute) 하세요. 
+이러한 통합을 구현 하는 고객의 혜택을 얻기 위해 XPATH 테이블에 더 많은 특성을 추가 하려면 아래에 의견을 남겨 두거나 문서에 직접 [참여](/contribute) 하세요. 
 
 > [!div class="mx-tdBreakAll"]
 > | \# | Workday 특성 이름  | Workday API 버전 | Workday XPATH API 식   |
@@ -224,18 +224,18 @@ ms.locfileid: "84781111"
 
 
 ## <a name="supported-xpath-functions"></a>지원 되는 XPATH 함수
-Xpath API 식을 만드는 동안 사용할 수 있는 [MICROSOFT .NET xpath 라이브러리](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256138(v=vs.100)) 에서 지원 되는 xpath 함수의 목록은 다음과 같습니다. 
+Xpath API 식을 만드는 동안 사용할 수 있는 [MICROSOFT .NET xpath 라이브러리](/previous-versions/dotnet/netframework-4.0/ms256138(v=vs.100)) 에서 지원 되는 xpath 함수의 목록은 다음과 같습니다. 
 
 * name
 * last
 * position
-* string
+* 문자열
 * substring
 * concat
 * substring-after
 * starts-with
 * string-length
-* 포함
+* contains
 * translate
 * normalize-space
 * substring-before
@@ -248,4 +248,3 @@ Xpath API 식을 만드는 동안 사용할 수 있는 [MICROSOFT .NET xpath 라
 * sum
 * round
 * floor
-

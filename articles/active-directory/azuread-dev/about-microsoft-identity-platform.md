@@ -12,12 +12,12 @@ ms.date: 12/09/2019
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv, marsma
 ms.custom: aaddev
-ms.openlocfilehash: 504caffe0505a4e8a66608fcad528130630a5cc8
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 23ab8c5092a546a7b66b93900c6c083ac8e84394
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236214"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88117773"
 ---
 # <a name="evolution-of-microsoft-identity-platform"></a>Microsoft ID 플랫폼의 발전
 
@@ -49,7 +49,7 @@ Azure Portal **[앱 등록](https://go.microsoft.com/fwlink/?linkid=2083908)** �
 
 Azure AD B2C와 통합하려면(소셜 또는 로컬 ID를 인증할 때) 애플리케이션을 Azure AD B2C 테넌트에 등록해야 합니다. 이 환경은 Azure Portal의 일부이기도 합니다.
 
-[Application API](https://docs.microsoft.com/graph/api/resources/application?view=graph-rest-1.0)를 사용하여 모든 Microsoft ID를 인증하도록 Microsoft ID 플랫폼과 통합된 애플리케이션을 프로그래밍 방식으로 구성합니다.
+[Application API](/graph/api/resources/application?view=graph-rest-1.0)를 사용하여 모든 Microsoft ID를 인증하도록 Microsoft ID 플랫폼과 통합된 애플리케이션을 프로그래밍 방식으로 구성합니다.
 
 ### <a name="msal-libraries"></a>MSAL 라이브러리
 
@@ -57,7 +57,7 @@ MSAL 라이브러리를 사용하여 모든 Microsoft ID를 인증하는 애플�
 
 또한 MSAL 라이브러리를 사용하여 애플리케이션을 Azure AD B2C와 통합할 수 있습니다.
 
-웹앱 및 웹 API 빌드에 사용되는 서버 쪽 라이브러리는 현재 일반 공급됩니다. [ASP.NET](https://docs.microsoft.com/aspnet/overview) 및 [ASP.NET Core](https://docs.microsoft.com/aspnet/core/?view=aspnetcore-2.2)
+웹앱 및 웹 API 빌드에 사용되는 서버 쪽 라이브러리는 현재 일반 공급됩니다. [ASP.NET](/aspnet/overview) 및 [ASP.NET Core](/aspnet/core/?view=aspnetcore-2.2)
 
 ### <a name="microsoft-identity-platform-endpoint"></a>Microsoft ID 플랫폼 엔드포인트
 

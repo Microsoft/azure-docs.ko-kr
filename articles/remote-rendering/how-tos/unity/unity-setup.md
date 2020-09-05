@@ -5,12 +5,13 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/27/2020
 ms.topic: how-to
-ms.openlocfilehash: f3400d82a6aa184daabfa2ebbe6b775b8e4c1562
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4a0be44d8709726e159e17e703566c6c576bc18f
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565468"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018980"
 ---
 # <a name="set-up-remote-rendering-for-unity"></a>Unity용 Remote Rendering 설정
 
@@ -66,11 +67,11 @@ RemoteManagerStatic.ShutdownRemoteRendering();
 
 ### <a name="session-state-events"></a>세션 상태 이벤트
 
-`RemoteManagerUnity.OnSessionUpdate`세션 상태가 변경 되는 경우에 대 한 이벤트를 내보냅니다. 자세한 내용은 코드 설명서를 참조 하십시오.
+`RemoteManagerUnity.OnSessionUpdate` 세션 상태가 변경 되는 경우에 대 한 이벤트를 내보냅니다. 자세한 내용은 코드 설명서를 참조 하십시오.
 
 ### <a name="arrserviceunity"></a>ARRServiceUnity
 
-`ARRServiceUnity`는 설치 및 세션 관리를 간소화 하는 선택적 구성 요소입니다. 편집기에서 응용 프로그램을 종료 하거나 재생 모드를 종료할 때 세션을 자동으로 중지 하 고 필요한 경우 세션 임대를 자동으로 갱신 하는 옵션이 포함 되어 있습니다. 세션 속성 (변수 참조)과 같은 데이터를 캐시 `LastProperties` 하 고 세션 상태 변경 및 세션 오류에 대 한 이벤트를 노출 합니다.
+`ARRServiceUnity` 는 설치 및 세션 관리를 간소화 하는 선택적 구성 요소입니다. 편집기에서 응용 프로그램을 종료 하거나 재생 모드를 종료할 때 세션을 자동으로 중지 하 고 필요한 경우 세션 임대를 자동으로 갱신 하는 옵션이 포함 되어 있습니다. 세션 속성 (변수 참조)과 같은 데이터를 캐시 `LastProperties` 하 고 세션 상태 변경 및 세션 오류에 대 한 이벤트를 노출 합니다.
 
 한 번에 둘 이상의 인스턴스를 사용할 수 없습니다 `ARRServiceUnity` . 몇 가지 일반적인 기능을 구현 하 여 빠르게 시작할 수 있습니다. 더 큰 응용 프로그램의 경우에는 이러한 작업을 수행 하는 것이 더 적합할 수 있습니다.
 
@@ -79,4 +80,4 @@ RemoteManagerStatic.ShutdownRemoteRendering();
 ## <a name="next-steps"></a>다음 단계
 
 * [Unity용 Remote Rendering 패키지 설치](install-remote-rendering-unity-package.md)
-* [자습서: 원격으로 렌더링 된 모델 보기](../../tutorials/unity/view-remote-models/view-remote-models.md)
+* [자습서: 원격으로 렌더링된 모델 보기](../../tutorials/unity/view-remote-models/view-remote-models.md)

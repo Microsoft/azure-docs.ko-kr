@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/03/2020
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 8d23da1c3a45ed12193dfd4c1fc2ede453fc6ac7
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
-ms.translationtype: MT
+ms.openlocfilehash: 2a35180e4c5ca26d53be135718e345f9657af6a2
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84323888"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88655115"
 ---
 | **리소스** | **기본 제한** | **최대 한도** |
 | --- | --- | --- |
@@ -32,4 +32,4 @@ ms.locfileid: "84323888"
 > 기본 제한은 Batch 계정을 만드는 데 사용되는 구독 유형에 따라 달라집니다. 표시된 코어 할당량은 Batch 서비스 모드의 Batch 계정에 대한 할당량입니다. [배치 계정에서 할당량을 봅니다](../articles/batch/batch-quota-limit.md#view-batch-quotas).
 
 > [!IMPORTANT]
-> 전 세계 감염병 대유행 기간 동안 용량을 보다 효율적으로 관리하기 위해 일부 지역의 신규 Batch 계정과 일부 유형의 구독에 대한 기본 코어 할당량이 위의 값 범위에서 줄었으며, 일부 경우 0개 코어로 줄었습니다. 새 Batch 계정을 만들 때 [코어 할당량을 확인](../articles/batch/batch-quota-limit.md#view-batch-quotas)하고 필요한 경우 [코어 할당량 증가를 요청](../articles/batch/batch-quota-limit.md#increase-a-quota)합니다. 
+> 전 세계 감염병 대유행 기간 동안 용량을 보다 효율적으로 관리하기 위해 일부 지역의 신규 Batch 계정과 일부 유형의 구독에 대한 기본 코어 할당량이 위의 값 범위에서 줄었으며, 일부 경우 0개 코어로 줄었습니다. 새 Batch 계정을 만들 때 [코어 할당량을 확인](../articles/batch/batch-quota-limit.md#view-batch-quotas)하고 필요한 경우 [코어 할당량 증가를 요청](../articles/batch/batch-quota-limit.md#increase-a-quota)합니다. 또는 이미 할당량이 충분한 배치 계정을 다시 사용하는 것이 좋습니다. 

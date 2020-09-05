@@ -2,25 +2,21 @@
 title: '자습서: Zendesk와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Zendesk 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 9d7c91e5-78f5-4016-862f-0f3242b00680
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/26/2020
+ms.date: 08/13/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f70e7067a78b439d3dcaf0b83460296cad7b4485
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: c7d452803d15bab77df8e85a861de914a5ed08d5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80585812"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546070"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zendesk"></a>자습서: Zendesk와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -143,13 +139,21 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 ## <a name="configure-zendesk-sso"></a>Zendesk SSO 구성
 
+1. **Zendesk** 내에서 구성을 자동화하려면 **확장 설치**를 클릭하여 **내 앱 보안 로그인 브라우저 확장**을 설치해야 합니다.
+
+    ![이미지](./media/target-process-tutorial/install_extension.png)
+
+1. 브라우저에 확장을 추가한 후 **Zendesk 설정**을 클릭하면 Zendesk 애플리케이션으로 이동됩니다. 응용 프로그램에서 관리자 자격 증명을 입력하여 Zendesk에 로그인합니다. 브라우저 확장이 애플리케이션을 자동으로 구성하고 3-6단계를 자동으로 수행합니다.
+
+    ![설정 구성](common/setup-sso.png)
+
 1. Zendesk를 수동으로 설정하려면 새 웹 브라우저 창을 열고 Zendesk 회사 사이트에 관리자로 로그인한 후에 다음 단계를 수행합니다.
 
-2. **Admin**을 클릭합니다.
+1. **Admin**을 클릭합니다.
 
-3. **설정**을 클릭하고 왼쪽 탐색 창에서 **보안**을 클릭합니다.
+1. **설정**을 클릭하고 왼쪽 탐색 창에서 **보안**을 클릭합니다.
 
-4. **보안** 페이지에서 다음 단계를 수행합니다.
+1. **보안** 페이지에서 다음 단계를 수행합니다.
 
     ![보안](./media/zendesk-tutorial/ic773089.png "보안")
 

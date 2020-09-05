@@ -2,25 +2,21 @@
 title: '자습서: Predictix Price Reporting과 Azure Active Directory 통합 | Microsoft Docs'
 description: 이 자습서에서는 Azure Active Directory와 Predictix Price Reporting 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 691d0c43-3aa1-4220-9e46-e7a88db234ad
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: ad80956cf7d6324487da5d0fabc2e93a5b4bf52f
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: e9bcdfeb983138046792313c018c386eb69136fd
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85800255"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553684"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>자습서: Predictix Price Reporting과 Azure Active Directory 통합
 

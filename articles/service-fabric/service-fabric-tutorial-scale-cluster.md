@@ -4,12 +4,12 @@ description: 이 자습서에서는 Azure에서 Service Fabric 클러스터의 �
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 05fd29f874d59601942216f907010b94bb7c4058
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: d9699103f5e13301cce408d2e54f0e15780e0a35
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86257107"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716897"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>자습서: Azure에서 Service Fabric 클러스터 크기 조정
 
@@ -833,7 +833,7 @@ Foreach($node in $nodes)
 ```
 
 ## <a name="increase-node-resources"></a>노드 리소스 증가 
-Service Fabric 클러스터를 생성한 후 원래 노드 유형을 새 노드 유형(업데이트된 VM SKU 또는 OS 이미지)으로 바꾸어 클러스터 노드 유형을 수직으로 확장(노드의 리소스 변경)하거나 노드 유형 VM의 운영 체제를 업그레이드할 수 있습니다. 자세한 내용은 [Azure Service Fabric 노드 형식 스케일 업](service-fabric-scale-up-node-type.md)을 참조하세요.
+Service Fabric 클러스터를 생성한 후 원래 노드 유형을 새 노드 유형(업데이트된 VM SKU 또는 OS 이미지)으로 바꾸어 클러스터 노드 유형을 수직으로 확장(노드의 리소스 변경)하거나 노드 유형 VM의 운영 체제를 업그레이드할 수 있습니다. 자세한 내용은 [Azure Service Fabric 노드 형식 스케일 업](service-fabric-scale-up-primary-node-type.md)을 참조하세요.
 
 > [!IMPORTANT]
 > 위험한 작업이며 지원되지 않는 VM SKU 또는 OS 이미지의 내부 변경을 시도하지 마세요.

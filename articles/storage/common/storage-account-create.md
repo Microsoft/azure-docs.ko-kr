@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 02/07/2020
 ms.author: tamram
 ms.subservice: common
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 636efe27ec82fa870267d2cf69d5cdf990fd509a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: 8b6f5f302465d075b7a0bcb0e6b12c75b1379bb5
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501358"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069837"
 ---
 # <a name="create-an-azure-storage-account"></a>Azure Storage 계정 만들기
 
@@ -98,7 +98,7 @@ az login
 
 # <a name="template"></a>[템플릿](#tab/template)
 
-해당 없음
+N/A
 
 ---
 

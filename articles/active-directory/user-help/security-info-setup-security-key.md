@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/18/2019
 ms.author: curtand
-ms.openlocfilehash: 91138f104c787148042b187f4cf59a60bc1448d3
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: c056e439deac71417ff14dcfc3f2c3c95db41946
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744424"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797669"
 ---
 # <a name="set-up-a-security-key-as-your-verification-method"></a>보안 키를 확인 방법으로 설정합니다.
 
@@ -158,13 +158,13 @@ ms.locfileid: "83744424"
 
 ## <a name="additional-security-info-methods"></a>추가 보안 정보 메서드
 
-보안 키를 등록하려면 하나 이상의 추가 보안 확인 방법이 등록되어 있어야 합니다. 자세한 내용은 [개요 섹션](security-info-add-update-methods-overview.md)을 참조하세요. 
+보안 키를 등록하려면 하나 이상의 추가 보안 확인 방법이 등록되어 있어야 합니다. 자세한 내용은 [개요 섹션](./security-info-setup-auth-app.md)을 참조하세요. 
 
 ## <a name="next-steps"></a>다음 단계
 
 - 암호 없는 확인 방법에 대한 자세한 내용은 [Microsoft의 Azure AD에서 FIDO2 보안 키 공개 미리 보기를 시작하여 암호 없이 로그인 가능](https://www.onmsft.com/news/microsofts-azure-ad-begins-public-preview-of-fido2-security-keys-enabling-passwordless-logins) 블로그를 읽어 보거나, [Microsoft Authenticator 앱이란?](user-help-auth-app-overview.md)과 [Windows Hello 개요](https://www.microsoft.com/windows/windows-hello) 문서를 참조하세요.
 
-- [Microsoft 규격 보안 키](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/microsoft-compatible-security-key)에 대해 자세히 알아봅니다.
+- [Microsoft 규격 보안 키](/windows/security/identity-protection/hello-for-business/microsoft-compatible-security-key)에 대해 자세히 알아봅니다.
 
 - 분실했거나 잊어버린 경우 [암호 재설정 포털](https://passwordreset.microsoftonline.com/)에서 암호를 다시 설정하거나 [회사 또는 학교 암호 재설정](active-directory-passwords-update-your-own-password.md) 문서의 단계를 수행합니다.
 

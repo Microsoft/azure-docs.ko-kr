@@ -5,23 +5,30 @@
   items:
     - name: Azure Spring Cloud란?
       href: spring-cloud-overview.md
-    - name: 스프링 마이크로서비스 앱용 Java 및 기본 OS
-      href: spring-cloud-principles-microservice-apps.md
 - name: 빠른 시작
   expanded: true
   items:
-    - name: Spring Cloud 앱 시작 - 포털
-      href: spring-cloud-quickstart-launch-app-portal.md
-    - name: Spring Cloud 앱 시작 - Azure CLI
-      href: spring-cloud-quickstart-launch-app-cli.md
-    - name: Spring Cloud 앱 시작 - 원본
-      href: spring-cloud-launch-from-source.md
-    - name: Spring Cloud 앱 시작 - Maven
-      href: spring-cloud-quickstart-launch-app-maven.md
+    - name: 첫 번째 앱 시작
+      href: spring-cloud-quickstart.md
+    - name: 마이크로서비스 빌드 및 실행
+      expanded: true
+      items:
+        - name: 샘플 앱 소개
+          href: spring-cloud-quickstart-sample-app-introduction.md
+        - name: Azure Spring Cloud 서비스 프로비저닝
+          href: spring-cloud-quickstart-provision-service-instance.md
+        - name: 구성 서버 설정
+          href: spring-cloud-quickstart-setup-config-server.md
+        - name: 앱 빌드 및 배포
+          href: spring-cloud-quickstart-deploy-apps.md
+        - name: '로그, 메트릭 및 추적 사용'
+          href: spring-cloud-quickstart-logs-metrics-tracing.md
 - name: 자습서
   items:
     - name: 수동으로 앱 스케일링
       href: spring-cloud-tutorial-scale-manual.md
+    - name: 앱 자동 크기 조정
+      href: spring-cloud-tutorial-setup-autoscale.md
     - name: 경고 및 작업 그룹
       href: spring-cloud-tutorial-alerts-action-groups.md
     - name: IntelliJ를 사용하여 앱 배포
@@ -38,15 +45,12 @@
       href: /azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service
     - name: 관리 ID를 사용하여 Key Vault를 Azure Spring Cloud 앱에 연결
       href: spring-cloud-tutorial-managed-identities-key-vault.md
-    - name: 마이크로서비스 애플리케이션에 대한 자동 크기 조정 설정
-      href: spring-cloud-tutorial-setup-autoscale.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
+    - name: 가상 네트워크에 Azure Spring Cloud 배포
+      href: spring-cloud-tutorial-deploy-in-azure-virtual-network.md
 - name: 개념
   items:
+    - name: 앱 및 배포 이해
+      href: spring-cloud-concept-understand-app-and-deployment.md
     - name: 할당량 및 한도 이해
       href: spring-cloud-quotas.md
     - name: 메트릭 이해
@@ -109,9 +113,14 @@
   items:
     - name: Azure CLI 플러그 인
       href: 'https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud'
+    - name: Azure PowerShell
+      href: 'https://docs.microsoft.com/powershell/module/az.springcloud'
     - name: 리소스
       href: spring-cloud-resources.md
     - name: 질문과 대답
       href: spring-cloud-faq.md
     - name: REST API 참조
       href: 'https://docs.microsoft.com/rest/api/azurespringclould/'
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md

@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
-ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c0d8d2b009194b58c76dbd0a171f701f90df4086
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp, aaddev, identityplatformtop40
+ms.openlocfilehash: 740d62136393cf0c9cf31d367735bffed1c05276
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87058283"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165586"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Microsoft에 로그인을 ASP.NET 웹앱에 추가
 
@@ -264,7 +264,7 @@ Visual Studio에서 로그인 단추를 추가하고 인증 후 사용자 정보
     ```
 
 ### <a name="more-information"></a>자세한 정보
-이 페이지는 SVG 형식으로 검은색 배경의 로그인 단추를 추가합니다.<br/>![Microsoft로 로그인](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> 추가 로그인 단추는 [브랜딩 지침](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "브랜딩 지침")으로 이동하세요.
+이 페이지는 SVG 형식으로 검은색 배경의 로그인 단추를 추가합니다.<br/>![Microsoft로 로그인](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> 추가 로그인 단추는 [브랜딩 지침](./howto-add-branding-in-azure-ad-apps.md "브랜딩 지침")으로 이동하세요.
 
 ## <a name="add-a-controller-to-display-users-claims"></a>사용자의 클레임을 표시하는 컨트롤러 추가
 이 컨트롤러는 컨트롤러를 보호하는 `[Authorize]` 특성의 사용을 보여 줍니다. 이 특성은 인증된 사용자만 허용하여 컨트롤러에 대한 액세스를 제한합니다. 다음 코드에서는 특성을 사용하여 로그인의 일부로 검색된 사용자 클레임을 표시합니다.
@@ -403,7 +403,7 @@ Microsoft ID 플랫폼과 통합되는 애플리케이션은 사용자와 관리
 - 애플리케이션 개발자가 **관리자 동의**가 필요한 추가 권한을 추가합니다.
 - 또는 사용자가 자신을 대신하여 회사 데이터에 액세스하는 앱에 동의할 수 없는 테넌트가 **엔터프라이즈 애플리케이션 -> 사용자 설정**에 구성되어 있습니다.
 
-자세한 내용은 [Microsoft ID 플랫폼 엔드포인트의 권한 및 동의](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent)를 참조하세요.
+자세한 내용은 [Microsoft ID 플랫폼 엔드포인트의 권한 및 동의](./v2-permissions-and-consent.md)를 참조하세요.
 
 ### <a name="view-application-results"></a>애플리케이션 결과 보기
 
@@ -424,7 +424,7 @@ Microsoft ID 플랫폼과 통합되는 애플리케이션은 사용자와 관리
 |**Subject** |제목 |웹에서 사용자를 고유하게 식별하는 문자열|
 |**테넌트 ID** |Guid | 사용자의 Azure AD 조직을 고유하게 나타내는 **guid**|
 
-또한 인증 요청에 있는 모든 클레임의 테이블이 표시됩니다. 자세한 내용은 [ID 토큰에 있는 클레임 목록](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims)을 참조하세요.
+또한 인증 요청에 있는 모든 클레임의 테이블이 표시됩니다. 자세한 내용은 [ID 토큰에 있는 클레임 목록](./id-tokens.md)을 참조하세요.
 
 ### <a name="test-access-to-a-method-that-has-an-authorize-attribute-optional"></a>Authorize 특성이 있는 메서드 액세스 테스트(선택 사항)
 
@@ -484,6 +484,6 @@ Microsoft ID 플랫폼을 사용하여 웹앱에서 웹 API를 호출하는 방�
 Microsoft Graph를 호출하는 웹앱을 빌드하는 방법을 알아봅니다.
 
 > [!div class="nextstepaction"]
-> [Microsoft Graph ASP.NET 자습서](https://docs.microsoft.com/graph/tutorials/aspnet)
+> [Microsoft Graph ASP.NET 자습서](/graph/tutorials/aspnet)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

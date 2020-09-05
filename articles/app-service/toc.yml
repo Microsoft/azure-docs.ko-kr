@@ -4,8 +4,6 @@
   items:
     - name: Web Apps 정보
       href: overview.md
-    - name: Linux의 App Service 정보
-      href: containers/app-service-linux-intro.md
     - name: App Service Environment 정보
       href: environment/intro.md
     - name: 호스팅 옵션 비교
@@ -13,34 +11,50 @@
 - name: 빠른 시작
   expanded: true
   items:
-    - name: .NET Core 앱 만들기
-      href: app-service-web-get-started-dotnet.md
-    - name: .NET Framework 앱 만들기
-      href: app-service-web-get-started-dotnet-framework.md
-    - name: Node.js 앱 만들기
-      href: app-service-web-get-started-nodejs.md
-    - name: PHP 앱 만들기
-      href: app-service-web-get-started-php.md
-    - name: Java 앱 만들기
-      href: app-service-web-get-started-java.md
-    - name: 정적 HTML 사이트 만들기
-      href: app-service-web-get-started-html.md
-    - name: Windows 컨테이너 실행
-      href: app-service-web-get-started-windows-container.md
+    - name: .NET Core
+      href: quickstart-dotnetcore.md
+    - name: .NET Framework
+      href: quickstart-dotnet-framework.md
+    - name: Node.js
+      href: quickstart-nodejs.md
+    - name: PHP
+      href: quickstart-php.md
+    - name: Java
+      href: quickstart-java.md
+    - name: Python
+      href: quickstart-python.md
+    - name: Ruby
+      href: quickstart-ruby.md
+    - name: 정적 HTML 사이트
+      href: quickstart-html.md
+    - name: 사용자 지정 컨테이너
+      href: quickstart-custom-container.md
+    - name: 다중 컨테이너 앱
+      href: quickstart-multi-container.md
 - name: 자습서
   items:
     - name: DB를 사용한 앱
       items:
         - name: SQL DB를 사용한 .NET Core
-          href: app-service-web-tutorial-dotnetcore-sqldb.md
+          href: tutorial-dotnetcore-sqldb-app.md
         - name: SQL DB를 사용하는 .NET Framework
           href: app-service-web-tutorial-dotnet-sqldatabase.md
         - name: MySQL을 사용하는 PHP
-          href: app-service-web-tutorial-php-mysql.md
+          href: tutorial-php-mysql-app.md
         - name: MongoDB를 사용하는 Node.js
-          href: app-service-web-tutorial-nodejs-mongodb-app.md
-    - name: Windows(컨테이너) 사용자 지정
-      href: app-service-web-tutorial-windows-containers-custom-fonts.md
+          href: tutorial-nodejs-mongodb-app.md
+        - name: Postgres를 사용하는 Ruby
+          href: tutorial-ruby-postgres-app.md
+        - name: Postgres를 사용하는 Python
+          href: tutorial-python-postgresql-app.md
+        - name: Spring 데이터를 사용하는 Java
+          href: tutorial-java-spring-cosmosdb.md
+    - name: 사용자 지정 컨테이너
+      items:
+        - name: ACR에서 배포
+          href: tutorial-custom-container.md
+        - name: 다중 컨테이너 앱
+          href: tutorial-multi-container-app.md
     - name: SQL DB를 안전하게 액세스
       href: app-service-web-tutorial-connect-msi.md
     - name: RESTful API 호스트
@@ -52,9 +66,11 @@
     - name: CDN 추가
       href: ../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fcdn%2ftoc.json
     - name: 사용자 인증
-      href: app-service-web-tutorial-auth-aad.md
+      href: tutorial-auth-aad.md
     - name: 이메일/트윗 보내기
       href: tutorial-send-email.md
+    - name: 오류 문제 해결
+      href: tutorial-troubleshoot-monitor.md
 - name: 샘플
   items:
     - name: Azure CLI
@@ -63,9 +79,6 @@
       href: samples-powershell.md
     - name: 리소스 관리자 템플릿
       href: samples-resource-manager-templates.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
     - name: Terraform
       href: samples-terraform.md
 - name: 개념
@@ -125,8 +138,14 @@
           href: configure-language-nodejs.md
         - name: PHP 구성
           href: configure-language-php.md
+        - name: Python 구성
+          href: configure-language-python.md
         - name: Java 구성
           href: configure-language-java.md
+        - name: Ruby 구성
+          href: configure-language-ruby.md
+        - name: 사용자 지정 Linux 컨테이너 구성
+          href: configure-custom-container.md
         - name: 온-프레미스 리소스에 연결
           href: web-sites-integrate-with-vnet.md
         - name: Azure Storage(컨테이너) 구성
@@ -145,10 +164,14 @@
               href: deploy-content-sync.md
             - name: 연속 배포
               href: deploy-continuous-deployment.md
+            - name: 사용자 지정 컨테이너 CI/CD
+              href: deploy-ci-cd-custom-container.md
             - name: 로컬 Git에서 배포
               href: deploy-local-git.md
-            - name: GitHub 작업을 사용하여 배포
+            - name: GitHub 작업
               href: deploy-github-actions.md
+            - name: 컨테이너용 GitHub 작업
+              href: deploy-container-github-action.md
             - name: 템플릿을 사용하여 배포
               href: deploy-complex-application-predictably.md
         - name: 배포 자격 증명 설정
@@ -215,6 +238,8 @@
           href: troubleshoot-diagnostic-logs.md
         - name: 리소스 이벤트 가져오기
           href: get-resource-events.md
+        - name: Linux 컨테이너에 대한 SSH 세션 열기
+          href: configure-linux-open-ssh-session.md
     - name: 앱 관리
       items:
         - name: 호스팅 계획 관리
@@ -257,6 +282,9 @@
       href: /rest/api/appservice/
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.web/allversions
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: App Service 블로그
@@ -282,7 +310,7 @@
     - name: 쿡북
       items:
         - name: 참조 아키텍처
-          href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app'
+          href: /azure/architecture/reference-architectures/app-service-web-app/basic-web-app
         - name: 배포 스크립트
           href: 'https://azure.microsoft.com/documentation/scripts/'
     - name: 문제 해결

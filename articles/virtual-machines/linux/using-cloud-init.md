@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 06/15/2020
 ms.author: danis
-ms.openlocfilehash: e303b713adf2925af8bc012a5b858c6f5740fccf
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 7ddbb48f3598780988feb25a11729a5086d31fde
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86510075"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869272"
 ---
 # <a name="cloud-init-support-for-virtual-machines-in-azure"></a>Azure의 가상머신에 대한 cloud-init 지원
 이 문서에서는 Azure에서 프로비저닝 시간에 VM(가상 머신) 또는 가상 머신 확장 집합을 구성하는 [cloud-init](https://cloudinit.readthedocs.io)에 대한 지원을 설명합니다. Azure에서 리소스가 프로비저닝된 후 처음 부팅할 때 이러한 cloud-init 구성이 실행됩니다.  
@@ -46,7 +46,7 @@ Azure에서 보증된 Linux 배포판 OS에 cloud-init를 제공하는 것은 �
 | 게시자/버전 | 제안 | SKU | 버전 | 이미지 cloud-init 준비 여부 | Azure에서의 cloud-init 패키지 지원|
 |:--- |:--- |:--- |:--- |:--- |:--- |
 |RedHat 7.6 |RHEL |7-RAW-CI |7.6.2019072418 |예 | 예 - 지원 시작 패키지 버전: *18.2-1.el7_6.2*|
-|RedHat 7.7 |RHEL |7-RAW-CI |7.7.2019081601 | 예 (참고: 미리 보기 이미지 이며 더 이상 사용 하지 **않아야 합니다** . 1 월 2020 일에 제거 됩니다.) | 해당 없음 |
+|RedHat 7.7 |RHEL |7-RAW-CI |7.7.2019081601 | 예 (참고: 미리 보기 이미지 이며 더 이상 사용 하지 **않아야 합니다** . 1 월 2020 일에 제거 됩니다.) | N/A |
 |RedHat 7.7(Gen1)|RHEL |7.7 | 7.7.2020051912 | 예 | 예 - 지원 시작 패키지 버전: *18.5-6.el7*|
 |RedHat 7.7(Gen2)|RHEL | 77-gen2 | 7.7.2020051913 | 예 | 예 - 지원 시작 패키지 버전: *18.5-6.el7*|
 |RedHat 7.7(Gen1)|RHEL |7-LVM | 7.7.2020051921 | 예 | 예 - 지원 시작 패키지 버전: *18.5-6.el7*|
@@ -61,15 +61,15 @@ Azure에서 보증된 Linux 배포판 OS에 cloud-init를 제공하는 것은 �
 
 | 게시자/버전 | 제안 | SKU | 버전 | 이미지 cloud-init 준비 여부 | Azure에서의 cloud-init 패키지 지원|
 |:--- |:--- |:--- |:--- |:--- |:--- |
-|OpenLogic 7.7 |CentOS |7-CI |7.7.20190920 |예 (참고: 미리 보기 이미지 이며 더 이상 사용 하지 **않아야 합니다** . 1 월 2020 일에 제거 됩니다.) | 해당 없음 |
-|OpenLogic 7.7 |CentOS | 7.7 |7.7.2020062400 |예 | 예-패키지 버전에 대 한 지원:`18.5-6.el7.centos.5`|
-|OpenLogic 7.7 (Gen2) |CentOS | 7_7-gen2 |7.7.2020062401 |예 | 예-패키지 버전에 대 한 지원:`18.5-6.el7.centos.5`|
-|OpenLogic 7.7 |CentOS-HPC | 7.7 |7.6.2020062600 |예 | 예-패키지 버전에 대 한 지원:`18.5-6.el7.centos.5`|
-|OpenLogic 7.7 (Gen2) |CentOS-HPC | 7_7-gen2 |7.6.2020062601 |예 | 예-패키지 버전에 대 한 지원:`18.5-6.el7.centos.5`|
-|OpenLogic 8.1 |CentOS | 8_1 |8.1.2020062400 |예 | 예-패키지 버전에 대 한 지원:`18.5-7.el8_1.1`|
-|OpenLogic 8.1 (Gen2) |CentOS | 8_1-gen2 |8.1.2020062401 |예 | 예-패키지 버전에 대 한 지원:`18.5-7.el8_1.1`|
-|OpenLogic 8.1 |CentOS-HPC | 8_1 |8.1.2020062400 |예 | 예-패키지 버전에 대 한 지원:`18.5-7.el8_1.1`|
-|OpenLogic 8.1 (Gen2) |CentOS: 8_1-gen2 | 8_1-gen2 |8.1.2020062401 |예 | 예-패키지 버전에 대 한 지원:`18.5-7.el8_1.1`|
+|OpenLogic 7.7 |CentOS |7-CI |7.7.20190920 |예 (참고: 미리 보기 이미지 이며 더 이상 사용 하지 **않아야 합니다** . 1 월 2020 일에 제거 됩니다.) | N/A |
+|OpenLogic 7.7 |CentOS | 7.7 |7.7.2020062400 |예 | 예-패키지 버전에 대 한 지원: `18.5-6.el7.centos.5`|
+|OpenLogic 7.7 (Gen2) |CentOS | 7_7-gen2 |7.7.2020062401 |예 | 예-패키지 버전에 대 한 지원: `18.5-6.el7.centos.5`|
+|OpenLogic 7.7 |CentOS-HPC | 7.7 |7.6.2020062600 |예 | 예-패키지 버전에 대 한 지원: `18.5-6.el7.centos.5`|
+|OpenLogic 7.7 (Gen2) |CentOS-HPC | 7_7-gen2 |7.6.2020062601 |예 | 예-패키지 버전에 대 한 지원: `18.5-6.el7.centos.5`|
+|OpenLogic 8.1 |CentOS | 8_1 |8.1.2020062400 |예 | 예-패키지 버전에 대 한 지원: `18.5-7.el8_1.1`|
+|OpenLogic 8.1 (Gen2) |CentOS | 8_1-gen2 |8.1.2020062401 |예 | 예-패키지 버전에 대 한 지원: `18.5-7.el8_1.1`|
+|OpenLogic 8.1 |CentOS-HPC | 8_1 |8.1.2020062400 |예 | 예-패키지 버전에 대 한 지원: `18.5-7.el8_1.1`|
+|OpenLogic 8.1 (Gen2) |CentOS: 8_1-gen2 | 8_1-gen2 |8.1.2020062401 |예 | 예-패키지 버전에 대 한 지원: `18.5-7.el8_1.1`|
 
 * 모든 OpenLogic: CentOS 7.8 및 8.2 (Gen1 및 Gen2) 이미지는 클라우드 초기화를 사용 하 여 프로 비전 됩니다.
 
@@ -151,6 +151,8 @@ az vm create \
 ```
 
 VM이 생성되면 Azure CLI가 배포에 대한 정보를 표시합니다. `publicIpAddress`을 기록해 둡니다. 이 주소는 VM에 액세스하는 데 사용됩니다.  VM을 만들고 패키지를 설치하고 앱을 시작하는 데 시간이 약간 걸립니다. Azure CLI에서 프롬프트로 반환한 후 실행을 계속하는 백그라운드 작업이 있습니다. VM에 SSH한 후 문제 해결 섹션에 설명된 단계를 사용하여 cloud-init 로그를 볼 수 있습니다. 
+
+[ARM 템플릿에서 매개 변수](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-cli#inline-parameters)를 전달 하 여 클라우드 초기화를 사용 하도록 설정 된 VM을 배포할 수도 있습니다.
 
 ## <a name="troubleshooting-cloud-init"></a>cloud-init 문제 해결
 VM이 프로비전되면 cloud-init는 `--custom-data`에 정의된 모든 모듈과 스크립트를 실행하여 VM을 구성합니다.  구성 오류 또는 누락을 해결해야 하는 경우 **/var/log/cloud-init.log**에 있는 cloud-init 로그에서 모듈 이름(예: `disk_setup` 또는 `runcmd`)을 검색해야 합니다.

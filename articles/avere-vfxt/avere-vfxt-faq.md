@@ -1,18 +1,18 @@
 ---
 title: FAQ - Avere vFXT for Azure
-description: Avere vFXT for Azure에 대한 질문과 대답
+description: 이러한 질문과 대답을 사용 하 여 Azure에 대 한 Avere vFXT 요구 사항을 충족 하는지 결정 합니다. Azure의 Avere vFXT가 다른 Azure 구성 요소와 함께 작동 하는 방법을 알아봅니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: rohogue
 ms.custom: references_regions
-ms.openlocfilehash: 55423119e55401d5176e228eba784f2eb498bfef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c6459e2daf17772b28ee53289754deb33b4823ae
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84196340"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272694"
 ---
 # <a name="avere-vfxt-for-azure-faq"></a>Avere vFXT for Azure FAQ
 

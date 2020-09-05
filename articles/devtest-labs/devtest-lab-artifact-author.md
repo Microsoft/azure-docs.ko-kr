@@ -1,14 +1,14 @@
 ---
 title: DevTest Labs 가상 머신에 대한 사용자 지정 아티팩트 만들기 | Microsoft Docs
-description: Azure DevTest Labs와 함께 사용할 사용자 고유의 아티팩트를 만드는 방법을 알아봅니다.
+description: 가상 컴퓨터를 프로 비전 한 후 응용 프로그램을 배포 하 고 설정 하기 위해 Azure DevTest Labs 사용할 아티팩트를 만드는 방법에 대해 알아봅니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 775908749f52c71eeaf97eef25e3787f9b6794fc
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 85acfcc3811e671e58fadab08a23951778e1323d
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85857025"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270685"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>DevTest Labs 가상 머신에 대한 사용자 지정 아티팩트 만들기
 
@@ -46,12 +46,12 @@ ms.locfileid: "85857025"
 
 | 요소 이름 | 필수 여부 | 설명 |
 | --- | --- | --- |
-| $schema |아니요 |JSON 스키마 파일의 위치입니다. JSON 스키마 파일은 정의 파일의 유효성을 검사하는 데 도움이 될 수 있습니다. |
+| $schema |예 |JSON 스키마 파일의 위치입니다. JSON 스키마 파일은 정의 파일의 유효성을 검사하는 데 도움이 될 수 있습니다. |
 | title |예 |랩에 표시되는 아티팩트의 이름입니다. |
 | description |예 |랩에 표시되는 아티팩트에 대한 설명입니다. |
-| iconUri |아니요 |랩에 표시되는 아이콘의 URI입니다. |
+| iconUri |예 |랩에 표시되는 아이콘의 URI입니다. |
 | targetOsType |예 |아티팩트가 설치되는 VM의 운영 체제입니다. 지원되는 옵션은 Windows 및 Linux입니다. |
-| 매개 변수 |아니요 |아티팩트 설치 명령이 컴퓨터에서 실행될 때 제공되는 값으로 아티팩트를 사용자 지정할 수 있습니다. |
+| 매개 변수 |예 |아티팩트 설치 명령이 컴퓨터에서 실행될 때 제공되는 값으로 아티팩트를 사용자 지정할 수 있습니다. |
 | runCommand |예 |VM에서 실행되는 아티팩트 설치 명령입니다. |
 
 ### <a name="artifact-parameters"></a>아티팩트 매개 변수
@@ -144,7 +144,7 @@ ms.locfileid: "85857025"
       ![아티팩트 폴더 예제](./media/devtest-lab-artifact-author/git-repo.png)
 5. 사용자 고유의 리포지토리를 사용하여 아티팩트를 저장하는 경우 [아티팩트 및 템플릿용 Git 리포지토리 추가](devtest-lab-add-artifact-repo.md) 문서의 지침에 따라 리포지토리를 랩에 추가합니다.
 
-## <a name="related-articles"></a>관련된 문서
+## <a name="related-articles"></a>관련 문서
 * [DevTest Labs에서 아티팩트 실패를 진단하는 방법](devtest-lab-troubleshoot-artifact-failure.md)
 * [DevTest Labs에서 Resource Manager 템플릿을 사용하여 기존 Active Directory 도메인에 VM 가입](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs)
 

@@ -35,11 +35,6 @@
               href: container-registry-tutorial-deploy-app.md
             - name: 3 - 웹 애플리케이션 업데이트
               href: container-registry-tutorial-deploy-update.md
-    - name: 샘플
-      items:
-        - name: Azure Policy 기본 제공 기능
-          displayName: 'samples, policies, definitions'
-          href: ./policy-samples.md
     - name: 개념
       expanded: false
       items:
@@ -148,6 +143,12 @@
         - name: 문제 해결
           expanded: false
           items:
+            - name: 로그인 문제 해결
+              href: container-registry-troubleshoot-login.md
+            - name: 네트워크 문제 해결
+              href: container-registry-troubleshoot-access.md
+            - name: 쿼리 성능 문제 해결
+              href: container-registry-troubleshoot-performance.md
             - name: 일반적인 문제 검색
               href: container-registry-check-health.md
             - name: FAQ
@@ -237,6 +238,9 @@
       href: ../event-grid/event-schema-container-registry.md?toc=/azure/container-registry/toc.json&bc=/azure/container-registry/breadcrumb/toc.json
     - name: 상태 확인 오류
       href: container-registry-health-error-reference.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   expanded: false
   items:

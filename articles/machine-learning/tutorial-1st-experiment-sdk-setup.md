@@ -9,13 +9,13 @@ ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
 ms.date: 02/10/2020
-ms.custom: tracking-python
-ms.openlocfilehash: 8ba6141bddd60c2bdc2fdf17845e8f470dd6ef55
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-python
+ms.openlocfilehash: ff23a42d9b96b8411d8b2f82ab8303e2a8a69953
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520530"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852721"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>자습서: Python SDK로 첫 번째 ML 실험 만들기 시작
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -97,7 +97,7 @@ Azure 리소스를 관리하기 위한 웹 기반 콘솔인 Azure Portal을 통�
         + 이름은 문자(숫자 또는 대시 문자 아님)로 시작해야 합니다.
         + 대시 문자를 사용하는 경우 대시 뒤에 문자가 하나 이상 있어야 합니다. 예제: Test-, test-0, test-01은 유효하지 않지만 test-a0, test-0a는 유효한 인스턴스입니다.
 
-    1.  사용 가능한 선택 항목에서 Virtual Machine 크기를 선택합니다.
+    1.  사용 가능한 선택 항목에서 Virtual Machine 크기를 선택합니다. 이 자습서에서는 기본 VM을 선택하는 것이 좋습니다.
 
     1. 그런 다음 **만들기**를 선택합니다. VM을 설정하는 데 약 5분이 걸릴 수 있습니다.
 

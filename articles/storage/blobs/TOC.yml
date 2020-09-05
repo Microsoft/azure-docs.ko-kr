@@ -111,13 +111,23 @@
           href: storage-samples-blobs-powershell.md
         - name: Azure CLI
           href: storage-samples-blobs-cli.md
-        - name: Azure Policy 기본 제공 기능
-          displayName: 'samples, policies, definitions'
-          href: ../common/policy-samples.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: 개념
       items:
         - name: Storage 계정
           href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: 권한 부여
+          items:
+            - name: 데이터 작업 권한 부여
+              href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+              items:
+                - name: Azure AD를 사용하여 권한 부여
+                  href: ../common/storage-auth-aad.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 공유 키로 권한 부여
+                  href: /rest/api/storageservices/authorize-with-shared-key
+                - name: SAS(공유 액세스 서명)를 사용하여 액세스 위임
+                  href: ../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: 관리 작업 권한 부여
+              href: ../common/authorization-resource-provider.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: 보안
           items:
             - name: 보안 권장 사항
@@ -131,17 +141,6 @@
                   href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: 요청 시 고객이 제공한 키
                   href: ../common/encryption-customer-provided-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: 데이터 작업 권한 부여
-              href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-              items:
-                - name: Azure AD를 사용하여 권한 부여
-                  href: ../common/storage-auth-aad.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 공유 키로 권한 부여
-                  href: /rest/api/storageservices/authorize-with-shared-key
-                - name: SAS(공유 액세스 서명)를 사용하여 액세스 위임
-                  href: ../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: 관리 작업 권한 부여
-              href: ../common/authorization-resource-provider.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: 변경이 불가능한 Blob
               href: storage-blob-immutable-storage.md
             - name: Advanced Threat Protection
@@ -313,64 +312,66 @@
               href: storage-blob-properties-metadata.md
             - name: Blob 복사(.NET)
               href: storage-blob-copy.md
+        - name: Blob 데이터에 대한 액세스 권한 부여
+          items:
+            - name: 사용자에 대한 권한 부여 옵션
+              items:
+                - name: 포털
+                  href: ../common/storage-access-blobs-queues-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: PowerShell
+                  href: ../common/authorize-active-directory-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Azure CLI
+                  href: ../common/authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: RBAC를 사용하여 액세스 권한 관리
+              items:
+                - name: 포털
+                  href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: PowerShell
+                  href: ../common/storage-auth-aad-rbac-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Azure CLI
+                  href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Azure AD 인증 및 권한 부여
+              items:
+                - name: 관리 ID로 권한 부여
+                  href: ../common/storage-auth-aad-msi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 애플리케이션에서 권한 부여
+                  href: ../common/storage-auth-aad-app.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: 공유 키로 권한 부여
+              items:
+                - name: 계정 키 보기 및 관리
+                  href: ../common/storage-account-keys-manage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 연결 문자열 구성
+                  href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Azure Storage REST API 사용
+                  href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 공유 키로 권한 부여 방지
+                  href: ../common/shared-key-authorization-prevent.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: SAS(공유 액세스 서명)를 사용하여 액세스 위임
+              items:
+                - name: 사용자 위임 SAS 만들기
+                  items:
+                    - name: PowerShell
+                      href: storage-blob-user-delegation-sas-create-powershell.md
+                    - name: Azure CLI
+                      href: storage-blob-user-delegation-sas-create-cli.md
+                    - name: .NET
+                      href: storage-blob-user-delegation-sas-create-dotnet.md
+                - name: 서비스 SAS(.NET) 만들기
+                  href: storage-blob-service-sas-create-dotnet.md
+                - name: 계정 SAS(.NET) 만들기
+                  href: ../common/storage-account-sas-create-dotnet.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: 저장된 액세스 정책 정의
+                  href: ../common/storage-stored-access-policy-define-dotnet.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Blob 데이터에 대한 익명 읽기 권한 관리
+              items:
+                - name: 컨테이너 및 Blob에 대한 익명 읽기 권한 구성
+                  href: anonymous-read-access-configure.md
+                - name: Blob 데이터에 대한 익명 읽기 액세스 방지
+                  href: anonymous-read-access-prevent.md
+                - name: 공용 컨테이너 및 Blob에 익명으로 액세스(.NET)
+                  href: anonymous-read-access-client.md
         - name: Blob 데이터 보호
           items:
-            - name: Blob 데이터에 대한 액세스 권한 부여
-              items:
-                - name: 사용자에 대한 권한 부여 옵션
-                  items:
-                    - name: 포털
-                      href: ../common/storage-access-blobs-queues-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: PowerShell
-                      href: ../common/authorize-active-directory-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: Azure CLI
-                      href: ../common/authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: RBAC를 사용하여 액세스 권한 관리
-                  items:
-                    - name: 포털
-                      href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: PowerShell
-                      href: ../common/storage-auth-aad-rbac-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: Azure CLI
-                      href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Azure AD 인증 및 권한 부여
-                  items:
-                    - name: 관리 ID로 권한 부여
-                      href: ../common/storage-auth-aad-msi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: 애플리케이션에서 권한 부여
-                      href: ../common/storage-auth-aad-app.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: 공유 키로 권한 부여
-                  items:
-                    - name: 계정 키 보기 및 관리
-                      href: ../common/storage-account-keys-manage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: 연결 문자열 구성
-                      href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: Azure Storage REST API 사용
-                      href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: SAS(공유 액세스 서명)를 사용하여 액세스 위임
-                  items:
-                    - name: 사용자 위임 SAS 만들기
-                      items:
-                        - name: PowerShell
-                          href: storage-blob-user-delegation-sas-create-powershell.md
-                        - name: Azure CLI
-                          href: storage-blob-user-delegation-sas-create-cli.md
-                        - name: .NET
-                          href: storage-blob-user-delegation-sas-create-dotnet.md
-                    - name: 서비스 SAS(.NET) 만들기
-                      href: storage-blob-service-sas-create-dotnet.md
-                    - name: 계정 SAS(.NET) 만들기
-                      href: ../common/storage-account-sas-create-dotnet.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: 저장된 액세스 정책 정의
-                      href: ../common/storage-stored-access-policy-define-dotnet.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Blob 데이터에 대한 익명 읽기 권한 관리
-                  items:
-                    - name: 컨테이너 및 Blob에 대한 익명 읽기 권한 구성
-                      href: anonymous-read-access-configure.md
-                    - name: Blob 데이터에 대한 익명 읽기 액세스 방지
-                      href: anonymous-read-access-prevent.md
-                    - name: 공용 컨테이너 및 Blob에 익명으로 액세스(.NET)
-                      href: anonymous-read-access-client.md
             - name: Azure Storage 암호화 관리
               items:
                 - name: Blob이 암호화되어 있는지 확인
@@ -550,6 +551,9 @@
           href: /azure/templates/microsoft.storage/allversions
         - name: 데이터 모니터링
           href: ../common/monitor-storage-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Azure Policy 기본 제공 기능
+          displayName: 'samples, policies, definitions'
+          href: ../common/policy-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: 리소스
       items:
         - name: Azure 업데이트
@@ -566,16 +570,20 @@
               href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Storage Explorer 보안
               href: ../common/storage-explorer-security.md
+            - name: Storage Explorer Blob 버전 관리
+              href: ../common/storage-explorer-blob-versioning.md
             - name: Storage Explorer 지원 정책 및 수명 주기
               href: ../common/storage-explorer-support-policy-lifecycle.md
             - name: Storage Explorer 접근성
               href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Azure Storage 포럼
+        - name: Microsoft Q&A의 Azure Storage
           href: 'https://docs.microsoft.com/answers/topics/azure-blob-storage.html'
         - name: Stack Overflow의 Azure Storage
           href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-        - name: Blob 스토리지 가격 책정
+        - name: 블록 Blob 가격 책정
           href: 'https://azure.microsoft.com/pricing/details/storage/blobs/'
+        - name: 페이지 Blob 가격 책정
+          href: 'https://azure.microsoft.com/pricing/details/storage/page-blobs/'
         - name: Azure 요금 계산기
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: 동영상
@@ -705,12 +713,8 @@
                   href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: 방법
       items:
-        - name: 생성
-          items:
-            - name: 스토리지 계정(범용 v2) 만들기
-              href: ../common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: 스토리지 계정(블록 Blob) 만들기
-              href: storage-blob-create-account-block-blob.md
+        - name: 스토리지 계정 만들기
+          href: create-data-lake-storage-account.md
         - name: 마이그레이션
           items:
             - name: Data Lake Storage Gen1에서 마이그레이션
@@ -735,6 +739,8 @@
               href: data-lake-storage-explorer.md
             - name: Hadoop 파일 시스템 CLI
               href: data-lake-storage-use-hdfs-data-lake-storage.md
+            - name: 반복적으로 ACL 설정
+              href: recursive-access-control-lists.md
         - name: 쿼리
           items:
             - name: 쿼리 가속을 사용하여 데이터 필터링
@@ -820,6 +826,9 @@
         - name: Resource Manager 템플릿
           displayName: ARM
           href: /azure/templates/microsoft.storage/allversions
+        - name: Azure Policy 기본 제공 기능
+          displayName: 'samples, policies, definitions'
+          href: ../common/policy-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: 리소스
       items:
         - name: 알려진 문제
@@ -842,6 +851,8 @@
               href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Storage Explorer 보안
               href: ../common/storage-explorer-security.md
+            - name: Storage Explorer Blob 버전 관리
+              href: ../common/storage-explorer-blob-versioning.md
             - name: Storage Explorer 지원 정책 및 수명 주기
               href: ../common/storage-explorer-support-policy-lifecycle.md
             - name: Storage Explorer 접근성

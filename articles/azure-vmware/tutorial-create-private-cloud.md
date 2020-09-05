@@ -1,25 +1,25 @@
 ---
 title: 자습서 - Azure에서 vSphere 클러스터 배포
-description: AVS(Azure VMWare 솔루션)를 사용하여 Azure에 vSphere 클러스터를 배포하는 방법을 알아봅니다.
+description: Azure VMWare Solution을 사용하여 Azure에 vSphere 클러스터를 배포하는 방법을 알아봅니다.
 ms.topic: tutorial
-ms.date: 07/15/2020
-ms.openlocfilehash: 4f3b33ea401c62124ae5f8a4c881d86d2f19b40c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/21/2020
+ms.openlocfilehash: 8aeedeeb785f149239f2bf9a4b58a18ec8bfeb77
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87079420"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88750484"
 ---
-# <a name="tutorial-deploy-an-avs-private-cloud-in-azure"></a>자습서: Azure에서 AVS 프라이빗 클라우드 배포
+# <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>자습서: Azure에서 Azure VMware Solution 프라이빗 클라우드 배포
 
-AVS(Azure VMware 솔루션)는 vSphere 클러스터를 Azure에 배포할 수 있는 기능을 제공합니다. 최소 초기 배포는 세 개의 호스트입니다. 클러스터당 최대 16개의 호스트를 한 번에 하나씩 추가할 수 있습니다. 
+Azure VMware Solution은 vSphere 클러스터를 Azure에 배포할 수 있는 기능을 제공합니다. 최소 초기 배포는 세 개의 호스트입니다. 클러스터당 최대 16개의 호스트를 한 번에 하나씩 추가할 수 있습니다. 
 
-AVS에서는 시작 시 온-프레미스 vCenter를 사용하여 프라이빗 클라우드를 관리할 수 없으므로 로컬 vCenter 인스턴스, 가상 네트워크 등에 대한 추가 구성 및 연결이 필요합니다. 이러한 절차 및 관련 사전 요구 사항은 이 자습서에서 다룹니다.
+Azure VMware Solution에서는 시작 시 온-프레미스 vCenter를 사용하여 프라이빗 클라우드를 관리할 수 없으므로 로컬 vCenter 인스턴스, 가상 네트워크 등에 대한 추가 구성 및 연결이 필요합니다. 이러한 절차 및 관련 사전 요구 사항은 이 자습서에서 다룹니다.
 
 이 자습서에서는 다음 작업 방법을 알아봅니다.
 
 > [!div class="checklist"]
-> * AVS 프라이빗 클라우드 만들기
+> * Azure VMware Solution 프라이빗 클라우드 만들기
 > * 배포된 프라이빗 클라우드 확인
 
 ## <a name="prerequisites"></a>사전 요구 사항
@@ -30,7 +30,7 @@ AVS에서는 시작 시 온-프레미스 vCenter를 사용하여 프라이빗 �
 
 ## <a name="register-the-resource-provider"></a>리소스 공급자 등록
 
-AVS를 사용하려면 먼저 구독에 리소스 공급자를 등록해야 합니다.
+Azure VMware Solution을 사용하려면 먼저 구독에 리소스 공급자를 등록해야 합니다.
 
 ```
 azurecli-interactive
@@ -42,7 +42,7 @@ az provider register -n Microsoft.AVS --subscription <your subscription ID>
 
 ## <a name="create-a-private-cloud"></a>프라이빗 클라우드 만들기
 
-AVS 프라이빗 클라우드는 [Azure Portal](#azure-portal) 또는 [Azure CLI](#azure-cli)를 사용하여 만들 수 있습니다.
+Azure VMware Solution 프라이빗 클라우드는 [Azure Portal](#azure-portal) 또는 [Azure CLI](#azure-cli)를 사용하여 만들 수 있습니다.
 
 ### <a name="azure-portal"></a>Azure portal
 
@@ -57,14 +57,14 @@ AVS 프라이빗 클라우드는 [Azure Portal](#azure-portal) 또는 [Azure CLI
    | **구독** | 배포에 사용할 구독입니다.|
    | **리소스 그룹** | 프라이빗 클라우드 리소스에 대한 리소스 그룹입니다. |
    | **위치** | 위치(예: **미국 동부**)를 선택합니다.|
-   | **리소스 이름** | AVS 프라이빗 클라우드의 이름입니다. |
+   | **리소스 이름** | Azure VMware Solution 프라이빗 클라우드의 이름입니다. |
    | **SKU** | 다음 SKU 값을 선택합니다. AV36 |
    | **호스트** | 프라이빗 클라우드 클러스터에 추가할 호스트의 수입니다. 기본값은 3이며, 배포 후에 늘리거나 줄일 수 있습니다.  |
    | **vCenter 관리자 암호** | 클라우드 관리자 암호를 입력합니다. |
    | **NSX-T 관리자 암호** | NSX-T 관리자 암호를 입력합니다. |
    | **주소 블록** | 프라이빗 클라우드의 CIDR 네트워크에 대한 IP 주소 블록(예: 10.175.0.0/22)을 입력합니다. |
 
-   :::image type="content" source="./media/tutorial-create-private-cloud/create-private-cloud.png" alt-text="프라이빗 클라우드 만들기" border="true":::
+   :::image type="content" source="./media/tutorial-create-private-cloud/create-private-cloud.png" alt-text="기본 탭에서 필드 값을 입력합니다." border="true":::
 
 1. 완료되면 **검토 + 만들기**를 선택합니다. 다음 화면에서 입력한 정보를 확인합니다. 정보가 모두 올바르면 **만들기**를 선택합니다.
 
@@ -73,11 +73,11 @@ AVS 프라이빗 클라우드는 [Azure Portal](#azure-portal) 또는 [Azure CLI
 
 1. 배포가 성공했는지 확인합니다. 만든 리소스 그룹으로 이동하고 프라이빗 클라우드를 선택합니다.  배포가 완료되면 **성공** 상태가 표시됩니다. 
 
-   :::image type="content" source="./media/tutorial-create-private-cloud/validate-deployment.png" alt-text="배포된 프라이빗 클라우드 유효성 검사" border="true":::
+   :::image type="content" source="./media/tutorial-create-private-cloud/validate-deployment.png" alt-text="배포가 성공했는지 확인합니다." border="true":::
 
 ### <a name="azure-cli"></a>Azure CLI
 
-AVS 프라이빗 클라우드를 만드는 Azure Portal 대신 Azure Cloud Shell을 사용하여 Azure CLI를 사용할 수 있습니다. 공통 Azure 도구가 사전 설치되고 계정으로 사용하도록 구성된 체험 대화형 셸입니다. 
+Azure VMware Solution 프라이빗 클라우드를 만드는 Azure Portal 대신 Azure Cloud Shell을 사용하여 Azure CLI를 사용할 수 있습니다. 공통 Azure 도구가 사전 설치되고 계정으로 사용하도록 구성된 체험 대화형 셸입니다. 
 
 #### <a name="open-azure-cloud-shell"></a>Azure Cloud Shell 열기
 
@@ -99,7 +99,7 @@ az group create --name myResourceGroup --location eastus
 | 속성  | 설명  |
 | --------- | ------------ |
 | **-g**(리소스 그룹 이름)     | 프라이빗 클라우드 리소스에 대한 리소스 그룹의 이름입니다.        |
-| **-n**(프라이빗 클라우드 이름)     | AVS 프라이빗 클라우드의 이름입니다.        |
+| **-n**(프라이빗 클라우드 이름)     | Azure VMware Solution 프라이빗 클라우드의 이름입니다.        |
 | **--위치**     | 프라이빗 클라우드에 사용되는 위치입니다.         |
 | **--클러스터 크기**     | 클러스터의 크기입니다. 최솟값은 3입니다.         |
 | **--네트워크 블록**     | 프라이빗 클라우드에 사용할 CIDR IP 주소 네트워크 블록입니다. 주소 블록은 구독과 온-프레미스 네트워크에 있는 다른 가상 네트워크에서 사용되는 주소 블록과 겹칠 수 없습니다.        |
@@ -112,7 +112,7 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
 
 ## <a name="delete-a-private-cloud-azure-portal"></a>프라이빗 클라우드 삭제(Azure Portal)
 
-더 이상 필요하지 않은 AVS 프라이빗 클라우드가 있으면 이를 삭제할 수 있습니다. 프라이빗 클라우드를 삭제하면 모든 클러스터가 해당 구성 요소와 함께 삭제됩니다.
+더 이상 필요하지 않은 Azure VMware Solution 프라이빗 클라우드가 있으면 이를 삭제할 수 있습니다. 프라이빗 클라우드를 삭제하면 모든 클러스터가 해당 구성 요소와 함께 삭제됩니다.
 
 이렇게 하려면 Azure Portal에서 프라이빗 클라우드로 이동하여 **삭제**를 선택합니다. 확인 페이지에서 프라이빗 클라우드 이름으로 확인하고, **예**를 선택합니다.
 
@@ -124,7 +124,7 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
 이 자습서에서는 다음 작업 방법을 알아보았습니다.
 
 > [!div class="checklist"]
-> * AVS 프라이빗 클라우드 만들기
+> * Azure VMware Solution 프라이빗 클라우드 만들기
 > * 배포된 프라이빗 클라우드 확인
 
 프라이빗 클라우드 클러스터에 대한 로컬 관리 설정의 일부로 프라이빗 클라우드에서 사용할 가상 네트워크를 만드는 방법을 알아보려면 다음 자습서로 계속 진행하세요.

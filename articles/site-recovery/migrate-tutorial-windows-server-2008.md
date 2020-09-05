@@ -1,6 +1,6 @@
 ---
-title: Azure Site Recovery를 사용하여 Windows Server 2008 서버를 Azure로 마이그레이션
-description: 이 문서에서는 Azure Site Recovery를 사용하여 온-프레미스 Windows Server 2008 머신을 Azure로 마이그레이션하는 방법을 설명합니다.
+title: Azure Migrate/Site Recovery를 사용하여 Windows Server 2008 서버를 Azure로 마이그레이션
+description: 이 문서에서는 온-프레미스 Windows Server 2008 머신을 Azure로 마이그레이션하는 방법을 설명하고 Azure Migrate를 권장합니다.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 8d672c1113f265f9fbbabc7caed8df071f548f2a
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: d8cd8bf2e1a29b122fb4bac7a12454f102183fe3
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87503823"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87845564"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Windows Server 2008을 실행하는 서버에서 Azure로 마이그레이션
 
@@ -31,9 +31,11 @@ ms.locfileid: "87503823"
 
 ## <a name="migrate-with-azure-migrate"></a>Azure Migrate로 마이그레이션
 
-[Azure Migrate](../migrate/migrate-services-overview.md) 서비스를 사용하여 머신을 Azure로 마이그레이션하는 것이 좋습니다. Azure Migrate는 Azure Migrate, 기타 Azure 서비스 및 타사 도구를 사용하여 온-프레미스 머신을 Azure로 평가하고 마이그레이션하기 위한 중앙 집중식 허브를 제공합니다. Azure Site Recovery는 마이그레이션이 아닌 재해 복구에만 사용해야 합니다.
+[Azure Migrate](../migrate/migrate-services-overview.md) 서비스를 사용하여 머신을 Azure로 마이그레이션하는 것이 좋습니다. 
 
-Azure Migrate는 Windows Server 2008을 실행하는 서버의 마이그레이션을 지원합니다.
+- Azure Migrate는 서버 마이그레이션을 위해 특별히 빌드되었습니다.
+- Azure Migrate는 온-프레미스 머신을 Azure로 검색, 평가 및 마이그레이션하기 위한 중앙 허브를 제공합니다. Azure Site Recovery는 마이그레이션이 아닌 재해 복구에만 사용해야 합니다.
+- Azure Migrate는 Windows Server 2008을 실행하는 서버의 마이그레이션을 지원합니다.
 
 
 ## <a name="migrate-with-site-recovery"></a>Site Recovery로 마이그레이션

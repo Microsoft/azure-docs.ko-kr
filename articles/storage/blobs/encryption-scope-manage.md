@@ -4,23 +4,25 @@ description: 암호화 범위를 만들어 컨테이너 또는 blob 수준에서
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 08/04/2020
+ms.date: 08/25/2020
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: d4dd3f3ced8aac6852fe8516a4a5cadca2ebdc49
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 32b46d21228bcd84fc3da11cc6ed42c740fece39
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87564149"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88870258"
 ---
 # <a name="create-and-manage-encryption-scopes-preview"></a>암호화 범위 만들기 및 관리 (미리 보기)
 
-암호화 범위 (미리 보기)를 사용 하면 개별 blob 또는 컨테이너 수준에서 암호화를 관리할 수 있습니다. 암호화 범위는 저장소 계정 내의 보안 enclave blob 데이터를 격리 합니다. 암호화 범위를 사용 하 여 동일한 저장소 계정에 있지만 다른 고객에 게 속한 데이터 간에 보안 경계를 만들 수 있습니다. 암호화 범위에 대 한 자세한 내용은 [Blob storage의 암호화 범위 (미리 보기)](../common/storage-service-encryption.md#encryption-scopes-for-blob-storage-preview)를 참조 하세요.
+암호화 범위 (미리 보기)를 사용 하면 개별 blob 또는 컨테이너 수준에서 암호화를 관리할 수 있습니다. 암호화 범위는 스토리지 계정 내의 안전한 인클레이브에 Blob 데이터를 격리합니다. 암호화 범위를 사용 하 여 동일한 저장소 계정에 있지만 다른 고객에 게 속한 데이터 간에 보안 경계를 만들 수 있습니다. 암호화 범위에 대 한 자세한 내용은 [Blob storage의 암호화 범위 (미리 보기)](../common/storage-service-encryption.md#encryption-scopes-for-blob-storage-preview)를 참조 하세요.
 
 이 문서에서는 암호화 범위를 만드는 방법을 보여 줍니다. 또한 blob 또는 컨테이너를 만들 때 암호화 범위를 지정 하는 방법을 보여 줍니다.
+
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="create-an-encryption-scope"></a>암호화 범위 만들기
 

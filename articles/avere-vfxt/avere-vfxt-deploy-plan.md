@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT 시스템 계획 - Azure
-description: Avere vFXT for Azure를 배포하기 전에 수행할 계획에 대해 설명합니다.
+description: 사용자 요구에 적합 한 Azure 클러스터에 대 한 Avere vFXT를 계획 합니다. Azure Marketplace 이동 하거나 가상 머신을 만들기 전에 확인 해야 하는 질문에 대해 알아봅니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: rohogue
-ms.openlocfilehash: 995ac2776f4197dac1c2ef73fd209833474be5a5
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: e5c33144dcebe491757dfafb2879fe51545827ce
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87922679"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272793"
 ---
 # <a name="plan-your-avere-vfxt-system"></a>Avere vFXT 시스템 계획
 
@@ -73,7 +73,7 @@ Avere vFXT 클러스터의 네트워크 인프라를 계획 하는 경우 다음
 
   | 리소스 | 기존를 사용 하 시겠습니까? | 요구 사항 |
   |----------|-----------|----------|
-  | 리소스 그룹 | 예 (비어 있는 경우) | 비어 있어야 합니다.|
+  | Resource group | 예 (비어 있는 경우) | 비어 있어야 합니다.|
   | 스토리지 계정 | 클러스터를 만든 후 기존 Blob 컨테이너를 연결 하는 경우 **예** <br/>  클러스터를 만드는 동안 새 Blob 컨테이너를 만드는 경우 **아니요** | 기존 Blob 컨테이너는 비어 있어야 합니다. <br/> &nbsp; |
   | 가상 네트워크 | 예 | 새 Azure Blob 컨테이너를 만드는 경우 저장소 서비스 끝점을 포함 해야 합니다. |
   | 서브넷 | 예 | 다른 리소스를 포함할 수 없음 |

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: 72acd5c3c5fbab08b2e97421689b4f562b2ae2e8
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 9b23fbe55589bbbe6d560967119206fb1ea1d85c
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119721"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607269"
 ---
 # <a name="publishing-guide-by-offer-type"></a>제품 형식별 게시 가이드
 
@@ -22,7 +22,7 @@ ms.locfileid: "86119721"
 
 서로 다른 게시 옵션, 작업 호출, 프로 비전 또는 가격 책정을 사용 하도록 설정 하는 여러 가지 방법으로 단일 제품 유형을 구성할 수 있습니다. 제품 유형의 게시 옵션과 구성은 제품 자격 및 기술 요구 사항에도 맞춥니다.
 
-제품을 만들기 전에 상점 및 제품 유형 자격 요구 사항 및 기술 게시 요구 사항을 검토해야 합니다.
+제품을 만들기 전에 온라인 스토어를 검토 하 고 유형 자격 요구 사항과 기술 게시 요구 사항을 제공 해야 합니다.
 
 ## <a name="list-of-offer-types"></a>제품 유형 목록
 
@@ -30,7 +30,7 @@ Azure Marketplace 제품 유형은 아래 표에 나열되어 있습니다.
 
 | **제품 유형**    | **설명**  |
 | :------------------- | :-------------------|
-| [**가상 컴퓨터**](./marketplace-virtual-machines.md) | 고객과 연결된 구독에 가상 어플라이언스를 배포할 경우 가상 머신 제품 형식을 사용합니다. |
+| [**가상 머신**](./marketplace-virtual-machines.md) | 고객과 연결된 구독에 가상 어플라이언스를 배포할 경우 가상 머신 제품 형식을 사용합니다. |
 | [**솔루션 템플릿**](./marketplace-solution-templates.md) | 솔루션에 단일 VM 이외에 추가 배포 및 구성 자동화가 필요한 경우 솔루션 템플릿 (Azure 응용 프로그램이 라고도 함) 제품 유형을 사용 합니다. 솔루션 템플릿은 Vm을 비롯 하 여 다양 한 종류의 Azure 리소스를 사용할 수 있습니다.  |
 | [**관리 되는 응용 프로그램**](./marketplace-managed-apps.md) | 다음 조건이 필요한 경우 Azure 앱: 관리되는 앱 제품 형식을 사용합니다. <br> <ul> <li> VM 또는 전체 IaaS 기반 솔루션을 사용하여 고객에게 구독 기반 솔루션을 배포합니다. </li> <li>사용자 또는 고객이 솔루션을 파트너가 관리하도록 요구합니다. </li> <ul> |
 | [**SaaS 애플리케이션**](./partner-center-portal/create-new-saas-offer.md) | SaaS 앱 제품 유형을 사용하면 고객이 SaaS 기반, 기술 솔루션을 구독으로 구매할 수 있습니다. |
@@ -45,4 +45,4 @@ Azure Marketplace 제품 유형은 아래 표에 나열되어 있습니다.
 ## <a name="next-steps"></a>다음 단계
 
 - 제품 유형에 대 한 해당 문서 (다음 섹션)의 자격 요구 사항을 검토 하 여 제품의 선택 및 구성을 마무리 합니다.
-- 솔루션이 제품 유형 및 구성에 매핑되는 방법에 대한 예제는 상점별 게시 패턴을 검토합니다.
+- 솔루션이 제품 유형 및 구성에 매핑되는 방법에 대 한 예제는 온라인 스토어에서 게시 패턴을 검토 합니다.

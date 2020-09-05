@@ -1,21 +1,21 @@
 ---
-title: 파일 포함
+title: 포함 파일
 description: 포함 파일
 services: storage
-author: tamram
+author: roygara
 ms.service: storage
 ms.topic: include
-ms.date: 04/11/2019
+ms.date: 08/26/2020
 ms.author: rogara
 ms.custom: include file
-ms.openlocfilehash: 55e5290630185466ea0801b06ece71069fc94d89
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 897e5b58aed9c47e0b94ee47d1883e2b7a28bacb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87545210"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930805"
 ---
-## <a name="2-assign-access-permissions-to-an-identity"></a>2 id에 대 한 액세스 권한 할당
+## <a name="assign-access-permissions-to-an-identity"></a>ID에 액세스 권한 할당
 
 Id 기반 인증을 사용 하 여 Azure Files 리소스에 액세스 하려면 id (사용자, 그룹 또는 서비스 사용자)에 게 공유 수준에서 필요한 권한이 있어야 합니다. 이 프로세스는 특정 사용자가 파일 공유에 대해 갖는 액세스 유형을 지정 하는 Windows 공유 사용 권한을 지정 하는 것과 비슷합니다. 이 섹션의 지침에서는 파일 공유에 대한 읽기, 쓰기 또는 삭제 권한을 ID에 할당하는 방법을 보여줍니다. 
 
@@ -35,7 +35,9 @@ Azure Portal, PowerShell 또는 Azure CLI를 사용 하 여 공유 수준 권한
 
 일반적인 권장 사항은 수준 높은 액세스 관리에 사용자 및 id 그룹을 나타내는 AD 그룹에 대 한 공유 수준 권한을 사용 하 고, 디렉터리/파일 수준에 대 한 세부적인 액세스 제어에 NTFS 권한을 활용 하는 것입니다. 
 
-#### <a name="azure-portal"></a>Azure portal
+### <a name="assign-an-azure-role-to-an-ad-identity"></a>AD id에 Azure 역할 할당
+
+# <a name="portal"></a>[포털](#tab/azure-portal)
 [Azure Portal](https://portal.azure.com)를 사용 하 여 azure AD Id에 azure 역할을 할당 하려면 다음 단계를 수행 합니다.
 
 1. Azure Portal에서 파일 공유로 이동 하거나 [파일 공유를 만듭니다](../articles/storage/files/storage-how-to-create-file-share.md).
@@ -44,7 +46,7 @@ Azure Portal, PowerShell 또는 Azure CLI를 사용 하 여 공유 수준 권한
 4. **역할 할당 추가** 블레이드의 **역할** 목록에서 적절 한 기본 제공 역할 (저장소 파일 데이터 Smb 공유 판독기, 저장소 파일 데이터 smb 공유 참가자)을 선택 합니다. 기본 설정인 **AZURE AD 사용자, 그룹 또는 서비스 주체**에 대 한 **액세스 할당을** 그대로 둡니다. 이름 또는 전자 메일 주소를 기준으로 대상 Azure AD id를 선택 합니다.
 5. **저장** 을 선택 하 여 역할 할당 작업을 완료 합니다.
 
-#### <a name="powershell"></a>PowerShell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 다음 PowerShell 샘플은 로그인 이름에 따라 azure AD id에 Azure 역할을 할당 하는 방법을 보여 줍니다. PowerShell로 Azure 역할을 할당 하는 방법에 대 한 자세한 내용은 [RBAC를 사용 하 여 액세스 관리 및 Azure PowerShell](../articles/role-based-access-control/role-assignments-powershell.md)을 참조 하세요.
 
@@ -59,7 +61,7 @@ $scope = "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/provi
 New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $FileShareContributorRole.Name -Scope $scope
 ```
 
-#### <a name="cli"></a>CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
   
 다음 CLI 2.0 명령은 로그인 이름에 따라 azure AD id에 Azure 역할을 할당 하는 방법을 보여 줍니다. Azure CLI와 Azure 역할을 할당 하는 방법에 대 한 자세한 내용은 [RBAC 및 Azure CLI를 사용 하 여 액세스 관리](../articles/role-based-access-control/role-assignments-cli.md)를 참조 하세요. 
 
@@ -69,8 +71,10 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 #Assign the built-in role to the target identity: Storage File Data SMB Share Reader, Storage File Data SMB Share Contributor, Storage File Data SMB Share Elevated Contributor
 az role assignment create --role "<role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshares/<share-name>"
 ```
+---
 
-## <a name="3-configure-ntfs-permissions-over-smb"></a>3 SMB를 통한 NTFS 사용 권한 구성 
+## <a name="configure-ntfs-permissions-over-smb"></a>SMB를 통한 NTFS 권한 구성
+
 RBAC를 사용하여 공유 수준 권한할당을 한 후에는 루트, 디렉터리 또는 파일 수준에서 적절한 NTFS 권한을 할당해야 합니다. 공유 수준 사용 권한은 사용자가 공유에 액세스할 수 있는지 여부를 결정 하는 상위 수준 게이트 키퍼로 생각 하면 됩니다. NTFS 권한은 사용자가 디렉터리 또는 파일 수준에서 수행할 수 있는 작업을 결정 하기 위해 보다 세분화 된 수준으로 작동 합니다.
 
 Azure Files는 NTFS 기본 및 고급 권한의 전체 집합을 지원합니다. 공유를 탑재 한 다음 Windows 파일 탐색기를 사용 하거나 Windows [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) 또는 [Set ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl) 명령을 실행 하 여 Azure 파일 공유의 디렉터리 및 파일에 대 한 NTFS 권한을 확인 하 고 구성할 수 있습니다. 
@@ -108,6 +112,7 @@ Azure Files에 연결 하는 데 문제가 발생 하는 경우 [Windows에서 A
 
 
 ### <a name="configure-ntfs-permissions-with-windows-file-explorer"></a>Windows 파일 탐색기를 사용 하 여 NTFS 사용 권한 구성
+
 Windows 파일 탐색기를 사용 하 여 루트 디렉터리를 포함 하 여 파일 공유 아래의 모든 디렉터리 및 파일에 대 한 모든 권한을 부여 합니다.
 
 1. Windows 파일 탐색기를 열고 파일/디렉터리를 마우스 오른쪽 단추로 클릭 한 다음 **속성**을 선택 합니다.
@@ -120,6 +125,7 @@ Windows 파일 탐색기를 사용 하 여 루트 디렉터리를 포함 하 여
 9.    **적용**을 선택합니다.
 
 ### <a name="configure-ntfs-permissions-with-icacls"></a>icacls를 사용하여 NTFS 권한 구성
+
 루트 디렉터리를 비롯하여 파일 공유에 있는 모든 디렉터리와 파일에 대한 모든 권한을 부여하려면 다음 Windows 명령을 사용합니다. 예제의 자리 표시자 값을 사용자 고유의 값으로 바꿔야 합니다.
 
 ```
@@ -128,7 +134,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 Icacls를 사용 하 여 NTFS 권한 및 지원 되는 다양 한 권한 유형을 설정 하는 방법에 대 한 자세한 내용은 [icacls 명령줄 참조](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls)를 참조 하세요.
 
-## <a name="4-mount-a-file-share-from-a-domain-joined-vm"></a>4 도메인에 가입 된 VM에서 파일 공유 탑재
+## <a name="mount-a-file-share-from-a-domain-joined-vm"></a>도메인 조인 VM에서 파일 공유 탑재
 
 다음 프로세스는 파일 공유 및 액세스 권한이 올바르게 설정 되었는지 확인 하 고 도메인에 가입 된 VM에서 Azure 파일 공유에 액세스할 수 있는지 확인 합니다. 공유 수준 Azure 역할 할당은 적용 되는 데 다소 시간이 걸릴 수 있습니다. 
 

@@ -7,18 +7,18 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 06/26/2019
 ms.custom: mvc
-ms.openlocfilehash: 074010a2f3b1f4f4a58b3c4727bf4eed28402e0a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ed7cec34b4bca1882d069997d4f89677cda32447
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82142629"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88080952"
 ---
 # <a name="start-monitoring-your-aspnet-web-application"></a>ASP.NET 웹 애플리케이션 모니터링 시작
 
 Azure Application Insights를 사용하면 웹 애플리케이션의 가용성, 성능 및 사용량을 쉽게 모니터링할 수 있습니다.  또한 사용자가 보고할 때까지 기다리지 않고 애플리케이션의 오류를 빠르게 식별하고 진단할 수 있습니다.  앱의 성능 및 효율성에 대한 Application Insights에서 수집하는 정보를 사용하면 애플리케이션을 유지 관리하고 개선하는 데 더 많은 정보를 갖고 선택할 수 있습니다.
 
-이 빠른 시작에서는 애플리케이션을 분석하는 데 사용할 수 있는 다양한 방법 중 하나인 기존 ASP.NET 웹 애플리케이션에 Application Insights를 추가하고 실시간 통계 분석을 시작하는 방법을 보여줍니다. ASP.NET 웹 애플리케이션이 없는 경우 [ASP.NET 웹앱 빠른 시작 만들기](../../app-service/app-service-web-get-started-dotnet-framework.md)에 따라 만들 수 있습니다.
+이 빠른 시작에서는 애플리케이션을 분석하는 데 사용할 수 있는 다양한 방법 중 하나인 기존 ASP.NET 웹 애플리케이션에 Application Insights를 추가하고 실시간 통계 분석을 시작하는 방법을 보여줍니다. ASP.NET 웹 애플리케이션이 없는 경우 [ASP.NET 웹앱 빠른 시작 만들기](../../app-service/quickstart-dotnet-framework.md)에 따라 만들 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 이 빠른 시작을 완료하려면 다음이 필요합니다.
@@ -76,7 +76,7 @@ Application Insights는 실행 중인 위치에 관계 없이 애플리케이션
 
     ![라이브 스트림](media/quick-monitor-portal/7livemetrics.png)
 
-    Azure에서 애플리케이션을 호스팅할 준비가 되었으면 이제 게시할 수 있습니다. [ASP.NET 웹앱 빠른 시작 만들기](../../app-service/app-service-web-get-started-dotnet.md#update-the-app-and-redeploy)에 설명된 단계를 따릅니다.
+    Azure에서 애플리케이션을 호스팅할 준비가 되었으면 이제 게시할 수 있습니다. [ASP.NET 웹앱 빠른 시작 만들기](../../app-service/quickstart-dotnetcore.md#update-the-app-and-redeploy)에 설명된 단계를 따릅니다.
 
 5. Visual Studio를 사용하여 Application Insights 모니터링을 추가할 경우 클라이언트 쪽 모니터링을 자동으로 추가할 수 있습니다. 애플리케이션에 수동으로 클라이언트 측 모니터링을 추가하려면 다음 JavaScript를 애플리케이션에 추가합니다.
 

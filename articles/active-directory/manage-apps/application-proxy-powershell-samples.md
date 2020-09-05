@@ -13,10 +13,10 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 57efd88b9d194442920496107d4c37ba2baf94d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "85554990"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Azure AD 애플리케이션 프록시에 대한 Azure AD PowerShell 예제
@@ -26,7 +26,7 @@ ms.locfileid: "85554990"
 
 이러한 샘플에 사용된 cmdlet에 대한 자세한 내용은 [애플리케이션 프록시 애플리케이션 관리](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_application_management) 및 [애플리케이션 프록시 커넥터 관리](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#application_proxy_connector_management)를 참조하세요.
 
-| 링크 | Description |
+| 링크 | 설명 |
 |---|---|
 |**애플리케이션 프록시 앱**||
 | [모든 애플리케이션 프록시 앱에 대한 기본 정보 나열](scripts/powershell-get-all-app-proxy-apps-basic.md) | 디렉터리의 모든 애플리케이션 프록시 앱에 대한 기본 정보(AppId, DisplayName, ObjId)를 나열합니다. |

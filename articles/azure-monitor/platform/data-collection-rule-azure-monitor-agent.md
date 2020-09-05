@@ -4,13 +4,13 @@ description: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/10/2020
-ms.openlocfilehash: 3cd2ed692f3a34223675da69efd92e78c2ba9504
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.date: 08/19/2020
+ms.openlocfilehash: 97ba976c841e192646ebb484fe4d004556e34c54
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88083070"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88640840"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Azure Monitor 에이전트에 대 한 데이터 수집 구성 (미리 보기)
 DCR (데이터 수집 규칙)은 Azure Monitor에 들어오는 데이터를 정의 하 고이를 보내야 하는 위치를 지정 합니다. 이 문서에서는 Azure Monitor 에이전트를 사용 하 여 가상 머신에서 데이터를 수집 하는 데이터 수집 규칙을 만드는 방법을 설명 합니다.
@@ -48,7 +48,7 @@ Azure Portal **Azure Monitor** 메뉴의 **설정** 섹션에서 **데이터 수
 [![데이터 원본 기본](media/azure-monitor-agent/data-collection-rule-data-source-basic.png)](media/azure-monitor-agent/data-collection-rule-data-source-basic.png#lightbox)
 
 
-다른 로그 및 성능 카운터를 지정 하려면 **사용자 지정**을 선택 합니다. 그런 다음 수집할 특정 값에 대 한 [XPath](https://www.w3schools.com/xml/xpath_syntax.asp) 를 지정할 수 있습니다. 예제는 [샘플 DCR](data-collection-rule-overview.md#sample-data-collection-rule) 을 참조 하세요.
+다른 로그 및 성능 카운터를 지정 하려면 **사용자 지정**을 선택 합니다. 그런 다음 수집할 특정 값에 대 한 [XPath ](https://www.w3schools.com/xml/xpath_syntax.asp) 를 지정할 수 있습니다. 예제는 [샘플 DCR](data-collection-rule-overview.md#sample-data-collection-rule) 을 참조 하세요.
 
 [![데이터 원본 사용자 지정](media/azure-monitor-agent/data-collection-rule-data-source-custom.png)](media/azure-monitor-agent/data-collection-rule-data-source-custom.png#lightbox)
 
@@ -61,6 +61,11 @@ Azure Portal **Azure Monitor** 메뉴의 **설정** 섹션에서 **데이터 수
 > [!NOTE]
 > 데이터 수집 규칙 및 연결이 생성 되 면 대상에 데이터를 전송 하는 데 최대 5 분이 걸릴 수 있습니다.
 
+## <a name="createusingrestapi"></a>REST API를 사용하여 만들기
+REST API를 사용 하 여 DCR 및 연결을 만들려면 다음 단계를 수행 합니다. 
+1. [SAMPLE DCR](data-collection-rule-overview.md#sample-data-collection-rule)에 표시 된 JSON 형식을 사용 하 여 DCR 파일을 수동으로 만듭니다.
+2. [REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionrules/create#examples)를 사용 하 여 규칙을 만듭니다.
+3. [REST API](https://docs.microsoft.com/rest/api/monitor/datacollectionruleassociations/create#examples)를 사용 하 여 데이터 수집 규칙에 대 한 각 가상 머신에 대 한 연결을 만듭니다.
 
 ## <a name="next-steps"></a>다음 단계
 

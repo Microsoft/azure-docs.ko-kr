@@ -3,12 +3,13 @@ title: Azure Active Directory를 사용 하 여 관리 id 인증
 description: 이 문서에서는 Azure Event Hubs 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id를 인증 하는 방법을 설명 합니다.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: c74e49eff8233d9918fcdb55e6fa2ad8d7517f6f
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4d606e6cd035d4dae388d8559d100988a46e8203
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079144"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010021"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Event Hubs 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id 인증
 Azure Event Hubs [는 azure 리소스에 대 한 관리 id](../active-directory/managed-identities-azure-resources/overview.md)를 사용 하 여 Azure Active Directory (azure AD) 인증을 지원 합니다. Azure 리소스에 대 한 관리 id는 azure Virtual Machines (Vm), 함수 앱, Virtual Machine Scale Sets 및 기타 서비스에서 실행 되는 응용 프로그램의 Azure AD 자격 증명을 사용 하 여 Event Hubs 리소스에 대 한 액세스 권한을 부여할 수 있습니다 Azure 리소스에 대 한 관리 되는 id를 Azure AD 인증과 함께 사용 하 여 클라우드에서 실행 되는 응용 프로그램에 자격 증명을 저장 하지 않을 수 있습니다.
@@ -66,7 +67,7 @@ Event Hubs 리소스에 역할을 할당 하려면 Azure Portal에서 해당 리
 역할을 할당 하면 웹 응용 프로그램은 정의 된 범위에서 Event Hubs 리소스에 액세스할 수 있습니다. 
 
 ### <a name="test-the-web-application"></a>웹 애플리케이션 테스트
-1. Event Hubs 네임스페이스 및 이벤트 허브 만들기 
+1. Event Hubs 네임 스페이스 및 이벤트 허브를 만듭니다. 
 2. Azure에 웹 앱을 배포 합니다. GitHub에서 웹 응용 프로그램에 대 한 링크는 다음 탭 섹션을 참조 하세요. 
 3. SendReceive .aspx가 웹 앱에 대 한 기본 문서로 설정 되었는지 확인 합니다. 
 3. 웹 앱에 대 한 **id** 를 사용 하도록 설정 합니다. 

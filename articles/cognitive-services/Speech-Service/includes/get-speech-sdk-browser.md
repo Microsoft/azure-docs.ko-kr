@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 043a37c604f56c70fb568fd027913380b80e3452
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: ab5a106d077713c1332bfb1ba4608d9410086c9f
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87425108"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186341"
 ---
 :::row:::
     :::column span="3":::
-        JavaScript 용 Speech SDK는 npm 패키지로 제공 됩니다. <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">cognitiveservices account <span class="docon docon-navigate-external x-hidden-focus"></span> </a> -s a s-s a s <a href="https://github.com/Microsoft/cognitive-services-speech-sdk-js" target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span> ---- </a>------
+        JavaScript 용 Speech SDK는 npm 패키지로 사용할 수 있습니다. cognitiveservices account- <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">speech-sdk <span class="docon docon-navigate-external x-hidden-focus"></span> </a> 및 해당 하는 GitHub 리포지토리 <a href="https://github.com/Microsoft/cognitive-services-speech-sdk-js" target="_blank">인식 <span class="docon docon-navigate-external x-hidden-focus"></span> </a>
     :::column-end:::
     :::column:::
         <br>
@@ -40,7 +40,7 @@ npm install microsoft-cognitiveservices-speech-sdk
 또는 `<script>` HTMLs 요소에 태그를 직접 포함 하 `<head>` 여 <a href="https://www.jsdelivr.com/package/npm/microsoft-cognitiveservices-speech-sdk" target="_blank"> **JSDelivr** NPM 게시 <span class="docon docon-navigate-external x-hidden-focus"></span> </a>를 사용할 수 있습니다.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/lib/microsoft.cognitiveservices.speech.sdk.min.js">
+<script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js">
 </script>
 ```
 

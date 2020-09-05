@@ -10,12 +10,12 @@ ms.date: 07/29/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: e7bb996b3d42e2db2b4fa65d050ec1cb6a935bc6
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 2439bec08c16ce109b271844dc72b8fd2569aa07
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533379"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755911"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>저장소 계정에 대 한 요청에 필요한 최소 버전의 TLS (Transport Layer Security)를 적용 합니다.
 
@@ -338,6 +338,10 @@ TLS 1.2 보다 작은 최소 TLS 버전에 대해 거부 효과가 적용 된 �
 다음 이미지는 거부 효과가 있는 정책에서 최소 tls 버전을 TLS 1.2로 설정 해야 하는 경우 최소 TLS 버전을 TLS 1.0 (새 계정에 대 한 기본값)로 설정 하 여 저장소 계정을 만들려는 경우 발생 하는 오류를 보여 줍니다.
 
 :::image type="content" source="media/transport-layer-security-configure-minimum-version/deny-policy-error.png" alt-text="정책을 위반 하 여 저장소 계정을 만들 때 발생 하는 오류를 보여 주는 스크린샷":::
+
+## <a name="network-considerations"></a>네트워크 고려 사항
+
+클라이언트에서 저장소 계정에 요청을 보내면 클라이언트는 요청을 처리 하기 전에 먼저 저장소 계정의 공용 끝점에 대 한 연결을 설정 합니다. 최소 TLS 버전 설정은 연결이 설정 된 후에 선택 됩니다. 요청에서 설정에 지정 된 것 보다 이전 버전의 TLS를 사용 하는 경우 연결에 계속 성공 하지만 요청이 결국 실패 하 게 됩니다. Azure Storage에 대 한 공용 끝점에 대 한 자세한 내용은 [리소스 URI 구문](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#resource-uri-syntax)을 참조 하세요.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -1,6 +1,6 @@
 ---
 title: Azure CDN을 통해 미디어 스트리밍 최적화
-description: 부드러운 배달을 위한 스트리밍 미디어 파일 최적화
+description: 부분 캐시 공유 및 캐시 채우기 대기 시간과 같은 Azure Content Delivery Network에서 스트리밍 미디어를 최적화 하는 옵션에 대해 알아봅니다.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 05/01/2018
 ms.author: allensu
-ms.openlocfilehash: edc2198cff360b6f0d2f6ace3b76d35bf77fab97
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: c3ab722f182e32cf2f3aca6bb2f3d5a9598264af
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206716"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192609"
 ---
 # <a name="media-streaming-optimization-with-azure-cdn"></a>Azure CDN을 통해 미디어 스트리밍 최적화 
  
@@ -86,7 +86,7 @@ Azure Portal을 통해 대용량 파일 배달을 최적화하도록 CDN(Content
 | 캐싱  | 일반 웹 배달 | 일반 미디어 스트리밍 | 주문형 비디오 미디어 스트리밍  
 |--- | --- | --- | ---
 | 캐싱: 긍정 <br> HTTP 200, 203, 300, <br> 301, 302 및 410 | 7 일 |365일 | 365일   
-| 캐싱: 부정 <br> HTTP 204, 305, 404 <br> 및 405 | 없음 | 1초 | 1초
+| 캐싱: 부정 <br> HTTP 204, 305, 404 <br> 및 405 | None | 1초 | 1초
  
 ### <a name="deal-with-origin-failure"></a>원본 오류 처리  
 

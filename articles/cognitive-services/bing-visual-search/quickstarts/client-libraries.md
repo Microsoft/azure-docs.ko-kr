@@ -11,13 +11,13 @@ ms.subservice: bing-web-search
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.author: aahi
-ms.custom: devx-track-python, devx-track-javascript
-ms.openlocfilehash: d35d8edcb1b2e16a6d420d6accb43a2e6ab0ef8b
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 34e7b5485d3e2828393d1f069f63597c0a97760f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852019"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934418"
 ---
 # <a name="quickstart-use-the-bing-visual-search-client-library"></a>빠른 시작: Bing Visual Search 클라이언트 라이브러리 사용
 

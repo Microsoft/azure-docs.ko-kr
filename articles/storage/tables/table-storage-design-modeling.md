@@ -2,18 +2,18 @@
 title: Azure 테이블 저장소 디자인에서 관계 모델링 | Microsoft Docs
 description: Azure 테이블 저장소 솔루션을 설계할 때 모델링 프로세스를 이해 합니다. 일 대 다, 일 대 일 및 상속 관계에 대해 읽어 보세요.
 services: storage
-author: MarkMcGeeAtAquent
 ms.service: storage
+author: tamram
+ms.author: tamram
 ms.topic: article
 ms.date: 04/23/2018
-ms.author: sngun
 ms.subservice: tables
-ms.openlocfilehash: 8c803a7b11aee3d57d6145bed296bd40ddd9bb5e
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 3023b478ef7a4aaf6d9239e997bdf63282b56210
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036048"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271195"
 ---
 # <a name="modeling-relationships"></a>관계 모델링
 이 아티클에서는 Azure Table Storage 솔루션을 디자인할 수 있도록 모델링 프로세스를 설명합니다.
@@ -51,7 +51,7 @@ ms.locfileid: "88036048"
 <td>
 <ul>
 <li>단일 작업으로 부서 엔터티를 업데이트할 수 있습니다.</li>
-<li>직원 엔터티를 업데이트/삽입/삭제할 때마다 부서 엔터티를 수정해야 하는 경우 EGT를 사용하여 일관성을 유지할 수 있습니다. 예를 들어 각 부서의 직원 수를 유지 관리하는 경우가 여기에 해당됩니다.</li>
+<li>직원 엔터티를 업데이트/삽입/삭제할 때마다 부서 엔터티를 수정 해야 하는 경우 일관성을 유지 하기 위해 엔터티 그룹 트랜잭션 * (가 수 t)을 사용할 수 있습니다. 예를 들어 각 부서의 직원 수를 유지 관리하는 경우가 여기에 해당됩니다.</li>
 </ul>
 </td>
 <td>
@@ -92,6 +92,9 @@ ms.locfileid: "88036048"
 </td>
 </tr>
 </table>
+
+* 자세한 내용은 [엔터티 그룹 트랜잭션](table-storage-design.md#entity-group-transactions) 을 참조 하세요.  
+
 
 이러한 옵션 간에 선택하는 방법 및 가장 중요한 장단점은 특정 애플리케이션 시나리오에 따라 다릅니다. 예를 들어 부서 엔터티를 수정하는 빈도, 모든 직원 쿼리를 수행하는 데 추가 부서 정보가 필요한지 여부, 파티션 또는 스토리지 계정의 확장성 제한에 얼마나 근접했는지 여부 등에 따라 달라집니다.  
 

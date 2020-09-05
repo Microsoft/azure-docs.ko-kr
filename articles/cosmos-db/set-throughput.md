@@ -5,13 +5,13 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/19/2020
-ms.openlocfilehash: 050da712df6dad872fc03bd6ca79bbdf2a3e1753
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/19/2020
+ms.openlocfilehash: 00ed8f6ff9839c227f3d8a929a071834c5559226
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563197"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605738"
 ---
 # <a name="introduction-to-provisioned-throughput-in-azure-cosmos-db"></a>Azure Cosmos DB의 프로비전된 처리량 소개
 
@@ -96,7 +96,7 @@ Azure Cosmos DB 계정에 컨테이너가 25개 이상인 공유 처리량 데�
 
 Azure Cosmos 컨테이너 또는 데이터베이스를 만든 후 프로비전된 처리량을 업데이트할 수 있습니다. 데이터베이스 또는 컨테이너에 구성할 수 있는 최대 프로비전된 처리량에는 제한이 없습니다. 
 
-데이터베이스 또는 컨테이너의 [프로 비전 된 최소 처리량](concepts-limits.md#storage-and-throughput) 을 예측 하려면 다음의 최대값을 찾습니다.
+데이터베이스 또는 컨테이너의 [프로 비전 된 최소 처리량](concepts-limits.md#storage-and-database-operations) 을 예측 하려면 다음의 최대값을 찾습니다.
 
 * 400RU/s 
 * 현재 저장소 (GB) * 10 r u/초

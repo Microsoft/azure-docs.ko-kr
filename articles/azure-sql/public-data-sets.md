@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/01/2018
-ms.openlocfilehash: 6e38be4a97678ce749e32ca31c0703ed9d786d76
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 30f6bf7629152050bc1249a1e22aff0aa30642de
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84033574"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88209541"
 ---
 # <a name="public-data-sets-for-testing-and-prototyping"></a>테스트 및 프로토타입 생성을 위한 공용 데이터 집합
 [!INCLUDE[appliesto-asf](includes/appliesto-asf.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "84033574"
 | [항공사 항공편 지연 및 기타 교통 데이터](https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp) | "BTS (교통)의 미국 차량 (교통) 기관 (BTS)은 대기업에서 운영 하는 국내 항공편의 실시간 성능을 추적 합니다. 정시 운항, 취소 또는 우회 항공편의 수에 대한 요약 정보가 표로 요약되어 이 웹 사이트에 게시됩니다." | 파일은 CSV 형식입니다. |
 | [교통 사고 사망률 - 미국 FARS(사망률 분석 보고 시스템)](https://www.nhtsa.gov/FARS) | "FARS는 교통 사고로 인한 심각한 부상과 관련된 연간 데이터를 NHTSA, 의회 및 미국인에게 제공하는 전국 인구 조사입니다." | "FARS 쿼리 시스템을 사용하여 온라인으로 실행되는 사망률 데이터를 만들 수 있습니다. 또는 FTP 사이트에서 1975부터 현재까지의 모든 FARS 데이터를 다운로드할 수 있습니다." |
 | [유해 화학 데이터-Toxicity ForeCaster (ToxCast &trade; ) 데이터](https://www.epa.gov/chemical-research/toxicity-forecaster-toxcasttm-data) | "EPA에서 제공하는 수천 가지 화학물에 대한 최신의 업데이트된 고효율 독성물 데이터입니다. 이 데이터는 EPA의 ToxCast 연구를 통해 생성된 것입니다." | 데이터 집합은 스프레드시트, R 패키지 및 MySQL 데이터베이스 파일을 비롯한 다양한 형식으로 제공됩니다. |
-| [유해 화학물 데이터 - NIH Tox21 데이터 챌린지 2014](https://tripod.nih.gov/tox21/challenge/) | "2014 Tox21 데이터 챌린지는 과학자들이 Toxicology in the 21st Century(21세기 독성학 이니셔티브)를 통해 테스트되는 화학물 및 화합물이 독성 효과를 통해 생물학적 경로를 중단시킬 수 있는 가능성을 이해하도록 하기 위해 고안되었습니다." | 데이터 집합은 SMILES 및 SDF 형식으로 사용할 수 있습니다. 데이터는 "10,000개 이하의 합성물(Tox21 10K)로 이루어진 Tox21 컬렉션에 대한 분석 활동 데이터 및 화학물 구조"를 제공합니다. |
+| [유해 화학물 데이터 - NIH Tox21 데이터 챌린지 2014](https://tripod.nih.gov/tox21) | "2014 Tox21 데이터 챌린지는 과학자들이 Toxicology in the 21st Century(21세기 독성학 이니셔티브)를 통해 테스트되는 화학물 및 화합물이 독성 효과를 통해 생물학적 경로를 중단시킬 수 있는 가능성을 이해하도록 하기 위해 고안되었습니다." | 데이터 집합은 SMILES 및 SDF 형식으로 사용할 수 있습니다. 데이터는 "10,000개 이하의 합성물(Tox21 10K)로 이루어진 Tox21 컬렉션에 대한 분석 활동 데이터 및 화학물 구조"를 제공합니다. |
 | [NCBI의 생명 공학 및 게놈 데이터](https://www.ncbi.nlm.nih.gov/guide/data-software/) | 유전자, 게놈 및 단백질을 포함하는 여러 데이터 집합입니다. | 데이터 집합은 텍스트, XML, BLAST 및 기타 형식으로 제공됩니다. BLAST 앱을 사용할 수 있습니다. |
 
 ## <a name="other-statistical-and-scientific-data"></a>기타 통계 및 과학 데이터

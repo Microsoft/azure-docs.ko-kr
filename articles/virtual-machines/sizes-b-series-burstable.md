@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: ayshak
-ms.openlocfilehash: 81bfde964fa993b69bc464214dab0810a8f2bfe5
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a5a3887efe9b8f19608fac63216ca53576d9ec3f
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832589"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654738"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>B-시리즈 버스터블 가상 머신 크기
 
@@ -58,7 +58,7 @@ B16 특징:
 
 ![시간별 트래픽 데이터 차트](./media/b-series-burstable/office-workload.png)
 
-| 시나리오 | Time | CPU 사용량 (%) | 누적 크레딧<sup>1</sup> | 크레딧을 사용할 수 있음 |
+| 시나리오 | 시간 | CPU 사용량 (%) | 누적 크레딧<sup>1</sup> | 크레딧을 사용할 수 있음 |
 | --- | --- | --- | --- | --- |
 | B16ms 배포 | 배포 | 배포  | 480 (초기 크레딧) | 480 |
 | 트래픽 없음 | 0:00 | 0 | 162 | 642 |
@@ -88,7 +88,7 @@ B16 특징:
 
 <sup>1</sup> 시간 내에 사용 된 크레딧/크레딧 `((Base CPU perf of VM - CPU Usage) / 100) * 60 minutes` 은 다음과 같습니다.  
 
-16 개의 vCPUs 및 64 GiB의 메모리를 포함 하는 D16s_v3의 경우 시간당 요금은 시간당 $0.936 (월간 $673.92)이 고, 16 개의 vCPUs 및 64 GiB memory가 있는 B16ms (월별 $0.794)입니다. <b>그러면 15% 절감 효과가 발생 합니다.</b>
+16 개의 vCPUs 및 64 GiB의 메모리를 포함 하는 D16s_v3의 경우 시간당 요금은 시간당 $0.936 (월간 $673.92)이 고, 16 개의 vCPUs 및 64 GiB memory가 있는 B16ms (월별 $0.794)입니다. <b> 그러면 15% 절감 효과가 발생 합니다.</b>
 
 ## <a name="q--a"></a>Q & A
 
@@ -149,7 +149,7 @@ Azure에 대한 메트릭 데이터에 액세스하는 방법에 대한 자세�
 
 가격 계산기: [가격 계산기](https://azure.microsoft.com/pricing/calculator/)
 
-디스크 유형에 대 한 자세한 정보: [디스크 유형](./linux/disks-types.md#ultra-disk)
+디스크 유형에 대 한 자세한 정보: [디스크 유형](./disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>다음 단계
 

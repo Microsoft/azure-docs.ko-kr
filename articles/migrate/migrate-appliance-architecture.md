@@ -3,12 +3,12 @@ title: Azure Migrate 어플라이언스 아키텍처
 description: 서버 평가 및 마이그레이션에 사용되는 Azure Migrate 어플라이언스에 대해 간략히 설명합니다.
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 0752f7afa7ff8d25f938084fd9e6e863d885f9aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a83e044acc329572a5f3bfd4856f90379319ba1d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84770903"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919746"
 ---
 # <a name="azure-migrate-appliance-architecture"></a>Azure Migrate 어플라이언스 아키텍처
 
@@ -31,7 +31,7 @@ Azure Migrate 어플라이언스가 사용되는 시나리오는 다음과 같�
 
 - **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.
 - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다. 
-- **평가 에이전트**: 성능 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.
+- **수집기 에이전트**: 에이전트는 성능 데이터를 수집 합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.
 - **DRA 에이전트**: VM 복제를 오케스트레이션하고, 복제된 컴퓨터와 Azure 간의 통신을 조정합니다. 에이전트 없는 마이그레이션을 사용하여 VMware VM을 Azure에 복제할 때만 사용됩니다.
 - **게이트웨이**: 복제된 데이터를 Azure에 보냅니다. 에이전트 없는 마이그레이션을 사용하여 VMware VM을 Azure에 복제할 때만 사용됩니다.
 - **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).
@@ -62,7 +62,7 @@ Azure Migrate 어플라이언스가 사용되는 시나리오는 다음과 같�
 
 ## <a name="discovery-and-collection-process"></a>검색 및 수집 프로세스
 
-![Architecture](./media/migrate-appliance-architecture/architecture.png)
+![아키텍처](./media/migrate-appliance-architecture/architecture.png)
 
 어플라이언스는 다음 프로세스를 사용 하 여 vCenter 서버 및 Hyper-v 호스트/클러스터와 통신 합니다.
 

@@ -6,15 +6,17 @@ ms.service: media-services
 ms.topic: quickstart
 ms.author: inhenkel
 author: IngridAtMicrosoft
-ms.date: 04/16/2020
-ms.openlocfilehash: 671609fc1db7325823e8ac40b2b8153682596588
-ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
+ms.date: 08/31/2020
+ms.openlocfilehash: 04b0ef0d6a480270b1f0a3546319b2608d638677
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84147820"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265510"
 ---
 # <a name="create-an-azure-media-services-live-stream-with-obs"></a>OBS를 사용하여 Azure Media Services 라이브 스트림 만들기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 빠른 시작은 Azure Portal 및 OBS(Open Broadcasting Studio)를 사용하여 Azure Media Services 라이브 스트림을 만드는 데 도움이 됩니다. 여기에서는 Azure 구독이 있고 Media Services 계정을 만들었다고 가정합니다.
 

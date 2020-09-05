@@ -7,14 +7,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 4705919f9c6c11678984c016716fe38cb6191557
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: ebc3ad6957890423314bb2d8623c7b4708aed10b
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88030765"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815416"
 ---
-# <a name="create-a-power-bi-app-offer"></a>Power BI 앱 제안 만들기
+# <a name="create-a-power-bi-app-offer"></a>Power BI 앱 제품 만들기
 
 이 문서에서는 Power BI 앱 제품을 만들고 Microsoft [AppSource](https://appsource.microsoft.com/)에 게시하는 방법을 설명합니다.
 
@@ -29,7 +29,7 @@ ms.locfileid: "88030765"
    ![왼쪽 탐색 메뉴를 보여 줍니다.](./media/new-offer-power-bi-app.png)
 
 > [!NOTE]
-> 제품이 게시된 후 파트너 센터에서 해당 제품에 대해 편집한 내용이 스토어에 표시되려면 제품을 다시 게시해야 합니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
+> 제품을 게시 한 후에는 제품을 다시 게시 한 후에만 파트너 센터에서 해당 제품에 대 한 편집 내용이 온라인 매장에 표시 됩니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
 
 > [!IMPORTANT]
 > **Power BI 서비스 앱**이 표시되지 않거나 사용할 수 없는 경우 계정에 이 제품 유형을 만들 수 있는 권한이 없는 것입니다. 개발자 계정에 등록하는 것을 포함하여 이 제품 유형에 대한 모든 [요구 사항](create-power-bi-app-overview.md)이 충족되었는지 확인합니다.
@@ -143,7 +143,7 @@ ms.locfileid: "88030765"
 7. 개인 정보 보호 정책
 8. Offer name
 9. 요약
-10. 설명
+10. Description
 11. 스크린샷/비디오
 
 ### <a name="name"></a>속성
@@ -209,13 +209,16 @@ PDF 형식의 백서, 브로슈어, 검사 목록, 프레젠테이션 등의 관
 
 #### <a name="store-logos"></a>스토어 로고
 
-제품 로고의 PNG 파일을 두 픽셀 크기로 제공 합니다.
-- **소형**(48 x 48)
-- **대형**(216 x 216)
+**큰** 크기의 로고에 대 한 PNG 파일을 제공 합니다. 파트너 센터는이를 사용 하 여 **작은** 로고를 만듭니다. 필요에 따라 나중에 다른 이미지로이를 바꿀 수 있습니다.
 
-두 가지 로고가 모두 필요하며 마켓플레이스 목록의 여러 위치에서 사용됩니다.
+- **큼** (216 x 216에서 350 x 350 px, required)
+- **작음** (48 x 48 px, 선택 사항)
+
+이러한 로고는 목록의 다른 위치에서 사용 됩니다.
 
 [!INCLUDE [logos-appsource-only](../includes/logos-appsource-only.md)]
+
+[!INCLUDE [logotips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots"></a>스크린샷
 

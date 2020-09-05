@@ -1,6 +1,264 @@
 - name: Azure Stack Edge 및 Data Box Gateway 설명서
   href: /azure/databox-online/
   expanded: true
+- name: Azure Stack Edge with GPU(미리 보기)
+  items:
+    - name: 개요
+      items:
+        - name: Azure Stack Edge with GPU란?
+          href: azure-stack-edge-gpu-overview.md
+    - name: 자습서
+      items:
+        - name: 0 - 확인 목록 얻기
+          href: azure-stack-edge-gpu-deploy-checklist.md
+        - name: '1 - 주문, 준비'
+          href: azure-stack-edge-gpu-deploy-prep.md
+        - name: 2 - 설치
+          href: azure-stack-edge-gpu-deploy-install.md
+        - name: 3 - 연결
+          href: azure-stack-edge-gpu-deploy-connect.md
+        - name: 4 - 네트워크 구성
+          href: azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md
+        - name: 5 - 디바이스 구성
+          href: azure-stack-edge-gpu-deploy-set-up-device-update-time.md
+        - name: 6 - 인증서 구성
+          href: azure-stack-edge-gpu-deploy-configure-certificates.md
+        - name: 7 - 활성화
+          href: azure-stack-edge-gpu-deploy-activate.md
+        - name: 8 - 컴퓨팅 구성
+          href: azure-stack-edge-gpu-deploy-configure-compute.md
+        - name: '9A - 추가, 공유에 연결'
+          href: azure-stack-edge-j-series-deploy-add-shares.md
+        - name: '9B - 추가, 스토리지 계정에 연결'
+          href: azure-stack-edge-j-series-deploy-add-storage-accounts.md
+    - name: 개념
+      items:
+        - name: 요구 사항 검토
+          href: azure-stack-edge-gpu-system-requirements.md
+        - name: 제한 이해
+          href: azure-stack-edge-limits.md
+        - name: 보안 개요
+          href: azure-stack-edge-security.md
+        - name: 사양 검토
+          items:
+            - name: 디바이스 사양
+              href: azure-stack-edge-gpu-technical-specifications-compliance.md
+            - name: 전원 코드 사양
+              href: azure-stack-edge-technical-specifications-power-cords-regional.md
+        - name: Kubernetes 이해
+          items:
+            - name: Kubernetes란?
+              href: azure-stack-edge-gpu-kubernetes-overview.md
+            - name: Kubernetes 스토리지
+              href: azure-stack-edge-gpu-kubernetes-storage.md
+            - name: Kubernetes 네트워킹
+              href: azure-stack-edge-gpu-kubernetes-networking.md
+            - name: Kubernetes RBAC
+              href: azure-stack-edge-gpu-kubernetes-rbac.md
+            - name: Kubernetes 워크로드
+              href: azure-stack-edge-gpu-kubernetes-workload-management.md
+    - name: 방법
+      items:
+        - name: IoT Edge 샘플 배포
+          items:
+            - name: Nvidia 갤러리의 모듈
+              href: azure-stack-edge-j-series-configure-gpu-modules.md
+            - name: Git 리포지토리의 GPU 모듈
+              href: azure-stack-edge-gpu-deploy-sample-module.md
+            - name: Marketplace를 통한 GPU 모듈
+              href: azure-stack-edge-gpu-deploy-sample-module-marketplace.md
+        - name: Kubernetes 워크로드 배포
+          items:
+            - name: kubectl을 통해
+              items:
+                - name: Kubernetes 클러스터 액세스
+                  href: azure-stack-edge-gpu-create-kubernetes-cluster.md
+                - name: 상태 비저장 앱
+                  href: azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md
+                - name: 정적 프로비저닝된 상태 저장 앱
+                  href: azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md
+                - name: 동적 프로비저닝된 상태 저장 앱
+                  href: azure-stack-edge-gpu-deploy-stateful-application-dynamic-provision-kubernetes.md
+            - name: IoT Edge를 통해
+              items:
+                - name: 상태 비저장 앱
+                  href: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
+            - name: Azure Arc를 통해
+              items:
+                - name: Kubernetes 클러스터에서 Arc 사용
+                  href: azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md
+                - name: GitOps를 통해 상태 비저장 앱 배포
+                  href: azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md
+        - name: Azure Resource Manager 구성
+          items:
+            - name: Azure PowerShell을 통해 연결
+              href: azure-stack-edge-j-series-connect-resource-manager.md
+            - name: Azure Resource Manager 암호 설정
+              href: azure-stack-edge-j-series-set-azure-resource-manager-password.md
+            - name: 클라이언트 TLS 설정 구성
+              href: azure-stack-edge-j-series-configure-tls-settings.md
+        - name: VM 배포
+          items:
+            - name: VM 배포 - 템플릿
+              href: azure-stack-edge-gpu-deploy-virtual-machine-templates.md
+            - name: VM 배포 - Azure PowerShell cmdlet
+              href: azure-stack-edge-j-series-deploy-virtual-machine-powershell.md
+            - name: VM 배포 - Azure PowerShell 스크립트
+              href: azure-stack-edge-j-series-deploy-virtual-machine-powershell-script.md
+            - name: VM 배포 - Azure CLI/Python
+              href: azure-stack-edge-j-series-deploy-virtual-machine-cli-python.md
+            - name: VM 이미지 만들기
+              href: azure-stack-edge-j-series-create-virtual-machine-image.md
+        - name: 인증서 관리
+          items:
+            - name: 요구 사항
+              href: azure-stack-edge-j-series-certificate-requirements.md
+            - name: 자체 환경 사용
+              href: azure-stack-edge-j-series-manage-certificates.md
+            - name: Azure Stack 준비 상태 검사기 도구를 통해 만들기
+              href: azure-stack-edge-j-series-create-certificates-tool.md
+            - name: 인증서 오류 문제 해결
+              href: azure-stack-edge-j-series-certificate-troubleshooting.md
+        - name: C# 모듈 개발
+          href: azure-stack-edge-j-series-create-iot-edge-module.md
+        - name: Edge 컴퓨팅 관리
+          href: azure-stack-edge-j-series-manage-compute.md
+        - name: 스토리지 게이트웨이 관리
+          items:
+            - name: 공유
+              href: azure-stack-edge-j-series-manage-shares.md
+            - name: 사용자
+              href: azure-stack-edge-j-series-manage-users.md
+            - name: Storage 계정
+              href: azure-stack-edge-j-series-manage-storage-accounts.md
+            - name: 대역폭 일정
+              href: azure-stack-edge-j-series-manage-bandwidth-schedules.md
+        - name: 디바이스 관리
+          items:
+            - name: '전원, 액세스, 연결'
+              href: azure-stack-edge-manage-access-power-connectivity-mode.md
+            - name: PowerShell을 통해
+              href: azure-stack-edge-gpu-connect-powershell-interface.md
+            - name: 업데이트 적용
+              href: azure-stack-edge-gpu-install-update.md
+            - name: 디바이스 반환
+              href: azure-stack-edge-return-device.md
+            - name: 디바이스 바꾸기
+              href: azure-stack-edge-replace-device.md
+        - name: Monitor
+          items:
+            - name: 메트릭 차트 사용
+              href: azure-stack-edge-monitor.md
+            - name: Kubernetes 대시보드 사용
+              href: azure-stack-edge-gpu-monitor-kubernetes-dashboard.md
+        - name: 문제 해결
+          items:
+            - name: 디바이스 문제
+              href: azure-stack-edge-gpu-troubleshoot.md
+            - name: 문제 정렬
+              href: azure-stack-edge-troubleshoot-ordering.md
+            - name: Microsoft 지원에 문의
+              href: azure-stack-edge-contact-microsoft-support.md
+    - name: 릴리스 정보
+      items:
+        - name: 2008 - 릴리스 정보
+          href: azure-stack-edge-gpu-2008-release-notes.md
+    - name: 참조
+      items:
+        - name: Azure PowerShell
+          href: 'https://docs.microsoft.com/powershell/module/az.stackedge/?view=azps-4.4.0#stack_edge'
+        - name: REST API
+          href: 'https://docs.microsoft.com/rest/api/databoxedgegateway'
+        - name: .NET SDK
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet'
+- name: Azure Stack Edge with FPGA
+  items:
+    - name: 개요
+      items:
+        - name: Azure Stack Edge with FPGA란?
+          href: azure-stack-edge-overview.md
+    - name: 자습서
+      items:
+        - name: 1 - 준비
+          href: azure-stack-edge-deploy-prep.md
+        - name: 2 - 설치
+          href: azure-stack-edge-deploy-install.md
+        - name: '3 - 연결, 설정, 활성화'
+          href: azure-stack-edge-deploy-connect-setup-activate.md
+        - name: '4 - 추가, 공유에 연결'
+          href: azure-stack-edge-deploy-add-shares.md
+        - name: 5A - 컴퓨팅 구성(단순)
+          href: azure-stack-edge-deploy-configure-compute.md
+        - name: 5B - 컴퓨팅 구성(고급)
+          href: azure-stack-edge-deploy-configure-compute-advanced.md
+    - name: 개념
+      items:
+        - name: 요구 사항 검토
+          href: azure-stack-edge-system-requirements.md
+        - name: 제한 이해
+          href: azure-stack-edge-limits.md
+        - name: 보안 개요
+          href: azure-stack-edge-security.md
+        - name: 사양 검토
+          items:
+            - name: 디바이스 사양
+              href: azure-stack-edge-technical-specifications-compliance.md
+            - name: 전원 코드 사양
+              href: azure-stack-edge-technical-specifications-power-cords-regional.md
+    - name: 방법
+      items:
+        - name: C# 모듈 개발
+          href: azure-stack-edge-create-iot-edge-module.md
+        - name: 관리
+          items:
+            - name: Edge 컴퓨팅
+              href: azure-stack-edge-manage-compute.md
+            - name: Edge 컴퓨팅 네트워크
+              href: azure-stack-edge-extend-compute-access-modules.md
+            - name: 공유
+              href: azure-stack-edge-manage-shares.md
+            - name: 사용자
+              href: azure-stack-edge-manage-users.md
+            - name: 대역폭 일정
+              href: azure-stack-edge-manage-bandwidth-schedules.md
+            - name: '전원, 액세스, 연결'
+              href: azure-stack-edge-manage-access-power-connectivity-mode.md
+            - name: PowerShell을 통해
+              href: azure-stack-edge-connect-powershell-interface.md
+            - name: 문제 해결
+              items:
+                - name: 로그를 통해
+                  href: azure-stack-edge-troubleshoot.md
+                - name: 문제 정렬
+                  href: azure-stack-edge-troubleshoot-ordering.md
+                - name: Microsoft 지원에 문의
+                  href: azure-stack-edge-contact-microsoft-support.md
+        - name: 모니터
+          href: azure-stack-edge-monitor.md
+        - name: 디바이스 반환
+          href: azure-stack-edge-return-device.md
+        - name: 디바이스 바꾸기
+          href: azure-stack-edge-replace-device.md
+    - name: 릴리스 정보
+      items:
+        - name: 2007 - 현재
+          href: data-box-gateway-2007-release-notes.md
+        - name: 1911
+          href: data-box-gateway-1911-release-notes.md
+        - name: 1906
+          href: data-box-gateway-1906-release-notes.md
+        - name: 1905
+          href: data-box-gateway-1905-release-notes.md
+        - name: GA(일반 공급)
+          href: data-box-gateway-release-notes.md
+    - name: 참조
+      items:
+        - name: Azure PowerShell
+          href: 'https://docs.microsoft.com/powershell/module/az.stackedge/?view=azps-4.4.0#stack_edge'
+        - name: REST API
+          href: 'https://docs.microsoft.com/rest/api/databoxedgegateway'
+        - name: .NET SDK
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet'
 - name: Data Box Gateway
   items:
     - name: 개요
@@ -63,90 +321,6 @@
           href: data-box-gateway-1905-release-notes.md
         - name: GA(일반 공급)
           href: data-box-gateway-release-notes.md
-- name: Azure Stack Edge
-  items:
-    - name: 개요
-      items:
-        - name: Azure Stack Edge란?
-          href: azure-stack-edge-overview.md
-    - name: 자습서
-      items:
-        - name: 1 - 준비
-          href: azure-stack-edge-deploy-prep.md
-        - name: 2 - 설치
-          href: azure-stack-edge-deploy-install.md
-        - name: '3 - 연결, 설정, 활성화'
-          href: azure-stack-edge-deploy-connect-setup-activate.md
-        - name: '4 - 추가, 공유에 연결'
-          href: azure-stack-edge-deploy-add-shares.md
-        - name: 5A - 컴퓨팅 구성(단순)
-          href: azure-stack-edge-deploy-configure-compute.md
-        - name: 5B - 컴퓨팅 구성(고급)
-          href: azure-stack-edge-deploy-configure-compute-advanced.md
-    - name: 개념
-      items:
-        - name: 요구 사항 검토
-          href: azure-stack-edge-system-requirements.md
-        - name: 제한 이해
-          href: azure-stack-edge-limits.md
-        - name: 보안 개요
-          href: azure-stack-edge-security.md
-        - name: 사양 검토
-          items:
-            - name: 디바이스 사양
-              href: azure-stack-edge-technical-specifications-compliance.md
-            - name: 전원 코드 사양
-              href: azure-stack-edge-technical-specifications-power-cords-regional.md
-    - name: 방법
-      items:
-        - name: C# 모듈 개발
-          href: azure-stack-edge-create-iot-edge-module.md
-        - name: 관리
-          items:
-            - name: Edge 컴퓨팅
-              href: azure-stack-edge-manage-compute.md
-            - name: Edge 컴퓨팅 네트워크
-              href: azure-stack-edge-extend-compute-access-modules.md
-            - name: 공유
-              href: azure-stack-edge-manage-shares.md
-            - name: 사용자
-              href: azure-stack-edge-manage-users.md
-            - name: 대역폭 일정
-              href: azure-stack-edge-manage-bandwidth-schedules.md
-            - name: '전원, 액세스, 연결'
-              href: azure-stack-edge-manage-access-power-connectivity-mode.md
-            - name: PowerShell을 통해
-              href: azure-stack-edge-connect-powershell-interface.md
-        - name: 문제 해결
-          href: azure-stack-edge-troubleshoot.md
-        - name: Microsoft 지원에 문의
-          href: azure-stack-edge-contact-microsoft-support.md
-        - name: 모니터
-          href: azure-stack-edge-monitor.md
-        - name: 디바이스 반환
-          href: azure-stack-edge-return-device.md
-        - name: 디바이스 바꾸기
-          href: azure-stack-edge-replace-device.md
-    - name: 릴리스 정보
-      items:
-        - name: 2007 - 현재
-          href: data-box-gateway-2007-release-notes.md
-        - name: 1911
-          href: data-box-gateway-1911-release-notes.md
-        - name: 1906
-          href: data-box-gateway-1906-release-notes.md
-        - name: 1905
-          href: data-box-gateway-1905-release-notes.md
-        - name: GA(일반 공급)
-          href: data-box-gateway-release-notes.md
-    - name: 참조
-      items:
-        - name: Azure PowerShell
-          href: 'https://docs.microsoft.com/powershell/module/az.stackedge/?view=azps-4.4.0#stack_edge'
-        - name: REST API
-          href: 'https://docs.microsoft.com/rest/api/databoxedgegateway'
-        - name: .NET SDK
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/databoxedge/databoxgateway?view=azure-dotnet'
 - name: 리소스
   items:
     - name: Azure Stack Edge C# 모듈 샘플(.NET)

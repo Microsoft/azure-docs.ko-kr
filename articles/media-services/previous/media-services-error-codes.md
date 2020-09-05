@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6911b16c3fdf5bb94d42a40198943c3b1baa00da
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c30808a46b5cecfaf2e761b3f7a611020cd2cdfb
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042830"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263680"
 ---
 # <a name="azure-media-services-error-codes"></a>Azure Media Services 오류 코드
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 Microsoft Azure Media Services를 사용할 경우 Media Services에서 지원되지 않는 작업에 대한 인증 토큰 만료와 같은 문제에 따라 서비스에서 HTTP 오류 코드를 받을 수도 있습니다. 다음은 Media Services에서 반환되는 **HTTP 오류 코드** 및 가능한 원인의 목록입니다.  
 
 ## <a name="400-bad-request"></a>400 잘못된 요청
@@ -48,7 +51,7 @@ Microsoft Azure Media Services를 사용할 경우 Media Services에서 지원�
 
 * 누락된 인증 헤더입니다.
 * 잘못된 인증 헤더 값입니다.
-  * 토큰이 만료되었습니다. 
+  * 토큰이 만료된 경우 
   * 토큰에 잘못된 서명이 들어 있습니다.
 
 ## <a name="403-forbidden"></a>403 사용할 수 없음

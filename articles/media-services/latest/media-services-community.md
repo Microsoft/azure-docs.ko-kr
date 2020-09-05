@@ -3,7 +3,7 @@ title: Azure Media Services v3 커뮤니티 개요
 description: 이 Azure Media Services 커뮤니티 페이지에서는 질문 및 피드백을 제공하고 Media Services에 대한 업데이트를 받는 다양한 방법을 다룹니다.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 01/22/2020
-ms.author: juliako
-ms.openlocfilehash: 9c47488915997f054487d8343c7c3c032135dcdb
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 5c54c3702dabf254e50068aadeac0992e3a20cb2
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87833082"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262467"
 ---
-# <a name="azure-media-services-v3-community"></a>Azure Media Services v3 커뮤니티  
+# <a name="azure-media-services-v3-community"></a>Azure Media Services v3 커뮤니티
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]  
 
 이 Azure Media Services 커뮤니티 페이지에서는 질문 및 피드백을 제공하고 Media Services에 대한 업데이트를 받는 다양한 방법을 다룹니다.
 

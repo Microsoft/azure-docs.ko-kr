@@ -3,30 +3,29 @@ title: 작업 결과 다운로드-Azure Media Services
 description: 이 문서에서는 작업의 결과를 다운로드 하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/04/2020
-ms.author: juliako
-ms.openlocfilehash: bae7104eaded8c2ed153bc141faf7eba0bb86bae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bc1ac986ffb8e15df5dab14403aac5eca05c5b5d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80346311"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263725"
 ---
 # <a name="download-the-results-of-a-job"></a>작업 결과 다운로드
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services에서 비디오를 처리 하는 경우 (예: 인코딩 또는 분석) [작업](transforms-jobs-concept.md)결과를 저장 하는 출력 [자산](assets-concept.md) 을 만들어야 합니다. 그런 다음 Media Service 및 Storage Api를 사용 하 여 로컬 폴더에 이러한 결과를 다운로드할 수 있습니다. 
 
 이 문서에서는 Java 및 .NET Sdk를 사용 하 여 결과를 다운로드 하는 방법을 보여 줍니다.
-
-## <a name="prerequisites"></a>필수 구성 요소 
-
-[자산 관리](manage-asset-concept.md)를 검토합니다.
 
 ## <a name="java"></a>Java
 

@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 04b87f8d0dd6a8fff35e3ae769652b50e7d0ef34
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 16ee2f01e1b7771e71afe49c4b69b1fb39e43f37
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285206"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869442"
 ---
 # <a name="azcopy-sync"></a>azcopy sync
 
@@ -58,7 +58,7 @@ Windows에서는 레지스트리에서 MIME 형식이 추출 됩니다.
 azcopy sync <source> <destination> [flags]
 ```
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 단일 파일 동기화:
 
@@ -143,13 +143,17 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 
 **--exclude-패턴** 문자열은 이름이 패턴 목록과 일치 하는 파일을 제외 합니다. `*.jpg;*.pdf;exactName`
 
-**--** 동기화에 대 한 도움말 도움말입니다.
+**--**    동기화에 대 한 도움말 도움말입니다.
 
 **--include** 특성 문자열 (Windows에만 해당)은 특성 목록과 일치 하는 특성을 가진 파일만 포함 합니다. `A;S;R`
 
 **--include-패턴** 문자열은 이름이 패턴 목록과 일치 하는 파일만 포함 합니다. `*.jpg;*.pdf;exactName`
 
 **--로그 수준** 문자열은 로그 파일에 대 한 로그의 자세한 정도, 사용 가능한 수준 `INFO` (모든 요청 및 응답), `WARNING` (저속 응답), ( `ERROR` 실패 한 요청만) 및 `NONE` (출력 로그 없음)을 정의 합니다. (기본값 `INFO` ). 
+
+**--smb-정보**     를 유지 합니다. False 이면 기본적으로 False입니다.SMB 인식 리소스 (Windows 및 Azure Files) 간에 SMB 속성 정보 (마지막으로 쓴 시간, 만든 시간, 특성 비트)를 유지 합니다.이 플래그는 파일 전용 필터가 지정 된 경우를 제외 하 고 파일 및 폴더에 모두 적용 됩니다 (예: include-패턴).폴더에 대해 전송 되는 정보는 폴더에 대해 유지 되지 않는 마지막 쓰기 시간을 제외 하 고 파일의 경우와 동일 합니다.
+
+**--smb-권한 유지**     False 이면 기본적으로 False입니다.인식 리소스 (Windows 및 Azure Files) 사이에서 SMB Acl을 유지 합니다.이 플래그는 파일 전용 필터가 지정 된 경우를 제외 하 고 파일 및 폴더에 모두 적용 됩니다 (예:  `include-pattern` ).
 
 **--입력-md5**     각 파일의 MD5 해시를 만들고 대상 blob 또는 파일의 콘텐츠-MD5 속성으로 해시를 저장 합니다. 기본적으로 해시가 생성 되지 않습니다. 업로드할 때만 사용할 수 있습니다.
 
@@ -165,6 +169,6 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 |--출력 형식 문자열|명령의 출력 형식입니다. 텍스트, json 등을 선택할 수 있습니다. 기본값은 "text"입니다.|
 |--신뢰할 수 있는 microsoft 접미사 문자열   |Azure Active Directory 로그인 토큰이 전송 될 수 있는 추가 도메인 접미사를 지정 합니다.  기본값은 '*. core.windows.net;* 입니다. core.chinacloudapi.cn; *. core.cloudapi.de;*. core.usgovcloudapi.net '. 여기에 나열 된 Any는 기본값에 추가 됩니다. 보안을 위해 여기에 Microsoft Azure 도메인만 배치 해야 합니다. 여러 항목을 세미콜론으로 구분 합니다.|
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 - [azcopy](storage-ref-azcopy.md)

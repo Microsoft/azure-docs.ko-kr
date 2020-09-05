@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 2a4cba847610ab7d6119c04f9e3b1c32a192d6c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 28b3bc5adfc3c2e83de658947193b6046a455c32
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255861"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231506"
 ---
 # <a name="azure-security-baseline-for-network-watcher"></a>Network Watcher에 대 한 Azure 보안 기준
 
@@ -234,9 +234,9 @@ Network Watcher를 사용하도록 설정해야 합니다.
 
 **지침**: Azure Network Watcher의 제어 평면 (예: Azure Portal)에 대 한 관리 권한이 있는 사용자 계정의 인벤토리를 유지 관리 합니다. Network Watcher 기능을 사용 하려면를 사용 하 여 Azure에 로그인 하는 계정을 소유자, 참가자 또는 네트워크 기여자 기본 제공 역할에 할당 하거나 특정 Network Watcher 기능에 대해 나열 된 작업이 할당 된 사용자 지정 역할에 할당 해야 합니다.
 
-구독에 대 한 Azure Portal의 IAM (Id 및 액세스 제어) 창을 사용 하 여 RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다.
+구독에 대 한 Azure Portal의 IAM (Id 및 액세스 제어) 창을 사용 하 여 azure RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다.
 
-* [Azure의 RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Azure RBAC 이해](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
 * [Network Watcher 기능을 사용하는 데 필요한 역할 기반 액세스 제어 권한](https://docs.microsoft.com/azure/network-watcher/required-rbac-permissions)
 
@@ -361,7 +361,7 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3.12: 계정 로그인 동작 편차에 대한 경고
 
@@ -443,15 +443,15 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 **책임**: 해당 없음
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: 구독에 대 한 AZURE PORTAL의 IAM (Id 및 액세스 제어) 창을 사용 하 여 RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다. 개인 및 그룹에 대 한 기본 제공 역할 또는 사용자 지정 역할을 사용할 수 있습니다.
+**지침**: 구독에 대 한 AZURE PORTAL의 IAM (Id 및 액세스 제어) 창을 사용 하 여 azure RBAC (역할 기반 액세스 제어)를 구성할 수 있습니다. 역할은 Active Directory의 사용자, 그룹, 서비스 사용자 및 관리 되는 id에 적용 됩니다. 개인 및 그룹에 대 한 기본 제공 역할 또는 사용자 지정 역할을 사용할 수 있습니다.
 
 Network Watcher 기능을 사용 하려면를 사용 하 여 Azure에 로그인 하는 계정을 소유자, 참가자 또는 네트워크 기여자 기본 제공 역할에 할당 하거나 특정 Network Watcher 기능에 대해 나열 된 작업이 할당 된 사용자 지정 역할에 할당 해야 합니다.
 
-* [Azure에서 RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+* [Azure RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
-* [Network Watcher에서 RBAC 권한 이해](https://docs.microsoft.com/azure/network-watcher/required-rbac-permissions)
+* [Network Watcher에서 Azure RBAC 사용 권한 이해](https://docs.microsoft.com/azure/network-watcher/required-rbac-permissions)
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -459,7 +459,7 @@ Network Watcher 기능을 사용 하려면를 사용 하 여 Azure에 로그인 
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7: 호스트 기반 데이터 손실 방지를 사용하여 액세스 제어 적용
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다. Microsoft는 Azure Network Watcher에 대 한 기본 인프라를 관리 하 고 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다. Microsoft는 Azure Network Watcher에 대 한 기본 인프라를 관리 하 고 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
 * [Azure 고객 데이터 보호](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
@@ -547,7 +547,7 @@ Network Watcher 기능을 사용 하려면를 사용 하 여 Azure에 로그인 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="62-maintain-asset-metadata"></a>6.2: 자산 메타데이터 유지 관리
 
@@ -931,7 +931,7 @@ Azure 리소스 그래프를 사용 하 여 구독 내에서 리소스를 쿼리
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 824520e04bd4a98b1a00c8369848163a38bcf54b
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: eb81e5a72ff1f5a8d4442e6e1f211ad2368f6277
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87909103"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206295"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Azure Active Directory B2B 협업 문제 해결
 
@@ -109,4 +109,4 @@ Azure 미국 정부 클라우드 내에서 B2B 공동 작업은 현재 Azure 미
 
 ## <a name="next-steps"></a>다음 단계
 
-[B2B Collaboration에 대한 지원 받기](/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto.md)
+[B2B Collaboration에 대한 지원 받기](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto)

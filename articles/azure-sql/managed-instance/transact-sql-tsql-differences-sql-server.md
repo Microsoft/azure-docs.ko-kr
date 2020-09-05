@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova, danil
 ms.date: 06/02/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 229a74fe760386b59bc83373cc7b1429bd826929
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d611fc7eff2efa7a632f4b5467b5829a8374b95e
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85298450"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705387"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>Azure SQL Managed Instance & SQL Server 간의 t-sql 차이점
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "85298450"
 
 SQL Managed Instance는 SQL Server 데이터베이스 엔진과의 호환성을 제공 하며 대부분의 기능은 SQL Managed Instance에서 지원 됩니다.
 
-![마이그레이션](./media/transact-sql-tsql-differences-sql-server/migration.png)
+![SQL Server에서 쉽게 마이그레이션](./media/transact-sql-tsql-differences-sql-server/migration.png)
 
 SQL Managed Instance에서 도입 된 몇 가지 PaaS 제한 사항이 있으며 SQL Server에 비해 일부 동작이 변경 되었습니다. 차이점은 다음 범주로 구분됩니다. <a name="Differences"></a>
 
@@ -329,7 +329,7 @@ SQL Managed Instance 파일 공유 및 Windows 폴더에 액세스할 수 없으
 
 - `DATASOURCE`는 Azure BLOB Storage에서 파일을 가져오는 동안 `BULK INSERT` 명령에 필요합니다. [BULK INSERT](/sql/t-sql/statements/bulk-insert-transact-sql)를 참조하세요.
 - Azure Blob Storage에서 파일의 내용을 읽을 때 `OPENROWSET` 함수에 `DATASOURCE`가 필요합니다. [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)를 참조하세요.
-- `OPENROWSET`을 사용 하 여 Azure SQL Database, Azure SQL Managed Instance 또는 SQL Server 인스턴스에서 데이터를 읽을 수 있습니다. Oracle Database 또는 Excel 파일 등의 다른 원본은 지원되지 않습니다.
+- `OPENROWSET` 을 사용 하 여 Azure SQL Database, Azure SQL Managed Instance 또는 SQL Server 인스턴스에서 데이터를 읽을 수 있습니다. Oracle Database 또는 Excel 파일 등의 다른 원본은 지원되지 않습니다.
 
 ### <a name="clr"></a>CLR
 
@@ -364,7 +364,7 @@ MSDTC 및 [탄력적 트랜잭션은](../database/elastic-transactions-overview.
 
 ### <a name="external-libraries"></a>외부 라이브러리
 
-데이터베이스 내 R 및 Python 외부 라이브러리는 아직 지원되지 않습니다. [SQL Server Machine Learning Services](/sql/advanced-analytics/r/sql-server-r-services)를 참조하세요.
+데이터베이스 내 R 및 Python 외부 라이브러리는 제한 된 공개 미리 보기에서 지원 됩니다. [AZURE SQL Managed Instance에서 Machine Learning Services (미리 보기)를](machine-learning-services-overview.md)참조 하세요.
 
 ### <a name="filestream-and-filetable"></a>Filestream 및 FileTable
 
@@ -486,10 +486,10 @@ HDFS 또는 Azure Blob Storage의 파일을 참조하는 외부 테이블은 지
 다른 결과를 반환하는 변수, 함수 및 뷰는 다음과 같습니다.
 
 - `SERVERPROPERTY('EngineEdition')`에서 값 8을 반환합니다. 이 속성은 SQL Managed Instance를 고유 하 게 식별 합니다. [SERVERPROPERTY](/sql/t-sql/functions/serverproperty-transact-sql)를 참조하세요.
-- `SERVERPROPERTY('InstanceName')`SQL Server에 대 한 인스턴스 개념이 SQL Managed Instance에 적용 되지 않으므로 NULL을 반환 합니다. [SERVERPROPERTY('InstanceName')](/sql/t-sql/functions/serverproperty-transact-sql)를 참조하세요.
+- `SERVERPROPERTY('InstanceName')` SQL Server에 대 한 인스턴스 개념이 SQL Managed Instance에 적용 되지 않으므로 NULL을 반환 합니다. [SERVERPROPERTY('InstanceName')](/sql/t-sql/functions/serverproperty-transact-sql)를 참조하세요.
 - `@@SERVERNAME`은 전체 DNS "연결 가능한" 이름을 반환합니다(예: my-managed-instance.wcus17662feb9ce98.database.windows.net). [@@SERVERNAME](/sql/t-sql/functions/servername-transact-sql)을 참조하세요. 
 - `SYS.SERVERS`는 "name" 및 "data_source" 속성에 대한 전체 DNS "연결 가능한" 이름을 반환합니다(예: `myinstance.domain.database.windows.net`). [SYS.SERVERS](/sql/relational-databases/system-catalog-views/sys-servers-transact-sql)를 참조하세요.
-- `@@SERVICENAME`SQL Server에 대해 존재 하는 서비스 개념이 SQL Managed Instance에 적용 되지 않으므로 NULL을 반환 합니다. [@@SERVICENAME](/sql/t-sql/functions/servicename-transact-sql)을 참조하세요.
+- `@@SERVICENAME` SQL Server에 대해 존재 하는 서비스 개념이 SQL Managed Instance에 적용 되지 않으므로 NULL을 반환 합니다. [@@SERVICENAME](/sql/t-sql/functions/servicename-transact-sql)을 참조하세요.
 - `SUSER_ID`이 지원됩니다. Azure AD 로그인이 sys. syslogins에 없으면 NULL을 반환합니다. [SUSER_ID](/sql/t-sql/functions/suser-id-transact-sql)를 참조하세요. 
 - `SUSER_SID`는 지원되지 않습니다. 잘못된 데이터가 반환되며 이는 알려진 일시적 문제입니다. [SUSER_SID](/sql/t-sql/functions/suser-sid-transact-sql)를 참조하세요. 
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9090ca5b8057179b0cbef1d0a87ae563303ed2c1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 291afbdd902c7563e47595132d56b354dab28a3a
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85130435"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950394"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Azure Active Directory ID 보호 알림
 
@@ -29,7 +29,7 @@ Azure AD ID 보호는 사용자 위험 및 위험 검색을 관리 하는 데 �
 
 ## <a name="users-at-risk-detected-email"></a>위험에 노출된 사용자가 검색된 전자 메일
 
-위험에 노출된 계정 검색에 대한 응답으로 Azure AD ID 보호는 **위험에 노출된 사용자 검색됨**이란 제목의 전자 메일 경고를 생성합니다. 전자 메일에는 **[위험 플래그가 지정된 사용자](../reports-monitoring/concept-user-at-risk.md)** 보고서에 대한 링크가 포함됩니다. 모범 사례로, 위험에 노출된 사용자를 즉시 조사해야 합니다.
+위험에 노출된 계정 검색에 대한 응답으로 Azure AD ID 보호는 **위험에 노출된 사용자 검색됨**이란 제목의 전자 메일 경고를 생성합니다. 전자 메일에는 **[위험 플래그가 지정된 사용자](./overview-identity-protection.md)** 보고서에 대한 링크가 포함됩니다. 모범 사례로, 위험에 노출된 사용자를 즉시 조사해야 합니다.
 
 이 경고에 대 한 구성을 사용 하 여 경고를 생성 하려는 사용자 위험 수준을 지정할 수 있습니다. 사용자의 위험 수준이 지정한 내용에 도달 하면 전자 메일이 생성 됩니다. 예를 들어 보통 사용자 위험에 대해 경고를 표시 하도록 정책을 설정 하 고 사용자 John의 사용자 위험 점수를 실시간 로그인 위험으로 인해 보통 위험으로 이동 하는 경우 사용자에 게 위험 감지 전자 메일이 표시 됩니다. 사용자에 게 사용자 위험 수준 계산이 지정 된 위험 수준 (이상)이 되도록 하는 후속 위험 검색이 있는 경우 사용자 위험 점수를 다시 계산할 때 위험 검색 된 전자 메일에 추가 사용자를 받게 됩니다. 예를 들어 사용자가 1 월 1 일에 보통 위험으로 이동 하면 설정이 보통 위험에 대해 경고로 설정 된 경우 전자 메일 알림을 받게 됩니다. 동일한 사용자가 1 월 5 일에도 보통 위험에 대 한 다른 위험을 감지 하 고 사용자 위험 점수가 다시 계산 되며 여전히 medium 인 경우에는 다른 전자 메일 알림을 받게 됩니다. 
 
@@ -70,4 +70,4 @@ Azure AD ID 보호는 사용자 위험 및 위험 검색을 관리 하는 데 �
 
 ## <a name="see-also"></a>참조
 
-- [Azure Active Directory ID 보호](../active-directory-identityprotection.md)
+- [Azure Active Directory ID 보호](./overview-identity-protection.md)

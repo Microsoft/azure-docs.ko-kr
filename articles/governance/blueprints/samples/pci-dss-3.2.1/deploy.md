@@ -1,14 +1,14 @@
 ---
 title: PCI-DSS v3.2.1 청사진 샘플 배포
 description: 청사진 아티팩트 매개 변수 세부 정보를 비롯한 Payment Card Industry Data Security Standard v3.2.1 청사진 샘플의 배포 단계를 설명합니다.
-ms.date: 01/29/2020
+ms.date: 08/19/2020
 ms.topic: sample
-ms.openlocfilehash: 9df9392430fd0496ffb5e635a6fc3e31ba708208
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a7917f09e5e5ff898bd155f0961e5c9765b8d791
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76905548"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649213"
 ---
 # <a name="deploy-the-pci-dss-v321-blueprint-sample"></a>PCI-DSS v3.2.1 청사진 샘플 배포
 

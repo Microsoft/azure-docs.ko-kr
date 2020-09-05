@@ -10,14 +10,14 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 06/25/2020
 ms.author: trbye
-ms.custom: devx-track-javascript
+ms.custom: devx-track-javascript, devx-track-csharp
 zone_pivot_groups: programming-languages-set-two-with-js
-ms.openlocfilehash: 4d284dab671b86b4cbbe31b9689bba9450a71311
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 3c6ae5a7635222b48ce097c6c517cebb60f961aa
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406177"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926147"
 ---
 # <a name="quickstart-recognize-speech-stored-in-blob-storage"></a>빠른 시작: Blob 스토리지에 저장된 음성 인식
 

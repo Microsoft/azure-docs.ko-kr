@@ -8,12 +8,13 @@ ms.date: 6/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: dca903591c5d6805108d55163aaedc2435d9297e
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 78d3cbac28a85452f23e4a7c7ba3904fe3d1f488
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85610083"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997883"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>자습서: 투명 게이트웨이를 통해 데이터 보내기
 
@@ -225,7 +226,7 @@ Avro 파일을 읽고 파일에 메시지의 JSON 문자열을 반환하기 위�
 
 1. 개발 VM, IoT Edge VM, IoT Hub, 스토리지 계정, 기계 학습 작업 영역 서비스를 보관하기 위해 만든 리소스 그룹(및 만든 리소스: 컨테이너 레지스트리, Application Insights, 키 자격 증명 모음, 스토리지 계정)을 삭제합니다.
 
-1. [Azure Notebook](https://notebooks.azure.com)에서 기계 학습 프로젝트를 삭제합니다.
+1. [Azure Notebooks](https://notebooks.azure.com)에서 기계 학습 프로젝트를 삭제합니다.
 
 1. 리포지토리를 로컬로 복제한 경우 로컬 리포지토리를 가리키는 모든 PowerShell 또는 VS Code 창을 닫고, 리포지토리 디렉터리를 삭제합니다.
 

@@ -3,7 +3,7 @@ title: Azure의 Cloud Foundry 설명서
 summary: Cloud Foundry는 다양한 언어 및 프레임워크로 개발되는 12개 요소(12-factor) 애플리케이션을 빌드하고, 배포하고, 운영하기 위한 오픈 소스 PaaS(Platform-as-a-Service)입니다.
 metadata:
   title: Azure의 Cloud Foundry 설명서
-  description: Cloud Foundry는 다양한 언어 및 프레임워크로 개발되는 12개 요소(12-factor) 애플리케이션을 빌드하고, 배포하고, 운영하기 위한 오픈 소스 PaaS(Platform-as-a-Service)입니다.
+  description: Cloud Foundry는 다양한 언어와 프레임워크로 개발되는 12개 요소(12-factor) 애플리케이션을 빌드하고, 배포하고, 운영하기 위한 오픈 소스 PaaS입니다.
   services: multiple
   ms.service: multiple
   ms.devlang: devops
@@ -11,12 +11,12 @@ metadata:
   author: georgewallace
   ms.author: gwallace
   ms.date: 03/08/2020
-  ms.openlocfilehash: 92fc1fb74316e2a80d0cf4fde912f05db2b3613b
-  ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
+  ms.openlocfilehash: 8191a179474db5e9d60e0cd10fb1efff189a3a73
+  ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/12/2020
-  ms.locfileid: "84750335"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88224971"
 landingContent:
 - title: Azure의 Cloud Foundry 정보
   linkLists:

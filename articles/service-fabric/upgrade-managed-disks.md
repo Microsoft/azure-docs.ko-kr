@@ -3,16 +3,16 @@ title: Azure managed disks를 사용 하도록 클러스터 노드 업그레이�
 description: 클러스터를 거의 또는 전혀 가동 중지 하지 않고 Azure managed disks를 사용 하도록 기존 Service Fabric 클러스터를 업그레이드 하는 방법은 다음과 같습니다.
 ms.topic: how-to
 ms.date: 4/07/2020
-ms.openlocfilehash: 10863626945483e21aa264e2b05e94a6f08a22f6
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 152bdaea121e65de8332fcde8543b8158ff11714
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542864"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717526"
 ---
 # <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Azure managed disks를 사용 하도록 클러스터 노드 업그레이드
 
-[Azure managed disks](../virtual-machines/windows/managed-disks-overview.md) 는 데이터 영구 저장을 위해 azure virtual machines와 함께 사용 하기 위해 권장 되는 디스크 저장소 제품입니다. 관리 디스크를 사용 하도록 노드 형식의 기반이 되는 가상 머신 확장 집합을 업그레이드 하 여 Service Fabric 워크 로드의 복원 력을 향상 시킬 수 있습니다. 클러스터를 거의 또는 전혀 가동 중지 하지 않고 Azure managed disks를 사용 하도록 기존 Service Fabric 클러스터를 업그레이드 하는 방법은 다음과 같습니다.
+[Azure managed disks](../virtual-machines/managed-disks-overview.md) 는 데이터 영구 저장을 위해 azure virtual machines와 함께 사용 하기 위해 권장 되는 디스크 저장소 제품입니다. 관리 디스크를 사용 하도록 노드 형식의 기반이 되는 가상 머신 확장 집합을 업그레이드 하 여 Service Fabric 워크 로드의 복원 력을 향상 시킬 수 있습니다. 클러스터를 거의 또는 전혀 가동 중지 하지 않고 Azure managed disks를 사용 하도록 기존 Service Fabric 클러스터를 업그레이드 하는 방법은 다음과 같습니다.
 
 관리 디스크를 사용 하도록 Service Fabric 클러스터 노드를 업그레이드 하는 일반적인 전략은 다음과 같습니다.
 
@@ -24,10 +24,13 @@ ms.locfileid: "87542864"
 
 이 문서에서는 클러스터 가동 중지 시간을 방지 하는 동시에 관리 디스크를 사용 하도록 예제 클러스터의 주 노드 유형을 업그레이드 하는 단계를 안내 합니다 (아래 참고 참조). 예제 테스트 클러스터의 초기 상태는 노드 5 개로 구성 된 단일 확장 집합에 의해 지원 되는 [실버 내구성](service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster)의 한 노드 형식으로 구성 됩니다.
 
+> [!NOTE]
+> 기본 SKU 부하 분산 장치에 대 한 제한으로 인해 추가 확장 집합이 추가 되지 않습니다. 대신 표준 SKU 부하 분산 장치를 사용 하는 것이 좋습니다. 자세한 내용은 [두 sku의 비교](/azure/load-balancer/skus)를 참조 하세요.
+
 > [!CAUTION]
 > 클러스터 DNS에 종속성이 있는 경우 (예: [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)에 액세스할 때)에만이 절차를 중단 합니다. [프런트 엔드 서비스의 아키텍처 모범 사례](/azure/architecture/microservices/design/gateway) 는 중단 없이 노드 교환을 가능 하 게 하기 위해 노드 형식 앞에 일종의 [부하 분산 장치](/azure/architecture/guide/technology-choices/load-balancing-overview) 를 포함 하는 것입니다.
 
-다음은 업그레이드 시나리오를 완료 하는 데 사용 하는 Azure Resource Manager에 대 한 [템플릿 및 cmdlet](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) 입니다. 템플릿의 변경 내용은 아래 [주 노드 유형의 업그레이드 된 확장 집합 배포](#deploy-an-upgraded-scale-set-for-the-primary-node-type) 에서 설명 합니다.
+다음은 업그레이드 시나리오를 완료 하는 데 사용 하는 Azure Resource Manager에 대 한 [템플릿 및 cmdlet](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) 입니다. 템플릿의 변경 내용은 아래 [주 노드 유형의 업그레이드 된 확장 집합 배포](#deploy-an-upgraded-scale-set-for-the-primary-node-type)  에서 설명 합니다.
 
 ## <a name="set-up-the-test-cluster"></a>테스트 클러스터 설정
 
@@ -59,7 +62,7 @@ $parameterFilePath = "C:\Initial-1NodeType-UnmanagedDisks.parameters.json"
 > [!NOTE]
 > 새 Service Fabric 클러스터를 배포하는 명령을 실행하기 전에 로컬 머신에 `certOutputFolder` 위치가 있는지 확인합니다.
 
-다음으로 파일 [*에*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) 대 한Initial-1NodeType-UnmanagedDisks.parameters.js를 열고 `clusterName` `dnsName` PowerShell에서 설정한 동적 값에 해당 하는 및에 대 한 값을 조정 하 고 변경 내용을 저장 합니다.
+다음으로 파일 [* 에*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) 대 한Initial-1NodeType-UnmanagedDisks.parameters.js를 열고 `clusterName` `dnsName` PowerShell에서 설정한 동적 값에 해당 하는 및에 대 한 값을 조정 하 고 변경 내용을 저장 합니다.
 
 그런 다음, Service Fabric 테스트 클러스트를 배포합니다.
 
@@ -99,7 +102,7 @@ $sourceVaultValue = "/subscriptions/########-####-####-####-############/resourc
 $thumb = "BB796AA33BD9767E7DA27FE5182CF8FDEE714A70"
 ```
 
-파일 [*에서Initial-1NodeType-UnmanagedDisks.parameters.js*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) 을 열고 및의 값을 고유한 값으로 변경 합니다 `clusterName` `dnsName` .
+파일 [* 에서Initial-1NodeType-UnmanagedDisks.parameters.js*](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Initial-1NodeType-UnmanagedDisks.parameters.json) 을 열고 및의 값을 고유한 값으로 변경 합니다 `clusterName` `dnsName` .
 
 마지막으로 클러스터에 대 한 리소스 그룹 이름을 지정 하 고 `templateFilePath` `parameterFilePath` *초기-1Nodetype-UnmanagedDisks* 파일의 및 위치를 설정 합니다.
 
@@ -165,7 +168,7 @@ Get-ServiceFabricClusterHealth
 
 #### <a name="parameters"></a>매개 변수
 
-새 확장 집합의 인스턴스 이름에 대 한 매개 변수를 추가 합니다. 는 `vmNodeType1Name` 새 확장 집합에 대해 고유 하지만 개수 및 크기 값은 원래 확장 집합과 동일 합니다.
+새 확장 집합의 인스턴스 이름, 개수 및 크기에 대 한 매개 변수를 추가 합니다. 는 `vmNodeType1Name` 새 확장 집합에 대해 고유 하지만 개수 및 크기 값은 원래 확장 집합과 동일 합니다.
 
 **템플릿 파일**
 
@@ -174,7 +177,18 @@ Get-ServiceFabricClusterHealth
     "type": "string",
     "defaultValue": "NTvm2",
     "maxLength": 9
-}
+},
+"nt1InstanceCount": {
+    "type": "int",
+    "defaultValue": 5,
+    "metadata": {
+        "description": "Instance count for node type"
+    }
+},
+"vmNodeType1Size": {
+    "type": "string",
+    "defaultValue": "Standard_D2_v2"
+},
 ```
 
 **매개 변수 파일**
@@ -182,6 +196,12 @@ Get-ServiceFabricClusterHealth
 ```json
 "vmNodeType1Name": {
     "value": "NTvm2"
+},
+"nt1InstanceCount": {
+    "value": 5
+},
+"vmNodeType1Size": {
+    "value": "Standard_D2_v2"
 }
 ```
 
@@ -199,13 +219,13 @@ Get-ServiceFabricClusterHealth
 
 배포 템플릿 *리소스* 섹션에서 다음 사항을 염두에 둔 새 가상 머신 확장 집합을 추가 합니다.
 
-* 새 확장 집합은 새 노드 형식을 참조 합니다.
+* 새 확장 집합은 원래와 동일한 노드 형식을 참조 합니다.
 
     ```json
-    "nodeTypeRef": "[parameters('vmNodeType1Name')]",
+    "nodeTypeRef": "[parameters('vmNodeType0Name')]",
     ```
 
-* 새 확장 집합은 원래와 동일한 부하 분산 장치 백 엔드 주소 및 서브넷을 참조 하지만 다른 부하 분산 장치 인바운드 NAT 풀을 사용 합니다.
+* 새 확장 집합은 동일한 부하 분산 장치 백 엔드 주소 및 서브넷을 참조 하지만 다른 부하 분산 장치 인바운드 NAT 풀을 사용 합니다.
 
    ```json
     "loadBalancerBackendAddressPools": [
@@ -236,33 +256,6 @@ Get-ServiceFabricClusterHealth
         "storageAccountType": "[parameters('storageAccountType')]"
     }
     ```
-
-다음으로 `nodeTypes` *ServiceFabric/클러스터* 리소스 목록에 항목을 추가 합니다. `name`새 노드 형식 (*vmNodeType1Name*)을 참조 해야 하는를 제외 하 고 원래 노드 형식 항목과 동일한 값을 사용 합니다.
-
-```json
-"nodeTypes": [
-    {
-        "name": "[parameters('vmNodeType0Name')]",
-        ...
-    },
-    {
-        "name": "[parameters('vmNodeType1Name')]",
-        "applicationPorts": {
-            "endPort": "[parameters('nt0applicationEndPort')]",
-            "startPort": "[parameters('nt0applicationStartPort')]"
-        },
-        "clientConnectionEndpointPort": "[parameters('nt0fabricTcpGatewayPort')]",
-        "durabilityLevel": "Silver",
-        "ephemeralPorts": {
-            "endPort": "[parameters('nt0ephemeralEndPort')]",
-            "startPort": "[parameters('nt0ephemeralStartPort')]"
-        },
-        "httpGatewayEndpointPort": "[parameters('nt0fabricHttpGatewayPort')]",
-        "isPrimary": true,
-        "vmInstanceCount": "[parameters('nt0InstanceCount')]"
-    }
-],
-```
 
 템플릿 및 매개 변수 파일의 모든 변경 내용을 구현한 후 다음 섹션으로 이동 하 여 Key Vault 참조를 가져오고 클러스터에 업데이트를 배포 합니다.
 
@@ -372,7 +365,7 @@ foreach($name in $nodeNames){
 
 방법 배우기:
 
-* [Service Fabric 클러스터 주 노드 형식 강화](service-fabric-scale-up-node-type.md)
+* [Service Fabric 클러스터 주 노드 형식 강화](service-fabric-scale-up-primary-node-type.md)
 
 * [관리 디스크를 사용 하도록 확장 집합 템플릿 변환](../virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md.md)
 

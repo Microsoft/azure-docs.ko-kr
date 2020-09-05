@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure Data Box용 빠른 시작 | Microsoft Docs
-description: Azure Portal에서 Azure Data Box를 빠르게 배포하는 방법을 알아봅니다.
+description: 이 빠른 시작에서는 가져오기 순서를 위해 Azure Portal을 사용하여 Azure Data Box를 배포하는 방법에 대해 알아봅니다. Azure Data Box를 구성하고 Azure에 업로드할 데이터를 복사합니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: dd429dadcbe67f0ac91da19d6606626b39f34ef5
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 2ee9d1edefb0e248d0eba13e2d0b9f1c651fdd42
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201084"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924515"
 ---
 # <a name="get-started-with-azure-data-box-to-import-data-into-azure"></a>Azure로 데이터를 가져오는 Azure Data Box 시작
 

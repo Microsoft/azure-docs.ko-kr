@@ -2,25 +2,21 @@
 title: '자습서: eDigitalResearch와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 eDigitalResearch 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c6b66ea0-16ba-45b4-b550-e81c56262b1f
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 3c2c77d4d6c816b23b86a7daea7cf5f20e98262d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b2d4d22e00150d7699d037c6d05c46c746ef3560
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67103604"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88544369"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edigitalresearch"></a>자습서: eDigitalResearch와 Azure Active Directory 통합
 

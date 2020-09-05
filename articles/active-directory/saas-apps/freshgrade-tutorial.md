@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory와 FreshGrade 통합 | Microsoft Docs'
 description: Azure Active Directory 및 FreshGrade 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 1055bba6-f4df-462e-bc9b-1ad5ada0f638
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: b2bceac127645717947d1da712d1e3699a04bee0
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: d913cd01b25aebe6d0a58aca87b35367315380f5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799210"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551111"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>자습서: Azure Active Directory와 FreshGrade 통합
 

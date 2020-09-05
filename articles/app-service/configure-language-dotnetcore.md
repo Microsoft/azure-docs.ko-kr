@@ -2,15 +2,16 @@
 title: ASP.NET Core 앱 구성
 description: Azure App Service에서 네이티브 Windows 인스턴스 또는 미리 빌드된 Linux 컨테이너의 ASP.NET Core 앱을 구성 하는 방법에 대해 알아봅니다. 이 문서에서는 가장 일반적인 구성 작업을 보여줍니다.
 ms.devlang: dotnet
+ms.custom: devx-track-csharp
 ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 77bff369e2af09921a2065a031166c017128f008
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 3456adc2b143f1f51115183fe4873938d067d267
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080167"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961672"
 ---
 # <a name="configure-an-aspnet-core-app-for-azure-app-service"></a>Azure App Service에 대 한 ASP.NET Core 앱 구성
 
@@ -55,7 +56,7 @@ az webapp list-runtimes --linux | grep DOTNETCORE
 
 ::: zone pivot="platform-windows"  
 
-프로젝트 파일에서 ASP.NET Core 프로젝트에 대 한 대상 프레임 워크를 설정 합니다. 자세한 내용은 .NET Core 설명서에서 [사용할 .Net core 버전 선택](https://docs.microsoft.com/dotnet/core/versions/selection) 을 참조 하세요.
+프로젝트 파일에서 ASP.NET Core 프로젝트에 대 한 대상 프레임 워크를 설정 합니다. 자세한 내용은 .NET Core 설명서에서 [사용할 .Net core 버전 선택](/dotnet/core/versions/selection) 을 참조 하세요.
 
 ::: zone-end
 
@@ -127,7 +128,7 @@ namespace SomeNamespace
 예를 들어 App Service 및 *appsettings.js*에서 동일한 이름을 사용 하 여 앱 설정을 구성 하는 경우 App Service 값이 *appsettings.js* 값 보다 우선 적용 됩니다. 로컬 *appsettings.json* value를 사용 하면 앱을 로컬로 디버그할 수 있지만 App Service 값을 사용 하면 프로덕션 설정으로 제품에서 앱을 실행할 수 있습니다. 연결 문자열은 동일한 방식으로 작동 합니다. 이러한 방식으로 코드를 변경 하지 않고 응용 프로그램 비밀을 코드 리포지토리 외부에 유지 하 고 적절 한 값에 액세스할 수 있습니다.
 
 > [!NOTE]
-> 참고 *appsettings.js* 의 [계층적 구성 데이터](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/#hierarchical-configuration-data) 는 `:` .net Core에 대 한 표준 구분 기호를 사용 하 여 액세스할 수 있습니다. App Service에서 특정 계층적 구성 설정을 재정의 하려면 앱 설정 이름을 키에서 동일 하 게 분리 된 형식으로 설정 합니다. [Cloud Shell](https://shell.azure.com)에서 다음 예제를 실행할 수 있습니다.
+> 참고 *appsettings.js* 의 [계층적 구성 데이터](/aspnet/core/fundamentals/configuration/#hierarchical-configuration-data) 는 `:` .net Core에 대 한 표준 구분 기호를 사용 하 여 액세스할 수 있습니다. App Service에서 특정 계층적 구성 설정을 재정의 하려면 앱 설정 이름을 키에서 동일 하 게 분리 된 형식으로 설정 합니다. [Cloud Shell](https://shell.azure.com)에서 다음 예제를 실행할 수 있습니다.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings My:Hierarchical:Config:Data="some value"
@@ -143,7 +144,7 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 
 ## <a name="access-diagnostic-logs"></a>진단 로그 액세스
 
-ASP.NET Core는 [App Service에 대 한 기본 제공 로깅 공급자](https://docs.microsoft.com/aspnet/core/fundamentals/logging/#azure-app-service)를 제공 합니다. 프로젝트의 *Program.cs* 에서 `ConfigureLogging` 다음 예제와 같이 확장 메서드를 통해 응용 프로그램에 공급자를 추가 합니다.
+ASP.NET Core는 [App Service에 대 한 기본 제공 로깅 공급자](/aspnet/core/fundamentals/logging/#azure-app-service)를 제공 합니다. 프로젝트의 *Program.cs* 에서 `ConfigureLogging` 다음 예제와 같이 확장 메서드를 통해 응용 프로그램에 공급자를 추가 합니다.
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -158,11 +159,11 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
         });
 ```
 
-그런 다음 [표준 .Net Core 패턴](https://docs.microsoft.com/aspnet/core/fundamentals/logging)으로 로그를 구성 하 고 생성할 수 있습니다.
+그런 다음 [표준 .Net Core 패턴](/aspnet/core/fundamentals/logging)으로 로그를 구성 하 고 생성할 수 있습니다.
 
 [!INCLUDE [Access diagnostic logs](../../includes/app-service-web-logs-access-no-h.md)]
 
-App Service에서 ASP.NET Core 앱 문제를 해결 하는 방법에 대 한 자세한 내용은 [Azure App Service 및 IIS의 ASP.NET Core 문제 해결](https://docs.microsoft.com/aspnet/core/test/troubleshoot-azure-iis) 을 참조 하세요.
+App Service에서 ASP.NET Core 앱 문제를 해결 하는 방법에 대 한 자세한 내용은 [Azure App Service 및 IIS의 ASP.NET Core 문제 해결](/aspnet/core/test/troubleshoot-azure-iis) 을 참조 하세요.
 
 ## <a name="get-detailed-exceptions-page"></a>자세한 예외 페이지 가져오기
 
@@ -176,9 +177,9 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 App Service에서, [SSL 종료](https://wikipedia.org/wiki/TLS_termination_proxy)는 네트워크 부하 분산 장치에서 발생하므로 모든 HTTPS 요청은 암호화되지 않은 HTTP 요청으로 앱에 도달합니다. 사용자 요청이 암호화 되었는지 여부를 응용 프로그램 논리에서 알고 있어야 하는 경우 *Startup.cs*에서 전달 된 헤더 미들웨어를 구성 합니다.
 
-- `Startup.ConfigureServices`에서 `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하도록 [ForwardedHeadersOptions](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)를 사용하여 미들웨어를 구성합니다.
+- `Startup.ConfigureServices`에서 `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하도록 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)를 사용하여 미들웨어를 구성합니다.
 - 미들웨어가 App Service 부하 분산 장치를 신뢰할 수 있도록 개인 IP 주소 범위를 알려진 네트워크에 추가 합니다.
-- 다른 미들웨어를 호출 하기 전에에서 [UseForwardedHeaders](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 메서드를 호출 합니다 `Startup.Configure` .
+- 다른 미들웨어를 호출 하기 전에에서 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 메서드를 호출 합니다 `Startup.Configure` .
 
 세 요소를 모두 함께 배치 하면 코드는 다음 예제와 같습니다.
 
@@ -207,7 +208,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](https://docs.microsoft.com/aspnet/core/host-and-deploy/proxy-load-balancer)을 참조하세요.
+자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](/aspnet/core/host-and-deploy/proxy-load-balancer)을 참조하세요.
 
 ::: zone pivot="platform-linux"
 
@@ -230,4 +231,3 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > [App Service Linux FAQ](faq-app-service-linux.md)
 
 ::: zone-end
-

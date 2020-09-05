@@ -12,19 +12,19 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 27d56958120d0eddebe30dc410805909fe507f7c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 526a4f9f5542074107700b54dcf3d2a591b08b70
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319578"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89144042"
 ---
 # <a name="where-to-save-and-write-files-for-azure-machine-learning-experiments"></a>Azure Machine Learning 실험을 위해 파일을 저장 하 고 작성 하는 위치
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 이 문서에서는 입력 파일을 저장할 위치와 실험에서 출력 파일을 쓸 위치를 학습 하 여 저장소 제한 오류 및 실험 대기 시간을 방지 합니다.
 
-실행 학습은 [계산 대상](how-to-set-up-training-targets.md)에서 실행 되며 외부 환경에서 격리 됩니다. 이 디자인의 목적은 실험의 재현 가능성 및 이식성을 보장 하는 것입니다. 동일 하거나 다른 계산 대상에서 동일한 스크립트를 두 번 실행 하는 경우 동일한 결과를 받게 됩니다. 이 디자인에서는 계산 대상이 완료 된 후 실행 되는 작업에 대 한 선호도를 갖지 않는 상태 비저장 계산 리소스로 취급할 수 있습니다.
+실행 학습은 [계산 대상](concept-compute-target.md)에서 실행 되며 외부 환경에서 격리 됩니다. 이 디자인의 목적은 실험의 재현 가능성 및 이식성을 보장 하는 것입니다. 동일 하거나 다른 계산 대상에서 동일한 스크립트를 두 번 실행 하는 경우 동일한 결과를 받게 됩니다. 이 디자인에서는 계산 대상이 완료 된 후 실행 되는 작업에 대 한 선호도를 갖지 않는 상태 비저장 계산 리소스로 취급할 수 있습니다.
 
 ## <a name="where-to-save-input-files"></a>입력 파일을 저장할 위치
 
@@ -79,4 +79,4 @@ Jupyter Notebook| 파일을 만들거나 `.amlignore` , 비어 있는 새 하위
 
 * [데이터 저장소에서 데이터에 액세스 하](how-to-access-data.md)는 방법에 대해 자세히 알아보세요.
 
-* [학습 목표를 설정 하는 방법](how-to-set-up-training-targets.md)에 대해 자세히 알아보세요.
+* [PYTHON SDK](how-to-create-attach-compute-sdk.md) 또는 [studio](how-to-create-attach-compute-studio.md)를 사용 하 여 계산 대상을 만드는 방법에 대해 자세히 알아보세요.

@@ -10,12 +10,13 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: swmachan
-ms.openlocfilehash: 1bf6fefbe7d2ea3fccc393f4445fceec44ed4117
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 68b0de40940fa75dd4eb4e1572405f31ce1c22b8
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83584674"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934381"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>CTF(Collaborative Translation Framework) 보고 사용 방법
 
@@ -33,7 +34,7 @@ Collaborative(Collaborative Translation Framework) 보고 API는 CTF 스토어�
 CTF 보고 API의 끝점은 https://api.microsofttranslator.com/v2/beta/ctfreporting.svc 입니다.
 
 ## <a name="methods"></a>메서드
-| 속성 | 설명|
+| 속성 | Description|
 |:---|:---|
 | GetUserTranslationCounts 메서드 | 사용자가 만든 번역 개수를 가져옵니다. |
 | GetUserTranslations 메서드 | 사용자가 만든 번역을 검색합니다. |
@@ -76,7 +77,7 @@ CTF 보고 API의 끝점은 https://api.microsofttranslator.com/v2/beta/ctfrepor
 | appId | **필수** 인증 헤더를 사용하는 경우 appid 필드를 비워 두고, 사용하지 않는 경우 "Bearer" + " " + 액세스 토큰을 포함하는 문자열을 지정합니다.|
 | uriPrefix | **선택 사항** 번역의 URI 접두사를 포함하는 문자열입니다.|
 | 원본 | **선택 사항** 번역 텍스트의 언어 코드를 나타내는 문자열입니다. |
-| 다음으로 변경: | **선택 사항** 텍스트를 번역할 언어 코드를 나타내는 문자열입니다.|
+| 을 | **선택 사항** 텍스트를 번역할 언어 코드를 나타내는 문자열입니다.|
 | minRating| **선택 사항** 번역된 텍스트의 최소 품질 등급을 나타내는 정수 값입니다. 유효한 값은 -10에서 10 사이입니다. 기본값은 1입니다.|
 | maxRating| **선택 사항** 번역된 텍스트의 최대 품질 등급을 나타내는 정수 값입니다. 유효한 값은 -10에서 10 사이입니다. 기본값은 1입니다.|
 | 사용자 | **선택 사항** 제출을 보낸 사람에 따라 결과를 필터링하는 데 사용되는 문자열입니다. |
@@ -93,12 +94,12 @@ CTF 보고 API의 끝점은 https://api.microsofttranslator.com/v2/beta/ctfrepor
 
 결과 집합에는 **UserTranslationCount** 배열이 포함됩니다. 각 UserTranslationCount에는 다음 요소가 있습니다.
 
-| 필드 | 설명 |
+| 필드 | Description |
 |:---|:---|
 | 개수| 검색된 결과 수입니다.|
-| 시작 | 원본 언어입니다.|
+| From | 원본 언어입니다.|
 | 등급| AddTranslation() 메서드 호출에서 제출자가 적용한 등급입니다.|
-| 대상| 대상 언어입니다.|
+| 작업| 대상 언어입니다.|
 | URI| AddTranslation() 메서드 호출에서 적용된 URI입니다.|
 | 사용자| 사용자 이름입니다.|
 
@@ -113,7 +114,7 @@ CTF 보고 API의 끝점은 https://api.microsofttranslator.com/v2/beta/ctfrepor
 > [!NOTE]
 > 서비스의 모든 사용자에게 공정하도록 할당량이 조정됩니다.
 
-**GitHib에서 코드 예제 보기**
+**GitHub에서 코드 예제 보기**
 * [C#](https://github.com/MicrosoftTranslator/CustomTranslator-API-CSharp)
 * [PHP](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-PHP)
 
@@ -147,7 +148,7 @@ CTF 보고 API의 끝점은 https://api.microsofttranslator.com/v2/beta/ctfrepor
 | appId | **필수** 인증 헤더를 사용하는 경우 appid 필드를 비워 두고, 사용하지 않는 경우 "Bearer" + " " + 액세스 토큰을 포함하는 문자열을 지정합니다.|
 | uriPrefix| **선택 사항** 번역의 URI 접두사를 포함하는 문자열입니다.|
 | 원본| **선택 사항** 번역 텍스트의 언어 코드를 나타내는 문자열입니다.|
-| 다음으로 변경:| **선택 사항** 텍스트를 번역할 언어 코드를 나타내는 문자열입니다.|
+| 을| **선택 사항** 텍스트를 번역할 언어 코드를 나타내는 문자열입니다.|
 | minRating| **선택 사항** 번역된 텍스트의 최소 품질 등급을 나타내는 정수 값입니다. 유효한 값은 -10에서 10 사이입니다. 기본값은 1입니다.|
 | maxRating| **선택 사항** 번역된 텍스트의 최대 품질 등급을 나타내는 정수 값입니다. 유효한 값은 -10에서 10 사이입니다. 기본값은 1입니다.|
 | 사용자| **필드. 제출 작성자를 기준으로 결과를 필터링 하는 데 사용 되는 문자열입니다.**|
@@ -164,13 +165,13 @@ CTF 보고 API의 끝점은 https://api.microsofttranslator.com/v2/beta/ctfrepor
 
 결과 집합에는 **UserTranslation** 배열이 포함됩니다. 각 UserTranslation에는 다음 요소가 있습니다.
 
-| 필드 | 설명 |
+| 필드 | Description |
 |:---|:---|
 | CreatedDateUtc| AddTranslation()을 사용하여 항목을 만든 날짜입니다.|
-| 시작| 원본 언어입니다.|
+| From| 원본 언어입니다.|
 | OriginalText| 요청을 제출할 때 사용되는 원본 언어 텍스트입니다.|
 |등급 |AddTranslation() 메서드 호출에서 제출자가 적용한 등급입니다.|
-|대상|    대상 언어입니다.|
+|작업|    대상 언어입니다.|
 |TranslatedText|    AddTranslation() 메서드 호출에서 제출된 번역입니다.|
 |URI|   AddTranslation() 메서드 호출에서 적용된 URI입니다.|
 |사용자   |사용자 이름입니다.|

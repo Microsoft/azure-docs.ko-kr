@@ -4,15 +4,15 @@ description: 이 문서에서는 Azure PowerShell를 사용 하 여 Azure 방화
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.date: 4/10/2019
+ms.date: 08/28/2020
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: 50d870590fa6b8351838af9cb91b7be39b8d30db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c720d7c261421ade9dfce01f0b116123dcab1e55
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85610662"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071706"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 Azure 방화벽 배포 및 구성
 
@@ -35,19 +35,19 @@ Azure 서브넷에서 아웃바운드 네트워크로의 액세스를 제어하�
 
 이 문서에서는 다음 방법을 설명합니다.
 
-> [!div class="checklist"]
-> * 테스트 네트워크 환경 설정
-> * 방화벽 배포
-> * 기본 경로 만들기
-> * [www.google.com]\(www.google.com) 액세스를 허용하도록 애플리케이션 규칙 구성
-> * 외부 DNS 서버 액세스를 허용하도록 네트워크 규칙 구성
-> * 방화벽 테스트
+
+* 테스트 네트워크 환경 설정
+* 방화벽 배포
+* 기본 경로 만들기
+* [www.google.com]\(www.google.com) 액세스를 허용하도록 애플리케이션 규칙 구성
+* 외부 DNS 서버 액세스를 허용하도록 네트워크 규칙 구성
+* 방화벽 테스트
 
 원하는 경우 [Azure Portal](tutorial-firewall-deploy-portal.md)를 사용 하 여이 절차를 완료할 수 있습니다.
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 절차를 수행 하려면 PowerShell을 로컬로 실행 해야 합니다. Azure PowerShell 모듈을 설치해야 합니다. `Get-Module -ListAvailable Az`을 실행하여 버전을 찾습니다. 업그레이드해야 하는 경우 [Azure PowerShell 모듈 설치](https://docs.microsoft.com/powershell/azure/install-Az-ps)를 참조하세요. PowerShell 버전을 확인한 후 `Connect-AzAccount`를 실행하여 Azure와의 연결을 만듭니다.
 

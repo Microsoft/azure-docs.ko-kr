@@ -6,13 +6,13 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.custom: devx-track-python
-ms.openlocfilehash: 7738582ec2839a6fddaa01ff0f9921c276c9748d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: devx-track-csharp, devx-track-python
+ms.openlocfilehash: 262a6612c50148232e814befc76707989befb18b
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843116"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212138"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Azure Functions에 대 한 Azure Service Bus 트리거
 
@@ -299,7 +299,7 @@ Python에서는 특성을 지원하지 않습니다.
 |**subscriptionName**|**SubscriptionName**|모니터링할 구독의 이름입니다. 큐가 아닌 토픽을 모니터링하는 경우에만 설정합니다.|
 |**connection**|**연결**|이 바인딩에 사용할 Service Bus 연결 문자열을 포함하는 앱 설정의 이름입니다. 앱 설정 이름이 "AzureWebJobs"로 시작하는 경우 이름의 나머지만을 지정할 수 있습니다. 예를 들어을 `connection` "MyServiceBus"로 설정 하는 경우 함수 런타임은 이름이 "AzureWebJobsMyServiceBus" 인 앱 설정을 찾습니다. `connection`을 비워 두면 함수 런타임 기능은 "AzureWebJobsServiceBus"라는 앱 설정에서 기본 Service Bus 연결 문자열을 사용합니다.<br><br>연결 문자열을 얻으려면 [관리 자격 증명 가져오기](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string)에 나온 단계를 따릅니다. 연결 문자열은 Service Bus 네임스페이스에 대한 것이어야 하며, 특정 큐 또는 항목으로 제한되지 않습니다. |
 |**accessRights**|**Access**|연결 문자열에 대한 액세스 권한입니다. 사용 가능한 값은 `manage` 및 `listen`입니다. 기본값은 `manage`이며, `connection`에 **관리** 권한이 있음을 의미합니다. **관리** 권한이 없는 연결 문자열을 사용하는 경우 `accessRights`을 "listen"으로 설정합니다. 그렇지 않으면 함수 런타임은 관리 권한이 필요한 작업 시도를 실패할 수 있습니다. Azure Functions 버전 2.x 이상에서는 Service Bus SDK의 최신 버전이 관리 작업을 지원 하지 않으므로이 속성을 사용할 수 없습니다.|
-|**isSessionsEnabled**|**IsSessionsEnabled**|`true`[세션 인식](../service-bus-messaging/message-sessions.md) 큐 또는 구독에 연결 하는 경우 `false`그렇지 않으면 기본값인입니다.|
+|**isSessionsEnabled**|**IsSessionsEnabled**|`true`[세션 인식](../service-bus-messaging/message-sessions.md) 큐 또는 구독에 연결 하는 경우 `false` 그렇지 않으면 기본값인입니다.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -312,8 +312,8 @@ Python에서는 특성을 지원하지 않습니다.
 * `string` - 메시지가 텍스트인 경우
 * `byte[]` - 이진 데이터에 유용합니다.
 * 사용자 지정 형식 - 메시지에 JSON이 포함된 경우 Azure Functions는 JSON 데이터를 역직렬화하려고 합니다.
-* `BrokeredMessage`- [BrokeredMessage \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) 메서드를 사용 하 여 deserialize 된 메시지를 제공 합니다.
-* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet)-메시지 컨테이너에서 메시지를 수신 하 고 승인 하는 데 사용 [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) 됩니다 (가로 설정 된 경우 필수 `false` ).
+* `BrokeredMessage` - [BrokeredMessage \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) 메서드를 사용 하 여 deserialize 된 메시지를 제공 합니다.
+* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet) -메시지 컨테이너에서 메시지를 수신 하 고 승인 하는 데 사용 [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) 됩니다 (가로 설정 된 경우 필수 `false` ).
 
 이러한 매개 변수 형식은 Azure Functions 버전 1.x에 대 한 것입니다. 2.x 이상에서는 대신을 사용 [`Message`](/dotnet/api/microsoft.azure.servicebus.message) `BrokeredMessage` 합니다.
 
@@ -324,7 +324,7 @@ Python에서는 특성을 지원하지 않습니다.
 * `string` - 메시지가 텍스트인 경우
 * `byte[]` - 이진 데이터에 유용합니다.
 * 사용자 지정 형식 - 메시지에 JSON이 포함된 경우 Azure Functions는 JSON 데이터를 역직렬화하려고 합니다.
-* `BrokeredMessage`- [BrokeredMessage \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) 메서드를 사용 하 여 deserialize 된 메시지를 제공 합니다.
+* `BrokeredMessage` - [BrokeredMessage \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) 메서드를 사용 하 여 deserialize 된 메시지를 제공 합니다.
 
 이러한 매개 변수는 Azure Functions 버전 1.x에 대 한 것입니다. 2.x 이상에서는 대신을 사용 [`Message`](/dotnet/api/microsoft.azure.servicebus.message) `BrokeredMessage` 합니다.
 
@@ -358,7 +358,7 @@ Functions 런타임은 [PeekLock 모드](../service-bus-messaging/service-bus-pe
 
 Service Bus 트리거는 몇 가지 [메타데이터 속성](./functions-bindings-expressions-patterns.md#trigger-metadata)을 제공합니다. 이러한 속성을 다른 바인딩에서 바인딩 식의 일부로 사용하거나 코드에서 매개 변수로 사용할 수 있습니다. 이러한 속성은 [Message](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet) 클래스의 멤버입니다.
 
-|속성|Type|설명|
+|속성|형식|설명|
 |--------|----|-----------|
 |`ContentType`|`string`|응용 프로그램 관련 논리에 대해 보낸 사람 및 수신자가 사용한 콘텐츠 형식 식별자입니다.|
 |`CorrelationId`|`string`|상관관계 ID입니다.|

@@ -9,21 +9,23 @@ ms.author: gopalv
 author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
-ms.openlocfilehash: d6c70f27eebc9d502ce7275603e99975c2efc267
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 9d6e234e1f4c8ac5199b92a09eb12bf7aa41b01b
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544616"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185488"
 ---
 # <a name="preview-no-code-model-deployment"></a>모드 코드 없는 모델 배포
 
 코드 없는 모델 배포는 현재 미리 보기로 제공 되며 다음과 같은 기계 학습 프레임 워크를 지원 합니다.
 
-## <a name="tensorflow-savedmodel-format"></a>Tensorflow SavedModel 형식
-코드 없는 모델 배포를 사용 하려면 Tensorflow 모델을 **SavedModel 형식** 으로 등록 해야 합니다.
+## <a name="tensorflow-savedmodel-format"></a>TensorFlow SavedModel 형식
+코드 없는 모델 배포를 사용 하려면 TensorFlow 모델을 **SavedModel 형식** 으로 등록 해야 합니다.
 
 SavedModel를 만드는 방법에 대 한 자세한 내용은 [이 링크](https://www.tensorflow.org/guide/saved_model) 를 참조 하세요.
+
+TensorFlow가 제공 하는 [DockerHub](https://registry.hub.docker.com/r/tensorflow/serving/tags)의 "Tags" 아래에 나열 된 TensorFlow 버전을 지원 합니다.
 
 ```python
 from azureml.core import Model

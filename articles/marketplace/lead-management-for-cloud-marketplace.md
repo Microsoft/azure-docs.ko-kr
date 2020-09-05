@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/14/2020
-ms.openlocfilehash: d0aea0594a97990c7c89434e73fcd4982b01e20f
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: b08324654a046b5a2296f6e533107c1b26a0e1fc
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88035181"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606889"
 ---
 # <a name="lead-management-for-the-commercial-marketplace"></a>상업적 marketplace에 대 한 리드 관리
 
@@ -170,7 +170,7 @@ title = MSFT_TEST_636573304831318844
 
 **Marketplace에서 메일을 받았으나 CRM에서 리드를 찾을 수 없는 이유는 무엇인가요?**  
 
-최종 사용자의 메일 도메인 원본이 .edu일 수 있습니다. 개인 정보 보호를 위해 .edu 도메인에서 개인 식별이 가능한 데이터를 전달하지 않습니다. [도움말 및 지원](https://aka.ms/marketplacepublishersupport)에서 지원 티켓을 제출하세요.
+최종 사용자의 메일 도메인 원본이 .edu일 수 있습니다. 개인 정보 보호를 위해 .edu 도메인에서 개인 식별이 가능한 데이터를 전달 하지 않습니다. [도움말 및 지원](https://aka.ms/marketplacepublishersupport)에서 지원 티켓을 제출하세요.
 
 **Azure 테이블/Azure Blob을 리드 대상으로 구성했습니다. 리드를 보려면 어떻게 해야 하나요?** 
 

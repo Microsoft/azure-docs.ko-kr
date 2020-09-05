@@ -2,26 +2,21 @@
 title: '자습서: PressPage와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 PressPage 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: ff2b5087-2768-4273-b831-aaffbc08189d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65a1bcad1d77030a029c623abea48f12741f2352
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 714d194a8ee6cc55ee09475b482ab80674d59ec4
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75532746"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88553600"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-presspage"></a>자습서: PressPage와 Azure Active Directory SSO(Single Sign-On) 통합
 

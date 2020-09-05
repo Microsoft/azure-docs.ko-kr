@@ -3,12 +3,13 @@ title: 제한된 요청에 대한 지침
 description: Azure 리소스 그래프에 의해 제한되는 요청을 방지하기 위해 병렬로 그룹화하고, 시차를 두고, 페이지를 매기고, 쿼리하는 방법을 알아봅니다.
 ms.date: 08/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 343d0c02e300431b63b908199931c20a50b85dd2
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c8576fe38433026a28a3fb09a03332b5dd756bab
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541841"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006009"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Azure Resource Graph의 제한된 요청에 대한 지침
 

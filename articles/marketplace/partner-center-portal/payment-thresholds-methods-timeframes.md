@@ -1,22 +1,22 @@
 ---
 title: 지역별 지급 세부 정보 - Microsoft 상업용 마켓플레이스
-description: 대금을 보내는 데 걸리는 예상 시간 및 지불을 받을 수 있는 Microsoft 상점이 국가/지역 및 지불 계정 유형에 따라 달라지는 방식을 알아봅니다.
+description: 국가/지역 및 지급 계정 유형에 따라 지불을 전송 하는 데 예상 되는 시간과 지불을 받을 수 있는 Microsoft online 스토어를 알아봅니다.
 author: mingshen-ms
 ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 44246fa122b7c602e47c44e48c43c2a42d01de77
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: f5614da7eac0717894d2bcb3c9cfdd959cb57f72
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327330"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607279"
 ---
 # <a name="payment-thresholds-methods-and-time-frames"></a>결제 임계값, 메서드 및 시간 프레임
 
-대금을 보내는 데 걸리는 예상 시간 및 지불을 받을 수 있는 상점은 국가/지역 및 지불 계정 유형에 따라 다를 수 있습니다. 이 문서에서는 각 국가 및 지역에서 지원되는 지불 방법을 간략하게 설명합니다.
+지불 전송 예상 시간 및 지불을 받을 수 있는 온라인 매장은 country/region 및 지급 계정 유형에 따라 달라질 수 있습니다. 이 문서에서는 각 국가 및 지역에서 지원되는 지불 방법을 간략하게 설명합니다.
 
 지정된 국가 및 지역에 대해서는 ACH/SEPA 또는 전신 송금으로 지불합니다. 일부 국가 및 지역에서는 지불 방법으로 PayPal도 지원합니다.
 

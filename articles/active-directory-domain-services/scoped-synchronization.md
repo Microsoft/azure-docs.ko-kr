@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: iainfou
-ms.openlocfilehash: 97c561b2ae919799343abe844b57239d04c26d90
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: fe373b9aa08d6999a9c57dd0008a207071e1dddd
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283132"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068901"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-the-azure-portal"></a>Azure Portal를 사용 하 여 Azure AD에서 Azure Active Directory Domain Services로 범위 동기화 구성
 
@@ -56,7 +57,7 @@ ms.locfileid: "87283132"
 
 Azure Portal에서 범위 동기화를 사용 하도록 설정 하려면 다음 단계를 완료 합니다.
 
-1. Azure Portal에서 **Azure AD Domain Services**를 검색 하 고 선택 합니다. 관리되는 도메인(예: *aaddscontoso.com*)을 선택합니다.
+1. Azure Portal에서 **Azure AD Domain Services**를 검색하여 선택합니다. 관리되는 도메인(예: *aaddscontoso.com*)을 선택합니다.
 1. 왼쪽의 메뉴에서 **동기화** 를 선택 합니다.
 1. *동기화 유형에*대해 **범위**지정을 선택 합니다.
 1. **그룹 선택**을 선택 하 고 추가할 그룹을 검색 하 여 선택 합니다.
@@ -68,7 +69,7 @@ Azure Portal에서 범위 동기화를 사용 하도록 설정 하려면 다음 
 
 사용자가 관리 되는 도메인에 동기화 해야 하는 그룹 목록을 수정 하려면 다음 단계를 완료 합니다.
 
-1. Azure Portal에서 **Azure AD Domain Services**를 검색 하 고 선택 합니다. 관리되는 도메인(예: *aaddscontoso.com*)을 선택합니다.
+1. Azure Portal에서 **Azure AD Domain Services**를 검색하여 선택합니다. 관리되는 도메인(예: *aaddscontoso.com*)을 선택합니다.
 1. 왼쪽의 메뉴에서 **동기화** 를 선택 합니다.
 1. 그룹을 추가 하려면 위쪽에서 **+ 그룹을 선택** 하 고 추가할 그룹을 선택 합니다.
 1. 동기화 범위에서 그룹을 제거 하려면 현재 동기화 된 그룹 목록에서 해당 그룹을 선택 하 고 **그룹 제거**를 선택 합니다.
@@ -80,7 +81,7 @@ Azure Portal에서 범위 동기화를 사용 하도록 설정 하려면 다음 
 
 관리 되는 도메인에 대 한 그룹 기반 범위 동기화를 사용 하지 않도록 설정 하려면 다음 단계를 완료 합니다.
 
-1. Azure Portal에서 **Azure AD Domain Services**를 검색 하 고 선택 합니다. 관리되는 도메인(예: *aaddscontoso.com*)을 선택합니다.
+1. Azure Portal에서 **Azure AD Domain Services**를 검색하여 선택합니다. 관리되는 도메인(예: *aaddscontoso.com*)을 선택합니다.
 1. 왼쪽의 메뉴에서 **동기화** 를 선택 합니다.
 1. *동기화 유형을* **범위** 에서 **모두**로 변경한 다음, **동기화 범위 저장**을 선택 합니다.
 

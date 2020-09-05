@@ -8,12 +8,12 @@ ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 5b585a903267386358552154228705c1921df619
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d07364e20cc11abc52ad9b308eb5daed8a65c146
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255333"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923384"
 ---
 # <a name="simple-query-syntax-in-azure-cognitive-search"></a>Azure Cognitive Search의 단순 쿼리 구문
 
@@ -21,7 +21,7 @@ Azure Cognitive Search는 두 가지 Lucene 기반 쿼리 언어 즉, [단순 �
 
 단순 파서는 보다 유연 하며, 완벽 하 게 구성 되지 않은 경우에도 요청을 해석 하려고 합니다. 이러한 유연성으로 인해 Azure Cognitive Search의 쿼리에 대 한 기본값입니다. 
 
-단순 구문은 `search` 같은 검색 문서 API의 [$filter expressions](search-filters.md) 매개 변수에 사용 되는 [OData 구문과](query-odata-filter-orderby-syntax.md) 혼동 하지 않도록 [문서 검색 요청의](https://docs.microsoft.com/rest/api/searchservice/search-documents)매개 변수에 전달 되는 쿼리 식에 사용 됩니다. `search`및 `$filter` 매개 변수의 구문은 서로 다르며 쿼리를 생성 하 고 문자열을 이스케이프 하는 등의 고유한 규칙을 사용 합니다.
+단순 구문은 `search` 같은 검색 문서 API의 [$filter expressions](search-filters.md) 매개 변수에 사용 되는 [OData 구문과](query-odata-filter-orderby-syntax.md) 혼동 하지 않도록 [문서 검색 요청의](/rest/api/searchservice/search-documents)매개 변수에 전달 되는 쿼리 식에 사용 됩니다. `search`및 `$filter` 매개 변수의 구문은 서로 다르며 쿼리를 생성 하 고 문자열을 이스케이프 하는 등의 고유한 규칙을 사용 합니다.
 
 단순 파서는 [Apache Lucene Simple 쿼리 파서](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/simple/SimpleQueryParser.html) 클래스를 기반으로 하지만 Azure Cognitive Search의 구현에서 유사 항목 검색은 제외 됩니다. [유사 항목 검색](search-query-fuzzy.md) 또는 기타 고급 쿼리 양식이 필요한 경우 대신 대체 [전체 Lucene 쿼리 구문을](query-lucene-syntax.md) 사용해 보세요.
 
@@ -43,7 +43,7 @@ Azure Cognitive Search는 두 가지 Lucene 기반 쿼리 언어 즉, [단순 �
 
 ### <a name="escaping-search-operators"></a>검색 연산자 이스케이프  
 
-단순 구문에서 검색 연산자는 다음과 같은 문자를 포함 합니다.`+ | " ( ) ' \`  
+단순 구문에서 검색 연산자는 다음과 같은 문자를 포함 합니다. `+ | " ( ) ' \`  
 
 이러한 문자가 인덱스에 있는 토큰의 일부인 경우 쿼리에서 단일 백슬래시 ()를 접두사로 사용 하 여 이스케이프 합니다 `\` . 예를 들어 전체 용어 토큰화를 위해 사용자 지정 분석기를 사용 하 고 인덱스에 "Luxury + 호텔" 문자열이 포함 되어 있다고 가정 합니다. 이 토큰과 정확히 일치 하는 항목을 가져오려면 이스케이프 문자를 삽입  `search=luxury\+hotel` 합니다. 
 
@@ -66,11 +66,11 @@ URL에서 안전하지 않은 문자 및 예약된 문자를 모두 인코딩하
 
 일부 경우에는 ' ❤ '가 수 또는 ' € ' 기호와 같은 특수 문자를 검색 하는 것이 좋습니다. 이 경우 사용 하는 분석기에서 해당 문자를 필터링 하지 않도록 합니다.  표준 분석기는 많은 특수 문자를 무시 하므로 인덱스에서 토큰이 되지 않습니다.
 
-따라서 첫 번째 단계는 이러한 요소 토큰을 고려 하는 분석기를 사용 하는지 확인 하는 것입니다. 예를 들어 "공백" 분석기는 공백으로 구분 되는 문자 시퀀스를 토큰으로 간주 하므로 "❤" 문자열은 토큰으로 간주 됩니다. 또한 Microsoft English analyzer ("en-us")와 같은 분석기는 "€" 문자열을 토큰으로 고려 합니다. 분석기를 [테스트](https://docs.microsoft.com/rest/api/searchservice/test-analyzer) 하 여 지정 된 쿼리에 대해 생성 되는 토큰을 확인할 수 있습니다.
+따라서 첫 번째 단계는 이러한 요소 토큰을 고려 하는 분석기를 사용 하는지 확인 하는 것입니다. 예를 들어 "공백" 분석기는 공백으로 구분 되는 문자 시퀀스를 토큰으로 간주 하므로 "❤" 문자열은 토큰으로 간주 됩니다. 또한 Microsoft English analyzer ("en-us")와 같은 분석기는 "€" 문자열을 토큰으로 고려 합니다. 분석기를 [테스트](/rest/api/searchservice/test-analyzer) 하 여 지정 된 쿼리에 대해 생성 되는 토큰을 확인할 수 있습니다.
 
 유니코드 문자를 사용 하는 경우 쿼리 url에서 기호가 제대로 이스케이프 되었는지 확인 합니다. 예를 들어 "❤"은 이스케이프 시퀀스를 사용 `%E2%9D%A4+` 합니다. Postman은이 변환을 자동으로 수행 합니다.
 
-###  <a name="query-size-limits"></a><a name="bkmk_querysizelimits"></a>쿼리 크기 제한
+###  <a name="query-size-limits"></a><a name="bkmk_querysizelimits"></a> 쿼리 크기 제한
 
  Azure Cognitive Search에 보낼 수 있는 쿼리 크기에는 제한이 있습니다. 특히, 최대 1024개 절(AND, OR 등으로 구분된 식)을 사용할 수 있습니다. 또한 한 쿼리의 개별 용어 크기도 약 32KB로 제한됩니다. 애플리케이션이 검색 쿼리를 프로그래밍 방식으로 생성하는 경우 쿼리가 제한 없는 크기로 생성되지 않도록 디자인하는 것이 좋습니다.  
 
@@ -94,9 +94,9 @@ NOT 연산자는 빼기 기호입니다. 예를 들어는 `wifi –luxury` 및/�
 
 쿼리 요청에 대 한 **Searchmode** 매개 변수는 not 연산자를 사용 하는 용어가 쿼리에서 다른 용어를 사용 하 여 And 또는 ORed 여부를 제어 합니다 ( `+` 다른 조건에 or 연산자가 없는 것으로 가정 `|` ). 유효한 값은 `any`나 `all`입니다.
 
-`searchMode=any`더 많은 결과를 포함 하 여 쿼리 회수를 향상 시키고 기본적으로 `-` "OR NOT"으로 해석 됩니다. 예를 들어, `wifi -luxury`는 용어 `wifi`를 포함하는 문서 또는 용어 `luxury`를 포함하지 않는 문서를 검색합니다.
+`searchMode=any` 더 많은 결과를 포함 하 여 쿼리 회수를 향상 시키고 기본적으로 `-` "OR NOT"으로 해석 됩니다. 예를 들어, `wifi -luxury`는 용어 `wifi`를 포함하는 문서 또는 용어 `luxury`를 포함하지 않는 문서를 검색합니다.
 
-`searchMode=all`더 작은 결과를 포함 하 여 쿼리의 전체 자릿수를 늘리고 기본적으로-는 "AND NOT"으로 해석 됩니다. 예를 들어 `wifi -luxury`는 용어 `wifi`를 포함하고 용어 "luxury"를 포함하지 않는 문서를 검색합니다. 이러한 동작이 `-` 연산자의 좀 더 간단한 동작일 것입니다. 따라서 `searchMode=all` `searchMode=any` 회수 대신 전체 자릿수에 대 한 검색을 최적화 하 *고* 사용자가 `-` 검색에서 연산자를 자주 사용 하는 경우 대신를 사용 하는 것을 고려해 야 합니다.
+`searchMode=all` 더 작은 결과를 포함 하 여 쿼리의 전체 자릿수를 늘리고 기본적으로-는 "AND NOT"으로 해석 됩니다. 예를 들어 `wifi -luxury`는 용어 `wifi`를 포함하고 용어 "luxury"를 포함하지 않는 문서를 검색합니다. 이러한 동작이 `-` 연산자의 좀 더 간단한 동작일 것입니다. 따라서 `searchMode=all` `searchMode=any` 회수 대신 전체 자릿수에 대 한 검색을 최적화 하 *고* 사용자가 `-` 검색에서 연산자를 자주 사용 하는 경우 대신를 사용 하는 것을 고려해 야 합니다.
 
 **Searchmode** 설정을 결정할 때 다양 한 응용 프로그램의 쿼리에 대 한 사용자 상호 작용 패턴을 고려 합니다. 정보를 검색 하는 사용자는 더 많은 기본 제공 탐색 구조를 포함 하는 전자 상거래 사이트와는 달리 쿼리에 연산자를 포함할 가능성이 높습니다.
 
@@ -110,7 +110,7 @@ NOT 연산자는 빼기 기호입니다. 예를 들어는 `wifi –luxury` 및/�
 
 용어 끝 또는 중간에 대해 접미사 또는 중 위 일치와 같은 기타 와일드 카드 쿼리 변형의 경우 [와일드 카드 검색에 전체 Lucene 구문을](query-lucene-syntax.md#bkmk_wildcard)사용 합니다.
 
-## <a name="phrase-search-"></a>구 검색`"`
+## <a name="phrase-search-"></a>구 검색 `"`
 
 용어 검색은 하나 이상의 용어에 대 한 쿼리로 서 일치 항목으로 간주 됩니다. 구 검색은 따옴표로 묶인 정확한 구입니다 `" "` . 예를 들어, `Roach Motel` (따옴표 제외)는 `Roach` 임의의 순서로 및/또는 모든 위치를 포함 하는 문서를 검색 합니다 `Motel` `"Roach Motel"` . (따옴표 포함)은 해당 전체 구를 포함 하는 문서를 해당 순서 대로 일치 시킵니다 (어휘 분석은 여전히 적용 됨).
 
@@ -119,6 +119,6 @@ NOT 연산자는 빼기 기호입니다. 예를 들어는 `wifi –luxury` 및/�
 + [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)
 + [단순 검색을 위한 쿼리 예제](search-query-simple-examples.md)
 + [전체 Lucene 검색에 대 한 쿼리 예제](search-query-lucene-examples.md)
-+ [문서 검색 REST API](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
++ [문서 검색 REST API](/rest/api/searchservice/Search-Documents)
 + [Lucene 쿼리 구문](query-lucene-syntax.md)
-+ [OData 식 구문](query-odata-filter-orderby-syntax.md) 
++ [OData 식 구문](query-odata-filter-orderby-syntax.md)

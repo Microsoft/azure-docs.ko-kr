@@ -3,7 +3,7 @@ title: Azure 보증 Linux 배포판
 description: Ubuntu, CentOS, Oracle 및 SUSE 관련 지침을 포함하여 Azure에서 Linux의 인증 배포를 수행하는 방법에 대해 알아봅니다.
 services: virtual-machines-linux
 documentationcenter: ''
-author: gbowerman
+author: danielsollondon
 manager: gwallace
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 2777a526-c260-4cb9-a31a-bdfe1a55fffc
@@ -11,26 +11,26 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 08/02/2020
 ms.author: guybo
-ms.openlocfilehash: fd21170c4edc1ed0587ea4d4e067e61590530623
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 0b3a598213545bbad833e9b8036f65b999df1c76
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283319"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607009"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Azure에서 Linux 배포판 보증
 
-파트너는 Azure Marketplace에서 Linux 이미지를 제공합니다. Microsoft는 다양 한 Linux 커뮤니티와 협력 하 여 보증 메일 그룹에 더 많은 추가 기능을 추가 합니다. Marketplace에서 사용할 수 없는 배포판의 경우 [linux 운영 체제를 포함 하는 가상 하드 디스크 만들기 및 업로드](./create-upload-generic.md)의 지침에 따라 항상 고유한 linux를 가져올 수 있습니다.
+파트너는 Azure Marketplace에서 Linux 이미지를 제공 합니다. Microsoft는 다양 한 Linux 커뮤니티와 협력 하 여 보증 메일 그룹에 더 많은 추가 기능을 추가 합니다. Marketplace에서 사용할 수 없는 배포판의 경우 [linux 운영 체제를 포함 하는 가상 하드 디스크 만들기 및 업로드](./create-upload-generic.md)의 지침에 따라 항상 고유한 linux를 가져올 수 있습니다.
 
 ## <a name="supported-distributions-and-versions"></a>지원되는 배포판 및 버전
 
-다음 표에서 Linux 배포판 및 Azure에서 지원 되는 버전을 나열합니다. Azure의 Linux 및 오픈 소스 기술 지원에 대 한 자세한 내용은 [Microsoft Azure의 linux 이미지에](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) 대 한 지원을 참조 하세요.
+다음 표에서 Linux 배포판 및 Azure에서 지원 되는 버전을 나열합니다. 자세한 내용은 [Microsoft Azure의 Linux 이미지 지원](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure)을 참조 하세요.
 
-Hyper-V 및 Azure용 LIS(Linux 통합 서비스) 드라이버는 Microsoft가 업스트림 Linux 커널로 직접 제공되는 커널 모듈입니다. 일부 LIS 드라이버는 기본적으로 배포 커널에 빌드됩니다. RHEL(Red Hat Enterprise)/CentOS를 기반으로 둔 이전 배포는 [Hyper-V 및 Azure용 Linux Integration Services 버전 4.2](https://www.microsoft.com/download/details.aspx?id=55106)에서 별도의 다운로드로 제공됩니다. LIS 드라이버에 대한 자세한 내용은 [Linux 커널 요구 사항](create-upload-generic.md#linux-kernel-requirements)을 참조하세요.
+Hyper-V 및 Azure용 LIS(Linux 통합 서비스) 드라이버는 Microsoft가 업스트림 Linux 커널로 직접 제공되는 커널 모듈입니다. 일부 LIS 드라이버는 기본적으로 배포 커널에 빌드됩니다. RHEL(Red Hat Enterprise)/CentOS를 기반으로 둔 이전 배포는 [Hyper-V 및 Azure용 Linux Integration Services 버전 4.2](https://www.microsoft.com/download/details.aspx?id=55106)에서 별도의 다운로드로 제공됩니다. 자세한 내용은 [Linux 커널 요구 사항](create-upload-generic.md#linux-kernel-requirements)을 참조 하세요.
 
-Azure Linux 에이전트는 Azure Marketplace 이미지에 이미 사전 설치되어 있으며 일반적으로 배포판의 패키지 리포지토리에서 사용할 수 있습니다. 소스 코드는 [GitHub](https://github.com/azure/walinuxagent)에서 찾을 수 있습니다.
+Azure Linux 에이전트는 이미 Azure Marketplace 이미지에 미리 설치 되어 있으며 일반적으로 배포의 패키지 리포지토리에서 사용할 수 있습니다. 소스 코드는 [GitHub](https://github.com/azure/walinuxagent)에서 찾을 수 있습니다.
 
 | 배포 | 버전 | 드라이버 | 에이전트 |
 | --- | --- | --- | --- |
@@ -39,14 +39,14 @@ Azure Linux 에이전트는 Azure Marketplace 이미지에 이미 사전 설치�
 | Debian by Credativ |8.x, 9.x |커널에 있음 |패키지: "waagent"에서 리포지토리의 <br/>소스 코드: [GitHub](https://github.com/Azure/WALinuxAgent) |
 |Kinvolk에의 한 Flatcar Container Linux| Stable, Edge| | |
 | Oracle에서 Oracle Linux |6.x, 7.x, 8.x |커널에 있음 |패키지: "WALinuxAgent"의 리포지토리에 있음 <br/>소스 코드: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
-| Red Hat에서 Red Hat Enterprise Linux |6.x, 7.x, 8.x |커널에 있음 |패키지: "WALinuxAgent"의 리포지토리에 있음 <br/>소스 코드: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| [Red Hat에서 Red Hat Enterprise Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/overview) |6.x, 7.x, 8.x |커널에 있음 |패키지: "WALinuxAgent"의 리포지토리에 있음 <br/>소스 코드: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise by SUSE |SLES/SLES for SAP 11.x, 4.x, 4.x <br/> [SUSE 공용 클라우드 이미지 수명 주기](https://www.suse.com/c/suse-public-cloud-image-life-cycle/) |커널에 있음 |패키지:<p> 11의 경우 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 리포지토리에 있음<br>12의 경우 "python-azure-agent" 아래의 "퍼블릭 클라우드" 모듈에 포함됨<br/>소스 코드: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | SUSE 별 openSUSE |openSUSE Leap 15.x |커널에 있음 |패키지: "python-azure-agent"의 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 리포지토리에 있음 <br/>소스 코드: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | 정식 Ubuntu |Ubuntu 서버 및 Pro. 16.x, 18.x, 20.x<p>Ubuntu 12.04 및 14.04에 대 한 확장 지원에 대 한 정보는 [Ubuntu 확장 보안 유지 관리](https://www.ubuntu.com/esm)에서 찾을 수 있습니다. |커널에 있음 |패키지: "WALinuxAgent"의 리포지토리에 있음 <br/>소스 코드: [GitHub](https://github.com/Azure/WALinuxAgent) |
 
 ## <a name="image-update-cadence"></a>이미지 업데이트 흐름
 
-Azure를 사용 하려면 보증 Linux 배포판의 게시자가 분기별 또는 더 빠른 흐름에서 최신 패치와 보안 픽스를 사용 하 여 Azure Marketplace의 이미지를 정기적으로 업데이트 해야 합니다. Azure Marketplace의 업데이트 된 이미지는 이미지 SKU의 새 버전으로 고객에 게 자동으로 제공 됩니다. Linux 이미지를 찾는 방법에 대 한 자세한 정보: [Azure Marketplace에서 LINUX VM 이미지를 찾습니다](./cli-ps-findimage.md).
+Azure를 사용 하려면 보증 Linux 배포판의 게시자가 분기별 또는 더 빠른 흐름에서 최신 패치와 보안 픽스를 사용 하 여 Azure Marketplace의 이미지를 정기적으로 업데이트 해야 합니다. Marketplace의 업데이트 된 이미지는 새 버전의 이미지 SKU로 고객에 게 자동으로 제공 됩니다. Linux 이미지를 찾는 방법에 대 한 자세한 정보: [Azure Marketplace에서 LINUX VM 이미지를 찾습니다](./cli-ps-findimage.md).
 
 ## <a name="azure-tuned-kernels"></a>Azure 조정 커널
 
@@ -75,6 +75,14 @@ Microsoft에는 CoreOS 사용자를 위한 2 개의 마이그레이션 채널이
 
 Credativ는 독립적인 컨설팅 및 서비스 회사로, 주요 사업 분야는 무료 소프트웨어를 사용하여 전문 솔루션을 개발하고 구현하는 것입니다. 시장을 선도하는 오픈 소스 전문 회사인 Credative는 지원을 받는 많은 IT 부서들로부터 국제적인 명성을 얻고 있습니다. 현재 Credativ는 Microsoft와 협력 관계를 맺고 Debian 8(Jessie) 및 Debian 7(Wheezy) 이전 버전에 해당하는 Debian 이미지를 준비 중입니다. 두 이미지 모두 Azure에서 실행하도록 특별히 설계되었으며 플랫폼을 통해 쉽게 관리할 수 있습니다. Credativ는 또한 자체적인 오픈 소스 지원 센터를 통해 장기적인 유지 및 Azure의 Debian 이미지 업데이트를 지원합니다.
 
+### <a name="kinvolk"></a>Kinvolk
+[https://www.kinvolk.io/flatcar-container-linux/](https://www.kinvolk.io/flatcar-container-linux/)
+
+Kinvolk는 Flatcar Container Linux를 기반으로 하는 회사 이며, 컨테이너 화 된 응용 프로그램에 대 한 변경 불가능 한 최소 및 자동 업데이트 기반에 대해 원래 CoreOS 비전을 계속 합니다. 최소 배포판 Flatcar에는 컨테이너를 배포 하는 데 필요한 패키지만 포함 되어 있습니다. 변경 불가능 한 파일 시스템은 일관성과 보안을 보장 하는 반면 자동 업데이트 기능을 사용 하면 최신 보안 픽스를 사용 하 여 항상 최신 상태를 유지할 수 있습니다. 
+
+Flatcar Container Linux는 연중 무휴 응답, 보안 및 기술 경고, 장기 지원 채널을 포함 하는 독점적인 Azure에 최적화 된 이미지를 포함 하는 선택적 상업적 지원 구독을 제공 하는 Kinvolk의 글로벌 Linux 및 컨테이너 기술 전문가에 의해 백업 됩니다.
+
+
 ### <a name="oracle"></a>Oracle
 
 [https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html](https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html)
@@ -85,7 +93,7 @@ Oracle의 전략은 공용 및 사설 클라우드에 대 한 광범위 한 솔�
 
 [https://www.redhat.com/en/partners/strategic-alliance/microsoft](https://www.redhat.com/en/partners/strategic-alliance/microsoft)
 
-세계 최고의 오픈 소스 솔루션 공급자 인 Red Hat는 90% 이상의 Fortune 500 회사에서 비즈니스 문제를 해결 하 고, IT 및 비즈니스 전략을 맞추고, 기술의 미래를 준비 하는 데 도움이 됩니다. 이를 위해 Red Hat은 개방형 비즈니스 모델과 경제적이고 예측 가능한 구독 모델을 통해 안전한 솔루션을 제공합니다.
+세계 최고의 오픈 소스 솔루션 공급자 인 Red Hat는 90% 이상의 Fortune 500 회사에서 비즈니스 문제를 해결 하 고, IT 및 비즈니스 전략을 맞추고, 기술의 미래를 준비 하는 데 도움이 됩니다. Red Hat은 오픈 비즈니스 모델 및 저렴 하 고 예측 가능한 구독 모델을 통해 안전한 솔루션을 제공 하 여이를 달성 합니다.
 
 ### <a name="suse"></a>SUSE
 

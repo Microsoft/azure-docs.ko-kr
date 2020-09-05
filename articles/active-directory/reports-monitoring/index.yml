@@ -12,12 +12,12 @@ metadata:
   ms.author: markvi
   ms.date: 08/29/2019
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 28f65417053d136983611cfa07ebedb7de93e25a
-  ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+  ms.openlocfilehash: d7b75dfae53884bcea5f721d6d9c15b1e80e655d
+  ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 05/29/2020
-  ms.locfileid: "84168627"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89226848"
 landingContent:
 - title: Azure Active Directory 보고서 및 모니터링 정보
   linkLists:
@@ -34,9 +34,9 @@ landingContent:
     - text: 로그인 로그
       url: concept-sign-ins.md
     - text: 위험한 로그인 로그
-      url: concept-risky-sign-ins.md
+      url: ../identity-protection/overview-identity-protection.md
     - text: 위험 플래그가 지정된 사용자 로그
-      url: concept-user-at-risk.md
+      url: ../identity-protection/overview-identity-protection.md
     - text: 프로비저닝 로그
       url: concept-provisioning-logs.md
 - title: Azure AD에서 보고서 사용

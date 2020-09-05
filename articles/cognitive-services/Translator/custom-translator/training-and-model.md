@@ -7,19 +7,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 05/26/2020
+ms.date: 08/17/2020
 ms.author: swmachan
-ms.openlocfilehash: fc81b0c01bf749bf7f643833026e364fa7c8ebd2
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: d8713d20503dc788175a408f5ec652505090396e
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83996332"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510830"
 ---
 # <a name="what-are-trainings-and-models"></a>학습 및 모델이란?
 
 모델은 특정 언어 쌍에 대한 번역을 제공하는 시스템입니다.
-성공적인 학습의 결과가 모델입니다. 모델을 학습할 때 학습, 조정 및 테스트 라는 세 개의 상호 배타적인 문서 유형이 필요 합니다. 사전 문서 형식을 제공할 수도 있습니다. [문장 맞춤](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/sentence-alignment#suggested-minimum-number-of-sentences)으로 refere 주세요.
+성공적인 학습의 결과가 모델입니다. 모델을 학습할 때 학습, 조정 및 테스트 라는 세 개의 상호 배타적인 문서 유형이 필요 합니다. 사전 문서 형식을 제공할 수도 있습니다. [문장 맞춤](https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/sentence-alignment#suggested-minimum-number-of-sentences)을 참조 하십시오.
 
 학습을 큐에 대기 시킬 때 학습 데이터만 제공 되는 경우에는 사용자 지정 변환기가 튜닝 및 테스트 데이터를 자동으로 어셈블합니다. 학습 문서에서 무작위로 문장의 임의 하위 집합을 사용 하 고 이러한 문장을 학습 데이터 자체에서 제외 합니다.
 
@@ -27,7 +27,7 @@ ms.locfileid: "83996332"
 
 학습 세트에 포함된 문서는 Custom Translator에서 모델을 빌드하기 위한 기준으로 사용됩니다. 학습을 실행하는 동안 이러한 문서에 나온 문장이 정렬됩니다(또는 쌍으로 작성됨). 학습 문서의 세트를 자유롭게 구성할 수 있습니다. 접선 관련성이 있다고 생각되는 문서들을 하나의 모델에 포함시킬 수 있습니다. [BLEU(Bilingual Evaluation Understudy) 점수](what-is-bleu-score.md)에서 영향을 확인하려면 다른 점수에서 해당 항목을 다시 제외합니다. 튜닝 세트 및 테스트 세트 상수를 유지하는 한 학습 세트 조합을 자유롭게 사용해 볼 수 있습니다. 이 방법은 번역 시스템의 품질을 수정하기 위한 효과적인 방법입니다.
 
-프로젝트 내에서 여러 학습을 실행하고 실행되는 모든 학습 간 [BLEU 점수](what-is-bleu-score.md)를 비교합니다. 비교를 위해 여러 학습을 실행할 때는 매번 동일한 튜닝/테스트 데이터를 지정해야 합니다. 또한 ["테스트"](how-to-view-system-test-results.md) 탭에서 수동으로 결과를 검사 해야 합니다.
+프로젝트 내에서 여러 학습을 실행하고 실행되는 모든 학습 간 [BLEU 점수](what-is-bleu-score.md)를 비교합니다. 비교를 위해 여러 학습을 실행할 때는 매번 동일한 튜닝/테스트 데이터를 지정해야 합니다. 또한 [“테스트”](how-to-view-system-test-results.md) 탭에서 결과를 수동으로도 검사해야 합니다.
 
 ## <a name="tuning-document-type-for-custom-translator"></a>사용자 지정 번역기의 튜닝 문서 유형
 

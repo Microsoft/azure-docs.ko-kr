@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: 89c79f668da3ff924dbb7f27574260118003655f
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: c283ef2f6eb28dca7ca5bc5e391ef30465c65dc0
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87433238"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691278"
 ---
 # <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Machine Learning Studio (클래식) 작업 영역 만들기 및 공유
 
-**적용 대상:** ![ 예 ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (클래식) ![ 아니요](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../compare-azure-ml-to-studio-classic.md)  
+**적용 대상:**  ![예](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio(클래식)   ![아니요](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../compare-azure-ml-to-studio-classic.md)
 
 Azure Machine Learning Studio (클래식)을 사용 하려면 Machine Learning Studio (클래식) 작업 영역이 있어야 합니다. 이 작업 영역에는 실험을 만들고 관리, 게시하는 데 필요한 도구가 들어 있습니다.
 
@@ -70,7 +70,7 @@ Studio (클래식) 작업 영역을 관리 하는 방법에 대 한 자세한 �
 
 
 ## <a name="share-an-azure-machine-learning-studio-classic-workspace"></a>Azure Machine Learning Studio (클래식) 작업 영역 공유
-Machine Learning Studio (클래식) 작업 영역이 만들어지면 사용자를 작업 영역에 초대 하 여 작업 영역 및 모든 실험, 데이터 집합, 노트북 등에 대 한 액세스를 공유할 수 있습니다. 다음 두 역할 중 하나에 사용자를 추가할 수 있습니다.
+Machine Learning Studio (클래식) 작업 영역이 만들어지면 사용자를 작업 영역에 초대 하 여 작업 영역 및 모든 실험, 데이터 집합 등에 대 한 액세스를 공유할 수 있습니다. 다음 두 역할 중 하나에 사용자를 추가할 수 있습니다.
 
 * **사용자** - 작업 영역 사용자는 작업 영역에서 실험, 데이터 세트 등을 만들기, 열기, 수정 및 삭제할 수 있습니다.
 * **소유자** - 소유자는 사용자가 수행할 수 있는 작업 외에도 작업 영역에 사용자를 초대 및 제거할 수 있습니다.
@@ -82,7 +82,7 @@ Machine Learning Studio (클래식) 작업 영역이 만들어지면 사용자�
 
 ### <a name="to-share-a-studio-classic-workspace"></a>Studio (클래식) 작업 영역을 공유 하려면
 
-1. Machine Learning Studio (클래식)에 로그인 합니다.[https://studio.azureml.net/Home](https://studio.azureml.net/Home)
+1. Machine Learning Studio (클래식)에 로그인 합니다. [https://studio.azureml.net/Home](https://studio.azureml.net/Home)
 
 2. 왼쪽 패널에서 **설정**을 클릭합니다.
 

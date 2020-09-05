@@ -1,18 +1,19 @@
 ---
 title: PowerShell 스크립트 - 스토리지 계정에 대한 자격 증명 모음 찾기
-description: Azure PowerShell 스크립트를 사용하여 스토리지 계정이 등록된 복구 서비스 자격 증명 모음을 찾는 방법에 대해 알아봅니다.
+description: Azure PowerShell 스크립트를 사용하여 스토리지 계정이 등록된 Recovery Services 자격 증명 모음을 찾는 방법에 대해 알아봅니다.
 ms.topic: sample
 ms.date: 1/28/2020
-ms.openlocfilehash: b343b2f93ed439188c5c0238bf108064f6e132c1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 40859c1ea05210d27fcdcf33ba9d4f961965ea22
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513254"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89075701"
 ---
-# <a name="powershell-script-to-find-the-recovery-services-vault-where-a-storage-account-is-registered"></a>스토리지 계정이 등록된 Recovery Services Vault 찾기 위한 Powershell 스크립트
+# <a name="powershell-script-to-find-the-recovery-services-vault-where-a-storage-account-is-registered"></a>스토리지 계정이 등록된 Recovery Services 자격 증명 모음을 찾는 PowerShell 스크립트
 
-이 스크립트를 사용하면 스토리지 계정이 등록된 복구 서비스 자격 증명 모음을 찾을 수 있습니다.
+이 스크립트를 사용하면 스토리지 계정이 등록된 Recovery Services 자격 증명 모음을 찾을 수 있습니다.
 
 ## <a name="sample-script"></a>샘플 스크립트
 
@@ -56,7 +57,7 @@ if(!$found)
     * **-StorageAccountName** - 스토리지 계정 이름
     * **-SubscriptionID** - 스토리지 계정이 있는 구독 ID입니다.
 
-다음 예제에서는 *afsaccount* 스토리지 계정이 등록된 복구 서비스 자격 증명 모음을 찾으려고 시도합니다.
+다음 예제에서는 *afsaccount* 스토리지 계정이 등록된 Recovery Services 자격 증명 모음을 찾으려고 시도합니다.
 
 ```powershell
 .\FindRegisteredStorageAccount.ps1 -ResourceGroupName AzureFiles -StorageAccountName afsaccount -SubscriptionId ef4ad5a7-c2c0-4304-af80-af49f49af3d1
@@ -64,7 +65,7 @@ if(!$found)
 
 ## <a name="output"></a>출력
 
-출력에는 스토리지 계정이 등록된 복구 서비스 자격 증명 모음의 전체 경로가 표시됩니다. 샘플 출력은 다음과 같습니다.
+출력에는 스토리지 계정이 등록된 Recovery Services 자격 증명 모음의 전체 경로가 표시됩니다. 샘플 출력은 다음과 같습니다.
 
 ```output
 Found Storage account afsaccount registered in vault: /subscriptions/ ef4ad5a7-c2c0-4304-af80-af49f49af3d1/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault123

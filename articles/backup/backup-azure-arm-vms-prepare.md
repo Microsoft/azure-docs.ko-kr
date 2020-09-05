@@ -3,12 +3,12 @@ title: Recovery Services 자격 증명 모음에 Azure VM 백업
 description: Azure Backup을 사용하여 Recovery Services 자격 증명 모음에 Azure VM을 백업하는 방법을 설명합니다.
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 91fca2eef21a817c0f78b826e507901d94156dcd
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: 29895c0358547679a9db7b2f4da203e2b546d67f
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87533600"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89145657"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Recovery Services 자격 증명 모음에 Azure VM 백업
 
@@ -76,11 +76,11 @@ ms.locfileid: "87533600"
 
     * 기본 정책을 사용하지 않으려면 **새로 만들기**를 선택하고 다음 절차에 설명된 대로 사용자 지정 정책을 만듭니다.
 
-1. **Virtual Machines**아래에서 **추가**를 선택 합니다.
+1. **Virtual Machines**에서 **추가**를 선택합니다.
 
       ![가상 컴퓨터 추가](./media/backup-azure-arm-vms-prepare/add-virtual-machines.png)
 
-1. **가상 컴퓨터 선택** 창이 열립니다. 정책을 사용 하 여 백업 하려는 Vm을 선택 합니다. 그런 다음, **확인**을 선택합니다.
+1. **가상 머신 선택** 창이 열립니다. 정책을 사용 하 여 백업 하려는 Vm을 선택 합니다. 그런 다음, **확인**을 선택합니다.
 
    * 선택한 VM에 대해 유효성이 검사됩니다.
    * 자격 증명 모음과 동일한 지역에만 VM을 선택할 수 있습니다.
@@ -140,7 +140,7 @@ ms.locfileid: "87533600"
 
 백 엔드에서 실행 되는 두 개의 **하위 작업** 은 아래에 나와 있는 것 처럼 **백업 작업** 세부 정보 창에서 확인할 수 있는 프런트 엔드 백업 작업용입니다.
 
-  ![백업 작업 상태](./media/backup-azure-arm-vms-prepare/backup-job-phase.png)
+  ![백업 작업 상태 하위 작업](./media/backup-azure-arm-vms-prepare/backup-job-phase.png)
 
 **자격 증명 모음으로 데이터 전송** 단계는 디스크 크기, 디스크당 변동 및 여러 가지 다른 요인에 따라 완료하기까지 며칠이 걸릴 수 있습니다.
 
@@ -149,13 +149,13 @@ ms.locfileid: "87533600"
 **스냅샷** | **자격 증명 모음으로 데이터 전송** | **작업 상태**
 --- | --- | ---
 Completed | 진행 중 | 진행 중
-완료 | 건너뜀 | Completed
+Completed | 건너뜀 | Completed
 Completed | Completed | Completed
 Completed | 실패 | 경고와 함께 완료
 실패 | 실패 | 실패
 
 이제 이 기능을 사용하면 동일한 VM에 대해 두 개의 백업이 병렬로 실행될 수 있지만, 각 단계(스냅샷, 자격 증명 모음으로 데이터 전송)에서 하나의 하위 작업만 실행할 수 있습니다. 따라서 실행 중인 백업 작업으로 인해 다음 날의 백업이 실패 한 경우에는이 분리 기능을 사용 하지 않는 것이 좋습니다. 이후 일의 백업에는 스냅숏이 완료 될 수 있지만 이전 날짜의 백업 작업이 진행 중일 경우 **자격 증명 모음으로 데이터를 전송** 하는 작업이 생략 됩니다.
-자격 증명 모음에 생성된 증분 복구 지점은 자격 증명 모음에서 만든 마지막 복구 지점부터 모든 변동을 캡처합니다. 사용자에 게는 비용에 영향을 주지 않습니다.
+자격 증명 모음에 생성 된 증분 복구 지점은 자격 증명 모음에서 만든 가장 최근 복구 지점에서 모든 변동 (code churn)을 캡처합니다. 사용자에 게는 비용에 영향을 주지 않습니다.
 
 ## <a name="optional-steps"></a>선택적 단계
 

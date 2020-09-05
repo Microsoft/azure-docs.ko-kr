@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 9359fe07818b3c5fbc08082cdf1f96195a7836ab
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: d0ac8e0cf187d1a6a329f2c7332c9ec37018d4cf
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88080612"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962522"
 ---
 # <a name="create-a-web-app-in-an-app-service-environment-v1"></a>App Service Environment v1에서 웹앱 만들기
 
@@ -28,7 +28,7 @@ ms.locfileid: "88080612"
 > 
 > 
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 이 자습서는 App Service Environment를 만든 적이 있는 개발자를 대상으로 합니다. 만들어 본 적이 없는 경우 [App Service Environment 만들기](app-service-web-how-to-create-an-app-service-environment.md)를 참조하세요. 
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
@@ -57,7 +57,7 @@ ms.locfileid: "88080612"
     ASE에서 내부 VIP를 사용하는 경우 해당 ASE에 있는 앱의 URL은 [*사이트 이름*].[*ASE 생성 중에 지정된 하위 도메인*]과 같습니다.   
     ASE 생성 중에 ASP를 선택한 후 **이름**에서 하위 도메인 업데이트가 표시됩니다.
 
-## <a name="create-an-app-service-plan"></a><a name="createplan"></a>App Service 계획 만들기
+## <a name="create-an-app-service-plan"></a><a name="createplan"></a> App Service 계획 만들기
 App Service Environment에서 App Service 계획을 만들 때 ASE에 공유 작업자가 없기 때문에 작업자 선택이 다릅니다.  사용 해야 하는 작업자는 관리자가 ASE에 할당 한 작업자입니다.  즉, 새 계획을 만들려면 해당 작업자 풀에 이미 있는 모든 계획의 총 인스턴스 수보다 많은 작업 자가 ASE 작업자 풀에 할당 되어야 합니다.  ASE 작업자 풀의 작업자 수가 부족하여 계획을 만들 수 없는 경우 ASE 관리자와 함께 추가해야 합니다.
 
 App Service Environment에서 호스팅되는 App Service 계획의 또 다른 차이점은 가격 책정을 선택할 수 없다는 점입니다.  App Service Environment가 있는 경우 시스템에서 사용되는 컴퓨팅 리소스에 대한 비용을 지불하며 해당 환경의 계획에 대한 추가 요금은 없습니다.  일반적으로 App Service 계획을 만들 때 청구를 결정하는 가격 책정 계획을 선택합니다.  App Service Environment는 기본적으로 콘텐츠를 만들 수 있는 프라이빗 위치입니다.  따라서 콘텐츠 호스트 비용이 아니라 환경에 대한 비용을 지불합니다.
@@ -105,4 +105,4 @@ ASE에서 웹앱을 실행하고 App Service 계획을 관리하기 위해 고�
 [HowtoScale]: app-service-web-scale-a-web-app-in-an-app-service-environment.md
 [HowtoConfigureASE]: app-service-web-configure-an-app-service-environment.md
 [ResourceGroups]: ../../azure-resource-manager/management/overview.md
-[AzurePowershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/
+[AzurePowershell]: /powershell/azure/?view=azps-3.8.0

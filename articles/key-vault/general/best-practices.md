@@ -1,6 +1,6 @@
 ---
 title: Key Vault 사용에 대 한 모범 사례-Azure Key Vault | Microsoft Docs
-description: 이 문서에서는 사용 하기 위한 몇 가지 모범 사례에 대해 설명 Key Vault
+description: 액세스 제어, 개별 키 자격 증명 모음을 사용 하는 경우, 백업, 로깅 및 복구 옵션을 포함 하 여 Azure Key Vault에 대 한 모범 사례에 대해 알아봅니다.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 93ada332fdf9179cf0f582195779afc085416e1a
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: cec3ad4e113fd6ee3f4e30ad2a6877b886a958e0
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386234"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189890"
 ---
 # <a name="best-practices-to-use-key-vault"></a>Key Vault 사용에 대 한 모범 사례
 

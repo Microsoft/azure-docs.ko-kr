@@ -5,15 +5,16 @@ author: bandersmsft
 ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 8b0ba7b597921d82883f2c7ba505ebb10eee1876
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 16ba70717d04c44e950ce2ed2c47e54859c4be47
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87039749"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684884"
 ---
 # <a name="cancel-your-azure-subscription"></a>Azure 구독 취소
 
@@ -32,10 +33,10 @@ ms.locfileid: "87039749"
 ## <a name="cancel-subscription-in-the-azure-portal"></a>Azure Portal에서 구독 취소
 
 1. [Azure Portal의 구독 페이지](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade)에서 구독을 선택합니다.
-2. 취소할 구독을 선택합니다.
-3. **개요**를 선택한 다음, **구독 취소**를 선택합니다.
+1. 취소할 구독을 선택합니다.
+1. **개요**를 선택한 다음, **구독 취소**를 선택합니다.
     ![취소 단추를 보여 주는 스크린샷](./media/cancel-azure-subscription/cancel_ibiza.png)
-3. 메시지에 따라 취소를 완료합니다.
+1. 메시지에 따라 취소를 완료합니다.
 
 ## <a name="who-can-cancel-a-subscription"></a>누가 구독을 취소할 수 있나요?
 
@@ -49,11 +50,20 @@ ms.locfileid: "87039749"
 
 ## <a name="what-happens-after-i-cancel-my-subscription"></a>구독을 취소한 후에는 어떻게 되나요?
 
-취소하면 청구가 즉시 중지됩니다. 그러나 취소가 포털에 표시되기까지 최대 10분이 걸릴 수 있습니다. 청구 기간 중에 취소하는 경우 기간이 만료된 후 일반적인 청구서 날짜에 최종 청구서를 보냅니다. 
+취소하면 청구가 즉시 중지됩니다. 그러나 취소가 포털에 표시되기까지 최대 10분이 걸릴 수 있습니다. 청구 기간 중에 취소하는 경우 기간이 만료된 후 일반적인 청구서 날짜에 최종 청구서를 보냅니다.
 
 취소한 후에는 서비스를 사용할 수 없습니다. 즉, 가상 머신의 할당이 취소되고 임시 IP 주소가 해제되며 스토리지는 읽기 전용이 됩니다.
 
-Microsoft는 사용자가 데이터에 액세스해야 하거나 마음이 바뀔 경우를 대비해서 30~90일 동안 기다렸다가 데이터를 영구 삭제합니다. 데이터 보존 요금은 부과되지 않습니다. 자세한 내용은 [Microsoft 보안 센터 - 데이터 관리 방법](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409)을 참조하세요.
+구독이 취소된 후 Microsoft는 사용자가 액세스해야 하거나 마음이 바뀐 경우를 대비해서 30-90일 동안 기다렸다가 데이터를 영구 삭제합니다. 데이터 보존 요금은 부과되지 않습니다. 자세한 내용은 [Microsoft 보안 센터 - 데이터 관리 방법](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409)을 참조하세요.
+
+## <a name="delete-free-trial-subscription"></a>평가판 구독 삭제
+
+평가판 구독을 사용하는 경우 구독이 자동으로 삭제될 때까지 30일을 기다릴 필요가 없습니다. 구독을 취소한 후 *3일* 후에 구독을 삭제할 수 있습니다. 구독을 취소한 후 3일이 지나면 **구독 삭제** 옵션을 사용할 수 없습니다.
+
+1. 구독을 취소한 날로부터 3일 동안 기다립니다.
+1. Azure Portal의 [구독](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) 페이지에서 구독을 선택합니다.
+1. 삭제할 구독을 선택합니다.
+1. **개요**를 선택한 다음, **구독 삭제**를 선택합니다.
 
 ## <a name="reactivate-subscription"></a>구독 다시 활성화
 

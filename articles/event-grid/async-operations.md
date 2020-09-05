@@ -3,12 +3,13 @@ title: Event Grid 비동기 작업 상태
 description: Azure에서 Event Grid 비동기 작업을 추적 하는 방법을 설명 합니다. 장기 실행 작업의 상태를 가져오는 데 사용하는 값을 보여줍니다.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 621490a9f56e88baaf343c1c2a072ab84aa7d3ef
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: baae7b097a0b696d405c0e7ea3d3bdeb326f23b1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103333"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011687"
 ---
 # <a name="track-event-grid-asynchronous-azure-operations"></a>비동기 Azure 작업 Event Grid 추적
 일부 Azure REST 작업은 작업을 신속하게 완료할 수 없기 때문에 비동기적으로 실행합니다. 이 문서에서는 응답에서 반환되는 값을 통해 비동기 작업의 상태를 추적하는 방법을 설명합니다.  

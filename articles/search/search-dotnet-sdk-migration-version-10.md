@@ -9,16 +9,17 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 61fee97323d110875cb05fb48157527a39c80f56
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bfe24ff38446fa0d0ccea96799e6f42b561713bf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905784"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002813"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-10"></a>Azure Cognitive Search .NET SDK 버전 10으로 업그레이드
 
-버전 9.0 또는 이전 버전의 [.NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)를 사용 하는 경우이 문서를 참조 하 여 버전 10을 사용 하도록 응용 프로그램을 업그레이드할 수 있습니다.
+버전 9.0 또는 이전 버전의 [.NET SDK](/dotnet/api/overview/azure/search)를 사용 하는 경우이 문서를 참조 하 여 버전 10을 사용 하도록 응용 프로그램을 업그레이드할 수 있습니다.
 
 Azure Search은 버전 10에서 Azure Cognitive Search로 이름이 변경 되지만 네임 스페이스와 패키지 이름은 변경 되지 않습니다. 이전 버전의 SDK (9.0 및 이전 버전)는 계속 해 서 이전 이름을 사용 합니다. 예제를 포함 하 여 SDK를 사용 하는 방법에 대 한 자세한 내용은 [.Net 응용 프로그램에서 Azure Cognitive Search를 사용 하는 방법](search-howto-dotnet-sdk.md)을 참조 하세요.
 
@@ -35,13 +36,13 @@ Azure Search은 버전 10에서 Azure Cognitive Search로 이름이 변경 되�
 Azure Cognitive Search .NET SDK의 버전 10은 `2019-05-06` 다음 업데이트를 REST API 합니다.
 
 * 두 가지 새로운 기술- [조건부 기술](cognitive-search-skill-conditional.md) 및 [텍스트 번역](cognitive-search-skill-text-translation.md)기술을 소개 합니다.
-* [Shaper 기술](cognitive-search-skill-shaper.md) 입력은 중첩 된 컨텍스트에서 통합을 수용할 수 있도록 재구성 되었습니다. 자세한 내용은이 [예제 JSON 정의](https://docs.microsoft.com/azure/search/cognitive-search-skill-shaper#scenario-3-input-consolidation-from-nested-contexts)를 참조 하세요.
+* [Shaper 기술](cognitive-search-skill-shaper.md) 입력은 중첩 된 컨텍스트에서 통합을 수용할 수 있도록 재구성 되었습니다. 자세한 내용은이 [예제 JSON 정의](./cognitive-search-skill-shaper.md#scenario-3-input-consolidation-from-nested-contexts)를 참조 하세요.
 * 새 [필드 매핑 함수](search-indexer-field-mappings.md)두 개 추가:
-    - [urlEncode](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#urlencode-function)
-    - [urlDecode](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#urldecode-function)
-* 경우에 따라 [인덱서 실행 상태](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status) 에 표시 되는 오류 및 경고에는 디버깅에 도움이 되는 추가 정보가 있을 수 있습니다. `IndexerExecutionResult`이이 동작을 반영 하도록 업데이트 되었습니다.
+    - [urlEncode](./search-indexer-field-mappings.md#urlencode-function)
+    - [urlDecode](./search-indexer-field-mappings.md#urldecode-function)
+* 경우에 따라 [인덱서 실행 상태](/rest/api/searchservice/get-indexer-status) 에 표시 되는 오류 및 경고에는 디버깅에 도움이 되는 추가 정보가 있을 수 있습니다. `IndexerExecutionResult` 이이 동작을 반영 하도록 업데이트 되었습니다.
 * [기술](cognitive-search-defining-skillset.md) 내에 정의 된 개별 기술은 속성을 지정 하 여 선택적으로 식별할 수 있습니다 `name` .
-* `ServiceLimits`[복합 형식의](https://docs.microsoft.com/azure/search/search-howto-complex-data-types) 제한을 보여 주고 `IndexerExecutionInfo` 관련 인덱서 제한/할당량을 표시 합니다.
+* `ServiceLimits`[복합 형식의](./search-howto-complex-data-types.md) 제한을 보여 주고 `IndexerExecutionInfo` 관련 인덱서 제한/할당량을 표시 합니다.
 
 <a name="UpgradeSteps"></a>
 
@@ -139,13 +140,13 @@ var skillset = new Skillset()
 }
 ```
 
-`SentimentSkill`에는 이름, 할당 됨 `#1` `WebApiSkill` `#2` , `ShaperSkill` 할당 `#3` 됨 등이 할당 됩니다.
+`SentimentSkill` 에는 이름, 할당 됨 `#1` `WebApiSkill` `#2` , `ShaperSkill` 할당 `#3` 됨 등이 할당 됩니다.
 
 사용자 지정 이름으로 기술을 식별 하도록 선택 하는 경우 먼저 클라이언트의 모든 인스턴스를 SDK 버전 10으로 업데이트 해야 합니다. 그렇지 않으면 이전 버전의 SDK를 사용 하는 클라이언트가 기술에 대 한 속성을 사용 하 여 `null` `Name` 클라이언트가 기본 이름 지정 체계를 대체 하도록 할 가능성이 있습니다.
 
 ## <a name="details-about-errors-and-warnings"></a>오류 및 경고에 대 한 세부 정보
 
-`ItemError`인덱서를 실행 하는 `ItemWarning` 동안 발생 하는 오류 및 경고에 대 한 세부 정보를 캡슐화 하는 및 모델은 인덱서 디버깅에 도움이 되는 목표가 포함 된 세 개의 새로운 속성을 포함 하도록 수정 되었습니다. 이러한 속성은 다음과 같습니다.
+`ItemError` 인덱서를 실행 하는 `ItemWarning` 동안 발생 하는 오류 및 경고에 대 한 세부 정보를 캡슐화 하는 및 모델은 인덱서 디버깅에 도움이 되는 목표가 포함 된 세 개의 새로운 속성을 포함 하도록 수정 되었습니다. 이러한 속성은 다음과 같습니다.
 
 - `Name`: 오류가 발생 한 원본의 이름입니다. 예를 들어 연결 된 기술의 특정 기술을 참조할 수 있습니다.
 - `Details`: 오류 또는 경고에 대 한 추가 세부 정보입니다.
@@ -159,4 +160,3 @@ var skillset = new Skillset()
 - Shaper 기술에 대 한 변경 내용은 새 코드나 기존 코드에 대 한 가능성이 가장 높습니다. 다음 단계로 입력 구조를 설명 하는이 예제를 다시 방문 해야 합니다. [Shaper 기술 JSON 정의 예제](cognitive-search-skill-shaper.md)
 - [AI 보강 개요](cognitive-search-concept-intro.md)를 참조 하세요.
 - SDK에 대한 귀하의 피드백을 환영합니다! 문제가 발생 하는 경우 [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-search)에 대 한 도움을 요청 하세요. 버그를 발견하는 경우 [Azure .NET SDK GitHub 리포지토리](https://github.com/Azure/azure-sdk-for-net/issues)에 문제를 제출할 수 있습니다. 문제 제목에 "[Azure Cognitive Search]" 라는 접두사를 지정 해야 합니다.
-

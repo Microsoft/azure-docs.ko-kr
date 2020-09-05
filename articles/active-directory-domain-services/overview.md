@@ -8,34 +8,45 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: overview
-ms.date: 06/08/2020
+ms.date: 08/14/2020
 ms.author: iainfou
-ms.openlocfilehash: 6efd33b9f8825b5b5699b6106dadafec851ed454
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: contperfq1
+ms.openlocfilehash: 2255f2193378d0cc3611680c6aa5f8e0837e99aa
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87488553"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245181"
 ---
 # <a name="what-is-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services란?
 
-Azure AD DS(Azure Active Directory Domain Services)는 도메인 조인, 그룹 정책, LDAP(Lightweight Directory Access Protocol) 및 Kerberos/NTLM 인증과 같은 관리되는 도메인 서비스를 제공합니다. 클라우드에서 DC(도메인 컨트롤러)를 배포, 관리 및 패치하지 않고도 이러한 도메인 서비스를 사용합니다.
+Azure AD DS(Active Directory Domain Services)는 도메인 조인, 그룹 정책, LDAP(Lightweight Directory Access Protocol) 및 Kerberos/NTLM 인증과 같은 관리되는 도메인 서비스를 제공합니다. 클라우드에서 DC(도메인 컨트롤러)를 배포, 관리 및 패치하지 않고도 이러한 도메인 서비스를 사용합니다.
 
-Azure AD DS 관리되는 도메인을 만들 때 고유한 네임스페이스를 정의합니다. 이 네임스페이스는 *aaddscontoso.com* 같은 도메인 이름이며, 두 개의 DC(도메인 컨트롤러)가 선택한 Azure 지역에 배포됩니다. 이 DC 배포를 복제본 세트라고 합니다. 관리되는 도메인은 기존 Azure AD 테넌트와 통합되므로 사용자가 기존 자격 증명을 사용하여 로그인할 수 있습니다. 또한 기존 그룹과 사용자 계정을 사용하여 리소스에 대한 액세스를 보호할 수 있으므로 더 원활한 리프트 앤 시프트 방식으로 온-프레미스 리소스를 Azure에 제공합니다.
-
-관리되는 도메인을 확장하여 Azure AD 테넌트마다 복제본 세트를 2개 이상 포함할 수 있습니다. Azure AD DS을 지원하는 Azure 지역의 피어링된 가상 네트워크에 복제본 세트를 추가할 수 있습니다. 다른 Azure 지역에 있는 추가 복제본 세트는 Azure 지역이 오프라인 상태가 될 때 레거시 애플리케이션에 대한 지리적 재해 복구를 제공합니다. 복제본 세트는 현재 미리 보기로 제공됩니다. 자세한 내용은 [관리되는 도메인에 대한 복제본 세트 개념 및 기능][concepts-replica-sets]을 참조하세요.
+Azure AD DS 관리형 도메인을 사용하면 최신 인증 방법을 사용할 수 없거나 디렉터리 조회가 항상 온-프레미스 AD DS 환경으로 돌아가지 않도록 하는 레거시 애플리케이션을 클라우드에서 실행할 수 있습니다. 클라우드에서 AD DS 환경을 관리할 필요 없이 레거시 애플리케이션을 온-프레미스 환경에서 관리되는 도메인으로 리프트 앤 시프트할 수 있습니다.
 
 Azure AD DS는 기존 Azure AD 테넌트와 통합됩니다. 이러한 통합을 통해 사용자는 기존 자격 증명을 사용하여 관리되는 도메인에 연결된 서비스 및 애플리케이션에 로그인 할 수 있습니다. 또한 기존 그룹 및 사용자 계정을 사용하여 리소스에 대한 액세스를 보호할 수도 있습니다. 이러한 기능은 Azure에 대한 온-프레미스 리소스의 원활한 리프트 앤 시프트를 제공합니다.
 
 > [!div class="nextstepaction"]
 > [시작하려면 Azure Portal을 사용하여 Azure AD DS 관리형 도메인을 만듭니다][tutorial-create].
 
-Azure AD DS는 Azure AD에서 ID 정보를 복제하므로 클라우드 전용이거나 온-프레미스 AD DS(Active Directory Domain Services) 환경과 동기화된 Azure AD 테넌트에서 작동합니다. 두 환경에는 모두 동일한 Azure AD DS 기능 세트가 있습니다.
+## <a name="how-does-azure-ad-ds-work"></a>Azure AD DS의 작동 방식
+
+Azure AD DS 관리되는 도메인을 만들 때 고유한 네임스페이스를 정의합니다. 이 네임스페이스는 *aaddscontoso.com*과 같은 도메인 이름입니다. 그런 다음, 두 개의 Windows Server DC(도메인 컨트롤러)가 선택한 Azure 지역에 배포됩니다. 이 DC 배포를 복제본 세트라고 합니다.
+
+이러한 DC를 관리, 구성 또는 업데이트할 필요가 없습니다. Azure 플랫폼은 백업을 포함하여 관리되는 도메인의 일부로 DC를 처리합니다.
+
+관리되는 도메인은 Azure AD에서 단방향 동기화를 수행하여 한 곳의 사용자, 그룹 및 자격 증명 세트에 대한 액세스를 제공하도록 구성되어 있습니다. 관리되는 도메인에서 리소스를 직접 만들 수 있지만, Azure AD와 다시 동기화되지는 않습니다. 그러면 관리되는 도메인에 연결되는 Azure의 애플리케이션, 서비스 및 VM에서 도메인 조인, 그룹 정책, LDAP 및 Kerberos/NTLM 인증과 같은 일반적인 AD DS 기능을 사용할 수 있습니다.
+
+온-프레미스 AD DS 환경이 포함된 하이브리드 환경에서 [Azure AD Connect][azure-ad-connect]는 ID 정보를 Azure AD와 동기화한 다음, 관리되는 도메인에 동기화됩니다.
+
+![Azure AD Domain Services에서 Azure AD Connect를 사용하여 Azure AD 및 온-프레미스 AD DS와 동기화](./media/active-directory-domain-services-design-guide/sync-topology.png)
+
+Azure AD DS는 Azure AD에서 ID 정보를 복제하므로 클라우드 전용이거나 온-프레미스 AD DS 환경과 동기화된 Azure AD 테넌트에서 작동합니다. 두 환경에는 모두 동일한 Azure AD DS 기능 세트가 있습니다.
 
 * 기존 온-프레미스 AD DS 환경이 있으면 사용자 계정 정보를 동기화하여 사용자에게 일관된 ID를 제공할 수 있습니다. 자세한 내용은 [관리되는 도메인에서 개체 및 자격 증명을 동기화하는 방법][synchronization]을 참조하세요.
 * 클라우드 전용 환경의 경우 기존의 온-프레미스 AD DS 환경은 Azure AD DS의 중앙 집중식 ID 서비스를 사용하는 데 필요하지 않습니다.
 
-관리되는 도메인 관리자에 대한 자세한 내용은 [Azure AD DS에서 사용자 계정, 암호 및 관리에 대한 관리 개념][administration-concepts]을 참조하세요.
+관리되는 도메인을 확장하여 Azure AD 테넌트마다 복제본 세트를 2개 이상 포함할 수 있습니다. Azure AD DS을 지원하는 Azure 지역의 피어링된 가상 네트워크에 복제본 세트를 추가할 수 있습니다. 다른 Azure 지역에 있는 추가 복제본 세트는 Azure 지역이 오프라인 상태가 될 때 레거시 애플리케이션에 대한 지리적 재해 복구를 제공합니다. 복제본 세트는 현재 미리 보기로 제공됩니다. 자세한 내용은 [관리되는 도메인에 대한 복제본 세트 개념 및 기능][concepts-replica-sets]을 참조하세요.
 
 다음 비디오에서는 Azure AD DS가 애플리케이션 및 워크로드와 통합되어 클라우드에서 ID 서비스를 제공하는 방법에 대해 간략히 설명합니다.
 
@@ -43,95 +54,35 @@ Azure AD DS는 Azure AD에서 ID 정보를 복제하므로 클라우드 전용�
 
 >[!VIDEO https://www.youtube.com/embed/T1Nd9APNceQ]
 
-## <a name="common-ways-to-provide-identity-solutions-in-the-cloud"></a>클라우드에서 ID 솔루션을 제공하는 일반적인 방법
+작동 중인 Azure AD DS 배포 시나리오를 보려면 다음 예제를 탐색하면 됩니다.
 
-기존 워크로드를 클라우드로 마이그레이션하는 경우 디렉터리 인식 애플리케이션에서 온-프레미스 AD DS 디렉터리에 대한 읽기 또는 쓰기 액세스에 LDAP을 사용할 수 있습니다. Windows Server에서 실행되는 애플리케이션은 일반적으로 도메인에 가입된 VM(가상 머신)에 배포되므로 그룹 정책을 사용하여 안전하게 관리할 수 있습니다. 최종 사용자를 인증하기 위해 애플리케이션에서 Kerberos 또는 NTLM 인증과 같은 Windows 통합 인증을 사용할 수도 있습니다.
-
-IT 관리자는 다음 솔루션 중 하나를 사용하여 ID 서비스를 Azure에서 실행되는 애플리케이션에 제공하는 경우가 많습니다.
-
-* Azure에서 실행되는 워크로드와 온-프레미스 AD DS 환경 간에 사이트 간 VPN 연결을 구성합니다.
-    * 그러면 온-프레미스 도메인 컨트롤러에서 VPN 연결을 통해 인증을 제공합니다.
-* 온-프레미스에서 AD DS 도메인/포리스트를 확장하기 위해 Azure VM(가상 머신)을 사용하여 복제본 도메인 컨트롤러를 만듭니다.
-    * Azure VM에서 실행되는 도메인 컨트롤러는 인증을 제공하고, 온-프레미스 AD DS 환경 간에 디렉터리 정보를 복제합니다.
-* Azure VM에서 실행되는 도메인 컨트롤러를 사용하여 Azure에서 독립 실행형 AD DS 환경을 배포합니다.
-    * Azure VM에서 실행되는 도메인 컨트롤러는 인증을 제공하지만, 온-프레미스 AD DS 환경에서 복제되는 디렉터리 정보가 없습니다.
-
-이러한 방법을 사용하면 온-프레미스 디렉터리에 대한 VPN 연결로 인해 애플리케이션이 일시적인 네트워크 결함 또는 중단에 취약해질 수 있습니다. Azure에서 VM을 사용하여 도메인 컨트롤러를 배포하는 경우 IT 팀에서 VM을 관리하고 이러한 컨트롤러를 보호, 패치, 모니터링, 백업 및 문제를 해결해야 합니다.
-
-Azure AD DS는 ID 서비스를 제공하기 위해 온-프레미스 AD DS 환경에 대한 VPN 연결을 다시 만들거나 Azure에서 VM을 실행하고 관리해야 하는 대안을 제공합니다. 관리형 서비스인 Azure AD DS는 하이브리드 환경과 클라우드 전용 환경 모두에 대한 통합 ID 솔루션을 만들 때의 복잡성을 줄입니다.
-
-> [!div class="nextstepaction"]
-> [Azure AD DS와 Azure VM 또는 온 프레미스에서 Azure AD 및 자체 관리 AD DS를 비교하세요.][compare]
-
-## <a name="how-does-azure-ad-ds-work"></a>Azure AD DS의 작동 방식
-
-ID 서비스를 제공하기 위해 Azure는 선택한 가상 네트워크에서 AD DS 관리형 도메인을 만듭니다. 내부적으로 Azure VM에서 실행되는 Windows Server 도메인 컨트롤러 쌍이 생성됩니다. 이러한 도메인 컨트롤러는 관리, 구성 또는 업데이트가 필요 없습니다. Azure 플랫폼에서 Azure AD DS 서비스의 일부로 도메인 컨트롤러를 관리합니다.
-
-관리되는 도메인은 Azure AD에서 단방향 동기화를 수행하여 한 곳의 사용자, 그룹 및 자격 증명 세트에 대한 액세스를 제공하도록 구성되어 있습니다. 관리되는 도메인에서 리소스를 직접 만들 수 있지만, Azure AD와 다시 동기화되지는 않습니다. 그러면 이 가상 네트워크에 연결하는 Azure의 애플리케이션, 서비스 및 VM에서 도메인 조인, 그룹 정책, LDAP 및 Kerberos/NTLM 인증과 같은 일반적인 AD DS 기능을 사용할 수 있습니다.
-
-온-프레미스 AD DS 환경이 포함된 하이브리드 환경에서 [Azure AD Connect][azure-ad-connect]는 ID 정보를 Azure AD와 동기화하고, 이 정보는 다시 Azure AD DS와 동기화됩니다.
-
-![Azure AD Domain Services에서 Azure AD Connect를 사용하여 Azure AD 및 온-프레미스 Active Directory Domain Services와 동기화](./media/active-directory-domain-services-design-guide/sync-topology.png)
-
-Azure AD DS의 작동 방식을 확인하기 위해 다음 두 가지 예를 살펴보겠습니다.
-
-* [하이브리드 조직을 위한 Azure AD DS](#azure-ad-ds-for-hybrid-organizations)
-* [클라우드 전용 조직을 위한 Azure AD DS](#azure-ad-ds-for-cloud-only-organizations)
-
-### <a name="azure-ad-ds-for-hybrid-organizations"></a>하이브리드 조직을 위한 Azure AD DS
-
-많은 조직에서는 클라우드 및 온-프레미스 애플리케이션 워크로드가 모두 포함된 하이브리드 인프라를 실행합니다. 리프트 및 시프트 전략의 일환으로 Azure로 마이그레이션된 레거시 애플리케이션은 기존 LDAP 연결을 사용하여 ID 정보를 제공할 수 있습니다. 이 하이브리드 인프라를 지원하기 위해 온-프레미스 AD DS 환경의 ID 정보는 Azure AD 테넌트에 동기화될 수 있습니다. 그러면 Azure AD DS에서 온-프레미스 디렉터리 서비스에 대한 애플리케이션 연결을 다시 구성하고 관리할 필요 없이 Azure에서 ID 원본을 이러한 레거시 애플리케이션에 제공합니다.
-
-온-프레미스 리소스와 Azure 리소스를 모두 실행하는 하이브리드 조직인 Litware Corporation의 예를 살펴보겠습니다.
-
-![하이브리드 조직을 위한 Azure Active Directory Domain Services(온-프레미스 동기화 포함)](./media/overview/synced-tenant.png)
-
-* 도메인 서비스가 필요한 애플리케이션 및 서버 워크로드가 Azure의 가상 네트워크에 배포됩니다.
-    * 여기에는 리프트 및 시프트 전략의 일환으로 Azure로 마이그레이션된 레거시 애플리케이션이 포함될 수 있습니다.
-* ID 정보를 온-프레미스 디렉터리에서 Azure AD 테넌트로 동기화하기 위해 Litware Corporation에서 [Azure AD Connect][azure-ad-connect]를 배포합니다.
-    * 동기화되는 ID 정보에는 사용자 계정 및 그룹 멤버 자격이 포함됩니다.
-* Litware의 IT 팀에서 이 가상 네트워크 또는 피어링된 가상 네트워크에서 해당 Azure AD 테넌트에 Azure AD DS를 사용하도록 설정합니다.
-* 그러면 Azure 가상 네트워크에 배포된 애플리케이션과 VM에서 도메인 조인, LDAP 읽기, LDAP 바인딩, NTLM/Kerberos 인증 및 그룹 정책과 같은 Azure AD DS 기능을 사용할 수 있습니다.
-
-> [!IMPORTANT]
-> Azure AD Connect는 온-프레미스 AD DS 환경과의 동기화를 위해서만 설치되고 구성되어야 합니다. 개체를 Azure AD로 개체를 다시 동기화하기 위해 관리되는 도메인에 Azure AD Connect를 설치하는 것은 지원되지 않습니다.
-
-### <a name="azure-ad-ds-for-cloud-only-organizations"></a>클라우드 전용 조직을 위한 Azure AD DS
-
-클라우드 전용 Azure AD 테넌트에는 온-프레미스 ID 원본이 없습니다. 예를 들어 사용자 계정 및 그룹 멤버 자격은 Azure AD에서 직접 만들고 관리합니다.
-
-이제 ID에 Azure AD를 사용하는 클라우드 전용 조직인 Contoso의 예를 살펴보겠습니다. 모든 사용자 ID, 해당 자격 증명 및 그룹 멤버 자격은 Azure AD에서 만들고 관리합니다. 온-프레미스에서 ID 정보를 동기화하기 위한 Azure AD Connect의 추가 구성이 없습니다.
-
-![클라우드 전용 조직을 위한 Azure Active Directory Domain Services(온-프레미스 동기화 없음)](./media/overview/cloud-only-tenant.png)
-
-* 도메인 서비스가 필요한 애플리케이션 및 서버 워크로드가 Azure의 가상 네트워크에 배포됩니다.
-* Contoso의 IT 팀에서 이 가상 네트워크 또는 피어링된 가상 네트워크에서 해당 Azure AD 테넌트에 Azure AD DS를 사용하도록 설정합니다.
-* 그러면 Azure 가상 네트워크에 배포된 애플리케이션과 VM에서 도메인 조인, LDAP 읽기, LDAP 바인딩, NTLM/Kerberos 인증 및 그룹 정책과 같은 Azure AD DS 기능을 사용할 수 있습니다.
+* [하이브리드 조직을 위한 Azure AD DS](scenarios.md#azure-ad-ds-for-hybrid-organizations)
+* [클라우드 전용 조직을 위한 Azure AD DS](scenarios.md#azure-ad-ds-for-cloud-only-organizations)
 
 ## <a name="azure-ad-ds-features-and-benefits"></a>Azure AD DS 기능 및 이점
 
-ID 서비스를 클라우드의 애플리케이션 및 VM에 제공하기 위해 Azure AD DS는 도메인 조인, LDAPS(보안 LDAP), 그룹 정책, DNS 관리, LDAP 바인딩 및 읽기 지원과 같은 작업에서 기존 AD DS 환경과 완벽하게 호환됩니다. LDAP 쓰기 지원은 Azure AD DS 관리형 도메인에서 만든 개체에 사용할 수 있지만 Azure AD에서 동기화된 리소스에는 사용할 수 없습니다.
+ID 서비스를 클라우드의 애플리케이션 및 VM에 제공하기 위해 Azure AD DS는 도메인 조인, LDAPS(보안 LDAP), 그룹 정책, DNS 관리, LDAP 바인딩 및 읽기 지원과 같은 작업에서 기존 AD DS 환경과 완벽하게 호환됩니다. LDAP 쓰기 지원은 관리되는 도메인에서 만든 개체에 사용할 수 있지만 Azure AD에서 동기화된 리소스에는 사용할 수 없습니다.
 
-ID 옵션에 대해 자세히 알아보려면 [Azure AD DS와 Azure AD, Azure VM의 Active Directory Domain Services 및 온-프레미스 Active Directory Domain Services 비교][compare]를 참조하세요.
+ID 옵션에 대해 자세히 알아보려면 [Azure AD DS를 Azure AD, Azure VM의 AD DS 및 온-프레미스 AD DS와 비교][compare]하세요.
 
 배포 및 관리 작업을 간소화하는 Azure AD DS의 기능은 다음과 같습니다.
 
 * **간소화된 배포 환경:** Azure AD DS는 Azure Portal에서 단일 마법사를 사용하여 Azure AD 테넌트에서 사용하도록 설정됩니다.
 * **Azure AD와 통합:** 사용자 계정, 그룹 멤버 자격 및 자격 증명은 Azure AD 테넌트에서 자동으로 사용할 수 있습니다. Azure AD 테넌트 또는 온-프레미스 AD DS 환경에서 새 사용자, 그룹 또는 특성 변경 내용은 Azure AD DS에 자동으로 동기화됩니다.
-    * Azure AD에 연결된 외부 디렉터리의 계정은 Azure AD DS에서 사용할 수 없습니다. 이러한 외부 디렉터리에 대해 자격 증명을 사용할 수 없으므로 Azure AD DS 관리형 도메인으로 동기화할 수 없습니다.
-* **회사 자격 증명/암호 사용:** Azure AD DS의 사용자 암호는 Azure AD 테넌트와 동일합니다. 사용자는 회사 자격 증명을 도메인 조인 머신에 사용하고, 대화형으로 또는 원격 데스크톱을 통해 로그인하고, Azure AD DS 관리형 도메인에 대해 인증할 수 있습니다.
+    * Azure AD에 연결된 외부 디렉터리의 계정은 Azure AD DS에서 사용할 수 없습니다. 이러한 외부 디렉터리에 대해 자격 증명을 사용할 수 없으므로 관리되는 도메인으로 동기화할 수 없습니다.
+* **회사 자격 증명/암호 사용:** Azure AD DS의 사용자 암호는 Azure AD 테넌트와 동일합니다. 사용자는 도메인 조인 머신에 대해 회사 자격 증명을 사용할 수 있고, 대화형으로 또는 원격 데스크톱을 통해 로그인할 수 있으며 관리되는 도메인에 대해 인증할 수 있습니다.
 * **NTLM 및 Kerberos 인증:** NTLM 및 Kerberos 인증 지원을 사용하면 Windows 통합 인증을 사용하는 애플리케이션을 배포할 수 있습니다.
 * **고가용성:** Azure AD DS에는 고가용성을 관리형 도메인에 제공하는 여러 도메인 컨트롤러가 포함되어 있습니다. 이 고가용성은 서비스 가동 시간과 장애 복구를 보장합니다.
     * [Azure 가용성 영역][availability-zones]을 지원하는 지역에서는 이러한 도메인 컨트롤러도 추가 복원력을 위해 영역 간에 분산됩니다.
+    * [복제본 세트][concepts-replica-sets]는 Azure 지역이 오프라인 상태가 될 때 레거시 애플리케이션에 대한 지리적 재해 복구를 제공하는 데도 사용할 수 있습니다.
 
-Azure AD DS 관리형 도메인의 몇 가지 주요 측면은 다음을 포함합니다.
+관리되는 도메인의 몇 가지 주요 측면은 다음을 포함합니다.
 
-* Azure AD DS 관리형 도메인은 독립 실행형 도메인이며, 온-프레미스 도메인의 확장이 아닙니다.
+* 관리된 도메인은 독립 실행형 도메인입니다. 온-프레미스 도메인의 확장이 아닙니다.
     * 필요한 경우 Azure AD DS에서 온-프레미스 AD DS 환경으로 단방향 아웃바운드 포리스트 트러스트를 만들 수 있습니다. 자세한 내용은 [Azure AD DS에 대한 리소스 포리스트 개념 및 기능][ forest-trusts]을 참조하세요.
-* IT 팀은 이 Azure AD DS 관리형 도메인에 대한 도메인 컨트롤러를 관리, 패치 또는 모니터링할 필요가 없습니다.
+* IT 팀은 이 관리되는 도메인에 대한 도메인 컨트롤러를 관리, 패치 또는 모니터링할 필요가 없습니다.
 
-AD DS를 온-프레미스에서 실행하는 하이브리드 환경의 경우 Azure AD DS 관리형 도메인에 대한 AD 복제를 관리할 필요가 없습니다. 온-프레미스 디렉터리의 사용자 계정, 그룹 멤버 자격 및 자격 증명은 [Azure AD Connect][azure-ad-connect]를 통해 Azure AD에 동기화됩니다. 이러한 사용자 계정, 그룹 멤버 자격 및 자격 증명은 Azure AD DS 관리형 도메인 내에서 자동으로 사용할 수 있습니다.
-
+AD DS를 온-프레미스에서 실행하는 하이브리드 환경의 경우 관리되는 도메인에 대한 AD 복제를 관리할 필요가 없습니다. 온-프레미스 디렉터리의 사용자 계정, 그룹 멤버 자격 및 자격 증명은 [Azure AD Connect][azure-ad-connect]를 통해 Azure AD에 동기화됩니다. 이러한 사용자 계정, 그룹 멤버 자격 및 자격 증명은 자동으로 관리된 도메인 내에서 사용할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -139,6 +90,7 @@ Azure AD DS를 다른 ID 솔루션과 비교하고 동기화가 작동하는 방
 
 * [Azure AD DS와 Azure AD, Azure VM의 Active Directory Domain Services 및 온-프레미스 Active Directory Domain Services의 비교][compare]
 * [Azure AD Domain Services에서 Azure AD 디렉터리와 동기화하는 방법][synchronization] 알아보기
+* 관리되는 도메인 관리자에 대한 자세한 내용은 [Azure AD DS에서 사용자 계정, 암호 및 관리에 대한 관리 개념][administration-concepts]을 참조하세요.
 
 시작하려면 [Azure Portal을 사용하여 관리되는 도메인을 만듭니다][tutorial-create].
 

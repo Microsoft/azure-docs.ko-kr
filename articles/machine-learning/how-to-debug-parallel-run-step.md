@@ -11,12 +11,12 @@ ms.reviewer: jmartens, larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 07/16/2020
-ms.openlocfilehash: 16366d9f3be1144a7588ceb9133fb4e2e60db95c
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 0b914059567e9a513b605ce733407465b625a909
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87373711"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950020"
 ---
 # <a name="debug-and-troubleshoot-parallelrunstep"></a>ParallelRunStep 디버그 및 문제 해결
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -25,11 +25,11 @@ ms.locfileid: "87373711"
 
 ## <a name="testing-scripts-locally"></a>로컬에서 스크립트 테스트
 
-기계 학습 파이프라인은 [로컬에서 스크립트 테스트 섹션](how-to-debug-pipelines.md#testing-scripts-locally)을 참조하세요. ParallelRunStep은 ML 파이프라인에서 한 단계로 실행되므로 동일한 답변이 모두에게 적용됩니다.
+기계 학습 파이프라인은 [로컬에서 스크립트 테스트 섹션](how-to-debug-pipelines.md#debug-scripts-locally)을 참조하세요. ParallelRunStep은 ML 파이프라인에서 한 단계로 실행되므로 동일한 답변이 모두에게 적용됩니다.
 
 ## <a name="debugging-scripts-from-remote-context"></a>원격 컨텍스트에서 스크립트 디버그
 
-채점 스크립트의 로컬 디버깅을 실제 파이프라인에서의 디버깅으로 전환하는 것은 어려운 작업일 수 있습니다. 포털에서 로그 찾기에 대한 자세한 내용은 [원격 컨텍스트에서의 스크립트 디버깅에 관한 기계 학습 파이프라인 섹션](how-to-debug-pipelines.md#debugging-scripts-from-remote-context)을 참조하세요. 해당 섹션의 정보는 ParallelRunStep에도 적용됩니다.
+채점 스크립트의 로컬 디버깅을 실제 파이프라인에서의 디버깅으로 전환하는 것은 어려운 작업일 수 있습니다. 포털에서 로그 찾기에 대한 자세한 내용은 [원격 컨텍스트에서의 스크립트 디버깅에 관한 기계 학습 파이프라인 섹션](how-to-debug-pipelines.md#finding-and-reading-pipeline-log-files)을 참조하세요. 해당 섹션의 정보는 ParallelRunStep에도 적용됩니다.
 
 예를 들어 로그 파일 `70_driver_log.txt`에는 ParallelRunStep 코드를 시작하는 컨트롤러의 정보가 포함됩니다.
 

@@ -5,12 +5,13 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: f473b70d260c552dc67d00715b6ee4bc56b670e0
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5ec5db2b2fefeba3bffb7e30a77850b30dccf95e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86246557"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005635"
 ---
 # <a name="describe-a-service-fabric-cluster-by-using-cluster-resource-manager"></a>클러스터를 사용 하 여 Service Fabric 클러스터 설명 리소스 관리자
 Azure Service Fabric의 클러스터 리소스 관리자 기능은 클러스터를 설명 하는 몇 가지 메커니즘을 제공 합니다.
@@ -237,7 +238,7 @@ Azure에서 노드를 포함 하는 장애 도메인을 선택 하는 것은 사
 
 |  | FD0 | FD1 | FD2 | FD3 | FD4 | UDTotal |
 | --- |:---:|:---:|:---:|:---:|:---:|:---:|
-| **UD0** |해당 없음 |해당 없음 |해당 없음 |해당 없음 |해당 없음 |해당 없음 |
+| **UD0** |N/A |N/A |N/A |N/A |N/A |N/A |
 | **UD1** |R2 | | | | |1 |
 | **UD2** | |R3 |R4 | | |2 |
 | **UD3** | | | |R1 | |1 |
@@ -347,7 +348,7 @@ Azure에서 호스트 되는 Service Fabric 배포에서 장애 도메인과 업
 
 특정 워크 로드에 대 한 하드웨어를 대상으로 하는 좋은 예는 거의 모든 n 계층 아키텍처입니다. 특정 컴퓨터는 응용 프로그램의 프런트 엔드 또는 API 서비스 측 역할을 하며 클라이언트나 인터넷에 노출 됩니다. 종종 서로 다른 하드웨어 리소스를 사용하는 다양한 머신에서 컴퓨팅 또는 스토리지 계층의 작업을 처리합니다. 이러한 컴퓨터는 대개 클라이언트 또는 인터넷에 직접 노출되지 _않습니다_. 
 
-경우에 따라 특정 워크 로드를 특정 하드웨어 구성에서 실행 해야 하는 경우도 있습니다. Service Fabric 예:
+경우에 따라 특정 워크 로드를 특정 하드웨어 구성에서 실행 해야 하는 경우도 있습니다. Service Fabric 예를 들어:
 
 * 기존 n 계층 응용 프로그램이 Service Fabric 환경으로 "리프트 및 이동" 되었습니다.
 * 성능, 규모 또는 보안 격리를 위해 특정 하드웨어에서 작업을 실행 해야 합니다.

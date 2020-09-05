@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: 1d84646fcb6769b7489cc0e03085e95fc47ef56c
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f3a8cafa907cb66832faf033f7b62e68bf859097
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027633"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918828"
 ---
 # <a name="integrate-with-a-client-application-using-speech-sdk"></a>Speech SDK를 사용 하 여 클라이언트 응용 프로그램과 통합
 
@@ -24,7 +25,7 @@ ms.locfileid: "86027633"
 - 사용자 지정 명령 응용 프로그램 게시 및 응용 프로그램 식별자 가져오기 (앱 ID)
 - Speech SDK를 사용 하 여 사용자 지정 명령 응용 프로그램과 통신할 수 있도록 하는 UWP (유니버설 Windows 플랫폼) 클라이언트 앱 만들기
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 문서를 완료 하려면 사용자 지정 명령 응용 프로그램이 필요 합니다. 사용자 지정 명령 응용 프로그램을 만들지 않은 경우 빠른 시작을 수행 하 여 다음을 수행할 수 있습니다.
 > [!div class = "checklist"]
@@ -302,7 +303,7 @@ XAML 코드를 추가 하 여 응용 프로그램의 사용자 인터페이스�
     > 1. **솔루션에 대 한 NuGet 패키지 관리**를 선택 하 고 **업데이트** 를 선택 합니다. 
     > 1. 업데이트 목록에 **microsoft.netcore.universalwindowsplatform** 이 표시 되 면 microsoft.netcore.universalwindowsplatform를 최신 버전으로 업데이트 **합니다** .
 
-1. 의 메서드 본문에 다음 코드를 추가 합니다.`InitializeDialogServiceConnector`
+1. 의 메서드 본문에 다음 코드를 추가 합니다. `InitializeDialogServiceConnector`
 
    ```csharp
    // This code creates the `DialogServiceConnector` with your subscription information.
@@ -319,7 +320,7 @@ XAML 코드를 추가 하 여 응용 프로그램의 사용자 인터페이스�
 
 1. 문자열 `YourApplicationId` , 및를 `YourSpeechSubscriptionKey` `YourServiceRegion` 앱, 음성 구독 및 [지역](regions.md) 에 대 한 사용자 고유의 값으로 바꿉니다.
 
-1. 다음 코드 조각을의 메서드 본문 끝에 추가 합니다.`InitializeDialogServiceConnector`
+1. 다음 코드 조각을의 메서드 본문 끝에 추가 합니다. `InitializeDialogServiceConnector`
 
    ```csharp
    //

@@ -3,23 +3,25 @@ title: Media Services의 콘텐츠 키 정책 - Azure | Microsoft Docs
 description: 이 문서에서는 콘텐츠 키 정책의 개념과 Azure Media Services에서 이러한 정책을 사용하는 방법을 설명합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 07/26/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 49226ba703e8ade963b368616102db035b3c07ba
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b6d907e987cb57836997cab43e9bfa9e919bf67d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092068"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268291"
 ---
 # <a name="content-key-policies"></a>콘텐츠 키 정책
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Media Services를 사용하면 Advanced Encryption Standard(AES-128) 또는 Microsoft PlayReady, Google Widevine 및 Apple FairPlay 등 세 가지 주요 DRM(디지털 권한 관리) 시스템 중 하나로 동적 암호화된 라이브 콘텐츠 및 주문형 콘텐츠를 제공할 수 있습니다. 또한 Media Services는 인증된 클라이언트에게 AES 키 및DRM(PlayReady, Widevine 및 FairPlay) 라이선스를 배달하는 서비스를 제공합니다. 
 
@@ -45,7 +47,7 @@ Media Services를 사용하면 Advanced Encryption Standard(AES-128) 또는 Micr
 
    일반적으로 수명이 긴 키를 사용 하 고 [Get](/rest/api/media/contentkeypolicies/get)을 사용 하 여 콘텐츠 키 정책이 있는지 확인 합니다. 키를 가져오려면 별도의 동작 메서드를 호출하여 비밀 또는 자격 증명을 가져와야 합니다. 아래 예제를 참조하세요.
 
-## <a name="example"></a>예제
+## <a name="example"></a>예
 
 키를 가져오려면 `GetPolicyPropertiesWithSecretsAsync` [기존 정책에서 서명 키 가져오기](get-content-key-policy-dotnet-howto.md#get-contentkeypolicy-with-secrets) 예제에 표시 된 대로를 사용 합니다.
 
@@ -53,7 +55,7 @@ Media Services를 사용하면 Advanced Encryption Standard(AES-128) 또는 Micr
 
 [Media Services 엔터티 필터링, 순서 지정, 페이징](entities-overview.md)을 참조하세요.
 
-## <a name="additional-notes"></a>추가적인 참고 사항
+## <a name="additional-notes"></a>추가 참고 사항
 
 * 형식에 해당 하는 콘텐츠 키 정책의 속성 `Datetime` 은 항상 UTC 형식입니다.
 * Widevine은 Google Inc.에서 제공하는 서비스로, Google Inc.의 서비스 약관 및 개인정보처리방침을 따릅니다.

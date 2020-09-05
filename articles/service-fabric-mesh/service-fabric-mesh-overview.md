@@ -5,12 +5,12 @@ author: dkkapur
 ms.author: dekapur
 ms.date: 10/1/2018
 ms.topic: overview
-ms.openlocfilehash: e64cc158a18e604cbd022be5c91350c95258272c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: b7061a178a3f5a9d126afab3fc1f9aa77d5cc050
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86257802"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87927031"
 ---
 # <a name="what-is-service-fabric-mesh"></a>Service Fabric Mesh란?
 
@@ -42,7 +42,7 @@ Service Fabric Mesh를 사용하여 다음을 수행할 수 있습니다.
 
 - 인프라를 명시적으로 프로비전하고 관리할 필요 없이 애플리케이션을 배포하고 관리합니다.  Service Fabric Mesh는 기본 인프라를 프로비전하고, 업그레이드하고, 패치하고, 유지 관리합니다.
 - 통합된 도구를 사용하는 연속 통합을 설정하여 애플리케이션을 쉽게 패키지하고 배포합니다.
-- Azure Resource Manager 리소스의 모든 기능을 활용합니다. 이러한 기능의 예로는 감사 내역과 [역할 기반 액세스 제어](../role-based-access-control/overview.md)가 있습니다. Azure의 Service Fabric Mesh 서비스에 배포하는 모든 리소스는 Azure Resource Manager 리소스입니다. 이러한 리소스에는 애플리케이션, 서비스, 비밀 등이 포함됩니다.
+- Azure Resource Manager 리소스의 모든 기능을 활용합니다. 이러한 기능의 예로는 감사 내역과 [Azure RBAC(Azure 역할 기반 액세스 제어)](../role-based-access-control/overview.md)가 있습니다. Azure의 Service Fabric Mesh 서비스에 배포하는 모든 리소스는 Azure Resource Manager 리소스입니다. 이러한 리소스에는 애플리케이션, 서비스, 비밀 등이 포함됩니다.
 - [Azure Portal](https://portal.azure.com), Resource Manager 템플릿 또는 Azure CLI/PowerShell 라이브러리를 사용하여 리소스를 배포하고 관리합니다.
 - [Application Insights](/azure/application-insights/)(또는 원하는 도구)를 사용하는 작업 모니터링 및 경고를 설정하여 플랫폼에서 운영 및 진단 추적을 캡처합니다.
 - [Application Insights](/azure/application-insights/) 또는 원하는 도구를 사용하여 애플리케이션 모델에서 내보낸 애플리케이션 진단 정보에 액세스합니다.

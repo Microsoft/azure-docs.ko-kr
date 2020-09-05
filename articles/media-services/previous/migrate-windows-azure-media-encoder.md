@@ -13,14 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: e75e3f3eecf6c34050aeaa7fe387fffb0de58a74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a4a5f2f448cc5e954cf21f9785f788925d5a461e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76513204"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89263946"
 ---
 # <a name="migrate-from-windows-azure-media-encoder-to-media-encoder-standard"></a>Windows Azure Media Encoder에서 Media Encoder Standard로 마이그레이션
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 이 문서에서는 WAME (기존 Windows Azure Media Encoder) 미디어 프로세서 (사용 중지 됨)에서 Media Encoder Standard 미디어 프로세서로 마이그레이션하는 단계를 설명 합니다. 사용 중지 날짜는 이 [레거시 구성 요소](legacy-components.md) 항목을 참조하세요.
 

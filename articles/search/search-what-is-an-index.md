@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/15/2020
-ms.openlocfilehash: 9e8d1c012ae07fc458a324315e2635f04c3dbd78
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3aa4a1917711f8997c282ba577c33e7a7f94472b
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496515"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932885"
 ---
 # <a name="create-a-basic-search-index-in-azure-cognitive-search"></a>Azure Cognitive Search에서 기본 검색 인덱스 만들기
 
@@ -26,10 +26,10 @@ Azure Cognitive Search에서 *검색 인덱스* 는 전체 텍스트 및 필터�
 다음 도구와 Api를 사용 하 여 인덱스를 만들 수 있습니다.
 
 * Azure Portal에서 **인덱스 추가** 또는 **데이터 가져오기** 마법사를 사용 합니다.
-* [Create Index (REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) 사용
-* [.NET SDK](search-create-index-dotnet.md) 사용
+* [Create Index (REST API)](/rest/api/searchservice/create-index) 사용
+* [.NET SDK](./search-get-started-dotnet.md) 사용
 
-포털 도구를 사용 하 여 보다 쉽게 배울 수 있습니다. 포털은 숫자 필드에 대 한 전체 텍스트 검색 기능을 허용 하지 않는 등의 특정 데이터 형식에 대 한 요구 사항 및 스키마 규칙을 적용 합니다. 인덱스를 사용할 수 있으면 [Get index (REST API)](https://docs.microsoft.com/rest/api/searchservice/get-index) 를 사용 하 여 서비스에서 JSON 정의를 검색 하 고 솔루션에 추가 하 여 코드로 전환할 수 있습니다.
+포털 도구를 사용 하 여 보다 쉽게 배울 수 있습니다. 포털은 숫자 필드에 대 한 전체 텍스트 검색 기능을 허용 하지 않는 등의 특정 데이터 형식에 대 한 요구 사항 및 스키마 규칙을 적용 합니다. 인덱스를 사용할 수 있으면 [Get index (REST API)](/rest/api/searchservice/get-index) 를 사용 하 여 서비스에서 JSON 정의를 검색 하 고 솔루션에 추가 하 여 코드로 전환할 수 있습니다.
 
 ## <a name="recommended-workflow"></a>권장 워크플로
 
@@ -59,7 +59,7 @@ Azure Cognitive Search에서 *검색 인덱스* 는 전체 텍스트 및 필터�
 
    ![데이터 유형별 특성을 보여 주는 인덱스 페이지 추가](media/search-what-is-an-index//field-definitions.png "데이터 유형별 특성을 보여 주는 인덱스 페이지 추가")
 
-1. [인덱스 가져오기 (REST API)](https://docs.microsoft.com/rest/api/searchservice/get-index) 및 [postman](search-get-started-postman.md)과 같은 웹 테스트 도구를 사용 하 여 인덱스 스키마를 다운로드 합니다. 이제 코드에 맞게 조정할 수 있는 인덱스의 JSON 표현이 있습니다.
+1. [인덱스 가져오기 (REST API)](/rest/api/searchservice/get-index) 및 [postman](search-get-started-postman.md)과 같은 웹 테스트 도구를 사용 하 여 인덱스 스키마를 다운로드 합니다. 이제 코드에 맞게 조정할 수 있는 인덱스의 JSON 표현이 있습니다.
 
 1. [데이터가 포함된 인덱스를 로드합니다](search-what-is-data-import.md). Azure Cognitive Search는 JSON 문서를 허용 합니다. 데이터를 프로그래밍 방식으로 로드하려면 요청 페이로드의 JSON 문서에 Postman을 사용하면 됩니다. 데이터를 JSON으로 표현하기가 쉽지 않은 경우 이 단계에 가장 많은 노력이 필요할 것입니다. 
 
@@ -169,7 +169,7 @@ Azure Cognitive Search에서 *검색 인덱스* 는 전체 텍스트 및 필터�
 
 ### <a name="data-types"></a>데이터 형식
 
-| 형식 | 설명 |
+| Type | Description |
 |------|-------------|
 | Edm.String |전체 텍스트 검색을 위해 선택적으로 토큰화할 수 있는 텍스트입니다(단어 분리, 형태소 분석 등). |
 | Collection(Edm.String) |전체 텍스트 검색을 위해 선택적으로 토큰화할 수 있는 문자열 목록입니다. 컬렉션에 있는 항목 수에 이론적인 상한은 없지만 페이로드 크기의 16MB 상한이 컬렉션에 적용됩니다. |
@@ -180,7 +180,7 @@ Azure Cognitive Search에서 *검색 인덱스* 는 전체 텍스트 및 필터�
 | Edm.DateTimeOffset |날짜 시간 값을 OData V4 형식으로 표현합니다(예: `yyyy-MM-ddTHH:mm:ss.fffZ` 또는 `yyyy-MM-ddTHH:mm:ss.fff[+/-]HH:mm`). |
 | Edm.GeographyPoint |전 세계의 지리적 위치를 나타내는 지점입니다. |
 
-자세한 내용은 [지원 되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types)을 참조 하세요.
+자세한 내용은 [지원 되는 데이터 형식](/rest/api/searchservice/Supported-data-types)을 참조 하세요.
 
 <a name="index-attributes"></a>
 
@@ -190,19 +190,19 @@ Azure Cognitive Search에서 *검색 인덱스* 는 전체 텍스트 및 필터�
 
 문자열 필드는 "검색 가능" 및 "검색 가능"으로 표시 되는 경우가 많습니다. 검색 결과의 범위를 좁히는 데 사용 되는 필드에는 "정렬 가능한", "필터링 가능" 및 "패싯 가능"가 포함 됩니다.
 
-|attribute|Description|  
+|특성|Description|  
 |---------------|-----------------|  
 |가능한 |전체 텍스트 검색 가능하며, 인덱싱 중에 단어 분리 등의 어휘 분석이 적용됩니다. 검색 가능 필드를 “sunny day” 등의 값으로 설정하면 내부적으로 해당 필드가 개별 토큰 “sunny”와 “day”로 분할됩니다. 자세한 내용은 [전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)을 참조하세요.|  
 |가능 |$filter 쿼리에서 참조됩니다. 형식이 `Edm.String` 또는 `Collection(Edm.String)`인 필터링 가능 필드의 경우 단어 분리가 수행되지 않으므로 정확하게 일치하는 항목만 비교합니다. 예를 들어 이러한 필드 f를 “sunny day”로 설정하면 `$filter=f eq 'sunny'`에서는 일치하는 항목이 발견되지 않지만 `$filter=f eq 'sunny day'`에서는 일치하는 항목이 발견됩니다. |  
 |8601 |기본적으로 시스템은 점수에 따라 결과를 정렬하지만 문서에 있는 필드를 기반으로 정렬하도록 구성할 수 있습니다. 형식의 필드는 `Collection(Edm.String)` "정렬 가능"으로 지정할 수 없습니다. |  
-|패싯 가능 |일반적으로 카테고리별 적중 횟수가 포함된 검색 결과를 표시하는 데 사용됩니다(예: 특정 도시의 호텔). 형식이 `Edm.GeographyPoint`인 필드에는 이 옵션을 사용할 수 없습니다. `Edm.String`필터링 가능, "정렬 가능" 또는 "패싯 가능" 형식의 필드는 최대 32 킬로바이트 길이입니다. 자세한 내용은 [인덱스 만들기(REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조하세요.|  
+|패싯 가능 |일반적으로 카테고리별 적중 횟수가 포함된 검색 결과를 표시하는 데 사용됩니다(예: 특정 도시의 호텔). 형식이 `Edm.GeographyPoint`인 필드에는 이 옵션을 사용할 수 없습니다. `Edm.String`필터링 가능, "정렬 가능" 또는 "패싯 가능" 형식의 필드는 최대 32 킬로바이트 길이입니다. 자세한 내용은 [인덱스 만들기(REST API)](/rest/api/searchservice/create-index)를 참조하세요.|  
 |키인지 |인덱스 내의 문서에 대한 고유 식별자입니다. 정확히 하나의 필드를 키 필드로 선택해야 하며 해당 필드의 형식은 `Edm.String`이어야 합니다.|  
 |조회 가능 |검색 결과에서 필드를 반환할 수 있는지 여부를 결정합니다. *이익률* 등의 필드를 필터, 정렬 또는 점수 매기기 메커니즘으로 사용하며 최종 사용자에게는 필드를 표시하지 않으려는 경우 이 기능을 사용하면 유용합니다. `true` for `key` 로 설정해야 합니다.|  
 
 언제든지 새 필드를 추가할 수 있지만 기존 필드 정의는 인덱스 수명 동안 잠겨 있습니다. 이러한 이유로 개발자는 일반적으로 포털을 사용하여 간단한 인덱스를 만들거나 아이디어를 테스트하거나 포털 페이지를 사용하여 설정을 조회합니다. 인덱스를 쉽게 다시 작성할 수 있도록 코드 기반 접근 방식을 따르는 경우 인덱스 대한 빈번한 반복 디자인이 보다 효율적입니다.
 
 > [!NOTE]
-> 인덱스를 작성 하는 데 사용 하는 Api는 다양 한 기본 동작을 포함 합니다. [REST api](https://docs.microsoft.com/rest/api/searchservice/Create-Index)의 경우 대부분의 특성은 기본적으로 사용 하도록 설정 됩니다. 예를 들어 "검색 가능" 및 "검색 가능"은 문자열 필드에 대해 true 이며,이를 해제 하려는 경우에만 설정 해야 하는 경우가 많습니다. .NET SDK의 경우 반대의 경우도 마찬가지입니다. 명시적으로 설정 하지 않은 모든 속성에서 기본값은 명시적으로 사용 하도록 설정 하지 않은 경우 해당 검색 동작을 사용 하지 않도록 설정 하는 것입니다.
+> 인덱스를 작성 하는 데 사용 하는 Api는 다양 한 기본 동작을 포함 합니다. [REST api](/rest/api/searchservice/Create-Index)의 경우 대부분의 특성은 기본적으로 사용 하도록 설정 됩니다. 예를 들어 "검색 가능" 및 "검색 가능"은 문자열 필드에 대해 true 이며,이를 해제 하려는 경우에만 설정 해야 하는 경우가 많습니다. .NET SDK의 경우 반대의 경우도 마찬가지입니다. 명시적으로 설정 하지 않은 모든 속성에서 기본값은 명시적으로 사용 하도록 설정 하지 않은 경우 해당 검색 동작을 사용 하지 않도록 설정 하는 것입니다.
 
 ## `analyzers`
 
@@ -210,7 +210,7 @@ Azure Cognitive Search에서 *검색 인덱스* 는 전체 텍스트 및 필터�
 
 ## `suggesters`
 
-제안기는 검색에서 자동 완성 또는 자동 완성 쿼리를 지원하는 데 사용되는 인덱스의 필드를 정의하는 스키마 섹션입니다. 일반적으로 사용자가 검색 쿼리를 입력 하는 동안 부분 검색 문자열이 [제안 (REST API)](https://docs.microsoft.com/rest/api/searchservice/suggestions) 으로 전송 되 고 API는 제안 된 문서 또는 구의 집합을 반환 합니다. 
+제안기는 검색에서 자동 완성 또는 자동 완성 쿼리를 지원하는 데 사용되는 인덱스의 필드를 정의하는 스키마 섹션입니다. 일반적으로 사용자가 검색 쿼리를 입력 하는 동안 부분 검색 문자열이 [제안 (REST API)](/rest/api/searchservice/suggestions) 으로 전송 되 고 API는 제안 된 문서 또는 구의 집합을 반환 합니다. 
 
 제안기에 추가된 필드는 검색어 미리 입력 기능을 빌드하는 데 사용됩니다. 모든 검색어는 인덱싱 중에 생성되어 별도로 저장됩니다. 제안기 구조체를 만드는 방법에 대한 자세한 내용은 [제안기 추가](index-add-suggesters.md)를 참조하세요.
 

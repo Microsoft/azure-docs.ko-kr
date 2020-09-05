@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: e0188a35289c22da784ca856c80212638052a609
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 1e3546239dfcfd4c6ef23ad16f3340f34f958901
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86040285"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723217"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-active-directory-domain-services-managed-domain"></a>Azure Active Directory Domain Services 관리 되는 도메인에 OU (조직 구성 단위) 만들기
 
@@ -89,8 +89,8 @@ Azure AD DS를 사용 하는 워크 로드를 만들고 실행할 때 응용 프
 
 관리 도구를 사용 하거나 서비스 계정을 만들고 사용 하는 방법에 대 한 자세한 내용은 다음 문서를 참조 하세요.
 
-* [Active Directory 관리 센터: 시작](https://technet.microsoft.com/library/dd560651.aspx)
-* [서비스 계정 단계별 가이드](https://technet.microsoft.com/library/dd548356.aspx)
+* [Active Directory 관리 센터: 시작](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10))
+* [서비스 계정 단계별 가이드](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

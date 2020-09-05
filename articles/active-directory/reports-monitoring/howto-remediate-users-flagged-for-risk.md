@@ -15,12 +15,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3037dd2e03062ebab0c48438aa4345a766a22fc8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 725b3b712313c199382cebe32bed98f2115fc262
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608928"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231166"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Azure Active Directory 포털에서 위험 플래그가 지정된 사용자 수정
 
@@ -40,7 +40,7 @@ Azure Portal에서 [위험에 노출된 사용자 보고서](https://portal.azur
 - 사용자에게 다음에 로그인할 암호를 안전하게 다시 설정하도록 요구
 - 업데이트 관리 작업을 수행하지 않고 사용자 위험을 해제합니다.
 
-자세한 내용은 [위험 플래그가 지정된 사용자 보안 보고서](concept-user-at-risk.md)를 참조하세요.
+자세한 내용은 [위험 플래그가 지정된 사용자 보안 보고서](../identity-protection/overview-identity-protection.md)를 참조하세요.
 
 ### <a name="azure-ad-subscription-for-office-365-customers"></a>Office 365 고객에 대한 Azure AD 구독
 
@@ -67,7 +67,7 @@ Microsoft 365 관리 센터에서 **위험 플래그가 지정 된 사용자** �
 
     b. 사서함 대리자를 제거합니다.
 
-    다. 외부 도메인에 대한 메일 전달 규칙을 사용하지 않도록 설정합니다.
+    c. 외부 도메인에 대한 메일 전달 규칙을 사용하지 않도록 설정합니다.
 
     d. 사서함에서 전역 메일 전달 속성을 제거합니다.
 
@@ -75,7 +75,7 @@ Microsoft 365 관리 센터에서 **위험 플래그가 지정 된 사용자** �
 
     f. 계정에서 암호 복잡성을 높게 설정합니다.
 
-    예: 사서함 감사를 사용하도록 설정합니다.
+    g. 사서함 감사를 사용하도록 설정합니다.
 
     h. 관리자가 검토할 수 있도록 감사 로그를 생성합니다.
 
@@ -91,5 +91,5 @@ Microsoft 365 관리 센터에서 **위험 플래그가 지정 된 사용자** �
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure Active Directory ID 보호](../active-directory-identityprotection.md)
-* [위험에 대한 플래그가 지정된 사용자](concept-user-at-risk.md)
+* [Azure Active Directory ID 보호](../identity-protection/overview-identity-protection.md)
+* [위험에 대한 플래그가 지정된 사용자](../identity-protection/overview-identity-protection.md)

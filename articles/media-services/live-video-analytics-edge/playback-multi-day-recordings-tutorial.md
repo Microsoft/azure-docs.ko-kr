@@ -3,12 +3,12 @@ title: 여러 날 녹화본 재생 - Azure
 description: 이 자습서에서는 Azure Media Service API를 사용하여 여러 날 연속 비디오 녹화본을 재생하는 방법을 설명합니다.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 52ef33e8c4380e9c21e99c4ba45b7f25f7c57780
-ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
+ms.openlocfilehash: 19a42c61ef250fecce4503d3aed70b36d71ee3cf
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84433665"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649094"
 ---
 # <a name="tutorial-playback-of-multi-day-recordings"></a>자습서: 여러 날 녹화본 재생  
 
@@ -40,7 +40,7 @@ ms.locfileid: "84433665"
 
 ## <a name="run-the-sample"></a>샘플 실행 
 
-[CVR 자습서](continuous-video-recording-tutorial.md)를 진행하면서 Media Service 계정을 만들었을 것입니다. 이 자습서를 진행하려면 해당 계정에 대한 전체 API 액세스 권한이 필요합니다. [Media Services API에 액세스하기 위한 자격 증명 가져오기](../latest/access-api-howto.md#use-the-azure-portal)의 단계에 따라 서비스 주체를 만들 수 있습니다. Azure Portal에서 다음과 같은 JSON 블록을 가져올 수 있어야 합니다.
+[CVR 자습서](continuous-video-recording-tutorial.md)를 진행하면서 Media Service 계정을 만들었을 것입니다. 이 자습서를 진행하려면 해당 계정에 대한 전체 API 액세스 권한이 필요합니다. [Media Services API에 액세스하기 위한 자격 증명 가져오기](../latest/access-api-howto.md?tabs=portal)의 단계에 따라 서비스 주체를 만들 수 있습니다. Azure Portal에서 다음과 같은 JSON 블록을 가져올 수 있어야 합니다.
 
 ```
 {

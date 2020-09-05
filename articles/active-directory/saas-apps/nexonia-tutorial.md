@@ -2,25 +2,21 @@
 title: '자습서: Nexonia와 Azure Active Directory 통합 | Microsoft 문서'
 description: Azure Active Directory 및 Nexonia 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: a93b771a-9bc3-444a-bdc0-457f8bb7e780
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: 73b166c5a6a39ca01f43dccc356536dad43dca38
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3f61275e90e950a085762ad936041252c2019512
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160290"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554428"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nexonia"></a>자습서: Nexonia와 Azure Active Directory 통합
 

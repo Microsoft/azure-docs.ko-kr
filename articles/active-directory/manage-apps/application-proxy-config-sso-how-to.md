@@ -16,12 +16,12 @@ ms.date: 03/12/2019
 ms.author: kenwith
 ms.reviewer: japere, asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb3d1d921be858531372130264e777f8c04a9328
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 54673e0018f83024d1c01599d0096c71b6b1d0ae
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764947"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642132"
 ---
 # <a name="how-to-configure-single-sign-on-to-an-application-proxy-application"></a>애플리케이션 프록시 애플리케이션에 대해 Single Sign-On을 구성하는 방법
 
@@ -49,7 +49,7 @@ SSO를 구성하려면 먼저 애플리케이션이 Azure Active Directory를 �
 
 이 페이지에는 추가 로그온 옵션인 연결된 로그온이 있습니다. 이 옵션은 애플리케이션 프록시에서도 지원됩니다. 그러나 이 옵션은 애플리케이션에 Single Sign-On을 추가하지 않습니다. 즉, 애플리케이션에 이미 Active Directory Federation Services와 같은 다른 서비스를 사용하여 Single Sign-On이 구현되어 있을 수 있습니다. 
 
-이 옵션을 사용하면 관리자가 애플리케이션에 액세스할 때 사용자에게 제일 먼저 표시되는 애플리케이션에 대한 링크를 만들 수 있습니다. 예를 들어 Active Directory Federation Services 2.0을 사용하여 사용자를 인증하도록 구성된 애플리케이션이 있는 경우, 관리자가 "연결된 로그온" 옵션을 사용하여 액세스 패널에 이에 대한 링크를 만들 수 있습니다.
+이 옵션을 사용하면 관리자가 애플리케이션에 액세스할 때 사용자에게 제일 먼저 표시되는 애플리케이션에 대한 링크를 만들 수 있습니다. 예를 들어 Active Directory Federation Services 2.0를 사용 하 여 사용자를 인증 하도록 구성 된 응용 프로그램이 있는 경우 관리자는 "연결 된 로그온" 옵션을 사용 하 여 앱에 대 한 링크를 만들 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 - [애플리케이션 프록시를 사용하여 Single Sign-On에 대한 암호 자격 증명 모음 설정](application-proxy-configure-single-sign-on-password-vaulting.md)

@@ -8,12 +8,13 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 07/01/2020
 ms.author: tamram
-ms.openlocfilehash: 455595a2e41ecc05f7064044e09df8efcd9d4548
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 115ab9767c23afd5876eb23821bd1283777cdb5e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85833403"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018929"
 ---
 # <a name="manage-container-properties-and-metadata-with-net"></a>.NET을 사용 하 여 컨테이너 속성 및 메타 데이터 관리
 
@@ -29,7 +30,7 @@ Blob 컨테이너는 시스템 속성 및 사용자 정의 메타 데이터와 �
 
 ## <a name="retrieve-container-properties"></a>컨테이너 속성 검색
 
-# <a name="net-v12-sdk"></a>[.NET v12 SDK](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 컨테이너 속성을 검색 하려면 다음 메서드 중 하나를 호출 합니다.
 
@@ -40,7 +41,7 @@ Blob 컨테이너는 시스템 속성 및 사용자 정의 메타 데이터와 �
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_ReadContainerProperties":::
 
-# <a name="net-v11-sdk"></a>[.NET v11 SDK](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Blob storage 리소스에 대 한 속성 및 메타 데이터 값 검색은 2 단계 프로세스입니다. 이러한 값을 읽으려면 먼저 **FetchAttributes** 또는 **FetchAttributesAsync** 메서드를 호출하여 명시적으로 가져와야 합니다. 이 규칙의 예외는 **Exists** 및 **ExistsAsync** 메서드가 커버에서 적절 한 **fetchattributes** 메서드를 호출 하는 것입니다. 이러한 메서드 중 하나를 호출할 때 **Fetchattributes**호출할 필요가 없습니다.
 
@@ -80,7 +81,7 @@ private static async Task ReadContainerPropertiesAsync(CloudBlobContainer contai
 
 ## <a name="set-and-retrieve-metadata"></a>메타 데이터 설정 및 검색
 
-# <a name="net-v12-sdk"></a>[.NET v12 SDK](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Blob 또는 컨테이너 리소스에 하나 이상의 이름-값 쌍으로 메타 데이터를 지정할 수 있습니다. 메타 데이터를 설정 하려면 [IDictionary](/dotnet/api/system.collections.idictionary) 개체에 이름-값 쌍을 추가 하 고 다음 메서드 중 하나를 호출 하 여 값을 씁니다.
 
@@ -102,7 +103,7 @@ Blob 또는 컨테이너 리소스에 하나 이상의 이름-값 쌍으로 메�
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_ReadContainerMetadata":::
 
-# <a name="net-v11-sdk"></a>[.NET v11 SDK](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Blob 또는 컨테이너 리소스에 하나 이상의 이름-값 쌍으로 메타 데이터를 지정할 수 있습니다. 메타 데이터를 설정 하려면 리소스의 **메타 데이터** 컬렉션에 이름-값 쌍을 추가 하 고 다음 메서드 중 하나를 호출 하 여 값을 작성 합니다.
 
@@ -169,7 +170,7 @@ public static async Task ReadContainerMetadataAsync(CloudBlobContainer container
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 - [컨테이너 속성 가져오기 작업](/rest/api/storageservices/get-container-properties)
 - [컨테이너 메타 데이터 설정 작업](/rest/api/storageservices/set-container-metadata)

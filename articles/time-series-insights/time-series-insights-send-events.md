@@ -9,16 +9,16 @@ manager: diviso
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 08/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 589dd411e3d340eb8a0bf84b21a306cabd4bb362
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3a5ee1cc8efead7c29dadaf64adb8e2686a10621
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86495077"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168085"
 ---
-# <a name="send-events-to-a-azure-time-series-insights-gen1-environment-by-using-an-event-hub"></a>이벤트 허브를 사용 하 여 Azure Time Series Insights Gen1 환경으로 이벤트 보내기
+# <a name="send-events-to-an-azure-time-series-insights-gen1-environment-by-using-an-event-hub"></a>이벤트 허브를 사용 하 여 Azure Time Series Insights Gen1 환경으로 이벤트 보내기
 
 이 문서에서는 Azure Event Hubs에서 이벤트 허브를 만들고 구성 하는 방법을 설명 합니다. 또한 Event Hubs에서 Azure Time Series Insights 하는 이벤트를 푸시하는 샘플 응용 프로그램을 실행 하는 방법을 설명 합니다. JSON 형식의 이벤트가 있는 기존 이벤트 허브가 있는 경우이 자습서를 건너뛰고 [Azure Time Series Insights](./time-series-insights-update-create-environment.md)에서 환경을 확인 합니다.
 
@@ -55,9 +55,9 @@ ms.locfileid: "86495077"
 
 ## <a name="add-an-azure-time-series-insights-instance"></a>Azure Time Series Insights 인스턴스 추가
 
-Azure Time Series Insights Gen 2에서는 TSM (시계열 모델)을 사용 하 여 들어오는 원격 분석에 컨텍스트 데이터를 추가할 수 있습니다. TSM에서 태그나 신호는 *인스턴스로* 라고, *인스턴스 필드* 에 컨텍스트 데이터를 저장할 수 있습니다. 데이터는 **시계열 ID**를 사용하여 쿼리 시에 조인됩니다. 이 문서의 뒷부분에서 사용 하는 샘플 windmills 프로젝트의 **시계열 ID** 는 `id` 입니다. 인스턴스 필드에 데이터를 저장 하는 방법에 대 한 자세한 내용은 시계열 [모델](./concepts-model-overview.md) 개요를 참조 하세요.
+Azure Time Series Insights Gen2에서 TSM (시계열 모델)을 사용 하 여 들어오는 원격 분석에 컨텍스트 데이터를 추가할 수 있습니다. TSM에서 태그나 신호를 *인스턴스* 라고 하며, *인스턴스 필드* 에 상황별 데이터를 저장할 수 있습니다. 데이터는 **시계열 ID**를 사용하여 쿼리 시에 조인됩니다. 이 문서의 뒷부분에서 사용 하는 샘플 windmills 프로젝트의 **시계열 ID** 는 `id` 입니다. 인스턴스 필드에 데이터를 저장 하는 방법에 대 한 자세한 내용은 시계열 [모델](./concepts-model-overview.md) 개요를 참조 하세요.
 
-### <a name="create-a-azure-time-series-insights-event-source"></a>Azure Time Series Insights 이벤트 원본 만들기
+### <a name="create-an-azure-time-series-insights-event-source"></a>Azure Time Series Insights 이벤트 원본 만들기
 
 1. 아직 이벤트 원본을 만들지 않은 경우 [이벤트 원본 만들기](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub)에 대한 단계를 완료합니다.
 
@@ -73,15 +73,15 @@ Azure Time Series Insights Gen 2에서는 TSM (시계열 모델)을 사용 하 �
 
     [![기본 키 연결 문자열의 값 복사](media/send-events/configure-sample-code-connection-string.png)](media/send-events/configure-sample-code-connection-string.png#lightbox)
 
-1. https://tsiclientsample.azurewebsites.net/windFarmGen.html로 이동합니다. URL은 시뮬레이트된 풍차 장치를 만들고 실행 합니다.
+1. <https://tsiclientsample.azurewebsites.net/windFarmGen.html>로 이동합니다. URL은 시뮬레이트된 풍차 장치를 만들고 실행 합니다.
 1. 웹 페이지의 **이벤트 허브 연결 문자열** 상자에, [풍차 입력 필드](#push-events-to-windmills-sample)에 복사한 연결 문자열을 붙여넣습니다.
   
     [![이벤트 허브 연결 문자열 상자에 기본 키 연결 문자열 붙여넣기](media/send-events/configure-wind-mill-sim.png)](media/send-events/configure-wind-mill-sim.png#lightbox)
 
-1. **시작하려면 클릭**을 선택합니다. 
+1. **시작하려면 클릭**을 선택합니다.
 
     > [!TIP]
-    > 또한 풍차 시뮬레이터는 [AZURE TIME SERIES INSIGHTS GA 쿼리 api](https://docs.microsoft.com/rest/api/time-series-insights/ga-query)를 사용 하 여 페이로드로 사용할 수 있는 JSON을 만듭니다.
+    > 또한 풍차 시뮬레이터는 [AZURE TIME SERIES INSIGHTS GA 쿼리 api](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query)를 사용 하 여 페이로드로 사용할 수 있는 JSON을 만듭니다.
 
     > [!NOTE]
     > 시뮬레이터는 브라우저 탭이 닫힐 때까지 데이터를 계속 보냅니다.
@@ -203,6 +203,6 @@ Azure Time Series Insights Gen 2에서는 TSM (시계열 모델)을 사용 하 �
 
 ## <a name="next-steps"></a>다음 단계
 
-- Azure Time Series Insights 탐색기에서 [환경을 확인](https://insights.timeseries.azure.com) 합니다.
+* Azure Time Series Insights 탐색기에서 [환경을 확인](https://insights.timeseries.azure.com) 합니다.
 
-- [IoT Hub 장치 메시지](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct) 에 대 한 자세한 정보
+* [IoT Hub 장치 메시지](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-construct) 에 대 한 자세한 정보

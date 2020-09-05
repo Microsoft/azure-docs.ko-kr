@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 01/22/2020
 ms.author: pafarley
 ms.custom: devx-track-javascript
-ms.openlocfilehash: dc01600d052752d4558e22fe5c5ca48fb84a8121
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 71e6d159a7bb69e5aab28752f5ecf1eacaebd624
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87405497"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89321900"
 ---
 <a name="HOLTop"></a>
 
@@ -140,7 +140,7 @@ Computer Vision Node.js SDK의 주요 기능 중 일부를 처리하는 클래�
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_objects)]
 
-도우미 함수 `formatRectObjects`을 정의합니다.
+도우미 함수 `formatRectObjects`를 정의하여 너비 및 높이와 함께 위쪽, 왼쪽, 아래쪽 및 오른쪽 좌표를 반환합니다.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_objectformat)]
 
@@ -208,9 +208,9 @@ Computer Vision은 특수 모델을 사용하여 이미지에 대한 추가 분�
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_imagetype_describe)]
 
-## <a name="read-printed-and-handwritten-text"></a>인쇄 텍스트 및 필기 텍스트 읽기
+## <a name="extract-text-ocr-with-read"></a>읽기로 텍스트 추출(OCR)
 
-Computer Vision은 이미지 속의 시각적 텍스트를 읽고 문자 스트림으로 변환할 수 있습니다.
+Computer Vision은 이미지에서 보이는 텍스트를 추출하여 문자 스트림으로 변환할 수 있습니다. 이 샘플에서는 읽기 작업을 사용합니다.
 
 > [!NOTE]
 > 로컬 이미지에서 텍스트를 읽을 수도 있습니다. 로컬 이미지와 관련된 시나리오는 [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js)의 샘플 코드를 참조하세요.
@@ -221,17 +221,17 @@ Computer Vision은 이미지 속의 시각적 텍스트를 읽고 문자 스트�
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_images)]
 
-### <a name="call-the-recognize-api"></a>Recognize API 호출
+### <a name="call-the-read-api"></a>읽기 API 호출
 
-지정된 이미지에 대해 `recognizeText` 함수를 호출하는 아래 코드를 추가합니다.
+지정된 이미지에 대해 `readTextFromURL` 및 `readTextFromFile` 함수를 호출하는 아래 코드를 추가합니다.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_call)]
 
-`recognizeText` 함수를 정의합니다. 클라이언트 개체에서 **recognizeText** 메서드를 호출합니다. 이는 작업 ID를 반환하고 이미지의 콘텐츠를 읽는 비동기 프로세스를 시작합니다. 그런 다음, 작업 ID를 사용하여 결과가 반환될 때까지 1초 간격으로 작업을 검사합니다. 그런 다음, 추출된 결과를 반환합니다.
+`readTextFromURL` 및 `readTextFromFile` 함수를 정의합니다. 클라이언트 개체에서 **read** 및 **readInStream** 메서드를 호출합니다. 이는 작업 ID를 반환하고 이미지의 콘텐츠를 읽는 비동기 프로세스를 시작합니다. 그런 다음, 작업 ID를 사용하여 결과가 반환될 때까지 작업 상태를 확인합니다. 그런 다음, 추출된 결과를 반환합니다.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_helper)]
 
-그런 다음, 인식 작업의 결과를 콘솔에 출력하는 `printRecText` 도우미 함수를 정의합니다.
+그런 다음, 읽기 작업의 결과를 콘솔에 출력하는 `printRecText` 도우미 함수를 정의합니다.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_read_print)]
 
@@ -255,5 +255,5 @@ Cognitive Services 구독을 정리하고 제거하려면 리소스나 리소스
 > [!div class="nextstepaction"]
 >[Computer Vision API 참조(Node.js)](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest)
 
-* [Computer Vision이란?](../../Home.md)
+* [Computer Vision이란?](../../overview.md)
 * 이 샘플의 소스 코드는 [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/ComputerVision/ComputerVisionQuickstart.js)에서 확인할 수 있습니다.

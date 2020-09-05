@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: e5e621cc3763cfa7fe28790baf2f5d9866c8d618
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3e151145bd3c4d1db87ef5d1b0d553555a580279
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87069794"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816748"
 ---
 # <a name="error-messages-for-spot-vms-and-scale-sets"></a>지점 Vm 및 확장 집합에 대 한 오류 메시지
 
@@ -31,11 +31,11 @@ ms.locfileid: "87069794"
 | MaxPriceChangeNotAllowedForAllocatedVMs | VM ' {0} '이 (가) 현재 할당 되어 있는 경우에는 최대 가격 변경이 허용 되지 않습니다. 할당을 취소 하 고 다시 시도 하세요. | 최대 가격을 변경할 수 있도록 VM을 할당 취소 합니다. |
 | MaxPriceChangeNotAllowed | 최대 가격 변경이 허용 되지 않습니다. | 이 VM에 대 한 최대 가격은 변경할 수 없습니다. |
 | AzureSpotIsNotSupportedForThisAPIVersion  |  Azure 스팟은이 API 버전에서 지원 되지 않습니다. | API 버전은 2019-03-01 이어야 합니다. |
-| AzureSpotIsNotSupportedForThisVMSize  |  이 VM 크기에 대 한 Azure 스팟은 지원 되지 않습니다 {0} . | 다른 VM 크기를 선택 합니다. 자세한 내용은 [지점 Virtual Machines](./linux/spot-vms.md)를 참조 하세요. |
-| MaxPriceIsSupportedOnlyForAzureSpotVirtualMachines  |  최대 가격은 Azure 스폿 Virtual Machines에만 지원 됩니다. | 자세한 내용은 [지점 Virtual Machines](./linux/spot-vms.md)를 참조 하세요. |
+| AzureSpotIsNotSupportedForThisVMSize  |  이 VM 크기에 대 한 Azure 스팟은 지원 되지 않습니다 {0} . | 다른 VM 크기를 선택 합니다. 자세한 내용은 [지점 Virtual Machines](./spot-vms.md)를 참조 하세요. |
+| MaxPriceIsSupportedOnlyForAzureSpotVirtualMachines  |  최대 가격은 Azure 스폿 Virtual Machines에만 지원 됩니다. | 자세한 내용은 [지점 Virtual Machines](./spot-vms.md)를 참조 하세요. |
 | MoveResourcesWithAzureSpotVMNotSupported  |  리소스 이동 요청은 Azure 스폿 가상 머신을 포함 합니다. 현재는 지원되지 않습니다. 가상 컴퓨터 Id에 대 한 오류 정보를 확인 하세요. | 지점 Vm을 이동할 수 없습니다. |
 | MoveResourcesWithAzureSpotVmssNotSupported  |  리소스 이동 요청은 Azure 스폿 가상 머신 확장 집합을 포함 합니다. 현재는 지원되지 않습니다. 가상 머신 확장 집합 Id에 대 한 오류 세부 정보를 확인 하세요. | 별색 확장 집합 인스턴스를 이동할 수 없습니다. |
 | AzureSpotVMNotSupportedInVmssWithVMOrchestrationMode | Azure 스폿 가상 머신은 VM 오케스트레이션 모드를 사용 하는 가상 머신 확장 집합에서 지원 되지 않습니다. | 스폿 인스턴스를 사용 하려면 오케스트레이션 모드를 가상 머신 확장 집합으로 설정 합니다. |
 
 
-**다음 단계** 자세한 내용은 [지점 Virtual Machines](./linux/spot-vms.md)를 참조 하세요.
+**다음 단계** 자세한 내용은 [지점 Virtual Machines](./spot-vms.md)를 참조 하세요.

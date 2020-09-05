@@ -3,18 +3,18 @@ title: 개념-사설 클라우드 및 클러스터
 description: Vmware의 Azure vmware 솔루션에 있는 Azure VMware 소프트웨어 정의 데이터 센터 및 vSphere 클러스터의 주요 기능에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 09e1fd45b1dd873509f942ef8b524783acfed4ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 06161d2ce95415ae3309d58ad18ad0d40b3782fb
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84906992"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752284"
 ---
-# <a name="azure-vmware-solution-avs-preview-private-cloud-and-cluster-concepts"></a>Azure VMware 솔루션 (AVS) 미리 보기 사설 클라우드 및 클러스터 개념
+# <a name="azure-vmware-solution-preview-private-cloud-and-cluster-concepts"></a>Azure VMware Solution Preview 사설 클라우드 및 클러스터 개념
 
-Azure VMware 솔루션 (AVS)은 Azure에서 VMware 기반 사설 클라우드를 제공 합니다. 사설 클라우드는 전용 운영 체제 미 설치 호스트의 클러스터에서 빌드되고 Azure Portal를 통해 배포 및 관리 됩니다. 사설 클라우드의 클러스터는 VMware vSphere, vCenter, vSAN 및 NSX 소프트웨어로 프로 비전 됩니다. Azure에서 AVS 사설 클라우드 하드웨어 및 소프트웨어 배포를 완벽 하 게 통합 하 고 자동화할 수 있습니다.
+Azure VMware 솔루션은 Azure에서 VMware 기반 사설 클라우드를 제공 합니다. 사설 클라우드는 전용 운영 체제 미 설치 호스트의 클러스터에서 빌드되고 Azure Portal를 통해 배포 및 관리 됩니다. 사설 클라우드의 클러스터는 VMware vSphere, vCenter, vSAN 및 NSX 소프트웨어로 프로 비전 됩니다. Azure VMware 솔루션 사설 클라우드 하드웨어 및 소프트웨어 배포는 Azure에서 완벽 하 게 통합 되 고 자동화 됩니다.
 
-Azure 구독, AVS 사설 클라우드, vSAN 클러스터 및 호스트 간에는 논리적 관계가 있습니다. 다이어그램에서 단일 Azure 구독에 두 개의 사설 클라우드가 표시 됩니다. 사설 클라우드는 각자의 사설 클라우드를 포함 하는 개발 및 프로덕션 환경을 나타냅니다. 이러한 각 사설 클라우드에는 두 개의 클러스터가 있습니다. 개발 환경의 잠재적 요구를 더 적게 보여 주기 위해 용량이 낮은 호스트를 사용 하는 소규모 클러스터가 사용 됩니다. 이러한 모든 개념은 아래 섹션에 설명 되어 있습니다.
+Azure 구독, Azure VMware 솔루션 사설 클라우드, vSAN 클러스터 및 호스트 간에는 논리적 관계가 있습니다. 다이어그램에서 단일 Azure 구독에 두 개의 사설 클라우드가 표시 됩니다. 사설 클라우드는 각자의 사설 클라우드를 포함 하는 개발 및 프로덕션 환경을 나타냅니다. 이러한 각 사설 클라우드에는 두 개의 클러스터가 있습니다. 개발 환경의 잠재적 요구를 더 적게 보여 주기 위해 용량이 낮은 호스트를 사용 하는 소규모 클러스터가 사용 됩니다. 이러한 모든 개념은 아래 섹션에 설명 되어 있습니다.
 
 ![고객 구독의 두 사설 클라우드 이미지](./media/hosts-clusters-private-clouds-final.png)
 
@@ -34,7 +34,7 @@ Azure 구독, AVS 사설 클라우드, vSAN 클러스터 및 호스트 간에는
 
 ## <a name="hosts"></a>호스트
 
-하이퍼 수렴 형, 운영 체제 미 설치 인프라 노드가 AVS 사설 클라우드 클러스터에서 사용 됩니다. 호스트의 RAM, CPU 및 디스크 용량은 아래 표에 나와 있습니다. 
+하이퍼 수렴 형, 운영 체제 미 설치 인프라 노드는 Azure VMware 솔루션 사설 클라우드 클러스터에서 사용 됩니다. 호스트의 RAM, CPU 및 디스크 용량은 아래 표에 나와 있습니다. 
 
 | 호스트 유형              |             CPU             |   RAM(GB)   |  vSAN NVMe 캐시 계층 (TB, 원시)  |  vSAN SSD 용량 계층 (TB, 원시)  |
 | :---                   |            :---:            |    :---:     |               :---:              |                :---:               |
@@ -44,7 +44,7 @@ Azure 구독, AVS 사설 클라우드, vSAN 클러스터 및 호스트 간에는
 
 ## <a name="vmware-software-versions"></a>VMware 소프트웨어 버전
 
-AVS 사설 클라우드 클러스터에서 사용 되는 현재 소프트웨어 버전의 VMware 소프트웨어는 다음과 같습니다.
+Azure VMware 솔루션 사설 클라우드 클러스터에서 사용 되는 현재 소프트웨어 버전의 VMware 소프트웨어는 다음과 같습니다.
 
 | 소프트웨어              |    버전   |
 | :---                  |     :---:    |
@@ -55,16 +55,16 @@ AVS 사설 클라우드 클러스터에서 사용 되는 현재 소프트웨어 
 
 사설 클라우드의 모든 새 클러스터에 대해 소프트웨어의 버전은 현재 사설 클라우드에서 실행 중인 것과 일치 합니다. 고객 구독의 새 사설 클라우드의 경우 소프트웨어 스택의 최신 버전이 설치 됩니다.
 
-AVS 플랫폼 소프트웨어에 대 한 일반적인 업그레이드 정책 및 프로세스는 업그레이드 개념 문서에 설명 되어 있습니다.
+Azure VMware 솔루션 플랫폼 소프트웨어에 대 한 일반적인 업그레이드 정책 및 프로세스는 업그레이드 개념 문서에 설명 되어 있습니다.
 
 ## <a name="host-maintenance-and-lifecycle-management"></a>호스트 유지 관리 및 수명 주기 관리
 
 호스트 유지 관리 및 수명 주기 관리는 사설 클라우드 클러스터의 용량 또는 성능에 영향을 주지 않고 수행 됩니다. 자동화 된 호스트 유지 관리의 예로는 펌웨어 업그레이드, 하드웨어 복구 또는 교체 등이 있습니다.
 
-Microsoft는 NSX Manager 및 NSX Edge와 같은 NSX-T 어플라이언스의 수명 주기 관리를 담당 합니다. Microsoft는 계층 0 게이트웨이를 만들고 북쪽 남부 라우팅을 사용 하도록 설정 하는 등의 네트워크 구성 부트스트래핑도 담당 합니다. AVS 사설 클라우드의 관리자는 네트워크 세그먼트, 분산 방화벽 규칙, 계층 1 게이트웨이 및 부하 분산 장치와 같은 NSX-T SDN 구성을 담당 합니다.
+Microsoft는 NSX Manager 및 NSX Edge와 같은 NSX-T 어플라이언스의 수명 주기 관리를 담당 합니다. Microsoft는 계층 0 게이트웨이를 만들고 북쪽 남부 라우팅을 사용 하도록 설정 하는 등의 네트워크 구성 부트스트래핑도 담당 합니다. Azure VMware 솔루션 사설 클라우드의 관리자는 네트워크 세그먼트, 분산 된 방화벽 규칙, 계층 1 게이트웨이 및 부하 분산 장치와 같은 NSX-T SDN 구성을 담당 합니다.
 
 > [!IMPORTANT]
-> AVS 관리자는 NSX-T Edge 또는 계층 0 게이트웨이의 구성을 수정 하면 안 됩니다. 이로 인해 서비스가 손실 될 수 있습니다.
+> Azure VMware 솔루션 관리자는 NSX-T Edge 또는 계층 0 게이트웨이의 구성을 수정 하면 안 됩니다. 이로 인해 서비스가 손실 될 수 있습니다.
 
 ## <a name="backup-and-restoration"></a>백업 및 복원
 

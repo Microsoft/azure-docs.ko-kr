@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - 백 엔드 보호 | Microsoft Docs
-description: Azure PowerShell 스크립트 샘플 - 백 엔드 보호
+description: Azure PowerShell 스크립트 샘플을 사용하여 상호 인증서 인증으로 백 엔드를 보호하는 방법을 알아봅니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 00198d4b4a5268a112b097c17f6a97aa02f6f0f1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: cb6b1cfcb6a8f482bdcbc9d6befc99197f024f4a
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008793"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905638"
 ---
 # <a name="secure-back-end"></a>백 엔드 보호
 

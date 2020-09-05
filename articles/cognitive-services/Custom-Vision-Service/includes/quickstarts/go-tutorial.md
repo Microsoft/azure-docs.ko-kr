@@ -2,24 +2,24 @@
 author: areddish
 ms.author: areddish
 ms.service: cognitive-services
-ms.date: 04/14/2020
-ms.openlocfilehash: 0efc0f1e07ef9370dbc8e300cd6bd3410f0265d3
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.date: 08/17/2020
+ms.openlocfilehash: 918ac54836adf6ad12934d7e30cf88f2786e1fba
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133964"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88508557"
 ---
-이 문서에는 Go와 Custom Vision SDK를 사용하여 이미지 분류 모델 빌드를 시작하는 데 참고할 수 있는 정보와 샘플 코드가 제공됩니다. 프로젝트를 만든 후에는 태그를 추가하고, 이미지를 업로드하고, 프로젝트를 학습하고, 프로젝트의 게시된 예측 엔드포인트 URL을 확보하고, 이 엔드포인트를 사용하여 프로그래밍 방식으로 이미지를 테스트할 수 있습니다. 이 예제를 템플릿으로 사용하여 Go 애플리케이션을 빌드할 수 있습니다. 코드 _없이_ 분류 모델을 빌드하고 사용하는 방법을 알아보려면 [브라우저 기반 가이드](../../getting-started-build-a-classifier.md)를 참조하세요.
+이 문서에서는 Co와 함께 Custom Vision 클라이언트 라이브러리를 사용하여 이미지 분류 모델 빌드를 시작할 수 있도록 도와주는 정보와 샘플 코드를 제공합니다. 프로젝트를 만든 후에는 태그를 추가하고, 이미지를 업로드하고, 프로젝트를 학습하고, 프로젝트의 게시된 예측 엔드포인트 URL을 확보하고, 이 엔드포인트를 사용하여 프로그래밍 방식으로 이미지를 테스트할 수 있습니다. 이 예제를 템플릿으로 사용하여 Go 애플리케이션을 빌드할 수 있습니다. 코드 _없이_ 분류 모델을 빌드하고 사용하는 방법을 알아보려면 [브라우저 기반 가이드](../../getting-started-build-a-classifier.md)를 참조하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
 - [Go 1.8+](https://golang.org/doc/install)
 - [!INCLUDE [create-resources](../../includes/create-resources.md)]
 
-## <a name="install-the-custom-vision-sdk"></a>Custom Vision SDK 설치
+## <a name="install-the-custom-vision-client-library"></a>Custom Vision 클라이언트 라이브러리 설치
 
-Go용 Custom Vision Service SDK를 설치하려면 PowerShell에서 다음 명령을 실행합니다.
+Go용 Custom Vision Service 클라이언트 라이브러리를 설치하려면 PowerShell에서 다음 명령을 실행합니다.
 
 ```shell
 go get -u github.com/Azure/azure-sdk-for-go/...

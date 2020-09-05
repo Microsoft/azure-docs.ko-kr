@@ -3,12 +3,12 @@ title: 자습서 - Azure에 SQL Server 데이터베이스 백업
 description: 이 자습서에서는 Azure VM에서 실행되는 SQL Server 데이터베이스를 Azure Backup Recovery Services 자격 증명 모음에 백업하는 방법에 대해 알아봅니다.
 ms.topic: tutorial
 ms.date: 06/18/2019
-ms.openlocfilehash: e0f3ec8e9407c97f91a7f215a6a2734a254006d1
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 17a8472da2595c08cb198baaf853faf110a619fa
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513335"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612455"
 ---
 # <a name="back-up-a-sql-server-database-in-an-azure-vm"></a>Azure VM에서 SQL Server 데이터베이스 백업
 
@@ -117,7 +117,7 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 
    ![백업 구성 선택](./media/backup-azure-sql-database/backup-goal-configure-backup.png)
 
-2. **백업 구성**을 클릭하면 **백업할 항목 선택** 블레이드가 표시됩니다. 이 목록에는 등록된 모든 가용성 그룹 및 독립 실행형 SQL Server가 표시됩니다. 행 왼쪽의 펼침 단추를 확장하여 해당 인스턴스의 보호되지 않는 모든 데이터베이스를 표시하거나 AG에서 항상을 선택합니다.  
+2. **백업 구성**을 선택하면 **백업할 항목 선택** 창이 표시됩니다. 이 목록에는 등록된 모든 가용성 그룹 및 독립 실행형 SQL Server가 표시됩니다. 행 왼쪽의 펼침 단추를 확장하여 해당 인스턴스의 보호되지 않는 모든 데이터베이스를 표시하거나 AG에서 항상을 선택합니다.  
 
     ![독립 실행형 데이터베이스를 사용하는 모든 SQL Server 인스턴스 표시](./media/backup-azure-sql-database/list-of-sql-databases.png)
 
@@ -129,11 +129,11 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 
      * 또는 **AUTOPROTECT** 열의 해당 드롭다운에서 **ON** 옵션을 선택하여 전체 인스턴스 또는 Always On 가용성 그룹에 대한 자동 보호를 설정할 수 있습니다. 자동 보호 기능은 모든 기존 데이터베이스에 보호를 사용하도록 설정할 뿐 아니라 나중에 해당 인스턴스 또는 가용성 그룹에 추가되는 새 데이터베이스도 자동으로 보호합니다.  
 
-4. **확인**을 클릭하여 **백업 정책** 블레이드를 엽니다.
+4. **확인**을 선택하여 **백업 정책** 창을 엽니다.
 
     ![Always On 가용성 그룹에 자동 보호를 사용하도록 설정](./media/backup-azure-sql-database/enable-auto-protection.png)
 
-5. **백업 정책 선택**에서 정책을 선택한 다음, **확인**을 클릭합니다.
+5. **백업 정책 선택**에서 정책을 선택한 다음, **확인**을 선택합니다.
 
    * 기본 정책 HourlyLogBackup.
    * 이전에 SQL용으로 만든 기존 백업 정책을 선택합니다.
@@ -161,8 +161,8 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 
 백업 정책을 만들려면:
 
-1. 자격 증명 모음에서 **백업 정책** > **추가**를 차례로 클릭합니다.
-2. **추가** 메뉴에서 **Azure VM의 SQL Server**를 클릭하여 정책 유형을 정의합니다.
+1. 자격 증명 모음에서 **백업 정책** > **추가**를 선택합니다.
+2. **추가** 메뉴에서 **Azure VM의 SQL Server**를 선택하여 정책 유형을 정의합니다.
 
    ![새 백업 정책에 대한 정책 유형 선택](./media/backup-azure-sql-database/policy-type-details.png)
 
@@ -171,7 +171,7 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 
    * **매일**의 경우 백업 작업이 시작될 때 시간과 표준 시간대를 선택합니다.
    * **전체 백업** 옵션은 해제할 수 없으므로 전체 백업을 실행해야 합니다.
-   * **전체 백업**을 클릭하여 정책을 확인합니다.
+   * **전체 백업**을 선택하여 정책을 확인합니다.
    * 매일 전체 백업에 대해서는 차등 백업을 만들 수 없습니다.
    * **매주**의 경우 백업 작업이 시작되는 요일, 시간 및 표준 시간대를 선택합니다.
 
@@ -214,7 +214,7 @@ VM에서 실행되는 데이터베이스를 검색합니다.
 ## <a name="run-an-on-demand-backup"></a>주문형 백업 실행
 
 1. Recovery Services 자격 증명 모음에서 백업 항목을 선택합니다.
-2. "Azure VM의 SQL"을 클릭합니다.
+2. "Azure VM의 SQL" 선택
 3. 데이터베이스를 마우스 오른쪽 단추로 클릭하고 "지금 백업"을 선택합니다.
 4. 백업 유형(전체/차등/로그/전체 복사만) 및 압축(사용/사용 안 함)을 선택합니다.
 5. 확인을 선택하여 백업을 시작합니다.

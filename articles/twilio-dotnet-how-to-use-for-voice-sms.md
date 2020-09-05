@@ -12,12 +12,13 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/24/2015
 ms.author: gwallace
-ms.openlocfilehash: 22b33d7b4b0ff69a2e751cadff70453f73ed4f8e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-dotnet
+ms.openlocfilehash: 104f969f5e27ef36ad43eb10e19176a4bcfd6648
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69876816"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021139"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-from-azure"></a>Azure에서 음성 및 SMS 기능을 위해 Twilio를 사용하는 방법
 이 가이드에서는 Azure에서 Twilio API 서비스로 일반 프로그래밍 작업을 수행하는 방법을 보여 줍니다. 이 문서의 시나리오에서는 전화 통화를 걸고 SMS(Short Message Service) 메시지를 보냅니다. 애플리케이션에서 음성 및 SMS 사용 방법과 Twilio에 대한 자세한 내용은 [다음 단계](#NextSteps) 섹션을 참조하세요.
@@ -83,7 +84,7 @@ Twilio는 .NET 도우미 라이브러리 집합을 제공하며, 이 라이브�
 
 Twilio는 다음과 같이 .NET 개발자를 위한 5가지 라이브러리를 제공합니다.
 
-| 라이브러리 | Description |
+| 라이브러리 | 설명 |
 | --- | --- |
 | Twilio.API | 친숙한 .NET 라이브러리에서 Twilio REST API를 래핑하는 핵심 Twilio 라이브러리입니다. 이 라이브러리는 .NET, Silverlight 및 Windows Phone 7에 사용할 수 있습니다. |
 | Twilio.TwiML | TwiML 태그를 생성하는 친숙한 .NET 방법을 제공합니다. |

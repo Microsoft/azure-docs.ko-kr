@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c2ae9e7654fa468d499ca6ef8543b98b1e372ca
-ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
+ms.openlocfilehash: 5c07500ec432d176b2cf74aa95f0a1c943348f9f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85481394"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229519"
 ---
 # <a name="what-are-azure-active-directory-reports"></a>Azure Active Directory 보고서란?
 
@@ -44,9 +44,9 @@ Azure AD(Azure Active Directory) 보고서는 환경에서 작업의 포괄적�
 
 보안 보고서는 조직의 ID를 보호하는 데 도움이 됩니다. 두 가지 형식의 보안 보고서가 있습니다.
 
-- **위험 플래그가 지정된 사용자** - [위험 플래그가 지정된 사용자 보안 보고서](concept-user-at-risk.md)에서 손상되었을 수 있는 사용자 계정에 대한 개요를 얻을 수 있습니다.
+- **위험 플래그가 지정된 사용자** - [위험 플래그가 지정된 사용자 보안 보고서](../identity-protection/overview-identity-protection.md)에서 손상되었을 수 있는 사용자 계정에 대한 개요를 얻을 수 있습니다.
 
-- **위험한 로그인** - [위험한 로그인 보안 보고서](concept-risky-sign-ins.md)를 사용하면 사용자 계정의 정당한 소유자가 아닌 사람이 수행한 로그인 시도에 대한 지표를 얻을 수 있습니다. 
+- **위험한 로그인** - [위험한 로그인 보안 보고서](../identity-protection/overview-identity-protection.md)를 사용하면 사용자 계정의 정당한 소유자가 아닌 사람이 수행한 로그인 시도에 대한 지표를 얻을 수 있습니다. 
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-a-security-report"></a>보안 보고서에 액세스하는 데 필요한 Azure AD 라이선스는 무엇인가요?  
 
@@ -81,7 +81,7 @@ Azure AD(Azure Active Directory) 보고서는 환경에서 작업의 포괄적�
 
 #### <a name="what-azure-ad-license-do-you-need-to-access-the-audit-logs-report"></a>감사 로그 보고서에 액세스하는 데 필요한 Azure AD 라이선스는 무엇인가요?  
 
-감사 로그 보고서는 라이선스가 있는 기능에 대해 사용할 수 있습니다. 특정 기능에 대한 라이선스가 있으면 해당 기능에 대한 감사 로그 정보에 액세스할 수도 있습니다. [다양한 유형의 라이선스](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#what-are-the-azure-ad-licenses)에 따른 자세한 기능 비교는 [Azure Active Directory 가격 책정 페이지](https://azure.microsoft.com/pricing/details/active-directory/)에서 확인할 수 있습니다. 자세한 내용은 [Azure Active Directory 기능 및 특성](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#which-features-work-in-azure-ad)을 참조하세요.
+감사 로그 보고서는 라이선스가 있는 기능에 대해 사용할 수 있습니다. 특정 기능에 대한 라이선스가 있으면 해당 기능에 대한 감사 로그 정보에 액세스할 수도 있습니다. [다양한 유형의 라이선스](../fundamentals/active-directory-whatis.md#what-are-the-azure-ad-licenses)에 따른 자세한 기능 비교는 [Azure Active Directory 가격 책정 페이지](https://azure.microsoft.com/pricing/details/active-directory/)에서 확인할 수 있습니다. 자세한 내용은 [Azure Active Directory 기능 및 특성](../fundamentals/active-directory-whatis.md#which-features-work-in-azure-ad)을 참조하세요.
 
 ### <a name="sign-ins-report"></a>로그인 보고서
 
@@ -101,6 +101,6 @@ Azure AD에서는 사용자 인터페이스 외에도 일련의 REST 기반 API�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [위험한 로그인 보고서](concept-risky-sign-ins.md)
+- [위험한 로그인 보고서](../identity-protection/overview-identity-protection.md)
 - [감사 로그 보고서](concept-audit-logs.md)
 - [로그인 로그 보고서](concept-sign-ins.md)

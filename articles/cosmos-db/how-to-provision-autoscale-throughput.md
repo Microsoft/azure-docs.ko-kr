@@ -6,12 +6,13 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 07/30/2020
-ms.openlocfilehash: dba0fccaa3eb79ad297ce80462efea5b69a4a009
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4e7c5f3f4bf84b7a267cb883df5f375f2a8cf981
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497055"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017144"
 ---
 # <a name="provision-autoscale-throughput-on-database-or-container-in-azure-cosmos-db"></a>Azure Cosmos DB의 데이터베이스 또는 컨테이너에 자동 크기 조정 처리량 프로비전
 

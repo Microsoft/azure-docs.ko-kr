@@ -10,12 +10,13 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 02/18/2020
 ms.author: juliako
-ms.openlocfilehash: b6f8181568e5996bfb3c99ae25fb801fa62f3af1
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 722db99da3c46a4ea1e31ed329a8e3448cc5626b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904261"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268828"
 ---
 # <a name="upload-and-index-your-videos"></a>비디오 업로드 및 인덱싱  
 
@@ -100,7 +101,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 - 인덱싱 상태 변경 
     - 속성:    
     
-        |이름|Description|
+        |Name|Description|
         |---|---|
         |id|비디오 ID|
         |state|비디오 상태|  
@@ -127,7 +128,7 @@ POST 요청을 사용하여 고객에게 다음 이벤트를 알리는 데 사�
 원시 또는 외부 녹음에 백그라운드 노이즈가 있는 경우 이 매개변수를 사용합니다. 이 매개 변수는 인덱싱 프로세스를 구성하는 데 사용됩니다. 다음 값을 지정할 수 있습니다.
 
 - `AudioOnly` – 오디오만(비디오 무시) 사용하여 인사이트를 인덱싱하고 추출합니다.
-- `VideoOnly`-비디오만 사용 하 여 정보 인덱싱 및 추출 (오디오 무시)
+- `VideoOnly` -비디오만 사용 하 여 정보 인덱싱 및 추출 (오디오 무시)
 - `Default` – 오디오와 비디오를 모두 사용하여 인사이트를 인덱싱하고 추출합니다.
 - `DefaultWithNoiseReduction` – 오디오 스트림에 노이즈 감소 알고리즘을 적용하는 한편, 오디오와 비디오 모두에서 인사이트를 인덱싱하고 추출합니다.
 
@@ -166,7 +167,7 @@ SingleBitrate 전송률의 경우 출력 마다 표준 인코더 비용이 적�
 
 다음 C# 코드 조각에서는 모든 Video Indexer API를 사용하는 방법을 보여 줍니다.
 
-#### <a name="instructions-for-running-this-code-sample"></a>이 코드 샘플을 실행 하기 위한 지침
+**다음 코드 샘플을 실행 하는 방법에 대 한 지침**
 
 이 코드를 개발 플랫폼에 복사한 후에 API Management 인증 키와 비디오 URL의 두 매개 변수를 제공 해야 합니다.
 

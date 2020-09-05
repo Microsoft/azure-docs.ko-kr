@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, carlrab
 ms.date: 07/28/2020
-ms.openlocfilehash: 33f87bf6f030adb48f2c4f8eb45027c1b298d812
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: c36a8e6f2e104d91bd7738849918c46802cd0dca
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87419719"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225940"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>탄력적 풀은 Azure SQL Database에서 여러 데이터베이스를 관리 하 고 크기를 조정 하는 데 도움이 됩니다.
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -44,7 +44,7 @@ SaaS 개발자는 여러 데이터베이스로 구성된 대규모 데이터 계
 
 ## <a name="when-should-you-consider-a-sql-database-elastic-pool"></a>SQL Database 탄력적 풀은 언제 고려해야 하나요?
 
-풀은 특정 사용 패턴을 사용하여 많은 수의 데이터베이스에 적합합니다. 주어진 데이터 베이스에 대해, 이 패턴은 상대적으로 사용률 급증이 드물고 평균 사용률이 낮음으로 규정됩니다. 반대로, 영구 중간 사용률이 높은 여러 데이터베이스는 동일한 탄력적 풀에 배치 하면 안 됩니다.
+풀은 특정 사용 패턴을 보이는 다수의 데이터베이스에 적합합니다. 주어진 데이터 베이스에 대해, 이 패턴은 상대적으로 사용률 급증이 드물고 평균 사용률이 낮음으로 규정됩니다. 반대로, 영구 중간 사용률이 높은 여러 데이터베이스는 동일한 탄력적 풀에 배치 하면 안 됩니다.
 
 풀에 더 많은 데이터베이스를 추가할수록 절감이 커집니다. 응용 프로그램 사용 패턴에 따라 두 개의 S3 데이터베이스를 사용 하 여 절감 액을 볼 수 있습니다.
 
@@ -113,11 +113,11 @@ SaaS 개발자는 여러 데이터베이스로 구성된 대규모 데이터 계
 
 DTU 기반 구매 모델의 경우:
 
-최대 (<*Total number of DBs* *DB 당 총 DB x 평균 dtu 사용률*>, <*동시 최고* db x *초당 최대 dtu 사용률*)
+최대 (<*Total number of DBs* *DB 당 총 DB x 평균 dtu 사용률*>, <*동시 최고* *db x 초당 최대 dtu 사용률*>)
 
 vCore 기반 구매 모델의 경우:
 
-최대 (<*Total number of DBs* *DB 당 총 Db x 평균 vcore 사용률*>, <*동시 최고* db x *최대 vcore 사용률*)
+최대 (<*Total number of DBs* *DB 당 총 Db x 평균 vcore 사용률*>, <*동시 최고* *db x 최대 vcore 사용률*>)
 
 2. 풀에서 모든 데이터베이스에 필요한 바이트 수를 추가하여 풀에 필요한 스토리지 공간을 예측합니다. 그런 다음 이 스토리지의 양을 제공하는 eDTU 풀 크기를 결정합니다.
 3. DTU 기반 구매 모델의 경우 1단계 및 2단계에서 eDTU 예상 중 큰 수를 사용합니다. VCore 기반 구매 모델의 경우 1단계의 vCore 예상을 사용합니다.

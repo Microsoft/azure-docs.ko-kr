@@ -1,31 +1,33 @@
 ---
-title: Python API를 사용하여 Azure Batch 작업 실행
-description: Batch Python 클라이언트 라이브러리를 사용하여 Azure Batch 샘플 작업 및 태스크를 빠르게 실행합니다. Batch 서비스의 주요 개념에 대해 알아봅니다.
+title: 빠른 시작 - Python API를 사용하여 Azure Batch 작업 실행
+description: 이 빠른 시작에서는 Batch Python 클라이언트 라이브러리를 사용하여 Azure Batch 샘플 작업 및 태스크를 실행합니다. Batch 서비스의 주요 개념에 대해 알아봅니다.
 ms.topic: quickstart
-ms.date: 11/27/2018
+ms.date: 08/17/2020
 ms.custom:
 - seo-python-october2019
 - mvc
 - devx-track-python
-ms.openlocfilehash: 7cef08c81a4122fcbfcc18160ad8e6602f335569
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: e3792a88104c359b014a7a12cf6e48e690c2a865
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852568"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88511017"
 ---
 # <a name="quickstart-use-python-api-to-run-an-azure-batch-job"></a>빠른 시작: Python API를 사용하여 Azure Batch 작업 실행
 
-이 빠른 시작에서는 Python API를 사용하여 앱에서 Azure Batch 작업을 실행합니다. 앱은 입력 데이터 파일을 Azure Storage에 업로드하고 Batch 컴퓨팅 노드(가상 머신)의 *풀*을 만듭니다. 그런 다음, *태스크*를 실행하는 *작업*을 만들어 기본 명령을 사용하여 풀에서 각 입력 파일을 처리합니다.
+Python API를 사용하여 앱에서 Azure Batch 작업을 실행하여 Azure Batch를 시작합니다. 앱은 입력 데이터 파일을 Azure Storage에 업로드하고 Batch 컴퓨팅 노드(가상 머신)의 풀을 만듭니다. 그런 다음, 태스크를 실행하는 작업을 만들어 기본 명령을 사용하여 풀에서 각 입력 파일을 처리합니다.
 
-여기에서 Batch 서비스의 핵심 개념을 알아보고 더 큰 규모의 보다 현실적인 워크로드로 Batch를 시도할 준비가 되었습니다.
+이 빠른 시작을 완료하면 Batch 서비스의 주요 개념을 이해하고 더 큰 규모의 더 실제적인 작업으로 Batch를 시도할 준비가 됩니다.
 
 ![Azure Batch 워크플로 개요](./media/quick-run-python/overview-of-the-azure-batch-workflow.png)
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- **Azure Batch** 계정 및 연결된 **Azure Storage** 계정. [Azure Portal](quick-create-portal.md) 또는 [CLI](quick-create-cli.md)를 사용하여 이러한 계정을 만듭니다.
+- 활성 구독이 있는 Azure 계정. [체험 계정을 만듭니다](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+
+- Batch 계정 및 연결된 Azure Storage 계정. 이러한 계정을 만들려면 [Azure Portal](quick-create-portal.md) 또는 [Azure CLI](quick-create-cli.md)를 사용하는 Batch 빠른 시작을 참조하세요.
+
 - [pip](https://pip.pypa.io/en/stable/installing/) 패키지 관리자를 포함한 [Python](https://python.org/downloads) 버전 2.7 또는 3.3 이상
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
@@ -68,7 +70,7 @@ _STORAGE_ACCOUNT_KEY = 'xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfwpbIC5aAWA8wDu+AFXZB
 python python_quickstart_client.py
 ```
 
-스크립트가 실행되면 코드를 검토하여 애플리케이션의 각 부분에서 수행하는 작업을 알아봅니다. 
+스크립트가 실행되면 코드를 검토하여 애플리케이션의 각 부분에서 수행하는 작업을 알아봅니다.
 
 샘플 애플리케이션을 실행하는 경우 콘솔 출력은 다음과 비슷합니다. 실행 중에 풀의 컴퓨팅 노드가 시작되는 동안 `Monitoring all tasks for 'Completed' state, timeout in 00:30:00...`에서 일시 중지가 발생합니다. 첫 번째 컴퓨팅 노드가 실행되는 즉시 실행되도록 태스크를 큐에 넣습니다. [Azure Portal](https://portal.azure.com)에서 배치 계정으로 이동하여 배치 계정의 풀, 노드, 작업 및 태스크를 모니터링합니다.
 
@@ -102,9 +104,9 @@ Batch processing began with mainframe computers and punch cards. Today it still 
 
 이 빠른 시작의 Python 앱은 다음을 수행합니다.
 
-* 세 개의 작은 텍스트 파일을 Azure Storage 계정의 Blob 컨테이너에 업로드합니다. 이러한 파일은 Batch 태스크에서 처리하기 위한 입력입니다.
-* Ubuntu 18.04 LTS를 실행하는 두 개의 컴퓨팅 노드로 구성된 풀을 만듭니다.
-* 노드에서 실행할 하나의 작업과 세 개의 태스크를 만듭니다. 각 태스크는 Bash 셸 명령줄을 사용하여 입력 파일 중 하나를 처리합니다.
+- 세 개의 작은 텍스트 파일을 Azure Storage 계정의 Blob 컨테이너에 업로드합니다. 이러한 파일은 Batch 태스크에서 처리하기 위한 입력입니다.
+- Ubuntu 18.04 LTS를 실행하는 두 개의 컴퓨팅 노드로 구성된 풀을 만듭니다.
+- 노드에서 실행할 하나의 작업과 세 개의 태스크를 만듭니다. 각 태스크는 Bash 셸 명령줄을 사용하여 입력 파일 중 하나를 처리합니다.
 * 태스크에서 반환된 파일을 표시합니다.
 
 자세한 내용은 `python_quickstart_client.py` 파일 및 다음 섹션을 참조하세요.
@@ -182,7 +184,7 @@ batch_service_client.job.add(job)
 
 앱에서 [TaskAddParameter](/python/api/azure-batch/azure.batch.models.taskaddparameter) 클래스를 사용하여 태스크 개체의 목록을 만듭니다. 각 태스크는 `command_line` 매개 변수를 사용하여 `resource_files` 입력 개체를 처리합니다. 이 샘플에서는 명령줄에서 `cat` Bash 셸 명령을 실행하여 텍스트 파일을 표시합니다. 이 명령은 간단한 데모용 예제입니다. Batch를 사용하면 명령줄에서 앱 또는 스크립트를 지정합니다. Batch는 컴퓨팅 노드에 앱과 스크립트를 배포하는 여러 가지 방법을 제공합니다.
 
-그런 다음, 이 앱은 [task.add_collection](/python/api/azure-batch/azure.batch.operations.taskoperations) 메서드를 사용하여 작업에 태스크를 추가하고, 컴퓨팅 노드 실행 대기열에 추가합니다. 
+그런 다음, 이 앱은 [task.add_collection](/python/api/azure-batch/azure.batch.operations.taskoperations) 메서드를 사용하여 작업에 태스크를 추가하고, 컴퓨팅 노드 실행 대기열에 추가합니다.
 
 ```python
 tasks = list()

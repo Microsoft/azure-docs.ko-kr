@@ -1,24 +1,27 @@
 ---
 title: Azure Lighthouse 및 Azure 관리형 애플리케이션
-description: Azure Lighthouse 및 Azure 관리 되는 응용 프로그램 ...
-ms.date: 05/01/2020
+description: Azure Lighthouse 및 Azure 관리 되는 응용 프로그램을 사용 하 여 다양 한 시나리오를 지원 하 고 함께 사용할 수 있는 방법을 이해 합니다.
+ms.date: 08/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3e1477de18b24cf5099cd4479a82169e3ecada26
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 81ff61a6d1b7487d3da0643bac3987589de46c1e
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121608"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163427"
 ---
 # <a name="azure-lighthouse-and-azure-managed-applications"></a>Azure Lighthouse 및 Azure 관리형 애플리케이션
 
 Azure 관리 되는 응용 프로그램 및 Azure Lighthouse는 서비스 공급자가 고객의 테 넌 트에 있는 리소스에 액세스할 수 있도록 하 여 작동 합니다. 작동 방식 및 사용 하도록 설정 하는 데 도움이 되는 시나리오와 함께 사용할 수 있는 방법에 대 한 차이점을 이해 하는 것이 도움이 될 수 있습니다.
 
+> [!TIP]
+> 이 항목의 서비스 공급자 및 고객을 참조 하지만 [여러 테 넌 트를 관리](enterprise.md) 하는 기업은 동일한 프로세스와 도구를 사용할 수 있습니다.
+
 ## <a name="comparing-azure-lighthouse-and-azure-managed-applications"></a>Azure Lighthouse 및 Azure 관리 되는 응용 프로그램 비교
 
 ### <a name="azure-lighthouse"></a>Azure Lighthouse
 
-[Azure Lighthouse](../overview.md)를 사용 하 여 고객의 구독 (또는 리소스 그룹)에서 직접 광범위 한 관리 작업을 수행 하는 서비스 공급자입니다. 이 액세스는 논리 프로젝션을 통해 수행 되며, 서비스 공급자는 자신의 테 넌 트에 로그인 하 여 고객의 테 넌 트에 속한 리소스에 액세스할 수 있습니다. 고객은 서비스 공급자에 게 위임할 구독 또는 리소스 그룹을 결정할 수 있으며, 고객은 해당 리소스에 대 한 모든 권한을 유지 합니다. 또한 언제 든 지 서비스 공급자의 액세스를 제거할 수 있습니다.
+[Azure Lighthouse](../overview.md)를 사용 하 여 서비스 공급자는 고객의 구독 (또는 리소스 그룹)에서 직접 광범위 한 관리 작업을 수행할 수 있습니다. 이 액세스는 논리 프로젝션을 통해 수행 되며, 서비스 공급자는 자신의 테 넌 트에 로그인 하 여 고객의 테 넌 트에 속한 리소스에 액세스할 수 있습니다. 고객은 서비스 공급자에 게 위임할 구독 또는 리소스 그룹을 결정할 수 있으며, 고객은 해당 리소스에 대 한 모든 권한을 유지 합니다. 또한 언제 든 지 서비스 공급자의 액세스를 제거할 수 있습니다.
 
 Azure Lighthouse를 사용 하기 위해 고객은 [ARM 템플릿을 배포](../how-to/onboard-customer.md) 하거나 [Azure Marketplace의 관리 서비스 제품](managed-services-offers.md)을 통해 [azure에서 위임 된 리소스 관리](azure-delegated-resource-management.md) 를 등록 합니다. [파트너 ID를 연결](../../cost-management-billing/manage/link-partner-id.md)하 여 고객의 계약에 대 한 영향을 추적할 수 있습니다.
 

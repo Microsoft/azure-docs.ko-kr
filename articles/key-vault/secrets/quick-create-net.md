@@ -7,12 +7,13 @@ ms.date: 03/12/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: a0e27927c91c8b8ed1cfca410e08a5eb90117f58
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: cf9c34dc2dde5c41edb7991451aebf5d90104196
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87076716"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003255"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net-sdk-v4"></a>빠른 시작: .NET용 Azure Key Vault 클라이언트 라이브러리(SDK v4)
 
@@ -240,7 +241,6 @@ namespace key_vault_console_app
 
 Key Vault 및 이를 애플리케이션과 통합하는 방법에 대해 자세히 알아보려면 아래 문서로 계속 진행하세요.
 
-- [.NET을 사용하여 Azure Key Vault에 서비스 간 인증](../general/service-to-service-authentication.md) 구현
 - [Azure Key Vault 개요](../general/overview.md) 참조
 - [Azure Key Vault 개발자 가이드](../general/developers-guide.md) 참조
 - [Azure Key Vault 모범 사례](../general/best-practices.md) 검토

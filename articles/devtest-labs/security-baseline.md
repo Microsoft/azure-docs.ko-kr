@@ -3,12 +3,12 @@ title: Azure DevTest Labs에 대 한 Azure 보안 기준
 description: Azure DevTest Labs에 대 한 Azure 보안 기준
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 158ead7531b0b3da2e495e36e40e761961bea498
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: dc53eacf456d1e7c1926c6d7f20e343b3a84340d
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87761011"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078047"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Azure DevTest Labs에 대 한 Azure 보안 기준
 
@@ -159,7 +159,7 @@ DevTest Labs에는 기본 암호 개념이 없습니다.
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4: Azure Active Directory에서 SSO(Single Sign-On) 사용
 **지침:** DevTest Labs는 id 관리에 Azure AD 서비스를 사용 합니다. DevTest Labs를 기반으로 환경에 대 한 액세스 권한을 사용자에 게 부여 하는 경우 다음 두 가지 주요 측면을 고려 하세요.
 
-- **리소스 관리:** 리소스를 관리 하는 Azure Portal에 대 한 액세스를 제공 합니다 (Vm 만들기, 환경 만들기, 시작, 중지, 다시 시작, 삭제 및 아티팩트 적용 등). 리소스 관리는 RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure에서 수행 됩니다. 사용자에 게 역할을 할당 하 고 리소스 및 액세스 수준 사용 권한을 설정 합니다.
+- **리소스 관리:** 리소스를 관리 하는 Azure Portal에 대 한 액세스를 제공 합니다 (Vm 만들기, 환경 만들기, 시작, 중지, 다시 시작, 삭제 및 아티팩트 적용 등). 리소스 관리는 azure에서 azure RBAC (역할 기반 액세스 제어)를 사용 하 여 수행 됩니다. 사용자에 게 역할을 할당 하 고 리소스 및 액세스 수준 사용 권한을 설정 합니다.
 - **가상 컴퓨터 (네트워크 수준)**: 기본 구성에서 vm은 로컬 관리자 계정을 사용 합니다. 사용 가능한 도메인 (Azure AD Domain Services, 온-프레미스 도메인 또는 클라우드 기반 도메인)이 있으면 컴퓨터를 도메인에 조인할 수 있습니다. 그런 다음 사용자는 도메인 가입 아티팩트를 사용 하 여 도메인 기반 id를 사용 하 여 컴퓨터에 연결할 수 있습니다. 
 
 - [DevTest Labs에 대 한 참조 아키텍처](devtest-lab-reference-architecture.md#architecture)
@@ -315,9 +315,9 @@ Microsoft에서 관리 하는 기본 플랫폼의 경우 Microsoft는 모든 고
 **책임:** Customer
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
-**지침:** Azure Active Directory (Azure AD) 역할 기반 액세스 제어 (RBAC)를 사용 하 여 Azure DevTest Labs labs에 대 한 액세스를 제어 합니다.
+**지침:** Azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure DevTest Labs의 랩에 대 한 액세스를 제어 합니다.
 
-- [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
+- [Azure RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
 - [DevTest Labs의 역할 이해](devtest-lab-add-devtest-user.md)
 
 **Azure Security Center 모니터링:** 해당 없음
@@ -629,8 +629,8 @@ Azure Security Center의 권장 사항을 Azure 리소스에 대 한 보안 구�
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5: Azure 리소스 구성을 안전하게 저장
 **지침:** Azure DevOps를 사용 하 여 사용자 지정 Azure 정책, Azure Resource Manager 템플릿 및 필요한 상태 구성 스크립트와 같은 코드를 안전 하 게 저장 하 고 관리할 수 있습니다. Azure DevOps에서 관리 하는 리소스에 액세스 하려면 Azure DevOps와 통합 된 경우 특정 사용자, 기본 제공 보안 그룹 또는 Azure Active Directory (Azure AD)에 정의 된 그룹에 대 한 권한을 부여 하거나 거부할 수 있습니다.
 
-- [Azure Repos Git 자습서](/devops/repos/git/gitworkflow?view=azure-devops)
-- [권한 및 그룹 정보](/devops/organizations/security/about-permissions?view=azure-devops&tabs=preview-page)
+- [Azure Repos Git 자습서](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow)
+- [권한 및 그룹 정보](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions?view=azure-devops&tabs=preview-page)
 - [Azure DevTest Labs와 Azure DevOps 워크플로 간 통합](devtest-lab-dev-ops.md)
 
 **Azure Security Center 모니터링:** 해당 없음
@@ -638,12 +638,12 @@ Azure Security Center의 권장 사항을 Azure 리소스에 대 한 보안 구�
 **책임:** Customer
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
-**지침:** 사용자 지정 이미지를 사용 하는 경우 RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다. 공유 이미지 갤러리를 사용 하 여 이미지를 필요한 특정 랩에 공유할 수 있습니다. 컨테이너 이미지의 경우 Azure Container Registry에 저장 하 고 RBAC를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
+**지침:** 사용자 지정 이미지를 사용 하는 경우 Azure RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다. 공유 이미지 갤러리를 사용 하 여 이미지를 필요한 특정 랩에 공유할 수 있습니다. 컨테이너 이미지의 경우 Azure Container Registry에 저장 하 고 Azure RBAC를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
 
-- [Azure의 RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
-- [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
+- [Azure RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
+- [Azure RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
 - [DevTest Labs에 대 한 공유 이미지 갤러리 구성](configure-shared-image-gallery.md)
-- [Container Registry에 대 한 RBAC 이해](../container-registry/container-registry-roles.md)
+- [Container Registry에 대 한 Azure RBAC 이해](../container-registry/container-registry-roles.md)
 
 **Azure Security Center 모니터링:** 해당 없음
 

@@ -4,13 +4,13 @@ description: 런타임, SDK 및 도구를 설치하고 로컬 개발 클러스�
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.custom: sfrev
-ms.openlocfilehash: 1dcb2095416b74eb8dd805d811ecc7142a6bafb8
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: sfrev, devx-track-azurepowershell
+ms.openlocfilehash: 57e5fe236e117932c3cbc2fcf2479f89aaa261d9
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091626"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069072"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Windows에서 개발 환경 준비
 
@@ -68,8 +68,8 @@ SDK만 필요한 경우 다음 패키지를 설치할 수 있습니다.
 
 현재 버전은 다음과 같습니다.
 
-* Service Fabric SDK 및 도구 4.1.428
-* Service Fabric runtime 7.1.428
+* Service Fabric SDK 및 도구 4.1.456
+* Service Fabric runtime 7.1.456
 
 지원되는 버전 목록은 [Service Fabric 버전](service-fabric-versions.md)을 참조하세요.
 

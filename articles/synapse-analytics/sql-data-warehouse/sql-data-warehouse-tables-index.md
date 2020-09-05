@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 605c3320b0fcc7ac9663acc1578740e2cb3f3174
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ac32c41bd6b30c3edce68d67adc376e066d0bf5
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213961"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797601"
 ---
 # <a name="indexing-tables-in-synapse-sql-pool"></a>Synapse SQL 풀의 테이블 인덱싱
 
@@ -143,6 +143,9 @@ GROUP BY
 ;
 ```
 
+>[!TIP]
+> Synapse SQL의 성능 향상을 위해 영구 사용자 테이블에서 **pdw_table_mappings** 대신 **pdw_permanent_table_mappings** 를 사용 하는 것이 좋습니다. 자세한 내용은 **[pdw_permanent_table_mappings &#40;transact-sql&#41;](/sql/relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql?view=azure-sqldw-latest)** 을 참조 하십시오.
+
 뷰를 만들었으므로 이제 다음 쿼리를 실행하여 행 수가 100,000개 미만인 행 그룹이 있는 테이블을 식별합니다. 물론 좀 더 최적 상태의 세그먼트 품질을 원할 경우 임계값인 100,000개를 늘릴 수도 있습니다.
 
 ```sql
@@ -154,7 +157,7 @@ WHERE    COMPRESSED_rowgroup_rows_AVG < 100000
 
 쿼리를 실행했으면 데이터를 확인하고 결과를 분석할 수 있습니다. 다음 표는 행 그룹 분석에서 확인할 내용에 대해 설명합니다.
 
-| Column | 이 데이터를 사용하는 방법 |
+| 열 | 이 데이터를 사용하는 방법 |
 | --- | --- |
 | [table_partition_count] |테이블이 분할되어 있으면 열려 있는 행 그룹의 숫자가 더 많을 것입니다. 이론상으로는 분산의 각 파티션에 열려 있는 행 그룹이 연결될 수 있습니다. 분석할 때 이 점을 고려해야 합니다. 분할된 작은 테이블의 경우 압축 성능이 향상되도록 파티션을 모두 제거하여 최적화할 수 있습니다. |
 | [row_count_total] |테이블에 대한 전체 행 개수입니다. 예를 들어 압축된 상태에서 행의 비율을 계산하는 데 이 값을 사용할 수 있습니다. |

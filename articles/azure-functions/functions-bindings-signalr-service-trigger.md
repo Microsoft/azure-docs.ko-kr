@@ -3,14 +3,15 @@ title: Azure Functions SignalR Service 트리거 바인딩
 description: Azure Functions에서 SignalR 서비스 메시지를 보내는 방법에 대해 알아봅니다.
 author: chenyl
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 05/11/2020
 ms.author: chenyl
-ms.openlocfilehash: ec2952a3093661f0f6ef32908307a8a82c6367ed
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: e2651afbcdc3bae71bb531aa0e821f83264c295d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540233"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212595"
 ---
 # <a name="signalr-service-trigger-binding-for-azure-functions"></a>Azure Functions에 대 한 SignalR Service 트리거 바인딩
 
@@ -53,7 +54,7 @@ public static async Task Run([SignalRTrigger("SignalRTest", "messages", "SendMes
 }
 ```
 
-#### <a name="use-attribute-signalrparameter-to-simplify-parameternames"></a>특성 `[SignalRParameter]` 을 사용 하 여 단순화`ParameterNames`
+#### <a name="use-attribute-signalrparameter-to-simplify-parameternames"></a>특성 `[SignalRParameter]` 을 사용 하 여 단순화 `ParameterNames`
 
 이를 사용 하는 것이 다소 복잡 하므로 `ParameterNames` `SignalRParameter` 동일한 용도를 얻기 위해가 제공 됩니다.
 
@@ -162,7 +163,7 @@ def main(invocation) -> None:
 
 ---
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>구성
 
 ### <a name="signalrtrigger"></a>SignalRTrigger
 
@@ -190,9 +191,9 @@ InvocationContext는 SignalR 서비스에서 보내는 메시지의 모든 콘�
 |InvocationContext의 속성 | 설명|
 |------------------------------|------------|
 |인수| *메시지* 범주에 사용할 수 있습니다. [호출 메시지](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding) 의 *인수* 를 포함 합니다.|
-|Error| *연결* 되지 않은 이벤트에 사용할 수 있습니다. 오류가 없는 연결을 닫거나 오류 메시지를 포함 하는 경우 비워 둘 수 있습니다.|
+|오류| *연결* 되지 않은 이벤트에 사용할 수 있습니다. 오류가 없는 연결을 닫거나 오류 메시지를 포함 하는 경우 비워 둘 수 있습니다.|
 |허브| 메시지가 속한 허브 이름입니다.|
-|범주| 메시지의 범주입니다.|
+|Category| 메시지의 범주입니다.|
 |이벤트| 메시지의 이벤트입니다.|
 |ConnectionId| 메시지를 보내는 클라이언트의 연결 ID입니다.|
 |UserId| 메시지를 보내는 클라이언트의 사용자 id입니다.|
@@ -216,7 +217,7 @@ await connection.invoke("broadcast", message1, message2);
 
 매개 변수 바인딩의 경우 순서가 중요 합니다. 를 사용 하는 경우 `ParameterNames` 의 순서는 `ParameterNames` 클라이언트에서 호출 하는 인수의 순서와 일치 합니다. C #에서 특성을 사용 하는 경우 `[SignalRParameter]` Azure 함수 메서드에서 인수의 순서는 클라이언트의 인수 순서와 일치 합니다.
 
-`ParameterNames`및 특성은 동시 `[SignalRParameter]` 에 사용할 수 **없습니다** . 그렇지 않으면 예외가 발생 합니다.
+`ParameterNames` 및 특성은 동시 `[SignalRParameter]` 에 사용할 수 **없습니다** . 그렇지 않으면 예외가 발생 합니다.
 
 ## <a name="send-messages-to-signalr-service-trigger-binding"></a>SignalR Service 트리거 바인딩에 메시지 보내기
 

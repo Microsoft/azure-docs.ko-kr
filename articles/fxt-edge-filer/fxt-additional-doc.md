@@ -1,17 +1,17 @@
 ---
 title: Microsoft Azure FXT Edge 필터-추가 설명서
-description: Azure FXT Edge 필터 설치에 대 한 추가 참조 문서
+description: 추가 참조 문서는 Microsoft Azure FXT Edge 필터 하이브리드 캐시를 이해 하 고 사용 하는 데 도움이 됩니다.
 author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: rohogue
-ms.openlocfilehash: 4fe2867343f07a7b1a7dd3d8eb2b44dd1ec1e271
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 314d745072d33fecd8fbf9eafe543fd0d52fe3cb
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87086543"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185777"
 ---
 # <a name="additional-documentation-for-azure-fxt-edge-filer"></a>Azure FXT Edge 필터에 대 한 추가 설명서
 

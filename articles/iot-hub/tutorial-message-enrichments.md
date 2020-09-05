@@ -7,13 +7,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 12/20/2019
 ms.author: robinsh
-ms.custom: mqtt, devx-track-azurecli
-ms.openlocfilehash: b3a049d76f880f590060a999ddda00e3706bac94
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: mqtt, devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 1e04ed8fe9087cb06b1533887da3c0fed61259ef
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500217"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019728"
 ---
 # <a name="tutorial-use-azure-iot-hub-message-enrichments"></a>자습서: Azure IoT Hub 메시지 강화 사용
 
@@ -62,7 +62,7 @@ Azure CLI 스크립트는 필요한 리소스를 만드는 것 외에도 별도�
 > 모든 메시지는 두 끝점으로 모두 라우팅되고 구성 된 메시지 강화를 사용 하 여 끝점으로 이동 하는 메시지만 보강 됩니다.
 >
 
-다음 스크립트를 사용 하거나 다운로드 한 리포지토리의/resources 폴더에 있는 스크립트를 열 수 있습니다. 스크립트에서 수행하는 단계는 다음과 같습니다.
+다음 스크립트를 사용 하거나 다운로드 한 리포지토리의/resources 폴더에 있는 스크립트를 열 수 있습니다. 스크립트는 다음 단계를 수행합니다.
 
 * IoT Hub를 만듭니다.
 * 스토리지 계정을 만듭니다.

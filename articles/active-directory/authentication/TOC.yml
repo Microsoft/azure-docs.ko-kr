@@ -43,7 +43,7 @@
         - name: 라이선스
           href: concept-mfa-licensing.md
         - name: Office 365용 MFA
-          href: 'https://docs.microsoft.com/office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide'
+          href: /office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide
         - name: FAQ
           href: multi-factor-authentication-faq.md
     - name: 암호 없는 인증
@@ -87,7 +87,7 @@
         - name: 디렉터리 페더레이션
           items:
             - name: Windows Server 2016 AD FS 어댑터
-              href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa'
+              href: /windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa
             - name: 페더레이션 서비스
               href: multi-factor-authentication-get-started-adfs.md
             - name: AD FS 사용
@@ -116,10 +116,14 @@
               href: howto-authentication-passwordless-security-key-windows.md
             - name: 온-프레미스 리소스에 대한 SSO
               href: howto-authentication-passwordless-security-key-on-premises.md
+            - name: 하이브리드 FAQ
+              href: howto-authentication-passwordless-faqs.md
+            - name: 하이브리드 문제 해결
+              href: howto-authentication-passwordless-troubleshoot.md
         - name: 암호 없는 휴대폰 로그인
           href: howto-authentication-passwordless-phone.md
         - name: 비즈니스용 Windows Hello
-          href: 'https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification'
+          href: /windows/security/identity-protection/hello-for-business/hello-identity-verification
     - name: 보안 정보 등록
       items:
         - name: 결합 등록 사용
@@ -209,7 +213,7 @@
               href: howto-mfa-nps-extension-errors.md
     - name: 문제 해결
       items:
-        - name: SSPR 문제 해결
+        - name: SSPR
           href: active-directory-passwords-troubleshoot.md
         - name: SSPR FAQ
           href: active-directory-passwords-faq.md
@@ -220,7 +224,7 @@
 - name: 참조
   items:
     - name: MFA 사용자 가이드
-      href: ./end-user/current/multi-factor-authentication-end-user.md
+      href: ../user-help/multi-factor-authentication-end-user-first-time.md
     - name: 코드 샘플
       href: 'https://azure.microsoft.com/resources/samples/?service=active-directory'
     - name: Azure PowerShell cmdlet
@@ -234,7 +238,7 @@
     - name: Azure 피드백 포럼
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Microsoft Q&A 질문 페이지
-      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
+      href: /answers/topics/azure-active-directory.html
     - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: 서비스 업데이트

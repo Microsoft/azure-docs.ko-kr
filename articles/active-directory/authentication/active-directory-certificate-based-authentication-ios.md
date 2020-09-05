@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ede7ddb81bae69d92983e787e779ee9d410bd87
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 584fb5c370fa0be629d057eb94dc4c2a8b9edc15
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82144076"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716438"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>iOS에서 Azure Active Directory 인증서 기반 인증
 
@@ -30,11 +30,11 @@ ms.locfileid: "82144076"
 
 ## <a name="microsoft-mobile-applications-support"></a>Microsoft 모바일 애플리케이션 지원
 
-| 앱 | Support(지원) |
+| 앱 | 지원 |
 | --- | --- |
 | Azure Information Protection 앱 |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | Intune 회사 포털 |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
-| Microsoft 팀 |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
+| Microsoft Teams |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | Office (모바일) |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | OneNote |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | OneDrive |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
@@ -61,15 +61,15 @@ IOS에서 CBA를 사용 하려면 다음 요구 사항 및 고려 사항이 적�
 
 Azure AD에서 클라이언트 인증서를 해지 하려면 ADFS 토큰에 다음 클레임이 있어야 합니다. Azure AD는 ADFS 토큰 또는 다른 SAML 토큰에서 사용할 수 있는 경우 새로 고침 토큰에 이러한 클레임을 추가 합니다. 새로 고침 토큰의 유효성을 검사 해야 하는 경우이 정보는 해지를 확인 하는 데 사용 됩니다.
 
-* `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`-클라이언트 인증서의 일련 번호를 추가 합니다.
-* `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`-클라이언트 인증서 발급자에 대 한 문자열을 추가 합니다.
+* `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>` -클라이언트 인증서의 일련 번호를 추가 합니다.
+* `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>` -클라이언트 인증서 발급자에 대 한 문자열을 추가 합니다.
 
 또한 다음 정보를 사용 하 여 조직의 ADFS 오류 페이지를 업데이트 해야 하는 것이 좋습니다.
 
 * IOS에 Microsoft Authenticator를 설치 하기 위한 요구 사항입니다.
 * 사용자 인증서를 얻는 방법에 대한 지침
 
-자세한 내용은 [AD FS 로그인 페이지 사용자 지정](https://technet.microsoft.com/library/dn280950.aspx)을 참조 하세요.
+자세한 내용은 [AD FS 로그인 페이지 사용자 지정](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))을 참조 하세요.
 
 ## <a name="use-modern-authentication-with-office-apps"></a>Office 앱에서 최신 인증 사용
 

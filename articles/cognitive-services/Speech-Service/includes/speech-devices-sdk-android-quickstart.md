@@ -5,16 +5,16 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 02/20/2020
 ms.author: trbye
-ms.openlocfilehash: abc9a42c7ced6a71f93c00968eb825f28f720843
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: dc027d034c50b49044f4a350fe4d239c18060fc7
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374669"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226360"
 ---
 이 빠른 시작에서는 Android용 Speech Devices SDK를 사용하여 음성 지원 제품을 빌드하거나 [대화 전사](../conversation-transcription-service.md) 디바이스로 사용하는 방법을 알아봅니다.
 
-이 가이드에는 Speech Service 리소스와 함께 [Azure Cognitive Service](../get-started.md) 계정이 필요합니다. 계정이 없는 경우 [평가판](https://azure.microsoft.com/try/cognitive-services/)을 사용하여 구독 키를 가져올 수 있습니다.
+이 가이드에는 Speech Service 리소스와 함께 [Azure Cognitive Service](../get-started.md) 계정이 필요합니다.
 
 샘플 애플리케이션의 소스 코드는 Speech Devices SDK에 포함되어 있으며, [GitHub에서도 사용할 수 있습니다](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
@@ -126,7 +126,7 @@ Speech Devices SDK 사용을 시작하려면 다음 사항이 필요합니다.
 
    새 키워드를 사용하려면 `MainActivity.java`에서 다음 두 줄을 업데이트하고 키워드 패키지를 앱에 복사합니다. 예를 들어 키워드 패키지 kws-machine.zip에서 키워드 'Machine'을 사용하려면 다음을 수행합니다.
 
-   - 키워드 패키지를 “C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\” 폴더에 복사합니다.
+   - 키워드 패키지를 "C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\" 폴더에 복사합니다.
    - `MainActivity.java`를 키워드와 패키지 이름으로 업데이트합니다.
 
      ```java

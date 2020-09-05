@@ -12,17 +12,17 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b899e1d651f41c9c1e1e54af1b5ec19162dfc28d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b4de8a5e96466ea324475030df1f00eb6bb5cf1a
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81380051"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118290"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>자습서: Android 애플리케이션에서 사용자 로그인 및 Microsoft Graph 호출 
 
 >[!NOTE]
->이 자습서에서는 Android용 MSAL을 사용하는 방법의 간단한 예를 보여줍니다. 간단히 설명하기 위해 이 자습서에서는 단일 계정 모드만 사용합니다. 리포지토리를 살펴보고 [미리 구성된 샘플 앱](https://github.com/Azure-Samples/ms-identity-android-java/)을 복제하여 더 복잡한 시나리오를 살펴볼 수 있습니다. 샘플 앱, 구성 및 등록에 대한 자세한 내용은 [빠른 시작](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-android)을 참조하세요. 
+>이 자습서에서는 Android용 MSAL을 사용하는 방법의 간단한 예를 보여줍니다. 간단히 설명하기 위해 이 자습서에서는 단일 계정 모드만 사용합니다. 리포지토리를 살펴보고 [미리 구성된 샘플 앱](https://github.com/Azure-Samples/ms-identity-android-java/)을 복제하여 더 복잡한 시나리오를 살펴볼 수 있습니다. 샘플 앱, 구성 및 등록에 대한 자세한 내용은 [빠른 시작](./quickstart-v2-android.md)을 참조하세요. 
 
 이 자습서에서는 Android용 Microsoft 인증 라이브러리를 사용하여 android 앱을 Microsoft ID 플랫폼과 통합하는 방법을 알아봅니다. 사용자로 로그인/로그아웃하고, Microsoft Graph API를 호출하기 위한 액세스 토큰을 가져오고, Graph API를 요청하는 방법을 알아봅니다. 
 
@@ -117,7 +117,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [무료 계정](https:/
    ```
     
    >[!NOTE]
-   >이 자습서에서는 단일 계정 모드에서 앱을 구성하는 방법만 보여줍니다. [단일 계정 모드와 다중 계정 모드](https://docs.microsoft.com/azure/active-directory/develop/single-multi-account) 및 [앱 구성](https://docs.microsoft.com/azure/active-directory/develop/msal-configuration)에 대한 자세한 내용은 설명서를 참조하세요.
+   >이 자습서에서는 단일 계정 모드에서 앱을 구성하는 방법만 보여줍니다. [단일 계정 모드와 다중 계정 모드](./single-multi-account.md) 및 [앱 구성](./msal-configuration.md)에 대한 자세한 내용은 설명서를 참조하세요.
    
 4. **app** > **src** > **main** > **AndroidManifest.xml**에서 아래의 `BrowserTabActivity` 작업을 애플리케이션 본문에 추가합니다. 이 항목은 다음과 같이 Microsoft에서 인증을 완료한 후 애플리케이션을 콜백할 수 있게 해줍니다.
 
@@ -582,4 +582,4 @@ private void performOperationOnSignOut() {
 
 ## <a name="get-help"></a>도움말 보기
 
-이 자습서 또는 Microsoft ID 플랫폼과 관련하여 문제가 있는 경우 [도움말 및 지원](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options)을 방문하세요.
+이 자습서 또는 Microsoft ID 플랫폼과 관련하여 문제가 있는 경우 [도움말 및 지원](./developer-support-help-options.md)을 방문하세요.

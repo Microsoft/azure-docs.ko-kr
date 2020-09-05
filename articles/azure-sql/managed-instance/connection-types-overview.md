@@ -1,5 +1,5 @@
 ---
-title: 연결 형식
+title: 연결 유형
 titleSuffix: Azure SQL Managed Instance
 description: Azure SQL Managed Instance 연결 형식에 대 한 자세한 정보
 services: sql-database
@@ -10,19 +10,20 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto
 ms.date: 10/07/2019
-ms.openlocfilehash: 6c6774fb462a21e721b19ae53d1d018d780b28ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e46c6d1c14d226522a1d534418b91076efeaaccf
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85517323"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89070720"
 ---
-# <a name="azure-sql-managed-instance-connection-types"></a>Azure SQL Managed Instance 연결 유형
+# <a name="azure-sql-managed-instance-connection-types"></a>Azure SQL Managed Instance 연결 형식
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
 이 문서에서는 클라이언트에서 연결 유형에 따라 Azure SQL Managed Instance에 연결 하는 방법을 설명 합니다. 연결 유형을 변경 하는 스크립트 예제는 기본 연결 설정 변경과 관련 된 고려 사항과 함께 아래에 제공 됩니다.
 
-## <a name="connection-types"></a>연결 형식
+## <a name="connection-types"></a>연결 유형
 
 Azure SQL Managed Instance는 다음과 같은 두 가지 연결 유형을 지원 합니다.
 

@@ -19,14 +19,14 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 09e492ae950003f97ed86355257c97777cd71c1a
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 376cece922ca424ec78011224852b1fa5499da16
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201999"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934840"
 ---
-# <a name="odata-geo-spatial-functions-in-azure-cognitive-search---geodistance-and-geointersects"></a>Azure Cognitive Search의 OData 지역 공간 함수- `geo.distance` 및`geo.intersects`
+# <a name="odata-geo-spatial-functions-in-azure-cognitive-search---geodistance-and-geointersects"></a>Azure Cognitive Search의 OData 지역 공간 함수- `geo.distance` 및 `geo.intersects`
 
 Azure Cognitive Search는 및 함수를 통해 [OData 필터 식](query-odata-filter-orderby-syntax.md) 에서 지역 공간 쿼리를 지원 `geo.distance` `geo.intersects` 합니다. `geo.distance`함수는 두 요소 사이의 거리를 킬로미터 단위로 반환 합니다. 하나는 필드 또는 범위 변수가 되 고 하나는 필터의 일부로 전달 되는 상수입니다. `geo.intersects`함수는 `true` 지정 된 점이 지정 된 다각형 내에 있는 경우를 반환 합니다. 여기서 point는 필드 또는 범위 변수이 고 다각형은 필터의 일부로 전달 되는 상수로 지정 됩니다.
 
@@ -84,7 +84,7 @@ lon_lat_list ::= lon_lat(',' lon_lat)*
 
 `geo.intersects`함수는 형식의 변수와 상수를 사용 `Edm.GeographyPoint` `Edm.GeographyPolygon` 하 고 `Edm.Boolean`  --  `true` 점이 다각형의 범위 내에 있으면를 반환 하 고 그렇지 않으면를 반환 `false` 합니다.
 
-다각형은 경계 링을 정의 하는 일련의 점으로 저장 되는 2 차원 표면입니다 (아래 [예제](#examples) 참조). 다각형은 닫혀야 합니다. 즉, 첫 번째 점과 마지막 점 세트가 같아야 합니다. [다각형의 점은 시계 반대 방향 순서여야 합니다](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1).
+다각형은 경계 링을 정의 하는 일련의 점으로 저장 되는 2 차원 표면입니다 (아래 [예제](#examples) 참조). 다각형은 닫혀야 합니다. 즉, 첫 번째 점과 마지막 점 세트가 같아야 합니다. [다각형의 점은 시계 반대 방향 순서여야 합니다](/rest/api/searchservice/supported-data-types#Anchor_1).
 
 ### <a name="geo-spatial-queries-and-polygons-spanning-the-180th-meridian"></a>180th 자오선를 확장 하는 지역 공간 쿼리 및 다각형
 
@@ -92,7 +92,7 @@ lon_lat_list ::= lon_lat(',' lon_lat)*
 
 Azure Cognitive Search에서는 쿼리 셰이프가 사각형이 고 좌표가 경도 및 위도 (예:)를 따라 모눈 레이아웃에 맞춰지도록 180도 경도를 포함 하는 지역 공간 쿼리가 예상 대로 작동 합니다 `geo.intersects(location, geography'POLYGON((179 65, 179 66, -179 66, -179 65, 179 65))'` . 그렇지 않은 경우 사각형이 아닌 도형이나 정렬되지 않은 도형의 경우 분할된 다각형 접근 방법을 고려해야 합니다.  
 
-### <a name="geo-spatial-functions-and-null"></a>지리적 공간 함수 및`null`
+### <a name="geo-spatial-functions-and-null"></a>지리적 공간 함수 및 `null`
 
 Azure Cognitive Search의 다른 모든 비 컬렉션 필드와 마찬가지로 형식의 필드에는 `Edm.GeographyPoint` 값이 포함 될 수 있습니다 `null` . Azure Cognitive Search가 인 필드를 평가 하는 경우 `geo.intersects` `null` 결과는 항상 `false` 입니다. `geo.distance`이 경우의 동작은 컨텍스트에 따라 달라 집니다.
 
@@ -109,7 +109,7 @@ Azure Cognitive Search의 다른 모든 비 컬렉션 필드와 마찬가지로 
     geo.distance(location, geography'POINT(-122.131577 47.678581)') le 10
 ```
 
-지정 된 뷰포트 내에서 polygon로 설명 된 모든 호텔을 찾습니다. 여기서 location은 형식의 필드입니다 `Edm.GeographyPoint` . 다각형은 닫혀 있으며(첫 번째 점과 마지막 점 세트가 같음) [점은 시계 반대 방향 순서로 나열되어야 합니다](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1).
+지정 된 뷰포트 내에서 polygon로 설명 된 모든 호텔을 찾습니다. 여기서 location은 형식의 필드입니다 `Edm.GeographyPoint` . 다각형은 닫혀 있으며(첫 번째 점과 마지막 점 세트가 같음) [점은 시계 반대 방향 순서로 나열되어야 합니다](/rest/api/searchservice/supported-data-types#Anchor_1).
 
 ```odata-filter-expr
     geo.intersects(location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))')
@@ -134,4 +134,4 @@ Azure Cognitive Search의 다른 모든 비 컬렉션 필드와 마찬가지로 
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

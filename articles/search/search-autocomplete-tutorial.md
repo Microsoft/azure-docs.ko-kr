@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/15/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 2de282da56a40c92eacde84ac913be0ceacf9e2b
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: c0031b09dbb3335113cb52c9b3ec5e4fd4fa2758
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87413020"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011582"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps"></a>클라이언트 앱에 자동 완성 및 제안 추가
 
@@ -23,7 +23,7 @@ ms.locfileid: "87413020"
 Azure Cognitive Search에서 이러한 환경을 구현 하려면 다음이 필요 합니다.
 
 + 백 엔드에서 *확인 기* 입니다.
-+ 요청에 대 한 [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete) 또는 [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions) API를 지정 하는 *쿼리입니다* .
++ 요청에 대 한 [자동 완성](/rest/api/searchservice/autocomplete) 또는 [제안](/rest/api/searchservice/suggestions) API를 지정 하는 *쿼리입니다* .
 + 클라이언트 앱에서 검색 형식 상호 작용을 처리 하는 *UI 컨트롤* 입니다. 이 목적을 위해 기존 JavaScript 라이브러리를 사용 하는 것이 좋습니다.
 
 Azure Cognitive Search에서 자동 완성 쿼리와 제안 된 결과가 검색 인덱스에서 검색 되 고 확인 기에 등록 한 선택한 필드에서 검색 됩니다. 확인 기는 인덱스의 일부 이며 쿼리를 완료 하거나 결과를 제안 하거나 둘 다 수행 하는 내용을 제공 하는 필드를 지정 합니다. 인덱스를 만들고 로드할 때 확인 기 데이터 구조는 내부적으로 생성 되어 부분 쿼리를 일치 시키는 데 사용 되는 접두사를 저장 합니다. 제안에 대해 고유한 필드를 선택 하거나 최소한의 반복을 선택 하지 않는 것이 좋습니다. 자세한 내용은 [Create a 확인 기](index-add-suggesters.md)을 참조 하세요.
@@ -54,20 +54,20 @@ Api는 부분 쿼리에 최소 길이 요구 사항을 적용 하지 않습니�
 
 REST 및 .NET SDK 참조 페이지에 대 한 다음 링크를 따르세요.
 
-+ [제안 REST API](https://docs.microsoft.com/rest/api/searchservice/suggestions) 
-+ [자동 완성 REST API](https://docs.microsoft.com/rest/api/searchservice/autocomplete) 
-+ [SuggestWithHttpMessagesAsync 메서드](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
-+ [AutocompleteWithHttpMessagesAsync 메서드](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
++ [제안 REST API](/rest/api/searchservice/suggestions) 
++ [자동 완성 REST API](/rest/api/searchservice/autocomplete) 
++ [SuggestWithHttpMessagesAsync 메서드](/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet)
++ [AutocompleteWithHttpMessagesAsync 메서드](/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet)
 
 ## <a name="structure-a-response"></a>응답 구성
 
-자동 완성 및 제안에 대 한 응답은 패턴에 대해 예측할 수 있습니다. [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete#response) 은 단어를 인출할 수 있도록 용어와 문서 ID [를 반환 합니다](https://docs.microsoft.com/rest/api/searchservice/suggestions#response) . 그러면 문서를 인출할 수 있습니다 ( [조회 문서](https://docs.microsoft.com/rest/api/searchservice/lookup-document) API를 사용 하 여 세부 정보 페이지에 대 한 특정 문서 페치).
+자동 완성 및 제안에 대 한 응답은 패턴에 대해 예측할 수 있습니다. [자동 완성](/rest/api/searchservice/autocomplete#response) 은 단어를 인출할 수 있도록 용어와 문서 ID [를 반환 합니다](/rest/api/searchservice/suggestions#response) . 그러면 문서를 인출할 수 있습니다 ( [조회 문서](/rest/api/searchservice/lookup-document) API를 사용 하 여 세부 정보 페이지에 대 한 특정 문서 페치).
 
-응답은 요청에 대 한 매개 변수로 모양이 지정 됩니다. 자동 완성을 위해 [**autocompleteMode**](https://docs.microsoft.com/rest/api/searchservice/autocomplete#autocomplete-modes) 를 설정 하 여 텍스트 완성이 한 두 항에서 발생 하는지 여부를 확인 합니다. 제안에 대해 선택한 필드에 따라 응답의 내용이 결정 됩니다.
+응답은 요청에 대 한 매개 변수로 모양이 지정 됩니다. 자동 완성을 위해 [**autocompleteMode**](/rest/api/searchservice/autocomplete#autocomplete-modes) 를 설정 하 여 텍스트 완성이 한 두 항에서 발생 하는지 여부를 확인 합니다. 제안에 대해 선택한 필드에 따라 응답의 내용이 결정 됩니다.
 
 제안 사항을 위해 중복을 방지 하기 위해 응답을 구체화 하거나 관련 되지 않은 결과를 표시 하는 것이 좋습니다. 결과를 제어 하려면 요청에 추가 매개 변수를 포함 합니다. 다음 매개 변수는 자동 완성 및 제안에 모두 적용 되지만 특히 확인 기에 여러 필드가 포함 된 경우 제안에 더 필요할 수 있습니다.
 
-| 매개 변수 | 사용량 |
+| 매개 변수 | 사용 |
 |-----------|-------|
 | **$select** | 확인 기에 여러 **sourcefields** 가 있는 경우 **$select** 를 사용 하 여 값을 제공 하는 필드를 선택 `$select=GameTitle` 합니다 (). |
 | **searchFields** | 특정 필드에 대 한 쿼리를 제한 합니다. |
@@ -141,7 +141,7 @@ source: "/home/suggest?highlights=true&fuzzy=true&",
 
 C # 및 MVC 응용 프로그램을 사용 하는 경우 Controller 디렉터리 아래의 **HomeController.cs** 파일은 제안 된 결과에 대 한 클래스를 만들 수 있습니다. .NET에서 제안 함수는 [DocumentsOperationsExtensions 메서드](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.suggest?view=azure-dotnet)를 기반으로 합니다.
 
-`InitSearch`메서드는 Azure Cognitive Search 서비스에 대 한 인증 된 HTTP 인덱스 클라이언트를 만듭니다. .NET SDK에 대 한 자세한 내용은 [.Net 응용 프로그램에서 Azure Cognitive Search를 사용 하는 방법](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)을 참조 하세요.
+`InitSearch`메서드는 Azure Cognitive Search 서비스에 대 한 인증 된 HTTP 인덱스 클라이언트를 만듭니다. .NET SDK에 대 한 자세한 내용은 [.Net 응용 프로그램에서 Azure Cognitive Search를 사용 하는 방법](./search-howto-dotnet-sdk.md)을 참조 하세요.
 
 ```csharp
 public ActionResult Suggest(bool highlights, bool fuzzy, string term)
@@ -175,7 +175,7 @@ public ActionResult Suggest(bool highlights, bool fuzzy, string term)
 }
 ```
 
-Suggest 함수에는 적중 강조 표시를 반환할지 또는 검색어 이력과 함께 유사 일치를 사용할지 결정하는 두 매개 변수가 있습니다. 메서드는 제안 API에 전달 되는 [SuggestParameters 개체](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggestparameters?view=azure-dotnet)를 만듭니다. 그러면 클라이언트에 표시될 수 있게 결과가 JSON으로 변환됩니다.
+Suggest 함수에는 적중 강조 표시를 반환할지 또는 검색어 이력과 함께 유사 일치를 사용할지 결정하는 두 매개 변수가 있습니다. 메서드는 제안 API에 전달 되는 [SuggestParameters 개체](/dotnet/api/microsoft.azure.search.models.suggestparameters?view=azure-dotnet)를 만듭니다. 그러면 클라이언트에 표시될 수 있게 결과가 JSON으로 변환됩니다.
 
 ## <a name="autocomplete"></a>자동 완성
 
@@ -218,7 +218,7 @@ $(function () {
 
 ### <a name="autocomplete-function"></a>자동 완성 함수
 
-자동 완성은 [DocumentsOperationsExtensions 메서드](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.autocomplete?view=azure-dotnet)를 기반으로 합니다. 제안과 마찬가지로이 코드 블록은 **HomeController.cs** 파일로 이동 합니다.
+자동 완성은 [DocumentsOperationsExtensions 메서드](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.autocomplete?view=azure-dotnet)를 기반으로 합니다. 제안과 마찬가지로이 코드 블록은 **HomeController.cs** 파일로 이동 합니다.
 
 ```csharp
 public ActionResult AutoComplete(string term)
@@ -243,7 +243,7 @@ public ActionResult AutoComplete(string term)
 }
 ```
 
-Autocomplete 함수는 검색 용어 입력을 사용합니다. 이 메서드는 [AutoCompleteParameters 개체](https://docs.microsoft.com/rest/api/searchservice/autocomplete)를 만듭니다. 그러면 클라이언트에 표시될 수 있게 결과가 JSON으로 변환됩니다.
+Autocomplete 함수는 검색 용어 입력을 사용합니다. 이 메서드는 [AutoCompleteParameters 개체](/rest/api/searchservice/autocomplete)를 만듭니다. 그러면 클라이언트에 표시될 수 있게 결과가 JSON으로 변환됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

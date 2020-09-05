@@ -4,11 +4,6 @@
   items:
     - name: Resource Manager란?
       href: overview.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 구독 및 서비스 한도
@@ -17,8 +12,6 @@
       href: resource-name-rules.md
     - name: Resource Manager 및 클래식 배포
       href: deployment-models.md
-    - name: Azure 공통 보안 특성
-      href: azure-resource-manager-security-controls.md
     - name: 서비스별 리소스 공급자
       href: azure-services-resource-providers.md
     - name: 확장 리소스 종류
@@ -30,6 +23,8 @@
         - name: Azure Policy의 보안 컨트롤
           displayName: 'regulatory, compliance, standards, domains'
           href: ./security-controls-policy.md
+        - name: Azure 공통 보안 특성
+          href: azure-resource-manager-security-controls.md
 - name: 방법
   items:
     - name: 리소스 그룹/구독 이동
@@ -80,12 +75,14 @@
               href: ../../event-hubs/move-across-regions.md?toc=/azure/azure-resource-manager/management/toc.json
             - name: Azure IoT Hub
               href: ../../iot-hub/iot-hub-how-to-clone.md?toc=/azure/azure-resource-manager/management/toc.json
-            - name: Azure VM
-              href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/azure-resource-manager/management/toc.json
+            - name: Azure Resource Manager
+              href: microsoft-resources-move-regions.md
             - name: Azure Storage
               href: ../../storage/common/storage-account-move.md?toc=/azure/azure-resource-manager/management/toc.json
             - name: Azure SQL
               href: ../../azure-sql/database/move-resources-across-regions.md?toc=/azure/azure-resource-manager/management/toc.json
+            - name: Azure VM
+              href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/azure-resource-manager/management/toc.json
             - name: 논리 앱
               href: ../../logic-apps/move-logic-app-resources.md?toc=/azure/azure-resource-manager/management/toc.json
             - name: 유지 관리 제어 구성
@@ -139,9 +136,9 @@
     - name: EA 구독
       items:
         - name: 생성
-          href: programmatically-create-subscription.md
+          href: ../../cost-management-billing/manage/programmatically-create-subscription.md?toc=/azure/azure-resource-manager/management/toc.json
         - name: 생성 액세스 권한 부여
-          href: grant-access-to-create-subscription.md
+          href: ../../cost-management-billing/manage/grant-access-to-create-subscription.md?toc=/azure/azure-resource-manager/management/toc.json
     - name: 리소스 공급자 및 형식
       href: resource-providers-and-types.md
     - name: 리소스 그룹 및 리소스 삭제
@@ -170,6 +167,9 @@
       href: /java/api/com.microsoft.azure.management.resources
     - name: Python
       href: /python/api/overview/azure/resources?view=azure-python
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Azure 로드맵

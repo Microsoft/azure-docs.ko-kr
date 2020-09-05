@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-javascript
-ms.openlocfilehash: b9ec42620ee5ffaaf5fd79da5dabc944fc3bc422
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 4bfb017bb085d22c187e8074ba4f2b026d17f442
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287087"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815949"
 ---
 # <a name="use-the-azure-maps-indoor-maps-module"></a>Azure Maps Indoor Maps 모듈 사용
 
@@ -35,10 +35,8 @@ Azure Maps Web SDK에는 *Azure Maps Indoor* 모듈이 포함되어 있습니다
 전역적으로 호스팅되는 Azure Content Delivery Network 버전의 *Azure Maps Indoor* 모듈을 사용하려면, HTML 파일의 `<head>` 요소에 다음 JavaScript 및 스타일시트를 참조합니다.
 
 ```html
-<script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
-<script src="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.js"></script>
-<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
 <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.css" type="text/css"/>
+<script src="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.js"></script>
 ```
 
  또는 *Azure Maps Indoor* 모듈을 다운로드할 수 있습니다. *Azure Maps Indoor* 모듈은 Azure Maps 서비스에 액세스하기 위한 클라이언트 라이브러리를 포함합니다. 아래 단계에 따라 *Indoor* 모듈을 웹 애플리케이션에 설치하고 로드합니다.  
@@ -46,15 +44,14 @@ Azure Maps Web SDK에는 *Azure Maps Indoor* 모듈이 포함되어 있습니다
   1. [Azure maps-실내 패키지](https://www.npmjs.com/package/azure-maps-indoor)를 설치 합니다.
   
       ```powershell
-      >npm install azure-maps-control
       >npm install azure-maps-indoor
       ```
 
   2. HTML 파일의 `<head>` 요소에서 *Azure Maps Indoor* 모듈 JavaScript 및 스타일시트를 참조합니다.
 
       ```html
-      <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
-      <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/indoor/0.1/atlas-indoor.min.css" type="text/css"/>
+      <link rel="stylesheet" href="node_modules/azure-maps-drawing-tools/dist/atlas-indoor.min.css" type="text/css" />
+      <script src="node_modules/azure-maps-drawing-tools/dist/atlas-indoor.min.js"></script>
       ```
 
 ## <a name="instantiate-the-map-object"></a>Map 개체 인스턴스화

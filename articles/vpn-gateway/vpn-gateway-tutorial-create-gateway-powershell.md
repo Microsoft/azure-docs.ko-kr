@@ -1,18 +1,18 @@
 ---
 title: 자습서 - Azure VPN Gateway를 사용하여 게이트웨이 만들기 및 관리
-description: 자습서 - Azure PowerShell 모듈을 사용하여 VPN 게이트웨이 만들기 및 관리
+description: 이 자습서에 따라 PowerShell을 사용하여 Azure VPN Gateway를 만들고, 배포하고, 관리하는 방법을 알아봅니다.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: tutorial
 ms.date: 03/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: 66efa0f2922e70908616c7c447d782efee8f6b1b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 38b13ddc08b08ce080f1cc9e9b30caeea3b4efdf
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79137180"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031527"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-powershell"></a>자습서: PowerShell을 사용하여 VPN 게이트웨이 만들기 및 관리
 

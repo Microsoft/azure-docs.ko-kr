@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/19/2020
 ms.author: yelevin
-ms.openlocfilehash: 44a2c0c1b4bc9b4e6fc1247497640b261d1d0fa1
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: 58936066abcbe4c3f9fcfad78bf914c74079aa95
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387917"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141791"
 ---
 # <a name="set-up-azure-sentinel-customer-managed-key"></a>Azure Sentinel 고객 관리형 키 설정
 
@@ -90,7 +90,7 @@ Azure Sentinel CMK 기능은 Azure 제품 그룹에서 직접 액세스 권한�
 
 -  CMK를 사용하도록 설정하려는 작업 영역 ID
 
--  Key Vault URL: 키의 "키 식별자"를 마지막 슬래시까지 복사합니다.  
+-  Key Vault URL: 키의 "키 식별자"를 마지막 슬래시까지 복사 합니다.  
     
 
     ![키 식별자](./media/customer-managed-keys/key-identifier.png)

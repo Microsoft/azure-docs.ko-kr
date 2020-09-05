@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 805be8d5c9ab4f6316251adbb9bce3e99f4fa01d
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: b9e33ba8d9610067cb9e844477ec273391fbdb0b
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086673"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88751731"
 ---
 # <a name="configure-network-virtual-appliance-in-azure-hdinsight"></a>Azure HDInsight에서 네트워크 가상 어플라이언스 구성
 
@@ -47,7 +47,7 @@ Azure 방화벽은 몇 가지 일반적인 중요 시나리오에 대 한 트래
 ### <a name="fqdn-httphttps-dependencies"></a>FQDN HTTP/HTTPS 종속성
 
 > [!Important]
-> 아래 목록은 가장 중요 한 Fqdn 중 일부를 제공 합니다. [이 파일에서](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json)nva를 구성 하기 위해 fqdn의 전체 목록 (대부분 Azure Storage 및 Azure Service Bus)을 가져올 수 있습니다. 이러한 종속성은 HDInsight 제어 평면 작업에서 클러스터를 성공적으로 만드는 데 사용 됩니다.
+> 아래 목록에는 클러스터를 만든 후 클러스터 작업을 수행 하는 동안 OS 및 보안 패치 또는 인증서 유효성 검사에 필요할 수 있는 몇 가지 Fqdn만 제공 됩니다. [이 파일에서](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json)nva를 구성 하기 위해 fqdn 종속성 목록을 가져올 수 있습니다 (대부분 Azure Storage 및 Azure Service Bus). 이러한 종속성은 RP (HDInsight 리소스 공급자)에서 클러스터를 성공적으로 만들고 모니터링/관리 하는 데 사용 됩니다. 여기에는 원격 분석/진단 로그, 프로 비전 메타 데이터, 클러스터 관련 구성, 스크립트, ARM 템플릿 등이 포함 됩니다. FQDN 종속성 목록은 향후 HDIngisht 업데이트 해제로 변경 될 수 있습니다.
 
 | **엔드포인트**                                                          |
 |---|

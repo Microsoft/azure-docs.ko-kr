@@ -1,6 +1,6 @@
 ---
 title: CloudSimple Service 별 Azure VMware 솔루션
-description: CloudSimple 서비스 및 개념에 대 한 개요를 제공 합니다.
+description: 해당 개요를 사용 하 여 CloudSimple 서비스에 대해 알아보세요. 서비스를 만들면 노드를 구매 하 고, 노드를 예약 하 고, 사설 클라우드를 만들 수 있습니다.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/20/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d128a248c2e6e1e2e35e3b633975ba081e77f028
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ec77209c0995bf5aec0957c8d4d2269f27d743bc
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024958"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142131"
 ---
 # <a name="cloudsimple-service-overview"></a>CloudSimple 서비스 개요
 

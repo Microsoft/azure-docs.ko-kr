@@ -11,19 +11,19 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acf7f89ab7c84d74dcd6e3dff2c2c688da1cefea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d70fe8a1fbaee285843bfd76ad2a8076df96b49b
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85550620"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717968"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-windows-10-devices-with-azure-active-directory-preview"></a>Azure Active Directory (미리 보기)를 사용 하 여 Windows 10 장치에 암호 없는 보안 키 로그인 사용
 
 이 문서에서는 Windows 10 장치에서 FIDO2 보안 키 기반 암호 없는 인증을 사용 하도록 설정 하는 방법을 집중적으로 설명 합니다. 이 문서의 끝 부분에서는 FIDO2 보안 키를 사용 하 여 azure ad 계정으로 azure ad 및 하이브리드 Azure AD에 가입 된 Windows 10 장치에 로그인 할 수 있습니다.
 
 > [!NOTE]
-> FIDO2 보안 키는 Azure Active Directory의 공개 미리 보기 기능입니다. 미리 보기에 대 한 자세한 내용은 [Microsoft Azure 미리 보기의 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조 하세요.
+> FIDO2 보안 키는 Azure Active Directory의 공개 미리 보기 기능입니다. 미리 보기에 대 한 자세한 내용은  [Microsoft Azure 미리 보기의 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조 하세요.
 
 ## <a name="requirements"></a>요구 사항
 
@@ -37,7 +37,7 @@ ms.locfileid: "85550620"
 | [하이브리드 AZURE AD 조인 장치](../devices/concept-azure-ad-join-hybrid.md) 에는 Windows 10 버전 2004 이상이 필요 합니다. |   | X |
 | Windows Server 2016/2019 도메인 컨트롤러를 완전히 패치 했습니다. |   | X |
 | [Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md#install-azure-ad-connect) 버전 1.4.32.0 이상 |   | X |
-| [Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/what-is-intune) (옵션) | X | X |
+| [Microsoft Intune](/intune/fundamentals/what-is-intune) (옵션) | X | X |
 | 프로 비전 패키지 (옵션) | X | X |
 | 그룹 정책 (옵션) |   | X |
 
@@ -100,7 +100,7 @@ Intune을 사용 하 여 보안 키를 사용 하도록 설정 하려면 다음 
       - OMA-URI:./Device/Vendor/MSFT/PassportForWork/SecurityKey/UseSecurityKeyForSignin
       - 데이터 형식: Integer
       - 값: 1
-1. 이 정책은 특정 사용자, 디바이스 또는 그룹에 할당할 수 있습니다. 자세한 내용은 [Microsoft Intune에서 사용자 및 장치 프로필 할당](https://docs.microsoft.com/intune/device-profile-assign)을 참조 하세요.
+1. 이 정책은 특정 사용자, 디바이스 또는 그룹에 할당할 수 있습니다. 자세한 내용은 [Microsoft Intune에서 사용자 및 장치 프로필 할당](/intune/device-profile-assign)을 참조 하세요.
 
 ![Intune 사용자 지정 장치 구성 정책 만들기](./media/howto-authentication-passwordless-security-key/intune-custom-profile.png)
 
@@ -122,10 +122,10 @@ Intune에서 관리 되지 않는 장치의 경우 기능을 사용 하도록 �
 1. **프로 비전 패키지를 저장할 위치 선택** 에서 **빌드** 창의 경로를 확인 하거나 변경 하 고 **다음**을 선택 합니다.
 1. **프로 비전 패키지 빌드** 페이지에서 **빌드** 를 선택 합니다.
 1. 만든 두 파일 (*ppkg* 및 *cat*)을 나중에 컴퓨터에 적용할 수 있는 위치에 저장 합니다.
-1. 만든 프로 비전 패키지를 적용 하려면 [프로 비전 패키지 적용](https://docs.microsoft.com/windows/configuration/provisioning-packages/provisioning-apply-package)을 참조 하세요.
+1. 만든 프로 비전 패키지를 적용 하려면 [프로 비전 패키지 적용](/windows/configuration/provisioning-packages/provisioning-apply-package)을 참조 하세요.
 
 > [!NOTE]
-> Windows 10 버전 1809을 실행 하는 장치 에서도 공유 PC 모드 (*EnableSharedPCMode*)를 사용 하도록 설정 해야 합니다. 이 기능을 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [Windows 10을 사용 하 여 공유 또는 게스트 PC 설정](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc)을 참조 하세요.
+> Windows 10 버전 1809을 실행 하는 장치 에서도 공유 PC 모드 (*EnableSharedPCMode*)를 사용 하도록 설정 해야 합니다. 이 기능을 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [Windows 10을 사용 하 여 공유 또는 게스트 PC 설정](/windows/configuration/set-up-shared-or-guest-pc)을 참조 하세요.
 
 ### <a name="enable-with-group-policy"></a>그룹 정책 사용
 

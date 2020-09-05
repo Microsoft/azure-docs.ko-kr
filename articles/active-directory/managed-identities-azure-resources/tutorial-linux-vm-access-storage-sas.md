@@ -3,7 +3,7 @@ title: '자습서: SAS 자격 증명을 사용하여 Azure Storage에 액세스 
 description: Linux VM 시스템 할당 관리 ID를 사용하여 스토리지 계정 액세스 키 대신 SAS 자격 증명으로 Azure Storage에 액세스하는 방법을 보여주는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: daveba
 ms.service: active-directory
@@ -13,20 +13,20 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a173fe36c20e9f13f1b1c1f27efc36821c8264a
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 04e265ea0128411eb483c84b1317051089a0550a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84266307"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260240"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-identity-to-access-azure-storage-via-a-sas-credential"></a>자습서: Linux VM 시스템 할당 ID를 사용하여 SAS 자격 증명을 통해 Azure Storage에 액세스
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
-이 자습서에서는 Linux VM(가상 머신)에 대한 시스템 할당 관리 ID를 사용하여 스토리지 SAS(공유 액세스 서명) 자격 증명을 얻는 방법을 보여줍니다. 특히 [서비스 SAS 자격 증명](/azure/storage/common/storage-dotnet-shared-access-signature-part-1?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-shared-access-signatures)에 대한 내용을 다룹니다. 
+이 자습서에서는 Linux VM(가상 머신)에 대한 시스템 할당 관리 ID를 사용하여 스토리지 SAS(공유 액세스 서명) 자격 증명을 얻는 방법을 보여줍니다. 특히 [서비스 SAS 자격 증명](../../storage/common/storage-sas-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-shared-access-signatures)에 대한 내용을 다룹니다. 
 
 > [!NOTE]
 > 이 자습서에서 생성된 SAS 키는 VM에 제한되거나 바인딩되지 않습니다.  
@@ -86,7 +86,7 @@ Azure Storage는 Azure AD 인증을 기본적으로 지원하지 않습니다.  
 
 자습서의 나머지 부분에서는 이전에 만든 VM에서 작업합니다.
 
-아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](https://msdn.microsoft.com/commandline/wsl/install_guide)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](../../virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](../../virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
+아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](/windows/wsl/install-win10)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](../../virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](../../virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
 
 1. Azure Portal에서 **Virtual Machines**, Linux 가상 머신으로 이동한 후 **개요** 페이지 위쪽의 **연결**을 클릭합니다. VM에 연결하기 위한 문자열을 복사합니다. 
 2. SSH 클라이언트를 사용하여 VM에 연결합니다.  
@@ -152,7 +152,7 @@ Blob Storage 컨테이너에 업로드할 샘플 Blob 파일을 만듭니다. Li
 echo "This is a test file." > test.txt
 ```
 
-다음으로, SAS 자격 증명을 사용하여 CLI `az storage` 명령을 통해 인증을 받고 Blob 컨테이너에 파일을 업로드합니다. 이 단계에서는 VM에 [최신 Azure CLI를 설치](https://docs.microsoft.com/cli/azure/install-azure-cli)해야 합니다(아직 없는 경우).
+다음으로, SAS 자격 증명을 사용하여 CLI `az storage` 명령을 통해 인증을 받고 Blob 컨테이너에 파일을 업로드합니다. 이 단계에서는 VM에 [최신 Azure CLI를 설치](/cli/azure/install-azure-cli)해야 합니다(아직 없는 경우).
 
 ```azurecli-interactive
  az storage blob upload --container-name 
@@ -231,4 +231,4 @@ az storage blob download --container-name
 이 자습서에서는 Linux VM 시스템 할당 관리 ID를 사용하여 SAS 자격 증명을 통해 Azure Storage에 액세스하는 방법을 알아보았습니다.  Azure Storage SAS에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
->[SAS(공유 액세스 서명) 사용](/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
+>[SAS(공유 액세스 서명) 사용](../../storage/common/storage-sas-overview.md)

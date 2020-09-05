@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 04/13/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 26179dd2491a8b8cbc2ef3eb0ad66fa61722d413
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ce13c3bce7cdeb0f3e6dcf1f731be22d93a65587
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525265"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654602"
 ---
 # <a name="sap-ase-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>SAP 워크로드에 대한 SAP ASE Azure Virtual Machines DBMS 배포
 
@@ -59,7 +59,7 @@ Linux Vm에서 프로필을 사용 하 여 실행 `saptune` SAP-ASE Linux는 기
 
 ## <a name="recommendations-on-vm-and-disk-structure-for-sap-ase-deployments"></a>SAP ASE 배포를 위한 VM 및 디스크 구조에 대 한 권장 사항
 
-Sap NetWeaver 응용 프로그램에 대 한 SAP ASE는 [sap support #1928533 note](https://launchpad.support.sap.com/#/notes/1928533) 에 나열 된 모든 vm 유형에 대해 지원 됩니다. 보통 크기의 sap ASE 데이터베이스 서버에 사용 되는 일반적인 Vm 유형은 Esv3를 포함 합니다.  초대형 다중 테라바이트 데이터베이스는 M 시리즈 VM 유형을 활용할 수 있습니다. M 시리즈 쓰기 가속기를 사용 하 여 SAP ASE 트랜잭션 로그 디스크 쓰기 성능을 향상 시킬 수 있습니다. Sap ase에서 로그 쓰기를 수행 하는 방식 때문에 SAP ASE를 사용 하 여 신중 하 게 테스트 해야 쓰기 가속기.  [SAP support note #2816580](../../windows/how-to-enable-write-accelerator.md) 검토 하 고 성능 테스트를 실행 하는 것이 좋습니다.  
+Sap NetWeaver 응용 프로그램에 대 한 SAP ASE는 [sap support #1928533 note](https://launchpad.support.sap.com/#/notes/1928533) 에 나열 된 모든 vm 유형에 대해 지원 됩니다. 보통 크기의 sap ASE 데이터베이스 서버에 사용 되는 일반적인 Vm 유형은 Esv3를 포함 합니다.  초대형 다중 테라바이트 데이터베이스는 M 시리즈 VM 유형을 활용할 수 있습니다. M 시리즈 쓰기 가속기를 사용 하 여 SAP ASE 트랜잭션 로그 디스크 쓰기 성능을 향상 시킬 수 있습니다. Sap ase에서 로그 쓰기를 수행 하는 방식 때문에 SAP ASE를 사용 하 여 신중 하 게 테스트 해야 쓰기 가속기.  [SAP support note #2816580](../../how-to-enable-write-accelerator.md) 검토 하 고 성능 테스트를 실행 하는 것이 좋습니다.  
 쓰기 가속기은 트랜잭션 로그 디스크만을 위해 설계 되었습니다. 디스크 수준 캐시를 NONE으로 설정 해야 합니다. Azure 쓰기 가속기에 다른 DBMS와 유사한 향상 된 기능이 표시 되지 않는 경우에는 걱정할 필요가 없습니다. SAP ASE가 트랜잭션 로그에 기록 하는 방법에 따라 Azure 쓰기 가속기에서 가속이 거의 발생 하지 않을 수 있습니다.
 데이터 장치 및 로그 장치에는 별도의 디스크를 권장 합니다.  시스템 데이터베이스는 `saptools` synonoa 이며 전용 디스크가 필요 하지 않으며 SAP 데이터베이스 데이터와 로그 장치를 포함 하는 디스크에 배치할 수 있습니다. 
 
@@ -71,7 +71,7 @@ Sap NetWeaver 응용 프로그램에 대 한 SAP ASE는 [sap support #1928533 no
 [Sap 적응 서버 Enterprise에서 자동 데이터베이스 공간 확장 구성](https://blogs.sap.com/2014/07/09/configuring-automatic-database-space-expansion-in-sap-adaptive-server-enterprise/) 및 [sap 지원 참고 #1815695](https://launchpad.support.sap.com/#/notes/1815695)문서에 설명 된 대로 자동 데이터베이스 확장을 구성 하는 것이 좋습니다. 
 
 ### <a name="sample-sap-ase-on-azure-virtual-machine-disk-and-file-system-configurations"></a>Azure 가상 머신, 디스크 및 파일 시스템 구성에 대 한 샘플 SAP ASE 
-아래 템플릿에는 Linux 및 Windows에 대 한 샘플 구성이 나와 있습니다. 가상 컴퓨터 및 디스크 구성을 확인 하기 전에 개별 VM의 네트워크 및 저장소 대역폭 할당량이 비즈니스 요구 사항을 충족 하기에 충분 한지 확인 합니다. 또한 Azure VM 유형에 따라 VM에 연결할 수 있는 디스크의 최대 수가 서로 다르다는 점에 유의 하세요. 예를 들어 E4s_v3 VM에는 48 m b/초 저장소 IO 처리량이 제한 됩니다. 데이터베이스 백업 작업에 필요한 저장소 처리량이 48 m b/초를 초과 하는 경우 더 많은 저장소 대역폭 처리량을 가진 더 큰 VM 유형이 피할 수 있습니다. Azure storage를 구성 하는 경우 특히 [Azure Premium storage](../../windows/premium-storage-performance.md) 를 사용 하 여 용량 GB 당 처리량 및 IOPS가 변경 됨을 염두에 두어야 합니다. [Azure에서 사용할 수 있는 디스크 형식](../../windows/disks-types.md)에 대 한 문서에서이 항목을 참조 하세요. 특정 Azure VM 유형에 대 한 할당량은 메모리 액세스에 [최적화 된 가상 머신 크기](../../sizes-memory.md) 및 여기에 연결 된 문서에 설명 되어 있습니다. 
+아래 템플릿에는 Linux 및 Windows에 대 한 샘플 구성이 나와 있습니다. 가상 컴퓨터 및 디스크 구성을 확인 하기 전에 개별 VM의 네트워크 및 저장소 대역폭 할당량이 비즈니스 요구 사항을 충족 하기에 충분 한지 확인 합니다. 또한 Azure VM 유형에 따라 VM에 연결할 수 있는 디스크의 최대 수가 서로 다르다는 점에 유의 하세요. 예를 들어 E4s_v3 VM에는 48 m b/초 저장소 IO 처리량이 제한 됩니다. 데이터베이스 백업 작업에 필요한 저장소 처리량이 48 m b/초를 초과 하는 경우 더 많은 저장소 대역폭 처리량을 가진 더 큰 VM 유형이 피할 수 있습니다. Azure storage를 구성 하는 경우 특히 [Azure Premium storage](../../windows/premium-storage-performance.md) 를 사용 하 여 용량 GB 당 처리량 및 IOPS가 변경 됨을 염두에 두어야 합니다. [Azure에서 사용할 수 있는 디스크 형식](../../disks-types.md)에 대 한 문서에서이 항목을 참조 하세요. 특정 Azure VM 유형에 대 한 할당량은 메모리 액세스에 [최적화 된 가상 머신 크기](../../sizes-memory.md) 및 여기에 연결 된 문서에 설명 되어 있습니다. 
 
 > [!NOTE]
 >  DBMS 시스템을 온-프레미스에서 Azure로 이동 하는 경우 VM에 대 한 모니터링을 수행 하 고 CPU, 메모리, IOPS 및 저장소 처리량을 평가 하는 것이 좋습니다. 위에서 언급 한 문서에 설명 된 VM 할당량 제한과 관찰 된 최고 값을 비교 합니다.
@@ -80,10 +80,10 @@ Sap NetWeaver 응용 프로그램에 대 한 SAP ASE는 [sap support #1928533 no
 
 SAP 솔루션 관리자와 같이 데이터베이스 크기가 50 GB-250 GB 사이인 작은 SAP ASE DB 서버에 대 한 구성의 예는 다음과 같을 수 있습니다.
 
-| Configuration | Windows | Linux | 주석 |
+| Configuration | Windows | Linux | 의견 |
 | --- | --- | --- | --- |
 | VM 유형 | E4s_v3 (4 개 vCPU/32gb RAM) | E4s_v3 (4 개 vCPU/32gb RAM) | --- |
-| 가속 네트워킹 | 사용 | 사용 | ---|
+| 가속 네트워킹 | 사용 하도록 설정 | 사용 하도록 설정 | ---|
 | SAP ASE 버전 | 16.0.03.07 이상 | 16.0.03.07 이상 | --- |
 | 데이터 장치 개수 | 4 | 4 | ---|
 | 로그 장치 개수 | 1 | 1 | --- |
@@ -101,10 +101,10 @@ SAP 솔루션 관리자와 같이 데이터베이스 크기가 50 GB-250 GB 사�
 
 데이터베이스 크기가 250 GB – 750 GB (예: 작은 SAP Business Suite 시스템) 사이인 medium SAP ASE DB 서버에 대 한 구성의 예는 다음과 같을 수 있습니다.
 
-| Configuration | Windows | Linux | 주석 |
+| Configuration | Windows | Linux | 의견 |
 | --- | --- | --- | --- |
 | VM 유형 | E16s_v3 (16 vCPU/128gb RAM) | E16s_v3 (16 vCPU/128gb RAM) | --- |
-| 가속 네트워킹 | 사용 | 사용 | ---|
+| 가속 네트워킹 | 사용 하도록 설정 | 사용 하도록 설정 | ---|
 | SAP ASE 버전 | 16.0.03.07 이상 | 16.0.03.07 이상 | --- |
 | 데이터 장치 개수 | 8 | 8 | ---|
 | 로그 장치 개수 | 1 | 1 | --- |
@@ -121,10 +121,10 @@ SAP 솔루션 관리자와 같이 데이터베이스 크기가 50 GB-250 GB 사�
 
 데이터베이스 크기가 750 GB – 2000 GB (예: 대형 SAP Business Suite 시스템) 사이인 작은 SAP ASE DB 서버에 대 한 구성의 예는 다음과 같을 수 있습니다.
 
-| Configuration | Windows | Linux | 주석 |
+| Configuration | Windows | Linux | 의견 |
 | --- | --- | --- | --- |
 | VM 유형 | E64s_v3 (64 vCPU/432 GB RAM) | E64s_v3 (64 vCPU/432 GB RAM) | --- |
-| 가속 네트워킹 | 사용 | 사용 | ---|
+| 가속 네트워킹 | 사용 하도록 설정 | 사용 하도록 설정 | ---|
 | SAP ASE 버전 | 16.0.03.07 이상 | 16.0.03.07 이상 | --- |
 | 데이터 장치 개수 | 16 | 16 | ---|
 | 로그 장치 개수 | 1 | 1 | --- |
@@ -142,10 +142,10 @@ SAP 솔루션 관리자와 같이 데이터베이스 크기가 50 GB-250 GB 사�
 
 전체적으로 사용 되는 더 큰 SAP Business Suite 시스템과 같이 데이터베이스 크기가 2tb 이상인 작은 SAP ASE DB 서버에 대 한 구성의 예는 다음과 같을 수 있습니다.
 
-| Configuration | Windows | Linux | 주석 |
+| Configuration | Windows | Linux | 의견 |
 | --- | --- | --- | --- |
 | VM 유형 | M 시리즈 (1.0 ~ 4.0 TB RAM)  | M 시리즈 (1.0 ~ 4.0 TB RAM) | --- |
-| 가속 네트워킹 | 사용 | 사용 | ---|
+| 가속 네트워킹 | 사용 하도록 설정 | 사용 하도록 설정 | ---|
 | SAP ASE 버전 | 16.0.03.07 이상 | 16.0.03.07 이상 | --- |
 | 데이터 장치 개수 | 32 | 32 | ---|
 | 로그 장치 개수 | 1 | 1 | --- |

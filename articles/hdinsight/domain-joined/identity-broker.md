@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 12/12/2019
-ms.openlocfilehash: ff7cb3c03edf9b421347815311796896caaffd70
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 6ef76f3dafc02e89008ae164e3d868c628291766
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086605"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89075310"
 ---
 # <a name="use-id-broker-preview-for-credential-management"></a>자격 증명 관리에 ID Broker (미리 보기) 사용
 
@@ -46,7 +46,7 @@ ID Broker 기능은 클러스터에 추가 VM 하나를 추가 합니다. 이 VM
 
 ![ID Broker를 사용 하도록 설정 하는 옵션](./media/identity-broker/identity-broker-enable.png)
 
-### <a name="using-azure-resource-manager-templates"></a>Azure 리소스 관리자 템플릿 사용
+### <a name="using-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿 사용
 다음 특성을 사용 하 여 라는 새 역할을 `idbrokernode` 템플릿의 계산 프로필에 추가 하면 ID broker 노드가 활성화 된 상태에서 클러스터가 생성 됩니다.
 
 ```json
@@ -98,13 +98,21 @@ ID Broker를 사용 하도록 설정한 후에는 도메인 계정을 사용 하
 
 SSH 인증을 사용 하려면 Azure AD DS에서 해시를 사용할 수 있어야 합니다. 관리 시나리오에만 SSH를 사용 하려는 경우 클라우드 전용 계정을 하나 만들어 클러스터에 대 한 SSH로 사용할 수 있습니다. 다른 사용자는 Azure AD DS에서 암호 해시를 사용할 수 없는 경우에도 Ambari 또는 HDInsight 도구 (예: IntelliJ 플러그 인)를 사용할 수 있습니다.
 
+인증 문제를 해결 하려면이 [가이드](https://docs.microsoft.com/azure/hdinsight/domain-joined/domain-joined-authentication-issues)를 참조 하세요.
+
 ## <a name="clients-using-oauth-to-connect-to-hdinsight-gateway-with-id-broker-setup"></a>OAuth를 사용 하 여 ID Broker 설정으로 HDInsight 게이트웨이에 연결 하는 클라이언트
 
 ID broker 설정에서 게이트웨이에 연결 하는 사용자 지정 앱 및 클라이언트를 업데이트 하 여 필요한 OAuth 토큰을 먼저 획득할 수 있습니다. 이 [문서의](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app) 단계에 따라 다음 정보를 포함 하는 토큰을 가져올 수 있습니다.
 
-*   OAuth 리소스 uri:`https://hib.azurehdinsight.net` 
+*   OAuth 리소스 uri: `https://hib.azurehdinsight.net` 
 * AppId: 7865c1d2-f040-46cc-875f-831a1ef6a28a
 *   권한: (이름: Cluster. ReadWrite, id: 8f89faa0-ffef-4007-974d-4989b39ad77d)
+
+OAuth 토큰을 획득 한 후 클러스터 게이트웨이에 대 한 HTTP 요청에 대 한 인증 헤더 (예: <clustername> -int.azurehdinsight.net)에이 토큰을 사용할 수 있습니다. 예를 들어 livy API에 대 한 샘플 말아 명령은 다음과 같이 표시 될 수 있습니다.
+    
+```bash
+curl -k -v -H "Authorization: TOKEN" -H "Content-Type: application/json" -X POST -d '{ "file":"wasbs://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://<clustername>-int.azurehdinsight.net/livy/batches" -H "X-Requested-By: UPN"
+``` 
 
 ## <a name="next-steps"></a>다음 단계
 

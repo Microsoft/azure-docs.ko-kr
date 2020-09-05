@@ -1,14 +1,14 @@
 ---
 title: 코드 제공 정책 워크플로 설계
 description: Azure Policy 정의를 코드로 배포하고 리소스의 유효성을 자동으로 검사하는 워크플로를 설계하는 방법을 알아봅니다.
-ms.date: 07/23/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 02ff979feac1afb5f1664e6387e0abcde69b60eb
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: d46680a9978cd4ec5cdc612a709f031841716749
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87131500"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047329"
 ---
 # <a name="design-policy-as-code-workflows"></a>코드 제공 정책 워크플로 설계
 
@@ -29,10 +29,10 @@ Cloud Governance 여정을 진행하면서 Azure Portal이나 다양한 SDK를 �
 - [이니셔티브 정의](./initiative-definition-structure.md)
 
 파일 이름은 정책 또는 이니셔티브 정의의 일부에 맞게 정렬 됩니다.
-- `policy(set).json`-전체 정의
-- `policy(set).parameters.json`- `properties.parameters` 정의의 일부입니다.
-- `policy.rules.json`- `properties.policyRule` 정의의 일부입니다.
-- `policyset.definitions.json`- `properties.policyDefinitions` 정의의 일부입니다.
+- `policy(set).json` -전체 정의
+- `policy(set).parameters.json` - `properties.parameters` 정의의 일부입니다.
+- `policy.rules.json` - `properties.policyRule` 정의의 일부입니다.
+- `policyset.definitions.json` - `properties.policyDefinitions` 정의의 일부입니다.
 
 이러한 파일 형식의 예는 [Azure Policy GitHub](https://github.com/Azure/azure-policy/)리포지토리에서 사용할 수 있습니다.
 
@@ -110,7 +110,8 @@ Automation에서 새로 생성되거나 업데이트된 정책 또는 이니셔�
 > [!NOTE]
 > 적용 모드는 유용하지만 다양한 조건에서 정책 정의를 철저히 테스트하지 않고 사용해서는 안 됩니다. 정책 정의는 `PUT` 및 `PATCH` REST API 호출, 준수 및 미준수 리소스, 리소스에서 누락된 속성과 같은 에 지 사례를 사용하여 테스트해야 합니다.
 
-할당이 배포되면 Policy SDK를 사용하여 새 할당에 대한 [준수 데이터를 가져옵니다](../how-to/get-compliance-data.md). 정책 및 할당을 테스트하는 데 사용되는 환경에는 준수 및 미준수 리소스가 둘 다 있어야 합니다. 코드에 대한 유용한 단위 테스트와 마찬가지로, 리소스가 예상대로 작동하고 가양성 또는 가음성이 없는지도 테스트하려고 합니다. 예상되는 항목에 대해서만 테스트 및 유효성 검사를 수행하는 경우 미처 파악하지 못한 예기치 않은 정책 영향이 있을 수 있습니다. 자세한 내용은 [새 Azure Policy 정의의 영향 평가](./evaluate-impact.md)를 참조하세요.
+할당을 배포한 후 정책 SDK 또는 [Azure Policy 준수 검색 GitHub 작업](https://github.com/marketplace/actions/azure-policy-compliance-scan) 을 사용 하 여 새 할당에 대 한 [호환성 데이터를 가져옵니다](../how-to/get-compliance-data.md) . 정책 및 할당을 테스트하는 데 사용되는 환경에는 준수 및 미준수 리소스가 둘 다 있어야 합니다.
+코드에 대한 유용한 단위 테스트와 마찬가지로, 리소스가 예상대로 작동하고 가양성 또는 가음성이 없는지도 테스트하려고 합니다. 예상되는 항목에 대해서만 테스트 및 유효성 검사를 수행하는 경우 미처 파악하지 못한 예기치 않은 정책 영향이 있을 수 있습니다. 자세한 내용은 [새 Azure Policy 정의의 영향 평가](./evaluate-impact.md)를 참조하세요.
 
 ### <a name="enable-remediation-tasks"></a>수정 작업 사용
 

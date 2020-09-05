@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.author: memildin
-ms.openlocfilehash: d049538653ea345935d40bd965afd7d2453b2aa2
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: 69f439e102edc53207e44d63cb29396f64f59e0e
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041989"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272504"
 ---
 # <a name="threat-protection-in-azure-security-center"></a>위협 보호 및 Azure Security Center
 
@@ -110,7 +110,7 @@ App Service 계획에 대한 자세한 내용은 [App Service 계획](https://az
 
 
 
-## <a name="threat-protection-for-containers"></a>컨테이너에 대 한 위협 방지<a name="azure-containers"></a>
+## <a name="threat-protection-for-containers"></a>컨테이너에 대 한 위협 방지 <a name="azure-containers"></a>
 
 ### <a name="availability"></a>가용성
 
@@ -230,7 +230,6 @@ Security Center 네트워크 계층 분석은 Azure 핵심 라우터에서 수�
 
 Azure 네트워크 계층 경고 목록은 [경고 참조 표](alerts-reference.md#alerts-azurenetlayer)를 참조하세요.
 
-Security Center에서 네트워크 관련 신호를 사용하여 위협 방지를 적용하는 방법에 대한 자세한 내용은 [Security Center의 추론 DNS 탐지](https://azure.microsoft.com/blog/heuristic-dns-detections-in-azure-security-center/)를 참조하세요.
 
 
 

@@ -5,16 +5,16 @@ services: healthcare-apis
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: tutorial
-ms.reviewer: mihansen
+ms.reviewer: matjazl
 ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
-ms.openlocfilehash: a6805fc686d0bc5bd0e2357828d59d40ba05f248
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 1c64468a2e420734ca51a5b9308bb52e13712c51
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "84870390"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87852925"
 ---
 # <a name="testing-the-fhir-api"></a>FHIR API 테스트
 이전 두 단계에서 Azure API for FHIR을 배포하고 클라이언트 애플리케이션을 등록했습니다. 이제 클라이언트 애플리케이션을 사용하여 Azure API for FHIR이 설정되었는지 테스트할 준비가 되었습니다. 
@@ -41,11 +41,11 @@ ms.locfileid: "84870390"
 |토큰 이름           |토큰에 대한 이름                                               |
 |권한 부여 유형           |인증 코드                                                  |
 |콜백 URL         |https://www.getpostman.com/oauth2/callback                          |
-|인증 URL             |https://login.microsoftonline.com/\<AZURE-AD-TENANT-ID>/oauth2/?resource=https://\<FHIR-SERVER-NAME>.azurehealthcareapis.com|
-|액세스 토큰 URL     |https://login.microsoftonline.com/\<AZURE-AD-TENANT-ID>/oauth2/token|
+|인증 URL             |https://login.microsoftonline.com/\<AZURE-AD-TENANT-ID> /oauth2/?resource=https://\<FHIR-SERVER-NAME>.azurehealthcareapis.com|
+|액세스 토큰 URL     |https://login.microsoftonline.com/\<AZURE-AD-TENANT-ID> /oauth2/token|
 |클라이언트 ID            |이전 단계에서 복사한 클라이언트 ID             |
-|클라이언트 암호        |\<비어 있음>                                                            |
-|범위                |\<비어 있음>                                                            |
+|클라이언트 암호        |\<BLANK>                                                            |
+|범위                |\<BLANK>                                                            |
 |시스템 상태                |1234                                                                |
 |클라이언트 인증|본문에서 클라이언트 자격 증명 보내기                                     |
 

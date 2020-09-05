@@ -1,18 +1,18 @@
 ---
-title: 서버 에이전트 연결 문제에 대 한 Azure Arc 문제 해결
-description: 이 문서에서는 서비스에 연결 하려고 할 때 서버 (미리 보기) 용 Azure Arc에서 발생 하는 연결 된 컴퓨터 에이전트의 문제를 해결 하 고 문제를 해결 하는 방법을 설명 합니다.
+title: Azure Arc 사용 서버 (미리 보기) 에이전트 연결 문제 해결
+description: 이 문서에서는 서비스에 연결 하려고 할 때 Azure Arc 사용 서버 (미리 보기)에서 발생 하는 연결 된 컴퓨터 에이전트와 관련 된 문제를 해결 하는 방법을 설명 합니다.
 ms.date: 07/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5cd2560279085485a8ac7b285e4f601060a924f1
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: aeb370fb6cd4eacf20c1acf29e84c03e5e322d39
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88118011"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213549"
 ---
 # <a name="troubleshoot-the-connected-machine-agent-connection-issues"></a>연결 된 컴퓨터 에이전트 연결 문제 해결
 
-이 문서에서는 Windows 또는 Linux 용 Azure Arc 서버 (미리 보기) 연결 된 컴퓨터 에이전트를 구성 하는 동안 발생할 수 있는 문제를 해결 하 고 해결 하는 방법에 대 한 정보를 제공 합니다. 서비스에 대 한 연결을 구성 하는 경우 대화형 및 확장 설치 방법 모두 포함 됩니다. 일반 정보는 [서버에 대 한 원호 개요](./overview.md)를 참조 하세요.
+이 문서에서는 Windows 또는 Linux 용 Azure Arc 사용 서버 (미리 보기) 연결 된 컴퓨터 에이전트를 구성 하는 동안 발생할 수 있는 문제를 해결 하 고 해결 하는 방법에 대 한 정보를 제공 합니다. 서비스에 대 한 연결을 구성 하는 경우 대화형 및 확장 설치 방법 모두 포함 됩니다. 일반 정보는 [Arc 사용 서버 개요](./overview.md)를 참조 하세요.
 
 ## <a name="agent-verbose-log"></a>에이전트 자세한 정보 표시 로그
 
@@ -22,13 +22,13 @@ ms.locfileid: "88118011"
 
 다음은 대화형 설치를 수행할 때 Windows 용 연결 된 컴퓨터 에이전트에서 자세한 정보 로깅을 사용 하도록 설정 하는 명령의 예입니다.
 
-```
+```console
 & "$env:ProgramFiles\AzureConnectedMachineAgent\azcmagent.exe" connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID" --verbose
 ```
 
 다음은 서비스 주체를 사용 하 여 스케일 아웃 설치를 수행할 때 Windows 용 연결 된 컴퓨터 에이전트에서 자세한 정보 로깅을 사용 하도록 설정 하는 명령의 예입니다.
 
-```
+```console
 & "$env:ProgramFiles\AzureConnectedMachineAgent\azcmagent.exe" connect `
   --service-principal-id "{serviceprincipalAppID}" `
   --service-principal-secret "{serviceprincipalPassword}" `
@@ -46,13 +46,13 @@ ms.locfileid: "88118011"
 >[!NOTE]
 >**Azcmagent**를 실행 하려면 Linux 컴퓨터에 대 한 *루트* 액세스 권한이 있어야 합니다.
 
-```
+```bash
 azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID" --verbose
 ```
 
 다음은 서비스 주체를 사용 하 여 확장 설치를 수행할 때 Linux 용 연결 된 컴퓨터 에이전트에서 자세한 정보 로깅을 사용 하도록 설정 하는 명령의 예입니다.
 
-```
+```bash
 azcmagent connect \
   --service-principal-id "{serviceprincipalAppID}" \
   --service-principal-secret "{serviceprincipalPassword}" \

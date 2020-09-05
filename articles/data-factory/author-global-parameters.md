@@ -7,13 +7,13 @@ ms.workload: data-services
 ms.topic: conceptual
 author: djpmsft
 ms.author: daperlov
-ms.date: 08/05/2020
-ms.openlocfilehash: 052f502ed27db9ade0fd2916f91d6922c52a5a98
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.date: 08/31/2020
+ms.openlocfilehash: 96fba5c27115dab65f26be80ce03bef35abcdb92
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854353"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230836"
 ---
 # <a name="global-parameters-in-azure-data-factory"></a>Azure Data Factory의 전역 매개 변수
 
@@ -41,13 +41,28 @@ Side-by-side 탐색에서 이름을 입력 하 고, 데이터 형식을 선택 �
 
 ![전역 매개 변수 사용](media/author-global-parameters/expression-global-parameters.png)
 
-## <a name="global-parameters-in-cicd"></a><a name="cicd"></a>CI/CD의 글로벌 매개 변수
+## <a name="global-parameters-in-cicd"></a><a name="cicd"></a> CI/CD의 글로벌 매개 변수
 
-전역 매개 변수는 Azure Data Factory의 다른 엔터티를 기준으로 고유한 CI/CD 프로세스를 포함 합니다. 팩터리를 게시 하거나 전역 매개 변수를 사용 하 여 ARM 템플릿을 내보낼 때 *Globalparameters* 라는 폴더가 *에your-factory-name_GlobalParameters.js*이라는 파일로 생성 됩니다. 이 파일은 게시 된 팩터리의 각 전역 매개 변수 형식 및 값을 포함 하는 JSON 개체입니다.
+연속 통합 및 배포 솔루션에서 글로벌 매개 변수를 통합 하는 방법에는 두 가지가 있습니다.
+
+* ARM 템플릿에 전역 매개 변수 포함
+* PowerShell 스크립트를 통해 전역 매개 변수 배포
+
+대부분의 사용 사례에서 ARM 템플릿에 전역 매개 변수를 포함 하는 것이 좋습니다. 이는 [CI/CD 문서](continuous-integration-deployment.md)에 설명 된 솔루션과 기본적으로 통합 됩니다. 전역 매개 변수는 환경에서 환경으로 변경 되는 경우가 많기 때문에 기본적으로 ARM 템플릿 매개 변수로 추가 됩니다. 관리 허브에서 ARM 템플릿에 전역 매개 변수를 포함 하도록 설정할 수 있습니다.
+
+![ARM 템플릿에 포함](media/author-global-parameters/include-arm-template.png)
+
+ARM 템플릿에 전역 매개 변수를 추가 하면 다른 환경에서 고객이 관리 하는 키 또는 git 구성과 같은 다른 팩터리 수준 설정을 재정의할 수 있는 팩터리 수준 설정이 추가 됩니다. UAT 또는 PROD와 같은 높은 수준의 환경에서 이러한 설정을 사용 하도록 설정한 경우 아래 강조 표시 된 단계에서 PowerShell 스크립트를 통해 전역 매개 변수를 배포 하는 것이 좋습니다.
+
+### <a name="deploying-using-powershell"></a>PowerShell을 사용 하 여 배포
+
+다음 단계에서는 PowerShell을 통해 전역 매개 변수를 배포 하는 방법을 간략하게 설명 합니다. 이는 대상 팩터리에 고객 관리 키와 같은 팩터리 수준 설정이 있는 경우에 유용 합니다.
+
+팩터리를 게시 하거나 전역 매개 변수를 사용 하 여 ARM 템플릿을 내보낼 때 *Globalparameters* 라는 폴더가 * 에your-factory-name_GlobalParameters.js*이라는 파일로 생성 됩니다. 이 파일은 게시 된 팩터리의 각 전역 매개 변수 형식 및 값을 포함 하는 JSON 개체입니다.
 
 ![전역 매개 변수 게시](media/author-global-parameters/global-parameters-adf-publish.png)
 
-테스트 또는 PROD와 같은 새 환경에 배포 하는 경우이 전역 매개 변수 파일의 복사본을 만들고 적절 한 환경 관련 값을 덮어쓰는 것이 좋습니다. 원래 전역 매개 변수 파일을 다시 게시 하면 파일은 덮어쓰므로 다른 환경의 복사본은 그대로 유지 됩니다.
+테스트 또는 PROD와 같은 새 환경에 배포 하는 경우에는이 전역 매개 변수 파일의 복사본을 만들고 적절 한 환경 관련 값을 덮어써야 합니다. 원래 전역 매개 변수 파일을 다시 게시 하면 파일은 덮어쓰므로 다른 환경의 복사본은 그대로 유지 됩니다.
 
 예를 들어 ' ADF-DEV ' 라는 팩터리가 있고 값이 ' t r u e ' 인 ' environment ' 라는 문자열 형식의 전역 매개 변수를 사용 하는 경우 *ADF-DEV_GlobalParameters.json* 이라는 파일을 게시 하면이 생성 됩니다. ' ADF_TEST ' 이라는 테스트 팩터리에 배포 하는 경우 JSON 파일의 복사본을 만들고 (예:에 ADF-TEST_GlobalParameters.js), 매개 변수 값을 환경 관련 값으로 바꿉니다. ' Environment ' 매개 변수에 ' test ' 값이 있을 수 있습니다. 
 

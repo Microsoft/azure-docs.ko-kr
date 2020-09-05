@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/15/2020
 ms.author: radeltch
-ms.openlocfilehash: e018f2320b505a174850472d85ec2ebd59310560
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: 9978137edb7874a8b93e0c9a5f1f9979ce449277
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406574"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88893173"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-red-hat-enterprise-linux"></a>Red Hat Enterprise Linux에서 Azure NetApp Files를 사용하여 Azure VM에 대기 노드가 있는 SAP HANA 스케일 아웃 시스템 배포 
 
@@ -110,10 +110,10 @@ Azure NetApp 볼륨은 별도의 서브넷에 있으며 [Azure NetApp Files에 �
 
 이 구성 예제에서 서브넷은 다음과 같습니다.  
 
-  - `client`10.9.1.0/26  
-  - `storage`10.9.3.0/26  
-  - `hana`10.9.2.0/26  
-  - `anf`10.9.0.0/26 (Azure NetApp Files에 위임 된 서브넷)
+  - `client` 10.9.1.0/26  
+  - `storage` 10.9.3.0/26  
+  - `hana` 10.9.2.0/26  
+  - `anf` 10.9.0.0/26 (Azure NetApp Files에 위임 된 서브넷)
 
 ## <a name="set-up-the-azure-netapp-files-infrastructure"></a>Azure NetApp Files 인프라 설정 
 
@@ -153,7 +153,7 @@ Azure NetApp Files를 배포 하기 전에 [Azure NetApp Files 지침에 등록]
    
    이 예제에서는 각 HANA 데이터 및 로그 볼륨에 대해 별도의 Azure NetApp Files 볼륨을 사용 했습니다. 더 저렴 하거나 생산적이 아닌 시스템에서 더 비용 최적화 된 구성의 경우 모든 데이터 마운트를 단일 볼륨에 저장 하 고 모든 로그를 다른 단일 볼륨에 탑재할 수 있습니다.  
 
-### <a name="important-considerations"></a>중요 고려 사항
+### <a name="important-considerations"></a>중요한 고려 사항
 
 노드 간 시나리오를 사용 하 여 스케일 아웃 SAP HANA에 대 한 Azure NetApp Files를 만들 때 다음과 같은 중요 한 사항을 고려해 야 합니다.
 
@@ -233,7 +233,7 @@ Azure에서 SAP 용 인프라를 설계할 때 최소 처리량 특성으로 변
 
    b. SAP HANA에 대해 이전에 만든 가용성 집합을 선택 합니다.  
 
-   다. 클라이언트 Azure 가상 네트워크 서브넷을 선택 합니다. [가속화 네트워크](../../../virtual-network/create-vm-accelerated-networking-cli.md)를 선택 합니다.  
+   c. 클라이언트 Azure 가상 네트워크 서브넷을 선택 합니다. [가속화 네트워크](../../../virtual-network/create-vm-accelerated-networking-cli.md)를 선택 합니다.  
 
    가상 컴퓨터를 배포 하는 경우 네트워크 인터페이스 이름이 자동으로 생성 됩니다. 이 지침에서는 **hanadb1**, **hanadb2**및 **Hanadb3**클라이언트와 같이 클라이언트 Azure 가상 네트워크 서브넷에 연결 된 자동으로 생성 된 네트워크 인터페이스를 참조 합니다. 
 
@@ -247,13 +247,13 @@ Azure에서 SAP 용 인프라를 설계할 때 최소 처리량 특성으로 변
 
     b. 왼쪽 창에서 **Virtual Machines**을 선택 합니다. 가상 컴퓨터 이름 (예: **hanadb1**)을 필터링 한 다음 가상 컴퓨터를 선택 합니다.  
 
-    다. **개요** 창에서 **중지** 를 선택 하 여 가상 컴퓨터의 할당을 취소 합니다.  
+    c. **개요** 창에서 **중지** 를 선택 하 여 가상 컴퓨터의 할당을 취소 합니다.  
 
     d. **네트워킹**을 선택 하 고 네트워크 인터페이스를 연결 합니다. **네트워크 인터페이스 연결** 드롭다운 목록에서 및 서브넷에 대해 이미 생성 된 네트워크 인터페이스를 선택 합니다 `storage` `hana` .  
     
     e. **저장**을 선택합니다. 
  
-    f. 나머지 가상 컴퓨터 (이 예제에서는 **hanadb2** 및 **hanadb3**)에 대해 b ~ e 단계를 반복 합니다.
+    f. 나머지 가상 컴퓨터 (이 예제에서는  **hanadb2** 및 **hanadb3**)에 대해 b ~ e 단계를 반복 합니다.
  
     g. 지금은 가상 컴퓨터를 중지 됨 상태로 둡니다. 다음에는 새로 연결 된 모든 네트워크 인터페이스에 대해 [가속화 된 네트워킹](../../../virtual-network/create-vm-accelerated-networking-cli.md) 을 사용 하도록 설정 합니다.  
 
@@ -349,7 +349,9 @@ Azure에서 SAP 용 인프라를 설계할 때 최소 처리량 특성으로 변
     net.core.optmem_max = 16777216
     net.ipv4.tcp_rmem = 65536 16777216 16777216
     net.ipv4.tcp_wmem = 65536 16777216 16777216
-    net.core.netdev_max_backlog = 300000 net.ipv4.tcp_slow_start_after_idle=0 net.ipv4.tcp_no_metrics_save = 1
+    net.core.netdev_max_backlog = 300000 
+    net.ipv4.tcp_slow_start_after_idle=0 
+    net.ipv4.tcp_no_metrics_save = 1
     net.ipv4.tcp_moderate_rcvbuf = 1
     net.ipv4.tcp_window_scaling = 1
     net.ipv4.tcp_timestamps = 1
@@ -563,7 +565,7 @@ Azure에서 SAP 용 인프라를 설계할 때 최소 처리량 특성으로 변
      * **시스템에 호스트를 추가**하 시겠습니까?: **y** 를 입력 합니다.
      * **추가할 쉼표로 구분 된 호스트 이름**: **hanadb2, hanadb3을** 입력 합니다.
      * **루트 사용자 이름** [root]: enter 키를 눌러 기본값을 적용 합니다.
-     * 호스트 hanadb2 역할의 경우: **1** (작업자의 경우)을 입력 합니다.
+     * 호스트 hanadb2 역할의 경우: **1**  (작업자의 경우)을 입력 합니다.
      * Host hanadb2의 **호스트 장애 조치 (Failover) 그룹** [기본값]: enter 키를 눌러 기본값을 적용 합니다.
      * 호스트 hanadb2의 **저장소 파티션 번호** [<<assign automatically>>]: Enter 키를 눌러 기본값을 적용 합니다.
      * Host hanadb2의 **작업자 그룹** [기본값]: enter 키를 눌러 기본값을 적용 합니다.
@@ -757,7 +759,7 @@ Azure에서 SAP 용 인프라를 설계할 때 최소 처리량 특성으로 변
     echo b > /proc/sysrq-trigger
    </code></pre>
 
-   다. 시스템에서 장애 조치 (failover)를 모니터링 합니다. 장애 조치 (failover)가 완료 되 면 상태를 캡처합니다. 예를 들면 다음과 같습니다.  
+   c. 시스템에서 장애 조치 (failover)를 모니터링 합니다. 장애 조치 (failover)가 완료 되 면 상태를 캡처합니다. 예를 들면 다음과 같습니다.  
 
     <pre><code>
     # Check the instance status
@@ -834,7 +836,7 @@ Azure에서 SAP 용 인프라를 설계할 때 최소 처리량 특성으로 변
      | hanadb3 | yes    | info   |          |        |         0 |         1 | default  | default  | master 3   | master     | standby     | master      | standby | worker  | default | default |
     </code></pre>
 
-   다. **Hanadb1** 에서 HANA 인스턴스를 다시 시작 합니다 (즉, 이름 서버가 종료 된 동일한 가상 머신에서). **Hanadb1** 노드는 환경에 다시 참가 하 고 대기 역할을 유지 합니다.  
+   c. **Hanadb1** 에서 HANA 인스턴스를 다시 시작 합니다 (즉, 이름 서버가 종료 된 동일한 가상 머신에서). **Hanadb1** 노드는 환경에 다시 참가 하 고 대기 역할을 유지 합니다.  
 
    <pre><code>
     hn1adm@hanadb1:/usr/sap/HN1/HDB03> HDB start

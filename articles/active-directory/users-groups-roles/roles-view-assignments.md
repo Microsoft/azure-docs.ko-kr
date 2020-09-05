@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20e566a450768fca81e29692f7c8d2da3ccf5201
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fb64a84388a370e77f39369f78c3086ec1cd00ec
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84731565"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798349"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Azure Active Directory에서 사용자 지정 역할 할당 보기
 
@@ -39,7 +39,7 @@ ms.locfileid: "84731565"
 
 ## <a name="view-role-assignments-using-azure-ad-powershell"></a>Azure AD PowerShell을 사용 하 여 역할 할당 보기
 
-이 섹션에서는 조직 전체 범위에서 역할의 할당을 보는 방법을 설명 합니다. 이 문서에서는 [Azure Active Directory PowerShell 버전 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) 모듈을 사용 합니다. PowerShell을 사용 하 여 단일 응용 프로그램 범위 할당을 보려면 PowerShell을 사용 하 [여 사용자 지정 역할 할당](roles-assign-powershell.md)에서 cmdlet을 사용할 수 있습니다.
+이 섹션에서는 조직 전체 범위에서 역할의 할당을 보는 방법을 설명 합니다. 이 문서에서는 [Azure Active Directory PowerShell 버전 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) 모듈을 사용 합니다. PowerShell을 사용 하 여 단일 응용 프로그램 범위 할당을 보려면 PowerShell을 사용 하 [여 사용자 지정 역할 할당](roles-assign-powershell.md)에서 cmdlet을 사용할 수 있습니다.
 
 ### <a name="prepare-powershell"></a>PowerShell 준비
 

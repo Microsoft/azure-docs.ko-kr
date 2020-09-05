@@ -15,7 +15,7 @@
 - name: 방법 가이드
   items:
     - name: Azure Machine Learning의 데이터 세트
-      href: how-to-create-dataset-from-open-dataset.md
+      href: how-to-create-azure-machine-learning-dataset-from-open-dataset.md
 - name: 샘플
   displayName: 'example, examples, Jupyter, azure notebooks, python, notebook, GitHub'
   href: samples.md

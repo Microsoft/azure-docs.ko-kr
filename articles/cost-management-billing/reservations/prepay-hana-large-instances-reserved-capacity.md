@@ -4,15 +4,16 @@ description: HANA 대규모 인스턴스 예약을 구매하기 전에 알아야
 author: yashesvi
 ms.reviewer: yashar
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: cefb6b2cb2908b9c7311df745417686b52241bab
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 44f7ce657ea9341779e15f6e4817e8fae1515e47
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87286566"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88685972"
 ---
 # <a name="save-on-sap-hana-large-instances-with-an-azure-reservation"></a>Azure 예약을 사용하여 SAP HANA(대규모 인스턴스) 비용 절감
 

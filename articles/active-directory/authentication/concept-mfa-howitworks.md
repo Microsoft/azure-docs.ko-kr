@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10d49331f08a83eb48c232ced2c565935eb2abd4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b5f8d08f0814ec69719c002ea9efd39bb38b7d16
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87051206"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718019"
 ---
 # <a name="how-it-works-azure-multi-factor-authentication"></a>작동 방법: Azure Multi-Factor Authentication
 
@@ -66,4 +66,4 @@ Azure Multi-Factor Authentication는 사용자의 편의를 유지 하면서 데
 작동 중인 MFA를 보려면 다음 자습서에서 테스트 사용자 집합에 대해 Azure Multi-Factor Authentication를 사용 하도록 설정 합니다.
 
 > [!div class="nextstepaction"]
-> [Azure Multi-Factor Authentication 사용](tutorial-mfa-applications.md)
+> [Azure Multi-Factor Authentication 사용](./tutorial-enable-azure-mfa.md)

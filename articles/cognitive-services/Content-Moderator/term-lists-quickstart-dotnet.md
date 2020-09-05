@@ -10,12 +10,13 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: 68da335875752d326ee718cade3d501623c70b49
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 90993ea2ee66a23b5b629dfaf5bb34298ce15d9b
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72935950"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936285"
 ---
 # <a name="check-text-against-a-custom-term-list-in-c"></a>C#에서 사용자 지정 단어 목록에 대해 텍스트 확인
 
@@ -32,7 +33,7 @@ Azure Content Moderator에서 기본 전역 용어 목록은 대부분의 콘텐
 - 목록 정보를 편집합니다.
 - 목록에 대한 변경 내용이 새 검색에 포함되도록 인덱스를 새로 고칩니다.
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다. 
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다. 
 
 ## <a name="sign-up-for-content-moderator-services"></a>Content Moderator 서비스 등록
 
@@ -69,7 +70,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Content Moderator 클라이언트 만들기
 
-다음 코드를 추가하여 구독에 대한 Content Moderator 클라이언트를 만듭니다. 및 `CMSubscriptionKey` 필드 `AzureEndpoint` 를 끝점 URL 및 구독 키의 값으로 업데이트 합니다. Azure Portal에서 리소스의 **빠른 시작** 탭에서 찾을 수 있습니다.
+다음 코드를 추가하여 구독에 대한 Content Moderator 클라이언트를 만듭니다. `AzureEndpoint`및 필드를 `CMSubscriptionKey` 끝점 URL 및 구독 키의 값으로 업데이트 합니다. Azure Portal에서 리소스의 **빠른 시작** 탭에서 찾을 수 있습니다.
 
 ```csharp
 /// <summary>
@@ -133,7 +134,7 @@ private const double latencyDelay = 0.5;
 
 ## <a name="create-a-term-list"></a>용어 목록 만들기
 
-**ContentModeratorClient.ListManagementTermLists.Create**를 사용하여 용어 목록을 만듭니다. **Create**에 대한 첫 번째 매개 변수는 MIME 형식을 포함하는 문자열로, “application/json”이어야 합니다. 자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)를 참조하세요. 두 번째 매개 변수는 새 용어 목록에 대한 이름 및 설명을 포함하는 **Body** 개체입니다.
+**ContentModeratorClient.ListManagementTermLists.Create**를 사용하여 용어 목록을 만듭니다. **Create**에 대한 첫 번째 매개 변수는 MIME 형식을 포함하는 문자열로, “application/json”이어야 합니다. 자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)를 참조 하세요. 두 번째 매개 변수는 새 용어 목록에 대한 이름 및 설명을 포함하는 **Body** 개체입니다.
 
 > [!NOTE]
 > 최대 **5개 용어 목록**으로 제한되고, 각 목록은 **10,000개 용어를 초과하지 않아야** 합니다.
@@ -171,7 +172,7 @@ static string CreateTermList (ContentModeratorClient client)
 
 ## <a name="update-term-list-name-and-description"></a>용어 목록 이름 및 설명 업데이트
 
-**ContentModeratorClient.ListManagementTermLists.Update**를 사용하여 용어 목록 정보를 업데이트합니다. **Update**에 대한 첫 번째 매개 변수는 용어 목록 ID입니다. 두 번째 매개 변수는 MIME 형식으로, “application/json”이어야 합니다. 자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f685)를 참조하세요. 세 번째 매개 변수는 새 이름 및 설명을 포함하는 **Body** 개체입니다.
+**ContentModeratorClient.ListManagementTermLists.Update**를 사용하여 용어 목록 정보를 업데이트합니다. **Update**에 대한 첫 번째 매개 변수는 용어 목록 ID입니다. 두 번째 매개 변수는 MIME 형식으로, “application/json”이어야 합니다. 자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f685)를 참조 하세요. 세 번째 매개 변수는 새 이름 및 설명을 포함하는 **Body** 개체입니다.
 
 TermLists 네임스페이스, Program 클래스에 다음 메서드 정의를 추가합니다.
 
@@ -267,7 +268,7 @@ static void RefreshSearchIndex (ContentModeratorClient client, string list_id)
 - 부울 값입니다. 텍스트의 개인 데이터를 검색 하려면이 필드를 **true** 로 설정 합니다.
 - 용어 목록 ID입니다.
 
-자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f)를 참조하세요.
+자세한 내용은 [API 참조](https://westus2.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f)를 참조 하세요.
 
 **ScreenText**는 Content Moderator가 차단에서 검색한 모든 용어를 나열하는 **Terms** 속성이 있는 **Screen** 개체를 반환합니다. Content Moderator가 차단하는 동안 용어를 검색하지 않는 경우 **Terms** 속성은 **Null** 값을 갖습니다.
 

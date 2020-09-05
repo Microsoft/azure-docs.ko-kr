@@ -3,7 +3,7 @@ title: Azure Media Services v3 REST API 호출에 대해 Postman 구성
 description: 이 문서에서는 AMS(Azure Media Services) REST API를 호출하는 데 사용할 수 있도록 Postman을 구성하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/05/2019
-ms.author: juliako
-ms.openlocfilehash: 16c74e10e88d3f8eacd8f59222adbdb19be813ef
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 1232c47040a5577731121ee0bb17eb264240e765
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053198"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89264881"
 ---
 # <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Media Services v3 REST API 호출에 대해 Postman 구성
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 문서에서는 AMS(Azure Media Services) REST API를 호출하는 데 사용할 수 있도록 **Postman**을 구성하는 방법을 보여 줍니다. 이 문서에서는 환경 및 컬렉션 파일을 **Postman**으로 가져오는 방법을 보여 줍니다. 컬렉션에는 AMS(Azure Media Services) REST API를 호출하는 HTTP 요청의 그룹화된 정의가 포함되어 있습니다. 환경 파일에는 컬렉션에 사용되는 변수가 포함되어 있습니다.
 
@@ -99,7 +101,6 @@ AMS v3 리소스 조작을 시작하려면 먼저 서비스 주체 인증을 위
 
 ## <a name="see-also"></a>참고 항목
 
-- [Media Services 계정에 파일 업로드 - REST](upload-files-rest-how-to.md)
 - [Media Services로 필터 만들기 - REST](filters-dynamic-manifest-rest-howto.md)
 - [Azure Resource Manager 기반 REST API](https://github.com/Azure-Samples/media-services-v3-arm-templates)
 

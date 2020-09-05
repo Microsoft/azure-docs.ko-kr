@@ -1,14 +1,14 @@
 ---
 title: 쿼리 언어 이해
 description: Resource Graph 테이블과 Azure Resource Graph와 함께 사용 가능한 Kusto 데이터 형식, 연산자 및 함수를 설명합니다.
-ms.date: 08/03/2020
+ms.date: 08/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: b59811ecd877b9b2e22a43c00329ed7d02dfb97d
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 4d7ca949e9eef075adb130bb84b2617749950bec
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541824"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798553"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Azure Resource Graph 쿼리 언어 이해
 
@@ -64,6 +64,25 @@ Resources
 > [!NOTE]
 > `project`를 사용하여 `join` 결과를 제한하는 경우 `join`에서 두 테이블의 관계를 설정하기 위해 사용하는 _subscriptionId_ 속성을 `project`에 포함해야 합니다.
 
+## <a name="extended-properties-preview"></a><a name="extended-properties"></a>확장 속성 (미리 보기)
+
+_미리 보기_ 기능으로, 리소스 그래프의 일부 리소스 종류에는 Azure Resource Manager에서 제공 하는 속성을 초과 하 여 쿼리 하는 데 사용할 수 있는 추가 형식 관련 속성이 있습니다. _확장 속성_이라고 하는이 값 집합은의 지원 되는 리소스 형식에 존재 `properties.extended` 합니다. _확장 속성_을 포함 하는 리소스 유형을 확인 하려면 다음 쿼리를 사용 합니다.
+
+```kusto
+Resources
+| where isnotnull(properties.extended)
+| distinct type
+| order by type asc
+```
+
+예: 다음을 기준으로 가상 컴퓨터 수 가져오기 `instanceView.powerState.code` :
+
+```kusto
+Resources
+| where type == 'microsoft.compute/virtualmachines'
+| summarize count() by tostring(properties.extended.instanceView.powerState.code)
+```
+
 ## <a name="resource-graph-custom-language-elements"></a>리소스 그래프 사용자 지정 언어 요소
 
 ### <a name="shared-query-syntax-preview"></a><a name="shared-query-syntax"></a>공유 쿼리 구문 (미리 보기)
@@ -93,7 +112,7 @@ Resources
 
 ## <a name="supported-kql-language-elements"></a>지원되는 KQL 언어 요소
 
-Resource Graph는 모든 KQL [데이터 형식](/azure/kusto/query/scalar-data-types/), [스칼라 반환 함수](/azure/kusto/query/scalarfunctions), [스칼라 연산자](/azure/kusto/query/binoperators), [집계 함수](/azure/kusto/query/any-aggfunction)를 지원합니다. Resource Graph는 특정 [테이블 형식 연산자](/azure/kusto/query/queries)를 지원하며, 그 중 일부는 동작이 서로 다릅니다.
+리소스 그래프는 KQL [데이터 형식](/azure/kusto/query/scalar-data-types/), [스칼라 함수](/azure/kusto/query/scalarfunctions), [스칼라 연산자](/azure/kusto/query/binoperators)및 [집계 함수의](/azure/kusto/query/any-aggfunction)하위 집합을 지원 합니다. Resource Graph는 특정 [테이블 형식 연산자](/azure/kusto/query/queries)를 지원하며, 그 중 일부는 동작이 서로 다릅니다.
 
 ### <a name="supported-tabulartop-level-operators"></a>지원되는 테이블 형식/최상위 수준 연산자
 
@@ -123,8 +142,7 @@ Resource Graph에서 지원하는 KQL 테이블 형식 연산자와 특정 샘�
 쿼리가 반환 하는 리소스의 구독의 범위는 리소스 그래프에 액세스 하는 방법에 따라 달라 집니다. 권한 있는 사용자의 컨텍스트를 기반으로 요청에 포함할 구독 목록을 Azure CLI 하 고 Azure PowerShell 채웁니다. **구독 및** **구독** 매개 변수를 사용 하 여 각각에 대해 구독 목록을 수동으로 정의할 수 있습니다.
 REST API 및 기타 모든 Sdk에서 리소스를 포함 하는 구독 목록은 요청의 일부로 명시적으로 정의 되어야 합니다.
 
-**미리 보기로**REST API 버전은 `2020-04-01-preview` [관리 그룹](../../management-groups/overview.md)에 대 한 쿼리의 범위를 관리 하는 속성을 추가 합니다. 또한이 미리 보기 API는 subscription 속성을 선택 사항으로 만듭니다. 관리 그룹 또는 구독 목록이 정의 되어 있지 않은 경우에는 인증 된 사용자가 액세스할 수 있는 모든 리소스가 쿼리 범위에 표시 됩니다. 새 속성은 관리 그룹 `managementGroupId` 의 이름과 다른 관리 그룹 ID를 사용 합니다.
-`managementGroupId`을 지정 하면 지정 된 관리 그룹 계층의 처음 5000 구독에 있는 리소스가 포함 됩니다. `managementGroupId`는와 동시에 사용할 수 없습니다 `subscriptions` .
+**미리 보기로**REST API 버전은 `2020-04-01-preview` [관리 그룹](../../management-groups/overview.md)에 대 한 쿼리의 범위를 관리 하는 속성을 추가 합니다. 또한이 미리 보기 API는 subscription 속성을 선택 사항으로 만듭니다. 관리 그룹 또는 구독 목록이 정의 되어 있지 않은 경우에는 인증 된 사용자가 액세스할 수 있는 모든 리소스가 쿼리 범위에 표시 됩니다. 새 속성은 관리 그룹 `managementGroupId` 의 이름과 다른 관리 그룹 ID를 사용 합니다. `managementGroupId`을 지정 하면 지정 된 관리 그룹 계층의 처음 5000 구독에 있는 리소스가 포함 됩니다. `managementGroupId` 는와 동시에 사용할 수 없습니다 `subscriptions` .
 
 예: ID가 ' myMG ' 인 ' My Management Group ' 이라는 관리 그룹의 계층 내에 있는 모든 리소스를 쿼리 합니다.
 

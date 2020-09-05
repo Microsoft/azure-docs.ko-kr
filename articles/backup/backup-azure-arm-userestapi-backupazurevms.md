@@ -4,12 +4,12 @@ description: 이 문서에서는 REST API를 사용 하 여 Azure VM 백업에 �
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 595291549b4d181967ea168d0dc71bc7e2237a67
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: aa072cb48e12ac89af3be28a9633a82b50122275
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86514206"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89006298"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>REST API를 통해 Azure Backup을 사용하여 Azure VM 백업
 
@@ -23,19 +23,19 @@ ms.locfileid: "86514206"
 
 ### <a name="discover-unprotected-azure-vms"></a>보호되지 않는 Azure VM 검색
 
-먼저 자격 증명 모음은 Azure VM을 식별할 수 있어야 합니다. [새로 고침 작업](/rest/api/backup/protectioncontainers/refresh)을 사용하여 이 자격 증명 모음을 트리거합니다. 이 작업은 비동기 *POST* 작업으로서 자격 증명 모음이 현재 구독의 모든 보호되지 않는 VM의 최신 목록을 가져오고 해당 VM을 ‘캐시’해야 합니다. VM이 '캐시되면' Recovery Services는 해당 VM에 액세스하고 보호할 수 있습니다.
+먼저 자격 증명 모음은 Azure VM을 식별할 수 있어야 합니다. [새로 고침 작업](/rest/api/backup/protectioncontainers/refresh)을 사용하여 이 자격 증명 모음을 트리거합니다. 자격 증명 모음이 현재 구독에서 보호 되지 않는 모든 VM의 최신 목록을 가져오고 ' 캐시 ' 하는지 확인할 수 있도록 하는 비동기 *POST*  작업입니다. VM이 '캐시되면' Recovery Services는 해당 VM에 액세스하고 보호할 수 있습니다.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupname}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers?api-version=2016-12-01
 ```
 
-POST URI에는 `{subscriptionId}`, `{vaultName}`, `{vaultresourceGroupName}`, `{fabricName}` 매개 변수가 있습니다. `{fabricName}`은 "Azure"입니다. 예제에 따르면는 `{vaultName}` "testVault"이 고 `{vaultresourceGroupName}` 는 "testVaultRG"입니다. 모든 필수 매개 변수가 URI에서 지정되므로 별도 요청 본문이 필요 없습니다.
+POST URI에는 `{subscriptionId}`, `{vaultName}`, `{vaultresourceGroupName}`, `{fabricName}` 매개 변수가 있습니다. `{fabricName}`은 "Azure"입니다. 예제에 따르면는 `{vaultName}` "testVault"이 고 `{vaultresourceGroupName}` 는 "testVaultRG"입니다. 모든 필수 매개 변수가 URI에 제공 되므로 별도의 요청 본문이 필요 하지 않습니다.
 
 ```http
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/refreshContainers?api-version=2016-12-01
 ```
 
-#### <a name="responses"></a>응답
+#### <a name="responses-to-refresh-operation"></a>새로 고침 작업에 대 한 응답
 
 '새로 고침' 작업은 [비동기 작업](../azure-resource-manager/management/async-operations.md)입니다. 즉, 이 작업은 별도로 추적해야 하는 다른 작업을 만듭니다.
 
@@ -46,7 +46,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 |204 콘텐츠 없음     |         |  반환된 콘텐츠가 없는 경우 정상      |
 |202 수락됨     |         |     수락됨    |
 
-##### <a name="example-responses"></a>예제 응답
+##### <a name="example-responses-to-refresh-operation"></a>새로 고침 작업에 대 한 응답 예제
 
 *POST* 요청을 제출하면 202(수락됨) 응답이 반환됩니다.
 
@@ -92,7 +92,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="selecting-the-relevant-azure-vm"></a>관련 Azure VM 선택
 
- 구독에서 [모든 보호 가능한 항목 나열하기](/rest/api/backup/backupprotectableitems/list)에서 "캐싱"을 수행했는지 확인하고 응답에서 원하는 VM을 찾을 수 있습니다. [이 작업의 응답으로](#example-responses-1) VM Recovery Services 식별 하는 방법에 대 한 정보도 제공 됩니다.  패턴에 친숙해지면 이 단계를 건너뛰고 직접 [보호 활성화](#enabling-protection-for-the-azure-vm)를 진행할 수 있습니다.
+ 구독에서 [모든 보호 가능한 항목 나열하기](/rest/api/backup/backupprotectableitems/list)에서 "캐싱"을 수행했는지 확인하고 응답에서 원하는 VM을 찾을 수 있습니다. [이 작업의 응답으로](#example-responses-to-get-operation) VM Recovery Services 식별 하는 방법에 대 한 정보도 제공 됩니다.  패턴에 친숙해지면 이 단계를 건너뛰고 직접 [보호 활성화](#enabling-protection-for-the-azure-vm)를 진행할 수 있습니다.
 
 이 작업은 *GET* 작업입니다.
 
@@ -102,13 +102,13 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 *GET* URI에는 필요한 모든 매개 변수가 있습니다. 추가 요청 본문이 필요없습니다.
 
-#### <a name="responses"></a><a name="responses-1"></a>응답
+#### <a name="responses-to-get-operation"></a>가져오기 작업에 대 한 응답
 
 |Name  |Type  |설명  |
 |---------|---------|---------|
 |200 정상     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       정상 |
 
-#### <a name="example-responses"></a><a name="example-responses-1"></a>예제 응답
+#### <a name="example-responses-to-get-operation"></a>작업 가져오기에 대 한 예제 응답
 
 *GET* 요청이 제출되면 200(정상) 응답이 반환됩니다.
 
@@ -162,7 +162,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="enabling-protection-for-the-azure-vm"></a>Azure VM 보호 사용
 
-관련 VM이 "캐시"되고 "확인"된 경우 정책을 선택하여 보호합니다. 자격 증명 모음의 기존 정책에 대한 자세한 내용은 [정책 API 목록](/rest/api/backup/backuppolicies/list)을 참조하세요. 그런 다음, 정책 이름을 참조하여 [관련 정책](/rest/api/backup/protectionpolicies/get)을 선택합니다. 정책을 만들려면 [정책 자습서 만들기](backup-azure-arm-userestapi-createorupdatepolicy.md)를 참조하세요. 다음 예제에서 "DefaultPolicy"를 선택합니다.
+관련 VM이 "캐시"되고 "확인"된 경우 정책을 선택하여 보호합니다. 자격 증명 모음의 기존 정책에 대한 자세한 내용은 [정책 API 목록](/rest/api/backup/backuppolicies/list)을 참조하세요. 그런 다음, 정책 이름을 참조하여 [관련 정책](/rest/api/backup/protectionpolicies/get)을 선택합니다. 정책을 만들려면 [정책 자습서 만들기](backup-azure-arm-userestapi-createorupdatepolicy.md)를 참조하세요. 아래 예제에서는 "DefaultPolicy"를 선택 합니다.
 
 보호 사용은 '보호된 항목'를 만드는 비동기 *PUT* 작업입니다.
 
@@ -200,9 +200,9 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-`{sourceResourceId}`는 [보호 가능한 항목 목록의 응답](#example-responses-1)의 위에서 설명한 `{virtualMachineId}`입니다.
+`{sourceResourceId}`는 [보호 가능한 항목 목록의 응답](#example-responses-to-get-operation)의 위에서 설명한 `{virtualMachineId}`입니다.
 
-#### <a name="responses"></a>응답
+#### <a name="responses-to-create-protected-item-operation"></a>보호 된 항목 만들기 작업에 대 한 응답
 
 보호된 항목 만들기는 [비동기 작업](../azure-resource-manager/management/async-operations.md)입니다. 즉, 이 작업은 별도로 추적해야 하는 다른 작업을 만듭니다.
 
@@ -213,7 +213,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 |200 정상     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  정상       |
 |202 수락됨     |         |     수락됨    |
 
-##### <a name="example-responses"></a>예제 응답
+##### <a name="example-responses-to-create-protected-item-operation"></a>보호 된 항목 만들기 작업에 대 한 예제 응답
 
 보호된 항목 만들기 또는 업데이트를 위한 *PUT* 요청을 제출하면 초기 응답은 위치 헤더 또는 Azure-async-header를 사용한 202(수락됨)입니다.
 
@@ -284,13 +284,13 @@ Azure VM이 백업용으로 구성 되 면 백업은 정책 일정에 따라 수
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/backup?api-version=2016-12-01
 ```
 
-`{containerName}` 및 `{protectedItemName}`은 [위에서](#responses-1) 생성됩니다. `{fabricName}`은 "Azure"입니다. 예를 들어 이렇게 하면 다음으로 변환됩니다.
+`{containerName}` 및 `{protectedItemName}`은 [위에서](#responses-to-get-operation) 생성됩니다. `{fabricName}`은 "Azure"입니다. 예를 들어 이렇게 하면 다음으로 변환됩니다.
 
 ```http
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM/backup?api-version=2016-12-01
 ```
 
-### <a name="create-the-request-body"></a>요청 본문 만들기
+### <a name="create-the-request-body-for-on-demand-backup"></a>주문형 백업에 대 한 요청 본문 만들기
 
 주문형 백업을 트리거하려면 요청 본문의 구성 요소는 다음과 같습니다.
 
@@ -300,9 +300,9 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 요청 본문 및 기타 세부 정보에 대한 전체 정의 목록은 [보호된 항목 REST API 문서의 백업 트리거](/rest/api/backup/backups/trigger#request-body)를 참조하세요.
 
-#### <a name="example-request-body"></a>요청 본문 예제
+#### <a name="example-request-body-for-on-demand-backup"></a>주문형 백업에 대 한 예제 요청 본문
 
-다음 요청 본문은 보호된 항목의 백업을 트리거하는 데 필요한 속성을 정의합니다. 보존을 지정하지 않으면 백업 작업을 트리거한 시간에서 30일 동안 유지됩니다.
+다음 요청 본문은 보호된 항목의 백업을 트리거하는 데 필요한 속성을 정의합니다. 보존 기간을 지정 하지 않으면 백업 작업의 트리거에서 30 일 동안 보존 됩니다.
 
 ```json
 {
@@ -313,7 +313,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 }
 ```
 
-### <a name="responses"></a>응답
+### <a name="responses-for-on-demand-backup"></a>주문형 백업에 대 한 응답
 
 주문형 백업의 트리거는 [비동기 작업](../azure-resource-manager/management/async-operations.md)입니다. 즉, 이 작업은 별도로 추적해야 하는 다른 작업을 만듭니다.
 
@@ -323,7 +323,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 |---------|---------|---------|
 |202 수락됨     |         |     수락됨    |
 
-#### <a name="example-responses"></a><a name="example-responses-3"></a>예제 응답
+#### <a name="example-responses-for-on-demand-backup"></a>주문형 백업에 대 한 예제 응답
 
 주문형 백업에 대한 *POST* 요청을 제출하면 초기 응답은 위치 헤더 또는 Azure-async-header를 사용한 202(수락됨)입니다.
 
@@ -399,7 +399,7 @@ VM을 보호하는 정책을 변경하려면 [보호 사용](#enabling-protectio
 }
 ```
 
-응답은 [보호 사용의 경우](#responses-2)에 설명된 것과 동일한 형식을 따름
+응답은 [보호 사용의 경우](#responses-to-create-protected-item-operation)에 설명된 것과 동일한 형식을 따름
 
 ### <a name="stop-protection-but-retain-existing-data"></a>보호를 중지하지만 기존 데이터는 보존
 
@@ -415,7 +415,7 @@ VM을 보호하는 정책을 변경하려면 [보호 사용](#enabling-protectio
 }
 ```
 
-응답은 [주문형 백업 트리거하는 경우](#example-responses-3)에 설명된 것과 동일한 형식을 따릅니다. [REST API 문서를 사용한 모니터링 작업](backup-azure-arm-userestapi-managejobs.md#tracking-the-job)에 설명된 대로 결과 작업을 추적해야 합니다.
+응답은 [주문형 백업 트리거하는 경우](#example-responses-for-on-demand-backup)에 설명된 것과 동일한 형식을 따릅니다. [REST API 문서를 사용한 모니터링 작업](backup-azure-arm-userestapi-managejobs.md#tracking-the-job)에 설명된 대로 결과 작업을 추적해야 합니다.
 
 ### <a name="stop-protection-and-delete-data"></a>보호 중지 및 데이터 삭제
 
@@ -427,13 +427,13 @@ VM을 보호하는 정책을 변경하려면 [보호 사용](#enabling-protectio
 DELETE https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}?api-version=2019-05-13
 ```
 
-`{containerName}` 및 `{protectedItemName}`은 [위에서](#responses-1) 생성됩니다. `{fabricName}`은 "Azure"입니다. 예를 들어 이렇게 하면 다음으로 변환됩니다.
+`{containerName}` 및 `{protectedItemName}`은 [위에서](#responses-to-get-operation) 생성됩니다. `{fabricName}`은 "Azure"입니다. 예를 들어 이렇게 하면 다음으로 변환됩니다.
 
 ```http
 DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM?api-version=2019-05-13
 ```
 
-#### <a name="responses"></a><a name="responses-2"></a>응답
+#### <a name="responses-for-delete-protection"></a>삭제 방지에 대 한 응답
 
 보호 *DELETE* 작업은 [비동기 작업](../azure-resource-manager/management/async-operations.md)입니다. 즉, 이 작업은 별도로 추적해야 하는 다른 작업을 만듭니다.
 
@@ -445,9 +445,9 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 |202 수락됨     |         |     수락됨    |
 
 > [!IMPORTANT]
-> 실수로 인 한 삭제 시나리오 로부터 보호 하기 위해 Recovery services 자격 증명 모음에 대해 [일시 삭제 기능을 사용할 수](use-restapi-update-vault-properties.md#soft-delete-state) 있습니다. 자격 증명 모음의 일시 삭제 상태가 사용으로 설정 된 경우 삭제 작업은 데이터를 즉시 삭제 하지 않습니다. 14 일 동안 보관 되 고 영구적으로 제거 됩니다. 이 14 일 동안에는 저장소 요금이 청구 되지 않습니다. 삭제 작업을 실행 취소 하려면 [실행 취소-삭제 섹션](#undo-the-stop-protection-and-delete-data)을 참조 하세요.
+> 실수로 인 한 삭제 시나리오를 방지 하기 위해 Recovery Services 자격 증명 모음에 대해 [일시 삭제 기능을 사용할 수](use-restapi-update-vault-properties.md#soft-delete-state) 있습니다. 자격 증명 모음의 일시 삭제 상태가 사용으로 설정 된 경우 삭제 작업은 데이터를 즉시 삭제 하지 않습니다. 14 일 동안 보관 되 고 영구적으로 제거 됩니다. 이 14 일 동안 저장소에 대 한 요금이 청구 되지 않습니다. 삭제 작업을 실행 취소 하려면 [실행 취소-삭제 섹션](#undo-the-deletion)을 참조 하세요.
 
-### <a name="undo-the-stop-protection-and-delete-data"></a>보호 중지 및 데이터 삭제 실행 취소
+### <a name="undo-the-deletion"></a>삭제 취소
 
 실수로 삭제를 실행 취소 하는 것은 백업 항목을 만드는 것과 비슷합니다. 삭제를 취소 한 후에는 항목이 유지 되지만 이후의 백업은 트리거되지 않습니다.
 
@@ -464,7 +464,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 }
 ```
 
-응답은 [주문형 백업 트리거하는 경우](#example-responses-3)에 설명된 것과 동일한 형식을 따릅니다. [REST API 문서를 사용한 모니터링 작업](backup-azure-arm-userestapi-managejobs.md#tracking-the-job)에 설명된 대로 결과 작업을 추적해야 합니다.
+응답은 [주문형 백업 트리거하는 경우](#example-responses-for-on-demand-backup)에 설명된 것과 동일한 형식을 따릅니다. [REST API 문서를 사용한 모니터링 작업](backup-azure-arm-userestapi-managejobs.md#tracking-the-job)에 설명된 대로 결과 작업을 추적해야 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

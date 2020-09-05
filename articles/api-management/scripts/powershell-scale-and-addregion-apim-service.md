@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - 서비스 인스턴스 크기 조정 | Microsoft Docs
-description: Azure PowerShell 스크립트 샘플 - 서비스 인스턴스 크기 조정
+description: API Management 서비스 인스턴스에 영역을 확장하고 추가하는 방법에 대해 알아봅니다. 샘플 스크립트를 참조하고 사용 가능한 추가 리소스를 확인합니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: a880bf617f4d1d81b73fda1fbe27d2dd803619a0
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ec54f1dcf3f7f28415646a58c057453985d450f0
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008832"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87902272"
 ---
 # <a name="scale-the-service-instance"></a>서비스 인스턴스 크기 조정
 

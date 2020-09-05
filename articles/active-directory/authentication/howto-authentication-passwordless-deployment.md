@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3ed549e51b911452bca7d4d4a16c7ef45594a8f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4d9ca8b7e188a7ed438feb5e2b99c6db22ad12b3
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81451434"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717152"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Azure Active Directory에서 암호 없는 인증 배포 계획
 
@@ -43,9 +43,9 @@ Passwordless를 사용 하는 경우 암호는 사용자가 알고 있는 것과
 ## <a name="passwordless-authentication-methods"></a>Passwordless 인증 방법
 Microsoft는 다양 한 시나리오를 포함 하는 세 가지 암호 없는 인증 옵션을 제공 합니다. 이러한 메서드는 함께 사용할 수 있습니다.
 
-- [비즈니스용 Windows Hello](https://docs.microsoft.com/azure/security/fundamentals/ad-passwordless) 는 전용 windows 컴퓨터의 사용자에 게 가장 적합 합니다.
-- [FIDO2 보안 키](https://docs.microsoft.com/azure/security/fundamentals/ad-passwordless) 를 사용 하는 보안 키 로그인은 휴대폰 사용이 제한 되는 경우 및 높은 권한의 id에 대해 키오스크와 같은 공유 컴퓨터에 로그인 하는 사용자에 게 특히 유용 합니다.
-- 휴대폰 [Microsoft Authenticator](https://docs.microsoft.com/azure/security/fundamentals/ad-passwordless) 로그인은 모바일 장치를 사용 하는 사용자에 게 암호 없는 옵션을 제공 하는 데 유용 합니다. Authenticator 앱은 사용자가 모든 플랫폼 또는 브라우저에 로그인 할 수 있도록 허용 하 여 모든 iOS 또는 Android 휴대폰을 강력 하 고 암호 없는 자격 증명으로 전환 합니다. 사용자는 휴대폰에 대 한 알림을 받고, 화면에 표시 되는 숫자를 휴대폰에 있는 숫자와 일치 시킨 다음, 생체 인식 데이터 또는 PIN을 사용 하 여 확인 하 여 로그인 합니다.
+- [비즈니스용 Windows Hello](./concept-authentication-passwordless.md) 는 전용 windows 컴퓨터의 사용자에 게 가장 적합 합니다.
+- [FIDO2 보안 키](./concept-authentication-passwordless.md) 를 사용 하는 보안 키 로그인은 휴대폰 사용이 제한 되는 경우 및 높은 권한의 id에 대해 키오스크와 같은 공유 컴퓨터에 로그인 하는 사용자에 게 특히 유용 합니다.
+- 휴대폰 [Microsoft Authenticator](./concept-authentication-passwordless.md) 로그인은 모바일 장치를 사용 하는 사용자에 게 암호 없는 옵션을 제공 하는 데 유용 합니다. Authenticator 앱은 사용자가 모든 플랫폼 또는 브라우저에 로그인 할 수 있도록 허용 하 여 모든 iOS 또는 Android 휴대폰을 강력 하 고 암호 없는 자격 증명으로 전환 합니다. 사용자는 휴대폰에 대 한 알림을 받고, 화면에 표시 되는 숫자를 휴대폰에 있는 숫자와 일치 시킨 다음, 생체 인식 데이터 또는 PIN을 사용 하 여 확인 하 여 로그인 합니다.
 
 ### <a name="passwordless-authentication-scenarios"></a>Passwordless 인증 시나리오
 
@@ -59,7 +59,7 @@ Microsoft의 암호 없는 인증 방법으로 다양 한 시나리오를 사용
 | **웹 앱 로그인**: <br> 모바일 또는 비 windows 장치에서 | **예** | **아니요** | **아니요** |
 | **컴퓨터 로그인**: <br> 비 Windows 컴퓨터 | **아니요** | **아니요** | **아니요** |
 
-조직에 가장 적합 한 방법을 선택 하는 방법에 대 한 자세한 내용은 [암호 없는 방법 결정](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-passwordless#choose-a-passwordless-method)을 참조 하세요.
+조직에 가장 적합 한 방법을 선택 하는 방법에 대 한 자세한 내용은 [암호 없는 방법 결정](./concept-authentication-passwordless.md#choose-a-passwordless-method)을 참조 하세요.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -72,17 +72,17 @@ Microsoft의 암호 없는 인증 방법으로 다양 한 시나리오를 사용
 | [사용자가 Azure Multi-factor authentication 및 SSPR에 등록 했습니다.](howto-registration-mfa-sspr-combined.md) | √ | √ |
 | [사용자가 모바일 장치를 Azure Active Directory에 등록 했습니다.](../devices/overview.md) | √ |   |
 | Microsoft Edge 또는 Mozilla Firefox와 같은 지원 되는 브라우저를 사용 하는 Windows 10 버전 1809 이상 <br> (버전 67 이상). <br> *기본 지원에는 버전 1903 이상을 권장*합니다. |   | √ |
-| 호환 되는 FIDO2 보안 키. [Microsoft에서 테스트 하 고 확인](howto-authentication-passwordless-enable.md) 한 FIDO2 보안 장치 또는 다른 호환 FIDO2 보안 장치를 사용 하 고 있는지 확인 합니다. |   | √ |
+| 호환 되는 FIDO2 보안 키. [Microsoft에서 테스트 하 고 확인](./concept-authentication-passwordless.md) 한 FIDO2 보안 장치 또는 다른 호환 FIDO2 보안 장치를 사용 하 고 있는지 확인 합니다. |   | √ |
 
 ### <a name="prerequisites-for-windows-hello-for-business"></a>비즈니스용 Windows Hello에 대 한 필수 구성 요소
 
-Windows Hello에 대 한 필수 구성 요소는 온-프레미스, 하이브리드 또는 클라우드 전용 구성에서 배포 하는지 여부에 따라 달라 집니다. 자세한 내용은 [비즈니스용 Windows Hello에 대 한 전체 필수 구성 요소 목록을](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)참조 하세요.
+Windows Hello에 대 한 필수 구성 요소는 온-프레미스, 하이브리드 또는 클라우드 전용 구성에서 배포 하는지 여부에 따라 달라 집니다. 자세한 내용은 [비즈니스용 Windows Hello에 대 한 전체 필수 구성 요소 목록을](/windows/security/identity-protection/hello-for-business/hello-identity-verification)참조 하세요.
 
 ### <a name="azure-multi-factor-authentication"></a>Azure Multi-Factor Authentication
 
 사용자는 Azure multi-factor authentication 등록 흐름의 일부로 암호 없는 메서드를 등록 합니다. 일부 시나리오에서는 휴대폰 또는 보안 키를 사용할 수 없는 경우 다른 등록 된 방법과 함께 사용자 이름 및 암호를 사용 하는 multi-factor authentication을 대체 방법으로 사용할 수 있습니다.
 
-### <a name="licensing"></a>라이선싱 
+### <a name="licensing"></a>라이선스 
 일부 필수 구성 요소에는 프리미엄 구독이 필요할 수도 있지만 암호 없는 인증에 대 한 추가 비용은 없습니다. 자세한 기능 및 라이선스 정보는 [Azure Active Directory 라이선스 페이지](https://azure.microsoft.com/pricing/details/active-directory/)에 있습니다. 
 
 ## <a name="develop-a-plan"></a>계획 개발
@@ -95,10 +95,10 @@ Windows Hello에 대 한 필수 구성 요소는 온-프레미스, 하이브리�
 
 | 영역 | Description |
 | --- | --- |
-| **액세스** | Passwordless 로그인은 회사 네트워크 내부 또는 외부의 회사 또는 개인 장치에서 사용할 수 있습니다. |
+| **Access** | Passwordless 로그인은 회사 네트워크 내부 또는 외부의 회사 또는 개인 장치에서 사용할 수 있습니다. |
 | **감사** | 사용 현황 데이터는 관리자가 거의 실시간으로 감사 하는 데 사용할 수 있습니다. <br> 사용 현황 데이터는 최소 29 일 마다 회사 시스템에 다운로드 되거나 SIEM 도구가 사용 됩니다. |
 | **거버넌스** | 적절 한 인증 방법 및 관련 그룹에 대 한 사용자 할당의 수명 주기를 정의 하 고 모니터링 합니다. |
-| **보안** | 적절 한 인증 방법에 대 한 액세스는 사용자 및 그룹 할당을 통해 제어 됩니다. <br> 권한 있는 사용자만 암호 없는 로그인을 사용할 수 있습니다. |
+| **Security** | 적절 한 인증 방법에 대 한 액세스는 사용자 및 그룹 할당을 통해 제어 됩니다. <br> 권한 있는 사용자만 암호 없는 로그인을 사용할 수 있습니다. |
 | **성능** | 액세스 할당 전파 타임 라인은 문서화 및 모니터링 됩니다. <br> 사용 편의성을 위해 로그인 시간이 측정 됩니다. |
 | **사용자 환경** | 사용자는 모바일 호환성을 인식 합니다. <br> 사용자는 인증자 앱 암호 없는 로그인을 구성할 수 있습니다. |
 | **지원** | 사용자는 암호 없는 로그인 문제에 대 한 지원을 찾는 방법을 알고 있습니다. |
@@ -132,7 +132,7 @@ Microsoft는 Multi-factor authentication [통신 템플릿](https://aka.ms/mfate
 
 Microsoft Authenticator 앱은 Google Play 또는 Apple 앱 스토어에서 무료로 다운로드할 수 있습니다. [Microsoft Authenticator 앱 다운로드에 대해 자세히 알아보세요](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6). 사용자가 Microsoft Authenticator 앱을 다운로드 하도록 합니다. 지침에 따라 휴대폰 로그인을 사용 하도록 설정 합니다. 
 
-IOS 또는 Android 휴대폰을 강력 하 고 암호 없는 자격 증명으로 바꿉니다. 사용자가 휴대폰에 대 한 알림을 받고, 화면에 표시 되는 숫자를 휴대폰에 있는 것과 일치 하 고, 생체 인식 또는 PIN을 사용 하 여 확인 하 여 모든 플랫폼 또는 브라우저에 로그인 합니다. [Microsoft Authenticator 앱의 작동 방식에 대 한 세부 정보를 확인](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-passwordless#microsoft-authenticator-app)하세요.
+IOS 또는 Android 휴대폰을 강력 하 고 암호 없는 자격 증명으로 바꿉니다. 사용자가 휴대폰에 대 한 알림을 받고, 화면에 표시 되는 숫자를 휴대폰에 있는 것과 일치 하 고, 생체 인식 또는 PIN을 사용 하 여 확인 하 여 모든 플랫폼 또는 브라우저에 로그인 합니다. [Microsoft Authenticator 앱의 작동 방식에 대 한 세부 정보를 확인](./concept-authentication-passwordless.md#microsoft-authenticator-app)하세요.
 
 ![Authenticator 앱으로 로그인](./media/howto-authentication-passwordless-deployment/passwordless-dp-sign-in.png)
 
@@ -150,7 +150,7 @@ IOS 또는 Android 휴대폰을 강력 하 고 암호 없는 자격 증명으로
 -    지원 되는 브라우저에서 웹 앱 Azure Active Directory
 -    Azure Active Directory Windows 10 장치에 연결 됨
 -    하이브리드 Azure Active Directory Windows 10 장치에 연결 됨 (미리 보기)
-     -    클라우드 기반 및 온-프레미스 리소스 모두에 대 한 액세스를 제공 합니다. 온-프레미스 리소스에 액세스 하는 방법에 대 한 자세한 내용은 [FIDOP2 키를 사용 하 여 온-프레미스 리소스에 SSO](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-security-key-on-premises) 를 참조 하세요.
+     -    클라우드 기반 및 온-프레미스 리소스 모두에 대 한 액세스를 제공 합니다. 온-프레미스 리소스에 액세스 하는 방법에 대 한 자세한 내용은 [FIDOP2 키를 사용 하 여 온-프레미스 리소스에 SSO](./howto-authentication-passwordless-security-key-on-premises.md) 를 참조 하세요.
 
 **호환 되는 FIDO2 보안 키**를 사용 하도록 설정 해야 합니다. Microsoft [는 FIDO2 키 공급 업체와의 주요 파트너 관계를](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Microsoft-passwordless-partnership-leads-to-innovation-and-great/ba-p/566493)발표 했습니다.
 
@@ -164,7 +164,7 @@ IOS 또는 Android 휴대폰을 강력 하 고 암호 없는 자격 증명으로
 -    Windows Server 2016 또는 2019를 실행 하는 완전히 패치 됨 도메인 서버.
 -    최신 버전의 Azure AD Connect
 
-요구 사항의 전체 목록은 Azure Active Directory를 사용 하 [여 Windows 10 장치에 암호 없는 보안 키 로그인 사용](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-security-key-windows#requirements)을 참조 하세요.
+요구 사항의 전체 목록은 Azure Active Directory를 사용 하 [여 Windows 10 장치에 암호 없는 보안 키 로그인 사용](./howto-authentication-passwordless-security-key-windows.md#requirements)을 참조 하세요.
 
 
 ### <a name="security-key-life-cycle"></a>보안 키 수명 주기
@@ -320,7 +320,7 @@ FIDO2 보안 장치를 이미 등록 한 사용자에 게 다음 로그인 시 �
 | --- | --- |
 | 사용자는 결합 된 등록을 수행할 수 없습니다. | [결합 된 등록이](concept-registration-mfa-sspr-combined.md) 활성화 되어 있는지 확인 합니다. |
 | 사용자는 [보안 설정](https://aka.ms/mysecurityinfo)에서 보안 키를 추가할 수 없습니다. | [보안 키](howto-authentication-passwordless-security-key.md) 를 사용할 수 있는지 확인 합니다. |
-| 사용자가 Windows 10 로그인 옵션에서 보안 키를 추가할 수 없습니다. | [Windows 로그인에 대 한 보안 키를 확인 합니다.](howto-authentication-passwordless-enable.md) |
+| 사용자가 Windows 10 로그인 옵션에서 보안 키를 추가할 수 없습니다. | [Windows 로그인에 대 한 보안 키를 확인 합니다.](./concept-authentication-passwordless.md) |
 | **오류 메시지**:이 브라우저나 OS에서 FIDO2 보안 키를 지원 하지 않습니다. | Passwordless FIDO2 보안 장치는 Windows 10 버전 1809 이상에서 지원 되는 브라우저 (Microsoft Edge, Firefox 버전 67)에만 등록할 수 있습니다. |
 | **오류 메시지**: 회사 정책에서 다른 방법을 사용 하 여 로그인 해야 합니다. | 테 넌 트에서 확실 하지 않은 보안 키를 사용할 수 있습니다. |
 | 사용자가 Windows 10 버전 1809에서 내 보안 키를 관리할 수 없음 | 버전 1809에서는 FIDO2 key 공급 업체에서 제공 하는 보안 키 관리 소프트웨어를 사용 해야 합니다. 공급 업체에 지원을 문의 하세요. |
@@ -331,4 +331,3 @@ FIDO2 보안 장치를 이미 등록 한 사용자에 게 다음 로그인 시 �
 - [Azure AD에 로그인 하는 데 암호 없는 보안 키 사용](howto-authentication-passwordless-security-key.md)
 - [Microsoft Authenticator 앱에서 암호 없는 로그인을 사용 하도록 설정](howto-authentication-passwordless-phone.md)
 - [인증 방법 사용 & insights에 대해 자세히 알아보기](howto-authentication-methods-usage-insights.md)
-

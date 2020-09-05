@@ -16,6 +16,8 @@
       href: add-application-portal.md
     - name: 앱 구성
       href: add-application-portal-configure.md
+    - name: 앱에 사용자 할당
+      href: add-application-portal-assign-users.md
     - name: Single Sign-On 설정
       href: add-application-portal-setup-sso.md
     - name: 앱 삭제
@@ -37,26 +39,24 @@
       href: application-management-fundamentals.md
     - name: 앱 관리 공통 시나리오
       href: common-scenarios.md
+    - name: 테넌트에서 앱 보기
+      href: application-types.md
+    - name: 앱에 사용자 할당
+      href: ways-users-get-assigned-to-applications.md
     - name: 클라우드 앱 통합 계획
       items:
         - name: 앱 통합 시작
           href: plan-an-application-integration.md
         - name: 갤러리에 나열되지 않은 앱에 대한 계획
           href: non-gallery-apps.md
-        - name: 액세스 패널 배포 계획
+        - name: 내 앱 배포 계획
           href: access-panel-deployment-plan.md
         - name: 개발자를 위한 지침
           href: developer-guidance-for-integrating-applications.md
-    - name: SSO(Single sign-on)
+    - name: Single Sign-On
       items:
-        - name: 다중 테넌트 애플리케이션용 SSO 사용
-          href: isv-sso-content.md
-        - name: 다중 테넌트 애플리케이션용 Azure 테넌트 만들기
-          href: isv-tenant-multi-tenant-app.md
-        - name: 다중 테넌트 페더레이션 선택
-          href: isv-choose-multi-tenant-federation.md
-        - name: 다중 테넌트 애플리케이션용 설명서 만들기
-          href: isv-create-sso-documentation.md
+        - name: Single Sign-On 옵션
+          href: sso-options.md
         - name: Single Sign-On 배포 계획
           href: plan-sso-deployment.md
         - name: 한 번 클릭 SSO
@@ -118,7 +118,7 @@
           href: grant-admin-consent.md
         - name: 관리자 동의 워크플로 구성(미리 보기)
           href: configure-admin-consent-workflow.md
-        - name: 앱에 사용자 또는 그룹 할당
+        - name: 앱에 대한 사용자 할당 관리
           href: assign-user-or-group-access-portal.md
         - name: 앱에 부여된 사용 권한 검토
           href: manage-application-permissions.md
@@ -128,8 +128,6 @@
           href: access-panel-manage-self-service-access.md
         - name: 앱에 대한 사용자 액세스 권한을 제거하는 메서드
           href: methods-for-removing-user-access.md
-        - name: 사용자 또는 그룹 액세스 권한 제거
-          href: remove-user-or-group-access-portal.md
         - name: 사용자로부터 앱 숨기기
           href: hide-application-from-user-portal.md
         - name: 사용자 로그인 비활성화
@@ -207,27 +205,17 @@
     - name: 문제 해결
       items:
         - name: 앱 추가 문제 해결
-          items:
-            - name: 일반적인 문제 - 갤러리 앱
-              href: adding-gallery-app-common-problems.md
-            - name: 일반적인 문제 - 비갤러리 앱
-              href: adding-non-gallery-app-common-problems.md
+          href: troubleshoot-adding-apps.md
         - name: 사용자 로그인 문제 해결
           items:
             - name: 예기치 않은 동의 확인 프롬프트
               href: application-sign-in-unexpected-user-consent-prompt.md
             - name: 사용자 동의 오류
               href: application-sign-in-unexpected-user-consent-error.md
-            - name: 사용자 지정 포털에서 로그인하는 문제
-              href: application-sign-in-other-problem-deeplink.md
-            - name: 액세스 패널에서 로그인하는 문제
+            - name: 내 앱에서 로그인하는 문제
               href: application-sign-in-other-problem-access-panel.md
             - name: 애플리케이션 로그인 페이지의 오류
               href: application-sign-in-problem-application-error.md
-            - name: 암호 Single Sign-On 관련 문제 - 비갤러리 앱
-              href: application-sign-in-problem-password-sso-non-gallery.md
-            - name: 암호 Single Sign-On 관련 문제 - 갤러리 앱
-              href: application-sign-in-problem-password-sso-gallery.md
             - name: Microsoft 앱에 로그인하는 문제
               href: application-sign-in-problem-first-party-microsoft.md
             - name: 페더레이션된 Single Sign-On 관련 문제 - 비갤러리 앱
@@ -238,34 +226,12 @@
               href: application-sign-in-problem-custom-dev.md
         - name: Single Sign-On 문제 해결
           items:
+            - name: 암호 기반 Single Sign-On 문제 해결
+              href: troubleshoot-password-based-sso.md
             - name: 페더레이션된 일반적인 문제 구성 - 갤러리 앱
               href: configure-federated-single-sign-on-gallery-applications-problems.md
             - name: 페더레이션된 일반적인 문제 구성 - 비갤러리 앱
               href: configure-federated-single-sign-on-non-gallery-applications-problems.md
-            - name: 암호 구성 일반적인 문제 - 갤러리 앱
-              href: configure-password-single-sign-on-gallery-applications-problems.md
-            - name: 암호 구성 일반적인 문제 - 비갤러리 앱
-              href: configure-password-single-sign-on-non-gallery-applications-problems.md
-        - name: 앱 목록 및 할당 문제 해결
-          items:
-            - name: 테넌트의 애플리케이션 목록 관리
-              href: application-types.md
-            - name: 할당된 예기치 않은 사용자
-              href: ways-users-get-assigned-to-applications.md
-        - name: 액세스 패널 문제 해결
-          items:
-            - name: 브라우저 확장 관리
-              href: manage-access-panel-browser-extension.md
-            - name: 표시되지 않는 앱
-              href: access-panel-troubleshoot-application-not-appearing.md
-            - name: 예기치 않은 앱 표시
-              href: access-panel-troubleshoot-unexpected-application.md
-            - name: 로그인할 수 없음
-              href: access-panel-troubleshoot-web-sign-in-problem.md
-            - name: 브라우저 확장을 설치하는 오류
-              href: access-panel-extension-problem-installing.md
-            - name: 셀프 서비스 앱 액세스를 사용하는 오류
-              href: access-panel-troubleshoot-self-service-access.md
         - name: 온-프레미스 앱 문제 해결
           items:
             - name: 애플리케이션 프록시 문제 해결

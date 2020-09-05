@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 206f87e45377287217b4895b8d481e14618c888c
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.openlocfilehash: ba22720901cf4b7505d8d5b5295ca4e0c271953f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87386948"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798400"
 ---
 # <a name="sharing-accounts-with-azure-ad"></a>Azure AD와 계정 공유
 
@@ -55,11 +55,11 @@ Azure AD는 모든 유형의 암호 Single Sign-on 애플리케이션 전체에�
 
 계정에 공유를 사용하는 Azure AD 기능은 다음과 같습니다.
 
-* [암호 SSO(Single sign-on)](../manage-apps/what-is-single-sign-on.md#password-based-sso)
+* [암호 SSO(Single sign-on)](../manage-apps/sso-options.md#password-based-sso)
 * 암호 SSO(Single sign-on) 에이전트
 * [그룹 할당](groups-self-service-management.md)
 * 사용자 지정 암호 앱
-* [앱 사용 대시보드/보고서](../active-directory-passwords-get-insights.md)
+* [앱 사용 대시보드/보고서](../authentication/howto-sspr-reporting.md)
 * 최종 사용자 액세스 포털
 * [앱 프록시](../manage-apps/application-proxy.md)
 * [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)
@@ -72,10 +72,10 @@ Azure AD를 사용하여 계정을 공유하려면 다음이 필요합니다.
 * 암호 SSO(Single Sign-On)에 대한 애플리케이션 구성
 * [그룹 기반 할당](groups-saasapps.md)을 사용하고 옵션을 선택하여 공유 자격 증명 입력
 
-또한 MFA(Multi-Factor Authentication)로 공유 계정의 보안을 강화하고([Azure AD를 통한 애플리케이션 보호](../authentication/concept-mfa-whichversion.md)에 대한 자세한 정보) [Azure AD 셀프 서비스](groups-self-service-management.md) 그룹 관리를 사용하여 애플리케이션에 대한 액세스 권한이 있는 관리자에게 기능을 위임할 수 있습니다.
+또한 MFA(Multi-Factor Authentication)로 공유 계정의 보안을 강화하고([Azure AD를 통한 애플리케이션 보호](../authentication/concept-mfa-howitworks.md)에 대한 자세한 정보) [Azure AD 셀프 서비스](groups-self-service-management.md) 그룹 관리를 사용하여 애플리케이션에 대한 액세스 권한이 있는 관리자에게 기능을 위임할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure Active Directory의 애플리케이션 관리](../manage-apps/what-is-application-management.md)
-* [조건부 액세스를 사용한 앱 보호](../active-directory-conditional-access-azure-portal.md)
+* [조건부 액세스를 사용한 앱 보호](../conditional-access/overview.md)
 * [셀프 서비스 그룹 관리/SSAA](groups-self-service-management.md)

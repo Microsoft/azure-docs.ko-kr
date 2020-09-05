@@ -2,26 +2,21 @@
 title: '자습서: Communifire와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Communifire 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: de2a164d-2115-43e7-a9ed-e54f483f4aeb
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9bd5ae486dc31b7e19ffed9561f9cfc9dea4cc4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d743785ad5525f582e5cb25df715d8211121e809
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73159399"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547259"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-communifire"></a>자습서: Communifire와 Azure Active Directory 통합
 

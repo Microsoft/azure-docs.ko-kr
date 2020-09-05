@@ -4,10 +4,10 @@ description: 샘플은 체험판 Azure Notebooks 클라우드 서비스에서 �
 ms.topic: sample
 ms.date: 01/11/2019
 ms.openlocfilehash: 397e40f628e6e935fef74d2225d2e477aac7b276
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "85833998"
 ---
 # <a name="discover-and-use-sample-notebooks-in-azure-notebooks-preview"></a>Azure Notebooks 미리 보기에서 샘플 Notebooks 검색 및 사용

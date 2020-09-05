@@ -12,19 +12,23 @@ manager: daveba
 ms.reviewer: michmcla
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fceaa203944074b0c3fcf5cb6254f1e87ac16cba
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 866fa7333565a1875984aa5640d2028b6e399df1
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79480983"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949544"
 ---
 # <a name="directory-integration-between-azure-mfa-server-and-active-directory"></a>Azure MFA 서버와 Active Directory 간의 디렉터리 통합
 
 Azure MFA 서버의 디렉터리 통합 섹션을 사용하여 Active Directory 또는 다른 LDAP 디렉터리와 통합합니다. 디렉터리 스키마와 일치하는 특성을 구성하고 자동 사용자 동기화를 설정할 수 있습니다.
 
 > [!IMPORTANT]
-> Microsoft는 2019년 7월 1일부터 더 이상 새 배포를 위한 MFA 서버를 제공하지 않습니다. 신규 사용자의 다단계 인증이 필요한 고객은 클라우드 기반 Azure Multi-Factor Authentication을 사용해야 합니다. 7월 1일 이전에 MFA 서버를 활성화한 기존 고객은 종전과 같이 최신 버전 및 이후 업데이트를 다운로드하고 활성화 자격 증명을 생성할 수 있습니다.
+> 2019 년 7 월 1 일부 터 Microsoft는 더 이상 새 배포를 위한 MFA 서버를 제공 하지 않습니다. 로그인 이벤트 중에 MFA (multi-factor authentication)를 요구 하려는 신규 고객은 클라우드 기반 Azure Multi-Factor Authentication를 사용 해야 합니다.
+>
+> 클라우드 기반 MFA를 시작 하려면 [자습서: Azure Multi-Factor Authentication를 사용 하 여 보안 사용자 로그인 이벤트](tutorial-enable-azure-mfa.md)를 참조 하세요.
+>
+> 2019 년 7 월 1 일 이전에 MFA 서버를 정품 인증 한 기존 고객은 평소와 같이 최신 버전, 향후 업데이트 및 활성화 자격 증명 생성을 다운로드할 수 있습니다.
 
 ## <a name="settings"></a>설정
 
@@ -37,7 +41,7 @@ Azure MFA 서버의 디렉터리 통합 섹션을 사용하여 Active Directory 
 
 | 기능 | 설명 |
 | --- | --- |
-| Active Directory 사용 |Active Directory 사용 옵션을 선택하면 가져오기 및 동기화를 위해 Active Directory를 사용합니다.  이것이 기본 설정입니다. <br>참고: Active Directory 통합이 제대로 작동하려면 컴퓨터를 도메인에 가입하고 도메인 계정으로 로그인합니다. |
+| Active Directory 사용 |Active Directory 사용 옵션을 선택하면 가져오기 및 동기화를 위해 Active Directory를 사용합니다.  이 값은 기본 설정입니다. <br>참고: Active Directory 통합이 제대로 작동하려면 컴퓨터를 도메인에 가입하고 도메인 계정으로 로그인합니다. |
 | 트러스트된 도메인 포함 |**트러스트된 도메인 포함**을 선택하면 에이전트가 현재 도메인, 포리스트의 다른 도메인 또는 포리스트 트러스트와 관련된 도메인에서 트러스트된 도메인에 연결을 시도합니다.  트러스트된 도메인에서 사용자를 가져오거나 동기화하지 않을 때는 확인란을 선택 취소하여 성능을 향상시킵니다.  기본적으로 선택되어 있습니다. |
 | 특정 LDAP 구성 사용 |LDAP 사용 옵션을 선택하면 가져오기 및 동기화를 위해 지정된 LDAP 설정을 사용합니다. 참고: LDAP 사용을 선택하면 사용자 인터페이스가 Active Directory에서 LDAP로 참조를 변경합니다. |
 | 편집 단추 |편집 단추를 통해 현재 LDAP 구성 설정을 수정할 수 있습니다. |
@@ -86,7 +90,7 @@ Azure Multi-Factor Authentication에는 다음 세 가지 필터 옵션이 있�
 | 사용자 이름 |사용자 레코드에 사용자 이름을 포함하는 특성의 이름을 입력합니다.  이 특성의 값은 Multi-Factor Auth 서버의 사용자 이름으로 사용됩니다.  두 번째 특성은 첫 번째 특성에 대한 백업으로 지정할 수 있습니다.  두 번째 특성은 첫 번째 특성에 사용자에 대한 값이 없는 경우에만 사용됩니다.  기본값은 userPrincipalName 및 sAMAccountName입니다. |
 | 이름 |사용자 레코드에 이름을 포함하는 특성의 이름을 입력합니다.  기본값은 givenName입니다. |
 | 성 |사용자 레코드에 성을 포함하는 특성의 이름을 입력합니다.  기본값은 sn입니다. |
-| 전자 메일 주소 |사용자 레코드에 메일 주소를 포함하는 특성의 이름을 입력합니다.  메일 주소는 사용자에게 시작 및 업데이트 메일을 보낼 때 사용됩니다.  기본값은 mail입니다. |
+| 메일 주소 |사용자 레코드에 메일 주소를 포함하는 특성의 이름을 입력합니다.  메일 주소는 사용자에게 시작 및 업데이트 메일을 보낼 때 사용됩니다.  기본값은 mail입니다. |
 | 사용자 그룹 |사용자 레코드에 사용자 그룹을 포함하는 특성의 이름을 입력합니다.  사용자 그룹은 에이전트 및 Multi-Factor Auth 서버 관리 포털의 보고서에서 사용자를 필터링할 때 사용됩니다. |
 | 설명 |사용자 레코드에 대한 설명을 포함하는 특성의 이름을 입력합니다.  설명은 검색을 위해서만 사용됩니다.  기본값은 description입니다. |
 | 전화 통화 언어 |사용자에 대한 음성 통화에 사용할 언어의 짧은 이름을 포함하는 특성의 이름을 입력합니다. |
@@ -100,7 +104,7 @@ Azure Multi-Factor Authentication에는 다음 세 가지 필터 옵션이 있�
 | 팩스 |사용자 레코드에 팩스 번호를 포함하는 특성의 이름을 입력합니다.  기본값은 facsimileTelephoneNumber입니다. |
 | IP 전화 |사용자 레코드에 IP 전화 번호를 포함하는 특성의 이름을 입력합니다.  기본값은 ipphone입니다. |
 | 사용자 지정 |사용자 레코드에 사용자 지정 전화 번호를 포함하는 특성의 이름을 입력합니다.  기본값은 없습니다. |
-| 확장명 |사용자 레코드에 전화 내선 번호를 포함하는 특성의 이름을 입력합니다.  내선 번호 필드의 값은 기본 전화 번호에 대한 내선 번호로만 사용됩니다.  기본값은 없습니다. <br><br>내선 번호 특성이 지정되지 않은 경우 내선 번호를 전화 특성의 일부로 포함시킬 수 있습니다. 이 경우 올바르게 구문 분석하도록 'x'의 확장명을 앞에 둡니다.  예를 들어 555-123-4567 x890에서 555-123-4567은 전화 번호이고 890은 내선 번호입니다. |
+| 내선 번호 |사용자 레코드에 전화 내선 번호를 포함하는 특성의 이름을 입력합니다.  내선 번호 필드의 값은 기본 전화 번호에 대한 내선 번호로만 사용됩니다.  기본값은 없습니다. <br><br>내선 번호 특성이 지정되지 않은 경우 내선 번호를 전화 특성의 일부로 포함시킬 수 있습니다. 이 경우 올바르게 구문 분석하도록 'x'의 확장명을 앞에 둡니다.  예를 들어 555-123-4567 x890에서 555-123-4567은 전화 번호이고 890은 내선 번호입니다. |
 | 기본값 복원 단추 |모든 특성을 기본값으로 다시 되돌리려면 **기본값 복원**을 클릭합니다.  기본값은 일반 Active Directory 또는 ADAM 스키마에서 제대로 작동합니다. |
 
 특성을 편집 하려면 특성 탭에서 **편집** 을 클릭 합니다.  그러면 특성을 편집할 수 있는 창이 표시 됩니다. 모든 특성 옆의 **...** 을 선택하여 표시할 특성을 선택할 수 있는 창을 엽니다.

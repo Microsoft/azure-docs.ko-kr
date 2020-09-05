@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 50e2666aa533a5111055a095c612b58bfe6f9db4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eba08211355b0f57dd9dd11ec4c18d5912208ec8
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80546695"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962216"
 ---
 # <a name="security-recommendations-for-app-service"></a>App Service에 대 한 보안 권장 사항
 
@@ -38,17 +38,17 @@ ms.locfileid: "80546695"
 | 권장 | 주석 |
 |-|-|
 | HTTP를 HTTPs로 리디렉션 | 기본적으로 클라이언트는 HTTP 또는 HTTPS를 모두 사용 하 여 웹 앱에 연결할 수 있습니다. HTTPS는 SSL/TLS 프로토콜을 사용 하 여 암호화 되 고 인증 된 보안 연결을 제공 하므로 HTTP를 HTTPs로 리디렉션하는 것이 좋습니다. |
-| Azure 리소스에 대 한 통신 암호화 | 앱이 [SQL Database](https://azure.microsoft.com/services/sql-database/) 또는 [Azure Storage](/azure/storage/)와 같은 azure 리소스에 연결 하는 경우 연결은 azure에 유지 됩니다. Azure의 공유 네트워킹을 통해 연결이 이동 하므로 항상 모든 통신을 암호화 해야 합니다. |
+| Azure 리소스에 대 한 통신 암호화 | 앱이 [SQL Database](https://azure.microsoft.com/services/sql-database/) 또는 [Azure Storage](../storage/index.yml)와 같은 azure 리소스에 연결 하는 경우 연결은 azure에 유지 됩니다. Azure의 공유 네트워킹을 통해 연결이 이동 하므로 항상 모든 통신을 암호화 해야 합니다. |
 | 최신 TLS 버전을 사용할 수 있어야 합니다. | 2018 새로운 Azure App Service 앱은 TLS 1.2를 사용 합니다. 최신 버전의 TLS에는 이전 프로토콜 버전 보다 향상 된 보안 기능이 포함 되어 있습니다. |
 | FTPS 사용 | App Service는 파일을 배포하기 위해 FTP와 FTPS를 모두 지원합니다. 가능 하면 FTP 대신 FTPS를 사용 합니다. 이러한 프로토콜 중 하나 또는 둘 다 사용하지 않는 경우 [해당 프로토콜을 사용하지 않도록 설정](deploy-ftp.md#enforce-ftps)해야 합니다. |
-| 애플리케이션 데이터 보호 | 코드 또는 구성 파일에 데이터베이스 자격 증명, API 토큰 또는 개인 키와 같은 응용 프로그램 암호를 저장 하지 마세요. 일반적으로 허용되는 방법은 선택한 언어로 표준 패턴을 사용하여 [환경 변수](https://wikipedia.org/wiki/Environment_variable)로 액세스하는 것입니다. Azure App Service에서 [앱 설정](web-sites-configure.md) 및 [연결 문자열](web-sites-configure.md)을 통해 환경 변수를 정의할 수 있습니다. 앱 설정 및 연결 문자열은 Azure에 암호화되어 저장됩니다. 앱 설정은 앱이 시작 될 때 앱 프로세스 메모리에 삽입 되기 전에만 해독 됩니다. 암호화 키는 정기적으로 회전합니다. 또는 고급 암호 관리를 위해 Azure App Service 앱을 [Azure Key Vault](/azure/key-vault/) 와 통합할 수 있습니다. [관리 ID를 사용하여 Key Vault에 액세스](../key-vault/tutorial-web-application-keyvault.md)하는 경우 App Service 앱에서 필요한 비밀에 안전하게 액세스할 수 있습니다. |
+| 애플리케이션 데이터 보호 | 코드 또는 구성 파일에 데이터베이스 자격 증명, API 토큰 또는 개인 키와 같은 응용 프로그램 암호를 저장 하지 마세요. 일반적으로 허용되는 방법은 선택한 언어로 표준 패턴을 사용하여 [환경 변수](https://wikipedia.org/wiki/Environment_variable)로 액세스하는 것입니다. Azure App Service에서 [앱 설정](./configure-common.md) 및 [연결 문자열](./configure-common.md)을 통해 환경 변수를 정의할 수 있습니다. 앱 설정 및 연결 문자열은 Azure에 암호화되어 저장됩니다. 앱 설정은 앱이 시작 될 때 앱 프로세스 메모리에 삽입 되기 전에만 해독 됩니다. 암호화 키는 정기적으로 회전합니다. 또는 고급 암호 관리를 위해 Azure App Service 앱을 [Azure Key Vault](../key-vault/index.yml) 와 통합할 수 있습니다. [관리 ID를 사용하여 Key Vault에 액세스](../key-vault/general/tutorial-net-create-vault-azure-web-app.md)하는 경우 App Service 앱에서 필요한 비밀에 안전하게 액세스할 수 있습니다. |
 
 ## <a name="networking"></a>네트워킹
 
 | 권장 | 주석 |
 |-|-|
 | 고정 IP 제한 사용 | Windows에서 Azure App Service를 사용 하 여 앱에 액세스할 수 있는 IP 주소 목록을 정의할 수 있습니다. 허용 목록에는 서브넷 마스크에서 정의된 개별 IP 주소 또는 IP 주소 범위가 포함될 수 있습니다. 자세한 내용은 [Azure App Service 고정 IP 제한](app-service-ip-restrictions.md)을 참조하세요.  |
-| 격리 가격 책정 계층 사용 | 격리 가격 책정 계층을 제외 하 고, 모든 계층은 Azure App Service의 공유 네트워크 인프라에서 앱을 실행 합니다. 격리 계층은 전용 [App Service 환경](environment/intro.md)내에서 앱을 실행 하 여 완벽 한 네트워크 격리를 제공 합니다. App Service 환경은 [Azure Virtual Network](/azure/virtual-network/)의 사용자 인스턴스에서 실행됩니다.|
+| 격리 가격 책정 계층 사용 | 격리 가격 책정 계층을 제외 하 고, 모든 계층은 Azure App Service의 공유 네트워크 인프라에서 앱을 실행 합니다. 격리 계층은 전용 [App Service 환경](environment/intro.md)내에서 앱을 실행 하 여 완벽 한 네트워크 격리를 제공 합니다. App Service 환경은 [Azure Virtual Network](../virtual-network/index.yml)의 사용자 인스턴스에서 실행됩니다.|
 | 온-프레미스 리소스에 액세스할 때 보안 연결 사용 | [하이브리드 연결](app-service-hybrid-connections.md), [Virtual Network 통합](web-sites-integrate-with-vnet.md)또는 [App Service 환경](environment/intro.md) 을 사용 하 여 온-프레미스 리소스에 연결할 수 있습니다. |
 | 인바운드 네트워크 트래픽에 대 한 노출 제한 | 네트워크 보안 그룹을 사용 하면 네트워크 액세스를 제한 하 고 노출 된 끝점의 수를 제어할 수 있습니다. 자세한 내용은 [App Service Environment에 대 한 인바운드 트래픽을 제어 하는 방법](environment/app-service-app-service-environment-control-inbound-traffic.md)을 참조 하세요. |
 
@@ -60,4 +60,4 @@ ms.locfileid: "80546695"
 
 ## <a name="next-steps"></a>다음 단계
 
-애플리케이션 공급자에게 추가 보안 요구 사항이 있는지 확인합니다. 보안 애플리케이션 개발에 대한 자세한 내용은 [보안 개발 설명서](../security/fundamentals/abstract-develop-secure-apps.md)를 참조하세요.
+애플리케이션 공급자에게 추가 보안 요구 사항이 있는지 확인합니다. 보안 애플리케이션 개발에 대한 자세한 내용은 [보안 개발 설명서](https://azure.microsoft.com/resources/develop-secure-applications-on-azure/)를 참조하세요.

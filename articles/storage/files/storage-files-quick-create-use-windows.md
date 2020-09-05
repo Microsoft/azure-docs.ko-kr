@@ -1,18 +1,18 @@
 ---
 title: Windows VM에서 Azure Files 공유 만들기 및 사용
-description: 이 빠른 시작에서는 Azure Portal에서 Azure Files 공유를 설정하고 Windows 가상 머신에 연결합니다. 파일 공유에 연결하고 파일 공유에 파일을 업로드합니다. 그런 다음, 파일 공유의 스냅샷을 만들고, 파일 공유에서 파일을 수정하고, 파일 공유의 이전 스냅샷을 복원합니다.
+description: Azure Portal에서 Azure Files 공유를 만들고 사용합니다. Windows VM에 연결하여 파일 공유에 연결하고, 파일 공유에 파일을 업로드합니다.
 author: roygara
 ms.service: storage
 ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 6bbab0ee2eefe6e86c150d5bddab4f8e91a7c92d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 0cbbcc822765097f83fcd1a52ce775c69faba9fa
+ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75463904"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87836431"
 ---
 # <a name="quickstart-create-and-manage-azure-files-share-with-windows-virtual-machines"></a>빠른 시작: Windows 가상 머신에서 Azure Files 공유 만들기 및 관리
 

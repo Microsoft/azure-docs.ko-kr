@@ -11,12 +11,12 @@ metadata:
   author: cynthn
   ms.author: cynthn
   ms.date: 02/14/2020
-  ms.openlocfilehash: ea9b89a92aa271065a59de561dc684263ce1cdc4
-  ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+  ms.openlocfilehash: eb7d7c911fc099a5f3b5456d7fb77688e0b06af5
+  ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/06/2020
-  ms.locfileid: "87829036"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88816476"
 highlightedContent:
   items:
   - title: Azure CLI를 사용하여 Linux 가상 머신 만들기
@@ -30,7 +30,7 @@ highlightedContent:
     url: ../virtual-machine-scale-sets/quick-create-portal.md
   - title: 스폿 VM - 미사용 용량을 매우 저렴한 비용으로 활용할 수 있습니다.
     itemType: concept
-    url: ./linux/spot-vms.md
+    url: ./spot-vms.md
   - title: 전용 호스트 - 하나 이상의 가상 머신을 호스팅하는 물리적 서버입니다.
     itemType: concept
     url: ./linux/dedicated-hosts.md

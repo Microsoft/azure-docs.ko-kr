@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 04/20/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: cc3c62da371d66c2aa957974ad6d4472aaf5648e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d07450b61558814a99bf85668c55899c8cf9d389
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84782282"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88234791"
 ---
 # <a name="no-users-are-being-provisioned"></a>프로비전된 사용자 없음 
 >[!NOTE]
@@ -58,13 +58,13 @@ Azure Portal의 **Azure Active Directory &gt; 엔터프라이즈 앱 &gt; \[애�
 - **사용자에게 필요한 특성이 누락되었거나 입력되지 않았습니다.** 프로비전을 설정할 때 고려해야 할 중요한 사항은 Azure AD에서 애플리케이션으로 이동하는 사용자(또는 그룹)를 정의하는 특성 매핑 및 워크플로를 검토하고 구성하는 것입니다. 이 구성에는 두 시스템 간 사용자/그룹을 고유하게 식별하고 일치하는 데 사용되는 “일치하는 속성” 설정이 포함됩니다. 이 중요한 프로세스에 대한 자세한 내용은 [Azure Active Directory에서 SaaS 애플리케이션에 대한 사용자 프로비전 특성 매핑 사용자 지정](customize-application-attributes.md)을 참조하세요.
 - **그룹에 대한 특성 매핑:** 일부 애플리케이션에 대해 지원되는 경우, 구성원 외에 그룹 이름 및 그룹 세부 정보 프로비전. **프로 비전** 탭에 표시 된 그룹 개체에 대 한 **매핑을** 사용 하거나 사용 하지 않도록 설정 하 여이 기능을 사용 하거나 사용 하지 않도록 설정할 수 있습니다. 프로 비전 그룹을 사용 하는 경우 특성 매핑을 검토 하 여 "일치 하는 ID"에 적절 한 필드가 사용 되는지 확인 해야 합니다. 일치하는 ID는 표시 이름이나 이메일 별칭일 수 있습니다. Azure AD에 일치하는 속성이 비어 있거나 그룹에 대해 입력되어 있지 않은 경우 그룹 및 해당 멤버가 프로비전되지 않습니다.
 ## <a name="provisioning-users-assigned-to-the-default-access-role"></a>기본 액세스 역할에 할당 된 사용자 프로 비전
-갤러리의 응용 프로그램에 대 한 기본 역할을 "기본 액세스" 역할 이라고 합니다. 지금까지이 역할에 할당 된 사용자는 프로 비전 되지 않으며 "사실상 자격이 없습니다."로 인해 [프로 비전 로그](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) 에서 건너뛴 것으로 표시 되어 있습니다. 
+갤러리의 응용 프로그램에 대 한 기본 역할을 "기본 액세스" 역할 이라고 합니다. 지금까지이 역할에 할당 된 사용자는 프로 비전 되지 않으며 "사실상 자격이 없습니다."로 인해 [프로 비전 로그](../reports-monitoring/concept-provisioning-logs.md) 에서 건너뛴 것으로 표시 되어 있습니다. 
 
 **04/16/2020 이후에 생성 된 프로 비전 구성의 동작:** 기본 액세스 역할에 할당 된 사용자는 다른 모든 역할과 동일 하 게 평가 됩니다. 기본 액세스 권한이 할당 된 사용자는 "사실상 자격이 부여 되지 않음"으로 건너뛰는 것이 아닙니다. 
 
 **04/16/2020 이전에 생성 되는 프로 비전 구성의 동작:** 다음 3 개월 동안이 동작은 현재 진행 되는 대로 계속 됩니다. 기본 액세스 역할을 가진 사용자는 사실상 자격이 없는 것으로 건너뜁니다. 7 월 2020 일 후에는 모든 응용 프로그램에 대해 동작이 균일 하 게 됩니다. 기본 액세스 역할의 프로 비전 사용자는 "사실상 자격이 없습니다."로 인해 건너뛰지 않습니다. 이러한 변경은 Microsoft에서 수행 되며 고객 작업은 필요 하지 않습니다. 이 변경 후에도 이러한 사용자를 계속 건너뛰도록 하려면 적절 한 범위 지정 필터를 적용 하거나 응용 프로그램에서 사용자의 할당을 취소 하 여 범위를 벗어나는 것을 확인 하세요.  
 
-이러한 변경 내용에 대 한 질문이 있는 경우 다음으로 문의 하세요.provisioningfeedback@microsoft.com
+이러한 변경 내용에 대 한 질문이 있는 경우 다음으로 문의 하세요. provisioningfeedback@microsoft.com
 ## <a name="next-steps"></a>다음 단계
 
 [Azure AD Connect 동기화: 선언적 프로비전 이해](../hybrid/concept-azure-ad-connect-sync-declarative-provisioning.md)

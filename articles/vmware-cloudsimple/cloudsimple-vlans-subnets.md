@@ -1,6 +1,6 @@
 ---
 title: CloudSimple 별 Azure VMware 솔루션의 Vlan 및 서브넷
-description: CloudSimple 사설 클라우드의 Vlan 및 서브넷에 대해 알아보기
+description: Cloudsimple 사설 클라우드의 Vlan 및 서브넷 및 cloudsimple 서비스를 배포 하는 위치에서 CloudSimple이 제공 하는 네트워크에 대해 알아봅니다.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/15/2019
@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 2451fbb69636624db354006df2a7925ef9e75459
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e3235b394f739e8af846f30dfe51705d0926c843
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77024894"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140669"
 ---
 # <a name="vlans-and-subnets-overview"></a>Vlan 및 서브넷 개요
 
@@ -68,7 +68,7 @@ VSphere/Vsphere 서브넷 CIDR 범위 크기를 선택 하면 사설 클라우�
 
 지정 된 vSphere/Vsphere 서브넷 CIDR 범위는 여러 서브넷으로 나뉩니다.  다음 표에서는 허용 된 접두사에 대 한 분석의 예를 보여 줍니다.  이 예에서는 CIDR 범위로 192.168.0.0을 사용 합니다.
 
-예:
+예제:
 
 | 지정 된 vSphere/Vsphere 서브넷 CIDR/접두사 | 192.168.0.0/21 | 192.168.0.0/22 | 192.168.0.0/23 | 192.168.0.0/24 |
 |---------------------------------|----------------|----------------|----------------|----------------|

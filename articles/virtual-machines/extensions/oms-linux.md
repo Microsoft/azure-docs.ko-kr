@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: d7ebb23cfc0ffdcfcac7ecb4ecbd9b9a665e6130
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d24463834a49cdfbdb4599770caf579ae94582d8
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87029096"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88999821"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>Linux용 Log Analytics 가상 머신 확장
 
@@ -36,7 +36,7 @@ Azure Monitor Logs는 클라우드와 온-프레미스 자산에서 모니터링
 
 ### <a name="operating-system"></a>운영 체제
 
-지원되는 Linux 배포에 대한 자세한 내용은 [Log Analytics 에이전트 개요](../../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) 문서를 참조하세요.
+지원 되는 Linux 배포에 대 한 자세한 내용은 [Azure Monitor 에이전트 개요](../../azure-monitor/platform/agents-overview.md#supported-operating-systems) 문서를 참조 하세요.
 
 ### <a name="agent-and-vm-extension-version"></a>에이전트 및 VM 확장 버전
 다음 표에서는 각 릴리스에서 Log Analytics VM 확장의 각 버전과 Log Analytics 에이전트 번들에 대한 매핑을 제공합니다. Log Analytics 에이전트 번들 버전에 대한 릴리스 노트 링크가 포함되어 있습니다. 릴리스 정보는 버그 수정에 대한 세부 정보 및 지정된 에이전트 릴리스에 사용 가능한 새로운 기능을 포함합니다.  

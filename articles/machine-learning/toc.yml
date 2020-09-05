@@ -6,9 +6,9 @@
     - name: Azure Machine Learning이란?
       displayName: 'AML, services, overview, introduction'
       href: overview-what-is-azure-ml.md
-    - name: Azure Machine Learning 및 Studio(클래식)
-      displayName: 'AML, Studio, designer'
-      href: compare-azure-ml-to-studio-classic.md
+    - name: Azure Machine Learning Studio란?
+      displayName: 'AML, studio, designer'
+      href: overview-what-is-machine-learning-studio.md
     - name: 아키텍처 및 용어
       displayName: 'architecture, concepts, definitions, glossary'
       href: concept-azure-machine-learning-architecture.md
@@ -72,9 +72,6 @@
       items:
         - name: CLI를 사용하여 학습 및 배포
           href: tutorial-train-deploy-model-cli.md
-        - name: ARM 템플릿을 사용하여 작업 영역 만들기
-          displayName: Resource Manager
-          href: tutorial-resource-manager-workspace.md
     - name: Visual Studio Code
       items:
         - name: Azure Machine Learning 확장 설정
@@ -153,39 +150,45 @@
       href: concept-ml-pipelines.md
     - name: 엔터프라이즈 준비 및 보안
       items:
-        - name: 엔터프라이즈 보안 및 거버넌스
+        - name: 엔터프라이즈 보안 개요
+          displayName: authorization authentication encryption aad azure active directory
+          href: concept-enterprise-security.md
+        - name: 보안 기준
+          href: security-baseline.md
+        - name: ID 및 액세스 관리
           items:
-            - name: 엔터프라이즈 보안 개요
-              displayName: authorization authentication encryption aad azure active directory
-              href: concept-enterprise-security.md
+            - name: 인증 설정
+              displayName: 'authentication, auth, oauth'
+              href: how-to-setup-authentication.md
             - name: 사용자 및 역할 관리
               href: how-to-assign-roles.md
+            - name: AKS 배포에서 Azure AD ID 사용
+              href: how-to-use-azure-ad-identity.md
+        - name: 네트워크 보안
+          items:
             - name: 가상 네트워크 사용
               displayName: 'vnet, blob'
               href: how-to-enable-virtual-network.md
             - name: Private Link 사용
               displayName: private endpoint
               href: how-to-configure-private-link.md
-            - name: TLS로 웹 서비스 보호
-              displayName: ssl
+            - name: 보안 웹 서비스 구성
+              displayName: 'ssl, tls'
               href: how-to-secure-web-service.md
+            - name: 방화벽 구성
+              href: how-to-access-azureml-behind-firewall.md
+        - name: 데이터 보호
+          items:
             - name: 복원력 향상
               displayName: 'high availability, disaster recovery'
               href: how-to-high-availability-machine-learning.md
-            - name: AKS 배포에서 Azure AD ID 사용
-              href: how-to-use-azure-ad-identity.md
             - name: 스토리지 액세스 키 다시 생성
               href: how-to-change-storage-access-key.md
-            - name: Azure Firewall 사용
-              href: how-to-access-azureml-behind-firewall.md
-            - name: 보안 코딩
-              href: concept-secure-code-best-practice.md
-              displayName: security threat
-        - name: 인증 설정
-          displayName: 'authentication, auth, oauth'
-          href: how-to-setup-authentication.md
         - name: Azure Machine Learning 모니터링
           href: monitor-azure-machine-learning.md
+        - name: 보안 코딩
+          href: concept-secure-code-best-practice.md
+          displayName: security threat
     - name: Responsible ML
       items:
         - name: Responsible ML 개요
@@ -213,6 +216,14 @@
         - name: Resource Manager 템플릿 사용
           displayName: arm
           href: how-to-create-workspace-template.md
+    - name: 컴퓨팅 리소스 만들기
+      items:
+        - name: Studio 사용
+          displayName: 'compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight, low priority'
+          href: how-to-create-attach-compute-studio.md
+        - name: Python SDK 사용
+          displayName: 'compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight, low priority'
+          href: how-to-create-attach-compute-sdk.md
     - name: 환경 설정
       items:
         - name: 개발 환경 설정
@@ -262,7 +273,7 @@
         - name: 데이터 액세스
           items:
             - name: Azure Storage에 연결
-              displayName: 'blob, get, fileshare, access, mount, download, data lake'
+              displayName: 'blob, get, fileshare, access, mount, download, data lake, datastore'
               href: how-to-access-data.md
             - name: 데이터 저장소에서 데이터 가져오기
               displayName: 'data, data set, register, access data'
@@ -283,7 +294,7 @@
               href: how-to-differential-privacy.md
     - name: 모델 학습
       items:
-        - name: 학습 환경 설정
+        - name: 교육 실행 제출
           displayName: 'run config, compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
           href: how-to-set-up-training-targets.md
         - name: ML용 추정기 사용
@@ -433,6 +444,8 @@
           href: how-to-create-your-first-pipeline.md
         - name: ML 파이프라인 단계로/단계 간에 데이터 이동(Python)
           href: how-to-move-data-in-out-of-pipelines.md
+        - name: ML 파이프라인 배포(Python)
+          href: how-to-deploy-pipelines.md
         - name: 파이프라인 예약(Python)
           href: how-to-schedule-pipelines.md
         - name: 파이프라인 트리거
@@ -457,17 +470,14 @@
         - name: 파이프라인 디버그 및 문제 해결
           displayName: designer
           href: how-to-debug-pipelines.md
-        - name: Application Insights에서 파이프라인 디버깅
-          href: how-to-debug-pipelines-application-insights.md
+        - name: Application Insights에 파이프라인 데이터 기록
+          href: how-to-log-pipelines-application-insights.md
         - name: 병렬 실행 단계 사용
           displayName: score scoring batch consume pipeline parallelrunstep inference
           href: how-to-use-parallel-run-step.md
         - name: 병렬 실행 단계 디버그 및 문제 해결
           displayName: debug_batch consume pipeline parallelrunstep inference
           href: how-to-debug-parallel-run-step.md
-        - name: 기계 학습 파이프라인 반복 및 진화
-          displayName: modularizing testing
-          href: concept-pipeline-practices-tips.md
     - name: CI/CD용 Azure Pipelines
       displayName: 'continuous, integration, delivery'
       href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/context/ml-context
@@ -506,6 +516,8 @@
       href: monitor-resource-reference.md
     - name: Machine Learning 파이프라인 YAML 참조
       href: reference-pipeline-yaml.md
+    - name: 소버린 클라우드 패리티
+      href: reference-machine-learning-cloud-parity.md
 - name: 리소스
   items:
     - name: 릴리스 정보

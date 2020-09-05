@@ -1,6 +1,6 @@
 ---
 title: Azure CDN을 통해 대용량 파일 다운로드 최적화
-description: 이 문서에서는 대용량 파일 다운로드를 최적화하는 방법을 설명합니다.
+description: Azure Content Delivery Network에서 대량 파일 다운로드를 최적화 하는 방법에 대해 알아봅니다. 이 문서에는 몇 가지 시나리오가 포함 되어 있습니다.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 05/01/2018
 ms.author: allensu
-ms.openlocfilehash: 0fb136b6c37c8ef14f85455431fea80099088936
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 6258baf37d00d35da3b7c95519caabdfcaa34b2a
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206721"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192645"
 ---
 # <a name="large-file-download-optimization-with-azure-cdn"></a>Azure CDN을 통해 대용량 파일 다운로드 최적화
 
@@ -110,7 +110,7 @@ CDN은 받은 청크를 모두 캐시합니다. CDN 캐시에서 전체 파일�
 | 캐싱  | 일반 웹 | 대용량 파일 최적화 
 --- | --- | --- 
 캐싱: 긍정 <br> HTTP 200, 203, 300, <br> 301, 302 및 410 | 7 일 |1일  
-캐싱: 부정 <br> HTTP 204, 305, 404 <br> 및 405 | 없음 | 1초 
+캐싱: 부정 <br> HTTP 204, 305, 404 <br> 및 405 | None | 1초 
 
 ### <a name="deal-with-origin-failure"></a>원본 오류 처리
 
@@ -129,7 +129,7 @@ CDN은 받은 청크를 모두 캐시합니다. CDN 캐시에서 전체 파일�
 최대 파일 크기 | 150GB 
 원본 서버 특성 | 바이트 범위 요청을 지원해야 함 
 
-## <a name="additional-considerations"></a>추가 고려 사항
+## <a name="additional-considerations"></a>기타 고려 사항
 
 이 최적화 형식을 사용할 때 추가로 고려해야 할 다음 몇 가지 측면이 있습니다.
 

@@ -3,12 +3,12 @@ title: Azure Private Link 서비스와 Azure Relay 통합
 description: Azure Private Link Service와 Azure Relay를 통합하는 방법을 알아봅니다.
 ms.date: 06/23/2020
 ms.topic: article
-ms.openlocfilehash: a113e52b892a25fd2b12a18d73df443d9a9866f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e5c35f9333378a5f0b87956e8a916491d51e3cb3
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85317320"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719430"
 ---
 # <a name="integrate-azure-relay-with-azure-private-link-preview"></a>Azure Private Link(미리 보기)와 Azure Relay 통합
 Azure **Private Link Service**를 사용하면 가상 네트워크의 프라이빗 엔드포인트를 통해 Azure 서비스(예: Azure Relay, Azure Service Bus, Azure Event Hubs, Azure Storage 및 Azure Cosmos DB)와 Azure 호스팅 고객/파트너 서비스에 액세스할 수 있습니다. 자세한 내용은 [Azure Private Link(미리 보기)란?](../private-link/private-link-overview.md)을 참조하세요.
@@ -207,7 +207,7 @@ $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName $rgName  `
 3. 상태가 **연결 끊김**으로 변경되어 있어야 합니다. 그러면 엔드포인트가 목록에서 사라지게 됩니다. 
 
 ## <a name="validate-that-the-private-link-connection-works"></a>프라이빗 링크 연결이 작동하는지 확인
-프라이빗 엔드포인트의 동일한 서브넷 내의 리소스가 개인 IP 주소를 통해 Azure Relay 네임스페이스에 연결되어 있는지 확인해야 합니다.
+개인 IP 주소를 통해 개인 끝점의 가상 네트워크 내에 있는 리소스가 Azure Relay 네임 스페이스에 연결 되어 있는지 확인 해야 합니다.
 
 먼저 [Azure Portal에서 Windows 가상 머신 만들기](../virtual-machines/windows/quick-create-portal.md)의 단계에 따라 가상 머신을 만듭니다.
 

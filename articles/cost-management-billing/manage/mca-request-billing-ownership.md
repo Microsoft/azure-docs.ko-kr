@@ -4,15 +4,16 @@ description: 다른 사용자에게 Azure 구독의 청구 소유권을 요청�
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 44fb7a8a93569b2591150a99d39fcb3bac0134c0
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 233cc5330096b9b6419c8024205a41646ddd9519
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290773"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88682963"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-from-other-accounts"></a>다른 계정에서 Azure 구독의 청구 소유권 얻기
 

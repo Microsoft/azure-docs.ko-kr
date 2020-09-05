@@ -1,18 +1,18 @@
 ---
-title: ARM 템플릿을 사용하여 Azure DB for MariaDB 만들기
-description: 이 문서에서는 Azure Resource Manager 템플릿을 사용하여 Azure Database for MariaDB 서버를 만드는 방법을 알아봅니다.
+title: '빠른 시작: Azure DB for MariaDB 만들기 - ARM 템플릿'
+description: 이 빠른 시작 문서에서는 Azure Resource Manager 템플릿을 사용하여 Azure Database for MariaDB 서버를 만드는 방법을 알아봅니다.
 author: mgblythe
 ms.service: mariadb
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: fd560658a20a5b58d582332a88bf031d0e56ac91
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 108233892a89e6f6288e05476e37460a58b52b0e
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134103"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660549"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mariadb-server"></a>빠른 시작: ARM 템플릿을 사용하여 Azure Database for MariaDB 서버 만들기
 
@@ -48,7 +48,7 @@ Azure Database for MariaDB 서버는 정의된 컴퓨팅 및 스토리지 리소
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-managed-mariadb-with-vnet/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-managed-mariadb-with-vnet/azuredeploy.json" range="001-231" highlight="149,162,176,199,213":::
+:::code language="json" source="~/quickstart-templates/101-managed-mariadb-with-vnet/azuredeploy.json":::
 
 템플릿에서 정의하는 5개의 Azure 리소스는 다음과 같습니다.
 

@@ -7,12 +7,12 @@ ms.topic: sample
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/06/2020
-ms.openlocfilehash: a25f0ddeb35aaf880682780fd61bcbc3cedbad08
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: c24363caac1db8dd8ce21b690ef989b2beb97f2d
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82930321"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88506059"
 ---
 # <a name="example-jupyter-notebooks-show-how-to-enrich-data-with-open-datasets"></a>Jupyter Notebook 예제에서는 Open Datasets로 데이터를 보강하는 방법을 보여줍니다. 
 Azure Open Datasets에 대한 Jupyter Notebook 예제에서는 공개 데이터 세트를 로드하여 데모 데이터를 보강하는 방법을 보여줍니다. 데이터를 처리하기 위해 Spark 및 Pandas 기술이 사용됩니다.
@@ -43,3 +43,4 @@ Azure Open Datasets에 대한 Jupyter Notebook 예제에서는 공개 데이터 
 * [자습서: 자동화된 기계 학습 및 공개 데이터 세트를 사용하여 회귀 모델 만들기](/azure/machine-learning/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context)
 * [공개 데이터 세트용 Python SDK](/python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py)
 * [Azure Open Datasets 카탈로그](https://azure.microsoft.com/services/open-datasets/catalog/)
+* [공개 데이터 세트에서 Azure Machine Learning 데이터 세트 만들기](how-to-create-azure-machine-learning-dataset-from-open-dataset.md)

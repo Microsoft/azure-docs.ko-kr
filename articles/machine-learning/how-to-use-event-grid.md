@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: 3b6f115e27b5cf956a524bd1a610797c689b5d6c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 464d945708fba83877fe6cef9ec1b64ec444bd95
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319493"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650420"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Azure Machine Learning 이벤트 (미리 보기)를 기반으로 응용 프로그램, 프로세스 또는 CI/CD 워크플로 트리거
 
@@ -199,7 +199,7 @@ az eventgrid event-subscription create --name {eventGridFilterName} \
 
 시작하기 전에 다음 작업을 수행합니다.
 
-* 작업 영역에서 [데이터 드리프트를 감지]( https://aka.ms/datadrift)하도록 데이터 세트 모니터링 설정
+* 작업 영역에서 [데이터 드리프트를 감지](how-to-monitor-datasets.md)하도록 데이터 세트 모니터링 설정
 * 게시된 [Azure Data Factory 파이프라인](https://docs.microsoft.com/azure/data-factory/) 만들기
 
 이 예제에서는 간단한 Data Factory 파이프라인을 사용하여 파일을 BLOB 저장소에 복사하고 게시된 Machine Learning 파이프라인을 실행합니다. 이 시나리오에 대한 자세한 내용은 [Azure Data Factory에서 Machine Learning 단계를 설정하는 방법](https://docs.microsoft.com/azure/data-factory/transform-data-machine-learning-service)을 참조하세요.

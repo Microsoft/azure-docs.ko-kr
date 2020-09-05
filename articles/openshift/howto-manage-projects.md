@@ -8,14 +8,14 @@ ms.author: gwallace
 ms.date: 07/19/2019
 ms.topic: conceptual
 ms.service: container-service
-ms.openlocfilehash: d4f53238951784a74e6e3fc8a73d1f112ce75608
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 35474df96254b158a39b6d913171c553bf30aea4
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79139116"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816442"
 ---
-# <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Azure Red Hat OpenShift 클러스터에서 프로젝트, 템플릿, 이미지 스트림 관리 
+# <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Azure Red Hat OpenShift 클러스터에서 프로젝트, 템플릿, 이미지 스트림 관리
 
 OpenShift 컨테이너 플랫폼에서 프로젝트는 관련 개체를 그룹화 하 고 격리 하는 데 사용 됩니다. 관리자는 개발자에 게 특정 프로젝트에 대 한 액세스 권한을 부여 하 고 자신의 프로젝트를 만들 수 있도록 하며 개별 프로젝트에 대 한 관리 권한을 부여할 수 있습니다.
 
@@ -25,7 +25,7 @@ OpenShift 컨테이너 플랫폼에서 프로젝트는 관련 개체를 그룹�
 
 프로젝트 요청이 제출 되 면 API는 템플릿에서 다음 매개 변수를 대체 합니다.
 
-| 매개 변수               | 설명                                    |
+| 매개 변수               | Description                                    |
 | ----------------------- | ---------------------------------------------- |
 | PROJECT_NAME            | 프로젝트의 이름입니다. 필수 요소.             |
 | PROJECT_DISPLAYNAME     | 프로젝트의 표시 이름입니다. 비어 있을 수 있습니다. |
@@ -45,7 +45,7 @@ API에 대 한 액세스는 개발자에 게 자체 provisioners 클러스터 �
    oc edit template project-request -n openshift
    ```
 
-3. 다음 주석을 추가 하 여 Azure Red Hat OpenShift (ARO) 업데이트 프로세스에서 기본 프로젝트 템플릿을 제거 합니다.`openshift.io/reconcile-protect: "true"`
+3. 다음 주석을 추가 하 여 Azure Red Hat OpenShift (ARO) 업데이트 프로세스에서 기본 프로젝트 템플릿을 제거 합니다. `openshift.io/reconcile-protect: "true"`
 
    ```
    ...

@@ -7,12 +7,12 @@ ms.topic: article
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 07/01/2020
-ms.openlocfilehash: 7e93772a77ac1edb88c8e1a56c8db216c6e9fbd3
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 2808f0d3b99257d52b2d400424f256f980005863
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420110"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607197"
 ---
 # <a name="private-offers-in-the-microsoft-commercial-marketplace"></a>Microsoft 상업적 marketplace의 개인 제품
 
@@ -35,7 +35,7 @@ ms.locfileid: "87420110"
 
 ## <a name="creating-private-offers-using-plans"></a>요금제를 사용 하 여 개인 제안 만들기
 
-요금제를 사용 하는 *신규 또는 기존*제안의 경우, 게시자는 새 계획 (이전의 sku)을 만들어 개인 변형으로 표시 하 여 새 개인 변형을 쉽게 만들 수 있습니다.  
+요금제를 사용 하는 *신규 또는 기존*제안의 경우, 게시자는 새 계획 (이전의 sku)을 만들어 개인 변형으로 표시 하 여 새 개인 변형을 쉽게 만들 수 있습니다. 각 제품에는 최대 45 개의 개인 계획이 있을 수 있습니다.
 
 <!--- [Private SKUs](./cloud-partner-portal-orig/cloud-partner-portal-azure-private-skus.md) --->
 
@@ -54,7 +54,7 @@ ms.locfileid: "87420110"
 
 ## <a name="deploying-private-offers"></a>개인 제품 배포
 
-개인 제공은 [Azure Portal](https://azure.microsoft.com/features/azure-portal/) 통해서만 검색할 수 있으며 [Microsoft AppSource](https://appsource.microsoft.com/) 또는 [Azure Marketplace](https://azuremarketplace.microsoft.com)에는 표시 되지 않습니다. 다른 상업용 marketplace 상점에 게시 하는 방법에 대 한 자세한 내용은 [게시 옵션 결정](./determine-your-listing-type.md)을 참조 하세요.
+개인 제공은 [Azure Portal](https://azure.microsoft.com/features/azure-portal/) 통해서만 검색할 수 있으며 [Microsoft AppSource](https://appsource.microsoft.com/) 또는 [Azure Marketplace](https://azuremarketplace.microsoft.com)에는 표시 되지 않습니다. 다른 상업용 marketplace online 스토어에 게시 하는 방법에 대 한 자세한 내용은 [게시 옵션 결정](./determine-your-listing-type.md)을 참조 하세요.
 
 Azure Portal에 로그인 하면 고객이 Marketplace 탐색 요소를 선택 하 여 개인 제안에 액세스할 수 있습니다. 개인 제안은 검색 결과에 표시 되 고 다른 모든 제품 처럼 명령줄 및 Azure Resource Manager 템플릿을 통해 배포할 수 있습니다.
 

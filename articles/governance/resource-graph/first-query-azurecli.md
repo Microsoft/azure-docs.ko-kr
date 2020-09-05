@@ -1,15 +1,15 @@
 ---
 title: '빠른 시작: 첫 번째 Azure CLI 쿼리'
 description: 이 빠른 시작에서는 단계에 따라 Azure CLI에 대한 Resource Graph 확장을 사용하도록 설정하고 첫 번째 쿼리를 실행합니다.
-ms.date: 05/20/2020
+ms.date: 08/10/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 82e36027e5016554770fc9359f413c1fff6fe227
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 7d55aaae30176b3f0246dd254496465fb89b0e99
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500677"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051001"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-cli"></a>빠른 시작: Azure CLI를 사용하여 첫 번째 Resource Graph 쿼리 실행
 
@@ -27,7 +27,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 Azure CLI를 사용하도록 설정하여 Azure Resource Graph를 쿼리하려면 해당 확장을 추가해야 합니다. 이 확장은 [Windows 10의 bash](/windows/wsl/install-win10), [Cloud Shell](https://shell.azure.com)(독립형 및 포털 내부형), [Azure CLI Docker 이미지](https://hub.docker.com/r/microsoft/azure-cli/)를 포함하여 Azure CLI가 사용되거나 로컬로 설치될 수 있는 모든 위치에서 작동됩니다.
 
-1. 최신 Azure CLI(최소 **2.0.76**)가 설치되어 있는지 확인하세요. 아직 설치되지 않은 경우 [다음 지침](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)을 따릅니다.
+1. 최신 Azure CLI(최소 **2.0.76**)가 설치되어 있는지 확인하세요. 아직 설치되지 않은 경우 [다음 지침](/cli/azure/install-azure-cli-windows)을 따릅니다.
 
 1. 선택한 Azure CLI 환경에서 다음 명령을 사용하여 가져옵니다.
 

@@ -6,15 +6,16 @@ ms.author: banders
 ms.date: 03/12/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
+ms.subservice: cloudyn
 ms.custom: seodec18
 ms.reviewer: benshy
 ROBOTS: NOINDEX
-ms.openlocfilehash: e8fff8b75ff419cffc7f496f921dcba734109e5a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f981e347b809f5df87e3b5379c69aab83ecf74eb
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79463614"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88687623"
 ---
 # <a name="tutorial-assign-access-to-cloudyn-data"></a>자습서: Cloudyn 데이터 액세스 권한 할당
 

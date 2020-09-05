@@ -12,12 +12,12 @@ metadata:
   title: LUIS(Language Understanding) 설명서
   titleSuffix: Azure Cognitive Services
   description: LUIS(Language Understanding) 서비스를 사용하면 애플리케이션은 사람의 말을 통해 무엇을 원하는지 이해할 수 있습니다. LUIS는 기계 학습을 사용하여 사용자 입력을 자연어로 받아서 의미를 추출하는 애플리케이션을 개발자가 작성할 수 있도록 합니다.
-  ms.openlocfilehash: 0d941872670a5bdd559a2760f73cda72773fc887
-  ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
+  ms.openlocfilehash: 6e34c5e39118565e14a40765443583b0b9ed237b
+  ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/15/2020
-  ms.locfileid: "84791591"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89322486"
 landingContent:
 - title: LUIS(Language Understanding) 정보
   linkLists:
@@ -60,9 +60,9 @@ landingContent:
     - text: '포털: 새 LUIS 앱 만들기'
       url: get-started-portal-build-app.md
     - text: C# SDK 사용
-      url: sdk-authoring.md?pivots=programming-language-csharp
+      url: azure-sdk-quickstart.md?pivots=programming-language-csharp
     - text: Python SDK 사용
-      url: sdk-authoring.md?pivots=programming-language-python
+      url: azure-sdk-quickstart.md?pivots=programming-language-python
   - linkListType: how-to-guide
     links:
     - text: 새 LUIS 앱 만들기
@@ -88,7 +88,7 @@ landingContent:
     - text: '포털: 예측 엔드포인트에 앱 배포'
       url: get-started-portal-deploy-app.md
     - text: SDK 사용
-      url: sdk-authoring.md
+      url: azure-sdk-quickstart.md
   - linkListType: how-to-guide
     links:
     - text: 앱 관리
@@ -106,7 +106,7 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: SDK 사용
-      url: sdk-query-prediction-endpoint.md
+      url: azure-sdk-quickstart.md
   - linkListType: quickstart
     links:
     - text: REST를 통해 C# 사용

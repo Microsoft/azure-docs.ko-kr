@@ -48,7 +48,7 @@
         - name: ASP.NET
           href: quickstart-v2-dotnet-native-aspnet.md
         - name: ASP.NET Core
-          href: 'https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2'
+          href: 'https://docs.microsoft.com/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/active-directory-dotnet-native-aspnetcore-v2/'
     - name: 모바일 및 데스크톱 앱
       items:
         - name: Android
@@ -273,7 +273,9 @@
               href: msal-net-adfs-support.md
             - name: MSAL.NET으로 마이그레이션
               href: msal-net-migration.md
-            - name: 브로커를 사용하여 MSAL.NET으로 Xamarin 앱 마이그레이션
+            - name: broker를 사용하여 Xamarin Android 앱을 MSAL.NET으로 마이그레이션
+              href: msal-net-migration-android-broker.md
+            - name: broker를 사용하여 Xamarin iOS 앱을 MSAL.NET으로 마이그레이션
               href: msal-net-migration-ios-broker.md
             - name: 웹 브라우저 고려 사항
               href: msal-net-web-browsers.md
@@ -468,13 +470,13 @@
     - name: 자동 사용자 프로비저닝(SCIM)
       items:
         - name: 자동 사용자 프로비저닝이란?
-          href: ../app-provisioning/user-provisioning.md
+          href: ../app-provisioning/user-provisioning.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: SCIM 엔드포인트 개발 및 통합
-          href: ../app-provisioning/use-scim-to-provision-users-and-groups.md
+          href: ../app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: 일반적인 프로비전 시나리오
-          href: ../app-provisioning/scim-graph-scenarios.md
+          href: ../app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: MS Graph를 사용하여 구성 자동화
-          href: ../app-provisioning/application-provisioning-configure-api.md
+          href: ../app-provisioning/application-provisioning-configure-api.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
     - name: Azure Portal 도움말 문서
       items:
         - name: 사용자 지정 개발 애플리케이션에 대한 토큰 수명 기본값

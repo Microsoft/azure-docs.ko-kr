@@ -1,9 +1,9 @@
 ---
-title: Azure VMSS에서 관리 되는 id 구성-Azure AD
+title: Azure VMSS에서 관리 ID 구성 - Azure AD
 description: Azure Portal을 사용하여 가상 머신 확장 집합에서 Azure 리소스에 대한 관리 ID를 구성하는 단계별 지침입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e2d72ba63633d7c5d3da3094cfa00e076513af
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e9ab1adeac5f8c67e06682f49fdded88e6a350e7
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85609115"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262676"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-the-azure-portal"></a>Azure Portal을 사용하여 가상 머신 확장 집합에서 Azure 리소스에 대한 관리 ID 구성
 
@@ -32,12 +32,12 @@ Azure 리소스에 대한 관리 ID는 Azure Active Directory에서 자동으로
 
 - Azure 리소스에 대한 관리 ID를 잘 모르는 경우 [개요 섹션](overview.md)을 확인하세요.
 - 아직 Azure 계정이 없으면 계속하기 전에 [평가판 계정](https://azure.microsoft.com/free/)에 등록해야 합니다.
-- 이 문서의 관리 작업을 수행하려면 계정에 다음과 같은 Azure 역할 기반 액세스 제어가 할당되어야 합니다.
+- 이 문서의 관리 작업을 수행하려면 계정에 다음과 같은 Azure 역할이 할당되어야 합니다.
 
     > [!NOTE]
     > 추가 Azure AD 디렉터리 역할 할당이 필요하지 않습니다.
 
-    - [가상 머신 참가자](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor): 가상 머신 확장 집합에서 시스템 할당 관리 ID를 사용하도록 설정하고 제거합니다.
+    - [가상 머신 참가자](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor): 가상 머신 확장 집합에서 시스템 할당 관리 ID를 사용하도록 설정하고 제거합니다.
 
 ## <a name="system-assigned-managed-identity"></a>시스템 할당 관리 ID
 
@@ -105,5 +105,3 @@ Azure 리소스에 대한 관리 ID는 Azure Active Directory에서 자동으로
 ## <a name="next-steps"></a>다음 단계
 
 - Azure Portal을 사용하여 Azure 가상 머신 확장 집합 관리 ID [액세스 권한을 다른 Azure 리소스에](howto-assign-access-portal.md) 부여합니다.
-
-

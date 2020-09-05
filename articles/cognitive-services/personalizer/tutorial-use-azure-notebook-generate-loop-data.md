@@ -9,12 +9,12 @@ ms.subservice: personalizer
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 3aa45050286888dd8ae1d26d96c8ed02da197326
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 0cf2aa504fd7a36a55740b3a59eeb3759e67f469
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876736"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509912"
 ---
 # <a name="tutorial-use-personalizer-in-azure-notebook"></a>자습서: Azure Notebook에서 Personalizer 사용
 
@@ -623,7 +623,7 @@ Coffee count 4
 
 ## <a name="validate-new-learning-policy"></a>새 학습 정책 유효성 검사
 
-Azure Notebook으로 돌아가서 동일한 루프를 실행하지만 2,000회만 반복합니다. 서비스에 대한 총 호출 수를 확인하려면 Azure Portal에서 메트릭 차트를 정기적으로 새로 고칩니다. 약 4,000개의 호출이 있으면 루프의 각 반복에 대한 순위 및 보상 호출과 반복이 수행됩니다.
+Azure Notebooks 파일로 돌아가서 동일한 루프를 실행하지만 2,000회만 반복합니다. 서비스에 대한 총 호출 수를 확인하려면 Azure Portal에서 메트릭 차트를 정기적으로 새로 고칩니다. 약 4,000개의 호출이 있으면 루프의 각 반복에 대한 순위 및 보상 호출과 반복이 수행됩니다.
 
 ```python
 # max iterations

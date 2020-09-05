@@ -2,25 +2,21 @@
 title: '자습서: Skillport와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Skillport 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 4df349b2-a73f-4b88-a077-ec0fbfc26527
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 09ccb9f095e58d8fa22ec3d119853c729f0c7026
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cceb0a98cc35a41d1d46b798c9caf08fae2e3748
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67090564"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543094"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skillport"></a>자습서: Skillport와 Azure Active Directory 통합
 
@@ -139,7 +135,7 @@ Skillport에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수�
 
 ### <a name="configure-skillport-single-sign-on"></a>Skillport Single Sign-On 구성
 
-**Skillport** 쪽에서 Single Sign-On을 구성하려면 Azure Portal에서 다운로드한 **페더레이션 메타데이터 XML**과 적절히 복사한 URL을 [Skillport 지원 팀](https://www.skillsoft.com/contact.asp)으로 보내야 합니다. 이렇게 설정하면 SAML SSO 연결이 양쪽에서 제대로 설정됩니다.
+**Skillport** 쪽에서 Single Sign-On을 구성하려면 Azure Portal에서 다운로드한 **페더레이션 메타데이터 XML**과 적절히 복사한 URL을 [Skillport 지원 팀](https://www.skillsoft.com/about/contact-us)으로 보내야 합니다. 이렇게 설정하면 SAML SSO 연결이 양쪽에서 제대로 설정됩니다.
 
 ### <a name="create-an-azure-ad-test-user"></a>Azure AD 테스트 사용자 만들기
 
@@ -194,7 +190,7 @@ Skillport에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수�
 
 ### <a name="create-skillport-test-user"></a>Skillport 테스트 사용자 만들기
 
-Skillport 테스트 사용자를 만들려면 최종 사용자의 요구 사항에 따른 여러 비즈니스 시나리오를 갖고 있는 [Skillport 지원 팀](https://www.skillsoft.com/contact.asp)에 문의해야 합니다. 지원 팀에서 사용자와 논의한 후 테스트 사용자를 구성할 것입니다.
+Skillport 테스트 사용자를 만들려면 최종 사용자의 요구 사항에 따른 여러 비즈니스 시나리오를 갖고 있는 [Skillport 지원 팀](https://www.skillsoft.com/about/contact-us)에 문의해야 합니다. 지원 팀에서 사용자와 논의한 후 테스트 사용자를 구성할 것입니다.
 
 ### <a name="test-single-sign-on"></a>Single Sign-On 테스트
 

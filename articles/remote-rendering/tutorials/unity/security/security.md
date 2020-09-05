@@ -5,12 +5,13 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
-ms.openlocfilehash: 297241c5f939ae15fc77b29614b55d9b2bd63c84
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 403a5b68e3320700e275c744210f480be2c88e84
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87445906"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021326"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>자습서: Azure Remote Rendering 및 모델 스토리지 보안
 
@@ -116,9 +117,27 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
     ```csharp
     private bool loadingLinkedCustomModel = false;
-    public string StorageAccountName;
-    public string BlobContainerName;
-    public string ModelPath;
+
+    [SerializeField]
+    private string storageAccountName;
+    public string StorageAccountName {
+        get => storageAccountName.Trim();
+        set => storageAccountName = value;
+    }
+
+    [SerializeField]
+    private string blobContainerName;
+    public string BlobContainerName {
+        get => blobContainerName.Trim();
+        set => blobContainerName = value;
+    }
+
+    [SerializeField]
+    private string modelPath;
+    public string ModelPath {
+        get => modelPath.Trim();
+        set => modelPath = value;
+    }
 
     [ContextMenu("Load Linked Custom Model")]
     public async void LoadLinkedCustomModel()
@@ -205,17 +224,41 @@ Azure 쪽의 준비가 완료되었으므로, 이제 코드가 AAR 서비스에 
 
     public class AADAuthentication : BaseARRAuthentication
     {
-        public string accountDomain;
+        [SerializeField]
+        private string accountDomain;
+        public string AccountDomain
+        {
+            get => accountDomain.Trim();
+            set => accountDomain = value;
+        }
 
-        public string activeDirectoryApplicationClientID;
+        [SerializeField]
+        private string activeDirectoryApplicationClientID;
+        public string ActiveDirectoryApplicationClientID
+        {
+            get => activeDirectoryApplicationClientID.Trim();
+            set => activeDirectoryApplicationClientID = value;
+        }
 
-        public string azureTenantID;
+        [SerializeField]
+        private string azureTenantID;
+        public string AzureTenantID
+        {
+            get => azureTenantID.Trim();
+            set => azureTenantID = value;
+        }
 
-        public string azureRemoteRenderingAccountID;
+        [SerializeField]
+        private string azureRemoteRenderingAccountID;
+        public string AzureRemoteRenderingAccountID
+        {
+            get => azureRemoteRenderingAccountID.Trim();
+            set => azureRemoteRenderingAccountID = value;
+        }
 
         public override event Action<string> AuthenticationInstructions;
 
-        string authority => "https://login.microsoftonline.com/" + azureTenantID;
+        string authority => "https://login.microsoftonline.com/" + AzureTenantID;
 
         string redirect_uri = "https://login.microsoftonline.com/common/oauth2/nativeclient";
 
@@ -236,7 +279,7 @@ Azure 쪽의 준비가 완료되었으므로, 이제 코드가 AAR 서비스에 
 
                 var AD_Token = result.AccessToken;
 
-                return await Task.FromResult(new AzureFrontendAccountInfo(accountDomain, azureRemoteRenderingAccountID, "", AD_Token, ""));
+                return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
             }
             else
             {
@@ -260,7 +303,7 @@ Azure 쪽의 준비가 완료되었으므로, 이제 코드가 AAR 서비스에 
 
         public override async Task<AuthenticationResult> TryLogin()
         {
-            var clientApplication = PublicClientApplicationBuilder.Create(activeDirectoryApplicationClientID).WithAuthority(authority).WithRedirectUri(redirect_uri).Build();
+            var clientApplication = PublicClientApplicationBuilder.Create(ActiveDirectoryApplicationClientID).WithAuthority(authority).WithRedirectUri(redirect_uri).Build();
             AuthenticationResult result = null;
             try
             {
@@ -323,7 +366,7 @@ Azure 쪽의 준비가 완료되었으므로, 이제 코드가 AAR 서비스에 
 ARR 관점에서 이 클래스의 가장 중요한 부분은 다음 줄입니다.
 
 ```csharp
-return await Task.FromResult(new AzureFrontendAccountInfo(accountDomain, azureRemoteRenderingAccountID, "", AD_Token, ""));
+return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
 ```
 
 여기서는 계정 도메인, 계정 ID 및 액세스 토큰을 사용하여 새 **AzureFrontendAccountInfo** 개체를 만듭니다. 이전에 구성된 역할 기반 권한에 따라 사용자에게 권한이 부여되는 한, ARR 서비스에서 원격 렌더링 세션을 쿼리, 생성 및 조인할 때 이 토큰이 사용됩니다.

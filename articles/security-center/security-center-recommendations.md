@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/29/2019
 ms.author: memildin
-ms.openlocfilehash: 4d65b43dad80cb130d582132d21e2d10bd8051dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6363100c844d071a3bb47521cec6ff7e988f6af8
+ms.sourcegitcommit: 64ad2c8effa70506591b88abaa8836d64621e166
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791387"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88263230"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Azure Security Center의 보안 권장 사항 
 이 항목에서는 Azure 리소스를 보호 하는 데 도움이 되는 Azure Security Center의 권장 사항을 확인 하 고 이해 하는 방법을 설명 합니다.
@@ -31,16 +31,15 @@ ms.locfileid: "84791387"
 
 권장 사항은 리소스를 보호 하기 위해 수행할 작업입니다.
 
-Azure 리소스의 보안 상태를 주기적으로 분석 하 여 잠재적인 보안 취약점을 식별 Security Center 합니다. 그런 다음이를 제거 하는 방법에 대 한 권장 사항을 제공 합니다.
+Security Center는 Azure 리소스의 보안 상태를 주기적으로 분석 하 여 잠재적인 보안 취약성을 식별 합니다. 그런 다음 이러한 취약성을 해결 하는 방법에 대 한 권장 사항을 제공 합니다.
 
 각 권장 사항은 다음을 제공 합니다.
 
-- 권장 사항에 대 한 간단한 설명입니다.
-- 권장 사항을 구현 하기 위해 수행할 수정 단계입니다. <!-- In some cases, Quick Fix remediation is available. -->
-- 권장 조치를 수행 하는 데 필요한 리소스
-- **보안 점수에 영향을 줍니다**.이는이 권장 사항을 구현 하는 경우 보안 점수가 적용 되는 금액입니다.
+- 문제에 대 한 간단한 설명입니다.
+- 권장 사항을 구현 하기 위해 수행할 수정 단계입니다.
+- 영향을 받는 리소스입니다.
 
-## <a name="monitor-recommendations"></a>권장 사항 모니터링<a name="monitor-recommendations"></a>
+## <a name="monitor-recommendations"></a>권장 사항 모니터링 <a name="monitor-recommendations"></a>
 
 Security Center는 리소스의 보안 상태를 분석 하 여 잠재적인 취약성을 식별 합니다. **개요** 의 **권장 사항** 타일에는 Security Center에서 식별 된 권장 사항의 총 수가 표시 됩니다.
 
@@ -48,26 +47,28 @@ Security Center는 리소스의 보안 상태를 분석 하 여 잠재적인 취
 
 1. **개요**에서 **권장 사항 타일** 을 선택 합니다. **권장 사항** 목록이 열립니다.
 
-      ![권장 사항 보기](./media/security-center-recommendations/view-recommendations.png)
+1. 권장 사항은 보안 제어로 그룹화 됩니다.
 
-    권장 사항을 필터링할 수 있습니다. 권장 사항을 필터링하려면 **권장 사항** 블레이드에서 **필터**를 선택합니다. **필터** 블레이드가 열리면 확인하려는 심각도 및 상태 값을 선택합니다.
+      ![보안 제어 별로 그룹화 된 권장 사항](./media/security-center-recommendations/view-recommendations.png)
 
-   * **권장 사항**: 권장 사항.
-   * 보안 **점수 영향**: 보안 권장 사항을 사용 하 여 Security Center에서 생성 되는 점수 이며, 각 권장 사항의 중요 정도를 결정 하는 고급 알고리즘을 적용 합니다. 자세한 내용은 [보안 점수 계산](secure-score-security-controls.md#how-your-secure-score-is-calculated)을 참조 하세요.
-   * **리소스**:이 권장 사항이 적용되는 리소스를 나열합니다.
-   * **상태 표시줄**: 해당 특정 권장 사항의 심각도를 설명 합니다.
-       * **높음 (빨강)**: 의미 있는 리소스 (예: 응용 프로그램, VM 또는 네트워크 보안 그룹)에 대 한 취약성이 있으며 주의가 필요 합니다.
-       * **보통 (주황)**: 취약성을 제거 하거나 프로세스를 완료 하는 데 중요 하지 않거나 추가 단계가 필요 합니다.
-       * **낮음 (파란색)**: 해결 해야 하지만 즉각적인 주의가 필요 하지 않은 취약성이 있습니다. (기본적으로 낮은 권장 사항은 표시되지 않지만 표시하려는 경우 낮은 권장 사항으로 필터링할 수 있습니다.) 
-       * **정상 (녹색)**:
-       * **사용할 수 없음 (회색)**:
+1. 컨트롤을 확장 하 고 특정 권장 사항을 선택 하 여 권장 사항 페이지를 표시 합니다.
 
-1. 각 권장 사항에 대 한 세부 정보를 보려면 권장 사항을 클릭 합니다.
+    :::image type="content" source="./media/security-center-recommendations/recommendation-details-page.png" alt-text="권장 사항 세부 정보 페이지입니다." lightbox="./media/security-center-recommendations/recommendation-details-page.png":::
 
-    ![권장 사항 세부 정보](./media/security-center-recommendations/recommendation-details.png)
+    페이지에는 다음이 포함 됩니다.
 
->[!NOTE] 
-> Azure 리소스에 대 한 [클래식 및 리소스 관리자 배포 모델](../azure-classic-rm.md) 을 참조 하세요.
+    - **심각도 표시기**
+    - **새로 고침 간격**  (관련 된 경우) 
+    - **설명** -문제에 대 한 간단한 설명입니다.
+    - **수정 단계** -영향을 받는 리소스에 대 한 보안 문제를 해결 하는 데 필요한 수동 단계에 대 한 설명입니다. ' 빠른 수정 '을 사용 하는 권장 사항에 대해서는 리소스에 제안 된 픽스를 적용 하기 전에 **업데이트 관리 논리 보기** 를 선택할 수 있습니다. 
+    - **영향을 받는 리소스** -리소스는 탭으로 그룹화 됩니다.
+        - **정상 리소스** – 영향을 받지 않거나 이미 문제를 해결 한 관련 리소스입니다.
+        - **비정상 리소스** – 식별 된 문제의 영향을 받는 리소스입니다.
+        - **해당 하지 않는 리소스** – 권장 구성이 명확한 답변을 제공할 수 없는 리소스입니다. 해당 없음 탭에는 각 리소스의 이유가 포함 됩니다. 
+
+            :::image type="content" source="./media/security-center-recommendations/recommendations-not-applicable-reasons.png" alt-text="이유가 있는 해당 리소스가 아닙니다.":::
+
+
  
 ## <a name="next-steps"></a>다음 단계
 

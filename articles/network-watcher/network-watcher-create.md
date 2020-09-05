@@ -1,6 +1,6 @@
 ---
 title: Azure Network Watcher 인스턴스 만들기 | Microsoft Docs
-description: Azure 지역에서 Network Watcher를 사용하도록 설정하는 방법을 알아봅니다.
+description: Azure Portal 또는 기타 기술을 사용 하 여 Azure 지역에서 Azure Network Watcher를 만드는 방법 및 Network Watcher를 삭제 하는 방법에 대해 알아봅니다.
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 03fe71855c43ba831f4b7a4ab746f05bd3bbb4a3
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 6809e8a44120eddbae4965bff30f80b617bdd024
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87846856"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272164"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Azure Network Watcher 인스턴스 만들기
 

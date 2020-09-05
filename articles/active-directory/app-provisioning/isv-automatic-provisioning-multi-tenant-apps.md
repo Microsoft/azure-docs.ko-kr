@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/23/2019
 ms.author: kenwith
 ms.reviewer: zhchia
-ms.openlocfilehash: 479bbe2dbef2d28a2744b667184c45e85faf9adc
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 7ffdef43aa0fdcaab9e8ceae519cef9dfe5cdf6e
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87283098"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235641"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>다중 테 넌 트 응용 프로그램에 대 한 자동 사용자 프로 비전 사용
 
@@ -54,7 +54,7 @@ Azure AD는 응용 프로그램에 대 한 자동 사용자 프로비저닝을 �
 
 * [AZURE Ad 프로 비전 서비스](../app-provisioning/user-provisioning.md) 는 azure ad에서 응용 프로그램에 대 한 사용자 프로 비전 및 프로 비전 해제 (아웃 바운드 프로 비전) 및 응용 프로그램에서 azure ad로 (인바운드 프로 비전)를 관리 합니다. 서비스는 응용 프로그램에서 제공 하는 SCIM (도메인 간 Id 관리) 사용자 관리 API 끝점에 대 한 시스템에 연결 합니다.
 
-* [Microsoft Graph](https://docs.microsoft.com/graph/)사용 하는 경우 응용 프로그램은 Microsoft Graph API를 쿼리하여 Azure AD에서 응용 프로그램에 대 한 사용자 및 그룹의 인바운드 및 아웃 바운드 프로 비전을 관리 합니다.
+* [Microsoft Graph](/graph/)사용 하는 경우 응용 프로그램은 Microsoft Graph API를 쿼리하여 Azure AD에서 응용 프로그램에 대 한 사용자 및 그룹의 인바운드 및 아웃 바운드 프로 비전을 관리 합니다.
 
 * 응용 프로그램에서 페더레이션에 SAML를 사용 하는 경우에는 SAML JIT (Security Assertion Markup Language Just-in-time) 사용자 프로 비전을 사용 하도록 설정할 수 있습니다. SAML 토큰에 전송 된 클레임 정보를 사용 하 여 사용자를 프로 비전 합니다.
 
@@ -72,8 +72,8 @@ Azure AD는 응용 프로그램에 대 한 자동 사용자 프로비저닝을 �
 | 게스트 계정 지원 (B2B)| √| √| √ |
 | 엔터프라이즈가 아닌 계정 지원 (B2C)| X| √| √ |
 
-<sup>*</sup>– AD에서 Azure AD로 사용자를 동기화 하려면 Azure AD Connect 설치 해야 합니다.  
-<sup>+</sup >– 프로 비전에 SCIM을 사용 하는 경우 다른 용도로 MIcrosoft Graph와 응용 프로그램을 통합 하는 것을 배제 하지 않습니다.
+<sup>*</sup> – AD에서 Azure AD로 사용자를 동기화 하려면 Azure AD Connect 설치 해야 합니다.  
+<sup>+</sup >– 프로 비전에 SCIM을 사용 하는 경우 다른 용도로 응용 프로그램을 Microsoft Graph와 통합 하는 것을 배제 하지 않습니다.
 
 ## <a name="azure-ad-provisioning-service-scim"></a>Azure AD 프로 비전 서비스 (SCIM)
 
@@ -89,7 +89,7 @@ Azure AD 프로 비전 서비스 사용자의 SCIM 방법에 대 한 자세한 �
 
 ## <a name="microsoft-graph-for-provisioning"></a>프로 비전을 위한 Microsoft Graph
 
-프로 비전에 Microsoft Graph를 사용 하는 경우 Graph에서 사용할 수 있는 모든 리치 사용자 데이터에 액세스할 수 있습니다. 사용자 및 그룹의 세부 정보 외에도 사용자의 역할, 관리자 및 부하 직원, 소유 및 등록 된 장치, [Microsoft Graph](https://docs.microsoft.com/graph/api/overview?view=graph-rest-1.0)에서 사용할 수 있는 수백 개의 기타 데이터 부분과 같은 추가 정보를 가져올 수 있습니다. 
+프로 비전에 Microsoft Graph를 사용 하는 경우 Graph에서 사용할 수 있는 모든 리치 사용자 데이터에 액세스할 수 있습니다. 사용자 및 그룹의 세부 정보 외에도 사용자의 역할, 관리자 및 부하 직원, 소유 및 등록 된 장치, [Microsoft Graph](/graph/api/overview?view=graph-rest-1.0)에서 사용할 수 있는 수백 개의 기타 데이터 부분과 같은 추가 정보를 가져올 수 있습니다. 
 
 1500만 개 이상의 조직 및 fortune 500 회사의 90%는 Office 365, Microsoft Azure, Enterprise Mobility Suite 또는 Microsoft 365와 같은 Microsoft 클라우드 서비스를 구독 하는 동안 Azure AD를 사용 합니다. Microsoft Graph를 사용 하 여 직원 온 보 딩 (종료), 프로필 유지 관리 등의 관리 워크플로와 앱을 통합할 수 있습니다. 
 
@@ -97,9 +97,9 @@ Azure AD 프로 비전 서비스 사용자의 SCIM 방법에 대 한 자세한 �
 
 * [Microsoft Graph 홈페이지](https://developer.microsoft.com/graph)
 
-* [Microsoft Graph 개요](https://docs.microsoft.com/graph/overview)
+* [Microsoft Graph 개요](/graph/overview)
 
-* [Microsoft Graph Auth 개요](https://docs.microsoft.com/graph/auth/)
+* [Microsoft Graph Auth 개요](/graph/auth/)
 
 * [Microsoft Graph 시작](https://developer.microsoft.com/graph/get-started)
 

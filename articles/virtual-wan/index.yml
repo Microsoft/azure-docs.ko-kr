@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: cherylmc
   ms.author: cherylmc
-  ms.date: 05/08/2020
-  ms.openlocfilehash: 14336a28630e7a62a19e2b3a51934950cf12e2f8
-  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+  ms.date: 08/19/2020
+  ms.openlocfilehash: 772fa134eabc45dcbaa9e9b05c573aec493dd57b
+  ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85564034"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "89438161"
 landingContent:
 - title: 가상 WAN 정보
   linkLists:
@@ -25,6 +25,8 @@ landingContent:
       url: virtual-wan-about.md
   - linkListType: concept
     links:
+    - text: Virtual WAN으로 마이그레이션
+      url: migrate-from-hub-spoke-topology.md
     - text: 위치 및 파트너 작업
       url: virtual-wan-locations-partners.md
     - text: FAQ
@@ -39,24 +41,60 @@ landingContent:
       url: virtual-wan-expressroute-portal.md
     - text: 사용자 VPN(지점 및 사이트 간) 연결 만들기
       url: virtual-wan-point-to-site-portal.md
-  - linkListType: how-to-guide
-    links:
-    - text: Virtual WAN 파트너에 대한 자동화 구성
-      url: virtual-wan-configure-automation-providers.md
   - linkListType: concept
     links:
     - text: IPsec 연결에 대한 기본 정책
       url: virtual-wan-ipsec.md
+    - text: Virtual WAN 파트너를 위한 자동화 지침
+      url: virtual-wan-configure-automation-providers.md
+  - linkListType: how-to-guide
+    links:
+    - text: 허브에서 NVA 만들기
+      url: how-to-nva-hub.md
+    - text: Virtual WAN용 ExpressRoute를 통한 IPsec 구성
+      url: vpn-over-expressroute.md
+    - text: Virtual WAN에 VPN Gateway 연결
+      url: connect-virtual-network-gateway-vwan.md
 - title: Architecture
   linkLists:
   - linkListType: concept
     links:
     - text: Virtual WAN으로 마이그레이션
       url: migrate-from-hub-spoke-topology.md
+  - linkListType: architecture
+    links:
     - text: 글로벌 전송 네트워크 아키텍처
       url: virtual-wan-global-transit-network-architecture.md
     - text: SD-WAN 연결 아키텍처
       url: sd-wan-connectivity-architecture.md
+- title: 라우팅
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 가상 허브 라우팅 정보
+      url: about-virtual-hub-routing.md
+    - text: 시나리오 - NVA를 통한 트래픽 라우팅
+      url: scenario-route-through-nva.md
+    - text: 시나리오 - 보편적 연결(Any-to-Any)
+      url: scenario-any-to-any.md
+    - text: 시나리오 - VNet 격리
+      url: scenario-isolate-vnets.md
+    - text: 시나리오 - 공유 서비스 VNet
+      url: scenario-shared-services-vnet.md
+  - linkListType: how-to-guide
+    links:
+    - text: 가상 허브 라우팅 구성
+      url: how-to-virtual-hub-routing.md
+- title: 모니터링
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Azure Monitor Insights를 사용한 모니터링
+      url: azure-monitor-insights.md
+  - linkListType: how-to-guide
+    links:
+    - text: Azure Monitor 로그 및 메트릭 구성
+      url: azure-monitor-insights.md
 - title: 참조
   linkLists:
   - linkListType: reference

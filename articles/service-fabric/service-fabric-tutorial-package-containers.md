@@ -7,10 +7,10 @@ ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
 ms.openlocfilehash: cc1d6e04b19d36f0ca8c7ed4b2bb3d62f5e8e15a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "78252759"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>자습서: Yeoman을 사용하여 Service Fabric 애플리케이션으로 컨테이너 패키징 및 배포
@@ -60,7 +60,7 @@ Service Fabric은 Yeoman 템플릿 생성기를 사용하여 터미널에서 애
     ```
 2. "TestContainer"를 입력하여 애플리케이션의 이름을 지정하세요.
 3. "azurevotefront"를 입력하여 애플리케이션 서비스의 이름을 지정하세요.
-4. 예를 들어 '\<acrName>.azurecr.io/azure-vote-front:v1'과 같이 프런트 엔드 리포지토리에 대해 ACR의 컨테이너 이미지 경로를 제공합니다. \<acrName> 필드는 이전 자습서에서 사용된 값과 동일해야 합니다.
+4. 프런트 엔드 리포지토리에 대한 ACR의 컨테이너 이미지 경로를 제공합니다(예: '\<acrName>.azurecr.io/azure-vote-front:v1'). \<acrName> 필드는 이전 자습서에서 사용된 값과 동일해야 합니다.
 5. 명령 섹션을 비어 두려면 Enter 키를 누릅니다.
 6. 1이라는 인스턴스 수를 지정합니다.
 

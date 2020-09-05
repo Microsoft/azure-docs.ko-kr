@@ -1,18 +1,21 @@
 ---
 title: 고객과 위임된 리소스 보기 및 관리
-description: Azure Lighthouse를 사용 하는 서비스 공급자는 Azure Portal 내 고객으로 이동 하 여 위임 된 모든 고객 리소스 및 구독을 볼 수 있습니다.
-ms.date: 07/06/2020
+description: Azure Lighthouse를 사용 하는 서비스 공급자나 enterprise로, Azure Portal 내 고객으로 이동 하 여 위임 된 모든 리소스 및 구독을 볼 수 있습니다.
+ms.date: 08/12/2020
 ms.topic: how-to
-ms.openlocfilehash: f509a91d71caa3ab1ec8282f4151556f7c10d52c
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 165110556282e90bbacf4ce3b3c59e34b203a528
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133283"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167201"
 ---
 # <a name="view-and-manage-customers-and-delegated-resources"></a>고객과 위임된 리소스 보기 및 관리
 
-[Azure Lighthouse](../overview.md) 를 사용 하는 서비스 공급자는 [Azure Portal](https://portal.azure.com) 의 **내 고객** 페이지를 사용 하 여 위임 된 고객 리소스 및 구독을 볼 수 있습니다. 여기서는 서비스 공급자 및 고객 관련 내용을 다루지만, 여러 테넌트를 관리하는 기업은 동일한 프로세스를 사용하여 관리 환경을 통합할 수 있습니다.
+[Azure Lighthouse](../overview.md) 를 사용 하는 서비스 공급자는 [Azure Portal](https://portal.azure.com) 의 **내 고객** 페이지를 사용 하 여 위임 된 고객 리소스 및 구독을 볼 수 있습니다. 
+
+> [!TIP]
+> 여기서는 서비스 공급자 및 고객을 참조 하지만, [여러 테 넌 트를 관리](../concepts/enterprise.md) 하는 기업은 동일한 프로세스를 사용 하 여 관리 환경을 통합할 수 있습니다.
 
 Azure Portal의 **내 고객** 페이지에 액세스하려면 **모든 서비스**를 선택한 다음, **내 고객**을 검색하여 선택합니다. Azure Portal 맨 위에 있는 검색 상자에 "내 고객"을 입력하여 찾을 수도 있습니다.
 
@@ -42,7 +45,7 @@ Azure Portal의 **내 고객** 페이지에 액세스하려면 **모든 서비�
 
 ## <a name="view-and-manage-delegations"></a>위임 보기 및 관리
 
-위임에는 위임된 구독/리소스 그룹과 해당 액세스 권한이 있는 사용자 및 권한이 함께 표시됩니다. 이 정보를 보려면 **내 고객** 페이지의 왼쪽에서 **위임**을 선택합니다.
+위임에는 액세스 권한이 있는 사용자 및 권한과 함께 위임 된 구독 또는 리소스 그룹이 표시 됩니다. 이 정보를 보려면 **내 고객** 페이지의 왼쪽에서 **위임**을 선택합니다.
 
 페이지 맨 위에 있는 필터를 사용하여 액세스 할당 정보를 정렬 및 그룹화하거나 특정 고객, 제품 또는 키워드를 기준으로 필터링할 수 있습니다.
 
@@ -56,7 +59,7 @@ Azure Lighthouse에 고객을 온 보 딩 할 때 [관리 서비스 등록 할�
 
 ## <a name="work-in-the-context-of-a-delegated-subscription"></a>위임된 구독의 컨텍스트에서 작업
 
-작업 중인 디렉터리를 전환하지 않고 Azure Portal 내의 위임된 구독 컨텍스트에서 직접 작업할 수 있습니다. 이를 수행하려면:
+작업 중인 디렉터리를 전환하지 않고 Azure Portal 내의 위임된 구독 컨텍스트에서 직접 작업할 수 있습니다. 이렇게 하려면
 
 1. Azure Portal 위쪽에 있는 **디렉터리 + 구독** 아이콘을 선택합니다.
 2. **전역구독** 필터에서 위임된 구독에 대한 확인란만 선택되어 있는지 확인합니다. **현재 + 위임된 디렉터리** 드롭다운 상자를 사용하여 특정 디렉터리 내의 구독만 표시할 수 있습니다. (디렉터리가 로그인된 디렉터리로 변경되므로 **디렉터리 전환**을 사용하지 마세요.)

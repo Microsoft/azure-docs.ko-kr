@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 05/11/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b15250804dd316000aa20d6b97e9cccbfc36e9ad
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2d48483697970333c542f140567ca6a6d3fcf7d2
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85359095"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179150"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>중복된 특성 동기화 오류 진단 및 수정
 
@@ -58,7 +58,7 @@ Azure AD에 대한 자세한 내용은 [ID 동기화 및 중복 특성 복원력
 | OnPremiseSecurityIdentifier |  AttributeValueMustBeUnique |
 
 >[!IMPORTANT]
-> 이 기능에 액세스하려면 RBAC 설정의 **전역 관리자** 권한 또는 **기여자** 권한이 필요합니다.
+> 이 기능에 액세스 하려면 Azure RBAC의 **전역 관리자** 권한 또는 **참가자** 권한이 필요 합니다.
 >
 
 Azure Portal의 단계에 따라 동기화 오류 세부 정보 범위를 좁히고 좀 더 구체적인 솔루션을 제공하세요.
@@ -68,7 +68,7 @@ Azure Portal의 단계에 따라 동기화 오류 세부 정보 범위를 좁히
 Azure Portal에서 몇 가지 단계를 수행하여 수정 가능한 시나리오를 식별합니다.  
 1.  **상태 진단** 열을 확인합니다. 상태를 보면 Azure Active Directory에서 직접 동기화 오류를 수정할 수 있는지 알 수 있습니다. 즉, 오류 사례 범위를 좁히고 오류를 해결할 수 있는 문제 해결 흐름이 있습니다.
 
-| 상태 | 무엇을 의미하나요? |
+| Status | 무엇을 의미하나요? |
 | ------------------ | -----------------|
 | 시작 안함 | 이 진단 프로세스를 방문하지 않았습니다. 진단 결과에 따라 포털에서 바로 동기화 오류를 해결하는 방법이 있습니다. |
 | 수동 수정 필요 | 이 오류는 포털에서 사용할 수 있는 수정 기준에 맞지 않습니다. 충돌하는 개체 형식이 사용자가 아니거나, 이미 진단 단계를 진행했지만 포털에서 사용할 수 있는 해결 방법이 없습니다. 후자에 속하는 경우 온-프레미스 쪽에서의 수정은 여전히 솔루션 중 하나입니다. [온-프레미스 수정에 대해 자세히 알아보세요](https://support.microsoft.com/help/2647098). | 
@@ -148,7 +148,7 @@ Azure AD의 클라우드 기반 사용자에게는 원본 앵커가 없어야 �
 
 
 **Q.** 수정을 적용하려면 사용자에게 어떤 권한이 필요한가요?  
-**A.** RBAC 설정의 **전역 관리자** 또는 **기여자**는 진단 및 문제 해결 프로세스에 액세스할 수 있는 권한이 있습니다.
+**A.** Azure RBAC의 **전역 관리자**또는 **참가자** 에 게는 진단 및 문제 해결 프로세스에 액세스할 수 있는 권한이 있습니다.
 
 
 **Q.** 이 기능에 대해 Azure AD Connect를 구성하거나 Azure AD Connect Health 에이전트를 업데이트해야 하나요?  

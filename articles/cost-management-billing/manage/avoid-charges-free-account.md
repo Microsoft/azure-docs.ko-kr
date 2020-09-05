@@ -4,15 +4,16 @@ description: Azure 무료 계정에 요금이 표시되는 이유를 이해합�
 author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/12/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 557e099b4250d5514920aa6c22399ce225f35d92
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f81c33f3b49352933801c8b89a2c3a1787c2356a
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200951"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88682929"
 ---
 # <a name="avoid-charges-with-your-azure-free-account"></a>Azure 체험 계정으로 요금 청구 방지
 
@@ -23,7 +24,6 @@ Azure 무료 계정에 요금이 부과되는 몇 가지 이유를 알아보겠�
 ## <a name="your-credit-runs-out-or-is-expired"></a>크레딧이 소진되었거나 만료되었습니다.
 
 크레딧이 부족하거나 30일이 만료된 경우 구독 및 서비스가 비활성화됩니다. Azure 서비스를 계속 사용하려면 계정을 업그레이드해야 합니다. 자세한 내용은 [Azure 체험 계정 업그레이드](upgrade-azure-subscription.md)를 참조하세요. 업그레이드 후에는 12개월 무료 서비스에 계속 액세스할 수 있으며 무료 서비스 및 수량을 초과하는 사용량에 대해서만 요금이 청구됩니다.
-
 
 ## <a name="usage-exceeds-the-limits-of-free-services"></a>사용량이 평가판 서비스 한도를 초과했습니다.
 

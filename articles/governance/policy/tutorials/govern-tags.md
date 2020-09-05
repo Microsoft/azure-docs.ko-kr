@@ -1,14 +1,14 @@
 ---
 title: '자습서: 태그 거버넌스 관리'
 description: 이 자습서에서는 Azure Policy의 Modify 효과를 사용하여 신규 및 기존 리소스에 대한 태그 거버넌스 모델을 만들고 적용합니다.
-ms.date: 04/21/2020
+ms.date: 08/17/2020
 ms.topic: tutorial
-ms.openlocfilehash: 8b3d0db100a601950ec82824897a3ba3e5145b79
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
+ms.openlocfilehash: f49eedb00c98d3c362140fdca9b195a086903f10
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84142268"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545508"
 ---
 # <a name="tutorial-manage-tag-governance-with-azure-policy"></a>자습서: Azure Policy를 사용하여 태그 거버넌스 관리
 
@@ -45,7 +45,7 @@ Azure Policy의 [Modify](../concepts/effects.md#modify) 효과는 리소스 거�
 
 ## <a name="configure-the-costcenter-tag"></a>CostCenter 태그 구성
 
-Azure Policy로 관리되는 Azure 환경과 관련하여 _CostCenter_ 태그 요구 사항은 다음을 호출합니다.
+Azure Policy로 관리되는 Azure 환경과 관련하여 _CostCenter_ 태그 요구 사항은 다음과 같은 결과를 호출합니다.
 
 - _CostCenter_ 태그가 누락된 Deny 리소스 그룹
 - 누락된 경우 부모 리소스 그룹의 _CostCenter_ 태그를 추가하도록 리소스 수정
@@ -107,7 +107,7 @@ Azure Policy로 관리되는 Azure 환경과 관련하여 _CostCenter_ 태그 �
 
 ## <a name="configure-the-env-tag"></a>Env 태그 구성
 
-Azure Policy로 관리되는 Azure 환경과 관련하여 _Env_ 태그 요구 사항은 다음을 호출합니다.
+Azure Policy로 관리되는 Azure 환경과 관련하여 _Env_ 태그 요구 사항은 다음 결과를 호출합니다.
 
 - 리소스 그룹의 이름 지정 체계를 기반으로 리소스 그룹의 _Env_ 태그를 수정합니다.
 - 리소스 그룹의 모든 리소스에서 _Env_ 태그를 부모 리소스 그룹과 동일하게 수정합니다.

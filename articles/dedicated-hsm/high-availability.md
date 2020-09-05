@@ -1,6 +1,6 @@
 ---
 title: 고가용성 - Azure Dedicated HSM | Microsoft Docs
-description: Azure Dedicated HSM 고가용성 예제 및 기본적인 고려 사항
+description: Azure 전용 HSM 고가용성을 위한 기본 고려 사항에 대해 알아봅니다. 이 문서에는 예제가 포함 되어 있습니다.
 services: dedicated-hsm
 author: msmbaldwin
 manager: rkarlin
@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 536ef62acad900090924598edfa45450b2a8c951
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f8fa2f12825fe88218fe7033a1721cb49fc7335
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70882259"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189852"
 ---
 # <a name="azure-dedicated-hsm-high-availability"></a>Azure Dedicated HSM 고가용성
 
@@ -25,7 +25,7 @@ Azure Dedicated HSM은 Microsoft의 고가용성 데이터 센터에서 기반�
 
 ## <a name="high-availability-example"></a>고가용성 예제
 
-소프트웨어 수준에서 고가용성에 대한 HSM 디바이스를 구성하는 방법에 대한 내용은 'Gemalto Luna Network HSM 관리 가이드'에 있습니다. 이 문서는 [GEMALTO HSM 페이지](https://safenet.gemalto.com/data-encryption/hardware-security-modules-hsms/safenet-network-hsm/)에서 사용할 수 있습니다.
+소프트웨어 수준에서 고가용성에 대한 HSM 디바이스를 구성하는 방법에 대한 내용은 'Gemalto Luna Network HSM 관리 가이드'에 있습니다. 이 문서는  [GEMALTO HSM 페이지](https://safenet.gemalto.com/data-encryption/hardware-security-modules-hsms/safenet-network-hsm/)에서 사용할 수 있습니다.
 
 다음 다이어그램에서는 고가용성 아키텍처를 보여 줍니다. 이 아키텍처는 지역에서 여러 디바이스 및 별도 지역에서 연결된 여러 디바이스를 사용합니다. 또한 최소 4개의 HSM 디바이스 및 가상 네트워킹 구성 요소도 사용합니다.
 

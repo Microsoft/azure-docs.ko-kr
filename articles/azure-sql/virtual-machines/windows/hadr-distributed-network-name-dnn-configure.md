@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 7c40f4d9f86f27af34c1bc649483810f6756c41d
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 8eb9caf466148e43266c4be9cf1308da15fb67f2
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169819"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245539"
 ---
 # <a name="configure-a-distributed-network-name-for-an-fci"></a>FCI에 대 한 분산 네트워크 이름 구성 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -156,6 +156,29 @@ Start-ClusterResource -Name dnn-demo
 연결을 테스트하려면 동일한 가상 네트워크의 다른 가상 머신에 로그인합니다. **SQL Server Management Studio** 를 열고 DNN DNS 이름을 사용 하 여 SQL Server fci에 연결 합니다.
 
 필요한 경우 [SQL Server Management Studio를 다운로드](/sql/ssms/download-sql-server-management-studio-ssms)할 수 있습니다.
+
+## <a name="avoid-ip-conflict"></a>IP 충돌 방지
+
+FCI 리소스에서 사용 하는 VIP (가상 IP) 주소가 Azure의 다른 리소스에 중복으로 할당 되는 것을 방지 하는 선택적 단계입니다. 
+
+이제 고객이 DNN를 사용 하 여 SQL Server FCI에 연결 하지만 FCI 인프라의 필수 구성 요소인 VNN (가상 네트워크 이름) 및 가상 IP를 삭제할 수 없습니다. 그러나 Azure에서 가상 IP 주소를 예약 하는 부하 분산 장치는 더 이상 없으므로 가상 네트워크의 다른 리소스에 FCI가 사용 하는 가상 IP 주소와 동일한 IP 주소가 할당 될 위험이 있습니다. 이로 인해 중복 된 IP 충돌 문제가 발생할 수 있습니다. 
+
+IP 주소를 예약 하도록 APIPA 주소 또는 전용 네트워크 어댑터를 구성 합니다. 
+
+### <a name="apipa-address"></a>APIPA 주소
+
+중복 IP 주소를 사용 하지 않으려면 APIPA 주소 (링크-로컬 주소 라고도 함)를 구성 합니다. 이렇게 하려면 다음 명령을 실행합니다.
+
+```powershell
+Get-ClusterResource "virtual IP address" | Set-ClusterParameter 
+    –Multiple @{"Address”=”169.254.1.1”;”SubnetMask”=”255.255.0.0”;"OverrideAddressMatch"=1;”EnableDhcp”=0}
+```
+
+이 명령에서 "가상 IP 주소"는 클러스터 된 VIP 주소 리소스의 이름이 고 "(169.254.1.1과"는 VIP 주소에 대해 선택한 APIPA 주소입니다. 비즈니스에 가장 적합 한 주소를 선택 합니다. `OverrideAddressMatch=1`APIPA 주소 공간을 포함 하 여 모든 네트워크에서 IP 주소를 허용 하도록 설정 합니다. 
+
+### <a name="dedicated-network-adapter"></a>전용 네트워크 어댑터
+
+또는 Azure에서 가상 IP 주소 리소스에 사용 되는 IP 주소를 예약 하도록 네트워크 어댑터를 구성 합니다. 그러나 이렇게 하면 서브넷 주소 공간의 주소가 사용 되 고 네트워크 어댑터를 다른 용도로 사용 하지 않도록 하는 추가 오버 헤드가 발생 합니다.
 
 ## <a name="limitations"></a>제한 사항
 

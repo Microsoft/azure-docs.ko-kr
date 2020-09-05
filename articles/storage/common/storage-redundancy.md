@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/08/2020
+ms.date: 08/24/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 556d3df41b7ee66bfb2b32b8a566d7172f45e313
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 407853152d4f18d8f8daacd8ef7d19c878384076
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88034467"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871159"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage 중복성
 
@@ -24,7 +24,7 @@ Azure Storage는 항상 계획된 이벤트 그리고 일시적인 하드웨어 
 시나리오에 가장 적합한 중복성 옵션을 결정할 때에는 저렴한 비용과 높은 가용성 및 내구성 간의 균형을 고려하세요. 선택해야 하는 중복성 옵션을 결정하는 데 도움이 되는 요소는 다음과 같습니다.  
 
 - 기본 지역에서 데이터를 복제하는 방법
-- 지역 재해를 방지하기 위해 지리적으로 기본 지역과 멀리 떨어진 두 번째 위치에 데이터가 복제되는지 여부
+- 지역 재해 로부터 보호 하기 위해 주 지역에 지리적으로 떨어져 있는 두 번째 지역에 데이터를 복제 하는지 여부
 - 어떤 이유로든 기본 지역을 사용할 수 없는 경우 보조 지역의 복제된 데이터에 대한 읽기 액세스 권한이 응용 프로그램에 필요한지 여부
 
 ## <a name="redundancy-in-the-primary-region"></a>기본 지역의 중복성
@@ -64,8 +64,8 @@ ZRS는 데이터를 일시적으로 사용할 수 없는 경우 탁월한 성능
 | Storage 계정 유형 | 지원되는 지역 | 지원되는 서비스 |
 |--|--|--|
 | 범용 v2<sup>1</sup> | 동남아시아<br /> 오스트레일리아 동부<br /> 북유럽<br />  서유럽<br /> 프랑스 중부<br /> 일본 동부<br /> 남아프리카 북부<br /> 영국 남부<br /> 미국 중부<br /> 미국 동부<br /> 미국 동부 2<br /> 미국 서부 2 | 블록 Blob<br /> 페이지 Blob<sup>2</sup><br /> 파일 공유(표준)<br /> 테이블<br /> 큐<br /> |
-| BlockBlobStorage<sup>1</sup> | 동남아시아<br /> 오스트레일리아 동부<br /> 서유럽<br /> 미국 동부 | 프리미엄 블록 blob만 |
-| FileStorage | 동남아시아<br /> 오스트레일리아 동부<br /> 서유럽<br /> 미국 동부 | 프리미엄 파일만 공유 |
+| BlockBlobStorage<sup>1</sup> | 동남아시아<br /> 오스트레일리아 동부<br /> 북유럽<br /> 서유럽<br /> 미국 동부 <br /> 미국 서부 2| 프리미엄 블록 blob만 |
+| FileStorage | 동남아시아<br /> 오스트레일리아 동부<br /> 북유럽<br /> 서유럽<br /> 미국 동부 <br /> 미국 서부 2 | 프리미엄 파일만 공유 |
 
 <sup>1</sup> 보관 계층은 현재 ZRS 계정에 지원되지 않습니다.<br />
 <sup>2</sup> 가상 컴퓨터에 대한 Azure 관리 디스크를 포함하는 저장소 계정은 항상 LRS를 사용합니다. Azure 비관리 디스크는 LRS도 사용해야 합니다. GRS를 사용하는 Azure 비관리 디스크에 대한 저장소 계정을 만들 수 있지만 비동기 지역에서 복제에 대한 일관성 문제로 인해 권장되지는 않습니다. 관리 디스크 및 비관리 디스크는 모두 ZRS 또는 GZRS를 지원하지 않습니다. 관리 디스크에 대한 자세한 내용은 [Azure 관리 디스크의 가격 책정](https://azure.microsoft.com/pricing/details/managed-disks/)을 참조하세요.
@@ -83,9 +83,9 @@ Azure Storage는 보조 지역으로 데이터를 복사하기 위한 다음과 
 - **GRS(지역 중복 저장소)** 는 LRS를 사용하여 기본 지역의 단일 물리적 위치 내에서 데이터를 동기적으로 세 번 복사합니다. 그런 다음 보조 지역의 단일 물리적 위치에 데이터를 비동기적으로 복사합니다.
 - **GZRS(지역 영역 중복 저장소)** 는 ZRS를 사용하여 기본 지역에 있는 3개의 Azure 가용성 영역에서 데이터를 동기적으로 복사합니다. 그런 다음 보조 지역의 단일 물리적 위치에 데이터를 비동기적으로 복사합니다.
 
-GRS와 GZRS의 주요 차이점은 기본 지역에서 데이터가 복제되는 방식입니다. 보조 위치 내에서 데이터는 항상 LRS를 사용하여 동기적으로 세 번 복제됩니다. 보조 지역의 LRS는 하드웨어 오류 로부터 데이터를 보호 합니다.
+GRS와 GZRS의 주요 차이점은 기본 지역에서 데이터가 복제되는 방식입니다. 보조 지역 내에서 데이터는 항상 LRS를 사용 하 여 동기적으로 세 번 복제 됩니다. 보조 지역의 LRS는 하드웨어 오류 로부터 데이터를 보호 합니다.
 
-GRS 또는 GZRS를 사용하면 보조 지역에 대한 장애 조치(failover)가 없는 한 읽기 또는 쓰기 액세스를 위해 보조 위치의 데이터를 사용할 수 없습니다. 보조 위치에 대한 읽기 액세스의 경우 RA-GRS(읽기 액세스 지역 중복 저장소) 또는 RA-GZRS(읽기 액세스 지역 영역 중복 저장소)를 사용하도록 저장소 계정을 구성합니다. 자세한 내용은 [보조 지역의 데이터에 대한 읽기 권한](#read-access-to-data-in-the-secondary-region)을 참조하세요.
+GRS 또는 GZRS를 사용 하는 경우 보조 지역에 대 한 장애 조치 (failover)가 없으면 보조 지역의 데이터를 읽기 또는 쓰기 액세스에 사용할 수 없습니다. 보조 지역에 대 한 읽기 액세스의 경우 읽기 액세스 지역 중복 저장소 (RA-GRS) 또는 읽기 액세스 지역 중복 저장소 (RA-GZRS)를 사용 하도록 저장소 계정을 구성 합니다. 자세한 내용은 [보조 지역의 데이터에 대한 읽기 권한](#read-access-to-data-in-the-secondary-region)을 참조하세요.
 
 기본 지역을 사용할 수 없는 경우에는 보조 지역에 대해 장애 조치(failover)하도록 선택할 수 있습니다. 장애 조치(failover)가 완료되면 보조 지역은 기본 지역이 되고 데이터를 다시 읽고 쓸 수 있습니다. 재해 복구에 대한 자세한 내용 및 보조 지역에 대해 장애 조치(failover)하는 방법은 [재해 복구 및 저장소 계정 장애 조치(failover)](storage-disaster-recovery-guidance.md)를 참조하세요.
 

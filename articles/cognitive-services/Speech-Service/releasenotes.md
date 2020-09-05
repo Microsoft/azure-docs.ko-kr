@@ -8,23 +8,102 @@ manager: jhakulin
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: f2aebee24c4de8a1bd92ad3db8e5d110184cbaee
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 8df54adf8f3aeaa58e30d6d9218cec8bec8c1121
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87415026"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88525924"
 ---
 # <a name="speech-service-release-notes"></a>Speech Service 릴리스 정보
+
+## <a name="text-to-speech-2020-august-release"></a>텍스트 음성 변환 2020-8 월 릴리스
+
+### <a name="new-features"></a>새로운 기능
+
+* **신경망: 새 말하기 스타일 `en-US` Aria 음성**. AriaNeural는 뉴스를 읽을 때 newscaster 처럼 들릴 수 있습니다. ' Newscast-공식 ' 스타일은 더 심각 하 게 들리지만 ' newscast-일반 ' 스타일은 더 낮은 수준에서 비공식적입니다. [SSML에서 말하는 스타일을 사용 하는 방법을](speech-synthesis-markup.md)참조 하세요.
+
+* **사용자 지정 음성: 학습 데이터 품질을 자동으로 확인 하기 위해 새로운 기능이 출시 되었습니다**. 데이터를 업로드 하면 시스템에서 오디오 및 성적 데이터의 다양 한 측면을 검사 하 고, 음성 모델의 품질을 향상 시키기 위해 문제를 자동으로 해결 하거나 필터링 합니다. 오디오 및 스크립트 형식 외에도 오디오의 볼륨, 노이즈 수준, 음성의 발음 정확도, 표준화 된 텍스트가 있는 음성 맞춤, 오디오의 무음 등을 다룹니다. 
+
+* **오디오 콘텐츠 생성: 강력한 음성 조정 및 오디오 관리 기능을 제공 하는 새로운 기능 집합**입니다.
+
+    * 발음: 음성 조정 기능이 최신 음소 집합으로 업데이트 됩니다. 라이브러리에서 right 음소 요소를 선택 하 고 선택한 단어의 발음을 구체화할 수 있습니다. 
+
+    * 다운로드: 단락에서 오디오 생성을 지원 하도록 오디오 "다운로드"/"내보내기" 기능이 향상 되었습니다. 여러 오디오 출력을 생성 하는 동안 동일한 파일/SSML에서 콘텐츠를 편집할 수 있습니다. "다운로드"의 파일 구조도 구체화 됩니다. 이제 단일 폴더에 있는 모든 오디오 os를 쉽게 가져올 수 있습니다. 
+
+    * 작업 상태: 다중 파일 내보내기 환경이 개선 되었습니다. 과거에 여러 파일을 내보낼 때 파일 중 하나가 실패 하면 전체 작업이 실패 합니다. 그러나 이제 다른 모든 파일은 성공적으로 내보내집니다. 작업 보고서는 보다 상세 하 고 구조화 된 정보로 보강 됩니다. 이제 보고서를 사용 하 여 실패 한 모든 파일 및 문장의 로그를 확인할 수 있습니다. 
+
+    * SSML 설명서: 모든 튜닝 기능을 사용 하는 방법에 대 한 규칙을 확인 하는 데 도움이 되는 SSML 문서에 연결 됩니다.
+
+* **음성 목록 API는 사용자에 게 친숙 한 표시 이름과 신경망에 대해 지원 되는 말하는 스타일을 포함 하도록 업데이트 됩니다**.
+
+### <a name="general-tts-voice-quality-improvements"></a>일반 TTS 음성 품질 향상
+
+* 단어 수준 발음 오류% 감소 `ru-RU` (오류 56% 감소) 및 `sv-SE` (오류 49% 감소)
+
+* 신경망에서 polyphony 단어가 `en-US` 40%까지 향상 되었습니다. Polyphony 단어의 예로는 "읽기", "라이브", "콘텐츠", "레코드", "개체" 등이 있습니다. 
+
+* 에서 발신음의 naturalness 향상 `fr-FR` 되었습니다. MOS (평균 의견 점수) 이득: + 0.28
+
+* Vocoders는 다음과 같은 음성에 대해 향상 된 기능 및 전반적인 성능 속도를 40%로 업데이트 했습니다.
+
+    | Locale | 음성 |
+    |---|---|    
+    | `en-GB` | Mia |
+    | `es-MX` | Dalia |
+    | `fr-CA` | Sylvie |
+    | `fr-FR` | Denise |
+    | `ja-JP` | Nanami |
+    | `ko-KR` | Sun-Hi |
+
+### <a name="bug-fixes"></a>버그 수정
+
+* 오디오 콘텐츠 생성 도구를 사용 하 여 많은 버그 수정 
+    * 자동 새로 고침 문제를 해결 했습니다. 
+    * 남부 동아시아 지역에서 zh-cn의 음성 스타일 문제를 수정 했습니다.
+    * ' Break ' 태그가 있는 내보내기 오류 및 문장 부호 오류를 포함 하 여 안정성 문제가 수정 되었습니다.    
+
+## <a name="new-speech-to-text-locales-2020-august-release"></a>새 음성 텍스트 로캘: 2020-8 월 릴리스
+8 월에는 음성 텍스트에서 26 개의 새 로캘이 출시 되었습니다. 2 유럽 언어 `cs-CZ` 와 `hu-HU` , 영어 (미국) 로캘, 영어 (미국)를 포함 하는 스페인어 로캘이 모두 포함 됩니다. 다음은 새 로캘의 목록입니다. [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support)에서 전체 언어 목록을 참조 하세요.
+
+| Locale  | 언어                          |
+|---------|-----------------------------------|
+| `cs-CZ` | 체코어(체코)            | 
+| `en-HK` | 영어 (홍콩)               | 
+| `en-IE` | 영어(아일랜드)                 | 
+| `en-PH` | 영어(필리핀)             | 
+| `en-SG` | 영어(싱가포르)               | 
+| `en-ZA` | 영어(남아프리카)            | 
+| `es-AR` | 스페인어(아르헨티나)               | 
+| `es-BO` | 스페인어(볼리비아)                 | 
+| `es-CL` | 스페인어(칠레)                   | 
+| `es-CO` | 스페인어(콜롬비아)                | 
+| `es-CR` | 스페인어(코스타리카)              | 
+| `es-CU` | 스페인어 (쿠바)                    | 
+| `es-DO` | 스페인어(도미니카 공화국)      | 
+| `es-EC` | 스페인어(에콰도르)                 | 
+| `es-GT` | 스페인어(과테말라)               | 
+| `es-HN` | 스페인어(온두라스)                | 
+| `es-NI` | 스페인어(니카라과)               | 
+| `es-PA` | 스페인어(파나마)                  | 
+| `es-PE` | 스페인어(페루)                    | 
+| `es-PR` | 스페인어(푸에르토리코)             | 
+| `es-PY` | 스페인어(파라과이)                | 
+| `es-SV` | 스페인어(엘살바도르)             | 
+| `es-US` | 스페인어 (미국)                     | 
+| `es-UY` | 스페인어(우루과이)                 | 
+| `es-VE` | 스페인어(베네수엘라)               | 
+| `hu-HU` | 헝가리어(헝가리)               | 
+
 
 ## <a name="speech-sdk-1130-2020-july-release"></a>Speech SDK 1.13.0:2020-7 월 릴리스
 
 **참고**: Windows의 Speech SDK는 Visual Studio 2015, 2017 및 2019에 대 한 공유 Microsoft Visual C++ 재배포 가능 패키지에 따라 달라 집니다. [여기](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)에서 다운로드하여 설치합니다.
 
-**새 기능**
+**새로운 기능**
 - **C #**: 비동기 대화 기록을 위한 지원이 추가 되었습니다. [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-async-conversation-transcription)에서 설명서를 참조 하세요.  
 - **JavaScript**: [브라우저](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/browser/speaker-recognition) 와 [node.js](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/speaker-recognition)에 대 한 Speaker Recognition 지원이 추가 되었습니다.
 - **JavaScript**: 자동 언어 검색/언어 ID에 대 한 지원이 추가 되었습니다. [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-automatic-language-detection?pivots=programming-language-javascript)에서 설명서를 참조 하세요.
@@ -125,7 +204,7 @@ ms.locfileid: "87415026"
     -   `spx help batch examples`
     -   `spx help csr examples`
 
-**새 기능**
+**새로운 기능**
 -   **C \# , c + +**: Speaker Recognition 미리 보기:이 기능은 스피커 식별 (말하는 사람) 및 스피커 확인을 가능 하 게 합니다 (이것이 되도록 주장 하나요?). [개요](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/speaker-recognition-overview)부터 시작 하 여 [Speaker Recognition 기본 문서](https://docs.microsoft.com/azure/cognitive-services/speech-service/speaker-recognition-basics)또는 [API 참조](https://docs.microsoft.com/rest/api/speakerrecognition/)문서를 참고 하세요.
 
 **버그 수정**
@@ -147,7 +226,7 @@ ms.locfileid: "87415026"
 **음성 CLI (SPX로도 인식)**
 - **SPX** 는 명령줄에서 인식, 합성, 번역, 배치 기록 및 사용자 지정 음성 관리를 수행할 수 있도록 하는 새로운 명령줄 도구입니다. 이를 사용 하 여 음성 서비스를 테스트 하거나 수행 해야 하는 음성 서비스 작업을 스크립팅할 수 있습니다. 도구를 다운로드 하 고 [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-overview)에서 설명서를 읽으십시오.
 
-**새 기능**
+**새로운 기능**
 - **Go**: [음성 인식](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone?pivots=programming-language-go) 및 [사용자 지정 음성 도우미](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/voice-assistants?pivots=programming-language-go)에 대 한 새로운 go 언어 지원. [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?pivots=programming-language-go)에서 개발 환경을 설정 합니다. 샘플 코드는 아래의 샘플 섹션을 참조 하세요. 
 - **JavaScript**: 텍스트 음성 변환에 대 한 브라우저 지원이 추가 되었습니다. [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/text-to-speech-audio-file?pivots=programming-language-JavaScript)에서 설명서를 참조 하세요.
 - **C + +, c #, Java**: `KeywordRecognizer` Windows, Android, Linux & iOS 플랫폼에서 지원 되는 새 개체 및 api. [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-keyword-overview)에서 설명서를 참조 하세요. 샘플 코드는 아래의 샘플 섹션을 참조 하세요. 
@@ -178,14 +257,14 @@ ms.locfileid: "87415026"
 정상 상태를 유지 하세요.
 
 ## <a name="speech-sdk-1110-2020-march-release"></a>Speech SDK 1.11.0:2020-3 월 릴리스
-**새 기능**
+**새로운 기능**
 - Linux: Speech SDK 용 시스템을 구성 하는 방법에 대 한 [지침](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-configure-rhel-centos-7) 과 함께 RED HAT ENTERPRISE LINUX (RHEL)/CentOS 7 x64에 대 한 지원이 추가 되었습니다.
 - Linux: Linux ARM32 및 ARM64의 .NET Core c #에 대 한 지원이 추가 되었습니다. 자세한 내용은 [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=linux)를 읽어보세요. 
 - C #, c + +: `UtteranceId` `ConversationTranscriptionResult` 모든 intermediates 및 최종 음성 인식 결과에서 일관 된 ID를에 추가 했습니다. [C #](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?view=azure-dotnet), [c + +](https://docs.microsoft.com/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult)에 대 한 세부 정보입니다.
 - Python:에 대 한 지원이 추가 되었습니다 `Language ID` . [GitHub 리포지토리의](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console)speech_sample py를 참조 하세요.
 - Windows: 모든 win32 콘솔 응용 프로그램에 대해 Windows 플랫폼에서 압축 된 오디오 입력 형식 지원을 추가 했습니다. 자세한 내용은 [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams)를 참조 하세요. 
-- JavaScript: NodeJS에서 음성 합성 (텍스트-음성)을 지원 합니다. [여기](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech)를 참조하세요. 
-- JavaScript: 모든 송신 및 수신 메시지를 검사할 수 있도록 새 API를 추가 합니다. [여기](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript)를 참조하세요. 
+- JavaScript: NodeJS에서 음성 합성 (텍스트-음성)을 지원 합니다. [여기](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech)에서 자세한 내용을 알아보세요. 
+- JavaScript: 모든 송신 및 수신 메시지를 검사할 수 있도록 새 API를 추가 합니다. [여기](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript)에서 자세한 내용을 알아보세요. 
         
 **버그 수정**
 - C #, c + +: `SendMessageAsync` 이제 이진 메시지를 이진 형식으로 전송 하는 문제가 해결 되었습니다. [C #](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [c + +](https://docs.microsoft.com/cpp/cognitive-services/speech/connection)에 대 한 세부 정보입니다.
@@ -204,7 +283,7 @@ ms.locfileid: "87415026"
 
 ## <a name="speech-sdk-1100-2020-february-release"></a>Speech SDK 1.10.0:2020-2 월 릴리스
 
-**새 기능**
+**새로운 기능**
 
  - Python의 새로운 3.8 릴리스를 지 원하는 Python 패키지를 추가 했습니다.
  - Red Hat Enterprise Linux (RHEL)/CentOS 8 x64 지원 (c + +, c #, Java, Python).
@@ -248,9 +327,9 @@ ms.locfileid: "87415026"
 
 **주요 변경 내용**
 
-- `OpenSSL`는 버전 1.1.1 b로 업데이트 되었으며 Linux 용 Speech SDK core 라이브러리에 정적으로 연결 됩니다. 이로 인해 수신함이 `OpenSSL` 시스템의 디렉터리에 설치 되지 않은 경우에는 중단 될 수 있습니다 `/usr/lib/ssl` . 문제를 해결 하려면 Speech SDK 문서에서 [설명서](how-to-configure-openssl-linux.md) 를 확인 하세요.
+- `OpenSSL` 는 버전 1.1.1 b로 업데이트 되었으며 Linux 용 Speech SDK core 라이브러리에 정적으로 연결 됩니다. 이로 인해 수신함이 `OpenSSL` 시스템의 디렉터리에 설치 되지 않은 경우에는 중단 될 수 있습니다 `/usr/lib/ssl` . 문제를 해결 하려면 Speech SDK 문서에서 [설명서](how-to-configure-openssl-linux.md) 를 확인 하세요.
 - C #에 대해 반환 되는 데이터 형식을 `WordLevelTimingResult.Offset` 에서로 변경 하 여 `int` `long` `WordLevelTimingResults` 음성 데이터가 2 분 보다 오래 된 경우에 액세스할 수 있습니다.
-- `PushAudioInputStream`이제를 기반으로 하 여 `PullAudioInputStream` wav 헤더 정보를 음성 서비스에 보냅니다 `AudioStreamFormat` .이 정보는 생성 시 선택적으로 지정 됩니다. 이제 고객이 [지원 되는 오디오 입력 형식을](how-to-use-audio-input-streams.md)사용 해야 합니다. 다른 모든 형식은 최적의 인식 결과를 얻거나 다른 문제를 일으킬 수 있습니다. 
+- `PushAudioInputStream` 이제를 기반으로 하 여 `PullAudioInputStream` wav 헤더 정보를 음성 서비스에 보냅니다 `AudioStreamFormat` .이 정보는 생성 시 선택적으로 지정 됩니다. 이제 고객이 [지원 되는 오디오 입력 형식을](how-to-use-audio-input-streams.md)사용 해야 합니다. 다른 모든 형식은 최적의 인식 결과를 얻거나 다른 문제를 일으킬 수 있습니다. 
 
 **버그 수정**
 
@@ -299,8 +378,8 @@ ms.locfileid: "87415026"
 
 **샘플**
 
-- 용 Xamarin 샘플`KeywordRecognizer`
-- 용 Unity 샘플`KeywordRecognizer`
+- 용 Xamarin 샘플 `KeywordRecognizer`
+- 용 Unity 샘플 `KeywordRecognizer`
 - 자동 소스 언어 감지에 대 한 c + + 및 Java 샘플입니다.
 
 ## <a name="speech-sdk-170-2019-september-release"></a>Speech SDK 1.7.0:2019-9 월 릴리스
@@ -323,7 +402,7 @@ ms.locfileid: "87415026"
 - 일부 연결 속성에서 고유 하지 않은 Uuid와 관련 된 문제가 해결 됨
 - Swift 바인딩에서 null 허용 여부 지정자에 대 한 몇 가지 경고를 수정 했습니다 (작은 코드를 변경 해야 할 수 있음).
 - 네트워크 로드를 통해 websocket 연결을 비정상적 하는 버그를 수정 했습니다.
-- Android에서 때때로 중복 된 임프레션 Id를 사용 하는 문제를 수정 했습니다.`DialogServiceConnector`
+- Android에서 때때로 중복 된 임프레션 Id를 사용 하는 문제를 수정 했습니다. `DialogServiceConnector`
 - 에서 발생 하는 다중 턴 상호 작용 및 오류 보고 (이벤트를 통해)의 연결 안정성이 향상 되었습니다. `Canceled``DialogServiceConnector`
 - `DialogServiceConnector`세션 시작은 이제 활성 상태에서를 호출 하는 경우를 포함 하 여 이벤트를 올바르게 제공 합니다. `ListenOnceAsync()``StartKeywordRecognitionAsync()`
 - 수신 중인 활동과 연결 된 충돌을 해결 했습니다. `DialogServiceConnector`
@@ -341,14 +420,14 @@ ms.locfileid: "87415026"
 - UWP 및 Unity의 텍스트를 음성으로 변환 하기 위한 빠른 시작 샘플
 - IOS의 Swift에 대 한 빠른 시작 샘플
 - 음성 & 의도 인식 및 번역을 위한 Unity 샘플
-- 업데이트 된 빠른 시작 샘플`DialogServiceConnector`
+- 업데이트 된 빠른 시작 샘플 `DialogServiceConnector`
 
 **향상된 기능/변경 사항**
 
 - 대화 상자 네임 스페이스:
   - `SpeechBotConnector`는 `DialogServiceConnector`로 이름이 변경되었습니다.
   - `BotConfig`는 `DialogServiceConfig`로 이름이 변경되었습니다.
-  - `BotConfig::FromChannelSecret()`다음으로 다시 매핑 되었습니다.`DialogServiceConfig::FromBotSecret()`
+  - `BotConfig::FromChannelSecret()` 다음으로 다시 매핑 되었습니다. `DialogServiceConfig::FromBotSecret()`
   - 이름 바꾸기 후에는 기존의 모든 Direct Line Speech 클라이언트도 계속 지원 됩니다.
 - 프록시, 영구 연결을 지원 하도록 TTS REST 어댑터 업데이트
 - 잘못 된 지역이 전달 되 면 오류 메시지 개선
@@ -378,7 +457,7 @@ ms.locfileid: "87415026"
 
 ## <a name="speech-sdk-150-2019-may-release"></a>Speech SDK 1.5.0:2019-릴리스 수
 
-**새 기능**
+**새로운 기능**
 
 - 이제 Windows 및 Linux에서 KWS (Keyword 발견)를 사용할 수 있습니다. KWS 기능은 모든 마이크 종류에 사용할 수 있지만, 공식 KWS 지원은 현재 Azure Kinect 진한 하드웨어 또는 음성 장치 SDK에 있는 마이크 배열로 제한 되어 있습니다.
 - 구문 힌트 기능은 SDK를 통해 사용할 수 있습니다. 자세한 내용은 [여기](how-to-phrase-lists.md)를 참조하세요.
@@ -412,7 +491,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 
 ## <a name="speech-sdk-140-2019-april-release"></a>Speech SDK 1.4.0:2019-4 월 릴리스
 
-**새 기능**
+**새로운 기능**
 
 - 이제 SDK는 텍스트 음성 변환 서비스를 베타 버전으로 지원 합니다. C + + 및 c #의 Windows 및 Linux 데스크톱에서 지원 됩니다. 자세한 내용은 [텍스트 음성 변환 개요](text-to-speech.md#get-started)를 참조 하세요.
 - 이제 SDK는 MP3 및 Opus/OGG 오디오 파일을 스트림 입력 파일로 지원 합니다. 이 기능은 c + + 및 c #의 Linux 에서만 사용할 수 있으며 현재 베타 버전입니다 (자세한 내용은 [여기](how-to-use-codec-compressed-audio-input-streams.md)참조).
@@ -518,7 +597,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 - Android
   - APK 생성 중에 ProGuard 지원이 설정되었습니다.
 
-**개선 사항**
+**향상 된 기능**
 
 - 스레드, 잠금, 뮤텍스 수를 줄이면서 내부 스레드 사용이 개선되었습니다.
 - 오류 보고/정보가 개선되었습니다. 일부 경우에는 오류 메시지가 모든 방식으로 전파 되지 않습니다.
@@ -550,7 +629,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 - 프록시 지원: 개체에서 `SpeechConfig` 이제 함수를 호출 하 여 프록시 정보 (호스트 이름, 포트, 사용자 이름 및 암호)를 설정할 수 있습니다. iOS에서는 아직 이 기능을 사용할 수 없습니다.
 - 향상된 오류 코드 및 메시지입니다. 인식이 오류를 반환한 경우 이미 `Reason`(취소된 이벤트의) 또는 `CancellationDetails`(인식 결과의) `Error`로 설정되어 있습니다. 취소 이벤트에는 이제 두 개의 추가 멤버 `ErrorCode` 및 `ErrorDetails`가 포함됩니다. 서버에서 보고된 오류를 사용하여 추가 오류 정보를 반환하는 경우 해당 서버를 새 멤버에서 사용할 수 있습니다.
 
-**개선 사항**
+**향상 된 기능**
 
 - 인식기 구성에서 추가 확인을 추가하고, 추가 오류 메시지를 추가했습니다.
 - 오디오 파일의 중간에 긴 무음 시간 처리가 향상되었습니다.
@@ -589,7 +668,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 
 ## <a name="cognitive-services-speech-sdk-100-2018-september-release"></a>Cognitive Services Speech SDK 1.0.0: 2018년 9월 release
 
-**새 기능**
+**새로운 기능**
 
 - iOS에서 Objective-C를 지원합니다. [iOS용 Objective-C 빠른 시작](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone-langs/objectivec-ios.md)을 확인하세요.
 - 브라우저에서 JavaScript를 지원합니다. [JavaScript 빠른 시작](quickstart-js-browser.md)을 확인하세요.
@@ -601,7 +680,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 
 ## <a name="cognitive-services-speech-sdk-060-2018-august-release"></a>Cognitive Services Speech SDK 0.6.0: 2018년 8월 릴리스
 
-**새 기능**
+**새로운 기능**
 
 - Speech SDK를 사용하여 빌드된 UWP 앱은 이제 WACK(Windows 앱 인증 키트)를 전달할 수 있습니다.
   [UWP 빠른 시작](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-chsarp&tabs=uwp)을 확인하세요.
@@ -627,7 +706,7 @@ JavaScript 전용 릴리스입니다. 추가한 기능은 없습니다. 다음�
 
 ## <a name="cognitive-services-speech-sdk-050-2018-july-release"></a>Cognitive Services Speech SDK 0.5.0: 2018년 7월 릴리스
 
-**새 기능**
+**새로운 기능**
 
 - Android 플랫폼(API 23: Android 6.0 Marshmallow 이상)을 지원합니다. [Android 빠른 시작](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-java&tabs=android)을 확인하세요.
 - Windows에서 .NET Standard 2.0을 지원합니다. [.NET Core 빠른 시작](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore)을 확인하세요.

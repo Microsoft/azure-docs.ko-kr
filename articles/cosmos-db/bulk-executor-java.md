@@ -6,16 +6,16 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: how-to
-ms.date: 06/05/2020
+ms.date: 08/26/2020
 ms.author: ramkris
 ms.reviewer: sngun
 ms.custom: devx-track-java
-ms.openlocfilehash: a45a47b36ca0e9c426c84bb4b9f87ee5bdeccb84
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 5adc15eb7beab4d54156456ee447a7e6039b6c6d
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87309157"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88892612"
 ---
 # <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Bulk Executor Java 라이브러리를 사용하여 Azure Cosmos DB 데이터에서 대량 작업 수행
 
@@ -23,7 +23,7 @@ ms.locfileid: "87309157"
 
 현재 대량 실행자 라이브러리는 Azure Cosmos DB SQL API 및 Gremlin API 계정 에서만 지원 됩니다. 이 문서에서는 SQL API 계정에서 대량 실행 기 Java 라이브러리를 사용 하는 방법을 설명 합니다. Bulk Executor .NET 라이브러리 사용에 대해 알아보려면 [Azure Cosmos DB Gremlin API에서 대량 작업 수행](bulk-executor-graph-dotnet.md)을 참조하세요. 설명 된 대량 실행자 라이브러리는 [Azure Cosmos DB java SYNC SDK](sql-api-sdk-java.md) v 2에만 사용할 수 있으며 java 대량 지원을 위한 현재 권장 솔루션입니다. 이 버전은 현재 2.x, 4.x 또는 기타 상위 SDK 버전에서 사용할 수 없습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)을 만듭니다.  
 
@@ -183,7 +183,8 @@ BulkUpdateAsync API를 사용하여 기존 문서를 업데이트할 수 있습�
    |int getNumberOfDocumentsUpdated()  |   대량 업데이트 API 호출에 적용된 문서 중에서 성공적으로 업데이트된 총 문서 수입니다.      |
    |double getTotalRequestUnitsConsumed() |  대량 업데이트 API 호출에서 사용한 총 요청 단위(RU)입니다.       |
    |Duration getTotalTimeTaken()  |   실행을 완료하기까지 대량 업데이트 API 호출에서 사용하는 총 시간입니다.      |
-   |List\<Exception> getErrors()   |       대량 업데이트 API 호출에 적용된 일괄 처리 중에서 일부 문서가 삽입에 실패한 경우 오류의 목록을 가져옵니다.      |
+   |List\<Exception> getErrors()   |       업데이트 작업과 관련 된 운영 또는 네트워킹 문제 목록을 가져옵니다.      |
+   |\<BulkUpdateFailure>Getfailedupdates () 나열   |       오류가 발생 하는 특정 예외와 함께 완료할 수 없는 업데이트 목록을 가져옵니다.|
 
 3. 대량 업데이트 애플리케이션을 준비한 후, ‘mvn clean package’ 명령을 사용하여 원본의 명령줄 도구를 빌드합니다. 이 명령은 대상 폴더에서 jar 파일을 생성합니다.  
 

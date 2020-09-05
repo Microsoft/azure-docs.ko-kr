@@ -2,26 +2,21 @@
 title: '자습서: Maxient Conduct Manager Software와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 Maxient Conduct Manager Software 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 85e71b76-cac3-4ce6-a35f-796d2cb7bdb5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09399f59e61ded49fef5a2388900b7b478111119
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: dd6872fd8dca3f29b61c6f1dffb5f219abac5cb8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83847194"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518894"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-maxient-conduct-manager-software"></a>자습서: Maxient Conduct Manager Software와 Azure Active Directory SSO(Single Sign-On) 통합
 
@@ -113,7 +108,7 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 ## <a name="test-with-maxient"></a>Maxient로 테스트 
 
-지원 티켓이 아직 Maxient 구현/지원 담당자에게 열려 있지 않으면, "캠퍼스 기반 인증/Azure 설정 - \<\<학교 이름\>\>" 제목을 사용해서 [support@maxient.com](mailto:support@maxient.com)으로 이메일을 전송하세요. 이메일 본문에는 **앱 페더레이션 메타데이터 URL**을 제공하세요. Maxient 직원은 적절한 특성이 릴리스되는지 확인하기 위한 테스트 링크를 제공합니다.  
+지원 티켓이 아직 Maxient 구현/지원 담당자에게 열려 있지 않으면, "캠퍼스 기반 인증/Azure 설정 - \<\<School Name\>\>" 제목을 사용해서 [support@maxient.com](mailto:support@maxient.com)으로 이메일을 전송하세요. 이메일 본문에는 **앱 페더레이션 메타데이터 URL**을 제공하세요. Maxient 직원은 적절한 특성이 릴리스되는지 확인하기 위한 테스트 링크를 제공합니다.  
     
 ## <a name="additional-resources"></a>추가 리소스
 

@@ -4,12 +4,12 @@ description: Azure Migrate서비스의 지원 설정 및 제한 사항에 대한
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.author: raynew
-ms.openlocfilehash: fae5af9c8717604d71ec2bf2628ea25125d5b2d5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: aac7b7d39102a1fe115ddea483aee36af79e7fc4
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87022721"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612115"
 ---
 # <a name="azure-migrate-support-matrix"></a>Azure Migrate 지원 매트릭스
 
@@ -45,7 +45,7 @@ Azure Migrate 서버 마이그레이션 | 해당 없음 | [VMware VM](tutorial-m
 [DMA](/sql/dma/dma-overview?view=sql-server-2017) | SQL Server 데이터베이스를 평가 합니다. | 해당 없음
 [DMS](../dms/dms-overview.md) | 해당 없음 | SQL Server, Oracle, MySQL, PostgreSQL 및 MongoDB를 마이그레이션합니다. 
 [Lakeside](https://go.microsoft.com/fwlink/?linkid=2104908) | VDI(가상 데스크톱 인프라)를 평가합니다. | 해당 없음
-[Movere](https://www.movere.io/) | VMWare VM, Hyper-V VM, Xen VM, 물리적 머신, 워크스테이션(VDI 포함) 및 퍼블릭 클라우드 워크로드를 평가합니다. | 해당 없음
+[Movere](https://www.movere.io/) | VMware Vm, Hyper-v Vm, Xen Vm, 물리적 컴퓨터, 워크스테이션 (VDI 포함), 공용 클라우드 워크 로드 평가 | 해당 없음
 [RackWare](https://go.microsoft.com/fwlink/?linkid=2102735) | 해당 없음 | VMWare VM, Hyper-V VM, Xen VM, KVM VM, 물리적 머신 및 퍼블릭 클라우드 워크로드를 마이그레이션합니다. 
 [Turbonomic](https://go.microsoft.com/fwlink/?linkid=2094295)  | VMware VM, Hyper-V VM, 물리적 서버 및 퍼블릭 클라우드 워크로드를 평가합니다. | 해당 없음
 [UnifyCloud](https://go.microsoft.com/fwlink/?linkid=2097195) | VMware VM, Hyper-V VM, 물리적 서버, 퍼블릭 클라우드 워크로드 및 SQL Server 데이터베이스를 평가합니다. | 해당 없음

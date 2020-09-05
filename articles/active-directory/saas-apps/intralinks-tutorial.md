@@ -2,25 +2,21 @@
 title: '자습서: Intralinks와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Intralinks 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 147f2bf9-166b-402e-adc4-4b19dd336883
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: b4a3b525cd2f9c4f28ad27154be2590fa6a96691
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8ac46e2ded68c268b8b19bab810e5c1425f189bb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67099887"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549175"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intralinks"></a>자습서: Intralinks와 Azure Active Directory 통합
 

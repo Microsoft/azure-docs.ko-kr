@@ -6,12 +6,12 @@ author: jnoller
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: jenoller
-ms.openlocfilehash: be80c0d5999ed06bcc505ec5737e7e416d28b981
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c51b5c4d9cd7362aeda0a0998d8031d0ba358ce1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87050689"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012350"
 ---
 # <a name="support-policies-for-azure-kubernetes-service"></a>Azure Kubernetes Service에 대한 지원 정책
 
@@ -20,7 +20,7 @@ ms.locfileid: "87050689"
 ## <a name="service-updates-and-releases"></a>서비스 업데이트 및 릴리스
 
 * 릴리스 정보는 [AKS 릴리스 정보](https://github.com/Azure/AKS/releases)를 참조하세요.
-* 미리 보기 상태인 기능에 대한 자세한 내용은 [AKS 미리 보기 기능 및 관련 프로젝트](https://github.com/Azure/AKS/blob/master/previews.md)를 참조하세요.
+* 미리 보기 상태인 기능에 대한 자세한 내용은 [AKS 미리 보기 기능 및 관련 프로젝트](https://awesomeopensource.com/projects/aks?categoryPage=11)를 참조하세요.
 
 ## <a name="managed-features-in-aks"></a>AKS의 관리 기능
 
@@ -149,7 +149,7 @@ AKS는 업스트림 Kubernetes 프로젝트 내에서 안정적인 기능만 지
 다음 두 시나리오에서 알파 또는 베타 기능이 일반 공급 전에 롤아웃될 수 있습니다.
 
 * 고객이 AKS 제품, 지원 또는 엔지니어링 팀과 만났고 새로운 해당 기능을 사용해 달라고 요청받은 경우
-* 해당 기능이 [기능 플래그](https://github.com/Azure/AKS/blob/master/previews.md)를 사용하여 설정된 경우 고객은 이러한 기능을 사용하도록 명시적으로 옵트인해야 합니다.
+* 해당 기능이 [기능 플래그](https://awesomeopensource.com/projects/aks?categoryPage=11)를 사용하여 설정된 경우 고객은 이러한 기능을 사용하도록 명시적으로 옵트인해야 합니다.
 
 ## <a name="preview-features-or-feature-flags"></a>미리 보기 기능 또는 기능 플래그
 

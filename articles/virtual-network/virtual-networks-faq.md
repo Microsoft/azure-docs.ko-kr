@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 19c08029e78e68273298e76635136ff35ae724e0
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: c242b08c598b04c84ab330e846704eace23c4858
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87924124"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88205478"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Azure Virtual Network FAQ(질문과 대답)
 
@@ -191,7 +191,7 @@ Azure에서 제공하는 DNS를 사용한 테넌트 간 이름 확인에 대한 
 ## <a name="azure-services-that-connect-to-vnets"></a>VNet에 연결하는 Azure 서비스
 
 ### <a name="can-i-use-azure-app-service-web-apps-with-a-vnet"></a>VNet에 Azure App Service Web Apps를 사용할 수 있습니까?
-예. ASE (App Service Environment)를 사용 하 여 VNet 내부에 Web Apps을 배포 하 고, VNet 통합을 사용 하 여 Vnet에 앱 백 엔드를 연결 하 고, 서비스 끝점을 사용 하 여 앱에 대 한 인바운드 트래픽을 잠글 수 있습니다. 자세한 내용은 다음 아티클을 참조하세요.
+예. ASE (App Service Environment)를 사용 하 여 VNet 내부에 Web Apps을 배포 하 고, VNet 통합을 사용 하 여 Vnet에 앱 백 엔드를 연결 하 고, 서비스 끝점을 사용 하 여 앱에 대 한 인바운드 트래픽을 잠글 수 있습니다. 자세한 내용은 다음 문서를 참조하세요.
 
 * [App Service 네트워킹 기능](../app-service/networking-features.md)
 * [App Service 환경에서 Web Apps 만들기](../app-service/environment/app-service-web-how-to-create-a-web-app-in-an-ase.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -356,7 +356,7 @@ VNet 서비스 엔드포인트는 Azure 서비스 리소스 보호에 도움이 
 예, 구성할 수 있습니다. 가상 네트워크 및 Azure 서비스 리소스는 동일한 구독이나 서로 다른 구독에 있을 수 있습니다. 유일한 요구사항은 가상 네트워크와 Azure 서비스 리소스가 모두 AD(Active Directory) 테넌트에 있어야 한다는 것입니다.
 
 ### <a name="can-i-turn-on-vnet-service-endpoints-and-set-up-vnet-acls-if-the-virtual-network-and-the-azure-service-resources-belong-to-different-ad-tenants"></a>가상 네트워크 및 Azure 서비스 리소스가 서로 다른 AD 테넌트에 속해 있는 경우 VNet 서비스 엔드포인트를 켜고 VNet ACL을 설정할 수 있나요?
-아니요, AD 테넌트 간에는 VNet 서비스 엔드포인트와 VNet AC이 지원되지 않습니다.
+예, Azure Storage 및 Azure Key Vault에 대 한 서비스 끝점을 사용할 수 있습니다. 서비스의 나머지 부분에서는 VNet 서비스 끝점 및 VNet Acl이 AD 테 넌 트에서 지원 되지 않습니다.
 
 ### <a name="can-an-on-premises-devices-ip-address-that-is-connected-through-azure-virtual-network-gateway-vpn-or-expressroute-gateway-access-azure-paas-service-over-vnet-service-endpoints"></a>Azure Virtual Network gateway (VPN) 또는 Express 경로 게이트웨이를 통해 연결 된 온-프레미스 장치의 IP 주소가 VNet 서비스 끝점을 통해 Azure PaaS 서비스에 액세스할 수 있나요?
 기본적으로 가상 네트워크에 대해 보호된 Azure 서비스 리소스는 온-프레미스 네트워크에서 연결할 수 없습니다. 온-프레미스의 트래픽을 허용하려는 경우 온-프레미스 또는 ExpressRoute의 공용 IP 주소(일반적으로 NAT)도 허용해야 합니다. Azure 서비스 리소스에 대한 IP 방화벽 구성을 통해 해당 IP 주소를 추가할 수 있습니다.

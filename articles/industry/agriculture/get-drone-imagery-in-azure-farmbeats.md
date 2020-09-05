@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 3e452cd548738e5f211899d3a6a676f883d800ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 04f0c3c63d00ea49bf43f00f256266599a73d6c0
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77132041"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88508807"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>드 론 파트너에서 드 론 이미지 가져오기
 
@@ -53,9 +53,9 @@ FarmBeats와의 통합을 사용 하도록 설정 하려면 장치 공급자에 
 5. 파일이 업로드 된 디렉터리로 이동 합니다. 기본적으로 사용자 이름 아래의 홈 디렉터리에 업로드 됩니다.
 6. 다음 스크립트를 실행합니다.
 
-    ```azurepowershell-interactive 
+    ```azurepowershell-interactive
 
-    ./generateCredentials.ps1   
+    ./generateCredentials.ps1
 
     ```
 

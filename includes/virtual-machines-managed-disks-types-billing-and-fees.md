@@ -1,5 +1,5 @@
 ---
-title: 파일 포함
+title: 포함 파일
 description: 포함 파일
 services: virtual-machines
 author: roygara
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/22/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 2303d36e93cecfca03894a8b0e55458c03b13d78
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c0627dd0833e3b20468eb5f50fbeb9fd9d9ae2b3
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73412989"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88864882"
 ---
 **아웃바운드 데이터 전송**: [아웃바운드 데이터 전송](https://azure.microsoft.com/pricing/details/bandwidth/) (Azure 데이터 센터에서 데이터 전송) 시 대역폭 사용량에 대해 청구가 발생합니다.
 
@@ -26,7 +26,7 @@ ms.locfileid: "73412989"
 Azure Vm은 ultra disks와 호환 되는지 여부를 나타내는 기능을 포함 합니다. 울트라 디스크 호환 VM은 컴퓨팅 VM 인스턴스와 블록 스토리지 배율 단위 간에 전용 대역폭 용량을 할당하여 성능을 최적화하고 대기 시간을 줄입니다. VM에 이 기능을 추가하면 울트라 디스크를 연결하지 않고 VM에서 울트라 디스크 기능을 활성화한 경우에만 적용되는 예약 요금이 발생합니다. 울트라 디스크 호환 VM에 울트라 디스크가 연결되면 이 요금이 적용되지 않습니다. 이 요금은 VM에서 프로비전되는 vCPU당 부과됩니다. 
 
 > [!Note]
-> [제약 된 코어 VM 크기](../articles/virtual-machines/linux/constrained-vcpu.md)의 경우 예약 요금은 제약 된 코어가 아닌 실제 vcpus 수를 기반으로 합니다. Standard_E32 8s_v3의 경우 예약 요금은 32 코어를 기준으로 합니다. 
+> [제약 된 코어 VM 크기](../articles/virtual-machines/constrained-vcpu.md)의 경우 예약 요금은 제약 된 코어가 아닌 실제 vcpus 수를 기반으로 합니다. Standard_E32 8s_v3의 경우 예약 요금은 32 코어를 기준으로 합니다. 
 
 울트라 디스크 가격 책정에 대 한 자세한 내용은 [Azure 디스크 가격 책정 페이지](https://azure.microsoft.com/pricing/details/managed-disks/) 를 참조 하세요.
 

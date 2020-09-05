@@ -7,12 +7,13 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: 8776ecae982a4b1c67f6b66f16fceec930a561f0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: ec98d194921cd9a7eced06ccee20a3375e8c8a82
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85392134"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89008695"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Azure Cosmos DB와 함께 쿼리 성능 튜닝
 
@@ -136,7 +137,7 @@ REST API 요청 헤더 및 옵션에 대한 자세한 내용은 [Querying resour
 ## <a name="best-practices-for-query-performance"></a>쿼리 성능에 대한 모범 사례
 Azure Cosmos DB 쿼리 성능에 영향을 주는 가장 일반적인 요소는 다음과 같습니다. 이 문서에서 이러한 각 항목에 대해 자세히 살펴보겠습니다.
 
-| 요소 | 팁 | 
+| 요인 | 팁 | 
 | ------ | -----| 
 | 프로비전된 처리량 | 쿼리당 RU를 측정하고 사용자 쿼리에 필요한 프로비전된 처리량이 있는지 확인합니다. | 
 | 분할 및 파티션 키 | 짧은 대기 시간을 위해 필터 절에 파티션 키가 있는 쿼리를 선호합니다. |

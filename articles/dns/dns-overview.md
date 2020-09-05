@@ -6,12 +6,12 @@ ms.service: dns
 ms.topic: overview
 ms.date: 3/21/2019
 ms.author: rohink
-ms.openlocfilehash: 1543c0daae7d637730a5f8f9da2305423ba7f84e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: d59f166897674e9dcff8086b8f5c906605155ee3
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76932396"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924277"
 ---
 # <a name="what-is-azure-dns"></a>Azure DNS란?
 
@@ -29,7 +29,7 @@ Azure DNS의 DNS 도메인은 DNS 이름 서버의 Azure 글로벌 네트워크�
 
  Azure DNS에서 Azure Resource Manager를 기반으로 하여 제공하는 기능은 다음과 같습니다.
 
-* [역할 기반 액세스 제어](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) - 조직에 대한 특정 작업에 액세스하는 사람을 제어할 수 있습니다.
+* [Azure RBAC(Azure 역할 기반 액세스 제어)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) - 조직에 대한 특정 작업에 액세스하는 사람을 제어할 수 있습니다.
 
 * [활동 로그](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) - 문제를 해결할 때 조직의 사용자가 리소스를 수정한 방법을 모니터링하거나 오류를 찾을 수 있습니다.
 
@@ -70,4 +70,3 @@ Azure DNS는 별칭 레코드 집합을 지원합니다. 별칭 레코드 세트
 * Azure DNS에 영역을 만드는 방법을 알아보려면 [DNS 영역 만들기](./dns-getstarted-create-dnszone-portal.md)를 참조하세요.
 
 * Azure DNS에 대한 질문과 대답을 보려면 [Azure DNS FAQ](dns-faq.md)를 참조하세요.
-

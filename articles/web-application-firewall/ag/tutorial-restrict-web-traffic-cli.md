@@ -4,16 +4,16 @@ description: Azure CLI를 사용하여 애플리케이션 게이트웨이에서 
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 05/21/2020
+ms.date: 08/31/2020
 ms.author: victorh
-ms.topic: overview
+ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 50aaf4f2639f48e5536e6eeaba5edbc246b2bba7
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: faa46b3ad96e9555a08a662f205a0a130c28bac2
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501068"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89225172"
 ---
 # <a name="enable-web-application-firewall-using-the-azure-cli"></a>Azure CLI를 사용하여 Web Application Firewall 활성화
 
@@ -21,11 +21,10 @@ ms.locfileid: "87501068"
 
 이 문서에서는 다음 방법을 설명합니다.
 
-> [!div class="checklist"]
-> * 네트워크 설정
-> * WAF를 사용하는 애플리케이션 게이트웨이 만들기
-> * 가상 머신 확장 집합 만들기
-> * 스토리지 계정 만들기 및 진단 구성
+ * 네트워크 설정
+ * WAF를 사용하는 애플리케이션 게이트웨이 만들기
+ * 가상 머신 확장 집합 만들기
+ * 스토리지 계정 만들기 및 진단 구성
 
 ![Web Application Firewall 예제](../media/tutorial-restrict-web-traffic-cli/scenario-waf.png)
 

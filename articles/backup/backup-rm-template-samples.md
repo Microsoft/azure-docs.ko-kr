@@ -4,12 +4,12 @@ description: Recovery Services 자격 증명 모음 및 Azure Backup 기능과 �
 ms.topic: sample
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: 09962a37f36621950189e9446099c349de9430bb
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 29a2499bfd3125cad98e72f7543bb9a29293f624
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170992"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755197"
 ---
 # <a name="azure-resource-manager-templates-for-azure-backup"></a>Azure Backup용 Azure Resource Manager 템플릿
 

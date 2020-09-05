@@ -2,26 +2,21 @@
 title: '자습서: Edcor와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Edcor 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 5b06f2d8-9cd7-498d-bdd6-88570a0a0a15
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/04/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17913d4d2fae54c5efa03a6cf30c66071b01bf40
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 17ba3e1a1a3fd016258a44ea92d81df5680755e5
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157262"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555470"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edcor"></a>자습서: Edcor와 Azure Active Directory 통합
 

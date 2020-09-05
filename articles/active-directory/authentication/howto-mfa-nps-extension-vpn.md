@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc2030f589185fd39c0f10b00c012db038a4e008
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: 13ed87903845d9f8295e56f187b643d73fbfb04e
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85848728"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717883"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Azure용 네트워크 정책 서버 확장을 사용하여 VPN 인프라를 Azure MFA와 통합
 
@@ -41,7 +41,7 @@ Azure용 NPS(네트워크 정책 서비스) 확장을 사용하면 조직에서 
 * 디바이스가 허용되거나 제한되지 않는지 또는 네트워크 리소스에 대한 액세스가 제한되는지 여부를 결정하는 NAP(네트워크 액세스 보호) 클라이언트 상태 정책을 설정하고 적용합니다.
 
 * 802.1x 지원 무선 액세스 지점 및 이더넷 스위치에 액세스하기 위한 인증 및 권한 부여를 적용할 수 있는 방법을 제공합니다.
-  자세한 내용은 [네트워크 정책 서버](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top)를 참조하세요.
+  자세한 내용은 [네트워크 정책 서버](/windows-server/networking/technologies/nps/nps-top)를 참조하세요.
 
 보안을 강화하고 높은 수준의 규정 준수를 제공하기 위해 조직에서는 NPS를 Azure Multi-Factor Authentication과 통합하여 사용자가 2단계 인증을 통해 VPN 서버의 가상 포트에 연결하도록 할 수 있습니다. 사용자가 액세스 권한을 부여받으려면 자신이 제어할 수 있는 기타 정보와 함께 사용자 이름 및 암호 조합을 제공해야 합니다. 이 정보는 신뢰할 수 있어야 하고 복제하기 어려워야 합니다. 휴대폰 번호, 유선 전화 번호 또는 모바일 디바이스의 애플리케이션이 여기에 포함될 수 있습니다.
 
@@ -94,7 +94,7 @@ Azure용 NPS 확장을 NPS와 통합한 경우 성공적인 인증 흐름 결과
 
 네트워크 정책 및 액세스 서비스는 RADIUS 서버 및 클라이언트 기능을 제공합니다. 이 문서에서는 사용자 환경의 구성원 서버 또는 도메인 컨트롤러에 네트워크 정책 및 액세스 서비스 역할을 설치했다고 가정합니다. 이 가이드에서는 VPN 구성을 위해 RADIUS를 구성합니다. VPN 서버 *이외의* 서버에 네트워크 정책 및 액세스 서비스 역할을 설치합니다.
 
-Windows Server 2012 이상에서 네트워크 정책 및 액세스 서비스 역할 서비스를 설치하는 방법에 대한 자세한 내용은 [NAP 상태 정책 서버 설치](https://technet.microsoft.com/library/dd296890.aspx)를 참조하세요. Windows Server 2016에서는 NAP가 더 이상 사용되지 않습니다. 도메인 컨트롤러에 NPS를 설치하기 위한 권장 사항을 포함하여 NPS에 대한 모범 사례에 대한 자세한 내용은 [NPS 모범 사례](https://technet.microsoft.com/library/cc771746)를 참조하세요.
+Windows Server 2012 이상에서 네트워크 정책 및 액세스 서비스 역할 서비스를 설치하는 방법에 대한 자세한 내용은 [NAP 상태 정책 서버 설치](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd296890(v=ws.10))를 참조하세요. Windows Server 2016에서는 NAP가 더 이상 사용되지 않습니다. 도메인 컨트롤러에 NPS를 설치하기 위한 권장 사항을 포함하여 NPS에 대한 모범 사례에 대한 자세한 내용은 [NPS 모범 사례](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771746(v=ws.10))를 참조하세요.
 
 ### <a name="azure-mfa-license"></a>Azure MFA 라이선스
 
@@ -308,17 +308,23 @@ Multi-Factor Authentication에 대한 사용자를 구성할 때 도움이 필�
 
 이 섹션에서는 VPN 서버에서 클라이언트 인증에 MFA를 사용하도록 VPN을 구성하는 방법에 대해 설명합니다.
 
+> [!NOTE]
+> REQUIRE_USER_MATCH 레지스트리 키는 대/소문자를 구분 합니다. 모든 값은 대문자 형식으로 설정 해야 합니다.
+>
+
 NPS 확장을 설치하고 구성한 후에 MFA를 사용하려면 이 서버에서 모든 RADIUS 기반 클라이언트 인증을 처리해야 합니다. 모든 VPN 사용자가 Azure Multi-Factor Authentication에 등록되지는 않은 경우 다음 중 하나를 수행할 수 있습니다.
 
 * MFA를 사용하도록 구성되지 않은 사용자를 인증하도록 다른 RADIUS 서버를 설정합니다.
 
 * Microsoft Azure Multi-Factor Authentication에 등록된 경우에만 문제가 있는 사용자가 두 번째 인증 요소를 제공할 수 있도록 레지스트리 항목을 만듭니다.
 
-_HKLM\SOFTWARE\Microsoft\AzureMfa에 REQUIRE_USER_MATCH_라는 새 문자열 값을 만들고 이 값을 *True* 또는 *False*로 설정합니다.
+_만들고이에 REQUIRE_USER_MATCH_라는 새 문자열 값을 만들고이 값을 *TRUE* 또는 *FALSE*로 설정 합니다.
 
 ![“사용자 일치 필요” 설정](./media/howto-mfa-nps-extension-vpn/image34.png)
 
-값이 *True*로 설정되거나 비어 있으면 모든 인증 요청은 MFA 챌린지의 영향을 받습니다. 값을 *False*로 설정하면 MFA 챌린지가 Azure Multi-Factor Authentication에 등록된 사용자에게만 발급됩니다. 등록 기간 동안 테스트 환경 또는 프로덕션 환경에서만 *False* 설정을 사용합니다.
+값이 *TRUE* 로 설정 되거나 비어 있으면 모든 인증 요청은 MFA 챌린지의 영향을 받습니다. 값이 *FALSE*로 설정 된 경우 MFA 문제는 Azure Multi-Factor Authentication에 등록 된 사용자 에게만 발급 됩니다. 등록 기간 동안에는 테스트 또는 프로덕션 환경 에서만 *FALSE* 설정을 사용 합니다.
+
+
 
 ### <a name="obtain-the-azure-active-directory-tenant-id"></a>Azure Active Directory 테 넌 트 ID 가져오기
 
@@ -440,13 +446,13 @@ Azure Multi-factor Authentication 로그의 관련 이벤트는 다음과 같습
 
 ![Azure Multi-Factor Authentication 로그](./media/howto-mfa-nps-extension-vpn/image48.png)
 
-고급 문제 해결을 수행하려면 NPS 서비스가 설치된 NPS 데이터베이스 형식 로그 파일을 참조하세요. 이 로그 파일은 _%SystemRoot%\System32\Logs_ 폴더에 쉼표로 구분된 텍스트 파일로 만들어집니다. 로그 파일에 대한 자세한 내용은 [NPS 데이터베이스 형식 로그 파일 해석](https://technet.microsoft.com/library/cc771748.aspx)을 참조하세요.
+고급 문제 해결을 수행하려면 NPS 서비스가 설치된 NPS 데이터베이스 형식 로그 파일을 참조하세요. 이 로그 파일은 _%SystemRoot%\System32\Logs_ 폴더에 쉼표로 구분된 텍스트 파일로 만들어집니다. 로그 파일에 대한 자세한 내용은 [NPS 데이터베이스 형식 로그 파일 해석](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10))을 참조하세요.
 
 이러한 로그 파일의 항목은 스프레드시트 또는 데이터베이스로 내보내지 않으면 해석하기 어렵습니다. 온라인에서 로그 파일을 해석하는 데 도움이 되는 많은 IAS(인터넷 인증 서비스) 구문 분석 도구를 찾을 수 있습니다. 다운로드할 수 있는 [셰어웨어 애플리케이션](https://www.deepsoftware.com/iasviewer)의 출력은 다음과 같습니다.
 
 ![샘플 셰어웨어 앱 IAS 파서](./media/howto-mfa-nps-extension-vpn/image49.png)
 
-추가적인 문제 해결을 수행하려면 Wireshark 또는 [Microsoft Message Analyzer](https://technet.microsoft.com/library/jj649776.aspx)와 같은 프로토콜 분석기를 사용할 수 있습니다. 다음의 Wireshark 이미지에서는 VPN 서버와 NPS 간의 RADIUS 메시지를 보여줍니다.
+추가적인 문제 해결을 수행하려면 Wireshark 또는 [Microsoft Message Analyzer](/message-analyzer/microsoft-message-analyzer-operating-guide)와 같은 프로토콜 분석기를 사용할 수 있습니다. 다음의 Wireshark 이미지에서는 VPN 서버와 NPS 간의 RADIUS 메시지를 보여줍니다.
 
 ![필터링된 트래픽을 표시하는 Microsoft Message Analyzer](./media/howto-mfa-nps-extension-vpn/image50.png)
 

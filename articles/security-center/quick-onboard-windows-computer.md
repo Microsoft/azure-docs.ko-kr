@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
 ms.author: memildin
-ms.openlocfilehash: ecbdb6dc73082fc0fab04c8802c43219cabb6a79
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2cec55b7c9450070d2e692fae50eff9ea880c54e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519765"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89013744"
 ---
 # <a name="quickstart-onboard-windows-computers-to-azure-security-center"></a>빠른 시작: Azure Security Center에 Windows 컴퓨터 온보딩
 Azure 구독을 온보딩한 후 Log Analytics 에이전트를 프로비저닝하여 Azure 외부(예: 온-프레미스 또는 다른 클라우드)에서 실행되는 리소스에 Security Center를 사용하도록 설정할 수 있습니다.
@@ -74,7 +74,7 @@ Security Center를 시작하려면 Microsoft Azure에 대한 구독이 있어야
 
 완료되면 **제어판**에 **Log Analytics 에이전트**가 나타납니다. 구성을 검토하고 에이전트에 연결되었는지 확인할 수 있습니다.
 
-에이전트 설치 및 구성에 대한 자세한 내용은 [Windows 컴퓨터 연결](../azure-monitor/platform/agent-windows.md#install-the-agent-using-setup-wizard)을 참조하세요.
+에이전트 설치 및 구성에 대한 자세한 내용은 [Windows 컴퓨터 연결](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard)을 참조하세요.
 
 이제 Azure VM과 비 Azure 컴퓨터를 한곳에서 모니터링할 수 있습니다. **컴퓨팅** 아래에는 모든 VM 및 컴퓨터의 개요가 권장 사항과 함께 나와 있습니다. 각 열에 하나의 권장 사항 집합이 표시됩니다. 색은 해당 권장 사항에 대한 VM 또는 컴퓨터의 현재 보안 상태를 나타냅니다. Security Center는 보안 경고를 통해서도 이러한 컴퓨터에서 검색된 내용을 표시합니다.
 

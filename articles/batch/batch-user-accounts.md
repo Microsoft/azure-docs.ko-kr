@@ -2,14 +2,14 @@
 title: 사용자 계정으로 작업 실행
 description: 사용자 계정 유형과 구성 방법에 대해 알아봅니다.
 ms.topic: how-to
-ms.date: 11/18/2019
+ms.date: 08/20/2020
 ms.custom: seodec18
-ms.openlocfilehash: 412947b939d95be29dde374b311776829fa12582
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: cce374e7d7ffb513bed882b048ea54bcbad81b0b
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86142677"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719362"
 ---
 # <a name="run-tasks-under-user-accounts-in-batch"></a>Batch에서 사용자 계정으로 태스크 실행
 
@@ -49,18 +49,13 @@ Azure Batch에서는 태스크 실행을 위해 다음과 같은 두 가지 유�
 
 ## <a name="auto-user-accounts"></a>자동 사용자 계정
 
-기본적으로 태스크는 자동 사용자 계정에서 Batch로, 관리자 액세스 권한이 없는 표준 사용자로, 태스크 범위를 사용해서 실행됩니다. 태스크 범위에 대해 자동 사용자 지정이 구성되면 Batch 서비스는 해당 태스크에 대해서만 자동 사용자 계정을 만듭니다.
+기본적으로 태스크는 자동 사용자 계정으로 Batch에서 실행 되 고, 관리자 액세스 권한이 없는 표준 사용자로 실행 되며, 풀 범위를 사용 하 여 실행 됩니다. 풀 범위는 작업이 풀의 모든 작업에 사용할 수 있는 자동 사용자 계정에서 실행 됨을 의미 합니다. 풀 범위에 대 한 자세한 내용은 [풀 범위가 있는 자동 사용자로 작업 실행](#run-a-task-as-an-auto-user-with-pool-scope)을 참조 하세요.
 
-태스크 범위 대신 풀 범위를 지정할 수 있습니다. 태스크에 대한 자동 사용자 지정이 풀 범위에 대해 구성되면 태스크는 풀의 모든 태스크에서 사용할 수 있는 자동 사용자 계정으로 실행됩니다. 풀 범위에 대 한 자세한 내용은 [풀 범위가 있는 자동 사용자로 작업 실행](#run-a-task-as-an-auto-user-with-pool-scope)을 참조 하세요.
-
-기본 범위는 Windows 및 Linux 노드에서 다릅니다.
-
-- Windows 노드에서 태스크는 기본적으로 태스크 범위 내에서 실행됩니다.
-- Linux 노드는 항상 풀 범위에서 실행됩니다.
+풀 범위는 작업 범위에 대 한 대안입니다. 태스크 범위에 대해 자동 사용자 지정이 구성되면 Batch 서비스는 해당 태스크에 대해서만 자동 사용자 계정을 만듭니다.
 
 자동 사용자 지정에는 각각 고유한 자동 사용자 계정에 해당하는 4개의 구성이 있을 수 있습니다.
 
-- 태스크 범위를 사용하는 비관리자 액세스(기본 자동 사용자 지정)
+- 작업 범위를 사용 하는 비관리자 액세스
 - 태스크 범위를 사용하는 관리자(상승된 권한) 액세스
 - 풀 범위를 사용하는 비관리자 액세스
 - 풀 범위를 사용하는 관리자 액세스
@@ -75,7 +70,7 @@ Azure Batch에서는 태스크 실행을 위해 다음과 같은 두 가지 유�
 > [!NOTE]
 > 필요한 경우에만 승격 된 액세스를 사용 합니다. 모범 사례는 원하는 결과를 달성하는 데 필요한 최소 권한을 부여하는 것입니다. 예를 들어 시작 태스크가 모든 사용자가 아닌 현재 사용자에 대해 소프트웨어를 설치하는 경우 태스크에 관리자 권한 액세스를 부여하지 않도록 할 수 있습니다. 시작 태스크를 포함하여 동일한 계정으로 실행해야 하는 모든 태스트에 대해 풀 범위 및 비관리자 액세스 권한에 대한 자동 사용자 지정을 구성할 수 있습니다.
 
-다음 코드 조각은 자동 사용자 지정을 구성하는 방법을 보여 줍니다. 예제에서는 권한 상승 수준을 `Admin`으로 설정하고 범위를 `Task`로 설정합니다. 태스크 범위가 기본 설정이지만 여기에는 예제를 위해 포함됩니다.
+다음 코드 조각은 자동 사용자 지정을 구성하는 방법을 보여 줍니다. 예제에서는 권한 상승 수준을 `Admin`으로 설정하고 범위를 `Task`로 설정합니다.
 
 #### <a name="batch-net"></a>Batch .NET
 
@@ -90,7 +85,7 @@ taskToAdd.withId(taskId)
             .withAutoUser(new AutoUserSpecification()
                 .withElevationLevel(ElevationLevel.ADMIN))
                 .withScope(AutoUserScope.TASK));
-        .withCommandLine("cmd /c echo hello");                        
+        .withCommandLine("cmd /c echo hello");
 ```
 
 #### <a name="batch-python"></a>Batch Python
@@ -113,7 +108,7 @@ batch_client.task.add(job_id=jobid, task=task)
 
 자동 사용자에 대해 풀 범위를 지정하면 관리자 액세스 권한으로 실행되는 모든 태스크가 동일한 풀 전체 자동 사용자 계정에서 실행됩니다. 마찬가지로 관리자 권한 없이 실행되는 태스크도 단일 풀 전체 자동 사용자 계정에서 실행됩니다.
 
-> [!NOTE] 
+> [!NOTE]
 > 2개의 풀 전체 자동 사용자 계정은 별도 계정입니다. 풀 전체 관리 계정에서 실행 되는 작업은 표준 계정으로 실행 되는 태스크와 데이터를 공유할 수 없으며 그 반대의 경우도 마찬가지입니다.
 
 동일한 자동 사용자 계정에서 실행될 때의 장점은 태스크가 동일한 노드에서 실행 중인 다른 태스크와 데이터를 공유할 수 있다는 것입니다.

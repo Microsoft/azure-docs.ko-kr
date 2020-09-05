@@ -2,26 +2,21 @@
 title: '자습서: PageDNA와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 PageDNA 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c8765864-45f4-48c2-9d86-986a4aa431e4
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34e496ea9d2a89894951856a19854bff18f20a8b
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 543085eaea993f6e464a501ffc93befd7589a009
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85800896"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554136"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagedna"></a>자습서: PageDNA와 Azure Active Directory 통합
 

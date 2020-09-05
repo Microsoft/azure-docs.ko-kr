@@ -12,17 +12,17 @@ ms.topic: end-user-help
 ms.date: 05/31/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: d4053d4979861146705489dc02e628f03f3c4d85
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5aac6c0b903a3b2adf481a2c63847272122ce2d7
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84266222"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798978"
 ---
 # <a name="download-and-install-the-microsoft-authenticator-app"></a>Microsoft Authenticator 앱 다운로드 및 설치
 
 >[!Important]
->이 콘텐츠는 사용자를 위한 것입니다. 관리자는 [Azure Active Directory에 대 한 관리 설명서](https://docs.microsoft.com/azure/active-directory)에서 Azure Active Directory (Azure AD) 환경을 설정 하 고 관리 하는 방법에 대 한 자세한 정보를 찾을 수 있습니다.
+>이 콘텐츠는 사용자를 위한 것입니다. 관리자는 [Azure Active Directory에 대 한 관리 설명서](../index.yml)에서 Azure Active Directory (Azure AD) 환경을 설정 하 고 관리 하는 방법에 대 한 자세한 정보를 찾을 수 있습니다.
 >
 > 계정에 로그인하는 데 문제가 있는 경우 [Microsoft 계정에 로그인할 수 없는 경우](https://support.microsoft.com/help/12429)에서 도움말을 참조하세요.  또한 Microsoft 계정에 로그인을 시도할 때 ["해당 Microsoft 계정 존재 하지 않습니다."](https://support.microsoft.com/help/13811) 메시지가 표시 될 때 수행할 작업에 대 한 자세한 정보를 얻을 수 있습니다.
 

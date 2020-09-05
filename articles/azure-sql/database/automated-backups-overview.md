@@ -5,18 +5,18 @@ description: Azure SQL Database 및 Azure SQL Managed Instance 몇 분 마다 �
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: backup-restore
-ms.custom: sqldbrb=2
+ms.custom: references_regions
 ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab, danil
 ms.date: 08/04/2020
-ms.openlocfilehash: 3e37d907d00acd3e2b368700b70b4e268bad3ec9
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 485a137f552ca06fba366d261eb38268d821ccaf
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87921948"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88853210"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>자동화 된 백업-SQL Managed Instance & Azure SQL Database
 
@@ -36,19 +36,24 @@ SQL Database와 SQL Managed Instance는 모두 SQL Server 기술을 사용 하 �
 
 ### <a name="backup-storage-redundancy"></a>백업 저장소 중복성
 
-> [!IMPORTANT]
-> 백업에 대 한 구성 가능한 저장소 중복성은 현재 SQL Managed Instance 에서만 사용할 수 있으며 관리 되는 인스턴스 만들기 프로세스 중에만 지정할 수 있습니다. 리소스가 프로 비전 되 면 백업 저장소 중복성 옵션을 변경할 수 없습니다.
+기본적으로 SQL Database 및 SQL Managed Instance는 [쌍을 이루는 지역](../../best-practices-availability-paired-regions.md)에 복제 되는 지역 중복 (RA-GRS) [저장소 blob](../../storage/common/storage-redundancy.md) 에 데이터를 저장 합니다. 이를 통해 주 지역의 백업 저장소에 영향을 주는 중단 으로부터 보호 하 고 재해 발생 시 다른 지역으로 서버를 복원할 수 있습니다. 
 
-백업 저장소 중복성을 구성 하는 옵션은 LRS (로컬 중복), ZRS (영역 중복) 또는 GRS (지역 중복) [저장소 blob](../../storage/common/storage-redundancy.md)중에서 선택할 수 있는 유연성을 제공 합니다. 저장소 중복성 메커니즘은 일시적인 하드웨어 오류, 네트워크 또는 정전 또는 대규모 자연 재해를 비롯 하 여 계획 되거나 계획 되지 않은 이벤트에서 보호 되도록 데이터의 여러 복사본을 저장 합니다. 이 기능은 현재 SQL Managed Instance 에서만 사용할 수 있습니다.
+SQL Managed Instance는 저장소 중복성을 LRS (로컬 중복) 또는 ZRS (영역 중복) 저장소 blob로 변경 하 여 관리 되는 인스턴스가 배포 되는 동일한 지역 내에 데이터가 유지 되도록 하는 기능을 도입 했습니다. 저장소 중복성 메커니즘은 일시적인 하드웨어 오류, 네트워크 또는 정전 또는 대규모 자연 재해를 비롯 하 여 계획 되거나 계획 되지 않은 이벤트에서 보호 되도록 데이터의 여러 복사본을 저장 합니다. 
 
-GRS 저장소 blob은 [쌍을 이루는 지역](../../best-practices-availability-paired-regions.md) 에 복제 되어 주 지역의 백업 저장소에 영향을 주지 않도록 방지 하 고 재해가 발생 한 경우 다른 지역으로 서버를 복원할 수 있습니다. 
+백업 저장소 중복성을 구성 하는 옵션은 SQL Managed Instance에 대 한 LRS, ZRS 또는 RA GRS storage blob 중에서 선택할 수 있는 유연성을 제공 합니다. 관리 되는 인스턴스 만들기 프로세스 중에 백업 저장소 중복성 구성 리소스가 프로 비전 되 면 저장소 중복성을 더 이상 변경할 수 없습니다. (ZRS (영역 중복 저장소)는 현재 [특정 지역](../../storage/common/storage-redundancy.md#zone-redundant-storage)에서만 사용할 수 있습니다.)
 
-반대로 LRS 및 ZRS 저장소 blob은 데이터가 SQL Database 또는 SQL Managed Instance 배포 되는 동일한 지역 내에 유지 되는지 확인 합니다. ZRS (영역 중복 저장소)는 현재 [특정 지역](../../storage/common/storage-redundancy.md#zone-redundant-storage)에서만 사용할 수 있습니다.
 
 > [!IMPORTANT]
 > SQL Managed Instance에서 구성 된 백업 중복성은 PITR (지정 시간 복원)에 사용 되는 단기 백업 보존 설정과 장기 백업 (LTR)에 사용 되는 장기 보존 백업 모두에 적용 됩니다.
 
+
+> [!NOTE]
+> 구성 가능한 백업 저장소 중복성은 현재 동남 아시아 Azure 지역의 특정 고객에 대해 제한 된 비공개 미리 보기로 제공 됩니다. Azure SQL Database 이 비공개 미리 보기에서 등록을 고려 하려면에 문의 하세요 [sqlbackuppreview@microsoft.com](mailto:sqlbackuppreview@microsoft.com) . 
+
+데이터 보호 규칙에서 오랜 시간 동안 백업을 사용할 수 있어야 하는 경우 (최대 10 년), 단일 데이터베이스 및 풀링된 데이터베이스에 대 한 [장기 보존](long-term-retention-overview.md) 을 구성할 수 있습니다.
+
 ### <a name="backup-usage"></a>백업 사용
+
 
 백업을 사용하여 다음을 수행할 수 있습니다.
 
@@ -66,7 +71,7 @@ GRS 저장소 blob은 [쌍을 이루는 지역](../../best-practices-availabilit
 
 다음 예제를 사용 하 여 백업 구성 및 복원 작업을 시도할 수 있습니다.
 
-| 연산 | Azure portal | Azure PowerShell |
+| 작업(Operation) | Azure portal | Azure PowerShell |
 |---|---|---|
 | **백업 보존 변경** | [SQL 데이터베이스](automated-backups-overview.md?tabs=single-database#change-the-pitr-backup-retention-period-by-using-the-azure-portal) <br/> [SQL Managed Instance](automated-backups-overview.md?tabs=managed-instance#change-the-pitr-backup-retention-period-by-using-the-azure-portal) | [SQL 데이터베이스](automated-backups-overview.md#change-the-pitr-backup-retention-period-by-using-powershell) <br/>[SQL Managed Instance](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstancedatabasebackupshorttermretentionpolicy) |
 | **장기 백업 보존 변경** | [SQL 데이터베이스](long-term-backup-retention-configure.md#configure-long-term-retention-policies)<br/>SQL Managed Instance-해당 없음  | [SQL 데이터베이스](long-term-backup-retention-configure.md)<br/>[SQL Managed Instance](../managed-instance/long-term-backup-retention-configure.md)  |
@@ -116,7 +121,7 @@ VCore 데이터베이스의 경우 각 백업 유형 (전체, 차등 및 로그)
 - 임시 결과 및/또는 임시 데이터를 저장 하기 위해 응용 프로그램 논리에서 영구 테이블 대신 TempDB를 사용 합니다.
 - 가능 하면 항상 로컬 중복 백업 저장소 사용 (예: 개발/테스트 환경)
 
-## <a name="backup-retention"></a>Backup 보존
+## <a name="backup-retention"></a>백업 보존
 
 모든 새로 복원 및 복사 된 데이터베이스, Azure SQL Database 및 Azure SQL Managed Instance는 최근 7 일 내에 기본적으로 PITR을 허용 하기 위해 충분 한 백업을 유지 합니다. Hyperscale 데이터베이스를 제외 하 고 1-35 일 범위의 각 활성 데이터베이스에 대해 [백업 보존 기간을 변경할](#change-the-pitr-backup-retention-period) 수 있습니다. [백업 저장소](#backup-storage-consumption)사용에 설명 된 대로 PITR를 사용 하도록 설정 된 백업이 보존 기간 보다 오래 되었을 수 있습니다. Azure SQL Managed Instance에만 해당 하는 경우 데이터베이스가 0-35 일 범위에서 삭제 되 면 PITR 백업 보존 률을 설정할 수 있습니다. 
 
@@ -194,7 +199,7 @@ SQL Database 및 SQL Managed Instance은 모든 백업 파일에서 총 청구 �
 
 ## <a name="encrypted-backups"></a>암호화된 백업
 
-데이터베이스가 TDE를 사용하여 암호화된 경우 LTR 백업을 포함한 백업이 미사용 시 자동으로 암호화됩니다. Azure SQL의 모든 새 데이터베이스는 기본적으로 TDE를 사용 하도록 설정 된 상태로 구성 됩니다. TDE에 대 한 자세한 내용은 [투명한 데이터 암호화 SQL Database & SQL Managed Instance](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)를 참조 하세요.
+데이터베이스가 TDE를 사용하여 암호화된 경우 LTR 백업을 포함한 백업이 미사용 시 자동으로 암호화됩니다. Azure SQL의 모든 새 데이터베이스는 기본적으로 TDE를 사용 하도록 설정 된 상태로 구성 됩니다. TDE에 대 한 자세한 내용은  [투명한 데이터 암호화 SQL Database & SQL Managed Instance](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql)를 참조 하세요.
 
 ## <a name="backup-integrity"></a>백업 무결성
 

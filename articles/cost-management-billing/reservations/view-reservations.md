@@ -4,15 +4,16 @@ description: Azure Portal에서 Azure 예약을 보는 방법을 알아봅니다
 author: yashesvi
 ms.reviewer: yashar
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 04c38f7445dc0405add88fd61cc6e4943a4fda96
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: ec91d0997717d536c3b47ce7b276f75b21d1baa1
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87459269"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681654"
 ---
 # <a name="view-azure-reservations"></a>Azure 예약 보기
 

@@ -12,12 +12,12 @@ ms.date: 05/18/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 3baa659d454a24a132eda914d50acddbd5df8a90
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2bf767bd87e0df791b0efff1294f15353234ba2c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020069"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88520212"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Azure AD B2C에 SAML 애플리케이션 등록
 
@@ -414,6 +414,10 @@ Microsoft에서는 SAML 테스트 앱을 사용하여 테스트하는 데 사용
 * 애플리케이션/서비스 주체 개체에서 여러 로그아웃 URL 또는 로그아웃 URL의 POST 바인딩.
 * 애플리케이션/서비스 주체 개체에서 RP 요청을 확인하기 위한 서명 키를 지정합니다.
 * 애플리케이션/서비스 주체 개체에서 토큰 암호화 키를 지정합니다.
+* Id 공급자가 Azure AD B2C 되는 id 공급자 시작 로그인입니다.
+
+다음 SAML 신뢰 당사자 (RP) 시나리오는 현재 지원 되지 않습니다.
+* Id 공급자가 시작한 로그온입니다. 여기서 Id 공급자는 외부 Id 공급자 (예: ADFS)입니다.
 
 ## <a name="next-steps"></a>다음 단계
 

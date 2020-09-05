@@ -3,12 +3,12 @@ title: Azure Migrate 어플라이언스 FAQ
 description: Azure Migrate 어플라이언스에 대 한 일반적인 질문에 대 한 답변을 받으세요.
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: 9c3547667ed91331d3cb4d319279c9494eb7a3d2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: de34bba40b9200c198f3c07262bd6b7a00b62060
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86530120"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050678"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Azure Migrate 어플라이언스: 일반적인 질문
 
@@ -39,10 +39,14 @@ Azure Migrate 어플라이언스에 대 한 자세한 내용은 다음과 같습
 - 템플릿을 사용 하지 않으려는 경우 또는 Azure Government 중인 경우 PowerShell 스크립트를 사용 하 여 VMware 또는 Hyper-v에 대 한 어플라이언스를 배포할 수 있습니다.
 - 물리적 서버의 경우 항상 스크립트를 사용하여 어플라이언스를 배포합니다.
 
-
 ## <a name="how-does-the-appliance-connect-to-azure"></a>어플라이언스는 Azure에 어떻게 연결 되나요?
 
-어플라이언스는 인터넷을 통해 또는 공용/Microsoft 피어 링과 함께 Azure Express 경로를 사용 하 여 연결할 수 있습니다.
+어플라이언스는 인터넷을 통해 또는 Azure Express 경로를 사용 하 여 연결할 수 있습니다.
+
+- Azure Migrate 복제 트래픽에 대해 Azure Express 경로를 사용 하려면 Microsoft 피어 링 또는 기존 공용 피어 링이 필요 합니다 (공용 피어 링은 새 ER 생성에 사용 되지 않음).
+- (만 해당) 개인 피어 링을 사용 하는 Azure Express 경로를 통한 복제는 지원 되지 않습니다.
+
+Microsoft 피어 링이 구성 된 Azure Express 경로는 복제 트래픽에 대해 권장 되는 라우팅 도메인입니다.
 
 ## <a name="does-appliance-analysis-affect-performance"></a>어플라이언스 분석이 성능에 영향을 미칩니까?
 
@@ -53,7 +57,6 @@ Azure Migrate 어플라이언스는 지속적으로 성능 데이터를 측정 �
 다운로드 한 템플릿을 사용 하 여 어플라이언스 VM을 만들 때 Azure Migrate 어플라이언스에 필요한 통신 및 방화벽 규칙을 그대로 유지 하는 경우 템플릿에 구성 요소 (예: 바이러스 백신)를 추가할 수 있습니다.
 
 ## <a name="what-network-connectivity-is-required"></a>필요한 네트워크 연결은 무엇 인가요?
-
 
 어플라이언스는 Azure Url에 대 한 액세스 권한이 필요 합니다. URL 목록을 [검토](migrate-appliance.md#url-access) 합니다.
 
@@ -99,9 +102,11 @@ Azure Migrate로 전송 되는 데이터의 볼륨은 여러 매개 변수에 �
 아니요. [Azure Migrate 어플라이언스](migrate-appliance.md) 와 vCenter Server 사이에 일 대 일 매핑이 있습니다. 여러 vCenter Server 인스턴스에서 Vm을 검색 하려면 여러 어플라이언스를 배포 해야 합니다. 
 
 ## <a name="can-an-azure-migrate-project-have-multiple-appliances"></a>Azure Migrate 프로젝트에 여러 개의 어플라이언스를 사용할 수 있나요?
+
 프로젝트에는 여러 개의 기기가 연결 되어 있을 수 있습니다. 그러나 어플라이언스는 하나의 프로젝트에만 연결할 수 있습니다. 
 
 ## <a name="can-the-azure-migrate-appliancereplication-appliance-connect-to-the-same-vcenter"></a>Azure Migrate 어플라이언스/복제 어플라이언스는 동일한 vCenter에 연결할 수 있나요?
+
 예. Azure Migrate 어플라이언스 (평가 및 에이전트 없는 VMware 마이그레이션에 사용 됨) 및 복제 어플라이언스 (VMware Vm의 에이전트 기반 마이그레이션에 사용 됨)를 동일한 vCenter server에 추가할 수 있습니다.
 
 

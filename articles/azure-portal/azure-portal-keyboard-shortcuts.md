@@ -15,18 +15,18 @@ ms.workload: na
 ms.date: 12/20/2019
 ms.author: mblythe
 ms.custom: accessibility
-ms.openlocfilehash: e42dfc82fa0db028894dd77225621e867d79dac6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e3f078cdaa54246d91e6bff5393171c05935d755
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75641336"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88826789"
 ---
 # <a name="keyboard-shortcuts-in-the-azure-portal"></a>Azure Portal에서 바로 가기 키
 
 이 문서에는 Azure Portal의 모든 위치에서 작동 하는 바로 가기 키가 나열 되어 있습니다. 개별 서비스에는 자신의 고유한 바로 가기 키가 있을 수 있습니다.
 
-## <a name="actions"></a>동작
+## <a name="actions"></a>작업
 
 |수행할 작업 |작업 방법 |
 | --- | --- |
@@ -53,7 +53,11 @@ ms.locfileid: "75641336"
 |**리소스 그룹** 으로 이동|G+R |
 |이 위치에서 왼쪽 세로 막대를 엽니다. |G+번호|
 
+## <a name="keyboard-shortcuts-for-specific-pages-in-the-azure-portal"></a>Azure Portal의 특정 페이지에 대 한 바로 가기 키
+
+- [Azure Resource Graph Explorer](../governance/resource-graph/reference/keyboard-shortcuts.md)
+
 ## <a name="next-steps"></a>다음 단계
 
-- [고대비 켜기 및 테마 변경](azure-portal-change-theme-high-contrast.md)
-- [지원되는 브라우저 및 디바이스](../azure-preview-portal-supported-browsers-devices.md)
+- [고대비 켜기 및 테마 변경](set-preferences.md#choose-a-theme-or-enable-high-contrast)
+- [지원되는 브라우저 및 디바이스](azure-portal-supported-browsers-devices.md)

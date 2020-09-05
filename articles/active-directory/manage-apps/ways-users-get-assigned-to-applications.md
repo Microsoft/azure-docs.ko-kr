@@ -15,12 +15,12 @@ ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45124862fffa3a1ef6f601733407fbbea4eb5e74
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 516bffa7057f8fee3b8e38d46f3b2da905880044
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84762975"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88639939"
 ---
 # <a name="how-to-assign-users-to-applications"></a>애플리케이션에 사용자를 할당하는 방법
 
@@ -44,9 +44,9 @@ ms.locfileid: "84762975"
 
     * [모든 사용자](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-dedicated-groups) 그룹
 
-3.  관리자가 [셀프 서비스 애플리케이션 액세스](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access)를 통해 사용자가 **비즈니스 승인 없이**[애플리케이션 액세스 패널](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) **앱 추가**를 사용하여 애플리케이션을 추가하도록 허용
+3.  관리자는 [셀프 서비스 응용 프로그램 액세스](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) 를 통해 사용자가 [내 앱](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) 을 사용 하 여 응용 프로그램을 추가할 수 있습니다. **비즈니스 승인 없이** 앱 **추가** 기능을 사용 합니다.
 
-4.  관리자가 [셀프 서비스 애플리케이션 액세스](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access)를 통해 사용자가 **선택된 비즈니스 승인자 세트의 사전 승인이 있는 경우에만**[애플리케이션 액세스 패널](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) **앱 추가**를 사용하여 애플리케이션을 추가하도록 허용
+4.  관리자는 [셀프 서비스 응용 프로그램 액세스](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access) 를 통해 사용자가 [내 앱](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) **앱 추가** 기능을 사용 하 여 응용 프로그램을 추가할 수 있지만,**선택한 비즈니스 승인자에 게 사전 승인이 있는** 경우에만이 응용 프로그램을 추가할 수 있습니다.
 
 5.  관리자가 [셀프 서비스 그룹 관리](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-self-service-group-management)를 통해 사용자가 **비즈니스 승인 없이** 애플리케이션이 할당된 그룹에 가입하도록 허용
 

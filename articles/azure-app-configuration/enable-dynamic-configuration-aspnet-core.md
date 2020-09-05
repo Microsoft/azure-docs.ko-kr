@@ -14,13 +14,13 @@ ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: 5ac09aae724cf7481245ba9e898b52945b394cae
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.custom: devx-track-csharp, mvc
+ms.openlocfilehash: 217c564a6bdb340ec15262c1eaf54a75bbffc833
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856522"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585018"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>자습서: ASP.NET Core 앱에서 동적 구성 사용
 
@@ -57,6 +57,9 @@ App Configuration은 구성 저장소를 너무 많이 호출하지 않도록 �
 1. **키**에 대해 *TestApp:Settings:Sentinel*을 입력합니다. **값**에 대해 1을 입력합니다. **레이블** 및 **콘텐츠 형식**은 비워 둡니다.
 
 1. **적용**을 선택합니다.
+
+    > [!NOTE]
+    > 센티널 키를 사용하지 않는 경우 감시하려는 모든 키를 수동으로 등록해야 합니다.
 
 ## <a name="reload-data-from-app-configuration"></a>App Configuration에서 데이터 다시 로드
 
@@ -159,6 +162,9 @@ App Configuration은 구성 저장소를 너무 많이 호출하지 않도록 �
     }
     ```
     ---
+
+    > [!TIP]
+    > 구성 값을 읽을 때 옵션 패턴에 대해 자세히 알아보려면  [ASP.NET Core의 옵션 패턴](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1)을 참조하세요.
 
 4. `Configure` 메서드를 업데이트하여 ASP.NET Core 웹앱이 요청을 계속 받는 동안 새로 고침을 위해 등록된 구성 설정을 업데이트할 수 있도록 `UseAzureAppConfiguration` 미들웨어를 추가합니다.
 

@@ -1,6 +1,6 @@
 ---
 title: Veeam에서 백업 대상으로 StorSimple 8000 시리즈 구성 | Microsoft Docs
-description: Veeam을 사용한 StorSimple 백업 대상 구성에 대해 설명합니다.
+description: 두 솔루션을 통합 하는 데 대 한 Veeam 및 모범 사례를 사용 하는 StorSimple 백업 대상 구성에 대해 알아봅니다.
 services: storsimple
 documentationcenter: ''
 author: harshakirank
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2016
 ms.author: matd
-ms.openlocfilehash: 05ee60986703096c004c4d15764028b73d04c0bf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 71a5434d985aad4033e4392dd31e6b7d112692de
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077896"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183983"
 ---
 # <a name="storsimple-as-a-backup-target-with-veeam"></a>Veeam에서 백업 대상으로 StorSimple 구성
 
@@ -276,11 +276,11 @@ Veeam 설치 모범 사례는 [Veeam Backup 및 복제 모범 사례](https://bp
 
     ![Veeam 관리 콘솔 - 백업 리포지토리 페이지](./media/storsimple-configure-backup-target-using-veeam/veeamimage1.png)
 
-2.  **새 Backup 리포지토리** 대화 상자에서 리포지토리의 이름과 설명을 입력합니다. **새로 만들기**를 선택합니다.
+2.  **새 Backup 리포지토리** 대화 상자에서 리포지토리의 이름과 설명을 입력합니다. **다음**을 선택합니다.
 
     ![Veeam 관리 콘솔 - 이름 및 설명 페이지](./media/storsimple-configure-backup-target-using-veeam/veeamimage2.png)
 
-3.  유형에 대해 **Microsoft Windows 서버**를 선택합니다. Veeam 서버를 선택합니다. **새로 만들기**를 선택합니다.
+3.  유형에 대해 **Microsoft Windows 서버**를 선택합니다. Veeam 서버를 선택합니다. **다음**을 선택합니다.
 
     ![Veeam 관리 콘솔 - 백업 리포지토리의 유형 선택](./media/storsimple-configure-backup-target-using-veeam/veeamimage3.png)
 
@@ -293,7 +293,7 @@ Veeam 설치 모범 사례는 [Veeam Backup 및 복제 모범 사례](https://bp
 
     ![Veeam 관리 콘솔 - 스토리지 호환성 설정](./media/storsimple-configure-backup-target-using-veeam/veeamimage5.png)
 
-6.  **새 Backup 리포지토리** 대화 상자에서 **탑재 서버에서 vPower NFS 서비스 사용(권장)** 확인란을 선택합니다. **새로 만들기**를 선택합니다.
+6.  **새 Backup 리포지토리** 대화 상자에서 **탑재 서버에서 vPower NFS 서비스 사용(권장)** 확인란을 선택합니다. **다음**을 선택합니다.
 
     ![Veeam 관리 콘솔 - 백업 리포지토리 페이지](./media/storsimple-configure-backup-target-using-veeam/veeamimage6.png)
 
@@ -507,7 +507,7 @@ Veeam을 사용하면 Veeam 콘솔에 있는 기본 제공 탐색기 보기에�
 | 백업 서버와 StorSimple이 모두 손실되는 사이트 오류 | Backup 및 복원 작업이 중단됩니다. | 먼저 StorSimple을 복원한 다음 Veeam을 복원합니다. | 먼저 StorSimple을 복원한 다음 Veeam을 복원합니다. 디바이스 복구 후에 복원을 수행해야 하는 경우 전체 데이터 작업 집합이 클라우드에서 새 디바이스로 검색됩니다. 모든 작업이 클라우드 속도로 수행됩니다. |
 
 
-## <a name="references"></a>참조
+## <a name="references"></a>참고 자료
 
 이 문서에서는 다음 문서를 참조했습니다.
 

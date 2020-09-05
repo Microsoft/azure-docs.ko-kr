@@ -10,15 +10,15 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/06/2020
+ms.date: 08/25/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 8923cb19c24b0e392026dc0f4b8f67c31956894a
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: e1c931b37cbe155d62aaffe47e36d84afa547638
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115937"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068646"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>방법: 테넌트의 특정 앱용 토큰에 내보내는 클레임 사용자 지정(미리 보기)
 
@@ -143,7 +143,6 @@ Azure AD에서 **정책** 개체는 조직에 있는 개별 애플리케이션 �
 | onprem_sid |
 | openid2_id |
 | password |
-| platf |
 | polids |
 | pop_jwk |
 | preferred_username |
@@ -248,11 +247,11 @@ Azure AD에서 **정책** 개체는 조직에 있는 개별 애플리케이션 �
 
 **요약:** 이 속성은 기본 클레임 집합이 이 정책의 영향을 받는 토큰에 포함되는지 여부를 결정합니다.
 
-- True로 설정된 경우 기본 클레임 집합의 모든 클레임이 정책의 영향을 받는 토큰에 내보내집니다. 
+- True로 설정된 경우 기본 클레임 집합의 모든 클레임이 정책의 영향을 받는 토큰에 내보내집니다.
 - False로 설정된 경우 기본 클레임 집합의 클레임은 동일한 정책의 클레임 스키마 속성에 개별적으로 추가되지 않는 한 토큰에 포함되지 않습니다.
 
-> [!NOTE] 
-> 핵심 클레임 집합의 클레임은 이 속성의 설정값에 관계없이 모든 토큰에 표시됩니다. 
+> [!NOTE]
+> 핵심 클레임 집합의 클레임은 이 속성의 설정값에 관계없이 모든 토큰에 표시됩니다.
 
 ### <a name="claims-schema"></a>클레임 스키마
 
@@ -267,14 +266,14 @@ Azure AD에서 **정책** 개체는 조직에 있는 개별 애플리케이션 �
 
 **Value:** Value 요소는 클레임에 내보내질 데이터로 정적 값을 정의합니다.
 
-**Source/ID 쌍:** : Source 및 ID 요소는 클레임의 데이터가 제공되는 위치를 정의합니다.  
+**Source/ID 쌍:** : Source 및 ID 요소는 클레임의 데이터가 제공되는 위치를 정의합니다.
 
 **원본/ExtensionID 쌍:** 원본 및 ExtensionID 요소는 클레임의 데이터가 원본으로 지정 되는 디렉터리 스키마 확장 특성을 정의 합니다. 자세한 내용은 [클레임에서 디렉터리 스키마 확장 특성 사용](active-directory-schema-extensions.md)을 참조 하세요.
 
-Source 요소는 다음 중 하나로 설정합니다. 
+Source 요소는 다음 중 하나로 설정합니다.
 
-- “user”: 클레임의 데이터가 User 개체의 속성입니다. 
-- “application”: 클레임의 데이터가 애플리케이션(클라이언트) 서비스 주체의 속성입니다. 
+- “user”: 클레임의 데이터가 User 개체의 속성입니다.
+- “application”: 클레임의 데이터가 애플리케이션(클라이언트) 서비스 주체의 속성입니다.
 - “resource”: 클레임의 데이터가 리소스 서비스 주체의 속성입니다.
 - “audience”: 클레임의 데이터가 토큰의 대상 그룹인 서비스 주체(클라이언트 또는 리소스 서비스 주체)의 속성입니다.
 - “company”: 클레임의 데이터가 리소스 테넌트에 대한 Company 개체의 속성입니다.
@@ -303,7 +302,7 @@ ID 요소는 클레임의 값을 제공할 원본의 속성을 식별합니다. 
 | 사용자 | streetaddress | 주소 |
 | 사용자 | postalcode | 우편 번호 |
 | 사용자 | preferredlanguange | 기본 설정 언어 |
-| 사용자 | onpremisesuserprincipalname | 온-프레미스 UPN |
+| 사용자 | onpremisesuserprincipalname | 온-프레미스 UPN |*
 | 사용자 | mailNickname | 메일 애칭 |
 | 사용자 | extensionattribute1 | 확장 특성 1 |
 | 사용자 | extensionattribute2 | 확장 특성 2 |
@@ -329,7 +328,7 @@ ID 요소는 클레임의 값을 제공할 원본의 속성을 식별합니다. 
 | 사용자 | facsimiletelephonenumber | 팩스 번호 |
 | 사용자 | assignedroles | 사용자에 게 할당 된 앱 역할의 목록입니다.|
 | 애플리케이션, 리소스, 대상 그룹 | displayname | 표시 이름 |
-| 애플리케이션, 리소스, 대상 그룹 | objected | ObjectID |
+| 애플리케이션, 리소스, 대상 그룹 | objectid | ObjectID |
 | 애플리케이션, 리소스, 대상 그룹 | tags | 서비스 주체 태그 |
 | 회사 | tenantcountry | 테넌트의 국가/지역 |
 
@@ -342,6 +341,8 @@ ID 요소는 클레임의 값을 제공할 원본의 속성을 식별합니다. 
 - JwtClaimType에는 JWT로 내보낼 클레임 이름이 포함되어야 합니다.
 - SamlClaimType에는 SAML 토큰으로 내보낼 클레임 URI가 포함되어야 합니다.
 
+* **onPremisesUserPrincipalName 특성:** 대체 ID를 사용 하는 경우 온-프레미스 특성 userPrincipalName는 Azure AD 특성 onPremisesUserPrincipalName와 동기화 됩니다. 이 특성은 대체 ID가 구성 된 경우에만 사용할 수 있지만 MS Graph Beta를 통해 사용할 수도 있습니다 https://graph.microsoft.com/beta/me/ .
+
 > [!NOTE]
 > 제한된 클레임 집합에 있는 클레임의 이름 및 URI는 클레임 형식 요소에 사용할 수 없습니다. 자세한 내용은 이 문서의 뒷부분에 나오는 "예외 및 제한 사항" 섹션을 참조하세요.
 
@@ -349,7 +350,7 @@ ID 요소는 클레임의 값을 제공할 원본의 속성을 식별합니다. 
 
 **문자열:** ClaimsTransformation
 
-**데이터 형식:** 하나 이상의 변환 항목이 있는 JSON Blob입니다. 
+**데이터 형식:** 하나 이상의 변환 항목이 있는 JSON Blob입니다.
 
 **요약:** 클레임 스키마에 지정된 클레임에 대한 출력 데이터를 생성하기 위해 이 속성을 사용하여 원본 데이터에 일반 변환을 적용합니다.
 
@@ -368,7 +369,7 @@ ID 요소는 클레임의 값을 제공할 원본의 속성을 식별합니다. 
 
 **InputClaims:** InputClaims 요소를 사용하여 클레임 스키마 항목의 데이터를 변환에 전달합니다. 이 요소에는 두 개의 특성인 **ClaimTypeReferenceId** 및 **TransformationClaimType**이 있습니다.
 
-- **ClaimTypeReferenceId**가 클레임 스키마 항목의 ID 요소와 조인되어 적절한 입력 클레임을 찾습니다. 
+- **ClaimTypeReferenceId**가 클레임 스키마 항목의 ID 요소와 조인되어 적절한 입력 클레임을 찾습니다.
 - **TransformationClaimType**은 이 입력에 고유 이름을 지정하는 데 사용됩니다. 이 이름은 변환 방법에 대한 예상 입력 중 하나와 일치해야 합니다.
 
 **InputParameters:** InputParameters 요소를 사용하여 상수 값을 변환에 전달합니다. 이 요소에는 두 개의 특성인 **Value** 및 **ID**가 있습니다.
@@ -420,7 +421,7 @@ ID 요소는 클레임의 값을 제공할 원본의 속성을 식별합니다. 
 
 클레임 매핑 정책을 적용하려면 사용자 지정 서명 키를 서비스 사용자 개체에 할당해야 합니다. 이렇게 하면 클레임 매핑 정책의 생성자가 토큰을 수정한 것을 인정하게 되며, 악의적인 행위자가 만든 클레임 매핑 정책을 사용하지 않도록 애플리케이션을 보호할 수 있습니다. 사용자 지정 서명 키를 추가하기 위해 Azure PowerShell cmdlet `new-azureadapplicationkeycredential`을 사용하여 애플리케이션 개체에 대한 대칭 키 자격 증명을 만들 수 있습니다. 이 Azure PowerShell cmdlet에 대한 자세한 내용은 [New-AzureADApplicationKeyCredential](/powerShell/module/Azuread/New-AzureADApplicationKeyCredential?view=azureadps-2.0)을 참조하세요.
 
-클레임 매핑을 사용하도록 설정된 앱은 [OpenID Connect 메타데이터 요청](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document)에 `appid={client_id}`를 추가하여 토큰 서명 키의 유효성을 검사해야 합니다. 사용해야 하는 OpenID Connect 메타데이터 문서의 형식은 다음과 같습니다. 
+클레임 매핑을 사용하도록 설정된 앱은 [OpenID Connect 메타데이터 요청](v2-protocols-oidc.md#fetch-the-openid-connect-metadata-document)에 `appid={client_id}`를 추가하여 토큰 서명 키의 유효성을 검사해야 합니다. 사용해야 하는 OpenID Connect 메타데이터 문서의 형식은 다음과 같습니다.
 
 ```
 https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid={client-id}
@@ -464,20 +465,20 @@ Azure AD에서 특정 서비스 주체에 대해 토큰에 내보내지는 클�
 이 예제에서는 연결된 서비스 주체에 발급된 토큰에서 기본 클레임 집합을 제거하는 정책을 만듭니다.
 
 1. 클레임 매핑 정책을 만듭니다. 특정 서비스 주체에 연결되는 이 정책은 토큰에서 기본 클레임 집합을 제거합니다.
-   1. 정책을 만들려면 이 명령을 실행합니다. 
-    
+   1. 정책을 만들려면 이 명령을 실행합니다.
+
       ``` powershell
       New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"false"}}') -DisplayName "OmitBasicClaims" -Type "ClaimsMappingPolicy"
       ```
    2. 새 정책을 보고 정책 ObjectId를 가져오려면 다음 명령을 실행합니다.
-    
+
       ``` powershell
       Get-AzureADPolicy
       ```
 1. 서비스 주체에게 정책을 할당합니다. 서비스 주체의 ObjectId도 가져와야 합니다.
    1. 조직의 모든 서비스 주체를 보려면 [Microsoft Graph API를 쿼리](/graph/traverse-the-graph)하면 됩니다. 또는 [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)에서 Azure AD 계정으로 로그인합니다.
-   2. 서비스 주체의 ObjectId가 있으면 다음 명령을 실행합니다.  
-     
+   2. 서비스 주체의 ObjectId가 있으면 다음 명령을 실행합니다.
+
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
@@ -487,21 +488,21 @@ Azure AD에서 특정 서비스 주체에 대해 토큰에 내보내지는 클�
 이 예제에서는 연결된 서비스 주체에 발급된 토큰에 EmployeeID 및 TenantCountry를 추가하는 정책을 만듭니다. EmployeeID는 SAML 토큰 및 JWT 둘 다에서 이름 클레임 형식으로 내보내집니다. TenantCountry는 SAML 토큰 및 JWT 둘 다에서 국가/지역 클레임 형식으로 내보내집니다. 이 예제에서는 토큰에 기본 클레임 집합을 계속 포함합니다.
 
 1. 클레임 매핑 정책을 만듭니다. 특정 서비스 주체에 연결되는 이 정책은 토큰에 EmployeeID 및 TenantCountry 클레임을 추가합니다.
-   1. 정책을 만들려면 다음 명령을 실행합니다.  
-     
+   1. 정책을 만들려면 다음 명령을 실행합니다.
+
       ``` powershell
       New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid","JwtClaimType":"name"},{"Source":"company","ID":"tenantcountry","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country","JwtClaimType":"country"}]}}') -DisplayName "ExtraClaimsExample" -Type "ClaimsMappingPolicy"
       ```
-    
+
    2. 새 정책을 보고 정책 ObjectId를 가져오려면 다음 명령을 실행합니다.
-     
-      ``` powershell  
+
+      ``` powershell
       Get-AzureADPolicy
       ```
-1. 서비스 주체에게 정책을 할당합니다. 서비스 주체의 ObjectId도 가져와야 합니다. 
+1. 서비스 주체에게 정책을 할당합니다. 서비스 주체의 ObjectId도 가져와야 합니다.
    1. 조직의 모든 서비스 주체를 보려면 [Microsoft Graph API를 쿼리](/graph/traverse-the-graph)하면 됩니다. 또는 [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)에서 Azure AD 계정으로 로그인합니다.
-   2. 서비스 주체의 ObjectId가 있으면 다음 명령을 실행합니다.  
-     
+   2. 서비스 주체의 ObjectId가 있으면 다음 명령을 실행합니다.
+
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
@@ -512,20 +513,20 @@ Azure AD에서 특정 서비스 주체에 대해 토큰에 내보내지는 클�
 
 1. 클레임 매핑 정책을 만듭니다. 특정 서비스 주체에 연결되는 이 정책은 토큰에 EmployeeID 및 TenantCountry 클레임을 추가합니다.
    1. 정책을 만들려면 다음 명령을 실행합니다.
-     
+
       ``` powershell
       New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema":[{"Source":"user","ID":"extensionattribute1"},{"Source":"transformation","ID":"DataJoin","TransformationId":"JoinTheData","JwtClaimType":"JoinedData"}],"ClaimsTransformations":[{"ID":"JoinTheData","TransformationMethod":"Join","InputClaims":[{"ClaimTypeReferenceId":"extensionattribute1","TransformationClaimType":"string1"}], "InputParameters": [{"ID":"string2","Value":"sandbox"},{"ID":"separator","Value":"."}],"OutputClaims":[{"ClaimTypeReferenceId":"DataJoin","TransformationClaimType":"outputClaim"}]}]}}') -DisplayName "TransformClaimsExample" -Type "ClaimsMappingPolicy"
       ```
-    
-   2. 새 정책을 보고 정책 ObjectId를 가져오려면 다음 명령을 실행합니다. 
-     
+
+   2. 새 정책을 보고 정책 ObjectId를 가져오려면 다음 명령을 실행합니다.
+
       ``` powershell
       Get-AzureADPolicy
       ```
-1. 서비스 주체에게 정책을 할당합니다. 서비스 주체의 ObjectId도 가져와야 합니다. 
+1. 서비스 주체에게 정책을 할당합니다. 서비스 주체의 ObjectId도 가져와야 합니다.
    1. 조직의 모든 서비스 주체를 보려면 [Microsoft Graph API를 쿼리](/graph/traverse-the-graph)하면 됩니다. 또는 [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)에서 Azure AD 계정으로 로그인합니다.
-   2. 서비스 주체의 ObjectId가 있으면 다음 명령을 실행합니다. 
-     
+   2. 서비스 주체의 ObjectId가 있으면 다음 명령을 실행합니다.
+
       ``` powershell
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```

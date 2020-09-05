@@ -1,6 +1,6 @@
 ---
 title: 'Express 경로: 회로에 VNet 연결: Azure Portal'
-description: Azure Express 경로 회로에 VNet을 연결 합니다. 작업 단계
+description: Azure Portal를 사용 하 여 Azure Express 경로 회로에 가상 네트워크를 연결 하는 연결을 만드는 방법을 알아봅니다.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: a4ed99d69d1c2389e73c215bccfd6112895e791d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ad222e55f1e3051266c1398d76c8d246e342aba9
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84737073"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190923"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>포털을 사용하여 ExpressRoute 회로에 가상 네트워크 연결
 > [!div class="op_single_selector"]

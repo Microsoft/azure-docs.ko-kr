@@ -1,6 +1,6 @@
 ---
 title: Azure CDN 규칙 엔진에 대한 HTTP 변수 | Microsoft Docs
-description: HTTP 변수를 사용하면 HTTP 요청 및 응답 메타데이터를 검색할 수 있습니다.
+description: 일부 규칙 엔진 기능에 대 한 HTTP 요청 및 응답 메타 데이터를 가져올 수 있도록 하는 HTTP 변수에 대해 알아보세요. 메타 데이터를 사용 하 여 요청/응답을 변경 합니다.
 services: cdn
 documentationcenter: ''
 author: asudbring
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: allensu
-ms.openlocfilehash: 6e601e3e06965faf8ec0fd238c54115570150b61
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: a2d9fc98ba6f514afbd88e543a859a69e0fc6c6b
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86203578"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192668"
 ---
 # <a name="http-variables-for-azure-cdn-rules-engine"></a>Azure CDN 규칙 엔진에 대한 HTTP 변수
 HTTP 변수는 HTTP 요청 및 응답 메타데이터를 검색할 수 있는 수단을 제공합니다. 이 메타데이터는 요청 또는 응답을 동적으로 변경하는 데 사용할 수 있습니다. HTTP 변수의 사용은 다음 규칙 엔진 기능으로 제한됩니다.
@@ -102,7 +102,7 @@ HTTP 변수 이름은 영문자 및 밑줄만 지원합니다. 지원되지 않�
 | / | HTTP 변수 또는 패턴을 구분합니다. |
 | // | 지정된 패턴의 모든 인스턴스를 찾아서 바꿉니다. |
 | /= | 지정된 패턴의 모든 발생을 찾고, 복사하고, 다시 작성합니다. |
-| . | HTTP 변수와 연결된 값을 소문자로 변환합니다. |
+| , | HTTP 변수와 연결된 값을 소문자로 변환합니다. |
 | ^ | HTTP 변수와 연결된 값을 대문자로 변환합니다. |
 | ,, | HTTP 변수와 연결된 값에서 지정된 문자의 모든 인스턴스를 소문자로 변환합니다. |
 | ^^ | HTTP 변수와 연결된 값에서 지정된 문자의 모든 인스턴스를 대문자로 변환합니다. |
@@ -110,7 +110,7 @@ HTTP 변수 이름은 영문자 및 밑줄만 지원합니다. 지원되지 않�
 ## <a name="exceptions"></a>예외
 다음 표에서 지정된 텍스트는 HTTP 변수로 처리되지 않는 상황을 설명합니다.
 
-| 조건 | Description | 예제 |
+| 조건 | 설명 | 예제 |
 | --------- | ----------- | --------|
 | % 기호 이스케이프 | 백슬래시를 사용하여 백분율 기호를 이스케이프할 수 있습니다. <br />오른쪽의 샘플 값은 HTTP 변수가 아닌 리터럴 값으로 처리됩니다.| \%{host} |
 | 알 수 없는 변수 | 빈 문자열은 항상 알 수 없는 변수에 대해 반환됩니다. | %{unknown_variable} |

@@ -1,17 +1,17 @@
 ---
 title: Microsoft Azure FXT Edge 필터 unit을 종료 하는 방법
-description: Azure FXT Edge 필터 노드의 시작 및 안전 종료 절차
+description: 클러스터 제어판 소프트웨어를 사용 하 여 Azure FXT Edge 필터 노드의 시작 및 안전 종료 절차를 알아봅니다.
 author: ekpgh
 ms.service: fxt-edge-filer
 ms.topic: how-to
 ms.date: 07/01/2019
 ms.author: rohogue
-ms.openlocfilehash: 92364de82bc3de8229eced4ee02997a27afbde45
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d597d5d1e86a2ea13363bc270fb55304d77dee5c
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85506415"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184876"
 ---
 # <a name="how-to-safely-power-off-azure-fxt-edge-filer-hardware"></a>Azure FXT Edge 필터 하드웨어를 안전 하 게 활용 하는 방법
 

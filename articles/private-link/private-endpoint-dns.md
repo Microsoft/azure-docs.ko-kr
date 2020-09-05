@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: df1896caaa0cba1f62dc1466124b393337fa8c83
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: 5657741a1496084b55d2f76aef12c5e84c274feb
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87985787"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918131"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>Azure 개인 끝점 DNS 구성
 
@@ -27,12 +27,15 @@ FQDN (정규화 된 도메인 이름)을 사용 하 여 연결 문자열의 일�
 - **DNS 전달자를 사용 합니다 (선택 사항)**. DNS 전달자를 사용 하 여 특정 개인 링크 리소스에 대 한 DNS 확인을 재정의할 수 있습니다. [DNS 서버](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server)가 가상 네트워크에서 호스트되는 경우 프라이빗 DNS 영역을 사용하여 모든 프라이빗 링크 리소스에 대한 구성을 간소화하는 DNS 전달 규칙을 만들 수 있습니다.
  
 > [!IMPORTANT]
-> 공용 끝점을 확인 하는 데 적극적으로 사용 되는 영역은 재정의 하지 않는 것이 좋습니다. DNS를 공용 DNS로 전달하지 않으면 리소스에 대한 연결을 올바르게 확인할 수 없습니다. 문제를 방지하려면 서로 다른 도메인 이름을 만들거나 아래 각 서비스에 대해 제안된 이름을 따릅니다. 
+> 는 공용 끝점을 확인 하는 데 적극적으로 사용 되는 영역을 재정의 하지 않는 것이 좋습니다. DNS를 공용 DNS로 전달하지 않으면 리소스에 대한 연결을 올바르게 확인할 수 없습니다. 문제를 방지하려면 서로 다른 도메인 이름을 만들거나 아래 각 서비스에 대해 제안된 이름을 따릅니다. 
 
 ## <a name="azure-services-dns-zone-configuration"></a>Azure 서비스 DNS 영역 구성
 Azure 서비스는 공용 DNS 서비스에서 CNAME (정식 이름 DNS 레코드)을 만들어 확인을 제안 된 개인 도메인 이름으로 리디렉션합니다. 프라이빗 엔드포인트의 프라이빗 IP 주소를 사용하여 확인 사항을 재정의할 수 있습니다. 
  
 애플리케이션에서 연결 URL을 변경할 필요가 없습니다. 공용 DNS 서비스를 사용 하 여 확인 하려고 하면 DNS 서버가 개인 끝점으로 확인 됩니다. 이 프로세스는 기존 응용 프로그램에 영향을 주지 않습니다. 
+
+> [!IMPORTANT]
+> 지정 된 형식에 대해 개인 DNS 영역을 이미 사용 하 고 있는 개인 네트워크에서는 개인 끝점 연결이 없는 경우에만 공용 리소스에 연결할 수 있습니다. 그렇지 않으면 DNS 확인 시퀀스를 완료 하기 위해 개인 DNS 영역에 해당 DNS 구성이 필요 합니다. 
 
 Azure 서비스의 경우 다음 표에 설명된 대로 권장되는 영역 이름을 사용합니다.
 

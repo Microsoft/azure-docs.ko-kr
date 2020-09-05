@@ -2,16 +2,17 @@
 title: Application Insights를 사용 하 여 라이브 Azure Service Fabric 앱 프로 파일링
 description: Service Fabric 애플리케이션에 대해 Profiler 사용
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: d63d932756495584b2870c597d3332077f8e86c9
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 317c02fe03a56ea3cd3a98b00f8a0080b3917108
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539842"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930284"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Application Insights를 사용하여 라이브 Azure Service Fabric 애플리케이션 프로파일링
 

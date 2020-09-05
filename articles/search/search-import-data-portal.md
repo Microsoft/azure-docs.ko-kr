@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 8d786f1ebadc961ab367fdcc9b27c4d829a68400
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7cff009d5d1e187e8d0330fadca530b57b3e3d21
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85321384"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935214"
 ---
 # <a name="import-data-wizard-for-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 데이터 가져오기 마법사
 
@@ -73,14 +73,14 @@ Azure Portal는 Azure Cognitive Search 대시보드에서 인덱스를 프로토
 
 ## <a name="wizard-output"></a>마법사 출력
 
-마법사는 내부적으로 다음 개체를 만들고, 구성 하 고, 호출 합니다. 마법사를 실행 한 후 포털 페이지에서 해당 출력을 찾을 수 있습니다. 서비스의 개요 페이지에는 인덱스, 인덱서, 데이터 원본 및 기술력과 목록이 있습니다. 인덱스 정의는 포털의 전체 JSON에서 볼 수 있습니다. 다른 정의의 경우 [REST API](https://docs.microsoft.com/rest/api/searchservice/) 를 사용 하 여 특정 개체를 가져올 수 있습니다.
+마법사는 내부적으로 다음 개체를 만들고, 구성 하 고, 호출 합니다. 마법사를 실행 한 후 포털 페이지에서 해당 출력을 찾을 수 있습니다. 서비스의 개요 페이지에는 인덱스, 인덱서, 데이터 원본 및 기술력과 목록이 있습니다. 인덱스 정의는 포털의 전체 JSON에서 볼 수 있습니다. 다른 정의의 경우 [REST API](/rest/api/searchservice/) 를 사용 하 여 특정 개체를 가져올 수 있습니다.
 
 | Object | Description | 
 |--------|-------------|
-| [데이터 원본](https://docs.microsoft.com/rest/api/searchservice/create-data-source)  | 자격 증명을 포함 하 여 원본 데이터에 대 한 연결 정보를 유지 합니다. 데이터 원본 개체는 인덱서에 독점적으로 사용 됩니다. | 
-| [Index](https://docs.microsoft.com/rest/api/searchservice/create-index) | 전체 텍스트 검색 및 기타 쿼리에 사용 되는 실제 데이터 구조입니다. | 
-| [기술 집합](https://docs.microsoft.com/rest/api/searchservice/create-skillset) | 이미지 파일의 정보를 분석 하 고 추출 하는 것을 포함 하 여 콘텐츠를 조작, 변형 및 셰이핑 하기 위한 전체 지침을 포함 합니다. 매우 간단 하 고 제한 된 구조체를 제외 하 고 보강를 제공 하는 Cognitive Services 리소스에 대 한 참조를 포함 합니다. 필요에 따라 기술 자료 저장소 정의가 포함 될 수도 있습니다.  | 
-| [인덱서](https://docs.microsoft.com/rest/api/searchservice/create-indexer)  | 오류 처리 및 64 인코딩에 대 한 데이터 원본, 대상 인덱스, 선택적 기술, 선택적 일정 및 선택적 구성 설정을 지정 하는 구성 개체입니다. |
+| [데이터 원본](/rest/api/searchservice/create-data-source)  | 자격 증명을 포함 하 여 원본 데이터에 대 한 연결 정보를 유지 합니다. 데이터 원본 개체는 인덱서에 독점적으로 사용 됩니다. | 
+| [Index](/rest/api/searchservice/create-index) | 전체 텍스트 검색 및 기타 쿼리에 사용 되는 실제 데이터 구조입니다. | 
+| [기술 집합](/rest/api/searchservice/create-skillset) | 이미지 파일의 정보를 분석 하 고 추출 하는 것을 포함 하 여 콘텐츠를 조작, 변형 및 셰이핑 하기 위한 전체 지침을 포함 합니다. 매우 간단 하 고 제한 된 구조체를 제외 하 고 보강를 제공 하는 Cognitive Services 리소스에 대 한 참조를 포함 합니다. 필요에 따라 기술 자료 저장소 정의가 포함 될 수도 있습니다.  | 
+| [인덱서](/rest/api/searchservice/create-indexer)  | 오류 처리 및 64 인코딩에 대 한 데이터 원본, 대상 인덱스, 선택적 기술, 선택적 일정 및 선택적 구성 설정을 지정 하는 구성 개체입니다. |
 
 
 ## <a name="how-to-start-the-wizard"></a>마법사를 시작 하는 방법
@@ -103,7 +103,7 @@ Azure Cosmos DB, Azure SQL Database, SQL Managed Instance 및 Azure Blob storage
 
 1. 필드 목록이 완성 되었습니까? 샘플링에서 누락 된 새 필드를 추가 하 고 검색 환경에 값을 추가 하지 않거나 [필터 식](search-query-odata-filter.md) 또는 [점수 매기기 프로필](index-add-scoring-profiles.md)에 사용 되지 않는 모든 필드를 제거 합니다.
 
-1. 들어오는 데이터에 적합 한 데이터 형식 입니까? Azure Cognitive Search는 [EDM (엔터티 데이터 모델) 데이터 형식을](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)지원 합니다. Azure SQL 데이터의 경우 해당 값을 레이아웃 하는 [매핑 차트가](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#TypeMapping) 있습니다. 자세한 배경 정보는 [필드 매핑 및 변환](search-indexer-field-mappings.md)을 참조 하세요.
+1. 들어오는 데이터에 적합 한 데이터 형식 입니까? Azure Cognitive Search는 [EDM (엔터티 데이터 모델) 데이터 형식을](/rest/api/searchservice/supported-data-types)지원 합니다. Azure SQL 데이터의 경우 해당 값을 레이아웃 하는 [매핑 차트가](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#TypeMapping) 있습니다. 자세한 배경 정보는 [필드 매핑 및 변환](search-indexer-field-mappings.md)을 참조 하세요.
 
 1. *키*로 사용할 수 있는 필드가 하나 있나요? 이 필드는 Edm 이어야 하며 문서를 고유 하 게 식별 해야 합니다. 관계형 데이터의 경우 기본 키에 매핑될 수 있습니다. Blob의 경우이 될 수 있습니다 `metadata-storage-path` . 필드 값에 공백 또는 대시를 포함하는 경우 **고급 옵션**의 **인덱서 만들기** 단계에서 **Base-64 인코딩 키** 옵션을 설정하여 이러한 문자에 대한 유효성 검사를 비활성화해야 합니다.
 

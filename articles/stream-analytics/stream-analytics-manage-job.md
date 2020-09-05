@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/03/2019
 ms.openlocfilehash: 577a80f04ad186ab1575fa78db3fa59402d6058f
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "83697388"
 ---
 # <a name="tutorial-analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>자습서: Stream Analytics를 사용하여 전화 통화 데이터 분석 및 Power BI 대시보드에서 결과 시각화
@@ -52,7 +52,7 @@ Stream Analytics가 사기성 호출 데이터 스트림을 분석하려면 Azur
    |**설정**  |**제안 값** |**설명**  |
    |---------|---------|---------|
    |속성     | myEventHubsNS        |  이벤트 허브 네임스페이스를 식별하는 고유 이름입니다.       |
-   |Subscription     |   \<구독\>      |   이벤트 허브를 만들 Azure 구독을 선택합니다.      |
+   |Subscription     |   \<Your subscription\>      |   이벤트 허브를 만들 Azure 구독을 선택합니다.      |
    |Resource group     |   MyASADemoRG      |  **새로 만들기**를 선택하고 계정의 새로운 리소스 그룹 이름을 입력합니다.       |
    |위치     |   미국 서부2      |    이벤트 허브 네임스페이스를 배포할 수 있는 위치입니다.     |
 
@@ -135,7 +135,7 @@ TelcoGenerator 앱을 시작하기 전에, 앞에서 만든 Azure Event Hubs로 
    |**설정**  |**제안 값**  |**설명**  |
    |---------|---------|---------|
    |작업 이름     |  ASATutorial       |   이벤트 허브 네임스페이스를 식별하는 고유 이름입니다.      |
-   |Subscription    |  \<구독\>   |   작업을 만들 Azure 구독을 선택합니다.       |
+   |Subscription    |  \<Your subscription\>   |   작업을 만들 Azure 구독을 선택합니다.       |
    |Resource group   |   MyASADemoRG      |   **기존 항목 사용**을 선택하고 계정의 새로운 리소스 그룹 이름을 입력합니다.      |
    |위치   |    미국 서부2     |      작업을 배포할 수 있는 위치입니다. 최상의 성능을 위해 동일한 지역에 작업 및 이벤트 허브를 배치하는 것이 좋으며 지역 간에 데이터를 전송하는 데 비용을 지불하지 않아도 됩니다.      |
    |호스팅 환경    | 클라우드        |     Stream Analytics 작업은 클라우드 또는 에지에 배포할 수 있습니다. 클라우드를 사용하면 Azure 클라우드에 배포할 수 있고, 에지를 사용하면 IoT Edge 디바이스에 배포할 수 있습니다.    |
@@ -158,7 +158,7 @@ TelcoGenerator 앱을 시작하기 전에, 앞에서 만든 Azure Event Hubs로 
    |**설정**  |**제안 값**  |**설명**  |
    |---------|---------|---------|
    |입력 별칭     |  CallStream       |  입력을 식별하는 표시 이름. 입력 별칭은 영숫자 문자, 하이픈, 밑줄만 사용할 수 있으며 길이가 3자에서 63자 사이여야 합니다.       |
-   |Subscription    |   \<구독\>      |   이벤트 허브를 만든 Azure 구독을 선택합니다. 이벤트 허브는 Stream Analytics 작업과 같은 구독일 수도 있고 다른 구독일 수도 있습니다.       |
+   |Subscription    |   \<Your subscription\>      |   이벤트 허브를 만든 Azure 구독을 선택합니다. 이벤트 허브는 Stream Analytics 작업과 같은 구독일 수도 있고 다른 구독일 수도 있습니다.       |
    |이벤트 허브 네임스페이스    |  myEventHubsNS       |  이전 섹션에서 만든 이벤트 허브 네임스페이스를 선택합니다. 현재 구독에서 사용할 수 있는 모든 이벤트 허브 네임스페이스가 드롭다운에 나열됩니다.       |
    |이벤트 허브 이름    |   MyEventHub      |  이전 섹션에서 만든 이벤트 허브를 선택합니다. 현재 구독에서 사용할 수 있는 모든 이벤트 허브가 드롭다운에 나열됩니다.       |
    |이벤트 허브 정책 이름   |  MyPolicy       |  이전 섹션에서 만든 이벤트 허브 공유 액세스 정책을 선택합니다. 현재 구독에서 사용할 수 있는 모든 이벤트 정책이 드롭다운에 나열됩니다.       |

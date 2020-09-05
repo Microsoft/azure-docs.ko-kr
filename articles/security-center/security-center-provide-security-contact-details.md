@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/11/2020
 ms.author: memildin
-ms.openlocfilehash: c09dca8b5927e417714ef89393950cfb58c89020
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: dda61b81ee2c357ddac29701832fe4780ea06859
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88042278"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88516302"
 ---
 # <a name="set-up-email-notifications-for-security-alerts"></a>보안 경고에 대 한 전자 메일 알림 설정 
 
@@ -32,6 +32,9 @@ ms.locfileid: "88042278"
 - **보통 심각도** 경고에 대해 하루에 최대 **2 개의** 전자 메일
 - **심각도가 낮은** 경고에 대해 하루에 최대 **한 번** 전자 메일
 
+
+:::image type="content" source="./media/security-center-provide-security-contacts/email-notification-settings.png" alt-text="보안 경고에 대 한 전자 메일을 받을 연락처의 세부 정보를 구성 합니다." :::
+
 ## <a name="availability"></a>가용성
 
 |양상|세부 정보|
@@ -43,9 +46,7 @@ ms.locfileid: "88042278"
 |||
 
 
-
-
-## <a name="set-up-email-notifications-for-alerts"></a>경고에 대 한 전자 메일 알림 설정<a name="email"></a>
+## <a name="set-up-email-notifications-for-alerts"></a>경고에 대 한 전자 메일 알림 설정 <a name="email"></a>
 
 개인 또는 특정 Azure 역할의 모든 사용자에 게 전자 메일 알림을 보낼 수 있습니다.
 
@@ -64,3 +65,4 @@ ms.locfileid: "88042278"
 
 * [보안 경고-참조 가이드](alerts-reference.md) --Azure Security Center의 위협 방지 모듈에서 볼 수 있는 보안 경고에 대해 알아봅니다.
 * [Azure Security Center에서 보안 경고 관리 및 대응](security-center-managing-and-responding-alerts.md) --보안 경고를 관리 하 고 대응 하는 방법을 알아봅니다.
+* [워크플로 자동화](workflow-automation.md) -사용자 지정 알림 논리를 사용 하 여 경고에 대 한 응답 자동화

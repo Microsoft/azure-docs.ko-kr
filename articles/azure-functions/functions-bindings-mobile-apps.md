@@ -3,14 +3,15 @@ title: Azure Functions의 Mobile Apps 바인딩
 description: Azure Functions에서 Azure Mobile Apps 바인딩을 사용하는 방법을 파악합니다.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 6810ba76379e78d3cde4f3cd341d501be3725257
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5ea58cc3d9f3615a74249b36f3f9ffb79caddda1
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506335"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212245"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Azure Functions의 Mobile Apps 바인딩 
 

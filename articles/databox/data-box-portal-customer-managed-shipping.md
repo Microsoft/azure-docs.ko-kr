@@ -2,18 +2,18 @@
 title: Microsoft Azure Data Box 자체 관리형 배송 | Microsoft Docs
 description: Azure Data Box 디바이스용 자체 관리형 배송 워크플로에 대해 설명합니다.
 services: databox
-author: priestlg
+author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: how-to
-ms.date: 05/20/2020
-ms.author: v-grpr
-ms.openlocfilehash: 99c7021744467484656c52cf72378c6f553c3913
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/12/2020
+ms.author: alkohli
+ms.openlocfilehash: cfa2dee41f07e273d933da356f74063453cb1775
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84608590"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88142539"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-in-the-azure-portal"></a>Azure Portal에서 Azure Data Box용 자체 관리형 배송 사용
 
@@ -28,6 +28,8 @@ ms.locfileid: "84608590"
 * 일본
 * 싱가포르
 * 대한민국
+* 인도
+* 남아프리카 공화국
 
 ## <a name="use-self-managed-shipping"></a>자체 관리형 배송 사용
 

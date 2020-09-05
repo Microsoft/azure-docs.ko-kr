@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 05/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 15b96a8bb5460064d6f50f81809f7e3850b30a4c
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 9d4e709b2a844db9d0be55de2630ce799edb01ff
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281925"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921676"
 ---
 # <a name="technical-and-feature-overview-of-azure-active-directory-b2c"></a>Azure Active Directory B2C의 기술 및 기능 개요
 
@@ -262,7 +262,4 @@ Azure AD B2C를 사용하면 사용자가 웹앱에 가입하거나 로그인하
 
 ## <a name="next-steps"></a>다음 단계
 
-이제 Azure Active Directory B2C의 기능 및 기술적 측면을 자세히 살펴보았으므로 B2C 테넌트를 만들어 서비스를 시작합니다.
-
-> [!div class="nextstepaction"]
-> [자습서: Azure Active Directory B2C 테넌트 만들기 >](tutorial-create-tenant.md)
+이제 Azure Active Directory B2C의 기능 및 기술적 측면을 자세히 살펴보았으므로 [Azure Active Directory B2C 테넌트를 만들기 위한 자습서](tutorial-create-tenant.md)를 시작하세요.

@@ -9,14 +9,14 @@ manager: dviso
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 08/25/2020
 ms.custom: seodec18
-ms.openlocfilehash: 149d1eab696ae8419bed79cd2cdc0b066c32060c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 35a2be5c9f418bc423ae56c456db0062677a33c2
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86531422"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88856122"
 ---
 # <a name="grant-data-access-to-an-environment"></a>환경에 대한 데이터 액세스 권한 부여
 
@@ -64,7 +64,7 @@ ms.locfileid: "86531422"
 
 다른 테 넌 트에서 Azure AD 사용자에 게 Azure Time Series Insights 환경에 대 한 게스트 액세스 권한을 부여 하려면 다음 단계를 수행 합니다.
 
-1. Azure Portal로 이동 하 여 **Azure Active Directory**를 클릭 하 고 **개요** 탭에서 아래로 스크롤한 다음 **게스트 사용자**를 선택 합니다.
+1. Azure Portal로 이동 하 여  **Azure Active Directory**를 클릭 하 고 **개요** 탭에서 아래로 스크롤한 다음 **게스트 사용자**를 선택 합니다.
 
     [![데이터 액세스 정책을 선택 하 고 + 초대를 선택 합니다.](media/data-access/data-access-invite-another-aad-tenant.png)](media/data-access/data-access-invite-another-aad-tenant.png#lightbox)
 
@@ -106,7 +106,7 @@ ms.locfileid: "86531422"
 
 1. 관리자는 해당 게스트와 [환경 URL을 공유](time-series-insights-parameterized-urls.md) 합니다.
 
-1. 게스트 사용자가 초대 하는 데 사용한 전자 메일 주소에 로그인 한 후 초대를 수락 하면 Azure Portal 전송 됩니다. 
+1. 게스트 사용자가 초대 하는 데 사용한 전자 메일 주소에 로그인 한 후 초대를 수락 하면 Azure Portal 전송 됩니다.
 
 1. 이제 게스트가 관리자가 제공한 환경 URL을 사용 하 여 공유 환경에 액세스할 수 있습니다. 이러한 URL을 웹 브라우저에 입력 하 여 즉시 액세스할 수 있습니다.
 
@@ -114,14 +114,14 @@ ms.locfileid: "86531422"
 
     [![Insights.azure.com에서 아바타 선택](media/data-access/data-access-select-tenant-and-instance.png)](media/data-access/data-access-select-tenant-and-instance.png#lightbox)
 
+    게스트 사용자가 관리자의 테 넌 트를 선택 하면 공유 Azure Time Series Insights 환경을 선택할 수 있습니다.
 
-    게스트 사용자가 관리자의 테 넌 트를 선택 하면 공유 Azure Time Series Insights 환경을 선택할 수 있습니다. 
-    
     이제 **5 단계**에서 제공 하는 역할과 관련 된 모든 기능을 제공 합니다.
 
     [![게스트 사용자가 드롭다운에서 Azure 테 넌 트를 선택 합니다.](media/data-access/data-access-all-capabilities.png)](media/data-access/data-access-all-capabilities.png#lightbox)
 
 ## <a name="next-steps"></a>다음 단계
+
 * Azure Active Directory 앱 등록 단계에 대 한 [인증 및 권한 부여](time-series-insights-authentication-and-authorization.md) 를 읽습니다.
 
-* [Azure Time Series Insights Gen2 탐색기에서 환경을](./time-series-insights-update-explorer.md)확인 합니다.
+* [Azure Time Series Insights TSI 탐색기에서 환경을](./time-series-insights-update-explorer.md)확인 합니다.

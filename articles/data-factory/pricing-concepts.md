@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/27/2019
-ms.openlocfilehash: 9d96e3f7d127f4839592e766537cbdb07cc697dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d679dbb7a14767b83d6508e4b1e637584f33210a
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81414935"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88949962"
 ---
 # <a name="understanding-data-factory-pricing-through-examples"></a>예제를 통해 Data Factory 가격 책정 이해
 
@@ -166,6 +166,46 @@ ms.locfileid: "81414935"
 - 파이프라인 오케스트레이션 &amp; 실행 = **$1.463**
   - 활동 실행 = 001\*2 = 0.002 [1 run = $1/1000 = 0.001]
   - 데이터 흐름 활동 = $1.461 20 분 (10 분 실행 시간 + 10 분 TTL)에 비례하여 계산 됩니다. 16 코어 일반 계산을 사용 하는 Azure Integration Runtime의 $0.274/시간
+
+## <a name="data-integration-in-azure-data-factory-managed-vnet"></a>Azure Data Factory 관리 VNET의 데이터 통합
+이 시나리오에서는 Azure Blob Storage에서 원래 파일을 삭제 하 고 Azure SQL Database에서 Azure Blob Storage으로 데이터를 복사 하려고 합니다. 다른 파이프라인에서이 실행을 두 번 수행 합니다. 이러한 두 파이프라인의 실행 시간은 겹칩니다.
+![Scenario4 ](media/pricing-concepts/scenario-4.png) 시나리오를 수행 하려면 다음 항목을 포함 하는 두 개의 파이프라인을 만들어야 합니다.
+  - 파이프라인 활동 – Delete 활동입니다.
+  - Azure Blob storage에서 복사할 데이터의 입력 데이터 집합이 포함 된 복사 작업입니다.
+  - Azure SQL Database 데이터에 대 한 출력 데이터 집합입니다.
+  - 파이프라인을 실행 하기 위한 일정 트리거입니다.
+
+
+| **작업** | **형식 및 단위** |
+| --- | --- |
+| 연결된 서비스 만들기 | 읽기/쓰기 엔터티 4 개 |
+| 데이터 세트 만들기 | 8 개의 읽기/쓰기 엔터티 (데이터 집합을 만드는 경우 4, 연결 된 서비스 참조의 경우 4) |
+| 파이프라인 만들기 | 읽기/쓰기 엔터티 6 개 (파이프라인 생성의 경우 2, 데이터 집합 참조의 경우 4 개) |
+| 파이프라인 가져오기 | 2개의 읽기/쓰기 엔터티 |
+| 파이프라인 실행 | 작업 실행 6 개 (트리거 실행의 경우 2, 활동 실행의 경우 4 개) |
+| Delete 작업 실행: 각 실행 시간은 5 분입니다. 첫 번째 파이프라인에서의 삭제 작업 실행은 오전 10:00 시부터 오전 10:05에서 UTC 사이입니다. 두 번째 파이프라인에서 삭제 작업 실행은 오전 10:02 시부터 오전 10:07에서 UTC 사이입니다.|관리 되는 VNET에서 총 7 분 파이프라인 활동 실행 파이프라인 활동은 관리 되는 VNET에서 최대 50의 동시성을 지원 합니다. |
+| 데이터 복사 가정: 각 실행 시간은 10 분입니다. 첫 번째 파이프라인의 복사 실행은 오전 10:06 시부터 오전 10:15에서 UTC 사이입니다. 두 번째 파이프라인에서 삭제 작업 실행은 오전 10:08 시부터 오전 10:17에서 UTC 사이입니다. | 10 * 4 Azure Integration Runtime (기본 DIU 설정 = 4) 데이터 통합 단위에 대 한 자세한 내용과 복사 성능을 최적화 하는 방법에 대 한 자세한 내용은 [이 문서](copy-activity-performance.md) 를 참조 하세요. |
+| 모니터 파이프라인 가정: 2 개 실행만 발생 했습니다. | 6 모니터링 실행 레코드 다시 시도 (파이프라인 실행의 경우 2 개, 활동 실행의 경우 4 개) |
+
+
+**총 시나리오 가격: $0.45523**
+
+- Data Factory 작업 = $0.00023
+  - 읽기/쓰기 = 20 * 00001 = $0.0002 [1 R/W = $0.50/50000 = 0.00001]
+  - Monitoring = 6 * 000005 = $0.00003 [1 Monitoring = $0.25/50000 = 0.000005]
+- 파이프라인 오케스트레이션 & 실행 = $0.455
+  - 활동 실행 = 0.001 * 6 = 0.006 [1 run = $1/1000 = 0.001]
+  - 데이터 이동 활동 = $0.333 (실행 시간의 10 분에 비례하여 계산) Azure Integration Runtime에서 $0.25/시간)
+  - 파이프라인 활동 = $0.116 (실행 시간 7 분 동안 비례) Azure Integration Runtime의 $1/시간)
+
+> [!NOTE]
+> 이러한 가격은 예를 들어 목적 으로만 사용 됩니다.
+
+**FAQ**
+
+Q: 50 개 이상의 파이프라인 활동을 실행 하려는 경우 이러한 활동을 동시에 실행할 수 있습니까?
+
+A: 최대 50 동시 파이프라인 작업을 허용 합니다.  51th 파이프라인 활동은 "빈 슬롯"이 열릴 때까지 큐에 대기 됩니다. 외부 활동에 대해서도 동일 합니다. 최대 800 동시 외부 활동이 허용 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

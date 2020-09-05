@@ -11,12 +11,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Operations'
 - 'Role: Technical Support'
-ms.openlocfilehash: bee22391664250888816dc2b4bbb93622cab7942
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: ec8d277de177942386d9f3becdf329cdff1ca812
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335565"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797805"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>참조 - IoT Hub 할당량 및 제한
 
@@ -97,7 +97,7 @@ IoT 플러그 앤 플레이 장치는 루트를 포함 하 여 각 인터페이�
 
 IoT Hub에는 다른 작업 제한도 적용됩니다.
 
-| 작업(Operation) | 제한 |
+| 작업 | 제한 |
 | --------- | ----- |
 | 디바이스 | 단일 IoT hub에 등록할 수 있는 장치 및 모듈의 총 수는 100만로 표시 됩니다. 이 한도를 늘리는 유일한 방법은 [Microsoft 지원](https://azure.microsoft.com/support/options/)에 연결 하는 것입니다.|
 | 파일 업로드 | 장치 당 10 개의 동시 파일 업로드. |
@@ -111,7 +111,8 @@ IoT Hub에는 다른 작업 제한도 적용됩니다.
 | 자동 장치 및 모듈 구성<sup>1</sup> | 유료 SKU 허브당 100개 구성입니다. 체험 SKU 허브당 20개 구성입니다. |
 | 자동 배포 IoT Edge<sup>1</sup> | 배포 당 50 모듈 100 유료 SKU 허브 당 배포 (계층화 된 배포 포함) 무료 SKU 허브 당 10 개의 배포. |
 | 쌍<sup>1</sup> | Desired 속성의 최대 크기 및 보고 된 속성 섹션은 각각 32 KB입니다. 태그 섹션의 최대 크기는 8kb입니다. |
-| 공유 액세스 정책 | 공유 액세스 정책의 최대 수는 16입니다. |
+| 공유 액세스 정책 | 공유 액세스 정책의 최대 수는 16 개입니다. |
+| x509 CA 인증서 | IoT Hub에 등록할 수 있는 x509 CA 인증서의 최대 수는 25 개입니다. |
 
 <sup>1</sup>이 기능은 IoT Hub의 기본 계층에서 사용할 수 없습니다. 자세한 내용은 [올바른 IoT Hub를 선택하는 방법](iot-hub-scaling.md)을 참조하세요.
 

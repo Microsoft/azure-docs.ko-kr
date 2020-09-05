@@ -1,14 +1,14 @@
 ---
 title: 이니셔티브 정의 구조의 세부 정보
 description: 정책 이니셔티브 정의를 사용 하 여 조직의 Azure 리소스에 배포 하기 위한 정책 정의를 그룹화 하는 방법을 설명 합니다.
-ms.date: 05/29/2020
+ms.date: 08/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 80fa90765caa25d6995220134b9a5b4225133219
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d7b4adf15193e2cd1b9e516a04c7c989dc442ee9
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84205874"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89048502"
 ---
 # <a name="azure-policy-initiative-definition-structure"></a>Azure Policy 이니셔티브 정의 구조
 
@@ -109,14 +109,14 @@ Azure Policy 기본 제공 및 패턴은 [Azure Policy 샘플](../samples/index.
 
 ### <a name="common-metadata-properties"></a>공통 메타 데이터 속성
 
-- `version`(string): 정책 이니셔티브 정의의 콘텐츠 버전에 대 한 세부 정보를 추적 합니다.
-- `category`(string): Azure Portal 정책 정의가 표시 되는 범주를 결정 합니다.
+- `version` (string): 정책 이니셔티브 정의의 콘텐츠 버전에 대 한 세부 정보를 추적 합니다.
+- `category` (string): Azure Portal 정책 정의가 표시 되는 범주를 결정 합니다.
 
   > [!NOTE]
   > [규정 준수](./regulatory-compliance.md) 이니셔티브의 경우는 `category` **규정 준수**여야 합니다.
 
-- `preview`(부울): 정책 이니셔티브 정의가 _미리 보기_인 경우 True 또는 false 플래그입니다.
-- `deprecated`(부울): 정책 이니셔티브 정의가 _사용 되지 않는_것으로 표시 된 경우에 대 한 True 또는 false 플래그입니다.
+- `preview` (부울): 정책 이니셔티브 정의가 _미리 보기_인 경우 True 또는 false 플래그입니다.
+- `deprecated` (부울): 정책 이니셔티브 정의가 _사용 되지 않는_것으로 표시 된 경우에 대 한 True 또는 false 플래그입니다.
 
 > [!NOTE]
 > Azure Policy 서비스는 `version`, `preview` 및 `deprecated` 속성을 사용하여 기본 제공 정책 정의 또는 이니셔티브 및 상태에 대한 변경 수준 전달합니다. `version`의 형식은 `{Major}.{Minor}.{Patch}`입니다. _deprecated_ 또는 _preview_와 같은 특정 상태가 `version` 속성에 추가되거나 다른 속성에 **부울**로 추가됩니다. 버전 Azure Policy 기본 제공 되는 방법에 대 한 자세한 내용은 [기본 제공 버전 관리](https://github.com/Azure/azure-policy/blob/master/built-in-policies/README.md)를 참조 하세요.
@@ -218,10 +218,10 @@ Get-AzResourceProvider에서 반환하지 않는 일부 리소스 유형이 지�
 
 정책 정의를 나타내는 각 _배열_ 요소에는 다음과 같은 속성이 있습니다.
 
-- `policyDefinitionId`(string): 포함할 사용자 지정 또는 기본 제공 정책 정의의 ID입니다.
-- `policyDefinitionReferenceId`(string): 포함 된 정책 정의의 짧은 이름입니다.
+- `policyDefinitionId` (string): 포함할 사용자 지정 또는 기본 제공 정책 정의의 ID입니다.
+- `policyDefinitionReferenceId` (string): 포함 된 정책 정의의 짧은 이름입니다.
 - `parameters`: (선택 사항) 포함 된 정책 정의에 이니셔티브 매개 변수를 해당 정책 정의의 속성으로 전달 하는 이름/값 쌍입니다. 자세한 내용은 [매개 변수](#parameters)를 참조하세요.
-- `groupNames`(문자열 배열): (선택 사항) 정책 정의가 멤버로 속해 있는 그룹입니다. 자세한 내용은 [정책 그룹](#policy-definition-groups)을 참조 하세요.
+- `groupNames` (문자열 배열): (선택 사항) 정책 정의가 멤버로 속해 있는 그룹입니다. 자세한 내용은 [정책 그룹](#policy-definition-groups)을 참조 하세요.
 
 다음은 `policyDefinitions` 각각 동일한 이니셔티브 매개 변수로 전달 되는 두 개의 정책 정의가 포함 된의 예입니다.
 
@@ -257,10 +257,10 @@ Microsoft에서 만든 **Policymetadata** 개체에서 추가 그룹화 세부 �
 
 의 각 _배열_ 요소에 `policyDefinitionGroups` 는 다음 속성이 모두 있어야 합니다.
 
-- `name`(문자열) \[ 필수 \] : **컨트롤**의 약식 이름입니다. 이 속성의 값은에서 사용 됩니다 `groupNames` `policyDefinitions` .
-- `category`(string): 컨트롤의 **규정 준수 도메인** 입니다.
-- `displayName`(string): **컨트롤**의 이름입니다. 포털에서 사용 됩니다.
-- `description`(string): **컨트롤** 의 용도에 대 한 설명입니다.
+- `name` (문자열) \[ 필수 \] : **컨트롤**의 약식 이름입니다. 이 속성의 값은에서 사용 됩니다 `groupNames` `policyDefinitions` .
+- `category` (string): 컨트롤의 **규정 준수 도메인** 입니다.
+- `displayName` (string): **컨트롤**의 이름입니다. 포털에서 사용 됩니다.
+- `description` (string): **컨트롤** 의 용도에 대 한 설명입니다.
 - `additionalMetadataId`(string): **제어** 및 **준수 도메인**에 대 한 추가 정보를 포함 하는 [policymetadata](#metadata-objects) 개체의 위치입니다.
 
   > [!NOTE]
@@ -284,7 +284,7 @@ Microsoft에서 만든 규정 준수 기본 기능에는 각 컨트롤에 대 �
 
 - 규정 준수 이니셔티브에 대 한 **컨트롤** 개요의 Azure Portal에 표시 됩니다.
 - REST API를 통해 사용할 수 있습니다. `Microsoft.PolicyInsights`리소스 공급자 및 [policymetadata 작업 그룹](/rest/api/policy-insights/policymetadata/getresource)을 참조 하세요.
-- Azure CLI를 통해 사용할 수 있습니다. [Az policy metadata](/cli/azure/policy/metadata?view=azure-cli-latest) 명령을 참조 하세요.
+- Azure CLI를 통해 사용할 수 있습니다. [Az policy metadata](/cli/azure/policy/metadata) 명령을 참조 하세요.
 
 > [!IMPORTANT]
 > 규정 준수에 대 한 메타 데이터 개체는 _읽기 전용_ 이며 고객은 만들 수 없습니다.
@@ -293,8 +293,8 @@ Microsoft에서 만든 규정 준수 기본 기능에는 각 컨트롤에 대 �
 
 - `metadataId`: 그룹화가 관련 된 **컨트롤 ID** 입니다.
 - `category`(필수): **컨트롤이** 속한 **준수 도메인** 입니다.
-- `title`(필수): **컨트롤 ID**의 이름입니다.
-- `owner`(필수): Azure에서 컨트롤을 담당 하는 사용자를 식별 합니다. _Customer_, _Microsoft_, _Shared_.
+- `title` (필수): **컨트롤 ID**의 이름입니다.
+- `owner` (필수): Azure에서 컨트롤을 담당 하는 사용자를 식별 합니다. _Customer_, _Microsoft_, _Shared_.
 - `description`: 컨트롤에 대 한 추가 정보입니다.
 - `requirements`: 컨트롤의 구현 책임에 대해 자세히 설명 합니다.
 - `additionalContentUrl`: 컨트롤에 대 한 자세한 정보에 대 한 링크입니다. 이 속성은 일반적으로 규정 준수 표준에서이 컨트롤을 다루는 설명서의 섹션에 대 한 링크입니다.

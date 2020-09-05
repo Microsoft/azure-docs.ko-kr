@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 458cda927a6a123fcd9962efc6ab705e13f43286
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 740311226a662ea3d3f8bba3ee5156e14f74516b
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80878785"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88244298"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Docker Compose를 사용하여 여러 컨테이너 배포
 
@@ -25,11 +25,11 @@ ms.locfileid: "80878785"
 
 단일 호스트 컴퓨터에서 여러 컨테이너 이미지를 오케스트레이션 하는 것이 유용할 수 있습니다. 이 문서에서는 읽기 및 폼 인식기 컨테이너를 함께 가져옵니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 절차를 수행 하려면 로컬에 설치 하 고 실행 해야 하는 여러 도구가 필요 합니다.
 
-* Azure 구독 구독이 없으면 시작하기 전에 [계정](https://azure.microsoft.com/free/)을 만드세요.
+* Azure 구독 구독이 없으면 시작하기 전에 [계정](https://azure.microsoft.com/free/cognitive-services)을 만드세요.
 * [Docker 엔진](https://www.docker.com/products/docker-engine). Docker CLI가 콘솔 창에서 작동 하는지 확인 합니다.
 * 올바른 가격 책정 계층이 지정된 Azure 리소스. 다음 가격 책정 계층만이 컨테이너에서 작동 합니다.
   * F0 또는 표준 가격 책정 계층을 사용 하 여 리소스를 **Computer Vision** 합니다.

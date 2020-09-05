@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 6/9/2020
-ms.openlocfilehash: 7ded54e0116e6c6e58c0ca8019942dfaaaa88480
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.date: 8/13/2020
+ms.openlocfilehash: cb785a6d988772ba160806621e44900d630b7e61
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954197"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225719"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Azure Database for MariaDB 가격 책정 계층
 
@@ -21,7 +21,7 @@ Azure Database for MariaDB 서버는 기본, 범용 및 메모리 최적화의 �
 |:---|:----------|:--------------------|:---------------------|
 | 컴퓨팅 세대 | 5세대 |5세대 | 5세대 |
 | vCore 수 | 1, 2 | 2, 4, 8, 16, 32, 64 |2, 4, 8, 16, 32 |
-| vCore 메모리 | 2GB | 5GB | 10GB |
+| vCore 메모리 | 2GB | 5GB | 10 GB |
 | 스토리지 크기 | 5GB-1TB | 5GB-4TB | 5GB-4TB |
 | 데이터베이스 백업 보존 기간 | 7-35일 | 7-35일 | 7-35일 |
 
@@ -47,7 +47,7 @@ Azure Database for MariaDB 서버는 기본, 범용 및 메모리 최적화의 �
 |:---|:----------|:--------------------|:---------------------|
 | 스토리지 유형 | 기본 저장소 | 범용 저장소 | 범용 저장소 |
 | 스토리지 크기 | 5GB-1TB | 5GB-4TB | 5GB-4TB |
-| 스토리지 증분 크기 | 1GB | 1GB | 1GB |
+| 스토리지 증분 크기 | 1 GB | 1 GB | 1 GB |
 | IOPS | 변수 |3IOPS/GB<br/>최소 100IOPS<br/>최대 6000IOPS | 3IOPS/GB<br/>최소 100IOPS<br/>최대 6000IOPS |
 
 서버를 만드는 동안 및 후에 추가 저장소 용량을 추가 하 고 시스템에서 작업의 저장소 사용량에 따라 저장소를 자동으로 늘릴 수 있습니다.
@@ -67,7 +67,7 @@ Azure Portal 또는 Azure CLI 명령을 사용하여 I/O 사용량을 모니터�
 |:-------------|:--------------------|:---------------------|
 | 스토리지 유형 | Azure Premium Storage | Azure Premium Storage |
 | 스토리지 크기 | 32 g b ~ 16TB| 32 ~ 16TB |
-| 스토리지 증분 크기 | 1GB | 1GB |
+| 스토리지 증분 크기 | 1 GB | 1 GB |
 | IOPS | 3IOPS/GB<br/>최소 100IOPS<br/>최대 2만 IOPS| 3IOPS/GB<br/>최소 100IOPS<br/>최대 2만 IOPS |
 
 > [!IMPORTANT]
@@ -93,13 +93,11 @@ Azure Portal 또는 Azure CLI 명령을 사용하여 I/O 사용량을 모니터�
 
 ## <a name="backup"></a>Backup
 
-서비스에서 서버 백업을 자동으로 수행합니다. 7 일에서 35 일 사이의 보존 기간을 선택할 수 있습니다. 범용 및 메모리 액세스에 최적화 된 서버는 백업에 대 한 지역 중복 저장소를 선택할 수 있습니다. 개념에 대 한 자세한 내용은 [개념 문서를 참조](concepts-backup.md)하세요.
+Azure Database for MariaDB는 추가 비용 없이 최대 100%의 프로비전된 서버 스토리지를 백업 스토리지로 제공합니다. 이 용량을 초과 하 여 사용 하는 백업 저장소는 매달 GB 단위로 요금이 청구 됩니다. 예를 들어 250 GB의 저장소를 사용 하 여 서버를 프로 비전 하는 경우 무료로 서버를 백업 하는 데 250 GB의 추가 저장소를 사용할 수 있습니다. 250 GB를 초과 하는 백업용 저장소는 [가격 책정 모델](https://azure.microsoft.com/pricing/details/mariadb/)에 따라 요금이 청구 됩니다. 백업 저장소 사용, 모니터링 및 제어 백업 저장소 비용에 영향을 주는 요소를 이해 하기 위해 [백업 설명서](concepts-backup.md)를 참조할 수 있습니다.
 
-## <a name="scale-resources"></a>리소스 크기 조정
+## <a name="scale-resources"></a>리소스 스케일링
 
 서버를 만든 후 vCore 수, 가격 책정 계층(기본 제외), 스토리지 크기 및 백업 보존 기간을 독립적으로 변경할 수 있습니다. 서버가 만들어진 후 백업 스토리지 유형은 변경할 수 없습니다. vCore 수는 늘리거나 줄일 수 있습니다. 백업 보존 기간은 7~35일 범위에서 늘리거나 줄일 수 있습니다. 스토리지 크기는 늘릴 수 있습니다. 리소스의 크기 조정은 포털 또는 Azure CLI를 통해 수행할 수 있습니다. 
-
-<!--For an example of scaling by using Azure CLI, see [Monitor and scale an Azure Database for MariaDB server by using Azure CLI](scripts/sample-scale-server.md).-->
 
 vCore 수 또는 가격 책정 계층을 변경하면 새 컴퓨팅 할당을 사용하여 원본 서버의 복사본이 만들어집니다. 새 서버가 시작되고 실행된 후 새 서버에 대한 연결로 전환됩니다. 시스템이 새 서버로 전환되면 잠시 동안 새 연결을 설정할 수 없으며, 커밋되지 않은 모든 트랜잭션이 롤백됩니다. 이 기간은 다양하지만, 대부분의 경우 1분 미만입니다.
 
@@ -112,6 +110,3 @@ vCore 수 또는 가격 책정 계층을 변경하면 새 컴퓨팅 할당을 �
 ## <a name="next-steps"></a>다음 단계
 - [서비스 제한 사항](concepts-limits.md)에 대해 알아봅니다.
 - [Azure Portal에서 MariaDB 서버를 만드는 방법](quickstart-create-mariadb-server-database-using-azure-portal.md)을 알아봅니다.
-
-<!--
-- Learn how to [monitor and scale an Azure Database for MariaDB server by using Azure CLI](scripts/sample-scale-server.md).-->

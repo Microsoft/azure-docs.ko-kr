@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/15/2020
-ms.openlocfilehash: c165663e19037bd2ebac410adb6b6d05fcc162e6
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 3de7101eb998d0f9b3b57afba6d19595738cbb63
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076354"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020408"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>HDInsight .NET SDK를 사용하여 MapReduce 작업 실행
 
@@ -169,7 +169,7 @@ HDInsight .NET SDK는 .net에서 HDInsight 클러스터로 더 쉽게 작업할 
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에서는 HDInsight 클러스터를 만드는 여러 가지 방법에 대해 알아보았습니다. 자세히 알아보려면 다음 아티클을 참조하세요.
+이 문서에서는 HDInsight 클러스터를 만드는 여러 가지 방법에 대해 알아보았습니다. 자세한 내용은 다음 문서를 참조하세요.
 
 * Hive 작업 제출에 대해서는 [HDInsight .NET SDK를 사용하여 Apache Hive 쿼리 실행](apache-hadoop-use-hive-dotnet-sdk.md)을 참조하세요.
 * HDInsight 클러스터 만들기는 [HDInsight에서 Linux 기반 Apache Hadoop 클러스터 만들기](../hdinsight-hadoop-provision-linux-clusters.md)를 참조하세요.

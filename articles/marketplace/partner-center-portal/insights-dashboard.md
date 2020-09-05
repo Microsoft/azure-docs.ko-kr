@@ -7,16 +7,16 @@ ms.topic: article
 ms.date: 07/22/2019
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: 877d5436628fdeb973f6d7f30cc71e91eeb92364
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 1a645a333db9b24005639f4adbb2913a2b887b66
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87323284"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055671"
 ---
 # <a name="marketplace-insights-dashboard-in-partner-center"></a>파트너 센터의 Marketplace 인사이트 대시보드
 
-이 문서에서는 파트너 센터의 Marketplace 인사이트 대시보드에 대한 정보를 제공합니다. 이 대시보드에는 상업적 marketplace 상점: Microsoft AppSource 및 Azure Marketplace에 나열 된 각 제품 세부 정보 페이지에 대 한 고객 참여를 평가할 수 있는 marketplace 웹 분석 요약이 표시 됩니다.
+이 문서에서는 파트너 센터의 Marketplace 인사이트 대시보드에 대한 정보를 제공합니다. 이 대시보드에는 상업적 marketplace 온라인 상점: Microsoft AppSource 및 Azure Marketplace에 나열 된 해당 제품 세부 정보 페이지에 대 한 고객 engagement를 게시자가 측정할 수 있는 marketplace 웹 분석 요약이 표시 됩니다.
 
 ## <a name="marketplace-insights-dashboard"></a>Marketplace 인사이트 대시보드
 
@@ -42,11 +42,11 @@ Azure Marketplace 또는 AppSource에서 제품을 방문한 사용자와 파트
 
 다양 한 방법으로 상용 마켓플레이스 메트릭을 봅니다.
 
-- 상점 탭
+- 온라인 상점 탭
 - 페이지 필터
 - 날짜 필터
 
-**상점 탭**: AppSource 및 Azure Marketplace 탭을 통해 제품의 메트릭을 별도로 볼 수 있습니다. 오른쪽의 제품 드롭다운 목록에서 제품을 선택하여 선택한 제품에 대한 메트릭의 시각화를 볼 수 있습니다. 기본적으로 모든 제품이 선택되어 있습니다.
+**온라인 스토어 탭**: appsource & Azure Marketplace 탭을 통해 제품의 메트릭을 별도로 볼 수 있습니다. 오른쪽의 제품 드롭다운 목록에서 제품을 선택하여 선택한 제품에 대한 메트릭의 시각화를 볼 수 있습니다. 기본적으로 모든 제품이 선택되어 있습니다.
 
 ![파트너 센터 인사이트 대시보드 제품 드롭다운 목록](./media/insights-offer-dropdown.png)
 
@@ -66,7 +66,10 @@ Azure Marketplace 또는 AppSource에서 제품을 방문한 사용자와 파트
 
 ## <a name="marketplace-insights-summary"></a>Marketplace 인사이트 요약
 
-Marketplace 인사이트 요약 섹션에는 선택한 날짜 범위에 대한 **페이지 방문 횟수**, **작업에 대한 호출** 및 **고유한 방문자 수**가 표시됩니다.
+Marketplace Insights 요약 섹션에는 선택한 날짜 범위에 대 한 **페이지 방문**횟수, **작업 호출**및 **고유 방문자** 수가 표시 됩니다.
+
+>[!NOTE]
+>Marketplace Insights 대시보드는 클릭 스트림 데이터를 제공 하며,이는 리드 대상 끝점에서 생성 된 잠재 고객과 상관 되어서는 안 됩니다.
 
 ### <a name="page-visits"></a>페이지 방문 횟수
 
@@ -96,7 +99,7 @@ Marketplace 인사이트 요약 섹션에는 선택한 날짜 범위에 대한 *
 
 ## <a name="page-visits-versus-unique-visitors-trend"></a>페이지 방문 횟수 대 고유 방문자 수 추세
 
-아래 열은 Y축(차트 왼쪽에 있는 축)에 표시되는 월간 페이지 방문 횟수를 나타냅니다. 추세 선은 상점에 게시된 제품에 대한 보조 Y축(차트 오른쪽에 있는 축)에 표시되는 고유 방문자의 월별 추세를 나타냅니다. Azure Marketplace 및 AppSource에 제공됩니다.
+아래 열은 Y축(차트 왼쪽에 있는 축)에 표시되는 월간 페이지 방문 횟수를 나타냅니다. 추세 선은 온라인 상점에 게시 된 제품에 대 한 보조 Y 축 (차트 오른쪽의 축)에 표시 되는 고유 방문자의 월별 추세를 나타냅니다. Azure Marketplace 및 AppSource.
 
 ![파트너 센터 인사이트 페이지 방문 횟수 대 고유 방문자 수 추세](./media/insights-page-vists-unique-visitors.png)
 

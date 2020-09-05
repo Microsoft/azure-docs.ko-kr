@@ -10,18 +10,18 @@ author: gvashishtha
 ms.date: 07/31/2020
 ms.topic: conceptual
 zone_pivot_groups: aml-control-methods
-ms.openlocfilehash: 6bbee606c59482e4a06f344d3221e8611f6dcc9d
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: a3aed23441df225316f52eb3acb1387cbba6d807
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87544586"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935588"
 ---
 # <a name="profile-your-model-to-determine-resource-utilization"></a>모델을 프로 파일링 하 여 리소스 사용률 확인
 
 이 문서에서는 모델에 기계 학습을 프로 파일링 하 여 모델을 웹 서비스로 배포할 때 모델에 할당 해야 하는 CPU 및 메모리 양을 결정 하는 방법을 보여 줍니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 문서에서는 Azure Machine Learning를 사용 하 여 모델을 학습 하 고 등록 했다고 가정 합니다. Azure Machine Learning를 사용 하 여 scikit 모델을 학습 하 고 등록 하는 방법에 대 한 예제는 [여기의 샘플 자습서](how-to-train-scikit-learn.md) 를 참조 하세요.
 
@@ -36,6 +36,9 @@ ms.locfileid: "87544586"
 
 > [!IMPORTANT]
 > 이 시점에서 요청 데이터를 문자열로 간주 하는 서비스 프로 파일링만 지원 합니다. 예를 들어 문자열 직렬화 된 json, 텍스트, 문자열 직렬화 된 이미지 등이 있습니다. 데이터 집합 (문자열)의 각 행의 내용이 HTTP 요청의 본문에 배치 되 고 점수 매기기를 위해 모델을 캡슐화 하는 서비스로 전송 됩니다.
+
+> [!IMPORTANT]
+> ChinaEast2 및 USGovArizona 지역에서 최대 2 개의 Cpu 프로 파일링만 지원 합니다.
 
 다음은 들어오는 요청 데이터가 serialize 된 json을 포함할 것으로 예상 하는 서비스를 프로 파일링 하기 위해 입력 데이터 집합을 생성 하는 방법의 예입니다. 이 경우 동일한 요청 데이터 콘텐츠의 100 인스턴스를 기반으로 하는 데이터 집합을 만들었습니다. 실제 시나리오에서는 다양 한 입력을 포함 하는 큰 데이터 집합을 사용 하는 것이 좋습니다. 특히 모델 리소스 사용량/동작이 입력에 따라 달라 지는 경우입니다.
 

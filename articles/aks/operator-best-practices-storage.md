@@ -5,12 +5,12 @@ description: AKS(Azure Kubernetes Services)의 스토리지, 데이터 암호화
 services: container-service
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 26af9e0ab2bd3a52c159e947f1f40300f9e84dd4
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: 722fe393ad7637be20360463a4c3b6234224a036
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87562841"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653973"
 ---
 # <a name="best-practices-for-storage-and-backups-in-azure-kubernetes-service-aks"></a>AKS(Azure Kubernetes Services)의 스토리지 및 백업 모범 사례
 
@@ -35,8 +35,8 @@ AKS(Azure Kubernetes Services)에서 클러스터를 만들고 관리할 때 애
 | 사용 사례 | 볼륨 플러그 인 | 한 번 읽기/쓰기 | 여러 번 읽기 전용 | 여러 번 읽기/쓰기 | Windows Server 컨테이너 지원 |
 |----------|---------------|-----------------|----------------|-----------------|--------------------|
 | 공유 구성       | Azure 파일   | 예 | 예 | 예 | 예 |
-| 구조화된 앱 데이터        | Azure 디스크   | 예 | 아니요  | 예  | 예 |
-| 구조화되지 않은 데이터, 파일 시스템 작업 | [BlobFuse][blobfuse] | 예 | 예 | 예 | 예 |
+| 구조화된 앱 데이터        | Azure 디스크   | 예 | 아니요  | 아니요  | 예 |
+| 구조화되지 않은 데이터, 파일 시스템 작업 | [BlobFuse][blobfuse] | 예 | 예 | 예 | 아니요 |
 
 AKS에서 볼륨용으로 제공되는 두 가지 기본 유형의 스토리지는 Azure 디스크 또는 Azure 파일에서 지원됩니다. 보안을 강화하기 위해 두 가지 유형의 스토리지는 미사용 데이터를 암호화하는 Azure SSE(스토리지 서비스 암호화)를 기본적으로 사용합니다. 현재 AKS 노드 수준에서 Azure Disk Encryption을 사용하여 디스크를 암호화할 수 없습니다.
 
@@ -88,7 +88,7 @@ PVC(영구 볼륨 클레임)를 사용하면 필요에 따라 스토리지를 �
 
 ## <a name="secure-and-back-up-your-data"></a>데이터 보안 및 백업
 
-**모범 사례 지침** -Velero 또는 Azure Site Recovery와 같이 저장소 유형에 적절 한 도구를 사용 하 여 데이터를 백업 합니다. 이러한 백업의 무결성 및 보안을 확인합니다.
+**모범 사례 지침** -Velero 또는 Azure Backup와 같이 저장소 유형에 적절 한 도구를 사용 하 여 데이터를 백업 합니다. 이러한 백업의 무결성 및 보안을 확인합니다.
 
 애플리케이션이 디스크 또는 파일에 유지되는 데이터를 저장 및 사용할 경우에는 해당 데이터의 백업 또는 스냅샷을 정기적으로 생성해야 합니다. Azure 디스크는 기본 제공 스냅샷 기술을 사용할 수 있습니다. 스냅숏 작업을 수행 하기 전에 디스크에 쓰기를 플러시하는 응용 프로그램을 확인 해야 할 수 있습니다. [Velero][velero] 는 추가 클러스터 리소스 및 구성과 함께 영구 볼륨을 백업할 수 있습니다. [애플리케이션에서 상태를 제거][remove-state]할 수 없으면 영구 볼륨에서 데이터를 백업하고 복원 작업을 정기적으로 테스트하여 데이터 무결성 및 필요한 프로세스를 확인합니다.
 
@@ -110,6 +110,6 @@ PVC(영구 볼륨 클레임)를 사용하면 필요에 따라 스토리지를 �
 [reclaim-policy]: concepts-storage.md#storage-classes
 [aks-concepts-storage-pvcs]: concepts-storage.md#persistent-volume-claims
 [aks-concepts-storage-classes]: concepts-storage.md#storage-classes
-[managed-disks]: ../virtual-machines/linux/managed-disks-overview.md
+[managed-disks]: ../virtual-machines/managed-disks-overview.md
 [best-practices-multi-region]: operator-best-practices-multi-region.md
 [remove-state]: operator-best-practices-multi-region.md#remove-service-state-from-inside-containers

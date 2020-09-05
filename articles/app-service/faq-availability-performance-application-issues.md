@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 021e680a2ca5f7c00f113c4a17421b2648ca6230
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dfaeee6a6e2a9728d7e63fb5681c487fbbd6139e
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82159986"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959003"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Azure의 Web Apps에 대한 애플리케이션 성능 FAQ
 
@@ -32,15 +32,15 @@ ms.locfileid: "82159986"
 
 ## <a name="how-do-i-troubleshoot-a-high-cpu-consumption-scenario"></a>높은 CPU 사용 시나리오의 문제는 어떻게 해결하나요?
 
-일부 높은 CPU 사용 시나리오의 경우 앱에는 실제로 더 많은 컴퓨팅 리소스가 필요할 수 있습니다.이 경우 애플리케이션이 필요한 모든 리소스를 얻도록 상위 서비스 계층으로 크기를 조정하는 것이 좋습니다. 다른 경우에 높은 CPU 사용은 잘못된 반복이나 코딩 사례로 인해 발생할 수 있습니다. CPU 사용 증가를 트리거하는 항목을 파악하는 프로세스는 두 부분으로 구성됩니다. 먼저 프로세스 덤프를 만들고 프로세스 덤프를 분석합니다. 자세한 내용은 [Capture and analyze a dump file for high CPU consumption for Web Apps](https://blogs.msdn.microsoft.com/asiatech/2016/01/20/how-to-capture-dump-when-intermittent-high-cpu-happens-on-azure-web-app/)(Web Apps의 높은 CPU 사용에 대한 덤프 파일 캡처 및 분석)를 참조하세요.
+일부 높은 CPU 사용 시나리오의 경우 앱에는 실제로 더 많은 컴퓨팅 리소스가 필요할 수 있습니다.이 경우 애플리케이션이 필요한 모든 리소스를 얻도록 상위 서비스 계층으로 크기를 조정하는 것이 좋습니다. 다른 경우에 높은 CPU 사용은 잘못된 반복이나 코딩 사례로 인해 발생할 수 있습니다. CPU 사용 증가를 트리거하는 항목을 파악하는 프로세스는 두 부분으로 구성됩니다. 먼저 프로세스 덤프를 만들고 프로세스 덤프를 분석합니다. 자세한 내용은 [Capture and analyze a dump file for high CPU consumption for Web Apps](/archive/blogs/asiatech/how-to-capture-dump-when-intermittent-high-cpu-happens-on-azure-web-app)(Web Apps의 높은 CPU 사용에 대한 덤프 파일 캡처 및 분석)를 참조하세요.
 
 ## <a name="how-do-i-troubleshoot-a-high-memory-consumption-scenario"></a>높은 메모리 사용 시나리오의 문제는 어떻게 해결하나요?
 
-일부 높은 메모리 사용 시나리오의 경우 앱에는 실제로 더 많은 컴퓨팅 리소스가 필요할 수 있습니다.이 경우 애플리케이션이 필요한 모든 리소스를 얻도록 상위 서비스 계층으로 크기를 조정하는 것이 좋습니다. 다른 경우에는 코드의 버그로 인해 메모리 누수가 발생할 수 있습니다. 코딩 사례가 메모리 사용을 증가시킬 수도 있습니다.높은 메모리 사용을 트리거하는 항목을 파악하는 프로세스는 두 부분으로 구성됩니다. 먼저 프로세스 덤프를 만들고 프로세스 덤프를 분석합니다. Azure Site Extension Gallery의 Crash Diagnoser가 이러한 단계를 둘 다 효율적으로 수행할 수 있습니다. 자세한 내용은 [Capture and analyze a dump file for intermittent high memory for Web Apps](https://blogs.msdn.microsoft.com/asiatech/2016/02/02/how-to-capture-and-analyze-dump-for-intermittent-high-memory-on-azure-web-app/)(Web Apps의 간헐적 높은 메모리에 대한 덤프 파일 캡처 및 분석)를 참조하세요.
+일부 높은 메모리 사용 시나리오의 경우 앱에는 실제로 더 많은 컴퓨팅 리소스가 필요할 수 있습니다.이 경우 애플리케이션이 필요한 모든 리소스를 얻도록 상위 서비스 계층으로 크기를 조정하는 것이 좋습니다. 다른 경우에는 코드의 버그로 인해 메모리 누수가 발생할 수 있습니다. 코딩 사례가 메모리 사용을 증가시킬 수도 있습니다.높은 메모리 사용을 트리거하는 항목을 파악하는 프로세스는 두 부분으로 구성됩니다. 먼저 프로세스 덤프를 만들고 프로세스 덤프를 분석합니다. Azure Site Extension Gallery의 Crash Diagnoser가 이러한 단계를 둘 다 효율적으로 수행할 수 있습니다. 자세한 내용은 [Capture and analyze a dump file for intermittent high memory for Web Apps](/archive/blogs/asiatech/how-to-capture-and-analyze-dump-for-intermittent-high-memory-on-azure-web-app)(Web Apps의 간헐적 높은 메모리에 대한 덤프 파일 캡처 및 분석)를 참조하세요.
 
 ## <a name="how-do-i-automate-app-service-web-apps-by-using-powershell"></a>PowerShell를 사용하여 App Service Web Apps를 어떻게 자동화할 수 있나요?
 
-PowerShell cmdlet을 사용하여 App Service Web Apps를 관리 및 유지 관리할 수 있습니다. 블로그 게시물 [Automate web apps hosted in Azure App Service by using PowerShell](https://blogs.msdn.microsoft.com/puneetgupta/2016/03/21/automating-webapps-hosted-in-azure-app-service-through-powershell-arm-way/)(PowerShell을 사용하여 Azure App Service에 호스트된 Web Apps 자동화)에서 Azure Resource Manager 기반 PowerShell cmdlet을 사용하여 일반적인 작업을 자동화하는 방법을 설명합니다. 이 블로그 게시물에는 다양한 Web Apps 관리 작업에 대한 샘플 코드도 있습니다. 모든 App Service 웹앱 cmdlet에 대한 설명과 구문은 [Az.Websites](/powershell/module/az.websites)를 참조하세요.
+PowerShell cmdlet을 사용하여 App Service Web Apps를 관리 및 유지 관리할 수 있습니다. 블로그 게시물 [Automate web apps hosted in Azure App Service by using PowerShell](/archive/blogs/puneetgupta/automating-webapps-hosted-in-azure-app-service-through-powershell-arm-way)(PowerShell을 사용하여 Azure App Service에 호스트된 Web Apps 자동화)에서 Azure Resource Manager 기반 PowerShell cmdlet을 사용하여 일반적인 작업을 자동화하는 방법을 설명합니다. 이 블로그 게시물에는 다양한 Web Apps 관리 작업에 대한 샘플 코드도 있습니다. 모든 App Service 웹앱 cmdlet에 대한 설명과 구문은 [Az.Websites](/powershell/module/az.websites)를 참조하세요.
 
 ## <a name="how-do-i-view-my-web-apps-event-logs"></a>내 웹앱의 이벤트 로그는 어떻게 볼 수 있나요?
 
@@ -81,7 +81,7 @@ PowerShell cmdlet을 사용하여 App Service Web Apps를 관리 및 유지 관�
 * 웹앱이 포털에서 중지되었습니다.
 * 웹앱이 무료 또는 공유 크기 조정 서비스 계획에 적용될 수 있는 리소스 할당량 한도에 도달했습니다.
 
-오류의 원인을 확인하고 문제를 해결하려면 [Web Apps: "Error 403 – This web app is stopped"](https://blogs.msdn.microsoft.com/waws/2016/01/05/azure-web-apps-error-403-this-web-app-is-stopped/)(Web Apps: "오류 403 – 이 웹앱이 중지되었습니다.")의 단계를 따릅니다.
+오류의 원인을 확인하고 문제를 해결하려면 [Web Apps: "Error 403 – This web app is stopped"](/archive/blogs/waws/azure-web-apps-error-403-this-web-app-is-stopped)(Web Apps: "오류 403 – 이 웹앱이 중지되었습니다.")의 단계를 따릅니다.
 
 ## <a name="where-can-i-learn-more-about-quotas-and-limits-for-various-app-service-plans"></a>다양한 App Service 계획의 할당량 및 한도에 대한 자세한 내용은 어디서 알아볼 수 있나요?
 
@@ -167,7 +167,7 @@ WebJobs는 백그라운드에서 처리되도록 디자인됩니다. WebJob에�
 
 초기 [Kestrel 버전](https://github.com/aspnet/KestrelHttpServer/issues/1182)에서 알려진 문제로 인해 App Service에서 호스트되는 ASP.NET Core 1.0 앱이 간헐적으로 응답을 중지할 수 있습니다. “지정한 CGI 애플리케이션에서 오류가 발생하여 서버에서 프로세스가 종료되었습니다.”라는 메시지가 표시될 수도 있습니다.
 
-이 문제는 Kestrel 버전 1.0.2에서 해결되었습니다. 이 버전은 ASP.NET Core 1.0.3 업데이트에 포함되어 있습니다. 이 문제를 해결하려면 Kestrel 1.0.2를 사용하도록 앱 종속성을 업데이트해야 합니다. 또는 블로그 게시물 [ASP.NET Core 1.0 slow perf issues in App Service web apps](https://blogs.msdn.microsoft.com/waws/2016/12/11/asp-net-core-slow-perf-issues-on-azure-websites)(App Service Web Apps의 ASP.NET Core 1.0 느린 성능 문제)에 설명된 두 가지 해결 방법 중 하나를 사용할 수 있습니다.
+이 문제는 Kestrel 버전 1.0.2에서 해결되었습니다. 이 버전은 ASP.NET Core 1.0.3 업데이트에 포함되어 있습니다. 이 문제를 해결하려면 Kestrel 1.0.2를 사용하도록 앱 종속성을 업데이트해야 합니다. 또는 블로그 게시물 [ASP.NET Core 1.0 slow perf issues in App Service web apps](/archive/blogs/waws/asp-net-core-slow-perf-issues-on-azure-websites)(App Service Web Apps의 ASP.NET Core 1.0 느린 성능 문제)에 설명된 두 가지 해결 방법 중 하나를 사용할 수 있습니다.
 
 
 ## <a name="i-cant-find-my-log-files-in-the-file-structure-of-my-web-app-how-can-i-find-them"></a>내 웹앱의 파일 구조에서 로그 파일을 찾을 수 없습니다. 어떻게 찾을 수 있나요?
@@ -188,4 +188,4 @@ App Service의 로컬 캐시 기능을 사용할 경우 App Service 인스턴스
 
 ## <a name="how-do-i-use-visual-studio-to-remote-debug-my-app-service-web-app"></a>내 App Service 웹앱을 원격 디버그하는 데 Visual Studio를 사용하려면 어떻게 해야 하나요?
 
-Visual Studio를 사용하여 웹앱을 디버그하는 방법을 보여 주는 자세한 연습은 [Remote debug your App Service web app](https://blogs.msdn.microsoft.com/benjaminperkins/2016/09/22/remote-debug-your-azure-app-service-web-app/)(App Service 웹앱 원격 디버그)을 참조하세요.
+Visual Studio를 사용하여 웹앱을 디버그하는 방법을 보여 주는 자세한 연습은 [Remote debug your App Service web app](/archive/blogs/benjaminperkins/remote-debug-your-azure-app-service-web-app)(App Service 웹앱 원격 디버그)을 참조하세요.

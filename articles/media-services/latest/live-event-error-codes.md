@@ -11,24 +11,26 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/4/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 8f86c157652f6219afdf1df1da9b8ad385f059aa
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: d6dfaa3491a9d15a3cc54b82d5c116ee2442f70c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87000954"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265374"
 ---
 # <a name="media-services-live-event-error-codes"></a>Media Services 라이브 이벤트 오류 코드
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 섹션의 표에는 [라이브 이벤트](live-events-outputs-concept.md) 오류 코드가 나열 되어 있습니다.
 
 ## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected
 
-라이브 이벤트에 대 한 [Event Grid](../../event-grid/index.yml) 이벤트를 구독할 때 [LiveEventConnectionRejected](media-services-event-schemas.md#liveeventconnectionrejected) 이벤트에서 다음 오류 중 하나가 표시 될 수 있습니다.
+라이브 이벤트에 대 한 [Event Grid](../../event-grid/index.yml) 이벤트를 구독할 때 [LiveEventConnectionRejected](media-services-event-schemas.md#liveeventconnectionrejected)  이벤트에서 다음 오류 중 하나가 표시 될 수 있습니다.
 
-| 결과 코드 | Description |
+| 결과 코드 | 설명 |
 | ----------- | ----------- |
 | MPE_RTMP_APPID_AUTH_FAILURE | 잘못된 수집 URL입니다. |
 | MPE_INGEST_ENCODER_CONNECTION_DENIED | 인코더 IP가 IP 허용 목록에 구성되어 있지 않습니다. |
@@ -46,7 +48,7 @@ ms.locfileid: "87000954"
 
 [LiveEventEncoderDisconnected](media-services-event-schemas.md#liveeventencoderdisconnected) 이벤트에서 다음 오류 중 하나가 표시 될 수 있습니다.
 
-|결과 코드|Description|
+|결과 코드|설명|
 |---|---|
 |MPE_RTMP_SESSION_IDLE_TIMEOUT|허용된 시간 한도 동안 유휴 상태가 된 후 RTMP 세션 시간이 초과되었습니다.|
 |MPE_RTMP_FLV_TAG_TIMESTAMP_INVALID|비디오 또는 오디오 FLVTag에 대한 타임스탬프가 RTMP 인코더에서 유효하지 않습니다.|

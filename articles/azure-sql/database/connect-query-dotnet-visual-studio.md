@@ -5,19 +5,19 @@ titleSuffix: Azure SQL Database & SQL Managed Instance
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
-ms.custom: sqldbrb=2 
+ms.custom: devx-track-csharp, sqldbrb=2
 ms.devlang: dotnet
 ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 05/29/2020
-ms.openlocfilehash: 497de36d63a909d2c53374482dfe09d1f19dfded
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/10/2020
+ms.openlocfilehash: 8fe541432366d3c2ac1dc1470fea66d328f79780
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87033121"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213051"
 ---
 # <a name="quickstart-use-net-and-c-in-visual-studio-to-connect-to-and-query-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>빠른 시작: Visual Studio에서 .NET 및 C#을 사용하여 Azure SQL Database 또는 Azure SQL Managed Instance의 데이터베이스에 연결 및 쿼리
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -62,17 +62,17 @@ ms.locfileid: "87033121"
 
 ## <a name="create-code-to-query-the-database-in-azure-sql-database"></a>Azure SQL Database의 데이터베이스를 쿼리할 코드 만들기
 
-1. Visual Studio에서 **파일** > **새로 만들기** > **프로젝트**를 선택합니다. 
+1. Visual Studio에서 새 프로젝트를 만듭니다. 
    
-1. **새 프로젝트** 대화 상자에서 **Visual C#** 을 선택한 다음, **콘솔 앱(.NET Framework)** 을 선택합니다.
+1. **새 프로젝트** 대화 상자에서 **Visual C#** , **콘솔 앱(.NET Framework)** 을 선택합니다.
    
 1. 프로젝트 이름으로 *sqltest*를 입력한 다음, **확인**을 선택합니다. 새 프로젝트가 만들어집니다. 
    
 1. **프로젝트** > **NuGet 패키지 관리**를 선택합니다. 
    
-1. **NuGet 패키지 관리자**에서 **찾아보기** 탭을 선택한 다음, **System.Data.SqlClient**를 검색하여 선택합니다.
+1. **NuGet 패키지 관리자**에서 **찾아보기** 탭을 선택한 다음, **Microsoft.Data.SqlClient**를 검색하여 선택합니다.
    
-1. **System.Data.SqlClient** 페이지에서 **설치**를 선택합니다. 
+1. **Microsoft.Data.SqlClient** 페이지에서 **설치**를 선택합니다. 
    - 메시지가 표시되면 **확인**을 선택하여 설치를 계속 진행합니다. 
    - **라이선스 승인** 창이 표시되면 **동의**를 선택합니다.
    
@@ -85,7 +85,7 @@ ms.locfileid: "87033121"
    
    ```csharp
    using System;
-   using System.Data.SqlClient;
+   using Microsoft.Data.SqlClient;
    using System.Text;
    
    namespace sqltest

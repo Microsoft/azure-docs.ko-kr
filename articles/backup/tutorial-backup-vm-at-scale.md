@@ -4,12 +4,12 @@ description: 이 자습서에서는 Recovery Services 자격 증명 모음을 �
 ms.date: 07/26/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7a8849bba51939a0c40cba81925e1b4b4a6e3826
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 76c09cc02a3545d975de5d6d49b396b12f8abb44
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372555"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88757509"
 ---
 # <a name="use-azure-portal-to-back-up-multiple-virtual-machines"></a>Azure Portal을 사용하여 여러 가상 머신을 백업
 
@@ -136,7 +136,7 @@ Recovery Services 자격 증명 모음에 대한 백업을 사용하도록 설�
 
 1. 상황에 맞는 메뉴에서 **지금 백업**을 선택합니다.
 
-    ![상황에 맞는 메뉴](./media/tutorial-backup-vm-at-scale/context-menu.png)
+    ![바로 가기 메뉴 - 지금 백업 선택](./media/tutorial-backup-vm-at-scale/context-menu.png)
 
     지금 백업 메뉴가 열립니다.
 
@@ -156,7 +156,7 @@ Recovery Services 자격 증명 모음에 대한 백업을 사용하도록 설�
 
 1. **myRecoveryServicesVault** 대시보드의 **백업 항목** 아래에서 **3**을 선택하여 백업 항목 메뉴를 엽니다.
 
-    ![Backup 항목](./media/tutorial-backup-vm-at-scale/tutorial-vm-back-up-now.png)
+    ![백업 항목 열기 메뉴](./media/tutorial-backup-vm-at-scale/tutorial-vm-back-up-now.png)
 
 1. **백업 항목** 메뉴에서 **Azure Virtual Machine**을 선택하여 자격 증명 모음과 연결된 가상 머신의 목록을 엽니다.
 
@@ -166,7 +166,7 @@ Recovery Services 자격 증명 모음에 대한 백업을 사용하도록 설�
 
 1. **백업 항목** 메뉴에서 줄임표를 선택하여 상황에 맞는 메뉴를 엽니다.
 
-    ![상황에 맞는 메뉴](./media/tutorial-backup-vm-at-scale/context-menu-to-delete-vm.png)
+    ![백업 항목 메뉴에서 바로 가기 메뉴를 엽니다.](./media/tutorial-backup-vm-at-scale/context-menu-to-delete-vm.png)
 
 1. 상황에 맞는 메뉴에서 **백업 중지**를 선택하여 백업 중지 메뉴를 엽니다.
 
@@ -185,7 +185,7 @@ Recovery Services 자격 증명 모음에 대한 백업을 사용하도록 설�
 
 1. 자격 증명 모음에 더 이상 항목이 없으면 **삭제**를 선택합니다.
 
-    ![백업 중지를 선택하여 자격 증명 모음 삭제](./media/tutorial-backup-vm-at-scale/deleting-the-vault.png)
+    ![삭제 선택](./media/tutorial-backup-vm-at-scale/deleting-the-vault.png)
 
     자격 증명 모음이 삭제되면 Recovery Services 자격 증명 모음 목록으로 돌아갑니다.
 

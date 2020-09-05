@@ -1,6 +1,6 @@
 ---
 title: NetBackup에서 백업 대상으로 StorSimple 8000 시리즈 구성 | Microsoft Docs
-description: Veritas NetBackup을 사용한 StorSimple 백업 대상 구성에 대해 설명합니다.
+description: Veritas NetBackup을 사용한 StorSimple 백업 대상 구성 및 두 솔루션을 통합 하는 모범 사례에 대해 알아봅니다.
 services: storsimple
 documentationcenter: ''
 author: harshakirank
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/15/2017
 ms.author: matd
-ms.openlocfilehash: 34c66c3d5739fdc23323a302e3bedfb1b6301d86
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: b186fadcc99c6cc538b61eaa94d5d84d649c233f
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077905"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184009"
 ---
 # <a name="storsimple-as-a-backup-target-with-netbackup"></a>NetBackup에서 백업 대상으로 StorSimple 구성
 
@@ -328,7 +328,7 @@ StorSimple은 Azure 클라우드와 통합된 솔루션이기 때문에 StorSimp
 
    ![NetBackup 관리 콘솔 - 정책 유형 선택](./media/storsimple-configure-backup-target-using-netbackup/nbimage9.png)
 
-5. 호스트를 선택하고 **클라이언트 운영 체제 검색** 확인란을 선택한 다음 **추가**를 선택합니다. **새로 만들기**를 선택합니다.
+5. 호스트를 선택하고 **클라이언트 운영 체제 검색** 확인란을 선택한 다음 **추가**를 선택합니다. **다음**을 선택합니다.
 
    ![NetBackup 관리 콘솔 - 새 정책에 클라이언트 나열](./media/storsimple-configure-backup-target-using-netbackup/nbimage10.png)
 
@@ -535,7 +535,7 @@ StorSimple 디바이스에서 복원하면 모든 블록 스토리지 디바이�
 | NetBackup 서버 오류 | Backup 및 복원 작업이 중단됩니다. | 백업 서버를 다시 빌드하고 데이터베이스 복원을 수행합니다. | 재해 복구 사이트에서 NetBackup 서버를 다시 빌드하거나 복원해야 합니다. 데이터베이스를 가장 최근의 지점으로 복원합니다. 복원된 NetBackup 데이터베이스가 최신 백업 작업과 동기화되지 않은 경우 인덱싱 및 카탈로그가 필요합니다. 이 인덱스 및 카탈로그 재검색 프로세스로 인해 모든 백업 세트를 검색하고 클라우드 계층에서 로컬 디바이스 계층으로 가져올 수 있습니다. 그러면 더욱 시간이 많이 걸립니다. |
 | 백업 서버와 StorSimple이 모두 손실되는 사이트 오류 | Backup 및 복원 작업이 중단됩니다. | 먼저 StorSimple을 복원한 다음 NetBackup을 복원합니다. | 먼저 StorSimple을 복원한 다음 NetBackup을 복원합니다. 디바이스 복구 후에 복원을 수행해야 하는 경우 전체 데이터 작업 집합이 클라우드에서 새 디바이스로 검색됩니다. 모든 작업이 클라우드 속도로 수행됩니다. |
 
-## <a name="references"></a>참조
+## <a name="references"></a>참고 자료
 
 이 문서에서는 다음 문서를 참조했습니다.
 

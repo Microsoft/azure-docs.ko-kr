@@ -6,16 +6,17 @@ author: bandersmsft
 ms.reviewer: sasrin
 tags: billing
 ms.service: cost-management-billing
+ms.subservice: billing
 ms.topic: conceptual
-ms.date: 02/10/2020
+ms.date: 08/20/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 596fd166153f9d1a319d428b3fe44388acc48efa
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: 7223d33f8f26897d24841f84454405f91cf3bc49
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460595"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88686346"
 ---
 # <a name="upgrade-your-azure-free-account-or-azure-for-students-starter-account"></a>Azure 체험 계정 또는 Azure for Students Starter 계정 업그레이드
 

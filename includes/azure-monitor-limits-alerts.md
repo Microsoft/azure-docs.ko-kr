@@ -1,26 +1,29 @@
 ---
-title: 파일 포함
+title: 포함 파일
 description: 포함 파일
 services: azure-monitor
 author: rboucher
 tags: azure-service-management
 ms.topic: include
-ms.date: 02/07/2019
+ms.date: 08/11/2020
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: 61bc3933c699f747da10ac6d1b38ad64c76ab681
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
-ms.translationtype: MT
+ms.openlocfilehash: 332841d4ee4791cb8da1620aa292b05bbde74955
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84793640"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162767"
 ---
 | 리소스 | 기본 제한 | 최대 제한 |
 | --- | --- | --- |
-| 메트릭 경고 (클래식) |100 구독 당 활성 경고 규칙입니다. | 지원 요청 |
-| 메트릭 경고 |5000 Azure 공용, Azure 중국 21Vianet 및 Azure Government 클라우드의 구독 당 활성 경고 규칙입니다. 이 제한에 도달 하는 경우 [동일한 유형의 다중 리소스 경고](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-overview#monitoring-at-scale-using-metric-alerts-in-azure-monitor)를 사용할 수 있는지 살펴보세요.   | 지원 요청 |
-| 활동 로그 경고 | 100 구독 당 활성 경고 규칙입니다. | 기본적으로 동일 합니다. |
-| 로그 경고 | 512 구독 당 활성 경고 규칙입니다. 200 리소스 당 활성 경고 규칙을 생성 합니다. | 지원 요청 |
-| 작업 그룹 |2000 구독 당 작업 그룹 | 지원 요청 |
-| 자동 크기 조정 설정 |구독 당 지역 당 100. | 기본적으로 동일 합니다. |
-| 자동 크기 조정 프로필 |자동 크기 조정 당 20 개의 프로필 설정. | 기본적으로 동일 합니다. |
+| 메트릭 경고 수(클래식) |구독당 100개 활성 경고 규칙 | 지원 요청 |
+| 메트릭 경고 |구독당 5,000개 활성 경고 규칙(Azure 퍼블릭, Azure 중국 21Vianet 및 Azure Government 클라우드 기준) 이 제한에 도달하면 [동일한 유형의 다중 리소스 경고](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-overview#monitoring-at-scale-using-metric-alerts-in-azure-monitor)를 사용할 수 있는지 살펴보세요.   | 지원 요청 |
+| 활동 로그 경고 | 구독당 100개 활성 경고 규칙 | 기본값과 동일 |
+| 로그 경고 | 구독당 512개 활성 경고 규칙 리소스당 200개 활성 경고 규칙 | 지원 요청 |
+| 작업 그룹 |구독당 2,000개 작업 그룹 | 지원 요청 |
+| 경고 규칙 및 작업 규칙 설명 길이| 로그 검색 경고 4096자<br/>다른 모든 경고 2048자 | 기본값과 동일 |
+| 자동 크기 조정 설정 |구독당 지역별 100개 | 기본값과 동일 |
+| 자동 크기 조정 프로필 |자동 크기 조정 설정당 20개 프로필 | 기본값과 동일 |
+
+

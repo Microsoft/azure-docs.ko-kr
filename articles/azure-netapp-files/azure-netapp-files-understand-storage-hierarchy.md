@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 07/15/2020
+ms.date: 08/10/2020
 ms.author: b-juche
-ms.openlocfilehash: 0b150491fff953434062cc583566e1113947a679
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 91fecbc68efec1adcee9a2c4013dea46f6da86af
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86504906"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88066477"
 ---
 # <a name="what-is-the-storage-hierarchy-of-azure-netapp-files"></a>Azure NetApp Files의 스토리지 계층 구조란?
 
@@ -50,8 +50,6 @@ Azure NetApp Files에서 볼륨을 만들기 전에 프로비전된 용량에 �
 - 볼륨은 논리적 용량 사용량으로 측정되며 확장 가능합니다. 
 - 볼륨의 용량 소비는 해당 풀의 프로비전된 용량에 대해 계산됩니다.
 - 각 볼륨은 하나의 풀에만 속하지만 풀은 여러 볼륨을 포함할 수 있습니다. 
-- 볼륨은 용량 풀 간에 이동할 수 없습니다. <!--Within the same NetApp account, you can move a volume across pools.  -->   
-  예를 들어 아래 [스토리지 계층 구조의 개념 다이어그램](#conceptual_diagram_of_storage_hierarchy)에서 용량 풀 1에서 용량 풀 2로 볼륨을 이동할 수 없습니다.
 
 ## <a name="conceptual-diagram-of-storage-hierarchy"></a><a name="conceptual_diagram_of_storage_hierarchy"></a>스토리지 계층 구조의 개념 다이어그램 
 다음 예제에서는 Azure 구독, NetApp 계정, 용량 풀 및 볼륨의 관계를 보여줍니다.   

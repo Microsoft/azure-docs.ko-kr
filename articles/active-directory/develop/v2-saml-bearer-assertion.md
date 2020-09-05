@@ -2,7 +2,7 @@
 title: Microsoft ID 플랫폼 및 SAML 전달자 어설션 흐름 | Azure
 description: SAML 전달자 어설션 흐름을 사용하여 사용자에게 자격 증명을 묻는 메시지를 표시하지 않고 Microsoft Graph에서 데이터를 페치하는 방법을 알아봅니다.
 services: active-directory
-author: umeshbarapatre
+author: kenwith
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -11,13 +11,12 @@ ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.custom: aaddev
-ms.openlocfilehash: e0db5bec00ce864536b3559eda160acdada5e157
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 6e7e4dd6383b1f264ff2da7893d9f86a3708217d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88114696"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227919"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Microsoft ID 플랫폼 및 OAuth 2.0 SAML 전달자 어설션 흐름
 OAuth 2.0 SAML 전달자 어설션 흐름을 사용하면 클라이언트에서 기존 트러스트 관계를 사용해야 할 때 SAML 어설션을 사용하여 OAuth 액세스 토큰을 요청할 수 있습니다. SAML 어설션에 적용되는 서명은 권한 있는 앱의 인증을 제공합니다. SAML 어설션은 ID 공급자가 발급하고 서비스 공급자가 사용하는 XML 보안 토큰입니다. 서비스 공급자는 해당 콘텐츠를 사용하여 보안 관련 목적의 어설션 주체를 식별합니다.
@@ -28,7 +27,7 @@ SAML 전달자 어설션 흐름은 사용자에게 자격 증명을 묻는 메�
 
 대화형 브라우저 기반 로그인을 수행하여 SAML 어설션을 가져온 다음, OAuth로 보호된 API(예: Microsoft Graph)에 대한 액세스를 추가하려는 애플리케이션의 경우 API에 대한 액세스 토큰을 가져오라는 OAuth 요청을 수행할 수 있습니다. 브라우저가 사용자를 인증하기 위해 Azure AD로 리디렉션되는 경우 브라우저는 SAML 로그인에서 세션을 선택하고 사용자는 자격 증명을 입력하지 않아도 됩니다.
 
-Azure Active Directory에 페더레이션된 ADFS(Active Directory Federation Services)와 같은 ID 공급자를 사용하여 인증하는 사용자에 대해서도 OAuth SAML 전달자 어설션 흐름이 지원됩니다.  ADFS에서 가져온 SAML 어설션은 OAuth 흐름에서 사용자를 인증하는 데 사용할 수 있습니다.
+OAuth SAML 전달자 어설션 흐름은 Azure Active Directory에 페더레이션된 Active Directory Federation Services (ADFS)와 같은 id 공급자를 사용 하 여 인증 하는 사용자에 대해서만 지원 됩니다.  ADFS에서 가져온 SAML 어설션은 OAuth 흐름에서 사용자를 인증하는 데 사용할 수 있습니다.
 
 ![OAuth 흐름](./media/v2-saml-bearer-assertion/1.png)
 

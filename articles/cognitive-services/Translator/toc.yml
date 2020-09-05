@@ -6,6 +6,8 @@
       items:
         - name: Translator란?
           href: translator-info-overview.md
+        - name: 언어 지원
+          href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
     - name: 빠른 시작
       items:
         - name: 텍스트 번역
@@ -50,7 +52,7 @@
           href: firewalls.md
     - name: 샘플
       items:
-        - name: 'C#'
+        - name: C#
           href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp'
         - name: Java
           href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Java'
@@ -92,22 +94,20 @@
               href: ctf-reporting.md
             - name: N-Best 번역 반환
               href: return-n-best-translations.md
+        - name: 요청 제한
+          href: request-limits.md
     - name: 리소스
       items:
         - name: GitHub의 코드 샘플
           href: 'https://aka.ms/TranslatorGitHub'
         - name: FAQ
           href: 'https://www.microsoft.com/translator/faq.aspx'
-        - name: 언어 지원
-          href: language-support.md
         - name: 가격 책정
           href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
         - name: 국가별 가용성
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
         - name: 규정 준수
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-        - name: 요청 제한
-          href: request-limits.md
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
 - name: Custom Translator
@@ -162,8 +162,6 @@
           href: custom-translator/unsupported-language-deployments.md
     - name: 리소스
       items:
-        - name: 언어 지원
-          href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
         - name: 용어
           href: custom-translator/glossary.md
         - name: FAQ

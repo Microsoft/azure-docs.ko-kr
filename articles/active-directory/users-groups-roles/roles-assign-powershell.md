@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2180451a1d0c377af1e6c3e7377e64d9cb62ef8c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 243bc48f7e84951c78ecab3e7f5ee47a85a538bf
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84732058"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798825"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Azure Active Directory에서 PowerShell을 사용 하 여 리소스 범위에 사용자 지정 역할 할당
 
-이 문서에서는 Azure AD (Azure Active Directory)에서 조직 차원의 범위에 역할 할당을 만드는 방법을 설명 합니다. 조직 전체의 범위에서 역할을 할당 하면 Azure AD 조직에서 액세스 권한을 부여 합니다. 단일 Azure AD 리소스 범위를 사용 하 여 역할 할당을 만들려면 [사용자 지정 역할을 만들고 리소스 범위에서 할당 하는 방법](roles-create-custom.md)을 참조 하세요. 이 문서에서는 [Azure Active Directory PowerShell 버전 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) 모듈을 사용 합니다.
+이 문서에서는 Azure AD (Azure Active Directory)에서 조직 차원의 범위에 역할 할당을 만드는 방법을 설명 합니다. 조직 전체의 범위에서 역할을 할당 하면 Azure AD 조직에서 액세스 권한을 부여 합니다. 단일 Azure AD 리소스 범위를 사용 하 여 역할 할당을 만들려면 [사용자 지정 역할을 만들고 리소스 범위에서 할당 하는 방법](roles-create-custom.md)을 참조 하세요. 이 문서에서는 [Azure Active Directory PowerShell 버전 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) 모듈을 사용 합니다.
 
 Azure AD 관리자 역할에 대 한 자세한 내용은 [Azure Active Directory에서 관리자 역할 할당](directory-assign-admin-roles.md)을 참조 하세요.
 
@@ -69,7 +69,7 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-사용자 대신 서비스 주체에 역할을 할당 하려면 [AzureADMSServicePrincipal cmdlet](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0)을 사용 합니다.
+사용자 대신 서비스 주체에 역할을 할당 하려면 [AzureADMSServicePrincipal cmdlet](/powershell/module/azuread/get-azureadserviceprincipal?view=azureadps-2.0)을 사용 합니다.
 
 ## <a name="operations-on-roledefinition"></a>RoleDefinition에 대 한 작업
 

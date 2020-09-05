@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 04/23/2020
+ms.date: 08/25/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 81574f25e2132a7079fa0242284fb67b0132a8af
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: e1094befcc6b3a6e9d56ba3b603dc45fcb91ba13
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119330"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825497"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>자습서: 배포 스크립트를 사용하여 자체 서명된 인증서 만들기(미리 보기)
 
@@ -42,7 +42,7 @@ ARM(Azure Resource Manager) 템플릿에서 배포 스크립트를 사용하는 
 
 * **Resource Manager Tools 확장이 있는 [Visual Studio Code](https://code.visualstudio.com/)** . [빠른 시작: Visual Studio Code를 사용하여 Azure Resource Manager 템플릿 만들기](./quickstart-create-templates-use-visual-studio-code.md)
 
-* **구독 수준에서 기여자 역할이 있는 사용자가 할당한 관리 ID**. 이 ID는 배포 스크립트를 실행하는 데 사용됩니다. ID를 만들려면 [사용자가 할당한 관리 ID](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#user-assigned-managed-identity)를 참조하세요. 이 ID는 템플릿을 배포할 때 필요합니다. ID의 형식은 다음과 같습니다.
+* **구독 수준에서 기여자 역할이 있는 사용자가 할당한 관리 ID**. 이 ID는 배포 스크립트를 실행하는 데 사용됩니다. ID를 만들려면 [사용자가 할당한 관리 ID](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md)를 참조하세요. 이 ID는 템플릿을 배포할 때 필요합니다. ID의 형식은 다음과 같습니다.
 
   ```json
   /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityID>

@@ -9,28 +9,28 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/27/2020
 ms.author: aahi
-ms.openlocfilehash: b77d69248059a494d823afcd149382dd52b0e49d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 36e21a131181831c2a87c0c6d2c24c9aa6e0acf7
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87317130"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245012"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Azure 명령줄 인터페이스 (CLI)를 사용 하 여 Cognitive Services 리소스 만들기
 
-[AZURE CLI (명령줄 인터페이스)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 사용 하 여 azure Cognitive Services를 시작 하려면이 빠른 시작을 사용 하세요. Cognitive Services은 Azure 구독에서 만든 Azure [리소스로](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) 표시 됩니다. 리소스를 만든 후에는 응용 프로그램을 인증 하기 위해 생성 된 키 및 끝점을 사용 합니다. 
+[AZURE CLI (명령줄 인터페이스)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 사용 하 여 azure Cognitive Services를 시작 하려면이 빠른 시작을 사용 하세요. Cognitive Services은 Azure 구독에서 만든 Azure [리소스로](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) 표시 됩니다. 리소스를 만든 후에는 응용 프로그램을 인증 하기 위해 생성 된 키 및 끝점을 사용 합니다.
 
 
 이 빠른 시작에서는 azure Cognitive Services에 등록 하 고 [AZURE CLI (명령줄 인터페이스)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 사용 하 여 단일 서비스 또는 다중 서비스 구독이 있는 계정을 만드는 방법에 대해 알아봅니다. 이러한 서비스는 하나 이상의 Azure Cognitive Services API에 연결할 수 있는 Azure [리소스로](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)표시 됩니다.
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
-* 유효한 Azure 구독-무료로 [하나를 만듭니다](https://azure.microsoft.com/free/) .
+* 유효한 Azure 구독-무료로 [하나를 만듭니다](https://azure.microsoft.com/free/cognitive-services) .
 * [AZURE CLI (명령줄 인터페이스)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 
-## <a name="install-the-azure-cli-and-sign-in"></a>Azure CLI 설치 및 로그인 
+## <a name="install-the-azure-cli-and-sign-in"></a>Azure CLI 설치 및 로그인
 
 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 설치 합니다. CLI의 로컬 설치에 로그인 하려면 [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login) 명령을 실행 합니다.
 
@@ -39,7 +39,7 @@ az login
 ```
 
 또한 녹색 **사용해 보기** 단추를 사용 하 여 브라우저에서 이러한 명령을 실행할 수 있습니다.
- 
+
 ## <a name="create-a-new-azure-cognitive-services-resource-group"></a>새 Azure Cognitive Services 리소스 그룹 만들기
 
 Cognitive Services 리소스를 만들기 전에 리소스를 포함 하는 Azure 리소스 그룹이 있어야 합니다. 새 리소스를 만들 때 새 리소스 그룹을 만들거나 기존 리소스 그룹을 사용 하는 옵션이 있습니다. 이 문서에서는 새 리소스 그룹을 만드는 방법을 보여 줍니다.
@@ -84,7 +84,7 @@ az group create \
 > [!NOTE]
 > 아래 Cognitive Services 대부분은 서비스를 시도 하는 데 사용할 수 있는 무료 계층이 있습니다. 무료 계층을 사용 하려면 `F0` 리소스의 sku로를 사용 합니다.
 
-### <a name="vision"></a>시각
+### <a name="vision"></a>Vision
 
 | 서비스                    | 종류                      |
 |----------------------------|---------------------------|
@@ -105,14 +105,14 @@ az group create \
 | Bing Search        | `Bing.Search.v7`      |
 | Bing 맞춤법 검사   | `Bing.SpellCheck.v7`  |
 
-### <a name="speech"></a>Speech
+### <a name="speech"></a>음성
 
 | 서비스            | 종류                 |
 |--------------------|----------------------|
 | Speech Services    | `SpeechServices`     |
 | 음성 인식 | `SpeakerRecognition` |
 
-### <a name="language"></a>Language
+### <a name="language"></a>언어
 
 | 서비스            | 종류                |
 |--------------------|---------------------|

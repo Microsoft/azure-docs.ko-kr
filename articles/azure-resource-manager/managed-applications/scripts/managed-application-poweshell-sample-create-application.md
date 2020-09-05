@@ -7,10 +7,10 @@ ms.topic: sample
 ms.date: 10/27/2017
 ms.author: tomfitz
 ms.openlocfilehash: a2687e9c943df8454ff42a17f44866dcdb7f4730
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "86055888"
 ---
 # <a name="deploy-a-managed-application-for-a-service-catalog-with-powershell"></a>PowerShell을 사용하여 서비스 카탈로그용 관리되는 애플리케이션 배포

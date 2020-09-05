@@ -9,12 +9,13 @@ ms.date: 08/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: how-to
-ms.openlocfilehash: 0a8eca9e7b3e890b67daf915ffe733dd54ef5896
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 8fa1e258b07ab98040cbbc5217be789e0bb1b783
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85515043"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89020136"
 ---
 # <a name="get-storage-account-type-and-sku-name-with-net"></a>.NET을 사용 하 여 저장소 계정 유형 및 SKU 이름 가져오기
 

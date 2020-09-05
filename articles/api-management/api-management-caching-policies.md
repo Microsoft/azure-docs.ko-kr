@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: fc5298b85af4eaa6cd84c871d38ea1c773abe0b4
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f0aeef7bc67f5c59bb80d5ff24a97be737447a81
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87851599"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88510184"
 ---
 # <a name="api-management-caching-policies"></a>API Management 캐싱 정책
 이 문서에서는 다음 API Management 정책에 대한 참조를 제공합니다. 정책의 추가 및 구성에 대한 자세한 내용은 [API Management 정책](https://go.microsoft.com/fwlink/?LinkID=398186)을 참조하세요.
 
-## <a name="caching-policies"></a><a name="CachingPolicies"></a>캐싱 정책
+## <a name="caching-policies"></a><a name="CachingPolicies"></a> 캐싱 정책
 
 - 응답 캐싱 정책
     - [캐시에서 가져오기](api-management-caching-policies.md#GetFromCache) - 캐시 조회를 수행하여 사용 가능한 경우 올바르게 캐시된 응답을 반환합니다.
@@ -33,7 +33,7 @@ ms.locfileid: "87851599"
     - [값을 캐시에 저장](#StoreToCacheByKey) - 키로 캐시에 항목을 저장합니다.
     - [캐시에서 값을 제거](#RemoveCacheByKey) - 키로 캐시에서 항목을 제거합니다.
 
-## <a name="get-from-cache"></a><a name="GetFromCache"></a>캐시에서 가져오기
+## <a name="get-from-cache"></a><a name="GetFromCache"></a> 캐시에서 가져오기
 `cache-lookup` 정책을 사용하여 캐시 조회를 수행하며 사용 가능한 경우 올바르게 캐시된 응답을 반환합니다. 이 정책은 응답 콘텐츠가 일정 기간 동안 정적 상태인 경우 적용해야 합니다. 응답 캐싱은 백 엔드 웹 서버에 부과된 대역폭 및 처리 요구 사항을 줄이며 API 소비자가 인지하는 대기 시간을 줄여 줍니다.
 
 > [!NOTE]
@@ -56,7 +56,7 @@ ms.locfileid: "87851599"
 </cache-lookup>
 ```
 
-### <a name="examples"></a>예
+### <a name="examples"></a>예제
 
 #### <a name="example"></a>예제
 
@@ -108,14 +108,14 @@ ms.locfileid: "87851599"
 
 ### <a name="attributes"></a>특성
 
-| 이름                           | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
+| Name                           | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
 |--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
 | allow-private-response-caching | `true`로 설정하면 Authorization 헤더를 포함하는 요청의 캐싱을 허용합니다.                                                                                                                                                                                                                                                                        | 아니요       | false             |
 | 캐싱-형식               | 다음 특성 값 중에서 선택합니다.<br />- `internal` 기본 제공 API Management 캐시를 사용합니다.<br />- `external`[Azure API Management에서 외부 Azure Cache for Redis 사용](api-management-howto-cache-external.md)에 설명된 대로 외부 캐시를 사용합니다.<br />- `prefer-external` 구성된 경우 외부 캐시를 사용하고 그렇지 않으면 내부 캐시를 사용합니다. | 아니요       | `prefer-external` |
-| downstream-caching-type        | 이 특성은 다음 값 중 하나로 설정해야 합니다.<br /><br /> -   none - 다운스트림 캐싱이 허용되지 않습니다.<br />-   private - 다운스트림 프라이빗 캐싱이 허용됩니다.<br />-   public - 프라이빗 및 공유 다운스트림 캐싱이 허용됩니다.                                                                                                          | 아니요       | none              |
+| downstream-caching-type        | 이 특성은 다음 값 중 하나로 설정해야 합니다.<br /><br /> -   none - 다운스트림 캐싱이 허용되지 않습니다.<br />-   private - 다운스트림 프라이빗 캐싱이 허용됩니다.<br />-   public - 프라이빗 및 공유 다운스트림 캐싱이 허용됩니다.                                                                                                          | 아니요       | 없음              |
 | must-revalidate                | 다운스트림 캐싱을 사용하는 경우 이 특성이 게이트웨이 응답에서 `must-revalidate` 캐시 제어 지시문을 설정 또는 해제합니다.                                                                                                                                                                                                                      | 아니요       | true              |
-| vary-by-developer              | [구독 키](./api-management-subscriptions.md)별 캐시 응답을 위해서는 `true`로 설정합니다.                                                                                                                                                                                                                                                                                                         | 예      |         거짓          |
-| vary-by-developer-groups       | [사용자 그룹](./api-management-howto-create-groups.md)별 캐시 응답을 위해서는 `true`로 설정합니다.                                                                                                                                                                                                                                                                                                             | 예      |       거짓            |
+| vary-by-developer              | `true`요청에 포함 된 [구독 키](./api-management-subscriptions.md) 를 소유 하는 개발자 계정에 따라 응답을 캐시 하려면로 설정 합니다.                                                                                                                                                                                                                                                                                                  | 예      |         아니요          |
+| vary-by-developer-groups       | [사용자 그룹](./api-management-howto-create-groups.md)별 캐시 응답을 위해서는 `true`로 설정합니다.                                                                                                                                                                                                                                                                                                             | 예      |       아니요            |
 
 ### <a name="usage"></a>사용
 이 정책은 다음과 같은 정책 [섹션](./api-management-howto-policies.md#sections) 및 [범위](./api-management-howto-policies.md#scopes)에서 사용할 수 있습니다.
@@ -135,7 +135,7 @@ ms.locfileid: "87851599"
 <cache-store duration="seconds" />
 ```
 
-### <a name="examples"></a>예
+### <a name="examples"></a>예제
 
 #### <a name="example"></a>예제
 
@@ -185,7 +185,7 @@ ms.locfileid: "87851599"
 
 ### <a name="attributes"></a>특성
 
-| 이름             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
+| Name             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
 | duration         | 캐시된 항목의 TTL(Time-to-Live)로 초 단위로 지정합니다.                                                                                                                                                                                                                                                                                                   | 예      | 해당 없음               |
 
@@ -228,7 +228,7 @@ ms.locfileid: "87851599"
 
 ### <a name="attributes"></a>특성
 
-| 이름             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
+| Name             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
 | 캐싱-형식 | 다음 특성 값 중에서 선택합니다.<br />- `internal` 기본 제공 API Management 캐시를 사용합니다.<br />- `external`[Azure API Management에서 외부 Azure Cache for Redis 사용](api-management-howto-cache-external.md)에 설명된 대로 외부 캐시를 사용합니다.<br />- `prefer-external` 구성된 경우 외부 캐시를 사용하고 그렇지 않으면 내부 캐시를 사용합니다. | 아니요       | `prefer-external` |
 | default-value    | 캐시 키 조회 시 누락 항목이 있는 경우 변수에 할당할 값입니다. 이 특성을 지정하지 않으면 `null`이 할당됩니다.                                                                                                                                                                                                           | 아니요       | `null`            |
@@ -271,7 +271,7 @@ ms.locfileid: "87851599"
 
 ### <a name="attributes"></a>특성
 
-| 이름             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
+| Name             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
 | 캐싱-형식 | 다음 특성 값 중에서 선택합니다.<br />- `internal` 기본 제공 API Management 캐시를 사용합니다.<br />- `external`[Azure API Management에서 외부 Azure Cache for Redis 사용](api-management-howto-cache-external.md)에 설명된 대로 외부 캐시를 사용합니다.<br />- `prefer-external` 구성된 경우 외부 캐시를 사용하고 그렇지 않으면 내부 캐시를 사용합니다. | 아니요       | `prefer-external` |
 | duration         | 제공된 기간 값 동안 값(초 단위로 지정)이 캐시됩니다.                                                                                                                                                                                                                                                                                 | 예      | 해당 없음               |
@@ -310,7 +310,7 @@ ms.locfileid: "87851599"
 
 #### <a name="attributes"></a>특성
 
-| 이름             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
+| Name             | 설명                                                                                                                                                                                                                                                                                                                                                 | 필수 | 기본값           |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
 | 캐싱-형식 | 다음 특성 값 중에서 선택합니다.<br />- `internal` 기본 제공 API Management 캐시를 사용합니다.<br />- `external`[Azure API Management에서 외부 Azure Cache for Redis 사용](api-management-howto-cache-external.md)에 설명된 대로 외부 캐시를 사용합니다.<br />- `prefer-external` 구성된 경우 외부 캐시를 사용하고 그렇지 않으면 내부 캐시를 사용합니다. | 아니요       | `prefer-external` |
 | key              | 캐시에서 제거할 이전에 캐시된 값의 키입니다.                                                                                                                                                                                                                                                                                        | 예      | 해당 없음               |

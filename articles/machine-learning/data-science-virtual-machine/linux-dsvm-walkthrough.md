@@ -8,19 +8,17 @@ ms.subservice: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
-ms.date: 04/02/2020
-ms.openlocfilehash: ed552a57e51ce9249f84bab6bb72bfe783e43edb
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 07/17/2020
+ms.openlocfilehash: ca3cfa44bd4f757c6fbb0dd2c84d7a843f9bff36
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078109"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816221"
 ---
-# <a name="data-science-with-a-linux-data-science-virtual-machine-in-azure"></a>Azure에서 Linux Data Science Virtual Machine을 사용하는 데이터 과학
+# <a name="data-science-with-an-ubuntu-data-science-virtual-machine-in-azure"></a>Azure에서 Ubuntu Data Science Virtual Machine를 사용 하는 데이터 과학
 
-이 연습에서는 Linux DSVM(Data Science Virtual Machine)을 사용하여 몇 가지 일반적인 데이터 과학 작업을 수행하는 방법을 보여 줍니다. Linux DSVM은 Azure에서 사용할 수 있는 가상 머신 이미지이며, 데이터 분석 및 기계 학습에 일반적으로 사용되는 도구 모음과 함께 사전 설치되어 있습니다. 주요 소프트웨어 구성 요소는 [Linux Data Science Virtual Machine 프로비전](linux-dsvm-intro.md)에 항목별로 나와 있습니다. DSVM 이미지를 사용하면 각 도구를 개별적으로 설치하고 구성할 필요 없이 몇 분 내에 데이터 과학 작업을 쉽게 시작할 수 있습니다. 필요한 경우 DSVM을 쉽게 확장할 수 있으며 사용하지 않을 때는 중지할 수 있습니다. 이 DSVM 리소스는 탄력적이고 비용 효율적입니다.
-
-이 연습에 설명된 데이터 과학 작업은 [팀 데이터 과학 프로세스란?](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/overview)에 설명된 단계를 따릅니다. 팀 데이터 과학 프로세스는 데이터 과학자 팀이 지능적인 애플리케이션을 빌드하는 전체 수명 주기 동안 효율적으로 공동 작업할 수 있도록 데이터 과학에 대한 체계적인 접근 방법을 제공합니다. 또한 데이터 과학 프로세스는 개별 사용자가 수행할 수 있는 데이터 과학을 위한 반복되는 프레임워크를 제공합니다.
+이 연습에서는 Ubuntu Data Science Virtual Machine (DSVM)를 사용 하 여 몇 가지 일반적인 데이터 과학 작업을 완료 하는 방법을 보여 줍니다. Ubuntu DSVM은 Azure에서 사용할 수 있는 가상 머신 이미지로, 데이터 분석 및 기계 학습에 일반적으로 사용 되는 도구 모음에 미리 설치 되어 있습니다. 주요 소프트웨어 구성 요소는 [Ubuntu Data Science Virtual Machine 프로 비전](./dsvm-ubuntu-intro.md)에서 항목별로 제공 됩니다. DSVM 이미지를 사용하면 각 도구를 개별적으로 설치하고 구성할 필요 없이 몇 분 내에 데이터 과학 작업을 쉽게 시작할 수 있습니다. 필요한 경우 DSVM을 쉽게 확장할 수 있으며 사용하지 않을 때는 중지할 수 있습니다. 이 DSVM 리소스는 탄력적이고 비용 효율적입니다.
 
 이 연습에서는 [spambase](https://archive.ics.uci.edu/ml/datasets/spambase) 데이터 세트를 분석합니다. Spambase는 스팸 또는 햄(스팸이 아님)으로 표시된 이메일 집합입니다. Spambase에는 이메일의 내용에 대한 일부 통계도 포함되어 있습니다. 이 연습의 뒷부분에서 이러한 통계에 대해 설명합니다.
 
@@ -29,10 +27,10 @@ ms.locfileid: "87078109"
 Linux DSVM을 사용하려면 먼저 다음과 같은 필수 구성 요소가 있어야 합니다.
 
 * **Azure 구독**. Azure 구독을 얻으려면 [지금 무료 Azure 계정 만들기](https://azure.microsoft.com/free/)를 참조하세요.
-* [**Linux Data Science Virtual Machine**](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804). 가상 머신을 프로비전하는 방법에 대한 자세한 내용은 [Linux Data Science Virtual Machine 프로비전](linux-dsvm-intro.md)을 참조하세요.
-* 열린 XFCE 세션을 사용하여 컴퓨터에 설치된 [**X2Go**](https://wiki.x2go.org/doku.php). 자세한 내용은 [X2Go 클라이언트 설치 및 구성](dsvm-ubuntu-intro.md#x2go)을 참조하세요.
+
+* [**Ubuntu Data Science Virtual Machine**](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804). 가상 컴퓨터를 프로 비전 하는 방법에 대 한 자세한 내용은 [Ubuntu Data Science Virtual Machine 프로 비전](linux-dsvm-intro.md)을 참조 하세요.
+* 열린 XFCE 세션을 사용하여 컴퓨터에 설치된 [**X2Go**](https://wiki.x2go.org/doku.php). 자세한 내용은 [X2Go 클라이언트 설치 및 구성](linux-dsvm-intro.md#x2go)을 참조하세요.
 * 더 부드러운 스크롤 경험을 원할 경우 DSVM의 Firefox 웹 브라우저에서 `about:config`의 `gfx.xrender.enabled` 플래그를 전환합니다. [자세히 알아보기](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). 또한 `mousewheel.enable_pixel_scrolling`을 `False`로 설정하는 것이 좋습니다. [자세히 알아보기](https://support.mozilla.org/questions/981140).
-* **Azure Machine Learning 계정**. 아직 없는 경우 [Azure Machine Learning 홈페이지](https://azure.microsoft.com/free/services/machine-learning//)에서 새 계정을 등록합니다.
 
 ## <a name="download-the-spambase-dataset"></a>spambase 데이터 세트 다운로드
 
@@ -228,7 +226,7 @@ accuracy
 * JupyterHub
 * Rattle
 * PostgreSQL 및 SQuirreL SQL
-* SQL Server 데이터 웨어하우스
+* Azure Synapse Analytics(이전의 SQL DW)
 
 ### <a name="xgboost"></a>XGBoost
 
@@ -286,31 +284,6 @@ clf = svm.SVC()
 clf.fit(X, y)
 ```
 
-Azure Machine Learning에 모델을 게시하려면
-
-```Python
-# Publish the model.
-workspace_id = "<workspace-id>"
-workspace_token = "<workspace-token>"
-from azureml import services
-@services.publish(workspace_id, workspace_token)
-@services.types(char_freq_dollar = float, word_freq_remove = float, word_freq_hp = float)
-@services.returns(int) # 0 or 1
-def predictSpam(char_freq_dollar, word_freq_remove, word_freq_hp):
-    inputArray = [char_freq_dollar, word_freq_remove, word_freq_hp]
-    return clf.predict(inputArray)
-
-# Get some info about the resulting model.
-predictSpam.service.url
-predictSpam.service.api_key
-
-# Call the model
-predictSpam.service(1, 1, 1)
-```
-
-> [!NOTE]
-> 이 옵션은 Python 2.7에서만 사용할 수 있습니다. Python 3.5에서는 아직 지원되지 않습니다. 실행하려면 **/anaconda/bin/python2.7**을 사용합니다.
-
 ### <a name="jupyterhub"></a>JupyterHub
 
 DSVM에서 Anaconda 배포판에는 Jupyter Notebook, Python R 공유를 위한 플랫폼 간 환경 또는 Julia 코드 및 분석이 함께 제공됩니다. JupyterHub를 통해 Jupyter Notebook에 액세스합니다. Https://: 8000/에서 로컬 Linux 사용자 이름 및 암호를 사용 하 여 로그인 \<DSVM DNS name or IP address\> 합니다. JupyterHub에 대한 모든 구성 파일은 /etc/jupyterhub 디렉터리에서 찾을 수 있습니다.
@@ -334,7 +307,6 @@ DSVM에서 Anaconda 배포판에는 Jupyter Notebook, Python R 공유를 위한 
 
 * 샘플 Python Notebook:
   * [IntroToJupyterPython.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Data-Science-Virtual-Machine/Samples/Notebooks/IntroToJupyterPython.ipynb)
-  * [IrisClassifierPyMLWebService](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Data-Science-Virtual-Machine/Samples/Notebooks/IrisClassifierPyMLWebService.ipynb)
 * 샘플 R Notebook:
   * [IntroTutorialinR](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Data-Science-Virtual-Machine/Samples/Notebooks/IntroTutorialinR.ipynb) 
 
@@ -532,9 +504,9 @@ SELECT * from data order by word_freq_3d desc;
 
 PostgreSQL 데이터베이스에 저장된 데이터를 사용하여 기계 학습을 수행하려면 [MADlib](https://madlib.incubator.apache.org/)을 사용하는 것이 좋습니다.
 
-### <a name="sql-data-warehouse"></a>SQL Data Warehouse
+### <a name="azure-synapse-analytics-formerly-sql-dw"></a>Azure Synapse Analytics(이전의 SQL DW)
 
-Azure SQL Data Warehouse는 방대한 양의 관계형 및 비관계형 데이터를 처리할 수 있는 클라우드 기반 규모 스케일 아웃 데이터베이스입니다. 자세한 내용은 [Azure SQL Data Warehouse란?](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)
+Azure Synapse Analytics는 관계형 데이터와 비관계형 데이터를 모두 처리할 수 있는 클라우드 기반 스케일 아웃 데이터베이스입니다. 자세한 내용은 [Azure Synapse Analytics 란?](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) 을 참조 하세요.
 
 데이터 웨어하우스에 연결하고 테이블을 만들려면 명령 프롬프트에서 다음 명령을 실행합니다.
 
@@ -567,8 +539,4 @@ GO
 
 SQuirreL SQL을 사용하여 쿼리할 수도 있습니다. SQL Server JDBC 드라이버를 사용하여 PostgreSQL과 유사한 단계를 수행합니다. JDBC 드라이버는 /usr/share/java/jdbcdrivers/sqljdbc42.jar 폴더에 있습니다.
 
-## <a name="next-steps"></a>다음 단계
 
-Azure에서 데이터 과학 프로세스를 구성하는 작업을 안내하는 문서에 대한 개요는 [팀 데이터 과학 프로세스](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/overview)를 참조하세요.
-
-특정 시나리오에 대한 팀 데이터 과학 프로세스의 단계를 보여 주는 엔드투엔드 연습에 대한 설명은 [팀 데이터 과학 프로세스 연습](../team-data-science-process/walkthroughs.md)을 참조하세요. 또한 이 연습에서는 클라우드 및 온-프레미스 도구와 서비스를 워크플로 또는 파이프라인에 결합하여 지능형 애플리케이션을 만드는 방법을 설명합니다.

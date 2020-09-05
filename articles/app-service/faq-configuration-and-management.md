@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 867c011cb3086cab736d17501e72bc477d0d2889
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5545acbfd6bb239b9518fbe352b819f300dafaf0
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82160003"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962352"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Azure의 Web Apps에 대한 구성 및 관리 FAQ
 
@@ -65,7 +65,7 @@ App Service 웹 앱에 대 한 TLS/SSL 인증서를 구매 하 고 설정 하는
     * 값 = *원하는 표준 시간대*
 3. **저장**을 선택합니다.
 
-Windows에서 실행 되는 앱 서비스의 경우 [기본 표준 시간대](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) 문서의 **표준** 시간대 열에서 허용 되는 값을 참조 하세요. Linux에서 실행 되는 앱 서비스에 대해 [TZ 데이터베이스 이름을](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 표준 시간대 값으로 설정 합니다. 다음은 TZ 데이터베이스 이름: 아메리카/Adak의 예입니다.
+Windows에서 실행 되는 앱 서비스의 경우 [기본 표준 시간대](/windows-hardware/manufacture/desktop/default-time-zones) 문서의 **표준** 시간대 열에서 허용 되는 값을 참조 하세요. Linux에서 실행 되는 앱 서비스에 대해 [TZ 데이터베이스 이름을](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 표준 시간대 값으로 설정 합니다. 다음은 TZ 데이터베이스 이름: 아메리카/Adak의 예입니다.
 
 ## <a name="why-do-my-continuous-webjobs-sometimes-fail"></a>내 연속 WebJobs가 때때로 실패하는 이유는 무엇인가요?
 
@@ -147,7 +147,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 ## <a name="how-do-i-add-a-url-rewrite-rule"></a>URL 다시 쓰기 규칙을 추가 어떻게 할까요??
 
-URL 다시 쓰기 규칙을 추가 하려면 **wwwroot** 폴더에 관련 된 구성 항목을 사용 하 여 web.config 파일을 만듭니다. 자세한 내용은 [Azure 앱 Services: URL 재작성 이해](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/)를 참조 하세요.
+URL 다시 쓰기 규칙을 추가 하려면 **wwwroot** 폴더에 관련 된 구성 항목을 사용 하 여 web.config 파일을 만듭니다. 자세한 내용은 [Azure 앱 Services: URL 재작성 이해](/archive/blogs/madhurabharadwaj/azure-app-services-understanding-url-re-write)를 참조 하세요.
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>App Service에 대한 인바운드 트래픽을 제어하려면 어떻게 하나요?
 
@@ -222,7 +222,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 * 잘못된 네트워크 보안 그룹이 App Service Environment에서 네트워크 연결 요구 사항을 허용하지 않습니다.
 * 강제 터널링이 켜져 있습니다.
 
-자세한 내용은 [Frequent issues when deploying (creating) a new Azure App Service Environment](https://blogs.msdn.microsoft.com/waws/2016/05/13/most-frequent-issues-when-deploying-creating-a-new-azure-app-service-environment-ase/)(새 Azure App Service Environment를 배포할(만들) 때 자주 발생하는 문제)를 참조하세요.
+자세한 내용은 [Frequent issues when deploying (creating) a new Azure App Service Environment](/archive/blogs/waws/most-frequent-issues-when-deploying-creating-a-new-azure-app-service-environment-ase)(새 Azure App Service Environment를 배포할(만들) 때 자주 발생하는 문제)를 참조하세요.
 
 ## <a name="why-cant-i-delete-my-app-service-plan"></a>내 App Service 계획을 삭제할 수 없는 이유는 무엇인가요?
 
@@ -286,7 +286,7 @@ Azure에서 Web Apps를 사용하여 새 웹 사이트를 만들 경우 기본 *
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>App Service에 어떤 .NET 버전이 설치되어 있는지 확인하려면 어떻게 하나요?
 
-App Service에 설치된 Microsoft .NET 버전을 찾는 가장 빠른 방법은 Kudu 콘솔을 사용하는 것입니다. Kudu 콘솔은 포털에서 액세스하거나 App Service 앱의 URL을 사용하여 액세스할 수 있습니다. 자세한 내용은 [Determine the installed .NET version in App Service](https://blogs.msdn.microsoft.com/waws/2016/11/02/how-to-determine-the-installed-net-version-in-azure-app-services/)(App Service에 설치된 .NET 버전 확인)를 참조하세요.
+App Service에 설치된 Microsoft .NET 버전을 찾는 가장 빠른 방법은 Kudu 콘솔을 사용하는 것입니다. Kudu 콘솔은 포털에서 액세스하거나 App Service 앱의 URL을 사용하여 액세스할 수 있습니다. 자세한 내용은 [Determine the installed .NET version in App Service](/archive/blogs/waws/how-to-determine-the-installed-net-version-in-azure-app-services)(App Service에 설치된 .NET 버전 확인)를 참조하세요.
 
 ## <a name="why-isnt-autoscale-working-as-expected"></a>자동 크기 조정이 예상대로 작동하지 않는 이유는 무엇인가요?
 

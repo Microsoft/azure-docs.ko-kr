@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 14f21b1c0bff5f4d5f77b1547c09ddd6c370ece0
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: 3e5514c4a54083bcc6ef8187f2cd97515d2dd680
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86276433"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590186"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Azure 메트릭 탐색기 시작
 
@@ -41,16 +41,19 @@ Azure Monitor 메트릭 탐색기는 Microsoft Azure Portal의 구성 요소이�
 
 4. 필요에 따라 [메트릭 집계를 변경할](metrics-charts.md#changing-aggregation)수 있습니다. 예를 들어 메트릭에 대 한 최소값, 최대값 또는 평균 값을 차트에 표시 하려고 할 수 있습니다.
 
-> [!NOTE]
+> [!TIP]
 > 동일한 차트에 여러 메트릭을 표시하려면 **메트릭 추가** 단추를 사용하여 이 단계를 반복합니다. 한 보기의 여러 차트에 대해 맨 위에 있는 **차트 추가** 단추를 선택 합니다.
 
 ## <a name="select-a-time-range"></a>시간 범위 선택
+
+> [!WARNING]
+> [Azure의 메트릭은 대부분 93일 동안 저장됩니다](data-platform-metrics.md#retention-of-metrics). 그러나 단일 차트에서 30 일 이하의 데이터를 쿼리할 수 있습니다. 이 제한은 [로그 기반 메트릭](../app/pre-aggregated-metrics-log-metrics.md#log-based-metrics)에는 적용되지 않습니다.
 
 기본적으로 차트는 최근 24시간 동안의 메트릭 데이터를 표시합니다. **시간 선택** 패널을 사용 하 여 시간 범위를 변경 하거나, 확대 하거나, 차트를 축소 합니다. 
 
 ![시간 범위 변경 패널](./media/metrics-getting-started/time-picker.png)
 
-> [!NOTE]
+> [!TIP]
 > **시간 브러시** 를 사용 하 여 차트의 흥미로운 영역 (스파이크 또는 dip)을 조사 합니다. 영역의 시작 부분에 마우스 포인터를 놓고 마우스 왼쪽 단추를 누른 채로 영역 반대쪽으로 끌고 단추를 놓습니다. 그러면 해당 시간 범위에서 차트가 확대됩니다. 
 
 ## <a name="apply-dimension-filters-and-splitting"></a>차원 필터 및 분할 적용

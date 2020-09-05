@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 18acbd94fa3d717fc20b9e1020b9bf7c6db7744d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b00fe7a515d1d27ce9be2ab62a96c719d5e045a5
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78302919"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798587"
 ---
 # <a name="stringtoarray-azure-cosmos-db"></a>StringToArray (Azure Cosmos DB)
  배열로 변환 된 식을 반환 합니다. 식을 변환할 수 없는 경우는 undefined를 반환 합니다.  
@@ -33,9 +33,9 @@ StringToArray(<str_expr>)
   배열 식을 반환 하거나 정의 되지 않은를 반환 합니다. 
   
 ## <a name="remarks"></a>설명
-  중첩 된 문자열 값은 큰따옴표를 사용 하 여 유효한 JSON으로 작성 해야 합니다. JSON 형식에 대 한 자세한 내용은 [json.org](https://json.org/) 를 참조 하세요.
+  중첩 된 문자열 값은 큰따옴표를 사용 하 여 유효한 JSON으로 작성 해야 합니다. JSON 형식에 대 한 자세한 내용은 [json.org](https://json.org/)를 참조 하세요. 이 시스템 함수는 인덱스를 활용 하지 않습니다.
   
-## <a name="examples"></a>예
+## <a name="examples"></a>예제
   
   다음 예제에서는가 `StringToArray` 서로 다른 형식에서 동작 하는 방법을 보여 줍니다. 
   
@@ -90,10 +90,6 @@ SELECT
 ```json
 [{}]
 ```
-
-## <a name="remarks"></a>설명
-
-이 시스템 함수는 인덱스를 활용 하지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

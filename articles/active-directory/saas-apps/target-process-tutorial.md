@@ -2,25 +2,21 @@
 title: '자습서: TargetProcess와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 TargetProcess 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 7cb91628-e758-480d-a233-7a3caaaff50d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 60cd043c34ba2aee365c59feb38cc9dd02d45746
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d5b0be147b8aa25e6c737d423eaf4a8a23cde083
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67089037"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546545"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>자습서: TargetProcess와 Azure Active Directory 통합
 
@@ -70,7 +66,7 @@ TargetProcess의 Azure AD 통합을 구성하려면 갤러리의 TargetProcess�
 
      ![결과 목록의 TargetProcess](common/search-new-app.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD Single Sign-On 구성 및 테스트
+## <a name="configure-and-test-azure-ad-sso"></a>Azure AD SSO 구성 및 테스트
 
 이 섹션에서는 **Britta Simon**이라는 테스트 사용자를 기반으로 TargetProcess에서 Azure AD Single Sign-On을 구성하고 테스트합니다.
 Single Sign-On이 작동하려면 Azure AD 사용자와 TargetProcess의 관련 사용자 간에 연결 관계를 설정해야 합니다.
@@ -133,25 +129,27 @@ TargetProcess에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 
 
     ![이미지](./media/target-process-tutorial/install_extension.png)
 
-2. 브라우저에 확장을 추가한 후 **TargetProcess 설정**을 클릭하면 TargetProcess 애플리케이션으로 이동됩니다. 애플리케이션에서 관리자 자격 증명을 입력하여 TargetProcess에 로그인합니다. 브라우저 확장에서 애플리케이션을 자동으로 구성하고 3-7단계를 자동화합니다.
+1. 브라우저에 확장을 추가한 후 **TargetProcess 설정**을 클릭하면 TargetProcess 애플리케이션으로 이동됩니다. 애플리케이션에서 관리자 자격 증명을 입력하여 TargetProcess에 로그인합니다. 브라우저 확장에서 애플리케이션을 자동으로 구성하고 3-7단계를 자동화합니다.
+
+    ![설정 구성](common/setup-sso.png)
 
     **애플리케이션을 수동으로 구성하려는 경우 다음 단계를 수행합니다.**
 
-3. TargetProcess 애플리케이션에 관리자 권한으로 로그온합니다.
+1. TargetProcess 애플리케이션에 관리자 권한으로 로그온합니다.
 
-4. 위쪽의 메뉴에서 **설정**을 클릭합니다.
+1. 상단 메뉴에서 **설정**을 클릭합니다.
 
     ![설치 프로그램](./media/target-process-tutorial/tutorial_target_process_05.png)
 
-5. **설정** 탭을 클릭합니다.
+1. **설정** 탭을 클릭합니다.
 
     ![설정](./media/target-process-tutorial/tutorial_target_process_06.png)
 
-6. **Single Sign-On** 탭을 클릭합니다.
+1. **Single Sign-On** 탭을 클릭합니다.
 
     ![Single Sign-On을 클릭합니다.](./media/target-process-tutorial/tutorial_target_process_07.png)
 
-7. Single Sign-On 설정 대화 상자에서 다음 단계를 수행합니다.
+1. Single Sign-On 설정 대화 상자에서 다음 단계를 수행합니다.
 
     ![Single Sign-on 구성](./media/target-process-tutorial/tutorial_target_process_08.png)
 

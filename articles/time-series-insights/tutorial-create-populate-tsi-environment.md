@@ -7,14 +7,14 @@ ms.author: dpalled
 manager: diviso
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 06/30/2020
+ms.date: 08/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9f74be239bee1d6da3dfdb516c4fc410669e338d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 36687f6394ef03a3fceb70c73601680dd262d90c
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87020654"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245403"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-gen1-environment"></a>자습서: Azure Time Series Insights Gen1 환경 만들기
 
@@ -37,13 +37,13 @@ ms.locfileid: "87020654"
 
 ## <a name="review-video"></a>비디오 검토
 
-### <a name="learn-how-to-use-an-azure-iot-solution-accelerator-to-generate-data-and-get-started-with-azure-time-series-insights-br"></a>Azure IoT 솔루션 가속기를 사용하여 데이터를 생성하고 Azure Time Series Insights를 시작하는 방법을 알아봅니다. </br>
+Azure IoT 솔루션 가속기를 사용하여 데이터를 생성하고 Azure Time Series Insights를 시작하는 방법을 알아봅니다.
 
 > [!VIDEO https://www.youtube.com/embed/6ehNf6AJkFo]
 
 ## <a name="overview"></a>개요
 
-Azure Time Series Insights 환경에서는 디바이스 데이터를 수집하고 저장합니다. 저장이 되면 [Azure Time Series Insights 탐색기](time-series-quickstart.md) 및 [Azure Time Series Insights 쿼리 API](/rest/api/time-series-insights/ga-query-api)를 사용하여 데이터를 쿼리하고 분석할 수 있습니다.
+Azure Time Series Insights 환경에서는 디바이스 데이터를 수집하고 저장합니다. 저장이 되면 [Azure Time Series Insights 탐색기](time-series-quickstart.md) 및 [Azure Time Series Insights 쿼리 API](/rest/api/time-series-insights/gen1-query-api)를 사용하여 데이터를 쿼리하고 분석할 수 있습니다.
 
 Azure IoT Hub는 자습서의 모든 디바이스(시뮬레이션된 디바이스 또는 실제 디바이스)에서 Azure 클라우드에 안전하게 연결하여 데이터를 보내는 데 사용하는 이벤트 원본입니다.
 
@@ -98,7 +98,7 @@ Azure IoT Hub는 자습서의 모든 디바이스(시뮬레이션된 디바이�
 
    매개 변수|Description
    ---|---
-   **환경 이름** | Azure Time Series Insights 환경의 고유한 이름을 선택합니다. 이 이름은 Azure Time Series Insights 탐색기 및 [쿼리 API](https://docs.microsoft.com/rest/api/time-series-insights/ga-query)에서 사용합니다.
+   **환경 이름** | Azure Time Series Insights 환경의 고유한 이름을 선택합니다. 이 이름은 Azure Time Series Insights 탐색기 및 [쿼리 API](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query)에서 사용합니다.
    **구독** | 구독은 Azure 리소스에 대한 컨테이너입니다. Azure Time Series Insights 환경을 만들 구독을 선택합니다.
    **리소스 그룹** | 리소스 그룹은 Azure 리소스에 대한 컨테이너입니다. 기존 리소스 그룹을 선택하거나 Azure Time Series Insights 환경 리소스에 대한 새 리소스 그룹을 만듭니다.
    **위치** | Azure Time Series Insights 환경에 대한 데이터 센터 지역을 선택합니다. 대기 시간이 추가되는 것을 방지하려면 다른 IoT 리소스와 동일한 지역에 Azure Time Series Insights 환경을 만듭니다.
@@ -197,7 +197,7 @@ Azure Portal의 왼쪽 메뉴에서 다음을 수행합니다.
 > * 디바이스 시뮬레이션을 실행하여 Azure Time Series Insights 환경으로 데이터를 스트림합니다.
 > * 시뮬레이션된 원격 분석 데이터를 확인합니다.
 
-사용자 고유의 Azure Time Series Insights 환경을 만드는 방법을 알아보았으면, Azure Time Series Insights 환경의 데이터를 사용하는 웹 애플리케이션을 빌드하는 방법을 알아봅니다.
+사용자 고유의 Azure Time Series Insights 환경을 만드는 방법을 알아보았으므로 이제 Azure Time Series Insights 환경의 데이터를 사용하는 웹 애플리케이션을 빌드하는 방법을 알아봅니다.
 
 > [!div class="nextstepaction"]
 > [호스팅된 클라이언트 SDK 시각화 샘플 읽기](https://tsiclientsample.azurewebsites.net/)

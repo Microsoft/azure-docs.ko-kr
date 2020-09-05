@@ -8,20 +8,20 @@ ms.author: pafarley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: c07c00345140d96bf3265fb280fe29b1274bdee6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 58f1c2621165a7074c04752832c6560b2fd3e423
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85321309"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935435"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>예: 양식 인식기 사용자 지정 기술 만들기
 
 이 Azure Cognitive Search 기술 예제에서는 c # 및 Visual Studio를 사용 하 여 폼 인식기 사용자 지정 기술을 만드는 방법을 배웁니다. 양식 인식기는 문서를 분석 하 고 키/값 쌍 및 테이블 데이터를 추출 합니다. [사용자 지정 기술 인터페이스](cognitive-search-custom-skill-interface.md)에 폼 인식기를 래핑하여 종단 간 보강 파이프라인의 단계로이 기능을 추가할 수 있습니다. 그러면 파이프라인이 문서를 로드 하 고 다른 변환을 수행할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) 모든 버전.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (모든 버전)
 - 동일한 형식의 5 개 이상의 양식 이 가이드에서 제공 하는 샘플 데이터를 사용할 수 있습니다.
 
 ## <a name="create-a-form-recognizer-resource"></a>Form Recognizer 리소스 만들기
@@ -30,20 +30,20 @@ ms.locfileid: "85321309"
 
 ## <a name="train-your-model"></a>모델 학습
 
-이 스킬을 사용 하기 전에 입력 양식으로 양식 인식기 모델을 학습 해야 합니다. 모델을 학습 하는 방법에 대 한 자세한 내용은 [말아 퀵 스타트](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/quickstarts/curl-train-extract) 를 참조 하세요. 해당 빠른 시작에 제공 된 샘플 양식을 사용 하거나 사용자 고유의 데이터를 사용할 수 있습니다. 모델을 학습 한 후에는 해당 ID 값을 안전한 위치에 복사 합니다.
+이 스킬을 사용 하기 전에 입력 양식으로 양식 인식기 모델을 학습 해야 합니다. 모델을 학습 하는 방법에 대 한 자세한 내용은 [말아 퀵 스타트](../cognitive-services/form-recognizer/quickstarts/curl-train-extract.md) 를 참조 하세요. 해당 빠른 시작에 제공 된 샘플 양식을 사용 하거나 사용자 고유의 데이터를 사용할 수 있습니다. 모델을 학습 한 후에는 해당 ID 값을 안전한 위치에 복사 합니다.
 
 ## <a name="set-up-the-custom-skill"></a>사용자 지정 기술 설정
 
 이 자습서에서는 [Azure Search 파워 기술](https://github.com/Azure-Samples/azure-search-power-skills) GitHub 리포지토리의 [AnalyzeForm](https://github.com/Azure-Samples/azure-search-power-skills/tree/master/Vision/AnalyzeForm) 프로젝트를 사용 합니다. 이 리포지토리를 로컬 컴퓨터에 복제 하 고 **비전/AnalyzeForm/** 로 이동 하 여 프로젝트에 액세스 합니다. 그런 다음 Visual Studio에서 _AnalyzeForm_ 을 엽니다. 이 프로젝트는 [사용자 지정 기술 인터페이스](cognitive-search-custom-skill-interface.md) 를 충족 하 고 azure Cognitive Search 보강에 사용할 수 있는 azure 함수 리소스를 만듭니다. 양식 문서를 입력으로 사용 하 고 지정 된 키/값 쌍을 텍스트로 출력 합니다.
 
 먼저 프로젝트 수준 환경 변수를 추가 합니다. 왼쪽 창에서 **AnalyzeForm** 프로젝트를 찾은 다음 마우스 오른쪽 단추로 클릭 하 고 **속성**을 선택 합니다. **속성** 창에서 **디버그** 탭을 클릭 한 다음 **환경 변수** 필드를 찾습니다. **추가** 를 클릭 하 여 다음 변수를 추가 합니다.
-* `FORMS_RECOGNIZER_ENDPOINT_URL`값이 끝점 URL로 설정 된입니다.
-* `FORMS_RECOGNIZER_API_KEY`값이 구독 키로 설정 된입니다.
-* `FORMS_RECOGNIZER_MODEL_ID`값을 학습 한 모델의 ID로 설정 합니다.
-* `FORMS_RECOGNIZER_RETRY_DELAY`값이 1000로 설정 된입니다. 이 값은 프로그램에서 쿼리를 다시 시도 하기 전까지 대기 하는 시간 (밀리초)입니다.
-* `FORMS_RECOGNIZER_MAX_ATTEMPTS`값이 100로 설정 된입니다. 이 값은 성공적인 응답을 가져오는 동안 프로그램에서 서비스를 쿼리 하는 횟수입니다.
+* `FORMS_RECOGNIZER_ENDPOINT_URL` 값이 끝점 URL로 설정 된입니다.
+* `FORMS_RECOGNIZER_API_KEY` 값이 구독 키로 설정 된입니다.
+* `FORMS_RECOGNIZER_MODEL_ID` 값을 학습 한 모델의 ID로 설정 합니다.
+* `FORMS_RECOGNIZER_RETRY_DELAY` 값이 1000로 설정 된입니다. 이 값은 프로그램에서 쿼리를 다시 시도 하기 전까지 대기 하는 시간 (밀리초)입니다.
+* `FORMS_RECOGNIZER_MAX_ATTEMPTS` 값이 100로 설정 된입니다. 이 값은 성공적인 응답을 가져오는 동안 프로그램에서 서비스를 쿼리 하는 횟수입니다.
 
-그런 다음 _AnalyzeForm.cs_ 를 열고 `fieldMappings` 파일 *의field-mappings.js* 를 참조 하는 변수를 찾습니다. 이 파일 및이 파일을 참조 하는 변수는 양식에서 추출할 키 목록과 각 키에 대 한 사용자 지정 레이블을 정의 합니다. 예를 들어 값이 이면 `{ "Address:", "address" }, { "Invoice For:", "recipient" }` 스크립트는 검색 된 필드와 필드에 대 한 값만 저장 하 `Address:` `Invoice For:` 고 각각 및로 해당 값에 레이블을 만듭니다 `"address"` `"recipient"` .
+그런 다음 _AnalyzeForm.cs_ 를 열고 `fieldMappings` 파일 * 의field-mappings.js* 를 참조 하는 변수를 찾습니다. 이 파일 및이 파일을 참조 하는 변수는 양식에서 추출할 키 목록과 각 키에 대 한 사용자 지정 레이블을 정의 합니다. 예를 들어 값이 이면 `{ "Address:", "address" }, { "Invoice For:", "recipient" }` 스크립트는 검색 된 필드와 필드에 대 한 값만 저장 하 `Address:` `Invoice For:` 고 각각 및로 해당 값에 레이블을 만듭니다 `"address"` `"recipient"` .
 
 마지막으로 변수를 확인 `contentType` 합니다. 이 스크립트는 URL에서 참조 하는 원격 문서에서 지정 된 폼 인식기 모델을 실행 하므로 콘텐츠 형식은 `application/json` 입니다. HTTP 요청에 바이트 스트림을 포함 하 여 로컬 파일을 분석 하려는 경우를 `contentType` 파일의 적절 한 [MIME 형식](https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) 으로 변경 해야 합니다.
 
@@ -167,5 +167,5 @@ Cognitive Search 파이프라인에서이 기술을 사용 하려면 기술 정�
 * [Azure Search 전원 기술: 사용자 지정 기술의 리포지토리입니다.](https://github.com/Azure-Samples/azure-search-power-skills)
 * [AI 보강 파이프라인에 사용자 지정 기술 추가](cognitive-search-custom-skill-interface.md)
 * [기술 집합 정의](cognitive-search-defining-skillset.md)
-* [기술 만들기 (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
+* [기술 만들기 (REST)](/rest/api/searchservice/create-skillset)
 * [지도 보강 필드](cognitive-search-output-field-mapping.md)

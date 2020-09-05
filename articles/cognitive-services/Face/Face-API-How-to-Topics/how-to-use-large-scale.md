@@ -10,12 +10,13 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
-ms.openlocfilehash: dc0964e40e9214e414d865c06006f1d36e97eeb2
-ms.sourcegitcommit: fe6c9a35e75da8a0ec8cea979f9dec81ce308c0e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c4667b810e4d3d5f13e13572e2420880da5a8a0b
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76169776"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88931627"
 ---
 # <a name="example-use-the-large-scale-feature"></a>예제: 대규모 기능 사용
 

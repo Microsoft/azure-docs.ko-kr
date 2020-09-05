@@ -8,13 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 07/15/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 244809db8efac00124a11ab5c163bfefc9ea7dd2
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 47c846f0d8d1cccd91301c7424b2618fffddd565
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420603"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88998444"
 ---
 # <a name="tutorial-add-autocomplete-and-suggestions-using-the-net-sdk"></a>자습서: .NET SDK를 사용하여 자동 완성 및 제안 추가
 
@@ -145,7 +145,7 @@ ms.locfileid: "87420603"
  
     ![fuzzy를 true로 설정하고 "Pa" 입력](./media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png)
 
-    관심이 있는 분들은 유사 항목 검색에 사용되는 논리에 대해 설명하는 [Azure Cognitive Search의 Lucene 쿼리 구문](https://docs.microsoft.com/azure/search/query-lucene-syntax)을 읽어보세요.
+    관심이 있는 분들은 유사 항목 검색에 사용되는 논리에 대해 설명하는 [Azure Cognitive Search의 Lucene 쿼리 구문](./query-lucene-syntax.md)을 읽어보세요.
 
 ## <a name="add-highlighting-to-the-suggestions"></a>제안에 강조 표시 추가
 
@@ -244,7 +244,7 @@ ms.locfileid: "87420603"
 
     앞에서 제안에 했던 것처럼, "sg"라고 하는 동일한 *제안기* 함수를 자동 완성 검색에 사용합니다(즉, 호텔 이름만 자동 완성을 시도).
 
-    다양한 **AutocompleteMode** 설정이 있는데, 여기서는 **OneTermWithContext**를 사용하겠습니다. 추가 옵션에 대한 설명은 [자동 완성 API](https://docs.microsoft.com/rest/api/searchservice/autocomplete)를 참조하세요.
+    다양한 **AutocompleteMode** 설정이 있는데, 여기서는 **OneTermWithContext**를 사용하겠습니다. 추가 옵션에 대한 설명은 [자동 완성 API](/rest/api/searchservice/autocomplete)를 참조하세요.
 
 4. 앱을 실행합니다. 드롭다운 목록에 표시되는 옵션의 범위가 단일 단어라는 것을 알 수 있습니다. "re"로 시작하는 단어를 입력합니다. 더 많은 문자를 입력할수록 옵션 수가 감소합니다.
 
@@ -464,5 +464,3 @@ ms.locfileid: "87420603"
 
 > [!div class="nextstepaction"]
 > [C# 자습서: 패싯을 사용하여 탐색 지원 - Azure Cognitive Search](tutorial-csharp-facets.md)
-
-

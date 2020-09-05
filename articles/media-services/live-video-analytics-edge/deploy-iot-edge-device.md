@@ -3,19 +3,18 @@ title: IoT Edge 장치에 라이브 비디오 분석 배포-Azure
 description: 이 문서에서는 IoT Edge 장치에 라이브 비디오 분석을 배포 하는 데 도움이 되는 단계를 나열 합니다. 예를 들어 로컬 Linux 컴퓨터에 대 한 액세스 권한이 있거나 이전에 Azure Media Services 계정을 만든 경우이 작업을 수행할 수 있습니다.
 ms.topic: how-to
 ms.date: 04/27/2020
-ms.openlocfilehash: f031f679d8fe8e1c14b6a4086f5e1c37f15c7855
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: 774fdb440307d0df92e9735a8bdf055687f450a2
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067915"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684102"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>IoT Edge 장치에 라이브 비디오 분석 배포
 
 이 문서에서는 IoT Edge 장치에 라이브 비디오 분석을 배포 하는 데 도움이 되는 단계를 나열 합니다. 예를 들어 로컬 Linux 컴퓨터에 대 한 액세스 권한이 있거나 이전에 Azure Media Services 계정을 만든 경우이 작업을 수행할 수 있습니다.
 
-
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 * 라이브 비디오 분석의 HW/SW 제약 조건을 충족 하는 Linux 컴퓨터
 * [소유자 권한이](../../role-based-access-control/built-in-roles.md#owner) 있는 Azure 구독
@@ -23,6 +22,7 @@ ms.locfileid: "88067915"
 * [IoT Edge 장치 등록](../../iot-edge/how-to-register-device.md)
 * [Debian 기반 Linux 시스템에서 Azure IoT Edge 런타임 설치](../../iot-edge/how-to-install-iot-edge-linux.md)
 * [Azure Media Services 계정 만들기](../latest/create-account-howto.md)
+
     * 미국 동부 2, 미국 중부, 미국 중 북부, 일본 동부, 미국 서 부 2, 미국 중부, 캐나다 동부, 영국 남부, 프랑스 중부, 프랑스 남부, 스위스 북부, 스위스 서부, 일본 서 부 지역 중 하나를 사용 합니다.
     * 범용 v2 (GPv2) 저장소 계정을 사용 하는 것이 좋습니다.
 
@@ -51,7 +51,7 @@ az ams streaming-endpoint scale --resource-group $RESOURCE_GROUP --account-name 
 az ams streaming-endpoint start --resource-group $RESOURCE_GROUP --account-name $AMS_ACCOUNT -n default --no-wait
 ```
 
-미디어 서비스 Api에 액세스 하기 위한 자격 증명을 가져오려면이 문서의 단계를 따르세요. [미디어 서비스 api에 액세스](../latest/access-api-howto.md#use-the-azure-portal)합니다.
+미디어 서비스 api에 액세스 하기 위한 자격 증명을 가져오려면이 문서의 단계를 따르세요. [미디어 서비스 api에 액세스](../latest/access-api-howto.md?tabs=portal) 하 고 포털 탭을 선택 합니다.
 
 ## <a name="create-and-use-local-user-account-for-deployment"></a>배포를 위한 로컬 사용자 계정 만들기 및 사용
 IoT Edge 모듈에서 Live Video Analytics를 실행 하려면 가능한 적은 수의 권한으로 로컬 사용자 계정을 만듭니다. 예를 들어 Linux 컴퓨터에서 다음 명령을 실행 합니다.
@@ -102,7 +102,7 @@ Azure Portal 배포 매니페스트를 만들고 배포를 IoT Edge 장치로 �
 
 1. 페이지의 **IoT Edge 모듈** 섹션에서 **추가** 드롭다운을 클릭 하 고 **IoT Edge 모듈** 을 선택 하 여 **IoT Edge 모듈 추가** 페이지를 표시 합니다.
 1. **모듈 설정** 탭에서 모듈의 이름을 입력 한 다음 컨테이너 이미지 URI를 지정 합니다.   
-    예제:
+    예:
     
     * **IoT Edge 모듈 이름**: lvaEdge
     * **이미지 URI**: mcr.microsoft.com/media/live-video-analytics:1.0    
@@ -168,7 +168,7 @@ Azure Portal 배포 매니페스트를 만들고 배포를 IoT Edge 장치로 �
     * {resourceGroupName}-미디어 서비스 계정이 속한 리소스 그룹
     * {AMS-account-name}-Media Services 계정의 이름입니다.
     
-    다른 값을 얻으려면 [액세스 AZURE MEDIA SERVICES API](../latest/access-api-howto.md#use-the-azure-portal)를 참조 하세요.  
+    다른 값을 얻으려면 [액세스 AZURE MEDIA SERVICES API](../latest/access-api-howto.md?tabs=portal) 를 참조 하 고 포털 탭을 선택 합니다.  
     * aadTenantId-테 넌 트의 ID 이며 위의 링크에서 "AadTenantId"와 동일 합니다.
     * aadServicePrincipalAppId-미디어 서비스 계정에 대 한 서비스 주체의 앱 ID 이며 위 링크의 "AadClientId"와 동일 합니다.
     * aadServicePrincipalSecret-서비스 사용자의 암호 이며 위의 링크에서 "AadSecret"와 동일 합니다.
@@ -190,6 +190,7 @@ Azure Portal 배포 매니페스트를 만들고 배포를 IoT Edge 장치로 �
     "armEndpoint": "https://management.azure.com/",
     "allowUnsecuredEndpoints": true
     ```
+
    > [!Note]
    > 쌍 속성 **allowUnsecuredEndpoints** 는 자습서 및 빠른 시작의 목적으로 true로 설정 됩니다.   
    프로덕션 환경에서 실행 하는 경우이 속성을 **false** 로 설정 해야 합니다. 이렇게 하면 응용 프로그램이 보안 되지 않은 모든 끝점을 차단 하 고 그래프 토폴로지를 실행 하기 위해 유효한 연결 자격 증명이 필요 합니다.  
@@ -210,8 +211,8 @@ Azure Portal 배포 매니페스트를 만들고 배포를 IoT Edge 장치로 �
 
 배포를 만든 후에는 IoT hub의 IoT Edge 페이지로 돌아갑니다.
 
-1.  해당 세부 정보를 열려면 배포할 대상으로 지정한 IoT Edge 디바이스를 선택합니다.
-2.  디바이스 세부 정보에서 Blob Storage 모듈이 **배포에 지정됨 및 디바이스에서 보고됨** 모두로 나열되어 있는지를 확인합니다.
+1. 해당 세부 정보를 열려면 배포할 대상으로 지정한 IoT Edge 디바이스를 선택합니다.
+2. 디바이스 세부 정보에서 Blob Storage 모듈이 **배포에 지정됨 및 디바이스에서 보고됨** 모두로 나열되어 있는지를 확인합니다.
 
 모듈을 디바이스에서 시작한 다음, IoT Hub에 다시 보고하려면 몇 분 정도 걸릴 수 있습니다. 업데이트된 상태를 보려면 페이지를 새로 고칩니다.
 상태 코드: 200 – OK는 [IoT Edge 런타임이](../../iot-edge/iot-edge-runtime.md) 정상 이며 제대로 작동 하 고 있음을 의미 합니다.
@@ -247,6 +248,7 @@ Azure Portal 배포 매니페스트를 만들고 배포를 IoT Edge 장치로 �
     ![상태 200 메시지](./media/deploy-iot-edge-device/connection-timeout.png) 
 
 ## <a name="next-steps"></a>다음 단계
+
 [빠른 시작: IoT Edge 시작 하기-라이브 비디오 분석을](get-started-detect-motion-emit-events-quickstart.md#deploy-modules-on-your-edge-device) 수행 합니다.
 
 > [!TIP]

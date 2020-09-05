@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.date: 11/08/2019
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbdebd8d59034bd16a3199c1304606ccf12ab2c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 937c5dbf3417e5914a0b4285c3bb114d7499e0fb
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727673"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799063"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Azure Active Directory에서 라이선스 관리를 위해 그룹을 사용하는 경우 시나리오, 제한 사항 및 알려진 문제
 
@@ -68,7 +68,7 @@ ms.locfileid: "84727673"
 
 ## <a name="multiple-groups-and-multiple-licenses"></a>여러 그룹 및 여러 라이선스
 
-사용자는 라이선스를 가진 여러 그룹의 구성원이 될 수 있습니다. 고려할 사항은 다음과 같습니다.
+사용자는 라이선스를 가진 여러 그룹의 구성원이 될 수 있습니다. 다음과 같은 몇 가지 사항을 고려해야 합니다.
 
 - 동일한 제품에 대한 라이선스가 여러 개 있으면 겹칠 수 있어 사용 가능한 모든 서비스가 사용자에게 적용됩니다. 다음 예에서는 두 개의 라이선스 그룹을 보여 줍니다. *E3 기본 서비스*에는 모든 사용자에게 처음 배포할 기본 서비스가 포함되어 있으며, *E3 확장 서비스*에는 일부 사용자에게만 배포할 수 있는 추가 서비스(Sway 및 Planner)가 포함되어 있습니다. 이 예제에서 사용자는 두 그룹 모두에 추가되었습니다.
 
@@ -130,7 +130,7 @@ PowerShell 스크립트를 사용하여 사용자가 라이선스를 직접 할�
 
 1. Cmdlet을 실행 `connect-msolservice` 하 여 조직에 인증 하 고 연결 합니다.
 
-2. `Get-MsolAccountSku`Azure AD 조직에서 프로 비전 된 모든 제품 라이선스를 검색 하는 데 사용할 수 있습니다.
+2. `Get-MsolAccountSku` Azure AD 조직에서 프로 비전 된 모든 제품 라이선스를 검색 하는 데 사용할 수 있습니다.
 
    ![Get-msolaccountsku cmdlet의 스크린샷](./media/licensing-group-advanced/get-msolaccountsku-cmdlet.png)
 
@@ -205,13 +205,13 @@ PowerShell 또는 Graph API를 통해 그룹을 삭제하려고 할 때 비슷�
 
 - 그룹 기반 라이선스는 현재 다른 그룹을 포함하는 그룹(중첩된 그룹)을 지원하지 않습니다. 중첩된 그룹에 라이선스를 적용하는 경우 그룹의 최상위 수준 사용자 멤버에게만 라이선스가 적용됩니다.
 
-- 이 기능은 보안 그룹 및 securityEnabled가 TRUE인 Office 365 그룹에만 사용할 수 있습니다.
+- 이 기능은 보안 그룹과 securityEnabled = TRUE 인 Microsoft 365 그룹에만 사용할 수 있습니다.
 
 - [Microsoft 365 관리 센터](https://admin.microsoft.com) 는 현재 그룹 기반 라이선스를 지원 하지 않습니다. 사용자가 그룹에서 라이선스를 상속받는 경우 이 라이선스는 Office 관리 포털에 일반 사용자 라이선스로 표시됩니다. 해당 라이선스를 수정하거나 라이선스를 제거하려고 시도하는 경우 포털에서 오류 메시지를 반환합니다. 상속된 그룹 라이선스는 사용자가 직접 수정할 수 없습니다.
 
 - 대규모 그룹(예: 100,000명의 사용자)에 대해 라이선스를 할당하거나 수정하면 성능에 영향을 줄 수 있습니다. 특히 Azure AD 자동화에서 생성된 변경 볼륨은 Azure AD와 온-프레미스 시스템 간의 디렉터리 동기화 성능에 부정적인 영향을 줄 수 있습니다.
 
-- 동적 그룹을 사용하여 사용자의 멤버 자격을 관리하는 경우 사용자가 그룹의 일부인지를 확인합니다. 이 작업은 라이선스 할당에 필요합니다. 그렇지 않으면, 동적 그룹의 [멤버 자격 규칙에 대한 처리 상태를 확인](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-create-rule)합니다.
+- 동적 그룹을 사용하여 사용자의 멤버 자격을 관리하는 경우 사용자가 그룹의 일부인지를 확인합니다. 이 작업은 라이선스 할당에 필요합니다. 그렇지 않으면, 동적 그룹의 [멤버 자격 규칙에 대한 처리 상태를 확인](./groups-create-rule.md)합니다.
 
 - 부하가 높은 특정 상황에서는 그룹에 대한 라이선스 변경 내용 또는 기존 라이선스가 있는 그룹에 대한 멤버 자격 변경 내용을 처리하는 데 시간이 오래 걸릴 수 있습니다. 변경 내용이 60K 사용자 이하의 그룹 크기를 처리하는 데 24시간 이상이 걸리는 경우 Microsoft에서 조사할 수 있도록 [지원 티켓을 열어주세요](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/supportRequest). 
 

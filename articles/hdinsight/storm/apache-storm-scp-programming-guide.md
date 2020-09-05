@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/13/2020
-ms.openlocfilehash: 4445bb5c73ca001813d529a3e65d1ea95e084616
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: d54a06c457451fc5323ae37b34b53411cdd6abda
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86082457"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000144"
 ---
 # <a name="scp-programming-guide-for-apache-storm-in-azure-hdinsight"></a>Azure HDInsight의 Apache Storm에 대 한 SCP 프로그래밍 가이드
 
@@ -72,7 +72,7 @@ SCP 플러그 인을 작성 하는 것은 다른 Windows 콘솔 응용 프로그
 
 ### <a name="iscpplugin"></a>ISCPPlugin
 
-**ISCPPlugin** 는 대부분의 플러그 인에 대 한 공통 인터페이스 이며, 현재 더미 인터페이스입니다.
+**ISCPPlugin** 는 대부분의 플러그 인에 대 한 공용 인터페이스입니다. 현재는 더미 인터페이스입니다.
 
 ```csharp
 public interface ISCPPlugin
@@ -539,9 +539,9 @@ SCP.NET 사용자 지정 된 grouping 메서드를 추가 하 고 **byte []** �
 
 위의 사양 파일에서 다음을 수행 합니다.
 
-* `scp-field-group`그룹이 SCP에서 구현 하는 사용자 지정 필드 그룹화 임을 지정 합니다.
-* `:tx`또는 `:non-tx` 토폴로지가 트랜잭션인지 여부를 지정 합니다. 시작 인덱스는 트랜잭션 토폴로지와 비트랜잭션 사이에서 다르기 때문에이 정보가 필요 합니다.
-* `[0,1]`0으로 시작 하는 필드 Id의 해시 집합을 지정 합니다.
+* `scp-field-group` 그룹이 SCP에서 구현 하는 사용자 지정 필드 그룹화 임을 지정 합니다.
+* `:tx` 또는 `:non-tx` 토폴로지가 트랜잭션인지 여부를 지정 합니다. 시작 인덱스는 트랜잭션 토폴로지와 비트랜잭션 사이에서 다르기 때문에이 정보가 필요 합니다.
+* `[0,1]` 0으로 시작 하는 필드 Id의 해시 집합을 지정 합니다.
 
 ### <a name="hybrid-topology"></a>하이브리드 토폴로지
 

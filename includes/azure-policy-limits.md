@@ -6,12 +6,12 @@ ms.service: azure-policy
 ms.topic: include
 ms.date: 08/07/2020
 ms.author: dacoulte
-ms.openlocfilehash: e22594a50a9c0d814ef7d66443f8253f5832cb1d
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 9fcaca3f89217f649eb970ec70514a5735222782
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88038503"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854103"
 ---
 Azure Policy의 각 개체 형식에 대한 최대 수가 있습니다. _범위_ 항목은 구독 또는 [관리 그룹](../articles/governance/management-groups/overview.md)을 의미합니다.
 
@@ -26,4 +26,4 @@ Azure Policy의 각 개체 형식에 대한 최대 수가 있습니다. _범위_
 | 이니셔티브 정의 | 매개 변수 | 100 |
 | 정책 또는 이니셔티브 할당 | 제외(notScopes) | 400 |
 | 정책 규칙 | 중첩된 조건부 | 512 |
-| 수정 작업 | 리소스 | 1000 |
+| 수정 작업 | 리소스 | 500 |

@@ -4,12 +4,13 @@ description: Service Bus 메시징 항목 및 구독을 사용하는 C# .NET Cor
 ms.topic: conceptual
 ms.tgt_pltfrm: dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: 7b2b8382c11f447237a8f49ee5be1f4989e3f906
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: bc7435fb46d5783cb487038a10709a9e40b0d136
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85337524"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021649"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Service Bus 큐 항목 시작
 
@@ -20,7 +21,7 @@ ms.locfileid: "85337524"
 1. 항목에 일련의 메시지를 보내도록 .NET Core 콘솔 애플리케이션을 작성합니다.
 2. 구독에서 해당 메시지를 수신하도록 .NET Core 콘솔 애플리케이션을 작성합니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 1. Azure 구독 이 자습서를 완료하려면 Azure 계정이 필요합니다. [Visual Studio 또는 MSDN 구독자 혜택](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF)을 활성화해도 되고, 또는 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF)에 가입해도 됩니다.
 2. 빠른 시작: Azure Portal을 사용 하 여 다음 작업을 수행 하는 [항목에 대 한 Service Bus 토픽 및 구독 만들기를](service-bus-quickstart-topics-subscriptions-portal.md) 참조 하세요.
@@ -358,7 +359,7 @@ Visual Studio를 시작하고 새로운 **콘솔 앱(.NET Core)** 프로젝트�
    
     ![항목 길이][topic-message-receive]
 
-지금까지 이제 .NET Standard 라이브러리를 사용하여 토픽 및 구독을 만들고, 10개의 메시지를 보내고, 해당 메시지를 수신했습니다.
+축하합니다! 이제 .NET Standard 라이브러리를 사용하여 토픽 및 구독을 만들고, 10개의 메시지를 보내고, 해당 메시지를 수신했습니다.
 
 > [!NOTE]
 > [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/)로 Service Bus 리소스를 관리할 수 있습니다. Service Bus Explorer를 사용하면 Service Bus 네임스페이스에 연결하고 쉬운 방식으로 메시징 엔터티를 관리할 수 있습니다. 이 도구는 가져오기/내보내기 기능 또는 항목, 큐, 구독, 릴레이 서비스, Notification Hubs 및 이벤트 허브를 테스트하는 기능과 같은 고급 기능을 제공합니다. 

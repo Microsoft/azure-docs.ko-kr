@@ -4,13 +4,13 @@ description: AKS(Azure Kubernetes Service)의 가용성 영역에 노드를 배�
 services: container-service
 ms.custom: fasttrack-edit, references_regions
 ms.topic: article
-ms.date: 02/27/2020
-ms.openlocfilehash: feea8c3cba170244be2ca3ec7a11c36a3c39f700
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.date: 08/13/2020
+ms.openlocfilehash: f24351c5f77e6c00365497d5e6deeefea8271cb9
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87281228"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871414"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>가용성 영역을 사용하는 AKS(Azure Kubernetes Service) 클러스터 만들기
 
@@ -28,6 +28,7 @@ Azure CLI 버전 2.0.76 이상이 설치되고 구성되어 있어야 합니다.
 
 AKS 클러스터는 현재 다음 지역에서 가용성 영역을 사용하여 만들 수 있습니다.
 
+* 오스트레일리아 동부
 * 미국 중부
 * 미국 동부 2
 * 미국 동부

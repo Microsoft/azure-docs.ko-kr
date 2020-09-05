@@ -4,7 +4,7 @@
   expanded: true
   items:
     - name: Cognitive Services란?
-      href: Welcome.md
+      href: what-are-cognitive-services.md
     - name: Cognitive Services 문서의 새로운 기능
       href: whats-new-docs.md
     - name: Cognitive Services 및 기계 학습
@@ -19,15 +19,13 @@
       href: cognitive-services-apis-create-account.md
     - name: Azure CLI를 사용하여 새 리소스 만들기
       href: cognitive-services-apis-create-account-cli.md
+    - name: 클라이언트 라이브러리를 사용하여 새 리소스 만들기
+      href: cognitive-services-apis-create-account-client-library.md
     - name: ARM 템플릿을 사용하여 새 리소스 만들기
       displayName: Resource Manager
       href: resource-manager-template.md
     - name: 진단 로깅
       href: diagnostic-logging.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      href: ./policy-samples.md
 - name: 보안
   items:
     - name: Cognitive Services 보안
@@ -84,6 +82,11 @@
           href: ./big-data/recipes/anomaly-detection.md
         - name: '레시피: 아트 탐색기'
           href: ./big-data/recipes/art-explorer.md
+- name: 참조
+  items:
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Azure 로드맵

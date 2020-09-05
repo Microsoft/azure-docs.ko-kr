@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5dbfca54227895de53b984dcf5c7a1f8c5fbf51d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: cf2e3f98bd96c09fe741a24a1332443c876e2e61
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647402"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89225913"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Azure Active Directory reporting API 시작하기
 
@@ -32,7 +32,7 @@ Azure AD 보고서에 대한 Microsoft Graph API를 사용하면 일련의 REST 
 
 이 문서에서는 액세스하는 방법을 포함하여 보고 API 개요를 제공합니다.
 
-문제가 발생하면 [Azure Active Directory에 대한 지원을 받는 방법](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto)을 참조하세요.
+문제가 발생하면 [Azure Active Directory에 대한 지원을 받는 방법](../fundamentals/active-directory-troubleshooting-support-howto.md)을 참조하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -47,9 +47,9 @@ Azure AD 보고서에 대한 Microsoft Graph API를 사용하면 일련의 REST 
 
 ## <a name="api-endpoints"></a>API 엔드포인트 
 
-감사 로그에 대한 Microsoft Graph API 엔드포인트는 `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits`이며 로그인에 대한 Microsoft Graph API 엔드포인트는 `https://graph.microsoft.com/v1.0/auditLogs/signIns`입니다. 자세한 내용은 [감사 API 참조](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/directoryaudit) 및 [로그인 API 참조](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/signIn)를 참조하세요.
+감사 로그에 대한 Microsoft Graph API 엔드포인트는 `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits`이며 로그인에 대한 Microsoft Graph API 엔드포인트는 `https://graph.microsoft.com/v1.0/auditLogs/signIns`입니다. 자세한 내용은 [감사 API 참조](/graph/api/resources/directoryaudit?view=graph-rest-1.0) 및 [로그인 API 참조](/graph/api/resources/signIn?view=graph-rest-1.0)를 참조하세요.
 
-또한 [ID 보호 위험 검색 API](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent)를 사용하여 Microsoft Graph를 통해 보안 검색에 프로그래밍 방식으로 액세스할 수 있습니다. 자세한 내용은 [Azure Active Directory ID 보호 및 Microsoft Graph 시작](../identity-protection/graph-get-started.md)을 참조하세요. 
+또한 [ID 보호 위험 검색 API](/graph/api/resources/identityriskevent?view=graph-rest-beta)를 사용하여 Microsoft Graph를 통해 보안 검색에 프로그래밍 방식으로 액세스할 수 있습니다. 자세한 내용은 [Azure Active Directory ID 보호 및 Microsoft Graph 시작](../identity-protection/howto-identity-protection-graph-api.md)을 참조하세요. 
   
 ## <a name="apis-with-microsoft-graph-explorer"></a>Microsoft Graph 탐색기를 사용한 API
 
@@ -70,5 +70,3 @@ Azure AD 보고서에 대한 Microsoft Graph API를 사용하면 일련의 REST 
  * [보고서 API에 액세스하기 위한 필수 구성 요소](howto-configure-prerequisites-for-reporting-api.md) 
  * [인증서와 함께 Azure AD Reporting API를 사용하여 데이터 가져오기](tutorial-access-api-with-certificates.md)
  * [Azure AD Reporting API의 오류 문제 해결](troubleshoot-graph-api.md)
-
-

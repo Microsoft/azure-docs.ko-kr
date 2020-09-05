@@ -1,17 +1,17 @@
 ---
-title: 자습서 - Azure Backup으로 VM 디스크 복원
+title: 자습서 - Azure CLI를 사용하여 VM 복원
 description: Backup 및 Recovery Services를 사용하여 Azure에서 디스크를 복원하고 복구된 VM을 만드는 방법을 알아봅니다.
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: efad97c3668c50669be89e6eccaadb26cb313e81
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 56ea3de451e625ef5c55f92daa1b86bd34b1c4c4
+ms.sourcegitcommit: a2a7746c858eec0f7e93b50a1758a6278504977e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87289478"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88141349"
 ---
-# <a name="restore-a-disk-and-create-a-recovered-vm-in-azure"></a>Azure에서 디스크 복원 및 복구된 VM 만들기
+# <a name="restore-a-vm-with-azure-cli"></a>Azure CLI를 사용하여 VM 복원
 
 Azure Backup은 지역 중복 복구 자격 증명 모음에 저장되는 복구 지점을 만듭니다. 복구 지점에서 복원하는 경우 전체 VM 또는 개별 파일을 복원할 수 있습니다. 이 문서에서는 CLI를 사용하여 전체 VM을 복원하는 방법에 대해 설명합니다. 이 자습서에서는 다음 방법에 대해 알아봅니다.
 
@@ -105,7 +105,7 @@ az backup recoverypoint list \
 
 ### <a name="unmanaged-disks-restore"></a>비관리 디스크 복원
 
-백업된 VM에 비관리 디스크가 있고 복구 지점에서 디스크를 복원하려는 경우 먼저 Azure 스토리지 계정을 제공해야 합니다. 이 스토리지 계정은 나중에 복원된 디스크에서 VM을 배포하는 데 사용할 수 있는 VM 구성 및 배포 템플릿을 저장하는 데 사용됩니다. 기본적으로 비관리 디스크는 원래 스토리지 계정에 복원됩니다. 사용자가 모든 비관리 디스크를 한 곳에 복원하려는 경우에는 지정된 스토리지 계정을 해당 디스크의 준비 위치로도 사용할 수 있습니다.
+백업된 VM에 관리되지 않는 디스크가 있고 복구 지점에서 디스크를 복원하려는 경우 먼저 Azure 스토리지 계정을 제공해야 합니다. 이 스토리지 계정은 나중에 복원된 디스크에서 VM을 배포하는 데 사용할 수 있는 VM 구성 및 배포 템플릿을 저장하는 데 사용됩니다. 기본적으로 비관리 디스크는 원래 스토리지 계정에 복원됩니다. 사용자가 모든 비관리 디스크를 한 곳에 복원하려는 경우에는 지정된 스토리지 계정을 해당 디스크의 준비 위치로도 사용할 수 있습니다.
 
 추가 단계에서 복원된 디스크를 사용하여 VM을 만듭니다.
 
@@ -181,7 +181,7 @@ az backup job show \
     -n 1fc2d55d-f0dc-4ca6-ad48-aca0fe5d0414
 ```
 
-이 쿼리의 출력은 모든 세부 정보를 제공하지만, 우리가 원하는 것은 스토리지 계정의 내용입니다. Azure CLI의 [쿼리 기능](/cli/azure/query-azure-cli?view=azure-cli-latest)을 사용하여 관련 세부 정보를 가져올 수 있습니다.
+이 쿼리의 출력은 모든 세부 정보를 제공하지만, 스토리지 계정 내용에만 관심이 있습니다. Azure CLI의 [쿼리 기능](/cli/azure/query-azure-cli?view=azure-cli-latest)을 사용하여 관련 세부 정보를 가져올 수 있습니다.
 
 ```azurecli-interactive
 az backup job show \

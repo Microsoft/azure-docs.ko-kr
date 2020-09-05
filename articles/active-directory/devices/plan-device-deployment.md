@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e3b0b8ab4a432254835e43bff4893aaee81b04e
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 3f17f6fd881243d91428c6025fd63469a38afa0f
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541875"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268811"
 ---
 # <a name="plan-your-azure-active-directory-device-deployment"></a>Azure Active Directory 장치 배포 계획
 
@@ -34,11 +34,11 @@ Azure AD (Azure Active Directory)를 사용 하면 조직에서 장치 id 관리
 
 * 온-프레미스 Active Directory 및 Azure AD의 장치 간에 [하이브리드 AZURE AD 조인을 만듭니다](concept-azure-ad-join-hybrid.md) . 
 
-## <a name="learn"></a>Learn
+## <a name="learn"></a>배우기
 
 시작 하기 전에 [장치 id 관리 개요](overview.md)에 대해 잘 알고 있는지 확인 합니다.
 
-### <a name="benefits"></a>이점
+### <a name="benefits"></a>혜택
 
 장치에 Azure AD id를 제공 하는 주요 이점은 다음과 같습니다.
 
@@ -48,13 +48,13 @@ Azure AD (Azure Active Directory)를 사용 하면 조직에서 장치 id 관리
 
 * 사용자 환경 개선 – Azure AD의 장치 id를 사용 하면 개인 및 회사 장치 모두에서 조직의 클라우드 기반 리소스에 쉽게 액세스할 수 있도록 사용자에 게 제공할 수 있습니다. 관리자는 모든 Windows 장치에서 통합 된 환경에 대 한 [Enterprise State Roaming](enterprise-state-roaming-overview.md) 를 사용 하도록 설정할 수 있습니다.
 
-* 배포 및 관리 간소화 – 장치 id 관리를 사용 하면 [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot), [대량 프로 비전](https://docs.microsoft.com/mem/intune/enrollment/windows-bulk-enroll)및 [셀프 서비스: OOBE (첫 실행 경험)](../user-help/user-help-join-device-on-network.md)를 통해 Azure AD로 장치를 가져오는 프로세스가 간소화 됩니다. [Microsoft Intune](https://docs.microsoft.com/mem/intune/fundamentals/what-is-intune)와 같은 MDM (모바일 장치 관리) 도구 및 [Azure Portal](https://portal.azure.com/)에서 해당 id를 사용 하 여 이러한 장치를 관리할 수 있습니다.
+* 배포 및 관리 간소화 – 장치 id 관리를 사용 하면 [Windows Autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot), [대량 프로 비전](/mem/intune/enrollment/windows-bulk-enroll)및 [셀프 서비스: OOBE (첫 실행 경험)](../user-help/user-help-join-device-on-network.md)를 통해 Azure AD로 장치를 가져오는 프로세스가 간소화 됩니다. [Microsoft Intune](/mem/intune/fundamentals/what-is-intune)와 같은 MDM (모바일 장치 관리) 도구 및 [Azure Portal](https://portal.azure.com/)에서 해당 id를 사용 하 여 이러한 장치를 관리할 수 있습니다.
 
 ### <a name="training-resources"></a>학습 리소스
 
-비디오: [장치 컨트롤을 사용한 조건부 액세스](https://youtu.be/NcONUf-jeS4)
+비디오:  [장치 컨트롤을 사용한 조건부 액세스](https://youtu.be/NcONUf-jeS4)
 
-Faq: [AZURE AD 장치 관리 faq](faq.md) 및 [설정 및 데이터 로밍 faq](enterprise-state-roaming-faqs.md) 
+Faq: [AZURE AD 장치 관리 faq](faq.md)  및 [설정 및 데이터 로밍 faq](enterprise-state-roaming-faqs.md) 
 
 ## <a name="plan-the-deployment-project"></a>배포 프로젝트 계획
 
@@ -102,7 +102,7 @@ Faq: [AZURE AD 장치 관리 faq](faq.md) 및 [설정 및 데이터 로밍 faq](
 
 iOS 및 Android 장치는 Azure AD만 등록할 수 있습니다. 다음 표에서는 Windows 클라이언트 장치에 대 한 높은 수준의 고려 사항을 보여 줍니다. 개요로 사용 하 고 다양 한 통합 방법을 자세히 살펴보세요.
 
-| 고려 사항 | Azure AD 등록됨| Azure AD 조인| 하이브리드 Azure AD 조인 |
+| 고려 사항 | Azure AD 등록| Azure AD 조인| 하이브리드 Azure AD 조인 |
 | - | - | - | - |
 | **클라이언트 운영 체제**| | |  |
 | Windows 10 디바이스| ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png) |
@@ -127,21 +127,21 @@ iOS 및 Android 장치는 Azure AD만 등록할 수 있습니다. 다음 표에�
 
 ## <a name="azure-ad-registration"></a>Azure AD 등록 
 
-등록 된 장치는 종종 [Microsoft Intune](https://docs.microsoft.com/mem/intune/enrollment/device-enrollment)로 관리 됩니다. 장치는 운영 체제에 따라 다양 한 방법으로 Intune에 등록 됩니다. 
+등록 된 장치는 종종 [Microsoft Intune](/mem/intune/enrollment/device-enrollment)로 관리 됩니다. 장치는 운영 체제에 따라 다양 한 방법으로 Intune에 등록 됩니다. 
 
 Azure AD 등록 장치는 클라우드 리소스에 대 한 SSO에 대 한 사용자 고유의 장치 (BYOD) 및 회사 소유 장치를 제공 하도록 지원 합니다. 리소스에 대 한 액세스는 장치 및 사용자에 게 적용 되는 Azure AD [CA 정책을](../conditional-access/require-managed-devices.md) 기반으로 합니다.
 
 ### <a name="registering-devices"></a>디바이스 등록
 
-등록 된 장치는 종종 [Microsoft Intune](https://docs.microsoft.com/mem/intune/enrollment/device-enrollment)로 관리 됩니다. 장치는 운영 체제에 따라 다양 한 방법으로 Intune에 등록 됩니다. 
+등록 된 장치는 종종 [Microsoft Intune](/mem/intune/enrollment/device-enrollment)로 관리 됩니다. 장치는 운영 체제에 따라 다양 한 방법으로 Intune에 등록 됩니다. 
 
 BYOD 및 회사 소유의 모바일 장치는 회사 포털 앱을 설치 하는 사용자가 등록 합니다.
 
-* [iOS](https://docs.microsoft.com/mem/intune/user-help/install-and-sign-in-to-the-intune-company-portal-app-ios)
+* [iOS](/mem/intune/user-help/install-and-sign-in-to-the-intune-company-portal-app-ios)
 
-* [Android](https://docs.microsoft.com/mem/intune/user-help/enroll-device-android-company-portal)
+* [Android](/mem/intune/user-help/enroll-device-android-company-portal)
 
-* [Windows 10](https://docs.microsoft.com/mem/intune/user-help/enroll-windows-10-device)
+* [Windows 10](/mem/intune/user-help/enroll-windows-10-device)
 
 조직에 가장 적합 한 옵션을 장치에 등록 하는 경우 다음 리소스를 참조 하세요.
 
@@ -171,9 +171,9 @@ Windows 10 Professional 또는 Windows 10 Enterprise가 디바이스에 설치�
 
 * [Windows OOBE (Box Out Experience) 또는 Windows 설정](../user-help/user-help-join-device-on-network.md)
 
-* [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot)
+* [Windows Autopilot](/windows/deployment/windows-autopilot/windows-autopilot)
 
-* [대량 등록](https://docs.microsoft.com/mem/intune/enrollment/windows-bulk-enroll)
+* [대량 등록](/mem/intune/enrollment/windows-bulk-enroll)
 
 [이러한 접근 방식을](azureadjoin-plan.md)신중 하 게 비교한 후 배포 절차를 선택 합니다.
 
@@ -183,7 +183,7 @@ Azure AD 조인이 장치에 가장 적합 한 솔루션 이며 해당 장치가
 | - | - | - |
 | 온-프레미스 도메인에 가입 됨| Azure AD 조인| Azure AD에 가입 하기 전에 온-프레미스 도메인에서 장치 가입 해제 |
 | 하이브리드 Azure AD 조인| Azure AD 조인| Azure AD에 가입 하기 전에 온-프레미스 도메인 및 Azure AD에서 장치 가입 해제 |
-| Azure AD 등록됨| Azure AD 조인| Azure AD에 가입 하기 전에 장치 등록 취소 |
+| Azure AD 등록| Azure AD 조인| Azure AD에 가입 하기 전에 장치 등록 취소 |
 
 
 ## <a name="hybrid-azure-ad-join"></a>하이브리드 Azure AD 조인
@@ -216,7 +216,7 @@ Azure AD 조인이 장치에 가장 적합 한 솔루션 이며 해당 장치가
 | 현재 장치 상태| 원하는 장치 상태| 방법 |
 | - | - | - |
 | 온-프레미스 도메인 가입| 하이브리드 Azure AD 조인| Azure AD connect 또는 AD FS를 사용 하 여 Azure에 가입 |
-| 온-프레미스 작업 그룹 조인 또는 신규| 하이브리드 Azure AD 조인| [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot)에서 지원 됩니다. 그렇지 않으면 하이브리드 Azure AD 조인 전에 장치가 온-프레미스 도메인에 가입 되어 있어야 합니다. |
+| 온-프레미스 작업 그룹 조인 또는 신규| 하이브리드 Azure AD 조인| [Windows Autopilot](/windows/deployment/windows-autopilot/windows-autopilot)에서 지원 됩니다. 그렇지 않으면 하이브리드 Azure AD 조인 전에 장치가 온-프레미스 도메인에 가입 되어 있어야 합니다. |
 | Azure AD 가입| 하이브리드 Azure AD 조인| 온-프레미스 작업 그룹 또는 새 상태에 배치 하는 Azure AD의 가입을 취소 합니다. |
 | Azure AD 리디렉션합니다| 하이브리드 Azure AD 조인| Windows 버전에 따라 다릅니다. [이러한 고려 사항을 참조](hybrid-azuread-join-plan.md)하세요. |
 
@@ -237,15 +237,15 @@ Azure AD 조인이 장치에 가장 적합 한 솔루션 이며 해당 장치가
 
 통합 장치에 대해 지원 되는 플랫폼 및 지원 되지 않는 플랫폼 검토:
 
-| 디바이스 관리 도구| Azure AD 등록됨| Azure AD 조인| 하이브리드 Azure AD 조인|
+| 디바이스 관리 도구| Azure AD 등록| Azure AD 조인| 하이브리드 Azure AD 조인|
 | - | - | - | - |
-| [MDM (모바일 장치 관리)](https://docs.microsoft.com/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>예: Microsoft Intune| ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)|  |
-| [Microsoft Intune 및 Microsoft 끝점을 사용 하 여 공동 관리 Configuration Manager](https://docs.microsoft.com/mem/configmgr/comanage/overview) <br>(Windows 10 이상)| | ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)|  |
-| [그룹 정책](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Windows에만 해당)| | | ![선택](./media/plan-device-deployment/check.png)|  |
+| [MDM (모바일 장치 관리) ](/windows/client-management/mdm/azure-active-directory-integration-with-mdm) <br>예: Microsoft Intune| ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)|  |
+| [Microsoft Intune 및 Microsoft 끝점을 사용 하 여 공동 관리 Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 이상)| | ![선택](./media/plan-device-deployment/check.png)| ![선택](./media/plan-device-deployment/check.png)|  |
+| [그룹 정책](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Windows에만 해당)| | | ![선택](./media/plan-device-deployment/check.png)|  |
 
 
 
- 등록 된 iOS 또는 Android 장치에 대 한 장치 관리를 사용 하거나 사용 하지 않고 [MAM (모바일 응용 프로그램 관리)을 Microsoft Intune](https://docs.microsoft.com/mem/intune/apps/app-management) 하는 것이 좋습니다.
+ 등록 된 iOS 또는 Android 장치에 대 한 장치 관리를 사용 하거나 사용 하지 않고 [MAM (모바일 응용 프로그램 관리)을 Microsoft Intune](/mem/intune/apps/app-management) 하는 것이 좋습니다.
 
  또한 관리자는 조직에서 Windows 운영 체제를 호스팅하는 [VDI (가상 데스크톱 인프라) 플랫폼을 배포](howto-device-identity-virtual-desktop-infrastructure.md) 하 여 관리를 간소화 하 고 리소스의 통합 및 중앙 집중화를 통해 비용을 절감할 수 있습니다. 
 

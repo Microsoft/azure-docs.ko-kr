@@ -24,6 +24,8 @@
       href: classroom-labs-fundamentals.md
     - name: 용량 제한
       href: capacity-limits.md
+    - name: 랩용 Cost Management
+      href: cost-management-guide.md
     - name: 시나리오
       items:
         - name: 클래스를 수행하기 위해 랩 서비스 사용
@@ -66,7 +68,7 @@
           href: how-to-manage-lab-accounts.md
         - name: 랩 계정에서 랩 관리
           href: manage-labs.md
-        - name: VM의 자동 종료 구성
+        - name: 랩 계정에 대한 VM 자동 종료 구성
           href: how-to-configure-lab-accounts.md
         - name: 랩 작성자 추가
           href: add-lab-creator.md
@@ -86,8 +88,6 @@
           href: specify-marketplace-images.md
         - name: 지원 정보 지정(랩 계정 소유자)
           href: lab-account-owner-support-information.md
-        - name: 랩용 Cost Management
-          href: cost-management-guide.md
     - name: 클래스룸 랩 만들기 및 구성(교육자)
       items:
         - name: 클래스룸 랩 만들기 및 관리
@@ -106,7 +106,7 @@
           href: how-to-use-shared-image-gallery.md
         - name: Linux에 대한 원격 데스크톱 연결을 사용하도록 설정
           href: how-to-enable-remote-desktop-linux.md
-        - name: 연결 해제 시 자동 종료 사용
+        - name: 랩에 대한 VM 자동 종료 구성
           href: how-to-enable-shutdown-disconnect.md
         - name: 템플릿 VM에서 중첩된 가상화 사용
           items:

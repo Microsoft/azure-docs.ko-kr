@@ -10,12 +10,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: reference
 ms.date: 12/16/2019
-ms.openlocfilehash: f0673732bd657b237ed0f4b4db276b8bf9a3a2b5
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 95fb9798bc62236d785c911ec75db8d6e11f6e97
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424378"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88685717"
 ---
 # <a name="azure-key-vault-rest-api-error-codes"></a>Azure Key Vault REST API 오류 코드
  
@@ -89,7 +89,7 @@ Azure OAUTH 끝점에서 액세스 토큰을 요청 하는 경우 "resource" 라
 
 이 토큰에서 많은 중요 한 부분을 확인할 수 있습니다.
 
-- aud (대상 그룹): 토큰의 리소스입니다. 이는입니다 <https://vault.azure.net> . 이 토큰은 그래프와 같이 명시적으로이 값과 일치 하지 않는 리소스에 대해서는 작동 하지 않습니다.
+- aud (대상 그룹): 토큰의 리소스입니다. 이는입니다 `https://vault.azure.net` . 이 토큰은 그래프와 같이 명시적으로이 값과 일치 하지 않는 리소스에 대해서는 작동 하지 않습니다.
 - iat (에서 발급 됨): 토큰이 발급 될 때 epoch가 시작 된 이후의 틱 수입니다.
 - nbf (이전 아님):이 토큰이 유효 해지면 epoch 시작 이후 틱 수입니다.
 - exp (만료):이 토큰이 만료 될 때 epoch가 시작 된 이후의 틱 수입니다.

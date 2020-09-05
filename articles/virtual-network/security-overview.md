@@ -13,12 +13,13 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 60c350b10fb3db82af47551591d95e87cacd63a4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: contperfq1
+ms.openlocfilehash: 940fb9046a69c28e4f43abb03a4469a2f73d9eb2
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87065017"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89074902"
 ---
 # <a name="network-security-groups"></a>네트워크 보안 그룹
 <a name="network-security-groups"></a>
@@ -27,7 +28,7 @@ Azure 네트워크 보안 그룹을 사용 하 여 azure 가상 네트워크에�
 
 이 문서에서는 네트워크 보안 그룹 규칙의 속성, 적용 되는 [기본 보안 규칙](#default-security-rules) 및 [강화 된 보안 규칙](#augmented-security-rules)을 만들기 위해 수정할 수 있는 규칙 속성을 설명 합니다.
 
-## <a name="security-rules"></a><a name="security-rules"></a>보안 규칙
+## <a name="security-rules"></a><a name="security-rules"></a> 보안 규칙
 
 네트워크 보안 그룹은 Azure 구독 [제한](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) 내에서 필요한 만큼 0개 또는 많은 규칙을 포함합니다. 각 규칙은 다음 속성을 지정합니다.
 
@@ -47,7 +48,7 @@ Azure 네트워크 보안 그룹을 사용 하 여 azure 가상 네트워크에�
 
 한 네트워크 보안 그룹에 만들 수 있는 보안 규칙 수에는 제한이 있습니다. 자세한 내용은 [Azure 제한](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits)을 참조하세요.
 
-### <a name="default-security-rules"></a><a name="default-security-rules"></a>기본 보안 규칙
+### <a name="default-security-rules"></a><a name="default-security-rules"></a> 기본 보안 규칙
 
 Azure는 사용자가 만드는 각 네트워크 보안 그룹에 다음과 같은 기본 규칙을 만듭니다.
 
@@ -57,13 +58,13 @@ Azure는 사용자가 만드는 각 네트워크 보안 그룹에 다음과 같�
 
 |우선 순위|원본|원본 포트|대상|대상 포트|프로토콜|Access|
 |---|---|---|---|---|---|---|
-|65000|VirtualNetwork|0-65535|VirtualNetwork|0-65535|모두|허용|
+|65000|VirtualNetwork|0-65535|VirtualNetwork|0-65535|모두|Allow|
 
 ##### <a name="allowazureloadbalancerinbound"></a>AllowAzureLoadBalancerInBound
 
 |우선 순위|원본|원본 포트|대상|대상 포트|프로토콜|Access|
 |---|---|---|---|---|---|---|
-|65001|AzureLoadBalancer|0-65535|0.0.0.0/0|0-65535|모두|허용|
+|65001|AzureLoadBalancer|0-65535|0.0.0.0/0|0-65535|모두|Allow|
 
 ##### <a name="denyallinbound"></a>DenyAllInbound
 
@@ -77,13 +78,13 @@ Azure는 사용자가 만드는 각 네트워크 보안 그룹에 다음과 같�
 
 |우선 순위|원본|원본 포트| 대상 | 대상 포트 | 프로토콜 | Access |
 |---|---|---|---|---|---|---|
-| 65000 | VirtualNetwork | 0-65535 | VirtualNetwork | 0-65535 | 모두 | 허용 |
+| 65000 | VirtualNetwork | 0-65535 | VirtualNetwork | 0-65535 | 모두 | Allow |
 
 ##### <a name="allowinternetoutbound"></a>AllowInternetOutBound
 
 |우선 순위|원본|원본 포트| 대상 | 대상 포트 | 프로토콜 | Access |
 |---|---|---|---|---|---|---|
-| 65001 | 0.0.0.0/0 | 0-65535 | 인터넷 | 0-65535 | 모두 | 허용 |
+| 65001 | 0.0.0.0/0 | 0-65535 | 인터넷 | 0-65535 | 모두 | Allow |
 
 ##### <a name="denyalloutbound"></a>DenyAllOutBound
 
@@ -95,7 +96,7 @@ Azure는 사용자가 만드는 각 네트워크 보안 그룹에 다음과 같�
  
 기본 규칙을 제거할 수 없지만 더 높은 우선 순위의 규칙을 만들어서 재정의할 수 있습니다.
 
-### <a name="augmented-security-rules"></a><a name="augmented-security-rules"></a>보강 보안 규칙
+### <a name="augmented-security-rules"></a><a name="augmented-security-rules"></a> 보강 보안 규칙
 
 보강된 보안 규칙은 가상 네트워크에 대한 보안 정의를 간소화하여 더 적은 규칙으로 크고 복잡한 네트워크 보안 정책을 정의할 수 있도록 합니다. 여러 포트, 여러 명시적 IP 주소 및 범위를 이해하기 쉬운 단일 보안 규칙으로 결합할 수 있습니다. 규칙의 원본, 대상 및 포트 필드에서 보강된 규칙을 사용합니다. 보안 규칙 정의의 유지 관리를 간소화 하려면 보강 된 보안 규칙을 [서비스 태그](service-tags-overview.md) 또는 [응용 프로그램 보안 그룹과](#application-security-groups)결합 합니다. 한 규칙에서 지정할 수 있는 주소, 범위 및 포트 수가 제한됩니다. 자세한 내용은 [Azure 제한](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits)을 참조하세요.
 
@@ -108,47 +109,6 @@ Azure는 사용자가 만드는 각 네트워크 보안 그룹에 다음과 같�
 #### <a name="application-security-groups"></a>애플리케이션 보안 그룹
 
 애플리케이션 보안 그룹을 사용하면 네트워크 보안을 애플리케이션 구조의 자연 확장으로 구성하여 가상 머신을 그룹화하고 해당 그룹에 따라 네트워크 보안 정책을 정의할 수 있습니다. 명시적 IP 주소를 수동으로 유지 관리하지 않고 대규모 보안 정책을 재사용할 수 있습니다. 자세히 알아보려면 [응용 프로그램 보안 그룹](application-security-groups.md)을 참조 하세요.
-
-## <a name="how-traffic-is-evaluated"></a>트래픽 평가 방법
-
-여러 Azure 서비스의 리소스를 한 Azure 가상 네트워크에 배포할 수 있습니다. 전체 목록은 [가상 네트워크에 배포할 수 있는 서비스 목록](virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network)을 참조하세요. 가상 머신의 각 가상 네트워크 [서브넷](virtual-network-manage-subnet.md#change-subnet-settings) 및 [네트워크 인터페이스](virtual-network-network-interface.md#associate-or-dissociate-a-network-security-group)에 네트워크 보안 그룹을 하나 연결하거나 연결하지 않을 수 있습니다. 동일한 네트워크 보안 그룹을 원하는 수의 서브넷 및 네트워크 인터페이스에 연결할 수 있습니다.
-
-다음 그림은 TCP 포트 80을 통해 인터넷의 네트워크 트래픽을 허용하도록 네트워크 보안 그룹을 배포하는 다양한 시나리오를 보여줍니다.
-
-![NSG 처리](./media/security-groups/nsg-interaction.png)
-
-다음 텍스트와 함께 앞의 그림을 참조하여 Azure가 네트워크 보안 그룹에 대한 인바운드 및 아웃바운드 규칙을 처리하는 방식을 이해하세요.
-
-### <a name="inbound-traffic"></a>인바운드 트래픽
-
-인바운드 트래픽의 경우 Azure는 서브넷에 연결된 네트워크 보안 그룹이 있으면 이 그룹의 규칙을 먼저 처리한 후 네트워크 인터페이스에 연결된 네트워크 보안 그룹이 있으면 이 그룹의 규칙을 처리합니다.
-
-- **VM1**: *NSG1*이 *Subnet1*에 연결되었고 *VM1*이 *Subnet1*에 있으므로 NSG1의 보안 규칙이 처리됩니다. 포트 80 인바운드를 허용하는 규칙을 만들지 않은 이상, [DenyAllInbound](#denyallinbound) 기본 보안 규칙이 트래픽을 거부하고 *NSG2*는 트래픽을 평가하지 않습니다. 왜냐하면 *NSG2*가 네트워크 인터페이스에 연결되었기 때문입니다. *NSG1*에 포트 80을 허용하는 보안 규칙이 있으면 트래픽이 *NSG2*에 의해 처리됩니다. 가상 머신에 포트 80을 허용하려면 *NSG1* 및 *NSG2* 모두 인터넷에서 포트 80을 허용하는 규칙이 있어야 합니다.
-- **VM2**: *VM2* 역시 *Subnet1*에 있기 때문에 *NSG1*의 규칙이 처리됩니다. *VM2*은 네트워크 인터페이스에 연결된 네트워크 보안 그룹이 없으므로 *NSG1*을 통해 허용된 트래픽 또는 *NSG1*에 의해 거부된 트래픽을 모두 수신합니다. 네트워크 보안 그룹이 서브넷에 연결된 경우 동일한 서브넷의 모든 리소스에 대한 트래픽이 허용되거나 거부됩니다.
-- **VM3**: *Subnet2*에 연결된 네트워크 보안 그룹이 없으므로 서브넷으로 가는 트래픽이 허용되고 *NSG2*에 의해 처리됩니다. *NSG2*는 *VM3*에 연결된 네트워크 인터페이스에 연결되었기 때문입니다.
-- **VM4**: 네트워크 보안 그룹이 *Subnet3* 또는 가상 머신의 네트워크 인터페이스에 연결되지 않았기 때문에 *VM4*로 가는 트래픽이 허용됩니다. 서브넷 및 네트워크 인터페이스에 네트워크 보안 그룹이 연결되지 않으면 서브넷 및 네트워크 인터페이스를 통과하는 모든 네트워크 트래픽이 허용됩니다.
-
-### <a name="outbound-traffic"></a>아웃바운드 트래픽
-
-인바운드 트래픽의 경우 Azure는 네트워크 인터페이스에 연결된 네트워크 보안 그룹이 있으면 이 그룹의 규칙을 먼저 처리한 후 서브넷에 연결된 네트워크 보안 그룹이 있으면 이 그룹의 규칙을 처리합니다.
-
-- **VM1**: *NSG2*의 보안 규칙이 처리됩니다. 인터넷으로 나가는 포트 80을 거부하는 보안 규칙을 만들지 않는 이상, *NSG1* 및 *NSG2*의 [AllowInternetOutbound](#allowinternetoutbound) 기본 보안 규칙에 트래픽을 허용합니다. *NSG2*에 포트 80을 거부하는 보안 규칙이 있으면 트래픽은 거부되고 *NSG1*에 의해 평가되지 않습니다. 두 네트워크 보안 그룹 중 어느 하나 또는 둘 모두의 가상 머신에서 포트 80을 거부하려면 규칙이 네트워크 보안 그룹에 인터넷으로 나가는 포트 80을 거부하는 있어야 합니다.
-- **VM2**: *VM2*에 연결된 네트워크 인터페이스에 네트워크 보안 그룹이 연결되지 않았기 때문에 모든 트래픽이 네트워크 인터페이스를 통해 서브넷으로 전송됩니다. *NSG1*의 규칙이 처리됩니다.
-- **VM3**: *NSG2*에 포트 80을 거부하는 보안 규칙이 있으면 트래픽이 거부됩니다. *NSG2*에 포트 80을 허용하는 보안 규칙이 있으면 포트 80에서 인터넷 아웃바운드가 허용됩니다. 네트워크 보안 그룹이 *Subnet2*에 연결되지 않았기 때문입니다.
-- **VM4**: 네트워크 보안 그룹이 가상 머신에 연결된 네트워크 인터페이스 또는 *Subnet3*에 연결되지 않았기 때문에 *VM4*에서 오는 모든 트래픽이 허용됩니다.
-
-
-### <a name="intra-subnet-traffic"></a>서브넷 내부 트래픽
-
-서브넷과 연결 된 NSG의 보안 규칙은 VM 내에서 VM 간의 연결에 영향을 줄 수 있습니다. 예를 들어 모든 인바운드 및 아웃 바운드 트래픽을 거부 하는 규칙이 *NSG1* 에 추가 되는 경우 *VM1* 및 *v m 2* 는 더 이상 서로 통신할 수 없습니다. 다른 규칙은이를 허용 하기 위해 특별히 추가 해야 합니다. 
-
-네트워크 인터페이스의 [유효 보안 규칙](virtual-network-network-interface.md#view-effective-security-rules)을 확인하여 네트워크 인터페이스에 적용되는 집계 규칙을 쉽게 볼 수 있습니다. Azure Network Watcher에서 [IP 흐름 확인](../network-watcher/diagnose-vm-network-traffic-filtering-problem.md?toc=%2fazure%2fvirtual-network%2ftoc.json) 기능을 사용하여 통신이 네트워크 인터페이스 간에 허용되는지 여부를 결정할 수도 있습니다. IP 흐름 확인은 통신이 허용 되거나 거부 되는지 여부와 트래픽을 허용 하거나 거부 하는 네트워크 보안 규칙을 알려줍니다.
-
-> [!NOTE]
-> 네트워크 보안 그룹은 서브넷 또는 클래식 배포 모델에 배포 된 가상 머신 및 클라우드 서비스, 리소스 관리자 배포 모델의 서브넷 또는 네트워크 인터페이스에 연결 됩니다. Azure 배포 모델에 대해 자세히 알아보려면 [Azure 배포 모델 이해](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json)를 참조하세요.
-
-> [!TIP]
-> 특별 한 이유가 없는 경우 네트워크 보안 그룹을 서브넷 또는 네트워크 인터페이스에 연결 하는 것이 좋습니다. 서브넷에 연결된 네트워크 보안 그룹의 규칙이 네트워크 인터페이스에 연결된 네트워크 보안 그룹의 규칙과 충돌할 수 있으므로 예기치 않은 통신 문제가 발생할 수 있습니다.
 
 ## <a name="azure-platform-considerations"></a>Azure 플랫폼 고려 사항
 
@@ -170,7 +130,8 @@ Azure는 사용자가 만드는 각 네트워크 보안 그룹에 다음과 같�
 ## <a name="next-steps"></a>다음 단계
 
 * 가상 네트워크에 배포할 수 있는 Azure 리소스와 여기에 연결 된 네트워크 보안 그룹에 대 한 자세한 내용은 [azure 서비스에 대 한 가상 네트워크 통합](virtual-network-for-azure-services.md) 을 참조 하세요.
-* 네트워크 보안 그룹을 만들어 본 경험이 전혀 없는 경우 빠른 [자습서](tutorial-filter-network-traffic.md)를 완료하여 직접 경험해 볼 수 있습니다. 
+* 네트워크 보안 그룹을 사용 하 여 트래픽을 평가 하는 방법에 대 한 자세한 내용은 [네트워크 보안 그룹의 작동 방식](network-security-group-how-it-works.md)을 참조 하세요.
+* 네트워크 보안 그룹을 만들어 본 경험이 전혀 없는 경우 빠른 [자습서](tutorial-filter-network-traffic.md)를 완료하여 직접 경험해 볼 수 있습니다.
 * 네트워크 보안 그룹에 익숙하고 네트워크 보안 그룹을 관리해야 하는 경우 [네트워크 보안 그룹 관리](manage-network-security-group.md)를 참조하세요. 
 * 통신에 문제가 있고 네트워크 보안 그룹 문제를 해결해야 하는 경우 [가상 머신 네트워크 트래픽 필터 문제 진단](diagnose-network-traffic-filter-problem.md)을 참조하세요. 
 * 네트워크 보안 [그룹 흐름 로그](../network-watcher/network-watcher-nsg-flow-logging-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) 를 사용 하 여 연결 된 네트워크 보안 그룹이 있는 리소스와의 네트워크 트래픽을 분석 하는 방법에 대해 알아봅니다.

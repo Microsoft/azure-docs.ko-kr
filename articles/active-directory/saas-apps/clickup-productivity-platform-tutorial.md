@@ -2,25 +2,21 @@
 title: '자습서: ClickUp Productivity 플랫폼과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 ClickUp Productivity 플랫폼 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 06853edd-e8da-4ad2-a4e6-5555d592cee5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: f497955b698d7ca390b40686e94d553a7cd5c948
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 794a952ba719faa16e3584afaf8f2f292deb6c03
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80048732"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551819"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clickup-productivity-platform"></a>자습서: ClickUp Productivity 플랫폼과 Azure Active Directory 통합
 

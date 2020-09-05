@@ -1,14 +1,14 @@
 ---
 title: '빠른 시작: 포털을 사용하여 새 정책 할당'
 description: 이 빠른 시작에서는 Azure Portal을 사용하여 비규격 리소스를 식별하는 Azure Policy 할당을 만듭니다.
-ms.date: 03/24/2020
+ms.date: 08/17/2020
 ms.topic: quickstart
-ms.openlocfilehash: 3a514478f3cefa49c37c3431a80b578dff480584
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: eb3f97ab2f8da3ff2809cb969c8442779e173983
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80240004"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548382"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources"></a>빠른 시작: 비준수 리소스를 식별하는 정책 할당 만들기
 
@@ -37,7 +37,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
    :::image type="content" source="./media/assign-policy-portal/select-assign-policy.png" alt-text="할당 페이지에서 정책 정의 할당" border="false":::
 
-1. **정책 할당** 페이지에서 줄임표를 클릭하고 관리 그룹 또는 구독을 선택하여 **범위**를 선택합니다. 원하는 경우 리소스 그룹을 선택합니다. 범위는 정책 할당이 적용되는 리소스 또는 리소스 그룹을 결정합니다. 그 후 **범위** 페이지의 맨 위에서 **선택**을 클릭합니다.
+1. **정책 할당** 페이지에서 줄임표를 선택한 다음, 관리 그룹 또는 구독을 선택하여 **범위**를 설정합니다. 원하는 경우 리소스 그룹을 선택합니다. 범위는 정책 할당이 적용되는 리소스 또는 리소스 그룹을 결정합니다. 그런 다음, **범위** 페이지 하단에 있는 **선택** 단추를 사용합니다.
 
    이 예제에서는 **Contoso** 구독을 사용합니다. 자신의 구독은 다를 수 있습니다.
 
@@ -51,7 +51,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
    사용 가능한 기본 제공 정책의 부분 목록은 [Azure Policy 샘플](./samples/index.md)을 참조하세요.
 
-1. 정책 정의 목록을 검색하여 _관리 디스크를 사용하지 않는 VM 감사_ 정의를 찾습니다. 해당 정책을 클릭하고 **선택**을 클릭합니다.
+1. 정책 정의 목록을 검색하여 _관리 디스크를 사용하지 않는 VM 감사_ 정의를 찾습니다. 해당 정책을 선택한 다음, **선택** 단추를 사용합니다.
 
    :::image type="content" source="./media/assign-policy-portal/select-available-definition.png" alt-text="올바른 정책 정의 찾기" border="false":::
 
@@ -60,13 +60,13 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 1. **관리 ID 만들기**는 선택하지 않은 상태로 유지합니다. 정책이나 이니셔티브에 [deployIfNotExists](./concepts/effects.md#deployifnotexists)가 적용된 정책이 있으면 이 확인란을 _선택해야 합니다_. 이 빠른 시작에 사용되는 정책의 경우 해당 항목이 적용되지 않으므로 이 확인란을 비워 둡니다. 자세한 내용은 [관리 ID](../../active-directory/managed-identities-azure-resources/overview.md) 및 [수정 보안의 작동 방식](./how-to/remediate-resources.md#how-remediation-security-works)을 참조하세요.
 
-1. **할당**을 클릭합니다.
+1. **할당**을 선택합니다.
 
 이제 비규격 리소스를 식별하여 환경의 규정 준수 상태를 파악할 준비가 되었습니다.
 
 ## <a name="identify-non-compliant-resources"></a>규정 비준수 리소스 식별
 
-페이지 왼쪽에서 **준수**를 선택합니다. 그런 다음, 앞에서 만든 **관리 디스크를 사용하지 않는 감사 VM** 정책 할당을 찾습니다.
+페이지 왼쪽에서 **준수**를 선택합니다. 그런 다음, 앞에서 만든 _관리 디스크를 사용하지 않는 감사 VM_ 정책 할당을 찾습니다.
 
 :::image type="content" source="./media/assign-policy-portal/policy-compliance.png" alt-text="정책 규정 준수 페이지의 규정 준수 세부 정보" border="false":::
 
@@ -88,9 +88,9 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 만든 할당을 제거하려면 다음 단계를 따르세요.
 
-1. Azure Policy 페이지 왼쪽에서 **준수**(또는 **할당**)를 선택하고 앞에서 만든 **관리 디스크를 사용하지 않는 감사 VM** 정책 할당을 찾습니다.
+1. Azure Policy 페이지 왼쪽에서 **준수**(또는 **할당**)를 선택하고 앞에서 만든 _관리 디스크를 사용하지 않는 감사 VM_ 정책 할당을 찾습니다.
 
-1. **관리 디스크를 사용하지 않는 VM 감사** 정책 할당을 마우스 오른쪽 단추로 클릭하고 **할당 삭제**를 선택합니다.
+1. _관리 디스크를 사용하지 않는 VM 감사_ 정책 할당을 마우스 오른쪽 단추로 클릭하고 **할당 삭제**를 선택합니다.
 
    :::image type="content" source="./media/assign-policy-portal/delete-assignment.png" alt-text="규정 준수 페이지에서 할당 삭제" border="false":::
 

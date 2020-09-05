@@ -1,7 +1,7 @@
 ---
 title: '자습서: 애플리케이션 등록'
 titleSuffix: Azure AD B2C
-description: Azure Portal를 사용하여 Azure Active Directory B2C에서 웹 애플리케이션을 등록하는 방법을 알아봅니다.
+description: 이 자습서에 따라 Azure Portal을 사용하여 Azure Active Directory B2C에서 웹 애플리케이션을 등록하는 방법을 알아봅니다.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
@@ -12,12 +12,12 @@ ms.date: 04/10/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0f3ecb918aa1f830edeafbe57b365441e1e534f4
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 0fd062bd0e58ecc714e4f450c93384e47e743b65
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87169335"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922016"
 ---
 # <a name="tutorial-register-a-web-application-in-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C에서 웹 애플리케이션 등록
 

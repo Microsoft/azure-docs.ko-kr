@@ -7,12 +7,13 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/03/2019
-ms.openlocfilehash: 0c03eb9d30d204cbfb7fcd8971dd84f2ba5a7737
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: bce1f00603d9304fc544fb92d4cc5f1a429504ed
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86039180"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89069003"
 ---
 # <a name="how-to-start-an-azure-stream-analytics-job"></a>Azure Stream Analytics 작업을 시작 하는 방법
 
@@ -32,7 +33,7 @@ Azure Portal, Visual Studio 및 PowerShell을 사용 하 여 Azure Stream Analyt
 
 Azure Portal에서 작업으로 이동 하 고 개요 페이지에서 **시작** 을 선택 합니다. **작업 출력 시작 시간** 을 선택 하 고 **시작**을 선택 합니다.
 
-**작업 출력 시작 시간**옵션 중 하나를 선택 합니다. 옵션은 *현재*, *사용자 지정*및 작업을 이전에 실행 한 경우 마지막으로 *중지 된 시간*입니다. 이러한 옵션에 대 한 자세한 내용은 위의 항목을 참조 하세요.
+**작업 출력 시작 시간**옵션 중 하나를 선택 합니다. 옵션은 *현재*, *사용자 지정*및 작업을 이전에 실행 한 경우 마지막으로  *중지 된 시간*입니다. 이러한 옵션에 대 한 자세한 내용은 위의 항목을 참조 하세요.
 
 ## <a name="visual-studio"></a>Visual Studio
 

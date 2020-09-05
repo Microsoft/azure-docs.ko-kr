@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 89c317e6623a868fd75b09274c726720e726e470
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 512776f2498a88f1fda9b5e7f0e2db0ddd32b955
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87848641"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962331"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Azure Web Apps에 대한 오픈 소스 기술 FAQ
 
@@ -43,7 +43,7 @@ PHP 로깅을 켜려면:
     ```
 12. Azure Portal의 웹앱 메뉴에서 웹앱을 다시 시작합니다.
 
-자세한 내용은 [Enable WordPress error logs](https://blogs.msdn.microsoft.com/azureossds/2015/10/09/logging-php-errors-in-wordpress-2/)(WordPress 오류 로그 사용)를 참조하세요.
+자세한 내용은 [Enable WordPress error logs](/archive/blogs/azureossds/logging-php-errors-in-wordpress-2)(WordPress 오류 로그 사용)를 참조하세요.
 
 ## <a name="how-do-i-log-python-application-errors-in-apps-that-are-hosted-in-app-service"></a>App Service에 호스트된 앱에서 Python 애플리케이션 오류를 기록하려면 어떻게 하나요?
 [!INCLUDE [web-sites-python-troubleshooting-wsgi-error-log](../../includes/web-sites-python-troubleshooting-wsgi-error-log.md)]
@@ -80,7 +80,7 @@ Node.js 애플리케이션의 버전을 변경하려면 다음 옵션 중 하나
 
 ## <a name="i-see-the-message-error-establishing-a-database-connection-in-my-wordpress-app-thats-hosted-in-app-service-how-do-i-troubleshoot-this"></a>App Service에서 호스트된 내 WordPress 앱에 “데이터베이스 연결 설정 오류” 메시지가 표시됩니다. 이 문제를 어떻게 해결해야 하나요?
 
-Azure WordPress 앱에서 이 오류가 표시되는 경우 php_errors.log 및 debug.log를 사용하도록 설정하려면 [Enable WordPress error logs](https://blogs.msdn.microsoft.com/azureossds/2015/10/09/logging-php-errors-in-wordpress-2/)(WordPress 오류 로그 사용)에 자세히 설명된 단계를 완료합니다.
+Azure WordPress 앱에서 이 오류가 표시되는 경우 php_errors.log 및 debug.log를 사용하도록 설정하려면 [Enable WordPress error logs](/archive/blogs/azureossds/logging-php-errors-in-wordpress-2)(WordPress 오류 로그 사용)에 자세히 설명된 단계를 완료합니다.
 
 로그가 사용하도록 설정되면 오류를 재현한 다음, 로그에서 연결이 부족한지 확인합니다.
 ```
@@ -97,11 +97,11 @@ debug.log 또는 php_errors.log 파일에 이 오류가 표시되면 앱이 연�
 
 ## <a name="how-do-i-install-native-python-modules-in-an-app-service-web-app-or-api-app"></a>App Service 웹앱 또는 API 앱에서 기본 Python 모듈을 설치하려면 어떻게 하나요?
 
-일부 패키지는 Azure에서 pip를 사용하여 설치할 수 없습니다. Python Package Index에서 패키지를 사용할 수 없거나 컴파일러가 필요할 수 있습니다(App Service의 웹앱을 실행 중인 컴퓨터에서는 컴파일러를 사용할 수 없음). App Service Web Apps 및 API Apps에서 기본 모듈을 설치하는 방법에 대한 자세한 내용은 [Install Python modules in App Service](https://blogs.msdn.microsoft.com/azureossds/2015/06/29/install-native-python-modules-on-azure-web-apps-api-apps/)(App Service에서 Python 모듈 설치)를 참조하세요.
+일부 패키지는 Azure에서 pip를 사용하여 설치할 수 없습니다. Python Package Index에서 패키지를 사용할 수 없거나 컴파일러가 필요할 수 있습니다(App Service의 웹앱을 실행 중인 컴퓨터에서는 컴파일러를 사용할 수 없음). App Service Web Apps 및 API Apps에서 기본 모듈을 설치하는 방법에 대한 자세한 내용은 [Install Python modules in App Service](/archive/blogs/azureossds/install-native-python-modules-on-azure-web-apps-api-apps)(App Service에서 Python 모듈 설치)를 참조하세요.
 
 ## <a name="how-do-i-deploy-a-django-app-to-app-service-by-using-git-and-the-new-version-of-python"></a>Python의 새 버전 및 Git을 사용하여 Django 앱을 App Service에 배포하려면 어떻게 하나요?
 
-Django 설치에 대한 자세한 내용은 [Deploying a Django app to App Service](https://blogs.msdn.microsoft.com/azureossds/2016/08/25/deploying-django-app-to-azure-app-services-using-git-and-new-version-of-python/)(App Service에 Django 앱 배포)를 참조하세요.
+Django 설치에 대한 자세한 내용은 [Deploying a Django app to App Service](/archive/blogs/azureossds/deploying-django-app-to-azure-app-services-using-git-and-new-version-of-python)(App Service에 Django 앱 배포)를 참조하세요.
 
 ## <a name="where-are-the-tomcat-log-files-located"></a>Tomcat 로그 파일은 어디에 있나요?
 
@@ -183,7 +183,7 @@ App Service에는 기본 제공 메일 기능이 없습니다. 앱에서 메일�
 
 WordPress Buddy+는 데이터베이스에서 직접 리디렉션 URL을 업데이트하는 데 사용할 수 있는 Azure 사이트 확장입니다. WordPress Buddy+ 사용에 대한 자세한 내용은 [WordPress tools and MySQL migration with WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/)(WordPress Buddy+를 사용한 WordPress 도구 및 MySQL 마이그레이션)를 참조하세요.
 
-또는 SQL 쿼리 또는 PHPMyAdmin을 사용하여 리디렉션 URL을 수동으로 업데이트하려면 [WordPress: Redirecting to wrong URL](https://blogs.msdn.microsoft.com/azureossds/2016/07/12/wordpress-redirecting-to-wrong-url/)(WordPress: 잘못된 URL로 리디렉션)을 참조하세요.
+또는 SQL 쿼리 또는 PHPMyAdmin을 사용하여 리디렉션 URL을 수동으로 업데이트하려면 [WordPress: Redirecting to wrong URL](/archive/blogs/azureossds/wordpress-redirecting-to-wrong-url)(WordPress: 잘못된 URL로 리디렉션)을 참조하세요.
 
 ## <a name="how-do-i-change-my-wordpress-sign-in-password"></a>내 WordPress 로그인 암호를 어떻게 변경할 수 있나요?
 
@@ -197,12 +197,12 @@ WordPress 로그인 암호를 기억하지 못하는 경우 WordPress Buddy+를 
 
 WordPress 웹 사이트에 연결된 MySQL 데이터베이스를 마이그레이션할 수 있는 다양한 옵션이 있습니다.
 
-* 개발자: [명령 프롬프트 또는 PHPMyAdmin](https://blogs.msdn.microsoft.com/azureossds/2016/03/02/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service/) 사용
+* 개발자: [명령 프롬프트 또는 PHPMyAdmin](/archive/blogs/azureossds/migrating-data-between-mysql-databases-using-kudu-console-azure-app-service) 사용
 * 비 개발자: [WordPress Buddy+](https://sharepointforum.org/threads/wordpress-tools-and-mysql-migration-with-wordpress-buddy.82929/) 사용
 
 ## <a name="how-do-i-help-make-wordpress-more-secure"></a>WordPress의 보안을 강화하려면 어떻게 해야 하나요?
 
-WordPress에 대한 보안 모범 사례를 알아보려면 [Best practices for WordPress security in Azure](https://blogs.msdn.microsoft.com/azureossds/2016/12/26/best-practices-for-wordpress-security-on-azure/)(Azure의 WordPress 보안 모범 사례)를 참조하세요.
+WordPress에 대한 보안 모범 사례를 알아보려면 [Best practices for WordPress security in Azure](/archive/blogs/azureossds/best-practices-for-wordpress-security-on-azure)(Azure의 WordPress 보안 모범 사례)를 참조하세요.
 
 ## <a name="i-am-trying-to-use-phpmyadmin-and-i-see-the-message-access-denied-how-do-i-resolve-this"></a>PHPMyAdmin을 사용하려고 하는데 “액세스 거부됨” 메시지가 표시됩니다. 이 문제를 해결하려면 어떻게 해야 하나요?
 

@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
-ms.date: 11/08/2019
-ms.openlocfilehash: 26eec9cdd327ceb51e72deb1d6f40d585ce368fb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/24/2020
+ms.openlocfilehash: 6473b6b69ba45138c30e4f2c8a7f1ba1a7f2ae7e
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75896131"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816850"
 ---
 # <a name="authentication-issues-in-azure-hdinsight"></a>Azure HDInsight의 인증 문제
 
@@ -24,7 +24,7 @@ Azure Data Lake (Gen1 또는 Gen2)에 의해 지원 되는 보안 클러스터�
 
 ## <a name="invalid_grant-or-unauthorized_client-50126"></a>invalid_grant 또는 unauthorized_client, 50126
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 페더레이션 사용자에 대 한 로그인이 실패 합니다 (오류 코드 50126) (클라우드 사용자에 대 한 로그인 성공). 오류 메시지는 다음과 유사 합니다.
 
@@ -44,7 +44,7 @@ Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자
 
 ## <a name="invalid_grant-or-unauthorized_client-50034"></a>invalid_grant 또는 unauthorized_client, 50034
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 로그인이 실패 하 고 오류 코드 50034이 발생 합니다. 오류 메시지는 다음과 유사 합니다.
 
@@ -64,7 +64,7 @@ Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자
 
 ## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant 또는 unauthorized_client, 50053
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 사용자 계정이 잠겨 있습니다. 오류 코드는 50053입니다. 오류 메시지는 다음과 유사 합니다.
 
@@ -82,9 +82,9 @@ Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자
 
 ---
 
-## <a name="invalid_grant-or-unauthorized_client-50053"></a>invalid_grant 또는 unauthorized_client, 50053
+## <a name="invalid_grant-or-unauthorized_client-50053-2"></a>invalid_grant 또는 unauthorized_client, 50053 (#2)
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 암호가 만료 되었습니다. 오류 코드는 50053입니다. 오류 메시지는 다음과 유사 합니다.
 
@@ -104,7 +104,7 @@ Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자
 
 ## <a name="interaction_required"></a>interaction_required
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 오류 메시지 `interaction_required` 를 수신 합니다.
 
@@ -120,7 +120,7 @@ Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자
 
 ## <a name="sign-in-denied"></a>로그인 거부 됨
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 로그인이 거부 되었습니다.
 
@@ -138,7 +138,7 @@ Azure AD 테 넌 트의 회사 관리자는 Azure AD에서 ADFS 지원 사용자
 
 ## <a name="kinit-fails"></a>kinit 실패
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 Kinit가 실패 합니다.
 
@@ -148,7 +148,7 @@ Kinit가 실패 합니다.
 
 ### <a name="resolution"></a>해결 방법
 
-Kinit이 성공 하려면를 알아야 `sAMAccountName` 합니다 (영역이 없는 짧은 계정 이름). `sAMAccountName`는 일반적으로의 bob과 같은 계정 접두사입니다 `bob@contoso.com` . 일부 사용자의 경우 다를 수 있습니다. 를 학습 하려면 디렉터리를 찾아보거나 검색 하는 기능이 필요 합니다 `sAMAccountName` .
+Kinit이 성공 하려면를 알아야 `sAMAccountName` 합니다 (영역이 없는 짧은 계정 이름). `sAMAccountName` 는 일반적으로의 bob과 같은 계정 접두사입니다 `bob@contoso.com` . 일부 사용자의 경우 다를 수 있습니다. 를 학습 하려면 디렉터리를 찾아보거나 검색 하는 기능이 필요 합니다 `sAMAccountName` .
 
 검색 방법 `sAMAccountName` :
 
@@ -164,7 +164,7 @@ Kinit이 성공 하려면를 알아야 `sAMAccountName` 합니다 (영역이 없
 
 ## <a name="kinit-fails-with-preauthentication-failure"></a>kinit이 사전 인증 실패로 실패 함
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 Kinit 실패와 함께 실패 `Preauthentication` 합니다.
 
@@ -180,7 +180,7 @@ Kinit 실패와 함께 실패 `Preauthentication` 합니다.
 
 ## <a name="job--hdfs-command-fails-due-to-tokennotfoundexception"></a>TokenNotFoundException로 인해 작업/HDFS 명령이 실패 합니다.
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 로 인해 작업/HDFS 명령이 실패 `TokenNotFoundException` 합니다.
 
@@ -196,7 +196,7 @@ Kinit 실패와 함께 실패 `Preauthentication` 합니다.
 
 ## <a name="error-fetching-access-token"></a>액세스 토큰을 가져오는 동안 오류 발생
 
-### <a name="issue"></a>문제점
+### <a name="issue"></a>문제
 
 사용자가 오류 메시지 `Error fetching access token` 를 받습니다.
 
@@ -208,7 +208,7 @@ Kinit 실패와 함께 실패 `Preauthentication` 합니다.
 
 * Azure Data Lake Storage Gen1의 경우 브라우저 캐시를 정리 하 고 다시 Ambari에 로그인 합니다.
 
-* Azure Data Lake Storage Gen2의 경우 `/usr/lib/hdinsight-common/scripts/RegisterKerbWithOauth.sh <upn>` 사용자가 로그인을 시도 하는 사용자에 대해를 실행 합니다.
+* Azure Data Lake Storage Gen2의 경우 `/usr/lib/hdinsight-common/scripts/RegisterKerbTicketAndOAuth.sh <upn>` 사용자가 로그인을 시도 하는 사용자에 대해를 실행 합니다.
 
 ---
 

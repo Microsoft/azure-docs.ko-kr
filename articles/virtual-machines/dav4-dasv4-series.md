@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 570e2798cf2ae5a20d55973622cca9344ea4a4a3
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 2548f002b2006b5d241c323ae880704bbe95301e
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837145"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88649927"
 ---
 # <a name="dav4-and-dasv4-series"></a>Dav4 및 Dasv4 시리즈
 
@@ -81,7 +81,7 @@ Dasv4 시리즈 크기는 3.35 GHz의 승격 된 최대 주파수를 실현 하 
 
 가격 계산기: [가격 계산기](https://azure.microsoft.com/pricing/calculator/)
 
-디스크 유형에 대 한 자세한 정보: [디스크 유형](./linux/disks-types.md#ultra-disk)
+디스크 유형에 대 한 자세한 정보: [디스크 유형](./disks-types.md#ultra-disk)
 
 ## <a name="next-steps"></a>다음 단계
 

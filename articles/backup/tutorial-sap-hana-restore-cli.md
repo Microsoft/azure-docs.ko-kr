@@ -4,12 +4,12 @@ description: 이 자습서에서는 Azure CLI를 사용하여 Azure VM에서 실
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 282f0ee61ffae455d6d3e49ea445d5ddc2fe56ac
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a1dbf0593c7c9b65c4e285b7162411de6c01bbbf
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500830"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762286"
 ---
 # <a name="tutorial-restore-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>자습서: Azure CLI를 사용하여 Azure VM의 SAP HANA 데이터베이스 복원
 
@@ -89,7 +89,7 @@ Azure Backup에서는 다음과 같이 Azure VM에서 실행되는 SAP HANA 데�
 위의 복원 지점 이름과 복원 모드를 사용하여 [az backup recoveryconfig show](/cli/azure/backup/recoveryconfig?view=azure-cli-latest#az-backup-recoveryconfig-show) cmdlet에서 복구 구성 개체를 만들어 보겠습니다. 이 cmdlet의 나머지 매개 변수는 무엇을 의미하는지 살펴보겠습니다.
 
 * **--target-item-name** 복원된 데이터베이스에 사용할 이름입니다. 여기서는 *restored_database*라는 이름을 사용했습니다.
-* **--target-server-name** 복구 서비스 자격 증명 모음에 성공적으로 등록되었으며 복원할 데이터베이스와 동일한 Azure 지역에 있는 SAP HANA 서버의 이름입니다. 이 자습서에서는 우리가 앞에서 보호 처리한 *hxehost*라는 이름의 동일한 SAP HANA 서버에 데이터베이스를 복원하겠습니다.
+* **--target-server-name** Recovery Services 자격 증명 모음에 성공적으로 등록되고 복원할 데이터베이스와 동일한 Azure 지역에 있는 SAP HANA 서버의 이름입니다. 이 자습서에서는 우리가 앞에서 보호 처리한 *hxehost*라는 이름의 동일한 SAP HANA 서버에 데이터베이스를 복원하겠습니다.
 * **--target-server-type** SAP HANA 데이터베이스를 복원하려면 **SapHanaDatabase**를 사용해야 합니다.
 
 ```azurecli-interactive
@@ -181,7 +181,7 @@ Name                                  Resource
 
 위의 복원 지점 이름과 복원 모드를 사용하는 경우 [az backup recoveryconfig show](/cli/azure/backup/recoveryconfig?view=azure-cli-latest#az-backup-recoveryconfig-show) cmdlet을 사용하여 복구 구성 개체를 만들어 보겠습니다. 이 cmdlet의 나머지 매개 변수는 무엇을 의미하는지 살펴보겠습니다.
 
-* **--target-container-name** 복구 서비스 자격 증명 모음에 성공적으로 등록되고 복원할 데이터베이스와 동일한 Azure 지역에 있는 SAP HANA 서버의 이름입니다. 이 자습서에서는 데이터베이스를 파일로 보호한 *hxehost*라는 동일한 SAP HANA 서버에 복원합니다.
+* **--target-container-name** Recovery Services 자격 증명 모음에 성공적으로 등록되고 복원할 데이터베이스와 동일한 Azure 지역에 있는 SAP HANA 서버의 이름입니다. 이 자습서에서는 데이터베이스를 파일로 보호한 *hxehost*라는 동일한 SAP HANA 서버에 복원합니다.
 * **--rp-name** 특정 시점 복원의 경우 복원 지점 이름은 **DefaultRangeRecoveryPoint**입니다.
 
 ```azurecli-interactive
@@ -302,7 +302,7 @@ az backup restore restore-azurewl --resource-group saphanaResourceGroup \
     hdbbackupdiag --generate --dataDir <DataFileDir> --logDirs <LogFilesDir> -d <PathToPlaceCatalogFile>
     ```
 
-    위 명령의 항목은 다음과 같습니다.
+    위의 명령에서 다음을 수행합니다.
 
     * `<DataFileDir>` - 전체 백업이 포함된 폴더
     * `<LogFilesDir>` - 로그 백업이 포함된 폴더

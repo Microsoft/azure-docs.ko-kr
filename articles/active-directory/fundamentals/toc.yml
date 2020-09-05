@@ -35,8 +35,6 @@
           href: identity-secure-score.md
         - name: 원격 작업자 보안
           href: concept-secure-remote-workers.md
-        - name: 지속적인 액세스 평가
-          href: concept-fundamentals-continuous-access-evaluation.md
     - name: 그룹 및 사용자
       items:
         - name: 그룹 및 액세스 관리

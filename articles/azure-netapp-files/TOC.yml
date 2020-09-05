@@ -43,6 +43,8 @@
               href: solutions-benefits-azure-netapp-files-oracle-database.md
             - name: 전자 디자인 자동화에 Azure NetApp Files 사용의 이점
               href: solutions-benefits-azure-netapp-files-electronic-design-automation.md
+            - name: Windows Virtual Desktop에서 Azure NetApp Files를 사용할 경우의 이점
+              href: solutions-windows-virtual-desktop.md
     - name: Azure NetApp Files에 대한 FAQ
       href: azure-netapp-files-faqs.md
 - name: 방법 가이드
@@ -61,16 +63,24 @@
           href: azure-netapp-files-create-volumes.md
         - name: NFSv4.1 기본 도메인 구성
           href: azure-netapp-files-configure-nfsv41-domain.md
+        - name: NFSv4.1 Kerberos 암호화 구성
+          href: configure-kerberos-encryption.md
+        - name: Azure NetApp Files에 대한 NFS 클라이언트 구성
+          href: configure-nfs-clients.md
         - name: NFS 볼륨에 대한 내보내기 정책 구성
           href: azure-netapp-files-configure-export-policy.md
     - name: SMB 볼륨 만들기
       href: azure-netapp-files-create-volumes-smb.md
+    - name: 이중 프로토콜 볼륨 만들기
+      href: create-volumes-dual-protocol.md
     - name: Windows 또는 Linux 가상 머신에 대한 볼륨 탑재 또는 탑재 해제
       href: azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md
     - name: 스냅샷 관리
       href: azure-netapp-files-manage-snapshots.md
     - name: 용량 풀 또는 볼륨 크기 조정
       href: azure-netapp-files-resize-capacity-pools-or-volumes.md
+    - name: 볼륨의 서비스 수준을 동적으로 변경
+      href: dynamic-change-volume-service-level.md
     - name: 개발
       items:
         - name: REST API

@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 861e011c4bd368a274998859170e78cf444400a8
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 6af0f2b5221a737687578e939c14cecf3be14509
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206169"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932919"
 ---
 # <a name="understanding-odata-collection-filters-in-azure-cognitive-search"></a>Azure Cognitive Search의 OData 컬렉션 필터 이해
 
@@ -88,14 +88,14 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 
 `Rooms/Type`전체 텍스트 검색에 대 한 저장 방법:
 
-| 용어`Rooms/Type` | 문서 Id |
+| 용어 `Rooms/Type` | 문서 Id |
 | --- | --- |
 | deluxe | 1, 2 |
 | 표준 | 1 |
 
 `Rooms/Description`전체 텍스트 검색에 대 한 저장 방법:
 
-| 용어`Rooms/Description` | 문서 Id |
+| 용어 `Rooms/Description` | 문서 Id |
 | --- | --- |
 | courtyard | 2 |
 | city | 1 |
@@ -180,9 +180,9 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 > [!NOTE]
 > 세부 정보는이 문서의 범위를 벗어나는 것 이지만 이러한 동일한 원칙이 [지역 공간 지점 컬렉션에 대 한 거리 및 교차 테스트](search-query-odata-geo-spatial-functions.md) 로도 확장 됩니다. 그 이유는 `any` 다음과 같습니다.
 >
-> - `geo.intersects`부정할 수 없음
+> - `geo.intersects` 부정할 수 없음
 > - `geo.distance`또는를 사용 하 여 비교 해야 합니다. `lt``le`
-> - 식은 `or` 와 결합 해야 합니다.`and`
+> - 식은 `or` 와 결합 해야 합니다. `and`
 >
 > 반대의 규칙은에 적용 `all` 됩니다.
 
@@ -204,4 +204,4 @@ Azure Cognitive Search에서 컬렉션 필드를 [필터링](query-odata-filter-
 - [Azure Cognitive Search의 필터](search-filters.md)
 - [Azure Cognitive Search에 대 한 OData 식 언어 개요](query-odata-filter-orderby-syntax.md)
 - [Azure Cognitive Search에 대 한 OData 식 구문 참조](search-query-odata-syntax-reference.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: d991b38c3f72b54f4564dd4847c8532b507286cc
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 101e42263e46c5a21f26b0fa9cdeed798525fee9
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86131780"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047086"
 ---
 # <a name="set-up-disaster-recovery-at-scale-for-vmware-vmsphysical-servers"></a>VMware v m/물리적 서버에 대해 대규모 재해 복구 설정
 
@@ -26,7 +26,7 @@ BCDR (비즈니스 연속성 및 재해 복구) 전략의 일부로 비즈니스
 - VMware Vm에 대 한 대규모 재해 복구를 계획 하 고 필요한 Azure 리소스를 파악 하려면 용량 계산에 사용할 RTO 값을 지정 하면 됩니다.
 
 
-## <a name="best-practices"></a>최선의 구현 방법
+## <a name="best-practices"></a>모범 사례
 
 대규모 재해 복구에 대 한 몇 가지 일반적인 모범 사례입니다. 이러한 모범 사례는 문서의 다음 섹션에 자세히 설명 되어 있습니다.
 
@@ -100,8 +100,8 @@ Deployment Planner는 VMware 온-프레미스 환경에 대 한 정보를 수집
 
 **컴퓨터가 Azure를 준수 하나요?** | **Azure VM 제한 (관리 디스크 장애 조치 (failover))**
 --- | --- 
-Yes | 2000
-No | 1000
+예 | 2000
+예 | 1000
 
 - 제한에는 구독에 대 한 대상 지역에서 최소한의 다른 작업이 진행 중 이라고 가정 합니다.
 - 일부 Azure 지역은 더 작으며 약간 낮은 제한이 있을 수 있습니다.
@@ -205,7 +205,7 @@ Vm의 첫 번째 일괄 처리에 대 한 복제를 시작한 후 다음과 같�
     - 앱에 대 한 종단 간 RTO를 예상 합니다.
     - 워크 로드에 대해 종단 간 RPO를 예상 합니다.
     - IP 주소 범위 충돌을 식별 합니다.
-    - 드릴을 실행 하는 동안 프로덕션 네트워크를 사용 하지 않는 것이 좋습니다. 프로덕션 및 테스트 네트워크에서 동일한 서브넷 이름을 사용 하지 말고, 모든 드릴 후 테스트 장애 조치 (failover)를 정리 하는 것이 좋습니다.
+    - 드릴을 실행 하는 동안에는 프로덕션 네트워크를 사용 하지 말고 드릴 하 고 테스트 장애 조치 (failover)를 정리 하는 것이 좋습니다.
 
 대규모 장애 조치 (failover)를 실행 하려면 다음을 수행 하는 것이 좋습니다.
 

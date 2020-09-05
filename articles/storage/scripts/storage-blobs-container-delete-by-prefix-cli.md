@@ -1,6 +1,6 @@
 ---
 title: Azure CLI 스크립트 샘플 - 접두사별 컨테이너 삭제 | Microsoft Docs
-description: 컨테이너 이름 접두사를 기준으로 Azure Storage Blob 컨테이너를 삭제합니다.
+description: 컨테이너 이름 접두사를 기준으로 Azure Storage Blob 컨테이너를 삭제한 다음, 배포를 정리합니다. 스크립트 샘플에서 사용되는 명령은 도움말 링크를 참조하세요.
 services: storage
 author: tamram
 ms.service: storage
@@ -10,12 +10,12 @@ ms.topic: sample
 ms.date: 06/22/2017
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 66869b7dc38e11b614ebc89538c2c195122b5bb3
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: aeccf255004cd4512fbc591942324341504b20f7
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87479560"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87901881"
 ---
 # <a name="use-an-azure-cli-script-to-delete-containers-based-on-container-name-prefix"></a>Azure CLI 스크립트를 사용하여 컨테이너 이름 접두사를 기준으로 컨테이너 삭제
 

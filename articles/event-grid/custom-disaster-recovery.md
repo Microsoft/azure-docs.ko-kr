@@ -3,12 +3,13 @@ title: Azure Event Grid의 사용자 지정 항목에 대한 재해 복구
 description: 이 자습서에서는 지역에서 Event Grid 서비스가 비정상 상태가 될 경우 복구되도록 이벤트 아키텍처를 설정하는 방법을 안내합니다.
 ms.topic: tutorial
 ms.date: 07/07/2020
-ms.openlocfilehash: dc893973fe1f6367cd9b95de2014d92c045056f4
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 27cc64eee31755bcefc9d0d82b7d06e52efcf183
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461683"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89004547"
 ---
 # <a name="build-your-own-disaster-recovery-for-custom-topics-in-event-grid"></a>Event Grid에서 사용자 지정 항목용 자체 재해 복구 빌드
 재해 복구는 애플리케이션 기능의 심각한 손실에서 복구하는 데 집중합니다. 이 자습서에서는 특정 지역에서 Event Grid 서비스가 비정상 상태가 될 경우 복구되도록 이벤트 아키텍처를 설정하는 방법을 안내합니다.

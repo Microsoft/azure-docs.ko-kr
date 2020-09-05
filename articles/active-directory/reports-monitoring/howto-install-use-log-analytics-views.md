@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 116c0d5becaea1ca6d488bbf7c94674934d4f7c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 56eee39a9e99e9d6752d1b4f6eb7182043ff14d6
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608197"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230588"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Azure Active Directory용 로그 분석 보기 설치 및 사용
 
@@ -31,11 +31,11 @@ Azure Active Directory 로그 분석 보기를 통해 Azure AD 테넌트에서 A
 * 감사 로그: [감사 로그 작업 보고서](concept-audit-logs.md) 는 테 넌 트에서 수행 된 모든 작업의 기록에 대 한 액세스를 제공 합니다.
 * 로그인 로그: [로그인 활동 보고서](concept-sign-ins.md)를 사용 하 여 감사 로그에 보고 되는 태스크를 수행한 사용자를 확인할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 로그 분석 보기를 사용하려면 다음이 필요합니다.
 
-* Azure 구독의 Log Analytics 작업 영역. [Log Analytics 작업 영역을 만드는 방법](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace)을 알아봅니다.
+* Azure 구독의 Log Analytics 작업 영역. [Log Analytics 작업 영역을 만드는 방법](../../azure-monitor/learn/quick-create-workspace.md)을 알아봅니다.
 * 먼저 [Azure AD 활동 로그를 Log Analytics 작업 영역으로 라우팅](howto-integrate-activity-logs-with-log-analytics.md)하는 단계를 완료합니다.
 * [GitHub 리포지토리](https://aka.ms/AADLogAnalyticsviews)의 보기를 로컬 컴퓨터에 다운로드합니다.
 
@@ -56,7 +56,7 @@ Azure Active Directory 로그 분석 보기를 통해 Azure AD 테넌트에서 A
 
 3. 이러한 보기 중 하나를 선택하여 개별 보고서로 이동합니다. 모든 보고서 매개 변수에 대해 경고를 설정할 수도 있습니다. 예를 들어 로그인 오류가 발생할 때마다 알려주는 경고를 설정해 보겠습니다. 이렇게 하려면 먼저 **로그인 이벤트** 보기를 선택하고, **시간 경과별 로그인 오류** 보고서를 선택한 다음, **분석**을 선택하여 보고서를 지지하는 실제 쿼리가 포함된 세부 정보 페이지를 엽니다. 
 
-    ![설명](./media/howto-install-use-log-analytics-views/details.png)
+    ![세부 정보](./media/howto-install-use-log-analytics-views/details.png)
 
 
 4. **경고 설정**을 선택한 다음, **경고 조건** 섹션 아래에서 **사용자 지정 로그 검색이 &lt;논리 정의 안 됨&gt;일 때마다**를 선택합니다. 로그인 오류가 발생할 때마다 경고하려고 하므로 기본 경고 논리의 **임계값**을 **1**로 설정한 다음, **완료**를 선택합니다. 
@@ -67,11 +67,11 @@ Azure Active Directory 로그 분석 보기를 통해 Azure AD 테넌트에서 A
 
     ![규칙 만들기](./media/howto-install-use-log-analytics-views/create-rule.png)
 
-6. 경고할 작업 그룹을 선택합니다. 일반적으로 이 그룹은 이메일 또는 문자 메시지를 통해 알리려는 팀이거나, 웹후크, Runbook, 함수, 논리 앱 또는 외부 ITSM 솔루션을 사용하는 자동화된 작업일 수 있습니다. [Azure Portal에서 작업 그룹을 만들고 관리](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)하는 방법에 대해 알아봅니다.
+6. 경고할 작업 그룹을 선택합니다. 일반적으로 이 그룹은 이메일 또는 문자 메시지를 통해 알리려는 팀이거나, 웹후크, Runbook, 함수, 논리 앱 또는 외부 ITSM 솔루션을 사용하는 자동화된 작업일 수 있습니다. [Azure Portal에서 작업 그룹을 만들고 관리](../../azure-monitor/platform/action-groups.md)하는 방법에 대해 알아봅니다.
 
 7. **경고 규칙 만들기**를 선택하여 경고를 만듭니다. 이제 로그인할 때마다 경고 메시지가 표시됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure Monitor 로그를 사용하여 활동 로그를 분석하는 방법](howto-analyze-activity-logs-log-analytics.md)
-* [Azure Portal에서 Azure Monitor 로그 시작](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal)
+* [Azure Portal에서 Azure Monitor 로그 시작](../../azure-monitor/log-query/get-started-portal.md)

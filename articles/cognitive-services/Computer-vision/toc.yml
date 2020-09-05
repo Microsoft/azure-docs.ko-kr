@@ -4,7 +4,7 @@
   expanded: true
   items:
     - name: Computer Vision이란?
-      href: Home.md
+      href: overview.md
     - name: 새로운 기능
       href: whats-new.md
 - name: 빠른 시작
@@ -185,3 +185,5 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: 규정 준수
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: 2.0 또는 2.1에서 v3.0으로 업그레이드
+      href: upgrade-api-versions.md

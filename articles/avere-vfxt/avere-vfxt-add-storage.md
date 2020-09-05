@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT 스토리지 구성 - Azure
-description: Avere vFXT for Azure에 백 엔드 스토리지 시스템을 추가하는 방법입니다.
+description: Azure 용 Avere vFXT에서 클러스터에 대 한 백 엔드 저장소 시스템을 추가 하는 방법에 대해 알아봅니다. 클러스터를 사용 하 여 Azure Blob 컨테이너를 만든 경우 사용할 준비가 된 것입니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: e011b349c9296fd0ca15d119b35c1e6ec6af268a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c17d3c7cd2cf6fe5bca725cf94344b2d2cb50bf2
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505752"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271144"
 ---
 # <a name="configure-storage"></a>스토리지 구성
 

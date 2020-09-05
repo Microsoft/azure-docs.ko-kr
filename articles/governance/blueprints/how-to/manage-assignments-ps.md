@@ -1,14 +1,14 @@
 ---
 title: PowerShell을 사용 하 여 할당을 관리 하는 방법
 description: 공식 Azure 청사진 PowerShell 모듈인 Az. 청사진을 사용 하 여 청사진 할당을 관리 하는 방법을 알아봅니다.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: how-to
-ms.openlocfilehash: fa0f89df79c4ae1c5b66998089f04575bd53ea37
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3bcb3731bd1270497945fa86406d08b2f9750c85
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82863980"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051409"
 ---
 # <a name="how-to-manage-assignments-with-powershell"></a>PowerShell을 사용 하 여 할당을 관리 하는 방법
 

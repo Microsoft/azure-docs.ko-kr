@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: d1cd4a25a2a9f07c75976d5eb5c97ba450ffdabb
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 751fa9f9fe2ba17a982b71a6332be302804f0dcc
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87284645"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047295"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Azure에서 일반화된 VM의 관리 이미지 만들기
 
@@ -26,10 +26,12 @@ ms.locfileid: "87284645"
 
 Sysprep은 모든 개인 계정 및 보안 정보를 제거한 다음 이미지로 사용할 컴퓨터를 준비합니다. Sysprep에 대한 자세한 내용은 [Sysprep 개요](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)를 참조하세요.
 
-가상 컴퓨터에서 실행되는 서버 역할이 Sysprep에서 지원되는지 확인합니다. 자세한 내용은 [서버 역할에 대한 Sysprep 지원](/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) 및 [지원되지 않는 시나리오](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios)를 참조하세요. Sysprep을 실행 하려면 드라이브의 암호를 완전히 해독 해야 합니다. VM에서 암호화를 사용 하도록 설정한 경우 Sysprep를 실행 하기 전에 암호화를 사용 하지 않도록 설정 합니다.
+가상 컴퓨터에서 실행되는 서버 역할이 Sysprep에서 지원되는지 확인합니다. 자세한 내용은 [서버 역할에 대한 Sysprep 지원](/windows-hardware/manufacture/desktop/sysprep-support-for-server-roles) 및 [지원되지 않는 시나리오](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview#unsupported-scenarios)를 참조하세요. 
 
 > [!IMPORTANT]
 > VM에서 Sysprep을 실행하고 나면 해당 VM은 *일반화*된 것으로 간주되므로 다시 시작할 수 없습니다. VM 일반화 프로세스는 되돌릴 수 없습니다. 원래 VM을 작동하는 상태로 유지해야 하는 경우에는 [VM의 복사본](create-vm-specialized.md#option-3-copy-an-existing-azure-vm)을 만들고 복사본을 일반화해야 합니다. 
+>
+>Sysprep을 사용 하려면 드라이브의 암호를 완전히 해독 해야 합니다. VM에서 암호화를 사용 하도록 설정한 경우 Sysprep를 실행 하기 전에 암호화를 사용 하지 않도록 설정 합니다.
 >
 > Azure에 VHD(가상 하드 디스크)를 처음으로 업로드하기 전에 Sysprep을 실행하려는 경우 [VM을 준비](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)해야 합니다.  
 > 
@@ -39,13 +41,15 @@ Windows VM을 일반화하려면 다음 단계를 수행합니다.
 
 1. Windows VM에 로그인합니다.
    
-2. 관리자로 명령 프롬프트 창을 엽니다. 디렉터리를 %windir%\system32\sysprep으로 변경한 다음, `sysprep.exe`를 실행합니다.
+2. 관리자로 명령 프롬프트 창을 엽니다. 
+
+3. Panther 디렉터리 (C:\Windows\Panther)를 삭제 합니다. 그런 다음 디렉터리 를%windir%\system32\sysprep로 변경 하 고를 실행 `sysprep.exe` 합니다.
    
-3. **시스템 준비 도구** 대화 상자에서 **시스템 OOBE(첫 실행 경험) 시작**을 선택하고 **일반화** 확인란을 선택합니다.
+4. **시스템 준비 도구** 대화 상자에서 **시스템 OOBE(첫 실행 경험) 시작**을 선택하고 **일반화** 확인란을 선택합니다.
    
-4. **종료 옵션**에서 **종료**를 선택합니다.
+5. **종료 옵션**에서 **종료**를 선택합니다.
    
-5. **확인**을 선택합니다.
+6. **확인**을 선택합니다.
    
     ![Sysprep 시작](./media/upload-generalized-managed/sysprepgeneral.png)
 

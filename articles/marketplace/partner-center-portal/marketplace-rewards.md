@@ -8,30 +8,30 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 25a164fc8709d7c9f6249336ece34bd8a5378f23
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 465543e639514753bc0a6762dbbeb888d490ccd2
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496018"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705047"
 ---
 # <a name="marketplace-rewards"></a>Marketplace Rewards
 
-Marketplace 보상은 첫 번째 고객을 가져오는 데 도움이 되는 인식 활동부터 시작 하 여 특정 성장 단계에서 사용자를 지원 합니다. 상업적 marketplace에서 성장 하면서 고객을 변환 하 고 거래를 종결 하는 데 도움이 되도록 설계 된 새로운 혜택의 잠금을 해제 합니다.
+Marketplace 보상은 첫 번째 고객을 가져오는 데 도움이 되는 인식 활동부터 시작 하 여 특정 성장 단계에서 사용자를 지원 합니다. Microsoft 상업적 marketplace에서 성장 하면서 고객을 전환 하 고 거래를 종결 하는 데 도움이 되도록 설계 된 새로운 혜택의 잠금을 해제 합니다.
 
 이 프로그램은 긍정적인 피드백 루프를 만듭니다. 각 성장 단계의 이점은 다음 단계로 진행 하는 데 도움을 주므로 상업적 marketplace를 플랫폼으로 활용 하 여 microsoft의 microsoft의 현장 및 microsoft의 채널을 통해 비즈니스를 성장 시킬 수 있습니다.
 
-혜택은 제품이 [목록, 평가판 또는 거래](../determine-your-listing-type.md#choose-a-call-to-action)인지에 따라 구별됩니다.
+혜택은 제품이 [목록, 평가판 또는 거래](../determine-your-listing-type.md#choose-a-listing-option)인지에 따라 구별됩니다.
 
 자격 조건에 따라 제품이 게시되면 Rewards 팀의 구성원이 연락을 드릴 것입니다.
 
-거래 파트너의 경우 Marketplace 플랫폼을 통해 청구된 매출액을 늘리면 계층별로 더 큰 혜택을 누릴 수 있습니다.
+거래 업체의 경우 상업적 marketplace 플랫폼을 통해 청구 된 판매를 성장 하는 경우 계층 당 더 많은 이점을 얻을 수 있습니다.
 
-상점에 게시하기 위한 최소 요구 사항은 MPNID이므로, MPN 역량 상태 또는 파트너 유형에 관계없이 이러한 혜택은 모든 파트너에게 제공됩니다. 각 파트너는 플랫폼인 Marketplace를 통해 비즈니스를 성장시킬 수 있습니다.
+온라인 매장에서 게시 해야 하는 최소 요구 사항은 MPNID 이므로 MPN 역량 상태 또는 파트너 유형과 관계 없이 모든 파트너에 게 이러한 혜택을 제공 합니다. 각 파트너는 상업적 marketplace를 통해 비즈니스를 플랫폼으로 성장 시킬 수 있습니다.
 
 사용자에게 제공되는 리소스를 이해하고 모범 사례를 구현하는 데 도움을 받음으로써 사용자가 [스스로 검토](https://partner.microsoft.com/asset/collection/azure-marketplace-and-appsource-publisher-toolkit#/)해 볼 수도 있습니다.
 
-[여기](https://partner.microsoft.com/dashboard/mpn/program/commercialmarketplace)에서 Marketplace 보상 프로그램에 대 한 자격을 확인 하세요.
+Marketplace 보상 프로그램에 대 한 자격을 확인 하려면 파트너 센터의 [Marketplace 보상](https://partner.microsoft.com/dashboard/mpn/program/commercialmarketplace) 페이지를 참조 하세요.
 
 시작하는 단계는 간단합니다.
 

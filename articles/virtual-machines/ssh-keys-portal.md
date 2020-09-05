@@ -5,14 +5,14 @@ author: cynthn
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
-ms.date: 07/31/2020
+ms.date: 08/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 17ab7ee75e335d686bf308c4b15a53dc4e2e6b0e
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: abc9a2ae130d987c90ce87ffaecbf2bb44b06010
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041751"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929444"
 ---
 # <a name="generate-and-store-ssh-keys-in-the-azure-portal"></a>SSH 키를 생성 하 고 Azure Portal에 저장 합니다.
 
@@ -28,7 +28,7 @@ Linux Vm에서 SSH 키를 만들고 사용 하는 방법에 대 한 자세한 �
 
 1. [Azure Portal](https://portal.azure.com)을 엽니다.
 
-1. 페이지 맨 위에 있는 *SSH* 를 입력 하 여 검색 합니다. **Marketplace*에서 **SSH 키**를 선택 합니다.
+1. 페이지 맨 위에 있는 *SSH* 를 입력 하 여 검색 합니다. **Marketplace**에서 **SSH 키**를 선택 합니다.
 
 1. **SSH 키** 페이지에서 **만들기**를 선택 합니다.
 
@@ -89,6 +89,20 @@ ssh -i <path to the .pem file> username@<ipaddress of the VM>
 1. 유효성 검사가 완료되면 **만들기**를 선택합니다. 
 
 키를 업로드 한 후에는 VM을 만들 때 사용 하도록 선택할 수 있습니다.
+
+## <a name="list-keys"></a>키 나열
+
+포털에서 만든 SSH 키는 리소스로 저장 되므로 리소스 보기를 필터링 하 여 모든 항목을 볼 수 있습니다.
+
+1. 포털에서 **모든 리소스**를 선택 합니다.
+1. 필터에서 **유형**을 선택 하 고 **모두 선택** 옵션을 선택 취소 하 여 목록을 지웁니다.
+1. 필터에 **ssh** 를 입력 하 고 **ssh 키**를 선택 합니다.
+
+   :::image type="content" source="./media/ssh-keys/filter.png" alt-text="모든 SSH 키를 표시 하도록 목록을 필터링 하는 방법에 대 한 스크린샷":::
+
+## <a name="get-the-public-key"></a>공개 키 가져오기
+
+공개 키가 필요한 경우 키의 포털 페이지에서 쉽게 복사할 수 있습니다. 키를 나열 (마지막 섹션의 프로세스 사용) 한 다음 목록에서 키를 선택 하면 됩니다. 키에 대 한 페이지가 열리고 키 옆의 **클립보드로 복사** 아이콘을 클릭 하 여 복사할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

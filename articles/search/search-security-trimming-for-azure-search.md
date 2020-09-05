@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: 443112628edddf9c60cd6469f046b1a9e066dc82
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 8562fd1afaa01e362bd6d95fd4dcf90cf3145c5a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496420"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928526"
 ---
 # <a name="security-filters-for-trimming-results-in-azure-cognitive-search"></a>Azure Cognitive Search의 결과를 잘라내는 보안 필터
 
@@ -27,7 +27,7 @@ ms.locfileid: "86496420"
 > [!div class="checklist"]
 > * 보안 주체 식별자를 포함하는 필드 만들기 
 > * 관련 보안 주체 식별자로 기존 문서를 푸시 또는 업데이트합니다.
-> * 다음을 사용 하 여 `search.in` 검색 요청 발급`filter`
+> * 다음을 사용 하 여 `search.in` 검색 요청 발급 `filter`
 
 >[!NOTE]
 > 보안 주체 식별자를 검색하는 프로세스를 이 문서에서 다루지 않습니다. Id 서비스 공급자에게서 가져와야 합니다.
@@ -109,13 +109,13 @@ api-key: [admin key]
 }
 ```
 
-문서 추가 또는 업데이트에 대한 자세한 내용은 [문서 편집](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents)에서 확인할 수 있습니다.
+문서 추가 또는 업데이트에 대한 자세한 내용은 [문서 편집](/rest/api/searchservice/addupdate-or-delete-documents)에서 확인할 수 있습니다.
    
 ## <a name="apply-the-security-filter"></a>보안 필터를 적용합니다.
 
 `group_ids` 액세스에 기초해 문서를 다듬으려면 `group_ids/any(g:search.in(g, 'group_id1, group_id2,...'))` 필터를 사용해 검색 쿼리를 발급해야 합니다. 여기서 'group_id1 group_id2...'는 검색 요청 발급자가 속해 있는 그룹입니다.
 이 필터는 주어진 식별자 중 하나가 `group_ids` 필드에 들어 있는 모든 문서와 일치합니다.
-Azure Cognitive Search를 사용 하 여 문서를 검색 하는 방법에 대 한 자세한 내용은 [문서 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents)을 참조 하세요.
+Azure Cognitive Search를 사용 하 여 문서를 검색 하는 방법에 대 한 자세한 내용은 [문서 검색](/rest/api/searchservice/search-documents)을 참조 하세요.
 이 샘플은 POST 요청을 사용하여 문서를 검색하는 방법을 보여 줍니다.
 
 HTTP POST 요청을 발급합니다.
@@ -156,7 +156,7 @@ api-key: [admin or query key]
 
 사용자 id 및 Azure Cognitive Search 기능을 기준으로 결과를 필터링 하는 방법입니다 `search.in()` . 이 함수를 사용 하 여 요청 하는 사용자에 대 한 보안 주체 식별자를 전달 하 여 각 대상 문서와 연결 된 보안 주체 식별자에 대해 일치 시킬 수 있습니다. 검색 요청이 처리될 때, `search.in` 함수는 사용자의 보안 주체 중 아무도 읽기 권한이 없는 검색 결과를 필터링합니다. 보안 주체 식별자는 보안 그룹, 역할 또는 심지어 사용자 본인 ID와 같은 것을 나타낼 수 있습니다.
  
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 + [Azure Cognitive Search 필터를 사용 하 여 id 기반 액세스 제어 Active Directory](search-security-trimming-for-azure-search-with-aad.md)
 + [Azure Cognitive Search의 필터](search-filters.md)

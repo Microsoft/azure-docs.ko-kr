@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/4/2019
+ms.date: 08/20/2020
 ms.author: panosper
-ms.openlocfilehash: 2c84b291aad5ec2da2946e40075b23cc4496ef65
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: a14ac8089aa29a592164168e6ccfc4fd2342f68c
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921025"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661523"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>음성 텍스트 변환에 대한 질문과 대답
 
@@ -75,7 +75,7 @@ ms.locfileid: "85921025"
 
 **Q: 내 요청이 제한되나요?**
 
-**A**: REST API의 경우 5초당 25개 요청으로 제한됩니다. 자세한 내용은 [음성을 텍스트로 변환](speech-to-text.md)에 대한 페이지에서 찾을 수 있습니다.
+**A**: [Speech Services 할당량 및 제한을](speech-services-quotas-and-limits.md)참조 하세요.
 
 **Q: 이중 채널 오디오에 대 한 요금은 어떻게 청구 되나요?**
 
@@ -85,52 +85,14 @@ ms.locfileid: "85921025"
 > 그 밖의 개인 정보 보호 문제로 인해 Custom Speech Service를 사용할 수 없는 경우에는 지원 채널 중 한 곳에 문의하세요.
 
 ## <a name="increasing-concurrency"></a>동시성 증대
+[Speech Services 할당량 및 제한을](speech-services-quotas-and-limits.md)참조 하세요.
 
-**Q: 포털에 제공되는 모델보다 배포된 모델에 대해 더 높은 동시성이 필요하면 어떻게 해야 하나요?**
-
-**A**: 모델은 20개씩 증분하는 동시 요청으로 강화할 수 있습니다.
-
-필요한 정보를 사용 하 여 [Azure 지원 포털](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)에서 지원 요청을 만듭니다. [지원 페이지](support.md)에 언급 된 공개 채널 (GitHub, stackoverflow, ...) 중 하나에 정보를 게시 하지 마십시오.
-
-***사용자 지정 모델***에 대 한 동시성을 늘리려면 다음 정보가 필요 합니다.
-
-- 모델을 배포 하는 영역입니다.
-- 배포 된 모델의 끝점 ID:
-  - [Custom Speech 포털](https://aka.ms/customspeech)에서 가져왔습니다.
-  - 로그인 (필요한 경우)
-  - 프로젝트 및 배포를 선택 합니다.
-  - 에 대해 동시성이 증가 해야 하는 끝점을 선택 합니다.
-  - 를 복사 `Endpoint ID` 합니다.
-
-***기본 모델***의 동시성을 늘리려면 다음 정보가 필요 합니다.
-
-- 서비스의 지역입니다.
-
-그리고 다음 중 하나입니다.
-
-- 구독에 대 한 액세스 토큰 ( [여기](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-speech-to-text#how-to-get-an-access-token)참조)
-
-또는
-
-- 구독에 대 한 리소스 ID:
-  - [Azure Portal](https://portal.azure.com)로 이동 합니다.
-  - `Cognitive Services`검색 상자에서를 선택 합니다.
-  - 표시 된 서비스에서 동시성을 증가 시킬 음성 서비스를 선택 합니다.
-  - `Properties`이 서비스에 대 한를 표시 합니다.
-  - 전체를 복사 `Resource ID` 합니다.
-  
-**Q: 내 동시성 한도를 늘리면 내 비용이 증가 하나요?**
-
-**A**: 아니요, 비용은 사용량을 기준으로 합니다. 동시성이 증가 해도 비용이 더 많이 들지 않습니다. 비용에 대 한 자세한 내용은 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/) 를 참조 하세요. 
-  
->[!NOTE]
->컨테이너가 호스트 되는 하드웨어의 Cpu에 의해서만 제한 되므로 [컨테이너](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-container-howto) 는 동시성 제한에 대 한 증가가 필요 하지 않습니다.
 
 ## <a name="importing-data"></a>데이터 가져오기
 
 **Q: 데이터 세트의 크기 제한은 얼마나 되며 제한되는 이유는 무엇인가요?**
 
-**A**: 데이터 세트의 현재 제한은 2GB입니다. 이러한 제한은 HTTP 업로드용 파일 크기가 제한되기 때문에 발생합니다.
+**A**: 제한은 HTTP 업로드에 대 한 파일 크기 제한 때문입니다. [음성 서비스 할당량 및](speech-services-quotas-and-limits.md) 실제 한도에 대 한 제한을 참조 하세요.
 
 **Q: 더 큰 텍스트 파일을 업로드할 수 있도록 내 텍스트 파일을 zip할 수 있나요?**
 
@@ -198,7 +160,7 @@ ms.locfileid: "85921025"
 
 **Q: 테 넌 트 모델에서 어떤 음성 환경이 개선 되나요?**
 
-**A:** 테 넌 트 모델을 사용 하도록 설정 하 고 만들고 게시 하면, 음성 서비스를 사용 하 여 빌드된 모든 엔터프라이즈 응용 프로그램에 대 한 인식을 개선 하는 데 사용 됩니다. 또한 엔터프라이즈에 대 한 멤버 자격을 나타내는 사용자 AAD 토큰을 전달 합니다.
+**A:** 테 넌 트 모델을 사용 하도록 설정 하 고 만들고 게시 하면, 음성 서비스를 사용 하 여 빌드된 모든 엔터프라이즈 응용 프로그램에 대 한 인식을 개선 하는 데 사용 됩니다. 또한 엔터프라이즈에 대 한 멤버 자격을 나타내는 사용자 Azure AD 토큰을 전달 합니다.
 
 음성 서비스 응용 프로그램에 대 한 테 넌 트 모델을 만들 때 받아쓰기 및 PowerPoint 캡션 등 Office 365에 내장 된 음성 환경은 변경 되지 않습니다.
 

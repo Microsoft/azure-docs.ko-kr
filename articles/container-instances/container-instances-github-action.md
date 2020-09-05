@@ -2,20 +2,20 @@
 title: GitHub 작업으로 컨테이너 인스턴스 배포
 description: 컨테이너 이미지를 빌드, 푸시 및 배포 하기 위한 단계를 자동화 하는 GitHub 작업을 구성 하 여 Azure Container Instances
 ms.topic: article
-ms.date: 03/18/2020
+ms.date: 08/20/2020
 ms.custom: ''
-ms.openlocfilehash: fab0eff04d86428a7e3eba730373da72c903b0ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8da72d3911797e8e3a4551f2af100afb0d7ea0fb
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84744003"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88755010"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>GitHub 작업을 구성하여 컨테이너 인스턴스 만들기
 
 [Github 작업](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions) 은 코드를 저장 하 고 끌어오기 요청 및 문제에 대해 공동으로 작업 하는 것과 동일한 장소에서 소프트웨어 개발 워크플로를 자동화 하는 github의 기능 모음입니다.
 
-[Azure Container Instances에 배포를](https://github.com/azure/aci-deploy) 사용 하 여 Azure Container Instances에 대 한 컨테이너 배포를 자동화할 수 있습니다. 이 작업을 사용 하면 [az container create][az-container-create] 명령에 있는 것과 유사한 컨테이너 인스턴스의 속성을 설정할 수 있습니다.
+[Azure Container Instances에 배포를](https://github.com/azure/aci-deploy) 사용 하 여 Azure Container Instances에 대 한 단일 컨테이너의 배포를 자동화 합니다. 이 작업을 사용 하면 [az container create][az-container-create] 명령에 있는 것과 유사한 컨테이너 인스턴스의 속성을 설정할 수 있습니다.
 
 이 문서에서는 다음 작업을 수행 하는 GitHub 리포지토리에서 워크플로를 설정 하는 방법을 보여 줍니다.
 
@@ -25,8 +25,8 @@ ms.locfileid: "84744003"
 
 이 문서에서는 워크플로를 설정 하는 두 가지 방법을 보여 줍니다.
 
-* 배포 Azure Container Instances 작업 및 기타 작업을 사용 하 여 GitHub 리포지토리에서 직접 워크플로를 구성 합니다.  
-* `az container app up`Azure CLI에서 [Azure 확장에 배포](https://github.com/Azure/deploy-to-azure-cli-extension) 의 명령을 사용 합니다. 이 명령은 GitHub 워크플로 및 배포 단계 만들기를 간소화 합니다.
+* [Github 워크플로 구성](#configure-github-workflow) -배포 Azure Container Instances 작업 및 기타 작업을 사용 하 여 github 리포지토리에서 워크플로를 만듭니다.  
+* [CLI 확장 사용](#use-deploy-to-azure-extension) - `az container app up` Azure CLI의 [Azure에 배포](https://github.com/Azure/deploy-to-azure-cli-extension) 확장에서 명령을 사용 합니다. 이 명령은 GitHub 워크플로 및 배포 단계 만들기를 간소화 합니다.
 
 > [!IMPORTANT]
 > Azure Container Instances에 대 한 GitHub 동작은 현재 미리 보기 상태입니다. [부속 사용 약관][terms-of-use]에 동의하면 미리 보기를 사용할 수 있습니다. 이 기능의 몇 가지 측면은 일반 공급(GA) 전에 변경될 수 있습니다.
@@ -39,7 +39,7 @@ ms.locfileid: "84744003"
 
 ## <a name="set-up-repo"></a>리포지토리 설정
 
-* 이 문서의 예제에서는 GitHub를 사용 하 여 다음 리포지토리를 포크 합니다.https://github.com/Azure-Samples/acr-build-helloworld-node
+* 이 문서의 예제에서는 GitHub를 사용 하 여 다음 리포지토리를 포크 합니다. https://github.com/Azure-Samples/acr-build-helloworld-node
 
   이 리포지토리에는 작은 웹 앱의 컨테이너 이미지를 만드는 Dockerfile 및 원본 파일이 포함 되어 있습니다.
 
@@ -91,7 +91,7 @@ az ad sp create-for-rbac \
 
 ### <a name="update-service-principal-for-registry-authentication"></a>레지스트리 인증에 대 한 서비스 주체 업데이트
 
-컨테이너 레지스트리에 대 한 푸시 및 끌어오기 권한을 허용 하도록 Azure 서비스 주체 자격 증명을 업데이트 합니다. 이 단계를 통해 GitHub 워크플로에서 서비스 주체를 사용 하 여 [컨테이너 레지스트리를 인증할](../container-registry/container-registry-auth-service-principal.md)수 있습니다. 
+컨테이너 레지스트리에 대 한 푸시 및 끌어오기 액세스를 허용 하도록 Azure 서비스 주체 자격 증명을 업데이트 합니다. 이 단계를 통해 GitHub 워크플로는 서비스 주체를 사용 하 여 [컨테이너 레지스트리를 인증](../container-registry/container-registry-auth-service-principal.md) 하 고 Docker 이미지를 푸시 및 끌어올 수 있습니다. 
 
 컨테이너 레지스트리의 리소스 ID를 가져옵니다. 다음 [az acr show][az-acr-show] 명령에서 레지스트리 이름을 대체 합니다.
 
@@ -118,8 +118,8 @@ az role assignment create \
 
 |비밀  |값  |
 |---------|---------|
-|`AZURE_CREDENTIALS`     | 서비스 사용자 만들기의 전체 JSON 출력 |
-|`REGISTRY_LOGIN_SERVER`   | 레지스트리의 로그인 서버 이름 (모두 소문자)입니다. 예: *myregistry.azure.cr.io*        |
+|`AZURE_CREDENTIALS`     | 서비스 사용자 만들기 단계의 전체 JSON 출력 |
+|`REGISTRY_LOGIN_SERVER`   | 레지스트리의 로그인 서버 이름 (모두 소문자)입니다. 예: *myregistry.azurecr.io*        |
 |`REGISTRY_USERNAME`     |  `clientId`서비스 사용자가 만든 JSON 출력의       |
 |`REGISTRY_PASSWORD`     |  `clientSecret`서비스 사용자가 만든 JSON 출력의 |
 | `RESOURCE_GROUP` | 서비스 주체의 범위를 표시 하는 데 사용한 리소스 그룹의 이름입니다. |
@@ -177,9 +177,9 @@ jobs:
 
 ![워크플로 진행률 보기](./media/container-instances-github-action/github-action-progress.png)
 
-워크플로의 각 단계에 대 한 상태 및 결과를 보는 방법에 대 한 자세한 내용은 [워크플로 실행 관리](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run) 를 참조 하세요.
+워크플로의 각 단계에 대 한 상태 및 결과를 보는 방법에 대 한 자세한 내용은 [워크플로 실행 관리](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run) 를 참조 하세요. 워크플로가 완료 되지 않으면 [로그 보기를 참조 하 여 오류를 진단](https://docs.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run#viewing-logs-to-diagnose-failures)합니다.
 
-워크플로가 완료 되 면 [az container show][az-container-show] 명령을 실행 하 여 *aci-sampleapp.exe* 라는 컨테이너 인스턴스에 대 한 정보를 가져옵니다. 리소스 그룹의 이름으로 대체 합니다. 
+워크플로가 성공적으로 완료 되 면 [az container show][az-container-show] 명령을 실행 하 여 *aci-sampleapp.exe* 라는 컨테이너 인스턴스에 대 한 정보를 가져옵니다. 리소스 그룹의 이름으로 대체 합니다. 
 
 ```azurecli
 az container show \
@@ -209,7 +209,7 @@ Azure CLI에서 만든 워크플로는 [GitHub를 사용 하 여 수동으로 �
 
 ### <a name="additional-prerequisite"></a>추가 필수 구성 요소
 
-이 시나리오의 [필수 구성 요소](#prerequisites) 및 [리포지토리 설치](#set-up-repo) 외에도 Azure CLI을 위해 **Azure 확장에 배포** 를 설치 해야 합니다.
+이 시나리오의 [필수 구성 요소](#prerequisites) 및 [리포지토리 설치](#set-up-repo) 외에도 Azure CLI을 위해  **Azure 확장에 배포** 를 설치 해야 합니다.
 
 [Az extension add][az-extension-add] 명령을 실행 하 여 확장을 설치 합니다.
 
@@ -225,7 +225,7 @@ az extension add \
 [Az container app up][az-container-app-up] 명령을 실행 하려면 최소한 다음을 제공 합니다.
 
 * Azure container registry의 이름 (예: *myregistry* )
-* GitHub 리포지토리의 URL (예:)`https://github.com/<your-GitHub-Id>/acr-build-helloworld-node`
+* GitHub 리포지토리의 URL (예:) `https://github.com/<your-GitHub-Id>/acr-build-helloworld-node`
 
 명령 샘플:
 
@@ -237,7 +237,7 @@ az container app up \
 
 ### <a name="command-progress"></a>명령 진행률
 
-* 메시지가 표시 되 면 GitHub 자격 증명을 제공 하거나 레지스트리를 인증 하는 데 사용 되는 *리포지토리* 및 *사용자* 범위를 포함 하는 github PAT ( [개인용 액세스 토큰](https://help.github.com/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) )를 제공 합니다. GitHub 자격 증명을 제공 하는 경우이 명령은 사용자를 위해 PAT를 만듭니다.
+* 메시지가 표시 되 면 github 자격 증명을 제공 하거나 github 계정으로 인증 하는 데 사용 되는 *리포지토리* 및 *사용자* 범위를 포함 하는 github PAT ( [개인용 액세스 토큰](https://help.github.com/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) )를 제공 합니다. GitHub 자격 증명을 제공 하는 경우이 명령은 사용자를 위해 PAT를 만듭니다. 추가 프롬프트에 따라 워크플로를 구성 합니다.
 
 * 이 명령은 워크플로에 대 한 리포지토리 비밀을 만듭니다.
 
@@ -258,11 +258,29 @@ Workflow succeeded
 Your app is deployed at:  http://acr-build-helloworld-node.eastus.azurecontainer.io:8080/
 ```
 
+GitHub UI의 각 단계에 대 한 워크플로 상태와 결과를 보려면 [워크플로 실행 관리](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run)를 참조 하세요.
+
 ### <a name="validate-workflow"></a>워크플로 유효성 검사
 
-워크플로는 GitHub 리포지토리의 기본 이름 (이 경우 *acr-build-helloworld-노드*)을 사용 하 여 Azure container instance를 배포 합니다. 브라우저에서 제공 된 링크로 이동 하 여 실행 중인 웹 앱을 볼 수 있습니다. 앱이 8080 이외의 포트에서 수신 대기 하는 경우 URL에서이를 대신 지정 합니다.
+워크플로는 GitHub 리포지토리의 기본 이름 (이 경우 *acr-build-helloworld-노드*)을 사용 하 여 Azure container instance를 배포 합니다. 워크플로가 성공적으로 완료 되 면 [az container show][az-container-show] 명령을 실행 하 여 *acr-build-helloworld-node* 라는 컨테이너 인스턴스에 대 한 정보를 가져옵니다. 리소스 그룹의 이름으로 대체 합니다. 
 
-GitHub UI의 각 단계에 대 한 워크플로 상태와 결과를 보려면 [워크플로 실행 관리](https://help.github.com/actions/configuring-and-managing-workflows/managing-a-workflow-run)를 참조 하세요.
+```azurecli
+az container show \
+  --resource-group <resource-group-name> \
+  --name acr-build-helloworld-node \
+  --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
+  --output table
+```
+
+출력은 다음과 비슷합니다.
+
+```console
+FQDN                                                   ProvisioningState
+---------------------------------                      -------------------
+acr-build-helloworld-node.westus.azurecontainer.io     Succeeded
+```
+
+인스턴스가 프로 비전 된 후 브라우저에서 컨테이너의 FQDN으로 이동 하 여 실행 중인 웹 앱을 확인 합니다.
 
 ## <a name="clean-up-resources"></a>리소스 정리
 

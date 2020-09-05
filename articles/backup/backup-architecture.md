@@ -3,12 +3,12 @@ title: 아키텍처 개요
 description: Azure Backup 서비스에서 사용하는 아키텍처, 구성 요소 및 프로세스에 대한 개요를 제공합니다.
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.openlocfilehash: fc57f275d7693c9cf93adf04dc5dcc7524ba0567
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 1081de6b467b896bd8cc62b84c9a67c329b11e02
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835734"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88824035"
 ---
 # <a name="azure-backup-architecture-and-components"></a>Azure Backup 아키텍처 및 구성 요소
 
@@ -52,7 +52,7 @@ Recovery Services 자격 증명 모음에는 다음과 같은 기능이 있습�
 
 Azure Backup는 백업 중인 컴퓨터의 유형에 따라 서로 다른 백업 에이전트를 제공 합니다.
 
-**에이전트** | **설명**
+**에이전트** | **세부 정보**
 --- | ---
 **MARS 에이전트** | <ul><li>는 개별 온-프레미스 Windows Server 컴퓨터에서 실행 되어 파일, 폴더 및 시스템 상태를 백업 합니다.</li> <li>Azure Vm에서를 실행 하 여 파일, 폴더 및 시스템 상태를 백업 합니다.</li> <li>Dpm/mabs 서버를 실행 하 여 DPM/MABS 로컬 저장소 디스크를 Azure에 백업 합니다.</li></ul>
 **Azure VM 확장** | 자격 증명 모음에 백업하기 위해 Azure VM에서 실행됩니다.
@@ -134,7 +134,7 @@ DPM/MABS 디스크에 백업한 다음 Azure에 백업 | | | ![예][green]
 
 1. Azure VM에 대 한 백업을 사용 하도록 설정 하면 지정한 일정에 따라 백업이 실행 됩니다.
 1. 첫 번째 백업 중에 VM이 실행 되는 경우 백업 확장이 VM에 설치 됩니다.
-    - Windows Vm의 경우 VMSnapshot 확장을 설치 합니다.
+    - Windows VM의 경우 VMSnapshot 확장이 설치됩니다.
     - Linux Vm의 경우 VMSnapshot Linux 확장이 설치 됩니다.
 1. 확장은 저장소 수준 스냅숏을 사용 합니다.
     - 을 실행 하는 Windows Vm의 경우 VSS (Windows 볼륨 섀도 복사본 서비스)를 사용 하 여 VM의 앱 일치 스냅숏을 사용 합니다. 기본적으로 백업은 전체 VSS 백업을 수행 합니다. Backup에서 앱 일관성이 있는 스냅샷을 만들 수 없는 경우에는 일관성 있는 파일 스냅샷을 만듭니다.
@@ -143,7 +143,7 @@ DPM/MABS 디스크에 백업한 다음 Azure에 백업 | | | ![예][green]
 1. 스냅샷을 만든 후에는 데이터가 자격 증명 모음으로 전송됩니다.
     - 마지막 백업 이후에 변경 된 데이터 블록만 복사 됩니다.
     - 데이터가 암호화되지 않습니다. Azure Backup Azure Disk Encryption를 사용 하 여 암호화 된 Azure Vm을 백업할 수 있습니다.
-    - 스냅샷 데이터가 자격 증명 모음에 즉시 복사되지 않을 수 있습니다. 사용량이 많은 시간에 백업은 약간의 시간이 걸릴 수 있습니다. 일별 백업 정책에서 VM의 총 백업 시간은 24 시간 미만입니다.
+    - 스냅샷 데이터가 자격 증명 모음에 즉시 복사되지 않을 수도 있습니다. 사용량이 많은 시간에 백업은 약간의 시간이 걸릴 수 있습니다. 일별 백업 정책에서 VM의 총 백업 시간은 24시간 미만입니다.
 1. 자격 증명 모음에 데이터가 전송 된 후에는 복구 지점이 생성 됩니다. 기본적으로 스냅숏은 삭제 되기 2 일 동안 보존 됩니다. 이 기능을 통해 이러한 스냅숏에서 복원 작업을 수행할 수 있으므로 복원 시간이 줄어듭니다. 자격 증명 모음에서 데이터를 다시 변환 하 고 복사 하는 데 필요한 시간을 줄일 수 있습니다. [Azure Backup 인스턴트 복원 기능](./backup-instant-restore-capability.md)을 참조 하세요.
 
 Azure Vm을 백업 하기 위해 인터넷 연결을 명시적으로 허용 하지 않아도 됩니다.
@@ -193,9 +193,8 @@ Azure VM은 디스크를 사용하여 운영 체제, 앱 및 데이터를 저장
 
 디스크 저장소 및 Vm의 사용 가능한 디스크 유형에 대 한 자세한 내용은 다음 문서를 참조 하세요.
 
-- [Windows Vm 용 Azure managed disks](../virtual-machines/windows/managed-disks-overview.md)
-- [Linux Vm에 대 한 Azure managed disks](../virtual-machines/linux/managed-disks-overview.md)
-- [Vm에 사용 가능한 디스크 유형](../virtual-machines/windows/disks-types.md)
+- [Linux Vm에 대 한 Azure managed disks](../virtual-machines/managed-disks-overview.md)
+- [Vm에 사용 가능한 디스크 유형](../virtual-machines/disks-types.md)
 
 ### <a name="back-up-and-restore-azure-vms-with-premium-storage"></a>Premium storage를 사용 하 여 Azure Vm 백업 및 복원
 
@@ -204,7 +203,7 @@ Azure Backup에서 premium storage를 사용 하 여 Azure Vm을 백업할 수 �
 - Premium storage를 사용 하 여 Vm을 백업 하는 과정에서 백업 서비스는 저장소 계정에 *azurebackup-* 이라는 임시 준비 위치를 만듭니다. 준비 위치의 크기는 복구 지점 스냅숏의 크기와 같습니다.
 - Premium Storage 계정에 임시 준비 위치를 수용할 충분한 여유 공간이 있어야 합니다. 자세한 내용은 [프리미엄 페이지 blob storage 계정에 대 한 확장성 목표](../storage/blobs/scalability-targets-premium-page-blobs.md)를 참조 하세요. 준비 위치를 수정하지 마세요.
 - 백업 작업이 완료되면 준비 위치가 삭제됩니다.
-- 준비 위치에 사용되는 스토리지의 가격은 모든 [Premium Storage 가격 책정](../virtual-machines/windows/disks-types.md#billing)과 일관성이 있습니다.
+- 준비 위치에 사용되는 스토리지의 가격은 모든 [Premium Storage 가격 책정](../virtual-machines/disks-types.md#billing)과 일관성이 있습니다.
 
 Premium storage를 사용 하 여 Azure Vm을 복원 하는 경우 프리미엄 또는 표준 저장소로 복원할 수 있습니다. 일반적으로 premium storage로 복원 합니다. 그러나 VM에서 파일의 하위 집합만 필요한 경우 표준 저장소로 복원 하는 것이 비용 효율적일 수 있습니다.
 

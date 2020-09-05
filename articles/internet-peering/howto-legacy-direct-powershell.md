@@ -8,12 +8,13 @@ ms.service: internet-peering
 ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 803d2a09fb4114dae36dcb6147139c7b657501f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: d3e7cdf11e1e1e033b4e72b9579d8c63b28e6c88
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700130"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89071689"
 ---
 # <a name="convert-a-legacy-direct-peering-to-an-azure-resource-by-using-powershell"></a>PowerShell을 사용 하 여 레거시 직접 피어 링을 Azure 리소스로 변환
 
@@ -111,7 +112,7 @@ Type                 : Microsoft.Peering/peerings
 Tags                 : {}
 ```
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 다음 명령을 실행 하 여 모든 매개 변수에 대 한 자세한 설명을 볼 수 있습니다.
 
 ```powershell

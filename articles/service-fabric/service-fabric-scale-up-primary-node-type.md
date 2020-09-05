@@ -4,12 +4,12 @@ description: 노드 유형을 추가 하 여 Service Fabric 클러스터의 크�
 ms.topic: article
 ms.date: 08/06/2020
 ms.author: pepogors
-ms.openlocfilehash: eecf398359470f6e5e151c53eb63b3cb56efbe39
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: a18a40cc9e467b089ea9d6be3d0ca81a21d2c474
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056757"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228718"
 ---
 # <a name="scale-up-a-service-fabric-cluster-primary-node-type-by-adding-a-node-type"></a>노드 유형을 추가 하 여 Service Fabric 클러스터 주 노드 유형 강화
 이 문서에서는 클러스터에 노드 유형을 추가 하 여 Service Fabric 클러스터 주 노드 유형을 확장 하는 방법을 설명 합니다. Service Fabric 클러스터는 마이크로 서비스가 배포되고 관리되는 네트워크로 연결된 가상 또는 실제 머신 집합입니다. 클러스터의 일부인 머신 또는 VM을 노드라고 합니다. 가상 머신 확장 집합은 가상 머신의 모음을 집합으로 배포하고 관리하는 데 사용할 수 있는 Azure 컴퓨팅 리소스입니다. Azure 클러스터에 정의된 모든 노드 유형은 [별도의 확장 집합으로 설정](service-fabric-cluster-nodetypes.md)됩니다. 각 노드 형식을 별도로 관리할 수 있습니다.
@@ -31,7 +31,7 @@ ms.locfileid: "88056757"
 ### <a name="deploy-the-initial-service-fabric-cluster"></a>초기 Service Fabric 클러스터 배포 
 샘플과 함께 수행 하려면 단일 주 노드 유형 및 단일 확장 집합 [Service Fabric 초기](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-1.json)클러스터로 초기 클러스터를 배포 합니다. 기존 Service Fabric 클러스터가 이미 배포 되어 있는 경우이 단계를 건너뛸 수 있습니다. 
 
-1. Azure 계정에 로그인합니다. 
+1. Azure 계정에 로그인 
 ```powershell
 # sign in to your Azure account and select your subscription
 Login-AzAccount -SubscriptionId "<your subscription ID>"
@@ -43,7 +43,7 @@ $resourceGroupName = "myResourceGroup"
 $location = "WestUS"
 
 New-AzResourceGroup `
-    -Name $resourceGroupName
+    -Name $resourceGroupName `
     -Location $location
 ```
 3. 템플릿 파일의 매개 변수 값을 입력 합니다. 
@@ -56,7 +56,7 @@ $parameterFilePath = "C:\AzureDeploy.Parameters.json"
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
     -TemplateFile $templateFilePath `
-    -TemplateParameterFile $parameterFilePath `
+    -TemplateParameterFile $parameterFilePath
 ```
 
 ### <a name="add-a-new-primary-node-type-to-the-cluster"></a>클러스터에 새 주 노드 형식 추가
@@ -124,6 +124,134 @@ OS SKU
     "version": "[parameters('vmImageVersion1')]"
 }
 ```
+
+다음 코드 조각은 Service Fabric 클러스터에 대해 새 노드 유형을 만드는 데 사용 되는 새 가상 머신 확장 집합 리소스의 예입니다. 워크 로드에 필요한 추가 확장을 포함 해야 합니다. 
+
+```json
+    {
+      "apiVersion": "[variables('vmssApiVersion')]",
+      "type": "Microsoft.Compute/virtualMachineScaleSets",
+      "name": "[variables('vmNodeType1Name')]",
+      "location": "[variables('computeLocation')]",
+      "dependsOn": [
+        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
+        "[concat('Microsoft.Network/loadBalancers/', concat('LB','-', parameters('clusterName'),'-',variables('vmNodeType1Name')))]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('supportLogStorageAccountName'))]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('applicationDiagnosticsStorageAccountName'))]"
+      ],
+      "properties": {
+        "overprovision": "[variables('overProvision')]",
+        "upgradePolicy": {
+          "mode": "Automatic"
+        },
+        "virtualMachineProfile": {
+          "extensionProfile": {
+            "extensions": [
+              {
+                "name": "[concat('ServiceFabricNodeVmExt_',variables('vmNodeType1Name'))]",
+                "properties": {
+                  "type": "ServiceFabricNode",
+                  "autoUpgradeMinorVersion": true,
+                  "protectedSettings": {
+                    "StorageAccountKey1": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key1]",
+                    "StorageAccountKey2": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key2]"
+                  },
+                  "publisher": "Microsoft.Azure.ServiceFabric",
+                  "settings": {
+                    "clusterEndpoint": "[reference(parameters('clusterName')).clusterEndpoint]",
+                    "nodeTypeRef": "[variables('vmNodeType1Name')]",
+                    "dataPath": "D:\\SvcFab",
+                    "durabilityLevel": "Bronze",
+                    "enableParallelJobs": true,
+                    "nicPrefixOverride": "[variables('subnet1Prefix')]",
+                    "certificate": {
+                      "thumbprint": "[parameters('certificateThumbprint')]",
+                      "x509StoreName": "[parameters('certificateStoreValue')]"
+                    }
+                  },
+                  "typeHandlerVersion": "1.0"
+                }
+              }
+            ]
+          },
+          "networkProfile": {
+            "networkInterfaceConfigurations": [
+              {
+                "name": "[concat(variables('nicName'), '-1')]",
+                "properties": {
+                  "ipConfigurations": [
+                    {
+                      "name": "[concat(variables('nicName'),'-',1)]",
+                      "properties": {
+                        "loadBalancerBackendAddressPools": [
+                          {
+                            "id": "[variables('lbPoolID1')]"
+                          }
+                        ],
+                        "loadBalancerInboundNatPools": [
+                          {
+                            "id": "[variables('lbNatPoolID1')]"
+                          }
+                        ],
+                        "subnet": {
+                          "id": "[variables('subnet1Ref')]"
+                        }
+                      }
+                    }
+                  ],
+                  "primary": true
+                }
+              }
+            ]
+          },
+          "osProfile": {
+            "adminPassword": "[parameters('adminPassword')]",
+            "adminUsername": "[parameters('adminUsername')]",
+            "computernamePrefix": "[variables('vmNodeType1Name')]",
+            "secrets": [
+              {
+                "sourceVault": {
+                  "id": "[parameters('sourceVaultValue')]"
+                },
+                "vaultCertificates": [
+                  {
+                    "certificateStore": "[parameters('certificateStoreValue')]",
+                    "certificateUrl": "[parameters('certificateUrlValue')]"
+                  }
+                ]
+              }
+            ]
+          },
+          "storageProfile": {
+            "imageReference": {
+              "publisher": "[parameters('vmImagePublisher1')]",
+              "offer": "[parameters('vmImageOffer1')]",
+              "sku": "[parameters('vmImageSku1')]",
+              "version": "[parameters('vmImageVersion1')]"
+            },
+            "osDisk": {
+              "caching": "ReadOnly",
+              "createOption": "FromImage",
+              "managedDisk": {
+                "storageAccountType": "[parameters('storageAccountType')]"
+              }
+            }
+          }
+        }
+      },
+      "sku": {
+        "name": "[parameters('vmNodeType1Size')]",
+        "capacity": "[parameters('nt1InstanceCount')]",
+        "tier": "Standard"
+      },
+      "tags": {
+        "resourceType": "Service Fabric",
+        "clusterName": "[parameters('clusterName')]"
+      }
+    },
+
+```
+
 5. 클러스터에 새 노드 유형을 추가 하 여 위에서 만든 가상 머신 확장 집합을 참조 합니다. 이 노드 형식의 **isPrimary** 속성은 true로 설정 해야 합니다. 
 ```json
 "name": "[variables('vmNodeType1Name')]",
@@ -339,7 +467,7 @@ foreach($node in $nodes)
 ```
 10. ARM 템플릿에서 원래 노드 유형과 관련 된 다른 모든 리소스를 제거 합니다. 이러한 모든 원본 리소스가 제거 된 템플릿에 대 한 [Service Fabric-새 노드 형식 클러스터](https://github.com/Azure-Samples/service-fabric-cluster-templates/blob/master/Primary-NodeType-Scaling-Sample/AzureDeploy-4.json) 를 참조 하세요.
 
-11. 수정 된 Azure Resource Manager 템플릿을 배포 합니다. * *이 단계는 시간이 오래 걸립니다 (일반적으로 최대 2 시간). 이 업그레이드는 설정이 InfrastructureService 변경 되므로 노드를 다시 시작 해야 합니다. 이 경우 forceRestart은 무시 됩니다. UpgradeReplicaSetCheckTimeout 매개 변수는 아직 안전 상태가 아닌 경우 파티션이 안전한 상태가 될 때까지 Service Fabric 대기 하는 최대 시간을 지정 합니다. 안전 검사가 노드의 모든 파티션에 대해 통과 하면 Service Fabric는 해당 노드에서의 업그레이드를 진행 합니다. UpgradeTimeout 매개 변수에 대 한 값을 6 시간으로 줄일 수 있지만 최대 보안을 12 시간으로 사용 해야 합니다.
+11. 수정 된 Azure Resource Manager 템플릿을 배포 합니다. * *이 단계는 시간이 오래 걸립니다 (일반적으로 최대 2 시간). 이 업그레이드는 설정을 InfrastructureService로 변경 합니다. 따라서 노드를 다시 시작 해야 합니다. 이 경우 forceRestart은 무시 됩니다. UpgradeReplicaSetCheckTimeout 매개 변수는 아직 안전 상태가 아닌 경우 파티션이 안전한 상태가 될 때까지 Service Fabric 대기 하는 최대 시간을 지정 합니다. 안전 검사가 노드의 모든 파티션에 대해 통과 하면 Service Fabric는 해당 노드에서의 업그레이드를 진행 합니다. UpgradeTimeout 매개 변수에 대 한 값을 6 시간으로 줄일 수 있지만 최대 보안을 12 시간으로 사용 해야 합니다.
 그런 다음 포털의 Service Fabric 리소스가 준비 된 것으로 표시 되는지 확인 합니다. 
 
 ```powershell

@@ -3,12 +3,12 @@ title: 진단 로그 설정 - Azure Event Hub | Microsoft Docs
 description: Azure에서 이벤트 허브의 활동 로그 및 진단 로그를 설정하는 방법을 배웁니다.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 65c3fc783506eae19c911eb035ebc51b2db19849
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ccd38d8924765df7bfd91b4fc26bb5304f6f180d
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86521941"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927734"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Azure 이벤트 허브에 대한 진단 로그 설정
 
@@ -61,18 +61,18 @@ Event Hubs는 다음 범주에 대한 진단 로그를 캡처합니다.
 
 Name | Description
 ------- | -------
-TaskName | 실패한 작업에 대한 설명
-ActivityId | 추적에 사용되는 내부 ID
-trackingId | 추적에 사용되는 내부 ID
-resourceId | Azure Resource Manager 리소스 ID
-eventHub | 이벤트 허브 전체 이름(네임스페이스 이름 포함)
-partitionId | 데이터가 기록되는 이벤트 허브 파티션
-archiveStep | 가능한 값은 다음과 같습니다. ArchiveFlushWriter, DestinationInit
-startTime | 실패 시작 시간
-failures | 실패가 발생한 횟수
-durationInSeconds | 실패 기간
-message | 오류 메시지
-category | ArchiveLogs
+`TaskName` | 실패한 작업에 대한 설명
+`ActivityId` | 추적에 사용되는 내부 ID
+`trackingId` | 추적에 사용되는 내부 ID
+`resourceId` | Azure Resource Manager 리소스 ID
+`eventHub` | 이벤트 허브 전체 이름(네임스페이스 이름 포함)
+`partitionId` | 데이터가 기록되는 이벤트 허브 파티션
+`archiveStep` | 가능한 값은 다음과 같습니다. ArchiveFlushWriter, DestinationInit
+`startTime` | 실패 시작 시간
+`failures` | 실패가 발생한 횟수
+`durationInSeconds` | 실패 기간
+`message` | 오류 메시지
+`category` | ArchiveLogs
 
 다음 코드는 보관 로그 JSON 문자열에 대한 예입니다.
 
@@ -97,17 +97,17 @@ category | ArchiveLogs
 
 작업 로그 JSON 문자열에는 다음 표에 나열된 요소가 포함되어 있습니다.
 
-Name | Description
+속성 | Description
 ------- | -------
-ActivityId | 추적 목적으로 사용되는 내부 ID |
-EventName | 작업 이름 |
-resourceId | Azure Resource Manager 리소스 ID |
-SubscriptionId | 구독 ID |
-EventTimeString | 작업 시간 |
-EventProperties | 작업 속성 |
-상태 | 작업 상태 |
-Caller | 작업 호출자(Azure Portal 또는 관리 클라이언트) |
-범주 | OperationalLogs |
+`ActivityId` | 추적 목적으로 사용되는 내부 ID |
+`EventName` | 작업 이름 |
+`resourceId` | Azure Resource Manager 리소스 ID |
+`SubscriptionId` | 구독 ID |
+`EventTimeString` | 작업 시간 |
+`EventProperties` | 작업 속성 |
+`Status` | 작업 상태 |
+`Caller` | 작업 호출자(Azure Portal 또는 관리 클라이언트) |
+`Category` | OperationalLogs |
 
 다음 코드는 작업 로그 JSON 문자열에 대한 예입니다.
 
@@ -129,11 +129,11 @@ Example:
 ## <a name="autoscale-logs-schema"></a>자동 크기 조정 로그 스키마
 자동 크기 조정 로그 JSON에는 다음 표에 나열된 요소가 포함되어 있습니다.
 
-| Name | Description |
+| 속성 | Description |
 | ---- | ----------- | 
-| TrackingId | 추적 목적으로 사용되는 내부 ID |
-| ResourceId | Azure Resource Manager 리소스 ID입니다. |
-| 메시지 | 자동 확장 작업에 대한 세부 정보를 제공하는 정보 메시지입니다. 이 메시지에는 지정된 네임스페이스에 대한 이전 및 현재 처리량 단위 값과 TU의 확장을 트리거한 항목이 포함되어 있습니다. |
+| `TrackingId` | 추적 목적으로 사용되는 내부 ID |
+| `ResourceId` | Azure Resource Manager 리소스 ID입니다. |
+| `Message` | 자동 확장 작업에 대한 세부 정보를 제공하는 정보 메시지입니다. 이 메시지에는 지정된 네임스페이스에 대한 이전 및 현재 처리량 단위 값과 TU의 확장을 트리거한 항목이 포함되어 있습니다. |
 
 다음은 자동 크기 조정 이벤트의 예입니다. 
 
@@ -148,15 +148,15 @@ Example:
 ## <a name="kafka-coordinator-logs-schema"></a>Kafka 코디네이터 로그 스키마
 Kafka 코디네이터 로그 JSON에는 다음 표에 나열된 요소가 포함되어 있습니다.
 
-| Name | Description |
+| 속성 | Description |
 | ---- | ----------- | 
-| RequestId | 추적 목적으로 사용되는 요청 ID |
-| ResourceId | Azure Resource Manager 리소스 ID |
-| 작업(Operation) | 그룹 조정 중에 수행되는 작업의 이름 |
-| clientid | 클라이언트 ID |
-| NamespaceName | 네임스페이스 이름 | 
-| SubscriptionId | Azure 구독 ID입니다. |
-| 메시지 | 그룹 조정 중 수행된 작업에 대한 세부 정보를 제공하는 정보 또는 경고 메시지 |
+| `RequestId` | 추적 목적으로 사용되는 요청 ID |
+| `ResourceId` | Azure Resource Manager 리소스 ID |
+| `Operation` | 그룹 조정 중에 수행되는 작업의 이름 |
+| `ClientId` | 클라이언트 ID |
+| `NamespaceName` | 네임스페이스 이름 | 
+| `SubscriptionId` | Azure 구독 ID |
+| `Message` | 그룹 조정 중 수행된 작업에 대한 세부 정보를 제공하는 정보 또는 경고 메시지 |
 
 ### <a name="example"></a>예제
 
@@ -178,14 +178,14 @@ Kafka 사용자 오류 로그 JSON에는 다음 표에 나열된 요소가 포�
 
 | Name | Description |
 | ---- | ----------- |
-| TrackingId | 추적 목적으로 사용되는 추적 ID입니다. |
-| NamespaceName | 네임스페이스 이름 |
-| Eventhub | 이벤트 허브 이름 |
-| PartitionId | Partition ID |
-| GroupId | 그룹 ID |
-| clientid | 클라이언트 ID |
-| ResourceId | Azure Resource Manager 리소스 ID입니다. |
-| 메시지 | 오류에 대한 세부 정보를 제공하는 정보 메시지 |
+| `TrackingId` | 추적 목적으로 사용되는 추적 ID입니다. |
+| `NamespaceName` | 네임스페이스 이름 |
+| `Eventhub` | 이벤트 허브 이름 |
+| `PartitionId` | Partition ID |
+| `GroupId` | 그룹 ID |
+| `ClientId` | 클라이언트 ID |
+| `ResourceId` | Azure Resource Manager 리소스 ID입니다. |
+| `Message` | 오류에 대한 세부 정보를 제공하는 정보 메시지 |
 
 ## <a name="event-hubs-virtual-network-connection-event-schema"></a>Event Hubs 가상 네트워크 연결 이벤트 스키마
 
@@ -193,13 +193,13 @@ Event Hubs VNet(가상 네트워크) 연결 이벤트 JSON에는 다음 표에 �
 
 | Name | Description |
 | ---  | ----------- | 
-| SubscriptionId | Azure 구독 ID입니다. |
-| NamespaceName | 네임스페이스 이름 |
-| IPAddress | Event Hubs 서비스에 연결하는 클라이언트의 IP 주소 |
-| 작업 | 연결 요청을 평가할 때 Event Hubs 서비스에서 수행된 작업입니다. 지원되는 작업은 **연결 허용** 및 **연결 거부**입니다. |
-| 이유 | 작업이 완료된 이유를 제공합니다. |
-| 개수 | 지정된 작업의 발생 수 |
-| ResourceId | Azure Resource Manager 리소스 ID입니다. |
+| `SubscriptionId` | Azure 구독 ID |
+| `NamespaceName` | 네임스페이스 이름 |
+| `IPAddress` | Event Hubs 서비스에 연결하는 클라이언트의 IP 주소 |
+| `Action` | 연결 요청을 평가할 때 Event Hubs 서비스에서 수행된 작업입니다. 지원되는 작업은 **연결 허용** 및 **연결 거부**입니다. |
+| `Reason` | 작업이 완료된 이유를 제공합니다. |
+| `Count` | 지정된 작업의 발생 수 |
+| `ResourceId` | Azure Resource Manager 리소스 ID입니다. |
 
 ### <a name="example"></a>예제
 
@@ -219,16 +219,16 @@ Event Hubs VNet(가상 네트워크) 연결 이벤트 JSON에는 다음 표에 �
 ## <a name="customer-managed-key-user-logs"></a>고객 관리형 키 사용자 로그
 고객 관리형 키 사용자 로그 JSON에는 다음 표에 나열된 요소가 포함되어 있습니다.
 
-| Name | Description |
+| 속성 | Description |
 | ---- | ----------- | 
-| 범주 | 메시지의 범주 유형입니다. **오류** 및 **정보** 중 하나입니다. |
-| ResourceId | Azure 구독 ID 및 네임스페이스 이름을 포함하는 내부 리소스 ID |
-| KeyVault | Key Vault 리소스의 이름 |
-| 키 | Key Vault 키의 이름입니다. |
-| 버전 | Key Vault 키의 버전 |
-| 작업(Operation) | 요청을 처리하기 위해 수행된 작업의 이름 |
-| 코드 | 상태 코드 |
-| 메시지 | 오류 또는 정보 메시지에 대한 세부 정보를 제공하는 메시지 |
+| `Category` | 메시지의 범주 유형입니다. **오류** 및 **정보** 중 하나입니다. |
+| `ResourceId` | Azure 구독 ID 및 네임스페이스 이름을 포함하는 내부 리소스 ID |
+| `KeyVault` | Key Vault 리소스의 이름 |
+| `Key` | Key Vault 키의 이름입니다. |
+| `Version` | Key Vault 키의 버전 |
+| `Operation` | 요청을 처리하기 위해 수행된 작업의 이름 |
+| `Code` | 상태 코드 |
+| `Message` | 오류 또는 정보 메시지에 대한 세부 정보를 제공하는 메시지 |
 
 
 
@@ -236,7 +236,7 @@ Event Hubs VNet(가상 네트워크) 연결 이벤트 JSON에는 다음 표에 �
 - [Event Hubs 소개](./event-hubs-about.md)
 - [Event Hubs 샘플](sdks.md)
 - Event Hubs 시작
-    - [.NET Core](get-started-dotnet-standard-send-v2.md)
-    - [Java](get-started-java-send-v2.md)
-    - [Python](get-started-python-send-v2.md)
-    - [JavaScript](get-started-java-send-v2.md)
+    - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
+    - [Java](event-hubs-java-get-started-send.md)
+    - [Python](event-hubs-python-get-started-send.md)
+    - [JavaScript](event-hubs-java-get-started-send.md)

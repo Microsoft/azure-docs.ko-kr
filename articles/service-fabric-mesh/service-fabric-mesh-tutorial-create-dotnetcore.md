@@ -5,13 +5,13 @@ author: dkkapur
 ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: dekapur
-ms.custom: mvc, devcenter
-ms.openlocfilehash: e3a6ee382208119e46a816790c15ae47f16be57e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: mvc, devcenter, devx-track-csharp
+ms.openlocfilehash: 4a64d1999f13ee09cf92633fd188bfc7ed0e4856
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75495195"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011212"
 ---
 # <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>자습서: 다중 서비스 Service Fabric Mesh 앱 만들기, 디버그, 배포 및 업그레이드
 

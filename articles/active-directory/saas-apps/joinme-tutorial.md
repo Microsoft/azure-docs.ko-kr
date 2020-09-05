@@ -2,26 +2,21 @@
 title: '자습서: join.me와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 join.me 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: cda5ea0d-3270-4ba5-ad81-4df108eaad12
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7582ebab6e50a4b6dae84b0742b2979862fc113
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3e9c67cc7b24253f73e271709afd2d1e6922d85c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73155105"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547021"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-joinme"></a>자습서: Azure Active Directory와 join.me 통합
 

@@ -10,16 +10,16 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: swmachan
-ms.openlocfilehash: 4e4200e291db81ff759e21eac5b1a9b785b5657f
-ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
+ms.openlocfilehash: d8e6a4e769b08d674b355f6f88a0967316e95c63
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84888296"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782331"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>텍스트 및 음성 변환에 대 한 언어 및 지역 지원
 
-변환기를 사용 하 여 60 개 이상의 텍스트 번역 언어로 번역 합니다. NMT (신경망 변환)는 고품질 AI 기반 컴퓨터 번역을 위한 새로운 표준 이며, 신경망을 사용할 수 있을 때 변환기의 V3을 사용 하 여 기본값으로 사용할 수 있습니다.
+Translator를 사용 하 여 70 개 이상의 텍스트 번역 언어로 번역 합니다. NMT (신경망 변환)는 고품질 AI 기반 컴퓨터 번역을 위한 새로운 표준 이며, 신경망을 사용할 수 있을 때 변환기의 V3을 사용 하 여 기본값으로 사용할 수 있습니다.
 
 또한 사용자 지정 변환기와 함께 번역기를 사용 하 여 사용자의 비즈니스 및 업계에서 사용 되는 용어를 이해 하 고 Microsoft Speech Service를 사용 하 여 앱에 음성 번역을 추가 하는 신경망을 빌드할 수 있습니다.
 
@@ -47,6 +47,7 @@ Translator는 텍스트-텍스트 번역을 위해 다음과 같은 언어를 �
 |중국어 번체|   `zh-Hant`       |
 |크로아티아어|  `hr`    |
 |체코어| `cs`    |
+|다리어|  `prs`   |
 |덴마크어|    `da`        |
 |네덜란드어| `nl`|
 |영어|   `en`    |
@@ -74,6 +75,8 @@ Translator는 텍스트-텍스트 번역을 위해 다음과 같은 언어를 �
 |클링곤어|   `tlh-Latn`  |
 |클링곤어(plqaD)|   `tlh-Piqd`  |
 |한국어 |`ko`   |
+|쿠르드어 (중부)  |`ku`   |
+|쿠르드어 (북부) |`kmr`  |
 |라트비아어|   `lv`    |
 |리투아니아어|    `lt`    |
 |마다가스카르어|  `mg`    |
@@ -83,6 +86,8 @@ Translator는 텍스트-텍스트 번역을 위해 다음과 같은 언어를 �
 |마오리어| `mi`  |
 |마라티어| `mr`  |
 |노르웨이어| `nb`    |
+|오리야어|  `or`    |
+|파슈토어|    `ps`    |
 |페르시아어|   `fa`    |
 |폴란드어|    `pl`    |
 |포르투갈어(브라질)|   `pt-br` |
@@ -155,6 +160,7 @@ Translator는 변환 및 음에 대해 다음과 같은 언어를 검색 합니�
 |말레이어| `ms`        |
 |몰타어|   `mt`    |
 |노르웨이어| `nb`    |
+|파슈토어|    `ps`    |
 |페르시아어|   `fa`    |
 |폴란드어|    `pl`    |
 |포르투갈어(브라질)|   `pt-br` |
@@ -191,19 +197,19 @@ Translator는 변환 및 음에 대해 다음과 같은 언어를 검색 합니�
 | 중국어(간체) | `zh-Hans` | 중국어 간체 `Hans`| <--> | 중국어 번체 `Hant`|
 | 중국어(번체) | `zh-Hant` | 중국어 번체 `Hant`| <--> | 라틴어 `Latn` |
 | 중국어(번체) | `zh-Hant` | 중국어 번체 `Hant`| <--> | 중국어 간체 `Hans` |
-| 구자라트어 | `gu`  | 구자라트어 `Gujr` | --> | 라틴어 `Latn` |
+| 구자라트어 | `gu`  | 구자라트어 `Gujr` | <--> | 라틴어 `Latn` |
 | 히브리어 | `he` | 히브리어 `Hebr` | <--> | 라틴어 `Latn` |
 | 힌디어 | `hi` | 데바나가리어 `Deva` | <--> | 라틴어 `Latn` |
 | 일본어 | `ja` | 일본어 `Jpan` | <--> | 라틴어 `Latn` |
-| 칸나다어 | `kn` | 칸나다어 `Knda` | --> | 라틴어 `Latn` |
-| 말라얄람어 | `ml` | 말라얄람어 `Mlym` | --> | 라틴어 `Latn` |
-| 마라티어 | `mr` | 데바나가리어 `Deva` | --> | 라틴어 `Latn` |
+| 칸나다어 | `kn` | 칸나다어 `Knda` | <--> | 라틴어 `Latn` |
+| 말라얄람어 | `ml` | 말라얄람어 `Mlym` | <--> | 라틴어 `Latn` |
+| 마라티어 | `mr` | 데바나가리어 `Deva` | <--> | 라틴어 `Latn` |
 | 오리야어 | `or` | 오리야어 `Orya` | <--> | 라틴어 `Latn` |
 | 펀잡어 | `pa` | 굴묵키어 `Guru`  | <--> | 라틴어 `Latn`  |
 | 세르비아어(키릴 자모) | `sr-Cyrl` | 키릴 자모 `Cyrl`  | --> | 라틴어 `Latn` |
 | 세르비아어(라틴 문자) | `sr-Latn` | 라틴어 `Latn` | --> | 키릴 자모 `Cyrl`|
-| 타밀어 | `ta` | 타밀어 `Taml` | --> | 라틴어 `Latn` |
-| 텔루구어 | `te` | 텔루구어 `Telu` | --> | 라틴어 `Latn` |
+| 타밀어 | `ta` | 타밀어 `Taml` | <--> | 라틴어 `Latn` |
+| 텔루구어 | `te` | 텔루구어 `Telu` | <--> | 라틴어 `Latn` |
 | 태국어 | `th` | 태국어 `Thai` | --> | 라틴어 `Latn` |
 
 ### <a name="dictionary"></a>Dictionary
@@ -293,6 +299,7 @@ Translator는 변환 및 음에 대해 다음과 같은 언어를 검색 합니�
 | 프랑스어      | `fr`          |
 | 독일어      | `de`          |
 | 그리스어      | `el`          |
+| 구자라트어| `gu`    |
 | 히브리어      | `he`          |
 | 힌디어      | `hi`          |
 | 헝가리어      | `hu`          |
@@ -306,11 +313,14 @@ Translator는 변환 및 음에 대해 다음과 같은 언어를 검색 합니�
 | 라트비아어      | `lv`          |
 | 리투아니아어      | `lt`          |
 | 마다가스카르어| `mg`    |
+| 말레이어|    `ms`        |
 | 마오리어| `mi`  |
+| 마라티어| `mr`  |
 | 노르웨이어      | `nb`          |
 | 페르시아어      | `fa`          |
 | 폴란드어      | `pl`          |
 | 포르투갈어(브라질) | `pt-br` |
+| 펀잡어|`pa`|
 | 루마니아어      | `ro`          |
 | 러시아어      | `ru`          |
 | 사모아어|   `sm`    |
@@ -322,6 +332,7 @@ Translator는 변환 및 음에 대해 다음과 같은 언어를 검색 합니�
 | 태국어      | `th`          |
 | 터키어      | `tr`          |
 | 우크라이나어      | `uk`          |
+| 우르두어| `ur`    |
 | 베트남어      | `vi`          |
 | 웨일스어 | `cy` |
 

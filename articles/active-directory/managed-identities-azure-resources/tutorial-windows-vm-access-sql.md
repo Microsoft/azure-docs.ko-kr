@@ -3,7 +3,7 @@ title: 자습서`:` 관리 ID를 사용하여 Azure SQL Database에 액세스 - 
 description: Windows VM 시스템 할당 관리 ID를 사용하여 Azure SQL Database에 액세스하는 프로세스를 단계별로 안내하는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 ms.service: active-directory
 ms.subservice: msi
@@ -12,14 +12,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/14/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13be33843172f505ed8f12293137c0808e9bd2a0
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: d576fb4f5dea10a2adf0d7488aa422e1397fd6d1
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85920371"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89255752"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-sql"></a>자습서: Windows VM 시스템 할당 관리 ID를 사용하여 Azure SQL에 액세스
 
@@ -44,7 +44,7 @@ ms.locfileid: "85920371"
 
 ## <a name="grant-access"></a>액세스 권한 부여
 
-Azure SQL Databaser의 데이터베이스에 대한 액세스 권한을 VM에 부여하려면 기존 [논리 SQL 서버](../../azure-sql/database/logical-servers.md)를 사용하거나 서버를 새로 만들면 됩니다. Azure Portal을 사용하여 새 서버 및 데이터베이스를 만들려면 다음 [Azure SQL 빠른 시작](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal)을 따릅니다. [Azure SQL 설명서](https://docs.microsoft.com/azure/sql-database/)에서 Azure CLI 및 Azure PowerShell을 사용하는 빠른 시작도 있습니다.
+Azure SQL Databaser의 데이터베이스에 대한 액세스 권한을 VM에 부여하려면 기존 [논리 SQL 서버](../../azure-sql/database/logical-servers.md)를 사용하거나 서버를 새로 만들면 됩니다. Azure Portal을 사용하여 새 서버 및 데이터베이스를 만들려면 다음 [Azure SQL 빠른 시작](../../azure-sql/database/single-database-create-quickstart.md)을 따릅니다. [Azure SQL 설명서](/azure/sql-database/)에서 Azure CLI 및 Azure PowerShell을 사용하는 빠른 시작도 있습니다.
 
 VM에 데이터베이스에 대한 액세스 권한을 부여하는 과정은 다음과 같은 2단계로 진행됩니다.
 
@@ -53,7 +53,7 @@ VM에 데이터베이스에 대한 액세스 권한을 부여하는 과정은 �
 
 ### <a name="enable-azure-ad-authentication"></a>Azure AD 인증 사용
 
-**Azure[ AD 인증 구성하기](/azure/sql-database/sql-database-aad-authentication-configure):**
+**Azure[ AD 인증 구성하기](../../azure-sql/database/authentication-aad-configure.md):**
 
 1. Azure Portal의 왼쪽 탐색 영역에서 **SQL Server**를 선택합니다.
 2. Azure AD 인증에 사용할 SQL Server를 클릭합니다.
@@ -64,10 +64,10 @@ VM에 데이터베이스에 대한 액세스 권한을 부여하는 과정은 �
 
 ### <a name="create-contained-user"></a>포함된 사용자 만들기
 
-이 섹션에서는 VM의 시스템 할당 ID를 나타내는 데이터베이스에 포함된 사용자를 만드는 방법을 보여줍니다. 이 단계에서는 [Microsoft SSMS(SQL Server Management Studio)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)가 필요합니다. 시작하기 전에 다음 문서를 검토하여 Azure AD 통합의 배경 정보를 숙지하면 도움이 될 수 있습니다.
+이 섹션에서는 VM의 시스템 할당 ID를 나타내는 데이터베이스에 포함된 사용자를 만드는 방법을 보여줍니다. 이 단계에서는 [Microsoft SSMS(SQL Server Management Studio)](/sql/ssms/download-sql-server-management-studio-ssms)가 필요합니다. 시작하기 전에 다음 문서를 검토하여 Azure AD 통합의 배경 정보를 숙지하면 도움이 될 수 있습니다.
 
-- [SQL Database 및 Azure Synapse Analytics를 통한 유니버설 인증(MFA에 대한 SSMS 지원)](/azure/sql-database/sql-database-ssms-mfa-authentication)
-- [SQL Database 또는 Azure Synapse Analytics를 사용하여 Azure Active Directory 인증 구성 및 관리](/azure/sql-database/sql-database-aad-authentication-configure)
+- [SQL Database 및 Azure Synapse Analytics를 통한 유니버설 인증(MFA에 대한 SSMS 지원)](../../azure-sql/database/authentication-mfa-ssms-overview.md)
+- [SQL Database 또는 Azure Synapse Analytics를 사용하여 Azure Active Directory 인증 구성 및 관리](../../azure-sql/database/authentication-aad-configure.md)
 
 SQL DB에는 고유한 AAD 표시 이름이 필요합니다. 이를 통해 사용자, 그룹 및 서비스 주체(애플리케이션)와 같은 AAD 계정 및 관리 ID에 사용하도록 설정된 VM 이름은 해당 표시 이름과 관련하여 AAD에서 고유하게 정의되어야 합니다. SQL DB는 이러한 사용자의 T-SQL을 만드는 중에 AAD 표시 이름을 확인하고, 고유하지 않은 경우 지정된 계정에 고유한 AAD 표시 이름을 제공하도록 요청하는 데 실패합니다.
 
@@ -208,4 +208,4 @@ if (accessToken != null) {
 이 자습서에서는 시스템 할당 관리 ID를 사용하여 Azure SQL Database에 액세스하는 방법을 알아보았습니다. Azure SQL Database에 대한 자세한 정보는 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
-> [Azure SQL Database](/azure/sql-database/sql-database-technical-overview)
+> [Azure SQL Database](../../azure-sql/database/sql-database-paas-overview.md)

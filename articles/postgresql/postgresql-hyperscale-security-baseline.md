@@ -6,13 +6,13 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: debbc47204aca2fbea1307bd4b692921725e5fd0
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 37ebd1702ed8ef059b38378b89f5a5cb61748568
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563911"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231302"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale"></a>Azure Database for PostgreSQL-Hyperscale의 Azure 보안 기준
 
@@ -347,13 +347,13 @@ Azure Portal를 통해 프로 비전 된 모든 Azure Database for PostgreSQL �
 
 **책임**: 공유됨
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: Azure 역할 기반 액세스 제어 (RBAC)를 사용 하 여 Citus (hyperscale) 제어 평면 (예: Azure Portal)에 대 한 액세스를 제어 합니다. RBAC는 데이터베이스 내의 사용자 권한에 영향을 주지 않습니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Citus (hyperscale) 제어 평면 (예: Azure Portal)에 대 한 액세스를 제어 합니다. Azure RBAC는 데이터베이스 내의 사용자 권한에 영향을 주지 않습니다.
 
 데이터베이스 수준에서 사용자 권한을 수정 하려면 PgAdmin 또는 psql과 같은 도구를 사용 하 여 표준 PostgreSQL 명령을 사용 합니다.
 
-- [Azure에서 RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- [Azure RBAC를 구성 하는 방법](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
 - [Azure Database for PostgreSQL 용 SQL을 사용 하 여 사용자 액세스를 구성 하는 방법](https://docs.microsoft.com/azure/postgresql/howto-hyperscale-create-users)
 
@@ -458,7 +458,7 @@ Azure Database for PostgreSQL 하루에 한 번 Citus ()는 데이터 파일과 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5: 승인되지 않은 Azure 리소스 모니터링
 
@@ -724,7 +724,7 @@ Azure Database for PostgreSQL 하루에 한 번 Citus ()는 데이터 파일과 
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10.6: 보안 경고에 대한 대응 자동화
 

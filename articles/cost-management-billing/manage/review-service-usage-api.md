@@ -3,15 +3,16 @@ title: REST API를 사용하여 Azure 서비스 리소스 사용 검토
 description: Azure REST API를 사용하여 Azure 서비스 리소스 사용을 검토하는 방법을 알아봅니다. 비용 관리 보고서를 만들고 특정 리소스 종류로 필터링합니다.
 author: lleonard-msft
 ms.service: cost-management-billing
+ms.subservice: enterprise
 ms.topic: reference
-ms.date: 03/31/2020
+ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 89767ff64da0473feef9e1d340ee4046cd4a1373
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: a7b06ff41e537513558e7f4dc8e1732966299b01
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87461717"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684731"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>REST API를 사용하여 Azure 리소스 사용 검토
 

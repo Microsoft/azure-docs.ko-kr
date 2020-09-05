@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: d0a6b6561b5d0995d7794993608a4991b1da2718
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 224623f7851c35b12e1f2e1d028355c202128fa1
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810142"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244758"
 ---
 # <a name="azure-security-baseline-for-backup"></a>백업용 Azure 보안 기준
 
@@ -350,7 +350,7 @@ Log Analytics 작업 영역을 Azure 센티널에 등록 하 여 보안 오케�
 
 - [Azure AD 로그인을 사용 하도록 Azure Backup를 구성 하는 방법](../app-service/configure-authentication-provider-aad.md)
 
-- [AAD 인스턴스를 만들고 구성하는 방법](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Azure AD 인스턴스를 만들고 구성 하는 방법](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Azure Security Center 모니터링**: 예
 
@@ -480,11 +480,11 @@ Microsoft는 Azure Backup에 대 한 기본 인프라를 관리 하 고, 고객 
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: azure RBAC (역할 기반 액세스 제어)는 azure에 대 한 세밀 한 액세스 관리를 가능 하 게 합니다. RBAC를 사용하면 팀 내에서 업무를 분리하고 사용자에게 해당 작업을 수행하는 데 필요한 만큼의 권한만 부여할 수 있습니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)는 azure에 대 한 세밀 한 액세스 관리를 가능 하 게 합니다. Azure RBAC를 사용하면 팀 내에서 업무를 분리하고 사용자에게 해당 작업을 수행하는 데 필요한 만큼의 권한만 부여할 수 있습니다.
 
 Azure Backup 백업 관리 작업을 제어 하기 위한 세 가지 기본 제공 역할인 백업 참여자, 백업 운영자 및 백업 판독기를 제공 합니다. 백업 기본 제공 역할을 다양 한 백업 관리 작업에 매핑할 수 있습니다.
 
-- [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
+- [Azure RBAC를 구성 하는 방법](../role-based-access-control/role-assignments-portal.md)
 
 - [역할 기반 Access Control을 사용하여 Azure Backup 복구 지점 관리](./backup-rbac-rs-vault.md)
 
@@ -580,7 +580,7 @@ Microsoft에서 검사하고 패치하는 기본 플랫폼입니다. 서비스 �
 
 ### <a name="61-use-azure-asset-discovery"></a>6.1: Azure 자산 검색 사용
 
-**지침**: Azure Resource Graph를 사용하여 구독 내의 모든 리소스(예: 컴퓨팅, 스토리지, 네트워크, 포트 및 프로토콜 등)를 쿼리/검색합니다.  테넌트에서 적절한 권한(읽기)을 확인하고, 모든 Azure 구독 및 구독 내의 리소스를 열거합니다.
+**지침**: Azure 리소스 그래프를 사용 하 여 구독 내의 모든 리소스 (예: 계산, 저장소, 네트워크, 포트 및 프로토콜)를 쿼리/검색 합니다.  테넌트에서 적절한 권한(읽기)을 확인하고, 모든 Azure 구독 및 구독 내의 리소스를 열거합니다.
 
 클래식 Azure 리소스는 Resource Graph를 통해 검색할 수 있지만 앞으로 Azure Resource Manager 리소스를 만들어 사용하는 것이 좋습니다.
 
@@ -860,7 +860,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 **지침**: Microsoft 맬웨어 방지 프로그램은 Azure 서비스 (예: Azure Backup)를 지 원하는 기본 호스트에서 사용 하도록 설정 되어 있지만 콘텐츠에서 실행 되지 않습니다.
 
-App Service, Data Lake Storage, Blob Storage 등의 비 계산 Azure 리소스에 업로드 되는 파일을 미리 검색 합니다.
+App Service, Data Lake Storage 및 Blob Storage와 같은 비 계산 Azure 리소스에 업로드 되는 파일을 미리 검색 합니다.
 
 데이터 서비스에 대 한 Azure Security Center의 위협 검색을 사용 하 여 저장소 계정에 업로드 된 맬웨어를 검색 합니다.
 
@@ -902,7 +902,7 @@ Azure Key Vault 내에서 고객 관리 키를 백업 합니다.
 
 - [Azure에서 키 자격 증명 모음 키를 백업하는 방법](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
-- [Azure Backup의 암호화 이해](./backup-encryption.md#encryption-of-backup-data-using-customer-managed-keys)
+- [Azure Backup의 암호화 이해](./backup-encryption.md)
 
 **Azure Security Center 모니터링**: 해당 없음
 

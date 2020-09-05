@@ -1,14 +1,14 @@
 ---
 title: 미디어 청사진 샘플 제어
 description: 미디어 청사진 샘플의 제어 매핑입니다. 각 컨트롤은 평가를 지원하는 하나 이상의 Azure 정책에 매핑됩니다.
-ms.date: 02/24/2020
+ms.date: 08/13/2020
 ms.topic: sample
-ms.openlocfilehash: bdc4ef65c6d61a9d4217d7873bb29bd787842e71
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 4101b9030425c22b8806870d467581521870d639
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78201740"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208469"
 ---
 # <a name="control-mapping-of-the-media-blueprint-sample"></a>미디어 청사진 샘플의 제어 매핑
 
@@ -31,7 +31,7 @@ ms.locfileid: "78201740"
 
 ### <a name="ac-18---shared-account-access-is-prohibited"></a>AC-1.8 - 공유 계정 액세스가 금지됨
 
-- Service Bus 네임스페이스에서 RootManageSharedAccessKey를 제외한 모든 권한 부여 규칙을 제거해야 함
+- Service Bus 네임스페이스에서 RootManageSharedAccessKey를 제외한 모든 인증 규칙을 제거해야 함
 
 ### <a name="ac-19--system-must-restrict-access-to-authorized-users"></a>AC-1.9 - 시스템에서 권한 있는 사용자에 대한 액세스를 제한해야 함
 
@@ -137,7 +137,7 @@ ms.locfileid: "78201740"
 
 ### <a name="cm-514--identify-and-disable-unnecessary-andor-non-secure-functions-ports-protocols-and-services"></a>CM-5.14 - 불필요하거나 안전하지 않은 함수, 포트, 프로토콜 및 서비스 식별 및 사용 안 함
 
-- 네트워크 인터페이스에서 IP 전달을 사용하지 않아야 함
+- 네트워크 인터페이스가 IP 전달을 사용하지 않아야 함
 - \[미리 보기\]: 가상 머신에서 IP 전달을 사용하지 않도록 설정해야 함
 
 ### <a name="cm-519--monitor-changes-to-the-security-configuration-settings"></a>CM-5.19 - 보안 구성 설정에 대한 변경 모니터링
@@ -236,8 +236,8 @@ ms.locfileid: "78201740"
 미디어 청사진 샘플의 제어 매핑을 검토했습니다. 이번에는 다음 문서를 참조하여 이 샘플의 개요 및 배포 방법을 알아보세요.
 
 > [!div class="next step action"]
-> [미디어 청사진 - 개요](./control-mapping.md)
-> [미디어 청사진 - 배포 단계](./deploy.md)
+> [Media 청사진 - 컨트롤 매핑](./control-mapping.md)
+> [Media 청사진 - 배포 단계](./deploy.md)
 
 청사진 및 사용 방법에 대한 추가 문서:
 

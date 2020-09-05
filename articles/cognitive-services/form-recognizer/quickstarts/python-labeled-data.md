@@ -9,28 +9,28 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
-ms.custom: tracking-python
-ms.openlocfilehash: b177063d4e50a310534ffa4c04557543c3354249
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.custom: devx-track-python
+ms.openlocfilehash: e96940960b6ee131068b77bca4818499377ea3dd
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86028088"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723500"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-rest-api-and-python"></a>REST API 및 Python을 사용하여 레이블로 Form Recognizer 모델 학습
 
 이 빠른 시작에서는 Python과 함께 Form Recognizer REST API를 사용하여 수동 레이블 지정 데이터로 사용자 지정 모델을 학습시킬 것입니다. 이 기능에 대한 자세한 내용은 개요의 [레이블로 학습](../overview.md#train-with-labels) 섹션을 참조하세요.
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
 이 빠른 시작을 완료하려면 다음 항목이 있어야 합니다.
 - 샘플을 로컬로 실행하려면 [Python](https://www.python.org/downloads/)이 설치되어 있어야 합니다.
-- 동일한 형식의 양식 6개 이상으로 구성된 세트. 이 데이터를 사용하여 모델을 학습시키고 양식을 테스트합니다. 이 빠른 시작에서는 [샘플 데이터 세트](https://go.microsoft.com/fwlink/?linkid=2090451)를 사용할 수 있습니다. Azure Storage 계정의 Blob 스토리지 컨테이너 루트에 학습 파일을 업로드합니다.
+- 동일한 형식의 양식 6개 이상으로 구성된 세트. 이 데이터를 사용하여 모델을 학습시키고 양식을 테스트합니다. 이 빠른 시작에서는 [샘플 데이터 세트](https://go.microsoft.com/fwlink/?linkid=2090451)를 사용할 수 있습니다. 표준 성능 계층 Azure Storage 계정의 Blob 스토리지 컨테이너 루트에 학습 파일을 업로드합니다.
 
 > [!NOTE]
-> 이 빠른 시작에서는 URL로 액세스하는 원격 문서를 사용합니다. 로컬 파일을 대신 사용하려면 [참조 설명서](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync)를 참조하세요.
+> 이 빠른 시작에서는 URL로 액세스하는 원격 문서를 사용합니다. 로컬 파일을 대신 사용하려면 [v2.0에 대한 참조 설명서](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) 및 [v2.1에 대한 참조 설명서](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-1/operations/TrainCustomModelAsync)를 참조하세요.
 
 ## <a name="create-a-form-recognizer-resource"></a>Form Recognizer 리소스 만들기
 
@@ -40,9 +40,9 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 다음으로, 필요한 입력 데이터를 설정해야 합니다. 레이블이 지정된 데이터 기능에는 레이블이 없는 사용자 지정 모델을 학습하는 데 필요한 것 이상의 특별한 입력 요구 사항이 있습니다.
 
-모든 학습 문서가 동일한 형식인지 확인합니다. 양식의 형식이 여러 개인 경우 공통 형식에 따라 하위 폴더로 구성합니다. 학습시킬 때 API를 하위 폴더로 전달해야 합니다.
+모든 학습 문서가 동일한 형식인지 확인합니다. 여러 형식의 양식이 있으면 공용 형식에 따라 하위 폴더로 구성합니다. 학습시키는 경우 API를 하위 폴더로 전달해야 합니다.
 
-레이블 지정 데이터를 사용하여 모델을 학습시키려면 하위 폴더의 입력으로 다음 파일이 필요합니다. 이러한 파일을 만드는 방법은 아래에서 배웁니다.
+레이블 지정 데이터를 사용하여 모델을 학습시키려면 하위 폴더의 입력으로 다음 파일이 필요합니다. 아래에서 이러한 파일을 만드는 방법을 알아봅니다.
 
 * **원본 양식** – 데이터를 추출할 양식입니다. 지원되는 형식은 JPEG, PNG, PDF 또는 TIFF입니다.
 * **OCR 레이아웃 파일** - 각 원본 양식에서 읽을 수 있는 모든 텍스트의 크기와 위치를 설명하는 JSON 파일입니다. Form Recognizer 레이아웃 API를 사용하여 이 데이터를 생성할 것입니다. 
@@ -69,6 +69,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 1. 이전 단계의 작업 ID를 사용하여 **[분석 레이아웃 결과 가져오기](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/GetAnalyzeLayoutResult)** API를 호출합니다.
 1. 응답을 가져오고 파일에 콘텐츠를 씁니다. 각 원본 양식과 관련하여, 해당 OCR 파일의 원래 파일 이름에 `.ocr.json`을 추가해야 합니다. OCR JSON 출력 형식은 다음과 같습니다. 전체 예제는 [샘플 OCR 파일](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/Invoice_1.pdf.ocr.json)을 참조하세요. 
 
+    # <a name="v20"></a>[v2.0](#tab/v2-0)
     ```json
     {
     "status": "succeeded",
@@ -116,7 +117,61 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
                         ]
                     },
                     ...
-    ```
+    ```    
+    # <a name="v21-preview"></a>[v2.1 미리 보기](#tab/v2-1)
+    ```json
+    {
+    "status": "succeeded",
+    "createdDateTime": "2019-11-12T21:18:12Z",
+    "lastUpdatedDateTime": "2019-11-12T21:18:17Z",
+    "analyzeResult": {
+        "version": "2.1.0",
+        "readResults": [
+            {
+                "page": 1,
+                "language": "en",
+                "angle": 0,
+                "width": 8.5,
+                "height": 11,
+                "unit": "inch",
+                "lines": [
+                    {
+                        "language": "en",
+                        "boundingBox": [
+                            0.5384,
+                            1.1583,
+                            1.4466,
+                            1.1583,
+                            1.4466,
+                            1.3534,
+                            0.5384,
+                            1.3534
+                        ],
+                        "text": "Contoso",
+                        "words": [
+                            {
+                                "boundingBox": [
+                                    0.5384,
+                                    1.1583,
+                                    1.4466,
+                                    1.1583,
+                                    1.4466,
+                                    1.3534,
+                                    0.5384,
+                                    1.3534
+                                ],
+                                "text": "Contoso",
+                                "confidence": 1
+                            }
+                        ]
+                    },
+                    ...
+    ```    
+
+
+    ---
+
+
 
 ### <a name="create-the-label-files"></a>레이블 파일 만들기
 
@@ -203,6 +258,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 1. `<SAS URL>`을 Azure Blob Storage 컨테이너의 SAS(공유 액세스 서명) URL로 바꿉니다. SAS URL를 검색하려면 Microsoft Azure Storage Explorer를 열고, 컨테이너를 마우스 오른쪽 단추로 클릭하고, **공유 액세스 서명 가져오기**를 선택합니다. **읽기** 권한과 **목록 사용** 권한이 선택되어 있는지 확인하고 **만들기**를 클릭합니다. 그런 다음 **URL** 섹션의 값을 복사합니다. `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` 형식이어야 합니다.
 1. `<Blob folder name>`을 입력 데이터가 있는 Blob 컨테이너의 폴더 이름으로 바꿉니다. 또는 데이터가 루트에 있는 경우에는 이 값을 비워 두고 HTTP 요청 본문에서 `"prefix"` 필드를 제거합니다.
 
+# <a name="v20"></a>[v2.0](#tab/v2-0)
 ```python
 ########### Python Form Recognizer Labeled Async Train #############
 import json
@@ -242,7 +298,52 @@ try:
 except Exception as e:
     print("POST model failed:\n%s" % str(e))
     quit() 
-```
+```    
+# <a name="v21-preview"></a>[v2.1 미리 보기](#tab/v2-1)    
+```python
+########### Python Form Recognizer Labeled Async Train #############
+import json
+import time
+from requests import get, post
+
+# Endpoint URL
+endpoint = r"<Endpoint>"
+post_url = endpoint + r"/formrecognizer/v2.1-preview.1/custom/models"
+source = r"<SAS URL>"
+prefix = "<Blob folder name>"
+includeSubFolders = False
+useLabelFile = True
+
+headers = {
+    # Request headers
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': '<subsription key>',
+}
+
+body =     {
+    "source": source,
+    "sourceFilter": {
+        "prefix": prefix,
+        "includeSubFolders": includeSubFolders
+    },
+    "useLabelFile": useLabelFile
+}
+
+try:
+    resp = post(url = post_url, json = body, headers = headers)
+    if resp.status_code != 201:
+        print("POST model failed (%s):\n%s" % (resp.status_code, json.dumps(resp.json())))
+        quit()
+    print("POST model succeeded:\n%s" % resp.headers)
+    get_url = resp.headers["location"]
+except Exception as e:
+    print("POST model failed:\n%s" % str(e))
+    quit() 
+```   
+
+---
+
+
 
 ## <a name="get-training-results"></a>학습 결과 가져오기
 
@@ -350,199 +451,294 @@ print("Train operation did not complete within the allocated time.")
 
 [!INCLUDE [analyze forms](../includes/python-custom-analyze.md)]
 
-프로세스가 완료되면 다음 형식의 JSON 콘텐츠가 포함된 `202 (Success)` 응답을 받게 됩니다. 이 응답은 간단한 설명을 위해 단축되었습니다. 기본 키/값 연결은 `"documentResults"` 노드에 있습니다. 레이아웃 API 결과(문서에 있는 모든 텍스트의 콘텐츠 및 위치)는 `"readResults"` 노드에 있습니다.
+프로세스가 완료되면 다음 형식의 JSON 콘텐츠가 포함된 `202 (Success)` 응답을 받게 됩니다. 이 응답은 간단한 설명을 위해 단축되었습니다. 기본 키/값 연결은 `"documentResults"` 노드에 있습니다. `"selectionMarks"` 노드(v2.1 미리 보기에서)는 모든 선택 표시(확인란, 라디오 표시) 및 상태가 "선택됨" 또는 "선택되지 않음"인지 여부를 표시합니다. 레이아웃 API 결과(문서에 있는 모든 텍스트의 콘텐츠 및 위치)는 `"readResults"` 노드에 있습니다.
 
+# <a name="v20"></a>[v2.0](#tab/v2-0)
 ```json
-{ 
-    "analyzeResult":{ 
-      "version":"2.0.0",
-      "readResults":[ 
-        { 
-          "page":1,
-          "language":"en",
-          "angle":0,
-          "width":8.5,
-          "height":11,
-          "unit":"inch",
-          "lines":[ 
-            { 
-              "language":"en",
-              "boundingBox":[ 
-                0.5375,
-                1.1349,
-                2.6064,
-                1.1349,
-                2.6064,
-                1.354,
-                0.5375,
-                1.354
-              ],
-              "text":"Contoso Suites",
-              "words":[ 
-                { 
-                  "boundingBox":[ 
-                    0.5375,
-                    1.1402,
-                    1.6595,
-                    1.1402,
-                    1.6595,
-                    1.354,
-                    0.5375,
-                    1.354
-                  ],
-                  "text":"Contoso",
-                  "confidence":1
-                },
-                { 
-                  "boundingBox":[ 
-                    1.758,
-                    1.1349,
-                    2.6064,
-                    1.1349,
-                    2.6064,
-                    1.3534,
-                    1.758,
-                    1.3534
-                  ],
-                  "text":"Suites",
-                  "confidence":1
-                }
-              ]
-            },
-            ...
-          ]
-        }
-      ],
-      "pageResults":[ 
-        { 
-          "page":1,
-          "tables":[ 
-            { 
-              "rows":2,
-              "columns":6,
-              "cells":[ 
-                { 
-                  "rowIndex":0,
-                  "columnIndex":0,
-                  "text":"Invoice Number",
-                  "boundingBox":[ 
-                    0.5075,
-                    2.8088,
-                    1.9061,
-                    2.8088,
-                    1.9061,
-                    3.3219,
-                    0.5075,
-                    3.3219
-                  ],
-                  "elements":[ 
-                    "#/readResults/0/lines/7/words/0",
-                    "#/readResults/0/lines/7/words/1"
-                  ]
-                },
-                { 
-                  "rowIndex":0,
-                  "columnIndex":1,
-                  "text":"Invoice Date",
-                  "boundingBox":[ 
-                    1.9061,
-                    2.8088,
-                    3.3074,
-                    2.8088,
-                    3.3074,
-                    3.3219,
-                    1.9061,
-                    3.3219
-                  ],
-                  "elements":[ 
-                    "#/readResults/0/lines/8/words/0",
-                    "#/readResults/0/lines/8/words/1"
-                  ]
-                },
-                ...        
-              ]
-            }
-          ]
-        }
-      ],
-      "documentResults":[ 
-        { 
-          "docType":"Analyze",
-          "pageRange":[ 
-            1,
-            1
-          ],
-          "fields":{ 
-            "total":{ 
-              "type":"string",
-              "valueString":"$22,123.24",
-              "text":"$22,123.24",
-              "boundingBox":[ 
-                5.29,
-                3.41,
-                5.9750000000000009,
-                3.41,
-                5.9750000000000009,
-                3.54,
-                5.29,
-                3.54
-              ],
-              "page":1,
-              "confidence":1,
-              "elements":[ 
-                "#/analyzeResult/readResults/0/lines/15/words/0"
-              ]
-            },
-            "invoice #":{ 
-              "type":"string",
-              "valueString":"7689302",
-              "text":"7689302",
-              "boundingBox":[ 
-                0.54,
-                3.41,
-                1.065,
-                3.41,
-                1.065,
-                3.515,
-                0.54,
-                3.515
-              ],
-              "page":1,
-              "confidence":1,
-              "elements":[ 
-                "#/analyzeResult/readResults/0/lines/12/words/0"
-              ]
-            },
-            "vat":{ 
-              "type":"string",
-              "valueString":"QR",
-              "text":"QR",
-              "boundingBox":[ 
-                6.2250000000000009,
-                3.41,
-                6.425,
-                3.41,
-                6.425,
-                3.52,
-                6.2250000000000009,
-                3.52
-              ],
-              "page":1,
-              "confidence":0.9839357733726502,
-              "elements":[ 
-                "#/analyzeResult/readResults/0/lines/16/words/0"
-              ]
-            },
-            ...
+{
+  "status": "succeeded",
+  "createdDateTime": "2020-08-21T02:16:28Z",
+  "lastUpdatedDateTime": "2020-08-21T02:16:35Z",
+  "analyzeResult": {
+    "version": "2.0.0",
+    "readResults": [
+      {
+        "page": 1,
+        "language": "en",
+        "angle": 0,
+        "width": 8.5,
+        "height": 11,
+        "unit": "inch",
+        "lines": [
+          {
+            "boundingBox": [
+              0.5826,
+              0.4411,
+              2.3387,
+              0.4411,
+              2.3387,
+              0.7969,
+              0.5826,
+              0.7969
+            ],
+            "text": "Contoso, Ltd.",
+            "words": [
+              {
+                "boundingBox": [
+                  0.5826,
+                  0.4411,
+                  1.744,
+                  0.4411,
+                  1.744,
+                  0.7969,
+                  0.5826,
+                  0.7969
+                ],
+                "text": "Contoso,",
+                "confidence": 1
+              },
+              {
+                "boundingBox": [
+                  1.8448,
+                  0.4446,
+                  2.3387,
+                  0.4446,
+                  2.3387,
+                  0.7631,
+                  1.8448,
+                  0.7631
+                ],
+                "text": "Ltd.",
+                "confidence": 1
+              }
+            ]
+          },
+          ...
+            ]
           }
+        ] 
+      }
+    ],
+    "pageResults": [
+      {
+        "page": 1,
+        "tables": [
+          {
+            "rows": 5,
+            "columns": 5,
+            "cells": [
+              {
+                "rowIndex": 0,
+                "columnIndex": 0,
+                "text": "Training Date",
+                "boundingBox": [
+                  0.5133,
+                  4.2167,
+                  1.7567,
+                  4.2167,
+                  1.7567,
+                  4.4492,
+                  0.5133,
+                  4.4492
+                ],
+                "elements": [
+                  "#/readResults/0/lines/14/words/0",
+                  "#/readResults/0/lines/14/words/1"
+                ]
+              },
+              ...
+            ]
+          },
+        ]
+      }
+    ],
+    "documentResults": [
+      {
+        "docType": "custom:form",
+        "pageRange": [
+          1,
+          1
+        ],
+        "fields": {
+          "Receipt No": {
+            "type": "string",
+            "valueString": "9876",
+            "text": "9876",
+            "page": 1,
+            "boundingBox": [
+              7.615,
+              1.245,
+              7.915,
+              1.245,
+              7.915,
+              1.35,
+              7.615,
+              1.35
+            ],
+            "confidence": 1,
+            "elements": [
+              "#/readResults/0/lines/3/words/3"
+            ]
+          },
+          ...
         }
-      ]
-    },
-    "status":"succeeded",
-    "createdDateTime":"2019-11-12T21:26:19+00:00",
-    "lastUpdatedDateTime":"2019-11-12T21:27:27.0488571+00:00"
+      }
+    ],
+    "errors": []
+  }
 }
 ```
+# <a name="v21-preview"></a>[v2.1 미리 보기](#tab/v2-1) 
+```json   
+{
+  "status": "succeeded",
+  "createdDateTime": "2020-08-21T02:29:42Z",
+  "lastUpdatedDateTime": "2020-08-21T02:29:50Z",
+  "analyzeResult": {
+    "version": "2.1.0",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": 0,
+        "width": 8.5,
+        "height": 11,
+        "unit": "inch",
+        "lines": [
+          {
+            "boundingBox": [
+              0.5826,
+              0.4411,
+              2.3387,
+              0.4411,
+              2.3387,
+              0.7969,
+              0.5826,
+              0.7969
+            ],
+            "text": "Contoso, Ltd.",
+            "words": [
+              {
+                "boundingBox": [
+                  0.5826,
+                  0.4411,
+                  1.744,
+                  0.4411,
+                  1.744,
+                  0.7969,
+                  0.5826,
+                  0.7969
+                ],
+                "text": "Contoso,",
+                "confidence": 1
+              },
+              {
+                "boundingBox": [
+                  1.8448,
+                  0.4446,
+                  2.3387,
+                  0.4446,
+                  2.3387,
+                  0.7631,
+                  1.8448,
+                  0.7631
+                ],
+                "text": "Ltd.",
+                "confidence": 1
+              }
+            ]
+          },
+          ...
+        ], 
+        "selectionMarks": [
+          {
+            "boundingBox": [
+              3.9737,
+              3.7475,
+              4.1693,
+              3.7475,
+              4.1693,
+              3.9428,
+              3.9737,
+              3.9428
+            ],
+            ...
+        ] 
+      }
+    ],
+    "pageResults": [
+      {
+        "page": 1,
+        "tables": [
+          {
+            "rows": 5,
+            "columns": 5,
+            "cells": [
+              {
+                "rowIndex": 0,
+                "columnIndex": 0,
+                "text": "Training Date",
+                "boundingBox": [
+                  0.5133,
+                  4.2167,
+                  1.7567,
+                  4.2167,
+                  1.7567,
+                  4.4492,
+                  0.5133,
+                  4.4492
+                ],
+                "elements": [
+                  "#/readResults/0/lines/12/words/0",
+                  "#/readResults/0/lines/12/words/1"
+                ]
+              },
+              ...
+            ]
+          }
+        ] 
+      }
+    ], 
+    "documentResults": [
+      {
+        "docType": "custom:e1073364-4f3d-4797-8cc4-4bdbcd0dab6b",
+        "modelId": "e1073364-4f3d-4797-8cc4-4bdbcd0dab6b",
+        "pageRange": [
+          1,
+          1
+        ],
+        "fields": {
+          "ID #": {
+            "type": "string",
+            "valueString": "5554443",
+            "text": "5554443",
+            "page": 1,
+            "boundingBox": [
+              2.315,
+              2.43,
+              2.74,
+              2.43,
+              2.74,
+              2.515,
+              2.315,
+              2.515
+            ],
+            "confidence": 1,
+            "elements": [
+              "#/readResults/0/lines/8/words/1"
+            ]
+          },
+          ...
+        },
+        "docTypeConfidence": 1
+      }
+    ],
+    "errors": []
+  }
+}
+```
+
+---
+
 
 ## <a name="improve-results"></a>결과 개선
 

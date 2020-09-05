@@ -3,7 +3,7 @@ title: Azure Media Services v3 API에 연결-Python
 description: 이 문서에서는 Python을 사용 하 여 Media Services v3 API에 연결 하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/15/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: devx-track-python
-ms.openlocfilehash: 834d87f607ca65a9d9e0ebee12d2772f5baf7949
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 42fea1a4363684667ccb41f0406bb66ef00d5485
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87849644"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265578"
 ---
 # <a name="connect-to-media-services-v3-api---python"></a>Media Services v3 API에 연결-Python
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 문서에서는 서비스 사용자 로그인 메서드를 사용 하 여 Azure Media Services v3 Python SDK에 연결 하는 방법을 보여 줍니다.
 
@@ -104,5 +106,5 @@ pip3 install azure-mgmt-media==1.1.1
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Python SDK](https://aka.ms/ams-v3-python-sdk)를 사용합니다.
+- [PYTHON SDK](https://aka.ms/ams-v3-python-sdk)를 사용 합니다.
 - Media Services [Python 참조](https://aka.ms/ams-v3-python-ref) 설명서를 검토하세요.

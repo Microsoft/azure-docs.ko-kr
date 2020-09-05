@@ -1,18 +1,18 @@
 ---
 title: Azure에 하이브리드 머신을 대규모로 연결
-description: 이 문서에서는 서비스 주체를 사용하여 서버용 Azure Arc(미리 보기)를 통해 Azure에 머신을 연결하는 방법을 알아봅니다.
+description: 이 문서에서는 서비스 주체를 사용 하 여 Azure Arc 사용 서버 (미리 보기)를 사용 하 여 컴퓨터를 Azure에 연결 하는 방법을 알아봅니다.
 ms.date: 07/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0f599ae6bab8a2b1ce442df677ba5de206d11ab2
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 07266ce7fb9579e1d4fb1b65394e0b7fdf7aa13d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121819"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88211404"
 ---
 # <a name="connect-hybrid-machines-to-azure-at-scale"></a>Azure에 하이브리드 머신을 대규모로 연결
 
-요구 사항에 따라 유연하게 다양한 옵션을 사용하여 환경에서 여러 Windows 또는 Linux 머신에 서버용 Azure Arc(미리 보기)를 설정할 수 있습니다. 제공하는 템플릿 스크립트를 사용하여 Azure Arc 연결 설정 등 설치의 모든 단계를 자동화할 수 있습니다. 그러나 대상 머신 및 Azure에서 관리자 권한이 있는 계정을 사용하여 이 스크립트를 대화형으로 실행해야 합니다. 서버용 Azure Arc에 머신을 연결하려면 권한 있는 ID를 사용하는 대신 Azure Active Directory [서비스 주체](../../active-directory/develop/app-objects-and-service-principals.md)를 사용하여 [머신을 대화형으로 연결](onboard-portal.md)할 수 있습니다. 서비스 주체는 `azcmagent` 명령을 사용하여 Azure에 머신을 연결하는 데 필요한 최소한의 권한만 부여되는 특별히 한정된 관리 ID입니다. 이는 테넌트 관리자와 같은 더 높은 권한의 계정을 사용하는 것보다 안전하며, 액세스 제어 보안 모범 사례를 준수하는 것입니다. 서비스 주체는 온보딩하는 동안에만 사용되며 다른 용도에는 사용되지 않습니다.  
+사용자의 요구 사항에 따라 몇 가지 유연한 옵션을 사용 하 여 사용자 환경에서 여러 Windows 또는 Linux 컴퓨터에 대해 Azure Arc 사용 서버 (미리 보기)를 사용 하도록 설정할 수 있습니다. 제공하는 템플릿 스크립트를 사용하여 Azure Arc 연결 설정 등 설치의 모든 단계를 자동화할 수 있습니다. 그러나 대상 머신 및 Azure에서 관리자 권한이 있는 계정을 사용하여 이 스크립트를 대화형으로 실행해야 합니다. 컴퓨터를 Azure Arc 사용 가능 서버 (미리 보기)에 연결 하려면 권한 있는 id를 사용 하 여 [컴퓨터를 대화형으로 연결](onboard-portal.md)하는 대신 Azure Active Directory [서비스 주체](../../active-directory/develop/app-objects-and-service-principals.md) 를 사용할 수 있습니다. 서비스 주체는 `azcmagent` 명령을 사용하여 Azure에 머신을 연결하는 데 필요한 최소한의 권한만 부여되는 특별히 한정된 관리 ID입니다. 이는 테넌트 관리자와 같은 더 높은 권한의 계정을 사용하는 것보다 안전하며, 액세스 제어 보안 모범 사례를 준수하는 것입니다. 서비스 주체는 온보딩하는 동안에만 사용되며 다른 용도에는 사용되지 않습니다.  
 
 Connected Machine 에이전트를 설치하고 구성하는 설치 메서드는 사용하는 자동화 메서드에서 머신에 대한 관리자 권한을 요구합니다. Linux에서는 루트 계정을 사용하고 Windows에서는 로컬 관리자 그룹의 멤버여야 합니다.
 
@@ -20,7 +20,7 @@ Connected Machine 에이전트를 설치하고 구성하는 설치 메서드는 
 
 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 
-이 프로세스가 끝나면 하이브리드 머신이 서버용 Azure Arc에 성공적으로 연결됩니다.
+이 프로세스가 끝나면 하이브리드 컴퓨터가 Azure Arc 사용 서버 (미리 보기)에 성공적으로 연결 됩니다.
 
 ## <a name="create-a-service-principal-for-onboarding-at-scale"></a>대규모 온보딩을 위한 서비스 주체 만들기
 
@@ -133,7 +133,7 @@ azcmagent connect \
 >[!NOTE]
 >**Azcmagent**를 실행 하려면 Linux 컴퓨터에 대 한 *루트* 액세스 권한이 있어야 합니다.
 
-에이전트가 설치되고 서버용 Azure Arc(미리 보기)에 연결하도록 구성되면 Azure Portal로 이동하여 서버가 성공적으로 연결되었는지 확인합니다. [Azure Portal](https://aka.ms/hybridmachineportal)에서 머신을 확인합니다.
+에이전트를 설치 하 고 Azure Arc 사용 서버 (미리 보기)에 연결 하도록 구성한 후 Azure Portal으로 이동 하 여 서버가 성공적으로 연결 되었는지 확인 합니다. [Azure Portal](https://aka.ms/hybridmachineportal)에서 머신을 확인합니다.
 
 ![성공적인 서버 연결](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 

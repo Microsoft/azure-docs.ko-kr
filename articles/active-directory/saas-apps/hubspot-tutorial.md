@@ -2,26 +2,21 @@
 title: '자습서: HubSpot과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 HubSpot 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 57343ccd-53ea-4e62-9e54-dee2a9562ed5
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4b235426a7029abb9bb79ba56e582cccc3b14a6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 51e27526b10bcdd74d6e2bffb8bf620d7b022aac
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68944441"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551471"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>자습서: HubSpot과 Azure Active Directory 통합
 
@@ -183,7 +178,7 @@ HubSpot에서 Azure AD Single Sign-On을 구성하고 테스트하려면 다음 
 
     1. **이름** 상자에 **BrittaSimon**을 입력합니다.
   
-    1. **사용자 이름** 상자에 **brittasimon\@\<your-company-domain>.\<extension\>** 을 입력합니다. 예를 들어 **brittasimon\@contoso.com**입니다.
+    1. **사용자 이름** 상자에 **brittasimon\@\<your-company-domain>.\<extension\>** 를 입력합니다. 예를 들어 **brittasimon\@contoso.com**입니다.
 
     1. **암호 표시** 확인란을 선택합니다. **암호** 상자에 표시된 값을 적어둡니다.
 

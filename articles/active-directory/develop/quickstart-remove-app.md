@@ -12,12 +12,12 @@ ms.date: 05/08/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 3cc9e4458f14a63bad7f484bc16683248895ede9
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: bdcf32f53da49834b37471a8258262f0eb2b21da
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84692226"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88115325"
 ---
 # <a name="quickstart-remove-an-application-registered-with-the-microsoft-identity-platform"></a>빠른 시작: Microsoft ID 플랫폼에 등록된 애플리케이션 제거
 
@@ -34,7 +34,7 @@ Microsoft ID 플랫폼에 애플리케이션을 등록한 Enterprise 개발자 �
 
 ## <a name="remove-an-application-authored-by-you-or-your-organization"></a>사용자 또는 해당 조직이 작성한 애플리케이션 제거
 
-사용자 또는 해당 조직이 등록한 애플리케이션은 테넌트에서 애플리케이션 개체와 서비스 주체 개체 모두로 표시됩니다. 자세한 내용은 [애플리케이션 개체 및 서비스 사용자 개체](active-directory-application-objects.md)를 참조하세요.
+사용자 또는 해당 조직이 등록한 애플리케이션은 테넌트에서 애플리케이션 개체와 서비스 주체 개체 모두로 표시됩니다. 자세한 내용은 [애플리케이션 개체 및 서비스 사용자 개체](./app-objects-and-service-principals.md)를 참조하세요.
 
 ### <a name="to-remove-an-application"></a>애플리케이션을 제거하려면
 
@@ -49,7 +49,7 @@ Microsoft ID 플랫폼에 애플리케이션을 등록한 Enterprise 개발자 �
 
 ## <a name="remove-an-application-authored-by-another-organization"></a>다른 조직이 작성한 애플리케이션 제거
 
-테넌트의 컨텍스트에서 **앱 등록**을 볼 경우 **모든 앱** 탭에 표시되는 애플리케이션의 하위 집합이 다른 테넌트의 것이고 동의 프로세스 중 해당 테넌트에 등록된 것입니다. 구체적으로 말하면 해당하는 애플리케이션 개체 없이 테넌트의 서비스 주체 개체에 의해서만 제공됩니다. 애플리케이션 및 서비스 주체 개체의 차이에 대한 자세한 내용은 [Azure AD의 애플리케이션 및 서비스 주체 개체](active-directory-application-objects.md)를 참조하세요.
+테넌트의 컨텍스트에서 **앱 등록**을 볼 경우 **모든 앱** 탭에 표시되는 애플리케이션의 하위 집합이 다른 테넌트의 것이고 동의 프로세스 중 해당 테넌트에 등록된 것입니다. 구체적으로 말하면 해당하는 애플리케이션 개체 없이 테넌트의 서비스 주체 개체에 의해서만 제공됩니다. 애플리케이션 및 서비스 주체 개체의 차이에 대한 자세한 내용은 [Azure AD의 애플리케이션 및 서비스 주체 개체](./app-objects-and-service-principals.md)를 참조하세요.
 
 (동의를 표시한 후에) 자사의 디렉토리에 대한 애플리케이션 액세스 권한을 제거하려면 회사 관리자는 해당 서비스 주체를 제거해야 합니다. 관리자에게는 글로벌 관리자 액세스 권한이 있어야 하고 Azure Portal을 통해 액세스 권한을 제거하거나 [Azure AD PowerShell Cmdlet](https://go.microsoft.com/fwlink/?LinkId=294151)을 사용하여 애플리케이션을 제거할 수 있습니다.
 

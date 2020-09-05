@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 07/10/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 6e4ed8514cd99d42790296a58296a73696989b69
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 09dd444d0d7409ca86955d2854aec82f07db0c4d
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87539138"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185403"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Azure Machine Learning을 사용하여 자동화된 Machine Learning 모델 만들기, 검토 및 배포
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -75,7 +75,7 @@ Python 코드 기반 환경의 경우 Azure Machine Learning SDK를 사용하여
 
     1. **설정 및 미리 보기** 양식을 검토하여 정확히 지정했는지 확인합니다. 양식은 파일 형식에 따라 지능적으로 채워집니다. 
 
-        필드| 설명
+        필드| Description
         ----|----
         파일 형식| 파일에 저장된 데이터의 레이아웃 및 유형을 정의합니다.
         구분 기호| 일반 텍스트 또는 다른 데이터 스트림에서 별도의 독립적인 지역 간의 경계를 지정하기 위한 하나 이상의 문자입니다.
@@ -132,9 +132,9 @@ Python 코드 기반 환경의 경우 Azure Machine Learning SDK를 사용하여
 
 1. (선택 사항) 추가 구성 설정 보기: 학습 작업을 더 효율적으로 제어하는 데 사용할 수 있는 추가 설정입니다. 그렇지 않으면 실험 선택 및 데이터를 기반으로 기본값이 적용됩니다. 
 
-    추가 구성|설명
+    추가 구성|Description
     ------|------
-    기본 메트릭| 모델의 점수를 매기는 데 사용되는 기본 메트릭입니다. [모델 메트릭에 대해 자세히 알아보세요](how-to-configure-auto-train.md#explore-model-metrics).
+    기본 메트릭| 모델의 점수를 매기는 데 사용되는 기본 메트릭입니다. [모델 메트릭에 대해 자세히 알아보세요](how-to-configure-auto-train.md#primary-metric).
     최상의 모델에 대한 설명 | 권장 되는 최상의 모델의 explainability을 표시 하려면 선택 합니다.
     차단된 알고리즘| 학습 작업에서 제외하려는 알고리즘을 선택합니다.
     종료 조건| 다음 조건 중 하나가 충족되면 학습 작업이 중지됩니다. <br> *학습 작업 시간(시간)* : 학습 작업을 실행할 수 있는 기간입니다. <br> *메트릭 점수 임계값*:  모든 파이프라인에 대한 최소 메트릭 점수입니다. 이렇게 하면 도달하려는 목표 메트릭이 정의되어 있는 경우 학습 작업에 필요한 시간보다 더 많은 시간을 소비하지 않습니다.

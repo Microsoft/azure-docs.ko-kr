@@ -2,25 +2,21 @@
 title: '자습서: iQualify LMS와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 iQualify LMS 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 8a3caaff-dd8d-4afd-badf-a0fd60db3d2c
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: a1db4784eb63df14b7e7971d0273512ba657df96
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8bf74994a07d69bbe53ec9a7e18f08b4232298bd
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68944986"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552954"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>자습서: iQualify LMS와 Azure Active Directory 통합
 

@@ -7,12 +7,12 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: addc4edba734c350a1e0e4246203c64315f345dd
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: b4581b7e93cde9d6ba9a20d46ee263a879c05402
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88081054"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961876"
 ---
 # <a name="deployment-best-practices"></a>배포 모범 사례
 
@@ -127,7 +127,7 @@ az ad sp create-for-rbac --name "myServicePrincipal" --role contributor \
 
 ### <a name="java"></a>Java
 
-Kudu [zipdeploy/](deploy-zip.md) API를 사용 하 여 JAR 응용 프로그램을 배포 하 고, WAR 응용 프로그램을 배포 [/](deploy-zip.md#deploy-war-file) 사용 합니다. Jenkins를 사용 하는 경우 배포 단계에서 직접 해당 Api를 사용할 수 있습니다. 자세한 내용은 [이 문서](../jenkins/execute-cli-jenkins-pipeline.md)를 참조하세요.
+Kudu [zipdeploy/](deploy-zip.md) API를 사용 하 여 JAR 응용 프로그램을 배포 하 고, WAR 응용 프로그램을 배포 [/](deploy-zip.md#deploy-war-file) 사용 합니다. Jenkins를 사용 하는 경우 배포 단계에서 직접 해당 Api를 사용할 수 있습니다. 자세한 내용은 [이 문서](/azure/developer/jenkins/deploy-to-azure-app-service-using-azure-cli)를 참조하세요.
 
 ### <a name="node"></a>노드
 
@@ -149,7 +149,7 @@ Azure App Service의 콘텐츠는 Azure Storage에 저장되며 영구적 방식
 
 App Service 계획에서 사용 가능한 CPU 또는 메모리의 90%를 초과 하 여 사용 하는 경우 기본 가상 컴퓨터에서 배포를 처리 하는 데 문제가 있을 수 있습니다. 이 경우 배포를 수행 하기 위해 인스턴스 수를 일시적으로 확장 합니다. 배포가 완료 되 면 인스턴스 수를 이전 값으로 반환할 수 있습니다.
 
-모범 사례에 대 한 자세한 내용은 [App Service 진단을](https://docs.microsoft.com/azure/app-service/overview-diagnostics) 방문 하 여 리소스와 관련 하 여 조치 가능한 모범 사례를 확인 하세요.
+모범 사례에 대 한 자세한 내용은 [App Service 진단을](./overview-diagnostics.md) 방문 하 여 리소스와 관련 하 여 조치 가능한 모범 사례를 확인 하세요.
 
 - [Azure Portal](https://portal.azure.com)에서 웹 앱으로 이동 합니다.
 - 왼쪽 탐색에서 **문제 진단 및 해결** 을 클릭 하면 App Service 진단이 열립니다.

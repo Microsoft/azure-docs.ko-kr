@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: 6e853edf5b7ba756aaedceaf59b1f7d1d7e48b39
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: f9b73e0919d660947edd0417f7379b3f6e6140c0
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985429"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88245855"
 ---
 # <a name="solutions-on-azure-virtual-machines"></a>Azure 가상 머신의 솔루션
 
@@ -32,41 +32,18 @@ Azure 기밀 컴퓨팅 가상 머신은 클라우드에서 처리되는 동안 �
 사용 가능한 지역 및 가용성 영역에서 일반적으로 사용할 수 있는 모든 기밀 계산 VM 크기의 목록을 얻으려면 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest)에서 다음 명령을 실행합니다.
 
 ```azurecli-interactive
-az vm list-skus 
-    --size dc 
-    --query "[?family=='standardDCSv2Family'].{name:name,locations:locationInfo[0].location,AZ_a:locationInfo[0].zones[0],AZ_b:locationInfo[0].zones[1],AZ_c:locationInfo[0].zones[2]}" 
-    --all 
+az vm list-skus `
+    --size dc `
+    --query "[?family=='standardDCSv2Family'].{name:name,locations:locationInfo[0].location,AZ_a:locationInfo[0].zones[0],AZ_b:locationInfo[0].zones[1],AZ_c:locationInfo[0].zones[2]}" `
+    --all `
     --output table
-```
-
-2020년 5월, 이러한 SKU는 다음 지역 및 가용성 영역에서 사용할 수 있습니다.
-
-```output
-Name              Locations      AZ_a
-----------------  -------------  ------
-Standard_DC8_v2   eastus         2
-Standard_DC1s_v2  eastus         2
-Standard_DC2s_v2  eastus         2
-Standard_DC4s_v2  eastus         2
-Standard_DC8_v2   CanadaCentral
-Standard_DC1s_v2  CanadaCentral
-Standard_DC2s_v2  CanadaCentral
-Standard_DC4s_v2  CanadaCentral
-Standard_DC8_v2   uksouth        3
-Standard_DC1s_v2  uksouth        3
-Standard_DC2s_v2  uksouth        3
-Standard_DC4s_v2  uksouth        3
-Standard_DC8_v2   CentralUSEUAP
-Standard_DC1s_v2  CentralUSEUAP
-Standard_DC2s_v2  CentralUSEUAP
-Standard_DC4s_v2  CentralUSEUAP
 ```
 
 위의 크기에 대한 자세한 보기를 보려면 다음 명령을 실행합니다.
 
 ```azurecli-interactive
-az vm list-skus 
-    --size dc 
+az vm list-skus `
+    --size dc `
     --query "[?family=='standardDCSv2Family']"
 ```
 ### <a name="dedicated-host-requirements"></a>전용 호스트 요구 사항
@@ -101,17 +78,17 @@ Azure에서 가상 머신을 사용하는 경우 모든 가동 중지 시간을 
 
 Azure 기밀 컴퓨팅은 현재 가용성 영역을 통해 영역 중복성을 지원하지 않습니다. 기밀 컴퓨팅에 대한 최고 가용성 및 중복성을 위해 [가용성 집합](../virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)을 사용합니다. 하드웨어 제한으로 인해 기밀 컴퓨팅 인스턴스의 가용성 집합에는 최대 10개의 업데이트 도메인만 사용할 수 있습니다. 
 
-## <a name="deploying-via-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 통해 배포 
+## <a name="deployment-with-azure-resource-manager-arm-template"></a>Azure Resource Manager (ARM) 템플릿을 사용 하 여 배포
 
 Azure Resource Manager는 Azure용 배포 및 관리 서비스입니다. Azure 구독에서 리소스를 만들고, 업데이트하고, 삭제할 수 있는 관리 계층을 제공합니다. 배포 이후 액세스 제어, 잠금 및 태그와 같은 관리 기능을 사용하여 리소스를 보호하고 구성할 수 있습니다.
 
-Azure Resource Manager 템플릿에 대한 자세한 내용은 [템플릿 배포 개요](../azure-resource-manager/templates/overview.md)를 참조하세요.
+ARM 템플릿에 대 한 자세한 내용은 [템플릿 배포 개요](../azure-resource-manager/templates/overview.md)를 참조 하세요.
 
-Azure Resource Manager 템플릿에서 DCsv2 시리즈 VM을 배포하려면 [가상 머신 리소스](../virtual-machines/windows/template-description.md)를 활용합니다. **vmSize** 및 **imageReference**에 대한 올바른 속성을 지정해야 합니다.
+ARM 템플릿에서 DCsv2 시리즈 VM을 배포 하려면 [가상 머신 리소스](../virtual-machines/windows/template-description.md)를 활용 합니다. **vmSize** 및 **imageReference**에 대한 올바른 속성을 지정해야 합니다.
 
 ### <a name="vm-size"></a>VM 크기
 
-가상 컴퓨터 리소스의 Azure Resource Manager 템플릿에서 다음 크기 중 하나를 지정합니다. 이 문자열은 **속성**에서 **vmSize**로 배치됩니다.
+가상 컴퓨터 리소스의 ARM 템플릿에서 다음 크기 중 하나를 지정 합니다. 이 문자열은 **속성**에서 **vmSize**로 배치됩니다.
 
 ```json
   [

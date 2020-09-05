@@ -10,12 +10,13 @@ ms.date: 05/15/2019
 ms.author: asrastog
 ms.custom:
 - 'Role: Cloud Development'
-ms.openlocfilehash: a8c53dd2755f239763ff572e34dbdf7f73caa8a4
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+- devx-track-csharp
+ms.openlocfilehash: a451e13b39aea27b4f1e23f9faa30f4b11c1cff1
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327721"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021241"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>IoT Hub 메시지 라우팅을 사용 하 여 다른 끝점으로 장치-클라우드 메시지 보내기
 
@@ -37,7 +38,6 @@ IoT Hub에는 Event Hubs와 호환되는 기본 제공 엔드포인트(**메시�
 
 각 메시지는 일치 하는 라우팅 쿼리가 있는 모든 끝점으로 라우팅됩니다. 즉, 메시지를 여러 끝점으로 라우팅할 수 있습니다.
 
-
 사용자 지정 끝점에 방화벽 구성이 있는 경우 Microsoft trusted first 파티 예외를 사용 하 여 IoT Hub 특정 끝점 [Azure Storage](./virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing), [Azure Event Hubs](./virtual-network-support.md#egress-connectivity-to-event-hubs-endpoints-for-routing) 및 [Azure Service Bus](./virtual-network-support.md#egress-connectivity-to-service-bus-endpoints-for-routing)에 대 한 액세스 권한을 부여 하는 것이 좋습니다. [관리 서비스 id](./virtual-network-support.md)를 사용 하 여 IoT hub의 선택 지역에서 사용할 수 있습니다.
 
 IoT Hub 현재 다음 끝점을 지원 합니다.
@@ -47,19 +47,23 @@ IoT Hub 현재 다음 끝점을 지원 합니다.
  - Service Bus 큐 및 Service Bus 토픽
  - Event Hubs
 
-### <a name="built-in-endpoint"></a>기본 제공 엔드포인트
+## <a name="built-in-endpoint-as-a-routing-endpoint"></a>기본 제공 끝점 (라우팅 끝점)
 
 표준 [Event Hubs 통합 및 SDK](iot-hub-devguide-messages-read-builtin.md)를 사용하여 기본 제공 엔드포인트(**메시지/이벤트**)에서 디바이스-클라우드 메시지를 수신할 수 있습니다. 경로를 만든 후에는 해당 끝점에 대 한 경로를 만들지 않는 한 데이터는 기본 끝점으로의 이동이 중지 됩니다.
 
-### <a name="azure-storage"></a>Azure Storage
+## <a name="azure-storage-as-a-routing-endpoint"></a>라우팅 끝점으로 Azure Storage
 
 메시지를 [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md) 및 [Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md) (ADLS Gen2) 계정으로 라우팅할 수 IoT Hub 두 개의 저장소 서비스가 있습니다. Azure Data Lake Storage 계정은 blob storage를 기반으로 구축 된 [계층적 네임 스페이스](../storage/blobs/data-lake-storage-namespace.md)사용 저장소 계정입니다. 둘 다 저장소에 blob을 사용 합니다.
 
-IoT Hub에서는 데이터를 JSON 형식 뿐만 아니라 [Apache Avro](https://avro.apache.org/) 형식으로 Azure Storage에 쓸 수 있습니다. 기본값은 AVRO입니다. 인코딩 형식은 blob storage 끝점이 구성 된 경우에만 설정할 수 있습니다. 기존 끝점에 대 한 형식을 편집할 수 없습니다. JSON 인코딩을 사용 하는 경우 메시지 [시스템 속성](iot-hub-devguide-routing-query-syntax.md#system-properties)에서 contentType을 **application/JSON** 으로, Contentencoding을 **u t f-8** 로 설정 해야 합니다. 이러한 두 값은 대/소문자를 구분 하지 않습니다. 콘텐츠 인코딩이 설정 되지 않은 경우 IoT Hub는 메시지를 base 64 인코딩 형식으로 씁니다. IoT Hub 만들거나 업데이트 REST API, 특히 [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), Azure Portal, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)또는 [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint)를 사용 하 여 인코딩 형식을 선택할 수 있습니다. 다음 다이어그램에서는 Azure Portal에서 인코딩 형식을 선택 하는 방법을 보여 줍니다.
+IoT Hub에서는 데이터를 JSON 형식 뿐만 아니라 [Apache Avro](https://avro.apache.org/) 형식으로 Azure Storage에 쓸 수 있습니다. 기본값은 AVRO입니다. JSON 인코딩을 사용 하는 경우 메시지 [시스템 속성](iot-hub-devguide-routing-query-syntax.md#system-properties)에서 contentType을 **application/JSON** 으로, Contentencoding을 **u t f-8** 로 설정 해야 합니다. 이러한 두 값은 대/소문자를 구분 하지 않습니다. 콘텐츠 인코딩이 설정 되지 않은 경우 IoT Hub는 메시지를 base 64 인코딩 형식으로 씁니다.
+
+인코딩 형식은 blob storage 끝점이 구성 된 경우에만 설정할 수 있습니다. 기존 끝점에 대해서는 편집할 수 없습니다. 기존 끝점에 대 한 인코딩 형식을 전환 하려면 원하는 형식으로 사용자 지정 끝점을 삭제 하 고 다시 만들어야 합니다. 유용한 전략 중 하나는 원하는 인코딩 형식을 사용 하 여 새 사용자 지정 끝점을 만들고이 끝점에 병렬 경로를 추가 하는 것입니다. 이러한 방식으로 기존 끝점을 삭제 하기 전에 데이터를 확인할 수 있습니다.
+
+IoT Hub 만들거나 업데이트 REST API, 특히 [RoutingStorageContainerProperties](https://docs.microsoft.com/rest/api/iothub/iothubresource/createorupdate#routingstoragecontainerproperties), Azure Portal, [Azure CLI](https://docs.microsoft.com/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest)또는 [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubroutingendpoint)를 사용 하 여 인코딩 형식을 선택할 수 있습니다. 다음 이미지는 Azure Portal에서 인코딩 형식을 선택 하는 방법을 보여 줍니다.
 
 ![Blob storage 끝점 인코딩](./media/iot-hub-devguide-messages-d2c/blobencoding.png)
 
-일괄 처리가 특정 크기에 도달 하거나 특정 시간이 경과할 때마다 메시지를 일괄 처리 하 고 저장소에 데이터를 기록 IoT Hub 합니다. IoT Hub는 기본적으로 다음 파일 명명 규칙을 따릅니다. 
+일괄 처리가 특정 크기에 도달 하거나 특정 시간이 경과할 때마다 메시지를 일괄 처리 하 고 저장소에 데이터를 기록 IoT Hub 합니다. IoT Hub는 기본적으로 다음 파일 명명 규칙을 따릅니다.
 
 ```
 {iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}
@@ -89,12 +93,11 @@ Azure Data Lake Gen2 호환 저장소 계정을 만들려면 새 V2 저장소 �
 
 ![Azure Date Lake Gen2 storage를 선택 합니다.](./media/iot-hub-devguide-messages-d2c/selectadls2storage.png)
 
-
-### <a name="service-bus-queues-and-service-bus-topics"></a>Service Bus 큐 및 Service Bus 토픽
+## <a name="service-bus-queues-and-service-bus-topics-as-a-routing-endpoint"></a>큐 및 Service Bus 항목을 라우팅 끝점으로 Service Bus
 
 IoT Hub으로 사용되는 Service Bus 큐 및 토픽에는 **세션** 또는 **중복 검색**이 사용하도록 설정되어 있어서는 안 됩니다. 두 옵션 중 하나가 사용하도록 설정되어 있으면 Azure Portal에서 엔드포인트가 **연결할 수 없음**으로 표시됩니다.
 
-### <a name="event-hubs"></a>Event Hubs
+## <a name="event-hubs-as-a-routing-endpoint"></a>라우팅 끝점으로 Event Hubs
 
 기본 제공 Event Hubs 호환 엔드포인트 외에, Event Hubs 유형의 사용자 지정 엔드포인트로 데이터를 라우팅할 수도 있습니다. 
 

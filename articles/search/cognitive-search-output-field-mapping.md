@@ -8,23 +8,34 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c9b0b34202f35babcaa3dce37331d31edf641254
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 58bb87d5af785d3cffd96f3bd02477f97ed967a9
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85557272"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935367"
 ---
 # <a name="how-to-map-ai-enriched-fields-to-a-searchable-index"></a>AI-보강 필드를 검색 가능한 인덱스에 매핑하는 방법
 
-이 문서에서는 검색 가능한 인덱스에서 입력 필드에 보강된 출력 필드를 매핑하는 방법에 대해 알아봅니다. [기술 집합을 정의](cognitive-search-defining-skillset.md)했으면 검색 인덱스에서 지정된 필드에 값을 직접 기여하는 모든 기술의 출력 필드를 매핑해야 합니다. 
+![인덱서 단계](./media/cognitive-search-output-field-mapping/indexer-stages-output-field-mapping.png "인덱서 단계")
 
-보강 문서에서 인덱스로 콘텐츠를 이동 하려면 출력 필드 매핑이 필요 합니다.  보강 문서는 사실 정보의 트리입니다. 인덱스에 복합 형식을 지 원하는 경우에도 보강 트리의 정보를 보다 단순한 형식 (예를 들어 문자열 배열)으로 변환 하는 것이 좋습니다. 출력 필드 매핑을 사용 하면 정보를 평면화 하 여 데이터 셰이프 변환을 수행할 수 있습니다.
+이 문서에서는 검색 가능한 인덱스에서 입력 필드에 보강된 출력 필드를 매핑하는 방법에 대해 알아봅니다. [기술 집합을 정의](cognitive-search-defining-skillset.md)했으면 검색 인덱스에서 지정된 필드에 값을 직접 기여하는 모든 기술의 출력 필드를 매핑해야 합니다.
+
+보강 문서에서 인덱스로 콘텐츠를 이동 하려면 출력 필드 매핑이 필요 합니다.  보강 문서는 사실 정보의 트리입니다. 인덱스에 복합 형식을 지 원하는 경우에도 보강 트리의 정보를 보다 단순한 형식 (예를 들어 문자열 배열)으로 변환 하는 것이 좋습니다. 출력 필드 매핑을 사용 하면 정보를 평면화 하 여 데이터 셰이프 변환을 수행할 수 있습니다. 출력 필드 매핑은 기술 실행 후 항상 발생 하지만 기술가 정의 되지 않은 경우에도이 단계를 실행할 수 있습니다.
+
+출력 필드 매핑의 예:
+
+* 기술의 일환으로 문서의 각 페이지에 언급 된 조직의 이름을 추출 했습니다. 이제 이러한 각 조직 이름을 Edm. Collection 형식의 인덱스에 있는 필드 (Edm. String)에 매핑해야 합니다.
+
+* 기술의 일부로 "document/translated_text" 라는 새 노드를 생성 했습니다. 이 노드의 정보를 인덱스의 특정 필드에 매핑해야 합니다.
+
+* 기술 있지만 Cosmos DB 데이터베이스에서 복합 형식을 인덱싱하는 경우 해당 복합 형식의 노드로 이동 하 여 인덱스의 필드에 매핑해야 합니다.
 
 > [!NOTE]
-> 최근 출력 필드 매핑에서 매핑 함수 기능을 사용 하도록 설정 했습니다. 매핑 함수에 대 한 자세한 내용은 [필드 매핑 함수](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#field-mapping-functions) 를 참조 하세요.
+> 최근 출력 필드 매핑에서 매핑 함수 기능을 사용 하도록 설정 했습니다. 매핑 함수에 대 한 자세한 내용은 [필드 매핑 함수](./search-indexer-field-mappings.md#field-mapping-functions) 를 참조 하세요.
 
 ## <a name="use-outputfieldmappings"></a>OutputFieldMappings 사용
+
 필드를 매핑하려면 아래와 같이 `outputFieldMappings`을 인덱서 정의에 추가합니다.
 
 ```http

@@ -13,12 +13,13 @@ ms.date: 08/04/2020
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 03/18/2019
-ms.openlocfilehash: 8a7de1921732328fe4112de9b9171af3e21fe7e3
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: devx-track-csharp
+ms.openlocfilehash: c0771864229c8a3918da076de48fb6e033d2cf5a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87832181"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018181"
 ---
 # <a name="export-and-import-azure-notification-hubs-registrations-in-bulk"></a>대량으로 Azure Notification Hubs 등록 내보내기 및 가져오기
 
@@ -50,7 +51,7 @@ private static void SerializeToBlob(CloudBlobContainer container, RegistrationDe
     StringBuilder builder = new StringBuilder();
     foreach (var registrationDescription in descriptions)
     {
-        builder.AppendLine(RegistrationDescription.Serialize());
+        builder.AppendLine(registrationDescription.Serialize());
     }
 
     var inputBlob = container.GetBlockBlobReference(INPUT_FILE_NAME);
@@ -215,7 +216,7 @@ namespace ConsoleApplication1
             StringBuilder builder = new StringBuilder();
             foreach (var registrationDescription in descriptions)
             {
-                builder.AppendLine(RegistrationDescription.Serialize());
+                builder.AppendLine(registrationDescription.Serialize());
             }
 
             var inputBlob = container.GetBlockBlobReference(INPUT_FILE_NAME);

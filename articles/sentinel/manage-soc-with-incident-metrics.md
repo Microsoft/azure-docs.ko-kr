@@ -13,16 +13,16 @@ ms.topic: how-to
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/29/2020
+ms.date: 08/11/2020
 ms.author: yelevin
-ms.openlocfilehash: f14b0050aefc598d26dec7a7781a3378ccaa7570
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 9d8d0fc46a463bda31595988d807854ef146d333
+ms.sourcegitcommit: f1b18ade73082f12fa8f62f913255a7d3a7e42d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87294248"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88761726"
 ---
-# <a name="manage-your-soc-better-with-incident-metrics"></a>인시던트 메트릭을 사용 하 여 SOC를 더 잘 관리
+# <a name="manage-your-soc-better-with-incident-metrics"></a>인시던트 메트릭을 사용하여 SOC를 효율적으로 관리
 
 > [!IMPORTANT]
 > 인시던트 메트릭 기능은 현재 공개 미리 보기로 제공 됩니다.
@@ -41,8 +41,30 @@ SOC (보안 작업 센터) 관리자는 팀의 성능을 측정 하기 위해 �
 
 예를 들어 인시던트 번호로 정렬 되었지만 인시던트의 가장 최근의 로그만 반환 하려는 모든 인시던트의 목록을 반환 하려는 경우 집계 함수를 사용 하 여 KQL [요약 연산자](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator) 를 사용 하면 됩니다 `arg_max()` [aggregation function](https://docs.microsoft.com/azure/data-explorer/kusto/query/arg-max-aggfunction).
 
-`SecurityIncident` <br>
-`| summarize arg_max(LastModifiedTime, *) by IncidentNumber`
+
+```Kusto
+SecurityIncident
+| summarize arg_max(LastModifiedTime, *) by IncidentNumber
+```
+### <a name="more-sample-queries"></a>추가 샘플 쿼리
+
+평균 종료 시간:
+```Kusto
+SecurityIncident
+| summarize arg_max(TimeGenerated,*) by IncidentNumber 
+| extend TimeToClosure =  (ClosedTime - CreatedTime)/1h
+| summarize 5th_Percentile=percentile(TimeToClosure, 5),50th_Percentile=percentile(TimeToClosure, 50), 
+  90th_Percentile=percentile(TimeToClosure, 90),99th_Percentile=percentile(TimeToClosure, 99)
+```
+
+심사 평균 시간:
+```Kusto
+SecurityIncident
+| summarize arg_max(TimeGenerated,*) by IncidentNumber 
+| extend TimeToTriage =  (FirstModifiedTime - CreatedTime)/1h
+| summarize 5th_Percentile=max_of(percentile(TimeToTriage, 5),0),50th_Percentile=percentile(TimeToTriage, 50), 
+  90th_Percentile=percentile(TimeToTriage, 90),99th_Percentile=percentile(TimeToTriage, 99) 
+```
 
 ## <a name="security-operations-efficiency-workbook"></a>보안 작업 효율성 통합 문서
 

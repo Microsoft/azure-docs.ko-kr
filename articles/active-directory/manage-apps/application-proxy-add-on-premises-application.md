@@ -11,13 +11,12 @@ ms.topic: tutorial
 ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7153200bc80f6e27a99123a1bba676d0188f607
-ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.openlocfilehash: 7d94b8604b2f947463dd760ca7baf25f19a15a26
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87129035"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642149"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>자습서: Azure Active Directory에서 애플리케이션 프록시를 통한 원격 액세스를 위해 온-프레미스 애플리케이션 추가
 
@@ -32,7 +31,7 @@ Azure AD(Azure Active Directory)에는 사용자가 해당 Azure AD 계정으로
 > * Azure AD 테넌트에 온-프레미스 애플리케이션 추가
 > * 테스트 사용자가 Azure AD 계정을 사용하여 애플리케이션에 로그온할 수 있는지 확인
 
-## <a name="before-you-begin"></a>시작하기 전에
+## <a name="prerequisites"></a>사전 요구 사항
 
 Azure AD에 온-프레미스 애플리케이션을 추가하려면 다음이 필요합니다.
 
@@ -114,7 +113,7 @@ TLS 1.2를 사용하도록 설정하려면:
 | --- | --- |
 | \*.msappproxy.net<br>\*.servicebus.windows.net | 커넥터와 애플리케이션 프록시 클라우드 서비스 간의 통신 |
 | mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | 커넥터는 이러한 URL을 사용하여 인증서를 확인합니다. |
-| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>\*.microsoftonline.com<br>\*.microsoftonline-p.com<br>\*.msauth.net<br>\*.msauthimages.net<br>\*.msecnd.net<br>\*.msftauth.net<br>\*.msftauthimages.net<br>\*.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctdl.windowsupdate.com:80 | 커넥터는 등록 프로세스 동안 다음과 같은 URL을 사용합니다. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>\*.microsoftonline.com<br>\*.microsoftonline-p.com<br>\*.msauth.net<br>\*.msauthimages.net<br>\*.msecnd.net<br>\*.msftauth.net<br>\*.msftauthimages.net<br>\*.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com:80 | 커넥터는 등록 프로세스 동안 다음과 같은 URL을 사용합니다. |
 
 방화벽이나 프록시에서 DNS 허용 목록을 허용하면 \*.msappproxy.net 및 \*.servicebus.windows.net에 대한 연결을 허용할 수 있습니다. 그렇지 않은 경우 [Azure IP 범위 및 서비스 태그 - 퍼블릭 클라우드](https://www.microsoft.com/download/details.aspx?id=56519)에 대한 액세스를 허용해야 합니다. IP 범위는 매주 업데이트됩니다.
 
@@ -189,7 +188,7 @@ Azure Portal 또는 Windows Server를 사용하여 새 커넥터가 올바르게
 
     | 필드 | 설명 |
     | :---- | :---------- |
-    | **이름** | 액세스 패널 및 Azure Portal에 표시될 애플리케이션의 이름입니다. |
+    | **이름** | 내 앱 및 Azure Portal에 표시될 애플리케이션의 이름입니다. |
     | **내부 URL** | 프라이빗 네트워크 내부에서 애플리케이션에 액세스하기 위한 URL입니다. 나머지 서버는 게시되지 않은 반면 게시할 백 앤드 서버에 특정 경로를 제공할 수 있습니다. 이렇게 하면 다른 앱과 동일한 서버에 여러 사이트를 게시하고 각 사이트에 고유한 이름과 액세스 규칙을 부여할 수 있습니다.<br><br>경로를 게시하는 경우 애플리케이션에 필요한 이미지, 스크립트 및 스타일 시트를 모두 포함하는지 확인합니다. 예를 들어 앱이 https:\//yourapp/app에 위치하고 https:\//yourapp/media에 있는 이미지를 사용하는 경우 https:\//yourapp/를 경로로 게시해야 합니다. 이 내부 URL은 사용자에게 표시되는 방문 페이지일 필요가 없습니다. 자세한 내용은 [게시된 앱에 대해 사용자 지정 홈페이지 설정](application-proxy-configure-custom-home-page.md)을 참조하세요. |
     | **외부 URL** | 사용자가 네트워크 외부에서 앱에 액세스하기 위한 주소입니다. 기본 애플리케이션 프록시 도메인을 사용하지 않으려면 [Azure AD 애플리케이션 프록시에서 사용자 지정 도메인 작업](application-proxy-configure-custom-domain.md)을 참조하세요.|
     | **사전 인증** | 애플리케이션 프록시가 사용자에게 애플리케이션에 대한 액세스 권한을 부여하기 전에 사용자를 확인하는 방법입니다.<br><br>**Azure Active Directory** - 애플리케이션 프록시는 Azure AD를 사용하여 로그인하도록 사용자를 리디렉션하여 디렉터리와 애플리케이션에 대한 사용 권한을 인증합니다. 조건부 액세스 및 Multi-Factor Authentication과 같은 Azure AD 보안 기능을 활용할 수 있도록 이 옵션을 기본값으로 유지하는 것이 좋습니다. **Azure Active Directory**는 Microsoft 클라우드 애플리케이션 보안을 사용하여 애플리케이션을 모니터링하는 데 필요합니다.<br><br>**통과** - 사용자는 애플리케이션에 액세스하기 위해 Azure AD에 대해 인증할 필요가 없습니다. 백 엔드에 대한 인증 요구 사항은 여전히 설정할 수 있습니다. |
@@ -235,6 +234,10 @@ Azure Portal 또는 Windows Server를 사용하여 새 커넥터가 올바르게
 
 문제 해결은 [애플리케이션 프록시 문제 및 오류 메시지 문제 해결](application-proxy-troubleshoot.md)을 참조하세요.
 
+## <a name="clean-up-resources"></a>리소스 정리
+
+더 이상 필요하지 않은 경우 이 자습서에서 만든 리소스를 삭제합니다.
+
 ## <a name="next-steps"></a>다음 단계
 
 이 자습서에서는 온-프레미스 환경에서 애플리케이션 프록시를 사용한 다음, 애플리케이션 프록시 커넥터를 설치하고 등록하도록 준비합니다. 다음으로 Azure AD 테넌트에 애플리케이션을 추가했습니다. 사용자가 Azure AD 계정을 사용하여 애플리케이션에 로그온할 수 있는지 확인했습니다.
@@ -250,4 +253,4 @@ Azure Portal 또는 Windows Server를 사용하여 새 커넥터가 올바르게
 애플리케이션에 Single Sign-On을 구성할 준비가 완료되었습니다. 다음 링크를 사용하여 Single Sign-On 메서드를 선택하고 Single Sign-On 자습서를 찾습니다.
 
 > [!div class="nextstepaction"]
-> [Single Sign-on 구성](what-is-single-sign-on.md#choosing-a-single-sign-on-method)
+> [Single Sign-on 구성](sso-options.md#choosing-a-single-sign-on-method)

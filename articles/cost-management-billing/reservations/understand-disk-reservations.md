@@ -4,20 +4,21 @@ description: Azure 예약된 디스크 할인이 Azure 프리미엄 SSD 관리 �
 author: roygara
 ms.author: rogarana
 ms.service: cost-management-billing
+ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 01/30/2020
-ms.openlocfilehash: 3541e3f12a6d0b1beecdd67821d31f71b47f6c68
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: cd89c3ddc3c58de02f1104109ce7f243c4d1e6fd
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509468"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88682453"
 ---
 # <a name="understand-how-your-reservation-discount-is-applied-to-azure-disk-storage"></a>예약 할인이 Azure 디스크 스토리지에 적용되는 방법 이해
 
 Azure 디스크 예약된 용량을 구입하면 예약 할인이 예약의 조건과 일치하는 디스크 리소스에 자동으로 적용됩니다. 예약 할인은 디스크 SKU에만 적용됩니다. 디스크 스냅샷은 종량제 요율로 청구됩니다.
 
-Azure 디스크 예약에 대한 자세한 내용은 [Azure 디스크 예약을 사용하여 비용 절감](../../virtual-machines/linux/disks-reserved-capacity.md)을 참조하세요. Azure 디스크 예약 가격 책정에 대한 자세한 내용은 [Azure Managed Disks 가격](https://azure.microsoft.com/pricing/details/managed-disks/)을 참조하세요.
+Azure 디스크 예약에 대한 자세한 내용은 [Azure 디스크 예약을 사용하여 비용 절감](../../virtual-machines/disks-reserved-capacity.md)을 참조하세요. Azure 디스크 예약 가격 책정에 대한 자세한 내용은 [Azure Managed Disks 가격](https://azure.microsoft.com/pricing/details/managed-disks/)을 참조하세요.
 
 ## <a name="how-the-reservation-discount-is-applied"></a>예약 할인이 적용되는 방식
 
@@ -53,6 +54,5 @@ Azure 디스크 예약 할인은 use-it-or-lose-it(사용, 아니면 손실) 할
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Azure 디스크 예약을 사용하여 비용 절감(Linux)](../../virtual-machines/linux/disks-reserved-capacity.md)
-- [Azure 디스크 예약을 사용하여 비용 절감(Windows)](../../virtual-machines/windows/disks-reserved-capacity.md)
+- [Azure 디스크 예약을 사용하여 비용 절감](../../virtual-machines/disks-reserved-capacity.md)
 - [Azure 예약이란?](save-compute-costs-reservations.md)

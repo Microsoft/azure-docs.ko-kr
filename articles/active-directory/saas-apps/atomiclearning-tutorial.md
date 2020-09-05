@@ -2,26 +2,21 @@
 title: '자습서: Atomic Learning과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Atomic Learning 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 495f54a6-e6c4-41b0-aafa-a6283d33efc8
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78f5c701a009f8510c62f6cfa736d20205e383a9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4202098ad658194125d30f0a953156cc993c5e77
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67106595"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88517631"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-atomic-learning"></a>자습서: Atomic Learning과 Azure Active Directory 통합
 

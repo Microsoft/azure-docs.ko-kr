@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
-ms.date: 07/27/2020
-ms.openlocfilehash: f98e540a6764869f1d37edfbb0f00bf8d1cc2198
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.date: 08/17/2020
+ms.openlocfilehash: 3eb1a4cbfcf62617796af6a26cb4688b734eb617
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87499180"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551844"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Azure SQL을 사용 하 여 Azure AD 인증 구성 및 관리
 
@@ -71,7 +71,9 @@ Azure Active Directory와 함께 지역에서 복제를 사용할 때 Azure Acti
 ## <a name="provision-azure-ad-admin-sql-managed-instance"></a>Azure AD 관리자 프로 비전 (SQL Managed Instance)
 
 > [!IMPORTANT]
-> Azure SQL Managed Instance를 프로 비전 하는 경우에만 다음 단계를 수행 합니다. 이 작업은 글로벌/회사 관리자 또는 Azure AD의 권한 있는 역할 관리자만 실행할 수 있습니다. 다음 단계에서는 디렉터리에서 서로 다른 권한을 가진 사용자에 대해 사용 권한을 부여하는 프로세스를 설명합니다.
+> Azure SQL Managed Instance를 프로 비전 하는 경우에만 다음 단계를 수행 합니다. 이 작업은 글로벌/회사 관리자 또는 Azure AD의 권한 있는 역할 관리자만 실행할 수 있습니다.
+>
+> **공개 미리 보기**에서 Azure AD의 그룹에 **디렉터리 독자** 역할을 할당할 수 있습니다. 그런 다음 그룹 소유자는이 그룹의 구성원으로 관리 되는 인스턴스 id를 추가할 수 있습니다. 그러면 SQL Managed Instance에 대 한 Azure AD 관리자를 프로 비전 할 수 있습니다. 이 기능에 대 한 자세한 내용은 [AZURE SQL Azure Active Directory의 디렉터리 판독기 역할](authentication-aad-directory-readers-role.md)을 참조 하세요.
 
 SQL Managed Instance는 보안 그룹 구성원 자격 또는 새 사용자 만들기를 통해 사용자 인증 등의 작업을 성공적으로 수행 하기 위해 Azure AD를 읽을 수 있는 권한이 필요 합니다. 이 작업을 수행 하려면 Azure AD를 읽을 수 있는 권한을 SQL Managed Instance 부여 해야 합니다. Azure Portal 또는 PowerShell을 사용 하 여이 작업을 수행할 수 있습니다.
 
@@ -291,7 +293,7 @@ PowerShell 명령 get-help를 사용 하 여 이러한 각 명령에 대 한 자
 Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server" -DisplayName "DBA_Group"
 ```
 
-**DisplayName** 입력 매개 변수에는 Azure AD 표시 이름이나 사용자 계정 이름이 허용됩니다. 예를 들어 ``DisplayName="John Smith"`` 및 ``DisplayName="johns@contoso.com"``가 있습니다. Azure AD 그룹에는 Azure AD 표시 이름만 지원됩니다.
+**DisplayName** 입력 매개 변수에는 Azure AD 표시 이름이나 사용자 계정 이름이 허용됩니다. 예를 들어 ``DisplayName="John Smith"`` 및 ``DisplayName="johns@contoso.com"``를 지정합니다. Azure AD 그룹에는 Azure AD 표시 이름만 지원됩니다.
 
 > [!NOTE]
 > Azure PowerShell 명령 ```Set-AzSqlServerActiveDirectoryAdministrator```는 지원되지 않는 사용자에 대한 Azure AD 관리자 프로비전을 차단하지 않습니다. 지원되지 않는 사용자를 프로비전할 수는 있지만 데이터베이스에 연결할 수는 없습니다.
@@ -519,7 +521,7 @@ conn.Open();
 다음 문은 [다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53591)에서 사용할 수 있는 sqlcmd 버전 13.1을 사용하여 연결합니다.
 
 > [!NOTE]
-> `sqlcmd`에서 명령을 사용 하면 `-G` 시스템 id에서 작동 하지 않으며 사용자 계정 로그인이 필요 합니다.
+> `sqlcmd` 에서 명령을 사용 하면 `-G` 시스템 id에서 작동 하지 않으며 사용자 계정 로그인이 필요 합니다.
 
 ```cmd
 sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G  
@@ -528,7 +530,7 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyA
 
 ## <a name="troubleshoot-azure-ad-authentication"></a>Azure AD 인증 문제 해결
 
-Azure AD 인증을 사용 하 여 문제를 해결 하는 방법에 대 한 지침은 다음 블로그를 참조 하세요.<https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991>
+Azure AD 인증을 사용 하 여 문제를 해결 하는 방법에 대 한 지침은 다음 블로그를 참조 하세요. <https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991>
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 50c6d3ff6e1e8b979b3544c423a15ae8e1e42f6f
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: dba43c9e9b214a1ad077a2a15bdf014e057bb04e
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592154"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869884"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Azure Cognitive Services에 대한 자연어 지원
 
@@ -28,19 +28,19 @@ Azure Cognitive Services를 사용 하면 사용자에 게 표시, 듣기, 말�
 * [Face](./face/index.yml)
 * [Personalizer](./personalizer/index.yml)
 
-## <a name="vision"></a>비전
+## <a name="vision"></a>Vision
 
 * [Computer Vision](./computer-vision/language-support.md)
 * [Form Recognizer(미리 보기)](./form-recognizer/language-support.md)
 * [Ink Recognizer(미리 보기)](./ink-recognizer/language-support.md)
-* [비디오 인덱서](https://docs.microsoft.com/azure/media-services/video-indexer/language-identification-model#guidelines-and-limitations)
+* [Video Indexer](https://docs.microsoft.com/azure/media-services/video-indexer/language-identification-model#guidelines-and-limitations)
 
 ## <a name="language"></a>언어
 
-* [몰입형 리더(미리 보기)](./immersive-reader/language-support.md)
+* [몰입형 리더](./immersive-reader/language-support.md)
 * [언어 이해(LUIS)](./luis/luis-supported-languages.md)
 * [QnA Maker](./qnamaker/overview/languages-supported.md)
-* [Text Analytics](./text-analytics/text-analytics-supported-languages.md)
+* [텍스트 분석](./text-analytics/text-analytics-supported-languages.md)
 * [Translator](./translator/languages.md)
 
 ## <a name="speech"></a>음성

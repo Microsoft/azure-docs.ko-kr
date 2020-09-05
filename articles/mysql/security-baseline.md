@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: e73f53fe983c1ebe77044993a281847ad362a840
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 414c8dc0a9e6c7aa47287fe49a3f21ee28605f78
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496776"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244707"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-mysql"></a>Azure Database for MySQL에 대한 Azure 보안 기준
 
@@ -320,7 +320,7 @@ Azure Database for MySQL에 대한 추가 계정을 만드는 방법: https://do
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3.3: 전용 관리 계정 사용
 
@@ -547,9 +547,9 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Database for MySQL 제어 평면 (예: Azure Portal)에 대 한 액세스를 제어 합니다. 데이터 평면 액세스(데이터베이스 자체 내)의 경우 SQL 쿼리를 사용하여 사용자를 만들고 사용자 권한을 구성합니다. RBAC는 데이터베이스 내의 사용자 권한에 영향을 주지 않습니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Azure Database for MySQL 제어 평면 (예: Azure Portal)에 대 한 액세스를 제어 합니다. 데이터 평면 액세스(데이터베이스 자체 내)의 경우 SQL 쿼리를 사용하여 사용자를 만들고 사용자 권한을 구성합니다. Azure RBAC는 데이터베이스 내의 사용자 권한에 영향을 주지 않습니다.
 
-Azure에서 RBAC를 구성하는 방법: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+Azure RBAC를 구성 하는 방법: https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
 Azure Database for MySQL용 SQL을 사용하여 사용자 액세스를 구성하는 방법: https://docs.microsoft.com/azure/mysql/howto-create-users
 
@@ -736,7 +736,7 @@ Azure Graph를 사용하여 쿼리를 만드는 방법: https://docs.microsoft.c
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9: 승인된 Azure 서비스만 사용
 
-**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용한 고객 구독에 만들 수 있는 리소스 종류에 대한 제한을 설정할 수 있습니다.
+**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용하여 고객 구독에서 만들 수 있는 리소스 종류를 제한합니다.
 
 - 허용되지 않는 리소스 종류
 
@@ -888,7 +888,7 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 ### <a name="711-manage-azure-secrets-securely"></a>7.11: 안전하게 Azure 비밀 관리
 
-**지침**: Azure Database for MySQL 인스턴스에 액세스하는 데 사용되는 Azure App Service에서 실행되는 Azure Virtual Machines 또는 웹 애플리케이션의 경우 Azure Key Vault와 관리되는 서비스 ID를 함께 사용하여 Azure Database for MySQL 비밀 관리를 간소화하고 보호합니다. Key Vault 일시 삭제를 사용하도록 설정되어 있는지 확인합니다.
+**지침**: Azure Database for MySQL 인스턴스에 액세스하는 데 사용되는 Azure App Service에서 실행되는 Azure Virtual Machines 또는 웹 애플리케이션의 경우 Azure Key Vault와 관리되는 서비스 ID를 함께 사용하여 Azure Database for MySQL 비밀 관리를 간소화하고 보호합니다. Key Vault 일시 삭제를 사용하도록 설정했는지 확인합니다.
 
 Azure 관리 ID와 통합하는 방법: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
@@ -932,7 +932,7 @@ Azure 관리 ID와 통합하는 방법: https://docs.microsoft.com/azure/azure-a
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1: 중앙 관리형 맬웨어 방지 소프트웨어 사용
 
-**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 Microsoft 맬웨어 방지는 Azure 서비스(예: Azure Database for SQL)를 지원하는 기본 호스트에서 사용하도록 설정되어 있지만 고객 콘텐츠에서는 실행되지 않습니다.
 
@@ -1099,7 +1099,7 @@ Microsoft에서 관리하는 클라우드 인프라, 서비스 및 애플리케�
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ## <a name="next-steps"></a>다음 단계
 

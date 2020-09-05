@@ -5,12 +5,13 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: ea21502cdab35b261e20af7f23b7b522f77c6667
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 3cb22bc2cd032e51dcdb7429e2c0684c578b0870
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75451993"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005652"
 ---
 # <a name="managing-resource-consumption-and-load-in-service-fabric-with-metrics"></a>메트릭을 사용하여 Service Fabric에서 리소스 부하 및 소비 관리
 *메트릭*은 서비스에서 관심을 갖고 클러스터의 노드에서 제공하는 리소스입니다. 메트릭은 서비스 성능을 향상시키거나 모니터링하기 위해 관리하려는 모든 항목입니다. 예를 들어 메모리 사용량을 조사하여 서비스가 오버로드 상태인지 여부를 확인할 수 있습니다. 또 다른 용도는 더 나은 성능을 얻기 위해 메모리 제약이 심하지 않은 위치로 서비스를 이동할 수 있는지 여부를 파악하는 것입니다.
@@ -18,7 +19,7 @@ ms.locfileid: "75451993"
 메모리, 디스크, CPU 사용량 등이 모두 메트릭의 예입니다. 이러한 메트릭은 노드에서 관리해야 하는 물리적 리소스에 해당하는 물리적 메트릭입니다. 메트릭은 논리 메트릭이 될 수도 있으며 이것이 일반적인 경우이기도 합니다. “MyWorkQueueDepth”, "MessagesToProcess" 또는 "TotalRecords" 등이 논리 메트릭입니다. 논리 메트릭은 애플리케이션에서 정의하며 간접적으로 일부 물리적 리소스 사용량에 해당합니다. 서비스별로 물리적 리소스 사용량을 측정하고 보고하는 것이 어려울 수 있기 때문에 논리 메트릭이 일반적입니다. 사용자 고유의 메트릭을 측정하고 보고하는 복잡성은 Service Fabric에서 몇 가지 기본 메트릭을 제공하는 이유이기도 합니다.
 
 ## <a name="default-metrics"></a>기본 메트릭
-서비스를 작성하고 배포하기 시작한다고 가정해 보겠습니다. 이 시점에서는 어떤 물리적 또는 논리적 리소스를 사용하는지 알 수 없습니다. 이것으로 끝입니다. 다른 메트릭이 지정되지 않은 경우 Service Fabric 클러스터 리소스 관리자에서는 일부 기본 메트릭을 사용합니다. 아래에 이 계정과 키의 예제가 나와 있습니다.
+서비스를 작성하고 배포하기 시작한다고 가정해 보겠습니다. 이 시점에서는 어떤 물리적 또는 논리적 리소스를 사용하는지 알 수 없습니다. 이것으로 끝입니다. 다른 메트릭이 지정되지 않은 경우 Service Fabric 클러스터 리소스 관리자에서는 일부 기본 메트릭을 사용합니다. 해당 항목은 다음과 같습니다.
 
   - PrimaryCount - 노드의 주 복제본 수 
   - ReplicaCount - 노드의 총 상태 저장 복제본 수
@@ -26,14 +27,14 @@ ms.locfileid: "75451993"
 
 | 메트릭 | 상태 비저장 인스턴스 부하 | 상태 저장 보조 부하 | 상태 저장 기본 부하 | 무게 |
 | --- | --- | --- | --- | --- |
-| PrimaryCount |0 |0 |1 |높은 |
+| PrimaryCount |0 |0 |1 |높음 |
 | ReplicaCount |0 |1 |1 |중간 |
 | 개수 |1 |1 |1 |낮음 |
 
 
 기본 워크로드의 경우 기본 메트릭은 클러스터에서 적절한 작업 분산을 제공합니다. 다음 예에서는 두 서비스를 만들고 분산에 대해 기본 메트릭을 사용할 때 어떤 상황이 발생하는지 확인해 보겠습니다. 첫 번째 서비스는 3개의 파티션과 3개의 대상 복제본 세트 크기가 있는 상태 저장 서비스입니다. 두 번째는 하나의 파티션과 3개의 인스턴스 수가 있는 상태 비저장 서비스입니다.
 
-다음을 알 수 있습니다.
+결과는 다음과 같습니다.
 
 <center>
 

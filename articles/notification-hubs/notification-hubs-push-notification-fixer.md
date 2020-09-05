@@ -16,12 +16,13 @@ ms.date: 02/25/2020
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/04/2019
-ms.openlocfilehash: 3bad65dbecd6e4a7d9bcb7fbdee6faafc31ead86
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b5139f75084eb0646db2fc8b05b04aaf3ddb2a12
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078030"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010786"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Azure Notification Hubs에서 삭제 된 알림 진단
 
@@ -128,7 +129,7 @@ Notification Hubs에서 삭제 된 알림의 근본 원인을 진단 하는 경�
 
 각 푸시 알림 서비스 개발자 포털(APNs, FCM, Windows Notification Service 등)에서 자격 증명을 확인합니다. 자세한 내용은 [자습서: Azure Notification Hubs를 사용 하 여 유니버설 Windows 플랫폼 앱에 알림 보내기](./notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md)를 참조 하세요.
 
-#### <a name="azure-portal"></a>Azure 포털
+#### <a name="azure-portal"></a>Azure portal
 
 푸시 알림 서비스 개발자 포털에서 얻은 자격 증명과 자격 증명을 검토 하 고 일치 시키려면 Azure Portal의 **액세스 정책** 탭으로 이동 합니다.
 
@@ -171,7 +172,7 @@ Visual Studio에서 서버 탐색기 통해 Azure에 연결 하 여 Notification
 
 ### <a name="verify-message-notifications"></a>알림 메시지 확인
 
-#### <a name="azure-portal"></a>Azure 포털
+#### <a name="azure-portal"></a>Azure portal
 
 서비스 백 엔드를 실행하지 않고 클라이언트에 테스트 알림을 보내려면 **지원 + 문제 해결**에서 **테스트 보내기**를 선택합니다.
 
@@ -199,7 +200,7 @@ Notification Hubs를 통해 알림을 보낼 때 알림은 처음에 큐에 대�
 
 푸시 알림 서비스 오류에 대한 정보를 얻으려면 [EnableTestSend] 속성을 사용합니다. 이 속성은 포털 또는 Visual Studio 클라이언트에서 테스트 메시지를 보낼 때 자동으로 활성화됩니다. 이 속성을 사용 하 여 자세한 디버깅 정보 및 Api를 통해 볼 수도 있습니다. 현재 이 속성은 .NET SDK에서 사용할 수 있습니다. 결국 모든 클라이언트 Sdk에 추가 됩니다.
 
-REST 호출에 `EnableTestSend` 속성을 사용하려면 송신 호출 끝에 *test*라는 쿼리 문자열 매개 변수를 추가합니다. 예를 들면 다음과 같습니다.
+REST 호출에 `EnableTestSend` 속성을 사용하려면 송신 호출 끝에 *test*라는 쿼리 문자열 매개 변수를 추가합니다. 예를 들어:
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
@@ -248,7 +249,7 @@ The Token obtained from the Token Provider is wrong
 
 ### <a name="review-telemetry"></a>원격 분석 검토
 
-#### <a name="azure-portal"></a>Azure 포털
+#### <a name="azure-portal"></a>Azure portal
 
 포털에서 알림 허브의 모든 활동에 대한 간략한 개요를 확인할 수 있습니다.
 

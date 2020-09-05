@@ -3,21 +3,21 @@ title: 기술 자료 관리-QnA Maker
 description: QnA Maker를 사용 하면 기술 자료 설정 및 콘텐츠에 대 한 액세스를 제공 하 여 기술 자료를 관리할 수 있습니다.
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 4eb07b30b10826c361f4f9b805b517e372fc5ea1
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 08736ce61e6768cfd9ac3d3ded7092a4ab93fca9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80756809"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551781"
 ---
 # <a name="create-knowledge-base-and-manage-settings"></a>기술 자료 만들기 및 설정 관리
 
 QnA Maker를 사용 하면 기술 자료 설정 및 데이터 원본에 대 한 액세스를 제공 하 여 기술 자료를 관리할 수 있습니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 > [!div class="checklist"]
-> * Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 계정을 만듭니다.
+> * Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.microsoft.com/free/cognitive-services/) 계정을 만듭니다.
 > * Azure Portal에서 만든 [QnA Maker 리소스](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesQnAMaker) 입니다. 리소스를 만들 때 선택한 Azure Active Directory ID, 구독, QnA 리소스 이름을 기억하세요.
 
 ## <a name="create-a-knowledge-base"></a>기술 자료 만들기
@@ -36,7 +36,7 @@ QnA Maker를 사용 하면 기술 자료 설정 및 데이터 원본에 대 한 
 
    ![QnA Maker 서비스 기술 자료를 선택하는 스크린샷](../media/qnamaker-quickstart-kb/qnaservice-selection.png)
 
-1. **3 단계**에서 기술 자료의 이름을로 `My Sample QnA KB`합니다.
+1. **3 단계**에서 기술 자료의 이름을로 `My Sample QnA KB` 합니다.
 
 1. **4단계**에서는 다음 표를 사용하여 설정을 구성합니다.
 

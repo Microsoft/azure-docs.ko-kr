@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 0b857cb853add1920e6933a9f1ebfd7a0f61b57f
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.openlocfilehash: ec38f16c5a658848eab505794ed1a2d072f22aea
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88054275"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749615"
 ---
 # <a name="virtual-network-design-considerations-and-configuration-options-for-azure-active-directory-domain-services"></a>Azure Active Directory Domain Services에 대 한 가상 네트워크 디자인 고려 사항 및 구성 옵션
 
@@ -91,10 +91,10 @@ Azure AD DS에 대 한 가상 네트워크를 설계할 때 다음과 같은 고
 
 관리 되는 도메인은 배포 중에 일부 네트워킹 리소스를 만듭니다. 이러한 리소스는 관리 되는 도메인의 성공적인 작업 및 관리에 필요 하며 수동으로 구성할 수 없습니다.
 
-| Azure 리소스                          | 설명 |
+| Azure 리소스                          | Description |
 |:----------------------------------------|:---|
 | 네트워크 인터페이스 카드                  | Azure AD DS는 Windows Server에서 실행 되는 두 개의 Dc (도메인 컨트롤러)에서 관리 되는 도메인을 Azure Vm으로 호스팅합니다. 각 VM에는 가상 네트워크 서브넷에 연결 하는 가상 네트워크 인터페이스가 있습니다. |
-| 동적 표준 공용 IP 주소      | Azure AD DS는 표준 SKU 공용 IP 주소를 사용 하 여 동기화 및 관리 서비스와 통신 합니다. 공용 IP 주소에 대 한 자세한 내용은 [Azure의 ip 주소 유형 및 할당 방법](../virtual-network/virtual-network-ip-addresses-overview-arm.md)을 참조 하세요. |
+| 동적 표준 공용 IP 주소      | Azure AD DS는 표준 SKU 공용 IP 주소를 사용 하 여 동기화 및 관리 서비스와 통신 합니다. 공용 IP 주소에 대 한 자세한 내용은 [Azure의 ip 주소 유형 및 할당 방법](../virtual-network/public-ip-addresses.md)을 참조 하세요. |
 | Azure 표준 부하 분산 장치            | Azure AD DS는 NAT (네트워크 주소 변환) 및 부하 분산을 위해 표준 SKU 부하 분산 장치를 사용 합니다 (보안 LDAP와 함께 사용 하는 경우). Azure 부하 분산 장치에 대 한 자세한 내용은 [Azure Load Balancer?](../load-balancer/load-balancer-overview.md) 을 참조 하세요. |
 | NAT (Network address translation) 규칙 | Azure AD DS는 부하 분산 장치에 대 한 세 가지 NAT 규칙을 만들고 사용 합니다 .이 규칙은 보안 HTTP 트래픽에 대 한 규칙 하나, 보안 PowerShell 원격을 위한 두 가지 규칙입니다. |
 | 부하 분산 장치 규칙                     | 관리 되는 도메인이 TCP 포트 636에서 보안 LDAP를 사용 하도록 구성 된 경우 부하 분산 장치에서 트래픽을 분산 하는 세 가지 규칙이 만들어지고 사용 됩니다. |
@@ -104,11 +104,11 @@ Azure AD DS에 대 한 가상 네트워크를 설계할 때 다음과 같은 고
 
 ## <a name="network-security-groups-and-required-ports"></a>네트워크 보안 그룹 및 필수 포트
 
-[NSG (네트워크 보안 그룹)](../virtual-network/virtual-networks-nsg.md) 에는 Azure virtual network의 트래픽에 대 한 네트워크 트래픽을 허용 하거나 거부 하는 규칙의 목록이 포함 되어 있습니다. 네트워크 보안 그룹은 서비스에서 인증 및 관리 기능을 제공할 수 있도록 하는 일련의 규칙을 포함 하는 관리 되는 도메인을 배포할 때 만들어집니다. 이 기본 네트워크 보안 그룹은 관리 되는 도메인이 배포 된 가상 네트워크 서브넷과 연결 됩니다.
+[NSG (네트워크 보안 그룹)](../virtual-network/security-overview.md) 에는 Azure virtual network의 트래픽에 대 한 네트워크 트래픽을 허용 하거나 거부 하는 규칙의 목록이 포함 되어 있습니다. 네트워크 보안 그룹은 서비스에서 인증 및 관리 기능을 제공할 수 있도록 하는 일련의 규칙을 포함 하는 관리 되는 도메인을 배포할 때 만들어집니다. 이 기본 네트워크 보안 그룹은 관리 되는 도메인이 배포 된 가상 네트워크 서브넷과 연결 됩니다.
 
 다음 네트워크 보안 그룹 규칙은 관리 되는 도메인에서 인증 및 관리 서비스를 제공 하는 데 필요 합니다. 관리 되는 도메인이 배포 된 가상 네트워크 서브넷에 대해 이러한 네트워크 보안 그룹 규칙을 편집 하거나 삭제 하지 마세요.
 
-| 포트 번호 | 프로토콜 | 원본                             | 대상 | 작업 | 필수 | 목적 |
+| 포트 번호 | 프로토콜 | 원본                             | 대상 | 작업 | 필수 | 용도 |
 |:-----------:|:--------:|:----------------------------------:|:-----------:|:------:|:--------:|:--------|
 | 443         | TCP      | AzureActiveDirectoryDomainServices | 모두         | Allow  | 예      | Azure AD 테 넌 트와 동기화. |
 | 3389        | TCP      | CorpNetSaw                         | 모두         | Allow  | 예      | 도메인 관리. |

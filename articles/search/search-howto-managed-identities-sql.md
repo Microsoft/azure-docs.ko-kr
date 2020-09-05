@@ -9,22 +9,21 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: d0933f5305007bc4a8238adb2b6b949ab0c11edf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8dabf69af8628bb0b168bfea94af5333df341423
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559934"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924132"
 ---
 # <a name="set-up-an-indexer-connection-to-azure-sql-database-using-a-managed-identity-preview"></a>관리 id (미리 보기)를 사용 하 여 Azure SQL Database에 대 한 인덱서 연결 설정
 
 > [!IMPORTANT] 
-> 관리 ID를 사용하는 데이터 원본 연결 설정 지원은 현재 제어된 공개 미리 보기 상태입니다. 미리 보기 기능은 서비스 수준 계약 없이 제공되며, 프로덕션 워크로드에는 사용하지 않는 것이 좋습니다.
-> [이 양식](https://aka.ms/azure-cognitive-search/mi-preview-request)을 작성하여 미리 보기에 대한 액세스를 요청할 수 있습니다.
+> 관리 id를 사용 하 여 데이터 원본에 대 한 연결을 설정 하는 기능은 현재 공개 미리 보기로 제공 됩니다. 미리 보기 기능은 서비스 수준 계약 없이 제공되며, 프로덕션 워크로드에는 사용하지 않는 것이 좋습니다.
 
 이 페이지에서는 데이터 원본 개체 연결 문자열에 자격 증명을 제공 하는 대신 관리 되는 id를 사용 하 여 Azure SQL Database에 대 한 인덱서 연결을 설정 하는 방법을 설명 합니다.
 
-이 기능에 대해 자세히 알아보기 전에 인덱서가 무엇이며 데이터 원본에 대해 인덱서를 설정하는 방법을 이해하는 것이 좋습니다. 자세한 내용은 다음 링크에서 확인할 수 있습니다.
+이 기능을 학습하기 전에 인덱서가 무엇인지와 데이터 원본에 대해 인덱서를 설정하는 방법을 이해하는 것이 좋습니다. 자세한 내용은 다음 링크에서 확인할 수 있습니다.
 
 * [인덱서 개요](search-indexer-overview.md)
 * [Azure SQL 인덱서](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
@@ -33,11 +32,11 @@ ms.locfileid: "85559934"
 
 ### <a name="1---turn-on-system-assigned-managed-identity"></a>1 - 시스템 할당 관리 ID 켜기
 
-시스템 할당 관리 ID를 사용하도록 설정하면 Azure는 동일한 테넌트 및 구독 내에서 다른 Azure 서비스에 인증하는 데 사용할 수 있는 검색 서비스 ID를 만듭니다. 그런 다음 인덱싱 중에 데이터 액세스를 허용하는 RBAC(역할 기반 액세스 제어) 할당에서 이 ID를 사용할 수 있습니다.
+시스템 할당 관리 ID 사용이 설정되면 Azure는 동일한 테넌트 및 구독 내에서 다른 Azure 서비스에 인증하는 데 사용할 수 있는 검색 서비스 ID를 만듭니다. 그런 다음 인덱싱 중에 데이터 액세스를 허용하는 RBAC(역할 기반 액세스 제어) 할당에서 이 ID를 사용할 수 있습니다.
 
 ![시스템 할당 관리 ID 켜기](./media/search-managed-identities/turn-on-system-assigned-identity.png "시스템 할당 관리 ID 켜기")
 
-**저장**을 선택하면 검색 서비스에 할당된 개체 ID가 표시됩니다.
+**저장**을 선택한 후 검색 서비스에 할당된 개체 ID가 표시됩니다.
 
 ![개체 ID](./media/search-managed-identities/system-assigned-identity-object-id.png "개체 ID입니다.")
 
@@ -45,7 +44,7 @@ ms.locfileid: "85559934"
 
 다음 단계에서 데이터베이스에 연결하는 경우 데이터베이스에 대한 액세스 권한을 검색 서비스에 부여하기 위해 데이터베이스에 대한 관리자 액세스 권한이 있는 Azure AD(Active Directory) 계정에 연결해야 합니다.
 
-[여기](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure?tabs=azure-powershell#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server) 지침에 따라 Azure AD 계정 관리자에게 데이터베이스에 대한 액세스 권한을 부여합니다.
+[여기](../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell#provision-azure-ad-admin-sql-database) 지침에 따라 Azure AD 계정 관리자에게 데이터베이스에 대한 액세스 권한을 부여합니다.
 
 ### <a name="3---assign-the-search-service-permissions"></a>3 - 검색 서비스 사용 권한 할당
 
@@ -98,7 +97,9 @@ ms.locfileid: "85559934"
 
 ### <a name="5---create-the-data-source"></a>5 - 데이터 원본 만들기
 
-SQL 데이터베이스에서 인덱싱할 때 데이터 원본에는 다음과 같은 필수 속성이 있어야 합니다.
+[REST API](/rest/api/searchservice/create-data-source), Azure Portal 및 [.net SDK](/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) 는 관리 되는 id 연결 문자열을 지원 합니다. 다음은 [REST API](/rest/api/searchservice/create-data-source) 및 관리 되는 id 연결 문자열을 사용 하 여 Azure SQL Database에서 데이터를 인덱싱하는 데이터 원본을 만드는 방법에 대 한 예입니다. 관리 되는 id 연결 문자열 형식은 REST API, .NET SDK 및 Azure Portal에 대해 동일 합니다.
+
+[REST API](/rest/api/searchservice/create-data-source)를 사용 하 여 데이터 원본을 만들 때 데이터 원본에는 다음과 같은 필수 속성이 있어야 합니다.
 
 * **name**은 검색 서비스 내 데이터 원본의 고유 이름입니다.
 * **type**은 `azuresql`입니다.
@@ -108,7 +109,7 @@ SQL 데이터베이스에서 인덱싱할 때 데이터 원본에는 다음과 �
         * *Initial Catalog|Database=**database name**;ResourceId=/subscriptions/**구독 ID**/resourceGroups/**리소스 그룹 이름**/providers/Microsoft.Sql/servers/**SQL Server 이름**/;Connection Timeout=**connection timeout length**;*
 * **container**에는 인덱싱할 테이블 또는 뷰의 이름을 지정합니다.
 
-다음은 [REST API](https://docs.microsoft.com/rest/api/searchservice/create-data-source)를 사용하여 Azure SQL 데이터 원본 개체를 만드는 방법의 예입니다.
+다음은 [REST API](/rest/api/searchservice/create-data-source)를 사용하여 Azure SQL 데이터 원본 개체를 만드는 방법의 예입니다.
 
 ```
 POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
@@ -122,8 +123,6 @@ api-key: [admin key]
     "container" : { "name" : "my-table" }
 } 
 ```
-
-Azure Portal 및 [.NET SDK](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet)는 관리 ID 연결 문자열 또한 지원합니다. Azure Portal에는 이 페이지 상단의 링크를 사용하여 미리 보기에 등록할 때 제공되는 기능 플래그가 필요합니다. 
 
 ### <a name="6---create-the-index"></a>6 - 인덱스 만들기
 
@@ -145,7 +144,7 @@ api-key: [admin key]
 }
 ```
 
-인덱스 만들기에 자세한 내용은 [인덱스 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index)를 참조하세요.
+인덱스 만들기에 자세한 내용은 [인덱스 만들기](/rest/api/searchservice/create-index)를 참조하세요.
 
 ### <a name="7---create-the-indexer"></a>7 - 인덱서 만들기
 
@@ -170,13 +169,13 @@ api-key: [admin key]
 
 이 인덱서는 2시간 간격으로 실행됩니다(일정 간격이 "PT2H"로 설정됨). 인덱서를 30분 간격으로 실행하려면 간격을 "PT30M"으로 설정합니다. 지원되는 가장 짧은 간격은 5분입니다. 일정은 선택 사항입니다. 생략하는 경우 인덱서는 만들어질 때 한 번만 실행됩니다. 그러나 언제든지 필요할 때 인덱서를 실행할 수 있습니다.   
 
-인덱서 만들기 API에 대한 자세한 내용은 [인덱서 만들기](https://docs.microsoft.com/rest/api/searchservice/create-indexer)를 확인하세요.
+인덱서 만들기 API에 대한 자세한 내용은 [인덱서 만들기](/rest/api/searchservice/create-indexer)를 확인하세요.
 
 인덱서 일정을 정의하는 방법에 대한 자세한 내용은 [Azure Cognitive Search에 대한 인덱서를 예약하는 방법](search-howto-schedule-indexers.md)을 참조하세요.
 
 ## <a name="troubleshooting"></a>문제 해결
 
-인덱서가 클라이언트에서 서버에 액세스할 수 없다고 표시하는 데이터 원본에 연결하려고 할 때 오류가 발생하는 경우 [일반적인 인덱서 오류](https://docs.microsoft.com/azure/search/search-indexer-troubleshooting)를 살펴봅니다.
+인덱서가 클라이언트에서 서버에 액세스할 수 없다고 표시하는 데이터 원본에 연결하려고 할 때 오류가 발생하는 경우 [일반적인 인덱서 오류](./search-indexer-troubleshooting.md)를 살펴봅니다.
 
 ## <a name="see-also"></a>참고 항목
 

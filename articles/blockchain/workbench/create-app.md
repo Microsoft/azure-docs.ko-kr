@@ -1,15 +1,15 @@
 ---
 title: 블록체인 애플리케이션 만들기 - Azure Blockchain Workbench
 description: Azure Blockchain Workbench 미리 보기용 블록체인 애플리케이션을 만드는 방법에 대한 자습서입니다.
-ms.date: 10/14/2019
+ms.date: 08/24/2020
 ms.topic: tutorial
-ms.reviewer: brendal
-ms.openlocfilehash: 7be79757f506ea9fb854a248e77f0ff4f1b74f47
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.reviewer: ravastra
+ms.openlocfilehash: add790a069d2e0ea66d84bbd632825cf9331fd38
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073114"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88784031"
 ---
 # <a name="tutorial-create-a-blockchain-application-for-azure-blockchain-workbench"></a>자습서: Azure Blockchain Workbench용 블록체인 애플리케이션 만들기
 
@@ -40,7 +40,7 @@ Azure Blockchain Workbench를 사용하여 구성 및 스마트 계약 코드로
 
 ## <a name="configuration-file"></a>구성 파일
 
-구성 메타데이터는 블록체인 애플리케이션의 고급 워크플로 및 상호 작용 모델을 정의합니다. 구성 메타데이터는 블록체인 애플리케이션의 워크플로 단계 및 상호 작용 모델을 나타냅니다.
+구성 메타데이터는 블록체인 애플리케이션의 고급 워크플로 및 상호 작용 모델을 정의합니다. 구성 메타데이터는 블록체인 애플리케이션의 워크플로 단계 및 상호 작용 모델을 나타냅니다. 구성 파일 콘텐츠에 대한 자세한 내용은 [Azure Blockchain 워크플로 구성 참조](configuration.md)를 참조하세요.
 
 1. 자주 사용하는 편집기에서 `HelloBlockchain.json`이라는 파일을 만듭니다.
 2. 다음 JSON을 추가하여 블록체인 애플리케이션의 구성을 정의합니다.
@@ -211,8 +211,6 @@ Azure Blockchain Workbench를 사용하여 구성 및 스마트 계약 코드로
 ### <a name="workflows"></a>워크플로
 
 워크플로는 계약에서 하나 이상의 단계와 작업을 정의합니다. 요청-응답 시나리오에서 워크플로의 첫 번째 단계(상태)는 요청자(역할)가 요청(함수)을 보내기 위한 작업(전환)을 수행합니다. 다음 단계(상태)는 응답자(역할)가 응답(함수)을 보내기 위한 작업(전환)을 수행합니다. 애플리케이션의 워크플로에는 계약의 흐름을 설명하는 데 필요한 속성, 함수 및 상태가 포함될 수 있습니다.
-
-구성 파일 콘텐츠에 대한 자세한 내용은 [Azure Blockchain 워크플로 구성 참조](configuration.md)를 참조하세요.
 
 ## <a name="smart-contract-code-file"></a>스마트 계약 코드 파일
 

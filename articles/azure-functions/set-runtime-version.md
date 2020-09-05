@@ -3,12 +3,12 @@ title: Azure Functions 런타임 버전을 대상으로 지정하는 방법
 description: Azure Functions는 여러 버전의 런타임을 지원합니다. Azure에서 호스팅된 함수 앱의 런타임 버전을 지정하는 방법을 알아봅니다.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 74ee0d382dcd468aed118a7de330eef95b329402
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: a7d86ef26d50d60389ae09bf3245ed97fea2c3e3
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87830872"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926578"
 ---
 # <a name="how-to-target-azure-functions-runtime-versions"></a>Azure Functions 런타임 버전을 대상으로 지정하는 방법
 
@@ -42,19 +42,16 @@ Azure Functions를 사용 하면 `FUNCTIONS_EXTENSION_VERSION` 함수 앱에서 
 > [!IMPORTANT]
 > 런타임 버전은 `FUNCTIONS_EXTENSION_VERSION` 설정에서 결정되지만, 설정을 직접 변경하지 않고 Azure Portal에서 이 변경을 수행해야 합니다. 그 이유는 포털에서 변경 내용이 확인되고 필요에 따라 관련된 다른 변경 내용이 적용되기 때문입니다.
 
-### <a name="from-the-azure-portal"></a>Azure Portal에서
+# <a name="portal"></a>[포털](#tab/portal)
 
 [!INCLUDE [Set the runtime version in the portal](../../includes/functions-view-update-version-portal.md)]
 
 > [!NOTE]
 > Azure Portal를 사용 하 여 이미 함수가 포함 된 함수 앱에 대 한 런타임 버전을 변경할 수 없습니다.
 
-### <a name="from-the-azure-cli"></a><a name="view-and-update-the-runtime-version-using-azure-cli"></a>Azure CLI에서
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 
-Azure CLI에서 `FUNCTIONS_EXTENSION_VERSION`을 확인하고 설정할 수도 있습니다.
-
->[!NOTE]
->다른 설정이 런타임 버전의 영향을 받을 수 있으므로 포털에서 버전을 변경해야 합니다. 런타임 버전을 변경할 때 포털에서는 Node.js 버전과 런타임 스택 등의 기타 필요한 업데이트를 자동으로 수행합니다.  
+Azure CLI에서 `FUNCTIONS_EXTENSION_VERSION`을 확인하고 설정할 수도 있습니다.  
 
 Azure CLI를 사용하여 [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings) 명령을 실행해 현재 런타임 버전을 확인합니다.
 
@@ -93,16 +90,36 @@ az functionapp config appsettings list --name <function_app> \
 함수 앱에서 [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings) 명령으로 함수 앱의 `FUNCTIONS_EXTENSION_VERSION` 설정을 업데이트할 수 있습니다.
 
 ```azurecli-interactive
-az functionapp config appsettings set --name <function_app> \
---resource-group <my_resource_group> \
---settings FUNCTIONS_EXTENSION_VERSION=<version>
+az functionapp config appsettings set --name <FUNCTION_APP> \
+--resource-group <RESOURCE_GROUP> \
+--settings FUNCTIONS_EXTENSION_VERSION=<VERSION>
 ```
 
-`<function_app>`은 함수 앱 이름으로 바꿉니다. 또한 `<my_resource_group>`을 함수 앱의 리소스 그룹 이름으로 바꿉니다. 그리고 `<version>`은 1.x 런타임의 유효한 버전 또는 2.x 버전의 경우 `~2`로 바꿉니다.
+`<FUNCTION_APP>`은 함수 앱 이름으로 바꿉니다. 또한 `<RESOURCE_GROUP>`을 함수 앱의 리소스 그룹 이름으로 바꿉니다. 또한를 `<VERSION>` 특정 버전 또는, 또는으로 바꿉니다 `~3` `~2` `~1` .
 
 앞의 코드 샘플에서 **사용해 보세요.** 를 선택하여 [Azure Cloud Shell](../cloud-shell/overview.md)에서 이 명령을 실행할 수 있습니다. 또한 [Azure CLI locally(로컬로 Azure CLI 설치)](/cli/azure/install-azure-cli)를 사용하면 [az login](/cli/azure/reference-index#az-login)을 실행하여 로그인한 후 이 명령을 실행할 수도 있습니다.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
+Azure Functions 런타임을 확인 하려면 다음 cmdlet을 사용 합니다. 
+
+```powershell
+Get-AzFunctionAppSetting -Name "<FUNCTION_APP>" -ResourceGroupName "<RESOURCE_GROUP>"
+```
+
+을 `<FUNCTION_APP>` 함수 앱 및의 이름으로 바꿉니다 `<RESOURCE_GROUP>` . 설정의 현재 값 `FUNCTIONS_EXTENSION_VERSION` 이 해시 테이블에 반환 됩니다.
+
+함수 런타임을 변경 하려면 다음 스크립트를 사용 합니다.
+
+```powershell
+Update-AzFunctionAppSetting -Name "<FUNCTION_APP>" -ResourceGroupName "<RESOURCE_GROUP>" -AppSetting @{"FUNCTIONS_EXTENSION_VERSION" = "<VERSION>"} -Force
+```
+
+이전과 마찬가지로을 `<FUNCTION_APP>` 함수 앱의 이름으로 바꾸고을 `<RESOURCE_GROUP>` 리소스 그룹의 이름으로 바꿉니다. 또한를 `<VERSION>` 특정 버전 또는와 같은 주 버전으로 바꿉니다 `~2` `~3` . `FUNCTIONS_EXTENSION_VERSION`반환 된 해시 테이블에서 설정의 업데이트 된 값을 확인할 수 있습니다. 
+
+---
+
+응용 프로그램 설정을 변경한 후 함수 앱이 다시 시작 됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

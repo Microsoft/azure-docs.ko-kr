@@ -15,7 +15,7 @@
       items:
         - name: Service Bus 큐 만들기
           items:
-            - name: Azure portal
+            - name: Azure Portal
               href: service-bus-quickstart-portal.md
             - name: Azure PowerShell
               href: service-bus-quickstart-powershell.md
@@ -44,6 +44,8 @@
           items:
             - name: Azure portal
               href: service-bus-quickstart-topics-subscriptions-portal.md
+            - name: Azure CLI
+              href: service-bus-tutorial-topics-subscriptions-cli.md
             - name: ARM 템플릿
               href: service-bus-resource-manager-namespace-topic.md
         - name: 메시지 게시 및 구독
@@ -62,21 +64,14 @@
               href: service-bus-ruby-how-to-use-topics-subscriptions.md
 - name: 자습서
   items:
-    - name: 인벤토리 업데이트 - PowerShell
-      href: service-bus-tutorial-topics-subscriptions-powershell.md
-    - name: 인벤토리 업데이트 - 포털
+    - name: 인벤토리 업데이트
       href: service-bus-tutorial-topics-subscriptions-portal.md
-    - name: 인벤토리 업데이트 - CLI
-      href: service-bus-tutorial-topics-subscriptions-cli.md
     - name: Event Grid를 통해 이벤트에 응답
       href: service-bus-to-event-grid-integration-example.md
 - name: 샘플
   items:
     - name: Service Bus 샘플
       href: service-bus-samples.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 프리미엄 메시징
@@ -119,6 +114,8 @@
           href: network-security.md
 - name: 방법 가이드
   items:
+    - name: 지역 간 이동
+      href: move-across-regions.md
     - name: Azure Service Manager(클래식) API에서 Resource Manager API로 마이그레이션
       href: deprecate-service-bus-management.md
     - name: 네임스페이스 만들기
@@ -272,6 +269,9 @@
       href: service-bus-messaging-sql-filter.md
     - name: SQLRuleAction 구문
       href: service-bus-messaging-sql-rule-action.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: FAQ

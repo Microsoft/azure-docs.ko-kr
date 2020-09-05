@@ -3,7 +3,7 @@ title: CLI를 사용하여 미디어 예약 단위 크기 조정 - Azure | Micro
 description: 이 토픽에서는 CLI를 사용하여 Azure Media Services에서 미디어 처리 크기를 조정하는 방법을 보여줍니다.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/09/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 6715014485b227713447ce5d552cf7ba79737845
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8e681b1f82086480541d08ae9f8ef9e5cf07b4df
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053219"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268471"
 ---
 # <a name="scaling-media-processing"></a>미디어 처리 크기 조정
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services를 사용하면 MRU(미디어 예약 단위)를 관리하여 계정에서 미디어 처리의 크기를 조정할 수 있습니다. Mru는 미디어 처리 작업이 처리 되는 속도를 결정 합니다. **S1**, **S2**또는 **S3**예약 단위 유형 중에서 선택할 수 있습니다. 예를 들어 **S2** 예약 단위 유형을 사용하는 경우 **S1** 유형에 비해 동일한 인코딩 작업이 더 빠르게 실행됩니다. 
 

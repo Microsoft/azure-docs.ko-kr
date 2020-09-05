@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: d33207639ebef912307a3c594ec274fd9609bd67
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 427b488fe6673bef505fccdaa7185d69437bceaf
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84656546"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231319"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Logic Apps REST API를 사용하여 ISE(통합 서비스 환경) 만들기
 
@@ -22,7 +22,7 @@ ms.locfileid: "84656546"
 > [!IMPORTANT]
 > ISE에서 실행되는 논리 앱, 기본 제공 트리거, 기본 제공 작업 및 커넥터는 사용량 기반 가격 책정 플랜과 다른 가격 책정 플랜을 사용합니다. ISE의 가격 책정 및 요금 청구 방식은 [Logic Apps 가격 책정 모델](../logic-apps/logic-apps-pricing.md#fixed-pricing)을 참조하세요. 가격 책정 요금은 [Logic Apps 가격 책정](../logic-apps/logic-apps-pricing.md)을 참조하세요.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * Azure Portal ISE를 만들 때 [ise에 대 한 액세스를 가능 하 게 하](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) 는 동일한 [필수 구성 요소](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) 및 요구 사항
 
@@ -58,7 +58,7 @@ Logic Apps REST API 호출 하 여 ISE를 만들려면 HTTPS PUT 요청을 만�
 
 ## <a name="request-body"></a>요청 본문
 
-다음은 ISE를 만들 때 사용할 속성을 설명 하는 요청 본문 구문입니다. 위치에 설치 된 자체 서명 된 인증서를 사용할 수 있도록 하는 ISE를 만들려면 `TrustedRoot` `certificates` ise 정의의 섹션 내에 개체를 포함 합니다 `properties` . 기존 ISE의 경우 개체에 대 한 패치 요청을 보낼 수 있습니다 `certificates` . 자체 서명 된 인증서를 사용 하는 방법에 대 한 자세한 내용은 [HTTP 커넥터-자체 서명 된 인증서](../connectors/connectors-native-http.md#self-signed)를 참조 하세요.
+다음은 ISE를 만들 때 사용할 속성을 설명 하는 요청 본문 구문입니다. 위치에 설치 된 자체 서명 된 인증서를 사용할 수 있도록 하는 ISE를 만들려면 `TrustedRoot` `certificates` ise 정의의 섹션 내에 개체를 포함 합니다 `properties` . 기존 ISE의 경우 개체에 대 한 패치 요청을 보낼 수 있습니다 `certificates` . 자체 서명 된 인증서를 사용 하는 방법에 대 한 자세한 내용은 [다른 서비스와 시스템에 대 한 아웃 바운드 호출을 위한 보안 액세스 및 데이터 액세스](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests)를 참조 하세요.
 
 ```json
 {

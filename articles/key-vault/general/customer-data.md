@@ -1,6 +1,6 @@
 ---
 title: Azure Key Vault 고객 데이터 기능 - Azure Key Vault | Microsoft Docs
-description: Key Vault에서 고객 데이터에 대해 알아보기
+description: 자격 증명 모음, 키, 암호, 인증서 및 관리 되는 저장소 계정을 만들거나 업데이트 하는 동안 Azure Key Vault 받는 고객 데이터에 대해 알아봅니다.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: reference
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: bceea53e6b177940305a2dc77f2a6ecfa37f277a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e7cfc707aa4bccdcd72e45efa3693ebd8f88a211
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81617893"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88189915"
 ---
 # <a name="azure-key-vault-customer-data-features"></a>Azure Key Vault 고객 데이터 기능
 

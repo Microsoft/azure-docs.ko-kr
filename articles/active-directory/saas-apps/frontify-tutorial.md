@@ -2,25 +2,21 @@
 title: '자습서: Frontify와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 Frontify 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 46d47aeb-e102-4e9d-8d99-b8c8333ce168
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/02/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9fa2b596492a14c06f5bfcb9a3ad74f54c54fb3
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: cf8b6e84470f34e7bab65b4f033fd9a8c38bd863
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80669159"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550927"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-frontify"></a>자습서: Frontify와 Azure Active Directory SSO(Single Sign-On) 통합
 

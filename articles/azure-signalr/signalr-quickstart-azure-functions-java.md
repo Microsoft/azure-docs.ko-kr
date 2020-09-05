@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 03/04/2019
 ms.author: zhshang
 ms.custom: devx-track-java
-ms.openlocfilehash: b67480f2b6de37822d74162f46caa4d7e50dc193
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 544f200e749b1b125e8077ee65f20a06779fb13d
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321788"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050576"
 ---
 # <a name="quickstart-use-java-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>빠른 시작: Java를 사용하여 Azure Functions와 SignalR Service로 대화방 만들기
 
@@ -37,13 +37,21 @@ Azure SignalR Service를 사용하면 애플리케이션에 실시간 기능을 
 > [!NOTE]
 > 이 빠른 시작은 macOS, Windows 또는 Linux에서 실행할 수 있습니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
+
 ## <a name="log-in-to-azure"></a>Azure에 로그인
 
 Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 로그인합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
+
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
+
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Azure 함수 앱을 구성하고 실행합니다.
 
@@ -79,10 +87,15 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
     ```bash
     mvn azure-functions:run
     ```
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -90,3 +103,5 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
 
 > [!div class="nextstepaction"]
 > [Java 및 Maven을 사용하여 첫 번째 함수 만들기](../azure-functions/functions-create-first-java-maven.md)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qsjava)

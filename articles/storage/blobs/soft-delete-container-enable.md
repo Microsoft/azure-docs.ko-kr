@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 08/10/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: f79b198b512547b1d93fbbd458af8251b109e62f
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: c2ce40f7d8a8d08e191fce11c98bd780e0c2fda1
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066664"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230078"
 ---
 # <a name="enable-and-manage-soft-delete-for-containers-preview"></a>컨테이너에 대해 일시 삭제 사용 및 관리 (미리 보기)
 
@@ -22,7 +22,7 @@ ms.locfileid: "88066664"
 
 응용 프로그램 또는 다른 저장소 계정 사용자가 실수로 데이터를 수정 하거나 삭제할 수 있는 경우 컨테이너 일시 삭제를 설정 하는 것이 좋습니다. 이 문서에서는 컨테이너에 대해 일시 삭제를 사용 하도록 설정 하는 방법을 보여 줍니다. 미리 보기에 등록 하는 방법을 비롯 하 여 컨테이너 일시 삭제에 대 한 자세한 내용은 [컨테이너의 일시 삭제 (미리 보기)](soft-delete-container-overview.md)를 참조 하세요.
 
-종단 간 데이터 보호의 경우 blob 및 blob 버전 관리 (미리 보기)에 대해 일시 삭제를 사용 하도록 설정 하는 것이 좋습니다. Blob에 대해 일시 삭제를 사용 하도록 설정 하는 방법을 알아보려면 [blob에 대 한 일시 삭제 설정 및 관리](soft-delete-blob-enable.md)를 참조 하세요. Blob 버전 관리를 사용 하도록 설정 하는 방법을 알아보려면 [blob 버전 관리 (미리 보기)](versioning-overview.md)를 참조 하세요.
+종단 간 데이터 보호를 위해 blob 및 Blob 버전 관리에 대해서도 일시 삭제를 사용 하도록 설정 하는 것이 좋습니다. Blob에 대해 일시 삭제를 사용 하도록 설정 하는 방법을 알아보려면 [blob에 대 한 일시 삭제 설정 및 관리](soft-delete-blob-enable.md)를 참조 하세요. Blob 버전 관리를 사용 하도록 설정 하는 방법을 알아보려면 [blob 버전 관리](versioning-overview.md)를 참조 하세요.
 
 ## <a name="enable-container-soft-delete"></a>컨테이너 일시 삭제 사용
 
@@ -100,5 +100,5 @@ Azure Portal에서 일시 삭제 된 컨테이너를 보려면 다음 단계를 
 ## <a name="next-steps"></a>다음 단계
 
 - [컨테이너에 대 한 일시 삭제 (미리 보기)](soft-delete-container-overview.md)
-- [Blob에 대 한 일시 삭제](soft-delete-blob-overview.md)
-- [Blob 버전 관리(미리 보기)](versioning-overview.md)
+- [Blob에 대한 일시 삭제](soft-delete-blob-overview.md)
+- [Blob 버전 관리](versioning-overview.md)

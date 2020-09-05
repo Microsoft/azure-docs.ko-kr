@@ -16,14 +16,14 @@ ms.date: 11/13/2019
 ms.subservice: app-mgmt
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c633f6d311d052b9f9388a38b17c6459aec4b6cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d32728c1f388e9013b922d1f60d30e65d350bbc1
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84760272"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88642438"
 ---
-# <a name="application-management-best-practices"></a>응용 프로그램 관리 모범 사례
+# <a name="application-management-best-practices"></a>애플리케이션 관리 모범 사례
 
 이 문서에는 Azure Active Directory (Azure AD)에서 응용 프로그램을 관리 하 고, 자동 프로 비전을 사용 하 고, 응용 프로그램 프록시를 통해 온-프레미스 앱을 게시 하는 방법에 대 한 권장
 
@@ -33,8 +33,8 @@ ms.locfileid: "84760272"
 | 앱에 대 한 Azure AD 응용 프로그램 갤러리 확인  | Azure AD에는 SSO (Enterprise Single Sign-On)를 사용 하 여 사용할 수 있는 수천 개의 사전 통합 된 응용 프로그램이 포함 된 갤러리가 있습니다. 앱 별 설치 지침은 [SaaS 앱 자습서 목록](https://azure.microsoft.com/documentation/articles/active-directory-saas-tutorial-list/)을 참조 하세요.  | 
 | 페더레이션된 SAML 기반 SSO 사용  | 응용 프로그램에서 지 원하는 경우 암호 기반 SSO 및 ADFS 대신 Azure AD에서 페더레이션된 SAML 기반 SSO를 사용 합니다.  | 
 | 인증서 서명에 SHA-256 사용  | Azure AD에서는 기본적으로 SHA-256 알고리즘을 사용 하 여 SAML 응답에 서명 합니다. 응용 프로그램에 SHA-1이 필요 하지 않으면 SHA-256을 사용 합니다 ( [인증서 서명 옵션](certificate-signing-options.md) 및 [응용 프로그램 로그인 문제](application-sign-in-problem-application-error.md)참조).  | 
-| 사용자 할당 필요  | 기본적으로 사용자는 할당 되지 않은 엔터프라이즈 응용 프로그램에 액세스할 수 있습니다. 그러나 응용 프로그램이 역할을 노출 하거나 사용자의 액세스 패널에 응용 프로그램을 표시 하려는 경우 사용자 할당을 요구 합니다. [응용 프로그램 통합을 위한 개발자 가이드](developer-guidance-for-integrating-applications.md)를 참조 하세요.  | 
-| 사용자에 게 My Apps 액세스 패널 배포 | 의 [액세스 패널](end-user-experiences.md) 은 `https://myapps.microsoft.com` 사용자에 게 할당 된 클라우드 기반 응용 프로그램에 대 한 단일 진입점을 제공 하는 웹 기반 포털입니다. 그룹 관리 및 셀프 서비스 암호 재설정과 같은 추가 기능을 추가 하면 사용자가 액세스 패널에서 해당 기능을 찾을 수 있습니다. [액세스 패널 배포 계획](access-panel-deployment-plan.md)을 참조 하세요.
+| 사용자 할당 필요  | 기본적으로 사용자는 할당 되지 않은 엔터프라이즈 응용 프로그램에 액세스할 수 있습니다. 그러나 응용 프로그램이 역할을 노출 하거나 사용자의 내 앱에 응용 프로그램을 표시 하려는 경우에는 사용자 할당이 필요 합니다. [응용 프로그램 통합을 위한 개발자 가이드](developer-guidance-for-integrating-applications.md)를 참조 하세요.  | 
+| 내 앱을 사용자에 게 배포 | 에서 [내 앱](end-user-experiences.md) `https://myapps.microsoft.com` 은 사용자에 게 할당 된 클라우드 기반 응용 프로그램에 대 한 단일 진입점을 제공 하는 웹 기반 포털입니다. 그룹 관리 및 셀프 서비스 암호 재설정과 같은 추가 기능을 추가 하면 사용자가 내 앱에서 해당 기능을 찾을 수 있습니다. [내 앱 배포 계획](access-panel-deployment-plan.md)을 참조 하세요.
 | 그룹 할당 사용  | 구독에 포함 된 경우 그룹 소유자에 게 지속적인 액세스 관리를 위임할 수 있도록 응용 프로그램에 그룹을 할당 합니다. [응용 프로그램 통합을 위한 개발자 가이드](developer-guidance-for-integrating-applications.md)를 참조 하세요.   | 
 | 인증서를 관리 하는 프로세스를 설정 합니다. | 서명 인증서의 최대 수명은 3 년입니다. 인증서가 만료 되어 가동 중단을 방지 하거나 최소화 하려면 역할 및 전자 메일 그룹을 사용 하 여 인증서 관련 변경 알림이 면밀 하 게 모니터링 되는지 확인 합니다. |
 

@@ -8,23 +8,20 @@ ms.topic: overview
 ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
-ms.openlocfilehash: 9427b007bc047e2f01db2dad02e06bf0ab0f5dea
-ms.sourcegitcommit: 25490467e43cbc3139a0df60125687e2b1c73c09
+ms.openlocfilehash: 3cae2902385eb82f65243c631745df5ca48825f3
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81001382"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719229"
 ---
 # <a name="building-retail-solutions-with-azure-iot-central"></a>Azure IoT Central을 사용하여 소매업 솔루션 빌드
-
-
 
 Azure IoT Central은 엔터프라이즈급 IoT 솔루션의 개발, 관리 및 유지 관리와 관련된 부담 및 비용을 줄이는 IoT 앱 플랫폼입니다. Azure IoT Central을 사용하여 빌드하기로 선택하면 복잡하고 지속적으로 진화하는 IoT 인프라를 단순히 유지 관리하는 데서 그치지 않고 IoT 데이터를 활용하여 비즈니스를 전환하는 데 시간, 비용 및 에너지를 집중할 수 있습니다.
 
 이 문서에서는 몇 가지 소매업 관련 IoT Central 애플리케이션 템플릿에 대해 설명합니다. 솔루션 빌더는 이러한 템플릿을 활용하여 공급망을 최적화하고, 고객의 스토어 내 환경을 개선하고, 재고를 더 효율적으로 추적하는 IoT 솔루션을 빌드할 수 있습니다.
 
-> [!div class="mx-imgBorder"]
-> ![Azure IoT 소매업 개요](./media/overview-iot-central-retail/retail-app-templates.png)
+:::image type="content" source="media/overview-iot-central-retail/retail-app-templates.png" alt-text="Azure IoT 소매업 개요":::
 
 다음 섹션에서는 이러한 애플리케이션 템플릿의 기능에 대해 설명합니다.
 
@@ -44,17 +41,15 @@ IoT 센서를 사용하여 온도, 습도, 기울기, 충격, 조명 및 배송 
 
 다음 스크린샷에서는 애플리케이션 템플릿의 기본 대시보드를 보여 줍니다. 대시보드는 특정 솔루션 요구 사항을 충족하도록 완벽하게 사용자 지정할 수 있습니다.
 
-> [!div class="mx-imgBorder"]
-> ![연결된 물류 대시보드](./media/overview-iot-central-retail/connected-logistics-dashboard1.png)
+:::image type="content" source="media/overview-iot-central-retail/connected-logistics-dashboard1.png" alt-text="연결된 물류 대시보드":::
 
-> [!div class="mx-imgBorder"]
-> ![연결된 물류 대시보드](./media/overview-iot-central-retail/connected-logistics-dashboard2.png)
+:::image type="content" source="media/overview-iot-central-retail/connected-logistics-dashboard2.png" alt-text="연결된 물류 대시보드":::
 
 자세한 내용은 [연결된 물류 애플리케이션 템플릿 배포 및 살펴보기](./tutorial-iot-central-connected-logistics.md) 자습서를 참조하세요.
 
 ## <a name="digital-distribution-center"></a>디지털 배포 센터
 
-제조업체와 소매점이 전 세계적에 진출함에 따라 공급망도 확장되고 더 복잡해졌습니다. 소비자는 이제 사용할 수 있는 상품을 다양하게 선택할 수 있고, 해당 상품이 구매 후 1~2일 이내에 도착할 것이라고 기대합니다. 물류 센터는 기존의 비효율성을 극복하면서 이러한 추세에 적응해야 합니다. 
+제조업체와 소매점이 전 세계적에 진출함에 따라 공급망도 확장되고 더 복잡해졌습니다. 소비자는 이제 사용할 수 있는 상품을 다양하게 선택할 수 있고, 해당 상품이 구매 후 1~2일 이내에 도착할 것이라고 기대합니다. 물류 센터는 기존의 비효율성을 극복하면서 이러한 추세에 적응해야 합니다.
 
 오늘날 육체 노동에 의존하는 집품 및 포장(picking and packing)이 배포 센터 비용의 55-65%를 차지하고 있습니다. 또한 수동 집품 및 포장은 일반적으로 자동화된 시스템보다 느리고, 인력 충원 요구 사항이 급변하므로 배송량을 맞추기가 훨씬 더 어렵습니다. 이러한 계절적 변동으로 인해 직원 이직률이 높고 비용이 많이 드는 오류가 발생할 가능성이 높아집니다.
 
@@ -69,8 +64,7 @@ IoT 사용 카메라를 기반으로 하는 솔루션은 디지털 피드백 루
 
 다음 스크린샷에서는 애플리케이션 템플릿의 기본 제공 대시보드를 보여 줍니다. 대시보드는 특정 솔루션 요구 사항을 충족하도록 완벽하게 사용자 지정할 수 있습니다. 
 
-> [!div class="mx-imgBorder"]
-> ![디지털 물류 센터 대시보드](./media/overview-iot-central-retail/digital-distribution-center-dashboard.png)
+:::image type="content" source="media/overview-iot-central-retail/digital-distribution-center-dashboard.png" alt-text="디지털 물류 센터 대시보드":::
 
 자세한 내용은 [디지털 배포 센터 애플리케이션 템플릿 배포 및 살펴보기](./tutorial-iot-central-digital-distribution-center.md) 자습서를 참조하세요.
 
@@ -83,7 +77,7 @@ IoT 사용 카메라를 기반으로 하는 솔루션은 디지털 피드백 루
 이 애플리케이션 템플릿을 사용하여 다음을 수행할 수 있습니다.
 
 * 다양한 IoT 센서를 IoT Central 애플리케이션 인스턴스에 연결합니다.
-* 환경의 센서 네트워크와 모든 게이트웨이 디바이스의 상태를 모니터링하고 관리합니다.
+* 센서 네트워크 및 환경의 모든 게이트웨이 디바이스의 상태를 모니터링하고 관리합니다.
 * 스토어 관리자에게 경고를 트리거하도록 스토어 내 환경 조건에 대한 사용자 지정 규칙을 만듭니다.
 * 스토어 내 환경 조건을 소매점 팀에서 고객 환경을 개선하는 데 사용할 수 있는 인사이트로 변환시킵니다.
 * 집계된 인사이트를 기존 또는 새 비즈니스 애플리케이션으로 내보내 소매점 직원에게 유용하고 시기 적절한 정보를 제공합니다.
@@ -92,8 +86,7 @@ IoT 사용 카메라를 기반으로 하는 솔루션은 디지털 피드백 루
 
 다음 스크린샷에서는 애플리케이션 템플릿의 기본 제공 대시보드를 보여 줍니다. 대시보드는 특정 솔루션 요구 사항을 충족하도록 완벽하게 사용자 지정할 수 있습니다. 
 
-> [!div class="mx-imgBorder"]
-> ![스토어 내 분석 조건 모니터링](./media/overview-iot-central-retail/in-store-analytics-condition-dashboard.png)
+:::image type="content" source="media/overview-iot-central-retail/in-store-analytics-condition-dashboard.png" alt-text="스토어 내 분석 조건 모니터링":::
 
 자세한 내용은 [Azure IoT Central에서 스토어 내 분석 애플리케이션 만들기](./tutorial-in-store-analytics-create-app.md) 자습서를 참조하세요.
 
@@ -106,7 +99,7 @@ IoT 사용 카메라를 기반으로 하는 솔루션은 디지털 피드백 루
 이 애플리케이션 템플릿을 사용하여 다음을 수행할 수 있습니다.
 
 * 다양한 IoT 센서를 IoT Central 애플리케이션 인스턴스에 연결합니다.
-* 환경의 센서 네트워크와 모든 게이트웨이 디바이스의 상태를 모니터링하고 관리합니다.
+* 센서 네트워크 및 환경의 모든 게이트웨이 디바이스의 상태를 모니터링하고 관리합니다.
 * 소매점 직원에게 경고를 트리거하도록 스토어 내 체크 아웃 조건에 대한 사용자 지정 규칙을 만듭니다.
 * 스토어 내 체크 아웃 조건을 소매점 팀에서 고객 환경을 개선하는 데 사용할 수 있는 인사이트로 변환시킵니다.
 * 집계된 인사이트를 기존 또는 새 비즈니스 애플리케이션으로 내보내 소매점 직원에게 유용하고 시기 적절한 정보를 제공합니다.
@@ -115,8 +108,7 @@ IoT 사용 카메라를 기반으로 하는 솔루션은 디지털 피드백 루
 
 다음 스크린샷에서는 애플리케이션 템플릿의 기본 제공 대시보드를 보여 줍니다. 대시보드는 특정 솔루션 요구 사항을 충족하도록 완벽하게 사용자 지정할 수 있습니다. 
 
-> [!div class="mx-imgBorder"]
-> ![스토어 내 분석 체크 아웃](./media/overview-iot-central-retail/In-Store-Analytics-Checkout-Dashboard.png)
+:::image type="content" source="media/overview-iot-central-retail/In-Store-Analytics-Checkout-Dashboard.png" alt-text="스토어 내 분석 체크 아웃":::
 
 자세한 내용은 [Azure IoT Central에서 스토어 내 분석 애플리케이션 만들기](./tutorial-in-store-analytics-create-app.md) 자습서를 참조하세요.
 
@@ -136,8 +128,7 @@ RFID(전파 식별) 태그, 오류 신호(beacon) 및 카메라에서 생성된 
 
 다음 스크린샷에서는 애플리케이션 템플릿의 기본 제공 대시보드를 보여 줍니다. 대시보드는 특정 솔루션 요구 사항을 충족하도록 완벽하게 사용자 지정할 수 있습니다.
 
-> [!div class="mx-imgBorder"]
-> ![스마트 재고 관리 대시보드](./media/overview-iot-central-retail/smart-inventory-management-dashboard.png)
+:::image type="content" source="media/overview-iot-central-retail/smart-inventory-management-dashboard.png" alt-text="스마트 재고 관리 대시보드":::
 
 자세한 내용은 [스마트 재고 관리 애플리케이션 템플릿 배포 및 살펴보기](./tutorial-iot-central-smart-inventory-management.md) 자습서를 참조하세요.
 
@@ -157,10 +148,32 @@ IoT Central 마이크로 주문 처리 센터 애플리케이션 템플릿을 �
 
 다음 스크린샷에서는 애플리케이션 템플릿의 기본 제공 대시보드를 보여 줍니다. 대시보드는 특정 솔루션 요구 사항을 충족하도록 완벽하게 사용자 지정할 수 있습니다.
 
-> [!div class="mx-imgBorder"]
-> ![마이크로 주문 처리 센터](./media/overview-iot-central-retail/MFC-Dashboard.png)
+:::image type="content" source="media/overview-iot-central-retail/MFC-Dashboard.png" alt-text="마이크로 주문 처리 센터":::
 
 자세한 내용은 [마이크로 주문 처리 센터 애플리케이션 템플릿 배포 및 연습](./tutorial-micro-fulfillment-center.md) 자습서를 참조하세요.
+
+## <a name="video-analytics---object-and-motion-detection"></a>비디오 분석 - 개체 및 동작 감지
+
+*IoT Central 비디오 분석 - 개체 및 동작 감지* 애플리케이션 템플릿을 사용하면 인텔리전트 에지 카메라를 사용하여 개체 및 동작을 감지하는 솔루션을 배포, 관리 및 모니터링하는 방법을 신속하게 경험할 수 있습니다.
+
+비디오 분석 애플리케이션은 IoT Edge에서 실행되는 [LVA(live video analytics)](#live-video-analytics) 모듈을 사용합니다. LVA 모듈은 에지 및 클라우드를 포괄하는 인텔리전트 비디오 애플리케이션을 빌드하기 위한 플랫폼을 제공합니다. 플랫폼을 사용하여 개체 및 동작 감지를 통해 비디오 분석 애플리케이션과 같은 IoT 솔루션을 향상시킬 수 있습니다.
+
+애플리케이션 템플릿에는 네 가지 애플리케이션 대시보드가 포함되어 있습니다.
+
+* **시작**에서는 애플리케이션 템플릿 사용을 시작하는 데 도움이 되는 리소스에 대한 링크를 제공합니다.
+* **데모 대시보드**는 연결된 카메라에서 표시할 수 있는 정보 유형에 대한 설명을 제공합니다.
+* **(샘플) 실제 카메라 관리**는 시뮬레이션된 카메라를 사용하여 애플리케이션에서 카메라를 관리하는 방법을 보여줍니다.
+* **(샘플) 실제 카메라 모니터**는 시뮬레이션된 카메라를 사용하여 애플리케이션에서 카메라를 모니터링하는 방법을 보여줍니다.
+
+:::image type="content" source="media/overview-iot-central-retail/live-video-analytics.png" alt-text="비디오 분석 - 개체 및 동작 감지":::
+
+솔루션의 아키텍처에 대해 자세히 알아보려면 [비디오 분석 애플리케이션 아키텍처](architecture-video-analytics.md)를 참조하세요.
+
+솔루션을 배포하는 방법에 대한 자세한 내용은 [Azure IoT Central에서 비디오 분석 애플리케이션 만들기](tutorial-video-analytics-deploy.md) 자습서를 참조하세요.
+
+### <a name="live-video-analytics"></a>라이브 비디오 분석
+
+[라이브 비디오 분석](https://github.com/Azure/live-video-analytics)은 에지 및 클라우드를 포괄하는 인텔리전트 비디오 애플리케이션을 빌드하기 위한 플랫폼을 제공합니다. 이 플랫폼은 라이브 비디오를 캡처, 녹화 및 분석하는 기능과 비디오 또는 비디오 분석일 수 있는 결과를 Azure 서비스에 게시하는 기능을 제공합니다. Azure 서비스는 클라우드 또는 에지에서 실행할 수 있습니다. 이 플랫폼을 사용하여 비디오 분석을 통해 IoT 솔루션을 개선할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -171,4 +184,5 @@ IoT Central 마이크로 주문 처리 센터 애플리케이션 템플릿을 �
 * [디지털 배포 센터 애플리케이션 템플릿 배포 및 살펴보기](./tutorial-iot-central-digital-distribution-center.md)
 * [스마트 재고 관리 애플리케이션 템플릿 배포 및 살펴보기](./tutorial-iot-central-smart-inventory-management.md)
 * [마이크로 주문 처리 센터 애플리케이션 템플릿 배포 및 연습](./tutorial-micro-fulfillment-center.md)
+* [비디오 분석 애플리케이션 템플릿을 배포하고 살펴봅니다](./tutorial-video-analytics-deploy.md).
 * [IoT Central 개요](../preview/overview-iot-central.md)에서 IoT Central에 대해 자세히 알아봅니다.

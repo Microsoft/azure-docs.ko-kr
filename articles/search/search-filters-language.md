@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/22/2020
-ms.openlocfilehash: 3bd0f01193b1e6579d60b581b43ad71ebb6001e3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 120c30803d1423dc8b1255c65703e84d5938f235
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084197"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002524"
 ---
 # <a name="how-to-filter-by-language-in-azure-cognitive-search"></a>Azure Cognitive Search에서 언어를 기준으로 필터링 하는 방법 
 
@@ -37,11 +38,11 @@ Azure Cognitive Search에서 쿼리는 단일 인덱스를 대상으로 합니�
   ![부동산 샘플의 필드 화면을 보여 주는 스크린샷 언어 분석기 할당이 강조 표시 된 필드에 대 한 언어와 일치 하는 방식을 가리키기 위해 필드 그룹이 강조 표시 됩니다.](./media/search-filters-language/lang-fields.png)
 
 > [!Note]
-> 언어 분석기로 필드 정의를 보여 주는 코드 예제는 [인덱스 정의(.NET)](https://docs.microsoft.com/azure/search/search-create-index-dotnet) 및 [인덱스 정의(REST)](search-create-index-rest-api.md)를 참조하세요.
+> 언어 분석기로 필드 정의를 보여 주는 코드 예제는 [인덱스 정의(.NET)](./search-get-started-dotnet.md) 및 [인덱스 정의(REST)](./search-get-started-powershell.md)를 참조하세요.
 
 ## <a name="build-and-load-an-index"></a>인덱스 빌드 및 로드
 
-중간(아마도 명백한) 단계에서 쿼리를 작성하기 전에 [인덱스를 빌드하고 채워야 합니다](https://docs.microsoft.com/azure/search/search-create-index-dotnet). 이 단계는 완전성을 위해 언급하는 것입니다. 인덱스 사용 가능 여부를 확인하는 한 가지는 [포털](https://portal.azure.com)에서 인덱스 목록을 확인하는 것입니다.
+중간(아마도 명백한) 단계에서 쿼리를 작성하기 전에 [인덱스를 빌드하고 채워야 합니다](./search-get-started-dotnet.md). 이 단계는 완전성을 위해 언급하는 것입니다. 인덱스 사용 가능 여부를 확인하는 한 가지는 [포털](https://portal.azure.com)에서 인덱스 목록을 확인하는 것입니다.
 
 ## <a name="constrain-the-query-and-trim-results"></a>쿼리 제한 및 결과 자르기
 
@@ -63,7 +64,6 @@ parameters =
 ## <a name="see-also"></a>참고 항목
 
 + [Azure Cognitive Search의 필터](search-filters.md)
-+ [언어 분석기](https://docs.microsoft.com/rest/api/searchservice/language-support)
++ [언어 분석기](/rest/api/searchservice/language-support)
 + [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)
-+ [문서 검색 REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
-
++ [문서 검색 REST API](/rest/api/searchservice/search-documents)

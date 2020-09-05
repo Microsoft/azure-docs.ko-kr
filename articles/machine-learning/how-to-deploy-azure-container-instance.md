@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
-ms.openlocfilehash: 9ee0fbd69c0004306b67cbff0aca3b257d905eeb
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: cbba0dd5341ad148831ac3b1f94685bf2beddd5a
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541127"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88855270"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Azure Container Instances에 모델 배포
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,7 +31,7 @@ ACI의 할당량 및 지역 가용성에 대 한 자세한 내용은 [Azure Cont
 > [!IMPORTANT]
 > 웹 서비스로 배포 하기 전에 로컬로 디버그 하는 것이 좋습니다. 자세한 내용은 [로컬로 디버그](https://docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-deployment#debug-locally) 를 참조 하세요.
 >
-> Azure Machine Learning- [로컬 노트북에 배포](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local) 를 참조할 수도 있습니다.
+> 또한 Azure Machine Learning - [로컬 Notebook에 배포](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local)를 참조할 수 있습니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
@@ -43,9 +43,9 @@ ACI의 할당량 및 지역 가용성에 대 한 자세한 내용은 [Azure Cont
 
 - 이 문서의 __Python__ 코드 조각에서는 다음 변수가 설정 되었다고 가정 합니다.
 
-    * `ws`-작업 영역으로 설정 합니다.
-    * `model`-등록 된 모델로 설정 합니다.
-    * `inference_config`-모델에 대 한 유추 구성으로 설정 합니다.
+    * `ws` -작업 영역으로 설정 합니다.
+    * `model` -등록 된 모델로 설정 합니다.
+    * `inference_config` -모델에 대 한 유추 구성으로 설정 합니다.
 
     이러한 변수를 설정 하는 방법에 대 한 자세한 내용은 [모델을 배포 하는 방법 및 위치](how-to-deploy-and-where.md)를 참조 하세요.
 
@@ -56,8 +56,9 @@ ACI의 할당량 및 지역 가용성에 대 한 자세한 내용은 [Azure Cont
 Azure Container Instances에 모델을 배포 하려면 필요한 계산 리소스를 설명 하는 __배포 구성을__ 만듭니다. 예를 들면 코어 수와 메모리입니다. 모델 및 웹 서비스를 호스트 하는 데 필요한 환경을 설명 하는 __유추 구성__도 필요 합니다. 유추 구성을 만드는 방법에 대 한 자세한 내용은 [모델을 배포 하는 방법 및 위치](how-to-deploy-and-where.md)를 참조 하세요.
 
 > [!NOTE]
-> * ACI는 크기가 1GB <작은 모델에만 적합 합니다. 
-> * 큰 모델의 개발-테스트에는 단일 노드 AKS를 사용 하는 것이 좋습니다.
+> * ACI는 크기가 1gb 미만 인 작은 모델에만 적합 합니다. 
+> * AKS 단일 노드를 사용 하 여 더 큰 모델을 개발-테스트 하는 것이 좋습니다.
+> * 배포할 모델 수는 배포 당 1000 모델 (컨테이너 당)으로 제한 됩니다. 
 
 ### <a name="using-the-sdk"></a>SDK 사용
 

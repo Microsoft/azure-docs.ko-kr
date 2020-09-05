@@ -4,6 +4,10 @@
   items:
     - name: ExpressRoute란?
       href: expressroute-introduction.md
+- name: 빠른 시작
+  items:
+    - name: ExpressRoute 회로 만들기 - ARM 템플릿
+      href: quickstart-create-expressroute-vnet-template.md
 - name: 자습서
   items:
     - name: 회로 만들기 및 수정
@@ -30,7 +34,7 @@
           href: expressroute-locations-providers.md
         - name: 공급자별 위치
           href: expressroute-locations.md
-    - name: 필수 구성 요소
+    - name: 사전 요구 사항
       href: expressroute-prerequisites.md
     - name: 워크플로
       href: expressroute-workflows.md

@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/28/2020
-ms.openlocfilehash: 0cb2eed0895c10f649facaa184a5f9f9ea158aa5
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 722d33e76b6009a44811dfcb8a3238b042ec6918
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551985"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816884"
 ---
 # <a name="configure-azure-sql-edge-preview"></a>Azure SQL Edge(미리 보기) 구성
 
@@ -157,6 +157,60 @@ chown -R 10001:0 <database file dir>
   - 컨테이너 만들기 옵션을 업데이트 하 여 `*"User": "user_name | user_id*` 컨테이너 만들기 옵션에서 키-값 쌍 추가를 지정 합니다. User_name 또는 user_id를 docker 호스트의 실제 user_name 또는 user_id로 바꾸세요. 
   - 디렉터리/탑재 볼륨에 대 한 사용 권한을 변경 합니다.
 
+## <a name="persist-your-data"></a> 데이터 유지
+
+및를 사용 하 여 컨테이너를 다시 시작 하는 경우에도 Azure SQL Edge 구성 변경 및 데이터베이스 파일은 컨테이너에 유지 됩니다 `docker stop` `docker start` . 그러나를 사용 하 여 컨테이너를 제거 하면 `docker rm` AZURE SQL Edge 및 데이터베이스를 포함 하 여 컨테이너의 모든 항목이 삭제 됩니다. 다음 섹션에서는 연결된 컨테이너가 삭제된 경우에도 **데이터 볼륨**을 사용하여 데이터베이스 파일을 유지하는 방법을 설명합니다.
+
+> [!IMPORTANT]
+> Azure SQL Edge의 경우 Docker의 데이터 지 속성을 이해 하는 것이 중요 합니다. 이 섹션의 설명 외에도 [Docker 컨테이너의 데이터를 관리하는 방법](https://docs.docker.com/engine/tutorials/dockervolumes/)에 대한 Docker 설명서를 참조하세요.
+
+### <a name="mount-a-host-directory-as-data-volume"></a>호스트 디렉터리를 데이터 볼륨으로 탑재
+
+첫 번째 옵션은 호스트의 디렉터리를 컨테이너에 데이터 볼륨으로 탑재하는 것입니다. 이렇게 하려면 `docker run` 명령에 `-v <host directory>:/var/opt/mssql` 플래그를 사용합니다. 그러면 컨테이너 실행 간에 데이터를 복원할 수 있습니다.
+
+```bash
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 -v <host directory>/data:/var/opt/mssql/data -v <host directory>/log:/var/opt/mssql/log -v <host directory>/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+```PowerShell
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>" -p 1433:1433 -v <host directory>/data:/var/opt/mssql/data -v <host directory>/log:/var/opt/mssql/log -v <host directory>/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+이 방법을 사용하여 Docker 외부에서 호스트의 파일을 공유하고 볼 수도 있습니다.
+
+> [!IMPORTANT]
+> **Docker on Windows**의 호스트 볼륨 매핑은 현재 전체 `/var/opt/mssql` 디렉터리 매핑을 지원하지 않습니다. 그러나 `/var/opt/mssql/data` 등의 하위 디렉터리를 호스트 머신에 매핑할 수 있습니다.
+
+> [!IMPORTANT]
+> Azure SQL Edge 이미지를 사용 하는 **Mac의 Docker** 에 대 한 호스트 볼륨 매핑은 현재 지원 되지 않습니다. 대신, 데이터 볼륨 컨테이너를 사용합니다. 이 제한 사항은 `/var/opt/mssql` 디렉터리에만 적용됩니다. 탑재된 디렉터리에서 읽을 수는 있습니다. 예를 들어 Mac에서-v를 사용하여 호스트 디렉터리를 탑재하고 호스트에 있는 .bak 파일에서 백업을 복원할 수 있습니다.
+
+### <a name="use-data-volume-containers"></a>데이터 볼륨 컨테이너 사용
+
+두 번째 옵션은 데이터 볼륨 컨테이너를 사용하는 것입니다. `-v` 매개 변수를 사용하여 호스트 디렉터리 대신 볼륨 이름을 지정하면 데이터 볼륨 컨테이너를 만들 수 있습니다. 다음 예제에서는 **sqlvolume**이라는 공유 데이터 볼륨을 만듭니다.
+
+```bash
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 -v sqlvolume:/var/opt/mssql -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+```PowerShell
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>" -p 1433:1433 -v sqlvolume:/var/opt/mssql -d mcr.microsoft.com/azure-sql-edge-developer
+```
+
+> [!NOTE]
+> run 명령에서 암시적으로 데이터 볼륨을 만드는 이 방법은 이전 버전의 Docker에서 작동하지 않습니다. 이 경우에는 Docker 설명서인 [데이터 볼륨 컨테이너 만들기 및 탑재](https://docs.docker.com/engine/tutorials/dockervolumes/#creating-and-mounting-a-data-volume-container)에 간략하게 설명된 명시적 단계를 사용합니다.
+
+이 컨테이너를 중지하고 제거해도 데이터 볼륨이 계속 유지됩니다. `docker volume ls` 명령을 사용하여 데이터 볼륨을 볼 수 있습니다.
+
+```bash
+docker volume ls
+```
+
+그런 다음 동일한 볼륨 이름을 사용 하 여 다른 컨테이너를 만들면 새 컨테이너는 볼륨에 포함 된 것과 동일한 Azure SQL Edge 데이터를 사용 합니다.
+
+데이터 볼륨 컨테이너를 제거하려면 `docker volume rm` 명령을 사용합니다.
+
+> [!WARNING]
+> 데이터 볼륨 컨테이너를 삭제 하면 컨테이너의 모든 Azure SQL Edge 데이터가 *영구적으로* 삭제 됩니다.
 
 
 ## <a name="next-steps"></a>다음 단계

@@ -1,20 +1,20 @@
 ---
 title: 미사용 데이터의 얼굴 서비스 암호화
 titleSuffix: Azure Cognitive Services
-description: 미사용 데이터의 얼굴 서비스 암호화.
+description: Microsoft는 Microsoft에서 관리 하는 암호화 키를 제공 하며, CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 Cognitive Services 구독을 관리할 수도 있습니다. 이 문서에서는 사용 하기 위해 미사용 데이터 암호화와 CMK를 사용 하 고 관리 하는 방법을 설명 합니다.
 author: erindormier
 manager: venkyv
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 03/11/2020
+ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 33495dd5b092cb51b3421e7204f3b529077d63b3
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: eab90fc2cb30ae8e9f1c19bdbefc6fbc88c32f76
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84309036"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079271"
 ---
 # <a name="face-service-encryption-of-data-at-rest"></a>미사용 데이터의 얼굴 서비스 암호화
 
@@ -24,15 +24,6 @@ Face 서비스는 데이터를 클라우드에 보관할 때 데이터를 자동
 
 > [!IMPORTANT]
 > 고객 관리 키는 E0 가격 책정 계층 에서만 사용할 수 있습니다. 고객 관리 키를 사용 하는 기능을 요청 하려면 [고객 관리 키 요청 양식을](https://aka.ms/cogsvc-cmk)작성 하 여 제출 합니다. 요청 상태를 다시 들으려면 영업일 3-5 영업일이 소요 됩니다. 요청에 따라 큐에 배치 되 고 공간을 사용할 수 있게 되 면 승인 될 수 있습니다. Face 서비스에서 CMK를 사용 하도록 승인 되 면 새 얼굴 리소스를 만들고이를 가격 책정 계층으로 선택 해야 합니다. E0 가격 책정 계층을 사용 하 여 얼굴 리소스를 만든 후 Azure Key Vault를 사용 하 여 관리 되는 id를 설정할 수 있습니다.
-
-## <a name="regional-availability"></a>국가별 가용성
-
-고객 관리 키는 현재 다음 지역에서 사용할 수 있습니다.
-
-* 미국 중남부
-* 미국 서부 2
-* 미국 동부
-* US Gov 버지니아
 
 [!INCLUDE [cognitive-services-cmk](../includes/configure-customer-managed-keys.md)]
 

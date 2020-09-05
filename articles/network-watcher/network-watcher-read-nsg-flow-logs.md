@@ -1,6 +1,6 @@
 ---
 title: NSG 흐름 로그 읽기 | Microsoft 문서
-description: 이 문서에서는 NSG 흐름 로그를 구문 분석하는 방법을 설명합니다.
+description: Azure PowerShell를 사용 하 여 Azure Network Watcher에서 몇 분 마다 생성 되 고 업데이트 되는 네트워크 보안 그룹 흐름 로그를 구문 분석 하는 방법에 대해 알아봅니다.
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: damendo
-ms.openlocfilehash: ffbf37730d5064edcd067c3383fe18c342a2b053
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 18023f5a5b36dd971080d7a62fdd44698a205bb4
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738501"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272538"
 ---
 # <a name="read-nsg-flow-logs"></a>NSG 흐름 로그 읽기
 
@@ -31,7 +31,7 @@ NSG 흐름 로그는 스토리지 계정의 [블록 Blob](https://docs.microsoft
 
 다음 시나리오에서는 스토리지 계정에 저장된 예제 흐름 로그를 사용합니다. NSG 흐름 로그에서 최신 이벤트를 선택적으로 읽는 방법을 알아봅니다. 이 문서에서는 PowerShell을 사용하지만 여기서 설명하는 개념은 프로그래밍 언어에만 국한되지 않으며, Azure Storage API가 지원하는 모든 언어에 적용됩니다.
 
-## <a name="setup"></a>설정
+## <a name="setup"></a>설치 프로그램
 
 시작하기 전에 계정에 있는 하나 이상의 네트워크 보안 그룹에서 네트워크 보안 그룹 흐름 로깅을 사용하도록 설정해야 합니다. 네트워크 보안 흐름 로그를 사용하도록 설정하는 방법에 대한 지침은 [네트워크 보안 그룹에 대한 흐름 로깅 소개](network-watcher-nsg-flow-logging-overview.md) 문서를 참조하세요.
 

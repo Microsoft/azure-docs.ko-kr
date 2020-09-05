@@ -2,25 +2,21 @@
 title: '자습서: SumTotalCentral과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 SumTotalCentral 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 93ad629a-f516-4cac-bfe2-a77257e3a797
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: c2d7f3922bc3226a7871ee775718ca43757adb54
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1255d8c0456101bb9059de834c871812d5c5bceb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67089561"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88533700"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumtotalcentral"></a>자습서: SumTotalCentral과 Azure Active Directory 통합
 

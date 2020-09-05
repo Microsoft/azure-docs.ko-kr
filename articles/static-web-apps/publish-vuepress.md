@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 6f5e05e9bfea6b14e46bbde8d17fba2d2a3b7b07
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: c689b31f73d732dda37b64793f988febc409e6da
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87429510"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797958"
 ---
 # <a name="tutorial-publish-a-vuepress-site-to-azure-static-web-apps-preview"></a>자습서: Azure Static Web Apps 미리 보기에 VuePress 사이트 게시
 
@@ -77,7 +77,7 @@ CLI(명령줄 인터페이스)에서 VuePress 앱을 만듭니다.
     echo 'node_modules' > .gitignore
     ```
 
-1. git 리포지토리를 초기화합니다.
+1. Git 리포지토리를 초기화합니다.
 
    ```bash
     git init

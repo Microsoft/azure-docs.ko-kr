@@ -6,22 +6,23 @@ author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
+ms.custom: devx-track-csharp
 ms.topic: include
 ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: 951ae2c48bcdd92f640a37ddbb6430ca62a3b816
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 8307cfee90fdf65d119bbc1e55eabb0533a4a6ad
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81275581"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926444"
 ---
 > [!NOTE]
 > Unity용 Speech SDK는 Windows 데스크톱(x86 및 x64) 또는 유니버설 Windows 플랫폼(x86, x64, ARM/ARM64), Android(x86, ARM32/64) 및 iOS(x64 시뮬레이터, ARM32 및 ARM64)를 지원합니다.
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-시작하기 전에 다음을 수행합니다.
+시작하기 전에:
 
 > [!div class="checklist"]
 > * [Azure Speech 리소스 만들기](../../../../get-started.md)
@@ -89,7 +90,7 @@ Unity 프로젝트에 대한 샘플 스크립트 코드를 추가하려면 다�
 
 1. `YourSubscriptionKey` 문자열을 찾아서 Speech Service 구독 키로 바꿉니다.
 
-1. `YourServiceRegion` 문자열을 찾아서 구독과 연결된 [지역](https://aka.ms/speech/sdkregion)의 **영역 식별자**로 바꿉니다. 예를 들어 평가판을 사용하는 경우 지역은 `westus`입니다.
+1. `YourServiceRegion` 문자열을 찾아서 구독과 연결된 [지역](https://aka.ms/speech/sdkregion)의 **영역 식별자**로 바꿉니다.
 
 1. 변경 내용을 스크립트에 저장합니다.
 

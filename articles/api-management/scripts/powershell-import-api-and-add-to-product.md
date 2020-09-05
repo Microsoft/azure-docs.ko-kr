@@ -1,6 +1,6 @@
 ---
 title: Azure PowerShell 스크립트 샘플 - API 가져오기 | Microsoft Docs
-description: Azure PowerShell 스크립트 샘플 - API 가져오기
+description: API를 가져와서 API Management 제품에 추가하는 방법을 알아봅니다. 샘플 스크립트를 참조하고 사용 가능한 추가 리소스를 확인합니다.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 2461db160b7d4cd56e51f6f027a67cdf27db538d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3644eda24790b9f711d6584b05a18eba23f227ba
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87008849"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87850936"
 ---
 # <a name="import-an-api"></a>API 가져오기
 

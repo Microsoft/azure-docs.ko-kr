@@ -1,14 +1,14 @@
 ---
 title: 가상 컴퓨터의 재해 복구 완료
-description: 이 문서에서는 AVS를 사용 하 여 가상 머신의 재해 복구를 완료 하는 방법을 보여 줍니다.
+description: 이 문서에서는 Azure VMware 솔루션을 사용 하 여 가상 머신의 재해 복구를 완료 하는 방법을 보여 줍니다.
 ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: 5ccaa009c8e3e059597636a8bb78cc3bd255fe68
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 76a417b9ba00c4c0e6e958e5a04d19aecfe24563
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84749946"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752275"
 ---
 # <a name="complete-a-disaster-recovery-of-virtual-machines-using-azure-vmware-solution"></a>Azure VMware 솔루션을 사용 하 여 가상 머신의 재해 복구 완료
 
@@ -46,7 +46,7 @@ VMware HCX는 복제 정책에서 세밀 하 게 제어 하 고 세분성을 제
 
 :::image type="content" source="./media/disaster-recovery/protect-virtual-machine.png" alt-text="vm 보호를 선택 합니다." border="true":::
 
-열리는 창에서 원본 및 원격 사이트를 선택 합니다 .이 경우 원격 사이트는 AVS 사설 클라우드 여야 합니다.
+열리는 창에서 원본 및 원격 사이트를 선택 합니다 .이 경우 원격 사이트는 Azure VMware 솔루션 사설 클라우드 여야 합니다.
 
 :::image type="content" source="./media/disaster-recovery/protect-virtual-machines.png" alt-text="Vm 보호 창" border="true":::
 
@@ -56,7 +56,7 @@ VMware HCX는 복제 정책에서 세밀 하 게 제어 하 고 세분성을 제
 
 - **정지 사용:** VM을 일시 중지 하 여 일관 된 복사본이 원격 사이트와 동기화 되도록 합니다.
 
-- **대상 저장소:** 보호 된 VM에 대 한 원격 데이터 저장소를 선택 합니다. AVS 사설 클라우드에서이 선택 항목은 vSAN 데이터 저장소 여야 합니다.
+- **대상 저장소:** 보호 된 VM에 대 한 원격 데이터 저장소를 선택 합니다. Azure VMware 솔루션 사설 클라우드에서이 선택 항목은 vSAN 데이터 저장소 여야 합니다.
 
 - **계산 컨테이너:** 원격 vSphere 클러스터 또는 리소스 풀입니다.
 
@@ -95,7 +95,7 @@ VM이 보호 된 후에는 **스냅숏** 탭에서 다른 스냅숏을 볼 수 �
 
 ## <a name="complete-a-test-recover-of-virtual-machines"></a>가상 컴퓨터의 테스트 복구 완료
 
-AVS 사설 클라우드의 원격 사이트에서 **Vsphere 클라이언트** 에 로그인 합니다. **Hcx 플러그 인**에서 재해 복구 영역에 있는 모든 VM의 세로 줄임표를 선택 하 여 작업 메뉴를 표시 합니다. **복구 VM 테스트**를 선택 합니다.
+Azure VMware 솔루션 사설 클라우드 인 원격 사이트의 **Vsphere 클라이언트** 에 로그인 합니다. **Hcx 플러그 인**에서 재해 복구 영역에 있는 모든 VM의 세로 줄임표를 선택 하 여 작업 메뉴를 표시 합니다. **복구 VM 테스트**를 선택 합니다.
 
 :::image type="content" source="./media/disaster-recovery/test-recover-virtual-machine.png" alt-text="VM 복구 테스트 선택" border="true":::
 
@@ -105,7 +105,7 @@ AVS 사설 클라우드의 원격 사이트에서 **Vsphere 클라이언트** �
 
 **테스트**를 클릭 하면 복구 작업이 시작 됩니다.
 
-테스트 복구 작업이 완료 되 면 새 VM을 AVS 사설 cloud vCenter에서 확인할 수 있습니다.
+테스트 복구 작업이 완료 되 면 Azure VMware 솔루션 사설 클라우드 vCenter에서 새 VM을 확인할 수 있습니다.
 
 :::image type="content" source="./media/disaster-recovery/verify-test-recovery.png" alt-text="복구 작업 확인" border="true":::
 
@@ -115,7 +115,7 @@ AVS 사설 클라우드의 원격 사이트에서 **Vsphere 클라이언트** �
 
 ## <a name="recover-virtual-machines"></a>가상 머신 복구
 
-원격 사이트 (AVS 사설 클라우드)에서 **Vsphere 클라이언트** 에 로그인 하 고 **hcx 플러그 인**에 액세스 합니다.
+Azure VMware 솔루션 사설 클라우드 인 원격 사이트의 **Vsphere 클라이언트** 에 로그인 하 고 **hcx 플러그 인**에 액세스 합니다.
 
 복구 시나리오의 경우이 예제에 사용 되는 가상 머신 그룹입니다.
 
@@ -131,7 +131,7 @@ AVS 사설 클라우드의 원격 사이트에서 **Vsphere 클라이언트** �
 
 ## <a name="complete-a-reverse-replication-on-virtual-machines"></a>가상 머신에서 역방향 복제 완료
 
-AVS 사설 클라우드의 **Vsphere 클라이언트** 에 로그인 하 고 **hcx 플러그 인**에 액세스 합니다.
+Azure VMware 솔루션 사설 클라우드의 **Vsphere 클라이언트** 에 로그인 하 고 **hcx 플러그 인**에 액세스 합니다.
 역방향 복제를 시작 하기 전에 원본 사이트의 원본 가상 컴퓨터가 꺼져 있어야 합니다. 가상 컴퓨터의 전원이 꺼진 경우 작업이 실패 합니다.
 
 목록에서 원본 사이트로 다시 복제할 가상 컴퓨터를 선택 하 고 **작업** 메뉴를 연 다음 **역방향**을 선택 합니다. 팝업 창에서 **역방향** 을 클릭 하 여 복제를 시작 합니다.

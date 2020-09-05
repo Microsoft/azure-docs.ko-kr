@@ -10,12 +10,12 @@ ms.reviewer: sgilley
 author: revodavid
 ms.author: davidsmi
 ms.date: 02/07/2020
-ms.openlocfilehash: 53b1c22e93c342373cae2bbb14958f4810a79630
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: bb2a7d8ef55e993726b185e5652c8dff9e96b23e
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87092323"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056366"
 ---
 # <a name="tutorial-use-r-to-create-a-machine-learning-model-preview"></a>자습서: R을 사용하여 기계 학습 모델 만들기(미리 보기)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -102,22 +102,15 @@ Azure 리소스를 관리하기 위한 웹 기반 콘솔인 Azure Portal을 통�
 * 학습에 사용할 원격 컴퓨팅 대상을 만듭니다.
 
 ### <a name="install-required-packages"></a>필요한 패키지를 설치합니다.
-
- * CRAN에서 최신 버전을 설치합니다.
-
-    ```R
-    # install the latest version from CRAN
-    install.packages("azuremlsdk")
-    azuremlsdk::install_azureml(envname = 'r-reticulate')
-    ```
+컴퓨팅 인스턴스에는 이미 CRAN의 R SDK 최신 버전이 설치되어 있습니다. 최신 버그 수정을 선택하는 대신 GitHub에서 개발 버전을 설치하려면 다음을 실행하세요.
     
-* 또는 GitHub에서 개발 버전을 설치합니다.
+```R
+remotes::install_github('https://github.com/Azure/azureml-sdk-for-r')
+azuremlsdk::install_azureml()
+```
 
-    ```R
-    # or install the development version from GitHub
-    remotes::install_github('https://github.com/Azure/azureml-sdk-for-r')
-    azuremlsdk::install_azureml(envname = 'r-reticulate')
-    ```
+> [!WARNING]
+> 설치 프로세스 중에 "`Would you like to install Miniconda? [Y/n]:`" 메시지가 표시되면 컴퓨팅 인스턴스에 이미 Anaconda가 설치되어 있고 Miniconda 설치가 필요하지 않으므로 "`n`"으로 응답하세요.
 
 이제 **azuremlsdk** 패키지를 가져옵니다.
 

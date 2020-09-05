@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 07/27/2020
+ms.date: 08/18/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1dcc98366e37455f462fe1a0740aa161201912f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 06e61bb966313265f7e3772dbbf6017a03a42386
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87506226"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88869659"
 ---
 # <a name="assign-eligibility-for-a-privileged-access-group-preview-in-privileged-identity-management"></a>Privileged Identity Management에서 권한 있는 액세스 그룹 (미리 보기)에 대 한 자격 할당
 
@@ -33,19 +33,14 @@ Azure Active Directory (Azure AD) Privileged Identity Management (PIM)은 Azure 
 
 사용자가 권한 있는 액세스 그룹의 멤버 또는 소유자가 될 수 있도록 하려면 다음 단계를 수행 합니다.
 
-1. [권한 있는 역할 관리자](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) 역할 권한으로 Azure Portal에서 [Privileged Identity Management](https://portal.azure.com/) 에 로그인 합니다.
+1. 전역 관리자 또는 그룹 소유자 권한을 사용 하 여 [AZURE AD에 로그인](https://aad.portal.azure.com) 합니다.
+1. **그룹** 을 선택 하 고 관리 하려는 역할 할당 가능 그룹을 선택 합니다. 목록을 검색 하거나 필터링 할 수 있습니다.
 
-    다른 관리자에 게 Privileged Identity Management 관리 권한을 부여 하는 방법에 대 한 자세한 내용은 [다른 관리자에 게 Privileged Identity Management를 관리할](pim-how-to-give-access-to-pim.md)수 있는 권한 부여를 참조 하세요.
+    ![PIM에서 관리할 역할 할당 가능 그룹 찾기](./media/groups-assign-member-owner/groups-list-in-azure-ad.png)
 
-1. **Azure AD Privileged Identity Management**를 엽니다.
+1. 그룹을 열고 권한 있는 **액세스 (미리 보기)** 를 선택 합니다.
 
-1. **권한 있는 액세스 (미리 보기)** 를 선택 합니다.
-
-1. 그룹 이름을 검색 하 고 **그룹 유형을** 사용 하 여 목록을 필터링 하 고 관리할 그룹을 선택할 수 있습니다.
-
-    ![관리할 권한 있는 액세스 그룹 목록](./media/groups-assign-member-owner/privileged-access-list.png)
-
-1. **관리**아래에서 **할당**을 선택 합니다.
+    ![Privileged Identity Management 환경 열기](./media/groups-assign-member-owner/groups-discover-groups.png)
 
 1. **할당 추가**를 선택 합니다.
 
@@ -77,21 +72,20 @@ Azure Active Directory (Azure AD) Privileged Identity Management (PIM)은 Azure 
 
 기존 역할 할당을 업데이트하거나 제거하려면 다음 단계를 수행합니다.
 
-1. **Azure AD Privileged Identity Management**를 엽니다.
+1. 전역 관리자 또는 그룹 소유자 권한을 사용 하 여 [AZURE AD에 로그인](https://aad.portal.azure.com) 합니다.
+1. **그룹** 을 선택 하 고 관리 하려는 역할 할당 가능 그룹을 선택 합니다. 목록을 검색 하거나 필터링 할 수 있습니다.
 
-1. **권한 있는 액세스 (미리 보기)** 를 선택 합니다.
+    ![PIM에서 관리할 역할 할당 가능 그룹 찾기](./media/groups-assign-member-owner/groups-list-in-azure-ad.png)
 
-1. 그룹 이름을 검색 하 고 **그룹 유형을** 사용 하 여 목록을 필터링 하 고 관리할 그룹을 선택할 수 있습니다.
+1. 그룹을 열고 권한 있는 **액세스 (미리 보기)** 를 선택 합니다.
 
-    ![관리할 권한 있는 액세스 그룹 목록](./media/groups-assign-member-owner/privileged-access-list.png)
-
-1. **관리**아래에서 **할당**을 선택 합니다.
+    ![Privileged Identity Management 환경 열기](./media/groups-assign-member-owner/groups-discover-groups.png)
 
 1. 업데이트 또는 제거하려는 역할을 선택합니다.
 
 1. **적격 역할** 또는 **활성 역할** 탭에서 역할 할당을 찾습니다.
 
-    ![역할 할당 업데이트 또는 제거](./media/groups-assign-member-owner/groups-add-assignment.png)
+    ![역할 할당 업데이트 또는 제거](./media/groups-assign-member-owner/groups-bring-under-management.png)
 
 1. **업데이트** 또는 **제거**를 선택하여 역할 할당을 업데이트하거나 제거합니다.
 

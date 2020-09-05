@@ -2,17 +2,18 @@
 title: 클라우드 솔루션 공급자로 Azure 예약 보기
 description: 클라우드 솔루션 공급자로 Azure 예약을 보는 방법을 알아봅니다.
 ms.service: cost-management-billing
+ms.subservice: reservations
 author: bandersmsft
 ms.reviewer: yashesvi
 ms.topic: how-to
 ms.date: 07/29/2020
 ms.author: banders
-ms.openlocfilehash: fde33640505c225167700215f32cb3243acc5196
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 9b4f3375f3d334b21a0f7d169fec9025cd911857
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424936"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88684391"
 ---
 # <a name="view-azure-reservations-as-a-cloud-solution-provider-csp"></a>CSP(클라우드 솔루션 공급자)로 Azure 예약 보기
 

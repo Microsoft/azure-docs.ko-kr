@@ -2,13 +2,13 @@
 title: 템플릿을 사용 하 여 다중 VM 환경 및 PaaS 리소스 만들기
 description: Azure Resource Manager 템플릿에서 Azure DevTest Labs에 다중 VM 환경 및 PaaS 리소스를 만드는 방법에 대해 알아봅니다.
 ms.topic: article
-ms.date: 06/26/2020
-ms.openlocfilehash: bab107257a6233543cecfb664b3a6d313dd0e538
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/12/2020
+ms.openlocfilehash: 97659d4ab95fdbe75460161d0ceed71a1cb5cf82
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85481428"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182411"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿으로 다중 VM 환경 및 PaaS 리소스 만들기
 
@@ -203,10 +203,10 @@ Azure Portal를 사용 하 여 랩에 단일 환경을 추가할 수 있지만 �
    Set-AzContext -SubscriptionId $SubscriptionId | Out-Null
 
    # Get information about the user, specifically the user ID, which is used later in the script.  
-   $UserId = $((Get-AzADUser -UserPrincipalName (Get-AzContext).Account).Id.Guid)
+   $UserId = $((Get-AzADUser -UserPrincipalName ((Get-AzContext).Account).Id).Id)
 
    # Get information about the lab, such as lab location.
-   $lab = Get-AzResource -ResourceType "Microsoft.DevTestLab/labs" -Name $LabName -ResourceGroupName $ResourceGroupName
+   $lab = Get-AzResource -ResourceType "Microsoft.DevTestLab/labs" -Name $LabName
    if ($lab -eq $null) { throw "Unable to find lab $LabName in subscription $SubscriptionId." }
 
    # Get information about the repository in the lab.

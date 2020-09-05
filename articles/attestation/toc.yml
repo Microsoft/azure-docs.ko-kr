@@ -1,0 +1,48 @@
+- name: Microsoft Azure Attestation(미리 보기)
+  href: index.yml
+- name: 개요
+  items:
+    - name: Microsoft Azure Attestation 정보
+      href: overview.md
+- name: 빠른 시작
+  items:
+    - name: ARM 템플릿
+      href: quickstart-template.md
+    - name: PowerShell
+      href: quickstart-powershell.md
+- name: 자습서
+  items:
+    - name: 증명 정책 작성 및 서명
+      href: author-sign-policy.md
+    - name: SGX 증명 코드 샘플
+      href: /samples/browse/?expanded=azure&terms=attestation
+- name: 예
+  items:
+    - name: 증명 정책
+      href: policy-examples.md
+    - name: 정책 서명자 인증서
+      href: policy-signer-examples.md
+- name: 개념
+  items:
+    - name: 기본 개념
+      href: basic-concepts.md
+    - name: 증명 정책 클레임
+      items:
+        - name: 클레임 규칙 문법
+          href: claim-rule-grammar.md
+        - name: 클레임 집합
+          href: claim-sets.md
+    - name: 워크플로
+      href: workflow.md
+- name: 참조
+  items:
+    - name: FAQ
+      href: faq.md
+    - name: REST (영문)
+      href: /rest/api/attestation/
+    - name: Azure PowerShell
+      href: /powershell/module/az.attestation/?view=azps-4.3.0#attestation
+    - name: Windows용 Azure DCAP 라이브러리
+      href: 'https://www.nuget.org/packages/Microsoft.Azure.DCAP/'
+    - name: Linux용 Azure DCAP 라이브러리
+      href: 'https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/a/az-dcap-client/'

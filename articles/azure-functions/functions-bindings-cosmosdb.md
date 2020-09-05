@@ -5,13 +5,13 @@ author: craigshoemaker
 ms.author: cshoe
 ms.topic: reference
 ms.date: 11/21/2017
-ms.custom: seodec18
-ms.openlocfilehash: 37c98ca2fbffddd064b55192e9b5d83c948d88e6
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-csharp, seodec18
+ms.openlocfilehash: 8ae7613eea4b952c079be90b05e615087ea80a32
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87041964"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88214161"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Azure Functions 1.x의 Azure Cosmos DB 바인딩
 
@@ -1152,7 +1152,7 @@ Azure Cosmos DB 출력 바인딩을 사용하면 Azure Cosmos DB 데이터베이
 이 섹션에는 다음 예제가 포함되어 있습니다.
 
 * 큐 트리거, 하나의 문서 쓰기
-* 큐 트리거, using 문서 작성`IAsyncCollector`
+* 큐 트리거, using 문서 작성 `IAsyncCollector`
 
 예제에서는 간단한 `ToDoItem` 형식을 참조하세요.
 
@@ -1238,7 +1238,7 @@ namespace CosmosDBSamplesV1
 이 섹션에는 다음 예제가 포함되어 있습니다.
 
 * 큐 트리거, 하나의 문서 쓰기
-* 큐 트리거, using 문서 작성`IAsyncCollector`
+* 큐 트리거, using 문서 작성 `IAsyncCollector`
 
 ### <a name="queue-trigger-write-one-doc"></a>큐 트리거, 하나의 문서 쓰기
 

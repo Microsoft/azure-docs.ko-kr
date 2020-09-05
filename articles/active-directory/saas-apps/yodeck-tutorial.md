@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory와 Yodeck 통합 | Microsoft Docs'
 description: Azure Active Directory와 Yodeck 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: b2c8dccb-eeb0-4f4d-a24d-8320631ce819
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: af0748f36e8d2299921f987c517f7a4923bd0d55
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8eed884ed9d957ede4ae9fc192ae5a8e501b652e
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086469"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546239"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>자습서: Azure Active Directory와 Yodeck 통합
 
@@ -119,13 +115,23 @@ Yodeck에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수행�
 
 ### <a name="configure-yodeck-single-sign-on"></a>Yodeck Single Sign-On 구성
 
+1. **Yodeck** 내에서 구성을 자동화하려면 **확장 설치**를 클릭하여 **내 앱 보안 로그인 브라우저 확장**을 설치해야 합니다.
+
+    ![이미지](./media/target-process-tutorial/install_extension.png)
+
+1. 브라우저에 확장을 추가한 후 **Yodeck 설정**을 클릭하면 Yodeck 애플리케이션으로 이동됩니다. 여기서 관리자 자격 증명을 입력하여 Yodeck에 로그인합니다. 브라우저 확장이 애플리케이션을 자동으로 구성하고 3-5단계를 자동으로 수행합니다.
+
+    ![설정 구성](common/setup-sso.png)
+
+    **애플리케이션을 수동으로 구성하려는 경우 다음 단계를 수행합니다.**
+
 1. 다른 웹 브라우저 창에서 Yodeck 회사 사이트에 관리자로 로그인합니다.
 
-2. 페이지의 오른쪽 맨 위 모서리에서 **사용자 설정** 옵션을 클릭하고 **계정 설정**을 선택합니다.
+1. 페이지의 오른쪽 맨 위 모서리에서 **사용자 설정** 옵션을 클릭하고 **계정 설정**을 선택합니다.
 
     ![Yodeck 구성](./media/yodeck-tutorial/configure1.png)
 
-3. **SAML**을 선택하고 다음 단계를 수행합니다.
+1. **SAML**을 선택하고 다음 단계를 수행합니다.
 
     ![Yodeck 구성](./media/yodeck-tutorial/configure2.png)
 
@@ -203,7 +209,7 @@ Azure AD 사용자가 Yodeck에 로그인할 수 있도록 하려면 Yodeck에 �
 
     ![직원 추가](./media/yodeck-tutorial/user2.png)
 
-4. **사용자 세부 정보** 대화 상자 페이지에서 다음 단계를 수행합니다.
+4. **사용자 정보** 대화 상자 페이지에서 다음 단계를 수행합니다.
 
     ![직원 추가](./media/yodeck-tutorial/user3.png)
 

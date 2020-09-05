@@ -1,18 +1,18 @@
 ---
 title: 'Azure Express 경로: 회로 피어 링 다시 설정'
-description: ExpressRoute 회로 피어링을 사용하거나 사용하지 않도록 설정하는 방법입니다.
+description: Azure PowerShell를 사용 하 여 Azure Express 경로 회로의 피어 링을 사용 하지 않도록 설정 하 고 설정 하는 방법을 알아봅니다. 피어 링을 구성 하면 기본적으로 사용 하도록 설정 됩니다.
 services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 01/13/2018
 ms.author: charwen
-ms.openlocfilehash: cc4266a92d510ac84118922f7db09c99234045b3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e576fe2f08d54d2642603e3b7974e00feec8ce93
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84735254"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192181"
 ---
 # <a name="reset-expressroute-circuit-peerings"></a>ExpressRoute 회로 피어링 다시 설정
 

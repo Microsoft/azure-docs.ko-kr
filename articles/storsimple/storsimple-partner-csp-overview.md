@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure StorSimple 및 클라우드 솔루션 프로그램 개요 | Microsoft Docs
-description: StorSimple 파트너용 StorSimple 및 CSP에 대한 개요입니다.
+description: Storsimple 파트너를 위한 StorSimple 및 CSP (클라우드 솔루션 프로그램)에 대 한 소개 정보를 알아봅니다.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: e2adccaf1371cf322b5a50b0e1f6ef64dde14b66
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 358399426798ac20897d207c93a8874357e8b781
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60628662"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88182003"
 ---
 # <a name="what-is-storsimple-for-cloud-solutions-providers-program"></a>클라우드 솔루션 공급자 프로그램용 StorSimple이란?
 

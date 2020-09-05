@@ -4,12 +4,12 @@ description: 이 자습서에서는 Azure CLI를 사용하여 Azure VM에서 실
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4113ba75f007bfa03fed5cfeaed7737797e37ed9
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a0b6683183d6bf73b5376c6320106373ffd4ba78
+ms.sourcegitcommit: e2b36c60a53904ecf3b99b3f1d36be00fbde24fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87489506"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88762405"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>자습서: Azure CLI를 사용하여 Azure VM에서 SAP HANA 데이터베이스 복원
 
@@ -19,7 +19,7 @@ Azure CLI는 명령줄 또는 스크립트를 통해 Azure 리소스를 만들�
 
 > [!div class="checklist"]
 >
-> * 복구 서비스 자격 증명 모음 만들기
+> * Recovery Services 자격 증명 모음 만들기
 > * SAP HANA 인스턴스를 등록하고 데이터베이스 검색
 > * SAP HANA 데이터베이스에서 백업 사용
 > * 주문형 백업 트리거
@@ -30,7 +30,7 @@ Azure CLI는 명령줄 또는 스크립트를 통해 Azure 리소스를 만들�
 
 CLI를 로컬로 설치하고 사용하려면 Azure CLI 버전 xx.xxx.x 이상을 실행해야 합니다. CLI 버전을 찾으려면 `az --version`을 실행합니다. 설치 또는 업그레이드가 필요한 경우, [Azure CLI 설치](/cli/azure/install-azure-cli)를 참조하세요.
 
-## <a name="create-a-recovery-services-vault"></a>복구 서비스 자격 증명 모음 만들기
+## <a name="create-a-recovery-services-vault"></a>Recovery Services 자격 증명 모음 만들기
 
 Recovery Services 자격 증명 모음은 Azure VM 또는 Azure VM에서 실행되는 워크로드(예: SQL 또는 HANA 데이터베이스)처럼 보호된 리소스의 백업 데이터를 저장하는 논리 컨테이너입니다. 보호된 리소스에 대한 백업 작업이 실행될 때 Recovery Services 자격 증명 모음 내에 복구 지점을 만듭니다. 이러한 복구 지점 중 하나를 사용하여 지정된 특정 시점으로 데이터를 복원할 수 있습니다.
 
@@ -71,7 +71,7 @@ westus2    saphanaVault     saphanaResourceGroup
 
 Azure 서비스에서 SAP HANA 인스턴스(SAP HANA가 설치된 VM)를 검색하려면 SAP HANA 머신에서 [사전 등록 스크립트](https://aka.ms/scriptforpermsonhana)를 실행해야 합니다. 스크립트를 실행하기 전에 모든 [필수 구성 요소](./tutorial-backup-sap-hana-db.md#prerequisites)를 충족하는지 확인합니다. 스크립트가 수행하는 작업에 대한 자세한 내용은 [사전 등록 스크립트의 기능](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does) 섹션을 참조하세요.
 
-스크립트가 실행되면 앞에서 만든 복구 서비스 자격 증명 모음에 SAP HANA 인스턴스를 등록할 수 있습니다. 인스턴스를 등록하려면 [az backup container register](/cli/azure/backup/container?view=azure-cli-latest#az-backup-container-register) cmdlet을 사용합니다. *VMResourceId*는 SAP HANA를 설치하기 위해 만든 VM의 리소스 ID입니다.
+스크립트가 실행되면 앞에서 만든 Recovery Services 자격 증명 모음에 SAP HANA 인스턴스를 등록할 수 있습니다. 인스턴스를 등록하려면 [az backup container register](/cli/azure/backup/container?view=azure-cli-latest#az-backup-container-register) cmdlet을 사용합니다. *VMResourceId*는 SAP HANA를 설치하기 위해 만든 VM의 리소스 ID입니다.
 
 ```azurecli-interactive
 az backup container register --resource-group saphanaResourceGroup \

@@ -3,12 +3,12 @@ title: Azure Functions에서 소비 계획 비용 예측
 description: Azure의 소비 계획에서 함수 앱을 실행할 때 발생할 수 있는 비용을 보다 정확 하 게 예측 하는 방법을 알아봅니다.
 ms.date: 9/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 880d1c20c75ce297b556ac203e309e446227e97a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 33c892bd7904d2921039a4b2afb9c775d6a4926a
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083041"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88207765"
 ---
 # <a name="estimating-consumption-plan-costs"></a>소비 계획 비용 예측
 
@@ -37,6 +37,8 @@ Durable Functions 소비 계획에서 실행할 수도 있습니다. Durable Fun
 > [!NOTE]
 > CPU 사용량은 실행 비용에서 직접 고려 되지 않지만 함수의 실행 시간에 영향을 미칠 경우 비용에 영향을 줄 수 있습니다.
 
+HTTP 트리거 함수의 경우 함수 코드가 실행 되기 전에 오류가 발생 하는 경우 실행에 대 한 요금이 청구 되지 않습니다. 즉, API 키 유효성 검사 또는 App Service 인증/권한 부여 기능으로 인해 플랫폼의 401 응답이 실행 비용에 계산 되지 않습니다. 마찬가지로, 5xx 상태 코드 응답은 요청을 처리 하는 함수 전에 플랫폼에서 발생 하는 경우에는 계산 되지 않습니다. 함수 코드 실행이 시작 된 후 플랫폼에 의해 생성 된 5xx 응답은 함수 코드에 의해 오류가 발생 하지 않더라도 여전히 실행으로 계산 됩니다.
+
 ## <a name="other-related-costs"></a>기타 관련 비용
 
 계획에서 함수를 실행 하는 전체 비용을 예측할 때 함수 런타임은 각각 별도로 청구 되는 여러 Azure 서비스를 사용 합니다. 함수 앱에 대 한 가격 책정을 계산할 때 다른 Azure 서비스와 통합 하는 트리거와 바인딩을 사용 하려면 이러한 추가 서비스를 만들고 지불 해야 합니다. 
@@ -45,7 +47,7 @@ Durable Functions 소비 계획에서 실행할 수도 있습니다. Durable Fun
 
 함수 앱 및 관련 서비스의 전체 비용을 예측 하는 경우 [Azure 가격 계산기](https://azure.microsoft.com/pricing/calculator/?service=functions)를 사용 합니다. 
 
-| 관련 비용 | Description |
+| 관련 비용 | 설명 |
 | ------------ | ----------- |
 | **스토리지 계정** | 각 함수 앱에는 [별도로 청구](https://azure.microsoft.com/pricing/details/storage/)되는 연결 된 범용 [Azure Storage 계정이](../storage/common/storage-introduction.md#types-of-storage-accounts)있어야 합니다. 이 계정은 함수 런타임에서 내부적으로 사용 되지만 저장소 트리거 및 바인딩에 사용할 수도 있습니다. 저장소 계정이 없는 경우 함수 앱을 만들 때 하나씩 만들어집니다. 자세한 내용은 [스토리지 계정 요구 사항](storage-considerations.md#storage-account-requirements)을 참조하세요.|
 | **Application Insights** | 함수는 [Application Insights](../azure-monitor/app/app-insights-overview.md) 을 사용 하 여 함수 앱에 고성능 모니터링 환경을 제공 합니다. 필수는 아니지만 [Application Insights 통합을 사용 하도록 설정](functions-monitoring.md#enable-application-insights-integration)해야 합니다. 원격 분석 데이터의 무료 부여는 매달 포함 됩니다. 자세히 알아보려면 [Azure Monitor 가격 책정 페이지](https://azure.microsoft.com/pricing/details/monitor/)를 참조 하세요. |
@@ -76,7 +78,7 @@ Durable Functions 소비 계획에서 실행할 수도 있습니다. Durable Fun
     ![함수 앱 리소스 선택](media/functions-consumption-costing/select-a-resource.png)
 
       
-    |설정  |제안 값  |Description  |
+    |설정  |제안 값  |설명  |
     |---------|---------|---------|
     | Subscription    |  사용자의 구독  | 함수 앱을 사용 하는 구독입니다.  |
     | Resource group     | 리소스 그룹  | 함수 앱을 포함 하는 리소스 그룹입니다.   |

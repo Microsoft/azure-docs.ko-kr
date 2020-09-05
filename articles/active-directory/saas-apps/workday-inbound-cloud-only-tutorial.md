@@ -3,23 +3,19 @@ title: '자습서: Azure Active Directory에서 Workday 인바운드 프로 비�
 description: Workday에서 Azure AD로의 인바운드 프로 비전을 구성 하는 방법 알아보기
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: daveba
-ms.assetid: fac4f61e-d942-4429-a297-9ba74db95077
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 6fb80af84379a1a0bc174a7318c8150a98bea95e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 69c3246c910a83d889151d6ad749e1be86340e8c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026504"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88540969"
 ---
 # <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>자습서: Workday에서 Azure AD 사용자 프로 비전 구성
 이 자습서에서는 Workday의 작업자 데이터를 Azure Active Directory에 프로 비전 하기 위해 수행 해야 하는 단계를 보여 줍니다. 
@@ -119,7 +115,7 @@ Workday에서 Azure AD로 클라우드 HR 구동 사용자 프로 비전을 구�
    
      | URL 형식 | 사용 되는 WWS API 버전 | XPATH 변경 필요 |
      |------------|----------------------|------------------------|
-     | https://####.workday.com/ccx/service/tenantName | v 21.1 | 아니요 |
+     | https://####.workday.com/ccx/service/tenantName | v 21.1 | 예 |
      | https://####.workday.com/ccx/service/tenantName/Human_Resources | v 21.1 | 아니요 |
      | https://####.workday.com/ccx/service/tenantName/Human_Resources/v##.# | v # # # | 예 |
 

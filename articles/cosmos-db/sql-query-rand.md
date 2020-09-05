@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: e44878b6d65725f08aeca4eb07088315ae2bb78a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ff098da778221868b0eddc17c426d2bf36eec0fe
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78302222"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794327"
 ---
 # <a name="rand-azure-cosmos-db"></a>RAND (Azure Cosmos DB)
  [0, 1)에서 임의로 생성 된 숫자 값을 반환 합니다.
  
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>구문
   
 ```sql
 RAND ()  
@@ -29,9 +29,10 @@ RAND ()
 
 ## <a name="remarks"></a>설명
 
-  `RAND`는 비결정 함수입니다. 의 반복적인 호출은 `RAND` 동일한 결과를 반환 하지 않습니다.
+  `RAND`는 비결정 함수입니다. 의 반복적인 호출은 `RAND` 동일한 결과를 반환 하지 않습니다. 이 시스템 함수는 인덱스를 활용 하지 않습니다.
 
-## <a name="examples"></a>예
+
+## <a name="examples"></a>예제
   
   다음 예에서는 임의로 생성 된 숫자 값을 반환 합니다.
   
@@ -44,10 +45,6 @@ SELECT RAND() AS rand
 ```json
 [{"rand": 0.87860053195618093}]  
 ``` 
-
-## <a name="remarks"></a>설명
-
-이 시스템 함수는 인덱스를 활용 하지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

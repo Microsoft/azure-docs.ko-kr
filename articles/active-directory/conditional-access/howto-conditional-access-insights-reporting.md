@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/01/2020
+ms.date: 08/27/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 678c32703501c4d0b66321cfc3518631ffa28c0c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3c2364eae0d04da8f8e6fe38ae80db7adb8666ce
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253276"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049420"
 ---
 # <a name="conditional-access-insights-and-reporting"></a>조건부 액세스 인사이트 및 보고
 
@@ -97,6 +97,22 @@ Azure AD 로그를 Azure Monitor 로그에 통합하지 않은 경우 다음 단
 
 대시보드 아래쪽에서 로그인을 검색하여 특정 사용자의 로그인을 조사할 수도 있습니다. 왼쪽 쿼리에는 가장 빈도가 높은 사용자가 표시됩니다. 사용자를 선택하면 오른쪽 쿼리가 필터링됩니다.  
 
+> [!NOTE]
+> 로그인 로그를 다운로드 하는 경우 조건부 액세스 보고서 전용 결과 데이터를 포함 하려면 JSON 형식을 선택 합니다.
+
+## <a name="configure-a-conditional-access-policy-in-report-only-mode"></a>보고서 전용 모드에서 조건부 액세스 정책 구성
+
+보고서 전용 모드에서 조건부 액세스 정책을 구성 하려면:
+
+1. 조건부 액세스 관리자, 보안 관리자 또는 전역 관리자 권한으로 **Azure Portal** 에 로그인 합니다.
+1. **Azure Active Directory** > **Security** > **조건부 액세스**로 이동합니다.
+1. 기존 정책을 선택 하거나 새 정책을 만듭니다.
+1. **정책 사용** 에서 **보고서 전용** 모드로 전환을 설정 합니다.
+1. **저장**을 선택합니다.
+
+> [!TIP]
+> 기존 정책의 **정책 상태 사용** 을 **On** 에서 **보고서 전용** 으로 편집 하면 기존 정책 적용만 사용 하지 않도록 설정 됩니다. 
+
 ## <a name="troubleshooting"></a>문제 해결
 
 ### <a name="why-are-queries-failing-due-to-a-permissions-error"></a>권한 오류로 인해 쿼리가 실패 하는 이유는 무엇 인가요?
@@ -111,6 +127,10 @@ Azure AD 로그를 Azure Monitor 로그에 통합하지 않은 경우 다음 단
 ![실패 한 쿼리 문제 해결](./media/howto-conditional-access-insights-reporting/query-troubleshoot-sign-in-logs.png)
 
 Azure AD 로그인 로그를 Log Analytics 작업 영역으로 스트리밍하는 방법에 대 한 자세한 내용은 [AZURE ad 로그를 Azure Monitor 로그와 통합](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)문서를 참조 하세요.
+
+### <a name="why-are-the-queries-in-the-workbook-failing"></a>통합 문서의 쿼리가 실패 하는 이유는 무엇 인가요?
+
+잘못 된 작업이 나 여러 작업 영역이 통합 문서와 연결 된 경우에는 때때로 쿼리가 실패할 수 있다는 사실을 알게 됩니다. 이 문제를 해결 하려면 통합 문서 위쪽에서 **편집** 을 클릭 한 다음 설정 기어를 클릭 합니다. 통합 문서와 연결 되지 않은 작업 영역을 선택 하 고 제거 합니다. 각 통합 문서와 연결 된 작업 영역은 하나만 있어야 합니다.
 
 ### <a name="why-is-the-conditional-access-policies-parameter-is-empty"></a>조건부 액세스 정책 매개 변수가 비어 있는 이유는 무엇 인가요?
 
@@ -134,4 +154,8 @@ Azure AD 로그인 로그를 Log Analytics 작업 영역으로 스트리밍하�
  
 ## <a name="next-steps"></a>다음 단계
 
-[조건부 액세스 보고 전용 모드](concept-conditional-access-report-only.md)
+- [조건부 액세스 보고 전용 모드](concept-conditional-access-report-only.md)
+
+- Azure AD 통합 문서에 대 한 자세한 내용은 [Azure Active Directory 보고서에 Azure Monitor 통합 문서를 사용 하는 방법](../reports-monitoring/howto-use-azure-monitor-workbooks.md)문서를 참조 하세요.
+
+- [조건부 액세스 일반 정책](concept-conditional-access-policy-common.md)

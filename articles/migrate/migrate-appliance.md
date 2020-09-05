@@ -3,12 +3,12 @@ title: Azure Migrate 어플라이언스
 description: 서버 평가 및 마이그레이션에 사용되는 Azure Migrate 어플라이언스에 대해 간략히 설명합니다.
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 99b29839028432a6b760265b641d35cdf33ee57f
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: a313d7b964e6ea849acb5b034ed55975b8c5b524
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86122135"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927516"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate 어플라이언스
 
@@ -43,11 +43,11 @@ Azure Migrate 어플라이언스가 사용되는 시나리오는 다음과 같�
 **요구 사항** | **VMware** 
 --- | ---
 **권한** | 어플라이언스 웹앱에 로컬 또는 원격으로 액세스하려면 어플라이언스 컴퓨터의 도메인 관리자 또는 로컬 관리자여야 합니다.
-**어플라이언스 구성 요소** | 어플라이언스의 구성 요소는 다음과 같습니다.<br/><br/> - **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/> - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **평가 에이전트**: 성능 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).<br/>- **DRA 에이전트**: VM 복제를 오케스트레이션하고, 복제된 컴퓨터와 Azure 간의 통신을 조정합니다. 에이전트 없는 마이그레이션을 사용하여 VMware VM을 Azure에 복제할 때만 사용됩니다.<br/>- **게이트웨이**: 복제된 데이터를 Azure에 보냅니다. 에이전트 없는 마이그레이션을 사용하여 VMware VM을 Azure에 복제할 때만 사용됩니다.
+**어플라이언스 구성 요소** | 어플라이언스의 구성 요소는 다음과 같습니다.<br/><br/> - **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/> - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **수집기 에이전트**: 에이전트는 성능 데이터를 수집 합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).<br/>- **DRA 에이전트**: VM 복제를 오케스트레이션하고, 복제된 컴퓨터와 Azure 간의 통신을 조정합니다. 에이전트 없는 마이그레이션을 사용하여 VMware VM을 Azure에 복제할 때만 사용됩니다.<br/>- **게이트웨이**: 복제된 데이터를 Azure에 보냅니다. 에이전트 없는 마이그레이션을 사용하여 VMware VM을 Azure에 복제할 때만 사용됩니다.
 **지원되는 배포** | OVA 템플릿을 사용하여 VMware VM으로 배포합니다.<br/><br/> PowerShell 설치 스크립트를 사용하여 VMware VM 또는 물리적 컴퓨터로 배포합니다.
 **프로젝트 지원** |  어플라이언스는 단일 프로젝트에 연결할 수 있습니다. <br/> 모든 수의 어플라이언스를 단일 프로젝트에 연결할 수 있습니다.<br/> 
 **검색 제한** | 어플라이언스는 vCenter Server에서 최대 10,000개의 VMware VM을 검색할 수 있습니다.<br/> 어플라이언스는 단일 vCenter Server에 연결할 수 있습니다.
-**OVA 템플릿** | 포털 또는 https://aka.ms/migrate/appliance/vmware 에서 다운로드합니다.<br/><br/> 다운로드 크기는 10.9 GB입니다.<br/><br/> 다운로드한 어플라이언스 템플릿에는 180일 동안 유효한 Windows Server 2016 평가 라이선스가 제공됩니다. 평가 기간이 곧 만료되는 경우 새 어플라이언스를 다운로드하여 배포하거나 어플라이언스 VM의 운영 체제 라이선스에 대한 정품 인증을 수행하는 것이 좋습니다.
+**OVA 템플릿** | 포털에서 또는 [여기](https://go.microsoft.com/fwlink/?linkid=2140333) 에서 다운로드<br/><br/> 다운로드 크기는 11.6 GB입니다.<br/><br/> 다운로드한 어플라이언스 템플릿에는 180일 동안 유효한 Windows Server 2016 평가 라이선스가 제공됩니다. 평가 기간이 곧 만료되는 경우 새 어플라이언스를 다운로드하여 배포하거나 어플라이언스 VM의 운영 체제 라이선스에 대한 정품 인증을 수행하는 것이 좋습니다.
 **PowerShell 스크립트** | 이 [문서](./deploy-appliance-script.md#set-up-the-appliance-for-vmware)를 참조 하세요.<br/><br/> 
 **소프트웨어/하드웨어** |  어플라이언스는 Windows Server 2016, 32GB RAM, 8개의 vCPU, 약 80GB의 디스크 스토리지 및 외부 가상 스위치가 있는 컴퓨터에서 실행해야 합니다.<br/> 어플라이언스는 직접 또는 프록시를 통해 인터넷에 액세스해야 합니다.<br/><br/> VMware VM에서 어플라이언스를 실행하는 경우 요구 사항을 충족하는 VM을 할당하는 데 충분한 리소스가 vCenter Server에 있어야 합니다.<br/><br/> 물리적 컴퓨터에서 어플라이언스를 실행하는 경우 어플라이언스에서 Windows Server 2016을 실행하고 하드웨어 요구 사항을 충족하는지 확인합니다.
 **VMware 요구 사항** | 어플라이언스를 VMware VM으로 배포하는 경우 버전 5.5 이상을 실행하는 ESXi 호스트에 배포해야 합니다.<br/><br/> vCenter Server에서 5.5, 6.0, 6.5 또는 6.7을 실행합니다.
@@ -63,11 +63,11 @@ Azure Migrate 어플라이언스가 사용되는 시나리오는 다음과 같�
 **요구 사항** | **Hyper-V** 
 --- | ---
 **권한** | 어플라이언스 웹앱에 로컬 또는 원격으로 액세스하려면 어플라이언스 컴퓨터의 도메인 관리자 또는 로컬 관리자여야 합니다.
-**어플라이언스 구성 요소** | 어플라이언스의 구성 요소는 다음과 같습니다.<br/><br/>- **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/> - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **평가 에이전트**: 성능 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).
+**어플라이언스 구성 요소** | 어플라이언스의 구성 요소는 다음과 같습니다.<br/><br/>- **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/> - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **수집기 에이전트**: 에이전트는 성능 데이터를 수집 합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).
 **지원되는 배포** | VHD 템플릿을 사용하여 Hyper-V VM으로 배포합니다.<br/><br/> PowerShell 설치 스크립트를 사용하여 Hyper-V VM 또는 물리적 컴퓨터로 배포합니다.
 **프로젝트 지원** |  어플라이언스는 단일 프로젝트에 연결할 수 있습니다. <br/> 모든 수의 어플라이언스를 단일 프로젝트에 연결할 수 있습니다.<br/> 
 **검색 제한** | 어플라이언스는 최대 5,000개의 Hyper-V VM을 검색할 수 있습니다.<br/> 어플라이언스는 최대 300개의 Hyper-V 호스트에 연결할 수 있습니다.
-**VHD 템플릿** | VHD를 포함하여 압축된 폴더입니다. 포털 또는 https://aka.ms/migrate/appliance/hyperv 에서 다운로드합니다.<br/><br/> 다운로드 크기는 10GB입니다.<br/><br/> 다운로드한 어플라이언스 템플릿에는 180일 동안 유효한 Windows Server 2016 평가 라이선스가 제공됩니다. 평가 기간이 곧 만료되는 경우 새 어플라이언스를 다운로드하여 배포하거나 어플라이언스 VM의 운영 체제 라이선스에 대한 정품 인증을 수행하는 것이 좋습니다.
+**VHD 템플릿** | VHD를 포함하여 압축된 폴더입니다. 포털에서 또는 [여기](https://go.microsoft.com/fwlink/?linkid=2140422)에서 다운로드 합니다.<br/><br/> 다운로드 크기는 10.4 GB입니다.<br/><br/> 다운로드한 어플라이언스 템플릿에는 180일 동안 유효한 Windows Server 2016 평가 라이선스가 제공됩니다. 평가 기간이 곧 만료되는 경우 새 어플라이언스를 다운로드하여 배포하거나 어플라이언스 VM의 운영 체제 라이선스에 대한 정품 인증을 수행하는 것이 좋습니다.
 **PowerShell 스크립트** | 이 [문서](./deploy-appliance-script.md#set-up-the-appliance-for-hyper-v)를 참조 하세요.<br/><br/> 
 **소프트웨어/하드웨어***   |  어플라이언스는 Windows Server 2016, 16gb RAM, 8 개의 vCPUs, 80 GB의 디스크 저장소 및 외부 가상 스위치를 사용 하 여 컴퓨터에서 실행 해야 합니다.<br/> 어플라이언스는 고정 또는 동적 IP 주소가 필요하며, 직접 또는 프록시를 통해 인터넷에 액세스해야 합니다.<br/><br/> 어플라이언스를 Hyper-V VM으로 실행하는 경우 16GB RAM, 8개의 vCPU, 약 80GB의 스토리지 공간 및 어플라이언스 VM에 대한 외부 스위치를 할당하는 데 충분한 리소스가 Hyper-V 호스트에 있어야 합니다.<br/><br/> 물리적 컴퓨터에서 어플라이언스를 실행하는 경우 어플라이언스에서 Windows Server 2016을 실행하고 하드웨어 요구 사항을 충족하는지 확인합니다. 
 **Hyper-V 요구 사항** | VHD 템플릿을 사용하여 어플라이언스를 배포하는 경우 Azure Migrate에서 제공하는 어플라이언스 VM은 Hyper-V VM 버전 5.0입니다.<br/><br/> Hyper-V 호스트에서 Windows Server 2012 R2 이상을 실행해야 합니다. 
@@ -80,11 +80,11 @@ Azure Migrate 어플라이언스가 사용되는 시나리오는 다음과 같�
 **요구 사항** | **물리적 서버** 
 --- | ---
 **권한** | 어플라이언스 웹앱에 로컬 또는 원격으로 액세스하려면 어플라이언스 컴퓨터의 도메인 관리자 또는 로컬 관리자여야 합니다.
-**어플라이언스 구성 요소** | 어플라이언스의 구성 요소는 다음과 같습니다. <br/><br/> - **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/> - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **평가 에이전트**: 성능 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).
+**어플라이언스 구성 요소** | 어플라이언스의 구성 요소는 다음과 같습니다. <br/><br/> - **관리 앱**: 어플라이언스를 배포하는 동안 사용자 입력을 위한 웹앱입니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/> - **검색 에이전트**: 에이전트가 컴퓨터 구성 데이터를 수집합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **수집기 에이전트**: 에이전트는 성능 데이터를 수집 합니다. Azure로 마이그레이션하기 위한 컴퓨터를 평가할 때 사용됩니다.<br/>- **자동 업데이트 서비스**: 어플라이언스 구성 요소를 업데이트합니다(24시간마다 실행).
 **지원되는 배포** | PowerShell 설치 스크립트를 사용하여 전용 물리적 컴퓨터 또는 VM으로 배포합니다. 스크립트는 포털에서 다운로드할 수 있습니다.
 **프로젝트 지원** |  어플라이언스는 단일 프로젝트에 연결할 수 있습니다. <br/> 모든 수의 어플라이언스를 단일 프로젝트에 연결할 수 있습니다.<br/> 
 **검색 제한** | 어플라이언스는 최대 1000 대의 물리적 서버를 검색할 수 있습니다.
-**PowerShell 스크립트** | 스크립트(AzureMigrateInstaller.ps1)를 포털의 압축된 폴더에 다운로드합니다. [자세히 알아보기](tutorial-assess-physical.md#set-up-the-appliance). 또는 [직접 다운로드](https://go.microsoft.com/fwlink/?linkid=2105112)합니다.<br/><br/> 다운로드 크기는 63.1 MB입니다.
+**PowerShell 스크립트** | 포털에서 또는 [여기](https://go.microsoft.com/fwlink/?linkid=2140334)에서 zip 폴더의 스크립트 (AzureMigrateInstaller.ps1)를 다운로드 합니다. [자세히 알아보기](tutorial-assess-physical.md#set-up-the-azure-migrate-appliance).<br/><br/> 다운로드 크기는 85 MB입니다.
 **소프트웨어/하드웨어** |  어플라이언스는 Windows Server 2016, 16gb RAM, 8 개의 vCPUs, 80 GB의 디스크 저장소 및 외부 가상 스위치를 사용 하 여 컴퓨터에서 실행 해야 합니다.<br/> 어플라이언스는 고정 또는 동적 IP 주소가 필요하며, 직접 또는 프록시를 통해 인터넷에 액세스해야 합니다.<br/><br/> 물리적 컴퓨터에서 어플라이언스를 실행하는 경우 어플라이언스에서 Windows Server 2016을 실행하고 하드웨어 요구 사항을 충족하는지 확인합니다.<br/> Windows Server 2019를 사용하는 컴퓨터에서 어플라이언스를 실행하는 것은 지원되지 않습니다.
 **해시 값** | PowerShell 스크립트 해시 값을 [확인](deploy-appliance-script.md#verify-file-security)합니다.
 
@@ -227,7 +227,7 @@ NIC 쓰기 처리량(MB/초) | net.transmitted.average  |VM 크기 계산
 
 **Data**  | **PowerShell cmdlet** | **속성**
 --- | --- | ---
-Name  | Get Add-windowsfeature  | Name
+속성  | Get Add-windowsfeature  | 속성
 기능 유형 | Get Add-windowsfeature  | FeatureType
 Parent  | Get Add-windowsfeature  | Parent
 
@@ -237,7 +237,7 @@ Parent  | Get Add-windowsfeature  | Parent
 
 **Data**  | **레지스트리 위치**  | **Key**
 --- | --- | ---
-Name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL 서버 \ 인스턴스 Names\SQL  | installedInstance
+속성  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL 서버 \ 인스턴스 Names\SQL  | installedInstance
 버전  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | 버전 
 서비스 팩  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | SP
 버전  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | 버전 
@@ -248,9 +248,9 @@ Name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL 서버 \ 인스턴스 Names\SQL
 
 데이터  | WMI 클래스(WMI class)  | WMI 클래스 속성
 --- | --- | ---
-Name  | Win32_operatingsystem  | 캡션
+속성  | Win32_operatingsystem  | 캡션
 버전  | Win32_operatingsystem  | 버전
-Architecture  | Win32_operatingsystem  | OSArchitecture
+아키텍처  | Win32_operatingsystem  | OSArchitecture
 
 #### <a name="linux-vm-apps-data"></a>Linux VM 앱 데이터
 
@@ -258,7 +258,7 @@ Architecture  | Win32_operatingsystem  | OSArchitecture
 
 데이터  | 명령
 --- | --- 
-Name | rpm, dpkg, snap
+속성 | rpm, dpkg, snap
 버전 | rpm, dpkg, snap
 공급자 | rpm, dpkg, snap
 
@@ -268,8 +268,8 @@ Name | rpm, dpkg, snap
 
 **Data**  | **명령** 
 --- | --- | ---
-Name <br/> 버전 | 다음 파일 중 하나 이상에서 수집 됩니다.<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
-Architecture | uname
+속성 <br/> 버전 | 다음 파일 중 하나 이상에서 수집 됩니다.<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+아키텍처 | uname
 
 
 ### <a name="app-dependencies-metadata"></a>앱 종속성 메타데이터
@@ -465,7 +465,7 @@ NIC당 전송된 데이터 | cat /sys/class/net/eth$nic/statistics/tx_bytes
 다음 방법 중 하나를 사용하여 자동 업데이트를 설정할 수 있습니다.
 
 - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureAppliance에서 AutoUpdate 레지스트리 키를 삭제합니다.
-- 검색이 완료된 후 Appliance Configuration Manager에서 자동 업데이트를 설정합니다.
+- 자동 업데이트를 설정 하려면 **필수 구성 요소** 패널의 최신 업데이트 검사에서 **어플라이언스 서비스 보기** 를 클릭 합니다.
 
 레지스트리 키를 삭제하려면 다음을 수행합니다.
 
@@ -475,24 +475,24 @@ NIC당 전송된 데이터 | cat /sys/class/net/eth$nic/statistics/tx_bytes
 
 검색이 완료된 후 Appliance Configuration Manager에서 설정하려면 다음을 수행합니다.
 
-1. 어플라이언스 컴퓨터에서 Appliance Configuration Manager를 엽니다.
-2. **어플라이언스 서비스** > **Azure Migrate 구성 요소의 자동 업데이트가 해제되었습니다.** 에서 이를 클릭하여 자동 업데이트를 설정합니다.
+1. 어플라이언스 구성 관리자에서 **필수 구성 요소 패널 설정** 으로 이동 합니다.
+2. 최신 업데이트 확인에서 **어플라이언스 서비스 보기** 를 클릭 하 고 링크를 클릭 하 여 자동 업데이트를 설정 합니다.
 
-    ![자동 업데이트 설정](./media/migrate-appliance/turn-on.png)
+    ![자동 업데이트 설정](./media/migrate-appliance/autoupdate-off.png)
 
 ### <a name="check-the-appliance-services-version"></a>어플라이언스 서비스 버전 확인
 
 다음 방법 중 하나를 사용하여 어플라이언스 서비스 버전을 확인할 수 있습니다.
 
-- 검색이 완료된 후 Appliance Configuration Manager에서
+- 어플라이언스 구성 관리자에서 **필수 구성 요소 패널 설정** 으로 이동 합니다.
 - 어플라이언스 컴퓨터의 **제어판** > **프로그램 및 기능**에서
 
-Appliance Configuration Manager에서 확인하려면 다음을 수행합니다.
+어플라이언스 구성 관리자를 체크 인하려면:
 
-1. 검색이 완료된 후 어플라이언스 웹앱에서 Appliance Configuration Manager를 엽니다.
-2. **어플라이언스 서비스**에서 어플라이언스 서비스 버전을 확인합니다.
+1. 어플라이언스 구성 관리자에서 **필수 구성 요소 패널 설정** 으로 이동 합니다.
+2. 최신 업데이트 확인에서 **어플라이언스 서비스 보기**를 클릭 합니다.
 
-    ![버전 확인](./media/migrate-appliance/version.png)
+    ![버전 확인](./media/migrate-appliance/versions.png)
 
 제어판에서 확인하려면 다음을 수행합니다.
 

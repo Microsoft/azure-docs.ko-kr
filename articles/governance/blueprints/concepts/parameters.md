@@ -1,14 +1,14 @@
 ---
 title: 매개 변수를 사용하여 동적 청사진 만들기
 description: 정적 및 동적 매개 변수와이를 사용 하 여 보안 및 동적 청사진을 만드는 방법에 대해 알아봅니다.
-ms.date: 04/15/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 831dd69f58130247518ee7465bc1059aed61b319
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: b9c80a50ebb4be8dc530c73544a704035d777225
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970640"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051562"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>매개 변수를 통해 동적 청사진 만들기
 
@@ -55,11 +55,11 @@ Azure Key Vault에 대한 자세한 내용은 [Key Vault 개요](../../../key-va
 
 1. 왼쪽 페이지에서 **청사진 정의**를 선택합니다.
 
-1. 기존 청사진을 클릭 한 다음 **청사진 편집** 을 클릭 하거나 **+ 청사진 만들기** 를 클릭 하 고 **기본 사항** 탭에서 정보를 입력 합니다.
+1. 기존 청사진을 선택 하 고 **청사진 편집** 을 선택 하거나 **+ 청사진 만들기** 를 선택 하 고 **기본 사항** 탭에서 정보를 입력 합니다.
 
-1. **다음: 아티팩트** 또는 **아티팩트** 탭을 클릭합니다.
+1. **다음: 아티팩트** 를 선택 하거나 **아티팩트** 탭을 선택 합니다.
 
-1. 청사진에 추가되고 매개 변수 옵션이 있는 아티팩트는 **매개 변수** 열에 **X/Y 매개 변수 채워짐**으로 표시됩니다. 아티팩트 행을 클릭하여 아티팩트 매개 변수를 편집합니다.
+1. 청사진에 추가되고 매개 변수 옵션이 있는 아티팩트는 **매개 변수** 열에 **X/Y 매개 변수 채워짐**으로 표시됩니다. 아티팩트 행을 선택 하 여 아티팩트 매개 변수를 편집 합니다.
 
    :::image type="content" source="../media/parameters/parameter-column.png" alt-text="청사진 정의의 청사진 매개 변수" border="false":::
 
@@ -172,7 +172,7 @@ REST API를 통해 청사진을 만들 때 [청사진 매개 변수](#blueprint-
 
 1. 왼쪽 페이지에서 **청사진 정의**를 선택합니다.
 
-1. 할당하려는 청사진을 마우스 오른쪽 단추로 클릭하고 **청사진 할당** 을 선택 하거나 할당 하려는 청사진을 클릭 한 다음 **청사진 할당** 단추를 클릭 합니다.
+1. 할당하려는 청사진을 마우스 오른쪽 단추로 클릭하고 **청사진 할당** 을 선택 하거나 할당 하려는 청사진을 선택 하 고 **청사진 할당** 단추를 사용 합니다.
 
 1. **청사진 할당** 페이지에서 **아티팩트 매개 변수** 섹션을 찾습니다. **동적 매개 변수**가 하나 이상 있는 아티팩트는 아티팩트 및 구성 옵션을 표시합니다. 매개 변수에 필요한 값을 제공한 후 청사진을 할당합니다. 아래 예제에서 _이름_은 청사진을 완료하려면 정의해야 하는 **동적 매개 변수**입니다.
 
@@ -234,8 +234,8 @@ REST API를 통해 청사진을 만들 때 [청사진 매개 변수](#blueprint-
 ## <a name="next-steps"></a>다음 단계
 
 - [청사진 함수](../reference/blueprint-functions.md)목록을 참조 하세요.
-- [청사진 수명 주기](lifecycle.md)에 대해 알아봅니다.
-- [청사진 시퀀싱 순서](sequencing-order.md)를 사용자 지정하는 방법 알아보기
-- [청사진 리소스 잠금](resource-locking.md)을 활용하는 방법 알아보기
+- [청사진 수명 주기](./lifecycle.md)에 대해 알아봅니다.
+- [청사진 시퀀싱 순서](./sequencing-order.md)를 사용자 지정하는 방법 알아보기
+- [청사진 리소스 잠금](./resource-locking.md)을 활용하는 방법 알아보기
 - [기존 할당을 업데이트](../how-to/update-existing-assignments.md)하는 방법 알아보기
 - [일반 문제 해결 방법](../troubleshoot/general.md)을 통해 청사진 할당 중에 발생하는 문제 해결

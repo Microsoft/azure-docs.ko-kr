@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: b1830ddef44ef33d19c953622951779632e33e71
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 5a3760956dfe9a713d344fd6684d75ea240ab7de
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86076745"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705727"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>HDInsight에서 Apache HBase 및 Apache Phoenix에 대한 백업 및 복제 설정
 
@@ -167,7 +167,7 @@ curl -u admin:<password> -X GET -H "X-Requested-By: ambari" "https://<clusterNam
 
 `<destinationAddress>  = <Host_1_IP>,<Host_2_IP>,<Host_3_IP>:<Port>:<ZnodeParent>`
 
-이 예제에서는 다음과 같습니다.
+이 예제에서
 
 `<destinationAddress> = 10.0.0.9,10.0.0.8,10.0.0.12:2181:/hbase-unsecure`
 
@@ -213,7 +213,13 @@ hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot <snapshotName> -
 hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
 ```
 
-스냅샷을 내보낸 후 SSH를 대상 클러스터의 헤드 노드에 연결하고, 앞에서 설명한 대로 restore_snapshot 명령을 사용하여 스냅샷을 복원합니다.
+원본 클러스터에 보조 Azure Storage 계정이 연결 되어 있지 않거나 원본 클러스터가 온-프레미스 클러스터 또는 HDI 클러스터가 아닌 경우 HDI 클러스터의 저장소 계정에 액세스 하려고 할 때 권한 부여 문제가 발생할 수 있습니다. 이 문제를 해결 하려면 다음 예제와 같이 명령줄 매개 변수로 저장소 계정에 대 한 키를 지정 합니다. Azure Portal에서 저장소 계정에 대 한 키를 가져올 수 있습니다.
+
+```console
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -Dfs.azure.account.key.myaccount.blob.core.windows.net=mykey -snapshot 'Snapshot1' -copy-to 'wasbs://secondcluster@myaccount.blob.core.windows.net/hbase'
+```
+
+스냅숏이 내보내진 후에는 대상 클러스터의 헤드 노드로 SSH를 사용 하 고 `restore_snapshot` 앞에서 설명한 대로 명령을 사용 하 여 스냅숏을 복원 합니다.
 
 스냅샷은 `snapshot` 명령을 실행할 때 테이블의 전체 백업을 제공합니다. 스냅숏은 시간 windows에서 증분 스냅숏을 수행 하는 기능을 제공 하지 않으며 스냅숏에 포함할 열 패밀리의 하위 집합을 지정 하지 않습니다.
 

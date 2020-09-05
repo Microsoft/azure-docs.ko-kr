@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eec5c5a3d810fdd2d561313e3a355e872fb525c2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: abc8badf261e631dd6ceb7af9a6a0cb3676ae25d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608095"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231013"
 ---
 # <a name="troubleshoot-errors-in-azure-active-directory-reporting-api"></a>Azure Active Directory Reporting API에서 오류 해결
 
@@ -50,5 +50,5 @@ API를 사용하여 감사 로그 또는 로그인에 액세스하는 동안 이
 
 ## <a name="next-steps"></a>다음 단계
 
-[감사 API 참조 사용](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
- [로그인 활동 보고서 API 참조 사용](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+[감사 API 참조 사용](/graph/api/resources/directoryaudit?view=graph-rest-beta) 
+ [로그인 활동 보고서 API 참조 사용](/graph/api/resources/signin?view=graph-rest-beta)

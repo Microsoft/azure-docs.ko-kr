@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: 46560f067e020236031487677ad4f48a9560d4e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c27c5fae45f7cde57f2db12c05107d2b77b90a2c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80681247"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012384"
 ---
 # <a name="use-the-session-management-rest-api"></a>세션 관리 REST API 사용
 
@@ -65,19 +65,19 @@ $token = $response.AccessToken;
 
 이 명령은 세션을 만듭니다. 새 세션의 ID를 반환 합니다. 다른 모든 명령에 대 한 세션 ID가 필요 합니다.
 
-| URI | 메서드 |
+| URI | 방법 |
 |-----------|:-----------|
 | /v1/accounts/*accountId*/sessions/create | POST |
 
 **요청 본문:**
 
-* maxLeaseTime (timespan): VM이 자동으로 해제 되는 시간 제한 값
+* maxLeaseTime (timespan): 세션을 자동으로 해제 하는 시간 제한 값
 * 모델 (배열): 미리 로드할 자산 컨테이너 Url
-* 크기 (문자열): VM 크기 (**"표준"** 또는 **"프리미엄"**)입니다. 특정 [VM 크기 제한](../reference/limits.md#overall-number-of-polygons)을 참조하세요.
+* size (string): 구성할 서버 크기 ([**"standard"**](../reference/vm-sizes.md) 또는 [**"premium"**](../reference/vm-sizes.md))입니다. 특정 [크기 제한](../reference/limits.md#overall-number-of-polygons)을 참조 하세요.
 
 **보낸**
 
-| 상태 코드 | JSON 페이로드 | 의견 |
+| 상태 코드 | JSON 페이로드 | 주석 |
 |-----------|:-----------|:-----------|
 | 202 | -sessionId: GUID | 성공 |
 
@@ -117,28 +117,35 @@ RawContentLength  : 52
 $sessionId = "d31bddca-dab7-498e-9bc9-7594bc12862f"
 ```
 
-## <a name="update-a-session"></a>세션 업데이트
+## <a name="modify-and-query-session-properties"></a>세션 속성 수정 및 쿼리
+
+기존 세션의 매개 변수를 쿼리하거나 수정 하는 몇 가지 명령이 있습니다.
+
+> [!CAUTION]
+모든 REST 호출의 경우와 마찬가지로, 이러한 명령을 너무 자주 보내면 서버가 제한을 초과 하 여 결국 오류가 반환 됩니다. 이 경우 상태 코드는 429 ("요청이 너무 많음")입니다. 이에 대 한 규칙에 따라 **이후 호출 사이에 5-10 초의**지연이 발생 합니다.
+
+### <a name="update-session-parameters"></a>세션 매개 변수 업데이트
 
 이 명령은 세션의 매개 변수를 업데이트 합니다. 현재 세션의 임대 시간만 확장할 수 있습니다.
 
 > [!IMPORTANT]
 > 임대 시간은 항상 세션의 시작 이후 총 시간으로 제공 됩니다. 즉, 임대 시간이 1 시간인 세션을 만들고 다른 시간에 대 한 임대 시간을 연장 하려면 해당 maxLeaseTime를 2 시간으로 업데이트 해야 합니다.
 
-| URI | 메서드 |
+| URI | 방법 |
 |-----------|:-----------|
 | /v1/accounts/*accountID*/sessions/*sessionId* | 패치 |
 
 **요청 본문:**
 
-* maxLeaseTime (timespan): VM이 자동으로 해제 되는 시간 제한 값
+* maxLeaseTime (timespan): 세션을 자동으로 해제 하는 시간 제한 값
 
 **보낸**
 
-| 상태 코드 | JSON 페이로드 | 의견 |
+| 상태 코드 | JSON 페이로드 | 주석 |
 |-----------|:-----------|:-----------|
 | 200 | | Success |
 
-### <a name="example-script-update-a-session"></a>예제 스크립트: 세션 업데이트
+#### <a name="example-script-update-a-session"></a>예제 스크립트: 세션 업데이트
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId" -Method Patch -ContentType "application/json" -Body "{ 'maxLeaseTime': '5:0:0' }" -Headers @{ Authorization = "Bearer $token" }
@@ -160,21 +167,21 @@ Headers           : {[MS-CV, Fe+yXCJumky82wuoedzDTA.0], [Content-Length, 0], [Da
 RawContentLength  : 0
 ```
 
-## <a name="get-active-sessions"></a>활성 세션 가져오기
+### <a name="get-active-sessions"></a>활성 세션 가져오기
 
 이 명령은 활성 세션 목록을 반환 합니다.
 
-| URI | 메서드 |
+| URI | 방법 |
 |-----------|:-----------|
 | /v1/accounts/*accountId*/sessions | GET |
 
 **보낸**
 
-| 상태 코드 | JSON 페이로드 | 의견 |
+| 상태 코드 | JSON 페이로드 | 주석 |
 |-----------|:-----------|:-----------|
 | 200 | -sessions: 세션 속성의 배열입니다. | 세션 속성에 대 한 설명은 "세션 속성 가져오기" 섹션을 참조 하세요. |
 
-### <a name="example-script-query-active-sessions"></a>예제 스크립트: 쿼리 활성 세션
+#### <a name="example-script-query-active-sessions"></a>예제 스크립트: 쿼리 활성 세션
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions" -Method Get -Headers @{ Authorization = "Bearer $token" }
@@ -203,21 +210,21 @@ ParsedHtml        : mshtml.HTMLDocumentClass
 RawContentLength  : 2
 ```
 
-## <a name="get-sessions-properties"></a>세션 속성 가져오기
+### <a name="get-sessions-properties"></a>세션 속성 가져오기
 
 이 명령은 VM 호스트 이름 등의 세션에 대 한 정보를 반환 합니다.
 
-| URI | 메서드 |
+| URI | 방법 |
 |-----------|:-----------|
 | /v1/accounts/*accountId*/sessions/*sessionId*/properties | GET |
 
 **보낸**
 
-| 상태 코드 | JSON 페이로드 | 의견 |
+| 상태 코드 | JSON 페이로드 | 주석 |
 |-----------|:-----------|:-----------|
 | 200 | -message: 문자열<br/>-sessionElapsedTime: timespan<br/>-sessionHostname: 문자열<br/>-sessionId: string<br/>-sessionMaxLeaseTime: timespan<br/>-sessionSize: enum<br/>-sessionStatus: enum | enum sessionStatus {시작, 준비, 중지, 중지, 만료, 오류}<br/>상태가 ' 오류 ' 또는 ' 만료 됨 ' 이면 메시지에 추가 정보가 포함 됩니다. |
 
-### <a name="example-script-get-session-properties"></a>예제 스크립트: 세션 속성 가져오기
+#### <a name="example-script-get-session-properties"></a>예제 스크립트: 세션 속성 가져오기
 
 ```PowerShell
 Invoke-WebRequest -Uri "$endPoint/v1/accounts/$accountId/sessions/$sessionId/properties" -Method Get -Headers @{ Authorization = "Bearer $token" }
@@ -250,13 +257,13 @@ RawContentLength  : 60
 
 이 명령은 세션을 중지 합니다. 할당 된 VM은 즉시 회수 됩니다.
 
-| URI | 메서드 |
+| URI | 방법 |
 |-----------|:-----------|
 | /v1/accounts/*accountId*/sessions/*sessionId* | Delete |
 
 **보낸**
 
-| 상태 코드 | JSON 페이로드 | 의견 |
+| 상태 코드 | JSON 페이로드 | 주석 |
 |-----------|:-----------|:-----------|
 | 204 | | 성공 |
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 3399ace71d3a28ea903991e0439f1c9ddcc939d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eaafb9536a8667417c0abf4ab570609f2db290bc
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565398"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935350"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Azure Cognitive Search의 AI 보강에 대한 설명서 리소스
 
@@ -92,12 +92,12 @@ AI 보강는 텍스트 원본이 아닌 소스에서 숨어 있는 정보를 찾
 
 ## <a name="apis"></a>API
 
-+ [REST API](https://docs.microsoft.com/rest/api/searchservice/)
-  + [Create 기술 (api-version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
-  + [Create 인덱서 (api-version = 2020-06-30)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [REST API](/rest/api/searchservice/)
+  + [Create 기술 (api-version = 2020-06-30)](/rest/api/searchservice/create-skillset)
+  + [Create 인덱서 (api-version = 2020-06-30)](/rest/api/searchservice/create-indexer)
 
 ## <a name="see-also"></a>참조
 
-+ [Azure Cognitive Search REST API](https://docs.microsoft.com/rest/api/searchservice/)
++ [Azure Cognitive Search REST API](/rest/api/searchservice/)
 + [Azure Cognitive Search의 인덱서](search-indexer-overview.md)
 + [Azure Cognitive Search란?](search-what-is-azure-search.md)

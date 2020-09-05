@@ -4,12 +4,12 @@ description: Azure 리소스 로그에 대해 지원 되는 서비스 및 이벤
 ms.subservice: logs
 ms.topic: reference
 ms.date: 06/15/2020
-ms.openlocfilehash: a6504f28b891fb16bd588b899b7a0402b65b4e44
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: acd661467e90b4915daa2f3eb31f34fd350dc9f5
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87318286"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226466"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Azure 리소스 로그의 공통 및 서비스별 스키마
 
@@ -23,7 +23,7 @@ ms.locfileid: "87318286"
 
 ## <a name="top-level-common-schema"></a>최상위 공용 스키마
 
-| Name | 필수/선택 | 설명 |
+| 이름 | 필수/선택 | 설명 |
 |---|---|---|
 | time | 필수 | 이벤트의 타임스탬프(UTC)입니다. |
 | resourceId | 필수 | 이벤트를 내보낸 리소스의 리소스 ID입니다. 테넌트 서비스의 경우 /tenants/tenant-id/providers/provider-name의 형태입니다. |
@@ -38,7 +38,7 @@ ms.locfileid: "87318286"
 | callerIpAddress | 선택 사항 | 작업이 공개적으로 사용 가능한 IP 주소를 가진 엔터티에서 가져온 API 호출에 해당 하는 경우 호출자 IP 주소입니다. |
 | correlationId | 선택 사항 | 관련 이벤트 집합을 그룹화하는 데 사용되는 GUID입니다. 일반적으로 두 이벤트에 동일한 operationName이 있지만 두 개의 다른 상태 (예: "Started" 및 "Succeeded")가 있는 경우 동일한 상관 관계 ID를 공유 합니다. 이벤트 간의 다른 관계를 나타낼 수도 있습니다. |
 | identity | 선택 사항 | 작업을 수행한 사용자 또는 애플리케이션의 ID를 설명하는 JSON Blob입니다. 일반적으로이 필드에는 active directory의 권한 부여 및 클레임/JWT 토큰이 포함 됩니다. |
-| 수준 | 선택 사항 | 이벤트의 심각도 수준입니다. 정보, 경고, 오류 또는 위험 중 하나여야 합니다. |
+| Level | 선택 사항 | 이벤트의 심각도 수준입니다. 정보, 경고, 오류 또는 위험 중 하나여야 합니다. |
 | 위치 | 선택 사항 | 이벤트를 내보내는 리소스의 지역 (예: "미국 동부" 또는 "프랑스 남부") |
 | properties | 선택 사항 | 이 특정 범주의 이벤트와 관련된 확장 속성입니다. 모든 custom/unique 속성은 스키마의이 "파트 B" 안에 배치 해야 합니다. |
 
@@ -54,9 +54,6 @@ ms.locfileid: "87318286"
 | Application Gateway |[Application Gateway에 대 한 로깅](../../application-gateway/application-gateway-diagnostics.md) |
 | Azure Automation |[Azure Automation에 대 한 Log analytics](../../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Azure Batch |[Azure Batch 로깅](../../batch/batch-diagnostics.md) |
-| Azure Database for MySQL | [Azure Database for MySQL 진단 로그](../../mysql/concepts-server-logs.md#diagnostic-logs) |
-| Azure Database for PostgreSQL | [Azure Database for PostgreSQL 로그](../../postgresql/concepts-server-logs.md#resource-logs) |
-| Azure Data Explorer | [Azure 데이터 탐색기 로그](/azure/data-explorer/using-diagnostic-logs) |
 | Cognitive Services | [Azure Cognitive Services에 대 한 로깅](../../cognitive-services/diagnostic-logging.md) |
 | Container Registry | [Azure Container Registry에 대 한 로깅](../../container-registry/container-registry-diagnostics-audit-logs.md) |
 | Content Delivery Network | [CDN에 대 한 Azure 로그](../../cdn/cdn-azure-diagnostic-logs.md) |
@@ -64,6 +61,11 @@ ms.locfileid: "87318286"
 | Data Factory | [Azure Monitor를 사용 하 여 데이터 팩터리 모니터링](../../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Azure Data Lake Analytics에 대 한 로그 액세스](../../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
 | Data Lake Store |[Azure Data Lake Store에 대 한 로그 액세스](../../data-lake-store/data-lake-store-diagnostic-logs.md) |
+| Azure Data Explorer | [Azure 데이터 탐색기 로그](/azure/data-explorer/using-diagnostic-logs) |
+| Azure Database for MySQL | [Azure Database for MySQL 진단 로그](../../mysql/concepts-server-logs.md#diagnostic-logs) |
+| Azure Database for PostgreSQL | [Azure Database for PostgreSQL 로그](../../postgresql/concepts-server-logs.md#resource-logs) |
+| Azure Databricks | [Azure Databricks의 진단 로깅](https://github.com/MicrosoftDocs/databricks-pr/blob/live/databricks/administration-guide/account-settings/azure-diagnostic-logs.md) |
+| Digital Twins | [Digital Twins 진단 설정](../../digital-twins/troubleshoot-diagnostics.md#log-schemas)
 | Event Hubs |[Azure Event Hubs 로그](../../event-hubs/event-hubs-diagnostic-logs.md) |
 | Express 경로 | 스키마를 사용할 수 없음 |
 | Azure Firewall | 스키마를 사용할 수 없음 |
@@ -83,6 +85,7 @@ ms.locfileid: "87318286"
 | Traffic Manager | [Traffic Manager 로그 스키마](../../traffic-manager/traffic-manager-diagnostic-logs.md) |
 | 가상 네트워크 | 스키마를 사용할 수 없음 |
 | Virtual Network 게이트웨이 | 스키마를 사용할 수 없음 |
+
 
 
 ## <a name="next-steps"></a>다음 단계

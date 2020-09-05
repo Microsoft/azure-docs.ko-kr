@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
 ms.author: memildin
-ms.openlocfilehash: f16df87ca72b66003d8870dcd9d778616ea840d4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 550c9ff57b9c558f2f175165c7f06ead45991be9
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87038548"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88226018"
 ---
 # <a name="quickstart-onboard-your-azure-subscription-to-security-center-standard"></a>빠른 시작: Security Center 표준에 Azure 구독 온보딩
 Azure Security Center는 하이브리드 클라우드 워크로드에 통합 보안 관리 및 위협 방지 기능을 제공합니다. 체험 계층은 Azure 리소스에 대한 제한된 보안만 제공하지만 표준 계층은 이러한 기능을 온-프레미스 및 기타 클라우드로 확장합니다. Security Center 표준을 사용하면 보안 취약성을 찾아서 수정하고, 액세스 및 애플리케이션 제어를 적용하여 악성 활동을 차단하고, 분석 및 인텔리전스를 사용하여 위협을 검색하고, 공격을 받을 때 신속하게 대응할 수 있습니다. 비용 없이 Security Center 표준을 사용해 볼 수 있습니다. 자세한 내용은 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/security-center/)를 참조하세요.
@@ -34,7 +34,8 @@ Security Center를 시작하려면 Microsoft Azure에 대한 구독이 있어야
 ## <a name="enable-your-azure-subscription"></a>Azure 구독 사용
 
 1. [Azure Portal](https://azure.microsoft.com/features/azure-portal/)에 로그인합니다.
-2. **Microsoft Azure** 메뉴에서 **Security Center**를 선택합니다. **Security Center - 개요**가 열립니다.
+
+1. **Microsoft Azure** 메뉴에서 **Security Center**를 선택합니다. **Security Center - 개요**가 열립니다.
 
    ![Security Center 개요][2]
 
@@ -49,21 +50,25 @@ Security Center를 처음 시작하면 수분 내에 다음이 표시될 수 있
 
 Security Center를 최대한 활용하려면 아래 단계를 완료하여 표준 계층으로 업그레이드하고 Log Analytics 에이전트를 설치해야 합니다.
 
-## <a name="upgrade-to-the-standard-pricing-tier"></a>표준 가격 책정 계층으로 업그레이드
+
+## <a name="upgrade-to-the-standard-tier"></a>표준 계층으로 업그레이드
+
 Security Center 빠른 시작 및 자습서를 위해 표준 계층으로 업그레이드해야 합니다. Security Center 표준의 평가판이 있습니다. 자세한 내용은 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/security-center/)를 참조하세요. 
 
-1. Security Center 주 메뉴에서 **시작하기**를 선택합니다.
+1. Security Center의 사이드바에서 **시작**을 선택합니다.
  
-   ![시작하기][4]
+   ![시작](./media/security-center-get-started/get-started-upgrade-tab.png)
 
-2. **업그레이드** 아래에 Security Center가 온보딩할 수 있는 구독 및 작업 영역을 나열합니다. 
-   - 확장 가능한 **Apply your trial**(평가판 적용)을 클릭하여 평가판 사용 자격이 있는 모든 구독 및 작업 영역 목록을 표시할 수 있습니다.
-   -    평가판 사용 자격이 없는 구독 및 작업 영역은 업그레이드할 수 있습니다.
-   -    평가판 사용 자격이 있는 작업 영역 및 구독을 선택하여 평가판을 시작할 수 있습니다.
-3. **평가판 시작**을 클릭하여 선택한 구독에서 평가판을 시작할 수 있습니다.
+    **업그레이드** 탭에는 온보딩에 적합한 구독 및 작업 영역이 나열되어 있습니다.
+
+1. **표준 계층을 사용하도록 설정할 작업 영역 선택** 목록에서 업그레이드할 작업 영역을 선택합니다.
 
 
-  ![보안 경고][9]
+    > [!TIP]
+    > 평가판에 적합한 작업 영역을 선택하면 다음 단계에서 평가판이 시작됩니다. 작업 영역이 평가판에 적합하지 않은 경우 업그레이드되고 요금이 부과됩니다.
+
+1. **업그레이드**를 선택하여 선택한 작업 영역을 표준 계층으로 업그레이드합니다.
+
 
 ## <a name="automate-data-collection"></a>데이터 수집 자동화
 Security Center는 Azure VM 및 비 Azure 컴퓨터에서 데이터를 수집하여 보안 취약성과 위협을 모니터링합니다. 데이터는 머신에서 다양한 보안 관련 구성 및 이벤트 로그를 읽고 분석용으로 작업 영역에 데이터를 복사하는 Log Analytics 에이전트를 사용하여 수집됩니다. 기본적으로 Security Center는 새 작업 영역을 만듭니다.
@@ -73,9 +78,9 @@ Security Center는 Azure VM 및 비 Azure 컴퓨터에서 데이터를 수집하
 Log Analytics 에이전트의 자동 프로비저닝을 사용하려면 다음을 수행합니다.
 
 1. Security Center 주 메뉴에서 **가격 책정 및 설정**을 선택합니다.
-2. 구독의 행에서 설정을 변경하려는 구독을 클릭합니다.
-3. **데이터 컬렉션** 탭에서 **자동 프로비전**을 **켜짐**으로 설정합니다.
-4. **저장**을 선택합니다.
+1. 구독의 행에서 설정을 변경하려는 구독을 클릭합니다.
+1. **데이터 컬렉션** 탭에서 **자동 프로비전**을 **켜짐**으로 설정합니다.
+1. **저장**을 선택합니다.
 ---
   ![자동 프로비저닝 사용][6]
 

@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory로 Juno Journey에 자동 사용자 프로비저닝 구성 | Microsoft Docs'
 description: 사용자 계정을 Azure AD에서 Juno Journey로 자동으로 프로비저닝 및 프로비저닝을 해제하는 방법을 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: 79813b19-c96e-4459-a4e5-636a6b6f5041
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0538902897d088c8ce271487b3f30698af0bb1eb
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 96dd5c617eb643ce8db5058bca238f5c3a83e756
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926555"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546888"
 ---
 # <a name="tutorial-configure-juno-journey-for-automatic-user-provisioning"></a>자습서: Juno Journey에 자동 사용자 프로비저닝 구성
 

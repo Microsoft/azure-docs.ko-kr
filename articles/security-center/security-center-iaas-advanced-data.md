@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2020
 ms.author: memildin
-ms.openlocfilehash: f159d2cdc48b144d0c75c62cd8a7ba6667424243
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: e0085ef5213853a1577ec039d5e360114aa7c64e
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86043872"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88566270"
 ---
 # <a name="advanced-data-security-for-sql-machines-preview"></a>SQL 컴퓨터에 대 한 고급 데이터 보안 (미리 보기)
 
@@ -72,7 +72,7 @@ SQL 컴퓨터에 대 한 Azure Security Center의 고급 데이터 보안 설정
 
     [![선택적 번들을 사용 하 여 가격 책정 페이지 Security Center](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png)](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-large.png#lightbox)
 
-    컴퓨터의 SQL server에 대 한 고급 데이터 보안이 선택한 작업 영역에 연결 된 모든 SQL server에서 사용 하도록 설정 됩니다. SQL Server를 처음 다시 시작한 후에도 보호가 완전히 활성화 됩니다. 
+    컴퓨터의 SQL server에 대 한 고급 데이터 보안이 선택한 작업 영역에 연결 된 모든 SQL server에서 사용 하도록 설정 됩니다. SQL Server 인스턴스를 처음 다시 시작한 후 보호가 완전히 활성화 됩니다.
 
     >[!TIP] 
     > 새 작업 영역을 만들려면 [Log Analytics 작업 영역 만들기](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace)의 지침을 따르세요.

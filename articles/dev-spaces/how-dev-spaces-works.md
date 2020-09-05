@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: conceptual
 description: Power Azure Dev Spaces 프로세스를 설명 합니다.
 keywords: Azure Dev Spaces, Dev Spaces, Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너
-ms.openlocfilehash: 40125b07029c78b4e8858d54058aabe038109057
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 48bde5f3cc6f397d51a31f80f41ab299ba8866ee
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837417"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212539"
 ---
 # <a name="how-azure-dev-spaces-works"></a>Azure Dev Spaces의 작동 원리
 
@@ -46,7 +46,6 @@ Azure Dev Spaces와 함께 GitHub 작업을 사용 하 여 병합 하기 전에 
 
 AKS 클러스터에 로컬 개발 컴퓨터를 연결 하는 작업을 시작 하려면 [개발 컴퓨터를 AKS 클러스터에 연결][connect]을 참조 하세요.
 
-팀 개발을 위해 Azure Dev Spaces 사용을 시작하려면 [Azure Dev Spaces에서 팀 개발][quickstart-team] 빠른 시작을 참조하세요.
 
 [connect]: https://code.visualstudio.com/docs/containers/local-process-kubernetes
 [how-it-works-local-process-kubernetes]: /visualstudio/containers/overview-local-process-kubernetes
@@ -55,5 +54,4 @@ AKS 클러스터에 로컬 개발 컴퓨터를 연결 하는 작업을 시작 �
 [how-it-works-routing]: how-dev-spaces-works-routing.md
 [how-it-works-up]: how-dev-spaces-works-up.md
 [pr-flow]: how-to/github-actions.md
-[quickstart-team]: quickstart-team-development.md
 [routing]: #team-development

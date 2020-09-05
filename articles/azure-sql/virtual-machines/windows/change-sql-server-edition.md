@@ -1,6 +1,6 @@
 ---
 title: SQL Server 버전의 현재 위치 변경
-description: Azure에서 SQL Server 가상 머신의 버전을 변경하는 방법을 알아봅니다.
+description: Azure에서 SQL Server 가상 머신의 버전을 다운 그레이드로 변경 하 여 비용을 줄이거나 업그레이드 하 여 더 많은 기능을 사용할 수 있도록 하는 방법에 대해 알아봅니다.
 services: virtual-machines-windows
 documentationcenter: na
 author: MashaMSFT
@@ -13,12 +13,12 @@ ms.date: 01/14/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 228f76c9ecb262ffca7851f4339b73c5574f09dc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60020667126fe76d33264795ddb2e17e1241a7b2
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669170"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236287"
 ---
 # <a name="in-place-change-of-sql-server-edition-on-azure-vm"></a>Azure VM에서 SQL Server 버전의 현재 위치 변경
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]

@@ -1,18 +1,21 @@
 ---
 title: 수정할 수 있는 정책 배포
 description: Azure Lighthouse를 통해 재구성 작업을 사용 하는 정책을 배포 하려면 고객 테 넌 트에서 관리 되는 id를 만들어야 합니다.
-ms.date: 07/07/2020
+ms.date: 08/12/2020
 ms.topic: how-to
-ms.openlocfilehash: fc13b6209826d4a59d82bca5db63d4ca5c39f9fb
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 998576d06d470c525a551463861f7a25d4ab9d8f
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86105339"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88163257"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>위임된 구독 내에서 수정할 수 있는 정책 배포
 
 [Azure Lighthouse](../overview.md) 를 사용 하면 서비스 공급자가 위임 된 구독 내에서 정책 정의를 만들고 편집할 수 있습니다. 그러나 [재구성 작업](../../governance/policy/how-to/remediate-resources.md) (즉, [Deployifnotexists](../../governance/policy/concepts/effects.md#deployifnotexists) 또는 [수정](../../governance/policy/concepts/effects.md#modify) 효과가 있는 정책)을 사용 하는 정책을 배포 하려면 고객 테 넌 트에서 [관리 되는 id](../../active-directory/managed-identities-azure-resources/overview.md) 를 만들어야 합니다. Azure Policy에서 이 관리 ID를 사용하여 정책 내에서 템플릿을 배포할 수 있습니다. Azure 위임된 리소스 관리를 위해 고객을 등록하고 정책 자체를 배포할 때 이 시나리오를 활성화하는 데 필요한 단계가 있습니다.
+
+> [!TIP]
+> 이 항목의 서비스 공급자 및 고객을 참조 하지만 [여러 테 넌 트를 관리](../concepts/enterprise.md) 하는 기업은 동일한 프로세스를 사용할 수 있습니다.
 
 ## <a name="create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant"></a>고객 테넌트에서 관리 ID에 역할을 할당할 수 있는 사용자 만들기
 

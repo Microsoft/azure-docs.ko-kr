@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: weixu
-ms.openlocfilehash: f9670733f8aa040b87cec20ac28aacc636c04698
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-csharp
+ms.openlocfilehash: a425c75dfd57f0d5f9c98b73d8b351972b70703a
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056213"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918658"
 ---
 # <a name="real-time-conversation-transcription-preview"></a>실시간 대화 기록 (미리 보기)
 
@@ -108,7 +109,7 @@ class Program
 
 샘플 코드 하이라이트는 다음과 같습니다.
 
-- 을 `Conversation` `SpeechConfig` 사용 하 여 생성 된 회의 식별자를 사용 하 여 개체에서 개체 만들기`Guid.NewGuid()`
+- 을 `Conversation` `SpeechConfig` 사용 하 여 생성 된 회의 식별자를 사용 하 여 개체에서 개체 만들기 `Guid.NewGuid()`
 - 개체를 만들고 `ConversationTranscriber` 와 대화를 조인 `JoinConversationAsync()` 하 여 기록을 시작 합니다.
 - 관심 있는 이벤트 등록
 - 대화 개체를 사용 하 여 대화에 참가자 추가 또는 제거

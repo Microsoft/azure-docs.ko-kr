@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2019
-ms.openlocfilehash: 719b96c9186d463ca3ee41c6fb401a8f22c4c11c
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: b4f3733806eb810cff7722e6432bb274b6d46a37
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87431964"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854833"
 ---
 # <a name="get-started-with-azure-machine-learning-studio-classic-in-r"></a>R에서 Azure Machine Learning Studio (클래식) 시작
 
-**적용 대상:** ![ 예 ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (클래식) ![ 아니요](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../compare-azure-ml-to-studio-classic.md)  
+**적용 대상:**  ![예](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio(클래식)   ![아니요](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../compare-azure-ml-to-studio-classic.md)
 
 
 <!-- Stephen F Elston, Ph.D. -->
@@ -225,7 +225,7 @@ load("src/yourData.rdata") # Reads a zipped R data file
 
 [데이터 집합 로드](#loading)에서 데이터 집합을 로드 하는 방법을 이미 설명 했습니다. 이전 섹션에 나와 있는 R 스크립트를 만들고 테스트한 후에는 다음을 수행하세요.
 
-1. R 스크립트를 .R 파일로 저장합니다. 이 스크립트 파일을 "simpleplot.R"이라고 하겠습니다. 콘텐츠는 다음과 같습니다.
+1. R 스크립트를 .R 파일로 저장합니다. 이 스크립트 파일을 "simpleplot.R"이라고 하겠습니다. 파일의 같습니다은 다음과 같습니다.
 
    ```r
    ## Only one of the following two lines should be used
@@ -250,7 +250,7 @@ load("src/yourData.rdata") # Reads a zipped R data file
 
 1. `source()` 함수를 zip 파일 이름과 함께 [R 스크립트 실행][execute-r-script] 모듈의 코드 창에 입력합니다. 제 경우 `source("src/simpleplot.R")`를 입력합니다.  
 
-1. **저장**을 선택 했는지 확인 합니다.
+1. **저장**을 선택해야 합니다.
 
 이러한 단계가 완료되면 [R 스크립트 실행][execute-r-script] 모듈은 실험이 실행될 때 해당 zip 파일의 R 스크립트를 실행합니다. 이때 실험이 그림 5와 같이 표시됩니다.
 
@@ -570,7 +570,7 @@ cadairydata$Month.Count <- num.month(cadairydata$Year, cadairydata$Month.Number)
 
 이 섹션에서는 데이터 프레임 열 중 일부 열의 값을 간단히 변환해보겠습니다. R 언어는 거의 임의의 값 변환을 지원합니다. 아래의 [추가](#appendixb) 정보에 대 한 참조에는 광범위 한 예제가 포함 되어 있습니다.
 
-데이터 프레임 요약에서 값을 살펴보면 이상한 점을 확인할 수 있습니다. 캘리포니아에서 아이스크림이 우유보다 더 많이 생산되나요? 아닙니다. 물론 말이 안 되지만 일부 아이스크림 애호가로 인해 이렇게 된 것 같습니다. 단위도 다릅니다. 금액은 미국 파운드, 우유는 1M 미국 파운드, 아이스크림은 1,000 미국 갤론, 코티지 치즈는 1,000 미국 파운드 단위로 되어 있습니다. 갤론당 아이스크림 무게가 약 6.5파운드라고 가정하면 모두 동일하게 1,000파운드 단위가 되도록 곱셈을 사용하여 이러한 값을 쉽게 변환할 수 있습니다.
+데이터 프레임 요약의 값을 살펴보면 여기에 이상한 내용이 표시 되어야 합니다. 캘리포니아에서 아이스크림이 우유보다 더 많이 생산되나요? 아닙니다. 물론 말이 안 되지만 일부 아이스크림 애호가로 인해 이렇게 된 것 같습니다. 단위도 다릅니다. 금액은 미국 파운드, 우유는 1M 미국 파운드, 아이스크림은 1,000 미국 갤론, 코티지 치즈는 1,000 미국 파운드 단위로 되어 있습니다. 아이스크림 따져 m.p.g 당 약 6.5 파운드를 가정 하 고 이러한 값을 변환 하는 곱셈을 쉽게 수행할 수 있으므로 모두 1000 파운드 단위로 모두 동일 합니다.
 
 이 예측 모델의 경우 이 데이터의 추세 및 계절성 조정을 위해 승법 모형을 사용합니다. 로그 변환을 사용하면 이 과정을 단순화하는 선형 모델을 사용할 수 있습니다. 승수가 적용되는 동일한 함수에서 로그 변환을 적용할 수 있습니다.
 
@@ -773,7 +773,7 @@ pairs(~ Cotagecheese.Prod + Icecream.Prod + Milk.Prod + N.CA.Fat.Price, data = c
 
 ### <a name="correlation-analysis"></a>상관 관계 분석
 
-상관관계 분석을 수행하려면 변수를 비추세화하고 표준화해야 합니다. 간단히 R `scale()` 함수를 사용하여 변수를 중심값으로 하고 그 크기를 조정할 수 있습니다. 이 함수가 더 빨리 실행될 수 있지만 R의 방어적 프로그래밍 예를 보여주려고 합니다.
+상관관계 분석을 수행하려면 변수를 비추세화하고 표준화해야 합니다. 간단히 R `scale()` 함수를 사용하여 변수를 중심값으로 하고 그 크기를 조정할 수 있습니다. 이 함수가 더 빨리 실행될 수 있지만 그러나 R의 방어 프로그래밍에 대 한 예제를 표시 하려고 합니다.
 
 아래 표시된 `ts.detrend()` 함수는 이러한 작업을 모두 수행합니다. 다음 두 줄의 코드는 데이터를 비추세화한 후 값을 표준화합니다.
 
@@ -828,7 +828,7 @@ pairs(~ Cotagecheese.Prod + Icecream.Prod + Milk.Prod + N.CA.Fat.Price, data = d
 
 비추세화에 사용된 선형 회귀는 시계열 회귀입니다. 예측 변수는 시계열 개체입니다.  
 
-일단 `ts.detrend()`가 정의되면 데이터 프레임에서 관심 있는 변수에 적용합니다. `lapply()`의 결과로 만들어진 목록을 `as.data.frame()`을 사용하여 데이터 프레임의 데이터로 강제 변환해야 합니다. `ts.detrend()`의 방어적 측면으로 인해 변수 중 하나를 처리하지 못해도 다른 변수를 올바르게 처리할 수 있습니다.  
+`ts.detrend()`가 정의 되 면 데이터 프레임에서 관심 있는 변수에 적용 합니다. `lapply()`의 결과로 만들어진 목록을 `as.data.frame()`을 사용하여 데이터 프레임의 데이터로 강제 변환해야 합니다. `ts.detrend()`의 방어적 측면으로 인해 변수 중 하나를 처리하지 못해도 다른 변수를 올바르게 처리할 수 있습니다.  
 
 마지막 코드 줄이 쌍별 산점도를 만듭니다. R 코드를 실행한 후의 산점도 결과는 그림 17에 나와 있습니다.
 
@@ -1136,7 +1136,7 @@ lines(cadairytrain$Time, predict(milk.lm, cadairytrain), lty = 2, col = 2)
 
 현재 다루고 있는 추세 모델을 계속 사용하며 계절의 영향을 포함해야 합니다. 선형 모델에서 월을 더미 변수로 사용하여 월별 영향을 파악합니다. 요소 변수를 모델에 삽입할 때 절편을 계산하면 안 됩니다. 절편을 계산하면 수식이 과도하게 지정되고 R이 절편항은 유지한 채 원하는 요소 중 하나를 삭제합니다.
 
-추세 모델이 만족스러우므로 `update()` 함수를 사용하여 기존 모델에 새 항을 추가할 수 있습니다. 업데이트 식의 -1은 절편항을 삭제합니다. 우선은 RStudio에서 계속합니다.
+만족 스러운 추세 모델이 있으므로 함수를 사용 `update()` 하 여 기존 모델에 새 용어를 추가할 수 있습니다. 업데이트 식의 -1은 절편항을 삭제합니다. 우선은 RStudio에서 계속합니다.
 
 ```r
 milk.lm2 <- update(milk.lm, . ~ . + Month - 1)
@@ -1338,7 +1338,7 @@ RStudio는 매우 잘 문서화 되어 있습니다. 다음은 시작 하는 데
 이 R 프로그래밍 자습서에서는 Azure Machine Learning Studio (클래식)에서 R 언어를 사용 하는 데 필요한 기본 사항을 설명 합니다. R에 익숙하지 않은 경우 CRAN에서 두 가지 소개 자료를 사용할 수 있습니다.
 
 * Emmanuel Paradis [의 초보자를 위한 R](https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf) 을 시작 하는 것이 좋습니다.  
-* W. N. N [의 R에 대 한 소개](https://cran.r-project.org/doc/manuals/R-intro.html) 입니다. Venables et. 등은 좀 더 깊이 있게 이동 합니다.
+* W. N. N [의 R에 대 한 소개](https://cran.r-project.org/doc/manuals/R-intro.html) 입니다. Venables 사용 하면 좀 더 깊이 있게 이동 합니다.
 
 R을 시작하는 데 도움을 되는 서적이 많이 있습니다. 몇 가지 유용한 서적은 다음과 같습니다.
 
@@ -1355,7 +1355,8 @@ Andrew Metcalfe에서 R을 사용 하는 서적 **소개 Time 시리즈** 는 �
 다음은 몇 가지 유용한 인터넷 리소스입니다.
 
 * 브라우저에서 편안하게 비디오 강좌 및 코드 연습을 사용하여 R을 배울 수 있습니다. 최신 R 기술 및 패키지에 대한 대화형 자습서가 제공됩니다. 무료로 제공 되는 [대화형 R 자습서](https://www.datacamp.com/courses/introduction-to-r)를 사용 하세요.
-* Programiz의 [결정적인 가이드 인 R 프로그래밍에 대해 알아보세요](https://www.programiz.com/r-programming) .
+* DataMentor의 [결정적인 가이드 인 R 프로그래밍에 대해 알아보세요](https://www.datamentor.io/r-programming/) .
+* [R 코드 작성자 있는지](https://r-coder.com/). 초보자를 위한 자세한 R 자습서 및 무료 R 코스가 제공 됩니다.
 * Clarkson 대학에서 최소라로 요약 한 빠른 [R 자습서](https://www.cyclismo.org/tutorial/R/) 입니다.
 * [데이터 기술을 향상 시키기 위해 상위 R 언어 리소스](https://www.computerworld.com/article/2497464/business-intelligence-60-r-resources-to-improve-your-data-skills.html)에 나열 된 60 R 리소스가 이상 있습니다.
 

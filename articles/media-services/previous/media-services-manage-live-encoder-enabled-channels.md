@@ -15,14 +15,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: anilmur
 ms.reviewer: juliako
-ms.openlocfilehash: 8d103e6a0f7a47aadce524325e58fbb7069a1e13
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 09d0e53840c2bf7a0d67c7c7fb0b224f9f77c587
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87042811"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268308"
 ---
 # <a name="live-streaming-using-azure-media-services-to-create-multi-bitrate-streams"></a>Azure Media Services를 사용하여 다중 비트 전송률 스트림을 만드는 라이브 스트리밍
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > 2018년 5월 12일부터 라이브 채널은 RTP/MPEG-2 전송 스트림 수집 프로토콜을 더 이상 지원하지 않습니다. RTP/MPEG-2에서 RTMP 또는 조각난 MP4(부드러운 스트리밍) 수집 프로토콜로 마이그레이션하세요.
@@ -73,7 +75,7 @@ Media Services 2.10 릴리스부터, 채널을 만들 때 채널이 입력 스�
 | 시작 중 |시작 중 |없음(일시적인 상태) |
 | 실행 중 |준비(실행 중인 프로그램이 없음)<br/>또는<br/>스트리밍(실행 중인 프로그램이 하나 이상임) |YES |
 | 중지 중 |중지 중 |없음(일시적인 상태) |
-| 중지됨 |중지됨 |아니요 |
+| 중지됨 |중지됨 |예 |
 
 ### <a name="automatic-shut-off-for-unused-channels"></a>사용하지 않는 채널에 대한 자동 종료
 2016년 1월 25일부터 시작하는 Media Services는 장기간 사용하지 않은 상태로 실행된 후 자동으로 채널을 중지하는(라이브 인코딩 사용) 업데이트를 출시했습니다. 이는 활성화된 프로그램이 없고 오랜 시간 동안 입력 기여 피드를 받지 않은 채널에 적용됩니다.
@@ -247,7 +249,7 @@ ENG와 같은 ISO 639-2를 따르는 오디오 스트림의 언어 식별자입�
 적절한 작업을 수행하기 위해 다운스트림 애플리케이션에서 사용할 중간 광고의 고유 ID입니다. 양의 정수여야 합니다. 이 값을 임의의 양의 정수로 설정하거나 업스트림 시스템을 사용하여 큐 ID를 추적할 수 있습니다. API를 통해 제출하기 전에 모든 ID를 양의 정수로 정규화해야 합니다.
 
 ### <a name="show-slate"></a>슬레이트 표시
-(선택 사항) 중간 광고 중에 [기본 슬레이트](media-services-manage-live-encoder-enabled-channels.md#default_slate) 이미지로 전환하고 들어오는 비디오 피드를 숨기도록 라이브 인코더에 신호를 보냅니다. 슬레이트 중에는 오디오도 음소거됩니다. 기본값은 **false**입니다. 
+선택 사항입니다. 중간 광고 중에 [기본 슬레이트](media-services-manage-live-encoder-enabled-channels.md#default_slate) 이미지로 전환하고 들어오는 비디오 피드를 숨기도록 라이브 인코더에 신호를 보냅니다. 슬레이트 중에는 오디오도 음소거됩니다. 기본값은 **false**입니다. 
 
 사용되는 이미지는 채널을 만들 때 기본 슬레이트 자산 ID 속성을 통해 지정된 이미지입니다. 슬레이트는 표시 이미지 크기에 맞게 확장됩니다. 
 
@@ -264,7 +266,7 @@ ENG와 같은 ISO 639-2를 따르는 오디오 스트림의 언어 식별자입�
 
 ### <a name="default-slate-asset-id"></a><a id="default_slate"></a>기본 슬레이트 자산 ID
 
-(선택 사항) 슬레이트 이미지를 포함하는 Media Services 자산의 자산 ID를 지정합니다. 기본값은 null입니다. 
+선택 사항입니다. 슬레이트 이미지를 포함하는 Media Services 자산의 자산 ID를 지정합니다. 기본값은 null입니다. 
 
 
 > [!NOTE] 
@@ -315,7 +317,7 @@ Live Encoding을 사용하도록 설정한 경우 이제 라이브 피드가 채
 | 시작 중 |시작 중 |없음(일시적인 상태) |
 | 실행 중 |준비(실행 중인 프로그램이 없음)<br/>또는<br/>스트리밍(실행 중인 프로그램이 하나 이상임) |예 |
 | 중지 중 |중지 중 |없음(일시적인 상태) |
-| 중지됨 |중지됨 |아니요 |
+| 중지됨 |중지됨 |예 |
 
 > [!NOTE]
 > 현재, 채널 시작 평균 시간은 약 2분이지만 종종 최대 20분 이상 걸릴 수도 있습니다. 채널 다시 설정은 최대 5분까지 걸릴 수 있습니다.

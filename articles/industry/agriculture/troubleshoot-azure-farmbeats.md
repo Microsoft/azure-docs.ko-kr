@@ -5,16 +5,16 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 110fef2dcb4c1581d49fcb776276ebd9c4ae2235
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c66d3d6fd3ee0bcba01db61183f40cd3ccf3f39d
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86497066"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797941"
 ---
 # <a name="troubleshoot-azure-farmbeats"></a>Azure FarmBeats 문제 해결
 
-이 문서에서는 일반적인 Azure FarmBeats 문제에 대한 해결 방법을 제공합니다. 추가 도움말을 보려면 [지원 포럼](https://social.msdn.microsoft.com/Forums/home?forum=ProjectFarmBeats)에 문의하거나 farmbeatssupport@microsoft.com으로 메일을 보내 주시기 바랍니다.
+이 문서에서는 일반적인 Azure FarmBeats 문제에 대한 해결 방법을 제공합니다. 추가 도움말을 보려면 microsoft [&지원 포럼](https://aka.ms/farmbeatssupport) 에 문의 하거나 전자 메일을 보내세요 farmbeatssupport@microsoft.com .
 
 > [!NOTE]
   > 4월에 FarmBeats를 설치했고 빈 오류 메시지와 함께 작업이 실패하는 경우 중요한 상태 및 안전 조직에 대한 지원 우선 순위를 지정하는 배치 할당량이 설치에 할당되지 않았을 수 있습니다. 자세한 내용은 [여기](https://azure.microsoft.com/blog/update-2-on-microsoft-cloud-services-continuity/) 를 참조하십시오. 작업을 성공적으로 실행하려면 배치 계정에 할당할 VM을 요청해야 합니다.

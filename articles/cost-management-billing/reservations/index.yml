@@ -5,17 +5,18 @@ metadata:
   title: Azure 예약을 사용하여 저장
   description: Azure Reservations에서 가상 머신, Azure Blob 스토리지 또는 Azure Data Lake Storage Gen2, SQL Database 컴퓨팅 용량, Azure Cosmos DB 처리량 및 기타 Azure 리소스에 대한 1년 또는 3년 요금제를 약정하여 비용을 절감하는 데 어떤 도움이 되는지 알아보세요.
   ms.service: cost-management-billing
+  ms.subservice: reservations
   ms.topic: landing-page
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
   ms.date: 04/30/2020
-  ms.openlocfilehash: 4706c13d6c9e354c6c7ca382f724a7b1094bdda3
-  ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+  ms.openlocfilehash: d8c7e7eee6307ce48e89cb5ade65d7dbff0f42d4
+  ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86207122"
+  ms.lasthandoff: 08/20/2020
+  ms.locfileid: "88684697"
 landingContent:
 - title: 예약 구매
   linkLists:

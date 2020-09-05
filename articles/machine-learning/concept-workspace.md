@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/08/2020
-ms.openlocfilehash: 53f151c63c85e958aad3bd0eaf16c50294bf250f
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 437c2b8e42ed5128cc716eee23b8702ec012b481
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87287225"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88890917"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Azure Machine Learning 작업 영역이란?
 
@@ -49,10 +49,10 @@ ms.locfileid: "87287225"
 
 > [!IMPORTANT]
 > 아래 표시 된 (미리 보기) 도구는 현재 공개 미리 보기로 제공 됩니다.
-> 미리 보기 버전은 서비스 수준 계약 없이 제공 되며 프로덕션 워크 로드에는 권장 되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
+> 미리 보기 버전은 서비스 수준 계약 없이 제공되며 프로덕션 워크로드에는 권장되지 않습니다. 특정 기능이 지원되지 않거나 기능이 제한될 수 있습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
 
 + 웹에서:
-    + [Azure Machine Learning studio](https://ml.azure.com) 
+    + [Azure Machine Learning studio ](https://ml.azure.com) 
     + [Azure Machine Learning designer (미리 보기)](concept-designer.md) - [Enterprise edition](overview-what-is-azure-ml.md#sku) 작업 영역 에서만 사용할 수 있습니다.
 + [Python 용 AZURE MACHINE LEARNING SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)를 사용 하는 모든 python 환경에서
 + [R (미리 보기)에 대 한 AZURE MACHINE LEARNING SDK](https://azure.github.io/azureml-sdk-for-r/reference/index.html)를 사용 하는 모든 r 환경
@@ -87,7 +87,7 @@ Machine learning 작업은 작업 영역에 대 한 아티팩트를 읽고 씁�
 > [!WARNING]
 > Azure Machine Learning 작업 영역을 다른 구독으로 이동하거나 소유하는 구독을 새 테넌트로 이동하는 것은 지원되지 않습니다. 이렇게 하면 오류가 발생할 수 있습니다.
 
-## <a name="create-a-workspace"></a><a name='create-workspace'></a>작업 영역 만들기
+## <a name="create-a-workspace"></a><a name='create-workspace'></a> 작업 영역 만들기
 
 작업 영역을 만들 때 [Basic 또는 Enterprise edition](overview-what-is-azure-ml.md#sku)을 사용 하 여 작업 영역을 만들지 여부를 결정 합니다. 버전은 작업 영역에서 사용할 수 있는 기능을 결정 합니다. 다른 기능 중에서 Enterprise edition은 [자동화 된 기계 학습 실험](tutorial-first-experiment-automated-ml.md)을 빌드하는 [Azure Machine Learning designer](concept-designer.md) 및 studio 버전에 대 한 액세스를 제공 합니다.  자세한 내용 및 가격 책정 정보는 [Azure Machine Learning 가격 책정](https://azure.microsoft.com/pricing/details/machine-learning/)을 참조 하세요.
 
@@ -101,11 +101,11 @@ Machine learning 작업은 작업 영역에 대 한 아티팩트를 읽고 씁�
 > [!NOTE]
 > 작업 영역 이름은 대/소문자를 구분하지 않습니다.
 
-## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a>Enterprise edition으로 업그레이드
+## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a> Enterprise edition으로 업그레이드
 
 Azure Portal를 사용 하 여 [기본에서 Enterprise edition으로 작업 영역을 업그레이드할](how-to-manage-workspace.md#upgrade) 수 있습니다. Enterprise edition 작업 영역을 기본 버전 작업 영역으로 다운 그레이드할 수 없습니다. 
 
-## <a name="associated-resources"></a><a name="resources"></a>연결 된 리소스
+## <a name="associated-resources"></a><a name="resources"></a> 연결 된 리소스
 
 새 작업 영역을 만들면 작업 영역에서 사용되는 여러 Azure 리소스가 자동으로 생성됩니다.
 
@@ -117,8 +117,16 @@ Azure Portal를 사용 하 여 [기본에서 Enterprise edition으로 작업 영
 > [!NOTE]
 > 새 버전을 만드는 것 외에 기존 Azure 서비스를 사용할 수도 있습니다.
 
+### <a name="azure-storage-account"></a>Azure Storage 계정
+
+작업 영역을 사용 하 여 기본적으로 생성 되는 Azure Storage 계정은 범용 v1 계정입니다. 범용 [v2 저장소 계정으로 업그레이드](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade) 문서의 단계를 수행 하 여 작업 영역을 만든 후이를 범용 v2로 업그레이드할 수 있습니다.
+
 > [!IMPORTANT]
-> 기존 Azure Storage 계정을 사용 하려는 경우 premium 계정 (Premium_LRS 및 Premium_GRS)이 될 수 없습니다. 또한 계층적 네임 스페이스 (Azure Data Lake Storage Gen2에서 사용)를 가질 수 없습니다. Premium storage 또는 계층적 네임 스페이스는 작업 영역의 _기본_ 저장소 계정에서 지원 되지 않습니다. _기본이 아닌_ 저장소 계정이 포함 된 premium storage 또는 계층적 네임 스페이스를 사용할 수 있습니다.
+> 범용 v2로 업그레이드 한 후 저장소 계정에서 계층적 네임 스페이스를 사용 하도록 설정 하지 마세요.
+
+기존 Azure Storage 계정을 사용 하려는 경우 premium 계정 (Premium_LRS 및 Premium_GRS)이 될 수 없습니다. 또한 계층적 네임 스페이스 (Azure Data Lake Storage Gen2에서 사용)를 가질 수 없습니다. Premium storage 또는 계층적 네임 스페이스는 작업 영역의 _기본_ 저장소 계정에서 지원 되지 않습니다. _기본이 아닌_ 저장소 계정이 포함 된 premium storage 또는 계층적 네임 스페이스를 사용할 수 있습니다.
+
+
 
 ## <a name="next-steps"></a>다음 단계
 

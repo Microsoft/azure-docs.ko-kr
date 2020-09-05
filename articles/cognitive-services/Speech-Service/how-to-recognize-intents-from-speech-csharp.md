@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: trbye
-ms.openlocfilehash: 41ebcb7b44ea88af06a30a611960fd8bb0ceddee
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 1138a970bf7c52182f13d0fd14d0178a2d0cfeba
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81402217"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918794"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>C 용 Speech SDK를 사용 하 여 음성에서 의도를 인식 하는 방법 #
 
@@ -35,12 +36,12 @@ Cognitive Services [Speech SDK](speech-sdk.md)는 [LUIS(Language Understanding) 
 > - 파일에서 음성 인식
 > - 비동기, 이벤트 중심 연속 인식 사용
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 가이드를 시작 하기 전에 다음 항목이 있어야 합니다.
 
 - LUIS 계정 [LUIS 포털](https://www.luis.ai/home)을 통해 무료로 얻을 수 있습니다.
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) 모든 버전.
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (모든 버전)
 
 ## <a name="luis-and-speech"></a>LUIS 및 음성
 
@@ -91,7 +92,7 @@ Azure 대시보드에서 LUIS 리소스를 만든 후에는 [LUIS 포털](https:
 
    [!code-csharp[Top-level declarations](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#toplevel)]
 
-1. 제공 `Main()` 된 메서드를 다음 비동기 동등으로 바꿉니다.
+1. 제공 된 `Main()` 메서드를 다음 비동기 동등으로 바꿉니다.
 
    ```csharp
    public static async Task Main()
@@ -116,7 +117,7 @@ Azure 대시보드에서 LUIS 리소스를 만든 후에는 [LUIS 포털](https:
 
 1. 이 메서드의 자리 표시자를 다음과 같이 LUIS 구독 키, 지역 및 앱 ID로 바꿉니다.
 
-   | 자리 표시자 | 다음 항목으로 교체 |
+   | 자리표시자 | 다음 항목으로 교체 |
    | ----------- | ------------ |
    | `YourLanguageUnderstandingSubscriptionKey` | LUIS 엔드포인트 키 다시, “시작 키”가 아닌 Azure 대시보드에서 이 항목을 가져와야 합니다. [LUIS 포털](https://www.luis.ai/home)의 **관리** 아래에 있는 앱의 **키 및 엔드포인트** 페이지에서 찾을 수 있습니다. |
    | `YourLanguageUnderstandingServiceRegion` | LUIS 구독이 있는 지역의 짧은 식별자(예: 미국 서부를 의미하는 `westus`). [지역](regions.md)을 참조하세요. |
@@ -162,9 +163,9 @@ recognizer.AddIntent(model, "HomeAutomation.TurnOn", "on");
 | 인식 모드 | 호출 방법 | 결과 |
 | ---------------- | --------------- | ------ |
 | 1단계 | `RecognizeOnceAsync()` | 한 번의 발언 후에 의도를 인식하고, 인식된 의도가 있으면 반환합니다. |
-| 연속 | `StartContinuousRecognitionAsync()`<br>`StopContinuousRecognitionAsync()` | 여러 발언를 인식합니다. 결과를 사용할 수 있는 경우 이벤트(예: `IntermediateResultReceived`)를 내보냅니다. |
+| 계속 | `StartContinuousRecognitionAsync()`<br>`StopContinuousRecognitionAsync()` | 여러 발언를 인식합니다. 결과를 사용할 수 있는 경우 이벤트(예: `IntermediateResultReceived`)를 내보냅니다. |
 
-응용 프로그램은 단일 샷 모드를 사용 하므로 인식을 `RecognizeOnceAsync()` 시작 하기 위해 호출 합니다. 결과는 인식된 의도에 대한 정보를 포함하는 `IntentRecognitionResult` 개체입니다. LUIS JSON 응답은 다음 식을 사용하여 추출됩니다.
+응용 프로그램은 단일 샷 모드를 사용 하므로 `RecognizeOnceAsync()` 인식을 시작 하기 위해 호출 합니다. 결과는 인식된 의도에 대한 정보를 포함하는 `IntentRecognitionResult` 개체입니다. LUIS JSON 응답은 다음 식을 사용하여 추출됩니다.
 
 ```csharp
 result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_JsonResult)

@@ -3,12 +3,12 @@ title: 모니터링 및 로깅-Azure
 description: 이 문서에서는 IoT Edge 모니터링 및 로깅에 대 한 라이브 비디오 분석의 개요를 제공 합니다.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: 82e4a5879e4c88e462edcddb02866ec9b671d7fe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e1f31c6bb3ea344286ad9af89417ca9f8fd59527
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87060452"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934296"
 ---
 # <a name="monitoring-and-logging"></a>모니터링 및 로깅
 
@@ -25,7 +25,7 @@ IoT Edge에 대 한 Live Video Analytics는 다음 분류에 따라 이벤트 �
 * 작업: 사용자가 수행한 작업의 일부로 생성 되거나 [미디어 그래프](media-graph-concept.md)를 실행 하는 동안 생성 되는 이벤트입니다.
    
    * 볼륨: 낮을 것으로 예상 됩니다 (몇 분 정도 또는 더 낮은 속도).
-   * 예제:
+   * 예:
 
       기록 시작 (아래), 기록 중지 됨
       
@@ -47,7 +47,7 @@ IoT Edge에 대 한 Live Video Analytics는 다음 분류에 따라 이벤트 �
 * 진단: 문제 및/또는 성능 문제를 진단 하는 데 도움이 되는 이벤트입니다.
 
    * 볼륨: 높을 수 있습니다 (1 분에 여러 번).
-   * 예제:
+   * 예:
    
       들어오는 비디오 피드의 RTSP [SDP](https://en.wikipedia.org/wiki/Session_Description_Protocol) 정보 (아래) 또는 간격입니다.
 
@@ -68,7 +68,7 @@ IoT Edge에 대 한 Live Video Analytics는 다음 분류에 따라 이벤트 �
 * 분석: 비디오 분석의 일부로 생성 되는 이벤트입니다.
 
    * 볼륨: 높을 수 있습니다 (1 분 이상 여러 번).
-   * 예제:
+   * 예:
       
       동작이 검색 되었습니다 (아래). 유추 결과.
    ```      
@@ -100,13 +100,32 @@ IoT Edge에 대 한 Live Video Analytics는 다음 분류에 따라 이벤트 �
    ```
 모듈에서 내보낸 이벤트는 [IoT Edge 허브](../../iot-edge/iot-edge-runtime.md#iot-edge-hub)로 전송 되며 여기에서 다른 대상으로 라우팅될 수 있습니다. 
 
+### <a name="timestamps-in-analytic-events"></a>분석 이벤트의 타임 스탬프
+위에서 설명한 것 처럼 비디오 분석의 일부로 생성 된 이벤트에는 연결 된 타임 스탬프가 있습니다. [라이브 비디오](video-recording-concept.md) 를 그래프 토폴로지의 일부로 기록한 경우이 타임 스탬프를 사용 하면 기록 된 비디오에서 특정 이벤트가 발생 한 위치를 찾을 수 있습니다. 다음은 분석 이벤트의 타임 스탬프를 [Azure Media Service 자산](terminology.md#asset)에 기록 되는 비디오의 타임 라인에 매핑하는 방법에 대 한 지침입니다.
+
+먼저 값을 추출 `eventTime` 합니다. [시간 범위 필터](playback-recordings-how-to.md#time-range-filters) 에이 값을 사용 하 여 기록의 적절 한 부분을 검색 합니다. 예를 들어 30 초 전에 시작 되 고 30 초 후에 시작 되는 비디오를 가져올 수 있습니다 `eventTime` . 위의 예제에서 `eventTime` 이 (가) 2020-05-12T23:33:09.381 z 인 경우 +/-30 초 창의 HLS 매니페스트에 대 한 요청은 다음과 같이 표시 됩니다.
+```
+https://{hostname-here}/{locatorGUID}/content.ism/manifest(format=m3u8-aapl,startTime=2020-05-12T23:32:39Z,endTime=2020-05-12T23:33:39Z).m3u8
+```
+위의 URL은 미디어 재생 목록에 대 한 Url을 포함 하는 [마스터 재생 목록을](https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming)반환 합니다. 미디어 재생 목록은 다음과 같은 항목을 포함 합니다.
+
+```
+...
+#EXTINF:3.103011,no-desc
+Fragments(video=143039375031270,format=m3u8-aapl)
+...
+```
+위의 항목에서 항목은 타임 스탬프 값에서 시작 하는 비디오 조각을 사용할 수 있음을 보고 `143039375031270` 합니다. `timestamp`분석 이벤트의 값은 미디어 재생 목록과 동일한 날짜/시간을 사용 하며, 관련 비디오 조각을 식별 하 고 올바른 프레임을 검색 하는 데 사용할 수 있습니다.
+
+자세한 내용은 HLS에서 프레임의 정확한 검색에 대 한 여러 [문서](https://www.bing.com/search?q=frame+accurate+seeking+in+HLS) 중 하나를 참조 하세요.
+
 ## <a name="controlling-events"></a>이벤트 제어
 
 [모듈 쌍 JSON 스키마](module-twin-configuration-schema.md)에 설명 된 대로 다음 모듈 쌍 속성을 사용 하 여 IoT Edge 모듈의 Live Video Analytics에서 게시 된 운영 및 진단 이벤트를 제어할 수 있습니다.
 
-`diagnosticsEventsOutputName`– 모듈에서 진단 이벤트를 가져오기 위해이 속성의 값을 포함 하 고 제공 합니다. 모듈이 진단 이벤트를 게시 하지 않도록 하려면이를 생략 하거나 비워 둡니다.
+`diagnosticsEventsOutputName` – 모듈에서 진단 이벤트를 가져오기 위해이 속성의 값을 포함 하 고 제공 합니다. 모듈이 진단 이벤트를 게시 하지 않도록 하려면이를 생략 하거나 비워 둡니다.
    
-`operationalEventsOutputName`– 모듈에서 작업 이벤트를 가져오기 위해이 속성의 값을 포함 하 고 제공 합니다. 작업 이벤트를 게시 하지 않으려면 모듈을 생략 하거나 비워 둡니다.
+`operationalEventsOutputName` – 모듈에서 작업 이벤트를 가져오기 위해이 속성의 값을 포함 하 고 제공 합니다. 작업 이벤트를 게시 하지 않으려면 모듈을 생략 하거나 비워 둡니다.
    
 분석 이벤트는 동작 검색 프로세서 또는 HTTP 확장 프로세서와 같은 노드에 의해 생성 되며, IoT hub 싱크는 IoT Edge 허브로 전송 하는 데 사용 됩니다. 
 
@@ -188,7 +207,7 @@ Subject 속성을 사용 하면 제네릭 이벤트를 생성 하는 모듈에 �
 
 이벤트 유형은 각 이벤트 클래스에 대해 고유 합니다.
 
-예제:
+예:
 
 * Microsoft..
 * . Diagnostics..

@@ -65,6 +65,8 @@
                   href: database/sql-vulnerability-assessment.md
                 - name: 취약성 평가 규칙
                   href: database/sql-database-vulnerability-assessment-rules.md
+                - name: 스토리지에 취약성 검색 저장
+                  href: database/sql-database-vulnerability-assessment-storage.md
             - name: '로그인, 사용자 계정, 역할 및 사용 권한'
               href: database/logins-create-manage.md
             - name: Azure AD 인증
@@ -72,7 +74,7 @@
               items:
                 - name: Azure AD 인증 구성
                   href: database/authentication-aad-configure.md
-                - name: 다단계 AAD 인증
+                - name: Multi-Factor Azure AD 인증
                   href: database/authentication-mfa-ssms-overview.md
                 - name: Multi-Factor Auth 구성
                   href: database/authentication-mfa-ssms-configure.md
@@ -80,6 +82,8 @@
                   href: database/conditional-access-configure.md
                 - name: 서비스 주체(애플리케이션)
                   href: database/authentication-aad-service-principal.md
+                - name: 디렉터리 읽기 권한자 역할
+                  href: database/authentication-aad-directory-readers-role.md
             - name: TDE(투명한 데이터 암호화)
               items:
                 - name: 개요
@@ -143,12 +147,14 @@
               href: database/long-term-backup-retention-configure.md
         - name: 보안
           items:
-            - name: Azure AD 게스트 사용자 만들기 및 Azure AD 관리자로 설정
-              href: database/authentication-aad-guest-users.md
+            - name: Azure AD 인증
+              items:
+                - name: Azure AD 게스트 사용자 만들기 및 Azure AD 관리자로 설정
+                  href: database/authentication-aad-guest-users.md
+                - name: 그룹에 디렉터리 읽기 권한자 역할 할당
+                  href: database/authentication-aad-directory-readers-role-tutorial.md
             - name: BYOK를 사용하여 TDE 구성
               href: database/transparent-data-encryption-byok-configure.md
-            - name: 스토리지에 취약성 검색 저장
-              href: database/sql-database-vulnerability-assessment-storage.md
             - name: Always Encrypted
               items:
                 - name: Azure 키 자격 증명 모음 사용
@@ -207,12 +213,14 @@
               href: 'https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-integration-overview?toc=/azure/azure-sql/toc.json'
             - name: Java
               items:
+                - name: Java 및 JDBC 사용
+                  href: database/connect-query-java.md
                 - name: Spring Data JDBC 사용
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Spring Data JPA 사용
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Spring Data R2DBC 사용
-                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
 - name: SQL Database(SQL DB)
   items:
     - name: 설명서
@@ -402,11 +410,11 @@
                 - name: Java
                   href: database/connect-query-java.md
                 - name: Spring Data JDBC를 사용하는 Java
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Spring Data JPA를 사용하는 Java
-                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Spring Data R2DBC를 사용하는 Java
-                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json
+                  href: /azure/developer/java/spring-framework/configure-spring-data-r2dbc-with-azure-sql-server?toc=/azure/azure-sql/toc.json&bc=/azure/bread/toc.json
                 - name: Node.js
                   href: database/connect-query-nodejs.md
                 - name: PHP
@@ -529,7 +537,7 @@
               href: database/elastic-query-horizontal-partitioning.md
             - name: 여러 스키마를 사용하여 테이블에서 쿼리
               href: database/elastic-query-vertical-partitioning.md
-        - name: 탄력적 작업
+        - name: 탄력적 작업(미리 보기)
           items:
             - name: 작업 구성
               href: database/elastic-jobs-overview.md
@@ -625,9 +633,6 @@
           href: database/powershell-script-content-guide.md?tabs=single-database
         - name: Azure 리소스 관리자
           href: database/arm-templates-content-guide.md?tabs=single-database
-        - name: Azure Policy 기본 제공 기능
-          displayName: 'samples, policies, definitions'
-          href: ./database/policy-samples.md
         - name: 코드 샘플
           href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
 - name: SQL Managed Instance(SQL MI)
@@ -809,24 +814,40 @@
                           href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-taxi-classification-train-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
                         - name: 5 - 예측
                           href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-taxi-classification-deploy-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
-            - name: 'Python, R 패키지 관리'
+            - name: 방법
               items:
-                - name: Python
+                - name: 데이터 탐색 및 모델링
                   items:
-                    - name: Python 패키지 정보 가져오기
-                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/python-package-information?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
-                    - name: sqlmlutils를 사용하여 설치
-                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/install-additional-python-packages-on-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
-                - name: R
+                    - name: Python
+                      items:
+                        - name: Python에서 히스토그램 그리기
+                          href: 'https://docs.microsoft.com/sql/machine-learning/data-exploration/python-plot-histogram?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: pandas 데이터 프레임으로 데이터 가져오기
+                          href: 'https://docs.microsoft.com/sql/machine-learning/data-exploration/python-dataframe-pandas?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: SQL에 데이터 프레임 삽입
+                          href: 'https://docs.microsoft.com/sql/machine-learning/data-exploration/python-dataframe-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                - name: 예측
                   items:
-                    - name: R 패키지 정보 가져오기
-                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/r-package-information?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
-                    - name: sqlmlutils를 사용하여 설치
-                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/install-additional-r-packages-on-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
-                    - name: miniCRAN 리포지토리 만들기
-                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/create-a-local-package-repository-using-minicran?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
-                    - name: R 패키지 사용 팁
-                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/tips-for-using-r-packages?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: PREDICT T-SQL로 네이티브 점수 매기기
+                      href: 'https://docs.microsoft.com/sql/machine-learning/predictions/native-scoring-predict-transact-sql?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                - name: 패키지 관리
+                  items:
+                    - name: 새 Python 패키지 설치
+                      items:
+                        - name: Python 패키지 정보 가져오기
+                          href: 'https://docs.microsoft.com/sql/machine-learning/package-management/python-package-information?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: sqlmlutils를 사용하여 설치
+                          href: 'https://docs.microsoft.com/sql/machine-learning/package-management/install-additional-python-packages-on-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: 새 R 패키지 설치
+                      items:
+                        - name: R 패키지 정보 가져오기
+                          href: 'https://docs.microsoft.com/sql/machine-learning/package-management/r-package-information?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: sqlmlutils를 사용하여 설치
+                          href: 'https://docs.microsoft.com/sql/machine-learning/package-management/install-additional-r-packages-on-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: miniCRAN 리포지토리 만들기
+                          href: 'https://docs.microsoft.com/sql/machine-learning/package-management/create-a-local-package-repository-using-minicran?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: R 패키지 사용 팁
+                          href: 'https://docs.microsoft.com/sql/machine-learning/package-management/tips-for-using-r-packages?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
         - name: 기능
           items:
             - name: 연결된 서버
@@ -875,8 +896,10 @@
           href: managed-instance/threat-detection-configure.md
         - name: 애플리케이션 연결
           href: managed-instance/connect-application-instance.md
-        - name: 경고 만들기
+        - name: 관리형 인스턴스에 대한 경고 만들기
           href: managed-instance/alerts-create.md
+        - name: 관리형 인스턴스에서 수동으로 장애 조치(failover) 시작
+          href: managed-instance/user-initiated-failover.md
     - name: 샘플
       items:
         - name: Azure CLI
@@ -885,9 +908,6 @@
           href: database/powershell-script-content-guide.md?tabs=managed-instance
         - name: Azure 리소스 관리자
           href: database/arm-templates-content-guide.md?tabs=managed-instance
-        - name: Azure Policy 기본 제공 기능
-          displayName: 'samples, policies, definitions'
-          href: ./database/policy-samples.md
         - name: 코드 샘플
           href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
 - name: Azure VM의 SQL Server
@@ -960,9 +980,11 @@
                 - name: 라이선스 모델
                   displayName: 'ahb, ahub, payg, change, modify, update'
                   href: virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change.md
-                - name: 버전
+                - name: 버전 변경
                   displayName: 'change, modify, update'
                   href: virtual-machines/windows/change-sql-server-edition.md
+                - name: 버전 변경
+                  href: virtual-machines/windows/change-sql-server-version.md
                 - name: 스토리지
                   href: virtual-machines/windows/storage-configuration.md
                 - name: Azure Key Vault 통합
@@ -998,6 +1020,8 @@
                       href: virtual-machines/windows/automated-backup-sql-2014.md
                 - name: Always On 가용성 그룹
                   items:
+                    - name: Azure portal
+                      href: virtual-machines/windows/availability-group-azure-portal-configure.md
                     - name: PowerShell 또는 Az CLI
                       href: virtual-machines/windows/availability-group-az-commandline-configure.md
                     - name: Azure 빠른 시작 템플릿
@@ -1008,7 +1032,7 @@
                       href: virtual-machines/windows/availability-group-clusterless-workgroup-configure.md
                     - name: 수동으로 구성
                       items:
-                        - name: 사전 요구 사항
+                        - name: 필수 구성 요소
                           href: virtual-machines/windows/availability-group-manually-configure-prerequisites-tutorial.md
                         - name: 자습서
                           href: virtual-machines/windows/availability-group-manually-configure-tutorial.md
@@ -1048,8 +1072,11 @@
               href: 'https://docs.microsoft.com/sql/t-sql/language-reference'
             - name: SQL Server 드라이버
               href: 'https://docs.microsoft.com/sql/connect/sql-connection-libraries'
-            - name: REST
+            - name: REST (영문)
               href: /rest/api/
+            - name: Azure Policy 기본 제공 기능
+              displayName: 'samples, policies, definitions'
+              href: ./database/policy-reference.md
         - name: 리소스
           items:
             - name: FAQ
@@ -1112,7 +1139,7 @@
       href: /dotnet/api/microsoft.azure.management.sql.models
     - name: Java
       href: /java/api/com.microsoft.azure.management.sql
-    - name: REST
+    - name: REST (영문)
       href: /rest/api/sql/
     - name: SQL용 Resource Manager 템플릿
       displayName: ARM
@@ -1121,7 +1148,7 @@
       href: /sql/tools/overview-sql-tools
     - name: SSMS(SQL Server Management Studio)
       href: /sql/ssms/download-sql-server-management-studio-ssms
-    - name: SQL Server Data Tools(SSDT)
+    - name: SSDT(SQL Server Data Tools)
       href: /sql/ssdt/download-sql-server-data-tools-ssdt
     - name: BCP
       href: /sql/tools/bcp-utility
@@ -1150,6 +1177,9 @@
           href: /sql/connect/python/python-driver-for-sql-server
         - name: Ruby
           href: /sql/connect/ruby/ruby-driver-for-sql-server
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./database/policy-reference.md
 - name: 리소스
   items:
     - name: Microsoft Learn을 통해 기술 쌓기

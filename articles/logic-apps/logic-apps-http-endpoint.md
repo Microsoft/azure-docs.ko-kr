@@ -1,44 +1,39 @@
 ---
-title: 논리 앱 호출, 트리거 또는 중첩
-description: Azure Logic Apps에서 논리 앱 워크플로를 호출, 트리거 또는 중첩 하기 위해 HTTPS 끝점을 설정 합니다.
+title: 요청 트리거를 사용 하 여 논리 앱 호출, 트리거 또는 중첩
+description: Azure Logic Apps에서 논리 앱 워크플로를 호출, 트리거 또는 중첩 하기 위한 HTTPS 끝점을 설정 합니다.
 services: logic-apps
 ms.workload: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 05/28/2020
-ms.openlocfilehash: d8211127d7c886b86f97e83a61b3b3ebb055851e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/27/2020
+ms.openlocfilehash: 5032676848536f0b9498cf4beecf86277484a901
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87078667"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230809"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-https-endpoints-in-azure-logic-apps"></a>Azure Logic Apps에서 HTTPS 끝점을 사용 하 여 논리 앱 호출, 트리거 또는 중첩
 
-논리 앱이 다른 서비스에서 들어오는 요청을 받을 수 있도록 URL을 통해 논리 앱을 호출할 수 있도록 하려면 동기 HTTPS 끝점을 해당 논리 앱의 트리거로 고유 하 게 노출할 수 있습니다. 이 기능을 설정 하면 논리 앱을 다른 논리 앱 내에 중첩 하 여 호출 가능 끝점의 패턴을 만들 수도 있습니다.
-
-호출 가능 끝점을 설정 하기 위해 논리 앱에서 들어오는 요청을 받을 수 있도록 하는 다음 트리거 형식을 사용할 수 있습니다.
+URL을 통해 논리 앱을 호출할 수 있도록 하 고 다른 서비스에서 인바운드 요청을 받을 수 있도록 하려면 논리 앱에서 요청 기반 트리거를 사용 하 여 동기 HTTPS 끝점을 기본적으로 노출할 수 있습니다. 이 기능을 사용 하면 다른 논리 앱에서 논리 앱을 호출 하 고 호출 가능 끝점의 패턴을 만들 수 있습니다. 인바운드 호출을 처리 하는 호출 가능 끝점을 설정 하려면 다음 트리거 형식을 사용 하면 됩니다.
 
 * [요청](../connectors/connectors-native-reqres.md)
 * [HTTP 웹후크](../connectors/connectors-native-webhook.md)
-* [ApiConnectionWebhook 형식이](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-trigger) 있고 들어오는 HTTPS 요청을 받을 수 있는 관리 되는 커넥터 트리거
+* [ApiConnectionWebhook 형식이](../logic-apps/logic-apps-workflow-actions-triggers.md#apiconnectionwebhook-trigger) 있고 인바운드 HTTPS 요청을 받을 수 있는 관리 되는 커넥터 트리거입니다.
 
-> [!NOTE]
-> 이러한 예제에서는 요청 트리거를 사용 하지만 이전 목록에 있는 모든 HTTPS 요청 기반 트리거를 사용할 수 있습니다. 모든 원칙은 이러한 다른 트리거 유형에 동일 하 게 적용 됩니다.
+이 문서에서는 요청 트리거를 사용 하 여 논리 앱에서 호출 가능 끝점을 만들고 다른 논리 앱에서 해당 끝점을 호출 하는 방법을 보여 줍니다. 모든 원칙은 인바운드 요청을 수신 하는 데 사용할 수 있는 다른 트리거 유형에 동일 하 게 적용 됩니다.
 
-논리 앱을 처음 접하는 경우 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 [빠른 시작: 첫 번째 논리 앱 만들기](../logic-apps/quickstart-create-first-logic-app-workflow.md)를 참조 하세요.
+[TLS (전송 계층 보안](https://en.wikipedia.org/wiki/Transport_Layer_Security)), 이전에 SSL(SECURE SOCKETS LAYER) (SSL) 또는 [Azure Active Directory 오픈 인증 (Azure AD OAuth)](../active-directory/develop/index.yml)과 같은 논리 앱에 대 한 인바운드 호출에 대 한 암호화, 보안 및 권한 부여에 대 한 자세한 내용은 [요청 기반 트리거에 대 한 인바운드 호출에 대 한 보안 액세스 및 데이터 액세스](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests)를 참조 하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
-* Azure 구독 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다.
+* Azure 계정 및 구독 구독이 없는 경우 [Azure 체험 계정에 등록](https://azure.microsoft.com/free/)합니다.
 
-* 트리거를 사용 하 여 호출 가능 끝점을 만드는 논리 앱입니다. 빈 논리 앱 또는 현재 트리거를 바꾸려는 기존 논리 앱으로 시작할 수 있습니다. 이 예에서는 빈 논리 앱으로 시작 합니다.
+* 트리거를 사용 하 여 호출 가능 끝점을 만드는 논리 앱입니다. 빈 논리 앱 또는 현재 트리거를 대체할 수 있는 기존 논리 앱으로 시작할 수 있습니다. 이 예에서는 빈 논리 앱으로 시작 합니다. 논리 앱을 처음 접하는 경우 [Azure Logic Apps](../logic-apps/logic-apps-overview.md) 및 [빠른 시작: 첫 번째 논리 앱 만들기](../logic-apps/quickstart-create-first-logic-app-workflow.md)를 참조 하세요.
 
 ## <a name="create-a-callable-endpoint"></a>호출 가능 끝점 만들기
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다. 논리 앱 디자이너에서 빈 논리 앱을 만들고 엽니다.
-
-   이 예제에서는 요청 트리거를 사용 하지만 들어오는 HTTPS 요청을 받을 수 있는 트리거를 사용할 수 있습니다. 모든 원칙은 이러한 트리거에 동일 하 게 적용 됩니다. 요청 트리거에 대 한 자세한 내용은 [Azure Logic Apps를 사용 하 여 인바운드 HTTPS 호출 받기 및 응답](../connectors/connectors-native-reqres.md)을 참조 하세요.
 
 1. 검색 상자 아래에서 **기본 제공**을 선택 합니다. 검색 상자에서 필터로 `request`을 입력합니다. 트리거 목록에서 **HTTP 요청을 받을 때**를 선택 합니다.
 
@@ -200,7 +195,7 @@ ms.locfileid: "87078667"
 
    `https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?{parameter-name=parameter-value}&api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
 
-   브라우저는 다음 텍스트와 함께 응답을 반환 합니다.`Postal Code: 123456`
+   브라우저는 다음 텍스트와 함께 응답을 반환 합니다. `Postal Code: 123456`
 
    ![요청을 콜백 URL로 보내는 응답](./media/logic-apps-http-endpoint/callback-url-returned-response.png)
 
@@ -210,12 +205,12 @@ ms.locfileid: "87078667"
 
    이 예제에서는 `postalCode=123456` url 내의 서로 다른 위치에 있는 샘플 매개 변수 이름 및 값을 사용 하는 콜백 URL을 보여 줍니다.
 
-   * 첫 번째 위치:`https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?postalCode=123456&api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
+   * 첫 번째 위치: `https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?postalCode=123456&api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
 
-   * 두 번째 위치:`https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?api-version=2016-10-01&postalCode=123456&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
+   * 두 번째 위치: `https://prod-07.westus.logic.azure.com:433/workflows/{logic-app-resource-ID}/triggers/manual/paths/invoke?api-version=2016-10-01&postalCode=123456&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={shared-access-signature}`
 
 > [!NOTE]
-> URI에 해시 또는 파운드 기호 ()를 포함 하려는 경우에는 **#** 이 인코딩된 버전을 대신 사용 합니다.`%25%23`
+> URI에 해시 또는 파운드 기호 ()를 포함 하려는 경우에는 **#** 이 인코딩된 버전을 대신 사용 합니다. `%25%23`
 
 <a name="relative-path"></a>
 
@@ -257,12 +252,12 @@ ms.locfileid: "87078667"
 
 1. 호출 가능 끝점을 테스트 하려면 요청 트리거에서 업데이트 된 콜백 URL을 복사 하 고 URL을 다른 브라우저 창에 붙여넣은 `{postalCode}` 다음 url에서을로 바꾸고 `123456` enter 키를 누릅니다.
 
-   브라우저는 다음 텍스트와 함께 응답을 반환 합니다.`Postal Code: 123456`
+   브라우저는 다음 텍스트와 함께 응답을 반환 합니다. `Postal Code: 123456`
 
    ![요청을 콜백 URL로 보내는 응답](./media/logic-apps-http-endpoint/callback-url-returned-response.png)
 
 > [!NOTE]
-> URI에 해시 또는 파운드 기호 ()를 포함 하려는 경우에는 **#** 이 인코딩된 버전을 대신 사용 합니다.`%25%23`
+> URI에 해시 또는 파운드 기호 ()를 포함 하려는 경우에는 **#** 이 인코딩된 버전을 대신 사용 합니다. `%25%23`
 
 ## <a name="call-logic-app-through-endpoint-url"></a>끝점 URL을 통해 논리 앱 호출
 
@@ -384,7 +379,7 @@ ms.locfileid: "87078667"
 }
 ```
 
-## <a name="q--a"></a>Q&A
+## <a name="q--a"></a>Q & A
 
 #### <a name="q-what-about-url-security"></a>Q: URL 보안이란 무엇입니까?
 
@@ -408,3 +403,4 @@ ms.locfileid: "87078667"
 ## <a name="next-steps"></a>다음 단계
 
 * [Azure Logic Apps를 사용 하 여 들어오는 HTTPS 호출 받기 및 응답](../connectors/connectors-native-reqres.md)
+* [요청 기반 트리거에 대 한 인바운드 호출에 대 한 액세스 권한 및 Azure Logic Apps의 데이터 보호](../logic-apps/logic-apps-securing-a-logic-app.md#secure-inbound-requests)

@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 06/26/2020
-ms.openlocfilehash: 6bb85ada5ab1cd443d47ed85024b45d98354e97f
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: c73a5c5339403ecd91d45968405682c59f2f23b4
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87500966"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88719277"
 ---
 # <a name="optimize-data-processing-with-azure-machine-learning"></a>Azure Machine Learning를 사용 하 여 데이터 처리 최적화
 
@@ -33,9 +33,9 @@ CSV 파일은 Excel에서 쉽게 편집 하 고 읽을 수 있으므로 일반�
 
 ## <a name="pandas-dataframe"></a>pandas 데이터 프레임
 
-[Pandas 데이터 프레임](https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html) 는 일반적으로 데이터 조작 및 분석에 사용 됩니다. `Pandas`1gb 미만의 데이터 크기에 적합 하지만 `pandas` 파일 크기가 약 1gb에 도달 하면 데이터 프레임의 처리 시간이 느려집니다. 이 속도는 저장소에 있는 데이터의 크기가 데이터 프레임의 데이터 크기와 동일 하지 않기 때문입니다. 예를 들어 CSV 파일의 데이터는 데이터 프레임에서 최대 10 번 확장 될 수 있으므로 1gb CSV 파일은 데이터 프레임에서 10gb가 될 수 있습니다.
+[Pandas 데이터 프레임](https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html) 는 일반적으로 데이터 조작 및 분석에 사용 됩니다. `Pandas` 1gb 미만의 데이터 크기에 적합 하지만 `pandas` 파일 크기가 약 1gb에 도달 하면 데이터 프레임의 처리 시간이 느려집니다. 이 속도는 저장소에 있는 데이터의 크기가 데이터 프레임의 데이터 크기와 동일 하지 않기 때문입니다. 예를 들어 CSV 파일의 데이터는 데이터 프레임에서 최대 10 번 확장 될 수 있으므로 1gb CSV 파일은 데이터 프레임에서 10gb가 될 수 있습니다.
 
-`Pandas`단일 스레드를 의미 합니다. 즉, 단일 CPU에서 작업이 한 번에 하나씩 수행 됩니다. 분산 백 엔드를 사용 하 여 래핑하는 [modin](https://modin.readthedocs.io/en/latest/) 같은 패키지를 사용 하 여 단일 Azure Machine Learning 계산 인스턴스에서 여러 가상 cpu로 워크 로드를 쉽게 병렬화 할 수 있습니다 `Pandas` .
+`Pandas` 단일 스레드를 의미 합니다. 즉, 단일 CPU에서 작업이 한 번에 하나씩 수행 됩니다. 분산 백 엔드를 사용 하 여 래핑하는 [modin](https://modin.readthedocs.io/en/latest/) 같은 패키지를 사용 하 여 단일 Azure Machine Learning 계산 인스턴스에서 여러 가상 cpu로 워크 로드를 쉽게 병렬화 할 수 있습니다 `Pandas` .
 
 및를 사용 하 여 작업을 병렬 처리 하려면 `Modin` 이 코드 줄을로 변경 하면 [Dask](https://dask.org) `import pandas as pd` `import modin.pandas as pd` 됩니다.
 
@@ -47,11 +47,21 @@ CSV 파일은 Excel에서 쉽게 편집 하 고 읽을 수 있으므로 일반�
 
 여러 가상 Cpu 인 vCPU의 경우 컴퓨터에서 각 vCPU가 가질 수 있는 RAM에 한 파티션이 적합 함을 명심 해야 합니다. 즉, 16gb RAM 4 vCPUs가 있는 경우 각 Vcpus 당 2gb 데이터 프레임 필요 합니다.
 
+### <a name="local-vs-remote"></a>로컬 및 원격
+
+Azure Machine Learning로 프로 비전 한 원격 VM과 로컬 PC에서 작업 하는 경우 특정 pandas 데이터 프레임 명령이 더 빠르게 수행 되는 것을 알 수 있습니다. 일반적으로 로컬 PC에는 사용 하도록 설정 된 페이지 파일이 있습니다 .이 파일을 사용 하면 하드 드라이브가 RAM 확장으로 사용 됩니다. 현재는 페이지 파일 없이 Azure Machine Learning Vm이 실행 되므로 사용 가능한 실제 RAM 만큼 데이터만 로드할 수 있습니다. 
+
+계산을 많이 수행 하는 작업의 경우 더 큰 VM을 선택 하 여 처리 속도를 개선 하는 것이 좋습니다.
+
+[사용 가능한 VM 시리즈 및 Azure Machine Learning 크기](concept-compute-target.md#supported-vm-series-and-sizes) 에 대해 자세히 알아보세요. 
+
+RAM 사양에 대해서는 해당 VM 시리즈 페이지 (예: [Dv2-Dsv2 series](../virtual-machines/dv2-dsv2-series-memory.md) 또는 [NC 시리즈](../virtual-machines/nc-series.md))를 참조 하세요.
+
 ### <a name="minimize-cpu-workloads"></a>CPU 작업 최소화
 
 컴퓨터에 RAM을 더 추가할 수 없는 경우 CPU 워크 로드를 최소화 하 고 처리 시간을 최적화 하는 데 도움이 되는 다음 기술을 적용할 수 있습니다. 이러한 권장 사항은 단일 시스템과 분산 시스템 모두에 적용 됩니다.
 
-방법 | 설명
+방법 | Description
 ----|----
 압축 | 더 작은 메모리를 사용 하 고 계산 결과에 큰 영향을 주지 않는 방식으로 데이터에 대해 다른 표현을 사용 합니다.<br><br>*예:* 항목 당 약 10 바이트 이상의 문자열로 항목을 저장 하는 대신 1 바이트로 저장할 수 있는 부울, True 또는 False로 저장 합니다.
 청크 | 데이터 집합 (청크)의 메모리에 데이터를 로드 하거나, 한 번에 하나의 하위 집합을 처리 하거나, 여러 하위 집합을 병렬로 처리 합니다. 이 메서드는 모든 데이터를 처리 해야 하지만 한 번에 모든 데이터를 메모리에 로드 하지 않아도 되는 경우에 가장 잘 작동 합니다. <br><br>*예:* 한 번에 1 년 분량의 데이터를 처리 하는 대신 한 달에 한 번에 데이터를 로드 하 고 처리 합니다.
@@ -71,9 +81,9 @@ CSV 파일은 Excel에서 쉽게 편집 하 고 읽을 수 있으므로 일반�
 
 환경 또는 데이터 크기 | 권장
 ------|------
-잘 알고 있는 경우`Pandas`| `Modin`또는 `Dask` 데이터 프레임
-선호 하는 경우`Spark` | `PySpark`
-1gb 미만의 데이터 | `Pandas`로컬 **또는** 원격 Azure Machine Learning 계산 인스턴스
+잘 알고 있는 경우 `Pandas`| `Modin` 또는 `Dask` 데이터 프레임
+선호 하는 경우 `Spark` | `PySpark`
+1gb 미만의 데이터 | `Pandas` 로컬 **또는** 원격 Azure Machine Learning 계산 인스턴스
 10gb 보다 큰 데이터의 경우| `Ray`, 또는를 사용 하 여 클러스터로 이동 `Dask``Spark`
 
 `Dask`AZURE ML 계산 클러스터에서 패키지를 사용 하 여 클러스터 [dask-cloudprovider](https://cloudprovider.dask.org/en/latest/#azure) 를 만들 수 있습니다. 또는 `Dask` 계산 인스턴스에서 로컬로 실행할 수 있습니다.

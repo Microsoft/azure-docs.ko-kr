@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: 0e6759837519feccf6069e805e3fe0f72562fb7b
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 8a615dc02b78993a18a86def9d8f496ba0bba922
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85559026"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88929706"
 ---
 # <a name="tutorial-index-json-blobs-from-azure-storage-using-rest"></a>자습서: REST를 사용하여 Azure Storage에서 JSON Blob 인덱싱
 
 Azure Cognitive Search는 반정형 데이터를 읽는 방법을 아는 [indexer](search-indexer-overview.md)를 사용하여 Azure Blob Storage의 JSON 문서와 어레이를 인덱싱할 수 있습니다. 반구조화된 데이터에는 데이터 내의 콘텐츠를 구분하는 태그 또는 표시가 포함되어 있습니다. 완전히 인덱싱해야 하는 비정형 데이터와 필드 단위를 기반으로 인덱싱할 수 있는 데이터 모델(예: 관계형 데이터베이스 스키마)을 준수하는 형식적 비정형 데이터의 차이를 구분합니다.
 
-이 자습서에서는 Postman 및 [Search REST API](https://docs.microsoft.com/rest/api/searchservice/)를 사용하여 다음 작업을 수행합니다.
+이 자습서에서는 Postman 및 [Search REST API](/rest/api/searchservice/)를 사용하여 다음 작업을 수행합니다.
 
 > [!div class="checklist"]
 > * Azure Blob 컨테이너에 대한 Azure Cognitive Search 데이터 원본 구성
@@ -31,7 +31,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ## <a name="prerequisites"></a>사전 요구 사항
 
-+ [Azure Storage](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
++ [Azure Storage](../storage/common/storage-account-create.md)
 + [Postman 데스크톱 앱](https://www.getpostman.com/)
 + [만들기](search-create-service-portal.md) 또는 [기존 검색 서비스 찾기](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
 
@@ -72,7 +72,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 1. **Blob** 서비스를 클릭합니다.
 
-1. 샘플 데이터가 포함되도록 [Blob 컨테이너를 만듭니다](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal). 유효한 값에 대한 공용 액세스 수준을 설정할 수 있습니다.
+1. 샘플 데이터가 포함되도록 [Blob 컨테이너를 만듭니다](../storage/blobs/storage-quickstart-blobs-portal.md). 유효한 값에 대한 공용 액세스 수준을 설정할 수 있습니다.
 
 1. 컨테이너를 만들었으면 연 다음, 명령 모음에서 **업로드**를 선택합니다.
 
@@ -116,7 +116,7 @@ URI는 api-version을 지정해야 하며, 각 호출은 **201 생성됨**을 �
 
 ## <a name="3---create-a-data-source"></a>3 - 데이터 원본 만들기
 
-[데이터 원본 API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-data-source)는 인덱싱할 데이터를 지정하는 Azure Cognitive Search 개체를 만듭니다.
+[데이터 원본 API 만들기](/rest/api/searchservice/create-data-source)는 인덱싱할 데이터를 지정하는 Azure Cognitive Search 개체를 만듭니다.
 
 1. 이 호출의 엔드포인트를 `https://[service name].search.windows.net/datasources?api-version=2020-06-30`으로 설정합니다. `[service name]`을 검색 서비스의 이름으로 바꿉니다. 
 
@@ -159,7 +159,7 @@ URI는 api-version을 지정해야 하며, 각 호출은 **201 생성됨**을 �
 
 ## <a name="4---create-an-index"></a>4 - 인덱스 만들기
     
-두 번째 호출은 [인덱스 API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index)이며 검색 가능한 모든 데이터를 저장하는 Azure Cognitive Search 인덱스를 만듭니다. 인덱스는 모든 매개 변수 및 해당 특성을 지정합니다.
+두 번째 호출은 [인덱스 API 만들기](/rest/api/searchservice/create-index)이며 검색 가능한 모든 데이터를 저장하는 Azure Cognitive Search 인덱스를 만듭니다. 인덱스는 모든 매개 변수 및 해당 특성을 지정합니다.
 
 1. 이 호출의 엔드포인트를 `https://[service name].search.windows.net/indexes?api-version=2020-06-30`으로 설정합니다. `[service name]`을 검색 서비스의 이름으로 바꿉니다.
 
@@ -234,7 +234,7 @@ URI는 api-version을 지정해야 하며, 각 호출은 **201 생성됨**을 �
 
 ## <a name="5---create-and-run-an-indexer"></a>5 - 인덱서 만들기 및 실행
 
-인덱서는 데이터 원본에 연결하고, 데이터를 대상 검색 인덱스로 가져오고, 필요에 따라 데이터 새로 고침을 자동화하는 일정을 제공합니다. REST API는 [인덱서 만들기](https://docs.microsoft.com/rest/api/searchservice/create-indexer)입니다.
+인덱서는 데이터 원본에 연결하고, 데이터를 대상 검색 인덱스로 가져오고, 필요에 따라 데이터 새로 고침을 자동화하는 일정을 제공합니다. REST API는 [인덱서 만들기](/rest/api/searchservice/create-indexer)입니다.
 
 1. 이 호출에 대한 URI를 `https://[service name].search.windows.net/indexers?api-version=2020-06-30`으로 설정합니다. `[service name]`을 검색 서비스의 이름으로 바꿉니다.
 

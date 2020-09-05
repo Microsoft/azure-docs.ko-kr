@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: f06f8d3450f8907aa1be34b738565ac55e5e3d2d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 160912ef53b5c079d026c5d16230f49eadf66366
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559141"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88794435"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Azure Information Protection에서 데이터 연결
 
@@ -57,15 +57,17 @@ Azure Information Protection 데이터 커넥터를 구성 하 여 [Azure Inform
 
 Azure Information Protection에 대 한 Log Analytics 작업 영역을 구성 하지 않았거나 Azure Information Protection 로깅 정보를 저장 하는 작업 영역을 변경 해야 하는 경우 다음 지침을 따르십시오.
 
-1. Azure 센티널에서 **데이터 커넥터**를 선택한 다음 **(미리 보기)를 Azure Information Protection**합니다.
+1. Azure 센티널에서 **데이터 커넥터**  >  **Azure Information Protection (미리 보기)** 를 선택 합니다.
 
 2. **커넥터 페이지 열기**를 선택 합니다.
 
-3. **분석 구성 (미리 보기)** 블레이드에서 현재 Azure 센티널에 사용 중인 작업 영역을 선택 합니다. 다른 작업 영역을 선택 하는 경우 Azure Information Protection의 보고 데이터를 Azure 센티널에서 사용할 수 없습니다.
+3. **구성**아래에서 **연결 Azure Information Protection 로그**를 선택 합니다.
 
-4. 작업 영역을 선택한 경우 **확인** 을 선택 하면 커넥터 **상태가** **연결 됨**으로 변경 됩니다.
+4. **분석 구성 (미리 보기)** 블레이드에서 현재 Azure 센티널에 사용 하는 작업 영역을 선택 합니다. 다른 작업 영역을 선택 하는 경우 Azure Information Protection의 보고 데이터를 Azure 센티널에서 사용할 수 없습니다.
 
-5. Azure Information Protection의 보고 데이터는 선택한 작업 영역 내의 **InformationProtectionLogs_CL** 테이블에 저장 됩니다. 
+5. 작업 영역을 선택한 후 **확인**을 선택 합니다. 커넥터 **상태가** **연결 됨**으로 변경 됩니다.
+
+6. Azure Information Protection의 보고 데이터는 선택한 작업 영역의 **InformationProtectionLogs_CL** 테이블에 저장 됩니다. 
     
     이 보고 데이터에 대 한 Azure Monitor에서 관련 스키마를 사용 하려면 **InformationProtectionEvents**를 검색 합니다. 이러한 이벤트 함수에 대 한 자세한 내용은 Azure Information Protection 설명서에서 [이벤트 함수에 대 한 친숙 한 스키마 참조](https://docs.microsoft.com/azure/information-protection/reports-aip#friendly-schema-reference-for-event-functions) 섹션을 참조 하세요.
 

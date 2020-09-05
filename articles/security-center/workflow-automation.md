@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 08/13/2020
 ms.author: memildin
-ms.openlocfilehash: 19fcefdfd163bcbd9cd2adfcba6bf6711b9bee18
-ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
+ms.openlocfilehash: d9229137c999157d2cea112ebb5e6e8b169eed96
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88041677"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192780"
 ---
 # <a name="workflow-automation"></a>워크플로 자동화
 
@@ -32,8 +32,8 @@ ms.locfileid: "88041677"
 |----|:----|
 |릴리스 상태:|일반 공급|
 |결정|무료 계층|
-|필요한 역할 및 사용 권한:|내보내기 구성이 포함 된 구독의 **판독기** 입니다.<br>리소스 그룹에 대 한 **보안 관리자 역할** 또는 **소유자**<br>또한 대상 리소스에 대 한 쓰기 권한이 있어야 합니다.<br><br>Azure Logic Apps 워크플로를 사용 하려면 다음과 같은 Logic Apps 역할/권한도 있어야 합니다.<br> - [논리 앱 운영자](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#logic-app-operator) 권한은 필수 또는 논리 앱 읽기/트리거 액세스입니다 .이 역할은 논리 앱을 만들거나 편집할 수 없으며 기존 항목만 *실행* 합니다.<br> - 논리 앱을 만들고 수정 하려면 [논리 앱 참가자](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#logic-app-contributor) 권한이 필요 합니다.<br>논리 앱 커넥터를 사용 하려는 경우 해당 서비스 (예: Outlook/팀/여유 시간 인스턴스)에 로그인 하려면 추가 자격 증명이 필요할 수 있습니다.|
-|클라우드:|![예](./media/icons/yes-icon.png) 상용 클라우드<br>![예](./media/icons/yes-icon.png) US Gov<br>![예](./media/icons/no-icon.png) 중국 .Gov, 기타 .Gov|
+|필요한 역할 및 사용 권한:|리소스 그룹에 대 한 **보안 관리자 역할** 또는 **소유자**<br>또한 대상 리소스에 대 한 쓰기 권한이 있어야 합니다.<br><br>Azure Logic Apps 워크플로를 사용 하려면 다음과 같은 Logic Apps 역할/권한도 있어야 합니다.<br> - [논리 앱 운영자](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#logic-app-operator) 권한은 필수 또는 논리 앱 읽기/트리거 액세스입니다 .이 역할은 논리 앱을 만들거나 편집할 수 없으며 기존 항목만 *실행* 합니다.<br> - 논리 앱을 만들고 수정 하려면 [논리 앱 참가자](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#logic-app-contributor) 권한이 필요 합니다.<br>논리 앱 커넥터를 사용 하려는 경우 해당 서비스 (예: Outlook/팀/여유 시간 인스턴스)에 로그인 하려면 추가 자격 증명이 필요할 수 있습니다.|
+|클라우드:|![예](./media/icons/yes-icon.png) 상용 클라우드<br>![예](./media/icons/yes-icon.png) US Gov<br>![아니요](./media/icons/no-icon.png) 중국 .Gov, 기타 .Gov|
 |||
 
 
@@ -44,7 +44,8 @@ ms.locfileid: "88041677"
 
     [![워크플로 자동화 목록](media/workflow-automation/list-of-workflow-automations.png)](media/workflow-automation/list-of-workflow-automations.png#lightbox)
 
-    이 페이지에서 새 자동화 규칙을 만들고 기존 규칙을 사용, 사용 안 함 또는 삭제할 수 있습니다.  
+    이 페이지에서 새 자동화 규칙을 만들고 기존 규칙을 사용, 사용 안 함 또는 삭제할 수 있습니다.
+
 1. 새 워크플로를 정의 하려면 **워크플로 자동화 추가**를 클릭 합니다. 
 
     새 자동화에 대 한 옵션이 포함 된 창이 나타납니다. 여기에서 다음을 입력할 수 있습니다.
@@ -86,9 +87,9 @@ ms.locfileid: "88041677"
 
 ## <a name="manually-trigger-a-logic-app"></a>수동으로 논리 앱 트리거
 
-보안 경고 또는 [빠른 수정 수정을](https://docs.microsoft.com/azure/security-center/security-center-remediate-recommendations#quick-fix-remediation)제공 하는 권장 사항을 볼 때 Logic Apps를 수동으로 실행할 수도 있습니다.
+보안 경고나 권장 사항을 볼 때 Logic Apps를 수동으로 실행할 수도 있습니다.
 
-논리 앱을 수동으로 실행 하려면 빠른 수정 수정을 지 원하는 경고 또는 권장 사항을 열고 **논리 앱 트리거**를 클릭 합니다.
+논리 앱을 수동으로 실행 하려면 경고 또는 권장 사항을 열고 **논리 앱 트리거**를 클릭 합니다.
 
 [![수동으로 논리 앱 트리거](media/workflow-automation/manually-trigger-logic-app.png)](media/workflow-automation/manually-trigger-logic-app.png#lightbox)
 

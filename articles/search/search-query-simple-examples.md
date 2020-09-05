@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 3ea1c42234267bdbc5f8a7d35f0fd73bbb59b33c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: afc9f8e29cf27734787da9cab3e3456e5414d9ac
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85553428"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88918029"
 ---
 # <a name="create-a-simple-query-in-azure-cognitive-search"></a>Azure Cognitive Search에서 간단한 쿼리 만들기
 
 Azure Cognitive Search에서는 [단순 쿼리 구문이](query-simple-syntax.md) 인덱스에 대해 전체 텍스트 검색 쿼리를 실행 하기 위해 기본 쿼리 파서를 호출 합니다. 이 파서는 빠르게 수행할 수 있으며 전체 텍스트 검색, 필터링 된 패싯 검색 및 지역 검색을 포함 한 일반적인 시나리오를 처리 합니다. 
 
-이 문서에서는 예제를 사용 하 여 간단한 구문을 보여 주고 `search=` [문서 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) 작업의 매개 변수를 채웁니다.
+이 문서에서는 예제를 사용 하 여 간단한 구문을 보여 주고 `search=` [문서 검색](/rest/api/searchservice/search-documents) 작업의 매개 변수를 채웁니다.
 
 대체 쿼리 구문은 [전체 Lucene](query-lucene-syntax.md)이며 유사 항목 및 와일드 카드 검색과 같은 보다 복잡 한 쿼리 구조를 지원 합니다 .이를 처리 하는 데 시간이 더 걸릴 수 있습니다. 전체 구문에 대 한 자세한 내용 및 예제는 [Full Lucene 구문 사용](search-query-lucene-examples.md)을 참조 하세요.
 
@@ -103,7 +103,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 ## <a name="example-2-look-up-by-id"></a>예제 2: ID별 조회
 
-이 예제는 약간 특이하지만, 검색 동작을 평가할 때 결과에 포함되거나 제외된 이유를 이해하기 위해 특정 문서 전체를 확인하려고 할 수 있습니다. 단일 문서 전체를 반환하려면 [조회 작업](https://docs.microsoft.com/rest/api/searchservice/lookup-document)을 사용하여 문서 ID를 전달합니다.
+이 예제는 약간 특이하지만, 검색 동작을 평가할 때 결과에 포함되거나 제외된 이유를 이해하기 위해 특정 문서 전체를 확인하려고 할 수 있습니다. 단일 문서 전체를 반환하려면 [조회 작업](/rest/api/searchservice/lookup-document)을 사용하여 문서 ID를 전달합니다.
 
 모든 문서에는 고유 식별자가 있습니다. 조회 쿼리를 위한 구문을 사용하려면 사용할 문서를 찾을 수 있도록 먼저 문서 ID 목록을 반환합니다. NYC Jobs의 경우 식별자는 `id` 필드에 저장됩니다.
 
@@ -119,7 +119,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs/9E1E3AF9-0660-4E0
 
 ## <a name="example-3-filter-queries"></a>예제 3: 쿼리 필터링
 
-[구문 필터링](https://docs.microsoft.com/azure/search/search-query-odata-filter)은 **검색** 또는 자체로 사용할 수 있는 OData 식입니다. 검색 매개 변수가 없는 독립 실행형 필터는 필터 식이 관심 있는 문서를 정규화할 수 있을 때 유용합니다. 쿼리 문자열이 없으면 어휘 또는 언어 분석, 점수 매기기(모든 점수는 1) 및 순위 지정 등이 없습니다. 검색 문자열은 비어 있습니다.
+[구문 필터링](./search-query-odata-filter.md)은 **검색** 또는 자체로 사용할 수 있는 OData 식입니다. 검색 매개 변수가 없는 독립 실행형 필터는 필터 식이 관심 있는 문서를 정규화할 수 있을 때 유용합니다. 쿼리 문자열이 없으면 어휘 또는 언어 분석, 점수 매기기(모든 점수는 1) 및 순위 지정 등이 없습니다. 검색 문자열은 비어 있습니다.
 
 ```http
 POST /indexes/nycjobs/docs/search?api-version=2020-06-30
@@ -147,7 +147,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&$select=job_id,business_title,agency&search=&$filter=search.ismatch('plan*', 'business_title', 'full', 'any')
 ```
 
-함수에 대한 자세한 내용은 ["필터 예제"의 search.ismatch](https://docs.microsoft.com/azure/search/search-query-odata-full-text-search-functions#examples)를 참조하세요.
+함수에 대한 자세한 내용은 ["필터 예제"의 search.ismatch](./search-query-odata-full-text-search-functions.md#examples)를 참조하세요.
 
 ## <a name="example-4-range-filters"></a>예제 4: 범위 필터
 
@@ -198,7 +198,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 ## <a name="example-5-geo-search"></a>예제 5: 지리적 검색
 
-샘플 인덱스에는 위도 및 경도 좌표를 사용한 geo_location 필드가 포함됩니다. 이 예제에서는 시작 지점의 원주 내에서 사용자가 지정하는 임의의 거리(킬로미터 단위)에 문서를 필터링하는 [geo.distance 함수](https://docs.microsoft.com/azure/search/search-query-odata-geo-spatial-functions#examples)를 사용합니다. 쿼리 노출 영역을 줄이거나 확장하려면 쿼리(4)에서 마지막 값을 조정할 수 있습니다.
+샘플 인덱스에는 위도 및 경도 좌표를 사용한 geo_location 필드가 포함됩니다. 이 예제에서는 시작 지점의 원주 내에서 사용자가 지정하는 임의의 거리(킬로미터 단위)에 문서를 필터링하는 [geo.distance 함수](./search-query-odata-geo-spatial-functions.md#examples)를 사용합니다. 쿼리 노출 영역을 줄이거나 확장하려면 쿼리(4)에서 마지막 값을 조정할 수 있습니다.
 
 다음 예제는 가독성을 위해 POST 형식으로 돼 있습니다.
 
@@ -223,7 +223,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 용어 쿼리는 단일 용어로, 대부분이 개별적으로 평가될 것입니다. 구 쿼리는 따옴표로 묶인 후 약어 문자열로 평가됩니다. 일치의 정확도는 연산자 및 searchMode로 제어됩니다.
 
-예제 1: **`&search=fire`** 모든 일치 항목은 문서의 어딘가에 발생 하는 단어를 포함 하는 150 결과를 반환 합니다.
+예제 1: **`&search=fire`**  모든 일치 항목은 문서의 어딘가에 발생 하는 단어를 포함 하는 150 결과를 반환 합니다.
 
 ```http
 https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-06-30&$count=true&search=fire
@@ -288,13 +288,13 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 ## <a name="next-steps"></a>다음 단계
 코드에서 쿼리를 지정합니다. 다음 링크에서는 기본 단순 구문을 사용하여 .NET와 REST API 모두에 대한 검색 쿼리를 설정하는 방법에 대해 설명합니다.
 
-* [.NET SDK를 사용 하 여 인덱스 쿼리](search-query-dotnet.md)
-* [REST API를 사용 하 여 인덱스 쿼리](search-create-index-rest-api.md)
+* [.NET SDK를 사용 하 여 인덱스 쿼리](./search-get-started-dotnet.md)
+* [REST API를 사용 하 여 인덱스 쿼리](./search-get-started-powershell.md)
 
 추가 구문 참조, 쿼리 아키텍처 및 예제는 다음 링크에서 찾을 수 있습니다.
 
 + [고급 쿼리를 작성하기 위한 Lucene 구문 퀴리 예제](search-query-lucene-examples.md)
 + [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)
-+ [단순 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [전체 Lucene 쿼리](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
-+ [필터 및 Orderby 구문](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)
++ [단순 쿼리 구문](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [전체 Lucene 쿼리](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [필터 및 Orderby 구문](/rest/api/searchservice/odata-expression-syntax-for-azure-search)

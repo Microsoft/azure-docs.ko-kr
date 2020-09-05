@@ -1,17 +1,17 @@
 ---
-title: Azure Data Catalog에서 데이터 자산 등록
+title: '자습서: Azure Data Catalog에서 데이터 자산 등록'
 description: 이 자습서에서는 Azure Data Catalog에 데이터 자산을 등록하는 방법을 설명합니다.
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: tutorial
 ms.date: 08/01/2019
-ms.openlocfilehash: 10733dc59d7b143657c67e24d45d4a7c920cbd03
-ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
+ms.openlocfilehash: 66bacdf27b2ef9cf624b645cb6e4c123d9c3fa2a
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85255197"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88135881"
 ---
 # <a name="tutorial-register-data-assets-in-azure-data-catalog"></a>자습서: Azure Data Catalog에서 데이터 자산 등록
 
@@ -67,31 +67,31 @@ Azure SQL Database용 [데이터베이스 샘플](../azure-sql/database/single-d
 
 6. 데이터 자산의 메타데이터를 등록합니다. 이 예제에서는 샘플 네임스페이스에서 **제품** 개체를 등록합니다.
 
-    1. **서버 계층** 트리에서 데이터베이스 샘플을 확장하고 **SalesLT**를 선택합니다.
+   1. **서버 계층** 트리에서 데이터베이스 샘플을 확장하고 **SalesLT**를 선택합니다.
 
-    2. Ctrl 키를 누른 채 **Product**, **ProductCategory**, **ProductDescription** 및 **ProductPhoto**를 선택합니다.
+   2. Ctrl 키를 누른 채 **Product**, **ProductCategory**, **ProductDescription** 및 **ProductPhoto**를 선택합니다.
 
-    3. **선택 항목을 이동시키는 화살표**( **>** )를 선택합니다. 이 작업으로 인해 선택한 모든 개체가 **등록할 개체** 목록으로 이동합니다.
+   3. **선택 항목을 이동시키는 화살표**( **>** )를 선택합니다. 이 작업으로 인해 선택한 모든 개체가 **등록할 개체** 목록으로 이동합니다.
 
-          ![Azure Data Catalog 자습서 - 개체 찾기 및 선택](media/register-data-assets-tutorial/data-catalog-server-hierarchy.png)
+      ![Azure Data Catalog 자습서 - 개체 찾기 및 선택](media/register-data-assets-tutorial/data-catalog-server-hierarchy.png)
 
-    4. **미리 보기 포함** 을 선택하여 데이터의 스냅샷 미리 보기를 포함하도록 합니다. 스냅샷은 각 테이블에서 최대 20개의 레코드를 포함하고 카탈로그에 복사됩니다.
+   4. **미리 보기 포함** 을 선택하여 데이터의 스냅샷 미리 보기를 포함하도록 합니다. 스냅샷은 각 테이블에서 최대 20개의 레코드를 포함하고 카탈로그에 복사됩니다.
 
-    5. **데이터 프로필 포함** 을 선택하여 데이터 프로필에 대한 개체 통계의 스냅샷을 포함합니다(예: 열에 대한 최소값, 최대값 및 평균값, 행수).
+   5. **데이터 프로필 포함** 을 선택하여 데이터 프로필에 대한 개체 통계의 스냅샷을 포함합니다(예: 열에 대한 최소값, 최대값 및 평균값, 행수).
 
-    6. **태그 추가** 필드에 **판매, 제품, azure sql**을 입력합니다. 이 작업은 데이터 자산에 대한 검색 태그를 추가합니다. 태그는 사용자가 등록된 데이터 원본을 찾을 수 있는 훌륭한 방법입니다.
+   6. **태그 추가** 필드에 **판매, 제품, azure sql**을 입력합니다. 이 작업은 데이터 자산에 대한 검색 태그를 추가합니다. 태그는 사용자가 등록된 데이터 원본을 찾을 수 있는 훌륭한 방법입니다.
 
-    7. 이 데이터에 대한 **전문가** 의 이름을 지정합니다(선택 사항).
+   7. 이 데이터에 대한 **전문가** 의 이름을 지정합니다(선택 사항).
 
-          ![Azure Data Catalog 자습서- 등록할 개체](media/register-data-assets-tutorial/data-catalog-objects-register.png)
+      ![Azure Data Catalog 자습서- 등록할 개체](media/register-data-assets-tutorial/data-catalog-objects-register.png)
 
-    8. **등록**을 선택합니다. Azure 데이터 카탈로그는 선택한 개체를 등록합니다. 이 연습에서는 데이터베이스 샘플에서 선택한 개체가 등록됩니다. 등록 도구는 데이터 자산에서 메타데이터를 추출하고 데이터를 Azure Data Catalog 서비스로 복사합니다. 데이터는 현재 있는 위치에 유지됩니다. 데이터에 대한 관리자의 제어와 원래 시스템의 정책 적용은 유지됩니다.
+   8. **등록**을 선택합니다. Azure 데이터 카탈로그는 선택한 개체를 등록합니다. 이 연습에서는 데이터베이스 샘플에서 선택한 개체가 등록됩니다. 등록 도구는 데이터 자산에서 메타데이터를 추출하고 데이터를 Azure Data Catalog 서비스로 복사합니다. 데이터는 현재 있는 위치에 유지됩니다. 데이터에 대한 관리자의 제어와 원래 시스템의 정책 적용은 유지됩니다.
 
-          ![Azure Data Catalog - 등록된 개체](media/register-data-assets-tutorial/data-catalog-registered-objects.png)
+      ![Azure Data Catalog - 등록된 개체](media/register-data-assets-tutorial/data-catalog-registered-objects.png)
 
     9. 등록된 데이터 원본 개체를 보려면 **포털 보기**를 선택합니다. Azure Data Catalog 포털의 그리드 보기에서 네 개의 테이블 및 데이터베이스가 모두 표시되는지 확인합니다(검색 창이 정리되었는지 확인).
 
-        ![Azure Data Catalog 포털에 있는 개체](media/register-data-assets-tutorial/data-catalog-view-portal.png)
+       ![Azure Data Catalog 포털에 있는 개체](media/register-data-assets-tutorial/data-catalog-view-portal.png)
 
 이 연습에서는 조직 전체의 사용자가 쉽게 찾을 수 있도록 Azure SQL Database에 대한 데이터베이스 샘플에서 개체를 등록했습니다.
 
@@ -119,19 +119,20 @@ Azure Data Catalog에서 검색은 검색 및 필터링이라는 두 가지 기�
 
 2. 검색 상자에 `product` 를 입력하고 **ENTER**를 누릅니다.
 
-    ![Azure Data Catalog - 기본 텍스트 검색](media/register-data-assets-tutorial/data-catalog-basic-text-search.png)
+   ![Azure Data Catalog - 기본 텍스트 검색](media/register-data-assets-tutorial/data-catalog-basic-text-search.png)
 
 3. 결과에 네 개의 테이블 및 데이터베이스가 모두 표시되는지 확인합니다. 다음 이미지와 같이 도구 모음에 있는 단추를 선택하여 **그리드 보기**와 **목록 보기** 사이에서 전환할 수 있습니다. **강조** 옵션이 **켜져** 있기 때문에 검색 키워드가 검색 결과에서 강조 표시됩니다. 검색 결과에서 **페이지당 결과** 수를 지정할 수도 있습니다.
 
-    ![Azure Data Catalog - 기본 텍스트 검색 결과](media/register-data-assets-tutorial/data-catalog-basic-text-search-results.png)
+   ![Azure Data Catalog - 기본 텍스트 검색 결과](media/register-data-assets-tutorial/data-catalog-basic-text-search-results.png)
 
-    **검색** 패널은 왼쪽에, **속성** 패널은 오른쪽에 있습니다. **검색** 패널에서 검색 조건을 변경하고 결과를 필터링할 수 있습니다. **속성** 패널에는 그리드 또는 목록에서 선택한 개체의 속성이 표시됩니다.
+   **검색** 패널은 왼쪽에, **속성** 패널은 오른쪽에 있습니다. **검색** 패널에서 검색 조건을 변경하고 결과를 필터링할 수 있습니다. **속성** 패널에는 그리드 또는 목록에서 선택한 개체의 속성이 표시됩니다.
 
-4. 검색 결과에서 **제품** 을 선택합니다. **미리 보기**, **열**, **데이터 프로필** 및 **설명서** 탭을 선택하거나 화살표를 선택하여 아래쪽 창을 확장합니다.  
+4. 검색 결과에서 **제품**을 선택합니다. **미리 보기**, **열**, **데이터 프로필** 및 **설명서** 탭을 선택하거나 화살표를 선택하여 아래쪽 창을 확장합니다.  
 
-    ![Azure Data Catalog - 아래쪽 창](media/register-data-assets-tutorial/data-catalog-data-asset-preview.png)
+   ![Azure Data Catalog - 아래쪽 창](media/register-data-assets-tutorial/data-catalog-data-asset-preview.png)
 
-    **미리 보기** 탭에서, **상품** 테이블에 있는 데이터의 미리 보기가 표시됩니다.  
+   **미리 보기** 탭에서, **상품** 테이블에 있는 데이터의 미리 보기가 표시됩니다.
+
 5. **열** 탭을 선택하여 데이터 자산에서 열에 대한 세부 정보(예: **이름** 및 **데이터 형식**)를 찾습니다.
 
 6. **데이터 프로필** 탭을 선택하여 데이터 자산에서 데이터의 프로파일링(예: 행 수, 데이터 크기 또는 열의 최솟값)을 확인합니다.
@@ -146,13 +147,13 @@ Azure Data Catalog에서 검색은 검색 및 필터링이라는 두 가지 기�
 
 3. 결과에 테이블 및 데이터베이스가 모두 표시되는지 확인합니다.  
 
-    ![Data Catalog - 검색 결과 속성 범위 지정](media/register-data-assets-tutorial/data-catalog-property-scoping-results.png)
+   ![Data Catalog - 검색 결과 속성 범위 지정](media/register-data-assets-tutorial/data-catalog-property-scoping-results.png)
 
 ### <a name="save-the-search"></a>검색 저장
 
 1. **현재 검색** 섹션의 **검색** 창에서 검색 이름을 입력하고 **저장**을 선택합니다.
 
-    ![Azure Data Catalog - 검색 저장](media/register-data-assets-tutorial/data-catalog-save-search.png)
+   ![Azure Data Catalog - 검색 저장](media/register-data-assets-tutorial/data-catalog-save-search.png)
 
 2. 저장한 검색이 **저장된 검색**아래에 표시되는지 확인합니다.
 
@@ -166,7 +167,7 @@ Azure Data Catalog에서 검색은 검색 및 필터링이라는 두 가지 기�
 
 2. 검색 결과에 **상품** 테이블만이 표시되는지 확인합니다.
 
-    ![Azure Data Catalog - 검색 그룹화](media/register-data-assets-tutorial/data-catalog-grouping-search.png)
+   ![Azure Data Catalog - 검색 그룹화](media/register-data-assets-tutorial/data-catalog-grouping-search.png)
 
 ### <a name="comparison-operators"></a>비교 연산자
 
@@ -180,7 +181,7 @@ Azure Data Catalog에서 검색은 검색 및 필터링이라는 두 가지 기�
 
 4. **Product**, **ProductCategory** 및 **ProductDescription** 테이블 및 검색 결과에 등록된 SQL 데이터베이스가 표시되는지 확인합니다.
 
-    ![Azure Data Catalog - 비교 검색 결과](media/register-data-assets-tutorial/data-catalog-comparison-operator-results.png)
+   ![Azure Data Catalog - 비교 검색 결과](media/register-data-assets-tutorial/data-catalog-comparison-operator-results.png)
 
 데이터 자산 검색에 대한 자세한 내용은 [데이터 자산을 검색하는 방법](data-catalog-how-to-discover.md) 을 참조하세요. 검색 구문에 대한 자세한 내용은 [Data Catalog 검색 구문 참조](/rest/api/datacatalog/#search-syntax-reference) 를 참조하세요.
 
@@ -233,21 +234,21 @@ Azure Data Catalog는 주석에 대한 크라우드 소싱 접근 방식을 지�
 
 1. 검색 결과에서 **상품** 을 선택합니다. 도구 모음에서 **다음에서 열기**를 선택하고 **Excel**을 선택합니다.
 
-    ![Azure Data Catalog - 데이터 자산에 연결](media/register-data-assets-tutorial/data-catalog-connect1.png)
+   ![Azure Data Catalog - 데이터 자산에 연결](media/register-data-assets-tutorial/data-catalog-connect1.png)
 
 2. 다운로드 팝업 창에서 **열기**를 선택합니다. 이 환경은 브라우저에 따라 다를 수 있습니다.
 
 3. **Microsoft Excel 보안 공지** 창에서 **사용**을 선택합니다.
 
-    ![Azure Data Catalog - Excel 보안 팝업](media/register-data-assets-tutorial/data-catalog-excel-security-popup.png)
+   ![Azure Data Catalog - Excel 보안 팝업](media/register-data-assets-tutorial/data-catalog-excel-security-popup.png)
 
 4. **데이터 가져오기** 대화 상자에서 기본값을 유지하고 **확인**을 선택합니다.
 
-    ![Azure Data Catalog - Excel 가져오기 데이터](media/register-data-assets-tutorial/data-catalog-excel-import-data.png)
+   ![Azure Data Catalog - Excel 가져오기 데이터](media/register-data-assets-tutorial/data-catalog-excel-import-data.png)
 
 5. 데이터 원본을 Excel에서 봅니다.
 
-    ![Azure Data Catalog - Excel의 제품 테이블](media/register-data-assets-tutorial/data-catalog-connect2.png)
+   ![Azure Data Catalog - Excel의 제품 테이블](media/register-data-assets-tutorial/data-catalog-connect2.png)
 
 ### <a name="sql-server-management-studio"></a>SQL Server Management Studio
 
@@ -259,7 +260,7 @@ Azure Data Catalog는 주석에 대한 크라우드 소싱 접근 방식을 지�
 
 3. 적절한 인증 및 자격 증명을 사용하여 데이터 자산에 액세스합니다. 액세스 권한이 없는 경우 **액세스 요청** 필드의 정보를 사용하여 가져옵니다.
 
-    ![Azure Data Catalog - 액세스 요청](media/register-data-assets-tutorial/data-catalog-request-access.png)
+   ![Azure Data Catalog - 액세스 요청](media/register-data-assets-tutorial/data-catalog-request-access.png)
 
 **연결 문자열 보기**를 선택하여 ADO.NET, ODBC 및 OLEDB 연결 문자열을 보고 애플리케이션에서 사용하기 위해 클립보드로 복사합니다.
 
@@ -299,18 +300,22 @@ Azure Data Catalog에서 개별 자산을 삭제하거나 여러 자산을 삭�
 
 3. 결과 목록에서 항목을 선택하고 다음 이미지처럼 도구 모음에서 **삭제** 를 선택합니다.
 
-    ![Azure Data Catalog - 그리드 항목 삭제](media/register-data-assets-tutorial/data-catalog-delete-grid-item.png)
+   ![Azure Data Catalog - 그리드 항목 삭제](media/register-data-assets-tutorial/data-catalog-delete-grid-item.png)
 
-    목록 보기를 사용하는 경우 다음 이미지처럼 확인란은 항목의 왼쪽에 있습니다.
+   목록 보기를 사용하는 경우 다음 이미지처럼 확인란은 항목의 왼쪽에 있습니다.
 
-    ![Azure Data Catalog - 목록 항목 삭제](media/register-data-assets-tutorial/data-catalog-delete-list-item.png)
+   ![Azure Data Catalog - 목록 항목 삭제](media/register-data-assets-tutorial/data-catalog-delete-list-item.png)
 
-    다음 이미지처럼 여러 데이터 자산을 선택하고 삭제할 수도 있습니다.
+   다음 이미지처럼 여러 데이터 자산을 선택하고 삭제할 수도 있습니다.
 
-    ![Azure Data Catalog - 여러 데이터 자산 삭제](media/register-data-assets-tutorial/data-catalog-delete-assets.png)
+   ![Azure Data Catalog - 여러 데이터 자산 삭제](media/register-data-assets-tutorial/data-catalog-delete-assets.png)
 
 > [!NOTE]
 > 카탈로그의 기본 동작을 통해 사용자는 모든 데이터 원본을 등록할 수 있으며 등록된 데이터 자산을 삭제할 수 있습니다. Azure Data Catalog의 표준 버전에 포함된 관리 기능은 자산의 소유권을 얻고, 자산을 검색할 수 있는 사람을 제한하며, 자산을 삭제할 수 있는 사람을 제한하는 추가 옵션을 제공합니다.
+
+## <a name="clean-up-resources"></a>리소스 정리
+
+[데이터 자산 제거](#remove-data-assets) 단계에 따라 이 자습서를 수행하는 동안 사용했을 수 있는 자산을 정리합니다.
 
 ## <a name="summary"></a>요약
 

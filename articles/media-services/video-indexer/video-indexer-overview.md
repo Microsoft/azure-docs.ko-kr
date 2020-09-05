@@ -8,20 +8,22 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 04/12/2020
+ms.date: 08/31/2020
 ms.author: juliako
-ms.openlocfilehash: e74acd3cdb0a0d2e0fbb37d022ff40e1f5798b18
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: b4d629351ae7b6154b332a1b1f99374de1187518
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83744612"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267873"
 ---
 # <a name="what-is-azure-media-services-video-indexer"></a>Azure Media Services Video Indexer란?
 
 VI(Video Indexer)는 Azure Media Services AI 솔루션이며 Azure Cognitive Services 브랜드의 일부입니다. Video Indexer는 여러 채널(음성, 발성, 시각적 개체)을 기반으로 하는 기계 학습 모델을 사용하여 깊이 있는 인사이트를 추출하는 기능을 제공합니다(데이터 분석 또는 코딩 기술이 필요 없음). 모델을 추가로 사용자 지정하고 학습할 수 있습니다. 이 서비스는 딥 서치를 가능하게 하고, 운영 비용을 절감하고, 새로운 수익 창출 기회를 가능하게 하고, 대규모 비디오 보관에 대한 새로운 사용자 환경을 만듭니다(진입 장벽이 낮음).
 
 Video Indexer로 인사이트 추출을 시작하려면 계정을 만들고 비디오를 업로드해야 합니다. Video Indexer에 비디오를 업로드하면 Video Indexer는 다양한 AI 모델을 실행하여 시각적 개체와 오디오를 둘 다 분석합니다. Video Indexer가 비디오를 분석할 때 AI 모델이 인사이트를 추출합니다.
+
+Video Indexer 계정을 만들고 Media Services에 연결 하는 경우 미디어 및 메타 데이터 파일은 해당 Media Services 계정과 연결 된 Azure storage 계정에 저장 됩니다. 자세한 내용은 [Azure에 연결 된 Video Indexer 계정 만들기](connect-to-azure.md)를 참조 하세요.
 
 다음 다이어그램은 일러스트레이션이며, Video Indexer가 백 엔드에서 작동하는 방법에 관한 기술적 설명이 아닙니다.
 

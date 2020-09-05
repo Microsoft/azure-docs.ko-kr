@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
-ms.custom: has-adal-ref
-ms.openlocfilehash: 9f891327a60d5438369c56dd858bfcefff182cdf
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: has-adal-ref, devx-track-csharp
+ms.openlocfilehash: a812704c42a4da5ddf89fe6c5ba0c9a684047f75
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87049346"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919491"
 ---
 # <a name="get-started-with-the-azure-cdn-library-for-net"></a>.NET 용 Azure CDN 라이브러리 시작
 > [!div class="op_single_selector"]

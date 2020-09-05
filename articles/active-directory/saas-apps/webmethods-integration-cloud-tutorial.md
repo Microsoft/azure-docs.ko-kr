@@ -2,25 +2,21 @@
 title: '자습서: webMethods Integration Suite와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 webMethods Integration Suite 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 97261535-7a2d-4d73-94c8-38116b8a776e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: cfe2825915e52e1cbe1cb3d1015e0239e88d15e0
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 1a7931f524d7f6cb1f98a582bed65c4dd06f9c58
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86167201"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88523873"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-suite"></a>자습서: webMethods Integration Suite와 Azure Active Directory 통합
 

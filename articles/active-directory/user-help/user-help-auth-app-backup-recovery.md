@@ -11,12 +11,12 @@ ms.topic: end-user-help
 ms.date: 06/03/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: b13de16b2080d28d3b779921456cfb20d99f0af9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3148f8ba84674c79764d0fc69acdbc02e7a12dc4
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84416010"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798995"
 ---
 # <a name="back-up-and-recover-account-credentials-using-the-microsoft-authenticator-app"></a>Microsoft Authenticator 앱을 사용하여 계정 자격 증명 백업 및 복구
 
@@ -100,7 +100,7 @@ Microsoft Authenticator 앱은 계정 자격 증명과 계정 순서 같은 관�
     :::image type="content" source="media/user-help-auth-app-backup-recovery/work-or-school-recovery-qr-code.png" alt-text="인증자는 1 회 암호를 확인 코드로 표시 합니다." border="true":::
 
 >[!NOTE]
->QR 코드 및 이 코드를 가져오는 방법에 대한 자세한 내용은 관리자가 보안 정보를 켰는지 여부에 따라 [Microsoft Authenticator 앱 시작](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-download-install) 또는 [Authenticator 앱을 사용하도록 보안 정보 설정](https://docs.microsoft.com/azure/active-directory/user-help/security-info-setup-auth-app)을 참조하세요.
+>QR 코드 및 이 코드를 가져오는 방법에 대한 자세한 내용은 관리자가 보안 정보를 켰는지 여부에 따라 [Microsoft Authenticator 앱 시작](./user-help-auth-app-download-install.md) 또는 [Authenticator 앱을 사용하도록 보안 정보 설정](./security-info-setup-auth-app.md)을 참조하세요.
 >
 >Microsoft Authenticator 앱을 처음으로 설정하는 경우 앱에서 카메라에 액세스할 수 있도록 허용할지(iOS) 아니면 앱에서 사진을 촬영하고 비디오를 녹화할 수 있도록 허용할지(Android) 묻는 메시지를 받을 수 있습니다. 인증자 앱이 카메라에 액세스하여 다음 단계에서 QR 코드의 사진을 찍을 수 있도록 **허용**을 선택해야 합니다. 카메라를 허용하지 않는 경우에도 여전히 인증자 앱을 설정할 수 있지만 코드 정보를 수동으로 추가해야 합니다. 코드를 수동으로 추가하는 방법에 대한 자세한 내용은 [수동으로 앱에 계정 추가](user-help-auth-app-add-account-manual.md)를 참조하세요.
 
@@ -130,4 +130,4 @@ Microsoft Authenticator 앱은 계정 자격 증명과 계정 순서 같은 관�
 
 - [Microsoft Authenticator 앱 FAQ](user-help-auth-app-faq.md)
 
-- [Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/)
+- [Multi-Factor Authentication](/azure/multi-factor-authentication/)

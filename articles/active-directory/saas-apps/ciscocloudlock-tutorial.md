@@ -2,26 +2,21 @@
 title: '자습서: The Cloud Security Fabric과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 The Cloud Security Fabric 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 549e8810-1b3b-4351-bf4b-f07de98980d1
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 397fe8c111870f4a1a6489e6502ff4365f80d1e3
-ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
+ms.openlocfilehash: 5c1a4ecea6acfa260cc576ffc25a67bb6c6503f0
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85799584"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88551261"
 ---
 # <a name="tutorial-integrate-the-cloud-security-fabric-with-azure-active-directory"></a>자습서: The Cloud Security Fabric과 Azure Active Directory 통합
 

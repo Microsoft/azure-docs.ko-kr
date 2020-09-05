@@ -3,12 +3,12 @@ title: Azure Stack에 Azure Backup Server 설치
 description: 이 문서에서는 Azure Backup Server를 사용하여 Azure Stack에서 워크로드를 보호하거나 백업하는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 01/31/2019
-ms.openlocfilehash: 634f560174413dd75bebdee6513160a3700df9a4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: a95ee42c3229e642bd48b812eb6bc01636af3ba2
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86513900"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018130"
 ---
 # <a name="install-azure-backup-server-on-azure-stack"></a>Azure Stack에 Azure Backup Server 설치
 
@@ -69,7 +69,7 @@ Azure Backup Server는 작업 복구를 위해 가상 머신에 연결된 Azure 
 
 Azure에서 백업 데이터를 저장하면 Azure Stack에서 백업 인프라를 줄일 수 있습니다. 데이터가 5일이 넘으면 Azure에 저장되어야 합니다.
 
-Azure에서 백업 데이터를 저장하려면 Recovery Services 자격 증명 모음을 만들거나 사용합니다. Azure Backup Server 워크로드를 백업하도록 준비할 때 [Recovery Services 자격 증명 모음을 구성](backup-azure-microsoft-azure-backup.md#create-a-recovery-services-vault)합니다. 구성되면 백업 작업이 실행될 때마다 자격 증명 모음에서 복구 지점이 생성됩니다. 각 Recovery Services 자격 증명 모음은 최대 9999개의 복구 지점을 유지합니다. 만든 복구 지점의 수 및 유지되는 기간에 따라 여러 해 동안 백업 데이터를 유지할 수 있습니다. 예를 들어 매월 복구 지점을 만들고 5년 동안 유지할 수 있습니다.
+Azure에서 백업 데이터를 저장하려면 Recovery Services 자격 증명 모음을 만들거나 사용합니다. Azure Backup Server 워크로드를 백업하도록 준비할 때 [Recovery Services 자격 증명 모음을 구성](backup-azure-microsoft-azure-backup.md#create-a-recovery-services-vault)합니다. 구성되면 백업 작업이 실행될 때마다 자격 증명 모음에서 복구 지점이 생성됩니다. 각 Recovery Services 자격 증명 모음은 최대 9999개의 복구 지점을 유지합니다. 생성 된 복구 지점의 수와 보존 기간에 따라 여러 해 동안 백업 데이터를 보존할 수 있습니다. 예를 들어 매월 복구 지점을 만들고 5년 동안 유지할 수 있습니다.
 
 ### <a name="scaling-deployment"></a>배포 크기 조정
 
@@ -94,12 +94,12 @@ Azure Backup Server에 사용할 서버를 선택할 때 Windows Server 2012 R2 
 Azure Backup 서버를 사용하여 워크로드를 보호하는 데는 미묘한 많은 차이가 있습니다. [MABS용 보호 매트릭스](./backup-mabs-protection-matrix.md)는 이러한 미묘한 차이를 설명하는 데 도움이 됩니다. 컴퓨터를 배포하기 전에 이 문서를 완전히 읽어보세요.
 
 > [!NOTE]
-> Azure Backup Server는 단일 용도의 전용 가상 머신에서 실행되도록 설계되었습니다. Azure Backup Server를 다음 항목에 설치할 수 없습니다.
+> Azure Backup Server는 단일 용도의 전용 가상 머신에서 실행되도록 설계되었습니다. 에 Azure Backup Server을 설치할 수 없습니다.
 >
 > - 도메인 컨트롤러로 실행하는 컴퓨터
 > - 애플리케이션 서버 역할이 설치된 컴퓨터
 > - Exchange Server를 실행하는 컴퓨터
-> - 클러스터의 한 노드인 컴퓨터
+> - 클러스터의 노드인 컴퓨터
 
 항상 Azure Backup Server를 도메인에 가입시킵니다. Azure Backup Server를 다른 도메인으로 이동해야 하는 경우 먼저 Azure Backup Server를 설치한 다음, 새 도메인에 조인합니다. Azure Backup Server를 배포한 후에는 새 도메인으로 이동할 수 없습니다.
 
@@ -107,18 +107,18 @@ Azure Backup 서버를 사용하여 워크로드를 보호하는 데는 미묘�
 
 ### <a name="set-storage-replication"></a>스토리지 복제 설정
 
-Recovery Services 자격 증명 모음 스토리지 복제를 사용하면 지역 중복 스토리지와 로컬 중복 스토리지 중에서 선택할 수 있습니다. 기본적으로 Recovery Services 자격 증명 모음은 지역 중복 스토리지를 사용합니다. 이 자격 증명 모음이 기본 자격 증명 모음인 경우 스토리지 옵션을 지역 중복 스토리지 상태로 둡니다. 오래 지속되지 않는 저렴한 옵션을 원하는 경우에는 로컬 중복 스토리지를 선택합니다. [지역 중복](../storage/common/storage-redundancy.md) 및 [로컬 중복](../storage/common/storage-redundancy.md) 스토리지 옵션에 대한 자세한 내용은 [Azure Storage 복제 개요](../storage/common/storage-redundancy.md)를 참조하세요.
+Recovery Services 자격 증명 모음 스토리지 복제를 사용하면 지역 중복 스토리지와 로컬 중복 스토리지 중에서 선택할 수 있습니다. 기본적으로 Recovery Services 자격 증명 모음은 지역 중복 스토리지를 사용합니다. 이 자격 증명 모음이 기본 자격 증명 모음인 경우 스토리지 옵션을 지역 중복 스토리지 상태로 둡니다. 내구성이 낮은 더 저렴 한 옵션을 원하는 경우 로컬 중복 저장소를 선택 합니다. [지역 중복](../storage/common/storage-redundancy.md) 및 [로컬 중복](../storage/common/storage-redundancy.md) 스토리지 옵션에 대한 자세한 내용은 [Azure Storage 복제 개요](../storage/common/storage-redundancy.md)를 참조하세요.
 
 스토리지 복제 설정을 편집하려면
 
-1. 자격 증명 모음 대시보드 및 설정 메뉴를 열 자격 증명 모음을 선택합니다. **설정** 메뉴가 열리지 않을 경우 자격 증명 모음 대시보드에서 **모든 설정**을 클릭합니다.
-2. **설정** 메뉴에서 **Backup 인프라** > **Backup 구성**을 클릭하여 **Backup 구성** 메뉴를 엽니다. **백업 구성** 메뉴에서 자격 증명 모음에 대한 스토리지 복제 옵션을 선택합니다.
+1. 자격 증명 모음 대시보드 및 설정 메뉴를 열 자격 증명 모음을 선택합니다. **설정** 메뉴가 열리지 않는 경우 자격 증명 모음 대시보드에서 **모든 설정** 을 선택 합니다.
+2. **설정** 메뉴에서 **backup 인프라**  >  **백업 구성** 을 선택 하 여 **backup 구성** 메뉴를 엽니다. **백업 구성** 메뉴에서 자격 증명 모음에 대한 스토리지 복제 옵션을 선택합니다.
 
     ![백업 자격 증명 모음 목록](./media/backup-azure-vms-first-look-arm/choose-storage-configuration-rs-vault.png)
 
 ## <a name="download-azure-backup-server-installer"></a>Azure Backup Server 설치 관리자 다운로드
 
-Azure Backup Server 설치 관리자를 다운로드하는 두 가지 방법이 있습니다. [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=55269)에서 Azure Backup Server 설치 관리자를 다운로드할 수 있습니다. Recovery Services 자격 증명 모음을 구성할 때 Azure Backup Server 설치 관리자를 다운로드할 수도 있습니다. 다음은 Recovery Services 자격 증명 모음을 구성하는 동안 Azure Portal에서 설치 관리자를 다운로드하는 단계입니다.
+Azure Backup Server 설치 관리자를 다운로드하는 두 가지 방법이 있습니다. [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=55269)에서 Azure Backup Server 설치 관리자를 다운로드할 수 있습니다. Recovery Services 자격 증명 모음을 구성 하는 동안 Azure Backup Server 설치 관리자를 다운로드할 수도 있습니다. 다음은 Recovery Services 자격 증명 모음을 구성하는 동안 Azure Portal에서 설치 관리자를 다운로드하는 단계입니다.
 
 1. Azure Stack 가상 머신에서, [Azure Portal에서 Azure 구독에 로그인](https://portal.azure.com/)합니다.
 2. 왼쪽 메뉴에서 **모든 서비스**를 선택합니다.
@@ -133,9 +133,9 @@ Azure Backup Server 설치 관리자를 다운로드하는 두 가지 방법이 
 
 4. Recovery Services 자격 증명 모음 목록에서 해당 자격 증명 모음을 선택하여 대시보드를 엽니다.
 
-    ![모든 서비스 대화 상자에서 Recovery Services 입력](./media/backup-mabs-install-azure-stack/rs-vault-dashboard.png)
+    ![자격 증명 모음을 선택 하 여 대시보드를 엽니다.](./media/backup-mabs-install-azure-stack/rs-vault-dashboard.png)
 
-5. 자격 증명 모음의 [시작] 메뉴에서 **백업**을 클릭하여 [시작] 마법사를 엽니다.
+5. 자격 증명 모음 시작 메뉴에서 **백업** 을 선택 하 여 시작 마법사를 엽니다.
 
     ![백업 시작](./media/backup-mabs-install-azure-stack/getting-started-backup.png)
 
@@ -143,25 +143,25 @@ Azure Backup Server 설치 관리자를 다운로드하는 두 가지 방법이 
 
     ![Backup-목표-기본-열기](./media/backup-mabs-install-azure-stack/getting-started-menu.png)
 
-6. 백업 메뉴의 **워크로드가 실행되는 위치** 메뉴에서 **온-프레미스**를 선택합니다. **무엇을 백업하시겠습니까?** 드롭다운 메뉴에서 Azure Backup Server를 사용하여 보호할 워크로드를 선택합니다. 어떤 워크로드를 선택해야 하는지 확실하지 않은 경우 **Hyper-V 가상 머신**을 선택하고 **인프라 준비**를 클릭합니다.
+6. 백업 메뉴의 **워크로드가 실행되는 위치** 메뉴에서 **온-프레미스**를 선택합니다. **무엇을 백업하시겠습니까?** 드롭다운 메뉴에서 Azure Backup Server를 사용하여 보호할 워크로드를 선택합니다. 선택할 작업을 잘 모르는 경우 **hyper-v Virtual Machines** 선택 하 고 **인프라 준비**를 선택 합니다.
 
     ![온-프레미스 및 목표 워크로드](./media/backup-mabs-install-azure-stack/getting-started-menu-onprem-hyperv.png)
 
     **인프라 준비** 메뉴가 열립니다.
 
-7. **인프라 준비** 메뉴에서 **다운로드**를 클릭하여 Azure Backup Server 설치 파일을 다운로드하는 웹 페이지를 엽니다.
+7. **인프라 준비** 메뉴에서 **다운로드** 를 선택 하 여 Azure Backup Server 설치 파일을 다운로드할 웹 페이지를 엽니다.
 
     ![시작 마법사 변경](./media/backup-mabs-install-azure-stack/prepare-infrastructure.png)
 
     Azure Backup Server의 다운로드 가능 파일을 호스팅하는 Microsoft 웹 페이지가 열립니다.
 
-8. Microsoft Azure Backup Server 다운로드 페이지에서 언어를 선택하고 **다운로드**를 클릭합니다.
+8. Microsoft Azure Backup Server 다운로드 페이지에서 언어를 선택 하 고 **다운로드**를 선택 합니다.
 
     ![다운로드 센터가 열림](./media/backup-mabs-install-azure-stack/mabs-download-center-page.png)
 
-9. Azure Backup Server 설치 관리자는 8개 파일(설치 관리자 하나와 .bin 파일 7개)로 구성됩니다. **파일 이름**을 선택하여 필요한 파일을 모두 선택하고 **다음**을 클릭합니다. 모든 파일을 같은 폴더에 다운로드합니다.
+9. Azure Backup Server 설치 관리자는 8개 파일(설치 관리자 하나와 .bin 파일 7개)로 구성됩니다. **파일 이름** 을 선택 하 여 필요한 모든 파일을 선택 하 고 **다음**을 선택 합니다. 모든 파일을 같은 폴더에 다운로드합니다.
 
-    ![다운로드 센터 1](./media/backup-mabs-install-azure-stack/download-center-selected-files.png)
+    ![다운로드 센터, 선택한 파일](./media/backup-mabs-install-azure-stack/download-center-selected-files.png)
 
     모든 설치 파일의 다운로드 크기는 3GB보다 큽니다. 10Mbps 다운로드 링크에서 모든 설치 파일을 다운로드하는 데 최대 60분이 걸릴 수 있습니다. 지정한 다운로드 위치에 파일이 다운로드됩니다.
 
@@ -169,141 +169,141 @@ Azure Backup Server 설치 관리자를 다운로드하는 두 가지 방법이 
 
 Azure Stack 가상 머신에 모든 파일을 다운로드한 후에는 다운로드 위치로 이동합니다. Azure Backup Server 설치의 첫 번째 단계는 파일을 추출하는 것입니다.
 
-![다운로드 센터 1](./media/backup-mabs-install-azure-stack/download-mabs-installer.png)
+![MABS 설치 관리자 다운로드](./media/backup-mabs-install-azure-stack/download-mabs-installer.png)
 
-1. 설치를 시작하려면 다운로드한 파일 목록에서 **MicrosoftAzureBackupserverInstaller.exe**를 클릭합니다.
+1. 설치를 시작 하려면 다운로드 한 파일 목록에서 **MicrosoftAzureBackupserverInstaller.exe**을 선택 합니다.
 
     > [!WARNING]
     > 설치 파일을 추출하려면 4GB 이상의 사용 가능한 공간이 필요합니다.
     >
 
-2. Azure Backup Server 마법사에서 **다음**을 클릭하여 계속 진행합니다.
+2. Azure Backup Server 마법사에서 **다음** 을 선택 하 여 계속 합니다.
 
     ![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wiz-1.png)
 
-3. Azure Backup Server 파일의 경로를 선택하고 **다음**을 클릭합니다.
+3. Azure Backup Server 파일의 경로를 선택 하 고 **다음**을 선택 합니다.
 
-   ![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wizard-select-destination-1.png)
+   ![파일의 대상 선택](./media/backup-mabs-install-azure-stack/mabs-install-wizard-select-destination-1.png)
 
-4. 추출 위치를 확인하고 **추출**을 클릭합니다.
+4. 추출 위치를 확인 하 고 **추출**을 선택 합니다.
 
-   ![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wizard-extract-2.png)
+   ![추출 위치 확인](./media/backup-mabs-install-azure-stack/mabs-install-wizard-extract-2.png)
 
 5. 마법사가 파일을 추출하고 설치 프로세스를 준비합니다.
 
-   ![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wizard-install-3.png)
+   ![마법사에서 파일 추출](./media/backup-mabs-install-azure-stack/mabs-install-wizard-install-3.png)
 
-6. 추출 프로세스가 완료되면 **마침**을 클릭합니다. 기본적으로 **Execute setup.exe**가 선택됩니다. **마침**을 클릭하면 Setup.exe가 지정된 위치에 Microsoft Azure Backup Server를 설치합니다.
+6. 추출 프로세스가 완료 되 면 **마침**을 선택 합니다. 기본적으로 **Execute setup.exe**가 선택됩니다. **마침**을 선택 하면 Setup.exe Microsoft Azure Backup 서버를 지정 된 위치에 설치 합니다.
 
-   ![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wizard-finish-4.png)
+   ![설치 프로그램이 Microsoft Azure Backup 서버 파일을 추출 합니다.](./media/backup-mabs-install-azure-stack/mabs-install-wizard-finish-4.png)
 
 ## <a name="install-the-software-package"></a>소프트웨어 패키지 설치
 
-이전 단계에서 **마침**을 클릭하여 추출 단계를 종료하고, Azure Backup Server 설치 마법사를 시작했습니다.
+이전 단계에서 **마침** 을 선택 하 여 추출 단계를 종료 하 고 Azure Backup Server 설치 마법사를 시작 합니다.
 
-![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wizard-local-5.png)
+![Microsoft Azure Backup 설치 마법사 시작](./media/backup-mabs-install-azure-stack/mabs-install-wizard-local-5.png)
 
-Azure Backup Server는 Data Protection Manager과 코드를 공유합니다. Azure Backup Server 설치 관리자에서 Data Protection Manager 및 DPM의 모든 참조를 볼 수 있습니다. Azure Backup Server 및 Data Protection Manager는 별도의 제품이지만 밀접하게 관련되어 있습니다.
+Azure Backup Server는 Data Protection Manager과 코드를 공유합니다. Data Protection Manager와 DPM에 대 한 참조가 Azure Backup Server 설치 관리자에 표시 됩니다. Azure Backup Server 및 Data Protection Manager는 별도의 제품이지만 밀접하게 관련되어 있습니다.
 
-1. 설치 마법사를 시작하려면 **Microsoft Azure Backup Server**를 클릭합니다.
+1. 설치 마법사를 시작 하려면 **Microsoft Azure Backup 서버**를 선택 합니다.
 
-   ![Microsoft Azure Backup 설정 마법사](./media/backup-mabs-install-azure-stack/mabs-install-wizard-local-5b.png)
+   ![Microsoft Azure Backup 서버 선택](./media/backup-mabs-install-azure-stack/mabs-install-wizard-local-5b.png)
 
-2. **시작** 화면에서 **다음**을 클릭합니다.
+2. **시작** 화면에서 **다음**을 선택 합니다.
 
-    ![Azure Backup 서버 - 시작 및 필수 조건 확인](./media/backup-mabs-install-azure-stack/mabs-install-wizard-setup-6.png)
+    ![Azure Backup Server-시작](./media/backup-mabs-install-azure-stack/mabs-install-wizard-setup-6.png)
 
-3. **필수 구성 요소 확인** 화면에서 **확인**을 클릭하여 Azure Back Server에 대한 하드웨어 및 소프트웨어 필수 구성 요소가 충족되었는지 확인합니다.
+3. **필수 구성 요소 확인** 화면에서 **확인** 을 선택 하 여 Azure Backup Server에 대 한 하드웨어 및 소프트웨어 필수 구성 요소가 충족 되었는지 확인 합니다.
 
-    ![Azure Backup 서버 - 시작 및 필수 조건 확인](./media/backup-mabs-install-azure-stack/mabs-install-wizard-pre-check-7.png)
+    ![Azure Backup Server-필수 구성 요소 확인](./media/backup-mabs-install-azure-stack/mabs-install-wizard-pre-check-7.png)
 
-    환경에 필요한 구성 요소가 모두 준비되면 컴퓨터가 요구 사항을 만족한다는 것을 나타내는 메시지가 표시됩니다. **다음**을 클릭합니다.  
+    환경에 필요한 필수 구성 요소가 있는 경우 컴퓨터가 요구 사항을 충족 한다는 메시지가 표시 됩니다. **다음**을 선택합니다.  
 
     ![Azure Backup Server - 필수 조건 확인 통과](./media/backup-mabs-install-azure-stack/mabs-install-wizard-pre-check-passed-8.png)
 
-    환경이 필수 조건을 충족하지 않으면 문제가 발생합니다. 또한 충족되지 않은 필수 구성 요소가 DpmSetup.log에 나열됩니다. 필수 구성 요소 오류를 해결한 후 **다시 확인**을 실행해야 합니다. 모든 필수 조건이 충족될 때까지 설치를 진행할 수 없습니다.
+    환경이 필수 조건을 충족하지 않으면 문제가 발생합니다. 또한 충족 되지 않은 필수 구성 요소가 DpmSetup에도 나열 됩니다. 필수 구성 요소 오류를 해결한 후 **다시 확인**을 실행해야 합니다. 모든 필수 구성 요소가 충족 될 때까지 설치를 계속할 수 없습니다.
 
     ![Azure Backup Server - 설치 필수 조건이 충족되지 않음](./media/backup-mabs-install-azure-stack/installation-errors.png)
 
-4. Microsoft Azure Backup Server에는 SQL Server가 필요합니다. Azure Backup Server 설치 패키지는 적절한 SQL Server 이진 파일이 번들로 함께 제공됩니다. 원한다면 사용자 고유의 SQL 설치를 사용해도 됩니다. 그러나 설치 관리자가 새 SQL Server 인스턴스를 추가하게 하는 것이 좋습니다. 사용자가 선택한 방법이 환경에서 정상적으로 작동하도록 **확인 후 설치**를 클릭합니다.
+4. Microsoft Azure Backup Server에는 SQL Server가 필요합니다. Azure Backup Server 설치 패키지는 적절한 SQL Server 이진 파일이 번들로 함께 제공됩니다. 원한다면 사용자 고유의 SQL 설치를 사용해도 됩니다. 그러나 설치 관리자가 새 SQL Server 인스턴스를 추가하게 하는 것이 좋습니다. 선택 항목이 사용자 환경에서 작동 하도록 하려면 **확인 후 설치**를 선택 합니다.
 
    > [!NOTE]
-   > Azure Backup 서버는 원격 SQL Server 인스턴스에서 작동하지 않습니다. Azure Backup Server에서 사용하는 인스턴스는 로컬이어야 합니다.
+   > Azure Backup Server은 원격 SQL Server 인스턴스에서 작동 하지 않습니다. Azure Backup Server에서 사용하는 인스턴스는 로컬이어야 합니다.
    >
 
-    ![Azure Backup 서버 - 시작 및 필수 조건 확인](./media/backup-mabs-install-azure-stack/mabs-install-wizard-sql-install-9.png)
+    ![Azure Backup Server-SQL 설정](./media/backup-mabs-install-azure-stack/mabs-install-wizard-sql-install-9.png)
 
-    확인 결과, Azure Backup Server를 설치하는 데 필요한 필수 구성 요소가 모두 가상 머신에 있으면 **다음**을 클릭합니다.
+    확인 후 Azure Backup Server 설치 하는 데 필요한 필수 구성 요소가 가상 머신에 있는 경우 **다음**을 선택 합니다.
 
-    ![Azure Backup 서버 - 시작 및 필수 조건 확인](./media/backup-mabs-install-azure-stack/mabs-install-wizard-sql-ready-10.png)
+    ![Azure Backup Server-요구 사항이 충족 됨](./media/backup-mabs-install-azure-stack/mabs-install-wizard-sql-ready-10.png)
 
-    컴퓨터를 다시 시작하라는 권장 사항과 함께 오류가 발생하면 컴퓨터를 다시 시작합니다. 컴퓨터를 다시 시작한 후에는 설치 관리자를 다시 시작하고, **SQL 설정** 화면에서 **다시 확인**을 클릭합니다.
+    컴퓨터를 다시 시작하라는 권장 사항과 함께 오류가 발생하면 컴퓨터를 다시 시작합니다. 컴퓨터를 다시 시작한 후 설치 관리자를 다시 시작 하 고 **SQL 설정** 화면에 표시 되 면 **확인을 다시**선택 합니다.
 
-5. **설치 설정**에서, Microsoft Azure Backup 서버 파일을 설치할 위치를 입력하고 **다음**을 클릭합니다.
+5. **설치 설정**에서 Microsoft Azure Backup 서버 파일의 설치 위치를 입력 하 고 **다음**을 선택 합니다.
 
-    ![Microsoft Azure Backup PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-settings-11.png)
+    ![파일 설치 위치 제공](./media/backup-mabs-install-azure-stack/mabs-install-wizard-settings-11.png)
 
-    스크래치 위치는 Azure에 백업하는 데 필요합니다. 스크래치 위치의 크기는 Azure에 백업하기로 계획된 데이터의 5% 이상이어야 합니다. 디스크 보호를 위해 별도 디스크가 설치를 완료하면 구성되어야 합니다. 스토리지 풀에 대한 자세한 내용은 [데이터 스토리지 준비](/system-center/dpm/plan-long-and-short-term-data-storage?view=sc-dpm-2019)를 참조하세요.
+    스크래치 위치는 Azure에 백업하는 데 필요합니다. 스크래치 위치의 크기는 Azure에 백업하기로 계획된 데이터의 5% 이상이어야 합니다. 디스크 보호를 위해 별도 디스크가 설치를 완료하면 구성되어야 합니다. 저장소 풀에 대 한 자세한 내용은 [데이터 저장소 준비](/system-center/dpm/plan-long-and-short-term-data-storage?view=sc-dpm-2019)를 참조 하세요.
 
-6. **보안 설정** 화면에서, 제한된 로컬 사용자 계정에 강력한 암호를 제공하고 **다음**을 클릭합니다.
+6. **보안 설정** 화면에서 제한 된 로컬 사용자 계정에 대 한 강력한 암호를 입력 하 고 **다음**을 선택 합니다.
 
-    ![Microsoft Azure Backup PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-security-12.png)
+    ![보안 설정 화면](./media/backup-mabs-install-azure-stack/mabs-install-wizard-security-12.png)
 
-7. **Microsoft 업데이트 옵트인** 화면에서, 업데이트 확인에 *Microsoft 업데이트*를 사용할 것인지 선택하고 **다음**을 클릭합니다.
+7. **Microsoft 업데이트 옵트인** 화면에서 *Microsoft 업데이트* 를 사용 하 여 업데이트를 확인할 지 여부를 선택 하 고 **다음**을 선택 합니다.
 
    > [!NOTE]
    > Windows 업데이트에 Microsoft 업데이트를 리디렉션하는 것이 좋으며 이는 Windows 및 Microsoft Azure Backup 서버와 같은 다른 제품에 대한 보안 및 중요 업데이트를 제공합니다.
    >
 
-    ![Microsoft Azure Backup PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-update-13.png)
+    ![Microsoft 업데이트 옵트인 화면](./media/backup-mabs-install-azure-stack/mabs-install-wizard-update-13.png)
 
-8. *설정 요약* 을 검토하고 **설치**를 클릭합니다.
+8. *설정 요약* 을 검토 하 고 **설치**를 선택 합니다.
 
-    ![Microsoft Azure Backup PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-summary-14.png)
+    ![설정 요약](./media/backup-mabs-install-azure-stack/mabs-install-wizard-summary-14.png)
 
     Azure Backup Server가 설치를 완료하면 설치 관리자는 그 즉시 Microsoft Azure Recovery Services 에이전트 설치 관리자를 시작합니다.
 
-9. Microsoft Azure Recovery Services 에이전트 설치 관리자가 열리고 인터넷 연결을 확인합니다. 인터넷이 연결되어 있는 경우 설치가 진행됩니다. 연결되지 않은 경우 인터넷에 연결하는 데 필요한 프록시 정보를 제공합니다. 프록시 설정을 지정한 후에는 **다음**을 클릭합니다.
+9. Microsoft Azure Recovery Services 에이전트 설치 관리자가 열리고 인터넷 연결을 확인합니다. 인터넷 연결을 사용할 수 있는 경우 설치를 계속 합니다. 연결이 없는 경우 프록시 정보를 제공 하 여 인터넷에 연결 합니다. 프록시 설정을 지정한 후 **다음**을 선택 합니다.
 
-    ![Microsoft Azure Backup PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-proxy-15.png)
+    ![프록시 구성](./media/backup-mabs-install-azure-stack/mabs-install-wizard-proxy-15.png)
 
-10. Microsoft Azure Recovery Services 에이전트를 설치하려면 **설치**를 클릭합니다.
+10. Microsoft Azure Recovery Services 에이전트를 설치 하려면 **설치**를 선택 합니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-mars-agent-16.png)
+    ![에이전트 설치](./media/backup-mabs-install-azure-stack/mabs-install-wizard-mars-agent-16.png)
 
-    Azure Backup 에이전트라고도 하는 Microsoft Azure Recovery Services 에이전트는 Recovery Services 자격 증명 모음에 Azure Backup Server를 구성합니다. 구성이 완료되면 Azure Backup Server는 항상 같은 Recovery Services 자격 증명 모음에 데이터를 백업합니다.
+    Azure Backup 에이전트라고도 하는 Microsoft Azure Recovery Services 에이전트는 Recovery Services 자격 증명 모음에 Azure Backup Server를 구성합니다. 구성 된 Azure Backup Server는 항상 동일한 Recovery Services 자격 증명 모음에 데이터를 백업 합니다.
 
-11. Microsoft Azure Recovery Services 에이전트가 설치를 마치면 **다음**을 클릭하여 그 다음 단계인 Recovery Services 자격 증명 모음에 Azure Backup Server 등록을 시작합니다.
+11. Microsoft Azure Recovery Services 에이전트 설치가 완료 되 면 **다음** 을 선택 하 여 다음 단계: Recovery Services 자격 증명 모음에 Azure Backup Server 등록을 시작 합니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-complete-16.png)
+    ![에이전트 설치를 완료 했습니다.](./media/backup-mabs-install-azure-stack/mabs-install-wizard-complete-16.png)
 
     설치 관리자가 **서버 등록 마법사**를 실행합니다.
 
-12. Azure 구독 및 Recovery Services 자격 증명 모음으로 전환 합니다. **인프라 준비** 메뉴에서 **다운로드**를 클릭하여 자격 증명 모음 자격 증명을 다운로드합니다. 2단계의 **다운로드** 단추가 활성화되지 않은 경우 **이미 다운로드했거나 최신 Azure Backup Server 설치 사용**을 선택하여 단추를 활성화합니다. 다운로드 파일이 저장되는 위치에 자격 증명 모음 자격 증명이 다운로드됩니다. 그 다음 단계에서 이 위치가 필요하므로 잘 기억해 두어야 합니다.
+12. Azure 구독 및 Recovery Services 자격 증명 모음으로 전환 합니다. **인프라 준비** 메뉴에서 **다운로드** 를 선택 하 여 자격 증명 모음을 다운로드 합니다. 2 단계에서 **다운로드** 단추가 활성화 되지 않은 경우 이미 다운로드 됨을 선택 **하거나 최신 Azure Backup Server 설치를 사용 하** 여 단추를 활성화 합니다. 다운로드 파일이 저장되는 위치에 자격 증명 모음 자격 증명이 다운로드됩니다. 그 다음 단계에서 이 위치가 필요하므로 잘 기억해 두어야 합니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/download-mars-credentials-17.png)
+    ![저장소 자격 증명 다운로드](./media/backup-mabs-install-azure-stack/download-mars-credentials-17.png)
 
-13. **자격 증명 모음 ID** 메뉴에서 **찾아보기**를 클릭하여 Recovery Services 자격 증명 모음 자격 증명을 찾습니다.
+13. 자격 증명 **모음 식별** 메뉴에서 **찾아보기** 를 선택 하 Recovery Services 자격 증명 모음 자격 증명을 찾습니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-vault-id-18.png)
+    ![자격 증명 모음 식별 메뉴](./media/backup-mabs-install-azure-stack/mabs-install-wizard-vault-id-18.png)
 
-    **자격 증명 모음 자격 증명 선택** 대화 상자에서 다운로드 위치로 이동하고, 자격 증명 모음 자격 증명을 선택하고, **열기**를 클릭합니다.
+    자격 증명 **모음 자격 증명 선택** 대화 상자에서 다운로드 위치로 이동 하 여 자격 증명 모음 자격 증명을 선택 하 고 **열기**를 선택 합니다.
 
-    자격 증명 경로가 자격 증명 모음 ID 메뉴에 표시됩니다. **다음**을 클릭하여 암호화 설정으로 이동합니다.
+    자격 증명 경로가 자격 증명 모음 ID 메뉴에 표시됩니다. **다음** 을 선택 하 여 **암호화 설정**으로 이동 합니다.
 
-14. **암호화 설정** 대화 상자에서 백업 암호화의 암호를 입력하고, 암호를 저장할 위치를 입력하고, **다음**을 클릭합니다.
+14. **암호화 설정** 대화 상자에서 백업 암호화에 사용할 암호와 암호를 저장할 위치를 입력 하 고 **다음**을 선택 합니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-encryption-19.png)
+    ![암호화 설정](./media/backup-mabs-install-azure-stack/mabs-install-wizard-encryption-19.png)
 
-    사용자 고유의 암호를 입력해도 되고 암호 생성기를 사용하여 만들어도 됩니다. 암호는 사용자의 것이며, Microsoft는 이 암호를 저장하거나 관리하지 않습니다. 재해에 대비할 수 있도록, 액세스 가능한 위치에 암호를 저장합니다.
+    사용자 고유의 암호를 입력해도 되고 암호 생성기를 사용하여 만들어도 됩니다. 암호는 귀하에 게 있으며 Microsoft는이 암호를 저장 하거나 관리 하지 않습니다. 재해를 준비 하려면 액세스할 수 있는 위치에 암호를 저장 합니다.
 
-    **다음**을 클릭하면 Recovery Services 자격 증명 모음에 Azure Backup Server가 등록됩니다. 설치 관리자가 SQL Server 및 Azure Backup Server 설치를 계속 진행합니다.
+    [ **다음**]을 선택 하면 Azure Backup Server Recovery Services 자격 증명 모음에 등록 됩니다. 설치 관리자가 SQL Server 및 Azure Backup Server 설치를 계속 진행합니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-sql-still-installing-20.png)
+    ![설치 프로그램이 SQL 및 Azure Backup Server를 설치 합니다.](./media/backup-mabs-install-azure-stack/mabs-install-wizard-sql-still-installing-20.png)
 
-15. 설치 관리자가 완료되면 모든 소프트웨어가 성공적으로 설치되었음을 알리는 상태가 표시됩니다.
+15. 설치 관리자가 완료 되 면 모든 소프트웨어가 성공적으로 설치 되었다는 **상태** 를 표시 합니다.
 
-    ![Azure Backup Server PreReq2](./media/backup-mabs-install-azure-stack/mabs-install-wizard-done-22.png)
+    ![소프트웨어가 설치 되었습니다.](./media/backup-mabs-install-azure-stack/mabs-install-wizard-done-22.png)
 
     설치가 완료되면 서버 데스크톱에 Azure Backup Server 콘솔 및 Azure Backup Server PowerShell 아이콘이 생성됩니다.
 
@@ -318,7 +318,7 @@ Azure Backup Server는 Data Protection Manager과 코드를 공유합니다. Azu
 
 ## <a name="network-connectivity"></a>네트워크 연결
 
-Azure Backup 서버가 Azure Backup 서비스에 연결되어야 제품이 제대로 작동합니다. 컴퓨터가 Azure에 연결되어 있는지 여부를 확인하려면 Azure Backup 서버 PowerShell 콘솔에서 ```Get-DPMCloudConnection``` cmdlet을 사용합니다. cmdlet의 출력이 TRUE인 경우 연결되어 있고 그렇지 않으면 연결되지 않은 것입니다.
+Azure Backup 서버가 Azure Backup 서비스에 연결되어야 제품이 제대로 작동합니다. 컴퓨터가 Azure에 연결되어 있는지 여부를 확인하려면 Azure Backup 서버 PowerShell 콘솔에서 ```Get-DPMCloudConnection``` cmdlet을 사용합니다. Cmdlet의 출력이 TRUE 이면 연결이 존재 하 고, 연결 되지 않은 것입니다.
 
 이와 동시에 Azure 구독은 정상 상태여야 합니다. 구독 상태를 확인하고 관리하려면 [구독 포털](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade)에 로그인합니다.
 
@@ -347,10 +347,10 @@ Azure에 대한 연결이 Azure Backup Server로 복원되면 Azure 구독 상�
 
 ### <a name="handling-subscription-states"></a>구독 상태 처리
 
-Azure 구독을 *만료됨* 또는 *프로비전 해제됨* 상태에서 *활성* 상태로 변경할 수 있습니다. 구독 상태가 *활성*이 아닌 경우:
+Azure 구독을 *만료됨* 또는 *프로비전 해제됨* 상태에서 *활성* 상태로 변경할 수 있습니다. 구독 상태는 *활성화*되지 않습니다.
 
 - 구독이 *프로비전 해제됨* 상태이면 기능이 작동하지 않습니다. 구독을 *활성* 상태로 복원하면 백업/복원 기능이 다시 작동합니다. 로컬 디스크의 백업 데이터가 충분히 오랫동안 보관된 경우 백업 데이터를 검색할 수 있습니다. 그러나 구독이 *프로비전 해제됨* 상태로 전환되면 Azure의 백업 데이터가 영구적으로 손실됩니다.
-- 구독이 *만료됨* 상태이면 기능이 작동하지 않습니다. 구독이 *만료됨* 상태이면 예약된 백업이 실행되지 않습니다.
+- 구독이 *만료됨* 상태이면 기능이 작동하지 않습니다. 구독이 *만료*되는 동안에는 예약 된 백업이 실행 되지 않습니다.
 
 ## <a name="troubleshooting"></a>문제 해결
 

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: aac184b9dc7eae8afcf796376d2f7dca684b4367
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 40e20ad4bab0275b44cd868521c7dc70dec52567
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87852789"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936132"
 ---
 # <a name="example-create-a-custom-skill-using-python"></a>예: Python을 사용 하 여 사용자 지정 기술 만들기
 
@@ -26,15 +26,15 @@ ms.locfileid: "87852789"
 
 + 사용자 지정 기술에서 구현 해야 하는 입력/출력 인터페이스에 대 한 소개를 보려면 [사용자 지정 기술 인터페이스](cognitive-search-custom-skill-interface.md) 를 검토 합니다.
 
-+ 환경을 설정 합니다. Visual Studio Code 및 Python 확장을 사용 하 여 서버 리스 Azure 함수를 설정 하는 [이 자습서를 완료](https://docs.microsoft.com/azure/python/tutorial-vs-code-serverless-python-01) 했습니다. 이 자습서에서는 다음 도구 및 구성 요소를 설치 하는 과정을 안내 합니다. 
++ 환경을 설정 합니다. Visual Studio Code 및 Python 확장을 사용 하 여 서버 리스 Azure 함수를 설정 하는 [이 자습서를 완료](/azure/python/tutorial-vs-code-serverless-python-01) 했습니다. 이 자습서에서는 다음 도구 및 구성 요소를 설치 하는 과정을 안내 합니다. 
 
   + [Python 3.75](https://www.python.org/downloads/release/python-375/)
   + [Visual Studio Code](https://code.visualstudio.com/)
   + [Visual Studio Code용 Python 확장](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  + [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2)
+  + [Azure Functions Core Tools](../azure-functions/functions-run-local.md#v2)
   + [Visual Studio Code용 Azure Functions 확장](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 
-## <a name="create-an-azure-function"></a>Azure Functions 만들기
+## <a name="create-an-azure-function"></a>Azure Function 만들기
 
 이 예제에서는 Azure 함수를 사용 하 여 web API를 호스트 하는 개념을 보여 주지만 다른 방법이 가능 합니다. [인식 기술에 대한 인터페이스 요구 사항](cognitive-search-custom-skill-interface.md)을 충족하기만 하면, 사용하는 방식은 중요하지 않습니다. 그러나 Azure Functions를 사용하면 사용자 지정 기술을 쉽게 만들 수 있습니다.
 
@@ -270,5 +270,5 @@ POST [Function URL you copied above]
 + [전원 기술: 사용자 지정 기술의 리포지토리입니다.](https://github.com/Azure-Samples/azure-search-power-skills)
 + [AI 보강 파이프라인에 사용자 지정 기술 추가](cognitive-search-custom-skill-interface.md)
 + [기술 집합을 정의하는 방법](cognitive-search-defining-skillset.md)
-+ [기술 집합 만들기(REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [기술 집합 만들기(REST)](/rest/api/searchservice/create-skillset)
 + [보강 필드를 매핑하는 방법](cognitive-search-output-field-mapping.md)

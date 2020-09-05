@@ -10,13 +10,13 @@ ms.date: 05/28/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 00f6085414e5a48647846830f93ba3fb98c382f2
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.openlocfilehash: cad80a554db0424ad8635e81cbfb4225705e9c89
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502514"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89073015"
 ---
 # <a name="check-the-last-sync-time-property-for-a-storage-account"></a>스토리지 계정에 대한 마지막 동기화 시간 속성 확인
 

@@ -3,15 +3,15 @@ title: Windows Virtual Desktop이란? - Azure
 description: Windows Virtual Desktop의 개요입니다.
 author: Heidilohr
 ms.topic: overview
-ms.date: 07/10/2020
+ms.date: 08/20/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 003662beefcb2ee8f99a5f565ed680d406421a62
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: cc5ad91c779a3445712db962fb97bab309eda973
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88002380"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661115"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Windows Virtual Desktop이란?
 
@@ -46,7 +46,7 @@ Windows Virtual Desktop을 사용하면 다음과 같이 확장 가능하고 유
 
 다음과 같이 가상 데스크톱을 배포 및 관리할 수 있습니다.
 
-* Windows Virtual Desktop PowerShell 및 REST 인터페이스를 사용하여 호스트 풀을 구성하고, 앱 그룹을 만들고, 사용자를 할당하고, 리소스를 게시합니다.
+* Azure Portal, Windows Virtual Desktop PowerShell 및 REST 인터페이스를 사용하여 호스트 풀을 구성하고, 앱 그룹을 만들고, 사용자를 할당하고, 리소스를 게시합니다.
 * 단일 호스트 풀에서 전체 데스크톱 또는 개별 원격 앱을 게시하고, 여러 사용자 세트에 대한 개별 앱 그룹을 만들고, 심지어 여러 앱 그룹에 사용자를 할당하여 이미지 수를 줄입니다.
 * 환경을 관리할 때 기본 제공되는 위임된 액세스를 사용하여 역할을 할당하고 다양한 구성 또는 사용자 오류를 이해할 수 있는 진단 정보를 수집합니다.
 * 새 진단 서비스를 사용하여 오류를 해결합니다.
@@ -61,7 +61,7 @@ Windows Virtual Desktop을 사용하면 다음과 같이 확장 가능하고 유
 
 Windows Virtual Desktop을 설정하고 Windows 데스크톱 및 애플리케이션에 사용자를 연결하려면 몇 가지 조건을 충족해야 합니다.
 
-다음 OS에 대한 지원을 추가할 계획이므로 배포하려는 데스크톱 및 앱에 따라 사용자에게 [적절한 라이선스](https://azure.microsoft.com/pricing/details/virtual-desktop/)가 있는지 확인합니다.
+다음 운영 체제를 지원하므로 배포하려는 데스크톱 및 앱에 따라 사용자에게 [적절한 라이선스](https://azure.microsoft.com/pricing/details/virtual-desktop/)가 있는지 확인합니다.
 
 |OS|필수 라이선스|
 |---|---|
@@ -71,11 +71,17 @@ Windows Virtual Desktop을 설정하고 Windows 데스크톱 및 애플리케이
 
 Windows Virtual Desktop을 지원하려면 인프라에 다음과 같은 것들이 필요합니다.
 
-* [Azure Active Directory](/azure/active-directory/)
-* Azure Active Directory와 동기화되는 Windows Server Active Directory입니다. 다음 중 하나를 사용하여 구성할 수 있습니다.
-  * Azure AD Connect(하이브리드 조직용)
-  * Azure AD Domain Services(하이브리드 또는 클라우드 조직용)
-* Windows Server Active Directory를 포함하거나 그에 연결된 가상 네트워크를 포함하고 있는 Azure 구독
+* [Azure Active Directory](/azure/active-directory/).
+* Azure Active Directory와 동기화되는 Windows Server Active Directory입니다. Azure AD Connect(하이브리드 조직의 경우) 또는 Azure AD Domain Services(하이브리드 또는 클라우드 조직의 경우)를 사용하여 이를 구성할 수 있습니다.
+  * Azure Active Directory와 동기화되는 Windows Server AD. 사용자는 Windows Server AD에서 소싱되고 Windows Virtual Desktop VM은 Windows Server AD 도메인에 조인됩니다.
+  * Azure Active Directory와 동기화되는 Windows Server AD. 사용자는 Windows Server AD에서 소싱되고 Windows Virtual Desktop VM은 Azure AD Domain Services 도메인에 조인됩니다.
+  * Azure AD Domain Services 도메인. 사용자는 Azure Active Directory에서 소싱되고 Windows Virtual Desktop VM은 Azure AD Domain Services 도메인에 조인됩니다.
+* Windows Server Active Directory 또는 Azure AD DS 인스턴스를 포함하거나 이에 연결된 가상 네트워크를 포함하는 동일한 Azure AD 테넌트의 부모가 되는 Azure 구독입니다.
+
+Windows Virtual Desktop에 연결하기 위한 사용자 요구 사항:
+
+* 사용자는 Azure AD에 연결된 것과 동일한 Active Directory에서 소싱되어야 합니다. Windows Virtual Desktop은 B2B 또는 MSA 계정을 지원하지 않습니다.
+* Windows Virtual Desktop을 구독하는 데 사용하는 UPN은 VM이 조인된 Active Directory 도메인에 있어야 합니다.
 
 Windows Virtual Desktop에 대해 만드는 Azure 가상 머신은 다음과 같아야 합니다.
 
@@ -91,7 +97,7 @@ Windows Virtual Desktop은 고객이 사용자에게 제공하는 Windows 데스
 
 최적의 성능을 얻을 수 있도록 네트워크가 다음 요구 사항을 충족하는지 확인합니다.
 
-* 클라이언트의 네트워크와 호스트 풀이 배포된 Azure 지역 간의 RTT(왕복) 대기 시간이 150밀리초 미만이어야 합니다.
+* 클라이언트의 네트워크와 호스트 풀이 배포된 Azure 지역 간의 RTT(왕복) 대기 시간이 150밀리초 미만이어야 합니다. [경험 예측 도구](https://azure.microsoft.com/services/virtual-desktop/assessment)를 사용하여 연결 상태와 권장 Azure 지역을 확인합니다.
 * 데스크톱 및 앱을 호스팅하는 VM을 관리 서비스에 연결할 때 네트워크 트래픽이 국가/지역 경계를 벗어날 수 있습니다.
 * 네트워크 성능을 최적화하기 위해 세션 호스트의 VM을 관리 서비스와 동일한 Azure 지역에 배치하는 것이 좋습니다.
 
@@ -111,7 +117,7 @@ Windows Virtual Desktop은 고객이 사용자에게 제공하는 Windows 데스
 > [!IMPORTANT]
 > Windows Virtual Desktop은 현재 Windows Store에서 원격 데스크톱 클라이언트를 지원하지 않습니다. 이 클라이언트에 대한 지원은 향후 릴리스에 추가될 예정입니다.
 
-원격 클라이언트를 사용하기 위해 차단을 해제해야 하는 URL에 대한 자세한 내용은 [Safe URL 목록](safe-url-list.md)을 참조하세요.
+클라이언트를 사용하기 위해 차단을 해제해야 하는 URL에 대한 자세한 내용은 [Safe URL 목록](safe-url-list.md)을 참조하세요.
 
 ## <a name="supported-virtual-machine-os-images"></a>지원되는 가상 머신 OS 이미지
 
@@ -130,10 +136,10 @@ Windows Virtual Desktop은 x86(32비트), Windows 10 Enterprise N 또는 Windows
 
 |운영 체제|Azure 이미지 갤러리|수동 VM 배포|Azure Resource Manager 템플릿 통합|Azure Marketplace에서 호스트 풀 프로비저닝|
 |--------------------------------------|:------:|:------:|:------:|:------:|
-|Windows 10 다중 세션, 버전 1903|예|예|예|예|
-|Windows 10 다중 세션, 버전 1809|예|예|아니요|아니요|
-|Windows 10 Enterprise, 버전 1903|예|예|예|예|
-|Windows 10 Enterprise, 버전 1809|예|예|아니요|아니요|
+|Windows 10 Enterprise(다중 세션) 버전 2004|예|예|예|예|
+|Windows 10 Enterprise(다중 세션) 버전 1909|예|예|예|예|
+|Windows 10 Enterprise(다중 세션) 버전 1903|예|예|아니요|아니요|
+|Windows 10 Enterprise(다중 세션) 버전 1809|예|예|아니요|아니요|
 |Windows 7 Enterprise|예|예|아니요|아니요|
 |Windows Server 2019|예|예|아니요|예|
 |Windows Server 2016|예|예|예|예|

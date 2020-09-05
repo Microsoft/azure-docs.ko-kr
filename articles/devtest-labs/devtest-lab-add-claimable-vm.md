@@ -1,14 +1,14 @@
 ---
 title: Azure DevTest Labs에서 클레임 할 수 있는 Vm 만들기 및 관리 Microsoft Docs
-description: Azure DevTest Labs에서 랩에 클레임할 수 있는 가상 머신을 추가하는 방법 알아보기
+description: Azure Portal를 사용 하 여 Azure DevTest Labs에서 클레임 할 수 있는 가상 컴퓨터를 추가 하는 방법을 알아보고, 가상 컴퓨터를 클레임/클레임 취소 하기 위해 다음 프로세스를 참조 하세요.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7a4e465f0ba6c592f173a0c48aadd51f3e12ea07
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fe949d7104fe6437087e77c403cc0d921ebd025
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85481309"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270982"
 ---
 # <a name="create-and-manage-claimable-vms-in-azure-devtest-labs"></a>Azure DevTest Labs에서 클레임할 수 있는 VM 생성 및 관리
 클레임할 수 있는 VM은 [표준 VM을 추가](devtest-lab-add-vm.md)하는 것과 유사한 방식으로([사용자 지정 이미지](devtest-lab-create-template.md), [수식](devtest-lab-manage-formulas.md) 또는 [Marketplace 이미지](devtest-lab-configure-marketplace-images.md)를 *기반*으로) 랩에 추가합니다. 이 자습서에서는 Azure Portal을 사용하여 클레임할 수 있는 VM을 DevTest Labs의 랩에 추가하는 단계를 안내하고 VM을 클레임 및 클레임 취소하기 위해 따라야 하는 프로세스를 보여줍니다.

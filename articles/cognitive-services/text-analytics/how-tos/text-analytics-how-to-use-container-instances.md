@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 1dde59456126ce1221bdb71f09957c0fd3609427
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: f7dbb79e2d9009b00b21d4c12663d8e6c855a4c0
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86108715"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243754"
 ---
 # <a name="deploy-a-text-analytics-container-to-azure-container-instances"></a>Azure Container Instances에 Text Analytics 컨테이너 배포
 
@@ -23,7 +23,7 @@ Cognitive Services [Text Analytics][install-and-run-containers] 컨테이너를 
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-* Azure 구독을 사용합니다. Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/)을 만듭니다.
+* Azure 구독을 사용합니다. Azure 구독이 아직 없는 경우, 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services)을 만드세요.
 
 [!INCLUDE [Create a Cognitive Services Text Analytics resource](../includes/create-text-analytics-resource.md)]
 

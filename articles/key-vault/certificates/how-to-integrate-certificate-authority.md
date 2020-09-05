@@ -7,15 +7,15 @@ manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: certificates
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: 7627625a917a8f652da62d4197368f023ad8c110
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 01383acad9f221e376f814ecf99794eb0431d0cd
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964501"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588928"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>DigiCert 인증 기관과 Key Vault 통합
 
@@ -105,7 +105,7 @@ New-AzKeyVault -Name 'Contoso-Vaultname' -ResourceGroupName 'ContosoResourceGrou
 
 ```azurepowershell-interactive
 $accountId = "myDigiCertCertCentralAccountID"
-$org = New-AzureKeyVaultCertificateOrganizationDetails -Id OrganizationIDfromDigiCertAccount
+$org = New-AzKeyVaultCertificateOrganizationDetails -Id OrganizationIDfromDigiCertAccount
 $secureApiKey = ConvertTo-SecureString DigiCertCertCentralAPIKey -AsPlainText –Force
 $issuerName = "DigiCertCA"
 ```
@@ -131,6 +131,16 @@ Add-AzKeyVaultCertificate -VaultName "Contoso-Vaultname" -Name "ExampleCertifica
  ![인증서 속성](../media/certificates/how-to-integrate-certificate-authority/certificate-operation-select.png)
 
 자세한 내용은 [Key Vault REST API 참조에서 인증서 작업](/rest/api/keyvault)을 참조하세요. 권한 설정에 대한 내용은 [자격 증명 모음 - 만들기 또는 업데이트](/rest/api/keyvault/vaults/createorupdate) 및 [자격 증명 모음 - 액세스 정책 업데이트](/rest/api/keyvault/vaults/updateaccesspolicy)를 참조하세요.
+
+## <a name="frequently-asked-questions"></a>자주 묻는 질문
+
+- KeyVault를 통해 digicert 와일드 카드 인증서를 생성할 수 있나요? 
+   예. digicert 계정을 구성한 방법에 따라 달라집니다.
+- EV 인증서를 만들어야 하는 경우 어떻게 지정하나요? 
+   인증서를 만들 때 [고급 정책 구성]을 클릭한 다음, 인증서 유형을 지정합니다. 지원되는 값은 다음과 같습니다. OV-SSL, EV-SSL
+- 통합을 통해 digicert 인증서를 만드는 방법과 digicert를 통해 직접 인증서를 획득하는 방법 간에 시간 차이가 있나요?
+   아니요. 인증서를 만들 때 확인 프로세스를 완료하는 데 시간이 걸릴 수 있으며 확인은 DigiCert가 따르는 프로세스에 따라 달라집니다.
+
 
 ## <a name="next-steps"></a>다음 단계
 

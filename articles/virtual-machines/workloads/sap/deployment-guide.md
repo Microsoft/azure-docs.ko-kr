@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: dbcb39641f35ad0f997db30b320826764a08bff1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6b66db639e0b22a7e0c45486465a1fa395aba33d
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082259"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653514"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>SAP NetWeaver에 대한 Azure Virtual Machines 배포
 
@@ -133,7 +133,7 @@ ms.locfileid: "87082259"
 [deployment-guide-contact-support]:deployment-guide.md#3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2 (SAP 용 Azure 확장 문제 해결-지원 문의)
 [deployment-guide-run-the-script]:deployment-guide.md#0d2847ad-865d-4a4c-a405-f9b7baaa00c7 (SAP 용 Azure 확장 문제 해결-설치 스크립트를 실행 합니다.)
 [deployment-guide-redeploy-after-sysprep]:deployment-guide.md#2cd61f22-187d-42ed-bb8c-def0c983d756 (SAP 용 Azure 확장 문제 해결-sysprep 후 다시 배포)
-[deployment-guide-fix-internet-connection]:deployment-guide.md#e92bc57d-80d9-4a2b-a2f4-16713a22ad89 (SAP 용 Azure 확장 문제 해결-인터넷 연결 수정)
+[deployment-guide-fix-internet-connection]:deployment-guide.md#e92bc57d-80d9-4a2b-a2f4-16713a22ad89 ( SAP 용 Azure 확장 문제 해결-인터넷 연결 수정)
 
 
 [deployment-guide-configure-monitoring-scenario-1]:deployment-guide.md#ec323ac3-1de9-4c3a-b770-4ff701def65b (VM 확장 구성)
@@ -256,7 +256,7 @@ ms.locfileid: "87082259"
 [storage-azure-cli-copy-blobs]:../../../storage/common/storage-azure-cli.md#copy-blobs
 [storage-introduction]:../../../storage/common/storage-introduction.md
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
-[storage-premium-storage-preview-portal]:../../windows/disks-types.md
+[storage-premium-storage-preview-portal]:../../disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
 [storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
@@ -1147,7 +1147,7 @@ Azperflib.exe 출력은 SAP용 Azure 성능 카운터가 모두 채워진 상태
 
 1. SAP용 Azure 확장의 출력을 확인합니다.
 
-   a.  `more /var/lib/AzureEnhancedMonitor/PerfCounters`를 실행합니다.
+   a.  `more /var/lib/AzureEnhancedMonitor/PerfCounters`을 실행합니다.
 
    **예상 결과**: 성능 카운터 목록을 반환합니다. 파일은 비어 있으면 안 됩니다.
 
@@ -1155,7 +1155,7 @@ Azperflib.exe 출력은 SAP용 Azure 성능 카운터가 모두 채워진 상태
 
    **예상 결과**: 오류가 **없는** 한 줄을 반환합니다(예: **3;config;Error;;0;0;none;0;1456416792;tst-servercs;** ).
 
-   c. `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`을 실행합니다.
+   다. `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`을 실행합니다.
 
    **예상 결과**: 빈 상태로 반환하거나 존재하지 않습니다.
 
@@ -1163,7 +1163,7 @@ Azperflib.exe 출력은 SAP용 Azure 성능 카운터가 모두 채워진 상태
 
 1. waagent가 설치되고 사용하도록 설정되었는지 확인합니다.
 
-   a.  `sudo ls -al /var/lib/waagent/`를 실행합니다.
+   a.  `sudo ls -al /var/lib/waagent/`을 실행합니다.
 
      **예상 결과**: waagent 디렉터리의 내용을 나열합니다.
 
@@ -1173,7 +1173,7 @@ Azperflib.exe 출력은 SAP용 Azure 성능 카운터가 모두 채워진 상태
 
 1. SAP용 Azure 확장이 설치되어 실행되는지 확인합니다.
 
-   a.  `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`를 실행합니다.
+   a.  `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`을 실행합니다.
 
    **예상 결과**: SAP용 Azure 확장 디렉터리의 콘텐츠를 나열합니다.
 
@@ -1183,7 +1183,7 @@ Azperflib.exe 출력은 SAP용 Azure 성능 카운터가 모두 채워진 상태
 
 1. SAP Note [1031096] 에 설명된 대로 SAP 호스트 에이전트를 설치하고 `saposcol`의 출력을 확인합니다.
 
-   a.  `/usr/sap/hostctrl/exe/saposcol -d`를 실행합니다.
+   a.  `/usr/sap/hostctrl/exe/saposcol -d`을 실행합니다.
 
    b.  `dump ccm`을 실행합니다.
 
@@ -1203,7 +1203,7 @@ SAP NetWeaver ABAP 응용 프로그램 서버가 이미 설치 되어 있는 경
 #### <a name="run-the-readiness-check-on-a-windows-vm"></a>Windows VM에서 준비 검사 실행
 
 1. Azure Virtual Machine에 로그인합니다(관리자 계정 사용은 필요하지 않음).
-1. 웹 브라우저를 열고로 이동 합니다.http://127.0.0.1:11812/azure4sap/metrics
+1. 웹 브라우저를 열고로 이동 합니다. http://127.0.0.1:11812/azure4sap/metrics
 1. 브라우저에서 가상 컴퓨터의 모니터링 데이터를 포함 하는 XML 파일을 표시 하거나 다운로드 해야 합니다. 그렇지 않은 경우 SAP 용 Azure 확장이 설치 되어 있는지 확인 합니다.
 
 ##### <a name="check-the-content-of-the-xml-file"></a>XML 파일의 내용 확인
@@ -1228,7 +1228,7 @@ SAP NetWeaver ABAP 응용 프로그램 서버가 이미 설치 되어 있는 경
 
 1. waagent가 설치되고 사용하도록 설정되었는지 확인합니다.
 
-   a.  `sudo ls -al /var/lib/waagent/`를 실행합니다.
+   a.  `sudo ls -al /var/lib/waagent/`을 실행합니다.
 
      **예상 결과**: waagent 디렉터리의 내용을 나열합니다.
 
@@ -1238,7 +1238,7 @@ SAP NetWeaver ABAP 응용 프로그램 서버가 이미 설치 되어 있는 경
 
 1. SAP용 Azure 확장이 설치되어 실행되는지 확인합니다.
 
-   a.  `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.AzureCAT.AzureEnhancedMonitoring.MonitorX64Linux-*/'`를 실행합니다.
+   a.  `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.AzureCAT.AzureEnhancedMonitoring.MonitorX64Linux-*/'`을 실행합니다.
 
    **예상 결과**: SAP용 Azure 확장 디렉터리의 콘텐츠를 나열합니다.
 
@@ -1248,7 +1248,7 @@ SAP NetWeaver ABAP 응용 프로그램 서버가 이미 설치 되어 있는 경
 
 1. SAP Note [1031096] 에 설명된 대로 SAP 호스트 에이전트를 설치하고 `saposcol`의 출력을 확인합니다.
 
-   a.  `/usr/sap/hostctrl/exe/saposcol -d`를 실행합니다.
+   a.  `/usr/sap/hostctrl/exe/saposcol -d`을 실행합니다.
 
    b.  `dump ccm`을 실행합니다.
 
@@ -1319,7 +1319,7 @@ AzureEnhancedMonitoring Windows 서비스에서 Azure의 성능 메트릭을 수
 
 설치 디렉터리 C:\\Packages\\Plugins\\Microsoft.AzureCAT.AzureEnhancedMonitoring.AzureCATExtensionHandler\\&lt;version>\\drop이 비어 있습니다.
 
-###### <a name="solution"></a>솔루션
+###### <a name="solution"></a>해결 방법
 
 확장이 설치되지 않았습니다. (앞에서 설명한) 프록시 문제인지 여부를 결정합니다. 컴퓨터를 다시 시작하거나 `Set-AzVMAEMExtension` 구성 스크립트를 다시 실행해야 할 수 있습니다.
 
@@ -1346,7 +1346,7 @@ Azperflib.exe 출력에 오류가 발생합니다.
 
 AzureEnhancedMonitoring Windows 서비스가 존재하고 사용하도록 설정되었지만 시작할 수 없습니다. 자세한 내용은 애플리케이션 이벤트 로그를 확인합니다.
 
-###### <a name="solution"></a>솔루션
+###### <a name="solution"></a>해결 방법
 
 구성이 올바르지 않습니다. [SAP용 Azure 확장 구성][deployment-guide-4.5]의 설명대로 VM에서 SAP용 Azure 확장을 다시 시작하세요.
 
@@ -1366,7 +1366,7 @@ Azure의 성능 메트릭은 데몬에 의해 수집됩니다. 데몬이 실행�
 
 디렉터리 \\var\\lib\\waagent\\에 SAP용 Azure 확장의 하위 디렉터리가 존재하지 않습니다.
 
-###### <a name="solution"></a>솔루션
+###### <a name="solution"></a>해결 방법
 
 확장이 설치되지 않았습니다. (앞에서 설명한) 프록시 문제인지 여부를 결정합니다. 컴퓨터를 다시 시작하거나 `Set-AzVMAEMExtension` 구성 스크립트를 다시 실행해야 할 수 있습니다.
 
@@ -1412,7 +1412,7 @@ AzureEnhancedMonitoring 프로세스는 Azure에서 성능 메트릭을 수집 �
 
 설치 디렉터리 C: \\ 패키지 \\ 플러그 인 \\ AzureCAT. AzureEnhancedMonitoring. MonitorX64Windows \\ &lt; 버전> 비어 있습니다.
 
-###### <a name="solution"></a>솔루션
+###### <a name="solution"></a>해결 방법
 
 확장이 설치되지 않았습니다. (앞에서 설명한) 프록시 문제인지 여부를 결정합니다. 컴퓨터를 다시 시작 하거나 VM 확장을 다시 설치 해야 할 수 있습니다.
 
@@ -1432,7 +1432,7 @@ Azure의 성능 메트릭은 데몬에 의해 수집됩니다. 데몬이 실행�
 
 디렉터리 \\var\\lib\\waagent\\에 SAP용 Azure 확장의 하위 디렉터리가 존재하지 않습니다.
 
-###### <a name="solution"></a>솔루션
+###### <a name="solution"></a>해결 방법
 
 확장이 설치되지 않았습니다. (앞에서 설명한) 프록시 문제인지 여부를 결정합니다. 컴퓨터를 다시 시작 하거나 VM 확장을 다시 설치 해야 할 수 있습니다.
 

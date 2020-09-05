@@ -3,12 +3,12 @@ title: Azure DevTest Labs의 랩 Vm에서 관리 되는 id를 사용 하도록 �
 description: 이 문서에서는 랩 소유자가 랩 가상 머신에서 사용자 할당 관리 id를 사용 하도록 설정 하는 방법을 보여 줍니다.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 886dc3b541c624d9f7a300fbbe696e1d2e143641
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b4bf2900acebaeecd5cbc4cb65635aee6de87dda
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85476005"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717638"
 ---
 # <a name="enable-user-assigned-managed-identities-on-lab-virtual-machines-in-azure-devtest-labs"></a>Azure DevTest Labs에서 랩 가상 컴퓨터에 대 한 사용자 할당 관리 id 사용
 랩 소유자는 Azure DevTest Labs에서 랩 Vm (가상 컴퓨터)에 사용자 할당 관리 id를 사용 하도록 설정할 수 있습니다.
@@ -25,14 +25,16 @@ ms.locfileid: "85476005"
 
 1. [구독에서 사용자 할당 관리 id 만들기](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity)
 1. 랩에 대 한 **구성 및 정책** 페이지로 이동 합니다.
-2. 왼쪽 메뉴에서 **id (미리 보기)** 를 선택 합니다.
-3. **가상 컴퓨터** 탭을 선택 합니다.
-4. **추가** 를 선택 하 여 미리 채워진 드롭다운 목록에서 기존 id를 선택 합니다. 
+1. 왼쪽 메뉴에서 **id (미리 보기)** 를 선택 합니다.
+1. **가상 컴퓨터** 탭을 선택 합니다.
+1. **추가** 를 선택 하 여 미리 채워진 드롭다운 목록에서 기존 id를 선택 합니다. 
 
-    ![Id 추가 단추](./media/enable-managed-identities-lab-vms/add-identity-button.png)
-5. 드롭다운 목록에서 기존 **사용자 관리 id** 를 선택 하 고 **확인**을 선택 합니다. 
+    > [!div class="mx-imgBorder"]
+    > ![Id 추가 단추](./media/enable-managed-identities-lab-vms/add-identity-button.png)
+1. 드롭다운 목록에서 기존 **사용자 관리 id** 를 선택 하 고 **확인**을 선택 합니다. 
 
-    ![Id 추가](./media/enable-managed-identities-lab-vms/add-identity.png)
+    > [!div class="mx-imgBorder"]
+    > ![Id 추가](./media/enable-managed-identities-lab-vms/add-identity.png)
 
 ## <a name="use-api"></a>API 사용
 

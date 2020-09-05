@@ -6,12 +6,13 @@ ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 3a9039470c32b89d398dd41e3df99e91c70d913c
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4714ec9773b98887de483b7353eea9f4416eec19
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542639"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89017756"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Azure Cosmos DB에서 데이터 액세스 보호
 
@@ -74,7 +75,7 @@ CosmosClient client = new CosmosClient(endpointUrl, authorizationKey);
 
 :::code language="python" source="~/cosmosdb-python-sdk/sdk/cosmos/azure-cosmos/samples/access_cosmos_with_resource_token.py" id="configureConnectivity":::
 
-## <a name="resource-tokens"></a>리소스 토큰<a id="resource-tokens"></a>
+## <a name="resource-tokens"></a>리소스 토큰 <a id="resource-tokens"></a>
 
 리소스 토큰은 데이터베이스 내에서 애플리케이션 리소스에 대한 액세스를 제공합니다. 리소스 토큰:
 
@@ -107,7 +108,7 @@ Cosmos DB 리소스 토큰은 사용자가 부여한 권한에 따라 마스터 
 
 리소스 토큰을 생성하거나 broker하는 데 사용되는 중간 계층 서비스의 예는 [ResourceTokenBroker 앱](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers)을 참조하세요.
 
-## <a name="users"></a>못하게<a id="users"></a>
+## <a name="users"></a>사용자<a id="users"></a>
 
 사용자 Azure Cosmos DB Cosmos 데이터베이스와 연결 됩니다.  각 데이터베이스는 0개 이상의 Cosmos DB 사용자를 포함할 수 있습니다. 다음 코드 샘플에서는 [.NET SDK v3 Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/UserManagement)를 사용 하 여 Cosmos DB 사용자를 만드는 방법을 보여 줍니다.
 

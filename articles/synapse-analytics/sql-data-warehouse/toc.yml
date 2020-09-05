@@ -84,7 +84,7 @@
               href: /azure/sql-database/sql-database-data-discovery-and-classification?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
             - name: 취약점 평가
               href: /azure/sql-database/sql-vulnerability-assessment?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
-            - name: 고급 위협 보호
+            - name: Advanced Threat Protection
               href: /azure/sql-database/sql-database-threat-detection-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
         - name: 감사
           href: /azure/sql-database/sql-database-auditing?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
@@ -122,7 +122,7 @@
               href: /azure/sql-database/transparent-data-encryption-azure-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
             - name: Bring Your Own Key를 사용한 TDE
               href: /azure/sql-database/transparent-data-encryption-byok-azure-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json
-    - name: 데이터 로드
+    - name: 데이터 수집 및 준비
       items:
         - name: 개요
           href: design-elt-data-loading.md
@@ -222,8 +222,6 @@
               href: sql-data-warehouse-develop-user-defined-schemas.md
             - name: 변수 할당
               href: sql-data-warehouse-develop-variable-assignment.md
-            - name: 보기
-              href: sql-data-warehouse-develop-views.md
     - name: 쿼리
       items:
         - name: 동적 SQL
@@ -284,7 +282,7 @@
           href: sql-data-warehouse-encryption-tde.md
         - name: 암호화 사용 - T-SQL
           href: sql-data-warehouse-encryption-tde-tsql.md
-    - name: 데이터 로드
+    - name: 데이터 로드 및 준비
       items:
         - name: ADLS(Azure Data Lake Storage)에서
           href: sql-data-warehouse-load-from-azure-data-lake-store.md

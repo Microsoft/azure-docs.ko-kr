@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 11742b00b62437b3acd6fa804a668cf83c2860f6
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: c99aa1bdb246d242c4c1cbd33672367b66f923ea
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88007261"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89229975"
 ---
 # <a name="set-up-the-powershell-module-for-windows-virtual-desktop"></a>Windows Virtual Desktop에 대한 PowerShell 모듈 설정
 
@@ -40,6 +40,12 @@ Install-Module -Name Az.DesktopVirtualization
 ```powershell
 Connect-AzAccount
 ```
+
+>! 중요 한 US Gov 포털에 연결 하는 경우 대신이 cmdlet을 실행 합니다.
+> 
+> ```powershell
+> Connect-AzAccount -EnvironmentName AzureUSGovernment
+> ```
 
 Azure 계정에 로그인하려면 Connect cmdlet을 실행할 때 생성되는 코드가 필요합니다. 로그인하려면 <https://microsoft.com/devicelogin>으로 이동하여 코드를 입력한 다음, Azure 관리자 자격 증명을 사용하여 로그인합니다.
 

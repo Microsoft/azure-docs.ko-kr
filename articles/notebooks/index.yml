@@ -9,12 +9,12 @@ metadata:
   author: JoshuaPartlow
   ms.author: joshuapa
   ms.date: 06/17/2020
-  ms.openlocfilehash: 0065b8b609ca9ef29365127333ad1a39f3327c1b
-  ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+  ms.openlocfilehash: cdc98d01a4fae5e4b09af001ec65dd7a29c34c0f
+  ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86181423"
+  ms.lasthandoff: 08/20/2020
+  ms.locfileid: "88640279"
 landingContent:
 - title: Azure Notebooks 정보
   linkLists:
@@ -28,7 +28,7 @@ landingContent:
       url: azure-notebooks-samples.md
   - linkListType: get-started
     links:
-    - text: Azure Notebooks 액세스
+    - text: Azure Notebooks 파일 액세스
       url: https://notebooks.azure.com/
 - title: Azure Notebooks 시작
   linkLists:

@@ -3,16 +3,17 @@ title: FabricClient를 사용 하 여 Azure Service Fabric 배포
 description: FabricClient API를 사용하여 Service Fabric에서 애플리케이션을 배포 및 제거합니다.
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: 25b874d1be8ab50d8076ff8fe9423c8cc0187512
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 565e6b8f23f159a5c231295694830917217a3d19
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75376973"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89009303"
 ---
 # <a name="deploy-and-remove-applications-using-fabricclient"></a>FabricClient를 사용하여 애플리케이션 배포 및 제거
 > [!div class="op_single_selector"]
-> * [리소스 관리자](service-fabric-application-arm-resource.md)
+> * [Resource Manager](service-fabric-application-arm-resource.md)
 > * [PowerShell](service-fabric-deploy-remove-applications.md)
 > * [Service Fabric CLI](service-fabric-application-lifecycle-sfctl.md)
 > * [FabricClient API](service-fabric-deploy-remove-applications-fabricclient.md)

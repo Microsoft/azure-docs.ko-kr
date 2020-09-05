@@ -2,26 +2,21 @@
 title: '자습서: Ariba와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Asana 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 837e38fe-8f55-475c-87f4-6394dc1fee2b
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5531a7c1a95e472239c639e3307623fc4ccedd37
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: dd2c02f25584fd32acd32277a1dd2300c6a98e73
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73157877"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549537"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-asana"></a>자습서: Asana와 Azure Active Directory 통합
 
@@ -128,7 +123,7 @@ Asana에서 Azure AD Single Sign-On을 구성하려면 다음 단계를 수행�
 
 ### <a name="configure-asana-single-sign-on"></a>Asana Single Sign-On 구성
 
-1. 다른 브라우저 창에서 Asana 애플리케이션에 로그온합니다. Asana에서 SSO를 구성하려면 화면 오른쪽 위 모서리에서 작업 영역 이름을 클릭하여 작업 영역 설정에 액세스합니다. 그런 다음 **\<작업 영역 이름\> 설정**을 클릭합니다.
+1. 다른 브라우저 창에서 Asana 애플리케이션에 로그온합니다. Asana에서 SSO를 구성하려면 화면 오른쪽 위 모서리에서 작업 영역 이름을 클릭하여 작업 영역 설정에 액세스합니다. 그런 다음, **\<your workspace name\> 설정**을 클릭합니다.
 
     ![Asana SSO 설정](./media/asana-tutorial/tutorial_asana_09.png)
 

@@ -4,12 +4,13 @@ description: Azure에서 Service Bus 큐를 사용하여 계층 간에 통신하
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 044d0698f1ea181e8f508f92ad2c30ec29b6490b
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 746257195220d26ad5d011a39022a3957e8cb1ae
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067837"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89021785"
 ---
 # <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>Azure Service Bus 큐를 사용하는 .NET 다중 계층 애플리케이션
 
@@ -65,13 +66,13 @@ Service Bus는 조정된 메시징을 지원하는 두 개의 엔터티인 큐�
 1. 관리자 권한을 사용하여 Visual Studio 시작: **Visual Studio** 프로그램 아이콘을 마우스 오른쪽 단추로 클릭한 다음 **관리자 권한으로 실행**을 클릭합니다. 이 문서의 뒷부분에서 설명하는 Azure 컴퓨팅 에뮬레이터를 사용하려면 Visual Studio를 관리자 권한으로 실행해야 합니다.
    
    Visual Studio의 **파일** 메뉴에서 **새로 만들기**를 클릭한 다음, **프로젝트**를 클릭합니다.
-2. **설치된 템플릿**의 **Visual C#** 에서 **클라우드**를 클릭한 다음 **Azure Cloud Service**를 클릭합니다. 프로젝트의 이름을 **MultiTierApp**으로 지정합니다. 그런 다음, **확인**을 클릭합니다.
+2. **설치된 템플릿**의 **Visual C#** 에서 **클라우드**를 클릭한 다음 **Azure Cloud Service**를 클릭합니다. 프로젝트의 이름을 **MultiTierApp**으로 지정합니다. 그런 다음 **확인**을 클릭합니다.
    
    ![클라우드가 선택 된 새 프로젝트 대화 상자의 스크린샷 및 Azure 클라우드 서비스 Visual c #이 강조 표시 되어 빨간색으로 표시 되어 있습니다.][9]
 3. **역할** 창에서 **ASP.NET 웹 역할**을 두 번 클릭합니다.
    
    ![ASP.NET 웹 역할이 선택 되 고 WebRole1도 선택 된 새 Microsoft Azure 클라우드 서비스 대화 상자의 스크린샷][10]
-4. **Azure Cloud Service 솔루션**에서 **WebRole1**을 마우스로 가리키고 연필 아이콘을 클릭한 다음 웹 역할의 이름을 **FrontendWebRole**로 변경합니다. 그런 다음, **확인**을 클릭합니다. "FrontEnd"가 아니라 소문자 "e"를 사용하여 "Frontend"를 입력해야 합니다.
+4. **Azure Cloud Service 솔루션**에서 **WebRole1**을 마우스로 가리키고 연필 아이콘을 클릭한 다음 웹 역할의 이름을 **FrontendWebRole**로 변경합니다. 그런 다음 **확인**을 클릭합니다. "FrontEnd"가 아니라 소문자 "e"를 사용하여 "Frontend"를 입력해야 합니다.
    
    ![솔루션이 FrontendWebRole로 이름이 변경 된 새 Microsoft Azure 클라우드 서비스 대화 상자의 스크린샷][11]
 5. **새 ASP.NET 프로젝트** 대화 상자의 **템플릿 선택** 목록에서 **MVC**를 클릭합니다.

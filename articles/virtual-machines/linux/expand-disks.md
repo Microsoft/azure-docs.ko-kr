@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 27c9a7c2e526a33875402827e2eee2c63943e058
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bbb959b6b1d71c81f7b920b3962f693716041e16
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84659732"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89181751"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Azure CLI를 사용하여 Linux VM에서 가상 하드 디스크 확장
 
@@ -56,7 +56,7 @@ ms.locfileid: "84659732"
     ```
 
     > [!NOTE]
-    > 관리 디스크를 확장하면 업데이트된 크기가 가장 가까운 관리 디스크의 크기로 반올림됩니다. 사용 가능한 Managed Disk 크기 및 계층의 테이블은 [Azure Managed Disks 개요 - 가격 책정 및 청구](../windows/managed-disks-overview.md)를 참조하세요.
+    > 관리 디스크를 확장하면 업데이트된 크기가 가장 가까운 관리 디스크의 크기로 반올림됩니다. 사용 가능한 Managed Disk 크기 및 계층의 테이블은 [Azure Managed Disks 개요 - 가격 책정 및 청구](../managed-disks-overview.md)를 참조하세요.
 
 1. [az vm start](/cli/azure/vm#az-vm-start)를 사용하여 VM을 시작합니다. 다음 예제에서는 리소스 그룹 *myResourceGroup*에서 *myVM*이라는 VM을 시작합니다.
 
@@ -71,7 +71,7 @@ ms.locfileid: "84659732"
 1. 적절한 자격 증명을 사용하여 VM에 SSH합니다. [az vm show](/cli/azure/vm#az-vm-show)를 사용하여 VM의 공용 IP 주소를 볼 수 있습니다.
 
     ```azurecli
-    az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+    az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --output tsv
     ```
 
 1. 기본 파티션과 파일 시스템을 확장합니다.
@@ -105,7 +105,7 @@ ms.locfileid: "84659732"
         1      0.00B  107GB  107GB  ext4
     ```
 
-    다. `resizepart`를 사용하여 파티션을 확장합니다. 파티션 수 *1*과 새 파티션에 대한 크기를 입력합니다.
+    c. `resizepart`를 사용하여 파티션을 확장합니다. 파티션 수 *1*과 새 파티션에 대한 크기를 입력합니다.
 
     ```bash
     (parted) resizepart

@@ -7,12 +7,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: robinsh
-ms.openlocfilehash: bcc53322ac6942b52853be561bc3441e23fbf53b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b4e7d8c5c518e4ba4a2a9116898be2bba7df0b06
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80632940"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022448"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>디바이스 및 모듈 쌍, 작업 및 메시지 라우팅에 대한 IoT Hub 쿼리 언어
 
@@ -457,13 +458,13 @@ GROUP BY <group_by_element>
 
 쌍과 작업을 쿼리할 때 지원되는 유일한 함수는 다음과 같습니다.
 
-| 기능 | 설명 |
+| 함수 | 설명 |
 | -------- | ----------- |
 | IS_DEFINED(속성) | 속성에 값(`null` 포함)이 할당되었는지 여부를 나타내는 부울 값을 반환합니다. |
 
 경로 조건에서 지원되는 수학 함수는 다음과 같습니다.
 
-| 기능 | 설명 |
+| 함수 | 설명 |
 | -------- | ----------- |
 | ABS(x) | 지정한 숫자 식의 절대(양수) 값을 반환합니다. |
 | EXP(x) | 지정한 숫자 식(e^x)의 지수 값을 반환합니다. |
@@ -476,7 +477,7 @@ GROUP BY <group_by_element>
 
 경로 조건에서 지원되는 형식 검사 및 캐스팅 함수는 다음과 같습니다.
 
-| 기능 | 설명 |
+| 함수 | 설명 |
 | -------- | ----------- |
 | AS_NUMBER | 입력 문자열을 숫자로 변환합니다. 입력이 숫자이면 `noop`이고, 문자열이 숫자를 나타내지 않으면 `Undefined`입니다.|
 | IS_ARRAY | 지정한 식의 형식이 배열인지 여부를 나타내는 부울 값을 반환합니다. |
@@ -490,7 +491,7 @@ GROUP BY <group_by_element>
 
 경로 조건에서 지원되는 문자열 함수는 다음과 같습니다.
 
-| 기능 | 설명 |
+| 함수 | 설명 |
 | -------- | ----------- |
 | CONCAT(x, y, …) | 둘 이상의 문자열 값을 연결한 결과인 문자열을 반환합니다. |
 | LENGTH(x) | 지정한 문자열 식의 문자 수를 반환합니다.|

@@ -12,12 +12,12 @@ ms.date: 02/03/2020
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 3b529c8112683281148751091ee93dd12ae73b4a
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: dbe05f264b0fca6c1a5e8e7d944d94a6bed55392
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83741932"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798026"
 ---
 # <a name="perform-an-access-review-from-the-my-apps-portal"></a>내 앱 포털에서 액세스 검토를 수행
 
@@ -28,7 +28,7 @@ ms.locfileid: "83741932"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-portal.md)]
 
 >[!Important]
->이 콘텐츠는 **내 앱** 사용자를 위한 것입니다. 관리자인 경우 [애플리케이션 관리 설명서](https://docs.microsoft.com/azure/active-directory/manage-apps)에서 클라우드 기반 앱을 설정 및 관리하는 방법에 대한 더 자세한 정보를 확인할 수 있습니다.
+>이 콘텐츠는 **내 앱** 사용자를 위한 것입니다. 관리자인 경우 [애플리케이션 관리 설명서](../manage-apps/index.yml)에서 클라우드 기반 앱을 설정 및 관리하는 방법에 대한 더 자세한 정보를 확인할 수 있습니다.
 
 ## <a name="manage-access-reviews"></a>액세스 검토 관리
 
@@ -58,7 +58,7 @@ ms.locfileid: "83741932"
     ![검토 세부 정보를 표시하는 액세스 검토 페이지](media/my-apps-portal/my-apps-portal-perform-access-reviews-page.png)
 
     >[!Note]
-    >조직의 그룹 및 앱 액세스를 검토하도록 허용된 관리자인 경우 다른 페이지가 표시됩니다. 조직의 그룹 또는 앱을 검토하는 방법에 대한 자세한 내용은 [Azure AD 액세스 검토에서 그룹 또는 애플리케이션에 대한 액세스 검토](https://docs.microsoft.com/azure/active-directory/governance/perform-access-review)를 참조하세요.
+    >조직의 그룹 및 앱 액세스를 검토하도록 허용된 관리자인 경우 다른 페이지가 표시됩니다. 조직의 그룹 또는 앱을 검토하는 방법에 대한 자세한 내용은 [Azure AD 액세스 검토에서 그룹 또는 애플리케이션에 대한 액세스 검토](../governance/perform-access-review.md)를 참조하세요.
 
 6. 액세스를 유지하려면 **예**를 선택하고 액세스를 제거하려면 **아니요**를 선택합니다.
 

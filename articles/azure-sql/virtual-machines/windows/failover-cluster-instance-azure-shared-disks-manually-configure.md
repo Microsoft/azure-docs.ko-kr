@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: e1a4a366b3e4fa045df69683d6e72b157ccf0a1f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ffb739affac68898f6ed5ff1d972d3fd4a70df2f
+ms.sourcegitcommit: 420c30c760caf5742ba2e71f18cfd7649d1ead8a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87003630"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89055263"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Azure 공유 디스크를 사용 하 여 FCI 만들기 (Azure Vm에서 SQL Server)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -28,11 +28,11 @@ ms.locfileid: "87003630"
 자세한 내용은 [Azure vm의 SQL Server를 사용 하는 Fci](failover-cluster-instance-overview.md) 개요 및 [클러스터 모범 사례](hadr-cluster-best-practices.md)를 참조 하세요. 
 
 
-## <a name="prerequisites"></a>필수 조건 
+## <a name="prerequisites"></a>필수 구성 요소 
 
 이 문서의 지침을 완료 하기 전에 다음이 이미 있어야 합니다.
 
-- Azure 구독. [무료로](https://azure.microsoft.com/free/)시작 하세요. 
+- Azure 구독 [무료로](https://azure.microsoft.com/free/)시작 하세요. 
 - 장애 도메인 및 업데이트 도메인을 **1**로 설정 하 여 만든 가용성 집합을 사용 하는 동일한 [가용성 집합](../../../virtual-machines/linux/tutorial-availability-sets.md) 및 [근접 배치 그룹](../../../virtual-machines/windows/co-location.md#proximity-placement-groups)에서 두 개 이상의 [미국 중부-준비 된 Windows Azure 가상 컴퓨터](failover-cluster-instance-prepare-vm.md) 
 - Azure 가상 머신과 Active Directory 모두에서 개체를 만들 수 있는 권한이 있는 계정
 - 최신 버전의 [PowerShell](/powershell/azure/install-az-ps?view=azps-4.2.0)입니다. 
@@ -213,7 +213,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 ## <a name="configure-connectivity"></a>연결 구성 
 
-현재 주 노드로 트래픽을 적절 하 게 라우팅하려면 사용자 환경에 적합 한 연결 옵션을 구성 합니다. [Azure 부하 분산 장치](hadr-vnn-azure-load-balancer-configure.md) 를 만들거나 SQL Server 2019 및 Windows Server 2019를 사용 하는 경우 [분산 네트워크 이름](hadr-distributed-network-name-dnn-configure.md) 기능을 대신 미리 볼 수 있습니다. 
+현재 주 노드로 트래픽을 적절 하 게 라우팅하려면 사용자 환경에 적합 한 연결 옵션을 구성 합니다. [Azure 부하 분산 장치](hadr-vnn-azure-load-balancer-configure.md) 를 만들 수도 있고, SQL Server 2019 및 Windows Server 2016를 사용 하는 경우에는 [분산 네트워크 이름](hadr-distributed-network-name-dnn-configure.md) 기능을 미리 볼 수 있습니다. 
 
 ## <a name="limitations"></a>제한 사항
 

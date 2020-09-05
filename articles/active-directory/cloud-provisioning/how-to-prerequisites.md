@@ -11,12 +11,12 @@ ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7eb632405ef17ef4100503f30168c1207179f48
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7cf072ae9544cd479aeca02d9b9fcd670b8eb5fe
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85373865"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226899"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Azure AD Connect 클라우드 프로비저닝에 대한 필수 조건
 이 문서에서는 ID 솔루션으로 Azure AD(Azure Active Directory) Connect 클라우드 프로비저닝을 선택하고 사용하는 방법에 대한 지침을 제공합니다.
@@ -27,7 +27,7 @@ ms.locfileid: "85373865"
 Azure AD Connect 클라우드 프로비저닝을 사용하려면 다음이 필요합니다.
     
 - 게스트 사용자가 아닌 Azure AD 테 넌 트에 대 한 하이브리드 id 관리자 계정입니다.
-- Windows 2012 R2 이상 버전을 사용하는 프로비저닝 에이전트에 대한 온-프레미스 서버  이 서버는 [Active Directory 관리 계층 모델](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)을 기반으로 하는 계층 0 서버 여야 합니다.
+- Windows 2012 R2 이상 버전을 사용하는 프로비저닝 에이전트에 대한 온-프레미스 서버  이 서버는 [Active Directory 관리 계층 모델](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)을 기반으로 하는 계층 0 서버 여야 합니다.
 - 온-프레미스 방화벽 구성
 
 >[!NOTE]
@@ -37,12 +37,12 @@ Azure AD Connect 클라우드 프로비저닝을 사용하려면 다음이 필�
 
 ### <a name="in-the-azure-active-directory-admin-center"></a>Azure Active Directory 관리 센터에서
 
-1. Azure AD 테 넌 트에서 클라우드 전용 하이브리드 id 관리자 계정을 만듭니다. 이러한 방식으로 온-프레미스 서비스가 실패하거나 사용할 수 없게 되면 테넌트의 구성을 관리할 수 있습니다. [클라우드 전용 하이브리드 id 관리자 계정을 추가](../active-directory-users-create-azure-portal.md)하는 방법에 대해 알아봅니다. 테넌트에서 잠기지 않도록 하려면 이 단계를 완료하는 것이 중요합니다.
-1. Azure AD 테넌트에 [사용자 지정 도메인 이름](../active-directory-domains-add-azure-portal.md)을 하나 이상 추가합니다. 사용자는 이러한 도메인 이름 중 하나로 로그인할 수 있습니다.
+1. Azure AD 테 넌 트에서 클라우드 전용 하이브리드 id 관리자 계정을 만듭니다. 이러한 방식으로 온-프레미스 서비스가 실패하거나 사용할 수 없게 되면 테넌트의 구성을 관리할 수 있습니다. [클라우드 전용 하이브리드 id 관리자 계정을 추가](../fundamentals/add-users-azure-active-directory.md)하는 방법에 대해 알아봅니다. 테넌트에서 잠기지 않도록 하려면 이 단계를 완료하는 것이 중요합니다.
+1. Azure AD 테넌트에 [사용자 지정 도메인 이름](../fundamentals/add-custom-domain.md)을 하나 이상 추가합니다. 사용자는 이러한 도메인 이름 중 하나로 로그인할 수 있습니다.
 
 ### <a name="in-your-directory-in-active-directory"></a>Active Directory의 디렉터리에서
 
-[IdFix 도구](https://docs.microsoft.com/office365/enterprise/prepare-directory-attributes-for-synch-with-idfix)를 실행하여 동기화를 위한 디렉터리 특성을 준비합니다.
+[IdFix 도구](/office365/enterprise/prepare-directory-attributes-for-synch-with-idfix)를 실행하여 동기화를 위한 디렉터리 특성을 준비합니다.
 
 ### <a name="in-your-on-premises-environment"></a>온-프레미스 환경에서
 
@@ -96,4 +96,3 @@ TLS 1.2를 사용하도록 설정하려면 다음 단계를 수행합니다.
 
 - [프로비저닝이란?](what-is-provisioning.md)
 - [Azure AD Connect 클라우드 프로비저닝이란?](what-is-cloud-provisioning.md)
-

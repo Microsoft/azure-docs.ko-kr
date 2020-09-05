@@ -2,26 +2,21 @@
 title: '자습서: ArcGIS Enterprise와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 ArcGIS Enterprise 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: daveba
-ms.reviewer: barbkess
-ms.assetid: 24809e9d-a4aa-4504-95a9-e4fcf484f431
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/28/2018
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57eda7e1d5ffedf7d5b867bfa7a59850fbadaf99
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: a544a98b3a9d5c2d30f95240325e91018d2f40c9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905026"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549616"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-enterprise"></a>자습서: ArcGIS Enterprise와 Azure Active Directory 통합
 
@@ -48,8 +43,6 @@ ArcGIS Enterprise와 Azure AD 통합을 구성하려면 다음 항목이 필요�
 ## <a name="scenario-description"></a>시나리오 설명
 
 이 자습서에서는 테스트 환경에서 Azure AD Single Sign-On을 구성하고 테스트합니다.
-
-
 
 * ArcGIS Enterprise에서 **SP 및 IDP** 시작 SSO를 지원합니다.
 * ArcGIS Enterprise에서 **Just-In-Time** 사용자 프로비전을 지원합니다.
@@ -132,21 +125,30 @@ Single Sign-On이 작동하려면 Azure AD 사용자와 [애플리케이션 이�
 
 ### <a name="configure-arcgis-enterprise-single-sign-on"></a>ArcGIS Enterprise Single Sign-On 구성
 
-1. 다른 웹 브라우저 창에서 ArcGIS Enterprise 회사 사이트에 관리자로 로그인합니다.
+1. ArcGIS Enterprise 내에서 구성을 자동화하려면 **확장 설치**를 클릭하여 **내 앱 보안 로그인 브라우저 확장**을 설치해야 합니다.
 
-2. **조직 > 설정 편집**을 선택합니다.
+    ![내 앱 확장](common/install-myappssecure-extension.png)
+
+1. 브라우저에 확장을 추가한 후 **ArcGIS Enterprise 설정**을 클릭하면 ArcGIS Enterprise 애플리케이션으로 이동됩니다. 여기에서 관리자 자격 증명을 입력하여 ArcGIS Enterprise에 로그인합니다. 브라우저 확장에서 애플리케이션을 자동으로 구성하고 3-7단계를 자동화합니다.
+
+    ![설정 구성](common/setup-sso.png)
+
+1. ArcGIS Enterprise를 수동으로 설정하려면 ArcGIS Enterprise 회사 사이트에 관리자 권한으로 로그인합니다.
+
+
+1. **조직 > 설정 편집**을 선택합니다.
 
     ![ArcGIS Enterprise 구성](./media/arcgisenterprise-tutorial/configure1.png)
 
-3. **보안** 탭을 선택합니다.
+1. **보안** 탭을 선택합니다.
 
     ![ArcGIS Enterprise 구성](./media/arcgisenterprise-tutorial/configure2.png)
 
-4. **SAML을 통한 Enterprise 로그인** 섹션으로 스크롤 다운하여 **ENTERPRISE 로그인 설정**을 선택합니다.
+1. **SAML을 통한 Enterprise 로그인** 섹션으로 스크롤 다운하여 **ENTERPRISE 로그인 설정**을 선택합니다.
 
     ![ArcGIS Enterprise 구성](./media/arcgisenterprise-tutorial/configure3.png)
 
-5. **ID 공급자 설정** 섹션에서 다음 단계를 수행합니다.
+1. **ID 공급자 설정** 섹션에서 다음 단계를 수행합니다.
 
     ![ArcGIS Enterprise 구성](./media/arcgisenterprise-tutorial/configure4.png)
 

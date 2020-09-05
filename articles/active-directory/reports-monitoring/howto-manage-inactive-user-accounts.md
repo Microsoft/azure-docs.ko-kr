@@ -17,12 +17,12 @@ ms.date: 04/07/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92f6f32298dcccca4eba08fd25de0504416e5560
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5b48a84bb69a356815cccd1e33c555eeb667699f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608146"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244724"
 ---
 # <a name="how-to-manage-inactive-user-accounts-in-azure-ad"></a>방법: Azure AD의 비활성 사용자 계정 관리
 
@@ -58,7 +58,7 @@ ms.locfileid: "85608146"
 
 ### <a name="how-can-i-access-this-property"></a>이 속성에 액세스하려면 어떻게 해야 하나요?
 
-**lastSignInDateTime** 속성은 [Microsoft Graph REST API](https://docs.microsoft.com/graph/overview?view=graph-rest-beta#whats-in-microsoft-graph)의 [signInActivity 리소스 종류](https://docs.microsoft.com/graph/api/resources/signinactivity?view=graph-rest-beta)에 의해 노출됩니다.   
+**lastSignInDateTime** 속성은 [Microsoft Graph REST API](/graph/overview?view=graph-rest-beta#whats-in-microsoft-graph)의 [signInActivity 리소스 종류](/graph/api/resources/signinactivity?view=graph-rest-beta)에 의해 노출됩니다.   
 
 ### <a name="is-the-lastsignindatetime-property-available-through-the-get-azureaduser-cmdlet"></a>Get-AzureAdUser cmdlet을 통해 lastSignInDateTime 속성을 사용할 수 있나요?
 
@@ -91,5 +91,5 @@ lastSignInDateTime 타임스탬프를 생성하려면 성공적인 로그인이 
 ## <a name="next-steps"></a>다음 단계
 
 * [인증서와 함께 Azure Active Directory reporting API를 사용하여 데이터 가져오기](tutorial-access-api-with-certificates.md).
-* [감사 API 참조](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
-* [로그인 활동 보고서 API 참조](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+* [감사 API 참조](/graph/api/resources/directoryaudit?view=graph-rest-beta) 
+* [로그인 활동 보고서 API 참조](/graph/api/resources/signin?view=graph-rest-beta)

@@ -2,25 +2,21 @@
 title: '자습서: RedVector와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 RedVector 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 99042f39-0ab2-475b-8df8-3016d7f875e9
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: f3660956a3e66fc9a632eace378feb8873bceaf8
-ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
+ms.openlocfilehash: 69b699ed54778f4c65a0517ac60b6a4a9dc39783
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2020
-ms.locfileid: "85506092"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548823"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-redvector"></a>자습서: Azure Active Directory와 RedVector 통합
 

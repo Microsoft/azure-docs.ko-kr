@@ -7,16 +7,16 @@ ms.topic: article
 author: keferna
 ms.author: keferna
 ms.date: 07/14/2020
-ms.openlocfilehash: 8ac69d7d611aa75584955ed6ed83ab79c70ed73a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 51f4c9a5748896eff9e9f3ae9719b2e7e7cdd4e7
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87082811"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607479"
 ---
 # <a name="cloud-solution-provider-program"></a>클라우드 솔루션 공급자 프로그램
 
-이 문서에서는 CSP(클라우드 솔루션 공급자) 프로그램에서 사용할 수 있도록 제품을 구성하는 방법을 설명합니다. [상업용 마켓플레이스 웹 상점](comparing-appsource-azure-marketplace.md)을 통한 제품 게시 외에도 CSP 프로그램을 통한 판매로 프로그램에서 서비스하는 유자격 Microsoft 고객에게 접근할 수도 있습니다.
+이 문서에서는 CSP(클라우드 솔루션 공급자) 프로그램에서 사용할 수 있도록 제품을 구성하는 방법을 설명합니다. [상용 marketplace online 스토어](comparing-appsource-azure-marketplace.md)를 통해 제품을 게시 하는 것 외에도 CSP 프로그램을 통해 판매 하 여 프로그램에서 사용 하는 수백만 개의 Microsoft 고객에 게 연락할 수 있습니다.
 
 옵트인 기반으로 CSP 프로그램에서 사용할 수 있게 신규 또는 기존 제품을 구성할 수 있어 CSP 파트너가 제품을 판매하고 고객을 위한 번들 솔루션을 만들 수 있습니다.
 
@@ -166,7 +166,7 @@ CSP 프로그램의 파트너가 고객에게 제품을 판매하지 않았으�
 
 ## <a name="sharing-sales-and-support-materials-with-partners-in-the-csp-program"></a>CSP 프로그램의 파트너와 판매 및 지원 자료 공유
 
-클라우드 솔루션 공급자 프로그램의 파트너가 제품을 가장 효과적으로 표시 하 고 조직에 참여 하도록 지원 하려면 대리점에서 사용할 수 있는 판매 및 지원 자료를 제출 해야 합니다. 이러한 리소스는 마켓플레이스 상점의 고객에게 노출되지 않습니다.
+클라우드 솔루션 공급자 프로그램의 파트너가 제품을 가장 효과적으로 표시 하 고 조직에 참여 하도록 지원 하려면 대리점에서 사용할 수 있는 판매 및 지원 자료를 제출 해야 합니다. 이러한 리소스는 온라인 상점에서 고객에 게 노출 되지 않습니다.
 
 ### <a name="partner-center-csp-channel"></a>파트너 센터 CSP 채널
 

@@ -11,12 +11,12 @@ metadata:
   ms.author: mbaldwin
   manager: rkarlin
   ms.date: 09/19/2019
-  ms.openlocfilehash: ff7af5ead7cc14deb974700e7bf6f3553f2e71f7
-  ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+  ms.openlocfilehash: 080cf9d8b7816b28f299396de2fe147fc2f9b27e
+  ms.sourcegitcommit: 3246e278d094f0ae435c2393ebf278914ec7b97b
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87387747"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89378885"
 landingContent:
 - title: Azure Key Vault 정보
   linkLists:
@@ -54,14 +54,34 @@ landingContent:
       url: security-recommendations.md
     - text: 보안 기준
       url: security-baseline.md
+  - linkListType: how-to-guide
+    links:
+    - text: Key Vault에 인증
+      url: authentication.md
+    - text: 액세스 정책 할당(CLI)
+      url: assign-access-policy-CLI.md
+    - text: 액세스 정책 할당(PowerShell)
+      url: assign-access-policy-powershell.md
+    - text: 액세스 정책 할당(Portal)
+      url: assign-access-policy-portal.md
   - linkListType: tutorial
     links:
     - text: Private Link 사용
       url: private-link-service.md
-    - text: 관리 ID 사용
-      url: managed-identity.md
-    - text: 액세스 정책 사용
-      url: group-permissions-for-apps.md
+- title: 클라이언트 라이브러리
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure Key Vault용 클라이언트 라이브러리
+      url: client-libraries.md
+    - text: .NET 클라이언트 라이브러리
+      url: /dotnet/api/overview/azure/key-vault?view=azure-dotnet
+    - text: Python 클라이언트 라이브러리
+      url: /python/api/overview/azure/key-vault-index?view=azure-python
+    - text: Java 클라이언트 라이브러리
+      url: https://azure.github.io/azure-sdk-for-java/keyvault.html
+    - text: Node.js 클라이언트 라이브러리
+      url: /javascript/api/overview/azure/key-vault-index?view=azure-node-latest
 - title: Microsoft Learn
   linkLists:
   - linkListType: learn

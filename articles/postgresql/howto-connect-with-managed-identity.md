@@ -6,22 +6,23 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 05/19/2020
-ms.openlocfilehash: ec9e53ecaa95f6407a00c149abb6ed7e4a671d74
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 1b9603e43541ec1a364e4653caeeafc751f7e4f0
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86102296"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012095"
 ---
 # <a name="connect-with-managed-identity-to-azure-database-for-postgresql"></a>관리 ID를 사용하여 Azure Database for PostgreSQL에 연결
 
-이 문서에서는 Azure VM(가상 머신)에 대한 사용자가 할당한 ID를 사용하여 Azure Database for PostgreSQL 서버에 액세스하는 방법을 보여 줍니다. Azure에서 자동으로 관리되는 관리 서비스 ID를 사용하면 Azure AD 인증을 지원하는 서비스에 인증할 수 있으므로 코드에 자격 증명을 삽입할 필요가 없습니다. 다음 방법을 알아봅니다.
+이 문서에서는 Azure VM(가상 머신)에 대한 사용자가 할당한 ID를 사용하여 Azure Database for PostgreSQL 서버에 액세스하는 방법을 보여 줍니다. Azure에서 자동으로 관리되는 관리 서비스 ID를 사용하면 Azure AD 인증을 지원하는 서비스에 인증할 수 있으므로 코드에 자격 증명을 삽입할 필요가 없습니다. 
 
-> [!div class="checklist"]
-> * Azure Database for PostgreSQL 서버에 대한 액세스 권한을 VM에 부여
-> * VM의 사용자가 할당한 ID를 나타내는 사용자를 데이터베이스에 만들기
-> * VM ID를 사용하여 액세스 토큰을 가져와서 Azure Database for PostgreSQL 서버를 쿼리하는 데 사용
-> * C# 예제 애플리케이션에서 토큰 검색 구현
+다음 방법을 알아봅니다.
+- Azure Database for PostgreSQL 서버에 대한 액세스 권한을 VM에 부여
+- VM의 사용자가 할당한 ID를 나타내는 사용자를 데이터베이스에 만들기
+- VM ID를 사용하여 액세스 토큰을 가져와서 Azure Database for PostgreSQL 서버를 쿼리하는 데 사용
+- C# 예제 애플리케이션에서 토큰 검색 구현
 
 ## <a name="prerequisites"></a>사전 요구 사항
 

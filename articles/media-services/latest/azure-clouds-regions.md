@@ -9,17 +9,19 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 5/28/2020
+ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: references_regions
-ms.openlocfilehash: 6ecc8cad4480528477f6bb470c7bc32ee2a20e11
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: e9da87f3b5f7cb513b4b5d51c93a59d1703d401d
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001352"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258659"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Azure Media Services v3가 있는 클라우드 및 지역
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Azure Media Services v3는 전 세계 Azure, Azure Government, Azure Germany, Azure China 21Vianet에서 Azure Resource Manager 매니페스트를 통해 사용할 수 있습니다. 그러나 모든 Media Services 기능을 모든 Azure 클라우드에서 사용할 수 있는 것은 아닙니다. 이 문서에서는 기본 Media Services v3 구성 요소의 가용성을 설명합니다.
 
@@ -82,7 +84,7 @@ az account list-locations
 
 | 서비스 | 엔드포인트 |
 | ------- | -------- |
-| Azure Resource Manager |  `https://management.azure.com/` |
+| Azure 리소스 관리자 |  `https://management.azure.com/` |
 | 인증 | `https://login.microsoftonline.com/` |
 | 토큰 대상 그룹 | `https://management.core.windows.net/` |
 
@@ -90,15 +92,15 @@ az account list-locations
 
 | 서비스 | 엔드포인트 |
 | ------- | -------- |
-| Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
+| Azure 리소스 관리자 |  `https://management.usgovcloudapi.net/` |
 | 인증 | `https://login.microsoftonline.us/` |
 | 토큰 대상 그룹 | `https://management.core.usgovcloudapi.net/` |
 
-### <a name="azure-germany"></a>Azure 독일
+### <a name="azure-germany"></a>Azure Germany
 
 | 서비스 | 엔드포인트 |
 | ------- | -------- |
-| Azure Resource Manager | `https://management.cloudapi.de/` |
+| Azure 리소스 관리자 | `https://management.cloudapi.de/` |
 | 인증 | `https://login.microsoftonline.de/` |
 | 토큰 대상 그룹 | `https://management.core.cloudapi.de/`|
 
@@ -106,7 +108,7 @@ az account list-locations
 
 | 서비스 | 엔드포인트 |
 | ------- | -------- |
-| Azure Resource Manager | `https://management.chinacloudapi.cn/` |
+| Azure 리소스 관리자 | `https://management.chinacloudapi.cn/` |
 | 인증 | `https://login.chinacloudapi.cn/` |
 | 토큰 대상 그룹 |  `https://management.core.chinacloudapi.cn/` |
 

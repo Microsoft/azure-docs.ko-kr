@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f621ed1342928b7f05fc8b84bfc2fceadf494fb5
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ea5c3e0ffc000d3d239e87e9771d1b49d98fd206
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87019734"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589047"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Azure Active Directory Seamless Single Sign-On: 질문과 대답
 
@@ -104,7 +104,7 @@ Azure AD Connect를 실행 중인 온-프레미스 서버에서 다음 단계를
    2. `Update-AzureADSSOForest -OnPremCredentials $creds`을 호출합니다. 이 명령은 이 특정 AD 포리스트에서 `AZUREADSSO` 컴퓨터 계정에 대한 Kerberos 암호 해독 키를 업데이트하고 Azure AD에서 키를 업데이트 합니다.
    
    >[!NOTE]
-   >도메인 관리자가 아닌 사용자에 게 도메인 관리자의 권한이 할당 된 경우 다음을 호출 해야 합니다.`Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
+   >도메인 관리자가 아닌 사용자에 게 도메인 관리자의 권한이 할당 된 경우 다음을 호출 해야 합니다. `Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
    
    3. 기능을 설정한 각 AD 포리스트에 대해 위의 단계를 반복합니다.
 
@@ -135,6 +135,8 @@ Azure AD Connect를 실행 중인 온-프레미스 서버에서 다음 단계를
    3. 다음 명령을 사용하여 Seamless SSO PowerShell 모듈을 가져옵니다. `Import-Module .\AzureADSSO.psd1`
    4. 관리자 권한으로 PowerShell을 실행합니다. PowerShell에서 `New-AzureADSSOAuthenticationContext`를 호출합니다. 이 명령으로 테넌트의 전역 관리자 자격 증명을 입력하라는 팝업 메시지가 표시됩니다.
    5. `Enable-AzureADSSO -Enable $false`을 호출합니다.
+   
+   이 시점에서 원활한 SSO는 사용할 수 없지만 원활한 SSO를 사용 하도록 설정 하려는 경우 도메인은 구성 된 상태로 유지 됩니다. 원활한 SSO 구성에서 도메인을 완전히 제거 하려면 위의 5 단계를 완료 한 후 다음 cmdlet을 호출 `Disable-AzureADSSOForest -DomainFqdn <fqdn>` 합니다.
 
    >[!IMPORTANT]
    >PowerShell을 사용하여 Seamless SSO를 사용하지 않도록 설정하면 Azure AD Connect의 상태를 변경하지 않습니다. Seamless SSO는 **사용자 로그인 변경** 페이지에서 사용하도록 설정된 것으로 표시됩니다.

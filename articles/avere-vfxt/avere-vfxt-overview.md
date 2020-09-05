@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT for Azure
-description: HPC용 클라우드 캐시 레이어인 Avere vFXT for Azure 소개
+description: 데이터 집약적인 고성능 컴퓨팅 작업을 위한 클라우드 기반 파일 시스템 캐싱 솔루션인 Avere vFXT for Azure에 대해 알아봅니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: overview
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: 7967b58819523173fd66d45eeabeaddc8605a21d
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 5095f05b0c9ce9061781c3558ca6c7091ef37aa5
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229468"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270959"
 ---
 # <a name="what-is-avere-vfxt-for-azure"></a>Avere vFXT for Azure란?
 

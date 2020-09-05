@@ -1,19 +1,19 @@
 ---
 title: Azure Portal에서 Azure에 하이브리드 머신 연결
-description: 이 문서에서는 Azure Portal에서 서버용 Azure Arc(미리 보기)를 사용하여 에이전트를 설치하고 머신을 Azure에 연결하는 방법을 설명합니다.
+description: 이 문서에서는 Azure Portal에서 Azure Arc 사용 서버 (미리 보기)를 사용 하 여 에이전트를 설치 하 고 Azure에 컴퓨터를 연결 하는 방법에 대해 알아봅니다.
 ms.date: 08/07/2020
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 08f2563aaa67cdd45760af34ef3bef3e8e472ae7
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 23415bc648ae31b9073adb71d6f066a28c144c9d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88120986"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213504"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-the-azure-portal"></a>Azure Portal에서 Azure에 하이브리드 머신 연결
 
-일단의 세트를 수동으로 수행하여 환경에서 하나 이상 적은 수의 Windows 또는 Linux 머신에 대해 서버용 Azure Arc(미리 보기)를 사용하도록 설정할 수 있습니다. 또는 제공된 템플릿 스크립트를 실행하여 자동화된 방법을 사용할 수 있습니다. 이 스크립트는 두 에이전트의 다운로드 및 설치를 자동화합니다.
+일련의 단계를 수동으로 수행 하 여 환경에서 하나 또는 소수의 Windows 또는 Linux 컴퓨터에 대해 Azure Arc 사용 서버 (미리 보기)를 사용 하도록 설정할 수 있습니다. 또는 제공된 템플릿 스크립트를 실행하여 자동화된 방법을 사용할 수 있습니다. 이 스크립트는 두 에이전트의 다운로드 및 설치를 자동화합니다.
 
 이 방법을 사용하려면 머신에 대한 관리자 권한으로 에이전트를 설치하고 구성할 수 있어야 합니다. Linux에서는 루트 계정을 사용하여 수행하고, Windows에서는 로컬 관리자 그룹의 멤버로 수행해야 합니다.
 
@@ -34,7 +34,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 1. **스크립트 생성** 페이지에서 머신을 Azure 내에서 관리하려는 구독 및 리소스 그룹을 선택합니다. 머신 메타데이터를 저장할 Azure 위치를 선택합니다.
 
     >[!NOTE]
-    >서버용 Azure Arc(미리 보기)는 다음 지역만 지원합니다.
+    >Azure Arc 사용 서버 (미리 보기)는 다음 영역만 지원 합니다.
     >- EastUS
     >- WestUS2
     >- WestEurope
@@ -147,7 +147,7 @@ bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
 
 ## <a name="verify-the-connection-with-azure-arc"></a>Azure Arc 연결 확인
 
-에이전트를 설치 하 고 서버에 대 한 Azure Arc (미리 보기)에 연결 하도록 구성한 후 Azure Portal으로 이동 하 여 서버가 성공적으로 연결 되었는지 확인 합니다. [Azure Portal](https://aka.ms/hybridmachineportal)에서 머신을 확인합니다.
+에이전트를 설치 하 고 Azure Arc 사용 서버 (미리 보기)에 연결 하도록 구성한 후 Azure Portal으로 이동 하 여 서버가 성공적으로 연결 되었는지 확인 합니다. [Azure Portal](https://aka.ms/hybridmachineportal)에서 머신을 확인합니다.
 
 ![성공적인 서버 연결](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 

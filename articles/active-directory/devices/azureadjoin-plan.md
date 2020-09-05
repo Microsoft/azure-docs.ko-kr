@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d43e6e89faa8eca720e3aeafc873af1a18b9753b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0863a782b7f4531b900bc3c005a39387c83d983
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85555019"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268230"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>방법: Azure AD 조인 구현 계획
 
@@ -24,9 +24,9 @@ Azure AD 조인을 사용하면 사용자의 생산성과 보안을 유지하면
 
 이 문서에서는 Azure AD 조인 구현을 계획하는 데 필요한 정보를 제공합니다.
  
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
-이 문서에서는 사용자가 [Azure Active Directory의 디바이스 관리 소개](../device-management-introduction.md)를 잘 알고 있다고 가정합니다.
+이 문서에서는 사용자가 [Azure Active Directory의 디바이스 관리 소개](./overview.md)를 잘 알고 있다고 가정합니다.
 
 ## <a name="plan-your-implementation"></a>구현 계획
 
@@ -58,7 +58,7 @@ Azure AD 조인은 관리 환경 및 페더레이션 환경 모두에서 작동�
 
 ### <a name="managed-environment"></a>관리 환경
 
-관리 환경은 Seamless Single Sign On을 사용하여 [암호 해시 동기화](/azure/active-directory/hybrid/how-to-connect-password-hash-synchronization) 또는 [통과 인증](/azure/active-directory/hybrid/how-to-connect-pta-quick-start)을 통해 배포할 수 있습니다.
+관리 환경은 Seamless Single Sign On을 사용하여 [암호 해시 동기화](../hybrid/how-to-connect-password-hash-synchronization.md) 또는 [통과 인증](../hybrid/how-to-connect-pta-quick-start.md)을 통해 배포할 수 있습니다.
 
 이러한 시나리오는 인증용 페더레이션 서버를 구성할 필요가 없습니다.
 
@@ -90,7 +90,7 @@ ID 공급자가 이러한 프로토콜을 지원하지 않는 경우 Azure AD �
 
 다음 위치에서 사용자를 만드는 경우:
 
-- **온-프레미스 Active Directory** - [Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-sync-whatis)를 사용하여 Azure AD에 동기화해야 합니다. 
+- **온-프레미스 Active Directory** - [Azure AD Connect](../hybrid/how-to-connect-sync-whatis.md)를 사용하여 Azure AD에 동기화해야 합니다. 
 - **Azure AD** - 추가 설치가 필요 없습니다.
 
 Azure AD UPN과는 다른 온-프레미스 UPN은 Azure AD 가입 디바이스에서 지원되지 않습니다. 사용자가 온-프레미스 UPN을 사용하는 경우 Azure AD에서 사용자의 기본 UPN을 사용하도록 전환할 계획을 세워야 합니다.
@@ -162,7 +162,7 @@ AD FS를 사용하는 경우 [AD FS를 사용하여 Single Sign-On 확인 및 �
 
 디바이스가 도메인 컨트롤러에 액세스할 수 있는 경우 사용자는 Azure AD 조인 디바이스에서 SSO를 얻습니다. 
 
-**권장 사항:** 이러한 애플리케이션에 안전하게 액세스할 수 있도록 [Azure AD 앱 프록시](/azure/active-directory/manage-apps/application-proxy)를 배포합니다.
+**권장 사항:** 이러한 애플리케이션에 안전하게 액세스할 수 있도록 [Azure AD 앱 프록시](../manage-apps/application-proxy.md)를 배포합니다.
 
 ### <a name="on-premises-network-shares"></a>온-프레미스 네트워크 공유
 
@@ -190,7 +190,7 @@ Windows 10 2004 업데이트를 시작 하면 사용자가 Azure AD에 등록 �
 
 다음 방법을 사용하여 Azure AD 조인을 프로비전할 수 있습니다.
 
-- **OOBE/설정에서 셀프 서비스** - 셀프 서비스 모드에서는 사용자가 Windows OOBE(첫 실행 경험) 동안 또는 Windows 설정에서 Azure AD 조인 프로세스를 진행합니다. 자세한 내용은 [회사 디바이스를 조직의 네트워크에 조인](/azure/active-directory/user-help/user-help-join-device-on-network)을 참조하세요. 
+- **OOBE/설정에서 셀프 서비스** - 셀프 서비스 모드에서는 사용자가 Windows OOBE(첫 실행 경험) 동안 또는 Windows 설정에서 Azure AD 조인 프로세스를 진행합니다. 자세한 내용은 [회사 디바이스를 조직의 네트워크에 조인](../user-help/user-help-join-device-on-network.md)을 참조하세요. 
 - **Windows Autopilot** - Windows Autopilot을 사용하여 디바이스를 미리 구성하면 OOBE에서 보다 원활하게 Azure AD 조인을 수행하는 환경을 구축할 수 있습니다. 자세한 내용은 [Windows Autopilot 개요](/windows/deployment/windows-autopilot/windows-10-autopilot)를 참조하세요. 
 - **대량 등록** - 대량 등록을 사용하면 대량 프로비전 도구를 사용하여 디바이스를 구성하는 관리자 중심 Azure AD 조인을 지원할 수 있습니다. 자세한 내용은 [Windows 디바이스 대량 등록](/intune/windows-bulk-enroll)을 참조하세요.
  
@@ -198,11 +198,11 @@ Windows 10 2004 업데이트를 시작 하면 사용자가 Azure AD에 등록 �
  
 | 요소 | 셀프 서비스 설정 | Windows Autopilot | 대량 등록 |
 | --- | --- | --- | --- |
-| 설정에서 사용자 상호 작용이 필요 | 예 | 예 | 아니요 |
-| IT 활동이 필요 | 아니요 | 예 | 예 |
-| 적용 흐름 | OOBE 및 설정 | OOBE만 | OOBE만 |
-| 기본 사용자에 대한 로컬 관리자 권한 | 기본적으로 예 | 구성 가능 여부 | 아니요 |
-| 디바이스 OEM 지원 필요 | 아니요 | 예 | 아니요 |
+| 설정에서 사용자 상호 작용이 필요 | 예 | 예 | 예 |
+| IT 활동이 필요 | 예 | 예 | 예 |
+| 적용 가능한 흐름 | OOBE 및 설정 | OOBE만 | OOBE만 |
+| 기본 사용자에 대한 로컬 관리자 권한 | 기본적으로 예 | 구성 가능 | 아니요 |
+| 디바이스 OEM 지원 필요 | 예 | 예 | 예 |
 | 지원되는 버전 | 1511+ | 1709+ | 1703+ |
  
 위의 표를 검토하고 방법 채택에 대한 다음 고려 사항을 검토하여 배포 접근 방식을 선택합니다.  
@@ -220,11 +220,11 @@ Windows 10 2004 업데이트를 시작 하면 사용자가 Azure AD에 등록 �
 
 Azure Portal에서 조직의 Azure AD 조인 디바이스 배포를 제어할 수 있습니다. 관련 설정을 구성하려면 **Azure Active Directory 페이지**에서 `Devices > Device settings`을 선택합니다.
 
-### <a name="users-may-join-devices-to-azure-ad"></a>사용자가 디바이스를 Azure AD에 조인할 수 있습니다.
+### <a name="users-may-join-devices-to-azure-ad"></a>사용자가 디바이스를 Azure AD에 조인할 수 있음
 
 배포 범위 및 Azure AD 조인 디바이스를 설정할 수 있도록 허용할 사용자에 따라 이 옵션을 **모두** 또는 **선택한 사용자**로 설정합니다. 
 
-![사용자가 디바이스를 Azure AD에 조인할 수 있습니다.](./media/azureadjoin-plan/01.png)
+![사용자가 디바이스를 Azure AD에 조인할 수 있음](./media/azureadjoin-plan/01.png)
 
 ### <a name="additional-local-administrators-on-azure-ad-joined-devices"></a>Azure AD 조인 디바이스의 추가 로컬 관리자
 
@@ -273,7 +273,7 @@ MDM 구성과 관련된 세 가지 URL이 있습니다.
 
 ![애플리케이션 추가](./media/azureadjoin-plan/06.png)
 
-각 URL에는 미리 정의된 기본값이 있습니다. 이러한 필드가 비어 있으면 MDM 공급자에게 자세한 정보를 문의하세요.
+각 URL에는 사전 정의된 기본값이 있습니다. 이러한 필드가 비어 있으면 MDM 공급자에게 자세한 정보를 문의하세요.
 
 ### <a name="mam-settings"></a>MAM 설정
 
@@ -297,7 +297,7 @@ Azure AD 조인 디바이스에 대한 MDM 공급자가 구성된 경우 공급�
 
 > [!div class="nextstepaction"]
 > [처음 실행 하는 동안 AZURE AD에 새 Windows 10 장치 조인](azuread-joined-devices-frx.md) 
->  회사 [장치를 조직의 네트워크에 연결](/azure/active-directory/user-help/user-help-join-device-on-network)
+>  회사 [장치를 조직의 네트워크에 연결](../user-help/user-help-join-device-on-network.md)
 
 <!--Image references-->
 [1]: ./media/azureadjoin-plan/12.png

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: antchu
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a044569c39ae2667c83ac881f1908b1d7b27cab
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: d7d893d3de5541bf1108a9182dfee6ad995e061b
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87848369"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89050610"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-python"></a>빠른 시작: Python을 사용하여 Azure Functions와 SignalR Service로 대화방 만들기
 
@@ -31,13 +31,21 @@ Azure Functions에는 [Python 3.6 또는 3.7](https://www.python.org/downloads/)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
+
 ## <a name="log-in-to-azure"></a>Azure에 로그인
 
 Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 로그인합니다.
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
+
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
+
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Azure 함수 앱을 구성하고 실행합니다.
 
@@ -91,10 +99,16 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
     ```
 
     ![함수 앱 실행](media/signalr-quickstart-azure-functions-python/signalr-quickstart-run-application.png)
+    
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
+
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -102,3 +116,5 @@ Azure 계정을 사용하여 <https://portal.azure.com/>에서 Azure Portal에 �
 
 > [!div class="nextstepaction"]
 > [VS Code로 Azure Functions 배포](/azure/developer/javascript/tutorial-vscode-serverless-node-01)
+
+[문제가 있나요? 알려주세요.](https://aka.ms/asrs/qspython)

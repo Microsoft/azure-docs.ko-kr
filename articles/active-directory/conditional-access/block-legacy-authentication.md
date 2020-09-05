@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f72e477d332b33b7434663fb13cb3ca4f4c2069d
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: a1973d45197044c325caf2d9938838f438d7755c
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88032196"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049539"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>방법: 조건부 액세스를 사용하여 Azure AD에 대한 레거시 인증 차단   
 
@@ -85,7 +85,7 @@ Azure AD는 레거시 인증을 포함하여 가장 널리 사용되는 몇 가�
 
 1. **Azure Portal** > **Azure Active Directory** > **로그인**으로 이동합니다.
 1. 클라이언트 앱 열이 표시되지 않는 경우 **열** > **클라이언트 앱**을 클릭하여 추가합니다.
-1. **필터 추가**  >  **클라이언트 앱** > 모든 레거시 인증 프로토콜을 선택 합니다. 필터링 대화 상자 blox 외부를 선택 하 여 선택 항목을 적용 하 고 대화 상자를 닫습니다.
+1. **필터 추가**  >  **클라이언트 앱** > 모든 레거시 인증 프로토콜을 선택 합니다. 필터링 대화 상자 외부를 선택 하 여 선택 항목을 적용 하 고 대화 상자를 닫습니다.
 
 필터링은 레거시 인증 프로토콜을 통해 수행된 로그인 시도만 표시합니다. 각 개별 로그인 시도를 클릭하면 추가 세부 정보가 표시됩니다. **기본 정보** 탭의 **클라이언트 앱** 필드는 사용된 레거시 인증 프로토콜을 표시합니다.
 
@@ -122,7 +122,7 @@ Azure AD는 레거시 인증을 포함하여 가장 널리 사용되는 몇 가�
 
 ## <a name="next-steps"></a>다음 단계
 
-- [조건부 액세스 보고서 전용 모드를 사용하여 영향 확인](howto-conditional-access-report-only.md)
-- 조건부 액세스 정책을 구성하는 데 아직 익숙하지 않은 경우 한 가지 예로 [Azure Active Directory 조건부 액세스를 사용하는 특정 앱에 MFA 요구](app-based-mfa.md)를 참조하세요.
+- [조건부 액세스 보고서 전용 모드를 사용하여 영향 확인](howto-conditional-access-insights-reporting.md)
+- 조건부 액세스 정책을 구성하는 데 아직 익숙하지 않은 경우 한 가지 예로 [Azure Active Directory 조건부 액세스를 사용하는 특정 앱에 MFA 요구](../authentication/tutorial-enable-azure-mfa.md)를 참조하세요.
 - 최신 인증 지원에 대한 자세한 내용은 [Office 2013 및 Office 2016 클라이언트 앱에 대한 최신 인증 작동 방식](/office365/enterprise/modern-auth-for-office-2013-and-2016)을 참조하세요. 
 - [Office 365 및 Microsoft 365를 사용하여 이메일을 보내도록 다기능 디바이스 또는 애플리케이션을 설정하는 방법](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)

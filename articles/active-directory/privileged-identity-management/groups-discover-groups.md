@@ -14,14 +14,14 @@ ms.subservice: pim
 ms.date: 08/03/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76f7b61b6fb065409a2fe4b2ed8f599f321cd1db
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 68795033d36ad0bcb36b7cd81cea0d848ecd5113
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87542296"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049012"
 ---
-# <a name="bring-a-privileged-access-groups-preview-into-privileged-identity-management"></a>권한 있는 액세스 그룹 (미리 보기)을 Privileged Identity Management로 가져오기
+# <a name="bring-privileged-access-groups-preview-into-privileged-identity-management"></a>권한 있는 액세스 그룹 (미리 보기)을 Privileged Identity Management로 가져오기
 
 Azure AD (Azure Active Directory)에서 클라우드 그룹에 Azure AD 기본 제공 역할을 할당 하 여 역할 할당을 관리 하는 방법을 단순화할 수 있습니다. Azure AD 역할을 보호 하 고 액세스를 보호 하기 위해 이제 PIM (Privileged Identity Management)을 사용 하 여 이러한 그룹의 멤버 또는 소유자에 대 한 just-in-time 액세스를 관리할 수 있습니다. Privileged Identity Management에서 Azure AD 역할 할당 가능 그룹을 권한 있는 액세스 그룹으로 관리 하려면 PIM의 관리 대상으로 가져와야 합니다.
 

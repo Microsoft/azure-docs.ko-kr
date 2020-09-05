@@ -1,7 +1,7 @@
 ---
 title: 앱 브랜딩 지침 | Azure
 titleSuffix: Microsoft identity platform
-description: Azure Active Directory의 개발자 중심 리소스에 대한 포괄적인 가이드
+description: Microsoft id 플랫폼에 대 한 응용 프로그램 브랜딩 지침에 대해 알아봅니다.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -9,25 +9,25 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 08/31/2020
 ms.author: ryanwi
-ms.reviewer: arielgo
+ms.reviewer: arielgo, jiml
 ms.custom: aaddev, signin_art
-ms.openlocfilehash: cf72a8863976d8a678fbdfb6d369c0423b59acf2
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 5e62472fdccd2ee71a0ef725f34a75492d1b8ffa
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88117297"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226644"
 ---
 # <a name="branding-guidelines-for-applications"></a>애플리케이션에 대한 브랜딩 지침
 
-Azure AD(Azure Active Directory)를 사용하여 애플리케이션을 개발하는 경우 Azure AD에서 관리되는 회사 또는 학교 계정, 또는 개인 계정을 애플리케이션 등록 및 로그인에 사용하려는 고객을 안내해야 합니다.
+Microsoft id 플랫폼을 사용 하 여 응용 프로그램을 개발 하는 경우 응용 프로그램 등록 및 로그인을 위해 회사 또는 학교 계정 (Azure AD에서 관리) 또는 개인 계정을 사용 하려는 경우 고객에 게 문의 해야 합니다.
 
 이 문서에서는 다음을 수행합니다.
 
 - Microsoft에서 관리하는 두 종류의 사용자 계정과 애플리케이션에서 Azure AD 계정을 가리키는 방법에 대해 알아봅니다.
-- 앱에서 사용할 Microsoft 로고를 추가하는 데 필요한 작업을 확인합니다.
+- 앱에서 사용할 Microsoft 로고를 추가 하기 위해 수행 해야 하는 작업을 확인 합니다.
 - 앱에서 사용할 공식 **로그인** 또는 **Microsoft에 로그인** 이미지를 다운로드합니다.
 - 브랜딩 및 탐색과 관련해서 수행해야 할 작업과 수행하지 않아야 할 작업에 대해 알아봅니다.
 
@@ -38,7 +38,7 @@ Microsoft는 두 종류의 사용자 계정을 관리합니다.
 - **개인 계정** (이전의 Windows Live ID). 이 계정은 *개인* 사용자와 Microsoft 사이의 관계를 나타내며 Microsoft의 소비자 디바이스 및 서비스에 액세스하는 데 사용됩니다. 이 계정은 개인적인 용도를 위한 것입니다.
 - **회사 또는 학교 계정.**  이 계정은 Azure Active Directory를 사용하는 조직을 대신하여 Microsoft에서 관리합니다. 이 계정은 Office 365 및 Microsoft의 다른 비즈니스 서비스에 로그인하는 데 사용됩니다.
 
-Microsoft 회사 또는 학교 계정은 일반적으로 회사, 학교, 정부 기관 등의 조직이 직원, 학생, 연방 직원 등의 최종 사용자에게 할당합니다. 이 계정은 Azure AD 플랫폼의 클라우드에서 직접 마스터되거나 Windows Server Active Directory와 같은 온-프레미스 디렉터리에서 Azure AD로 동기화됩니다. Microsoft는 회사 또는 학교 계정의 *보유자* 이지만, 이 계정을 소유하고 제어하는 것은 조직입니다.
+Microsoft 회사 또는 학교 계정은 일반적으로 회사, 학교, 정부 기관 등의 조직이 직원, 학생, 연방 직원 등의 최종 사용자에게 할당합니다. 이러한 계정은 온-프레미스 디렉터리 (예: Windows Server Active Directory)에서 Azure AD로 동기화 되거나 클라우드에서 직접 마스터 됩니다 (Azure AD 플랫폼에서). Microsoft는 회사 또는 학교 계정의 *보유자* 이지만, 이 계정을 소유하고 제어하는 것은 조직입니다.
 
 ## <a name="referring-to-azure-ad-accounts-in-your-application"></a>애플리케이션에서 Azure AD 계정 언급
 
@@ -67,7 +67,7 @@ Microsoft는 Azure 또는 Active Directory 브랜드 이름에 최종 사용자�
 
 ![Microsoft 로고 및 텍스트 "내 조직에 추가"를 표시하는 단추](./media/howto-add-branding-in-azure-ad-apps/add-to-my-org.png)
 
-그러나 단추에 의존하는 대신 설명 텍스트를 작성하는 것이 좋습니다. 예를 들면 다음과 같습니다.
+그러나 단추에 의존하는 대신 설명 텍스트를 작성하는 것이 좋습니다. 예:
 
 > *이미 Office 365 또는 Microsoft의 다른 비즈니스 서비스를 사용 하는 경우 조직의 데이터에 대 한 액세스> your_app_name <부여할 수 있습니다. 이렇게 하면 사용자가 기존 회사 계정으로 <your_app_name>에 액세스할 수 있습니다.*
 

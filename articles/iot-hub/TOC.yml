@@ -53,6 +53,9 @@
           href: quickstart-device-streams-proxy-nodejs.md
         - name: C
           href: quickstart-device-streams-proxy-c.md
+    - name: ARM 템플릿을 사용하여 메시지 자동 라우팅
+      displayName: Resource Manager
+      href: horizontal-arm-route-messages.md
 - name: 자습서
   items:
     - name: 메시지 라우팅
@@ -81,11 +84,6 @@
       href: tutorial-firmware-update.md
     - name: 디바이스 연결 테스트
       href: tutorial-connectivity.md
-- name: 샘플
-  items:
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: TLS 지원
@@ -175,6 +173,8 @@
           href: iot-hub-devguide-glossary.md
     - name: 보안
       items:
+        - name: 보안 기준
+          href: security-baseline.md
         - name: 권장 사항
           href: /azure/iot-fundamentals/security-recommendations?context=azure/iot-hub/rc/rc
         - name: 처음부터 보안을 고려
@@ -185,6 +185,9 @@
           href: /azure/iot-fundamentals/iot-security-architecture?context=azure/iot-hub/rc/rc
         - name: IoT 배포 보안 유지
           href: /azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
     - name: X.509 CA 인증서를 사용한 보안
       items:
         - name: X.509 CA 인증서 보안 개요
@@ -455,6 +458,9 @@
       href: 'https://docs.microsoft.com/rest/api/iothub/certificates'
     - name: Resource Manager 템플릿
       href: /azure/templates/microsoft.devices/iothub-allversions
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
     - name: 기능 및 API 사용 중지
       items:
         - name: 작업 모니터링

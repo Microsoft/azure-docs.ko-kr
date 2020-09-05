@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 73e92fa505a994cc5cc2fdb3a297dfd653a596a1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 00035782a17936405b2b042035220dde87da12b1
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87071812"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89257061"
 ---
-# <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Azure Portal에서 Media Services 계정에 파일 업로드 
+# <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Azure Portal에서 Media Services 계정에 파일 업로드
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!div class="op_single_selector"]
 > * [포털](media-services-portal-upload-files.md)
@@ -40,7 +42,7 @@ Media Services는 파일 처리를 위해 최대 파일 크기를 포함합니�
 
 ## <a name="upload-files"></a>파일 업로드
 1. [Azure Portal](https://portal.azure.com/)에서 Azure Media Services 계정을 선택합니다.
-2. **설정**  >  **자산**을 선택 합니다. 그런 다음 **업로드** 단추를 선택합니다.
+2. 계정 배포 진행 상태를 보려면 **설정** > **자산**을 참조하세요. 그런 다음 **업로드** 단추를 선택합니다.
    
     ![파일 업로드](./media/media-services-portal-vod-get-started/media-services-upload.png)
    

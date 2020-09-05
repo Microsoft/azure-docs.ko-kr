@@ -16,24 +16,24 @@ ms.date: 07/22/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66f8020ec2561bf06716db0720a7ec4292f36eb3
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 77c560ffd01fe6d0b93e18b963574136c086fdc4
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87034125"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783198"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Azure AD 액세스 검토를 사용하여 게스트 액세스 관리
 
 
-Azure AD(Azure Active Directory)를 사용하면 [Azure AD B2B 기능](../b2b/what-is-b2b.md)을 통해 조직의 경계를 넘나들며 협업을 쉽게 수행할 수 있습니다. 다른 테넌트의 게스트 사용자는 [관리자](../b2b/add-users-administrator.md) 또는 [다른 사용자](../b2b/what-is-b2b.md)가 초대할 수 있습니다. 이 기능은 Microsoft 계정과 같은 소셜 ID에도 적용됩니다.
+Azure AD(Azure Active Directory)를 사용하면 [Azure AD B2B 기능](../external-identities/what-is-b2b.md)을 통해 조직의 경계를 넘나들며 협업을 쉽게 수행할 수 있습니다. 다른 테넌트의 게스트 사용자는 [관리자](../external-identities/add-users-administrator.md) 또는 [다른 사용자](../external-identities/what-is-b2b.md)가 초대할 수 있습니다. 이 기능은 Microsoft 계정과 같은 소셜 ID에도 적용됩니다.
 
 또한 게스트 사용자에게 적절한 액세스 권한을 쉽게 부여할 수도 있습니다. 게스트 본인 또는 의사 결정자에게 액세스 검토에 참여하고 게스트 액세스 권한을 다시 인증(또는 증명)하도록 요청할 수 있습니다. 검토자는 Azure AD에서의 제안 사항을 기반으로 각 사용자의 지속적인 액세스 요구 사항에 대한 입력을 제공할 수 있습니다. 액세스 검토가 완료되면 변경 사항을 적용하거나 액세스가 더 이상 필요 없는 게스트의 액세스를 제거할 수 있습니다.
 
 > [!NOTE]
 > 이 문서에서는 게스트 사용자의 액세스 검토에 중점을 둡니다. 게스트 뿐 아니라 모든 사용자의 액세스를 검토하려는 경우 [액세스 검토를 사용하여 사용자 액세스 관리](manage-user-access-with-access-reviews.md)를 참조하세요. 전역 관리자와 같은 관리 역할에서 사용자의 멤버 자격을 검토 하려면 [Azure AD Privileged Identity Management에서 액세스 검토 시작](../privileged-identity-management/pim-how-to-start-security-review.md)을 참조 하세요.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 - Azure AD Premium P2
 
@@ -120,10 +120,3 @@ Azure AD는 게스트 사용자를 검토하기 위한 몇 가지 시나리오�
 ## <a name="next-steps"></a>다음 단계
 
 [그룹 또는 애플리케이션의 액세스 검토 만들기](create-access-review.md)
-
-
-
-
-
-
-

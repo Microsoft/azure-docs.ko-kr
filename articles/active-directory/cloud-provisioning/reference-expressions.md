@@ -11,12 +11,12 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 722b3fcb2bc533e396a35feb4c755de99c375b10
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
-ms.translationtype: HT
+ms.openlocfilehash: c14f406e5671e1eefb43f0208044f9945e446267
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86201853"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226576"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Azure Active Directory에서 특성 매핑 식 작성
 클라우드 프로비저닝을 구성하는 경우 식 매핑은 지정할 수 있는 특성 매핑 유형 중 하나입니다. 
@@ -253,7 +253,7 @@ accountName 특성이 없는 경우 개체에서 오류가 throw됩니다.
    | 속성 | 필수/ 반복 | Type | 메모 |
    | --- | --- | --- | --- |
    | **원본(source)** |필수 |String |대개는 원본 개체의 특성 이름입니다. |
-   | **inputFormat** |필수 |String |원본 값의 예상된 형식입니다. 지원되는 형식은 [https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx)를 참조하세요. |
+   | **inputFormat** |필수 |String |원본 값의 예상된 형식입니다. 지원 되는 형식은 [/dotnet/standard/base-types/custom-date-and-time-format-strings](/dotnet/standard/base-types/custom-date-and-time-format-strings)를 참조 하세요. |
    | **outputFormat** |필수 |String |출력 날짜의 형식입니다. |
 
 ---

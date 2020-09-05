@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 Peakon 자동 사용자 프로 비전 구성 | Microsoft Docs'
 description: 사용자 계정을 Peakon로 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: na
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: zhchia
-ms.openlocfilehash: 0a67dc8069ee71305a47bd5d2a724a61cec234a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b16ca0c396e2c406677af351cf6b1de2a3499353
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063396"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88543674"
 ---
 # <a name="tutorial-configure-peakon-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Peakon 구성
 
@@ -30,7 +26,7 @@ ms.locfileid: "77063396"
 >  이 자습서에서는 Azure AD 사용자 프로비저닝 서비스에 기반하여 구축된 커넥터에 대해 설명합니다. 이 서비스의 기능, 작동 방법 및 질문과 대답에 대한 중요한 내용은 [Azure Active Directory를 사용하여 SaaS 애플리케이션의 사용자를 자동으로 프로비저닝 및 프로비저닝 해제](../app-provisioning/user-provisioning.md)를 참조하세요.
 >
 > 이 커넥터는 현재 미리 보기로 제공됩니다. 미리 보기 기능의 Microsoft Azure 일반 사용 약관에 대한 자세한 내용은 [Microsoft Azure 미리 보기에 대한 추가 사용 조건](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요.
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>전제 조건
 
 이 자습서에 설명 된 시나리오에서는 이미 다음과 같은 필수 구성 요소가 있다고 가정 합니다.
 
@@ -133,7 +129,7 @@ Azure AD를 사용한 자동 사용자 프로 비전을 위한 Peakon를 구성 
 
     ![Peakon 사용자 특성](media/Peakon-provisioning-tutorial/Peakon-user-attributes.png)
 
-12. 범위 지정 필터를 구성 하려면 [범위 지정 필터 자습서](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)에서 제공 하는 다음 지침을 참조 하세요.
+12. 범위 지정 필터를 구성 하려면       [범위 지정 필터 자습서](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)에서 제공 하는 다음 지침을 참조 하세요.
     
     ![프로비전 범위](common/provisioning-scope.png)
 

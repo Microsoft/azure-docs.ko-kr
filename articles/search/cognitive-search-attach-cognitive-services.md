@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: ffb52cd34d56c227fc689ea70146e99983e17c0d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c9f6a5ebc4f3242181196bd40b62f7522d025b84
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85564446"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924980"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Azure의 기술에 Cognitive Services 리소스 연결 Cognitive Search 
 
@@ -37,7 +37,7 @@ Azure Cognitive Search는 이미지 분석과 OCR (광학 문자 인식), 자연
 
 ## <a name="same-region-requirement"></a>동일한 지역 요구 사항
 
-Azure Cognitive Search와 Azure Cognitive Services는 동일한 지역 내에 있어야 합니다. 그렇지 않으면 런타임에이 메시지를 받게 됩니다.`"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
+Azure Cognitive Search와 Azure Cognitive Services는 동일한 지역 내에 있어야 합니다. 그렇지 않으면 런타임에이 메시지를 받게 됩니다. `"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
 
 여러 지역에서 서비스를 이동할 수 있는 방법은 없습니다. 이 오류가 발생 하는 경우 Azure Cognitive Search와 동일한 지역에 새 Cognitive Services 리소스를 만들어야 합니다.
 
@@ -170,5 +170,5 @@ Content-Type: application/json
 ## <a name="next-steps"></a>다음 단계
 + [Azure Cognitive Search 가격 책정 페이지](https://azure.microsoft.com/pricing/details/search/)
 + [기술 집합을 정의하는 방법](cognitive-search-defining-skillset.md)
-+ [기술 집합 만들기(REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [기술 집합 만들기(REST)](/rest/api/searchservice/create-skillset)
 + [보강 필드를 매핑하는 방법](cognitive-search-output-field-mapping.md)

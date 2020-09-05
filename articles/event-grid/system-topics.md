@@ -2,13 +2,13 @@
 title: Azure Event Grid의 시스템 항목
 description: Azure Event Grid의 시스템 항목에 대해 설명 합니다.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 655ec5f0ad23b3902c1c99ba75eef2ef428911eb
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 08/27/2020
+ms.openlocfilehash: f5ca472ab5141207222987d476284813c2aacf56
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86119925"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019099"
 ---
 # <a name="system-topics-in-azure-event-grid"></a>Azure Event Grid의 시스템 항목
 Event Grid의 시스템 항목은 Azure Storage 및 Azure Event Hubs와 같은 Azure 서비스에서 게시 하는 하나 이상의 이벤트를 나타냅니다. 예를 들어 시스템 토픽은 **모든 blob 이벤트** 를 나타내거나 **특정 저장소 계정**에 대해 게시 된 **blob 및 blob** **삭제** 이벤트만 나타낼 수 있습니다. 이 예에서 blob을 저장소 계정에 업로드 하면 Azure Storage 서비스는 **blob created** 이벤트를 Event Grid의 system 토픽에 게시 합니다. 그러면 이벤트를 수신 하 고 처리 하는 토픽의 [구독자](event-handlers.md) 에 게 이벤트를 전달 합니다. 
@@ -57,7 +57,7 @@ Event Grid 서비스에서 만들 수 없는 방식으로 Azure 정책을 설정
 ## <a name="location-and-resource-group-for-a-system-topic"></a>시스템 항목에 대 한 위치 및 리소스 그룹
 특정 지역/위치에 있는 Azure 이벤트 원본의 경우 system 토픽은 Azure 이벤트 원본과 동일한 위치에 만들어집니다. 예를 들어 미국 동부에서 Azure blob 저장소에 대 한 이벤트 구독을 만드는 경우 미국 동부에서 시스템 항목이 생성 됩니다. Azure 구독, 리소스 그룹, Azure Maps 등의 글로벌 Azure 이벤트 원본에 대 한 Event Grid는 **글로벌** 위치에 시스템 항목을 만듭니다. 
 
-일반적으로 시스템 항목은 Azure 이벤트 원본이 있는 것과 동일한 리소스 그룹에 만들어집니다. Azure 구독 범위에서 만든 이벤트 구독의 경우 system 토픽은 리소스 그룹 **기본-EventGrid**아래에 생성 됩니다. 리소스 그룹이 없는 경우 시스템 항목을 만들기 전에 Azure Event Grid 만듭니다. 
+일반적으로 시스템 항목은 Azure 이벤트 원본이 있는 것과 동일한 리소스 그룹에 만들어집니다. Azure 구독 범위에서 만든 이벤트 구독의 경우 **미국 서 부 2** 지역의 **기본-eventgrid** 리소스 그룹에 시스템 항목이 생성 됩니다. 리소스 그룹이 없는 경우 시스템 항목을 만들기 전에 Azure Event Grid 만듭니다. 
 
 ## <a name="next-steps"></a>다음 단계
 다음 문서를 참조하세요. 

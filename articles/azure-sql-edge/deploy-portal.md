@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 43359b66ba747dba7b3294d022a2c1aa2a3e624c
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 7af4264860f8d9950515cd5302f03822e7cbac39
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84233252"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816867"
 ---
 # <a name="deploy-azure-sql-edge-preview"></a>Azure SQL Edge(미리 보기) 배포 
 
@@ -114,9 +114,114 @@ Azure Marketplace는 [IoT Edge 모듈](https://azuremarketplace.microsoft.com/ma
 12. **다음**을 클릭합니다.
 13. **제출**을 클릭합니다.
 
-이 빠른 시작에서는 IoT Edge 디바이스에 SQL Edge 모듈을 배포했습니다.
+## <a name="connect-to-azure-sql-edge"></a>Azure SQL Edge에 연결
+
+다음 단계는 컨테이너 내에서 Azure SQL Edge 명령줄 도구인 **sqlcmd**를 사용 하 여 Azure sql edge에 연결 합니다.
+
+> [!NOTE]
+> sqlcmd 도구는 SQL Edge 컨테이너의 ARM64 버전 내에서 사용할 수 없습니다.
+
+1. `docker exec -it` 명령을 사용하여 실행 중인 컨테이너 내에서 대화형 bash 셸을 시작합니다. 다음 예에서는 `azuresqledge` `Name` IoT Edge 모듈의 매개 변수에 지정 된 이름을 지정 합니다.
+
+   ```bash
+   sudo docker exec -it azuresqledge "bash"
+   ```
+
+2. 컨테이너 내부로 들어가면 sqlcmd를 사용하여 로컬로 연결합니다. Sqlcmd는 기본적으로 경로에 있지 않으므로 전체 경로를 지정해야 합니다.
+
+   ```bash
+   /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong@Passw0rd>"
+   ```
+
+   > [!TIP]
+   > 명령줄에서 암호를 생략하여 입력하라는 메시지가 표시되도록 할 수 있습니다.
+
+3. 성공하면 **sqlcmd** 명령 프롬프트 `1>`이 표시됩니다.
+
+## <a name="create-and-query-data"></a>데이터 만들기 및 쿼리
+
+다음 섹션에서는 **sqlcmd** 및 Transact-SQL을 사용하여 새 데이터베이스를 만들고, 데이터를 추가하고, 간단한 쿼리를 실행하는 단계를 안내합니다.
+
+### <a name="create-a-new-database"></a>새 데이터베이스 만들기
+
+다음 단계에서는 `TestDB`라는 새 데이터베이스를 만듭니다.
+
+1. **sqlcmd** 명령 프롬프트에서 다음 Transact-SQL 명령을 붙여넣어 테스트 데이터베이스를 만듭니다.
+
+   ```sql
+   CREATE DATABASE TestDB
+   Go
+   ```
+
+2. 다음 줄에 서버에 있는 모든 데이터베이스의 이름을 반환하는 쿼리를 작성합니다.
+
+   ```sql
+   SELECT Name from sys.Databases
+   Go
+   ```
+
+### <a name="insert-data"></a>데이터 삽입
+
+다음으로 새 테이블 `Inventory`를 만들고 두 개의 새 행을 삽입합니다.
+
+1. **sqlcmd** 명령 프롬프트에서 컨텍스트를 새 `TestDB` 데이터베이스로 전환합니다.
+
+   ```sql
+   USE TestDB
+   ```
+
+2. `Inventory`라는 새 테이블을 만듭니다.
+
+   ```sql
+   CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+   ```
+
+3. 새 테이블에 데이터를 삽입합니다.
+
+   ```sql
+   INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+   ```
+
+4. `GO`를 입력하여 앞의 명령을 실행합니다.
+
+   ```sql
+   GO
+   ```
+
+### <a name="select-data"></a>데이터 선택
+
+이제 쿼리를 실행하여 `Inventory` 테이블에서 데이터를 반환합니다.
+
+1. **sqlcmd** 명령 프롬프트에서 `Inventory` 테이블에서 수량이 152보다 큰 행을 반환하는 쿼리를 입력합니다.
+
+   ```sql
+   SELECT * FROM Inventory WHERE quantity > 152;
+   ```
+
+2. 다음 명령을 실행합니다.
+
+   ```sql
+   GO
+   ```
+
+### <a name="exit-the-sqlcmd-command-prompt"></a>sqlcmd 명령 프롬프트 종료
+
+1. **sqlcmd** 세션을 종료하려면 `QUIT`를 입력합니다.
+
+   ```sql
+   QUIT
+   ```
+
+2. 컨테이너에서 대화형 명령 프롬프트를 종료하려면 `exit`을 입력합니다. 컨테이너는 대화형 bash 셸을 종료한 후에도 계속 실행됩니다.
+
+## <a name="connect-from-outside-the-container"></a> 컨테이너 외부에서 연결
+
+SQL 연결을 지 원하는 모든 외부 Linux, Windows 또는 macOS 도구에서 Azure SQL Edge 인스턴스에 대해 SQL 쿼리를 연결 하 고 실행할 수 있습니다. 외부에서 SQL Edge 컨테이너에 연결 하는 방법에 대 한 자세한 내용은 [AZURE Sql Edge 연결 및 쿼리](https://docs.microsoft.com/azure/azure-sql-edge/connect)를 참조 하세요.
+
+이 빠른 시작에서는 IoT Edge 디바이스에 SQL Edge 모듈을 배포했습니다. 
 
 ## <a name="next-steps"></a>다음 단계
 
 - [SQL Edge에 ONNX를 사용하는 Machine Learning 및 AI](onnx-overview.md)
 - [IoT Edge를 사용하여 SQL Edge로 엔드투엔드 IoT 솔루션 빌드](tutorial-deploy-azure-resources.md).
+- [Azure SQL Edge의 데이터 스트리밍](stream-data.md)

@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 046a0d61bb7a6d715a1d732790d2b472b3e83c13
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 763441d023e4a707c6a1edc09abfb6d8e5525723
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84743782"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88782739"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-privileged-identity-management"></a>Privileged Identity Management에서 게스트 사용자를 초대 하 고 Azure 리소스 역할을 할당 합니다.
 
@@ -45,7 +45,7 @@ Azure ad (Azure Active Directory) 게스트 사용자는 azure ad 내에서 B2B 
 
 ## <a name="how-does-collaboration-using-b2b-guests-work"></a>B2B 게스트를 사용 하는 공동 작업은 어떻게 작동 하나요?
 
-B2B 공동 작업을 사용 하는 경우 외부 사용자를 조직에 게스트로 초대할 수 있습니다. 게스트는 조직의 사용자로 관리 될 수 있지만, 게스트는 Azure AD 조직이 아니라 홈 조직에서 인증 되어야 합니다. 즉, 게스트가 자신의 홈 조직에 더 이상 액세스할 수 없는 경우 조직에도 액세스할 수 없게 됩니다. 예를 들어 게스트가 조직을 벗어나면 아무 작업도 수행 하지 않고도 Azure AD에서 공유 하는 리소스에 대 한 액세스 권한이 자동으로 손실 됩니다. B2B 공동 작업에 대 한 자세한 내용은 [AZURE ACTIVE DIRECTORY b2b의 게스트 사용자 액세스 란?](../b2b/what-is-b2b.md)을 참조 하세요.
+B2B 공동 작업을 사용 하는 경우 외부 사용자를 조직에 게스트로 초대할 수 있습니다. 게스트는 조직의 사용자로 관리 될 수 있지만, 게스트는 Azure AD 조직이 아니라 홈 조직에서 인증 되어야 합니다. 즉, 게스트가 자신의 홈 조직에 더 이상 액세스할 수 없는 경우 조직에도 액세스할 수 없게 됩니다. 예를 들어 게스트가 조직을 벗어나면 아무 작업도 수행 하지 않고도 Azure AD에서 공유 하는 리소스에 대 한 액세스 권한이 자동으로 손실 됩니다. B2B 공동 작업에 대 한 자세한 내용은 [AZURE ACTIVE DIRECTORY b2b의 게스트 사용자 액세스 란?](../external-identities/what-is-b2b.md)을 참조 하세요.
 
 ![홈 디렉터리에서 게스트 사용자를 인증 하는 방법을 보여 주는 다이어그램](./media/pim-resource-roles-external-users/b2b-external-user.png)
 
@@ -166,4 +166,4 @@ Privileged Identity Management를 사용 하 여 게스트를 초대 하 고 Azu
 ## <a name="next-steps"></a>다음 단계
 
 - [Privileged Identity Management에서 Azure AD 관리자 역할 할당](pim-how-to-add-role-to-user.md)
-- [Azure AD B2B 공동 작업에서 게스트 사용자 액세스 란 무엇 인가요?](../b2b/what-is-b2b.md)
+- [Azure AD B2B 공동 작업에서 게스트 사용자 액세스 란 무엇 인가요?](../external-identities/what-is-b2b.md)

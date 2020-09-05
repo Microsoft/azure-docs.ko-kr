@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: fd102706d1fa6c33d8962a5d1caf5aa3e41b231d
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 08641814e2a4fdf6f174f94b1e38e4124cf531d0
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146187"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934925"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Azure Cognitive Search에서 검색 결과를 사용 하는 방법
 
 이 문서에서는 총 일치 문서 수, 페이지를 매긴 결과, 정렬 된 결과 및 적중 강조 표시 된 용어와 함께 반환 되는 쿼리 응답을 가져오는 방법을 설명 합니다.
 
-응답의 구조는 쿼리의 매개 변수에 의해 결정 됩니다. REST API 또는 .NET SDK의 [DocumentSearchResult 클래스](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.documentsearchresult-1) 에 있는 [검색 문서를 검색](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) 합니다.
+응답의 구조는 쿼리의 매개 변수에 의해 결정 됩니다. REST API 또는 .NET SDK의 [DocumentSearchResult 클래스](/dotnet/api/microsoft.azure.search.models.documentsearchresult-1) 에 있는 [검색 문서를 검색](/rest/api/searchservice/Search-Documents) 합니다.
 
 ## <a name="result-composition"></a>결과 컴퍼지션
 
@@ -47,9 +47,9 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 
 + `$count=true`인덱스 내에 있는 총 일치 문서 수를 가져오려면를 추가 합니다.
 
-+ 15 개의 일치 하는 문서의 첫 번째 집합과 총 일치 항목 수를 반환 합니다.`GET /indexes/<INDEX-NAME>/docs?search=<QUERY STRING>&$top=15&$skip=0&$count=true`
++ 15 개의 일치 하는 문서의 첫 번째 집합과 총 일치 항목 수를 반환 합니다. `GET /indexes/<INDEX-NAME>/docs?search=<QUERY STRING>&$top=15&$skip=0&$count=true`
 
-+ 두 번째 집합을 반환 하 고 첫 15를 건너뛰고 다음 15:을 가져옵니다 `$top=15&$skip=15` . 세 번째 15 번째 집합에 대해 동일한 작업을 수행 합니다.`$top=15&$skip=30`
++ 두 번째 집합을 반환 하 고 첫 15를 건너뛰고 다음 15:을 가져옵니다 `$top=15&$skip=15` . 세 번째 15 번째 집합에 대해 동일한 작업을 수행 합니다. `$top=15&$skip=30`
 
 기본 인덱스가 변경 되는 경우 페이지가 매겨진 쿼리 결과가 안정적이 지 않을 수 있습니다. 페이징은 `$skip` 각 페이지에 대 한 값을 변경 하지만 각 쿼리는 독립적 이며 쿼리 시의 인덱스에 있는 데이터의 현재 보기에서 작동 합니다. 즉, 일반적인 용도의 데이터베이스에 있는 것과 같은 결과의 캐싱 또는 스냅숏이 없습니다.
  
@@ -98,7 +98,7 @@ POST /indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 
 ## <a name="hit-highlighting"></a>적중 항목 강조 표시
 
-적중 항목 강조 표시는 결과에서 일치 하는 용어에 적용 되는 텍스트 서식 (예: 굵게 또는 노란색 강조 표시)을 참조 하 여 일치 항목을 쉽게 찾을 수 있도록 합니다. 적중 항목 강조 표시 명령은 [쿼리 요청](https://docs.microsoft.com/rest/api/searchservice/search-documents)에 제공 됩니다. 
+적중 항목 강조 표시는 결과에서 일치 하는 용어에 적용 되는 텍스트 서식 (예: 굵게 또는 노란색 강조 표시)을 참조 하 여 일치 항목을 쉽게 찾을 수 있도록 합니다. 적중 항목 강조 표시 명령은 [쿼리 요청](/rest/api/searchservice/search-documents)에 제공 됩니다. 
 
 적중 항목 강조 표시를 사용 하도록 설정 하려면를 추가 `highlight=[comma-delimited list of string fields]` 하 여 강조 표시를 사용할 필드를 지정 합니다. 강조 표시는 일치 항목이 즉시 명확 하지 않은 설명 필드와 같은 긴 콘텐츠 필드에 유용 합니다. 적중 항목 강조 표시에 대 한 **검색** 가능으로 특성이 지정 된 필드 정의만 있습니다.
 

@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: daff4d1e43f5cc27e52e8bf26f48f30147800ae8
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 0e24c08c9689394fa6efdbc03d960c597496e8ad
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87839887"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231251"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Azure DDoS Protection 표준에 대 한 Azure 보안 기준
 
@@ -262,11 +262,11 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 **책임**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
 **지침**: Azure DDoS Protection 계획을 사용 하려면 계정을 네트워크 기여자 역할 또는 특정 작업이 할당 된 사용자 지정 역할에 할당 해야 합니다.
 
-- [Azure DDoS Protection에서 역할 기반 액세스 제어 관리](../../virtual-network/manage-ddos-protection.md)
+- [Azure DDoS Protection에서 Azure RBAC (역할 기반 액세스 제어) 관리](../../virtual-network/manage-ddos-protection.md)
 
 **Azure Security Center 모니터링**: 해당 없음
 

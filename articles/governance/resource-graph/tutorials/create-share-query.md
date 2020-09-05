@@ -3,16 +3,16 @@ title: '자습서: Azure Portal에서 쿼리 관리'
 description: 이 자습서에서는 Resource Graph 쿼리를 만들고 Azure Portal의 다른 사용자와 새 쿼리를 공유합니다.
 ms.date: 06/29/2020
 ms.topic: tutorial
-ms.openlocfilehash: c3da623e8bea44cc49e4ef46517ce461459405a9
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: f602a6ed26f467f2d3395bdf5e3346c83684b108
+ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970589"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "88005182"
 ---
 # <a name="tutorial-create-and-share-an-azure-resource-graph-query-in-the-azure-portal"></a>자습서: Azure Portal에서 Azure Resource Graph 쿼리 만들기 및 공유
 
-Azure Resource Graph Explorer를 사용하여 Azure Portal에 직접 Resource Graph 쿼리를 저장할 수 있습니다. 쿼리 유형으로는 _프라이빗_ 쿼리와 _공유_ 쿼리가 있습니다. 프라이빗 쿼리는 Azure Portal 설정에 저장됩니다. 반면 공유 쿼리는 RBAC(역할 기반 액세스 제어)를 통해 관리하고 리소스 잠금으로 보호할 수 있는 Azure Resource Manager 리소스입니다. 두 유형의 쿼리는 모두 미사용으로 암호화됩니다.
+Azure Resource Graph Explorer를 사용하여 Azure Portal에 직접 Resource Graph 쿼리를 저장할 수 있습니다. 쿼리 유형으로는 _프라이빗_ 쿼리와 _공유_ 쿼리가 있습니다. 프라이빗 쿼리는 Azure Portal 설정에 저장됩니다. 반면 공유 쿼리는 Azure RBAC(Azure 역할 기반 액세스 제어)를 통해 관리하고 리소스 잠금으로 보호할 수 있는 Azure Resource Manager 리소스입니다. 두 유형의 쿼리는 모두 미사용으로 암호화됩니다.
 
 Azure Portal에 쿼리를 저장하면 자주 사용하는 쿼리를 찾는 데 걸리는 시간을 절약할 수 있습니다. 쿼리를 공유하면 팀이 반복을 통해 일관성 및 효율성 목표를 실현하는 데 도움이 됩니다.
 
@@ -60,7 +60,7 @@ Azure Portal에 쿼리를 저장하면 자주 사용하는 쿼리를 찾는 데 
 
 ## <a name="create-a-shared-query"></a>공유 쿼리 만들기
 
-프라이빗 쿼리와 달리, 공유 쿼리는 Resource Manager 리소스입니다. 즉, 쿼리가 리소스 그룹에 저장되고, RBAC를 사용하여 관리 및 제어할 수 있으며, 리소스 잠금으로 보호할 수도 있습니다. 리소스이기 때문에 적절한 권한이 있는 모든 사람이 공유 쿼리를 보고 사용할 수 있습니다.
+프라이빗 쿼리와 달리, 공유 쿼리는 Resource Manager 리소스입니다. 즉, 쿼리가 리소스 그룹에 저장되고, Azure RBAC를 사용하여 관리 및 제어할 수 있으며, 리소스 잠금으로 보호할 수도 있습니다. 리소스이기 때문에 적절한 권한이 있는 모든 사람이 공유 쿼리를 보고 사용할 수 있습니다.
 새 공유 쿼리를 만들려면 다음 단계를 수행합니다.
 
 1. 포털 메뉴에서 **모든 서비스**를 선택하거나, 모든 페이지의 위쪽에 있는 Azure 검색 상자를 사용하여 **Resource Graph Explorer**를 검색하고 선택합니다.

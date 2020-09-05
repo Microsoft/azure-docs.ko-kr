@@ -8,12 +8,12 @@ ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 27fb165c36c17cee83cd9f90eba3bdcb9e32d517
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 0cfa7b63d1ce9dd4d9b40cd0eedac247f9c56437
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206905"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935758"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Azure Cognitive Search에 대 한 보안 연결을 위한 개인 끝점 만들기
 
@@ -22,11 +22,11 @@ ms.locfileid: "86206905"
 개인 끝점은 [Azure 개인 링크](../private-link/private-link-overview.md)에서 별도 서비스로 제공 됩니다. 비용에 대 한 자세한 내용은 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/private-link/)를 참조 하세요.
 
 > [!Important]
-> Azure Portal 또는 [관리 REST API 버전 2020-03-13](https://docs.microsoft.com/rest/api/searchmanagement/)을 사용 하 여 Azure Cognitive Search에 대 한 개인 끝점 지원을 구성할 수 있습니다. 서비스 끝점이 개인 인 경우 일부 포털 기능이 사용 하지 않도록 설정 됩니다. 서비스 수준 정보를 보고 관리할 수 있지만 인덱스, 인덱서 및 기술 정의와 같은 서비스의 다양 한 구성 요소 및 인덱스에 대 한 포털 액세스는 보안상의 이유로 제한 됩니다.
+> Azure Portal 또는 [관리 REST API 버전 2020-03-13](/rest/api/searchmanagement/)을 사용 하 여 Azure Cognitive Search에 대 한 개인 끝점 지원을 구성할 수 있습니다. 서비스 끝점이 개인 인 경우 일부 포털 기능이 사용 하지 않도록 설정 됩니다. 서비스 수준 정보를 보고 관리할 수 있지만 인덱스, 인덱서 및 기술 정의와 같은 서비스의 다양 한 구성 요소 및 인덱스에 대 한 포털 액세스는 보안상의 이유로 제한 됩니다.
 
 ## <a name="why-use-a-private-endpoint-for-secure-access"></a>보안 액세스에 개인 끝점을 사용 하는 이유
 
-Azure Cognitive Search에 대 한 [개인 끝점](../private-link/private-endpoint-overview.md) 은 가상 네트워크의 클라이언트가 [개인 링크](../private-link/private-link-overview.md)를 통해 검색 인덱스의 데이터에 안전 하 게 액세스할 수 있도록 합니다. 개인 끝점은 검색 서비스에 대 한 [가상 네트워크 주소 공간의](../virtual-network/virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) IP 주소를 사용 합니다. 클라이언트와 검색 서비스 간의 네트워크 트래픽은 가상 네트워크 및 Microsoft 백본 네트워크의 개인 링크를 순회 하 여 공용 인터넷에서 노출 되는 것을 제거 합니다. 개인 링크를 지 원하는 다른 PaaS 서비스 목록은 제품 설명서의 [가용성 섹션](../private-link/private-link-overview.md#availability) 을 확인 하세요.
+Azure Cognitive Search에 대 한 [개인 끝점](../private-link/private-endpoint-overview.md) 은 가상 네트워크의 클라이언트가 [개인 링크](../private-link/private-link-overview.md)를 통해 검색 인덱스의 데이터에 안전 하 게 액세스할 수 있도록 합니다. 개인 끝점은 검색 서비스에 대 한 [가상 네트워크 주소 공간의](../virtual-network/private-ip-addresses.md) IP 주소를 사용 합니다. 클라이언트와 검색 서비스 간의 네트워크 트래픽은 가상 네트워크 및 Microsoft 백본 네트워크의 개인 링크를 순회 하 여 공용 인터넷에서 노출 되는 것을 제거 합니다. 개인 링크를 지 원하는 다른 PaaS 서비스 목록은 제품 설명서의 [가용성 섹션](../private-link/private-link-overview.md#availability) 을 확인 하세요.
 
 검색 서비스에 대 한 개인 끝점을 사용 하면 다음을 수행할 수 있습니다.
 
@@ -46,7 +46,7 @@ Azure Cognitive Search에 대 한 [개인 끝점](../private-link/private-endpoi
     | ------- | ----- |
     | 구독 | 구독 선택|
     | 리소스 그룹 | **새로 만들기**를 선택 하 고 *myresourcegroup*을 입력 한 다음 **확인** 을 선택 합니다. |
-    | 이름 | *MyVirtualNetwork* 입력 |
+    | 속성 | *MyVirtualNetwork* 입력 |
     | 지역 | 원하는 지역 선택 |
     |||
 
@@ -86,7 +86,7 @@ Azure Cognitive Search에 대 한 [개인 끝점](../private-link/private-endpoi
     | Subscription | 구독을 선택합니다. |
     | Resource group | **myResourceGroup**을 선택합니다. 이전 섹션에서 만든 것입니다.|
     | 위치 | **미국 서부**를 선택합니다.|
-    | Name | *myPrivateEndpoint*를 입력합니다.  |
+    | 속성 | *myPrivateEndpoint*를 입력합니다.  |
     | 대상 하위 리소스 | 기본 **Searchservice**를 그대로 둡니다. |
     | **네트워킹** |  |
     | 가상 네트워크  | 리소스 그룹 *Myresourcegroup*에서 *MyVirtualNetwork* 을 선택 합니다. |

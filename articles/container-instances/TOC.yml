@@ -41,7 +41,7 @@
 - name: 샘플
   items:
     - name: 코드 샘플
-      href: 'https://azure.microsoft.com/resources/samples/?sort=0&term=aci'
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure&terms=container%20instance'
     - name: 리소스 관리자 템플릿
       href: container-instances-samples-rm.md
 - name: 개념

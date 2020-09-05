@@ -3,13 +3,13 @@ title: 다중 인스턴스 작업을 사용하여 MPI 애플리케이션 실행
 description: Azure Batch에서 다중 인스턴스 작업 유형을 사용하여 MPI(메시지 전달 인터페이스) 애플리케이션을 실행하는 방법에 대해 알아봅니다.
 ms.topic: how-to
 ms.date: 03/13/2019
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 66cedc4cdb7c55401b7dbbc892687d08f56eb875
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.custom: H1Hack27Feb2017, devx-track-csharp
+ms.openlocfilehash: fd39af127d975f085bbd55fe2a21f925b5aae8e6
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86147371"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88926374"
 ---
 # <a name="use-multi-instance-tasks-to-run-message-passing-interface-mpi-applications-in-batch"></a>다중 인스턴스 작업을 사용하여 Batch에서 MPI(메시지 전달 인터페이스) 애플리케이션 실행
 

@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 716951616a82dfd13d6bdcf127c4c4382576e792
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fd35f297e88c37aec39938b0bfd60288e591a62c
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080860"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936081"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>엔터티 인식 기술
 
-**엔터티 인식** 기술은 텍스트에서 다양한 형식의 엔터티를 추출합니다. 이 기술은 Cognitive Services의 [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)에서 제공하는 기계 학습 모델을 사용합니다.
+**엔터티 인식** 기술은 텍스트에서 다양한 형식의 엔터티를 추출합니다. 이 기술은 Cognitive Services의 [Text Analytics](../cognitive-services/text-analytics/overview.md)에서 제공하는 기계 학습 모델을 사용합니다.
 
 > [!NOTE]
 > 처리 빈도를 늘리거나 문서를 추가하거나 AI 알고리즘을 추가하여 범위를 확장할 때 [청구 가능한 Cognitive Services 리소스를 연결](cognitive-search-attach-cognitive-services.md)해야 합니다. Cognitive Services에서 API를 호출하는 경우와 Azure Cognitiv Search에서 문서 크래킹 단계의 일부로 이미지를 추출하는 경우에는 요금이 부과됩니다. 문서에서 텍스트 추출할 때는 요금이 발생하지 않습니다.
@@ -29,7 +29,7 @@ ms.locfileid: "85080860"
 Microsoft.Skills.Text.EntityRecognitionSkill
 
 ## <a name="data-limits"></a>데이터 제한
-레코드의 최대 크기는 [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)에 의해 측정된 대로 50,000자여야 합니다. 핵심 구문 추출기로 보내기 전에 데이터를 분할해야 할 경우 [텍스트 분할 기술](cognitive-search-skill-textsplit.md) 사용을 고려합니다.
+레코드의 최대 크기는 [`String.Length`](/dotnet/api/system.string.length)에 의해 측정된 대로 50,000자여야 합니다. 핵심 구문 추출기로 보내기 전에 데이터를 분할해야 할 경우 [텍스트 분할 기술](cognitive-search-skill-textsplit.md) 사용을 고려합니다.
 
 ## <a name="skill-parameters"></a>기술 매개 변수
 
@@ -45,7 +45,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 
 ## <a name="skill-inputs"></a>기술 입력
 
-| 입력 이름      | 설명                   |
+| 입력 이름      | Description                   |
 |---------------|-------------------------------|
 | `languageCode`    | 선택 사항입니다. 기본값은 `"en"`입니다.  |
 | `text`          | 분석할 텍스트입니다.          |
@@ -53,9 +53,9 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 ## <a name="skill-outputs"></a>기술 출력
 
 > [!NOTE]
-> 모든 엔터티 범주가 모든 언어로 지원되는 것은 아닙니다. `"Person"`, `"Location"` 및 `"Organization"` 엔터티 범주 형식은 위의 전체 언어 목록에 대해 지원 됩니다. _De_, _en_, _es_, _fr_및 _zh-cn hans_ 만 `"Quantity"` , `"Datetime"` , 및 형식의 추출을 지원 `"URL"` `"Email"` 합니다. 자세한 내용은 [텍스트 분석 API에 대 한 언어 및 지역 지원](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support)을 참조 하세요.  
+> 모든 엔터티 범주가 모든 언어로 지원되는 것은 아닙니다. `"Person"`, `"Location"` 및 `"Organization"` 엔터티 범주 형식은 위의 전체 언어 목록에 대해 지원 됩니다. _De_, _en_, _es_, _fr_및 _zh-cn hans_ 만 `"Quantity"` , `"Datetime"` , 및 형식의 추출을 지원 `"URL"` `"Email"` 합니다. 자세한 내용은 [텍스트 분석 API에 대 한 언어 및 지역 지원](../cognitive-services/text-analytics/language-support.md)을 참조 하세요.  
 
-| 출력 이름      | 설명                   |
+| 출력 이름      | Description                   |
 |---------------|-------------------------------|
 | `persons`       | 각 문자열이 사람 이름을 나타내는 경우 문자열 배열입니다. |
 | `locations`  | 각 문자열이 위치를 나타내는 경우 문자열 배열입니다. |
@@ -187,7 +187,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 }
 ```
 
-이 기술 출력의 엔터티에 대해 반환 되는 오프셋은 [텍스트 분석 API](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)에서 직접 반환 됩니다. 즉, 원본 문자열을 인덱싱하는 데 사용 하는 경우에는 .Net에서 [쌍인지](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) 클래스를 사용 하 여 올바른 콘텐츠를 추출 해야 합니다.  [자세한 내용은 여기를 참조 하세요.](https://docs.microsoft.com/azure/cognitive-services/text-analytics/concepts/text-offsets)
+이 기술 출력의 엔터티에 대해 반환 되는 오프셋은 [텍스트 분석 API](../cognitive-services/text-analytics/overview.md)에서 직접 반환 됩니다. 즉, 원본 문자열을 인덱싱하는 데 사용 하는 경우에는 .Net에서 [쌍인지](/dotnet/api/system.globalization.stringinfo?view=netframework-4.8) 클래스를 사용 하 여 올바른 콘텐츠를 추출 해야 합니다.  [자세한 내용은 여기를 참조 하세요.](../cognitive-services/text-analytics/concepts/text-offsets.md)
 
 ## <a name="error-cases"></a>오류 사례
 문서에 대한 언어 코드가 지원되지 않는 경우 오류가 반환되고 엔터티가 추출되지 않습니다.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: c3123d22d2a13be9b9e5360e82990ba3a6320b1a
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: daffcbf0a2ceb6f28cbb539906d4c6387840aa20
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88008800"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752093"
 ---
 # <a name="configure-an-aks-cluster"></a>AKS 클러스터 구성
 
@@ -81,17 +81,17 @@ AKS Ubuntu 16.04 이미지를 사용 하 여 노드 풀을 만들려면 사용�
 
 컨테이너 런타임은 컨테이너를 실행 하 고 노드의 컨테이너 이미지를 관리 하는 소프트웨어입니다. 런타임은 sys 호출 또는 OS (운영 체제) 특정 기능을 추상화 하 여 Linux 또는 Windows에서 컨테이너를 실행 하는 데 도움이 됩니다. 오늘 AKS는 [Moby](https://mobyproject.org/) (업스트림 docker)를 컨테이너 런타임으로 사용 하 고 있습니다. 
     
-![Docker CRI](media/cluster-configuration/docker-cri.png)
+![Docker CRI 1](media/cluster-configuration/docker-cri.png)
 
-[`Containerd`](https://containerd.io/)는 노드에서 컨테이너를 실행 하 고 이미지를 관리 하는 데 필요한 최소 기능 집합을 제공 하는 [OCI](https://opencontainers.org/) (Open Container 이니셔티브) 규격 핵심 컨테이너 런타임입니다. 2017 년 3 월의 CNCF (Cloud Native Compute Foundation)로 [기증](https://www.cncf.io/announcement/2017/03/29/containerd-joins-cloud-native-computing-foundation/) 되었습니다. AKS에서 현재 사용 하 고 있는 현재 Moby 버전은 위에 표시 된 대로 이미를 활용 하 고 `containerd` 있습니다. 
+[`Containerd`](https://containerd.io/) 는 노드에서 컨테이너를 실행 하 고 이미지를 관리 하는 데 필요한 최소 기능 집합을 제공 하는 [OCI](https://opencontainers.org/) (Open Container 이니셔티브) 규격 핵심 컨테이너 런타임입니다. 2017 년 3 월의 CNCF (Cloud Native Compute Foundation)로 [기증](https://www.cncf.io/announcement/2017/03/29/containerd-joins-cloud-native-computing-foundation/) 되었습니다. AKS에서 현재 사용 하 고 있는 현재 Moby 버전은 위에 표시 된 대로 이미를 활용 하 고 `containerd` 있습니다. 
 
 Containerd 기반 노드 및 노드 풀을 사용 하는 대신, `dockershim` kubelet는 `containerd` CRI (container runtime interface) 플러그 인을 통해 직접 통신 하 여 Docker CRI 구현과 비교할 때 흐름에서 추가 홉을 제거 합니다. 따라서 pod 시작 대기 시간 및 리소스 (CPU 및 메모리) 사용이 더 나은 것을 볼 수 있습니다.
 
 AKS 노드에 대해를 사용 하 여 `containerd` pod 시작 대기 시간이 향상 되 고 컨테이너 런타임에의 한 노드 리소스 소비가 감소 합니다. 이러한 향상 된 기능은 kubelet이 새 아키텍처에서 사용 하도록 설정 됩니다 .이 아키텍처는 `containerd` Moby/docker 아키텍처 kubelet에서 CRI 플러그 인을 통해 직접 통신 하는 반면 `dockershim` `containerd` , 흐름에 추가 홉이 발생 하기 전에 및 docker 엔진과 통신 합니다.
 
-![Docker CRI](media/cluster-configuration/containerd-cri.png)
+![Docker CRI 2](media/cluster-configuration/containerd-cri.png)
 
-`Containerd`AKS에 있는 kubernetes의 모든 GA 버전 및 v 1.10 위의 모든 업스트림 kubernetes 버전에서 작동 하며 모든 kubernetes 및 AKS 기능을 지원 합니다.
+`Containerd` AKS에 있는 kubernetes의 모든 GA 버전 및 v 1.10 위의 모든 업스트림 kubernetes 버전에서 작동 하며 모든 kubernetes 및 AKS 기능을 지원 합니다.
 
 > [!IMPORTANT]
 > `containerd`가 AKS에서 일반 공급 되 면 새 클러스터의 컨테이너 런타임에 사용할 수 있는 유일한 옵션입니다. 지원 되지 않는 이전 버전에서는 계속 해 서 Moby nodepools 및 클러스터를 사용할 수 있습니다. 
@@ -159,14 +159,14 @@ az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-gro
 Moby (docker) 런타임을 사용 하 여 노드 풀을 만들려면 사용자 지정 태그를 생략 하 여이 작업을 수행할 수 있습니다 `--aks-custom-headers` .
 
 
-### <a name="containerd-limitationsdifferences"></a>`Containerd`제한 사항/차이점
+### <a name="containerd-limitationsdifferences"></a>`Containerd` 제한 사항/차이점
 
 * 를 `containerd` 컨테이너 런타임으로 사용 하려면 기본 OS 이미지로 AKS Ubuntu 18.04을 사용 해야 합니다.
 * Docker 도구 집합은 여전히 노드에 있지만 Kubernetes는 컨테이너 런타임으로를 사용 `containerd` 합니다. 따라서 Moby/Docker는 노드의 Kubernetes 생성 컨테이너를 관리 하지 않으므로 Docker 명령 (예: `docker ps` ) 또는 DOCKER API를 사용 하 여 컨테이너를 보거나 조작할 수 없습니다.
 * 의 경우 `containerd` [`crictl`](https://kubernetes.io/docs/tasks/debug-application-cluster/crictl) Kubernetes 노드의 pod, 컨테이너 및 컨테이너 이미지 **문제를 해결** 하기 위해 DOCKER cli 대신 대체 cli로를 사용 하는 것이 좋습니다 (예: `crictl ps` ). 
    * Docker CLI의 완전 한 기능을 제공 하지 않습니다. 문제 해결을 위한 용도로만 사용 됩니다.
-   * `crictl`pod 등과 같은 개념을 포함 하 여 컨테이너에 대 한 보다 kubernetes 보기를 제공 합니다.
-* `Containerd`표준화 된 `cri` 로깅 형식 (현재 docker의 json 드라이버에서 가져온 것과 다름)을 사용 하 여 로깅을 설정 합니다. 로깅 솔루션은 `cri` [컨테이너에 대 한 Azure Monitor](../azure-monitor/insights/container-insights-enable-new-cluster.md)와 같은 로깅 형식을 지원 해야 합니다.
+   * `crictl` pod 등과 같은 개념을 포함 하 여 컨테이너에 대 한 보다 kubernetes 보기를 제공 합니다.
+* `Containerd` 표준화 된 `cri` 로깅 형식 (현재 docker의 json 드라이버에서 가져온 것과 다름)을 사용 하 여 로깅을 설정 합니다. 로깅 솔루션은 `cri` [컨테이너에 대 한 Azure Monitor](../azure-monitor/insights/container-insights-enable-new-cluster.md)와 같은 로깅 형식을 지원 해야 합니다.
 * 더 이상 docker 엔진에 액세스 하거나 docker (docker)를 사용할 수 없습니다 `/var/run/docker.sock` .
   * 현재 Docker 엔진에서 응용 프로그램 로그 또는 모니터링 데이터를 추출 하는 경우 [컨테이너에 Azure Monitor](../azure-monitor/insights/container-insights-enable-new-cluster.md) 와 같은 항목을 대신 사용 하세요. 또한 AKS는 에이전트 노드에서 모든 대역외 명령이 실행 되는 것을 지원 하지 않습니다 .이로 인해 불안정 해질 수 있습니다.
   * Moby/docker를 사용 하는 경우에도 위의 방법으로 이미지를 빌드하고 docker 엔진을 직접 활용 하는 것은 권장 되지 않습니다. Kubernetes는 소비 된 리소스를 완전히 인식 하지 못하므로 이러한 접근 방식은 [여기](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) 및 [여기](https://securityboulevard.com/2018/05/escaping-the-whale-things-you-probably-shouldnt-do-with-docker-part-1/)에서 자세히 설명 하는 다양 한 문제를 제공 합니다.
@@ -236,7 +236,7 @@ az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myR
 
 ## <a name="ephemeral-os-preview"></a>임시 OS (미리 보기)
 
-기본적으로 Azure 가상 컴퓨터에 대 한 운영 체제 디스크는 Azure storage에 자동으로 복제 되어 데이터 손실을 방지 하 고 VM을 다른 호스트에 재배치 해야 합니다. 그러나 컨테이너는 로컬 상태를 유지 하도록 설계 되지 않았으므로이 동작은 제한 된 값을 제공 하 고, 느린 노드 프로 비전 및 낮은 읽기/쓰기 대기 시간을 비롯 한 몇 가지 단점을 제공 합니다.
+기본적으로 Azure 가상 컴퓨터에 대 한 운영 체제 디스크는 Azure storage에 자동으로 복제 되어 데이터 손실을 방지 하 고 VM을 다른 호스트에 재배치 해야 합니다. 그러나 컨테이너는 로컬 상태를 유지 하도록 설계 되지 않았으므로이 동작은 제한 된 값을 제공 하는 반면, 느린 노드 프로 비전 및 더 높은 읽기/쓰기 대기 시간을 비롯 한 몇 가지 단점을 제공 합니다.
 
 이와 반대로 삭제 된 OS 디스크는 임시 디스크와 마찬가지로 호스트 컴퓨터에만 저장 됩니다. 이를 통해 더 빠른 노드 크기 조정 및 클러스터 업그레이드와 함께 읽기/쓰기 대기 시간이 줄어듭니다.
 

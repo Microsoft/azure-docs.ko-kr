@@ -6,15 +6,15 @@ author: msmbaldwin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
+ms.topic: overview
 ms.date: 07/27/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 6df9d5de88a3317c509279a7667c1a60eaf26a79
-ms.sourcegitcommit: 97a0d868b9d36072ec5e872b3c77fa33b9ce7194
+ms.openlocfilehash: b469ea0d0a91cc4ca7f0602dffbcc63b31c60855
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87563648"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588367"
 ---
 # <a name="whats-new-for-azure-key-vault"></a>Azure Key Vault의 새 기능
 

@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 01061ce1099588029410531793279572d112f382
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 53ccd610c6f0f36d4ab04efbada2070a22975023
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850358"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88650114"
 ---
 # <a name="what-is-azure-machine-learning"></a>Azure Machine Learning이란?
 
@@ -43,7 +43,7 @@ Machine Learning을 통한 예측은 좀 더 똑똑한 앱 및 디바이스를 �
 Azure Machine Learning은 개발자와 데이터 과학자에게 다음을 비롯한 기계 학습 워크플로에 필요한 모든 도구를 제공합니다.
 + [Azure Machine Learning 디자이너](tutorial-designer-automobile-price-train-score.md)(미리 보기): 끌어서 놓기로 실험을 빌드하고 파이프라인을 배포할 수 있는 모듈입니다.
 
-+ Jupyter Notebook: [예제 Notebook](https://aka.ms/aml-notebooks)을 사용하거나 고유한 Notebook을 만들어 기계 학습에서 <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">Python용 Azure SDK</a> 샘플을 활용할 수 있습니다. 
++ Jupyter Notebook: [예제 Notebook](https://github.com/Azure/MachineLearningNotebooks)을 사용하거나 고유한 Notebook을 만들어 기계 학습에서 <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">Python용 Azure SDK</a> 샘플을 활용할 수 있습니다. 
 
 + <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">R용 SDK</a>를 사용하여 고유한 코드를 작성하는 R 스크립트 또는 Notebook이나 디자이너에서 사용하는 R 모듈
 
@@ -88,7 +88,7 @@ SDK를 사용하여 [모델 학습 및 튜닝을 자동화](tutorial-auto-train-
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: 배포 및 수명 주기 관리
 적합한 모델이 있는 경우 웹 서비스, IoT 디바이스 또는 Power BI에서 해당 모델을 쉽게 사용할 수 있습니다. 자세한 내용은 [배포 방법 및 위치](how-to-deploy-and-where.md) 문서를 참조하세요.
 
-그런 다음, [Python용 Azure Machine Learning SDK](https://aka.ms/aml-sdk), [Azure Machine Learning Studio](https://ml.azure.com) 또는 [기계 학습 CLI](reference-azure-machine-learning-cli.md)를 사용하여 배포된 모델을 관리할 수 있습니다.
+그런 다음, [Python용 Azure Machine Learning SDK](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py), [Azure Machine Learning Studio](https://ml.azure.com) 또는 [기계 학습 CLI](reference-azure-machine-learning-cli.md)를 사용하여 배포된 모델을 관리할 수 있습니다.
 
 이러한 모델은 사용 가능하며 대량의 데이터에 대한 예측을 [실시간으로](how-to-consume-web-service.md) 또는 [비동기적으로](how-to-use-parallel-run-step.md) 반환할 수 있습니다.
 

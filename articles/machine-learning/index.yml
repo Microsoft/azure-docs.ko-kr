@@ -11,25 +11,26 @@ metadata:
   ms.collection: collection
   author: j-martens
   ms.author: jmartens
-  ms.date: 07/30/2020
-  ms.openlocfilehash: 40a8fc105dd297ec4bc70ecc0a27b9fa295d3fe1
-  ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+  ms.date: 08/17/2020
+  ms.custom: contperfq1
+  ms.openlocfilehash: 63e1e9216a5150b957a34e15def9726167694978
+  ms.sourcegitcommit: ef055468d1cb0de4433e1403d6617fede7f5d00e
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/31/2020
-  ms.locfileid: "87474515"
+  ms.lasthandoff: 08/16/2020
+  ms.locfileid: "88258702"
 landingContent:
 - title: 기계 학습 시작
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Python Notebooks
+    - text: Python Notebook 사용
       url: tutorial-1st-experiment-sdk-setup.md
-    - text: AutoML(코드/낮은 코드 없음)
+    - text: AutoML 사용(코드/낮은 코드 없음)
       url: tutorial-first-experiment-automated-ml.md
-    - text: 디자이너(끌어서 놓기)
+    - text: 디자이너에서(끌어서 놓기)
       url: tutorial-designer-automobile-price-train-score.md
-    - text: RStudio
+    - text: RStudio 사용
       url: tutorial-1st-r-experiment.md
 - title: ML 모델을 Azure로 가져오기
   linkLists:

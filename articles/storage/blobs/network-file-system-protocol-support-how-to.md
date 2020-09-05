@@ -9,19 +9,19 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 2517a0ac8edf30ac041708a57b166af6eb36440a
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 09206b8189f03a37f8bd7d073238609a3f1bd3ad
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760800"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88816102"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>NFS (네트워크 파일 시스템) 3.0 프로토콜 (미리 보기)을 사용 하 여 Blob storage 탑재
 
 NFS 3.0 프로토콜을 사용 하 여 온-프레미스에서 실행 되는 Windows 또는 Linux 기반 Azure VM (가상 머신) 또는 Windows 또는 Linux 시스템에서 Blob 저장소에 컨테이너를 탑재할 수 있습니다. 이 문서에서는 단계별 지침을 제공 합니다. Blob storage에서 NFS 3.0 프로토콜 지원에 대 한 자세한 내용은 [Azure blob storage에서 nfs (네트워크 파일 시스템) 3.0 프로토콜 지원 (미리 보기)](network-file-system-protocol-support.md)을 참조 하세요.
 
 > [!NOTE]
-> NFS 3.0 Azure Blob storage의 프로토콜 지원은 공개 미리 보기 상태 이며 미국 동부, 미국 중부 및 캐나다 중부 지역에서 사용할 수 있습니다.
+> NFS 3.0 Azure Blob storage의 프로토콜 지원은 공개 미리 보기로 제공 되며 미국 동부, 미국 중부, 미국 서 부 중부, 오스트레일리아 남동쪽, 서유럽, 영국 서부, 대한민국 중부, 한국 남부 및 캐나다 중부 지역에서 사용할 수 있습니다.
 
 ## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>1 단계: 구독과 함께 NFS 3.0 프로토콜 기능 등록
 
@@ -92,7 +92,7 @@ NFS 3.0를 사용 하 여 컨테이너를 탑재 하려면 구독에 기능을 �
 
 |Setting | 값|
 |----|---|
-|위치|다음 지역 중 하나: 미국 동부, 미국 중부 및 캐나다 중부 |
+|위치|미국 동부, 미국 중부, 미국 서 부 중부, 오스트레일리아 남동쪽, 서유럽, 영국 서부, 대한민국 중부, 한국 남부 및 캐나다 중부 지역 중 하나입니다. |
 |성능|Premium|
 |계정 종류|BlockBlobStorage|
 |복제|LRS(로컬 중복 스토리지)|
@@ -109,11 +109,11 @@ NFS 3.0를 사용 하 여 컨테이너를 탑재 하려면 구독에 기능을 �
 
 |도구|SDK|
 |---|---|
-|[Azure Storage Explorer](data-lake-storage-explorer.md#create-a-container)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
+|[Azure Portal](https://portal.azure.com)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AZCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
 |[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
-|[Azure Portal](https://portal.azure.com)|[REST (영문)](https://docs.microsoft.com/rest/api/storageservices/create-container)|
+||[REST (영문)](https://docs.microsoft.com/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>7 단계: 컨테이너 탑재
 
@@ -154,6 +154,15 @@ Windows 또는 Linux 시스템에서 디렉터리를 만든 다음 컨테이너�
 
    - `<container-name>`자리 표시자를 컨테이너의 이름으로 바꿉니다.
 
+3. 쓰기 권한이 필요한 경우 Windows에서 공유에 연결 하는 데 사용 하는 기본 UID 및 GID를 변경 해야 할 수 있습니다. 이렇게 하려면 관리자 권한으로 다음 PowerShell 명령을 실행 합니다.
+
+   ```
+   New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousUid -PropertyType DWord -Value 0
+   New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousGid -PropertyType DWord -Value 0
+   ```
+   
+   - NFS 클라이언트 서비스를 다시 시작 하거나이 변경 작업을 수행한 후 서버를 다시 부팅 하십시오.
+
 ---
 
 ## <a name="resolve-common-issues"></a>일반적인 문제 해결
@@ -163,7 +172,7 @@ Windows 또는 Linux 시스템에서 디렉터리를 만든 다음 컨테이너�
 |`Access denied by server while mounting`|지원되는 서브넷 내에서 클라이언트가 실행되고 있는지 확인합니다. [지원 되는 네트워크 위치](network-file-system-protocol-support.md#supported-network-connections)를 참조 하세요.|
 |`No such file or directory`| 기능이 등록되었는지 확인한 후 탑재할 컨테이너가 생성되었는지 확인합니다. [2 단계: 기능이 등록 되었는지 확인](#step-2-verify-that-the-feature-is-registered)을 참조 하세요. 또한 탑재 명령과 매개 변수를 터미널에 직접 입력 해야 합니다. 이 명령의 일부를 복사하여 다른 애플리케이션의 터미널에 붙여넣는 경우 붙여넣은 정보에 숨겨진 문자가 있으면 이 오류가 발생할 수 있습니다.|
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>추가 정보
 
 [Azure Blob storage에서 NFS (네트워크 파일 시스템) 3.0 프로토콜 지원 (미리 보기)](network-file-system-protocol-support.md)
 

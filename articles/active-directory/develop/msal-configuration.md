@@ -13,12 +13,12 @@ ms.date: 09/12/2019
 ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman
-ms.openlocfilehash: 3de252b22d7b33e45c3b45e2b6c05e4b33df663d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f5950347fff380fcfbaa89834407ff5f497a9719
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027056"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854910"
 ---
 # <a name="android-microsoft-authentication-library-configuration-file"></a>Android Microsoft 인증 라이브러리 구성 파일
 
@@ -35,8 +35,8 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 | `client_id` | String | 예 | [응용 프로그램 등록 페이지](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) 에서 앱의 클라이언트 ID |
 | `redirect_uri`   | String | 예 | [응용 프로그램 등록 페이지](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) 에서 앱의 리디렉션 URI |
 | `authorities` | 목록\<Authority> | 아니요 | 앱에 필요한 권한 목록 |
-| `authorization_user_agent` | AuthorizationAgent (enum) | 아니요 | 가능한 값: `DEFAULT` , `BROWSER` ,`WEBVIEW` |
-| `http` | HttpConfiguration | 아니요 | 구성 `HttpUrlConnection` `connect_timeout` 및`read_timeout` |
+| `authorization_user_agent` | AuthorizationAgent (enum) | 아니요 | 가능한 값: `DEFAULT` , `BROWSER` , `WEBVIEW` |
+| `http` | HttpConfiguration | 아니요 | 구성 `HttpUrlConnection` `connect_timeout` 및 `read_timeout` |
 | `logging` | LoggingConfiguration | 아니요 | 로깅 세부 정보 수준을 지정 합니다. 선택적 구성에는 `pii_enabled` 부울 값을 사용 하는 및,, `log_level` `ERROR` `WARNING` `INFO` 또는를 사용 `VERBOSE` 하는가 포함 됩니다. |
 
 ### <a name="client_id"></a>client_id
@@ -58,7 +58,7 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
     "audience": {
         "type": "AzureADandPersonalMicrosoftAccount"
     },
-    "default": true // Indicates that this is the default to use if not provided as part of the acquireToken or acquireTokenSilent call
+    "default": true // Indicates that this is the default to use if not provided as part of the acquireToken call
 },
 // Example AzureAD My Organization
 {
@@ -88,7 +88,7 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 
 | 형식 | 사용자 | 테넌트 ID | Authority_Url | 결과 끝점 | 참고 |
 |------|------------|------------|----------------|----------------------|---------|
-| AAD | AzureADandPersonalMicrosoftAccount | | | `https://login.microsoftonline.com/common` | `common`는 계정이 인에 대 한 테 넌 트 별칭입니다. 예: 특정 Azure Active Directory 테 넌 트 또는 Microsoft 계정 시스템 |
+| AAD | AzureADandPersonalMicrosoftAccount | | | `https://login.microsoftonline.com/common` | `common` 는 계정이 인에 대 한 테 넌 트 별칭입니다. 예: 특정 Azure Active Directory 테 넌 트 또는 Microsoft 계정 시스템 |
 | AAD | AzureADMyOrg | contoso.com | | `https://login.microsoftonline.com/contoso.com` | Contoso.com에 있는 계정만 토큰을 획득할 수 있습니다. 확인 된 도메인 또는 테 넌 트 GUID는 테 넌 트 ID로 사용 될 수 있습니다. |
 | AAD | AzureADMultipleOrgs | | | `https://login.microsoftonline.com/organizations` | 이 끝점에는 Azure Active Directory 계정만 사용할 수 있습니다. Microsoft 계정은 조직의 멤버일 수 있습니다. 조직에서 리소스에 대 한 Microsoft 계정를 사용 하 여 토큰을 얻으려면 토큰을 원하는 조직 테 넌 트를 지정 합니다. |
 | AAD | PersonalMicrosoftAccount | | | `https://login.microsoftonline.com/consumers` | Microsoft 계정만이 끝점을 사용할 수 있습니다. |
@@ -103,7 +103,7 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 
 | 속성 | 데이터 형식  | 필수 | 메모 |
 |-----------|-------------|-----------|--------|
-| `type` | String | 예 | 앱이 대상으로 하는 대상 또는 계정 유형을 미러링합니다. 가능한 값: `AAD` ,`B2C` |
+| `type` | String | 예 | 앱이 대상으로 하는 대상 또는 계정 유형을 미러링합니다. 가능한 값: `AAD` , `B2C` |
 | `audience` | Object | 아니요 | Type = 인 경우에만 적용 됩니다 `AAD` . 앱이 대상으로 하는 id를 지정 합니다. 앱 등록의 값 사용 |
 | `authority_url` | String | 예 | Type = 인 경우에만 필요 `B2C` 합니다. 앱에서 사용 해야 하는 기관 URL 또는 정책을 지정 합니다.  |
 | `default` | boolean | 예 | 하나 이상의 `"default":true` 기관이 지정 된 경우 단일가 필요 합니다. |
@@ -112,7 +112,7 @@ Android MSAL (Microsoft 인증 라이브러리)은 기본 [구성 JSON 파일](h
 
 | 속성 | 데이터 형식  | 필수 | 메모 |
 |-----------|-------------|------------|-------|
-| `type` | String | 예 | 앱이 대상으로 지정 하려는 대상 그룹을 지정 합니다. 가능한 값: `AzureADandPersonalMicrosoftAccount` , `PersonalMicrosoftAccount` , `AzureADMultipleOrgs` ,`AzureADMyOrg` |
+| `type` | String | 예 | 앱이 대상으로 지정 하려는 대상 그룹을 지정 합니다. 가능한 값: `AzureADandPersonalMicrosoftAccount` , `PersonalMicrosoftAccount` , `AzureADMultipleOrgs` , `AzureADMyOrg` |
 | `tenant_id` | String | 예 | 인 경우에만 필요 `"type":"AzureADMyOrg"` 합니다. 다른 값의 경우 선택 사항 `type` 입니다. 이 도메인은와 같은 테 넌 트 도메인 `contoso.com` 이거나와 같은 테 넌 트 ID 일 수 있습니다. `72f988bf-86f1-41af-91ab-2d7cd011db46` |
 
 ### <a name="authorization_user_agent"></a>authorization_user_agent
@@ -143,7 +143,7 @@ HTTP 시간 제한에 대해 다음과 같은 전역 설정을 구성 합니다.
 | `connect_timeout` | Int | 아니요 | 시간 (밀리초) |
 | `read_timeout` | Int | 아니요 | 시간 (밀리초) |
 
-### <a name="logging"></a>logging
+### <a name="logging"></a>로깅
 
 로깅에 대 한 전역 설정은 다음과 같습니다.
 

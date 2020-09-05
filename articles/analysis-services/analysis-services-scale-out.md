@@ -4,15 +4,15 @@ description: 확장을 사용 하 여 Azure Analysis Services 서버를 복제 �
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 03/02/2020
+ms.date: 08/20/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 3ea304d038618fc428f20e7ad72b398f593d09a8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ceed2a287fb210a421972e9c9f9e6c77c6cb1879
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78247984"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716931"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Azure Analysis Services 규모 확장
 
@@ -50,7 +50,7 @@ ms.locfileid: "78247984"
 
 ### <a name="synchronization-mode"></a>동기화 모드
 
-기본적으로 쿼리 복제본은 증분이 아닌 전체로 증가 됩니다. 리하이드레이션는 단계에서 발생 합니다. 한 번에 두 개 이상의 복제본을 분리 하 고 연결 하 여 지정 된 시간에 하나 이상의 복제본이 온라인 상태로 유지 되도록 합니다. 경우에 따라이 프로세스가 수행 되는 동안 클라이언트에서 온라인 복제본 중 하나에 다시 연결 해야 할 수도 있습니다. 이제 (미리 보기에서) **ReplicaSyncMode** 설정을 사용 하 여 쿼리 복제본 동기화가 병렬로 발생 하도록 지정할 수 있습니다. 병렬 동기화는 다음과 같은 이점을 제공 합니다. 
+기본적으로 쿼리 복제본은 증분이 아닌 전체로 증가 됩니다. 리하이드레이션는 단계에서 발생 합니다. 한 번에 두 개 이상의 복제본을 분리 하 고 연결 하 여 지정 된 시간에 하나 이상의 복제본이 온라인 상태로 유지 되도록 합니다. 경우에 따라이 프로세스가 수행 되는 동안 클라이언트에서 온라인 복제본 중 하나에 다시 연결 해야 할 수도 있습니다. 이제 **ReplicaSyncMode** 설정을 사용 하 여 쿼리 복제본 동기화가 병렬로 발생 하도록 지정할 수 있습니다. 병렬 동기화는 다음과 같은 이점을 제공 합니다. 
 
 - 동기화 시간이 크게 감소 했습니다. 
 - 복제본 간의 데이터는 동기화 프로세스 중에 일관 될 가능성이 높습니다. 
@@ -61,7 +61,7 @@ ms.locfileid: "78247984"
 
 SSMS를 사용 하 여 고급 속성에서 ReplicaSyncMode를 설정 합니다. 가능한 값은 다음과 같습니다. 
 
-- `1`(기본값): 전체 복제본 데이터베이스 리하이드레이션 단계 (증분). 
+- `1` (기본값): 전체 복제본 데이터베이스 리하이드레이션 단계 (증분). 
 - `2`: 동기화가 병렬로 최적화 되었습니다. 
 
 ![모델 설정/설정](media/analysis-services-scale-out/aas-scale-out-sync-mode.png)
@@ -131,12 +131,12 @@ SSMS를 사용 하 여 고급 속성에서 ReplicaSyncMode를 설정 합니다. 
 반환 상태 코드:
 
 
-|코드  |설명  |
+|코드  |Description  |
 |---------|---------|
 |-1     |  올바르지 않음       |
 |0     | Replicating        |
 |1     |  리하이드레이션       |
-|2     |   완료       |
+|2     |   완료됨       |
 |3     |   실패      |
 |4     |    중     |
 |||

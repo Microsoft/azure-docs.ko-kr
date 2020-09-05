@@ -2,25 +2,21 @@
 title: '자습서: ExpenseIn과 Azure Active Directory 연결 | Microsoft Docs'
 description: Azure Active Directory와 ExpenseIn 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: CelesteDG
 ms.reviewer: celested
-ms.assetid: 6ac8053b-a216-45d8-bf5e-ecd37d808e57
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 07/17/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 377499b1dd263398e1be42379f8db60e8a0477f9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 7d0b0a6c935182737a7f207b7c7831fefcd491ea
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87017519"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555317"
 ---
 # <a name="tutorial-integrate-expensein-with-azure-active-directory"></a>자습서: ExpenseIn과 Azure Active Directory 연결
 
@@ -127,7 +123,15 @@ Azure Portal에서 Azure AD SSO를 사용하도록 설정하려면 다음 단계
 
 ## <a name="configure-expensein-sso"></a>ExpenseIn SSO 구성
 
-1. 새 웹 브라우저 창을 열고 ExpenseIn 회사 사이트에 관리자 권한으로 로그인합니다.
+1. ExpenseIn 내에서 구성을 자동화하려면 **확장 설치**를 클릭하여 **내 앱 보안 로그인 브라우저 확장**을 설치해야 합니다.
+
+    ![내 앱 확장](common/install-myappssecure-extension.png)
+
+1. 브라우저에 확장을 추가한 후 **ExpenseIn 설정**을 클릭하면 ExpenseIn 애플리케이션으로 이동됩니다. 여기서 관리자 자격 증명을 입력하여 ExpenseIn에 로그인합니다. 브라우저 확장이 애플리케이션을 자동으로 구성하고 3-5단계를 자동으로 수행합니다.
+
+    ![설정 구성](common/setup-sso.png)
+
+1. ExpenseIn을 수동으로 설정하려면 ExpenseIn 회사 사이트에 관리자 권한으로 로그인합니다.
 
 1. 페이지 위쪽의 **관리자**를 클릭한 후 **Single Sign-On**으로 이동하고 **공급자 추가**를 클릭합니다.
 

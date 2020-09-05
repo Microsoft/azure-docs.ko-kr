@@ -6,14 +6,14 @@ ms.author: owend
 tags: azure-resource-manager
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 04/14/2020
+ms.date: 08/31/2020
 ms.custom: subject-armqs, references_regions
-ms.openlocfilehash: 249c678fb6d55f01a9f06e4e1db5f41fa85a700f
-ms.sourcegitcommit: 1b2d1755b2bf85f97b27e8fbec2ffc2fcd345120
+ms.openlocfilehash: 3e776bf41420d38a1b208ce11a6a34e97fa92a15
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87553073"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230792"
 ---
 # <a name="quickstart-create-a-server---arm-template"></a>빠른 시작: 서버 만들기 - ARM 템플릿
 
@@ -34,7 +34,7 @@ ms.locfileid: "87553073"
 
 이 빠른 시작에서 사용되는 템플릿은 [Azure 빠른 시작 템플릿](https://azure.microsoft.com/resources/templates/101-analysis-services-create/)에서 나온 것입니다.
 
-:::code language="json" source="~/quickstart-templates/101-analysis-services-create/azuredeploy.json" range="1-79" highlight="63-78":::
+:::code language="json" source="~/quickstart-templates/101-analysis-services-create/azuredeploy.json":::
 
 방화벽 규칙을 사용하는 단일 [Microsoft.AnalysisServices/servers](/azure/templates/microsoft.analysisservices/servers) 리소스가 템플릿에 정의되어 있습니다.
 
@@ -105,6 +105,5 @@ Write-Host "Press [ENTER] to continue..."
 
 이 빠른 시작에서는 ARM 템플릿을 사용하여 새 리소스 그룹 및 Azure Analysis Services 서버 리소스를 만들었습니다. 템플릿을 사용하여 서버 리소스를 만든 후 다음 항목을 진행해 보세요.
 
-- [빠른 시작: 서버 만들기 - PowerShell](analysis-services-create-powershell.md)
-- [포털에서 샘플 모델 추가](analysis-services-create-sample-model.md)
-- [서버 관리자 및 사용자 역할 구성](tutorials/analysis-services-tutorial-roles.md)
+> [!div class="nextstepaction"]
+> [빠른 시작: 서버 방화벽 구성 - Portal](analysis-services-qs-firewall.md)   

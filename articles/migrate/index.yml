@@ -3,19 +3,21 @@ title: Azure Migrate 설명서
 summary: Azure Migrate 허브의 도구를 사용하여 온-프레미스 환경을 검색, 평가 및 마이그레이션하는 데 도움이 되는 문서를 찾아보세요.
 metadata:
   title: Azure Migrate 설명서
-  description: Azure Migrate 허브의 도구를 사용하여 온-프레미스 환경을 검색, 평가 및 Azure로 마이그레이션하는 방법에 대해 알아보세요.
+  description: Azure 마이그레이션 자습서, 리소스 및 마이그레이션 평가 도구를 찾습니다. Azure Migrate 허브의 도구를 사용하여 온-프레미스 환경을 검색, 평가 및 Azure로 마이그레이션하는 방법에 대해 알아보세요.
   ms.service: azure-migrate
   ms.topic: landing-page
   ms.collection: collection
   author: rayne-wiselman
   ms.author: raynew
   ms.date: 07/08/2020
-  ms.openlocfilehash: a3c9be5e123892d5d1b8d8e4a0677eb520e34dc6
-  ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+  ms.custom: seo-azure-migrate
+  keywords: azure migrate, azure migration, azure migrate assessment tool, azure migrate tool, azure migrate documentation, azure migration documentation
+  ms.openlocfilehash: b38df4b4a9c9cd0741e9bc4d69e42ebaf2feefb7
+  ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/08/2020
-  ms.locfileid: "86112666"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89228344"
 landingContent:
 - title: Azure Migrate 정보
   linkLists:

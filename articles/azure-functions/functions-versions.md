@@ -2,13 +2,14 @@
 title: Azure Functions 런타임 버전 개요
 description: Azure Functions는 여러 버전의 런타임을 지원합니다. 버전 간 차이점과 적합한 버전을 선택하는 방법을 알아봅니다.
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 ms.date: 12/09/2019
-ms.openlocfilehash: 29dd4a1ea60c463655c5b9a17fedcf6d51eee927
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 6641461e63d7c9452351f3b0b99a274d2714a92e
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87081681"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88208114"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Azure Functions 런타임 버전 개요
 
@@ -43,7 +44,7 @@ ms.locfileid: "87081681"
 
 2.x 버전부터 앱의 함수에 사용 되는 특정 트리거 및 바인딩에 대 한 확장을 설치 해야 합니다. 유일한 예외는 확장이 필요 없는 이 HTTP 및 타이머 트리거입니다.  자세한 내용은 [바인딩 확장 등록 및 설치](./functions-bindings-register.md)를 참조하세요.
 
-또한 버전 간에 함수의function.js또는 특성에 *대* 한 몇 가지 변경 내용이 있습니다. 예를 들어, 이벤트 허브 `path` 속성은 이제 `eventHubName`입니다. 각 바인딩의 설명서에 대한 링크는 [기존 바인딩 테이블](#bindings)을 참조하세요.
+또한 버전 간에 함수의function.js또는 특성에 * 대* 한 몇 가지 변경 내용이 있습니다. 예를 들어, 이벤트 허브 `path` 속성은 이제 `eventHubName`입니다. 각 바인딩의 설명서에 대한 링크는 [기존 바인딩 테이블](#bindings)을 참조하세요.
 
 ### <a name="changes-in-features-and-functionality-after-version-1x"></a>버전 1.x 이후의 기능 변경 내용
 

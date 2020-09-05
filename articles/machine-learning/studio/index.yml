@@ -12,19 +12,19 @@ metadata:
   author: j-martens
   ms.author: jmartens
   ms.date: 03/05/2020
-  ms.openlocfilehash: 02d90dc6781fe39e92d97d64697cc2ee32b04b31
-  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.openlocfilehash: e31651c07cc9567af0deac8311b2321ad6dee4ba
+  ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 03/24/2020
-  ms.locfileid: "78331495"
+  ms.lasthandoff: 08/27/2020
+  ms.locfileid: "89021921"
 landingContent:
 - title: Studio(클래식) 시작
   linkLists:
   - linkListType: get-started
     links:
     - text: Studio(클래식)란?
-      url: what-is-ml-studio.md
+      url: studio-classic-overview.md
     - text: 첫 번째 ML 실험 만들기
       url: create-experiment.md
     - text: 예측 솔루션 만들기
@@ -47,7 +47,7 @@ landingContent:
     links:
     - text: Azure Machine Learning
       url: /azure/machine-learning/
-    - text: 데이터 과학 Virtual Machine
+    - text: Data Science Virtual Machine
       url: /azure/machine-learning/data-science-virtual-machine
     - text: ML 제품 비교
       url: https://docs.microsoft.com/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context

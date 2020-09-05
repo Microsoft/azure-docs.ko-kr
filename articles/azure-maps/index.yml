@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Azure Maps 설명서
-summary: Microsoft Azure Maps는 모든 산업의 개발자에게 강력한 지리 공간적 기능을 제공합니다. 이러한 지리 공간적 기능은 가장 새로운 매핑 데이터로 채워져 있습니다. Azure Maps는 웹 및 모바일 애플리케이션 모두에 사용할 수 있습니다. Azure Maps는 Azure One API 호환 REST API 세트입니다. 다음은 Azure Maps에서 제공하는 서비스(지도, 검색, 라우팅, 트래픽, 모바일, 표준 시간대, 지리적 위치, 지오펜싱, 지도 데이터 및 공간 연산)에 대한 대략적인 개요입니다. 웹 및 Android SDK는 여러 플랫폼에서 개발을 쉽게 하고 유연하게 하며 이식 가능하게 합니다.
+summary: Microsoft Azure Maps는 모든 산업의 개발자에게 강력한 지리 공간적 기능을 제공합니다. 이러한 지리 공간적 기능은 가장 새로운 매핑 데이터로 채워져 있습니다. Azure Maps는 웹 및 모바일 애플리케이션 모두에 사용할 수 있습니다. Azure Maps는 Azure One API 호환 REST API 세트입니다. 다음은 Azure Maps에서 제공하는 서비스(지도, 검색, 라우팅, 트래픽, 모바일, 날씨, 표준 시간대, 지리적 위치, 지오펜싱, 지도 데이터, 작성자 및 공간 연산)에 대한 대략적인 개요입니다. 웹 및 Android SDK는 여러 플랫폼에서 개발을 쉽게 하고 유연하게 하며 이식 가능하게 합니다.
 metadata:
   title: Azure Maps 설명서 | Microsoft Docs
   description: Azure Maps 및 이를 사용하여 웹 또는 모바일 애플리케이션에 지리 공간적 서비스를 제공하는 방법에 대해 알아봅니다.
@@ -9,12 +9,12 @@ metadata:
   author: anastasia-ms
   ms.author: v-stharr
   ms.date: 1/15/2020
-  ms.openlocfilehash: 0760dce9e64560c8ecb593f41b2d611bd059a639
-  ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+  ms.openlocfilehash: 01fb176ad6dc2ce097beddf03b724628ba3e1032
+  ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/31/2020
-  ms.locfileid: "87461751"
+  ms.lasthandoff: 08/18/2020
+  ms.locfileid: "88509929"
 landingContent:
 - title: Azure Maps 정보
   linkLists:

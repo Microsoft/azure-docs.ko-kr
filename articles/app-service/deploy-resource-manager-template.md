@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 0a282a412823207e5f662441158000e8c6121796
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1146b5979d81b91c6c6894aa54b2e0ca50c896c1
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80637921"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961621"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Azure Resource Manager 템플릿을 사용하여 웹앱을 배포하는 방법에 대한 지침
 
@@ -90,7 +90,7 @@ Resource Manager 템플릿에서 MSDeploy를 사용하는 경우 배포 오류 �
 
 1. 사이트의 [Kudu 콘솔](https://github.com/projectkudu/kudu/wiki/Kudu-console)로 이동합니다.
 2. D:\home\LogFiles\SiteExtensions\MSDeploy에서 폴더로 이동합니다.
-3. appManagerStatus.xml 및 appManagerLog.xml 파일을 찾습니다. 첫 번째 파일은 상태를 기록합니다. 두 번째 파일은 오류에 대한 정보를 기록합니다. 오류가 명확 하지 않은 경우 [포럼](https://docs.microsoft.com/answers/topics/azure-webapps.html)에서 도움을 요청 하는 경우이를 포함할 수 있습니다.
+3. appManagerStatus.xml 및 appManagerLog.xml 파일을 찾습니다. 첫 번째 파일은 상태를 기록합니다. 두 번째 파일은 오류에 대한 정보를 기록합니다. 오류가 명확 하지 않은 경우 [포럼](/answers/topics/azure-webapps.html)에서 도움을 요청 하는 경우이를 포함할 수 있습니다.
 
 ## <a name="choose-a-unique-web-app-name"></a>고유한 웹앱 이름을 선택합니다.
 

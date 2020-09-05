@@ -3,7 +3,7 @@ title: 자습서`:` 관리 ID를 사용하여 Azure Data Lake Store에 액세스
 description: Windows VM 시스템 할당 관리 ID를 사용하여 Azure Data Lake Store에 액세스하는 방법을 보여주는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/14/2018
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c03f78341b7521267f8aaf72d58ebd4c912949ce
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d29edec6145ebc03218264532cae07b6afc9654c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75977872"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254205"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>자습서: Windows VM 시스템 할당 관리 ID를 사용하여 Azure Data Lake Store에 액세스
 
@@ -46,7 +46,7 @@ ms.locfileid: "75977872"
 
 ## <a name="grant-access"></a>액세스 권한 부여
 
-이제 Azure Data Lake Store에 있는 파일 및 폴더에 대한 VM 액세스 권한을 부여할 수 있습니다.  이 단계에서는 기존 Data Lake Store를 사용하거나 새로 만들 수 있습니다.  Azure Portal을 사용하여 새 Data Lake Store를 만들려면 이 [Azure Data Lake Store 빠른 시작](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal)에 따르세요. [Azure Data Lake Store 설명서](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview)에서 Azure CLI 및 Azure PowerShell을 사용하는 빠른 시작도 있습니다.
+이제 Azure Data Lake Store에 있는 파일 및 폴더에 대한 VM 액세스 권한을 부여할 수 있습니다.  이 단계에서는 기존 Data Lake Store를 사용하거나 새로 만들 수 있습니다.  Azure Portal을 사용하여 새 Data Lake Store를 만들려면 이 [Azure Data Lake Store 빠른 시작](../../data-lake-store/data-lake-store-get-started-portal.md)에 따르세요. [Azure Data Lake Store 설명서](../../data-lake-store/data-lake-store-overview.md)에서 Azure CLI 및 Azure PowerShell을 사용하는 빠른 시작도 있습니다.
 
 Data Lake Store에서 새 폴더를 만들고, 해당 폴더에서 파일을 읽고, 쓰고, 실행할 수 있는 VM의 시스템 할당 ID 권한을 부여합니다.
 
@@ -62,11 +62,11 @@ Data Lake Store에서 새 폴더를 만들고, 해당 폴더에서 파일을 읽
 10. 5단계와 유사하게 **선택** 필드에서 **추가**를 클릭하고, VM의 이름을 입력하고, 선택하고, **선택**을 클릭합니다.
 11. 6단계와 유사하게 **사용 권한 선택**을 클릭하고, **읽기**, **쓰기** 및 **실행**을 선택하고, **이 폴더**에 추가하고, **액세스 권한 항목 및 기본 권한 항목**으로 추가합니다.  **Ok**를 클릭합니다.  사용 권한은 성공적으로 추가되어야 합니다.
 
-VM의 시스템 할당 관리 ID는 사용자가 만든 폴더에 있는 파일에서 모든 작업을 수행할 수 있습니다.  Data Lake Store에 대한 액세스 권한을 관리하는 방법에 대한 자세한 내용은 [Data Lake Store의 액세스 제어](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-access-control)에서 이 문서를 참고하세요.
+VM의 시스템 할당 관리 ID는 사용자가 만든 폴더에 있는 파일에서 모든 작업을 수행할 수 있습니다.  Data Lake Store에 대한 액세스 권한을 관리하는 방법에 대한 자세한 내용은 [Data Lake Store의 액세스 제어](../../data-lake-store/data-lake-store-access-control.md)에서 이 문서를 참고하세요.
 
 ## <a name="access-data"></a>데이터 액세스
 
-Azure Data Lake Store는 기본적으로 Azure AD 인증을 지원하므로 Azure 리소스에 대한 관리 ID를 사용하여 획득한 액세스 토큰을 직접 수락할 수 있습니다.  Data Lake Store 파일 시스템에 인증하려면 "Bearer &lt;ACCESS_TOKEN_VALUE&gt;" 형식의 권한 부여 헤더에 있는 Data Lake Store 파일 시스템 엔드포인트에 Azure AD에서 발급한 액세스 토큰을 보냅니다.  Azure AD 인증을 위한 Data Lake Store 지원에 대한 자세한 내용을 보려면 [Azure Active Directory를 사용하여 Data Lake Store 인증](https://docs.microsoft.com/azure/data-lake-store/data-lakes-store-authentication-using-azure-active-directory)을 참고하세요.
+Azure Data Lake Store는 기본적으로 Azure AD 인증을 지원하므로 Azure 리소스에 대한 관리 ID를 사용하여 획득한 액세스 토큰을 직접 수락할 수 있습니다.  Data Lake Store 파일 시스템에 인증하려면 "Bearer &lt;ACCESS_TOKEN_VALUE&gt;" 형식의 권한 부여 헤더에 있는 Data Lake Store 파일 시스템 엔드포인트에 Azure AD에서 발급한 액세스 토큰을 보냅니다.  Azure AD 인증을 위한 Data Lake Store 지원에 대한 자세한 내용을 보려면 [Azure Active Directory를 사용하여 Data Lake Store 인증](../../data-lake-store/data-lakes-store-authentication-using-azure-active-directory.md)을 참고하세요.
 
 > [!NOTE]
 > Data Lake Store 파일 시스템 클라이언트 SDK는 Azure 리소스에 대한 관리 ID를 아직 지원하지 않습니다.  이 자습서는 지원이 SDK에 추가될 때 업데이트됩니다.
@@ -193,4 +193,4 @@ Azure Data Lake Store는 기본적으로 Azure AD 인증을 지원하므로 Azur
 이 자습서에서는 Windows 가상 머신에 대해 시스템 할당 관리 ID를 사용하여 Azure Data Lake Store에 액세스하는 방법을 알아보았습니다. Azure Data Lake Store에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
->[Azure Data Lake Storage](/azure/data-lake-store/data-lake-store-overview)
+>[Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md)

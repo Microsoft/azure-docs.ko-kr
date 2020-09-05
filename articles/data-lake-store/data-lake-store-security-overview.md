@@ -1,18 +1,18 @@
 ---
 title: Azure Data Lake Storage Gen1의 보안 개요 | Microsoft Docs
-description: Azure Data Lake Storage Gen1이 어떻게 더 안전한 보안 빅 데이터 저장소인지에 대한 이해
+description: 인증, 권한 부여, 네트워크 격리, 데이터 보호 및 감사를 비롯 한 Azure Data Lake Storage Gen1의 보안 기능에 대해 알아봅니다.
 services: data-lake-store
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: twooley
-ms.openlocfilehash: 4992be004a4b60b7b5fb591d834e8938cf03f34f
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: ec0e62297e6eee995fc571589d450176c81f8aac
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926283"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192820"
 ---
 # <a name="security-in-azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1의 보안
 
@@ -52,9 +52,9 @@ ms.locfileid: "87926283"
 
 | 역할 | 관리 권한 | 데이터 액세스 권한 | 설명 |
 | --- | --- | --- | --- |
-| 할당된 역할 없음 |없음 |ACL에 의해 제어 |사용자는 Azure Portal 또는 Azure PowerShell cmdlet을 사용하여 Data Lake Storage Gen1을 찾아볼 수 없습니다. 사용자는 명령줄 도구만 사용할 수 있습니다. |
+| 할당된 역할 없음 |None |ACL에 의해 제어 |사용자는 Azure Portal 또는 Azure PowerShell cmdlet을 사용하여 Data Lake Storage Gen1을 찾아볼 수 없습니다. 사용자는 명령줄 도구만 사용할 수 있습니다. |
 | 소유자 |모두 |모두 |소유자 역할은 superuser입니다. 이 역할은 모든 것을 관리할 수 있으며 데이터에 대한 완전한 액세스를 가집니다. |
-| 판독기 |읽기 전용 |ACL에 의해 제어 |리더 역할은 계정 관리와 관련된 모든 항목(예: 어떤 사용자가 어떤 역할에 할당되는지)을 볼 수 있습니다. 리더 역할은 항목을 변경할 수 없습니다. |
+| Reader |읽기 전용 |ACL에 의해 제어 |리더 역할은 계정 관리와 관련된 모든 항목(예: 어떤 사용자가 어떤 역할에 할당되는지)을 볼 수 있습니다. 리더 역할은 항목을 변경할 수 없습니다. |
 | 참가자 |역할 추가 및 제거를 제외한 모든 항목 |ACL에 의해 제어 |참여자 역할은 배포 및 경고 만들기 및 관리와 같은 계정의 일부 측면을 관리할 수 있습니다. 참여자 역할은 역할을 추가 또는 제거할 수 없습니다. |
 | 사용자 액세스 관리자 |역할 추가 및 제거 |ACL에 의해 제어 |사용자 액세스 관리자 역할은 계정에 대한 사용자 액세스를 관리할 수 있습니다. |
 
@@ -117,7 +117,7 @@ Data Lake Storage Gen1과 함께 진단 로그를 사용하는 방법에 대한 
 
 Data Lake Storage Gen1의 새로운 기능을 참조하려는 경우 [Data Lake Storage Gen1 UserVoice 포럼](https://feedback.azure.com/forums/327234-data-lake)에 사용자 의견을 보내주세요.
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 * [Azure Data Lake Storage Gen1 개요](data-lake-store-overview.md)
 * [Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md)

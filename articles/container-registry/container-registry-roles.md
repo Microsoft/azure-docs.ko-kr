@@ -2,17 +2,17 @@
 title: Azure 역할 및 사용 권한
 description: Azure RBAC (역할 기반 액세스 제어) 및 IAM (id 및 액세스 관리)을 사용 하 여 Azure container registry의 리소스에 대 한 세분화 된 사용 권한을 제공 합니다.
 ms.topic: article
-ms.date: 12/02/2019
-ms.openlocfilehash: 23a9c08162c03d4b34ed289d650fddcd7413ed08
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.date: 08/17/2020
+ms.openlocfilehash: b8562d3e33cd49082d4ba4d8567d5f0c816070b0
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87920078"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88661387"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Azure Container Registry 역할 및 권한
 
-Azure Container Registry 서비스는 Azure Container Registry에 대해 서로 다른 수준의 사용 권한을 제공 하는 [기본 제공 azure 역할](../role-based-access-control/built-in-roles.md) 집합을 지원 합니다. Azure [RBAC (역할 기반 액세스 제어)](../role-based-access-control/index.yml) 를 사용 하 여 사용자, 서비스 주체 또는 레지스트리와 상호 작용 해야 하는 다른 id에 특정 권한을 할당 합니다. 
+Azure Container Registry 서비스는 Azure Container Registry에 대해 서로 다른 수준의 사용 권한을 제공 하는 [기본 제공 azure 역할](../role-based-access-control/built-in-roles.md) 집합을 지원 합니다. Azure [RBAC (역할 기반 액세스 제어)](../role-based-access-control/index.yml) 를 사용 하 여 사용자, 서비스 주체 또는 레지스트리와 상호 작용 해야 하는 다른 id에 특정 권한을 할당 합니다. 또한 서로 다른 작업을 위해 레지스트리를 세분화 된 권한으로 사용 하 여 [사용자 지정 역할](#custom-roles) 을 정의할 수 있습니다.
 
 | 역할/권한       | [Resource Manager 액세스](#access-resource-manager) | [레지스트리 만들기/삭제](#create-and-delete-registry) | [이미지 푸시](#push-image) | [이미지 풀](#pull-image) | [이미지 데이터 삭제](#delete-image-data) | [정책 변경](#change-policies) |   [이미지 서명](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
@@ -70,7 +70,7 @@ Azure Container Registry를 만들고 삭제하는 기능입니다.
 
 ## <a name="custom-roles"></a>사용자 지정 역할
 
-다른 Azure 리소스와 마찬가지로 Azure Container Registry 하는 세분화 된 권한으로 고유한 [사용자 지정 역할](../role-based-access-control/custom-roles.md) 을 만들 수 있습니다. 그런 다음 사용자, 서비스 주체 또는 레지스트리와 상호 작용 해야 하는 다른 id에 사용자 지정 역할을 할당 합니다. 
+다른 Azure 리소스와 마찬가지로 Azure Container Registry 하는 세분화 된 권한으로 [사용자 지정 역할](../role-based-access-control/custom-roles.md) 을 만들 수 있습니다. 그런 다음 사용자, 서비스 주체 또는 레지스트리와 상호 작용 해야 하는 다른 id에 사용자 지정 역할을 할당 합니다. 
 
 사용자 지정 역할에 적용할 권한을 결정 하려면 Microsoft.containerregistry [작업](../role-based-access-control/resource-provider-operations.md#microsoftcontainerregistry)목록을 참조 하거나, [기본 제공 ACR 역할](../role-based-access-control/built-in-roles.md)의 허용 된 작업을 검토 하거나, 다음 명령을 실행 합니다.
 
@@ -82,6 +82,36 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 
 > [!IMPORTANT]
 > 사용자 지정 역할에서 Azure Container Registry는 현재와 같은 와일드 카드를 지원 하지 않으며, `Microsoft.ContainerRegistry/*` `Microsoft.ContainerRegistry/registries/*` 일치 하는 모든 동작에 대 한 액세스 권한을 부여 합니다. 역할에서 필수 작업을 개별적으로 지정 합니다.
+
+### <a name="example-custom-role-to-import-images"></a>예제: 이미지를 가져오기 위한 사용자 지정 역할
+
+예를 들어 다음 JSON은 레지스트리에 [이미지를 가져올](container-registry-import-images.md) 수 있도록 하는 사용자 지정 역할에 대 한 최소 작업을 정의 합니다.
+
+```json
+{
+   "assignableScopes": [
+     "/subscriptions/<optional, but you can limit the visibility to one or more subscriptions>"
+   ],
+   "description": "Can import images to registry",
+   "Name": "AcrImport",
+   "permissions": [
+     {
+       "actions": [
+         "Microsoft.ContainerRegistry/registries/push/write",
+         "Microsoft.ContainerRegistry/registries/pull/read",
+         "Microsoft.ContainerRegistry/registries/read",
+         "Microsoft.ContainerRegistry/registries/importImage/action"
+       ],
+       "dataActions": [],
+       "notActions": [],
+       "notDataActions": []
+     }
+   ],
+   "roleType": "CustomRole"
+ }
+```
+
+JSON 설명을 사용 하 여 사용자 지정 역할을 만들거나 업데이트 하려면 [Azure CLI](../role-based-access-control/custom-roles-cli.md), [Azure Resource Manager 템플릿](../role-based-access-control/custom-roles-template.md), [Azure PowerShell](../role-based-access-control/custom-roles-powershell.md)또는 기타 Azure 도구를 사용 합니다. 기본 제공 Azure 역할에 대 한 역할 할당을 관리 하는 것과 동일한 방식으로 사용자 지정 역할에 대 한 역할 할당을 추가 하거나 제거 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

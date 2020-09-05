@@ -1,6 +1,6 @@
 ---
 title: StorSimple 가상 배열에 대 한 장애 조치 (Failover) 및 재해 복구
-description: StorSimple 가상 배열 장애 조치 방법에 대해 자세히 알아봅니다.
+description: 다른 가상 배열로 장애 조치 (failover) 하는 자세한 단계를 포함 하 여 Microsoft Azure StorSimple 가상 배열에 대 한 재해 복구에 대해 알아봅니다.
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 05f31993b7491dbfb0bff46c8fd2362b6bab0d4e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 24eb03069689d6dc89d8e237e0e65c71af6c6173
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87077779"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184723"
 ---
 # <a name="disaster-recovery-and-device-failover-for-your-storsimple-virtual-array-via-azure-portal"></a>Azure Portal을 통해 StorSimple 가상 배열에 대한 재해 복구 및 디바이스 장애 조치
 
@@ -44,7 +44,7 @@ DR은 열 지도 기반 계층화 및 추적을 사용하여 전체 디바이스
 
 ## <a name="prerequisites-for-device-failover"></a>디바이스 장애 조치에 대한 필수 조건
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 모든 디바이스 장애 조치에 대해 다음과 같은 필수 조건을 충족했는지 확인합니다.
 

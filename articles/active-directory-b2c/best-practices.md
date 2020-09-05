@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: vigunase
 ms.subservice: B2C
-ms.openlocfilehash: b18717b78a271bd390bc221e9ed0723cb02079ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6fee96354760e448de132f88918e9839c6220af3
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84484293"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89254494"
 ---
 # <a name="recommendations-and-best-practices-for-azure-active-directory-b2c"></a>Azure Active Directory B2C에 대 한 권장 사항 및 모범 사례
 
@@ -43,7 +43,8 @@ ms.locfileid: "84484293"
 | 마이그레이션 계획 만들기 |미리 계획을 만들면 마이그레이션이 더욱 원활 하 게 진행 될 수 있습니다. [사용자 마이그레이션](user-migration.md)에 대해 자세히 알아보세요.|
 | 유용성 및 보안 | 솔루션은 응용 프로그램 사용 편의성과 조직의 허용 가능한 위험 수준 사이에서 적절 한 균형을 맞추어야 합니다. |
 | 온-프레미스 종속성을 클라우드로 이동 | 복원 력 있는 솔루션을 위해 기존 응용 프로그램 종속성을 클라우드로 이동 하는 것이 좋습니다. |
-| 기존 앱을 b2clogin.com로 마이그레이션 | Login.microsoftonline.com의 사용 중단은 04 년 12 월 2020에 모든 Azure AD B2C 테 넌 트에 적용 됩니다. [자세히 알아보기](b2clogin.md). |
+| 기존 앱을 b2clogin.com로 마이그레이션 | Login.microsoftonline.com의 사용 중단은 04 년 12 월 2020에 모든 Azure AD B2C 테 넌 트에 적용 됩니다. [자세한 정보를 알아보세요](b2clogin.md). |
+| Id 보호 및 조건부 액세스 사용 | 이러한 기능을 사용 하 여 위험한 인증 및 액세스 정책에 대해 훨씬 더 많은 제어를 제공 합니다. Azure AD B2C Premium P2가 필요 합니다. [자세한 정보를 알아보세요](conditional-access-identity-protection-overview.md). |
 
 ## <a name="implementation"></a>구현
 

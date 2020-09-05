@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4a618b00b211ce65b170379cc14d6b83a1183d28
-ms.sourcegitcommit: f988fc0f13266cea6e86ce618f2b511ce69bbb96
+ms.openlocfilehash: bb6793bc1e3d5bb55426c1f344520ae19a22a9f9
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87460358"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88549568"
 ---
 # <a name="sampling-in-application-insights"></a>Application Insights의 샘플링
 
@@ -34,7 +34,7 @@ ms.locfileid: "87460358"
 |-|-|-|-|
 | ASP.NET | [예 (기본적으로 설정)](#configuring-adaptive-sampling-for-aspnet-applications) | [예](#configuring-fixed-rate-sampling-for-aspnet-applications) | 다른 샘플링이 적용 되지 않는 경우에만 |
 | ASP.NET Core | [예 (기본적으로 설정)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [예](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | 다른 샘플링이 적용 되지 않는 경우에만 |
-| Azure Functions | [예 (기본적으로 설정)](#configuring-adaptive-sampling-for-azure-functions) | 예 | 다른 샘플링이 적용 되지 않는 경우에만 |
+| Azure 기능 | [예 (기본적으로 설정)](#configuring-adaptive-sampling-for-azure-functions) | 예 | 다른 샘플링이 적용 되지 않는 경우에만 |
 | Java | 예 | [예](#configuring-fixed-rate-sampling-for-java-applications) | 다른 샘플링이 적용 되지 않는 경우에만 |
 | Node.JS | 예 | [예](./nodejs.md#sampling) | 다른 샘플링이 적용 되지 않는 경우에만
 | Python | 예 | [예](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | 다른 샘플링이 적용 되지 않는 경우에만 |
@@ -187,6 +187,8 @@ public void ConfigureServices(IServiceCollection services)
 > 이 메서드를 사용 하 여 샘플링을 구성 하는 경우를 `aiOptions.EnableAdaptiveSampling` 호출할 때 속성을로 설정 해야 `false` `AddApplicationInsightsTelemetry()` 합니다.
 
 ```csharp
+using Microsoft.ApplicationInsights.Extensibility
+
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, TelemetryConfiguration configuration)
 {
     var builder = configuration.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
@@ -448,7 +450,7 @@ Application Insights 사용 하도록 JavaScript 기반 웹 페이지를 구성�
 
 샘플링에서 무시된 데이터 요소는 [연속 내보내기](./export-telemetry.md)와 같은 Application Insights 기능에서 사용할 수 없습니다.
 
-적응 또는 고정 요금 샘플링이 작업 중인 동안 수집 샘플링이 작동 하지 않습니다. 적응 샘플링은 ASP.NET SDK 또는 ASP.NET Core SDK를 사용 하는 경우 또는 [Azure App Service](azure-web-apps.md) 에서 Application Insights를 사용 하거나 상태 모니터를 사용 하는 경우 기본적으로 사용 하도록 설정 됩니다. Application Insights 서비스 끝점에서 원격 분석을 수신 하는 경우 원격 분석을 검사 하 고 샘플링 비율이 100% (원격 분석이 샘플링 됨을 나타냄) 보다 작은 것으로 보고 되는 경우 설정한 수집 샘플링 주기는 무시 됩니다.
+적응 또는 고정 요금 샘플링이 작업 중인 동안 수집 샘플링이 작동 하지 않습니다. 적응 샘플링은 ASP.NET SDK 또는 ASP.NET Core SDK를 사용 하는 경우 또는 [Azure App Service ](azure-web-apps.md) 에서 Application Insights를 사용 하거나 상태 모니터를 사용 하는 경우 기본적으로 사용 하도록 설정 됩니다. Application Insights 서비스 끝점에서 원격 분석을 수신 하는 경우 원격 분석을 검사 하 고 샘플링 비율이 100% (원격 분석이 샘플링 됨을 나타냄) 보다 작은 것으로 보고 되는 경우 설정한 수집 샘플링 주기는 무시 됩니다.
 
 > [!WARNING]
 > 포털 타일에 표시 된 값은 수집 샘플링에 대해 설정한 값을 나타냅니다. SDK 샘플링 (적응 또는 고정 률 샘플링)이 작동 중인 경우에는 실제 샘플링 주기를 나타내지 않습니다.

@@ -4,15 +4,15 @@ description: Azure Cosmos DB에서 SQL 시스템 함수 GetCurrentTimestamp에 �
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/09/2020
+ms.date: 08/19/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 9c35f83ce7a9a478f706e9ed560d884d9bf5e508
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c1e0a8d69edab0c01005268ee49c23625236f03a
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86261298"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606926"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>GetCurrentTimestamp (Azure Cosmos DB)
 
@@ -26,13 +26,13 @@ GetCurrentTimestamp ()
   
 ## <a name="return-types"></a>반환 형식
   
-  숫자 값, Unix epoch 이후 경과한 현재 시간 (밀리초)을 반환 합니다. 즉, 00:00:00 목요일부터 1 월 1 1970 일에 경과 된 시간 (밀리초)입니다.
+부호 있는 숫자 값, Unix epoch 이후 경과 된 현재 시간 (밀리초)을 반환 합니다 (예: 00:00:00 목요일 이후 경과 된 시간 (밀리초), 1 월 1970 일).
 
 ## <a name="remarks"></a>설명
 
-  GetCurrentTimestamp ()는 비결 정적 함수입니다.
-  
-  반환 된 결과는 UTC (협정 세계시)입니다.
+GetCurrentTimestamp ()는 비결 정적 함수입니다. 반환 된 결과는 UTC (협정 세계시)입니다.
+
+이 시스템 함수는 인덱스를 활용 하지 않습니다.
 
 ## <a name="examples"></a>예제
   

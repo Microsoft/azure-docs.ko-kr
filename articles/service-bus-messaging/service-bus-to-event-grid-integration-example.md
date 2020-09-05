@@ -6,12 +6,13 @@ author: spelluru
 ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 8f947489c2298e580ae455763709df1734687130
-ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 6f64c8155724a1306f5074a9164bcf97391dfbf6
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85337053"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89000348"
 ---
 # <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>자습서: Azure Functions 및 Azure Logic Apps를 사용하여 Azure Event Grid를 통해 받은 Azure Service Bus 이벤트에 응답
 이 자습서에서는 Azure Functions 및 Azure Logic Apps를 사용하여 Azure Event Grid를 통해 받은 Azure Service Bus 이벤트에 응답하는 방법을 알아봅니다. 
@@ -355,10 +356,10 @@ Azure Event Grid 구독을 만들려면 다음 단계를 수행합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-* [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/)에 대해 자세히 알아봅니다.
-* [Azure Functions](https://docs.microsoft.com/azure/azure-functions/)에 대해 자세히 알아봅니다.
-* [Azure App Service의 Logic Apps 기능](https://docs.microsoft.com/azure/logic-apps/)에 대해 자세히 알아봅니다.
-* [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/)에 대해 자세히 알아보세요.
+* [Azure Event Grid](../event-grid/index.yml)에 대해 자세히 알아봅니다.
+* [Azure Functions](../azure-functions/index.yml)에 대해 자세히 알아봅니다.
+* [Azure App Service의 Logic Apps 기능](../logic-apps/index.yml)에 대해 자세히 알아봅니다.
+* [Azure Service Bus](/azure/service-bus/)에 대해 자세히 알아보세요.
 
 
 [2]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgrid2.png

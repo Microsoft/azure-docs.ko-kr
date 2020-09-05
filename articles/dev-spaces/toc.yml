@@ -5,24 +5,6 @@
       items:
         - name: Azure Dev Spaces란?
           href: about.md
-    - name: 빠른 시작
-      items:
-        - name: 팀 개발
-          href: quickstart-team-development.md
-        - name: 디버그 및 반복
-          items:
-            - name: Visual Studio Code 및 Java 사용
-              href: quickstart-java.md
-            - name: Visual Studio Code 및 .NET Core 사용
-              href: quickstart-netcore.md
-            - name: Visual Studio Code 및 Node.js 사용
-              href: quickstart-nodejs.md
-            - name: Visual Studio 및 .NET Core 사용
-              href: quickstart-netcore-visualstudio.md
-        - name: CLI를 사용하여 개발
-          href: quickstart-cli.md
-        - name: 기존 Helm 차트를 사용하여 개발
-          href: quickstart-existing-helm-chart.md
     - name: 자습서
       items:
         - name: Visual Studio 시작

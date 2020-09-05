@@ -9,20 +9,20 @@ tags: azure-portal
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/24/2020
-ms.openlocfilehash: a623436cdeaac89d140b3834808fb975bd733f4e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 84ddc4b427f6dc168c044f34b41e81e3b0ff19e5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835955"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935044"
 ---
 # <a name="service-administration-for-azure-cognitive-search-in-the-azure-portal"></a>Azure Portal의 Azure Cognitive Search에 대 한 서비스 관리
 
 > [!div class="op_single_selector"]
 >
 > * [PowerShell](search-manage-powershell.md)
-> * [REST API](https://docs.microsoft.com/rest/api/searchmanagement/)
-> * [.NET SDK](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.search)
+> * [REST API](/rest/api/searchmanagement/)
+> * [.NET SDK](/dotnet/api/microsoft.azure.management.search)
 > * [포털](search-manage.md)
 > * [Python](https://pypi.python.org/pypi/azure-mgmt-search/0.1.0)> 
 
@@ -33,9 +33,9 @@ Azure Cognitive Search는 사용자 지정 앱에 풍부한 검색 환경을 구
 * 왼쪽의 **키** 페이지를 사용 하 여 액세스를 관리 합니다.
 * 왼쪽의 **크기** 조정 페이지를 사용 하 여 용량을 조정 합니다.
 
-포털에서 수행 되는 동일한 작업은 [관리 api](https://docs.microsoft.com/rest/api/searchmanagement/) 및 [Az. Search PowerShell 모듈](search-manage-powershell.md)을 통해 프로그래밍 방식으로 처리할 수도 있습니다. 관리 작업은 포털 및 프로그래밍 인터페이스를 통해 완벽 하 게 표시 됩니다. 한 가지 경우에만 사용할 수 있는 특정 관리 작업이 없습니다.
+포털에서 수행 되는 동일한 작업은 [관리 api](/rest/api/searchmanagement/) 및 [Az. Search PowerShell 모듈](search-manage-powershell.md)을 통해 프로그래밍 방식으로 처리할 수도 있습니다. 관리 작업은 포털 및 프로그래밍 인터페이스를 통해 완벽 하 게 표시 됩니다. 한 가지 경우에만 사용할 수 있는 특정 관리 작업이 없습니다.
 
-Azure Cognitive Search는 기타 Azure 서비스를 활용 하 여 보다 심층적으로 모니터링 및 관리 합니다. 단지 검색 서비스와 함께 저장 되는 유일한 데이터는 콘텐츠 (인덱스, 인덱서 및 데이터 원본 정의 및 기타 개체)입니다. 포털 페이지에 보고 된 메트릭은 30 일 롤링 주기로 내부 로그에서 가져옵니다. 사용자가 제어 하는 로그 보존 및 추가 이벤트의 경우 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)필요 합니다. 
+Azure Cognitive Search는 기타 Azure 서비스를 활용 하 여 보다 심층적으로 모니터링 및 관리 합니다. 단지 검색 서비스와 함께 저장 되는 유일한 데이터는 콘텐츠 (인덱스, 인덱서 및 데이터 원본 정의 및 기타 개체)입니다. 포털 페이지에 보고 된 메트릭은 30 일 롤링 주기로 내부 로그에서 가져옵니다. 사용자가 제어 하는 로그 보존 및 추가 이벤트의 경우 [Azure Monitor](../azure-monitor/index.yml)필요 합니다. 
 
 ## <a name="fixed-service-properties"></a>고정 서비스 속성
 
@@ -58,7 +58,7 @@ Azure 구독 관리자 또는 공동 관리자는 서비스 자체를 프로비�
 
 서비스 프로 비전에 대 한 권한은 역할 할당을 통해 부여 됩니다. Azure [RBAC (역할 기반 access control)](../role-based-access-control/overview.md) 는 azure 리소스의 프로 비전을 위해 [Azure Resource Manager](../azure-resource-manager/management/overview.md) 기반으로 구축 된 권한 부여 시스템입니다. 
 
-Azure Cognitive Search 컨텍스트에서 [azure 역할 할당](search-security-rbac.md) 은 [포털](search-manage.md), [PowerShell](search-manage-powershell.md)또는 [관리 REST api](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api)를 사용 하는지에 관계 없이 작업을 수행할 수 있는 사람을 결정 합니다.
+Azure Cognitive Search 컨텍스트에서 [azure 역할 할당](search-security-rbac.md) 은 [포털](search-manage.md), [PowerShell](search-manage-powershell.md)또는 [관리 REST api](/rest/api/searchmanagement/search-howto-management-rest-api)를 사용 하는지에 관계 없이 작업을 수행할 수 있는 사람을 결정 합니다.
 
 * 서비스 만들기 또는 삭제
 * 서비스 크기 조정
@@ -73,12 +73,12 @@ Azure Cognitive Search 컨텍스트에서 [azure 역할 할당](search-security-
 
 기본 계층 이상에서 Microsoft는 SLA (서비스 수준 계약)에 따라 99.9%의 가용성을 제공 하는 모든 Azure Cognitive Search 서비스를 모니터링 합니다. 서비스 속도가 느리거나 요청 처리량이 SLA 임계값 미만으로 떨어질 경우 지원 팀은 사용할 수 있는 로그 파일을 검토하고 문제를 해결합니다.
 
-Azure Cognitive Search는 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/) 를 활용 하 여 인덱싱 및 쿼리 작업을 수집 하 고 저장 합니다. 검색 서비스 자체는 해당 콘텐츠 (인덱스, 인덱서 정의, 데이터 원본 정의, 기술 정의, 동의어 맵)만 저장 합니다. 캐싱 및 로깅 정보는 일반적으로 Azure Storage 계정에서 서비스 외부에 저장 됩니다. 인덱싱 및 쿼리 워크 로드에 대 한 자세한 내용은 [로그 데이터 수집 및 분석](search-monitor-logs.md)을 참조 하세요.
+Azure Cognitive Search는 [Azure Monitor](../azure-monitor/index.yml) 를 활용 하 여 인덱싱 및 쿼리 작업을 수집 하 고 저장 합니다. 검색 서비스 자체는 해당 콘텐츠 (인덱스, 인덱서 정의, 데이터 원본 정의, 기술 정의, 동의어 맵)만 저장 합니다. 캐싱 및 로깅 정보는 일반적으로 Azure Storage 계정에서 서비스 외부에 저장 됩니다. 인덱싱 및 쿼리 워크 로드에 대 한 자세한 내용은 [로그 데이터 수집 및 분석](search-monitor-logs.md)을 참조 하세요.
 
 Azure Cognitive Search 자체에 기본 제공 되는 기능을 사용 하 여 서비스에 대 한 일반적인 정보를 기준으로 다음과 같은 방법으로 정보를 얻을 수 있습니다.
 
 * 알림, 속성 및 상태 메시지를 통해 서비스 **개요** 페이지를 사용 합니다.
-* [PowerShell](search-manage-powershell.md) 또는 [관리 REST API](https://docs.microsoft.com/rest/api/searchmanagement/) 를 사용 하 여 [서비스 속성을 가져옵니다](https://docs.microsoft.com/rest/api/searchmanagement/services). 프로그래밍 계층에서 새로운 정보나 작업을 제공 하지 않습니다. 이 인터페이스는 스크립트를 작성할 수 있도록 존재 합니다.
+* [PowerShell](search-manage-powershell.md) 또는 [관리 REST API](/rest/api/searchmanagement/) 를 사용 하 여 [서비스 속성을 가져옵니다](/rest/api/searchmanagement/services). 프로그래밍 계층에서 새로운 정보나 작업을 제공 하지 않습니다. 이 인터페이스는 스크립트를 작성할 수 있도록 존재 합니다.
 
 ## <a name="monitor-resource-usage"></a>리소스 사용 모니터링
 
@@ -86,8 +86,8 @@ Azure Cognitive Search 자체에 기본 제공 되는 기능을 사용 하 여 �
 
 REST API 검색 서비스를 사용 하 여 문서 및 인덱스의 개수를 프로그래밍 방식으로 가져올 수 있습니다. 
 
-* [인덱스 통계 가져오기](https://docs.microsoft.com/rest/api/searchservice/Get-Index-Statistics)
-* [문서 수 계산](https://docs.microsoft.com/rest/api/searchservice/count-documents)
+* [인덱스 통계 가져오기](/rest/api/searchservice/Get-Index-Statistics)
+* [문서 수 계산](/rest/api/searchservice/count-documents)
 
 ## <a name="disaster-recovery-and-service-outages"></a>재해 복구 및 서비스 중단
 
@@ -135,7 +135,7 @@ QPS(초당 쿼리 수)를 높이거나 고가용성을 구현하려면 복제본
 
 특정 파티션에 저장되는 인덱스 분할을 알려주는 검색 방법은 없습니다. 각 파티션에서 제공하는 스토리지는 대략 25GB이므로 보유한 개수의 파티션에 수용할 수 있는 크기로 스토리지를 줄여야 합니다. 파티션 한 개로 되돌리려면 12개 분할이 모두 들어가야 합니다.
 
-미래 계획에 도움이 되도록 스토리지를 검사( [인덱스 통계 가져오기](https://docs.microsoft.com/rest/api/searchservice/Get-Index-Statistics)사용)하여 실제로 사용한 크기를 확인하는 것이 좋습니다. 
+미래 계획에 도움이 되도록 스토리지를 검사( [인덱스 통계 가져오기](/rest/api/searchservice/Get-Index-Statistics)사용)하여 실제로 사용한 크기를 확인하는 것이 좋습니다. 
 
 ## <a name="next-steps"></a>다음 단계
 

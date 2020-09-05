@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/10/2020
+ms.date: 08/25/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 47582f941c314933baf378478b1380cb8316935b
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.openlocfilehash: f41caf61ac23b05ba0ff95d785be2e7449adf75d
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066613"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89228633"
 ---
 # <a name="soft-delete-for-containers-preview"></a>컨테이너에 대 한 일시 삭제 (미리 보기)
 
@@ -25,10 +25,10 @@ Blob 데이터에 대 한 종단 간 보호의 경우 다음과 같은 데이터
 
 - 컨테이너 일시 삭제-컨테이너를 실수로 삭제 하거나 덮어쓰는 것을 방지 합니다. 컨테이너 일시 삭제를 사용 하도록 설정 하는 방법을 알아보려면 [컨테이너에 대해 일시 삭제 사용 및 관리](soft-delete-container-enable.md)를 참조 하세요.
 - Blob 일시 삭제-개별 blob의 실수로 삭제 하거나 덮어쓰는 것을 방지 합니다. Blob 일시 삭제를 사용 하도록 설정 하는 방법을 알아보려면 [blob에 대 한 일시 삭제](soft-delete-blob-overview.md)를 참조 하세요.
-- Blob 버전 관리 (미리 보기)-blob의 이전 버전을 자동으로 유지 관리 합니다. Blob 버전 관리를 사용 하는 경우 데이터를 잘못 수정 하거나 삭제 한 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다. Blob 버전 관리를 사용 하도록 설정 하는 방법을 알아보려면 [blob 버전 관리 사용 및 관리](versioning-enable.md)를 참조 하세요.
+- Blob 버전 관리-blob의 이전 버전을 자동으로 유지 관리 합니다. Blob 버전 관리를 사용 하는 경우 데이터를 잘못 수정 하거나 삭제 한 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다. Blob 버전 관리를 사용 하도록 설정 하는 방법을 알아보려면 [blob 버전 관리 사용 및 관리](versioning-enable.md)를 참조 하세요.
 
-> [!IMPORTANT]
-> 저장소 계정이 실수로 삭제 되지 않도록 하려면 저장소 계정 리소스에 대해 **Cannotdelete** 잠금을 구성 합니다. Azure 리소스 잠금에 대 한 자세한 내용은 [예기치 않은 변경을 방지 하기 위해 리소스 잠그기](../../azure-resource-manager/management/lock-resources.md)를 참조 하세요.
+> [!WARNING]
+> 저장소 계정 삭제는 실행 취소할 수 없습니다. 일시 삭제는 저장소 계정 삭제를 방지 하지 않습니다. 저장소 계정이 실수로 삭제 되지 않도록 하려면 저장소 계정 리소스에 대해 **Cannotdelete** 잠금을 구성 합니다. Azure 리소스 잠금에 대 한 자세한 내용은 [예기치 않은 변경을 방지 하기 위해 리소스 잠그기](../../azure-resource-manager/management/lock-resources.md)를 참조 하세요.
 
 ## <a name="how-container-soft-delete-works"></a>컨테이너 일시 삭제 작동 방식
 
@@ -122,5 +122,5 @@ az feature show --namespace Microsoft.Storage --name ContainerSoftDelete
 ## <a name="next-steps"></a>다음 단계
 
 - [컨테이너 일시 삭제 구성](soft-delete-container-enable.md)
-- [Blob에 대 한 일시 삭제](soft-delete-blob-overview.md)
-- [Blob 버전 관리(미리 보기)](versioning-overview.md)
+- [Blob에 대한 일시 삭제](soft-delete-blob-overview.md)
+- [Blob 버전 관리](versioning-overview.md)

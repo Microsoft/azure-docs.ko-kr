@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 07/29/2020
+ms.date: 08/26/2020
 ms.author: aahi
-ms.openlocfilehash: b3cec783b43d0169a3d0d56ca040e1397701102e
-ms.sourcegitcommit: 25bb515efe62bfb8a8377293b56c3163f46122bf
+ms.openlocfilehash: e2c6fc739fa81e6eb7c98073e3575e4143d317b2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87986171"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932970"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>텍스트 분석 API v3 언어 지원 
 
@@ -39,13 +39,13 @@ ms.locfileid: "87986171"
 | 이탈리아어               |     `it`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | 일본어              |     `ja`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | 한국어                |     `ko`      |            |     ✓      |         2019-10-01         |                    |
-| 노르웨이어(복말)   |     `no`      |     ✓      |            |                            |                    |
+| 노르웨이어(복말)   |     `no`      |     ✓      |     ✓       |        2020-07-01         |                    |
 | 폴란드어                |     `pl`      |     ✓      |            |                            |                    |
 | 포르투갈어(포르투갈) |    `pt-PT`    |     ✓      |     ✓      |         2019-10-01         | `pt`도 허용됨 |
 | 러시아어               |     `ru`      |     ✓      |            |                            |                    |
 | 스페인어               |     `es`      |     ✓      |     ✓      |         2019-10-01         |                    |
 | 스웨덴어               |     `sv`      |     ✓      |            |                            |                    |
-| 터키어               |     `tr`      |     ✓      |            |                            |                    |
+| 터키어               |     `tr`      |     ✓      |     ✓       |         2020-07-01        |                    |
 
 ### <a name="opinion-mining-v31-preview-only"></a>의견 마이닝 (v 3.1-미리 보기 전용)
 
@@ -123,6 +123,6 @@ ms.locfileid: "87986171"
 
 ---
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참조
 
 * [텍스트 분석 API 이란?](overview.md)   

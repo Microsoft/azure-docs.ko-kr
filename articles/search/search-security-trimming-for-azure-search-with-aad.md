@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: ee742eae38ae95756cf31d60b877f18629c569d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 87337cf22bdb388c5873a2811bb9913c3e7f4d4e
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080498"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019779"
 ---
 # <a name="security-filters-for-trimming-azure-cognitive-search-results-using-active-directory-identities"></a>Active Directory id를 사용 하 여 Azure Cognitive Search 결과를 자르는 보안 필터
 
@@ -30,7 +31,7 @@ ms.locfileid: "85080498"
 > [!NOTE]
 > 이 문서의 샘플 코드 조각은 C#으로 작성되었습니다. 전체 소스 코드는 [GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started)를 참조하세요. 
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 Azure Cognitive Search의 인덱스에는 문서에 대 한 읽기 권한이 있는 그룹 id 목록을 저장할 [보안 필드가](search-security-trimming-for-azure-search.md) 있어야 합니다. 이 사용 사례에서는 보안 개체 항목(예: 개인의 대학 지원서) 및 해당 항목에 대한 액세스 권한이 있는 사람을 지정하는 보안 필드(입학 담당자) 간의 일대일 대응을 가정합니다.
 
@@ -40,7 +41,7 @@ Azure Cognitive Search의 인덱스에는 문서에 대 한 읽기 권한이 있
 
 ### <a name="register-your-application-with-aad"></a>AAD에 애플리케이션 등록
 
-이 단계에서는 사용자 및 그룹 계정 로그인을 수락하기 위해 애플리케이션을 AAD와 통합합니다. 조직의 AAD 관리자가 아닌 경우 다음 단계를 수행할 [새 테넌트를 만들어야](https://docs.microsoft.com/azure/active-directory/develop/active-directory-howto-tenant) 할 수도 있습니다.
+이 단계에서는 사용자 및 그룹 계정 로그인을 수락하기 위해 애플리케이션을 AAD와 통합합니다. 조직의 AAD 관리자가 아닌 경우 다음 단계를 수행할 [새 테넌트를 만들어야](../active-directory/develop/quickstart-create-new-tenant.md) 할 수도 있습니다.
 
 1. [**응용 프로그램 등록 포털**](https://apps.dev.microsoft.com)  >   **수렴 형 앱**  >  **앱 추가**로 이동 합니다.
 2. 애플리케이션의 이름을 입력한 다음, **만들기**를 클릭합니다. 
@@ -63,7 +64,7 @@ Microsoft Graph는 REST API를 통해 AAD에 프로그래밍 방식으로 액세
 
 사용자 및 그룹 멤버 자격은 유동적이며, 조직 규모가 클수록 더욱 그렇습니다. 조직 멤버 자격의 변경 내용을 선택할 수 있을 만큼 사용자 및 그룹 ID를 빌드하는 코드를 충분히 자주 실행해야 합니다. 마찬가지로 Azure Cognitive Search 인덱스에는 허용 된 사용자 및 리소스의 현재 상태를 반영 하기 위해 유사한 업데이트 일정이 필요 합니다.
 
-### <a name="step-1-create-aad-group"></a>1단계: [AAD 그룹](https://docs.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0) 만들기 
+### <a name="step-1-create-aad-group"></a>1단계: [AAD 그룹](/graph/api/group-post-groups?view=graph-rest-1.0) 만들기 
 ```csharp
 // Instantiate graph client 
 GraphServiceClient graph = new GraphServiceClient(new DelegateAuthenticationProvider(...));
@@ -77,7 +78,7 @@ Group group = new Group()
 Group newGroup = await graph.Groups.Request().AddAsync(group);
 ```
    
-### <a name="step-2-create-aad-user"></a>2단계: [AAD 사용자](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0) 만들기
+### <a name="step-2-create-aad-user"></a>2단계: [AAD 사용자](/graph/api/user-post-users?view=graph-rest-1.0) 만들기
 ```csharp
 User user = new User()
 {
@@ -98,9 +99,9 @@ await graph.Groups[newGroup.Id].Members.References.Request().AddAsync(newUser);
 ```
 
 ### <a name="step-4-cache-the-groups-identifiers"></a>4단계: 그룹 식별자 캐시
-필요에 따라 네트워크 대기 시간을 줄이기 위해, 검색 요청이 실행되면 캐시에서 그룹이 반환되어 AAD로의 왕복 시간을 단축하도록 사용자 그룹 연결을 캐시할 수 있습니다. [AAD BATCH API](https://developer.microsoft.com/graph/docs/concepts/json_batching) 를 사용 하 여 여러 사용자가 있는 단일 Http 요청을 보내고 캐시를 빌드할 수 있습니다.
+필요에 따라 네트워크 대기 시간을 줄이기 위해, 검색 요청이 실행되면 캐시에서 그룹이 반환되어 AAD로의 왕복 시간을 단축하도록 사용자 그룹 연결을 캐시할 수 있습니다. [AAD BATCH API](/graph/json-batching) 를 사용 하 여 여러 사용자가 있는 단일 Http 요청을 보내고 캐시를 빌드할 수 있습니다.
 
-Microsoft Graph는 많은 양의 요청을 처리하도록 설계되었습니다. 요청이 너무 많이 발생하면 Microsoft Graph가 HTTP 상태 코드 429와 함께 요청을 실패합니다. 자세한 내용은 [Microsoft Graph 제한](https://developer.microsoft.com/graph/docs/concepts/throttling)을 참조하세요.
+Microsoft Graph는 많은 양의 요청을 처리하도록 설계되었습니다. 요청이 너무 많이 발생하면 Microsoft Graph가 HTTP 상태 코드 429와 함께 요청을 실패합니다. 자세한 내용은 [Microsoft Graph 제한](/graph/throttling)을 참조하세요.
 
 ## <a name="index-document-with-their-permitted-groups"></a>그룹이 허용된 인덱스 문서
 
@@ -138,7 +139,7 @@ _indexClient.Documents.Index(batch);
 
 ### <a name="step-1-retrieve-users-group-identifiers"></a>1단계: 사용자의 그룹 식별자 검색
 
-사용자 그룹이 아직 캐시되지 않았거나 캐시가 만료된 경우 [그룹](https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0) 요청을 실행합니다.
+사용자 그룹이 아직 캐시되지 않았거나 캐시가 만료된 경우 [그룹](/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0) 요청을 실행합니다.
 ```csharp
 private static void RefreshCacheIfRequired(string user)
 {
@@ -186,7 +187,7 @@ DocumentSearchResult<SecuredFiles> results = _indexClient.Documents.Search<Secur
 
 이 연습에서는 AAD 로그인을 사용 하 여 Azure Cognitive Search 결과에서 문서를 필터링 하 고 요청에 제공 된 필터와 일치 하지 않는 문서의 결과를 잘라내는 방법을 배웠습니다.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 + [Azure Cognitive Search 필터를 사용 하 여 id 기반 액세스 제어](search-security-trimming-for-azure-search.md)
 + [Azure Cognitive Search의 필터](search-filters.md)

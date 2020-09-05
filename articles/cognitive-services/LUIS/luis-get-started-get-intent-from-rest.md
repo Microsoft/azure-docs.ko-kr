@@ -3,14 +3,14 @@ title: '빠른 시작: REST API로 의도 가져오기 - LUIS'
 description: 이 REST API 빠른 시작에서는 사용 가능한 공용 LUIS 앱을 통해 대화형 텍스트에서 사용자의 의도를 판단합니다.
 ms.topic: quickstart
 ms.date: 05/18/2020
-ms.custom: devx-track-python, devx-track-javascript
+ms.custom: devx-track-python, devx-track-javascript, devx-track-csharp
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 2fd52011ed0d139e98740c8de077987edfae2c32
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 977348fcaf0cabf92268d71282222e1652321fac
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87873163"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88919281"
 ---
 # <a name="quickstart-get-intent-with-rest-apis"></a>빠른 시작: REST API로 의도 가져오기
 

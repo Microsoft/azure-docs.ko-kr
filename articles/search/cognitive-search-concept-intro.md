@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: d6fbfc7dced59580e91c3beceb6054f223a0a17d
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 1c041d594b29c6e93b73eb1b0c623b3e566ceef5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87319051"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935503"
 ---
 # <a name="ai-enrichment-in-azure-cognitive-search"></a>Azure Cognitive Search의 AI 보강
 
@@ -29,7 +29,7 @@ AI 보강는 이미지, blob 및 기타 구조화 되지 않은 데이터 원본
 
 ![보강 파이프라인 다이어그램](./media/cognitive-search-intro/cogsearch-architecture.png "보강 파이프라인 개요")
 
-Azure Cognitive Search의 기본 제공 기술은 Cognitive Services API: [Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/) 및 [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)의 미리 학습 된 기계 학습 모델을 기반으로 합니다. 콘텐츠를 처리 하는 동안 이러한 리소스를 활용 하려는 경우 Cognitive Services 리소스를 연결할 수 있습니다.
+Azure Cognitive Search의 기본 제공 기술은 Cognitive Services API: [Computer Vision](../cognitive-services/computer-vision/index.yml) 및 [Text Analytics](../cognitive-services/text-analytics/overview.md)의 미리 학습 된 기계 학습 모델을 기반으로 합니다. 콘텐츠를 처리 하는 동안 이러한 리소스를 활용 하려는 경우 Cognitive Services 리소스를 연결할 수 있습니다.
 
 자연어 및 이미지 처리는 데이터 수집 단계에서 적용되며, 여기서 결과는 Azure Cognitiv Search의 검색 가능한 인덱스에서 문서의 컴퍼지션 중 일부가 됩니다. 데이터는 Azure 데이터 집합으로 소싱된 다음, 필요한 [기본 제공 기술](cognitive-search-predefined-skills.md)을 사용하여 인덱싱 파이프라인을 통해 푸시됩니다.  
 
@@ -57,9 +57,9 @@ Azure Cognitive Search의 기본 제공 기술은 Cognitive Services API: [Compu
 
 ### <a name="more-about-custom-skills"></a>사용자 지정 기술 추가 정보
 
-사용자 지정 기술은 양식 인식, 또는 [사용자 지정 기술 웹 인터페이스](cognitive-search-custom-skill-interface.md)에서 제공하고 래핑하는 모델을 사용하는 사용자 지정 엔터티 검색처럼 좀 더 복잡한 시나리오를 지원할 수 있습니다. 사용자 지정 기술의 예로는 [Form Recognizer](/azure/cognitive-services/form-recognizer/overview), [Bing Entity Search API](https://docs.microsoft.com/azure/search/cognitive-search-create-custom-skill-example) 통합, [사용자 지정 엔터티 인식](https://github.com/Microsoft/SkillsExtractorCognitiveSearch) 등이 있습니다.
+사용자 지정 기술은 양식 인식, 또는 [사용자 지정 기술 웹 인터페이스](cognitive-search-custom-skill-interface.md)에서 제공하고 래핑하는 모델을 사용하는 사용자 지정 엔터티 검색처럼 좀 더 복잡한 시나리오를 지원할 수 있습니다. 사용자 지정 기술의 예로는 [Form Recognizer](../cognitive-services/form-recognizer/overview.md), [Bing Entity Search API](./cognitive-search-create-custom-skill-example.md) 통합, [사용자 지정 엔터티 인식](https://github.com/Microsoft/SkillsExtractorCognitiveSearch) 등이 있습니다.
 
-## <a name="steps-in-an-enrichment-pipeline"></a>보강 파이프라인의 단계<a name="enrichment-steps"></a>
+## <a name="steps-in-an-enrichment-pipeline"></a>보강 파이프라인의 단계 <a name="enrichment-steps"></a>
 
 보강 파이프라인은 [*인덱서*](search-indexer-overview.md)를 기반으로 합니다. 인덱서는 문서 크랙에 대해 인덱스와 데이터 원본 간의 필드-필드 매핑을 기반으로 인덱스를 채웁니다. 이제 인덱서에 연결 된 기술은 사용자가 정의한 기술에 따라 문서를 가로채 고 보강 합니다. 인덱싱이 완료되면 [Azure Cognitive Search에서 지원하는 모든 쿼리 유형](search-query-overview.md)을 통한 검색 요청에서 콘텐츠에 액세스할 수 있습니다.  인덱서를 처음 접하는 경우, 이 섹션의 단계별 안내를 참조하세요.
 
@@ -83,7 +83,7 @@ Azure Cognitive Search의 기본 제공 기술은 Cognitive Services API: [Compu
 
 #### <a name="add-a-knowledgestore-element-to-save-enrichments"></a>보강 내용을 저장하는 knowledgeStore 요소 추가
 
-[SEARCH REST api-version = 2020-06-30](https://docs.microsoft.com/rest/api/searchservice/) 은 기술력과를 확장 하 `knowledgeStore` 고 강화 저장 방법을 설명 하는 Azure storage 연결 및 프로젝션을 제공 합니다. 인덱스에 추가 됩니다. 표준 AI 파이프라인에서 보강된 문서는 일시적이며 인덱싱 중에만 사용된 후에 삭제됩니다. 보강된 문서는 지식 저장소를 사용하여 유지됩니다. 자세한 내용은 [기술 자료 저장소](knowledge-store-concept-intro.md)를 참조 하세요.
+[SEARCH REST api-version = 2020-06-30](/rest/api/searchservice/) 은 기술력과를 확장 하 `knowledgeStore` 고 강화 저장 방법을 설명 하는 Azure storage 연결 및 프로젝션을 제공 합니다. 인덱스에 추가 됩니다. 표준 AI 파이프라인에서 보강된 문서는 일시적이며 인덱싱 중에만 사용된 후에 삭제됩니다. 보강된 문서는 지식 저장소를 사용하여 유지됩니다. 자세한 내용은 [기술 자료 저장소](knowledge-store-concept-intro.md)를 참조 하세요.
 
 ### <a name="step-3-search-index-and-query-based-access"></a>3 단계: 인덱스 및 쿼리 기반 액세스 검색
 
@@ -99,13 +99,13 @@ Azure Cognitive Search의 기본 제공 기술은 Cognitive Services API: [Compu
 
 1. Azure 원본 데이터에서 대표 샘플 하위 집합을 생성합니다. 인덱싱에 시간이 걸리므로 작은 대표 데이터 집합으로 시작한 다음, 솔루션의 완성도가 높아지면 증분 방식으로 빌드합니다.
 
-1. Azure Cognitive Search에서 [데이터 원본 개체](https://docs.microsoft.com/rest/api/searchservice/create-data-source)를 만들어 데이터 검색을 위한 연결 문자열을 제공합니다.
+1. Azure Cognitive Search에서 [데이터 원본 개체](/rest/api/searchservice/create-data-source)를 만들어 데이터 검색을 위한 연결 문자열을 제공합니다.
 
-1. 보강 단계를 통해 [기술 집합](https://docs.microsoft.com/rest/api/searchservice/create-skillset)을 만듭니다.
+1. 보강 단계를 통해 [기술 집합](/rest/api/searchservice/create-skillset)을 만듭니다.
 
-1. [인덱스 스키마](https://docs.microsoft.com/rest/api/searchservice/create-index)를 정의합니다. 필드(*Field*) 컬렉션에 원본 데이터의 필드를 포함합니다. 보강 과정에서 만들어진 콘텐츠에 대해 생성된 값을 저장할 필드를 더 추가해야 합니다.
+1. [인덱스 스키마](/rest/api/searchservice/create-index)를 정의합니다. 필드(*Field*) 컬렉션에 원본 데이터의 필드를 포함합니다. 보강 과정에서 만들어진 콘텐츠에 대해 생성된 값을 저장할 필드를 더 추가해야 합니다.
 
-1. 데이터 원본, 기술 집합 및 인덱스를 참조하는 [인덱서](https://docs.microsoft.com/rest/api/searchservice/create-indexer)를 정의합니다.
+1. 데이터 원본, 기술 집합 및 인덱스를 참조하는 [인덱서](/rest/api/searchservice/create-indexer)를 정의합니다.
 
 1. 인덱서 내에 *outputFieldMappings*를 추가합니다. 이 섹션에서는 기술 집합(3단계)의 출력을 인덱스 스키마(4단계)의 입력 필드에 매핑합니다.
 

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
-ms.date: 06/25/2020
-ms.openlocfilehash: 7194e4553386c25691bb3ede8096da7fb63c5dc0
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.date: 08/14/2020
+ms.openlocfilehash: 72d0745e5a885ddbc57a9a849a7537a40e0b1215
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88055224"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590067"
 ---
 # <a name="what-is-azure-sql-managed-instance"></a>Azure SQL Managed Instance 이란?
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -50,7 +50,7 @@ SQL Managed Instance Azure SQL Database와 SQL Server 데이터베이스 엔진 
 
 다음 표에서는 SQL Managed Instance의 주요 기능을 보여 줍니다.
 
-|기능 | 설명|
+|기능 | Description|
 |---|---|
 | SQL Server 버전/빌드 | SQL Server 데이터베이스 엔진 (안정적인 최신) |
 | 관리되는 자동 백업 | 예 |
@@ -73,8 +73,8 @@ SQL Managed Instance에 대 한 [Vcore 기반 구매 모델](../database/service
 
 VCore 모델에서 하드웨어 세대 중에서 선택할 수 있습니다.
 
-- **Gen4** 논리 Cpu는 Intel E5-2673 V3 (haswell) 2.4 g h z 프로세서, 연결 된 SSD, 실제 코어, 코어 당 8gb RAM 및 계산 크기 (8 ~ 24 개 vcores)를 기반으로 합니다.
-- **Gen5** 논리 Cpu는 intel E5-2673 V4 (Broadwell) 2.3 GHz 및 intel SP-8160 (Skylake) 프로세서, FAST NVMe SSD, 하이퍼 스레드 논리 코어 및 4 개에서 80 코어 사이의 계산 크기를 기반으로 합니다.
+- **Gen4** 논리 Cpu는 Intel® E5-2673 V3 (haswell) 2.4 g h z 프로세서, 연결 된 SSD, 실제 코어, 코어 당 8gb RAM 및 계산 크기 (8 ~ 24 개 vcores)를 기반으로 합니다.
+- **Gen5** 논리 Cpu는 Intel® E5-2673 V4 (Broadwell) 2.3 g h z, INTEL® SP-8160 (Skylake) 및 INTEL® 8272CL (케스케이드 Lake) 2.5 g h z 프로세서, FAST NVMe SSD, 하이퍼 스레드 논리 코어 및 계산 크기 (4 ~ 80 코어)를 기반으로 합니다.
 
 [SQL Managed Instance 리소스 제한](resource-limits.md#hardware-generation-characteristics)에서 하드웨어 생성 간의 차이점에 대 한 자세한 정보를 찾습니다.
 
@@ -227,7 +227,7 @@ SQL Managed Instance 클라우드에서 항상 최신 상태를 유지 하는 �
 
 다음 표에서는 Transact-sql을 통해 액세스할 수 있는 몇 가지 속성을 보여 줍니다 .이 속성을 사용 하 여 응용 프로그램이 SQL Managed Instance를 사용 하 고 있는지 검색 하 고 중요 한 속성을 검색할 수 있습니다.
 
-|속성|값|주석|
+|속성|값|의견|
 |---|---|---|
 |`@@VERSION`|Microsoft SQL Azure(RTM) - 12.0.2000.8 2018-03-07 Copyright (C) 2018 Microsoft Corporation.|이 값은 SQL Database와 같습니다. 이 **는** SQL 엔진 버전 12 (SQL Server 2014)를 나타내지 않습니다. SQL Managed Instance는 항상 사용 가능한 최신 RTM 버전의 SQL Server 보다 같거나 높은 안정적인 최신 SQL 엔진 버전을 항상 실행 합니다.  |
 |`SERVERPROPERTY ('Edition')`|SQL Azure|이 값은 SQL Database와 같습니다.|

@@ -10,12 +10,13 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: sbowles
-ms.openlocfilehash: a3fd308ede17f510b3e9188f2bebc93a08a61181
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 231f30f5532d0934ba41e591aa821d56b11d5856
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84263190"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928006"
 ---
 # <a name="get-face-detection-data"></a>얼굴 감지 데이터 가져오기
 

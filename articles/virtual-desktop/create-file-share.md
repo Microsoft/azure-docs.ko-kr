@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e03d496881b0d563387ee5a5943b60f456530453
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ced763ca4abd32f3b824f05f2f5786a5d9cfd4c4
+ms.sourcegitcommit: ac7ae29773faaa6b1f7836868565517cd48561b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009225"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88825446"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-ad-ds"></a>Azure Files 및 AD DS를 사용 하 여 프로필 컨테이너 만들기
 
@@ -19,7 +19,7 @@ ms.locfileid: "88009225"
 
 이 프로세스는 온-프레미스 디렉터리 서비스인 Active Directory Domain Services (AD DS)를 사용 합니다. Azure AD DS를 사용 하 여 FSLogix 프로필 컨테이너를 만드는 방법에 대 한 자세한 내용은 [Azure Files를 사용 하 여 fslogix 프로필 컨테이너 만들기](create-profile-container-adds.md)를 참조 하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 준비 사항
 
 시작 하기 전에 도메인 컨트롤러가 Azure에 동기화 되 고 세션 호스트가 연결 된 Azure VNET (가상 네트워크)에서 확인할 수 있는지 확인 합니다.
 
@@ -127,11 +127,11 @@ UNC 경로를 가져오는 방법은 다음과 같습니다.
 
 5. URI를 복사한 후 다음 작업을 수행 하 여 UNC로 변경 합니다.
 
-    - 제거 `https://` 및 바꾸기`\\`
+    - 제거 `https://` 및 바꾸기 `\\`
     - 슬래시를 백슬래시로 바꿉니다 `/` `\` .
     - [Azure 파일 공유 만들기](#create-an-azure-file-share) 에서 만든 파일 공유의 이름을 UNC의 끝에 추가 합니다.
 
-        예를 들면 다음과 같습니다. `\\customdomain.file.core.windows.net\<fileshare-name>`
+        `\\customdomain.file.core.windows.net\<fileshare-name>`
 
 ### <a name="get-the-storage-account-key"></a>스토리지 계정 키 가져오기
 
@@ -151,15 +151,15 @@ NTFS 사용 권한을 구성 하려면:
 
 1. 도메인에 가입 된 VM에서 명령 프롬프트를 엽니다.
 
-2. 다음 cmdlet을 실행하여 Azure 파일 공유를 탑재하고 드라이브 문자를 할당합니다. 
+2. 다음 명령을 실행 하 여 Azure 파일 공유를 탑재 하 고 드라이브 문자를 할당 합니다.
 
-     ```powershell
+     ```cmd
      net use <desired-drive-letter>: <UNC-pat> <SA-key> /user:Azure\<SA-name>
      ```
 
-3. 다음 cmdlet을 실행 하 여 Azure 파일 공유에 대 한 액세스 권한을 검토 합니다.
+3. 다음 명령을 실행 하 여 Azure 파일 공유에 대 한 액세스 권한을 검토 합니다.
 
-    ```powershell
+    ```cmd
     icacls <mounted-drive-letter>:
     ```
 
@@ -167,9 +167,9 @@ NTFS 사용 권한을 구성 하려면:
 
     *NT Authority\authenticated users Users* 및 *BUILTIN\Users* 에는 기본적으로 특정 권한이 있습니다. 이러한 기본 사용 권한을 통해 이러한 사용자는 다른 사용자의 프로필 컨테이너를 읽을 수 있습니다. 그러나 [프로필 컨테이너 및 Office 컨테이너에서 사용할 수 있도록 저장소 사용 권한 구성](/fslogix/fslogix-storage-config-ht) 에서 설명 하는 사용 권한은 사용자가 다른 사용자의 프로필 컨테이너를 읽을 수 없습니다.
 
-4. 다음 cmdlet을 실행 하 여 Windows 가상 데스크톱 사용자가 다른 사용자의 프로필 컨테이너에 대 한 액세스를 차단 하면서 자신의 프로필 컨테이너를 만들도록 할 수 있습니다.
+4. 다음 명령을 실행 하 여 Windows 가상 데스크톱 사용자가 다른 사용자의 프로필 컨테이너에 대 한 액세스를 차단 하는 동안 자신의 프로필 컨테이너를 만들 수 있도록 합니다.
 
-     ```powershell
+     ```cmd
      icacls <mounted-drive-letter>: /grant <user-email>:(M)
      icacls <mounted-drive-letter>: /grant "Creator Owner":(OI)(CI)(IO)(M)
      icacls <mounted-drive-letter>: /remove "Authenticated Users"
@@ -179,9 +179,9 @@ NTFS 사용 권한을 구성 하려면:
      - <탑재 된 드라이브 문자>를 드라이브를 매핑하는 데 사용한 드라이브의 문자로 바꿉니다.
      - 사용자 전자 메일> <을 공유에 대 한 액세스 권한이 필요한 사용자를 포함 하는 사용자 또는 Active Directory 그룹의 UPN으로 바꿉니다.
 
-     예:
+     예를 들어:
 
-     ```powershell
+     ```cmd
      icacls <mounted-drive-letter>: /grant john.doe@contoso.com:(M)
      icacls <mounted-drive-letter>: /grant "Creator Owner":(OI)(CI)(IO)(M)
      icacls <mounted-drive-letter>: /remove "Authenticated Users"

@@ -2,17 +2,19 @@
 title: 수동으로 컨테이너 그룹 중지 또는 시작
 description: Azure Container Instances에서 컨테이너 그룹을 수동으로 중지 하거나 시작 하는 방법에 대해 알아봅니다.
 ms.topic: article
-ms.date: 04/15/2019
-ms.openlocfilehash: c9f8afea33c65df940d02823ec394697d2786d6a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/11/2020
+ms.openlocfilehash: f697f18459959cf40e71d3ca90cd8b42aaa74239
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74533417"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799080"
 ---
 # <a name="manually-stop-or-start-containers-in-azure-container-instances"></a>Azure Container Instances에서 수동으로 컨테이너 중지 또는 시작
 
 컨테이너 그룹의 [다시 시작 정책](container-instances-restart-policy.md) 설정은 컨테이너 인스턴스를 기본적으로 시작 하거나 중지 하는 방법을 결정 합니다. 컨테이너 그룹을 수동으로 중지 하거나 시작 하 여 기본 설정을 재정의할 수 있습니다.
+
+[!INCLUDE [container-instances-restart-ip](../../includes/container-instances-restart-ip.md)]
 
 ## <a name="stop"></a>중지
 
@@ -24,7 +26,7 @@ ms.locfileid: "74533417"
 
 컨테이너 그룹이 이미 종료 된 경우 (성공 또는 실패 상태)에는 중지 작업이 적용 되지 않습니다. 예를 들어 실행 한 후 실행 된 컨테이너 태스크가 있는 컨테이너 그룹은 성공 상태에서 성공적으로 종료 됩니다. 해당 상태에서 그룹을 중지 하려고 하면 상태가 변경 되지 않습니다. 
 
-## <a name="start"></a>Start
+## <a name="start"></a>시작
 
 컨테이너가 자체에서 종료 되었거나 수동으로 그룹을 중지 했기 때문에 컨테이너 그룹을 중지 한 경우 컨테이너를 시작할 수 있습니다. 예를 들어 [az container start][az-container-start] 명령을 사용 하거나 Azure Portal를 사용 하 여 그룹의 컨테이너를 수동으로 시작할 수 있습니다. 컨테이너의 컨테이너 이미지가 업데이트되면 새 이미지가 풀됩니다. 
 

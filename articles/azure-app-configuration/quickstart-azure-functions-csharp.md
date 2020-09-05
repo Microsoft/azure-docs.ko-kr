@@ -1,18 +1,19 @@
 ---
 title: Azure Functions와 Azure App Configuration에 대한 빠른 시작 | Microsoft Docs
-description: Azure Functions와 함께 Azure App Configuration을 사용하는 경우 참고할 수 있는 빠른 시작입니다.
+description: 이 빠른 시작에서는 Azure App Configuration 및 C#을 사용하여 Azure Functions 앱을 만듭니다. App Configuration 저장소를 만들고 연결합니다. 로컬로 함수를 테스트합니다.
 services: azure-app-configuration
 author: lisaguthrie
 ms.service: azure-app-configuration
+ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 1/9/2019
 ms.author: lcozzens
-ms.openlocfilehash: 2f6efdad7ab0685e58d2edd73bc36b758e8dbae2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e15c83504ee0eebb925c122d0efd4896e7b55916
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80245500"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590288"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>빠른 시작: Azure App Configuration으로 Azure Functions 앱 만들기
 
@@ -109,7 +110,7 @@ ms.locfileid: "80245500"
 
     ![VS에서 빠른 시작 함수 디버깅](./media/quickstarts/function-visual-studio-debugging.png)
 
-4. HTTP 요청에 대한 URL을 브라우저의 주소 표시줄에 붙여 넣습니다. 다음 이미지에서는 함수에서 반환된 로컬 GET 요청에 대한 브라우저의 응답을 보여 줍니다.
+4. 브라우저의 주소 표시줄에 HTTP 요청에 대한 URL을 붙여 넣습니다. 다음 이미지에서는 함수에서 반환된 로컬 GET 요청에 대한 브라우저의 응답을 보여 줍니다.
 
     ![빠른 시작 함수 로컬 시작](./media/quickstarts/dotnet-core-function-launch-local.png)
 

@@ -8,12 +8,12 @@ ms.custom: tutorial-develop, mvc
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.reviewer: sngun
-ms.openlocfilehash: e8d1498520ea0c59372ec4e1096b6f2b4bcf885f
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 2a6033ef1d2b7dda04b1510d42fa49141e0b79b4
+ms.sourcegitcommit: 1aef4235aec3fd326ded18df7fdb750883809ae8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921127"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88136000"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-sql-api"></a>자습서: SQL API를 사용하여 Azure Cosmos DB 쿼리
 
@@ -113,7 +113,7 @@ SQL 쿼리에 대한 자세한 내용은 다음을 참조하세요.
 
 ## <a name="example-query-2"></a>예제 쿼리 2
 
-다음 쿼리에서는 ID가 등급별로 정렬된 `WakefieldFamily`와 일치하는 가족의 모든 자식 이름을 반환합니다.
+다음 쿼리에서는 ID가 `WakefieldFamily`와 일치하는 가족의 지정된 모든 자식 이름을 반환합니다.
 
 **쿼리**
 

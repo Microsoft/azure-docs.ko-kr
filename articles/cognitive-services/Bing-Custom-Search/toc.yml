@@ -17,7 +17,7 @@
       items:
         - name: REST API
           items:
-            - name: 'C# 사용'
+            - name: C# 사용
               href: call-endpoint-csharp.md
             - name: Java 사용
               href: call-endpoint-java.md
@@ -94,7 +94,7 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/bing-custom-search/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598147-bing-custom-search-api'
-    - name: 스택 오버플로
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=bing+custom+search'
     - name: 국가별 가용성
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
@@ -103,7 +103,7 @@
     - name: 기술 자료
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
     - name: API 키 가져오기
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: 사용해 보세요.
       href: 'https://aka.ms/bingcustomsearchtryit'
     - name: Bing Custom Search 엔드포인트

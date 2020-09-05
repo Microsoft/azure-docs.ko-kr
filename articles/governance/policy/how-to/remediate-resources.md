@@ -1,18 +1,18 @@
 ---
 title: 규정 비준수 리소스 수정
 description: 이 지침에서는 Azure Policy에서 정책을 준수하지 않는 리소스를 수정하는 과정을 안내합니다.
-ms.date: 06/09/2020
+ms.date: 08/27/2020
 ms.topic: how-to
-ms.openlocfilehash: be55f16734a94acfcc89d632f4cb79f550fa74d5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1274b049d7ce19601968697b22da38f0eb2cb5ff
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84636311"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958748"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Azure Policy를 사용하여 비준수 리소스 수정
 
-**deployIfNotExists** 또는 **수정** 정책을 준수하지 않는 리소스는 **수정**을 통해 준수 상태로 설정할 수 있습니다. 수정은 Azure Policy에서 **deployIfNotExists** 효과 또는 기존 리소스에 할당된 정책(해당 할당이 관리 그룹, 구독, 리소스 그룹 또는 개별 리소스에 대한 것인지와 무관함)의 태그 **작업**을 실행하도록 지시하여 수행할 수 있습니다. 이 문서에서는 Azure Policy를 통한 수정을 이해하고 수행하는 데 필요한 단계를 보여 줍니다.
+**deployIfNotExists** 또는 **수정** 정책을 준수하지 않는 리소스는 **수정**을 통해 준수 상태로 설정할 수 있습니다. 관리 그룹, 구독, 리소스 그룹 또는 개별 리소스에 대 한 **할당과 같은 기존** 리소스에 대 한 할당 된 정책의 **수정 작업** 을 실행 하도록 Azure Policy를 지시 하 여 수정 작업을 수행 합니다. 이 문서에서는 Azure Policy를 통한 수정을 이해하고 수행하는 데 필요한 단계를 보여 줍니다.
 
 ## <a name="how-remediation-security-works"></a>수정 보안의 작동 방식
 

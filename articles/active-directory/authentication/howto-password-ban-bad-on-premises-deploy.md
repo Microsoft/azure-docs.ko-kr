@@ -11,16 +11,16 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7870b62dea01f680126f5b4aac3dc2328407cd61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b773fb887d3663a2af2e340912e378c7fccaba4a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82143214"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003544"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>온-프레미스 Azure Active Directory 암호 보호 계획 및 배포
 
-사용자는 종종 학교, 스포츠 팀 또는 유명한 사용자와 같은 일반적인 로컬 단어를 사용 하는 암호를 만듭니다. 이러한 암호는 추측 하기 쉬우며 사전 기반 공격에 취약 합니다. 조직에서 강력한 암호를 적용 하기 위해 Azure Active Directory (Azure AD) 암호 보호는 전역 및 사용자 지정 금지 된 암호 목록을 제공 합니다. 이러한 금지 된 암호 목록에 일치 하는 항목이 있으면 암호 변경 요청이 실패 합니다.
+사용자가 학교, 스포츠 팀 또는 유명 인사와 같은 일반적인 로컬 단어를 사용하는 암호를 만드는 경우가 많습니다. 이러한 암호는 쉽게 추측할 수 있으며 사전 기반 공격에 취약합니다. 조직에서 강력한 암호를 적용 하기 위해 Azure Active Directory (Azure AD) 암호 보호는 전역 및 사용자 지정 금지 된 암호 목록을 제공 합니다. 이러한 금지 된 암호 목록에 일치 하는 항목이 있으면 암호 변경 요청이 실패 합니다.
 
 온-프레미스 Active Directory Domain Services (AD DS) 환경을 보호 하기 위해 Azure AD 암호 보호를 설치 하 고 구성 하 여 온-프레미스 DC를 사용할 수 있습니다. 이 문서에서는 온-프레미스 환경에서 Azure AD 암호 보호 프록시 서비스와 Azure AD 암호 보호 DC 에이전트를 설치 하 고 등록 하는 방법을 보여 줍니다.
 
@@ -49,6 +49,8 @@ ms.locfileid: "82143214"
 * [취약 한 로컬 관리자 암호로 인해 도메인 컨트롤러 강등을 실패 합니다.](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-demotion-fails-due-to-a-weak-local-administrator-password)
 
 적절 한 기간 동안 기능이 감사 모드에서 실행 된 후에 *감사* 에서 *적용* 으로 구성을 전환 하 여 더 안전한 암호를 요구 하도록 전환할 수 있습니다. 이 시간 동안 추가 모니터링을 수행 하는 것이 좋습니다.
+
+Azure AD 암호 보호는 암호 변경 또는 설정 작업 중에만 암호의 유효성을 검사할 수 있다는 점에 유의 해야 합니다. Azure AD 암호 보호를 배포 하기 전에 Active Directory에 허용 되 고 저장 된 암호는 유효성을 검사 하지 않으며 그대로 계속 작동 합니다. 시간이 지남에 따라 모든 사용자 및 계정은 궁극적으로 기존 암호가 만료 되 면 Azure AD 암호 보호의 유효성을 검사 하는 암호를 사용 하기 시작 합니다. "암호 사용 기간 제한 없음"으로 구성 된 계정은이에서 제외 됩니다.
 
 ### <a name="multiple-forest-considerations"></a>여러 포리스트 고려 사항
 
@@ -101,7 +103,7 @@ Azure AD 암호 보호 DC 에이전트에는 다음 요구 사항이 적용 됩�
     * Active Directory 도메인 이나 포리스트는 Windows Server 2012 DFL (도메인 기능 수준) 또는 FFL (포리스트 기능 수준)에 있을 필요가 없습니다. [디자인 원칙](concept-password-ban-bad-on-premises.md#design-principles)에 설명 된 대로 DC 에이전트 또는 프록시 소프트웨어를 실행 하는 데 필요한 최소 dfl 또는 ffl은 없습니다.
 * Azure AD 암호 보호 DC 에이전트를 실행 하는 모든 컴퓨터에는 .NET 4.5이 설치 되어 있어야 합니다.
 * Azure AD 암호 보호 DC 에이전트 서비스를 실행 하는 모든 Active Directory 도메인은 sysvol 복제를 위해 DFSR (분산 파일 시스템 복제)를 사용 해야 합니다.
-   * 도메인에서 DFSR을 아직 사용 하지 않는 경우 Azure AD 암호 보호를 설치 하기 전에 마이그레이션해야 합니다. 자세한 내용은 [SYSVOL 복제 마이그레이션 가이드: FRS to DFS 복제](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10)) 를 참조 하세요.
+   * 도메인에서 DFSR을 아직 사용 하지 않는 경우 Azure AD 암호 보호를 설치 하기 전에 마이그레이션해야 합니다. 자세한 내용은 [SYSVOL 복제 마이그레이션 가이드: FRS to DFS 복제](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019(v=ws.10)) 를 참조 하세요.
 
     > [!WARNING]
     > Azure AD 암호 보호 DC 에이전트 소프트웨어는 현재 sysvol (DFSR에 대 한 선행 기술)을 사용 하는 도메인의 도메인 컨트롤러에 설치 되며,이 환경에서는 소프트웨어가 제대로 작동 하지 않습니다.
@@ -124,14 +126,14 @@ Azure AD 암호 보호 프록시 서비스에는 다음과 같은 요구 사항�
 * Azure AD 암호 보호 프록시 서비스를 호스트 하는 모든 컴퓨터는 도메인 컨트롤러에 프록시 서비스에 로그온 할 수 있는 권한을 부여 하도록 구성 되어야 합니다. 이 기능은 "네트워크에서이 컴퓨터 액세스" 권한 할당을 통해 제어 됩니다.
 * Azure AD 암호 보호 프록시 서비스를 호스트 하는 모든 컴퓨터는 아웃 바운드 TLS 1.2 HTTP 트래픽을 허용 하도록 구성 되어야 합니다.
 * Azure ad를 사용 하 여 Azure AD 암호 보호 프록시 서비스 및 포리스트를 등록 하는 *전역 관리자* 계정.
-* [응용 프로그램 프록시 환경 설정 절차](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#prepare-your-on-premises-environment)에 지정 된 포트 및 url 집합에 대해 네트워크 액세스를 사용 하도록 설정 해야 합니다.
+* [응용 프로그램 프록시 환경 설정 절차](../manage-apps/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment)에 지정 된 포트 및 url 집합에 대해 네트워크 액세스를 사용 하도록 설정 해야 합니다.
 
 ### <a name="microsoft-azure-ad-connect-agent-updater-prerequisites"></a>Microsoft Azure AD 연결 에이전트 업데이트 프로그램 필수 구성 요소
 
 Microsoft Azure AD Connect Agent 업데이트 서비스는 Azure AD 암호 보호 프록시 서비스와 나란히 설치 됩니다. Microsoft Azure AD Connect Agent 업데이트 서비스에서 기능을 사용할 수 있도록 하려면 추가 구성이 필요 합니다.
 
-* 사용자 환경에서 HTTP 프록시 서버를 사용 하는 경우 [기존 온-프레미스 프록시 서버 작업](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers)에 지정 된 지침을 따르세요.
-* Microsoft Azure AD Connect Agent 업데이트 서비스에는 [tls 요구 사항](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#tls-requirements)에 지정 된 tls 1.2 단계도 필요 합니다.
+* 사용자 환경에서 HTTP 프록시 서버를 사용 하는 경우 [기존 온-프레미스 프록시 서버 작업](../manage-apps/application-proxy-configure-connectors-with-proxy-servers.md)에 지정 된 지침을 따르세요.
+* Microsoft Azure AD Connect Agent 업데이트 서비스에는 [tls 요구 사항](../manage-apps/application-proxy-add-on-premises-application.md#tls-requirements)에 지정 된 tls 1.2 단계도 필요 합니다.
 
 > [!WARNING]
 > Azure AD 암호 보호 프록시와 Azure AD 응용 프로그램 프록시는 서로 다른 버전의 Microsoft Azure AD Connect Agent 업데이트 서비스를 설치 합니다 .이 경우 지침은 응용 프로그램 프록시 콘텐츠를 참조 합니다. 이러한 서로 다른 버전은 함께 설치 될 때 호환 되지 않으며 에이전트 업데이트 프로그램 서비스에서 소프트웨어 업데이트를 위해 Azure에 연결 하지 못하도록 하므로 동일한 컴퓨터에 Azure AD 암호 보호 프록시와 응용 프로그램 프록시를 설치 하면 안 됩니다.

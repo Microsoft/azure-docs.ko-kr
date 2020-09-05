@@ -7,12 +7,12 @@ ms.date: 11/15/2017
 ms.topic: conceptual
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: d63c1517c025b9d7a3fd5523c6184eb5f43aad90
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: bf56f1fac1f12f9e4994221d672410715393ae9f
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87825313"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88815141"
 ---
 # <a name="scalability-and-performance-targets-for-vm-disks-on-windows"></a>Windows 기반 VM 디스크의 확장성 및 성능 목표
 
@@ -22,7 +22,7 @@ ms.locfileid: "87825313"
 
 ## <a name="managed-virtual-machine-disks"></a>관리되는 가상 머신 디스크
 
-별표로 표시되는 크기는 현재 미리 보기로 제공됩니다. 제공되는 Azure 지역은 [FAQ](faq-for-disks.md#new-disk-sizes-managed-and-unmanaged)를 참조하세요.
+별표로 표시되는 크기는 현재 미리 보기로 제공됩니다. 제공되는 Azure 지역은 [FAQ](../faq-for-disks.md#new-disk-sizes-managed-and-unmanaged)를 참조하세요.
 
 [!INCLUDE [azure-storage-limits-vm-disks-managed](../../../includes/azure-storage-limits-vm-disks-managed.md)]
 
@@ -31,6 +31,6 @@ ms.locfileid: "87825313"
 
 [!INCLUDE [azure-storage-limits-vm-disks-premium](../../../includes/azure-storage-limits-vm-disks-premium.md)]
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>추가 정보
 
 [Azure 구독 및 서비스 제한, 할당량 및 제약 조건](../../azure-resource-manager/management/azure-subscription-service-limits.md)

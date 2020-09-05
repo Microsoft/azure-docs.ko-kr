@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 6c4838e3226b91cbb5d6f86b83266a986418c120
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 03bc41a0159253359b4f87fd35d4de055b294cc4
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75430505"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88961791"
 ---
 # <a name="create-an-external-app-service-environment"></a>외부 App Service Environment 만들기
 
@@ -33,7 +33,7 @@ ASE(App Service Environment)에는 두 가지 배포 방법이 있습니다.
 ASE를 만든 후에는 다음을 변경할 수 없습니다.
 
 - 위치
-- Subscription
+- 구독
 - Resource group
 - 사용되는 VNet
 - 사용되는 서브넷
@@ -196,7 +196,7 @@ ASEv1에 대해 자세히 알아보려면 [App Service Environment v1 소개][AS
 [ConfigureASEv1]: app-service-web-configure-an-app-service-environment.md
 [ASEv1Intro]: app-service-app-service-environment-intro.md
 [webapps]: ../overview.md
-[mobileapps]: ../../app-service-mobile/app-service-mobile-value-prop.md
+[mobileapps]: /previous-versions/azure/app-service-mobile/app-service-mobile-value-prop
 [Functions]: ../../azure-functions/index.yml
 [Pricing]: https://azure.microsoft.com/pricing/details/app-service/
 [ARMOverview]: ../../azure-resource-manager/management/overview.md

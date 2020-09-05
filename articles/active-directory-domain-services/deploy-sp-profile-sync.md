@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 9a65065a6f3cbc7264a8efb9bcf128b06897aacf
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: aa66f7150e5c3ac4560d7f97cb73b1effb8eec89
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220272"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88749631"
 ---
 # <a name="configure-azure-active-directory-domain-services-to-support-user-profile-synchronization-for-sharepoint-server"></a>SharePoint Server에 대 한 사용자 프로필 동기화를 지원 하도록 Azure Active Directory Domain Services 구성
 
-SharePoint Server에는 사용자 프로필을 동기화 하는 서비스가 포함 되어 있습니다. 이 기능을 통해 사용자 프로필을 중앙 위치에 저장 하 고 여러 SharePoint 사이트 및 팜에서 액세스할 수 있습니다. SharePoint Server 사용자 프로필 서비스를 구성 하려면 Azure Active Directory Domain Services (Azure AD DS) 관리 되는 도메인에서 적절 한 사용 권한을 부여 해야 합니다. 자세한 내용은 [SharePoint Server의 사용자 프로필 동기화](https://technet.microsoft.com/library/hh296982.aspx)를 참조 하세요.
+SharePoint Server에는 사용자 프로필을 동기화 하는 서비스가 포함 되어 있습니다. 이 기능을 통해 사용자 프로필을 중앙 위치에 저장 하 고 여러 SharePoint 사이트 및 팜에서 액세스할 수 있습니다. SharePoint Server 사용자 프로필 서비스를 구성 하려면 Azure Active Directory Domain Services (Azure AD DS) 관리 되는 도메인에서 적절 한 사용 권한을 부여 해야 합니다. 자세한 내용은 [SharePoint Server의 사용자 프로필 동기화](/SharePoint/administration/user-profile-service-administration)를 참조 하세요.
 
 이 문서에서는 SharePoint Server 사용자 프로필 동기화 서비스를 허용 하도록 Azure AD DS를 구성 하는 방법을 보여 줍니다.
 
@@ -71,7 +71,7 @@ Azure AD DS management VM에서 다음 단계를 완료 합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-자세한 내용은 [SharePoint 서버에서 프로필 동기화에 대 한 Active Directory Domain Services 권한 부여](https://technet.microsoft.com/library/hh296982.aspx) 를 참조 하세요.
+자세한 내용은 [SharePoint Server에서 사용자 프로필 동기화 관리](/SharePoint/administration/manage-profile-synchronization)를 참조 하세요.
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md

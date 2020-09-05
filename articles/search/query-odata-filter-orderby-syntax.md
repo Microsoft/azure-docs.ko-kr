@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 07f3e270e799753a582227abe53223bd05755eb5
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: d04311fce81d147a0830918aee1d4a2a9c0808d4
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86165212"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923401"
 ---
 # <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-cognitive-search"></a>`$filter` `$orderby` Azure Cognitive Search의, 및에 대 한 OData 언어 개요 `$select`
 
@@ -70,14 +70,14 @@ identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 
 다음 표에서는 필드 경로의 예를 보여 줍니다.
 
-| 필드 경로 | 설명 |
+| 필드 경로 | Description |
 | --- | --- |
 | `HotelName` | 인덱스의 최상위 필드를 참조 합니다. |
 | `Address/City` | `City`인덱스에 있는 복합 필드의 하위 필드를 참조 합니다. `Address` `Edm.ComplexType` 이 예제에서는 형식입니다. |
 | `Rooms/Type` | `Type`인덱스에 있는 복합 컬렉션 필드의 하위 필드를 참조 합니다. `Rooms` `Collection(Edm.ComplexType)` 이 예제에서는 형식입니다. |
 | `Stores/Address/Country` | `Country`인덱스에 있는 복합 컬렉션 필드의 하위 필드에 대 한 하위 필드를 참조 합니다 `Address` . `Stores` 는 형식이 `Collection(Edm.ComplexType)` 며 `Address` `Edm.ComplexType` 이 예제에서는 형식입니다. |
-| `room/Type` | 는 `Type` `room` 필터 식에서와 같이 범위 변수의 하위 필드를 참조 합니다.`Rooms/any(room: room/Type eq 'deluxe')` |
-| `store/Address/Country` | 는 `Country` `Address` `store` 필터 식에서와 같이 범위 변수의 하위 필드에 대 한 하위 필드를 참조 합니다.`Stores/any(store: store/Address/Country eq 'Canada')` |
+| `room/Type` | 는 `Type` `room` 필터 식에서와 같이 범위 변수의 하위 필드를 참조 합니다. `Rooms/any(room: room/Type eq 'deluxe')` |
+| `store/Address/Country` | 는 `Country` `Address` `store` 필터 식에서와 같이 범위 변수의 하위 필드에 대 한 하위 필드를 참조 합니다. `Stores/any(store: store/Address/Country eq 'Canada')` |
 
 필드 경로의 의미는 컨텍스트에 따라 달라 집니다. 필터에서 필드 경로는 현재 문서에 있는 필드의 *단일 인스턴스* 값을 나타냅니다. [전체 Lucene 구문에서](query-lucene-syntax.md#bkmk_fields) **$orderby**, **$select**또는 필드 지정 search와 같은 다른 컨텍스트에서 필드 경로는 필드 자체를 참조 합니다. 이러한 차이는 필터에서 필드 경로를 사용 하는 방법에 대 한 몇 가지 영향을 줍니다.
 
@@ -91,25 +91,25 @@ Rooms/any(room: room/Type eq 'deluxe')
 
 ### <a name="using-field-paths"></a>필드 경로 사용
 
-필드 경로는 [Azure COGNITIVE SEARCH REST api](https://docs.microsoft.com/rest/api/searchservice/)의 많은 매개 변수에 사용 됩니다. 다음 표에서는 사용할 수 있는 모든 위치 및 사용에 대 한 제한 사항을 보여 줍니다.
+필드 경로는 [Azure COGNITIVE SEARCH REST api](/rest/api/searchservice/)의 많은 매개 변수에 사용 됩니다. 다음 표에서는 사용할 수 있는 모든 위치 및 사용에 대 한 제한 사항을 보여 줍니다.
 
-| API | 매개 변수 이름 | 제한 사항 |
+| API | 매개 변수 이름 | 제한 |
 | --- | --- | --- |
-| 인덱스 [만들기](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [업데이트](https://docs.microsoft.com/rest/api/searchservice/update-index) | `suggesters/sourceFields` | 없음 |
-| 인덱스 [만들기](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [업데이트](https://docs.microsoft.com/rest/api/searchservice/update-index) | `scoringProfiles/text/weights` | **검색 가능한** 필드만 참조할 수 있습니다. |
-| 인덱스 [만들기](https://docs.microsoft.com/rest/api/searchservice/create-index) 또는 [업데이트](https://docs.microsoft.com/rest/api/searchservice/update-index) | `scoringProfiles/functions/fieldName` | **필터링** 가능한 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search``queryType`가 인 경우`full` | **검색 가능한** 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | **패싯 가능** 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | **검색 가능한** 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | **검색 가능한** 필드만 참조할 수 있습니다. |
-| [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions) 및 [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `searchFields` | [확인 기](index-add-suggesters.md) 의 일부인 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents), [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions)및 [자동 완성](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `$filter` | **필터링** 가능한 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) 및 [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | **정렬** 가능한 필드만 참조할 수 있습니다. |
-| [검색](https://docs.microsoft.com/rest/api/searchservice/search-documents), [제안](https://docs.microsoft.com/rest/api/searchservice/suggestions)및 [조회](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | **검색할** 수 있는 필드만 참조할 수 있습니다. |
+| 인덱스 [만들기](/rest/api/searchservice/create-index) 또는 [업데이트](/rest/api/searchservice/update-index) | `suggesters/sourceFields` | 없음 |
+| 인덱스 [만들기](/rest/api/searchservice/create-index) 또는 [업데이트](/rest/api/searchservice/update-index) | `scoringProfiles/text/weights` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| 인덱스 [만들기](/rest/api/searchservice/create-index) 또는 [업데이트](/rest/api/searchservice/update-index) | `scoringProfiles/functions/fieldName` | **필터링** 가능한 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents) | `search``queryType`가 인 경우`full` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents) | `facet` | **패싯 가능** 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents) | `highlight` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents) | `searchFields` | **검색 가능한** 필드만 참조할 수 있습니다. |
+| [제안](/rest/api/searchservice/suggestions) 및 [자동 완성](/rest/api/searchservice/autocomplete) | `searchFields` | [확인 기](index-add-suggesters.md) 의 일부인 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents), [제안](/rest/api/searchservice/suggestions)및 [자동 완성](/rest/api/searchservice/autocomplete) | `$filter` | **필터링** 가능한 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents) 및 [제안](/rest/api/searchservice/suggestions) | `$orderby` | **정렬** 가능한 필드만 참조할 수 있습니다. |
+| [검색](/rest/api/searchservice/search-documents), [제안](/rest/api/searchservice/suggestions)및 [조회](/rest/api/searchservice/lookup-document) | `$select` | **검색할** 수 있는 필드만 참조할 수 있습니다. |
 
 ## <a name="constants"></a>상수
 
-OData의 상수는 지정 된 EDM ( [엔터티 데이터 모델](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) ) 형식의 리터럴 값입니다. Azure Cognitive Search에서 지원 되는 형식 목록은 [지원 되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) 을 참조 하세요. 컬렉션 형식의 상수는 지원 되지 않습니다.
+OData의 상수는 지정 된 EDM ( [엔터티 데이터 모델](/dotnet/framework/data/adonet/entity-data-model) ) 형식의 리터럴 값입니다. Azure Cognitive Search에서 지원 되는 형식 목록은 [지원 되는 데이터 형식](/rest/api/searchservice/supported-data-types) 을 참조 하세요. 컬렉션 형식의 상수는 지원 되지 않습니다.
 
 다음 표에서는 Azure Cognitive Search에서 지 원하는 각 데이터 형식에 대 한 상수의 예를 보여 줍니다.
 
@@ -239,10 +239,10 @@ select_expression ::= '*' | field_path(',' field_path)*
 - [Azure Cognitive Search의 OData $orderby 구문](search-query-odata-orderby.md)
 - [Azure Cognitive Search의 OData $select 구문](search-query-odata-select.md)
 
-## <a name="see-also"></a>참고 항목  
+## <a name="see-also"></a>참조  
 
 - [Azure Cognitive Search의 패싯 탐색](search-faceted-navigation.md)
 - [Azure Cognitive Search의 필터](search-filters.md)
-- [Azure Cognitive Search REST API &#40;문서 검색&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Azure Cognitive Search REST API &#40;문서 검색&#41;](/rest/api/searchservice/Search-Documents)
 - [Lucene 쿼리 구문](query-lucene-syntax.md)
 - [Azure Cognitive Search의 단순 쿼리 구문](query-simple-syntax.md)

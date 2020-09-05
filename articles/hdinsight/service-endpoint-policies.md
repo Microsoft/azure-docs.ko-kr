@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 07/15/2020
-ms.openlocfilehash: 5bc8955f9eb9db837b3243b8a2937d80a4d38e2e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: f2752e5ab2bf7c2926ec9e2c0e4929eab91ed377
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87099373"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88530973"
 ---
 # <a name="configure-virtual-network-service-endpoint-policies-for-azure-hdinsight"></a>Azure HDInsight에 대 한 가상 네트워크 서비스 끝점 정책 구성
 
@@ -91,7 +91,7 @@ Azure HDInsight를 사용 하면 자체 가상 네트워크에서 클러스터�
 
     PowerShell을 사용 하 여 서비스 끝점 정책을 설정 하려면 다음 코드 조각을 사용 합니다.
     
-    ```json
+    ```powershell
     #Script to assign SEP 
     $subscriptionId = "<subscription id>"
     $rgName = "<resource group name>"

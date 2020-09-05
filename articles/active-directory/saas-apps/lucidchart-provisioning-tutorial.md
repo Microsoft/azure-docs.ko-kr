@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 Lucidchart 구성 | Microsoft Docs'
 description: 사용자 계정을 Azure AD에서 Lucidchart로 자동으로 프로 비전 및 프로 비전 해제 하는 방법을 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: Zhchia
-ms.openlocfilehash: 25fe315e7d1af2e301e761c755470d2e3c24db1c
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 88c14ef916847b84f881e8da2deda7835df37ffb
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87927014"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88550288"
 ---
 # <a name="tutorial-configure-lucidchart-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Lucidchart 구성
 
@@ -35,7 +31,7 @@ ms.locfileid: "87927014"
 > * Lucidchart에서 그룹 및 그룹 멤버 자격 프로 비전
 > * Lucidchart에 대 [한 Single sign-on](https://docs.microsoft.com/azure/active-directory/saas-apps/lucidchart-tutorial) (권장)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 이 자습서에 설명된 시나리오에서는 사용자에게 이미 다음 필수 구성 요소가 있다고 가정합니다.
 
@@ -63,7 +59,7 @@ ms.locfileid: "87927014"
 
       ![Lucidchart 토큰](./media/lucidchart-provisioning-tutorial/token.png)
 
-## <a name="step-3-add-lucidchart-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 Lucidchart 추가
+## <a name="step-3-add-lucidchart-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 Lucidchart 추가
 
 Azure AD 응용 프로그램 갤러리에서 Lucidchart를 추가 하 여 Lucidchart에 대 한 프로 비전 관리를 시작 합니다. 이전에 SSO에 대해 Lucidchart를 설정한 경우 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다. 
 

@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: matjazl
   ms.author: matjazl
-  ms.date: 08/06/2020
-  ms.openlocfilehash: 24f509c4ee2475842486fe6e11f98860b14a43d7
-  ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+  ms.date: 08/13/2020
+  ms.openlocfilehash: d633b5376832672ecc7c917e24728666b889e16c
+  ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/06/2020
-  ms.locfileid: "87901677"
+  ms.lasthandoff: 08/13/2020
+  ms.locfileid: "88183448"
 landingContent:
 - title: Azure API for FHIR 시작
   linkLists:
@@ -25,6 +25,8 @@ landingContent:
     links:
     - text: Azure API for FHIR이란?
       url: overview.md
+    - text: Azure IoT Connector for FHIR(미리 보기)이란?
+      url: overview.md#azure-iot-connector-for-fhir-preview
   - linkListType: quickstart
     links:
     - text: API Server for FHIR 배포
@@ -41,6 +43,8 @@ landingContent:
       url: access-fhir-postman-tutorial.md
     - text: 타사 앱 및 의료 기록을 위한 SMART 통합
       url: use-smart-on-fhir-proxy.md
+    - text: Azure IoT Hub를 통해 디바이스 데이터 수신
+      url: device-data-through-iot-hub.md
 - title: AD 인증을 위한 앱 등록
   linkLists:
   - linkListType: how-to-guide

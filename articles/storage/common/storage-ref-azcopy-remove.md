@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 1cdb49f6865afa4101468dc35b4e416d999b63f5
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: d79b647d216fe28241e5891def574ab598304828
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87285223"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078223"
 ---
 # <a name="azcopy-remove"></a>azcopy remove
 
@@ -32,7 +32,7 @@ azcopy remove [resourceURL] [flags]
 - [AzCopy 및 File Storage를 사용하여 데이터 전송](storage-use-azcopy-files.md)
 - [AzCopy 구성, 최적화 및 문제 해결](storage-use-azcopy-configure.md)
 
-## <a name="examples"></a>예제
+## <a name="examples"></a>예
 
 SAS 토큰을 사용 하 여 단일 blob을 제거 합니다.
 
@@ -73,7 +73,6 @@ azcopy rm "https://[account].blob.core.windows.net/[container]/[path/to/parent/d
     blob1
     blob2
 ```
-
 계층 네임 스페이스가 있는 Blob Storage 계정에서 단일 파일을 제거 합니다. 포함/제외는 지원 되지 않습니다.
 
 ```azcopy
@@ -94,15 +93,17 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory
 
 **--exclude-패턴** 문자열은 이름이 패턴 목록과 일치 하는 파일을 제외 합니다. 예: `*.jpg` ; `*.pdf` ;`exactName`
 
-**--force-읽기** 전용   Azure Files 파일 또는 폴더를 삭제 하는 경우 기존 개체에 읽기 전용 특성이 설정 된 경우에도 삭제 작업을 강제로 수행 합니다.
+**--force-읽기**   전용   Azure Files 파일 또는 폴더를 삭제 하는 경우 기존 개체에 읽기 전용 특성이 설정 된 경우에도 삭제 작업을 강제로 수행 합니다.
 
-**--** 제거에 대 한 도움말 도움말입니다.
+**--**   제거에 대 한 도움말 도움말입니다.
 
 **--include-경로** 문자열은 제거할 때 이러한 경로만 포함 합니다. 이 옵션은 와일드 카드 문자 (*)를 지원 하지 않습니다. 상대 경로 접두사를 확인 합니다. `myFolder;myFolder/subDirName/file.pdf`
 
 **--include-패턴** 문자열은 이름이 패턴 목록과 일치 하는 파일만 포함 합니다. 예: * `.jpg` ;* `.pdf` ;`exactName`
 
-**--파일 목록** 문자열은 파일의 위치를 정의 합니다. 여기에는 삭제할 파일 및 디렉터리 목록이 포함 됩니다. 상대 경로는 줄 바꿈으로 구분 되어야 하며 경로는 URL 인코딩되지 않아야 합니다.
+**--파일 목록** 문자열은 파일의 위치를 정의 합니다. 여기에는 삭제할 파일 및 디렉터리 목록이 포함 됩니다. 상대 경로는 줄 바꿈으로 구분 되어야 하며 경로는 URL 인코딩되지 않아야 합니다. 
+
+**--버전 목록** 문자열은 각 버전 id가 별도의 줄에 나열 되는 파일을 지정 합니다. 원본이 단일 blob을 가리켜야 하며이 플래그를 사용 하 여 파일에 지정 된 모든 버전 id가 원본 blob에만 속해야 합니다. 지정 된 blob의 지정 된 버전 id가 Azure Storage에서 삭제 됩니다. 
 
 **--로그 수준** 문자열 로그 파일의 자세한 정도를 정의 합니다. 사용 가능한 수준에는 `INFO` (모든 요청/응답), `WARNING` (저속 응답), ( `ERROR` 실패 한 요청만) 및 `NONE` (출력 로그 없음)이 포함 됩니다. (기본값 `INFO` ) (기본값 `INFO` )
 

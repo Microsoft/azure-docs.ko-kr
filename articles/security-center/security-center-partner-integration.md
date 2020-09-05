@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2020
 ms.author: memildin
-ms.openlocfilehash: dd694fd013069c33e4f3af2c81447e014d41b691
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1af99f6317ac5888478c7df08fcc31478ef1ccef
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519253"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89180850"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Azure Security Center에서 보안 솔루션 통합
 이 문서를 통해 이미 Azure Security Center에 연결된 보안 솔루션을 관리하고 새로 추가할 수 있습니다.
@@ -35,10 +35,7 @@ Security Center를 사용하면 Azure에서 통합된 보안 솔루션을 쉽게
 > [!NOTE]
 > 대부분의 보안 공급 업체는 해당 어플라이언스에서 실행 되는 외부 에이전트를 금지 하므로 Security Center는 파트너 가상 어플라이언스에 Log Analytics 에이전트를 설치 하지 않습니다.
 
-표준 계층 고객에 게 제공 되는 기본 제공 스캐너를 비롯 하 여 Qualys에서 취약성 검색 도구를 통합 하는 방법에 대 한 자세한 내용은 다음을 참조 하세요. 
-
-- [가상 컴퓨터에 대 한 통합 취약성 스캐너](built-in-vulnerability-assessment.md)입니다.
-- [파트너 취약성 검사 솔루션 배포](partner-vulnerability-assessment.md).
+표준 계층 고객에 게 제공 되는 기본 제공 스캐너를 비롯 하 여 Qualys에서 취약성 검색 도구를 통합 하는 방법에 대 한 자세한 내용은 [Azure Virtual Machines에 대 한 취약성 평가](deploy-vulnerability-assessment-vm.md)를 참조 하세요.
 
 Security Center는 다음에 대한 취약성 분석도 제공합니다.
 

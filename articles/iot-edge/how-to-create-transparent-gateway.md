@@ -4,19 +4,19 @@ description: Azure IoT Edge 디바이스를 다운스트림 디바이스의 정�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/02/2020
+ms.date: 08/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 0155294777e1d732e5ff3874102b90049d9a123d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cf7147ca1295c9f2cef5d89c232f2c266075e362
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84782588"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167405"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>IoT Edge 디바이스를 투명 게이트웨이로 작동하도록 구성
 
@@ -87,21 +87,25 @@ IoT Edge 설치 된 Linux 또는 Windows 장치입니다.
    * **device_ca_pk**: 장치 ca 개인 키
    * **trusted_ca_certs**: 루트 ca 인증서
 
-5. 파일을 저장하고 닫습니다.
+5. 파일을 저장한 후 닫습니다.
 
 6. IoT Edge를 다시 시작 합니다.
    * Windows: `Restart-Service iotedge`
    * Linux: `sudo systemctl restart iotedge`
 
-## <a name="deploy-edgehub-to-the-gateway"></a>게이트웨이에 edgeHub 배포
+## <a name="deploy-edgehub-and-route-messages"></a>EdgeHub 배포 및 메시지 라우팅
 
-장치에 IoT Edge를 처음 설치 하는 경우에는 IoT Edge 에이전트와 같은 한 시스템 모듈만 자동으로 시작 됩니다. 장치에 대 한 첫 번째 배포를 만든 후에는 두 번째 시스템 모듈인 IoT Edge 허브가 시작 됩니다.
+다운스트림 장치는 게이트웨이 장치에 원격 분석 및 메시지를 전송 합니다. 여기에서 IoT Edge 허브 모듈은 정보를 다른 모듈로 라우팅 하거나 IoT Hub 합니다. 이 기능에 대 한 게이트웨이 장치를 준비 하려면 다음을 확인 합니다.
 
-IoT Edge 허브는 다운스트림 장치에서 들어오는 메시지를 수신 하 고 다음 대상으로 라우팅하는 역할을 담당 합니다. **EdgeHub** 모듈이 장치에서 실행 되 고 있지 않은 경우 장치에 대 한 초기 배포를 만듭니다. 모듈을 추가 하지 않으므로 배포는 비어 있지만 두 시스템 모듈이 모두 실행 되 고 있는지 확인 합니다.
+* IoT Edge 허브 모듈이 장치에 배포 됩니다.
 
-Azure Portal에서 장치 세부 정보를 확인 하 고, Visual Studio 또는 Visual Studio Code에서 장치 상태를 확인 하거나, 장치 자체에서 명령을 실행 하 여 장치에서 실행 되는 모듈을 확인할 수 있습니다 `iotedge list` .
+  장치에 IoT Edge를 처음 설치 하는 경우에는 IoT Edge 에이전트와 같은 한 시스템 모듈만 자동으로 시작 됩니다. 장치에 대 한 첫 번째 배포를 만든 후에는 두 번째 시스템 모듈인 IoT Edge 허브가 시작 됩니다. **EdgeHub** 모듈이 장치에서 실행 되 고 있지 않은 경우 장치에 대 한 배포를 만듭니다.
 
-**EdgeHub** 모듈 없이 **edgeAgent** 모듈을 실행 하는 경우 다음 단계를 사용 합니다.
+* IoT Edge 허브 모듈은 다운스트림 장치에서 들어오는 메시지를 처리 하도록 설정 된 경로를 포함 합니다.
+
+  게이트웨이 장치는 다운스트림 장치에서 메시지를 처리할 수 있는 경로를가지고 있어야 합니다. 그렇지 않으면 해당 메시지가 처리 되지 않습니다. 게이트웨이 장치의 모듈에 메시지를 보내거나 IoT Hub에 직접 보낼 수 있습니다.
+
+IoT Edge 허브 모듈을 배포 하 고 경로를 사용 하 여 다운스트림 장치에서 들어오는 메시지를 처리 하도록 구성 하려면 다음 단계를 수행 합니다.
 
 1. Azure Portal에서 IoT Hub로 이동합니다.
 
@@ -109,13 +113,27 @@ Azure Portal에서 장치 세부 정보를 확인 하 고, Visual Studio 또는 
 
 3. **모듈 설정**을 선택 합니다.
 
-4. **다음: 경로**를 선택 합니다.
+4. **모듈** 페이지에서 게이트웨이 장치에 배포 하려는 모듈을 추가할 수 있습니다. 이 문서에서는이 페이지에서 명시적으로 설정 하지 않아도 되는 edgeHub 모듈을 구성 하 고 배포 하는 방법을 집중적으로 설명 합니다.
 
-5. **경로** 페이지에는 모듈에서 든, 다운스트림 장치에서 든 IoT Hub 모든 메시지를 전송 하는 기본 경로가 있어야 합니다. 그렇지 않은 경우 다음 값을 사용 하 여 새 경로를 추가한 다음 **검토 + 만들기**를 선택 합니다.
-   * **이름**:`route`
-   * **값**:`FROM /messages/* INTO $upstream`
+5. **다음: 경로**를 선택 합니다.
 
-6. **검토 + 만들기** 페이지에서 **만들기**를 선택 합니다.
+6. **경로** 페이지에서 다운스트림 장치에서 오는 메시지를 처리할 경로가 있는지 확인 합니다. 다음은 그 예입니다. 
+
+   * 모듈이 나 다운스트림 장치에서 IoT Hub 하 여 모든 메시지를 보내는 경로입니다.
+       * **이름**: `allMessagesToHub`
+       * **값**: `FROM /messages/* INTO $upstream`
+
+   * 모든 다운스트림 장치의 모든 메시지를 IoT Hub 전송 하는 경로입니다.
+      * **이름**: `allDownstreamToHub`
+      * **값**: `FROM /messages/* WHERE NOT IS_DEFINED ($connectionModuleId) INTO $upstream`
+
+      이 경로는 IoT Edge 모듈의 메시지와는 달리 다운스트림 장치의 메시지에는 연결 된 모듈 ID가 없기 때문에 작동 합니다. 경로의 **WHERE** 절을 사용 하면 해당 시스템 속성을 사용 하 여 메시지를 필터링 할 수 있습니다.
+
+      메시지 라우팅에 대한 자세한 내용은 [모듈 배포 및 경로 설정](./module-composition.md#declare-routes)을 참조하세요.
+
+7. 경로 또는 경로를 만든 후 **검토 + 만들기**를 선택 합니다.
+
+8. **검토 + 만들기** 페이지에서 **만들기**를 선택 합니다.
 
 ## <a name="open-ports-on-gateway-device"></a>게이트웨이 장치에서 포트 열기
 
@@ -128,25 +146,6 @@ IoT Hub와의 모든 통신은 아웃 바운드 연결을 통해 수행 되므�
 | 8883 | MQTT |
 | 5671 | AMQP |
 | 443 | HTTPS <br> MQTT + WS <br> AMQP + WS |
-
-## <a name="route-messages-from-downstream-devices"></a>다운스트림 디바이스에서 메시지 라우팅
-
-IoT Edge 런타임은 모듈에서 전송한 메시지와 같은 다운스트림 디바이스에서 전송된 메시지를 라우팅할 수 있습니다. 이 기능을 사용 하면 클라우드에서 데이터를 전송 하기 전에 게이트웨이에서 실행 되는 모듈에서 분석을 수행할 수 있습니다.
-
-현재 다운스트림 디바이스에서 보낸 메시지를 라우팅하는 방식은 모듈에 의해 전송 된 메시지와 구별됩니다. 모듈에서 보낸 메시지에는 모두 **connectionModuleId**라는 시스템 속성이 포함되지만 다운스트림 디바이스에서 보낸 메시지에는 포함되지 않습니다. 경로의 WHERE 절을 사용하여 해당 시스템 특성을 포함하는 메시지를 제외할 수 있습니다.
-
-아래 경로는 다운스트림 장치에서 이라는 모듈에 메시지를 보낸 `ai_insights` 다음에서 IoT Hub 하는 예제입니다 `ai_insights` .
-
-```json
-{
-    "routes":{
-        "sensorToAIInsightsInput1":"FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO BrokeredEndpoint(\"/modules/ai_insights/inputs/input1\")",
-        "AIInsightsToIoTHub":"FROM /messages/modules/ai_insights/outputs/output1 INTO $upstream"
-    }
-}
-```
-
-메시지 라우팅에 대한 자세한 내용은 [모듈 배포 및 경로 설정](./module-composition.md#declare-routes)을 참조하세요.
 
 ## <a name="enable-extended-offline-operation"></a>확장 된 오프 라인 작업 사용
 

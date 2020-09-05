@@ -9,30 +9,30 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: how-to
-ms.date: 03/20/2020
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd060972e562759fcc1071f2c6549578bd3d4ed9
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 63f0c55823899be8eb4146860787aede2cd2d6b5
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87015717"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88797907"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>그룹 설정을 구성하는 Azure Active Directory cmdlets
 
-이 문서에서는 Azure Active Directory(Azure AD) PowerShell cmdlet을 사용하여 그룹을 만들고 업데이트하는 방법을 설명합니다. 이 콘텐츠는 Office 365 그룹에만 적용됩니다(통합 그룹이라고도 함).
+이 문서에서는 Azure Active Directory(Azure AD) PowerShell cmdlet을 사용하여 그룹을 만들고 업데이트하는 방법을 설명합니다. 이 콘텐츠는 Microsoft 365 그룹 (통합 그룹이 라고도 함)에만 적용 됩니다.
 
 > [!IMPORTANT]
 > 일부 설정에는 Azure Active Directory Premium P1 라이선스가 필요합니다. 자세한 내용은 [템플릿 설정](#template-settings) 표를 참조하세요.
 
-관리자가 아닌 사용자가 보안 그룹을 만들 수 없도록 하는 방법에 대 한 자세한 내용은  `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` [set-msolcompanysettings](https://docs.microsoft.com/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)에 설명 된 대로를 설정 하십시오.
+관리자가 아닌 사용자가 보안 그룹을 만들 수 없도록 하는 방법에 대 한 자세한 내용은  `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` [set-msolcompanysettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)에 설명 된 대로를 설정 하십시오.
 
-Office 365 그룹 설정은 설정 개체와 SettingsTemplate 개체를 사용하여 구성됩니다. 처음에는 디렉터리가 기본 설정으로 구성되어 있으므로 디렉터리에 설정 개체가 표시되지 않습니다. 기본 설정을 변경하려면 설정 템플릿을 사용하여 새 설정 개체를 만들어야 합니다. 설정 템플릿은 Microsoft가 정의합니다. 여러 종류의 설정 템플릿이 있습니다. 디렉터리에 대한 Office 365 그룹 설정을 구성하려면 "Group.Unified" 템플릿을 사용하세요. 단일 그룹의 Office 365 그룹 설정을 구성하려면 "Group.Unified.Guest" 템플릿을 사용하세요. 이 템플릿은 Office 365 그룹에 대한 게스트 액세스 관리에 사용됩니다. 
+Microsoft 365 그룹 설정은 Settings 개체 및 SettingsTemplate 개체를 사용 하 여 구성 됩니다. 처음에는 디렉터리가 기본 설정으로 구성되어 있으므로 디렉터리에 설정 개체가 표시되지 않습니다. 기본 설정을 변경하려면 설정 템플릿을 사용하여 새 설정 개체를 만들어야 합니다. 설정 템플릿은 Microsoft가 정의합니다. 여러 종류의 설정 템플릿이 있습니다. 디렉터리에 대 한 Microsoft 365 그룹 설정을 구성 하려면 "그룹 통합" 템플릿을 사용 합니다. 단일 그룹에 대 한 Microsoft 365 그룹 설정을 구성 하려면 "그룹별" 템플릿을 사용 합니다. 이 템플릿은 Microsoft 365 그룹에 대 한 게스트 액세스를 관리 하는 데 사용 됩니다. 
 
-cmdlet은 Azure Active Directory PowerShell V2 모듈의 일부입니다. 컴퓨터에 모듈을 다운로드하여 설치하는 방법에 대한 지침은 [Azure Active Directory PowerShell 버전 2](https://docs.microsoft.com/powershell/azure/active-directory/overview)를 참조하세요. 모듈의 버전 2 릴리스를 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureAD/)에서 설치할 수 있습니다.
+cmdlet은 Azure Active Directory PowerShell V2 모듈의 일부입니다. 컴퓨터에 모듈을 다운로드하여 설치하는 방법에 대한 지침은 [Azure Active Directory PowerShell 버전 2](/powershell/azure/active-directory/overview)를 참조하세요. 모듈의 버전 2 릴리스를 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureAD/)에서 설치할 수 있습니다.
 
 ## <a name="install-powershell-cmdlets"></a>PowerShell cmdlet 설치
 
@@ -53,7 +53,7 @@ PowerShell 명령을 실행 하기 전에 Windows PowerShell 용 Azure Active Di
    ```
    
 ## <a name="create-settings-at-the-directory-level"></a>디렉터리 수준에서 설정 만들기
-다음 단계는 디렉터리 수준에서 설정을 만드는 것입니다. 이 설정은 디렉터리에 있는 모든 Office 365 그룹에 적용됩니다. Get-AzureADDirectorySettingTemplate cmdlet은 [Graph에 대한 Azure AD PowerShell 미리 보기 모듈](https://www.powershellgallery.com/packages/AzureADPreview)에서만 지원됩니다.
+이러한 단계는 디렉터리 수준에서 설정을 만듭니다 .이 설정은 디렉터리에 있는 모든 Microsoft 365 그룹에 적용 됩니다. Get-AzureADDirectorySettingTemplate cmdlet은 [Graph에 대한 Azure AD PowerShell 미리 보기 모듈](https://www.powershellgallery.com/packages/AzureADPreview)에서만 지원됩니다.
 
 1. DirectorySettings cmdlet에서 사용하려는 SettingsTemplate의 ID를 지정해야 합니다. 이 ID를 모르면 cmdlet이 모든 설정 템플릿 목록을 반환합니다.
   
@@ -67,7 +67,7 @@ PowerShell 명령을 실행 하기 전에 Windows PowerShell 용 Azure Active Di
    Id                                   DisplayName         Description
    --                                   -----------         -----------
    62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified       ...
-   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest Settings for a specific Office 365 group
+   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest Settings for a specific Microsoft 365 group
    16933506-8a8d-4f0d-ad58-e1db05a5b929 Company.BuiltIn     Setting templates define the different settings that can be used for the associ...
    4bc7f740-180e-4586-adb6-38b2e9024e6b Application...
    898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy       Settings ...
@@ -149,20 +149,20 @@ PowerShell 명령을 실행 하기 전에 Windows PowerShell 용 Azure Active Di
 
 | **설정** | **설명** |
 | --- | --- |
-|  <ul><li>EnableGroupCreation<li>형식: Boolean<li> 기본값: True |관리자가 아닌 사용자에 의해 디렉터리에서 Office 365 그룹 만들기가 허용되는지 여부를 나타내는 플래그입니다. 이 설정에는 Azure Active Directory Premium P1 라이선스가 필요하지 않습니다.|
-|  <ul><li>GroupCreationAllowedGroupId<li>유형: String<li>기본값: "" |EnableGroupCreation == false일 때도 구성원이 Office 365 그룹을 만들도록 허용된 보안 그룹의 GUID입니다. |
+|  <ul><li>EnableGroupCreation<li>형식: Boolean<li> 기본값: True |관리자가 아닌 사용자가 디렉터리에서 Microsoft 365 그룹을 만들 수 있는지 여부를 나타내는 플래그입니다. 이 설정에는 Azure Active Directory Premium P1 라이선스가 필요하지 않습니다.|
+|  <ul><li>GroupCreationAllowedGroupId<li>유형: String<li>기본값: "" |EnableGroupCreation = = false 인 경우에도 구성원이 Microsoft 365 그룹을 만들 수 있는 보안 그룹의 GUID입니다. |
 |  <ul><li>UsageGuidelinesUrl<li>유형: String<li>기본값: "" |그룹 사용 지침 링크입니다. |
 |  <ul><li>ClassificationDescriptions<li>유형: String<li>기본값: "" | 쉼표로 구분된 분류 설명 목록입니다. ClassificationDescriptions 값은 다음 형식일 때만 유효합니다.<br>$setting ["ClassificationDescriptions"] = "분류: 설명, 분류: 설명"<br>여기서 분류가 ClassificationList 항목을 찾습니다.<br>EnableMIPLabels = = True 인 경우에는이 설정이 적용 되지 않습니다.|
 |  <ul><li>DefaultClassification<li>유형: String<li>기본값: "" | 설정이 지정되지 않은 경우에 그룹의 기본 분류로 사용되는 분류입니다.<br>EnableMIPLabels = = True 인 경우에는이 설정이 적용 되지 않습니다.|
-|  <ul><li>PrefixSuffixNamingRequirement<li>유형: String<li>기본값: "" | Office 365 그룹에 대해 구성된 명명 규칙을 정의하는 최대 64자의 문자열입니다. 자세한 내용은 [Office 365 그룹에 대 한 명명 정책 적용](groups-naming-policy.md)을 참조 하세요. |
-| <ul><li>CustomBlockedWordsList<li>유형: String<li>기본값: "" | 사용자가 그룹 이름 또는 별칭에서 사용하도록 허용되지 않은 쉼표로 구분된 구의 문자열입니다. 자세한 내용은 [Office 365 그룹에 대 한 명명 정책 적용](groups-naming-policy.md)을 참조 하세요. |
+|  <ul><li>PrefixSuffixNamingRequirement<li>유형: String<li>기본값: "" | Microsoft 365 그룹에 대해 구성 된 명명 규칙을 정의 하는 최대 길이 64 자의 문자열입니다. 자세한 내용은 [Microsoft 365 그룹에 대 한 명명 정책 적용](groups-naming-policy.md)을 참조 하세요. |
+| <ul><li>CustomBlockedWordsList<li>유형: String<li>기본값: "" | 사용자가 그룹 이름 또는 별칭에서 사용하도록 허용되지 않은 쉼표로 구분된 구의 문자열입니다. 자세한 내용은 [Microsoft 365 그룹에 대 한 명명 정책 적용](groups-naming-policy.md)을 참조 하세요. |
 | <ul><li>EnableMSStandardBlockedWords<li>형식: Boolean<li>기본값: "False" | 사용 안 함
 |  <ul><li>AllowGuestsToBeGroupOwner<li>형식: Boolean<li> 기본값: False | 게스트 사용자가 그룹의 소유자일 수 있는지 여부를 나타내는 부울 값입니다. |
-|  <ul><li>AllowGuestsToAccessGroups<li>형식: Boolean<li> 기본값: True | 게스트 사용자가 Office 365 그룹의 콘텐츠에 액세스할 수 있는지 여부를 나타내는 부울 값입니다.  이 설정에는 Azure Active Directory Premium P1 라이선스가 필요하지 않습니다.|
+|  <ul><li>AllowGuestsToAccessGroups<li>형식: Boolean<li> 기본값: True | 게스트 사용자가 Microsoft 365 그룹 콘텐츠에 액세스할 수 있는지 여부를 나타내는 부울입니다.  이 설정에는 Azure Active Directory Premium P1 라이선스가 필요하지 않습니다.|
 |  <ul><li>GuestUsageGuidelinesUrl<li>유형: String<li>기본값: "" | 게스트 사용 지침의 링크 url입니다. |
 |  <ul><li>AllowToAddGuests<li>형식: Boolean<li> 기본값: True | 이 디렉터리에 게스트를 추가하는 것이 허용되는지 여부를 나타내는 부울 값입니다. <br>이 설정은 *Enablemiplabels* 가 *True* 로 설정 되 고 게스트 정책이 해당 그룹에 할당 된 민감도 레이블과 연결 된 경우 재정의 될 수 있으며 읽기 전용으로 설정 됩니다.<br>조직 수준에서 AllowToAddGuests 설정이 False로 설정 된 경우 그룹 수준에서 AllowToAddGuests 설정이 무시 됩니다. 소수의 그룹에만 게스트 액세스를 사용 하려면 조직 수준에서 AllowToAddGuests를 true로 설정 하 고 특정 그룹에 대해 선택적으로 사용 하지 않도록 설정 해야 합니다. |
-|  <ul><li>ClassificationList<li>유형: String<li>기본값: "" | Office 365 그룹에 적용할 수 있는 유효한 분류 값을 쉼표로 구분한 목록입니다. <br>EnableMIPLabels = = True 인 경우에는이 설정이 적용 되지 않습니다.|
-|  <ul><li>EnableMIPLabels<li>형식: Boolean<li>기본값: "False" |Microsoft 365 준수 센터에 게시 된 민감도 레이블을 Office 365 그룹에 적용할 수 있는지 여부를 나타내는 플래그입니다. 자세한 내용은 [Office 365 그룹의 민감도 레이블 할당](groups-assign-sensitivity-labels.md)을 참조 하세요. |
+|  <ul><li>ClassificationList<li>유형: String<li>기본값: "" | Microsoft 365 그룹에 적용할 수 있는 유효한 분류 값을 쉼표로 구분한 목록입니다. <br>EnableMIPLabels = = True 인 경우에는이 설정이 적용 되지 않습니다.|
+|  <ul><li>EnableMIPLabels<li>형식: Boolean<li>기본값: "False" |Microsoft 365 준수 센터에 게시 된 민감도 레이블을 Microsoft 365 그룹에 적용할 수 있는지 여부를 나타내는 플래그입니다. 자세한 내용은 [Microsoft 365 그룹의 민감도 레이블 할당](groups-assign-sensitivity-labels.md)을 참조 하세요. |
 
 ## <a name="example-configure-guest-policy-for-groups-at-the-directory-level"></a>예: 디렉터리 수준에서 그룹에 대 한 게스트 정책 구성
 1. 모든 설정 템플릿을 가져옵니다.
@@ -255,7 +255,7 @@ PowerShell 명령을 실행 하기 전에 Windows PowerShell 용 Azure Active Di
    Id                                   DisplayName            Description
    --                                   -----------            -----------
    62375ab9-6b52-47ed-826b-58e47e0e304b Group.Unified          ...
-   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest    Settings for a specific Office 365 group
+   08d542b9-071f-4e16-94b0-74abb372e3d9 Group.Unified.Guest    Settings for a specific Microsoft 365 group
    4bc7f740-180e-4586-adb6-38b2e9024e6b Application            ...
    898f1161-d651-43d1-805c-3b0b388a9fc2 Custom Policy Settings ...
    5cf42378-d67d-4f36-ba46-e8b86229381d Password Rule Settings ...

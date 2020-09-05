@@ -3,14 +3,15 @@ title: Azure Functions에 대한 Notification Hubs 바인딩
 description: Azure Functions에서 Azure 알림 허브 바인딩을 사용하는 방법을 파악합니다.
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 97e43d2348ccbe9bf0aebfd7647f6cc34906948c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c4198a1b73f76d61e39324befc85b55bd260e363
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540369"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212224"
 ---
 # <a name="notification-hubs-output-binding-for-azure-functions"></a>Azure Functions에 대한 Notification Hubs 출력 바인딩
 
@@ -243,7 +244,7 @@ public static async Task Run(string myQueueItem, IAsyncCollector<Notification> n
 
 특성의 생성자 매개 변수 및 속성은 [구성](#configuration) 섹션에 설명되어 있습니다.
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>구성
 
 다음 표에서는 *function.js* 파일 및 특성에서 설정 하는 바인딩 구성 속성에 대해 설명 합니다 `NotificationHub` .
 

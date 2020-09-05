@@ -1,7 +1,7 @@
 ---
 title: Azure PowerShell 샘플
 titleSuffix: Azure API Management
-description: Azure API Management에 사용 가능한 Azure PowerShell 스크립트에 대해 자세히 알아봅니다.
+description: "'사용자 추가' 및 'API 가져오기'와 같이 Azure API Management에 사용할 수 있는 Azure PowerShell 샘플 스크립트에 대해 알아봅니다."
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 10/09/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 7e0da9632aca1475b0348bdd43c7b6b5f89e6d14
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 531c42b763f234baaf6a93924979b8c7dca57423
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86506675"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905808"
 ---
 # <a name="azure-powershell-samples-for-api-management"></a>API Management에 대한 Azure PowerShell 샘플
 

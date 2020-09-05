@@ -2,13 +2,13 @@
 title: 앱 스키마 정의
 description: LUIS 앱은 또는에 표시 되며 `.json` `.lu` 모든 의도, 엔터티, 예제 길이 발언, 기능 및 설정을 포함 합니다.
 ms.topic: reference
-ms.date: 05/05/2020
-ms.openlocfilehash: dbbeb4eacbe8e07cf080b3a1527ca39c2b9a5991
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.date: 08/22/2020
+ms.openlocfilehash: 816a6c50129f37a55ab3dba72319358e832a6b8b
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684352"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756791"
 ---
 # <a name="app-schema-definition"></a>앱 스키마 정의
 
@@ -55,12 +55,30 @@ LUIS 앱은 또는에 표시 되며 `.json` `.lu` 모든 의도, 엔터티, 예�
   "tokenizerVersion": "1.0.0",
   "patternAnyEntities": [],
   "regex_entities": [],
-  "phraselists": [],
+  "phraselists": [
+  ],
   "regex_features": [],
   "patterns": [],
   "settings": []
 }
 ```
+
+| element                  | 의견                              |
+|--------------------------|--------------------------------------|
+| "hierarchicals": [],     | 사용 되지 않는 경우 [machine learning 엔터티](luis-concept-entity-types.md)를 사용 합니다.   |
+| "합성": [],        | 사용 되지 않는 경우 [machine learning 엔터티](luis-concept-entity-types.md)를 사용 합니다. [복합 엔터티](reference-entity-composite.md) 참조입니다. |
+| "closedLists": [],       | 엔터티의 기능으로 주로 사용 되는 엔터티 참조를 [나열](reference-entity-list.md) 합니다.    |
+| ":": "0.1",      | LUIS 앱의 버전입니다.|
+| "name": "example-app",   | LUIS 앱의 이름입니다. |
+| "desc": "",              | LUIS 앱에 대 한 선택적 설명입니다.  |
+| "culture": "en-us",      | 앱의 [언어로](luis-language-support.md) , 미리 작성 된 엔터티, 기계 학습, 토크 등의 기본 기능에 영향을 줍니다.  |
+| "tokenizerVersion": "1.0.0", | [토크](luis-language-support.md#tokenization)  |
+| "patternAnyEntities": [],   | [Pattern.any 엔터티](reference-entity-pattern-any.md)    |
+| "regex_entities": [],    |  [정규식 엔터티](reference-entity-regular-expression.md)   |
+| "phraselists": [],       |  [구 목록 (기능)](luis-concept-feature.md#create-a-phrase-list-for-a-concept)   |
+| "regex_features": [],    |  사용 되지 않는 경우 [machine learning 엔터티](luis-concept-entity-types.md)를 사용 합니다. |
+| "패턴": [],          |  패턴은 [패턴 구문을](reference-pattern-syntax.md) 사용 하 여 [예측 정확도를 향상 시킵니다](luis-concept-patterns.md) .   |
+| "settings": []           | [앱 설정](luis-reference-application-settings.md)|
 
 ## <a name="version-6x"></a>버전 6.x
 

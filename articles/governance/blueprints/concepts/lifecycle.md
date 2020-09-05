@@ -1,14 +1,14 @@
 ---
 title: 청사진의 수명 주기 이해
 description: 청사진 정의가 거치는 수명 주기와 청사진 할당 업데이트 및 제거를 포함 하 여 각 단계에 대 한 세부 정보를 알아보세요.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: dc024c0e6643420d26bdc92e47fabe647c55ae7b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c1de2cf869362154b112c3eef74ed1fb0db3a993
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82864031"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049709"
 ---
 # <a name="understand-the-lifecycle-of-an-azure-blueprint"></a>Azure Blueprint의 수명 주기 이해
 
@@ -81,14 +81,14 @@ Azure 내의 많은 리소스와 마찬가지로 Azure Blueprint의 청사진에
 
 수명 주기 동안 청사진을 구독에 할당할 수 있는 여러 지점이 있습니다. 청사진의 버전 모드가 **게시**되면 해당 버전을 구독에 할당할 수 있습니다. 이 수명 주기를 통해 새 버전이 개발되는 동안 청사진의 버전을 사용하고 적극적으로 할당할 수 있습니다.
 
-청사진의 버전이 할당되면 할당된 위치 및 할당되는 데 사용하는 매개 변수를 이해해야 합니다. 매개 변수는 정적이거나 동적일 수 있습니다. 자세히 알아보려면 [정적 및 동적 매개 변수](parameters.md)를 참조하세요.
+청사진의 버전이 할당되면 할당된 위치 및 할당되는 데 사용하는 매개 변수를 이해해야 합니다. 매개 변수는 정적이거나 동적일 수 있습니다. 자세히 알아보려면 [정적 및 동적 매개 변수](./parameters.md)를 참조하세요.
 
 ### <a name="updating-assignments"></a>할당 업데이트
 
 청사진이 할당된 경우 할당을 업데이트할 수 있습니다. 다음을 포함하여 기존 할당을 업데이트하는 여러 가지 이유가 있습니다.
 
-- [리소스 잠금](resource-locking.md) 추가 또는 제거
-- [동적 매개 변수](parameters.md#dynamic-parameters) 값 변경
+- [리소스 잠금](./resource-locking.md) 추가 또는 제거
+- [동적 매개 변수](./parameters.md#dynamic-parameters) 값 변경
 - 할당을 최근에 **게시된** 버전의 청사진으로 업그레이드
 
 방법을 알아보려면 [기존 할당 업데이트](../how-to/update-existing-assignments.md)를 참조하세요.
@@ -97,7 +97,7 @@ Azure 내의 많은 리소스와 마찬가지로 Azure Blueprint의 청사진에
 
 청사진은 더 이상 필요 하지 않은 경우 관리 그룹 또는 구독에서 할당을 제거할 수 있습니다. 청사진 할당을 수행 하는 동안 다음 작업이 수행 됩니다.
 
-- [청사진 리소스 잠금](resource-locking.md) 제거
+- [청사진 리소스 잠금](./resource-locking.md) 제거
 - 청사진 할당 개체 삭제
 - Defined **시스템 할당 관리 id** 를 사용한 경우에도 삭제 됩니다.
 
@@ -106,8 +106,8 @@ Azure 내의 많은 리소스와 마찬가지로 Azure Blueprint의 청사진에
 
 ## <a name="next-steps"></a>다음 단계
 
-- [정적 및 동적 매개 변수](parameters.md) 사용 방법 이해
-- [청사진 시퀀싱 순서](sequencing-order.md)를 사용자 지정하는 방법 알아보기
-- [청사진 리소스 잠금](resource-locking.md)을 활용하는 방법 알아보기
+- [정적 및 동적 매개 변수](./parameters.md) 사용 방법 이해
+- [청사진 시퀀싱 순서](./sequencing-order.md)를 사용자 지정하는 방법 알아보기
+- [청사진 리소스 잠금](./resource-locking.md)을 활용하는 방법 알아보기
 - [기존 할당을 업데이트](../how-to/update-existing-assignments.md)하는 방법 알아보기
 - [일반 문제 해결 방법](../troubleshoot/general.md)을 통해 청사진 할당 중에 발생하는 문제 해결

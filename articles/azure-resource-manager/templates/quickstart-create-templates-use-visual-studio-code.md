@@ -2,15 +2,15 @@
 title: 템플릿 만들기 - Visual Studio Code
 description: Visual Studio Code와 Azure Resource Manager 도구 확장을 사용하여 Resource Manager 템플릿에 대해 작업합니다.
 author: neilpeterson
-ms.date: 04/17/2020
+ms.date: 08/09/2020
 ms.topic: quickstart
 ms.author: nepeters
-ms.openlocfilehash: 06e7d3f291d32cecdcbf4d1f22ff9976d8970109
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5375fedcd05aefa5d23ee872325373ce631d43bb
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87040514"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88034987"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-with-visual-studio-code"></a>빠른 시작: Visual Studio Code를 사용하여 Azure Resource Manager 템플릿 만들기
 
@@ -26,7 +26,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험](https://azure.
 
 Azure 리소스 그룹 배포로 범위가 지정된 템플릿을 만들려면 `arm!`를 선택합니다.
 
-![Azure Resource Manager 스캐폴딩을 보여주는 이미지](./media/quickstart-create-templates-use-visual-studio-code/1.png)
+![Azure Resource Manager 스캐폴딩 코드 조각을 보여주는 이미지](./media/quickstart-create-templates-use-visual-studio-code/1.png)
 
 이 코드 조각은 ARM 템플릿의 기본 구성 요소를 만듭니다.
 
@@ -68,7 +68,7 @@ Visual Studio Code 언어 모드가 *JSON*에서 *Azure Resource Manager 템플�
 
 이제 매개 변수를 만들고 사용하여 스토리지 계정 이름을 지정합니다.
 
-매개 변수 블록에 커서를 놓고 캐리지 리턴을 추가하고 `par`을 입력한 다음, `arm-param-value` 코드 조각을 선택합니다. 이 작업을 수행하면 제네릭 매개 변수가 템플릿에 추가됩니다.
+매개 변수 블록에 커서를 놓고 캐리지 리턴을 추가하고 `"`을 입력한 다음, `new-parameter` 코드 조각을 선택합니다. 이 작업을 수행하면 제네릭 매개 변수가 템플릿에 추가됩니다.
 
 ![ARM 템플릿에 추가되는 매개 변수를 보여주는 이미지](./media/quickstart-create-templates-use-visual-studio-code/9.png)
 

@@ -1,14 +1,14 @@
 ---
 title: 청사진 배포 단계
 description: 청사진 할당을 만드는 동안 Azure 청사진 서비스가 거치는 보안 및 아티팩트 관련 단계를 알아봅니다.
-ms.date: 05/06/2020
+ms.date: 08/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: d3ccba6645e1b14fffc543af2a6ad40e3634e2ed
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 73d5d67cf77d4ccc48517c895630b8299081e2e0
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970657"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89049777"
 ---
 # <a name="stages-of-a-blueprint-deployment"></a>청사진 배포 단계
 
@@ -56,8 +56,8 @@ Azure 청사진 서비스는 리소스를 직접 배포 하지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-- [정적 및 동적 매개 변수](parameters.md) 사용 방법 이해
-- [청사진 시퀀싱 순서](sequencing-order.md)를 사용자 지정하는 방법 알아보기
-- [청사진 리소스 잠금](resource-locking.md)을 활용하는 방법 알아보기
+- [정적 및 동적 매개 변수](./parameters.md) 사용 방법 이해
+- [청사진 시퀀싱 순서](./sequencing-order.md)를 사용자 지정하는 방법 알아보기
+- [청사진 리소스 잠금](./resource-locking.md)을 활용하는 방법 알아보기
 - [기존 할당을 업데이트](../how-to/update-existing-assignments.md)하는 방법 알아보기
 - [일반 문제 해결 방법](../troubleshoot/general.md)을 통해 청사진 할당 중에 발생하는 문제 해결

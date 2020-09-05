@@ -1,21 +1,21 @@
 ---
 title: Azure Data Lake Storage Gen1 성능 조정-MapReduce
-description: Azure Data Lake Storage Gen1 MapReduce 성능 조정 지침
+description: 매개 변수, 지침, 예제 계산 및 제한 사항을 포함 하 여 Azure Data Lake Storage Gen1에서 MapReduce에 대 한 성능 조정에 대해 알아봅니다.
 author: stewu
 ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 27dadb7ef5b93f5d6b674116ca8bba1d6e2597fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 03c35d0af97cf24d1683d0ff21f10a0371391616
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510923"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190206"
 ---
 # <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen1"></a>HDInsight의 MapReduce 및 Azure Data Lake Storage Gen1에 대한 성능 조정 지침
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 * **Azure 구독**. [Azure 평가판](https://azure.microsoft.com/pricing/free-trial/)을 참조하세요.
 * **Azure Data Lake Storage Gen1 계정**. 만드는 방법에 대 한 지침은 [Azure Data Lake Storage Gen1 시작](data-lake-store-get-started-portal.md) 을 참조 하세요.

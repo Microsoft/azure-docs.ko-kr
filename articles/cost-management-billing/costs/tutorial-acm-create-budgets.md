@@ -3,17 +3,18 @@ title: 자습서 - Azure 예산 만들기 및 관리
 description: 이 자습서는 사용자가 소비하는 Azure 서비스 비용을 계획하고 설명하는 데 도움이 됩니다.
 author: bandersmsft
 ms.author: banders
-ms.date: 07/15/2020
-ms.topic: conceptual
+ms.date: 08/20/2020
+ms.topic: tutorial
 ms.service: cost-management-billing
+ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: a48e4b594b82f6e910db26fc2319032fbef30b6b
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 739d300faf77564891b2b783a3eb1cca50373015
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87446011"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718356"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>자습서: Azure 예산 만들기 및 관리
 
@@ -189,9 +190,14 @@ $ActionGroupId = (Set-AzActionGroup -ResourceGroupName YourResourceGroup -Name T
 
 New-AzConsumptionBudget -Amount 100 -Name TestPSBudget -Category Cost -StartDate 2020-02-01 -TimeGrain Monthly -EndDate 2022-12-31 -ContactEmail test@test.com -NotificationKey Key1 -NotificationThreshold 0.8 -NotificationEnabled -ContactGroup $ActionGroupId
 ```
+
 ## <a name="create-a-budget-with-an-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용하여 예산 만들기
 
 Azure Resource Manager 템플릿을 사용하여 예산을 만들 수 있습니다. 템플릿을 사용하려면 [Azure Resource Manager 템플릿을 사용하여 예산 만들기](quick-create-budget-template.md)를 참조하세요.
+
+## <a name="clean-up-resources"></a>리소스 정리
+
+예산을 만들고, 더 이상 사용되지 않는 경우 세부 정보를 보고 삭제합니다.
 
 ## <a name="next-steps"></a>다음 단계
 

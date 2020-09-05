@@ -1,28 +1,29 @@
 ---
-title: Blob 버전 관리 설정 및 관리 (미리 보기)
+title: Blob 버전 관리 설정 및 관리
 titleSuffix: Azure Storage
-description: Azure Portal 또는 Azure Resource Manager 템플릿을 사용 하 여 blob 버전 관리 (미리 보기)를 사용 하도록 설정 하는 방법에 대해 알아봅니다.
+description: Azure Portal 또는 Azure Resource Manager 템플릿을 사용 하 여 blob 버전 관리를 사용 하도록 설정 하는 방법에 대해 알아봅니다.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 08/10/2020
+ms.date: 08/27/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 85e8ccd03bd20ed9bb572d482dbc7a06b8af725c
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 1df7afb5a029ff7770a64d6bf698a462c8ab9735
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88067276"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230673"
 ---
-# <a name="enable-and-manage-blob-versioning-preview"></a>Blob 버전 관리 설정 및 관리 (미리 보기)
+# <a name="enable-and-manage-blob-versioning"></a>Blob 버전 관리 설정 및 관리
 
-Blob storage 버전 관리 (미리 보기)를 사용 하도록 설정 하 여 이전 버전의 개체를 자동으로 유지 관리할 수 있습니다.  Blob 버전 관리를 사용 하는 경우 데이터를 잘못 수정 하거나 삭제 한 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다.
+Blob 저장소 버전 관리를 사용 하도록 설정 하 여 이전 버전의 개체를 자동으로 유지 관리할 수 있습니다.  Blob 버전 관리를 사용 하는 경우 데이터를 잘못 수정 하거나 삭제 한 경우 이전 버전의 blob을 복원 하 여 데이터를 복구할 수 있습니다.
 
-이 문서에서는 Azure Portal 또는 Azure Resource Manager 템플릿을 사용 하 여 저장소 계정에 대 한 blob 버전 관리를 사용 하거나 사용 하지 않도록 설정 하는 방법을 보여 줍니다.
+이 문서에서는 Azure Portal 또는 Azure Resource Manager 템플릿을 사용 하 여 저장소 계정에 대 한 blob 버전 관리를 사용 하거나 사용 하지 않도록 설정 하는 방법을 보여 줍니다. Blob 버전 관리에 대해 자세히 알아보려면 [blob 버전 관리](versioning-overview.md)를 참조 하세요.
 
-Blob 버전 관리를 사용 하도록 설정 하기 전에 미리 보기에 등록 해야 합니다. 미리 보기에 등록 하는 방법을 비롯 하 여 blob 버전 관리에 대해 자세히 알아보려면 [blob 버전 관리 (미리 보기)](versioning-overview.md)를 참조 하세요.
+[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 ## <a name="enable-blob-versioning"></a>BLOB 버전 관리 사용
 
@@ -72,7 +73,7 @@ Azure Portal 템플릿을 사용 하 여 리소스를 배포 하는 방법에 �
 
 ## <a name="modify-a-blob-to-trigger-a-new-version"></a>새 버전을 트리거하기 위해 blob 수정
 
-다음 코드 예제에서는 .NET 용 Azure Storage 클라이언트 라이브러리 버전 [12.5.0-preview. 5](https://www.nuget.org/packages/Azure.Storage.Blobs/12.5.0-preview.5) 이상을 사용 하 여 새 버전 만들기를 트리거하는 방법을 보여 줍니다. 이 예를 실행 하기 전에 저장소 계정에 대 한 버전 관리를 사용 하도록 설정 했는지 확인 합니다.
+다음 코드 예제에서는 .NET 버전 [12.5.1](https://www.nuget.org/packages/Azure.Storage.Blobs/12.5.1) 이상 버전의 Azure Storage 클라이언트 라이브러리를 사용 하 여 새 버전 만들기를 트리거하는 방법을 보여 줍니다. 이 예를 실행 하기 전에 저장소 계정에 대 한 버전 관리를 사용 하도록 설정 했는지 확인 합니다.
 
 이 예에서는 블록 blob을 만든 다음 blob의 메타 데이터를 업데이트 합니다. Blob의 메타 데이터를 업데이트 하면 새 버전이 생성 됩니다. 이 예에서는 초기 버전 및 현재 버전을 검색 하 고 현재 버전에만 메타 데이터가 포함 되어 있음을 보여 줍니다.
 
@@ -158,5 +159,5 @@ static void PrintMetadata(Response<BlobProperties> propertiesResponse)
 
 ## <a name="next-steps"></a>다음 단계
 
-- [Blob 버전 관리(미리 보기)](versioning-overview.md)
+- [Blob 버전 관리](versioning-overview.md)
 - [Azure Storage Blob에 대한 일시 삭제](soft-delete-overview.md)

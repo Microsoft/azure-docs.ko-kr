@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/17/2020
+ms.date: 08/17/2020
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 185992284e353c3e58104bc46296c1741fbca7d9
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: b9882168cd063cb4448269cc6a4949778fe93fb1
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87502174"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88509861"
 ---
 # <a name="grant-limited-access-to-azure-storage-resources-using-shared-access-signatures-sas"></a>SAS (공유 액세스 서명)를 사용 하 여 Azure Storage 리소스에 대 한 제한 된 액세스 권한 부여
 
@@ -29,7 +29,7 @@ Azure Storage는 다음과 같은 세 가지 유형의 공유 액세스 서명�
 
     사용자 위임 SAS에 대 한 자세한 내용은 [사용자 위임 Sas 만들기 (REST API)](/rest/api/storageservices/create-user-delegation-sas)를 참조 하세요.
 
-- **서비스 SAS** 서비스 SAS는 저장소 계정 키를 사용 하 여 보호 됩니다. Service SAS는 Azure Storage 서비스 중 하나 (Blob 저장소, 큐 저장소, 테이블 저장소 또는 Azure Files)에서 리소스에 대 한 액세스를 위임 합니다. 
+- **서비스 SAS** 서비스 SAS는 저장소 계정 키를 사용 하 여 보호 됩니다. Service SAS는 Azure Storage 서비스 중 하나 (Blob 저장소, 큐 저장소, 테이블 저장소 또는 Azure Files)에서 리소스에 대 한 액세스를 위임 합니다.
 
     서비스 SAS에 대 한 자세한 내용은 [서비스 Sas 만들기 (REST API)](/rest/api/storageservices/create-service-sas)를 참조 하세요.
 
@@ -38,7 +38,7 @@ Azure Storage는 다음과 같은 세 가지 유형의 공유 액세스 서명�
     계정 SAS에 대 한 자세한 내용을 보려면 [계정 sas (REST API)를 만드세요](/rest/api/storageservices/create-account-sas).
 
 > [!NOTE]
-> 가능 하면 계정 키를 사용 하는 대신 보안 모범 사례로 Azure AD 자격 증명을 사용 하는 것이 좋습니다 .이는 더 쉽게 손상 될 수 있습니다. 응용 프로그램 디자인에 Blob storage에 액세스 하기 위해 공유 액세스 서명이 필요한 경우 Azure AD 자격 증명을 사용 하 여 뛰어난 보안을 위해 가능한 한 사용자 위임 SAS를 만듭니다.
+> 가능 하면 계정 키를 사용 하는 대신 보안 모범 사례로 Azure AD 자격 증명을 사용 하는 것이 좋습니다 .이는 더 쉽게 손상 될 수 있습니다. 응용 프로그램 디자인에 Blob storage에 액세스 하기 위해 공유 액세스 서명이 필요한 경우 Azure AD 자격 증명을 사용 하 여 뛰어난 보안을 위해 가능한 한 사용자 위임 SAS를 만듭니다. 자세한 내용은 [Azure Active Directory를 사용 하 여 blob 및 큐에 대 한 액세스 권한 부여](storage-auth-aad.md)를 참조 하세요.
 
 공유 액세스 서명은 다음 두 가지 형식 중 하나를 사용할 수 있습니다.
 
@@ -52,15 +52,27 @@ Azure Storage는 다음과 같은 세 가지 유형의 공유 액세스 서명�
 
 공유 액세스 서명은 하나 이상의 스토리지 리소스를 가리키는 서명된 URI이며 쿼리 매개 변수의 특별 집합이 포함된 토큰이 들어 있습니다. 토큰은 클라이언트가 리소스를 액세스하는 방식을 나타냅니다. 쿼리 매개 변수 중 하나인 서명은 SAS 매개 변수에서 생성 되 고 SAS를 만드는 데 사용 된 키로 서명 됩니다. 이 서명은 Azure Storage에서 스토리지 리소스에 대한 액세스 권한을 부여하는 데 사용됩니다.
 
-### <a name="sas-signature"></a>SAS 서명
+### <a name="sas-signature-and-authorization"></a>SAS 서명 및 권한 부여
 
-다음 두 가지 방법 중 하나로 SAS에 서명할 수 있습니다.
+다음 두 가지 방법 중 하나로 SAS 토큰에 서명할 수 있습니다.
 
 - Azure Active Directory (Azure AD) 자격 증명을 사용 하 여 만든 *사용자 위임 키* . 사용자 위임 SAS는 사용자 위임 키로 서명 됩니다.
 
     사용자 위임 키를 가져오고 SAS를 만들려면 Azure AD 보안 주체에 게 **Microsoft. Storage/storageAccounts/blobServices/generateUserDelegationKey** 작업을 포함 하는 azure 역할을 할당 해야 합니다. 사용자 위임 키를 가져올 수 있는 권한이 있는 Azure 역할에 대 한 자세한 내용은 [사용자 위임 SAS 만들기 (REST API)](/rest/api/storageservices/create-user-delegation-sas)를 참조 하세요.
 
-- 저장소 계정 키를 사용 합니다. 서비스 SAS와 계정 SAS는 모두 저장소 계정 키로 서명 됩니다. 계정 키로 서명 된 SAS를 만들려면 응용 프로그램에 계정 키에 대 한 액세스 권한이 있어야 합니다.
+- 저장소 계정 키 (공유 키)를 사용 합니다. 서비스 SAS와 계정 SAS는 모두 저장소 계정 키로 서명 됩니다. 계정 키로 서명 된 SAS를 만들려면 응용 프로그램에 계정 키에 대 한 액세스 권한이 있어야 합니다.
+
+요청에 SAS 토큰이 포함 된 경우 해당 요청은 SAS 토큰에 서명 된 방법에 따라 권한이 부여 됩니다. Sas 토큰을 만드는 데 사용 하는 액세스 키 또는 자격 증명은 SAS를 소유한 클라이언트에 대 한 액세스 권한을 부여 하는 데에도 Azure Storage 사용 됩니다.
+
+다음 표에서는 Azure Storage에 대 한 요청에 포함 될 때 각 유형의 SAS 토큰을 인증 하는 방법을 요약 합니다.
+
+| SAS 유형 | 권한 부여 유형 |
+|-|-|
+| 사용자 위임 SAS (Blob 저장소에만 해당) | Azure AD |
+| 서비스 SAS | 공유 키 |
+| 계정 SAS | 공유 키 |
+
+뛰어난 보안을 위해 가능한 경우 사용자 위임 SAS를 사용 하는 것이 좋습니다.
 
 ### <a name="sas-token"></a>SAS 토큰
 

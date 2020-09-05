@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6c1df14ba5a9f233f42750d4e6dea68a7d6ddc0e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 55c22a58ea76c268c40894c0ea64d43312b1ba27
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77564859"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269100"
 ---
-# <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>DASH.js를 사용하여 HTML5 애플리케이션에 MPEG-DASH 적응 스트리밍 비디오 포함  
+# <a name="embedding-an-mpeg-dash-adaptive-streaming-video-in-an-html5-application-with-dashjs"></a>DASH.js를 사용하여 HTML5 애플리케이션에 MPEG-DASH 적응 스트리밍 비디오 포함
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)] 
 
 ## <a name="overview"></a>개요
 MPEG-DASH는 고품질 적응 비디오 스트리밍 출력을 전달하려는 개발자에게 많은 혜택을 제공하는 비디오 콘텐츠의 적응 스트리밍을 위한 ISO 표준입니다. MPEG-DASH를 사용하면 네트워크 정체 상태일 때 비디오 스트림이 자동으로 낮은 화질로 조정됩니다. 이렇게 하면 플레이어가 재생을 위해 다음 몇 초를 다운로드 하는 동안 "일시 중지 됨" 비디오가 표시 될 가능성을 줄일 수 있습니다. 즉, 버퍼링 가능성이 줄어듭니다. 네트워크 정체가 줄어들면 비디오 플레이어가 높은 품질의 스트림에 다시 돌아갑니다. 또한 이렇게 필요한 대역폭으로 조정하는 기능 덕분에 비디오의 시작 시간이 더욱 빨라집니다. 즉, 처음 몇 초는 낮은 품질로 세그먼트를 빠르게 다운로드하여 재생한 다음 충분한 콘텐츠가 버퍼링되고 나면 높은 품질로 설정할 수 있습니다.

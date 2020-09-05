@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 10/07/2019
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: e6d61e329ba91f53b11ace4d258b35950e188dcb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3d38fa2afe35976283e5129eab7d7f8ef3a1103b
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76771209"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88236491"
 ---
 # <a name="how-to-use-azure-table-storage-and-azure-cosmos-db-table-api-with-c"></a>C++로 Azure Table Storage 또는 Azure Cosmos DB Table API를 사용하는 방법
 
@@ -91,14 +91,14 @@ const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=ht
 
 Azure Cosmos DB 계정의 이름을 `<your_cosmos_db_account>`에 사용합니다. `<your_cosmos_db_account_key>`에 기본 키를 입력합니다. [Azure Portal](https://portal.azure.com)에 나열된 엔드포인트를 `<your_cosmos_db_endpoint>`로 입력합니다.
 
-로컬 Windows 기반 컴퓨터에서 애플리케이션을 테스트하려면 [Azure SDK](https://azure.microsoft.com/downloads/)와 함께 설치된 Azure 스토리지 에뮬레이터를 사용할 수 있습니다. 스토리지 에뮬레이터는 로컬 개발 컴퓨터에서 사용할 수 있는 Azure Blob, 큐 및 Table service를 시뮬레이션하는 유틸리티입니다. 다음 예제에서는 로컬 스토리지 에뮬레이터에 대한 연결 문자열을 보관할 정적 필드를 선언하는 방법을 보여줍니다.  
+로컬 Windows 기반 컴퓨터에서 애플리케이션을 테스트하려면 [Azure SDK](https://azure.microsoft.com/downloads/)와 함께 설치된 Azure Storage Emulator를 사용하면 됩니다. Storage Emulator는 로컬 개발 머신에서 사용할 수 있는 Azure Blob, 큐 및 Table services를 시뮬레이션하는 유틸리티입니다. 다음 예제에서는 로컬 스토리지 에뮬레이터에 대한 연결 문자열을 보관할 정적 필드를 선언하는 방법을 보여줍니다.  
 
 ```cpp
 // Define the connection string with Azure storage emulator.
 const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 ```
 
-Azure 스토리지 에뮬레이터를 시작하려면 Windows 데스크톱에서 **시작** 단추 또는 Windows 키를 선택합니다. *Microsoft Azure Storage 에뮬레이터*를 입력하고 실행합니다. 자세한 내용은 [개발 및 테스트에 Azure Storage 에뮬레이터 사용](../storage/common/storage-use-emulator.md)을 참조하세요.
+Azure Storage Emulator를 시작하려면 Windows 데스크톱에서 **시작** 단추 또는 Windows 키를 선택합니다. *Microsoft Azure Storage 에뮬레이터*를 입력하고 실행합니다. 자세한 내용은 [개발 및 테스트에 Azure Storage Emulator 사용](../storage/common/storage-use-emulator.md)을 참조하세요.
 
 ### <a name="retrieve-your-connection-string"></a>연결 문자열 검색
 

@@ -6,13 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 05/21/2020
-ms.openlocfilehash: 0b152f7882c7d7a3bab762253da0febc0257ceae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/21/2020
+ms.custom: contperfq1
+ms.openlocfilehash: fbd0da43e79ee2c27f654f9bd07614e08c12fd30
+ms.sourcegitcommit: afa1411c3fb2084cccc4262860aab4f0b5c994ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84117957"
+ms.lasthandoff: 08/23/2020
+ms.locfileid: "88756931"
 ---
 # <a name="optimize-apache-spark-jobs-in-hdinsight"></a>HDInsight에서 Apache Spark 작업 최적화
 

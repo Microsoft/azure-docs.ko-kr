@@ -7,24 +7,24 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 07/30/2020
-ms.openlocfilehash: 37647a9591c0f686e4fc3f1fd858baa46e01f7ac
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 4a27ace4e45d00a2fbb35b9e0e3e9b7c03383681
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87498075"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705880"
 ---
 # <a name="determine-your-publishing-option"></a>게시 옵션 확인
 
 제품에 대해 선택한 게시 옵션은 적격성 요구 사항 및 상업용 Marketplace GTM 혜택 모두와 직접 관련이 있습니다. 무엇보다도 게시 옵션 및 제품 유형의 선택은 사용자가 귀하의 상업용 Marketplace 제품과 상호 작용하는 방법을 정의합니다.
 
-제품을 구성하려면 게시 옵션, 제품 유형 및 구성 그리고 귀하의 제품이 상업용 Marketplace 상점에 제공되는 장소 및 방법을 제어하는 CTA(calls-to-action) 등 주요 상업용 Marketplace 개념을 이해해야 합니다.
+제품을 구성 하려면 상업적 marketplace 온라인 상점에서 제품이 표시 되는 방법 및 위치를 제어 하는 게시 옵션, 제품 유형 및 구성 및 작업 호출에 대 한 다음과 같은 주요 상업적 marketplace 개념을 이해 해야 합니다.
 
 이 문서에서는 다음에 대해 알아봅니다.
 
-- 솔루션에 대한 적절한 상점을 결정하는 방법
-- 각 상점에서 사용할 수 있는 CTA(calls-to-action) 및 게시 옵션
-- 각 게시 옵션에 대해 사용할 수 있는 제품 유형
+- 솔루션에 적합 한 온라인 저장소를 확인 하는 방법
+- 각 온라인 저장소에서 사용할 수 있는 게시 옵션과 동작에 대 한 호출을 사용할 수 있습니다.
+- 각 게시 옵션에 사용할 수 있는 제품 유형을 제공 합니다.
 
 ## <a name="commercial-marketplace-publishing-options"></a>상업용 Marketplace 게시 옵션
 
@@ -37,8 +37,8 @@ ms.locfileid: "87498075"
 | **컨테이너 이미지** |  |  | Azure Marketplace | Azure Marketplace |   |
 | **IoT Edge 모듈** |  |  | Azure Marketplace | Azure Marketplace |   |
 | **관리되는 서비스** |  |  |  | Azure Marketplace |   |
-| **컨설팅 서비스** | 두 상점 |  |  |  |   |
-| **SaaS 앱** | 두 상점 | 두 상점 | 두 상점 |  | 두 상점* |
+| **컨설팅 서비스** | 온라인 상점 모두 |  |  |  |   |
+| **SaaS 앱** | 온라인 상점 모두 | 온라인 상점 모두 | 온라인 상점 모두 |  | 온라인 매장 모두 * |
 | **Microsoft 365 앱** | AppSource | AppSource |  |  | AppSource**  |
 | **Dynamics 365 추가 기능** |  AppSource | AppSource |  |  |   |
 | **PowerApps** | AppSource |AppSource  |  |  |   |
@@ -47,9 +47,9 @@ ms.locfileid: "87498075"
 
 &#42;&#42; Microsoft 365 제품은 무료로 설치할 수 있으며 라이선스 서비스로 SaaS 제품을 통해 수익화할 수 있습니다. 자세한 내용은 [Microsoft 상업용 Marketplace를 통해 Office 365 추가 기능으로 수익 창출](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace)을 참조하세요.
 
-## <a name="choose-a-call-to-action"></a>동작에 대 한 호출 선택
+## <a name="choose-a-listing-option"></a>목록 옵션 선택
 
-사용 가능한 게시 옵션은 차별화된 고객 참여를 제공하면서 잠재 고객 공유 및 [상업용 Marketplace 혜택](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits)에 대한 액세스 권한을 부여합니다. 게시 옵션에 해당하는 CTA(calls-to-action)를 참고합니다.
+사용 가능한 목록 옵션은 잠재 고객 참여를 제공 하는 동시에 잠재 고객의 공유 및 [상업적 marketplace 혜택](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits)에 대 한 액세스를 제공 합니다. 게시 옵션에 해당 하는 나열 옵션을 확인 합니다.
 
 | **게시 옵션**    | **설명**  |
 | :------------------- | :-------------------|
@@ -61,19 +61,19 @@ ms.locfileid: "87498075"
 > [!Note]
 > Transact 게시 옵션을 사용할 때는 제품 유형을 선택하고 제품을 만들기 전에 가격, 청구, 송장 처리 및 지급 고려 사항을 이해하는 것이 중요합니다. 자세히 알아보려면 [상업용 Marketplace의 거래 기능](./marketplace-commercial-transaction-capabilities-and-considerations.md) 문서를 참조하세요.
 
-## <a name="selecting-a-storefront"></a>상점 선택
+## <a name="selecting-an-online-store"></a>온라인 스토어 선택
 
-각 상점은 특정한 대상을 위해 고유한 고객의 요구 사항에 따른 서비스를 제공합니다. 제품 유형, 거래 기능 및 범주에 따라 제품이 게시 되는 위치가 결정 됩니다. 범주 및 하위 범주는 대상 그룹을 기반으로 각 storefront에 매핑됩니다.
+각 온라인 저장소는 고유한 고객 요구 사항 및 대상 관련 대상을 제공 합니다. 제품 유형, 거래 기능 및 범주에 따라 제품이 게시 되는 위치가 결정 됩니다. 범주 및 하위 범주는 대상 그룹에 따라 각 온라인 저장소에 매핑됩니다.
 
 **Microsoft AppSource** 는 Dynamics 365, Microsoft 365 및 Power Platform에 대 한 lob (기간 업무) 또는 업계 솔루션 및 컨설팅 서비스를 검색 하는 비즈니스 사용자를 대상으로 합니다.
 
 **Azure Marketplace** 는 azure 용으로 작성 된 솔루션 및 azure 사용을 가속화 하는 컨설팅 서비스를 찾는 IT 전문가 및 개발자를 대상으로 합니다.
 
-대상 사용자에 게 가장 적합 한 범주 및 하위 범주를 선택 합니다. 예를 들어, 웹 응용 프로그램 방화벽은 계획 된 대상이 IT 전문가 이므로 보안 범주 아래 Azure Marketplace에 게시 해야 합니다. 대상 사용자가 비즈니스 사용자 이기 때문에 계약 관리 앱을 판매 범주 아래의 AppSource에 게시 해야 합니다. 잘못 된 범주 또는 하위 범주를 선택 하면 제품이 잘못 된 storefront 게시 될 수 있습니다.
+대상 사용자에 게 가장 적합 한 범주 및 하위 범주를 선택 합니다. 예를 들어, 웹 응용 프로그램 방화벽은 계획 된 대상이 IT 전문가 이므로 보안 범주 아래 Azure Marketplace에 게시 해야 합니다. 대상 사용자가 비즈니스 사용자 이기 때문에 계약 관리 앱을 판매 범주 아래의 AppSource에 게시 해야 합니다. 잘못 된 범주 또는 하위 범주를 선택 하면 제품이 잘못 된 온라인 저장소에 게시 될 수 있습니다.
 
-### <a name="publishing-to-both-storefronts-saas-offers-only"></a>두 상점에 게시 (SaaS 제품에만 해당)
+### <a name="publishing-to-both-online-stores-saas-offers-only"></a>두 온라인 저장소에 게시 (SaaS 제품에만 해당)
 
-SaaS 제품은 Azure Marketplace 또는 AppSource에 게시할 수 있습니다. SaaS 제품이 기술 사용자 (Azure Marketplace)와 비즈니스 대상 (AppSource) *모두* 에 대 한 것 이라면 각 storefront에 적용 가능한 범주 및/또는 하위 범주를 선택 합니다. 두 상점에 게시 된 제품에는 IT 전문가 *및* 비즈니스 사용자로 확장 되는 가치 제안이 있어야 합니다.
+SaaS 제품은 Azure Marketplace 또는 AppSource에 게시할 수 있습니다. SaaS 제품이 기술 사용자 (Azure Marketplace)와 비즈니스 대상 (AppSource)을 *모두* 사용 하는 경우 각 온라인 저장소에 적용 되는 범주 및/또는 하위 범주를 선택 합니다. 두 온라인 저장소에 게시 된 제품에는 IT 전문가 *및* 비즈니스 사용자로 확장 되는 가치 제안이 있어야 합니다.
 
 > [!IMPORTANT]
 > 요금제를 사용 하는 SaaS 제품은 Azure Marketplace 및 Azure Portal를 통해 제공 됩니다. 개인 계획만 포함 된 SaaS 제품은 Azure Portal를 통해 제공 됩니다.
@@ -82,8 +82,8 @@ SaaS 제품은 Azure Marketplace 또는 AppSource에 게시할 수 있습니다.
 |---|---|---|---|
 | 예             | 예         | 아니요           | Azure Marketplace 및 Azure Portal |
 | 예             | 예         | 예          | Azure Marketplace 및 Azure Portal * |
-| 예             | 예          | 예          | Azure Portal만 |
-| 아니요              | 예          | 예          | Azure Portal만 |
+| 예             | 아니요          | 예          | Azure Portal만 |
+| 아니요              | 아니요          | 예          | Azure Portal만 |
 
 &#42; 제품의 비공개 요금제를 통해서만 사용할 수 있습니다 Azure Portal
 
@@ -91,7 +91,7 @@ SaaS 제품은 Azure Marketplace 또는 AppSource에 게시할 수 있습니다.
 
 ### <a name="categories"></a>범주
 
-범주와 하위 범주는 대상 그룹을 기반으로 각 storefront에 매핑됩니다. 제품 및 의도 한 대상에 가장 적합 한 범주와 하위 범주를 선택 합니다. 선택 옵션:
+범주와 하위 범주는 대상 그룹에 따라 각 온라인 저장소에 매핑됩니다. 제품 및 의도 한 대상에 가장 적합 한 범주와 하위 범주를 선택 합니다. 선택 옵션:
 
 - 하나 이상의 범주 (최대 2 개) 기본 및 보조 범주를 선택할 수 있는 옵션이 있습니다.
 - 각 주 및/또는 보조 범주에 대해 최대 두 개의 하위 범주 하위 범주를 선택 하지 않은 경우에도 선택한 범주에서 제품을 검색할 수 있습니다.
@@ -102,4 +102,4 @@ SaaS 제품은 Azure Marketplace 또는 AppSource에 게시할 수 있습니다.
 
 - [게시 옵션을 결정](./publisher-guide-by-offer-type.md)했으면 제품을 제공하는 데 사용할 제품 유형을 선택할 준비가 된 것입니다.
 - 제품의 선택 및 구성을 완료하려면 제품 유형 섹션별 게시 옵션에서 자격 요구 사항을 검토합니다.
-- 솔루션이 제품 유형 및 구성에 매핑되는 방법에 대한 예제는 상점별 게시 패턴을 검토합니다.
+- 솔루션이 제품 유형 및 구성에 매핑되는 방법에 대 한 예제는 온라인 스토어에서 게시 패턴을 검토 합니다.

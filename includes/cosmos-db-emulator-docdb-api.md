@@ -18,7 +18,7 @@ ms.author: sngun
 ms.custom: include file
 ms.openlocfilehash: 315d4d6b85a28337b0e7c43ad7054e4d31eba670
 ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/29/2020
 ms.locfileid: "78674201"

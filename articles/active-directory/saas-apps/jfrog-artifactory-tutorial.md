@@ -2,26 +2,21 @@
 title: '자습서: JFrog Artifactory와 Azure Active Directory 연결 | Microsoft Docs'
 description: Azure Active Directory 및 JFrog Artifactory 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 767cb0fc-048c-412b-a8ad-fe52daeeb02d
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78daf578647e087fcc673d612ce24814a53ee331
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 07ac0ac4d7b86b644ca5d1876b1332fee7358cac
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70213568"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88552606"
 ---
 # <a name="tutorial-integrate-jfrog-artifactory-with-azure-active-directory"></a>자습서: Azure Active Directory와 JFrog Artifactory 통합
 

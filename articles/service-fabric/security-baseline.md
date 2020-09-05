@@ -6,13 +6,13 @@ ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: a3641994098834b47412598b25b3effb2be7d276
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 9054fa72ee4204d7a09e6ce8de4fe6d4ed4dac81
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87836720"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89227715"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Service Fabric에 대 한 Azure 보안 기준
 
@@ -546,7 +546,7 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 **책임**: 공유됨
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
 **지침**: 해당 없음. 이 추천 사항은 데이터를 저장하도록 설계된 비 컴퓨팅 리소스를 위한 것입니다.
 
@@ -868,13 +868,13 @@ Azure 리소스 그래프를 사용 하 여 구독 내에서 리소스를 쿼리
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
 
-**지침**: 사용자 지정 이미지를 사용 하는 경우 RBAC를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다. 컨테이너 이미지의 경우 Azure Container Registry에 저장 하 고 RBAC를 활용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
+**지침**: 사용자 지정 이미지를 사용 하는 경우 azure RBAC (역할 기반 액세스 제어)를 사용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다. 컨테이너 이미지의 경우 Azure Container Registry에 저장 하 고 Azure RBAC를 활용 하 여 권한 있는 사용자만 이미지에 액세스할 수 있도록 합니다.
 
-* [Azure의 RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
+* [Azure RBAC 이해](../role-based-access-control/rbac-and-directory-admin-roles.md)
 
-* [Container Registry에 대 한 RBAC 이해](../container-registry/container-registry-roles.md)
+* [Container Registry에 대 한 Azure RBAC 이해](../container-registry/container-registry-roles.md)
 
-* [Azure에서 RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
+* [Azure RBAC를 구성 하는 방법](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 

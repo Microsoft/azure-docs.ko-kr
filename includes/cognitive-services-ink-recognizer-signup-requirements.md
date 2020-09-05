@@ -3,12 +3,12 @@ author: aahill
 ms.author: aahi
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/06/2019
-ms.openlocfilehash: 5753ac438979053a20e4ed3312e64fc01553ce78
-ms.sourcegitcommit: fe6c9a35e75da8a0ec8cea979f9dec81ce308c0e
+ms.date: 08/17/2020
+ms.openlocfilehash: cd4df7783f314ee9f181074e4eaee93fd478ec11
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "68362563"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88602544"
 ---
-Ink Recognizer API에 대한 액세스 권한이 있는 [Cognitive Services API 계정](../articles/cognitive-services/cognitive-services-apis-create-account.md)이 있어야 합니다. Azure 구독이 없는 경우 [무료 계정](https://azure.microsoft.com/try/cognitive-services/)을 만들 수 있습니다. 구독 키는 계정을 만든 후 또는 [Azure Portal](../articles/cognitive-services/cognitive-services-apis-create-account.md#get-the-keys-for-your-resource)에서 또는 평가판을 활성화한 후 [Azure 웹 사이트](https://azure.microsoft.com/try/cognitive-services/my-apis)에서 구할 수 있습니다.
+Ink Recognizer API에 대한 액세스 권한이 있는 [Cognitive Services API 계정](../articles/cognitive-services/cognitive-services-apis-create-account.md)이 있어야 합니다. Azure 구독이 없는 경우 [무료 계정](https://azure.microsoft.com/try/cognitive-services/)을 만들 수 있습니다. [Azure Portal](https://portal.azure.com/)에서 리소스를 볼 수도 있습니다.

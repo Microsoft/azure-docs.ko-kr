@@ -1,18 +1,18 @@
 ---
 title: 'Azure Express 경로 템플릿: Express 경로 회로 만들기'
-description: Express 경로 회로를 만들고, 프로 비전 하 고, 삭제 하 고, 프로 비전 해제 합니다.
+description: Azure PowerShell를 사용 하 여 Azure Resource Manager 템플릿을 배포 하 여 Azure Express 경로 회로를 만드는 방법에 대해 알아봅니다.
 services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: charwen
-ms.openlocfilehash: 336337c0860ba19095665310d2c797cf10ba183f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 78318726a658b6e0dc966288f386c65ee4c6f0e4
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736308"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88190456"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Azure Resource Manager 템플릿을 사용 하 여 Express 경로 회로 만들기
 
@@ -43,7 +43,7 @@ Azure PowerShell를 사용 하 여 Azure Resource Manager 템플릿을 배포 �
 
 템플릿을 배포 하 여 Express 경로 회로를 만들려면 다음을 수행 합니다.
 
-1. 다음 코드 블록에서 **사용해보기**를 선택한 다음, 지침에 따라 Azure Cloud 셸에 로그인합니다.
+1. 다음 코드 블록에서 **시도** 를 선택 하 고 지침에 따라 Azure Cloud shell에 로그인 합니다.
 
     ```azurepowershell-interactive
     $circuitName = Read-Host -Prompt "Enter a circuit name"

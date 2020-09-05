@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 748e31499a4aa8f1ddd2cea4e918b688426338fa
-ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.openlocfilehash: 73d9eed757acb4c58052a34811c490a70d306995
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87117245"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88061492"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>빠른 시작: 가상 Windows 디바이스에 첫 번째 IoT Edge 모듈 배포
 
@@ -65,7 +65,9 @@ IoT Edge 디바이스:
   az vm create --resource-group IoTEdgeResources --name EdgeVM --image MicrosoftWindowsDesktop:Windows-10:rs5-pro:latest --admin-username azureuser --admin-password {password} --size Standard_DS1_v2
   ```
 
-  새 가상 머신을 만들고 시작하는 데 몇 분 정도 걸릴 수 있습니다. 그런 다음, 가상 머신에 연결할 때 사용할 RDP 파일을 다운로드할 수 있습니다.
+  새 가상 머신을 만들고 시작하는 데 몇 분 정도 걸릴 수 있습니다.
+
+  가상 머신이 시작되면 가상 머신에 연결할 때 사용할 RDP 파일을 다운로드할 수 있습니다.
 
   1. Azure Portal에서 새 Windows 가상 머신으로 이동합니다.
   1. **연결**을 선택합니다.
@@ -74,6 +76,8 @@ IoT Edge 디바이스:
   원격 데스크톱 연결을 통해 이 파일을 열어 `az vm create` 명령으로 지정한 관리자 이름과 암호를 사용하여 Windows 가상 머신에 연결합니다.
 
 > [!NOTE]
+> Windows 가상 머신은 최신 [Windows 장기 지원 빌드](https://docs.microsoft.com/windows/release-information/)인 Windows 버전 1809(빌드 17763)로 시작됩니다. Windows에서는 기본적으로 22시간마다 자동으로 업데이트를 확인합니다. 가상 머신을 확인한 후 Windows는 Windows용 IoT Edge와 호환되지 않는 버전 업데이트를 푸시하므로 Windows용 IoT Edge 기능을 더 이상 사용할 수 없습니다. 가상 머신 사용을 22시간 이내 또는 [임시로 Windows 업데이트를 일시 중지](https://support.microsoft.com/help/4028233/windows-10-manage-updates)하는 것이 좋습니다.
+>
 > 이 빠른 시작에서는 간단하게 하기 위해 Windows 데스크톱 가상 머신을 사용합니다. 일반적으로 프로덕션 시나리오에 사용할 수 있는 Windows 운영 체제에 대한 정보는 [Azure IoT Edge 지원 시스템](support.md)을 참조하세요.
 >
 > IoT Core를 실행하는 디바이스를 포함하여 IoT Edge에 대한 windows 디바이스를 구성할 준비가 되면 [Windows에서 Azure IoT Edge 런타임 설치](how-to-install-iot-edge-windows.md)의 단계를 따르세요.

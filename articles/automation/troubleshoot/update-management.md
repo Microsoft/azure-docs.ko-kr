@@ -5,12 +5,12 @@ services: automation
 ms.date: 06/30/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: cb598f9a9b8d078c86e9911fa64d872788f47b4b
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: b0b1e31a8c10ba372473c36e35c19044ef02898a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87447696"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89003357"
 ---
 # <a name="troubleshoot-update-management-issues"></a>업데이트 관리 문제 해결
 
@@ -103,7 +103,7 @@ Error details: Failed to enable the Update solution
 
 1. OS에 따라 [Windows](update-agent-issues.md#troubleshoot-offline) 또는 [Linux](update-agent-issues-linux.md#troubleshoot-offline)에 대한 문제 해결사를 실행합니다.
 
-2. 머신이 올바른 작업 영역에 보고하고 있는지 확인합니다. 이러한 측면을 확인하는 방법에 대한 지침은 [Log Analytics에 대한 에이전트 연결 확인](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-log-analytics)을 참조하세요. 또한 이 작업 영역이 Azure Automation 계정에 연결되어 있는지 확인합니다. 이를 확인하려면 Automation 계정으로 이동하고 **관련 리소스**에서 **연결된 작업 영역**을 선택합니다.
+2. 머신이 올바른 작업 영역에 보고하고 있는지 확인합니다. 이 측면을 확인 하는 방법에 대 한 지침은 [에이전트에서 Azure Monitor에 대 한 연결 확인](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor)을 참조 하세요. 또한 이 작업 영역이 Azure Automation 계정에 연결되어 있는지 확인합니다. 이를 확인하려면 Automation 계정으로 이동하고 **관련 리소스**에서 **연결된 작업 영역**을 선택합니다.
 
 3. Automation 계정에 연결된 Log Analytics 작업 영역에 머신이 표시되는지 확인합니다. Log Analytics 작업 영역에서 다음 쿼리를 실행합니다.
 

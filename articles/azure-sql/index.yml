@@ -14,12 +14,12 @@ metadata:
   ms.author: mathoma
   ms.reviewer: carlrab
   ms.date: 10/30/2019
-  ms.openlocfilehash: b069cd8a027d5652ae68bbbbf21e03434daf1443
-  ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
+  ms.openlocfilehash: 03f1f908983487bb3ee5be88ced36a0848a731cc
+  ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/24/2020
-  ms.locfileid: "85318576"
+  ms.lasthandoff: 08/19/2020
+  ms.locfileid: "88590441"
 landingContent:
 - title: Azure SQL Database
   linkLists:
@@ -37,6 +37,10 @@ landingContent:
       url: database/single-database-create-quickstart.md
     - text: 방화벽 구성
       url: database/firewall-create-server-level-portal-quickstart.md
+  - linkListType: video
+    links:
+    - text: Azure SQL Database 개요
+      url: https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/Azure-SQL-Database-Overview-7-of-61
   - linkListType: concept
     links:
     - text: SQL Server에서 마이그레이션
@@ -67,6 +71,10 @@ landingContent:
       url: managed-instance/connect-vm-instance-configure.md
     - text: 샘플 데이터베이스 복원
       url: managed-instance/restore-sample-database-quickstart.md
+  - linkListType: video
+    links:
+    - text: Azure SQL Managed Instance 개요
+      url: https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/Azure-SQL-Managed-Instance-Overview-6-of-61
   - linkListType: concept
     links:
     - text: SQL Server에서 마이그레이션
@@ -95,6 +103,10 @@ landingContent:
       url: virtual-machines/windows/sql-vm-create-portal-quickstart.md
     - text: Azure VM에서 SQL 만들기(Linux)
       url: virtual-machines/linux/sql-vm-create-portal-quickstart.md
+  - linkListType: video
+    links:
+    - text: Azure VM의 SQL Server 개요
+      url: https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/SQL-Server-on-Azure-VM-Overview-4-of-61
   - linkListType: concept
     links:
     - text: SQL Server에서 마이그레이션
@@ -145,20 +157,30 @@ landingContent:
       url: database/design-first-database-tutorial.md
     - text: 첫 번째 데이터베이스(C#) 디자인
       url: database/design-first-database-csharp-tutorial.md
-- title: 참조
+- title: Azure SQL 알아보기
   linkLists:
   - linkListType: learn
     links:
+    - text: 초보자용 Azure SQL
+      url: https://aka.ms/azuresql4beginners
+    - text: Azure SQL 기본 사항
+      url: https://docs.microsoft.com/learn/paths/azure-sql-fundamentals/
+    - text: Azure SQL 실습 랩
+      url: https://aka.ms/asqlworkshop
+    - text: Azure SQL 부트캠프
+      url: https://aka.ms/azuresqlbootcamp
     - text: 교육용 SQL 리소스
       url: /sql/sql-server/educational-sql-resources
+- title: 참조
+  linkLists:
   - linkListType: deploy
     links:
     - text: Azure CLI 샘플
-      url: /sql/ssms/download-sql-server-management-studio-ssms
+      url: database/az-cli-script-samples-content-guide.md
     - text: PowerShell 샘플
-      url: /sql/ssms/download-sql-server-management-studio-ssms
+      url: database/powershell-script-content-guide.md
     - text: ARM 템플릿 샘플
-      url: /sql/ssms/download-sql-server-management-studio-ssms
+      url: database/arm-templates-content-guide.md
   - linkListType: download
     links:
     - text: SSMS(SQL Server Management Studio)

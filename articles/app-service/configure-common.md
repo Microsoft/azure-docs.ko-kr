@@ -5,13 +5,13 @@ keywords: azure app service, 웹 앱, 앱 설정, 환경 변수
 ms.assetid: 9af8a367-7d39-4399-9941-b80cbc5f39a0
 ms.topic: article
 ms.date: 08/13/2019
-ms.custom: seodec18
-ms.openlocfilehash: 9371b39bd37ba2514256a3b2fa90812f45c7ce5e
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.custom: devx-track-csharp, seodec18
+ms.openlocfilehash: 4990862bacbf2afe2d4b5f39c2b9d31a7c48b78e
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077376"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962896"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Azure Portal에서 App Service 앱 구성
 
@@ -44,7 +44,7 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 앱 설정을 설
 앱 설정은 저장될 때 항상 암호화됩니다(미사용 암호화).
 
 > [!NOTE]
-> [Key Vault 참조](app-service-key-vault-references.md)를 사용 하 여 [Key Vault](/azure/key-vault/) 에서 앱 설정을 확인할 수도 있습니다.
+> [Key Vault 참조](app-service-key-vault-references.md)를 사용 하 여 [Key Vault](../key-vault/index.yml) 에서 앱 설정을 확인할 수도 있습니다.
 
 ### <a name="show-hidden-values"></a>숨겨진 값 표시
 
@@ -96,11 +96,11 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 문자열�
 
 런타임에 연결 문자열은 환경 변수로 사용할 수 있으며, 다음 연결 형식이 접두사로 사용 됩니다.
 
-* SQLServer`SQLCONNSTR_`  
+* SQLServer `SQLCONNSTR_`  
 * MySQL: `MYSQLCONNSTR_` 
-* SQLAzure`SQLAZURECONNSTR_` 
+* SQLAzure `SQLAZURECONNSTR_` 
 * 사용자 지정: `CUSTOMCONNSTR_`
-* PostgreSQL`POSTGRESQLCONNSTR_`  
+* PostgreSQL `POSTGRESQLCONNSTR_`  
 
 예를 들어 *connectionstring1* 라는 MySql 연결 문자열을 환경 변수로 액세스할 수 있습니다 `MYSQLCONNSTR_connectionString1` . 언어 스택 관련 단계는 다음을 참조 하세요.
 
@@ -115,7 +115,7 @@ ASP.NET 및 ASP.NET Core 개발자를 위해 App Service에서 연결 문자열�
 연결 문자열은 저장될 때 항상 암호화됩니다(미사용 암호화).
 
 > [!NOTE]
-> [Key Vault 참조](app-service-key-vault-references.md)를 사용 하 여 [Key Vault](/azure/key-vault/) 에서 연결 문자열을 확인할 수도 있습니다.
+> [Key Vault 참조](app-service-key-vault-references.md)를 사용 하 여 [Key Vault](../key-vault/index.yml) 에서 연결 문자열을 확인할 수도 있습니다.
 
 ### <a name="show-hidden-values"></a>숨겨진 값 표시
 

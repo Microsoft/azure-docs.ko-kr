@@ -4,7 +4,7 @@ titleSuffix: Azure Media Services
 description: 동적 패키지를 사용 하 여 필터를 만들고 선택적으로 매니페스트를 스트리밍하는 방법에 대해 알아봅니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -12,16 +12,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 07/11/2019
-ms.author: juliako
-ms.openlocfilehash: cb7a399258dcab679468d2b8f699487b1ec5406b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 4a2464cbb47291f35cd4d7e20b555356e3e9aa8b
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84705205"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266462"
 ---
 # <a name="filter-your-manifests-using-dynamic-packager"></a>동적 포장기를 사용 하 여 매니페스트 필터링
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 적응 비트 전송률 스트리밍 콘텐츠를 장치에 배달 하는 경우 특정 장치 기능 또는 사용 가능한 네트워크 대역폭을 대상으로 지정 하기 위해 여러 버전의 매니페스트를 게시 해야 하는 경우가 있습니다. [동적](dynamic-packaging-overview.md) 패키지 작성 도구를 사용 하면 특정 코덱, 해상도, 비트 전송률 및 오디오 트랙 조합을 즉석에서 필터링 할 수 있는 필터를 지정할 수 있습니다. 이 필터링을 통해 여러 복사본을 만들 필요가 없습니다. 대상 장치 (iOS, Android, SmartTV 또는 브라우저) 및 네트워크 기능 (고대역폭, 모바일 또는 저대역폭 시나리오)에 구성 된 특정 필터 집합을 사용 하 여 새 URL을 게시 하기만 하면 됩니다. 이 경우 클라이언트는 사용 가능한 [자산 필터 또는 계정 필터](filters-concept.md)를 지정 하 여 쿼리 문자열을 통해 콘텐츠의 스트리밍을 조작 하 고 필터를 사용 하 여 스트림의 특정 섹션을 스트리밍할 수 있습니다.
 

@@ -6,13 +6,13 @@ metadata:
   description: Azure App Service에서 웹 사이트, 웹앱, RESTful API 및 모바일 백 엔드를 호스트합니다. App Service를 성공적으로 완료하는 데 도움이 되는 빠른 시작, 자습서 및 샘플을 찾습니다.
   ms.topic: landing-page
   ms.service: app-service
-  ms.date: 02/26/2020
-  ms.openlocfilehash: e8dcbe7288fb72fb5084f210bf38f7fa55f969a2
-  ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
+  ms.date: 08/06/2020
+  ms.openlocfilehash: 3fc31095ec0d8e1ecdbe44c0751c55164d20e088
+  ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "84987969"
+  ms.lasthandoff: 08/11/2020
+  ms.locfileid: "88080031"
 landingContent:
 - title: App Service 정보
   linkLists:
@@ -20,8 +20,6 @@ landingContent:
     links:
     - text: App Service란?
       url: overview.md
-    - text: Linux의 App Service
-      url: /azure/app-service/containers/
     - text: App Service Environment
       url: environment/intro.md
     - text: 호스팅 옵션 비교
@@ -35,19 +33,19 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: 첫 번째 ASP.NET Core 앱
-      url: app-service-web-get-started-dotnet.md
-    - text: 첫 번째 ASP.NET 앱
-      url: app-service-web-get-started-dotnet-framework.md
+      url: quickstart-dotnetcore.md
+    - text: 첫 번째 ASP.NET 앱(Windows만 해당)
+      url: quickstart-dotnet-framework.md
     - text: 첫 번째 Node.js 앱
-      url: app-service-web-get-started-nodejs.md
+      url: quickstart-nodejs.md
     - text: 첫 번째 PHP 앱
-      url: app-service-web-get-started-php.md
+      url: quickstart-php.md
     - text: 첫 번째 Java 앱
-      url: app-service-web-get-started-java.md
-    - text: 첫 번째 Python 앱(Linux)
-      url: containers/quickstart-python.md
-    - text: 첫 번째 Ruby 앱(Linux)
-      url: containers/quickstart-ruby.md
+      url: quickstart-java.md
+    - text: 첫 번째 Python Flask 앱(Linux만 해당)
+      url: quickstart-python.md
+    - text: 첫 번째 Ruby 앱(Linux만 해당)
+      url: quickstart-ruby.md
 - title: 일반 작업
   linkLists:
   - linkListType: tutorial
@@ -62,6 +60,8 @@ landingContent:
     links:
     - text: 진단 로그 활성화
       url: troubleshoot-diagnostic-logs.md
+    - text: SSH를 통해 Linux 컨테이너에 연결
+      url: configure-linux-open-ssh-session.md
     - text: App Service로 활성 도메인 마이그레이션
       url: manage-custom-dns-migrate-domain.md
 - title: 데이터베이스를 사용하는 CRUD 앱
@@ -71,11 +71,17 @@ landingContent:
     - text: SQL Database를 사용하는 ASP.NET 앱
       url: app-service-web-tutorial-dotnet-sqldatabase.md
     - text: SQL Database를 사용하는 ASP.NET Core 앱
-      url: app-service-web-tutorial-dotnetcore-sqldb.md
+      url: tutorial-dotnetcore-sqldb-app.md
     - text: Azure MySQL을 사용하는 PHP(Laravel) 앱
-      url: app-service-web-tutorial-php-mysql.md
+      url: tutorial-php-mysql-app.md
     - text: MongoDB를 사용하는 Node.js(MEAN.js) 앱
-      url: app-service-web-tutorial-nodejs-mongodb-app.md
+      url: tutorial-nodejs-mongodb-app.md
+    - text: Cosmos DB를 사용하는 Java(Spring Boot) 앱
+      url: tutorial-java-spring-cosmosdb.md
+    - text: PostgreSQL을 사용하는 Python(Django) 앱
+      url: tutorial-python-postgresql-app.md
+    - text: PostgreSQL을 사용하는 Ruby(Rails) 앱
+      url: tutorial-ruby-postgres-app.md
 - title: 코드 또는 콘텐츠 업로드
   linkLists:
   - linkListType: deploy
@@ -90,20 +96,28 @@ landingContent:
       url: deploy-content-sync.md
     - text: GitHub, BitBucket 등이 포함된 CI/CD
       url: deploy-continuous-deployment.md
-- title: 컨테이너화된 Windows 앱 실행
+    - text: 패키지에서 실행
+      url: deploy-run-package.md
+- title: 사용자 지정 컨테이너 실행
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 사용자 지정 Windows 컨테이너 실행
-      url: app-service-web-get-started-windows-container.md
+    - text: 사용자 지정 컨테이너 실행
+      url: quickstart-custom-container.md
   - linkListType: tutorial
     links:
-    - text: Windows 컨테이너에서 레거시 앱을 Azure로 마이그레이션
-      url: app-service-web-tutorial-windows-containers-custom-fonts.md
+    - text: Docker Compose 앱 실행(Linux만 해당)
+      url: tutorial-multi-container-app.md
+    - text: 컨테이너에서 사용자 지정 소프트웨어를 Azure로 마이그레이션
+      url: tutorial-custom-container.md
   - linkListType: how-to-guide
     links:
+    - text: 사용자 지정 컨테이너에 대한 CI/CD
+      url: deploy-ci-cd-custom-container.md
     - text: 컨테이너를 스토리지 파일에 연결
       url: configure-connect-to-azure-storage.md
+    - text: GitHub 작업을 사용하여 배포
+      url: deploy-container-github-action.md
 - title: 관리 및 통합
   linkLists:
   - linkListType: concept
@@ -115,7 +129,7 @@ landingContent:
     - text: 관리 ID를 사용하여 리소스 액세스 보안
       url: app-service-web-tutorial-connect-msi.md
     - text: 사용자 인증
-      url: app-service-web-tutorial-auth-aad.md
+      url: tutorial-auth-aad.md
     - text: CORS를 통한 RESTful API 호스팅
       url: app-service-web-tutorial-rest-api.md
     - text: 애플리케이션에 CDN 추가

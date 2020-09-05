@@ -44,12 +44,18 @@
       href: vm-do-ten-things.md
     - name: Linux Data Science Virtual Machine 사용
       href: linux-dsvm-walkthrough.md
-    - name: 자동 크기 조정된 Data Science Virtual Machine 풀 만들기
-      href: dsvm-pools.md
-    - name: Active Directory와 통합할 수 있습니다.
-      href: dsvm-common-identity.md
-    - name: 안전한 리소스 액세스 자격 증명
-      href: dsvm-secure-access-keys.md
+    - name: Azure Machine Learning과 통합
+      items:
+        - name: 실험 추적
+          href: how-to-track-experiments.md
+    - name: 엔터프라이즈 지침
+      items:
+        - name: 자동 크기 조정된 Data Science Virtual Machine 풀 만들기
+          href: dsvm-pools.md
+        - name: Active Directory와 통합할 수 있습니다.
+          href: dsvm-common-identity.md
+        - name: 안전한 리소스 액세스 자격 증명
+          href: dsvm-secure-access-keys.md
 - name: 리소스
   items:
     - name: Microsoft Q&A 질문 페이지

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 3/5/2020
 ms.custom: devx-track-java
 ms.author: lcozzens
-ms.openlocfilehash: a2864d610d71c6b3a86c131dabb3c0b9ed138bec
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 653fcb6f6590fd503a97800ec8196025cf14a3b9
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87327925"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88121564"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-a-java-spring-app"></a>자습서: Java Spring 앱에서 동적 구성 사용
 
@@ -36,7 +36,7 @@ App Configuration Spring Boot 클라이언트 라이브러리는 애플리케이
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>spring-cloud-azure-appconfiguration-config-web</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.5</version>
 </dependency>
 ```
 
@@ -46,11 +46,33 @@ App Configuration Spring Boot 클라이언트 라이브러리는 애플리케이
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>spring-cloud-azure-appconfiguration-config-web</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.7</version>
 </dependency>
 ```
 
-파일을 저장한 다음, 평소와 같이 애플리케이션을 빌드하고 실행합니다.
+## <a name="run-and-test-the-app-locally"></a>로컬로 앱 실행 및 테스트
+
+1. Maven을 사용하여 Spring Boot 애플리케이션을 빌드하고 실행합니다.
+
+    ```shell
+    mvn clean package
+    mvn spring-boot:run
+    ```
+
+1. 새 브라우저 창을 열고 URL(`http://localhost:8080`)로 이동합니다.  키와 연결된 메시지가 표시됩니다. 
+
+    *curl*을 사용하여 애플리케이션을 테스트할 수도 있습니다. 예를 들면 다음과 같습니다. 
+    
+    ```cmd
+    curl -X GET http://localhost:8080/
+    ```
+
+1. 동적 구성을 테스트하려면 애플리케이션과 연결된 Azure App Configuration 포털을 엽니다. **구성 탐색기**를 선택하고 표시되는 키의 값을 업데이트합니다. 예를 들면 다음과 같습니다.
+    | 키 | 값 |
+    |---|---|
+    | application/config.message | Hello - 업데이트됨 |
+
+1. 표시되는 새 메시지를 확인하려면 브라우저 페이지를 새로 고칩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

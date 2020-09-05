@@ -5,12 +5,12 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: cdbce7c11bc3184b624fa00f3ac33db7ad8730d8
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 4022ca97f88e2f06d3b4c1eeb103bb60d1856eda
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88077438"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962148"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Azure AD 로그인을 사용하도록 App Service 또는 Azure Functions 앱 구성
 
@@ -120,7 +120,7 @@ App Service 앱을 구성할 때 다음 정보가 필요합니다.
 1. **리디렉션 URI**에서 **퍼블릭 클라이언트(모바일 및 데스크톱)** 를 선택하고 URL로 `<app-url>/.auth/login/aad/callback`을 입력합니다. `https://contoso.azurewebsites.net/.auth/login/aad/callback`)을 입력합니다.
 
     > [!NOTE]
-    > Microsoft Store 애플리케이션의 경우 URI로 [패키지 SID](../app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library.md#package-sid)를 대신 사용합니다.
+    > Microsoft Store 애플리케이션의 경우 URI로 [패키지 SID](/previous-versions/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library#package-sid)를 대신 사용합니다.
 1. **만들기**를 선택합니다.
 1. 앱 등록을 만든 후에는 **애플리케이션(클라이언트) ID**의 값을 복사합니다.
 1. **API 사용 권한** > **사용 권한 추가** > **내 API**를 선택합니다.

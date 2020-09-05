@@ -2,26 +2,21 @@
 title: '자습서: ContractWorks와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 ContractWorks 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: e7b269d6-3c4e-4bc4-a55f-5071d1f52591
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/05/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d18676e0a8a4f366237a71784436580a8069e53
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3cf6c1c6848beec239af4152eca272c3bdea0047
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70743610"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88521028"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-contractworks"></a>자습서: ContractWorks와 Azure Active Directory SSO(Single Sign-On) 통합
 

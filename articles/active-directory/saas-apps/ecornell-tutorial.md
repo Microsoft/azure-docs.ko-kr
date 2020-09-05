@@ -2,26 +2,21 @@
 title: '자습서: eCornell과 Azure Active Directory SSO(Single Sign-On) 연결 | Microsoft Docs'
 description: Azure Active Directory와 eCornell 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: f88bc7ba-bf14-496b-9491-91965869eadf
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dd24d57ca78d2c9a41dc9ad29324726bc431e2f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 09f9cc507c88392fb8ee0bb7b89f87bd739edb21
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72599786"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88555453"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ecornell"></a>자습서: eCornell과 Azure Active Directory SSO(Single Sign-On) 연결
 

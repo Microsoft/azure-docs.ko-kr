@@ -4,14 +4,15 @@ description: Redis 용 Azure Cache를 사용 하 여 ASP.NET 페이지 출력을
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
+ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 04/22/2018
-ms.openlocfilehash: 9c8f91cee01273aa2ed1cbfe1812130b600a094a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cb986f1e0172c4a44381b2f9cf043025cb5abe8a
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84456745"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705030"
 ---
 # <a name="aspnet-output-cache-provider-for-azure-cache-for-redis"></a>Azure Cache for Redis에 대한 ASP.NET 출력 캐시 공급자
 
@@ -53,20 +54,20 @@ Microsoft Azure 포털의 캐시 블레이드에서 값으로 특성을 구성�
 
 | attribute | Type | 기본값 | Description |
 | --------- | ---- | ------- | ----------- |
-| *호스팅하기* | string | 호스트 | Redis 서버 IP 주소 또는 호스트 이름 |
+| *호스팅하기* | 문자열 | 호스트 | Redis 서버 IP 주소 또는 호스트 이름 |
 | *port* | 양의 정수 | 6379 (TLS/SSL 아님)<br/>6380 (TLS/SSL) | Redis 서버 포트 |
-| *accessKey* | string | "" | Redis 권한 부여를 사용 하는 경우 서버 암호를 Redis 합니다. 기본적으로이 값은 빈 문자열입니다. 즉, Redis 서버에 연결할 때 세션 상태 공급자가 암호를 사용 하지 않습니다. **Redis 서버가 Azure Redis Cache와 같은 공개적으로 액세스할 수 있는 네트워크에 있는 경우 보안을 향상 시키기 위해 Redis 권한 부여를 사용 하도록 설정 하 고 보안 암호를 제공 해야 합니다.** |
-| *ssl* | boolean | **false** | TLS를 통해 Redis 서버에 연결할지 여부를 지정 합니다. Redis는 기본적으로이 값은 **false** 입니다. **기본적으로 SSL을 지 원하는 Azure Redis Cache를 사용 하는 경우 보안을 강화 하려면이를 true로 설정 해야 합니다.**<br/><br/>TLS가 아닌 포트는 새 캐시에 대해 기본적으로 사용 하지 않도록 설정 됩니다. TLS 포트를 사용 하려면이 설정에 대해 **true** 를 지정 합니다. TLS 포트가 아닌 포트를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [캐시 구성](cache-configure.md) 항목에서 [액세스 포트](cache-configure.md#access-ports) 섹션을 참조 하세요. |
+| *accessKey* | 문자열 | "" | Redis 권한 부여를 사용 하는 경우 서버 암호를 Redis 합니다. 기본적으로이 값은 빈 문자열입니다. 즉, Redis 서버에 연결할 때 세션 상태 공급자가 암호를 사용 하지 않습니다. **Redis 서버가 Azure Redis Cache와 같은 공개적으로 액세스할 수 있는 네트워크에 있는 경우 보안을 향상 시키기 위해 Redis 권한 부여를 사용 하도록 설정 하 고 보안 암호를 제공 해야 합니다.** |
+| *ssl* | boolean | **false** | TLS를 통해 Redis 서버에 연결할지 여부를 지정 합니다. Redis는 기본적으로이 값은 **false** 입니다. **기본적으로 SSL을 지 원하는 Azure Redis Cache를 사용 하는 경우 보안을 강화 하려면이를 true로 설정 해야 합니다.**<br/><br/>TLS가 아닌 포트는 새 캐시에 대해 기본적으로 사용 하지 않도록 설정 됩니다. TLS가 아닌 포트를 사용 하려면이 설정에 대해 **true** 를 지정 합니다. TLS 포트가 아닌 포트를 사용 하도록 설정 하는 방법에 대 한 자세한 내용은 [캐시 구성](cache-configure.md) 항목에서 [액세스 포트](cache-configure.md#access-ports) 섹션을 참조 하세요. |
 | *databaseIdNumber* | 양의 정수 | 0 | *이 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>사용할 Redis 데이터베이스를 지정 합니다. |
 | *connectionTimeoutInMilliseconds* | 양의 정수 | StackExchange에서 제공 합니다. | Redis를 만들 때 *Connecttimeout* 을 설정 하는 데 사용 됩니다. |
 | *operationTimeoutInMilliseconds* | 양의 정수 | StackExchange에서 제공 합니다. | Redis를 만들 때 *Synctimeout* 을 설정 하는 데 사용 됩니다. |
-| *connectionString* (올바른 stackexchange 연결 문자열) | string | *해당 없음* | AppSettings 또는 web.config에 대 한 매개 변수 참조 또는 유효한 StackExchange 연결 문자열입니다. 이 특성은 *호스트*, *포트*, *AccessKey*, *ssl*및 기타 Redis 특성에 대 한 값을 제공할 수 있습니다. *Connectionstring*에 대해 자세히 살펴보려면 [특성 메모](#attribute-notes) 섹션에서 [connectionstring 설정](#setting-connectionstring) 을 참조 하세요. |
-| *settingsClassName*<br/>*settingsMethodName* | string<br/>string | *해당 없음* | *이러한 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>이러한 특성을 사용 하 여 연결 문자열을 제공 합니다. *Settingsclassname* 은 *settingsclassname*에 지정 된 메서드를 포함 하는 어셈블리의 정규화 된 클래스 이름 이어야 합니다.<br/><br/>*Settingsmethodname* 에 의해 지정 된 메서드는 **문자열**의 반환 형식과 함께 public, static 및 void (매개 변수를 사용 하지 않음) 여야 합니다. 이 메서드는 실제 연결 문자열을 반환 합니다. |
-| *loggingClassName*<br/>*loggingMethodName* | string<br/>string | *해당 없음* | *이러한 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>이러한 특성을 사용 하 여 Redis의 로그와 함께 세션 상태/출력 캐시의 로그를 제공 하 여 응용 프로그램을 디버그할 수 있습니다. *loggingClassName* 는 *loggingMethodName*에 의해 지정 된 메서드를 포함 하는 어셈블리의 정규화 된 클래스 이름 이어야 합니다.<br/><br/>*LoggingMethodName* 에 지정 된 메서드는 반환 형식이 **system.object**인 public, static 및 void (매개 변수를 사용 하지 않음) 여야 합니다. |
-| *applicationName* | string | 현재 프로세스의 모듈 이름 또는 "/" | *SessionStateProvider만*<br/>*이 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>Redis cache에서 사용할 앱 이름 접두사입니다. 고객은 다양 한 용도로 동일한 Redis cache를 사용할 수 있습니다. 세션 키가 충돌 하지 않도록 하기 위해 응용 프로그램 이름 앞에 접두사를 붙일 수 있습니다. |
+| *connectionString* (올바른 stackexchange 연결 문자열) | 문자열 | *해당 없음* | AppSettings 또는 web.config에 대 한 매개 변수 참조 또는 유효한 StackExchange 연결 문자열입니다. 이 특성은 *호스트*, *포트*, *AccessKey*, *ssl*및 기타 Redis 특성에 대 한 값을 제공할 수 있습니다. *Connectionstring*에 대해 자세히 살펴보려면 [특성 메모](#attribute-notes) 섹션에서 [connectionstring 설정](#setting-connectionstring) 을 참조 하세요. |
+| *settingsClassName*<br/>*settingsMethodName* | 문자열<br/>문자열 | *해당 없음* | *이러한 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>이러한 특성을 사용 하 여 연결 문자열을 제공 합니다. *Settingsclassname* 은 *settingsclassname*에 지정 된 메서드를 포함 하는 어셈블리의 정규화 된 클래스 이름 이어야 합니다.<br/><br/>*Settingsmethodname* 에 의해 지정 된 메서드는 **문자열**의 반환 형식과 함께 public, static 및 void (매개 변수를 사용 하지 않음) 여야 합니다. 이 메서드는 실제 연결 문자열을 반환 합니다. |
+| *loggingClassName*<br/>*loggingMethodName* | 문자열<br/>문자열 | *해당 없음* | *이러한 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>이러한 특성을 사용 하 여 Redis의 로그와 함께 세션 상태/출력 캐시의 로그를 제공 하 여 응용 프로그램을 디버그할 수 있습니다. *loggingClassName* 는 *loggingMethodName*에 의해 지정 된 메서드를 포함 하는 어셈블리의 정규화 된 클래스 이름 이어야 합니다.<br/><br/>*LoggingMethodName* 에 지정 된 메서드는 반환 형식이 **system.object**인 public, static 및 void (매개 변수를 사용 하지 않음) 여야 합니다. |
+| *applicationName* | 문자열 | 현재 프로세스의 모듈 이름 또는 "/" | *SessionStateProvider만*<br/>*이 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>Redis cache에서 사용할 앱 이름 접두사입니다. 고객은 다양 한 용도로 동일한 Redis cache를 사용할 수 있습니다. 세션 키가 충돌 하지 않도록 하기 위해 응용 프로그램 이름 앞에 접두사를 붙일 수 있습니다. |
 | *throwOnError* | boolean | true | *SessionStateProvider만*<br/>*이 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>오류가 발생할 때 예외를 throw 할지 여부입니다.<br/><br/>*ThrowOnError*에 대 한 자세한 내용은 [특성 메모](#attribute-notes) 섹션에서 [ *throwOnError* 에](#notes-on-throwonerror) 대 한 메모를 참조 하세요. |>*Redis*를 다시 작성 합니다. 단, |
 | *retryTimeoutInMilliseconds* | 양의 정수 | 5,000 | *SessionStateProvider만*<br/>*이 특성은 web.config 또는 AppSettings를 통해서만 지정할 수 있습니다.*<br/><br/>작업이 실패 하는 경우 다시 시도 하는 시간입니다. 이 값이 *Operationtimeoutinmilliseconds*보다 작은 경우 공급자는 다시 시도 하지 않습니다.<br/><br/>*RetryTimeoutInMilliseconds*에 대 한 자세한 내용은 [특성 메모](#attribute-notes) 섹션에서 [ *retryTimeoutInMilliseconds* 에](#notes-on-retrytimeoutinmilliseconds) 대 한 메모를 참조 하세요. |
-| *redisSerializerType* | string | *해당 없음* | Redis를 구현 하는 클래스의 정규화 된 어셈블리 형식 이름을 지정 합니다. 값을 serialize 및 deserialize 하는 사용자 지정 논리를 포함 하는 ISerializer 및입니다. 자세한 내용은 [특성 메모](#attribute-notes) 섹션의 [About *redisSerializerType* ](#about-redisserializertype) 를 참조 하세요. |
+| *redisSerializerType* | 문자열 | *해당 없음* | Redis를 구현 하는 클래스의 정규화 된 어셈블리 형식 이름을 지정 합니다. 값을 serialize 및 deserialize 하는 사용자 지정 논리를 포함 하는 ISerializer 및입니다. 자세한 내용은 [특성 메모](#attribute-notes) 섹션의 [About *redisSerializerType* ](#about-redisserializertype) 를 참조 하세요. |
 
 ## <a name="attribute-notes"></a>특성 메모
 

@@ -12,17 +12,17 @@ ms.date: 11/26/2019
 ms.author: ryanwi
 ms.reviewer: dkershaw, sureshja
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5d88c685f1e55bd361ac50662d9eaf931cba15c3
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: da99468b1582c4acab192ad3b96761172aa69580
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88115801"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068663"
 ---
 # <a name="azure-active-directory-graph-api"></a>Azure Active Directory Graph API
 
 > [!IMPORTANT]
-> Azure ad (Azure Active Directory) 리소스에 액세스 하려면 Azure AD Graph API 대신 [Microsoft Graph](https://developer.microsoft.com/graph) 를 사용 하는 것이 좋습니다. 이제 Microsoft는 Azure AD Graph API를 더 이상 개선하지 않을 것이며 Microsoft Graph에 주력하고 있습니다. Azure AD Graph API 적절 한 수의 시나리오는 매우 제한 되어 있습니다. 자세한 내용은 [Microsoft Graph 또는 AZURE Ad graph](https://developer.microsoft.com/office/blogs/microsoft-graph-or-azure-ad-graph/) 블로그 게시물 및 [MICROSOFT GRAPH에 azure Ad graph 앱 마이그레이션](/graph/migrate-azure-ad-graph-overview)을 참조 하세요.
+> Azure ad (Azure Active Directory) 리소스에 액세스 하려면 Azure AD Graph API 대신 [Microsoft Graph](https://developer.microsoft.com/graph) 를 사용 하는 것이 좋습니다. 이제 Microsoft는 Azure AD Graph API를 더 이상 개선하지 않을 것이며 Microsoft Graph에 주력하고 있습니다. Azure AD Graph API 적절 한 수의 시나리오는 매우 제한 되어 있습니다. 자세한 내용은 [Microsoft Graph 또는 AZURE Ad graph](https://developer.microsoft.com/office/blogs/microsoft-graph-or-azure-ad-graph/) 블로그 게시물 및 [MICROSOFT GRAPH에 azure Ad graph 앱 마이그레이션](/graph/migrate-azure-ad-graph-planning-checklist)을 참조 하세요.
 
 이 문서는 Azure AD Graph API에 적용됩니다. Microsoft Graph API와 관련된 유사한 정보는 [Microsoft Graph API 사용](/graph/use-the-api)을 참조하세요.
 

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 4c725fe74185088dea55b7506493fe667e71b7ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 300da87ecff13fc160ec08684cf1d032f9a19f71
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85806638"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88924489"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Azure Cognitive Search의 유사성 및 점수 매기기
 
@@ -21,11 +21,11 @@ ms.locfileid: "85806638"
 
 기본적으로 응답에 상위 50개 항목이 반환되지만 **$top** 매개 변수를 사용하여 반환되는 항목 수를 늘리거나 줄일 수 있으며(최대 1,000개 항목) **$skip** 매개 변수를 사용하여 다음 결과 세트를 가져올 수 있습니다.
 
-검색 점수는 쿼리와 데이터의 통계 속성에 따라 계산됩니다. Azure Cognitive Search에서는 검색 용어와 일치하는 문서를 찾은 다음([searchMode](https://docs.microsoft.com/rest/api/searchservice/search-documents#searchmodeany--all-optional)에 따라 일부 또는 전체), 검색 용어가 많이 포함된 문서에 높은 점수를 할당합니다. 해당 용어가 데이터 인덱스에는 거의 없지만 해당 문서 내에서는 자주 나오는 경우 검색 점수가 더 높아집니다. 이와 같은 관련성 계산 방식의 기준을 *TF-IDF*, 즉 용어 빈도와 문서 빈도 반비례라고 합니다.
+검색 점수는 쿼리와 데이터의 통계 속성에 따라 계산됩니다. Azure Cognitive Search에서는 검색 용어와 일치하는 문서를 찾은 다음([searchMode](/rest/api/searchservice/search-documents#searchmodeany--all-optional)에 따라 일부 또는 전체), 검색 용어가 많이 포함된 문서에 높은 점수를 할당합니다. 해당 용어가 데이터 인덱스에는 거의 없지만 해당 문서 내에서는 자주 나오는 경우 검색 점수가 더 높아집니다. 이와 같은 관련성 계산 방식의 기준을 *TF-IDF*, 즉 용어 빈도와 문서 빈도 반비례라고 합니다.
 
 전체 결과 집합에서 검색 점수 값이 반복될 수 있습니다. 여러 적중 항목의 검색 점수가 같은 경우 동일 점수의 항목 순서는 정의되지 않았으므로 항목이 안정적으로 정렬되지 않습니다. 쿼리를 다시 실행하면, 특히 무료 서비스를 사용하거나 여러 복제본이 청구 가능한 서비스를 사용하는 경우 항목 이동 위치가 표시될 수 있습니다. 즉, 두 항목의 점수가 같은 경우 어떤 항목이 먼저 표시되는지 보장되지 않습니다.
 
-반복 점수 간에 연결을 끊으려는 경우 **$orderby** 절을 먼저 점수를 기준으로 정렬한 다음, 정렬 가능한 다른 필드를 기준으로 정렬합니다(예: `$orderby=search.score() desc,Rating desc`). 자세한 내용은 [$orderby](https://docs.microsoft.com/azure/search/search-query-odata-orderby)를 참조하세요.
+반복 점수 간에 연결을 끊으려는 경우 **$orderby** 절을 먼저 점수를 기준으로 정렬한 다음, 정렬 가능한 다른 필드를 기준으로 정렬합니다(예: `$orderby=search.score() desc,Rating desc`). 자세한 내용은 [$orderby](./search-query-odata-orderby.md)를 참조하세요.
 
 > [!NOTE]
 > `@search.score = 1.00`은 점수가 매겨지지 않거나 순위가 지정되지 않은 결과 세트를 나타냅니다. 점수는 모든 결과에서 균일합니다. 쿼리 양식이 유사 항목 검색, 와일드카드 또는 regex 쿼리, **$filter** 식인 경우 점수가 없는 결과가 나타납니다. 
@@ -44,7 +44,7 @@ ms.locfileid: "85806638"
 
 기본적으로 문서 점수는 *분할된 데이터베이스 내* 데이터의 통계 속성에 따라 계산됩니다. 이 방법은 일반적으로 많은 양의 데이터 모음이 있을 때는 문제가 되지 않으며, 모든 분할된 데이터베이스의 정보를 기준으로 점수를 계산해야 하는 경우보다 더 나은 성능을 제공합니다. 즉, 이러한 성능 최적화를 사용하면 매우 유사한 두 개의 문서(또는 동일한 문서)가 서로 다른 분할된 데이터베이스에 속하게 될 때 서로 다른 관련성 점수를 갖게 될 수 있습니다.
 
-모든 분할된 데이터베이스의 통계 속성에 따라 점수를 계산하려면 [쿼리 매개 변수](https://docs.microsoft.com/rest/api/searchservice/search-documents)로 *scoringStatistics=global*을 추가하여(또는 [쿼리 요청](https://docs.microsoft.com/rest/api/searchservice/search-documents)의 본문 매개 변수로 *"scoringStatistics": "global"* 추가) 이렇게 할 수 있습니다.
+모든 분할된 데이터베이스의 통계 속성에 따라 점수를 계산하려면 [쿼리 매개 변수](/rest/api/searchservice/search-documents)로 *scoringStatistics=global*을 추가하여(또는 [쿼리 요청](/rest/api/searchservice/search-documents)의 본문 매개 변수로 *"scoringStatistics": "global"* 추가) 이렇게 할 수 있습니다.
 
 ```http
 GET https://[service name].search.windows.net/indexes/[index name]/docs?scoringStatistics=global&api-version=2020-06-30&search=[search term]
@@ -77,7 +77,7 @@ Azure Cognitive Search는 두 가지 유사성 순위 알고리즘인 *클래식
 
 ## <a name="featuresmode-parameter-preview"></a>featuresMode 매개 변수 (미리 보기)
 
-[문서 검색](https://docs.microsoft.com/rest/api/searchservice/preview-api/search-documents) 요청에는 필드 수준에서 관련성에 대 한 추가 세부 정보를 제공할 수 있는 새 [featuresMode](https://docs.microsoft.com/rest/api/searchservice/preview-api/search-documents#featuresmode) 매개 변수가 있습니다. 는 `@searchScore` 문서에 대해 모두 계산 되는 반면 (이 쿼리의 컨텍스트에서이 문서는 어떻게 관련이 있는지) featuresMode를 통해 구조에 표시 된 대로 개별 필드에 대 한 정보를 가져올 수 있습니다 `@search.features` . 구조에는 쿼리에서 사용 되는 모든 필드 (쿼리에서 **Searchfields** 를 통한 특정 필드 또는 인덱스에서 **검색 가능한** 것으로 특성이 지정 된 모든 필드)가 포함 됩니다. 각 필드에 대해 다음 값을 얻습니다.
+[문서 검색](/rest/api/searchservice/preview-api/search-documents) 요청에는 필드 수준에서 관련성에 대 한 추가 세부 정보를 제공할 수 있는 새 [featuresMode](/rest/api/searchservice/preview-api/search-documents#featuresmode) 매개 변수가 있습니다. 는 `@searchScore` 문서에 대해 모두 계산 되는 반면 (이 쿼리의 컨텍스트에서이 문서는 어떻게 관련이 있는지) featuresMode를 통해 구조에 표시 된 대로 개별 필드에 대 한 정보를 가져올 수 있습니다 `@search.features` . 구조에는 쿼리에서 사용 되는 모든 필드 (쿼리에서 **Searchfields** 를 통한 특정 필드 또는 인덱스에서 **검색 가능한** 것으로 특성이 지정 된 모든 필드)가 포함 됩니다. 각 필드에 대해 다음 값을 얻습니다.
 
 + 필드에 있는 고유한 토큰 수
 + 유사성 점수 또는 쿼리 용어에 상대적인 필드의 내용과 유사한 측정값
@@ -104,8 +104,9 @@ Azure Cognitive Search는 두 가지 유사성 순위 알고리즘인 *클래식
 
 [사용자 지정 점수 매기기 솔루션](https://github.com/Azure-Samples/search-ranking-tutorial) 에서 이러한 데이터 요소를 사용 하거나 정보를 사용 하 여 검색 관련성 문제를 디버그할 수 있습니다.
 
+
 ## <a name="see-also"></a>참고 항목
 
- [점수 매기기 프로필](index-add-scoring-profiles.md) [REST API 참조](https://docs.microsoft.com/rest/api/searchservice/)   
- [문서 검색 API](https://docs.microsoft.com/rest/api/searchservice/search-documents)   
- [Azure Cognitive Search .NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search?view=azure-dotnet)  
+ [점수 매기기 프로필](index-add-scoring-profiles.md) [REST API 참조](/rest/api/searchservice/)   
+ [문서 검색 API](/rest/api/searchservice/search-documents)   
+ [Azure Cognitive Search .NET SDK](/dotnet/api/overview/azure/search?view=azure-dotnet)

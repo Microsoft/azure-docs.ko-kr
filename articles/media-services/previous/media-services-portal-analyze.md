@@ -14,14 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 0e49e90209c7337081458b7c214d27b37d3b4da1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0bc8233110c02775e208470591c3e0c6eb619294
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74462624"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89260988"
 ---
-# <a name="analyze-your-media-using-the-azure-portal"></a>Azure Portal을 사용하여 미디어 분석 
+# <a name="analyze-your-media-using-the-azure-portal"></a>Azure Portal을 사용하여 미디어 분석
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!IMPORTANT]
 > 일부 미디어 프로세서의 사용 중지 [계획](media-services-analytics-overview.md#retirement-plans) 을 검토 합니다.
@@ -49,7 +51,7 @@ Azure Media Services Analytics는 조직과 기업이 비디오 파일에서 실
 
 ![비디오 분석](./media/media-services-portal-analyze/media-services-portal-analyze003.png)
 
-### <a name="language"></a>언어
+### <a name="language"></a>Language
 멀티미디어 파일에서 인식되는 자연 언어입니다. 예를 들어 영어 또는 스페인어입니다. 
 
 ### <a name="captions"></a>자막
@@ -131,7 +133,7 @@ Azure Media Services Analytics는 조직과 기업이 비디오 파일에서 실
 
 ![비디오 조정](./media/media-services-portal-analyze/media-services-portal-analyze-content-moderator.PNG)
 
-### <a name="version"></a>버전 
+### <a name="version"></a>Version 
 "2.0"을 사용합니다.
 
 ### <a name="mode"></a>Mode

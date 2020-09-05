@@ -4,10 +4,10 @@ description: 이 Azure Policy 패턴은 정책 정의의 다른 효과를 사용
 ms.date: 06/29/2020
 ms.topic: sample
 ms.openlocfilehash: 9c7e7689aa837a2dba0992112df3cd36ac9affe6
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
+ms.lasthandoff: 08/22/2020
 ms.locfileid: "85565738"
 ---
 # <a name="azure-policy-pattern-effects"></a>Azure Policy 패턴: 효과

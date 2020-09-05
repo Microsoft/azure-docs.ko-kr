@@ -1,23 +1,23 @@
 ---
 title: 기본값에서 blob 경로 변경
-description: Azure 함수를 설정하여 Blob 파일 경로의 이름을 변경하는 방법 알아보기
+description: Azure function을 설정 하 여 기본 blob 파일 경로의 이름을 바꾸고 blob을 다른 위치로 이동 하는 방법에 대해 알아봅니다.
 author: alkohli
 ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 92925fcf13f91364619262455579392a7457f6b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a7dab1129eb88d7e58bab8a827d745596bc218d
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85504834"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88183720"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>기본 경로에서 Blob 경로 변경
 
 StorSimple 데이터 관리자 서비스가 데이터를 변환하는 경우, 기본적으로 대상 리포지토리를 만드는 동안 지정된 대로, 변환된 Blob를 스토리지 컨테이너에 배치합니다. Blob이 이 위치에 도달하면 이러한 Blob을 다른 위치로 이동하려고 할 수 있습니다. 이 문서에서는 기본 Blob 파일 경로의 이름을 바꾸고 Blob을 다른 위치로 이동하도록 Azure 함수를 설정하는 방법을 설명합니다.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>전제 조건
 
 StorSimple 데이터 관리자 서비스에서 작업 정의를 올바르게 구성했는지 확인합니다.
 
@@ -25,7 +25,7 @@ StorSimple 데이터 관리자 서비스에서 작업 정의를 올바르게 구
 
 Azure 함수를 만들려면 다음 단계를 수행합니다.
 
-1. [Azure 포털](https://portal.azure.com/)로 이동합니다.
+1. [Azure Portal](https://portal.azure.com/)로 이동합니다.
 
 2. **+ 리소스 만들기**를 클릭합니다. **검색** 상자에 **함수 앱**을 입력하고 **Enter**를 누릅니다. 표시되는 앱 목록에서 **함수 앱**을 선택한 후 클릭합니다.
 

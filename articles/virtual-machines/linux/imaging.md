@@ -1,6 +1,6 @@
 ---
 title: Azure용 Linux 이미지 만들기 개요
-description: Linux VM 이미지를 가져오거나 Azure에서 사용할 새 이미지를 만드는 방법에 대한 개요입니다.
+description: Linux VM 이미지를 가져오거나 Azure에서 사용할 새 이미지를 만드는 방법입니다.
 author: danielsollondon
 ms.service: virtual-machines-linux
 ms.subservice: imaging
@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/22/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: aa372d4e1b377ecdcbeb49b47f0f9a3a217ee7ad
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 781cc10895f3a77afe71d508c1194b425010ec41
+ms.sourcegitcommit: 5ed504a9ddfbd69d4f2d256ec431e634eb38813e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502183"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89319545"
 ---
 # <a name="bringing-and-creating-linux-images-in-azure"></a>Azure에서 Linux 이미지 가져오기 및 만들기
 
@@ -25,7 +25,7 @@ ms.locfileid: "86502183"
 ## <a name="difference-between-managed-disks-and-images"></a>관리 디스크와 이미지의 차이점
 
 
-Azure를 통해 VHD를 플랫폼으로 가져오거나, [Managed Disk](../windows/faq-for-disks.md#managed-disks)로 사용하거나, 이미지의 원본으로 사용할 수 있습니다. 
+Azure를 통해 VHD를 플랫폼으로 가져오거나, [Managed Disk](../faq-for-disks.md#managed-disks)로 사용하거나, 이미지의 원본으로 사용할 수 있습니다. 
 
 Azure 관리 디스크는 단일 VHD입니다. 기존 VHD를 가져와서 관리 디스크를 만들거나 처음부터 빈 관리 디스크를 만들 수 있습니다. 디스크를 VM에 연결하여 관리 디스크에서 VM을 만들 수 있지만 VHD는 하나의 VM에서만 사용할 수 있습니다. OS 속성은 수정할 수 없습니다. Azure는 VM을 켜고 해당 디스크를 사용하여 시작하려고 합니다. 
 
@@ -46,7 +46,7 @@ Azure는 일반화 및 특수화의 두 가지 기본 이미지 유형을 제공
 
 ### <a name="generalized-images"></a>일반화된 이미지
 
-일반화된 이미지는 처음 부팅할 때 설치를 완료해야 하는 이미지입니다. 예를 들어 처음 부팅할 때 호스트 이름, 관리 사용자 및 기타 VM 특정 구성을 설정합니다. 이는 이미지를 여러 번 다시 사용하려는 경우와 만드는 중에 매개 변수를 전달하려는 경우에 유용합니다. Azure 에이전트가 일반화된 이미지에 포함되는 경우 에이전트에서 매개 변수를 처리하고 초기 구성이 완료되었다는 신호를 플랫폼에 다시 보냅니다. 이 프로세스를 **프로비저닝**이라고 합니다. 
+일반화된 이미지는 처음 부팅할 때 설치를 완료해야 하는 이미지입니다. 예를 들어 처음 부팅할 때 호스트 이름, 관리 사용자 및 기타 VM 특정 구성을 설정합니다. 이는 이미지를 여러 번 다시 사용하려는 경우와 만드는 중에 매개 변수를 전달하려는 경우에 유용합니다. Azure 에이전트가 일반화된 이미지에 포함되는 경우 에이전트에서 매개 변수를 처리하고 초기 구성이 완료되었다는 신호를 플랫폼에 다시 보냅니다. 이 프로세스를 [프로비저닝](https://docs.microsoft.com/azure/virtual-machines/linux/provisioning)이라고 합니다. 
 
 프로비저닝하려면 이미지에 구축 프로그램이 포함되어 있어야 합니다. 다음 두 가지 구축 프로그램이 있습니다.
 - [Azure Linux 에이전트](../extensions/agent-linux.md)

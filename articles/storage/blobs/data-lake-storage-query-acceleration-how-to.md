@@ -8,12 +8,13 @@ ms.topic: how-to
 ms.date: 04/21/2020
 ms.author: normesta
 ms.reviewer: jamsbak
-ms.openlocfilehash: cc9235f07c0829abfb8be42e83d05d8428bc1806
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 6de6661e5c970c7c3cbfc944b8539060b8844a36
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84465867"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89005227"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration-preview"></a>Azure Data Lake Storage 쿼리 가속 (미리 보기)을 사용 하 여 데이터 필터링
 
@@ -24,7 +25,7 @@ ms.locfileid: "84465867"
 > [!NOTE]
 > 쿼리 가속 기능은 공개 미리 보기로 제공 되며 캐나다 중부 및 프랑스 중부 지역에서 사용할 수 있습니다. 제한 사항을 검토 하려면 [알려진 문제](data-lake-storage-known-issues.md) 문서를 참조 하세요. 미리 보기에 등록 하려면 [이 양식을](https://aka.ms/adls/qa-preview-signup)참조 하세요.  
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
 
@@ -40,7 +41,7 @@ ms.locfileid: "84465867"
 
 - 범용 **v2** 저장소 계정입니다. [저장소 계정 만들기를](../common/storage-quickstart-create-account.md)참조 하세요.
 
-- [JDK (Java Development Kit)](/java/azure/jdk/?view=azure-java-stable) 버전 8 이상
+- [JDK(Java Development Kit)](/java/azure/jdk/?view=azure-java-stable), 버전 8 이상.
 
 - [Apache Maven](https://maven.apache.org/download.cgi). 
 

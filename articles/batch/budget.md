@@ -3,12 +3,12 @@ title: 비용 분석 및 예산
 description: Batch 워크로드를 실행하는 데 사용되는 기본 컴퓨팅 리소스 및 소프트웨어 라이선스의 비용 분석을 수행하고 예산을 설정하는 방법을 알아봅니다.
 ms.topic: how-to
 ms.date: 07/19/2019
-ms.openlocfilehash: 13c8cc508a4940b5e21570104527c40988879919
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 50ca1ecfd0a973ff39dabfcb62175ce820d0a0d6
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725774"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88654245"
 ---
 # <a name="cost-analysis-and-budgets-for-azure-batch"></a>Azure Batch의 비용 분석 및 예산
 
@@ -68,7 +68,7 @@ Azure Portal을 통해 Batch 풀 또는 Batch 계정에 대한 예산 및 지출
 
 ### <a name="virtual-machine-os-disk-type"></a>가상 머신 OS 디스크 유형
 
-여러 [VM OS 디스크 유형](../virtual-machines/windows/disks-types.md)이 있습니다. 대부분의 VM 시리즈는 프리미엄 및 표준 스토리지를 모두 지원하는 크기를 가집니다. 풀에 ‘s’ VM 크기가 선택되면 Batch가 프리미엄 SSD OS 디스크를 구성합니다. ‘non-s’ VM 크기가 선택되면 더 저렴한 표준 HDD 디스크 유형이 사용됩니다. 예를 들어 프리미엄 SSD OS 디스크는 `Standard_D2s_v3`에 사용되고 표준 HDD OS 디스크는 `Standard_D2_v3`에 사용됩니다.
+여러 [VM OS 디스크 유형](../virtual-machines/disks-types.md)이 있습니다. 대부분의 VM 시리즈는 프리미엄 및 표준 스토리지를 모두 지원하는 크기를 가집니다. 풀에 ‘s’ VM 크기가 선택되면 Batch가 프리미엄 SSD OS 디스크를 구성합니다. ‘non-s’ VM 크기가 선택되면 더 저렴한 표준 HDD 디스크 유형이 사용됩니다. 예를 들어 프리미엄 SSD OS 디스크는 `Standard_D2s_v3`에 사용되고 표준 HDD OS 디스크는 `Standard_D2_v3`에 사용됩니다.
 
 프리미엄 SSD OS 디스크는 비용이 더 많이 들지만 더 고성능이며, 프리미엄 디스크를 사용하는 VM은 표준 HDD OS 디스크를 사용하는 VM보다 약간 더 빠르게 시작할 수 있습니다. Batch를 사용하면 애플리케이션 및 태스크 파일이 VM 임시 SSD 디스크에 있기 때문에 OS 디스크가 자주 사용되지 않습니다. 따라서 대부분의 경우 ‘s’ VM 크기가 지정되면 프로비저닝되는 프리미엄 SSD에 늘어난 비용을 지불할 필요가 없습니다.
 

@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 08/03/2018
 ms.author: curtand
 ms.reviewer: jairoc
-ms.openlocfilehash: 6c93f34068cd296cb2d3a59f208fa644cdbf2260
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 17c0b7bd802d4a50343f88b9517313489943e10c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745729"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799488"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>조직의 네트워크에 회사 디바이스 가입
 잠재적으로 제한된 리소스에 액세스할 수 있도록 회사 소유의 Windows 10 디바이스를 조직의 네트워크에 가입합니다.
@@ -27,9 +27,9 @@ ms.locfileid: "83745729"
 
 - 개인 계정을 사용하여 리소스에 액세스할 수 있도록 Windows가 조직의 네트워크에 디바이스를 등록해 줍니다. 디바이스가 등록되면 Windows는 네트워크에 디바이스를 가입하므로 조직의 사용자 이름 및 암호를 사용하여 로그인하고 제한된 리소스에 액세스할 수 있습니다.
 
-- 조직의 선택에 따라, [Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md) 또는 [보안 정보](user-help-security-info-overview.md)를 통해 2단계 인증을 설정하도록 요구될 수 있습니다.
+- 조직의 선택에 따라, [Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md) 또는 [보안 정보](./security-info-setup-signin.md)를 통해 2단계 인증을 설정하도록 요구될 수 있습니다.
 
-- 조직의 선택에 따라, Microsoft Intune과 같은 모바일 디바이스 관리 기능에 자동으로 등록될 수도 있습니다. Microsoft Intune에 등록하는 방법에 대한 자세한 내용은 [Intune에서 디바이스 등록](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-all)을 참조하세요.
+- 조직의 선택에 따라, Microsoft Intune과 같은 모바일 디바이스 관리 기능에 자동으로 등록될 수도 있습니다. Microsoft Intune에 등록하는 방법에 대한 자세한 내용은 [Intune에서 디바이스 등록](/intune-user-help/enroll-your-device-in-intune-all)을 참조하세요.
 
 - 조직 계정을 사용한 자동 로그인 프로세스를 진행합니다.
 
@@ -61,7 +61,7 @@ ms.locfileid: "83745729"
 
     ![설정 화면의 계정](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. **회사 또는 학교 액세스**를 선택하고 ***\<your_organization>* Azure AD**에 연결됨과 같은 텍스트가 표시되는지 확인합니다.
+2. **회사 또는 학교 액세스**를 선택 하 고 ** *\<your_organization>* Azure AD에 연결 된**것과 같은 텍스트가 표시 되는지 확인 합니다.
 
     ![연결된 contoso 계정을 사용하여 회사 또는 학교 액세스 화면](./media/user-help-join-device-on-network/join-device-oobe-verify.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "83745729"
 
     ![설정 화면의 계정](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. **회사 또는 학교 액세스**를 선택하고 ***\<your_organization>* Azure AD**에 연결됨과 같은 텍스트가 표시되는지 확인합니다.
+2. **회사 또는 학교 액세스**를 선택 하 고 ** *\<your_organization>* Azure AD에 연결 된**것과 같은 텍스트가 표시 되는지 확인 합니다.
 
     ![연결된 contoso 계정을 사용하여 회사 또는 학교 액세스 화면](./media/user-help-join-device-on-network/join-device-setup-verify.png)
 
@@ -115,4 +115,4 @@ ms.locfileid: "83745729"
 
 - 조직이 휴대폰과 같은 개인 디바이스를 등록하도록 요구할 경우 [조직의 네트워크에 개인 디바이스 등록](user-help-register-device-on-network.md)을 참조하세요.
 
-- 조직이 Microsoft Intune을 사용하여 관리되고 있는데 등록, 로그인 또는 기타 Intune 관련 문제에 대한 질문이 있는 경우 [Intune 사용자 도움말 콘텐츠](https://docs.microsoft.com/intune-user-help/use-managed-devices-to-get-work-done)를 참조하세요.
+- 조직이 Microsoft Intune을 사용하여 관리되고 있는데 등록, 로그인 또는 기타 Intune 관련 문제에 대한 질문이 있는 경우 [Intune 사용자 도움말 콘텐츠](/intune-user-help/use-managed-devices-to-get-work-done)를 참조하세요.

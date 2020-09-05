@@ -5,13 +5,13 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/27/2020
-ms.openlocfilehash: ea5d975b73afcf03ad97bafd1c6f68f2b55263c2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/19/2020
+ms.openlocfilehash: 9390f8a2ab9372927b434ea94d7545c9ec540c58
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084724"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606263"
 ---
 # <a name="optimize-development-and-testing-cost-in-azure-cosmos-db"></a>Azure Cosmos DB에서 개발 및 테스트 비용 최적화
 
@@ -25,6 +25,9 @@ ms.locfileid: "87084724"
 
 Azure Cosmos DB 무료 계층을 사용 하면 쉽게 시작 하 고, 응용 프로그램을 개발 하 고 테스트 하거나, 소규모 프로덕션 워크 로드를 무료로 실행할 수 있습니다. 계정에서 무료 계층을 사용 하는 경우 계정에서 처음 400 r u/s 및 5gb의 저장소를 무료로 얻을 수 있습니다. 또한 데이터베이스 수준에서 400 o s/s를 공유 하는 25 개의 컨테이너를 사용 하 여 공유 처리량 데이터베이스를 만들 수 있습니다 .이는 무료 계층 (무료 계층 계정에서 5 개의 공유 처리량 데이터베이스 제한)을 포함 합니다. 무료 계층을 사용 하는 경우 최소 처리량이 400 r u/초 인 공유 데이터베이스를 프로 비전 하는 경우 해당 데이터베이스 내의 모든 컨테이너는 처리량을 공유할 수 있습니다. 공유 처리량을 포함 하는 모든 새 데이터베이스 또는 전용 처리량의 컨테이너는 정기적인 가격으로 청구 됩니다.
 
+> [!NOTE]
+> 무료 계층은 프로 비전 된 처리량 모드 에서만 사용할 수 있습니다.
+
 무료 계층은 계정 수명 동안 무기한으로 지속 되며 무제한 저장소 및 처리량 (r u/초), Sla, 고가용성, 턴키 전역 배포를 비롯 하 여 모든 Azure 지역에서 일반 Azure Cosmos DB 계정의 모든 [이점과 기능](introduction.md#key-benefits) 을 제공 합니다. Azure 구독 당 최대 1 개의 무료 계층 계정을 가질 수 있으며 계정을 만들 때 옵트인 해야 합니다. 시작 하려면 [무료 계층이 사용 하도록 설정 된 Azure Portal에서 새 계정을 만들거나](create-cosmosdb-resources-portal.md) [ARM 템플릿을](manage-sql-with-resource-manager.md#free-tier)사용 합니다. 자세한 내용은 [가격 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/)를 참조하세요.
 
 ## <a name="try-azure-cosmos-db-for-free"></a>무료로 Azure Cosmos DB 사용해 보기
@@ -34,6 +37,10 @@ Azure Cosmos DB 무료 계층을 사용 하면 쉽게 시작 하 고, 응용 프
 ## <a name="azure-free-account"></a>Azure 무료 체험 계정
 
 Azure Cosmos DB는 Azure 크레딧과 리소스를 일정 기간 동안 무료로 제공하는 [Azure 체험 계정](https://azure.microsoft.com/free)에 포함됩니다. Azure Cosmos DB와 관련해서 이 체험 계정은 1년 동안 5GB의 스토리지와 400RU의 프로비전된 처리량을 제공합니다. 이 환경을 통해 개발자는 비용 없이 Azure Cosmos DB의 기능을 쉽게 테스트하거나 다른 Azure 서비스와 통합할 수 있습니다. Azure 체험 계정과 함께 처음 30일 동안 사용할 수 있는 $200 크레딧을 받게 됩니다. 서비스 사용이 시작된 후에도 업그레이드를 선택하기 전에는 요금이 청구되지 않습니다. 시작하려면 [Azure 체험 계정](https://azure.microsoft.com/free) 페이지를 방문하세요.
+
+## <a name="azure-cosmos-db-serverless"></a>서버를 사용 하지 않는 Azure Cosmos DB
+
+[서버](serverless.md) 를 사용 하지 않는 Azure Cosmos DB 데이터베이스 작업에서 사용한 요청 단위 및 데이터에서 사용 하는 저장소에 대해서만 요금이 부과 되는 소비 기반 방식으로 Azure Cosmos 계정을 사용할 수 있습니다. 서버를 사용 하지 않는 모드로 Azure Cosmos DB를 사용 하는 경우에는 최소한의 요금이 부과 되지 않습니다. 프로 비전 된 용량의 개념을 제거 하기 때문에 대부분의 시간 동안 데이터베이스가 유휴 상태일 때 개발 또는 테스트 작업에 가장 적합 합니다.
 
 ## <a name="use-shared-throughput-databases"></a>공유 처리량 데이터베이스 사용
 
@@ -45,8 +52,8 @@ Azure Cosmos DB는 Azure 크레딧과 리소스를 일정 기간 동안 무료�
 
 다음 문서를 사용하여 에뮬레이터 또는 Azure Cosmos DB 체험 계정 사용을 시작할 수 있습니다.
 
-* [개발 및 테스트용으로 최적화](optimize-dev-test.md)에 대한 자세한 정보
 * [Azure Cosmos DB 요금 청구 이해](understand-your-bill.md)에 대한 자세한 정보
+* 서버를 사용 하지 않는 [Azure Cosmos DB](serverless.md) 에 대 한 자세한 정보
 * [처리량 비용 최적화](optimize-cost-throughput.md)에 대한 자세한 정보
 * [스토리지 비용 최적화](optimize-cost-storage.md)에 대한 자세한 정보
 * [읽기 및 쓰기 비용 최적화](optimize-cost-reads-writes.md)에 대한 자세한 정보

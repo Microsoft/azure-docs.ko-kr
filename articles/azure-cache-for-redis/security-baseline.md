@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: ea46a42fa8063aaf1d67c4f5ae0d2eef3a83fd5a
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 215d31ee4797dd3e7eef88d3a6679f2256f0ffae
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242709"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89225981"
 ---
 # <a name="azure-security-baseline-for-azure-cache-for-redis"></a>Azure Cache for Redis에 대 한 azure 보안 기준
 
@@ -158,7 +158,7 @@ Redis Cache에 보안 연결만 사용하도록 설정해야 합니다.
 
 DDoS Protection 표준을 사용하도록 설정해야 합니다.
 
-또한 Azure 청사진을 사용 하 여 단일 청사진 정의에서 Azure Resource Manager (ARM) 템플릿, RBAC (역할 기반 액세스 제어) 및 정책과 같은 주요 환경 아티팩트를 패키지화 하 여 대규모 Azure 배포를 간소화할 수 있습니다. Blueprint를 새로운 구독 및 환경에 쉽게 적용하고 버전 관리를 통해 제어 및 관리를 세부적으로 조정합니다.
+또한 Azure 청사진을 사용 하 여 단일 청사진 정의에서 Azure Resource Manager (ARM) 템플릿, Azure RBAC (역할 기반 액세스 제어) 및 정책과 같은 주요 환경 아티팩트를 패키지화 하 여 대규모 Azure 배포를 간소화할 수 있습니다. Blueprint를 새로운 구독 및 환경에 쉽게 적용하고 버전 관리를 통해 제어 및 관리를 세부적으로 조정합니다.
 
 Azure Policy를 구성 하 고 관리 하는 방법:
 
@@ -216,7 +216,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 **지침**: Azure 활동 로그 진단 설정을 사용하도록 설정하고 보관을 위해 로그를 Log Analytics 작업 영역, Azure 이벤트 허브 또는 Azure 스토리지 계정으로 보냅니다. 활동 로그는 제어 평면 수준에서 Redis 인스턴스에 대 한 Azure 캐시에서 수행 된 작업에 대 한 통찰력을 제공 합니다. Azure 활동 로그 데이터를 사용 하 여 Redis 인스턴스에 대 한 Azure 캐시에 대 한 제어 평면 수준에서 수행 되는 모든 쓰기 작업 (PUT, POST, DELETE)에 대해 "무엇을, 누가, 언제"를 결정할 수 있습니다.
 
-Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -228,7 +228,7 @@ Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 �
 
 진단 설정을 사용 하 여 메트릭을 사용할 수 있지만, 데이터 평면의 감사 로깅은 Redis 용 Azure Cache에서 아직 사용할 수 없습니다.
 
-Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -262,9 +262,9 @@ https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#chan
 
 데이터 평면의 감사 로깅은 Redis 용 Azure Cache에서 아직 사용할 수 없습니다.
 
-Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
+Azure 활동 로그에 대 한 진단 설정을 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings-legacy
 
-Azure Monitor의 Log Analytics 작업 영역에서 Azure 활동 로그를 수집 하 고 분석 하는 방법:https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-collect
+Azure Monitor의 Log Analytics 작업 영역에서 Azure 활동 로그를 수집 하 고 분석 하는 방법: https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-collect
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -276,7 +276,7 @@ Azure Monitor의 Log Analytics 작업 영역에서 Azure 활동 로그를 수집
 
 진단 설정을 사용 하 여 메트릭을 사용할 수 있지만, 데이터 평면의 감사 로깅은 Redis 용 Azure Cache에서 아직 사용할 수 없습니다.
 
-Redis에 대 한 Azure 캐시에 대 한 경고를 구성 하는 방법:https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-monitor#alerts
+Redis에 대 한 Azure 캐시에 대 한 경고를 구성 하는 방법: https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-monitor#alerts
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -314,9 +314,9 @@ Redis에 대 한 Azure 캐시에 대 한 경고를 구성 하는 방법:https://
 
 **지침**: AD (Azure Active Directory)에는 명시적으로 할당 되어야 하며 쿼리할 수 있는 기본 제공 역할이 있습니다. Azure AD PowerShell 모듈을 사용 하 여 임시 쿼리를 수행 하 여 관리 그룹의 구성원 인 계정을 검색 합니다.
 
-PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할을 가져오는 방법:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
+PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할을 가져오는 방법: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
 
-PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할의 멤버를 가져오는 방법:https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
+PowerShell을 사용 하 여 Azure AD에서 디렉터리 역할의 멤버를 가져오는 방법: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
 
 **Azure Security Center 모니터링**: 예
 
@@ -330,7 +330,7 @@ Redis 용 Azure 캐시에 대 한 데이터 평면 액세스는 액세스 키를
 
 응용 프로그램에 기본 암호를 빌드하는 것은 권장 되지 않습니다. 대신 Azure Key Vault에 암호를 저장 한 다음 Azure Active Directory를 사용 하 여 검색할 수 있습니다.
 
-Redis 액세스 키에 대 한 Azure 캐시를 다시 생성 하는 방법:https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#settings
+Redis 액세스 키에 대 한 Azure 캐시를 다시 생성 하는 방법: https://docs.microsoft.com/azure/azure-cache-for-redis/cache-configure#settings
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -348,9 +348,9 @@ Redis 액세스 키에 대 한 Azure 캐시를 다시 생성 하는 방법:https
 
 - 소유자 권한이 있는 외부 계정은 구독에서 제거해야 합니다.
 
-Azure Security Center를 사용 하 여 id 및 액세스를 모니터링 하는 방법 (미리 보기):https://docs.microsoft.com/azure/security-center/security-center-identity-access
+Azure Security Center를 사용 하 여 id 및 액세스를 모니터링 하는 방법 (미리 보기): https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
-Azure Policy 사용 방법:https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Azure Policy 사용 방법: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 
 **Azure Security Center 모니터링**: 예
@@ -361,7 +361,7 @@ Azure Policy 사용 방법:https://docs.microsoft.com/azure/governance/policy/tu
 
 **지침**: Azure Cache for Redis는 액세스 키를 사용 하 여 사용자를 인증 하 고 데이터 평면 수준에서 SINGLE SIGN-ON (SSO)를 지원 하지 않습니다. Redis 용 Azure Cache의 제어 평면에 대 한 액세스는 REST API를 통해 제공 되며 SSO를 지원 합니다. 인증을 위해 요청에 대한 권한 부여 헤더를 Azure Active Directory에서 가져오는 JSON Web Token으로 설정합니다.
 
-Redis REST API에 대 한 Azure 캐시 이해:https://docs.microsoft.com/rest/api/redis/
+Redis REST API에 대 한 Azure 캐시 이해: https://docs.microsoft.com/rest/api/redis/
 
 Azure AD를 사용한 SSO 이해: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
 
@@ -396,7 +396,7 @@ https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getst
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3.7: 관리 계정의 의심스러운 활동에 대한 로그 및 경고
 
@@ -437,7 +437,7 @@ Azure AD 인증을 사용 하 여 Azure Cache for Redis의 데이터 평면에 �
 
 **지침**: AD (Azure Active Directory)는 오래 된 계정을 검색 하는 데 도움이 되는 로그를 제공 합니다. 또한 Azure Id 액세스 검토를 사용 하 여 그룹 멤버 자격, 엔터프라이즈 응용 프로그램에 대 한 액세스 및 역할 할당을 효율적으로 관리할 수 있습니다. 사용자의 액세스를 정기적으로 검토하여 적합한 사용자만 계속 액세스할 수 있도록 합니다. 
 
-Azure AD 보고 이해:https://docs.microsoft.com/azure/active-directory/reports-monitoring/
+Azure AD 보고 이해: https://docs.microsoft.com/azure/active-directory/reports-monitoring/
 
 Azure ID 액세스 검토를 사용하는 방법: https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
@@ -453,7 +453,7 @@ Azure AD 사용자 계정에 대 한 진단 설정을 만들고 감사 로그 �
 
 Azure 활동 로그를 Azure Monitor에 통합하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 
-How to board Azure 센티널:https://docs.microsoft.com/azure/sentinel/quickstart-onboard
+How to board Azure 센티널: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 
@@ -465,7 +465,7 @@ How to board Azure 센티널:https://docs.microsoft.com/azure/sentinel/quickstar
 
 Azure AD 위험한 로그인을 확인하는 방법: https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins
 
-Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법:https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
+Id 보호 위험 정책을 구성 하 고 사용 하도록 설정 하는 방법: https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies
 
 Azure Sentinel을 온보딩하는 방법: https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
@@ -555,7 +555,7 @@ https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-vnet
 
 **Azure Security Center 모니터링**: 예
 
-**책임:** 공유됨
+**책임**: 공유됨
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5: 활성 검색 도구를 사용하여 중요한 데이터 식별
 
@@ -571,9 +571,9 @@ Azure의 고객 데이터 보호 이해: https://docs.microsoft.com/azure/securi
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: AAD (AZURE ACTIVE DIRECTORY) RBAC (역할 기반 액세스 제어)를 사용 하 여 Redis 제어 평면에 대 한 Azure Cache (Azure Portal)에 대 한 액세스를 제어 합니다. 
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 Redis 제어 평면에 대 한 azure Cache (예: Azure Portal)에 대 한 액세스를 제어 합니다. 
 
-Azure에서 RBAC를 구성하는 방법: 
+Azure RBAC를 구성 하는 방법:
 
 https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
 
@@ -587,7 +587,7 @@ https://docs.microsoft.com/azure/role-based-access-control/role-assignments-port
 
 Microsoft는 Azure Cache for Redis에 대 한 기본 인프라를 관리 하 고 고객 데이터의 손실 또는 노출을 방지 하기 위해 엄격한 컨트롤을 구현 했습니다.
 
-Azure의 고객 데이터 보호 이해:
+Azure의 고객 데이터 보호 이해: 
 
 https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
@@ -603,11 +603,11 @@ Azure Cache for Redis 기능 "Redis Data 지 속성"을 사용 하는 경우 사
 
 Azure Storage의 데이터는 256 비트 AES 암호화를 사용 하 여 투명 하 게 암호화 되 고 해독 되며, 사용 가능한 가장 강력한 블록 암호화 중 하나 이며 FIPS 140-2 규격입니다. Azure Storage 암호화를 사용 하지 않도록 설정할 수 없습니다. Microsoft에서 관리 하는 키를 사용 하 여 저장소 계정의 암호화를 사용 하거나 사용자 고유의 키로 암호화를 관리할 수 있습니다.
 
-Redis에 대 한 Azure 캐시에서 지 속성을 구성 하는 방법:https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-persistence
+Redis에 대 한 Azure 캐시에서 지 속성을 구성 하는 방법: https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-premium-persistence
 
-Azure Storage 계정에 대 한 암호화 이해:https://docs.microsoft.com/azure/storage/common/storage-service-encryption
+Azure Storage 계정에 대 한 암호화 이해: https://docs.microsoft.com/azure/storage/common/storage-service-encryption
 
-Azure 고객 데이터 보호 이해:https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
+Azure 고객 데이터 보호 이해: https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -635,7 +635,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
 Microsoft는 Redis 용 Azure Cache를 지 원하는 기본 시스템에서 취약성 관리를 수행 합니다.
 
-Azure Security Center 권장 사항 이해:https://docs.microsoft.com/azure/security-center/recommendations-reference
+Azure Security Center 권장 사항 이해: https://docs.microsoft.com/azure/security-center/recommendations-reference
 
 **Azure Security Center 모니터링**: 예
 
@@ -781,7 +781,7 @@ https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 ### <a name="69-use-only-approved-azure-services"></a>6.9: 승인된 Azure 서비스만 사용
 
-**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용한 고객 구독에 만들 수 있는 리소스 종류에 대한 제한을 설정할 수 있습니다.
+**지침**: Azure Policy에서 다음 기본 제공 정책 정의를 사용하여 고객 구독에서 만들 수 있는 리소스 종류를 제한합니다.
 
 허용되지 않는 리소스 종류
 
@@ -797,7 +797,7 @@ https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-
 
 **Azure Security Center 모니터링**: 해당 없음
 
-**책임:** Customer
+**책임**: Customer
 
 ### <a name="610-implement-approved-application-list"></a>6.10: 승인된 애플리케이션 목록 구현
 
@@ -821,7 +821,7 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 ### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12: 사용자가 컴퓨팅 리소스 내에서 스크립트를 실행하는 기능 제한
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -895,7 +895,7 @@ Azure Repos 설명서: https://docs.microsoft.com/azure/devops/repos/index?view=
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7.6: 사용자 지정 운영 체제 이미지를 안전하게 저장
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -913,7 +913,7 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 ### <a name="78-deploy-system-configuration-management-tools-for-operating-systems"></a>7.8: 운영 체제용 시스템 구성 관리 도구 배포
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -931,7 +931,7 @@ Azure Policy를 구성하고 관리하는 방법: https://docs.microsoft.com/azu
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10: 운영 체제에 대한 자동화된 구성 모니터링 구현
 
-**지침**: 해당 없음. 이 권장 사항은 컴퓨팅 리소스를 위한 것입니다.
+**지침**: 해당 없음. 이 추천 사항은 컴퓨팅 리소스를 위한 것입니다.
 
 **Azure Security Center 모니터링**: 해당 없음
 
@@ -1087,7 +1087,7 @@ https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyva
 
 **지침**: Redis Export 및 Redis 지 속성에서 Redis 백업용 Azure Cache는 선택한 Azure Storage 계정 내에 저장 됩니다. Azure Storage의 데이터는 256 비트 AES 암호화를 사용 하 여 투명 하 게 암호화 되 고 해독 되며, 사용 가능한 가장 강력한 블록 암호화 중 하나 이며 FIPS 140-2 규격입니다. Azure Storage 암호화를 사용 하지 않도록 설정할 수 없습니다. Microsoft에서 관리 하는 키를 사용 하 여 저장소 계정의 암호화를 사용 하거나 사용자 고유의 키로 암호화를 관리할 수 있습니다.
 
-Azure Storage 계정에 대 한 암호화 이해:https://docs.microsoft.com/azure/storage/common/storage-service-encryption
+Azure Storage 계정에 대 한 암호화 이해: https://docs.microsoft.com/azure/storage/common/storage-service-encryption
 
 **Azure Security Center 모니터링**: 예
 

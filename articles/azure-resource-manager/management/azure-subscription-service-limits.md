@@ -4,12 +4,12 @@ description: 일반적인 Azure 구독 및 서비스 제한, 할당량 및 제�
 ms.topic: conceptual
 author: davidsmatlak
 ms.date: 06/04/2020
-ms.openlocfilehash: 79aaa594a708fe775a2cdcc6e15b7c7f880f9f50
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 86c9958818b5439502ab37471ed7a51fb3f21bf9
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810482"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88854056"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Azure 구독 및 서비스 제한, 할당량 및 제약 조건
 
@@ -276,6 +276,10 @@ Media Services v2 (레거시)에 한정 되는 한도 [Media Services v2 (레거
 
 [!INCLUDE [expressroute-limits](../../../includes/expressroute-limits.md)]
 
+### <a name="virtual-network-gateway-limits"></a>Virtual Network 게이트웨이 제한
+
+[!INCLUDE [virtual-wan-limits](../../../includes/azure-virtual-network-gateway-limits.md)]
+
 ### <a name="virtual-wan-limits"></a>가상 WAN 제한
 
 [!INCLUDE [virtual-wan-limits](../../../includes/virtual-wan-limits.md)]
@@ -423,7 +427,7 @@ Shared Image Gallery를 사용하여 리소스를 배포할 때 구독당 제한
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 * [Azure 제한 및 향상 이해](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Azure의 가상 컴퓨터 및 클라우드 서비스 크기](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

@@ -7,12 +7,12 @@ ms.date: 7/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 0cde9caa2f2b68b1e75eac635a81865cc4b6b33c
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 571f0e0ceff0adfbf1814abc627fcab6b23acbe1
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87351870"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905859"
 ---
 # <a name="tutorial-connect-a-sample-iot-plug-and-play-preview-multiple-component-device-application-to-iot-hub-python"></a>자습서: 샘플 IoT 플러그 앤 플레이 미리 보기 여러 구성 요소 디바이스 애플리케이션을 IoT Hub(Python)에 연결
 
@@ -86,26 +86,26 @@ git clone https://github.com/Azure/azure-iot-sdk-python
 
 1. 도우미 메서드에 대한 액세스 권한을 얻기 위해 `pnp_helper_preview_refresh.py`를 가져옵니다.
 
-1. DTDL 모델에 정의된 두 개의 서로 다른 인터페이스를 고유하게 나타내는 DTMI(디지털 쌍 모델 식별자) 두 개를 정의합니다. 실제 온도 컨트롤러의 구성 요소는 이러한 두 인터페이스를 구현해야 합니다. 이러한 두 인터페이스는 중앙 리포지토리에 이미 게시되어 있습니다. 이러한 DTMI는 사용자에게 알려져야 하며 디바이스 구현 시나리오에 따라 달라집니다. 현재 샘플의 경우 두 인터페이스가 다음을 나타냅니다.
+2. DTDL 모델에 정의된 두 개의 서로 다른 인터페이스를 고유하게 나타내는 DTMI(디지털 쌍 모델 식별자) 두 개를 정의합니다. 실제 온도 컨트롤러의 구성 요소는 이러한 두 인터페이스를 구현해야 합니다. 이러한 두 인터페이스는 중앙 리포지토리에 이미 게시되어 있습니다. 이러한 DTMI는 사용자에게 알려져야 하며 디바이스 구현 시나리오에 따라 달라집니다. 현재 샘플의 경우 두 인터페이스가 다음을 나타냅니다.
 
   - 자동 온도 조절기
   - Azure에서 개발한 디바이스 정보입니다.
 
-. 구현되는 디바이스의 DTMI `model_id`를 정의합니다. DTMI는 사용자 정의되며 DTDL 모델 파일의 DTMI와 일치해야 합니다.
+3. 구현되는 디바이스의 DTMI `model_id`를 정의합니다. DTMI는 사용자 정의되며 DTDL 모델 파일의 DTMI와 일치해야 합니다.
 
-1. DTDL 파일의 구성 요소에 지정된 이름을 정의합니다. DTDL에는 두 개의 자동 온도 조절기와 하나의 디바이스 정보 구성 요소가 있습니다. 또한 `serial_number`라는 상수가 루트 인터페이스에 정의됩니다. 디바이스의 `serial_number`를 변경할 수 없습니다.
+4. DTDL 파일의 구성 요소에 지정된 이름을 정의합니다. DTDL에는 두 개의 자동 온도 조절기와 하나의 디바이스 정보 구성 요소가 있습니다. 또한 `serial_number`라는 상수가 루트 인터페이스에 정의됩니다. 디바이스의 `serial_number`를 변경할 수 없습니다.
 
-1. 명령 처리기 구현을 정의합니다. 디바이스가 명령 요청을 수신할 때 수행하는 작업을 정의합니다.
+5. 명령 처리기 구현을 정의합니다. 디바이스가 명령 요청을 수신할 때 수행하는 작업을 정의합니다.
 
-1. 명령 응답을 만드는 함수를 정의합니다. 디바이스가 명령 요청에 응답하는 방법을 정의합니다. 명령에서 사용자 지정 응답을 다시 IoT 허브로 보내야 하는 경우 명령 응답 함수를 만듭니다. 명령에 대한 응답 함수를 제공하지 않으면 일반 응답이 전송됩니다. 이 샘플에서는 **getMaxMinReport** 명령에만 사용자 지정 응답이 있습니다.
+6. 명령 응답을 만드는 함수를 정의합니다. 디바이스가 명령 요청에 응답하는 방법을 정의합니다. 명령에서 사용자 지정 응답을 다시 IoT 허브로 보내야 하는 경우 명령 응답 함수를 만듭니다. 명령에 대한 응답 함수를 제공하지 않으면 일반 응답이 전송됩니다. 이 샘플에서는 **getMaxMinReport** 명령에만 사용자 지정 응답이 있습니다.
 
-1. 이 디바이스의 원격 분석 데이터를 전송하는 함수를 정의합니다. 자동 온도 조절기와 루트 인터페이스 둘 다 원격 분석 데이터를 전송합니다. 이 함수는 선택적 구성 요소 이름 매개 변수를 가져와서 원격 분석 데이터를 보낸 구성 요소를 식별할 수 있도록 합니다.
+7. 이 디바이스의 원격 분석 데이터를 전송하는 함수를 정의합니다. 자동 온도 조절기와 루트 인터페이스 둘 다 원격 분석 데이터를 전송합니다. 이 함수는 선택적 구성 요소 이름 매개 변수를 가져와서 원격 분석 데이터를 보낸 구성 요소를 식별할 수 있도록 합니다.
 
-1. 명령 요청의 수신기를 정의합니다.
+8. 명령 요청의 수신기를 정의합니다.
 
-1. desired 속성 업데이트에 대한 수신기를 정의합니다.
+9. desired 속성 업데이트에 대한 수신기를 정의합니다.
 
-1. 다음과 같은 `main` 함수를 갖고 있습니다.
+10. 다음과 같은 `main` 함수를 갖고 있습니다.
 
     1. 디바이스 SDK를 사용하여 디바이스 클라이언트를 만들고 IoT 허브에 연결합니다. 디바이스에서 `model_id`를 보냅니다. 그러면 IoT 허브가 디바이스를 IoT 플러그 앤 플레이 디바이스로 식별할 수 있습니다.
 
@@ -140,7 +140,7 @@ python pnp_temp_controller_with_thermostats.py
 
 ## <a name="use-azure-iot-explorer-to-validate-the-code"></a>Azure IoT 탐색기를 사용하여 코드의 유효성을 검사합니다.
 
-디바이스 클라이언트 샘플이 시작되면 Azure IoT 탐색기 도구를 사용하여 작동하는지 확인합니다.
+디바이스 클라이언트 샘플이 시작된 후 Azure IoT 탐색기 도구를 사용하여 작동하는지 확인합니다.
 
 [!INCLUDE [iot-pnp-iot-explorer.md](../../includes/iot-pnp-iot-explorer.md)]
 

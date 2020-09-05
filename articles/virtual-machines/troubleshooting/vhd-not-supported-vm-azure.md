@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure
 ms.date: 06/29/2020
 ms.author: genli
-ms.openlocfilehash: a843a42de6fc1e6cd8ef788552ab4a8ac17b4e25
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 23f31e8d36d6ba615b21a4043c7d39716fc6d89a
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86999057"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653497"
 ---
 # <a name="vhd-is-not-supported-when-you-create-a-virtual-machine-in-azure"></a>Azure에서 가상 머신을 만들 때 VHD는 지원 되지 않습니다.
 
@@ -62,7 +62,6 @@ Azure VM을 만들기 위한 VHD를 만들고 업로드 하는 방법에 대 한
 
 문제가 계속 되 면 VHD가 손상 된 것일 수 있습니다. 이 경우 VHD를 처음부터 다시 작성 하는 것이 좋습니다.
 
-자세한 내용은 다음 문서를 참조하세요.
+자세한 내용은 다음 아티클을 참조하세요.
 
-- [Windows VHD 정보](../windows/managed-disks-overview.md)
-- [Linux VHD 정보](../linux/managed-disks-overview.md)
+- [VHD 정보](../managed-disks-overview.md)

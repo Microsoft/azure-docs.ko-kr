@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 6ba0be3a6fba35e413270dd6770f5d3f47586b5e
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 28b6a70297efb8d8237f085e1f5b08dbb6a09072
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873331"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88522609"
 ---
 # <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>규정 준수 대시보드의 표준 세트 사용자 지정
 
@@ -73,6 +73,8 @@ NIST SP 800-53 R4, SWIFT CSP CSCF-v2020, 영국 공식 및 영국 NHS, 캐나다
     - **캐나다 PBMM**
     
     ![Azure Security Center의 규정 준수 대시보드에 규정 패키지 추가](./media/update-regulatory-compliance-packages/dynamic-regulatory-compliance-additional-standards.png)
+
+1. **추가** 를 선택 하 고 범위, 매개 변수, 수정 등의 특정 이니셔티브에 필요한 모든 세부 정보를 입력 합니다.
 
 1. Security Center의 사이드바에서 **규정 준수**를 다시 선택하여 규정 준수 대시보드로 돌아갑니다.
     * 새 표준이 업계 및 규정 표준 목록에 표시됩니다. 

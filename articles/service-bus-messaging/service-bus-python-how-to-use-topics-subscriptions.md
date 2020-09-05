@@ -7,13 +7,13 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: spelluru
-ms.custom: tracking-python
-ms.openlocfilehash: 4c490d252fa1153324df62a6119ae6bdc548c331
-ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
+ms.custom: devx-track-python
+ms.openlocfilehash: f6d1b25cb502b8cb208ba5b59c91667e03c77778
+ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85341030"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88064386"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-python"></a>빠른 시작: Python에서 Service Bus 토픽 및 구독 사용
 
@@ -176,7 +176,7 @@ bus_service.delete_topic('mytopic')
 bus_service.delete_subscription('mytopic', 'HighMessages')
 ```
 
-기본적으로 토픽 및 구독은 영구적이며 사용자가 삭제할 때까지 존재합니다. 구독이 특정 기간이 경과한 후 자동으로 삭제되도록 하려면 구독에서 [auto_delete_on_idle](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python) 매개 변수를 설정하면 됩니다. 
+기본적으로 토픽 및 구독은 영구적이며 사용자가 삭제할 때까지 존재합니다. 구독이 특정 기간이 경과한 후 자동으로 삭제되도록 하려면 구독에서 [auto_delete_on_idle](/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python) 매개 변수를 설정하면 됩니다. 
 
 > [!TIP]
 > [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/)로 Service Bus 리소스를 관리할 수 있습니다. Service Bus Explorer를 사용하면 Service Bus 네임스페이스에 연결하여 손쉽게 메시징 엔터티를 관리할 수 있습니다. 이 도구를 통해 가져오기/내보내기 기능 또는 토픽, 큐, 구독, 릴레이 서비스, Notification Hubs 및 Event Hubs를 테스트하는 기능과 같은 고급 기능을 사용할 수 있습니다. 
@@ -192,4 +192,4 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 [Azure Python package]: https://pypi.python.org/pypi/azure
 [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
 [SqlFilter.SqlExpression]: service-bus-messaging-sql-filter.md
-[Service Bus quotas]: service-bus-quotas.md 
+[Service Bus quotas]: service-bus-quotas.md

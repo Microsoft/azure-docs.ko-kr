@@ -9,12 +9,12 @@ tags: Lucene query analyzer syntax
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c344d7bd7007dfbea366ea597ec622e35bf1e2eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9d3f8208af9d5997f5a9e025a54b54b5b035fb85
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85561770"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934976"
 ---
 # <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-cognitive-search"></a>"Full" Lucene 검색 구문 사용 (Azure Cognitive Search의 고급 쿼리)
 
@@ -147,7 +147,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
 
 이 경우 필드에서 두 개의 고유 위치를 검색 하는 경우 처럼 두 문자열을 단일 엔터티로 평가 하려면 여러 문자열을 따옴표로 묶어야 합니다 `state` . 또한, NOT과 AND와 같이 연산자는 대문자로 표시해야 합니다.
 
-**FieldName: searchExpression** 에 지정 된 필드는 검색 가능한 필드 여야 합니다. 인덱스 특성을 필드 정의에서 사용 하는 방법에 대 한 자세한 내용은 [인덱스 만들기 (Azure Cognitive Search REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) 를 참조 하세요.
+**FieldName: searchExpression** 에 지정 된 필드는 검색 가능한 필드 여야 합니다. 인덱스 특성을 필드 정의에서 사용 하는 방법에 대 한 자세한 내용은 [인덱스 만들기 (Azure Cognitive Search REST API)](/rest/api/searchservice/create-index) 를 참조 하세요.
 
 > [!NOTE]
 > 위의 예에서는 `searchFields` 쿼리의 각 부분에 명시적으로 지정 된 필드 이름이 있으므로 매개 변수를 사용할 필요가 없습니다. 그러나 `searchFields` 일부 부분의 범위가 특정 필드로 지정 되 고 나머지는 여러 필드에 적용 될 수 있는 쿼리를 실행 하려는 경우에도 매개 변수를 사용할 수 있습니다. 예를 들어 쿼리는 `search=business_title:(senior NOT junior) AND external&searchFields=posting_type` `senior NOT junior` 필드에만 일치 하지만 `business_title` 필드와 "external"을 일치 시킵니다 `posting_type` . **FieldName: searchExpression** 에 제공 된 필드 이름이 항상 매개 변수 보다 우선 합니다. 즉, `searchFields` 이 예제에서는 매개 변수에를 포함할 필요가 없습니다 `business_title` `searchFields` .
@@ -256,7 +256,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
   ![Regex 쿼리](media/search-query-lucene-examples/regex.png)
 
 > [!Note]
-> 정규식 쿼리는 [분석](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis)되지 않습니다. 불완전한 쿼리 용어에서는 소문자 변환만 수행됩니다.
+> 정규식 쿼리는 [분석](./search-lucene-query-architecture.md#stage-2-lexical-analysis)되지 않습니다. 불완전한 쿼리 용어에서는 소문자 변환만 수행됩니다.
 >
 
 ## <a name="example-7-wildcard-search"></a>예제 7: 와일드카드 검색
@@ -278,18 +278,18 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2020-
   ![와일드카드 쿼리](media/search-query-lucene-examples/wildcard.png)
 
 > [!Note]
-> 와일드카드 쿼리는 [분석](https://docs.microsoft.com/azure/search/search-lucene-query-architecture#stage-2-lexical-analysis)되지 않습니다. 불완전한 쿼리 용어에서는 소문자 변환만 수행됩니다.
+> 와일드카드 쿼리는 [분석](./search-lucene-query-architecture.md#stage-2-lexical-analysis)되지 않습니다. 불완전한 쿼리 용어에서는 소문자 변환만 수행됩니다.
 >
 
 ## <a name="next-steps"></a>다음 단계
 코드에서 Lucene 쿼리 파서를 지정해 보십시오. 다음 링크에서는 .NET와 REST API 모두에 대한 검색 쿼리를 설정하는 방법에 대해 설명합니다. 링크는 기본 단순 구문을 사용하므로 **queryType**을 지정하려면 이 문서에서 배운 내용을 적용해야 합니다.
 
-* [.NET SDK를 사용 하 여 인덱스 쿼리](search-query-dotnet.md)
-* [REST API를 사용 하 여 인덱스 쿼리](search-create-index-rest-api.md)
+* [.NET SDK를 사용 하 여 인덱스 쿼리](./search-get-started-dotnet.md)
+* [REST API를 사용 하 여 인덱스 쿼리](./search-get-started-powershell.md)
 
 추가 구문 참조, 쿼리 아키텍처 및 예제는 다음 링크에서 찾을 수 있습니다.
 
 + [단순 구문 쿼리 예제](search-query-simple-examples.md)
 + [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)
-+ [단순 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [전체 Lucene 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [단순 쿼리 구문](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [전체 Lucene 쿼리 구문](/rest/api/searchservice/lucene-query-syntax-in-azure-search)

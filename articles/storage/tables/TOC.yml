@@ -47,13 +47,16 @@
       href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: 보안
       items:
-        - name: 보안 기준
-          href: ../common/security-baseline.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
         - name: Azure Storage 미사용 데이터 암호화
           href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
           items:
             - name: Azure Key Vault를 사용하는 고객 관리형 키
               href: ../common/encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ../common/security-controls-policy.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: 보안 기준
+          href: ../common/security-baseline.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: 데이터 중복
       href: ../common/storage-redundancy.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: 재해 복구 및 장애 조치(Failover)
@@ -155,6 +158,18 @@
       items:
         - name: 대기 시간 문제
           href: ../common/troubleshoot-latency-storage-analytics-logs.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+- name: 리소스
+  items:
+    - name: Azure 업데이트
+      href: 'https://azure.microsoft.com/updates/?product=storage'
+    - name: Microsoft Q&A의 Azure Storage
+      href: 'https://docs.microsoft.com/answers/topics/azure-table-storage.html'
+    - name: Stack Overflow의 Azure Storage
+      href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
+    - name: Table Storage 가격 책정
+      href: 'https://azure.microsoft.com/en-us/pricing/details/storage/tables/'
+    - name: Azure 요금 계산기
+      href: 'https://azure.microsoft.com/pricing/calculator/'
 - name: 참조
   items:
     - name: 확장성 및 성능 대상

@@ -2,25 +2,21 @@
 title: '자습서: Kantega SSO for Bitbucket과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 Kantega SSO for Bitbucket 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: c41cdaaf-0441-493c-94c7-569615b7b1ab
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: b04b44c907e3210f3cc3975b36639f4fe275eef9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 36d843e80f024408747c1f94512a3ccc04c6709b
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67099204"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546914"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bitbucket"></a>자습서: Kantega SSO for Bitbucket과 Azure Active Directory 통합
 

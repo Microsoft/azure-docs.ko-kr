@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: a642aa9735c4360c11d50cf475e5de63259c55df
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-azurecli, references_regions
+ms.openlocfilehash: 236134887728ebc3dd4d03fa4c9d9d450b39eac2
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87495712"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88930675"
 ---
 # <a name="create-an-azure-file-share"></a>Azure 파일 공유 만들기
 Azure 파일 공유를 만들려면이를 사용 하는 방법에 대 한 세 가지 질문에 답변해 야 합니다.
@@ -32,7 +32,7 @@ Azure 파일 공유를 만들려면이를 사용 하는 방법에 대 한 세 �
 
 이러한 세 가지 옵션에 대 한 자세한 내용은 [Azure Files 배포 계획](storage-files-planning.md)을 참조 하세요.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 - 이 문서에서는 독자들이 이미 Azure 구독을 만들었다고 가정합니다. Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 - Azure PowerShell을 사용하려면 [최신 버전을 설치](https://docs.microsoft.com/powershell/azure/install-az-ps)하세요.
 - Azure CLI를 사용하려면 [최신 버전을 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)하세요.
@@ -81,7 +81,7 @@ FileStorage 저장소 계정을 만들려면 **성능** 라디오 단추가 *프
 
 고급 탭에서 사용할 수 있는 다른 설정 (blob 일시 삭제, Azure Data Lake 저장소의 계층 구조 네임 스페이스 및 blob 저장소에 대 한 NFSv3)은 Azure Files에 적용 되지 않습니다.
 
-#### <a name="tags"></a>태그들
+#### <a name="tags"></a>태그
 태그는 동일한 태그를 여러 개의 리소스 및 리소스 그룹에 적용하여 리소스를 범주화하고 통합된 청구를 볼 수 있는 이름/값 쌍입니다. 이러한 항목은 선택 사항이 며 저장소 계정을 만든 후에 적용할 수 있습니다.
 
 #### <a name="review--create"></a>검토 + 만들기
@@ -229,6 +229,67 @@ az storage share create \
 
 > [!Note]  
 > 파일 공유의 이름은 모두 소문자여야 합니다. 파일 공유 및 파일 이름 지정에 대 한 자세한 내용은 [공유, 디렉터리, 파일 및 메타 데이터 이름 지정 및](https://msdn.microsoft.com/library/azure/dn167011.aspx)참조를 참조 하세요.
+
+### <a name="create-a-hot-or-cool-file-share"></a>핫 또는 쿨 파일 공유 만들기
+**범용 v2 (GPv2) 저장소 계정의** 파일 공유에는 트랜잭션 최적화, 핫 또는 쿨 파일 공유 (또는 혼합)가 포함 될 수 있습니다. 트랜잭션 최적화 공유는 모든 Azure 지역에서 사용할 수 있지만 핫 및 쿨 파일 공유는 [지역 하위 집합](storage-files-planning.md#storage-tiers)에서만 사용할 수 있습니다. Azure PowerShell preview 모듈이 나 Azure CLI를 사용 하 여 핫 또는 쿨 파일 공유를 만들 수 있습니다. 
+
+# <a name="portal"></a>[포털](#tab/azure-portal)
+Azure Portal는 아직 핫 및 쿨 파일 공유 만들기를 지원 하지 않으며 기존 트랜잭션 최적화 파일 공유를 핫 또는 쿨로 이동 하는 것을 지원 하지 않습니다. PowerShell 또는 Azure CLI를 사용 하 여 파일 공유를 만드는 방법에 대 한 지침을 확인 하세요.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+```PowerShell
+# Update the Azure storage module to use the preview version. You may need to close and 
+# reopen PowerShell before running this command. If you are running PowerShell 5.1, ensure 
+# the following:
+# - Run the below cmdlets as an administrator.
+# - Have PowerShellGet 2.2.3 or later. Uncomment the following line to check.
+# Get-Module -ListAvailable -Name PowerShellGet
+Remove-Module -Name Az.Storage -ErrorAction SilentlyContinue
+Uninstall-Module -Name Az.Storage
+Install-Module -Name Az.Storage -RequiredVersion "2.1.1-preview" -AllowClobber -AllowPrerelease 
+
+# Assuming $resourceGroupName and $storageAccountName from earlier in this document have already
+# been populated. The access tier parameter may be TransactionOptimized, Hot, or Cool for GPv2 
+# storage accounts. Standard tiers are only available in standard storage accounts. 
+$shareName = "myhotshare"
+
+New-AzRmStorageShare `
+    -ResourceGroupName $resourceGroupName `
+    -StorageAccountName $storageAccountName `
+    -Name $shareName `
+    -AccessTier Hot
+
+# You can also change an existing share's tier.
+Update-AzRmStorageShare `
+    -ResourceGroupName $resourceGroupName `
+    -StorageAccountName $storageAccountName `
+    -Name $shareName `
+    -AccessTier Cool
+```
+
+> [!Note]  
+> PowerShell을 통해 계층을 설정 하 고 변경 하는 기능은 미리 보기 Az. Storage PowerShell 모듈에서 제공 됩니다. 이러한 cmdlet 또는 해당 출력은 일반적으로 사용 가능한 Az. Storage PowerShell 모듈에서 해제 되기 전에 변경 될 수 있으므로이를 염두에 두면 스크립트를 만듭니다.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+파일 공유를 만들거나 특정 계층으로 이동 하는 기능은 최신 Azure CLI 업데이트에서 사용할 수 있습니다. Azure CLI 업데이트는를 사용 하는 운영 체제/Linux 배포에만 적용 됩니다. 시스템에서 Azure CLI를 업데이트 하는 방법에 대 한 지침은 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli)를 참조 하세요.
+
+```bash
+# Assuming $resourceGroupName and $storageAccountName from earlier in this document have already
+# been populated. The access tier parameter may be TransactionOptimized, Hot, or Cool for GPv2
+# storage accounts. Standard tiers are only available in standard storage accounts.
+shareName="myhotshare"
+
+az storage share-rm create \
+    --resource-group $resourceGroupName \
+    --storage-account $storageAccountName \
+    --name $shareName \
+    --access-tier "Hot"
+```
+
+> [!Note]  
+> 매개 변수를 사용 하 여 계층을 설정 하는 기능에는 `--access-tier` 최신 Azure CLI 패키지의 미리 보기가 제공 됩니다. 이 명령 또는 해당 출력은 일반 공급으로 표시 되기 전에 변경 될 수 있으므로이를 염두에 두면 스크립트를 만듭니다.
+
+---
 
 ## <a name="next-steps"></a>다음 단계
 - [Azure File Sync 배포에 대](storage-sync-files-planning.md)한 Azure Files 또는 계획 [의 배포를 계획](storage-files-planning.md) 합니다. 

@@ -3,18 +3,18 @@ title: Azure Backup에 대 한 일시 삭제
 description: Azure Backup의 보안 기능을 사용 하 여 백업을 더 안전 하 게 만드는 방법에 대해 알아봅니다.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: 79df345858d89d032b826a0fa8b677195a785df2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 76928b98bdb21ffa79fce8435bfe4dda92e0c72d
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538839"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179966"
 ---
 # <a name="soft-delete-for-azure-backup"></a>Azure Backup에 대 한 일시 삭제
 
 맬웨어, 랜섬웨어 및 침입과 같은 보안 문제에 대한 우려는 증가하고 있습니다. 이러한 보안 문제는 돈과 데이터 측면 모두에서 비용이 많이 들 수 있습니다. 이러한 공격 으로부터 보호 하기 위해 Azure Backup는 삭제 후에도 백업 데이터를 보호 하는 데 도움이 되는 보안 기능을 제공 합니다.
 
-이러한 기능 중 하나는 일시 삭제입니다. 일시 삭제를 사용 하는 경우 악의적인 행위자가 백업을 삭제 하는 경우 (또는 백업 데이터가 실수로 삭제 된 경우에도), 백업 데이터는 14 일 동안 보존 되므로 데이터 손실 없이 해당 백업 항목을 복구할 수 있습니다. "일시 삭제" 상태의 백업 데이터에 대 한 추가 14 일 보존은 고객에 게 비용을 부과 하지 않습니다.
+이러한 기능 중 하나는 일시 삭제입니다. 일시 삭제를 사용 하는 경우 악의적인 행위자가 백업을 삭제 하는 경우 (또는 백업 데이터가 실수로 삭제 된 경우에도), 백업 데이터는 14 일 동안 보존 되므로 데이터 손실 없이 해당 백업 항목을 복구할 수 있습니다. "일시 삭제" 상태의 백업 데이터에 대 한 14 일의 추가 보존 기간은 사용자에 게 아무런 비용이 들지 않습니다.
 
 다음 서비스에 대해 일시 삭제 보호를 사용할 수 있습니다.
 
@@ -44,9 +44,9 @@ ms.locfileid: "86538839"
 ### <a name="disabling-soft-delete-using-azure-powershell"></a>Azure PowerShell를 사용 하 여 일시 삭제 사용 안 함
 
 > [!IMPORTANT]
-> Azure PS를 사용 하 여 일시 삭제를 사용 하는 데 필요한 Az Service 버전은 min 2.2.0입니다. ```Install-Module -Name Az.RecoveryServices -Force```를 사용 하 여 최신 버전을 가져옵니다.
+> Azure PowerShell를 사용 하 여 일시 삭제를 사용 하는 데 필요한 Az Services 버전은 최소 2.2.0입니다. ```Install-Module -Name Az.RecoveryServices -Force```를 사용 하 여 최신 버전을 가져옵니다.
 
-사용 하지 않도록 설정 하려면 [AzRecoveryServicesVaultBackupProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) PS cmdlet을 사용 합니다.
+사용 하지 않도록 설정 하려면 [AzRecoveryServicesVaultBackupProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) PowerShell cmdlet을 사용 합니다.
 
 ```powershell
 Set-AzRecoveryServicesVaultProperty -VaultId $myVaultID -SoftDeleteFeatureState Disable
@@ -69,7 +69,7 @@ REST API를 사용 하 여 일시 삭제 기능을 사용 하지 않도록 설�
 
 ### <a name="using-azure-portal"></a>Azure Portal 사용
 
-다음 단계를 수행하세요.
+다음 단계를 수행합니다.
 
 1. [일시 삭제를 사용 하지 않도록 설정](#enabling-and-disabling-soft-delete)하는 단계를 수행 합니다.
 
@@ -97,7 +97,7 @@ REST API를 사용 하 여 일시 삭제 기능을 사용 하지 않도록 설�
 
 ### <a name="using-azure-powershell"></a>Azure PowerShell 사용
 
-일시 삭제를 사용 하지 않도록 설정 하기 전에 항목이 삭제 된 경우 일시 삭제 된 상태가 됩니다. 삭제 작업을 즉시 삭제 하려면 삭제 작업을 취소 한 후 다시 수행 해야 합니다.
+일시 삭제를 사용 하지 않도록 설정 하기 전에 항목이 삭제 된 경우 일시 삭제 된 상태에 있게 됩니다. 삭제 작업을 즉시 삭제 하려면 삭제 작업을 취소 한 후 다시 수행 해야 합니다.
 
 일시 삭제 된 상태에 있는 항목을 식별 합니다.
 
@@ -134,9 +134,9 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 ### <a name="using-rest-api"></a>REST API 사용
 
-일시 삭제를 사용 하지 않도록 설정 하기 전에 항목이 삭제 된 경우 일시 삭제 된 상태가 됩니다. 삭제 작업을 즉시 삭제 하려면 삭제 작업을 취소 한 후 다시 수행 해야 합니다.
+일시 삭제를 사용 하지 않도록 설정 하기 전에 항목이 삭제 된 경우 일시 삭제 된 상태에 있게 됩니다. 삭제 작업을 즉시 삭제 하려면 삭제 작업을 취소 한 후 다시 수행 해야 합니다.
 
-1. 먼저 [여기](backup-azure-arm-userestapi-backupazurevms.md#undo-the-stop-protection-and-delete-data)에 설명 된 단계를 사용 하 여 삭제 작업을 실행 취소 합니다.
+1. 먼저 [여기](backup-azure-arm-userestapi-backupazurevms.md#undo-the-deletion)에 설명 된 단계를 사용 하 여 삭제 작업을 실행 취소 합니다.
 2. 그런 다음 [여기](use-restapi-update-vault-properties.md#update-soft-delete-state-using-rest-api)에 설명 된 단계를 사용 하 여 REST API를 사용 하는 일시 삭제 기능을 비활성화 합니다.
 3. 그런 다음 [여기](backup-azure-arm-userestapi-backupazurevms.md#stop-protection-and-delete-data)에 설명 된 대로 REST API를 사용 하 여 백업을 삭제 합니다.
 
@@ -144,7 +144,7 @@ AppVM1           DeleteBackupData     Completed            12/5/2019 12:44:15 PM
 
 ### <a name="do-i-need-to-enable-the-soft-delete-feature-on-every-vault"></a>모든 자격 증명 모음에서 일시 삭제 기능을 사용 하도록 설정 해야 하나요?
 
-아니요. 기본적으로 모든 recovery services 자격 증명 모음에 대해 기본 제공 되 고 사용 하도록 설정 됩니다.
+아니요. 기본적으로 모든 Recovery Services 자격 증명 모음에 대해 기본적으로 사용 하도록 설정 되 고 사용 하도록 설정 됩니다.
 
 ### <a name="can-i-configure-the-number-of-days-for-which-my-data-will-be-retained-in-soft-deleted-state-after-the-delete-operation-is-complete"></a>삭제 작업이 완료 된 후 내 데이터가 일시 삭제 된 상태로 유지 되는 일 수를 구성할 수 있나요?
 

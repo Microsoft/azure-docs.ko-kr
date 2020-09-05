@@ -8,16 +8,16 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: a6902d1420090b81c933f07f7e929aa86c052404
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 56e3c1e48df51cd24d70517ee23d47ef27d378d7
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009242"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935333"
 ---
 # <a name="ocr-cognitive-skill"></a>OCR 인식 기술
 
-**OCR (광학 문자 인식)** 기술은 이미지 파일에서 인쇄 된 텍스트 및 필기 텍스트를 인식 합니다. 이 기술은 Cognitive Services에서 [Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) API [v 3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) 이 제공 하는 기계 학습 모델을 사용 합니다. **OCR** 기술은 다음 기능에 해당됩니다.
+**OCR (광학 문자 인식)** 기술은 이미지 파일에서 인쇄 된 텍스트 및 필기 텍스트를 인식 합니다. 이 기술은 Cognitive Services에서 [Computer Vision](../cognitive-services/computer-vision/home.md) API [v 3.0](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/5d986960601faab4bf452005) 이 제공 하는 기계 학습 모델을 사용 합니다. **OCR** 기술은 다음 기능에 해당됩니다.
 
 + 영어, 스페인어, 독일어, 프랑스어, 이탈리아어, 포르투갈어 및 네덜란드어의 경우 새로운 ["읽기"](../cognitive-services/computer-vision/concept-recognizing-text.md#read-api) API가 사용 됩니다.
 + 다른 모든 언어의 경우에는 ["OCR"](../cognitive-services/computer-vision/concept-recognizing-text.md#ocr-api) API가 사용 됩니다.
@@ -51,13 +51,13 @@ ms.locfileid: "88009242"
 
 ## <a name="skill-inputs"></a>기술 입력
 
-| 입력 이름      | 설명                                          |
+| 입력 이름      | Description                                          |
 |---------------|------------------------------------------------------|
 | `image`         | 복합 형식입니다. ```imageAction```이 ```none``` 이외의 값으로 설정된 경우 현재 Azure Blob 인덱서에서 생성된 “/document/normalized_images” 필드에만 작동합니다. 자세한 내용은 [샘플](#sample-output)을 참조하세요.|
 
 
 ## <a name="skill-outputs"></a>기술 출력
-| 출력 이름     | 설명                   |
+| 출력 이름     | Description                   |
 |---------------|-------------------------------|
 | `text`            | 이미지에서 추출된 일반 텍스트입니다.   |
 | `layoutText`    | 추출된 텍스트와 텍스트를 찾을 수 있는 위치를 설명하는 복합 유형입니다.|
@@ -212,4 +212,4 @@ ms.locfileid: "88009242"
 + [기본 제공 기술](cognitive-search-predefined-skills.md)
 + [TextMerger 기술](cognitive-search-skill-textmerger.md)
 + [기술 집합을 정의하는 방법](cognitive-search-defining-skillset.md)
-+ [인덱서 만들기(REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [인덱서 만들기(REST)](/rest/api/searchservice/create-indexer)

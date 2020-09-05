@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: marhamil
 ms.custom: devx-track-python
-ms.openlocfilehash: b29fa17c21b2cdb2e764c905af3819142d8c341e
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 4f6fa73130e3e78b573a866dbb6524acbc88c50c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87844068"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691465"
 ---
 # <a name="recipe-predictive-maintenance-with-the-cognitive-services-for-big-data"></a>레 레 레 레 레 레 레 레 레 레 레 레 레 레 레 레 레 레 Cognitive Services 피가
 
@@ -30,7 +30,7 @@ ms.locfileid: "87844068"
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-* Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/)
+* Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/cognitive-services)
 * [Spark 풀](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool) 로 구성 된 [Azure Synapse 작업 영역](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)
 
 ## <a name="setup"></a>설치 프로그램
@@ -151,4 +151,4 @@ plt.show()
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure Cognitive Services, Azure Synapse Analytics 및 Azure CosmosDB를 사용 하 여 대규모 예측 유지 관리를 수행 하는 방법에 대해 알아봅니다. 자세한 내용은 [GitHub](https://github.com/Azure-Samples/cosmosdb-synapse-link-samples/tree/master/IoT)에서 전체 샘플을 참조 하세요.
+Azure Cognitive Services, Azure Synapse Analytics 및 Azure CosmosDB를 사용 하 여 대규모 예측 유지 관리를 수행 하는 방법에 대해 알아봅니다. 자세한 내용은 [GitHub](https://github.com/Azure-Samples/cosmosdb-synapse-link-samples)에서 전체 샘플을 참조 하세요.

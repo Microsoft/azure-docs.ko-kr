@@ -10,7 +10,7 @@ ms.author: daveba
 ms.custom: include file
 ms.openlocfilehash: 90dd4bc31c131c6a42592f7514a0f535dcdb67e7
 ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "67182370"

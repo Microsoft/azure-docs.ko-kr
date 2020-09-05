@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/18/2019
 ms.author: jennile
 ms.custom: seodec18
-ms.openlocfilehash: df8f68e47776f46ae2d1331f85bd76d6cfe17b80
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d58341979b0bbe0699a5ca293b20394c43cde1d1
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81869939"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962811"
 ---
 # <a name="azure-app-service-diagnostics-overview"></a>Azure App Service 진단 개요
 
@@ -20,7 +20,7 @@ ms.locfileid: "81869939"
 
 최근 24 시간 이내에 앱에 문제가 있는 경우에는이 환경이 가장 유용 하지만 모든 진단 그래프가 항상 분석에 사용할 수 있습니다.
 
-App Service 진단은 Windows의 앱 뿐만 아니라 [Linux/컨테이너](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro), [App Service 환경](https://docs.microsoft.com/azure/app-service/environment/intro) 및 [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview)의 앱에도 작용합니다.
+App Service 진단은 Windows의 앱 뿐만 아니라 [Linux/컨테이너](./overview.md#app-service-on-linux), [App Service 환경](./environment/intro.md) 및 [Azure Functions](../azure-functions/functions-overview.md)의 앱에도 작용합니다.
 
 ## <a name="open-app-service-diagnostics"></a>App Service 진단 열기
 
@@ -71,7 +71,7 @@ App Service 진단 홈페이지에서 각 홈페이지 타일의 키워드를 �
 
 ### <a name="investigate-application-code-issues-only-for-windows-app"></a>응용 프로그램 코드 문제 조사 (Windows 앱에만 해당)
 
-많은 앱 문제가 애플리케이션 코드의 문제와 관련되어 있으므로 App Service 진단은 [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)와 통합되어 예외 및 종속성 문제를 강조 표시하고, 선택된 작동 중단 시간과의 상관 관계를 표시합니다. Application Insights은 별도로 사용 하도록 설정 해야 합니다.
+많은 앱 문제가 애플리케이션 코드의 문제와 관련되어 있으므로 App Service 진단은 [Application Insights](../azure-monitor/app/app-insights-overview.md)와 통합되어 예외 및 종속성 문제를 강조 표시하고, 선택된 작동 중단 시간과의 상관 관계를 표시합니다. Application Insights은 별도로 사용 하도록 설정 해야 합니다.
 
 ![Application Insights](./media/app-service-diagnostics/application-insights-7.png)
 

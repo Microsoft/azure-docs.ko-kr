@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/14/2018
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 18054e47a987a7e79e9083b6f7a2f20b059c7f28
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 470324799cd157c8b33311e1cae8b5b698433e1f
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81254617"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88079912"
 ---
 # <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>자습서: Azure App Service 웹앱에 Azure CDN 추가
 
@@ -49,7 +49,7 @@ ms.locfileid: "81254617"
 
 ## <a name="create-the-web-app"></a>웹앱 만들기
 
-사용할 웹앱을 만들려면 **앱 찾아보기** 단계를 통해 [정적 HTML 빠른 시작](../app-service/app-service-web-get-started-html.md)을 수행합니다.
+사용할 웹앱을 만들려면 **앱 찾아보기** 단계를 통해 [정적 HTML 빠른 시작](../app-service/quickstart-html.md)을 수행합니다.
 
 ## <a name="log-in-to-the-azure-portal"></a>Azure Portal에 로그인
 
@@ -60,7 +60,7 @@ DSA(동적 사이트 가속)에 대한 CDN 엔드포인트를 최적화하려는
 
 ## <a name="create-a-cdn-profile-and-endpoint"></a>CDN 프로필 및 엔드포인트 만들기
 
-왼쪽 탐색 영역에서 **App Services**를 선택한 다음 [정적 HTML 빠른 시작](../app-service/app-service-web-get-started-html.md)에서 만든 앱을 선택합니다.
+왼쪽 탐색 영역에서 **App Services**를 선택한 다음 [정적 HTML 빠른 시작](../app-service/quickstart-html.md)에서 만든 앱을 선택합니다.
 
 ![포털에서 App Service 앱 선택](media/cdn-add-to-web-app/portal-select-app-services.png)
 

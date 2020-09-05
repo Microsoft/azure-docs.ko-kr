@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 04/23/2020
 ms.author: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 5507e6f97211f209eb559ff7491f22bdf1a00e54
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.openlocfilehash: 888118d227529110c209d7c8d5a3bb79cfcf3a9a
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079674"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88959794"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Azure App Service에서 앱 모니터링
 [Azure App Service](https://go.microsoft.com/fwlink/?LinkId=529714) 은 [Azure Portal](https://portal.azure.com)에서 웹 앱, 모바일 및 API 앱에 대 한 기본 제공 모니터링 기능을 제공 합니다.
@@ -31,7 +31,7 @@ App Service를 호스트로 사용하는 앱에는 사용 가능한 리소스에
 
 무료 또는 공유 앱의 할당량은 다음과 같습니다.
 
-| 할당량 | Description |
+| 할당량 | 설명 |
 | --- | --- |
 | **CPU(짧음)** | 5분 간격으로 이 앱에 허용되는 CPU의 양입니다. 이 할당량은 5분마다 재설정됩니다. |
 | **CPU(일)** | 하루에 이 앱에 허용되는 총 CPU 양입니다. 이 할당량은 자정 UTC에 24시간마다 재설정됩니다. |
@@ -72,7 +72,7 @@ App Service 계획을 업그레이드하여 앱에서 할당량을 늘리거나 
 
 앱에 사용 가능한 메트릭은 다음과 같습니다.
 
-| 메트릭 | Description |
+| 메트릭 | 설명 |
 | --- | --- |
 | **응답 시간** | 앱에서 요청을 처리 하는 데 걸린 시간 (초)입니다. |
 | **평균 응답 시간 (사용 되지 않음)** | 앱에서 요청을 처리 하는 데 걸린 평균 시간 (초)입니다. |
@@ -116,7 +116,7 @@ App Service 계획에 대해 사용 가능한 메트릭은 다음과 같습니�
 > App Service 계획 메트릭은 *기본*, *표준* 및 *프리미엄* 계층의 계획에만 사용할 수 있습니다.
 > 
 
-| 메트릭 | Description |
+| 메트릭 | 설명 |
 | --- | --- |
 | **CPU 비율** | 계획의 모든 인스턴스 간에 사용된 평균 CPU입니다. |
 | **메모리 비율** | 계획의 모든 인스턴스 간에 사용된 평균 메모리입니다. |
@@ -152,14 +152,14 @@ CPU 사용량을 반영하는 두 가지 메트릭이 있습니다.
 
 이러한 차트 중 하나를 클릭 하면 사용자 지정 차트를 만들고 다양 한 메트릭을 쿼리할 수 있는 메트릭 뷰로 이동 합니다. 
 
-메트릭에 대한 자세한 내용은 [서비스 메트릭 모니터링](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md)을 참조하세요.
+메트릭에 대한 자세한 내용은 [서비스 메트릭 모니터링](../azure-monitor/platform/data-platform.md)을 참조하세요.
 
 ## <a name="alerts-and-autoscale"></a>경고 및 자동 크기 조정
-앱 또는 App Service 계획의 메트릭은 경고에 연결할 수 있습니다. 자세한 내용은 [경고 알림 받기](../monitoring-and-diagnostics/insights-alerts-portal.md)를 참조 하세요.
+앱 또는 App Service 계획의 메트릭은 경고에 연결할 수 있습니다. 자세한 내용은 [경고 알림 받기](../azure-monitor/platform/alerts-classic-portal.md)를 참조 하세요.
 
 기본 이상 App Service 계획에서 호스트 되는 App Service 앱은 자동 크기 조정을 지원 합니다. 자동 크기 조정을 사용하여 App Service 계획 메트릭을 모니터링하는 규칙을 구성할 수 있습니다. 규칙은 필요에 따라 추가 리소스를 제공할 수 있도록 인스턴스 수를 눌리거나 줄일 수 있습니다. 규칙을 사용하면 앱이 과도하게 프로비전될 때 비용을 절감할 수도 있습니다.
 
-자동 크기 조정에 대한 자세한 내용은 [크기 조정 방법](../monitoring-and-diagnostics/insights-how-to-scale.md) 및 [Azure Monitor 자동 크기 조정에 대한 모범 사례](../azure-monitor/platform/autoscale-best-practices.md)를 참조하세요.
+자동 크기 조정에 대한 자세한 내용은 [크기 조정 방법](../azure-monitor/platform/autoscale-get-started.md) 및 [Azure Monitor 자동 크기 조정에 대한 모범 사례](../azure-monitor/platform/autoscale-best-practices.md)를 참조하세요.
 
 [fzilla]:https://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]:https://go.microsoft.com/fwlink/?LinkID=309169

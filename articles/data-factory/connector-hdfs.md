@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/06/2020
+ms.date: 08/28/2020
 ms.author: jingwang
-ms.openlocfilehash: 43ab59f109e311d9d7312b77d34321fa98a952d6
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: 562acfe1ae96f7f88b72945846bcb49c0cc1f216
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87926810"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89179541"
 ---
 # <a name="copy-data-from-the-hdfs-server-by-using-azure-data-factory"></a>Azure Data Factory를 사용 하 여 HDFS 서버에서 데이터 복사
 
@@ -48,7 +48,7 @@ HDFS 커넥터는 다음과 같은 작업에 대해 지원 됩니다.
 > [!NOTE]
 > 통합 런타임에서 Hadoop 클러스터의 *모든* [이름 노드 서버]: [이름 노드 포트] 및 [데이터 노드 서버]: [데이터 노드 포트]에 액세스할 수 있는지 확인 합니다. 기본 [이름 노드 포트]는 50070이 고 기본값 [데이터 노드 포트]는 50075입니다.
 
-## <a name="get-started"></a>시작하기
+## <a name="get-started"></a>시작
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -168,11 +168,13 @@ HDFS 연결 된 서비스에 대해 지원 되는 속성은 다음과 같습니�
 | 옵션 1: 정적 경로<br> | 데이터 집합에 지정 된 폴더 또는 파일 경로에서 복사 합니다. 폴더의 모든 파일을 복사하려면 `wildcardFileName`을 `*`로 지정합니다. |  |
 | 옵션 2: 와일드카드<br>- wildcardFolderPath | 원본 폴더를 필터링할 와일드카드 문자가 포함된 폴더 경로입니다. <br>허용되는 와일드카드는 `*`(문자 0자 이상 일치) 및 `?`(문자 0자 또는 1자 일치)입니다. `^`실제 폴더 이름에 와일드 카드나이 이스케이프 문자가 있으면를 사용 하 여를 이스케이프 합니다. <br>더 많은 예제는 [폴더 및 파일 필터 예](#folder-and-file-filter-examples)를 참조 하세요. | 예                                            |
 | 옵션 2: 와일드카드<br>- wildcardFileName | 소스 파일을 필터링 하기 위해 지정 된 folderPath/wildcardFolderPath 아래의 와일드 카드 문자가 포함 된 파일 이름입니다. <br>허용 되는 와일드 카드는 `*` (0 개 이상의 문자와 일치) 및 `?` (0 또는 1 개의 문자와 일치)입니다. `^` 실제 폴더 이름에 와일드 카드나이 이스케이프 문자가 있으면를 사용 하 여를 이스케이프 합니다.  더 많은 예제는 [폴더 및 파일 필터 예](#folder-and-file-filter-examples)를 참조 하세요. | 예 |
-| 옵션 3: 파일 목록<br>- fileListPath | 지정 된 파일 집합을 복사 함을 나타냅니다. 복사할 파일 목록이 포함 된 텍스트 파일을 가리킵니다 (데이터 집합에 구성 된 경로에 대 한 상대 경로를 사용 하 여 한 줄에 하나씩 파일).<br/>이 옵션을 사용 하는 경우 데이터 집합에서 파일 이름을 지정 하지 마십시오. 더 많은 예제는 [파일 목록 예](#file-list-examples)를 참조 하세요. |아니요 |
+| 옵션 3: 파일 목록<br>- fileListPath | 지정 된 파일 집합을 복사 함을 나타냅니다. 복사할 파일 목록이 포함 된 텍스트 파일을 가리킵니다 (데이터 집합에 구성 된 경로에 대 한 상대 경로를 사용 하 여 한 줄에 하나씩 파일).<br/>이 옵션을 사용 하는 경우 데이터 집합에서 파일 이름을 지정 하지 마십시오. 더 많은 예제는 [파일 목록 예](#file-list-examples)를 참조 하세요. |예 |
 | ***추가 설정*** |  | |
 | recursive | 하위 폴더 또는 지정된 폴더에서만 데이터를 재귀적으로 읽을지 여부를 나타냅니다. `recursive`이 *true* 로 설정 되 고 싱크가 파일 기반 저장소 인 경우 빈 폴더 또는 하위 폴더가 싱크에 복사 되거나 생성 되지 않습니다. <br>허용되는 값은 *true*(기본값) 및 *false*입니다.<br>`fileListPath`를 구성하는 경우에는 이 속성이 적용되지 않습니다. |예 |
 | modifiedDatetimeStart    | 파일이 *마지막으로 수정*된 특성을 기준으로 필터링 됩니다. <br>마지막으로 수정한 시간이의 범위 내에 있는 경우 파일이 선택 됩니다 `modifiedDatetimeStart` `modifiedDatetimeEnd` . 시간은 *2018-12-01T05:00:00z*형식으로 UTC 표준 시간대에 적용 됩니다. <br> 속성은 NULL 일 수 있습니다. 즉, 데이터 집합에 파일 특성 필터가 적용 되지 않습니다.  `modifiedDatetimeStart`에 datetime 값이 있지만 `modifiedDatetimeEnd` 가 NULL 인 경우 마지막으로 수정 된 특성이 datetime 값 보다 크거나 같은 파일이 선택 되어 있음을 의미 합니다.  `modifiedDatetimeEnd`에 datetime 값이 있지만 `modifiedDatetimeStart` 가 NULL 인 경우 마지막으로 수정 된 특성이 datetime 값 보다 작은 파일이 선택 되어 있음을 의미 합니다.<br/>`fileListPath`를 구성하는 경우에는 이 속성이 적용되지 않습니다. | 예                                            |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결할 수 있는 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만 값을 지정 합니다. | 아니요                                            |
+| Enable파티션 검색 | 분할 된 파일의 경우 파일 경로에서 파티션을 구문 분석할 지 여부를 지정 하 고 추가 원본 열로 추가 합니다.<br/>허용 되는 값은 **false** (기본값) 및 **true**입니다. | 예                                            |
+| 파티션 (partitionRootPath) | 파티션 검색을 사용 하는 경우 분할 된 폴더를 데이터 열로 읽도록 절대 루트 경로를 지정 합니다.<br/><br/>지정 되지 않은 경우 기본적으로<br/>-원본에 있는 파일 또는 데이터 집합의 파일 경로를 사용 하는 경우 파티션 루트 경로는 데이터 집합에서 구성 된 경로입니다.<br/>-와일드 카드 폴더 필터를 사용 하는 경우 파티션 루트 경로는 첫 번째 와일드 카드 앞의 하위 경로입니다.<br/><br/>예를 들어 데이터 집합의 경로를 "root/folder/year = 2020/month = 08/day = 27"로 구성 한다고 가정 합니다.<br/>-파티션 루트 경로를 "root/folder/year = 2020"으로 지정 하는 경우 복사 작업은 파일 내의 열 외에도 각각 두 개의 열을 생성 하 `month` 고 `day` 값을 "08" 및 "27"로 생성 합니다.<br/>-파티션 루트 경로를 지정 하지 않으면 추가 열이 생성 되지 않습니다. | 예                                            |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결할 수 있는 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만 값을 지정 합니다. | 예                                            |
 | ***DistCp 설정*** |  | |
 | distcpSettings | HDFS DistCp를 사용할 때 사용할 속성 그룹입니다. | 예 |
 | resourceManagerEndpoint | YARN (또 다른 리소스 Negotiator 끝점 | 예, DistCp를 사용 하는 경우 |
@@ -391,7 +393,7 @@ HDFS 커넥터에 Kerberos 인증을 사용 하도록 온-프레미스 환경을
 
     b. **그룹 정책 관리 편집기** 창에서 **컴퓨터 구성**  >  **정책**  >  **Windows 설정**  >  **보안 설정**  >  **로컬 정책**  >  **보안 옵션**을 선택 하 고 **네트워크 보안 구성: Kerberos에 허용 된 암호화 유형 구성**을 선택 합니다.
 
-    다. KDC 서버에 연결할 때 사용할 암호화 알고리즘을 선택 합니다. 모든 옵션을 선택할 수 있습니다.
+    c. KDC 서버에 연결할 때 사용할 암호화 알고리즘을 선택 합니다. 모든 옵션을 선택할 수 있습니다.
 
     !["네트워크 보안: Kerberos에 허용 된 암호화 유형 구성" 창 스크린샷](media/connector-hdfs/config-encryption-types-for-kerberos.png)
 
@@ -405,9 +407,9 @@ HDFS 커넥터에 Kerberos 인증을 사용 하도록 온-프레미스 환경을
 
     a. **Administrative tools**  >  **사용자 및 컴퓨터 Active Directory**관리 도구를 선택 합니다.
 
-    b. 고급 기능 **보기**를 선택 하 여 고급 기능을 구성  >  **Advanced Features**합니다.
+    b. **보기** > **고급 기능**을 선택하여 고급 기능을 구성합니다.
 
-    다. **고급 기능** 창에서 매핑을 만들 계정을 마우스 오른쪽 단추로 클릭 하 고 **이름 매핑** 창에서 **Kerberos 이름** 탭을 선택 합니다.
+    c. **고급 기능** 창에서 매핑을 만들 계정을 마우스 오른쪽 단추로 클릭 하 고 **이름 매핑** 창에서 **Kerberos 이름** 탭을 선택 합니다.
 
     d. 영역에서 보안 주체를 추가합니다.
 
@@ -437,7 +439,7 @@ HDFS 커넥터에 Kerberos 인증을 사용 하도록 온-프레미스 환경을
 
 ### <a name="legacy-dataset-model"></a>레거시 데이터 세트 모델
 
-| 속성 | 설명 | 필수 |
+| 속성 | Description | 필수 |
 |:--- |:--- |:--- |
 | type | 데이터 집합의 *type* 속성은 파일 *공유* 로 설정 해야 합니다. |예 |
 | folderPath | 폴더에 대 한 경로입니다. 와일드 카드 필터를 사용할 수 있습니다. 허용 되는 와일드 카드는 `*` (0 개 이상의 문자와 일치) 및 (0 개 이상의 문자 `?` 일치)입니다. `^` 실제 파일 이름에 와일드 카드나이 이스케이프 문자가 있으면를 사용 하 여를 이스케이프 합니다. <br/><br/>예: rootfolder/subfolder/(더 많은 예제는 [폴더 및 파일 필터 예제](#folder-and-file-filter-examples) 참조) |예 |
@@ -482,7 +484,7 @@ HDFS 커넥터에 Kerberos 인증을 사용 하도록 온-프레미스 환경을
 
 ### <a name="legacy-copy-activity-source-model"></a>레거시 복사 활동 원본 모델
 
-| 속성 | 설명 | 필수 |
+| 속성 | Description | 필수 |
 |:--- |:--- |:--- |
 | type | 복사 작업 원본의 *type* 속성은 *HdfsSource*로 설정 해야 합니다. |예 |
 | recursive | 하위 폴더 또는 지정된 폴더에서만 데이터를 재귀적으로 읽을지 여부를 나타냅니다. Recursive를 *true* 로 설정 하 고 싱크가 파일 기반 저장소 인 경우 빈 폴더 또는 하위 폴더가 싱크에 복사 되거나 생성 되지 않습니다.<br/>허용되는 값은 *true*(기본값) 및 *false*입니다. | 예 |
@@ -490,7 +492,7 @@ HDFS 커넥터에 Kerberos 인증을 사용 하도록 온-프레미스 환경을
 | resourceManagerEndpoint | YARN 리소스 관리자 끝점 | 예, DistCp를 사용 하는 경우 |
 | tempScriptPath | 임시 DistCp 명령 스크립트를 저장 하는 데 사용 되는 폴더 경로입니다. 스크립트 파일은 Data Factory에서 생성 되며 복사 작업이 완료 된 후 제거 됩니다. | 예, DistCp를 사용 하는 경우 |
 | distcpOptions | DistCp 명령에 대 한 추가 옵션이 제공 됩니다. | 예 |
-| maxConcurrentConnections | 저장소 저장소에 동시에 연결할 수 있는 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만 값을 지정 합니다. | 아니요 |
+| maxConcurrentConnections | 저장소 저장소에 동시에 연결할 수 있는 연결 수입니다. 데이터 저장소에 대 한 동시 연결 수를 제한 하려는 경우에만 값을 지정 합니다. | 예 |
 
 **예: DistCp를 사용 하 여 복사 작업의 HDFS 원본**
 

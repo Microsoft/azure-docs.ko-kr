@@ -1,20 +1,20 @@
 ---
 title: Azure Cosmos DB SQL Python API, SDK 및 리소스
 description: 릴리스 날짜, 사용 중지 날짜 및 Azure Cosmos DB Python SDK의 각 버전 간 변경 내용을 포함하여 SQL Python API 및 SDK에 대한 모든 것을 알아봅니다.
-author: anfeldma-ms
+author: Rodrigossz
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: python
 ms.topic: reference
-ms.date: 08/05/2020
+ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-python
-ms.openlocfilehash: 44d9521e9d02195cb1d4ff61fd519f31ce9c0018
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: e9f9daea2c0d570efb81603784ee730b11668426
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87876260"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88585987"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>SQL API용 Azure Cosmos DB Python SDK: 릴리스 정보 및 리소스
 
@@ -27,7 +27,8 @@ ms.locfileid: "87876260"
 > * [Java SDK v4](sql-api-sdk-java-v4.md)
 > * [Async Java SDK v2](sql-api-sdk-async-java.md)
 > * [Sync Java SDK v2](sql-api-sdk-java.md)
-> * [Spring Data](sql-api-sdk-java-spring.md)
+> * [스프링 데이터 v2](sql-api-sdk-java-spring-v2.md)
+> * [스프링 데이터 v3](sql-api-sdk-java-spring-v3.md)
 > * [Spark 커넥터](sql-api-sdk-java-spark.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST (영문)](/rest/api/cosmos-db/)
@@ -45,6 +46,20 @@ ms.locfileid: "87876260"
 |**현재 지원되는 플랫폼**|[Python 2.7](https://www.python.org/downloads/) 및 [Python 3.5.3+](https://www.python.org/downloads/)|
 
 ## <a name="release-history"></a>릴리스 기록
+
+### <a name="410-2020-08-10"></a>4.1.0 (2020-08-10)
+
+- "지연" 인덱싱 모드에 대 한 사용 중단 경고가 추가 되었습니다. 백 엔드는이 모드를 사용 하 여 컨테이너를 만드는 것을 허용 하지 않으며 대신 일관 되도록 설정 합니다.
+
+**새로운 기능**
+- 새 컨테이너를 만들 때 분석 저장소 TTL을 설정 하는 기능이 추가 되었습니다.
+
+**버그 수정**
+- Get_client Api에 대 한 입력으로 dicts에 대 한 지원이 수정 되었습니다.
+- 쿼리 반복기에서 Python 2/3 호환성이 수정 되었습니다.
+- 형식 힌트 오류 (문제 #12570)를 수정 했습니다.
+- 옵션 헤더가 upsert_item 함수에 추가 되지 않은 버그를 수정 했습니다. 문제 #11791-감사 @aalapatirvbd 합니다.
+- 항목에서 문자열이 아닌 ID를 사용할 때 발생 하는 오류를 수정 했습니다. 이제 AttributeError (Issue #11793)가 아닌 TypeError이 발생 합니다.
 
 ### <a name="400"></a>4.0.0
 

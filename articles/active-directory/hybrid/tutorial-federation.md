@@ -14,12 +14,12 @@ ms.date: 08/16/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3a17eb7fdde6840ce04fb0cbce13ec3f1a121e0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3a68c3719ea742a5c02f8be167fc1989ae4683c0
+ms.sourcegitcommit: c94a177b11a850ab30f406edb233de6923ca742a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80673694"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89279196"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>자습서: 단일 AD 포리스트 환경을 클라우드로 페더레이션
 
@@ -29,9 +29,9 @@ ms.locfileid: "80673694"
 
 ## <a name="prerequisites"></a>사전 요구 사항
 다음은 이 자습서를 완료하는 데 필요한 필수 구성 요소입니다.
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview)가 설치되어 있는 컴퓨터.  [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) 또는 [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) 컴퓨터에서 수행하는 것이 좋습니다.
+- [Hyper-V](/windows-server/virtualization/hyper-v/hyper-v-technology-overview)가 설치되어 있는 컴퓨터.  [Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os) 또는 [Windows Server 2016](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows) 컴퓨터에서 수행하는 것이 좋습니다.
 - [Azure 구독](https://azure.microsoft.com/free)
-- - 가상 머신이 인터넷과 통신할 수 있는 [외부 네트워크 어댑터](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network).
+- - 가상 머신이 인터넷과 통신할 수 있는 [외부 네트워크 어댑터](/virtualization/hyper-v-on-windows/quick-start/connect-to-network).
 - Windows Server 2016의 복사본
 - 확인 가능한 [사용자 지정 도메인](../../active-directory/fundamentals/add-custom-domain.md)
 
@@ -140,7 +140,7 @@ VM을 만들었고 이름을 변경했고 고정 IP 주소가 준비되었으면
 $DatabasePath = "c:\windows\NTDS"
 $DomainMode = "WinThreshold"
 $DomainName = "contoso.com"
-$DomaninNetBIOSName = "CONTOSO"
+$DomainNetBIOSName = "CONTOSO"
 $ForestMode = "WinThreshold"
 $LogPath = "c:\windows\NTDS"
 $SysVolPath = "c:\windows\SYSVOL"
@@ -292,4 +292,3 @@ Azure에 제공되는 기능을 테스트하고 익히는 데 사용할 수 있�
 - [하드웨어 및 필수 구성 요소](how-to-connect-install-prerequisites.md) 
 - [사용자 지정된 설정](how-to-connect-install-custom.md)
 - [Azure AD Connect 및 페더레이션](how-to-connect-fed-whatis.md)
-

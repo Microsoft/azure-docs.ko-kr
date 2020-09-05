@@ -2,25 +2,21 @@
 title: '자습서: Uberflip과 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory 및 Uberflip 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 754b1f5b-6694-4fd6-9e1e-9fad769c64db
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: d20c05e6ec5a413b81ede9cb4906de2595967115
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8936c2150c32a22877f9b56736ecc4b8f3424b32
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80048467"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88533161"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>자습서: Azure Active Directory와 Uberflip 통합
 
@@ -153,7 +149,7 @@ Uberflip 쪽에서 Single Sign-On을 구성하려면 Azure Portal에서 다운�
 
     1. **이름** 상자에 **BSimon**을 입력합니다.
   
-    1. **사용자 이름** 상자에 **BSimon\@\<yourcompanydomain>.\<extension>** 을 입력합니다. 예를 들어 **BSimon\@contoso.com**과 같이 입력합니다.
+    1. **사용자 이름** 상자에 **BSimon\@\<yourcompanydomain>.\<extension>** 를 입력합니다. 예를 들어 **BSimon\@contoso.com**과 같이 입력합니다.
 
     1. **암호 표시** 확인란을 선택한 다음, **암호** 상자에 표시된 값을 적어둡니다.
 

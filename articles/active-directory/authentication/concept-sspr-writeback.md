@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f76073a1ed98dcc51cf7e14219beca914b5b77a4
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 3959fc7df78a5c1f255f7551a018eec6b7279eb1
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87027600"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88717441"
 ---
 # <a name="how-does-self-service-password-reset-writeback-work-in-azure-active-directory"></a>Azure Active Directory에서 셀프 서비스 암호 재설정 쓰기 저장의 작동 방식
 
@@ -47,7 +47,7 @@ Azure Active Directory(Azure AD) 셀프 서비스 암호 재설정(SSPR)을 통�
 SSPR 쓰기 저장을 시작하려면 다음 자습서를 완료하세요.
 
 > [!div class="nextstepaction"]
-> [자습서: 셀프 서비스 암호 재설정(SSPR) 쓰기 저장 사용](tutorial-enable-writeback.md)
+> [자습서: 셀프 서비스 암호 재설정(SSPR) 쓰기 저장 사용](./tutorial-enable-sspr-writeback.md)
 
 ## <a name="how-password-writeback-works"></a>암호 쓰기 저장의 작동 원리
 
@@ -140,7 +140,7 @@ SSPR 쓰기 저장을 시작하려면 다음 자습서를 완료하세요.
    * 모든 관리자 셀프 서비스 강제 암호 변경 작업(예: 암호 만료)
    * [암호 재설정 포털](https://passwordreset.microsoftonline.com)에서 시작되는 모든 관리자 셀프 서비스 암호 재설정
    * [Azure Portal](https://portal.azure.com)에서 관리자 시작 최종 사용자 암호 재설정
-   * [Microsoft Graph API 베타](https://docs.microsoft.com/graph/api/passwordauthenticationmethod-resetpassword?view=graph-rest-beta&tabs=http)에서 관리자 시작 최종 사용자 암호 재설정
+   * [Microsoft Graph API 베타](/graph/api/passwordauthenticationmethod-resetpassword?tabs=http&view=graph-rest-beta)에서 관리자 시작 최종 사용자 암호 재설정
 
 ## <a name="unsupported-writeback-operations"></a>지원되지 않는 쓰기 저장 작업
 
@@ -149,7 +149,7 @@ SSPR 쓰기 저장을 시작하려면 다음 자습서를 완료하세요.
 * **지원되지 않는 최종 사용자 작업**
    * PowerShell 버전 1, 버전 2 또는 Microsoft Graph API를 사용하여 자신의 암호를 재설정하는 최종 사용자
 * **지원되지 않는 관리자 작업**
-   * PowerShell 버전 1, 버전 2 또는 Microsoft Graph API에서 관리자 시작 최종 사용자 암호 재설정([Microsoft Graph API 베타](https://docs.microsoft.com/graph/api/passwordauthenticationmethod-resetpassword?view=graph-rest-beta&tabs=http) 지원됨)
+   * PowerShell 버전 1, 버전 2 또는 Microsoft Graph API에서 관리자 시작 최종 사용자 암호 재설정([Microsoft Graph API 베타](/graph/api/passwordauthenticationmethod-resetpassword?tabs=http&view=graph-rest-beta) 지원됨)
    * [Microsoft 365 관리 센터](https://admin.microsoft.com)에서 관리자 시작 최종 사용자 암호 재설정
    * 모든 관리자는 암호 재설정 도구를 사용하여 암호 쓰기 저장에 대한 암호를 재설정할 수 없음
 
@@ -161,4 +161,4 @@ SSPR 쓰기 저장을 시작하려면 다음 자습서를 완료하세요.
 SSPR 쓰기 저장을 시작하려면 다음 자습서를 완료하세요.
 
 > [!div class="nextstepaction"]
-> [자습서: 셀프 서비스 암호 재설정(SSPR) 쓰기 저장 사용](tutorial-enable-writeback.md)
+> [자습서: 셀프 서비스 암호 재설정(SSPR) 쓰기 저장 사용](./tutorial-enable-sspr-writeback.md)

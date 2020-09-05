@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 06/25/2020
-ms.openlocfilehash: e9bb4a6c0f37ceaf1e9fc6c28f08b98bb4449e65
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.date: 8/13/2020
+ms.openlocfilehash: 582e4ea93a64164b09892fab2752f48fcde43ab1
+ms.sourcegitcommit: 152c522bb5ad64e5c020b466b239cdac040b9377
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87171295"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88225702"
 ---
 # <a name="monitoring-in-azure-database-for-mysql"></a>Azure Database for MySQL에서 모니터링
 서버에 대한 데이터를 모니터링하면 워크로드에 대한 문제를 해결하고 최적화할 수 있습니다. Azure Database for MySQL은 서버의 동작에 대한 통찰력을 제공하는 다양한 메트릭을 제공합니다.
@@ -22,11 +22,11 @@ ms.locfileid: "87171295"
 ### <a name="list-of-metrics"></a>메트릭 목록
 Azure Database for MySQL에서는 다음 메트릭을 사용할 수 있습니다.
 
-|메트릭|메트릭 표시 이름|단위|Description|
+|메트릭|메트릭 표시 이름|단위|설명|
 |---|---|---|---|
 |cpu_percent|CPU 백분율|백분율|사용 중인 CPU의 비율|
 |memory_percent|메모리 백분율|백분율|사용 중인 메모리의 비율|
-|io_consumption_percent|IO 백분율|백분율|사용 중인 IO의 비율 기본 계층 서버에는 적용 되지 않습니다.|
+|io_consumption_percent|IO 백분율|백분율|사용 중인 IO의 비율 (기본 계층 서버에는 적용 되지 않음)|
 |storage_percent|스토리지 비율|백분율|서버의 최대값을 초과하여 사용된 스토리지의 비율|
 |storage_used|스토리지 사용됨|바이트|사용 중인 스토리지의 양 서비스에서 사용되는 스토리지에는 데이터베이스 파일, 트랜잭션 로그 및 서버 로그가 포함될 수 있습니다.|
 |serverlog_storage_percent|서버 로그 스토리지 비율|백분율|서버의 최대 서버 로그 스토리지에서 사용된 서버 로그 스토리지의 백분율입니다.|
@@ -35,7 +35,7 @@ Azure Database for MySQL에서는 다음 메트릭을 사용할 수 있습니다
 |storage_limit|스토리지 제한|바이트|이 서버의 최대 스토리지|
 |active_connections|활성 연결 수|개수|서버에 대한 활성 연결 수|
 |connections_failed|실패한 연결|개수|서버에 대해 실패한 연결 수|
-|seconds_behind_master|복제 지연 시간(초)|개수|마스터 서버에 대해 복제본 서버가 지연되는 시간(초)입니다.|
+|seconds_behind_master|복제 지연 시간(초)|개수|마스터 서버에 대해 복제본 서버가 지연되는 시간(초)입니다. (기본 계층 서버에는 적용 되지 않음)|
 |network_bytes_egress|네트워크 아웃|바이트|활성 연결을 통한 네트워크 출력의 크기입니다.|
 |network_bytes_ingress|네트워크 인|바이트|활성 연결을 통한 네트워크 입력의 크기입니다.|
 |backup_storage_used|사용된 백업 스토리지|바이트|사용된 백업 스토리지 양. 이 메트릭은 서버에 대해 설정 된 백업 보존 기간에 따라 유지 되는 모든 전체 데이터베이스 백업, 차등 백업 및 로그 백업에서 사용 하는 저장소의 합계를 나타냅니다. 백업 빈도는 서비스에서 관리 되며 [개념 문서](concepts-backup.md)에서 설명 합니다. 지역 중복 저장소의 경우 백업 저장소 사용량이 로컬 중복 저장소의 두 배가 됩니다.|

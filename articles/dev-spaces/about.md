@@ -6,12 +6,12 @@ ms.topic: overview
 description: Azure Dev Spaces가 Azure Kubernetes Service 클러스터의 팀에게 신속하고 반복 가능한 Kubernetes 개발 환경을 제공하는 방법을 알아봅니다.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 691845cd888e4d24c1144f2805402a3baf14a86e
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: ad884d5e054f23269b238b791e250c732d70a9b8
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87006967"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88210640"
 ---
 # <a name="what-is-azure-dev-spaces"></a>Azure Dev Spaces란?
 
@@ -42,8 +42,10 @@ Azure Dev Spaces는 [일부 지역][supported-regions]의 AKS 클러스터에 �
 
 ## <a name="next-steps"></a>다음 단계
 
-[팀 개발 빠른 시작][team-development-quickstart]을 통해 Azure Dev Spaces를 사용하여 신속하고 반복적으로 앱을 개발하는 방법을 자세히 알아보세요.
+Azure Dev Spaces 작동 방식에 대해 자세히 알아봅니다.
+
+> [!div class="nextstepaction"]
+> [Azure Dev Spaces의 작동 원리](how-dev-spaces-works.md)
 
 [how-dev-spaces-works]: how-dev-spaces-works.md
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
-[team-development-quickstart]: quickstart-team-development.md

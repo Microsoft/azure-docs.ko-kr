@@ -2,15 +2,15 @@
 title: 템플릿 사양 만들기 및 배포
 description: ARM 템플릿에서 템플릿 사양을 만드는 방법에 대해 알아봅니다. 그런 다음 구독에서 리소스 그룹에 템플릿 사양을 배포합니다.
 author: tfitzmac
-ms.date: 07/20/2020
+ms.date: 08/06/2020
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: b2667e63f7cac5d1e3ad8475501ff909e8f6f3c1
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 8fe9ec46050ad831430239b960a7f528af7f4dc2
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87101306"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87924328"
 ---
 # <a name="quickstart-create-and-deploy-template-spec-preview"></a>빠른 시작: 템플릿 사양 만들기 및 배포(미리 보기)
 
@@ -53,7 +53,7 @@ PowerShell을 사용하면 ARM 템플릿이 명령에 매개 변수로 전달됩
    New-AzTemplateSpec `
      -ResourceGroupName templateSpecRG `
      -Name storageSpec `
-     -Version "1.0.0.0" `
+     -Version "1.0" `
      -Location westus2 `
      -TemplateJsonFile "c:\Templates\azuredeploy.json"
    ```
@@ -86,7 +86,7 @@ PowerShell을 사용하면 ARM 템플릿이 명령에 매개 변수로 전달됩
                    {
                        "type": "versions",
                        "apiVersion": "2019-06-01-preview",
-                       "name": "1.0.0.1",
+                       "name": "1.0",
                        "location": "westus2",
                        "dependsOn": [ "storageSpec" ],
                        "properties": {
@@ -195,7 +195,7 @@ PowerShell을 사용하면 ARM 템플릿이 명령에 매개 변수로 전달됩
 1. 템플릿 사양의 리소스 ID를 가져옵니다.
 
    ```azurepowershell
-   $id = (Get-AzTemplateSpec -ResourceGroupName templateSpecRG -Name storageSpec -Version "1.0.0.0").Version.Id
+   $id = (Get-AzTemplateSpec -ResourceGroupName templateSpecRG -Name storageSpec -Version "1.0").Version.Id
    ```
 
 1. 템플릿 사양을 배포합니다.
@@ -203,7 +203,16 @@ PowerShell을 사용하면 ARM 템플릿이 명령에 매개 변수로 전달됩
    ```azurepowershell
    New-AzResourceGroupDeployment `
      -TemplateSpecId $id `
-     -ResourceGroupName demoRG
+     -ResourceGroupName storageRG
+   ```
+
+1. ARM 템플릿과 정확히 동일한 매개 변수를 제공합니다. 스토리지 계정 유형에 대한 매개 변수를 사용하여 템플릿 사양을 다시 배포합니다.
+
+   ```azurepowershell
+   New-AzResourceGroupDeployment `
+     -TemplateSpecId $id `
+     -ResourceGroupName storageRG `
+     -StorageAccountType Standard_GRS
    ```
 
 # <a name="arm-template"></a>[ARM 템플릿](#tab/azure-resource-manager)
@@ -224,7 +233,7 @@ PowerShell을 사용하면 ARM 템플릿이 명령에 매개 변수로 전달됩
                "name": "demo",
                "properties": {
                    "templateLink": {
-                       "id": "[resourceId('templateSpecRG', 'Microsoft.Resources/templateSpecs/versions', 'storageSpec', '1.0.0.0')]"
+                       "id": "[resourceId('templateSpecRG', 'Microsoft.Resources/templateSpecs/versions', 'storageSpec', '1.0')]"
                    },
                    "parameters": {
                    },

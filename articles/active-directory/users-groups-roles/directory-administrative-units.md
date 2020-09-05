@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 093f4f3cd54f1e4638a0fbcd161a2af4fecba5da
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.openlocfilehash: 276b6cc8038a7ac8e0ddd27a3c3eb7c87f05ed1b
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475790"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795901"
 ---
 # <a name="administrative-units-management-in-azure-active-directory-preview"></a>Azure Active Directory의 관리 단위 관리(미리 보기)
 
@@ -47,8 +47,8 @@ ms.locfileid: "87475790"
 이 미리 보기 릴리스에서는 Azure Portal, PowerShell cmdlet 및 스크립트, 또는 Microsoft Graph를 사용하여 관리 단위를 관리할 수 있습니다. 자세한 내용은 다음 설명서를 참조하세요.
 
 - [역할을 만들고, 관리 단위에 추가 또는 제거하고, 정보 채우기](roles-admin-units-manage.md): 전체 방법 절차
-- [관리 단위 작업](https://docs.microsoft.com/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0): PowerShell을 사용하여 관리 단위를 작업하는 방법
-- [관리 단위 Graph 지원](https://docs.microsoft.com/graph/api/resources/administrativeunit?view=graph-rest-beta): 관리 단위용 Microsoft Graph에 대한 자세한 설명서입니다.
+- [관리 단위 작업](/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0): PowerShell을 사용하여 관리 단위를 작업하는 방법
+- [관리 단위 Graph 지원](/graph/api/resources/administrativeunit?view=graph-rest-beta): 관리 단위용 Microsoft Graph에 대한 자세한 설명서입니다.
 
 ### <a name="planning-your-administrative-units"></a>관리 단위 계획 수립
 

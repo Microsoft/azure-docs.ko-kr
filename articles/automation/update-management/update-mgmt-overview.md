@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: ea568acdf356064dc603d30ffba7df3c02bde621
-ms.sourcegitcommit: cee72954f4467096b01ba287d30074751bcb7ff4
+ms.openlocfilehash: 0fd416c844ac93ffb77eded98448b2e93e9acd30
+ms.sourcegitcommit: d18a59b2efff67934650f6ad3a2e1fe9f8269f21
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87450460"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88660911"
 ---
 # <a name="update-management-overview"></a>업데이트 관리 개요
 
@@ -99,7 +99,7 @@ Azure Automation의 runbook에서 업데이트가 설치됩니다. 이러한 Run
 |운영 체제  |메모  |
 |---------|---------|
 |Windows 클라이언트     | 클라이언트 운영 체제(예: Windows 7 및 Windows 10)는 지원되지 않습니다.<br> Azure WVD(Windows Virtual Desktop)의 경우<br> 업데이트를 관리 하려면 Windows 10 클라이언트 컴퓨터 패치 관리를 위한 [Microsoft Endpoint Configuration Manager](../../virtual-desktop/configure-automatic-updates.md) 입니다. |
-|Windows Server 2016 Nano Server     | 지원 안 됨       |
+|Windows Server 2016 Nano Server     | 지원되지 않습니다.       |
 |Azure Kubernetes Service 노드 | 지원되지 않습니다. [AKS(Azure Kubernetes Service)에서 Linux 노드에 보안 및 커널 업데이트 적용](../../aks/node-updates-kured.md)에서 설명하는 패치 프로세스를 사용합니다.|
 
 ### <a name="client-requirements"></a>클라이언트 요구 사항
@@ -180,7 +180,7 @@ Operations Manager 관리 그룹이 [Log Analytics 작업 영역에 연결되면
 
 * 각 Linux 머신 - 업데이트 관리가 한 시간에 한 번씩 검사를 수행합니다.
 
-업데이트 관리를 사용하는 머신에서 Azure Monitor 로그가 평균적으로 사용하는 데이터는 대략적으로 월 25MB입니다. 이 값은 근사값이며, 사용자 환경에 따라 변경될 수 있습니다. 환경을 모니터링하여 정확한 사용량을 확인하는 것이 좋습니다. 데이터 사용량 분석에 대한 자세한 내용은 [사용량 및 비용 관리](../../azure-monitor/platform/manage-cost-storage.md)를 참조하세요.
+업데이트 관리를 사용하는 머신에서 Azure Monitor 로그가 평균적으로 사용하는 데이터는 대략적으로 월 25MB입니다. 이 값은 근사값이며, 사용자 환경에 따라 변경될 수 있습니다. 환경을 모니터링하여 정확한 사용량을 확인하는 것이 좋습니다. Azure Monitor 로그 데이터 사용량을 분석 하는 방법에 대 한 자세한 내용은 [사용량 및 비용 관리](../../azure-monitor/platform/manage-cost-storage.md)를 참조 하세요.
 
 ## <a name="network-planning"></a><a name="ports"></a>네트워크 계획
 

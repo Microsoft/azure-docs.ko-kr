@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 591437eb3951164d53388b6164103948e9ad65e0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ce5eafe0b36f07d8de366b6d4adb92e894fcb67e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73496437"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936744"
 ---
 # <a name="use-ai-to-understand-blob-storage-data"></a>AI를 사용 하 여 Blob 저장소 데이터 이해
 
@@ -112,7 +112,7 @@ Azure Storage에서 기술 자료 저장소에는 두 가지 징후 (blob 컨테
 
 다양 한 방식으로 Cognitive Services을 결합 하 고 시나리오에 대 한 기존 인지 서비스가 없는 경우에 대 한 사용자 지정 기술을 제작 하 여 Azure Storage에서 데이터를 최대한 활용 하기 위해 AI 보강로 더 많은 작업을 수행할 수 있습니다. 아래 링크를 따라 자세히 알아볼 수 있습니다.
 
-+ [Azure Portal을 사용하여 Blob 업로드, 다운로드 및 나열(Azure Blob Storage)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal)
++ [Azure Portal을 사용하여 Blob 업로드, 다운로드 및 나열(Azure Blob Storage)](../storage/blobs/storage-quickstart-blobs-portal.md)
 + [Blob 인덱서 설정(Azure Cognitive Search)](search-howto-indexing-azure-blob-storage.md) 
 + [AI 보강 개요 (Azure Cognitive Search)](cognitive-search-concept-intro.md) 
 + [기술 만들기 (Azure Cognitive Search)](cognitive-search-defining-skillset.md)

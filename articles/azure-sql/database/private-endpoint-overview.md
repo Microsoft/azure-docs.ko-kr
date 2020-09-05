@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 730109a096b352b6d179693293128b465e0be83f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 5fcc50670973c361d830e4e6bbf2ce26101b8582
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87063263"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213379"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Azure SQL Database 및 Azure Synapse Analytics에 대한 Azure Private Link
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -175,9 +175,9 @@ where session_id=@@SPID
 - [ExpressRoute 회로](../../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md)
 
 
-## <a name="connecting-from-azure-synapse-analytics-to-azure-storage-using-polybase"></a>Polybase를 사용하여 Azure Synapse Analytics에서 Azure Storage로 연결
+## <a name="connecting-from-azure-synapse-analytics-to-azure-storage-using-polybase-and-the-copy-statement"></a>Polybase 및 COPY 문을 사용하여 Azure Synapse Analytics에서 Azure Storage로 연결
 
-PolyBase는 대개 Azure Storage 계정에서 Azure Synapse Analytics로 데이터를 로드하는 데 사용됩니다. 데이터를 로드하는 Azure Storage 계정에서 프라이빗 엔드포인트, 서비스 엔드포인트 또는 IP 기반 방화벽을 통해 가상 네트워크 서브넷 세트에만 액세스하도록 제한하는 경우 PolyBase에서 계정으로의 연결이 끊어집니다. 가상 네트워크로 보안이 유지되는 Azure Storage에 연결하는 Azure Synapse Analytics를 통해 PolyBase 가져오기 및 내보내기 시나리오를 사용하도록 설정하는 경우 [여기](vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)에서 제공하는 단계를 따르세요. 
+PolyBase 및 COPY 문은 일반적으로 Azure Storage 계정에서 Azure Synapse Analytics로 데이터를 로드하는 데 사용됩니다. 데이터를 로드하는 Azure Storage 계정에서 프라이빗 엔드포인트, 서비스 엔드포인트 또는 IP 기반 방화벽을 통해 가상 네트워크 서브넷 세트에만 액세스하도록 제한하는 경우 PolyBase 및 COPY 문에서 계정으로의 연결이 끊어집니다. 가상 네트워크로 보안이 유지되는 Azure Storage에 연결하는 Azure Synapse Analytics를 통해 가져오기 및 내보내기 시나리오를 사용하도록 설정하는 경우 [여기](vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)에서 제공하는 단계를 따르세요. 
 
 ## <a name="next-steps"></a>다음 단계
 

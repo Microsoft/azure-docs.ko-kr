@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: wachegha
 ms.custom: devx-track-javascript
-ms.openlocfilehash: d6a25e7c36118f6a11bd1a177159bc9050ee69ca
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 4dd253aa5dc1b8b89b1b387a555dde416c601f9c
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87431017"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691499"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Azure Functions를 사용하여 Azure Static Web Apps 미리 보기에 API 추가
 
@@ -28,7 +28,7 @@ Azure Functions와의 통합을 통해 Azure Static Web Apps에 서버리스 API
 - [Live Server Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) 확장
 - API 앱을 로컬로 실행 하는 [Node.js](https://nodejs.org/download/)
 
-## <a name="create-a-git-repository"></a>git 리포지토리 만들기
+## <a name="create-a-git-repository"></a>Git 리포지토리 만들기
 
 다음 단계에서는 새 리포지토리를 만들고 파일을 컴퓨터에 복제하는 방법을 보여 줍니다.
 
@@ -147,7 +147,7 @@ Visual Studio Code는 [Azure Functions Core Tools](../azure-functions/functions-
 
     :::image type="content" source="media/add-api/create-azure-functions-vscode-2.png" alt-text="Visual Studio Code를 사용하여 새 Azure Functions 만들기":::
 
-1. 핵심 도구를 실행 하는 경우 다음 URL로 이동 하 여 API가 올바르게 실행 되 고 있는지 확인 <http://localhost:7071/api/message> 합니다.
+1. 핵심 도구를 실행 하는 경우 다음 URL로 이동 하 여 API가 올바르게 실행 되 고 있는지 확인 `http://localhost:7071/api/message` 합니다.
 
    브라우저의 응답은 다음 예제와 같이 표시 됩니다.
 

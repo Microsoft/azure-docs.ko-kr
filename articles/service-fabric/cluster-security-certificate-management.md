@@ -4,12 +4,12 @@ description: X.509 인증서를 사용 하 여 보호 되는 Service Fabric 클�
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.custom: sfrev
-ms.openlocfilehash: fb5d19e1cceacfeabc4bc670de98e56d3fbc2596
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: aba681157d71f94914462b8d9fc13b90d4d6b153
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86246710"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88653667"
 ---
 # <a name="certificate-management-in-service-fabric-clusters"></a>Service Fabric 클러스터의 인증서 관리
 
@@ -91,7 +91,7 @@ Service Fabric 클러스터의 보안 방식은 "클러스터 소유자가이를
 자격 증명 모음에서 개인 키가 포함 된 인증서를 검색 하 여 클러스터의 각 호스트에 설치 하는 엔터티인 ' 프로 비전 에이전트 '를 언급 했습니다. (Service Fabric는 인증서를 프로 비전 하지 않습니다.) 이 컨텍스트에서 클러스터는 Azure Vm 및/또는 가상 머신 확장 집합의 컬렉션에서 호스팅됩니다. Azure에서 다음과 같은 메커니즘을 사용 하 여 자격 증명 모음에서 v m/VMSS로 인증서를 프로 비전 할 수 있습니다 .이는 프로 비전 에이전트가 자격 증명 모음 소유자에 의해 자격 증명 모음에 대 한 ' get ' 권한을 이전에 부여 한 것으로 가정 합니다. 
   - 임시: 운영자가 자격 증명 모음에서 인증서를 검색 하 고 (pfx/PKCS #12 또는 pem) 각 노드에 설치 합니다.
   - 배포 하는 동안 가상 머신 확장 집합 ' 암호 '로: 계산 서비스는 운영자 대신 자사 id를 사용 하 여 템플릿 배포에 사용 되는 자격 증명 모음의 인증서를 검색 하 여 가상 머신 확장 집합의 각 노드에 설치 합니다 ([예](../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#certificates):). 참고로, 버전이 지정 된 암호를 프로 비전 할 수 있습니다.
-  - [KEY VAULT VM 확장](../virtual-machines/extensions/key-vault-windows.md)사용 이를 통해 관찰 된 인증서를 정기적으로 새로 고쳐 버전이 없는 선언을 사용 하 여 인증서를 프로 비전 할 수 있습니다. 이 경우 VM/VMSS에는 관찰 된 인증서를 포함 하는 자격 증명 모음에 대 한 액세스 권한이 부여 된 id 인 [관리 id](../virtual-machines/windows/security-policy.md#managed-identities-for-azure-resources)가 있어야 합니다.
+  - [KEY VAULT VM 확장](../virtual-machines/extensions/key-vault-windows.md)사용 이를 통해 관찰 된 인증서를 정기적으로 새로 고쳐 버전이 없는 선언을 사용 하 여 인증서를 프로 비전 할 수 있습니다. 이 경우 VM/VMSS에는 관찰 된 인증서를 포함 하는 자격 증명 모음에 대 한 액세스 권한이 부여 된 id 인 [관리 id](../virtual-machines/security-policy.md#managed-identities-for-azure-resources)가 있어야 합니다.
 
 보안에서 가용성에 이르는 여러 가지 이유로 애드혹 메커니즘을 사용 하지 않는 것이 좋습니다 .이에 대해서는 여기서 설명 하지 않습니다. 자세한 내용은 [가상 머신 확장 집합의 인증서](../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#certificates)를 참조 하세요.
 

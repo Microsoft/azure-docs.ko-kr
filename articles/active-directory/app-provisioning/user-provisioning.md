@@ -1,5 +1,5 @@
 ---
-title: Azure AD에서 SaaS 앱 사용자 프로비저닝 자동화
+title: Azure AD에서 자동화된 SaaS 앱 사용자 프로비저닝이란?
 description: Azure AD를 사용하여 여러 타사 SaaS 애플리케이션에서 사용자 계정을 자동으로 프로비저닝, 프로비저닝 해제, 지속적으로 업데이트하는 방법을 소개합니다.
 services: active-directory
 author: kenwith
@@ -11,14 +11,14 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: 7f09bb42f529164ef0f5062ef801ddc7ecfef85c
-ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
+ms.openlocfilehash: b6eb571c7c37a628d11f07b4e1b207e38830250b
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84781093"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235403"
 ---
-# <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-ad"></a>Azure AD를 사용하여 애플리케이션에 사용자 프로비저닝 및 프로비저닝 해제 자동화
+# <a name="what-is-automated-saas-app-user-provisioning-in-azure-ad"></a>Azure AD에서 자동화된 SaaS 앱 사용자 프로비저닝이란?
 
 Azure AD(Azure Active Directory)에서 **앱 프로비저닝**이라는 용어는 사용자가 액세스해야 하는 클라우드([SaaS](https://azure.microsoft.com/overview/what-is-saas/)) 애플리케이션에서 사용자 ID와 역할을 자동으로 만드는 것을 의미합니다. 자동 프로비저닝에는 사용자 ID를 생성하는 것 외에도 상태 또는 역할이 변경될 때 사용자 ID의 유지 관리 및 제거가 포함됩니다. 일반적인 시나리오에는 Azure AD 사용자를 [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md) 등과 같은 애플리케이션에 프로비저닝하는 것이 포함됩니다.
 
@@ -59,7 +59,7 @@ Azure AD는 [SCIM 2.0 표준](https://techcommunity.microsoft.com/t5/Identity-St
 
    ![Salesforce 로고](./media/user-provisioning/gallery-app-logos.png)
 
-   프로비저닝에 사용할 새 애플리케이션을 요청하려면 [애플리케이션을 앱 갤러리와 통합하도록 요청](../develop/howto-app-gallery-listing.md)하면 됩니다. 사용자 프로비저닝 요청의 경우 애플리케이션에 SCIM 규격 엔드포인트가 있어야 합니다. 앱을 플랫폼에 빠르게 온보딩할 수 있도록 애플리케이션 공급업체에게 SCIM 표준을 준수해 달라고 요청하세요.
+   프로비저닝에 사용할 새 애플리케이션을 요청하려면 [애플리케이션을 앱 갤러리와 통합하도록 요청](../azuread-dev/howto-app-gallery-listing.md)하면 됩니다. 사용자 프로비저닝 요청의 경우 애플리케이션에 SCIM 규격 엔드포인트가 있어야 합니다. 앱을 플랫폼에 빠르게 온보딩할 수 있도록 애플리케이션 공급업체에게 SCIM 표준을 준수해 달라고 요청하세요.
 
 * **SCIM 2.0을 지원하는 애플리케이션**. SCIM 2.0 기반 사용자 관리 API를 구현하는 애플리케이션을 일반적인 방법으로 연결하려면 [SCIM 엔드포인트를 빌드하고 사용자 프로비저닝 구성](use-scim-to-provision-users-and-groups.md)을 참조하세요.
 
@@ -94,11 +94,8 @@ Azure AD 갤러리에서 자동 프로비저닝을 지원하는 애플리케이�
 SCIM 2.0을 지원하는 다른 애플리케이션은 [SCIM 엔드포인트를 빌드하고 사용자 프로비저닝 구성](use-scim-to-provision-users-and-groups.md) 문서의 단계를 따르세요.
 
 
-## <a name="related-articles"></a>관련 문서
+## <a name="next-steps"></a>다음 단계
 
 - [SaaS App을 통합하는 방법에 대한 자습서 목록](../saas-apps/tutorial-list.md)
 - [사용자 프로비저닝에 대한 특성 매핑 사용자 지정](customize-application-attributes.md)
-- [특성 매핑에 대한 식 작성](../app-provisioning/functions-for-customizing-application-data.md)
-- [사용자 프로비저닝에 대한 필터 범위 지정](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)
-- [SCIM 엔드포인트를 빌드하고 사용자 프로비저닝 구성](use-scim-to-provision-users-and-groups.md)
-- [Azure AD 동기화 API 개요](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/synchronization-overview)
+- [사용자 프로비저닝에 대한 필터 범위 지정](define-conditional-rules-for-provisioning-user-accounts.md)

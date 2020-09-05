@@ -6,12 +6,12 @@ ms.custom: devx-track-java, devx-track-azurecli
 ms.author: karler
 ms.topic: quickstart
 ms.date: 02/26/2020
-ms.openlocfilehash: e87e2d59dd70fbf96c04d9cd467594aa6576639b
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 42200fe61b0ac73a63b9f8a3317687fac60c5c02
+ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87501307"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88078583"
 ---
 # <a name="quickstart-build-and-push-java-container-images-to-azure-container-registry"></a>빠른 시작: Java 컨테이너 이미지를 빌드하고 Azure Container Registry로 푸시
 
@@ -178,4 +178,4 @@ Spring과 Azure에 대한 자세한 사항은 Azure의 Spring 설명서 센터�
 * [Spring Boot on Docker 시작](https://spring.io/guides/gs/spring-boot-docker)
 * [Spring Initializr](https://start.spring.io)
 * [Azure App Service에 Spring Boot 애플리케이션 배포](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin)
-* [Azure Web App on Linux에 대한 사용자 지정 Docker 이미지 사용](../app-service/containers/tutorial-custom-docker-image.md)
+* [Azure Web App on Linux에 대한 사용자 지정 Docker 이미지 사용](../app-service/tutorial-custom-container.md)

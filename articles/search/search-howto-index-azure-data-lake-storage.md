@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: 5862654dac99bea7755eab41cf3c1bd6cdd84526
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: b1a88398d657e6bc242c7db12f3c0ddc1af828ca
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760314"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935860"
 ---
 # <a name="indexing-documents-in-azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2에서 문서 인덱싱
 
@@ -22,7 +22,7 @@ ms.locfileid: "87760314"
 > Azure Data Lake Storage Gen2 지원은 현재 공개 미리 보기 상태입니다. 미리 보기 기능은 서비스 수준 계약 없이 제공되며, 프로덕션 워크로드에는 사용하지 않는 것이 좋습니다. 자세한 내용은 [Microsoft Azure Preview에 대한 추가 사용 약관](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)을 참조하세요. [이 양식을](https://aka.ms/azure-cognitive-search/indexer-preview)작성 하 여 미리 보기에 대 한 액세스를 요청할 수 있습니다. [REST API 버전 2020-06-30-미리 보기](search-api-preview.md) 및 포털에서이 기능을 제공 합니다. 현재 .NET SDK는 지원되지 않습니다.
 
 
-Azure storage 계정을 설정할 때 [계층적 네임 스페이스](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace)를 사용 하도록 설정 하는 옵션이 있습니다. 이를 통해 계정의 콘텐츠 컬렉션을 디렉터리 및 중첩 된 하위 디렉터리의 계층 구조로 구성할 수 있습니다. 계층적 네임 스페이스를 사용 하도록 설정 하 여 [Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)를 사용 하도록 설정 합니다.
+Azure storage 계정을 설정할 때 [계층적 네임 스페이스](../storage/blobs/data-lake-storage-namespace.md)를 사용 하도록 설정 하는 옵션이 있습니다. 이를 통해 계정의 콘텐츠 컬렉션을 디렉터리 및 중첩 된 하위 디렉터리의 계층 구조로 구성할 수 있습니다. 계층적 네임 스페이스를 사용 하도록 설정 하 여 [Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md)를 사용 하도록 설정 합니다.
 
 이 문서에서는 Azure Data Lake Storage Gen2에 있는 인덱싱 문서를 시작 하는 방법을 설명 합니다.
 
@@ -44,9 +44,9 @@ Data Lake Storage Gen2의 인덱싱 콘텐츠는 Azure Blob Storage에서 콘텐
 
 ## <a name="access-control"></a>Access Control
 
-Azure Data Lake Storage Gen2은 azure RBAC (역할 기반 액세스 제어) 및 POSIX와 같은 Acl (액세스 제어 목록)을 모두 지 원하는 [액세스 제어 모델](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control) 을 구현 합니다. Data Lake Storage Gen2에서 콘텐츠를 인덱싱할 때 Azure Cognitive Search는 콘텐츠에서 RBAC 및 ACL 정보를 추출 하지 않습니다. 따라서이 정보는 Azure Cognitive Search 인덱스에 포함 되지 않습니다.
+Azure Data Lake Storage Gen2은 azure RBAC (역할 기반 액세스 제어) 및 POSIX와 같은 Acl (액세스 제어 목록)을 모두 지 원하는 [액세스 제어 모델](../storage/blobs/data-lake-storage-access-control.md) 을 구현 합니다. Data Lake Storage Gen2에서 콘텐츠를 인덱싱할 때 Azure Cognitive Search는 콘텐츠에서 RBAC 및 ACL 정보를 추출 하지 않습니다. 따라서이 정보는 Azure Cognitive Search 인덱스에 포함 되지 않습니다.
 
-인덱스의 각 문서에 대 한 액세스 제어를 유지 하는 것이 중요 한 경우에는 응용 프로그램 개발자가 [보안 트리밍을](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search)구현 하는 것이 중요 합니다.
+인덱스의 각 문서에 대 한 액세스 제어를 유지 하는 것이 중요 한 경우에는 응용 프로그램 개발자가 [보안 트리밍을](./search-security-trimming-for-azure-search.md)구현 하는 것이 중요 합니다.
 
 ## <a name="change-detection"></a>변경 내용 검색
 

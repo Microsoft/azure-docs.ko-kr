@@ -14,14 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: e9cf5a65c664df321e8cee1c867e637a4718c9ee
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: d2e7be89b3319445a69d5b91990e9888cccd484a
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837332"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89268624"
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Media Encoder Standard를 사용하여 자산을 인코딩하는 방법
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
+
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-encode-with-media-encoder-standard.md)
 > * [REST (영문)](media-services-rest-encode-asset.md)
@@ -292,5 +295,5 @@ HTTP/1.1 201 Created
 ## <a name="next-steps"></a>다음 단계
 자산을 인코드하는 작업을 만드는 방법을 알았으니 이제 [Media Services를 사용하여 작업 진행 상태를 확인하는 방법](media-services-rest-check-job-progress.md)을 살펴보겠습니다.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 [미디어 프로세서 가져오기](media-services-rest-get-media-processor.md)

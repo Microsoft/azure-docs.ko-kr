@@ -1,7 +1,7 @@
 ---
 title: Azure Media Services 작업 (인코딩 및 분석) 오류 코드 | Microsoft Docs
 description: 이 문서에서는 작업 오류 코드 참조 항목에 연결 하 고 관련 항목에 대 한 유용한 링크를 제공 합니다.
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -11,16 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/28/2019
-ms.author: juliako
-ms.openlocfilehash: ec057d86ea39afb7eabd4e8227646eaec11c5655
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: 6d5268e0a0c7e6606ac28aa9b62e81bb4c4bc460
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87023010"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269134"
 ---
 # <a name="media-services-job-error-codes"></a>Media Services 작업 오류 코드
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 항목에서는 [작업](transforms-jobs-concept.md) 오류 코드 및 메시지에 대 한 자세한 설명을 위해 REST 참조 문서에 연결 합니다.
 

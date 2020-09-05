@@ -1,7 +1,7 @@
 ---
 title: '자습서: 사용자 인터페이스 사용자 지정'
 titleSuffix: Azure AD B2C
-description: Azure Portal를 사용하여 Azure Active Directory B2C에서 애플리케이션의 UI(사용자 인터페이스)를 사용자 지정하는 방법을 알아봅니다.
+description: 이 자습서에 따라 Azure Portal을 사용하여 Azure Active Directory B2C에서 애플리케이션의 UI(사용자 인터페이스)를 사용자 지정하는 방법을 알아봅니다.
 services: B2C
 author: msmimart
 manager: celestedg
@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 29a03f1d1b1007845c1df516192da22d74705af0
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: a9ca6d91be95bfb1a47f85b20f3775a57518ffcf
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87481736"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87922135"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>자습서: Azure Active Directory B2C의 사용자 환경 인터페이스 사용자 지정
 

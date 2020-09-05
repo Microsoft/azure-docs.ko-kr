@@ -8,12 +8,12 @@ ms.author: ramero
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: ae41cc620960bd49603e6712759585796e76fe67
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c32e1bc6e219ff645223cc34cf78991e229b86f0
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87029946"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935928"
 ---
 # <a name="add-scoring-profiles-to-an-azure-cognitive-search-index"></a>Azure Cognitive Search 인덱스에 점수 매기기 프로필 추가
 
@@ -64,7 +64,7 @@ ms.locfileid: "87029946"
 GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentLocation--122.123,44.77233&api-version=2020-06-30 
 ```  
 
- 이 쿼리는 용어 'inn'을 검색하고 현재 위치를 전달합니다. 이 쿼리에는 등의 다른 매개 변수가 포함 되어 있습니다 `scoringParameter` . 쿼리 매개 변수는 [Azure Cognitive Search REST API&#41;&#40;문서 검색 ](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)에 설명 되어 있습니다.  
+ 이 쿼리는 용어 'inn'을 검색하고 현재 위치를 전달합니다. 이 쿼리에는 등의 다른 매개 변수가 포함 되어 있습니다 `scoringParameter` . 쿼리 매개 변수는 [Azure Cognitive Search REST API&#41;&#40;문서 검색 ](/rest/api/searchservice/Search-Documents)에 설명 되어 있습니다.  
 
  점수 매기기 프로필에 대한 자세한 예제를 검토하려면 [예제](#bkmk_ex) 를 클릭하세요.  
 
@@ -157,18 +157,18 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 
  먼저 이 항목에서 제공하는 [템플릿](#bkmk_template) 을 사용해 보세요.  
 
- 이름을 입력합니다. 점수 매기기 프로필은 선택 사항이지만 추가하려는 경우 이름을 입력해야 합니다. 이름은 필드의 이름 지정 규칙에 따라 문자로 시작해야 하며 특수 문자와 예약어는 사용할 수 없습니다. 전체 목록은 [Azure Cognitive Search&#41;&#40;명명 규칙](https://docs.microsoft.com/rest/api/searchservice/naming-rules) 을 참조 하세요.  
+ 이름을 입력합니다. 점수 매기기 프로필은 선택 사항이지만 추가하려는 경우 이름을 입력해야 합니다. 이름은 필드의 이름 지정 규칙에 따라 문자로 시작해야 하며 특수 문자와 예약어는 사용할 수 없습니다. 전체 목록은 [Azure Cognitive Search&#41;&#40;명명 규칙 ](/rest/api/searchservice/naming-rules) 을 참조 하세요.  
 
  점수 매기기 프로필의 본문은 가중치가 적용된 필드와 함수에서 생성됩니다.  
 
 |||  
 |-|-|  
 |**가중치가**|필드에 상대 가중치를 할당하는 이름-값 쌍을 지정합니다. 이 [예제](#bkmk_ex)에서 albumTitle, 장르 및 artistName 필드는 각각 1.5, 5 및 2로 승격 됩니다. genre가 다른 필드보다 훨씬 크게 상승하는 이유는, `musicstoreindex`에서 ‘genre’의 경우처럼 비교적 비슷한 데이터를 검색하는 경우 상대 가중치의 편차가 더 커야 할 수 있기 때문입니다. 예를 들어 `musicstoreindex`에서 ‘rock’은 장르로도 표시되고 같은 구를 사용하는 장르 설명에도 표시됩니다. 이 경우 장르 설명보다 장르에 더 높은 가중치를 적용하려면 genre 필드에 훨씬 높은 상대 가중치를 적용해야 합니다.|  
-|**함수**|특정 컨텍스트에 대해 추가 계산을 수행해야 하는 경우 사용됩니다. 유효한 값은 `freshness`, `magnitude`, `distance` 및 `tag`입니다. 각 함수에는 고유한 매개 변수가 있습니다.<br /><br /> -   `freshness` - 항목의 최신 상태를 기준으로 순위를 높이려면 사용합니다. 이 함수는 `datetime` 필드(edm.DataTimeOffset)에만 사용할 수 있습니다. 특성은 `boostingDuration` 함수 에서만 사용 됩니다 `freshness` .<br />-   `magnitude` - 숫자 값의 크기를 기준으로 순위를 높이려면 사용합니다. 이 함수를 사용해야 하는 시나리오에는 이익률, 최고 가격, 최저 가격 또는 다운로드 수를 기준으로 상승시키는 경우가 포함됩니다. 이 함수는 double 및 integer 필드에서만 사용할 수 있습니다.<br />     `magnitude` 함수의 경우 반전 패턴을 사용하려면(예: 높은 가격의 항목보다 낮은 가격의 항목 순위를 높이기 위해) 범위를 높음에서 낮음으로 반전할 수 있습니다. 가격 범위가 $100에서 $1 사이인 경우 100에서 `boostingRangeStart`을(를) 설정하고 1에서 `boostingRangeEnd`을(를) 설정하여 낮은 가격의 항목을 상승시킬 수 있습니다.<br />-   `distance` - 근접도나 지리적 위치를 기준으로 순위를 높이려면 사용합니다. 이 함수는 `Edm.GeographyPoint` 필드에만 사용할 수 있습니다.<br />-   `tag` - 문서와 검색 쿼리 간에 공통된 태그를 기준으로 순위를 높이려면 사용합니다. 이 함수는 `Edm.String` 및 `Collection(Edm.String)` 필드에만 사용할 수 있습니다.<br /><br /> **함수 사용 규칙**<br /><br /> 함수 유형(`freshness`, `magnitude`, `distance`, `tag`)은 소문자여야 합니다.<br /><br /> 함수는 null 또는 빈 값을 포함할 수 없습니다. 특히 fieldname를 포함하는 경우에는 값을 설정해야 합니다.<br /><br /> 함수는 필터링 가능한 필드에만 적용할 수 있습니다. 필터링 가능한 필드에 대 한 자세한 내용은 [Create Index &#40;Azure Cognitive Search REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index) 를 참조 하세요.<br /><br /> 함수는 인덱스의 필드 컬렉션에 정의된 필드에만 적용할 수 있습니다.|  
+|**함수**|특정 컨텍스트에 대해 추가 계산을 수행해야 하는 경우 사용됩니다. 유효한 값은 `freshness`, `magnitude`, `distance` 및 `tag`입니다. 각 함수에는 고유한 매개 변수가 있습니다.<br /><br /> -   `freshness` - 항목의 최신 상태를 기준으로 순위를 높이려면 사용합니다. 이 함수는 `datetime` 필드(edm.DataTimeOffset)에만 사용할 수 있습니다. 특성은 `boostingDuration` 함수 에서만 사용 됩니다 `freshness` .<br />-   `magnitude` - 숫자 값의 크기를 기준으로 순위를 높이려면 사용합니다. 이 함수를 사용해야 하는 시나리오에는 이익률, 최고 가격, 최저 가격 또는 다운로드 수를 기준으로 상승시키는 경우가 포함됩니다. 이 함수는 double 및 integer 필드에서만 사용할 수 있습니다.<br />     `magnitude` 함수의 경우 반전 패턴을 사용하려면(예: 높은 가격의 항목보다 낮은 가격의 항목 순위를 높이기 위해) 범위를 높음에서 낮음으로 반전할 수 있습니다. 가격 범위가 $100에서 $1 사이인 경우 100에서 `boostingRangeStart`을(를) 설정하고 1에서 `boostingRangeEnd`을(를) 설정하여 낮은 가격의 항목을 상승시킬 수 있습니다.<br />-   `distance` - 근접도나 지리적 위치를 기준으로 순위를 높이려면 사용합니다. 이 함수는 `Edm.GeographyPoint` 필드에만 사용할 수 있습니다.<br />-   `tag` - 문서와 검색 쿼리 간에 공통된 태그를 기준으로 순위를 높이려면 사용합니다. 이 함수는 `Edm.String` 및 `Collection(Edm.String)` 필드에만 사용할 수 있습니다.<br /><br /> **함수 사용 규칙**<br /><br /> 함수 유형(`freshness`, `magnitude`, `distance`, `tag`)은 소문자여야 합니다.<br /><br /> 함수는 null 또는 빈 값을 포함할 수 없습니다. 특히 fieldname를 포함하는 경우에는 값을 설정해야 합니다.<br /><br /> 함수는 필터링 가능한 필드에만 적용할 수 있습니다. 필터링 가능한 필드에 대 한 자세한 내용은 [Create Index &#40;Azure Cognitive Search REST API&#41;](/rest/api/searchservice/create-index) 를 참조 하세요.<br /><br /> 함수는 인덱스의 필드 컬렉션에 정의된 필드에만 적용할 수 있습니다.|  
 
- 인덱스를 정의한 후 인덱스 스키마와 문서를 차례로 업로드하여 인덱스를 작성합니다. 이러한 작업에 대 한 지침은 [Create Index &#40;azure Cognitive Search REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index) 및 [azure &#40;Cognitive Search REST API 문서 추가, 업데이트 또는 삭제를](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) 참조 하세요. 인덱스가 작성되면 검색 데이터에 사용할 수 있는 점수 매기기 프로필을 만들어야 합니다.  
+ 인덱스를 정의한 후 인덱스 스키마와 문서를 차례로 업로드하여 인덱스를 작성합니다. 이러한 작업에 대 한 지침은 [Create Index &#40;azure Cognitive Search REST API&#41;](/rest/api/searchservice/create-index) 및 [azure &#40;Cognitive Search REST API 문서 추가, 업데이트 또는 삭제를 ](/rest/api/searchservice/addupdate-or-delete-documents) 참조 하세요. 인덱스가 작성되면 검색 데이터에 사용할 수 있는 점수 매기기 프로필을 만들어야 합니다.  
 
-##  <a name="template"></a><a name="bkmk_template"></a>할당량  
+##  <a name="template"></a><a name="bkmk_template"></a> 할당량  
  이 섹션에서는 점수 매기기 프로필의 구문과 템플릿에 대해 설명합니다. 특성에 대한 설명은 다음 섹션의 [인덱스 특성 참조](#bkmk_indexref)를 참조하세요.  
 
 ```  
@@ -222,17 +222,17 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 . . .  
 ```  
 
-##  <a name="index-attributes-reference"></a><a name="bkmk_indexref"></a>인덱스 특성 참조  
+##  <a name="index-attributes-reference"></a><a name="bkmk_indexref"></a> 인덱스 특성 참조  
 
 > [!NOTE]  
 >  점수 매기기 함수는 필터링 가능한 필드에만 적용할 수 있습니다.  
 
 |특성|Description|  
 |---------------|-----------------|  
-|`name`|필수 사항입니다. 점수 매기기 프로필의 이름입니다. 필드와 동일한 이름 지정 규칙을 따릅니다. 즉, 이름은 문자로 시작해야 하고 마침표, 콜론 또는 @ 기호를 포함할 수 없으며 ‘azureSearch’ 구(대/소문자 구분)로 시작할 수 없습니다.|  
+|`name`|필수 요소. 점수 매기기 프로필의 이름입니다. 필드와 동일한 이름 지정 규칙을 따릅니다. 즉, 이름은 문자로 시작해야 하고 마침표, 콜론 또는 @ 기호를 포함할 수 없으며 ‘azureSearch’ 구(대/소문자 구분)로 시작할 수 없습니다.|  
 |`text`|가중치 속성을 포함 합니다.|  
-|`weights`|(선택 사항) 각각 필드 이름과 상대적 가중치를 지정 하는 이름-값 쌍을 포함 합니다. 상대적 가중치는 양의 정수 또는 부동 소수점 숫자여야 합니다.<br /><br /> 가중치는 다른 검색 가능한 필드를 기준으로 한 검색 가능한 필드의 중요도를 나타내는 데 사용 됩니다.|  
-|`functions`|(선택 사항) 점수 매기기 함수는 필터링 가능한 필드에만 적용할 수 있습니다.|  
+|`weights`|선택 사항입니다. 각각 필드 이름과 상대적 가중치를 지정 하는 이름-값 쌍을 포함 합니다. 상대적 가중치는 양의 정수 또는 부동 소수점 숫자여야 합니다.<br /><br /> 가중치는 다른 검색 가능한 필드를 기준으로 한 검색 가능한 필드의 중요도를 나타내는 데 사용 됩니다.|  
+|`functions`|선택 사항입니다. 점수 매기기 함수는 필터링 가능한 필드에만 적용할 수 있습니다.|  
 |`type`|점수 매기기 함수의 필수 항목으로, 점수 매기기 함수는 인덱스 필드 컬렉션의 일부이며 필터링 가능한 필드에만 적용할 수 있습니다. 사용할 함수의 유형을 나타냅니다. 유효한 값에는 magnitude, freshness, distance, tag 등이 있습니다. 각 점수 매기기 프로필에 둘 이상의 함수를 포함할 수 있습니다. 함수 이름은 소문자여야 합니다.|  
 |`boost`|점수 매기기 함수의 필수 항목으로, 점수 매기기 함수는 인덱스 필드 컬렉션의 일부이며 필터링 가능한 필드에만 적용할 수 있습니다. 원점수의 승수로 사용되는 양수입니다. 값이 1일 수는 없습니다.|  
 |`fieldname`|점수 매기기 함수의 필수 항목으로, 점수 매기기 함수는 인덱스 필드 컬렉션의 일부이며 필터링 가능한 필드에만 적용할 수 있습니다. 또한 각 함수 유형에서는 추가적인 제한이 적용됩니다. 또한 각 함수 형식마다 추가 제한 사항이 도입됩니다. 예를 들어 freshness는 datetime 필드에, magnitude는 integer/double 필드에, distance는 location 필드에 사용됩니다.다. 필드는 함수 정의당 하나만 지정할 수 있습니다. 예를 들어 같은 프로필에서 magnitude를 두 번 사용하려면 각 필드에 하나씩 두 개의 magnitude 정의를 포함해야 합니다.|  
@@ -244,14 +244,14 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 |`freshness`|freshness 점수 매기기 함수는 `DateTimeOffset` 필드의 값을 기준으로 항목의 순위 점수를 변경하는 데 사용됩니다. 예를 들어 보다 최근 날짜의 항목에 오래된 날짜의 항목보다 더 높은 순위를 지정할 수 있습니다.<br /><br /> 또한 이후 날짜를 사용 하 여 일정 이벤트와 같은 항목의 순위를 지정할 수 있습니다. 이러한 항목은 현재에 대 한 항목 보다 나중에 항목 보다 더 높은 순위를 지정할 수 있습니다.<br /><br /> 현재 서비스 릴리스에서는 범위의 한쪽 끝이 현재 시간으로 고정됩니다. 반대쪽은 `boostingDuration`을(를) 기반으로 하는 과거의 시간입니다. 미래 시간 범위의 순위를 높이려면 음수 `boostingDuration`을 사용합니다.<br /><br /> 상승 기준이 최대 범위에서 최소 범위로 변경되는 비율은 점수 매기기 프로필에 적용되는 보간을 통해 결정됩니다(아래 그림 참조). 적용된 상승 계수의 방향을 바꾸려면 1보다 작은 상승 계수를 선택합니다.|  
 |`freshness` &#124; `boostingDuration`|특정 문서에 대해 상승을 중지할 만료 기간을 설정합니다. 구문 및 예제는 다음 섹션의 [boostingDuration 설정](#bkmk_boostdur)을 참조하세요.|  
 |`distance`|distance 점수 매기기 함수는 참조 지리적 위치와의 거리를 기준으로 문서 점수를 변경하는 데 사용됩니다. 참조 위치는 매개 변수에 쿼리의 일부인 lon, lat 인수로 제공됩니다(`scoringParameterquery` 문자열 옵션 사용).|  
-|`distance` &#124; `referencePointParameter`|참조 위치로 사용하도록 쿼리에 전달할 매개 변수입니다. `scoringParameter` 은(는) 쿼리 매개 변수입니다. 쿼리 매개 변수에 대 한 설명은 [Azure Cognitive Search REST API&#41;&#40;문서 검색](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) 을 참조 하세요.|  
+|`distance` &#124; `referencePointParameter`|참조 위치로 사용하도록 쿼리에 전달할 매개 변수입니다. `scoringParameter` 은(는) 쿼리 매개 변수입니다. 쿼리 매개 변수에 대 한 설명은 [Azure Cognitive Search REST API&#41;&#40;문서 검색 ](/rest/api/searchservice/Search-Documents) 을 참조 하세요.|  
 |`distance` &#124; `boostingDistance`|참조 위치로부터 상승 범위가 종료되는 거리(km)를 설정합니다.|  
 |`tag`|tag 점수 매기기 함수는 문서 및 검색 쿼리의 태그를 기반으로 문서 점수에 영향을 주는 데 사용됩니다. 검색 쿼리와 공통적인 태그가 있는 문서가 상승됩니다. 검색 쿼리에 대한 태그는 각 검색 요청에서 점수 매기기 매개 변수로 제공됩니다(`scoringParameterquery` 문자열 옵션 사용).|  
-|`tag` &#124; `tagsParameter`|특정 요청에 대한 태그를 지정하도록 쿼리에 전달할 매개 변수입니다. `scoringParameter` 은(는) 쿼리 매개 변수입니다. 쿼리 매개 변수에 대 한 설명은 [Azure Cognitive Search REST API&#41;&#40;문서 검색](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) 을 참조 하세요.|  
-|`functionAggregation`|(선택 사항) 함수를 지정할 때만 적용됩니다. 유효한 값에는 sum(기본값), average, minimum, maximum, firstMatching 등이 있습니다. 검색 점수는 여러 함수를 비롯한 여러 변수에서 계산되는 단일 값입니다. 이 특성은 모든 함수의 순위 상승이 단일 집계 상승으로 결합된 다음, 기본 문서 점수에 적용되는 방식을 나타냅니다. 기본 점수는 문서와 검색 쿼리에서 계산 된 [tf idf](http://www.tfidf.com/) 값을 기준으로 합니다.|  
+|`tag` &#124; `tagsParameter`|특정 요청에 대한 태그를 지정하도록 쿼리에 전달할 매개 변수입니다. `scoringParameter` 은(는) 쿼리 매개 변수입니다. 쿼리 매개 변수에 대 한 설명은 [Azure Cognitive Search REST API&#41;&#40;문서 검색 ](/rest/api/searchservice/Search-Documents) 을 참조 하세요.|  
+|`functionAggregation`|선택 사항입니다. 함수를 지정할 때만 적용됩니다. 유효한 값에는 sum(기본값), average, minimum, maximum, firstMatching 등이 있습니다. 검색 점수는 여러 함수를 비롯한 여러 변수에서 계산되는 단일 값입니다. 이 특성은 모든 함수의 순위 상승이 단일 집계 상승으로 결합된 다음, 기본 문서 점수에 적용되는 방식을 나타냅니다. 기본 점수는 문서와 검색 쿼리에서 계산 된 [tf idf](http://www.tfidf.com/) 값을 기준으로 합니다.|  
 |`defaultScoringProfile`|검색 요청을 실행할 때 점수 매기기 프로필이 지정 되지 않은 경우 기본 점수 점수가 사용 됩니다 ([tf-idf](http://www.tfidf.com/) 에만 해당).<br /><br /> 여기서 기본 점수 매기기 프로필 이름을 설정할 수 있으며, 검색 요청에 특정 프로필이 지정 되지 않은 경우 Azure Cognitive Search에서 해당 프로필을 사용 하도록 합니다.|  
 
-##  <a name="set-interpolations"></a><a name="bkmk_interpolation"></a>보간 설정  
+##  <a name="set-interpolations"></a><a name="bkmk_interpolation"></a> 보간 설정  
  보간을 사용하면 채점에 사용되는 기울기의 모양을 설정할 수 있습니다. 채점은 높음에서 낮음으로 진행되기 때문에 기울기가 항상 감소하지만, 보간을 통해 하향 기울기의 곡선이 결정됩니다. 다음과 같은 보간을 사용할 수 있습니다.  
 
 | 삽입할 | Description |  
@@ -263,7 +263,7 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 
  ![그래프의 상수, 선형, 정방형, log10 선](media/scoring-profiles/azuresearch_scorefunctioninterpolationgrapht.png "AzureSearch_ScoreFunctionInterpolationGrapht")  
 
-##  <a name="set-boostingduration"></a><a name="bkmk_boostdur"></a>BoostingDuration 설정  
+##  <a name="set-boostingduration"></a><a name="bkmk_boostdur"></a> BoostingDuration 설정  
  `boostingDuration`은 `freshness` 함수의 특성입니다. 이 특성을 사용하여 특정 문서에 대해 상승이 중지되는 만료 기간을 설정합니다. 예를 들어 프로모션 기간 10일 동안 특정 제품 라인이나 브랜드를 상승시키려는 경우 해당 문서에 대해 10일의 기간을 "P10D"로 지정합니다.  
 
  `boostingDuration` 의 형식은 XSD "dayTimeDuration" 값(ISO 8601 기간 값의 제한된 하위 집합)으로 지정해야 합니다. 이에 대 한 패턴은 "P [nD] [T [nH] [nM] [nS]]"입니다.  
@@ -279,8 +279,8 @@ GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentL
 
  더 많은 예제를 보려면 [XML 스키마: Datatypes(W3.org 웹 사이트)](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)를 참조하세요.  
 
-## <a name="see-also"></a>참고 항목  
+## <a name="see-also"></a>참조  
 
-+ [REST API 참조](https://docs.microsoft.com/rest/api/searchservice/)   
-+ [인덱스 API 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index)   
-+ [Azure Cognitive Search .NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search?view=azure-dotnet)  
++ [REST API 참조](/rest/api/searchservice/)   
++ [인덱스 API 만들기](/rest/api/searchservice/create-index)   
++ [Azure Cognitive Search .NET SDK](/dotnet/api/overview/azure/search?view=azure-dotnet)

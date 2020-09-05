@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT for Azure에 대한 지원을 받는 방법
-description: Avere vFXT for Azure에 대한 지원 티켓을 여는 방법에 대해 설명합니다.
+description: Azure Portal를 통해 지원 티켓을 만들어 Azure 용 Avere vFXT을 배포 하거나 사용 하는 동안 발생할 수 있는 문제를 해결 하는 방법에 대해 알아봅니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: b3c604003f78a150067875fb2064ab5eca0600db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 522d29505d7d10f5f6d97136f270f07a63053d19
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85847344"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271110"
 ---
 # <a name="get-help-with-your-system"></a>시스템 지원 받기
 
@@ -43,7 +43,7 @@ Avere vFXT를 배포하거나 사용하는 동안 문제가 발생하면 Azure P
 
     ![Azure Portal의 새 지원 요청 화면 스크린샷 기본 탭이 선택 되어 있습니다. 화면 항목에는 문제 유형, 구독, 서비스, 요약 및 문제 유형이 포함 됩니다.](media/ticket-basics.png)
 
-   **다음** 을 클릭하여 계속합니다.
+   **다음**을 클릭하여 계속합니다.
 
 1. 지원 양식의 두 번째 페이지에는 요약 설명에 따라 문제를 해결 하기 위한 제안 사항이 포함 되어 있습니다. 지원 티켓을 만들어야 하는 경우 아래쪽의 **다음** 단추를 클릭 합니다.
 

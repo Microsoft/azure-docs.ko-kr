@@ -6,13 +6,13 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 03/27/2020
 ms.author: anfeldma
-ms.custom: devx-track-javascript, devx-track-azurecli
-ms.openlocfilehash: 029c2ffa548c8c99030f630a90eb07ac8ba063a0
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.custom: devx-track-javascript, devx-track-azurecli, devx-track-csharp
+ms.openlocfilehash: 75299ab83543b0f28f4cf8f02e41b692c32d19ed
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87497004"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997271"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Azure Cosmos DB에서 TTL(Time to Live) 구성
 
@@ -50,7 +50,7 @@ Azure Cosmos DB에서는 컨테이너 수준에서 TTL(Time to Live)을 구성�
 
 ## <a name="enable-time-to-live-on-a-container-using-sdk"></a>SDK를 사용하여 컨테이너에서 TTL(Time to Live)을 사용하도록 설정
 
-### <a name="net-sdk"></a><a id="dotnet-enable-noexpiry"></a>.NET SDK
+### <a name="net-sdk"></a><a id="dotnet-enable-noexpiry"></a> .NET SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -83,7 +83,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-noexpiry"></a>Java SDK
+### <a name="java-sdk"></a><a id="java-enable-noexpiry"></a> Java SDK
 
 # <a name="java-sdk-v4"></a>[Java SDK V4](#tab/javav4)
 
@@ -116,7 +116,7 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 
 컨테이너에 대한 TTL(Time to Live)을 설정하려면 기간을 초 단위로 나타내는 0이 아닌 양수 값을 입력해야 합니다. 구성된 TTL 값에 따라, 컨테이너에 있는 모든 항목은 항목 `_ts`의 마지막으로 수정된 타임스탬프 후에 삭제됩니다.
 
-### <a name="net-sdk"></a><a id="dotnet-enable-withexpiry"></a>.NET SDK
+### <a name="net-sdk"></a><a id="dotnet-enable-withexpiry"></a> .NET SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -149,7 +149,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-defaultexpiry"></a>Java SDK
+### <a name="java-sdk"></a><a id="java-enable-defaultexpiry"></a> Java SDK
 
 # <a name="java-sdk-v4"></a>[Java SDK V4](#tab/javav4)
 
@@ -269,7 +269,7 @@ const itemDefinition = {
         };
 ```
 
-### <a name="java-sdk"></a><a id="java-set-ttl-item"></a>Java SDK
+### <a name="java-sdk"></a><a id="java-set-ttl-item"></a> Java SDK
 
 # <a name="java-sdk-v4"></a>[Java SDK V4](#tab/javav4)
 
@@ -350,7 +350,7 @@ SalesOrder salesOrder = new SalesOrder(
 
 항목에 대한 쓰기 또는 업데이트 작업을 수행하여 항목에 대한 TTL을 다시 설정할 수 있습니다. 쓰기 또는 업데이트 작업은 `_ts`를 현재 시간으로 설정하고, 항목이 만료되는 TTL이 다시 시작 됩니다. 항목의 TTL을 변경하려면 다른 필드를 업데이트하는 것처럼 필드를 업데이트하면 됩니다.
 
-### <a name="net-sdk"></a><a id="dotnet-extend-ttl-item"></a>.NET SDK
+### <a name="net-sdk"></a><a id="dotnet-extend-ttl-item"></a> .NET SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -382,7 +382,7 @@ await client.GetContainer("database", "container").ReplaceItemAsync(itemResponse
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-modifyitemexpiry"></a>Java SDK
+### <a name="java-sdk"></a><a id="java-enable-modifyitemexpiry"></a> Java SDK
 
 # <a name="java-sdk-v4"></a>[Java SDK V4](#tab/javav4)
 
@@ -424,7 +424,7 @@ container.getItem("SO05", new PartitionKey("CO18009186470")).read()
 
 항목에 TTL(Time to Live)이 설정되어 있는데 더 이상 해당 항목이 만료되는 것을 원하지 않는 경우 항목을 가져오고, TTL 필드를 제거하고, 서버에서 해당 항목을 대체할 수 있습니다. 항목에서 TTL 필드가 제거되면 컨테이너에 할당된 기본 TTL 값이 항목에 적용됩니다. 항목이 만료되지 않고 컨테이너에서 TTL 값을 상속하지 않도록 하려면 TTL 값을 -1로 설정합니다.
 
-### <a name="net-sdk"></a><a id="dotnet-turn-off-ttl-item"></a>.NET SDK
+### <a name="net-sdk"></a><a id="dotnet-turn-off-ttl-item"></a> .NET SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -457,7 +457,7 @@ await client.GetContainer("database", "container").ReplaceItemAsync(itemResponse
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-itemdefaultexpiry"></a>Java SDK
+### <a name="java-sdk"></a><a id="java-enable-itemdefaultexpiry"></a> Java SDK
 
 # <a name="java-sdk-v4"></a>[Java SDK V4](#tab/javav4)
 
@@ -499,7 +499,7 @@ container.getItem("SO05", new PartitionKey("CO18009186470")).read()
 
 컨테이너에 대한 TTL(Time to Live)을 해제하고 백그라운드 프로세스에서 만료된 항목 검사를 중지하려면 컨테이너의 `DefaultTimeToLive` 속성을 삭제해야 합니다. 이 속성을 삭제하는 것은 -1로 설정하는 것과 다릅니다. -1로 설정하면 컨테이너에 추가되는 새 항목이 영구적으로 라이브 상태로 유지되지만 컨테이너의 특정 항목에서 이 값을 재정의할 수 있습니다. 컨테이너에서 TTL 속성을 제거하면 항목이 기존의 기본 TTL 값을 명시적으로 재정의하더라도 항목이 절대 만료되지 않습니다.
 
-### <a name="net-sdk"></a><a id="dotnet-disable-ttl"></a>.NET SDK
+### <a name="net-sdk"></a><a id="dotnet-disable-ttl"></a> .NET SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -526,7 +526,7 @@ await client.GetContainer("database", "container").ReplaceContainerAsync(contain
 ```
 ---
 
-### <a name="java-sdk"></a><a id="java-enable-disableexpiry"></a>Java SDK
+### <a name="java-sdk"></a><a id="java-enable-disableexpiry"></a> Java SDK
 
 # <a name="java-sdk-v4"></a>[Java SDK V4](#tab/javav4)
 

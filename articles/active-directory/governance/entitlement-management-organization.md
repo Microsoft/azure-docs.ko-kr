@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 272dd95b97c65ecc52dd73909f1ed87d5e5ae3ca
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 50c5c02327aa9f48a605607de901258827b14896
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170499"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783946"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 연결 된 조직 추가
 
@@ -43,8 +43,8 @@ Azure Active Directory (Azure AD) 자격 관리를 통해 조직 외부 사용�
 Azure AD 디렉터리 또는 도메인의 사용자가 인증 하는 방법은 인증 유형에 따라 달라 집니다. 연결 된 조직의 인증 유형은 다음과 같습니다.
 
 - Azure AD
-- [직접 페더레이션](../b2b/direct-federation.md)
-- [일회용 암호](../b2b/one-time-passcode.md) (도메인)
+- [직접 페더레이션](../external-identities/direct-federation.md)
+- [일회용 암호](../external-identities/one-time-passcode.md) (도메인)
 
 연결 된 조직을 추가 하는 방법에 대 한 데모를 보려면 다음 비디오를 시청 하세요.
 
@@ -79,7 +79,7 @@ Azure AD 디렉터리 또는 도메인의 사용자가 인증 하는 방법은 �
 1. **추가** 를 선택 하 여 Azure AD 디렉터리 또는 도메인을 추가 합니다. 현재는 연결 된 조직 마다 하나의 Azure AD 디렉터리 또는 도메인만 추가할 수 있습니다.
 
     > [!NOTE]
-    > Azure AD 디렉터리 또는 도메인의 모든 사용자가이 액세스 패키지를 요청할 수 있습니다. 이러한 도메인은 Azure AD B2B (business to business) 허용 또는 거부 목록에 의해 차단 되지 않는 한, 디렉터리와 연결 된 모든 하위 도메인에서 Azure AD의 사용자를 포함 합니다. 자세한 내용은 [특정 조직의 B2B 사용자 초대 허용 또는 차단](../b2b/allow-deny-list.md)을 참조하세요.
+    > Azure AD 디렉터리 또는 도메인의 모든 사용자가이 액세스 패키지를 요청할 수 있습니다. 이러한 도메인은 Azure AD B2B (business to business) 허용 또는 거부 목록에 의해 차단 되지 않는 한, 디렉터리와 연결 된 모든 하위 도메인에서 Azure AD의 사용자를 포함 합니다. 자세한 내용은 [특정 조직의 B2B 사용자 초대 허용 또는 차단](../external-identities/allow-deny-list.md)을 참조하세요.
 
 1. Azure AD 디렉터리 또는 도메인을 추가한 후 **선택**을 선택 합니다.
 
@@ -89,7 +89,7 @@ Azure AD 디렉터리 또는 도메인의 사용자가 인증 하는 방법은 �
 
 1. **스폰서** 탭을 선택 하 고이 연결 된 조직의 스폰서 (선택 사항)를 추가 합니다.
 
-    스폰서는이 연결 된 조직과의 관계에 대 한 연락처 지점인 디렉터리에 이미 있는 내부 또는 외부 사용자입니다. 내부 스폰서는 디렉터리의 멤버 사용자입니다. 외부 스폰서는 이전에 초대 되었으며 이미 디렉터리에 있는 연결 된 조직의 게스트 사용자입니다. 이 연결 된 조직의 사용자가이 액세스 패키지에 대 한 액세스를 요청 하는 경우 스폰서를 승인자로 사용할 수 있습니다. 디렉터리에 게스트 사용자를 초대 하는 방법에 대 한 자세한 내용은 [Azure Portal에서 B2B 공동 작업 사용자 추가 Azure Active Directory](../b2b/add-users-administrator.md)를 참조 하세요.
+    스폰서는이 연결 된 조직과의 관계에 대 한 연락처 지점인 디렉터리에 이미 있는 내부 또는 외부 사용자입니다. 내부 스폰서는 디렉터리의 멤버 사용자입니다. 외부 스폰서는 이전에 초대 되었으며 이미 디렉터리에 있는 연결 된 조직의 게스트 사용자입니다. 이 연결 된 조직의 사용자가이 액세스 패키지에 대 한 액세스를 요청 하는 경우 스폰서를 승인자로 사용할 수 있습니다. 디렉터리에 게스트 사용자를 초대 하는 방법에 대 한 자세한 내용은 [Azure Portal에서 B2B 공동 작업 사용자 추가 Azure Active Directory](../external-identities/add-users-administrator.md)를 참조 하세요.
 
     **추가/제거**를 선택 하면 내부 또는 외부 스폰서를 선택할 수 있는 창이 열립니다. 이 창에는 디렉터리의 필터링 되지 않은 사용자 및 그룹 목록이 표시 됩니다.
 
@@ -103,7 +103,7 @@ Azure AD 디렉터리 또는 도메인의 사용자가 인증 하는 방법은 �
 
 연결 된 조직이 다른 도메인으로 변경 되거나 조직의 이름이 변경 되거나 스폰서를 변경 하려는 경우이 섹션의 지침에 따라 연결 된 조직을 업데이트할 수 있습니다.
 
-**필수 구성 요소 역할**: *전역 관리자*, *사용자 관리자*또는 *게스트 초대자*
+**필수 구성 요소 역할**: *전역 관리자* 또는 *사용자 관리자*
 
 1. Azure Portal에서 **Azure Active Directory**를 선택 하 고 **id 관리**를 선택 합니다.
 
@@ -120,7 +120,7 @@ Azure AD 디렉터리 또는 도메인의 사용자가 인증 하는 방법은 �
 
 외부 Azure AD 디렉터리 또는 도메인과 더 이상 관계가 없으면 연결 된 조직을 삭제할 수 있습니다.
 
-**필수 구성 요소 역할**: *전역 관리자*, *사용자 관리자*또는 *게스트 초대자*
+**필수 구성 요소 역할**: *전역 관리자* 또는 *사용자 관리자*
 
 1. Azure Portal에서 **Azure Active Directory**를 선택 하 고 **id 관리**를 선택 합니다.
 
@@ -132,7 +132,11 @@ Azure AD 디렉터리 또는 도메인의 사용자가 인증 하는 방법은 �
 
     ![연결 된 조직 삭제 단추](./media/entitlement-management-organization/organization-delete.png)
 
+## <a name="managing-a-connected-organization-programmatically"></a>프로그래밍 방식으로 연결 된 조직 관리
+
+또한 Microsoft Graph를 사용 하 여 연결 된 조직을 만들고, 나열 하 고, 업데이트 하 고, 삭제할 수 있습니다. 위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [connectedOrganization](/graph/api/resources/connectedorganization?view=graph-rest-beta) 개체를 관리 하 고 스폰서를 설정할 수 있습니다.
+
 ## <a name="next-steps"></a>다음 단계
 
-- [외부 사용자를 위한 액세스 제어](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users)
+- [외부 사용자를 위한 액세스 제어](./entitlement-management-external-users.md)
 - [디렉터리에 없는 사용자에 대 한 액세스 제어](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)

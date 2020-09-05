@@ -3,23 +3,19 @@ title: '자습서: Azure Active Directory에서 SuccessFactors 인바운드 프�
 description: SuccessFactors에서 Azure AD로 인바운드 프로 비전을 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: jodadzie
-ms.assetid: fac4f61e-d942-4429-a298-9ba74db95077
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
-ms.openlocfilehash: 97bda09870949846e333cc2845286512fd5d6386
-ms.sourcegitcommit: 85eb6e79599a78573db2082fe6f3beee497ad316
+ms.openlocfilehash: 9c94d2ab2e0c49fe38142e42cf934c440746da75
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87809904"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88546681"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>자습서: Azure AD 사용자 프로 비전에 대 한 SAP SuccessFactors 구성
 이 자습서에서는 SuccessFactors Employee Central에서 Azure Active Directory로 작업자 데이터를 프로 비전 하기 위해 수행 해야 하는 단계를 설명 하 고, 전자 메일 주소를 SuccessFactors에 선택적으로 쓸 수 있습니다. 

@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: tamram
 ms.subservice: common
-ms.custom: has-adal-ref
-ms.openlocfilehash: 57d1cda2e74cfe4ae3948e55124123d05682591b
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.custom: has-adal-ref, devx-track-csharp
+ms.openlocfilehash: d842974b0b53e0b0ce199334a07f11e5c998b18d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534229"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018810"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>클라이언트 응용 프로그램의 요청에 대 한 권한 부여를 위해 Azure AD에서 토큰 획득
 
@@ -245,7 +245,7 @@ private AuthenticationProperties BuildAuthenticationPropertiesForIncrementalCons
 
 ### <a name="provide-values-in-the-settings-file"></a>설정 파일에 값 제공
 
-다음으로, 다음과 같이 사용자 고유의 값으로 파일 *의appsettings.js* 를 업데이트 합니다.
+다음으로, 다음과 같이 사용자 고유의 값으로 파일 * 의appsettings.js* 를 업데이트 합니다.
 
 ```json
 {

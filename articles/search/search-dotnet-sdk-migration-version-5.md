@@ -9,16 +9,16 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 81159b1d19c4c5d46b223158df3ba2c81665c7d7
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: ade326b7dda19478398de4ec3ab2be8996d98535
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86171910"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88923214"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-5"></a>Azure Search .NET SDK 버전 5로 업그레이드
 
-버전 4.0-preview 또는 이전 버전의 [.NET SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search)를 사용 하는 경우이 문서는 버전 5를 사용 하도록 응용 프로그램을 업그레이드 하는 데 도움이 됩니다.
+버전 4.0-preview 또는 이전 버전의 [.NET SDK](/dotnet/api/overview/azure/search)를 사용 하는 경우이 문서는 버전 5를 사용 하도록 응용 프로그램을 업그레이드 하는 데 도움이 됩니다.
 
 예제를 비롯하여 SDK에 대한 보다 일반적인 연습은 [.NET 애플리케이션에서 Azure Search를 사용하는 방법](search-howto-dotnet-sdk.md)을 참조하세요.
 
@@ -35,7 +35,7 @@ Azure Search .NET SDK 버전 5에는 이전 버전에서 변경된 사항이 일
 Azure Search .NET SDK 버전 5는 Azure Search REST API의 최신 일반 공급 버전, 특히 2017-11-11을 대상으로 합니다. 이 버전이 있으면 다음을 비롯한 Azure Search의 새 기능을 .NET 애플리케이션에서 사용할 수 있습니다.
 
 * [동의어](search-synonyms.md).
-* 이제 프로그래밍 방식으로 인덱서 실행 기록에서 경고에 액세스할 수 있습니다. 자세한 내용은 [.NET 참조](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet)에서 `IndexerExecutionResult`의 `Warning` 속성을 참조하세요.
+* 이제 프로그래밍 방식으로 인덱서 실행 기록에서 경고에 액세스할 수 있습니다. 자세한 내용은 [.NET 참조](/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet)에서 `IndexerExecutionResult`의 `Warning` 속성을 참조하세요.
 * .NET Core 2 지원
 * 새 패키지 구조는 필요한 SDK 부분만 사용하도록 지원합니다. 자세한 내용은 [버전 5의 주요 변경 내용](#ListOfChanges)을 참조하세요.
 

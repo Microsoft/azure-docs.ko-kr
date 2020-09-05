@@ -10,12 +10,12 @@ ms.author: iainfou
 author: iainfoulds
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5b2f3a61e2167067bd6e61ee2a36bb1d22950d8
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 24e0cfa4227ba5d7c38449d3cf1304add5ae5c1f
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87419668"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718886"
 ---
 # <a name="tutorial-configure-custom-banned-passwords-for-azure-active-directory-password-protection"></a>자습서: Azure Active Directory 암호 보호를 위한 사용자 지정 금지 암호 구성
 
@@ -124,4 +124,4 @@ Azure AD에는 글로벌 금지 암호 목록이 포함되어 있습니다. 글�
 > * 금지 암호를 사용하여 암호 변경 테스트
 
 > [!div class="nextstepaction"]
-> [위험 기반 Azure Multi-Factor Authentication 사용](tutorial-mfa-applications.md)
+> [위험 기반 Azure Multi-Factor Authentication 사용](./tutorial-enable-azure-mfa.md)

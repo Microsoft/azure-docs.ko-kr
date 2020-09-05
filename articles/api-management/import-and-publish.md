@@ -1,6 +1,6 @@
 ---
 title: Azure API Management에서 첫 번째 API 가져오기 및 게시
-description: OpenAPI 사양 API를 Azure API Management로 가져오고 Azure Portal에서 API를 테스트하는 방법을 알아봅니다.
+description: OpenAPI 사양 API를 Azure API Management로 가져온 다음, Azure Portal에서 API를 테스트하는 방법을 알아봅니다.
 services: api-management
 documentationcenter: ''
 author: mikebudzynski
@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 38b723cb823547d4737a68576575c2b629f5eb67
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 71a239393c61dccf39ed505aa2b08d7612b7e370
+ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86206279"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87905553"
 ---
 # <a name="import-and-publish-your-first-api"></a>첫 번째 API 가져오기 및 게시
 

@@ -1,17 +1,17 @@
 ---
 title: Azure App Configuration이란?
-description: Azure App Configuration 서비스에 대한 개요입니다.
+description: Azure App Configuration 서비스 개요를 읽습니다. 앱 구성을 사용하는 이유를 이해하고 이를 사용하는 방법을 알아봅니다.
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: overview
 ms.date: 02/19/2020
-ms.openlocfilehash: 1f1cec68813d33e7fa19a414a30adfc9a41df91f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f38b8de37e84cd8a65c5a5caadf8d3b6b71ce455
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77523478"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587075"
 ---
 # <a name="what-is-azure-app-configuration"></a>Azure App Configuration이란?
 

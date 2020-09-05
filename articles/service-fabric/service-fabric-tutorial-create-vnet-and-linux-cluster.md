@@ -4,12 +4,12 @@ description: Azure CLI를 사용하여 기존 Azure 가상 네트워크에 Linux
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc
-ms.openlocfilehash: 14e029622f17e8aae392cc55ba4418b3971a5ad2
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c4b71328ce59284f8870407c9492d24afe9acd8a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260214"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586923"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Azure 가상 네트워크에 Linux Service Fabric 클러스터 배포
 
@@ -41,7 +41,12 @@ Ubuntu 18.04 LTS의 경우:
 * [AzureDeploy.js][template2]
 * [AzureDeploy.Parameters.js][parameters2]
 
-두 템플릿의 차이점은 **vmImageSku** 특성은 "18.04-lts"로 설정 되 고 각 노드의 **typehandlerversion** 은 1.1로 설정 됩니다.
+Ubuntu 18.04 LTS의 경우 두 템플릿 간의 차이가 있습니다. 
+* **vmImageSku** 특성을 "18.04-lts"로 설정 합니다.
+* 각 노드의 **Typehandlerversion** 이 1.1로 설정 됩니다.
+* ServiceFabric/클러스터 리소스의
+   - **apiVersion** "2019-03-01" 이상으로 설정 되어 있습니다.
+   - **vmImage** 속성이 "Ubuntu18_04"로 설정 되어 있습니다.
 
 이 템플릿은 7개 가상 머신 및 3개 노드 유형의 보안 클러스터를 가상 네트워크에 배포합니다.  다른 예제 템플릿은 [GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates)에 있을 수 있습니다. [에 대 한AzureDeploy.js][template] 는 다음과 같은 숫자 리소스를 배포 합니다.
 
@@ -81,7 +86,7 @@ Ubuntu 18.04 LTS의 경우:
 
 **Azuredeploy. Parameters** 파일은 클러스터와 연결 된 리소스를 배포 하는 데 사용 되는 많은 값을 선언 합니다. 배포에 대해 수정이 필요할 수도 있는 매개 변수 중 일부는 다음과 같습니다.
 
-|매개 변수|예제 값|참고|
+|매개 변수|예제 값|메모|
 |---|---||
 |adminUserName|vmadmin| 클러스터 VM에 대한 관리자 사용자 이름입니다. |
 |adminPassword|Password#1234| 클러스터 VM에 대한 관리자 암호입니다.|

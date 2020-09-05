@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 02/26/2020
 ms.author: martinco
-ms.openlocfilehash: 31fde1b80a1646a92688a0fcc1fa221cf01ba0a9
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 21c9f585c123dcf838442f128e07afd00db30856
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87418868"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89177723"
 ---
 # <a name="compare-active-directory-to-azure-active-directory"></a>Active Directory Azure Active Directory 비교
 
@@ -32,7 +32,7 @@ Azure AD는 클라우드 및 온-프레미스에서 모든 앱에 대 한 IDaaS 
 |프로 비전: 사용자 | 조직에서는 내부 사용자를 수동으로 만들거나 사내 또는 자동 프로비저닝 시스템 (예: Microsoft Identity Manager)을 사용 하 여 HR 시스템과 통합할 수 있습니다.|기존 AD 조직은 [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-whatis) 를 사용 하 여 id를 클라우드에 동기화 합니다.</br> Azure AD는 [클라우드 HR 시스템](https://docs.microsoft.com/azure/active-directory/saas-apps/workday-tutorial)에서 사용자를 자동으로 만들 수 있도록 지원 합니다. </br>Azure AD는 [Scim 지원](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups) SaaS 앱에서 id를 프로 비전 하 여 사용자에 대 한 액세스를 허용 하는 데 필요한 세부 정보를 앱에 자동으로 제공 합니다. |
 |프로 비전: 외부 id| 조직에서는 외부 사용자를 전용 외부 AD 포리스트에 일반 사용자로 직접 만들어 외부 id (게스트 사용자)의 수명 주기를 관리 하는 관리 오버 헤드를 생성 합니다.| Azure AD는 외부 id를 지 원하는 특별 한 id 클래스를 제공 합니다. [AZURE AD B2B](https://docs.microsoft.com/azure/active-directory/b2b/) 는 외부 사용자 id에 대 한 링크를 관리 하 여 유효한 지 확인 합니다. |
 | 권한 관리 및 그룹| 관리자가 사용자를 그룹 구성원으로 만듭니다. 그러면 앱 및 리소스 소유자가 그룹에 앱 또는 리소스에 대 한 액세스 권한을 부여 합니다.| [그룹](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal) 은 Azure AD 에서도 사용할 수 있으며, 관리자는 그룹을 사용 하 여 리소스에 대 한 권한을 부여할 수도 있습니다. Azure AD에서 관리자는 그룹에 멤버 자격을 수동으로 할당 하거나 쿼리를 사용 하 여 그룹에 사용자를 동적으로 포함할 수 있습니다. </br> 관리자는 Azure AD에서 [자격 관리](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-overview) 를 사용 하 여 워크플로 및 필요한 경우 시간 기반 조건을 사용 하 여 앱 및 리소스 컬렉션에 대 한 액세스 권한을 사용자에 게 제공할 수 있습니다. |
-| 관리 관리|조직에서는 AD의 도메인, 조직 구성 단위 및 그룹 조합을 사용 하 여 제어 하는 디렉터리 및 리소스를 관리 하는 관리 권한을 위임 합니다.| Azure AD는 id 시스템, 앱 및 it에서 제어 하는 리소스에 대 한 권한 있는 액세스를 위임 하는 [사용자 지정 역할을 만드는](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-custom-overview) 기능을 제한적으로 지원 하 여 [기본 제공 역할](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal) 을 RBAC (역할 기반 액세스 제어) 시스템에 제공 합니다.</br>권한 있는 역할에 대 한 just-in-time, 제한 시간 또는 워크플로 기반 액세스를 제공 하도록 [Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) 을 사용 하 여 역할 관리를 향상 시킬 수 있습니다. |
+| 관리 관리|조직에서는 AD의 도메인, 조직 구성 단위 및 그룹 조합을 사용 하 여 제어 하는 디렉터리 및 리소스를 관리 하는 관리 권한을 위임 합니다.| Azure ad는 azure ad RBAC (역할 기반 액세스 제어) 시스템에 [기본 제공 역할](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal) 을 제공 하며, id 시스템, 앱 및 it에서 제어 하는 리소스에 대 한 권한 있는 액세스를 위임 하는 [사용자 지정 역할을 만드는](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-custom-overview) 기능을 제한적으로 지원 합니다.</br>권한 있는 역할에 대 한 just-in-time, 제한 시간 또는 워크플로 기반 액세스를 제공 하도록 [Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) 을 사용 하 여 역할 관리를 향상 시킬 수 있습니다. |
 | 자격 증명 관리| Active Directory 자격 증명은 암호, 인증서 인증 및 스마트 카드 인증을 기반으로 합니다. 암호 길이, 만료 및 복잡성을 기반으로 하는 암호 정책을 사용 하 여 암호를 관리 합니다.|Azure AD는 클라우드 및 온-프레미스에 대 한 지능형 [암호 보호](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad) 를 사용 합니다. 보호에는 스마트 잠금과 사용자 지정 암호 문구 및 대체가 차단 됩니다. </br>Azure AD는 FIDO2 같은 [multi-factor authentication](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks) 및 [암호 없는](https://docs.microsoft.com/azure/active-directory/authentication/concept-authentication-passwordless) 기술을 통해 보안을 크게 강화 합니다. </br>Azure AD는 사용자에 게 [셀프 서비스 암호 재설정](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks) 시스템을 제공 하 여 지원 비용을 절감 합니다. |
 | **앱**|||
 | 인프라 앱|Active Directory은 많은 인프라 온-프레미스 구성 요소 (예: DNS, DHCP, IPSec, WiFi, NPS 및 VPN 액세스)의 기반을 형성 합니다.|새로운 클라우드 세계에서 Azure AD는 응용 프로그램에 액세스 하 고 네트워킹 제어에 의존 하는 새로운 제어 평면입니다. 사용자가 인증[하는 경우 CA (조건부 액세스)](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)는 필요한 조건에서 어떤 앱에 액세스할 수 있는 사용자를 제어 합니다.|

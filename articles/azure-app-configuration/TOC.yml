@@ -62,17 +62,20 @@
           href: use-key-vault-references-dotnet-core.md
         - name: Spring Boot
           href: use-key-vault-references-spring-boot.md
-    - name: CI/CD 파이프라인과 통합
-      href: integrate-ci-cd-pipeline.md
+    - name: CI/CD 파이프라인 통합
+      items:
+        - name: Azure Pipelines를 사용하여 푸시
+          href: push-kv-devops-pipeline.md
+        - name: GitHub 작업을 사용하여 푸시
+          href: concept-github-action.md
+        - name: 내보낸 구성을 사용하여 프로젝트 빌드
+          href: integrate-ci-cd-pipeline.md
     - name: Helm를 사용하여 Kubernetes 배포와 통합
       href: integrate-kubernetes-deployment-helm.md
 - name: 샘플
   items:
     - name: Azure CLI
       href: cli-samples.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: 키 및 값
@@ -81,8 +84,6 @@
       href: concept-point-time-snapshot.md
     - name: 기능 관리
       href: concept-feature-management.md
-    - name: GitHub 작업을 사용하여 동기화
-      href: concept-github-action.md
     - name: 이벤트 처리
       href: concept-app-configuration-event.md
     - name: 보안
@@ -91,8 +92,6 @@
           href: concept-customer-managed-keys.md
         - name: 프라이빗 엔드포인트를 사용하여 구성 저장소 보호
           href: concept-private-endpoint.md
-        - name: Azure 관리 ID와 통합
-          href: howto-integrate-azure-managed-service-identity.md
         - name: Azure Active Directory를 통해 액세스 사용
           href: concept-enable-rbac.md
         - name: Azure 관리 ID 할당
@@ -109,10 +108,14 @@
       href: howto-labels-aspnet-core.md
     - name: 구성 데이터 가져오기 또는 내보내기
       href: howto-import-export-data.md
+    - name: 키-값에 JSON 콘텐츠 형식 사용
+      href: howto-leverage-json-content-type.md
     - name: 이벤트를 사용자 지정 엔드포인트에 라우팅
       href: howto-app-configuration-event.md
     - name: 자동으로 구성 저장소 백업
       href: howto-backup-config-store.md
+    - name: 관리 ID를 사용하여 App Configuration 액세스
+      href: howto-integrate-azure-managed-service-identity.md
 - name: 참조
   items:
     - name: 구성
@@ -126,7 +129,7 @@
         - name: Azure SDK for .NET
           href: 'https://go.microsoft.com/fwlink/?linkid=2092056'
         - name: Java Spring 공급자
-          href: 'https://go.microsoft.com/fwlink/?linkid=2074659'
+          href: 'https://github.com/microsoft/spring-cloud-azure/tree/master/'
         - name: Java용 Azure SDK
           href: 'https://go.microsoft.com/fwlink/?linkid=2098196'
         - name: Python용 Azure SDK
@@ -145,13 +148,20 @@
       items:
         - name: REST API
           href: 'https://docs.microsoft.com/rest/api/appconfiguration/'
+        - name: PowerShell
+          href: 'https://docs.microsoft.com/powershell/module/az.appconfiguration/'
+        - name: Terraform
+          href: 'https://www.terraform.io/docs/providers/azurerm/r/app_configuration.html'
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/app-configuration/'
     - name: 동영상
       items:
-        - name: 시작
+        - name: App Configuration 시작
           href: 'https://channel9.msdn.com/Shows/Azure-Friday/Getting-started-with-Azure-App-Configuration'
         - name: 기능 관리
           href: 'https://channel9.msdn.com/Shows/NET-Community-Standups/ASPNET-Community-Standup-May-21st-2019-Introducing-MicrosoftFeatureManagement'
@@ -159,5 +169,7 @@
           href: 'https://channel9.msdn.com/Events/dotnetConf/NET-Conf-2019/B210'
         - name: Cloud Native Show의 Azure App Configuration
           href: 'https://www.youtube.com/watch?v=DJqmA5PcfzE'
+        - name: 새 기능 롤아웃
+          href: 'https://channel9.msdn.com/Shows/Azure-Friday/How-Azure-App-Configuration-helps-developers-roll-out-new-features?ocid=AID747781&wt.mc_id=azfr-c9-scottha&wt.mc_id=CFID0553'
     - name: 제품 사용자 의견 제공
       href: 'https://github.com/Azure/AppConfiguration/issues'

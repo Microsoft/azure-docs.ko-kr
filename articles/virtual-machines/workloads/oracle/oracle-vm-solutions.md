@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/12/2020
 ms.author: rogardle
-ms.openlocfilehash: 2201cae66aae8c2d9d106871db0d4ebbd003f361
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c22c5fa9c1a1680734a8cf5d8f4079e8c7b5c5f7
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87052153"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723419"
 ---
 # <a name="oracle-vm-images-and-their-deployment-on-microsoft-azure"></a>Microsoft Azure의 Oracle VM 이미지 및 배포
 
@@ -112,13 +112,13 @@ Azure NetApp Files는 클라우드의 데이터베이스 같은 고성능 워크
 ## <a name="licensing-oracle-database--software-on-azure"></a>Azure의 Oracle Database 및 소프트웨어에 라이선스 부여
 
 Microsoft Azure는 Oracle Database를 실행할 권한이 있는 클라우드 환경입니다. 클라우드의 Oracle 데이터베이스에 라이선스를 부여할 경우 Oracle Core Factor 테이블이 적용되지 않습니다. 대신, Enterprise Edition 데이터베이스에 하이퍼 스레딩 기술을 사용하도록 설정된 VM을 사용하는 경우 정책 문서에 명시된 대로 vCPU 두 개를 하나의 Oracle Processor 라이선스로 계수합니다. 정책 세부 정보는 [여기](http://www.oracle.com/us/corporate/pricing/cloud-licensing-070579.pdf)에서 확인할 수 있습니다.
-Oracle 데이터베이스에는 일반적으로 더 많은 메모리와 IO가 필요합니다. 따라서 이러한 워크로드에는 [메모리 최적화 VM](../../sizes-memory.md)이 권장됩니다. 워크로드를 더 최적화하려면 많은 메모리, 스토리지 및 I/O 대역폭이 필요하지만 많은 코어 수는 필요하지 않은 Oracle Database 워크로드에 [제한된 코어 vCPU](../../linux/constrained-vcpu.md)가 권장됩니다.
+Oracle 데이터베이스에는 일반적으로 더 많은 메모리와 IO가 필요합니다. 따라서 이러한 워크로드에는 [메모리 최적화 VM](../../sizes-memory.md)이 권장됩니다. 워크로드를 더 최적화하려면 많은 메모리, 스토리지 및 I/O 대역폭이 필요하지만 많은 코어 수는 필요하지 않은 Oracle Database 워크로드에 [제한된 코어 vCPU](../../constrained-vcpu.md)가 권장됩니다.
 
 Oracle 소프트웨어와 워크로드를 온-프레미스에서 Microsoft Azure로 마이그레이션하는 경우 Oracle은 [Azure의 Oracle FAQ](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html)에 명시된 대로 라이선스 이동을 제공합니다.
 
 ## <a name="oracle-real-application-cluster-oracle-rac"></a>Oracle RAC(Oracle Real Application Cluster)
 
-Oracle RAC(Oracle Real Application Cluster)는 온-프레미스 다중 노드 클러스터 구성에서 단일 노드의 오류를 완화하도록 고안되었습니다. 이 기능은 하이퍼스케일(hyper-scale) 퍼블릭 클라우드 환경에 네이티브가 아닌 두 가지 온-프레미스 기술인 네트워크 멀티캐스트 및 공유 디스크에 의존합니다. 데이터베이스 솔루션이 Azure에서 Oracle RAC를 필요로 하는 경우 이러한 기술을 사용하려면 타사 소프트웨어가 필요합니다. Oracle RAC에 대한 자세한 내용은 [FlashGrid SkyCluster 페이지](https://www.flashgrid.io/oracle-rac-in-azure/)를 참조하세요.
+Oracle RAC(Oracle Real Application Cluster)는 온-프레미스 다중 노드 클러스터 구성에서 단일 노드의 오류를 완화하도록 고안되었습니다. 이 기능은 하이퍼스케일(hyper-scale) 퍼블릭 클라우드 환경에 네이티브가 아닌 두 가지 온-프레미스 기술인 네트워크 멀티캐스트 및 공유 디스크에 의존합니다. 데이터베이스 솔루션에 Azure에서 Oracle RAC가 필요한 경우 이러한 기술을 사용 하려면 타사 소프트웨어가 필요 합니다. Oracle RAC에 대한 자세한 내용은 [FlashGrid SkyCluster 페이지](https://www.flashgrid.io/oracle-rac-in-azure/)를 참조하세요.
 
 ## <a name="high-availability-and-disaster-recovery-considerations"></a>높은 가용성 및 재해 복구 고려 사항
 

@@ -14,12 +14,12 @@ ms.date: 07/10/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54a286ed63d842dba08ad545b17498cb4000a5cf
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: c039842a04923bc02aa288576570d51c39156c40
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256631"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88784014"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Privileged Identity Management에서 Azure AD 역할에 대 한 관리 기능
 
@@ -47,16 +47,16 @@ Privileged Identity Management에서 Azure AD 역할에 대 한 관리 환경은
 
 ## <a name="extend-and-renew-assignments"></a>할당 확장 및 갱신
 
-시간 제한 할당을 확인 하는 즉시, 역할이 만료 된 경우에는 무엇을 해야 하나요? 이 새 버전에서는이 시나리오에 대 한 두 가지 옵션을 제공 합니다.
+시간 제한 할당을 확인 하는 즉시, 역할이 만료 된 경우에는 무엇을 해야 하나요? 이 새 버전에서는 이 시나리오에 대한 다음 두 가지 옵션이 제공됩니다.
 
 - **확장**: 역할 할당이 만료 된 경우 사용자가 Privileged Identity Management를 사용 하 여 해당 역할 할당에 대 한 확장을 요청할 수 있습니다.
 - **갱신**: 역할 할당이 만료 된 경우 사용자가 Privileged Identity Management를 사용 하 여 해당 역할 할당에 대 한 갱신을 요청할 수 있습니다.
 
-사용자가 시작한 작업에는 전역 관리자 또는 권한 있는 역할 관리자의 승인이 필요 합니다. 관리자는 이러한 만료를 관리 하는 데 더 이상 필요 하지 않습니다. 확장 또는 갱신 요청을 기다리고 요청이 유효한 경우 해당 요청을 승인 하기만 하면 됩니다.
+사용자가 시작하는 두 작업은 글로벌 관리자 또는 권한 있는 역할 관리자의 승인이 필요합니다. 관리자는 더 이상 만료를 관리하는 업무를 수행할 필요가 없습니다. 확장 또는 갱신 요청을 기다리고 요청이 유효한 경우 해당 요청을 승인 하기만 하면 됩니다.
 
 ## <a name="api-changes"></a>API 변경 내용
 
-고객이 Azure AD 조직에 업데이트 된 버전을 롤아웃할 때 기존 graph API의 작동이 중지 됩니다. [Azure 리소스 역할에 대 한 Graph API](https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-resources?view=graph-rest-beta)를 사용 하려면로 전환 해야 합니다. 해당 API를 사용 하 여 Azure AD 역할을 관리 하려면 `/azureResources` `/aadroles` 서명에서로 바꾸고의 디렉터리 ID를 사용 합니다 `resourceId` .
+고객이 Azure AD 조직에 업데이트 된 버전을 롤아웃할 때 기존 graph API의 작동이 중지 됩니다. [Azure 리소스 역할에 대 한 Graph API](/graph/api/resources/privilegedidentitymanagement-resources?view=graph-rest-beta)를 사용 하려면로 전환 해야 합니다. 해당 API를 사용 하 여 Azure AD 역할을 관리 하려면 `/azureResources` `/aadroles` 서명에서로 바꾸고의 디렉터리 ID를 사용 합니다 `resourceId` .
 
 이전 API를 사용 하는 모든 고객에 게 연락 하 여 이러한 변경 사항을 미리 파악 하는 것이 가장 좋습니다. Azure AD 조직이 새 버전으로 이동 했 고 여전히 이전 API에 의존 하는 경우의 팀에 문의 pim_preview@microsoft.com 하세요.
 

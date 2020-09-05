@@ -7,12 +7,13 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 09/09/2019
-ms.openlocfilehash: 4880fa5bdccdc6416962e2f7e6da395f3db7be44
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 8f9d46c2f5cce397c2aa6ebbcd38d7fbb5786412
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85263598"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88997254"
 ---
 # <a name="regional-endpoints-for-azure-cosmos-db-graph-account"></a>Azure Cosmos DB 그래프 계정의 지역별 엔드포인트
 Azure Cosmos DB 그래프 데이터베이스는 [전 세계에 분산](distribute-data-globally.md)되어 있으므로, 애플리케이션에서 여러 개의 읽기 엔드포인트를 사용할 수 있습니다. 여러 위치에서 쓰기 권한이 필요한 애플리케이션은 [다중 마스터](how-to-multi-master.md) 기능을 사용하도록 설정해야 합니다.

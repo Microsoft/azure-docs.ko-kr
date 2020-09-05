@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/20/2020
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 51b6be8b4deffd81da6c0b714bc6afeff4b06ab2
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fa30c6c2c3ecd9c9c119fee80b7ef90999e42d30
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87073936"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88962624"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Azure App Service에 지속적인 배포
 
@@ -23,7 +23,7 @@ ms.locfileid: "87073936"
 
 ## <a name="authorize-azure-app-service"></a>권한 부여 Azure App Service 
 
-Azure Repos를 사용 하려면 Azure DevOps 조직이 Azure 구독에 연결 되어 있는지 확인 합니다. 자세한 내용은 [웹 앱에 배포할 수 있도록 Azure DevOps Services 계정 설정](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops)을 참조 하세요.
+Azure Repos를 사용 하려면 Azure DevOps 조직이 Azure 구독에 연결 되어 있는지 확인 합니다. 자세한 내용은 [웹 앱에 배포할 수 있도록 Azure DevOps Services 계정 설정](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops)을 참조 하세요.
 
 Bitbucket 또는 GitHub의 경우 리포지토리에 연결할 Azure App Service 권한을 부여 합니다. 소스 제어 서비스를 한 번만 사용 하 여 권한을 부여 해야 합니다. 
 
@@ -58,7 +58,7 @@ Bitbucket 또는 GitHub의 경우 리포지토리에 연결할 Azure App Service
 1. **Deployment Center** 페이지에서 권한이 부여 된 원본 제어 공급자를 선택 하 고 **계속**을 선택 합니다. GitHub 또는 Bitbucket의 경우 **계정 변경** 을 선택 하 여 권한 있는 계정을 변경할 수도 있습니다. 
    
    > [!NOTE]
-   > Azure Repos을 사용 하려면 Azure DevOps Services 조직이 Azure 구독에 연결 되어 있는지 확인 합니다. 자세한 내용은 [웹 앱에 배포할 수 있도록 Azure DevOps Services 계정 설정](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops)을 참조 하세요.
+   > Azure Repos을 사용 하려면 Azure DevOps Services 조직이 Azure 구독에 연결 되어 있는지 확인 합니다. 자세한 내용은 [웹 앱에 배포할 수 있도록 Azure DevOps Services 계정 설정](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops)을 참조 하세요.
    
 1. GitHub 또는 Azure Repos의 경우 **빌드 공급자** 페이지에서 **App Service 빌드 서비스**를 선택 하 고 **계속**을 선택 합니다. Bitbucket는 항상 App Service 빌드 서비스를 사용 합니다.
    
@@ -69,14 +69,14 @@ Bitbucket 또는 GitHub의 경우 리포지토리에 연결할 Azure App Service
    - GitHub의 경우 계속 배포 하려는 **조직**, **리포지토리**및 **분기** 를 드롭다운 하 고 선택 합니다.
      
      > [!NOTE]
-     > 리포지토리가 표시 되지 않으면 GitHub에서 Azure App Service 권한을 부여 해야 할 수 있습니다. GitHub 리포지토리로 이동 하 고 **설정**  >  **응용 프로그램**  >  **권한 있는 OAuth 앱**으로 이동 합니다. **Azure App Service**를 선택 하 고 **Grant**를 선택 합니다. 조직 리포지토리의 경우 사용 권한을 부여 하려면 조직의 소유자 여야 합니다.
+     > 리포지토리가 표시 되지 않으면 GitHub에서 Azure App Service 권한을 부여 해야 할 수 있습니다. GitHub 리포지토리로 이동 하 고 **설정**  >  **응용 프로그램**  >  **권한 있는 OAuth 앱**으로 이동 합니다. **Azure App Service**를 선택 하 고 **Grant**를 선택 합니다. 조직 리포지토리의 경우 사용 권한을 부여하려면 조직의 소유자여야 합니다.
      
    - Bitbucket의 경우 지속적으로 배포 하려는 Bitbucket **팀**, **리포지토리**및 **분기** 를 선택 합니다.
      
    - Azure Repos의 경우 지속적으로 배포 하려는 **Azure DevOps 조직**, **프로젝트**, **리포지토리**및 **분기** 를 선택 합니다.
      
      > [!NOTE]
-     > Azure DevOps 조직이 나열되지 않은 경우 Azure 구독에 연결되어 있는지 확인하세요. 자세한 내용은 [웹 앱에 배포할 수 있도록 Azure DevOps Services 계정 설정](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops)을 참조 하세요.
+     > Azure DevOps 조직이 나열되지 않은 경우 Azure 구독에 연결되어 있는지 확인하세요. 자세한 내용은 [웹 앱에 배포할 수 있도록 Azure DevOps Services 계정 설정](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops)을 참조 하세요.
      
 1. **계속**을 선택합니다.
    
@@ -119,7 +119,7 @@ Azure Pipelines를 사용 하 여 지속적인 업데이트를 만들려면 Azur
 1. **구성** 페이지의 **코드** 섹션에서 지속적으로 배포 하려는 **조직**, **리포지토리**및 **분기** 를 선택 하 고 **계속**을 선택 합니다.
      
      > [!NOTE]
-     > 리포지토리가 표시 되지 않으면 GitHub에서 Azure App Service 권한을 부여 해야 할 수 있습니다. GitHub 리포지토리로 이동 하 고 **설정**  >  **응용 프로그램**  >  **권한 있는 OAuth 앱**으로 이동 합니다. **Azure App Service**를 선택 하 고 **Grant**를 선택 합니다. 조직 리포지토리의 경우 사용 권한을 부여 하려면 조직의 소유자 여야 합니다.
+     > 리포지토리가 표시 되지 않으면 GitHub에서 Azure App Service 권한을 부여 해야 할 수 있습니다. GitHub 리포지토리로 이동 하 고 **설정**  >  **응용 프로그램**  >  **권한 있는 OAuth 앱**으로 이동 합니다. **Azure App Service**를 선택 하 고 **Grant**를 선택 합니다. 조직 리포지토리의 경우 사용 권한을 부여하려면 조직의 소유자여야 합니다.
        
     **빌드** 섹션에서 빌드 작업을 실행 하는 데 사용 해야 하 Azure Pipelines Azure Devops 조직, 프로젝트, 언어 프레임 워크를 지정 하 고 **계속**을 선택 합니다.
 

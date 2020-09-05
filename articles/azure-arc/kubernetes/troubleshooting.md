@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Arc 사용 Kubernetes 클러스터를 통한 일반적인 문제를 해결합니다.
 keywords: Kubernetes, Arc, Azure, 컨테이너
-ms.openlocfilehash: 1527f8d4ca06c2deaf4ce18b73bfdb515dcadc63
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 404516778255409d56dd5c3a7d1fd96711cc981f
+ms.sourcegitcommit: 5b6acff3d1d0603904929cc529ecbcfcde90d88b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725587"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88723676"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Azure Arc 사용 Kubernetes 문제 해결(미리 보기)
 
@@ -69,9 +69,9 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-모든 Pod는 `STATUS`를 `Running`으로 표시해야 하며 `READY`은 `3/3` 또는 `2/2`여야 합니다. 로그를 가져오고 `Error` 또는 `CrashLoopBackOff`를 반환하는 Pod를 설명합니다.
+모든 Pod는 `STATUS`를 `Running`으로 표시해야 하며 `READY`은 `3/3` 또는 `2/2`여야 합니다. 로그를 가져오고 `Error` 또는 `CrashLoopBackOff`를 반환하는 Pod를 설명합니다. 이러한 pod가 상태를 유지 하는 경우 `Pending` 클러스터 노드에 리소스가 부족 하기 때문일 수 있습니다. [클러스터를 확장](https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#resizing-a-cluster) 하면 이러한 pod이 상태로 전환 됩니다 `Running` .
 
-## <a name="unable-to-connect-my-kubernetes-cluster-to-azure"></a>Kubernetes 클러스터를 Azure에 연결할 수 없음
+## <a name="connecting-kubernetes-clusters-to-azure-arc"></a>Azure Arc에 Kubernetes 클러스터 연결
 
 클러스터를 Azure에 연결하려면 Azure 구독에 대한 액세스와 대상 클러스터에 대한 `cluster-admin` 액세스가 필요합니다. 클러스터에 연결할 수 없거나 충분한 권한이 없는 경우 온보딩에 실패합니다.
 
@@ -99,8 +99,6 @@ $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
 This operation might take a while...
-
-There was a problem with connect-agent deployment. Please run 'kubectl -n azure-arc logs -l app.kubernetes.io/component=connect-agent -c connect-agent' to debug the error.
 ```
 
 ## <a name="configuration-management"></a>구성 관리
@@ -158,4 +156,11 @@ kind: List
 metadata:
   resourceVersion: ""
   selfLink: ""
+```
+## <a name="monitoring"></a>모니터링
+
+컨테이너에 대 한 Azure Monitor를 사용 하려면 DaemonSet가 특권 모드에서 실행 되어야 합니다. 모니터링할 정식 Charmed Kubernetes 클러스터를 성공적으로 설정 하려면 다음 명령을 실행 합니다.
+
+```console
+juju config kubernetes-worker allow-privileged=true
 ```

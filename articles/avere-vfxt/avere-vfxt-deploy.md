@@ -1,17 +1,17 @@
 ---
 title: Avere vFXT for Azure 배포
-description: Azure에 Avere vFXT 클러스터를 배포하는 단계입니다.
+description: Azure Marketplace에서 제공 하는 배포 마법사를 사용 하 여 Azure 용 Avere vFXT를 사용 하 여 클러스터를 배포 하는 방법을 알아봅니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: 4c42abdbfaf5c867a9d8d4cbc6b4519a86adaac0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31d12466186bb7f66197218fbb9675888a35fef3
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505650"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88272776"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>vFXT 클러스터 배포
 

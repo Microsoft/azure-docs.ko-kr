@@ -11,12 +11,12 @@ metadata:
   ms.author: zarhoads
   manager: gwallace
   ms.date: 09/30/2019
-  ms.openlocfilehash: 778d697f5c84f99da6974b9d689ddfe35930cd33
-  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+  ms.openlocfilehash: ac8900298670323551a25d4ef7ac3f7b44249c5a
+  ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 07/23/2020
-  ms.locfileid: "87072915"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88209897"
 landingContent:
 - title: Azure Dev Spaces 정보
   linkLists:
@@ -32,18 +32,6 @@ landingContent:
     links:
     - text: Azure Dev Spaces 설치
       url: how-to/install-dev-spaces.md
-- title: 마이크로서비스 개발 및 테스트
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 마이크로서비스 실행 및 디버그
-      url: quickstart-netcore.md
-    - text: 팀과 함께 마이크로서비스 세트에 대해 협업
-      url: quickstart-team-development.md
-  - linkListType: how-to-guide
-    links:
-    - text: 더 나은 엔드투엔드 테스트를 위해 CI/CD 파이프라인에 Dev Spaces 통합
-      url: how-to/setup-cicd.md
 - title: 고급 시나리오
   linkLists:
   - linkListType: how-to-guide

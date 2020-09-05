@@ -16,18 +16,18 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78bed4f5c600bfa0218f924dc4444119e9729e28
-ms.sourcegitcommit: fbb66a827e67440b9d05049decfb434257e56d2d
+ms.openlocfilehash: 355f0127829b709d82127fb340381830793c93ff
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87798752"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783555"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Azure AD 자격 관리에서 액세스 패키지에 대 한 할당 보기, 추가 및 제거
 
 Azure AD 자격 관리에서 패키지, 정책 및 상태에 대 한 액세스 권한이 할당 된 사용자를 볼 수 있습니다. 액세스 패키지에 적절 한 정책이 있는 경우 사용자를 액세스 패키지에 직접 할당할 수도 있습니다. 이 문서에서는 액세스 패키지에 대 한 할당을 확인, 추가 및 제거 하는 방법을 설명 합니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 Azure AD 자격 관리를 사용 하 고 패키지에 액세스 하는 사용자를 할당 하려면 다음 라이선스 중 하나가 있어야 합니다.
 
@@ -58,7 +58,7 @@ Azure AD 자격 관리를 사용 하 고 패키지에 액세스 하는 사용자
 
 ### <a name="viewing-assignments-programmatically"></a>프로그래밍 방식으로 할당 보기
 
-Microsoft Graph를 사용 하 여 액세스 패키지에서 할당을 검색할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageAssignments를 나열할](https://docs.microsoft.com/graph/api/accesspackageassignment-list?view=graph-rest-beta)수 있습니다.
+Microsoft Graph를 사용 하 여 액세스 패키지에서 할당을 검색할 수도 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageAssignments를 나열할](/graph/api/accesspackageassignment-list?view=graph-rest-beta)수 있습니다.
 
 ## <a name="directly-assign-a-user"></a>사용자를 직접 할당
 
@@ -90,7 +90,7 @@ Microsoft Graph를 사용 하 여 액세스 패키지에서 할당을 검색할 
 
 ### <a name="directly-assigning-users-programmatically"></a>프로그래밍 방식으로 사용자 직접 할당
 
-또한 Microsoft Graph를 사용 하 여 사용자를 액세스 패키지에 직접 할당할 수 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageAssignmentRequest를 만들](https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-post?view=graph-rest-beta)수 있습니다.
+또한 Microsoft Graph를 사용 하 여 사용자를 액세스 패키지에 직접 할당할 수 있습니다.  위임 된 권한이 있는 응용 프로그램을 사용 하는 적절 한 역할의 사용자는 `EntitlementManagement.ReadWrite.All` API를 호출 하 여 [accessPackageAssignmentRequest를 만들](/graph/api/accesspackageassignmentrequest-post?view=graph-rest-beta)수 있습니다.
 
 ## <a name="remove-an-assignment"></a>할당 제거
 

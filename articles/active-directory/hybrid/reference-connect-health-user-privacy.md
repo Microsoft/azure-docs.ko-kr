@@ -15,12 +15,12 @@ ms.topic: reference
 ms.date: 04/26/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58cddcde71e6e86b9abe07eb4200f13ad55ea659
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 58ecdfefa79716bcc0a69063293d5a1067693a78
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84690696"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182363"
 ---
 # <a name="user-privacy-and-azure-ad-connect-health"></a>사용자 개인 정보 및 Azure AD Connect Health 
 
@@ -41,7 +41,7 @@ Azure AD Connect Health는 보고서를 생성하거나, 분석을 수행하거�
 Azure AD Connect Health를 사용하면 모니터링되는 개별 서버 또는 모니터링되는 서비스의 인스턴스에 대한 데이터 수집을 중지할 수 있습니다. 예를 들어 Azure AD Connect Health를 사용하여 모니터링되는 개별 ADFS(Active Directory Federation Services) 서버의 데이터 수집을 중지할 수 있습니다. 또한 Azure AD Connect Health를 사용하여 모니터링 중인 전체 ADFS 인스턴스의 데이터 수집을 중지할 수도 있습니다. 중지하도록 선택하면 데이터 수집을 중지한 후 Azure AD Connect Health 포털에서 해당 서버가 삭제됩니다. 
 
 >[!IMPORTANT]
-> Azure AD Connect Health에서 모니터링되는 서버를 삭제하려면 RBAC에서 Azure AD 전역 관리자 권한 또는 참가자 역할 중 하나가 필요합니다.
+> Azure AD Connect Health에서 모니터링 되는 서버를 삭제 하려면 Azure AD 전역 관리자 권한 또는 Azure RBAC의 참가자 역할이 필요 합니다.
 >
 > Azure AD Connect Health에서 서버 또는 서비스 인스턴스를 제거하는 작업은 취소할 수 없습니다. 
 

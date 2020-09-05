@@ -13,14 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 2796a2be5c779124db4dd7f1137ebbff4094705d
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.custom: devx-track-csharp
+ms.openlocfilehash: b5b0b383cba45646a1e5a8f980b3a097767f9979
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86056704"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89262603"
 ---
 # <a name="managing-media-services-assets-across-multiple-storage-accounts"></a>여러 스토리지 계정에서 Media Services 자산 관리  
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 여러 스토리지 계정을 단일 Media Services 계정에 연결할 수 있습니다. 여러 스토리지 계정을 Media Services 계정에 연결하는 기능은 다음과 같은 이점을 제공합니다.
 

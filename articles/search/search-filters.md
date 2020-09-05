@@ -8,12 +8,13 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 7f2eb7cff5d8fe77a56117a0be57f0edb86889a9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 4d1e120073e5bf4306c89628fc4e2e9c9f7ed2cf
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85562308"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89002422"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Azure Cognitive Search의 필터 
 
@@ -61,7 +62,7 @@ ms.locfileid: "85562308"
 필터링은 문서 검색 및 관련성 점수 매기기를 위해 다운스트림 처리에 포함할 문서를 정규화 하는 검색을 통해 수행 됩니다. 검색 문자열과 페어링된 경우 필터는 후속 검색 작업의 회수 집합을 효과적으로 줄입니다. 단독으로 사용되면(예를 들어 `search=*` 같이 쿼리 문자열이 비어 있는 경우) 필터 조건이 유일한 입력입니다. 
 
 ## <a name="defining-filters"></a>필터 정의
-필터는 OData 식 이며 [Azure Cognitive Search에서 지원 되는 Odata V4 구문의 하위 집합](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search)을 사용 하 여 더 합니다. 
+필터는 OData 식 이며 [Azure Cognitive Search에서 지원 되는 Odata V4 구문의 하위 집합](/rest/api/searchservice/odata-expression-syntax-for-azure-search)을 사용 하 여 더 합니다. 
 
 **검색** 작업 마다 하나의 필터를 지정할 수 있지만 필터 자체에는 여러 필드와 여러 조건이 포함 될 수 있으며, **ismatch** 함수를 사용 하는 경우 여러 전체 텍스트 검색 식이 포함 될 수 있습니다. 여러 부분으로 구성 된 필터 식에서 연산자 우선 순위 규칙에 따라 조건자를 순서에 관계 없이 지정할 수 있습니다. 특정한 순서로 조건자를 다시 정렬해도 성능에 별다른 도움은 되지 않습니다.
 
@@ -95,7 +96,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="filter-usage-patterns"></a>필터 사용 패턴
 
-다음 예에서는 필터 시나리오에 대 한 몇 가지 사용 패턴을 보여 줍니다. 자세한 내용은 [OData 식 구문 > 예제](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples)를 참조하세요.
+다음 예에서는 필터 시나리오에 대 한 몇 가지 사용 패턴을 보여 줍니다. 자세한 내용은 [OData 식 구문 > 예제](./search-query-odata-filter.md#examples)를 참조하세요.
 
 + 독립 실행형 **$filter**는 쿼리 문자열 없이, 필터 식이 관심 있는 문서를 정규화할 수 있을 때 유용합니다. 쿼리 문자열이 없으면 어휘 또는 언어 분석, 점수 매기기 및 순위 지정 등이 없으며 검색 문자열은 "모든 문서 일치"를 의미 하는 별표입니다.
 
@@ -135,9 +136,9 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="field-requirements-for-filtering"></a>필터링을 위한 필드 요구 사항
 
-REST API에서 필터링은 단순 필드에 대해 기본적으로 *설정* 되어 있습니다. 필터링 가능 필드는 인덱스 크기가 늘어나기 때문에 필터에서 실제로 사용하지 않는 필드에 대해서는 `"filterable": false`로 설정합니다. 필드 정의 설정에 대한 자세한 내용은 [Create Index](https://docs.microsoft.com/rest/api/searchservice/create-index)(인덱스 만들기)를 참조하세요.
+REST API에서 필터링은 단순 필드에 대해 기본적으로 *설정* 되어 있습니다. 필터링 가능 필드는 인덱스 크기가 늘어나기 때문에 필터에서 실제로 사용하지 않는 필드에 대해서는 `"filterable": false`로 설정합니다. 필드 정의 설정에 대한 자세한 내용은 [Create Index](/rest/api/searchservice/create-index)(인덱스 만들기)를 참조하세요.
 
-.NET SDK에서는 필터링 가능이 기본적으로 *해제*되어 있습니다. 해당 [field](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) 개체의 [isfilterable 가능 속성](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) 을로 설정 하 여 필드를 필터링 가능 하 게 만들 수 있습니다 `true` . [Isfilterable 가능한 특성](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute)을 사용 하 여이 작업을 선언적으로 수행할 수도 있습니다. 아래 예제에서 특성은 `BaseRate` 인덱스 정의에 매핑되는 모델 클래스의 속성에 대해 설정 됩니다.
+.NET SDK에서는 필터링 가능이 기본적으로 *해제*되어 있습니다. 해당 [field](/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) 개체의 [isfilterable 가능 속성](/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) 을로 설정 하 여 필드를 필터링 가능 하 게 만들 수 있습니다 `true` . [Isfilterable 가능한 특성](/dotnet/api/microsoft.azure.search.isfilterableattribute)을 사용 하 여이 작업을 선언적으로 수행할 수도 있습니다. 아래 예제에서 특성은 `BaseRate` 인덱스 정의에 매핑되는 모델 클래스의 속성에 대해 설정 됩니다.
 
 ```csharp
     [IsFilterable, IsSortable, IsFacetable]
@@ -193,12 +194,12 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=city gt 'Seattle'
 ```
 
-더 많은 예제를 사용하려면 [OData 필터 식 구문 > 예제](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples)를 참조하세요.
+더 많은 예제를 사용하려면 [OData 필터 식 구문 > 예제](./search-query-odata-filter.md#examples)를 참조하세요.
 
-## <a name="see-also"></a>참조
+## <a name="see-also"></a>참고 항목
 
 + [Azure Cognitive Search의 전체 텍스트 검색 작동 방식](search-lucene-query-architecture.md)
-+ [문서 검색 REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
-+ [단순 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
-+ [Lucene 쿼리 구문](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
-+ [지원 되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)
++ [문서 검색 REST API](/rest/api/searchservice/search-documents)
++ [단순 쿼리 구문](/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Lucene 쿼리 구문](/rest/api/searchservice/lucene-query-syntax-in-azure-search)
++ [지원 되는 데이터 형식](/rest/api/searchservice/supported-data-types)

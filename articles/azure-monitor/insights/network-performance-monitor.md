@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 720a768679cdbd45224e5c9a05b8f8d0c9b9ea81
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 34e81076c27086ad838cca23de0e150a3c1b076c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87326089"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798910"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Azure의 네트워크 성능 모니터 솔루션
 
@@ -38,7 +38,9 @@ ms.locfileid: "87326089"
 NPM은 다음 지역 중 한 곳에서 호스트되는 작업 영역에서 전 세계에 모든 곳에 있는 네트워크와 애플리케이션 간의 연결을 모니터링할 수 있습니다.
 * 북유럽
 * 서유럽
+* 스위스 북부
 * 프랑스 중부
+* 남아프리카 북부
 * 캐나다 중부
 * 미국 서부
 * 미국 중서부
@@ -58,6 +60,7 @@ NPM은 다음 지역 중 한 곳에서 호스트되는 작업 영역에서 전 �
 * 한국 중부
 * 인도 중부
 * 미국 버지니아 주 정부
+* 미국 정부 애리조나
 * 중국 동부 2
 
 
@@ -163,7 +166,7 @@ ExpressRoute 모니터가 지원되는 지역 목록은 [설명서](../../expres
 
 원하는 기능 구성:
 
-- [성능 모니터링](network-performance-monitor-performance-monitor.md#configuration)
+- [성능 모니터](network-performance-monitor-performance-monitor.md#configuration)
 - [서비스 연결 모니터](network-performance-monitor-performance-monitor.md#configuration)
 - [Express 경로 모니터](network-performance-monitor-expressroute.md#configuration)
 

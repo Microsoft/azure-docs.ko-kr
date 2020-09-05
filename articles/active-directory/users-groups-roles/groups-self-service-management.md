@@ -1,6 +1,6 @@
 ---
 title: 셀프 서비스 그룹 관리 설정 - Azure Active Directory | Microsoft Docs
-description: Azure Active Directory에서 보안 그룹 또는 Office 365 그룹을 만들고 관리하고 보안 그룹 또는 Office 365 그룹 멤버 자격을 요청합니다.
+description: Azure Active Directory에서 보안 그룹 또는 Microsoft 365 그룹을 만들고 관리 하며 보안 그룹 또는 Microsoft 365 그룹 구성원 자격을 요청 합니다.
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -10,27 +10,27 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: how-to
-ms.date: 03/10/2020
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ce5d96d3ca65efb69bf322cf4a5f5563b83d8ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9a32874cebcd8335967eaf8a07a56346e8ad6460
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727877"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213628"
 ---
 # <a name="set-up-self-service-group-management-in-azure-active-directory"></a>Azure Active Directory에서 셀프 서비스 그룹 관리 설정 
 
-사용자가 Azure Active Directory (Azure AD)에서 고유한 보안 그룹 또는 Office 365 그룹을 만들고 관리할 수 있도록 설정할 수 있습니다. 그룹 소유자는 멤버 자격 요청을 승인 또는 거부할 수 있으며 그룹 멤버 자격에 대 한 제어를 위임할 수 있습니다. 메일 사용이 가능한 보안 그룹이 나 배포 목록에는 셀프 서비스 그룹 관리 기능을 사용할 수 없습니다.
+사용자가 Azure Active Directory (Azure AD)에서 고유한 보안 그룹 또는 Microsoft 365 그룹을 만들고 관리할 수 있도록 설정할 수 있습니다. 그룹 소유자는 멤버 자격 요청을 승인 또는 거부할 수 있으며 그룹 멤버 자격에 대 한 제어를 위임할 수 있습니다. 메일 사용이 가능한 보안 그룹이 나 배포 목록에는 셀프 서비스 그룹 관리 기능을 사용할 수 없습니다.
 
 ## <a name="self-service-group-membership-defaults"></a>셀프 서비스 그룹 구성원 자격 기본값
 
-Azure Portal 또는 Azure AD PowerShell을 사용 하 여 보안 그룹을 만들 때 그룹의 소유자만 멤버 자격을 업데이트할 수 있습니다. [액세스 패널](https://account.activedirectory.windowsazure.com/r#/joinGroups) 및 모든 Office 365 그룹에서 셀프 서비스에 의해 생성 된 보안 그룹은 소유자 승인 또는 자동 승인 여부에 관계 없이 모든 사용자에 게 참가할 수 있습니다. 액세스 패널에서 그룹을 만들 때 멤버 자격 옵션을 변경할 수 있습니다.
+Azure Portal 또는 Azure AD PowerShell을 사용 하 여 보안 그룹을 만들 때 그룹의 소유자만 멤버 자격을 업데이트할 수 있습니다. [액세스 패널](https://account.activedirectory.windowsazure.com/r#/joinGroups) 및 모든 Microsoft 365 그룹의 셀프 서비스에서 만든 보안 그룹은 소유자 승인 또는 자동 승인 여부에 관계 없이 모든 사용자에 게 참가할 수 있습니다. 액세스 패널에서 그룹을 만들 때 멤버 자격 옵션을 변경할 수 있습니다.
 
-만든 그룹 | 보안 그룹 기본 동작 | Office 365 그룹 기본 동작
+만든 그룹 | 보안 그룹 기본 동작 | Microsoft 365 그룹 기본 동작
 ------------------ | ------------------------------- | ---------------------------------
 [Azure AD PowerShell](groups-settings-cmdlets.md) | 소유자만 멤버를 추가할 수 있습니다.<br>표시 되지만 액세스 패널에서 조인할 수 없음 | 모든 사용자에 대해 조인 하려면 열기
 [Azure Portal](https://portal.azure.com) | 소유자만 멤버를 추가할 수 있습니다.<br>표시 되지만 액세스 패널에서 조인할 수 없음<br>소유자는 그룹을 만들 때 자동으로 할당 되지 않습니다. | 모든 사용자에 대해 조인 하려면 열기
@@ -47,7 +47,7 @@ Azure Portal 또는 Azure AD PowerShell을 사용 하 여 보안 그룹을 만�
 1. **그룹**을 선택 하 고 **일반** 설정을 선택 합니다.
 1. 설정 **소유자는 액세스 패널의 그룹 멤버 자격 요청을 관리할 수 있습니다** .를 **예**로 설정 합니다.
 1. **액세스 패널의 그룹에 대 한 액세스 제한** 을 **아니요**로 설정 합니다.
-1. **사용자가 azure portal에서 보안 그룹을 만들 수** 있도록 설정 하는 경우 또는 **사용자가 Azure portal에서 Office 365 그룹을 만들 수** 있습니다.
+1. **사용자가 azure portal에서 보안 그룹을 만들 수** 있도록 설정 하는 경우 또는 **사용자가 azure portal에서 Microsoft 365 그룹을 만들 수** 있습니다.
 
     - **예**: Azure AD 조직의 모든 사용자가 새 보안 그룹을 만들고 이러한 그룹에 멤버를 추가할 수 있습니다. 이러한 새 그룹은 다른 모든 사용자에 대한 액세스 패널에도 표시됩니다. 그룹의 정책 설정에서 허용 하는 경우 다른 사용자가 이러한 그룹에 가입 하는 요청을 만들 수 있습니다.
     - **아니요**: 사용자가 그룹을 만들 수 없고 자신이 소유자 인 기존 그룹을 변경할 수 없습니다. 그러나 여전히 해당 그룹의 구성원을 관리하고 다른 사용자의 해당 그룹 가입 요청을 승인할 수 있습니다.
@@ -57,7 +57,7 @@ Azure Portal 또는 Azure AD PowerShell을 사용 하 여 보안 그룹을 만�
 사용자가 그룹을 만들 수 있는 경우 조직의 모든 사용자는 새 그룹을 만든 다음 기본 소유자로 서 이러한 그룹에 멤버를 추가할 수 있습니다. 자신의 그룹을 만들 수 있는 개인은 지정할 수 없습니다. 다른 그룹 구성원을 그룹 소유자로 만들기 위한 개인만 지정할 수 있습니다.
 
 > [!NOTE]
-> 사용자가 보안 그룹 또는 Office 365 그룹에 가입 하 고 소유자가 멤버 자격 요청을 승인 또는 거부 하도록 요청 하려면 Azure Active Directory Premium (P1 또는 P2) 라이선스가 필요 합니다. Azure Active Directory Premium 라이선스를 사용 하지 않으면 사용자는 액세스 패널에서 해당 그룹을 관리할 수 있지만 액세스 패널에서 소유자 승인을 요구 하는 그룹을 만들 수 없으며 그룹 가입을 요청할 수 없습니다. 
+> 사용자가 보안 그룹 또는 Microsoft 365 그룹에 참여 하도록 요청 하 고 소유자가 멤버 자격 요청을 승인 또는 거부 하도록 요청 하려면 Azure Active Directory Premium (P1 또는 P2) 라이선스가 필요 합니다. Azure Active Directory Premium 라이선스를 사용 하지 않으면 사용자는 액세스 패널에서 해당 그룹을 관리할 수 있지만 액세스 패널에서 소유자 승인을 요구 하는 그룹을 만들 수 없으며 그룹 가입을 요청할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

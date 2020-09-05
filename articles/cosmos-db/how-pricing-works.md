@@ -5,39 +5,32 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/14/2020
-ms.openlocfilehash: d36b4fd433af716ebd97d88d05922d94bd74c309
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/19/2020
+ms.openlocfilehash: a992d240955f42ec030a84c887ba086ce92f9790
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86523539"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88605258"
 ---
 # <a name="pricing-model-in-azure-cosmos-db"></a>Azure Cosmos DB의 가격 책정 모델
 
-Azure Cosmos DB의 가격 책정 모델은 비용 관리 및 계획을 간소화합니다. Azure Cosmos DB를 사용하면 프로비전된 처리량 및 사용하는 스토리지의 요금을 해야 합니다.
+Azure Cosmos DB의 가격 책정 모델은 비용 관리 및 계획을 간소화합니다. Azure Cosmos DB를 사용 하 여 데이터베이스 및 데이터에서 사용 하는 저장소에 대해 수행 하는 작업에 대해 비용을 지불 합니다.
 
-* **프로 비전**된 처리량: [프로 비전](how-to-choose-offer.md) 된 처리량 (예약 된 처리량이 라고도 함)은 모든 규모에서 높은 성능을 보장 합니다. 필요한 처리량(RU/초)을 지정하면 Azure Cosmos DB는 구성된 처리량을 보장하는 데 필요한 리소스를 전담 투입합니다. 지정된 시간의 최대 프로비전된 처리량을 기준으로 시간별로 요금이 청구됩니다. 수동으로 처리량을 프로 비전 하거나 [자동 크기 조정을](provision-throughput-autoscale.md)사용할 수 있습니다.
+- **데이터베이스 작업**: 데이터베이스 작업에 대해 부과 되는 방법은 사용 하는 Azure Cosmos 계정 유형에 따라 달라 집니다.
+
+  - **프로 비전**된 처리량: [프로 비전](set-throughput.md) 된 처리량 (예약 된 처리량이 라고도 함)은 모든 규모에서 높은 성능을 보장 합니다. 초당 [요청 단위](request-units.md) (전용/s)에 필요한 처리량을 지정 하 고 구성 된 처리량을 보장 하는 데 필요한 리소스를 Azure Cosmos DB 합니다. [데이터베이스 또는 컨테이너에 대해 처리량을 프로비전](set-throughput.md)할 수 있습니다. 워크 로드 요구 사항에 따라 언제 든 지 처리량을 확장/축소 하거나 [자동 크기 조정을](provision-throughput-autoscale.md) 사용할 수 있습니다 (sla를 보장 하는 데 필요한 최소 처리량은 데이터베이스 또는 컨테이너에만 필요 함). 지정된 시간의 최대 프로비전된 처리량을 기준으로 시간별로 요금이 청구됩니다.
 
    > [!NOTE]
-   > 프로 비전 된 처리량 모델은 리소스를 컨테이너 또는 데이터베이스에 전용 하므로 워크 로드를 실행 하지 않는 경우에도 프로 비전 된 처리량에 대 한 요금이 청구 됩니다.
+   > 프로 비전 된 처리량 모델은 리소스를 컨테이너 또는 데이터베이스에 전용 워크 로드를 실행 하지 않는 경우에도 프로 비전 한 처리량에 대해 요금이 청구 됩니다.
 
-* **사용 된 저장소**: 지정 된 시간 동안 데이터 및 인덱스에 대해 사용 된 총 저장소 크기 (gb)에 대 한 정액 요금을 청구 합니다.
+  - **서버**를 사용 하지 않음: [서버](serverless.md) 리스 모드에서는 Azure Cosmos 계정에 리소스를 만들 때 처리량을 프로 비전 할 필요가 없습니다. 청구 기간이 종료 되 면 데이터베이스 작업에서 사용한 요청 단위 양에 대 한 요금이 청구 됩니다.
 
-초당 [요청 단위](request-units.md)(RU/초를)로 지정되는 프로비전된 처리량을 사용하여 컨테이너 또는 데이터베이스에서 데이터를 읽고 쓸 수 있습니다. [데이터베이스 또는 컨테이너에 대해 처리량을 프로비전](set-throughput.md)할 수 있습니다. 워크로드 요구 수준에 따라, 언제든지 처리량을 확장/축소할 수 있습니다. Azure Cosmos DB 가격 책정은 탄력적이며 데이터베이스 또는 컨테이너에 대해 구성하는 처리량에 비례합니다. 최소 처리량 및 스토리지 값과 크기 조정 증분은 소규모 컨테이너부터 대규모 컨테이너까지 모든 고객 부문에 전체 가격 및 탄력성 범위를 제공합니다. 각 데이터베이스 또는 컨테이너 요금은 최소 크기가 400RU/초인 100 RU/초 단위로 프로비전되는 처리량과 사용된 스토리지(GB)에 따라 시간별로 청구됩니다. 프로비전된 처리량과 달리, 스토리지 요금은 소비량을 기준으로 청구됩니다. 즉, 저장소를 미리 예약할 필요가 없습니다. 사용한 스토리지에 대해서만 요금이 청구됩니다.
+- **저장소**: 지정 된 시간 동안 데이터 및 인덱스에서 사용 하는 총 저장소 크기 (gb)에 대 한 정액 요금이 청구 됩니다. 저장소는 소비 단위로 청구 되므로 저장소를 미리 예약할 필요가 없습니다. 사용한 스토리지에 대해서만 요금이 청구됩니다.
 
-자세한 내용은 [Azure Cosmos DB 가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 및 [Azure Cosmos DB 청구서 이해](understand-your-bill.md)를 참조하세요.
+Azure Cosmos DB의 가격 책정 모델은 모든 API에서 일치합니다. 자세한 내용은 [Azure Cosmos DB 가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/)를 참조 하 고, [Azure Cosmos DB 청구서를 이해](understand-your-bill.md) 하 고, [가격 책정 모델을 고객에 게 비용 효율적으로 적용 하는 Azure Cosmos DB 방법을](total-cost-ownership.md)참조 하세요.
 
-Azure Cosmos DB의 가격 책정 모델은 모든 API에서 일치합니다. 자세한 내용은 [Azure Cosmos DB 가격 책정 모델이 고객에게 경제적인 방식](total-cost-ownership.md)을 참조하세요. Sla를 보장 하기 위해 데이터베이스 또는 컨테이너에 필요한 최소 처리량은 각 100 r u/s에 대해 프로 비전 된 처리량을 늘리거나 줄일 수 있습니다.
-
-Azure Cosmos DB 계정을 미국의 비 정부 지역에 배포 하는 경우 현재 데이터베이스와 컨테이너 기반 처리량에 대 한 최소 가격은 약 $24/월입니다. 가격은 사용 하 고 있는 지역에 따라 달라 지 며, 최신 가격 책정 정보는 [Azure Cosmos DB 가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요. 워크로드가 여러 컨테이너를 사용하는 경우 데이터베이스 수준 처리량을 사용하면 데이터베이스의 컨테이너가 개수에 제한없이 처리량을 공유할 수 있으므로 비용을 최적화할 수 있습니다. 다음 표에서는 여러 다른 엔터티에 대한 프로비전된 처리량 및 비용을 요약해서 보여 줍니다.
-
-|**엔터티**  | **최소 처리량** |**크기 증가** |**프로비전 범위** |
-|---------|---------|---------|-------|
-|데이터베이스    | 400RU/s    | 100 r u/초   |처리량은 데이터베이스용으로 예약되고, 데이터베이스 내의 컨테이너에서 공유됩니다. |
-|컨테이너     | 400RU/s   | 100 r u/초  |처리량은 특정 컨테이너용으로 예약됩니다. |
-
-위의 표에 나와 있는 것 처럼 Azure Cosmos DB의 최소 처리량은 약 $24/월 가격으로 시작 됩니다. 프로덕션 워크 로드를 지원 하기 위해 최소 처리량으로 시작 하 고 시간에 따라 확장 하는 경우 약 $6/월 단위로 비용이 원활 하 게 증가 합니다. 가격은 사용 하 고 있는 지역에 따라 달라 지 며, 최신 가격 책정 정보는 [Azure Cosmos DB 가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요. Azure Cosmos DB의 가격 책정 모델은 탄력적이며 확장 또는 축소함에 따라 비용도 매끄럽게 증가하거나 감소합니다.
+Azure Cosmos DB 계정을 미국의 비 정부 지역에 배포 하는 경우 프로 비전 된 처리량 모드의 데이터베이스 및 컨테이너 기반 처리량에 대 한 최소 가격이 있습니다. 서버 리스 모드에서는 최소 가격이 없습니다. 가격은 사용 하 고 있는 지역에 따라 달라 지 며, 최신 가격 책정 정보는 [Azure Cosmos DB 가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요.
 
 ## <a name="try-azure-cosmos-db-for-free"></a>무료로 Azure Cosmos DB 사용해 보기
 
@@ -53,7 +46,7 @@ Azure Cosmos DB는 개발자에 게 무료로 제공 되는 다양 한 옵션을
 
 ## <a name="pricing-with-reserved-capacity"></a>예약 용량이 있는 가격
 
-Azure Cosmos DB [예약 용량](cosmos-db-reserved-capacity.md)을 통해 1년 또는 3년 동안 Azure Cosmos DB 리소스 비용을 선불로 지불하면 경비를 절약할 수 있습니다. 1년 또는 3년 간의 사전 약정을 비용을 획기적으로 절감하고 정상 가격에 비해 20~65%의 할인 혜택을 받을 수 있습니다. Azure Cosmos DB 예약 용량을 사용하면 1년 또는 3년 기간 동안 프로비전된 처리량(RU/s) 비용을 선불로 지불하고 프로비전된 처리량에 대해 할인을 받아 비용을 절약할 수 있습니다. 
+Azure Cosmos DB [예약 된 용량](cosmos-db-reserved-capacity.md) 을 사용 하면 1 년 또는 3 년 동안 Azure Cosmos DB 리소스를 미리 지불 하 여 프로 비전 된 처리량 모드를 사용 하는 경우 비용을 절감할 수 있습니다. 1년 또는 3년 간의 사전 약정을 비용을 획기적으로 절감하고 정상 가격에 비해 20~65%의 할인 혜택을 받을 수 있습니다. Azure Cosmos DB 예약 용량을 사용하면 1년 또는 3년 기간 동안 프로비전된 처리량(RU/s) 비용을 선불로 지불하고 프로비전된 처리량에 대해 할인을 받아 비용을 절약할 수 있습니다. 
 
 예약 용량은 청구 할인을 제공하며, Azure Cosmos DB 리소스의 런타임 상태에는 영향을 주지 않습니다. 예약 용량은 MongoDB, Cassandra, SQL, Gremlin, Azure Tables를 포함하는 모든 API와 전 세계 모든 지역에서 일관되게 사용할 수 있습니다. [예약 용량을 통해 Azure Cosmos DB 리소스에 대한 선불 결제](cosmos-db-reserved-capacity.md) 문서에서 예약 용량에 대해 자세히 알아보고 [Azure Portal](https://portal.azure.com/)에서 예약 용량을 구입할 수 있습니다.
 

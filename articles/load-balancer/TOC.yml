@@ -1,25 +1,25 @@
-- name: 부하 분산 장치 설명서
+- name: Load Balancer 설명서
   href: index.yml
 - name: 개요
   items:
     - name: Azure Load Balancer란?
       href: load-balancer-overview.md
-    - name: 새로운 기능
-      href: whats-new.md
-    - name: 질문과 대답
-      href: load-balancer-faqs.md
 - name: 빠른 시작
   items:
     - name: 퍼블릭 부하 분산 장치 만들기 - 포털
       href: quickstart-load-balancer-standard-public-portal.md
     - name: 퍼블릭 부하 분산 장치 만들기 - PowerShell
-      href: quickstart-create-standard-load-balancer-powershell.md
+      href: quickstart-load-balancer-standard-public-powershell.md
     - name: 퍼블릭 부하 분산 장치 만들기 - Azure CLI
       href: quickstart-load-balancer-standard-public-cli.md
     - name: 퍼블릭 부하 분산 장치 만들기 - ARM 템플릿
       href: quickstart-load-balancer-standard-public-template.md
-    - name: 퍼블릭 부하 분산 장치 만들기 - 포털
+    - name: 내부 부하 분산 장치 만들기 - 포털
       href: quickstart-load-balancer-standard-internal-portal.md
+    - name: 내부 부하 분산 장치 만들기 - PowerShell
+      href: quickstart-load-balancer-standard-internal-powershell.md
+    - name: 내부 부하 분산 장치 만들기 - Azure CLI
+      href: quickstart-load-balancer-standard-internal-cli.md
   expanded: true
 - name: 자습서
   items:
@@ -130,14 +130,16 @@
           href: move-across-regions-internal-load-balancer-powershell.md
     - name: 아웃바운드 전용 부하 분산 장치 구성
       href: egress-only.md
-- name: 문제 해결
-  items:
-    - name: Azure Load Balancer 문제 해결
-      href: load-balancer-troubleshoot.md
-    - name: 일반 배포 오류 문제 해결
-      href: load-balancer-common-deployment-errors.md
-    - name: 일반적인 아웃바운드 연결 문제 해결
-      href: troubleshoot-outbound-connection.md
+    - name: 문제 해결
+      items:
+        - name: Azure Load Balancer 문제 해결
+          href: load-balancer-troubleshoot.md
+        - name: 일반 배포 오류 문제 해결
+          href: load-balancer-common-deployment-errors.md
+        - name: 일반적인 아웃바운드 연결 문제 해결
+          href: troubleshoot-outbound-connection.md
+        - name: 리소스 상태 및 인바운드 가용성 문제 해결
+          href: troubleshoot-rhc.md
 - name: 참조
   items:
     - name: 코드 샘플
@@ -156,7 +158,7 @@
       href: 'https://www.rubydoc.info/gems/azure_mgmt_network/Azure/Network/Mgmt/V2020_03_01/LoadBalancers'
     - name: Python
       href: /python/api/azure-mgmt-network/azure.mgmt.network.v2019_02_01.operations.loadbalancersoperations
-    - name: REST
+    - name: REST (영문)
       href: 'https://msdn.microsoft.com/library/azure/mt163651.aspx'
     - name: Resource Manager 템플릿
       href: 'https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers'
@@ -175,3 +177,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: 제품 업데이트
       href: 'https://azure.microsoft.com/updates/?product=load-balancer'
+    - name: FAQ
+      href: load-balancer-faqs.md

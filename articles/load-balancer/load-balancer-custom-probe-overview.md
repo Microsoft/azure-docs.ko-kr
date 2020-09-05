@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: e00d6b674453f12f94a2859f9b0533aea0e7332c
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: e22908dc5d445f105c199e594443cd051eb4be41
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207560"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89051358"
 ---
 # <a name="load-balancer-health-probes"></a>Load Balancer 상태 프로브
 
@@ -223,7 +223,7 @@ AzureLoadBalancer 서비스 태그는 [네트워크 보안 그룹](../virtual-ne
 - DNS 가상 서버와 통신하도록 설정하여 사용자 지정 DNS 서버를 정의하지 않은 고객에게 필터링된 이름 확인을 제공합니다.  이 필터링을 통해 고객은 배포의 호스트 이름만 확인할 수 있습니다.
 - VM이 Azure의 DHCP 서비스에서 동적 IP 주소를 가져올 수 있도록 합니다.
 
-## <a name="design-guidance"></a><a name="design"></a>디자인 지침
+## <a name="design-guidance"></a><a name="design"></a> 디자인 지침
 
 상태 프로브는 서비스를 탄력적으로 유지하고 확장할 수 있도록 하는 데 사용됩니다. 구성 또는 디자인 패턴이 잘못되면 서비스의 가용성 및 확장성에 영향을 줄 수 있습니다. 이 전체 문서를 검토하고, 이 프로브 응답이 가동 중지 또는 가동 상태로 표시될 경우 시나리오에 미치는 영향과 애플리케이션 시나리오의 가용성에 어떤 영향을 미칠지 고려하세요.
 
@@ -263,6 +263,6 @@ VM에 여러 인터페이스가 있는 경우 받은 인터페이스의 프로�
 ## <a name="next-steps"></a>다음 단계
 
 - [표준 Load Balancer](load-balancer-standard-overview.md) 에 대 한 자세한 정보
-- [PowerShell을 사용하여 Resource Manager에서 공용 부하 분산 장치 만들기 시작](quickstart-create-standard-load-balancer-powershell.md)
+- [PowerShell을 사용하여 Resource Manager에서 공용 부하 분산 장치 만들기 시작](quickstart-load-balancer-standard-public-powershell.md)
 - [상태 프로브용 REST API](https://docs.microsoft.com/rest/api/load-balancer/loadbalancerprobes/)
 - [Load Balancer의 Uservoice](https://aka.ms/lbuservoice)를 사용하여 새 상태 프로브 기능 요청

@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: a8bed6c46b0660d5bf43863a5c7aaf4eeaf7e26f
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 6b62f8c33c73ded978c0c2e3a8c3b7fadea49c96
+ms.sourcegitcommit: b33c9ad17598d7e4d66fe11d511daa78b4b8b330
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853227"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88852086"
 ---
 # <a name="scenario-route-traffic-through-an-nva"></a>시나리오: NVA를 통해 트래픽 라우팅
 
 가상 WAN 가상 허브 라우팅으로 작업할 때 몇 가지 시나리오를 사용할 수 있습니다. 이 NVA 시나리오에서 목표는 NVA (네트워크 가상 어플라이언스)를 통해 분기에서 VNet으로, VNet에서 분기로 트래픽을 라우팅하는 것입니다. 가상 허브 라우팅에 대 한 자세한 내용은 [가상 허브 라우팅 정보](about-virtual-hub-routing.md)를 참조 하세요.
 
 > [!NOTE]
-> 라우팅 기능 중 일부는 여전히 롤아웃 될 수 있습니다. 사용자의 지역에서 롤아웃이 아직 발생 하지 않은 경우에는 다음 버전의 문서에 있는 단계를 사용 하세요.
+> 새 기능 이전에 경로를 설정 하 여 [가상 허브 라우팅을](how-to-virtual-hub-routing.md) 사용할 수 있도록 구성 하는 방법에 대 한 설정이 이미 있는 경우 다음 문서 버전의 단계를 사용 하세요.
 >* [Azure Portal 문서](virtual-wan-route-table-nva-portal.md)
 >* [PowerShell 문서](virtual-wan-route-table-nva.md)
 >
@@ -39,7 +39,7 @@ ms.locfileid: "87853227"
 
 **연결 매트릭스**
 
-| 시작             | 대상:|   *NVA 스포크*|*NVA Vnet*|*NVA Vnet*|*분기*|
+| 보낸 사람             | 아래와 같이 변경합니다.|   *NVA 스포크*|*NVA Vnet*|*NVA Vnet*|*분기*|
 |---|---|---|---|---|---|
 | **NVA 스포크**   | &#8594; | 0/0 UDR  |  피어링 |   0/0 UDR    |  0/0 UDR  |
 | **NVA Vnet**    | &#8594; |   정적 |      X   |        X     |      X    |
@@ -76,7 +76,7 @@ NVA 스포크가 가상 WAN에 의해 관리 되지 않는 것을 고려 하 여
 
 이제 가상 WAN에서 패킷을 보낼 연결을 알고 있지만 연결에서 이러한 패킷을 받을 때 수행할 작업을 알고 있어야 합니다. 연결 경로 테이블이 사용 됩니다. 여기서는 더 짧은 접두사 (/16이 아닌/24 대신)를 사용 하 여 이러한 경로가 NVA Vnet (VNet 2 및 VNet 4)에서 가져온 경로 보다 우선적으로 적용 되도록 합니다.
 
-| Description | 연결 | 고정 경로            |
+| 설명 | 연결 | 고정 경로            |
 | ----------- | ---------- | ----------------------- |
 | VNet 5       | eastusconn | 10.2.1.0/24-> 10.2.0.5 |
 | VNet 6       | eastusconn | 10.2.2.0/24-> 10.2.0.5 |

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7d2bb927569a125015f1b0befa27fd3e1f17c00
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: 28516482cf154c81912de0f8e3f35b9e54ef2f69
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87874778"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948269"
 ---
 # <a name="configure-authentication-session-management-with-conditional-access"></a>조건부 액세스를 사용하여 인증 세션 관리를 구성합니다.
 
@@ -136,5 +136,5 @@ Azure AD에서 등록 된 Windows 장치에는 장치에 로그인 하는 것으
 
 ## <a name="next-steps"></a>다음 단계
 
-* 조건부 액세스 정책을 구성 하는 방법을 알아보려면 [Azure Active Directory 조건부 액세스를 사용 하는 특정 앱에 대 한 MFA 필요](app-based-mfa.md)문서를 참조 하세요.
+* 조건부 액세스 정책을 구성 하는 방법을 알아보려면 [Azure Active Directory 조건부 액세스를 사용 하는 특정 앱에 대 한 MFA 필요](../authentication/tutorial-enable-azure-mfa.md)문서를 참조 하세요.
 * 사용자 환경에 대 한 조건부 액세스 정책을 구성할 준비가 된 경우 [Azure Active Directory의 조건부 액세스에 대 한 모범 사례](best-practices.md)문서를 참조 하세요.

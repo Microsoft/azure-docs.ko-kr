@@ -3,15 +3,15 @@ title: 개요-Azure Logic Apps에 대 한 배포 자동화
 description: Azure Logic Apps에 대 한 배포를 자동화 하 Azure Resource Manager 템플릿에 대해 알아보기
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: logicappspm
 ms.topic: article
-ms.date: 07/25/2019
-ms.openlocfilehash: 6a89eb16c8042efc86bb5cc8bd5fba7c821dc341
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 08/17/2020
+ms.openlocfilehash: 9d3c5a914fe472dd7e4f797cb633e65951bf07e7
+ms.sourcegitcommit: 927dd0e3d44d48b413b446384214f4661f33db04
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520972"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88871465"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>개요: Azure Resource Manager 템플릿을 사용 하 여 Azure Logic Apps에 대 한 배포 자동화
 
@@ -61,7 +61,7 @@ ms.locfileid: "86520972"
 
 논리 앱 템플릿의 경우 주로 다음 템플릿 개체를 사용 합니다.
 
-| attribute | 설명 |
+| 특성 | 설명 |
 |-----------|-------------|
 | `parameters` | Azure에서 배포용 리소스를 만들고 사용자 지정할 때 사용할 값을 허용 하는 [템플릿 매개 변수](../azure-resource-manager/templates/template-syntax.md#parameters) 를 선언 합니다. 예를 들어 이러한 매개 변수는 논리 앱의 이름 및 위치, 연결 및 배포에 필요한 기타 리소스에 대 한 값을 허용 합니다. 이러한 매개 변수 값은이 항목의 뒷부분에서 설명 하는 [매개 변수 파일](#template-parameter-files)에 저장할 수 있습니다. 일반 정보는 [매개 변수-리소스 관리자 템플릿 구조 및 구문](../azure-resource-manager/templates/template-syntax.md#parameters)을 참조 하세요. |
 | `resources` | 논리 앱, 연결, Azure storage 계정 등의 Azure 리소스 그룹을 만들거나 업데이트 하 고 배포할 [리소스](../azure-resource-manager/templates/template-syntax.md#resources) 를 정의 합니다. 일반 정보는 [리소스 리소스 관리자 템플릿 구조 및 구문](../azure-resource-manager/templates/template-syntax.md#resources)을 참조 하세요. |
@@ -175,7 +175,7 @@ ms.locfileid: "86520972"
 
   * [Azure Key Vault를 사용 하 여 보안 매개 변수 값 전달](../azure-resource-manager/templates/key-vault-parameter.md)
 
-* 템플릿 매개 변수 이름을 워크플로 정의 매개 변수 이름과 구분 하기 위해 다음과 같이 설명이 포함 된 템플릿 매개 변수 이름을 사용할 수 있습니다.`TemplateFabrikamPassword`
+* 템플릿 매개 변수 이름을 워크플로 정의 매개 변수 이름과 구분 하기 위해 다음과 같이 설명이 포함 된 템플릿 매개 변수 이름을 사용할 수 있습니다. `TemplateFabrikamPassword`
 
 자세한 템플릿 모범 사례는 [템플릿 매개 변수에 대 한 모범 사례](../azure-resource-manager/templates/template-best-practices.md#parameters)를 참조 하세요.
 
@@ -237,7 +237,7 @@ ms.locfileid: "86520972"
 
 ## <a name="template-resources"></a>템플릿 리소스
 
-템플릿에는 `resources` [논리 앱의 리소스 정의](#logic-app-resource-definition), [연결 리소스 정의](#connection-resource-definitions), 논리 앱이 배포에 필요한 기타 리소스 등 Azure에서 만들고 배포할 각 리소스에 대 한 정의가 포함 된 배열인 개체가 있습니다.
+템플릿에는 논리 앱 `resources` [의 리소스 정의](#logic-app-resource-definition), [연결 리소스 정의](#connection-resource-definitions), 논리 앱이 배포에 필요한 기타 리소스 등 Azure에서 만들고 배포할 각 리소스에 대 한 정의가 포함 된 배열인 개체가 있습니다.
 
 ```json
 {
@@ -264,6 +264,12 @@ ms.locfileid: "86520972"
 
 > [!NOTE]
 > 템플릿에는 여러 논리 앱에 대 한 리소스 정의가 포함 될 수 있으므로 모든 논리 앱 리소스가 동일한 Azure 리소스 그룹을 지정 하는지 확인 합니다. Visual Studio를 사용 하 여 Azure 리소스 그룹에 템플릿을 배포 하는 경우 열려는 논리 앱을 묻는 메시지가 표시 됩니다. 또한 Azure 리소스 그룹 프로젝트에는 두 개 이상의 템플릿이 포함 될 수 있으므로 메시지가 표시 되 면 올바른 매개 변수 파일을 선택 했는지 확인 합니다.
+
+<a name="view-resource-definitions"></a>
+
+### <a name="view-resource-definitions"></a>리소스 정의 보기
+
+Azure 리소스 그룹의 모든 리소스에 대 한 리소스 정의를 검토 하려면 [azure에서 Visual Studio로 논리 앱을 다운로드](../logic-apps/manage-logic-apps-with-visual-studio.md)합니다 .이는 가장 쉽게 배포할 준비가 된 유효한 매개 변수가 있는 논리 앱 템플릿을 만드는 가장 쉬운 방법입니다.
 
 템플릿 리소스 및 해당 특성에 대 한 일반 정보는 다음 항목을 참조 하세요.
 
@@ -319,7 +325,7 @@ ms.locfileid: "86520972"
 
 논리 앱 리소스 정의와 관련 된 특성은 다음과 같습니다.
 
-| attribute | 필수 | Type | 설명 |
+| 특성 | 필수 | Type | 설명 |
 |-----------|----------|------|-------------|
 | `state` | 예 | String | 배포 시 논리 앱의 상태입니다. 여기서는 논리 앱 `Enabled` 이 라이브 상태 이며 `Disabled` 논리 앱이 비활성 상태임을 의미 합니다. 예를 들어 논리 앱을 라이브 상태로 전환할 준비가 되지 않았지만 초안 버전을 배포 하려는 경우 옵션을 사용할 수 있습니다 `Disabled` . |
 | `integrationAccount` | 아니요 | Object | 논리 앱에서 B2B (기업 간) 시나리오에 대 한 아티팩트를 저장 하는 통합 계정을 사용 하는 경우이 개체에는 `id` 통합 계정에 대 한 ID를 지정 하는 특성이 포함 됩니다. |
@@ -568,7 +574,7 @@ ms.locfileid: "86520972"
 
 ## <a name="connection-resource-definitions"></a>연결 리소스 정의
 
-논리 앱이 [관리 되는 커넥터](../connectors/apis-list.md)를 사용 하 여 다른 서비스와 시스템에 대 한 연결을 만들고 사용 하는 경우 템플릿의 `resources` 개체에는 해당 연결에 대 한 리소스 정의가 포함 됩니다.
+논리 앱이 [관리 되는 커넥터](../connectors/apis-list.md)를 사용 하 여 다른 서비스와 시스템에 대 한 연결을 만들고 사용 하는 경우 템플릿의 `resources` 개체에는 해당 연결에 대 한 리소스 정의가 포함 됩니다. 논리 앱 내에서 연결을 만드는 경우에도 연결은 자체 리소스 정의가 포함 된 별도의 Azure 리소스입니다. 이러한 연결 리소스 정의를 검토 하려면 [Azure에서 Visual Studio로 논리 앱을 다운로드](../logic-apps/manage-logic-apps-with-visual-studio.md)합니다 .이는 일반적으로 배포할 준비가 된 유효한 매개 변수가 있는 논리 앱 템플릿을 만드는 가장 쉬운 방법입니다.
 
 ```json
 {
@@ -938,7 +944,7 @@ Azure Blob Storage 연결에 대 한 계정 이름 및 액세스 키를 제공 �
 }
 ```
 
-| attribute | Description |
+| 특성 | 설명 |
 |-----------|-------------|
 | `token:clientId` | 서비스 사용자와 연결 된 응용 프로그램 또는 클라이언트 ID입니다. |
 | `token:clientSecret` | 서비스 사용자와 연결 된 키 값입니다. |

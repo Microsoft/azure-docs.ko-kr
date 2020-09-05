@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: d6acc16780179654975d63ab2c0b04caf141510c
-ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
+ms.openlocfilehash: 3eec935d0a25f9510cd9a2f6e00b7ac22756e697
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85557043"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88796802"
 ---
 # <a name="quickstart-deploy-unity-sample-to-hololens"></a>빠른 시작: HoloLens에 Unity 샘플 배포
 
@@ -44,7 +44,7 @@ ms.locfileid: "85557043"
 1. 구성을 **Release** 및 **ARM64**로 변경합니다.
 1. 디버거 모드를 **원격 머신**\으로 전환합니다.
     ![솔루션 구성](media/unity-deploy-config.png)
-1. 솔루션을 빌드합니다(F7).
+1. 솔루션 빌드
 1. '빠른 시작' 프로젝트의 경우 *속성 > 디버깅*으로 이동합니다.
     1. 구성 *릴리스*가 활성 상태인지 확인합니다.
     1. *실행할 디버거*를 **원격 머신**으로 설정합니다.

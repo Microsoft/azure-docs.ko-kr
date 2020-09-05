@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9760624afec111a271ae5aa0ebbe5533d6ba8d6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7dd4c95c3c02f4b4a807b5238aa61e76ecb56e3e
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81680202"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88716421"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-android"></a>Android에서 Azure Active Directory 인증서 기반 인증
 
@@ -33,11 +33,11 @@ Android 디바이스는 연결할 때 자신의 디바이스에서 클라이언�
 
 ## <a name="microsoft-mobile-applications-support"></a>Microsoft 모바일 애플리케이션 지원
 
-| 앱 | Support(지원) |
+| 앱 | 지원 |
 | --- | --- |
 | Azure Information Protection 앱 |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | Intune 회사 포털 |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
-| Microsoft 팀 |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
+| Microsoft Teams |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | OneNote |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | OneDrive |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
 | Outlook |![이 응용 프로그램에 대 한 지원을 나타내는 확인 표시][1] |
@@ -64,7 +64,7 @@ Azure Active Directory는 이러한 클레임이 ADFS 토큰(또는 다른 SAML 
 * Android에서 Microsoft Authenticator를 설치하기 위한 요구 사항
 * 사용자 인증서를 얻는 방법에 대한 지침
 
-자세한 내용은 [AD FS 로그인 페이지 사용자 지정](https://technet.microsoft.com/library/dn280950.aspx)을 참조하세요.
+자세한 내용은 [AD FS 로그인 페이지 사용자 지정](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))을 참조하세요.
 
 일부 Office 앱 (최신 인증 사용)은 요청 시 Azure AD에 '*prompt =* t r u e '를 보냅니다. 기본적으로 Azure AD는 '*wauth = usernamepassworduri*'로 adfs에 대 한 요청에서 '*prompt =* t r U e '로 변환 합니다 (U/P 인증을 수행 하도록 adfs에 요청) 및 '*we= 0*' (adfs에 SSO 상태를 무시 하 고 새 인증을 수행 하도록 요청). 이러한 앱에 인증서 기반 인증을 사용하려면 기본 Azure AD 동작을 수정해야 합니다. 페더레이션된 도메인 설정에서 '*PromptLoginBehavior*'를 '*사용 안 함*'으로 설정 합니다.
 다음과 같은 [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) cmdlet을 사용하면 이 작업을 수행할 수 있습니다.

@@ -14,14 +14,17 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: f4c021531a4d04bf16e5dbee4172952433f675d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 5e9a978cd96da47e91434c7146eb3e258d77d8ee
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77913007"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89261345"
 ---
 # <a name="detect-motions-with-azure-media-analytics"></a>Azure 미디어 검색으로 동작 검색
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
 > **Azure Media Motion Detector** 미디어 프로세서는 사용 중지 됩니다. 사용 중지 날짜는 [레거시 구성 요소](legacy-components.md) 항목을 참조 하세요.
@@ -45,7 +48,7 @@ ms.locfileid: "77913007"
 ### <a name="parameters"></a>매개 변수
 다음 매개 변수를 사용할 수 있습니다.
 
-| 이름 | 옵션 | 설명 | 기본값 |
+| Name | 옵션 | 설명 | 기본값 |
 | --- | --- | --- | --- |
 | sensitivityLevel |문자열:'low', 'medium', 'high' |동작이 보고되는 민감도 수준을 설정합니다. 가양성 수를 조정하려면 이 값을 조정합니다. |'medium' |
 | frameSamplingValue |양의 정수 |알고리즘이 실행되는 빈도를 설정합니다. 1은 프레임마다, 2는 두 개의 프레임마다 등을 의미합니다. |1 |
@@ -98,14 +101,14 @@ ms.locfileid: "77913007"
 
 다음 표는 출력 JSON 파일의 요소에 대해 설명합니다.
 
-| 요소 | 설명 |
+| 요소 | Description |
 | --- | --- |
 | 버전 |동영상 API의 버전을 나타냅니다. 현재 버전은 2입니다. |
 | timescale |동영상의 초당 "틱"입니다. |
 | offset |"틱" 단위의 타임스탬프에 대한 시간 오프셋입니다. 동영상 API 버전 1.0에서는 항상 0입니다. 향후 지원하는 시나리오에서는 이 값이 변경될 수 있습니다. |
 | framerate |동영상의 초당 프레임 수입니다. |
 | width, height |픽셀 단위의 동영상 너비와 높이를 참조합니다. |
-| start |"틱" 단위의 시작 타임스탬프입니다. |
+| 시작 |"틱" 단위의 시작 타임스탬프입니다. |
 | duration |"틱" 단위의 이벤트 길이입니다. |
 | interval |"틱" 단위의 이벤트에 있는 각 항목의 간격입니다. |
 | events |각 이벤트 조각에는 해당 기간 내에 검색된 동작이 포함됩니다. |
@@ -210,7 +213,7 @@ ms.locfileid: "77913007"
 
 개발 환경을 설정 하 고 [.net을 사용한 Media Services 개발](media-services-dotnet-how-to-use.md)에 설명 된 대로 연결 정보를 사용 하 여 app.config 파일을 채웁니다. 
 
-#### <a name="example"></a>예제
+#### <a name="example"></a>예
 
 ```csharp
 

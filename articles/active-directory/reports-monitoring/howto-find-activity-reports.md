@@ -14,12 +14,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33c4eeda7f7df1a8238f54fa1afd1bc069f64e96
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b705cf6ac6fd25c7794db7651db5bc5c5c0e790c
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608214"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230622"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Azure Portal에서 작업 보고서 찾기
 
@@ -114,7 +114,7 @@ ms.locfileid: "85608214"
 
 비정상적인 활동 보고서는 Azure AD에서 검색 하 고 보고할 수 있는 보안 관련 위험 검색에 대 한 정보를 제공 합니다.
 
-다음 표에서는 Azure AD 비정상 작업 보안 보고서 및 Azure Portal의 해당 위험 검색 유형을 나열 합니다. 자세한 내용은 [Azure Active Directory 위험 탐지](concept-risk-events.md)를 참조하세요.  
+다음 표에서는 Azure AD 비정상 작업 보안 보고서 및 Azure Portal의 해당 위험 검색 유형을 나열 합니다. 자세한 내용은 [Azure Active Directory 위험 탐지](../identity-protection/overview-identity-protection.md)를 참조하세요.  
 
 
 | Azure AD 비정상 작업 보고서 |  Id 보호 위험 검색 유형|
@@ -136,8 +136,8 @@ ms.locfileid: "85608214"
 
 [Azure Portal](https://portal.azure.com) **Azure Active Directory** 블레이드의 **보안** 섹션에서 검색 된 위험 검색에 대 한 보고서에 액세스할 수 있습니다. 검색 된 위험 검색은 다음 보고서에서 추적 됩니다.   
 
-- [위험에 노출된 사용자](concept-user-at-risk.md)
-- [위험한 로그인](concept-risky-sign-ins.md)
+- [위험에 노출된 사용자](../identity-protection/overview-identity-protection.md)
+- [위험한 로그인](../identity-protection/overview-identity-protection.md)
 
     ![보안 보고서](./media/howto-find-activity-reports/04.png "보안 보고서")
 
@@ -147,7 +147,7 @@ ms.locfileid: "85608214"
 
 #### <a name="symptoms"></a>증상 
 
-활동 로그(감사 또는 로그인)를 다운로드했고 선택한 시간에 대한 모든 레코드가 표시되지 않습니다. 이유 
+활동 로그(감사 또는 로그인)를 다운로드했고 선택한 시간에 대한 모든 레코드가 표시되지 않습니다. 그 이유는 무엇일까요? 
 
  ![보고](./media/troubleshoot-missing-data-download/01.png)
  
@@ -205,7 +205,7 @@ Azure Portal에서 일부 작업을 수행했고 `Activity logs > Audit Logs` �
 
 #### <a name="symptoms"></a>증상
 
-Azure Portal에서 30일이 초과된 로그인 및 감사 데이터를 볼 수 없습니다. 이유 
+Azure Portal에서 30일이 초과된 로그인 및 감사 데이터를 볼 수 없습니다. 그 이유는 무엇일까요? 
 
  ![보고](./media/troubleshoot-missing-audit-data/03.png)
 
@@ -228,4 +228,4 @@ Azure Active Directory 작업은 사용자 라이선스에 따라 다음 기간 
 
 * [감사 로그 개요](concept-audit-logs.md)
 * [로그인 개요](concept-sign-ins.md)
-* [위험 이벤트 개요](concept-risk-events.md)
+* [위험 이벤트 개요](../identity-protection/overview-identity-protection.md)

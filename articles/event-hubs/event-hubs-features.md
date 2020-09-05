@@ -3,12 +3,12 @@ title: 기능 개요 - Azure Event Hubs | Microsoft Docs
 description: 이 문서에서는 Azure Event Hubs의 기능 및 용어에 대한 정보를 제공합니다.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 2de83be023c32df067712146937f880092025a44
-ms.sourcegitcommit: d7bd8f23ff51244636e31240dc7e689f138c31f0
+ms.openlocfilehash: 9e004b3a8a9dd454eae5a20564a1ab74a26b66d5
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87172116"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88936234"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Azure Event Hubs의 기능 및 용어
 
@@ -37,7 +37,7 @@ AMQP 1.0, Kafka 1.0 이상 또는 HTTPS를 통해 이벤트를 게시할 수 있
 
 AMQP 또는 HTTPS 사용 선택은 사용량 시나리오에 해당됩니다. 전송 수준 보안(TLS) 또는 SSL/TLS 외에 AMQP는 영구 양방향 소켓을 설정해야 합니다. AMQP는 세션을 초기화할 때 네트워크 비용이 더 많이 듭니다. 그러나 HTTPS를 사용 하려면 모든 요청에 대해 추가 TLS 오버 헤드가 필요 합니다. AMQP는 빈번한 게시자에게 더 높은 성능을 제공합니다.
 
-![Event Hubs](./media/event-hubs-features/partition_keys.png)
+![파티션 키](./media/event-hubs-features/partition_keys.png)
 
 Event Hubs는 파티션 키 값을 공유하는 모든 이벤트가 동일한 파티션으로 순서대로 배달되도록 합니다. 파티션 키가 게시자 정책과 함께 사용되는 경우 게시자 ID와 파티션 키 값이 일치해야 합니다. 그렇지 않으면 오류가 발생합니다.
 
@@ -86,13 +86,13 @@ Azure Sdk에서 제공 하는 일부 클라이언트는 각 파티션에 단일 
 
 다음 그림에서는 아키텍처를 처리하는 Event Hubs 스트림을 보여 줍니다.
 
-![Event Hubs](./media/event-hubs-features/event_hubs_architecture.png)
+![Event Hubs 아키텍처](./media/event-hubs-features/event_hubs_architecture.png)
 
 ### <a name="stream-offsets"></a>스트림 오프셋
 
 *오프셋*은 파티션 내의 이벤트 위치입니다. 오프셋을 클라이언트 쪽 커서로 생각할 수 있습니다. 오프셋은 이벤트의 바이트 번호입니다. 오프셋을 사용하여 이벤트 소비자(판독기)가 이벤트를 읽기 시작할 이벤트 스트림의 위치를 지정할 수 있습니다. 타임스탬프 또는 오프셋 값으로 오프셋을 지정할 수 있습니다. 소비자는 Event Hubs 서비스 외부에 자신의 오프셋 값을 저장하는 일을 담당합니다. 파티션 내에서 각 이벤트는 오프셋을 포함합니다.
 
-![Event Hubs](./media/event-hubs-features/partition_offset.png)
+![파티션 오프셋](./media/event-hubs-features/partition_offset.png)
 
 ### <a name="checkpointing"></a>검사점 설정
 
@@ -104,7 +104,7 @@ Azure Sdk에서 제공 하는 일부 클라이언트는 각 파티션에 단일 
 > Azure에서 일반적으로 사용할 수 있는 것과 다른 버전의 Storage Blob SDK를 지 원하는 환경에서 검사점 저장소로 Azure Blob Storage을 사용 하는 경우, 코드를 사용 하 여 저장소 서비스 API 버전을 해당 환경에서 지 원하는 특정 버전으로 변경 해야 합니다. 예를 들어 [Azure Stack 허브 버전 2002에서 Event Hubs](/azure-stack/user/event-hubs-overview)를 실행 하는 경우 저장소 서비스에 사용할 수 있는 가장 높은 버전은 2017-11-09입니다. 이 경우에는 코드를 사용 하 여 저장소 서비스 API 버전을 2017-11-09로 대상으로 해야 합니다. 특정 Storage API 버전을 대상으로 지정 하는 방법에 대 한 예제는 GitHub의 다음 샘플을 참조 하세요. 
 > - [.Net](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/)
-> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) 또는 [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
+> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) 또는  [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/)
 
 ### <a name="common-consumer-tasks"></a>일반 소비자 작업
@@ -113,7 +113,7 @@ Azure Sdk에서 제공 하는 일부 클라이언트는 각 파티션에 단일 
 
 #### <a name="connect-to-a-partition"></a>파티션에 연결
 
-파티션에 연결할 때 일반적으로 임대 메커니즘을 사용 하 여 판독기 연결을 특정 파티션으로 조정 하는 것이 좋습니다. 이러한 방식으로 소비자 그룹의 모든 파티션에는 활성 판독기가 하나만 있을 수 있습니다. Event Hubs Sdk 내의 클라이언트를 사용 하 여 판독기의 검사점, 임대 및 관리를 간소화 합니다 .이는 지능형 소비자 에이전트 역할을 합니다. 이러한 항목은 다음과 같습니다.
+파티션에 연결할 때 일반적으로 임대 메커니즘을 사용 하 여 판독기 연결을 특정 파티션으로 조정 하는 것이 좋습니다. 이러한 방식으로 소비자 그룹의 모든 파티션에는 활성 판독기가 하나만 있을 수 있습니다. Event Hubs Sdk 내의 클라이언트를 사용 하 여 판독기의 검사점, 임대 및 관리를 간소화 합니다 .이는 지능형 소비자 에이전트 역할을 합니다. 해당 경고는 다음과 같습니다.
 
 - .NET 용 [EventProcessorClient](/dotnet/api/azure.messaging.eventhubs.eventprocessorclient)
 - Java 용 [EventProcessorClient](/java/api/com.azure.messaging.eventhubs.eventprocessorclient)
@@ -138,10 +138,10 @@ AMQP 1.0 세션 및 링크는 특정 파티션에 대해 열린 후, 이벤트�
 Event Hubs에 대한 자세한 내용은 다음 링크를 방문하세요.
 
 - Event Hubs 시작
-    - [.NET](get-started-dotnet-standard-send-v2.md)
-    - [Java](get-started-java-send-v2.md)
-    - [Python](get-started-python-send-v2.md)
-    - [JavaScript](get-started-java-send-v2.md)
+    - [.NET](event-hubs-dotnet-standard-getstarted-send.md)
+    - [Java](event-hubs-java-get-started-send.md)
+    - [Python](event-hubs-python-get-started-send.md)
+    - [JavaScript](event-hubs-java-get-started-send.md)
 * [Event Hubs 프로그래밍 가이드](event-hubs-programming-guide.md)
 * [Event Hubs의 가용성 및 일관성](event-hubs-availability-and-consistency.md)
 * [Event Hubs FAQ](event-hubs-faq.md)

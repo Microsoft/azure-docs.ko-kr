@@ -3,20 +3,20 @@ title: Azure App Services 성능 모니터링 | Microsoft Docs
 description: Azure App Services에 대한 애플리케이션 성능 모니터링입니다. 차트 로드 및 응답 시간, 종속성 정보 및 성능에 대 한 경고를 설정 합니다.
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d30d5fa8532b9bdec2b231daf9a59732dc1ebce8
-ms.sourcegitcommit: 2ffa5bae1545c660d6f3b62f31c4efa69c1e957f
+ms.custom: devx-track-javascript, devx-track-dotnet
+ms.openlocfilehash: 1e06aacaa12a428b42090ecb8e8ae89ae1e5ad76
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88079708"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88933803"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service 성능 모니터링
 
 이제 [Azure 앱 서비스](../../app-service/index.yml) 에서 실행 되는 ASP.NET 및 ASP.NET Core 기반 웹 응용 프로그램에 대 한 모니터링을 사용 하도록 설정 하는 것이 훨씬 쉬워졌습니다. 이전에 사이트 확장을 수동으로 설치 해야 하는 경우에는 이제 기본적으로 최신 확장/에이전트가 app service 이미지에 기본 제공 됩니다. 이 문서에서는 Application Insights 모니터링을 사용 하도록 설정 하는 과정을 안내 하 고 대규모 배포 프로세스를 자동화 하기 위한 예비 지침을 제공 합니다.
 
 > [!NOTE]
-> **개발 도구**확장을 통해 Application Insights 사이트 확장을 수동으로 추가 하  >  **Extensions** 는 것은 더 이상 사용 되지 않습니다. 이 확장 설치 방법은 각 새 버전의 수동 업데이트에 따라 달라 집니다. 확장의 안정적인 최신 릴리스는 이제 App Service 이미지의 일부로 [미리 설치](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) 됩니다. 파일은에 있으며 `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` 각 안정적인 릴리스로 자동 업데이트 됩니다. 에이전트 기반 지침에 따라 아래 모니터링을 사용 하는 경우 사용 되지 않는 확장이 자동으로 제거 됩니다.
+> **개발 도구**확장을 통해 Application Insights 사이트 확장을 수동으로 추가 하  >  **Extensions** 는 것은 더 이상 사용 되지 않습니다. 이 확장 설치 방법은 각 새 버전의 수동 업데이트에 따라 달라 집니다. 확장의 안정적인 최신 릴리스는 이제 App Service 이미지의 일부로  [미리 설치](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) 됩니다. 파일은에 있으며 `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` 각 안정적인 릴리스로 자동 업데이트 됩니다. 에이전트 기반 지침에 따라 아래 모니터링을 사용 하는 경우 사용 되지 않는 확장이 자동으로 제거 됩니다.
 
 ## <a name="enable-application-insights"></a>Application Insights 사용
 
@@ -114,16 +114,14 @@ Python App Service 기반 웹 응용 프로그램은 현재 자동 에이전트/
 
 클라이언트 쪽 모니터링이 ASP.NET에 대해 옵트인 (opt in) 됩니다. 클라이언트 쪽 모니터링을 사용 하도록 설정 하려면:
 
-* **설정** > * * * * 응용 프로그램 설정 * * * *을 선택 합니다.
-   * 응용 프로그램 설정에서 새 **앱 설정 이름** 및 **값**을 추가 합니다.
+* **설정** **>** **구성**
+   * 응용 프로그램 설정에서 **새 응용 프로그램 설정**을 만듭니다.
 
      이름: `APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      값: `true`
 
    * 설정을 **저장**하고 앱을 **다시 시작**합니다.
-
-![응용 프로그램 설정 UI의 스크린샷](./media/azure-web-apps/appinsights-javascript-enabled.png)
 
 클라이언트 쪽 모니터링을 사용 하지 않도록 설정 하려면 응용 프로그램 설정에서 연결 된 키 값 쌍을 제거 하거나 값을 false로 설정 합니다.
 
@@ -133,16 +131,14 @@ Python App Service 기반 웹 응용 프로그램은 현재 자동 에이전트/
 
 어떤 이유로 든 클라이언트 쪽 모니터링을 사용 하지 않도록 설정 하려는 경우:
 
-* **설정**  >  **응용 프로그램 설정** 선택
-   * 응용 프로그램 설정에서 새 **앱 설정 이름** 및 **값**을 추가 합니다.
+* **설정** **>** **구성**
+   * 응용 프로그램 설정에서 **새 응용 프로그램 설정**을 만듭니다.
 
-     이름의`APPINSIGHTS_JAVASCRIPT_ENABLED`
+     이름의 `APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      값: `false`
 
    * 설정을 **저장**하고 앱을 **다시 시작**합니다.
-
-![응용 프로그램 설정 UI의 스크린샷](./media/azure-web-apps/appinsights-javascript-disabled.png)
 
 # <a name="nodejs"></a>[Node.JS](#tab/nodejs)
 
@@ -169,7 +165,7 @@ Application Insights에서 원격 분석 컬렉션을 사용 하도록 설정 �
 |앱 설정 이름 |  정의 | 값 |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | 런타임 모니터링을 제어 하는 기본 확장입니다. | `~2` |
-|XDT_MicrosoftApplicationInsights_Mode |  기본 모드 에서만 최적의 성능을 보장 하기 위해 필수 기능을 사용할 수 있습니다. | `default` 또는 `recommended`. |
+|XDT_MicrosoftApplicationInsights_Mode |  기본 모드 에서만 최적의 성능을 보장 하기 위해 필수 기능을 사용할 수 있습니다. | `default` 또는 `recommended`입니다. |
 |InstrumentationEngine_EXTENSION_VERSION | 이진 재작성 엔진을 켤 지 여부를 제어 `InstrumentationEngine` 합니다. 이 설정은 성능에 영향을 주며 콜드 시작/시작 시간에 영향을 줍니다. | `~1` |
 |XDT_MicrosoftApplicationInsights_BaseExtensions | SQL & Azure 테이블 텍스트가 종속성 호출과 함께 캡처될 수 있는지 여부를 제어 합니다. 성능 경고: 응용 프로그램 콜드 시작 시간이 영향을 받습니다. 이 설정에는가 필요 합니다 `InstrumentationEngine` . | `~1` |
 
@@ -213,7 +209,7 @@ Application Insights에 대해 구성 된 응용 프로그램 설정이 있는 A
 
   ![웹 앱 템플릿 App Service](./media/azure-web-apps/arm-template.png)
 
-다음은의 모든 인스턴스를 사이트 이름으로 대체 하는 샘플입니다 `AppMonitoredSite` .
+다음은의 모든 인스턴스를 사이트 이름으로 대체 하는 샘플입니다  `AppMonitoredSite` .
 
 ```json
 {
@@ -332,9 +328,9 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 2.8.9 버전에서의 업그레이드는 추가 작업 없이 자동으로 발생 합니다. 새 모니터링 비트는 백그라운드에서 대상 app service로 전달 되 고, 응용 프로그램을 다시 시작 하면 선택 됩니다.
 
-실행 중인 확장의 버전을 확인 하려면 다음을 방문 하세요.`http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
+실행 중인 확장의 버전을 확인 하려면 다음을 방문 하세요. `http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
 
-![Url 경로의 스크린샷http://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
+![Url 경로의 스크린샷 http://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
 
 ### <a name="upgrade-from-versions-100---265"></a>버전 1.0.0에서 업그레이드-2.6.5
 
@@ -366,10 +362,10 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
     * 가 인지 확인 합니다. `Application Insights Extension Status``Pre-Installed Site Extension, version 2.8.12.1527, is running.`
         * 실행 되 고 있지 않으면 [Application Insights 모니터링 사용 지침](#enable-application-insights) 을 따릅니다.
 
-    * 상태 원본이 존재 하며 다음과 같이 표시 되는지 확인 합니다.`Status source D:\home\LogFiles\ApplicationInsights\status\status_RD0003FF0317B6_4248_1.json`
+    * 상태 원본이 존재 하며 다음과 같이 표시 되는지 확인 합니다. `Status source D:\home\LogFiles\ApplicationInsights\status\status_RD0003FF0317B6_4248_1.json`
         * 유사한 값이 없는 경우에는 응용 프로그램이 현재 실행 되 고 있지 않거나 지원 되지 않음을 의미 합니다. 응용 프로그램이 실행 되 고 있는지 확인 하려면 런타임 정보를 사용할 수 있게 하는 응용 프로그램 url/응용 프로그램 끝점을 수동으로 방문해 보세요.
 
-    * 다음을 `IKeyExists` 확인 합니다.`true`
+    * 다음을 `IKeyExists` 확인 합니다. `true`
         * 인 경우 `false` `APPINSIGHTS_INSTRUMENTATIONKEY` `APPLICATIONINSIGHTS_CONNECTION_STRING` 응용 프로그램 설정에 및를 ikey guid와 함께 추가 합니다.
 
     * , 및에 대 한 항목이 없는지 `AppAlreadyInstrumented` 확인 `AppContainsDiagnosticSourceAssembly` `AppContainsAspNetTelemetryCorrelationAssembly` 합니다.
@@ -377,7 +373,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 아래 표에서는 이러한 값의 의미, 기본적인 원인 및 권장 픽스를 보다 자세히 설명 합니다.
 
-|문제 값|설명|수정
+|문제 값|설명|Fix
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | 이 값은 확장에서 SDK의 일부 측면이 응용 프로그램에 이미 있고 백오프 됨을 감지 했음을 나타냅니다. `System.Diagnostics.DiagnosticSource`, 또는에 대 한 참조로 인 한 것일 수 있습니다. `Microsoft.AspNet.TelemetryCorrelation``Microsoft.ApplicationInsights`  | 참조를 제거 합니다. 이러한 참조 중 일부는 특정 Visual Studio 템플릿에서 기본적으로 추가 되며 이전 버전의 Visual Studio는에 대 한 참조를 추가할 수 있습니다 `Microsoft.ApplicationInsights` .
 |`AppAlreadyInstrumented:true` | 응용 프로그램이 .NET Core 2.1 또는 2.2를 대상으로 하 고 [AspNetCore](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 를 참조 하는 경우에는 Application Insights를 가져오고 확장이 백오프 됩니다. | .NET Core 2.1, 2.2의 고객은 AspNetCore를 대신 사용 하는 [것이 좋습니다](https://github.com/aspnet/Announcements/issues/287) .|

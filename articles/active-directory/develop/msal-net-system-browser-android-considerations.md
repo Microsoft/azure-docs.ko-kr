@@ -12,13 +12,13 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 8e37d443d75dccae8704bc1ff7856e1d24131766
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-csharp, aaddev
+ms.openlocfilehash: 8f755b42249a88a2d37117003d561f79aea6b170
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82652710"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88165994"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>MSAL.NET 사용에 대 한 Xamarin Android 시스템 브라우저 고려 사항
 
@@ -60,7 +60,7 @@ MSAL.NET 2.4.0 Preview부터 MSAL.NET는 Chrome 이외의 브라우저를 지원
 | 1 + | CM 브라우저 | 사용자가 취소 한 인증|
 | Huawei/One + | 설치 안 됨 | AndroidActivityNotFound 예외|
 
-\*사용자 지정 탭 지원
+\* 사용자 지정 탭 지원
 
 ## <a name="known-issues"></a>알려진 문제
 

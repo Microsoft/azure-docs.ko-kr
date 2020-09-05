@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.custom: seodec18
-ms.openlocfilehash: 4f9d117ccc763744411bfe24163ed955532e8e56
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.custom: seodec18, devx-track-csharp
+ms.openlocfilehash: fff1a228e32f115c498678a654f6c8f028772161
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921854"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89015682"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-jobs-preview"></a>Azure Stream Analytics 작업에 대 한 .NET Standard 사용자 정의 함수 개발 (미리 보기)
 
@@ -48,10 +48,10 @@ C #에서 사용 되는 Azure Stream Analytics 값은 한 환경에서 다른 �
 |---------|---------|
 |bigint | long |
 |float | double |
-|nvarchar(max) | string |
+|nvarchar(max) | 문자열 |
 |Datetime | DateTime |
 |레코드 | Dictionary\<string, object> |
-|배열 | Object [] |
+|Array | Object [] |
 
 데이터를 c #에서 Azure Stream Analytics로 마샬링해야 하 고 UDF의 출력 값에서 발생 하는 경우에도 마찬가지입니다. 다음 표에서는 지원 되는 형식을 보여 줍니다.
 
@@ -59,11 +59,11 @@ C #에서 사용 되는 Azure Stream Analytics 값은 한 환경에서 다른 �
 |---------|---------|
 |long  |  bigint   |
 |double  |  float   |
-|string  |  nvarchar(max)   |
+|문자열  |  nvarchar(max)   |
 |DateTime  |  dateTime   |
 |struct  |  레코드   |
 |개체  |  레코드   |
-|Object []  |  배열   |
+|Object []  |  Array   |
 |Dictionary\<string, object>  |  레코드   |
 
 ## <a name="codebehind"></a>CodeBehind
@@ -158,7 +158,7 @@ public abstract class StreamingDiagnostics
 }
 ```
 
-`StreamingContext`는 UDF 메서드에 입력 매개 변수로 전달 되 고 UDF 내에서 사용 하 여 사용자 지정 로그 정보를 게시할 수 있습니다. 아래 예제에서는 쿼리를 `MyUdfMethod` 통해 제공 되는 **데이터** 입력과 런타임 엔진에서 제공 하는 **컨텍스트** 입력을로 정의 합니다 `StreamingContext` . 
+`StreamingContext` 는 UDF 메서드에 입력 매개 변수로 전달 되 고 UDF 내에서 사용 하 여 사용자 지정 로그 정보를 게시할 수 있습니다. 아래 예제에서는 쿼리를 `MyUdfMethod` 통해 제공 되는 **데이터** 입력과 런타임 엔진에서 제공 하는 **컨텍스트** 입력을로 정의 합니다 `StreamingContext` . 
 
 ```csharp
 public static long MyUdfMethod(long data, StreamingContext context)

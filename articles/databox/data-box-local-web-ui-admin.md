@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 07/15/2020
+ms.date: 08/10/2020
 ms.author: alkohli
-ms.openlocfilehash: a99499110951ccbc0458b5ce848930fed9205dad
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: 7cac14708adecbdf3c809e3a9656d25c727d80e3
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372026"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206144"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>로컬 웹 UI를 사용 하 여 Data Box를 관리 하 고 Data Box Heavy
 
@@ -25,7 +25,7 @@ Data Box 및 Data Box Heavy에 대 한 로컬 웹 UI는 장치의 초기 구성�
 
 - 지원 패키지 생성
 - 디바이스 종료 또는 다시 시작
-- BOM 또는 매니페스트 파일 다운로드
+- BOM (자재 자료) 또는 매니페스트 파일 다운로드
 - 디바이스의 사용 가능한 용량 확인
 - 체크섬 유효성 검사 건너뛰기
 
@@ -53,7 +53,7 @@ Data Box 및 Data Box Heavy에 대 한 로컬 웹 UI는 장치의 초기 구성�
 
 ## <a name="shut-down-or-restart-your-device"></a>디바이스 종료 또는 다시 시작
 
-로컬 웹 UI를 사용 하 여 장치를 종료 하거나 다시 시작할 수 있습니다. 다시 시작하기 전에 호스트에서 공유를 오프라인으로 전환한 후 디바이스를 다시 시작하는 것이 좋습니다. 이렇게 하면 데이터 손상 가능성이 최소화됩니다. 디바이스를 종료할 때 데이터 복사가 진행 중이지 않은지 확인합니다.
+로컬 웹 UI를 사용 하 여 장치를 종료 하거나 다시 시작할 수 있습니다. 다시 시작하기 전에 호스트에서 공유를 오프라인으로 전환한 후 디바이스를 다시 시작하는 것이 좋습니다. 이렇게 하면 데이터 손상 가능성이 최소화 됩니다. 디바이스를 종료할 때 데이터 복사가 진행 중이지 않은지 확인합니다.
 
 장치를 종료 하려면 다음 단계를 수행 합니다.
 
@@ -62,7 +62,7 @@ Data Box 및 Data Box Heavy에 대 한 로컬 웹 UI는 장치의 초기 구성�
 
     ![Data Box 종료 1](media/data-box-local-web-ui-admin/shut-down-local-web-ui-1.png)
 
-3. 다시 시작을 확인하라는 메시지가 표시되면 **확인**을 클릭하여 계속 진행합니다.
+3. 확인 메시지가 표시 되 면 **확인** 을 선택 하 여 계속 합니다.
 
     ![Data Box 종료 2](media/data-box-local-web-ui-admin/shut-down-local-web-ui-2.png)
 
@@ -81,33 +81,32 @@ Data Box를 다시 시작하려면 다음 단계를 수행합니다.
 
 ## <a name="download-bom-or-manifest-files"></a>BOM 또는 매니페스트 파일 다운로드
 
-BOM (자재 청구) 또는 매니페스트 파일은 Data Box 또는 Data Box Heavy에 복사 된 파일의 목록을 포함 합니다. 이러한 파일은 장치를 배송할 준비를 할 때 가져오기 순서에 대해 생성 됩니다.
+BOM 또는 매니페스트 파일은 Data Box 또는 Data Box Heavy에 복사 된 파일의 목록을 포함 합니다. 이러한 파일은 장치를 배송할 준비를 할 때 가져오기 순서에 대해 생성 됩니다.
 
-시작 하기 전에 장치가 **배송 준비** 단계를 완료 했는지 확인 합니다. 다음 단계를 수행 하 여 가져오기 순서로 BOM 또는 매니페스트 파일을 다운로드 합니다.
+시작 하기 전에 다음 단계를 수행 하 여 가져오기 순서로 BOM 또는 매니페스트 파일을 다운로드 합니다.
 
-1. 장치의 로컬 웹 UI로 이동 합니다. 장치에서 제공 준비를 완료 한 것을 확인할 수 있습니다. 디바이스 준비가 완료되면 디바이스 상태가 **배송 준비 완료**로 표시됩니다.
+1. 장치의 로컬 웹 UI로 이동 합니다. 장치가 **배송 준비** 단계를 완료 했는지 확인 합니다. 디바이스 준비가 완료되면 디바이스 상태가 **배송 준비 완료**로 표시됩니다.
 
-    ![디바이스 배송 준비 완료](media/data-box-portal-admin/ready-to-ship.png)
+    ![디바이스 배송 준비 완료](media/data-box-local-web-ui-admin/prepare-to-ship-3.png)
 
 2. **파일 목록 다운로드** 를 선택 하 여 Data Box에 복사 된 파일 목록을 다운로드 합니다.
 
-    ![파일 목록 다운로드를 선택 합니다.](media/data-box-portal-admin/download-list-of-files.png)
+    <!-- ![Select Download list of files](media/data-box-portal-admin/download-list-of-files.png) -->
 
 3. 파일 탐색기에서, 디바이스에 연결하는 데 사용된 프로토콜 및 사용된 Azure Storage 유형에 따라 별도의 파일 목록이 생성되는 것을 볼 수 있습니다.
 
-    ![스토리지 유형 및 연결 프로토콜에 대한 파일](media/data-box-portal-admin/files-storage-connection-type.png)
+    <!-- ![Files for storage type and connection protocol](media/data-box-portal-admin/files-storage-connection-type.png) -->
+    ![스토리지 유형 및 연결 프로토콜에 대한 파일](media/data-box-local-web-ui-admin/prepare-to-ship-5.png)
 
    다음 표는 파일 이름을 Azure Storage 유형 및 사용된 연결 프로토콜로 매핑합니다.
 
     |파일 이름  |Azure Storage 유형  |사용된 연결 프로토콜 |
     |---------|---------|---------|
-    |databoxe2etest_BlockBlob.txt     |블록 Blob         |SMB/NFS         |
-    |databoxe2etest_PageBlob.txt     |페이지 Blob         |SMB/NFS         |
-    |databoxe2etest_AzFile-BOM.txt    |Azure 파일         |SMB/NFS         |
-    |databoxe2etest_PageBlock_Rest-BOM.txt     |페이지 Blob         |REST (영문)        |
-    |databoxe2etest_BlockBlock_Rest-BOM.txt    |블록 Blob         |REST (영문)         |
-    |mydbmdrg1_MDisk-BOM.txt    |관리 디스크:         |SMB/NFS         |
-    |mydbmdrg2_MDisk-BOM.txt     |관리 디스크:         |SMB/NFS         |
+    |utSAC1_202006051000_BlockBlob-BOM.txt     |블록 Blob         |SMB/NFS         |
+    |utSAC1_202006051000_PageBlob-BOM.txt     |페이지 Blob         |SMB/NFS         |
+    |utSAC1_202006051000_AzFile-BOM.txt    |Azure 파일         |SMB/NFS         |
+    |utsac1_PageBlock_Rest-BOM.txt     |페이지 Blob         |REST        |
+    |utsac1_BlockBlock_Rest-BOM.txt    |블록 Blob         |REST         |
 
 이 목록을 사용하여 Data Box가 Azure 데이터 센터로 반환된 후 Azure Storage 계정에 업로드된 파일을 확인합니다. 샘플 매니페스트 파일은 아래에 표시되어 있습니다.
 

@@ -79,18 +79,15 @@
 - name: 샘플
   items:
     - name: C# 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=csharp'
+      href: /samples/browse/?languages=csharp&products=azure-cognitive-search
     - name: Java 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=java'
+      href: /samples/browse/?languages=java&products=azure-cognitive-search
     - name: JavaScript 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=javascript'
+      href: /samples/browse/?languages=javascript&products=azure-cognitive-search
     - name: Python 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=python'
+      href: /samples/browse/?languages=python&products=azure-cognitive-search
     - name: REST 샘플
-      href: 'https://docs.microsoft.com/samples/browse/?languages=http&expanded=azure&products=azure-cognitive-search'
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
+      href: /samples/browse/?expanded=azure&languages=http&products=azure-cognitive-search
 - name: 개념
   items:
     - name: 전체 텍스트 검색
@@ -155,7 +152,7 @@
           href: search-howto-large-index.md
         - name: 동시 업데이트 처리
           href: search-howto-concurrency.md
-    - name: Azure 데이터 수집
+    - name: Azure 전용 데이터 수집
       items:
         - name: 인덱서 구성
           href: search-indexer-overview.md
@@ -203,7 +200,7 @@
               href: search-howto-managed-identities-cosmos-db.md
             - name: SQL Database
               href: search-howto-managed-identities-sql.md
-    - name: AI를 사용하여 수집
+    - name: 기술(AI) 사용
       items:
         - name: Cognitive Services 리소스 연결
           href: cognitive-search-attach-cognitive-services.md
@@ -215,7 +212,7 @@
               href: cognitive-search-concept-annotations-syntax.md
             - name: 인덱스 필드에 매핑
               href: cognitive-search-output-field-mapping.md
-            - name: 이미지에서 정보 추출
+            - name: 이미지 파일 처리
               href: cognitive-search-concept-image-scenarios.md
             - name: 캐시(증분) 보강
               href: search-howto-incremental-index.md
@@ -406,25 +403,25 @@
     - name: .NET
       items:
         - name: 검색 API
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet'
+          href: /dotnet/api/overview/azure/search.documents-readme?view=azure-dotnet
         - name: 관리 API
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/search/management?view=azure-dotnet'
+          href: /dotnet/api/overview/azure/search/management?view=azure-dotnet
     - name: Java
       items:
         - name: 관리 API
-          href: 'https://docs.microsoft.com/java/api/overview/azure/search/management?view=azure-java-stable'
+          href: /java/api/overview/azure/search/management?view=azure-java-stable
     - name: JavaScript
       items:
         - name: 검색 API
-          href: 'https://docs.microsoft.com/javascript/api/overview/azure/search-documents-readme?view=azure-node-latest'
+          href: /javascript/api/overview/azure/search-documents-readme?view=azure-node-latest
         - name: 관리 API
-          href: 'https://docs.microsoft.com/javascript/api/overview/azure/search/management?view=azure-node-latest'
+          href: /javascript/api/overview/azure/search/management?view=azure-node-latest
     - name: Python
       items:
         - name: 검색 API
-          href: 'https://docs.microsoft.com/python/api/overview/azure/search-documents-readme?view=azure-python'
+          href: /python/api/overview/azure/search-documents-readme?view=azure-python
         - name: 관리 API
-          href: 'https://docs.microsoft.com/python/api/overview/azure/search/management?view=azure-python'
+          href: /python/api/overview/azure/search/management?view=azure-python
     - name: OData 언어 참조
       items:
         - name: 개요
@@ -496,6 +493,9 @@
           items:
             - name: 명명된 엔터티 인식
               href: cognitive-search-skill-named-entity-recognition.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: Azure 커뮤니티 지원
@@ -517,7 +517,7 @@
     - name: 학습
       items:
         - name: 소개(Microsoft Learn)
-          href: 'https://docs.microsoft.com/learn/modules/intro-to-azure-search/'
+          href: /learn/modules/intro-to-azure-search/
         - name: 앱에 검색 추가(Pluralsight)
           href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
         - name: 개발자 과정(Pluralsight)

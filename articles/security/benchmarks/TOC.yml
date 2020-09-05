@@ -59,10 +59,16 @@
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
     - name: Azure Databricks 보안 기준
       href: ../../azure-databricks/security-baseline.md
+    - name: Azure DNS 보안 기준
+      href: ../../dns/security-baseline.md
     - name: Azure Firewall 보안 기준
       href: ../../firewall/security-baseline.md
     - name: Azure Functions 보안 기준
       href: ../../azure-functions/security-baseline.md
+    - name: Azure Monitor 보안 기준
+      href: ../../azure-monitor/security-baseline.md
+    - name: Azure Machine Learning 보안 기준
+      href: ../../machine-learning/security-baseline.md
     - name: Azure Policy 보안 기준
       href: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
     - name: Azure Resource Graph 보안 기준
@@ -87,6 +93,8 @@
       href: ../../data-lake-analytics/security-baseline.md
     - name: DDOS Protection 보안 기준
       href: ../fundamentals/ddos-protection-security-baseline.md
+    - name: Event Grid 보안 기준
+      href: ../../event-grid/security-baseline.md
     - name: Event Hubs 보안 기준
       href: ../../event-hubs/security-baseline.md
     - name: ExpressRoute 보안 기준

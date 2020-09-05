@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/18/2020
+ms.date: 08/26/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d926d027b59a225d76f6a73ab3ee4ec09b595e5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 59f83d232874a7702598b6ea5fdd458c101e7e79
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253310"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266581"
 ---
 # <a name="custom-controls-preview"></a>사용자 지정 컨트롤(미리 보기)
 
 사용자 지정 컨트롤은 Azure Active Directory의 미리 보기 기능입니다. 사용자 지정 컨트롤을 사용 하는 경우 사용자는 Azure Active Directory 외부에서 인증 요구 사항을 충족 하기 위해 호환 서비스로 리디렉션됩니다. 이 제어를 충족 하기 위해 사용자의 브라우저는 외부 서비스로 리디렉션되고 필요한 인증을 수행한 다음 Azure Active Directory 다시 리디렉션됩니다. Azure Active Directory는 응답을 확인 하 고 사용자가 성공적으로 인증 되거나 유효성이 확인 되 면 사용자는 조건부 액세스 흐름을 계속 진행 합니다.
 
 > [!NOTE]
-> 사용자 지정 제어 기능을 계획 하는 변경 내용에 대 한 자세한 내용은 2 월 2020 [새로운 기능 업데이트](../fundamentals/whats-new.md#upcoming-changes-to-custom-controls)를 참조 하세요.
+> 사용자 지정 컨트롤 기능을 계획 하는 변경 내용에 대 한 자세한 내용은 [새로운 기능에 대 한](../fundamentals/whats-new-archive.md#upcoming-changes-to-custom-controls)2 월 2020 보관을 참조 하세요.
 
 ## <a name="creating-custom-controls"></a>사용자 지정 컨트롤 만들기
 
@@ -33,11 +33,11 @@ JSON 데이터를 복사한 다음 관련 텍스트 상자에 붙여넣습니다
 
 사용자 지정 컨트롤을 만드는 옵션은 **조건부 액세스** 페이지의 **관리** 섹션에 있습니다.
 
-![제어](./media/controls/82.png)
+![조건부 액세스의 사용자 지정 컨트롤 인터페이스](./media/controls/custom-controls-conditional-access.png)
 
 **새 사용자 지정 컨트롤**을 클릭하면 컨트롤의 JSON 데이터에 대한 텍스트 상자가 있는 블레이드가 열립니다.  
 
-![제어](./media/controls/81.png)
+![새 사용자 지정 컨트롤](./media/controls/new-custom-controls-conditional-access.png)
 
 ## <a name="deleting-custom-controls"></a>사용자 지정 컨트롤 삭제
 
@@ -53,7 +53,7 @@ JSON 데이터를 복사한 다음 관련 텍스트 상자에 붙여넣습니다
 
 ## <a name="known-limitations"></a>알려진 제한 사항
 
-사용자 지정 컨트롤은 Azure Multi-Factor Authentication, Azure AD 셀프 서비스 암호 재설정 (SSPR)을 요구 하는 Id 보호의 자동화와 함께 사용할 수 없으며 multi-factor Authentication 클레임 요구 사항을 충족 하거나 PIM (권한 있는 Identity Manager)의 역할을 승격 시킬 수 있습니다.
+사용자 지정 컨트롤은 Azure Multi-Factor Authentication, azure AD 셀프 서비스 암호 다시 설정 (SSPR), multi-factor Authentication 클레임 요구 사항 충족, Intune 장치 등록의 일부로 또는 장치를 Azure AD에 조인할 때 azure AD에 대 한 권한 있는 Id 관리자의 역할을 승격 하는 Id 보호의 자동화에 사용할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

@@ -3,15 +3,16 @@ title: ASP.NET Core에 기능 플래그를 추가하기 위한 빠른 시작
 description: ASP.NET Core 앱에 기능 플래그를 추가하고 Azure App Configuration을 사용하여 관리
 author: lisaguthrie
 ms.service: azure-app-configuration
+ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 01/14/2020
 ms.author: lcozzens
-ms.openlocfilehash: a25a40346d588f56028bf08294b070823b729e25
-ms.sourcegitcommit: 5a37753456bc2e152c3cb765b90dc7815c27a0a8
+ms.openlocfilehash: 12b66dc173a8d3f93f97fb369ce03533299a65d7
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87760144"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235267"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>빠른 시작: ASP.NET Core 앱에 기능 플래그를 추가합니다.
 
@@ -114,7 +115,7 @@ ms.locfileid: "87760144"
 
 1. **ConnectionStrings:AppConfig**라는 비밀을 비밀 관리자에 추가합니다.
 
-    이 비밀에는 App Configuration 저장소에 액세스하기 위한 연결 문자열이 포함되어 있습니다. 다음 명령의 `<your_connection_string>` 값을 App Configuration 저장소의 연결 문자열로 바꿉니다. 연결 문자열은 Azure Portal의 **액세스 키**에서 찾을 수 있습니다.
+    이 비밀에는 App Configuration 저장소에 액세스하기 위한 연결 문자열이 포함되어 있습니다. 다음 명령의 `<your_connection_string>` 값을 App Configuration 저장소의 연결 문자열로 바꿉니다. 기본 읽기 전용 키 연결 문자열은 Azure Portal의 **액세스 키**에서 찾을 수 있습니다.
 
     이 명령은 *.csproj* 파일이 있는 동일한 디렉터리에서 실행해야 합니다.
 
@@ -186,7 +187,7 @@ ms.locfileid: "87760144"
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
-        services.AddSingleton(Configuration).AddFeatureManagement();
+        services.AddFeatureManagement();
     }
 
     ---

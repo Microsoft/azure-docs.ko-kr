@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/16/2020
 ms.author: memildin
-ms.openlocfilehash: 57e13f3ed619fa88f29397fe44b783bd3650f636
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.openlocfilehash: 313f10c77da499f4c405134028b975900d2d2a9e
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759169"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590237"
 ---
 # <a name="monitor-identity-and-access"></a>ID 및 액세스 모니터링
 
@@ -60,7 +60,7 @@ MFA를 사용하려면 [Azure AD(Active Directory) 테넌트 권한](https://doc
 
 - AD Premium Edition을 사용하는 경우 [조건부 액세스](../active-directory/conditional-access/concept-conditional-access-policy-common.md)를 사용하여 MFA를 사용하도록 설정합니다.
 
-- AD 무료 버전의 사용자는 [AD 설명서](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults)에 설명된 대로 Azure Active Directory에서 **보안 기본값**을 사용하도록 설정할 수 있지만 MFA를 사용하도록 설정하는 Security Center 권장 사항은 계속 표시됩니다.
+- AD free edition을 사용 하는 경우 [ad 설명서](https://docs.microsoft.com/azure/active-directory/fundamentals/concept-fundamentals-security-defaults)에 설명 된 대로 Azure Active Directory에서 **보안 기본값** 을 사용 하도록 설정 합니다.
 
 
 ## <a name="next-steps"></a>다음 단계

@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box Heavy 설정 자습서 | Microsoft Docs
-description: Azure Data Box Heavy에 케이블을 장착하고 연결을 설정하는 방법 알아보기
+description: 이 자습서에서는 Azure Data Box Heavy를 케이블링하고, Azure Data Box Heavy를 연결하고, Azure Data Box Heavy를 켜는 방법에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 15e031bcdcac7bd84d58286f5bdb5a7b6cd0c973
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: c38ff7e642017afe5f220ae26d3a04c2c0b706ee
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83199206"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920945"
 ---
 ::: zone target = "docs"
 

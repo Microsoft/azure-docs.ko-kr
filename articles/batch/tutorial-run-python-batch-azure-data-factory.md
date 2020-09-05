@@ -4,15 +4,15 @@ description: 자습서 - Azure Batch를 사용하여 Azure Data Factory를 통�
 author: mammask
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/29/2020
+ms.date: 08/12/2020
 ms.author: komammas
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 9b58aa06b67f01cf9ce0b30cef0326185124306c
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: f4c71cffe00faa6dd8cc440c59f94b8c2d60f712
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853316"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88185114"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>자습서: Azure Batch를 사용하여 Azure Data Factory를 통해 Python 스크립트 실행
 
@@ -67,8 +67,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [무료 계정](https:/
 1. Azure 자격 증명을 사용하여 Storage Explorer에 로그인합니다.
 1. Batch 계정에 연결된 스토리지 계정을 사용하여 [Blob 컨테이너 만들기](../vs-azure-tools-storage-explorer-blobs.md#create-a-blob-container)의 단계에 따라 두 개의 Blob 컨테이너(입력 파일용 1개, 출력 파일용 1개)를 만듭니다.
     * 이 예제에서는 입력 컨테이너 `input`과 출력 컨테이너 `output`을 호출합니다.
-1. [Blob 컨테이너의 Blob 관리](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container)의 단계에 따라 Storage Explorer를 사용하여 `main.py` 및 [`iris.csv`](https://www.kaggle.com/uciml/iris/version/2#Iris.csv)를 `input` 입력 컨테이너에 업로드합니다.
-
+1. [Blob 컨테이너의 Blob 관리](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container)의 단계에 따라 Storage Explorer를 사용하여 [`iris.csv`](https://www.kaggle.com/uciml/iris/version/2#Iris.csv)를 입력 컨테이너 `input`에 업로드합니다.
 
 ## <a name="develop-a-script-in-python"></a>Python에서 스크립트 개발
 

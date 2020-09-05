@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.reviewer: mamccrea
 ms.custom: mvc, devx-track-javascript
 ms.date: 06/16/2020
-ms.openlocfilehash: ff4af372fa0ec1b6b24698184eb3f52449e28d46
-ms.sourcegitcommit: 0b8320ae0d3455344ec8855b5c2d0ab3faa974a3
+ms.openlocfilehash: 6540b35925a92ebd6a8bcced427b5457785603db
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87430815"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056910"
 ---
 # <a name="javascript-user-defined-functions-in-azure-stream-analytics"></a>Azure Stream Analytics에서 JavaScript 사용자 정의 함수
  
@@ -130,6 +130,60 @@ INTO
     output
 FROM
     input PARTITION BY PARTITIONID
+```
+
+### <a name="cast-string-to-json-object-to-process"></a>처리할 JSON 개체에 문자열 캐스팅
+
+JSON인 문자열 필드가 있고 JavaScript UDF에서 처리하기 위해 JSON 개체로 변환하려는 경우 **JSON.parse()** 함수를 사용하여 이후에 사용할 수 있는 JSON 개체를 만들 수 있습니다.
+
+**JavaScript 사용자 정의 함수 정의:**
+
+```javascript
+function main(x) {
+var person = JSON.parse(x);  
+return person.name;
+}
+```
+
+**샘플 쿼리:**
+```SQL
+SELECT
+    UDF.getName(input) AS Name
+INTO
+    output
+FROM
+    input
+```
+
+### <a name="use-trycatch-for-error-handling"></a>오류 처리를 위해 try/catch 사용
+
+Try/catch 블록은 JavaScript UDF에 전달되는 잘못된 형식의 입력 데이터 문제를 식별하는 데 도움이 될 수 있습니다.
+
+**JavaScript 사용자 정의 함수 정의:**
+
+```javascript
+function main(input, x) {
+    var obj = null;
+
+    try{
+        obj = JSON.parse(x);
+    }catch(error){
+        throw input;
+    }
+    
+    return obj.Value;
+}
+```
+
+**샘플 쿼리: 오류가 있는 경우 반환될 수 있도록 전체 레코드를 첫 번째 매개 변수로 전달합니다.**
+```SQL
+SELECT
+    A.context.company AS Company,
+    udf.getValue(A, A.context.value) as Value
+INTO
+    output
+FROM
+    input A
 ```
 
 ## <a name="next-steps"></a>다음 단계

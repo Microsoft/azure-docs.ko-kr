@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: 1a8b458eb004b44d0045f36b18d88e11e019c4d2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 42d5ca12e91de5e0e906fb017183ea684b63b49c
+ms.sourcegitcommit: c28fc1ec7d90f7e8b2e8775f5a250dd14a1622a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81399497"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88167711"
 ---
 # <a name="what-is-text-to-speech"></a>텍스트 음성 변환이란?
 
@@ -39,15 +39,9 @@ ms.locfileid: "81399497"
 
 * SSML (speech 합성 Markup Language)-음성 텍스트 출력을 사용자 지정 하는 데 사용 되는 XML 기반 태그 언어입니다. SSML를 사용 하면 피치를 조정 하 고, 일시 중지를 추가 하 고, 발음을 높이고, 속도를 높이 거 나 낮출 수 있으며, 볼륨을 늘리거나 줄일 수 있으며, 여러 음성 특성을 단일 문서로 사용할 수 있습니다. [SSML](speech-synthesis-markup.md)을 참조 하십시오.
 
-## <a name="get-started"></a>시작
+## <a name="get-started"></a>시작하기
 
-텍스트 음성 변환 서비스는 [SPEECH SDK](speech-sdk.md)를 통해 사용할 수 있습니다. 다양 한 언어 및 플랫폼에서 빠른 시작으로 사용할 수 있는 몇 가지 일반적인 시나리오가 있습니다.
-
-* [오디오 파일로 음성 합성](quickstarts/text-to-speech-audio-file.md)
-* [스피커로 음성 합성](quickstarts/text-to-speech.md)
-* [긴 형식 오디오를 비동기적으로 합성](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
-
-원한다 면 [REST](rest-text-to-speech.md)를 통해 텍스트 음성 변환 서비스에 액세스할 수 있습니다.
+텍스트 음성 변환 시작을 위한 [빠른](get-started-text-to-speech.md) 시작을 참조 하세요. 텍스트 음성 변환 서비스는 [음성 SDK](speech-sdk.md), [REST API](rest-text-to-speech.md)및 [음성 CLI](spx-overview.md) 를 통해 사용할 수 있습니다.
 
 ## <a name="sample-code"></a>예제 코드
 
@@ -65,7 +59,7 @@ ms.locfileid: "81399497"
 텍스트 음성 변환 서비스를 사용 하는 경우 문장 부호를 포함 하 여 음성으로 변환 되는 각 문자에 대 한 요금이 청구 됩니다. SSML 문서 자체에는 요금이 청구 되지 않지만 음소 및 피치와 같이 텍스트를 음성으로 변환 하는 방법을 조정 하는 데 사용 되는 선택적 요소는 청구 가능 문자로 계산 됩니다. 다음은 청구 가능한 항목 목록입니다.
 
 - 요청의 SSML 본문에서 텍스트 음성 변환 서비스에 전달 된 텍스트입니다.
-- `<speak>` 및 `<voice>` 태그를 제외한 SSML 형식으로 된 요청 본문의 텍스트 필드에 포함 된 모든 태그
+- `<speak>`및 태그를 제외한 SSML 형식으로 된 요청 본문의 텍스트 필드에 포함 된 모든 태그 `<voice>`
 - 문자, 문장 부호, 공백, 탭, 태그 및 모든 공백 문자
 - 유니코드에 정의된 모든 코드 포인트
 

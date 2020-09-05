@@ -3,23 +3,19 @@ title: '자습서: Azure Active Directory에서 Workday 쓰기 저장 구성 Mic
 description: Azure AD에서 Workday로 특성 쓰기 저장을 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: daveba
-ms.assetid: ad255bd4-9e50-43a1-a92b-359215867b6b
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 1d76fb96676ad49ce28ff4ef0d6c4fbc84636638
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 324d3a21e1694d243f03beca28ac8376bedffa4d
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84026474"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88526833"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-workday"></a>자습서: Azure AD에서 Workday로 특성 쓰기 저장 구성
 이 자습서에서는 Azure AD에서 Workday로 쓰기 저장 특성을 수행 하는 데 필요한 단계를 보여 줍니다. Workday 쓰기 저장 프로 비전 앱은 다음과 같은 Workday 특성에 값을 할당 하도록 지원 합니다.

@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box에서 SMB를 통해 데이터를 복사하는 자습서 | Microsoft Docs
-description: SMB를 통해 Azure Data Box에 데이터를 복사하는 방법 알아보기
+description: 이 자습서에서는 로컬 웹 UI와 함께 SMB를 사용하여 호스트 컴퓨터에서 Azure Data Box로 데이터를 연결하고 복사하는 방법을 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 82cdd8519f1e3fce80aaf051d6bc5fc40a9b8be9
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: a0622c7556896b7ae7201ffa3a7ecac8de1106a4
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85959644"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88053544"
 ---
 ::: zone target="docs"
 
@@ -107,7 +107,9 @@ Windows Server 호스트 컴퓨터를 사용하는 경우 다음 단계에 따�
     
 Linux 클라이언트를 사용하는 경우 다음 명령을 사용하여 SMB 공유를 탑재합니다. 아래에서 "vers" 매개 변수는 Linux 호스트에서 지원하는 SMB 버전입니다. 아래 명령에서 적절한 버전을 삽입합니다. Data Box에서 지원하는 SMB 버전은 [Linux 클라이언트에 지원되는 파일 시스템](https://docs.microsoft.com/azure/databox/data-box-system-requirements#supported-file-systems-for-linux-clients)을 참조하세요. 
 
-    `sudo mount -t nfs -o vers=2.1 10.126.76.138:/utSAC1_202006051000_BlockBlob /home/databoxubuntuhost/databox`
+```console
+sudo mount -t nfs -o vers=2.1 10.126.76.138:/utSAC1_202006051000_BlockBlob /home/databoxubuntuhost/databox
+```
 
 ## <a name="copy-data-to-data-box"></a>Data Box에 데이터 복사
 
@@ -127,10 +129,12 @@ Data Box 공유에 연결된 후에는 데이터를 복사합니다. 데이터 �
 > Data Box에서 Azure Storage로 데이터를 전송했음을 확인할 수 있을 때까지 원본 데이터의 복사본을 유지하세요.
 
 SMB 공유에 연결한 후 데이터 복사를 시작합니다. Robocopy처럼 SMB 호환 파일 복사 도구를 사용하여 데이터를 복사할 수 있습니다. Robocopy 명령을 사용하여 여러 복사 작업을 시작할 수 있습니다. 다음 명령을 사용합니다.
-    
-    robocopy <Source> <Target> * /e /r:3 /w:60 /is /nfl /ndl /np /MT:32 or 64 /fft /Log+:<LogFile> 
-  
- 다음 표에는 특성이 설명되어 있습니다.
+
+```console
+robocopy <Source> <Target> * /e /r:3 /w:60 /is /nfl /ndl /np /MT:32 or 64 /fft /Log+:<LogFile>
+```
+
+다음 표에는 특성이 설명되어 있습니다.
     
 |attribute  |Description  |
 |---------|---------|
@@ -150,38 +154,41 @@ SMB 공유에 연결한 후 데이터 복사를 시작합니다. Robocopy처럼 
 |log+:\<LogFile>| 기존 로그 파일에 출력을 추가합니다.|    
  
 다음 샘플에서는 Data Box에 파일을 복사하는 robocopy 명령의 출력을 보여줍니다.
-    
-    C:\Users>robocopy
-        -------------------------------------------------------------------------------
-        ROBOCOPY     ::     Robust File Copy for Windows
+
+```output
+C:\Users>robocopy
+
     -------------------------------------------------------------------------------
-    
+    ROBOCOPY     ::     Robust File Copy for Windows
+    -------------------------------------------------------------------------------
+
         Started : Thursday, March 8, 2018 2:34:53 PM
-            Simple Usage :: ROBOCOPY source destination /MIR
-    
-                    source :: Source Directory (drive:\path or \\server\share\path).
-            destination :: Destination Dir  (drive:\path or \\server\share\path).
-                    /MIR :: Mirror a complete directory tree.
-    
-        For more usage information run ROBOCOPY /?    
-    
+        Simple Usage :: ROBOCOPY source destination /MIR
+
+        source :: Source Directory (drive:\path or \\server\share\path).
+        destination :: Destination Dir  (drive:\path or \\server\share\path).
+                /MIR :: Mirror a complete directory tree.
+
+    For more usage information run ROBOCOPY /?
+
     ****  /MIR can DELETE files as well as copy them !
-    
-    C:\Users>Robocopy C:\Git\azure-docs-pr\contributor-guide \\10.126.76.172\devicemanagertest1_AzFile\templates /MT:32
+
+C:\Users>Robocopy C:\Git\azure-docs-pr\contributor-guide \\10.126.76.172\devicemanagertest1_AzFile\templates /MT:32
+
     -------------------------------------------------------------------------------
-        ROBOCOPY     ::     Robust File Copy for Windows
+    ROBOCOPY     ::     Robust File Copy for Windows
     -------------------------------------------------------------------------------
-    
+
         Started : Thursday, March 8, 2018 2:34:58 PM
         Source : C:\Git\azure-docs-pr\contributor-guide\
             Dest : \\10.126.76.172\devicemanagertest1_AzFile\templates\
-    
+
         Files : *.*
-    
+
         Options : *.* /DCOPY:DA /COPY:DAT /MT:32 /R:5 /W:60
-    
+
     ------------------------------------------------------------------------------
-    
+
     100%        New File                 206        C:\Git\azure-docs-pr\contributor-guide\article-metadata.md
     100%        New File                 209        C:\Git\azure-docs-pr\contributor-guide\content-channel-guidance.md
     100%        New File                 732        C:\Git\azure-docs-pr\contributor-guide\contributor-guide-index.md
@@ -200,12 +207,13 @@ SMB 공유에 연결한 후 데이터 복사를 시작합니다. Robocopy처럼 
     100%        New File                 212        C:\Git\azure-docs-pr\contributor-guide\syntax-highlighting-markdown.md
     100%        New File                 207        C:\Git\azure-docs-pr\contributor-guide\tools-and-setup.md
     ------------------------------------------------------------------------------
-    
-                    Total    Copied   Skipped  Mismatch    FAILED    Extras
-        Dirs :         1         1         1         0         0         0
-        Files :        17        17         0         0         0         0
-        Bytes :     3.9 k     3.9 k         0         0         0         0          
-    C:\Users>
+
+                Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         1         1         0         0         0
+    Files :        17        17         0         0         0         0
+    Bytes :     3.9 k     3.9 k         0         0         0         0
+C:\Users>
+```
 
 성능을 최적화하기 위해, 데이터를 복사할 때 다음 robocopy 매개 변수를 사용하세요.
 

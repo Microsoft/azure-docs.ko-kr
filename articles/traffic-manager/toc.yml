@@ -6,12 +6,15 @@
       href: traffic-manager-overview.md
 - name: 빠른 시작
   items:
-    - name: Traffic Manager 프로필 만들기 - 포털
+    - name: Traffic Manager 프로필 만들기 - Portal
       href: quickstart-create-traffic-manager-profile.md
     - name: Traffic Manager 프로필 만들기 - PowerShell
       href: quickstart-create-traffic-manager-profile-powershell.md
     - name: Traffic Manager 프로필 만들기 - Azure CLI
       href: quickstart-create-traffic-manager-profile-cli.md
+    - name: Traffic Manager 프로필 만들기 - ARM 템플릿
+      href: quickstart-create-traffic-manager-profile-template.md
+  expanded: true
 - name: 자습서
   items:
     - name: 짧은 대기 시간을 위해 트래픽 라우팅
@@ -59,7 +62,7 @@
       href: traffic-manager-how-it-works.md
     - name: FAQ
       href: traffic-manager-FAQs.md
-- name: 방법
+- name: 방법 가이드
   items:
     - name: Traffic Manager에서 성능 라우팅 구성
       href: traffic-manager-configure-performance-routing-method.md
@@ -132,7 +135,7 @@
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: 서비스 제한
-      href: '../azure-resource-manager/management/azure-subscription-service-limits.md#traffic-manager-limits'
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md#traffic-manager-limits
     - name: 서비스 업데이트
       href: 'https://azure.microsoft.com/updates/?product=traffic-manager'
     - name: SLA

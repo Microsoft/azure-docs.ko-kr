@@ -2,19 +2,20 @@
 title: Azure Application Insights에 대한 릴리스 정보 | Microsoft Docs
 description: Application Insights SDK에 대한 최신 업데이트입니다.
 ms.topic: conceptual
+ms.custom: devx-track-dotnet
 ms.date: 07/27/2020
-ms.openlocfilehash: 59e10bff6d0e2246b130f97ce9b21cd9685bde30
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 0f5cebcb2711ca63833b6c7e285483f4e3ca6eb1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87315481"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934279"
 ---
 # <a name="release-notes---application-insights"></a>릴리스 정보-Application Insights
 
 이 페이지에서는 각 Application Insights Sdk에 대 한 업데이트 및 버그 수정과 관련 된 자세한 릴리스 정보를 찾을 수 있는 위치를 간략하게 설명 합니다.
 
-## <a name="sdk"></a>SDK) 
+## <a name="sdk"></a>SDK 
 
 * .NET SDK
     - 버전 2.12 이상: [.Net sdk (ASP.NET, ASP.NET Core 및 로깅 어댑터 포함)](https://github.com/Microsoft/ApplicationInsights-dotnet/releases) 

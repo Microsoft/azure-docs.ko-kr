@@ -1,18 +1,18 @@
 ---
 title: Azure 방호에서 Vm 및 NSGs 사용
-description: 이 문서에서는 Azure 방호에 NSG 액세스를 통합 하는 방법을 설명 합니다.
+description: Azure 방호에서 네트워크 보안 그룹을 사용할 수 있습니다. 이 구성에 필요한 서브넷에 대해 알아봅니다.
 services: bastion
 author: charwen
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: charwen
-ms.openlocfilehash: 1fc261c31a1190536f3128ed6472d9ca76dfce7e
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 563c12f91e9553f802d4cf26519da0550880dfcd
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112210"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270532"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>NSG 액세스 및 Azure 방호 작업
 

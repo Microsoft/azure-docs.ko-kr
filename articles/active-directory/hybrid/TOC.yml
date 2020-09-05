@@ -31,7 +31,7 @@
         - name: Azure AD Connect 및 Connect Health란?
           href: whatis-azure-ad-connect.md
         - name: 올바른 인증 선택
-          href: 'https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn'
+          href: ./choose-ad-authn.md
         - name: ID 동기화 및 중복 특성 복원력
           href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
     - name: 암호 해시 동기화
@@ -339,7 +339,7 @@
     - name: Azure AD 통과 인증 에이전트 버전 기록
       href: reference-connect-pta-version-history.md
     - name: 커넥터 버전 내역
-      href: reference-connect-sync-connector-version-history.md
+      href: /microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history
     - name: 계정 및 사용 권한
       href: reference-connect-accounts-permissions.md
     - name: Azure AD Connect FAQ

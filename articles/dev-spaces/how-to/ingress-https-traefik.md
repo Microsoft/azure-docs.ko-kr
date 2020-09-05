@@ -6,12 +6,12 @@ ms.topic: conceptual
 description: 사용자 지정 traefik 수신 컨트롤러를 사용 하 고 해당 수신 컨트롤러를 사용 하 여 HTTPS를 구성 하도록 Azure Dev Spaces를 구성 하는 방법을 알아봅니다.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, 컨테이너, Helm, 서비스 메시, 서비스 메시 라우팅, kubectl, k8s
 ms.custom: devx-track-javascript
-ms.openlocfilehash: e6c50dd8d27af8276ddbf47f7a3719ab59d87a7d
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 3938209e80eb211afc332997b5b241c12a0f6eb9
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87421589"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212453"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>사용자 지정 traefik 수신 컨트롤러 사용 및 HTTPS 구성
 
@@ -21,7 +21,7 @@ ms.locfileid: "87421589"
 
 * Azure 구독 계정이 없는 경우 [무료 계정][azure-account-create]에 만들 수 있습니다.
 * [Azure CLI 설치][az-cli]
-* [Azure Dev Spaces 사용 하도록 설정 된 AKS (Azure Kubernetes Service) 클러스터][qs-cli].
+* [AKS (Azure Kubernetes Service) 클러스터 Azure Dev Spaces 사용) [qs-cli].
 * [kubectl][kubectl] 가 설치 되었습니다.
 * [Helm 3이 설치되었습니다][helm-installed].
 * [DNS 영역][dns-zone]을 사용 하 [는 사용자 지정 도메인][custom-domain] 입니다. 이 문서에서는 사용자 지정 도메인 및 DNS 영역이 AKS 클러스터와 동일한 리소스 그룹에 있지만 다른 리소스 그룹에서 사용자 지정 도메인 및 DNS 영역을 사용할 수 있다고 가정 합니다.
@@ -304,13 +304,13 @@ helm upgrade bikesharingsampleapp . --namespace dev --atomic
 > [!IMPORTANT]
 > DNS 변경 내용이 완료 되 고 예제 응용 프로그램에 액세스할 수 있도록 30 분 이상 걸릴 수 있습니다.
 
-또한 페이지가 로드 되지만 브라우저에 몇 가지 오류가 표시 됩니다. 브라우저 콘솔을 열면 HTTP 리소스를 로드 하려는 HTTPS 페이지와 관련 된 오류가 표시 됩니다. 예를 들면 다음과 같습니다.
+또한 페이지가 로드 되지만 브라우저에 몇 가지 오류가 표시 됩니다. 브라우저 콘솔을 열면 HTTP 리소스를 로드 하려는 HTTPS 페이지와 관련 된 오류가 표시 됩니다. 예를 들어:
 
 ```console
 Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.traefik.MY_CUSTOM_DOMAIN/devsignin' was loaded over HTTPS, but requested an insecure resource 'http://azureuser1.s.dev.gateway.traefik.MY_CUSTOM_DOMAIN/api/user/allUsers'. This request has been blocked; the content must be served over HTTPS.
 ```
 
-이 오류를 해결 하려면 [BikeSharingWeb/azds][azds-yaml] 을 업데이트 하 여 *traefik* 에 *kubernetes.io/ingress.class* 를 사용 하 고 *$ (hostsuffix)* 사용자 지정 도메인을 사용 합니다. 예를 들면 다음과 같습니다.
+이 오류를 해결 하려면 [BikeSharingWeb/azds][azds-yaml] 을 업데이트 하 여 *traefik* 에 *kubernetes.io/ingress.class* 를 사용 하 고 *$ (hostsuffix)* 사용자 지정 도메인을 사용 합니다. 예를 들어:
 
 ```yaml
 ...
@@ -363,10 +363,10 @@ azds up
 
 ## <a name="next-steps"></a>다음 단계
 
-Azure Dev Spaces를 통해 여러 컨테이너에서 더 복잡한 애플리케이션을 개발할 수 있는 방법 및 사용자가 다양한 환경에서 다양한 코드 버전이나 분기로 작업하여 공동 개발을 간소화하는 방법을 알아봅니다.
+Azure Dev Spaces 작동 방법에 대해 자세히 알아보세요.
 
 > [!div class="nextstepaction"]
-> [Azure Dev Spaces에서 팀 개발][team-development-qs]
+> [Azure Dev Spaces의 작동 원리](../how-dev-spaces-works.md)
 
 
 [az-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
@@ -375,9 +375,6 @@ Azure Dev Spaces를 통해 여러 컨테이너에서 더 복잡한 애플리케�
 [az-network-dns-record-set-a-remove-record]: /cli/azure/network/dns/record-set/a?view=azure-cli-latest#az-network-dns-record-set-a-remove-record
 [custom-domain]: ../../app-service/manage-custom-dns-buy-domain.md#buy-the-domain
 [dns-zone]: ../../dns/dns-getstarted-cli.md
-[qs-cli]: ../quickstart-cli.md
-[team-development-qs]: ../quickstart-team-development.md
-
 [azds-yaml]: https://github.com/Azure/dev-spaces/blob/master/samples/BikeSharingApp/BikeSharingWeb/azds.yaml
 [azure-account-create]: https://azure.microsoft.com/free
 [cert-manager]: https://cert-manager.io/

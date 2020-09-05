@@ -1,24 +1,24 @@
 ---
-title: 서버에 대 한 Azure Arc를 사용 하는 VM 확장 관리
-description: 서버 (미리 보기) 용 azure Arc는 비 Azure Vm을 사용 하 여 배포 후 구성 및 자동화 작업을 제공 하는 가상 머신 확장의 배포를 관리할 수 있습니다.
+title: Azure Arc 사용 서버를 사용 하 여 VM 확장 관리 (미리 보기)
+description: Azure Arc 사용 서버 (미리 보기)는 Azure Vm이 아닌 Vm을 사용 하 여 배포 후 구성 및 자동화 작업을 제공 하는 가상 머신 확장의 배포를 관리할 수 있습니다.
 ms.date: 06/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0319420fe528d41a23ee8fae90c4ad8c326f35a0
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 259a55c0e5cb4074871fd70a61e6c61d5cf3c50a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121309"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89018164"
 ---
-# <a name="virtual-machine-extension-management-with-azure-arc-for-servers-preview"></a>서버에 대 한 Azure Arc를 사용 하 여 가상 머신 확장 관리 (미리 보기)
+# <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers-preview"></a>Azure Arc 사용 서버를 사용 하 여 가상 머신 확장 관리 (미리 보기)
 
 VM (가상 컴퓨터) 확장은 Azure Vm에서 배포 후 구성 및 자동화 작업을 제공 하는 작은 응용 프로그램입니다. 예를 들어 가상 컴퓨터에 소프트웨어 설치, 바이러스 백신 보호가 필요한 경우, 또는 가상 컴퓨터 내부에서 스크립트를 실행하려면 VM 확장을 사용하면 됩니다.
 
-서버 (미리 보기) 용 azure Arc를 사용 하면 azure VM 확장을 비 Azure Windows 및 Linux Vm에 배포 하 여 해당 수명 주기를 통해 하이브리드 컴퓨터 온-프레미스, edge 및 기타 클라우드 환경을 관리할 수 있습니다.
+Azure Arc 사용 서버 (미리 보기)를 사용 하면 azure VM 확장을 비 Azure Windows 및 Linux Vm에 배포 하 여 해당 수명 주기를 통해 온-프레미스, edge 및 기타 클라우드 환경에서 하이브리드 컴퓨터를 관리 하는 기능을 간소화할 수 있습니다.
 
 ## <a name="key-benefits"></a>주요 이점
 
-서버 (미리 보기) 용 Azure Arc VM 확장 지원은 다음과 같은 주요 이점을 제공 합니다.
+Azure Arc 사용 서버 (미리 보기) VM 확장 지원은 다음과 같은 주요 이점을 제공 합니다.
 
 * [Azure Automation 상태 구성을](../../automation/automation-dsc-overview.md) 사용 하 여 중앙에서 구성을 저장 하 고 DSC VM 확장을 통해 사용 하도록 설정 된 하이브리드 연결 컴퓨터의 원하는 상태를 유지 관리 합니다.
 
@@ -36,7 +36,7 @@ VM 확장 기능은 지원 되는 [지역](overview.md#supported-regions)목록 
 
 이 미리 보기에서는 Windows 및 Linux 컴퓨터에서 다음 VM 확장을 지원 합니다.
 
-|확장 |OS |게시자 |추가 정보 |
+|확장 |OS |Publisher |추가 정보 |
 |----------|---|----------|-----------------------|
 |CustomScriptExtension |Windows |Microsoft.Compute |[Windows 사용자 지정 스크립트 확장](../../virtual-machines/extensions/custom-script-windows.md)|
 |DSC |Windows |Microsoft. PowerShell|[Windows PowerShell DSC 확장](../../virtual-machines/extensions/dsc-windows.md)|
@@ -47,11 +47,11 @@ VM 확장 기능은 지원 되는 [지역](overview.md#supported-regions)목록 
 |Log Analytics 에이전트 |Linux |Microsoft.EnterpriseCloud.Monitoring |[Linux 용 Log Analytics VM 확장](../../virtual-machines/extensions/oms-linux.md) |
 |Microsoft 종속성 에이전트 | Linux |Microsoft.Compute | [Linux 용 종속성 에이전트 가상 머신 확장](../../virtual-machines/extensions/agent-dependency-linux.md) |
 
-VM 확장은 Azure Resource Manager 템플릿, Azure Portal 또는 서버 (미리 보기)에 대해 Arc에서 관리 하는 하이브리드 서버의 Azure PowerShell를 사용 하 여 실행할 수 있습니다.
+VM 확장은 Azure Resource Manager 템플릿, Azure Portal 또는 Arc 사용 서버에서 관리 하는 하이브리드 서버 (미리 보기)에서 Azure PowerShell 실행할 수 있습니다.
 
 Azure 연결 된 컴퓨터 에이전트 패키지 및 확장 에이전트 구성 요소에 대 한 자세한 내용은 [에이전트 개요](agent-overview.md#agent-component-details)를 참조 하세요.
 
-## <a name="prerequisites"></a>사전 요구 사항
+## <a name="prerequisites"></a>필수 구성 요소
 
 이 기능은 구독에 있는 다음 Azure 리소스 공급자에 따라 달라 집니다.
 
@@ -89,7 +89,7 @@ Azure Portal를 통해 서버 (미리 보기) 관리 컴퓨터에 대 한 Arc를
 
     ![Log Analytics VM 확장 설치](./media/manage-vm-extensions/mma-extension-config.png)
 
-    설치를 완료 하려면 작업 영역 ID 및 기본 키를 제공 해야 합니다. 이 정보를 찾는 방법에 익숙하지 않은 경우 [작업 영역 ID 및 키 가져오기](../../azure-monitor/platform/agent-windows.md#obtain-workspace-id-and-key)를 참조 하세요.
+    설치를 완료 하려면 작업 영역 ID 및 기본 키를 제공 해야 합니다. 이 정보를 찾는 방법에 익숙하지 않은 경우 [작업 영역 ID 및 키 가져오기](../../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key)를 참조 하세요.
 
 4. 제공 된 필수 정보를 확인 한 후 **만들기**를 선택 합니다. 배포에 대 한 요약이 표시 되 고 배포 상태를 검토할 수 있습니다.
 
@@ -98,7 +98,7 @@ Azure Portal를 통해 서버 (미리 보기) 관리 컴퓨터에 대 한 Arc를
 
 ## <a name="azure-resource-manager-templates"></a>Azure 리소스 관리자 템플릿
 
-Azure Resource Manager 템플릿에 VM 확장을 추가하고 템플릿 배포를 통해 실행할 수 있습니다. 서버 (미리 보기)에 대해 Arc에서 지 원하는 VM 확장을 사용 하면 Azure PowerShell를 사용 하 여 Linux 또는 Windows 컴퓨터에서 지원 되는 VM 확장을 배포할 수 있습니다. 아래 각 샘플에는 템플릿에 제공할 샘플 값이 포함 된 템플릿 파일 및 매개 변수 파일이 포함 되어 있습니다.
+Azure Resource Manager 템플릿에 VM 확장을 추가하고 템플릿 배포를 통해 실행할 수 있습니다. Arc 사용 서버 (미리 보기)에서 지 원하는 VM 확장을 사용 하면 Azure PowerShell를 사용 하 여 Linux 또는 Windows 컴퓨터에서 지원 되는 VM 확장을 배포할 수 있습니다. 아래 각 샘플에는 템플릿에 제공할 샘플 값이 포함 된 템플릿 파일 및 매개 변수 파일이 포함 되어 있습니다.
 
 >[!NOTE]
 >여러 확장을 함께 일괄 처리 하 고 처리할 수 있지만 직렬로 설치 됩니다. 첫 번째 확장 설치가 완료 되 면 다음 확장을 설치 하려고 시도 합니다.
@@ -223,7 +223,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 사용자 지정 스크립트 확장을 사용 하기 위해 Windows 및 Linux에서 실행 하기 위해 다음 샘플이 제공 됩니다. 사용자 지정 스크립트 확장에 익숙하지 않은 경우 [Windows 용 사용자 지정 스크립트 확장](../../virtual-machines/extensions/custom-script-windows.md) 또는 [Linux 용 사용자 지정 스크립트 확장](../../virtual-machines/extensions/custom-script-linux.md)을 참조 하세요. 하이브리드 컴퓨터에서이 확장을 사용 하는 경우 다음과 같은 몇 가지 특성을 이해 해야 합니다.
 
-* Azure VM 사용자 지정 스크립트 확장을 사용 하는 지원 되는 운영 체제 목록은 서버에 대 한 Azure Arc에 적용 되지 않습니다. 서버에 대 한 Arc의 지원 되는 OSs 목록은 [여기](agent-overview.md#supported-operating-systems)에서 찾을 수 있습니다.
+* Azure VM 사용자 지정 스크립트 확장을 사용 하는 지원 되는 운영 체제 목록은 Azure Arc 사용 서버에 적용 되지 않습니다. Arc 사용 서버에 대해 지원 되는 OSs 목록은 [여기](agent-overview.md#supported-operating-systems)에서 찾을 수 있습니다.
 
 * Azure Virtual Machine Scale Sets 또는 클래식 Vm에 대 한 구성 세부 정보는 적용 되지 않습니다.
 
@@ -379,7 +379,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 PowerShell DSC 확장을 사용 하기 위해 Windows 및 Linux에서 실행 하기 위해 다음 샘플을 제공 합니다. PowerShell DSC 확장에 익숙하지 않은 경우 [DSC 확장 처리기 개요](../../virtual-machines/extensions/dsc-overview.md)를 참조 하세요. 하이브리드 컴퓨터에서이 확장을 사용 하는 경우 다음과 같은 몇 가지 특성을 이해 해야 합니다.
 
-* Azure VM PowerShell DSC 확장을 사용 하는 지원 되는 운영 체제 목록은 서버에 대 한 Azure Arc에 적용 되지 않습니다. 서버에 대 한 Arc의 지원 되는 OSs 목록은 [여기](agent-overview.md#supported-operating-systems)에서 찾을 수 있습니다.
+* Azure VM PowerShell DSC 확장을 사용 하는 지원 되는 운영 체제 목록은 Azure Arc 사용 서버에 적용 되지 않습니다. Arc 사용 서버에 대해 지원 되는 OSs 목록은 [여기](agent-overview.md#supported-operating-systems)에서 찾을 수 있습니다.
 
 * 컴퓨터에서 외부 스크립트를 다운로드 해야 하 고 프록시 서버를 통해서만 통신할 수 있는 경우 [연결 된 컴퓨터 에이전트를 구성](manage-agent.md#update-or-remove-proxy-settings) 하 여 프록시 서버 환경 변수를 설정 해야 합니다.
 

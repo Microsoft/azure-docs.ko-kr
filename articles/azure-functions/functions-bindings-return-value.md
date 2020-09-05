@@ -3,14 +3,15 @@ title: Azure Function에서 반환 값 사용
 description: Azure Functions에 대 한 반환 값을 관리 하는 방법 알아보기
 author: craigshoemaker
 ms.topic: reference
+ms.custom: devx-track-csharp
 ms.date: 01/14/2019
 ms.author: cshoe
-ms.openlocfilehash: 7ba104e288204dfbf3d24f5783bf69682a286553
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1dd9fabbe235e45290e607f861b67466d33319ce
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74480570"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212167"
 ---
 # <a name="using-the-azure-function-return-value"></a>Azure Function 반환 값 사용
 

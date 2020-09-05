@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
-ms.date: 08/06/2020
-ms.openlocfilehash: ca6324bd27749d9be3f516dbcd8ff99eca39d1a6
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.date: 08/26/2020
+ms.openlocfilehash: e4f9fa554a7c0e45abe1e9686605c95bb79d1739
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87875458"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88932953"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Azure Logic Apps 및 Power Automate용 식의 함수 사용에 대한 참조 가이드
 
@@ -1120,7 +1120,7 @@ body('Get_user')
 
 ### <a name="bool"></a>bool
 
-값에 대한 부울 버전을 반환합니다.
+값의 부울 버전을 반환합니다.
 
 ```
 bool(<value>)
@@ -1128,27 +1128,27 @@ bool(<value>)
 
 | 매개 변수 | 필수 | Type | Description |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | 예 | 모두 | 변환할 값 |
+| <*value*> | 예 | 모두 | 부울로 변환할 값입니다. |
 |||||
 
-| 반환 값 | Type | Description |
+를 개체와 함께 사용 하는 경우 `bool()` 개체의 값은 부울로 변환할 수 있는 문자열 또는 정수 여야 합니다.
+
+| 반환 값 | Type | 설명 |
 | ------------ | ---- | ----------- |
-| true 또는 false | 부울 | 지정한 값에 대한 부울 버전 |
+| `true` 또는 `false` | 부울 | 지정 된 값의 부울 버전입니다. |
 ||||
 
-*예제*
+*출력*
 
-아래 예제는 지정한 값을 부울 값으로 변환합니다.
+다음 예에서는에 대해 지원 되는 다양 한 유형의 입력을 보여 줍니다 `bool()` .
 
-```
-bool(1)
-bool(0)
-```
-
-그리고 다음 결과를 반환합니다.
-
-* 첫 번째 예제: `true`
-* 두 번째 예제: `false`
+| 입력 값 | Type | 반환 값 |
+| ----------- | ---------- | ---------------------- |
+| `bool(1)` | 정수 | `true` |
+| `bool(0)` | 정수    | `false` |
+| `bool(-1)` | 정수 | `true` |
+| `bool('true')` | String | `true` |
+| `bool('false')` | String | `false` |
 
 <a name="coalesce"></a>
 
@@ -1705,7 +1705,7 @@ div(<dividend>, <divisor>)
 
 *예제 1*
 
-두 예제 모두 정수 형식으로이 값을 반환 합니다.`2`
+두 예제 모두 정수 형식으로이 값을 반환 합니다. `2`
 
 ```
 div(10,5)
@@ -1714,7 +1714,7 @@ div(11,5)
 
 *예제 2*
 
-두 예제 모두 Float 형식으로이 값을 반환 합니다.`2.2`
+두 예제 모두 Float 형식으로이 값을 반환 합니다. `2.2`
 
 ```
 div(11,5.0)
@@ -4781,7 +4781,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '/produce/item/name[1]')`
 
-결과는 다음과 같습니다.`Gala`
+결과는 다음과 같습니다. `Gala`
 
 *예 3*
 
@@ -4789,7 +4789,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '/produce/item/name[last()]')`
 
-결과는 다음과 같습니다.`Honeycrisp`
+결과는 다음과 같습니다. `Honeycrisp`
 
 *예제 4*
 
@@ -4801,7 +4801,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '//name[@expired]')`
 
-결과는 다음과 같습니다.`[ Gala, Honeycrisp ]`
+결과는 다음과 같습니다. `[ Gala, Honeycrisp ]`
 
 *예제 5*
 
@@ -4813,7 +4813,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '//name[@expired = 'true']')`
 
-결과는 다음과 같습니다.`[ Gala ]`
+결과는 다음과 같습니다. `[ Gala ]`
 
 *예제 6*
 
@@ -4828,7 +4828,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), '//name[price>35]')`
 
-결과는 다음과 같습니다.`Honeycrisp`
+결과는 다음과 같습니다. `Honeycrisp`
 
 *예제 7*
 
@@ -4840,7 +4840,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(parameters('items')), 'sum(/produce/item/count)')`
 
-결과는 다음과 같습니다.`30`
+결과는 다음과 같습니다. `30`
 
 *예제 8*
 
@@ -4873,7 +4873,7 @@ xpath('<xml>', '<xpath>')
 
 `xpath(xml(body('Http')), 'string(/*[name()="file"]/*[name()="location"])')`
 
-결과는 다음과 같습니다.`Paris`
+결과는 다음과 같습니다. `Paris`
 
 ## <a name="next-steps"></a>다음 단계
 

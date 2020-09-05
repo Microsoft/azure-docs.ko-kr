@@ -1,35 +1,35 @@
 ---
 title: 질문과 대답
-description: AVS(Azure VMware Solution)에 대한 일반적인 질문에 대한 답변을 제공합니다.
+description: Azure VMware 솔루션에 대 한 일반적인 질문에 대 한 답변을 제공 합니다.
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: dikamath
-ms.openlocfilehash: bd27d4669788b10fc12c47e4514020f6b01300bc
-ms.sourcegitcommit: dea88d5e28bd4bbd55f5303d7d58785fad5a341d
+ms.openlocfilehash: cffa31bb66adfde2af24ab2542322479639ed9dd
+ms.sourcegitcommit: 62717591c3ab871365a783b7221851758f4ec9a4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87872330"
+ms.lasthandoff: 08/22/2020
+ms.locfileid: "88752185"
 ---
-# <a name="frequently-asked-questions-about-azure-vmware-solution-avs-preview"></a>AVS(Azure VMware Solution) 미리 보기에 대한 질문과 대답
+# <a name="frequently-asked-questions-about-azure-vmware-solution-preview"></a>Azure VMware Solution preview에 대 한 질문과 대답
 
-AVS(Azure VMware Solution)에 대해 자주 묻는 질문에 대답합니다.
+Azure VMware 솔루션에 대 한 자주 묻는 질문에 대 한 대답입니다.
 
 ## <a name="general"></a>일반
 
-**AVS(Azure VMware Solution)란?**
+**Azure VMware 솔루션 이란?**
 
-기업은 비즈니스 민첩성을 개선하고, 비용을 절감하고, 혁신을 가속화하는 IT 현대화 전략을 찾고 있으며, 고객의 디지털 변환을 가능하게 하는 핵심 요소로 하이브리드 클라우드 플랫폼이 등장했습니다. AVS는 VMware의 SDDC(소프트웨어 정의 데이터 센터) 소프트웨어를 Microsoft Azure 글로벌 클라우드 서비스 에코시스템과 결합합니다. AVS 솔루션은 성능, 가용성, 보안 및 규정 준수 요구 사항을 충족하도록 관리됩니다.
+기업은 비즈니스 민첩성을 개선하고, 비용을 절감하고, 혁신을 가속화하는 IT 현대화 전략을 찾고 있으며, 고객의 디지털 변환을 가능하게 하는 핵심 요소로 하이브리드 클라우드 플랫폼이 등장했습니다. Azure VMware 솔루션은 VMware의 SDDC (소프트웨어 정의 데이터 센터) 소프트웨어와 Microsoft Azure 글로벌 클라우드 서비스 에코 시스템을 결합 합니다. Azure VMware 솔루션은 성능, 가용성, 보안 및 규정 준수 요구 사항을 충족 하도록 관리 됩니다.
 
-## <a name="avs-service"></a>AVS 서비스
+## <a name="azure-vmware-solution-service"></a>Azure VMware 솔루션 서비스
 
-**현재 AVS를 사용할 수 있는 곳은 어디인가요?**
+**현재 Azure VMware 솔루션은 어디에서 사용할 수 있나요?**
 
 서비스는 계속 해 서 새 지역에 추가 되므로 [최신 서비스 가용성 정보](https://azure.microsoft.com/global-infrastructure/services/?products=azure-vmware) 를 확인 하 여 자세한 내용을 확인 하세요. 
 
-**AVS(Azure VMware Solution) 인스턴스에서 실행되는 워크로드가 Azure 서비스를 사용하거나 Azure 서비스와 통합할 수 있나요?**
+**Azure VMware 솔루션 인스턴스에서 실행 되는 워크 로드는 Azure 서비스를 사용 하거나 통합할 수 있나요?**
 
-AVS 솔루션 고객은 모든 Azure 서비스를 사용할 수 있습니다. 서비스의 성능 및 가용성 제한은 서비스마다 다르게 접근해야 합니다.
+모든 Azure 서비스는 Azure VMware 솔루션 고객에 게 제공 됩니다. 서비스의 성능 및 가용성 제한은 서비스마다 다르게 접근해야 합니다.
 
 **현재 프라이빗 클라우드 리소스를 관리하는 데 사용하는 것과 동일한 도구를 사용하나요?**
 
@@ -37,13 +37,13 @@ AVS 솔루션 고객은 모든 Azure 서비스를 사용할 수 있습니다. �
 
 **온-프레미스 vCenter를 사용하여 프라이빗 클라우드를 관리할 수 있나요?**
 
-시작할 때 AVS는 온-프레미스 및 프라이빗 클라우드 환경에서 단일 관리 환경을 지원하지 않습니다. 프라이빗 클라우드 클러스터는 프라이빗 클라우드에 로컬인 vCenter 및 NSX Manager를 통해 관리됩니다.
+Azure VMware 솔루션은 시작 시 온-프레미스 및 사설 클라우드 환경에서 단일 관리 환경을 지원 하지 않습니다. 프라이빗 클라우드 클러스터는 프라이빗 클라우드에 로컬인 vCenter 및 NSX Manager를 통해 관리됩니다.
 
 **온-프레미스에서 실행되는 vRealize Suite를 사용할 수 있나요?** 
 
 구체적인 통합 및 사용 사례는 건별로 평가할 수 있습니다.
 
-**온-프레미스 환경의 vSphere VM을 AVS 프라이빗 클라우드로 마이그레이션할 수 있나요?**
+**온-프레미스 환경에서 Azure VMware 솔루션 사설 클라우드로 vSphere Vm을 마이그레이션할 수 있나요?**
 
 예. 표준 cross vCenter [vMotion 요구 사항이](https://kb.vmware.com/s/article/210695) 충족 되는 경우 vm 마이그레이션 및 vMotion를 사용 하 여 사설 클라우드로 vm을 이동할 수 있습니다.
 
@@ -111,13 +111,13 @@ ESXi 호스트 3~16개 사이에서 클러스터를 스케일링할 수 있습�
 
 **평가판 클러스터란 무엇인가요?**
 
-평가판 클러스터는 3개 호스트로 구성된 클러스터이며 AVS 프라이빗 클라우드를 한 달 동안 사용해 볼 수 있습니다.
+평가판 클러스터는 Azure VMware 솔루션 사설 클라우드의 1 개월 평가에 사용 되는 세 개의 호스트 클러스터입니다.
 
 **평가판 클러스터에 고성능 호스트를 사용할 수 있나요?**
 
 아니요. 고성능 ESXi 호스트는 프로덕션 클러스터에 사용하도록 예약되어 있습니다.
 
-## <a name="avs-and-vmware-software"></a>AVS 및 VMware 소프트웨어
+## <a name="azure-vmware-solution-and-vmware-software"></a>Azure VMware 솔루션 및 VMware 소프트웨어
 
 **프라이빗 클라우드에 사용되는 VMware 소프트웨어 버전은 무엇인가요?**
 
@@ -125,7 +125,7 @@ ESXi 호스트 3~16개 사이에서 클러스터를 스케일링할 수 있습�
 
 **프라이빗 클라우드는 VMware NSX를 사용하나요?**
 
-예, AVS 프라이빗 클라우드의 소프트웨어 정의 네트워킹에 NSX-T 2.5가 사용됩니다.
+예, NSX-T 2.5은 Azure VMware 솔루션 사설 클라우드의 소프트웨어 정의 네트워킹에 사용 됩니다.
 
 **프라이빗 클라우드에서 VMware NSX-V를 사용할 수 있나요?**
 
@@ -147,9 +147,9 @@ ESXi 호스트 3~16개 사이에서 클러스터를 스케일링할 수 있습�
 
 **프라이빗 클라우드를 온-프레미스 환경과 통합하는 데 필요한 네트워크 IP 주소 계획은 무엇인가요?**
 
-AVS 프라이빗 클라우드를 배포하려면 개인 네트워크/22 주소 공간이 필요합니다. 이 프라이빗 주소 공간은 구독의 다른 가상 네트워크 또는 온-프레미스 네트워크와 겹치지 않아야 합니다.
+Azure VMware 솔루션 사설 클라우드를 배포 하려면 개인 네트워크/22 주소 공간이 필요 합니다. 이 프라이빗 주소 공간은 구독의 다른 가상 네트워크 또는 온-프레미스 네트워크와 겹치지 않아야 합니다.
  
-**온-프레미스 환경에서 AVS 프라이빗 클라우드로 연결하려면 어떻게 할까요?**
+**온-프레미스 환경에서 Azure VMware 솔루션 사설 클라우드로 연결 어떻게 할까요??**
 
 다음 두 가지 방법 중 하나로 서비스에 연결할 수 있습니다. 
 
@@ -170,7 +170,7 @@ Azure Portal에서 프라이빗 클라우드에 인터넷 연결을 사용하도
 
 ## <a name="accounts-and-privileges"></a>계정 및 권한
 
-**새 AVS 프라이빗 클라우드에서는 어떤 계정과 권한을 얻게 되나요?**
+**새 Azure VMware 솔루션 사설 클라우드를 사용 하 여 얻을 수 있는 계정과 권한은 무엇 인가요?**
 
 vCenter의 cloudadmin 사용자에 대한 자격 증명과 NSX-T 관리자에 대한 관리자 액세스 권한이 제공됩니다. Azure Active Directory를 통합하는 데 사용할 수 있는 CloudAdmin 그룹도 있습니다. 자세한 내용은 [액세스 및 ID 개념](concepts-identity.md)을 참조하세요.
 
@@ -191,19 +191,19 @@ NSX-T에 대한 모든 관리자 권한이 부여되며 NSX-T 데이터 센터 �
 
 ## <a name="billing-and-support"></a>청구 및 지원
 
-**AVS가 미리 보기로 제공되는 기간에는 어떤 방식으로 요금이 청구되나요?**
+**Azure VMware 솔루션 미리 보기 중에 요금이 청구 되는 방식**
 
-미리 보기 기간에는 종량제 기준으로 매달 AVS 요금이 청구됩니다. 추가 옵션은 일반 공급으로 전환되는 시점에 사용할 수 있습니다.
+미리 보기 중에 Azure VMware 솔루션에 대 한 요금은 종 량 제 기준으로 매달 청구 됩니다. 추가 옵션은 일반 공급으로 전환되는 시점에 사용할 수 있습니다.
 
-**AVS가 미리 보기로 제공되는 기간에는 가격 책정 구조가 어떻게 되나요?**
+**Azure VMware 솔루션 미리 보기 중에는 가격 책정을 어떻게 구성 하나요?**
 
 가격 책정에 대한 일반적인 질문은 Azure VMware 솔루션Solution [가격 책정](https://azure.microsoft.com/pricing/details/azure-vmware) 페이지를 참조하세요. 요청에 따라 미리 보기 가격 책정을 사용할 수 있습니다. 계정 팀에 문의 하거나 가격 책정 페이지의 링크를 따라 판매 담당자에 게 문의 하세요.
 
-**AVS를 지원하는 사람은 누구인가요?**
+**누가 Azure VMware 솔루션을 지원 하나요?**
 
-AVS 지원은 Microsoft에서에서 제공합니다. 미리 보기 지침에 따라 9 ~ 5 pm PST 업무 시간 월요일-금요일에 지원을 제공 합니다. [이 링크](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)에서 지원 티켓을 제출할 수 있습니다.
+Azure VMware 솔루션에 대 한 지원은 Microsoft에서 제공 합니다. 미리 보기 지침에 따라 9 ~ 5 pm PST 업무 시간 월요일-금요일에 지원을 제공 합니다. [이 링크](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)에서 지원 티켓을 제출할 수 있습니다.
 
-**AVS 프라이빗 클라우드를 만들려면 어떤 계정이 필요한가요?**
+**Azure VMware 솔루션 사설 클라우드를 만들려면 어떤 계정이 필요 한가요?**
 
 Azure 구독의 Azure 계정이 필요합니다.
 

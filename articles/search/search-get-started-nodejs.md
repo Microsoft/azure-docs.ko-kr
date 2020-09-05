@@ -10,19 +10,19 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 043d5224c9bfefb189e36c0f4b744c93b376ace0
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 2c97a770dc10168284bebbc038d8c48145c2a385
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87420858"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88917893"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>빠른 시작: REST API를 사용하여 Node.js에서 Azure Cognitive Search 인덱스 만들기
 > [!div class="op_single_selector"]
 > * [JavaScript](search-get-started-nodejs.md)
 > * [C#](search-get-started-dotnet.md)
 > * [포털](search-get-started-portal.md)
-> * [PowerShell](search-create-index-rest-api.md)
+> * [PowerShell](./search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
 > * [Postman](search-get-started-postman.md)
 
@@ -130,7 +130,7 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 ## <a name="1---create-index"></a>1 - 인덱스 만들기 
 
-**hotels_quickstart_index.json** 파일을 만듭니다.  이 파일은 다음 단계에서 로드할 문서에서 Azure Cognitive Search가 작동하는 방식을 정의합니다. 각 필드는 `name`으로 식별되며 지정된 `type`이 있습니다. 또한 각 필드에는 Azure Cognitive Search가 필드 검색, 필터링, 정렬 및 패싯을 수행할 수 있는지 여부를 지정하는 일련의 인덱스 특성도 있습니다. 대부분의 필드는 단순 데이터 형식이지만 `AddressType`과 같은 일부 형식은 인덱스에서 다양한 데이터 구조를 만들 수 있게 해주는 복합 형식입니다.  [지원되는 데이터 형식](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) 및 [인덱스 특성](https://docs.microsoft.com/azure/search/search-what-is-an-index#index-attributes)에 대해 자세히 알아볼 수 있습니다. 
+**hotels_quickstart_index.json** 파일을 만듭니다.  이 파일은 다음 단계에서 로드할 문서에서 Azure Cognitive Search가 작동하는 방식을 정의합니다. 각 필드는 `name`으로 식별되며 지정된 `type`이 있습니다. 또한 각 필드에는 Azure Cognitive Search가 필드 검색, 필터링, 정렬 및 패싯을 수행할 수 있는지 여부를 지정하는 일련의 인덱스 특성도 있습니다. 대부분의 필드는 단순 데이터 형식이지만 `AddressType`과 같은 일부 형식은 인덱스에서 다양한 데이터 구조를 만들 수 있게 해주는 복합 형식입니다.  [지원되는 데이터 형식](/rest/api/searchservice/supported-data-types) 및 [인덱스 특성](./search-what-is-an-index.md#index-attributes)에 대해 자세히 알아볼 수 있습니다. 
 
 **hotels_quickstart_index.json**에 다음을 추가하거나 [파일을 다운로드](https://github.com/Azure-Samples/azure-search-javascript-samples/blob/master/quickstart/hotels_quickstart_index.json)하세요. 
 
@@ -610,7 +610,7 @@ const run = async () => {
 
 ## <a name="3---search-an-index"></a>3 - 인덱스 검색
 
-Azure Portal에서 검색 서비스에 있는 **개요**의 **인덱스** 탭으로 돌아갑니다. 인덱스에는 이제 4개의 문서가 포함되어 있고 스토리지의 일부 공간이 사용됩니다(UI에서 인덱스의 기본 상태를 올바르게 반영하는 데 몇 분 정도 걸릴 수 있음). **검색 탐색기**로 가져올 인덱스 이름을 클릭합니다. 이 페이지에서는 데이터 쿼리를 실험할 수 있습니다. `*&$count=true`의 쿼리 문자열을 검색하려고 하면 모든 문서와 결과 수를 다시 가져와야 합니다. `historic&highlight=Description&$filter=Rating gt 4` 쿼리 문자열을 사용하여 시도하고, "historic"이라는 단어가 `<em></em>` 태그에 래핑된 단일 문서를 다시 가져와야 합니다. [Azure Cognitive Search에서 쿼리를 작성하는 방법](https://docs.microsoft.com/azure/search/search-query-overview)에서 자세한 내용을 알아보세요. 
+Azure Portal에서 검색 서비스에 있는 **개요**의 **인덱스** 탭으로 돌아갑니다. 인덱스에는 이제 4개의 문서가 포함되어 있고 스토리지의 일부 공간이 사용됩니다(UI에서 인덱스의 기본 상태를 올바르게 반영하는 데 몇 분 정도 걸릴 수 있음). **검색 탐색기**로 가져올 인덱스 이름을 클릭합니다. 이 페이지에서는 데이터 쿼리를 실험할 수 있습니다. `*&$count=true`의 쿼리 문자열을 검색하려고 하면 모든 문서와 결과 수를 다시 가져와야 합니다. `historic&highlight=Description&$filter=Rating gt 4` 쿼리 문자열을 사용하여 시도하고, "historic"이라는 단어가 `<em></em>` 태그에 래핑된 단일 문서를 다시 가져와야 합니다. [Azure Cognitive Search에서 쿼리를 작성하는 방법](./search-query-overview.md)에서 자세한 내용을 알아보세요. 
 
 **index.js**를 열고 이 코드를 위쪽에 추가하여 코드에서 이러한 쿼리를 재현합니다.
 

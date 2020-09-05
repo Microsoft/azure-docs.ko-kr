@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: f020d3e98a5c13848a67ed4d8c9ded485b2f9450
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+ms.openlocfilehash: 03fa302d2e8aa173419912b99d60734c7a4e0356
+ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88032597"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88814267"
 ---
 # <a name="create-a-consulting-service-offer"></a>컨설팅 서비스 제품 만들기
 
@@ -38,7 +38,7 @@ ms.locfileid: "88032597"
     ![왼쪽 탐색 메뉴를 보여 줍니다.](./media/new-offer-consulting-service.png)
 
 >[!NOTE]
->제품이 게시된 후 파트너 센터에서 해당 제품에 대해 편집한 내용이 상점에 표시되려면 제품을 다시 게시해야 합니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
+>제품을 게시 한 후에는 제품을 다시 게시 한 후에만 파트너 센터에서 해당 제품에 대 한 편집 내용이 온라인 매장에 표시 됩니다. 변경을 수행한 후에는 항상 다시 게시해야 합니다.
 
 ## <a name="new-offer"></a>새 제안
 
@@ -101,7 +101,7 @@ ms.locfileid: "88032597"
     - 분석
     - 앱 현대화
     - 보관
-    - AI + Machine Learning
+    - AI + 기계 학습
     - Backup
     - 빅 데이터
     - 데이터 플랫폼
@@ -113,7 +113,7 @@ ms.locfileid: "88032597"
     - 마이그레이션
     - 네트워킹
     - 보안
-    - 스토리지
+    - Storage
 
 1. **Azure** 를 기본 제품으로 선택한 경우 최대 6 개의 **산업**을 선택할 수 있습니다. 이렇게 하면 Azure Marketplace 고객이 제품을 보다 쉽게 찾을 수 있습니다. [제품 목록 모범 사례](../gtm-offer-listing-best-practices.md)를 참조 하세요. Azure를 선택 하지 않은 경우이 단계를 건너뜁니다.
 1. 기본 제품에 Azure가 아닌 *기타*를 선택한 경우 최대 3개의 **적용 가능한 제품**을 선택합니다. 이렇게 하면 AppSource 고객이 제품을 보다 쉽게 찾을 수 있습니다. 자세한 내용은 [Microsoft AppSource 컨설팅 서비스 목록 지침](https://go.microsoft.com/fwlink/?LinkId=828734&amp;clcid=0x409)(PDF)을 참조하세요.
@@ -141,7 +141,7 @@ ms.locfileid: "88032597"
 4. 산업
 5. Offer name
 6. 요약
-7. 설명
+7. Description
 8. 스크린샷/비디오
 
 <br>다음은 Microsoft AppSource에서 제공 정보를 표시 하는 방법의 예입니다. 나열 된 가격은 예를 들기 위한 것 이며 실제 비용을 반영 하지는 않습니다.
@@ -156,7 +156,7 @@ ms.locfileid: "88032597"
 4. 산업
 5. Offer name
 6. 요약
-7. 설명
+7. Description
 8. 스크린샷/비디오
 9. 문서
 
@@ -207,17 +207,16 @@ ms.locfileid: "88032597"
 >[!Note]
 >파일을 업로드하는 동안 문제가 발생한 경우 로컬 네트워크가 파트너 센터에서 사용하는 https://upload.xboxlive.com 서비스를 차단하지 않는지 확인하세요.
 
-#### <a name="store-logos"></a>Store 로고
+#### <a name="store-logos"></a>스토어 로고
 
-제품 로고의 PNG 파일을 다음과 같은 각 픽셀 크기로 제공합니다.
+**큰** 크기의 로고에 대 한 PNG 파일을 제공 합니다. 파트너 센터는이를 사용 하 여 **작은** 로고를 만듭니다. 필요에 따라 나중에 다른 이미지로이를 바꿀 수 있습니다.
 
-- **소형(48 x 48)**
-- **대형(216 x 216)**
+- **큼** (216 x 216에서 350 x 350 px, required)
+- **작음** (48 x 48 px, 선택 사항)
 
-모든 로고가 필요하며 마켓플레이스 목록의 여러 위치에서 사용됩니다.
+이러한 로고는 목록의 다른 위치에서 사용 됩니다.
 
--   작은 로고 (48 x 48 픽셀)가 Azure Marketplace 검색 결과 및 Microsoft AppSource 기본 페이지 및 검색 결과 페이지에 표시 됩니다. 
--   Azure Marketplace 및 Microsoft AppSource의 제품 목록 페이지에 긴 로고 (216 x 216 및 350 x 350 픽셀)가 표시 됩니다.
+[!INCLUDE [Logo tips](../includes/graphics-suggestions.md)]
 
 #### <a name="screenshots-optional"></a>스크린샷(선택 사항)
 

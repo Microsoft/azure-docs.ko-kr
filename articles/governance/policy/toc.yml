@@ -10,16 +10,22 @@
   items:
     - name: 정책 할당 - 포털
       displayName: 'assign, compliance'
-      href: assign-policy-portal.md
-    - name: 정책 할당 - Azure PowerShell
-      displayName: 'assign, compliance'
-      href: assign-policy-powershell.md
+      href: ./assign-policy-portal.md
     - name: 정책 할당 - Azure CLI
       displayName: 'assign, compliance'
-      href: assign-policy-azurecli.md
+      href: ./assign-policy-azurecli.md
+    - name: 정책 할당 - Azure PowerShell
+      displayName: 'assign, compliance'
+      href: ./assign-policy-powershell.md
+    - name: 정책 할당 - Python
+      displayName: 'assign, compliance'
+      href: ./assign-policy-python.md
+    - name: 정책 할당 - REST
+      displayName: 'armclient, postman'
+      href: ./assign-policy-rest-api.md
     - name: 정책 할당 - ARM 템플릿
       displayName: 'assign, compliance, resource manager'
-      href: assign-policy-template.md
+      href: ./assign-policy-template.md
 - name: 자습서
   items:
     - name: Azure 정책 만들기 및 관리
@@ -87,6 +93,9 @@
     - name: 새 정책의 영향 평가
       displayName: 'audit, enforcementmode, compliance'
       href: ./concepts/evaluate-impact.md
+    - name: 권장된 정책
+      displayName: 'VMs, virtual machines'
+      href: ./concepts/recommended-policies.md
     - name: 규정 준수
       displayName: 'standards, domains, controls'
       href: ./concepts/regulatory-compliance.md
@@ -161,7 +170,11 @@
           displayName: 'monitor, insights, log analytics, builtin'
           href: ../../azure-monitor/insights/vminsights-enable-policy.md?bc=%2fazure%2fgovernance%2fpolicy%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fgovernance%2fpolicy%2ftoc.json
 - name: 문제 해결
-  href: ./troubleshoot/general.md
+  items:
+    - name: 일반적인 문제
+      href: ./troubleshoot/general.md
+    - name: 알려진 문제
+      href: 'https://github.com/azure/azure-policy#known-issues'
 - name: 참조
   items:
     - name: Azure CLI
@@ -183,9 +196,9 @@
     - name: Java용 Azure SDK
       items:
         - name: 할당
-          href: /java/api/com.microsoft.azure.management.resources.policyassignment?view=azure-java-stable
+          href: /java/api/com.microsoft.azure.management.resources.policyassignment
         - name: 정책 정의
-          href: /java/api/com.microsoft.azure.management.resources.PolicyDefinitions?view=azure-java-stable
+          href: /java/api/com.microsoft.azure.management.resources.PolicyDefinitions
     - name: JavaScript용 Azure SDK
       items:
         - name: 정책
@@ -228,31 +241,45 @@
           href: /azure/templates/microsoft.authorization/policysetdefinitions
 - name: 리소스
   items:
-    - name: 알려진 문제
-      href: 'https://github.com/azure/azure-policy#known-issues'
     - name: GitHub - Azure Policy 샘플
       href: 'https://github.com/Azure/azure-policy'
-    - name: GitHub - 커뮤니티 정책 리포지토리
-      href: 'https://github.com/Azure/Community-Policy'
-    - name: Azure Policy에 대한 Microsoft Q&A
-      href: /answers/topics/azure-policy.html
-    - name: 거버넌스 YouTube 채널
-      href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
-    - name: 게스트 구성 비디오
+    - name: 커뮤니티 도구
       items:
-        - name: 시작하기
-          href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
-        - name: 해석 이니셔티브
-          href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'
-        - name: 정책 할당
-          href: 'https://www.youtube.com/watch?v=fbZBaxcjA-Y'
-        - name: 수정 작업
-          href: 'https://www.youtube.com/watch?v=URE4DUYMgmg'
-    - name: 비디오 - Ignite 2019
-      href: 'https://myignite.techcommunity.microsoft.com/sessions/81584?source=sessions'
+        - name: GitHub - 커뮤니티 정책 리포지토리
+          href: 'https://github.com/Azure/Community-Policy'
+        - name: Azure Policy 준수 검사를 위한 GitHub 작업
+          href: 'https://github.com/marketplace/actions/azure-policy-compliance-scan'
+        - name: CCO Azure 거버넌스 대시보드
+          href: 'https://github.com/Azure/ccodashboard/blob/master/README.md#cco-azure-governance-dashboard-report-pages'
+        - name: AzAdvertizer
+          href: 'https://www.azadvertizer.net/'
+        - name: Azure 거버넌스 시각화 도우미
+          href: 'https://github.com/julianhayward/azure-mg-sub-governance-reporting'
+    - name: 피드백 및 지원
+      items:
+        - name: Azure Policy에 대한 Microsoft Q&A
+          href: /answers/topics/azure-policy.html
+        - name: Azure 지원 티켓
+          href: 'https://azure.microsoft.com/support/create-ticket/'
+        - name: UserVoice
+          href: 'https://feedback.azure.com/forums/915958-azure-governance?category_id=345055'
+    - name: 동영상
+      items:
+        - name: 거버넌스 YouTube 채널
+          href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
+        - name: 비디오 - Ignite 2019
+          href: 'https://myignite.techcommunity.microsoft.com/sessions/81584?source=sessions'
+        - name: 게스트 구성 비디오
+          items:
+            - name: 시작하기
+              href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
+            - name: 해석 이니셔티브
+              href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'
+            - name: 정책 할당
+              href: 'https://www.youtube.com/watch?v=fbZBaxcjA-Y'
+            - name: 수정 작업
+              href: 'https://www.youtube.com/watch?v=URE4DUYMgmg'
     - name: Azure 로드맵
       href: 'https://azure.microsoft.com/roadmap/'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: UserVoice
-      href: 'https://feedback.azure.com/forums/915958-azure-governance?category_id=345055'

@@ -488,6 +488,16 @@ groups:
     title: Java
   - id: programming-language-python
     title: Python
+- id: programming-languages-spark-all-minus-sql
+  title: 프로그래밍 언어
+  prompt: 언어 선택
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-scala
+    title: Scala
+  - id: programming-language-python
+    title: Python
 - id: aml-control-methods
   title: Azure Machine Learning 컨트롤 플레인
   prompt: Azure Machine Learning 컨트롤 플레인 인터페이스 선택
@@ -496,10 +506,70 @@ groups:
     title: Python SDK
   - id: cli
     title: Azure CLI
+- id: speech-full-stack
+  title: 프로그래밍 언어
+  prompt: 프로그래밍 언어 선택
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-spx
+    title: CLI
+- id: programming-languages-voice-assistants
+  title: 프로그래밍 언어
+  prompt: 프로그래밍 언어 선택
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-more
+    title: 언어 자세히 보기...
+- id: ams-lva-edge-programming-languages
+  title: IoT Edge 프로그래밍 언어에 대한 Live Video Analytics
+  prompt: 프로그래밍 언어 선택
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-python
+    title: Python
+- id: app-service-platform-windows-linux
+  title: App Service 플랫폼
+  prompt: 호스팅 플랫폼 선택
+  pivots:
+  - id: platform-linux
+    title: Linux
+  - id: platform-windows
+    title: Windows
+- id: app-service-containers-windows-linux
+  title: 사용자 지정 컨테이너가 있는 App Service
+  prompt: 사용자 지정 컨테이너 플랫폼 선택
+  pivots:
+  - id: container-linux
+    title: Linux 컨테이너
+  - id: container-windows
+    title: Windows 컨테이너
+- id: programming-languages-spring-cloud
+  title: 프로그래밍 언어
+  prompt: 프로그래밍 언어 선택
+  pivots:
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-csharp
+    title: C#
 metadata:
-  ms.openlocfilehash: a16cb06637b777259e4e5115beb1299e8ed65a6b
-  ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+  ms.openlocfilehash: 0659c68f39493c3e3b2e66ebc5a38d96cd13404d
+  ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
   ms.translationtype: HT
   ms.contentlocale: ko-KR
-  ms.lasthandoff: 08/03/2020
-  ms.locfileid: "87543523"
+  ms.lasthandoff: 08/27/2020
+  ms.locfileid: "88998920"

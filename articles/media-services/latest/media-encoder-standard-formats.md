@@ -3,7 +3,7 @@ title: 표준 인코더 형식 및 코덱-Azure
 description: 이 문서에는 StandardEncoderPreset에서 사용할 수 있는 가장 일반적인 가져오기 및 내보내기 파일 형식 목록이 포함되어 있습니다.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,23 +11,25 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/10/2019
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.reviewer: anilmur
-ms.openlocfilehash: dd8c38f9f08bbcaccc39d2f0d1843af720c12932
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c8c111d046bfaefac11df576e455162d20acecd0
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053238"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266564"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>표준 인코더 형식 및 코덱
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 문서에는 [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset)에서 사용할 수 있는 가장 일반적인 가져오기 및 내보내기 파일 형식 목록이 포함되어 있습니다. **StandardEncoderPreset**을 사용하여 사용자 지정 미리 설정을 만드는 방법에 대한 자세한 내용은 [사용자 지정 미리 설정을 사용하여 변환 만들기](customize-encoder-presets-how-to.md)를 참조하세요.
 
 ## <a name="input-containerfile-formats"></a>입력 컨테이너/파일 형식
 
-| 파일 형식(파일 확장명) | 지원 여부 |
+| 파일 형식(파일 확장명) | 지원됨 |
 | --- | --- |
 | FLV(H.264 및 AAC 코덱 포함)(.flv) |예 |
 | MXF(.mxf) |예 |
@@ -52,7 +54,7 @@ ms.locfileid: "87053238"
 * 별도의 PCM 트랙으로 오디오가 전달되지만 파일 메타데이터에서 스테레오 또는 5.1에 대한 채널 매핑을 추론할 수 MXF, GXF 및 QuickTime 파일
 
 ## <a name="input-video-codecs"></a>입력 비디오 코덱
-| 입력 비디오 코덱 | 지원 여부 |
+| 입력 비디오 코덱 | 지원됨 |
 | --- | --- |
 | AVC 8비트/10비트, 최대 4:2:2, AVCIntra 포함 |8비트 4:2:0 및 4:2:2 |
 | Avid DNxHD(MXF) |예 |
@@ -75,7 +77,7 @@ ms.locfileid: "87053238"
 | HEVC/H.265| 기본 프로필|
 
 ## <a name="input-audio-codecs"></a>입력 오디오 코덱
-| 입력 오디오 코덱 | 지원 여부 |
+| 입력 오디오 코덱 | 지원됨 |
 | --- | --- |
 | AAC(AAC-LC, AAC-HE 및 AAC-HEv2, 최대 5.1) |예 |
 | MPEG Layer 2 |예 |

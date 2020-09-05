@@ -9,12 +9,12 @@ ms.date: 07/23/2020
 author: sakash279
 ms.author: akshanka
 ms.custom: devx-track-java
-ms.openlocfilehash: 02adda920b838e39ce713709a952a23be6dc3a0c
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: e28770bae9f845ae8f5edd3b67bc55175392052a
+ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87321074"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88056672"
 ---
 # <a name="how-to-use-azure-table-storage-or-azure-cosmos-db-table-api-from-java"></a>Java에서 Azure Table Storage 또는 Azure Cosmos DB Table API를 사용하는 방법
 
@@ -622,7 +622,7 @@ catch (Exception e)
 * [Java용 Azure Storage SDK][Azure Storage SDK for Java]
 * [Azure Storage 클라이언트 SDK 참조][Azure Storage Client SDK Reference]
 * [Azure Storage REST API][Azure Storage REST API]
-* [Azure Storage 팀 블로그][Azure Storage 팀 블로그]
+* [Azure Storage 팀 블로그][Azure Storage Team Blog]
 
 자세한 내용은 [Java 개발자용 Azure](/java/azure)를 방문하세요.
 
@@ -631,3 +631,4 @@ catch (Exception e)
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure Storage 클라이언트 SDK 참조]: https://azure.github.io/azure-storage-java/
 [Azure Storage REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
+[Azure Storage Team Blog]: https://blogs.msdn.microsoft.com/windowsazurestorage/

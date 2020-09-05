@@ -3,29 +3,30 @@ title: 로컬 파일에서 Azure Media Services 작업 입력 만들기 | Micros
 description: 이 문서에서는 로컬 파일에서 Azure Media Services 작업 입력을 만드는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/26/2020
-ms.author: juliako
-ms.openlocfilehash: a635a75a64db59fc56c6890f79af967a58735853
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.openlocfilehash: b983602c94acc9ffc0048a9753693d7c16869494
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001131"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265561"
 ---
 # <a name="create-a-job-input-from-a-local-file"></a>로컬 파일에서 작업 입력 만들기
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Media Services v3에서는, 비디오를 처리할 작업을 제출할 때 입력 비디오를 찾을 위치를 Media Services에 알려줘야 합니다. 입력 비디오는 Media Service 자산으로 저장할 수 있으며 이 경우 파일(로컬 또는 Azure Blob Storage에 저장됨)을 기반으로 입력 자산을 만듭니다. 이 항목에서는 로컬 파일에서 작업 입력을 만드는 방법을 보여줍니다. 전체 예제를 보려면 [GitHub 샘플](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs)을 참조하세요.
 
 ## <a name="prerequisites"></a>사전 요구 사항 
 
 * [Media Services 계정 만들기](./create-account-howto.md)
-* [자산 관리](manage-asset-concept.md)를 검토합니다.
 
 ## <a name="net-sample"></a>.NET 샘플
 

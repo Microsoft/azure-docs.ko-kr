@@ -7,15 +7,15 @@ manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 53e8586486d9a9ebf870de350d5607f58977c0f5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c0121c42c5d498aa79109c874981b9de0f8f4b7c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81426332"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88588877"
 ---
 # <a name="use-logic-apps-to-receive-email-about-status-changes-of-key-vault-secrets"></a>Logic Apps를 사용하여 키 자격 증명 모음 비밀의 상태 변경에 대한 이메일 수신
 
@@ -28,6 +28,7 @@ Azure Key Vault/Azure Event Grid 통합에 대한 개요는 [Azure Event Grid를
 - Azure Logic Apps에서 지원하는 이메일 공급자(예: Office 365 Outlook)가 제공한 이메일 계정 이 이메일 계정은 이벤트 알림을 보내는 데 사용됩니다. 지원되는 Logic App 커넥터의 전체 목록은 [커넥터 개요](/connectors)를 참조하세요.
 - Azure 구독 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
 - Azure 구독의 키 자격 증명 모음. [Azure CLI를 사용하여 Azure Key Vault에서 비밀을 설정하고 검색](../secrets/quick-create-cli.md)의 단계에 따라 새로운 키 자격 증명 모음을 빠르게 만들 수 있습니다.
+- 리소스 공급자로 등록된 Event Grid는 [리소스 공급자 등록](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)을 참조하세요.
 
 ## <a name="create-a-logic-app-via-event-grid"></a>Event Grid를 통해 논리 앱 만들기
 
@@ -58,8 +59,8 @@ Azure Event Grid 구독을 만들려면 다음 단계를 수행합니다.
    ![논리 앱 디자이너 - 이메일 추가](../media/eventgrid-logicappdesigner3.png)
 
 1. 이메일 템플릿을 작성합니다.
-    - **받는 사람:** 알림 이메일을 받을 이메일 주소를 입력합니다. 이 자습서의 경우 테스트를 위해 액세스할 수 있는 이메일 계정을 사용합니다.
-    - **제목** 및 **본문**: 이메일의 텍스트를 작성합니다. 이벤트 데이터를 기반으로 하는 동적 콘텐츠를 포함하도록 선택기 도구에서 JSON 속성을 선택합니다. `@{triggerBody()?['Data']}`를 사용하여 이벤트 데이터를 검색할 수 있습니다.
+    - **받는 사람:** 알림 이메일을 받을 이메일 주소를 입력합니다. 이 자습서에서는 테스트를 위해 액세스할 수 있는 메일 계정을 사용합니다.
+    - **제목** 및 **본문**: 이메일에 텍스트를 작성합니다. 선택기 도구에서 이벤트 데이터를 기반으로 동적 콘텐츠를 포함할 JSON 속성을 선택합니다. `@{triggerBody()?['Data']}`를 사용하여 이벤트 데이터를 검색할 수 있습니다.
 
     이메일 템플릿은 다음 예와 같습니다.
 

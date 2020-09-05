@@ -17,18 +17,18 @@ ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4702b12bea2e078af4d10fe9d709d16c361b3f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 22a8a0efe16b4ab2ea7b8a647284a3449741ac02
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85608265"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226967"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Azure Active Directory reporting API에 액세스하기 위한 필수 구성 요소
 
-[Azure AD(Azure Active Directory) Reporting API](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-reporting-api)는 일련의 REST 기반 API를 통해 데이터에 프로그래밍 방식으로 액세스합니다. 프로그래밍 언어 및 도구에서 이러한 Api를 호출할 수 있습니다.
+[Azure AD(Azure Active Directory) Reporting API](./concept-reporting-api.md)는 일련의 REST 기반 API를 통해 데이터에 프로그래밍 방식으로 액세스합니다. 프로그래밍 언어 및 도구에서 이러한 Api를 호출할 수 있습니다.
 
-Reporting API는 [OAuth](https://docs.microsoft.com/azure/api-management/api-management-howto-protect-backend-with-aad) 를 사용하여 Web API에 대한 액세스 권한을 부여합니다.
+Reporting API는 [OAuth](../../api-management/api-management-howto-protect-backend-with-aad.md) 를 사용하여 Web API에 대한 액세스 권한을 부여합니다.
 
 reporting API에 액세스하도록 준비하려면 다음을 수행해야 합니다.
 
@@ -85,7 +85,7 @@ Azure AD 보고 API에 액세스하도록 디렉터리를 구성하려면 Azure 
 
     b. **지원 되는 계정 유형**으로 **이 조직 에서만 계정을**선택 합니다.
 
-    다. **리디렉션 URL** 선택 **웹** 텍스트 상자에을 입력 `https://localhost` 합니다.
+    c. **리디렉션 URL** 선택 **웹** 텍스트 상자에을 입력 `https://localhost` 합니다.
 
     d. **등록**을 선택합니다. 
 
@@ -200,7 +200,7 @@ Reporting API에 대한 호출을 구성하는 경우 이 값이 필요합니다
 
  Graph explorer를 사용 하 여 로그인 할 때 오류가 발생 하지 않도록 하려면 Graph Explorer UI의 로그인 단추를 모두 사용 하 여 계정에 로그인 합니다. 
 
-![Graph 탐색기](./media/troubleshoot-graph-api/graph-explorer.png)
+![그래프 탐색기](./media/troubleshoot-graph-api/graph-explorer.png)
 
 ### <a name="error-failed-to-do-premium-license-check-from-microsoft-graph"></a>오류: Microsoft Graph에서 프리미엄 라이선스 검사를 수행 하지 못했습니다. 
 
@@ -225,5 +225,5 @@ Graph 탐색기를 사용하여 로그인에 액세스하는 동안 이 오류 �
 ## <a name="next-steps"></a>다음 단계
 
 * [인증서와 함께 Azure Active Directory reporting API를 사용하여 데이터 가져오기](tutorial-access-api-with-certificates.md).
-* [감사 API 참조](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
-* [로그인 활동 보고서 API 참조](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+* [감사 API 참조](/graph/api/resources/directoryaudit?view=graph-rest-beta) 
+* [로그인 활동 보고서 API 참조](/graph/api/resources/signin?view=graph-rest-beta)

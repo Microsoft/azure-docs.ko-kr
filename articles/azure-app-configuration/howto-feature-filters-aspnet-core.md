@@ -3,16 +3,17 @@ title: 기능 필터를 사용 하 여 사용자의 하위 집합에 대 한 기
 titleSuffix: Azure App Configuration
 description: 기능 필터를 사용 하 여 사용자의 하위 집합에 대 한 기능을 사용 하도록 설정 하는 방법을 알아봅니다.
 ms.service: azure-app-configuration
+ms.custom: devx-track-csharp
 author: lisaguthrie
 ms.author: lcozzens
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 181c97615985283011834dcf9145810b1563fb4a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5b2eb942581f6e4163012b0f767d04c02689bb7b
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80057010"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206761"
 ---
 # <a name="use-feature-filters-to-enable-a-feature-for-a-subset-of-users"></a>기능 필터를 사용 하 여 사용자의 하위 집합에 대 한 기능 사용
 
@@ -22,8 +23,8 @@ ms.locfileid: "80057010"
 
 라이브러리에는 `Microsoft.FeatureManagement` 다음과 같은 두 가지 기능 필터가 포함 됩니다.
 
-- `PercentageFilter`백분율을 기준으로 기능 플래그를 사용 하도록 설정 합니다.
-- `TimeWindowFilter`지정 된 시간 동안 기능 플래그를 사용 하도록 설정 합니다.
+- `PercentageFilter` 백분율을 기준으로 기능 플래그를 사용 하도록 설정 합니다.
+- `TimeWindowFilter` 지정 된 시간 동안 기능 플래그를 사용 하도록 설정 합니다.
 
 [Microsoft FeatureManagement. ifeaturefilter 인터페이스](/dotnet/api/microsoft.featuremanagement.ifeaturefilter)를 구현 하는 고유한 기능 필터를 만들 수도 있습니다.
 

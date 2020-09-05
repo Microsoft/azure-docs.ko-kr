@@ -2,24 +2,21 @@
 title: '자습서: New Relic by Account와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 New Relic by Account 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 3186b9a8-f4d8-45e2-ad82-6275f95e7aa6
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 04/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 9fdcec5b55f52b7b6b824bf2ba25c14541b2a3c6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 19a471b9339828250baa190b1de57c86eb22b30c
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82186569"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88554467"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-new-relic-by-account"></a>자습서: New Relic by Account와 Azure Active Directory SSO(Single Sign-On) 통합
 

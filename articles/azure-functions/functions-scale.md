@@ -3,14 +3,14 @@ title: Azure Functions 크기 조정 및 호스팅
 description: Azure Functions 소비 계획 및 프리미엄 계획 중에서 선택 하는 방법을 알아봅니다.
 ms.assetid: 5b63649c-ec7f-4564-b168-e0a74cb7e0f3
 ms.topic: conceptual
-ms.date: 03/27/2019
+ms.date: 08/17/2020
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 26924498f32b8aac2e3e7fb5cfd7c1965ee5884f
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 80bb59527f416afd78b992fb12a4ef72956f91b7
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86025831"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587228"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Azure Functions 크기 조정 및 호스팅
 
@@ -32,9 +32,9 @@ App Service 계획을 사용 하면 관리 하는 전용 인프라를 활용할 
 
 ## <a name="consumption-plan"></a>소비 계획
 
-소비 계획을 사용 하는 경우 Azure Functions 호스트의 인스턴스는 들어오는 이벤트의 수에 따라 동적으로 추가 및 제거 됩니다. 이 서버리스 계획은 자동으로 규모를 조정하며, 함수를 실행하는 경우에만 컴퓨팅 리소스에 대한 요금이 청구됩니다. 소비 계획에서 구성 가능한 시간 후 함수 실행 시간이 초과됩니다.
+소비 계획을 사용 하는 경우 Azure Functions 호스트의 인스턴스는 들어오는 이벤트의 수에 따라 동적으로 추가 및 제거 됩니다. 이 서버리스 계획은 자동으로 크기를 조정하며, 함수를 실행하는 경우에만 컴퓨팅 리소스에 대한 요금이 청구됩니다. 소비 계획에서 구성 가능한 시간 후 함수 실행 시간이 초과됩니다.
 
-청구는 실행 횟수, 실행 시간 및 사용된 메모리를 기반으로 하며, 함수 앱 내의 모든 함수에 대해 집계됩니다. 자세한 내용은 [Azure Functions 가격 책정 페이지](https://azure.microsoft.com/pricing/details/functions/)를 참조하세요.
+청구는 실행 횟수, 실행 시간 및 사용된 메모리를 기반으로 하며, 함수 앱 내의 모든 함수에 대한 청구가 집계됩니다. 자세한 내용은 [Azure Functions 가격 책정 페이지](https://azure.microsoft.com/pricing/details/functions/)를 참조하세요.
 
 소비 계획은 기본 호스팅 계획이며 다음과 같은 이점을 제공합니다.
 
@@ -86,7 +86,7 @@ App Service 계획에서 JavaScript 함수를 실행 중인 경우 vCPU 수가 �
 
 ASE ( [App Service Environment](../app-service/environment/intro.md) )에서 실행 하면 함수를 완전히 격리 하 고 높은 규모의 이점을 활용할 수 있습니다.
 
-### <a name="always-on"></a><a name="always-on"></a>Always On
+### <a name="always-on"></a><a name="always-on"></a> Always On
 
 App Service 계획에서 실행 하는 경우 함수 앱이 올바르게 실행 되도록 **Always on** 설정을 사용 하도록 설정 해야 합니다. App Service 계획에서 함수 런타임은 비활성화되고 몇 분 후 유휴 상태가 되므로 HTTP 트리거만 함수를 “다시 시작”합니다. Always On은 App Service 계획에서만 사용할 수 있습니다. 소비 계획에서 플랫폼은 함수 앱을 자동으로 활성화합니다.
 
@@ -110,7 +110,7 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 이 명령의 출력이 `dynamic`인 경우 함수 앱은 소비 계획 상태입니다. 이 명령의 출력이 인 경우 `ElasticPremium` 함수 앱은 프리미엄 계획에 있습니다. 다른 모든 값은 App Service 계획의 다른 계층을 표시 합니다.
 
-## <a name="storage-account-requirements"></a>Storage 계정 요구 사항
+## <a name="storage-account-requirements"></a>스토리지 계정 요구 사항
 
 모든 계획에서 함수 앱에는 Azure Blob, 큐, 파일 및 테이블 저장소를 지 원하는 일반 Azure Storage 계정이 필요 합니다. Azure Functions는 트리거 관리 및 함수 실행 로깅 등의 작업에 대해 Azure Storage를 사용 하지만 일부 저장소 계정은 큐 및 테이블을 지원 하지 않기 때문입니다. Blob 전용 스토리지 계정(Premium Storage 포함) 및 영역 중복 스토리지 복제가 사용되는 범용 스토리지 계정을 포함한 계정은 함수 앱을 만들 때 기존 **스토리지 계정** 선택 항목에서 필터링됩니다.
 
@@ -144,11 +144,19 @@ Azure Functions 확장 단위는 함수 앱입니다. 함수 앱을 확장하면
 
 크기 조정은 다양한 요인에 따라 다르고, 선택한 트리거 및 언어에 따라 달라질 수 있습니다. 유의 해야 할 몇 가지 확장 동작은 다음과 같습니다.
 
-* 단일 함수 앱은 최대 200 개의 인스턴스로 확장할 수 있습니다. 단일 인스턴스는 동시에 둘 이상의 메시지 또는 요청을 처리할 수 있지만 동시 실행 수를 제한하지 않습니다.
+* 단일 함수 앱은 최대 200 개의 인스턴스로 확장할 수 있습니다. 단일 인스턴스는 동시에 둘 이상의 메시지 또는 요청을 처리할 수 있지만 동시 실행 수를 제한하지 않습니다.  필요에 따라 크기를 조정 하 [는 최대](#limit-scale-out) 크기를 지정할 수 있습니다.
 * HTTP 트리거의 경우 새 인스턴스는 초당 한 번만 할당 됩니다.
 * HTTP가 아닌 트리거의 경우 새 인스턴스는 최대 30 초 마다 한 번씩 할당 됩니다. 확장성은 [프리미엄 계획](#premium-plan)에서 실행 하는 경우 더 빠릅니다.
 * Service Bus 트리거의 경우 가장 효율적인 크기 조정을 위해 리소스에 대 한 _관리_ 권한을 사용 합니다. _수신_ 권한을 사용 하면 크기 조정 결정을 알리는 데 큐 길이를 사용할 수 없으므로 크기 조정이 정확 하지 않습니다. Service Bus 액세스 정책에서 권한을 설정 하는 방법에 대 한 자세한 내용은 [공유 액세스 권한 부여 정책](../service-bus-messaging/service-bus-sas.md#shared-access-authorization-policies)을 참조 하세요.
 * 이벤트 허브 트리거의 경우 참조 문서에서 [크기 조정 지침](functions-bindings-event-hubs-trigger.md#scaling) 을 참조 하세요. 
+
+### <a name="limit-scale-out"></a>규모 확장 제한
+
+앱이 확장 되는 인스턴스 수를 제한할 수 있습니다.  이는 데이터베이스와 같은 다운스트림 구성 요소의 처리량이 제한 되는 경우에 가장 일반적입니다.  기본적으로 소비 계획 함수는 최대 200 개의 인스턴스로 확장 되 고 프리미엄 계획 함수는 최대 100 인스턴스로 확장 됩니다.  값을 수정 하 여 특정 앱에 대해 더 낮은 최대값을 지정할 수 있습니다 `functionAppScaleLimit` .  는 `functionAppScaleLimit` 제한에 대해 0 또는 null로 설정 하거나, 1과 앱의 최대 값으로 사용할 수 있습니다.
+
+```azurecli
+az resource update --resource-type Microsoft.Web/sites -g <resource_group> -n <function_app_name>/config/web --set properties.functionAppScaleLimit=<scale_limit>
+```
 
 ### <a name="best-practices-and-patterns-for-scalable-apps"></a>확장성 있는 앱의 모범 사례 및 패턴
 
@@ -174,7 +182,7 @@ Python 및 Node.js의 크기 조정에 대 한 자세한 내용은 [Azure Functi
 ### <a name="plan-summary"></a>플랜 요약
 | | |
 | --- | --- |  
-|**[사용 플랜](#consumption-plan)**| 자동으로 크기를 조정 하 고 함수를 실행 하는 경우 계산 리소스에 대해서만 비용을 지불 합니다. 소비 계획에서 함수 호스트의 인스턴스는 들어오는 이벤트의 수에 따라 동적으로 추가 및 제거 됩니다.<br/> 기본 호스팅 계획을 ✔ 합니다.<br/>함수를 실행 하는 경우에만 ✔ 요금을 지불 합니다.<br/>부하가 높은 기간 동안에도 자동으로 확장 ✔ 합니다.|  
+|**[소비 계획](#consumption-plan)**| 자동으로 크기를 조정 하 고 함수를 실행 하는 경우 계산 리소스에 대해서만 비용을 지불 합니다. 소비 계획에서 함수 호스트의 인스턴스는 들어오는 이벤트의 수에 따라 동적으로 추가 및 제거 됩니다.<br/> 기본 호스팅 계획을 ✔ 합니다.<br/>함수를 실행 하는 경우에만 ✔ 요금을 지불 합니다.<br/>부하가 높은 기간 동안에도 자동으로 확장 ✔ 합니다.|  
 |**[프리미엄 플랜](#premium-plan)**|수요에 따라 자동으로 크기를 조정 하는 동안에는 사전 준비 작업자를 사용 하 여 유휴 상태에서 지연 없이 응용 프로그램을 실행 하 고, 더 강력한 인스턴스를 실행 하 고, Vnet에 연결 합니다. App Service 계획의 모든 기능 외에도 다음과 같은 경우에 Azure Functions 프리미엄 계획을 고려해 야 합니다. <br/>함수 앱이 계속 해 서 또는 거의 계속 실행 ✔.<br/>적은 수의 작은 실행을 사용 하 고 실행 청구서가 많고 소비 계획에 낮은 GB의 두 번째 청구서가 있는 ✔.<br/>✔ 소비 계획에서 제공 하는 것 보다 더 많은 CPU 또는 메모리 옵션이 필요 합니다.<br/>소비 계획에서 허용 되는 최대 실행 시간 보다 오래 실행 되어야 하는 코드를 ✔ 합니다.<br/>✔ 가상 네트워크 연결과 같이 프리미엄 요금제 에서만 사용할 수 있는 기능이 필요 합니다.|  
 |**[전용 요금제](#app-service-plan)**<sup>1</sup>|정기적 App Service 요금제 속도로 App Service 계획 내에서 함수를 실행 합니다. 장기 실행 작업 뿐만 아니라 더 많은 예측 크기 조정 및 비용이 필요한 경우에 적합 합니다. 다음과 같은 경우 App Service 계획을 고려해 야 합니다.<br/>다른 App Service 인스턴스를 이미 실행 중인 기존의 미달 사용 Vm이 있는 ✔ 합니다.<br/>함수를 실행 하는 데 사용할 사용자 지정 이미지를 제공할 ✔ 합니다.|  
 |**[ASE](#app-service-plan)**<sup>1</sup>|ASE (App Service Environment)는 App Service 앱을 매우 대규모로 안전 하 게 실행 하기 위해 완전히 격리 된 전용 환경을 제공 하는 App Service 기능입니다. Ase는 다음이 필요한 응용 프로그램 작업에 적합 합니다. <br/>✔ 매우 높습니다.<br/>격리 및 보안 네트워크 액세스를 ✔ 합니다.<br/>높은 메모리 사용률을 ✔ 합니다.|  
@@ -186,7 +194,7 @@ Python 및 Node.js의 크기 조정에 대 한 자세한 내용은 [Azure Functi
 
 | | Linux<sup>1</sup><br/>코드 전용 | Windows<sup>2</sup><br/>코드 전용 | Linux<sup>1, 3</sup><br/>Docker 컨테이너 |
 | --- | --- | --- | --- |
-| **[사용 플랜](#consumption-plan)** | .NET Core<br/>Node.js<br/>Java<br/>Python | .NET Core<br/>Node.js<br/>Java<br/>PowerShell Core | 지원되지 않음  |
+| **[소비 계획](#consumption-plan)** | .NET Core<br/>Node.js<br/>Java<br/>Python | .NET Core<br/>Node.js<br/>Java<br/>PowerShell Core | 지원되지 않음  |
 | **[프리미엄 플랜](#premium-plan)** | .NET Core<br/>Node.js<br/>Java<br/>Python|.NET Core<br/>Node.js<br/>Java<br/>PowerShell Core |.NET Core<br/>Node.js<br/>Java<br/>PowerShell Core<br/>Python  | 
 | **[전용 요금제](#app-service-plan)**<sup>4</sup> | .NET Core<br/>Node.js<br/>Java<br/>Python|.NET Core<br/>Node.js<br/>Java<br/>PowerShell Core |.NET Core<br/>Node.js<br/>Java<br/>PowerShell Core<br/>Python |
 | **[ASE](#app-service-plan)**<sup>4</sup> | .NET Core<br/>Node.js<br/>Java<br/>Python |.NET Core<br/>Node.js<br/>Java<br/>PowerShell Core  |.NET Core<br/>Node.js<br/>Java<br/>PowerShell Core<br/>Python | 
@@ -201,7 +209,7 @@ Python 및 Node.js의 크기 조정에 대 한 자세한 내용은 [Azure Functi
 
 | | 확장 | 최대 인스턴스 개수 |
 | --- | --- | --- |
-| **[사용 플랜](#consumption-plan)** | 이벤트 기반. 높은 부하 기간 동안에도 자동으로 규모 확장 Azure Functions 인프라는 해당 함수가 트리거되는 이벤트의 수에 따라 함수 호스트의 추가 인스턴스를 추가 하 여 CPU 및 메모리 리소스를 확장 합니다. | 200 |
+| **[소비 계획](#consumption-plan)** | 이벤트 기반. 높은 부하 기간 동안에도 자동으로 규모 확장 Azure Functions 인프라는 해당 함수가 트리거되는 이벤트의 수에 따라 함수 호스트의 추가 인스턴스를 추가 하 여 CPU 및 메모리 리소스를 확장 합니다. | 200 |
 | **[프리미엄 플랜](#premium-plan)** | 이벤트 기반. 높은 부하 기간 동안에도 자동으로 규모 확장 Azure Functions 인프라는 해당 함수가 트리거되는 이벤트의 수에 따라 함수 호스트의 추가 인스턴스를 추가 하 여 CPU 및 메모리 리소스를 확장 합니다. |100|
 | **[전용 요금제](#app-service-plan)**<sup>1</sup> | 수동/자동 크기 조정 |10-20|
 | **[ASE](#app-service-plan)**<sup>1</sup> | 수동/자동 크기 조정 |100 |
@@ -233,7 +241,7 @@ Python 및 Node.js의 크기 조정에 대 한 자세한 내용은 [Azure Functi
 
 | | | 
 | --- | --- |
-| **[사용 플랜](#consumption-plan)** | 함수가 실행 되는 시간에 대해서만 요금을 지불 합니다. 청구는 실행 횟수, 실행 시간 및 사용된 메모리를 기반으로 하며, |
+| **[소비 계획](#consumption-plan)** | 함수가 실행 되는 시간에 대해서만 요금을 지불 합니다. 청구는 실행 횟수, 실행 시간 및 사용된 메모리를 기반으로 하며, |
 | **[프리미엄 플랜](#premium-plan)** | 프리미엄 요금제는 필요한 코어 초와 준비 인스턴스 간에 사용 되는 메모리의 수를 기반으로 합니다. 계획 당 하나 이상의 인스턴스를 항상 웜으로 유지 해야 합니다. 이 계획은 보다 예측 가능한 가격 책정을 제공 합니다. |
 | **[전용 요금제](#app-service-plan)**<sup>1</sup> | 웹 앱과 같은 다른 App Service 리소스의 경우와 마찬가지로 App Service 계획에서 함수 앱에 대해 동일한 비용을 지불 합니다.|
 | **[ASE](#app-service-plan)**<sup>1</sup> | 인프라에 대해 요금을 지불 하 고 ASE 크기를 변경 하지 않는 ASE에 대 한 고정 월별 요금이 있습니다. 또한 App Service 계획 vCPU 당 비용이 있습니다. ASE에 호스트되는 모든 앱은 격리 가격 책정 SKU에 해당합니다. |

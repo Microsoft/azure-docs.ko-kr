@@ -3,13 +3,13 @@ title: 가상 머신 컴퓨팅 노드에서 Linux 실행
 description: Azure Batch의 Linux 가상 머신 풀에서 병렬 컴퓨팅 워크로드를 처리하는 방법에 대해 알아봅니다.
 ms.topic: how-to
 ms.date: 06/01/2018
-ms.custom: H1Hack27Feb2017, devx-track-python
-ms.openlocfilehash: bc4c98472609ef906d59159fb31d396071bf6a8d
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.custom: H1Hack27Feb2017, devx-track-python, devx-track-csharp
+ms.openlocfilehash: 6cd8a13d67c1ce169e6c9300f7ee017fd3a59d96
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87853011"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89146337"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Batch 풀에서 Linux 컴퓨팅 노드 프로비전
 
@@ -294,11 +294,11 @@ GitHub의 [azure-batch-samples][github_samples] 리포지토리에 있는 [Pytho
 [github_samples_pyclient]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/article_samples/python_tutorial_client.py
 [portal]: https://portal.azure.com
 [net_cloudpool]: /dotnet/api/microsoft.azure.batch.cloudpool
-[net_computenodeuser]: /dotnet/api/microsoft.azure.batch.computenodeuser?view=azure-dotnet
+[net_computenodeuser]: /dotnet/api/microsoft.azure.batch.computenodeuser
 [net_imagereference]: /dotnet/api/microsoft.azure.batch.imagereference
 [net_list_supported_images]: /dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages
 [net_pool_ops]: /dotnet/api/microsoft.azure.batch.pooloperations
-[net_ssh_key]: /dotnet/api/microsoft.azure.batch.computenodeuser.sshpublickey?view=azure-dotnet#Microsoft_Azure_Batch_ComputeNodeUser_SshPublicKey
+[net_ssh_key]: /dotnet/api/microsoft.azure.batch.computenodeuser.sshpublickey#Microsoft_Azure_Batch_ComputeNodeUser_SshPublicKey
 [nuget_batch_net]: https://www.nuget.org/packages/Microsoft.Azure.Batch/
 [rest_add_pool]: /rest/api/batchservice/pool/add
 [py_account_ops]: http://azure-sdk-for-python.readthedocs.org/en/dev/ref/azure.batch.operations.html#azure.batch.operations.AccountOperations
@@ -307,6 +307,6 @@ GitHub의 [azure-batch-samples][github_samples] 리포지토리에 있는 [Pytho
 [py_batch_package]: https://pypi.python.org/pypi/azure-batch
 [py_computenodeuser]: /python/api/azure-batch/azure.batch.models.computenodeuser
 [py_imagereference]: /python/api/azure-mgmt-batch/azure.mgmt.batch.models.imagereference
-[py_list_supported_images]: /python/api/azure-batch/azure.batch.operations.AccountOperations?view=azure-python
+[py_list_supported_images]: /python/api/azure-batch/azure.batch.operations.AccountOperations
 [vm_marketplace]: https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1
 [vm_pricing]: https://azure.microsoft.com/pricing/details/virtual-machines/

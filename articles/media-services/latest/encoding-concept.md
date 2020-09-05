@@ -4,23 +4,25 @@ titleSuffix: Azure Media Services
 description: 이 문서에서는 Azure Media Services를 사용 하 여 비디오 및 오디오 인코딩에 대해 설명 합니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/29/2020
-ms.author: juliako
+ms.date: 08/31/2020
+ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: a54f86081774ffb9ac2fe23a72c8ba83e3d6845c
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 2e4db27f268d0d49696fd2a7dacc200942fa4477
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87053331"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89258982"
 ---
 # <a name="encoding-video-and-audio-with-media-services"></a>Media Services를 사용 하 여 비디오 및 오디오 인코딩
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Media Services은 디지털 비디오 및/또는 오디오를 포함 하는 파일을 한 표준 형식에서 다른 표준 형식으로 변환 하는 프로세스에 적용 되며, (a) 파일 크기를 줄이고,/또는 (b) 광범위 한 장치 및 앱과 호환 되는 형식을 생성 합니다. 이 프로세스를 비디오 압축 또는 트랜스 코딩이 라고도 합니다. 개념에 대 한 자세한 내용은 [데이터 압축](https://en.wikipedia.org/wiki/Data_compression) 및 [인코딩 및 트랜스 코딩](https://www.streamingmedia.com/Articles/Editorial/What-Is-/What-Is-Encoding-and-Transcoding-75025.aspx) (영문)을 참조 하세요.
 
@@ -60,7 +62,7 @@ Media Services를 사용하여 인코딩하는 경우 미리 설정을 사용하
 * [.NET을 사용 하 여 HTTPS URL에서 인코딩](stream-files-dotnet-quickstart.md)
 * [REST를 사용 하 여 HTTPS URL에서 인코딩](stream-files-tutorial-with-rest.md)
 * [CLI를 사용 하 여 HTTPS URL에서 인코딩](stream-files-cli-quickstart.md)
-* [Node.js를 사용 하 여 HTTPS URL에서 인코딩](stream-files-nodejs-quickstart.md)
+* [Node.js를 사용 하 여 HTTPS URL에서 인코딩 ](stream-files-nodejs-quickstart.md)
 
 ### <a name="creating-job-input-from-a-local-file"></a>로컬 파일에서 작업 입력 만들기
 

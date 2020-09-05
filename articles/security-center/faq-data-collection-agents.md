@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/25/2020
 ms.author: memildin
-ms.openlocfilehash: a143752a5a6cbd32bf18fc5544831bb860097d3a
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 0bcf81e0c762dd2a8e63ae242fec77d30f5b2c3d
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87089858"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89011857"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>FAQ - 데이터 수집, 에이전트 및 작업 영역에 대한 질문
 
@@ -51,9 +51,9 @@ Security Center는 Azure VM(Virtual Machines) 및 가상 머신 확장 집합, I
 
 다음 페이지에 설명 된 대로 컴퓨터에서 에이전트에 대해 지원 되는 운영 체제 중 하나를 실행 하 고 있는지 확인 합니다.
 
-* [Windows에서 지원 되는 운영 체제에 대 한 Log Analytics 에이전트](../azure-monitor/platform/log-analytics-agent.md#supported-windows-operating-systems)
+* [Windows에서 지원 되는 운영 체제에 대 한 Log Analytics 에이전트](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
 
-* [Linux 지원 운영 체제에 대 한 Log Analytics 에이전트](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems)
+* [Linux 지원 운영 체제에 대 한 Log Analytics 에이전트](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
 
 [Log Analytics 에이전트가 수집 하는 데이터](security-center-enable-data-collection.md)에 대해 자세히 알아보세요.
 

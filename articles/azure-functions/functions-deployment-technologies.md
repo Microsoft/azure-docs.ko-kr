@@ -4,20 +4,20 @@ description: Azure Functions 코드를 배포할 수 있는 다양 한 방법을
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: bf8944952abf83837d05019bd783bec2fd43cefe
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 3865e6906b39633e14c86619770188f1c73fed8e
+ms.sourcegitcommit: 628be49d29421a638c8a479452d78ba1c9f7c8e4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905128"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88641962"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Azure Functions의 배포 기술
 
-몇 가지 다른 기술을 사용 하 여 Azure Functions 프로젝트 코드를 Azure에 배포할 수 있습니다. 이 문서에서는 사용자에 게 제공 되는 배포 방법에 대해 간략하게 설명 하 고 다양 한 시나리오에서 사용 하기에 가장 좋은 방법에 대 한 권장 사항을 제공 합니다. 또한 여기에는 포괄 l기능 g 배포 기술에 대 한 자세한 목록과 주요 세부 정보가 제공 됩니다. 
+몇 가지 다른 기술을 사용 하 여 Azure Functions 프로젝트 코드를 Azure에 배포할 수 있습니다. 이 문서에서는 사용자에 게 제공 되는 배포 방법에 대해 간략하게 설명 하 고 다양 한 시나리오에서 사용 하기에 가장 좋은 방법에 대 한 권장 사항을 제공 합니다. 또한 기본 배포 기술에 대 한 주요 세부 정보 목록과 주요 정보를 제공 합니다. 
 
 ## <a name="deployment-methods"></a>배포 방법
 
-Azure에 코드를 게시 하는 데 사용 하는 배포 기술은 일반적으로 앱을 게시 하는 방법에 따라 결정 됩니다. 적절 한 배포 방법은 특정 요구 사항 및 개발 주기의 시점에 따라 결정 됩니다. 예를 들어 개발 및 테스트 중에 Visual Studio Code와 같은 개발 도구에서 직접 배포할 수 있습니다. 앱이 프로덕션 환경에 있는 경우 추가 유효성 검사 및 테스트를 포함 하는 자동화 된 게시 파이프라인을 사용 하거나 소스 제어에서 지속적으로를 게시할 가능성이 높습니다.  
+Azure에 코드를 게시 하는 데 사용 하는 배포 기술은 일반적으로 앱을 게시 하는 방법에 따라 결정 됩니다. 적절 한 배포 방법은 특정 요구 사항 및 개발 주기의 시점에 따라 결정 됩니다. 예를 들어 개발 및 테스트 중에 Visual Studio Code와 같은 개발 도구에서 직접 배포할 수 있습니다. 앱이 프로덕션 환경에 있는 경우 추가 유효성 검사 및 테스트를 포함 하는 자동화 된 게시 파이프라인을 사용 하거나 소스 제어에서 지속적으로 게시할 가능성이 높습니다.  
 
 다음 표에서는 함수 프로젝트에 사용할 수 있는 배포 방법에 대해 설명 합니다.
 
@@ -33,7 +33,7 @@ Azure에 코드를 게시 하는 데 사용 하는 배포 기술은 일반적으
 
 Azure Functions는 Windows 및 Linux에서 플랫폼 간 로컬 개발 및 호스팅을 지원 합니다. 현재 세 가지 호스팅 요금제를 사용할 수 있습니다.
 
-+ [소비](functions-scale.md#consumption-plan)
++ [Consumption](functions-scale.md#consumption-plan)
 + [Premium](functions-scale.md#premium-plan)
 + [전용 (App Service)](functions-scale.md#app-service-plan)
 
@@ -106,7 +106,7 @@ Azure Functions에서 사용할 수 있는 배포 방법은 다음과 같습니�
 
 외부 패키지 URL을 사용 하 여 함수 앱이 포함 된 원격 패키지 (.zip) 파일을 참조할 수 있습니다. 파일이 제공 된 URL에서 다운로드 되 고 앱이 [패키지 모드에서 실행](run-functions-from-deployment-package.md) 될 때 실행 됩니다.
 
->__사용 방법:__ `WEBSITE_RUN_FROM_PACKAGE`응용 프로그램 설정에를 추가 합니다. 이 설정의 값은 URL (실행 하려는 특정 패키지 파일의 위치) 이어야 합니다. [포털에서](functions-how-to-use-azure-function-app-settings.md#settings) 또는 [Azure CLI를 사용 하](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set)여 설정을 추가할 수 있습니다.
+>__사용 방법:__ `WEBSITE_RUN_FROM_PACKAGE` 응용 프로그램 설정에를 추가 합니다. 이 설정의 값은 URL (실행 하려는 특정 패키지 파일의 위치) 이어야 합니다. [포털에서](functions-how-to-use-azure-function-app-settings.md#settings) 또는 [Azure CLI를 사용 하](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set)여 설정을 추가할 수 있습니다.
 >
 >Azure Blob storage를 사용 하는 경우 [공유 액세스 서명 (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) 이 포함 된 개인 컨테이너를 사용 하 여 패키지에 대 한 액세스 기능을 제공 합니다. 응용 프로그램이 다시 시작 될 때마다 콘텐츠의 복사본을 페치합니다. 참조는 응용 프로그램의 수명 동안 유효 해야 합니다.
 
@@ -191,7 +191,7 @@ FTP를 사용 하 여 파일을 Azure Functions로 직접 전송할 수 있습�
 
 다음 표에서는 포털 편집을 지 원하는 운영 체제 및 언어를 보여 줍니다.
 
-| Language | Windows 사용량 | Windows Premium | Windows 전용 | Linux 소비 | Linux 프리미엄 | Linux 전용 |
+| 언어 | Windows 사용량 | Windows Premium | Windows 전용 | Linux 소비 | Linux 프리미엄 | Linux 전용 |
 |-|:-----------------: |:----------------:|:-----------------:|:-----------------:|:-------------:|:---------------:|
 | C# | | | | | |
 | C# 스크립트 |✔|✔|✔| |✔<sup>\*</sup> |✔<sup>\*</sup>|
@@ -202,7 +202,13 @@ FTP를 사용 하 여 파일을 Azure Functions로 직접 전송할 수 있습�
 | PowerShell(미리 보기) |✔|✔|✔| | | |
 | TypeScript (Node.js) | | | | | | |
 
-<sup>*</sup>포털 편집은 프리미엄 및 전용 요금제를 사용 하는 Linux의 함수에 대 한 HTTP 및 타이머 트리거에 대해서만 사용할 수 있습니다.
+<sup>*</sup> 포털 편집은 프리미엄 및 전용 요금제를 사용 하는 Linux의 함수에 대 한 HTTP 및 타이머 트리거에 대해서만 사용할 수 있습니다.
+
+## <a name="deployment-behaviors"></a>배포 동작
+
+배포를 수행 하는 경우 모든 기존 실행이 완료 되거나 제한 시간이 초과 될 수 있으며, 그 후에는 새 코드가 로드 되어 요청 처리를 시작 합니다.
+
+이 전환에 대해 더 많은 제어가 필요한 경우 배포 슬롯을 사용 해야 합니다.
 
 ## <a name="deployment-slots"></a>배포 슬롯
 

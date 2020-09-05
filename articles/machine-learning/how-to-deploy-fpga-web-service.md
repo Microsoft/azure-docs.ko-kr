@@ -11,12 +11,12 @@ author: jpe316
 ms.date: 06/03/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq4, devx-track-python
-ms.openlocfilehash: 0c78245a64fa9bcb7faef2c07973d1d7b5080e76
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 263038ee1be8b31d493282cd920f386132420156
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87843099"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648788"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>FPGA (필드 프로그래밍 가능 게이트 배열) 및 배포 방법
 
@@ -67,7 +67,7 @@ Azure의 FPGAs는 다음을 지원 합니다.
   
 FPGAs는 다음 Azure 지역에서 사용할 수 있습니다.
   - 미국 동부
-  - 동남 아시아
+  - 동남아시아
   - 서유럽
   - 미국 서부 2
 
@@ -163,7 +163,7 @@ FPGA에 모델을 배포 하려면 다음 단계를 수행 해야 합니다.
    print(feature_tensor.shape)
    ```
 
-1. 분류자를 추가 합니다. 이 분류자는 ImageNet 데이터 집합을 기반으로 학습되었습니다.  사용자 지정 가중치에 대 한 전송 학습 및 학습 예제는 [샘플 노트북](https://aka.ms/aml-notebooks)집합에서 사용할 수 있습니다.
+1. 분류자를 추가 합니다. 이 분류자는 ImageNet 데이터 집합을 기반으로 학습되었습니다.  사용자 지정 가중치에 대 한 전송 학습 및 학습 예제는 [샘플 노트북](https://github.com/Azure/MachineLearningNotebooks)집합에서 사용할 수 있습니다.
 
    ```python
    classifier_output = model_graph.get_default_classifier(feature_tensor)
@@ -405,7 +405,7 @@ converted_model.delete()
 
 이러한 노트북, 비디오 및 블로그를 확인 하세요.
 
-+ 여러 [샘플 노트북](https://aka.ms/aml-accel-models-notebooks)
++ 여러 [샘플 노트북](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/accelerated-models)
 + FPGA 웹 서비스를 보호 하려면 [보안 웹 서비스](how-to-secure-web-service.md) 문서를 참조 하세요.
 + [하이퍼 크기 조정 하드웨어: Azure + FPGA의 맨 위에 있는 ML: 빌드 2018 (비디오)](https://channel9.msdn.com/events/Build/2018/BRK3202)
 + [Microsoft FPGA 기반 구성 가능 클라우드 살펴보기(비디오)](https://channel9.msdn.com/Events/Build/2017/B8063)

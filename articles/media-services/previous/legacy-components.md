@@ -13,14 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/27/2020
 ms.author: juliako
-ms.openlocfilehash: d8d961ab58e900a6d619ec64297c783abdb7b6ce
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 1c3e50fd64c113aafd2d70cc76c7f789e080ad23
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87091694"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269525"
 ---
 # <a name="azure-media-services-legacy-components"></a>Azure Media Services 레거시 구성 요소
+
+[!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 시간이 지남에 따라 Media Service 구성 요소에 대 한 향상 된 기능과 향상 된 기능이 있습니다. 따라서 일부 레거시 구성 요소는 사용이 중지 되었습니다. 다음 문서에서는 레거시 구성 요소에서 현재 구성 요소로 응용 프로그램을 마이그레이션하는 방법에 대 한 지침을 찾을 수 있습니다.
  
@@ -33,7 +35,7 @@ WAME(*Windows Azure Media Encoder*) 및 AME(*Azure Media Encoder*) 미디어 프
 
 또한 다음 미디어 분석 미디어 프로세서를 사용 중지 하는 것을 발표 하 고 있습니다. 
  
-|미디어 프로세서 이름|사용 중지 날짜|추가적인 참고 사항|
+|미디어 프로세서 이름|사용 중지 날짜|추가 참고 사항|
 |---|---|
 |[Azure Media Indexer 2](media-services-process-content-with-indexer2.md)|2020 년 1 월 1 일|이 미디어 프로세서는 [Azure Media Services Video Indexer](../video-indexer/index.yml)으로 대체 되 고 있습니다. 자세한 내용은 [Azure Media Indexer 2에서 Azure Media Services Video Indexer로 마이그레이션](migrate-indexer-v1-v2.md)을 참조 하세요.|
 |[Azure Media Indexer](media-services-index-content.md)|2023 년 3 월 1 일|이 미디어 프로세서는 [Azure Media Services Video Indexer](../video-indexer/index.yml)으로 대체 되 고 있습니다. 자세한 내용은 [Azure Media Indexer에서 Azure Media Services로 마이그레이션](migrate-indexer-v1-v2.md) 을 참조 하세요 Video Indexer|

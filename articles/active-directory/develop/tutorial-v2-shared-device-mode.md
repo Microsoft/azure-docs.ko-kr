@@ -12,12 +12,12 @@ ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b2f74d2d441007f195abd38ca26ca7fa73605318
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: f49a5703b19a76095c8eafe358742b442725d3d0
+ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80886435"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88118249"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>자습서: Android 애플리케이션에서 공유 디바이스 모드 사용
 
@@ -28,11 +28,11 @@ ms.locfileid: "80886435"
 
 ## <a name="developer-guide"></a>개발자 가이드
 
-이 가이드에서는 MSAL(Microsoft 인증 라이브러리)을 사용하여 Android 애플리케이션에서 공유 디바이스 모드를 구현하는 방법에 대한 개발자 지침을 제공합니다. [MSAL Android 자습서](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android)를 참조하여 MSAL을 Android 앱과 통합하고, 사용자를 로그인하고, Microsoft Graph를 호출하고, 사용자를 로그아웃하는 방법을 확인합니다.
+이 가이드에서는 MSAL(Microsoft 인증 라이브러리)을 사용하여 Android 애플리케이션에서 공유 디바이스 모드를 구현하는 방법에 대한 개발자 지침을 제공합니다. [MSAL Android 자습서](./tutorial-v2-android.md)를 참조하여 MSAL을 Android 앱과 통합하고, 사용자를 로그인하고, Microsoft Graph를 호출하고, 사용자를 로그아웃하는 방법을 확인합니다.
 
 ### <a name="download-the-sample"></a>샘플 다운로드
 
-GitHub에서 [샘플 애플리케이션](https://github.com/Azure-Samples/ms-identity-android-java/)을 복제합니다. 샘플에는 [단일 또는 다중 계정 모드](https://docs.microsoft.com/azure/active-directory/develop/single-multi-account)에서 작동하는 기능이 있습니다.
+GitHub에서 [샘플 애플리케이션](https://github.com/Azure-Samples/ms-identity-android-java/)을 복제합니다. 샘플에는 [단일 또는 다중 계정 모드](./single-multi-account.md)에서 작동하는 기능이 있습니다.
 
 ### <a name="add-the-msal-sdk-to-your-local-maven-repository"></a>로컬 Maven 리포지토리에 MSAL SDK 추가
 
@@ -46,7 +46,7 @@ dependencies{
 
 ### <a name="configure-your-app-to-use-shared-device-mode"></a>공유 디바이스 모드를 사용하도록 앱 구성
 
-구성 파일을 설정하는 방법에 대한 자세한 내용은 [구성 설명서](https://docs.microsoft.com/azure/active-directory/develop/msal-configuration)를 참조하세요.
+구성 파일을 설정하는 방법에 대한 자세한 내용은 [구성 설명서](./msal-configuration.md)를 참조하세요.
 
 MSAL 구성 파일에서 `"shared_device_mode_supported"`를 `true`로 설정합니다.
 
@@ -204,7 +204,7 @@ private void onSignOutClicked()
 
 먼저, 애플리케이션을 조직 테넌트 내에 등록합니다. 그런 다음, 애플리케이션이 올바르게 실행되도록 다음 값을 auth_config.json에 입력합니다.
 
-이 작업을 수행하는 방법에 대한 자세한 내용은 [애플리케이션 등록](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android#register-your-application)을 참조하세요.
+이 작업을 수행하는 방법에 대한 자세한 내용은 [애플리케이션 등록](./tutorial-v2-android.md#register-your-application)을 참조하세요.
 
 > [!NOTE]
 > 앱을 등록하는 경우 왼쪽에 있는 빠른 시작 가이드를 사용하고 **Android**를 선택하세요. 그러면 **패키지 이름** 및 **서명 해시**를 앱에 제공하라는 페이지가 표시됩니다. 이러한 항목은 앱 구성이 작동하는지 확인하는 데 매우 중요합니다. 그런 다음, 앱에 사용할 수 있는 구성 개체를 받고 이를 잘라내어 auth_config.json 파일에 붙여넣습니다.

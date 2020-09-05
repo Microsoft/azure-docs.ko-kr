@@ -3,7 +3,7 @@ title: 자습서`:` 관리 ID를 사용하여 Azure Data Lake Store에 액세스
 description: Linux VM 시스템 할당 관리 ID를 사용하여 Azure Data Lake Store에 액세스하는 방법을 보여주는 자습서입니다.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/10/2020
-ms.author: markvi
+ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0fe442741ae0b8fa817c9ea177ff244a413720e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d465419dfe36fd5dd67abdef22a6f54fba69a98e
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75888518"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89267465"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-data-lake-store"></a>자습서: Linux VM 시스템 할당 관리 ID를 사용하여 Azure Data Lake Store에 액세스
 
@@ -40,7 +40,7 @@ ms.locfileid: "75888518"
 
 ## <a name="grant-access"></a>액세스 권한 부여
 
-이 섹션에서는 Azure Data Lake Store에 있는 파일 및 폴더에 VM 액세스 권한을 부여하는 방법을 보여줍니다. 이 단계에서는 기존 Data Lake Store 인스턴스를 사용하거나 새로 만들 수 있습니다. Azure Portal을 사용하여 Data Lake Store 인스턴스를 만들려면 이 [Azure Data Lake Store 빠른 시작](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal)을 참조하세요. [Azure Data Lake Store 설명서](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview)에는 Azure CLI 및 Azure PowerShell을 사용하는 빠른 시작도 있습니다.
+이 섹션에서는 Azure Data Lake Store에 있는 파일 및 폴더에 VM 액세스 권한을 부여하는 방법을 보여줍니다. 이 단계에서는 기존 Data Lake Store 인스턴스를 사용하거나 새로 만들 수 있습니다. Azure Portal을 사용하여 Data Lake Store 인스턴스를 만들려면 이 [Azure Data Lake Store 빠른 시작](../../data-lake-store/data-lake-store-get-started-portal.md)을 참조하세요. [Azure Data Lake Store 설명서](../../data-lake-store/data-lake-store-overview.md)에는 Azure CLI 및 Azure PowerShell을 사용하는 빠른 시작도 있습니다.
 
 Data Lake Store에서 새 폴더를 만들고, 해당 폴더에서 파일을 읽고, 쓰고, 실행할 수 있는 Linux VM 시스템 할당 관리 ID 권한을 부여합니다.
 
@@ -56,18 +56,18 @@ Data Lake Store에서 새 폴더를 만들고, 해당 폴더에서 파일을 읽
 10. 5단계와 마찬가지로 **추가**를 선택합니다. **선택** 상자에 VM의 이름을 입력합니다. 검색 결과에서 VM을 선택한 다음, **선택**을 클릭합니다.
 11. 6단계와 마찬가지로 **권한 선택**을 선택합니다. **읽기**, **쓰기** 및 **실행**을 선택하고, **이 폴더**에 추가하고, **액세스 권한 항목 및 기본 권한 항목**으로 추가합니다. **확인**을 선택합니다.  사용 권한은 성공적으로 추가되어야 합니다.
 
-이제 사용자가 만든 폴더의 파일에 Azure 리소스에 대한 관리 ID가 모든 작업을 수행할 수 있습니다. Data Lake Store에 대한 액세스 권한을 관리하는 방법에 대한 자세한 내용은 [Data Lake Store의 Access Control](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-access-control)을 참조하세요.
+이제 사용자가 만든 폴더의 파일에 Azure 리소스에 대한 관리 ID가 모든 작업을 수행할 수 있습니다. Data Lake Store에 대한 액세스 권한을 관리하는 방법에 대한 자세한 내용은 [Data Lake Store의 Access Control](../../data-lake-store/data-lake-store-access-control.md)을 참조하세요.
 
 ## <a name="get-an-access-token"></a>액세스 토큰 가져오기 
 
-이 섹션에서는 액세스 토큰을 가져오고 Data Lake Store 파일 시스템을 호출하는 방법을 보여줍니다. Azure Data Lake Store는 기본적으로 Azure AD 인증을 지원하므로 Azure 리소스에 대한 관리 ID를 사용하여 획득한 액세스 토큰을 직접 수락할 수 있습니다. Data Lake Store 파일 시스템에 인증하려면 Azure AD에서 발급한 액세스 토큰을 Data Lake Store 파일 시스템 엔드포인트로 보냅니다. 액세스 토큰은 인증 헤더에 "Bearer \<ACCESS_TOKEN_VALUE\>" 형식으로 있습니다.  Azure AD 인증을 위한 Data Lake Store 지원에 대해 자세히 알아보려면 [Azure Active Directory를 사용하여 Data Lake Store 인증](https://docs.microsoft.com/azure/data-lake-store/data-lakes-store-authentication-using-azure-active-directory)을 참조하세요.
+이 섹션에서는 액세스 토큰을 가져오고 Data Lake Store 파일 시스템을 호출하는 방법을 보여줍니다. Azure Data Lake Store는 기본적으로 Azure AD 인증을 지원하므로 Azure 리소스에 대한 관리 ID를 사용하여 획득한 액세스 토큰을 직접 수락할 수 있습니다. Data Lake Store 파일 시스템에 인증하려면 Azure AD에서 발급한 액세스 토큰을 Data Lake Store 파일 시스템 엔드포인트로 보냅니다. 액세스 토큰은 권한 부여 헤더에 "Bearer \<ACCESS_TOKEN_VALUE\>" 형식으로 있습니다.  Azure AD 인증을 위한 Data Lake Store 지원에 대해 자세히 알아보려면 [Azure Active Directory를 사용하여 Data Lake Store 인증](../../data-lake-store/data-lakes-store-authentication-using-azure-active-directory.md)을 참조하세요.
 
 이 자습서에서는 cURL을 사용하여 REST 요청을 생성하여 Data Lake Store 파일 시스템용 REST API를 인증합니다.
 
 > [!NOTE]
 > Data Lake Store 파일 시스템용 클라이언트 SDK는 Azure 리소스에 대한 관리 ID를 아직 지원하지 않습니다.
 
-아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](https://msdn.microsoft.com/commandline/wsl/about)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](../../virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](../../virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
+아래의 단계를 완료하려면 SSH 클라이언트가 필요합니다. Windows를 사용 중인 경우 [Linux용 Windows 하위 시스템](/windows/wsl/about)에서 SSH 클라이언트를 사용할 수 있습니다. SSH 클라이언트의 키 구성에 대한 도움이 필요하면 [Azure에서 Windows를 통해 SSH 키를 사용하는 방법](../../virtual-machines/linux/ssh-from-windows.md) 또는 [Azure에서 Linux VM용 SSH 공개 및 프라이빗 키 쌍을 만들고 사용하는 방법](../../virtual-machines/linux/mac-create-ssh-keys.md)을 참조하세요.
 
 1. 포털에서 Linux VM으로 이동합니다. **개요**에서 **연결**을 선택합니다.  
 2. 원하는 SSH 클라이언트를 사용하여 VM에 연결합니다. 
@@ -155,4 +155,4 @@ Data Lake Store 파일 시스템에 다른 API를 사용하여 파일에 추가,
 이 자습서에서는 Linux VM 시스템 할당 관리 ID를 사용하여 Azure Data Lake Store에 액세스하는 방법을 알아보았습니다. Azure Data Lake Store에 대한 자세한 내용은 다음을 참조하세요.
 
 > [!div class="nextstepaction"]
->[Azure Data Lake Storage](/azure/data-lake-store/data-lake-store-overview)
+>[Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md)

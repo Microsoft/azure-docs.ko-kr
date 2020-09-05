@@ -2,25 +2,21 @@
 title: '자습서: OU Campus와 Azure Active Directory 통합 | Microsoft Docs'
 description: Azure Active Directory와 OU Campus 간에 Single Sign-On을 구성하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 09315212-3731-4ae1-bcc2-b8b5f2ac6087
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 2ef934c691fab5b0b3c2462bca150c3df3f01fd4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ec3609c631ba356a68ac62bb3a3ea672508a5f5d
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160253"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88518500"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ou-campus"></a>자습서: OU Campus와 Azure Active Directory 통합
 

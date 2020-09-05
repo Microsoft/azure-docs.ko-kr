@@ -2,25 +2,21 @@
 title: '자습서: Campus Café와 Azure Active Directory SSO(Single Sign-On) 통합 | Microsoft Docs'
 description: Azure Active Directory와 Campus Café 간에 Single Sign-On을 구성하는 방법을 알아봅니다.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: cfbfc470-de52-44ff-ad89-ebc22ee50d2e
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/19/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c813b1cafbf71297c8ac39bc0847b56e450de0c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 00d241517ee1b163225c108df87270c2eafc1376
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77562676"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88547559"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-campus-caf"></a>자습서: Campus Café와 Azure Active Directory SSO(Single Sign-On) 통합
 

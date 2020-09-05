@@ -1,17 +1,17 @@
 ---
 title: Microsoft Azure StorSimple Data Manager UI
-description: StorSimple Data Manager 서비스 UI를 사용하는 방법 설명
+description: StorSimple Data Manager UI를 사용 하 여 StorSimple 8000 시리즈 장치에 있는 데이터를 변환 하는 방법을 알아봅니다.
 author: alkohli
 ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 00748cfa60882e49336c3a0ac3ecfdec389021ac
-ms.sourcegitcommit: 11e2521679415f05d3d2c4c49858940677c57900
+ms.openlocfilehash: 5d6273cbef1664984d466fb15c7f02ca505b18e2
+ms.sourcegitcommit: faeabfc2fffc33be7de6e1e93271ae214099517f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87496443"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88184542"
 ---
 # <a name="manage-the-storsimple-data-manager-service-in-azure-portal"></a>Azure Portal에서 StorSimple 데이터 관리자 서비스 관리
 

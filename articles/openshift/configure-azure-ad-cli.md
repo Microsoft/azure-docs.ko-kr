@@ -8,16 +8,16 @@ author: sabbour
 ms.author: asabbour
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 45da3034891e5a82fb8423adb6bcd5e867f9d4e2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 393185d2167e18df3f8c1319e7367efbc437de1a
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82205002"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590339"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-cli"></a>Azure Red Hat OpenShift 4 클러스터에 대 한 Azure Active Directory 인증 구성 (CLI)
 
-CLI를 로컬로 설치 하 고 사용 하도록 선택 하는 경우이 문서에서는 Azure CLI 버전 2.0.75 이상을 실행 해야 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 참조하세요.
+CLI를 로컬로 설치 하 고 사용 하도록 선택 하는 경우이 문서에서는 Azure CLI 버전 2.6.0 이상을 실행 해야 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 참조하세요.
 
 Azure Active Directory 응용 프로그램을 구성 하는 데 사용할 클러스터 관련 Url을 검색 합니다.
 
@@ -76,7 +76,7 @@ az account show --query tenantId -o tsv
 
 `email` `upn` `upn` Azure Active Directory에서 반환 하는 ID 토큰의 일부로를 추가 하 여 클레임을 사용 하 고로 대체 하도록 openshift를 구성 합니다.
 
-파일 **에manifest.js** 를 만들어 Azure Active Directory 응용 프로그램을 구성 합니다.
+파일 ** 에manifest.js** 를 만들어 Azure Active Directory 응용 프로그램을 구성 합니다.
 
 ```bash
 cat > manifest.json<< EOF
@@ -160,7 +160,7 @@ OpenShift 암호를 만들어 Azure Active Directory 응용 프로그램 암호�
 oc create secret generic openid-client-secret-azuread \
   --namespace openshift-config \
   --from-literal=clientSecret=<ClientSecret>
-```    
+```
 
 Azure Active Directory에 대해 OpenShift Openid connect 인증을 구성 하는 **oidc** 파일을 만듭니다. **\<AppID>** 및를 **\<TenantId>** 이전에 검색 한 값으로 바꿉니다.
 
@@ -177,20 +177,20 @@ spec:
     type: OpenID
     openID:
       clientID: <AppId>
-      clientSecret: 
+      clientSecret:
         name: openid-client-secret-azuread
-      extraScopes: 
+      extraScopes:
       - email
       - profile
-      extraAuthorizeParameters: 
+      extraAuthorizeParameters:
         include_granted_scopes: "true"
       claims:
-        preferredUsername: 
+        preferredUsername:
         - email
         - upn
-        name: 
+        name:
         - name
-        email: 
+        email:
         - email
       issuer: https://login.microsoftonline.com/<TenantId>
 EOF

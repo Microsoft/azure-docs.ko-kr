@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: end-user-help
 ms.date: 05/28/2020
 ms.author: curtand
-ms.openlocfilehash: fc95e988b3f89402967cdbedd06c4b945a99f99a
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
-ms.translationtype: HT
+ms.openlocfilehash: e5b07f8f7ae766d110c87a495a3e1623b815e526
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84266256"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88795986"
 ---
 # <a name="what-is-the-additional-verification-page"></a>추가 확인 페이지란?
 
@@ -33,7 +33,7 @@ ms.locfileid: "84266256"
 2단계 인증을 사용하면 악의적인 해커가 사용자인 척 가장하지 않도록 방지할 수 있습니다. 해커가 사용자의 암호는 가졌더라도 디바이스까지 가졌을 가능성은 낮습니다.
 
 >[!Important]
->직원 또는 다른 사용자에 대해 2단계 인증을 설정하는 방법에 대한 정보를 찾는 관리자는 [Azure Active Directory Authentication 설명서](https://docs.microsoft.com/azure/active-directory/authentication/)를 참조하세요. 이 문서는 회사 또는 학교 계정(예: alain@contoso.com)에서 2단계 인증을 사용하려는 사용자를 위해 작성되었습니다.
+>직원 또는 다른 사용자에 대해 2단계 인증을 설정하는 방법에 대한 정보를 찾는 관리자는 [Azure Active Directory Authentication 설명서](../authentication/index.yml)를 참조하세요. 이 문서는 회사 또는 학교 계정(예: alain@contoso.com)에서 2단계 인증을 사용하려는 사용자를 위해 작성되었습니다.
 
 ## <a name="who-decides-if-you-use-this-feature"></a>이 기능의 사용 여부는 누가 결정하나요?
 

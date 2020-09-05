@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 06/23/2020
 ms.author: mimart
 ms.reviewer: arvinh
-ms.openlocfilehash: 3c3706cc3a15a8832cec3d799ea551810c849379
-ms.sourcegitcommit: a76ff927bd57d2fcc122fa36f7cb21eb22154cfa
+ms.openlocfilehash: 52819fc37cf0d10cb36009feb82dec234184752c
+ms.sourcegitcommit: 3bf69c5a5be48c2c7a979373895b4fae3f746757
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87313611"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88235539"
 ---
 # <a name="on-demand-provisioning"></a>주문형 프로 비전
 요청 시 프로 비전을 사용 하 여 몇 초 안에 응용 프로그램에 사용자를 프로 비전 합니다. 무엇 보다도이 기능을 사용 하 여 다음을 수행할 수 있습니다.
@@ -47,9 +47,9 @@ ms.locfileid: "87313611"
 
 #### <a name="troubleshooting-tips"></a>문제 해결 팁
 
-* 대상 응용 프로그램에 대해 비밀 토큰 및 테 넌 트 URL과 같은 유효한 자격 증명을 제공 했는지 확인 합니다. 필요한 자격 증명은 응용 프로그램에 따라 달라 집니다. 자세한 구성 자습서는 [자습서 목록](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)을 참조 하십시오. 
+* 대상 응용 프로그램에 대해 비밀 토큰 및 테 넌 트 URL과 같은 유효한 자격 증명을 제공 했는지 확인 합니다. 필요한 자격 증명은 응용 프로그램에 따라 달라 집니다. 자세한 구성 자습서는 [자습서 목록](../saas-apps/tutorial-list.md)을 참조 하십시오. 
 * 대상 응용 프로그램이 **특성 매핑** 창에 정의 된 일치 특성에 대 한 필터링을 지원 하는지 확인 합니다. 지원 되는 필터를 이해 하려면 응용 프로그램 개발자가 제공 하는 API 설명서를 확인 해야 할 수도 있습니다.
-* SCIM (도메인 간 Id 관리) 응용 프로그램에 대 한 시스템의 경우 Postman과 같은 도구를 사용할 수 있습니다. 이러한 도구는 응용 프로그램이 Azure Active Directory (Azure AD) 프로 비전 서비스에서 예상 하는 방식으로 권한 부여 요청에 응답 하는 데 도움이 됩니다. [예제 요청](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#request-3)을 살펴보세요.
+* SCIM (도메인 간 Id 관리) 응용 프로그램에 대 한 시스템의 경우 Postman과 같은 도구를 사용할 수 있습니다. 이러한 도구는 응용 프로그램이 Azure Active Directory (Azure AD) 프로 비전 서비스에서 예상 하는 방식으로 권한 부여 요청에 응답 하는 데 도움이 됩니다. [예제 요청](./use-scim-to-provision-users-and-groups.md#request-3)을 살펴보세요.
 
 ### <a name="step-2-import-user"></a>2 단계: 사용자 가져오기
 
@@ -76,7 +76,7 @@ ms.locfileid: "87313611"
 
 ### <a name="step-3-determine-if-user-is-in-scope"></a>3 단계: 사용자가 범위 내에 있는지 확인
 
-다음으로 프로 비전 서비스는 사용자가 프로 비전 [범위](https://docs.microsoft.com/azure/active-directory/app-provisioning/how-provisioning-works#scoping) 에 있는지 여부를 확인 합니다. 서비스는 다음과 같은 측면을 고려 합니다.
+다음으로 프로 비전 서비스는 사용자가 프로 비전 [범위](./how-provisioning-works.md#scoping) 에 있는지 여부를 확인 합니다. 서비스는 다음과 같은 측면을 고려 합니다.
 
 * 사용자가 응용 프로그램에 할당 되었는지 여부입니다.
 * 범위가 **동기화 할당** 됨 또는 **모두 동기화**로 설정 되었는지 여부입니다.
@@ -94,8 +94,8 @@ ms.locfileid: "87313611"
 
 #### <a name="troubleshooting-tips"></a>문제 해결 팁
 
-* 올바른 범위 지정 역할을 정의 했는지 확인 합니다. 예를 들어 [Greater_Than 연산자](https://docs.microsoft.com/azure/active-directory/app-provisioning/define-conditional-rules-for-provisioning-user-accounts#create-a-scoping-filter) 를 정수가 아닌 값과 함께 사용 하지 마십시오.
-* 사용자에 게 필요한 역할이 없으면 [기본 액세스 역할에 할당 된 사용자를 프로 비전 하기 위한 팁](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem-no-users-provisioned#provisioning-users-assigned-to-the-default-access-role)을 검토 합니다.
+* 올바른 범위 지정 역할을 정의 했는지 확인 합니다. 예를 들어 [Greater_Than 연산자](./define-conditional-rules-for-provisioning-user-accounts.md#create-a-scoping-filter) 를 정수가 아닌 값과 함께 사용 하지 마십시오.
+* 사용자에 게 필요한 역할이 없으면 [기본 액세스 역할에 할당 된 사용자를 프로 비전 하기 위한 팁](./application-provisioning-config-problem-no-users-provisioned.md#provisioning-users-assigned-to-the-default-access-role)을 검토 합니다.
 
 ### <a name="step-4-match-user-between-source-and-target"></a>4 단계: 원본 및 대상 간에 사용자 일치
 
@@ -129,7 +129,7 @@ ms.locfileid: "87313611"
 
 #### <a name="troubleshooting-tips"></a>문제 해결 팁
 
-* 변경 내용 내보내기에 대 한 오류는 크게 다를 수 있습니다. 일반적인 오류에 대 한 [프로 비전 로그를 보려면 설명서](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs#error-codes) 를 참조 하십시오.
+* 변경 내용 내보내기에 대 한 오류는 크게 다를 수 있습니다. 일반적인 오류에 대 한 [프로 비전 로그를 보려면 설명서](../reports-monitoring/concept-provisioning-logs.md#error-codes) 를 참조 하십시오.
 
 ## <a name="frequently-asked-questions"></a>질문과 대답
 
@@ -150,4 +150,4 @@ ms.locfileid: "87313611"
 
 ## <a name="next-steps"></a>다음 단계
 
-* [프로 비전 문제 해결](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem)
+* [프로 비전 문제 해결](./application-provisioning-config-problem.md)

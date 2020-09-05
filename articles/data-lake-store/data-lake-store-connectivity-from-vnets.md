@@ -1,6 +1,6 @@
 ---
 title: VNET에서 Azure Data Lake Storage Gen1에 연결 | Microsoft Docs
-description: Azure VNET에서 Azure Data Lake Storage Gen1에 연결
+description: 리소스에 대해 제한 된 액세스 권한이 있는 Azure virtual machines에서 Azure Data Lake Storage Gen1에 대 한 액세스를 사용 하도록 설정 하는 방법을 알아봅니다.
 services: data-lake-store,data-catalog
 documentationcenter: ''
 author: esung22
@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 01/31/2018
 ms.author: elsung
-ms.openlocfilehash: 5793e1659f18818b85748dc0f2979895318ea913
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 0fa836ea31793d9177ad6e838ddea1516bf51733
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985410"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88191397"
 ---
 # <a name="access-azure-data-lake-storage-gen1-from-vms-within-an-azure-vnet"></a>Azure VNET 내 VM에서 Azure Data Lake Storage Gen1 액세스
 Azure Data Lake Storage Gen1은 공용 인터넷 IP 주소에서 실행되는 PaaS 서비스입니다. 공용 인터넷에 연결할 수 있는 서버는 일반적으로 Azure Data Lake Storage Gen1 엔드포인트에도 연결할 수 있습니다. 기본적으로 Azure VNET에 있는 모든 VM은 인터넷에 액세스할 수 있으므로 Azure Data Lake Storage Gen1에 액세스할 수 있습니다. 그러나 VNET에서 VM을 인터넷에 액세스하지 못하도록 구성할 수 있습니다. 이러한 VM의 경우 Azure Data Lake Storage Gen1에 대한 액세스도 제한됩니다. Azure VNET의 VM에 대한 공용 인터넷 액세스를 차단하려면 다음 방법 중 하나를 사용하여 수행할 수 있습니다.

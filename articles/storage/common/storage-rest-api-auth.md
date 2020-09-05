@@ -10,12 +10,13 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: ozge
 ms.subservice: common
-ms.openlocfilehash: d43df68f48273b03fa9bde9633b487d69c0834ed
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.custom: devx-track-csharp
+ms.openlocfilehash: f569fdac19c4f765828d24f4d6615fdd7bafef8a
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87905383"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89010905"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>공유 키 인증을 사용 하 여 REST API 작업 호출
 
@@ -65,7 +66,7 @@ REST API에 대 한 호출은 클라이언트에서 수행 하는 요청과 서�
 
 **요청 메서드**: GET. 이 동사는 요청 개체의 속성으로 지정되는 HTTP 메서드입니다. 호출하는 API에 따라 이 동사의 다른 값으로 HEAD, PUT 및 DELETE가 포함됩니다.
 
-**요청 URI**: `https://myaccount.blob.core.windows.net/?comp=list` .요청 URI는 blob storage 계정 끝점 `http://myaccount.blob.core.windows.net` 및 리소스 문자열에서 생성 됩니다 `/?comp=list` .
+**요청 URI**: `https://myaccount.blob.core.windows.net/?comp=list` .요청 URI는 blob storage 계정 끝점 `https://myaccount.blob.core.windows.net` 및 리소스 문자열에서 생성 됩니다 `/?comp=list` .
 
 [URI 매개 변수](/rest/api/storageservices/List-Containers2#uri-parameters): ListContainers를 호출할 때 사용할 수 있는 추가 쿼리 매개 변수가 있습니다. 이러한 매개 변수 중 일부는 필터링에 사용되는 호출 *timeout*(초) 및 *prefix*입니다.
 

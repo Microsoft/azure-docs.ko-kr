@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
 ms.custom: sfrev
-ms.openlocfilehash: 4949a83ac2aac664c19be46a367fce2bbff4cb02
-ms.sourcegitcommit: 4e5560887b8f10539d7564eedaff4316adb27e2c
+ms.openlocfilehash: 28a01bbc54f752ffc1f25b57dcf2eca566aa635a
+ms.sourcegitcommit: 6fc156ceedd0fbbb2eec1e9f5e3c6d0915f65b8e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87904822"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88718104"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>서비스 패브릭 클러스터 용량 계획 고려 사항
 
@@ -56,7 +56,7 @@ ms.locfileid: "87904822"
 
     Service Fabric는 특정 영역에 고정 된 노드 형식을 배포 하 여 [가용성 영역](../availability-zones/az-overview.md) 에 걸쳐 있는 클러스터를 지원 하 여 응용 프로그램의 고가용성을 보장 합니다. 가용성 영역 추가 노드 유형 계획 및 최소 요구 사항을 충족 해야 합니다. 자세한 내용은 [가용성 영역 전체에 걸쳐 있는 Service Fabric 클러스터의 주 노드 형식에 대 한 권장 토폴로지](service-fabric-cross-availability-zones.md#recommended-topology-for-primary-node-type-of-azure-service-fabric-clusters-spanning-across-availability-zones)를 참조 하십시오. 
 
-클러스터를 처음 만들 때 노드 형식의 수와 속성을 결정 하는 경우 항상 클러스터가 배포 되 면 항상 주 노드가 아닌 노드 유형을 추가, 수정 또는 제거할 수 있습니다. [주 노드 유형은](service-fabric-scale-up-node-type.md) 실행 중인 클러스터 에서도 수정할 수 있습니다. 그러나 이러한 작업을 수행 하려면 프로덕션 환경에서 상당한 계획 및 주의가 필요 합니다.
+클러스터를 처음 만들 때 노드 형식의 수와 속성을 결정 하는 경우 항상 클러스터가 배포 되 면 항상 주 노드가 아닌 노드 유형을 추가, 수정 또는 제거할 수 있습니다. [주 노드 유형은](service-fabric-scale-up-primary-node-type.md) 실행 중인 클러스터 에서도 수정할 수 있습니다. 그러나 이러한 작업을 수행 하려면 프로덕션 환경에서 상당한 계획 및 주의가 필요 합니다.
 
 노드 형식 속성에 대 한 추가 고려 사항은 노드 형식의 Vm이 Azure 인프라 내에서 갖는 권한을 결정 하는 내구성 수준입니다. 클러스터에 대해 선택 하는 Vm의 크기와 개별 노드 형식에 할당 하는 인스턴스 수를 사용 하 여 다음에 설명 된 대로 각 노드 형식에 대 한 적절 한 내구성 계층을 결정 하는 데 도움을 줍니다.
 
@@ -105,7 +105,7 @@ Bronze 내구성으로 실행되는 노드 형식은 권한 없음이 됩니다.
 실버 또는 골드 내구성으로 노드 유형 관리에 대 한 다음 권장 사항을 따르세요.
 
 * 클러스터와 애플리케이션을 항상 정상 상태로 유지하고, 애플리케이션이 모든 [서비스 복제본 수명 주기 이벤트](service-fabric-reliable-services-lifecycle.md)(예: 빌드의 복제본에 문제가 있을 경우)에 제때에 응답하는지 확인하세요.
-* VM 크기를 변경 하는 더 안전한 방법 (확장/축소)을 채택 합니다. 가상 머신 확장 집합의 VM 크기를 변경 하려면 신중한 계획과 주의가 필요 합니다. 자세한 내용은 [Service Fabric 노드 형식](service-fabric-scale-up-node-type.md) 강화를 참조 하세요.
+* VM 크기를 변경 하는 더 안전한 방법 (확장/축소)을 채택 합니다. 가상 머신 확장 집합의 VM 크기를 변경 하려면 신중한 계획과 주의가 필요 합니다. 자세한 내용은 [Service Fabric 노드 형식](service-fabric-scale-up-primary-node-type.md) 강화를 참조 하세요.
 * Gold 또는 Silver 내구성 수준이 활성화된 가상 머신 확장 집합의 노드 수는 최소 5개로 유지합니다. 이 임계값 이하로 크기를 조정 하는 경우 클러스터는 오류 상태를 입력 하 고 제거 된 노드에 대해 상태 ()를 수동으로 정리 해야 `Remove-ServiceFabricNodeState` 합니다.
 * 내구성 수준이 Silver 또는 Gold인 각 가상 머신 확장 집합은 Service Fabric 클러스터에서 고유한 노드 형식에 매핑되어야 합니다. 여러 가상 머신 확장 집합을 단일 노드 형식에 매핑하면 Service Fabric 클러스터와 Azure 인프라 간의 조정이 제대로 작동하지 않습니다.
 * 임의의 VM 인스턴스를 삭제 하지 마세요. 항상 기능에서 가상 머신 확장 집합 소수 자릿수를 사용 하십시오. 임의의 VM 인스턴스를 삭제 하면 [업그레이드 도메인](service-fabric-cluster-resource-manager-cluster-description.md#upgrade-domains) 및 [장애 도메인](service-fabric-cluster-resource-manager-cluster-description.md#fault-domains)에 분산 된 VM 인스턴스에서 불균형 잔액을 만들 수 있습니다. 이러한 불균형은 서비스 인스턴스/서비스 복제본 간에 적절 하 게 부하를 분산 하는 시스템 기능에 부정적인 영향을 미칠 수 있습니다.

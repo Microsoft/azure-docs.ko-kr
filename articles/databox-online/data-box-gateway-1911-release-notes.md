@@ -2,18 +2,18 @@
 title: Azure Stack Edge & Azure Data Box Gateway 1911 릴리스 정보 | Microsoft Docs
 description: Azure Stack Edge 및 1911 릴리스를 실행 하는 Data Box Gateway에 대 한 중요 한 미해결 문제 및 해결 방법을 설명 합니다.
 services: databox
-author: priestlg
+author: twooley
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
 ms.date: 03/13/2020
-ms.author: v-grpr
-ms.openlocfilehash: c22ba44c3d567d363b1fec702fecb81ca203a48b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: twooley
+ms.openlocfilehash: 4c5c6b423c9013719a703b5112e2a897d35454d1
+ms.sourcegitcommit: 9c3cfbe2bee467d0e6966c2bfdeddbe039cad029
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322484"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88783963"
 ---
 # <a name="azure-stack-edge-and-azure-data-box-gateway-1911-release-notes"></a>Azure Stack Edge 및 Azure Data Box Gateway 1911 릴리스 정보
 

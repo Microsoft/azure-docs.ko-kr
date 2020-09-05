@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 5d325ac8da43f020f4ab39244d2e6a7dc6ed72b7
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: a6ae9d8975c36e7ffa8e3eadf880b4685390c5fc
+ms.sourcegitcommit: c293217e2d829b752771dab52b96529a5442a190
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86156730"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88246335"
 ---
 .NET용 Bing Autosuggest 클라이언트 라이브러리를 시작합니다. 이러한 단계에 따라 패키지를 설치하고 기본 작업을 위한 예제 코드를 사용해 봅니다.
 
@@ -23,7 +23,7 @@ ms.locfileid: "86156730"
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-* Azure 구독 Azure 구독이 아직 없는 경우 [체험 구독을 만들 수 있습니다](https://azure.microsoft.com/free/).
+* Azure 구독 Azure 구독이 아직 없는 경우 [체험 구독을 만들 수 있습니다](https://azure.microsoft.com/free/cognitive-services).
 * 최신 버전의 [.NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 [!INCLUDE [cognitive-services-bing-autosuggest-signup-requirements](~/includes/cognitive-services-bing-autosuggest-signup-requirements.md)]
@@ -31,12 +31,12 @@ ms.locfileid: "86156730"
 ## <a name="create-environment-variables"></a>환경 변수 만들기
 
 >[!NOTE]
-> 2019년 7월 1일 이후에 생성된 리소스의 엔드포인트는 아래에 표시된 사용자 지정 하위 도메인 형식을 사용합니다. 자세한 내용 및 지역별 엔드포인트의 전체 목록은 [Cognitive Services에 대한 사용자 지정 하위 도메인 이름](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains)을 참조하세요. 
+> 2019년 7월 1일 이후에 생성된 리소스의 엔드포인트는 아래에 표시된 사용자 지정 하위 도메인 형식을 사용합니다. 자세한 내용 및 지역별 엔드포인트의 전체 목록은 [Cognitive Services에 대한 사용자 지정 하위 도메인 이름](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains)을 참조하세요.
 
 만든 리소스의 키 및 엔드포인트를 사용하여 인증을 위한 두 가지 환경 변수를 만듭니다.
 <!-- replace the below variable names with the names expected in the code sample.-->
 * `AUTOSUGGEST_SUBSCRIPTION_KEY`: 요청을 인증하기 위한 리소스 키입니다.
-* `AUTOSUGGEST_ENDPOINT`: API 요청을 보내기 위한 리소스 엔드포인트입니다. `https://<your-custom-subdomain>.api.cognitive.microsoft.com`와 비슷한 형식이어야 합니다. 
+* `AUTOSUGGEST_ENDPOINT`: API 요청을 보내기 위한 리소스 엔드포인트입니다. `https://<your-custom-subdomain>.api.cognitive.microsoft.com`와 비슷한 형식이어야 합니다.
 
 운영 체제에 대한 지침을 사용합니다.
 <!-- replace the below endpoint and key examples -->
@@ -72,9 +72,9 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 
 ## <a name="create-a-new-c-application"></a>새 C# 애플리케이션 만들기
 
-선호하는 편집기 또는 IDE에서 .NET Core 애플리케이션을 새로 만듭니다. 
+선호하는 편집기 또는 IDE에서 .NET Core 애플리케이션을 새로 만듭니다.
 
-콘솔 창(예: cmd, PowerShell 또는 Bash)에서 `dotnet new` 명령을 사용하여 `bing-autosuggest-quickstart`라는 새 콘솔 앱을 만듭니다. 이 명령은 *program.cs*라는 단일 소스 파일을 사용하여 간단한 "Hello World" C# 프로젝트를 만듭니다. 
+콘솔 창(예: cmd, PowerShell 또는 Bash)에서 `dotnet new` 명령을 사용하여 `bing-autosuggest-quickstart`라는 새 콘솔 앱을 만듭니다. 이 명령은 *program.cs*라는 단일 소스 파일을 사용하여 간단한 "Hello World" C# 프로젝트를 만듭니다.
 
 ```console
 dotnet new console -n bing-autosuggest-quickstart
@@ -86,7 +86,7 @@ dotnet new console -n bing-autosuggest-quickstart
 dotnet build
 ```
 
-빌드 출력에 경고나 오류가 포함되지 않아야 합니다. 
+빌드 출력에 경고나 오류가 포함되지 않아야 합니다.
 
 ```console
 ...

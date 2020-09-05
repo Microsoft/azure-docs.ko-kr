@@ -1,6 +1,6 @@
 ---
 title: '빠른 시작: Azure Maps를 사용하여 대화형 맵 검색'
-description: Microsoft Azure Maps 웹 SDK를 사용하여 대화형 맵 검색을 위한 데모 웹 애플리케이션을 만드는 방법에 대해 알아봅니다.
+description: 검색 가능한 대화형 맵을 만드는 방법을 알아봅니다. Azure Maps 계정을 만들고, 기본 키를 가져오고, 웹 SDK를 사용하여 지도 애플리케이션을 설정하는 방법을 참조하세요.
 author: anastasia-ms
 ms.author: v-stharr
 ms.date: 7/10/2020
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: bb6c5ee48e22e0c913e7fc6150d3986af805a08f
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: fa5cab35416f2629d39ec04803f90fae1a2e5f6d
+ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87004619"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88031050"
 ---
 # <a name="quickstart-create-an-interactive-search-map-with-azure-maps"></a>빠른 시작: Azure Maps를 사용하여 대화형 검색 맵 만들기
 

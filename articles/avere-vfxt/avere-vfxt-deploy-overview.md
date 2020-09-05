@@ -1,17 +1,17 @@
 ---
 title: 배포 개요 - Avere vFXT for Azure
-description: Avere vFXT for Azure 배포에 대해 간략히 설명합니다.
+description: 이 개요를 사용 하 여 Azure 용 Avere vFXT 클러스터를 배포 하는 방법을 알아봅니다. 관련 문서에는 특정 배포 지침이 있습니다.
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: 78140fea74272dff6056bebfbd44ed9d55b0e1db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4c63fdf2164dd4dce12912669eec29c79755cc2a
+ms.sourcegitcommit: 2bab7c1cd1792ec389a488c6190e4d90f8ca503b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76153686"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88271229"
 ---
 <!-- filename is linked to in the marketplace template, make sure it gets a redirect if we rename it -->
 

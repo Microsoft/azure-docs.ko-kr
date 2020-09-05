@@ -7,12 +7,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 6fdc36dbf270be61457dcd00dd1988808a80d062
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 019e40b5ce7d3feb5b2be990d5e8a648b08302b2
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87030099"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88587704"
 ---
 # <a name="tutorial-delete-an-azure-red-hat-openshift-4-cluster"></a>자습서: Azure Red Hat OpenShift 4 클러스터 삭제
 
@@ -26,7 +26,7 @@ ms.locfileid: "87030099"
 
 이전 자습서에서는 Azure Red Hat OpenShift 클러스터가 만들어지고 OpenShift 웹 콘솔을 사용하여 연결되었습니다. 이전 단계를 아직 수행하지 않았지만 지금부터 따라 하려는 분들은 [자습서 1 - Azure Red Hat Openshift 4 클러스터 만들기](tutorial-create-cluster.md)를 먼저 진행하세요.
 
-CLI를 로컬로 설치하여 사용하도록 선택한 경우 이 자습서에서 Azure CLI 버전 2.0.75 이상을 실행해야 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 참조하세요.
+CLI를 로컬로 설치하고 사용하도록 선택한 경우 이 자습서에서는 Azure CLI 버전 2.6.0 이상을 실행해야 합니다. `az --version`을 실행하여 버전을 찾습니다. 설치 또는 업그레이드해야 하는 경우 [Azure CLI 설치](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)를 참조하세요.
 
 ## <a name="sign-in-to-azure"></a>Azure에 로그인
 
@@ -40,7 +40,7 @@ az login
 
 ## <a name="delete-the-cluster"></a>클러스터 삭제
 
-이전 자습서에서는 다음 변수가 설정되었습니다. 
+이전 자습서에서는 다음 변수가 설정되었습니다.
 
 ```bash
 CLUSTER=yourclustername

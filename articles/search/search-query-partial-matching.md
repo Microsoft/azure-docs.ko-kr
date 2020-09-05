@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: d562931b7578935a4544dfd953ff2de74a5350a6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 357f44149cb17976556c1e4609f6f2af531b80ee
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85260987"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935775"
 ---
 # <a name="partial-term-search-and-patterns-with-special-characters-wildcard-regex-patterns"></a>특수 문자를 포함 하는 부분 용어 검색 및 패턴 (와일드 카드, regex, 패턴)
 
@@ -51,7 +51,7 @@ Azure Cognitive Search는 인덱스에서 전체 토큰화 된 용어를 검색 
 + 인덱스 작성 및 테스트
 
 > [!TIP]
-> 분석기 평가는 자주 인덱스를 다시 작성 해야 하는 반복적인 프로세스입니다. Postman을 사용 하 여이 단계를 더 쉽게 수행할 수 있습니다. [인덱스 만들기](https://docs.microsoft.com/rest/api/searchservice/create-index), [인덱스 삭제](https://docs.microsoft.com/rest/api/searchservice/delete-index),[문서 로드](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents)및 [문서 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents)을 위한 REST api입니다. 문서 로드의 경우 요청 본문에는 테스트 하려는 작은 대표 데이터 집합 (예: 전화 번호 또는 제품 코드를 포함 하는 필드)이 포함 되어야 합니다. 동일한 Postman 컬렉션에서 이러한 Api를 사용 하 여 이러한 단계를 빠르게 순환할 수 있습니다.
+> 분석기 평가는 자주 인덱스를 다시 작성 해야 하는 반복적인 프로세스입니다. Postman을 사용 하 여이 단계를 더 쉽게 수행할 수 있습니다. [인덱스 만들기](/rest/api/searchservice/create-index), [인덱스 삭제](/rest/api/searchservice/delete-index),[문서 로드](/rest/api/searchservice/addupdate-or-delete-documents)및 [문서 검색](/rest/api/searchservice/search-documents)을 위한 REST api입니다. 문서 로드의 경우 요청 본문에는 테스트 하려는 작은 대표 데이터 집합 (예: 전화 번호 또는 제품 코드를 포함 하는 필드)이 포함 되어야 합니다. 동일한 Postman 컬렉션에서 이러한 Api를 사용 하 여 이러한 단계를 빠르게 순환할 수 있습니다.
 
 ## <a name="duplicate-fields-for-different-scenarios"></a>여러 시나리오에 대 한 중복 필드
 
@@ -85,7 +85,7 @@ Azure Cognitive Search는 인덱스에서 전체 토큰화 된 용어를 검색 
 | [공백](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/WhitespaceAnalyzer.html) | 공백만을 구분 합니다. 대시 또는 다른 문자를 포함 하는 용어는 단일 토큰으로 처리 됩니다. |
 | [사용자 지정 분석기](index-add-custom-analyzers.md) | 바람직하지 사용자 지정 분석기를 만들면 토크 및 token 필터를 모두 지정할 수 있습니다. 이전 분석기를 있는 그대로 사용 해야 합니다. 사용자 지정 분석기를 사용 하 여 사용할 토크 나이저 및 토큰 필터를 선택할 수 있습니다. <br><br>권장 되는 조합은 [소문자 토큰 필터](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/LowerCaseFilter.html)를 사용 하는 [키워드 토크](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordTokenizer.html) 를 사용 하는 것입니다. 미리 정의 된 [키워드인 analyzer](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) 는 단독으로 소문자 텍스트를 따르지 않으므로 쿼리가 실패할 수 있습니다. 사용자 지정 분석기는 소문자 토큰 필터를 추가 하는 메커니즘을 제공 합니다. |
 
-Postman과 같은 웹 API 테스트 도구를 사용 하는 경우 [테스트 분석기 REST 호출](https://docs.microsoft.com/rest/api/searchservice/test-analyzer) 을 추가 하 여 토큰화 된 출력을 검사할 수 있습니다.
+Postman과 같은 웹 API 테스트 도구를 사용 하는 경우 [테스트 분석기 REST 호출](/rest/api/searchservice/test-analyzer) 을 추가 하 여 토큰화 된 출력을 검사할 수 있습니다.
 
 작업 하려면 채우기 인덱스가 있어야 합니다. 기존 인덱스 및 대시 또는 부분 용어를 포함 하는 필드를 지정 하는 경우 특정 조건에 대해 다양 한 분석기를 시도 하 여 어떤 토큰을 내보낼지 확인할 수 있습니다.  
 
@@ -160,7 +160,7 @@ Postman과 같은 웹 API 테스트 도구를 사용 하는 경우 [테스트 �
 
 기본 제공 되거나 미리 정의 된 분석기는 `analyzer` 인덱스에 추가 구성이 필요 없는 필드 정의의 속성에 이름으로 지정할 수 있습니다. 다음 예에서는 필드에서 분석기를 설정 하는 방법을 보여 줍니다 `whitespace` . 
 
-다른 시나리오와 기타 기본 제공 분석기에 대 한 자세한 내용은 [미리 정의 된 분석기 목록](https://docs.microsoft.com/azure/search/index-add-custom-analyzers#predefined-analyzers-reference)을 참조 하십시오. 
+다른 시나리오와 기타 기본 제공 분석기에 대 한 자세한 내용은 [미리 정의 된 분석기 목록](/azure/search/index-add-custom-analyzers#predefined-analyzers-reference)을 참조 하십시오. 
 
 ```json
     {
@@ -222,19 +222,19 @@ Postman과 같은 웹 API 테스트 도구를 사용 하는 경우 [테스트 �
 
 이전 섹션에서는 논리에 대해 설명 했습니다. 이 섹션에서는 솔루션을 테스트할 때 호출 해야 하는 각 API를 단계별로 안내 합니다. 앞에서 설명한 것 처럼 Postman과 같은 대화형 웹 테스트 도구를 사용 하는 경우 이러한 작업을 신속 하 게 단계별로 수행할 수 있습니다.
 
-+ [인덱스 삭제](https://docs.microsoft.com/rest/api/searchservice/delete-index) 는 다시 만들 수 있도록 동일한 이름의 기존 인덱스를 제거 합니다.
++ [인덱스 삭제](/rest/api/searchservice/delete-index) 는 다시 만들 수 있도록 동일한 이름의 기존 인덱스를 제거 합니다.
 
-+ [Create index](https://docs.microsoft.com/rest/api/searchservice/create-index) 분석기 사양을 사용 하 여 분석기 정의 및 필드를 포함 하 여 검색 서비스에 인덱스 구조를 만듭니다.
++ [Create index](/rest/api/searchservice/create-index) 분석기 사양을 사용 하 여 분석기 정의 및 필드를 포함 하 여 검색 서비스에 인덱스 구조를 만듭니다.
 
-+ [문서 로드](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) 는 인덱스와 동일한 구조를 가진 문서 및 검색 가능한 콘텐츠를 가져옵니다. 이 단계를 수행한 후에는 인덱스를 쿼리하거나 테스트할 준비가 된 것입니다.
++ [문서 로드](/rest/api/searchservice/addupdate-or-delete-documents) 는 인덱스와 동일한 구조를 가진 문서 및 검색 가능한 콘텐츠를 가져옵니다. 이 단계를 수행한 후에는 인덱스를 쿼리하거나 테스트할 준비가 된 것입니다.
 
-+ [분석기 선택](#choose-an-analyzer)에서 [테스트 분석기](https://docs.microsoft.com/rest/api/searchservice/test-analyzer) 가 도입 되었습니다. 다양 한 분석기를 사용 하 여 인덱스의 일부 문자열을 테스트 하 여 용어를 토큰화 하는 방법을 이해 합니다.
++ [분석기 선택](#choose-an-analyzer)에서 [테스트 분석기](/rest/api/searchservice/test-analyzer) 가 도입 되었습니다. 다양 한 분석기를 사용 하 여 인덱스의 일부 문자열을 테스트 하 여 용어를 토큰화 하는 방법을 이해 합니다.
 
-+ [문서 검색](https://docs.microsoft.com/rest/api/searchservice/search-documents) 에서는 와일드 카드 및 정규식에 대 한 [단순 구문](query-simple-syntax.md) 또는 [전체 Lucene 구문을](query-lucene-syntax.md) 사용 하 여 쿼리 요청을 생성 하는 방법을 설명 합니다.
++ [문서 검색](/rest/api/searchservice/search-documents) 에서는 와일드 카드 및 정규식에 대 한 [단순 구문](query-simple-syntax.md) 또는 [전체 Lucene 구문을](query-lucene-syntax.md) 사용 하 여 쿼리 요청을 생성 하는 방법을 설명 합니다.
 
   "+ 1 (425) 703-6214"에서 일치 항목을 찾기 위해 "3-6214"을 쿼리 하는 등의 부분 용어 쿼리를 사용 하는 경우 간단한 구문을 사용할 수 `search=3-6214&queryType=simple` 있습니다.
 
-  "Num" 쿼리 또는 "영숫자"의 일치 항목 찾기를 위한 숫자 쿼리 등의 중 위 및 접미사 쿼리를 사용 하는 경우 전체 Lucene 구문과 정규식을 사용 합니다.`search=/.*num.*/&queryType=full`
+  "Num" 쿼리 또는 "영숫자"의 일치 항목 찾기를 위한 숫자 쿼리 등의 중 위 및 접미사 쿼리를 사용 하는 경우 전체 Lucene 구문과 정규식을 사용 합니다. `search=/.*num.*/&queryType=full`
 
 ## <a name="tune-query-performance"></a>쿼리 성능 조정
 
@@ -287,5 +287,5 @@ Keyword_v2 토크 및 소문자 토큰 필터를 포함 하는 권장 구성을 
 
 + [언어 분석기](search-language-support.md)
 + [Azure Cognitive Search에서 텍스트 처리를 위한 분석기](search-analyzers.md)
-+ [텍스트 API 분석 (REST)](https://docs.microsoft.com/rest/api/searchservice/test-analyzer)
++ [텍스트 API 분석 (REST)](/rest/api/searchservice/test-analyzer)
 + [전체 텍스트 검색의 작동 방식 (쿼리 아키텍처)](search-lucene-query-architecture.md)

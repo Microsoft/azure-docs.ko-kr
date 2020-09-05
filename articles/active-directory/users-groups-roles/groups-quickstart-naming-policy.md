@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 11/08/2019
+ms.date: 08/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4253f5bd702abd061cf1cddd4badd68c9cd5d475
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: e5b54af39401ba8c3fede4c9ad80ec8edc963b1d
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582828"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213673"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>빠른 시작: Azure Active Directory의 그룹에 대한 명명 정책
 
-이 빠른 시작에서는 사용자가 만든 Office 365 그룹의 Azure AD(Azure Active Directory) 조직에서 명명 정책을 설정하여 조직의 그룹을 정렬하고 검색하는 데 도움을 줍니다. 예를 들어 명명 정책을 사용하여 다음과 같은 일을 할 수 있습니다.
+이 빠른 시작에서는 사용자가 만든 Microsoft 365 그룹의 Azure AD(Azure Active Directory) 조직에서 명명 정책을 설정하여 조직의 그룹을 정렬하고 검색하는 데 도움을 줍니다. 예를 들어 명명 정책을 사용하여 다음과 같은 일을 할 수 있습니다.
 
 * 그룹의 기능, 멤버 자격, 지리적 영역 또는 그룹을 만든 사람 정보를 전달합니다.
 * 주소록의 그룹을 범주화합니다.

@@ -16,10 +16,10 @@ ms.date: 03/11/2019
 ms.author: allensu
 ms.custom: seodec18
 ms.openlocfilehash: 8961a50490bdbf8b456e87e1c00577c2c8afd050
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 08/25/2020
 ms.locfileid: "80240374"
 ---
 # <a name="tutorial-load-balance-internet-traffic-to-vms-using-the-azure-portal"></a>자습서: Azure Portal을 사용하여 인터넷 트래픽 부하를 VM에 분산
@@ -162,7 +162,7 @@ Load Balancer가 앱의 상태를 모니터링하도록 하려면 상태 프로�
 1. **관리** 탭을 선택하거나 **다음** > **관리**를 선택합니다. **모니터링**에서 **부트 진단**을 **끄기**로 설정합니다. 
 1. **검토 + 만들기**를 선택합니다.   
 1. 설정을 검토한 다음, **만들기**를 선택합니다.
-1. 단계에 따라 각각 **가용성 영역** **2** 및 **3**에서 표준 SKU 공용 IP 주소를 사용하며 모든 기타 설정이 *myVM1*과 동일한 두 개의 추가 VM(*myVM2*와 *myVM3*)을 만듭니다.  
+1. 단계에 따라 각각 **가용성 영역** **2** 및 **3**에서 표준 SKU 공용 IP 주소를 사용하며 모든 기타 설정이 *myVM1*과 동일한 두 개의 추가 VM, *myVM2*와 *myVM3*을 만듭니다.  
 
 ### <a name="create-network-security-group-rule"></a>네트워크 보안 그룹 규칙 만들기
 

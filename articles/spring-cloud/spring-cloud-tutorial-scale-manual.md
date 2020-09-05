@@ -7,12 +7,12 @@ ms.author: brendm
 author: bmitchell287
 ms.date: 10/06/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: edbb3c1b2ed3e696c304f72c7b40fa926cae2c54
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: c3c660c5e301081ee82a12275b6e9125f0fc781b
+ms.sourcegitcommit: 58d3b3314df4ba3cabd4d4a6016b22fa5264f05a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87021191"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89289820"
 ---
 # <a name="tutorial-scale-an-application-in-azure-spring-cloud"></a>자습서: Azure Spring Cloud의 애플리케이션 크기 조정
 
@@ -27,7 +27,7 @@ vCPU(가상 CPU) 수와 메모리 양을 수정하여 애플리케이션을 확�
 이러한 절차를 따르려면 다음이 필요합니다.
 
 * Azure 구독 Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다. 
-* 배포된 Azure Spring Cloud 서비스 인스턴스  [Azure CLI를 통한 앱 배포를 위한 빠른 시작](spring-cloud-quickstart-launch-app-cli.md)을 수행하여 시작하세요.
+* 배포된 Azure Spring Cloud 서비스 인스턴스  [Azure CLI를 통한 앱 배포를 위한 빠른 시작](spring-cloud-quickstart.md)을 수행하여 시작하세요.
 * 해당 서비스 인스턴스에서 이미 하나 이상의 애플리케이션이 생성되었습니다.
 
 ## <a name="navigate-to-the-scale-page-in-the-azure-portal"></a>Azure Portal의 크기 조정 페이지로 이동합니다.

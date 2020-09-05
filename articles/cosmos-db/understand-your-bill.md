@@ -5,29 +5,36 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 08/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 596296069686e843d0be1899cce8929417b70bcc
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: bf041163c6b2759b3d38e48ee98a0d528ec601db
+ms.sourcegitcommit: d661149f8db075800242bef070ea30f82448981e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964586"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88606914"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Azure Cosmos DB 요금 청구 이해
 
-완전 관리형 클라우드 기본 데이터베이스 서비스인 Azure Cosmos DB는 프로비전된 처리량 및 사용된 스토리지에 대해서만 요금을 청구하여 청구 과정을 간소화합니다. 온-프레미스 및 IaaS 호스티드 대안에 비해 추가 라이선스 요금, 하드웨어, 유틸리티 비용 또는 시설 비용이 들지 않습니다. Microsoft Azure Cosmos DB의 다중 지역 기능을 고려할 때 데이터베이스 서비스는 기존의 온-프레미스 또는 IaaS 솔루션에 비해 획기적으로 비용을 절감합니다.
+완전히 관리 되는 클라우드 네이티브 데이터베이스 서비스인 Azure Cosmos DB는 데이터베이스 작업 및 사용 된 저장소에 대해서만 요금을 청구 하 여 요금 청구를 간소화 합니다. 온-프레미스 및 IaaS 호스티드 대안에 비해 추가 라이선스 요금, 하드웨어, 유틸리티 비용 또는 시설 비용이 들지 않습니다. Microsoft Azure Cosmos DB의 다중 지역 기능을 고려할 때 데이터베이스 서비스는 기존의 온-프레미스 또는 IaaS 솔루션에 비해 획기적으로 비용을 절감합니다.
 
-Azure Cosmos DB을 사용하면 프로비전된 처리량 및 사용된 스토리지를 기준으로 시간당 요금이 청구됩니다. 프로 비전 된 처리량의 경우 요금 청구 단위는 시간당 100 r u/초입니다. 최신 가격 정보는 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요. 사용 되는 저장소의 경우 매월 1gb의 저장소에 대해 요금이 청구 됩니다. 최신 가격 책정 정보는 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요.
+- **데이터베이스 작업**: 데이터베이스 작업에 대해 부과 되는 방법은 사용 하는 Azure Cosmos 계정 유형에 따라 달라 집니다.
 
-이 문서에서는 몇 가지 예외를 사용하여 월별 청구서에 표시되는 세부 항목을 이해하는 데 도움을 줍니다. 예제에 표시되는 수치는 Azure Cosmos 컨테이너가 다른 양의 처리량이 프로비전되었거나, 다중 지역에 걸쳐 있거나, 한 달 중 다른 기간에 실행된 경우 달라질 수 있습니다. 이 문서의 모든 예제에서는 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 에 표시 된 가격 책정 정보를 기준으로 청구서를 계산 합니다.
+  - **프로 비전 된 처리량**: 지정 된 시간 동안 프로 비전 된 최대 처리량 (100 r u/초 단위로)에 대해 시간당 요금이 청구 됩니다.
+  - **서버**를 사용 하지 않음: 데이터베이스 작업에 사용 된 총 요청 단위 크기에 대해 시간당 요금이 청구 됩니다.
+
+- **저장소**: 지정 된 시간 동안 데이터 및 인덱스에서 사용 하는 총 저장소 크기 (gb)에 대 한 정액 요금이 청구 됩니다.
+
+최신 가격 정보는 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요.
+
+이 문서에서는 몇 가지 예외를 사용하여 월별 청구서에 표시되는 세부 항목을 이해하는 데 도움을 줍니다. 예제에 표시되는 수치는 Azure Cosmos 컨테이너가 다른 양의 처리량이 프로비전되었거나, 다중 지역에 걸쳐 있거나, 한 달 중 다른 기간에 실행된 경우 달라질 수 있습니다. 이 문서의 모든 예제에서는 [가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/)에 표시 된 가격 책정 정보를 기준으로 청구서를 계산 합니다.
 
 > [!NOTE]
 > 요금 청구는 60분이 아닌 분과 초 단위로 이루어집니다. 이 문서에 표시 된 모든 예제는 미국의 비 정부 지역에 배포 된 Azure Cosmos 계정에 대 한 가격을 기준으로 합니다. 가격 책정 및 계산은 사용 중인 지역에 따라 달라 지 며, 최신 가격 책정 정보는 [Azure Cosmos DB 가격 책정 페이지](https://azure.microsoft.com/pricing/details/cosmos-db/) 를 참조 하세요.
 
 ## <a name="billing-examples"></a>청구 예제
 
-### <a name="billing-example---throughput-on-a-container-full-month"></a>청구 예제 - 컨테이너에 대한 처리량(전체 월)
+### <a name="billing-example---provisioned-throughput-on-a-container-full-month"></a>청구 예제-컨테이너에 프로 비전 된 처리량 (전체 월)
 
 * 컨테이너에서 1,000RU/초의 처리량을 구성하며, 24시간 * 30일(해당 월에 포함된 일 수) = 총 720시간 동안 유지된다고 가정합니다.  
 
@@ -39,13 +46,21 @@ Azure Cosmos DB을 사용하면 프로비전된 처리량 및 사용된 스토�
 
 * 월간 총 청구 요금은 7,200개 단위(100RU 기준), 즉 $57.60에 해당합니다.
 
-### <a name="billing-example---throughput-on-a-container-partial-month"></a>청구 예제 - 컨테이너에 대한 처리량(부분 월)
+### <a name="billing-example---provisioned-throughput-on-a-container-partial-month"></a>청구 예제-컨테이너에 프로 비전 된 처리량 (부분 월)
 
 * 프로비저닝된 처리량이 2,500RU/초인 컨테이너를 만든다고 가정합니다. 이 컨테이너는 월 중에 24시간 동안 라이브됩니다(예를 들어 만들고 24시간 후에 삭제함).  
 
 * 이 경우 청구서에 600개 단위가 표시됩니다(2,500RU/초 / 100RU/초/단위 * 24시간). 비용은 $4.80(600개 단위 * $0.008/단위)입니다.
 
 * 월간 총 청구 금액은 $4.80입니다.
+
+### <a name="billing-example---serverless-container"></a>청구 예제-서버를 사용 하지 않는 컨테이너
+
+* 서버를 사용 하지 않는 컨테이너를 만든다고 가정 합니다. 
+
+* 매월 전체 50만 요청 단위를 사용 하는 데이터베이스 요청을 실행 합니다. 비용은 $0.125 (50만 * $0.25/백만)이 됩니다.
+
+* 매월 총 청구 금액은 $0.125입니다.
 
 ### <a name="billing-rate-if-storage-size-changes"></a>스토리지 크기가 변경될 경우의 청구 요금
 
@@ -55,7 +70,7 @@ Storage 용량은 한 달 동안 저장된 최대 시간당 데이터 양(GB)을
 
 사용량이나 컨테이너 또는 데이터베이스 활성 시간이 1시간 미만인지에 관계없이 컨테이너 또는 데이터베이스가 존재하는 시간마다 균일한 요금이 청구됩니다. 예를 들어, 컨테이너 또는 데이터베이스를 하나 만들고 5분 후 삭제하는 경우 청구서에는 1시간이 포함됩니다.
 
-### <a name="billing-rate-when-throughput-on-a-container-or-database-scales-updown"></a>컨테이너 또는 데이터베이스에 대한 처리량이 확장/축소될 경우의 청구 요금
+### <a name="billing-rate-when-provisioned-throughput-on-a-container-or-database-scales-updown"></a>컨테이너 또는 데이터베이스에서 프로 비전 된 처리량이 확장/축소 되는 경우 요금 청구 속도
 
 오전 9:30에 프로비전된 처리량을 400RU/초에서 1,000RU/초로 늘린 다음 오전 10:45에 프로비전된 처리량을 다시 400RU/초로 줄인 경우 1,000RU/초 2시간에 대한 요금이 청구됩니다. 
 
@@ -75,7 +90,7 @@ Storage 용량은 한 달 동안 저장된 최대 시간당 데이터 양(GB)을
 
 :::image type="content" source="./media/understand-your-bill/bill-example1.png" alt-text="전용 처리량 청구 예제":::
 
-### <a name="billing-example-containers-with-shared-throughput-mode"></a>청구 예제: 공유 처리량 모드를 사용하는 컨테이너
+### <a name="billing-example-containers-with-shared-provisioned-throughput-mode"></a>청구 예: 공유 (프로 비전 된) 처리량 모드가 있는 컨테이너
 
 * 프로비전된 처리량이 각각 50K RU/초 및 70K RU/초인 2개의 Azure Cosmos 데이터베이스(컨테이너 세트가 데이터베이스 수준에서 처리량을 공유함)를 사용하여 미국 동부 2 지역에 Azure Cosmos 계정을 만들 경우 프로비전된 총 처리량은 120K RU/초가 됩니다.  
 

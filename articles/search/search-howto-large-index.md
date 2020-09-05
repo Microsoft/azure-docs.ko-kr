@@ -8,12 +8,12 @@ ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/05/2020
-ms.openlocfilehash: e544e720f024b265e957e67d5bd2ee8af91f5c7f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 80307c97464e61d7b7d338703de90d1199adc819
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84484571"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88927020"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-cognitive-search"></a>Azure Cognitive Search에서 대량 데이터 집합을 인덱싱하는 방법
 
@@ -50,7 +50,7 @@ Azure Cognitive Search는 데이터를 검색 인덱스로 가져오기 위한 [
 
 ### <a name="batch-size"></a>Batch 크기
 
-대용량 데이터 세트를 인덱싱하기 위한 가장 간단한 메커니즘 중 하나는 단일 요청에서 여러 문서 또는 레코드를 제출하는 것입니다. 전체 페이로드가 16MB 미만인 한 요청은 대량 업로드 작업에서 최대 1000개의 문서를 처리할 수 있습니다. 이러한 제한은 .NET SDK에서 [문서 추가 REST API](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) 또는 [인덱스 메서드](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index?view=azure-dotnet) 를 사용 하는지에 따라 적용 됩니다. 두 API의 경우 각 요청의 본문에 1000 문서를 패키지할 수 있습니다.
+대용량 데이터 세트를 인덱싱하기 위한 가장 간단한 메커니즘 중 하나는 단일 요청에서 여러 문서 또는 레코드를 제출하는 것입니다. 전체 페이로드가 16MB 미만인 한 요청은 대량 업로드 작업에서 최대 1000개의 문서를 처리할 수 있습니다. 이러한 제한은 .NET SDK에서 [문서 추가 REST API](/rest/api/searchservice/addupdate-or-delete-documents) 또는 [인덱스 메서드](/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index?view=azure-dotnet) 를 사용 하는지에 따라 적용 됩니다. 두 API의 경우 각 요청의 본문에 1000 문서를 패키지할 수 있습니다.
 
 일괄 처리를 사용 하 여 문서를 인덱싱하려면 인덱싱 성능이 크게 향상 됩니다. 가장 적합한 데이터 일괄 처리 크기를 결정하는 것은 인덱싱 속도를 최적화하는 핵심 구성 요소입니다. 최적의 일괄 처리 크기에 영향을 주는 두 가지 주요 요소는 다음과 같습니다.
 + 인덱스의 스키마
@@ -74,14 +74,14 @@ Azure Cognitive Search의 인덱싱 속도를 최대한 활용하려면 여러 �
 > [!NOTE]
 > 검색 서비스의 계층을 늘리거나 파티션을 늘릴 때 동시 스레드 수도 늘려야 합니다.
 
-검색 서비스에 대한 요청을 늘리면 요청이 완전히 성공하지 못했음을 나타내는 [HTTP 상태 코드](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)가 발생할 수 있습니다. 인덱싱 중에 발생하는 두 가지 일반적인 HTTP 상태 코드는 다음과 같습니다.
+검색 서비스에 대한 요청을 늘리면 요청이 완전히 성공하지 못했음을 나타내는 [HTTP 상태 코드](/rest/api/searchservice/http-status-codes)가 발생할 수 있습니다. 인덱싱 중에 발생하는 두 가지 일반적인 HTTP 상태 코드는 다음과 같습니다.
 
 + **503 서비스를 사용할 수 없음** - 이 오류는 시스템의 부하가 높고 요청을 현재 처리할 수 없음을 의미합니다.
 + **207 여러 상태** - 이 오류는 일부 문서가 성공했지만 하나 이상의 문서가 실패했음을 의미합니다.
 
 ### <a name="retry-strategy"></a>재시도 전략 
 
-오류가 발생하면 [지수 백오프 다시 시도 전략](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff)을 사용하여 요청을 다시 시도해야 합니다.
+오류가 발생하면 [지수 백오프 다시 시도 전략](/dotnet/architecture/microservices/implement-resilient-applications/implement-retries-exponential-backoff)을 사용하여 요청을 다시 시도해야 합니다.
 
 Azure Cognitive Search의 .NET SDK에서 503 및 기타 실패한 요청을 자동으로 다시 시도하지만 207을 다시 시도하는 사용자 고유의 논리를 구현해야 합니다. [Polly](https://github.com/App-vNext/Polly)와 같은 오픈 소스 도구를 사용하여 다시 시도 전략을 구현할 수도 있습니다.
 
@@ -95,14 +95,14 @@ Azure Cognitive Search의 .NET SDK에서 503 및 기타 실패한 요청을 자�
 
 + 스케줄러를 통해 시간이 지남에 따라 분배할 수 있도록 정기적으로 인덱싱을 분배할 수 있습니다.
 + 예약된 인덱싱은 마지막으로 알려진 중지 지점에서 다시 시작할 수 있습니다. 데이터 원본이 24시간 기간 내에 완벽하게 크롤링되지 않는 경우 인덱서는 중단 위치에서 두 번째 날에 인덱싱을 다시 시작합니다.
-+ 데이터를 작은 개별 데이터 원본으로 분할하면 병렬 처리가 가능합니다. Azure Blob storage의 여러 컨테이너와 같이 원본 데이터를 더 작은 구성 요소로 분할 한 다음 동시에 인덱싱할 수 있는 Azure Cognitive Search에 해당 하는 여러 [데이터 원본 개체](https://docs.microsoft.com/rest/api/searchservice/create-data-source) 를 만들 수 있습니다.
++ 데이터를 작은 개별 데이터 원본으로 분할하면 병렬 처리가 가능합니다. Azure Blob storage의 여러 컨테이너와 같이 원본 데이터를 더 작은 구성 요소로 분할 한 다음 동시에 인덱싱할 수 있는 Azure Cognitive Search에 해당 하는 여러 [데이터 원본 개체](/rest/api/searchservice/create-data-source) 를 만들 수 있습니다.
 
 > [!NOTE]
 > 인덱서는 데이터 소스에 따라 달라 지는 인덱서 방법을 사용 하는 것은 Azure에서 선택한 데이터 원본에 대해서만 사용할 수 있는 [SQL Database](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md), [Blob 저장소](search-howto-indexing-azure-blob-storage.md), [테이블 저장소](search-howto-indexing-azure-tables.md), [Cosmos DB](search-howto-index-cosmosdb.md)입니다.
 
 ### <a name="batch-size"></a>Batch 크기
 
-밀어넣기 API와 마찬가지로 인덱서를 사용 하 여 일괄 처리당 항목 수를 구성할 수 있습니다. [만들기 인덱서 REST API](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer)에 따른 인덱서의 경우 `batchSize` 인수를 설정하여 데이터의 특징에 더 잘 일치하도록 이 설정을 사용자 지정할 수 있습니다. 
+밀어넣기 API와 마찬가지로 인덱서를 사용 하 여 일괄 처리당 항목 수를 구성할 수 있습니다. [만들기 인덱서 REST API](/rest/api/searchservice/Create-Indexer)에 따른 인덱서의 경우 `batchSize` 인수를 설정하여 데이터의 특징에 더 잘 일치하도록 이 설정을 사용자 지정할 수 있습니다. 
 
 기본 일괄 처리 크기는 데이터 원본에 따라 다릅니다. Azure SQL Database 및 Azure Cosmos DB의 기본 일괄 처리 크기는 1000입니다. 반면, Azure Blob 인덱싱에서는 더 큰 평균 문서 크기를 인식 하 여 10 개의 문서에서 일괄 처리 크기를 설정 합니다. 
 
@@ -112,7 +112,7 @@ Azure Cognitive Search의 .NET SDK에서 503 및 기타 실패한 요청을 자�
 
 기본적으로 예약된 인덱싱은 특정 간격으로 시작되며, 대개 다음으로 예약된 간격에서 다시 시작되기 전에 작업이 완료됩니다. 하지만 간격 내에 처리가 완료되지 않으면 인덱서가 중지됩니다(시간이 초과되기 때문임). 다음 번 간격이 시작되면, 마지막으로 중단된 위치에서 처리가 다시 시작되며, 시스템은 해당 위치를 추적합니다. 
 
-실제 여러 날에 걸쳐 수행되는 인덱스 로드의 경우 24시간 일정으로 인덱서를 배치할 수 있습니다. 다음 번 24시간 주기에서 인덱싱이 다시 시작되면 마지막으로 성공한 문서에서 다시 시작됩니다. 이러한 방식으로 인덱서는 처리되지 않은 모든 문서가 처리될 때까지 여러 날에 걸쳐 문서 백로그를 통해 작업을 수행할 수 있습니다. 이러한 방식에 대한 자세한 내용은 [Azure Blob 스토리지에서 큰 데이터 세트 인덱싱](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets)을 참조하세요. 일반적으로 일정을 설정 하는 방법에 대 한 자세한 내용은 [인덱서 REST API 만들기](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer) 또는 [Azure Cognitive Search에 대 한 인덱서를 예약 하는 방법](search-howto-schedule-indexers.md)을 참조 하세요.
+실제 여러 날에 걸쳐 수행되는 인덱스 로드의 경우 24시간 일정으로 인덱서를 배치할 수 있습니다. 다음 번 24시간 주기에서 인덱싱이 다시 시작되면 마지막으로 성공한 문서에서 다시 시작됩니다. 이러한 방식으로 인덱서는 처리되지 않은 모든 문서가 처리될 때까지 여러 날에 걸쳐 문서 백로그를 통해 작업을 수행할 수 있습니다. 이러한 방식에 대한 자세한 내용은 [Azure Blob 스토리지에서 큰 데이터 세트 인덱싱](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets)을 참조하세요. 일반적으로 일정을 설정 하는 방법에 대 한 자세한 내용은 [인덱서 REST API 만들기](/rest/api/searchservice/Create-Indexer) 또는 [Azure Cognitive Search에 대 한 인덱서를 예약 하는 방법](search-howto-schedule-indexers.md)을 참조 하세요.
 
 <a name="parallel-indexing"></a>
 
@@ -125,8 +125,8 @@ Azure Cognitive Search의 .NET SDK에서 503 및 기타 실패한 요청을 자�
 병렬 처리에는 다음과 같은 요소가 있습니다.
 
 + 원본 데이터를 동일한 컨테이너 내의 여러 컨테이너 또는 여러 가상 폴더로 세분화합니다. 
-+ 각 미니 데이터 집합을 고유한 [인덱서와](https://docs.microsoft.com/rest/api/searchservice/create-indexer)쌍으로 고유한 [데이터 원본](https://docs.microsoft.com/rest/api/searchservice/create-data-source)에 매핑합니다.
-+ Cognitive Search의 경우 각 인덱서 정의에 동일한 [기술 집합](https://docs.microsoft.com/rest/api/searchservice/create-skillset)을 참조합니다.
++ 각 미니 데이터 집합을 고유한 [인덱서와](/rest/api/searchservice/create-indexer)쌍으로 고유한 [데이터 원본](/rest/api/searchservice/create-data-source)에 매핑합니다.
++ Cognitive Search의 경우 각 인덱서 정의에 동일한 [기술 집합](/rest/api/searchservice/create-skillset)을 참조합니다.
 + 동일한 대상 검색 인덱스에 기록합니다. 
 + 모든 인덱서가 동시에 실행되도록 예약합니다.
 

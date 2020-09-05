@@ -1,4 +1,4 @@
-- name: Azure DB for MariaDB 문서
+- name: Azure DB for MariaDB 설명서
   href: index.yml
 - name: 개요
   items:
@@ -38,9 +38,6 @@
   items:
     - name: Azure CLI
       href: sample-scripts-azure-cli.md
-    - name: Azure Policy 기본 제공 기능
-      displayName: 'samples, policies, definitions'
-      href: ./policy-samples.md
 - name: 개념
   items:
     - name: DB 및 서버
@@ -75,6 +72,9 @@
           href: concepts-data-access-security-private-link.md
         - name: 고급 위협 보호
           href: concepts-data-access-and-security-threat-protection.md
+        - name: Azure Policy의 보안 컨트롤
+          displayName: 'regulatory, compliance, standards, domains'
+          href: ./security-controls-policy.md
         - name: 보안 기준
           href: security-baseline.md
     - name: 비즈니스 연속성
@@ -244,6 +244,9 @@
       href: /azure/templates/microsoft.dbformariadb/allversions
     - name: 관리 저장 프로시저
       href: reference-stored-procedures.md
+    - name: Azure Policy 기본 제공 기능
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: 리소스
   items:
     - name: 배포 템플릿

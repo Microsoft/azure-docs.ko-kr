@@ -12,6 +12,11 @@
   items:
     - name: Virtual Machines 솔루션
       href: virtual-machine-solutions.md
+- name: 방법
+  expanded: true
+  items:
+    - name: Fortanix Enclave Manager
+      href: how-to-fortanix-enclave-manager.md
 - name: 리소스
   expanded: true
   items:

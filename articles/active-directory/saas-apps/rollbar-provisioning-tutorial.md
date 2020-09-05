@@ -2,25 +2,21 @@
 title: '자습서: Azure Active Directory을 사용 하 여 자동 사용자 프로 비전을 위한 Rollbar 구성 | Microsoft Docs'
 description: 사용자 계정을 Rollbar로 자동으로 프로 비전 및 프로 비전 해제 하도록 Azure Active Directory를 구성 하는 방법에 대해 알아봅니다.
 services: active-directory
-documentationcenter: ''
 author: zchia
 writer: zchia
-manager: beatrizd
-ms.assetid: d737aa16-8ab4-4c0c-a68b-2911623b41eb
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: Zhchia
-ms.openlocfilehash: e5246538f0ca0fcec81e36145a0fc5628337ed27
-ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
+ms.openlocfilehash: fcfb071c0e65e9275e2d7bb4362d9812d91f8f08
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87925552"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88548729"
 ---
 # <a name="tutorial-configure-rollbar-for-automatic-user-provisioning"></a>자습서: 자동 사용자 프로 비전을 위한 Rollbar 구성
 
@@ -66,7 +62,7 @@ Azure AD를 사용 하 여 자동 사용자 프로 비전을 위해 Rollbar를 �
     ![Rollbar 액세스 토큰](media/rollbar-provisioning-tutorial/token.png)
 
 
-## <a name="step-3-add-rollbar-from-the-azure-ad-application-gallery"></a>3단계: Azure AD 응용 프로그램 갤러리에서 Rollbar 추가
+## <a name="step-3-add-rollbar-from-the-azure-ad-application-gallery"></a>3단계. Azure AD 응용 프로그램 갤러리에서 Rollbar 추가
 
 Azure AD 응용 프로그램 갤러리에서 Rollbar를 추가 하 여 Rollbar에 대 한 프로 비전 관리를 시작 합니다. 이전에 SSO에 대해 Rollbar를 설정한 경우 동일한 응용 프로그램을 사용할 수 있습니다. 그러나 처음 통합을 테스트하는 경우 별도의 앱을 만드는 것이 좋습니다. [여기](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)를 클릭하여 갤러리에서 애플리케이션을 추가하는 방법에 대해 자세히 알아봅니다. 
 

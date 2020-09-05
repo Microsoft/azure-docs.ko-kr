@@ -1,18 +1,18 @@
 ---
 title: Windows PowerShell DSC를 사용 하 여 연결 된 컴퓨터 에이전트 설치
-description: 이 문서에서는 Windows PowerShell DSC를 사용 하 여 서버 (미리 보기) 용 Azure Arc를 사용 하 여 Azure에 컴퓨터를 연결 하는 방법에 대해 알아봅니다.
+description: 이 문서에서는 Windows PowerShell DSC를 사용 하 여 Azure Arc 사용 서버 (미리 보기)를 사용 하 여 Azure에 컴퓨터를 연결 하는 방법에 대해 알아봅니다.
 ms.date: 03/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: cdda3e6681d3e6912d031c45f5c6da9e92814e8f
-ms.sourcegitcommit: b8702065338fc1ed81bfed082650b5b58234a702
+ms.openlocfilehash: 25d6e435c261a83bf81c15d5dd445a936d48a08b
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88121003"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88213075"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Windows PowerShell DSC를 사용 하 여 연결 된 컴퓨터 에이전트를 설치 하는 방법
 
-[Windows PowerShell DSC (필요한 상태 구성](/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) )를 사용 하 여 windows 컴퓨터에 대 한 소프트웨어 설치 및 구성을 자동화할 수 있습니다. 이 문서에서는 DSC를 사용 하 여 하이브리드 Windows 컴퓨터에 서버에 연결 된 컴퓨터 에이전트에 대 한 Azure Arc를 설치 하는 방법을 설명 합니다.
+[Windows PowerShell DSC (필요한 상태 구성](/powershell/scripting/dsc/getting-started/winGettingStarted?view=powershell-7) )를 사용 하 여 windows 컴퓨터에 대 한 소프트웨어 설치 및 구성을 자동화할 수 있습니다. 이 문서에서는 DSC를 사용 하 여 하이브리드 Windows 컴퓨터에 Azure Arc 사용 서버 (미리 보기)에 연결 된 컴퓨터 에이전트를 설치 하는 방법을 설명 합니다.
 
 ## <a name="requirements"></a>요구 사항
 
@@ -20,7 +20,7 @@ ms.locfileid: "88121003"
 
 - [AzureConnectedMachineDsc](https://www.powershellgallery.com/packages/AzureConnectedMachineDsc/1.0.1.0) DSC 모듈
 
-- 비 대화형으로 서버에 대 한 Azure Arc에 컴퓨터를 연결 하는 서비스 주체입니다. 서버에 대 한 Arc의 서비스 주체를 아직 만들지 않은 경우 [대규모로 온 보 딩에 대 한 서비스 주체 만들기](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) 섹션의 단계를 따릅니다.
+- 컴퓨터를 비 대화형으로 Azure Arc 사용 서버 (미리 보기)에 연결 하는 서비스 주체입니다. Arc 사용 서버 (미리 보기)에 대 한 서비스 주체를 아직 만들지 않은 경우 [대규모로 온 보 딩에 대 한 서비스 주체 만들기](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) 섹션의 단계를 따릅니다.
 
 ## <a name="install-the-connectedmachine-dsc-module"></a>ConnectedMachine DSC 모듈 설치
 
@@ -76,7 +76,7 @@ Cmdlet을 사용 하 여 구성 문서 (MOF 파일)를 컴퓨터에 적용할 �
 
 3. 그러면 `localhost.mof file` 라는 새 폴더에이 만들어집니다 `C:\dsc` .
 
-에이전트가 설치되고 서버용 Azure Arc(미리 보기)에 연결하도록 구성되면 Azure Portal로 이동하여 서버가 성공적으로 연결되었는지 확인합니다. [Azure Portal](https://aka.ms/hybridmachineportal)에서 머신을 확인합니다.
+에이전트를 설치 하 고 Azure Arc 사용 서버 (미리 보기)에 연결 하도록 구성한 후 Azure Portal으로 이동 하 여 서버가 성공적으로 연결 되었는지 확인 합니다. [Azure Portal](https://aka.ms/hybridmachineportal)에서 해당 머신을 확인합니다.
 
 ## <a name="adding-to-existing-configurations"></a>기존 구성에 추가
 

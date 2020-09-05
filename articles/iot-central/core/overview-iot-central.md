@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: c8cd789b16f839c60249b36f570ca1c945ef4e01
-ms.sourcegitcommit: 46f8457ccb224eb000799ec81ed5b3ea93a6f06f
+ms.openlocfilehash: 1af549feb551eca02bb1ef8df6481eceb959f6d1
+ms.sourcegitcommit: 1a0dfa54116aa036af86bd95dcf322307cfb3f83
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87337180"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88042720"
 ---
 # <a name="what-is-azure-iot-central"></a>Azure IoT Central이란?
 
@@ -34,10 +34,10 @@ IoT Central은 엔터프라이즈급 IoT 솔루션의 개발, 관리 및 유지 
 
 IoT Central 설명서는 IoT Central 애플리케이션과 상호 작용하는 다음 4명의 일반적인 가상 사용자와 관련이 있습니다.
 
-- _솔루션 개발자_는 애플리케이션에 연결하는 디바이스 유형을 정의하고 운영자에 맞게 애플리케이션을 사용자 지정하는 역할을 담당합니다.
-- _운영자_는 애플리케이션에 연결된 디바이스를 관리합니다.
+- _솔루션 개발자_는 애플리케이션에 연결하는 [디바이스 유형을 정의](howto-set-up-template.md)하고 운영자에 맞게 애플리케이션을 사용자 지정하는 역할을 담당합니다.
+- _운영자_는 애플리케이션에 연결된 [디바이스를 관리](howto-manage-devices.md)합니다.
 - _관리자_는 애플리케이션 내 [사용자 및 권한](howto-administer.md) 관리와 같은 관리 작업을 담당합니다.
-- _디바이스 개발자_는 애플리케이션에 연결된 디바이스 또는 IoT Edge 모듈에서 실행되는 코드를 만듭니다.
+- _디바이스 개발자_는 애플리케이션에 연결된 [디바이스에서 실행되는 코드를 만들](concepts-telemetry-properties-commands.md)거나 [IoT Edge 모듈](concepts-iot-edge.md)을 만듭니다.
 
 ## <a name="create-your-iot-central-application"></a>IoT Central 애플리케이션 만들기
 
@@ -55,7 +55,7 @@ IoT Central 설명서는 IoT Central 애플리케이션과 상호 작용하는 �
 - 디바이스에서 설정하고 애플리케이션에서 읽기 전용인 디바이스 속성.
 - 운영자가 설정하는 속성으로, 디바이스의 동작을 결정합니다.
 
-이 디바이스 템플릿에는 다음 항목이 포함되어 있습니다.
+이 [디바이스 템플릿](howto-set-up-template.md)에는 다음이 포함됩니다.
 
 - 디바이스에서 보내는 원격 분석 데이터 및 디바이스에서 보고하는 속성처럼 디바이스에서 구현해야 하는 기능을 설명하는 _디바이스 기능 모델_
 - 디바이스에 저장되지 않는 클라우드 속성
@@ -83,13 +83,13 @@ IoT Central 설명서는 IoT Central 애플리케이션과 상호 작용하는 �
 
 ## <a name="manage-your-devices"></a>디바이스 관리
 
-운영자는 IoT Central 애플리케이션을 사용하여 IoT Central 솔루션의 디바이스를 관리합니다. 운영자는 다음과 같은 작업을 수행합니다.
+운영자는 IoT Central 애플리케이션을 사용하여 IoT Central 솔루션의 [디바이스를 관리](howto-manage-devices.md)합니다. 운영자는 다음과 같은 작업을 수행합니다.
 
 - 애플리케이션에 연결된 디바이스 모니터링.
 - 디바이스 관련 문제 해결 및 수정.
 - 새 디바이스 프로비저닝.
 
-솔루션 개발자는 연결된 디바이스의 스트리밍 데이터에 적용되는 사용자 지정 규칙 및 작업을 정의할 수 있습니다. 운영자는 디바이스 수준에서 이러한 규칙을 사용하거나 사용하지 않도록 설정하여 애플리케이션 내에서 작업을 제어하고 자동화할 수 있습니다.
+솔루션 빌더는 연결된 디바이스의 스트리밍 데이터에 적용되는 [사용자 지정 규칙 및 작업을 정의](howto-configure-rules.md)할 수 있습니다. 운영자는 디바이스 수준에서 이러한 규칙을 사용하거나 사용하지 않도록 설정하여 애플리케이션 내에서 작업을 제어하고 자동화할 수 있습니다.
 
 대규모로 작동하도록 설계된 IoT 솔루션을 사용하는 경우 디바이스 관리에 대한 체계적인 접근 방식이 중요합니다. 디바이스를 클라우드에 연결하는 것만으로는 충분 하지 않고, 디바이스를 계속 연결된 정상 상태로 유지해야 합니다. 운영자는 다음과 같은 IoT Central 기능을 사용하여 애플리케이션의 전체 수명 주기 동안 디바이스를 관리할 수 있습니다.
 

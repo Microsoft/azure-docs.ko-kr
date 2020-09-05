@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: c51e67dcc3536a3083179451743b1c97cf618dae
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: 327505dfbaf5f6f35b065f4f3941053c5114aa33
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88004868"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89019218"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Azure PowerShell을 사용하여 Azure Cache for Redis 관리
 > [!div class="op_single_selector"]
@@ -57,7 +57,7 @@ Microsoft Azure 로그인 대화 상자에서 Azure 계정의 전자 메일 주�
 
 Azure 리소스 관리자에서 Windows PowerShell을 사용하려면 다음이 필요합니다.
 
-* Windows PowerShell, 버전 3.0 또는 4.0. Windows PowerShell 버전을 확인하려면 `$PSVersionTable`을 입력하고 `PSVersion` 값이 3.0 또는 4.0인지를 확인합니다. 호환 버전을 설치하려면 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) 또는 [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)을 참조하세요.
+* Windows PowerShell, 버전 3.0 또는 4.0. Windows PowerShell 버전을 확인하려면 `$PSVersionTable`을 입력하고 `PSVersion` 값이 3.0 또는 4.0인지를 확인합니다. 호환 되는 버전을 설치 하려면 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595)을 참조 하세요.
 
 이 자습서에 나오는 cmdlet에 대한 자세한 도움말을 보려면 Get-Help cmdlet을 사용합니다.
 

@@ -6,13 +6,13 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: 33084d72e26f2926751def686c0a4c1d0485a5c2
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: 4a02fc8a04da658b3b6cbbb41e57114d6c4a0527
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88005125"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89231489"
 ---
 # <a name="azure-security-baseline-for-data-lake-analytics"></a>Data Lake Analytics에 대 한 Azure 보안 기준
 
@@ -334,7 +334,7 @@ Azure AD Privileged Identity Management 및 Azure Resource Manager를 사용 하
 
 ### <a name="39-use-azure-active-directory"></a>3.9: Azure Active Directory 사용
 
-**지침**: Azure Active Directory (Azure AD)를 중앙 인증 및 권한 부여 시스템으로 사용 합니다. Azure AD는 Data Lake Analytics 리소스에 대 한 클라이언트의 액세스를 세부적으로 제어 하기 위해 RBAC (역할 기반 액세스 제어)를 제공 합니다.
+**지침**: Azure Active Directory (Azure AD)를 중앙 인증 및 권한 부여 시스템으로 사용 합니다. Azure RBAC (역할 기반 액세스 제어)는 클라이언트에서 Data Lake Analytics 리소스에 대 한 액세스를 세부적으로 제어할 수 있도록 합니다.
 
 * [Azure AD 인스턴스를 만들고 구성 하는 방법](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
@@ -404,7 +404,7 @@ Azure AD Privileged Identity Management 및 Azure Resource Manager를 사용 하
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2: 중요한 정보를 저장하거나 처리하는 시스템 격리
 
-**지침**: 별도의 구독, 환경, 데이터 민감도 등의 개별 보안 도메인에 대 한 관리 그룹을 사용 하 여 격리를 구현 합니다. 응용 프로그램 및 엔터프라이즈 환경에서 요구 하는 Data Lake Analytics 리소스에 대 한 액세스 수준을 제어 하도록 Data Lake Analytics를 제한할 수 있습니다. 방화벽 규칙이 구성 된 경우 지정 된 네트워크 집합을 통해 데이터를 요청 하는 응용 프로그램만 Data Lake Analytics 리소스에 액세스할 수 있습니다. Azure AD RBAC를 통해 Azure Data Lake Analytics에 대 한 액세스를 제어할 수 있습니다.
+**지침**: 별도의 구독, 환경, 데이터 민감도 등의 개별 보안 도메인에 대 한 관리 그룹을 사용 하 여 격리를 구현 합니다. 응용 프로그램 및 엔터프라이즈 환경에서 요구 하는 Data Lake Analytics 리소스에 대 한 액세스 수준을 제어 하도록 Data Lake Analytics를 제한할 수 있습니다. 방화벽 규칙이 구성 된 경우 지정 된 네트워크 집합을 통해 데이터를 요청 하는 응용 프로그램만 Data Lake Analytics 리소스에 액세스할 수 있습니다. Azure RBAC를 통해 Azure Data Lake Analytics에 대 한 액세스를 제어할 수 있습니다.
 
 * [추가 Azure 구독을 만드는 방법](https://docs.microsoft.com/azure/billing/billing-create-subscription)
 
@@ -456,11 +456,11 @@ Microsoft에서 관리 하는 기본 플랫폼의 경우 Microsoft는 모든 고
 
 **책임**: Customer
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: RBAC (역할 기반 액세스 제어)를 사용 하 여 사용자가 서비스와 상호 작용 하는 방식을 제어 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 사용자가 서비스와 상호 작용 하는 방식을 제어 합니다.
 
-* [역할 기반 Access Control 관리](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-role-based-access-control)
+* [Azure RBAC 관리](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-manage-use-portal#manage-role-based-access-control)
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음
 

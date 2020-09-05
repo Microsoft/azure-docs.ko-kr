@@ -6,15 +6,15 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 05/26/2020
+ms.date: 08/17/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: aaebf849cc69db7c85d1472f4d71774bc599be11
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 8597b3e4ffab44672e88374010fa829211fbc18b
+ms.sourcegitcommit: 54d8052c09e847a6565ec978f352769e8955aead
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83994306"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88507332"
 ---
 # <a name="upload-a-document"></a>문서 업로드
 
@@ -24,7 +24,7 @@ ms.locfileid: "83994306"
 
 ## <a name="how-to-upload-document"></a>문서를 업로드하는 방법
 
-[사용자 지정 번역기](https://portal.customtranslator.azure.ai) 포털에서 "문서" 탭을 클릭 하 여 문서 페이지로 이동 합니다.
+[Custom Translator](https://portal.customtranslator.azure.ai) 포털에서 “문서” 탭을 클릭하여 문서 페이지로 이동합니다.
 
 ![문서 업로드 링크](media/how-to/how-to-upload-1.png)
 
@@ -61,11 +61,11 @@ ms.locfileid: "83994306"
 
     ![문서 업로드 대화 상자](media/how-to/how-to-upload-dialog.png)
 
-3.  이 시점에서는 문서를 처리하고 문장 추출을 시도합니다. "업로드 진행률 보기"를 클릭 하 여 처리할 때 문서 상태를 확인할 수 있습니다.
+3.  이 시점에서는 문서를 처리하고 문장 추출을 시도합니다. “업로드 진행 과정 보기”를 클릭하여 문서가 처리되는 동안 상태를 확인할 수 있습니다.
 
     ![문서 업로드 처리 중 대화 상자](media/how-to/how-to-upload-processing-dialog.png)
 
-4.  이 페이지에는 업로드에 포함된 각 파일의 상태와 오류(있는 경우)가 표시됩니다. 언제 든 지 "기록 업로드" 탭을 클릭 하 여 이전 업로드 상태를 볼 수 있습니다.
+4.  이 페이지에는 업로드에 포함된 각 파일의 상태와 오류(있는 경우)가 표시됩니다. “업로드 기록” 탭을 클릭하여 언제든지 지난 업로드 상태를 볼 수 있습니다.
 
     ![문서 업로드 기록 대화 상자](media/how-to/how-to-upload-document-history.png)
 

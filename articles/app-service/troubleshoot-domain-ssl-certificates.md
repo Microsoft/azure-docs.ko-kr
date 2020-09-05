@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: d61b95c7136a4cbce11789a58d27cc1a164ae374
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1cefb5a7b554b9a477f6a51eab3b22b0e8f55378
+ms.sourcegitcommit: 648c8d250106a5fca9076a46581f3105c23d7265
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80668018"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88958442"
 ---
 # <a name="troubleshoot-domain-and-tlsssl-certificate-problems-in-azure-app-service"></a>Azure App Service의 도메인 및 TLS/SSL 인증서 문제 해결
 
@@ -131,7 +131,7 @@ Azure Portal에서 [Azure App Service 인증서](./configure-ssl-certificate.md#
 #### <a name="solution"></a>솔루션
 
 - 구독 관리자에게 문의하여 앱에 호스트 이름을 추가할 권한을 갖고 있는지 확인합니다.
-- 더 많은 하위 도메인이 필요한 경우 도메인 호스팅을 Azure DNS (Domain Name Service)로 변경 하는 것이 좋습니다. Azure DNS를 사용하여 앱에 호스트 이름 500개를 추가할 수 있습니다. 자세한 내용은 [하위 도메인 추가](https://blogs.msdn.microsoft.com/waws/2014/10/01/mapping-a-custom-subdomain-to-an-azure-website/)를 참조하세요.
+- 더 많은 하위 도메인이 필요한 경우 도메인 호스팅을 Azure DNS (Domain Name Service)로 변경 하는 것이 좋습니다. Azure DNS를 사용하여 앱에 호스트 이름 500개를 추가할 수 있습니다. 자세한 내용은 [하위 도메인 추가](/archive/blogs/waws/mapping-a-custom-subdomain-to-an-azure-website)를 참조하세요.
 
 ### <a name="dns-cant-be-resolved"></a>DNS를 확인할 수 없음
 
@@ -310,7 +310,7 @@ Azure Portal를 통해 도메인을 구입 하는 경우 추가 비용 없이 �
 
 **한 구독에서 다른 구독으로 도메인을 전송할 수 있나요?**
 
-[AzResource](https://docs.microsoft.com/powershell/module/az.Resources/Move-azResource) PowerShell cmdlet을 사용 하 여 도메인을 다른 구독/리소스 그룹으로 이동할 수 있습니다.
+[AzResource](/powershell/module/az.Resources/Move-azResource) PowerShell cmdlet을 사용 하 여 도메인을 다른 구독/리소스 그룹으로 이동할 수 있습니다.
 
 **현재 Azure App Service 앱이 없는 경우 내 사용자 지정 도메인을 관리 하려면 어떻게 해야 하나요?**
 

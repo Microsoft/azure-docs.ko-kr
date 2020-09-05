@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 7/15/2020
-ms.openlocfilehash: 61da81dd96078e0577e00be37fe27211a5b62154
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 840e7769e8a242314b10562684c942a2468ea5ad
+ms.sourcegitcommit: e0785ea4f2926f944ff4d65a96cee05b6dcdb792
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87084422"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88705149"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-in-the-azure-portal"></a>빠른 시작: Azure Portal에서 Azure Database for MySQL 서버 만들기
 
@@ -84,7 +84,7 @@ Resource group | *myresourcegroup* | 새 또는 기존 리소스 그룹 이름�
 
    >[!div class="mx-imgBorder"]
    > ![포털 전체 보기 Cloud Shell](./media/quickstart-create-mysql-server-database-using-azure-portal/use-in-cloud-shell.png)
-2. Azure Cloud Shell 터미널에서 이 명령을 실행합니다. 값을 실제 서버 이름 및 관리 사용자 로그인 이름으로 바꿉니다. 관리자 사용자 이름에는 아래와 같이 Azure Database for MySQL에 대해 '@<servername>이 필요합니다.  
+2. Azure Cloud Shell 터미널에서 이 명령을 실행합니다. 값을 실제 서버 이름 및 관리 사용자 로그인 이름으로 바꿉니다. 관리자 사용자 이름에는 아래와 같이 Azure Database for MySQL에 대해 '@\<servername>'이 필요합니다.  
 
   ```azurecli-interactive
   mysql --host=mydemoserver.mysql.database.azure.com --user=myadmin@mydemoserver -p 
@@ -100,7 +100,7 @@ Resource group | *myresourcegroup* | 새 또는 기존 리소스 그룹 이름�
   Type "az" to use Azure CLI
   Type "help" to learn about Cloud Shell
 
-  sunitha@Azure:~$mysql -h mydemoserver.mysql.database.azure.com -u admin@wpapp-mysqldbserver -p
+  user@Azure:~$mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
   Enter password:
   Welcome to the MySQL monitor.  Commands end with ; or \g.
   Your MySQL connection id is 64796

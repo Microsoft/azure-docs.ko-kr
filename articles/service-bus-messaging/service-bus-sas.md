@@ -3,12 +3,13 @@ title: 공유 액세스 서명을 사용 하 여 액세스 제어 Azure Service 
 description: 공유 액세스 서명을 사용한 Azure Service Bus 액세스 제어 개요, Azure Service Bus를 사용한 SAS 권한 부여 상세 정보
 ms.topic: article
 ms.date: 07/30/2020
-ms.openlocfilehash: 8e48858fd76bcf4667cfff1237f49597a477b3e8
-ms.sourcegitcommit: d8b8768d62672e9c287a04f2578383d0eb857950
+ms.custom: devx-track-csharp
+ms.openlocfilehash: fb90b2ae290752753b58b5e96c6c8a8b23f4c168
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88066188"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89012078"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>공유 액세스 서명을 사용한 Service Bus 액세스 제어
 
@@ -19,7 +20,7 @@ SAS는 권한 부여 규칙에 따라 Service Bus에 대한 액세스를 보호�
 > [!NOTE]
 > Azure Service Bus는 Azure Active Directory (Azure AD)를 사용 하 여 Service Bus 네임 스페이스 및 해당 엔터티에 대 한 액세스 권한을 부여 합니다. Azure AD에서 반환 된 OAuth 2.0 토큰을 사용 하는 사용자 또는 응용 프로그램에 대 한 권한 부여는 SAS (공유 액세스 서명)를 통해 뛰어난 보안과 사용 편의성을 제공 합니다. Azure AD를 사용 하는 경우 코드에 토큰을 저장 하 고 잠재적인 보안 취약점을 초래할 필요가 없습니다.
 >
-> 가능 하면 Azure Service Bus 응용 프로그램에서 Azure AD를 사용 하는 것이 좋습니다. 자세한 내용은 다음 항목을 참조하세요.
+> 가능 하면 Azure Service Bus 응용 프로그램에서 Azure AD를 사용 하는 것이 좋습니다. 자세한 내용은 다음 아티클을 참조하세요.
 > - [Azure Active Directory를 사용 하 여 응용 프로그램을 인증 하 고 권한을 부여 하 여 Azure Service Bus 엔터티에 액세스](authenticate-application.md)합니다.
 > - [Azure Service Bus 리소스에 액세스 하기 위해 Azure Active Directory를 사용 하 여 관리 id 인증](service-bus-managed-service-identity.md)
 
@@ -67,9 +68,9 @@ Service Bus 네임스페이스, 큐 또는 항목에 대한 [SharedAccessAuthori
 SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-encoded-resourceURI>
 ```
 
-* **`se`**-토큰 만료 인스턴트. 토큰이 만료될 때 1970년 1월 1일(UNIX Epoch)의 Epoch `00:00:00 UTC` 이후의 초를 반영하는 정수
-* **`skn`**-권한 부여 규칙의 이름입니다.
-* **`sr`**-액세스 되는 리소스의 URI입니다.
+* **`se`** -토큰 만료 인스턴트. 토큰이 만료될 때 1970년 1월 1일(UNIX Epoch)의 Epoch `00:00:00 UTC` 이후의 초를 반영하는 정수
+* **`skn`** -권한 부여 규칙의 이름입니다.
+* **`sr`** -액세스 되는 리소스의 URI입니다.
 * **`sig`** 서명과.
 
 는 `signature-string` 리소스 URI (이전 섹션에서 설명 하는**범위** )에 대해 계산 된 SHA-256 해시와 토큰 만료 인스턴트의 문자열 표현을 LF로 구분 하 여 계산 합니다.
@@ -254,7 +255,7 @@ AMQP 메시지는 간단한 메시지보다 정보가 많고 속성이 많습니
 
 다음 테이블에서는 Service Bus 리소스의 다양한 작업에 필요한 액세스 권한을 보여줍니다.
 
-| 연산 | 필요한 클레임 | 클레임 범위 |
+| 작업(Operation) | 필요한 클레임 | 클레임 범위 |
 | --- | --- | --- |
 | **Namespace** | | |
 | 네임스페이스에서 권한 부여 규칙 구성 |관리 |네임스페이스 주소 |

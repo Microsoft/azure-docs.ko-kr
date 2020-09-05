@@ -1,6 +1,6 @@
 ---
 title: Azure Data Box Heavy 반송 자습서 | Microsoft Docs
-description: Azure Data Box Heavy를 Microsoft에 반송하는 방법 알아보기
+description: 이 자습서에서는 배송 준비, Data Box Heavy 배송, 데이터 업로드 확인 및 데이터 지우기를 포함하여 Azure Data Box Heavy를 반환하는 방법에 대해 알아봅니다.
 services: databox
 author: alkohli
 ms.service: databox
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 3aedfed980a61ea6718a02a188ff88d4941026d9
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: fa4df7119763e835cf62e67512105b748c7e2265
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83199168"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87921013"
 ---
 ::: zone target = "docs"
 

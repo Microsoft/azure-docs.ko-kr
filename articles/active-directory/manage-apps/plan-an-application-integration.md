@@ -15,12 +15,12 @@ ms.date: 07/16/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d49c23e5968b0fe1b2d4838978fe1b23931e5e9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cc691148723e610f0885f7c20fd8684f11a81dc0
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763094"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182329"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>애플리케이션과 Azure Active Directory 통합 시작 가이드
 
@@ -45,7 +45,7 @@ ms.locfileid: "84763094"
   * Azure AD
   * 사용자가 소유한 별도 애플리케이션 데이터베이스 내에서
   * 허용되지 않은 애플리케이션에서
-  * 위의 모든 항목
+  * 위 항목 모두
 * 개별 사용자는 현재 어떤 사용 권한 및 역할 할당을 가지고 있습니까? 액세스를 검토해야 하거나 사용자 액세스 및 역할 할당이 적절하다고 생각합니까?
 * 그룹은 온-프레미스 Active Directory 내에 만들어 집니까?
   * 그룹을 어떻게 구성합니까?
@@ -54,7 +54,7 @@ ms.locfileid: "84763094"
 * 통합하기 전에 사용자/그룹 데이터베이스를 정리해야 합니까?  (매우 중요한 질문입니다. 쓰레기를 넣고 쓰레기를 얻는 현상.)
 
 ### <a name="access-management-inventory"></a>액세스 관리 인벤토리
-* 애플리케이션에 대한 사용자 액세스를 현재 어떻게 관리합니까? 변경해야 합니까?  예를 들어 [RBAC](../../role-based-access-control/role-assignments-portal.md) 와 같이 액세스를 관리하는 다른 방법을 고려한 적이 있습니까?
+* 애플리케이션에 대한 사용자 액세스를 현재 어떻게 관리합니까? 변경해야 합니까?  예를 들어 [AZURE RBAC](../../role-based-access-control/role-assignments-portal.md) 를 사용 하는 등의 다른 방법으로 액세스를 관리할 수 있나요?
 * 누구에게 어떤 액세스가 필요합니까?
 
 아마 이러한 모든 질문에 대한 답변은 없겠지만 괜찮습니다.  이 가이드는 이러한 일부 질문에 대답하고 합리적인 결정을 내릴 수 있습니다.

@@ -12,7 +12,7 @@
     - name: REST API
       expanded: true
       items:
-        - name: 'C# 사용'
+        - name: C# 사용
           href: quickstarts/csharp.md
         - name: Java 사용
           href: quickstarts/java.md
@@ -83,7 +83,7 @@
     - name: 언어 지원
       href: language-support.md
     - name: 사용 가능한 액세스 키 가져오기
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api'
+      href: 'https://azure.microsoft.com/free/cognitive-services'
     - name: 사용해 보세요.
       href: 'https://aka.ms/bingvisualsearchtryforfree'
     - name: 스택 오버플로

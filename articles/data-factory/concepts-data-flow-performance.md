@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 07/27/2020
-ms.openlocfilehash: 55483b93b770687703b381366d48edbc7d48f26e
-ms.sourcegitcommit: 5f7b75e32222fe20ac68a053d141a0adbd16b347
+ms.date: 08/12/2020
+ms.openlocfilehash: cf91dd0b7f16bf0dcd3d84da1b942b2353ec5bd0
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87475341"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88212041"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>매핑 데이터 흐름 성능 및 조정 가이드
 
@@ -87,7 +87,7 @@ Azure Data Factory는 유사한 값을 가진 행이 동일한 파티션에 포�
 > [!TIP]
 > 데이터를 reshuffles 하는 파티션 구성표를 수동으로 설정 하 고 Spark 최적화 프로그램의 이점을 오프셋할 수 있습니다. 필요한 경우를 제외 하 고는 수동으로 분할을 설정 하지 않는 것이 가장 좋습니다.
 
-## <a name="optimizing-the-azure-integration-runtime"></a><a name="ir"></a>Azure Integration Runtime 최적화
+## <a name="optimizing-the-azure-integration-runtime"></a><a name="ir"></a> Azure Integration Runtime 최적화
 
 데이터 흐름은 런타임에 분리 된 Spark 클러스터에서 실행 됩니다. 사용 되는 클러스터에 대 한 구성은 활동의 IR (통합 런타임)에 정의 되어 있습니다. 통합 런타임을 정의할 때 세 가지 성능 고려 사항이 있습니다. 클러스터 유형, 클러스터 크기 및 ttl (time to live)이 있습니다.
 
@@ -273,6 +273,29 @@ SSIS와 같은 도구의 병합 조인과 달리, 조인 변환은 필수 병합
 
 > [!TIP]
 > 데이터를 다시 분할 하지만 데이터를 재조정 하는 다운스트림 변환이 있는 경우 조인 키로 사용 되는 열에 대해 해시 분할을 사용 합니다.
+
+## <a name="using-data-flows-in-pipelines"></a>파이프라인에서 데이터 흐름 사용 
+
+여러 데이터 흐름을 포함 하는 복잡 한 파이프라인을 빌드할 때 논리 흐름은 타이밍과 비용에 큰 영향을 줄 수 있습니다. 이 섹션에서는 다양 한 아키텍처 전략의 영향에 대해 설명 합니다.
+
+### <a name="executing-data-flows-in-parallel"></a>병렬로 데이터 흐름 실행
+
+동시에 여러 데이터 흐름을 실행 하는 경우 ADF는 각 작업에 대해 별도의 Spark 클러스터를 회전 합니다. 이렇게 하면 각 작업을 격리 하 여 병렬로 실행할 수 있지만 여러 클러스터가 동시에 실행 됩니다.
+
+데이터 흐름이 병렬로 실행 되는 경우 사용 되지 않는 여러 웜 풀이 발생 하므로 Azure IR time to live 속성을 사용 하지 않는 것이 좋습니다.
+
+> [!TIP]
+> 각 활동에 대해에서 동일한 데이터 흐름을 여러 번 실행 하는 대신 data lake의 데이터를 준비 하 고 와일드 카드 경로를 사용 하 여 단일 데이터 흐름에서 데이터를 처리 합니다.
+
+### <a name="execute-data-flows-sequentially"></a>순차적으로 데이터 흐름 실행
+
+데이터 흐름 작업을 순서 대로 실행 하는 경우 Azure IR 구성에서 TTL을 설정 하는 것이 좋습니다. ADF는 계산 리소스를 다시 사용 하 여 더 빠른 클러스터 시작 시간을 생성 합니다. 각 활동은 계속 격리 되어 각 실행에 대 한 새 Spark 컨텍스트를 수신 합니다.
+
+작업을 순차적으로 실행 하는 것은 종단 간 실행에 가장 긴 시간이 걸리지만 논리적 작업을 명확 하 게 분리 합니다.
+
+### <a name="overloading-a-single-data-flow"></a>단일 데이터 흐름 오버 로드
+
+모든 논리를 단일 데이터 흐름 내에 배치 하면 ADF는 단일 Spark 인스턴스에서 전체 작업을 실행 합니다. 이는 비용을 절감 하는 방법 처럼 보일 수도 있지만, 서로 다른 논리적 흐름을 혼합 하 여 모니터링 및 디버깅 하기 어려울 수 있습니다. 한 구성 요소에 오류가 발생 하는 경우 작업의 다른 모든 부분도 실패 합니다. Azure Data Factory 팀에서는 비즈니스 논리의 독립적인 흐름에 따라 데이터 흐름을 구성 하는 것이 좋습니다. 데이터 흐름이 너무 커지면 분리 구성 요소로 분할 하면 모니터링 및 디버깅이 더 쉬워집니다. 데이터 흐름의 변환 수에 대 한 하드 제한은 없지만 너무 많으면 작업이 복잡해 집니다.
 
 ## <a name="next-steps"></a>다음 단계
 

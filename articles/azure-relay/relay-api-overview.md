@@ -2,13 +2,14 @@
 title: Azure Relay API 개요 | Microsoft Docs
 description: 이 문서에서는 사용 가능한 Azure Relay Api (.NET Standard, .NET Framework, Node.js 등)의 개요를 제공 합니다.
 ms.topic: article
+ms.custom: devx-track-dotnet
 ms.date: 06/23/2020
-ms.openlocfilehash: 15e13ccac9b05e6e1b0730b38b372dec20c69dda
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 98bbb1ecc7e870ff9b7687284e7087d44375d275
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85316953"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935724"
 ---
 # <a name="available-relay-apis"></a>사용 가능한 Relay API
 
@@ -21,8 +22,8 @@ ms.locfileid: "85316953"
 | 언어/플랫폼 | 사용 가능한 기능 | 클라이언트 패키지 | 리포지토리 |
 | --- | --- | --- | --- |
 | .NET Standard | 하이브리드 연결 | [Microsoft.Azure.Relay](https://www.nuget.org/packages/Microsoft.Azure.Relay/) | [GitHub](https://github.com/azure/azure-relay-dotnet) |
-| .NET Framework | WCF 릴레이 | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | 해당 없음 |
-| 노드 | 하이브리드 연결 | [Websocket`hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Websocket`hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP 요청:`hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
+| .NET Framework | WCF 릴레이 | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | N/A |
+| 노드 | 하이브리드 연결 | [Websocket `hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Websocket `hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP 요청: `hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
 
 ### <a name="additional-information"></a>추가 정보
 
@@ -47,5 +48,5 @@ ms.locfileid: "85316953"
 ## <a name="next-steps"></a>다음 단계
 
 Azure Relay에 대한 자세한 내용은 다음 링크를 방문하세요.
-* [Azure 릴레이란?](relay-what-is-it.md)
+* [Azure Relay란?](relay-what-is-it.md)
 * [릴레이 FAQ](relay-faq.md)

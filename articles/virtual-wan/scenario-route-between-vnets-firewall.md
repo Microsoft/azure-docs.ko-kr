@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f48b30e0e4e76a4cf4c855008776f6b7541ad5a2
-ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
+ms.openlocfilehash: 7a344b9c1383976cfe1b7507c120e19221f3555f
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87850657"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88589353"
 ---
 # <a name="scenario-azure-firewall---custom"></a>시나리오: Azure 방화벽-사용자 지정
 
@@ -26,7 +26,7 @@ ms.locfileid: "87850657"
 
 **연결 매트릭스**
 
-| 시작           | 대상:      | *Vnet*      | *분기*    | *인터넷*   |
+| 보낸 사람           | 대상:      | *Vnet*      | *분기*    | *인터넷*   |
 |---             |---       |---           |---            |---           |
 | **Vnet**      |   &#8594;|     X        |     AzFW      |     AzFW     |
 | **분기**   |   &#8594;|    AzFW      |       X       |       X      |
@@ -40,6 +40,8 @@ ms.locfileid: "87850657"
   * 연결 된 경로 테이블: **기본값**
   * 경로 테이블에 전파: **기본값**
 
+> [!NOTE]
+> 각 지역에서 하나의 단일 보안 가상 허브를 사용 하 여 별도의 가상 WAN 인스턴스를 만든 다음, 사이트 간 VPN을 통해 각 가상 WAN을 서로 연결할 수 있습니다.
 
 가상 허브 라우팅에 대 한 자세한 내용은 [가상 허브 라우팅 정보](about-virtual-hub-routing.md)를 참조 하세요.
 

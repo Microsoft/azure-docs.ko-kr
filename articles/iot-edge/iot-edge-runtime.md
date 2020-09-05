@@ -8,15 +8,13 @@ ms.date: 11/01/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.custom:
-- amqp
-- mqtt
-ms.openlocfilehash: ef31bd74c73aa081c32031b71392f69a1ca14f75
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: amqp, mqtt, devx-track-csharp
+ms.openlocfilehash: 25493312854bbd495dce01f8f107b3e3320cb92c
+ms.sourcegitcommit: 419cf179f9597936378ed5098ef77437dbf16295
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81730899"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89016957"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Azure IoT Edge 런타임 및 해당 아키텍처 이해
 
@@ -91,23 +89,23 @@ IoT Edge 에이전트는 Azure IoT Edge 런타임을 구성하는 다른 모듈�
 * **설정 createOptions** – 모듈의 컨테이너를 시작할 때 Moby 컨테이너 데몬에 직접 전달 되는 문자열입니다. 이 속성에 옵션을 추가 하면 포트 전달 또는 모듈의 컨테이너에 볼륨 탑재와 같은 고급 구성을 사용할 수 있습니다.  
 * **status** – IoT Edge 에이전트에서 모듈을 배치하는 상태입니다. 일반적으로이 값은 대부분의 사용자가 장치에서 모든 모듈을 즉시 시작 하도록 하는 대부분의 IoT Edge 사용자가 *실행 중* 으로 설정 됩니다. 그러나 중지할 모듈의 초기 상태를 지정하고, 나중에 IoT Edge 에이전트에 모듈 시작을 알릴 때까지 기다릴 수 있습니다.IoT Edge 에이전트는 각 모듈의 상태를 reported 속성의 클라우드로 다시 보고합니다. desired 속성과 reported 속성의 차이는 표시기 또는 오작동 디바이스입니다. 지원되는 상태는 다음과 같습니다.
 
-  * 다운로드 중
+  * 다운로드
   * 실행 중
-  * 비정상
+  * Unhealthy
   * 실패
   * 중지됨
 
 * **restartPolicy** – IoT Edge 에이전트에서 모듈을 다시 시작하는 방법입니다. 가능한 값은 다음과 같습니다.
   
-  * `never`– IoT Edge 에이전트가 모듈을 다시 시작 하지 않습니다.
-  * `on-failure`-모듈이 충돌 하면 IoT Edge 에이전트가 다시 시작 합니다. 모듈이 완전히 종료 되 면 IoT Edge 에이전트가 다시 시작 되지 않습니다.
-  * `on-unhealthy`-모듈이 충돌 하거나 비정상으로 간주 되는 경우 IoT Edge 에이전트가 다시 시작 합니다.
-  * `always`-모듈의 작동이 중단 되는 경우는 비정상으로 간주 되거나 어떤 식으로든 종료 되 면 IoT Edge 에이전트가 다시 시작 합니다.
+  * `never` – IoT Edge 에이전트가 모듈을 다시 시작 하지 않습니다.
+  * `on-failure` -모듈이 충돌 하면 IoT Edge 에이전트가 다시 시작 합니다. 모듈이 완전히 종료 되 면 IoT Edge 에이전트가 다시 시작 되지 않습니다.
+  * `on-unhealthy` -모듈이 충돌 하거나 비정상으로 간주 되는 경우 IoT Edge 에이전트가 다시 시작 합니다.
+  * `always` -모듈의 작동이 중단 되는 경우는 비정상으로 간주 되거나 어떤 식으로든 종료 되 면 IoT Edge 에이전트가 다시 시작 합니다.
 
 * **Imagepullpolicy** -IoT Edge 에이전트가 모듈의 최신 이미지를 자동으로 가져오려고 하는지 여부를 지정 합니다. 값을 지정 하지 않는 경우 기본값은 *onCreate*입니다. 가능한 값은 다음과 같습니다.
 
-  * `on-create`-모듈을 시작 하거나 새 배포 매니페스트에 따라 모듈을 업데이트할 때 IoT Edge 에이전트가 컨테이너 레지스트리에서 모듈 이미지를 가져오려고 시도 합니다.
-  * `never`-IoT Edge 에이전트는 컨테이너 레지스트리에서 모듈 이미지를 가져오려고 시도 하지 않습니다. 이 구성을 사용 하 여 장치에 모듈 이미지를 가져오고 이미지 업데이트를 관리 하는 일을 담당 합니다.
+  * `on-create` -모듈을 시작 하거나 새 배포 매니페스트에 따라 모듈을 업데이트할 때 IoT Edge 에이전트가 컨테이너 레지스트리에서 모듈 이미지를 가져오려고 시도 합니다.
+  * `never` -IoT Edge 에이전트는 컨테이너 레지스트리에서 모듈 이미지를 가져오려고 시도 하지 않습니다. 이 구성을 사용 하 여 장치에 모듈 이미지를 가져오고 이미지 업데이트를 관리 하는 일을 담당 합니다.
 
 IoT Edge 에이전트는 IoT Hub에 런타임 응답을 보냅니다. 가능한 응답 목록은 다음과 같습니다.
   

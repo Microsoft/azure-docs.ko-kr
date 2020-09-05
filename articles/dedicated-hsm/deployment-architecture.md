@@ -9,15 +9,15 @@ ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 89e3bf95a6b048e5e97cfb151ef9302b70eac1c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d0989c31611b2f42c0219324fa517adc5c216c6c
+ms.sourcegitcommit: 02ca0f340a44b7e18acca1351c8e81f3cca4a370
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77048560"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88586608"
 ---
 # <a name="azure-dedicated-hsm-deployment-architecture"></a>Azure Dedicated HSM 배포 아키텍처
 
@@ -33,7 +33,7 @@ HSM은 Microsoft의 데이터 센터에 분산되며 고가용성 솔루션의 �
 * 미국 동부 2
 * 미국 서부
 * 미국 중남부
-* 동남아시아
+* 동남 아시아
 * 동아시아
 * 인도 중부
 * 인도 남부

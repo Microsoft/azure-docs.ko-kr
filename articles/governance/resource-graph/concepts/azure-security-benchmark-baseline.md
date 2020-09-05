@@ -6,13 +6,13 @@ ms.service: resource-graph
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: mbaldwin
-ms.custom: security-benchmark
-ms.openlocfilehash: d2ef76a054642807f0d72a758ae084a19557caf8
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.custom: subject-security-benchmark
+ms.openlocfilehash: a85fdf1e1e27b1ce5abb0c7890b717d48ba3bd3f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88009004"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89230452"
 ---
 # <a name="azure-resource-graph-security-baseline-for-azure-security-benchmark"></a>Azure Security 벤치 마크에 대 한 azure 리소스 그래프 보안 기준
 
@@ -41,13 +41,13 @@ ms.locfileid: "88009004"
 
 *자세한 내용은 [보안 제어: 데이터 보호](../../../security/benchmarks/security-control-data-protection.md)를 참조하세요.*
 
-### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4.6: 역할 기반 액세스 제어를 사용 하 여 리소스에 대 한 액세스를 제어 합니다.
+### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6: Azure RBAC를 사용하여 리소스에 대한 액세스 제어
 
-**지침**: RBAC (역할 기반 액세스 제어)를 사용 하 여 데이터 및 리소스에 대 한 액세스를 제어 합니다. Azure 리소스 그래프를 사용 하려면 쿼리 하려는 리소스에 대 한 적절 한 액세스 권한도 있어야 합니다. 이 액세스는 읽기 전용으로 한정 되어야 하며 필요한 담당자 에게만 부여 되어야 합니다.
+**지침**: azure RBAC (역할 기반 액세스 제어)를 사용 하 여 데이터 및 리소스에 대 한 액세스를 제어 합니다. Azure 리소스 그래프를 사용 하려면 쿼리 하려는 리소스에 대 한 적절 한 액세스 권한도 있어야 합니다. 이 액세스는 읽기 전용으로 한정 되어야 하며 필요한 담당자 에게만 부여 되어야 합니다.
 
 * [Azure Resource Graph의 권한](../overview.md#permissions-in-azure-resource-graph)
 
-* [Azure에서 RBAC를 구성 하는 방법](../../../role-based-access-control/role-assignments-rest.md)
+* [Azure RBAC를 구성 하는 방법](../../../role-based-access-control/role-assignments-rest.md)
 
 
 **Azure Security Center 모니터링**: 현재 사용할 수 없음

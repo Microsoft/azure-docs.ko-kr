@@ -8,5 +8,5 @@
   href: configure-model-conversion.md
 - name: 모델 변환 중 재질 재정의
   href: override-materials.md
-- name: 변환된 모델에 대한 정보 가져오기
+- name: 변환 정보 가져오기
   href: get-information.md

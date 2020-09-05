@@ -10,15 +10,19 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 11/21/2019
-ms.openlocfilehash: 680f8394ad1d10a564033ae5a2b9f59063589f73
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.openlocfilehash: d89bc33b0ddd0793a3c55dbd64bef9678bd723e7
+ms.sourcegitcommit: 4f1c7df04a03856a756856a75e033d90757bb635
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87532529"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87920146"
 ---
 # <a name="tutorial-configure-transactional-replication-between-azure-sql-managed-instance-and-sql-server"></a>자습서: Azure SQL Managed Instance와 SQL Server 간의 트랜잭션 복제 구성
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
+
+트랜잭션 복제를 사용하면 한 데이터베이스의 SQL Server 또는 [Azure SQL Managed Instance](sql-managed-instance-paas-overview.md)에서 호스팅되는 다른 데이터베이스로 데이터를 복제할 수 있습니다. SQL Managed Instance는 복제 토폴로지의 게시자, 배포자 또는 구독자일 수 있습니다. 사용 가능한 구성에 대해서는 [트랜잭션 복제 구성](replication-transactional-overview.md#common-configurations)을 참조하세요. 
+
+트랜잭션 복제는 현재 SQL Managed Instance에 대한 공개 미리 보기로 제공됩니다. 
 
 이 자습서에서는 다음 작업 방법을 알아봅니다.
 
@@ -30,11 +34,11 @@ ms.locfileid: "87532529"
 
 ![관리되는 인스턴스 구독자, 관리되는 인스턴스 배포자 및 SQL Server 구독자 간 복제](./media/replication-two-instances-and-sql-server-configure-tutorial/sqlmi-to-sql-replication.png)
 
-이 자습서는 숙련된 사용자를 대상으로 하며, 사용자가 Azure 내에서 관리형 인스턴스와 SQL Server VM 모두를 배포하고 연결하는 데 익숙하다고 가정합니다. 따라서 이 자습서의 특정 단계는 얼버무리고 넘어갑니다.
+이 자습서는 숙련된 사용자를 대상으로 하며, 사용자가 Azure 내에서 관리형 인스턴스와 SQL Server VM 모두를 배포하고 연결하는 데 익숙하다고 가정합니다. 
 
-자세히 알아보려면 [Azure SQL Managed Instance 개요](sql-managed-instance-paas-overview.md) 및 [SQL 트랜잭션 복제](replication-transactional-overview.md) 문서를 참조하세요.
 
-관리형 인스턴스 게시자와 관리형 인스턴스 구독자 간의 복제를 구성하려면 [두 관리형 인스턴스 간의 트랜잭션 복제 구성](replication-between-two-instances-configure-tutorial.md)을 참조하세요.
+> [!NOTE]
+> 이 문서에서는 Azure SQL Managed Instance에서 [트랜잭션 복제](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication)를 사용하는 방법을 설명합니다. 개별 인스턴스의 전체 읽기 가능 복제본을 만들 수 있는 Azure SQL Managed Instance 기능인 [장애 조치(failover) 그룹](https://docs.microsoft.com/azure/sql-database/sql-database-auto-failover-group)과는 관련이 없습니다. [장애 조치(failover) 그룹을 사용하여 트랜잭션 복제](replication-transactional-overview.md#with-failover-groups)를 구성할 때 추가 고려 사항이 있습니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 

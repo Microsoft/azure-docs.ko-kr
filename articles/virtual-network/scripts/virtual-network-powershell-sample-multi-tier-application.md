@@ -15,12 +15,13 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 12/13/2018
 ms.author: kumud
-ms.openlocfilehash: 773a7d6b12cc515a7525808068080f46d9f79799
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 1c592681cc2aeb900a5b7e370277aa0d148bb37e
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87068698"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89078489"
 ---
 # <a name="create-a-network-for-multi-tier-applications-script-sample"></a>다중 계층 애플리케이션을 위한 네트워크 만들기 스크립트 샘플
 

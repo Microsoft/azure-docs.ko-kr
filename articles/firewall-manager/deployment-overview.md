@@ -4,15 +4,15 @@ description: Azure Firewall Manager에 필요한 상위 수준 배포 단계에 
 author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
-ms.topic: overview
-ms.date: 07/28/2020
+ms.topic: conceptual
+ms.date: 08/28/2020
 ms.author: victorh
-ms.openlocfilehash: 748adbcc719df2cdcf734f308bd4b083e9ca6ec0
-ms.sourcegitcommit: f353fe5acd9698aa31631f38dd32790d889b4dbb
+ms.openlocfilehash: ceb6e84b31067f7289b9e003a4fb273ce717de33
+ms.sourcegitcommit: 656c0c38cf550327a9ee10cc936029378bc7b5a2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87372368"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89079101"
 ---
 # <a name="azure-firewall-manager-deployment-overview"></a>Azure Firewall Manager 배포 개요
 
@@ -65,6 +65,8 @@ Azure Firewall Manager를 배포하는 방법은 여러 가지가 있지만 다�
 > - 지역별 가상 WAN당 허브가 두 개 이상 있을 수 없습니다. 그러나 지역에서 가상 WAN을 더 추가할 수 있습니다.
 > - vWAN에서 허브의 IP 공간이 겹쳐서도 안 됩니다.
 > - 허브 VNet 연결은 허브와 같은 지역에 있어야 합니다.
+>
+> 알려진 문제에 대한 자세한 내용은 [Azure Firewall Manager란?](overview.md#known-issues)을 참조하세요.
 
 ## <a name="convert-virtual-networks"></a>가상 네트워크 변환
 

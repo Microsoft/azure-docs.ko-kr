@@ -2,13 +2,14 @@
 title: 을 사용 하 여 Azure Functions 개발 Visual Studio Code
 description: Visual Studio Code에 대 한 Azure Functions 확장을 사용 하 여 Azure Functions를 개발 하 고 테스트 하는 방법을 알아봅니다.
 ms.topic: conceptual
+ms.custom: devx-track-csharp
 ms.date: 08/21/2019
-ms.openlocfilehash: d8ccb93013b16fc919630251aa02edf48e30ce6d
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.openlocfilehash: 610c80dc5552eae4f2ad8442fa11b85f2eab35eb
+ms.sourcegitcommit: 4913da04fd0f3cf7710ec08d0c1867b62c2effe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87083126"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88206752"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>을 사용 하 여 Azure Functions 개발 Visual Studio Code
 
@@ -38,7 +39,7 @@ Azure Functions 확장 프로그램은 다음과 같은 이점을 제공 합니�
 > [!IMPORTANT]
 > 단일 함수 앱에 대 한 로컬 개발 및 포털 개발을 혼합 하지 마세요. 로컬 프로젝트에서 함수 앱에 게시할 때 배포 프로세스는 포털에서 개발한 모든 기능을 덮어씁니다.
 
-## <a name="prerequisites"></a>필수 조건
+## <a name="prerequisites"></a>필수 구성 요소
 
 Visual Studio Code 용 [Azure Functions 확장][Azure Functions 확장]을 설치 하 고 실행 하기 전에 다음 요구 사항을 충족 해야 합니다.
 
@@ -180,13 +181,13 @@ using Microsoft.Azure.WebJobs.Extensions.Storage;
 
 # <a name="javascript"></a>[JavaScript](#tab/nodejs)
 
-Visual Studio Code를 사용 하면 편리한 프롬프트를 따라 파일의 function.js에 바인딩을 추가할 수 있습니다. 바인딩을 만들려면 함수 폴더의 파일 **에 대 한function.js** 를 마우스 오른쪽 단추로 클릭 (Macos에서 Ctrl + 클릭) 하 고 **바인딩 추가**를 선택 합니다.
+Visual Studio Code를 사용 하면 편리한 프롬프트를 따라 파일의 function.js에 바인딩을 추가할 수 있습니다. 바인딩을 만들려면 함수 폴더의 파일 ** 에 대 한function.js** 를 마우스 오른쪽 단추로 클릭 (Macos에서 Ctrl + 클릭) 하 고 **바인딩 추가**를 선택 합니다.
 
 ![기존 JavaScript 함수에 바인딩 추가 ](media/functions-develop-vs-code/function-add-binding.png)
 
 다음은 새 저장소 출력 바인딩을 정의 하는 예제 프롬프트입니다.
 
-| 프롬프트 | 값 | Description |
+| prompt | 값 | 설명 |
 | -------- | ----- | ----------- |
 | **바인딩 방향 선택** | `out` | 바인딩은 출력 바인딩입니다. |
 | **방향이 있는 바인딩 선택** | `Azure Queue Storage` | 바인딩은 Azure Storage 큐 바인딩입니다. |
@@ -250,7 +251,7 @@ Visual Studio Code에서 게시할 때 [Zip 배포](functions-deployment-technol
 
 1. 메시지가 표시 되 면 다음 정보를 제공 합니다.
 
-    | 프롬프트 | 값 | Description |
+    | prompt | 값 | 설명 |
     | ------ | ----- | ----------- |
     | Azure에서 함수 앱 선택 | Azure에서 새 함수 앱 만들기 | 다음 프롬프트에서 새 함수 앱을 식별 하는 전역적으로 고유한 이름을 입력 한 다음 Enter 키를 선택 합니다. 함수 앱 이름에 대한 유효한 문자는 `a-z`, `0-9` 및 `-`입니다. |
     | OS 선택 | Windows | 함수 앱은 Windows에서 실행 됩니다. |
@@ -293,7 +294,7 @@ Azure Functions 확장을 사용 하면 로컬 개발 컴퓨터에서 함수 프
 
 * 선택한 언어에 대한 특정 요구 사항을 설치합니다.
 
-    | Language | 요구 사항 |
+    | 언어 | 요구 사항 |
     | -------- | --------- |
     | **C#** | [C# 확장](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)<br/>[.NET Core CLI 도구](/dotnet/core/tools/?tabs=netcore2x)   |
     | **Java** | [Java 용 디버거 확장](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)<br/>[Java 8](https://aka.ms/azure-jdks)<br/>[Maven 3 이상](https://maven.apache.org/) |
@@ -330,7 +331,7 @@ HTTP 트리거에 대 한 요청 URL은 터미널의 출력에 표시 됩니다.
 
 [!INCLUDE [functions-local-settings-file](../../includes/functions-local-settings-file.md)]
 
-기본적으로 이러한 설정은 프로젝트가 Azure에 게시 될 때 자동으로 마이그레이션되지 않습니다. 게시가 완료 된 후 Azure에서 함수 앱에 local.settings.js의 설정을 게시 하는 옵션이 제공 됩니다. 자세히 알아보려면 [응용 프로그램 설정 게시](#publish-application-settings)를 참조 하세요.
+기본적으로 이러한 설정은 프로젝트가 Azure에 게시 될 때 자동으로 마이그레이션되지 않습니다. 게시가 완료 된 후 Azure에서 함수 앱에 local.settings.js의 설정을 게시 하는 옵션이 제공 됩니다. 자세히 알아보려면  [응용 프로그램 설정 게시](#publish-application-settings)를 참조 하세요.
 
 **ConnectionStrings**의 값은 절대 게시되지 않습니다.
 
@@ -409,7 +410,7 @@ Azure에서 응용 프로그램 설정을 만든 경우 **Azure Functions: 원�
 
 Azure Functions 확장은 Azure에서 함수 앱과 상호 작용 하기 위한 영역에서 유용한 그래픽 인터페이스를 제공 합니다. 명령 팔레트 (F1) 에서도 같은 기능을 명령으로 사용할 수 있습니다. 이러한 Azure Functions 명령을 사용할 수 있습니다.
 
-|Azure Functions 명령  | Description  |
+|Azure Functions 명령  | 설명  |
 |---------|---------|
 |**새 설정 추가**  |  Azure에서 새 응용 프로그램 설정을 만듭니다. 자세히 알아보려면 [응용 프로그램 설정 게시](#publish-application-settings)를 참조 하세요. [로컬 설정으로이 설정을 다운로드](#download-settings-from-azure)해야 할 수도 있습니다. |
 | **배포 원본 구성** | Azure의 함수 앱을 로컬 Git 리포지토리에 연결 합니다. 자세한 내용은 [Azure Functions에 대 한 연속 배포](functions-continuous-deployment.md)를 참조 하세요. |
@@ -432,7 +433,7 @@ Azure Functions 확장은 Azure에서 함수 앱과 상호 작용 하기 위한 
 | **설정 이름 바꾸기** | Azure에서 기존 함수 앱 설정의 키 이름을 변경 합니다. 이 명령은 local.settings.js파일의 설정에 영향을 주지 않습니다. Azure에서 설정의 이름을 바꾼 후 [해당 변경 내용을 로컬 프로젝트에 다운로드](#download-settings-from-azure)해야 합니다. |
 | **다시 시작** | Azure에서 함수 앱을 다시 시작 합니다. 업데이트를 배포 하면 함수 앱도 다시 시작 됩니다. |
 | **AzureWebJobsStorage 설정**| 응용 프로그램 설정의 값을 설정 `AzureWebJobsStorage` 합니다. 이 설정은 Azure Functions에 필요 합니다. Azure에서 함수 앱을 만들 때 설정 됩니다. |
-| **Start** | Azure에서 중지 된 함수 앱을 시작 합니다. |
+| **시작** | Azure에서 중지 된 함수 앱을 시작 합니다. |
 | **스트리밍 로그 시작** | Azure에서 함수 앱에 대 한 스트리밍 로그를 시작 합니다. 로깅 정보를 거의 실시간으로 확인 해야 하는 경우 Azure에서 원격 문제 해결 중에 스트리밍 로그를 사용 합니다. 자세히 알아보려면 [스트리밍 로그](#streaming-logs)를 참조 하세요. |
 | **중지** | Azure에서 실행 되는 함수 앱을 중지 합니다. |
 | **스트리밍 로그 중지** | Azure에서 함수 앱에 대 한 스트리밍 로그를 중지 합니다. |

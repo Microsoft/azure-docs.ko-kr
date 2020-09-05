@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/11/2020
 ms.topic: reference
-ms.openlocfilehash: f1ae8ca1ef940e45c2d32adc9a002b349f9e1b44
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8313243bf680ea1a1d63f2719b647149a04935a9
+ms.sourcegitcommit: c6b9a46404120ae44c9f3468df14403bcd6686c1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84783013"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88893099"
 ---
 # <a name="material-mapping-for-model-formats"></a>모델 형식에 대한 재질 매핑
 
@@ -101,29 +101,30 @@ FBX 재질은 확산-반사-SpecularLevel 개념을 사용 하므로 확산 질�
 아래에 사용 되는 일부 정의:
 
 * `Specular` =  `SpecularColor` * `SpecularFactor`
-* `SpecularIntensity` = `Specular`. Red ∗ 0.2125 + `Specular` . 녹색 ∗ 0.7154 + `Specular` 입니다. 파란색 ∗ 0.0721
-* `DiffuseBrightness`= 0.299 * `Diffuse` . Red<sup>2</sup> + 0.587 * `Diffuse` . 녹색<sup>2</sup> + 0.114 * `Diffuse` . 파랑<sup>2</sup>
-* `SpecularBrightness`= 0.299 * `Specular` . Red<sup>2</sup> + 0.587 * `Specular` . 녹색<sup>2</sup> + 0.114 * `Specular` . 파랑<sup>2</sup>
-* `SpecularStrength`= 최대 ( `Specular` . 빨강, `Specular` . 녹색, `Specular` . 요소의
+* `SpecularIntensity` = `Specular`. Red ∗ 0.2125 +  `Specular` . 녹색 ∗ 0.7154 + `Specular` 입니다. 파란색 ∗ 0.0721
+* `DiffuseBrightness` = 0.299 * `Diffuse` . Red<sup>2</sup> + 0.587 * `Diffuse` . 녹색<sup>2</sup> + 0.114 * `Diffuse` . 파랑<sup>2</sup>
+* `SpecularBrightness` = 0.299 * `Specular` . Red<sup>2</sup> + 0.587 * `Specular` . 녹색<sup>2</sup> + 0.114 * `Specular` . 파랑<sup>2</sup>
+* `SpecularStrength` = 최대 ( `Specular` . 빨강, `Specular` . 녹색, `Specular` . 요소의
 
 SpecularIntensity 수식은 [여기](https://en.wikipedia.org/wiki/Luma_(video))에서 가져옵니다.
 이 [사양](http://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.601-7-201103-I!!PDF-E.pdf)에서는 밝기 수식을 설명 합니다.
 
 ### <a name="roughness"></a>거칠기
 
-`Roughness`는 `Specular` `ShininessExponent` [이 수식을](https://www.cs.cornell.edu/~srm/publications/EGSR07-btdf.pdf)사용 하 여 계산 됩니다. 수식은 퐁 반사 지 수의 근사값을 대략적으로 계산 합니다.
+`Roughness` 는 `Specular` `ShininessExponent` [이 수식을](https://www.cs.cornell.edu/~srm/publications/EGSR07-btdf.pdf)사용 하 여 계산 됩니다. 수식은 퐁 반사 지 수의 근사값을 대략적으로 계산 합니다.
 
-```Cpp
+```cpp
 Roughness = sqrt(2 / (ShininessExponent * SpecularIntensity + 2))
 ```
 
 ### <a name="metalness"></a>Metalness
 
-`Metalness`는에서 계산 되 `Diffuse` 고,는 `Specular` 이 수식을 사용 하 여이 [수식을](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)사용 합니다.
+`Metalness` 는에서 계산 되 `Diffuse` 고,는 `Specular` 이 수식을 사용 하 여이 [수식을](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)사용 합니다.
 
 여기서는 Ax<sup>2</sup> + Bx + C = 0 이라는 방정식을 해결 합니다.
 기본적으로 dielectric 표면에는 반사 방식에서 빛의 약 4%가 반영 되 고 나머지는 확산 됩니다. 금속 표면에는 확산 방식에서 조명이 표시 되지 않지만 반사 방식에는 모든 것이 반영 됩니다.
 이 수식에는 광택 플라스틱 및 광택 금속 표면 간을 구분할 수 있는 방법이 없기 때문에 몇 가지 단점이 있습니다. 대부분의 경우에는 표면에 금속성 속성이 있고 결과적으로 광택 플라스틱/고무 서피스가 예상 대로 표시 되지 않을 수 있다고 가정 합니다.
+
 ```cpp
 dielectricSpecularReflectance = 0.04
 oneMinusSpecularStrength = 1 - SpecularStrength
@@ -138,12 +139,12 @@ Metalness = clamp(value, 0.0, 1.0);
 
 ### <a name="albedo"></a>Albedo
 
-`Albedo`은, 및에서 계산 됩니다 `Diffuse` `Specular` `Metalness` .
+`Albedo` 은, 및에서 계산 됩니다 `Diffuse` `Specular` `Metalness` .
 
 Metalness 섹션에 설명 된 대로 dielectric 표면은 빛의 약 4%를 반영 합니다.  
 여기서의 개념은 `Dielectric` `Metal` 값을 사용 하 여 및 색을 요소로 선형으로 보간 하는 것입니다 `Metalness` . Metalness가 이면 `0.0` 반사에 따라 짙은 색 (반사면이 높은 경우)이 되 고, 확산이 없는 경우 확산은 변경 되지 않습니다. Metalness이 클 경우 확산 색을 기준으로 확산 색이 사라집니다.
 
-```Cpp
+```cpp
 dielectricSpecularReflectance = 0.04
 oneMinusSpecularStrength = 1 - SpecularStrength
 
@@ -153,13 +154,13 @@ albedoRawColor = lerpColors(dielectricColor, metalColor, metalness * metalness)
 AlbedoRGB = clamp(albedoRawColor, 0.0, 1.0);
 ```
 
-`AlbedoRGB`는 위의 수식으로 계산 되었지만 알파 채널에는 추가 계산이 필요 합니다. FBX 형식은 투명성에 대해 모호 하며이를 정의 하는 여러 가지 방법이 있습니다. 다른 콘텐츠 도구는 다양 한 방법을 사용 합니다. 여기서의 개념은 하나의 수식으로 통합 하는 것입니다. 일부 자산이 일반적인 방법으로 생성 되지 않은 경우 투명 하 게 표시 됩니다.
+`AlbedoRGB` 는 위의 수식으로 계산 되었지만 알파 채널에는 추가 계산이 필요 합니다. FBX 형식은 투명성에 대해 모호 하며이를 정의 하는 여러 가지 방법이 있습니다. 다른 콘텐츠 도구는 다양 한 방법을 사용 합니다. 여기서의 개념은 하나의 수식으로 통합 하는 것입니다. 일부 자산이 일반적인 방법으로 생성 되지 않은 경우 투명 하 게 표시 됩니다.
 
 이는,,에서 계산 됩니다 `TransparentColor` `TransparencyFactor` `Opacity` .
 
 `Opacity`가 정의 된 경우 직접 사용 합니다. `AlbedoAlpha`  =  `Opacity`  
 `TransparencyColor`가 정의 된 경우 `AlbedoAlpha` = 1.0-(( `TransparentColor` . Red + `TransparentColor` 녹색 + `TransparentColor` Blue)/3.0) else  
-이면 `TransparencyFactor` `AlbedoAlpha` = 1.0-입니다.`TransparencyFactor`
+이면 `TransparencyFactor` `AlbedoAlpha` = 1.0-입니다. `TransparencyFactor`
 
 최종 색에는 `Albedo` 와를 결합 하는 4 개의 채널이 있습니다 `AlbedoRGB` `AlbedoAlpha` .
 

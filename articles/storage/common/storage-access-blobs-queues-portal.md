@@ -1,23 +1,24 @@
 ---
-title: Azure Portal를 사용 하 여 blob 또는 큐 데이터에 액세스
+title: Azure Portal에서 blob 또는 큐 데이터에 대 한 액세스 권한을 부여 하는 방법을 선택 합니다.
 titleSuffix: Azure Storage
 description: Azure Portal를 사용 하 여 blob 또는 큐 데이터에 액세스 하는 경우 포털은 내부적으로 Azure Storage에 대 한 요청을 수행 합니다. 이러한 Azure Storage에 대 한 요청은 Azure AD 계정 또는 저장소 계정 액세스 키를 사용 하 여 인증 하 고 권한을 부여할 수 있습니다.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 04/14/2020
+ms.date: 08/18/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: dcd1280dbe3a00a6a7cbdaaf59aa05326dfa8375
-ms.sourcegitcommit: 3d56d25d9cf9d3d42600db3e9364a5730e80fa4a
+ms.custom: contperfq1
+ms.openlocfilehash: 7ab0899f49fc28d787e6b53945558709353c4512
+ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87534178"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88691448"
 ---
-# <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Azure Portal를 사용 하 여 blob 또는 큐 데이터에 액세스
+# <a name="choose-how-to-authorize-access-to-blob-or-queue-data-in-the-azure-portal"></a>Azure Portal에서 blob 또는 큐 데이터에 대 한 액세스 권한을 부여 하는 방법을 선택 합니다.
 
 [Azure Portal](https://portal.azure.com)를 사용 하 여 blob 또는 큐 데이터에 액세스 하는 경우 포털은 내부적으로 Azure Storage에 대 한 요청을 수행 합니다. Azure AD 계정 또는 저장소 계정 액세스 키 중 하나를 사용 하 여 Azure Storage에 대 한 요청을 인증할 수 있습니다. 포털은 사용 중인 방법을 나타내며, 적절 한 사용 권한이 있는 경우 둘 사이를 전환할 수 있습니다.  
 
@@ -38,7 +39,7 @@ Azure Portal에서 blob 또는 큐 데이터에 대 한 액세스 권한을 부�
 Azure Portal에서 blob 또는 큐 데이터에 액세스 하려고 하면 포털은 먼저 **Microsoft. Storage/storageAccounts/listkeys/action**을 사용 하 여 역할이 할당 되었는지 여부를 확인 합니다. 이 작업을 사용 하 여 역할을 할당 한 경우 포털은 blob 및 큐 데이터에 액세스 하기 위해 계정 키를 사용 합니다. 이 작업을 사용 하 여 역할을 할당 하지 않은 경우 포털은 Azure AD 계정을 사용 하 여 데이터에 액세스 하려고 시도 합니다.
 
 > [!NOTE]
-> 클래식 구독 관리자 역할 서비스 관리자와 공동 관리자는 Azure Resource Manager [소유자](../../role-based-access-control/built-in-roles.md#owner) 역할에 해당 하는 항목을 포함 합니다. **Owner** 역할은 **Microsoft. Storage/storageaccounts/listkeys/action**을 비롯 한 모든 동작을 포함 하므로 이러한 관리 역할 중 하나가 있는 사용자는 계정 키를 사용 하 여 blob 및 큐 데이터에 액세스할 수도 있습니다. 자세한 내용은 [클래식 구독 관리자 역할, azure 역할 및 AZURE AD 관리자 역할](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)을 참조 하세요.
+> 클래식 구독 관리자 역할 서비스 관리자와 공동 관리자는 Azure Resource Manager [소유자](../../role-based-access-control/built-in-roles.md#owner) 역할에 해당 하는 항목을 포함 합니다. **Owner** 역할은 **Microsoft. Storage/storageaccounts/listkeys/action**을 비롯 한 모든 동작을 포함 하므로 이러한 관리 역할 중 하나가 있는 사용자는 계정 키를 사용 하 여 blob 및 큐 데이터에 액세스할 수도 있습니다. 자세한 내용은 [클래식 구독 관리자 역할, Azure 역할 및 Azure AD 관리자 역할](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles)을 참조하세요.
 
 ### <a name="use-your-azure-ad-account"></a>Azure AD 계정 사용
 
@@ -107,7 +108,7 @@ Azure Portal에서 blob을 업로드 하는 경우 계정 액세스 키 또는 A
 Blob 업로드 작업에 권한을 부여 하는 방법을 지정 하려면 다음 단계를 수행 합니다.
 
 1. Azure Portal에서 blob을 업로드 하려는 컨테이너로 이동 합니다.
-1. **업로드** 단추를 선택합니다.
+1. **업데이트** 단추를 선택합니다.
 1. **고급** 섹션을 확장 하 여 blob에 대 한 고급 속성을 표시 합니다.
 1. 다음 그림에 표시 된 것 처럼 **인증 유형** 필드에서 Azure AD 계정 또는 계정 액세스 키를 사용 하 여 업로드 작업에 권한을 부여할 것인지 여부를 지정 합니다.
 

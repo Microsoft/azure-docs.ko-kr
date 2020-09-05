@@ -6,12 +6,12 @@ author: TomGeske
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: thomasge
-ms.openlocfilehash: dfcbf214c374f449a04139ce7bf4fbb6853ed524
-ms.sourcegitcommit: 98854e3bd1ab04ce42816cae1892ed0caeedf461
+ms.openlocfilehash: ab25ec5406c75316aaa1ee8efd0192dc0207ad79
+ms.sourcegitcommit: cd0a1ae644b95dbd3aac4be295eb4ef811be9aaa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88006862"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88612421"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli-legacy"></a>Azure CLI (레거시)를 사용 하 여 Azure Kubernetes Service와 Azure Active Directory 통합
 
@@ -27,6 +27,7 @@ ms.locfileid: "88006862"
 ## <a name="the-following-limitations-apply"></a>다음과 같은 제한 사항이 적용됩니다.
 
 - Azure AD는 RBAC 지원 클러스터 에서만 사용 하도록 설정할 수 있습니다.
+- Azure AD 레거시 통합은 클러스터를 만드는 동안에만 사용할 수 있습니다.
 
 ## <a name="before-you-begin"></a>시작하기 전에
 
@@ -176,7 +177,7 @@ az ad signed-in-user show --query userPrincipalName -o tsv
 > [!IMPORTANT]
 > RBAC 바인딩을 부여한 사용자가 동일한 Azure AD 테 넌 트에 있는 경우 *userPrincipalName*에 따라 사용 권한을 할당 합니다. 사용자가 다른 Azure AD 테 넌 트에 있는 경우에는를 쿼리하고 *objectId* 속성을 대신 사용 합니다.
 
-이라는 YAML 매니페스트를 만들고 `basic-azure-ad-binding.yaml` 다음 콘텐츠를 붙여 넣습니다. 마지막 줄에서 *userPrincipalName_or_objectId* 을 이전 명령의 UPN 또는 개체 ID 출력으로 바꿉니다.
+이라는 YAML 매니페스트를 만들고 `basic-azure-ad-binding.yaml` 다음 콘텐츠를 붙여 넣습니다. 마지막 줄에서 *userPrincipalName_or_objectId*  을 이전 명령의 UPN 또는 개체 ID 출력으로 바꿉니다.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -244,7 +245,7 @@ error: You must be logged in to the server (Unauthorized)
 
 * 사용자 계정이 동일한 Azure AD 테 넌 트에 있는지 여부에 따라 적절 한 개체 ID 또는 UPN을 정의 했습니다.
 * 사용자는 200개가 넘는 그룹의 멤버가 아닙니다.
-* 서버에 대 한 응용 프로그램 등록에 정의 된 비밀이를 사용 하 여 구성 된 값과 일치 합니다.`--aad-server-app-secret`
+* 서버에 대 한 응용 프로그램 등록에 정의 된 비밀이를 사용 하 여 구성 된 값과 일치 합니다. `--aad-server-app-secret`
 
 ## <a name="next-steps"></a>다음 단계
 

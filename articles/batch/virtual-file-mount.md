@@ -2,24 +2,25 @@
 title: 풀에서 가상 파일 시스템 탑재
 description: Batch 풀에서 가상 파일 시스템을 탑재하는 방법을 알아봅니다.
 ms.topic: how-to
+ms.custom: devx-track-csharp
 ms.date: 08/13/2019
-ms.openlocfilehash: 3f948f8441208f4a8741949e65afc8032f0a5080
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: df03275fdeea88df1a2f2b6e2cda55021497cdf7
+ms.sourcegitcommit: d7352c07708180a9293e8a0e7020b9dd3dd153ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86144413"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89145487"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Batch 풀에서 가상 파일 시스템 탑재
 
 Azure Batch에서는 이제 Windows 또는 Linux 컴퓨팅 노드의 Batch 풀에서 클라우드 스토리지 또는 외부 파일 시스템 탑재가 지원됩니다. 컴퓨팅 노드가 풀에 참가하면 가상 파일 시스템이 탑재되고 해당 노드에서 로컬 드라이브처럼 취급됩니다. Azure Files, Azure Blob 스토리지, [Avere vFXT 캐시](../avere-vfxt/avere-vfxt-overview.md)를 포함한 NFS(네트워크 파일 시스템) 또는 CIFS(Common Internet File System)와 같은 파일 시스템을 탑재합니다.
 
-이 문서에서는 [.NET용 Batch 관리 라이브러리](/dotnet/api/overview/azure/batch?view=azure-dotnet)를 사용하여 컴퓨팅 노드 풀에서 가상 파일 시스템을 탑재하는 방법을 알아봅니다.
+이 문서에서는 [.NET용 Batch 관리 라이브러리](/dotnet/api/overview/azure/batch)를 사용하여 컴퓨팅 노드 풀에서 가상 파일 시스템을 탑재하는 방법을 알아봅니다.
 
 > [!NOTE]
 > 가상 파일 시스템 탑재는 2019-08-19부터 생성되는 Batch 풀에서 지원됩니다. 2019-08-19 이전에 만든 Batch 풀에서는 이 기능이 지원되지 않습니다.
 > 
-> 컴퓨팅 노드에 파일 시스템을 탑재하기 위한 API는 [Batch .NET](/dotnet/api/microsoft.azure.batch?view=azure-dotnet) 라이브러리의 일부입니다.
+> 컴퓨팅 노드에 파일 시스템을 탑재하기 위한 API는 [Batch .NET](/dotnet/api/microsoft.azure.batch) 라이브러리의 일부입니다.
 
 ## <a name="benefits-of-mounting-on-a-pool"></a>풀에 탑재 시 이점
 

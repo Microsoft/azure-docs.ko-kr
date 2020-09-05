@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/26/2019
-ms.openlocfilehash: 155c8fc3e7f1e37fe455c8f21d36e090c4fffce3
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 4f8ef04343d873bcb94ccee599ecbc7c2a1ef94c
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86112003"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89269491"
 ---
 # <a name="custom-logs-in-azure-monitor"></a>Azure Monitor의 사용자 지정 로그
 
@@ -67,14 +67,14 @@ Azure Monitor의 사용자 지정 로그 데이터 원본을 통해 Windows 및 
 4. 새 레코드 식별에 사용된 구분 기호를 변경하고 로그 파일의 레코드를 가장 잘 식별하는 구분 기호를 선택합니다.
 5. **다음**을 클릭합니다.
 
-### <a name="step-3-add-log-collection-paths"></a>3단계: 로그 수집 경로 추가
+### <a name="step-3-add-log-collection-paths"></a>3단계. 로그 수집 경로 추가
 사용자 지정 로그를 찾을 수 있는 에이전트의 경로를 하나 이상의 지정해야 합니다.  로그 파일의 특정 경로 및 이름을 제공하거나 이름의 와일드카드를 포함하는 경로를 지정할 수 있습니다. 이렇게 하면 매일 새 파일을 만드는 애플리케이션을 지원하거나 하나의 파일이 일정한 크기에 도달하는 경우를 지원합니다. 하나의 로그 파일에 여러 경로를 제공할 수도 있습니다.
 
 예를 들어, 애플리케이션이 이름에 날짜가 포함된 로그 파일(예: log20100316.txt)을 매일 만들 수 있습니다. 이런 로그의 패턴으로 *log\*.txt*를 사용할 수 있으며, 이것은 애플리케이션의 명명 체계에 따르는 모든 로그 파일에 적용할 수 있습니다.
 
 다음 테이블은 다른 로그 파일을 지정하는 데 유효한 패턴의 예를 제공합니다.
 
-| Description | 경로 |
+| 설명 | 경로 |
 |:--- |:--- |
 | Windows 에이전트에서 확장명이 .txt인 *C:\Logs* 내 모든 파일 |C:\Logs\\\*.txt |
 | Windows 에이전트에서 이름이 log로 시작되고 확장명이 .txt인 *C:\Logs* 내 모든 파일 |C:\Logs\log\*.txt |
@@ -158,7 +158,7 @@ Azure Monitor는 각 사용자 지정 로그로부터 새로운 항목을 약 5�
 
 
 ## <a name="alternatives-to-custom-logs"></a>사용자 지정 로그 대신 사용할 수 있는 방법
-데이터가 위에 나와 있는 기준에 맞는 경우에는 사용자 지정 로그가 유용하지만, 다른 전략이 필요한 다음과 같은 경우도 있습니다.
+데이터가 위에 나열 된 조건에 맞는 경우에는 사용자 지정 로그가 유용 하지만, 다음과 같은 경우에는 다른 전략이 필요 합니다.
 
 - 데이터가 다른 형식의 타임스탬프를 포함하는 등 필요한 구조에 맞지 않는 경우
 - 로그 파일이 파일 인코딩 등의 요구 사항을 충족하지 않거나 폴더 구조가 지원되지 않는 경우

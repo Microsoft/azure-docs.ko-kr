@@ -11,12 +11,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 721f30f5b17b078f3a3905204f6be56db25adead
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 41b74ed713485679576fdf7f4f0df54803b56caa
+ms.sourcegitcommit: 9ce0350a74a3d32f4a9459b414616ca1401b415a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84669480"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88192113"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Azure Virtual Machines에서 SQL Server 개요(Linux)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -29,7 +29,7 @@ Azure Virtual Machines에서 SQL Server를 사용 하면 온-프레미스 하드
 
 Azure 가상 머신은 전 세계 여러 [지리적 지역](https://azure.microsoft.com/regions/)에서 실행됩니다. 또한 다양한 [컴퓨터 크기](../../../virtual-machines/windows/sizes.md)가 제공됩니다. 가상 머신 이미지 갤러리를 통해 적합한 버전 운영 체제로 SQL Server VM을 만들 수 있습니다. 따라서 가상 머신은 다양한 SQL Server 워크로드에 적합한 옵션입니다. 
 
-## <a name="get-started-with-sql-server-vms"></a><a id="create"></a>SQL Server Vm 시작
+## <a name="get-started-with-sql-server-vms"></a><a id="create"></a> SQL Server Vm 시작
 
 시작하려면 필요한 버전 및 운영 체제로 SQL Server 가상 머신 이미지를 선택합니다. 다음 섹션에서는 SQL Server 가상 머신 갤러리 이미지에 Azure Portal에 대한 직접 링크를 제공합니다.
 
@@ -38,6 +38,9 @@ Azure 가상 머신은 전 세계 여러 [지리적 지역](https://azure.micros
 
 | 버전 | 운영 체제 | 버전 |
 | --- | --- | --- |
+| **SQL Server 2019** | Ubuntu 18.04 | [Enterprise](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ubuntu1804enterprise-ARM), [Standard](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ubuntu1804standard-ARM), [Web](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ubuntu1804web-ARM), [Developer](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-ubuntu1804sqldev-ARM) | 
+| **SQL Server 2019** | Red Hat Enterprise Linux (RHEL) 8 | [Enterprise](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-rhel8enterprise-ARM), [Standard](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-rhel8standard-ARM), [Web](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-rhel8web-ARM), [Developer](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-rhel8sqldev-ARM)|
+| **SQL Server 2019** | SUSE Linux Enterprise Server (SLES) v12 SP5 | [Enterprise](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-sles12sp5enterprise-ARM), [Standard](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-sles12sp5standard-ARM), [Web](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-sles12sp5web-ARM), [Developer](https://ms.portal.azure.com/#create/microsoftsqlserver.sql2019-sles12sp5sqldev-ARM)|
 | **SQL Server 2017** | RHEL(Red Hat Enterprise Linux) 7.4 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonRedHatEnterpriseLinux74), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonRedHatEnterpriseLinux74), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonRedHatEnterpriseLinux74), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonRedHatEnterpriseLinux74), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonRedHatEnterpriseLinux74) |
 | **SQL Server 2017** | SLES(SUSE Linux Enterprise Server) v12 SP2 |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonSLES12SP2), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonSLES12SP2), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonSLES12SP2), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonSLES12SP2), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonSLES12SP2) |
 | **SQL Server 2017** | Ubuntu 16.04 LTS |[Enterprise](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonUbuntuServer1604LTS), [Standard](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonUbuntuServer1604LTS), [Web](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonUbuntuServer1604LTS), [Express](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonUbuntuServer1604LTS), [Developer](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonUbuntuServer1604LTS) |
@@ -51,8 +54,8 @@ SQL Server on Linux를 구성 하는 경우 요구 사항에 따라 데이터베
 
 | 배포 | [데이터베이스 엔진](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Tools](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [SQL Server 에이전트](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [전체 텍스트 검색](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [SSIS](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [HA 추가 기능](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
 |---|---|---|---|---|---|---|
-| RHEL | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![아니요](./media/sql-server-on-linux-vm-what-is-iaas-overview/no.png) |
-| SLES | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![아니요](./media/sql-server-on-linux-vm-what-is-iaas-overview/no.png) | ![아니요](./media/sql-server-on-linux-vm-what-is-iaas-overview/no.png) |
+| RHEL | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) |
+| SLES | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![아니요](./media/sql-server-on-linux-vm-what-is-iaas-overview/no.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png)|
 | Ubuntu | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) | ![예](./media/sql-server-on-linux-vm-what-is-iaas-overview/yes.png) |
 
 ## <a name="related-products-and-services"></a>관련 제품 및 서비스

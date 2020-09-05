@@ -1,14 +1,14 @@
 ---
 title: Azure Resource Graph 개요
 description: Azure Resource Graph 서비스를 통해 구독 및 테넌트에 걸쳐 대규모의 복잡한 리소스를 쿼리하는 방법을 이해합니다.
-ms.date: 07/25/2020
+ms.date: 08/13/2020
 ms.topic: overview
-ms.openlocfilehash: 5a2be5e65ecd5590d992e1883f432c173660e78d
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: 73143c13fd83c8b784679ac28bd9a14f1c6a6888
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87541790"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798536"
 ---
 # <a name="what-is-azure-resource-graph"></a>Azure Resource Graph란?
 
@@ -37,6 +37,9 @@ Azure Resource Graph를 통해 다음을 수행할 수 있습니다.
 
 - 각 리소스 공급자를 별도로 호출하지 않고 리소스 공급자가 반환하는 속성에 액세스합니다.
 - 리소스에 대한 지난 14일 동안의 변경 기록을 보고 변경된 속성과 시기를 확인합니다. (미리 보기)
+
+> [!NOTE]
+> _미리 보기_ 기능으로, 일부 `type` 개체에는 사용 가능한 추가 비Resource Manager 속성이 있습니다. 자세한 내용은 [확장 속성(미리 보기)](./concepts/query-language.md#extended-properties)을 참조하세요.
 
 ## <a name="how-resource-graph-is-kept-current"></a>Resource Graph가 최신 상태를 유지하는 방식
 

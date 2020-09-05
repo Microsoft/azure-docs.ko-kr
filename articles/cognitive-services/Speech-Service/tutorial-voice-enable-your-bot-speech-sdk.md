@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
-ms.openlocfilehash: 47448a97c89b1feddfc43da300cb53fd65eaff05
-ms.sourcegitcommit: 269da970ef8d6fab1e0a5c1a781e4e550ffd2c55
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 2806ce18cc9febfdf15d48052d301da48b3c226f
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88056655"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88934466"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>자습서: 음성 SDK를 사용 하 여 봇 음성 사용
 
@@ -62,13 +63,13 @@ Microsoft Bot Framework를 사용 하 여 봇을 만들고, Azure에 배포 하 
 - [.NET Framework Runtime 4.6.1](https://dotnet.microsoft.com/download) 이상
 - Azure 계정. [무료 등록](https://azure.microsoft.com/free/cognitive-services/)
 - [GitHub](https://github.com/) 계정
-- [Windows 용 Git](https://git-scm.com/download/win)
+- [Git for Windows](https://git-scm.com/download/win)
 
 ## <a name="create-a-resource-group"></a>리소스 그룹 만들기
 
 이 자습서에서 만들 클라이언트 앱은 몇 가지 Azure 서비스를 사용 합니다. Bot의 응답에 대 한 왕복 시간을 줄이려면 이러한 서비스가 동일한 Azure 지역에 있는지 확인 하는 것이 좋습니다. 이 섹션에서는 **미국 서 부** 지역에 리소스 그룹을 만듭니다. 이 리소스 그룹은 봇 프레임 워크, 직접 선 음성 채널 및 음성 서비스에 대 한 개별 리소스를 만들 때 사용 됩니다.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">리소스 그룹 만들기<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">리소스 그룹 만들기 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 1. 몇 가지 정보를 제공 하 라는 메시지가 표시 됩니다.
    * **구독** 을 **무료 평가판** 으로 설정 합니다 (기존 구독을 사용할 수도 있음).
    * **리소스 그룹**의 이름을 입력 합니다. **SpeechEchoBotTutorial-ResourceGroup**을 권장 합니다.
@@ -94,7 +95,7 @@ Microsoft Bot Framework를 사용 하 여 봇을 만들고, Azure에 배포 하 
 
 음성 리소스를 만들려면 다음 지침을 따르세요.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">음성 서비스 리소스 만들기<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">음성 서비스 리소스 만들기 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 4. 몇 가지 정보를 제공 하 라는 메시지가 표시 됩니다.
    * 리소스에 **이름을**지정 합니다. **SpeechEchoBotTutorial을** 권장 합니다.
    * **구독**의 경우 **무료 평가판** 이 선택 되어 있는지 확인 합니다.
@@ -114,7 +115,7 @@ Microsoft Bot Framework를 사용 하 여 봇을 만들고, Azure에 배포 하 
 
 다음 단계는 App Service 계획을 만드는 것입니다. App Service 계획은 실행할 웹앱에 대한 컴퓨팅 리소스 세트를 정의합니다.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Azure App Service 계획 만들기<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Azure App Service 계획 만들기 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 4. 몇 가지 정보를 제공 하 라는 메시지가 표시 됩니다.
    * **구독** 을 **무료 평가판** 으로 설정 합니다 (기존 구독을 사용할 수도 있음).
    * **리소스 그룹**에 대해 **SpeechEchoBotTutorial-ResourceGroup**을 선택 합니다.
@@ -166,7 +167,7 @@ Microsoft Bot Framework를 사용 하 여 봇을 만들고, Azure에 배포 하 
 1. [Bot Framework 에뮬레이터](https://github.com/Microsoft/BotFramework-Emulator/releases/latest) 버전 4.3.0 이상을 설치 합니다.
 2. Bot Framework 에뮬레이터를 시작 하 고 bot를 엽니다.
    * **파일**  ->  **Bot를 엽니다**.
-3. 봇의 URL을 입력 합니다. 다음은 그 예입니다.
+3. 봇의 URL을 입력 합니다. 예를 들면
 
    ```
    http://localhost:3978/api/messages
@@ -235,7 +236,7 @@ Microsoft Bot Framework를 사용 하 여 봇을 만들고, Azure에 배포 하 
 
 이제 봇을 호스트 하는 Azure App Service를 만들었으므로 다음 단계는 **Bot 채널 등록**을 만드는 것입니다. 채널 등록을 만드는 것은 직접 선 음성 채널을 포함 하 여 봇 프레임 워크 채널에 봇을 등록 하기 위한 필수 구성 요소입니다. Bot 채널을 사용 하는 방법에 대해 자세히 알아보려면 [채널에 봇 연결](https://docs.microsoft.com/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0)을 참조 하세요.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Azure Bot 채널 등록 만들기<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Azure Bot 채널 등록 만들기 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 2. 몇 가지 정보를 제공 하 라는 메시지가 표시 됩니다.
    * **봇 핸들**에 대해 **SpeechEchoBotTutorial-BotRegistration-# #** # #을 입력 하 고를 **####** 원하는 수로 바꿉니다. Bot 핸들은 전역적으로 고유 해야 합니다. Bot 핸들을 입력 하지만 오류 메시지가 표시 되는 경우 _요청 된 봇 ID를 사용할 수 없습니다_. 다른 숫자를 선택 합니다. 아래 예제에서는 8726을 사용 했습니다.
    * **구독**의 경우 **무료 평가판**을 선택 합니다.
@@ -329,14 +330,14 @@ Windows 음성 도우미 클라이언트에는 bot에 대 한 연결을 구성 �
 |오류 (ConnectionFailure): 원격 호스트에서 연결을 끊었습니다. 오류 코드: 1002. 오류 세부 정보: 서버에서 상태 코드 ' 101 '이 (가) 필요한 데 상태 코드 ' 503 '이 (가) 반환 되었습니다. | ["스트리밍 끝점 사용"](#register-the-direct-line-speech-channel) 확인란을 선택 했는지 확인 하 고 [ **웹 소켓** ](#enable-web-sockets) 을 켜기로 전환 합니다.<br>Azure App Service 실행 중인지 확인 합니다. 인 경우 App Service를 다시 시작 하십시오.|
 |오류 (ConnectionFailure): 원격 호스트에서 연결을 끊었습니다. 오류 코드: 1011. 오류 세부 정보: 응답 상태 코드는 성공: 500 (InternalServerError)을 나타내지 않습니다.| 봇이 output 활동 [말하기](https://github.com/microsoft/botframework-sdk/blob/master/specs/botframework-activity/botframework-activity.md#speak) 필드에서 신경망을 지정 했지만 음성 구독 키와 연결 된 Azure 지역은 신경망을 지원 하지 않습니다. [표준 및 신경망을](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)참조 하세요.|
 
-테이블에서 문제가 해결 되지 않으면 [음성 도우미: 질문과 대답](faq-voice-assistants.md)을 참조 하세요. 이 자습서의 모든 단계를 수행한 후에도 문제를 해결할 수 없는 경우, [음성 도우미 GitHub 페이지](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/issues)에 새 문제를 입력 하세요.
+테이블에서 문제가 해결 되지 않으면 [음성 도우미: 질문과 대답](faq-voice-assistants.md)을 참조 하세요. 이 자습서의 모든 단계를 수행한 후에도 문제를 해결할 수 없는 경우,  [음성 도우미 GitHub 페이지](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/issues)에 새 문제를 입력 하세요.
 
 #### <a name="a-note-on-connection-time-out"></a>연결 제한 시간에 대 한 참고 사항
 
 Bot에 연결 되어 있고 지난 5 분 동안 활동이 발생 하지 않으면 서비스에서 클라이언트와 봇의 websocket 연결을 자동으로 종료 합니다. 이것은 의도적인 것입니다. *"활성 연결 시간이 초과 되었으나 요청 시 다시 연결할 준비가 되었습니다." 라는*메시지가 아래쪽 표시줄에 표시 됩니다. "다시 연결" 단추를 누르지 않아도 됩니다. 즉, 마이크 단추를 누르고 통신을 시작 하거나 문자 메시지를 입력 하거나 키워드 (사용 하도록 설정 된 경우) 라고 합니다. 연결이 자동으로 다시 설정 됩니다.  
 ### <a name="view-bot-activities"></a>Bot 활동 보기
 
-모든 봇은 **활동** 메시지를 보내고 받습니다. Windows Voice Assistant 클라이언트의 **활동 로그** 창에는 클라이언트가 봇에서 받은 각 활동이 있는 타임 스탬프 로그가 표시 됩니다. 메서드를 사용 하 여 클라이언트에서 봇으로 보낸 작업을 볼 수도 있습니다 [`DialogServiceConnector.SendActivityAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.sendactivityasync) . 로그 항목을 선택 하면 연결 된 작업의 세부 정보가 JSON으로 표시 됩니다.
+모든 봇은 **활동** 메시지를 보내고 받습니다. Windows Voice Assistant 클라이언트의 **활동 로그** 창에는 클라이언트가 봇에서 받은 각 활동이 있는 타임 스탬프 로그가 표시 됩니다. 메서드를 사용 하 여 클라이언트에서 봇으로 보낸 작업을 볼 수도 있습니다 [`DialogServiceConnector.SendActivityAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.sendactivityasync)  . 로그 항목을 선택 하면 연결 된 작업의 세부 정보가 JSON으로 표시 됩니다.
 
 클라이언트에서 받은 작업의 샘플 json은 다음과 같습니다.
 
@@ -379,8 +380,8 @@ JSON 출력에서 반환 되는 항목에 대 한 자세한 내용은 [활동의
 ### <a name="view-client-source-code-for-calls-to-the-speech-sdk"></a>음성 SDK 호출에 대 한 클라이언트 소스 코드 보기
 
 Windows 음성 도우미 클라이언트는 [cognitiveservices account](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/)를 사용 하며이는 speech SDK를 포함 합니다. 샘플 코드 검토를 시작 하는 좋은 위치는 [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) 다음 두 가지 음성 SDK 개체를 만드는 파일의 메서드 InitSpeechConnector ()입니다.
-- [`DialogServiceConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig)-구성 설정 (예: 음성 구독 키, 키 지역)
-- [`DialogServiceConnector`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor)-인식 된 음성 및 봇 응답을 처리 하기 위해 채널 연결 및 클라이언트 구독 이벤트를 관리 합니다.
+- [`DialogServiceConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig) -구성 설정 (예: 음성 구독 키, 키 지역)
+- [`DialogServiceConnector`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor) -인식 된 음성 및 봇 응답을 처리 하기 위해 채널 연결 및 클라이언트 구독 이벤트를 관리 합니다.
 
 ## <a name="add-custom-keyword-activation"></a>사용자 지정 키워드 활성화 추가
 
@@ -411,8 +412,8 @@ Speech SDK는 사용자 지정 키워드 활성화를 지원 합니다. Microsof
 
 Windows 음성 도우미 클라이언트 소스 코드에서 다음 파일을 확인 하 여 키워드 검색을 사용 하는 데 사용 되는 코드를 검토 합니다.
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs)에는 [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-) 디스크의 로컬 파일에서 모델을 인스턴스화하는 데 사용 되는 SPEECH SDK 메서드에 대 한 호출이 포함 되어 있습니다.
-1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs)연속 키워드 검색을 활성화 하는 Speech SDK 메서드에 대 한 호출을 포함 [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) 합니다.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) 에는 [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-) 디스크의 로컬 파일에서 모델을 인스턴스화하는 데 사용 되는 SPEECH SDK 메서드에 대 한 호출이 포함 되어 있습니다.
+1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) 연속 키워드 검색을 활성화 하는 Speech SDK 메서드에 대 한 호출을 포함 [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) 합니다.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>필드 언어 및 봇 음성 변경
 

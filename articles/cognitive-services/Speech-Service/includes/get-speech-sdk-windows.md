@@ -4,12 +4,13 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: 138a9ef9d483ca0d460bab7185d646669650f83e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: devx-track-csharp
+ms.openlocfilehash: 33cc9b52c4b687ca8147867b99dc70e8d71a9223
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81399962"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88944431"
 ---
 :::row:::
     :::column span="3":::
@@ -27,9 +28,9 @@ ms.locfileid: "81399962"
 
 Windows의 Speech SDK를 사용 하려면 시스템에서 <a href="https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads" target="_blank">Visual Studio 2019 <span class="docon docon-navigate-external x-hidden-focus"></span> 에 대 한 Microsoft Visual C++ 재배포 가능 패키지가</a> 필요 합니다.
 
-- <a href="https://aka.ms/vs/16/release/vc_redist.x86.exe" target="_blank">X 86 용 설치<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe" target="_blank">X 64 용 설치<span class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://aka.ms/vs/16/release/vc_redist.arm64.exe" target="_blank">ARMx64 설치<span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/vs/16/release/vc_redist.x86.exe" target="_blank">X 86 용 설치 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe" target="_blank">X 64 용 설치 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://aka.ms/vs/16/release/vc_redist.arm64.exe" target="_blank">ARMx64 설치 <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 
 ### <a name="c"></a>C#
 
@@ -39,7 +40,7 @@ Windows의 Speech SDK를 사용 하려면 시스템에서 <a href="https://suppo
 
 필요한 Speech SDK 파일은 애플리케이션과 동일한 디렉터리에 배포할 수 있습니다. 이렇게 하면 애플리케이션이 라이브러리에 직접 액세스할 수 있습니다. 응용 프로그램과 일치 하는 올바른 버전 (x86/x64)을 선택 했는지 확인 합니다.
 
-| 속성                                            | 함수                                             |
+| 속성                                            | 기능                                             |
 |-------------------------------------------------|------------------------------------------------------|
 | `Microsoft.CognitiveServices.Speech.core.dll`   | 네이티브 및 관리된 배포에 필요한 핵심 SDK |
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | 관리된 배포에 필요                      |
@@ -48,7 +49,7 @@ Windows의 Speech SDK를 사용 하려면 시스템에서 <a href="https://suppo
 > 릴리스부터 릴리스 1.3.0는 파일 `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (이전 릴리스에서 제공 됨)이 더 이상 필요 하지 않습니다. 이제 기능이 핵심 SDK에 통합 되었습니다.
 
 > [!IMPORTANT]
-> Windows Forms App (.NET Framework) c # 프로젝트의 경우 라이브러리가 프로젝트의 배포 설정에 포함 되어 있는지 확인 합니다. 에서 `Properties -> Publish Section`이를 확인할 수 있습니다. 단추를 `Application Files` 클릭 하 고 스크롤 다운 목록에서 해당 라이브러리를 찾습니다. 값이로 `Included`설정 되어 있는지 확인 합니다. 프로젝트를 게시/배포할 때 Visual Studio에 파일이 포함 됩니다.
+> Windows Forms App (.NET Framework) c # 프로젝트의 경우 라이브러리가 프로젝트의 배포 설정에 포함 되어 있는지 확인 합니다. 에서이를 확인할 수 있습니다 `Properties -> Publish Section` . 단추를 클릭 `Application Files` 하 고 스크롤 다운 목록에서 해당 라이브러리를 찾습니다. 값이로 설정 되어 있는지 확인 `Included` 합니다. 프로젝트를 게시/배포할 때 Visual Studio에 파일이 포함 됩니다.
 
 ### <a name="c"></a>C++
 

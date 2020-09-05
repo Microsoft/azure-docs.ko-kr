@@ -1,7 +1,7 @@
 ---
 title: 웹 Api를 호출 하는 모바일 앱 등록 | Microsoft
 titleSuffix: Microsoft identity platform
-description: 웹 Api를 호출 하는 모바일 앱을 빌드하는 방법에 대해 알아봅니다 (앱 코드 구성).
+description: 웹 Api (앱 등록)를 호출 하는 모바일 앱을 빌드하는 방법을 알아봅니다.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: f24b3c9256f759b87c705aae9b93c2d6bc74d30c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 93dcfad34e5881cda52a69ceb99d52d9a905befb
+ms.sourcegitcommit: 8a7b82de18d8cba5c2cec078bc921da783a4710e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82652636"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89047676"
 ---
 # <a name="register-mobile-apps-that-call-web-apis"></a>웹 Api를 호출 하는 모바일 앱 등록
 
@@ -40,7 +40,7 @@ B2C 인증 및 정책을 통과 하는 소셜 id를 사용 하 여 사용자를 
 
 자세한 내용은 [시나리오 및 지원 되는 인증 흐름](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows) 및 [시나리오, 지원 되는 플랫폼 및 언어](authentication-flows-app-scenarios.md#scenarios-and-supported-platforms-and-languages)를 참조 하세요.
 
-## <a name="platform-configuration-and-redirect-uris"></a>플랫폼 구성 및 리디렉션 Uri  
+## <a name="platform-configuration-and-redirect-uris"></a>플랫폼 구성 및 리디렉션 Uri
 
 ### <a name="interactive-authentication"></a>대화형 인증
 
@@ -72,20 +72,20 @@ B2C 인증 및 정책을 통과 하는 소셜 id를 사용 하 여 사용자를 
 
 리디렉션 URI를 수동으로 구성 하려는 경우 응용 프로그램 매니페스트를 통해 수행할 수 있습니다. 다음은 매니페스트에 대해 권장 되는 형식입니다.
 
-- **iOS**:`msauth.<BUNDLE_ID>://auth` 
+- **iOS**: `msauth.<BUNDLE_ID>://auth`
   - 예를 들어 다음과 같이 입력합니다. `msauth.com.yourcompany.appName://auth`
-- **Android**:`msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
+- **Android**: `msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
   - KeyTool 명령을 통해 릴리스 키 또는 디버그 키를 사용 하 여 Android 서명 해시를 생성할 수 있습니다.
 
 ### <a name="username-password-authentication"></a>사용자 이름-암호 인증
 
-앱에서 사용자 이름-암호 인증만 사용 하는 경우 응용 프로그램에 대 한 리디렉션 URI를 등록할 필요가 없습니다. 이 흐름은 Microsoft id 플랫폼 버전 2.0 끝점으로의 왕복을 수행 합니다. 응용 프로그램은 특정 URI에서 다시 호출 되지 않습니다. 
+앱에서 사용자 이름-암호 인증만 사용 하는 경우 응용 프로그램에 대 한 리디렉션 URI를 등록할 필요가 없습니다. 이 흐름은 Microsoft id 플랫폼 버전 2.0 끝점으로의 왕복을 수행 합니다. 응용 프로그램은 특정 URI에서 다시 호출 되지 않습니다.
 
 그러나 응용 프로그램을 공용 클라이언트 응용 프로그램으로 식별 해야 합니다. 이렇게 하려면 응용 프로그램의 **인증** 섹션을 시작 합니다. **고급 설정** 하위 섹션의 **기본 클라이언트 유형** 단락에서 질문 **응용 프로그램을 공용 클라이언트로 간주**하려면 **예**를 선택 합니다.
 
 ## <a name="api-permissions"></a>API 사용 권한
 
-모바일 응용 프로그램은 로그인 한 사용자를 대신 하 여 Api를 호출 합니다. 앱에서 위임 된 권한을 요청 해야 합니다. 이러한 권한을 범위 라고도 합니다. 원하는 환경에 따라 Azure Portal를 통해 위임 된 사용 권한을 정적으로 요청할 수 있습니다. 또는 런타임에 동적으로 요청할 수 있습니다. 
+모바일 응용 프로그램은 로그인 한 사용자를 대신 하 여 Api를 호출 합니다. 앱에서 위임 된 권한을 요청 해야 합니다. 이러한 권한을 범위 라고도 합니다. 원하는 환경에 따라 Azure Portal를 통해 위임 된 사용 권한을 정적으로 요청할 수 있습니다. 또는 런타임에 동적으로 요청할 수 있습니다.
 
 권한을 정적으로 등록 하면 관리자가 앱을 쉽게 승인할 수 있습니다. 정적 등록을 권장 합니다.
 

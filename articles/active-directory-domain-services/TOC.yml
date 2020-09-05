@@ -115,6 +115,8 @@
           href: join-rhel-linux-vm.md
         - name: Ubuntu Server
           href: join-ubuntu-linux-vm.md
+        - name: SUSE Linux Enterprise
+          href: join-suse-linux-vm.md
     - name: 애플리케이션 배포
       items:
         - name: Azure AD 애플리케이션 프록시 배포

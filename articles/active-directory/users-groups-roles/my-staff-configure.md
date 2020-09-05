@@ -13,12 +13,12 @@ ms.date: 05/08/2020
 ms.author: curtand
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: dc4e71f4283d78c2b241441810a8c1313f002152
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: da358ecb126dda21d18120bbe698fec234c85e4f
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85850900"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798961"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>내 직원 (미리 보기)을 사용 하 여 사용자 관리
 
@@ -64,7 +64,7 @@ Au를 구성한 후에는 내 직원에 게 액세스 하는 사용자에 게이
 
 Azure AD 조건부 액세스 정책을 사용 하 여 내 직원 포털을 보호할 수 있습니다. 직원에 게 액세스 하기 전에 multi-factor authentication 요구와 같은 작업에 사용 합니다.
 
-[AZURE AD 조건부 액세스 정책을](https://docs.microsoft.com/azure/active-directory/conditional-access/)사용 하 여 직원을 보호 하는 것이 좋습니다. 내 직원에 게 조건부 액세스 정책을 적용 하려면 PowerShell을 사용 하 여 내 직원 서비스 사용자를 수동으로 만들어야 합니다.
+[AZURE AD 조건부 액세스 정책을](../conditional-access/index.yml)사용 하 여 직원을 보호 하는 것이 좋습니다. 내 직원에 게 조건부 액세스 정책을 적용 하려면 PowerShell을 사용 하 여 내 직원 서비스 사용자를 수동으로 만들어야 합니다.
 
 ### <a name="apply-a-conditional-access-policy-to-my-staff"></a>내 직원에 게 조건부 액세스 정책 적용
 

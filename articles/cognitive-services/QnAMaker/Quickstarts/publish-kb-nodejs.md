@@ -5,12 +5,12 @@ ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27, devx-track-javascript
 ms.topic: how-to
-ms.openlocfilehash: 18ccec5332e3751a86225ab087a1f68b0577cf96
-ms.sourcegitcommit: 42107c62f721da8550621a4651b3ef6c68704cd3
+ms.openlocfilehash: a891e806c54d8d88eea1021c95923ffdc90c36f9
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87406098"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89266428"
 ---
 # <a name="quickstart-qna-maker-rest-apis-for-nodejs"></a>퀵 스타트: Node.js에 대 한 REST Api QnA Maker
 
@@ -31,7 +31,7 @@ Node.js용 QnA Maker REST API를 사용하여 다음을 수행합니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-* Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/)
+* Azure 구독 - [체험 구독 만들기](https://azure.microsoft.com/free/cognitive-services)
 * 현재 버전의 [Node.js](https://nodejs.org)
 * [QnA Maker 서비스](../How-To/set-up-qnamaker-service-azure.md)가 있어야 합니다. 키와 엔드포인트(리소스 이름 포함)를 검색하려면 Azure Portal에서 리소스에 대해 **빠른 시작**을 선택합니다.
 
@@ -76,11 +76,15 @@ npm install requestretry request --save
 
 ## <a name="add-the-dependencies"></a>종속성 추가
 
-`rest-apis.js`라는 파일을 만들고 HTTP 요청을 수행하도록 다음 _requires_ 문을 추가합니다.
+이라는 파일을 만들고 `rest-apis.js` 다음 종속성을 추가 합니다.
 
-```javascript
-const request = require("requestretry");
-```
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="dependencies":::
+
+## <a name="add-utility-functions"></a>유틸리티 함수 추가
+
+다음 유틸리티 함수를 추가 합니다.
+
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="utility":::
 
 ## <a name="add-azure-resource-information"></a>Azure 리소스 정보 추가
 
@@ -88,10 +92,10 @@ const request = require("requestretry");
 
 다음 환경 값을 설정합니다.
 
-* `QNAMAKER_RESOURCE_KEY`- **키는** 32 문자열이 고, Azure Portal QnA Maker 리소스의 **빠른 시작** 페이지에서 사용할 수 있습니다. 이는 예측 엔드포인트 키와 동일하지 않습니다.
+* `QNAMAKER_RESOURCE_KEY` - **키는** 32 문자열이 고, Azure Portal QnA Maker 리소스의 **빠른 시작** 페이지에서 사용할 수 있습니다. 이는 예측 엔드포인트 키와 동일하지 않습니다.
 * `QNAMAKER_AUTHORING_ENDPOINT` - `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com` 형식의 작성 엔드포인트에는 **리소스 이름**이 포함됩니다. 이는 예측 엔드포인트를 쿼리하는 데 사용되는 URL과 동일하지 않습니다.
 
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=authorization)]
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="authorization":::
 
 ## <a name="create-a-knowledge-base"></a>기술 자료 만들기
 
@@ -103,13 +107,13 @@ const request = require("requestretry");
 
 [REST API를 사용하여 기술 자료를 생성](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create)합니다.
 
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=createKb)]
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="createKb":::
 
 ## <a name="replace-a-knowledge-base"></a>기술 자료 바꾸기
 
 [REST API를 사용하여 기술 자료를 바꿉니다](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/replace).
 
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=replaceKb)]
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="replaceKb":::
 
 ## <a name="publish-a-knowledge-base"></a>기술 자료 게시
 
@@ -117,14 +121,13 @@ const request = require("requestretry");
 
 [REST API를 사용하여 기술 자료를 게시](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)합니다.
 
-
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=publish)]
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="publishKb":::
 
 ## <a name="download-the-knowledge-base"></a>기술 자료 다운로드
 
 [REST API를 사용하여 기술 자료를 다운로드](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/download)합니다.
 
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=download)]
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="downloadKb":::
 
 ## <a name="delete-a-knowledge-base"></a>기술 자료 삭제
 
@@ -132,7 +135,7 @@ const request = require("requestretry");
 
 [REST API를 사용하여 기술 자료를 삭제](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/delete)합니다.
 
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=deleteKb)]
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="deleteKb":::
 
 ## <a name="get-status-of-an-operation"></a>작업의 상태 가져오기
 
@@ -140,9 +143,13 @@ const request = require("requestretry");
 
 [REST API를 사용하여 기술 자료에서 작업을 모니터링](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails)합니다.
 
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="operationDetails":::
 
-[!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=operationDetails)]
+## <a name="add-main-method"></a>Main 메서드 추가
 
+다음 `main` 메서드를 추가합니다.
+
+:::code language="javascript" source="~/cognitive-services-quickstart-code/javascript/QnAMaker/rest/create-publish-kb.js" id="main":::
 
 ## <a name="run-the-application"></a>애플리케이션 실행
 

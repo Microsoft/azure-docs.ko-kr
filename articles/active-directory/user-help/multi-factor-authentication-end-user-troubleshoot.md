@@ -9,15 +9,16 @@ ms.workload: identity
 ms.service: active-directory
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 08/04/2020
+ms.date: 08/20/2020
 ms.author: curtand
 ms.reviewer: kexia
-ms.openlocfilehash: 754d456f557b6c9500cdb64ee01a42124a18ab9c
-ms.sourcegitcommit: bfeae16fa5db56c1ec1fe75e0597d8194522b396
+metadata ms.custom: contperfq1
+ms.openlocfilehash: 61ba06054e86d544ae4ab1edbdef8d86667ef3b2
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88036677"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88796581"
 ---
 # <a name="common-problems-with-two-factor-verification-and-your-work-or-school-account"></a>2단계 인증 및 회사 또는 학교 계정에 대한 일반적인 문제
 
@@ -31,14 +32,10 @@ Azure Active Directory (Azure AD) 조직은 2 단계 인증 (2FV)을 켤 수 있
 
 2 fv는 사용자가 알고 있는 것과 사용자가 _알고_ _있는_것을 필요로 하기 때문에 암호 보다 안전 합니다. 실제 전화가 있는 해커는 없습니다.
 
-<center>
-
-![개념적 인증 방법 이미지](../authentication/media/concept-mfa-howitworks/methods.png)</center>
-
 >[!Important]
->관리자의 경우, [Azure AD 문서](https://docs.microsoft.com/azure/active-directory)에서 Azure AD 환경을 설정하고 관리하는 방법에 대한 자세한 정보를 확인할 수 있습니다.
->
->이 콘텐츠는 조직에서 귀하에게 제공한 계정(예: alain@contoso.com)에 해당되는 회사 또는 학교 계정에만 사용할 수 있습니다. 2단계 인증과 직접 설정한 계정(예: danielle@outlook.com)에 해당되는 개인 Microsoft 계정에 문제가 있다면 [Microsoft 계정에 대한 2단계 인증 설정 또는 해제](https://support.microsoft.com/help/4028586/microsoft-account-turning-two-step-verification-on-or-off)를 참조하세요.
+>관리자의 경우, [Azure AD 문서](../index.yml)에서 Azure AD 환경을 설정하고 관리하는 방법에 대한 자세한 정보를 확인할 수 있습니다.
+
+이 콘텐츠는 조직에서 사용자에 게 제공 하는 계정인 회사 또는 학교 계정을 지원 하기 위한 것입니다 (예: dritan@contoso.com ). 개인 Microsoft 계정 (예:)에 대 한 2 단계 확인에 문제가 있는 경우 danielle@outlook.com [Microsoft 계정에 대해 2 단계 인증 설정 또는 해제](https://support.microsoft.com/help/4028586/microsoft-account-turning-two-step-verification-on-or-off)를 참조 하세요.
 
 ## <a name="i-dont-have-my-mobile-device-with-me"></a>내 모바일 디바이스가 없습니다.
 
@@ -71,7 +68,7 @@ Azure Active Directory (Azure AD) 조직은 2 단계 인증 (2FV)을 켤 수 있
 --------- | ------------
 모바일 디바이스 다시 시작 | 경우에 따라 디바이스에 새로 고침이 필요할 수도 있습니다. 장치를 다시 시작 하면 모든 백그라운드 프로세스 및 서비스가 종료 됩니다. 다시 시작 하면 장치의 핵심 구성 요소도 종료 됩니다. 장치를 다시 시작 하면 모든 서비스 또는 구성 요소가 새로 고쳐집니다.
 보안 정보가 올바른지 확인합니다. | 보안 인증 방법 정보 특히 전화 번호가 정확한지 확인합니다. 잘못된 전화 번호를 입력한 경우, 모든 경고는 잘못 입력된 해당 전화 번호로 전달됩니다. 다행히도 해당 사용자는 경고를 사용하여 어떤 작업도 수행할 수 없으며 다만 이는 계정에 로그인하는 데에도 도움이 되지 않습니다. 정보가 올바른지 확인하려면 [2단계 인증 방법 설정 관리](multi-factor-authentication-end-user-manage-settings.md) 문서에서 해당 지침을 참조하세요.
-알림이 설정되었는지 확인 | 모바일 장치의 알림이 켜져 있는지 확인 합니다. 다음 알림 모드가 허용 되는지 확인 합니다. <br/><br/> &bull;전화 통화 <br/> &bull;인증 앱 <br/> &bull;텍스트 메시징 앱 <br/><br/> 이러한 모드에서 장치에 _표시_ 되는 경고를 생성 하는지 확인 합니다.
+알림이 설정되었는지 확인 | 모바일 장치의 알림이 켜져 있는지 확인 합니다. 다음 알림 모드가 허용 되는지 확인 합니다. <br/><br/> &bull; 전화 통화 <br/> &bull; 인증 앱 <br/> &bull; 텍스트 메시징 앱 <br/><br/> 이러한 모드에서 장치에 _표시_ 되는 경고를 생성 하는지 확인 합니다.
 디바이스 신호 및 인터넷 연결 여부 확인 | 전화 통화 및 문자 메시지가 모바일 디바이스에 수신되는지 확인합니다. 친구에게 전화 통화 및 문자 메시지 전송을 부탁해 두 가지 모두 수신되는지 확인합니다. 전화 또는 텍스트를 받지 못한 경우 먼저 모바일 장치가 켜져 있는지 확인 합니다. 장치가 켜져 있지만 통화 또는 텍스트를 받지 못하는 경우 네트워크에 문제가 있을 수 있습니다. 공급자에 게 문의 해야 합니다. 신호와 관련된 문제들이 종종 발생할 경우, 모바일 디바이스에 [Microsoft Authenticator 앱](user-help-auth-app-download-install.md)을 설치한 후 사용하는 것이 좋습니다. 이 인증자 앱은 셀 신호 또는 인터넷 연결이 없어도 로그인용으로 임의 보안 코드를 생성할 수 있습니다.
 방해 금지 해제 | 모바일 디바이스에서 **방해 금지** 기능을 사용하도록 설정하지 않았는지 확인합니다. 이 기능을 켜면 알림이 모바일 디바이스에서 경고하도록 허용되지 않습니다. 이 기능을 해제하는 방법에 관한 지침은 모바일 디바이스의 설명서를 참조하세요.
 전화 번호 차단 해제 | 미국에서 Microsoft의 음성 통화는 +1(866) 539 4191, +1(855) 330 8653 및 +1(877) 668 6536에서 발신됩니다.

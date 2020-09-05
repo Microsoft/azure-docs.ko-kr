@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 47140bccc8c2a1b69f083502d031a9db6d21294e
-ms.sourcegitcommit: 2ff0d073607bc746ffc638a84bb026d1705e543e
+ms.openlocfilehash: 884aa18b1a29b1c4f1bbf1159a5d48870529c72b
+ms.sourcegitcommit: 37afde27ac137ab2e675b2b0492559287822fded
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87835785"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88565709"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Azure Static Web Apps 미리 보기란?
 
@@ -32,10 +32,10 @@ Static Web Apps를 사용하면 정적 자산은 기존 웹 서버와 분리되�
 
 - HTML, CSS, JavaScript 및 이미지와 같은 정적 콘텐츠에 대한 **웹 호스팅**입니다.
 - Azure Functions에서 제공하는 **통합 API**.
-- 리포지토리 변경 시 빌드 및 배포가 트리거되는 **자사 GitHub 통합**.
+- 리포지토리 변경 시 빌드 및 배포가 트리거되는 **최상급 GitHub 통합**.
 - **전역적으로 분산된** 정적 콘텐츠로, 사용자에게 더 가까운 콘텐츠를 제공합니다.
 - 자동으로 갱신되는 **무료 SSL 인증서**.
-- 앱에 브랜드 사용자 지정을 제공하는 **사용자 지정 도메인**\*.
+- 앱에 브랜드 사용자 지정을 제공하는 **사용자 지정 도메인**.
 - CORS 구성이 필요 없는 API를 호출할 때 역방향 프록시를 사용하는 **원활한 보안 모델**.
 - Azure Active Directory, Facebook, Google, GitHub 및 Twitter와 **인증 공급자 통합**.
 - **사용자 지정 가능한 권한 부여 역할 정의** 및 할당.
@@ -44,11 +44,9 @@ Static Web Apps를 사용하면 정적 자산은 기존 웹 서버와 분리되�
 
 ## <a name="what-you-can-do-with-static-web-apps"></a>Static Web Apps로 수행할 수 있는 작업
 
-- [Azure Functions](apis.md) 백 엔드를 통해 [Angular](getting-started.md#tabpanel_CeZOj-G++Q_angular), [React](getting-started.md#tabpanel_CeZOj-G++Q_react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md#tabpanel_CeZOj-G++Q_vue) 등의 프레임워크 및 라이브러리를 사용하여 **최신 JavaScript 애플리케이션을 빌드**합니다.
+- [Azure Functions](apis.md) 백 엔드를 통해 [Angular](getting-started.md?tabs=angular), [React](getting-started.md?tabs=react), [Svelte](https://docs.microsoft.com/learn/modules/publish-app-service-static-web-app-api/), [Vue](getting-started.md?tabs=react) 등의 프레임워크 및 라이브러리를 사용하여 **최신 JavaScript 애플리케이션을 빌드**합니다.
 - [Gatsby](publish-gatsby.md), [Hugo](publish-hugo.md), [VuePress](publish-vuepress.md)와 같은 프레임워크를 사용하여 **정적 사이트를 게시**합니다.
 - [Next.js](deploy-nextjs.md) 및 [Nuxt.js](deploy-nuxtjs.md)와 같은 프레임워크를 사용하여 **웹 애플리케이션**을 배포합니다.
-
-\* 미리 보기 중에는 Apex 도메인 등록이 지원되지 않습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

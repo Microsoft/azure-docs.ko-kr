@@ -3,7 +3,7 @@ title: Azure Media Services v3 API에 연결 - .NET
 description: 이 문서에서는 .NET을 사용하여 Media Services v3 API에 연결하는 방법을 보여 줍니다.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,17 +11,19 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/18/2019
-ms.author: juliako
-ms.custom: has-adal-ref
-ms.openlocfilehash: 30c91b71b952bb68761015325a00ff6926c62dfe
-ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.date: 08/31/2020
+ms.author: inhenkel
+ms.custom: has-adal-ref, devx-track-csharp
+ms.openlocfilehash: 90f5c55922a5fafb29a40faf9af719f77c74c6cf
+ms.sourcegitcommit: bcda98171d6e81795e723e525f81e6235f044e52
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87001318"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89265646"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Media Services v3 API에 연결 - .NET
+
+[!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 이 문서에서는 서비스 사용자 로그인 메서드를 사용하여 Azure Media Services v3 .NET SDK에 연결하는 방법을 보여 줍니다.
 

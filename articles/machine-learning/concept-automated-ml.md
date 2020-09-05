@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 04/22/2020
-ms.openlocfilehash: 8d94acabb434d0e722e352de46197a86e994e145
-ms.sourcegitcommit: dccb85aed33d9251048024faf7ef23c94d695145
+ms.openlocfilehash: 081da2b3f6fbe97ebce21940d7e0ca8978793b15
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87290040"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652103"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>자동화된 Machine Learning(AutoML)이란?
 
@@ -105,7 +105,7 @@ Azure Machine Learning은 학습 중에 다양한 알고리즘과 매개 변수�
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2Xc9t]
 
 
-## <a name="feature-engineering"></a>특징 엔지니어링
+## <a name="feature-engineering"></a>기능 엔지니어링
 
 기능 엔지니어링은 데이터에 대 한 도메인 정보를 사용 하 여 ML 알고리즘의 기능을 개선 하는 데 도움이 되는 기능을 만드는 프로세스입니다. Azure Machine Learning 확장 및 표준화 기술이 기능 엔지니어링을 용이 하 게 하는 데 적용 됩니다. 이러한 기술 및 기능 엔지니어링을 통칭 하 여 기능화 라고 합니다.
 
@@ -202,8 +202,6 @@ Azure Machine Learning은 학습 중에 다양한 알고리즘과 매개 변수�
 * 수백 개의 유정에 대한 예측 유지 관리
 * 개별 사용자 환경 조정
 
-자세한 내용은 GitHub의 [많은 모델 솔루션 가속기](https://aka.ms/many-models)를 참조하세요.
-
 ## <a name="automl-in-azure-machine-learning"></a>Azure Machine Learning의 AutoML
 
 Azure Machine Learning은 자동화된 ML 작업을 위한 두 가지 환경을 제공합니다.
@@ -279,7 +277,7 @@ AutoML을 사용 하 여 시작 및 실행 하기 위한 여러 리소스가 있
 
  + **코드를 낮거나 사용 하지 않으려면** [자습서: Azure Machine Learning studio를 사용 하 여 자동화 된 ML 분류 모델 만들기](tutorial-first-experiment-automated-ml.md)를 참조 하세요.
 
-방법 문서에서는 AutoML이 제공 하는 기능에 대 한 추가 세부 정보를 제공 합니다. 예를 들면 다음과 같습니다. 
+방법 문서에서는 AutoML이 제공 하는 기능에 대 한 추가 세부 정보를 제공 합니다. 예: 
 
 + 자동 학습 실험에 대 한 설정 구성
     + Azure Machine Learning Studio의 경우 [이러한 단계를 사용](how-to-use-automated-ml-for-ml-models.md)합니다. 

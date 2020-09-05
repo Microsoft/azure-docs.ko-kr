@@ -2,18 +2,18 @@
 title: '빠른 시작: Azure Portal을 사용하여 Azure API for FHIR 배포'
 description: 이 빠른 시작에서는 Azure Portal을 사용하여 Azure API for FHIR을 배포하고 설정을 구성하는 방법을 알아봅니다.
 services: healthcare-apis
-author: hansenms
+author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: quickstart
-ms.date: 02/07/2019
-ms.author: mihansen
-ms.openlocfilehash: e729597e9d83c4e6096fe52b577b052d94ca4799
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.date: 03/15/2020
+ms.author: matjazl
+ms.openlocfilehash: 8c0448d31cd89e2ca969b81361b30bac3f9610e9
+ms.sourcegitcommit: 7fe8df79526a0067be4651ce6fa96fa9d4f21355
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "84820022"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87851939"
 ---
 # <a name="quickstart-deploy-azure-api-for-fhir-using-azure-portal"></a>빠른 시작: Azure Portal을 사용하여 Azure API for FHIR 배포
 
@@ -31,34 +31,31 @@ Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https:/
 
 검색 상자에 "FHIR"을 입력하여 Azure API for FHIR을 찾을 수 있습니다.
 
-![Healthcare API 검색](media/quickstart-paas-portal/portal-search-healthcare-apis.png)
+:::image type="content" source="media/quickstart-paas-portal/portal-search-healthcare-apis.png" alt-text="Healthcare API 검색":::
 
 ## <a name="create-azure-api-for-fhir-account"></a>Azure API for FHIR 계정 만들기
 
 **만들기**를 선택하여 새 Azure API for FHIR 계정을 만듭니다.
 
-![Azure API for FHIR 계정 만들기](media/quickstart-paas-portal/portal-create-healthcare-apis.png)
+:::image type="content" source="media/quickstart-paas-portal/portal-create-healthcare-apis.png" alt-text="Azure API for FHIR 계정 만들기":::
 
 ## <a name="enter-account-details"></a>계정 세부 정보 입력
 
 기존 리소스 그룹을 선택하거나 새 리소스 그룹을 만들고, 계정에 대한 이름을 선택하고, 마지막으로 **검토 + 만들기**를 클릭합니다.
 
-![새 의료 API 세부 정보](media/quickstart-paas-portal/portal-new-healthcareapi-details.png)
+:::image type="content" source="media/quickstart-paas-portal/portal-new-healthcareapi-details.png" alt-text="새 의료 API 세부 정보":::
 
 만들기를 확인하고 FHIR API 배포를 기다립니다.
 
-## <a name="additional-settings"></a>추가 설정
+## <a name="additional-settings-optional"></a>추가 설정(선택 사항)
 
-**다음: 추가 설정**을 클릭하여 이 Azure API for FHIR에 대한 액세스를 허용해야 하는 권한, 대상, ID 개체 ID를 구성하고, 필요에 따라 SMART on FHIR을 사용하도록 설정하고, 데이터베이스 처리량을 구성합니다.
+**다음: 추가 설정**을 클릭하여 인증 설정을 볼 수도 있습니다. Azure API for FHIR의 기본 구성은 [데이터 평면 역할 할당에 Azure RBAC를 사용](configure-azure-rbac.md)하는 것입니다. 이 모드에서 구성된 경우 FHIR 서비스에 대한 "권한"이 구독의 Azure Active Directory 테넌트로 설정됩니다.
 
-- **권한:** 서비스의 인증 기관으로 로그인한 Azure AD 테넌트에서 다른 Azure AD 테넌트를 지정할 수 있습니다.
-- **사용자:** 모범 사례 및 기본 설정은 대상 그룹이 FHIR 서버의 URL로 설정되어 있음을 나타내는 것입니다. 여기에서 변경할 수 있습니다. 대상은 토큰이 의도된 수신자를 식별합니다. 이 컨텍스트에서는 FHIR API 자체를 나타내는 항목으로 설정되어야 합니다.
-- **허용되는 개체 ID:** 이 Azure API for FHIR에 대한 액세스를 허용해야 하는 ID 개체 ID를 지정할 수 있습니다. [ID 개체 ID 찾기](find-identity-object-ids.md) 방법 가이드에서 사용자 및 서비스 사용자의 개체 ID 찾기에 대해 자세히 알아볼 수 있습니다.  
-- **Smart On FHIR 프록시:** SMART on FHIR 프록시를 사용하도록 설정할 수 있습니다. SMART on FHIR 프록시를 구성하는 방법에 대한 자세한 내용은 자습서 [Azure API for FHIR SMART on FHIR 프록시](https://docs.microsoft.com/azure/healthcare-apis/use-smart-on-fhir-proxy)를 참조하세요.  
-- **프로비저닝된 처리량(RU/s):** 여기서는 Azure API for FHIR에 대한 기본 데이터베이스에 대해 처리량 설정을 지정할 수 있습니다. 이 설정은 나중에 데이터베이스 블레이드에서 변경할 수 있습니다. 자세한 내용은 [데이터베이스 설정 구성](configure-database.md) 페이지를 참조하세요.
+:::image type="content" source="media/rbac/confirm-azure-rbac-mode-create.png" alt-text="기본 인증 설정":::
 
+이 경우 역할 할당을 구성하는 데 Azure RBAC를 사용하기 때문에 허용된 개체 ID를 입력하는 상자가 회색으로 표시됩니다.
 
-![허용되는 개체 ID 구성](media/quickstart-paas-portal/configure-audience.png)
+외부 또는 보조 Azure Active Directory 테넌트를 사용하도록 FHIR 서비스를 구성하려는 경우 권한을 변경하고 서버에 대한 액세스를 허용해야 하는 사용자 및 그룹의 개체 ID를 입력할 수 있습니다. 자세한 내용은 [로컬 RBAC 구성](configure-local-rbac.md) 가이드를 참조하세요.
 
 ## <a name="fetch-fhir-api-capability-statement"></a>Fetch FHIR API 기능 문
 

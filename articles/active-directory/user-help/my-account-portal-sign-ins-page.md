@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 08/03/2020
 ms.author: curtand
-ms.openlocfilehash: 1816170da0fb6e5120f8cec6b6dda68d2ea1c678
-ms.sourcegitcommit: 8def3249f2c216d7b9d96b154eb096640221b6b9
+ms.openlocfilehash: d9023579b6627e9dab9feac8dfaccd94dc9f5c12
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87543216"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798128"
 ---
 # <a name="view-and-search-your-recent-sign-in-activity-from-the-my-sign-ins-page"></a>내 로그인 페이지에서 최근 로그인 활동 보기 및 검색
 
@@ -72,7 +72,7 @@ ms.locfileid: "87543216"
 
 최근 로그인 작업을 확인한 후에 다음을 수행할 수 있습니다.
 
-- [보안 정보](user-help-security-info-overview.md)를 보거나 관리합니다.
+- [보안 정보](./security-info-setup-signin.md)를 보거나 관리합니다.
 
 - 연결된 [디바이스](my-account-portal-devices-page.md)를 보거나 관리합니다.
 

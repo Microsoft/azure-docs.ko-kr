@@ -6,13 +6,13 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e25a874af66b73f5f75a07a5df65c155a16c9f01
-ms.sourcegitcommit: 5b8fb60a5ded05c5b7281094d18cf8ae15cb1d55
+ms.custom: devx-track-javascript, devx-track-csharp
+ms.openlocfilehash: 0b5056f221fdd6036e5f6dff3d69a21c3a2dc27e
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87387152"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88928567"
 ---
 # <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure SignalR Service를 사용하여 Azure Functions 개발 및 구성
 
@@ -109,12 +109,12 @@ public class SignalRTestHub : ServerlessHub
 
 ### <a name="define-hub-method"></a>허브 메서드 정의
 
-모든 **허브 메서드에는** 특성이 있어야 `[SignalRTrigger]` 하 고 매개 변수가 없는 생성자를 사용 **해야 합니다** . 그런 다음 **메서드 이름이** 매개 변수 **이벤트**로 처리 됩니다.
+모든 **허브 메서드에는**  특성이 있어야 `[SignalRTrigger]` 하 고 매개 변수가 없는 생성자를 사용 **해야 합니다** . 그런 다음 **메서드 이름이** 매개 변수 **이벤트**로 처리 됩니다.
 
 기본적으로 `category=messages` 메서드 이름은 다음 이름 중 하나입니다.
 
-* **Onconnected**:로 처리 됨`category=connections, event=connected`
-* **Ondisconnected**: 다음으로 처리 됨:`category=connections, event=disconnected`
+* **Onconnected**:로 처리 됨 `category=connections, event=connected`
+* **Ondisconnected**: 다음으로 처리 됨: `category=connections, event=disconnected`
 
 ### <a name="parameter-binding-experience"></a>매개 변수 바인딩 환경
 
@@ -122,7 +122,7 @@ public class SignalRTestHub : ServerlessHub
 
 * 인수는 바인딩 특성에 의해 데코 레이트 됩니다.
 * 인수의 형식이 또는입니다. `ILogger``CancellationToken`
-* 인수는 특성으로 데코 레이트 됩니다.`[SignalRIgnore]`
+* 인수는 특성으로 데코 레이트 됩니다. `[SignalRIgnore]`
 
 ### <a name="negotiate-experience-in-class-based-model"></a>클래스 기반 모델에서 환경 협상
 
@@ -218,10 +218,10 @@ JavaScript/TypeScript 클라이언트는 협상 함수에 대해 HTTP 요청을 
 
 로컬 컴퓨터에서 함수 앱을 실행 하는 경우local.settings.js에 섹션을 추가 하 여 `Host` CORS를 사용 하도록 설정할 수 있습니다. *local.settings.json* 섹션에서 `Host` 다음 두 가지 속성을 추가 합니다.
 
-* `CORS`-클라이언트 응용 프로그램의 원본인 기준 URL을 입력 합니다.
-* `CORSCredentials`- `true` "withCredentials" 요청을 허용 하도록 설정 합니다.
+* `CORS` -클라이언트 응용 프로그램의 원본인 기준 URL을 입력 합니다.
+* `CORSCredentials` - `true` "withCredentials" 요청을 허용 하도록 설정 합니다.
 
-예제:
+예:
 
 ```json
 {

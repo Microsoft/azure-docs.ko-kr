@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 907ad8705742e4b2e38b13c3c675ebd333bd27d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 36ab632010ec2bbbc19ac71cbeccab2ff6b3565f
+ms.sourcegitcommit: e69bb334ea7e81d49530ebd6c2d3a3a8fa9775c9
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80295317"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88948388"
 ---
 # <a name="building-a-conditional-access-policy"></a>조건부 액세스 정책 빌드
 
@@ -44,7 +44,7 @@ ms.locfileid: "80295317"
 
 #### <a name="sign-in-risk"></a>로그인 위험
 
-[Azure AD ID 보호](../identity-protection/overview.md)를 사용 하는 조직의 경우 생성 되는 위험 검색은 조건부 액세스 정책에 영향을 줄 수 있습니다.
+[Azure AD ID 보호](../identity-protection/overview-identity-protection.md)를 사용 하는 조직의 경우 생성 되는 위험 검색은 조건부 액세스 정책에 영향을 줄 수 있습니다.
 
 #### <a name="device-platforms"></a>디바이스 플랫폼
 
@@ -115,7 +115,7 @@ Grant 컨트롤은 하나 이상의 컨트롤에 대 한 적용을 트리거할 
 조건부 액세스 정책에 적용 하려면 최소한 다음을 포함 해야 합니다.
 
 - 정책의 **이름** 입니다.
-- **과제**
+- **할당**
    - 정책을 적용할 **사용자 및/또는 그룹**
    - 정책을 적용할 **클라우드 앱 또는 작업** 입니다.
 - **액세스 제어**

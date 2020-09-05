@@ -3,18 +3,18 @@ title: MARS 에이전트를 사용 하 여 Windows 컴퓨터 백업
 description: MARS (Microsoft Azure Recovery Services) 에이전트를 사용 하 여 Windows 컴퓨터를 백업 합니다.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 34fa0906ec63eb51d37c192f9dadddc57dbf1cdf
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 55eb8bdf069fd1b5793468ae52f764eb4288f261
+ms.sourcegitcommit: 3fb5e772f8f4068cc6d91d9cde253065a7f265d6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538635"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89182091"
 ---
 # <a name="back-up-windows-server-files-and-folders-to-azure"></a>Azure에 Windows Server 파일 및 폴더 백업
 
 이 문서에서는 [Azure Backup](backup-overview.md) 서비스 및 MICROSOFT AZURE RECOVERY SERVICES (MARS) 에이전트를 사용 하 여 Windows 컴퓨터를 백업 하는 방법을 설명 합니다. MARS는 Azure Backup 에이전트 라고도 합니다.
 
-이 아티클에서는 다음 방법을 설명합니다.
+이 문서에서는 다음을 수행하는 방법을 알아봅니다.
 
 > [!div class="checklist"]
 >
@@ -28,7 +28,7 @@ ms.locfileid: "86538635"
 * 보조 MABS 또는 Data Protection Manager 서버에서 MARS 에이전트를 실행 하는 [백업 아키텍처](backup-architecture.md#architecture-back-up-to-dpmmabs) 에 대해 알아봅니다.
 * 지원 되는 기능과 MARS 에이전트에서 [백업할 수 있는 항목을](backup-support-matrix-mars-agent.md) 검토 합니다.
 * 백업 하려는 컴퓨터에서 [인터넷 액세스를 확인](install-mars-agent.md#verify-internet-access) 합니다.
-* MARS 에이전트가 설치 되어 있지 않으면 [여기](install-mars-agent.md)에 설치 하는 방법을 알아봅니다.
+* MARS 에이전트가 설치 되지 않은 경우 [여기](install-mars-agent.md)에 설치 하는 방법을 알아보세요.
 
 ## <a name="create-a-backup-policy"></a>백업 정책 만들기
 
@@ -89,7 +89,7 @@ Azure Backup는 DST (일광 절약 시간)를 자동으로 고려 하지 않습�
 
     ![백업 유형 확인](./media/backup-azure-manage-mars/confirm-backup-type.png)
 
-1. 마법사가 백업 일정 만들기를 완료 한 후 **닫기**를 선택 합니다.
+1. 마법사가 백업 일정 생성을 완료하면 **닫기**를 선택합니다.
 
     ![백업 일정 진행률 보기](./media/backup-azure-manage-mars/confirm-modify-backup-process.png)
 
@@ -125,7 +125,7 @@ Azure Backup의 네트워크 제한은 로컬 운영 체제의 [QoS (서비스 �
 1. **제한** 탭에서 **백업 작업에 인터넷 대역폭 사용 제한 사용**을 선택 합니다.
 
     ![백업 작업에 대 한 네트워크 제한 설정](./media/backup-configure-vault/throttling-dialog.png)
-1. 근무 시간 및 근무 외 시간에 허용 되는 대역폭을 지정 합니다. 대역폭 값은 512 Kbps에서 시작 하 여 1023 MBps로 이동 합니다. 그런 다음 **확인**을 선택합니다.
+1. 근무 시간 및 근무 외 시간에 허용 되는 대역폭을 지정 합니다. 대역폭 값은 512 Kbps에서 시작 하 여 1023 MBps로 이동 합니다. 그런 다음, **확인**을 선택합니다.
 
 ## <a name="run-an-on-demand-backup"></a>주문형 백업 실행
 
@@ -138,7 +138,7 @@ Azure Backup의 네트워크 제한은 로컬 운영 체제의 [QoS (서비스 �
    ![달력을 사용 하 여 보존 날짜 사용자 지정](./media/backup-configure-vault/mars-ondemand.png)
 
 1. **확인** 페이지에서 설정을 검토 하 고 **백업**을 선택 합니다.
-1. **닫기** 를 선택 하 여 마법사를 닫습니다. 백업이 완료 되기 전에 마법사를 닫으면 마법사가 백그라운드에서 계속 실행 됩니다.
+1. **닫기**를 선택하여 마법사를 닫습니다. 백업이 완료 되기 전에 마법사를 닫으면 마법사가 백그라운드에서 계속 실행 됩니다.
 
 초기 백업이 완료 되 면 백업 콘솔에 **작업 완료 됨** 상태가 표시 됩니다.
 
@@ -150,7 +150,7 @@ Azure Backup의 네트워크 제한은 로컬 운영 체제의 [QoS (서비스 �
 
 | 백업-일정 옵션 | 데이터 보존 기간
 | -- | --
-| Day | **기본 보존**: "일별 백업에 대 한 보존 기간 (일)"에 해당 합니다. <br/><br/> **예외**: 장기 보존 (주, 월 또는 년)에 대해 설정 된 매일 예약 된 백업이 실패 하는 경우 실패 직후 트리거되는 주문형 백업은 장기 보존에 대 한 것으로 간주 됩니다. 그렇지 않으면 다음 예약 된 백업이 장기 보존을 위해 고려 됩니다.<br/><br/> **예제 시나리오**: 목요일 오전 8:00 시에 예약 된 백업이 실패 했습니다. 이 백업은 매주, 매월 또는 매년 보존 되는 것으로 간주 됩니다. 따라서 금요일 오전 8:00에 예약 된 다음 백업 이전에 트리거된 첫 번째 주문형 백업은 매주, 매월 또는 매년 보존에 대해 자동으로 태그가 지정 됩니다. 이 백업은 목요일 8:00 AM 백업을 대체 합니다.
+| 일 | **기본 보존**: "일별 백업에 대 한 보존 기간 (일)"에 해당 합니다. <br/><br/> **예외**: 장기 보존 (주, 월 또는 년)에 대해 설정 된 매일 예약 된 백업이 실패 하는 경우 실패 직후 트리거되는 주문형 백업은 장기 보존에 대 한 것으로 간주 됩니다. 그렇지 않으면 다음 예약 된 백업이 장기 보존을 위해 고려 됩니다.<br/><br/> **예제 시나리오**: 목요일 오전 8:00 시에 예약 된 백업이 실패 했습니다. 이 백업은 매주, 매월 또는 매년 보존 되는 것으로 간주 됩니다. 따라서 금요일 오전 8:00에 예약 된 다음 백업 이전에 트리거된 첫 번째 주문형 백업은 매주, 매월 또는 매년 보존에 대해 자동으로 태그가 지정 됩니다. 이 백업은 목요일 8:00 AM 백업을 대체 합니다.
 | 주 | **기본 보존**: 1 일 매주 백업 정책이 있는 데이터 원본에 대해 수행 되는 주문형 백업은 다음 날에 삭제 됩니다. 데이터 원본에 대 한 최신 백업 인 경우에도 삭제 됩니다. <br/><br/> **예외**: 장기 보존 (주, 월 또는 년)에 대해 설정 된 주별 예약 된 백업이 실패 하는 경우 실패 직후 트리거되는 주문형 백업은 장기 보존에 대 한 것으로 간주 됩니다. 그렇지 않으면 다음 예약 된 백업이 장기 보존을 위해 고려 됩니다. <br/><br/> **예제 시나리오**: 목요일 오전 8:00 시에 예약 된 백업이 실패 했습니다. 이 백업은 매월 또는 매년 보존 될 때 고려 됩니다. 따라서 목요일 오전 8:00에 예약 된 다음 백업 이전에 트리거되는 첫 번째 요청 시 백업은 매월 또는 매년 보존에 대해 자동으로 태그가 지정 됩니다. 이 백업은 목요일 8:00 AM 백업을 대체 합니다.
 
 자세한 내용은 [백업 정책 만들기](#create-a-backup-policy)를 참조 하세요.

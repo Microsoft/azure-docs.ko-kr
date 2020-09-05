@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 92c054b42a83d9753e2fcc9c02646c381da795b8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8347ca5a33790d0b35176be47a0fa4811a19e3f1
+ms.sourcegitcommit: 62e1884457b64fd798da8ada59dbf623ef27fe97
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510863"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88935469"
 ---
 # <a name="tips-for-ai-enrichment-in-azure-cognitive-search"></a>Azure Cognitive Search AI 보강에 대 한 팁
 
@@ -54,7 +54,7 @@ https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage
 
 ## <a name="tip-4-use-debug-sessions-to-identify-and-resolve-issues-with-your-skillset"></a>팁 4: 기술의 문제를 식별 하 고 해결 하기 위해 디버그 세션 사용 
 
-디버그 세션은 Azure Portal의 기존 기술 세트와 작동하는 비주얼 편집기입니다. 디버그 세션 내에서 AI 보강 파이프라인에서 오류를 식별 및 해결 하 고, 변경 내용을 확인 하 고, 프로덕션 기술 변경 내용을 커밋할 수 있습니다. 이는 [설명서를 읽는](https://docs.microsoft.com/azure/search/cognitive-search-debug-session)미리 보기 기능입니다. 개념 및 시작에 대 한 자세한 내용은 [디버그 세션](https://docs.microsoft.com/azure/search/cognitive-search-tutorial-debug-sessions)을 참조 하세요.
+디버그 세션은 Azure Portal의 기존 기술 세트와 작동하는 비주얼 편집기입니다. 디버그 세션 내에서 AI 보강 파이프라인에서 오류를 식별 및 해결 하 고, 변경 내용을 확인 하 고, 프로덕션 기술 변경 내용을 커밋할 수 있습니다. 이는 [설명서를 읽는](./cognitive-search-debug-session.md)미리 보기 기능입니다. 개념 및 시작에 대 한 자세한 내용은 [디버그 세션](./cognitive-search-tutorial-debug-sessions.md)을 참조 하세요.
 
 단일 문서에 대 한 디버그 세션 작업은 보다 복잡 한 보강 파이프라인을 반복적으로 작성할 수 있는 좋은 방법입니다.
 

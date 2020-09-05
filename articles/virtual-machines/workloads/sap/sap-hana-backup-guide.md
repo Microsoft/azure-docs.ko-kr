@@ -12,16 +12,16 @@ ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/01/2020
 ms.author: juergent
-ms.openlocfilehash: e1cfe7216c1b37812c482cfacbd5d1c3f155418f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: b5a83b3976dd3d3af1bfd5695815f7571d73dd9d
+ms.sourcegitcommit: 271601d3eeeb9422e36353d32d57bd6e331f4d7b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86507831"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88652188"
 ---
 # <a name="backup-guide-for-sap-hana-on-azure-virtual-machines"></a>Azure Virtual Machines의 SAP HANA Backup 가이드
 
-## <a name="getting-started"></a>시작
+## <a name="getting-started"></a>시작하기
 
 Azure 가상 머신에서 실행되는 SAP HANA에 대한 백업 가이드에서는 Azure 관련 항목만 설명합니다. 일반적인 SAP HANA 백업 관련 항목은 SAP HANA 설명서를 확인 하세요. 사용자는 주요 데이터베이스 백업 전략, 이유 및 동기를 사용 하 여 사운드 및 유효한 백업 전략에 대해 잘 알고 있어야 하며, 백업 절차, 백업 보존 기간 및 복원 절차에 대 한 회사의 요구 사항을 알고 있어야 합니다.
 
@@ -45,7 +45,7 @@ Azure에서 지원 되는 SAP 소프트웨어를 찾는 방법에 대 한 정보
 
 Azure Backup는 [backint](https://www.sap.com/dmc/exp/2013_09_adpd/enEN/#/d/solutions?id=8f3fd455-a2d7-4086-aa28-51d8870acaa5)라는 소유 SAP HANA 인터페이스를 사용 하 여 SAP HANA에 대 한 백업 솔루션으로 인증 됩니다. 솔루션에 대 한 자세한 내용, 해당 기능 및 사용 가능한 Azure 지역에 대 한 자세한 내용은 [Azure vm의 SAP HANA 데이터베이스 백업에 대 한 지원 매트릭스](../../../backup/sap-hana-backup-support-matrix.md#scenario-support)문서를 참조 하세요. HANA에 대 한 Azure Backup 서비스에 대 한 자세한 내용 및 원칙은 [Azure vm의 SAP HANA 데이터베이스 백업에 대 한](../../../backup/sap-hana-db-about.md)문서를 참조 하세요. 
 
-Azure Backup 서비스를 활용 하는 두 번째 가능성은 Azure Premium Storage의 디스크 스냅숏을 사용 하 여 응용 프로그램 일치 백업을 만드는 것입니다. [Azure Ultra disk](../../linux/disks-enable-ultra-ssd.md) 및 [AZURE NETAPP FILES](https://azure.microsoft.com/services/netapp/) 같은 다른 HANA 인증 azure 저장소는 Azure Backup 서비스를 통해 이러한 종류의 스냅숏을 지원 하지 않습니다. 이러한 문서를 읽습니다.
+Azure Backup 서비스를 활용 하는 두 번째 가능성은 Azure Premium Storage의 디스크 스냅숏을 사용 하 여 응용 프로그램 일치 백업을 만드는 것입니다. [Azure Ultra disk](../../disks-enable-ultra-ssd.md) 및 [AZURE NETAPP FILES](https://azure.microsoft.com/services/netapp/) 같은 다른 HANA 인증 azure 저장소는 Azure Backup 서비스를 통해 이러한 종류의 스냅숏을 지원 하지 않습니다. 이러한 문서를 읽습니다.
 
 - [Azure에서 VM 백업 인프라 계획](../../../backup/backup-azure-vms-introduction.md)
 - [Azure Linux VM의 애플리케이션 일치 백업](../../../backup/backup-azure-linux-app-consistent.md) 

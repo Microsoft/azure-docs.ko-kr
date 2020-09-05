@@ -11,28 +11,28 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: aahi
-ms.openlocfilehash: 8d08a0ab8f817d70343686f907ac444af392ea06
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 61303a52212c4cec88dee2ccd8a1c08fb971a9b8
+ms.sourcegitcommit: 023d10b4127f50f301995d44f2b4499cbcffb8fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86108993"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88545661"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Text Analytics 컨테이너 설치 및 실행
 
 > [!NOTE]
-> * 감정 분석 v3의 컨테이너가 이제 일반 공급 됩니다. 핵심 문구 추출 및 언어 검색 컨테이너는 제어 되지 않은 공개 미리 보기로 제공 됩니다.
+> * 감정 분석 v3의 컨테이너가 이제 일반 공급 됩니다. 핵심 구 추출 및 언어 검색 컨테이너는 제어되지 않은 공개 미리 보기로 제공됩니다.
 > * 엔터티 링크 및 NER는 현재 컨테이너로 사용할 수 없습니다.
-> * 현재 상태 컨테이너 사용에 대 한 Text Analytics에 대해서는 요금이 청구 되지 않습니다.
+> * 현재 상태 컨테이너 사용에 대한 Text Analytics에 대해서는 요금이 청구되지 않습니다.
 
-컨테이너를 사용 하면 사용자 환경에서 텍스트 분석 Api를 실행할 수 있으며 특정 보안 및 데이터 관리 요구 사항에 적합 합니다. Text Analytics 컨테이너는 원시 텍스트에 대 한 고급 자연어 처리를 제공 하며, 감정 분석, 핵심 구 추출 및 언어 감지 라는 세 가지 주요 함수를 포함 합니다. 
+컨테이너를 사용하면 사용자 환경에서 Text Analytic API를 실행할 수 있으며 특정 보안 및 데이터 거버넌스 요구 사항에 적합합니다. Text Analytics 컨테이너는 원시 텍스트에 대 한 고급 자연어 처리를 제공 하며, 감정 분석, 핵심 구 추출 및 언어 감지 라는 세 가지 주요 함수를 포함 합니다. 
 
-Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)을 만듭니다.
+Azure 구독이 아직 없는 경우 시작하기 전에 [체험 계정](https://azure.microsoft.com/free/cognitive-services/)을 만듭니다.
 
 > [!IMPORTANT]
 > 무료 계정은 매월 5000 개의 트랜잭션으로 제한 되며, **무료** 및 **표준** <a href="https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics" target="_blank">가격 책정 계층만 <span class="docon docon-navigate-external x-hidden-focus"></span> </a> 컨테이너에 대해 유효 합니다. 트랜잭션 요청 요금에 대 한 자세한 내용은 [데이터 제한](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview#data-limits)을 참조 하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>사전 요구 사항
 
 Text Analytics 컨테이너를 실행 하려면 호스트 컴퓨터와 컨테이너 환경이 있어야 합니다.
 
@@ -129,7 +129,7 @@ Text Analytics에 대 한 컨테이너 이미지는 Microsoft Container Registry
 
 컨테이너는 REST 기반 쿼리 예측 엔드포인트 API를 제공합니다.
 
-컨테이너 API에 대한 호스트, `http://localhost:5000`을 사용합니다.
+컨테이너 API에 대한 호스트 `http://localhost:5000`을 사용합니다.
 
 <!--  ## Validate container is running -->
 

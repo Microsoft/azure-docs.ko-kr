@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 07/29/2020
 ms.author: curtand
-ms.openlocfilehash: 4566d32682c8d0345c66d99ba5e4fd58695a325d
-ms.sourcegitcommit: e71da24cc108efc2c194007f976f74dd596ab013
+ms.openlocfilehash: 7dcaae80842f06714759cb5c933a62ccd85aac63
+ms.sourcegitcommit: c5021f2095e25750eb34fd0b866adf5d81d56c3a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87424796"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88798094"
 ---
 # <a name="view-or-change-your-settings-in-the-my-account-portal"></a>내 계정 포털에서 설정 보기 또는 변경
 
@@ -47,7 +47,7 @@ ms.locfileid: "87424796"
 
 내 계정 포털 설정을 변경한 후 다음을 수행할 수 있습니다.
 
-- [보안 정보](user-help-security-info-overview.md)를 보거나 관리합니다.
+- [보안 정보](./security-info-setup-signin.md)를 보거나 관리합니다.
 
 - 연결된 [디바이스](my-account-portal-devices-page.md)를 보거나 관리합니다.
 

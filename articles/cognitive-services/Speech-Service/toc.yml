@@ -3,10 +3,8 @@
 - name: 개요
   expanded: true
   items:
-    - name: Speech Service란?
+    - name: Speech Service 개요
       href: overview.md
-    - name: Speech Service 체험해 보기
-      href: get-started.md
     - name: 언어 및 음성 지원
       displayName: 'languages,locales,voice,gender,language code,locale,locale code,neural voice,standard voice'
       href: language-support.md
@@ -20,10 +18,8 @@
       href: index-speech-to-text.yml
     - name: 개요
       items:
-        - name: 실시간 음성 텍스트 변환이란?
+        - name: 음성 텍스트 변환이란?
           href: speech-to-text.md
-        - name: 일괄 처리 음성 텍스트 변환이란?
-          href: batch-transcription.md
         - name: 음성 인식 기본 사항
           href: speech-to-text-basics.md
     - name: 빠른 시작
@@ -53,6 +49,8 @@
           href: how-to-select-audio-input-devices.md
         - name: 자동 소스 언어 감지 사용
           href: how-to-automatic-language-detection.md
+        - name: 일괄 처리 기록 API 사용
+          href: batch-transcription.md
     - name: 자습서
       items:
         - name: 테넌트 모델을 사용하여 정확도 향상
@@ -117,30 +115,16 @@
   items:
     - name: 텍스트 음성 변환 설명서
       href: index-text-to-speech.yml
-    - name: 개요
-      items:
-        - name: 텍스트 음성 변환이란?
-          href: text-to-speech.md
-        - name: 텍스트 음성 변환 기본 사항
-          href: text-to-speech-basics.md
-    - name: 빠른 시작
-      items:
-        - name: 스피커로 음성 합성
-          href: quickstarts/text-to-speech.md
-        - name: 오디오 파일로 음성 합성
-          href: quickstarts/text-to-speech-audio-file.md
-        - name: 긴 형식의 오디오로 음성 합성
-          href: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
+    - name: 텍스트 음성 변환 개요
+      href: text-to-speech.md
+    - name: 텍스트 음성 변환 빠른 시작
+      href: get-started-text-to-speech.md
     - name: 방법 가이드
       items:
         - name: SSML을 사용하여 합성 향상
           href: speech-synthesis-markup.md
         - name: 긴 오디오 API를 사용하여 음성 합성
           href: long-audio-api.md
-        - name: REST를 사용하여 음성 목록 가져오기(Python)
-          href: quickstart-python-get-text-to-speech-voices.md
-        - name: REST을 사용하여 텍스트 음성 변환(Python)
-          href: quickstart-python-text-to-speech.md
     - name: 사용자 지정
       items:
         - name: 신뢰할 수 있는 배포
@@ -174,33 +158,29 @@
               href: how-to-audio-content-creation.md
     - name: 참조
       items:
-        - name: Speech SDK
-          items:
-            - name: C++
-              displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/cppref'
-            - name: C#
-              displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/csharpref'
-            - name: Java
-              displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/javaref'
-            - name: JavaScript
-              displayName: 'Node, Node.js, NodeJS, JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/javascriptref'
-            - name: Objective-C
-              displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/objectivecref'
-            - name: Python
-              displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/pythonref'
-            - name: 릴리스 정보
-              displayName: 'release notes,updates,what''s new,what is new,changes'
-              href: releasenotes.md
-        - name: REST API
-          items:
-            - name: Text-to-Speech REST API
-              href: rest-text-to-speech.md
+        - name: C++
+          displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/cppref'
+        - name: C#
+          displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/csharpref'
+        - name: Java
+          displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/javaref'
+        - name: JavaScript
+          displayName: 'Node, Node.js, NodeJS, JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/javascriptref'
+        - name: Objective-C
+          displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/objectivecref'
+        - name: Python
+          displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/pythonref'
+        - name: 릴리스 정보
+          displayName: 'release notes,updates,what''s new,what is new,changes'
+          href: releasenotes.md
+        - name: Text-to-Speech REST API
+          href: rest-text-to-speech.md
     - name: 리소스
       items:
         - name: 표준 음성 지원
@@ -218,49 +198,37 @@
   items:
     - name: 음성 번역 설명서
       href: index-speech-translation.yml
-    - name: 개요
-      items:
-        - name: 음성 번역이란?
-          href: speech-translation.md
-        - name: 음성 번역 기본 사항
-          href: speech-translation-basics.md
-    - name: 빠른 시작
-      items:
-        - name: 음성을 텍스트로 변환
-          href: quickstarts/translate-speech-to-text.md
-        - name: 음성을 여러 대상 언어로 번역
-          href: quickstarts/translate-speech-to-text-multiple-languages.md
-        - name: 음성 통역
-          href: quickstarts/translate-speech-to-speech.md
-    - name: 자습서
+    - name: 음성 번역 개요
+      href: speech-translation.md
+    - name: 음성 번역 빠른 시작
+      href: get-started-speech-translation.md
+    - name: 방법 가이드
       items:
         - name: REST API를 사용하여 텍스트 변환 및 합성
           href: ../translator/tutorial-build-flask-app-translation-synthesis.md?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json
     - name: 참조
       items:
-        - name: Speech SDK
-          items:
-            - name: C++
-              displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/cppref'
-            - name: C#
-              displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/csharpref'
-            - name: Java
-              displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/javaref'
-            - name: JavaScript
-              displayName: 'Node, Node.js, NodeJS, JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/javascriptref'
-            - name: Objective-C
-              displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/objectivecref'
-            - name: Python
-              displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
-              href: 'https://aka.ms/csspeech/pythonref'
-            - name: 릴리스 정보
-              displayName: 'release notes,updates,what''s new,what is new,changes'
-              href: releasenotes.md
+        - name: C++
+          displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/cppref'
+        - name: C#
+          displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/csharpref'
+        - name: Java
+          displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/javaref'
+        - name: JavaScript
+          displayName: 'Node, Node.js, NodeJS, JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/javascriptref'
+        - name: Objective-C
+          displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/objectivecref'
+        - name: Python
+          displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
+          href: 'https://aka.ms/csspeech/pythonref'
+        - name: 릴리스 정보
+          displayName: 'release notes,updates,what''s new,what is new,changes'
+          href: releasenotes.md
     - name: 리소스
       items:
         - name: 언어 지원
@@ -273,11 +241,8 @@
   items:
     - name: 의도 인식 설명서
       href: index-intent-recognition.yml
-    - name: 빠른 시작
-      items:
-        - name: '음성, 의도 및 엔터티 인식'
-          displayName: 'Recognize intents and entities with LUIS, LUIS, Language Understanding, prebuilt domains'
-          href: quickstarts/intent-recognition.md
+    - name: 의도 인식 빠른 시작
+      href: quickstarts/intent-recognition.md
     - name: 방법 가이드
       items:
         - name: 'LUIS, C#을 통해 음성 의도 인식'
@@ -498,18 +463,14 @@
           href: custom-keyword-basics.md
 - name: Speaker Recognition
   items:
-    - name: 개요
-      items:
-        - name: Speaker Recognition이란?
-          href: speaker-recognition-overview.md
-        - name: Speaker Recognition 기본 사항
-          href: speaker-recognition-basics.md
+    - name: Speaker Recognition 개요
+      href: speaker-recognition-overview.md
+    - name: Speaker Recognition 빠른 시작
+      href: get-started-speaker-recognition.md
     - name: 참조
       items:
-        - name: REST API
-          items:
-            - name: Speaker Recognition REST API
-              href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
+        - name: Speaker Recognition REST API
+          href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
 - name: Hosting
   items:
     - name: 호스팅 설명서
@@ -536,17 +497,11 @@
           href: speech-container-faq.md
 - name: Speech SDK
   items:
-    - name: 개요
-      items:
-        - name: Speech SDK 정보
-          href: speech-sdk.md
-        - name: 시나리오 가용성
-          href: scenario-availability.md
-    - name: 빠른 시작
-      items:
-        - name: Speech SDK 설치
-          displayName: 'install the speech sdk, install the speech sdk java, install the speech sdk C#, install the speech sdk python, install the speech sdk C++, setup speech sdk, install, install C#, install C++, install Python, install Java, install Javascript'
-          href: quickstarts/setup-platform.md
+    - name: Speech SDK 개요
+      href: speech-sdk.md
+    - name: Speech SDK 설치
+      displayName: 'install the speech sdk, install the speech sdk java, install the speech sdk C#, install the speech sdk python, install the speech sdk C++, setup speech sdk, install, install C#, install C++, install Python, install Java, install Javascript'
+      href: quickstarts/setup-platform.md
     - name: 방법 가이드
       items:
         - name: 로깅 사용
@@ -652,10 +607,12 @@
     - name: 소버린 클라우드
       displayName: 'fairfax,mooncake,compliant,secret,compliance,government,government cloud,dod,china'
       href: sovereign-clouds.md
-    - name: 가격 책정 및 제한
+    - name: 가격 책정
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: 요금 계산기
       href: 'https://azure.microsoft.com/pricing/calculator/#cognitive-services'
+    - name: 할당량 및 한도
+      href: speech-services-quotas-and-limits.md
     - name: 규정 준수
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: 암호화

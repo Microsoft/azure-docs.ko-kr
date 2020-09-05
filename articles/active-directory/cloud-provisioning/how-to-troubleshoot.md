@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 77ea5a354dde7adb006c95e9548d8fcc37e2dc12
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 34796a435536a48100b7434ed5267802cd2d549f
+ms.sourcegitcommit: d68c72e120bdd610bb6304dad503d3ea89a1f0f7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256869"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89226950"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>클라우드 프로 비전 문제 해결
 
@@ -22,7 +22,7 @@ ms.locfileid: "86256869"
 
 ## <a name="common-troubleshooting-areas"></a>일반적인 문제 해결 영역
 
-|이름|설명|
+|이름|Description|
 |-----|-----|
 |[에이전트 문제](#agent-problems)|에이전트가 올바르게 설치 되었으며 Azure Active Directory (Azure AD)와 통신 하는지 확인 합니다.|
 |[개체 동기화 문제](#object-synchronization-problems)|프로 비전 로그를 사용 하 여 개체 동기화 문제를 해결 합니다.|
@@ -120,7 +120,7 @@ Azure가 포트 443에서 수신 대기 하 고 에이전트와 통신할 수 �
 
 이 문제는 일반적으로 에이전트가 로컬 PowerShell 실행 정책으로 인해 PowerShell 등록 스크립트를 실행할 수 없기 때문에 발생 합니다.
 
-이 문제를 해결 하려면 서버에서 PowerShell 실행 정책을 변경 합니다. 컴퓨터 및 사용자 정책이 *정의 되지 않음* 또는 *RemoteSigned*로 설정 되어 있어야 합니다. *무제한*으로 설정 된 경우이 오류가 표시 됩니다. 자세한 내용은 [PowerShell 실행 정책](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)을 참조 하세요. 
+이 문제를 해결 하려면 서버에서 PowerShell 실행 정책을 변경 합니다. 컴퓨터 및 사용자 정책이 *정의 되지 않음* 또는 *RemoteSigned*로 설정 되어 있어야 합니다. *무제한*으로 설정 된 경우이 오류가 표시 됩니다. 자세한 내용은 [PowerShell 실행 정책](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)을 참조 하세요. 
 
 ### <a name="log-files"></a>로그 파일
 
@@ -195,7 +195,7 @@ Azure Portal에서 프로 비전 로그를 사용 하 여 개체 동기화 문�
 
   ![프로 비전 다시 시작](media/how-to-troubleshoot/quarantine3.png)
 
-- Microsoft Graph를 사용 하 여 [프로 비전 작업을 다시 시작](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http)합니다. 다시 시작 하는 작업을 완전히 제어할 수 있습니다. 선택을 취소 하도록 선택할 수 있습니다.
+- Microsoft Graph를 사용 하 여 [프로 비전 작업을 다시 시작](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta)합니다. 다시 시작 하는 작업을 완전히 제어할 수 있습니다. 선택을 취소 하도록 선택할 수 있습니다.
   - Escrows-격리 상태를 계산 하는 에스크로 카운터를 다시 시작 합니다.
   - 격리-격리에서 응용 프로그램을 제거 합니다.
   - 마크로. 
@@ -208,6 +208,3 @@ Azure Portal에서 프로 비전 로그를 사용 하 여 개체 동기화 문�
 
 - [프로비저닝이란?](what-is-provisioning.md)
 - [Azure AD Connect 클라우드 프로비저닝이란?](what-is-cloud-provisioning.md)
-
-
-
