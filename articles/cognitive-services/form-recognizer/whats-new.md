@@ -151,7 +151,7 @@ ms.locfileid: "105048751"
 
 ### <a name="security-improvements"></a>향상된 보안 기능
 
-* 이제 FormRecognizer에서 Customer-Managed 키를 사용할 수 있습니다. 자세한 내용은 [폼 인식기에 대 한 미사용 데이터 암호화](./encrypt-data-at-rest.md)를 참조 하세요.
+* 이제 FormRecognizer에서 Customer-Managed 키를 사용할 수 있습니다. 자세한 내용은 [폼 인식기에 대 한 저장소 데이터 암호화](./encrypt-data-at-rest.md)를 참조 하세요.
 * Azure Active Directory를 사용 하 여 Azure 리소스에 액세스 하기 위해 관리 되는 Id를 사용 합니다. 자세한 내용은 [관리 되는 id에 대 한 액세스 권한 부여](../authentication.md#authorize-access-to-managed-identities)를 참조 하세요.
 
 ## <a name="march-2020"></a>2020년 3월

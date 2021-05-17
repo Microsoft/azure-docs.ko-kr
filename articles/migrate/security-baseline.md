@@ -224,7 +224,7 @@ Microsoft에서 관리하는 기본 플랫폼의 경우 Microsoft는 모든 고�
 
 **책임**: Customer
 
-### <a name="dp-5-encrypt-sensitive-data-at-rest"></a>DP-5: 중요한 미사용 데이터 암호화
+### <a name="dp-5-encrypt-sensitive-data-at-rest"></a>DP-5: 중요한 저장소 데이터 암호화
 
 **지침**: Azure Migrate는 중요 한 데이터를 유지 하지 않습니다. Azure Migrate에 유지 되는 모든 데이터는 Microsoft에서 관리 하는 키를 사용 하 여 미사용으로 암호화 됩니다.
 

@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB의 미사용 암호화
-description: Azure Cosmos DB에서 미사용 데이터 암호화를 제공하는 방법 및 구현 방식을 알아봅니다.
+description: Azure Cosmos DB에서 저장소 데이터 암호화를 제공하는 방법 및 구현 방식을 알아봅니다.
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db

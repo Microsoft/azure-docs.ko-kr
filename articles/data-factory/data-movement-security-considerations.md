@@ -78,7 +78,7 @@ Azure 규정 준수 및 Azure의 자체 인프라 보안 방법에 관심이 있
 
 ### <a name="data-encryption-at-rest"></a>휴지 상태의 암호화
 
-일부 데이터 저장소가 미사용 데이터 암호화를 지원합니다. 이러한 데이터 저장소에 데이터 암호화 메커니즘을 사용하는 것이 좋습니다. 
+일부 데이터 저장소가 저장소 데이터 암호화를 지원합니다. 이러한 데이터 저장소에 데이터 암호화 메커니즘을 사용하는 것이 좋습니다. 
 
 #### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 

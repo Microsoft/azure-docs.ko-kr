@@ -90,7 +90,7 @@ conceptualContent:
     links:
     - url: ./fundamentals/encryption-atrest.md
       itemType: concept
-      text: 미사용 데이터 암호화
+      text: 저장소 데이터 암호화
     - url: ./fundamentals/data-encryption-best-practices.md
       itemType: concept
       text: 데이터 보안 및 암호화 모범 사례

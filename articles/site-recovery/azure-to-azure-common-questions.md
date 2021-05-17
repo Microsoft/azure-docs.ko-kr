@@ -331,7 +331,7 @@ Site Recovery는 ISO 27001:2013, 27018, HIPAA 및 DPA 인증을 받았습니다.
 
 ### <a name="does-site-recovery-encrypt-replication"></a>Site Recovery는 복제를 암호화합니까?
 
-예, 전송 중 암호화 및 [Azure의 미사용 데이터 암호화](../storage/common/storage-service-encryption.md)가 모두 지원됩니다.
+예, 전송 중 암호화 및 [Azure의 저장소 데이터 암호화](../storage/common/storage-service-encryption.md)가 모두 지원됩니다.
 
 ## <a name="next-steps"></a>다음 단계
 

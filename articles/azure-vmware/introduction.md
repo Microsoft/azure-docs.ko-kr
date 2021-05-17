@@ -36,7 +36,7 @@ Azure VMware 솔루션 프라이빗 클라우드 및 클러스터는 운영 체�
 
 Azure VMware Solution 프라이빗 클라우드에서는 보안 강화를 위해 vSphere 역할 기반 액세스 제어를 사용합니다. vSphere SSO LDAP 기능을 Azure Active Directory와 통합할 수 있습니다. 자세한 내용은 [액세스 및 ID 개념](concepts-identity.md)을 참조하세요.  
 
-vSAN 미사용 데이터 암호화는 기본적으로 사용하도록 설정되며, vSAN 데이터 저장소 보안을 제공하는 데 사용됩니다. 자세한 내용은 [스토리지 개념](concepts-storage.md)을 참조하세요.
+vSAN 저장소 데이터 암호화는 기본적으로 사용하도록 설정되며, vSAN 데이터 저장소 보안을 제공하는 데 사용됩니다. 자세한 내용은 [스토리지 개념](concepts-storage.md)을 참조하세요.
 
 ## <a name="host-and-software-lifecycle-maintenance"></a>호스트 및 소프트웨어 수명 주기 유지 관리
 

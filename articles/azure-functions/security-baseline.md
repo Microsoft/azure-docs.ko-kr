@@ -904,7 +904,7 @@ Azure Resource Graph를 사용하여 구독 내에서 리소스를 쿼리/검색
 
 고객 관리 키를 사용 하는 경우 실수로 또는 악의적으로 삭제 되지 않도록 키를 보호 하기 위해 Key Vault의 Soft-Delete을 사용 하도록 설정 해야 합니다.
 
-- [Azure Storage 미사용 데이터 암호화](../storage/common/storage-service-encryption.md)
+- [Azure Storage 저장소 데이터 암호화](../storage/common/storage-service-encryption.md)
 
 - [Key Vault에서 일시 삭제를 사용하도록 설정하는 방법](../storage/blobs/soft-delete-blob-overview.md)
 

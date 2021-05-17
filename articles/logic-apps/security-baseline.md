@@ -622,7 +622,7 @@ Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고
 
 - [Azure를 사용 하 여 전송 중인 암호화 이해](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
-- [Azure를 사용 하 여 미사용 데이터 암호화 이해](../security/fundamentals/encryption-atrest.md)
+- [Azure를 사용 하 여 저장소 데이터 암호화 이해](../security/fundamentals/encryption-atrest.md)
 
 - [고객 관리 키를 설정 하 여 ISEs (integration service environment)에 대 한 미사용 데이터를 암호화 Azure Logic Apps](customer-managed-keys-integration-service-environment.md)
 
@@ -675,7 +675,7 @@ Microsoft는 Azure Logic Apps에 대 한 기본 인프라를 관리 하 고, 고
 
 논리 앱을 호스팅하기 위한 ISE (통합 서비스 환경)를 만들 때 Azure Storage에 사용 되는 암호화 키를 더 많이 제어 하려는 경우 Azure Key Vault를 사용 하 여 사용자 고유의 키를 설정, 사용 및 관리할 수 있습니다. 이 기능은 BYOK ("Bring Your Own Key") 라고도 하며, 키를 "고객 관리 키" 라고 합니다.
 
-- [Azure Logic Apps의 통합 서비스 환경에 대 한 미사용 데이터 암호화](customer-managed-keys-integration-service-environment.md)
+- [Azure Logic Apps의 통합 서비스 환경에 대 한 저장소 데이터 암호화](customer-managed-keys-integration-service-environment.md)
 
 **Azure Security Center 모니터링**: 해당 없음
 

@@ -131,7 +131,7 @@ Key Vault에 저장된 고객 관리형 키를 사용하여 Azure Database for P
 
 ## <a name="limitations"></a>제한 사항
 
-Azure Database for PostgreSQL의 경우 CMK (customers 관리 키)를 사용 하 여 미사용 데이터 암호화에 대 한 지원에는 몇 가지 제한 사항이 있습니다.
+Azure Database for PostgreSQL의 경우 CMK (customers 관리 키)를 사용 하 여 저장소 데이터 암호화에 대 한 지원에는 몇 가지 제한 사항이 있습니다.
 
 * 이 기능에 대 한 지원은 **범용** 및 메모리 액세스에 **최적화** 된 가격 책정 계층으로 제한 됩니다.
 * 이 기능은 최대 16TB의 스토리지를 지원하는 지역 및 서버에서만 지원됩니다. 최대 16TB의 저장소를 지 원하는 Azure 지역 목록은 [여기](concepts-pricing-tiers.md#storage) 설명서의 저장소 섹션을 참조 하세요.

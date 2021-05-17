@@ -1,6 +1,6 @@
 ---
 title: 고객 관리 키를 통해 미사용 Azure 장치 프로 비전 서비스 데이터 암호화 | Microsoft Docs
-description: 장치 프로 비전 서비스에 대 한 고객 관리 키를 사용 하 여 미사용 데이터 암호화
+description: 장치 프로 비전 서비스에 대 한 고객 관리 키를 사용 하 여 저장소 데이터 암호화
 author: chrissie926
 manager: nberdy
 ms.service: iot-dps
@@ -15,7 +15,7 @@ ms.contentlocale: ko-KR
 ms.lasthandoff: 03/19/2021
 ms.locfileid: "94967179"
 ---
-# <a name="encryption-of-data-at-rest-with-customer-managed-keys-for-device-provisioning-service"></a>장치 프로 비전 서비스에 대 한 고객 관리 키를 사용 하 여 미사용 데이터 암호화
+# <a name="encryption-of-data-at-rest-with-customer-managed-keys-for-device-provisioning-service"></a>장치 프로 비전 서비스에 대 한 고객 관리 키를 사용 하 여 저장소 데이터 암호화
 
 ## <a name="overview"></a>개요
 

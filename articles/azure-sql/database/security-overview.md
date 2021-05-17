@@ -110,7 +110,7 @@ SQL Database, SQL Managed Instance 및 Azure Synapse Analytics는 모든 연결�
 >
 > TLS 및 연결에 대 한 자세한 내용은 [tls 고려 사항](connect-query-content-reference-guide.md#tls-considerations-for-database-connectivity) 을 참조 하세요.
 
-### <a name="transparent-data-encryption-encryption-at-rest"></a>투명한 데이터 암호화(미사용 데이터 암호화)
+### <a name="transparent-data-encryption-encryption-at-rest"></a>투명한 데이터 암호화(저장소 데이터 암호화)
 
 [SQL Database, SQL Managed Instance 및 Azure Synapse Analytics 용 TDE (투명 한 데이터 암호화)](transparent-data-encryption-tde-overview.md) 는 미사용 데이터를 원시 파일이 나 백업에 대 한 무단 또는 오프 라인 액세스 로부터 보호 하는 데 사용할 수 있는 보안 계층을 추가 합니다. 일반적인 시나리오에는 데이터 센터 도난 또는 하드웨어 또는 미디어 (예: 디스크 드라이브 및 백업 테이프)의 안전 하지 않은 삭제가 포함 됩니다.TDE는 응용 프로그램 개발자가 기존 응용 프로그램을 변경할 필요가 없는 AES 암호화 알고리즘을 사용 하 여 전체 데이터베이스를 암호화 합니다.
 

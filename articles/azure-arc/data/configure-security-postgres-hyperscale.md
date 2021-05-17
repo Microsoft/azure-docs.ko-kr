@@ -32,7 +32,7 @@ ms.locfileid: "101687977"
 
 ### <a name="hardware-linux-host-volume-encryption"></a>하드웨어: Linux 호스트 볼륨 암호화
 시스템 데이터 암호화를 구현 하 여 Azure Arc에서 사용 하는 디스크에 상주 하는 데이터를 보호 Data Services 설정 합니다. 이 항목에 대 한 자세한 내용은 다음 항목을 참조 하세요.
-- 일반적으로 Linux에서 [미사용 데이터 암호화](https://wiki.archlinux.org/index.php/Data-at-rest_encryption) 
+- 일반적으로 Linux에서 [저장소 데이터 암호화](https://wiki.archlinux.org/index.php/Data-at-rest_encryption) 
 - LUKS `cryptsetup` encrypt 명령 (Linux)을 사용 하는 디스크 암호화 명령 (Linux) ( https://www.cyberciti.biz/security/howto-linux-hard-disk-encryption-with-luks-cryptsetup-command/) 특히, Azure Arc 사용 Data Services은 사용자가 제공 하는 물리적 인프라에서 실행 되므로 인프라 보안을 담당 하 고 있습니다.
 
 ### <a name="software-use-the-postgresql-pgcrypto-extension-in-your-server-group"></a>소프트웨어: `pgcrypto` 서버 그룹에서 PostgreSQL 확장 사용

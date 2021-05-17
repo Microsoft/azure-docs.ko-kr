@@ -393,4 +393,4 @@ REST API를 통해 새 인덱스를 만드는 방법에 대 한 자세한 내용
 Azure 보안 아키텍처에 익숙하지 않은 경우 [Azure 보안 설명서](../security/index.yml)를 검토 합니다. 특히이 문서는 다음과 같습니다.
 
 > [!div class="nextstepaction"]
-> [미사용 데이터 암호화](../security/fundamentals/encryption-atrest.md)
+> [저장소 데이터 암호화](../security/fundamentals/encryption-atrest.md)

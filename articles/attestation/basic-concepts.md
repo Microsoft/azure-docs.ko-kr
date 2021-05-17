@@ -134,7 +134,7 @@ SGX enclave에 대해 생성된 JWT의 예제는 다음과 같습니다.
 ```
 위에서 사용된 클레임 중 일부는 사용되지 않는 것으로 간주되지만 완전히 지원됩니다.  이후 모든 코드 및 도구는 더 이상 사용되지 않는 클레임 이름을 사용하는 것이 좋습니다. 자세한 내용은 [Azure Attestation을 통해 발급된 클레임](claim-sets.md)을 참조하세요.
 
-## <a name="encryption-of-data-at-rest"></a>미사용 데이터 암호화
+## <a name="encryption-of-data-at-rest"></a>저장소 데이터 암호화
 
 고객 데이터를 보호하기 위해 Azure Attestation은 해당 데이터를 Azure Storage에 유지합니다. Azure 스토리지는 데이터 센터에 기록되는 대로 미사용 데이터의 암호화를 제공하고, 고객이 액세스하도록 암호를 해독합니다. 이 암호화는 Microsoft 관리형 암호화 키를 사용하여 수행됩니다. 
 

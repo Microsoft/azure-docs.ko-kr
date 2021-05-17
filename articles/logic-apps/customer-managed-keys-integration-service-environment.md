@@ -1,5 +1,5 @@
 ---
-title: 고객 관리 키를 설정 하 여 ISEs에서 미사용 데이터 암호화
+title: 고객 관리 키를 설정 하 여 ISEs에서 저장소 데이터 암호화
 description: Azure Logic Apps에서 ISEs (통합 서비스 환경)에 대 한 미사용 데이터를 보호 하기 위해 사용자 고유의 암호화 키를 만들고 관리 합니다.
 services: logic-apps
 ms.suite: integration
