@@ -35,7 +35,7 @@ ISE는 실행 지속 시간, 스토리지 보존, 처리량, HTTP 요청 및 응
 ISE는 [샘플 Azure Resource Manager 빠른 시작 템플릿](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment)을 사용하거나 고객 관리형 키 설정을 포함하여 Logic Apps REST API를 사용하여 만들 수도 있습니다.
 
 * [Logic Apps REST API를 사용하여 ISE(통합 서비스 환경) 만들기](../logic-apps/create-integration-service-environment-rest-api.md)
-* [고객 관리형 키를 설정하여 ISE의 미사용 데이터 암호화](../logic-apps/customer-managed-keys-integration-service-environment.md)
+* [고객 관리형 키를 설정하여 ISE의 저장소 데이터 암호화](../logic-apps/customer-managed-keys-integration-service-environment.md)
 
 ## <a name="prerequisites"></a>사전 요구 사항
 

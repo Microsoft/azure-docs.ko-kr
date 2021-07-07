@@ -170,7 +170,7 @@ Azure RBAC를 사용하면 팀 내에서 업무를 분리하고 사용자에게 
 
 ### <a name="encryption-at-rest"></a>미사용 암호화
 
-휴지 상태의 암호화에 대해서는 [Azure 미사용 데이터 암호화](encryption-atrest.md)에 자세히 설명 되어 있습니다.
+휴지 상태의 암호화에 대해서는 [Azure 저장소 데이터 암호화](encryption-atrest.md)에 자세히 설명 되어 있습니다.
 
 ### <a name="encryption-in-transit"></a>전송 중인 암호화
 

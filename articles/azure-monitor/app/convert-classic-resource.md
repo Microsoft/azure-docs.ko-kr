@@ -22,7 +22,7 @@ ms.locfileid: "100584253"
 
 작업 영역 기반 Application Insights를 사용 하면 다음을 포함 하 여 Azure Monitor 및 Log Analytics의 모든 최신 기능을 활용할 수 있습니다.
 
-* [CMK (고객 관리 키](../logs/customer-managed-keys.md) )는 사용자만 액세스할 수 있는 암호화 키를 사용 하 여 미사용 데이터 암호화를 제공 합니다.
+* [CMK (고객 관리 키](../logs/customer-managed-keys.md) )는 사용자만 액세스할 수 있는 암호화 키를 사용 하 여 저장소 데이터 암호화를 제공 합니다.
 * [Azure Private Link](../logs/private-link-security.md)를 사용하면 프라이빗 엔드포인트를 사용하여 Azure PaaS 서비스를 가상 네트워크에 안전하게 연결할 수 있습니다.
 * [Profiler 및 스냅숏 디버거에 대 한 사용자 고유의 저장소 (BYOS)](./profiler-bring-your-own-storage.md) 를 사용 하면 Application Insights Profiler 및 스냅숏 디버거와 연결 된 모든 데이터에 대 한 전체 암호화 정책, 수명 관리 정책 및 네트워크 액세스를 완벽 하 게 제어할 수 있습니다. 
 * [용량 예약 계층](../logs/manage-cost-storage.md#pricing-model) 을 사용 하면 종 량 제 가격과 비교 하 여 25%까지 절감할 수 있습니다. 

@@ -31,7 +31,7 @@ Azure Logic Apps에서 중요 한 데이터 액세스 및 보호를 추가로 �
 Azure의 보안에 대 한 자세한 내용은 다음 항목을 참조 하세요.
 
 * [Azure 암호화 개요](../security/fundamentals/encryption-overview.md)
-* [Azure 미사용 데이터 암호화](../security/fundamentals/encryption-atrest.md)
+* [Azure 저장소 데이터 암호화](../security/fundamentals/encryption-atrest.md)
 * [Azure Security Benchmark](../security/benchmarks/overview.md)
 
 <a name="secure-inbound-requests"></a>

@@ -54,7 +54,7 @@ ms.locfileid: "96317065"
 
 ### <a name="if-you-use-a-managed-solution-refer-to-specific-documentation"></a>관리 솔루션을 사용 하는 경우 특정 문서를 참조 하세요.
 
-이 가이드는 Microsoft에서 관리 하는 솔루션에 적용할 수 없습니다. 여기서 주요 자격 증명 모음은 고객 Virtual Network와 독립적으로 존재 하는 Azure 제품에 의해 액세스 됩니다. 이러한 시나리오의 예로는 미사용 데이터 암호화를 위해 구성 된 azure SQL, Azure Event Hub는 고객이 제공한 키로 데이터를 암호화 하 고, key Azure Pipelines vault에 저장 된 서비스 자격 증명에 액세스 Azure Data Factory, key vault에서 비밀을 검색 하는 경우, 기타 유사한 시나리오를 Azure Storage 합니다. 이러한 경우에 *는 방화벽이 사용 하도록 설정 된 주요 자격 증명 모음을 제품에서 지원 하는지 확인 해야* 합니다. 이 지원은 일반적으로 Key Vault 방화벽의 [신뢰할 수 있는 서비스](overview-vnet-service-endpoints.md#trusted-services) 기능을 사용 하 여 수행 됩니다. 그러나 다양 한 이유로 많은 제품이 신뢰할 수 있는 서비스 목록에 포함 되지 않습니다. 이 경우 제품별 지원에 도달 합니다.
+이 가이드는 Microsoft에서 관리 하는 솔루션에 적용할 수 없습니다. 여기서 주요 자격 증명 모음은 고객 Virtual Network와 독립적으로 존재 하는 Azure 제품에 의해 액세스 됩니다. 이러한 시나리오의 예로는 저장소 데이터 암호화를 위해 구성 된 azure SQL, Azure Event Hub는 고객이 제공한 키로 데이터를 암호화 하 고, key Azure Pipelines vault에 저장 된 서비스 자격 증명에 액세스 Azure Data Factory, key vault에서 비밀을 검색 하는 경우, 기타 유사한 시나리오를 Azure Storage 합니다. 이러한 경우에 *는 방화벽이 사용 하도록 설정 된 주요 자격 증명 모음을 제품에서 지원 하는지 확인 해야* 합니다. 이 지원은 일반적으로 Key Vault 방화벽의 [신뢰할 수 있는 서비스](overview-vnet-service-endpoints.md#trusted-services) 기능을 사용 하 여 수행 됩니다. 그러나 다양 한 이유로 많은 제품이 신뢰할 수 있는 서비스 목록에 포함 되지 않습니다. 이 경우 제품별 지원에 도달 합니다.
 
 적은 수의 Azure 제품은 *vnet 주입* 의 개념을 지원 합니다. 간단히 말해, 제품은 네트워크 장치를 고객 Virtual Network에 추가 하 여가 Virtual Network에 배포 된 것 처럼 요청을 보낼 수 있게 합니다. 주목할 만한 예는 [Azure Databricks](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject)합니다. 이와 같은 제품은 개인 링크를 사용 하 여 주요 자격 증명 모음에 대 한 요청을 수행할 수 있습니다 .이 문제 해결 가이드는 도움이 될 수 있습니다.
 

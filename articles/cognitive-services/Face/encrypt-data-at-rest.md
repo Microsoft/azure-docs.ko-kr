@@ -1,7 +1,7 @@
 ---
 title: 미사용 데이터의 얼굴 서비스 암호화
 titleSuffix: Azure Cognitive Services
-description: Microsoft는 Microsoft에서 관리 하는 암호화 키를 제공 하며, CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 Cognitive Services 구독을 관리할 수도 있습니다. 이 문서에서는 사용 하기 위해 미사용 데이터 암호화와 CMK를 사용 하 고 관리 하는 방법을 설명 합니다.
+description: Microsoft는 Microsoft에서 관리 하는 암호화 키를 제공 하며, CMK (고객이 관리 하는 키) 라고 하는 고유한 키를 사용 하 여 Cognitive Services 구독을 관리할 수도 있습니다. 이 문서에서는 사용 하기 위해 저장소 데이터 암호화와 CMK를 사용 하 고 관리 하는 방법을 설명 합니다.
 author: erindormier
 manager: venkyv
 ms.service: cognitive-services

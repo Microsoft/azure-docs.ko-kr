@@ -45,7 +45,7 @@ Azure Face 서비스는 지속적으로 업데이트됩니다. 이 문서를 사
 * 팀은 의미 있는 동의를 설정하고 고품질 등록을 통해 정확도가 높은 얼굴 인식 시스템을 만드는 모범 사례를 보여 주기 위해 샘플 Face 등록 앱을 게시했습니다. 오픈 소스 샘플은 [등록 앱 빌드](build-enrollment-app.md) 가이드와 [GitHub](https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample)에서 찾을 수 있으며, 개발자가 배포하거나 사용자 지정할 수 있도록 준비되었습니다. 
 
 ## <a name="august-2020"></a>2020년 8월
-### <a name="customer-managed-encryption-of-data-at-rest"></a>고객 관리형 미사용 데이터 암호화
+### <a name="customer-managed-encryption-of-data-at-rest"></a>고객 관리형 저장소 데이터 암호화
 * Face 서비스는 데이터를 클라우드에 유지할 때 자동으로 암호화합니다. Face 서비스 암호화는 데이터를 보호하여 조직의 보안 및 규정 준수 약속을 충족하는 데 도움이 됩니다. 기본적으로 구독은 Microsoft에서 관리하는 암호화 키를 사용합니다. 또한 CMK(고객 관리형 키)라고 하는 사용자 고유의 키를 사용하여 구독을 관리하는 새로운 옵션도 있습니다. 자세한 내용은 [고객 관리형 키](./encrypt-data-at-rest.md)를 참조하세요.
 
 ## <a name="april-2020"></a>2020년 4월

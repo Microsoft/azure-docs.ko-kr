@@ -137,7 +137,7 @@ Azure [RBAC (역할 기반 액세스 제어)](../../role-based-access-control/ov
 - 클라이언트 쪽 암호화 - 데이터를 스토리지로 전송하기 전에 암호화하고, 스토리지에서 전송한 후에 암호를 해독합니다.
 
 ### <a name="encryption-at-rest"></a>미사용 암호화
-많은 조직에서 미사용 데이터 암호화는 데이터 개인 정보 보호, 규정 준수 및 데이터 주권을 위한 필수 단계입니다. &quot;미사용&quot; 데이터 암호화를 제공하는 세 가지 Azure Storage 보안 기능이 있습니다.
+많은 조직에서 저장소 데이터 암호화는 데이터 개인 정보 보호, 규정 준수 및 데이터 주권을 위한 필수 단계입니다. &quot;미사용&quot; 데이터 암호화를 제공하는 세 가지 Azure Storage 보안 기능이 있습니다.
 
 - [Storage 서비스 암호화](../../storage/common/storage-service-encryption.md) 를 사용하면 Storage 서비스가 Azure Storage에 데이터를 쓸 때 데이터를 자동으로 암호화하도록 요청할 수 있습니다.
 

@@ -22,7 +22,7 @@ ms.locfileid: "100526275"
 * 고객 관리 키를 사용 하 여 암호화를 사용 하도록 설정 하는 Synapse 작업 영역 구성
 * 작업 영역에서 데이터를 암호화 하는 데 사용 되는 키 관리
 
-## <a name="encryption-of-data-at-rest"></a>미사용 데이터 암호화
+## <a name="encryption-of-data-at-rest"></a>저장소 데이터 암호화
 
 전체 암호화 솔루션은 데이터를 암호화 되지 않은 형식으로 유지 하지 않도록 합니다. 휴지 상태의 데이터에 대 한 이중 암호화는 단일 계층의 손상 으로부터 보호 하기 위해 두 개의 개별 암호화 계층으로 위협을 완화 합니다. Azure Synapse Analytics는 고객 관리 키를 사용 하 여 작업 영역에서 데이터에 대 한 두 번째 암호화 계층을 제공 합니다. 이 키는 키 관리 및 회전의 소유권을 가져올 수 있는 [Azure Key Vault](../../key-vault/general/overview.md)에 보호 됩니다.
 

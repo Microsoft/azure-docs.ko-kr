@@ -113,7 +113,7 @@ Data Lake Storage Gen1과 함께 진단 로그를 사용하는 방법에 대한 
 
 ## <a name="summary"></a>요약
 
-엔터프라이즈 고객은 안전하고 사용하기 간편한 데이터 분석 클라우드 플랫폼을 요구합니다. Data Lake Storage Gen1은 Azure Active Directory 통합, ACL 기반 권한 부여, 네트워크 격리, 전송 중 및 미사용 데이터 암호화 및 감사를 통해 ID 관리 및 인증에서 이러한 요구 사항을 해결하도록 설계되었습니다.
+엔터프라이즈 고객은 안전하고 사용하기 간편한 데이터 분석 클라우드 플랫폼을 요구합니다. Data Lake Storage Gen1은 Azure Active Directory 통합, ACL 기반 권한 부여, 네트워크 격리, 전송 중 및 저장소 데이터 암호화 및 감사를 통해 ID 관리 및 인증에서 이러한 요구 사항을 해결하도록 설계되었습니다.
 
 Data Lake Storage Gen1의 새로운 기능을 참조하려는 경우 [Data Lake Storage Gen1 UserVoice 포럼](https://feedback.azure.com/forums/327234-data-lake)에 사용자 의견을 보내주세요.
 

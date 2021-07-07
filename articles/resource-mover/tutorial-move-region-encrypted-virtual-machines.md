@@ -20,7 +20,7 @@ ms.locfileid: "100361012"
 이 문서에서는 [Azure Resource Mover](overview.md)를 사용하여 다른 Azure 지역으로 암호화된 Azure VM을 이동하는 방법을 알아봅니다. 암호화의 의미는 다음과 같습니다.
 
 - 디스크에 Azure 디스크 암호화를 사용하도록 설정된 VM. [자세한 정보](../virtual-machines/windows/disk-encryption-portal-quickstart.md)
-- 또는 미사용 데이터 암호화(서버 쪽 암호화)에 CMK(고객 관리형 키)를 사용하는 VM. [자세한 정보](../virtual-machines/disks-enable-customer-managed-keys-portal.md)
+- 또는 저장소 데이터 암호화(서버 쪽 암호화)에 CMK(고객 관리형 키)를 사용하는 VM. [자세한 정보](../virtual-machines/disks-enable-customer-managed-keys-portal.md)
 
 
 이 자습서에서는 다음 작업 방법을 알아봅니다.
